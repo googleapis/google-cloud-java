@@ -164,12 +164,12 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Information about encryption keys which are used to encrypt the
+   * Required. Information about encryption keys which are used to encrypt the
    * data.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the encryptionInfo field is set.
@@ -183,12 +183,12 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Information about encryption keys which are used to encrypt the
+   * Required. Information about encryption keys which are used to encrypt the
    * data.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The encryptionInfo.
@@ -204,12 +204,12 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Information about encryption keys which are used to encrypt the
+   * Required. Information about encryption keys which are used to encrypt the
    * data.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -229,11 +229,15 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
    * Optional. If true, the request is validated, but not executed.
    * </pre>
    *
-   * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool validate_only = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.ads.datamanager.v1.IngestAdEventsRequest.validate_only is deprecated. See
+   *     google/ads/datamanager/v1/ingestion_service.proto;l=278
    * @return The validateOnly.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getValidateOnly() {
     return validateOnly_;
   }
@@ -1076,12 +1080,12 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Information about encryption keys which are used to encrypt the
+     * Required. Information about encryption keys which are used to encrypt the
      * data.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the encryptionInfo field is set.
@@ -1094,12 +1098,12 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Information about encryption keys which are used to encrypt the
+     * Required. Information about encryption keys which are used to encrypt the
      * data.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The encryptionInfo.
@@ -1118,12 +1122,12 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Information about encryption keys which are used to encrypt the
+     * Required. Information about encryption keys which are used to encrypt the
      * data.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setEncryptionInfo(com.google.ads.datamanager.v1.EncryptionInfo value) {
@@ -1144,12 +1148,12 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Information about encryption keys which are used to encrypt the
+     * Required. Information about encryption keys which are used to encrypt the
      * data.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setEncryptionInfo(
@@ -1168,12 +1172,12 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Information about encryption keys which are used to encrypt the
+     * Required. Information about encryption keys which are used to encrypt the
      * data.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeEncryptionInfo(com.google.ads.datamanager.v1.EncryptionInfo value) {
@@ -1200,12 +1204,12 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Information about encryption keys which are used to encrypt the
+     * Required. Information about encryption keys which are used to encrypt the
      * data.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearEncryptionInfo() {
@@ -1223,12 +1227,12 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Information about encryption keys which are used to encrypt the
+     * Required. Information about encryption keys which are used to encrypt the
      * data.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.ads.datamanager.v1.EncryptionInfo.Builder getEncryptionInfoBuilder() {
@@ -1241,12 +1245,12 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Information about encryption keys which are used to encrypt the
+     * Required. Information about encryption keys which are used to encrypt the
      * data.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.ads.datamanager.v1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder() {
@@ -1263,12 +1267,12 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Information about encryption keys which are used to encrypt the
+     * Required. Information about encryption keys which are used to encrypt the
      * data.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -1297,11 +1301,15 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      * Optional. If true, the request is validated, but not executed.
      * </pre>
      *
-     * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool validate_only = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.ads.datamanager.v1.IngestAdEventsRequest.validate_only is deprecated. See
+     *     google/ads/datamanager/v1/ingestion_service.proto;l=278
      * @return The validateOnly.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getValidateOnly() {
       return validateOnly_;
     }
@@ -1313,11 +1321,15 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      * Optional. If true, the request is validated, but not executed.
      * </pre>
      *
-     * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool validate_only = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.ads.datamanager.v1.IngestAdEventsRequest.validate_only is deprecated. See
+     *     google/ads/datamanager/v1/ingestion_service.proto;l=278
      * @param value The validateOnly to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setValidateOnly(boolean value) {
 
       validateOnly_ = value;
@@ -1333,10 +1345,14 @@ public final class IngestAdEventsRequest extends com.google.protobuf.GeneratedMe
      * Optional. If true, the request is validated, but not executed.
      * </pre>
      *
-     * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool validate_only = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated google.ads.datamanager.v1.IngestAdEventsRequest.validate_only is deprecated. See
+     *     google/ads/datamanager/v1/ingestion_service.proto;l=278
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearValidateOnly() {
       bitField0_ = (bitField0_ & ~0x00000004);
       validateOnly_ = false;

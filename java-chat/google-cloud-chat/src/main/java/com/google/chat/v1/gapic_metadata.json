@@ -124,6 +124,9 @@
             "PositionSection": {
               "methods": ["positionSection", "positionSectionCallable"]
             },
+            "SearchMessages": {
+              "methods": ["searchMessages", "searchMessages", "searchMessages", "searchMessagesPagedCallable", "searchMessagesCallable"]
+            },
             "SearchSpaces": {
               "methods": ["searchSpaces", "searchSpaces", "searchSpacesPagedCallable", "searchSpacesCallable"]
             },
