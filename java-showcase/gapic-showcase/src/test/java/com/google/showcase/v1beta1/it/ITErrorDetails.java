@@ -53,6 +53,21 @@ import org.junit.jupiter.api.Test;
  */
 class ITErrorDetails {
 
+  private static final TypeRegistry SHOWCASE_ERROR_TYPE_REGISTRY =
+      TypeRegistry.newBuilder()
+          .add(ErrorInfo.getDescriptor())
+          .add(RetryInfo.getDescriptor())
+          .add(DebugInfo.getDescriptor())
+          .add(QuotaFailure.getDescriptor())
+          .add(PreconditionFailure.getDescriptor())
+          .add(BadRequest.getDescriptor())
+          .add(RequestInfo.getDescriptor())
+          .add(ResourceInfo.getDescriptor())
+          .add(Help.getDescriptor())
+          .add(LocalizedMessage.getDescriptor())
+          .add(PoetryError.getDescriptor())
+          .build();
+
   private static EchoClient grpcClient;
   private static EchoClient httpjsonClient;
 
@@ -158,8 +173,9 @@ class ITErrorDetails {
     assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.ABORTED);
     assertThat(exception.getErrorDetails()).isNotNull();
 
-    // Reuse Transport-neutral Validation
-    verifyErrorDetailsContent(exception.getErrorDetails(), customMessage);
+    PoetryError poetryError = exception.getErrorDetails().getMessage(PoetryError.class);
+    assertThat(poetryError).isNotNull();
+    assertThat(poetryError.getPoem()).isEqualTo(customMessage);
   }
 
   // Verifies error details are accessible in raw form over REST/HTTP and validates manually-parsed
@@ -174,7 +190,8 @@ class ITErrorDetails {
     // GAX HTTP/JSON parser limitation: Because the response contains a custom/unregistered type
     // (PoetryError) in the Any details list, HttpJsonErrorParser fails to parse the status payload,
     // resulting in empty ErrorDetails (where getErrorInfo() returns null).
-    // Note: Standard Google Cloud services follow AIP-193 error details (ErrorInfo, RetryInfo, etc.)
+    // Note: Standard Google Cloud services follow AIP-193 error details (ErrorInfo, RetryInfo,
+    // etc.)
     // and do not use custom error payload types like PoetryError.
     ErrorDetails errorDetails = exception.getErrorDetails();
     if (errorDetails != null) {
@@ -190,24 +207,12 @@ class ITErrorDetails {
     String errorJson = httpException.getContent();
     assertThat(errorJson).isNotNull();
 
-    TypeRegistry typeRegistry =
-        TypeRegistry.newBuilder()
-            .add(ErrorInfo.getDescriptor())
-            .add(RetryInfo.getDescriptor())
-            .add(DebugInfo.getDescriptor())
-            .add(QuotaFailure.getDescriptor())
-            .add(PreconditionFailure.getDescriptor())
-            .add(BadRequest.getDescriptor())
-            .add(RequestInfo.getDescriptor())
-            .add(ResourceInfo.getDescriptor())
-            .add(Help.getDescriptor())
-            .add(LocalizedMessage.getDescriptor())
-            .add(PoetryError.getDescriptor())
-            .build();
     JsonFormat.Parser jsonParser =
-        JsonFormat.parser().ignoringUnknownFields().usingTypeRegistry(typeRegistry);
+        JsonFormat.parser().ignoringUnknownFields().usingTypeRegistry(SHOWCASE_ERROR_TYPE_REGISTRY);
 
-    // Parse the AIP-193 "error" JSON object into a status builder
+    // Parse the raw HTTP error JSON payload formatted per AIP-193 HTTP/1.1 representation
+    // (rest_error.proto),
+    // where fields are wrapped under the top-level "error" JSON key.
     JsonObject root = JsonParser.parseString(errorJson).getAsJsonObject();
     JsonObject errorObj = root.getAsJsonObject("error");
     Status.Builder statusBuilder = Status.newBuilder();
@@ -220,5 +225,37 @@ class ITErrorDetails {
 
     // Reuse Transport-neutral Validation!
     verifyErrorDetailsContent(parsedDetails, "roses are red");
+  }
+
+  // Verifies custom Error Details messages reflect user-defined inputs via HTTP/JSON
+  @Test
+  void testHttpJson_failEchoWithDetails_customMessage() throws Exception {
+    String customMessage = "this is a custom message to echo back";
+    FailEchoWithDetailsRequest request =
+        FailEchoWithDetailsRequest.newBuilder().setMessage(customMessage).build();
+    ApiException exception =
+        assertThrows(ApiException.class, () -> httpjsonClient.failEchoWithDetails(request));
+
+    assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.ABORTED);
+    assertThat(exception.getCause()).isInstanceOf(HttpResponseException.class);
+
+    HttpResponseException httpException = (HttpResponseException) exception.getCause();
+    String errorJson = httpException.getContent();
+    assertThat(errorJson).isNotNull();
+
+    JsonFormat.Parser jsonParser =
+        JsonFormat.parser().ignoringUnknownFields().usingTypeRegistry(SHOWCASE_ERROR_TYPE_REGISTRY);
+
+    JsonObject root = JsonParser.parseString(errorJson).getAsJsonObject();
+    JsonObject errorObj = root.getAsJsonObject("error");
+    Status.Builder statusBuilder = Status.newBuilder();
+    jsonParser.merge(errorObj.toString(), statusBuilder);
+    Status status = statusBuilder.build();
+
+    ErrorDetails parsedDetails =
+        ErrorDetails.builder().setRawErrorMessages(status.getDetailsList()).build();
+    PoetryError poetryError = parsedDetails.getMessage(PoetryError.class);
+    assertThat(poetryError).isNotNull();
+    assertThat(poetryError.getPoem()).isEqualTo(customMessage);
   }
 }
