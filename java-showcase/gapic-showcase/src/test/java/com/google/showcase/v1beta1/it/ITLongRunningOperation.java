@@ -20,19 +20,19 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiException;
+import com.google.protobuf.Any;
 import com.google.protobuf.Timestamp;
+import com.google.rpc.Code;
+import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
+import com.google.showcase.v1beta1.PoetryError;
 import com.google.showcase.v1beta1.WaitMetadata;
 import com.google.showcase.v1beta1.WaitRequest;
 import com.google.showcase.v1beta1.WaitResponse;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
-import com.google.api.gax.rpc.ApiException;
-import com.google.rpc.Code;
-import com.google.rpc.Status;
-import com.google.protobuf.Any;
-import com.google.showcase.v1beta1.PoetryError;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 import org.threeten.bp.Duration;
@@ -212,14 +212,10 @@ class ITLongRunningOperation {
               .setMessage("The resource already exists")
               .addDetails(Any.pack(poetryError))
               .build();
-      WaitRequest waitRequest =
-          WaitRequest.newBuilder()
-              .setError(status)
-              .build();
+      WaitRequest waitRequest = WaitRequest.newBuilder().setError(status).build();
       OperationFuture<WaitResponse, WaitMetadata> operationFuture =
           grpcClient.waitOperationCallable().futureCall(waitRequest);
-      ExecutionException exception =
-          assertThrows(ExecutionException.class, operationFuture::get);
+      ExecutionException exception = assertThrows(ExecutionException.class, operationFuture::get);
       assertThat(exception.getCause()).isInstanceOf(ApiException.class);
       ApiException apiException = (ApiException) exception.getCause();
 
@@ -244,14 +240,10 @@ class ITLongRunningOperation {
               .setMessage("The resource already exists")
               .addDetails(Any.pack(poetryError))
               .build();
-      WaitRequest waitRequest =
-          WaitRequest.newBuilder()
-              .setError(status)
-              .build();
+      WaitRequest waitRequest = WaitRequest.newBuilder().setError(status).build();
       OperationFuture<WaitResponse, WaitMetadata> operationFuture =
           httpjsonClient.waitOperationCallable().futureCall(waitRequest);
-      ExecutionException exception =
-          assertThrows(ExecutionException.class, operationFuture::get);
+      ExecutionException exception = assertThrows(ExecutionException.class, operationFuture::get);
       assertThat(exception.getCause()).isInstanceOf(ApiException.class);
       ApiException apiException = (ApiException) exception.getCause();
 
