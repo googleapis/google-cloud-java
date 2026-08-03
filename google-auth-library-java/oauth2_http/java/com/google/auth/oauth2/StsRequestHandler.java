@@ -37,6 +37,7 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
+import com.google.api.client.http.HttpUnsuccessfulResponseHandler;
 import com.google.api.client.http.UrlEncodedContent;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
@@ -77,6 +78,7 @@ public final class StsRequestHandler {
 
   @Nullable private final HttpHeaders headers;
   @Nullable private final String internalOptions;
+  @Nullable private final HttpUnsuccessfulResponseHandler unsuccessfulResponseHandler;
 
   private StsRequestHandler(Builder builder) {
     this.tokenExchangeEndpoint = builder.tokenExchangeEndpoint;
@@ -84,6 +86,7 @@ public final class StsRequestHandler {
     this.httpRequestFactory = builder.httpRequestFactory;
     this.headers = builder.headers;
     this.internalOptions = builder.internalOptions;
+    this.unsuccessfulResponseHandler = builder.unsuccessfulResponseHandler;
   }
 
   /**
@@ -115,6 +118,9 @@ public final class StsRequestHandler {
     httpRequest.setParser(new JsonObjectParser(OAuth2Utils.JSON_FACTORY));
     if (headers != null) {
       httpRequest.setHeaders(headers);
+    }
+    if (unsuccessfulResponseHandler != null) {
+      httpRequest.setUnsuccessfulResponseHandler(unsuccessfulResponseHandler);
     }
 
     try {
@@ -213,6 +219,7 @@ public final class StsRequestHandler {
 
     @Nullable private HttpHeaders headers;
     @Nullable private String internalOptions;
+    @Nullable private HttpUnsuccessfulResponseHandler unsuccessfulResponseHandler;
 
     private Builder(
         String tokenExchangeEndpoint,
@@ -232,6 +239,13 @@ public final class StsRequestHandler {
     @CanIgnoreReturnValue
     public StsRequestHandler.Builder setInternalOptions(String internalOptions) {
       this.internalOptions = internalOptions;
+      return this;
+    }
+
+    @CanIgnoreReturnValue
+    public StsRequestHandler.Builder setUnsuccessfulResponseHandler(
+        HttpUnsuccessfulResponseHandler unsuccessfulResponseHandler) {
+      this.unsuccessfulResponseHandler = unsuccessfulResponseHandler;
       return this;
     }
 

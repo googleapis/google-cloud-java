@@ -34,10 +34,14 @@ package com.google.auth.oauth2;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.HttpUnsuccessfulResponseHandler;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Data;
 import com.google.auth.RequestMetadataCallback;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
@@ -565,6 +569,29 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       // Overwrite internal options. Let subclass handle setting options.
       requestHandler.setInternalOptions(stsTokenExchangeRequest.getInternalOptions());
     }
+
+    requestHandler.setUnsuccessfulResponseHandler(
+        new HttpUnsuccessfulResponseHandler() {
+          boolean retried = false;
+
+          @Override
+          public boolean handleResponse(
+              HttpRequest request, HttpResponse response, boolean supportsRetry)
+              throws IOException {
+            if (response.getStatusCode() != 401) {
+              return false;
+            }
+            if (!(transportFactory instanceof MtlsHttpTransportFactory)) {
+              return false;
+            }
+            if (retried) {
+              return false;
+            }
+            ((MtlsHttpTransportFactory) transportFactory).rebuildContext();
+            retried = true;
+            return true;
+          }
+        });
 
     StsTokenExchangeResponse response = requestHandler.build().exchangeToken();
     return response.getAccessToken();

@@ -31,13 +31,17 @@
 
 package com.google.auth.mtls;
 
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.core.InternalApi;
+import com.google.auth.http.ContextRebuildableTransportFactory;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.common.annotations.VisibleForTesting;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.util.Objects;
+import javax.net.ssl.SSLSocketFactory;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -51,12 +55,20 @@ import org.jspecify.annotations.Nullable;
  */
 @NullMarked
 @InternalApi
-public class MtlsHttpTransportFactory implements HttpTransportFactory {
-  @Nullable private final KeyStore mtlsKeyStore;
+public class MtlsHttpTransportFactory implements ContextRebuildableTransportFactory {
+  @Nullable private final MtlsProvider mtlsProvider;
+  @Nullable private volatile KeyStore mtlsKeyStore;
+  private final DelegatingSSLSocketFactory sslSocketFactory;
 
   /** Constructs a default factory for mTLS transports without a custom KeyStore. */
   public MtlsHttpTransportFactory() {
     this.mtlsKeyStore = null;
+    this.mtlsProvider = null;
+    try {
+      this.sslSocketFactory = new DelegatingSSLSocketFactory(buildSslSocketFactory(null));
+    } catch (GeneralSecurityException e) {
+      throw new RuntimeException("Failed to initialize mTLS transport.", e);
+    }
   }
 
   /**
@@ -68,17 +80,122 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory {
    */
   public MtlsHttpTransportFactory(KeyStore mtlsKeyStore) {
     this.mtlsKeyStore = Objects.requireNonNull(mtlsKeyStore, "mtlsKeyStore cannot be null");
+    this.mtlsProvider = null;
+    try {
+      this.sslSocketFactory = new DelegatingSSLSocketFactory(buildSslSocketFactory(mtlsKeyStore));
+    } catch (GeneralSecurityException e) {
+      throw new RuntimeException("Failed to initialize mTLS transport.", e);
+    }
+  }
+
+  /**
+   * Constructs a factory for mTLS transports using an {@link MtlsProvider}.
+   *
+   * @param mtlsProvider The {@link MtlsProvider} providing the client's KeyStore.
+   * @throws CertificateSourceUnavailableException if the certificate source is unavailable
+   * @throws IOException if a general I/O error occurs while creating the KeyStore
+   */
+  public MtlsHttpTransportFactory(MtlsProvider mtlsProvider)
+      throws CertificateSourceUnavailableException, IOException {
+    this.mtlsProvider = Objects.requireNonNull(mtlsProvider, "mtlsProvider cannot be null");
+    this.mtlsKeyStore = mtlsProvider.getKeyStore();
+    try {
+      this.sslSocketFactory =
+          new DelegatingSSLSocketFactory(buildSslSocketFactory(this.mtlsKeyStore));
+    } catch (GeneralSecurityException e) {
+      throw new RuntimeException("Failed to initialize mTLS transport.", e);
+    }
+  }
+
+  private static SSLSocketFactory buildSslSocketFactory(KeyStore keyStore)
+      throws GeneralSecurityException {
+    return new NetHttpTransport.Builder()
+        .trustCertificates(null, keyStore, "")
+        .getSslSocketFactory();
+  }
+
+  /**
+   * Reloads the KeyStore from the underlying MtlsProvider if configured and rebuilds the SSL socket
+   * factory.
+   *
+   * @throws IOException if an I/O error occurs while reloading the KeyStore
+   */
+  public synchronized void rebuildContext() throws IOException {
+    if (this.mtlsProvider != null) {
+      try {
+        this.mtlsKeyStore = this.mtlsProvider.getKeyStore();
+        this.sslSocketFactory.setDelegate(buildSslSocketFactory(this.mtlsKeyStore));
+      } catch (CertificateSourceUnavailableException e) {
+        throw new IOException("Failed to reload KeyStore from MtlsProvider.", e);
+      } catch (GeneralSecurityException e) {
+        throw new IOException("Failed to rebuild SSLSocketFactory.", e);
+      }
+    }
+  }
+
+  @VisibleForTesting
+  KeyStore getKeyStore() {
+    return mtlsKeyStore;
   }
 
   @Override
   public HttpTransport create() {
-    try {
-      // Build the mTLS transport using the provided KeyStore.
-      return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();
-    } catch (GeneralSecurityException e) {
-      // Wrap the checked exception in a RuntimeException because the HttpTransportFactory
-      // interface's create() method doesn't allow throwing checked exceptions.
-      throw new RuntimeException("Failed to initialize mTLS transport.", e);
+    return new NetHttpTransport.Builder().setSslSocketFactory(sslSocketFactory).build();
+  }
+
+  private static class DelegatingSSLSocketFactory extends SSLSocketFactory {
+    private volatile SSLSocketFactory delegate;
+
+    DelegatingSSLSocketFactory(SSLSocketFactory initialDelegate) {
+      this.delegate = initialDelegate;
+    }
+
+    void setDelegate(SSLSocketFactory newDelegate) {
+      this.delegate = newDelegate;
+    }
+
+    @Override
+    public String[] getDefaultCipherSuites() {
+      return delegate.getDefaultCipherSuites();
+    }
+
+    @Override
+    public String[] getSupportedCipherSuites() {
+      return delegate.getSupportedCipherSuites();
+    }
+
+    @Override
+    public Socket createSocket(Socket s, String host, int port, boolean autoClose)
+        throws IOException {
+      return delegate.createSocket(s, host, port, autoClose);
+    }
+
+    @Override
+    public Socket createSocket(String host, int port) throws IOException, UnknownHostException {
+      return delegate.createSocket(host, port);
+    }
+
+    @Override
+    public Socket createSocket(String host, int port, InetAddress localHost, int localPort)
+        throws IOException, UnknownHostException {
+      return delegate.createSocket(host, port, localHost, localPort);
+    }
+
+    @Override
+    public Socket createSocket(InetAddress host, int port) throws IOException {
+      return delegate.createSocket(host, port);
+    }
+
+    @Override
+    public Socket createSocket(
+        InetAddress address, int port, InetAddress localAddress, int localPort)
+        throws IOException {
+      return delegate.createSocket(address, port, localAddress, localPort);
+    }
+
+    @Override
+    public Socket createSocket() throws IOException {
+      return delegate.createSocket();
     }
   }
 }
