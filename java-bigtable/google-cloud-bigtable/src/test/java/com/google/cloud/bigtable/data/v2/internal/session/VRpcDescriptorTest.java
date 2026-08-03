@@ -203,8 +203,7 @@ class VRpcDescriptorTest {
         .setPredicateFilter(RowFilter.newBuilder().setBlockAllFilter(true))
         .addTrueMutations(sampleSetCell())
         .addFalseMutations(
-            Mutation.newBuilder()
-                .setDeleteFromRow(Mutation.DeleteFromRow.getDefaultInstance()))
+            Mutation.newBuilder().setDeleteFromRow(Mutation.DeleteFromRow.getDefaultInstance()))
         .build();
   }
 

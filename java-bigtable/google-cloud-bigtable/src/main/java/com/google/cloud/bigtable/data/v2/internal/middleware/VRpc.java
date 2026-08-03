@@ -315,6 +315,27 @@ public interface VRpc<ReqT, RespT> {
           true);
     }
 
+    /**
+     * A locally-synthesized OK terminal. Used when the retry layer determines that a stream is
+     * already fully satisfied (e.g. every requested row range has been delivered) and so should
+     * complete successfully instead of issuing another resume attempt.
+     *
+     * <p>{@code clusterInfo} carries the attribution from the frame that triggered this terminal
+     * (e.g. the error response that arrived once the scan was already complete), so metrics can
+     * still attribute the completion to the serving cluster. Backend latency is always zero: this
+     * terminal corresponds to no server round-trip that reports {@code SessionRequestStats}.
+     */
+    public static VRpcResult createLocalOk(@Nullable ClusterInformation clusterInfo) {
+      return new AutoValue_VRpc_VRpcResult(
+          State.SERVER_RESULT,
+          Status.OK,
+          ImmutableList.of(),
+          clusterInfo,
+          Duration.ZERO,
+          null,
+          false);
+    }
+
     /** Wrap an OK from the server. */
     public static VRpcResult createServerOk(VirtualRpcResponse r) {
       return new AutoValue_VRpc_VRpcResult(

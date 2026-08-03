@@ -40,10 +40,12 @@ import com.google.cloud.bigtable.data.v2.internal.channels.SingleChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry.RecorderRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricsImpl;
+import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.MethodInfo;
 import com.google.cloud.bigtable.data.v2.internal.middleware.RetryingVRpc;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
+import com.google.cloud.bigtable.data.v2.internal.middleware.VRpcResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.FakeDescriptor;
 import com.google.cloud.bigtable.data.v2.internal.session.HashedWheelTimer;
@@ -204,7 +206,11 @@ public class VRpcTracerTest {
     CompletableFuture<?> opFinished = new CompletableFuture<>();
     Stopwatch stopwatch = Stopwatch.createStarted();
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
+        new RetryingVRpc<>(
+            () -> session.newCall(FakeDescriptor.SCRIPTED),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            NoopMetrics.NoopDebugTracer.INSTANCE);
     UnaryResponseFuture<SessionFakeScriptedResponse> userFuture = new UnaryResponseFuture<>();
     MethodInfo methodInfo =
         MethodInfo.builder().setName("Bigtable.ReadRow").setStreaming(false).build();
@@ -263,7 +269,12 @@ public class VRpcTracerTest {
     AtomicLong maxAttemptLatency = new AtomicLong();
     DelayedVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> delayedVRpc =
         new DelayedVRpc<>(
-            () -> new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer));
+            () ->
+                new RetryingVRpc<>(
+                    () -> session.newCall(FakeDescriptor.SCRIPTED),
+                    timer,
+                    VRpcResumptionStrategy.noOp(),
+                    NoopMetrics.NoopDebugTracer.INSTANCE));
     UnaryResponseFuture<SessionFakeScriptedResponse> userFuture = new UnaryResponseFuture<>();
     MethodInfo methodInfo =
         MethodInfo.builder().setName("Bigtable.ReadRow").setStreaming(false).build();
@@ -321,7 +332,11 @@ public class VRpcTracerTest {
 
     // Test
     RetryingVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> retrying =
-        new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer);
+        new RetryingVRpc<>(
+            () -> session.newCall(FakeDescriptor.SCRIPTED),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            NoopMetrics.NoopDebugTracer.INSTANCE);
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     CompletableFuture<?> opFinished = new CompletableFuture<>();
     MethodInfo methodInfo =
@@ -372,7 +387,12 @@ public class VRpcTracerTest {
     // Test
     DelayedVRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> delayedVRpc =
         new DelayedVRpc<>(
-            () -> new RetryingVRpc<>(() -> session.newCall(FakeDescriptor.SCRIPTED), timer));
+            () ->
+                new RetryingVRpc<>(
+                    () -> session.newCall(FakeDescriptor.SCRIPTED),
+                    timer,
+                    VRpcResumptionStrategy.noOp(),
+                    NoopMetrics.NoopDebugTracer.INSTANCE));
     UnaryResponseFuture<SessionFakeScriptedResponse> f = new UnaryResponseFuture<>();
     CompletableFuture<?> attemptFinished = new CompletableFuture<>();
     MethodInfo methodInfo =

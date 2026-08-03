@@ -32,6 +32,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
 import com.google.cloud.bigtable.data.v2.internal.middleware.RetryingVRpc;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VOperationImpl;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcListener;
+import com.google.cloud.bigtable.data.v2.internal.middleware.VRpcResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolImpl;
@@ -53,8 +54,7 @@ class TableBase implements AutoCloseable {
   private final VRpcDescriptor<?, SessionReadRowRequest, SessionReadRowResponse> readRowDescriptor;
   private final VRpcDescriptor<?, SessionMutateRowRequest, SessionMutateRowResponse>
       mutateRowDescriptor;
-  private final VRpcDescriptor<
-          ?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
+  private final VRpcDescriptor<?, SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse>
       checkAndMutateRowDescriptor;
 
   static <ReqT extends Message> TableBase createAndStart(
@@ -141,7 +141,11 @@ class TableBase implements AutoCloseable {
   public void readRow(
       SessionReadRowRequest req, VRpcListener<SessionReadRowResponse> listener, Deadline deadline) {
     RetryingVRpc<SessionReadRowRequest, SessionReadRowResponse> retry =
-        new RetryingVRpc<>(() -> sessionPool.newCall(readRowDescriptor), timer);
+        new RetryingVRpc<>(
+            () -> sessionPool.newCall(readRowDescriptor),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            metrics.getDebugTagTracer());
     VRpcTracer tracer = metrics.newTableTracer(sessionPool.getInfo(), readRowDescriptor, deadline);
 
     new VOperationImpl<>(retry, Context.current(), userCallbackExecutor, tracer, deadline, true)
@@ -153,7 +157,11 @@ class TableBase implements AutoCloseable {
       VRpcListener<SessionMutateRowResponse> listener,
       Deadline deadline) {
     RetryingVRpc<SessionMutateRowRequest, SessionMutateRowResponse> retry =
-        new RetryingVRpc<>(() -> sessionPool.newCall(mutateRowDescriptor), timer);
+        new RetryingVRpc<>(
+            () -> sessionPool.newCall(mutateRowDescriptor),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            metrics.getDebugTagTracer());
     boolean idempotent = Util.isIdempotent(req.getMutationsList());
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), mutateRowDescriptor, deadline);
@@ -168,7 +176,11 @@ class TableBase implements AutoCloseable {
       VRpcListener<SessionCheckAndMutateRowResponse> listener,
       Deadline deadline) {
     RetryingVRpc<SessionCheckAndMutateRowRequest, SessionCheckAndMutateRowResponse> retry =
-        new RetryingVRpc<>(() -> sessionPool.newCall(checkAndMutateRowDescriptor), timer);
+        new RetryingVRpc<>(
+            () -> sessionPool.newCall(checkAndMutateRowDescriptor),
+            timer,
+            VRpcResumptionStrategy.noOp(),
+            metrics.getDebugTagTracer());
     VRpcTracer tracer =
         metrics.newTableTracer(sessionPool.getInfo(), checkAndMutateRowDescriptor, deadline);
     // CheckAndMutateRow is not idempotent and must never be retried.
