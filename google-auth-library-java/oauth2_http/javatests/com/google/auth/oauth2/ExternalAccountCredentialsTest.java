@@ -47,6 +47,7 @@ import com.google.api.client.json.JsonParser;
 import com.google.api.client.util.Clock;
 import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.oauth2.ExternalAccountCredentials.SubjectTokenTypes;
 import com.google.auth.oauth2.ExternalAccountCredentialsTest.TestExternalAccountCredentials.TestCredentialSource;
 import java.io.ByteArrayInputStream;
@@ -59,6 +60,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -920,6 +922,44 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
     Map<String, List<String>> headers =
         transportFactory.transport.getRequests().get(0).getHeaders();
     validateMetricsHeader(headers, "file", false, false);
+  }
+
+  @Test
+  void exchangeExternalCredentialForAccessToken_withMtls401_retriesAndRebuildsContext()
+      throws Exception {
+    java.security.KeyStore ks =
+        java.security.KeyStore.getInstance(java.security.KeyStore.getDefaultType());
+    ks.load(null, null);
+
+    AtomicInteger rebuildCount = new AtomicInteger(0);
+    MockExternalAccountCredentialsTransport mockTransport =
+        new MockExternalAccountCredentialsTransport();
+    mockTransport.addResponseStatusCodeSequence(401, 200);
+
+    MtlsHttpTransportFactory mtlsFactory =
+        new MtlsHttpTransportFactory(ks) {
+          @Override
+          public synchronized void rebuildContext() throws IOException {
+            rebuildCount.incrementAndGet();
+            super.rebuildContext();
+          }
+
+          @Override
+          public HttpTransport create() {
+            return mockTransport;
+          }
+        };
+
+    ExternalAccountCredentials credential =
+        ExternalAccountCredentials.fromJson(buildJsonIdentityPoolCredential(), mtlsFactory);
+    StsTokenExchangeRequest stsRequest =
+        StsTokenExchangeRequest.newBuilder("credential", "subjectTokenType").build();
+
+    AccessToken accessToken =
+        credential.exchangeExternalCredentialForAccessToken(stsRequest);
+
+    assertEquals(1, rebuildCount.get());
+    assertEquals(mockTransport.getAccessToken(), accessToken.getTokenValue());
   }
 
   @Test

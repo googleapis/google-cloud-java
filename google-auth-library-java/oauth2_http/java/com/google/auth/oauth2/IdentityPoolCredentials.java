@@ -100,8 +100,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       if (credentialSource.getCertificateConfig() != null) {
         try {
           X509Provider x509Provider = getX509Provider(builder, credentialSource);
-          KeyStore mtlsKeyStore = x509Provider.getKeyStore();
-          this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+          this.transportFactory = new MtlsHttpTransportFactory(x509Provider);
         } catch (Exception e) {
           throw new RuntimeException(
               "Failed to initialize mTLS transport for file credential source due to certificate error.",
@@ -227,8 +226,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       Builder builder, IdentityPoolCredentialSource credentialSource) throws IOException {
     // Configure the mTLS transport with the x509 keystore.
     X509Provider x509Provider = getX509Provider(builder, credentialSource);
-    KeyStore mtlsKeyStore = x509Provider.getKeyStore();
-    this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+    this.transportFactory = new MtlsHttpTransportFactory(x509Provider);
 
     // Initialize the subject token supplier with the certificate path.
     String explicitCertConfigPath = getExplicitCertConfigPath(credentialSource);
