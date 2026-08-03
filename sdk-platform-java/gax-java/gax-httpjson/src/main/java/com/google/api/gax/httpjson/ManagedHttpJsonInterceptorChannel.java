@@ -29,7 +29,9 @@
  */
 package com.google.api.gax.httpjson;
 
+import com.google.api.client.http.HttpTransport;
 import com.google.common.annotations.VisibleForTesting;
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import org.jspecify.annotations.NullMarked;
 
@@ -49,6 +51,23 @@ class ManagedHttpJsonInterceptorChannel extends ManagedHttpJsonChannel {
   @VisibleForTesting
   ManagedHttpJsonChannel getChannel() {
     return channel;
+  }
+
+  @Override
+  String getEndpoint() {
+    return channel.getEndpoint();
+  }
+
+  @Override
+  @VisibleForTesting
+  HttpTransport getHttpTransport() {
+    return channel.getHttpTransport();
+  }
+
+  @Override
+  @VisibleForTesting
+  Executor getExecutor() {
+    return channel.getExecutor();
   }
 
   @Override

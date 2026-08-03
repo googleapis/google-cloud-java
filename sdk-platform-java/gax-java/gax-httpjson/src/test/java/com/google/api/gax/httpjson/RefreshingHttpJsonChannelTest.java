@@ -74,6 +74,11 @@ class RefreshingHttpJsonChannelTest {
     private HttpJsonClientCall<?, ?> nextCall = null;
 
     @Override
+    String getEndpoint() {
+      return "https://fake.endpoint:443";
+    }
+
+    @Override
     public void shutdown() {
       isShutdown = true;
     }
@@ -308,5 +313,15 @@ class RefreshingHttpJsonChannelTest {
 
     channel.shutdown();
     assertTrue(channel.awaitTermination(0, TimeUnit.MILLISECONDS));
+  }
+
+  @Test
+  void testChannelDelegationMethods() {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+
+    assertEquals(firstChannel.getEndpoint(), channel.getEndpoint());
+    assertEquals(firstChannel.getHttpTransport(), channel.getHttpTransport());
+    assertEquals(firstChannel.getExecutor(), channel.getExecutor());
   }
 }

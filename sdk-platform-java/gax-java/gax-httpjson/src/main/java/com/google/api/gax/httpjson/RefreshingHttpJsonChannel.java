@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.httpjson;
 
+import com.google.api.client.http.HttpTransport;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.httpjson.ForwardingHttpJsonClientCall.SimpleForwardingHttpJsonClientCall;
 import com.google.api.gax.httpjson.ForwardingHttpJsonClientCallListener.SimpleForwardingHttpJsonClientCallListener;
@@ -266,6 +267,17 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   @Override
   public void close() {
     shutdown();
+  }
+
+  @Override
+  String getEndpoint() {
+    return activeEntry.get().channel.getEndpoint();
+  }
+
+  @Override
+  @VisibleForTesting
+  HttpTransport getHttpTransport() {
+    return activeEntry.get().channel.getHttpTransport();
   }
 
   /** Internal container to manage request reference-counting and graceful shutdown. */
