@@ -51,4 +51,60 @@ public interface IngestEventsResponseOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed row-level warnings with field paths.
+   * </pre>
+   *
+   * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+   */
+  java.util.List<com.google.ads.datamanager.v1.FieldWarning> getFieldWarningsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed row-level warnings with field paths.
+   * </pre>
+   *
+   * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+   */
+  com.google.ads.datamanager.v1.FieldWarning getFieldWarnings(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed row-level warnings with field paths.
+   * </pre>
+   *
+   * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+   */
+  int getFieldWarningsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed row-level warnings with field paths.
+   * </pre>
+   *
+   * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+   */
+  java.util.List<? extends com.google.ads.datamanager.v1.FieldWarningOrBuilder>
+      getFieldWarningsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Detailed row-level warnings with field paths.
+   * </pre>
+   *
+   * <code>repeated .google.ads.datamanager.v1.FieldWarning field_warnings = 2;</code>
+   */
+  com.google.ads.datamanager.v1.FieldWarningOrBuilder getFieldWarningsOrBuilder(int index);
 }

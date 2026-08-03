@@ -183,6 +183,65 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
         : options_;
   }
 
+  public static final int REQUEST_OPTIONS_FIELD_NUMBER = 3;
+  private com.google.firestore.v1.RequestOptions requestOptions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any additional options for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.v1.RequestOptions request_options = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the requestOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasRequestOptions() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any additional options for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.v1.RequestOptions request_options = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The requestOptions.
+   */
+  @java.lang.Override
+  public com.google.firestore.v1.RequestOptions getRequestOptions() {
+    return requestOptions_ == null
+        ? com.google.firestore.v1.RequestOptions.getDefaultInstance()
+        : requestOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Any additional options for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.v1.RequestOptions request_options = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.firestore.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder() {
+    return requestOptions_ == null
+        ? com.google.firestore.v1.RequestOptions.getDefaultInstance()
+        : requestOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -203,6 +262,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getOptions());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getRequestOptions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -217,6 +279,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getOptions());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getRequestOptions());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -239,6 +304,10 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
     if (hasOptions()) {
       if (!getOptions().equals(other.getOptions())) return false;
     }
+    if (hasRequestOptions() != other.hasRequestOptions()) return false;
+    if (hasRequestOptions()) {
+      if (!getRequestOptions().equals(other.getRequestOptions())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -255,6 +324,10 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
     if (hasOptions()) {
       hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getOptions().hashCode();
+    }
+    if (hasRequestOptions()) {
+      hash = (37 * hash) + REQUEST_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRequestOptions().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -399,6 +472,7 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetOptionsFieldBuilder();
+        internalGetRequestOptionsFieldBuilder();
       }
     }
 
@@ -411,6 +485,11 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
       if (optionsBuilder_ != null) {
         optionsBuilder_.dispose();
         optionsBuilder_ = null;
+      }
+      requestOptions_ = null;
+      if (requestOptionsBuilder_ != null) {
+        requestOptionsBuilder_.dispose();
+        requestOptionsBuilder_ = null;
       }
       return this;
     }
@@ -456,6 +535,11 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
         result.options_ = optionsBuilder_ == null ? options_ : optionsBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.requestOptions_ =
+            requestOptionsBuilder_ == null ? requestOptions_ : requestOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -479,6 +563,9 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
       }
       if (other.hasOptions()) {
         mergeOptions(other.getOptions());
+      }
+      if (other.hasRequestOptions()) {
+        mergeRequestOptions(other.getRequestOptions());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -518,6 +605,13 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetRequestOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -854,6 +948,219 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
         options_ = null;
       }
       return optionsBuilder_;
+    }
+
+    private com.google.firestore.v1.RequestOptions requestOptions_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.firestore.v1.RequestOptions,
+            com.google.firestore.v1.RequestOptions.Builder,
+            com.google.firestore.v1.RequestOptionsOrBuilder>
+        requestOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any additional options for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.RequestOptions request_options = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the requestOptions field is set.
+     */
+    public boolean hasRequestOptions() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any additional options for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.RequestOptions request_options = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The requestOptions.
+     */
+    public com.google.firestore.v1.RequestOptions getRequestOptions() {
+      if (requestOptionsBuilder_ == null) {
+        return requestOptions_ == null
+            ? com.google.firestore.v1.RequestOptions.getDefaultInstance()
+            : requestOptions_;
+      } else {
+        return requestOptionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any additional options for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.RequestOptions request_options = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRequestOptions(com.google.firestore.v1.RequestOptions value) {
+      if (requestOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestOptions_ = value;
+      } else {
+        requestOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any additional options for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.RequestOptions request_options = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRequestOptions(
+        com.google.firestore.v1.RequestOptions.Builder builderForValue) {
+      if (requestOptionsBuilder_ == null) {
+        requestOptions_ = builderForValue.build();
+      } else {
+        requestOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any additional options for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.RequestOptions request_options = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRequestOptions(com.google.firestore.v1.RequestOptions value) {
+      if (requestOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && requestOptions_ != null
+            && requestOptions_ != com.google.firestore.v1.RequestOptions.getDefaultInstance()) {
+          getRequestOptionsBuilder().mergeFrom(value);
+        } else {
+          requestOptions_ = value;
+        }
+      } else {
+        requestOptionsBuilder_.mergeFrom(value);
+      }
+      if (requestOptions_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any additional options for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.RequestOptions request_options = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRequestOptions() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      requestOptions_ = null;
+      if (requestOptionsBuilder_ != null) {
+        requestOptionsBuilder_.dispose();
+        requestOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any additional options for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.RequestOptions request_options = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.firestore.v1.RequestOptions.Builder getRequestOptionsBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetRequestOptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any additional options for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.RequestOptions request_options = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.firestore.v1.RequestOptionsOrBuilder getRequestOptionsOrBuilder() {
+      if (requestOptionsBuilder_ != null) {
+        return requestOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return requestOptions_ == null
+            ? com.google.firestore.v1.RequestOptions.getDefaultInstance()
+            : requestOptions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Any additional options for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.v1.RequestOptions request_options = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.firestore.v1.RequestOptions,
+            com.google.firestore.v1.RequestOptions.Builder,
+            com.google.firestore.v1.RequestOptionsOrBuilder>
+        internalGetRequestOptionsFieldBuilder() {
+      if (requestOptionsBuilder_ == null) {
+        requestOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.firestore.v1.RequestOptions,
+                com.google.firestore.v1.RequestOptions.Builder,
+                com.google.firestore.v1.RequestOptionsOrBuilder>(
+                getRequestOptions(), getParentForChildren(), isClean());
+        requestOptions_ = null;
+      }
+      return requestOptionsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.firestore.v1.BeginTransactionRequest)
