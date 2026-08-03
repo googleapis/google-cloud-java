@@ -61,54 +61,59 @@ import org.slf4j.LoggerFactory;
 @InternalApi
 public final class AgentIdentityUtils {
 
-  /** Javadoc. */
+  /** Logger for this utility class. */
   private static final Logger LOGGER = LoggerFactory.getLogger(AgentIdentityUtils.class);
 
   // Environment variables
-  /** Javadoc. */
+  /** Environment variable for overriding the certificate configuration path. */
   static final String GOOGLE_API_CERTIFICATE_CONFIG = "GOOGLE_API_CERTIFICATE_CONFIG";
 
-  /** Javadoc. */
+  /** Environment variable for disabling token binding. */
   static final String GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES =
       "GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES";
 
-  /** Javadoc. */
+  /** Allowed SPIFFE trust domain patterns for agent identity. */
   private static final List<Pattern> AGENT_IDENTITY_SPIFFE_PATTERNS =
       ImmutableList.of(
           Pattern.compile("^agents\\.global\\.org-\\d+\\.system\\.id\\.goog$"),
           Pattern.compile("^agents\\.global\\.proj-\\d+\\.system\\.id\\.goog$"));
 
-  /** Javadoc. */
+  /** Subject Alternative Name (SAN) type for URIs. */
   private static final int SAN_URI_TYPE = 6;
 
-  /** Javadoc. */
+  /** Prefix for SPIFFE URIs. */
   private static final String SPIFFE_SCHEME_PREFIX = "spiffe://";
 
-  /** Javadoc. */
+  /** Default well-known directory for spiffe credentials. */
   private static String wellKnownDir = "/var/run/secrets/workload-spiffe-credentials/";
 
+  /**
+   * Sets the well known directory for testing.
+   *
+   * @param dir the directory path
+   */
   @VisibleForTesting
   static void setWellKnownDir(final String dir) {
     wellKnownDir = dir;
   }
 
   // Polling configuration
-  /** Javadoc. */
+  /** Number of retries when checking for matching certificate and key. */
   private static final int CERT_KEY_MATCH_RETRIES = 3;
 
-  /** Javadoc. */
+  /** Backoff interval for certificate matching retries. */
   private static final long CERT_KEY_MATCH_RETRY_INTERVAL_MS = 100;
 
-  /** Javadoc. */
+  /** Number of fast polling cycles to use when fetching certs. */
   private static final int FAST_POLL_CYCLES = 50;
 
-  /** Javadoc. */
+  /** Interval for fast polling cycles. */
   private static final long FAST_POLL_INTERVAL_MS = 100; // 0.1 seconds
 
-  /** Javadoc. */
+  /** Interval for slow polling cycles. */
   private static final long SLOW_POLL_INTERVAL_MS = 500; // 0.5 seconds
 
-  /** Javadoc. */
+  /** Total timeout across polling routines. */
   private static final long TOTAL_TIMEOUT_MS = 30000; // 30 seconds
 
   private static final List<Long> POLLING_INTERVALS;
@@ -127,22 +132,32 @@ public final class AgentIdentityUtils {
   }
 
   public interface EnvReader {
-    /** Javadoc. */
+    /**
+     * Gets an environment variable by name.
+     *
+     * @param name the environment variable name
+     * @return the value of the environment variable
+     */
     String getEnv(String name);
   }
 
-  /** Javadoc. */
+  /** Reader for environment variables. */
   private static EnvReader envReader = System::getenv;
 
   @VisibleForTesting
   interface TimeService {
     long currentTimeMillis();
 
-    /** Javadoc. */
+    /**
+     * Suspends execution for the specified duration.
+     *
+     * @param millis the duration in milliseconds
+     * @throws InterruptedException if any thread has interrupted the current thread
+     */
     void sleep(final long millis) throws InterruptedException;
   }
 
-  /** Javadoc. */
+  /** Service providing standard time and sleep operations. */
   private static TimeService timeService =
       new TimeService() {
         @Override
@@ -159,10 +174,10 @@ public final class AgentIdentityUtils {
   private AgentIdentityUtils() {}
 
   static class CertInfo {
-    /** Javadoc. */
+    /** The parsed X.509 certificate. */
     private final X509Certificate certificate;
 
-    /** Javadoc. */
+    /** The raw content of the certificate. */
     private final String certContent;
 
     CertInfo(final X509Certificate certificate, final String certContent) {
@@ -170,22 +185,30 @@ public final class AgentIdentityUtils {
       this.certContent = certContent;
     }
 
-    /** Javadoc. */
+    /**
+     * Returns the certificate.
+     *
+     * @return the parsed X.509 certificate
+     */
     public X509Certificate getCertificate() {
       return certificate;
     }
 
-    /** Javadoc. */
+    /**
+     * Returns the internal certificate content string.
+     *
+     * @return the raw content of the certificate
+     */
     public String getCertContent() {
       return certContent;
     }
   }
 
   static class ResolvedCertAndKeyPaths {
-    /** Javadoc. */
+    /** The resolved path to the certificate. */
     private final String certPath;
 
-    /** Javadoc. */
+    /** The resolved path to the private key. */
     private final String keyPath;
 
     ResolvedCertAndKeyPaths(final String certPath, final String keyPath) {
@@ -193,12 +216,20 @@ public final class AgentIdentityUtils {
       this.keyPath = keyPath;
     }
 
-    /** Javadoc. */
+    /**
+     * Returns the resolved path to the certificate.
+     *
+     * @return the actual path for the certificate on disk
+     */
     public String getCertPath() {
       return certPath;
     }
 
-    /** Javadoc. */
+    /**
+     * Returns the resolved path to the private key.
+     *
+     * @return the actual path for the private key on disk
+     */
     public String getKeyPath() {
       return keyPath;
     }
