@@ -38,9 +38,7 @@ public class RequestOptionsTest {
   @Test
   public void testBuilder() {
     RequestOptions options =
-        RequestOptions.newBuilder()
-            .setRequestTags(Arrays.asList("tag1", "tag2", "tag3"))
-            .build();
+        RequestOptions.newBuilder().setRequestTags(Arrays.asList("tag1", "tag2", "tag3")).build();
 
     assertThat(options.getRequestTags()).containsExactly("tag1", "tag2", "tag3").inOrder();
     assertThat(options.toPb())

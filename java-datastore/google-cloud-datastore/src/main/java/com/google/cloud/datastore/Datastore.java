@@ -197,8 +197,6 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    */
   List<Key> allocateId(IncompleteKey... keys);
 
-
-
   /**
    * Returns a list of keys using the allocated ids with specified {@link
    * DatastoreExecutionOptions}.
@@ -378,8 +376,6 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
 
   @Override
   List<Entity> put(FullEntity<?>... entities);
-
-
 
   /**
    * {@inheritDoc} with specified {@link DatastoreExecutionOptions}.
@@ -580,7 +576,8 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   <T> QueryResults<T> run(Query<T> query, ExplainOptions explainOptions, ReadOption... options);
 
   /**
-   * Submits a {@link Query} with specified {@link DatastoreExecutionOptions} and returns its result.
+   * Submits a {@link Query} with specified {@link DatastoreExecutionOptions} and returns its
+   * result.
    */
   @BetaApi
   <T> QueryResults<T> run(Query<T> query, DatastoreExecutionOptions executionOptions);
@@ -658,8 +655,8 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
       AggregationQuery query, ExplainOptions explainOptions, ReadOption... options);
 
   /**
-   * Submits an {@link AggregationQuery} with specified {@link DatastoreExecutionOptions} and returns
-   * {@link AggregationResults}.
+   * Submits an {@link AggregationQuery} with specified {@link DatastoreExecutionOptions} and
+   * returns {@link AggregationResults}.
    */
   @BetaApi
   AggregationResults runAggregation(

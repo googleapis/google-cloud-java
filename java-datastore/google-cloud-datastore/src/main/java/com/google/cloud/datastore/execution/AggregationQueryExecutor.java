@@ -49,8 +49,8 @@ public class AggregationQueryExecutor
    *
    * @param datastoreRpc the {@link DatastoreRpc} used to run aggregation query requests against the
    *     Datastore service.
-   * @param datastoreOptions the {@link DatastoreOptions} containing configuration such as project ID
-   *     and database ID.
+   * @param datastoreOptions the {@link DatastoreOptions} containing configuration such as project
+   *     ID and database ID.
    */
   public AggregationQueryExecutor(DatastoreRpc datastoreRpc, DatastoreOptions datastoreOptions) {
     this.datastoreRpc = datastoreRpc;
@@ -74,7 +74,8 @@ public class AggregationQueryExecutor
         query,
         DatastoreExecutionOptions.newBuilder()
             .setExplainOptions(explainOptions)
-            .setReadOptions(readOptions != null ? Arrays.asList(readOptions) : Collections.emptyList())
+            .setReadOptions(
+                readOptions != null ? Arrays.asList(readOptions) : Collections.emptyList())
             .build());
   }
 
@@ -83,8 +84,8 @@ public class AggregationQueryExecutor
    * DatastoreExecutionOptions}.
    *
    * @param query the {@link AggregationQuery} to execute.
-   * @param executionOptions the {@link DatastoreExecutionOptions} containing options such as explain
-   *     options, request options, and read options.
+   * @param executionOptions the {@link DatastoreExecutionOptions} containing options such as
+   *     explain options, request options, and read options.
    * @return the {@link AggregationResults} produced by executing the query.
    */
   public AggregationResults execute(
@@ -99,7 +100,9 @@ public class AggregationQueryExecutor
   private RunAggregationQueryRequest getRunAggregationQueryRequest(
       AggregationQuery query, DatastoreExecutionOptions executionOptions) {
     DatastoreExecutionOptions effectiveOptions =
-        executionOptions != null ? executionOptions : DatastoreExecutionOptions.getDefaultInstance();
+        executionOptions != null
+            ? executionOptions
+            : DatastoreExecutionOptions.getDefaultInstance();
     QueryConfig<AggregationQuery> queryConfig =
         QueryConfig.createWithDatastoreExecutionOptions(query, effectiveOptions);
     return this.protoPreparer.prepare(queryConfig);

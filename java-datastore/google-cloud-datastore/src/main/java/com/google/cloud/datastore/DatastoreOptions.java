@@ -273,7 +273,6 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       return this;
     }
 
-
     /**
      * Sets the {@link DatastoreOpenTelemetryOptions} to be used for this Datastore instance.
      *
@@ -397,8 +396,8 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   /**
    * Returns the request tags to be associated with all requests sent by this client.
    *
-   * <p>These instance-level tags are merged with any request-level options or tags passed via {@link
-   * DatastoreExecutionOptions} before sending a request.
+   * <p>These instance-level tags are merged with any request-level options or tags passed via
+   * {@link DatastoreExecutionOptions} before sending a request.
    *
    * @return the request tags
    */

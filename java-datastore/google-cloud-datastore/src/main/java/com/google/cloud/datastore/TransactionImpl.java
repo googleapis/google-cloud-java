@@ -48,6 +48,8 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
 
   @Nonnull private final TraceUtil traceUtil;
 
+  private final DatastoreExecutionOptions executionOptions;
+
   static class ResponseImpl implements Transaction.Response {
 
     private final CommitResponse response;
@@ -60,8 +62,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
 
     @Override
     public List<Key> getGeneratedKeys() {
-      Iterator<MutationResult> results =
-          response.getMutationResultsList().iterator();
+      Iterator<MutationResult> results = response.getMutationResultsList().iterator();
       List<Key> generated = new ArrayList<>(numAutoAllocatedIds);
       for (int i = 0; i < numAutoAllocatedIds; i++) {
         generated.add(Key.fromPb(results.next().getKey()));
@@ -84,8 +85,9 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
       DatastoreExecutionOptions executionOptions) {
     super("transaction");
     this.datastore = datastore;
-    BeginTransactionRequest.Builder requestPb =
-        BeginTransactionRequest.newBuilder();
+    this.executionOptions =
+        executionOptions != null ? executionOptions : DatastoreExecutionOptions.getDefaultInstance();
+    BeginTransactionRequest.Builder requestPb = BeginTransactionRequest.newBuilder();
 
     requestPb.setProjectId(this.datastore.getOptions().getProjectId());
     requestPb.setDatabaseId(this.datastore.getOptions().getDatabaseId());
@@ -93,10 +95,8 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     if (options != null) {
       requestPb.setTransactionOptions(options);
     }
-    RequestOptions requestOptions =
-        executionOptions != null ? executionOptions.getRequestOptions() : null;
-    requestPb.setRequestOptions(
-        createRequestOptions(datastore.getOptions(), requestOptions));
+    RequestOptions requestOptions = this.executionOptions.getRequestOptions();
+    requestPb.setRequestOptions(createRequestOptions(datastore.getOptions(), requestOptions));
 
     transactionId = datastore.requestTransactionId(requestPb);
     this.readOptionProtoPreparer = new ReadOptionProtoPreparer();
@@ -155,15 +155,13 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   public Transaction.Response commit(DatastoreExecutionOptions executionOptions) {
     validateActive();
     List<Mutation> mutationsPb = toMutationPbList();
-    CommitRequest.Builder requestPb =
-        CommitRequest.newBuilder();
+    CommitRequest.Builder requestPb = CommitRequest.newBuilder();
     requestPb.setMode(CommitRequest.Mode.TRANSACTIONAL);
     requestPb.setTransaction(transactionId);
     requestPb.addAllMutations(mutationsPb);
     requestPb.setProjectId(datastore.getOptions().getProjectId());
     requestPb.setDatabaseId(datastore.getOptions().getDatabaseId());
-    requestPb.setRequestOptions(
-        createRequestOptions(datastore.getOptions(), executionOptions));
+    requestPb.setRequestOptions(createRequestOptions(datastore.getOptions(), executionOptions));
     CommitResponse responsePb = datastore.commit(requestPb.build());
     deactivate();
     return new ResponseImpl(responsePb, toAddAutoId().size());
@@ -171,7 +169,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
 
   @Override
   public Transaction.Response commit() {
-    return commit(DatastoreExecutionOptions.getDefaultInstance());
+    return commit(this.executionOptions);
   }
 
   @Override
@@ -188,7 +186,7 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
 
   @Override
   public void rollback() {
-    rollback(DatastoreExecutionOptions.getDefaultInstance());
+    rollback(this.executionOptions);
   }
 
   @Override

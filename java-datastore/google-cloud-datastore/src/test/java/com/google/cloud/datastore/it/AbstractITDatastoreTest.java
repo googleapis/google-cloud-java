@@ -160,9 +160,7 @@ public abstract class AbstractITDatastoreTest {
   private static final DatastoreExecutionOptions EXECUTION_OPTIONS_WITH_REQUEST_TAGS =
       DatastoreExecutionOptions.newBuilder()
           .setRequestOptions(
-              RequestOptions.newBuilder()
-                  .setRequestTags(ImmutableList.of("request-tag"))
-                  .build())
+              RequestOptions.newBuilder().setRequestTags(ImmutableList.of("request-tag")).build())
           .build();
 
   @Rule public Timeout globalTimeout = Timeout.seconds(100);
@@ -2165,189 +2163,154 @@ public abstract class AbstractITDatastoreTest {
 
   @Test
   public void testAddWithInstanceAndRequestTags() throws Exception {
-    try (Datastore taggedDatastore =
-        options.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build().getService()) {
-      Key key = taggedDatastore.newKeyFactory().setKind(KIND1).newKey("add_tagged_key");
-      Entity entity = Entity.newBuilder(key).set("prop", "val").build();
-      try {
-        Entity added = taggedDatastore.add(entity, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
-        assertEquals(entity, added);
-        assertEquals(entity, taggedDatastore.get(key));
-      } finally {
-        taggedDatastore.delete(key);
-      }
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("add_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("prop", "val").build();
+    try {
+      Entity added = datastore.add(entity, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertEquals(entity, added);
+      assertEquals(entity, datastore.get(key));
+    } finally {
+      datastore.delete(key);
     }
   }
 
   @Test
   public void testPutWithInstanceAndRequestTags() throws Exception {
-    try (Datastore taggedDatastore =
-        options.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build().getService()) {
-      Key key = taggedDatastore.newKeyFactory().setKind(KIND1).newKey("put_tagged_key");
-      Entity entity = Entity.newBuilder(key).set("prop", "val").build();
-      try {
-        List<Entity> putEntities =
-            taggedDatastore.put(
-                Collections.singletonList(entity), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
-        assertEquals(Collections.singletonList(entity), putEntities);
-        assertEquals(entity, taggedDatastore.get(key));
-      } finally {
-        taggedDatastore.delete(key);
-      }
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("put_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("prop", "val").build();
+    try {
+      List<Entity> putEntities =
+          datastore.put(Collections.singletonList(entity), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertEquals(Collections.singletonList(entity), putEntities);
+      assertEquals(entity, datastore.get(key));
+    } finally {
+      datastore.delete(key);
     }
   }
 
   @Test
   public void testUpdateWithInstanceAndRequestTags() throws Exception {
-    try (Datastore taggedDatastore =
-        options.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build().getService()) {
-      Key key = taggedDatastore.newKeyFactory().setKind(KIND1).newKey("update_tagged_key");
-      Entity entity = Entity.newBuilder(key).set("prop", "val1").build();
-      taggedDatastore.put(entity);
-      try {
-        Entity updated = Entity.newBuilder(entity).set("prop", "val2").build();
-        taggedDatastore.update(
-            Collections.singletonList(updated), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
-        assertEquals(updated, taggedDatastore.get(key));
-      } finally {
-        taggedDatastore.delete(key);
-      }
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("update_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("prop", "val1").build();
+    datastore.put(entity);
+    try {
+      Entity updated = Entity.newBuilder(entity).set("prop", "val2").build();
+      datastore.update(Collections.singletonList(updated), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertEquals(updated, datastore.get(key));
+    } finally {
+      datastore.delete(key);
     }
   }
 
   @Test
   public void testGetAndFetchWithInstanceAndRequestTags() throws Exception {
-    try (Datastore taggedDatastore =
-        options.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build().getService()) {
-      Key key = taggedDatastore.newKeyFactory().setKind(KIND1).newKey("get_tagged_key");
-      Entity entity = Entity.newBuilder(key).set("prop", "val").build();
-      taggedDatastore.put(entity);
-      try {
-        Entity fetchedSingle = taggedDatastore.get(key, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
-        assertEquals(entity, fetchedSingle);
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("get_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("prop", "val").build();
+    datastore.put(entity);
+    try {
+      Entity fetchedSingle = datastore.get(key, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertEquals(entity, fetchedSingle);
 
-        List<Entity> fetchedList =
-            taggedDatastore.fetch(
-                Collections.singletonList(key), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
-        assertEquals(Collections.singletonList(entity), fetchedList);
-      } finally {
-        taggedDatastore.delete(key);
-      }
+      List<Entity> fetchedList =
+          datastore.fetch(Collections.singletonList(key), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertEquals(Collections.singletonList(entity), fetchedList);
+    } finally {
+      datastore.delete(key);
     }
   }
 
   @Test
   public void testDeleteWithInstanceAndRequestTags() throws Exception {
-    try (Datastore taggedDatastore =
-        options.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build().getService()) {
-      Key key = taggedDatastore.newKeyFactory().setKind(KIND1).newKey("delete_tagged_key");
-      Entity entity = Entity.newBuilder(key).set("prop", "val").build();
-      taggedDatastore.put(entity);
-      assertNotNull(taggedDatastore.get(key));
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("delete_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("prop", "val").build();
+    datastore.put(entity);
+    assertNotNull(datastore.get(key));
 
-      taggedDatastore.delete(
-          Collections.singletonList(key), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
-      assertNull(taggedDatastore.get(key));
-    }
+    datastore.delete(Collections.singletonList(key), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+    assertNull(datastore.get(key));
   }
 
   @Test
   public void testRunQueryWithInstanceAndRequestTags() throws Exception {
-    try (Datastore taggedDatastore =
-        options.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build().getService()) {
-      Key key = taggedDatastore.newKeyFactory().setKind(KIND1).newKey("query_tagged_key");
-      Entity entity = Entity.newBuilder(key).set("tag_prop", "tag_query_val").build();
-      taggedDatastore.put(entity);
-      try {
-        EntityQuery query =
-            Query.newEntityQueryBuilder()
-                .setKind(KIND1)
-                .setFilter(PropertyFilter.eq("tag_prop", "tag_query_val"))
-                .build();
-        QueryResults<Entity> results =
-            taggedDatastore.run(query, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
-        assertTrue(results.hasNext());
-        assertEquals(entity, results.next());
-      } finally {
-        taggedDatastore.delete(key);
-      }
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("query_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("tag_prop", "tag_query_val").build();
+    datastore.put(entity);
+    try {
+      EntityQuery query =
+          Query.newEntityQueryBuilder()
+              .setKind(KIND1)
+              .setFilter(PropertyFilter.eq("tag_prop", "tag_query_val"))
+              .build();
+      QueryResults<Entity> results = datastore.run(query, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertTrue(results.hasNext());
+      assertEquals(entity, results.next());
+    } finally {
+      datastore.delete(key);
     }
   }
 
   @Test
   public void testRunAggregationQueryWithInstanceAndRequestTags() throws Exception {
-    try (Datastore taggedDatastore =
-        options.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build().getService()) {
-      Key key = taggedDatastore.newKeyFactory().setKind(KIND1).newKey("agg_tagged_key");
-      Entity entity = Entity.newBuilder(key).set("agg_prop", "agg_val").build();
-      taggedDatastore.put(entity);
-      try {
-        EntityQuery query =
-            Query.newEntityQueryBuilder()
-                .setKind(KIND1)
-                .setFilter(PropertyFilter.eq("agg_prop", "agg_val"))
-                .build();
-        AggregationQuery aggQuery =
-            Query.newAggregationQueryBuilder()
-                .over(query)
-                .addAggregation(count().as("total"))
-                .build();
-        AggregationResults results =
-            taggedDatastore.runAggregation(aggQuery, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
-        assertThat(getOnlyElement(results).getLong("total")).isEqualTo(1L);
-      } finally {
-        taggedDatastore.delete(key);
-      }
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("agg_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("agg_prop", "agg_val").build();
+    datastore.put(entity);
+    try {
+      EntityQuery query =
+          Query.newEntityQueryBuilder()
+              .setKind(KIND1)
+              .setFilter(PropertyFilter.eq("agg_prop", "agg_val"))
+              .build();
+      AggregationQuery aggQuery =
+          Query.newAggregationQueryBuilder().over(query).addAggregation(count().as("total")).build();
+      AggregationResults results =
+          datastore.runAggregation(aggQuery, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertThat(getOnlyElement(results).getLong("total")).isEqualTo(1L);
+    } finally {
+      datastore.delete(key);
     }
   }
 
   @Test
   public void testAllocateIdWithInstanceAndRequestTags() throws Exception {
-    try (Datastore taggedDatastore =
-        options.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build().getService()) {
-      IncompleteKey incompleteKey =
-          taggedDatastore.newKeyFactory().setKind(KIND1).newKey();
-      List<Key> allocatedKeys =
-          taggedDatastore.allocateId(
-              Collections.singletonList(incompleteKey), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
-      assertNotNull(allocatedKeys);
-      assertEquals(1, allocatedKeys.size());
-      assertEquals(KIND1, allocatedKeys.get(0).getKind());
-    }
+    IncompleteKey incompleteKey = datastore.newKeyFactory().setKind(KIND1).newKey();
+    List<Key> allocatedKeys =
+        datastore.allocateId(
+            Collections.singletonList(incompleteKey), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+    assertNotNull(allocatedKeys);
+    assertEquals(1, allocatedKeys.size());
+    assertEquals(KIND1, allocatedKeys.get(0).getKind());
   }
 
   @Test
   public void testReserveIdsWithInstanceAndRequestTags() throws Exception {
-    try (Datastore taggedDatastore =
-        options.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build().getService()) {
-      Key key = taggedDatastore.newKeyFactory().setKind(KIND1).newKey(100000L);
-      List<Key> reservedKeys =
-          taggedDatastore.reserveIds(
-              Collections.singletonList(key), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
-      assertNotNull(reservedKeys);
-    }
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey(100000L);
+    List<Key> reservedKeys =
+        datastore.reserveIds(Collections.singletonList(key), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+    assertNotNull(reservedKeys);
   }
 
   @Test
   public void testTransactionWithInstanceAndRequestTags() throws Exception {
-    try (Datastore taggedDatastore =
-        options.toBuilder().setRequestTags(ImmutableList.of("instance-tag")).build().getService()) {
-      Key key = taggedDatastore.newKeyFactory().setKind(KIND1).newKey("tx_tagged_key");
-      Entity entity = Entity.newBuilder(key).set("prop", "tx_val").build();
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("tx_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("prop", "tx_val").build();
+    datastore.put(entity);
 
-      Transaction tx = taggedDatastore.newTransaction(EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+    try {
+      Transaction tx = datastore.newTransaction(EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
       try {
-        tx.put(entity);
         Entity fetched = tx.get(key);
         assertEquals(entity, fetched);
+        Entity updated = Entity.newBuilder(entity).set("prop", "tx_val2").build();
+        tx.put(updated);
         tx.commit();
-        assertEquals(entity, taggedDatastore.get(key));
+        assertEquals(updated, datastore.get(key));
       } finally {
         if (tx.isActive()) {
           tx.rollback();
         }
-        taggedDatastore.delete(key);
       }
+    } finally {
+      datastore.delete(key);
     }
   }
 }

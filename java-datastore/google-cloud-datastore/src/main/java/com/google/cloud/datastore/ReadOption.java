@@ -192,10 +192,7 @@ public abstract class ReadOption implements Serializable {
               ? executionOptions.getRequestOptions().toPb()
               : RequestOptions.getDefaultInstance();
       return new QueryConfig<>(
-          query,
-          explainOptions,
-          executionOptions.getReadOptions(),
-          requestOptions);
+          query, explainOptions, executionOptions.getReadOptions(), requestOptions);
     }
   }
 }

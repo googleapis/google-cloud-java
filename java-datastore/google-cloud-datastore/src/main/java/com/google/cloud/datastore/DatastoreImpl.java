@@ -112,8 +112,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   private static final ExceptionHandler TRANSACTION_OPERATION_EXCEPTION_HANDLER =
       TransactionOperationExceptionHandler.build();
 
-  private final TraceUtil otelTraceUtil =
-      getOptions().getTraceUtil();
+  private final TraceUtil otelTraceUtil = getOptions().getTraceUtil();
   private final DatastoreMetricsRecorder metricsRecorder;
   private final OpenTelemetry builtInOpenTelemetry;
 
@@ -180,8 +179,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     private final TraceUtil.Span parentSpan;
 
     TracedReadWriteTransactionCallable(
-        ReadWriteTransactionCallable<T> delegate,
-        @Nullable TraceUtil.Span parentSpan) {
+        ReadWriteTransactionCallable<T> delegate, @Nullable TraceUtil.Span parentSpan) {
       this.delegate = delegate;
       this.parentSpan = parentSpan;
     }
@@ -473,8 +471,6 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     return DatastoreHelper.allocateId(this, key);
   }
 
-
-
   private boolean verifyIncompleteKeyType(Iterable<IncompleteKey> keys) {
     for (IncompleteKey key : keys) {
       if (key instanceof Key) {
@@ -491,7 +487,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   @BetaApi
-  public List<Key> allocateId(List<IncompleteKey> keys, DatastoreExecutionOptions executionOptions) {
+  public List<Key> allocateId(
+      List<IncompleteKey> keys, DatastoreExecutionOptions executionOptions) {
     Preconditions.checkArgument(
         verifyIncompleteKeyType(keys), "keys must be IncompleteKey instances");
     if (keys.isEmpty()) {
@@ -503,8 +500,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     }
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
-    requestPb.setRequestOptions(
-        createRequestOptions(getOptions(), executionOptions));
+    requestPb.setRequestOptions(createRequestOptions(getOptions(), executionOptions));
     AllocateIdsResponse responsePb = allocateIds(requestPb.build());
     ImmutableList.Builder<Key> keyList = ImmutableList.builder();
     for (com.google.datastore.v1.Key keyPb : responsePb.getKeysList()) {
@@ -548,7 +544,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @SuppressWarnings("unchecked")
   @Override
   @BetaApi
-  public List<Entity> add(List<FullEntity<?>> entities, DatastoreExecutionOptions executionOptions) {
+  public List<Entity> add(
+      List<FullEntity<?>> entities, DatastoreExecutionOptions executionOptions) {
     if (entities.isEmpty()) {
       return Collections.emptyList();
     }
@@ -664,8 +661,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     }
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
-    requestPb.setRequestOptions(
-        createRequestOptions(getOptions(), executionOptions));
+    requestPb.setRequestOptions(createRequestOptions(getOptions(), executionOptions));
     return new ResultsIterator(requestPb);
   }
 
@@ -746,8 +742,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     }
     requestPb.setProjectId(getOptions().getProjectId());
     requestPb.setDatabaseId(getOptions().getDatabaseId());
-    requestPb.setRequestOptions(
-        createRequestOptions(getOptions(), executionOptions));
+    requestPb.setRequestOptions(createRequestOptions(getOptions(), executionOptions));
     ReserveIdsResponse responsePb = reserveIds(requestPb.build());
     ImmutableList.Builder<Key> keyList = ImmutableList.builder();
     if (responsePb.isInitialized()) {
@@ -800,7 +795,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
   @SuppressWarnings("unchecked")
   @Override
   @BetaApi
-  public List<Entity> put(List<FullEntity<?>> entities, DatastoreExecutionOptions executionOptions) {
+  public List<Entity> put(
+      List<FullEntity<?>> entities, DatastoreExecutionOptions executionOptions) {
     if (entities.isEmpty()) {
       return Collections.emptyList();
     }

@@ -38,8 +38,8 @@ public final class RequestOptionsHelper {
    * @param datastoreOptions the global Datastore options containing instance-level tags
    * @param executionOptions the execution options containing request-level options (must not be
    *     null)
-   * @return a new merged {@link RequestOptions} proto containing both request-level options/tags and
-   *     instance-level tags
+   * @return a new merged {@link RequestOptions} proto containing both request-level options/tags
+   *     and instance-level tags
    */
   public static RequestOptions createRequestOptions(
       DatastoreOptions datastoreOptions, @Nonnull DatastoreExecutionOptions executionOptions) {
@@ -53,8 +53,8 @@ public final class RequestOptionsHelper {
    *
    * @param datastoreOptions the global Datastore options containing instance-level tags
    * @param requestOptions the individual request-level options, or {@code null}
-   * @return a new merged {@link RequestOptions} proto containing both request-level options/tags and
-   *     instance-level tags
+   * @return a new merged {@link RequestOptions} proto containing both request-level options/tags
+   *     and instance-level tags
    */
   public static RequestOptions createRequestOptions(
       DatastoreOptions datastoreOptions,
@@ -73,8 +73,8 @@ public final class RequestOptionsHelper {
    *
    * @param datastoreOptions the global Datastore options containing instance-level tags
    * @param requestOptions the individual request-level options, or {@code null}
-   * @return a new merged {@link RequestOptions} proto containing both request-level options/tags and
-   *     instance-level tags
+   * @return a new merged {@link RequestOptions} proto containing both request-level options/tags
+   *     and instance-level tags
    */
   public static RequestOptions createRequestOptions(
       DatastoreOptions datastoreOptions, RequestOptions requestOptions) {

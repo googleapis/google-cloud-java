@@ -109,16 +109,17 @@ public class DatastoreExecutionOptionsTest {
   @Test
   public void testCreateRequestOptionsWithDatastoreExecutionOptions() {
     DatastoreOptions datastoreOptions =
-        DatastoreOptions.newBuilder().setRequestTags(ImmutableList.of("instance-tag")).build();
+        DatastoreOptions.newBuilder()
+            .setProjectId("test-project")
+            .setRequestTags(ImmutableList.of("instance-tag"))
+            .build();
     RequestOptions reqOpts =
         RequestOptions.newBuilder().setRequestTags(ImmutableList.of("request-tag")).build();
     DatastoreExecutionOptions execOptions =
         DatastoreExecutionOptions.newBuilder().setRequestOptions(reqOpts).build();
 
-    com.google.datastore.v1.RequestOptions merged =
-        createRequestOptions(datastoreOptions, execOptions);
-
-    assertThat(merged.getRequestTagsList()).containsExactly("request-tag", "instance-tag");
+    assertThat(createRequestOptions(datastoreOptions, execOptions).getRequestTagsList())
+        .containsExactly("request-tag", "instance-tag");
   }
 
   @Test
