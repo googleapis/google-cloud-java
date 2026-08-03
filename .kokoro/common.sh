@@ -278,7 +278,28 @@ function generate_modified_modules_list() {
       modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
       for module in $modules; do
         if [[ " ${maven_modules[*]} " =~ " ${module} " ]]; then
-          modified_module_list+=("${module}")
+          local duplicate=false
+          for item in "${modified_module_list[@]}"; do
+            if [[ "${item}" == "${module}" ]]; then
+              duplicate=true
+              break
+            fi
+          done
+          if [[ "${duplicate}" == "false" ]]; then
+            modified_module_list+=("${module}")
+          fi
+          if [[ "${module}" == "java-bigquerystorage" ]]; then
+            local has_bigquery=false
+            for item in "${modified_module_list[@]}"; do
+              if [[ "${item}" == "java-bigquery" ]]; then
+                has_bigquery=true
+                break
+              fi
+            done
+            if [[ "${has_bigquery}" == "false" ]]; then
+              modified_module_list+=("java-bigquery")
+            fi
+          fi
         fi
       done
     else
