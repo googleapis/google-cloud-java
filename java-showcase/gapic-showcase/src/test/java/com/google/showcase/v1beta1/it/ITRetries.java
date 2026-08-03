@@ -539,10 +539,15 @@ class ITRetries {
     List<SequenceReport.Attempt> attempts = report.getAttemptsList();
     assertThat(attempts).hasSize(expectedCodes.length);
     for (int i = 0; i < expectedCodes.length; i++) {
+      // expectedCodes[i].getNumber() maps the com.google.rpc.Code enum to its standard gRPC integer
+      // value (1-15)
       assertThat(attempts.get(i).getStatus().getCode()).isEqualTo(expectedCodes[i].getNumber());
       if (i == 0) {
+        // Initial attempt executes immediately (0ms or more delay)
         assertThat(Durations.toMillis(attempts.get(i).getAttemptDelay())).isAtLeast(0L);
       } else {
+        // Retry attempts check for at least 1ms delay (isAtLeast(1L)) rather than checking strict
+        // backoff thresholds to prevent test flakiness across execution environments.
         assertThat(Durations.toMillis(attempts.get(i).getAttemptDelay())).isAtLeast(1L);
       }
     }
