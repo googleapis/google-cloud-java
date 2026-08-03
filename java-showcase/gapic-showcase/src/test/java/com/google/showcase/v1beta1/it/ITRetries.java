@@ -161,23 +161,9 @@ class ITRetries {
       retryClient.attemptSequence(
           AttemptSequenceRequest.newBuilder().setName(createdSequence.getName()).build());
 
-      SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 4);
-
       // Assert
-      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
-      assertThat(attempts).hasSize(4);
-
-      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
-
-      assertThat(attempts.get(1).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(1).getAttemptDelay())).isGreaterThan(0L);
-
-      assertThat(attempts.get(2).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(2).getAttemptDelay())).isGreaterThan(0L);
-
-      assertThat(attempts.get(3).getStatus().getCode()).isEqualTo(Code.OK.getNumber());
-      assertThat(Durations.toMillis(attempts.get(3).getAttemptDelay())).isGreaterThan(0L);
+      SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 4);
+      assertAttemptSequence(report, Code.UNAVAILABLE, Code.UNAVAILABLE, Code.UNAVAILABLE, Code.OK);
     }
   }
 
@@ -198,23 +184,9 @@ class ITRetries {
       retryClient.attemptSequence(
           AttemptSequenceRequest.newBuilder().setName(createdSequence.getName()).build());
 
-      SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 4);
-
       // Assert
-      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
-      assertThat(attempts).hasSize(4);
-
-      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
-
-      assertThat(attempts.get(1).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(1).getAttemptDelay())).isGreaterThan(0L);
-
-      assertThat(attempts.get(2).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(2).getAttemptDelay())).isGreaterThan(0L);
-
-      assertThat(attempts.get(3).getStatus().getCode()).isEqualTo(Code.OK.getNumber());
-      assertThat(Durations.toMillis(attempts.get(3).getAttemptDelay())).isGreaterThan(0L);
+      SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 4);
+      assertAttemptSequence(report, Code.UNAVAILABLE, Code.UNAVAILABLE, Code.UNAVAILABLE, Code.OK);
     }
   }
 
@@ -245,10 +217,7 @@ class ITRetries {
       assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.UNAVAILABLE);
 
       SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 1);
-      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
-      assertThat(attempts).hasSize(1);
-      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
+      assertAttemptSequence(report, Code.UNAVAILABLE);
     }
   }
 
@@ -279,10 +248,7 @@ class ITRetries {
       assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.UNAVAILABLE);
 
       SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 1);
-      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
-      assertThat(attempts).hasSize(1);
-      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
+      assertAttemptSequence(report, Code.UNAVAILABLE);
     }
   }
 
@@ -313,11 +279,7 @@ class ITRetries {
       assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
 
       SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 1);
-      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
-      assertThat(attempts).hasSize(1);
-      assertThat(attempts.get(0).getStatus().getCode())
-          .isEqualTo(Code.INVALID_ARGUMENT.getNumber());
-      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
+      assertAttemptSequence(report, Code.INVALID_ARGUMENT);
     }
   }
 
@@ -348,11 +310,7 @@ class ITRetries {
       assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
 
       SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 1);
-      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
-      assertThat(attempts).hasSize(1);
-      assertThat(attempts.get(0).getStatus().getCode())
-          .isEqualTo(Code.INVALID_ARGUMENT.getNumber());
-      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
+      assertAttemptSequence(report, Code.INVALID_ARGUMENT);
     }
   }
 
@@ -377,25 +335,10 @@ class ITRetries {
       retryClient.attemptSequence(
           AttemptSequenceRequest.newBuilder().setName(createdSequence.getName()).build());
 
-      SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 4);
-
       // Assert
-      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
-      assertThat(attempts).hasSize(4);
-
-      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
-
-      assertThat(attempts.get(1).getStatus().getCode())
-          .isEqualTo(Code.RESOURCE_EXHAUSTED.getNumber());
-      assertThat(Durations.toMillis(attempts.get(1).getAttemptDelay())).isGreaterThan(0L);
-
-      assertThat(attempts.get(2).getStatus().getCode())
-          .isEqualTo(Code.DEADLINE_EXCEEDED.getNumber());
-      assertThat(Durations.toMillis(attempts.get(2).getAttemptDelay())).isGreaterThan(0L);
-
-      assertThat(attempts.get(3).getStatus().getCode()).isEqualTo(Code.OK.getNumber());
-      assertThat(Durations.toMillis(attempts.get(3).getAttemptDelay())).isGreaterThan(0L);
+      SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 4);
+      assertAttemptSequence(
+          report, Code.UNAVAILABLE, Code.RESOURCE_EXHAUSTED, Code.DEADLINE_EXCEEDED, Code.OK);
     }
   }
 
@@ -420,25 +363,10 @@ class ITRetries {
       retryClient.attemptSequence(
           AttemptSequenceRequest.newBuilder().setName(createdSequence.getName()).build());
 
-      SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 4);
-
       // Assert
-      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
-      assertThat(attempts).hasSize(4);
-
-      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
-
-      assertThat(attempts.get(1).getStatus().getCode())
-          .isEqualTo(Code.RESOURCE_EXHAUSTED.getNumber());
-      assertThat(Durations.toMillis(attempts.get(1).getAttemptDelay())).isGreaterThan(0L);
-
-      assertThat(attempts.get(2).getStatus().getCode())
-          .isEqualTo(Code.DEADLINE_EXCEEDED.getNumber());
-      assertThat(Durations.toMillis(attempts.get(2).getAttemptDelay())).isGreaterThan(0L);
-
-      assertThat(attempts.get(3).getStatus().getCode()).isEqualTo(Code.OK.getNumber());
-      assertThat(Durations.toMillis(attempts.get(3).getAttemptDelay())).isGreaterThan(0L);
+      SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 4);
+      assertAttemptSequence(
+          report, Code.UNAVAILABLE, Code.RESOURCE_EXHAUSTED, Code.DEADLINE_EXCEEDED, Code.OK);
     }
   }
 
@@ -561,14 +489,7 @@ class ITRetries {
       assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
 
       SequenceReport report = getSequenceReport(grpcClient, createdSequence.getName(), 2);
-      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
-      assertThat(attempts).hasSize(2);
-
-      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
-
-      assertThat(attempts.get(1).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(1).getAttemptDelay())).isGreaterThan(0L);
+      assertAttemptSequence(report, Code.UNAVAILABLE, Code.UNAVAILABLE);
     }
   }
 
@@ -599,14 +520,7 @@ class ITRetries {
       assertThat(exception.getStatusCode().getCode()).isEqualTo(StatusCode.Code.DEADLINE_EXCEEDED);
 
       SequenceReport report = getSequenceReport(httpjsonClient, createdSequence.getName(), 2);
-      List<SequenceReport.Attempt> attempts = report.getAttemptsList();
-      assertThat(attempts).hasSize(2);
-
-      assertThat(attempts.get(0).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(0).getAttemptDelay())).isAtLeast(0L);
-
-      assertThat(attempts.get(1).getStatus().getCode()).isEqualTo(Code.UNAVAILABLE.getNumber());
-      assertThat(Durations.toMillis(attempts.get(1).getAttemptDelay())).isGreaterThan(0L);
+      assertAttemptSequence(report, Code.UNAVAILABLE, Code.UNAVAILABLE);
     }
   }
 
@@ -619,6 +533,19 @@ class ITRetries {
               .build());
     }
     return builder.build();
+  }
+
+  private static void assertAttemptSequence(SequenceReport report, Code... expectedCodes) {
+    List<SequenceReport.Attempt> attempts = report.getAttemptsList();
+    assertThat(attempts).hasSize(expectedCodes.length);
+    for (int i = 0; i < expectedCodes.length; i++) {
+      assertThat(attempts.get(i).getStatus().getCode()).isEqualTo(expectedCodes[i].getNumber());
+      if (i == 0) {
+        assertThat(Durations.toMillis(attempts.get(i).getAttemptDelay())).isAtLeast(0L);
+      } else {
+        assertThat(Durations.toMillis(attempts.get(i).getAttemptDelay())).isAtLeast(1L);
+      }
+    }
   }
 
   private SequenceReport getSequenceReport(
