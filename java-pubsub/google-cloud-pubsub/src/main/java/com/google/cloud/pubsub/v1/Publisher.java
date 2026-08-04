@@ -806,7 +806,7 @@ public class Publisher implements PublisherInterface {
           loggingUtil.logPublisher(
               LoggingUtil.SubSystem.PUBLISH_HEDGED,
               Level.FINER,
-              "Hedging bypassed due to lack of tokens in the bucket",
+              "Hedging rate limited due to lack of tokens in the bucket",
               coordinator.getBatch().getMessageWrappers().get(0));
           coordinator.isInQueue.set(false);
           coordinator.checkCompletionOnQueueExit();
