@@ -109,4 +109,16 @@ public class HedgeSettingsTest {
     assertThrows(
         IllegalArgumentException.class, () -> HedgeSettings.newBuilder().setRefillRatio(0.21f));
   }
+
+  @Test
+  public void testRefillTooSmallThrows() {
+    assertThrows(
+        IllegalArgumentException.class, () -> HedgeSettings.newBuilder().setRefillRatio(0.0009f));
+  }
+
+  @Test
+  public void testMinimumRefillValid() {
+    HedgeSettings settings = HedgeSettings.newBuilder().setRefillRatio(0.001f).build();
+    assertEquals(0.001f, settings.getRefillRatio(), 0.0001f);
+  }
 }

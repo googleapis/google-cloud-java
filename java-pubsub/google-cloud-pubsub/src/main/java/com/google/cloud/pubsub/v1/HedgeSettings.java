@@ -30,6 +30,12 @@ public final class HedgeSettings {
   /** Default refill rate (tokens per successful request). */
   private static final float DEFAULT_REFILL_RATIO = 0.1f;
 
+  /** Minimum refill rate. */
+  private static final float MIN_REFILL_RATIO = 0.001f;
+
+  /** Maximum refill rate. */
+  private static final float MAX_REFILL_RATIO = 0.2f;
+
   /** Hedging delay. */
   private final Duration hedgeDelay;
 
@@ -118,14 +124,17 @@ public final class HedgeSettings {
     /**
      * Allows the token bucket refill rate to be configurable.
      *
-     * @param refill the refill rate (tokens per successful request), must be 0 < RefillRatio <=
-     *     0.2.
+     * @param refillRatio the refill rate (tokens per successful request), must be 0.001 <=
+     *     RefillRatio <= 0.2.
      * @return this builder.
      */
     public Builder setRefillRatio(final float refillRatio) {
-      if (refillRatio <= 0.0f || refillRatio > 0.2f) {
+      if (refillRatio < MIN_REFILL_RATIO || refillRatio > MAX_REFILL_RATIO) {
         throw new IllegalArgumentException(
-            "refillRatio must be greater than 0.0 and less than or equal to 0.2");
+            "refillRatio must be greater than or equal to "
+                + MIN_REFILL_RATIO
+                + " and less than or equal to "
+                + MAX_REFILL_RATIO);
       }
       this.refillRatio = refillRatio;
       return this;

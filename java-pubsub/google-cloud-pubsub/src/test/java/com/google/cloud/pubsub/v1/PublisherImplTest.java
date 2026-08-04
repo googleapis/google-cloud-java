@@ -1476,6 +1476,21 @@ public class PublisherImplTest {
   }
 
   @Test
+  public void testTokenBucketRefillRate() throws Exception {
+    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.125f, 10);
+    // Starts at 0
+    assertThat(publisher.getHedgeTokenBalance()).isEqualTo(0.0f);
+
+    // Warm up 1 message (should succeed and refill by 0.125)
+    testPublisherServiceImpl.setAutoPublishResponse(true);
+    sendTestMessage(publisher, "refill-warmup").get();
+
+    // Balance should be exactly 0.125
+    assertThat(publisher.getHedgeTokenBalance()).isWithin(0.0001f).of(0.125f);
+    shutdownTestPublisher(publisher);
+  }
+
+  @Test
   public void testHedgingNotTriggeredIfFast() throws Exception {
     Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100));
 

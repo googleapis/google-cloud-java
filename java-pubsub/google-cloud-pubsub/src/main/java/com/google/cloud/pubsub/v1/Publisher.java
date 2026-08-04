@@ -47,6 +47,7 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.pubsub.v1.stub.GrpcPublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -151,10 +152,10 @@ public class Publisher implements PublisherInterface {
 
   /**
    * Scale factor to represent decimal token values (e.g. 0.1 refill ratio) as integers inside the
-   * AtomicInteger token bucket. A scale of 100 allows representing decimal ratios down to 0.01
-   * (1%). For example, 1.0 logical token is represented as 100.
+   * AtomicInteger token bucket. A scale of 1000 allows representing decimal ratios down to 0.001.
+   * For example, 1.0 logical token is represented as 1000.
    */
-  private static final int HEDGE_TOKEN_SCALE = 100;
+  private static final int HEDGE_TOKEN_SCALE = 1000;
 
   private final AtomicInteger hedgeTokenBucket = new AtomicInteger();
   private int scaledMaxHedgeTokens;
@@ -303,6 +304,7 @@ public class Publisher implements PublisherInterface {
     return hedgeSettings;
   }
 
+  @VisibleForTesting
   Float getHedgeTokenBalance() {
     if (hedgeSettings == null) {
       return null;
