@@ -45,16 +45,13 @@ class MtlsHttpTransportFactoryTest {
 
   @Test
   void constructor_nullKeyStore_throwsNullPointerException() {
-    assertThrows(
-        NullPointerException.class,
-        () -> new MtlsHttpTransportFactory((KeyStore) null));
+    assertThrows(NullPointerException.class, () -> new MtlsHttpTransportFactory((KeyStore) null));
   }
 
   @Test
   void constructor_nullMtlsProvider_throwsNullPointerException() {
     assertThrows(
-        NullPointerException.class,
-        () -> new MtlsHttpTransportFactory((MtlsProvider) null));
+        NullPointerException.class, () -> new MtlsHttpTransportFactory((MtlsProvider) null));
   }
 
   @Test
@@ -70,8 +67,7 @@ class MtlsHttpTransportFactoryTest {
   }
 
   @Test
-  void constructor_withMtlsProvider_createsTransportAndRebuildsContext()
-      throws Exception {
+  void constructor_withMtlsProvider_createsTransportAndRebuildsContext() throws Exception {
     AtomicInteger callCount = new AtomicInteger(0);
     KeyStore ks1 = KeyStore.getInstance(KeyStore.getDefaultType());
     ks1.load(null, null);
@@ -81,8 +77,7 @@ class MtlsHttpTransportFactoryTest {
     MtlsProvider provider =
         new MtlsProvider() {
           @Override
-          public KeyStore getKeyStore()
-              throws CertificateSourceUnavailableException, IOException {
+          public KeyStore getKeyStore() throws CertificateSourceUnavailableException, IOException {
             int count = callCount.incrementAndGet();
             return count == 1 ? ks1 : ks2;
           }

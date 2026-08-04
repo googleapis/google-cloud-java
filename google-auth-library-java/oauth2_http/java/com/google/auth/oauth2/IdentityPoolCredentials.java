@@ -39,7 +39,6 @@ import com.google.auth.oauth2.IdentityPoolCredentialSource.IdentityPoolCredentia
 import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
-import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;

@@ -31,11 +31,9 @@
 
 package com.google.auth.mtls;
 
-import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.ContextRebuildableTransportFactory;
-import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -191,8 +189,7 @@ public class MtlsHttpTransportFactory implements ContextRebuildableTransportFact
 
     @Override
     public Socket createSocket(
-        InetAddress address, int port, InetAddress localAddress, int localPort)
-        throws IOException {
+        InetAddress address, int port, InetAddress localAddress, int localPort) throws IOException {
       return delegate.createSocket(address, port, localAddress, localPort);
     }
 
