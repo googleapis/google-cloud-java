@@ -31,11 +31,9 @@
 
 package com.google.auth.mtls;
 
-import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.ContextRebuildableTransportFactory;
-import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -45,8 +43,8 @@ import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.util.Objects;
 import javax.net.ssl.SSLSocketFactory;
-import org.jspecify.annotations.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * An HttpTransportFactory that creates {@link NetHttpTransport} instances configured for mTLS
@@ -180,8 +178,7 @@ public class MtlsHttpTransportFactory implements ContextRebuildableTransportFact
 
     @Override
     public Socket createSocket(
-        InetAddress address, int port, InetAddress localAddress, int localPort)
-        throws IOException {
+        InetAddress address, int port, InetAddress localAddress, int localPort) throws IOException {
       return delegate.createSocket(address, port, localAddress, localPort);
     }
 

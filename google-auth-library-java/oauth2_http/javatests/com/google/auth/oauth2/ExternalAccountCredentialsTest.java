@@ -48,7 +48,6 @@ import com.google.api.client.util.Clock;
 import com.google.auth.TestUtils;
 import com.google.auth.http.ContextRebuildableTransportFactory;
 import com.google.auth.http.HttpTransportFactory;
-import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.oauth2.ExternalAccountCredentials.SubjectTokenTypes;
 import com.google.auth.oauth2.ExternalAccountCredentialsTest.TestExternalAccountCredentials.TestCredentialSource;
 import java.io.ByteArrayInputStream;
@@ -951,13 +950,11 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
         };
 
     ExternalAccountCredentials credential =
-        ExternalAccountCredentials.fromJson(
-            buildJsonIdentityPoolCredential(), rebuildableFactory);
+        ExternalAccountCredentials.fromJson(buildJsonIdentityPoolCredential(), rebuildableFactory);
     StsTokenExchangeRequest stsRequest =
         StsTokenExchangeRequest.newBuilder("credential", "subjectTokenType").build();
 
-    AccessToken accessToken =
-        credential.exchangeExternalCredentialForAccessToken(stsRequest);
+    AccessToken accessToken = credential.exchangeExternalCredentialForAccessToken(stsRequest);
 
     assertEquals(1, rebuildCount.get());
     assertEquals(mockTransport.getAccessToken(), accessToken.getTokenValue());
