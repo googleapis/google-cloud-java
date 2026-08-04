@@ -36,6 +36,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
 import com.google.cloud.bigquery.jdbc.BigQueryConnection;
 import com.google.cloud.bigquery.jdbc.BigQueryDriver;
 import com.google.cloud.bigquery.jdbc.DataSource;
+import com.google.cloud.bigquery.jdbc.OpenTelemetryJulHandler;
 import com.google.common.collect.ImmutableMap;
 import java.io.File;
 import java.io.IOException;
@@ -2808,8 +2809,7 @@ public class ITBigQueryJDBCTest extends ITBase {
       java.util.logging.Logger bqLogger =
           java.util.logging.Logger.getLogger("com.google.cloud.bigquery");
       for (java.util.logging.Handler h : bqLogger.getHandlers()) {
-        if (h instanceof java.util.logging.FileHandler
-            || h.getClass().getName().endsWith("PerConnectionFileHandler")) {
+        if (!(h instanceof OpenTelemetryJulHandler)) {
           h.close();
           bqLogger.removeHandler(h);
         }
