@@ -62,8 +62,15 @@ public class SessionImpl implements Session, VRpcSessionApi {
   private static final Logger DEFAULT_LOGGER = Logger.getLogger(SessionImpl.class.getName());
   private Logger logger = DEFAULT_LOGGER;
 
+  // Default byte budget the streaming-response assembly layer may prefetch ahead of the caller
+  // before the server has advertised its own value via SessionParametersResponse.
+  private static final int DEFAULT_SOFTMAX_STREAMING_PREFETCH_BUFFER_SIZE = 1024 * 1024;
+
   private static final SessionParametersResponse DEFAULT_SESSION_PARAMS =
-      SessionParametersResponse.newBuilder().setKeepAlive(Durations.fromMillis(100)).build();
+      SessionParametersResponse.newBuilder()
+          .setKeepAlive(Durations.fromMillis(100))
+          .setSoftmaxStreamingPrefetchBufferSize(DEFAULT_SOFTMAX_STREAMING_PREFETCH_BUFFER_SIZE)
+          .build();
 
   static final Duration HEARTBEAT_CHECK_INTERVAL =
       Duration.ofMillis(Durations.toMillis(DEFAULT_SESSION_PARAMS.getKeepAlive()));
@@ -134,7 +141,12 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
   private VRpcResult currentCancel = null;
 
-  private SessionParametersResponse sessionParameters = DEFAULT_SESSION_PARAMS;
+  // Volatile because it is written on sessionSyncContext (handleSessionParamsResponse) but its
+  // softmax prefetch budget is read live off that context via getSoftmaxStreamingPrefetchBufferSize
+  // (the streaming-response assembly layer sizes prefetch on its own executor), so a mid-session
+  // update must be visible across threads. The value is an immutable proto, so a volatile read of
+  // the reference is a consistent snapshot.
+  private volatile SessionParametersResponse sessionParameters = DEFAULT_SESSION_PARAMS;
 
   private Duration heartbeatInterval =
       Duration.ofMillis(Durations.toMillis(sessionParameters.getKeepAlive()));
@@ -273,6 +285,16 @@ public class SessionImpl implements Session, VRpcSessionApi {
   @Override
   public Instant getNextHeartbeat() {
     return nextHeartbeat;
+  }
+
+  /**
+   * The byte budget the streaming-response assembly layer may prefetch ahead of the caller. Seeded
+   * from {@link #DEFAULT_SOFTMAX_STREAMING_PREFETCH_BUFFER_SIZE} and updated whenever the server
+   * advertises a new value via {@link SessionParametersResponse}. Read live (off the session sync
+   * context) so a mid-session update takes effect on the next prefetch decision.
+   */
+  public int getSoftmaxStreamingPrefetchBufferSize() {
+    return sessionParameters.getSoftmaxStreamingPrefetchBufferSize();
   }
 
   @Override
