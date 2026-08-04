@@ -46,6 +46,7 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonParser;
 import com.google.api.client.util.Clock;
 import com.google.auth.TestUtils;
+import com.google.auth.http.ContextRebuildableTransportFactory;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.oauth2.ExternalAccountCredentials.SubjectTokenTypes;
@@ -936,12 +937,11 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
         new MockExternalAccountCredentialsTransport();
     mockTransport.addResponseStatusCodeSequence(401, 200);
 
-    MtlsHttpTransportFactory mtlsFactory =
-        new MtlsHttpTransportFactory(ks) {
+    ContextRebuildableTransportFactory rebuildableFactory =
+        new ContextRebuildableTransportFactory() {
           @Override
           public synchronized void rebuildContext() throws IOException {
             rebuildCount.incrementAndGet();
-            super.rebuildContext();
           }
 
           @Override
@@ -951,7 +951,8 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
         };
 
     ExternalAccountCredentials credential =
-        ExternalAccountCredentials.fromJson(buildJsonIdentityPoolCredential(), mtlsFactory);
+        ExternalAccountCredentials.fromJson(
+            buildJsonIdentityPoolCredential(), rebuildableFactory);
     StsTokenExchangeRequest stsRequest =
         StsTokenExchangeRequest.newBuilder("credential", "subjectTokenType").build();
 

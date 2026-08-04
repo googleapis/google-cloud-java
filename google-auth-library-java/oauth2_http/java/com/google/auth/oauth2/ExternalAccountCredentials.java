@@ -40,8 +40,8 @@ import com.google.api.client.http.HttpUnsuccessfulResponseHandler;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Data;
 import com.google.auth.RequestMetadataCallback;
+import com.google.auth.http.ContextRebuildableTransportFactory;
 import com.google.auth.http.HttpTransportFactory;
-import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
@@ -581,13 +581,13 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
             if (response.getStatusCode() != 401) {
               return false;
             }
-            if (!(transportFactory instanceof MtlsHttpTransportFactory)) {
+            if (!(transportFactory instanceof ContextRebuildableTransportFactory)) {
               return false;
             }
             if (retried) {
               return false;
             }
-            ((MtlsHttpTransportFactory) transportFactory).rebuildContext();
+            ((ContextRebuildableTransportFactory) transportFactory).rebuildContext();
             retried = true;
             return true;
           }
