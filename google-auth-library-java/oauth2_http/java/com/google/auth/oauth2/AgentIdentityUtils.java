@@ -72,6 +72,9 @@ public final class AgentIdentityUtils {
       "GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES";
 
   /** Javadoc. */
+  static final String GOOGLE_API_USE_CLIENT_CERTIFICATE = "GOOGLE_API_USE_CLIENT_CERTIFICATE";
+
+  /** Javadoc. */
   private static final List<Pattern> AGENT_IDENTITY_SPIFFE_PATTERNS =
       ImmutableList.of(
           Pattern.compile("^agents\\.global\\.org-\\d+\\.system\\.id\\.goog$"),
@@ -399,6 +402,10 @@ public final class AgentIdentityUtils {
                 + " token.");
         return null;
       } catch (IOException e) {
+        if (e.getMessage() != null
+            && e.getMessage().contains("Failed to parse Agent Identity config JSON")) {
+          throw e; // Fail fast on malformed JSON syntax errors
+        }
         // Fall through to retry
       }
       if (!warned) {
@@ -435,6 +442,41 @@ public final class AgentIdentityUtils {
     String bundlePath = Paths.get(wellKnownDir, "credentialbundle.pem").toString();
     String certOnlyPath = Paths.get(wellKnownDir, "certificates.pem").toString();
 
+    // 1) First check immediately without sleeping:
+    try {
+      if (checkExistsOrAccessDenied(Paths.get(bundlePath))) {
+        return bundlePath;
+      }
+      if (checkExistsOrAccessDenied(Paths.get(certOnlyPath))) {
+        return certOnlyPath;
+      }
+    } catch (java.nio.file.AccessDeniedException e) {
+      Slf4jUtils.log(
+          LOGGER,
+          org.slf4j.event.Level.WARN,
+          Collections.emptyMap(),
+          "Permission denied reading well-known certificates. Falling back to unbound" + " token.");
+      return null;
+    } catch (Exception e) {
+      // Fall through
+    }
+
+    // 2) If not found immediately, only enter retry loop if mTLS was explicitly enabled:
+    String useClientCert = envReader.getEnv(GOOGLE_API_USE_CLIENT_CERTIFICATE);
+    if (!"true".equalsIgnoreCase(useClientCert)) {
+      Slf4jUtils.log(
+          LOGGER,
+          org.slf4j.event.Level.DEBUG,
+          Collections.emptyMap(),
+          String.format(
+              "Well-known certificate file not found at %s and %s is not"
+                  + " explicitly enabled; falling back to unbound token without"
+                  + " retrying.",
+              wellKnownDir, GOOGLE_API_USE_CLIENT_CERTIFICATE));
+      return null;
+    }
+
+    // 3) Retry loop for rotation/transient absence when explicitly enabled:
     boolean warned = false;
     for (long sleepInterval : POLLING_INTERVALS) {
       try {
@@ -461,7 +503,7 @@ public final class AgentIdentityUtils {
             org.slf4j.event.Level.WARN,
             Collections.emptyMap(),
             String.format(
-                "Well-known certificate file not found at %s. Retrying for up to %d" + " seconds.",
+                "Well-known certificate file not found at %s. Retrying for up to" + " %d seconds.",
                 wellKnownDir, TOTAL_TIMEOUT_MS / 1000));
         warned = true;
       }
@@ -472,9 +514,15 @@ public final class AgentIdentityUtils {
         throw new IOException("Interrupted while waiting for well-known certificate files.", e);
       }
     }
-    throw new IOException(
-        "Unable to find well-known certificate file for bound token request after multiple"
-            + " retries.");
+    Slf4jUtils.log(
+        LOGGER,
+        org.slf4j.event.Level.WARN,
+        Collections.emptyMap(),
+        String.format(
+            "Unable to find well-known certificate file at %s after retrying;"
+                + " falling back to unbound token.",
+            wellKnownDir));
+    return null;
   }
 
   /** Reads the full certificate chain from the specified path as a string. */
@@ -530,7 +578,7 @@ public final class AgentIdentityUtils {
    */
   static boolean shouldEnableMtls(final boolean certsPresent, final boolean configExists)
       throws IOException {
-    String useClientCert = envReader.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    String useClientCert = envReader.getEnv(GOOGLE_API_USE_CLIENT_CERTIFICATE);
 
     // Case 1: Explicitly enabled via environment variable
     if ("true".equalsIgnoreCase(useClientCert)) {

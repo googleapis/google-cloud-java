@@ -82,6 +82,7 @@ import java.util.stream.Stream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 /** Test case for {@link ComputeEngineCredentials}. */
 class ComputeEngineCredentialsTest extends BaseSerializationTest {
@@ -89,14 +90,13 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   private static final URI CALL_URI = URI.create("http://googleapis.com/testapi/v1/foo");
 
   private TestEnvironmentProvider envProvider;
-  private Path tempDir;
+  @TempDir private Path tempDir;
 
   @BeforeEach
   void setUp() throws IOException {
     envProvider = new TestEnvironmentProvider();
     // Inject our test environment reader into AgentIdentityUtils
     AgentIdentityUtils.setEnvReader(envProvider::getEnv);
-    tempDir = Files.createTempDirectory("compute_engine_creds_test");
 
     // Speed up polling in tests by using a fake time service that advances time immediately
     final AtomicLong currentTime = new AtomicLong(0);
@@ -120,6 +120,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   void tearDown() {
     // Reset the mocks
     AgentIdentityUtils.resetTimeService();
+    AgentIdentityUtils.setWellKnownDir("/var/run/secrets/workload-spiffe-credentials/");
     AgentIdentityUtils.setEnvReader(System::getenv);
   }
 
