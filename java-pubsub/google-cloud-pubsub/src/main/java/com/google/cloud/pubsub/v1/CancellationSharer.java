@@ -23,56 +23,45 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiException;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PublishResponse;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Coordinates multiple publish attempts for a single batch of messages.
  *
- * <p>Implements {@link ApiFuture} to act as the single future returned to the
- * publisher's client. It manages the lifecycle of the original attempt and any
- * subsequent hedged attempts.
+ * <p>Implements {@link ApiFuture} to act as the single future returned to the publisher's client.
+ * It manages the lifecycle of the original attempt and any subsequent hedged attempts.
  */
 class CancellationSharer extends AbstractApiFuture<PublishResponse> {
-  /** The message batch being coordinated. */
   private final Publisher.OutstandingBatch batch;
-
-  /** The publisher instance. */
   private final Publisher publisher;
 
-  /** Map of active attempt numbers to their respective gRPC futures. */
-  private final Map<Integer, ApiFuture<PublishResponse>> runningAttempts =
-      new ConcurrentHashMap<>();
+  // Guarded by lock
+  private final Map<Integer, ApiFuture<PublishResponse>> runningAttempts = new HashMap<>();
+  private boolean done = false;
+  private Throwable lastError;
 
-  /** Boolean indicating whether the overall batch has resolved or failed. */
-  private final AtomicBoolean done = new AtomicBoolean(false);
-
-  /** Boolean indicating whether the batch is currently waiting in the hedging queue. */
+  private final Lock lock = new ReentrantLock();
   private final AtomicBoolean isInQueue = new AtomicBoolean(false);
-
-  /** The last error encountered by any failed attempt. */
-  private final AtomicReference<Throwable> lastError = new AtomicReference<>();
 
   CancellationSharer(final Publisher.OutstandingBatch batch, final Publisher publisher) {
     this.batch = batch;
     this.publisher = publisher;
   }
 
-  /**
-   * Adds an attempt to be tracked by this coordinator.
-   *
-   * @param attemptNumber the 1-based index of the attempt (1 is original, 2+ are hedged)
-   * @param future the future representing the gRPC call for this attempt
-   */
   void addAttempt(final int attemptNumber, final ApiFuture<PublishResponse> future) {
-    runningAttempts.put(attemptNumber, future);
-
-    if (done.get()) {
-      future.cancel(true);
-      runningAttempts.remove(attemptNumber);
-      return;
+    lock.lock();
+    try {
+      if (done) {
+        future.cancel(true);
+        return;
+      }
+      runningAttempts.put(attemptNumber, future);
+    } finally {
+      lock.unlock();
     }
 
     ApiFutures.addCallback(
@@ -92,80 +81,109 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   }
 
   private void handleAttemptSuccess(final int attemptNumber, final PublishResponse response) {
-    if (done.compareAndSet(false, true)) {
+    lock.lock();
+    try {
+      if (done) {
+        return;
+      }
+      done = true;
       batch.successfulAttempt = attemptNumber;
-      set(response); // Resolve parent future
-      cancelAllExcept(attemptNumber);
-      publisher.refillTokenBucket();
+      set(response);
+      cancelAllExceptLocked(attemptNumber);
+    } finally {
+      lock.unlock();
     }
+    publisher.refillTokenBucket();
   }
 
   private void handleAttemptFailure(final int attemptNumber, final Throwable t) {
-    runningAttempts.remove(attemptNumber);
+    boolean shouldRemoveFromQueue = false;
+    lock.lock();
+    try {
+      if (done) {
+        return; // <-- Exit early before modifying runningAttempts to avoid
+                // ConcurrentModificationException
+      }
+      runningAttempts.remove(attemptNumber);
+      lastError = t;
 
-    if (done.get()) {
-      return;
-    }
-    lastError.set(t);
+      boolean isRetryable = true;
+      if (t instanceof ApiException) {
+        isRetryable =
+            publisher.getRetryableCodes().contains(((ApiException) t).getStatusCode().getCode());
+      }
 
-    boolean isRetryable = true;
-    if (t instanceof ApiException) {
-      isRetryable =
-          publisher
-              .getRetryableCodes()
-              .contains(((ApiException) t).getStatusCode().getCode());
-    }
-
-    if (runningAttempts.isEmpty() || !isRetryable) {
-      if (done.compareAndSet(false, true)) {
-        setException(lastError.get());
-        cancelAll();
+      if (runningAttempts.isEmpty() || !isRetryable) {
+        done = true;
+        setException(lastError);
+        cancelAllLocked();
         if (isInQueue.get()) {
-          publisher.removeFromHedgingQueue(this);
+          shouldRemoveFromQueue = true;
         }
       }
+    } finally {
+      lock.unlock();
     }
-  }
 
-  private void cancelAll() {
-    for (ApiFuture<PublishResponse> future : runningAttempts.values()) {
-      future.cancel(true);
+    if (shouldRemoveFromQueue) {
+      publisher.removeFromHedgingQueue(this);
     }
   }
 
   void checkCompletionOnQueueExit() {
-    if (!done.get() && runningAttempts.isEmpty() && !isInQueue.get()) {
-      if (done.compareAndSet(false, true)) {
-        Throwable error = lastError.get();
+    lock.lock();
+    try {
+      if (!done && runningAttempts.isEmpty() && !isInQueue.get()) {
+        done = true;
         setException(
-            error != null
-                ? error
+            lastError != null
+                ? lastError
                 : new RuntimeException("Hedging failed with no active attempts"));
       }
-    }
-  }
-
-  private void cancelAllExcept(final int successfulAttempt) {
-    for (Map.Entry<Integer, ApiFuture<PublishResponse>> entry : runningAttempts.entrySet()) {
-      if (entry.getKey() != successfulAttempt) {
-        entry.getValue().cancel(true);
-      }
+    } finally {
+      lock.unlock();
     }
   }
 
   @Override
   public boolean cancel(final boolean mayInterruptIfRunning) {
-    if (super.cancel(mayInterruptIfRunning)) {
-      done.set(true);
-      if (isInQueue.get()) {
-        publisher.removeFromHedgingQueue(this);
+    boolean cancelled = false;
+    boolean shouldRemoveFromQueue = false;
+    lock.lock();
+    try {
+      if (super.cancel(mayInterruptIfRunning)) {
+        cancelled = true;
+        done = true;
+        if (isInQueue.get()) {
+          shouldRemoveFromQueue = true;
+        }
+        cancelAllLocked();
       }
-      for (ApiFuture<PublishResponse> future : runningAttempts.values()) {
-        future.cancel(mayInterruptIfRunning);
-      }
-      return true;
+    } finally {
+      lock.unlock();
     }
-    return false;
+
+    if (shouldRemoveFromQueue) {
+      publisher.removeFromHedgingQueue(this);
+    }
+    return cancelled;
+  }
+
+  private void cancelAllLocked() {
+    for (ApiFuture<PublishResponse> future : runningAttempts.values()) {
+      future.cancel(true);
+    }
+    runningAttempts.clear();
+  }
+
+  private void cancelAllExceptLocked(final int successfulAttempt) {
+    runningAttempts.forEach(
+        (attempt, future) -> {
+          if (attempt != successfulAttempt) {
+            future.cancel(true);
+          }
+        });
+    runningAttempts.clear();
   }
 
   AtomicBoolean isInQueue() {
