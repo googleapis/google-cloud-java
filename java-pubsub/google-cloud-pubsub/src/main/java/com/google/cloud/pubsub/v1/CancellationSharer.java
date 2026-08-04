@@ -31,19 +31,31 @@ import java.util.concurrent.atomic.AtomicReference;
 /**
  * Coordinates multiple publish attempts for a single batch of messages.
  *
- * <p>Implements {@link ApiFuture} to act as the single future returned to the publisher's client.
- * It manages the lifecycle of the original attempt and any subsequent hedged attempts.
+ * <p>Implements {@link ApiFuture} to act as the single future returned to the
+ * publisher's client. It manages the lifecycle of the original attempt and any
+ * subsequent hedged attempts.
  */
 class CancellationSharer extends AbstractApiFuture<PublishResponse> {
+  /** The message batch being coordinated. */
   private final Publisher.OutstandingBatch batch;
+
+  /** The publisher instance. */
   private final Publisher publisher;
+
+  /** Map of active attempt numbers to their respective gRPC futures. */
   private final Map<Integer, ApiFuture<PublishResponse>> runningAttempts =
       new ConcurrentHashMap<>();
+
+  /** Boolean indicating whether the overall batch has resolved or failed. */
   private final AtomicBoolean done = new AtomicBoolean(false);
-  final AtomicBoolean isInQueue = new AtomicBoolean(false);
+
+  /** Boolean indicating whether the batch is currently waiting in the hedging queue. */
+  private final AtomicBoolean isInQueue = new AtomicBoolean(false);
+
+  /** The last error encountered by any failed attempt. */
   private final AtomicReference<Throwable> lastError = new AtomicReference<>();
 
-  CancellationSharer(Publisher.OutstandingBatch batch, Publisher publisher) {
+  CancellationSharer(final Publisher.OutstandingBatch batch, final Publisher publisher) {
     this.batch = batch;
     this.publisher = publisher;
   }
@@ -54,7 +66,7 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
    * @param attemptNumber the 1-based index of the attempt (1 is original, 2+ are hedged)
    * @param future the future representing the gRPC call for this attempt
    */
-  void addAttempt(final int attemptNumber, ApiFuture<PublishResponse> future) {
+  void addAttempt(final int attemptNumber, final ApiFuture<PublishResponse> future) {
     runningAttempts.put(attemptNumber, future);
 
     if (done.get()) {
@@ -67,27 +79,28 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
         future,
         new ApiFutureCallback<PublishResponse>() {
           @Override
-          public void onSuccess(PublishResponse result) {
+          public void onSuccess(final PublishResponse result) {
             handleAttemptSuccess(attemptNumber, result);
           }
 
           @Override
-          public void onFailure(Throwable t) {
+          public void onFailure(final Throwable t) {
             handleAttemptFailure(attemptNumber, t);
           }
         },
         MoreExecutors.directExecutor());
   }
 
-  private void handleAttemptSuccess(int attemptNumber, PublishResponse response) {
+  private void handleAttemptSuccess(final int attemptNumber, final PublishResponse response) {
     if (done.compareAndSet(false, true)) {
+      batch.successfulAttempt = attemptNumber;
       set(response); // Resolve parent future
       cancelAllExcept(attemptNumber);
       publisher.refillTokenBucket();
     }
   }
 
-  private void handleAttemptFailure(int attemptNumber, Throwable t) {
+  private void handleAttemptFailure(final int attemptNumber, final Throwable t) {
     runningAttempts.remove(attemptNumber);
 
     if (done.get()) {
@@ -98,7 +111,9 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
     boolean isRetryable = true;
     if (t instanceof ApiException) {
       isRetryable =
-          publisher.getRetryableCodes().contains(((ApiException) t).getStatusCode().getCode());
+          publisher
+              .getRetryableCodes()
+              .contains(((ApiException) t).getStatusCode().getCode());
     }
 
     if (runningAttempts.isEmpty() || !isRetryable) {
@@ -123,12 +138,14 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
       if (done.compareAndSet(false, true)) {
         Throwable error = lastError.get();
         setException(
-            error != null ? error : new RuntimeException("Hedging failed with no active attempts"));
+            error != null
+                ? error
+                : new RuntimeException("Hedging failed with no active attempts"));
       }
     }
   }
 
-  private void cancelAllExcept(int successfulAttempt) {
+  private void cancelAllExcept(final int successfulAttempt) {
     for (Map.Entry<Integer, ApiFuture<PublishResponse>> entry : runningAttempts.entrySet()) {
       if (entry.getKey() != successfulAttempt) {
         entry.getValue().cancel(true);
@@ -137,7 +154,7 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   }
 
   @Override
-  public boolean cancel(boolean mayInterruptIfRunning) {
+  public boolean cancel(final boolean mayInterruptIfRunning) {
     if (super.cancel(mayInterruptIfRunning)) {
       done.set(true);
       if (isInQueue.get()) {
@@ -149,6 +166,10 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
       return true;
     }
     return false;
+  }
+
+  AtomicBoolean isInQueue() {
+    return isInQueue;
   }
 
   Publisher.OutstandingBatch getBatch() {

@@ -42,8 +42,9 @@ public class PubsubMessageWrapper {
   private final int deliveryAttempt;
 
   private static final String PUBLISH_START_EVENT = "publish start";
-  private static final String HEDGED_PUBLISH_START_EVENT = "publish start (hedged)";
   private static final String PUBLISH_END_EVENT = "publish end";
+  private static final String HEDGED_PUBLISH_START_EVENT = "publish start (hedged)";
+  private static final String HEDGED_PUBLISH_END_EVENT = "publish end (hedged)";
 
   private static final String MODACK_START_EVENT = "modack start";
   private static final String MODACK_END_EVENT = "modack end";
@@ -213,8 +214,17 @@ public class PubsubMessageWrapper {
 
   /** Ends the publisher parent span if it exists. */
   void endPublisherSpan() {
+    endPublisherSpan(false);
+  }
+
+  /** Ends the publisher parent span if it exists, marking if the operation finished via a hedge. */
+  void endPublisherSpan(boolean wasHedged) {
     if (publisherSpan != null) {
-      publisherSpan.addEvent(PUBLISH_END_EVENT);
+      if (wasHedged) {
+        publisherSpan.addEvent(HEDGED_PUBLISH_END_EVENT);
+      } else {
+        publisherSpan.addEvent(PUBLISH_END_EVENT);
+      }
       publisherSpan.end();
     }
   }

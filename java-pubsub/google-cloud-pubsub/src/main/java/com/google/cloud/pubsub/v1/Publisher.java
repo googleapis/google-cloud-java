@@ -731,7 +731,7 @@ public class Publisher implements PublisherInterface {
     long delayMs = hedgingSettings.getHedgeDelay().toMillis();
     HedgedRequest item = new HedgedRequest(coordinator, 1, clock.millisTime() + delayMs);
     hedgingQueue.add(item);
-    coordinator.isInQueue.set(true);
+    coordinator.isInQueue().set(true);
     scheduleQueueProcessing();
 
     return coordinator;
@@ -767,7 +767,7 @@ public class Publisher implements PublisherInterface {
       while (iterator.hasNext()) {
         if (iterator.next().getCoordinator() == coordinator) {
           iterator.remove();
-          coordinator.isInQueue.set(false);
+          coordinator.isInQueue().set(false);
         }
       }
     } finally {
@@ -787,7 +787,7 @@ public class Publisher implements PublisherInterface {
 
         CancellationSharer coordinator = item.getCoordinator();
         if (coordinator.isDone()) {
-          coordinator.isInQueue.set(false);
+          coordinator.isInQueue().set(false);
           continue;
         }
 
@@ -806,9 +806,9 @@ public class Publisher implements PublisherInterface {
           loggingUtil.logPublisher(
               LoggingUtil.SubSystem.PUBLISH_HEDGED,
               Level.FINER,
-              "Hedging rate limited due to lack of tokens in the bucket",
+              "Hedging rate limited due to lack of tokens.",
               coordinator.getBatch().getMessageWrappers().get(0));
-          coordinator.isInQueue.set(false);
+          coordinator.isInQueue().set(false);
           coordinator.checkCompletionOnQueueExit();
         }
       }
@@ -822,6 +822,7 @@ public class Publisher implements PublisherInterface {
 
   final class OutstandingBatch {
     final List<OutstandingPublish> outstandingPublishes;
+    int successfulAttempt = 0;
     final long creationTime;
     int attempt;
     int batchSizeBytes;
@@ -863,6 +864,7 @@ public class Publisher implements PublisherInterface {
 
     private void onSuccess(Iterable<String> results) {
       tracer.endPublishRpcSpan(publishRpcSpan);
+      boolean wasHedged = successfulAttempt > 0;
 
       Iterator<OutstandingPublish> messagesResultsIt = outstandingPublishes.iterator();
       for (String messageId : results) {
@@ -872,7 +874,7 @@ public class Publisher implements PublisherInterface {
         }
         nextPublish.publishResult.set(messageId);
         tracer.setPublisherMessageIdSpanAttribute(nextPublish.messageWrapper, messageId);
-        tracer.endPublisherSpan(nextPublish.messageWrapper);
+        tracer.endPublisherSpan(nextPublish.messageWrapper, wasHedged);
       }
     }
   }

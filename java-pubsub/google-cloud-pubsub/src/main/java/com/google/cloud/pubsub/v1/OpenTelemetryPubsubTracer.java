@@ -118,10 +118,14 @@ public class OpenTelemetryPubsubTracer {
   }
 
   void endPublisherSpan(PubsubMessageWrapper message) {
+    endPublisherSpan(message, false);
+  }
+
+  void endPublisherSpan(PubsubMessageWrapper message, boolean wasHedged) {
     if (!enabled) {
       return;
     }
-    message.endPublisherSpan();
+    message.endPublisherSpan(wasHedged);
   }
 
   void setPublisherMessageIdSpanAttribute(PubsubMessageWrapper message, String messageId) {
