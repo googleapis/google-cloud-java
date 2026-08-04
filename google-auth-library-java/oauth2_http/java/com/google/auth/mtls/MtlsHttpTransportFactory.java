@@ -31,6 +31,9 @@
 
 package com.google.auth.mtls;
 
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.core.InternalApi;
 import com.google.auth.http.ContextRebuildableTransportFactory;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
@@ -139,7 +142,7 @@ public class MtlsHttpTransportFactory implements ContextRebuildableTransportFact
   }
 
   @Override
-  public HttpTransport create() {
+  public NetHttpTransport create() {
     return new NetHttpTransport.Builder().setSslSocketFactory(sslSocketFactory).build();
   }
 
