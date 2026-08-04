@@ -2632,6 +2632,7 @@ public class DataformClientTest {
             .setWorkspace(
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
 
     InstallNpmPackagesResponse actualResponse = client.installNpmPackages(request);
@@ -2642,6 +2643,7 @@ public class DataformClientTest {
     InstallNpmPackagesRequest actualRequest = ((InstallNpmPackagesRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getWorkspace(), actualRequest.getWorkspace());
+    Assert.assertEquals(request.getPipelineConfig(), actualRequest.getPipelineConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -2659,6 +2661,7 @@ public class DataformClientTest {
               .setWorkspace(
                   WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                       .toString())
+              .setPipelineConfig(PipelineConfig.newBuilder().build())
               .build();
       client.installNpmPackages(request);
       Assert.fail("No exception raised");
@@ -4048,6 +4051,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4101,6 +4105,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4151,6 +4156,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4204,6 +4210,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4417,6 +4424,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4472,6 +4480,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4525,6 +4534,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4586,6 +4596,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4647,6 +4658,7 @@ public class DataformClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4863,6 +4875,7 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4918,6 +4931,7 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -4969,6 +4983,7 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 
@@ -5023,6 +5038,7 @@ public class DataformClientTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockDataform.addResponse(expectedResponse);
 

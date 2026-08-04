@@ -95,6 +95,31 @@ public interface SchedulingOrBuilder
   int getAvailabilityDomain();
 
   /**
+   * <code>
+   * optional .google.cloud.compute.v1.SchedulingGracefulShutdown graceful_shutdown = 226325136;
+   * </code>
+   *
+   * @return Whether the gracefulShutdown field is set.
+   */
+  boolean hasGracefulShutdown();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SchedulingGracefulShutdown graceful_shutdown = 226325136;
+   * </code>
+   *
+   * @return The gracefulShutdown.
+   */
+  com.google.cloud.compute.v1.SchedulingGracefulShutdown getGracefulShutdown();
+
+  /**
+   * <code>
+   * optional .google.cloud.compute.v1.SchedulingGracefulShutdown graceful_shutdown = 226325136;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SchedulingGracefulShutdownOrBuilder getGracefulShutdownOrBuilder();
+
+  /**
    *
    *
    * <pre>
@@ -513,6 +538,49 @@ public interface SchedulingOrBuilder
    * @return The preemptible.
    */
   boolean getPreemptible();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the Metadata Service preemption notice duration before the GCE ACPI G2
+   * Soft Off signal is triggered for Spot VMs only. If not specified,
+   * there will be no wait before the G2 Soft Off signal is triggered.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration preemption_notice_duration = 486176437;</code>
+   *
+   * @return Whether the preemptionNoticeDuration field is set.
+   */
+  boolean hasPreemptionNoticeDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the Metadata Service preemption notice duration before the GCE ACPI G2
+   * Soft Off signal is triggered for Spot VMs only. If not specified,
+   * there will be no wait before the G2 Soft Off signal is triggered.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration preemption_notice_duration = 486176437;</code>
+   *
+   * @return The preemptionNoticeDuration.
+   */
+  com.google.cloud.compute.v1.Duration getPreemptionNoticeDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the Metadata Service preemption notice duration before the GCE ACPI G2
+   * Soft Off signal is triggered for Spot VMs only. If not specified,
+   * there will be no wait before the G2 Soft Off signal is triggered.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration preemption_notice_duration = 486176437;</code>
+   */
+  com.google.cloud.compute.v1.DurationOrBuilder getPreemptionNoticeDurationOrBuilder();
 
   /**
    *

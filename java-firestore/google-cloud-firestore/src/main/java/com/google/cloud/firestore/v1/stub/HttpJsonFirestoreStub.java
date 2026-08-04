@@ -112,6 +112,8 @@ public class HttpJsonFirestoreStub extends FirestoreStub {
                             serializer.putQueryParam(fields, "mask", request.getMask());
                             serializer.putQueryParam(fields, "readTime", request.getReadTime());
                             serializer.putQueryParam(
+                                fields, "requestOptions", request.getRequestOptions());
+                            serializer.putQueryParam(
                                 fields, "transaction", request.getTransaction());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -157,6 +159,8 @@ public class HttpJsonFirestoreStub extends FirestoreStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "readTime", request.getReadTime());
                             serializer.putQueryParam(
+                                fields, "requestOptions", request.getRequestOptions());
+                            serializer.putQueryParam(
                                 fields, "showMissing", request.getShowMissing());
                             serializer.putQueryParam(
                                 fields, "transaction", request.getTransaction());
@@ -198,6 +202,8 @@ public class HttpJsonFirestoreStub extends FirestoreStub {
                             serializer.putQueryParam(
                                 fields, "currentDocument", request.getCurrentDocument());
                             serializer.putQueryParam(fields, "mask", request.getMask());
+                            serializer.putQueryParam(
+                                fields, "requestOptions", request.getRequestOptions());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -238,6 +244,8 @@ public class HttpJsonFirestoreStub extends FirestoreStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "currentDocument", request.getCurrentDocument());
+                            serializer.putQueryParam(
+                                fields, "requestOptions", request.getRequestOptions());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -652,6 +660,8 @@ public class HttpJsonFirestoreStub extends FirestoreStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "documentId", request.getDocumentId());
                             serializer.putQueryParam(fields, "mask", request.getMask());
+                            serializer.putQueryParam(
+                                fields, "requestOptions", request.getRequestOptions());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
