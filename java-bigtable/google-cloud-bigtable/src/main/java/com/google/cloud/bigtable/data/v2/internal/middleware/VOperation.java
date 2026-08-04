@@ -32,6 +32,13 @@ public interface VOperation<ReqT, RespT> {
   /** Start the operation. Results are delivered to {@code listener}. */
   void start(ReqT req, VRpcListener<RespT> listener);
 
-  /** Cancel a started operation. Best effort. */
+  /**
+   * Cancel a started operation. Best effort.
+   *
+   * <p>This is the only control the caller has over a running operation. Streaming flow control
+   * (pulling the next response from the demand-gated chain) is driven internally and is
+   * deliberately not exposed here, so callers cannot — and need not — manage backpressure
+   * themselves.
+   */
   void cancel(@Nullable String message, @Nullable Throwable cause);
 }

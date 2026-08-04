@@ -73,7 +73,8 @@ class VOperationImplTest {
             MoreExecutors.directExecutor(),
             NoopMetrics.NoopVrpcTracer.INSTANCE,
             Deadline.after(10, TimeUnit.SECONDS),
-            true);
+            true,
+            false);
 
     op.start(
         "req",
@@ -141,7 +142,8 @@ class VOperationImplTest {
             MoreExecutors.directExecutor(),
             NoopMetrics.NoopVrpcTracer.INSTANCE,
             Deadline.after(10, TimeUnit.SECONDS),
-            true);
+            true,
+            false);
 
     op.start(
         "req",

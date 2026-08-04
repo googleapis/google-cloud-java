@@ -24,10 +24,14 @@ import com.google.bigtable.v2.OpenTableRequest;
 import com.google.bigtable.v2.SessionCheckAndMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
+import com.google.bigtable.v2.SessionReadRowsRequest;
+import com.google.bigtable.v2.SessionReadRowsResponse;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
+import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcListener;
+import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcResult;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
@@ -75,6 +79,7 @@ public class TableBaseTest {
         new TableBase(
             fakeSessionPool,
             VRpcDescriptor.READ_ROW,
+            VRpcDescriptor.READ_ROWS,
             VRpcDescriptor.MUTATE_ROW,
             VRpcDescriptor.CHECK_AND_MUTATE_ROW,
             noopMetrics,
@@ -185,6 +190,39 @@ public class TableBaseTest {
     assertThat(fakeSessionPool.lastVRpc.ctx).isNotIdempotent();
   }
 
+  @Test
+  public void testReadRowsIsIdempotent() {
+    // Reads are idempotent, so a mid-stream failure can be resumed.
+    table.readRows(
+        SessionReadRowsRequest.getDefaultInstance(), new NoopReadRowsListener(), deadline);
+    assertThat(fakeSessionPool.lastVRpc.ctx).isIdempotent();
+  }
+
+  @Test
+  public void testReadRowsAutoPumpsDemandOnDelivery() {
+    // Flow control for streaming reads is fully internal: the caller never pulls. readRows starts
+    // the stream with autoFlowControl=true, so once a response is delivered, VOperationImpl pumps
+    // the next unit of demand down the chain automatically. Delivering one response must therefore
+    // drive exactly one requestNext into the attempt without any caller involvement.
+    table.readRows(
+        SessionReadRowsRequest.getDefaultInstance(), new NoopReadRowsListener(), deadline);
+
+    FakeVRpc<?, ?> attempt = fakeSessionPool.lastVRpc;
+    attempt.deliver(SessionReadRowsResponse.getDefaultInstance());
+
+    // Truth's assertThat is fully qualified here because the file statically imports the
+    // VRpcCallContextSubject.assertThat overload for the idempotency checks above.
+    com.google.common.truth.Truth.assertThat(attempt.requestNextCount).isEqualTo(1);
+  }
+
+  private static class NoopReadRowsListener implements VRpcListener<SessionReadRowsResponse> {
+    @Override
+    public void onMessage(SessionReadRowsResponse msg) {}
+
+    @Override
+    public void onClose(VRpcResult result) {}
+  }
+
   static class FakeSessionPool implements SessionPool<OpenTableRequest> {
 
     private FakeVRpc<?, ?> lastVRpc = null;
@@ -226,10 +264,13 @@ public class TableBaseTest {
 
   static class FakeVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
     private VRpcCallContext ctx;
+    private VRpcListener listener;
+    int requestNextCount = 0;
 
     @Override
-    public void start(Object req, VRpcCallContext ctx, VRpcListener ignored) {
+    public void start(Object req, VRpcCallContext ctx, VRpcListener listener) {
       this.ctx = ctx;
+      this.listener = listener;
     }
 
     @Override
@@ -241,6 +282,14 @@ public class TableBaseTest {
     }
 
     @Override
-    public void requestNext() {}
+    public void requestNext() {
+      requestNextCount++;
+    }
+
+    /** Push a response up through the retry layer's listener, on the operation executor. */
+    @SuppressWarnings("unchecked")
+    void deliver(Object response) {
+      ctx.getExecutor().execute(() -> listener.onMessage(response));
+    }
   }
 }

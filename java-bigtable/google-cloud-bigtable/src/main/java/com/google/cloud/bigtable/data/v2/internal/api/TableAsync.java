@@ -25,9 +25,13 @@ import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.bigtable.v2.SessionMutateRowResponse;
 import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.bigtable.v2.SessionReadRowResponse;
+import com.google.bigtable.v2.SessionReadRowsRequest;
+import com.google.bigtable.v2.SessionReadRowsResponse;
 import com.google.cloud.bigtable.data.v2.internal.channels.ChannelPool;
 import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
+import com.google.cloud.bigtable.data.v2.internal.middleware.VOperation;
+import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcListener;
 import com.google.cloud.bigtable.data.v2.internal.session.BigtableTimer;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPool;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
@@ -73,6 +77,7 @@ public class TableAsync implements AutoCloseable, Closeable {
             openReq,
             VRpcDescriptor.TABLE_SESSION,
             VRpcDescriptor.READ_ROW,
+            VRpcDescriptor.READ_ROWS,
             VRpcDescriptor.MUTATE_ROW,
             VRpcDescriptor.CHECK_AND_MUTATE_ROW,
             featureFlags,
@@ -115,6 +120,14 @@ public class TableAsync implements AutoCloseable, Closeable {
     UnaryResponseFuture<SessionReadRowResponse> f = new UnaryResponseFuture<>();
     base.readRow(req, f, deadline);
     return f;
+  }
+
+  // TODO: get deadline from compatibility layer
+  public VOperation<SessionReadRowsRequest, SessionReadRowsResponse> readRows(
+      SessionReadRowsRequest req,
+      VRpcListener<SessionReadRowsResponse> listener,
+      Deadline deadline) {
+    return base.readRows(req, listener, deadline);
   }
 
   // TODO: get deadline from compatibility layer

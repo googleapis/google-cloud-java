@@ -44,6 +44,9 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
   private final VRpcTracer tracer;
   private final Deadline deadline;
   private final boolean idempotent;
+  // Streaming ops keep the demand-gated chain flowing by pulling the next response internally after
+  // each one is delivered. Unary ops deliver a single response and never pull, so this is false.
+  private final boolean autoFlowControl;
   private final Context.CancellationListener cancellationListener;
 
   // Written in start() on the caller thread before the listener is registered and before cancel()
@@ -56,13 +59,15 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
       Executor userCallbackExecutor,
       VRpcTracer tracer,
       Deadline deadline,
-      boolean idempotent) {
+      boolean idempotent,
+      boolean autoFlowControl) {
     this.chain = chain;
     this.grpcContext = grpcContext;
     this.userCallbackExecutor = userCallbackExecutor;
     this.tracer = tracer;
     this.deadline = deadline;
     this.idempotent = idempotent;
+    this.autoFlowControl = autoFlowControl;
     this.cancellationListener =
         (c) -> {
           boolean deadlineExceeded =
@@ -89,8 +94,13 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
             userCallbackExecutor, t -> chain.cancel("Uncaught exception in op executor task", t));
     this.opExecutor = exec;
     VRpcCallContext ctx = VRpcCallContext.create(deadline, idempotent, tracer, exec);
+    // For streaming ops, keep the demand-gated chain flowing by pulling the next response after
+    // each delivery. The pull is trampolined onto the op executor (matching the old external
+    // requestNext) so it runs as a fresh task rather than reentering the in-flight onMessage. Unary
+    // ops pass no pump and deliver their single response implicitly.
+    Runnable requestMore = autoFlowControl ? () -> exec.execute(chain::requestNext) : null;
     CleanupListener<RespT> wrapped =
-        new CleanupListener<>(listener, grpcContext, cancellationListener);
+        new CleanupListener<>(listener, grpcContext, cancellationListener, requestMore);
     exec.runInline(() -> chain.start(req, ctx, wrapped));
     // Register AFTER chain.start so a context-cancel that fires immediately is sequenced behind
     // start. Matches ClientCallImpl's ordering (grpc-java issue #1343).
@@ -123,14 +133,28 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
   private static class CleanupListener<RespT> extends ForwardListener<RespT> {
     private final Context grpcContext;
     private final Context.CancellationListener cancellationListener;
+    // Non-null only for streaming (auto-flow) ops; pulls the next response after each delivery.
+    @Nullable private final Runnable requestMore;
 
     CleanupListener(
         VRpcListener<RespT> delegate,
         Context grpcContext,
-        Context.CancellationListener cancellationListener) {
+        Context.CancellationListener cancellationListener,
+        @Nullable Runnable requestMore) {
       super(delegate);
       this.grpcContext = grpcContext;
       this.cancellationListener = cancellationListener;
+      this.requestMore = requestMore;
+    }
+
+    @Override
+    public void onMessage(RespT message) {
+      super.onMessage(message);
+      // Re-arm demand only after the delegate has consumed this response. A pull posted here runs
+      // as a later op-executor task; if the operation has since closed, the chain ignores it.
+      if (requestMore != null) {
+        requestMore.run();
+      }
     }
 
     @Override
