@@ -34,9 +34,13 @@ package com.google.auth.oauth2;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.HttpUnsuccessfulResponseHandler;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Data;
 import com.google.auth.RequestMetadataCallback;
+import com.google.auth.http.ContextRebuildableTransportFactory;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
@@ -431,6 +435,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       Map<String, Object> json, HttpTransportFactory transportFactory) {
     String audience = (String) json.get("audience");
     String subjectTokenType = (String) json.get("subject_token_type");
+    String actorTokenType = (String) json.get("actor_token_type");
     String tokenUrl = (String) json.get("token_url");
 
     Map<String, Object> credentialSourceMap = (Map<String, Object>) json.get("credential_source");
@@ -487,6 +492,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
         .setHttpTransportFactory(transportFactory)
         .setAudience(audience)
         .setSubjectTokenType(subjectTokenType)
+        .setActorTokenType(actorTokenType)
         .setTokenUrl(tokenUrl)
         .setTokenInfoUrl(tokenInfoUrl)
         .setCredentialSource(new IdentityPoolCredentialSource(credentialSourceMap))
@@ -563,6 +569,29 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       // Overwrite internal options. Let subclass handle setting options.
       requestHandler.setInternalOptions(stsTokenExchangeRequest.getInternalOptions());
     }
+
+    requestHandler.setUnsuccessfulResponseHandler(
+        new HttpUnsuccessfulResponseHandler() {
+          boolean retried = false;
+
+          @Override
+          public boolean handleResponse(
+              HttpRequest request, HttpResponse response, boolean supportsRetry)
+              throws IOException {
+            if (response.getStatusCode() != 401) {
+              return false;
+            }
+            if (!(transportFactory instanceof ContextRebuildableTransportFactory)) {
+              return false;
+            }
+            if (retried) {
+              return false;
+            }
+            ((ContextRebuildableTransportFactory) transportFactory).rebuildContext();
+            retried = true;
+            return true;
+          }
+        });
 
     StsTokenExchangeResponse response = requestHandler.build().exchangeToken();
     return response.getAccessToken();
