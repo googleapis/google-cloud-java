@@ -2808,8 +2808,11 @@ public class ITBigQueryJDBCTest extends ITBase {
       java.util.logging.Logger bqLogger =
           java.util.logging.Logger.getLogger("com.google.cloud.bigquery");
       for (java.util.logging.Handler h : bqLogger.getHandlers()) {
-        h.close();
-        bqLogger.removeHandler(h);
+        if (h instanceof java.util.logging.FileHandler
+            || h.getClass().getName().endsWith("PerConnectionFileHandler")) {
+          h.close();
+          bqLogger.removeHandler(h);
+        }
       }
 
       // Verify physical connection-specific log file creation
