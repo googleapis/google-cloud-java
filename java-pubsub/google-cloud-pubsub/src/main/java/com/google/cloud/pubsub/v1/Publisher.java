@@ -147,7 +147,7 @@ public class Publisher implements PublisherInterface {
   private final OpenTelemetry openTelemetry;
   private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
 
-  private final HedgeSettings hedgeSettings;
+  private final HedgingSettings hedgingSettings;
   private final Set<StatusCode.Code> retryableCodes;
 
   /**
@@ -260,10 +260,10 @@ public class Publisher implements PublisherInterface {
     backgroundResources = new BackgroundResourceAggregation(backgroundResourceList);
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new Waiter();
-    this.hedgeSettings = builder.hedgeSettings;
-    if (this.hedgeSettings != null) {
+    this.hedgingSettings = builder.hedgingSettings;
+    if (this.hedgingSettings != null) {
       // Verify that the hedge delay is strictly less than the initial RPC timeout.
-      Duration hedgeDelay = this.hedgeSettings.getHedgeDelay();
+      Duration hedgeDelay = this.hedgingSettings.getHedgeDelay();
       Duration initialRpcTimeout = builder.retrySettings.getInitialRpcTimeoutDuration();
       if (hedgeDelay.compareTo(initialRpcTimeout) >= 0) {
         throw new IllegalArgumentException(
@@ -273,9 +273,9 @@ public class Publisher implements PublisherInterface {
                 + initialRpcTimeout.toMillis()
                 + "ms)");
       }
-      this.scaledMaxHedgeTokens = this.hedgeSettings.getMaxTokens() * HEDGE_TOKEN_SCALE;
+      this.scaledMaxHedgeTokens = this.hedgingSettings.getMaxTokens() * HEDGE_TOKEN_SCALE;
       this.scaledHedgeRefillAmount =
-          (int) (this.hedgeSettings.getRefillRatio() * HEDGE_TOKEN_SCALE);
+          (int) (this.hedgingSettings.getRefillRatio() * HEDGE_TOKEN_SCALE);
       this.hedgeTokenBucket.set(0);
     }
     this.clock = builder.clock != null ? builder.clock : CurrentMillisClock.getDefaultClock();
@@ -300,13 +300,13 @@ public class Publisher implements PublisherInterface {
   }
 
   /** Returns the configured hedging settings, or null if hedging is disabled. */
-  public HedgeSettings getHedgeSettings() {
-    return hedgeSettings;
+  public HedgingSettings getHedgingSettings() {
+    return hedgingSettings;
   }
 
   @VisibleForTesting
   Float getHedgeTokenBalance() {
-    if (hedgeSettings == null) {
+    if (hedgingSettings == null) {
       return null;
     }
     return (float) hedgeTokenBucket.get() / HEDGE_TOKEN_SCALE;
@@ -659,7 +659,7 @@ public class Publisher implements PublisherInterface {
     ApiFuture<PublishResponse> future;
     Executor callbackExecutor = directExecutor();
     if (outstandingBatch.orderingKey == null || outstandingBatch.orderingKey.isEmpty()) {
-      if (hedgeSettings != null) {
+      if (hedgingSettings != null) {
         future = startHedgedCall(outstandingBatch);
       } else {
         future = publishCall(outstandingBatch);
@@ -680,7 +680,7 @@ public class Publisher implements PublisherInterface {
   }
 
   void refillTokenBucket() {
-    if (hedgeSettings != null) {
+    if (hedgingSettings != null) {
       hedgeTokenBucket.accumulateAndGet(
           scaledHedgeRefillAmount,
           (current, refill) -> Math.min(scaledMaxHedgeTokens, current + refill));
@@ -688,7 +688,7 @@ public class Publisher implements PublisherInterface {
   }
 
   boolean tryAcquireHedgeToken() {
-    if (hedgeSettings == null) {
+    if (hedgingSettings == null) {
       return false;
     }
     int previous =
@@ -725,7 +725,7 @@ public class Publisher implements PublisherInterface {
 
     ApiFuture<PublishResponse> firstAttemptFuture = publishCall(outstandingBatch);
     coordinator.addAttempt(0, firstAttemptFuture);
-    long delayMs = hedgeSettings.getHedgeDelay().toMillis();
+    long delayMs = hedgingSettings.getHedgeDelay().toMillis();
     HedgedRequest item = new HedgedRequest(coordinator, 1, clock.millisTime() + delayMs);
     hedgingQueue.add(item);
     coordinator.isInQueue.set(true);
@@ -790,7 +790,7 @@ public class Publisher implements PublisherInterface {
 
         if (tryAcquireHedgeToken()) {
           // Clone and schedule next attempt check (Attempt + 1)
-          long delayMs = hedgeSettings.getHedgeDelay().toMillis();
+          long delayMs = hedgingSettings.getHedgeDelay().toMillis();
           HedgedRequest nextItem =
               new HedgedRequest(coordinator, item.getAttemptNumber() + 1, now + delayMs);
           hedgingQueue.add(nextItem);
@@ -1041,7 +1041,7 @@ public class Publisher implements PublisherInterface {
 
     private boolean enableOpenTelemetryTracing = false;
     private OpenTelemetry openTelemetry = null;
-    private HedgeSettings hedgeSettings = null;
+    private HedgingSettings hedgingSettings = null;
     ApiClock clock = null;
 
     private Builder(String topic) {
@@ -1196,8 +1196,8 @@ public class Publisher implements PublisherInterface {
     }
 
     /** Configures the Publisher's hedging parameters. */
-    public Builder setHedgeSettings(HedgeSettings hedgeSettings) {
-      this.hedgeSettings = hedgeSettings;
+    public Builder setHedgingSettings(HedgingSettings hedgingSettings) {
+      this.hedgingSettings = hedgingSettings;
       return this;
     }
 
@@ -1213,7 +1213,7 @@ public class Publisher implements PublisherInterface {
 
     public Publisher build() throws IOException {
       Preconditions.checkState(
-          !(enableMessageOrdering && hedgeSettings != null),
+          !(enableMessageOrdering && hedgingSettings != null),
           "Publish hedging and message ordering cannot be enabled at the same time.");
       return new Publisher(this);
     }

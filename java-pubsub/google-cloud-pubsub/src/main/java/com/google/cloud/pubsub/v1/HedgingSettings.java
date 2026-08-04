@@ -20,7 +20,7 @@ import com.google.common.base.Preconditions;
 import java.time.Duration;
 
 /** Settings for configuring publish hedging. */
-public final class HedgeSettings {
+public final class HedgingSettings {
   /** Default hedging delay. */
   private static final Duration DEFAULT_DELAY = Duration.ofMillis(1000);
 
@@ -45,7 +45,7 @@ public final class HedgeSettings {
   /** Refill rate. */
   private final float refillRatio;
 
-  private HedgeSettings(final Builder builder) {
+  private HedgingSettings(final Builder builder) {
     this.hedgeDelay = builder.hedgeDelay;
     this.maxTokens = builder.maxTokens;
     this.refillRatio = builder.refillRatio;
@@ -69,7 +69,7 @@ public final class HedgeSettings {
   }
 
   /**
-   * Returns a new builder for {@code HedgeSettings}.
+   * Returns a new builder for {@code HedgingSettings}.
    *
    * @return a new builder.
    */
@@ -77,7 +77,7 @@ public final class HedgeSettings {
     return new Builder();
   }
 
-  /** Builder for {@code HedgeSettings}. */
+  /** Builder for {@code HedgingSettings}. */
   public static final class Builder {
     /** Hedging delay. */
     private Duration hedgeDelay = DEFAULT_DELAY;
@@ -141,12 +141,12 @@ public final class HedgeSettings {
     }
 
     /**
-     * Builds an instance of {@code HedgeSettings}.
+     * Builds an instance of {@code HedgingSettings}.
      *
-     * @return the built {@code HedgeSettings} instance.
+     * @return the built {@code HedgingSettings} instance.
      */
-    public HedgeSettings build() {
-      return new HedgeSettings(this);
+    public HedgingSettings build() {
+      return new HedgingSettings(this);
     }
   }
 }

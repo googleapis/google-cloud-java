@@ -1359,12 +1359,12 @@ public class PublisherImplTest {
   }
 
   @Test
-  public void testPublisherWithHedgeSettings() throws Exception {
-    HedgeSettings hedgeSettings =
-        HedgeSettings.newBuilder().setHedgeDelay(Duration.ofMillis(100)).build();
-    Publisher publisher = getTestPublisherBuilder().setHedgeSettings(hedgeSettings).build();
+  public void testPublisherWithHedgingSettings() throws Exception {
+    HedgingSettings hedgingSettings =
+        HedgingSettings.newBuilder().setHedgeDelay(Duration.ofMillis(100)).build();
+    Publisher publisher = getTestPublisherBuilder().setHedgingSettings(hedgingSettings).build();
 
-    assertThat(publisher.getHedgeSettings()).isEqualTo(hedgeSettings);
+    assertThat(publisher.getHedgingSettings()).isEqualTo(hedgingSettings);
     assertThat(publisher.getHedgeTokenBalance()).isNotNull();
     assertThat(publisher.getHedgeTokenBalance()).isWithin(0.0001f).of(0.0f);
 
@@ -1373,8 +1373,8 @@ public class PublisherImplTest {
 
   @Test
   public void testPublisherThrowsIfHedgeDelayGtRpcTimeout() throws Exception {
-    HedgeSettings hedgeSettings =
-        HedgeSettings.newBuilder().setHedgeDelay(Duration.ofMillis(500)).build();
+    HedgingSettings hedgingSettings =
+        HedgingSettings.newBuilder().setHedgeDelay(Duration.ofMillis(500)).build();
     com.google.api.gax.retrying.RetrySettings retrySettings =
         com.google.api.gax.retrying.RetrySettings.newBuilder()
             .setInitialRpcTimeoutDuration(Duration.ofMillis(400))
@@ -1384,7 +1384,7 @@ public class PublisherImplTest {
 
     try {
       getTestPublisherBuilder()
-          .setHedgeSettings(hedgeSettings)
+          .setHedgingSettings(hedgingSettings)
           .setRetrySettings(retrySettings)
           .build();
       fail(
@@ -1397,8 +1397,8 @@ public class PublisherImplTest {
 
   @Test
   public void testPublisherThrowsIfHedgeDelayEqRpcTimeout() throws Exception {
-    HedgeSettings hedgeSettings =
-        HedgeSettings.newBuilder().setHedgeDelay(Duration.ofMillis(500)).build();
+    HedgingSettings hedgingSettings =
+        HedgingSettings.newBuilder().setHedgeDelay(Duration.ofMillis(500)).build();
     com.google.api.gax.retrying.RetrySettings retrySettings =
         com.google.api.gax.retrying.RetrySettings.newBuilder()
             .setInitialRpcTimeoutDuration(Duration.ofMillis(500))
@@ -1408,7 +1408,7 @@ public class PublisherImplTest {
 
     try {
       getTestPublisherBuilder()
-          .setHedgeSettings(hedgeSettings)
+          .setHedgingSettings(hedgingSettings)
           .setRetrySettings(retrySettings)
           .build();
       fail(
@@ -1420,10 +1420,10 @@ public class PublisherImplTest {
   }
 
   @Test
-  public void testPublisherWithoutHedgeSettings() throws Exception {
+  public void testPublisherWithoutHedgingSettings() throws Exception {
     Publisher publisher = getTestPublisherBuilder().build();
 
-    assertThat(publisher.getHedgeSettings()).isNull();
+    assertThat(publisher.getHedgingSettings()).isNull();
     assertThat(publisher.getHedgeTokenBalance()).isNull();
 
     shutdownTestPublisher(publisher);
@@ -1435,14 +1435,14 @@ public class PublisherImplTest {
 
   private Publisher getPublisherWithHedge(Duration delay, float refillRatio, int maxTokens)
       throws Exception {
-    HedgeSettings hedgeSettings =
-        HedgeSettings.newBuilder()
+    HedgingSettings hedgingSettings =
+        HedgingSettings.newBuilder()
             .setHedgeDelay(delay)
             .setRefillRatio(refillRatio)
             .setMaxTokens(maxTokens)
             .build();
     return getTestPublisherBuilder()
-        .setHedgeSettings(hedgeSettings)
+        .setHedgingSettings(hedgingSettings)
         .setClock(fakeExecutor.getClock())
         .setBatchingSettings(
             Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder()

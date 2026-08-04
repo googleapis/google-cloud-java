@@ -26,11 +26,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
-public class HedgeSettingsTest {
+public class HedgingSettingsTest {
 
   @Test
   public void testDefaultSettings() {
-    HedgeSettings settings = HedgeSettings.newBuilder().build();
+    HedgingSettings settings = HedgingSettings.newBuilder().build();
     assertNotNull(settings);
     assertEquals(Duration.ofMillis(1000), settings.getHedgeDelay());
     assertEquals(50, settings.getMaxTokens());
@@ -40,7 +40,7 @@ public class HedgeSettingsTest {
   @Test
   public void testCustomDelay() {
     Duration customDelay = Duration.ofMillis(200);
-    HedgeSettings settings = HedgeSettings.newBuilder().setHedgeDelay(customDelay).build();
+    HedgingSettings settings = HedgingSettings.newBuilder().setHedgeDelay(customDelay).build();
     assertNotNull(settings);
     assertEquals(customDelay, settings.getHedgeDelay());
   }
@@ -49,76 +49,79 @@ public class HedgeSettingsTest {
   public void testDelayTooSmallThrows() {
     assertThrows(
         IllegalArgumentException.class,
-        () -> HedgeSettings.newBuilder().setHedgeDelay(Duration.ofMillis(99)));
+        () -> HedgingSettings.newBuilder().setHedgeDelay(Duration.ofMillis(99)));
   }
 
   @Test
   public void testDelayTooLargeThrows() {
     assertThrows(
         IllegalArgumentException.class,
-        () -> HedgeSettings.newBuilder().setHedgeDelay(Duration.ofMillis(10001)));
+        () -> HedgingSettings.newBuilder().setHedgeDelay(Duration.ofMillis(10001)));
   }
 
   @Test
   public void testNullDelayThrows() {
-    assertThrows(NullPointerException.class, () -> HedgeSettings.newBuilder().setHedgeDelay(null));
+    assertThrows(
+        NullPointerException.class, () -> HedgingSettings.newBuilder().setHedgeDelay(null));
   }
 
   @Test
   public void testCustomMaxTokens() {
-    HedgeSettings settings = HedgeSettings.newBuilder().setMaxTokens(10).build();
+    HedgingSettings settings = HedgingSettings.newBuilder().setMaxTokens(10).build();
     assertEquals(10, settings.getMaxTokens());
   }
 
   @Test
   public void testNegativeMaxTokensThrows() {
-    assertThrows(IllegalArgumentException.class, () -> HedgeSettings.newBuilder().setMaxTokens(-5));
+    assertThrows(
+        IllegalArgumentException.class, () -> HedgingSettings.newBuilder().setMaxTokens(-5));
   }
 
   @Test
   public void testZeroMaxTokensThrows() {
-    assertThrows(IllegalArgumentException.class, () -> HedgeSettings.newBuilder().setMaxTokens(0));
+    assertThrows(
+        IllegalArgumentException.class, () -> HedgingSettings.newBuilder().setMaxTokens(0));
   }
 
   @Test
   public void testMaxTokensTooLargeThrows() {
     assertThrows(
-        IllegalArgumentException.class, () -> HedgeSettings.newBuilder().setMaxTokens(251));
+        IllegalArgumentException.class, () -> HedgingSettings.newBuilder().setMaxTokens(251));
   }
 
   @Test
   public void testCustomRefill() {
-    HedgeSettings settings = HedgeSettings.newBuilder().setRefillRatio(0.15f).build();
+    HedgingSettings settings = HedgingSettings.newBuilder().setRefillRatio(0.15f).build();
     assertEquals(0.15f, settings.getRefillRatio(), 0.0001f);
   }
 
   @Test
   public void testNegativeRefillThrows() {
     assertThrows(
-        IllegalArgumentException.class, () -> HedgeSettings.newBuilder().setRefillRatio(-0.1f));
+        IllegalArgumentException.class, () -> HedgingSettings.newBuilder().setRefillRatio(-0.1f));
   }
 
   @Test
   public void testZeroRefillThrows() {
     assertThrows(
-        IllegalArgumentException.class, () -> HedgeSettings.newBuilder().setRefillRatio(0.0f));
+        IllegalArgumentException.class, () -> HedgingSettings.newBuilder().setRefillRatio(0.0f));
   }
 
   @Test
   public void testRefillTooLargeThrows() {
     assertThrows(
-        IllegalArgumentException.class, () -> HedgeSettings.newBuilder().setRefillRatio(0.21f));
+        IllegalArgumentException.class, () -> HedgingSettings.newBuilder().setRefillRatio(0.21f));
   }
 
   @Test
   public void testRefillTooSmallThrows() {
     assertThrows(
-        IllegalArgumentException.class, () -> HedgeSettings.newBuilder().setRefillRatio(0.0009f));
+        IllegalArgumentException.class, () -> HedgingSettings.newBuilder().setRefillRatio(0.0009f));
   }
 
   @Test
   public void testMinimumRefillValid() {
-    HedgeSettings settings = HedgeSettings.newBuilder().setRefillRatio(0.001f).build();
+    HedgingSettings settings = HedgingSettings.newBuilder().setRefillRatio(0.001f).build();
     assertEquals(0.001f, settings.getRefillRatio(), 0.0001f);
   }
 }
