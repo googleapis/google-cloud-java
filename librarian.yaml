@@ -49,7 +49,7 @@ default:
       google/analytics: com.google.analytics
       google/maps: com.google.maps
       google/shopping: com.google.shopping
-    libraries_bom_version: 26.83.0
+    libraries_bom_version: 26.86.0
 libraries:
   - name: accessapproval
     version: 2.97.0-SNAPSHOT
