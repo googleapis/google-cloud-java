@@ -681,16 +681,9 @@ public class Publisher implements PublisherInterface {
 
   void refillTokenBucket() {
     if (hedgeSettings != null) {
-      while (true) {
-        int current = hedgeTokenBucket.get();
-        if (current >= scaledMaxHedgeTokens) {
-          return;
-        }
-        int next = Math.min(scaledMaxHedgeTokens, current + scaledHedgeRefillAmount);
-        if (hedgeTokenBucket.compareAndSet(current, next)) {
-          return;
-        }
-      }
+      hedgeTokenBucket.accumulateAndGet(
+          scaledHedgeRefillAmount,
+          (current, refill) -> Math.min(scaledMaxHedgeTokens, current + refill));
     }
   }
 
@@ -698,16 +691,15 @@ public class Publisher implements PublisherInterface {
     if (hedgeSettings == null) {
       return false;
     }
-    while (true) {
-      int current = hedgeTokenBucket.get();
-      if (current < HEDGE_TOKEN_SCALE) {
-        return false;
-      }
-      int next = current - HEDGE_TOKEN_SCALE;
-      if (hedgeTokenBucket.compareAndSet(current, next)) {
-        return true;
-      }
-    }
+    int previous =
+        hedgeTokenBucket.getAndUpdate(
+            current -> {
+              if (current < HEDGE_TOKEN_SCALE) {
+                return current;
+              }
+              return current - HEDGE_TOKEN_SCALE;
+            });
+    return previous >= HEDGE_TOKEN_SCALE;
   }
 
   private ApiFuture<PublishResponse> startHedgedCall(final OutstandingBatch outstandingBatch) {
