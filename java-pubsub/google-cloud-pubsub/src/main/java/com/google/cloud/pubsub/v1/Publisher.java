@@ -561,7 +561,11 @@ public class Publisher implements PublisherInterface {
       context = publishContextWithCompression;
     }
     if (attemptNumber > 0) {
-      logger.log(Level.FINER, "Publishing hedged attempt {0}", attemptNumber);
+      loggingUtil.logPublisher(
+          LoggingUtil.SubSystem.PUBLISH_HEDGED,
+          Level.FINER,
+          String.format("Publishing hedged attempt %d", attemptNumber),
+          outstandingBatch.getMessageWrappers().get(0));
       context =
           context
               .withExtraHeaders(
@@ -799,6 +803,11 @@ public class Publisher implements PublisherInterface {
               publishCall(coordinator.getBatch(), item.getAttemptNumber());
           coordinator.addAttempt(item.getAttemptNumber(), hedgedFuture);
         } else {
+          loggingUtil.logPublisher(
+              LoggingUtil.SubSystem.PUBLISH_HEDGED,
+              Level.FINER,
+              "Hedging bypassed due to lack of tokens in the bucket",
+              coordinator.getBatch().getMessageWrappers().get(0));
           coordinator.isInQueue.set(false);
           coordinator.checkCompletionOnQueueExit();
         }
