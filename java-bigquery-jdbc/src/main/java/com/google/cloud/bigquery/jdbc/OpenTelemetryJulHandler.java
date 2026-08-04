@@ -78,7 +78,10 @@ public class OpenTelemetryJulHandler extends Handler {
         publishToOTel(record, connectionId, config.openTelemetry);
       }
     } catch (Throwable t) {
-      // Ignore exceptions to prevent breaking application logging or other handlers
+      reportError(
+          "Error publishing log to OpenTelemetry/GCP",
+          new Exception(t),
+          java.util.logging.ErrorManager.WRITE_FAILURE);
     }
   }
 
@@ -182,7 +185,10 @@ public class OpenTelemetryJulHandler extends Handler {
         try {
           config.loggingClient.flush();
         } catch (Exception e) {
-          // Ignore failures during flush to protect other connections
+          reportError(
+              "Error flushing log to OpenTelemetry/GCP",
+              e,
+              java.util.logging.ErrorManager.FLUSH_FAILURE);
         }
       }
     }

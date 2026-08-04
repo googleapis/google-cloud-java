@@ -56,6 +56,7 @@ public class ITOpenTelemetryTest extends ITBase {
 
   @Test
   public void testExecute_withOpenTelemetryGcpExporter() throws Exception {
+    System.out.println("[DEBUG_IT] === Starting testExecute_withOpenTelemetryGcpExporter ===");
 
     // Step 1: Connect with GCP Exporters enabled via DataSource
     DataSource ds = DataSource.fromUrl(CONNECTION_URL);
@@ -75,6 +76,7 @@ public class ITOpenTelemetryTest extends ITBase {
       BigQueryConnection bqConnection = connection.unwrap(BigQueryConnection.class);
       connectionUuid = bqConnection.getConnectionId();
       assertNotNull(connectionUuid, "Connection UUID should be generated");
+      System.out.println("[DEBUG_IT] Generated connectionUuid: " + connectionUuid);
 
       // Execute an in-memory array query (scans 0 bytes, extremely fast) and force pagination (3
       // pages)
@@ -84,6 +86,9 @@ public class ITOpenTelemetryTest extends ITBase {
           // Drain the result set to trigger pagination fetches
         }
       }
+      System.out.println(
+          "[DEBUG_IT] Query executed. Waiting for logs and traces for connectionUuid: "
+              + connectionUuid);
     }
 
     // Step 2: Retrieve and assert logs, harvesting the TraceId
@@ -127,6 +132,7 @@ public class ITOpenTelemetryTest extends ITBase {
 
   @Test
   public void testExecute_withErrorCorrelation() throws Exception {
+    System.out.println("[DEBUG_IT] === Starting testExecute_withErrorCorrelation ===");
 
     // Step 1: Connect with GCP Exporters enabled via DataSource
     DataSource ds = DataSource.fromUrl(CONNECTION_URL);
@@ -144,9 +150,13 @@ public class ITOpenTelemetryTest extends ITBase {
       BigQueryConnection bqConnection = connection.unwrap(BigQueryConnection.class);
       connectionUuid = bqConnection.getConnectionId();
       assertNotNull(connectionUuid, "Connection UUID should be generated");
+      System.out.println("[DEBUG_IT] Generated connectionUuid: " + connectionUuid);
 
       // Execute a query designed to fail instantly due to syntax error (compiler-level failure)
       assertThrows(SQLException.class, () -> statement.executeQuery("SELECT * FROM;"));
+      System.out.println(
+          "[DEBUG_IT] Expected SQLException caught. Waiting for logs and traces for connectionUuid: "
+              + connectionUuid);
     }
 
     // Step 2: Retrieve and assert logs, harvesting the TraceId
@@ -171,6 +181,7 @@ public class ITOpenTelemetryTest extends ITBase {
 
   @Test
   public void testExecute_withCustomCredentialsJson() throws Exception {
+    System.out.println("[DEBUG_IT] === Starting testExecute_withCustomCredentialsJson ===");
     JsonObject authJson = getAuthJson();
     DataSource ds = DataSource.fromUrl(CONNECTION_URL);
     ds.setEnableGcpTraceExporter(true);
@@ -182,6 +193,7 @@ public class ITOpenTelemetryTest extends ITBase {
 
   @Test
   public void testExecute_withCustomCredentialsFilePath() throws Exception {
+    System.out.println("[DEBUG_IT] === Starting testExecute_withCustomCredentialsFilePath ===");
     JsonObject authJson = getAuthJson();
     File tempFile = File.createTempFile("auth", ".json");
     tempFile.deleteOnExit();
@@ -197,6 +209,7 @@ public class ITOpenTelemetryTest extends ITBase {
 
   @Test
   public void testExecute_withHttpProtocol() throws Exception {
+    System.out.println("[DEBUG_IT] === Starting testExecute_withHttpProtocol ===");
     JsonObject authJson = getAuthJson();
     System.setProperty("otel.exporter.otlp.protocol", "http/protobuf");
 
@@ -214,6 +227,7 @@ public class ITOpenTelemetryTest extends ITBase {
 
   @Test
   public void testExecute_withGrpcProtocol() throws Exception {
+    System.out.println("[DEBUG_IT] === Starting testExecute_withGrpcProtocol ===");
     JsonObject authJson = getAuthJson();
     System.setProperty("otel.exporter.otlp.protocol", "grpc");
 
@@ -239,6 +253,7 @@ public class ITOpenTelemetryTest extends ITBase {
 
       BigQueryConnection bqConnection = connection.unwrap(BigQueryConnection.class);
       connectionUuid = bqConnection.getConnectionId();
+      System.out.println("[DEBUG_IT] verifyTraceDelivery connectionUuid: " + connectionUuid);
 
       String query = "SELECT 1;";
       try (ResultSet rs = statement.executeQuery(query)) {
@@ -307,46 +322,95 @@ public class ITOpenTelemetryTest extends ITBase {
     }
   }
 
-  private <T> T pollWithRetry(java.util.concurrent.Callable<T> task) throws InterruptedException {
+  private <T> T pollWithRetry(String taskDescription, java.util.concurrent.Callable<T> task)
+      throws InterruptedException {
     int attempts = 0;
     int maxAttempts = 24;
     long delayMs = 10000;
 
+    System.out.println(
+        "[DEBUG_IT] ["
+            + taskDescription
+            + "] Starting polling (maxAttempts="
+            + maxAttempts
+            + ", delayMs="
+            + delayMs
+            + "). Waiting 10 seconds initially...");
     // 10 second wait for GCP to ingest data
     Thread.sleep(10000);
 
     while (attempts < maxAttempts) {
       attempts++;
+      System.out.println(
+          "[DEBUG_IT] [" + taskDescription + "] Attempt " + attempts + "/" + maxAttempts);
       try {
         T result = task.call();
         if (result != null) {
+          System.out.println(
+              "[DEBUG_IT] ["
+                  + taskDescription
+                  + "] Succeeded on attempt "
+                  + attempts
+                  + "/"
+                  + maxAttempts);
           return result;
         }
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
         throw new RuntimeException("Test execution interrupted", e);
       } catch (Exception e) {
-        // Ignore exceptions during remote lookup and retry
+        System.err.println(
+            "[DEBUG_IT] ["
+                + taskDescription
+                + "] Exception on attempt "
+                + attempts
+                + ": "
+                + e.getClass().getName()
+                + " - "
+                + e.getMessage());
         e.printStackTrace();
       }
       if (attempts < maxAttempts) {
         Thread.sleep(delayMs);
       }
     }
+    System.err.println(
+        "[DEBUG_IT] [" + taskDescription + "] Timed out after " + maxAttempts + " attempts.");
     return null;
   }
 
   private List<LogEntry> fetchLogsWithRetry(Logging logging, String filter)
       throws InterruptedException {
+    System.out.println("[DEBUG_IT] Polling GCP Cloud Logging with filter: " + filter);
     List<LogEntry> result =
         pollWithRetry(
+            "fetchLogsWithRetry (" + filter + ")",
             () -> {
               Page<LogEntry> entriesPage =
                   logging.listLogEntries(
                       Logging.EntryListOption.filter(filter), Logging.EntryListOption.pageSize(50));
               List<LogEntry> entries = new ArrayList<>();
               entriesPage.iterateAll().forEach(entries::add);
-              return entries.isEmpty() ? null : entries;
+              if (entries.isEmpty()) {
+                System.out.println("[DEBUG_IT]    -> Found 0 matching log entries.");
+                return null;
+              }
+              System.out.println(
+                  "[DEBUG_IT]    -> Found " + entries.size() + " matching log entries:");
+              for (LogEntry entry : entries) {
+                System.out.println(
+                    "[DEBUG_IT]       LogEntry: logName="
+                        + entry.getLogName()
+                        + ", trace="
+                        + entry.getTrace()
+                        + ", spanId="
+                        + entry.getSpanId()
+                        + ", labels="
+                        + entry.getLabels()
+                        + ", payload="
+                        + entry.getPayload());
+              }
+              return entries;
             });
     return result != null ? result : new ArrayList<>();
   }
@@ -354,17 +418,36 @@ public class ITOpenTelemetryTest extends ITBase {
   private Trace fetchTraceWithRetry(
       TraceServiceClient traceClient, String projectId, String traceId)
       throws InterruptedException {
+    System.out.println(
+        "[DEBUG_IT] Polling GCP Cloud Trace with projectId=" + projectId + ", traceId=" + traceId);
     return pollWithRetry(
+        "fetchTraceWithRetry (" + traceId + ")",
         () -> {
           Trace trace = traceClient.getTrace(projectId, traceId);
           if (trace == null) {
+            System.out.println("[DEBUG_IT]    -> traceClient.getTrace returned null.");
             return null;
           }
+          System.out.println(
+              "[DEBUG_IT]    -> Found trace with " + trace.getSpansCount() + " spans:");
+          boolean foundExecuteQuery = false;
           for (TraceSpan span : trace.getSpansList()) {
+            System.out.println(
+                "[DEBUG_IT]       Span: name="
+                    + span.getName()
+                    + ", spanId="
+                    + span.getSpanId()
+                    + ", parentSpanId="
+                    + span.getParentSpanId());
             if (span.getName().equals("BigQueryStatement.executeQuery")) {
-              return trace;
+              foundExecuteQuery = true;
             }
           }
+          if (foundExecuteQuery) {
+            return trace;
+          }
+          System.out.println(
+              "[DEBUG_IT]    -> Trace present, but 'BigQueryStatement.executeQuery' span not yet found.");
           return null;
         });
   }
