@@ -562,13 +562,12 @@ public class Publisher implements PublisherInterface {
     }
     if (attemptNumber > 0) {
       logger.log(Level.FINER, "Publishing hedged attempt {0}", attemptNumber);
-      Map<String, List<String>> attemptMetadata =
-          ImmutableMap.of(
-              "x-goog-pubsub-hedged-count",
-              Collections.singletonList(Integer.toString(attemptNumber)));
       context =
           context
-              .withExtraHeaders(attemptMetadata)
+              .withExtraHeaders(
+                  ImmutableMap.of(
+                      "x-goog-pubsub-hedged-count",
+                      Collections.singletonList(Integer.toString(attemptNumber))))
               .withRetryableCodes(Collections.<StatusCode.Code>emptySet());
     }
 
