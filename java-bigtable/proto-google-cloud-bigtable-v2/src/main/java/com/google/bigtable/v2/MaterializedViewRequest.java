@@ -78,6 +78,7 @@ public final class MaterializedViewRequest extends com.google.protobuf.Generated
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     READ_ROW(1),
+    READ_ROWS(2),
     PAYLOAD_NOT_SET(0);
     private final int value;
 
@@ -99,6 +100,8 @@ public final class MaterializedViewRequest extends com.google.protobuf.Generated
       switch (value) {
         case 1:
           return READ_ROW;
+        case 2:
+          return READ_ROWS;
         case 0:
           return PAYLOAD_NOT_SET;
         default:
@@ -149,6 +152,40 @@ public final class MaterializedViewRequest extends com.google.protobuf.Generated
     return com.google.bigtable.v2.SessionReadRowRequest.getDefaultInstance();
   }
 
+  public static final int READ_ROWS_FIELD_NUMBER = 2;
+
+  /**
+   * <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code>
+   *
+   * @return Whether the readRows field is set.
+   */
+  @java.lang.Override
+  public boolean hasReadRows() {
+    return payloadCase_ == 2;
+  }
+
+  /**
+   * <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code>
+   *
+   * @return The readRows.
+   */
+  @java.lang.Override
+  public com.google.bigtable.v2.SessionReadRowsRequest getReadRows() {
+    if (payloadCase_ == 2) {
+      return (com.google.bigtable.v2.SessionReadRowsRequest) payload_;
+    }
+    return com.google.bigtable.v2.SessionReadRowsRequest.getDefaultInstance();
+  }
+
+  /** <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code> */
+  @java.lang.Override
+  public com.google.bigtable.v2.SessionReadRowsRequestOrBuilder getReadRowsOrBuilder() {
+    if (payloadCase_ == 2) {
+      return (com.google.bigtable.v2.SessionReadRowsRequest) payload_;
+    }
+    return com.google.bigtable.v2.SessionReadRowsRequest.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -166,6 +203,9 @@ public final class MaterializedViewRequest extends com.google.protobuf.Generated
     if (payloadCase_ == 1) {
       output.writeMessage(1, (com.google.bigtable.v2.SessionReadRowRequest) payload_);
     }
+    if (payloadCase_ == 2) {
+      output.writeMessage(2, (com.google.bigtable.v2.SessionReadRowsRequest) payload_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -179,6 +219,11 @@ public final class MaterializedViewRequest extends com.google.protobuf.Generated
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.bigtable.v2.SessionReadRowRequest) payload_);
+    }
+    if (payloadCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.bigtable.v2.SessionReadRowsRequest) payload_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -201,6 +246,9 @@ public final class MaterializedViewRequest extends com.google.protobuf.Generated
       case 1:
         if (!getReadRow().equals(other.getReadRow())) return false;
         break;
+      case 2:
+        if (!getReadRows().equals(other.getReadRows())) return false;
+        break;
       case 0:
       default:
     }
@@ -219,6 +267,10 @@ public final class MaterializedViewRequest extends com.google.protobuf.Generated
       case 1:
         hash = (37 * hash) + READ_ROW_FIELD_NUMBER;
         hash = (53 * hash) + getReadRow().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + READ_ROWS_FIELD_NUMBER;
+        hash = (53 * hash) + getReadRows().hashCode();
         break;
       case 0:
       default:
@@ -366,6 +418,9 @@ public final class MaterializedViewRequest extends com.google.protobuf.Generated
       if (readRowBuilder_ != null) {
         readRowBuilder_.clear();
       }
+      if (readRowsBuilder_ != null) {
+        readRowsBuilder_.clear();
+      }
       payloadCase_ = 0;
       payload_ = null;
       return this;
@@ -413,6 +468,9 @@ public final class MaterializedViewRequest extends com.google.protobuf.Generated
       if (payloadCase_ == 1 && readRowBuilder_ != null) {
         result.payload_ = readRowBuilder_.build();
       }
+      if (payloadCase_ == 2 && readRowsBuilder_ != null) {
+        result.payload_ = readRowsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -431,6 +489,11 @@ public final class MaterializedViewRequest extends com.google.protobuf.Generated
         case READ_ROW:
           {
             mergeReadRow(other.getReadRow());
+            break;
+          }
+        case READ_ROWS:
+          {
+            mergeReadRows(other.getReadRows());
             break;
           }
         case PAYLOAD_NOT_SET:
@@ -470,6 +533,13 @@ public final class MaterializedViewRequest extends com.google.protobuf.Generated
                 payloadCase_ = 1;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    internalGetReadRowsFieldBuilder().getBuilder(), extensionRegistry);
+                payloadCase_ = 2;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -651,6 +721,156 @@ public final class MaterializedViewRequest extends com.google.protobuf.Generated
       payloadCase_ = 1;
       onChanged();
       return readRowBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.v2.SessionReadRowsRequest,
+            com.google.bigtable.v2.SessionReadRowsRequest.Builder,
+            com.google.bigtable.v2.SessionReadRowsRequestOrBuilder>
+        readRowsBuilder_;
+
+    /**
+     * <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code>
+     *
+     * @return Whether the readRows field is set.
+     */
+    @java.lang.Override
+    public boolean hasReadRows() {
+      return payloadCase_ == 2;
+    }
+
+    /**
+     * <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code>
+     *
+     * @return The readRows.
+     */
+    @java.lang.Override
+    public com.google.bigtable.v2.SessionReadRowsRequest getReadRows() {
+      if (readRowsBuilder_ == null) {
+        if (payloadCase_ == 2) {
+          return (com.google.bigtable.v2.SessionReadRowsRequest) payload_;
+        }
+        return com.google.bigtable.v2.SessionReadRowsRequest.getDefaultInstance();
+      } else {
+        if (payloadCase_ == 2) {
+          return readRowsBuilder_.getMessage();
+        }
+        return com.google.bigtable.v2.SessionReadRowsRequest.getDefaultInstance();
+      }
+    }
+
+    /** <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code> */
+    public Builder setReadRows(com.google.bigtable.v2.SessionReadRowsRequest value) {
+      if (readRowsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payload_ = value;
+        onChanged();
+      } else {
+        readRowsBuilder_.setMessage(value);
+      }
+      payloadCase_ = 2;
+      return this;
+    }
+
+    /** <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code> */
+    public Builder setReadRows(
+        com.google.bigtable.v2.SessionReadRowsRequest.Builder builderForValue) {
+      if (readRowsBuilder_ == null) {
+        payload_ = builderForValue.build();
+        onChanged();
+      } else {
+        readRowsBuilder_.setMessage(builderForValue.build());
+      }
+      payloadCase_ = 2;
+      return this;
+    }
+
+    /** <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code> */
+    public Builder mergeReadRows(com.google.bigtable.v2.SessionReadRowsRequest value) {
+      if (readRowsBuilder_ == null) {
+        if (payloadCase_ == 2
+            && payload_ != com.google.bigtable.v2.SessionReadRowsRequest.getDefaultInstance()) {
+          payload_ =
+              com.google.bigtable.v2.SessionReadRowsRequest.newBuilder(
+                      (com.google.bigtable.v2.SessionReadRowsRequest) payload_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          payload_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadCase_ == 2) {
+          readRowsBuilder_.mergeFrom(value);
+        } else {
+          readRowsBuilder_.setMessage(value);
+        }
+      }
+      payloadCase_ = 2;
+      return this;
+    }
+
+    /** <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code> */
+    public Builder clearReadRows() {
+      if (readRowsBuilder_ == null) {
+        if (payloadCase_ == 2) {
+          payloadCase_ = 0;
+          payload_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadCase_ == 2) {
+          payloadCase_ = 0;
+          payload_ = null;
+        }
+        readRowsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /** <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code> */
+    public com.google.bigtable.v2.SessionReadRowsRequest.Builder getReadRowsBuilder() {
+      return internalGetReadRowsFieldBuilder().getBuilder();
+    }
+
+    /** <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code> */
+    @java.lang.Override
+    public com.google.bigtable.v2.SessionReadRowsRequestOrBuilder getReadRowsOrBuilder() {
+      if ((payloadCase_ == 2) && (readRowsBuilder_ != null)) {
+        return readRowsBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadCase_ == 2) {
+          return (com.google.bigtable.v2.SessionReadRowsRequest) payload_;
+        }
+        return com.google.bigtable.v2.SessionReadRowsRequest.getDefaultInstance();
+      }
+    }
+
+    /** <code>.google.bigtable.v2.SessionReadRowsRequest read_rows = 2;</code> */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.bigtable.v2.SessionReadRowsRequest,
+            com.google.bigtable.v2.SessionReadRowsRequest.Builder,
+            com.google.bigtable.v2.SessionReadRowsRequestOrBuilder>
+        internalGetReadRowsFieldBuilder() {
+      if (readRowsBuilder_ == null) {
+        if (!(payloadCase_ == 2)) {
+          payload_ = com.google.bigtable.v2.SessionReadRowsRequest.getDefaultInstance();
+        }
+        readRowsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.bigtable.v2.SessionReadRowsRequest,
+                com.google.bigtable.v2.SessionReadRowsRequest.Builder,
+                com.google.bigtable.v2.SessionReadRowsRequestOrBuilder>(
+                (com.google.bigtable.v2.SessionReadRowsRequest) payload_,
+                getParentForChildren(),
+                isClean());
+        payload_ = null;
+      }
+      payloadCase_ = 2;
+      onChanged();
+      return readRowsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.bigtable.v2.MaterializedViewRequest)

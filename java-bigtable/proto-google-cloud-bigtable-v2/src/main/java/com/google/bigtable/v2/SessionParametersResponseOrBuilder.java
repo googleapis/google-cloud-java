@@ -77,4 +77,19 @@ public interface SessionParametersResponseOrBuilder
    * <code>.google.protobuf.Duration keep_alive = 1;</code>
    */
   com.google.protobuf.DurationOrBuilder getKeepAliveOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Client will pull this many bytes at most to make messages for steamed
+   * responses. If the last byte is mid-message, it will continue until a full
+   * message comes.
+   * </pre>
+   *
+   * <code>int32 softmax_streaming_prefetch_buffer_size = 2;</code>
+   *
+   * @return The softmaxStreamingPrefetchBufferSize.
+   */
+  int getSoftmaxStreamingPrefetchBufferSize();
 }
