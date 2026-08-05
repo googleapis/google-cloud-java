@@ -770,7 +770,6 @@ public class Publisher implements PublisherInterface {
   private void processQueue() {
     queueLock.lock();
     try {
-      isQueueProcessingScheduled.set(false);
       long now = clock.millisTime();
 
       HedgedRequest item;
@@ -813,8 +812,7 @@ public class Publisher implements PublisherInterface {
           coordinator.checkCompletionOnQueueExit();
         }
       }
-
-      // Reschedule for next items
+      isQueueProcessingScheduled.set(false);
       scheduleQueueProcessing();
     } finally {
       queueLock.unlock();
