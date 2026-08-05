@@ -25,6 +25,7 @@ import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse
 import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -136,6 +137,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
   /** Returns the object with the settings used for calls to deleteMessage. */
   public UnaryCallSettings<DeleteMessageRequest, Empty> deleteMessageSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).deleteMessageSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchMessages. */
+  public PagedCallSettings<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+      searchMessagesSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).searchMessagesSettings();
   }
 
   /** Returns the object with the settings used for calls to getAttachment. */
@@ -511,6 +519,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     /** Returns the builder for the settings used for calls to deleteMessage. */
     public UnaryCallSettings.Builder<DeleteMessageRequest, Empty> deleteMessageSettings() {
       return getStubSettingsBuilder().deleteMessageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchMessages. */
+    public PagedCallSettings.Builder<
+            SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+        searchMessagesSettings() {
+      return getStubSettingsBuilder().searchMessagesSettings();
     }
 
     /** Returns the builder for the settings used for calls to getAttachment. */

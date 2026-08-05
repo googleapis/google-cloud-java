@@ -25,6 +25,7 @@ import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse
 import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -744,6 +745,100 @@ public class ChatServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteMessage(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchMessagesTest() throws Exception {
+    SearchMessageResult responsesElement = SearchMessageResult.newBuilder().build();
+    SearchMessagesResponse expectedResponse =
+        SearchMessagesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResults(Arrays.asList(responsesElement))
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    SpaceName parent = SpaceName.of("[SPACE]");
+    String filter = "filter-1274492040";
+
+    SearchMessagesPagedResponse pagedListResponse = client.searchMessages(parent, filter);
+
+    List<SearchMessageResult> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchMessagesRequest actualRequest = ((SearchMessagesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchMessagesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      SpaceName parent = SpaceName.of("[SPACE]");
+      String filter = "filter-1274492040";
+      client.searchMessages(parent, filter);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void searchMessagesTest2() throws Exception {
+    SearchMessageResult responsesElement = SearchMessageResult.newBuilder().build();
+    SearchMessagesResponse expectedResponse =
+        SearchMessagesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResults(Arrays.asList(responsesElement))
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String filter = "filter-1274492040";
+
+    SearchMessagesPagedResponse pagedListResponse = client.searchMessages(parent, filter);
+
+    List<SearchMessageResult> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResultsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    SearchMessagesRequest actualRequest = ((SearchMessagesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void searchMessagesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String filter = "filter-1274492040";
+      client.searchMessages(parent, filter);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
