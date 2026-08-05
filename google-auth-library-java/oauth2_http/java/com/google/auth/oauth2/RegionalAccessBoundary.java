@@ -185,8 +185,8 @@ final class RegionalAccessBoundary implements Serializable {
       throws IOException {
     Preconditions.checkNotNull(accessToken, "The provided access token is null.");
     if (accessToken.getExpirationTimeMillis() != null
-        && accessToken.getExpirationTimeMillis() < clock.currentTimeMillis()) {
-      throw new IllegalArgumentException("The provided access token is expired.");
+        && accessToken.getExpirationTimeMillis() <= clock.currentTimeMillis() + 180_000L) {
+      throw new IOException("The provided access token is expired or expiring within skew buffer.");
     }
 
     HttpRequestFactory requestFactory = transportFactory.create().createRequestFactory();

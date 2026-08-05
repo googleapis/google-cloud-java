@@ -33,7 +33,9 @@ package com.google.auth.mtls;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.EnvironmentProvider;
+import com.google.auth.oauth2.OAuth2Utils;
 import com.google.auth.oauth2.PropertyProvider;
 import java.io.File;
 import java.io.IOException;
@@ -242,5 +244,373 @@ class MtlsUtilsTest {
             () -> MtlsUtils.getWorkloadCertificateConfiguration(envProvider, propProvider, null));
 
     assertEquals("APPDATA environment variable is not set on Windows.", exception.getMessage());
+  }
+
+  // If client certificate usage is explicitly disabled, canBeEnabled should return false.
+  @Test
+  void canBeEnabled_allowanceExplicitFalse_returnsFalse() throws IOException {
+    EnvironmentProvider envProvider =
+        new EnvironmentProvider() {
+          @Override
+          public String getEnv(String name) {
+            if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
+              return "false";
+            }
+            return null;
+          }
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertFalse(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+  }
+
+  // If client certificate usage is explicitly enabled and a valid configuration is present,
+  // canBeEnabled should return true.
+  @Test
+  void canBeEnabled_allowanceExplicitTrue_withConfig_returnsTrue() throws IOException {
+    EnvironmentProvider envProvider =
+        new EnvironmentProvider() {
+          @Override
+          public String getEnv(String name) {
+            if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
+              return "true";
+            }
+            if ("GOOGLE_API_CERTIFICATE_CONFIG".equals(name)) {
+              return "testresources/mtls/certificate_config.json";
+            }
+            return null;
+          }
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertTrue(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+  }
+
+  // If client certificate usage is unset but a valid configuration is present, mTLS should be
+  // enabled by default (returns true).
+  @Test
+  void canBeEnabled_allowanceUnset_withConfig_returnsTrue() throws IOException {
+    EnvironmentProvider envProvider =
+        new EnvironmentProvider() {
+          @Override
+          public String getEnv(String name) {
+            if ("GOOGLE_API_CERTIFICATE_CONFIG".equals(name)) {
+              return "testresources/mtls/certificate_config.json";
+            }
+            return null;
+          }
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertTrue(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+  }
+
+  // If the GOOGLE_API_CERTIFICATE_CONFIG environment variable points to a non-existent file,
+  // canBeEnabled should throw an IOException.
+  @Test
+  void canBeEnabled_envVarConfigMissingFile_throwsIOException() throws IOException {
+    Path nonExistentConfig = tempDir.resolve("non_existent.json");
+    EnvironmentProvider envProvider =
+        new EnvironmentProvider() {
+          @Override
+          public String getEnv(String name) {
+            if ("GOOGLE_API_CERTIFICATE_CONFIG".equals(name)) {
+              return nonExistentConfig.toString();
+            }
+            return null;
+          }
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertThrows(IOException.class, () -> MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+  }
+
+  // If the well-known gcloud certificate configuration file exists, canBeEnabled should return
+  // true.
+  @Test
+  void canBeEnabled_wellKnownConfigExists_returnsTrue() throws IOException {
+    Path gcloudDir = tempDir.resolve(".config/gcloud");
+    Files.createDirectories(gcloudDir);
+    Path configFile = gcloudDir.resolve("certificate_config.json");
+    Path certFile = tempDir.resolve("cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.createFile(certFile);
+    Files.createFile(keyFile);
+    Files.write(configFile, createJsonConfigString(certFile, keyFile).getBytes());
+
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider =
+        new PropertyProvider() {
+          @Override
+          public String getProperty(String name, String def) {
+            if ("os.name".equals(name)) return "Linux";
+            if ("user.home".equals(name)) return tempDir.toString();
+            return def;
+          }
+        };
+
+    assertTrue(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+  }
+
+  @Test
+  void canBeEnabled_alwaysPolicy_clientCertDisabled_returnsFalse() throws IOException {
+    EnvironmentProvider envProvider =
+        name -> {
+          if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
+            return "false";
+          }
+          if ("GOOGLE_API_USE_MTLS_ENDPOINT".equals(name)) {
+            return "always";
+          }
+          return null;
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertFalse(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+    assertTrue(MtlsUtils.shouldMtlsEndpointBeUsed(envProvider, propProvider, null));
+  }
+
+  @Test
+  void getMtlsEndpointUsagePolicy_never() {
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_USE_MTLS_ENDPOINT".equals(name) ? "never" : null;
+    assertEquals(
+        MtlsUtils.MtlsEndpointUsagePolicy.NEVER, MtlsUtils.getMtlsEndpointUsagePolicy(envProvider));
+  }
+
+  @Test
+  void getMtlsEndpointUsagePolicy_always() {
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_USE_MTLS_ENDPOINT".equals(name) ? "always" : null;
+    assertEquals(
+        MtlsUtils.MtlsEndpointUsagePolicy.ALWAYS,
+        MtlsUtils.getMtlsEndpointUsagePolicy(envProvider));
+  }
+
+  @Test
+  void getMtlsEndpointUsagePolicy_auto() {
+    EnvironmentProvider envProvider = name -> null;
+    assertEquals(
+        MtlsUtils.MtlsEndpointUsagePolicy.AUTO, MtlsUtils.getMtlsEndpointUsagePolicy(envProvider));
+  }
+
+  @Test
+  void canBeEnabled_policyNever_returnsFalse() throws IOException {
+    EnvironmentProvider envProvider =
+        new EnvironmentProvider() {
+          @Override
+          public String getEnv(String name) {
+            if ("GOOGLE_API_CERTIFICATE_CONFIG".equals(name)) {
+              return "testresources/mtls/certificate_config.json";
+            }
+            if ("GOOGLE_API_USE_MTLS_ENDPOINT".equals(name)) {
+              return "never";
+            }
+            return null;
+          }
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertFalse(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+  }
+
+  @Test
+  void canBeEnabled_autoPolicy_noConfig_returnsFalse() throws IOException {
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider =
+        new PropertyProvider() {
+          @Override
+          public String getProperty(String name, String def) {
+            if ("user.home".equals(name)) return tempDir.toString();
+            return def;
+          }
+        };
+
+    assertFalse(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+  }
+
+  @Test
+  void canBeEnabled_alwaysPolicy_returnsFalse() throws IOException {
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_USE_MTLS_ENDPOINT".equals(name) ? "always" : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertFalse(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+    assertTrue(MtlsUtils.shouldMtlsEndpointBeUsed(envProvider, propProvider, null));
+  }
+
+  @Test
+  void shouldMtlsEndpointBeUsed_autoPolicy_withMissingCertFiles_returnsFalse() throws IOException {
+    Path configFile = tempDir.resolve("config.json");
+    Path nonExistentCert = tempDir.resolve("non_existent_cert.pem");
+    Files.write(
+        configFile,
+        ("{\"cert_configs\":{\"workload\":{\"cert_path\":\""
+                + nonExistentCert.toString().replace("\\", "\\\\")
+                + "\",\"key_path\":\"key.pem\"}}}")
+            .getBytes());
+
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertFalse(MtlsUtils.canBeEnabled(envProvider, propProvider, null));
+    assertFalse(MtlsUtils.shouldMtlsEndpointBeUsed(envProvider, propProvider, null));
+  }
+
+  @Test
+  void getWorkloadCertificateConfiguration_malformedJson_throwsException() throws IOException {
+    Path configFile = tempDir.resolve("malformed.json");
+    Files.write(configFile, "{invalid-json}".getBytes());
+
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertThrows(
+        Exception.class,
+        () ->
+            MtlsUtils.getWorkloadCertificateConfiguration(
+                envProvider, propProvider, configFile.toString()));
+  }
+
+  @Test
+  void prepareTransportFactoryIfMtlsEnabled_nullInput_returnsNull() throws IOException {
+    assertNull(
+        MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+            null, name -> null, (name, def) -> def, null));
+  }
+
+  @Test
+  void prepareTransportFactoryIfMtlsEnabled_mtlsFactory_returnsAsIs()
+      throws java.security.GeneralSecurityException, IOException {
+    java.security.KeyStore dummyKeyStore =
+        java.security.KeyStore.getInstance(java.security.KeyStore.getDefaultType());
+    dummyKeyStore.load(null, null);
+    MtlsHttpTransportFactory mtlsFactory = new MtlsHttpTransportFactory(dummyKeyStore);
+
+    HttpTransportFactory result =
+        MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+            mtlsFactory, name -> null, (name, def) -> def, null);
+
+    assertSame(mtlsFactory, result);
+  }
+
+  @Test
+  void prepareTransportFactoryIfMtlsEnabled_customFactory_mtlsAlways_returnsAsIs()
+      throws IOException {
+    HttpTransportFactory customFactory = () -> null;
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_USE_MTLS_ENDPOINT".equals(name) ? "always" : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    HttpTransportFactory result =
+        MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+            customFactory, envProvider, propProvider, null);
+
+    assertSame(customFactory, result);
+  }
+
+  @Test
+  void prepareTransportFactoryIfMtlsEnabled_customFactory_mtlsAuto_withConfig_returnsAsIs()
+      throws IOException {
+    HttpTransportFactory customFactory = () -> null;
+    EnvironmentProvider envProvider =
+        name ->
+            "GOOGLE_API_CERTIFICATE_CONFIG".equals(name)
+                ? "testresources/mtls/certificate_config.json"
+                : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    HttpTransportFactory result =
+        MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+            customFactory, envProvider, propProvider, null);
+
+    assertSame(customFactory, result);
+  }
+
+  @Test
+  void prepareTransportFactoryIfMtlsEnabled_defaultFactory_mtlsAlways_upgradesToMtlsFactory()
+      throws IOException {
+    EnvironmentProvider envProvider =
+        new EnvironmentProvider() {
+          @Override
+          public String getEnv(String name) {
+            if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
+              return "true";
+            }
+            if ("GOOGLE_API_USE_MTLS_ENDPOINT".equals(name)) {
+              return "always";
+            }
+            if ("GOOGLE_API_CERTIFICATE_CONFIG".equals(name)) {
+              return "testresources/mtls/certificate_config.json";
+            }
+            return null;
+          }
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    HttpTransportFactory result =
+        MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+            OAuth2Utils.HTTP_TRANSPORT_FACTORY, envProvider, propProvider, null);
+
+    assertTrue(result instanceof MtlsHttpTransportFactory);
+  }
+
+  @Test
+  void
+      prepareTransportFactoryIfMtlsEnabled_defaultFactory_mtlsAlways_clientCertDisabled_returnsAsIs()
+          throws IOException {
+    EnvironmentProvider envProvider =
+        name -> {
+          if ("GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name)) {
+            return "false";
+          }
+          if ("GOOGLE_API_USE_MTLS_ENDPOINT".equals(name)) {
+            return "always";
+          }
+          return null;
+        };
+    PropertyProvider propProvider = (name, def) -> def;
+
+    HttpTransportFactory result =
+        MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+            OAuth2Utils.HTTP_TRANSPORT_FACTORY, envProvider, propProvider, null);
+
+    assertSame(OAuth2Utils.HTTP_TRANSPORT_FACTORY, result);
+  }
+
+  @Test
+  void prepareTransportFactoryIfMtlsEnabled_defaultFactory_mtlsAlways_missingConfig_returnsAsIs()
+      throws IOException {
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_USE_MTLS_ENDPOINT".equals(name) ? "always" : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    HttpTransportFactory result =
+        MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+            OAuth2Utils.HTTP_TRANSPORT_FACTORY, envProvider, propProvider, null);
+
+    assertSame(OAuth2Utils.HTTP_TRANSPORT_FACTORY, result);
+  }
+
+  @Test
+  void prepareTransportFactoryIfMtlsEnabled_defaultFactory_mtlsAuto_noConfig_returnsAsIs()
+      throws IOException {
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    HttpTransportFactory result =
+        MtlsUtils.prepareTransportFactoryIfMtlsEnabled(
+            OAuth2Utils.HTTP_TRANSPORT_FACTORY, envProvider, propProvider, null);
+
+    assertSame(OAuth2Utils.HTTP_TRANSPORT_FACTORY, result);
+  }
+
+  private String createJsonConfigString(Path certPath, Path keyPath) {
+    return "{\"cert_configs\":{\"workload\":{\"cert_path\":\""
+        + certPath.toString().replace("\\", "\\\\")
+        + "\",\"key_path\":\""
+        + keyPath.toString().replace("\\", "\\\\")
+        + "\"}}}";
   }
 }

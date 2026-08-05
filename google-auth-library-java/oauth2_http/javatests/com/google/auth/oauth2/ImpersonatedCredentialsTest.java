@@ -33,6 +33,7 @@ package com.google.auth.oauth2;
 
 import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
 import static com.google.auth.oauth2.TestUtils.createDummyRab;
+import static com.google.auth.oauth2.TestUtils.waitForRegionalAccessBoundary;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -42,7 +43,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.withSettings;
@@ -515,6 +515,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
                 .setHttpTransportFactory(mockTransportFactory)
                 .setUseJwtAccessWithScope(true)
                 .build();
+    sourceCredentialsSSJ.regionalAccessBoundaryManager.setCachedRAB(
+        createDummyRab(sourceCredentialsSSJ.clock));
     ImpersonatedCredentials targetCredentials =
         ImpersonatedCredentials.create(
             sourceCredentialsSSJ,
@@ -544,6 +546,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
                 .setUniverseDomain(TEST_UNIVERSE_DOMAIN)
                 .setHttpTransportFactory(transportFactory)
                 .build();
+    sourceCredentialsNonGDU.regionalAccessBoundaryManager.setCachedRAB(
+        createDummyRab(sourceCredentialsNonGDU.clock));
     ImpersonatedCredentials impersonatedCredentials =
         ImpersonatedCredentials.create(
             sourceCredentialsNonGDU,
@@ -845,6 +849,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
                 .setUniverseDomain("test.com")
                 .setHttpTransportFactory(transportFactory)
                 .build();
+    sourceCredentialsNonGDU.regionalAccessBoundaryManager.setCachedRAB(
+        createDummyRab(sourceCredentialsNonGDU.clock));
     ImpersonatedCredentials targetCredentials =
         ImpersonatedCredentials.create(
             sourceCredentialsNonGDU,
@@ -972,6 +978,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
                 .setUniverseDomain("test.com")
                 .setHttpTransportFactory(transportFactory)
                 .build();
+    sourceCredentialsNonGDU.regionalAccessBoundaryManager.setCachedRAB(
+        createDummyRab(sourceCredentialsNonGDU.clock));
     ImpersonatedCredentials targetCredentials =
         ImpersonatedCredentials.create(
             sourceCredentialsNonGDU,
@@ -1312,18 +1320,6 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     assertEquals(
         headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
         Collections.singletonList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
-  }
-
-  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
-      throws InterruptedException {
-    long deadline = System.currentTimeMillis() + 5000;
-    while (credentials.getRegionalAccessBoundary() == null
-        && System.currentTimeMillis() < deadline) {
-      Thread.sleep(100);
-    }
-    if (credentials.getRegionalAccessBoundary() == null) {
-      fail("Timed out waiting for regional access boundary refresh");
-    }
   }
 
   public static String getDefaultExpireTime() {

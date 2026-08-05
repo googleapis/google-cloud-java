@@ -56,8 +56,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.Executor;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -380,7 +382,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
 
     // Skip refresh for regional endpoints.
     if (uri != null && uri.getHost() != null) {
-      String host = uri.getHost().toLowerCase(java.util.Locale.US);
+      String host = uri.getHost().toLowerCase(Locale.US);
       if (host.endsWith(".rep.googleapis.com") || host.endsWith(".rep.sandbox.googleapis.com")) {
         return;
       }
@@ -389,7 +391,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
     // We need a valid access token for the refresh.
     if (token == null
         || (token.getExpirationTimeMillis() != null
-            && token.getExpirationTimeMillis() < clock.currentTimeMillis())) {
+            && token.getExpirationTimeMillis() <= clock.currentTimeMillis() + 180_000L)) {
       return;
     }
 
@@ -399,7 +401,11 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
     }
 
     regionalAccessBoundaryManager.triggerAsyncRefresh(
-        transportFactory, (RegionalAccessBoundaryProvider) this, token);
+        transportFactory,
+        (RegionalAccessBoundaryProvider) this,
+        token,
+        getEnvironmentProvider(),
+        getPropertyProvider());
   }
 
   /**
@@ -463,9 +469,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    */
   @Override
   public void getRequestMetadata(
-      final URI uri,
-      final java.util.concurrent.Executor executor,
-      final RequestMetadataCallback callback) {
+      final URI uri, final Executor executor, final RequestMetadataCallback callback) {
     super.getRequestMetadata(
         uri,
         executor,
@@ -553,7 +557,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
     Preconditions.checkNotNull(requestMetadata);
 
     if (uri != null && uri.getHost() != null) {
-      String host = uri.getHost().toLowerCase(java.util.Locale.US);
+      String host = uri.getHost().toLowerCase(Locale.US);
       if (host.endsWith(".rep.googleapis.com") || host.endsWith(".rep.sandbox.googleapis.com")) {
         return requestMetadata;
       }
@@ -839,14 +843,21 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    *
    * @return the transport factory, or null if not available.
    */
-  @Nullable
-  HttpTransportFactory getTransportFactory() {
+  @Nullable HttpTransportFactory getTransportFactory() {
     return null;
   }
 
+  EnvironmentProvider getEnvironmentProvider() {
+    return SystemEnvironmentProvider.getInstance();
+  }
+
+  PropertyProvider getPropertyProvider() {
+    return SystemPropertyProvider.getInstance();
+  }
+
   public static class Builder extends OAuth2Credentials.Builder {
-    @Nullable protected String quotaProjectId;
-    @Nullable protected String universeDomain;
+    protected @Nullable String quotaProjectId;
+    protected @Nullable String universeDomain;
     @Nullable String source;
 
     protected Builder() {}

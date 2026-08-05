@@ -84,7 +84,8 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
   static final String SERVICE_ACCOUNT_IMPERSONATION_URL =
       "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/testn@test.iam.gserviceaccount.com:generateAccessToken";
 
-  static final String IAM_ENDPOINT = "https://iamcredentials.googleapis.com";
+  static final String IAM_ENDPOINT = "iamcredentials.googleapis.com";
+  static final String MTLS_IAM_ENDPOINT = "iamcredentials.mtls.googleapis.com";
 
   private final Queue<Boolean> responseSequence = new ArrayDeque<>();
   private final Queue<IOException> responseErrorSequence = new ArrayDeque<>();
@@ -202,10 +203,11 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
                   .setContent(response.toPrettyString());
             }
 
-            if (url.contains(IAM_ENDPOINT)) {
+            if (url.contains(IAM_ENDPOINT) || url.contains(MTLS_IAM_ENDPOINT)) {
 
               if (url.endsWith(REGIONAL_ACCESS_BOUNDARY_URL_END)) {
-                RegionalAccessBoundary rab = regionalAccessBoundaries.get(url);
+                String normalizedUrl = url.replace(MTLS_IAM_ENDPOINT, IAM_ENDPOINT);
+                RegionalAccessBoundary rab = regionalAccessBoundaries.get(normalizedUrl);
                 if (rab == null) {
                   rab =
                       new RegionalAccessBoundary(
