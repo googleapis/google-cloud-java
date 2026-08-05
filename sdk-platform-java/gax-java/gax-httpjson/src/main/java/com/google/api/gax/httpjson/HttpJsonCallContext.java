@@ -509,7 +509,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
   }
 
   @Override
-  public RetrySettings getRetrySettings() {
+  public @Nullable RetrySettings getRetrySettings() {
     return retrySettings;
   }
 
@@ -530,7 +530,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
   }
 
   @Override
-  public Set<StatusCode.Code> getRetryableCodes() {
+  public @Nullable Set<StatusCode.Code> getRetryableCodes() {
     return retryableCodes;
   }
 

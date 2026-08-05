@@ -108,9 +108,8 @@ public final class InstantiatingWatchdogProvider implements WatchdogProvider {
   }
 
   @SuppressWarnings("ConstantConditions")
-  @Nullable
   @Override
-  public Watchdog getWatchdog() {
+  public @Nullable Watchdog getWatchdog() {
     Preconditions.checkState(!needsClock(), "A clock is needed");
     Preconditions.checkState(!needsCheckInterval(), "A check interval is needed");
     Preconditions.checkState(!needsExecutor(), "An executor is needed");

@@ -97,10 +97,10 @@ public class BatcherImpl<ElementT, ElementResultT, RequestT, ResponseT>
   private final Object flushLock = new Object();
   private final Object elementLock = new Object();
   private final Future<?> scheduledFuture;
-  private SettableApiFuture<Void> closeFuture;
+  private @Nullable SettableApiFuture<Void> closeFuture;
   private final BatcherStats batcherStats = new BatcherStats();
   private final FlowController flowController;
-  private final ApiCallContext callContext;
+  private final @Nullable ApiCallContext callContext;
 
   // If element threshold or bytes threshold is 0, it means that it'll always flush every element
   // without batching
@@ -478,7 +478,7 @@ public class BatcherImpl<ElementT, ElementResultT, RequestT, ResponseT>
     private long totalThrottledTimeMs = 0;
     private BatchResource resource;
 
-    private volatile ApiFuture<ResponseT> responseFuture;
+    private volatile @Nullable ApiFuture<ResponseT> responseFuture;
 
     private Batch(
         RequestT prototype,
@@ -561,7 +561,7 @@ public class BatcherImpl<ElementT, ElementResultT, RequestT, ResponseT>
   static class PushCurrentBatchRunnable<ElementT, ElementResultT, RequestT, ResponseT>
       implements Runnable {
 
-    private Future<?> scheduledFuture;
+    private @Nullable Future<?> scheduledFuture;
     private final WeakReference<BatcherImpl<ElementT, ElementResultT, RequestT, ResponseT>>
         batcherReferent;
 

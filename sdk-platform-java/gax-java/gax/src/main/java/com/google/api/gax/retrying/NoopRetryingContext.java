@@ -37,6 +37,7 @@ import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.BaseApiTracer;
 import java.util.Set;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Backwards compatibility class to aid in transition to adding operation state to {@link
@@ -55,12 +56,12 @@ class NoopRetryingContext implements RetryingContext {
   }
 
   @Override
-  public RetrySettings getRetrySettings() {
+  public @Nullable RetrySettings getRetrySettings() {
     return null;
   }
 
   @Override
-  public Set<Code> getRetryableCodes() {
+  public @Nullable Set<Code> getRetryableCodes() {
     return null;
   }
 }
