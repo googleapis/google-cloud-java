@@ -52,11 +52,12 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
   private final boolean usingDefaultExecutor;
   private final String endpoint;
   private final HttpTransport httpTransport;
+  private final boolean usingDefaultTransport;
   private final ScheduledExecutorService deadlineScheduledExecutorService;
   private boolean isTransportShutdown;
 
   protected ManagedHttpJsonChannel() {
-    this(null, true, null, null);
+    this(null, true, null, null, true);
   }
 
   String getEndpoint() {
@@ -72,16 +73,13 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
       @Nullable Executor executor,
       boolean usingDefaultExecutor,
       @Nullable String endpoint,
-      @Nullable HttpTransport httpTransport) {
+      @Nullable HttpTransport httpTransport,
+      boolean usingDefaultTransport) {
     this.executor = executor;
     this.usingDefaultExecutor = usingDefaultExecutor;
     this.endpoint = endpoint;
-    this.httpTransport =
-        httpTransport == null
-            ? HttpJsonConscryptUtils.configureConscryptSecurityProvider(
-                    new NetHttpTransport.Builder())
-                .build()
-            : httpTransport;
+    this.httpTransport = httpTransport == null ? new NetHttpTransport() : httpTransport;
+    this.usingDefaultTransport = usingDefaultTransport || httpTransport == null;
     this.deadlineScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
   }
 
@@ -96,6 +94,12 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         httpTransport,
         executor,
         deadlineScheduledExecutorService);
+  }
+
+  public void refresh() {}
+
+  public boolean shouldRefresh() {
+    return false;
   }
 
   @VisibleForTesting
@@ -116,7 +120,9 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         ((ExecutorService) executor).shutdown();
       }
       deadlineScheduledExecutorService.shutdown();
-      httpTransport.shutdown();
+      if (usingDefaultTransport) {
+        httpTransport.shutdown();
+      }
       isTransportShutdown = true;
     } catch (IOException e) {
       // TODO: Log this scenario once we implemented the Cloud SDK logging.
@@ -158,7 +164,9 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         ((ExecutorService) executor).shutdownNow();
       }
       deadlineScheduledExecutorService.shutdownNow();
-      httpTransport.shutdown();
+      if (usingDefaultTransport) {
+        httpTransport.shutdown();
+      }
       isTransportShutdown = true;
     } catch (IOException e) {
       // TODO: Log this scenario once we implemented the Cloud SDK logging.
@@ -205,9 +213,11 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     private String endpoint;
     private HttpTransport httpTransport;
     private boolean usingDefaultExecutor;
+    private boolean usingDefaultTransport;
 
     private Builder() {
       this.usingDefaultExecutor = false;
+      this.usingDefaultTransport = false;
     }
 
     public Builder setExecutor(Executor executor) {
@@ -225,6 +235,11 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
       return this;
     }
 
+    Builder setManageHttpTransport(boolean manageHttpTransport) {
+      this.usingDefaultTransport = manageHttpTransport;
+      return this;
+    }
+
     public ManagedHttpJsonChannel build() {
       Preconditions.checkNotNull(endpoint);
 
@@ -237,14 +252,8 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
         usingDefaultExecutor = true;
       }
 
-      if (httpTransport == null) {
-        httpTransport =
-            HttpJsonConscryptUtils.configureConscryptSecurityProvider(
-                    new NetHttpTransport.Builder())
-                .build();
-      }
-
-      return new ManagedHttpJsonChannel(executor, usingDefaultExecutor, endpoint, httpTransport);
+      return new ManagedHttpJsonChannel(
+          executor, usingDefaultExecutor, endpoint, httpTransport, usingDefaultTransport);
     }
   }
 }
