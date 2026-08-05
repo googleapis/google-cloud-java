@@ -62,6 +62,7 @@ import java.util.function.BiFunction;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITBigQueryJDBCTest extends ITBase {
@@ -101,6 +102,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("known_issue") // b/539615199
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
@@ -2488,6 +2490,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("known_issue") // b/539615199
   public void validateGetString() throws Exception {
     final ImmutableMap<String, Object> stringResults =
         new ImmutableMap.Builder<String, Object>()
@@ -2660,6 +2663,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("known_issue") // b/539615199
   public void validateGetTime() throws Exception {
     final ImmutableMap<String, Object> result =
         new ImmutableMap.Builder<String, Object>()
@@ -2698,6 +2702,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("known_issue") // b/539615199
   public void validateGetTimestamp() throws Exception {
     final ImmutableMap<String, Object> result =
         new ImmutableMap.Builder<String, Object>()
