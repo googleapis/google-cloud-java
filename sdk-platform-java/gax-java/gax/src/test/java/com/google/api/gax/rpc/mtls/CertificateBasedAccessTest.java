@@ -217,7 +217,7 @@ class CertificateBasedAccessTest {
 
     CertificateBasedAccess cba = createCba(env, fs);
 
-    assertThrows(IllegalStateException.class, cba::useMtlsClientCertificate);
+    assertFalse(cba.useMtlsClientCertificate());
   }
 
   @Test
@@ -264,6 +264,7 @@ class CertificateBasedAccessTest {
   @Test
   void testGetWorkloadCertPathWithMalformedConfigThrowsIllegalStateException() {
     TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
     env.set("GOOGLE_API_CERTIFICATE_CONFIG", "/path/to/config.json");
 
     TestFileSystem fs = new TestFileSystem();

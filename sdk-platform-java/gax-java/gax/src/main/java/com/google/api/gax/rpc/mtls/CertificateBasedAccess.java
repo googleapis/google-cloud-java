@@ -176,8 +176,7 @@ public class CertificateBasedAccess {
     try {
       CertificateConfig config = parseCertificateConfig(configPath);
       if (config == null) {
-        throw new IllegalStateException(
-            "Invalid certificate config file: missing cert_path or key_path in " + configPath);
+        return false;
       }
       if (!fileExistenceProvider.exists(config.certPath)
           || !fileExistenceProvider.exists(config.keyPath)) {
@@ -198,9 +197,9 @@ public class CertificateBasedAccess {
   /** Returns the current mutual TLS endpoint usage policy. */
   public MtlsEndpointUsagePolicy getMtlsEndpointUsagePolicy() {
     String mtlsEndpointUsagePolicy = envProvider.getenv("GOOGLE_API_USE_MTLS_ENDPOINT");
-    if ("never".equals(mtlsEndpointUsagePolicy)) {
+    if ("never".equalsIgnoreCase(mtlsEndpointUsagePolicy)) {
       return MtlsEndpointUsagePolicy.NEVER;
-    } else if ("always".equals(mtlsEndpointUsagePolicy)) {
+    } else if ("always".equalsIgnoreCase(mtlsEndpointUsagePolicy)) {
       return MtlsEndpointUsagePolicy.ALWAYS;
     }
     return MtlsEndpointUsagePolicy.AUTO;
@@ -219,12 +218,18 @@ public class CertificateBasedAccess {
     if (certConfigPath != null && !certConfigPath.isEmpty()) {
       try {
         CertificateConfig config = parseCertificateConfig(certConfigPath);
-        if (config == null) {
-          throw new IllegalStateException(
-              "Invalid certificate config file: missing cert_path or key_path in "
-                  + certConfigPath);
+        if (config != null) {
+          if (!fileExistenceProvider.exists(config.certPath)
+              || !fileExistenceProvider.exists(config.keyPath)) {
+            throw new IllegalStateException(
+                "Certificate config points to certificate/key files that do not exist on disk: "
+                    + "cert_path="
+                    + config.certPath
+                    + ", key_path="
+                    + config.keyPath);
+          }
+          return config.certPath;
         }
-        return config.certPath;
       } catch (Exception e) {
         throw new IllegalStateException("Failed to parse GOOGLE_API_CERTIFICATE_CONFIG", e);
       }
@@ -246,7 +251,7 @@ public class CertificateBasedAccess {
       return java.nio.file.Paths.get(wellKnownPath, "certificates.pem").toString();
     }
 
-    // Default to null if no well-known configuration is found
-    return null;
+    throw new IllegalStateException(
+        "mTLS client certificate is required, but no valid workload certificate could be resolved");
   }
 }
