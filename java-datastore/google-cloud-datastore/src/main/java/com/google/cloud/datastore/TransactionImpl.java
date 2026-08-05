@@ -86,7 +86,9 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     super("transaction");
     this.datastore = datastore;
     this.executionOptions =
-        executionOptions != null ? executionOptions : DatastoreExecutionOptions.getDefaultInstance();
+        executionOptions != null
+            ? executionOptions
+            : DatastoreExecutionOptions.getDefaultInstance();
     BeginTransactionRequest.Builder requestPb = BeginTransactionRequest.newBuilder();
 
     requestPb.setProjectId(this.datastore.getOptions().getProjectId());

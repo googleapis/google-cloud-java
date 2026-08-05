@@ -98,8 +98,7 @@ public class RemoteDatastoreHelper {
             .build());
   }
 
-  public static RemoteDatastoreHelper create(
-      String databaseId, TransportOptions transportOptions) {
+  public static RemoteDatastoreHelper create(String databaseId, TransportOptions transportOptions) {
     return create(
         RemoteDatastoreOptions.newBuilder()
             .setDatabaseId(databaseId)
@@ -126,7 +125,8 @@ public class RemoteDatastoreHelper {
             .setDatabaseId(options.getDatabaseId())
             .setNamespace(UUID.randomUUID().toString())
             .setRetrySettings(retrySettings());
-    datastoreOptionBuilder = datastoreOptionBuilder.setTransportOptions(options.getTransportOptions());
+    datastoreOptionBuilder =
+        datastoreOptionBuilder.setTransportOptions(options.getTransportOptions());
 
     if (options.getInstanceTags() != null) {
       datastoreOptionBuilder.setRequestTags(options.getInstanceTags());

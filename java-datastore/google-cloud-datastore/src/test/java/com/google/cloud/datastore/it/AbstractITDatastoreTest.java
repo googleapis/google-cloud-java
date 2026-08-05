@@ -2261,7 +2261,10 @@ public abstract class AbstractITDatastoreTest {
               .setFilter(PropertyFilter.eq("agg_prop", "agg_val"))
               .build();
       AggregationQuery aggQuery =
-          Query.newAggregationQueryBuilder().over(query).addAggregation(count().as("total")).build();
+          Query.newAggregationQueryBuilder()
+              .over(query)
+              .addAggregation(count().as("total"))
+              .build();
       AggregationResults results =
           datastore.runAggregation(aggQuery, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
       assertThat(getOnlyElement(results).getLong("total")).isEqualTo(1L);
