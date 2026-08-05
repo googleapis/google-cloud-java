@@ -131,6 +131,7 @@ public class Publisher implements PublisherInterface {
 
   private final AtomicBoolean shutdown;
   private final BackgroundResource backgroundResources;
+  private final RetrySettings retrySettings;
   private final Waiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
   private final ApiFunction<PubsubMessage, PubsubMessage> messageTransform;
@@ -234,6 +235,7 @@ public class Publisher implements PublisherInterface {
           .setTotalTimeoutDuration(Duration.ofNanos(Long.MAX_VALUE));
     }
 
+    this.retrySettings = retrySettingsBuilder.build();
     PublisherStubSettings.Builder stubSettings =
         PublisherStubSettings.newBuilder()
             .setCredentialsProvider(builder.credentialsProvider)
@@ -252,7 +254,7 @@ public class Publisher implements PublisherInterface {
             StatusCode.Code.RESOURCE_EXHAUSTED,
             StatusCode.Code.UNKNOWN,
             StatusCode.Code.UNAVAILABLE)
-        .setRetrySettings(retrySettingsBuilder.build())
+        .setRetrySettings(this.retrySettings)
         .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
     this.retryableCodes = ImmutableSet.copyOf(stubSettings.publishSettings().getRetryableCodes());
@@ -551,14 +553,17 @@ public class Publisher implements PublisherInterface {
   }
 
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
-    return publishCall(outstandingBatch, 0);
+    return publishCall(outstandingBatch, 0, null);
   }
 
   private ApiFuture<PublishResponse> publishCall(
-      OutstandingBatch outstandingBatch, int attemptNumber) {
+      OutstandingBatch outstandingBatch, int attemptNumber, Duration timeout) {
     GrpcCallContext context = publishContext;
     if (enableCompression && outstandingBatch.batchSizeBytes >= compressionBytesThreshold) {
       context = publishContextWithCompression;
+    }
+    if (timeout != null) {
+      context = context.withTimeoutDuration(timeout);
     }
     if (attemptNumber > 0) {
       loggingUtil.logPublisher(
@@ -706,7 +711,9 @@ public class Publisher implements PublisherInterface {
   }
 
   private ApiFuture<PublishResponse> startHedgedCall(final OutstandingBatch outstandingBatch) {
-    final CancellationSharer coordinator = new CancellationSharer(outstandingBatch, this);
+    long deadlineMs = clock.millisTime() + retrySettings.getTotalTimeoutDuration().toMillis();
+    final CancellationSharer coordinator =
+        new CancellationSharer(outstandingBatch, this, deadlineMs);
 
     // Register cancellation listeners on client futures to propagate cancel to coordinator
     final AtomicInteger cancelledCount = new AtomicInteger(0);
@@ -777,6 +784,14 @@ public class Publisher implements PublisherInterface {
           continue;
         }
 
+        long remainingTimeoutMs = coordinator.getDeadlineMs() - clock.millisTime();
+        if (remainingTimeoutMs <= 0) {
+          coordinator.isInQueue().set(false);
+          coordinator.checkCompletionOnQueueExit();
+          continue;
+        }
+        long attemptTimeoutMs = Math.min(10000, remainingTimeoutMs);
+
         if (tryAcquireHedgeToken()) {
           // Clone and schedule next attempt check (Attempt + 1)
           long delayMs = hedgingSettings.getHedgeDelay().toMillis();
@@ -785,7 +800,8 @@ public class Publisher implements PublisherInterface {
           hedgingQueue.add(nextItem);
 
           // Start Hedged Attempt
-          ApiFuture<PublishResponse> hedgedFuture = publishCall(batch, item.getAttemptNumber());
+          ApiFuture<PublishResponse> hedgedFuture =
+              publishCall(batch, item.getAttemptNumber(), Duration.ofMillis(attemptTimeoutMs));
           coordinator.addAttempt(item.getAttemptNumber(), hedgedFuture);
         } else {
           loggingUtil.logPublisher(

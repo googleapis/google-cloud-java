@@ -38,6 +38,7 @@ import java.util.concurrent.locks.ReentrantLock;
 class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   private Publisher.OutstandingBatch batch;
   private final Publisher publisher;
+  private final long deadlineMs;
 
   // Guarded by lock
   private final Map<Integer, ApiFuture<PublishResponse>> runningAttempts = new HashMap<>();
@@ -52,9 +53,11 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
     this.batch = null;
   }
 
-  CancellationSharer(final Publisher.OutstandingBatch batch, final Publisher publisher) {
+  CancellationSharer(
+      final Publisher.OutstandingBatch batch, final Publisher publisher, final long deadlineMs) {
     this.batch = batch;
     this.publisher = publisher;
+    this.deadlineMs = deadlineMs;
   }
 
   void addAttempt(final int attemptNumber, final ApiFuture<PublishResponse> future) {
@@ -189,5 +192,9 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
     } finally {
       lock.unlock();
     }
+  }
+
+  long getDeadlineMs() {
+    return deadlineMs;
   }
 }
