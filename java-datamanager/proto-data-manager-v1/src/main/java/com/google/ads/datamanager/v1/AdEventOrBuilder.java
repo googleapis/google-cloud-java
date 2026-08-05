@@ -300,12 +300,12 @@ public interface AdEventOrBuilder
    *
    *
    * <pre>
-   * Optional. Information gathered about the device being used when the ad
+   * Required. Information gathered about the device being used when the ad
    * event happened.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the deviceInfo field is set.
@@ -316,12 +316,12 @@ public interface AdEventOrBuilder
    *
    *
    * <pre>
-   * Optional. Information gathered about the device being used when the ad
+   * Required. Information gathered about the device being used when the ad
    * event happened.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The deviceInfo.
@@ -332,12 +332,12 @@ public interface AdEventOrBuilder
    *
    *
    * <pre>
-   * Optional. Information gathered about the device being used when the ad
+   * Required. Information gathered about the device being used when the ad
    * event happened.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.ads.datamanager.v1.DeviceInfoOrBuilder getDeviceInfoOrBuilder();
@@ -736,10 +736,10 @@ public interface AdEventOrBuilder
    *
    *
    * <pre>
-   * Required. The ISO 3166-2 country plus subdivision.
+   * Optional. The ISO 3166-2 country plus subdivision.
    * </pre>
    *
-   * <code>string region_code = 22 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string region_code = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The regionCode.
    */
@@ -749,10 +749,10 @@ public interface AdEventOrBuilder
    *
    *
    * <pre>
-   * Required. The ISO 3166-2 country plus subdivision.
+   * Optional. The ISO 3166-2 country plus subdivision.
    * </pre>
    *
-   * <code>string region_code = 22 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string region_code = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for regionCode.
    */

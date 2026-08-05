@@ -20,6 +20,7 @@ package com.google.cloud.dataform.v1beta1.samples;
 import com.google.cloud.dataform.v1beta1.DataformClient;
 import com.google.cloud.dataform.v1beta1.InstallNpmPackagesRequest;
 import com.google.cloud.dataform.v1beta1.InstallNpmPackagesResponse;
+import com.google.cloud.dataform.v1beta1.PipelineConfig;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
 
 public class SyncInstallNpmPackages {
@@ -40,6 +41,7 @@ public class SyncInstallNpmPackages {
               .setWorkspace(
                   WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                       .toString())
+              .setPipelineConfig(PipelineConfig.newBuilder().build())
               .build();
       InstallNpmPackagesResponse response = dataformClient.installNpmPackages(request);
     }

@@ -355,4 +355,50 @@ public interface CodeCompilationConfigOrBuilder
    */
   com.google.cloud.dataform.v1beta1.NotebookRuntimeOptionsOrBuilder
       getDefaultNotebookRuntimeOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pipeline options which defines the pipeline type and path
+   * within the Git repository.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the pipelineConfig field is set.
+   */
+  boolean hasPipelineConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pipeline options which defines the pipeline type and path
+   * within the Git repository.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pipelineConfig.
+   */
+  com.google.cloud.dataform.v1beta1.PipelineConfig getPipelineConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The pipeline options which defines the pipeline type and path
+   * within the Git repository.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.PipelineConfig pipeline_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.PipelineConfigOrBuilder getPipelineConfigOrBuilder();
 }

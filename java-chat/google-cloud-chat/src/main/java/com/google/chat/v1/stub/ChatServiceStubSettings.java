@@ -25,6 +25,7 @@ import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse
 import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -110,6 +111,9 @@ import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
 import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchMessageResult;
+import com.google.chat.v1.SearchMessagesRequest;
+import com.google.chat.v1.SearchMessagesResponse;
 import com.google.chat.v1.SearchSpacesRequest;
 import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.Section;
@@ -247,6 +251,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   private final UnaryCallSettings<GetMessageRequest, Message> getMessageSettings;
   private final UnaryCallSettings<UpdateMessageRequest, Message> updateMessageSettings;
   private final UnaryCallSettings<DeleteMessageRequest, Empty> deleteMessageSettings;
+  private final PagedCallSettings<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+      searchMessagesSettings;
   private final UnaryCallSettings<GetAttachmentRequest, Attachment> getAttachmentSettings;
   private final UnaryCallSettings<UploadAttachmentRequest, UploadAttachmentResponse>
       uploadAttachmentSettings;
@@ -383,6 +390,43 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
             @Override
             public Iterable<Membership> extractResources(ListMembershipsResponse payload) {
               return payload.getMembershipsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult>
+      SEARCH_MESSAGES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchMessagesRequest injectToken(SearchMessagesRequest payload, String token) {
+              return SearchMessagesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchMessagesRequest injectPageSize(
+                SearchMessagesRequest payload, int pageSize) {
+              return SearchMessagesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchMessagesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchMessagesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SearchMessageResult> extractResources(SearchMessagesResponse payload) {
+              return payload.getResultsList();
             }
           };
 
@@ -705,6 +749,24 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           };
 
   private static final PagedListResponseFactory<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+      SEARCH_MESSAGES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>() {
+            @Override
+            public ApiFuture<SearchMessagesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchMessagesRequest, SearchMessagesResponse> callable,
+                SearchMessagesRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchMessagesResponse> futureResponse) {
+              PageContext<SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult>
+                  pageContext =
+                      PageContext.create(callable, SEARCH_MESSAGES_PAGE_STR_DESC, request, context);
+              return SearchMessagesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
       LIST_SPACES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -880,6 +942,13 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   /** Returns the object with the settings used for calls to deleteMessage. */
   public UnaryCallSettings<DeleteMessageRequest, Empty> deleteMessageSettings() {
     return deleteMessageSettings;
+  }
+
+  /** Returns the object with the settings used for calls to searchMessages. */
+  public PagedCallSettings<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+      searchMessagesSettings() {
+    return searchMessagesSettings;
   }
 
   /** Returns the object with the settings used for calls to getAttachment. */
@@ -1225,6 +1294,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     getMessageSettings = settingsBuilder.getMessageSettings().build();
     updateMessageSettings = settingsBuilder.updateMessageSettings().build();
     deleteMessageSettings = settingsBuilder.deleteMessageSettings().build();
+    searchMessagesSettings = settingsBuilder.searchMessagesSettings().build();
     getAttachmentSettings = settingsBuilder.getAttachmentSettings().build();
     uploadAttachmentSettings = settingsBuilder.uploadAttachmentSettings().build();
     listSpacesSettings = settingsBuilder.listSpacesSettings().build();
@@ -1293,6 +1363,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     private final UnaryCallSettings.Builder<GetMessageRequest, Message> getMessageSettings;
     private final UnaryCallSettings.Builder<UpdateMessageRequest, Message> updateMessageSettings;
     private final UnaryCallSettings.Builder<DeleteMessageRequest, Empty> deleteMessageSettings;
+    private final PagedCallSettings.Builder<
+            SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+        searchMessagesSettings;
     private final UnaryCallSettings.Builder<GetAttachmentRequest, Attachment> getAttachmentSettings;
     private final UnaryCallSettings.Builder<UploadAttachmentRequest, UploadAttachmentResponse>
         uploadAttachmentSettings;
@@ -1416,6 +1489,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getMessageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateMessageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteMessageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      searchMessagesSettings = PagedCallSettings.newBuilder(SEARCH_MESSAGES_PAGE_STR_FACT);
       getAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       uploadAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSpacesSettings = PagedCallSettings.newBuilder(LIST_SPACES_PAGE_STR_FACT);
@@ -1467,6 +1541,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getMessageSettings,
               updateMessageSettings,
               deleteMessageSettings,
+              searchMessagesSettings,
               getAttachmentSettings,
               uploadAttachmentSettings,
               listSpacesSettings,
@@ -1521,6 +1596,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getMessageSettings = settings.getMessageSettings.toBuilder();
       updateMessageSettings = settings.updateMessageSettings.toBuilder();
       deleteMessageSettings = settings.deleteMessageSettings.toBuilder();
+      searchMessagesSettings = settings.searchMessagesSettings.toBuilder();
       getAttachmentSettings = settings.getAttachmentSettings.toBuilder();
       uploadAttachmentSettings = settings.uploadAttachmentSettings.toBuilder();
       listSpacesSettings = settings.listSpacesSettings.toBuilder();
@@ -1574,6 +1650,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getMessageSettings,
               updateMessageSettings,
               deleteMessageSettings,
+              searchMessagesSettings,
               getAttachmentSettings,
               uploadAttachmentSettings,
               listSpacesSettings,
@@ -1674,6 +1751,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .deleteMessageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .searchMessagesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1937,6 +2019,13 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     /** Returns the builder for the settings used for calls to deleteMessage. */
     public UnaryCallSettings.Builder<DeleteMessageRequest, Empty> deleteMessageSettings() {
       return deleteMessageSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchMessages. */
+    public PagedCallSettings.Builder<
+            SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+        searchMessagesSettings() {
+      return searchMessagesSettings;
     }
 
     /** Returns the builder for the settings used for calls to getAttachment. */
