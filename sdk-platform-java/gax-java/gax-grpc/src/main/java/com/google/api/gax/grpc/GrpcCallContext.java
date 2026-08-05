@@ -563,7 +563,8 @@ public final class GrpcCallContext implements ApiCallContext {
     }
 
     TransportChannel newTransportChannel = grpcCallContext.transportChannel;
-    if (newTransportChannel == null) {
+    if (newTransportChannel == null
+        && (grpcCallContext.channel == null || grpcCallContext.channel.equals(channel))) {
       newTransportChannel = transportChannel;
     }
 
@@ -662,7 +663,7 @@ public final class GrpcCallContext implements ApiCallContext {
         retryableCodes,
         endpointContext,
         isDirectPath,
-        transportChannel);
+        (newChannel == null || newChannel.equals(channel)) ? transportChannel : null);
   }
 
   /** Returns a new instance with the call options set to the given call options. */

@@ -242,9 +242,16 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
     synchronized (refreshLock) {
       isShuttingDown = true;
       for (ChannelEntry entry : allEntries) {
+        entry.shutdownRequested.set(true);
+        entry.shutdownInitiated.set(true);
         entry.channel.shutdownNow();
       }
     }
+  }
+
+  @VisibleForTesting
+  void invalidateDiskFingerprintCache() {
+    this.lastDiskCheck = null;
   }
 
   @Override

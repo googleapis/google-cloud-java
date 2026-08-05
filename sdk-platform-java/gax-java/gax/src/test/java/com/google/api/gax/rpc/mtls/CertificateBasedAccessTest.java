@@ -217,7 +217,7 @@ class CertificateBasedAccessTest {
 
     CertificateBasedAccess cba = createCba(env, fs);
 
-    assertFalse(cba.useMtlsClientCertificate());
+    assertThrows(IllegalStateException.class, cba::useMtlsClientCertificate);
   }
 
   @Test
@@ -259,5 +259,38 @@ class CertificateBasedAccessTest {
 
     CertificateBasedAccess cba = createCba(env, fs);
     assertTrue(cba.useMtlsClientCertificate());
+  }
+
+  @Test
+  void testGetWorkloadCertPathWithMalformedConfigThrowsIllegalStateException() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_CERTIFICATE_CONFIG", "/path/to/config.json");
+
+    TestFileSystem fs = new TestFileSystem();
+    fs.setContent("/path/to/config.json", "{\n  \"broken\": \"path\"\n}");
+
+    CertificateBasedAccess cba = createCba(env, fs);
+
+    assertThrows(IllegalStateException.class, cba::getWorkloadCertPath);
+  }
+
+  @Test
+  void testExtractJsonValueWithEscapedBackslashesAndQuotes() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_CERTIFICATE_CONFIG", "/path/to/config.json");
+
+    TestFileSystem fs = new TestFileSystem();
+    fs.setContent(
+        "/path/to/config.json",
+        "{\n"
+            + "  \"cert_path\": \"/my/\\\"escaped\\\"/\\\\cert.pem\",\n"
+            + "  \"key_path\": \"/my/key.pem\"\n"
+            + "}");
+    fs.setExists("/my/\"escaped\"/\\cert.pem", true);
+    fs.setExists("/my/key.pem", true);
+
+    CertificateBasedAccess cba = createCba(env, fs);
+    assertTrue(cba.useMtlsClientCertificate());
+    assertEquals("/my/\"escaped\"/\\cert.pem", cba.getWorkloadCertPath());
   }
 }

@@ -98,7 +98,7 @@ class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
                   UnauthenticatedException newEx =
                       new UnauthenticatedException(
                           unauthenticatedException.getMessage(),
-                          unauthenticatedException,
+                          unauthenticatedException.getCause(),
                           unauthenticatedException.getStatusCode(),
                           true, // isRetryable = true
                           unauthenticatedException.getErrorDetails());

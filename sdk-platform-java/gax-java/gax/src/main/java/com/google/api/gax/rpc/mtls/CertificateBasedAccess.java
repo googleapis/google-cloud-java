@@ -123,7 +123,7 @@ public class CertificateBasedAccess {
             "\"" + java.util.regex.Pattern.quote(key) + "\"\\s*:\\s*\"((?:[^\\\\\"]|\\\\.)*)\"");
     java.util.regex.Matcher matcher = pattern.matcher(json);
     if (matcher.find()) {
-      return matcher.group(1).replace("\\\\", "\\").replace("\\/", "/").replace("\\\"", "\"");
+      return matcher.group(1).replace("\\\"", "\"").replace("\\/", "/").replace("\\\\", "\\");
     }
     return null;
   }
@@ -176,7 +176,8 @@ public class CertificateBasedAccess {
     try {
       CertificateConfig config = parseCertificateConfig(configPath);
       if (config == null) {
-        return false;
+        throw new IllegalStateException(
+            "Invalid certificate config file: missing cert_path or key_path in " + configPath);
       }
       if (!fileExistenceProvider.exists(config.certPath)
           || !fileExistenceProvider.exists(config.keyPath)) {
@@ -218,7 +219,12 @@ public class CertificateBasedAccess {
     if (certConfigPath != null && !certConfigPath.isEmpty()) {
       try {
         CertificateConfig config = parseCertificateConfig(certConfigPath);
-        return config != null ? config.certPath : null;
+        if (config == null) {
+          throw new IllegalStateException(
+              "Invalid certificate config file: missing cert_path or key_path in "
+                  + certConfigPath);
+        }
+        return config.certPath;
       } catch (Exception e) {
         throw new IllegalStateException("Failed to parse GOOGLE_API_CERTIFICATE_CONFIG", e);
       }

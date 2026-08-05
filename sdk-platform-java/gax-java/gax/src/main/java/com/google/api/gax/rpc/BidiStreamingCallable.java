@@ -264,13 +264,18 @@ public abstract class BidiStreamingCallable<RequestT, ResponseT> {
                   if (transportChannel != null && transportChannel.shouldRefresh()) {
                     transportChannel.refresh();
                     UnauthenticatedException causeEx = (UnauthenticatedException) t;
-                    t =
+                    UnauthenticatedException newEx =
                         new UnauthenticatedException(
                             causeEx.getMessage(),
                             causeEx.getCause(),
                             causeEx.getStatusCode(),
                             true, // isRetryable = true
                             causeEx.getErrorDetails());
+                    newEx.setStackTrace(causeEx.getStackTrace());
+                    for (Throwable suppressed : causeEx.getSuppressed()) {
+                      newEx.addSuppressed(suppressed);
+                    }
+                    t = newEx;
                   }
                 }
                 responseObserver.onError(t);

@@ -246,13 +246,18 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
               if (transportChannel != null && transportChannel.shouldRefresh()) {
                 transportChannel.refresh();
                 UnauthenticatedException causeEx = (UnauthenticatedException) cause;
-                cause =
+                UnauthenticatedException newEx =
                     new UnauthenticatedException(
                         causeEx.getMessage(),
                         causeEx.getCause(),
                         causeEx.getStatusCode(),
                         true, // isRetryable = true
                         causeEx.getErrorDetails());
+                newEx.setStackTrace(causeEx.getStackTrace());
+                for (Throwable suppressed : causeEx.getSuppressed()) {
+                  newEx.addSuppressed(suppressed);
+                }
+                cause = newEx;
 
                 t = cause;
               }

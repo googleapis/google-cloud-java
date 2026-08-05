@@ -177,7 +177,7 @@ class RefreshingHttpJsonChannelTest {
   void testShouldRefreshFalseWhenUnchanged() throws InterruptedException {
     RefreshingHttpJsonChannel channel = createTestChannel();
 
-    Thread.sleep(1001); // Invalidate 1-second cache
+    channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
     assertFalse(channel.shouldRefresh());
   }
 
@@ -185,7 +185,7 @@ class RefreshingHttpJsonChannelTest {
   void testShouldRefreshTrueWhenChanged() throws InterruptedException {
     RefreshingHttpJsonChannel channel = createTestChannel();
 
-    Thread.sleep(1001); // Invalidate 1-second cache
+    channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
 
     // Simulate disk fingerprint changing
     testFingerprint = "fingerprint2";
@@ -199,7 +199,7 @@ class RefreshingHttpJsonChannelTest {
     FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
     assertEquals(1, channelFactoryCount.get());
 
-    Thread.sleep(1001); // Invalidate 1-second cache
+    channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
 
     // Change fingerprint
     testFingerprint = "fingerprint2";
@@ -227,7 +227,7 @@ class RefreshingHttpJsonChannelTest {
 
     HttpJsonClientCall<Object, Object> activeCall = channel.newCall(null, null);
 
-    Thread.sleep(1001); // Invalidate 1-second cache
+    channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
 
     // Change fingerprint & refresh
     testFingerprint = "fingerprint2";
@@ -262,7 +262,7 @@ class RefreshingHttpJsonChannelTest {
     channel.shutdown();
     firstChannel.shutdown();
 
-    Thread.sleep(1001); // Invalidate 1-second cache
+    channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
 
     // Change fingerprint
     testFingerprint = "fingerprint2";
@@ -280,7 +280,7 @@ class RefreshingHttpJsonChannelTest {
     assertEquals(1, channelFactoryCount.get());
 
     shouldThrowOnFactory = true;
-    Thread.sleep(1001); // Invalidate 1-second cache
+    channel.invalidateDiskFingerprintCache(); // Invalidate 1-second cache
     testFingerprint = "fingerprint2";
 
     assertThrows(RuntimeException.class, channel::refresh);
@@ -323,5 +323,49 @@ class RefreshingHttpJsonChannelTest {
     assertEquals(firstChannel.getEndpoint(), channel.getEndpoint());
     assertEquals(firstChannel.getHttpTransport(), channel.getHttpTransport());
     assertEquals(firstChannel.getExecutor(), channel.getExecutor());
+  }
+
+  @Test
+  void testNewCallAfterShutdownNowThrowsIllegalStateException() {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    channel.shutdownNow();
+
+    assertThrows(
+        IllegalStateException.class,
+        () -> channel.newCall(null, null),
+        "Channel has been shut down");
+  }
+
+  @Test
+  void testConcurrentNewCallDuringRefresh() throws InterruptedException {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    int threadCount = 10;
+    java.util.concurrent.ExecutorService executorService =
+        java.util.concurrent.Executors.newFixedThreadPool(threadCount);
+    java.util.concurrent.CountDownLatch latch =
+        new java.util.concurrent.CountDownLatch(threadCount);
+    java.util.concurrent.atomic.AtomicInteger successCount =
+        new java.util.concurrent.atomic.AtomicInteger(0);
+
+    for (int i = 0; i < threadCount; i++) {
+      executorService.submit(
+          () -> {
+            try {
+              channel.newCall(null, null);
+              successCount.incrementAndGet();
+            } finally {
+              latch.countDown();
+            }
+          });
+    }
+
+    channel.invalidateDiskFingerprintCache();
+    testFingerprint = "fingerprint2";
+    channel.refresh();
+
+    latch.await(5, TimeUnit.SECONDS);
+    executorService.shutdown();
+
+    assertEquals(threadCount, successCount.get());
   }
 }

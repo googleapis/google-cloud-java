@@ -178,7 +178,7 @@ class AttemptCallableTest {
     assertThat(thrown).isInstanceOf(UnauthenticatedException.class);
     UnauthenticatedException rethrown = (UnauthenticatedException) thrown;
     assertThat(rethrown.isRetryable()).isTrue();
-    assertThat(rethrown.getCause()).isEqualTo(originalEx);
+    assertThat(rethrown.getCause()).isEqualTo(originalEx.getCause());
     assertThat(rethrown.getStackTrace()).isEqualTo(originalEx.getStackTrace());
     assertThat(rethrown.getSuppressed().length).isEqualTo(1);
     assertThat(rethrown.getSuppressed()[0]).isInstanceOf(RuntimeException.class);

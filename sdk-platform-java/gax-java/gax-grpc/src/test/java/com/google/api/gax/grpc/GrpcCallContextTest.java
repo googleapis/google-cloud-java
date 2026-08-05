@@ -515,4 +515,33 @@ class GrpcCallContextTest {
 
     org.junit.jupiter.api.Assertions.assertNotEquals(context1, context3);
   }
+
+  @Test
+  public void testMergeWithCustomChannelClearsTransportChannel() {
+    ManagedChannel defaultChannel = org.mockito.Mockito.mock(ManagedChannel.class);
+    ManagedChannel customChannel = org.mockito.Mockito.mock(ManagedChannel.class);
+    GrpcTransportChannel transportChannel = GrpcTransportChannel.create(defaultChannel);
+
+    GrpcCallContext baseContext =
+        GrpcCallContext.createDefault().withTransportChannel(transportChannel);
+    GrpcCallContext overrideContext = GrpcCallContext.of(customChannel, CallOptions.DEFAULT);
+
+    GrpcCallContext mergedContext = (GrpcCallContext) baseContext.merge(overrideContext);
+    assertEquals(customChannel, mergedContext.getChannel());
+    assertNull(mergedContext.getTransportChannel());
+  }
+
+  @Test
+  public void testWithChannelWithCustomChannelClearsTransportChannel() {
+    ManagedChannel defaultChannel = org.mockito.Mockito.mock(ManagedChannel.class);
+    ManagedChannel customChannel = org.mockito.Mockito.mock(ManagedChannel.class);
+    GrpcTransportChannel transportChannel = GrpcTransportChannel.create(defaultChannel);
+
+    GrpcCallContext baseContext =
+        GrpcCallContext.createDefault().withTransportChannel(transportChannel);
+    GrpcCallContext updatedContext = baseContext.withChannel(customChannel);
+
+    assertEquals(customChannel, updatedContext.getChannel());
+    assertNull(updatedContext.getTransportChannel());
+  }
 }

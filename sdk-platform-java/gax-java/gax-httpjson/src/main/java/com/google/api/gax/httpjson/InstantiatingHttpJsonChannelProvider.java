@@ -199,7 +199,10 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
     if (certificateBasedAccess.useMtlsClientCertificate()) {
       KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
       if (mtlsKeyStore != null) {
-        return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();
+        NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
+        builder.trustCertificates(null, mtlsKeyStore, "");
+        HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder);
+        return builder.build();
       }
     }
     return null;
