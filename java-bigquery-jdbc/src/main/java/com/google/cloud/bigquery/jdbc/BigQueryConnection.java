@@ -1185,6 +1185,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   private OpenTelemetry getOpenTelemetryInstance() {
+    BigQueryJdbcOpenTelemetry.ensureGlobalHandlerAttached();
 
     String effectiveProjectId =
         (this.gcpTelemetryProjectId != null) ? this.gcpTelemetryProjectId : this.catalog;
