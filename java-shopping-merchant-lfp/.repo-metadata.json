@@ -11,6 +11,5 @@
   "repo_short": "java-shopping-merchant-lfp",
   "distribution_name": "com.google.shopping:google-shopping-merchant-lfp",
   "api_id": "shopping-merchant-lfp.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

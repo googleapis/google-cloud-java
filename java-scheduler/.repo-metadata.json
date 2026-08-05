@@ -12,7 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-scheduler",
   "api_id": "cloudscheduler.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": false,
   "issue_tracker": "https://issuetracker.google.com/savedsearches/5411429",
   "rest_documentation": "https://cloud.google.com/scheduler/docs/reference/rest",
   "rpc_documentation": "https://cloud.google.com/scheduler/docs/reference/rpc"

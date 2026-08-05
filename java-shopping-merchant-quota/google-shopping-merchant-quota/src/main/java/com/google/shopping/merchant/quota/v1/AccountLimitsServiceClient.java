@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -164,7 +165,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AccountLimitsServiceClient implements BackgroundResource {
-  private final AccountLimitsServiceSettings settings;
+  private final @Nullable AccountLimitsServiceSettings settings;
   private final AccountLimitsServiceStub stub;
 
   /** Constructs an instance of AccountLimitsServiceClient with default settings. */
@@ -204,7 +205,7 @@ public class AccountLimitsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AccountLimitsServiceSettings getSettings() {
+  public final @Nullable AccountLimitsServiceSettings getSettings() {
     return settings;
   }
 
@@ -235,7 +236,7 @@ public class AccountLimitsServiceClient implements BackgroundResource {
    *     `accounts/{account}/limits/{limit}` For example: `accounts/123/limits/products~ADS_NON_EEA`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AccountLimit getAccountLimit(AccountLimitName name) {
+  public final AccountLimit getAccountLimit(@Nullable AccountLimitName name) {
     GetAccountLimitRequest request =
         GetAccountLimitRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAccountLimit(request);
@@ -352,7 +353,7 @@ public class AccountLimitsServiceClient implements BackgroundResource {
    * @param parent Required. The parent account. Format: `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAccountLimitsPagedResponse listAccountLimits(AccountName parent) {
+  public final ListAccountLimitsPagedResponse listAccountLimits(@Nullable AccountName parent) {
     ListAccountLimitsRequest request =
         ListAccountLimitsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -565,8 +566,9 @@ public class AccountLimitsServiceClient implements BackgroundResource {
           ListAccountLimitsPage> {
 
     private ListAccountLimitsPage(
-        PageContext<ListAccountLimitsRequest, ListAccountLimitsResponse, AccountLimit> context,
-        ListAccountLimitsResponse response) {
+        @Nullable PageContext<ListAccountLimitsRequest, ListAccountLimitsResponse, AccountLimit>
+            context,
+        @Nullable ListAccountLimitsResponse response) {
       super(context, response);
     }
 
@@ -576,14 +578,16 @@ public class AccountLimitsServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountLimitsPage createPage(
-        PageContext<ListAccountLimitsRequest, ListAccountLimitsResponse, AccountLimit> context,
-        ListAccountLimitsResponse response) {
+        @Nullable PageContext<ListAccountLimitsRequest, ListAccountLimitsResponse, AccountLimit>
+            context,
+        @Nullable ListAccountLimitsResponse response) {
       return new ListAccountLimitsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccountLimitsPage> createPageAsync(
-        PageContext<ListAccountLimitsRequest, ListAccountLimitsResponse, AccountLimit> context,
+        @Nullable PageContext<ListAccountLimitsRequest, ListAccountLimitsResponse, AccountLimit>
+            context,
         ApiFuture<ListAccountLimitsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -598,7 +602,7 @@ public class AccountLimitsServiceClient implements BackgroundResource {
           ListAccountLimitsFixedSizeCollection> {
 
     private ListAccountLimitsFixedSizeCollection(
-        List<ListAccountLimitsPage> pages, int collectionSize) {
+        @Nullable List<ListAccountLimitsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -608,7 +612,7 @@ public class AccountLimitsServiceClient implements BackgroundResource {
 
     @Override
     protected ListAccountLimitsFixedSizeCollection createCollection(
-        List<ListAccountLimitsPage> pages, int collectionSize) {
+        @Nullable List<ListAccountLimitsPage> pages, int collectionSize) {
       return new ListAccountLimitsFixedSizeCollection(pages, collectionSize);
     }
   }

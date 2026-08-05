@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -572,7 +573,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class FeatureRegistryServiceClient implements BackgroundResource {
-  private final FeatureRegistryServiceSettings settings;
+  private final @Nullable FeatureRegistryServiceSettings settings;
   private final FeatureRegistryServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -616,7 +617,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final FeatureRegistryServiceSettings getSettings() {
+  public final @Nullable FeatureRegistryServiceSettings getSettings() {
     return settings;
   }
 
@@ -668,7 +669,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    */
   public final OperationFuture<FeatureGroup, CreateFeatureGroupOperationMetadata>
       createFeatureGroupAsync(
-          LocationName parent, FeatureGroup featureGroup, String featureGroupId) {
+          @Nullable LocationName parent, FeatureGroup featureGroup, String featureGroupId) {
     CreateFeatureGroupRequest request =
         CreateFeatureGroupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -841,7 +842,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @param name Required. The name of the FeatureGroup resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FeatureGroup getFeatureGroup(FeatureGroupName name) {
+  public final FeatureGroup getFeatureGroup(@Nullable FeatureGroupName name) {
     GetFeatureGroupRequest request =
         GetFeatureGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFeatureGroup(request);
@@ -958,7 +959,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFeatureGroupsPagedResponse listFeatureGroups(LocationName parent) {
+  public final ListFeatureGroupsPagedResponse listFeatureGroups(@Nullable LocationName parent) {
     ListFeatureGroupsRequest request =
         ListFeatureGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1276,7 +1277,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeatureGroupAsync(
-      FeatureGroupName name, boolean force) {
+      @Nullable FeatureGroupName name, boolean force) {
     DeleteFeatureGroupRequest request =
         DeleteFeatureGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1447,7 +1448,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
-      EntityTypeName parent, Feature feature, String featureId) {
+      @Nullable EntityTypeName parent, Feature feature, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1493,7 +1494,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, CreateFeatureOperationMetadata> createFeatureAsync(
-      FeatureGroupName parent, Feature feature, String featureId) {
+      @Nullable FeatureGroupName parent, Feature feature, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1685,7 +1686,8 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
-      batchCreateFeaturesAsync(EntityTypeName parent, List<CreateFeatureRequest> requests) {
+      batchCreateFeaturesAsync(
+          @Nullable EntityTypeName parent, List<CreateFeatureRequest> requests) {
     BatchCreateFeaturesRequest request =
         BatchCreateFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1726,7 +1728,8 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BatchCreateFeaturesResponse, BatchCreateFeaturesOperationMetadata>
-      batchCreateFeaturesAsync(FeatureGroupName parent, List<CreateFeatureRequest> requests) {
+      batchCreateFeaturesAsync(
+          @Nullable FeatureGroupName parent, List<CreateFeatureRequest> requests) {
     BatchCreateFeaturesRequest request =
         BatchCreateFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1904,7 +1907,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Feature getFeature(FeatureName name) {
+  public final Feature getFeature(@Nullable FeatureName name) {
     GetFeatureRequest request =
         GetFeatureRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFeature(request);
@@ -2038,7 +2041,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFeaturesPagedResponse listFeatures(EntityTypeName parent) {
+  public final ListFeaturesPagedResponse listFeatures(@Nullable EntityTypeName parent) {
     ListFeaturesRequest request =
         ListFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2074,7 +2077,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFeaturesPagedResponse listFeatures(FeatureGroupName parent) {
+  public final ListFeaturesPagedResponse listFeatures(@Nullable FeatureGroupName parent) {
     ListFeaturesRequest request =
         ListFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2403,7 +2406,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeatureAsync(
-      FeatureName name) {
+      @Nullable FeatureName name) {
     DeleteFeatureRequest request =
         DeleteFeatureRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteFeatureAsync(request);
@@ -2575,7 +2578,9 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    */
   public final OperationFuture<FeatureMonitor, CreateFeatureMonitorOperationMetadata>
       createFeatureMonitorAsync(
-          FeatureGroupName parent, FeatureMonitor featureMonitor, String featureMonitorId) {
+          @Nullable FeatureGroupName parent,
+          FeatureMonitor featureMonitor,
+          String featureMonitorId) {
     CreateFeatureMonitorRequest request =
         CreateFeatureMonitorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2755,7 +2760,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @param name Required. The name of the FeatureMonitor resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FeatureMonitor getFeatureMonitor(FeatureMonitorName name) {
+  public final FeatureMonitor getFeatureMonitor(@Nullable FeatureMonitorName name) {
     GetFeatureMonitorRequest request =
         GetFeatureMonitorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2882,7 +2887,8 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/featureGroups/{featureGroup}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFeatureMonitorsPagedResponse listFeatureMonitors(FeatureGroupName parent) {
+  public final ListFeatureMonitorsPagedResponse listFeatureMonitors(
+      @Nullable FeatureGroupName parent) {
     ListFeatureMonitorsRequest request =
         ListFeatureMonitorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3204,7 +3210,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteFeatureMonitorAsync(
-      FeatureMonitorName name) {
+      @Nullable FeatureMonitorName name) {
     DeleteFeatureMonitorRequest request =
         DeleteFeatureMonitorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3375,7 +3381,9 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FeatureMonitorJob createFeatureMonitorJob(
-      FeatureMonitorName parent, FeatureMonitorJob featureMonitorJob, long featureMonitorJobId) {
+      @Nullable FeatureMonitorName parent,
+      FeatureMonitorJob featureMonitorJob,
+      long featureMonitorJobId) {
     CreateFeatureMonitorJobRequest request =
         CreateFeatureMonitorJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3526,7 +3534,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/featureGroups/{feature_group}/featureMonitors/{feature_monitor}/featureMonitorJobs/{feature_monitor_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FeatureMonitorJob getFeatureMonitorJob(FeatureMonitorJobName name) {
+  public final FeatureMonitorJob getFeatureMonitorJob(@Nullable FeatureMonitorJobName name) {
     GetFeatureMonitorJobRequest request =
         GetFeatureMonitorJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3672,7 +3680,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFeatureMonitorJobsPagedResponse listFeatureMonitorJobs(
-      FeatureMonitorName parent) {
+      @Nullable FeatureMonitorName parent) {
     ListFeatureMonitorJobsRequest request =
         ListFeatureMonitorJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4282,8 +4290,9 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
           ListFeatureGroupsPage> {
 
     private ListFeatureGroupsPage(
-        PageContext<ListFeatureGroupsRequest, ListFeatureGroupsResponse, FeatureGroup> context,
-        ListFeatureGroupsResponse response) {
+        @Nullable PageContext<ListFeatureGroupsRequest, ListFeatureGroupsResponse, FeatureGroup>
+            context,
+        @Nullable ListFeatureGroupsResponse response) {
       super(context, response);
     }
 
@@ -4293,14 +4302,16 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListFeatureGroupsPage createPage(
-        PageContext<ListFeatureGroupsRequest, ListFeatureGroupsResponse, FeatureGroup> context,
-        ListFeatureGroupsResponse response) {
+        @Nullable PageContext<ListFeatureGroupsRequest, ListFeatureGroupsResponse, FeatureGroup>
+            context,
+        @Nullable ListFeatureGroupsResponse response) {
       return new ListFeatureGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeatureGroupsPage> createPageAsync(
-        PageContext<ListFeatureGroupsRequest, ListFeatureGroupsResponse, FeatureGroup> context,
+        @Nullable PageContext<ListFeatureGroupsRequest, ListFeatureGroupsResponse, FeatureGroup>
+            context,
         ApiFuture<ListFeatureGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4315,7 +4326,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
           ListFeatureGroupsFixedSizeCollection> {
 
     private ListFeatureGroupsFixedSizeCollection(
-        List<ListFeatureGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListFeatureGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4325,7 +4336,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListFeatureGroupsFixedSizeCollection createCollection(
-        List<ListFeatureGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListFeatureGroupsPage> pages, int collectionSize) {
       return new ListFeatureGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4358,8 +4369,8 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
       extends AbstractPage<ListFeaturesRequest, ListFeaturesResponse, Feature, ListFeaturesPage> {
 
     private ListFeaturesPage(
-        PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
-        ListFeaturesResponse response) {
+        @Nullable PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
+        @Nullable ListFeaturesResponse response) {
       super(context, response);
     }
 
@@ -4369,14 +4380,14 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListFeaturesPage createPage(
-        PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
-        ListFeaturesResponse response) {
+        @Nullable PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
+        @Nullable ListFeaturesResponse response) {
       return new ListFeaturesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeaturesPage> createPageAsync(
-        PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
+        @Nullable PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
         ApiFuture<ListFeaturesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4390,7 +4401,8 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
           ListFeaturesPage,
           ListFeaturesFixedSizeCollection> {
 
-    private ListFeaturesFixedSizeCollection(List<ListFeaturesPage> pages, int collectionSize) {
+    private ListFeaturesFixedSizeCollection(
+        @Nullable List<ListFeaturesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4400,7 +4412,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListFeaturesFixedSizeCollection createCollection(
-        List<ListFeaturesPage> pages, int collectionSize) {
+        @Nullable List<ListFeaturesPage> pages, int collectionSize) {
       return new ListFeaturesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4438,9 +4450,10 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
           ListFeatureMonitorsPage> {
 
     private ListFeatureMonitorsPage(
-        PageContext<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, FeatureMonitor>
+        @Nullable
+            PageContext<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, FeatureMonitor>
             context,
-        ListFeatureMonitorsResponse response) {
+        @Nullable ListFeatureMonitorsResponse response) {
       super(context, response);
     }
 
@@ -4450,15 +4463,17 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListFeatureMonitorsPage createPage(
-        PageContext<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, FeatureMonitor>
+        @Nullable
+            PageContext<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, FeatureMonitor>
             context,
-        ListFeatureMonitorsResponse response) {
+        @Nullable ListFeatureMonitorsResponse response) {
       return new ListFeatureMonitorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeatureMonitorsPage> createPageAsync(
-        PageContext<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, FeatureMonitor>
+        @Nullable
+            PageContext<ListFeatureMonitorsRequest, ListFeatureMonitorsResponse, FeatureMonitor>
             context,
         ApiFuture<ListFeatureMonitorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4474,7 +4489,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
           ListFeatureMonitorsFixedSizeCollection> {
 
     private ListFeatureMonitorsFixedSizeCollection(
-        List<ListFeatureMonitorsPage> pages, int collectionSize) {
+        @Nullable List<ListFeatureMonitorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4484,7 +4499,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListFeatureMonitorsFixedSizeCollection createCollection(
-        List<ListFeatureMonitorsPage> pages, int collectionSize) {
+        @Nullable List<ListFeatureMonitorsPage> pages, int collectionSize) {
       return new ListFeatureMonitorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4523,10 +4538,11 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
           ListFeatureMonitorJobsPage> {
 
     private ListFeatureMonitorJobsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse, FeatureMonitorJob>
             context,
-        ListFeatureMonitorJobsResponse response) {
+        @Nullable ListFeatureMonitorJobsResponse response) {
       super(context, response);
     }
 
@@ -4536,16 +4552,18 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListFeatureMonitorJobsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse, FeatureMonitorJob>
             context,
-        ListFeatureMonitorJobsResponse response) {
+        @Nullable ListFeatureMonitorJobsResponse response) {
       return new ListFeatureMonitorJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeatureMonitorJobsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFeatureMonitorJobsRequest, ListFeatureMonitorJobsResponse, FeatureMonitorJob>
             context,
         ApiFuture<ListFeatureMonitorJobsResponse> futureResponse) {
@@ -4562,7 +4580,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
           ListFeatureMonitorJobsFixedSizeCollection> {
 
     private ListFeatureMonitorJobsFixedSizeCollection(
-        List<ListFeatureMonitorJobsPage> pages, int collectionSize) {
+        @Nullable List<ListFeatureMonitorJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4572,7 +4590,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListFeatureMonitorJobsFixedSizeCollection createCollection(
-        List<ListFeatureMonitorJobsPage> pages, int collectionSize) {
+        @Nullable List<ListFeatureMonitorJobsPage> pages, int collectionSize) {
       return new ListFeatureMonitorJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4606,8 +4624,8 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -4617,14 +4635,14 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4638,7 +4656,8 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4648,7 +4667,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

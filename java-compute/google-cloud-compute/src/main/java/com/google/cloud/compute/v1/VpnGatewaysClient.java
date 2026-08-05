@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -261,7 +262,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class VpnGatewaysClient implements BackgroundResource {
-  private final VpnGatewaysSettings settings;
+  private final @Nullable VpnGatewaysSettings settings;
   private final VpnGatewaysStub stub;
 
   /** Constructs an instance of VpnGatewaysClient with default settings. */
@@ -300,7 +301,7 @@ public class VpnGatewaysClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final VpnGatewaysSettings getSettings() {
+  public final @Nullable VpnGatewaysSettings getSettings() {
     return settings;
   }
 
@@ -1392,12 +1393,13 @@ public class VpnGatewaysClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListVpnGatewaysRequest,
                 VpnGatewayAggregatedList,
                 Map.Entry<String, VpnGatewaysScopedList>>
             context,
-        VpnGatewayAggregatedList response) {
+        @Nullable VpnGatewayAggregatedList response) {
       super(context, response);
     }
 
@@ -1407,18 +1409,20 @@ public class VpnGatewaysClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListVpnGatewaysRequest,
                 VpnGatewayAggregatedList,
                 Map.Entry<String, VpnGatewaysScopedList>>
             context,
-        VpnGatewayAggregatedList response) {
+        @Nullable VpnGatewayAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListVpnGatewaysRequest,
                 VpnGatewayAggregatedList,
                 Map.Entry<String, VpnGatewaysScopedList>>
@@ -1436,7 +1440,8 @@ public class VpnGatewaysClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1446,7 +1451,7 @@ public class VpnGatewaysClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1473,8 +1478,8 @@ public class VpnGatewaysClient implements BackgroundResource {
       extends AbstractPage<ListVpnGatewaysRequest, VpnGatewayList, VpnGateway, ListPage> {
 
     private ListPage(
-        PageContext<ListVpnGatewaysRequest, VpnGatewayList, VpnGateway> context,
-        VpnGatewayList response) {
+        @Nullable PageContext<ListVpnGatewaysRequest, VpnGatewayList, VpnGateway> context,
+        @Nullable VpnGatewayList response) {
       super(context, response);
     }
 
@@ -1484,14 +1489,14 @@ public class VpnGatewaysClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListVpnGatewaysRequest, VpnGatewayList, VpnGateway> context,
-        VpnGatewayList response) {
+        @Nullable PageContext<ListVpnGatewaysRequest, VpnGatewayList, VpnGateway> context,
+        @Nullable VpnGatewayList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListVpnGatewaysRequest, VpnGatewayList, VpnGateway> context,
+        @Nullable PageContext<ListVpnGatewaysRequest, VpnGatewayList, VpnGateway> context,
         ApiFuture<VpnGatewayList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1501,7 +1506,7 @@ public class VpnGatewaysClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListVpnGatewaysRequest, VpnGatewayList, VpnGateway, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1510,7 +1515,8 @@ public class VpnGatewaysClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

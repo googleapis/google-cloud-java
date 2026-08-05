@@ -25,6 +25,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -150,7 +151,7 @@ public class RunName implements ResourceName {
         .toString();
   }
 
-  public static RunName parse(String formattedString) {
+  public static @Nullable RunName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -209,7 +210,7 @@ public class RunName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

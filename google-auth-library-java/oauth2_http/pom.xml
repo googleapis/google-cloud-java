@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.google.auth</groupId>
     <artifactId>google-auth-library-parent</artifactId>
-    <version>1.50.0-SNAPSHOT</version><!-- {x-version-update:google-auth-library-parent:current} -->
+    <version>1.51.0-SNAPSHOT</version><!-- {x-version-update:google-auth-library-parent:current} -->
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -237,6 +237,10 @@
   </build>
 
   <dependencies>
+    <dependency>
+      <groupId>org.jspecify</groupId>
+      <artifactId>jspecify</artifactId>
+    </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>

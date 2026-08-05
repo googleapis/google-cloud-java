@@ -38,12 +38,14 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.common.util.concurrent.MoreExecutors;
 import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This callable wraps a {@link OperationCallable} in a {@link ApiTracer}.
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi("For internal use by google-cloud-java clients only")
 public class TracedOperationCallable<RequestT, ResponseT, MetadataT>
     extends OperationCallable<RequestT, ResponseT, MetadataT> {

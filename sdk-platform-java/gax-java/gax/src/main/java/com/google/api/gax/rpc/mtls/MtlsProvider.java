@@ -44,6 +44,8 @@ import java.io.InputStream;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Provider class for mutual TLS. It is used to configure the mutual TLS in the transport with the
@@ -54,6 +56,7 @@ import java.util.List;
  *
  * <p>Note: This class is for Google cloud internal use only.
  */
+@NullMarked
 @BetaApi
 @Deprecated
 public class MtlsProvider {
@@ -63,7 +66,7 @@ public class MtlsProvider {
 
   static class DefaultProcessProvider implements ProcessProvider {
     @Override
-    public Process createProcess(InputStream metadata) throws IOException {
+    public @Nullable Process createProcess(InputStream metadata) throws IOException {
       if (metadata == null) {
         return null;
       }
@@ -123,7 +126,7 @@ public class MtlsProvider {
   }
 
   /** The mutual TLS key store created with the default client certificate on device. */
-  public KeyStore getKeyStore() throws IOException {
+  public @Nullable KeyStore getKeyStore() throws IOException {
     try (InputStream stream = new FileInputStream(metadataPath)) {
       return getKeyStore(stream, processProvider);
     } catch (InterruptedException e) {

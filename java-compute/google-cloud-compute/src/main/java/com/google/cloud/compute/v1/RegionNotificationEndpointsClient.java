@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -228,7 +229,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionNotificationEndpointsClient implements BackgroundResource {
-  private final RegionNotificationEndpointsSettings settings;
+  private final @Nullable RegionNotificationEndpointsSettings settings;
   private final RegionNotificationEndpointsStub stub;
 
   /** Constructs an instance of RegionNotificationEndpointsClient with default settings. */
@@ -271,7 +272,7 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionNotificationEndpointsSettings getSettings() {
+  public final @Nullable RegionNotificationEndpointsSettings getSettings() {
     return settings;
   }
 
@@ -1159,12 +1160,13 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionNotificationEndpointsRequest,
                 NotificationEndpointAggregatedList,
                 Map.Entry<String, NotificationEndpointsScopedList>>
             context,
-        NotificationEndpointAggregatedList response) {
+        @Nullable NotificationEndpointAggregatedList response) {
       super(context, response);
     }
 
@@ -1174,18 +1176,20 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionNotificationEndpointsRequest,
                 NotificationEndpointAggregatedList,
                 Map.Entry<String, NotificationEndpointsScopedList>>
             context,
-        NotificationEndpointAggregatedList response) {
+        @Nullable NotificationEndpointAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionNotificationEndpointsRequest,
                 NotificationEndpointAggregatedList,
                 Map.Entry<String, NotificationEndpointsScopedList>>
@@ -1203,7 +1207,8 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1213,7 +1218,7 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1252,12 +1257,13 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionNotificationEndpointsRequest,
                 NotificationEndpointList,
                 NotificationEndpoint>
             context,
-        NotificationEndpointList response) {
+        @Nullable NotificationEndpointList response) {
       super(context, response);
     }
 
@@ -1267,18 +1273,20 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionNotificationEndpointsRequest,
                 NotificationEndpointList,
                 NotificationEndpoint>
             context,
-        NotificationEndpointList response) {
+        @Nullable NotificationEndpointList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRegionNotificationEndpointsRequest,
                 NotificationEndpointList,
                 NotificationEndpoint>
@@ -1296,7 +1304,7 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1305,7 +1313,8 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

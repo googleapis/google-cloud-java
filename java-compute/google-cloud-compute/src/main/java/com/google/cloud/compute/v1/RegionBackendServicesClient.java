@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -181,7 +182,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListUsable</td>
- *      <td><p> Retrieves a list of all usable backend services in the specified project in the given region.</td>
+ *      <td><p> Retrieves a list of all usable backend services for Application Load Balancers and Proxy Network Load Balancers in the specified project in the given region. Backend services for external and internal passthrough Network Load Balancers are not included in the response.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -337,7 +338,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionBackendServicesClient implements BackgroundResource {
-  private final RegionBackendServicesSettings settings;
+  private final @Nullable RegionBackendServicesSettings settings;
   private final RegionBackendServicesStub stub;
 
   /** Constructs an instance of RegionBackendServicesClient with default settings. */
@@ -377,7 +378,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionBackendServicesSettings getSettings() {
+  public final @Nullable RegionBackendServicesSettings getSettings() {
     return settings;
   }
 
@@ -1131,7 +1132,9 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a list of all usable backend services in the specified project in the given region.
+   * Retrieves a list of all usable backend services for Application Load Balancers and Proxy
+   * Network Load Balancers in the specified project in the given region. Backend services for
+   * external and internal passthrough Network Load Balancers are not included in the response.
    *
    * <p>Sample code:
    *
@@ -1168,7 +1171,9 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a list of all usable backend services in the specified project in the given region.
+   * Retrieves a list of all usable backend services for Application Load Balancers and Proxy
+   * Network Load Balancers in the specified project in the given region. Backend services for
+   * external and internal passthrough Network Load Balancers are not included in the response.
    *
    * <p>Sample code:
    *
@@ -1205,7 +1210,9 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a list of all usable backend services in the specified project in the given region.
+   * Retrieves a list of all usable backend services for Application Load Balancers and Proxy
+   * Network Load Balancers in the specified project in the given region. Backend services for
+   * external and internal passthrough Network Load Balancers are not included in the response.
    *
    * <p>Sample code:
    *
@@ -1243,7 +1250,9 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a list of all usable backend services in the specified project in the given region.
+   * Retrieves a list of all usable backend services for Application Load Balancers and Proxy
+   * Network Load Balancers in the specified project in the given region. Backend services for
+   * external and internal passthrough Network Load Balancers are not included in the response.
    *
    * <p>Sample code:
    *
@@ -2020,8 +2029,9 @@ public class RegionBackendServicesClient implements BackgroundResource {
           ListRegionBackendServicesRequest, BackendServiceList, BackendService, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService> context,
-        BackendServiceList response) {
+        @Nullable PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService>
+            context,
+        @Nullable BackendServiceList response) {
       super(context, response);
     }
 
@@ -2031,14 +2041,16 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService> context,
-        BackendServiceList response) {
+        @Nullable PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService>
+            context,
+        @Nullable BackendServiceList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService> context,
+        @Nullable PageContext<ListRegionBackendServicesRequest, BackendServiceList, BackendService>
+            context,
         ApiFuture<BackendServiceList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2052,7 +2064,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2061,7 +2073,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2098,10 +2111,11 @@ public class RegionBackendServicesClient implements BackgroundResource {
           ListUsablePage> {
 
     private ListUsablePage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUsableRegionBackendServicesRequest, BackendServiceListUsable, BackendService>
             context,
-        BackendServiceListUsable response) {
+        @Nullable BackendServiceListUsable response) {
       super(context, response);
     }
 
@@ -2111,16 +2125,18 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
     @Override
     protected ListUsablePage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUsableRegionBackendServicesRequest, BackendServiceListUsable, BackendService>
             context,
-        BackendServiceListUsable response) {
+        @Nullable BackendServiceListUsable response) {
       return new ListUsablePage(context, response);
     }
 
     @Override
     public ApiFuture<ListUsablePage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUsableRegionBackendServicesRequest, BackendServiceListUsable, BackendService>
             context,
         ApiFuture<BackendServiceListUsable> futureResponse) {
@@ -2136,7 +2152,8 @@ public class RegionBackendServicesClient implements BackgroundResource {
           ListUsablePage,
           ListUsableFixedSizeCollection> {
 
-    private ListUsableFixedSizeCollection(List<ListUsablePage> pages, int collectionSize) {
+    private ListUsableFixedSizeCollection(
+        @Nullable List<ListUsablePage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2146,7 +2163,7 @@ public class RegionBackendServicesClient implements BackgroundResource {
 
     @Override
     protected ListUsableFixedSizeCollection createCollection(
-        List<ListUsablePage> pages, int collectionSize) {
+        @Nullable List<ListUsablePage> pages, int collectionSize) {
       return new ListUsableFixedSizeCollection(pages, collectionSize);
     }
   }

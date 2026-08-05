@@ -11,6 +11,5 @@
   "repo_short": "java-apikeys",
   "distribution_name": "com.google.cloud:google-cloud-apikeys",
   "api_id": "apikeys.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

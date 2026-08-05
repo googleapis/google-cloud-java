@@ -36,6 +36,7 @@ import static org.mockito.Mockito.when;
 import com.google.api.gax.logging.Slf4jUtils.LoggerFactoryProvider;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.helpers.NOPLogger;
@@ -62,7 +63,8 @@ class LoggingEnabledTest {
   void testGetLogger_loggingEnabled_noBinding_shouldGetNOPLogger() {
     // Create a mock LoggerFactoryProvider, mimic SLF4J's behavior to return NOPLoggerFactory when
     // no binding
-    LoggerFactoryProvider mockLoggerFactoryProvider = mock(LoggerFactoryProvider.class);
+    LoggerFactoryProvider mockLoggerFactoryProvider =
+        mock(LoggerFactoryProvider.class, Mockito.withSettings().withoutAnnotations());
     ILoggerFactory nopLoggerFactory = new NOPLoggerFactory();
     when(mockLoggerFactoryProvider.getLoggerFactory()).thenReturn(nopLoggerFactory);
 

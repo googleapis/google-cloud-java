@@ -26,8 +26,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
@@ -54,13 +52,13 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITNightlyBigQueryTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   static Connection bigQueryConnection;
   static Statement bigQueryStatement;
-  static BigQuery bigQuery;
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
   private static final String BASE_QUERY =
@@ -91,7 +89,6 @@ public class ITNightlyBigQueryTest extends ITBase {
     DATASET2 = ITBase.getSharedDataset2();
     bigQueryConnection = DriverManager.getConnection(connection_uri, new Properties());
     bigQueryStatement = bigQueryConnection.createStatement();
-    bigQuery = BigQueryOptions.newBuilder().build().getService();
   }
 
   @AfterAll
@@ -1042,6 +1039,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("known_issue") // b/539615199
   public void testValidAllDataTypesSerializationFromSelectQuery() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_DATATYPES_INTEGRATION_TEST_TABLE";
@@ -1098,6 +1096,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("known_issue") // b/539615199
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";

@@ -36,7 +36,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -45,14 +44,16 @@ import org.mockito.junit.MockitoRule;
 public class MutateRowsErrorConverterUnaryCallableTest {
   private static final TableId TABLE_ID = TableId.of("fake-table");
 
-  @Mock private UnaryCallable<BulkMutation, MutateRowsAttemptResult> innerCallable;
+  private UnaryCallable<BulkMutation, MutateRowsAttemptResult> innerCallable;
   @Captor private ArgumentCaptor<BulkMutation> innerMutation;
   private SettableApiFuture<MutateRowsAttemptResult> innerResult;
 
   @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
   @Before
+  @SuppressWarnings("unchecked")
   public void setUp() {
+    innerCallable = Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     innerResult = SettableApiFuture.create();
     Mockito.when(innerCallable.futureCall(innerMutation.capture(), Mockito.any()))
         .thenReturn(innerResult);

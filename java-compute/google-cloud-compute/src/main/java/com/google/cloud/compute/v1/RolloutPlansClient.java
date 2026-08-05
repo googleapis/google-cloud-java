@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -184,7 +185,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RolloutPlansClient implements BackgroundResource {
-  private final RolloutPlansSettings settings;
+  private final @Nullable RolloutPlansSettings settings;
   private final RolloutPlansStub stub;
 
   /** Constructs an instance of RolloutPlansClient with default settings. */
@@ -223,7 +224,7 @@ public class RolloutPlansClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RolloutPlansSettings getSettings() {
+  public final @Nullable RolloutPlansSettings getSettings() {
     return settings;
   }
 
@@ -759,8 +760,9 @@ public class RolloutPlansClient implements BackgroundResource {
           ListRolloutPlansRequest, RolloutPlansListResponse, RolloutPlan, ListPage> {
 
     private ListPage(
-        PageContext<ListRolloutPlansRequest, RolloutPlansListResponse, RolloutPlan> context,
-        RolloutPlansListResponse response) {
+        @Nullable PageContext<ListRolloutPlansRequest, RolloutPlansListResponse, RolloutPlan>
+            context,
+        @Nullable RolloutPlansListResponse response) {
       super(context, response);
     }
 
@@ -770,14 +772,16 @@ public class RolloutPlansClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRolloutPlansRequest, RolloutPlansListResponse, RolloutPlan> context,
-        RolloutPlansListResponse response) {
+        @Nullable PageContext<ListRolloutPlansRequest, RolloutPlansListResponse, RolloutPlan>
+            context,
+        @Nullable RolloutPlansListResponse response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRolloutPlansRequest, RolloutPlansListResponse, RolloutPlan> context,
+        @Nullable PageContext<ListRolloutPlansRequest, RolloutPlansListResponse, RolloutPlan>
+            context,
         ApiFuture<RolloutPlansListResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -791,7 +795,7 @@ public class RolloutPlansClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -800,7 +804,8 @@ public class RolloutPlansClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

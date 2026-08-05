@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -265,7 +266,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class FeatureOnlineStoreServiceClient implements BackgroundResource {
-  private final FeatureOnlineStoreServiceSettings settings;
+  private final @Nullable FeatureOnlineStoreServiceSettings settings;
   private final FeatureOnlineStoreServiceStub stub;
 
   /** Constructs an instance of FeatureOnlineStoreServiceClient with default settings. */
@@ -307,7 +308,7 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final FeatureOnlineStoreServiceSettings getSettings() {
+  public final @Nullable FeatureOnlineStoreServiceSettings getSettings() {
     return settings;
   }
 
@@ -343,7 +344,7 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchFeatureValuesResponse fetchFeatureValues(
-      FeatureViewName featureView, FeatureViewDataKey dataKey) {
+      @Nullable FeatureViewName featureView, FeatureViewDataKey dataKey) {
     FetchFeatureValuesRequest request =
         FetchFeatureValuesRequest.newBuilder()
             .setFeatureView(featureView == null ? null : featureView.toString())
@@ -1119,8 +1120,8 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1130,14 +1131,14 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1151,7 +1152,8 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1161,7 +1163,7 @@ public class FeatureOnlineStoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

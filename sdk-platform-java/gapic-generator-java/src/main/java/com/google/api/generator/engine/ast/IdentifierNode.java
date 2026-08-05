@@ -22,7 +22,9 @@ import com.google.api.generator.engine.lexicon.Separator;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Preconditions;
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @AutoValue
 public abstract class IdentifierNode implements AstNode {
   static class InvalidIdentifierException extends RuntimeException {

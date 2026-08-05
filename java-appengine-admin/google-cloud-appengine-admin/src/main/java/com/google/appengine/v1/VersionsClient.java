@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -236,7 +237,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class VersionsClient implements BackgroundResource {
-  private final VersionsSettings settings;
+  private final @Nullable VersionsSettings settings;
   private final VersionsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -282,7 +283,7 @@ public class VersionsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final VersionsSettings getSettings() {
+  public final @Nullable VersionsSettings getSettings() {
     return settings;
   }
 
@@ -925,8 +926,8 @@ public class VersionsClient implements BackgroundResource {
       extends AbstractPage<ListVersionsRequest, ListVersionsResponse, Version, ListVersionsPage> {
 
     private ListVersionsPage(
-        PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
-        ListVersionsResponse response) {
+        @Nullable PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
+        @Nullable ListVersionsResponse response) {
       super(context, response);
     }
 
@@ -936,14 +937,14 @@ public class VersionsClient implements BackgroundResource {
 
     @Override
     protected ListVersionsPage createPage(
-        PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
-        ListVersionsResponse response) {
+        @Nullable PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
+        @Nullable ListVersionsResponse response) {
       return new ListVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVersionsPage> createPageAsync(
-        PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
+        @Nullable PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
         ApiFuture<ListVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -957,7 +958,8 @@ public class VersionsClient implements BackgroundResource {
           ListVersionsPage,
           ListVersionsFixedSizeCollection> {
 
-    private ListVersionsFixedSizeCollection(List<ListVersionsPage> pages, int collectionSize) {
+    private ListVersionsFixedSizeCollection(
+        @Nullable List<ListVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -967,7 +969,7 @@ public class VersionsClient implements BackgroundResource {
 
     @Override
     protected ListVersionsFixedSizeCollection createCollection(
-        List<ListVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListVersionsPage> pages, int collectionSize) {
       return new ListVersionsFixedSizeCollection(pages, collectionSize);
     }
   }

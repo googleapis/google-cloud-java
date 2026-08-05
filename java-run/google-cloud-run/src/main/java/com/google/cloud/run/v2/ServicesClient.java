@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -272,7 +273,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ServicesClient implements BackgroundResource {
-  private final ServicesSettings settings;
+  private final @Nullable ServicesSettings settings;
   private final ServicesStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -318,7 +319,7 @@ public class ServicesClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ServicesSettings getSettings() {
+  public final @Nullable ServicesSettings getSettings() {
     return settings;
   }
 
@@ -373,7 +374,7 @@ public class ServicesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Service, Service> createServiceAsync(
-      LocationName parent, Service service, String serviceId) {
+      @Nullable LocationName parent, Service service, String serviceId) {
     CreateServiceRequest request =
         CreateServiceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -539,7 +540,7 @@ public class ServicesClient implements BackgroundResource {
    *     id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Service getService(ServiceName name) {
+  public final Service getService(@Nullable ServiceName name) {
     GetServiceRequest request =
         GetServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getService(request);
@@ -653,7 +654,7 @@ public class ServicesClient implements BackgroundResource {
    *     projects/{project}/locations/{location}, where {project} can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServicesPagedResponse listServices(LocationName parent) {
+  public final ListServicesPagedResponse listServices(@Nullable LocationName parent) {
     ListServicesRequest request =
         ListServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -969,7 +970,7 @@ public class ServicesClient implements BackgroundResource {
    *     id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Service, Service> deleteServiceAsync(ServiceName name) {
+  public final OperationFuture<Service, Service> deleteServiceAsync(@Nullable ServiceName name) {
     DeleteServiceRequest request =
         DeleteServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteServiceAsync(request);
@@ -1336,8 +1337,8 @@ public class ServicesClient implements BackgroundResource {
       extends AbstractPage<ListServicesRequest, ListServicesResponse, Service, ListServicesPage> {
 
     private ListServicesPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       super(context, response);
     }
 
@@ -1347,14 +1348,14 @@ public class ServicesClient implements BackgroundResource {
 
     @Override
     protected ListServicesPage createPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       return new ListServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServicesPage> createPageAsync(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
         ApiFuture<ListServicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1368,7 +1369,8 @@ public class ServicesClient implements BackgroundResource {
           ListServicesPage,
           ListServicesFixedSizeCollection> {
 
-    private ListServicesFixedSizeCollection(List<ListServicesPage> pages, int collectionSize) {
+    private ListServicesFixedSizeCollection(
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1378,7 +1380,7 @@ public class ServicesClient implements BackgroundResource {
 
     @Override
     protected ListServicesFixedSizeCollection createCollection(
-        List<ListServicesPage> pages, int collectionSize) {
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       return new ListServicesFixedSizeCollection(pages, collectionSize);
     }
   }

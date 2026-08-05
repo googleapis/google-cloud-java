@@ -636,6 +636,8 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setEtag("etag3123477")
             .setUris(Repository.URIs.newBuilder().build())
             .setInitialConfig(Repository.InitialConfig.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setScanConfig(Repository.ScanConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -688,6 +690,8 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setEtag("etag3123477")
             .setUris(Repository.URIs.newBuilder().build())
             .setInitialConfig(Repository.InitialConfig.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setScanConfig(Repository.ScanConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -740,6 +744,8 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setEtag("etag3123477")
             .setUris(Repository.URIs.newBuilder().build())
             .setInitialConfig(Repository.InitialConfig.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setScanConfig(Repository.ScanConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -802,6 +808,8 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setEtag("etag3123477")
             .setUris(Repository.URIs.newBuilder().build())
             .setInitialConfig(Repository.InitialConfig.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setScanConfig(Repository.ScanConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -864,6 +872,8 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setEtag("etag3123477")
             .setUris(Repository.URIs.newBuilder().build())
             .setInitialConfig(Repository.InitialConfig.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setScanConfig(Repository.ScanConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -884,6 +894,8 @@ public class SecureSourceManagerClientHttpJsonTest {
             .setEtag("etag3123477")
             .setUris(Repository.URIs.newBuilder().build())
             .setInitialConfig(Repository.InitialConfig.newBuilder().build())
+            .setServiceAccount("serviceAccount1079137720")
+            .setScanConfig(Repository.ScanConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -924,6 +936,8 @@ public class SecureSourceManagerClientHttpJsonTest {
               .setEtag("etag3123477")
               .setUris(Repository.URIs.newBuilder().build())
               .setInitialConfig(Repository.InitialConfig.newBuilder().build())
+              .setServiceAccount("serviceAccount1079137720")
+              .setScanConfig(Repository.ScanConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateRepositoryAsync(repository, updateMask).get();

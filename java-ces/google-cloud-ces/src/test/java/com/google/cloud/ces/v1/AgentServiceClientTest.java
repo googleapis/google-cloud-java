@@ -44,6 +44,7 @@ import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
+import com.google.protobuf.Duration;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
@@ -221,7 +222,9 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -283,7 +286,9 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -345,7 +350,9 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -418,7 +425,9 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -491,7 +500,9 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -567,7 +578,9 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -643,7 +656,9 @@ public class AgentServiceClientTest {
             .setEtag("etag3123477")
             .setDeploymentCount(2081851157)
             .setClientCertificateSettings(ClientCertificateSettings.newBuilder().build())
+            .setVpcScSettings(VpcScSettings.newBuilder().build())
             .setLocked(true)
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -1068,6 +1083,7 @@ public class AgentServiceClientTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -1125,6 +1141,7 @@ public class AgentServiceClientTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -1182,6 +1199,7 @@ public class AgentServiceClientTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -1242,6 +1260,7 @@ public class AgentServiceClientTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -1302,6 +1321,7 @@ public class AgentServiceClientTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -1365,6 +1385,7 @@ public class AgentServiceClientTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -1428,6 +1449,7 @@ public class AgentServiceClientTest {
             .addAllToolsets(new ArrayList<Agent.AgentToolset>())
             .setGeneratedSummary("generatedSummary-323053801")
             .addAllTransferRules(new ArrayList<TransferRule>())
+            .addAllValidationErrors(new ArrayList<String>())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -2126,6 +2148,7 @@ public class AgentServiceClientTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -2171,6 +2194,7 @@ public class AgentServiceClientTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -2580,6 +2604,7 @@ public class AgentServiceClientTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -2628,6 +2653,7 @@ public class AgentServiceClientTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -2676,6 +2702,7 @@ public class AgentServiceClientTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -2727,6 +2754,7 @@ public class AgentServiceClientTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -2778,6 +2806,7 @@ public class AgentServiceClientTest {
             .setName(ToolName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOL]").toString())
             .setDisplayName("displayName1714148973")
             .setExecutionType(ExecutionType.forNumber(0))
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -3480,6 +3509,9 @@ public class AgentServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3526,6 +3558,9 @@ public class AgentServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3572,6 +3607,9 @@ public class AgentServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3621,6 +3659,9 @@ public class AgentServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3670,6 +3711,9 @@ public class AgentServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3722,6 +3766,9 @@ public class AgentServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3774,6 +3821,9 @@ public class AgentServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
+            .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3973,6 +4023,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -4018,6 +4069,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -4063,6 +4115,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -4111,6 +4164,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -4159,6 +4213,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -4210,6 +4265,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -4261,6 +4317,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")

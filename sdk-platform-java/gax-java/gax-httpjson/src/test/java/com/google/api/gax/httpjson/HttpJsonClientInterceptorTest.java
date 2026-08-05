@@ -181,7 +181,8 @@ class HttpJsonClientInterceptorTest {
     HttpJsonDirectCallable<Field, Field> callable =
         new HttpJsonDirectCallable<>(FAKE_METHOD_DESCRIPTOR);
 
-    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    EndpointContext endpointContext =
+        Mockito.mock(EndpointContext.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doNothing()
         .when(endpointContext)
         .validateUniverseDomain(

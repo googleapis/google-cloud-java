@@ -18,10 +18,20 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CustomTargetingValueServiceClient.ListCustomTargetingValuesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.BatchActivateCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.BatchCreateCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.BatchCreateCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.BatchDeactivateCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.BatchDeactivateCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.BatchUpdateCustomTargetingValuesRequest;
+import com.google.ads.admanager.v1.BatchUpdateCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.CreateCustomTargetingValueRequest;
 import com.google.ads.admanager.v1.CustomTargetingValue;
 import com.google.ads.admanager.v1.GetCustomTargetingValueRequest;
 import com.google.ads.admanager.v1.ListCustomTargetingValuesRequest;
 import com.google.ads.admanager.v1.ListCustomTargetingValuesResponse;
+import com.google.ads.admanager.v1.UpdateCustomTargetingValueRequest;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -136,6 +146,266 @@ public class HttpJsonCustomTargetingValueServiceStub extends CustomTargetingValu
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateCustomTargetingValueRequest, CustomTargetingValue>
+      createCustomTargetingValueMethodDescriptor =
+          ApiMethodDescriptor.<CreateCustomTargetingValueRequest, CustomTargetingValue>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomTargetingValueService/CreateCustomTargetingValue")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateCustomTargetingValueRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customTargetingValues",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomTargetingValueRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateCustomTargetingValueRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "customTargetingValue",
+                                      request.getCustomTargetingValue(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomTargetingValue>newBuilder()
+                      .setDefaultInstance(CustomTargetingValue.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchCreateCustomTargetingValuesRequest, BatchCreateCustomTargetingValuesResponse>
+      batchCreateCustomTargetingValuesMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchCreateCustomTargetingValuesRequest, BatchCreateCustomTargetingValuesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomTargetingValueService/BatchCreateCustomTargetingValues")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchCreateCustomTargetingValuesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customTargetingValues:batchCreate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateCustomTargetingValuesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateCustomTargetingValuesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchCreateCustomTargetingValuesResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchCreateCustomTargetingValuesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateCustomTargetingValueRequest, CustomTargetingValue>
+      updateCustomTargetingValueMethodDescriptor =
+          ApiMethodDescriptor.<UpdateCustomTargetingValueRequest, CustomTargetingValue>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomTargetingValueService/UpdateCustomTargetingValue")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateCustomTargetingValueRequest>newBuilder()
+                      .setPath(
+                          "/v1/{customTargetingValue.name=networks/*/customTargetingValues/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomTargetingValueRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "customTargetingValue.name",
+                                request.getCustomTargetingValue().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateCustomTargetingValueRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "customTargetingValue",
+                                      request.getCustomTargetingValue(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CustomTargetingValue>newBuilder()
+                      .setDefaultInstance(CustomTargetingValue.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchUpdateCustomTargetingValuesRequest, BatchUpdateCustomTargetingValuesResponse>
+      batchUpdateCustomTargetingValuesMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchUpdateCustomTargetingValuesRequest, BatchUpdateCustomTargetingValuesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomTargetingValueService/BatchUpdateCustomTargetingValues")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchUpdateCustomTargetingValuesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customTargetingValues:batchUpdate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateCustomTargetingValuesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateCustomTargetingValuesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchUpdateCustomTargetingValuesResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchUpdateCustomTargetingValuesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchActivateCustomTargetingValuesRequest, BatchActivateCustomTargetingValuesResponse>
+      batchActivateCustomTargetingValuesMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchActivateCustomTargetingValuesRequest,
+                  BatchActivateCustomTargetingValuesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomTargetingValueService/BatchActivateCustomTargetingValues")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<BatchActivateCustomTargetingValuesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customTargetingValues:batchActivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateCustomTargetingValuesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchActivateCustomTargetingValuesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<BatchActivateCustomTargetingValuesResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchActivateCustomTargetingValuesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchDeactivateCustomTargetingValuesRequest, BatchDeactivateCustomTargetingValuesResponse>
+      batchDeactivateCustomTargetingValuesMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchDeactivateCustomTargetingValuesRequest,
+                  BatchDeactivateCustomTargetingValuesResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.CustomTargetingValueService/BatchDeactivateCustomTargetingValues")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<BatchDeactivateCustomTargetingValuesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/customTargetingValues:batchDeactivate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateCustomTargetingValuesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeactivateCustomTargetingValuesRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<BatchDeactivateCustomTargetingValuesResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchDeactivateCustomTargetingValuesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetCustomTargetingValueRequest, CustomTargetingValue>
       getCustomTargetingValueCallable;
   private final UnaryCallable<ListCustomTargetingValuesRequest, ListCustomTargetingValuesResponse>
@@ -143,6 +413,22 @@ public class HttpJsonCustomTargetingValueServiceStub extends CustomTargetingValu
   private final UnaryCallable<
           ListCustomTargetingValuesRequest, ListCustomTargetingValuesPagedResponse>
       listCustomTargetingValuesPagedCallable;
+  private final UnaryCallable<CreateCustomTargetingValueRequest, CustomTargetingValue>
+      createCustomTargetingValueCallable;
+  private final UnaryCallable<
+          BatchCreateCustomTargetingValuesRequest, BatchCreateCustomTargetingValuesResponse>
+      batchCreateCustomTargetingValuesCallable;
+  private final UnaryCallable<UpdateCustomTargetingValueRequest, CustomTargetingValue>
+      updateCustomTargetingValueCallable;
+  private final UnaryCallable<
+          BatchUpdateCustomTargetingValuesRequest, BatchUpdateCustomTargetingValuesResponse>
+      batchUpdateCustomTargetingValuesCallable;
+  private final UnaryCallable<
+          BatchActivateCustomTargetingValuesRequest, BatchActivateCustomTargetingValuesResponse>
+      batchActivateCustomTargetingValuesCallable;
+  private final UnaryCallable<
+          BatchDeactivateCustomTargetingValuesRequest, BatchDeactivateCustomTargetingValuesResponse>
+      batchDeactivateCustomTargetingValuesCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -216,6 +502,102 @@ public class HttpJsonCustomTargetingValueServiceStub extends CustomTargetingValu
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<CreateCustomTargetingValueRequest, CustomTargetingValue>
+        createCustomTargetingValueTransportSettings =
+            HttpJsonCallSettings
+                .<CreateCustomTargetingValueRequest, CustomTargetingValue>newBuilder()
+                .setMethodDescriptor(createCustomTargetingValueMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            BatchCreateCustomTargetingValuesRequest, BatchCreateCustomTargetingValuesResponse>
+        batchCreateCustomTargetingValuesTransportSettings =
+            HttpJsonCallSettings
+                .<BatchCreateCustomTargetingValuesRequest, BatchCreateCustomTargetingValuesResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchCreateCustomTargetingValuesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateCustomTargetingValueRequest, CustomTargetingValue>
+        updateCustomTargetingValueTransportSettings =
+            HttpJsonCallSettings
+                .<UpdateCustomTargetingValueRequest, CustomTargetingValue>newBuilder()
+                .setMethodDescriptor(updateCustomTargetingValueMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "custom_targeting_value.name",
+                          String.valueOf(request.getCustomTargetingValue().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<
+            BatchUpdateCustomTargetingValuesRequest, BatchUpdateCustomTargetingValuesResponse>
+        batchUpdateCustomTargetingValuesTransportSettings =
+            HttpJsonCallSettings
+                .<BatchUpdateCustomTargetingValuesRequest, BatchUpdateCustomTargetingValuesResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchUpdateCustomTargetingValuesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            BatchActivateCustomTargetingValuesRequest, BatchActivateCustomTargetingValuesResponse>
+        batchActivateCustomTargetingValuesTransportSettings =
+            HttpJsonCallSettings
+                .<BatchActivateCustomTargetingValuesRequest,
+                    BatchActivateCustomTargetingValuesResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchActivateCustomTargetingValuesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            BatchDeactivateCustomTargetingValuesRequest,
+            BatchDeactivateCustomTargetingValuesResponse>
+        batchDeactivateCustomTargetingValuesTransportSettings =
+            HttpJsonCallSettings
+                .<BatchDeactivateCustomTargetingValuesRequest,
+                    BatchDeactivateCustomTargetingValuesResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchDeactivateCustomTargetingValuesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getCustomTargetingValueCallable =
         callableFactory.createUnaryCallable(
@@ -232,6 +614,36 @@ public class HttpJsonCustomTargetingValueServiceStub extends CustomTargetingValu
             listCustomTargetingValuesTransportSettings,
             settings.listCustomTargetingValuesSettings(),
             clientContext);
+    this.createCustomTargetingValueCallable =
+        callableFactory.createUnaryCallable(
+            createCustomTargetingValueTransportSettings,
+            settings.createCustomTargetingValueSettings(),
+            clientContext);
+    this.batchCreateCustomTargetingValuesCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateCustomTargetingValuesTransportSettings,
+            settings.batchCreateCustomTargetingValuesSettings(),
+            clientContext);
+    this.updateCustomTargetingValueCallable =
+        callableFactory.createUnaryCallable(
+            updateCustomTargetingValueTransportSettings,
+            settings.updateCustomTargetingValueSettings(),
+            clientContext);
+    this.batchUpdateCustomTargetingValuesCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateCustomTargetingValuesTransportSettings,
+            settings.batchUpdateCustomTargetingValuesSettings(),
+            clientContext);
+    this.batchActivateCustomTargetingValuesCallable =
+        callableFactory.createUnaryCallable(
+            batchActivateCustomTargetingValuesTransportSettings,
+            settings.batchActivateCustomTargetingValuesSettings(),
+            clientContext);
+    this.batchDeactivateCustomTargetingValuesCallable =
+        callableFactory.createUnaryCallable(
+            batchDeactivateCustomTargetingValuesTransportSettings,
+            settings.batchDeactivateCustomTargetingValuesSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -242,6 +654,12 @@ public class HttpJsonCustomTargetingValueServiceStub extends CustomTargetingValu
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getCustomTargetingValueMethodDescriptor);
     methodDescriptors.add(listCustomTargetingValuesMethodDescriptor);
+    methodDescriptors.add(createCustomTargetingValueMethodDescriptor);
+    methodDescriptors.add(batchCreateCustomTargetingValuesMethodDescriptor);
+    methodDescriptors.add(updateCustomTargetingValueMethodDescriptor);
+    methodDescriptors.add(batchUpdateCustomTargetingValuesMethodDescriptor);
+    methodDescriptors.add(batchActivateCustomTargetingValuesMethodDescriptor);
+    methodDescriptors.add(batchDeactivateCustomTargetingValuesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -261,6 +679,46 @@ public class HttpJsonCustomTargetingValueServiceStub extends CustomTargetingValu
   public UnaryCallable<ListCustomTargetingValuesRequest, ListCustomTargetingValuesPagedResponse>
       listCustomTargetingValuesPagedCallable() {
     return listCustomTargetingValuesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateCustomTargetingValueRequest, CustomTargetingValue>
+      createCustomTargetingValueCallable() {
+    return createCustomTargetingValueCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchCreateCustomTargetingValuesRequest, BatchCreateCustomTargetingValuesResponse>
+      batchCreateCustomTargetingValuesCallable() {
+    return batchCreateCustomTargetingValuesCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateCustomTargetingValueRequest, CustomTargetingValue>
+      updateCustomTargetingValueCallable() {
+    return updateCustomTargetingValueCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchUpdateCustomTargetingValuesRequest, BatchUpdateCustomTargetingValuesResponse>
+      batchUpdateCustomTargetingValuesCallable() {
+    return batchUpdateCustomTargetingValuesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchActivateCustomTargetingValuesRequest, BatchActivateCustomTargetingValuesResponse>
+      batchActivateCustomTargetingValuesCallable() {
+    return batchActivateCustomTargetingValuesCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchDeactivateCustomTargetingValuesRequest, BatchDeactivateCustomTargetingValuesResponse>
+      batchDeactivateCustomTargetingValuesCallable() {
+    return batchDeactivateCustomTargetingValuesCallable;
   }
 
   @Override

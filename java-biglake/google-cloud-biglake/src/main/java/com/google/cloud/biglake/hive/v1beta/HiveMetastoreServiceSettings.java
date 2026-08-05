@@ -39,6 +39,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -200,6 +201,12 @@ public class HiveMetastoreServiceSettings extends ClientSettings<HiveMetastoreSe
     return ((HiveMetastoreServiceStubSettings) getStubSettings()).listPartitionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to failoverHiveCatalog. */
+  public UnaryCallSettings<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+      failoverHiveCatalogSettings() {
+    return ((HiveMetastoreServiceStubSettings) getStubSettings()).failoverHiveCatalogSettings();
+  }
+
   public static final HiveMetastoreServiceSettings create(HiveMetastoreServiceStubSettings stub)
       throws IOException {
     return new HiveMetastoreServiceSettings.Builder(stub.toBuilder()).build();
@@ -256,7 +263,7 @@ public class HiveMetastoreServiceSettings extends ClientSettings<HiveMetastoreSe
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -277,7 +284,7 @@ public class HiveMetastoreServiceSettings extends ClientSettings<HiveMetastoreSe
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(HiveMetastoreServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -422,6 +429,12 @@ public class HiveMetastoreServiceSettings extends ClientSettings<HiveMetastoreSe
     public ServerStreamingCallSettings.Builder<ListPartitionsRequest, ListPartitionsResponse>
         listPartitionsSettings() {
       return getStubSettingsBuilder().listPartitionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to failoverHiveCatalog. */
+    public UnaryCallSettings.Builder<FailoverHiveCatalogRequest, FailoverHiveCatalogResponse>
+        failoverHiveCatalogSettings() {
+      return getStubSettingsBuilder().failoverHiveCatalogSettings();
     }
 
     @Override

@@ -28,7 +28,9 @@ import com.google.api.generator.gapic.composer.common.TransportContext;
 import com.google.api.generator.gapic.composer.utils.ClassNames;
 import com.google.api.generator.gapic.model.Transport;
 import com.google.common.collect.ImmutableList;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public abstract class RestContext extends TransportContext {
   private static final TransportContext INSTANCE =
       RestContext.builder()

@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -242,7 +243,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class SslPoliciesClient implements BackgroundResource {
-  private final SslPoliciesSettings settings;
+  private final @Nullable SslPoliciesSettings settings;
   private final SslPoliciesStub stub;
 
   /** Constructs an instance of SslPoliciesClient with default settings. */
@@ -281,7 +282,7 @@ public class SslPoliciesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SslPoliciesSettings getSettings() {
+  public final @Nullable SslPoliciesSettings getSettings() {
     return settings;
   }
 
@@ -1225,12 +1226,13 @@ public class SslPoliciesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListSslPoliciesRequest,
                 SslPoliciesAggregatedList,
                 Map.Entry<String, SslPoliciesScopedList>>
             context,
-        SslPoliciesAggregatedList response) {
+        @Nullable SslPoliciesAggregatedList response) {
       super(context, response);
     }
 
@@ -1240,18 +1242,20 @@ public class SslPoliciesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListSslPoliciesRequest,
                 SslPoliciesAggregatedList,
                 Map.Entry<String, SslPoliciesScopedList>>
             context,
-        SslPoliciesAggregatedList response) {
+        @Nullable SslPoliciesAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListSslPoliciesRequest,
                 SslPoliciesAggregatedList,
                 Map.Entry<String, SslPoliciesScopedList>>
@@ -1269,7 +1273,8 @@ public class SslPoliciesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1279,7 +1284,7 @@ public class SslPoliciesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1306,8 +1311,8 @@ public class SslPoliciesClient implements BackgroundResource {
       extends AbstractPage<ListSslPoliciesRequest, SslPoliciesList, SslPolicy, ListPage> {
 
     private ListPage(
-        PageContext<ListSslPoliciesRequest, SslPoliciesList, SslPolicy> context,
-        SslPoliciesList response) {
+        @Nullable PageContext<ListSslPoliciesRequest, SslPoliciesList, SslPolicy> context,
+        @Nullable SslPoliciesList response) {
       super(context, response);
     }
 
@@ -1317,14 +1322,14 @@ public class SslPoliciesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListSslPoliciesRequest, SslPoliciesList, SslPolicy> context,
-        SslPoliciesList response) {
+        @Nullable PageContext<ListSslPoliciesRequest, SslPoliciesList, SslPolicy> context,
+        @Nullable SslPoliciesList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListSslPoliciesRequest, SslPoliciesList, SslPolicy> context,
+        @Nullable PageContext<ListSslPoliciesRequest, SslPoliciesList, SslPolicy> context,
         ApiFuture<SslPoliciesList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1334,7 +1339,7 @@ public class SslPoliciesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListSslPoliciesRequest, SslPoliciesList, SslPolicy, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1343,7 +1348,8 @@ public class SslPoliciesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

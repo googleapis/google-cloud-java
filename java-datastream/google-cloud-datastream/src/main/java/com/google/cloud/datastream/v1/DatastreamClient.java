@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -654,7 +655,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DatastreamClient implements BackgroundResource {
-  private final DatastreamSettings settings;
+  private final @Nullable DatastreamSettings settings;
   private final DatastreamStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -700,7 +701,7 @@ public class DatastreamClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DatastreamSettings getSettings() {
+  public final @Nullable DatastreamSettings getSettings() {
     return settings;
   }
 
@@ -749,7 +750,8 @@ public class DatastreamClient implements BackgroundResource {
    * @param parent Required. The parent that owns the collection of connection profiles.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConnectionProfilesPagedResponse listConnectionProfiles(LocationName parent) {
+  public final ListConnectionProfilesPagedResponse listConnectionProfiles(
+      @Nullable LocationName parent) {
     ListConnectionProfilesRequest request =
         ListConnectionProfilesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -922,7 +924,7 @@ public class DatastreamClient implements BackgroundResource {
    * @param name Required. The name of the connection profile resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ConnectionProfile getConnectionProfile(ConnectionProfileName name) {
+  public final ConnectionProfile getConnectionProfile(@Nullable ConnectionProfileName name) {
     GetConnectionProfileRequest request =
         GetConnectionProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1048,7 +1050,9 @@ public class DatastreamClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ConnectionProfile, OperationMetadata> createConnectionProfileAsync(
-      LocationName parent, ConnectionProfile connectionProfile, String connectionProfileId) {
+      @Nullable LocationName parent,
+      ConnectionProfile connectionProfile,
+      String connectionProfileId) {
     CreateConnectionProfileRequest request =
         CreateConnectionProfileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1360,7 +1364,7 @@ public class DatastreamClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteConnectionProfileAsync(
-      ConnectionProfileName name) {
+      @Nullable ConnectionProfileName name) {
     DeleteConnectionProfileRequest request =
         DeleteConnectionProfileRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1578,7 +1582,7 @@ public class DatastreamClient implements BackgroundResource {
    * @param parent Required. The parent that owns the collection of streams.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListStreamsPagedResponse listStreams(LocationName parent) {
+  public final ListStreamsPagedResponse listStreams(@Nullable LocationName parent) {
     ListStreamsRequest request =
         ListStreamsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1743,7 +1747,7 @@ public class DatastreamClient implements BackgroundResource {
    * @param name Required. The name of the stream resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Stream getStream(StreamName name) {
+  public final Stream getStream(@Nullable StreamName name) {
     GetStreamRequest request =
         GetStreamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getStream(request);
@@ -1856,7 +1860,7 @@ public class DatastreamClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Stream, OperationMetadata> createStreamAsync(
-      LocationName parent, Stream stream, String streamId) {
+      @Nullable LocationName parent, Stream stream, String streamId) {
     CreateStreamRequest request =
         CreateStreamRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2153,7 +2157,8 @@ public class DatastreamClient implements BackgroundResource {
    * @param name Required. The name of the stream resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteStreamAsync(StreamName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteStreamAsync(
+      @Nullable StreamName name) {
     DeleteStreamRequest request =
         DeleteStreamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteStreamAsync(request);
@@ -2385,7 +2390,7 @@ public class DatastreamClient implements BackgroundResource {
    * @param name Required. The name of the stream object resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StreamObject getStreamObject(StreamObjectName name) {
+  public final StreamObject getStreamObject(@Nullable StreamObjectName name) {
     GetStreamObjectRequest request =
         GetStreamObjectRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getStreamObject(request);
@@ -2557,7 +2562,7 @@ public class DatastreamClient implements BackgroundResource {
    * @param parent Required. The parent stream that owns the collection of objects.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListStreamObjectsPagedResponse listStreamObjects(StreamName parent) {
+  public final ListStreamObjectsPagedResponse listStreamObjects(@Nullable StreamName parent) {
     ListStreamObjectsRequest request =
         ListStreamObjectsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2721,7 +2726,7 @@ public class DatastreamClient implements BackgroundResource {
    * @param object Required. The name of the stream object resource to start a backfill job for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StartBackfillJobResponse startBackfillJob(StreamObjectName object) {
+  public final StartBackfillJobResponse startBackfillJob(@Nullable StreamObjectName object) {
     StartBackfillJobRequest request =
         StartBackfillJobRequest.newBuilder()
             .setObject(object == null ? null : object.toString())
@@ -2838,7 +2843,7 @@ public class DatastreamClient implements BackgroundResource {
    * @param object Required. The name of the stream object resource to stop the backfill job for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StopBackfillJobResponse stopBackfillJob(StreamObjectName object) {
+  public final StopBackfillJobResponse stopBackfillJob(@Nullable StreamObjectName object) {
     StopBackfillJobRequest request =
         StopBackfillJobRequest.newBuilder()
             .setObject(object == null ? null : object.toString())
@@ -2956,7 +2961,7 @@ public class DatastreamClient implements BackgroundResource {
    *     returned. Must be in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchStaticIpsPagedResponse fetchStaticIps(LocationName name) {
+  public final FetchStaticIpsPagedResponse fetchStaticIps(@Nullable LocationName name) {
     FetchStaticIpsRequest request =
         FetchStaticIpsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return fetchStaticIps(request);
@@ -3123,7 +3128,9 @@ public class DatastreamClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PrivateConnection, OperationMetadata> createPrivateConnectionAsync(
-      LocationName parent, PrivateConnection privateConnection, String privateConnectionId) {
+      @Nullable LocationName parent,
+      PrivateConnection privateConnection,
+      String privateConnectionId) {
     CreatePrivateConnectionRequest request =
         CreatePrivateConnectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3297,7 +3304,7 @@ public class DatastreamClient implements BackgroundResource {
    * @param name Required. The name of the private connectivity configuration to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PrivateConnection getPrivateConnection(PrivateConnectionName name) {
+  public final PrivateConnection getPrivateConnection(@Nullable PrivateConnectionName name) {
     GetPrivateConnectionRequest request =
         GetPrivateConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3419,7 +3426,8 @@ public class DatastreamClient implements BackgroundResource {
    *     configurations.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPrivateConnectionsPagedResponse listPrivateConnections(LocationName parent) {
+  public final ListPrivateConnectionsPagedResponse listPrivateConnections(
+      @Nullable LocationName parent) {
     ListPrivateConnectionsRequest request =
         ListPrivateConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3594,7 +3602,7 @@ public class DatastreamClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePrivateConnectionAsync(
-      PrivateConnectionName name) {
+      @Nullable PrivateConnectionName name) {
     DeletePrivateConnectionRequest request =
         DeletePrivateConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3757,7 +3765,7 @@ public class DatastreamClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Route, OperationMetadata> createRouteAsync(
-      PrivateConnectionName parent, Route route, String routeId) {
+      @Nullable PrivateConnectionName parent, Route route, String routeId) {
     CreateRouteRequest request =
         CreateRouteRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3929,7 +3937,7 @@ public class DatastreamClient implements BackgroundResource {
    * @param name Required. The name of the Route resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Route getRoute(RouteName name) {
+  public final Route getRoute(@Nullable RouteName name) {
     GetRouteRequest request =
         GetRouteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRoute(request);
@@ -4046,7 +4054,7 @@ public class DatastreamClient implements BackgroundResource {
    * @param parent Required. The parent that owns the collection of Routess.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRoutesPagedResponse listRoutes(PrivateConnectionName parent) {
+  public final ListRoutesPagedResponse listRoutes(@Nullable PrivateConnectionName parent) {
     ListRoutesRequest request =
         ListRoutesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listRoutes(request);
@@ -4219,7 +4227,8 @@ public class DatastreamClient implements BackgroundResource {
    * @param name Required. The name of the Route resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteRouteAsync(RouteName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteRouteAsync(
+      @Nullable RouteName name) {
     DeleteRouteRequest request =
         DeleteRouteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRouteAsync(request);
@@ -4565,10 +4574,11 @@ public class DatastreamClient implements BackgroundResource {
           ListConnectionProfilesPage> {
 
     private ListConnectionProfilesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConnectionProfilesRequest, ListConnectionProfilesResponse, ConnectionProfile>
             context,
-        ListConnectionProfilesResponse response) {
+        @Nullable ListConnectionProfilesResponse response) {
       super(context, response);
     }
 
@@ -4578,16 +4588,18 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected ListConnectionProfilesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConnectionProfilesRequest, ListConnectionProfilesResponse, ConnectionProfile>
             context,
-        ListConnectionProfilesResponse response) {
+        @Nullable ListConnectionProfilesResponse response) {
       return new ListConnectionProfilesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConnectionProfilesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListConnectionProfilesRequest, ListConnectionProfilesResponse, ConnectionProfile>
             context,
         ApiFuture<ListConnectionProfilesResponse> futureResponse) {
@@ -4604,7 +4616,7 @@ public class DatastreamClient implements BackgroundResource {
           ListConnectionProfilesFixedSizeCollection> {
 
     private ListConnectionProfilesFixedSizeCollection(
-        List<ListConnectionProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionProfilesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4614,7 +4626,7 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected ListConnectionProfilesFixedSizeCollection createCollection(
-        List<ListConnectionProfilesPage> pages, int collectionSize) {
+        @Nullable List<ListConnectionProfilesPage> pages, int collectionSize) {
       return new ListConnectionProfilesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4645,8 +4657,8 @@ public class DatastreamClient implements BackgroundResource {
       extends AbstractPage<ListStreamsRequest, ListStreamsResponse, Stream, ListStreamsPage> {
 
     private ListStreamsPage(
-        PageContext<ListStreamsRequest, ListStreamsResponse, Stream> context,
-        ListStreamsResponse response) {
+        @Nullable PageContext<ListStreamsRequest, ListStreamsResponse, Stream> context,
+        @Nullable ListStreamsResponse response) {
       super(context, response);
     }
 
@@ -4656,14 +4668,14 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected ListStreamsPage createPage(
-        PageContext<ListStreamsRequest, ListStreamsResponse, Stream> context,
-        ListStreamsResponse response) {
+        @Nullable PageContext<ListStreamsRequest, ListStreamsResponse, Stream> context,
+        @Nullable ListStreamsResponse response) {
       return new ListStreamsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListStreamsPage> createPageAsync(
-        PageContext<ListStreamsRequest, ListStreamsResponse, Stream> context,
+        @Nullable PageContext<ListStreamsRequest, ListStreamsResponse, Stream> context,
         ApiFuture<ListStreamsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4677,7 +4689,8 @@ public class DatastreamClient implements BackgroundResource {
           ListStreamsPage,
           ListStreamsFixedSizeCollection> {
 
-    private ListStreamsFixedSizeCollection(List<ListStreamsPage> pages, int collectionSize) {
+    private ListStreamsFixedSizeCollection(
+        @Nullable List<ListStreamsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4687,7 +4700,7 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected ListStreamsFixedSizeCollection createCollection(
-        List<ListStreamsPage> pages, int collectionSize) {
+        @Nullable List<ListStreamsPage> pages, int collectionSize) {
       return new ListStreamsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4724,8 +4737,9 @@ public class DatastreamClient implements BackgroundResource {
           ListStreamObjectsPage> {
 
     private ListStreamObjectsPage(
-        PageContext<ListStreamObjectsRequest, ListStreamObjectsResponse, StreamObject> context,
-        ListStreamObjectsResponse response) {
+        @Nullable PageContext<ListStreamObjectsRequest, ListStreamObjectsResponse, StreamObject>
+            context,
+        @Nullable ListStreamObjectsResponse response) {
       super(context, response);
     }
 
@@ -4735,14 +4749,16 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected ListStreamObjectsPage createPage(
-        PageContext<ListStreamObjectsRequest, ListStreamObjectsResponse, StreamObject> context,
-        ListStreamObjectsResponse response) {
+        @Nullable PageContext<ListStreamObjectsRequest, ListStreamObjectsResponse, StreamObject>
+            context,
+        @Nullable ListStreamObjectsResponse response) {
       return new ListStreamObjectsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListStreamObjectsPage> createPageAsync(
-        PageContext<ListStreamObjectsRequest, ListStreamObjectsResponse, StreamObject> context,
+        @Nullable PageContext<ListStreamObjectsRequest, ListStreamObjectsResponse, StreamObject>
+            context,
         ApiFuture<ListStreamObjectsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4757,7 +4773,7 @@ public class DatastreamClient implements BackgroundResource {
           ListStreamObjectsFixedSizeCollection> {
 
     private ListStreamObjectsFixedSizeCollection(
-        List<ListStreamObjectsPage> pages, int collectionSize) {
+        @Nullable List<ListStreamObjectsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4767,7 +4783,7 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected ListStreamObjectsFixedSizeCollection createCollection(
-        List<ListStreamObjectsPage> pages, int collectionSize) {
+        @Nullable List<ListStreamObjectsPage> pages, int collectionSize) {
       return new ListStreamObjectsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4801,8 +4817,8 @@ public class DatastreamClient implements BackgroundResource {
           FetchStaticIpsRequest, FetchStaticIpsResponse, String, FetchStaticIpsPage> {
 
     private FetchStaticIpsPage(
-        PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> context,
-        FetchStaticIpsResponse response) {
+        @Nullable PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> context,
+        @Nullable FetchStaticIpsResponse response) {
       super(context, response);
     }
 
@@ -4812,14 +4828,14 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected FetchStaticIpsPage createPage(
-        PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> context,
-        FetchStaticIpsResponse response) {
+        @Nullable PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> context,
+        @Nullable FetchStaticIpsResponse response) {
       return new FetchStaticIpsPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchStaticIpsPage> createPageAsync(
-        PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> context,
+        @Nullable PageContext<FetchStaticIpsRequest, FetchStaticIpsResponse, String> context,
         ApiFuture<FetchStaticIpsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4833,7 +4849,8 @@ public class DatastreamClient implements BackgroundResource {
           FetchStaticIpsPage,
           FetchStaticIpsFixedSizeCollection> {
 
-    private FetchStaticIpsFixedSizeCollection(List<FetchStaticIpsPage> pages, int collectionSize) {
+    private FetchStaticIpsFixedSizeCollection(
+        @Nullable List<FetchStaticIpsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4843,7 +4860,7 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected FetchStaticIpsFixedSizeCollection createCollection(
-        List<FetchStaticIpsPage> pages, int collectionSize) {
+        @Nullable List<FetchStaticIpsPage> pages, int collectionSize) {
       return new FetchStaticIpsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4882,10 +4899,11 @@ public class DatastreamClient implements BackgroundResource {
           ListPrivateConnectionsPage> {
 
     private ListPrivateConnectionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
             context,
-        ListPrivateConnectionsResponse response) {
+        @Nullable ListPrivateConnectionsResponse response) {
       super(context, response);
     }
 
@@ -4895,16 +4913,18 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected ListPrivateConnectionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
             context,
-        ListPrivateConnectionsResponse response) {
+        @Nullable ListPrivateConnectionsResponse response) {
       return new ListPrivateConnectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPrivateConnectionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrivateConnectionsRequest, ListPrivateConnectionsResponse, PrivateConnection>
             context,
         ApiFuture<ListPrivateConnectionsResponse> futureResponse) {
@@ -4921,7 +4941,7 @@ public class DatastreamClient implements BackgroundResource {
           ListPrivateConnectionsFixedSizeCollection> {
 
     private ListPrivateConnectionsFixedSizeCollection(
-        List<ListPrivateConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateConnectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4931,7 +4951,7 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected ListPrivateConnectionsFixedSizeCollection createCollection(
-        List<ListPrivateConnectionsPage> pages, int collectionSize) {
+        @Nullable List<ListPrivateConnectionsPage> pages, int collectionSize) {
       return new ListPrivateConnectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4962,8 +4982,8 @@ public class DatastreamClient implements BackgroundResource {
       extends AbstractPage<ListRoutesRequest, ListRoutesResponse, Route, ListRoutesPage> {
 
     private ListRoutesPage(
-        PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
-        ListRoutesResponse response) {
+        @Nullable PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
+        @Nullable ListRoutesResponse response) {
       super(context, response);
     }
 
@@ -4973,14 +4993,14 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected ListRoutesPage createPage(
-        PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
-        ListRoutesResponse response) {
+        @Nullable PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
+        @Nullable ListRoutesResponse response) {
       return new ListRoutesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRoutesPage> createPageAsync(
-        PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
+        @Nullable PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
         ApiFuture<ListRoutesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4994,7 +5014,8 @@ public class DatastreamClient implements BackgroundResource {
           ListRoutesPage,
           ListRoutesFixedSizeCollection> {
 
-    private ListRoutesFixedSizeCollection(List<ListRoutesPage> pages, int collectionSize) {
+    private ListRoutesFixedSizeCollection(
+        @Nullable List<ListRoutesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5004,7 +5025,7 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected ListRoutesFixedSizeCollection createCollection(
-        List<ListRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListRoutesPage> pages, int collectionSize) {
       return new ListRoutesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5038,8 +5059,8 @@ public class DatastreamClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -5049,14 +5070,14 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5070,7 +5091,8 @@ public class DatastreamClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5080,7 +5102,7 @@ public class DatastreamClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

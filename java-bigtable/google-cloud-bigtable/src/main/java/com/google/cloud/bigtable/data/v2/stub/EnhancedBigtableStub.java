@@ -63,6 +63,7 @@ import com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest;
 import com.google.cloud.bigtable.data.v2.internal.PrepareResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.internal.SqlRow;
+import com.google.cloud.bigtable.data.v2.internal.api.MaterializedViewName;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.BigtableTracerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.BigtableTracerUnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.TracedBatcherUnaryCallable;
@@ -374,8 +375,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .setMethodDescriptor(BigtableGrpc.getReadRowsMethod())
                 .setParamsExtractor(
                     r ->
-                        composeRequestParams(
-                            r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName()))
+                        r.getMaterializedViewName().isEmpty()
+                            ? composeRequestParams(
+                                r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName())
+                            : composeInstanceLevelRequestParams(
+                                MaterializedViewName.parse(r.getMaterializedViewName())
+                                    .getInstanceName()
+                                    .toString(),
+                                r.getAppProfileId()))
                 .build(),
             readRowsSettings.getRetryableCodes());
 
@@ -448,8 +455,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .setMethodDescriptor(BigtableGrpc.getReadRowsMethod())
                 .setParamsExtractor(
                     r ->
-                        composeRequestParams(
-                            r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName()))
+                        r.getMaterializedViewName().isEmpty()
+                            ? composeRequestParams(
+                                r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName())
+                            : composeInstanceLevelRequestParams(
+                                MaterializedViewName.parse(r.getMaterializedViewName())
+                                    .getInstanceName()
+                                    .toString(),
+                                r.getAppProfileId()))
                 .build(),
             readRowsSettings.getRetryableCodes());
 
@@ -598,8 +611,16 @@ public class EnhancedBigtableStub implements AutoCloseable {
                     .setMethodDescriptor(BigtableGrpc.getSampleRowKeysMethod())
                     .setParamsExtractor(
                         r ->
-                            composeRequestParams(
-                                r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName()))
+                            r.getMaterializedViewName().isEmpty()
+                                ? composeRequestParams(
+                                    r.getAppProfileId(),
+                                    r.getTableName(),
+                                    r.getAuthorizedViewName())
+                                : composeInstanceLevelRequestParams(
+                                    MaterializedViewName.parse(r.getMaterializedViewName())
+                                        .getInstanceName()
+                                        .toString(),
+                                    r.getAppProfileId()))
                     .build(),
                 perOpSettings.sampleRowKeysSettings.getRetryableCodes());
 

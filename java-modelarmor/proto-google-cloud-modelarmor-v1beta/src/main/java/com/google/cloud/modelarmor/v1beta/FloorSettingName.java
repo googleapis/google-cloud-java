@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -154,7 +155,7 @@ public class FloorSettingName implements ResourceName {
         .toString();
   }
 
-  public static FloorSettingName parse(String formattedString) {
+  public static @Nullable FloorSettingName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -179,7 +180,7 @@ public class FloorSettingName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<FloorSettingName> values) {
+  public static List<String> toStringList(List<@Nullable FloorSettingName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (FloorSettingName value : values) {
       if (value == null) {
@@ -232,7 +233,7 @@ public class FloorSettingName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

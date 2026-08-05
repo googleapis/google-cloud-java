@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -150,7 +151,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AddressValidationClient implements BackgroundResource {
-  private final AddressValidationSettings settings;
+  private final @Nullable AddressValidationSettings settings;
   private final AddressValidationStub stub;
 
   /** Constructs an instance of AddressValidationClient with default settings. */
@@ -190,7 +191,7 @@ public class AddressValidationClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AddressValidationSettings getSettings() {
+  public final @Nullable AddressValidationSettings getSettings() {
     return settings;
   }
 

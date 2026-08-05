@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -270,7 +271,7 @@ public class InsightTypeName implements ResourceName {
     return newInsightTypeBuilder().setInsightType(insightType).build().toString();
   }
 
-  public static InsightTypeName parse(String formattedString) {
+  public static @Nullable InsightTypeName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -305,7 +306,7 @@ public class InsightTypeName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<InsightTypeName> values) {
+  public static List<String> toStringList(List<@Nullable InsightTypeName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (InsightTypeName value : values) {
       if (value == null) {
@@ -366,7 +367,7 @@ public class InsightTypeName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

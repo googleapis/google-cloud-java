@@ -19,8 +19,10 @@ import com.google.common.base.Strings;
 import com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequest;
 import java.util.Arrays;
 import java.util.Optional;
+import org.jspecify.annotations.NullMarked;
 
 // Parses the arguments from the protoc plugin.
+@NullMarked
 public class PluginArgumentParser {
   private static final String COMMA = ",";
   private static final String EQUALS = "=";

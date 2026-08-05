@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * [Google Service Control API](/service-control/overview)
+ * [Google Service Control
+ * API](https://cloud.google.com/service-control/overview)
  * Lets clients check and report operations against a [managed
  * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
  * </pre>
@@ -181,7 +182,8 @@ public final class ServiceControllerGrpc {
    *
    *
    * <pre>
-   * [Google Service Control API](/service-control/overview)
+   * [Google Service Control
+   * API](https://cloud.google.com/service-control/overview)
    * Lets clients check and report operations against a [managed
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
@@ -201,8 +203,8 @@ public final class ServiceControllerGrpc {
      * WARNING: There is general 60s delay for the configuration and policy
      * propagation, therefore callers MUST NOT depend on the `Check` method having
      * the latest policy information.
-     * NOTE: the [CheckRequest][google.api.servicecontrol.v1.CheckRequest] has
-     * the size limit (wire-format byte size) of 1MB.
+     * NOTE: the [CheckRequest][google.api.servicecontrol.v1.CheckRequest] has the
+     * size limit (wire-format byte size) of 1MB.
      * This method requires the `servicemanagement.services.check` permission
      * on the specified service. For more information, see
      * [Cloud IAM](https://cloud.google.com/iam).
@@ -245,7 +247,8 @@ public final class ServiceControllerGrpc {
    * Base class for the server implementation of the service ServiceController.
    *
    * <pre>
-   * [Google Service Control API](/service-control/overview)
+   * [Google Service Control
+   * API](https://cloud.google.com/service-control/overview)
    * Lets clients check and report operations against a [managed
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
@@ -263,7 +266,8 @@ public final class ServiceControllerGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service ServiceController.
    *
    * <pre>
-   * [Google Service Control API](/service-control/overview)
+   * [Google Service Control
+   * API](https://cloud.google.com/service-control/overview)
    * Lets clients check and report operations against a [managed
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
@@ -293,8 +297,8 @@ public final class ServiceControllerGrpc {
      * WARNING: There is general 60s delay for the configuration and policy
      * propagation, therefore callers MUST NOT depend on the `Check` method having
      * the latest policy information.
-     * NOTE: the [CheckRequest][google.api.servicecontrol.v1.CheckRequest] has
-     * the size limit (wire-format byte size) of 1MB.
+     * NOTE: the [CheckRequest][google.api.servicecontrol.v1.CheckRequest] has the
+     * size limit (wire-format byte size) of 1MB.
      * This method requires the `servicemanagement.services.check` permission
      * on the specified service. For more information, see
      * [Cloud IAM](https://cloud.google.com/iam).
@@ -339,7 +343,8 @@ public final class ServiceControllerGrpc {
    * A stub to allow clients to do synchronous rpc calls to service ServiceController.
    *
    * <pre>
-   * [Google Service Control API](/service-control/overview)
+   * [Google Service Control
+   * API](https://cloud.google.com/service-control/overview)
    * Lets clients check and report operations against a [managed
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
@@ -370,8 +375,8 @@ public final class ServiceControllerGrpc {
      * WARNING: There is general 60s delay for the configuration and policy
      * propagation, therefore callers MUST NOT depend on the `Check` method having
      * the latest policy information.
-     * NOTE: the [CheckRequest][google.api.servicecontrol.v1.CheckRequest] has
-     * the size limit (wire-format byte size) of 1MB.
+     * NOTE: the [CheckRequest][google.api.servicecontrol.v1.CheckRequest] has the
+     * size limit (wire-format byte size) of 1MB.
      * This method requires the `servicemanagement.services.check` permission
      * on the specified service. For more information, see
      * [Cloud IAM](https://cloud.google.com/iam).
@@ -412,7 +417,8 @@ public final class ServiceControllerGrpc {
    * A stub to allow clients to do limited synchronous rpc calls to service ServiceController.
    *
    * <pre>
-   * [Google Service Control API](/service-control/overview)
+   * [Google Service Control
+   * API](https://cloud.google.com/service-control/overview)
    * Lets clients check and report operations against a [managed
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
@@ -443,8 +449,8 @@ public final class ServiceControllerGrpc {
      * WARNING: There is general 60s delay for the configuration and policy
      * propagation, therefore callers MUST NOT depend on the `Check` method having
      * the latest policy information.
-     * NOTE: the [CheckRequest][google.api.servicecontrol.v1.CheckRequest] has
-     * the size limit (wire-format byte size) of 1MB.
+     * NOTE: the [CheckRequest][google.api.servicecontrol.v1.CheckRequest] has the
+     * size limit (wire-format byte size) of 1MB.
      * This method requires the `servicemanagement.services.check` permission
      * on the specified service. For more information, see
      * [Cloud IAM](https://cloud.google.com/iam).
@@ -485,7 +491,8 @@ public final class ServiceControllerGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service ServiceController.
    *
    * <pre>
-   * [Google Service Control API](/service-control/overview)
+   * [Google Service Control
+   * API](https://cloud.google.com/service-control/overview)
    * Lets clients check and report operations against a [managed
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
@@ -515,8 +522,8 @@ public final class ServiceControllerGrpc {
      * WARNING: There is general 60s delay for the configuration and policy
      * propagation, therefore callers MUST NOT depend on the `Check` method having
      * the latest policy information.
-     * NOTE: the [CheckRequest][google.api.servicecontrol.v1.CheckRequest] has
-     * the size limit (wire-format byte size) of 1MB.
+     * NOTE: the [CheckRequest][google.api.servicecontrol.v1.CheckRequest] has the
+     * size limit (wire-format byte size) of 1MB.
      * This method requires the `servicemanagement.services.check` permission
      * on the specified service. For more information, see
      * [Cloud IAM](https://cloud.google.com/iam).

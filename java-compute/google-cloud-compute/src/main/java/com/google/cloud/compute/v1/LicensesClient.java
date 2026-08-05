@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -257,7 +258,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LicensesClient implements BackgroundResource {
-  private final LicensesSettings settings;
+  private final @Nullable LicensesSettings settings;
   private final LicensesStub stub;
 
   /** Constructs an instance of LicensesClient with default settings. */
@@ -295,7 +296,7 @@ public class LicensesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LicensesSettings getSettings() {
+  public final @Nullable LicensesSettings getSettings() {
     return settings;
   }
 
@@ -1291,8 +1292,8 @@ public class LicensesClient implements BackgroundResource {
       extends AbstractPage<ListLicensesRequest, LicensesListResponse, License, ListPage> {
 
     private ListPage(
-        PageContext<ListLicensesRequest, LicensesListResponse, License> context,
-        LicensesListResponse response) {
+        @Nullable PageContext<ListLicensesRequest, LicensesListResponse, License> context,
+        @Nullable LicensesListResponse response) {
       super(context, response);
     }
 
@@ -1302,14 +1303,14 @@ public class LicensesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListLicensesRequest, LicensesListResponse, License> context,
-        LicensesListResponse response) {
+        @Nullable PageContext<ListLicensesRequest, LicensesListResponse, License> context,
+        @Nullable LicensesListResponse response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListLicensesRequest, LicensesListResponse, License> context,
+        @Nullable PageContext<ListLicensesRequest, LicensesListResponse, License> context,
         ApiFuture<LicensesListResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1319,7 +1320,7 @@ public class LicensesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListLicensesRequest, LicensesListResponse, License, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1328,7 +1329,8 @@ public class LicensesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

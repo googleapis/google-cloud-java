@@ -49,7 +49,7 @@ public class RateLimitingCallableTest {
   private final MutateRowsRequest request =
       MutateRowsRequest.newBuilder().getDefaultInstanceForType();
   private final ResponseObserver<MutateRowsResponse> responseObserver =
-      Mockito.mock(ResponseObserver.class);
+      Mockito.mock(ResponseObserver.class, Mockito.withSettings().withoutAnnotations());
   private final ApiCallContext context = GrpcCallContext.createDefault();
   private MockCallable innerCallable;
   RateLimitingServerStreamingCallable callableToTest;
@@ -331,7 +331,8 @@ public class RateLimitingCallableTest {
 
     callableToTest = new RateLimitingServerStreamingCallable(innerCallable);
 
-    ResponseObserver<MutateRowsResponse> mockObserver = Mockito.mock(ResponseObserver.class);
+    ResponseObserver<MutateRowsResponse> mockObserver =
+        Mockito.mock(ResponseObserver.class, Mockito.withSettings().withoutAnnotations());
 
     MutateRowsRequest req =
         MutateRowsRequest.newBuilder()

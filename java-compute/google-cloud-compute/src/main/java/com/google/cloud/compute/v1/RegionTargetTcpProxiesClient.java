@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -189,7 +190,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionTargetTcpProxiesClient implements BackgroundResource {
-  private final RegionTargetTcpProxiesSettings settings;
+  private final @Nullable RegionTargetTcpProxiesSettings settings;
   private final RegionTargetTcpProxiesStub stub;
 
   /** Constructs an instance of RegionTargetTcpProxiesClient with default settings. */
@@ -230,7 +231,7 @@ public class RegionTargetTcpProxiesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionTargetTcpProxiesSettings getSettings() {
+  public final @Nullable RegionTargetTcpProxiesSettings getSettings() {
     return settings;
   }
 
@@ -827,8 +828,9 @@ public class RegionTargetTcpProxiesClient implements BackgroundResource {
           ListRegionTargetTcpProxiesRequest, TargetTcpProxyList, TargetTcpProxy, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionTargetTcpProxiesRequest, TargetTcpProxyList, TargetTcpProxy> context,
-        TargetTcpProxyList response) {
+        @Nullable PageContext<ListRegionTargetTcpProxiesRequest, TargetTcpProxyList, TargetTcpProxy>
+            context,
+        @Nullable TargetTcpProxyList response) {
       super(context, response);
     }
 
@@ -838,14 +840,16 @@ public class RegionTargetTcpProxiesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionTargetTcpProxiesRequest, TargetTcpProxyList, TargetTcpProxy> context,
-        TargetTcpProxyList response) {
+        @Nullable PageContext<ListRegionTargetTcpProxiesRequest, TargetTcpProxyList, TargetTcpProxy>
+            context,
+        @Nullable TargetTcpProxyList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionTargetTcpProxiesRequest, TargetTcpProxyList, TargetTcpProxy> context,
+        @Nullable PageContext<ListRegionTargetTcpProxiesRequest, TargetTcpProxyList, TargetTcpProxy>
+            context,
         ApiFuture<TargetTcpProxyList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -859,7 +863,7 @@ public class RegionTargetTcpProxiesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -868,7 +872,8 @@ public class RegionTargetTcpProxiesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

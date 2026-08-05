@@ -39,12 +39,14 @@ import io.grpc.ForwardingClientCallListener.SimpleForwardingClientCallListener;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An interceptor to handle receiving the response headers.
  *
  * <p>Package-private for internal usage.
  */
+@NullMarked
 @InternalApi
 class GrpcMetadataHandlerInterceptor implements ClientInterceptor {
 

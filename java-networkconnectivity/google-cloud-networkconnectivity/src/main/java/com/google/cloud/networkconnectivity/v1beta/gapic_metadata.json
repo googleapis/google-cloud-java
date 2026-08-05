@@ -244,6 +244,9 @@
             "ListTransports": {
               "methods": ["listTransports", "listTransports", "listTransports", "listTransportsPagedCallable", "listTransportsCallable"]
             },
+            "ParseFromActivationKey": {
+              "methods": ["parseFromActivationKey", "parseFromActivationKey", "parseFromActivationKey", "parseFromActivationKeyCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },

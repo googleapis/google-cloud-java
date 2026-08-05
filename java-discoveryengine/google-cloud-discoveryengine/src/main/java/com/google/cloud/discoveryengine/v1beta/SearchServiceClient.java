@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -208,7 +209,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SearchServiceClient implements BackgroundResource {
-  private final SearchServiceSettings settings;
+  private final @Nullable SearchServiceSettings settings;
   private final SearchServiceStub stub;
 
   /** Constructs an instance of SearchServiceClient with default settings. */
@@ -248,7 +249,7 @@ public class SearchServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SearchServiceSettings getSettings() {
+  public final @Nullable SearchServiceSettings getSettings() {
     return settings;
   }
 
@@ -832,8 +833,8 @@ public class SearchServiceClient implements BackgroundResource {
       extends AbstractPage<SearchRequest, SearchResponse, SearchResponse.SearchResult, SearchPage> {
 
     private SearchPage(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
-        SearchResponse response) {
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable SearchResponse response) {
       super(context, response);
     }
 
@@ -843,14 +844,14 @@ public class SearchServiceClient implements BackgroundResource {
 
     @Override
     protected SearchPage createPage(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
-        SearchResponse response) {
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable SearchResponse response) {
       return new SearchPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchPage> createPageAsync(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
         ApiFuture<SearchResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -864,7 +865,7 @@ public class SearchServiceClient implements BackgroundResource {
           SearchPage,
           SearchFixedSizeCollection> {
 
-    private SearchFixedSizeCollection(List<SearchPage> pages, int collectionSize) {
+    private SearchFixedSizeCollection(@Nullable List<SearchPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -874,7 +875,7 @@ public class SearchServiceClient implements BackgroundResource {
 
     @Override
     protected SearchFixedSizeCollection createCollection(
-        List<SearchPage> pages, int collectionSize) {
+        @Nullable List<SearchPage> pages, int collectionSize) {
       return new SearchFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -906,8 +907,8 @@ public class SearchServiceClient implements BackgroundResource {
           SearchRequest, SearchResponse, SearchResponse.SearchResult, SearchLitePage> {
 
     private SearchLitePage(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
-        SearchResponse response) {
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable SearchResponse response) {
       super(context, response);
     }
 
@@ -917,14 +918,14 @@ public class SearchServiceClient implements BackgroundResource {
 
     @Override
     protected SearchLitePage createPage(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
-        SearchResponse response) {
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable SearchResponse response) {
       return new SearchLitePage(context, response);
     }
 
     @Override
     public ApiFuture<SearchLitePage> createPageAsync(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
         ApiFuture<SearchResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -938,7 +939,8 @@ public class SearchServiceClient implements BackgroundResource {
           SearchLitePage,
           SearchLiteFixedSizeCollection> {
 
-    private SearchLiteFixedSizeCollection(List<SearchLitePage> pages, int collectionSize) {
+    private SearchLiteFixedSizeCollection(
+        @Nullable List<SearchLitePage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -948,7 +950,7 @@ public class SearchServiceClient implements BackgroundResource {
 
     @Override
     protected SearchLiteFixedSizeCollection createCollection(
-        List<SearchLitePage> pages, int collectionSize) {
+        @Nullable List<SearchLitePage> pages, int collectionSize) {
       return new SearchLiteFixedSizeCollection(pages, collectionSize);
     }
   }

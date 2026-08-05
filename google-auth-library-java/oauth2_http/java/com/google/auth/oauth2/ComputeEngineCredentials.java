@@ -73,6 +73,8 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * OAuth2 credentials representing the built-in service account for a Google Compute Engine VM.
@@ -81,6 +83,7 @@ import java.util.regex.Pattern;
  *
  * <p>These credentials use the IAM API to sign data. See {@link #sign(byte[])} for more details.
  */
+@NullMarked
 public class ComputeEngineCredentials extends GoogleCredentials
     implements ServiceAccountSigner, IdTokenProvider, RegionalAccessBoundaryProvider {
 
@@ -130,8 +133,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
   private transient HttpTransportFactory transportFactory;
 
-  private String universeDomainFromMetadata = null;
-  private String projectId = null;
+  private @Nullable String universeDomainFromMetadata = null;
+  private @Nullable String projectId = null;
 
   /**
    * Experimental Feature.
@@ -650,6 +653,10 @@ public class ComputeEngineCredentials extends GoogleCredentials
   private static boolean pingComputeEngineMetadata(
       HttpTransportFactory transportFactory, DefaultCredentialsProvider provider) {
     GenericUrl tokenUrl = new GenericUrl(getMetadataServerUrl(provider));
+    // pingComputeEngineMetadata is executed heavily during startup (within isOnGce()) on non-GCE
+    // environments. We use a strict 500ms timeout and manual 3-try loop (instead of
+    // ExponentialBackOff and HttpRequest.setUnsuccessfulResponseHandler) to fail fast and avoid
+    // significantly delaying application startup for workflows running on local setups.
     for (int i = 1; i <= MAX_COMPUTE_PING_TRIES; ++i) {
       try {
         HttpRequest request =
@@ -675,6 +682,12 @@ public class ComputeEngineCredentials extends GoogleCredentials
       } catch (SocketTimeoutException expected) {
         // Ignore logging timeouts which is the expected failure mode in non GCE environments.
       } catch (IOException e) {
+        if (e instanceof HttpResponseException) {
+          int statusCode = ((HttpResponseException) e).getStatusCode();
+          if (statusCode >= 400 && statusCode < 500) {
+            return false;
+          }
+        }
         LOGGER.log(
             Level.FINE,
             "Encountered an unexpected exception when checking"
@@ -749,7 +762,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof ComputeEngineCredentials)) {
       return false;
     }

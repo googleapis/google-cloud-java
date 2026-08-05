@@ -23,8 +23,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class HttpBindings {
   public enum HttpVerb {
@@ -45,12 +47,10 @@ public abstract class HttpBindings {
 
     // The dot-separated json_name of the field.
     // e.g. parent.iceberg-catalog-id
-    @Nullable
-    public abstract String jsonName();
+    public abstract @Nullable String jsonName();
 
     // An object that contains all info of the leaf level field
-    @Nullable
-    public abstract Field field();
+    public abstract @Nullable Field field();
 
     public boolean isOptional() {
       return field() != null && field().isProto3Optional();
@@ -64,8 +64,7 @@ public abstract class HttpBindings {
       return field() != null && field().isEnum();
     }
 
-    @Nullable
-    public abstract String valuePattern();
+    public abstract @Nullable String valuePattern();
 
     public static HttpBindings.HttpBinding.Builder builder() {
       return new AutoValue_HttpBindings_HttpBinding.Builder();

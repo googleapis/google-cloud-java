@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -162,7 +163,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AssetServiceClient implements BackgroundResource {
-  private final AssetServiceSettings settings;
+  private final @Nullable AssetServiceSettings settings;
   private final AssetServiceStub stub;
 
   /** Constructs an instance of AssetServiceClient with default settings. */
@@ -201,7 +202,7 @@ public class AssetServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AssetServiceSettings getSettings() {
+  public final @Nullable AssetServiceSettings getSettings() {
     return settings;
   }
 
@@ -253,7 +254,7 @@ public class AssetServiceClient implements BackgroundResource {
    *     (such as "projects/12345").
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAssetsPagedResponse listAssets(ResourceName parent) {
+  public final ListAssetsPagedResponse listAssets(@Nullable ResourceName parent) {
     ListAssetsRequest request =
         ListAssetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listAssets(request);
@@ -474,8 +475,8 @@ public class AssetServiceClient implements BackgroundResource {
       extends AbstractPage<ListAssetsRequest, ListAssetsResponse, Asset, ListAssetsPage> {
 
     private ListAssetsPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
-        ListAssetsResponse response) {
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable ListAssetsResponse response) {
       super(context, response);
     }
 
@@ -485,14 +486,14 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssetsPage createPage(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
-        ListAssetsResponse response) {
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable ListAssetsResponse response) {
       return new ListAssetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAssetsPage> createPageAsync(
-        PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
+        @Nullable PageContext<ListAssetsRequest, ListAssetsResponse, Asset> context,
         ApiFuture<ListAssetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -506,7 +507,8 @@ public class AssetServiceClient implements BackgroundResource {
           ListAssetsPage,
           ListAssetsFixedSizeCollection> {
 
-    private ListAssetsFixedSizeCollection(List<ListAssetsPage> pages, int collectionSize) {
+    private ListAssetsFixedSizeCollection(
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -516,7 +518,7 @@ public class AssetServiceClient implements BackgroundResource {
 
     @Override
     protected ListAssetsFixedSizeCollection createCollection(
-        List<ListAssetsPage> pages, int collectionSize) {
+        @Nullable List<ListAssetsPage> pages, int collectionSize) {
       return new ListAssetsFixedSizeCollection(pages, collectionSize);
     }
   }

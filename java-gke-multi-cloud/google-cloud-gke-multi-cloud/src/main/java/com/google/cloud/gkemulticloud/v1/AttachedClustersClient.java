@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -307,7 +308,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class AttachedClustersClient implements BackgroundResource {
-  private final AttachedClustersSettings settings;
+  private final @Nullable AttachedClustersSettings settings;
   private final AttachedClustersStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -355,7 +356,7 @@ public class AttachedClustersClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AttachedClustersSettings getSettings() {
+  public final @Nullable AttachedClustersSettings getSettings() {
     return settings;
   }
 
@@ -424,7 +425,7 @@ public class AttachedClustersClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AttachedCluster, OperationMetadata> createAttachedClusterAsync(
-      LocationName parent, AttachedCluster attachedCluster, String attachedClusterId) {
+      @Nullable LocationName parent, AttachedCluster attachedCluster, String attachedClusterId) {
     CreateAttachedClusterRequest request =
         CreateAttachedClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -773,7 +774,7 @@ public class AttachedClustersClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AttachedCluster, OperationMetadata> importAttachedClusterAsync(
-      LocationName parent, String fleetMembership) {
+      @Nullable LocationName parent, String fleetMembership) {
     ImportAttachedClusterRequest request =
         ImportAttachedClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -981,7 +982,7 @@ public class AttachedClustersClient implements BackgroundResource {
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AttachedCluster getAttachedCluster(AttachedClusterName name) {
+  public final AttachedCluster getAttachedCluster(@Nullable AttachedClusterName name) {
     GetAttachedClusterRequest request =
         GetAttachedClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1112,7 +1113,8 @@ public class AttachedClustersClient implements BackgroundResource {
    *     details on Google Cloud Platform resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAttachedClustersPagedResponse listAttachedClusters(LocationName parent) {
+  public final ListAttachedClustersPagedResponse listAttachedClusters(
+      @Nullable LocationName parent) {
     ListAttachedClustersRequest request =
         ListAttachedClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1297,7 +1299,7 @@ public class AttachedClustersClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAttachedClusterAsync(
-      AttachedClusterName name) {
+      @Nullable AttachedClusterName name) {
     DeleteAttachedClusterRequest request =
         DeleteAttachedClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1486,7 +1488,8 @@ public class AttachedClustersClient implements BackgroundResource {
    *     details on Google Cloud resource names.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AttachedServerConfig getAttachedServerConfig(AttachedServerConfigName name) {
+  public final AttachedServerConfig getAttachedServerConfig(
+      @Nullable AttachedServerConfigName name) {
     GetAttachedServerConfigRequest request =
         GetAttachedServerConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1623,7 +1626,8 @@ public class AttachedClustersClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GenerateAttachedClusterInstallManifestResponse
-      generateAttachedClusterInstallManifest(LocationName parent, String attachedClusterId) {
+      generateAttachedClusterInstallManifest(
+          @Nullable LocationName parent, String attachedClusterId) {
     GenerateAttachedClusterInstallManifestRequest request =
         GenerateAttachedClusterInstallManifestRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1892,9 +1896,10 @@ public class AttachedClustersClient implements BackgroundResource {
           ListAttachedClustersPage> {
 
     private ListAttachedClustersPage(
-        PageContext<ListAttachedClustersRequest, ListAttachedClustersResponse, AttachedCluster>
+        @Nullable
+            PageContext<ListAttachedClustersRequest, ListAttachedClustersResponse, AttachedCluster>
             context,
-        ListAttachedClustersResponse response) {
+        @Nullable ListAttachedClustersResponse response) {
       super(context, response);
     }
 
@@ -1904,15 +1909,17 @@ public class AttachedClustersClient implements BackgroundResource {
 
     @Override
     protected ListAttachedClustersPage createPage(
-        PageContext<ListAttachedClustersRequest, ListAttachedClustersResponse, AttachedCluster>
+        @Nullable
+            PageContext<ListAttachedClustersRequest, ListAttachedClustersResponse, AttachedCluster>
             context,
-        ListAttachedClustersResponse response) {
+        @Nullable ListAttachedClustersResponse response) {
       return new ListAttachedClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAttachedClustersPage> createPageAsync(
-        PageContext<ListAttachedClustersRequest, ListAttachedClustersResponse, AttachedCluster>
+        @Nullable
+            PageContext<ListAttachedClustersRequest, ListAttachedClustersResponse, AttachedCluster>
             context,
         ApiFuture<ListAttachedClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1928,7 +1935,7 @@ public class AttachedClustersClient implements BackgroundResource {
           ListAttachedClustersFixedSizeCollection> {
 
     private ListAttachedClustersFixedSizeCollection(
-        List<ListAttachedClustersPage> pages, int collectionSize) {
+        @Nullable List<ListAttachedClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1938,7 +1945,7 @@ public class AttachedClustersClient implements BackgroundResource {
 
     @Override
     protected ListAttachedClustersFixedSizeCollection createCollection(
-        List<ListAttachedClustersPage> pages, int collectionSize) {
+        @Nullable List<ListAttachedClustersPage> pages, int collectionSize) {
       return new ListAttachedClustersFixedSizeCollection(pages, collectionSize);
     }
   }

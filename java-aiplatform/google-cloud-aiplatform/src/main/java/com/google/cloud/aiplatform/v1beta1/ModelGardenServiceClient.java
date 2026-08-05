@@ -46,6 +46,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -322,7 +323,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ModelGardenServiceClient implements BackgroundResource {
-  private final ModelGardenServiceSettings settings;
+  private final @Nullable ModelGardenServiceSettings settings;
   private final ModelGardenServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -365,7 +366,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ModelGardenServiceSettings getSettings() {
+  public final @Nullable ModelGardenServiceSettings getSettings() {
     return settings;
   }
 
@@ -403,7 +404,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    *     `publishers/{publisher}/models/{publisher_model}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PublisherModel getPublisherModel(PublisherModelName name) {
+  public final PublisherModel getPublisherModel(@Nullable PublisherModelName name) {
     GetPublisherModelRequest request =
         GetPublisherModelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -993,7 +994,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PublisherModelEulaAcceptance checkPublisherModelEulaAcceptance(
-      ProjectName parent, PublisherModelName publisherModel) {
+      @Nullable ProjectName parent, @Nullable PublisherModelName publisherModel) {
     CheckPublisherModelEulaAcceptanceRequest request =
         CheckPublisherModelEulaAcceptanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1030,7 +1031,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PublisherModelEulaAcceptance checkPublisherModelEulaAcceptance(
-      ProjectName parent, String publisherModel) {
+      @Nullable ProjectName parent, String publisherModel) {
     CheckPublisherModelEulaAcceptanceRequest request =
         CheckPublisherModelEulaAcceptanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1067,7 +1068,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PublisherModelEulaAcceptance checkPublisherModelEulaAcceptance(
-      String parent, PublisherModelName publisherModel) {
+      String parent, @Nullable PublisherModelName publisherModel) {
     CheckPublisherModelEulaAcceptanceRequest request =
         CheckPublisherModelEulaAcceptanceRequest.newBuilder()
             .setParent(parent)
@@ -1202,7 +1203,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PublisherModelEulaAcceptance acceptPublisherModelEula(
-      ProjectName parent, PublisherModelName publisherModel) {
+      @Nullable ProjectName parent, @Nullable PublisherModelName publisherModel) {
     AcceptPublisherModelEulaRequest request =
         AcceptPublisherModelEulaRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1239,7 +1240,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PublisherModelEulaAcceptance acceptPublisherModelEula(
-      ProjectName parent, String publisherModel) {
+      @Nullable ProjectName parent, String publisherModel) {
     AcceptPublisherModelEulaRequest request =
         AcceptPublisherModelEulaRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1276,7 +1277,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PublisherModelEulaAcceptance acceptPublisherModelEula(
-      String parent, PublisherModelName publisherModel) {
+      String parent, @Nullable PublisherModelName publisherModel) {
     AcceptPublisherModelEulaRequest request =
         AcceptPublisherModelEulaRequest.newBuilder()
             .setParent(parent)
@@ -1814,9 +1815,10 @@ public class ModelGardenServiceClient implements BackgroundResource {
           ListPublisherModelsPage> {
 
     private ListPublisherModelsPage(
-        PageContext<ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>
+        @Nullable
+            PageContext<ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>
             context,
-        ListPublisherModelsResponse response) {
+        @Nullable ListPublisherModelsResponse response) {
       super(context, response);
     }
 
@@ -1826,15 +1828,17 @@ public class ModelGardenServiceClient implements BackgroundResource {
 
     @Override
     protected ListPublisherModelsPage createPage(
-        PageContext<ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>
+        @Nullable
+            PageContext<ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>
             context,
-        ListPublisherModelsResponse response) {
+        @Nullable ListPublisherModelsResponse response) {
       return new ListPublisherModelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPublisherModelsPage> createPageAsync(
-        PageContext<ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>
+        @Nullable
+            PageContext<ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>
             context,
         ApiFuture<ListPublisherModelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1850,7 +1854,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
           ListPublisherModelsFixedSizeCollection> {
 
     private ListPublisherModelsFixedSizeCollection(
-        List<ListPublisherModelsPage> pages, int collectionSize) {
+        @Nullable List<ListPublisherModelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1860,7 +1864,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
 
     @Override
     protected ListPublisherModelsFixedSizeCollection createCollection(
-        List<ListPublisherModelsPage> pages, int collectionSize) {
+        @Nullable List<ListPublisherModelsPage> pages, int collectionSize) {
       return new ListPublisherModelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1894,8 +1898,8 @@ public class ModelGardenServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1905,14 +1909,14 @@ public class ModelGardenServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1926,7 +1930,8 @@ public class ModelGardenServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1936,7 +1941,7 @@ public class ModelGardenServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

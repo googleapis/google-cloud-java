@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -463,7 +464,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class VizierServiceClient implements BackgroundResource {
-  private final VizierServiceSettings settings;
+  private final @Nullable VizierServiceSettings settings;
   private final VizierServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -506,7 +507,7 @@ public class VizierServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final VizierServiceSettings getSettings() {
+  public final @Nullable VizierServiceSettings getSettings() {
     return settings;
   }
 
@@ -546,7 +547,7 @@ public class VizierServiceClient implements BackgroundResource {
    * @param study Required. The Study configuration used to create the Study.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Study createStudy(LocationName parent, Study study) {
+  public final Study createStudy(@Nullable LocationName parent, Study study) {
     CreateStudyRequest request =
         CreateStudyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -664,7 +665,7 @@ public class VizierServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/studies/{study}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Study getStudy(StudyName name) {
+  public final Study getStudy(@Nullable StudyName name) {
     GetStudyRequest request =
         GetStudyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getStudy(request);
@@ -776,7 +777,7 @@ public class VizierServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListStudiesPagedResponse listStudies(LocationName parent) {
+  public final ListStudiesPagedResponse listStudies(@Nullable LocationName parent) {
     ListStudiesRequest request =
         ListStudiesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -937,7 +938,7 @@ public class VizierServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/studies/{study}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteStudy(StudyName name) {
+  public final void deleteStudy(@Nullable StudyName name) {
     DeleteStudyRequest request =
         DeleteStudyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteStudy(request);
@@ -1048,7 +1049,7 @@ public class VizierServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Study lookupStudy(LocationName parent) {
+  public final Study lookupStudy(@Nullable LocationName parent) {
     LookupStudyRequest request =
         LookupStudyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1270,7 +1271,7 @@ public class VizierServiceClient implements BackgroundResource {
    * @param trial Required. The Trial to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Trial createTrial(StudyName parent, Trial trial) {
+  public final Trial createTrial(@Nullable StudyName parent, Trial trial) {
     CreateTrialRequest request =
         CreateTrialRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1388,7 +1389,7 @@ public class VizierServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/studies/{study}/trials/{trial}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Trial getTrial(TrialName name) {
+  public final Trial getTrial(@Nullable TrialName name) {
     GetTrialRequest request =
         GetTrialRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTrial(request);
@@ -1500,7 +1501,7 @@ public class VizierServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/studies/{study}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTrialsPagedResponse listTrials(StudyName parent) {
+  public final ListTrialsPagedResponse listTrials(@Nullable StudyName parent) {
     ListTrialsRequest request =
         ListTrialsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTrials(request);
@@ -1781,7 +1782,7 @@ public class VizierServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/studies/{study}/trials/{trial}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTrial(TrialName name) {
+  public final void deleteTrial(@Nullable TrialName name) {
     DeleteTrialRequest request =
         DeleteTrialRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTrial(request);
@@ -2051,7 +2052,7 @@ public class VizierServiceClient implements BackgroundResource {
    * @param parent Required. The name of the Study that the optimal Trial belongs to.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOptimalTrialsResponse listOptimalTrials(StudyName parent) {
+  public final ListOptimalTrialsResponse listOptimalTrials(@Nullable StudyName parent) {
     ListOptimalTrialsRequest request =
         ListOptimalTrialsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2569,8 +2570,8 @@ public class VizierServiceClient implements BackgroundResource {
       extends AbstractPage<ListStudiesRequest, ListStudiesResponse, Study, ListStudiesPage> {
 
     private ListStudiesPage(
-        PageContext<ListStudiesRequest, ListStudiesResponse, Study> context,
-        ListStudiesResponse response) {
+        @Nullable PageContext<ListStudiesRequest, ListStudiesResponse, Study> context,
+        @Nullable ListStudiesResponse response) {
       super(context, response);
     }
 
@@ -2580,14 +2581,14 @@ public class VizierServiceClient implements BackgroundResource {
 
     @Override
     protected ListStudiesPage createPage(
-        PageContext<ListStudiesRequest, ListStudiesResponse, Study> context,
-        ListStudiesResponse response) {
+        @Nullable PageContext<ListStudiesRequest, ListStudiesResponse, Study> context,
+        @Nullable ListStudiesResponse response) {
       return new ListStudiesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListStudiesPage> createPageAsync(
-        PageContext<ListStudiesRequest, ListStudiesResponse, Study> context,
+        @Nullable PageContext<ListStudiesRequest, ListStudiesResponse, Study> context,
         ApiFuture<ListStudiesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2601,7 +2602,8 @@ public class VizierServiceClient implements BackgroundResource {
           ListStudiesPage,
           ListStudiesFixedSizeCollection> {
 
-    private ListStudiesFixedSizeCollection(List<ListStudiesPage> pages, int collectionSize) {
+    private ListStudiesFixedSizeCollection(
+        @Nullable List<ListStudiesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2611,7 +2613,7 @@ public class VizierServiceClient implements BackgroundResource {
 
     @Override
     protected ListStudiesFixedSizeCollection createCollection(
-        List<ListStudiesPage> pages, int collectionSize) {
+        @Nullable List<ListStudiesPage> pages, int collectionSize) {
       return new ListStudiesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2642,8 +2644,8 @@ public class VizierServiceClient implements BackgroundResource {
       extends AbstractPage<ListTrialsRequest, ListTrialsResponse, Trial, ListTrialsPage> {
 
     private ListTrialsPage(
-        PageContext<ListTrialsRequest, ListTrialsResponse, Trial> context,
-        ListTrialsResponse response) {
+        @Nullable PageContext<ListTrialsRequest, ListTrialsResponse, Trial> context,
+        @Nullable ListTrialsResponse response) {
       super(context, response);
     }
 
@@ -2653,14 +2655,14 @@ public class VizierServiceClient implements BackgroundResource {
 
     @Override
     protected ListTrialsPage createPage(
-        PageContext<ListTrialsRequest, ListTrialsResponse, Trial> context,
-        ListTrialsResponse response) {
+        @Nullable PageContext<ListTrialsRequest, ListTrialsResponse, Trial> context,
+        @Nullable ListTrialsResponse response) {
       return new ListTrialsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTrialsPage> createPageAsync(
-        PageContext<ListTrialsRequest, ListTrialsResponse, Trial> context,
+        @Nullable PageContext<ListTrialsRequest, ListTrialsResponse, Trial> context,
         ApiFuture<ListTrialsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2674,7 +2676,8 @@ public class VizierServiceClient implements BackgroundResource {
           ListTrialsPage,
           ListTrialsFixedSizeCollection> {
 
-    private ListTrialsFixedSizeCollection(List<ListTrialsPage> pages, int collectionSize) {
+    private ListTrialsFixedSizeCollection(
+        @Nullable List<ListTrialsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2684,7 +2687,7 @@ public class VizierServiceClient implements BackgroundResource {
 
     @Override
     protected ListTrialsFixedSizeCollection createCollection(
-        List<ListTrialsPage> pages, int collectionSize) {
+        @Nullable List<ListTrialsPage> pages, int collectionSize) {
       return new ListTrialsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2718,8 +2721,8 @@ public class VizierServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2729,14 +2732,14 @@ public class VizierServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2750,7 +2753,8 @@ public class VizierServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2760,7 +2764,7 @@ public class VizierServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

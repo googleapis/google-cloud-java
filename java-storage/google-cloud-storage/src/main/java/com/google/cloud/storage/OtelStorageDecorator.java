@@ -75,13 +75,19 @@ final class OtelStorageDecorator implements Storage {
   private final OpenTelemetry otel;
   private final Attributes baseAttributes;
   private final Tracer tracer;
+  final AcoContext acoContext;
+
+  @VisibleForTesting
+  static boolean acoEnabled =
+      !Boolean.parseBoolean(System.getProperty("otel.bucketmetadata.disabled", "false"));
 
   private OtelStorageDecorator(Storage delegate, OpenTelemetry otel, Attributes baseAttributes) {
     this.delegate = delegate;
     this.otel = otel;
     this.baseAttributes = baseAttributes;
+    this.acoContext = AcoContext.create(acoEnabled);
     this.tracer =
-        TracerDecorator.decorate(null, otel, baseAttributes, Storage.class.getName() + "/");
+        TracerDecorator.decorate(this, null, otel, baseAttributes, Storage.class.getName() + "/");
   }
 
   @Override
@@ -1423,7 +1429,11 @@ final class OtelStorageDecorator implements Storage {
 
   @Override
   public void close() throws Exception {
-    delegate.close();
+    try {
+      acoContext.close();
+    } finally {
+      delegate.close();
+    }
   }
 
   @Override
@@ -1562,16 +1572,19 @@ final class OtelStorageDecorator implements Storage {
   }
 
   static final class TracerDecorator implements Tracer {
+    @Nullable private final OtelStorageDecorator parentDecorator;
     @Nullable private final Context parentContextOverride;
     private final Tracer delegate;
     private final Attributes baseAttributes;
     private final String spanNamePrefix;
 
     TracerDecorator(
+        @Nullable OtelStorageDecorator parentDecorator,
         @Nullable Context parentContextOverride,
         Tracer delegate,
         Attributes baseAttributes,
         String spanNamePrefix) {
+      this.parentDecorator = parentDecorator;
       this.parentContextOverride = parentContextOverride;
       this.delegate = delegate;
       this.baseAttributes = baseAttributes;
@@ -1579,6 +1592,7 @@ final class OtelStorageDecorator implements Storage {
     }
 
     static TracerDecorator decorate(
+        @Nullable OtelStorageDecorator parentDecorator,
         @Nullable Context parentContextOverride,
         OpenTelemetry otel,
         Attributes baseAttributes,
@@ -1588,7 +1602,8 @@ final class OtelStorageDecorator implements Storage {
       requireNonNull(spanNamePrefix, "spanNamePrefix must be non null");
       Tracer tracer =
           otel.getTracer(OTEL_SCOPE_NAME, StorageOptions.getDefaultInstance().getLibraryVersion());
-      return new TracerDecorator(parentContextOverride, tracer, baseAttributes, spanNamePrefix);
+      return new TracerDecorator(
+          parentDecorator, parentContextOverride, tracer, baseAttributes, spanNamePrefix);
     }
 
     @Override
@@ -1598,7 +1613,9 @@ final class OtelStorageDecorator implements Storage {
       if (parentContextOverride != null) {
         spanBuilder.setParent(parentContextOverride);
       }
-      return spanBuilder;
+      return parentDecorator != null
+          ? parentDecorator.acoContext.wrap(spanBuilder, parentDecorator)
+          : spanBuilder;
     }
   }
 
@@ -1671,6 +1688,7 @@ final class OtelStorageDecorator implements Storage {
       this.sessionSpan = sessionSpan;
       this.tracer =
           TracerDecorator.decorate(
+              OtelStorageDecorator.this,
               Context.current(),
               otel,
               OtelStorageDecorator.this.baseAttributes,
@@ -1794,6 +1812,7 @@ final class OtelStorageDecorator implements Storage {
       this.parentContext = Context.current();
       this.tracer =
           TracerDecorator.decorate(
+              OtelStorageDecorator.this,
               Context.current(),
               otel,
               OtelStorageDecorator.this.baseAttributes,
@@ -2127,6 +2146,7 @@ final class OtelStorageDecorator implements Storage {
       this.uploadSpan = uploadSpan;
       this.tracer =
           TracerDecorator.decorate(
+              OtelStorageDecorator.this,
               Context.current(),
               otel,
               OtelStorageDecorator.this.baseAttributes,
@@ -2163,6 +2183,7 @@ final class OtelStorageDecorator implements Storage {
         this.openSpan = openSpan;
         this.tracer =
             TracerDecorator.decorate(
+                OtelStorageDecorator.this,
                 Context.current(),
                 otel,
                 OtelStorageDecorator.this.baseAttributes,
@@ -2176,6 +2197,32 @@ final class OtelStorageDecorator implements Storage {
           Span span = tracer.spanBuilder("finalizeAndClose").startSpan();
           try (Scope ignore2 = span.makeCurrent()) {
             delegate.finalizeAndClose();
+          } catch (Throwable t) {
+            span.recordException(t);
+            span.setStatus(StatusCode.ERROR, t.getClass().getSimpleName());
+            throw t;
+          } finally {
+            span.end();
+          }
+        } catch (IOException | RuntimeException e) {
+          openSpan.recordException(e);
+          openSpan.setStatus(StatusCode.ERROR, e.getClass().getSimpleName());
+          uploadSpan.recordException(e);
+          uploadSpan.setStatus(StatusCode.ERROR, e.getClass().getSimpleName());
+          throw e;
+        } finally {
+          openSpan.end();
+          uploadSpan.end();
+        }
+      }
+
+      @Override
+      @BetaApi
+      public void finalizeAndClose(@Nullable String expectedCrc32c) throws IOException {
+        try (Scope ignore = openSpan.makeCurrent()) {
+          Span span = tracer.spanBuilder("finalizeAndClose").startSpan();
+          try (Scope ignore2 = span.makeCurrent()) {
+            delegate.finalizeAndClose(expectedCrc32c);
           } catch (Throwable t) {
             span.recordException(t);
             span.setStatus(StatusCode.ERROR, t.getClass().getSimpleName());
@@ -2228,6 +2275,32 @@ final class OtelStorageDecorator implements Storage {
           Span span = tracer.spanBuilder("close").startSpan();
           try (Scope ignore2 = span.makeCurrent()) {
             delegate.close();
+          } catch (Throwable t) {
+            span.recordException(t);
+            span.setStatus(StatusCode.ERROR, t.getClass().getSimpleName());
+            throw t;
+          } finally {
+            span.end();
+          }
+        } catch (IOException | RuntimeException e) {
+          openSpan.recordException(e);
+          openSpan.setStatus(StatusCode.ERROR, e.getClass().getSimpleName());
+          uploadSpan.recordException(e);
+          uploadSpan.setStatus(StatusCode.ERROR, e.getClass().getSimpleName());
+          throw e;
+        } finally {
+          openSpan.end();
+          uploadSpan.end();
+        }
+      }
+
+      @Override
+      @BetaApi
+      public void close(@Nullable String expectedCrc32c) throws IOException {
+        try (Scope ignore = openSpan.makeCurrent()) {
+          Span span = tracer.spanBuilder("close").startSpan();
+          try (Scope ignore2 = span.makeCurrent()) {
+            delegate.close(expectedCrc32c);
           } catch (Throwable t) {
             span.recordException(t);
             span.setStatus(StatusCode.ERROR, t.getClass().getSimpleName());

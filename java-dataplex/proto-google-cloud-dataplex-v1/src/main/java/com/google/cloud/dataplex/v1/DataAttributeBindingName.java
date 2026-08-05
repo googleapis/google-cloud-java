@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -90,7 +91,7 @@ public class DataAttributeBindingName implements ResourceName {
         .toString();
   }
 
-  public static DataAttributeBindingName parse(String formattedString) {
+  public static @Nullable DataAttributeBindingName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -111,7 +112,7 @@ public class DataAttributeBindingName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<DataAttributeBindingName> values) {
+  public static List<String> toStringList(List<@Nullable DataAttributeBindingName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (DataAttributeBindingName value : values) {
       if (value == null) {
@@ -165,7 +166,7 @@ public class DataAttributeBindingName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

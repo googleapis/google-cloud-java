@@ -16,8 +16,12 @@
 
 package com.google.cloud.memorystore.v1beta;
 
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListAuthTokensPagedResponse;
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListBackupCollectionsPagedResponse;
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListBackupsPagedResponse;
 import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListInstancesPagedResponse;
 import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListLocationsPagedResponse;
+import static com.google.cloud.memorystore.v1beta.MemorystoreClient.ListTokenAuthUsersPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -208,9 +212,29 @@ public class MemorystoreClientHttpJsonTest {
             .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
             .setDeletionProtectionEnabled(true)
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -270,9 +294,29 @@ public class MemorystoreClientHttpJsonTest {
             .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
             .setDeletionProtectionEnabled(true)
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -332,9 +376,29 @@ public class MemorystoreClientHttpJsonTest {
             .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
             .setDeletionProtectionEnabled(true)
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -403,9 +467,29 @@ public class MemorystoreClientHttpJsonTest {
             .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
             .setDeletionProtectionEnabled(true)
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -474,9 +558,29 @@ public class MemorystoreClientHttpJsonTest {
             .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
             .setDeletionProtectionEnabled(true)
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -504,9 +608,29 @@ public class MemorystoreClientHttpJsonTest {
             .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
             .setDeletionProtectionEnabled(true)
             .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
             .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
             .setServerCaPool("serverCaPool1433802429")
             .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -554,9 +678,30 @@ public class MemorystoreClientHttpJsonTest {
               .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
               .setDeletionProtectionEnabled(true)
               .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+              .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
               .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+              .setSimulateMaintenanceEvent(true)
+              .setOndemandMaintenance(true)
+              .setSatisfiesPzs(true)
+              .setSatisfiesPzi(true)
+              .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+              .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+              .setCrossInstanceReplicationConfig(
+                  CrossInstanceReplicationConfig.newBuilder().build())
+              .setAsyncInstanceEndpointsDeletionEnabled(true)
+              .setKmsKey("kmsKey-1127483058")
+              .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+              .setBackupCollection(
+                  BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                      .toString())
+              .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+              .setMaintenanceVersion("maintenanceVersion1355658821")
+              .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+              .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+              .setAllowFewerZonesDeployment(true)
               .setServerCaPool("serverCaPool1433802429")
               .setRotateServerCertificate(true)
+              .setMigrationConfig(MigrationConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -831,6 +976,2125 @@ public class MemorystoreClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void rescheduleMaintenanceTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rescheduleMaintenanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+        RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+    Timestamp scheduleTime = Timestamp.newBuilder().build();
+
+    Instance actualResponse =
+        client.rescheduleMaintenanceAsync(name, rescheduleType, scheduleTime).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void rescheduleMaintenanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+          RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+      Timestamp scheduleTime = Timestamp.newBuilder().build();
+      client.rescheduleMaintenanceAsync(name, rescheduleType, scheduleTime).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void rescheduleMaintenanceTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("rescheduleMaintenanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
+    RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+        RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+    Timestamp scheduleTime = Timestamp.newBuilder().build();
+
+    Instance actualResponse =
+        client.rescheduleMaintenanceAsync(name, rescheduleType, scheduleTime).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void rescheduleMaintenanceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
+      RescheduleMaintenanceRequest.RescheduleType rescheduleType =
+          RescheduleMaintenanceRequest.RescheduleType.forNumber(0);
+      Timestamp scheduleTime = Timestamp.newBuilder().build();
+      client.rescheduleMaintenanceAsync(name, rescheduleType, scheduleTime).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listBackupCollectionsTest() throws Exception {
+    BackupCollection responsesElement = BackupCollection.newBuilder().build();
+    ListBackupCollectionsResponse expectedResponse =
+        ListBackupCollectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupCollections(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListBackupCollectionsPagedResponse pagedListResponse = client.listBackupCollections(parent);
+
+    List<BackupCollection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupCollectionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBackupCollectionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listBackupCollections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBackupCollectionsTest2() throws Exception {
+    BackupCollection responsesElement = BackupCollection.newBuilder().build();
+    ListBackupCollectionsResponse expectedResponse =
+        ListBackupCollectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackupCollections(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListBackupCollectionsPagedResponse pagedListResponse = client.listBackupCollections(parent);
+
+    List<BackupCollection> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupCollectionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBackupCollectionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listBackupCollections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupCollectionTest() throws Exception {
+    BackupCollection expectedResponse =
+        BackupCollection.newBuilder()
+            .setName(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setInstanceUid("instanceUid-2102004869")
+            .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setKmsKey("kmsKey-1127483058")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setTotalBackupSizeBytes(-665105137)
+            .setTotalBackupCount(775900525)
+            .setLastBackupTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BackupCollectionName name =
+        BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]");
+
+    BackupCollection actualResponse = client.getBackupCollection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBackupCollectionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupCollectionName name =
+          BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]");
+      client.getBackupCollection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupCollectionTest2() throws Exception {
+    BackupCollection expectedResponse =
+        BackupCollection.newBuilder()
+            .setName(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setInstanceUid("instanceUid-2102004869")
+            .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setKmsKey("kmsKey-1127483058")
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setTotalBackupSizeBytes(-665105137)
+            .setTotalBackupCount(775900525)
+            .setLastBackupTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-9529/locations/location-9529/backupCollections/backupCollection-9529";
+
+    BackupCollection actualResponse = client.getBackupCollection(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBackupCollectionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-9529/locations/location-9529/backupCollections/backupCollection-9529";
+      client.getBackupCollection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBackupsTest() throws Exception {
+    Backup responsesElement = Backup.newBuilder().build();
+    ListBackupsResponse expectedResponse =
+        ListBackupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackups(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BackupCollectionName parent =
+        BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]");
+
+    ListBackupsPagedResponse pagedListResponse = client.listBackups(parent);
+
+    List<Backup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBackupsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupCollectionName parent =
+          BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]");
+      client.listBackups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listBackupsTest2() throws Exception {
+    Backup responsesElement = Backup.newBuilder().build();
+    ListBackupsResponse expectedResponse =
+        ListBackupsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBackups(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-2584/locations/location-2584/backupCollections/backupCollection-2584";
+
+    ListBackupsPagedResponse pagedListResponse = client.listBackups(parent);
+
+    List<Backup> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBackupsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listBackupsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-2584/locations/location-2584/backupCollections/backupCollection-2584";
+      client.listBackups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupTest() throws Exception {
+    Backup expectedResponse =
+        Backup.newBuilder()
+            .setName(
+                BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setInstanceUid("instanceUid-2102004869")
+            .setTotalSizeBytes(-115423608)
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .addAllBackupFiles(new ArrayList<BackupFile>())
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]");
+
+    Backup actualResponse = client.getBackup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBackupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]");
+      client.getBackup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getBackupTest2() throws Exception {
+    Backup expectedResponse =
+        Backup.newBuilder()
+            .setName(
+                BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setInstanceUid("instanceUid-2102004869")
+            .setTotalSizeBytes(-115423608)
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .addAllBackupFiles(new ArrayList<BackupFile>())
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-3318/locations/location-3318/backupCollections/backupCollection-3318/backups/backup-3318";
+
+    Backup actualResponse = client.getBackup(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getBackupExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3318/locations/location-3318/backupCollections/backupCollection-3318/backups/backup-3318";
+      client.getBackup(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteBackupTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteBackupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]");
+
+    client.deleteBackupAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteBackupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BackupName name = BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]");
+      client.deleteBackupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteBackupTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteBackupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-3318/locations/location-3318/backupCollections/backupCollection-3318/backups/backup-3318";
+
+    client.deleteBackupAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteBackupExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3318/locations/location-3318/backupCollections/backupCollection-3318/backups/backup-3318";
+      client.deleteBackupAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void exportBackupTest() throws Exception {
+    Backup expectedResponse =
+        Backup.newBuilder()
+            .setName(
+                BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+                    .toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setInstanceUid("instanceUid-2102004869")
+            .setTotalSizeBytes(-115423608)
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .addAllBackupFiles(new ArrayList<BackupFile>())
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setUid("uid115792")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportBackupTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExportBackupRequest request =
+        ExportBackupRequest.newBuilder()
+            .setName(
+                BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+                    .toString())
+            .build();
+
+    Backup actualResponse = client.exportBackupAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void exportBackupExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExportBackupRequest request =
+          ExportBackupRequest.newBuilder()
+              .setName(
+                  BackupName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]", "[BACKUP]")
+                      .toString())
+              .build();
+      client.exportBackupAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void backupInstanceTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("backupInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    Instance actualResponse = client.backupInstanceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void backupInstanceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.backupInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void backupInstanceTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("backupInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
+
+    Instance actualResponse = client.backupInstanceAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void backupInstanceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
+      client.backupInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void startMigrationTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startMigrationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    StartMigrationRequest request =
+        StartMigrationRequest.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .build();
+
+    Instance actualResponse = client.startMigrationAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void startMigrationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      StartMigrationRequest request =
+          StartMigrationRequest.newBuilder()
+              .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+              .build();
+      client.startMigrationAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void finishMigrationTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("finishMigrationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    boolean force = true;
+
+    Instance actualResponse = client.finishMigrationAsync(name, force).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void finishMigrationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      boolean force = true;
+      client.finishMigrationAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void finishMigrationTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("finishMigrationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
+    boolean force = true;
+
+    Instance actualResponse = client.finishMigrationAsync(name, force).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void finishMigrationExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-9412/locations/location-9412/instances/instance-9412";
+      boolean force = true;
+      client.finishMigrationAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void listTokenAuthUsersTest() throws Exception {
+    TokenAuthUser responsesElement = TokenAuthUser.newBuilder().build();
+    ListTokenAuthUsersResponse expectedResponse =
+        ListTokenAuthUsersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTokenAuthUsers(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    ListTokenAuthUsersPagedResponse pagedListResponse = client.listTokenAuthUsers(parent);
+
+    List<TokenAuthUser> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTokenAuthUsersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTokenAuthUsersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.listTokenAuthUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listTokenAuthUsersTest2() throws Exception {
+    TokenAuthUser responsesElement = TokenAuthUser.newBuilder().build();
+    ListTokenAuthUsersResponse expectedResponse =
+        ListTokenAuthUsersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllTokenAuthUsers(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5197/locations/location-5197/instances/instance-5197";
+
+    ListTokenAuthUsersPagedResponse pagedListResponse = client.listTokenAuthUsers(parent);
+
+    List<TokenAuthUser> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTokenAuthUsersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listTokenAuthUsersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5197/locations/location-5197/instances/instance-5197";
+      client.listTokenAuthUsers(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTokenAuthUserTest() throws Exception {
+    TokenAuthUser expectedResponse =
+        TokenAuthUser.newBuilder()
+            .setName(
+                TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+                    .toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TokenAuthUserName name =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+
+    TokenAuthUser actualResponse = client.getTokenAuthUser(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTokenAuthUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TokenAuthUserName name =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+      client.getTokenAuthUser(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getTokenAuthUserTest2() throws Exception {
+    TokenAuthUser expectedResponse =
+        TokenAuthUser.newBuilder()
+            .setName(
+                TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+                    .toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-6061/locations/location-6061/instances/instance-6061/tokenAuthUsers/tokenAuthUser-6061";
+
+    TokenAuthUser actualResponse = client.getTokenAuthUser(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getTokenAuthUserExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6061/locations/location-6061/instances/instance-6061/tokenAuthUsers/tokenAuthUser-6061";
+      client.getTokenAuthUser(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuthTokensTest() throws Exception {
+    AuthToken responsesElement = AuthToken.newBuilder().build();
+    ListAuthTokensResponse expectedResponse =
+        ListAuthTokensResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuthTokens(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    TokenAuthUserName parent =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+
+    ListAuthTokensPagedResponse pagedListResponse = client.listAuthTokens(parent);
+
+    List<AuthToken> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuthTokensList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAuthTokensExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TokenAuthUserName parent =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+      client.listAuthTokens(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAuthTokensTest2() throws Exception {
+    AuthToken responsesElement = AuthToken.newBuilder().build();
+    ListAuthTokensResponse expectedResponse =
+        ListAuthTokensResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAuthTokens(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-7262/locations/location-7262/instances/instance-7262/tokenAuthUsers/tokenAuthUser-7262";
+
+    ListAuthTokensPagedResponse pagedListResponse = client.listAuthTokens(parent);
+
+    List<AuthToken> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAuthTokensList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listAuthTokensExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-7262/locations/location-7262/instances/instance-7262/tokenAuthUsers/tokenAuthUser-7262";
+      client.listAuthTokens(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuthTokenTest() throws Exception {
+    AuthToken expectedResponse =
+        AuthToken.newBuilder()
+            .setName(
+                AuthTokenName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[INSTANCE]",
+                        "[TOKEN_AUTH_USER]",
+                        "[AUTH_TOKEN]")
+                    .toString())
+            .setToken("token110541305")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AuthTokenName name =
+        AuthTokenName.of(
+            "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+
+    AuthToken actualResponse = client.getAuthToken(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAuthTokenExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AuthTokenName name =
+          AuthTokenName.of(
+              "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+      client.getAuthToken(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAuthTokenTest2() throws Exception {
+    AuthToken expectedResponse =
+        AuthToken.newBuilder()
+            .setName(
+                AuthTokenName.of(
+                        "[PROJECT]",
+                        "[LOCATION]",
+                        "[INSTANCE]",
+                        "[TOKEN_AUTH_USER]",
+                        "[AUTH_TOKEN]")
+                    .toString())
+            .setToken("token110541305")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-463/locations/location-463/instances/instance-463/tokenAuthUsers/tokenAuthUser-463/authTokens/authToken-463";
+
+    AuthToken actualResponse = client.getAuthToken(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getAuthTokenExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-463/locations/location-463/instances/instance-463/tokenAuthUsers/tokenAuthUser-463/authTokens/authToken-463";
+      client.getAuthToken(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void addTokenAuthUserTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    String tokenAuthUser = "tokenAuthUser345456300";
+
+    Instance actualResponse = client.addTokenAuthUserAsync(instance, tokenAuthUser).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addTokenAuthUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      String tokenAuthUser = "tokenAuthUser345456300";
+      client.addTokenAuthUserAsync(instance, tokenAuthUser).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void addTokenAuthUserTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setStateInfo(Instance.StateInfo.newBuilder().build())
+            .setUid("uid115792")
+            .setReplicaCount(564075208)
+            .setShardCount(-495377042)
+            .addAllDiscoveryEndpoints(new ArrayList<DiscoveryEndpoint>())
+            .setPersistenceConfig(PersistenceConfig.newBuilder().build())
+            .setEngineVersion("engineVersion-1416229834")
+            .putAllEngineConfigs(new HashMap<String, String>())
+            .setNodeConfig(NodeConfig.newBuilder().build())
+            .setZoneDistributionConfig(ZoneDistributionConfig.newBuilder().build())
+            .setDeletionProtectionEnabled(true)
+            .addAllPscAutoConnections(new ArrayList<PscAutoConnection>())
+            .addAllPscAttachmentDetails(new ArrayList<PscAttachmentDetail>())
+            .addAllEndpoints(new ArrayList<Instance.InstanceEndpoint>())
+            .setSimulateMaintenanceEvent(true)
+            .setOndemandMaintenance(true)
+            .setSatisfiesPzs(true)
+            .setSatisfiesPzi(true)
+            .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+            .setMaintenanceSchedule(MaintenanceSchedule.newBuilder().build())
+            .setCrossInstanceReplicationConfig(CrossInstanceReplicationConfig.newBuilder().build())
+            .setAsyncInstanceEndpointsDeletionEnabled(true)
+            .setKmsKey("kmsKey-1127483058")
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setBackupCollection(
+                BackupCollectionName.of("[PROJECT]", "[LOCATION]", "[BACKUP_COLLECTION]")
+                    .toString())
+            .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
+            .setMaintenanceVersion("maintenanceVersion1355658821")
+            .setEffectiveMaintenanceVersion("effectiveMaintenanceVersion-380297140")
+            .addAllAvailableMaintenanceVersions(new ArrayList<String>())
+            .setAllowFewerZonesDeployment(true)
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
+            .setMigrationConfig(MigrationConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String instance = "projects/project-2526/locations/location-2526/instances/instance-2526";
+    String tokenAuthUser = "tokenAuthUser345456300";
+
+    Instance actualResponse = client.addTokenAuthUserAsync(instance, tokenAuthUser).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addTokenAuthUserExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String instance = "projects/project-2526/locations/location-2526/instances/instance-2526";
+      String tokenAuthUser = "tokenAuthUser345456300";
+      client.addTokenAuthUserAsync(instance, tokenAuthUser).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteTokenAuthUserTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    TokenAuthUserName name =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+
+    client.deleteTokenAuthUserAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTokenAuthUserExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TokenAuthUserName name =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+      client.deleteTokenAuthUserAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteTokenAuthUserTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTokenAuthUserTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-6061/locations/location-6061/instances/instance-6061/tokenAuthUsers/tokenAuthUser-6061";
+
+    client.deleteTokenAuthUserAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTokenAuthUserExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-6061/locations/location-6061/instances/instance-6061/tokenAuthUsers/tokenAuthUser-6061";
+      client.deleteTokenAuthUserAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void addAuthTokenTest() throws Exception {
+    TokenAuthUser expectedResponse =
+        TokenAuthUser.newBuilder()
+            .setName(
+                TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addAuthTokenTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    TokenAuthUserName tokenAuthUser =
+        TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+    AuthToken authToken = AuthToken.newBuilder().build();
+
+    TokenAuthUser actualResponse = client.addAuthTokenAsync(tokenAuthUser, authToken).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addAuthTokenExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TokenAuthUserName tokenAuthUser =
+          TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]");
+      AuthToken authToken = AuthToken.newBuilder().build();
+      client.addAuthTokenAsync(tokenAuthUser, authToken).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void addAuthTokenTest2() throws Exception {
+    TokenAuthUser expectedResponse =
+        TokenAuthUser.newBuilder()
+            .setName(
+                TokenAuthUserName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]")
+                    .toString())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("addAuthTokenTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String tokenAuthUser =
+        "projects/project-6348/locations/location-6348/instances/instance-6348/tokenAuthUsers/tokenAuthUser-6348";
+    AuthToken authToken = AuthToken.newBuilder().build();
+
+    TokenAuthUser actualResponse = client.addAuthTokenAsync(tokenAuthUser, authToken).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void addAuthTokenExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String tokenAuthUser =
+          "projects/project-6348/locations/location-6348/instances/instance-6348/tokenAuthUsers/tokenAuthUser-6348";
+      AuthToken authToken = AuthToken.newBuilder().build();
+      client.addAuthTokenAsync(tokenAuthUser, authToken).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAuthTokenTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAuthTokenTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AuthTokenName name =
+        AuthTokenName.of(
+            "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+
+    client.deleteAuthTokenAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAuthTokenExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AuthTokenName name =
+          AuthTokenName.of(
+              "[PROJECT]", "[LOCATION]", "[INSTANCE]", "[TOKEN_AUTH_USER]", "[AUTH_TOKEN]");
+      client.deleteAuthTokenAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteAuthTokenTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAuthTokenTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-463/locations/location-463/instances/instance-463/tokenAuthUsers/tokenAuthUser-463/authTokens/authToken-463";
+
+    client.deleteAuthTokenAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteAuthTokenExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-463/locations/location-463/instances/instance-463/tokenAuthUsers/tokenAuthUser-463/authTokens/authToken-463";
+      client.deleteAuthTokenAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

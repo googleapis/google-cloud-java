@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -189,7 +190,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TagHoldsClient implements BackgroundResource {
-  private final TagHoldsSettings settings;
+  private final @Nullable TagHoldsSettings settings;
   private final TagHoldsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -235,7 +236,7 @@ public class TagHoldsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final TagHoldsSettings getSettings() {
+  public final @Nullable TagHoldsSettings getSettings() {
     return settings;
   }
 
@@ -286,7 +287,7 @@ public class TagHoldsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<TagHold, CreateTagHoldMetadata> createTagHoldAsync(
-      TagValueName parent, TagHold tagHold) {
+      @Nullable TagValueName parent, TagHold tagHold) {
     CreateTagHoldRequest request =
         CreateTagHoldRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -443,7 +444,8 @@ public class TagHoldsClient implements BackgroundResource {
    *     `tagValues/{tag-value-id}/tagHolds/{tag-hold-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, DeleteTagHoldMetadata> deleteTagHoldAsync(TagHoldName name) {
+  public final OperationFuture<Empty, DeleteTagHoldMetadata> deleteTagHoldAsync(
+      @Nullable TagHoldName name) {
     DeleteTagHoldRequest request =
         DeleteTagHoldRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteTagHoldAsync(request);
@@ -588,7 +590,7 @@ public class TagHoldsClient implements BackgroundResource {
    *     `tagValues/{tag-value-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTagHoldsPagedResponse listTagHolds(TagValueName parent) {
+  public final ListTagHoldsPagedResponse listTagHolds(@Nullable TagValueName parent) {
     ListTagHoldsRequest request =
         ListTagHoldsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -788,8 +790,8 @@ public class TagHoldsClient implements BackgroundResource {
       extends AbstractPage<ListTagHoldsRequest, ListTagHoldsResponse, TagHold, ListTagHoldsPage> {
 
     private ListTagHoldsPage(
-        PageContext<ListTagHoldsRequest, ListTagHoldsResponse, TagHold> context,
-        ListTagHoldsResponse response) {
+        @Nullable PageContext<ListTagHoldsRequest, ListTagHoldsResponse, TagHold> context,
+        @Nullable ListTagHoldsResponse response) {
       super(context, response);
     }
 
@@ -799,14 +801,14 @@ public class TagHoldsClient implements BackgroundResource {
 
     @Override
     protected ListTagHoldsPage createPage(
-        PageContext<ListTagHoldsRequest, ListTagHoldsResponse, TagHold> context,
-        ListTagHoldsResponse response) {
+        @Nullable PageContext<ListTagHoldsRequest, ListTagHoldsResponse, TagHold> context,
+        @Nullable ListTagHoldsResponse response) {
       return new ListTagHoldsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTagHoldsPage> createPageAsync(
-        PageContext<ListTagHoldsRequest, ListTagHoldsResponse, TagHold> context,
+        @Nullable PageContext<ListTagHoldsRequest, ListTagHoldsResponse, TagHold> context,
         ApiFuture<ListTagHoldsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -820,7 +822,8 @@ public class TagHoldsClient implements BackgroundResource {
           ListTagHoldsPage,
           ListTagHoldsFixedSizeCollection> {
 
-    private ListTagHoldsFixedSizeCollection(List<ListTagHoldsPage> pages, int collectionSize) {
+    private ListTagHoldsFixedSizeCollection(
+        @Nullable List<ListTagHoldsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -830,7 +833,7 @@ public class TagHoldsClient implements BackgroundResource {
 
     @Override
     protected ListTagHoldsFixedSizeCollection createCollection(
-        List<ListTagHoldsPage> pages, int collectionSize) {
+        @Nullable List<ListTagHoldsPage> pages, int collectionSize) {
       return new ListTagHoldsFixedSizeCollection(pages, collectionSize);
     }
   }

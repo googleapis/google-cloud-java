@@ -21,6 +21,7 @@ import com.google.cloud.ces.v1beta.AppName;
 import com.google.cloud.ces.v1beta.AppVersionName;
 import com.google.cloud.ces.v1beta.EvaluationConfig;
 import com.google.cloud.ces.v1beta.EvaluationDatasetName;
+import com.google.cloud.ces.v1beta.EvaluationRunCachingSettings;
 import com.google.cloud.ces.v1beta.EvaluationServiceClient;
 import com.google.cloud.ces.v1beta.GoldenRunMethod;
 import com.google.cloud.ces.v1beta.OptimizationConfig;
@@ -64,6 +65,7 @@ public class SyncRunEvaluation {
                       .toString())
               .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
               .setGenerateLatencyReport(true)
+              .setEvaluationRunCachingSettings(EvaluationRunCachingSettings.newBuilder().build())
               .build();
       RunEvaluationResponse response = evaluationServiceClient.runEvaluationAsync(request).get();
     }

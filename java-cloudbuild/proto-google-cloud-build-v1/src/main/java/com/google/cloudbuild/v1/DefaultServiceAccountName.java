@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -73,7 +74,7 @@ public class DefaultServiceAccountName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).build().toString();
   }
 
-  public static DefaultServiceAccountName parse(String formattedString) {
+  public static @Nullable DefaultServiceAccountName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -92,7 +93,7 @@ public class DefaultServiceAccountName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<DefaultServiceAccountName> values) {
+  public static List<String> toStringList(List<@Nullable DefaultServiceAccountName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (DefaultServiceAccountName value : values) {
       if (value == null) {
@@ -137,7 +138,7 @@ public class DefaultServiceAccountName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

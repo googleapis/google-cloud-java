@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -244,7 +245,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class FeaturestoreOnlineServingServiceClient implements BackgroundResource {
-  private final FeaturestoreOnlineServingServiceSettings settings;
+  private final @Nullable FeaturestoreOnlineServingServiceSettings settings;
   private final FeaturestoreOnlineServingServiceStub stub;
 
   /** Constructs an instance of FeaturestoreOnlineServingServiceClient with default settings. */
@@ -289,7 +290,7 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
     this.stub = stub;
   }
 
-  public final FeaturestoreOnlineServingServiceSettings getSettings() {
+  public final @Nullable FeaturestoreOnlineServingServiceSettings getSettings() {
     return settings;
   }
 
@@ -326,7 +327,7 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    *     EntityType ID could be `user`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReadFeatureValuesResponse readFeatureValues(EntityTypeName entityType) {
+  public final ReadFeatureValuesResponse readFeatureValues(@Nullable EntityTypeName entityType) {
     ReadFeatureValuesRequest request =
         ReadFeatureValuesRequest.newBuilder()
             .setEntityType(entityType == null ? null : entityType.toString())
@@ -510,7 +511,7 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WriteFeatureValuesResponse writeFeatureValues(
-      EntityTypeName entityType, List<WriteFeatureValuesPayload> payloads) {
+      @Nullable EntityTypeName entityType, List<WriteFeatureValuesPayload> payloads) {
     WriteFeatureValuesRequest request =
         WriteFeatureValuesRequest.newBuilder()
             .setEntityType(entityType == null ? null : entityType.toString())
@@ -1075,8 +1076,8 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1086,14 +1087,14 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1107,7 +1108,8 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1117,7 +1119,7 @@ public class FeaturestoreOnlineServingServiceClient implements BackgroundResourc
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

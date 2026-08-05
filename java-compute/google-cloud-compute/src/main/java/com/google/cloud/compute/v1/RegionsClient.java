@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -147,7 +148,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionsClient implements BackgroundResource {
-  private final RegionsSettings settings;
+  private final @Nullable RegionsSettings settings;
   private final RegionsStub stub;
 
   /** Constructs an instance of RegionsClient with default settings. */
@@ -185,7 +186,7 @@ public class RegionsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionsSettings getSettings() {
+  public final @Nullable RegionsSettings getSettings() {
     return settings;
   }
 
@@ -560,7 +561,8 @@ public class RegionsClient implements BackgroundResource {
       extends AbstractPage<ListRegionsRequest, RegionList, Region, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionsRequest, RegionList, Region> context, RegionList response) {
+        @Nullable PageContext<ListRegionsRequest, RegionList, Region> context,
+        @Nullable RegionList response) {
       super(context, response);
     }
 
@@ -570,13 +572,14 @@ public class RegionsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionsRequest, RegionList, Region> context, RegionList response) {
+        @Nullable PageContext<ListRegionsRequest, RegionList, Region> context,
+        @Nullable RegionList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionsRequest, RegionList, Region> context,
+        @Nullable PageContext<ListRegionsRequest, RegionList, Region> context,
         ApiFuture<RegionList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -586,7 +589,7 @@ public class RegionsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRegionsRequest, RegionList, Region, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -595,7 +598,8 @@ public class RegionsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

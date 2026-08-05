@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -89,7 +90,7 @@ public class EkmConnectionName implements ResourceName {
         .toString();
   }
 
-  public static EkmConnectionName parse(String formattedString) {
+  public static @Nullable EkmConnectionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -107,7 +108,7 @@ public class EkmConnectionName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<EkmConnectionName> values) {
+  public static List<String> toStringList(List<@Nullable EkmConnectionName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (EkmConnectionName value : values) {
       if (value == null) {
@@ -156,7 +157,7 @@ public class EkmConnectionName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -1,3 +1,6 @@
+permissions:
+  contents: read
+
 name: java-cloud-bom Update README with libraries-bom table
 # Run this workflow upon published release
 
@@ -10,31 +13,24 @@ on:
 env:
   BUILD_SUBDIR: java-cloud-bom
 jobs:
-  filter:
-    runs-on: ubuntu-latest
-    outputs:
-      library: ${{ steps.filter.outputs.library }}
-    steps:
-    - uses: actions/checkout@v4
-    - uses: dorny/paths-filter@v3
-      id: filter
-      with:
-        filters: |
-          library:
-            - 'java-cloud-bom/**'
   update-readme:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.event.release.tag_name, 'libraries-bom/') }}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: java-cloud-bom
     permissions:
       contents: write
       pull-requests: write
     steps:
     - name: Check out repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      with:
+        # Explicitly persist credentials so subsequent git push steps can authenticate with origin
+        persist-credentials: true
 
     - name: Set up Python
-      uses: actions/setup-python@v6
+      uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
       with:
         python-version: '3.9'
 

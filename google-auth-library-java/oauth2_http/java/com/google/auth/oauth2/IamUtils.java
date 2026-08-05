@@ -56,11 +56,13 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * This internal class provides shared utilities for interacting with the IAM API for common
  * features like signing.
  */
+@NullMarked
 class IamUtils {
 
   // IAM credentials endpoints are to be formatted with universe domain and client email.

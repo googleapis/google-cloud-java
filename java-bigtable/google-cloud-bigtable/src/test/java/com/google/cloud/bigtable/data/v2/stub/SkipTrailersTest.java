@@ -67,7 +67,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -83,13 +82,15 @@ public class SkipTrailersTest {
   private HackedBigtableService hackedService;
   private Server server;
 
-  @Mock private ApiTracerFactory tracerFactory;
+  private ApiTracerFactory tracerFactory;
   private FakeTracer tracer = new FakeTracer();
 
   private BigtableDataClient client;
 
   @Before
   public void setUp() throws Exception {
+    tracerFactory =
+        Mockito.mock(ApiTracerFactory.class, Mockito.withSettings().withoutAnnotations());
     hackedService = new HackedBigtableService();
     server = FakeServiceBuilder.create(hackedService).start();
 

@@ -35,6 +35,8 @@ import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A {@link ApiTracerFactory} to build instances of {@link OpenTelemetryTracingTracer}.
@@ -44,6 +46,7 @@ import io.opentelemetry.api.trace.Tracer;
  *
  * <p>This class is expected to be initialized once during client initialization.
  */
+@NullMarked
 public class OpenTelemetryTracingFactory implements ApiTracerFactory {
   private final Tracer tracer;
   private final OpenTelemetry openTelemetry;
@@ -72,7 +75,7 @@ public class OpenTelemetryTracingFactory implements ApiTracerFactory {
    */
   @VisibleForTesting
   OpenTelemetryTracingFactory(
-      OpenTelemetry openTelemetry, Tracer tracer, ApiTracerContext apiTracerContext) {
+      OpenTelemetry openTelemetry, @Nullable Tracer tracer, ApiTracerContext apiTracerContext) {
     this.openTelemetry = openTelemetry;
     this.tracer = tracer;
     this.apiTracerContext = apiTracerContext;

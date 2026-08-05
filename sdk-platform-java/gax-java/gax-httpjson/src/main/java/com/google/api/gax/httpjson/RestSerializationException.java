@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.httpjson;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * An exception thrown when a protobuf message cannot be serialized/deserialized for REST
  * interactions.
  */
+@NullMarked
 public class RestSerializationException extends RuntimeException {
 
   private static final long serialVersionUID = -6485633460933364916L;

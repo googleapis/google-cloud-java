@@ -15,8 +15,10 @@
 package com.google.api.generator.gapic.model;
 
 import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.NullMarked;
 
 /** Represents the LRO retry settings in a gapic.yaml file. */
+@NullMarked
 @AutoValue
 public abstract class GapicLroRetrySettings {
   public abstract String protoPakkage();

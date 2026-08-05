@@ -31,7 +31,10 @@
 
 package com.google.auth.http;
 
+import org.jspecify.annotations.NullMarked;
+
 /** Constants used for auth in http */
+@NullMarked
 public class AuthHttpConstants {
   /** HTTP "Bearer" authentication scheme */
   public static final String BEARER = "Bearer";

@@ -58,7 +58,8 @@ import java.util.Date;
 import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Matcher;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * OAuth2 credentials sourced using external identities through Workforce Identity Federation.
@@ -78,6 +79,7 @@ import javax.annotation.Nullable;
  * }
  * </pre>
  */
+@NullMarked
 public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials
     implements RegionalAccessBoundaryProvider {
   private static final LoggerProvider LOGGER_PROVIDER =
@@ -337,7 +339,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof ExternalAccountAuthorizedUserCredentials)) {
       return false;
     }

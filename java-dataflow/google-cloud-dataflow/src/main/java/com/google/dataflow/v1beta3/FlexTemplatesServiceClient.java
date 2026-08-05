@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -139,7 +140,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class FlexTemplatesServiceClient implements BackgroundResource {
-  private final FlexTemplatesServiceSettings settings;
+  private final @Nullable FlexTemplatesServiceSettings settings;
   private final FlexTemplatesServiceStub stub;
 
   /** Constructs an instance of FlexTemplatesServiceClient with default settings. */
@@ -179,7 +180,7 @@ public class FlexTemplatesServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final FlexTemplatesServiceSettings getSettings() {
+  public final @Nullable FlexTemplatesServiceSettings getSettings() {
     return settings;
   }
 

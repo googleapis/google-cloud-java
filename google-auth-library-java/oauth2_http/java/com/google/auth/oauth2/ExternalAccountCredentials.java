@@ -59,7 +59,8 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Base external account credentials class.
@@ -67,6 +68,7 @@ import javax.annotation.Nullable;
  * <p>Handles initializing external credentials, calls to the Security Token Service, and service
  * account impersonation.
  */
+@NullMarked
 public abstract class ExternalAccountCredentials extends GoogleCredentials
     implements RegionalAccessBoundaryProvider {
 
@@ -284,7 +286,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials
     this.name = GoogleCredentialsInfo.EXTERNAL_ACCOUNT_CREDENTIALS.getCredentialName();
   }
 
-  ImpersonatedCredentials buildImpersonatedCredentials() {
+  @Nullable ImpersonatedCredentials buildImpersonatedCredentials() {
     if (serviceAccountImpersonationUrl == null) {
       return null;
     }
@@ -351,7 +353,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials
   }
 
   @Override
-  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+  public Map<String, List<String>> getRequestMetadata(@Nullable URI uri) throws IOException {
     Map<String, List<String>> requestMetadata = super.getRequestMetadata(uri);
     return addQuotaProjectIdToRequestMetadata(quotaProjectId, requestMetadata);
   }

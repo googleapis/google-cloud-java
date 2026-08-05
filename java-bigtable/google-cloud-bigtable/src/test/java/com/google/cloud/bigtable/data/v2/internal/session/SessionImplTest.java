@@ -70,6 +70,9 @@ import io.grpc.Status;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
@@ -596,6 +599,12 @@ public class SessionImplTest {
     assertThat(sessionListener.popUntil(OpenSessionResponse.class))
         .isInstanceOf(OpenSessionResponse.class);
 
+    // The open-handshake deadline is armed while STARTING and cancelled once READY (before onReady,
+    // so it's already settled here). Reset the counters to scope the assertion below to the
+    // heartbeat lifecycle only.
+    counting.scheduleCount.set(0);
+    counting.cancelCount.set(0);
+
     // After session is READY with no vRPC, no Timeout should ever have been scheduled. Wait a
     // bit so that any background tick (none expected) would have shown up.
     Thread.sleep(50);
@@ -639,6 +648,11 @@ public class SessionImplTest {
     session.start(openSessionRequest, new Metadata(), sessionListener);
     assertThat(sessionListener.popUntil(OpenSessionResponse.class))
         .isInstanceOf(OpenSessionResponse.class);
+
+    // The open-handshake deadline is armed while STARTING and cancelled once READY. Reset the
+    // counters so the assertions below track only the heartbeat lifecycle.
+    counting.scheduleCount.set(0);
+    counting.cancelCount.set(0);
 
     assertThat(counting.scheduleCount.get()).isEqualTo(0);
 
@@ -811,7 +825,98 @@ public class SessionImplTest {
     assertThat(session.getState()).isEqualTo(Session.SessionState.CLOSED);
   }
 
+  // Regression test: a session that connects but never completes the open handshake must not stay
+  // wedged in STARTING forever. Without the open-handshake deadline the session would never fire a
+  // terminal callback, so the pool's reserved session-creation-budget slot would leak. Arming
+  // OPEN_SESSION_TIMEOUT force-closes such a session, routing STARTING -> WAIT_SERVER_CLOSE and
+  // driving the listener to a terminal Status (which releases the budget in the pool).
+  @Test
+  void sessionOpenTimeoutForcesClose() throws Exception {
+    // Capture the scheduled open-timeout tick so we can fire it deterministically instead of
+    // waiting the real OPEN_SESSION_TIMEOUT.
+    CapturingBigtableTimer capturing = new CapturingBigtableTimer(timer);
+    SessionImpl session =
+        new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), capturing);
+
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    session.start(
+        OpenSessionRequest.newBuilder()
+            .setPayload(
+                OpenFakeSessionRequest.newBuilder().setHangBeforeOpen(true).build().toByteString())
+            .build(),
+        new Metadata(),
+        sessionListener);
+
+    // start() runs on the sessionSyncContext; wait until it has armed the open-timeout tick and the
+    // session is STARTING. The server never responds, so it stays STARTING.
+    Stopwatch sw = Stopwatch.createStarted();
+    while ((capturing.tasks.isEmpty() || session.getState() != Session.SessionState.STARTING)
+        && sw.elapsed(TimeUnit.SECONDS) < 5) {
+      Thread.sleep(10);
+    }
+    assertThat(session.getState()).isEqualTo(Session.SessionState.STARTING);
+    assertWithMessage("open-timeout tick should have been armed while STARTING")
+        .that(capturing.tasks)
+        .isNotEmpty();
+
+    // Fire the open-timeout tick on its executor (the sessionSyncContext), simulating the deadline
+    // elapsing while still STARTING.
+    capturing.executors.get(0).execute(capturing.tasks.get(0));
+
+    // The session must force-close and drive the listener to a terminal Status.
+    assertWithMessage("terminal status should be delivered after open timeout")
+        .that(sessionListener.popUntil(Status.class))
+        .isNotNull();
+    sw.reset().start();
+    while (session.getState() != Session.SessionState.WAIT_SERVER_CLOSE
+        && session.getState() != Session.SessionState.CLOSED
+        && sw.elapsed(TimeUnit.SECONDS) < 5) {
+      Thread.sleep(10);
+    }
+    assertThat(session.getState())
+        .isAnyOf(Session.SessionState.WAIT_SERVER_CLOSE, Session.SessionState.CLOSED);
+  }
+
   // endregion
+
+  // Captures newTimeout tasks/executors so a scheduled tick can be fired deterministically instead
+  // of waiting out the real delay.
+  private static final class CapturingBigtableTimer implements BigtableTimer {
+    private final BigtableTimer delegate;
+    final List<Runnable> tasks = Collections.synchronizedList(new ArrayList<>());
+    final List<Executor> executors = Collections.synchronizedList(new ArrayList<>());
+
+    CapturingBigtableTimer(BigtableTimer delegate) {
+      this.delegate = delegate;
+    }
+
+    @Override
+    public Timeout newTimeout(Runnable task, Executor executor, long delay, TimeUnit unit) {
+      tasks.add(task);
+      executors.add(executor);
+      return new Timeout() {
+        @Override
+        public boolean cancel() {
+          return true;
+        }
+
+        @Override
+        public boolean isCancelled() {
+          return false;
+        }
+      };
+    }
+
+    @Override
+    public Registration onStop(Runnable hook) {
+      return delegate.onStop(hook);
+    }
+
+    @Override
+    public void stop() {
+      delegate.stop();
+    }
+  }
 
   // Wraps a real BigtableTimer and counts newTimeout / cancel calls. Used to assert that the
   // heartbeat tick is only armed while a vRPC is in flight.

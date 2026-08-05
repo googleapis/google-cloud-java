@@ -45,18 +45,21 @@ import java.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 /** Tests for {@link MockServiceHelper}. */
 public class MockServiceHelperTest {
-  @Mock private MockGrpcService grpcService;
-  @Mock private MockGrpcService grpcService2;
+  private MockGrpcService grpcService;
+  private MockGrpcService grpcService2;
 
   @Mock private Server server;
 
   /** Sets up mocks. */
   @BeforeEach
   void setUp() {
+    grpcService = Mockito.mock(MockGrpcService.class, Mockito.withSettings().withoutAnnotations());
+    grpcService2 = Mockito.mock(MockGrpcService.class, Mockito.withSettings().withoutAnnotations());
     MockitoAnnotations.initMocks(this);
     when(grpcService.getServiceDefinition())
         .thenReturn(ServerServiceDefinition.builder("fake-service").build());
