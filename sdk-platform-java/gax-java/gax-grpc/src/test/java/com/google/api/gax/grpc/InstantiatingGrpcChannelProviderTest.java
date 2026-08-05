@@ -1583,6 +1583,61 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     return channelBuilder.toString();
   }
 
+  @Test
+  void testLogDirectPathMisconfigXdsSetDirectPathNotSet() throws Exception {
+    FakeLogHandler logHandler = new FakeLogHandler();
+    InstantiatingGrpcChannelProvider.LOG.setLevel(Level.FINE);
+    InstantiatingGrpcChannelProvider.LOG.addHandler(logHandler);
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPathXds()
+            .setAttemptDirectPath(false)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class, Mockito.withSettings().withoutAnnotations()))
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+
+    try {
+      provider.getTransportChannel();
+    } catch (Exception e) {
+      // ignore
+    }
+
+    assertThat(logHandler.getAllMessages())
+        .contains(
+            "DirectPath is misconfigured. The DirectPath XDS option was set, but the attemptDirectPath option was not. Please set both the attemptDirectPath and attemptDirectPathXds options.");
+    InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
+  }
+
+  @Test
+  void testLogDirectPathMisconfigDirectPathSetXdsNotSet() throws Exception {
+    FakeLogHandler logHandler = new FakeLogHandler();
+    InstantiatingGrpcChannelProvider.LOG.setLevel(Level.FINE);
+    InstantiatingGrpcChannelProvider.LOG.addHandler(logHandler);
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPath(true)
+            .setHeaderProvider(
+                mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class, Mockito.withSettings().withoutAnnotations()))
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .build();
+
+    try {
+      provider.getTransportChannel();
+    } catch (Exception e) {
+      // ignore
+    }
+
+    assertThat(logHandler.getAllMessages())
+        .contains(
+            "DirectPath is enabled, but DirectPath xDS is not. Please note that DirectPath will soon require xDS to be enabled. Please set the attemptDirectPathXds option.");
+    InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
+  }
+
   private static class FakeLogHandler extends Handler {
 
     List<LogRecord> records = new ArrayList<>();

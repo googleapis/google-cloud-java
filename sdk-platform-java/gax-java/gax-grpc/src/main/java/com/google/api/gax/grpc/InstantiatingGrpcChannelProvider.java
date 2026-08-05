@@ -397,7 +397,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     } else if (needsEndpoint()) {
       throw new IllegalStateException("getTransportChannel() called when needsEndpoint() is true");
     } else {
-      logDirectPathMisconfig();
+      validateDirectPathState();
       return createChannel();
     }
   }
@@ -454,15 +454,11 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   // This method should be called once per client initialization, hence can not be called in the
   // builder or createSingleChannel, only in getTransportChannel which creates the first channel
   // for a client.
-  private void logDirectPathMisconfig() {
-    if (!isDirectPathXdsEnabled()) {
-      return;
-    }
-
+  @InternalApi
+  public void validateDirectPathState() {
     Level level = isOnComputeEngine() ? Level.WARNING : Level.FINE;
 
     if (!isDirectPathEnabled()) {
-      // This misconfiguration occurs when Direct Path xDS is enabled, but Direct Path is not
       // Direct Path xDS can be enabled two ways: via environment variable or via builder.
       // Case 1: Direct Path is only enabled via xDS env var. We will _warn_ the user that this is
       // a misconfiguration if they intended to set the env var.
@@ -483,7 +479,13 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
             "DirectPath is misconfigured. The DirectPath XDS option was set, but the attemptDirectPath option was not. Please set both the attemptDirectPath and attemptDirectPathXds options.");
       }
     } else {
-      // Case 3: credential is not correctly set
+      // Case 3: DirectPath is enabled, but xDS is not.
+      if (!isDirectPathXdsEnabled()) {
+        LOG.log(
+            level,
+            "DirectPath is enabled, but DirectPath xDS is not. Please note that DirectPath will soon require xDS to be enabled. Please set the attemptDirectPathXds option.");
+      }
+      // Case 4: credential is not correctly set
       if (!isCredentialDirectPathCompatible()) {
         LOG.log(
             level,
@@ -491,7 +493,7 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
                 + ComputeEngineCredentials.class.getName()
                 + " .");
       }
-      // Case 4: not running on GCE
+      // Case 5: not running on GCE
       if (!isOnComputeEngine() && !isAttemptDirectPathXdsOverInterconnect()) {
         LOG.log(
             level,
