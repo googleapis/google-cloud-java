@@ -34,11 +34,15 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.rpc.testing.FakeCallContext;
+import com.google.api.gax.rpc.testing.FakeChannel;
+import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.api.gax.rpc.testing.FakeTransportChannel;
 import com.google.api.gax.tracing.ApiTracer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -132,5 +136,51 @@ class AttemptCallableTest {
     callable.call();
 
     assertThat(capturedCallContext.getValue().getTimeoutDuration()).isEqualTo(callerTimeout);
+  }
+
+  @Test
+  void testUnauthenticatedExceptionReThrowPreservesContext() {
+    FakeTransportChannel transportChannel =
+        FakeTransportChannel.create(new FakeChannel()).setShouldRefresh(true);
+    ApiCallContext callContext =
+        FakeCallContext.createDefault().withTransportChannel(transportChannel);
+
+    UnauthenticatedException originalEx =
+        new UnauthenticatedException(
+            "Expired cert",
+            new IllegalStateException("Root cause"),
+            FakeStatusCode.of(StatusCode.Code.UNAUTHENTICATED),
+            false);
+    originalEx.setStackTrace(
+        new StackTraceElement[] {new StackTraceElement("foo", "bar", "Baz.java", 123)});
+    originalEx.addSuppressed(new RuntimeException("Suppressed cause"));
+
+    SettableApiFuture<String> failedFuture = SettableApiFuture.create();
+    failedFuture.setException(originalEx);
+    when(mockInnerCallable.futureCall(Mockito.anyString(), Mockito.any())).thenReturn(failedFuture);
+
+    AttemptCallable<String, String> callable =
+        new AttemptCallable<>(mockInnerCallable, "fake-request", callContext);
+    callable.setExternalFuture(mockExternalFuture);
+
+    callable.call();
+
+    ArgumentCaptor<ApiFuture> futureCaptor = ArgumentCaptor.forClass(ApiFuture.class);
+    Mockito.verify(mockExternalFuture, Mockito.times(2)).setAttemptFuture(futureCaptor.capture());
+
+    Throwable thrown = null;
+    try {
+      futureCaptor.getValue().get();
+    } catch (Exception e) {
+      thrown = e.getCause();
+    }
+
+    assertThat(thrown).isInstanceOf(UnauthenticatedException.class);
+    UnauthenticatedException rethrown = (UnauthenticatedException) thrown;
+    assertThat(rethrown.isRetryable()).isTrue();
+    assertThat(rethrown.getCause()).isEqualTo(originalEx);
+    assertThat(rethrown.getStackTrace()).isEqualTo(originalEx.getStackTrace());
+    assertThat(rethrown.getSuppressed().length).isEqualTo(1);
+    assertThat(rethrown.getSuppressed()[0]).isInstanceOf(RuntimeException.class);
   }
 }

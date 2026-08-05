@@ -32,23 +32,51 @@ package com.google.api.gax.rpc.mtls;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
-import org.jspecify.annotations.NullMarked;
+import java.io.IOException;
 
 /**
  * Utility class for handling certificate-based access configurations.
  *
- * <p>This class handles the processing of GOOGLE_API_USE_CLIENT_CERTIFICATE and
- * GOOGLE_API_USE_MTLS_ENDPOINT environment variables according to https://google.aip.dev/auth/4114
+ * <p>This class handles the processing of GOOGLE_API_USE_CLIENT_CERTIFICATE,
+ * GOOGLE_API_CERTIFICATE_CONFIG, and GOOGLE_API_USE_MTLS_ENDPOINT configurations.
  */
-@NullMarked
 @InternalApi
 public class CertificateBasedAccess {
 
   private final EnvironmentProvider envProvider;
+  private final FileExistenceProvider fileExistenceProvider;
+  private final FileContentReader fileContentReader;
 
-  /** The EnvironmentProvider mechanism supports env var injection for unit tests. */
+  @InternalApi
+  public interface FileExistenceProvider {
+    boolean exists(String path);
+  }
+
+  @InternalApi
+  public interface FileContentReader {
+    String read(String path) throws IOException;
+  }
+
   public CertificateBasedAccess(EnvironmentProvider envProvider) {
+    this(
+        envProvider,
+        path -> {
+          java.io.File file = new java.io.File(path);
+          return file.exists() && file.isFile();
+        },
+        path ->
+            new String(
+                java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(path)),
+                java.nio.charset.StandardCharsets.UTF_8));
+  }
+
+  CertificateBasedAccess(
+      EnvironmentProvider envProvider,
+      FileExistenceProvider fileExistenceProvider,
+      FileContentReader fileContentReader) {
     this.envProvider = envProvider;
+    this.fileExistenceProvider = fileExistenceProvider;
+    this.fileContentReader = fileContentReader;
   }
 
   public static CertificateBasedAccess createWithSystemEnv() {
@@ -66,10 +94,102 @@ public class CertificateBasedAccess {
     ALWAYS;
   }
 
+  private static class CertificateConfig {
+    final String certPath;
+    final String keyPath;
+
+    CertificateConfig(String certPath, String keyPath) {
+      this.certPath = certPath;
+      this.keyPath = keyPath;
+    }
+  }
+
+  private CertificateConfig parseCertificateConfig(String configPath) throws IOException {
+    String content = fileContentReader.read(configPath);
+
+    String certPath = extractJsonValue(content, "cert_path");
+    String keyPath = extractJsonValue(content, "key_path");
+
+    if (certPath == null || keyPath == null) {
+      throw new IllegalStateException(
+          "Malformed certificate config JSON. Must contain 'cert_path' and 'key_path'.");
+    }
+
+    return new CertificateConfig(certPath, keyPath);
+  }
+
+  private String extractJsonValue(String json, String key) {
+    java.util.regex.Pattern pattern =
+        java.util.regex.Pattern.compile(
+            "\"" + java.util.regex.Pattern.quote(key) + "\"\\s*:\\s*\"((?:[^\\\\\"]|\\\\.)*)\"");
+    java.util.regex.Matcher matcher = pattern.matcher(json);
+    if (matcher.find()) {
+      return matcher.group(1).replace("\\\\", "\\").replace("\\/", "/").replace("\\\"", "\"");
+    }
+    return null;
+  }
+
   /** Returns if mutual TLS client certificate should be used. */
   public boolean useMtlsClientCertificate() {
+    // 1. Check the explicit user flag first (Primary override)
     String useClientCertificate = envProvider.getenv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
-    return "true".equals(useClientCertificate);
+    if (useClientCertificate != null && !useClientCertificate.isEmpty()) {
+      if ("false".equalsIgnoreCase(useClientCertificate)) {
+        return false;
+      }
+      if ("true".equalsIgnoreCase(useClientCertificate)) {
+        return true;
+      }
+    }
+
+    // 2. Check the certificate config file path if provided via env var
+    String certConfigPath = envProvider.getenv("GOOGLE_API_CERTIFICATE_CONFIG");
+    if (certConfigPath != null && !certConfigPath.isEmpty()) {
+      return validateAndResolveConfig(certConfigPath);
+    }
+
+    // 3. Fallback to well-known spiffe path
+    String wellKnownPath = "/var/run/secrets/workload-spiffe-credentials";
+
+    // Check for atomic bundle containing both cert and key
+    if (fileExistenceProvider.exists(
+        java.nio.file.Paths.get(wellKnownPath, "credentialbundle.pem").toString())) {
+      return true;
+    }
+
+    // Check for separate certificate and private key files
+    if (fileExistenceProvider.exists(
+            java.nio.file.Paths.get(wellKnownPath, "certificates.pem").toString())
+        && fileExistenceProvider.exists(
+            java.nio.file.Paths.get(wellKnownPath, "private_key.pem").toString())) {
+      return true;
+    }
+
+    // Default to false if no configuration is found
+    return false;
+  }
+
+  private boolean validateAndResolveConfig(String configPath) {
+    if (!fileExistenceProvider.exists(configPath)) {
+      throw new IllegalStateException(
+          "Certificate config is configured but the file does not exist: " + configPath);
+    }
+    try {
+      CertificateConfig config = parseCertificateConfig(configPath);
+      if (!fileExistenceProvider.exists(config.certPath)
+          || !fileExistenceProvider.exists(config.keyPath)) {
+        throw new IllegalStateException(
+            "Certificate config points to certificate/key files that do not exist on disk: "
+                + "cert_path="
+                + config.certPath
+                + ", key_path="
+                + config.keyPath);
+      }
+      return true;
+    } catch (Exception e) {
+      throw new IllegalStateException(
+          "Failed to parse or validate certificate config: " + configPath, e);
+    }
   }
 
   /** Returns the current mutual TLS endpoint usage policy. */
@@ -81,5 +201,44 @@ public class CertificateBasedAccess {
       return MtlsEndpointUsagePolicy.ALWAYS;
     }
     return MtlsEndpointUsagePolicy.AUTO;
+  }
+
+  /**
+   * Resolves and returns the path to the mutual TLS client certificate, or null if none should be
+   * used.
+   */
+  public String getWorkloadCertPath() {
+    if (!useMtlsClientCertificate()) {
+      return null;
+    }
+
+    String certConfigPath = envProvider.getenv("GOOGLE_API_CERTIFICATE_CONFIG");
+    if (certConfigPath != null && !certConfigPath.isEmpty()) {
+      try {
+        CertificateConfig config = parseCertificateConfig(certConfigPath);
+        return config.certPath;
+      } catch (Exception e) {
+        throw new IllegalStateException("Failed to parse GOOGLE_API_CERTIFICATE_CONFIG", e);
+      }
+    }
+
+    String wellKnownPath = "/var/run/secrets/workload-spiffe-credentials";
+
+    // Check for atomic bundle containing both cert and key
+    if (fileExistenceProvider.exists(
+        java.nio.file.Paths.get(wellKnownPath, "credentialbundle.pem").toString())) {
+      return java.nio.file.Paths.get(wellKnownPath, "credentialbundle.pem").toString();
+    }
+
+    // Check for separate certificate and private key files
+    if (fileExistenceProvider.exists(
+            java.nio.file.Paths.get(wellKnownPath, "certificates.pem").toString())
+        && fileExistenceProvider.exists(
+            java.nio.file.Paths.get(wellKnownPath, "private_key.pem").toString())) {
+      return java.nio.file.Paths.get(wellKnownPath, "certificates.pem").toString();
+    }
+
+    // Default to null if no well-known configuration is found
+    return null;
   }
 }

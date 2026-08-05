@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -27,29 +27,42 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.google.api.gax.rpc.testing;
+package com.google.api.gax.rpc.mtls;
 
 import com.google.api.core.InternalApi;
+import java.io.FileInputStream;
+import java.security.MessageDigest;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-@InternalApi("for testing")
-public class FakeChannel {
-  private volatile boolean shouldRefresh = false;
-  private volatile int refreshCount = 0;
+/** Internal utility class for managing dynamic workload certificates. */
+@InternalApi
+public class WorkloadCertificateUtils {
 
-  public FakeChannel setShouldRefresh(boolean shouldRefresh) {
-    this.shouldRefresh = shouldRefresh;
-    return this;
-  }
+  private static final Logger LOG = Logger.getLogger(WorkloadCertificateUtils.class.getName());
 
-  public boolean shouldRefresh() {
-    return shouldRefresh;
-  }
+  private WorkloadCertificateUtils() {}
 
-  public void refresh() {
-    refreshCount++;
-  }
-
-  public int getRefreshCount() {
-    return refreshCount;
+  public static String getCertificateFingerprint(String certPath) {
+    if (certPath == null) {
+      return "";
+    }
+    try (FileInputStream fis = new FileInputStream(certPath)) {
+      CertificateFactory cf = CertificateFactory.getInstance("X.509");
+      X509Certificate cert = (X509Certificate) cf.generateCertificate(fis);
+      MessageDigest md = MessageDigest.getInstance("SHA-256");
+      byte[] der = cert.getEncoded();
+      byte[] digest = md.digest(der);
+      StringBuilder sb = new StringBuilder();
+      for (byte b : digest) {
+        sb.append(String.format("%02x", b));
+      }
+      return sb.toString();
+    } catch (Exception e) {
+      LOG.log(Level.FINE, "Could not read or parse workload certificate at path " + certPath, e);
+      return "";
+    }
   }
 }

@@ -32,52 +32,234 @@ package com.google.api.gax.rpc.mtls;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 class CertificateBasedAccessTest {
 
+  private static class TestEnv {
+    private final Map<String, String> env = new HashMap<>();
+
+    void set(String key, String val) {
+      env.put(key, val);
+    }
+
+    String get(String name) {
+      return env.get(name);
+    }
+  }
+
+  private static class TestFileSystem {
+    private final Map<String, Boolean> exists = new HashMap<>();
+    private final Map<String, String> content = new HashMap<>();
+
+    void setExists(String path, boolean val) {
+      exists.put(java.nio.file.Paths.get(path).toString(), val);
+    }
+
+    void setContent(String path, String val) {
+      String normalizedPath = java.nio.file.Paths.get(path).toString();
+      content.put(normalizedPath, val);
+      exists.put(normalizedPath, true);
+    }
+  }
+
+  private CertificateBasedAccess createCba(TestEnv env, TestFileSystem fs) {
+    return new CertificateBasedAccess(
+        env::get,
+        path -> fs.exists.getOrDefault(java.nio.file.Paths.get(path).toString(), false),
+        path -> {
+          String normalized = java.nio.file.Paths.get(path).toString();
+          if (!fs.content.containsKey(normalized)) {
+            throw new IOException("File not found: " + path);
+          }
+          return fs.content.get(normalized);
+        });
+  }
+
   @Test
   void testUseMtlsEndpointAlways() {
-    CertificateBasedAccess cba =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "always" : "false");
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_MTLS_ENDPOINT", "always");
+    CertificateBasedAccess cba = createCba(env, new TestFileSystem());
     assertEquals(
         CertificateBasedAccess.MtlsEndpointUsagePolicy.ALWAYS, cba.getMtlsEndpointUsagePolicy());
   }
 
   @Test
   void testUseMtlsEndpointAuto() {
-    CertificateBasedAccess cba =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "auto" : "false");
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_MTLS_ENDPOINT", "auto");
+    CertificateBasedAccess cba = createCba(env, new TestFileSystem());
     assertEquals(
         CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO, cba.getMtlsEndpointUsagePolicy());
   }
 
   @Test
   void testUseMtlsEndpointNever() {
-    CertificateBasedAccess cba =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "never" : "false");
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_MTLS_ENDPOINT", "never");
+    CertificateBasedAccess cba = createCba(env, new TestFileSystem());
     assertEquals(
         CertificateBasedAccess.MtlsEndpointUsagePolicy.NEVER, cba.getMtlsEndpointUsagePolicy());
   }
 
   @Test
-  void testUseMtlsClientCertificateTrue() {
-    CertificateBasedAccess cba =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_CLIENT_CERTIFICATE") ? "true" : "auto");
+  void testUseMtlsClientCertificateExplicitTrueNoCredentials() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
+    CertificateBasedAccess cba = createCba(env, new TestFileSystem());
+    // Explicit 'true' overrides credential presence checks
     assertTrue(cba.useMtlsClientCertificate());
   }
 
   @Test
-  void testUseMtlsClientCertificateFalse() {
-    CertificateBasedAccess cba =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_CLIENT_CERTIFICATE") ? "false" : "auto");
+  void testUseMtlsClientCertificateExplicitTrueWithSpiffeBundle() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
+
+    TestFileSystem fs = new TestFileSystem();
+    fs.setExists("/var/run/secrets/workload-spiffe-credentials/credentialbundle.pem", true);
+
+    CertificateBasedAccess cba = createCba(env, fs);
+    assertTrue(cba.useMtlsClientCertificate());
+  }
+
+  @Test
+  void testUseMtlsClientCertificateExplicitFalseWithSpiffeBundle() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_CLIENT_CERTIFICATE", "false");
+
+    // Even if spiffe files are present, explicit false must override and disable mtls
+    TestFileSystem fs = new TestFileSystem();
+    fs.setExists("/var/run/secrets/workload-spiffe-credentials/credentialbundle.pem", true);
+
+    CertificateBasedAccess cba = createCba(env, fs);
     assertFalse(cba.useMtlsClientCertificate());
+  }
+
+  @Test
+  void testUseMtlsClientCertificateUnsetNoFiles() {
+    TestEnv env = new TestEnv();
+    CertificateBasedAccess cba = createCba(env, new TestFileSystem());
+    assertFalse(cba.useMtlsClientCertificate());
+  }
+
+  @Test
+  void testUseMtlsClientCertificateUnsetSpiffeBundleExists() {
+    TestEnv env = new TestEnv();
+    TestFileSystem fs = new TestFileSystem();
+    fs.setExists("/var/run/secrets/workload-spiffe-credentials/credentialbundle.pem", true);
+    CertificateBasedAccess cba = createCba(env, fs);
+    assertTrue(cba.useMtlsClientCertificate());
+  }
+
+  @Test
+  void testUseMtlsClientCertificateUnsetSpiffeSeparateFilesExist() {
+    TestEnv env = new TestEnv();
+    TestFileSystem fs = new TestFileSystem();
+    fs.setExists("/var/run/secrets/workload-spiffe-credentials/certificates.pem", true);
+    fs.setExists("/var/run/secrets/workload-spiffe-credentials/private_key.pem", true);
+    CertificateBasedAccess cba = createCba(env, fs);
+    assertTrue(cba.useMtlsClientCertificate());
+  }
+
+  @Test
+  void testUseMtlsClientCertificateConfigValid() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_CERTIFICATE_CONFIG", "/path/to/config.json");
+
+    TestFileSystem fs = new TestFileSystem();
+    fs.setContent(
+        "/path/to/config.json",
+        "{\n  \"cert_path\": \"/my/cert.pem\",\n  \"key_path\": \"/my/key.pem\"\n}");
+    fs.setExists("/my/cert.pem", true);
+    fs.setExists("/my/key.pem", true);
+
+    CertificateBasedAccess cba = createCba(env, fs);
+    assertTrue(cba.useMtlsClientCertificate());
+  }
+
+  @Test
+  void testUseMtlsClientCertificateConfigMissingFile() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_CERTIFICATE_CONFIG", "/path/to/config.json");
+
+    CertificateBasedAccess cba = createCba(env, new TestFileSystem());
+
+    IllegalStateException ex =
+        assertThrows(IllegalStateException.class, cba::useMtlsClientCertificate);
+    assertTrue(ex.getMessage().contains("configured but the file does not exist"));
+  }
+
+  @Test
+  void testUseMtlsClientCertificateEnvTrueOverride() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
+
+    CertificateBasedAccess cba = createCba(env, new TestFileSystem());
+
+    assertTrue(cba.useMtlsClientCertificate());
+  }
+
+  @Test
+  void testUseMtlsClientCertificateConfigMalformedJson() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_CERTIFICATE_CONFIG", "/path/to/config.json");
+
+    TestFileSystem fs = new TestFileSystem();
+    fs.setContent("/path/to/config.json", "{\n  \"broken_path\": \"/my/cert.pem\"\n}");
+
+    CertificateBasedAccess cba = createCba(env, fs);
+
+    IllegalStateException ex =
+        assertThrows(IllegalStateException.class, cba::useMtlsClientCertificate);
+    assertTrue(ex.getMessage().contains("Failed to parse or validate certificate config"));
+  }
+
+  @Test
+  void testUseMtlsClientCertificateConfigMissingCertFiles() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_CERTIFICATE_CONFIG", "/path/to/config.json");
+
+    TestFileSystem fs = new TestFileSystem();
+    fs.setContent(
+        "/path/to/config.json",
+        "{\n  \"cert_path\": \"/my/cert.pem\",\n  \"key_path\": \"/my/key.pem\"\n}");
+    // my/cert.pem and key.pem DO NOT exist
+
+    CertificateBasedAccess cba = createCba(env, fs);
+
+    IllegalStateException ex =
+        assertThrows(IllegalStateException.class, cba::useMtlsClientCertificate);
+    assertTrue(
+        ex.getCause()
+            .getMessage()
+            .contains("points to certificate/key files that do not exist on disk"));
+  }
+
+  @Test
+  void testUseMtlsClientCertificateConfigWindowsPaths() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_CERTIFICATE_CONFIG", "C:\\config.json");
+
+    TestFileSystem fs = new TestFileSystem();
+    // In JSON, backslashes are escaped
+    fs.setContent(
+        "C:\\config.json",
+        "{\n"
+            + "  \"cert_path\": \"C:\\\\my\\\\cert.pem\",\n"
+            + "  \"key_path\": \"C:\\\\my\\\\key.pem\"\n"
+            + "}");
+    fs.setExists("C:\\my\\cert.pem", true);
+    fs.setExists("C:\\my\\key.pem", true);
+
+    CertificateBasedAccess cba = createCba(env, fs);
+    assertTrue(cba.useMtlsClientCertificate());
   }
 }

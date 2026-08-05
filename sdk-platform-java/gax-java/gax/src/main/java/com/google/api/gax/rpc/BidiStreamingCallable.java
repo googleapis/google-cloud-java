@@ -241,11 +241,48 @@ public abstract class BidiStreamingCallable<RequestT, ResponseT> {
     return new BidiStreamingCallable<RequestT, ResponseT>() {
       @Override
       public ClientStream<RequestT> internalCall(
-          ResponseObserver<ResponseT> responseObserver,
+          final ResponseObserver<ResponseT> responseObserver,
           ClientStreamReadyObserver<RequestT> onReady,
           ApiCallContext thisCallContext) {
-        return BidiStreamingCallable.this.internalCall(
-            responseObserver, onReady, defaultCallContext.merge(thisCallContext));
+        final ApiCallContext mergedContext = defaultCallContext.merge(thisCallContext);
+        ResponseObserver<ResponseT> refreshingObserver =
+            new ResponseObserver<ResponseT>() {
+              @Override
+              public void onStart(StreamController controller) {
+                responseObserver.onStart(controller);
+              }
+
+              @Override
+              public void onResponse(ResponseT response) {
+                responseObserver.onResponse(response);
+              }
+
+              @Override
+              public void onError(Throwable t) {
+                if (t instanceof UnauthenticatedException) {
+                  TransportChannel transportChannel = mergedContext.getTransportChannel();
+                  if (transportChannel != null && transportChannel.shouldRefresh()) {
+                    transportChannel.refresh();
+                    UnauthenticatedException causeEx = (UnauthenticatedException) t;
+                    t =
+                        new UnauthenticatedException(
+                            causeEx.getMessage(),
+                            causeEx.getCause(),
+                            causeEx.getStatusCode(),
+                            true, // isRetryable = true
+                            causeEx.getErrorDetails());
+                  }
+                }
+                responseObserver.onError(t);
+              }
+
+              @Override
+              public void onComplete() {
+                responseObserver.onComplete();
+              }
+            };
+
+        return BidiStreamingCallable.this.internalCall(refreshingObserver, onReady, mergedContext);
       }
     };
   }
