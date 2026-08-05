@@ -189,7 +189,7 @@ public abstract class RetrySettings implements Serializable {
    * connection has been terminated).
    *
    * <p>{@link #getTotalTimeout()} caps how long the logic should keep trying the RPC until it gives
-   * up completely. If {@link #getTotalTimeout()} is set, initialRpcTimeout should be <=
+   * up completely. If {@link #getTotalTimeout()} is set, initialRpcTimeout should be &lt;=
    * totalTimeout.
    *
    * <p>If there are no configurations, Retries have the default initial RPC timeout value of {@code
@@ -356,7 +356,7 @@ public abstract class RetrySettings implements Serializable {
      * the connection has been terminated).
      *
      * <p>{@link #getTotalTimeout()} caps how long the logic should keep trying the RPC until it
-     * gives up completely. If {@link #getTotalTimeout()} is set, initialRpcTimeout should be <=
+     * gives up completely. If {@link #getTotalTimeout()} is set, initialRpcTimeout should be &lt;=
      * totalTimeout.
      *
      * <p>If there are no configurations, Retries have the default initial RPC timeout value of
@@ -491,7 +491,7 @@ public abstract class RetrySettings implements Serializable {
      * the connection has been terminated).
      *
      * <p>{@link #getTotalTimeout()} caps how long the logic should keep trying the RPC until it
-     * gives up completely. If {@link #getTotalTimeout()} is set, initialRpcTimeout should be <=
+     * gives up completely. If {@link #getTotalTimeout()} is set, initialRpcTimeout should be &lt;=
      * totalTimeout.
      *
      * <p>If there are no configurations, Retries have the default initial RPC timeout value of

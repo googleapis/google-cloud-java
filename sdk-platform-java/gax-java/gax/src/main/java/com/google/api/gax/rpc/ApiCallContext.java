@@ -42,7 +42,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import javax.annotation.Nonnull;
-import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
 /**
@@ -55,7 +54,6 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>This is transport specific and each transport has an implementation with its own options.
  */
-@NullMarked
 @InternalExtensionOnly
 public interface ApiCallContext extends RetryingContext {
 
@@ -64,6 +62,18 @@ public interface ApiCallContext extends RetryingContext {
 
   /** Returns a new ApiCallContext with the given channel set. */
   ApiCallContext withTransportChannel(TransportChannel channel);
+
+  /**
+   * Returns the {@link TransportChannel} associated with this call context, or {@code null} if none
+   * is set.
+   *
+   * <p>Note: By default, this method returns {@code null}. If an implementation does not override
+   * this method, automatic mTLS certificate rotation and channel refreshing in retrying callables
+   * will be disabled.
+   */
+  default TransportChannel getTransportChannel() {
+    return null;
+  }
 
   /** Returns a new ApiCallContext with the given Endpoint Context. */
   ApiCallContext withEndpointContext(EndpointContext endpointContext);
