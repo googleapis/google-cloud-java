@@ -83,11 +83,15 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import javax.annotation.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
@@ -1023,15 +1027,45 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     Truth.assertThat(provider.canUseDirectPath()).isFalse();
   }
 
-  @Test
-  public void getTransportChannel_customResolverTargetUri_nonGoogleC2p_usesUriDirectly()
+  private static Stream<Arguments> directPathTestParameters() {
+    return Stream.of(
+        Arguments.of("dns:///localhost:8080", false, false, false, "dns:///localhost:8080"),
+        Arguments.of(
+            "storage.googleapis.com:443",
+            true,
+            true,
+            false,
+            "google-c2p:///storage.googleapis.com?force-xds"),
+        Arguments.of(
+            "storage.googleapis.com:443",
+            true,
+            true,
+            true,
+            "google-c2p:///storage.googleapis.com?force-xds"),
+        Arguments.of(
+            "google-c2p:///storage-direct.googleapis.com?force-xds",
+            false,
+            false,
+            false,
+            "google-c2p:///storage-direct.googleapis.com?force-xds"));
+  }
+
+  @ParameterizedTest
+  @MethodSource("directPathTestParameters")
+  public void getTransportChannel_directPathTarget(
+      String endpoint,
+      boolean attemptDirectPath,
+      boolean attemptDirectPathXdsOverInterconnect,
+      boolean useNullCredentials,
+      String expectedTarget)
       throws IOException, InterruptedException {
     System.setProperty("os.name", "Not Linux");
     EnvironmentProvider envProvider =
         mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
     when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
         .thenReturn("false");
-    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
+    Credentials credentials =
+        useNullCredentials ? null : mock(Credentials.class, withSettings().withoutAnnotations());
     final java.util.concurrent.atomic.AtomicReference<String> capturedTarget =
         new java.util.concurrent.atomic.AtomicReference<>();
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
@@ -1043,8 +1077,10 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     InstantiatingGrpcChannelProvider.Builder builder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setCertificateBasedAccess(certificateBasedAccess)
+            .setAttemptDirectPath(attemptDirectPath)
+            .setAttemptDirectPathXdsOverInterconnect(attemptDirectPathXdsOverInterconnect)
             .setCredentials(credentials)
-            .setEndpoint("dns:///localhost:8080")
+            .setEndpoint(endpoint)
             .setEnvProvider(envProvider)
             .setChannelConfigurator(channelConfigurator);
 
@@ -1053,15 +1089,13 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
     InstantiatingGrpcChannelProvider configuredProvider =
         (InstantiatingGrpcChannelProvider)
-            provider
-                .withHeaders(Collections.<String, String>emptyMap())
-                .withEndpoint("dns:///localhost:8080");
+            provider.withHeaders(Collections.<String, String>emptyMap()).withEndpoint(endpoint);
 
     TransportChannel transportChannel = configuredProvider.getTransportChannel();
     transportChannel.shutdownNow();
     transportChannel.awaitTermination(5, TimeUnit.SECONDS);
 
-    Truth.assertThat(capturedTarget.get()).isEqualTo("dns:///localhost:8080");
+    Truth.assertThat(capturedTarget.get()).contains(expectedTarget);
   }
 
   @Test
@@ -1091,133 +1125,6 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
     transportChannel.close();
     transportChannel.awaitTermination(10, TimeUnit.SECONDS);
-  }
-
-  @Test
-  public void getTransportChannel_attemptDirectPathXdsOverInterconnect_usesForceXdsTarget()
-      throws IOException, InterruptedException {
-    System.setProperty("os.name", "Not Linux");
-    EnvironmentProvider envProvider =
-        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
-    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
-        .thenReturn("false");
-    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
-    final java.util.concurrent.atomic.AtomicReference<String> capturedTarget =
-        new java.util.concurrent.atomic.AtomicReference<>();
-    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
-        channelBuilder -> {
-          capturedTarget.set(extractTargetFromChannelBuilder(channelBuilder));
-          return channelBuilder;
-        };
-
-    InstantiatingGrpcChannelProvider.Builder builder =
-        InstantiatingGrpcChannelProvider.newBuilder()
-            .setCertificateBasedAccess(certificateBasedAccess)
-            .setAttemptDirectPath(true)
-            .setAttemptDirectPathXdsOverInterconnect(true)
-            .setCredentials(credentials)
-            .setEndpoint("storage.googleapis.com:443")
-            .setEnvProvider(envProvider)
-            .setChannelConfigurator(channelConfigurator);
-
-    InstantiatingGrpcChannelProvider provider =
-        new InstantiatingGrpcChannelProvider(builder, "not-gce-product-name");
-
-    InstantiatingGrpcChannelProvider configuredProvider =
-        (InstantiatingGrpcChannelProvider)
-            provider
-                .withHeaders(Collections.<String, String>emptyMap())
-                .withEndpoint("storage.googleapis.com:443");
-
-    TransportChannel transportChannel = configuredProvider.getTransportChannel();
-    transportChannel.shutdownNow();
-    transportChannel.awaitTermination(5, TimeUnit.SECONDS);
-    Truth.assertThat(capturedTarget.get())
-        .contains("google-c2p:///storage.googleapis.com?force-xds");
-  }
-
-  @Test
-  public void getTransportChannel_attemptDirectPathXdsOverInterconnect_nullCredentials()
-      throws IOException, InterruptedException {
-    System.setProperty("os.name", "Not Linux");
-    EnvironmentProvider envProvider =
-        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
-    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
-        .thenReturn("false");
-    final java.util.concurrent.atomic.AtomicReference<String> capturedTarget =
-        new java.util.concurrent.atomic.AtomicReference<>();
-    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
-        channelBuilder -> {
-          capturedTarget.set(extractTargetFromChannelBuilder(channelBuilder));
-          return channelBuilder;
-        };
-
-    InstantiatingGrpcChannelProvider.Builder builder =
-        InstantiatingGrpcChannelProvider.newBuilder()
-            .setCertificateBasedAccess(certificateBasedAccess)
-            .setAttemptDirectPath(true)
-            .setAttemptDirectPathXdsOverInterconnect(true)
-            .setCredentials(null)
-            .setEndpoint("storage.googleapis.com:443")
-            .setEnvProvider(envProvider)
-            .setChannelConfigurator(channelConfigurator);
-
-    InstantiatingGrpcChannelProvider provider =
-        new InstantiatingGrpcChannelProvider(builder, "not-gce-product-name");
-
-    InstantiatingGrpcChannelProvider configuredProvider =
-        (InstantiatingGrpcChannelProvider)
-            provider
-                .withHeaders(Collections.<String, String>emptyMap())
-                .withEndpoint("storage.googleapis.com:443");
-
-    TransportChannel transportChannel = configuredProvider.getTransportChannel();
-    transportChannel.shutdownNow();
-    transportChannel.awaitTermination(5, TimeUnit.SECONDS);
-    Truth.assertThat(capturedTarget.get())
-        .contains("google-c2p:///storage.googleapis.com?force-xds");
-  }
-
-  @Test
-  public void getTransportChannel_customResolverTargetUri_usesUriDirectly()
-      throws IOException, InterruptedException {
-    System.setProperty("os.name", "Not Linux");
-    EnvironmentProvider envProvider =
-        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
-    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
-        .thenReturn("false");
-    Credentials credentials = mock(Credentials.class, withSettings().withoutAnnotations());
-    final java.util.concurrent.atomic.AtomicReference<String> capturedTarget =
-        new java.util.concurrent.atomic.AtomicReference<>();
-    ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
-        channelBuilder -> {
-          capturedTarget.set(extractTargetFromChannelBuilder(channelBuilder));
-          return channelBuilder;
-        };
-
-    InstantiatingGrpcChannelProvider.Builder builder =
-        InstantiatingGrpcChannelProvider.newBuilder()
-            .setCertificateBasedAccess(certificateBasedAccess)
-            .setCredentials(credentials)
-            .setEndpoint("google-c2p:///storage-direct.googleapis.com?force-xds")
-            .setEnvProvider(envProvider)
-            .setChannelConfigurator(channelConfigurator);
-
-    InstantiatingGrpcChannelProvider provider =
-        new InstantiatingGrpcChannelProvider(builder, "not-gce-product-name");
-
-    InstantiatingGrpcChannelProvider configuredProvider =
-        (InstantiatingGrpcChannelProvider)
-            provider
-                .withHeaders(Collections.<String, String>emptyMap())
-                .withEndpoint("google-c2p:///storage-direct.googleapis.com?force-xds");
-
-    TransportChannel transportChannel = configuredProvider.getTransportChannel();
-    transportChannel.shutdownNow();
-    transportChannel.awaitTermination(5, TimeUnit.SECONDS);
-
-    Truth.assertThat(capturedTarget.get())
-        .isEqualTo("google-c2p:///storage-direct.googleapis.com?force-xds");
   }
 
   @Test
