@@ -264,17 +264,6 @@ public class Publisher implements PublisherInterface {
     messagesWaiter = new Waiter();
     this.hedgingSettings = builder.hedgingSettings;
     if (this.hedgingSettings != null) {
-      // Verify that the hedge delay is strictly less than the initial RPC timeout.
-      Duration hedgeDelay = this.hedgingSettings.getHedgeDelay();
-      Duration initialRpcTimeout = builder.retrySettings.getInitialRpcTimeoutDuration();
-      if (hedgeDelay.compareTo(initialRpcTimeout) >= 0) {
-        throw new IllegalArgumentException(
-            "hedgeDelay ("
-                + hedgeDelay.toMillis()
-                + "ms) must be strictly less than the initial RPC timeout duration ("
-                + initialRpcTimeout.toMillis()
-                + "ms)");
-      }
       this.scaledMaxHedgeTokens = this.hedgingSettings.getMaxTokens() * HEDGE_TOKEN_SCALE;
       this.scaledHedgeRefillAmount =
           (int) (this.hedgingSettings.getRefillRatio() * HEDGE_TOKEN_SCALE);
@@ -1224,6 +1213,18 @@ public class Publisher implements PublisherInterface {
       Preconditions.checkState(
           !(enableMessageOrdering && hedgingSettings != null),
           "Publish hedging and message ordering cannot be enabled at the same time.");
+      if (hedgingSettings != null) {
+        Duration hedgeDelay = hedgingSettings.getHedgeDelay();
+        Duration initialRpcTimeout = retrySettings.getInitialRpcTimeoutDuration();
+        if (hedgeDelay.compareTo(initialRpcTimeout) >= 0) {
+          throw new IllegalArgumentException(
+              "hedgeDelay ("
+                  + hedgeDelay.toMillis()
+                  + "ms) must be strictly less than the initial RPC timeout duration ("
+                  + initialRpcTimeout.toMillis()
+                  + "ms)");
+        }
+      }
       return new Publisher(this);
     }
   }

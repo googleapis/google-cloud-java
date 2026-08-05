@@ -96,8 +96,7 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
       }
       done = true;
       batch.successfulAttempt = attemptNumber;
-      publisher
-          .refillTokenBucket();
+      publisher.refillTokenBucket();
       set(response);
       cancelAllExceptLocked(attemptNumber);
       cleanupLocked();
