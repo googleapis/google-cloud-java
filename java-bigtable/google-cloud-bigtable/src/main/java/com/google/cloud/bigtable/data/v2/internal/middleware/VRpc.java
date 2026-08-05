@@ -107,6 +107,15 @@ public interface VRpc<ReqT, RespT> {
      */
     public abstract OpExecutor getExecutor();
 
+    /**
+     * Whether the operation drives demand-gated flow control, i.e. the layer above ({@link
+     * VOperationImpl}) pulls each response via {@code requestNext}. True for streaming ops, false
+     * for unary. The session-side {@code VRpcImpl} gates on this: it runs the prefetch/pump
+     * machinery only when true, and takes the untouched unary fast path when false, so a bug in the
+     * streaming code can never affect unary calls.
+     */
+    public abstract boolean getAutoFlowControl();
+
     // TODO: csm
     // Clientside metrics instrument
     // public abstract BigtableTracer getTracer();
@@ -122,8 +131,18 @@ public interface VRpc<ReqT, RespT> {
           deadline, isIdempotent, tracer, new OpExecutor(MoreExecutors.directExecutor(), t -> {}));
     }
 
+    /** Defaults {@code autoFlowControl} to false (unary). */
     public static VRpcCallContext create(
         Deadline deadline, boolean isIdempotent, VRpcTracer tracer, OpExecutor executor) {
+      return create(deadline, isIdempotent, tracer, executor, false);
+    }
+
+    public static VRpcCallContext create(
+        Deadline deadline,
+        boolean isIdempotent,
+        VRpcTracer tracer,
+        OpExecutor executor,
+        boolean autoFlowControl) {
 
       Deadline grpcContextDeadline = Context.current().getDeadline();
 
@@ -140,12 +159,20 @@ public interface VRpc<ReqT, RespT> {
       }
 
       return new AutoValue_VRpc_VRpcCallContext(
-          OperationInfo.create(operationTimeout, isIdempotent), "TODO", tracer, executor);
+          OperationInfo.create(operationTimeout, isIdempotent),
+          "TODO",
+          tracer,
+          executor,
+          autoFlowControl);
     }
 
     public VRpcCallContext createForNextAttempt() {
       return new AutoValue_VRpc_VRpcCallContext(
-          getOperationInfo().createForNextAttempt(), getTraceParent(), getTracer(), getExecutor());
+          getOperationInfo().createForNextAttempt(),
+          getTraceParent(),
+          getTracer(),
+          getExecutor(),
+          getAutoFlowControl());
     }
   }
 

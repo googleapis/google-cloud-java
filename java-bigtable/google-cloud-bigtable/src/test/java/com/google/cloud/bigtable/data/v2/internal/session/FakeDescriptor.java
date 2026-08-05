@@ -46,6 +46,20 @@ public class FakeDescriptor {
                 throw new UnsupportedOperationException();
               });
 
+  // Same wire shape as SCRIPTED, but flagged streaming so VRpcImpl drives the has_more /
+  // continue / byte-budget prefetch state machine instead of the unary one-response path.
+  public static VRpcDescriptor<
+          OpenFakeSessionRequest, SessionFakeScriptedRequest, SessionFakeScriptedResponse>
+      SCRIPTED_STREAMING =
+          new VRpcDescriptor<>(
+              FAKE_SESSION,
+              MethodInfo.of("Bigtable.FakeStreamMethod", true),
+              createFakeEncoder(FakeSessionOpRequest.Builder::setScriptedRequest),
+              createFakeDecoder(FakeSessionOpResponse::getScripted),
+              (name, appProfileId, req) -> {
+                throw new UnsupportedOperationException();
+              });
+
   private static <ReqT> Encoder<ReqT> createFakeEncoder(
       BiConsumer<FakeSessionOpRequest.Builder, ReqT> subEncoder) {
     return req -> {

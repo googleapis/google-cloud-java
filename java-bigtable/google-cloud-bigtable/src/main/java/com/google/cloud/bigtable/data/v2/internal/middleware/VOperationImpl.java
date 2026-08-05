@@ -93,7 +93,8 @@ public class VOperationImpl<ReqT, RespT> implements VOperation<ReqT, RespT> {
         new OpExecutor(
             userCallbackExecutor, t -> chain.cancel("Uncaught exception in op executor task", t));
     this.opExecutor = exec;
-    VRpcCallContext ctx = VRpcCallContext.create(deadline, idempotent, tracer, exec);
+    VRpcCallContext ctx =
+        VRpcCallContext.create(deadline, idempotent, tracer, exec, autoFlowControl);
     // For streaming ops, keep the demand-gated chain flowing by pulling the next response after
     // each delivery. The pull is trampolined onto the op executor (matching the old external
     // requestNext) so it runs as a fresh task rather than reentering the in-flight onMessage. Unary

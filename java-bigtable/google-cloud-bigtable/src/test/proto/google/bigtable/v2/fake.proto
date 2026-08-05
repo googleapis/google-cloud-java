@@ -64,6 +64,13 @@ message OpenFakeSessionRequest {
   map<int64, ActionList> vrpc_actions = 6;
   google.bigtable.v2.SessionRefreshConfig refresh_config = 7;
   google.protobuf.Duration refresh_config_delay = 8;
+
+  // If set, the server pushes this SessionParametersResponse mid-session after
+  // updated_session_params_delay (measured from session open), on top of the initial
+  // session_params sent during the handshake. Used to exercise dynamic parameter updates, e.g. a
+  // changed softmax_streaming_prefetch_buffer_size taking effect while a vRPC is in flight.
+  SessionParametersResponse updated_session_params = 11;
+  google.protobuf.Duration updated_session_params_delay = 12;
 }
 
 message OpenFakeSessionResponse {

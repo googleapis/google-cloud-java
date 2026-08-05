@@ -26,6 +26,7 @@ import com.google.bigtable.v2.CloseSessionRequest;
 import com.google.bigtable.v2.CloseSessionRequest.CloseSessionReason;
 import com.google.bigtable.v2.ClusterInformation;
 import com.google.bigtable.v2.ErrorResponse;
+import com.google.bigtable.v2.FakeSessionOpResponse;
 import com.google.bigtable.v2.GoAwayResponse;
 import com.google.bigtable.v2.OpenFakeSessionRequest;
 import com.google.bigtable.v2.OpenFakeSessionRequest.Action;
@@ -36,6 +37,7 @@ import com.google.bigtable.v2.OpenSessionResponse;
 import com.google.bigtable.v2.SessionFakeScriptedRequest;
 import com.google.bigtable.v2.SessionFakeScriptedResponse;
 import com.google.bigtable.v2.SessionParametersResponse;
+import com.google.bigtable.v2.SessionRequest;
 import com.google.bigtable.v2.VirtualRpcResponse;
 import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.api.UnaryResponseFuture;
@@ -46,6 +48,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.Metrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
+import com.google.cloud.bigtable.data.v2.internal.middleware.OpExecutor;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcCallContext;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc.VRpcResult;
@@ -56,8 +59,12 @@ import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeSessionListen
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeSessionService;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeVRpcListener;
 import com.google.cloud.bigtable.data.v2.internal.session.fake.PeerInfoInterceptor;
+import com.google.cloud.bigtable.data.v2.internal.session.fake.SessionHandler;
 import com.google.common.base.Stopwatch;
+import com.google.common.base.Strings;
 import com.google.common.base.Suppliers;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.util.Durations;
 import com.google.rpc.Code;
 import io.grpc.CallOptions;
@@ -100,6 +107,7 @@ public class SessionImplTest {
   private Metrics metrics;
 
   private Server server;
+  private FakeSessionService fakeService;
   private ChannelPool channelPool;
   private SessionFactory sessionFactory;
   private final VRpcTracer tracer = NoopMetrics.NoopVrpcTracer.INSTANCE;
@@ -109,10 +117,8 @@ public class SessionImplTest {
   void setUp() throws IOException {
     executor = Executors.newScheduledThreadPool(4);
     timer = new HashedWheelTimer("session-impl-test");
-    server =
-        FakeServiceBuilder.create(new FakeSessionService(executor))
-            .intercept(new PeerInfoInterceptor())
-            .start();
+    fakeService = new FakeSessionService(executor);
+    server = FakeServiceBuilder.create(fakeService).intercept(new PeerInfoInterceptor()).start();
 
     ClientInfo clientInfo =
         ClientInfo.builder()
@@ -523,6 +529,492 @@ public class SessionImplTest {
             .build());
     assertThat(sessionListener.popUntil(Status.class)).isOk();
   }
+
+  @Test
+  void testSoftmaxStreamingPrefetchBufferSize() throws Exception {
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    // Before the server advertises anything, the session reports the client-side default.
+    assertThat(session.getSoftmaxStreamingPrefetchBufferSize()).isEqualTo(1024 * 1024);
+
+    int serverSoftmax = 4096;
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    OpenSessionRequest openSessionRequest =
+        OpenSessionRequest.newBuilder()
+            .setPayload(
+                OpenFakeSessionRequest.newBuilder()
+                    .setSessionParams(
+                        SessionParametersResponse.newBuilder()
+                            .setKeepAlive(Durations.fromMillis(150))
+                            .setSoftmaxStreamingPrefetchBufferSize(serverSoftmax)
+                            .build())
+                    .build()
+                    .toByteString())
+            .build();
+    session.start(openSessionRequest, new Metadata(), sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+
+    // Session params are applied asynchronously on the session's sync context; poll until visible.
+    Stopwatch sw = Stopwatch.createStarted();
+    while (session.getSoftmaxStreamingPrefetchBufferSize() != serverSoftmax
+        && sw.elapsed(TimeUnit.SECONDS) < 5) {
+      Thread.sleep(10);
+    }
+    assertThat(session.getSoftmaxStreamingPrefetchBufferSize()).isEqualTo(serverSoftmax);
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .setDescription("test closed session")
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+  }
+
+  // region streaming vRPC / byte-budget prefetch
+
+  @Test
+  void streamingReadDeliversAllMessagesInOrder() throws Exception {
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    int softmax = 1 << 20;
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    session.start(
+        streamingOpen(
+            softmax,
+            ActionList.newBuilder()
+                .addActions(streamAction("m0", true))
+                .addActions(streamAction("m1", true))
+                .addActions(streamAction("m2", false))
+                .build()),
+        new Metadata(),
+        sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+    awaitSoftmax(session, softmax);
+
+    OpExecutor opExecutor = newOpExecutor();
+    FakeVRpcListener<SessionFakeScriptedResponse> listener = new FakeVRpcListener<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+        session.newCall(FakeDescriptor.SCRIPTED_STREAMING);
+    rpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, opExecutor, true),
+        listener);
+
+    // The first response is delivered implicitly (no requestNext needed).
+    assertThat(listener.popUntil(SessionFakeScriptedResponse.class).getMessage()).isEqualTo("m0");
+
+    // Demand gating: nothing further is delivered until requestNext, even though the client has
+    // prefetched the remaining messages into its buffer.
+    Thread.sleep(50);
+    assertThat(listener.getOnMessageCount()).isEqualTo(1);
+
+    opExecutor.execute(rpc::requestNext);
+    assertThat(listener.popUntil(SessionFakeScriptedResponse.class).getMessage()).isEqualTo("m1");
+
+    opExecutor.execute(rpc::requestNext);
+    assertThat(listener.popUntil(SessionFakeScriptedResponse.class).getMessage()).isEqualTo("m2");
+
+    // The terminal response completes the stream without another requestNext.
+    VRpcResult result = listener.popUntil(VRpcResult.class);
+    assertThat(result).state().isEqualTo(State.SERVER_RESULT);
+    assertThat(result).status().code().isEqualTo(Status.Code.OK);
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+  }
+
+  @Test
+  void streamingPrefetchIsBoundedByByteBudget() throws Exception {
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    // Each payload is ~200 bytes, so a 300-byte budget admits only a couple of buffered messages
+    // before prefetch must stop — well short of the 20 scripted responses.
+    String body = Strings.repeat("x", 200);
+    int softmax = 300;
+    int total = 20;
+    ActionList.Builder actions = ActionList.newBuilder();
+    for (int i = 0; i < total; i++) {
+      actions.addActions(streamAction(body + i, i < total - 1));
+    }
+
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    session.start(streamingOpen(softmax, actions.build()), new Metadata(), sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+    awaitSoftmax(session, softmax);
+
+    OpExecutor opExecutor = newOpExecutor();
+    FakeVRpcListener<SessionFakeScriptedResponse> listener = new FakeVRpcListener<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+        session.newCall(FakeDescriptor.SCRIPTED_STREAMING);
+    rpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, opExecutor, true),
+        listener);
+
+    // First message auto-delivered; the client then prefetches until the byte budget is hit and
+    // stops issuing continues, even though 19 more messages are available.
+    listener.popUntil(SessionFakeScriptedResponse.class);
+    Thread.sleep(100);
+    int plateau = continueCount();
+    Thread.sleep(100);
+    assertWithMessage("prefetch must stop at the byte budget, not drain the whole stream")
+        .that(continueCount())
+        .isEqualTo(plateau);
+    assertWithMessage("some prefetch should have happened").that(plateau).isGreaterThan(0);
+    assertWithMessage("prefetch must be bounded well below the full stream")
+        .that(plateau)
+        .isLessThan(total - 1);
+
+    // Draining frees budget so prefetch resumes; the whole stream is delivered and closes OK.
+    int delivered = 1;
+    Object next;
+    do {
+      opExecutor.execute(rpc::requestNext);
+      next = listener.popNext(Duration.ofSeconds(2));
+      assertThat(next).isNotNull();
+      if (next instanceof SessionFakeScriptedResponse) {
+        delivered++;
+      }
+    } while (!(next instanceof VRpcResult));
+
+    assertThat(delivered).isEqualTo(total);
+    assertThat((VRpcResult) next).status().code().isEqualTo(Status.Code.OK);
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+  }
+
+  @Test
+  void streamingDecodeErrorClosesStreamWithTransportError() throws Exception {
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    // {0x08} is a truncated varint field, so FakeSessionOpResponse.parseFrom throws.
+    Action badPayload =
+        Action.newBuilder()
+            .setResponse(
+                VirtualRpcResponse.newBuilder()
+                    .setRpcId(SessionHandler.AUTOMATIC_RPC_ID)
+                    .setHasMore(false)
+                    .setPayload(ByteString.copyFrom(new byte[] {0x08})))
+            .build();
+
+    int softmax = 1 << 20;
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    session.start(
+        streamingOpen(
+            softmax,
+            ActionList.newBuilder()
+                .addActions(streamAction("m0", true))
+                .addActions(badPayload)
+                .build()),
+        new Metadata(),
+        sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+    awaitSoftmax(session, softmax);
+
+    OpExecutor opExecutor = newOpExecutor();
+    FakeVRpcListener<SessionFakeScriptedResponse> listener = new FakeVRpcListener<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+        session.newCall(FakeDescriptor.SCRIPTED_STREAMING);
+    rpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, opExecutor, true),
+        listener);
+
+    // m0 decodes fine and is delivered; the prefetched bad payload fails to decode and closes the
+    // stream with a local transport error.
+    VRpcResult result = listener.popUntil(VRpcResult.class);
+    assertThat(result).state().isEqualTo(State.TRANSPORT_FAILURE);
+    assertThat(result).status().code().isEqualTo(Status.Code.INTERNAL);
+    assertThat(result).status().description().isEqualTo("Failed to decode VRpc payload");
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+  }
+
+  @Test
+  void streamingUserCallbackThrowClosesStreamWithUserError() throws Exception {
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    RuntimeException boom = new RuntimeException("boom in onMessage");
+    FakeVRpcListener<SessionFakeScriptedResponse> listener =
+        new FakeVRpcListener<SessionFakeScriptedResponse>() {
+          @Override
+          public void onMessage(SessionFakeScriptedResponse msg) {
+            super.onMessage(msg);
+            if (msg.getMessage().equals("m1")) {
+              throw boom;
+            }
+          }
+        };
+
+    int softmax = 1 << 20;
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    session.start(
+        streamingOpen(
+            softmax,
+            ActionList.newBuilder()
+                .addActions(streamAction("m0", true))
+                .addActions(streamAction("m1", false))
+                .build()),
+        new Metadata(),
+        sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+    awaitSoftmax(session, softmax);
+
+    OpExecutor opExecutor = newOpExecutor();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+        session.newCall(FakeDescriptor.SCRIPTED_STREAMING);
+    rpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, opExecutor, true),
+        listener);
+
+    // m0 delivers cleanly; requesting m1 makes the user callback throw, which cancels the stream.
+    assertThat(listener.popUntil(SessionFakeScriptedResponse.class).getMessage()).isEqualTo("m0");
+    opExecutor.execute(rpc::requestNext);
+
+    VRpcResult result = listener.popUntil(VRpcResult.class);
+    assertThat(result).state().isEqualTo(State.USER_FAILURE);
+    assertThat(result).status().code().isEqualTo(Status.Code.CANCELLED);
+    assertThat(result).status().cause().isSameInstanceAs(boom);
+    assertThat(listener.getOnMessageCount()).isEqualTo(2);
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+  }
+
+  // Cancelling a streaming vRPC that has gone idle (prefetch buffer full, no continue in flight,
+  // but
+  // the server still has more responses) must complete promptly. Without wiring the
+  // CancelVirtualRpcRequest, the server would never send another frame, so the cancel could never
+  // take effect and the vRPC would hang.
+  @Test
+  void streamingCancelUnwedgesIdleStream() throws Exception {
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    // ~200-byte payloads with a 300-byte budget: the client delivers the first message, prefetches
+    // a message or two, then plateaus with the stream idle and the server still holding 17+ more.
+    String body = Strings.repeat("x", 200);
+    int softmax = 300;
+    int total = 20;
+    ActionList.Builder actions = ActionList.newBuilder();
+    for (int i = 0; i < total; i++) {
+      actions.addActions(streamAction(body + i, i < total - 1));
+    }
+
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    session.start(streamingOpen(softmax, actions.build()), new Metadata(), sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+    awaitSoftmax(session, softmax);
+
+    OpExecutor opExecutor = newOpExecutor();
+    FakeVRpcListener<SessionFakeScriptedResponse> listener = new FakeVRpcListener<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+        session.newCall(FakeDescriptor.SCRIPTED_STREAMING);
+    rpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, opExecutor, true),
+        listener);
+
+    // Wait for prefetch to plateau: the stream is now idle (no continue in flight) with the server
+    // still holding more responses.
+    listener.popUntil(SessionFakeScriptedResponse.class);
+    Thread.sleep(100);
+    int plateau = continueCount();
+    Thread.sleep(100);
+    assertThat(continueCount()).isEqualTo(plateau);
+    assertThat(plateau).isLessThan(total - 1);
+
+    // Cancel the idle stream, then re-arm demand -- both on the op executor (FIFO), matching how
+    // VOperationImpl drives cancel/requestNext in production. cancel() discards the prefetch buffer
+    // and turns the machine off, so the re-arm delivers nothing from the buffer and issues no
+    // further continue; the stream completes promptly with CANCELLED at the one message already
+    // delivered. Without the discard the re-arm would refill the buffer and pull again.
+    int continuesAtCancel = continueCount();
+    opExecutor.execute(() -> rpc.cancel("cancel idle stream", null));
+    opExecutor.execute(rpc::requestNext);
+
+    VRpcResult result = listener.popUntil(VRpcResult.class);
+    assertThat(result).state().isEqualTo(State.UNCOMMITED);
+    assertThat(result).status().code().isEqualTo(Status.Code.CANCELLED);
+    assertThat(result).status().description().isEqualTo("cancel idle stream");
+    assertThat(listener.getOnMessageCount()).isEqualTo(1);
+    assertThat(continueCount()).isEqualTo(continuesAtCancel);
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+  }
+
+  // The prefetch budget is read live from the session on every prefetch decision, so a softmax the
+  // server raises mid-session takes effect on the next drain — it is not snapshotted when the vRPC
+  // is created. A snapshot of the tiny opening budget would keep prefetch bounded forever.
+  @Test
+  void streamingPrefetchPicksUpDynamicSoftmaxUpdate() throws Exception {
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    String body = Strings.repeat("x", 200);
+    int smallSoftmax = 300;
+    int largeSoftmax = 1 << 20;
+    int total = 20;
+    ActionList.Builder actions = ActionList.newBuilder();
+    for (int i = 0; i < total; i++) {
+      actions.addActions(streamAction(body + i, i < total - 1));
+    }
+
+    // Open with a tiny budget, but have the server push a large budget 100ms into the session.
+    OpenSessionRequest open =
+        OpenSessionRequest.newBuilder()
+            .setPayload(
+                OpenFakeSessionRequest.newBuilder()
+                    .setSessionParams(
+                        SessionParametersResponse.newBuilder()
+                            .setKeepAlive(Durations.fromSeconds(30))
+                            .setSoftmaxStreamingPrefetchBufferSize(smallSoftmax)
+                            .build())
+                    .setUpdatedSessionParams(
+                        SessionParametersResponse.newBuilder()
+                            .setKeepAlive(Durations.fromSeconds(30))
+                            .setSoftmaxStreamingPrefetchBufferSize(largeSoftmax)
+                            .build())
+                    .setUpdatedSessionParamsDelay(Durations.fromMillis(100))
+                    .putVrpcActions(0, actions.build())
+                    .build()
+                    .toByteString())
+            .build();
+
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    session.start(open, new Metadata(), sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+    awaitSoftmax(session, smallSoftmax);
+
+    OpExecutor opExecutor = newOpExecutor();
+    FakeVRpcListener<SessionFakeScriptedResponse> listener = new FakeVRpcListener<>();
+    VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
+        session.newCall(FakeDescriptor.SCRIPTED_STREAMING);
+    rpc.start(
+        SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
+        VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer, opExecutor, true),
+        listener);
+
+    // Under the tiny budget the client delivers m0 and prefetches only a couple ahead, then
+    // plateaus well short of the full stream.
+    listener.popUntil(SessionFakeScriptedResponse.class);
+    Thread.sleep(100);
+    int plateau = continueCount();
+    assertThat(plateau).isLessThan(total - 1);
+
+    // Wait for the server's mid-session budget bump to be applied to the session.
+    awaitSoftmax(session, largeSoftmax);
+
+    // Draining one message re-checks the budget on the op executor. Because the vRPC reads the
+    // softmax live, the now-large budget lets prefetch resume and pull the rest of the stream in;
+    // a snapshot of the tiny budget would stay bounded and never reach total-1 continues.
+    opExecutor.execute(rpc::requestNext);
+    Stopwatch sw = Stopwatch.createStarted();
+    while (continueCount() < total - 1 && sw.elapsed(TimeUnit.SECONDS) < 5) {
+      Thread.sleep(5);
+    }
+    assertThat(continueCount()).isEqualTo(total - 1);
+
+    // Drain the rest; the whole stream is delivered and the vRPC completes OK.
+    Object next;
+    do {
+      opExecutor.execute(rpc::requestNext);
+      next = listener.popNext(Duration.ofSeconds(2));
+      assertThat(next).isNotNull();
+    } while (!(next instanceof VRpcResult));
+    assertThat(listener.getOnMessageCount()).isEqualTo(total);
+    assertThat((VRpcResult) next).status().code().isEqualTo(Status.Code.OK);
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+  }
+
+  private OpenSessionRequest streamingOpen(int softmax, ActionList actions) {
+    return OpenSessionRequest.newBuilder()
+        .setPayload(
+            OpenFakeSessionRequest.newBuilder()
+                .setSessionParams(
+                    SessionParametersResponse.newBuilder()
+                        .setKeepAlive(Durations.fromSeconds(30))
+                        .setSoftmaxStreamingPrefetchBufferSize(softmax)
+                        .build())
+                .putVrpcActions(0, actions)
+                .build()
+                .toByteString())
+        .build();
+  }
+
+  private static Action streamAction(String message, boolean hasMore) {
+    return Action.newBuilder()
+        .setResponse(
+            VirtualRpcResponse.newBuilder()
+                .setRpcId(SessionHandler.AUTOMATIC_RPC_ID)
+                .setHasMore(hasMore)
+                .setPayload(
+                    FakeSessionOpResponse.newBuilder()
+                        .setScripted(SessionFakeScriptedResponse.newBuilder().setMessage(message))
+                        .build()
+                        .toByteString()))
+        .build();
+  }
+
+  private static OpExecutor newOpExecutor() {
+    return new OpExecutor(
+        MoreExecutors.directExecutor(),
+        t -> {
+          throw new AssertionError(t);
+        });
+  }
+
+  // Blocks until the session has applied the server-advertised softmax, so a vRPC created after
+  // this snapshots the intended prefetch budget.
+  private void awaitSoftmax(SessionImpl session, int softmax) throws InterruptedException {
+    Stopwatch sw = Stopwatch.createStarted();
+    while (session.getSoftmaxStreamingPrefetchBufferSize() != softmax
+        && sw.elapsed(TimeUnit.SECONDS) < 5) {
+      Thread.sleep(5);
+    }
+    assertThat(session.getSoftmaxStreamingPrefetchBufferSize()).isEqualTo(softmax);
+  }
+
+  private int continueCount() {
+    int n = 0;
+    for (SessionRequest r : fakeService.getSessionRequests()) {
+      if (r.getPayloadCase() == SessionRequest.PayloadCase.CONTINUE_VIRTUAL_RPC) {
+        n++;
+      }
+    }
+    return n;
+  }
+
+  // endregion
 
   @Test
   void testCancel() throws Exception {

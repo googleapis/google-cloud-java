@@ -16,7 +16,10 @@
 
 package com.google.cloud.bigtable.data.v2.internal.session.fake;
 
+import com.google.bigtable.v2.CancelVirtualRpcRequest;
 import com.google.bigtable.v2.CloseSessionRequest;
+import com.google.bigtable.v2.ContinueVirtualRpcRequest;
+import com.google.bigtable.v2.ErrorResponse;
 import com.google.bigtable.v2.FakeSessionOpRequest;
 import com.google.bigtable.v2.FakeSessionOpResponse;
 import com.google.bigtable.v2.GoAwayResponse;
@@ -236,6 +239,11 @@ public class SessionHandler implements StreamObserver<SessionRequest> {
     private final Map<Long, ActionList> actionsMap;
     private final Map<Long, ActionQueue> actionQueues = new HashMap<>();
 
+    // The in-flight streaming vRPC: while a response carries has_more, the same queue serves the
+    // next response when the client sends a CONTINUE_VIRTUAL_RPC. Cleared on the terminal response.
+    private ActionQueue activeQueue;
+    private long activeRpcId;
+
     public RunningState(
         SessionHandler helper, Duration goAwayDelay, OpenFakeSessionRequest request) {
       this.helper = helper;
@@ -249,6 +257,13 @@ public class SessionHandler implements StreamObserver<SessionRequest> {
                 com.google.protobuf.util.Durations.toMillis(request.getRefreshConfigDelay()));
         helper.delay(refreshDelay, () -> handleRefreshConfigTimer(request.getRefreshConfig()));
       }
+
+      if (request.hasUpdatedSessionParams()) {
+        Duration paramsDelay =
+            Duration.ofMillis(Durations.toMillis(request.getUpdatedSessionParamsDelay()));
+        helper.delay(
+            paramsDelay, () -> handleUpdatedParamsTimer(request.getUpdatedSessionParams()));
+      }
     }
 
     @Override
@@ -257,6 +272,10 @@ public class SessionHandler implements StreamObserver<SessionRequest> {
         case VIRTUAL_RPC:
           State state = dispatchVRpc(request.getVirtualRpc());
           return state;
+        case CONTINUE_VIRTUAL_RPC:
+          return handleContinueVRpc(request.getContinueVirtualRpc());
+        case CANCEL_VIRTUAL_RPC:
+          return handleCancelVRpc(request.getCancelVirtualRpc());
         case CLOSE_SESSION:
           return handleCloseMsg(request.getCloseSession());
         default:
@@ -289,11 +308,57 @@ public class SessionHandler implements StreamObserver<SessionRequest> {
           if (actionQueues.get(tag) == null) {
             actionQueues.put(tag, createActionQueue(actionList));
           }
-          return handleVRpcScripted(request.getRpcId(), actionQueues.get(tag));
+          this.activeQueue = actionQueues.get(tag);
+          this.activeRpcId = request.getRpcId();
+          return handleVRpcScripted(request.getRpcId(), activeQueue);
         default:
           return helper.terminateWithError(
               Status.INVALID_ARGUMENT.withDescription("Unexpected vRpc type: " + request));
       }
+    }
+
+    private State handleContinueVRpc(ContinueVirtualRpcRequest request) {
+      if (gotHalfClose) {
+        return helper.terminateWithError(
+            Status.INTERNAL.withDescription("got continue vRpc after client sent halfClose"));
+      }
+      if (!vRpcActive || activeQueue == null || request.getRpcId() != activeRpcId) {
+        return helper.terminateWithError(
+            Status.INTERNAL.withDescription(
+                "continue for a vRPC that is not active: " + request.getRpcId()));
+      }
+      // The next response of the streamed vRPC comes from the same scripted queue.
+      return handleVRpcScripted(activeRpcId, activeQueue);
+    }
+
+    private State handleCancelVRpc(CancelVirtualRpcRequest request) {
+      if (gotHalfClose) {
+        return helper.terminateWithError(
+            Status.INTERNAL.withDescription("got cancel vRpc after client sent halfClose"));
+      }
+      // A cancel for a vRPC that is no longer active is a no-op: the stream may have already
+      // terminated on the wire before the client's cancel arrived.
+      if (!vRpcActive || request.getRpcId() != activeRpcId) {
+        return this;
+      }
+      // Acknowledge the cancel with a terminal error frame so the client's pending cancel
+      // completes.
+      // This is what unwedges an idle streaming vRPC (buffer full, no pull in flight) that would
+      // otherwise never receive another frame. Any already-scheduled scripted response for this
+      // rpcId that fires later is a stray frame the client discards.
+      helper.writeResponse(
+          SessionResponse.newBuilder()
+              .setError(
+                  ErrorResponse.newBuilder()
+                      .setRpcId(activeRpcId)
+                      .setStatus(
+                          com.google.rpc.Status.newBuilder()
+                              .setCode(Status.Code.CANCELLED.value())
+                              .setMessage("vRPC cancelled by client")))
+              .build());
+      vRpcActive = false;
+      activeQueue = null;
+      return this;
     }
 
     private State handleVRpcScripted(long rpcId, ActionQueue actionQueue) {
@@ -316,6 +381,10 @@ public class SessionHandler implements StreamObserver<SessionRequest> {
     }
 
     private State handleResponse(Action action, long rpcId) {
+      // Only an explicit VirtualRpcResponse can advertise has_more; every other shape (default
+      // action, empty response, error) terminates the vRPC.
+      boolean hasMore = false;
+
       if (action.equals(Action.getDefaultInstance())) {
         helper.writeResponse(
             SessionResponse.newBuilder()
@@ -349,6 +418,7 @@ public class SessionHandler implements StreamObserver<SessionRequest> {
           if (response.getRpcId() == AUTOMATIC_RPC_ID) {
             response = response.toBuilder().setRpcId(rpcId).build();
           }
+          hasMore = response.getHasMore();
           helper.writeResponse(SessionResponse.newBuilder().setVirtualRpc(response).build());
         }
       }
@@ -358,7 +428,13 @@ public class SessionHandler implements StreamObserver<SessionRequest> {
             SessionResponse.newBuilder().setError(action.getErrorResponse()).build());
       }
 
-      vRpcActive = false;
+      if (hasMore) {
+        // Stream still has responses; keep the vRPC in flight so the client can CONTINUE for more.
+        vRpcActive = true;
+      } else {
+        vRpcActive = false;
+        activeQueue = null;
+      }
       return this;
     }
 
@@ -383,6 +459,14 @@ public class SessionHandler implements StreamObserver<SessionRequest> {
         return helper.state;
       }
       helper.writeResponse(SessionResponse.newBuilder().setSessionRefreshConfig(config).build());
+      return this;
+    }
+
+    private State handleUpdatedParamsTimer(SessionParametersResponse params) {
+      if (helper.state != this) {
+        return helper.state;
+      }
+      helper.writeResponse(SessionResponse.newBuilder().setSessionParameters(params).build());
       return this;
     }
 
