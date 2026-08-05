@@ -111,8 +111,7 @@ public class CertificateBasedAccess {
     String keyPath = extractJsonValue(content, "key_path");
 
     if (certPath == null || keyPath == null) {
-      throw new IllegalStateException(
-          "Malformed certificate config JSON. Must contain 'cert_path' and 'key_path'.");
+      return null;
     }
 
     return new CertificateConfig(certPath, keyPath);
@@ -176,6 +175,9 @@ public class CertificateBasedAccess {
     }
     try {
       CertificateConfig config = parseCertificateConfig(configPath);
+      if (config == null) {
+        return false;
+      }
       if (!fileExistenceProvider.exists(config.certPath)
           || !fileExistenceProvider.exists(config.keyPath)) {
         throw new IllegalStateException(
@@ -216,7 +218,7 @@ public class CertificateBasedAccess {
     if (certConfigPath != null && !certConfigPath.isEmpty()) {
       try {
         CertificateConfig config = parseCertificateConfig(certConfigPath);
-        return config.certPath;
+        return config != null ? config.certPath : null;
       } catch (Exception e) {
         throw new IllegalStateException("Failed to parse GOOGLE_API_CERTIFICATE_CONFIG", e);
       }

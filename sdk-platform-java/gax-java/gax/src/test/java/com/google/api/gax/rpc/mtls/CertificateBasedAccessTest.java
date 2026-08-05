@@ -208,7 +208,7 @@ class CertificateBasedAccessTest {
   }
 
   @Test
-  void testUseMtlsClientCertificateConfigMalformedJson() {
+  void testUseMtlsClientCertificateConfigNonWorkloadJson() {
     TestEnv env = new TestEnv();
     env.set("GOOGLE_API_CERTIFICATE_CONFIG", "/path/to/config.json");
 
@@ -217,9 +217,7 @@ class CertificateBasedAccessTest {
 
     CertificateBasedAccess cba = createCba(env, fs);
 
-    IllegalStateException ex =
-        assertThrows(IllegalStateException.class, cba::useMtlsClientCertificate);
-    assertTrue(ex.getMessage().contains("Failed to parse or validate certificate config"));
+    assertFalse(cba.useMtlsClientCertificate());
   }
 
   @Test
