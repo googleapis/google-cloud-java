@@ -736,6 +736,7 @@ class ChannelPool extends ManagedChannel {
     final Entry entry;
     private final AtomicBoolean wasClosed = new AtomicBoolean();
     private final AtomicBoolean wasReleased = new AtomicBoolean();
+    private final AtomicBoolean wasStarted = new AtomicBoolean();
 
     public ReleasingClientCall(ClientCall<ReqT, RespT> delegate, Entry entry) {
       super(delegate);
@@ -744,6 +745,7 @@ class ChannelPool extends ManagedChannel {
 
     @Override
     public void start(Listener<RespT> responseListener, Metadata headers) {
+      wasStarted.set(true);
       if (cancellationException != null) {
         if (wasReleased.compareAndSet(false, true)) {
           entry.release();
@@ -795,6 +797,9 @@ class ChannelPool extends ManagedChannel {
     public void cancel(@Nullable String message, @Nullable Throwable cause) {
       this.cancellationException = new CancellationException(message);
       super.cancel(message, cause);
+      if (!wasStarted.get() && wasReleased.compareAndSet(false, true)) {
+        entry.release();
+      }
     }
   }
 }

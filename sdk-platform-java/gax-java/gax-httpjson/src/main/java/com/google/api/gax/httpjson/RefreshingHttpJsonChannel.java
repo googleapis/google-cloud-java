@@ -341,6 +341,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
     private final ChannelEntry entry;
     private final AtomicBoolean wasClosed = new AtomicBoolean(false);
     private final AtomicBoolean wasReleased = new AtomicBoolean(false);
+    private final AtomicBoolean wasStarted = new AtomicBoolean(false);
 
     ReleasingHttpJsonClientCall(HttpJsonClientCall<ReqT, RespT> delegate, ChannelEntry entry) {
       super(delegate);
@@ -349,6 +350,7 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
 
     @Override
     public void start(Listener<RespT> responseListener, HttpJsonMetadata requestHeaders) {
+      wasStarted.set(true);
       if (cancellationException != null) {
         if (wasReleased.compareAndSet(false, true)) {
           entry.release();
@@ -385,6 +387,9 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
     public void cancel(@Nullable String message, @Nullable Throwable cause) {
       this.cancellationException = new CancellationException(message);
       super.cancel(message, cause);
+      if (!wasStarted.get() && wasReleased.compareAndSet(false, true)) {
+        entry.release();
+      }
     }
   }
 }

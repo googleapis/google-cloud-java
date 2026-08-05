@@ -253,6 +253,27 @@ class RefreshingHttpJsonChannelTest {
   }
 
   @Test
+  void testCancelBeforeStartReleasesChannelEntry() {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;
+
+    HttpJsonClientCall<Object, Object> activeCall = channel.newCall(null, null);
+
+    channel.invalidateDiskFingerprintCache();
+    testFingerprint = "fingerprint2";
+    channel.refresh();
+
+    // Because activeCall was created, the old channel should NOT be shut down yet
+    assertFalse(firstChannel.isShutdown());
+
+    // Cancel before start() is called
+    activeCall.cancel("Cancelled early", null);
+
+    // Because cancel() safely released the entry, the old channel should now be shut down!
+    assertTrue(firstChannel.isShutdown());
+  }
+
+  @Test
   void testRefreshDoesNotSpawnChannelWhenShutdown() throws InterruptedException {
     RefreshingHttpJsonChannel channel = createTestChannel();
     FakeManagedHttpJsonChannel firstChannel = lastCreatedChannel;

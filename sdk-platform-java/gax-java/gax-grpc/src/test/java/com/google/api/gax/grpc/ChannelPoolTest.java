@@ -438,6 +438,24 @@ class ChannelPoolTest {
   }
 
   @Test
+  void testCancelBeforeStartReleasesChannelEntry() throws IOException {
+    ManagedChannel underlyingChannel = mock(ManagedChannel.class);
+    ManagedChannel replacementChannel = mock(ManagedChannel.class);
+    FakeChannelFactory channelFactory =
+        new FakeChannelFactory(ImmutableList.of(underlyingChannel, replacementChannel));
+    pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null, null);
+
+    ClientCall<String, Integer> call =
+        pool.newCall(FakeMethodDescriptor.create(), CallOptions.DEFAULT);
+
+    pool.refreshAll();
+    Mockito.verify(underlyingChannel, Mockito.never()).shutdown();
+
+    call.cancel("Cancelled early", null);
+    Mockito.verify(underlyingChannel, Mockito.times(1)).shutdown();
+  }
+
+  @Test
   void channelReactiveMTlsRefreshShouldConditionallySwapChannels()
       throws IOException, InterruptedException {
     ManagedChannel underlyingChannel1 = Mockito.mock(ManagedChannel.class);
