@@ -404,7 +404,8 @@ public class RegionalAccessBoundaryTest {
         new File("testresources/mtls/certificate_config.json").getAbsolutePath());
 
     // Mock MtlsHttpTransportFactory to return our mock transport
-    MtlsHttpTransportFactory mockMtlsFactory = Mockito.mock(MtlsHttpTransportFactory.class);
+    MtlsHttpTransportFactory mockMtlsFactory =
+        Mockito.mock(MtlsHttpTransportFactory.class, Mockito.withSettings().withoutAnnotations());
     Mockito.doReturn(transport).when(mockMtlsFactory).create();
 
     IdentityPoolCredentials credentials =
