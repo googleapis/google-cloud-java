@@ -78,7 +78,12 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     this.executor = executor;
     this.usingDefaultExecutor = usingDefaultExecutor;
     this.endpoint = endpoint;
-    this.httpTransport = httpTransport == null ? new NetHttpTransport() : httpTransport;
+    this.httpTransport =
+        httpTransport == null
+            ? HttpJsonConscryptUtils.configureConscryptSecurityProvider(
+                    new NetHttpTransport.Builder())
+                .build()
+            : httpTransport;
     this.usingDefaultTransport = usingDefaultTransport || httpTransport == null;
     this.deadlineScheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
   }

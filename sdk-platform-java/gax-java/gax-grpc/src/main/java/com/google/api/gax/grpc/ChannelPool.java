@@ -513,6 +513,7 @@ class ChannelPool extends ManagedChannel {
     //   replaces the list)
     synchronized (entryWriteLock) {
       if (workloadCertPath == null) {
+        refreshAll();
         return;
       }
       String currentDiskFingerprint = getOrUpdateDiskFingerprint(workloadCertPath);
