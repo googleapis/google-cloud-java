@@ -85,6 +85,32 @@ public final class ITStorageOptionsTest {
   }
 
   @Test
+  public void clientShouldConstructCleanly_directPathXdsOverInterconnect() throws Exception {
+    StorageOptions options =
+        StorageOptions.grpc()
+            .setCredentials(credentials)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setEnableGrpcClientMetrics(false)
+            .build();
+    doTest(options);
+  }
+
+  @Test
+  public void clientShouldWork_directPathXdsOverInterconnect() throws Exception {
+    assumeTrue(
+        "Environment cannot resolve storage.direct.googleapis.com", canResolveDirectPathAddress());
+    StorageOptions options =
+        StorageOptions.grpc()
+            .setCredentials(credentials)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setEnableGrpcClientMetrics(false)
+            .build();
+    try (Storage storage = options.getService()) {
+      storage.list(Storage.BucketListOption.pageSize(1));
+    }
+  }
+
+  @Test
   public void lackOfProjectIdDoesNotPreventConstruction_http() throws Exception {
     StorageOptions options = StorageOptions.http().setCredentials(credentials).build();
     doTest(options);
@@ -104,5 +130,14 @@ public final class ITStorageOptionsTest {
   private static void doTest(StorageOptions options) throws Exception {
     //noinspection EmptyTryBlock
     try (Storage ignore = options.getService()) {}
+  }
+
+  private static boolean canResolveDirectPathAddress() {
+    try {
+      java.net.InetAddress.getAllByName("storage.direct.googleapis.com");
+      return true;
+    } catch (java.net.UnknownHostException e) {
+      return false;
+    }
   }
 }
