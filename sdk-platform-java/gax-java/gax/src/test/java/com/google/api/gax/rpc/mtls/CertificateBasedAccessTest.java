@@ -110,12 +110,26 @@ class CertificateBasedAccessTest {
   }
 
   @Test
+  void testUseMtlsEndpointCaseInsensitive() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_MTLS_ENDPOINT", "ALWAYS");
+    CertificateBasedAccess cba = createCba(env, new TestFileSystem());
+    assertEquals(
+        CertificateBasedAccess.MtlsEndpointUsagePolicy.ALWAYS, cba.getMtlsEndpointUsagePolicy());
+
+    env.set("GOOGLE_API_USE_MTLS_ENDPOINT", "NEVER");
+    assertEquals(
+        CertificateBasedAccess.MtlsEndpointUsagePolicy.NEVER, cba.getMtlsEndpointUsagePolicy());
+  }
+
+  @Test
   void testUseMtlsClientCertificateExplicitTrueNoCredentials() {
     TestEnv env = new TestEnv();
     env.set("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
     CertificateBasedAccess cba = createCba(env, new TestFileSystem());
     // Explicit 'true' overrides credential presence checks
     assertTrue(cba.useMtlsClientCertificate());
+    assertThrows(IllegalStateException.class, cba::getWorkloadCertPath);
   }
 
   @Test
