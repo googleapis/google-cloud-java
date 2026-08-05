@@ -68,6 +68,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -456,7 +457,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ServiceManagerClient implements BackgroundResource {
-  private final ServiceManagerSettings settings;
+  private final @Nullable ServiceManagerSettings settings;
   private final ServiceManagerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -504,7 +505,7 @@ public class ServiceManagerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ServiceManagerSettings getSettings() {
+  public final @Nullable ServiceManagerSettings getSettings() {
     return settings;
   }
 
@@ -2466,8 +2467,8 @@ public class ServiceManagerClient implements BackgroundResource {
           ListServicesRequest, ListServicesResponse, ManagedService, ListServicesPage> {
 
     private ListServicesPage(
-        PageContext<ListServicesRequest, ListServicesResponse, ManagedService> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, ManagedService> context,
+        @Nullable ListServicesResponse response) {
       super(context, response);
     }
 
@@ -2477,14 +2478,14 @@ public class ServiceManagerClient implements BackgroundResource {
 
     @Override
     protected ListServicesPage createPage(
-        PageContext<ListServicesRequest, ListServicesResponse, ManagedService> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, ManagedService> context,
+        @Nullable ListServicesResponse response) {
       return new ListServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServicesPage> createPageAsync(
-        PageContext<ListServicesRequest, ListServicesResponse, ManagedService> context,
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, ManagedService> context,
         ApiFuture<ListServicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2498,7 +2499,8 @@ public class ServiceManagerClient implements BackgroundResource {
           ListServicesPage,
           ListServicesFixedSizeCollection> {
 
-    private ListServicesFixedSizeCollection(List<ListServicesPage> pages, int collectionSize) {
+    private ListServicesFixedSizeCollection(
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2508,7 +2510,7 @@ public class ServiceManagerClient implements BackgroundResource {
 
     @Override
     protected ListServicesFixedSizeCollection createCollection(
-        List<ListServicesPage> pages, int collectionSize) {
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       return new ListServicesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2542,8 +2544,9 @@ public class ServiceManagerClient implements BackgroundResource {
           ListServiceConfigsRequest, ListServiceConfigsResponse, Service, ListServiceConfigsPage> {
 
     private ListServiceConfigsPage(
-        PageContext<ListServiceConfigsRequest, ListServiceConfigsResponse, Service> context,
-        ListServiceConfigsResponse response) {
+        @Nullable PageContext<ListServiceConfigsRequest, ListServiceConfigsResponse, Service>
+            context,
+        @Nullable ListServiceConfigsResponse response) {
       super(context, response);
     }
 
@@ -2553,14 +2556,16 @@ public class ServiceManagerClient implements BackgroundResource {
 
     @Override
     protected ListServiceConfigsPage createPage(
-        PageContext<ListServiceConfigsRequest, ListServiceConfigsResponse, Service> context,
-        ListServiceConfigsResponse response) {
+        @Nullable PageContext<ListServiceConfigsRequest, ListServiceConfigsResponse, Service>
+            context,
+        @Nullable ListServiceConfigsResponse response) {
       return new ListServiceConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServiceConfigsPage> createPageAsync(
-        PageContext<ListServiceConfigsRequest, ListServiceConfigsResponse, Service> context,
+        @Nullable PageContext<ListServiceConfigsRequest, ListServiceConfigsResponse, Service>
+            context,
         ApiFuture<ListServiceConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2575,7 +2580,7 @@ public class ServiceManagerClient implements BackgroundResource {
           ListServiceConfigsFixedSizeCollection> {
 
     private ListServiceConfigsFixedSizeCollection(
-        List<ListServiceConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListServiceConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2585,7 +2590,7 @@ public class ServiceManagerClient implements BackgroundResource {
 
     @Override
     protected ListServiceConfigsFixedSizeCollection createCollection(
-        List<ListServiceConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListServiceConfigsPage> pages, int collectionSize) {
       return new ListServiceConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2622,8 +2627,9 @@ public class ServiceManagerClient implements BackgroundResource {
           ListServiceRolloutsPage> {
 
     private ListServiceRolloutsPage(
-        PageContext<ListServiceRolloutsRequest, ListServiceRolloutsResponse, Rollout> context,
-        ListServiceRolloutsResponse response) {
+        @Nullable PageContext<ListServiceRolloutsRequest, ListServiceRolloutsResponse, Rollout>
+            context,
+        @Nullable ListServiceRolloutsResponse response) {
       super(context, response);
     }
 
@@ -2633,14 +2639,16 @@ public class ServiceManagerClient implements BackgroundResource {
 
     @Override
     protected ListServiceRolloutsPage createPage(
-        PageContext<ListServiceRolloutsRequest, ListServiceRolloutsResponse, Rollout> context,
-        ListServiceRolloutsResponse response) {
+        @Nullable PageContext<ListServiceRolloutsRequest, ListServiceRolloutsResponse, Rollout>
+            context,
+        @Nullable ListServiceRolloutsResponse response) {
       return new ListServiceRolloutsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServiceRolloutsPage> createPageAsync(
-        PageContext<ListServiceRolloutsRequest, ListServiceRolloutsResponse, Rollout> context,
+        @Nullable PageContext<ListServiceRolloutsRequest, ListServiceRolloutsResponse, Rollout>
+            context,
         ApiFuture<ListServiceRolloutsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2655,7 +2663,7 @@ public class ServiceManagerClient implements BackgroundResource {
           ListServiceRolloutsFixedSizeCollection> {
 
     private ListServiceRolloutsFixedSizeCollection(
-        List<ListServiceRolloutsPage> pages, int collectionSize) {
+        @Nullable List<ListServiceRolloutsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2665,7 +2673,7 @@ public class ServiceManagerClient implements BackgroundResource {
 
     @Override
     protected ListServiceRolloutsFixedSizeCollection createCollection(
-        List<ListServiceRolloutsPage> pages, int collectionSize) {
+        @Nullable List<ListServiceRolloutsPage> pages, int collectionSize) {
       return new ListServiceRolloutsFixedSizeCollection(pages, collectionSize);
     }
   }

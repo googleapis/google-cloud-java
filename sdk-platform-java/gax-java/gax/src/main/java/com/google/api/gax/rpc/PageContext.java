@@ -30,8 +30,10 @@
 package com.google.api.gax.rpc;
 
 import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.NullMarked;
 
 /** The context for a page call. */
+@NullMarked
 @AutoValue
 public abstract class PageContext<RequestT, ResponseT, ResourceT> {
 

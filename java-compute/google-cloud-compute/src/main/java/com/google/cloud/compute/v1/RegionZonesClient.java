@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -128,7 +129,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionZonesClient implements BackgroundResource {
-  private final RegionZonesSettings settings;
+  private final @Nullable RegionZonesSettings settings;
   private final RegionZonesStub stub;
 
   /** Constructs an instance of RegionZonesClient with default settings. */
@@ -167,7 +168,7 @@ public class RegionZonesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionZonesSettings getSettings() {
+  public final @Nullable RegionZonesSettings getSettings() {
     return settings;
   }
 
@@ -375,7 +376,8 @@ public class RegionZonesClient implements BackgroundResource {
       extends AbstractPage<ListRegionZonesRequest, ZoneList, Zone, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionZonesRequest, ZoneList, Zone> context, ZoneList response) {
+        @Nullable PageContext<ListRegionZonesRequest, ZoneList, Zone> context,
+        @Nullable ZoneList response) {
       super(context, response);
     }
 
@@ -385,13 +387,14 @@ public class RegionZonesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionZonesRequest, ZoneList, Zone> context, ZoneList response) {
+        @Nullable PageContext<ListRegionZonesRequest, ZoneList, Zone> context,
+        @Nullable ZoneList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionZonesRequest, ZoneList, Zone> context,
+        @Nullable PageContext<ListRegionZonesRequest, ZoneList, Zone> context,
         ApiFuture<ZoneList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -401,7 +404,7 @@ public class RegionZonesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRegionZonesRequest, ZoneList, Zone, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -410,7 +413,8 @@ public class RegionZonesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

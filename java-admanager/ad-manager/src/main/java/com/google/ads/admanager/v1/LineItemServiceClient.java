@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -65,7 +66,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> GetLineItem</td>
- *      <td><p> API to retrieve a `LineItem` object.</td>
+ *      <td><p> Retrieves a `LineItem` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -84,7 +85,7 @@ import org.jspecify.annotations.NullMarked;
  *    </tr>
  *    <tr>
  *      <td><p> ListLineItems</td>
- *      <td><p> API to retrieve a list of `LineItem` objects.</td>
+ *      <td><p> Lists `LineItem` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -148,7 +149,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class LineItemServiceClient implements BackgroundResource {
-  private final LineItemServiceSettings settings;
+  private final @Nullable LineItemServiceSettings settings;
   private final LineItemServiceStub stub;
 
   /** Constructs an instance of LineItemServiceClient with default settings. */
@@ -188,7 +189,7 @@ public class LineItemServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LineItemServiceSettings getSettings() {
+  public final @Nullable LineItemServiceSettings getSettings() {
     return settings;
   }
 
@@ -198,7 +199,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `LineItem` object.
+   * Retrieves a `LineItem` object.
    *
    * <p>Sample code:
    *
@@ -218,7 +219,7 @@ public class LineItemServiceClient implements BackgroundResource {
    *     `networks/{network_code}/lineItems/{line_item_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LineItem getLineItem(LineItemName name) {
+  public final LineItem getLineItem(@Nullable LineItemName name) {
     GetLineItemRequest request =
         GetLineItemRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLineItem(request);
@@ -226,7 +227,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `LineItem` object.
+   * Retrieves a `LineItem` object.
    *
    * <p>Sample code:
    *
@@ -253,7 +254,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `LineItem` object.
+   * Retrieves a `LineItem` object.
    *
    * <p>Sample code:
    *
@@ -281,7 +282,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `LineItem` object.
+   * Retrieves a `LineItem` object.
    *
    * <p>Sample code:
    *
@@ -308,7 +309,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `LineItem` objects.
+   * Lists `LineItem` objects.
    *
    * <p>Sample code:
    *
@@ -330,7 +331,7 @@ public class LineItemServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLineItemsPagedResponse listLineItems(NetworkName parent) {
+  public final ListLineItemsPagedResponse listLineItems(@Nullable NetworkName parent) {
     ListLineItemsRequest request =
         ListLineItemsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -340,7 +341,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `LineItem` objects.
+   * Lists `LineItem` objects.
    *
    * <p>Sample code:
    *
@@ -369,7 +370,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `LineItem` objects.
+   * Lists `LineItem` objects.
    *
    * <p>Sample code:
    *
@@ -404,7 +405,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `LineItem` objects.
+   * Lists `LineItem` objects.
    *
    * <p>Sample code:
    *
@@ -440,7 +441,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `LineItem` objects.
+   * Lists `LineItem` objects.
    *
    * <p>Sample code:
    *
@@ -539,8 +540,8 @@ public class LineItemServiceClient implements BackgroundResource {
           ListLineItemsRequest, ListLineItemsResponse, LineItem, ListLineItemsPage> {
 
     private ListLineItemsPage(
-        PageContext<ListLineItemsRequest, ListLineItemsResponse, LineItem> context,
-        ListLineItemsResponse response) {
+        @Nullable PageContext<ListLineItemsRequest, ListLineItemsResponse, LineItem> context,
+        @Nullable ListLineItemsResponse response) {
       super(context, response);
     }
 
@@ -550,14 +551,14 @@ public class LineItemServiceClient implements BackgroundResource {
 
     @Override
     protected ListLineItemsPage createPage(
-        PageContext<ListLineItemsRequest, ListLineItemsResponse, LineItem> context,
-        ListLineItemsResponse response) {
+        @Nullable PageContext<ListLineItemsRequest, ListLineItemsResponse, LineItem> context,
+        @Nullable ListLineItemsResponse response) {
       return new ListLineItemsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLineItemsPage> createPageAsync(
-        PageContext<ListLineItemsRequest, ListLineItemsResponse, LineItem> context,
+        @Nullable PageContext<ListLineItemsRequest, ListLineItemsResponse, LineItem> context,
         ApiFuture<ListLineItemsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -571,7 +572,8 @@ public class LineItemServiceClient implements BackgroundResource {
           ListLineItemsPage,
           ListLineItemsFixedSizeCollection> {
 
-    private ListLineItemsFixedSizeCollection(List<ListLineItemsPage> pages, int collectionSize) {
+    private ListLineItemsFixedSizeCollection(
+        @Nullable List<ListLineItemsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -581,7 +583,7 @@ public class LineItemServiceClient implements BackgroundResource {
 
     @Override
     protected ListLineItemsFixedSizeCollection createCollection(
-        List<ListLineItemsPage> pages, int collectionSize) {
+        @Nullable List<ListLineItemsPage> pages, int collectionSize) {
       return new ListLineItemsFixedSizeCollection(pages, collectionSize);
     }
   }

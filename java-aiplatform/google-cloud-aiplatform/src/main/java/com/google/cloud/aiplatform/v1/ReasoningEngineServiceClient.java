@@ -47,6 +47,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -297,7 +298,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ReasoningEngineServiceClient implements BackgroundResource {
-  private final ReasoningEngineServiceSettings settings;
+  private final @Nullable ReasoningEngineServiceSettings settings;
   private final ReasoningEngineServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -341,7 +342,7 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ReasoningEngineServiceSettings getSettings() {
+  public final @Nullable ReasoningEngineServiceSettings getSettings() {
     return settings;
   }
 
@@ -384,7 +385,7 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ReasoningEngine, CreateReasoningEngineOperationMetadata>
-      createReasoningEngineAsync(LocationName parent, ReasoningEngine reasoningEngine) {
+      createReasoningEngineAsync(@Nullable LocationName parent, ReasoningEngine reasoningEngine) {
     CreateReasoningEngineRequest request =
         CreateReasoningEngineRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -548,7 +549,7 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReasoningEngine getReasoningEngine(ReasoningEngineName name) {
+  public final ReasoningEngine getReasoningEngine(@Nullable ReasoningEngineName name) {
     GetReasoningEngineRequest request =
         GetReasoningEngineRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -675,7 +676,8 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReasoningEnginesPagedResponse listReasoningEngines(LocationName parent) {
+  public final ListReasoningEnginesPagedResponse listReasoningEngines(
+      @Nullable LocationName parent) {
     ListReasoningEnginesRequest request =
         ListReasoningEnginesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -985,7 +987,7 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteReasoningEngineAsync(
-      ReasoningEngineName name) {
+      @Nullable ReasoningEngineName name) {
     DeleteReasoningEngineRequest request =
         DeleteReasoningEngineRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1566,9 +1568,10 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
           ListReasoningEnginesPage> {
 
     private ListReasoningEnginesPage(
-        PageContext<ListReasoningEnginesRequest, ListReasoningEnginesResponse, ReasoningEngine>
+        @Nullable
+            PageContext<ListReasoningEnginesRequest, ListReasoningEnginesResponse, ReasoningEngine>
             context,
-        ListReasoningEnginesResponse response) {
+        @Nullable ListReasoningEnginesResponse response) {
       super(context, response);
     }
 
@@ -1578,15 +1581,17 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
 
     @Override
     protected ListReasoningEnginesPage createPage(
-        PageContext<ListReasoningEnginesRequest, ListReasoningEnginesResponse, ReasoningEngine>
+        @Nullable
+            PageContext<ListReasoningEnginesRequest, ListReasoningEnginesResponse, ReasoningEngine>
             context,
-        ListReasoningEnginesResponse response) {
+        @Nullable ListReasoningEnginesResponse response) {
       return new ListReasoningEnginesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReasoningEnginesPage> createPageAsync(
-        PageContext<ListReasoningEnginesRequest, ListReasoningEnginesResponse, ReasoningEngine>
+        @Nullable
+            PageContext<ListReasoningEnginesRequest, ListReasoningEnginesResponse, ReasoningEngine>
             context,
         ApiFuture<ListReasoningEnginesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1602,7 +1607,7 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
           ListReasoningEnginesFixedSizeCollection> {
 
     private ListReasoningEnginesFixedSizeCollection(
-        List<ListReasoningEnginesPage> pages, int collectionSize) {
+        @Nullable List<ListReasoningEnginesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1612,7 +1617,7 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
 
     @Override
     protected ListReasoningEnginesFixedSizeCollection createCollection(
-        List<ListReasoningEnginesPage> pages, int collectionSize) {
+        @Nullable List<ListReasoningEnginesPage> pages, int collectionSize) {
       return new ListReasoningEnginesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1646,8 +1651,8 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1657,14 +1662,14 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1678,7 +1683,8 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1688,7 +1694,7 @@ public class ReasoningEngineServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

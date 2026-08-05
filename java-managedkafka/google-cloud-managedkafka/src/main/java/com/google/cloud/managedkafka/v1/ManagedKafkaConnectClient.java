@@ -43,6 +43,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -435,7 +436,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ManagedKafkaConnectClient implements BackgroundResource {
-  private final ManagedKafkaConnectSettings settings;
+  private final @Nullable ManagedKafkaConnectSettings settings;
   private final ManagedKafkaConnectStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -483,7 +484,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ManagedKafkaConnectSettings getSettings() {
+  public final @Nullable ManagedKafkaConnectSettings getSettings() {
     return settings;
   }
 
@@ -533,7 +534,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
    *     Structured like `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConnectClustersPagedResponse listConnectClusters(LocationName parent) {
+  public final ListConnectClustersPagedResponse listConnectClusters(@Nullable LocationName parent) {
     ListConnectClustersRequest request =
         ListConnectClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -709,7 +710,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/connectClusters/{connect_cluster_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ConnectCluster getConnectCluster(ConnectClusterName name) {
+  public final ConnectCluster getConnectCluster(@Nullable ConnectClusterName name) {
     GetConnectClusterRequest request =
         GetConnectClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -838,7 +839,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ConnectCluster, OperationMetadata> createConnectClusterAsync(
-      LocationName parent, ConnectCluster connectCluster, String connectClusterId) {
+      @Nullable LocationName parent, ConnectCluster connectCluster, String connectClusterId) {
     CreateConnectClusterRequest request =
         CreateConnectClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1143,7 +1144,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteConnectClusterAsync(
-      ConnectClusterName name) {
+      @Nullable ConnectClusterName name) {
     DeleteConnectClusterRequest request =
         DeleteConnectClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1299,7 +1300,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/connectClusters/{connect_cluster_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConnectorsPagedResponse listConnectors(ConnectClusterName parent) {
+  public final ListConnectorsPagedResponse listConnectors(@Nullable ConnectClusterName parent) {
     ListConnectorsRequest request =
         ListConnectorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1469,7 +1470,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/connectClusters/{connectCluster}/connectors/{connector}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Connector getConnector(ConnectorName name) {
+  public final Connector getConnector(@Nullable ConnectorName name) {
     GetConnectorRequest request =
         GetConnectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConnector(request);
@@ -1596,7 +1597,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Connector createConnector(
-      ConnectClusterName parent, Connector connector, String connectorId) {
+      @Nullable ConnectClusterName parent, Connector connector, String connectorId) {
     CreateConnectorRequest request =
         CreateConnectorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1825,7 +1826,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/connectClusters/{connectCluster}/connectors/{connector}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteConnector(ConnectorName name) {
+  public final void deleteConnector(@Nullable ConnectorName name) {
     DeleteConnectorRequest request =
         DeleteConnectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteConnector(request);
@@ -1943,7 +1944,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/connectClusters/{connectCluster}/connectors/{connector}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PauseConnectorResponse pauseConnector(ConnectorName name) {
+  public final PauseConnectorResponse pauseConnector(@Nullable ConnectorName name) {
     PauseConnectorRequest request =
         PauseConnectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return pauseConnector(request);
@@ -2062,7 +2063,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/connectClusters/{connectCluster}/connectors/{connector}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ResumeConnectorResponse resumeConnector(ConnectorName name) {
+  public final ResumeConnectorResponse resumeConnector(@Nullable ConnectorName name) {
     ResumeConnectorRequest request =
         ResumeConnectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return resumeConnector(request);
@@ -2181,7 +2182,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/connectClusters/{connectCluster}/connectors/{connector}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RestartConnectorResponse restartConnector(ConnectorName name) {
+  public final RestartConnectorResponse restartConnector(@Nullable ConnectorName name) {
     RestartConnectorRequest request =
         RestartConnectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return restartConnector(request);
@@ -2300,7 +2301,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/connectClusters/{connectCluster}/connectors/{connector}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final StopConnectorResponse stopConnector(ConnectorName name) {
+  public final StopConnectorResponse stopConnector(@Nullable ConnectorName name) {
     StopConnectorRequest request =
         StopConnectorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return stopConnector(request);
@@ -2615,9 +2616,10 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
           ListConnectClustersPage> {
 
     private ListConnectClustersPage(
-        PageContext<ListConnectClustersRequest, ListConnectClustersResponse, ConnectCluster>
+        @Nullable
+            PageContext<ListConnectClustersRequest, ListConnectClustersResponse, ConnectCluster>
             context,
-        ListConnectClustersResponse response) {
+        @Nullable ListConnectClustersResponse response) {
       super(context, response);
     }
 
@@ -2627,15 +2629,17 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
 
     @Override
     protected ListConnectClustersPage createPage(
-        PageContext<ListConnectClustersRequest, ListConnectClustersResponse, ConnectCluster>
+        @Nullable
+            PageContext<ListConnectClustersRequest, ListConnectClustersResponse, ConnectCluster>
             context,
-        ListConnectClustersResponse response) {
+        @Nullable ListConnectClustersResponse response) {
       return new ListConnectClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConnectClustersPage> createPageAsync(
-        PageContext<ListConnectClustersRequest, ListConnectClustersResponse, ConnectCluster>
+        @Nullable
+            PageContext<ListConnectClustersRequest, ListConnectClustersResponse, ConnectCluster>
             context,
         ApiFuture<ListConnectClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2651,7 +2655,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
           ListConnectClustersFixedSizeCollection> {
 
     private ListConnectClustersFixedSizeCollection(
-        List<ListConnectClustersPage> pages, int collectionSize) {
+        @Nullable List<ListConnectClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2661,7 +2665,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
 
     @Override
     protected ListConnectClustersFixedSizeCollection createCollection(
-        List<ListConnectClustersPage> pages, int collectionSize) {
+        @Nullable List<ListConnectClustersPage> pages, int collectionSize) {
       return new ListConnectClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2695,8 +2699,8 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
           ListConnectorsRequest, ListConnectorsResponse, Connector, ListConnectorsPage> {
 
     private ListConnectorsPage(
-        PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> context,
-        ListConnectorsResponse response) {
+        @Nullable PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> context,
+        @Nullable ListConnectorsResponse response) {
       super(context, response);
     }
 
@@ -2706,14 +2710,14 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
 
     @Override
     protected ListConnectorsPage createPage(
-        PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> context,
-        ListConnectorsResponse response) {
+        @Nullable PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> context,
+        @Nullable ListConnectorsResponse response) {
       return new ListConnectorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConnectorsPage> createPageAsync(
-        PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> context,
+        @Nullable PageContext<ListConnectorsRequest, ListConnectorsResponse, Connector> context,
         ApiFuture<ListConnectorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2727,7 +2731,8 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
           ListConnectorsPage,
           ListConnectorsFixedSizeCollection> {
 
-    private ListConnectorsFixedSizeCollection(List<ListConnectorsPage> pages, int collectionSize) {
+    private ListConnectorsFixedSizeCollection(
+        @Nullable List<ListConnectorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2737,7 +2742,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
 
     @Override
     protected ListConnectorsFixedSizeCollection createCollection(
-        List<ListConnectorsPage> pages, int collectionSize) {
+        @Nullable List<ListConnectorsPage> pages, int collectionSize) {
       return new ListConnectorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2771,8 +2776,8 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2782,14 +2787,14 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2803,7 +2808,8 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2813,7 +2819,7 @@ public class ManagedKafkaConnectClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

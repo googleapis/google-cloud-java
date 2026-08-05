@@ -40,8 +40,10 @@ import java.util.Optional;
 import java.util.Properties;
 import java.util.jar.Attributes;
 import java.util.jar.JarFile;
+import org.jspecify.annotations.NullMarked;
 
 /** Provides properties of the GAX library. */
+@NullMarked
 @InternalApi
 public class GaxProperties {
 

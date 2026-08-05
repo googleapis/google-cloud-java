@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -244,7 +245,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionHealthChecksClient implements BackgroundResource {
-  private final RegionHealthChecksSettings settings;
+  private final @Nullable RegionHealthChecksSettings settings;
   private final RegionHealthChecksStub stub;
 
   /** Constructs an instance of RegionHealthChecksClient with default settings. */
@@ -284,7 +285,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionHealthChecksSettings getSettings() {
+  public final @Nullable RegionHealthChecksSettings getSettings() {
     return settings;
   }
 
@@ -1239,8 +1240,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
       extends AbstractPage<ListRegionHealthChecksRequest, HealthCheckList, HealthCheck, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionHealthChecksRequest, HealthCheckList, HealthCheck> context,
-        HealthCheckList response) {
+        @Nullable PageContext<ListRegionHealthChecksRequest, HealthCheckList, HealthCheck> context,
+        @Nullable HealthCheckList response) {
       super(context, response);
     }
 
@@ -1250,14 +1251,14 @@ public class RegionHealthChecksClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionHealthChecksRequest, HealthCheckList, HealthCheck> context,
-        HealthCheckList response) {
+        @Nullable PageContext<ListRegionHealthChecksRequest, HealthCheckList, HealthCheck> context,
+        @Nullable HealthCheckList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionHealthChecksRequest, HealthCheckList, HealthCheck> context,
+        @Nullable PageContext<ListRegionHealthChecksRequest, HealthCheckList, HealthCheck> context,
         ApiFuture<HealthCheckList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1271,7 +1272,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1280,7 +1281,8 @@ public class RegionHealthChecksClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

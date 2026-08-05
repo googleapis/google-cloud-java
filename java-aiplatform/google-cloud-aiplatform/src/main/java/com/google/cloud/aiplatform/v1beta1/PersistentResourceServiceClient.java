@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -319,7 +320,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PersistentResourceServiceClient implements BackgroundResource {
-  private final PersistentResourceServiceSettings settings;
+  private final @Nullable PersistentResourceServiceSettings settings;
   private final PersistentResourceServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -364,7 +365,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final PersistentResourceServiceSettings getSettings() {
+  public final @Nullable PersistentResourceServiceSettings getSettings() {
     return settings;
   }
 
@@ -415,7 +416,9 @@ public class PersistentResourceServiceClient implements BackgroundResource {
    */
   public final OperationFuture<PersistentResource, CreatePersistentResourceOperationMetadata>
       createPersistentResourceAsync(
-          LocationName parent, PersistentResource persistentResource, String persistentResourceId) {
+          @Nullable LocationName parent,
+          PersistentResource persistentResource,
+          String persistentResourceId) {
     CreatePersistentResourceRequest request =
         CreatePersistentResourceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -596,7 +599,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
    *     `projects/{project_id_or_number}/locations/{location_id}/persistentResources/{persistent_resource_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PersistentResource getPersistentResource(PersistentResourceName name) {
+  public final PersistentResource getPersistentResource(@Nullable PersistentResourceName name) {
     GetPersistentResourceRequest request =
         GetPersistentResourceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -723,7 +726,8 @@ public class PersistentResourceServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPersistentResourcesPagedResponse listPersistentResources(LocationName parent) {
+  public final ListPersistentResourcesPagedResponse listPersistentResources(
+      @Nullable LocationName parent) {
     ListPersistentResourcesRequest request =
         ListPersistentResourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -900,7 +904,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deletePersistentResourceAsync(
-      PersistentResourceName name) {
+      @Nullable PersistentResourceName name) {
     DeletePersistentResourceRequest request =
         DeletePersistentResourceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1203,7 +1207,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PersistentResource, RebootPersistentResourceOperationMetadata>
-      rebootPersistentResourceAsync(PersistentResourceName name) {
+      rebootPersistentResourceAsync(@Nullable PersistentResourceName name) {
     RebootPersistentResourceRequest request =
         RebootPersistentResourceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1789,10 +1793,11 @@ public class PersistentResourceServiceClient implements BackgroundResource {
           ListPersistentResourcesPage> {
 
     private ListPersistentResourcesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPersistentResourcesRequest, ListPersistentResourcesResponse, PersistentResource>
             context,
-        ListPersistentResourcesResponse response) {
+        @Nullable ListPersistentResourcesResponse response) {
       super(context, response);
     }
 
@@ -1802,16 +1807,18 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
     @Override
     protected ListPersistentResourcesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPersistentResourcesRequest, ListPersistentResourcesResponse, PersistentResource>
             context,
-        ListPersistentResourcesResponse response) {
+        @Nullable ListPersistentResourcesResponse response) {
       return new ListPersistentResourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPersistentResourcesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPersistentResourcesRequest, ListPersistentResourcesResponse, PersistentResource>
             context,
         ApiFuture<ListPersistentResourcesResponse> futureResponse) {
@@ -1828,7 +1835,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
           ListPersistentResourcesFixedSizeCollection> {
 
     private ListPersistentResourcesFixedSizeCollection(
-        List<ListPersistentResourcesPage> pages, int collectionSize) {
+        @Nullable List<ListPersistentResourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1838,7 +1845,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
     @Override
     protected ListPersistentResourcesFixedSizeCollection createCollection(
-        List<ListPersistentResourcesPage> pages, int collectionSize) {
+        @Nullable List<ListPersistentResourcesPage> pages, int collectionSize) {
       return new ListPersistentResourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1872,8 +1879,8 @@ public class PersistentResourceServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1883,14 +1890,14 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1904,7 +1911,8 @@ public class PersistentResourceServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1914,7 +1922,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

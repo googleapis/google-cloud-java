@@ -47,6 +47,8 @@ import com.google.cloud.kms.v1.DeleteCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
+import com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse;
 import com.google.cloud.kms.v1.GenerateRandomBytesRequest;
 import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
@@ -57,6 +59,7 @@ import com.google.cloud.kms.v1.GetPublicKeyRequest;
 import com.google.cloud.kms.v1.GetRetiredResourceRequest;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.ImportJob;
+import com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse;
@@ -96,6 +99,7 @@ import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -107,11 +111,12 @@ import org.jspecify.annotations.NullMarked;
 @Generated("by gapic-generator-java")
 public abstract class KeyManagementServiceStub implements BackgroundResource {
 
-  public OperationsStub getOperationsStub() {
+  public @Nullable OperationsStub getOperationsStub() {
     return null;
   }
 
-  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+  public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
+      getHttpJsonOperationsStub() {
     return null;
   }
 
@@ -221,6 +226,20 @@ public abstract class KeyManagementServiceStub implements BackgroundResource {
   public UnaryCallable<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: importCryptoKeyVersionCallable()");
+  }
+
+  public UnaryCallable<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+      importTrustedKeyWrappedCryptoKeyVersionCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: importTrustedKeyWrappedCryptoKeyVersionCallable()");
+  }
+
+  public UnaryCallable<
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      exportTrustedKeyWrappedCryptoKeyVersionCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: exportTrustedKeyWrappedCryptoKeyVersionCallable()");
   }
 
   public UnaryCallable<CreateImportJobRequest, ImportJob> createImportJobCallable() {

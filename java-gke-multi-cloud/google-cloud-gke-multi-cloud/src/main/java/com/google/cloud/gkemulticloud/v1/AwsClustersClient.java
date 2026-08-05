@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -426,7 +427,7 @@ import org.jspecify.annotations.NullMarked;
 @Deprecated
 @Generated("by gapic-generator-java")
 public class AwsClustersClient implements BackgroundResource {
-  private final AwsClustersSettings settings;
+  private final @Nullable AwsClustersSettings settings;
   private final AwsClustersStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -473,7 +474,7 @@ public class AwsClustersClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AwsClustersSettings getSettings() {
+  public final @Nullable AwsClustersSettings getSettings() {
     return settings;
   }
 
@@ -542,7 +543,7 @@ public class AwsClustersClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<AwsCluster, OperationMetadata> createAwsClusterAsync(
-      LocationName parent, AwsCluster awsCluster, String awsClusterId) {
+      @Nullable LocationName parent, AwsCluster awsCluster, String awsClusterId) {
     CreateAwsClusterRequest request =
         CreateAwsClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -906,7 +907,7 @@ public class AwsClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final AwsCluster getAwsCluster(AwsClusterName name) {
+  public final AwsCluster getAwsCluster(@Nullable AwsClusterName name) {
     GetAwsClusterRequest request =
         GetAwsClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAwsCluster(request);
@@ -1035,7 +1036,7 @@ public class AwsClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ListAwsClustersPagedResponse listAwsClusters(LocationName parent) {
+  public final ListAwsClustersPagedResponse listAwsClusters(@Nullable LocationName parent) {
     ListAwsClustersRequest request =
         ListAwsClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1230,7 +1231,7 @@ public class AwsClustersClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAwsClusterAsync(
-      AwsClusterName name) {
+      @Nullable AwsClusterName name) {
     DeleteAwsClusterRequest request =
         DeleteAwsClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteAwsClusterAsync(request);
@@ -1600,7 +1601,7 @@ public class AwsClustersClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<AwsNodePool, OperationMetadata> createAwsNodePoolAsync(
-      AwsClusterName parent, AwsNodePool awsNodePool, String awsNodePoolId) {
+      @Nullable AwsClusterName parent, AwsNodePool awsNodePool, String awsNodePoolId) {
     CreateAwsNodePoolRequest request =
         CreateAwsNodePoolRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1971,7 +1972,7 @@ public class AwsClustersClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<AwsNodePool, OperationMetadata> rollbackAwsNodePoolUpdateAsync(
-      AwsNodePoolName name) {
+      @Nullable AwsNodePoolName name) {
     RollbackAwsNodePoolUpdateRequest request =
         RollbackAwsNodePoolUpdateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2165,7 +2166,7 @@ public class AwsClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final AwsNodePool getAwsNodePool(AwsNodePoolName name) {
+  public final AwsNodePool getAwsNodePool(@Nullable AwsNodePoolName name) {
     GetAwsNodePoolRequest request =
         GetAwsNodePoolRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAwsNodePool(request);
@@ -2302,7 +2303,7 @@ public class AwsClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final ListAwsNodePoolsPagedResponse listAwsNodePools(AwsClusterName parent) {
+  public final ListAwsNodePoolsPagedResponse listAwsNodePools(@Nullable AwsClusterName parent) {
     ListAwsNodePoolsRequest request =
         ListAwsNodePoolsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2497,7 +2498,7 @@ public class AwsClustersClient implements BackgroundResource {
    */
   @Deprecated
   public final OperationFuture<Empty, OperationMetadata> deleteAwsNodePoolAsync(
-      AwsNodePoolName name) {
+      @Nullable AwsNodePoolName name) {
     DeleteAwsNodePoolRequest request =
         DeleteAwsNodePoolRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2826,7 +2827,7 @@ public class AwsClustersClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final AwsServerConfig getAwsServerConfig(AwsServerConfigName name) {
+  public final AwsServerConfig getAwsServerConfig(@Nullable AwsServerConfigName name) {
     GetAwsServerConfigRequest request =
         GetAwsServerConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2992,8 +2993,8 @@ public class AwsClustersClient implements BackgroundResource {
           ListAwsClustersRequest, ListAwsClustersResponse, AwsCluster, ListAwsClustersPage> {
 
     private ListAwsClustersPage(
-        PageContext<ListAwsClustersRequest, ListAwsClustersResponse, AwsCluster> context,
-        ListAwsClustersResponse response) {
+        @Nullable PageContext<ListAwsClustersRequest, ListAwsClustersResponse, AwsCluster> context,
+        @Nullable ListAwsClustersResponse response) {
       super(context, response);
     }
 
@@ -3003,14 +3004,14 @@ public class AwsClustersClient implements BackgroundResource {
 
     @Override
     protected ListAwsClustersPage createPage(
-        PageContext<ListAwsClustersRequest, ListAwsClustersResponse, AwsCluster> context,
-        ListAwsClustersResponse response) {
+        @Nullable PageContext<ListAwsClustersRequest, ListAwsClustersResponse, AwsCluster> context,
+        @Nullable ListAwsClustersResponse response) {
       return new ListAwsClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAwsClustersPage> createPageAsync(
-        PageContext<ListAwsClustersRequest, ListAwsClustersResponse, AwsCluster> context,
+        @Nullable PageContext<ListAwsClustersRequest, ListAwsClustersResponse, AwsCluster> context,
         ApiFuture<ListAwsClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3025,7 +3026,7 @@ public class AwsClustersClient implements BackgroundResource {
           ListAwsClustersFixedSizeCollection> {
 
     private ListAwsClustersFixedSizeCollection(
-        List<ListAwsClustersPage> pages, int collectionSize) {
+        @Nullable List<ListAwsClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3035,7 +3036,7 @@ public class AwsClustersClient implements BackgroundResource {
 
     @Override
     protected ListAwsClustersFixedSizeCollection createCollection(
-        List<ListAwsClustersPage> pages, int collectionSize) {
+        @Nullable List<ListAwsClustersPage> pages, int collectionSize) {
       return new ListAwsClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3069,8 +3070,9 @@ public class AwsClustersClient implements BackgroundResource {
           ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, AwsNodePool, ListAwsNodePoolsPage> {
 
     private ListAwsNodePoolsPage(
-        PageContext<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, AwsNodePool> context,
-        ListAwsNodePoolsResponse response) {
+        @Nullable PageContext<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, AwsNodePool>
+            context,
+        @Nullable ListAwsNodePoolsResponse response) {
       super(context, response);
     }
 
@@ -3080,14 +3082,16 @@ public class AwsClustersClient implements BackgroundResource {
 
     @Override
     protected ListAwsNodePoolsPage createPage(
-        PageContext<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, AwsNodePool> context,
-        ListAwsNodePoolsResponse response) {
+        @Nullable PageContext<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, AwsNodePool>
+            context,
+        @Nullable ListAwsNodePoolsResponse response) {
       return new ListAwsNodePoolsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAwsNodePoolsPage> createPageAsync(
-        PageContext<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, AwsNodePool> context,
+        @Nullable PageContext<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse, AwsNodePool>
+            context,
         ApiFuture<ListAwsNodePoolsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3102,7 +3106,7 @@ public class AwsClustersClient implements BackgroundResource {
           ListAwsNodePoolsFixedSizeCollection> {
 
     private ListAwsNodePoolsFixedSizeCollection(
-        List<ListAwsNodePoolsPage> pages, int collectionSize) {
+        @Nullable List<ListAwsNodePoolsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3112,7 +3116,7 @@ public class AwsClustersClient implements BackgroundResource {
 
     @Override
     protected ListAwsNodePoolsFixedSizeCollection createCollection(
-        List<ListAwsNodePoolsPage> pages, int collectionSize) {
+        @Nullable List<ListAwsNodePoolsPage> pages, int collectionSize) {
       return new ListAwsNodePoolsFixedSizeCollection(pages, collectionSize);
     }
   }

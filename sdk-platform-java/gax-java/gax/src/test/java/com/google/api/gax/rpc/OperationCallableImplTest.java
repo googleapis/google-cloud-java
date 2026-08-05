@@ -114,9 +114,11 @@ class OperationCallableImplTest {
 
   @BeforeEach
   void setUp() throws IOException {
-    initialChannel = mock(FakeChannel.class);
-    pollTransportChannel = mock(TransportChannel.class);
-    TransportChannelProvider operationsChannelProvider = mock(TransportChannelProvider.class);
+    initialChannel = mock(FakeChannel.class, Mockito.withSettings().withoutAnnotations());
+    pollTransportChannel =
+        mock(TransportChannel.class, Mockito.withSettings().withoutAnnotations());
+    TransportChannelProvider operationsChannelProvider =
+        mock(TransportChannelProvider.class, Mockito.withSettings().withoutAnnotations());
     when(operationsChannelProvider.getTransportChannel()).thenReturn(pollTransportChannel);
 
     clock = new FakeApiClock(0L);
@@ -500,9 +502,11 @@ class OperationCallableImplTest {
     UnaryCallable<Integer, OperationSnapshot> initialCallable =
         mockGetOpSnapshotCallable(StatusCode.Code.OK, initialOperation);
 
-    LongRunningClient longRunningClient = Mockito.mock(LongRunningClient.class);
+    LongRunningClient longRunningClient =
+        mock(LongRunningClient.class, Mockito.withSettings().withoutAnnotations());
     @SuppressWarnings("unchecked")
-    UnaryCallable<String, OperationSnapshot> getOpCallable = Mockito.mock(UnaryCallable.class);
+    UnaryCallable<String, OperationSnapshot> getOpCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     ArgumentCaptor<ApiCallContext> callContextCaptor =
         ArgumentCaptor.forClass(ApiCallContext.class);
     Mockito.when(longRunningClient.getOperationCallable()).thenReturn(getOpCallable);
@@ -544,9 +548,11 @@ class OperationCallableImplTest {
     UnaryCallable<Integer, OperationSnapshot> initialCallable =
         mockGetOpSnapshotCallable(StatusCode.Code.OK, initialOperation);
 
-    LongRunningClient longRunningClient = Mockito.mock(LongRunningClient.class);
+    LongRunningClient longRunningClient =
+        mock(LongRunningClient.class, Mockito.withSettings().withoutAnnotations());
     @SuppressWarnings("unchecked")
-    UnaryCallable<String, OperationSnapshot> getOpCallable = Mockito.mock(UnaryCallable.class);
+    UnaryCallable<String, OperationSnapshot> getOpCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     ArgumentCaptor<ApiCallContext> callContextCaptor =
         ArgumentCaptor.forClass(ApiCallContext.class);
     Mockito.when(longRunningClient.getOperationCallable()).thenReturn(getOpCallable);
@@ -857,7 +863,7 @@ class OperationCallableImplTest {
   @Test
   void callWithContext() {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     OperationStashCallable stashCallable = new OperationStashCallable();
@@ -888,7 +894,7 @@ class OperationCallableImplTest {
   @Test
   void callResumeWithContext() throws Exception {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     OperationStashCallable stashCallable = new OperationStashCallable();
@@ -921,7 +927,7 @@ class OperationCallableImplTest {
   @Test
   void callCancelWithContext() throws Exception {
     FakeChannel channel = new FakeChannel();
-    Credentials credentials = Mockito.mock(Credentials.class);
+    Credentials credentials = mock(Credentials.class, Mockito.withSettings().withoutAnnotations());
     ApiCallContext context =
         FakeCallContext.createDefault().withChannel(channel).withCredentials(credentials);
     OperationStashCallable stashCallable = new OperationStashCallable();

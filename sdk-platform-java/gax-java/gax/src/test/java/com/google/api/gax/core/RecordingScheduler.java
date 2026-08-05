@@ -31,6 +31,7 @@ package com.google.api.gax.core;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -51,7 +52,8 @@ public abstract class RecordingScheduler implements ScheduledExecutorService {
   public abstract int getIterationsCount();
 
   public static RecordingScheduler create(final FakeApiClock clock) {
-    RecordingScheduler mock = Mockito.mock(RecordingScheduler.class);
+    RecordingScheduler mock =
+        mock(RecordingScheduler.class, Mockito.withSettings().withoutAnnotations());
 
     // mock class fields:
     final ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1);

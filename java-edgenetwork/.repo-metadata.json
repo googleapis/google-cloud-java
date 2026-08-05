@@ -11,6 +11,5 @@
   "repo_short": "java-edgenetwork",
   "distribution_name": "com.google.cloud:google-cloud-edgenetwork",
   "api_id": "edgenetwork.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

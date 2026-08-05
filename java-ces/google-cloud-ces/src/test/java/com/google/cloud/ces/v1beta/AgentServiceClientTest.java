@@ -3654,6 +3654,8 @@ public class AgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3701,6 +3703,8 @@ public class AgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3748,6 +3752,8 @@ public class AgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3798,6 +3804,8 @@ public class AgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3848,6 +3856,8 @@ public class AgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3901,6 +3911,8 @@ public class AgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -3954,6 +3966,8 @@ public class AgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .setExperimentConfig(ExperimentConfig.newBuilder().build())
+            .setWhatsappCredentials(WhatsAppCredentials.newBuilder().build())
+            .setInstagramCredentials(InstagramCredentials.newBuilder().build())
             .build();
     mockAgentService.addResponse(expectedResponse);
 
@@ -4153,6 +4167,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -4198,6 +4213,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -4243,6 +4259,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -4291,6 +4308,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -4339,6 +4357,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -4390,6 +4409,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
@@ -4441,6 +4461,7 @@ public class AgentServiceClientTest {
             .setName(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
+            .setTimeout(Duration.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")

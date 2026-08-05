@@ -36,12 +36,14 @@ import static com.google.common.base.Preconditions.checkArgument;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * The IdentityPool credential source. Dictates the retrieval method of the external credential,
  * which can either be through a metadata server or a local file.
  */
+@NullMarked
 public class IdentityPoolCredentialSource extends ExternalAccountCredentials.CredentialSource {
 
   private static final long serialVersionUID = -745855247050085694L;

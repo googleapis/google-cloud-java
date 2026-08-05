@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -218,7 +219,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class OmnichannelSettingsServiceClient implements BackgroundResource {
-  private final OmnichannelSettingsServiceSettings settings;
+  private final @Nullable OmnichannelSettingsServiceSettings settings;
   private final OmnichannelSettingsServiceStub stub;
 
   /** Constructs an instance of OmnichannelSettingsServiceClient with default settings. */
@@ -260,7 +261,7 @@ public class OmnichannelSettingsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final OmnichannelSettingsServiceSettings getSettings() {
+  public final @Nullable OmnichannelSettingsServiceSettings getSettings() {
     return settings;
   }
 
@@ -291,7 +292,7 @@ public class OmnichannelSettingsServiceClient implements BackgroundResource {
    *     `accounts/{account}/omnichannelSettings/{omnichannel_setting}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OmnichannelSetting getOmnichannelSetting(OmnichannelSettingName name) {
+  public final OmnichannelSetting getOmnichannelSetting(@Nullable OmnichannelSettingName name) {
     GetOmnichannelSettingRequest request =
         GetOmnichannelSettingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -413,7 +414,8 @@ public class OmnichannelSettingsServiceClient implements BackgroundResource {
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOmnichannelSettingsPagedResponse listOmnichannelSettings(AccountName parent) {
+  public final ListOmnichannelSettingsPagedResponse listOmnichannelSettings(
+      @Nullable AccountName parent) {
     ListOmnichannelSettingsRequest request =
         ListOmnichannelSettingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -592,7 +594,7 @@ public class OmnichannelSettingsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OmnichannelSetting createOmnichannelSetting(
-      AccountName parent, OmnichannelSetting omnichannelSetting) {
+      @Nullable AccountName parent, OmnichannelSetting omnichannelSetting) {
     CreateOmnichannelSettingRequest request =
         CreateOmnichannelSettingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -829,7 +831,7 @@ public class OmnichannelSettingsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RequestInventoryVerificationResponse requestInventoryVerification(
-      OmnichannelSettingName name) {
+      @Nullable OmnichannelSettingName name) {
     RequestInventoryVerificationRequest request =
         RequestInventoryVerificationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -995,10 +997,11 @@ public class OmnichannelSettingsServiceClient implements BackgroundResource {
           ListOmnichannelSettingsPage> {
 
     private ListOmnichannelSettingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOmnichannelSettingsRequest, ListOmnichannelSettingsResponse, OmnichannelSetting>
             context,
-        ListOmnichannelSettingsResponse response) {
+        @Nullable ListOmnichannelSettingsResponse response) {
       super(context, response);
     }
 
@@ -1008,16 +1011,18 @@ public class OmnichannelSettingsServiceClient implements BackgroundResource {
 
     @Override
     protected ListOmnichannelSettingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOmnichannelSettingsRequest, ListOmnichannelSettingsResponse, OmnichannelSetting>
             context,
-        ListOmnichannelSettingsResponse response) {
+        @Nullable ListOmnichannelSettingsResponse response) {
       return new ListOmnichannelSettingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOmnichannelSettingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOmnichannelSettingsRequest, ListOmnichannelSettingsResponse, OmnichannelSetting>
             context,
         ApiFuture<ListOmnichannelSettingsResponse> futureResponse) {
@@ -1034,7 +1039,7 @@ public class OmnichannelSettingsServiceClient implements BackgroundResource {
           ListOmnichannelSettingsFixedSizeCollection> {
 
     private ListOmnichannelSettingsFixedSizeCollection(
-        List<ListOmnichannelSettingsPage> pages, int collectionSize) {
+        @Nullable List<ListOmnichannelSettingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1044,7 +1049,7 @@ public class OmnichannelSettingsServiceClient implements BackgroundResource {
 
     @Override
     protected ListOmnichannelSettingsFixedSizeCollection createCollection(
-        List<ListOmnichannelSettingsPage> pages, int collectionSize) {
+        @Nullable List<ListOmnichannelSettingsPage> pages, int collectionSize) {
       return new ListOmnichannelSettingsFixedSizeCollection(pages, collectionSize);
     }
   }

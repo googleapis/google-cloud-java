@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -153,7 +154,7 @@ public class ContactName implements ResourceName {
         .toString();
   }
 
-  public static ContactName parse(String formattedString) {
+  public static @Nullable ContactName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -178,7 +179,7 @@ public class ContactName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ContactName> values) {
+  public static List<String> toStringList(List<@Nullable ContactName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ContactName value : values) {
       if (value == null) {
@@ -231,7 +232,7 @@ public class ContactName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

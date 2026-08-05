@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -172,7 +173,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class TermsOfServiceServiceClient implements BackgroundResource {
-  private final TermsOfServiceServiceSettings settings;
+  private final @Nullable TermsOfServiceServiceSettings settings;
   private final TermsOfServiceServiceStub stub;
 
   /** Constructs an instance of TermsOfServiceServiceClient with default settings. */
@@ -212,7 +213,7 @@ public class TermsOfServiceServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TermsOfServiceServiceSettings getSettings() {
+  public final @Nullable TermsOfServiceServiceSettings getSettings() {
     return settings;
   }
 
@@ -243,7 +244,7 @@ public class TermsOfServiceServiceClient implements BackgroundResource {
    *     `termsOfService/{version}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TermsOfService getTermsOfService(TermsOfServiceName name) {
+  public final TermsOfService getTermsOfService(@Nullable TermsOfServiceName name) {
     GetTermsOfServiceRequest request =
         GetTermsOfServiceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -422,7 +423,7 @@ public class TermsOfServiceServiceClient implements BackgroundResource {
    *     `termsOfService/{version}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void acceptTermsOfService(TermsOfServiceName name) {
+  public final void acceptTermsOfService(@Nullable TermsOfServiceName name) {
     AcceptTermsOfServiceRequest request =
         AcceptTermsOfServiceRequest.newBuilder()
             .setName(name == null ? null : name.toString())

@@ -33,11 +33,13 @@ package com.google.auth.oauth2;
 
 import java.io.IOException;
 import java.io.Serializable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Supplier for retrieving AWS Security credentials for {@link AwsCredentials} to exchange for GCP
  * access tokens.
  */
+@NullMarked
 public interface AwsSecurityCredentialsSupplier extends Serializable {
 
   /**

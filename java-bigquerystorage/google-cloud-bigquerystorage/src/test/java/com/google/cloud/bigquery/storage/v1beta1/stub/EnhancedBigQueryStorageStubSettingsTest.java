@@ -44,9 +44,11 @@ public class EnhancedBigQueryStorageStubSettingsTest {
   @Test
   void testSettingsArePreserved() {
     String endpoint = "some.other.host:123";
-    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
+    CredentialsProvider credentialsProvider =
+        Mockito.mock(CredentialsProvider.class, Mockito.withSettings().withoutAnnotations());
     Duration watchdogInterval = Duration.ofSeconds(12);
-    WatchdogProvider watchdogProvider = Mockito.mock(WatchdogProvider.class);
+    WatchdogProvider watchdogProvider =
+        Mockito.mock(WatchdogProvider.class, Mockito.withSettings().withoutAnnotations());
 
     EnhancedBigQueryStorageStubSettings.Builder builder =
         EnhancedBigQueryStorageStubSettings.newBuilder()

@@ -31,6 +31,7 @@ package com.google.api.gax.rpc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.core.ApiClock;
 import java.util.concurrent.ScheduledExecutorService;
@@ -48,9 +49,10 @@ class FixedWatchdogProviderTest {
   void testSameInstance() {
     Watchdog watchdog =
         Watchdog.createDuration(
-            Mockito.mock(ApiClock.class),
+            Mockito.mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()),
             java.time.Duration.ZERO,
-            Mockito.mock(ScheduledExecutorService.class));
+            Mockito.mock(
+                ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
 
     WatchdogProvider provider = FixedWatchdogProvider.create(watchdog);
     assertThat(provider.getWatchdog()).isSameInstanceAs(watchdog);
@@ -60,9 +62,10 @@ class FixedWatchdogProviderTest {
   void testNoModifications() {
     Watchdog watchdog =
         Watchdog.createDuration(
-            Mockito.mock(ApiClock.class),
+            Mockito.mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()),
             java.time.Duration.ZERO,
-            Mockito.mock(ScheduledExecutorService.class));
+            Mockito.mock(
+                ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
     WatchdogProvider provider = FixedWatchdogProvider.create(watchdog);
 
     assertThat(provider.needsCheckInterval()).isFalse();
@@ -80,7 +83,7 @@ class FixedWatchdogProviderTest {
 
     actualError = null;
     try {
-      provider.withClock(Mockito.mock(ApiClock.class));
+      provider.withClock(mock(ApiClock.class, Mockito.withSettings().withoutAnnotations()));
     } catch (Throwable t) {
       actualError = t;
     }
@@ -88,7 +91,9 @@ class FixedWatchdogProviderTest {
 
     actualError = null;
     try {
-      provider.withExecutor(Mockito.mock(ScheduledExecutorService.class));
+      provider.withExecutor(
+          Mockito.mock(
+              ScheduledExecutorService.class, Mockito.withSettings().withoutAnnotations()));
     } catch (Throwable t) {
       actualError = t;
     }

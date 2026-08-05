@@ -210,6 +210,9 @@ public class HttpJsonForwardingRulesStub extends ForwardingRulesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetForwardingRuleRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasView()) {
+                              serializer.putQueryParam(fields, "view", request.getView());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

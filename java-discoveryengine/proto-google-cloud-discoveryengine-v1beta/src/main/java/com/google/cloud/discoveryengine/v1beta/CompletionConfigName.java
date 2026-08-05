@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -197,7 +198,7 @@ public class CompletionConfigName implements ResourceName {
         .toString();
   }
 
-  public static CompletionConfigName parse(String formattedString) {
+  public static @Nullable CompletionConfigName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -232,7 +233,7 @@ public class CompletionConfigName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<CompletionConfigName> values) {
+  public static List<String> toStringList(List<@Nullable CompletionConfigName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (CompletionConfigName value : values) {
       if (value == null) {
@@ -288,7 +289,7 @@ public class CompletionConfigName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

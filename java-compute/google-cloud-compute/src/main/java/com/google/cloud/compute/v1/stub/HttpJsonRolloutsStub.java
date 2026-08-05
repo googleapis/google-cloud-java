@@ -33,12 +33,15 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.cloud.compute.v1.AdvanceRolloutRequest;
 import com.google.cloud.compute.v1.CancelRolloutRequest;
 import com.google.cloud.compute.v1.DeleteRolloutRequest;
 import com.google.cloud.compute.v1.GetRolloutRequest;
 import com.google.cloud.compute.v1.ListRolloutsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
+import com.google.cloud.compute.v1.PauseRolloutRequest;
+import com.google.cloud.compute.v1.ResumeRolloutRequest;
 import com.google.cloud.compute.v1.Rollout;
 import com.google.cloud.compute.v1.RolloutsListResponse;
 import com.google.protobuf.TypeRegistry;
@@ -62,6 +65,59 @@ import org.jspecify.annotations.NullMarked;
 public class HttpJsonRolloutsStub extends RolloutsStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder().add(Operation.getDescriptor()).build();
+
+  private static final ApiMethodDescriptor<AdvanceRolloutRequest, Operation>
+      advanceMethodDescriptor =
+          ApiMethodDescriptor.<AdvanceRolloutRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Rollouts/Advance")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<AdvanceRolloutRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/rollouts/{rollout}/advance",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<AdvanceRolloutRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "rollout", request.getRollout());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<AdvanceRolloutRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasCurrentWaveNumber()) {
+                              serializer.putQueryParam(
+                                  fields, "currentWaveNumber", request.getCurrentWaveNumber());
+                            }
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (AdvanceRolloutRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
 
   private static final ApiMethodDescriptor<CancelRolloutRequest, Operation> cancelMethodDescriptor =
       ApiMethodDescriptor.<CancelRolloutRequest, Operation>newBuilder()
@@ -247,6 +303,111 @@ public class HttpJsonRolloutsStub extends RolloutsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<PauseRolloutRequest, Operation> pauseMethodDescriptor =
+      ApiMethodDescriptor.<PauseRolloutRequest, Operation>newBuilder()
+          .setFullMethodName("google.cloud.compute.v1.Rollouts/Pause")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<PauseRolloutRequest>newBuilder()
+                  .setPath(
+                      "/compute/v1/projects/{project}/global/rollouts/{rollout}/pause",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<PauseRolloutRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "rollout", request.getRollout());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<PauseRolloutRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasEtag()) {
+                          serializer.putQueryParam(fields, "etag", request.getEtag());
+                        }
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                        }
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Operation>newBuilder()
+                  .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .setOperationSnapshotFactory(
+              (PauseRolloutRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
+          .build();
+
+  private static final ApiMethodDescriptor<ResumeRolloutRequest, Operation> resumeMethodDescriptor =
+      ApiMethodDescriptor.<ResumeRolloutRequest, Operation>newBuilder()
+          .setFullMethodName("google.cloud.compute.v1.Rollouts/Resume")
+          .setHttpMethod("POST")
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              ProtoMessageRequestFormatter.<ResumeRolloutRequest>newBuilder()
+                  .setPath(
+                      "/compute/v1/projects/{project}/global/rollouts/{rollout}/resume",
+                      request -> {
+                        Map<String, String> fields = new HashMap<>();
+                        ProtoRestSerializer<ResumeRolloutRequest> serializer =
+                            ProtoRestSerializer.create();
+                        serializer.putPathParam(fields, "project", request.getProject());
+                        serializer.putPathParam(fields, "rollout", request.getRollout());
+                        return fields;
+                      })
+                  .setQueryParamsExtractor(
+                      request -> {
+                        Map<String, List<String>> fields = new HashMap<>();
+                        ProtoRestSerializer<ResumeRolloutRequest> serializer =
+                            ProtoRestSerializer.create();
+                        if (request.hasEtag()) {
+                          serializer.putQueryParam(fields, "etag", request.getEtag());
+                        }
+                        if (request.hasRequestId()) {
+                          serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                        }
+                        return fields;
+                      })
+                  .setRequestBodyExtractor(request -> null)
+                  .build())
+          .setResponseParser(
+              ProtoMessageResponseParser.<Operation>newBuilder()
+                  .setDefaultInstance(Operation.getDefaultInstance())
+                  .setDefaultTypeRegistry(typeRegistry)
+                  .build())
+          .setOperationSnapshotFactory(
+              (ResumeRolloutRequest request, Operation response) -> {
+                StringBuilder opName = new StringBuilder(response.getName());
+                opName.append(":").append(request.getProject());
+                return HttpJsonOperationSnapshot.newBuilder()
+                    .setName(opName.toString())
+                    .setMetadata(response)
+                    .setDone(Status.DONE.equals(response.getStatus()))
+                    .setResponse(response)
+                    .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                    .build();
+              })
+          .build();
+
+  private final UnaryCallable<AdvanceRolloutRequest, Operation> advanceCallable;
+  private final OperationCallable<AdvanceRolloutRequest, Operation, Operation>
+      advanceOperationCallable;
   private final UnaryCallable<CancelRolloutRequest, Operation> cancelCallable;
   private final OperationCallable<CancelRolloutRequest, Operation, Operation>
       cancelOperationCallable;
@@ -256,11 +417,18 @@ public class HttpJsonRolloutsStub extends RolloutsStub {
   private final UnaryCallable<GetRolloutRequest, Rollout> getCallable;
   private final UnaryCallable<ListRolloutsRequest, RolloutsListResponse> listCallable;
   private final UnaryCallable<ListRolloutsRequest, ListPagedResponse> listPagedCallable;
+  private final UnaryCallable<PauseRolloutRequest, Operation> pauseCallable;
+  private final OperationCallable<PauseRolloutRequest, Operation, Operation> pauseOperationCallable;
+  private final UnaryCallable<ResumeRolloutRequest, Operation> resumeCallable;
+  private final OperationCallable<ResumeRolloutRequest, Operation, Operation>
+      resumeOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate ADVANCE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/rollouts/{rollout}");
   private static final PathTemplate CANCEL_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/global/rollouts/{rollout}");
   private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
@@ -269,6 +437,10 @@ public class HttpJsonRolloutsStub extends RolloutsStub {
       PathTemplate.create("projects/{project}/global/rollouts/{rollout}");
   private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}");
+  private static final PathTemplate PAUSE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/rollouts/{rollout}");
+  private static final PathTemplate RESUME_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/rollouts/{rollout}");
 
   public static final HttpJsonRolloutsStub create(RolloutsStubSettings settings)
       throws IOException {
@@ -309,6 +481,25 @@ public class HttpJsonRolloutsStub extends RolloutsStub {
     this.httpJsonOperationsStub =
         HttpJsonGlobalOperationsStub.create(clientContext, callableFactory);
 
+    HttpJsonCallSettings<AdvanceRolloutRequest, Operation> advanceTransportSettings =
+        HttpJsonCallSettings.<AdvanceRolloutRequest, Operation>newBuilder()
+            .setMethodDescriptor(advanceMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("rollout", String.valueOf(request.getRollout()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("rollout", String.valueOf(request.getRollout()));
+                  return ADVANCE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
     HttpJsonCallSettings<CancelRolloutRequest, Operation> cancelTransportSettings =
         HttpJsonCallSettings.<CancelRolloutRequest, Operation>newBuilder()
             .setMethodDescriptor(cancelMethodDescriptor)
@@ -383,7 +574,54 @@ public class HttpJsonRolloutsStub extends RolloutsStub {
                   return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
+    HttpJsonCallSettings<PauseRolloutRequest, Operation> pauseTransportSettings =
+        HttpJsonCallSettings.<PauseRolloutRequest, Operation>newBuilder()
+            .setMethodDescriptor(pauseMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("rollout", String.valueOf(request.getRollout()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("rollout", String.valueOf(request.getRollout()));
+                  return PAUSE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
+    HttpJsonCallSettings<ResumeRolloutRequest, Operation> resumeTransportSettings =
+        HttpJsonCallSettings.<ResumeRolloutRequest, Operation>newBuilder()
+            .setMethodDescriptor(resumeMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("rollout", String.valueOf(request.getRollout()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("rollout", String.valueOf(request.getRollout()));
+                  return RESUME_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
 
+    this.advanceCallable =
+        callableFactory.createUnaryCallable(
+            advanceTransportSettings, settings.advanceSettings(), clientContext);
+    this.advanceOperationCallable =
+        callableFactory.createOperationCallable(
+            advanceTransportSettings,
+            settings.advanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.cancelCallable =
         callableFactory.createUnaryCallable(
             cancelTransportSettings, settings.cancelSettings(), clientContext);
@@ -411,6 +649,24 @@ public class HttpJsonRolloutsStub extends RolloutsStub {
     this.listPagedCallable =
         callableFactory.createPagedCallable(
             listTransportSettings, settings.listSettings(), clientContext);
+    this.pauseCallable =
+        callableFactory.createUnaryCallable(
+            pauseTransportSettings, settings.pauseSettings(), clientContext);
+    this.pauseOperationCallable =
+        callableFactory.createOperationCallable(
+            pauseTransportSettings,
+            settings.pauseOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
+    this.resumeCallable =
+        callableFactory.createUnaryCallable(
+            resumeTransportSettings, settings.resumeSettings(), clientContext);
+    this.resumeOperationCallable =
+        callableFactory.createOperationCallable(
+            resumeTransportSettings,
+            settings.resumeOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -419,11 +675,24 @@ public class HttpJsonRolloutsStub extends RolloutsStub {
   @InternalApi
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(advanceMethodDescriptor);
     methodDescriptors.add(cancelMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
+    methodDescriptors.add(pauseMethodDescriptor);
+    methodDescriptors.add(resumeMethodDescriptor);
     return methodDescriptors;
+  }
+
+  @Override
+  public UnaryCallable<AdvanceRolloutRequest, Operation> advanceCallable() {
+    return advanceCallable;
+  }
+
+  @Override
+  public OperationCallable<AdvanceRolloutRequest, Operation, Operation> advanceOperationCallable() {
+    return advanceOperationCallable;
   }
 
   @Override
@@ -459,6 +728,26 @@ public class HttpJsonRolloutsStub extends RolloutsStub {
   @Override
   public UnaryCallable<ListRolloutsRequest, ListPagedResponse> listPagedCallable() {
     return listPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PauseRolloutRequest, Operation> pauseCallable() {
+    return pauseCallable;
+  }
+
+  @Override
+  public OperationCallable<PauseRolloutRequest, Operation, Operation> pauseOperationCallable() {
+    return pauseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ResumeRolloutRequest, Operation> resumeCallable() {
+    return resumeCallable;
+  }
+
+  @Override
+  public OperationCallable<ResumeRolloutRequest, Operation, Operation> resumeOperationCallable() {
+    return resumeOperationCallable;
   }
 
   @Override

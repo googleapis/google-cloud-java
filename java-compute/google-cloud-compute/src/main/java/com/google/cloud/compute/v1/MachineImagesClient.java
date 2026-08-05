@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -257,7 +258,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class MachineImagesClient implements BackgroundResource {
-  private final MachineImagesSettings settings;
+  private final @Nullable MachineImagesSettings settings;
   private final MachineImagesStub stub;
 
   /** Constructs an instance of MachineImagesClient with default settings. */
@@ -297,7 +298,7 @@ public class MachineImagesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MachineImagesSettings getSettings() {
+  public final @Nullable MachineImagesSettings getSettings() {
     return settings;
   }
 
@@ -1282,8 +1283,8 @@ public class MachineImagesClient implements BackgroundResource {
       extends AbstractPage<ListMachineImagesRequest, MachineImageList, MachineImage, ListPage> {
 
     private ListPage(
-        PageContext<ListMachineImagesRequest, MachineImageList, MachineImage> context,
-        MachineImageList response) {
+        @Nullable PageContext<ListMachineImagesRequest, MachineImageList, MachineImage> context,
+        @Nullable MachineImageList response) {
       super(context, response);
     }
 
@@ -1293,14 +1294,14 @@ public class MachineImagesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListMachineImagesRequest, MachineImageList, MachineImage> context,
-        MachineImageList response) {
+        @Nullable PageContext<ListMachineImagesRequest, MachineImageList, MachineImage> context,
+        @Nullable MachineImageList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListMachineImagesRequest, MachineImageList, MachineImage> context,
+        @Nullable PageContext<ListMachineImagesRequest, MachineImageList, MachineImage> context,
         ApiFuture<MachineImageList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1314,7 +1315,7 @@ public class MachineImagesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1323,7 +1324,8 @@ public class MachineImagesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

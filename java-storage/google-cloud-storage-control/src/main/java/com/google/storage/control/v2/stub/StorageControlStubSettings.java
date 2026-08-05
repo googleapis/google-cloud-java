@@ -21,6 +21,7 @@ import static com.google.storage.control.v2.StorageControlClient.ListFoldersPage
 import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingRevisionsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListManagedFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListRapidCachesPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.SummarizeIntelligenceFindingsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -70,6 +71,8 @@ import com.google.storage.control.v2.CreateAnywhereCacheMetadata;
 import com.google.storage.control.v2.CreateAnywhereCacheRequest;
 import com.google.storage.control.v2.CreateFolderRequest;
 import com.google.storage.control.v2.CreateManagedFolderRequest;
+import com.google.storage.control.v2.CreateRapidCacheMetadata;
+import com.google.storage.control.v2.CreateRapidCacheRequest;
 import com.google.storage.control.v2.DeleteFolderRecursiveMetadata;
 import com.google.storage.control.v2.DeleteFolderRecursiveRequest;
 import com.google.storage.control.v2.DeleteFolderRequest;
@@ -85,6 +88,7 @@ import com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest;
 import com.google.storage.control.v2.GetManagedFolderRequest;
 import com.google.storage.control.v2.GetOrganizationIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetProjectIntelligenceConfigRequest;
+import com.google.storage.control.v2.GetRapidCacheRequest;
 import com.google.storage.control.v2.GetStorageLayoutRequest;
 import com.google.storage.control.v2.IntelligenceConfig;
 import com.google.storage.control.v2.IntelligenceFinding;
@@ -99,8 +103,11 @@ import com.google.storage.control.v2.ListIntelligenceFindingsRequest;
 import com.google.storage.control.v2.ListIntelligenceFindingsResponse;
 import com.google.storage.control.v2.ListManagedFoldersRequest;
 import com.google.storage.control.v2.ListManagedFoldersResponse;
+import com.google.storage.control.v2.ListRapidCachesRequest;
+import com.google.storage.control.v2.ListRapidCachesResponse;
 import com.google.storage.control.v2.ManagedFolder;
 import com.google.storage.control.v2.PauseAnywhereCacheRequest;
+import com.google.storage.control.v2.RapidCache;
 import com.google.storage.control.v2.RenameFolderMetadata;
 import com.google.storage.control.v2.RenameFolderRequest;
 import com.google.storage.control.v2.ResumeAnywhereCacheRequest;
@@ -110,13 +117,17 @@ import com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse;
 import com.google.storage.control.v2.UpdateAnywhereCacheMetadata;
 import com.google.storage.control.v2.UpdateAnywhereCacheRequest;
 import com.google.storage.control.v2.UpdateFolderIntelligenceConfigRequest;
+import com.google.storage.control.v2.UpdateManagedFolderRequest;
 import com.google.storage.control.v2.UpdateOrganizationIntelligenceConfigRequest;
 import com.google.storage.control.v2.UpdateProjectIntelligenceConfigRequest;
+import com.google.storage.control.v2.UpdateRapidCacheMetadata;
+import com.google.storage.control.v2.UpdateRapidCacheRequest;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -229,6 +240,8 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
   private final PagedCallSettings<
           ListManagedFoldersRequest, ListManagedFoldersResponse, ListManagedFoldersPagedResponse>
       listManagedFoldersSettings;
+  private final UnaryCallSettings<UpdateManagedFolderRequest, ManagedFolder>
+      updateManagedFolderSettings;
   private final UnaryCallSettings<CreateAnywhereCacheRequest, Operation>
       createAnywhereCacheSettings;
   private final OperationCallSettings<
@@ -249,6 +262,16 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
   private final PagedCallSettings<
           ListAnywhereCachesRequest, ListAnywhereCachesResponse, ListAnywhereCachesPagedResponse>
       listAnywhereCachesSettings;
+  private final UnaryCallSettings<CreateRapidCacheRequest, Operation> createRapidCacheSettings;
+  private final OperationCallSettings<CreateRapidCacheRequest, RapidCache, CreateRapidCacheMetadata>
+      createRapidCacheOperationSettings;
+  private final UnaryCallSettings<UpdateRapidCacheRequest, Operation> updateRapidCacheSettings;
+  private final OperationCallSettings<UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
+      updateRapidCacheOperationSettings;
+  private final UnaryCallSettings<GetRapidCacheRequest, RapidCache> getRapidCacheSettings;
+  private final PagedCallSettings<
+          ListRapidCachesRequest, ListRapidCachesResponse, ListRapidCachesPagedResponse>
+      listRapidCachesSettings;
   private final UnaryCallSettings<GetProjectIntelligenceConfigRequest, IntelligenceConfig>
       getProjectIntelligenceConfigSettings;
   private final UnaryCallSettings<UpdateProjectIntelligenceConfigRequest, IntelligenceConfig>
@@ -393,6 +416,43 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
             @Override
             public Iterable<AnywhereCache> extractResources(ListAnywhereCachesResponse payload) {
               return payload.getAnywhereCachesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListRapidCachesRequest, ListRapidCachesResponse, RapidCache>
+      LIST_RAPID_CACHES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListRapidCachesRequest, ListRapidCachesResponse, RapidCache>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRapidCachesRequest injectToken(
+                ListRapidCachesRequest payload, String token) {
+              return ListRapidCachesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRapidCachesRequest injectPageSize(
+                ListRapidCachesRequest payload, int pageSize) {
+              return ListRapidCachesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRapidCachesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRapidCachesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RapidCache> extractResources(ListRapidCachesResponse payload) {
+              return payload.getRapidCachesList();
             }
           };
 
@@ -595,6 +655,23 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
           };
 
   private static final PagedListResponseFactory<
+          ListRapidCachesRequest, ListRapidCachesResponse, ListRapidCachesPagedResponse>
+      LIST_RAPID_CACHES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRapidCachesRequest, ListRapidCachesResponse, ListRapidCachesPagedResponse>() {
+            @Override
+            public ApiFuture<ListRapidCachesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRapidCachesRequest, ListRapidCachesResponse> callable,
+                ListRapidCachesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRapidCachesResponse> futureResponse) {
+              PageContext<ListRapidCachesRequest, ListRapidCachesResponse, RapidCache> pageContext =
+                  PageContext.create(callable, LIST_RAPID_CACHES_PAGE_STR_DESC, request, context);
+              return ListRapidCachesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListIntelligenceFindingsRequest,
           ListIntelligenceFindingsResponse,
           ListIntelligenceFindingsPagedResponse>
@@ -758,6 +835,12 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     return listManagedFoldersSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateManagedFolder. */
+  public UnaryCallSettings<UpdateManagedFolderRequest, ManagedFolder>
+      updateManagedFolderSettings() {
+    return updateManagedFolderSettings;
+  }
+
   /** Returns the object with the settings used for calls to createAnywhereCache. */
   public UnaryCallSettings<CreateAnywhereCacheRequest, Operation> createAnywhereCacheSettings() {
     return createAnywhereCacheSettings;
@@ -809,6 +892,40 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
           ListAnywhereCachesRequest, ListAnywhereCachesResponse, ListAnywhereCachesPagedResponse>
       listAnywhereCachesSettings() {
     return listAnywhereCachesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createRapidCache. */
+  public UnaryCallSettings<CreateRapidCacheRequest, Operation> createRapidCacheSettings() {
+    return createRapidCacheSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createRapidCache. */
+  public OperationCallSettings<CreateRapidCacheRequest, RapidCache, CreateRapidCacheMetadata>
+      createRapidCacheOperationSettings() {
+    return createRapidCacheOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRapidCache. */
+  public UnaryCallSettings<UpdateRapidCacheRequest, Operation> updateRapidCacheSettings() {
+    return updateRapidCacheSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateRapidCache. */
+  public OperationCallSettings<UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
+      updateRapidCacheOperationSettings() {
+    return updateRapidCacheOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getRapidCache. */
+  public UnaryCallSettings<GetRapidCacheRequest, RapidCache> getRapidCacheSettings() {
+    return getRapidCacheSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRapidCaches. */
+  public PagedCallSettings<
+          ListRapidCachesRequest, ListRapidCachesResponse, ListRapidCachesPagedResponse>
+      listRapidCachesSettings() {
+    return listRapidCachesSettings;
   }
 
   /** Returns the object with the settings used for calls to getProjectIntelligenceConfig. */
@@ -1003,7 +1120,7 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -1029,6 +1146,7 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     deleteManagedFolderSettings = settingsBuilder.deleteManagedFolderSettings().build();
     getManagedFolderSettings = settingsBuilder.getManagedFolderSettings().build();
     listManagedFoldersSettings = settingsBuilder.listManagedFoldersSettings().build();
+    updateManagedFolderSettings = settingsBuilder.updateManagedFolderSettings().build();
     createAnywhereCacheSettings = settingsBuilder.createAnywhereCacheSettings().build();
     createAnywhereCacheOperationSettings =
         settingsBuilder.createAnywhereCacheOperationSettings().build();
@@ -1040,6 +1158,12 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     resumeAnywhereCacheSettings = settingsBuilder.resumeAnywhereCacheSettings().build();
     getAnywhereCacheSettings = settingsBuilder.getAnywhereCacheSettings().build();
     listAnywhereCachesSettings = settingsBuilder.listAnywhereCachesSettings().build();
+    createRapidCacheSettings = settingsBuilder.createRapidCacheSettings().build();
+    createRapidCacheOperationSettings = settingsBuilder.createRapidCacheOperationSettings().build();
+    updateRapidCacheSettings = settingsBuilder.updateRapidCacheSettings().build();
+    updateRapidCacheOperationSettings = settingsBuilder.updateRapidCacheOperationSettings().build();
+    getRapidCacheSettings = settingsBuilder.getRapidCacheSettings().build();
+    listRapidCachesSettings = settingsBuilder.listRapidCachesSettings().build();
     getProjectIntelligenceConfigSettings =
         settingsBuilder.getProjectIntelligenceConfigSettings().build();
     updateProjectIntelligenceConfigSettings =
@@ -1102,6 +1226,8 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     private final PagedCallSettings.Builder<
             ListManagedFoldersRequest, ListManagedFoldersResponse, ListManagedFoldersPagedResponse>
         listManagedFoldersSettings;
+    private final UnaryCallSettings.Builder<UpdateManagedFolderRequest, ManagedFolder>
+        updateManagedFolderSettings;
     private final UnaryCallSettings.Builder<CreateAnywhereCacheRequest, Operation>
         createAnywhereCacheSettings;
     private final OperationCallSettings.Builder<
@@ -1123,6 +1249,20 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     private final PagedCallSettings.Builder<
             ListAnywhereCachesRequest, ListAnywhereCachesResponse, ListAnywhereCachesPagedResponse>
         listAnywhereCachesSettings;
+    private final UnaryCallSettings.Builder<CreateRapidCacheRequest, Operation>
+        createRapidCacheSettings;
+    private final OperationCallSettings.Builder<
+            CreateRapidCacheRequest, RapidCache, CreateRapidCacheMetadata>
+        createRapidCacheOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateRapidCacheRequest, Operation>
+        updateRapidCacheSettings;
+    private final OperationCallSettings.Builder<
+            UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
+        updateRapidCacheOperationSettings;
+    private final UnaryCallSettings.Builder<GetRapidCacheRequest, RapidCache> getRapidCacheSettings;
+    private final PagedCallSettings.Builder<
+            ListRapidCachesRequest, ListRapidCachesResponse, ListRapidCachesPagedResponse>
+        listRapidCachesSettings;
     private final UnaryCallSettings.Builder<GetProjectIntelligenceConfigRequest, IntelligenceConfig>
         getProjectIntelligenceConfigSettings;
     private final UnaryCallSettings.Builder<
@@ -1175,7 +1315,6 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.RESOURCE_EXHAUSTED,
                   StatusCode.Code.UNAVAILABLE,
-                  StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNKNOWN)));
       definitions.put(
@@ -1214,7 +1353,7 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       createFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1230,6 +1369,7 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
       deleteManagedFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getManagedFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listManagedFoldersSettings = PagedCallSettings.newBuilder(LIST_MANAGED_FOLDERS_PAGE_STR_FACT);
+      updateManagedFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAnywhereCacheSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createAnywhereCacheOperationSettings = OperationCallSettings.newBuilder();
       updateAnywhereCacheSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1239,6 +1379,12 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
       resumeAnywhereCacheSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getAnywhereCacheSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listAnywhereCachesSettings = PagedCallSettings.newBuilder(LIST_ANYWHERE_CACHES_PAGE_STR_FACT);
+      createRapidCacheSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createRapidCacheOperationSettings = OperationCallSettings.newBuilder();
+      updateRapidCacheSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateRapidCacheOperationSettings = OperationCallSettings.newBuilder();
+      getRapidCacheSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listRapidCachesSettings = PagedCallSettings.newBuilder(LIST_RAPID_CACHES_PAGE_STR_FACT);
       getProjectIntelligenceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateProjectIntelligenceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getFolderIntelligenceConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1271,6 +1417,7 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
               deleteManagedFolderSettings,
               getManagedFolderSettings,
               listManagedFoldersSettings,
+              updateManagedFolderSettings,
               createAnywhereCacheSettings,
               updateAnywhereCacheSettings,
               disableAnywhereCacheSettings,
@@ -1278,6 +1425,10 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
               resumeAnywhereCacheSettings,
               getAnywhereCacheSettings,
               listAnywhereCachesSettings,
+              createRapidCacheSettings,
+              updateRapidCacheSettings,
+              getRapidCacheSettings,
+              listRapidCachesSettings,
               getProjectIntelligenceConfigSettings,
               updateProjectIntelligenceConfigSettings,
               getFolderIntelligenceConfigSettings,
@@ -1312,6 +1463,7 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
       deleteManagedFolderSettings = settings.deleteManagedFolderSettings.toBuilder();
       getManagedFolderSettings = settings.getManagedFolderSettings.toBuilder();
       listManagedFoldersSettings = settings.listManagedFoldersSettings.toBuilder();
+      updateManagedFolderSettings = settings.updateManagedFolderSettings.toBuilder();
       createAnywhereCacheSettings = settings.createAnywhereCacheSettings.toBuilder();
       createAnywhereCacheOperationSettings =
           settings.createAnywhereCacheOperationSettings.toBuilder();
@@ -1323,6 +1475,12 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
       resumeAnywhereCacheSettings = settings.resumeAnywhereCacheSettings.toBuilder();
       getAnywhereCacheSettings = settings.getAnywhereCacheSettings.toBuilder();
       listAnywhereCachesSettings = settings.listAnywhereCachesSettings.toBuilder();
+      createRapidCacheSettings = settings.createRapidCacheSettings.toBuilder();
+      createRapidCacheOperationSettings = settings.createRapidCacheOperationSettings.toBuilder();
+      updateRapidCacheSettings = settings.updateRapidCacheSettings.toBuilder();
+      updateRapidCacheOperationSettings = settings.updateRapidCacheOperationSettings.toBuilder();
+      getRapidCacheSettings = settings.getRapidCacheSettings.toBuilder();
+      listRapidCachesSettings = settings.listRapidCachesSettings.toBuilder();
       getProjectIntelligenceConfigSettings =
           settings.getProjectIntelligenceConfigSettings.toBuilder();
       updateProjectIntelligenceConfigSettings =
@@ -1360,6 +1518,7 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
               deleteManagedFolderSettings,
               getManagedFolderSettings,
               listManagedFoldersSettings,
+              updateManagedFolderSettings,
               createAnywhereCacheSettings,
               updateAnywhereCacheSettings,
               disableAnywhereCacheSettings,
@@ -1367,6 +1526,10 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
               resumeAnywhereCacheSettings,
               getAnywhereCacheSettings,
               listAnywhereCachesSettings,
+              createRapidCacheSettings,
+              updateRapidCacheSettings,
+              getRapidCacheSettings,
+              listRapidCachesSettings,
               getProjectIntelligenceConfigSettings,
               updateProjectIntelligenceConfigSettings,
               getFolderIntelligenceConfigSettings,
@@ -1464,6 +1627,11 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .updateManagedFolderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .createAnywhereCacheSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -1497,6 +1665,26 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
           .listAnywhereCachesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createRapidCacheSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateRapidCacheSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getRapidCacheSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listRapidCachesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getProjectIntelligenceConfigSettings()
@@ -1667,6 +1855,54 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createRapidCacheOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateRapidCacheRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RapidCache.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(CreateRapidCacheMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateRapidCacheOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateRapidCacheRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(RapidCache.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(UpdateRapidCacheMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1762,6 +1998,12 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
       return listManagedFoldersSettings;
     }
 
+    /** Returns the builder for the settings used for calls to updateManagedFolder. */
+    public UnaryCallSettings.Builder<UpdateManagedFolderRequest, ManagedFolder>
+        updateManagedFolderSettings() {
+      return updateManagedFolderSettings;
+    }
+
     /** Returns the builder for the settings used for calls to createAnywhereCache. */
     public UnaryCallSettings.Builder<CreateAnywhereCacheRequest, Operation>
         createAnywhereCacheSettings() {
@@ -1817,6 +2059,44 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
             ListAnywhereCachesRequest, ListAnywhereCachesResponse, ListAnywhereCachesPagedResponse>
         listAnywhereCachesSettings() {
       return listAnywhereCachesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createRapidCache. */
+    public UnaryCallSettings.Builder<CreateRapidCacheRequest, Operation>
+        createRapidCacheSettings() {
+      return createRapidCacheSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createRapidCache. */
+    public OperationCallSettings.Builder<
+            CreateRapidCacheRequest, RapidCache, CreateRapidCacheMetadata>
+        createRapidCacheOperationSettings() {
+      return createRapidCacheOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRapidCache. */
+    public UnaryCallSettings.Builder<UpdateRapidCacheRequest, Operation>
+        updateRapidCacheSettings() {
+      return updateRapidCacheSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateRapidCache. */
+    public OperationCallSettings.Builder<
+            UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
+        updateRapidCacheOperationSettings() {
+      return updateRapidCacheOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getRapidCache. */
+    public UnaryCallSettings.Builder<GetRapidCacheRequest, RapidCache> getRapidCacheSettings() {
+      return getRapidCacheSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listRapidCaches. */
+    public PagedCallSettings.Builder<
+            ListRapidCachesRequest, ListRapidCachesResponse, ListRapidCachesPagedResponse>
+        listRapidCachesSettings() {
+      return listRapidCachesSettings;
     }
 
     /** Returns the builder for the settings used for calls to getProjectIntelligenceConfig. */

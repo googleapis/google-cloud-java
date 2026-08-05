@@ -94,6 +94,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -720,7 +721,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class DatabaseAdminClient implements BackgroundResource {
-  private final DatabaseAdminSettings settings;
+  private final @Nullable DatabaseAdminSettings settings;
   private final DatabaseAdminStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -768,7 +769,7 @@ public class DatabaseAdminClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DatabaseAdminSettings getSettings() {
+  public final @Nullable DatabaseAdminSettings getSettings() {
     return settings;
   }
 
@@ -817,7 +818,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatabasesPagedResponse listDatabases(InstanceName parent) {
+  public final ListDatabasesPagedResponse listDatabases(@Nullable InstanceName parent) {
     ListDatabasesRequest request =
         ListDatabasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -992,7 +993,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Database, CreateDatabaseMetadata> createDatabaseAsync(
-      InstanceName parent, String createStatement) {
+      @Nullable InstanceName parent, String createStatement) {
     CreateDatabaseRequest request =
         CreateDatabaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1186,7 +1187,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Database getDatabase(DatabaseName name) {
+  public final Database getDatabase(@Nullable DatabaseName name) {
     GetDatabaseRequest request =
         GetDatabaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDatabase(request);
@@ -1533,7 +1534,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, UpdateDatabaseDdlMetadata> updateDatabaseDdlAsync(
-      DatabaseName database, List<String> statements) {
+      @Nullable DatabaseName database, List<String> statements) {
     UpdateDatabaseDdlRequest request =
         UpdateDatabaseDdlRequest.newBuilder()
             .setDatabase(database == null ? null : database.toString())
@@ -1720,7 +1721,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @param database Required. The database to be dropped.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void dropDatabase(DatabaseName database) {
+  public final void dropDatabase(@Nullable DatabaseName database) {
     DropDatabaseRequest request =
         DropDatabaseRequest.newBuilder()
             .setDatabase(database == null ? null : database.toString())
@@ -1839,7 +1840,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GetDatabaseDdlResponse getDatabaseDdl(DatabaseName database) {
+  public final GetDatabaseDdlResponse getDatabaseDdl(@Nullable DatabaseName database) {
     GetDatabaseDdlRequest request =
         GetDatabaseDdlRequest.newBuilder()
             .setDatabase(database == null ? null : database.toString())
@@ -1969,7 +1970,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2112,7 +2113,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2256,7 +2257,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2419,7 +2420,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, CreateBackupMetadata> createBackupAsync(
-      InstanceName parent, Backup backup, String backupId) {
+      @Nullable InstanceName parent, Backup backup, String backupId) {
     CreateBackupRequest request =
         CreateBackupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2647,7 +2648,10 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, CopyBackupMetadata> copyBackupAsync(
-      InstanceName parent, String backupId, BackupName sourceBackup, Timestamp expireTime) {
+      @Nullable InstanceName parent,
+      String backupId,
+      @Nullable BackupName sourceBackup,
+      Timestamp expireTime) {
     CopyBackupRequest request =
         CopyBackupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2705,7 +2709,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, CopyBackupMetadata> copyBackupAsync(
-      InstanceName parent, String backupId, String sourceBackup, Timestamp expireTime) {
+      @Nullable InstanceName parent, String backupId, String sourceBackup, Timestamp expireTime) {
     CopyBackupRequest request =
         CopyBackupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2763,7 +2767,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, CopyBackupMetadata> copyBackupAsync(
-      String parent, String backupId, BackupName sourceBackup, Timestamp expireTime) {
+      String parent, String backupId, @Nullable BackupName sourceBackup, Timestamp expireTime) {
     CopyBackupRequest request =
         CopyBackupRequest.newBuilder()
             .setParent(parent)
@@ -2978,7 +2982,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Backup getBackup(BackupName name) {
+  public final Backup getBackup(@Nullable BackupName name) {
     GetBackupRequest request =
         GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackup(request);
@@ -3179,7 +3183,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/backups/&lt;backup&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBackup(BackupName name) {
+  public final void deleteBackup(@Nullable BackupName name) {
     DeleteBackupRequest request =
         DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteBackup(request);
@@ -3292,7 +3296,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupsPagedResponse listBackups(InstanceName parent) {
+  public final ListBackupsPagedResponse listBackups(@Nullable InstanceName parent) {
     ListBackupsRequest request =
         ListBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3485,7 +3489,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Database, RestoreDatabaseMetadata> restoreDatabaseAsync(
-      InstanceName parent, String databaseId, BackupName backup) {
+      @Nullable InstanceName parent, String databaseId, @Nullable BackupName backup) {
     RestoreDatabaseRequest request =
         RestoreDatabaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3542,7 +3546,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Database, RestoreDatabaseMetadata> restoreDatabaseAsync(
-      InstanceName parent, String databaseId, String backup) {
+      @Nullable InstanceName parent, String databaseId, String backup) {
     RestoreDatabaseRequest request =
         RestoreDatabaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3599,7 +3603,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Database, RestoreDatabaseMetadata> restoreDatabaseAsync(
-      String parent, String databaseId, BackupName backup) {
+      String parent, String databaseId, @Nullable BackupName backup) {
     RestoreDatabaseRequest request =
         RestoreDatabaseRequest.newBuilder()
             .setParent(parent)
@@ -3826,7 +3830,8 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatabaseOperationsPagedResponse listDatabaseOperations(InstanceName parent) {
+  public final ListDatabaseOperationsPagedResponse listDatabaseOperations(
+      @Nullable InstanceName parent) {
     ListDatabaseOperationsRequest request =
         ListDatabaseOperationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4024,7 +4029,8 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupOperationsPagedResponse listBackupOperations(InstanceName parent) {
+  public final ListBackupOperationsPagedResponse listBackupOperations(
+      @Nullable InstanceName parent) {
     ListBackupOperationsRequest request =
         ListBackupOperationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4223,7 +4229,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatabaseRolesPagedResponse listDatabaseRoles(DatabaseName parent) {
+  public final ListDatabaseRolesPagedResponse listDatabaseRoles(@Nullable DatabaseName parent) {
     ListDatabaseRolesRequest request =
         ListDatabaseRolesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4392,7 +4398,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AddSplitPointsResponse addSplitPoints(
-      DatabaseName database, List<SplitPoints> splitPoints) {
+      @Nullable DatabaseName database, List<SplitPoints> splitPoints) {
     AddSplitPointsRequest request =
         AddSplitPointsRequest.newBuilder()
             .setDatabase(database == null ? null : database.toString())
@@ -4526,7 +4532,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BackupSchedule createBackupSchedule(
-      DatabaseName parent, BackupSchedule backupSchedule, String backupScheduleId) {
+      @Nullable DatabaseName parent, BackupSchedule backupSchedule, String backupScheduleId) {
     CreateBackupScheduleRequest request =
         CreateBackupScheduleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4659,7 +4665,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;/backupSchedules/&lt;backup_schedule_id&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupSchedule getBackupSchedule(BackupScheduleName name) {
+  public final BackupSchedule getBackupSchedule(@Nullable BackupScheduleName name) {
     GetBackupScheduleRequest request =
         GetBackupScheduleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4875,7 +4881,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;/backupSchedules/&lt;backup_schedule_id&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBackupSchedule(BackupScheduleName name) {
+  public final void deleteBackupSchedule(@Nullable BackupScheduleName name) {
     DeleteBackupScheduleRequest request =
         DeleteBackupScheduleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4997,7 +5003,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    *     projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupSchedulesPagedResponse listBackupSchedules(DatabaseName parent) {
+  public final ListBackupSchedulesPagedResponse listBackupSchedules(@Nullable DatabaseName parent) {
     ListBackupSchedulesRequest request =
         ListBackupSchedulesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5168,7 +5174,7 @@ public class DatabaseAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final InternalUpdateGraphOperationResponse internalUpdateGraphOperation(
-      DatabaseName database, String operationId) {
+      @Nullable DatabaseName database, String operationId) {
     InternalUpdateGraphOperationRequest request =
         InternalUpdateGraphOperationRequest.newBuilder()
             .setDatabase(database == null ? null : database.toString())
@@ -5341,8 +5347,8 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListDatabasesRequest, ListDatabasesResponse, Database, ListDatabasesPage> {
 
     private ListDatabasesPage(
-        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
-        ListDatabasesResponse response) {
+        @Nullable PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        @Nullable ListDatabasesResponse response) {
       super(context, response);
     }
 
@@ -5352,14 +5358,14 @@ public class DatabaseAdminClient implements BackgroundResource {
 
     @Override
     protected ListDatabasesPage createPage(
-        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
-        ListDatabasesResponse response) {
+        @Nullable PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        @Nullable ListDatabasesResponse response) {
       return new ListDatabasesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatabasesPage> createPageAsync(
-        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        @Nullable PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
         ApiFuture<ListDatabasesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5373,7 +5379,8 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListDatabasesPage,
           ListDatabasesFixedSizeCollection> {
 
-    private ListDatabasesFixedSizeCollection(List<ListDatabasesPage> pages, int collectionSize) {
+    private ListDatabasesFixedSizeCollection(
+        @Nullable List<ListDatabasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5383,7 +5390,7 @@ public class DatabaseAdminClient implements BackgroundResource {
 
     @Override
     protected ListDatabasesFixedSizeCollection createCollection(
-        List<ListDatabasesPage> pages, int collectionSize) {
+        @Nullable List<ListDatabasesPage> pages, int collectionSize) {
       return new ListDatabasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5414,8 +5421,8 @@ public class DatabaseAdminClient implements BackgroundResource {
       extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
 
     private ListBackupsPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       super(context, response);
     }
 
@@ -5425,14 +5432,14 @@ public class DatabaseAdminClient implements BackgroundResource {
 
     @Override
     protected ListBackupsPage createPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       return new ListBackupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupsPage> createPageAsync(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
         ApiFuture<ListBackupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5446,7 +5453,8 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
-    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+    private ListBackupsFixedSizeCollection(
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5456,7 +5464,7 @@ public class DatabaseAdminClient implements BackgroundResource {
 
     @Override
     protected ListBackupsFixedSizeCollection createCollection(
-        List<ListBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5494,9 +5502,10 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListDatabaseOperationsPage> {
 
     private ListDatabaseOperationsPage(
-        PageContext<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
+        @Nullable
+            PageContext<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
             context,
-        ListDatabaseOperationsResponse response) {
+        @Nullable ListDatabaseOperationsResponse response) {
       super(context, response);
     }
 
@@ -5506,15 +5515,17 @@ public class DatabaseAdminClient implements BackgroundResource {
 
     @Override
     protected ListDatabaseOperationsPage createPage(
-        PageContext<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
+        @Nullable
+            PageContext<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
             context,
-        ListDatabaseOperationsResponse response) {
+        @Nullable ListDatabaseOperationsResponse response) {
       return new ListDatabaseOperationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatabaseOperationsPage> createPageAsync(
-        PageContext<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
+        @Nullable
+            PageContext<ListDatabaseOperationsRequest, ListDatabaseOperationsResponse, Operation>
             context,
         ApiFuture<ListDatabaseOperationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -5530,7 +5541,7 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListDatabaseOperationsFixedSizeCollection> {
 
     private ListDatabaseOperationsFixedSizeCollection(
-        List<ListDatabaseOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListDatabaseOperationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5540,7 +5551,7 @@ public class DatabaseAdminClient implements BackgroundResource {
 
     @Override
     protected ListDatabaseOperationsFixedSizeCollection createCollection(
-        List<ListDatabaseOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListDatabaseOperationsPage> pages, int collectionSize) {
       return new ListDatabaseOperationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5577,8 +5588,9 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListBackupOperationsPage> {
 
     private ListBackupOperationsPage(
-        PageContext<ListBackupOperationsRequest, ListBackupOperationsResponse, Operation> context,
-        ListBackupOperationsResponse response) {
+        @Nullable PageContext<ListBackupOperationsRequest, ListBackupOperationsResponse, Operation>
+            context,
+        @Nullable ListBackupOperationsResponse response) {
       super(context, response);
     }
 
@@ -5588,14 +5600,16 @@ public class DatabaseAdminClient implements BackgroundResource {
 
     @Override
     protected ListBackupOperationsPage createPage(
-        PageContext<ListBackupOperationsRequest, ListBackupOperationsResponse, Operation> context,
-        ListBackupOperationsResponse response) {
+        @Nullable PageContext<ListBackupOperationsRequest, ListBackupOperationsResponse, Operation>
+            context,
+        @Nullable ListBackupOperationsResponse response) {
       return new ListBackupOperationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupOperationsPage> createPageAsync(
-        PageContext<ListBackupOperationsRequest, ListBackupOperationsResponse, Operation> context,
+        @Nullable PageContext<ListBackupOperationsRequest, ListBackupOperationsResponse, Operation>
+            context,
         ApiFuture<ListBackupOperationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5610,7 +5624,7 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListBackupOperationsFixedSizeCollection> {
 
     private ListBackupOperationsFixedSizeCollection(
-        List<ListBackupOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupOperationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5620,7 +5634,7 @@ public class DatabaseAdminClient implements BackgroundResource {
 
     @Override
     protected ListBackupOperationsFixedSizeCollection createCollection(
-        List<ListBackupOperationsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupOperationsPage> pages, int collectionSize) {
       return new ListBackupOperationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5657,8 +5671,9 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListDatabaseRolesPage> {
 
     private ListDatabaseRolesPage(
-        PageContext<ListDatabaseRolesRequest, ListDatabaseRolesResponse, DatabaseRole> context,
-        ListDatabaseRolesResponse response) {
+        @Nullable PageContext<ListDatabaseRolesRequest, ListDatabaseRolesResponse, DatabaseRole>
+            context,
+        @Nullable ListDatabaseRolesResponse response) {
       super(context, response);
     }
 
@@ -5668,14 +5683,16 @@ public class DatabaseAdminClient implements BackgroundResource {
 
     @Override
     protected ListDatabaseRolesPage createPage(
-        PageContext<ListDatabaseRolesRequest, ListDatabaseRolesResponse, DatabaseRole> context,
-        ListDatabaseRolesResponse response) {
+        @Nullable PageContext<ListDatabaseRolesRequest, ListDatabaseRolesResponse, DatabaseRole>
+            context,
+        @Nullable ListDatabaseRolesResponse response) {
       return new ListDatabaseRolesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatabaseRolesPage> createPageAsync(
-        PageContext<ListDatabaseRolesRequest, ListDatabaseRolesResponse, DatabaseRole> context,
+        @Nullable PageContext<ListDatabaseRolesRequest, ListDatabaseRolesResponse, DatabaseRole>
+            context,
         ApiFuture<ListDatabaseRolesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5690,7 +5707,7 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListDatabaseRolesFixedSizeCollection> {
 
     private ListDatabaseRolesFixedSizeCollection(
-        List<ListDatabaseRolesPage> pages, int collectionSize) {
+        @Nullable List<ListDatabaseRolesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5700,7 +5717,7 @@ public class DatabaseAdminClient implements BackgroundResource {
 
     @Override
     protected ListDatabaseRolesFixedSizeCollection createCollection(
-        List<ListDatabaseRolesPage> pages, int collectionSize) {
+        @Nullable List<ListDatabaseRolesPage> pages, int collectionSize) {
       return new ListDatabaseRolesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5738,9 +5755,10 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListBackupSchedulesPage> {
 
     private ListBackupSchedulesPage(
-        PageContext<ListBackupSchedulesRequest, ListBackupSchedulesResponse, BackupSchedule>
+        @Nullable
+            PageContext<ListBackupSchedulesRequest, ListBackupSchedulesResponse, BackupSchedule>
             context,
-        ListBackupSchedulesResponse response) {
+        @Nullable ListBackupSchedulesResponse response) {
       super(context, response);
     }
 
@@ -5750,15 +5768,17 @@ public class DatabaseAdminClient implements BackgroundResource {
 
     @Override
     protected ListBackupSchedulesPage createPage(
-        PageContext<ListBackupSchedulesRequest, ListBackupSchedulesResponse, BackupSchedule>
+        @Nullable
+            PageContext<ListBackupSchedulesRequest, ListBackupSchedulesResponse, BackupSchedule>
             context,
-        ListBackupSchedulesResponse response) {
+        @Nullable ListBackupSchedulesResponse response) {
       return new ListBackupSchedulesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupSchedulesPage> createPageAsync(
-        PageContext<ListBackupSchedulesRequest, ListBackupSchedulesResponse, BackupSchedule>
+        @Nullable
+            PageContext<ListBackupSchedulesRequest, ListBackupSchedulesResponse, BackupSchedule>
             context,
         ApiFuture<ListBackupSchedulesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -5774,7 +5794,7 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListBackupSchedulesFixedSizeCollection> {
 
     private ListBackupSchedulesFixedSizeCollection(
-        List<ListBackupSchedulesPage> pages, int collectionSize) {
+        @Nullable List<ListBackupSchedulesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5784,7 +5804,7 @@ public class DatabaseAdminClient implements BackgroundResource {
 
     @Override
     protected ListBackupSchedulesFixedSizeCollection createCollection(
-        List<ListBackupSchedulesPage> pages, int collectionSize) {
+        @Nullable List<ListBackupSchedulesPage> pages, int collectionSize) {
       return new ListBackupSchedulesFixedSizeCollection(pages, collectionSize);
     }
   }

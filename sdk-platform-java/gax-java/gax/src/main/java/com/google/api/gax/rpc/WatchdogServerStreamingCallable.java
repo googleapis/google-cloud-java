@@ -31,6 +31,7 @@ package com.google.api.gax.rpc;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A callable that uses a {@link Watchdog} to monitor streams.
@@ -42,6 +43,7 @@ import com.google.common.base.Preconditions;
  *
  * @see Watchdog for more details
  */
+@NullMarked
 class WatchdogServerStreamingCallable<RequestT, ResponseT>
     extends ServerStreamingCallable<RequestT, ResponseT> {
   private final ServerStreamingCallable<RequestT, ResponseT> inner;

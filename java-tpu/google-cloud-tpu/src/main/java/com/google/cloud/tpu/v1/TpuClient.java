@@ -40,6 +40,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -346,7 +347,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TpuClient implements BackgroundResource {
-  private final TpuSettings settings;
+  private final @Nullable TpuSettings settings;
   private final TpuStub stub;
   private final OperationsClient operationsClient;
 
@@ -387,7 +388,7 @@ public class TpuClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final TpuSettings getSettings() {
+  public final @Nullable TpuSettings getSettings() {
     return settings;
   }
 
@@ -426,7 +427,7 @@ public class TpuClient implements BackgroundResource {
    * @param parent Required. The parent resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListNodesPagedResponse listNodes(LocationName parent) {
+  public final ListNodesPagedResponse listNodes(@Nullable LocationName parent) {
     ListNodesRequest request =
         ListNodesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listNodes(request);
@@ -582,7 +583,7 @@ public class TpuClient implements BackgroundResource {
    * @param name Required. The resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Node getNode(NodeName name) {
+  public final Node getNode(@Nullable NodeName name) {
     GetNodeRequest request =
         GetNodeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNode(request);
@@ -695,7 +696,7 @@ public class TpuClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Node, OperationMetadata> createNodeAsync(
-      LocationName parent, Node node, String nodeId) {
+      @Nullable LocationName parent, Node node, String nodeId) {
     CreateNodeRequest request =
         CreateNodeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -848,7 +849,7 @@ public class TpuClient implements BackgroundResource {
    * @param name Required. The resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Node, OperationMetadata> deleteNodeAsync(NodeName name) {
+  public final OperationFuture<Node, OperationMetadata> deleteNodeAsync(@Nullable NodeName name) {
     DeleteNodeRequest request =
         DeleteNodeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteNodeAsync(request);
@@ -1227,7 +1228,7 @@ public class TpuClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTensorFlowVersionsPagedResponse listTensorFlowVersions(
-      TensorFlowVersionName parent) {
+      @Nullable TensorFlowVersionName parent) {
     ListTensorFlowVersionsRequest request =
         ListTensorFlowVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1405,7 +1406,7 @@ public class TpuClient implements BackgroundResource {
    * @param name Required. The resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TensorFlowVersion getTensorFlowVersion(TensorFlowVersionName name) {
+  public final TensorFlowVersion getTensorFlowVersion(@Nullable TensorFlowVersionName name) {
     GetTensorFlowVersionRequest request =
         GetTensorFlowVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1526,7 +1527,8 @@ public class TpuClient implements BackgroundResource {
    * @param parent Required. The parent resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAcceleratorTypesPagedResponse listAcceleratorTypes(AcceleratorTypeName parent) {
+  public final ListAcceleratorTypesPagedResponse listAcceleratorTypes(
+      @Nullable AcceleratorTypeName parent) {
     ListAcceleratorTypesRequest request =
         ListAcceleratorTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1704,7 +1706,7 @@ public class TpuClient implements BackgroundResource {
    * @param name Required. The resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AcceleratorType getAcceleratorType(AcceleratorTypeName name) {
+  public final AcceleratorType getAcceleratorType(@Nullable AcceleratorTypeName name) {
     GetAcceleratorTypeRequest request =
         GetAcceleratorTypeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2007,8 +2009,8 @@ public class TpuClient implements BackgroundResource {
       extends AbstractPage<ListNodesRequest, ListNodesResponse, Node, ListNodesPage> {
 
     private ListNodesPage(
-        PageContext<ListNodesRequest, ListNodesResponse, Node> context,
-        ListNodesResponse response) {
+        @Nullable PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        @Nullable ListNodesResponse response) {
       super(context, response);
     }
 
@@ -2018,14 +2020,14 @@ public class TpuClient implements BackgroundResource {
 
     @Override
     protected ListNodesPage createPage(
-        PageContext<ListNodesRequest, ListNodesResponse, Node> context,
-        ListNodesResponse response) {
+        @Nullable PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        @Nullable ListNodesResponse response) {
       return new ListNodesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNodesPage> createPageAsync(
-        PageContext<ListNodesRequest, ListNodesResponse, Node> context,
+        @Nullable PageContext<ListNodesRequest, ListNodesResponse, Node> context,
         ApiFuture<ListNodesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2035,7 +2037,7 @@ public class TpuClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListNodesRequest, ListNodesResponse, Node, ListNodesPage, ListNodesFixedSizeCollection> {
 
-    private ListNodesFixedSizeCollection(List<ListNodesPage> pages, int collectionSize) {
+    private ListNodesFixedSizeCollection(@Nullable List<ListNodesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2045,7 +2047,7 @@ public class TpuClient implements BackgroundResource {
 
     @Override
     protected ListNodesFixedSizeCollection createCollection(
-        List<ListNodesPage> pages, int collectionSize) {
+        @Nullable List<ListNodesPage> pages, int collectionSize) {
       return new ListNodesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2084,10 +2086,11 @@ public class TpuClient implements BackgroundResource {
           ListTensorFlowVersionsPage> {
 
     private ListTensorFlowVersionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse, TensorFlowVersion>
             context,
-        ListTensorFlowVersionsResponse response) {
+        @Nullable ListTensorFlowVersionsResponse response) {
       super(context, response);
     }
 
@@ -2097,16 +2100,18 @@ public class TpuClient implements BackgroundResource {
 
     @Override
     protected ListTensorFlowVersionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse, TensorFlowVersion>
             context,
-        ListTensorFlowVersionsResponse response) {
+        @Nullable ListTensorFlowVersionsResponse response) {
       return new ListTensorFlowVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTensorFlowVersionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListTensorFlowVersionsRequest, ListTensorFlowVersionsResponse, TensorFlowVersion>
             context,
         ApiFuture<ListTensorFlowVersionsResponse> futureResponse) {
@@ -2123,7 +2128,7 @@ public class TpuClient implements BackgroundResource {
           ListTensorFlowVersionsFixedSizeCollection> {
 
     private ListTensorFlowVersionsFixedSizeCollection(
-        List<ListTensorFlowVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListTensorFlowVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2133,7 +2138,7 @@ public class TpuClient implements BackgroundResource {
 
     @Override
     protected ListTensorFlowVersionsFixedSizeCollection createCollection(
-        List<ListTensorFlowVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListTensorFlowVersionsPage> pages, int collectionSize) {
       return new ListTensorFlowVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2171,9 +2176,10 @@ public class TpuClient implements BackgroundResource {
           ListAcceleratorTypesPage> {
 
     private ListAcceleratorTypesPage(
-        PageContext<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse, AcceleratorType>
+        @Nullable
+            PageContext<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse, AcceleratorType>
             context,
-        ListAcceleratorTypesResponse response) {
+        @Nullable ListAcceleratorTypesResponse response) {
       super(context, response);
     }
 
@@ -2183,15 +2189,17 @@ public class TpuClient implements BackgroundResource {
 
     @Override
     protected ListAcceleratorTypesPage createPage(
-        PageContext<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse, AcceleratorType>
+        @Nullable
+            PageContext<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse, AcceleratorType>
             context,
-        ListAcceleratorTypesResponse response) {
+        @Nullable ListAcceleratorTypesResponse response) {
       return new ListAcceleratorTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAcceleratorTypesPage> createPageAsync(
-        PageContext<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse, AcceleratorType>
+        @Nullable
+            PageContext<ListAcceleratorTypesRequest, ListAcceleratorTypesResponse, AcceleratorType>
             context,
         ApiFuture<ListAcceleratorTypesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2207,7 +2215,7 @@ public class TpuClient implements BackgroundResource {
           ListAcceleratorTypesFixedSizeCollection> {
 
     private ListAcceleratorTypesFixedSizeCollection(
-        List<ListAcceleratorTypesPage> pages, int collectionSize) {
+        @Nullable List<ListAcceleratorTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2217,7 +2225,7 @@ public class TpuClient implements BackgroundResource {
 
     @Override
     protected ListAcceleratorTypesFixedSizeCollection createCollection(
-        List<ListAcceleratorTypesPage> pages, int collectionSize) {
+        @Nullable List<ListAcceleratorTypesPage> pages, int collectionSize) {
       return new ListAcceleratorTypesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2251,8 +2259,8 @@ public class TpuClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2262,14 +2270,14 @@ public class TpuClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2283,7 +2291,8 @@ public class TpuClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2293,7 +2302,7 @@ public class TpuClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

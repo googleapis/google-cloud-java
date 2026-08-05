@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -72,7 +73,7 @@ public class EkmConfigName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).build().toString();
   }
 
-  public static EkmConfigName parse(String formattedString) {
+  public static @Nullable EkmConfigName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -90,7 +91,7 @@ public class EkmConfigName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<EkmConfigName> values) {
+  public static List<String> toStringList(List<@Nullable EkmConfigName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (EkmConfigName value : values) {
       if (value == null) {
@@ -135,7 +136,7 @@ public class EkmConfigName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

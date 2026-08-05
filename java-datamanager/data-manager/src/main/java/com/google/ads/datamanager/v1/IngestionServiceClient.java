@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -197,7 +198,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class IngestionServiceClient implements BackgroundResource {
-  private final IngestionServiceSettings settings;
+  private final @Nullable IngestionServiceSettings settings;
   private final IngestionServiceStub stub;
 
   /** Constructs an instance of IngestionServiceClient with default settings. */
@@ -237,7 +238,7 @@ public class IngestionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final IngestionServiceSettings getSettings() {
+  public final @Nullable IngestionServiceSettings getSettings() {
     return settings;
   }
 

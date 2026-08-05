@@ -96,6 +96,7 @@ public class ProductsServiceClientTest {
             .addAllCustomAttributes(new ArrayList<CustomAttribute>())
             .setProductStatus(ProductStatus.newBuilder().build())
             .setAutomatedDiscounts(AutomatedDiscounts.newBuilder().build())
+            .setArchived(true)
             .build();
     mockProductsService.addResponse(expectedResponse);
 
@@ -145,6 +146,7 @@ public class ProductsServiceClientTest {
             .addAllCustomAttributes(new ArrayList<CustomAttribute>())
             .setProductStatus(ProductStatus.newBuilder().build())
             .setAutomatedDiscounts(AutomatedDiscounts.newBuilder().build())
+            .setArchived(true)
             .build();
     mockProductsService.addResponse(expectedResponse);
 

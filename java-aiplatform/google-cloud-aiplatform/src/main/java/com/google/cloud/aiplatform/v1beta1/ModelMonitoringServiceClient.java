@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -417,7 +418,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ModelMonitoringServiceClient implements BackgroundResource {
-  private final ModelMonitoringServiceSettings settings;
+  private final @Nullable ModelMonitoringServiceSettings settings;
   private final ModelMonitoringServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -461,7 +462,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ModelMonitoringServiceSettings getSettings() {
+  public final @Nullable ModelMonitoringServiceSettings getSettings() {
     return settings;
   }
 
@@ -504,7 +505,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ModelMonitor, CreateModelMonitorOperationMetadata>
-      createModelMonitorAsync(LocationName parent, ModelMonitor modelMonitor) {
+      createModelMonitorAsync(@Nullable LocationName parent, ModelMonitor modelMonitor) {
     CreateModelMonitorRequest request =
         CreateModelMonitorRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -797,7 +798,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/modelMonitors/{model_monitor}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ModelMonitor getModelMonitor(ModelMonitorName name) {
+  public final ModelMonitor getModelMonitor(@Nullable ModelMonitorName name) {
     GetModelMonitorRequest request =
         GetModelMonitorRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getModelMonitor(request);
@@ -915,7 +916,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListModelMonitorsPagedResponse listModelMonitors(LocationName parent) {
+  public final ListModelMonitorsPagedResponse listModelMonitors(@Nullable LocationName parent) {
     ListModelMonitorsRequest request =
         ListModelMonitorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1094,7 +1095,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteModelMonitorAsync(
-      ModelMonitorName name) {
+      @Nullable ModelMonitorName name) {
     DeleteModelMonitorRequest request =
         DeleteModelMonitorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1251,7 +1252,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelMonitoringJob createModelMonitoringJob(
-      ModelMonitorName parent, ModelMonitoringJob modelMonitoringJob) {
+      @Nullable ModelMonitorName parent, ModelMonitoringJob modelMonitoringJob) {
     CreateModelMonitoringJobRequest request =
         CreateModelMonitoringJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1387,7 +1388,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/modelMonitors/{model_monitor}/modelMonitoringJobs/{model_monitoring_job}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ModelMonitoringJob getModelMonitoringJob(ModelMonitoringJobName name) {
+  public final ModelMonitoringJob getModelMonitoringJob(@Nullable ModelMonitoringJobName name) {
     GetModelMonitoringJobRequest request =
         GetModelMonitoringJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1522,7 +1523,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListModelMonitoringJobsPagedResponse listModelMonitoringJobs(
-      ModelMonitorName parent) {
+      @Nullable ModelMonitorName parent) {
     ListModelMonitoringJobsRequest request =
         ListModelMonitoringJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1719,7 +1720,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteModelMonitoringJobAsync(
-      ModelMonitoringJobName name) {
+      @Nullable ModelMonitoringJobName name) {
     DeleteModelMonitoringJobRequest request =
         DeleteModelMonitoringJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1889,7 +1890,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchModelMonitoringStatsPagedResponse searchModelMonitoringStats(
-      ModelMonitorName modelMonitor) {
+      @Nullable ModelMonitorName modelMonitor) {
     SearchModelMonitoringStatsRequest request =
         SearchModelMonitoringStatsRequest.newBuilder()
             .setModelMonitor(modelMonitor == null ? null : modelMonitor.toString())
@@ -2081,7 +2082,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchModelMonitoringAlertsPagedResponse searchModelMonitoringAlerts(
-      ModelMonitorName modelMonitor) {
+      @Nullable ModelMonitorName modelMonitor) {
     SearchModelMonitoringAlertsRequest request =
         SearchModelMonitoringAlertsRequest.newBuilder()
             .setModelMonitor(modelMonitor == null ? null : modelMonitor.toString())
@@ -2694,8 +2695,9 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
           ListModelMonitorsPage> {
 
     private ListModelMonitorsPage(
-        PageContext<ListModelMonitorsRequest, ListModelMonitorsResponse, ModelMonitor> context,
-        ListModelMonitorsResponse response) {
+        @Nullable PageContext<ListModelMonitorsRequest, ListModelMonitorsResponse, ModelMonitor>
+            context,
+        @Nullable ListModelMonitorsResponse response) {
       super(context, response);
     }
 
@@ -2705,14 +2707,16 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelMonitorsPage createPage(
-        PageContext<ListModelMonitorsRequest, ListModelMonitorsResponse, ModelMonitor> context,
-        ListModelMonitorsResponse response) {
+        @Nullable PageContext<ListModelMonitorsRequest, ListModelMonitorsResponse, ModelMonitor>
+            context,
+        @Nullable ListModelMonitorsResponse response) {
       return new ListModelMonitorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListModelMonitorsPage> createPageAsync(
-        PageContext<ListModelMonitorsRequest, ListModelMonitorsResponse, ModelMonitor> context,
+        @Nullable PageContext<ListModelMonitorsRequest, ListModelMonitorsResponse, ModelMonitor>
+            context,
         ApiFuture<ListModelMonitorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2727,7 +2731,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
           ListModelMonitorsFixedSizeCollection> {
 
     private ListModelMonitorsFixedSizeCollection(
-        List<ListModelMonitorsPage> pages, int collectionSize) {
+        @Nullable List<ListModelMonitorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2737,7 +2741,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelMonitorsFixedSizeCollection createCollection(
-        List<ListModelMonitorsPage> pages, int collectionSize) {
+        @Nullable List<ListModelMonitorsPage> pages, int collectionSize) {
       return new ListModelMonitorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2776,10 +2780,11 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
           ListModelMonitoringJobsPage> {
 
     private ListModelMonitoringJobsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListModelMonitoringJobsRequest, ListModelMonitoringJobsResponse, ModelMonitoringJob>
             context,
-        ListModelMonitoringJobsResponse response) {
+        @Nullable ListModelMonitoringJobsResponse response) {
       super(context, response);
     }
 
@@ -2789,16 +2794,18 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelMonitoringJobsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListModelMonitoringJobsRequest, ListModelMonitoringJobsResponse, ModelMonitoringJob>
             context,
-        ListModelMonitoringJobsResponse response) {
+        @Nullable ListModelMonitoringJobsResponse response) {
       return new ListModelMonitoringJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListModelMonitoringJobsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListModelMonitoringJobsRequest, ListModelMonitoringJobsResponse, ModelMonitoringJob>
             context,
         ApiFuture<ListModelMonitoringJobsResponse> futureResponse) {
@@ -2815,7 +2822,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
           ListModelMonitoringJobsFixedSizeCollection> {
 
     private ListModelMonitoringJobsFixedSizeCollection(
-        List<ListModelMonitoringJobsPage> pages, int collectionSize) {
+        @Nullable List<ListModelMonitoringJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2825,7 +2832,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelMonitoringJobsFixedSizeCollection createCollection(
-        List<ListModelMonitoringJobsPage> pages, int collectionSize) {
+        @Nullable List<ListModelMonitoringJobsPage> pages, int collectionSize) {
       return new ListModelMonitoringJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2866,12 +2873,13 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
           SearchModelMonitoringStatsPage> {
 
     private SearchModelMonitoringStatsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchModelMonitoringStatsRequest,
                 SearchModelMonitoringStatsResponse,
                 ModelMonitoringStats>
             context,
-        SearchModelMonitoringStatsResponse response) {
+        @Nullable SearchModelMonitoringStatsResponse response) {
       super(context, response);
     }
 
@@ -2881,18 +2889,20 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected SearchModelMonitoringStatsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchModelMonitoringStatsRequest,
                 SearchModelMonitoringStatsResponse,
                 ModelMonitoringStats>
             context,
-        SearchModelMonitoringStatsResponse response) {
+        @Nullable SearchModelMonitoringStatsResponse response) {
       return new SearchModelMonitoringStatsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchModelMonitoringStatsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchModelMonitoringStatsRequest,
                 SearchModelMonitoringStatsResponse,
                 ModelMonitoringStats>
@@ -2911,7 +2921,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
           SearchModelMonitoringStatsFixedSizeCollection> {
 
     private SearchModelMonitoringStatsFixedSizeCollection(
-        List<SearchModelMonitoringStatsPage> pages, int collectionSize) {
+        @Nullable List<SearchModelMonitoringStatsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2921,7 +2931,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected SearchModelMonitoringStatsFixedSizeCollection createCollection(
-        List<SearchModelMonitoringStatsPage> pages, int collectionSize) {
+        @Nullable List<SearchModelMonitoringStatsPage> pages, int collectionSize) {
       return new SearchModelMonitoringStatsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2963,12 +2973,13 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
           SearchModelMonitoringAlertsPage> {
 
     private SearchModelMonitoringAlertsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchModelMonitoringAlertsRequest,
                 SearchModelMonitoringAlertsResponse,
                 ModelMonitoringAlert>
             context,
-        SearchModelMonitoringAlertsResponse response) {
+        @Nullable SearchModelMonitoringAlertsResponse response) {
       super(context, response);
     }
 
@@ -2978,18 +2989,20 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected SearchModelMonitoringAlertsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchModelMonitoringAlertsRequest,
                 SearchModelMonitoringAlertsResponse,
                 ModelMonitoringAlert>
             context,
-        SearchModelMonitoringAlertsResponse response) {
+        @Nullable SearchModelMonitoringAlertsResponse response) {
       return new SearchModelMonitoringAlertsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchModelMonitoringAlertsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchModelMonitoringAlertsRequest,
                 SearchModelMonitoringAlertsResponse,
                 ModelMonitoringAlert>
@@ -3008,7 +3021,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
           SearchModelMonitoringAlertsFixedSizeCollection> {
 
     private SearchModelMonitoringAlertsFixedSizeCollection(
-        List<SearchModelMonitoringAlertsPage> pages, int collectionSize) {
+        @Nullable List<SearchModelMonitoringAlertsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3018,7 +3031,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected SearchModelMonitoringAlertsFixedSizeCollection createCollection(
-        List<SearchModelMonitoringAlertsPage> pages, int collectionSize) {
+        @Nullable List<SearchModelMonitoringAlertsPage> pages, int collectionSize) {
       return new SearchModelMonitoringAlertsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3052,8 +3065,8 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3063,14 +3076,14 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3084,7 +3097,8 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3094,7 +3108,7 @@ public class ModelMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

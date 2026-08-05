@@ -69,9 +69,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class ImportWriterVisitor implements AstNodeVisitor {
   private static final String DOT = ".";
   private static final String PKG_JAVA_LANG = "java.lang";
@@ -83,7 +84,7 @@ public class ImportWriterVisitor implements AstNodeVisitor {
   private final Set<String> importShortNames = new TreeSet<>();
 
   private String currentPackage;
-  @Nullable private String currentClassName;
+  private @Nullable String currentClassName;
 
   public void clear() {
     staticImports.clear();
@@ -91,12 +92,12 @@ public class ImportWriterVisitor implements AstNodeVisitor {
     importShortNames.clear();
   }
 
-  public void initialize(@Nonnull String currentPackage) {
+  public void initialize(String currentPackage) {
     this.currentPackage = currentPackage;
     currentClassName = null;
   }
 
-  public void initialize(@Nonnull String currentPackage, @Nonnull String currentClassName) {
+  public void initialize(String currentPackage, String currentClassName) {
     this.currentPackage = currentPackage;
     this.currentClassName = currentClassName;
   }
@@ -479,6 +480,9 @@ public class ImportWriterVisitor implements AstNodeVisitor {
   }
 
   private void handleReference(Reference reference) {
+    if (reference.isNullable()) {
+      addImport("org.jspecify.annotations.Nullable");
+    }
     // Don't need to import this.
     if (reference.useFullName()) {
       return;

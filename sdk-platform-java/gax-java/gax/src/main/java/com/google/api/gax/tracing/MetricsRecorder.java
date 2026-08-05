@@ -33,6 +33,7 @@ package com.google.api.gax.tracing;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Provides an interface for metrics recording. The implementer is expected to use an observability
@@ -40,6 +41,7 @@ import java.util.Map;
  * all the methods in this class are expected to be called from multiple threads, hence the
  * implementation must be thread safe.
  */
+@NullMarked
 @BetaApi
 @InternalApi
 public interface MetricsRecorder {

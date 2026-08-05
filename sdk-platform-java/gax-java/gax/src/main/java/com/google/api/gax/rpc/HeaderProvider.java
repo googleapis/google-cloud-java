@@ -30,8 +30,10 @@
 package com.google.api.gax.rpc;
 
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /** Provider of headers to put on http requests. */
+@NullMarked
 public interface HeaderProvider {
 
   /** Get the headers to put on http requests. */

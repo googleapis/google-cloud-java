@@ -37,6 +37,7 @@ import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
 import com.google.api.gax.retrying.StreamResumptionStrategy;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A ServerStreamingCallable that implements resumable retries.
@@ -52,6 +53,7 @@ import com.google.api.gax.retrying.StreamResumptionStrategy;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 final class RetryingServerStreamingCallable<RequestT, ResponseT>
     extends ServerStreamingCallable<RequestT, ResponseT> {
 

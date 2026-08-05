@@ -23,7 +23,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Optional;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class ServiceConfigParser {
   public static Optional<GapicServiceConfig> parse(String serviceConfigFilePath) {
     Optional<ServiceConfig> rawConfigOpt = parseFile(serviceConfigFilePath);

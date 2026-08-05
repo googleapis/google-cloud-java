@@ -477,6 +477,9 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -575,6 +578,9 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4656,6 +4662,9 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4756,6 +4765,9 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4854,6 +4866,9 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4952,6 +4967,9 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5371,6 +5389,9 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5427,6 +5448,9 @@ public class SecurityCenterClientHttpJsonTest {
             .addAllGroupMemberships(new ArrayList<GroupMembership>())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setExternalExposure(ExternalExposure.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
 
     Finding actualResponse = client.updateFinding(finding);
@@ -5508,6 +5532,9 @@ public class SecurityCenterClientHttpJsonTest {
               .addAllGroupMemberships(new ArrayList<GroupMembership>())
               .setChokepoint(Chokepoint.newBuilder().build())
               .setExternalExposure(ExternalExposure.newBuilder().build())
+              .setAgent(Agent.newBuilder().build())
+              .addAllAgentSessions(new ArrayList<AgentSession>())
+              .setAgentAnomaly(AgentAnomaly.newBuilder().build())
               .build();
       client.updateFinding(finding);
       Assert.fail("No exception raised");

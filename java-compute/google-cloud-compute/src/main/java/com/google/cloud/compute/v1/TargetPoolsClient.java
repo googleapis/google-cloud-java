@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -356,7 +357,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TargetPoolsClient implements BackgroundResource {
-  private final TargetPoolsSettings settings;
+  private final @Nullable TargetPoolsSettings settings;
   private final TargetPoolsStub stub;
 
   /** Constructs an instance of TargetPoolsClient with default settings. */
@@ -395,7 +396,7 @@ public class TargetPoolsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TargetPoolsSettings getSettings() {
+  public final @Nullable TargetPoolsSettings getSettings() {
     return settings;
   }
 
@@ -2233,12 +2234,13 @@ public class TargetPoolsClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListTargetPoolsRequest,
                 TargetPoolAggregatedList,
                 Map.Entry<String, TargetPoolsScopedList>>
             context,
-        TargetPoolAggregatedList response) {
+        @Nullable TargetPoolAggregatedList response) {
       super(context, response);
     }
 
@@ -2248,18 +2250,20 @@ public class TargetPoolsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListTargetPoolsRequest,
                 TargetPoolAggregatedList,
                 Map.Entry<String, TargetPoolsScopedList>>
             context,
-        TargetPoolAggregatedList response) {
+        @Nullable TargetPoolAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListTargetPoolsRequest,
                 TargetPoolAggregatedList,
                 Map.Entry<String, TargetPoolsScopedList>>
@@ -2277,7 +2281,8 @@ public class TargetPoolsClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2287,7 +2292,7 @@ public class TargetPoolsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2314,8 +2319,8 @@ public class TargetPoolsClient implements BackgroundResource {
       extends AbstractPage<ListTargetPoolsRequest, TargetPoolList, TargetPool, ListPage> {
 
     private ListPage(
-        PageContext<ListTargetPoolsRequest, TargetPoolList, TargetPool> context,
-        TargetPoolList response) {
+        @Nullable PageContext<ListTargetPoolsRequest, TargetPoolList, TargetPool> context,
+        @Nullable TargetPoolList response) {
       super(context, response);
     }
 
@@ -2325,14 +2330,14 @@ public class TargetPoolsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListTargetPoolsRequest, TargetPoolList, TargetPool> context,
-        TargetPoolList response) {
+        @Nullable PageContext<ListTargetPoolsRequest, TargetPoolList, TargetPool> context,
+        @Nullable TargetPoolList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListTargetPoolsRequest, TargetPoolList, TargetPool> context,
+        @Nullable PageContext<ListTargetPoolsRequest, TargetPoolList, TargetPool> context,
         ApiFuture<TargetPoolList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2342,7 +2347,7 @@ public class TargetPoolsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListTargetPoolsRequest, TargetPoolList, TargetPool, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2351,7 +2356,8 @@ public class TargetPoolsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

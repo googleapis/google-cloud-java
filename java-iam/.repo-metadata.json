@@ -10,7 +10,5 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-iam",
   "distribution_name": "com.google.api.grpc:proto-google-iam-v1",
-  "library_type": "OTHER",
-  "requires_billing": true,
-  "excluded_poms": "proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1"
+  "library_type": "OTHER"
 }

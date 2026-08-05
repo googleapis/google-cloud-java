@@ -36,8 +36,10 @@ import com.google.auto.value.AutoValue;
 import io.grpc.Channel;
 import io.grpc.ManagedChannel;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
 
 /** Implementation of TransportChannel based on gRPC. */
+@NullMarked
 @AutoValue
 @InternalExtensionOnly
 public abstract class GrpcTransportChannel implements TransportChannel {

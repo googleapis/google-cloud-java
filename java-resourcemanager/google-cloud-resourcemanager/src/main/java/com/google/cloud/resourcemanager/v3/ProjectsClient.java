@@ -44,6 +44,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -369,7 +370,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class ProjectsClient implements BackgroundResource {
-  private final ProjectsSettings settings;
+  private final @Nullable ProjectsSettings settings;
   private final ProjectsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -415,7 +416,7 @@ public class ProjectsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ProjectsSettings getSettings() {
+  public final @Nullable ProjectsSettings getSettings() {
     return settings;
   }
 
@@ -464,7 +465,7 @@ public class ProjectsClient implements BackgroundResource {
    * @param name Required. The name of the project (for example, `projects/415104041262`).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Project getProject(ProjectName name) {
+  public final Project getProject(@Nullable ProjectName name) {
     GetProjectRequest request =
         GetProjectRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProject(request);
@@ -586,7 +587,7 @@ public class ProjectsClient implements BackgroundResource {
    *     organization, use the value `organizations/{org_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProjectsPagedResponse listProjects(ResourceName parent) {
+  public final ListProjectsPagedResponse listProjects(@Nullable ResourceName parent) {
     ListProjectsRequest request =
         ListProjectsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1220,7 +1221,7 @@ public class ProjectsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Project, MoveProjectMetadata> moveProjectAsync(
-      ProjectName name, ResourceName destinationParent) {
+      @Nullable ProjectName name, @Nullable ResourceName destinationParent) {
     MoveProjectRequest request =
         MoveProjectRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1263,7 +1264,7 @@ public class ProjectsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Project, MoveProjectMetadata> moveProjectAsync(
-      ProjectName name, String destinationParent) {
+      @Nullable ProjectName name, String destinationParent) {
     MoveProjectRequest request =
         MoveProjectRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1306,7 +1307,7 @@ public class ProjectsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Project, MoveProjectMetadata> moveProjectAsync(
-      String name, ResourceName destinationParent) {
+      String name, @Nullable ResourceName destinationParent) {
     MoveProjectRequest request =
         MoveProjectRequest.newBuilder()
             .setName(name)
@@ -1523,7 +1524,7 @@ public class ProjectsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Project, DeleteProjectMetadata> deleteProjectAsync(
-      ProjectName name) {
+      @Nullable ProjectName name) {
     DeleteProjectRequest request =
         DeleteProjectRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteProjectAsync(request);
@@ -1761,7 +1762,7 @@ public class ProjectsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Project, UndeleteProjectMetadata> undeleteProjectAsync(
-      ProjectName name) {
+      @Nullable ProjectName name) {
     UndeleteProjectRequest request =
         UndeleteProjectRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return undeleteProjectAsync(request);
@@ -1919,7 +1920,7 @@ public class ProjectsClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2078,7 +2079,7 @@ public class ProjectsClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2312,7 +2313,7 @@ public class ProjectsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -2478,8 +2479,8 @@ public class ProjectsClient implements BackgroundResource {
       extends AbstractPage<ListProjectsRequest, ListProjectsResponse, Project, ListProjectsPage> {
 
     private ListProjectsPage(
-        PageContext<ListProjectsRequest, ListProjectsResponse, Project> context,
-        ListProjectsResponse response) {
+        @Nullable PageContext<ListProjectsRequest, ListProjectsResponse, Project> context,
+        @Nullable ListProjectsResponse response) {
       super(context, response);
     }
 
@@ -2489,14 +2490,14 @@ public class ProjectsClient implements BackgroundResource {
 
     @Override
     protected ListProjectsPage createPage(
-        PageContext<ListProjectsRequest, ListProjectsResponse, Project> context,
-        ListProjectsResponse response) {
+        @Nullable PageContext<ListProjectsRequest, ListProjectsResponse, Project> context,
+        @Nullable ListProjectsResponse response) {
       return new ListProjectsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProjectsPage> createPageAsync(
-        PageContext<ListProjectsRequest, ListProjectsResponse, Project> context,
+        @Nullable PageContext<ListProjectsRequest, ListProjectsResponse, Project> context,
         ApiFuture<ListProjectsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2510,7 +2511,8 @@ public class ProjectsClient implements BackgroundResource {
           ListProjectsPage,
           ListProjectsFixedSizeCollection> {
 
-    private ListProjectsFixedSizeCollection(List<ListProjectsPage> pages, int collectionSize) {
+    private ListProjectsFixedSizeCollection(
+        @Nullable List<ListProjectsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2520,7 +2522,7 @@ public class ProjectsClient implements BackgroundResource {
 
     @Override
     protected ListProjectsFixedSizeCollection createCollection(
-        List<ListProjectsPage> pages, int collectionSize) {
+        @Nullable List<ListProjectsPage> pages, int collectionSize) {
       return new ListProjectsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2554,8 +2556,8 @@ public class ProjectsClient implements BackgroundResource {
           SearchProjectsRequest, SearchProjectsResponse, Project, SearchProjectsPage> {
 
     private SearchProjectsPage(
-        PageContext<SearchProjectsRequest, SearchProjectsResponse, Project> context,
-        SearchProjectsResponse response) {
+        @Nullable PageContext<SearchProjectsRequest, SearchProjectsResponse, Project> context,
+        @Nullable SearchProjectsResponse response) {
       super(context, response);
     }
 
@@ -2565,14 +2567,14 @@ public class ProjectsClient implements BackgroundResource {
 
     @Override
     protected SearchProjectsPage createPage(
-        PageContext<SearchProjectsRequest, SearchProjectsResponse, Project> context,
-        SearchProjectsResponse response) {
+        @Nullable PageContext<SearchProjectsRequest, SearchProjectsResponse, Project> context,
+        @Nullable SearchProjectsResponse response) {
       return new SearchProjectsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchProjectsPage> createPageAsync(
-        PageContext<SearchProjectsRequest, SearchProjectsResponse, Project> context,
+        @Nullable PageContext<SearchProjectsRequest, SearchProjectsResponse, Project> context,
         ApiFuture<SearchProjectsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2586,7 +2588,8 @@ public class ProjectsClient implements BackgroundResource {
           SearchProjectsPage,
           SearchProjectsFixedSizeCollection> {
 
-    private SearchProjectsFixedSizeCollection(List<SearchProjectsPage> pages, int collectionSize) {
+    private SearchProjectsFixedSizeCollection(
+        @Nullable List<SearchProjectsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2596,7 +2599,7 @@ public class ProjectsClient implements BackgroundResource {
 
     @Override
     protected SearchProjectsFixedSizeCollection createCollection(
-        List<SearchProjectsPage> pages, int collectionSize) {
+        @Nullable List<SearchProjectsPage> pages, int collectionSize) {
       return new SearchProjectsFixedSizeCollection(pages, collectionSize);
     }
   }

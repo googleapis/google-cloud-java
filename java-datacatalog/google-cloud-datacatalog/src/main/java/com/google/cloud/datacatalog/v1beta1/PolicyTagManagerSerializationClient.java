@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -154,7 +155,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PolicyTagManagerSerializationClient implements BackgroundResource {
-  private final PolicyTagManagerSerializationSettings settings;
+  private final @Nullable PolicyTagManagerSerializationSettings settings;
   private final PolicyTagManagerSerializationStub stub;
 
   /** Constructs an instance of PolicyTagManagerSerializationClient with default settings. */
@@ -198,7 +199,7 @@ public class PolicyTagManagerSerializationClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PolicyTagManagerSerializationSettings getSettings() {
+  public final @Nullable PolicyTagManagerSerializationSettings getSettings() {
     return settings;
   }
 

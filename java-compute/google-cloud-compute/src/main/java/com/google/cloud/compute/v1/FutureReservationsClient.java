@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -247,7 +248,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class FutureReservationsClient implements BackgroundResource {
-  private final FutureReservationsSettings settings;
+  private final @Nullable FutureReservationsSettings settings;
   private final FutureReservationsStub stub;
 
   /** Constructs an instance of FutureReservationsClient with default settings. */
@@ -287,7 +288,7 @@ public class FutureReservationsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final FutureReservationsSettings getSettings() {
+  public final @Nullable FutureReservationsSettings getSettings() {
     return settings;
   }
 
@@ -1313,12 +1314,13 @@ public class FutureReservationsClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListFutureReservationsRequest,
                 FutureReservationsAggregatedListResponse,
                 Map.Entry<String, FutureReservationsScopedList>>
             context,
-        FutureReservationsAggregatedListResponse response) {
+        @Nullable FutureReservationsAggregatedListResponse response) {
       super(context, response);
     }
 
@@ -1328,18 +1330,20 @@ public class FutureReservationsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListFutureReservationsRequest,
                 FutureReservationsAggregatedListResponse,
                 Map.Entry<String, FutureReservationsScopedList>>
             context,
-        FutureReservationsAggregatedListResponse response) {
+        @Nullable FutureReservationsAggregatedListResponse response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListFutureReservationsRequest,
                 FutureReservationsAggregatedListResponse,
                 Map.Entry<String, FutureReservationsScopedList>>
@@ -1357,7 +1361,8 @@ public class FutureReservationsClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1367,7 +1372,7 @@ public class FutureReservationsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1404,10 +1409,11 @@ public class FutureReservationsClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFutureReservationsRequest, FutureReservationsListResponse, FutureReservation>
             context,
-        FutureReservationsListResponse response) {
+        @Nullable FutureReservationsListResponse response) {
       super(context, response);
     }
 
@@ -1417,16 +1423,18 @@ public class FutureReservationsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFutureReservationsRequest, FutureReservationsListResponse, FutureReservation>
             context,
-        FutureReservationsListResponse response) {
+        @Nullable FutureReservationsListResponse response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFutureReservationsRequest, FutureReservationsListResponse, FutureReservation>
             context,
         ApiFuture<FutureReservationsListResponse> futureResponse) {
@@ -1442,7 +1450,7 @@ public class FutureReservationsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1451,7 +1459,8 @@ public class FutureReservationsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

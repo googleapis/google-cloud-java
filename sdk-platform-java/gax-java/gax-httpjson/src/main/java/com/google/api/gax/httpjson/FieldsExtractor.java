@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.httpjson;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * A functional interface to be implemented for each request message to extract specific fields from
  * it. For advanced usage only.
  */
+@NullMarked
 @FunctionalInterface
 public interface FieldsExtractor<RequestT, ParamsT> {
   ParamsT extract(RequestT request);

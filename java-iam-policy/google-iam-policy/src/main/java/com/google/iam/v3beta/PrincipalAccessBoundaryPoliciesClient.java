@@ -39,6 +39,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -255,7 +256,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource {
-  private final PrincipalAccessBoundaryPoliciesSettings settings;
+  private final @Nullable PrincipalAccessBoundaryPoliciesSettings settings;
   private final PrincipalAccessBoundaryPoliciesStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -308,7 +309,7 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final PrincipalAccessBoundaryPoliciesSettings getSettings() {
+  public final @Nullable PrincipalAccessBoundaryPoliciesSettings getSettings() {
     return settings;
   }
 
@@ -372,7 +373,7 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
    */
   public final OperationFuture<PrincipalAccessBoundaryPolicy, OperationMetadata>
       createPrincipalAccessBoundaryPolicyAsync(
-          OrganizationLocationName parent,
+          @Nullable OrganizationLocationName parent,
           PrincipalAccessBoundaryPolicy principalAccessBoundaryPolicy,
           String principalAccessBoundaryPolicyId) {
     CreatePrincipalAccessBoundaryPolicyRequest request =
@@ -572,7 +573,7 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final PrincipalAccessBoundaryPolicy getPrincipalAccessBoundaryPolicy(
-      PrincipalAccessBoundaryPolicyName name) {
+      @Nullable PrincipalAccessBoundaryPolicyName name) {
     GetPrincipalAccessBoundaryPolicyRequest request =
         GetPrincipalAccessBoundaryPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -857,7 +858,7 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePrincipalAccessBoundaryPolicyAsync(
-      PrincipalAccessBoundaryPolicyName name) {
+      @Nullable PrincipalAccessBoundaryPolicyName name) {
     DeletePrincipalAccessBoundaryPolicyRequest request =
         DeletePrincipalAccessBoundaryPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1042,7 +1043,7 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListPrincipalAccessBoundaryPoliciesPagedResponse listPrincipalAccessBoundaryPolicies(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListPrincipalAccessBoundaryPoliciesRequest request =
         ListPrincipalAccessBoundaryPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1238,7 +1239,8 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchPrincipalAccessBoundaryPolicyBindingsPagedResponse
-      searchPrincipalAccessBoundaryPolicyBindings(PrincipalAccessBoundaryPolicyName name) {
+      searchPrincipalAccessBoundaryPolicyBindings(
+          @Nullable PrincipalAccessBoundaryPolicyName name) {
     SearchPrincipalAccessBoundaryPolicyBindingsRequest request =
         SearchPrincipalAccessBoundaryPolicyBindingsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1486,12 +1488,13 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
           ListPrincipalAccessBoundaryPoliciesPage> {
 
     private ListPrincipalAccessBoundaryPoliciesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrincipalAccessBoundaryPoliciesRequest,
                 ListPrincipalAccessBoundaryPoliciesResponse,
                 PrincipalAccessBoundaryPolicy>
             context,
-        ListPrincipalAccessBoundaryPoliciesResponse response) {
+        @Nullable ListPrincipalAccessBoundaryPoliciesResponse response) {
       super(context, response);
     }
 
@@ -1501,18 +1504,20 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
 
     @Override
     protected ListPrincipalAccessBoundaryPoliciesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrincipalAccessBoundaryPoliciesRequest,
                 ListPrincipalAccessBoundaryPoliciesResponse,
                 PrincipalAccessBoundaryPolicy>
             context,
-        ListPrincipalAccessBoundaryPoliciesResponse response) {
+        @Nullable ListPrincipalAccessBoundaryPoliciesResponse response) {
       return new ListPrincipalAccessBoundaryPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPrincipalAccessBoundaryPoliciesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPrincipalAccessBoundaryPoliciesRequest,
                 ListPrincipalAccessBoundaryPoliciesResponse,
                 PrincipalAccessBoundaryPolicy>
@@ -1531,7 +1536,7 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
           ListPrincipalAccessBoundaryPoliciesFixedSizeCollection> {
 
     private ListPrincipalAccessBoundaryPoliciesFixedSizeCollection(
-        List<ListPrincipalAccessBoundaryPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListPrincipalAccessBoundaryPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1541,7 +1546,7 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
 
     @Override
     protected ListPrincipalAccessBoundaryPoliciesFixedSizeCollection createCollection(
-        List<ListPrincipalAccessBoundaryPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListPrincipalAccessBoundaryPoliciesPage> pages, int collectionSize) {
       return new ListPrincipalAccessBoundaryPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1586,12 +1591,13 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
           SearchPrincipalAccessBoundaryPolicyBindingsPage> {
 
     private SearchPrincipalAccessBoundaryPolicyBindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchPrincipalAccessBoundaryPolicyBindingsRequest,
                 SearchPrincipalAccessBoundaryPolicyBindingsResponse,
                 PolicyBinding>
             context,
-        SearchPrincipalAccessBoundaryPolicyBindingsResponse response) {
+        @Nullable SearchPrincipalAccessBoundaryPolicyBindingsResponse response) {
       super(context, response);
     }
 
@@ -1601,18 +1607,20 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
 
     @Override
     protected SearchPrincipalAccessBoundaryPolicyBindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchPrincipalAccessBoundaryPolicyBindingsRequest,
                 SearchPrincipalAccessBoundaryPolicyBindingsResponse,
                 PolicyBinding>
             context,
-        SearchPrincipalAccessBoundaryPolicyBindingsResponse response) {
+        @Nullable SearchPrincipalAccessBoundaryPolicyBindingsResponse response) {
       return new SearchPrincipalAccessBoundaryPolicyBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchPrincipalAccessBoundaryPolicyBindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchPrincipalAccessBoundaryPolicyBindingsRequest,
                 SearchPrincipalAccessBoundaryPolicyBindingsResponse,
                 PolicyBinding>
@@ -1631,7 +1639,7 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
           SearchPrincipalAccessBoundaryPolicyBindingsFixedSizeCollection> {
 
     private SearchPrincipalAccessBoundaryPolicyBindingsFixedSizeCollection(
-        List<SearchPrincipalAccessBoundaryPolicyBindingsPage> pages, int collectionSize) {
+        @Nullable List<SearchPrincipalAccessBoundaryPolicyBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1642,7 +1650,7 @@ public class PrincipalAccessBoundaryPoliciesClient implements BackgroundResource
 
     @Override
     protected SearchPrincipalAccessBoundaryPolicyBindingsFixedSizeCollection createCollection(
-        List<SearchPrincipalAccessBoundaryPolicyBindingsPage> pages, int collectionSize) {
+        @Nullable List<SearchPrincipalAccessBoundaryPolicyBindingsPage> pages, int collectionSize) {
       return new SearchPrincipalAccessBoundaryPolicyBindingsFixedSizeCollection(
           pages, collectionSize);
     }

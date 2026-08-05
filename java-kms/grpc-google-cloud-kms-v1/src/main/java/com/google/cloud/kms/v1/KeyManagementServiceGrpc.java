@@ -817,6 +817,114 @@ public final class KeyManagementServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest,
+          com.google.cloud.kms.v1.CryptoKeyVersion>
+      getImportTrustedKeyWrappedCryptoKeyVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportTrustedKeyWrappedCryptoKeyVersion",
+      requestType = com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest.class,
+      responseType = com.google.cloud.kms.v1.CryptoKeyVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest,
+          com.google.cloud.kms.v1.CryptoKeyVersion>
+      getImportTrustedKeyWrappedCryptoKeyVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest,
+            com.google.cloud.kms.v1.CryptoKeyVersion>
+        getImportTrustedKeyWrappedCryptoKeyVersionMethod;
+    if ((getImportTrustedKeyWrappedCryptoKeyVersionMethod =
+            KeyManagementServiceGrpc.getImportTrustedKeyWrappedCryptoKeyVersionMethod)
+        == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getImportTrustedKeyWrappedCryptoKeyVersionMethod =
+                KeyManagementServiceGrpc.getImportTrustedKeyWrappedCryptoKeyVersionMethod)
+            == null) {
+          KeyManagementServiceGrpc.getImportTrustedKeyWrappedCryptoKeyVersionMethod =
+              getImportTrustedKeyWrappedCryptoKeyVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest,
+                          com.google.cloud.kms.v1.CryptoKeyVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ImportTrustedKeyWrappedCryptoKeyVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.CryptoKeyVersion.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new KeyManagementServiceMethodDescriptorSupplier(
+                              "ImportTrustedKeyWrappedCryptoKeyVersion"))
+                      .build();
+        }
+      }
+    }
+    return getImportTrustedKeyWrappedCryptoKeyVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      getExportTrustedKeyWrappedCryptoKeyVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportTrustedKeyWrappedCryptoKeyVersion",
+      requestType = com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest.class,
+      responseType = com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      getExportTrustedKeyWrappedCryptoKeyVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+            com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+        getExportTrustedKeyWrappedCryptoKeyVersionMethod;
+    if ((getExportTrustedKeyWrappedCryptoKeyVersionMethod =
+            KeyManagementServiceGrpc.getExportTrustedKeyWrappedCryptoKeyVersionMethod)
+        == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getExportTrustedKeyWrappedCryptoKeyVersionMethod =
+                KeyManagementServiceGrpc.getExportTrustedKeyWrappedCryptoKeyVersionMethod)
+            == null) {
+          KeyManagementServiceGrpc.getExportTrustedKeyWrappedCryptoKeyVersionMethod =
+              getExportTrustedKeyWrappedCryptoKeyVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+                          com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ExportTrustedKeyWrappedCryptoKeyVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1
+                                  .ExportTrustedKeyWrappedCryptoKeyVersionResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new KeyManagementServiceMethodDescriptorSupplier(
+                              "ExportTrustedKeyWrappedCryptoKeyVersion"))
+                      .build();
+        }
+      }
+    }
+    return getExportTrustedKeyWrappedCryptoKeyVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.CreateImportJobRequest, com.google.cloud.kms.v1.ImportJob>
       getCreateImportJobMethod;
 
@@ -1906,6 +2014,54 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Import wrapped key material into a
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a trusted
+     * key.
+     * All requests must specify a [CryptoKey][google.cloud.kms.v1.CryptoKey]. If
+     * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] is additionally
+     * specified in the request, key material will be reimported into that
+     * version. Otherwise, a new version will be created, and will be assigned the
+     * next sequential id within the [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] will have
+     * trusted_wrapping_enabled set to true.
+     * </pre>
+     */
+    default void importTrustedKeyWrappedCryptoKeyVersion(
+        com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportTrustedKeyWrappedCryptoKeyVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a
+     * trusted key.
+     * The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must have
+     * trusted_wrapping_enabled set to true. The
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] of the
+     * [wrapping_key] must have the
+     * [AES_WRAPPING][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.AES_WRAPPING]
+     * purpose. The [wrapping_key] must have the
+     * [AES_256_KWP][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.AES_256_KWP]
+     * algorithm.
+     * </pre>
+     */
+    default void exportTrustedKeyWrappedCryptoKeyVersion(
+        com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportTrustedKeyWrappedCryptoKeyVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a
      * [KeyRing][google.cloud.kms.v1.KeyRing].
      * [ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is
@@ -2570,6 +2726,60 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Import wrapped key material into a
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a trusted
+     * key.
+     * All requests must specify a [CryptoKey][google.cloud.kms.v1.CryptoKey]. If
+     * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] is additionally
+     * specified in the request, key material will be reimported into that
+     * version. Otherwise, a new version will be created, and will be assigned the
+     * next sequential id within the [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] will have
+     * trusted_wrapping_enabled set to true.
+     * </pre>
+     */
+    public void importTrustedKeyWrappedCryptoKeyVersion(
+        com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getImportTrustedKeyWrappedCryptoKeyVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a
+     * trusted key.
+     * The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must have
+     * trusted_wrapping_enabled set to true. The
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] of the
+     * [wrapping_key] must have the
+     * [AES_WRAPPING][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.AES_WRAPPING]
+     * purpose. The [wrapping_key] must have the
+     * [AES_256_KWP][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.AES_256_KWP]
+     * algorithm.
+     * </pre>
+     */
+    public void exportTrustedKeyWrappedCryptoKeyVersion(
+        com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel()
+              .newCall(getExportTrustedKeyWrappedCryptoKeyVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a
      * [KeyRing][google.cloud.kms.v1.KeyRing].
      * [ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is
@@ -3188,6 +3398,59 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Import wrapped key material into a
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a trusted
+     * key.
+     * All requests must specify a [CryptoKey][google.cloud.kms.v1.CryptoKey]. If
+     * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] is additionally
+     * specified in the request, key material will be reimported into that
+     * version. Otherwise, a new version will be created, and will be assigned the
+     * next sequential id within the [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] will have
+     * trusted_wrapping_enabled set to true.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.CryptoKeyVersion importTrustedKeyWrappedCryptoKeyVersion(
+        com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getImportTrustedKeyWrappedCryptoKeyVersionMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a
+     * trusted key.
+     * The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must have
+     * trusted_wrapping_enabled set to true. The
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] of the
+     * [wrapping_key] must have the
+     * [AES_WRAPPING][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.AES_WRAPPING]
+     * purpose. The [wrapping_key] must have the
+     * [AES_256_KWP][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.AES_256_KWP]
+     * algorithm.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse
+        exportTrustedKeyWrappedCryptoKeyVersion(
+            com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(),
+          getExportTrustedKeyWrappedCryptoKeyVersionMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a
      * [KeyRing][google.cloud.kms.v1.KeyRing].
      * [ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is
@@ -3760,6 +4023,57 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportCryptoKeyVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Import wrapped key material into a
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a trusted
+     * key.
+     * All requests must specify a [CryptoKey][google.cloud.kms.v1.CryptoKey]. If
+     * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] is additionally
+     * specified in the request, key material will be reimported into that
+     * version. Otherwise, a new version will be created, and will be assigned the
+     * next sequential id within the [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] will have
+     * trusted_wrapping_enabled set to true.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.CryptoKeyVersion importTrustedKeyWrappedCryptoKeyVersion(
+        com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getImportTrustedKeyWrappedCryptoKeyVersionMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a
+     * trusted key.
+     * The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must have
+     * trusted_wrapping_enabled set to true. The
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] of the
+     * [wrapping_key] must have the
+     * [AES_WRAPPING][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.AES_WRAPPING]
+     * purpose. The [wrapping_key] must have the
+     * [AES_256_KWP][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.AES_256_KWP]
+     * algorithm.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse
+        exportTrustedKeyWrappedCryptoKeyVersion(
+            com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getExportTrustedKeyWrappedCryptoKeyVersionMethod(),
+          getCallOptions(),
+          request);
     }
 
     /**
@@ -4349,6 +4663,58 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Import wrapped key material into a
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a trusted
+     * key.
+     * All requests must specify a [CryptoKey][google.cloud.kms.v1.CryptoKey]. If
+     * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] is additionally
+     * specified in the request, key material will be reimported into that
+     * version. Otherwise, a new version will be created, and will be assigned the
+     * next sequential id within the [CryptoKey][google.cloud.kms.v1.CryptoKey].
+     * The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] will have
+     * trusted_wrapping_enabled set to true.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.kms.v1.CryptoKeyVersion>
+        importTrustedKeyWrappedCryptoKeyVersion(
+            com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getImportTrustedKeyWrappedCryptoKeyVersionMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with a
+     * trusted key.
+     * The [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] must have
+     * trusted_wrapping_enabled set to true. The
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] of the
+     * [wrapping_key] must have the
+     * [AES_WRAPPING][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.AES_WRAPPING]
+     * purpose. The [wrapping_key] must have the
+     * [AES_256_KWP][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.AES_256_KWP]
+     * algorithm.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+        exportTrustedKeyWrappedCryptoKeyVersion(
+            com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel()
+              .newCall(getExportTrustedKeyWrappedCryptoKeyVersionMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Create a new [ImportJob][google.cloud.kms.v1.ImportJob] within a
      * [KeyRing][google.cloud.kms.v1.KeyRing].
      * [ImportJob.import_method][google.cloud.kms.v1.ImportJob.import_method] is
@@ -4660,22 +5026,24 @@ public final class KeyManagementServiceGrpc {
   private static final int METHODID_DELETE_CRYPTO_KEY = 14;
   private static final int METHODID_DELETE_CRYPTO_KEY_VERSION = 15;
   private static final int METHODID_IMPORT_CRYPTO_KEY_VERSION = 16;
-  private static final int METHODID_CREATE_IMPORT_JOB = 17;
-  private static final int METHODID_UPDATE_CRYPTO_KEY = 18;
-  private static final int METHODID_UPDATE_CRYPTO_KEY_VERSION = 19;
-  private static final int METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION = 20;
-  private static final int METHODID_DESTROY_CRYPTO_KEY_VERSION = 21;
-  private static final int METHODID_RESTORE_CRYPTO_KEY_VERSION = 22;
-  private static final int METHODID_ENCRYPT = 23;
-  private static final int METHODID_DECRYPT = 24;
-  private static final int METHODID_RAW_ENCRYPT = 25;
-  private static final int METHODID_RAW_DECRYPT = 26;
-  private static final int METHODID_ASYMMETRIC_SIGN = 27;
-  private static final int METHODID_ASYMMETRIC_DECRYPT = 28;
-  private static final int METHODID_MAC_SIGN = 29;
-  private static final int METHODID_MAC_VERIFY = 30;
-  private static final int METHODID_DECAPSULATE = 31;
-  private static final int METHODID_GENERATE_RANDOM_BYTES = 32;
+  private static final int METHODID_IMPORT_TRUSTED_KEY_WRAPPED_CRYPTO_KEY_VERSION = 17;
+  private static final int METHODID_EXPORT_TRUSTED_KEY_WRAPPED_CRYPTO_KEY_VERSION = 18;
+  private static final int METHODID_CREATE_IMPORT_JOB = 19;
+  private static final int METHODID_UPDATE_CRYPTO_KEY = 20;
+  private static final int METHODID_UPDATE_CRYPTO_KEY_VERSION = 21;
+  private static final int METHODID_UPDATE_CRYPTO_KEY_PRIMARY_VERSION = 22;
+  private static final int METHODID_DESTROY_CRYPTO_KEY_VERSION = 23;
+  private static final int METHODID_RESTORE_CRYPTO_KEY_VERSION = 24;
+  private static final int METHODID_ENCRYPT = 25;
+  private static final int METHODID_DECRYPT = 26;
+  private static final int METHODID_RAW_ENCRYPT = 27;
+  private static final int METHODID_RAW_DECRYPT = 28;
+  private static final int METHODID_ASYMMETRIC_SIGN = 29;
+  private static final int METHODID_ASYMMETRIC_DECRYPT = 30;
+  private static final int METHODID_MAC_SIGN = 31;
+  private static final int METHODID_MAC_VERIFY = 32;
+  private static final int METHODID_DECAPSULATE = 33;
+  private static final int METHODID_GENERATE_RANDOM_BYTES = 34;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4786,6 +5154,19 @@ public final class KeyManagementServiceGrpc {
           serviceImpl.importCryptoKeyVersion(
               (com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion>)
+                  responseObserver);
+          break;
+        case METHODID_IMPORT_TRUSTED_KEY_WRAPPED_CRYPTO_KEY_VERSION:
+          serviceImpl.importTrustedKeyWrappedCryptoKeyVersion(
+              (com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.CryptoKeyVersion>)
+                  responseObserver);
+          break;
+        case METHODID_EXPORT_TRUSTED_KEY_WRAPPED_CRYPTO_KEY_VERSION:
+          serviceImpl.exportTrustedKeyWrappedCryptoKeyVersion(
+              (com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse>)
                   responseObserver);
           break;
         case METHODID_CREATE_IMPORT_JOB:
@@ -5011,6 +5392,20 @@ public final class KeyManagementServiceGrpc {
                     com.google.cloud.kms.v1.CryptoKeyVersion>(
                     service, METHODID_IMPORT_CRYPTO_KEY_VERSION)))
         .addMethod(
+            getImportTrustedKeyWrappedCryptoKeyVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest,
+                    com.google.cloud.kms.v1.CryptoKeyVersion>(
+                    service, METHODID_IMPORT_TRUSTED_KEY_WRAPPED_CRYPTO_KEY_VERSION)))
+        .addMethod(
+            getExportTrustedKeyWrappedCryptoKeyVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+                    com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse>(
+                    service, METHODID_EXPORT_TRUSTED_KEY_WRAPPED_CRYPTO_KEY_VERSION)))
+        .addMethod(
             getCreateImportJobMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -5181,6 +5576,8 @@ public final class KeyManagementServiceGrpc {
                       .addMethod(getDeleteCryptoKeyMethod())
                       .addMethod(getDeleteCryptoKeyVersionMethod())
                       .addMethod(getImportCryptoKeyVersionMethod())
+                      .addMethod(getImportTrustedKeyWrappedCryptoKeyVersionMethod())
+                      .addMethod(getExportTrustedKeyWrappedCryptoKeyVersionMethod())
                       .addMethod(getCreateImportJobMethod())
                       .addMethod(getUpdateCryptoKeyMethod())
                       .addMethod(getUpdateCryptoKeyVersionMethod())

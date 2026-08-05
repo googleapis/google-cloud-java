@@ -32,6 +32,7 @@ package com.google.api.gax.rpc.internal;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
 
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -57,7 +58,8 @@ class QuotaProjectIdHidingCredentialsTest {
             Collections.singletonList("v1"),
             QUOTA_PROJECT_ID_KEY,
             Collections.singletonList(QUOTA_PROJECT_ID_FROM_CREDENTIALS_VALUE));
-    Credentials credentialsWithQuotaProjectId = Mockito.mock(GoogleCredentials.class);
+    Credentials credentialsWithQuotaProjectId =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentialsWithQuotaProjectId.getRequestMetadata(null))
         .thenReturn(metaDataWithQuota);
     QuotaProjectIdHidingCredentials quotaProjectIdHidingCredentials =
@@ -72,7 +74,8 @@ class QuotaProjectIdHidingCredentialsTest {
     // Credentials without quota project id
     Map<String, List<String>> metaDataWithoutQuota =
         ImmutableMap.of("k1", Collections.singletonList("v1"));
-    Credentials credentialsWithoutQuotaProjectId = Mockito.mock(GoogleCredentials.class);
+    Credentials credentialsWithoutQuotaProjectId =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentialsWithoutQuotaProjectId.getRequestMetadata(null))
         .thenReturn(metaDataWithoutQuota);
     QuotaProjectIdHidingCredentials quotaProjectIdHidingCredentialsWithout =
@@ -86,7 +89,8 @@ class QuotaProjectIdHidingCredentialsTest {
   @Test
   void quotaProjectIdHidingCredentials_getAuthenticationType() throws IOException {
     final String mockType = "mock_type";
-    Credentials credentials = Mockito.mock(GoogleCredentials.class);
+    Credentials credentials =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentials.getAuthenticationType()).thenReturn(mockType);
     Mockito.when(credentials.hasRequestMetadata()).thenReturn(true);
     Mockito.when(credentials.hasRequestMetadataOnly()).thenReturn(false);
@@ -104,7 +108,8 @@ class QuotaProjectIdHidingCredentialsTest {
 
   @Test
   void quotaProjectIdHidingCredentials_getUniverseDomain() throws IOException {
-    Credentials credentials = Mockito.mock(GoogleCredentials.class);
+    Credentials credentials =
+        mock(GoogleCredentials.class, Mockito.withSettings().withoutAnnotations());
     Mockito.when(credentials.getUniverseDomain()).thenReturn("example.com");
 
     QuotaProjectIdHidingCredentials quotaProjectIdHidingCredentials =

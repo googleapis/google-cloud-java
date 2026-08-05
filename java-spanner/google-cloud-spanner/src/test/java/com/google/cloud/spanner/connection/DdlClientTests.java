@@ -27,6 +27,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.Database;
@@ -81,7 +82,8 @@ public class DdlClientTests {
     Database database = mock(Database.class);
     Database.Builder databaseBuilder = mock(Database.Builder.class);
     @SuppressWarnings("unchecked")
-    OperationFuture<Void, UpdateDatabaseDdlMetadata> operation = mock(OperationFuture.class);
+    OperationFuture<Void, UpdateDatabaseDdlMetadata> operation =
+        mock(OperationFuture.class, withSettings().withoutAnnotations());
 
     when(operation.get()).thenReturn(null);
     when(client.newDatabaseBuilder((DatabaseId.of(projectId, instanceId, databaseId))))

@@ -11,6 +11,5 @@
   "repo_short": "java-maps-geocode",
   "distribution_name": "com.google.maps:google-maps-geocode",
   "api_id": "geocode.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

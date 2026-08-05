@@ -37,6 +37,7 @@ import com.google.api.core.ObsoleteApi;
 import com.google.auto.value.AutoValue;
 import com.google.common.annotations.VisibleForTesting;
 import java.io.Serializable;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Holds the parameters for <b>retry</b> or <b>poll</b> logic with jitter, timeout and exponential
@@ -76,6 +77,7 @@ import java.io.Serializable;
  * configuration are the default values for the RetrySettings class if there are no RPC specific
  * configurations from the Service Team.
  */
+@NullMarked
 @AutoValue
 public abstract class RetrySettings implements Serializable {
 

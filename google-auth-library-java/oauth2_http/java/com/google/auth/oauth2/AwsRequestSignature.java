@@ -34,11 +34,13 @@ package com.google.auth.oauth2;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.HashMap;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Stores the AWS API request signature based on the AWS Signature Version 4 signing process, and
  * the parameters used in the signing process.
  */
+@NullMarked
 class AwsRequestSignature {
 
   private AwsSecurityCredentials awsSecurityCredentials;

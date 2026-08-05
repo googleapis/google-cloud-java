@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -229,7 +230,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class GlobalVmExtensionPoliciesClient implements BackgroundResource {
-  private final GlobalVmExtensionPoliciesSettings settings;
+  private final @Nullable GlobalVmExtensionPoliciesSettings settings;
   private final GlobalVmExtensionPoliciesStub stub;
 
   /** Constructs an instance of GlobalVmExtensionPoliciesClient with default settings. */
@@ -271,7 +272,7 @@ public class GlobalVmExtensionPoliciesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GlobalVmExtensionPoliciesSettings getSettings() {
+  public final @Nullable GlobalVmExtensionPoliciesSettings getSettings() {
     return settings;
   }
 
@@ -1201,12 +1202,13 @@ public class GlobalVmExtensionPoliciesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListGlobalVmExtensionPoliciesRequest,
                 VmExtensionPolicyAggregatedListResponse,
                 Map.Entry<String, VmExtensionPoliciesScopedList>>
             context,
-        VmExtensionPolicyAggregatedListResponse response) {
+        @Nullable VmExtensionPolicyAggregatedListResponse response) {
       super(context, response);
     }
 
@@ -1216,18 +1218,20 @@ public class GlobalVmExtensionPoliciesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListGlobalVmExtensionPoliciesRequest,
                 VmExtensionPolicyAggregatedListResponse,
                 Map.Entry<String, VmExtensionPoliciesScopedList>>
             context,
-        VmExtensionPolicyAggregatedListResponse response) {
+        @Nullable VmExtensionPolicyAggregatedListResponse response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListGlobalVmExtensionPoliciesRequest,
                 VmExtensionPolicyAggregatedListResponse,
                 Map.Entry<String, VmExtensionPoliciesScopedList>>
@@ -1245,7 +1249,8 @@ public class GlobalVmExtensionPoliciesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1255,7 +1260,7 @@ public class GlobalVmExtensionPoliciesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1294,12 +1299,13 @@ public class GlobalVmExtensionPoliciesClient implements BackgroundResource {
           ListPage> {
 
     private ListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGlobalVmExtensionPoliciesRequest,
                 GlobalVmExtensionPolicyList,
                 GlobalVmExtensionPolicy>
             context,
-        GlobalVmExtensionPolicyList response) {
+        @Nullable GlobalVmExtensionPolicyList response) {
       super(context, response);
     }
 
@@ -1309,18 +1315,20 @@ public class GlobalVmExtensionPoliciesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGlobalVmExtensionPoliciesRequest,
                 GlobalVmExtensionPolicyList,
                 GlobalVmExtensionPolicy>
             context,
-        GlobalVmExtensionPolicyList response) {
+        @Nullable GlobalVmExtensionPolicyList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGlobalVmExtensionPoliciesRequest,
                 GlobalVmExtensionPolicyList,
                 GlobalVmExtensionPolicy>
@@ -1338,7 +1346,7 @@ public class GlobalVmExtensionPoliciesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1347,7 +1355,8 @@ public class GlobalVmExtensionPoliciesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

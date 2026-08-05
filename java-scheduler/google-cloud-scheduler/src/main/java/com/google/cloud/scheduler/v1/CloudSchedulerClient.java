@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -313,7 +314,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class CloudSchedulerClient implements BackgroundResource {
-  private final CloudSchedulerSettings settings;
+  private final @Nullable CloudSchedulerSettings settings;
   private final CloudSchedulerStub stub;
 
   /** Constructs an instance of CloudSchedulerClient with default settings. */
@@ -353,7 +354,7 @@ public class CloudSchedulerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CloudSchedulerSettings getSettings() {
+  public final @Nullable CloudSchedulerSettings getSettings() {
     return settings;
   }
 
@@ -385,7 +386,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListJobsPagedResponse listJobs(LocationName parent) {
+  public final ListJobsPagedResponse listJobs(@Nullable LocationName parent) {
     ListJobsRequest request =
         ListJobsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listJobs(request);
@@ -543,7 +544,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job getJob(JobName name) {
+  public final Job getJob(@Nullable JobName name) {
     GetJobRequest request =
         GetJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getJob(request);
@@ -659,7 +660,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    *     ([name][google.cloud.scheduler.v1.Job.name]) in the response.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job createJob(LocationName parent, Job job) {
+  public final Job createJob(@Nullable LocationName parent, Job job) {
     CreateJobRequest request =
         CreateJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -893,7 +894,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteJob(JobName name) {
+  public final void deleteJob(@Nullable JobName name) {
     DeleteJobRequest request =
         DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteJob(request);
@@ -1009,7 +1010,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job pauseJob(JobName name) {
+  public final Job pauseJob(@Nullable JobName name) {
     PauseJobRequest request =
         PauseJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return pauseJob(request);
@@ -1143,7 +1144,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job resumeJob(JobName name) {
+  public final Job resumeJob(@Nullable JobName name) {
     ResumeJobRequest request =
         ResumeJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return resumeJob(request);
@@ -1274,7 +1275,7 @@ public class CloudSchedulerClient implements BackgroundResource {
    *     `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job runJob(JobName name) {
+  public final Job runJob(@Nullable JobName name) {
     RunJobRequest request =
         RunJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return runJob(request);
@@ -1578,7 +1579,8 @@ public class CloudSchedulerClient implements BackgroundResource {
       extends AbstractPage<ListJobsRequest, ListJobsResponse, Job, ListJobsPage> {
 
     private ListJobsPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       super(context, response);
     }
 
@@ -1588,13 +1590,14 @@ public class CloudSchedulerClient implements BackgroundResource {
 
     @Override
     protected ListJobsPage createPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       return new ListJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListJobsPage> createPageAsync(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
         ApiFuture<ListJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1604,7 +1607,7 @@ public class CloudSchedulerClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListJobsRequest, ListJobsResponse, Job, ListJobsPage, ListJobsFixedSizeCollection> {
 
-    private ListJobsFixedSizeCollection(List<ListJobsPage> pages, int collectionSize) {
+    private ListJobsFixedSizeCollection(@Nullable List<ListJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1614,7 +1617,7 @@ public class CloudSchedulerClient implements BackgroundResource {
 
     @Override
     protected ListJobsFixedSizeCollection createCollection(
-        List<ListJobsPage> pages, int collectionSize) {
+        @Nullable List<ListJobsPage> pages, int collectionSize) {
       return new ListJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1648,8 +1651,8 @@ public class CloudSchedulerClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1659,14 +1662,14 @@ public class CloudSchedulerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1680,7 +1683,8 @@ public class CloudSchedulerClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1690,7 +1694,7 @@ public class CloudSchedulerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Exception thrown when the service is currently unavailable. This is a most likely a transient
  * condition and may be corrected by retrying with a backoff.
  */
+@NullMarked
 public class UnavailableException extends ApiException {
   public UnavailableException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

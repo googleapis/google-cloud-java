@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -122,7 +123,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class TetherClient implements BackgroundResource {
-  private final TetherSettings settings;
+  private final @Nullable TetherSettings settings;
   private final TetherStub stub;
 
   /** Constructs an instance of TetherClient with default settings. */
@@ -160,7 +161,7 @@ public class TetherClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TetherSettings getSettings() {
+  public final @Nullable TetherSettings getSettings() {
     return settings;
   }
 

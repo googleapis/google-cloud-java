@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -1072,7 +1073,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class InstancesClient implements BackgroundResource {
-  private final InstancesSettings settings;
+  private final @Nullable InstancesSettings settings;
   private final InstancesStub stub;
 
   /** Constructs an instance of InstancesClient with default settings. */
@@ -1110,7 +1111,7 @@ public class InstancesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final InstancesSettings getSettings() {
+  public final @Nullable InstancesSettings getSettings() {
     return settings;
   }
 
@@ -8221,12 +8222,13 @@ public class InstancesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListInstancesRequest,
                 InstanceAggregatedList,
                 Map.Entry<String, InstancesScopedList>>
             context,
-        InstanceAggregatedList response) {
+        @Nullable InstanceAggregatedList response) {
       super(context, response);
     }
 
@@ -8236,18 +8238,20 @@ public class InstancesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListInstancesRequest,
                 InstanceAggregatedList,
                 Map.Entry<String, InstancesScopedList>>
             context,
-        InstanceAggregatedList response) {
+        @Nullable InstanceAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListInstancesRequest,
                 InstanceAggregatedList,
                 Map.Entry<String, InstancesScopedList>>
@@ -8265,7 +8269,8 @@ public class InstancesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8275,7 +8280,7 @@ public class InstancesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8302,7 +8307,8 @@ public class InstancesClient implements BackgroundResource {
       extends AbstractPage<ListInstancesRequest, InstanceList, Instance, ListPage> {
 
     private ListPage(
-        PageContext<ListInstancesRequest, InstanceList, Instance> context, InstanceList response) {
+        @Nullable PageContext<ListInstancesRequest, InstanceList, Instance> context,
+        @Nullable InstanceList response) {
       super(context, response);
     }
 
@@ -8312,13 +8318,14 @@ public class InstancesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListInstancesRequest, InstanceList, Instance> context, InstanceList response) {
+        @Nullable PageContext<ListInstancesRequest, InstanceList, Instance> context,
+        @Nullable InstanceList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListInstancesRequest, InstanceList, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, InstanceList, Instance> context,
         ApiFuture<InstanceList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8328,7 +8335,7 @@ public class InstancesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListInstancesRequest, InstanceList, Instance, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8337,7 +8344,8 @@ public class InstancesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8371,8 +8379,9 @@ public class InstancesClient implements BackgroundResource {
           ListReferrersInstancesRequest, InstanceListReferrers, Reference, ListReferrersPage> {
 
     private ListReferrersPage(
-        PageContext<ListReferrersInstancesRequest, InstanceListReferrers, Reference> context,
-        InstanceListReferrers response) {
+        @Nullable PageContext<ListReferrersInstancesRequest, InstanceListReferrers, Reference>
+            context,
+        @Nullable InstanceListReferrers response) {
       super(context, response);
     }
 
@@ -8382,14 +8391,16 @@ public class InstancesClient implements BackgroundResource {
 
     @Override
     protected ListReferrersPage createPage(
-        PageContext<ListReferrersInstancesRequest, InstanceListReferrers, Reference> context,
-        InstanceListReferrers response) {
+        @Nullable PageContext<ListReferrersInstancesRequest, InstanceListReferrers, Reference>
+            context,
+        @Nullable InstanceListReferrers response) {
       return new ListReferrersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReferrersPage> createPageAsync(
-        PageContext<ListReferrersInstancesRequest, InstanceListReferrers, Reference> context,
+        @Nullable PageContext<ListReferrersInstancesRequest, InstanceListReferrers, Reference>
+            context,
         ApiFuture<InstanceListReferrers> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8403,7 +8414,8 @@ public class InstancesClient implements BackgroundResource {
           ListReferrersPage,
           ListReferrersFixedSizeCollection> {
 
-    private ListReferrersFixedSizeCollection(List<ListReferrersPage> pages, int collectionSize) {
+    private ListReferrersFixedSizeCollection(
+        @Nullable List<ListReferrersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8413,7 +8425,7 @@ public class InstancesClient implements BackgroundResource {
 
     @Override
     protected ListReferrersFixedSizeCollection createCollection(
-        List<ListReferrersPage> pages, int collectionSize) {
+        @Nullable List<ListReferrersPage> pages, int collectionSize) {
       return new ListReferrersFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -38,6 +38,7 @@ import com.google.api.gax.rpc.internal.Headers;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@code UnaryCallable} that extracts values from the fields of the request and inserts them into
@@ -45,6 +46,7 @@ import com.google.common.collect.ImmutableMap;
  *
  * <p>Package-private for internal usage.
  */
+@NullMarked
 class HttpJsonUnaryRequestParamCallable<RequestT, ResponseT>
     extends UnaryCallable<RequestT, ResponseT> {
   private final UnaryCallable<RequestT, ResponseT> callable;

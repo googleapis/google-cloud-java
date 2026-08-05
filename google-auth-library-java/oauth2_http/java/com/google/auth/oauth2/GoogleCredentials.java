@@ -60,9 +60,11 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Executor;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Base type for credentials for authorizing calls to Google APIs using OAuth2. */
+@NullMarked
 public class GoogleCredentials extends OAuth2Credentials implements QuotaProjectIdProvider {
 
   private static final long serialVersionUID = -1522852442442473691L;
@@ -85,7 +87,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
     private final String credentialName;
     @Nullable private final String fileType;
 
-    GoogleCredentialsInfo(String credentialName, String fileType) {
+    GoogleCredentialsInfo(String credentialName, @Nullable String fileType) {
       this.credentialName = credentialName;
       this.fileType = fileType;
     }
@@ -94,8 +96,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
       return credentialName;
     }
 
-    @Nullable
-    String getFileType() {
+    @Nullable String getFileType() {
       return fileType;
     }
   }
@@ -604,7 +605,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    * @param quotaProjectId a quotaProjectId, a project id to be used for billing purposes
    */
   @Deprecated
-  protected GoogleCredentials(AccessToken accessToken, String quotaProjectId) {
+  protected GoogleCredentials(AccessToken accessToken, @Nullable String quotaProjectId) {
     this(
         GoogleCredentials.newBuilder()
             .setAccessToken(accessToken)
@@ -682,7 +683,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof GoogleCredentials)) {
       return false;
     }
@@ -842,8 +843,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    *
    * @return the transport factory, or null if not available.
    */
-  @Nullable
-  HttpTransportFactory getTransportFactory() {
+  @Nullable HttpTransportFactory getTransportFactory() {
     return null;
   }
 
@@ -856,8 +856,8 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   }
 
   public static class Builder extends OAuth2Credentials.Builder {
-    @Nullable protected String quotaProjectId;
-    @Nullable protected String universeDomain;
+    protected @Nullable String quotaProjectId;
+    protected @Nullable String universeDomain;
     @Nullable String source;
 
     protected Builder() {}

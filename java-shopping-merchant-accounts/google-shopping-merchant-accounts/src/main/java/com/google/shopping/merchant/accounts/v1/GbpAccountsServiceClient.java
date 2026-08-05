@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -166,7 +167,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class GbpAccountsServiceClient implements BackgroundResource {
-  private final GbpAccountsServiceSettings settings;
+  private final @Nullable GbpAccountsServiceSettings settings;
   private final GbpAccountsServiceStub stub;
 
   /** Constructs an instance of GbpAccountsServiceClient with default settings. */
@@ -206,7 +207,7 @@ public class GbpAccountsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GbpAccountsServiceSettings getSettings() {
+  public final @Nullable GbpAccountsServiceSettings getSettings() {
     return settings;
   }
 
@@ -238,7 +239,7 @@ public class GbpAccountsServiceClient implements BackgroundResource {
    *     listed. Format: `accounts/{account}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListGbpAccountsPagedResponse listGbpAccounts(AccountName parent) {
+  public final ListGbpAccountsPagedResponse listGbpAccounts(@Nullable AccountName parent) {
     ListGbpAccountsRequest request =
         ListGbpAccountsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -406,7 +407,7 @@ public class GbpAccountsServiceClient implements BackgroundResource {
    *     Format: `accounts/{account}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LinkGbpAccountResponse linkGbpAccount(AccountName parent) {
+  public final LinkGbpAccountResponse linkGbpAccount(@Nullable AccountName parent) {
     LinkGbpAccountRequest request =
         LinkGbpAccountRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -571,8 +572,8 @@ public class GbpAccountsServiceClient implements BackgroundResource {
           ListGbpAccountsRequest, ListGbpAccountsResponse, GbpAccount, ListGbpAccountsPage> {
 
     private ListGbpAccountsPage(
-        PageContext<ListGbpAccountsRequest, ListGbpAccountsResponse, GbpAccount> context,
-        ListGbpAccountsResponse response) {
+        @Nullable PageContext<ListGbpAccountsRequest, ListGbpAccountsResponse, GbpAccount> context,
+        @Nullable ListGbpAccountsResponse response) {
       super(context, response);
     }
 
@@ -582,14 +583,14 @@ public class GbpAccountsServiceClient implements BackgroundResource {
 
     @Override
     protected ListGbpAccountsPage createPage(
-        PageContext<ListGbpAccountsRequest, ListGbpAccountsResponse, GbpAccount> context,
-        ListGbpAccountsResponse response) {
+        @Nullable PageContext<ListGbpAccountsRequest, ListGbpAccountsResponse, GbpAccount> context,
+        @Nullable ListGbpAccountsResponse response) {
       return new ListGbpAccountsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGbpAccountsPage> createPageAsync(
-        PageContext<ListGbpAccountsRequest, ListGbpAccountsResponse, GbpAccount> context,
+        @Nullable PageContext<ListGbpAccountsRequest, ListGbpAccountsResponse, GbpAccount> context,
         ApiFuture<ListGbpAccountsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -604,7 +605,7 @@ public class GbpAccountsServiceClient implements BackgroundResource {
           ListGbpAccountsFixedSizeCollection> {
 
     private ListGbpAccountsFixedSizeCollection(
-        List<ListGbpAccountsPage> pages, int collectionSize) {
+        @Nullable List<ListGbpAccountsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -614,7 +615,7 @@ public class GbpAccountsServiceClient implements BackgroundResource {
 
     @Override
     protected ListGbpAccountsFixedSizeCollection createCollection(
-        List<ListGbpAccountsPage> pages, int collectionSize) {
+        @Nullable List<ListGbpAccountsPage> pages, int collectionSize) {
       return new ListGbpAccountsFixedSizeCollection(pages, collectionSize);
     }
   }

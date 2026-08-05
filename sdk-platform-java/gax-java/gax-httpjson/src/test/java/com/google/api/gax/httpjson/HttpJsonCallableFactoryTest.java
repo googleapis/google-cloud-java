@@ -31,6 +31,7 @@ package com.google.api.gax.httpjson;
 
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
+import static org.mockito.Mockito.mock;
 
 import com.google.api.client.http.HttpMethods;
 import com.google.api.gax.tracing.ApiTracerContext;
@@ -46,7 +47,8 @@ import org.mockito.Mockito;
 
 class HttpJsonCallableFactoryTest {
   private HttpRequestFormatter createMockRequestFormatter() {
-    HttpRequestFormatter formatter = Mockito.mock(HttpRequestFormatter.class);
+    HttpRequestFormatter formatter =
+        mock(HttpRequestFormatter.class, Mockito.withSettings().withoutAnnotations());
     PathTemplate template = PathTemplate.create("/test/path/template");
     Mockito.when(formatter.getPathTemplate()).thenReturn(template);
     return formatter;
@@ -66,7 +68,8 @@ class HttpJsonCallableFactoryTest {
               .setFullMethodName(entry.getKey())
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(createMockRequestFormatter())
-              .setResponseParser(Mockito.mock(HttpResponseParser.class))
+              .setResponseParser(
+                  mock(HttpResponseParser.class, Mockito.withSettings().withoutAnnotations()))
               .build();
 
       ApiTracerContext context = HttpJsonCallableFactory.getApiTracerContext(descriptor);
@@ -87,7 +90,8 @@ class HttpJsonCallableFactoryTest {
               .setFullMethodName(invalidName)
               .setHttpMethod(HttpMethods.POST)
               .setRequestFormatter(createMockRequestFormatter())
-              .setResponseParser(Mockito.mock(HttpResponseParser.class))
+              .setResponseParser(
+                  mock(HttpResponseParser.class, Mockito.withSettings().withoutAnnotations()))
               .build();
 
       IllegalArgumentException actualError = null;

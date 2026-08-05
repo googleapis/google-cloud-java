@@ -92,6 +92,7 @@ public class BinauthzManagementServiceV1Beta1ClientHttpJsonTest {
             .putAllIstioServiceIdentityAdmissionRules(new HashMap<String, AdmissionRule>())
             .setDefaultAdmissionRule(AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -144,6 +145,7 @@ public class BinauthzManagementServiceV1Beta1ClientHttpJsonTest {
             .putAllIstioServiceIdentityAdmissionRules(new HashMap<String, AdmissionRule>())
             .setDefaultAdmissionRule(AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -196,6 +198,7 @@ public class BinauthzManagementServiceV1Beta1ClientHttpJsonTest {
             .putAllIstioServiceIdentityAdmissionRules(new HashMap<String, AdmissionRule>())
             .setDefaultAdmissionRule(AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -210,6 +213,7 @@ public class BinauthzManagementServiceV1Beta1ClientHttpJsonTest {
             .putAllIstioServiceIdentityAdmissionRules(new HashMap<String, AdmissionRule>())
             .setDefaultAdmissionRule(AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
 
     Policy actualResponse = client.updatePolicy(policy);
@@ -249,6 +253,7 @@ public class BinauthzManagementServiceV1Beta1ClientHttpJsonTest {
               .putAllIstioServiceIdentityAdmissionRules(new HashMap<String, AdmissionRule>())
               .setDefaultAdmissionRule(AdmissionRule.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
+              .setEtag("etag3123477")
               .build();
       client.updatePolicy(policy);
       Assert.fail("No exception raised");
@@ -264,6 +269,7 @@ public class BinauthzManagementServiceV1Beta1ClientHttpJsonTest {
             .setName(AttestorName.of("[PROJECT]", "[ATTESTOR]").toString())
             .setDescription("description-1724546052")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -314,6 +320,7 @@ public class BinauthzManagementServiceV1Beta1ClientHttpJsonTest {
             .setName(AttestorName.of("[PROJECT]", "[ATTESTOR]").toString())
             .setDescription("description-1724546052")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -364,6 +371,7 @@ public class BinauthzManagementServiceV1Beta1ClientHttpJsonTest {
             .setName(AttestorName.of("[PROJECT]", "[ATTESTOR]").toString())
             .setDescription("description-1724546052")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -410,6 +418,7 @@ public class BinauthzManagementServiceV1Beta1ClientHttpJsonTest {
             .setName(AttestorName.of("[PROJECT]", "[ATTESTOR]").toString())
             .setDescription("description-1724546052")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -456,6 +465,7 @@ public class BinauthzManagementServiceV1Beta1ClientHttpJsonTest {
             .setName(AttestorName.of("[PROJECT]", "[ATTESTOR]").toString())
             .setDescription("description-1724546052")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -464,6 +474,7 @@ public class BinauthzManagementServiceV1Beta1ClientHttpJsonTest {
             .setName(AttestorName.of("[PROJECT]", "[ATTESTOR]").toString())
             .setDescription("description-1724546052")
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
 
     Attestor actualResponse = client.updateAttestor(attestor);
@@ -497,6 +508,7 @@ public class BinauthzManagementServiceV1Beta1ClientHttpJsonTest {
               .setName(AttestorName.of("[PROJECT]", "[ATTESTOR]").toString())
               .setDescription("description-1724546052")
               .setUpdateTime(Timestamp.newBuilder().build())
+              .setEtag("etag3123477")
               .build();
       client.updateAttestor(attestor);
       Assert.fail("No exception raised");

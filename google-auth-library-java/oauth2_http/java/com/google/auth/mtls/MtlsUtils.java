@@ -43,13 +43,15 @@ import java.io.InputStream;
 import java.security.KeyStore;
 import java.util.Locale;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Utility class for mTLS related operations.
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi
 public class MtlsUtils {
   private static final Logger LOGGER = Logger.getLogger(MtlsUtils.class.getName());
@@ -85,7 +87,9 @@ public class MtlsUtils {
    * @throws IOException if the certificate configuration cannot be found or loaded.
    */
   public static String getCertificatePath(
-      EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride)
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      @Nullable String certConfigPathOverride)
       throws IOException {
     String certPath =
         getWorkloadCertificateConfiguration(envProvider, propProvider, certConfigPathOverride)
@@ -110,7 +114,9 @@ public class MtlsUtils {
    * @throws IOException if the configuration file cannot be resolved, read, or parsed
    */
   static WorkloadCertificateConfiguration getWorkloadCertificateConfiguration(
-      EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride)
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      @Nullable String certConfigPathOverride)
       throws IOException {
     File certConfig =
         resolveCertificateConfigFile(envProvider, propProvider, certConfigPathOverride);
@@ -168,7 +174,9 @@ public class MtlsUtils {
    *     files
    */
   public static boolean canBeEnabled(
-      EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride)
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      @Nullable String certConfigPathOverride)
       throws IOException {
 
     // Check if client certificate usage is allowed
@@ -210,7 +218,7 @@ public class MtlsUtils {
   public static boolean shouldMtlsEndpointBeUsed(
       EnvironmentProvider envProvider,
       PropertyProvider propProvider,
-      String certConfigPathOverride) {
+      @Nullable String certConfigPathOverride) {
     MtlsEndpointUsagePolicy policy = getMtlsEndpointUsagePolicy(envProvider);
     if (policy == MtlsEndpointUsagePolicy.ALWAYS) {
       return true;
@@ -248,9 +256,10 @@ public class MtlsUtils {
    * @return the resolved File object, or null if no configuration was found
    * @throws IOException if an explicit configuration file is missing or malformed
    */
-  @Nullable
-  static File resolveCertificateConfigFile(
-      EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride)
+  static @Nullable File resolveCertificateConfigFile(
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      @Nullable String certConfigPathOverride)
       throws IOException {
     // 1. Check explicit developer override
     if (certConfigPathOverride != null) {
@@ -317,11 +326,11 @@ public class MtlsUtils {
    * @throws IOException if mTLS is required/enabled but certificate initialization fails or an
    *     incompatible transport factory was provided
    */
-  public static HttpTransportFactory prepareTransportFactoryIfMtlsEnabled(
-      HttpTransportFactory baseTransportFactory,
+  public static @Nullable HttpTransportFactory prepareTransportFactoryIfMtlsEnabled(
+      @Nullable HttpTransportFactory baseTransportFactory,
       EnvironmentProvider envProvider,
       PropertyProvider propProvider,
-      String certConfigPathOverride)
+      @Nullable String certConfigPathOverride)
       throws IOException {
 
     if (baseTransportFactory == null) {

@@ -27,6 +27,7 @@ import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @NullMarked
@@ -159,7 +160,7 @@ public class TimeSeriesName implements ResourceName {
         .toString();
   }
 
-  public static TimeSeriesName parse(String formattedString) {
+  public static @Nullable TimeSeriesName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -185,7 +186,7 @@ public class TimeSeriesName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<TimeSeriesName> values) {
+  public static List<String> toStringList(List<@Nullable TimeSeriesName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (TimeSeriesName value : values) {
       if (value == null) {
@@ -238,7 +239,7 @@ public class TimeSeriesName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

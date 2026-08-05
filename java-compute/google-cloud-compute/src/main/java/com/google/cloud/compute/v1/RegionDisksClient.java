@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -448,7 +449,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class RegionDisksClient implements BackgroundResource {
-  private final RegionDisksSettings settings;
+  private final @Nullable RegionDisksSettings settings;
   private final RegionDisksStub stub;
 
   /** Constructs an instance of RegionDisksClient with default settings. */
@@ -487,7 +488,7 @@ public class RegionDisksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionDisksSettings getSettings() {
+  public final @Nullable RegionDisksSettings getSettings() {
     return settings;
   }
 
@@ -2962,7 +2963,8 @@ public class RegionDisksClient implements BackgroundResource {
       extends AbstractPage<ListRegionDisksRequest, DiskList, Disk, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionDisksRequest, DiskList, Disk> context, DiskList response) {
+        @Nullable PageContext<ListRegionDisksRequest, DiskList, Disk> context,
+        @Nullable DiskList response) {
       super(context, response);
     }
 
@@ -2972,13 +2974,14 @@ public class RegionDisksClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionDisksRequest, DiskList, Disk> context, DiskList response) {
+        @Nullable PageContext<ListRegionDisksRequest, DiskList, Disk> context,
+        @Nullable DiskList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionDisksRequest, DiskList, Disk> context,
+        @Nullable PageContext<ListRegionDisksRequest, DiskList, Disk> context,
         ApiFuture<DiskList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2988,7 +2991,7 @@ public class RegionDisksClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRegionDisksRequest, DiskList, Disk, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2997,7 +3000,8 @@ public class RegionDisksClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

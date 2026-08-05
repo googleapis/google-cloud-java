@@ -48,6 +48,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -931,7 +932,7 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @Generated("by gapic-generator-java")
 public class BackupDRClient implements BackgroundResource {
-  private final BackupDRSettings settings;
+  private final @Nullable BackupDRSettings settings;
   private final BackupDRStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -977,7 +978,7 @@ public class BackupDRClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final BackupDRSettings getSettings() {
+  public final @Nullable BackupDRSettings getSettings() {
     return settings;
   }
 
@@ -1032,7 +1033,8 @@ public class BackupDRClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListManagementServersPagedResponse listManagementServers(LocationName parent) {
+  public final ListManagementServersPagedResponse listManagementServers(
+      @Nullable LocationName parent) {
     ListManagementServersRequest request =
         ListManagementServersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1211,7 +1213,7 @@ public class BackupDRClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/managementServers/{resource_name}'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ManagementServer getManagementServer(ManagementServerName name) {
+  public final ManagementServer getManagementServer(@Nullable ManagementServerName name) {
     GetManagementServerRequest request =
         GetManagementServerRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1342,7 +1344,7 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ManagementServer, OperationMetadata> createManagementServerAsync(
-      LocationName parent, ManagementServer managementServer, String managementServerId) {
+      @Nullable LocationName parent, ManagementServer managementServer, String managementServerId) {
     CreateManagementServerRequest request =
         CreateManagementServerRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1514,7 +1516,7 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteManagementServerAsync(
-      ManagementServerName name) {
+      @Nullable ManagementServerName name) {
     DeleteManagementServerRequest request =
         DeleteManagementServerRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1674,7 +1676,7 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupVault, OperationMetadata> createBackupVaultAsync(
-      LocationName parent, BackupVault backupVault, String backupVaultId) {
+      @Nullable LocationName parent, BackupVault backupVault, String backupVaultId) {
     CreateBackupVaultRequest request =
         CreateBackupVaultRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1849,7 +1851,7 @@ public class BackupDRClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupVaultsPagedResponse listBackupVaults(LocationName parent) {
+  public final ListBackupVaultsPagedResponse listBackupVaults(@Nullable LocationName parent) {
     ListBackupVaultsRequest request =
         ListBackupVaultsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2037,7 +2039,8 @@ public class BackupDRClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FetchUsableBackupVaultsPagedResponse fetchUsableBackupVaults(LocationName parent) {
+  public final FetchUsableBackupVaultsPagedResponse fetchUsableBackupVaults(
+      @Nullable LocationName parent) {
     FetchUsableBackupVaultsRequest request =
         FetchUsableBackupVaultsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2219,7 +2222,7 @@ public class BackupDRClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/backupVaults/{resource_name}'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupVault getBackupVault(BackupVaultName name) {
+  public final BackupVault getBackupVault(@Nullable BackupVaultName name) {
     GetBackupVaultRequest request =
         GetBackupVaultRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackupVault(request);
@@ -2467,7 +2470,7 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupVaultAsync(
-      BackupVaultName name) {
+      @Nullable BackupVaultName name) {
     DeleteBackupVaultRequest request =
         DeleteBackupVaultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2630,7 +2633,7 @@ public class BackupDRClient implements BackgroundResource {
    *     To retrieve data sources for all locations, use "-" for the '{location}' value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataSourcesPagedResponse listDataSources(BackupVaultName parent) {
+  public final ListDataSourcesPagedResponse listDataSources(@Nullable BackupVaultName parent) {
     ListDataSourcesRequest request =
         ListDataSourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2802,7 +2805,7 @@ public class BackupDRClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/backupVaults/{resource_name}/dataSource/{resource_name}'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataSource getDataSource(DataSourceName name) {
+  public final DataSource getDataSource(@Nullable DataSourceName name) {
     GetDataSourceRequest request =
         GetDataSourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataSource(request);
@@ -3052,7 +3055,7 @@ public class BackupDRClient implements BackgroundResource {
    *     sources for all locations, use "-" for the '{location}' value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupsPagedResponse listBackups(DataSourceName parent) {
+  public final ListBackupsPagedResponse listBackups(@Nullable DataSourceName parent) {
     ListBackupsRequest request =
         ListBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3239,7 +3242,7 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchBackupsForResourceTypePagedResponse fetchBackupsForResourceType(
-      DataSourceName parent, String resourceType) {
+      @Nullable DataSourceName parent, String resourceType) {
     FetchBackupsForResourceTypeRequest request =
         FetchBackupsForResourceTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3436,7 +3439,7 @@ public class BackupDRClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/backupVaults/{backupVault}/dataSources/{datasource}/backups/{backup}'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Backup getBackup(BackupName name) {
+  public final Backup getBackup(@Nullable BackupName name) {
     GetBackupRequest request =
         GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackup(request);
@@ -3680,7 +3683,8 @@ public class BackupDRClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Backup, OperationMetadata> deleteBackupAsync(BackupName name) {
+  public final OperationFuture<Backup, OperationMetadata> deleteBackupAsync(
+      @Nullable BackupName name) {
     DeleteBackupRequest request =
         DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBackupAsync(request);
@@ -3835,7 +3839,7 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RestoreBackupResponse, OperationMetadata> restoreBackupAsync(
-      BackupName name) {
+      @Nullable BackupName name) {
     RestoreBackupRequest request =
         RestoreBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return restoreBackupAsync(request);
@@ -4002,7 +4006,7 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupPlan, OperationMetadata> createBackupPlanAsync(
-      LocationName parent, BackupPlan backupPlan, String backupPlanId) {
+      @Nullable LocationName parent, BackupPlan backupPlan, String backupPlanId) {
     CreateBackupPlanRequest request =
         CreateBackupPlanRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4298,7 +4302,7 @@ public class BackupDRClient implements BackgroundResource {
    *     <p>Format: `projects/{project}/locations/{location}/backupPlans/{backup_plan}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupPlan getBackupPlan(BackupPlanName name) {
+  public final BackupPlan getBackupPlan(@Nullable BackupPlanName name) {
     GetBackupPlanRequest request =
         GetBackupPlanRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackupPlan(request);
@@ -4412,7 +4416,7 @@ public class BackupDRClient implements BackgroundResource {
    *     plans for all locations, use "-" for the `{location}` value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupPlansPagedResponse listBackupPlans(LocationName parent) {
+  public final ListBackupPlansPagedResponse listBackupPlans(@Nullable LocationName parent) {
     ListBackupPlansRequest request =
         ListBackupPlansRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4584,7 +4588,7 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupPlanAsync(
-      BackupPlanName name) {
+      @Nullable BackupPlanName name) {
     DeleteBackupPlanRequest request =
         DeleteBackupPlanRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBackupPlanAsync(request);
@@ -4729,7 +4733,7 @@ public class BackupDRClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupPlanRevision getBackupPlanRevision(BackupPlanRevisionName name) {
+  public final BackupPlanRevision getBackupPlanRevision(@Nullable BackupPlanRevisionName name) {
     GetBackupPlanRevisionRequest request =
         GetBackupPlanRevisionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4857,7 +4861,8 @@ public class BackupDRClient implements BackgroundResource {
    *     In Cloud BackupDR, locations map to GCP regions, for e.g. &#42;&#42;us-central1&#42;&#42;.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupPlanRevisionsPagedResponse listBackupPlanRevisions(BackupPlanName parent) {
+  public final ListBackupPlanRevisionsPagedResponse listBackupPlanRevisions(
+      @Nullable BackupPlanName parent) {
     ListBackupPlanRevisionsRequest request =
         ListBackupPlanRevisionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5038,7 +5043,7 @@ public class BackupDRClient implements BackgroundResource {
    */
   public final OperationFuture<BackupPlanAssociation, OperationMetadata>
       createBackupPlanAssociationAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           BackupPlanAssociation backupPlanAssociation,
           String backupPlanAssociationId) {
     CreateBackupPlanAssociationRequest request =
@@ -5352,7 +5357,8 @@ public class BackupDRClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/backupPlanAssociations/{backupPlanAssociationId}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupPlanAssociation getBackupPlanAssociation(BackupPlanAssociationName name) {
+  public final BackupPlanAssociation getBackupPlanAssociation(
+      @Nullable BackupPlanAssociationName name) {
     GetBackupPlanAssociationRequest request =
         GetBackupPlanAssociationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5482,7 +5488,7 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBackupPlanAssociationsPagedResponse listBackupPlanAssociations(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListBackupPlanAssociationsRequest request =
         ListBackupPlanAssociationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5664,7 +5670,8 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchBackupPlanAssociationsForResourceTypePagedResponse
-      fetchBackupPlanAssociationsForResourceType(LocationName parent, String resourceType) {
+      fetchBackupPlanAssociationsForResourceType(
+          @Nullable LocationName parent, String resourceType) {
     FetchBackupPlanAssociationsForResourceTypeRequest request =
         FetchBackupPlanAssociationsForResourceTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5859,7 +5866,7 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupPlanAssociationAsync(
-      BackupPlanAssociationName name) {
+      @Nullable BackupPlanAssociationName name) {
     DeleteBackupPlanAssociationRequest request =
         DeleteBackupPlanAssociationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6023,7 +6030,7 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupPlanAssociation, OperationMetadata> triggerBackupAsync(
-      BackupPlanAssociationName name, String ruleId) {
+      @Nullable BackupPlanAssociationName name, String ruleId) {
     TriggerBackupRequest request =
         TriggerBackupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6188,7 +6195,7 @@ public class BackupDRClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/dataSourceReferences/{data_source_reference}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataSourceReference getDataSourceReference(DataSourceReferenceName name) {
+  public final DataSourceReference getDataSourceReference(@Nullable DataSourceReferenceName name) {
     GetDataSourceReferenceRequest request =
         GetDataSourceReferenceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6312,7 +6319,8 @@ public class BackupDRClient implements BackgroundResource {
    *     projects/{project}/locations/{location}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataSourceReferencesPagedResponse listDataSourceReferences(LocationName parent) {
+  public final ListDataSourceReferencesPagedResponse listDataSourceReferences(
+      @Nullable LocationName parent) {
     ListDataSourceReferencesRequest request =
         ListDataSourceReferencesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6494,7 +6502,7 @@ public class BackupDRClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FetchDataSourceReferencesForResourceTypePagedResponse
-      fetchDataSourceReferencesForResourceType(LocationName parent, String resourceType) {
+      fetchDataSourceReferencesForResourceType(@Nullable LocationName parent, String resourceType) {
     FetchDataSourceReferencesForResourceTypeRequest request =
         FetchDataSourceReferencesForResourceTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7177,9 +7185,11 @@ public class BackupDRClient implements BackgroundResource {
           ListManagementServersPage> {
 
     private ListManagementServersPage(
-        PageContext<ListManagementServersRequest, ListManagementServersResponse, ManagementServer>
+        @Nullable
+            PageContext<
+                ListManagementServersRequest, ListManagementServersResponse, ManagementServer>
             context,
-        ListManagementServersResponse response) {
+        @Nullable ListManagementServersResponse response) {
       super(context, response);
     }
 
@@ -7189,15 +7199,19 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListManagementServersPage createPage(
-        PageContext<ListManagementServersRequest, ListManagementServersResponse, ManagementServer>
+        @Nullable
+            PageContext<
+                ListManagementServersRequest, ListManagementServersResponse, ManagementServer>
             context,
-        ListManagementServersResponse response) {
+        @Nullable ListManagementServersResponse response) {
       return new ListManagementServersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListManagementServersPage> createPageAsync(
-        PageContext<ListManagementServersRequest, ListManagementServersResponse, ManagementServer>
+        @Nullable
+            PageContext<
+                ListManagementServersRequest, ListManagementServersResponse, ManagementServer>
             context,
         ApiFuture<ListManagementServersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7213,7 +7227,7 @@ public class BackupDRClient implements BackgroundResource {
           ListManagementServersFixedSizeCollection> {
 
     private ListManagementServersFixedSizeCollection(
-        List<ListManagementServersPage> pages, int collectionSize) {
+        @Nullable List<ListManagementServersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7223,7 +7237,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListManagementServersFixedSizeCollection createCollection(
-        List<ListManagementServersPage> pages, int collectionSize) {
+        @Nullable List<ListManagementServersPage> pages, int collectionSize) {
       return new ListManagementServersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7257,8 +7271,9 @@ public class BackupDRClient implements BackgroundResource {
           ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault, ListBackupVaultsPage> {
 
     private ListBackupVaultsPage(
-        PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault> context,
-        ListBackupVaultsResponse response) {
+        @Nullable PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault>
+            context,
+        @Nullable ListBackupVaultsResponse response) {
       super(context, response);
     }
 
@@ -7268,14 +7283,16 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListBackupVaultsPage createPage(
-        PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault> context,
-        ListBackupVaultsResponse response) {
+        @Nullable PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault>
+            context,
+        @Nullable ListBackupVaultsResponse response) {
       return new ListBackupVaultsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupVaultsPage> createPageAsync(
-        PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault> context,
+        @Nullable PageContext<ListBackupVaultsRequest, ListBackupVaultsResponse, BackupVault>
+            context,
         ApiFuture<ListBackupVaultsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7290,7 +7307,7 @@ public class BackupDRClient implements BackgroundResource {
           ListBackupVaultsFixedSizeCollection> {
 
     private ListBackupVaultsFixedSizeCollection(
-        List<ListBackupVaultsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupVaultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7300,7 +7317,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListBackupVaultsFixedSizeCollection createCollection(
-        List<ListBackupVaultsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupVaultsPage> pages, int collectionSize) {
       return new ListBackupVaultsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7338,9 +7355,11 @@ public class BackupDRClient implements BackgroundResource {
           FetchUsableBackupVaultsPage> {
 
     private FetchUsableBackupVaultsPage(
-        PageContext<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse, BackupVault>
+        @Nullable
+            PageContext<
+                FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse, BackupVault>
             context,
-        FetchUsableBackupVaultsResponse response) {
+        @Nullable FetchUsableBackupVaultsResponse response) {
       super(context, response);
     }
 
@@ -7350,15 +7369,19 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected FetchUsableBackupVaultsPage createPage(
-        PageContext<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse, BackupVault>
+        @Nullable
+            PageContext<
+                FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse, BackupVault>
             context,
-        FetchUsableBackupVaultsResponse response) {
+        @Nullable FetchUsableBackupVaultsResponse response) {
       return new FetchUsableBackupVaultsPage(context, response);
     }
 
     @Override
     public ApiFuture<FetchUsableBackupVaultsPage> createPageAsync(
-        PageContext<FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse, BackupVault>
+        @Nullable
+            PageContext<
+                FetchUsableBackupVaultsRequest, FetchUsableBackupVaultsResponse, BackupVault>
             context,
         ApiFuture<FetchUsableBackupVaultsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7374,7 +7397,7 @@ public class BackupDRClient implements BackgroundResource {
           FetchUsableBackupVaultsFixedSizeCollection> {
 
     private FetchUsableBackupVaultsFixedSizeCollection(
-        List<FetchUsableBackupVaultsPage> pages, int collectionSize) {
+        @Nullable List<FetchUsableBackupVaultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7384,7 +7407,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected FetchUsableBackupVaultsFixedSizeCollection createCollection(
-        List<FetchUsableBackupVaultsPage> pages, int collectionSize) {
+        @Nullable List<FetchUsableBackupVaultsPage> pages, int collectionSize) {
       return new FetchUsableBackupVaultsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7418,8 +7441,8 @@ public class BackupDRClient implements BackgroundResource {
           ListDataSourcesRequest, ListDataSourcesResponse, DataSource, ListDataSourcesPage> {
 
     private ListDataSourcesPage(
-        PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
-        ListDataSourcesResponse response) {
+        @Nullable PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
+        @Nullable ListDataSourcesResponse response) {
       super(context, response);
     }
 
@@ -7429,14 +7452,14 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListDataSourcesPage createPage(
-        PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
-        ListDataSourcesResponse response) {
+        @Nullable PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
+        @Nullable ListDataSourcesResponse response) {
       return new ListDataSourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataSourcesPage> createPageAsync(
-        PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
+        @Nullable PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> context,
         ApiFuture<ListDataSourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7451,7 +7474,7 @@ public class BackupDRClient implements BackgroundResource {
           ListDataSourcesFixedSizeCollection> {
 
     private ListDataSourcesFixedSizeCollection(
-        List<ListDataSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListDataSourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7461,7 +7484,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListDataSourcesFixedSizeCollection createCollection(
-        List<ListDataSourcesPage> pages, int collectionSize) {
+        @Nullable List<ListDataSourcesPage> pages, int collectionSize) {
       return new ListDataSourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7492,8 +7515,8 @@ public class BackupDRClient implements BackgroundResource {
       extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
 
     private ListBackupsPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       super(context, response);
     }
 
@@ -7503,14 +7526,14 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListBackupsPage createPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       return new ListBackupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupsPage> createPageAsync(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
         ApiFuture<ListBackupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7524,7 +7547,8 @@ public class BackupDRClient implements BackgroundResource {
           ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
-    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+    private ListBackupsFixedSizeCollection(
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7534,7 +7558,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListBackupsFixedSizeCollection createCollection(
-        List<ListBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7573,9 +7597,11 @@ public class BackupDRClient implements BackgroundResource {
           FetchBackupsForResourceTypePage> {
 
     private FetchBackupsForResourceTypePage(
-        PageContext<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse, Backup>
+        @Nullable
+            PageContext<
+                FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse, Backup>
             context,
-        FetchBackupsForResourceTypeResponse response) {
+        @Nullable FetchBackupsForResourceTypeResponse response) {
       super(context, response);
     }
 
@@ -7585,15 +7611,19 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected FetchBackupsForResourceTypePage createPage(
-        PageContext<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse, Backup>
+        @Nullable
+            PageContext<
+                FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse, Backup>
             context,
-        FetchBackupsForResourceTypeResponse response) {
+        @Nullable FetchBackupsForResourceTypeResponse response) {
       return new FetchBackupsForResourceTypePage(context, response);
     }
 
     @Override
     public ApiFuture<FetchBackupsForResourceTypePage> createPageAsync(
-        PageContext<FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse, Backup>
+        @Nullable
+            PageContext<
+                FetchBackupsForResourceTypeRequest, FetchBackupsForResourceTypeResponse, Backup>
             context,
         ApiFuture<FetchBackupsForResourceTypeResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7609,7 +7639,7 @@ public class BackupDRClient implements BackgroundResource {
           FetchBackupsForResourceTypeFixedSizeCollection> {
 
     private FetchBackupsForResourceTypeFixedSizeCollection(
-        List<FetchBackupsForResourceTypePage> pages, int collectionSize) {
+        @Nullable List<FetchBackupsForResourceTypePage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7619,7 +7649,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected FetchBackupsForResourceTypeFixedSizeCollection createCollection(
-        List<FetchBackupsForResourceTypePage> pages, int collectionSize) {
+        @Nullable List<FetchBackupsForResourceTypePage> pages, int collectionSize) {
       return new FetchBackupsForResourceTypeFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7653,8 +7683,8 @@ public class BackupDRClient implements BackgroundResource {
           ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan, ListBackupPlansPage> {
 
     private ListBackupPlansPage(
-        PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> context,
-        ListBackupPlansResponse response) {
+        @Nullable PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> context,
+        @Nullable ListBackupPlansResponse response) {
       super(context, response);
     }
 
@@ -7664,14 +7694,14 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListBackupPlansPage createPage(
-        PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> context,
-        ListBackupPlansResponse response) {
+        @Nullable PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> context,
+        @Nullable ListBackupPlansResponse response) {
       return new ListBackupPlansPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupPlansPage> createPageAsync(
-        PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> context,
+        @Nullable PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> context,
         ApiFuture<ListBackupPlansResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7686,7 +7716,7 @@ public class BackupDRClient implements BackgroundResource {
           ListBackupPlansFixedSizeCollection> {
 
     private ListBackupPlansFixedSizeCollection(
-        List<ListBackupPlansPage> pages, int collectionSize) {
+        @Nullable List<ListBackupPlansPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7696,7 +7726,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListBackupPlansFixedSizeCollection createCollection(
-        List<ListBackupPlansPage> pages, int collectionSize) {
+        @Nullable List<ListBackupPlansPage> pages, int collectionSize) {
       return new ListBackupPlansFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7735,10 +7765,11 @@ public class BackupDRClient implements BackgroundResource {
           ListBackupPlanRevisionsPage> {
 
     private ListBackupPlanRevisionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse, BackupPlanRevision>
             context,
-        ListBackupPlanRevisionsResponse response) {
+        @Nullable ListBackupPlanRevisionsResponse response) {
       super(context, response);
     }
 
@@ -7748,16 +7779,18 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListBackupPlanRevisionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse, BackupPlanRevision>
             context,
-        ListBackupPlanRevisionsResponse response) {
+        @Nullable ListBackupPlanRevisionsResponse response) {
       return new ListBackupPlanRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupPlanRevisionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListBackupPlanRevisionsRequest, ListBackupPlanRevisionsResponse, BackupPlanRevision>
             context,
         ApiFuture<ListBackupPlanRevisionsResponse> futureResponse) {
@@ -7774,7 +7807,7 @@ public class BackupDRClient implements BackgroundResource {
           ListBackupPlanRevisionsFixedSizeCollection> {
 
     private ListBackupPlanRevisionsFixedSizeCollection(
-        List<ListBackupPlanRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupPlanRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7784,7 +7817,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListBackupPlanRevisionsFixedSizeCollection createCollection(
-        List<ListBackupPlanRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupPlanRevisionsPage> pages, int collectionSize) {
       return new ListBackupPlanRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7825,12 +7858,13 @@ public class BackupDRClient implements BackgroundResource {
           ListBackupPlanAssociationsPage> {
 
     private ListBackupPlanAssociationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListBackupPlanAssociationsRequest,
                 ListBackupPlanAssociationsResponse,
                 BackupPlanAssociation>
             context,
-        ListBackupPlanAssociationsResponse response) {
+        @Nullable ListBackupPlanAssociationsResponse response) {
       super(context, response);
     }
 
@@ -7840,18 +7874,20 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListBackupPlanAssociationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListBackupPlanAssociationsRequest,
                 ListBackupPlanAssociationsResponse,
                 BackupPlanAssociation>
             context,
-        ListBackupPlanAssociationsResponse response) {
+        @Nullable ListBackupPlanAssociationsResponse response) {
       return new ListBackupPlanAssociationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupPlanAssociationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListBackupPlanAssociationsRequest,
                 ListBackupPlanAssociationsResponse,
                 BackupPlanAssociation>
@@ -7870,7 +7906,7 @@ public class BackupDRClient implements BackgroundResource {
           ListBackupPlanAssociationsFixedSizeCollection> {
 
     private ListBackupPlanAssociationsFixedSizeCollection(
-        List<ListBackupPlanAssociationsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupPlanAssociationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7880,7 +7916,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListBackupPlanAssociationsFixedSizeCollection createCollection(
-        List<ListBackupPlanAssociationsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupPlanAssociationsPage> pages, int collectionSize) {
       return new ListBackupPlanAssociationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7925,12 +7961,13 @@ public class BackupDRClient implements BackgroundResource {
           FetchBackupPlanAssociationsForResourceTypePage> {
 
     private FetchBackupPlanAssociationsForResourceTypePage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchBackupPlanAssociationsForResourceTypeRequest,
                 FetchBackupPlanAssociationsForResourceTypeResponse,
                 BackupPlanAssociation>
             context,
-        FetchBackupPlanAssociationsForResourceTypeResponse response) {
+        @Nullable FetchBackupPlanAssociationsForResourceTypeResponse response) {
       super(context, response);
     }
 
@@ -7940,18 +7977,20 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected FetchBackupPlanAssociationsForResourceTypePage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchBackupPlanAssociationsForResourceTypeRequest,
                 FetchBackupPlanAssociationsForResourceTypeResponse,
                 BackupPlanAssociation>
             context,
-        FetchBackupPlanAssociationsForResourceTypeResponse response) {
+        @Nullable FetchBackupPlanAssociationsForResourceTypeResponse response) {
       return new FetchBackupPlanAssociationsForResourceTypePage(context, response);
     }
 
     @Override
     public ApiFuture<FetchBackupPlanAssociationsForResourceTypePage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchBackupPlanAssociationsForResourceTypeRequest,
                 FetchBackupPlanAssociationsForResourceTypeResponse,
                 BackupPlanAssociation>
@@ -7970,7 +8009,7 @@ public class BackupDRClient implements BackgroundResource {
           FetchBackupPlanAssociationsForResourceTypeFixedSizeCollection> {
 
     private FetchBackupPlanAssociationsForResourceTypeFixedSizeCollection(
-        List<FetchBackupPlanAssociationsForResourceTypePage> pages, int collectionSize) {
+        @Nullable List<FetchBackupPlanAssociationsForResourceTypePage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7981,7 +8020,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected FetchBackupPlanAssociationsForResourceTypeFixedSizeCollection createCollection(
-        List<FetchBackupPlanAssociationsForResourceTypePage> pages, int collectionSize) {
+        @Nullable List<FetchBackupPlanAssociationsForResourceTypePage> pages, int collectionSize) {
       return new FetchBackupPlanAssociationsForResourceTypeFixedSizeCollection(
           pages, collectionSize);
     }
@@ -8023,12 +8062,13 @@ public class BackupDRClient implements BackgroundResource {
           ListDataSourceReferencesPage> {
 
     private ListDataSourceReferencesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDataSourceReferencesRequest,
                 ListDataSourceReferencesResponse,
                 DataSourceReference>
             context,
-        ListDataSourceReferencesResponse response) {
+        @Nullable ListDataSourceReferencesResponse response) {
       super(context, response);
     }
 
@@ -8038,18 +8078,20 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListDataSourceReferencesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDataSourceReferencesRequest,
                 ListDataSourceReferencesResponse,
                 DataSourceReference>
             context,
-        ListDataSourceReferencesResponse response) {
+        @Nullable ListDataSourceReferencesResponse response) {
       return new ListDataSourceReferencesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataSourceReferencesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDataSourceReferencesRequest,
                 ListDataSourceReferencesResponse,
                 DataSourceReference>
@@ -8068,7 +8110,7 @@ public class BackupDRClient implements BackgroundResource {
           ListDataSourceReferencesFixedSizeCollection> {
 
     private ListDataSourceReferencesFixedSizeCollection(
-        List<ListDataSourceReferencesPage> pages, int collectionSize) {
+        @Nullable List<ListDataSourceReferencesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8078,7 +8120,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListDataSourceReferencesFixedSizeCollection createCollection(
-        List<ListDataSourceReferencesPage> pages, int collectionSize) {
+        @Nullable List<ListDataSourceReferencesPage> pages, int collectionSize) {
       return new ListDataSourceReferencesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8123,12 +8165,13 @@ public class BackupDRClient implements BackgroundResource {
           FetchDataSourceReferencesForResourceTypePage> {
 
     private FetchDataSourceReferencesForResourceTypePage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchDataSourceReferencesForResourceTypeRequest,
                 FetchDataSourceReferencesForResourceTypeResponse,
                 DataSourceReference>
             context,
-        FetchDataSourceReferencesForResourceTypeResponse response) {
+        @Nullable FetchDataSourceReferencesForResourceTypeResponse response) {
       super(context, response);
     }
 
@@ -8138,18 +8181,20 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected FetchDataSourceReferencesForResourceTypePage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchDataSourceReferencesForResourceTypeRequest,
                 FetchDataSourceReferencesForResourceTypeResponse,
                 DataSourceReference>
             context,
-        FetchDataSourceReferencesForResourceTypeResponse response) {
+        @Nullable FetchDataSourceReferencesForResourceTypeResponse response) {
       return new FetchDataSourceReferencesForResourceTypePage(context, response);
     }
 
     @Override
     public ApiFuture<FetchDataSourceReferencesForResourceTypePage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 FetchDataSourceReferencesForResourceTypeRequest,
                 FetchDataSourceReferencesForResourceTypeResponse,
                 DataSourceReference>
@@ -8168,7 +8213,7 @@ public class BackupDRClient implements BackgroundResource {
           FetchDataSourceReferencesForResourceTypeFixedSizeCollection> {
 
     private FetchDataSourceReferencesForResourceTypeFixedSizeCollection(
-        List<FetchDataSourceReferencesForResourceTypePage> pages, int collectionSize) {
+        @Nullable List<FetchDataSourceReferencesForResourceTypePage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8179,7 +8224,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected FetchDataSourceReferencesForResourceTypeFixedSizeCollection createCollection(
-        List<FetchDataSourceReferencesForResourceTypePage> pages, int collectionSize) {
+        @Nullable List<FetchDataSourceReferencesForResourceTypePage> pages, int collectionSize) {
       return new FetchDataSourceReferencesForResourceTypeFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8213,8 +8258,8 @@ public class BackupDRClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -8224,14 +8269,14 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8245,7 +8290,8 @@ public class BackupDRClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8255,7 +8301,7 @@ public class BackupDRClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

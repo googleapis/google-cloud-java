@@ -35,6 +35,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -153,7 +154,7 @@ import org.jspecify.annotations.NullMarked;
 @BetaApi
 @Generated("by gapic-generator-java")
 public class PredictionServiceClient implements BackgroundResource {
-  private final PredictionServiceSettings settings;
+  private final @Nullable PredictionServiceSettings settings;
   private final PredictionServiceStub stub;
 
   /** Constructs an instance of PredictionServiceClient with default settings. */
@@ -193,7 +194,7 @@ public class PredictionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PredictionServiceSettings getSettings() {
+  public final @Nullable PredictionServiceSettings getSettings() {
     return settings;
   }
 
@@ -261,7 +262,7 @@ public class PredictionServiceClient implements BackgroundResource {
    *     logging.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PredictPagedResponse predict(PlacementName name, UserEvent userEvent) {
+  public final PredictPagedResponse predict(@Nullable PlacementName name, UserEvent userEvent) {
     PredictRequest request =
         PredictRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -529,8 +530,8 @@ public class PredictionServiceClient implements BackgroundResource {
       extends AbstractPage<PredictRequest, PredictResponse, Map.Entry<String, Value>, PredictPage> {
 
     private PredictPage(
-        PageContext<PredictRequest, PredictResponse, Map.Entry<String, Value>> context,
-        PredictResponse response) {
+        @Nullable PageContext<PredictRequest, PredictResponse, Map.Entry<String, Value>> context,
+        @Nullable PredictResponse response) {
       super(context, response);
     }
 
@@ -540,14 +541,14 @@ public class PredictionServiceClient implements BackgroundResource {
 
     @Override
     protected PredictPage createPage(
-        PageContext<PredictRequest, PredictResponse, Map.Entry<String, Value>> context,
-        PredictResponse response) {
+        @Nullable PageContext<PredictRequest, PredictResponse, Map.Entry<String, Value>> context,
+        @Nullable PredictResponse response) {
       return new PredictPage(context, response);
     }
 
     @Override
     public ApiFuture<PredictPage> createPageAsync(
-        PageContext<PredictRequest, PredictResponse, Map.Entry<String, Value>> context,
+        @Nullable PageContext<PredictRequest, PredictResponse, Map.Entry<String, Value>> context,
         ApiFuture<PredictResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -561,7 +562,7 @@ public class PredictionServiceClient implements BackgroundResource {
           PredictPage,
           PredictFixedSizeCollection> {
 
-    private PredictFixedSizeCollection(List<PredictPage> pages, int collectionSize) {
+    private PredictFixedSizeCollection(@Nullable List<PredictPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -571,7 +572,7 @@ public class PredictionServiceClient implements BackgroundResource {
 
     @Override
     protected PredictFixedSizeCollection createCollection(
-        List<PredictPage> pages, int collectionSize) {
+        @Nullable List<PredictPage> pages, int collectionSize) {
       return new PredictFixedSizeCollection(pages, collectionSize);
     }
   }

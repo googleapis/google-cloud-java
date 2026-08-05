@@ -34,11 +34,13 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.retrying.TimedRetryAlgorithm;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A settings class to configure an {@link OperationCallable} for calls to initiate, resume, and
  * cancel a long-running operation.
  */
+@NullMarked
 public final class OperationCallSettings<RequestT, ResponseT, MetadataT> {
   private final UnaryCallSettings<RequestT, OperationSnapshot> initialCallSettings;
   private final TimedRetryAlgorithm pollingAlgorithm;

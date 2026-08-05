@@ -30,10 +30,12 @@
 package com.google.api.gax.httpjson;
 
 import com.google.auto.value.AutoValue;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 @AutoValue
 /* Method descriptor for messages to be transmitted over HTTP. */
+@NullMarked
 public abstract class ApiMethodDescriptor<RequestT, ResponseT> {
   public enum MethodType {
     UNARY,
@@ -50,14 +52,12 @@ public abstract class ApiMethodDescriptor<RequestT, ResponseT> {
   public abstract HttpResponseParser<ResponseT> getResponseParser();
 
   /** Return the HTTP method for this request message type. */
-  @Nullable
-  public abstract String getHttpMethod();
+  public abstract @Nullable String getHttpMethod();
 
-  @Nullable
-  public abstract OperationSnapshotFactory<RequestT, ResponseT> getOperationSnapshotFactory();
+  public abstract @Nullable OperationSnapshotFactory<RequestT, ResponseT>
+      getOperationSnapshotFactory();
 
-  @Nullable
-  public abstract PollingRequestFactory<RequestT> getPollingRequestFactory();
+  public abstract @Nullable PollingRequestFactory<RequestT> getPollingRequestFactory();
 
   public abstract MethodType getType();
 

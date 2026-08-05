@@ -18,7 +18,7 @@ package com.google.cloud.tasks.v2beta3.samples;
 
 // [START cloudtasks_v2beta3_generated_CloudTasks_SetIamPolicy_StringPolicy_sync]
 import com.google.cloud.tasks.v2beta3.CloudTasksClient;
-import com.google.cloud.tasks.v2beta3.QueueName;
+import com.google.cloud.tasks.v2beta3.CmekConfigName;
 import com.google.iam.v1.Policy;
 
 public class SyncSetIamPolicyStringPolicy {
@@ -34,7 +34,7 @@ public class SyncSetIamPolicyStringPolicy {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
-      String resource = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+      String resource = CmekConfigName.of("[PROJECT]", "[LOCATION]").toString();
       Policy policy = Policy.newBuilder().build();
       Policy response = cloudTasksClient.setIamPolicy(resource, policy);
     }

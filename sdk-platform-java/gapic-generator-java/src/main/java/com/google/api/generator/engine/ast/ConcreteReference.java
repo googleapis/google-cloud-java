@@ -19,8 +19,10 @@ import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class ConcreteReference implements Reference {
   private static final String EXTENDS = "extends";
@@ -176,7 +178,7 @@ public abstract class ConcreteReference implements Reference {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (!(o instanceof ConcreteReference)) {
       return false;
     }
@@ -199,6 +201,11 @@ public abstract class ConcreteReference implements Reference {
     return toBuilder().setGenerics(generics).build();
   }
 
+  @Override
+  public Reference copyAndSetNullable(boolean isNullable) {
+    return toBuilder().setIsNullable(isNullable).build();
+  }
+
   public static ConcreteReference withClazz(Class<?> clazz) {
     return builder().setClazz(clazz).build();
   }
@@ -215,7 +222,8 @@ public abstract class ConcreteReference implements Reference {
     return new AutoValue_ConcreteReference.Builder()
         .setUseFullName(false)
         .setGenerics(ImmutableList.of())
-        .setIsStaticImport(false);
+        .setIsStaticImport(false)
+        .setIsNullable(false);
   }
 
   // Private.
@@ -236,6 +244,8 @@ public abstract class ConcreteReference implements Reference {
     public abstract Builder setGenerics(List<Reference> references);
 
     public abstract Builder setIsStaticImport(boolean isStaticImport);
+
+    public abstract Builder setIsNullable(boolean isNullable);
 
     public abstract ConcreteReference autoBuild();
 

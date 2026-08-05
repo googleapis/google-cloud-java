@@ -91,6 +91,7 @@ public class SystemPolicyV1Beta1ClientTest {
             .putAllIstioServiceIdentityAdmissionRules(new HashMap<String, AdmissionRule>())
             .setDefaultAdmissionRule(AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSystemPolicyV1Beta1.addResponse(expectedResponse);
 
@@ -137,6 +138,7 @@ public class SystemPolicyV1Beta1ClientTest {
             .putAllIstioServiceIdentityAdmissionRules(new HashMap<String, AdmissionRule>())
             .setDefaultAdmissionRule(AdmissionRule.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEtag("etag3123477")
             .build();
     mockSystemPolicyV1Beta1.addResponse(expectedResponse);
 

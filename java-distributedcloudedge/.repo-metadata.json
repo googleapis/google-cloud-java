@@ -11,6 +11,5 @@
   "repo_short": "java-distributedcloudedge",
   "distribution_name": "com.google.cloud:google-cloud-distributedcloudedge",
   "api_id": "edgecontainer.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

@@ -47,7 +47,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Manages the lifecycle of Regional Access Boundaries (RAB) for a credential.
@@ -55,6 +56,7 @@ import javax.annotation.Nullable;
  * <p>This class handles caching, asynchronous refreshing, and cooldown logic to ensure that API
  * requests are not blocked by lookup failures and that the lookup service is not overwhelmed.
  */
+@NullMarked
 @InternalApi
 final class RegionalAccessBoundaryManager {
 
@@ -154,8 +156,7 @@ final class RegionalAccessBoundaryManager {
    *
    * @return The cached RAB, or null.
    */
-  @Nullable
-  RegionalAccessBoundary getCachedRAB() {
+  @Nullable RegionalAccessBoundary getCachedRAB() {
     RegionalAccessBoundary rab = cachedRAB.get();
     if (rab != null && !rab.isExpired()) {
       return rab;
@@ -164,7 +165,7 @@ final class RegionalAccessBoundaryManager {
   }
 
   @VisibleForTesting
-  void setCachedRAB(RegionalAccessBoundary rab) {
+  void setCachedRAB(@Nullable RegionalAccessBoundary rab) {
     this.cachedRAB.set(rab);
   }
 
