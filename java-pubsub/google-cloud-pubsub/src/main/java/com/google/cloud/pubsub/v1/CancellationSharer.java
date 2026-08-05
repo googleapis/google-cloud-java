@@ -36,7 +36,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * It manages the lifecycle of the original attempt and any subsequent hedged attempts.
  */
 class CancellationSharer extends AbstractApiFuture<PublishResponse> {
-  private final Publisher.OutstandingBatch batch;
+  private Publisher.OutstandingBatch batch;
   private final Publisher publisher;
 
   // Guarded by lock
@@ -46,6 +46,11 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
 
   private final Lock lock = new ReentrantLock();
   private final AtomicBoolean isInQueue = new AtomicBoolean(false);
+
+  private void cleanupLocked() {
+    runningAttempts.clear();
+    this.batch = null;
+  }
 
   CancellationSharer(final Publisher.OutstandingBatch batch, final Publisher publisher) {
     this.batch = batch;
@@ -90,6 +95,7 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
       batch.successfulAttempt = attemptNumber;
       set(response);
       cancelAllExceptLocked(attemptNumber);
+      cleanupLocked();
     } finally {
       lock.unlock();
     }
@@ -97,12 +103,10 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   }
 
   private void handleAttemptFailure(final int attemptNumber, final Throwable t) {
-    boolean shouldRemoveFromQueue = false;
     lock.lock();
     try {
       if (done) {
-        return; // <-- Exit early before modifying runningAttempts to avoid
-                // ConcurrentModificationException
+        return;
       }
       runningAttempts.remove(attemptNumber);
       lastError = t;
@@ -117,16 +121,10 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
         done = true;
         setException(lastError);
         cancelAllLocked();
-        if (isInQueue.get()) {
-          shouldRemoveFromQueue = true;
-        }
+        cleanupLocked();
       }
     } finally {
       lock.unlock();
-    }
-
-    if (shouldRemoveFromQueue) {
-      publisher.removeFromHedgingQueue(this);
     }
   }
 
@@ -139,6 +137,7 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
             lastError != null
                 ? lastError
                 : new RuntimeException("Hedging failed with no active attempts"));
+        cleanupLocked();
       }
     } finally {
       lock.unlock();
@@ -148,23 +147,16 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   @Override
   public boolean cancel(final boolean mayInterruptIfRunning) {
     boolean cancelled = false;
-    boolean shouldRemoveFromQueue = false;
     lock.lock();
     try {
       if (super.cancel(mayInterruptIfRunning)) {
         cancelled = true;
         done = true;
-        if (isInQueue.get()) {
-          shouldRemoveFromQueue = true;
-        }
         cancelAllLocked();
+        cleanupLocked();
       }
     } finally {
       lock.unlock();
-    }
-
-    if (shouldRemoveFromQueue) {
-      publisher.removeFromHedgingQueue(this);
     }
     return cancelled;
   }
@@ -190,7 +182,12 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
     return isInQueue;
   }
 
-  Publisher.OutstandingBatch getBatch() {
-    return batch;
+  Publisher.OutstandingBatch getBatchIfActive() {
+    lock.lock();
+    try {
+      return done ? null : batch;
+    } finally {
+      lock.unlock();
+    }
   }
 }

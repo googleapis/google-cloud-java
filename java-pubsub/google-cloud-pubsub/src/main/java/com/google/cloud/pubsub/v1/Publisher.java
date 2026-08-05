@@ -760,21 +760,6 @@ public class Publisher implements PublisherInterface {
     }
   }
 
-  void removeFromHedgingQueue(CancellationSharer coordinator) {
-    queueLock.lock();
-    try {
-      Iterator<HedgedRequest> iterator = hedgingQueue.iterator();
-      while (iterator.hasNext()) {
-        if (iterator.next().getCoordinator() == coordinator) {
-          iterator.remove();
-          coordinator.isInQueue().set(false);
-        }
-      }
-    } finally {
-      queueLock.unlock();
-    }
-  }
-
   private void processQueue() {
     queueLock.lock();
     try {
@@ -786,7 +771,8 @@ public class Publisher implements PublisherInterface {
         hedgingQueue.poll();
 
         CancellationSharer coordinator = item.getCoordinator();
-        if (coordinator.isDone()) {
+        OutstandingBatch batch = coordinator.getBatchIfActive();
+        if (batch == null) {
           coordinator.isInQueue().set(false);
           continue;
         }
@@ -799,15 +785,14 @@ public class Publisher implements PublisherInterface {
           hedgingQueue.add(nextItem);
 
           // Start Hedged Attempt
-          ApiFuture<PublishResponse> hedgedFuture =
-              publishCall(coordinator.getBatch(), item.getAttemptNumber());
+          ApiFuture<PublishResponse> hedgedFuture = publishCall(batch, item.getAttemptNumber());
           coordinator.addAttempt(item.getAttemptNumber(), hedgedFuture);
         } else {
           loggingUtil.logPublisher(
               LoggingUtil.SubSystem.PUBLISH_HEDGED,
               Level.FINER,
               "Hedging rate limited due to lack of tokens.",
-              coordinator.getBatch().getMessageWrappers().get(0));
+              batch.getMessageWrappers().get(0));
           coordinator.isInQueue().set(false);
           coordinator.checkCompletionOnQueueExit();
         }
