@@ -333,6 +333,7 @@ abstract class BidiUploadState {
     protected boolean finishWriteSent;
     protected @MonotonicNonNull OpenArguments lastOpenArguments;
     protected @Nullable SettableApiFuture<Void> pendingReconciliation;
+    protected boolean terminalMessageConfirmed;
 
     private BaseUploadState(
         BidiWriteObjectRequest initial,
@@ -358,6 +359,7 @@ abstract class BidiUploadState {
       this.state = startingState;
       this.finalFlushOffset = -1;
       this.finishWriteOffset = -1;
+      this.terminalMessageConfirmed = false;
     }
 
     @Override
@@ -569,6 +571,7 @@ abstract class BidiUploadState {
                 && persistedSize == finalFlushOffset) {
               setConfirmedBytes(persistedSize);
               signalTerminalSuccess = true;
+              terminalMessageConfirmed = true;
               poll();
             } else if (persistedSize >= peek.getWriteOffset()) {
               setConfirmedBytes(persistedSize);
@@ -586,6 +589,7 @@ abstract class BidiUploadState {
               setConfirmedBytes(persistedSize);
               if (response.getResource().hasFinalizeTime()) {
                 signalTerminalSuccess = true;
+                terminalMessageConfirmed = true;
                 poll();
               } else {
                 break;
@@ -604,7 +608,7 @@ abstract class BidiUploadState {
           pendingReconciliation = null;
         }
 
-        if (signalTerminalSuccess && lastResponseWithResource != null) {
+        if (terminalMessageConfirmed && lastResponseWithResource != null) {
           BidiWriteObjectResponse.Builder b = lastResponseWithResource.toBuilder();
           b.getResourceBuilder().setSize(confirmedBytes);
           b.getResourceBuilder().getChecksumsBuilder().clearMd5Hash().clearCrc32C();
@@ -612,10 +616,9 @@ abstract class BidiUploadState {
             b.getResourceBuilder().getChecksumsBuilder().setCrc32C(cumulativeCrc32c.getValue());
           }
           BidiWriteObjectResponse updated = b.build();
-          resultFuture.set(updated);
-          terminalSuccess();
-        } else if (signalTerminalSuccess) {
-          checkState(false, "signalTerminalSuccess without prior resource response");
+          if (resultFuture.set(updated)) {
+            terminalSuccess();
+          }
         }
       } finally {
         lock.unlock();
