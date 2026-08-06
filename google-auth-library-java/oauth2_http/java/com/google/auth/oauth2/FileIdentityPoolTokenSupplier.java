@@ -35,6 +35,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
+import com.google.api.client.util.Data;
 import com.google.auth.oauth2.IdentityPoolCredentialSource.CredentialFormatType;
 import com.google.common.io.CharStreams;
 import java.io.BufferedReader;
@@ -57,7 +58,7 @@ import org.jspecify.annotations.Nullable;
 class FileIdentityPoolTokenSupplier
     implements IdentityPoolSubjectTokenSupplier, IdentityPoolActorTokenSupplier {
 
-  private final long serialVersionUID = 2475549052347431993L;
+  private static final long serialVersionUID = 2475549052347431993L;
 
   private final IdentityPoolCredentialSource credentialSource;
 
@@ -71,7 +72,7 @@ class FileIdentityPoolTokenSupplier
     }
   }
 
-  private volatile CachedFile cachedFile;
+  private transient volatile CachedFile cachedFile;
 
   FileIdentityPoolTokenSupplier(IdentityPoolCredentialSource credentialSource) {
     this.credentialSource = checkNotNull(credentialSource, "credentialSource cannot be null");
@@ -127,7 +128,7 @@ class FileIdentityPoolTokenSupplier
       }
 
       Object value = cached.parsedJson.get(targetFieldName);
-      if (value == null) {
+      if (value == null || Data.isNull(value)) {
         throw new IOException(
             "Invalid token field name. No token was found for field: " + targetFieldName);
       }
@@ -163,11 +164,12 @@ class FileIdentityPoolTokenSupplier
       GenericJson fileContents =
           parser.parseAndClose(in, StandardCharsets.UTF_8, GenericJson.class);
 
-      if (!fileContents.containsKey(targetFieldName)) {
+      Object value = fileContents.get(targetFieldName);
+      if (value == null || Data.isNull(value)) {
         throw new IOException(
             "Invalid token field name. No token was found for field: " + targetFieldName);
       }
-      return (String) fileContents.get(targetFieldName);
+      return value.toString();
     }
   }
 }

@@ -32,10 +32,12 @@
 package com.google.auth.oauth2;
 
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /** Functional interface for supplying an actor token for IdentityPool credentials. */
+@NullMarked
 @FunctionalInterface
-interface IdentityPoolActorTokenSupplier extends java.io.Serializable {
+public interface IdentityPoolActorTokenSupplier extends java.io.Serializable {
 
   /**
    * Returns a valid actor token as a string.

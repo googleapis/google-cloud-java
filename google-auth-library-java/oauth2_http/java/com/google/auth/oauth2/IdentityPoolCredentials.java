@@ -67,7 +67,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   private final IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
   @Nullable private final IdentityPoolActorTokenSupplier actorTokenSupplier;
   @Nullable private final String actorTokenType;
-  @Nullable private final X509Provider x509Provider;
+  @Nullable private final transient X509Provider x509Provider;
   private final ExternalAccountSupplierContext supplierContext;
   private final String metricsHeaderValue;
 
@@ -276,8 +276,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       super(credentials);
       if (this.credentialSource == null) {
         this.subjectTokenSupplier = credentials.subjectTokenSupplier;
-        this.actorTokenSupplier = credentials.actorTokenSupplier;
       }
+      this.actorTokenSupplier = credentials.actorTokenSupplier;
       this.actorTokenType = credentials.actorTokenType;
       this.x509Provider = credentials.x509Provider;
     }
