@@ -20,6 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import java.io.InputStream;
 import com.google.api.gax.httpjson.longrunning.OperationsClient;
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
@@ -31,7 +32,6 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadCallable;
-import com.google.api.gax.rpc.ResumableUploadRequest;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
@@ -1789,12 +1789,13 @@ public class EchoClient implements BackgroundResource {
   }
 
   public final EchoResponse echoResumableUpload(
-      ResumableUploadRequest<EchoRequest> request,
+      EchoRequest request,
+      InputStream payload,
       ResumableUploadCallSettings<EchoRequest, EchoResponse> perRequestSettings) {
-    return resumableUploadCallable().call(request, perRequestSettings);
+    return resumableUploadCallable().call(request, payload, perRequestSettings);
   }
 
-  public final EchoResponse echoResumableUpload(ResumableUploadRequest<EchoRequest> request) {
-    return resumableUploadCallable().call(request);
+  public final EchoResponse echoResumableUpload(EchoRequest request, InputStream payload) {
+    return resumableUploadCallable().call(request, payload);
   }
 }

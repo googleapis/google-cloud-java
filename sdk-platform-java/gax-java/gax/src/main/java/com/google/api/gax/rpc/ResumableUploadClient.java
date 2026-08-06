@@ -39,8 +39,7 @@ import com.google.api.core.BetaApi;
 public interface ResumableUploadClient {
 
   /** Returns a {@link UnaryCallable} which can issue calls to initiate an upload session (POST). */
-  <RequestT>
-      UnaryCallable<ResumableUploadRequest<RequestT>, ResumableUploadSession> startUploadCallable();
+  <RequestT> UnaryCallable<RequestT, ResumableUploadSession> startUploadCallable();
 
   /** Returns a {@link UnaryCallable} which can issue calls to transmit payload chunks (PUT). */
   UnaryCallable<ChunkUploadRequest, ChunkUploadResponse> uploadChunkCallable();

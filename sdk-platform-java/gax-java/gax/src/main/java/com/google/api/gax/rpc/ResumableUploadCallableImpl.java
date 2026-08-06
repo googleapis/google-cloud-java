@@ -33,6 +33,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.common.base.Preconditions;
+import java.io.InputStream;
 import javax.annotation.Nullable;
 
 /**
@@ -61,13 +62,8 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
 
   @Override
   public ApiFuture<ResponseT> futureCall(
-      ResumableUploadRequest<RequestT> request, ApiCallContext context) {
-    return futureCall(request, null, context);
-  }
-
-  @Override
-  public ApiFuture<ResponseT> futureCall(
-      ResumableUploadRequest<RequestT> request,
+      RequestT request,
+      InputStream payload,
       ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings,
       ApiCallContext context) {
     Preconditions.checkNotNull(request);
@@ -82,8 +78,13 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
             ? activeSettings.getChunkSizeOrDefault()
             : 8 * 1024 * 1024; // default 8 MB
 
+    long totalBytes =
+        activeSettings != null && activeSettings.getTotalBytes() != null
+            ? activeSettings.getTotalBytes()
+            : -1L;
+
     try {
-      // 1. Start Upload Session
+      // 1. Start Upload Session with raw RequestT
       ResumableUploadSession session =
           resumableUploadClient
               .<RequestT>startUploadCallable()
@@ -97,7 +98,7 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
               .uploadChunkCallable()
               .call(
                   new ChunkUploadRequest(
-                      uploadUrl, new byte[0], 0, request.getTotalBytes(), true),
+                      uploadUrl, new byte[0], 0, totalBytes, true),
                   context);
 
       // Return placeholder/parsed response

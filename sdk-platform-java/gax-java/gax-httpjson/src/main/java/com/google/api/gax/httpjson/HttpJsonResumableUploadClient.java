@@ -39,7 +39,6 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.QueryStatusRequest;
 import com.google.api.gax.rpc.QueryStatusResponse;
 import com.google.api.gax.rpc.ResumableUploadClient;
-import com.google.api.gax.rpc.ResumableUploadRequest;
 import com.google.api.gax.rpc.ResumableUploadSession;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.base.Preconditions;
@@ -58,12 +57,10 @@ public class HttpJsonResumableUploadClient implements ResumableUploadClient {
   }
 
   @Override
-  public <RequestT>
-      UnaryCallable<ResumableUploadRequest<RequestT>, ResumableUploadSession> startUploadCallable() {
-    return new UnaryCallable<ResumableUploadRequest<RequestT>, ResumableUploadSession>() {
+  public <RequestT> UnaryCallable<RequestT, ResumableUploadSession> startUploadCallable() {
+    return new UnaryCallable<RequestT, ResumableUploadSession>() {
       @Override
-      public ApiFuture<ResumableUploadSession> futureCall(
-          ResumableUploadRequest<RequestT> request, ApiCallContext context) {
+      public ApiFuture<ResumableUploadSession> futureCall(RequestT request, ApiCallContext context) {
         return ApiFutures.immediateFuture(new ResumableUploadSession("http://localhost/upload"));
       }
     };

@@ -41,9 +41,13 @@ public final class ResumableUploadCallSettings<RequestT, ResponseT> {
   private static final int DEFAULT_CHUNK_SIZE = 8 * 1024 * 1024; // 8 MB
 
   @Nullable private final Integer chunkSize;
+  @Nullable private final Long totalBytes;
+  @Nullable private final ResumableUploadProgressListener progressListener;
 
   private ResumableUploadCallSettings(Builder<RequestT, ResponseT> builder) {
     this.chunkSize = builder.chunkSize;
+    this.totalBytes = builder.totalBytes;
+    this.progressListener = builder.progressListener;
   }
 
   @Nullable
@@ -55,6 +59,16 @@ public final class ResumableUploadCallSettings<RequestT, ResponseT> {
     return chunkSize != null ? chunkSize : DEFAULT_CHUNK_SIZE;
   }
 
+  @Nullable
+  public Long getTotalBytes() {
+    return totalBytes;
+  }
+
+  @Nullable
+  public ResumableUploadProgressListener getProgressListener() {
+    return progressListener;
+  }
+
   public ResumableUploadCallSettings<RequestT, ResponseT> mergeWith(
       ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings) {
     if (perRequestSettings == null) {
@@ -63,6 +77,12 @@ public final class ResumableUploadCallSettings<RequestT, ResponseT> {
     Builder<RequestT, ResponseT> builder = toBuilder();
     if (perRequestSettings.getChunkSize() != null) {
       builder.setChunkSize(perRequestSettings.getChunkSize());
+    }
+    if (perRequestSettings.getTotalBytes() != null) {
+      builder.setTotalBytes(perRequestSettings.getTotalBytes());
+    }
+    if (perRequestSettings.getProgressListener() != null) {
+      builder.setProgressListener(perRequestSettings.getProgressListener());
     }
     return builder.build();
   }
@@ -77,11 +97,15 @@ public final class ResumableUploadCallSettings<RequestT, ResponseT> {
 
   public static class Builder<RequestT, ResponseT> {
     private Integer chunkSize;
+    private Long totalBytes;
+    private ResumableUploadProgressListener progressListener;
 
     private Builder() {}
 
     private Builder(ResumableUploadCallSettings<RequestT, ResponseT> settings) {
       this.chunkSize = settings.chunkSize;
+      this.totalBytes = settings.totalBytes;
+      this.progressListener = settings.progressListener;
     }
 
     public Builder<RequestT, ResponseT> setChunkSize(Integer chunkSize) {
@@ -92,6 +116,27 @@ public final class ResumableUploadCallSettings<RequestT, ResponseT> {
     @Nullable
     public Integer getChunkSize() {
       return chunkSize;
+    }
+
+    public Builder<RequestT, ResponseT> setTotalBytes(Long totalBytes) {
+      this.totalBytes = totalBytes;
+      return this;
+    }
+
+    @Nullable
+    public Long getTotalBytes() {
+      return totalBytes;
+    }
+
+    public Builder<RequestT, ResponseT> setProgressListener(
+        ResumableUploadProgressListener progressListener) {
+      this.progressListener = progressListener;
+      return this;
+    }
+
+    @Nullable
+    public ResumableUploadProgressListener getProgressListener() {
+      return progressListener;
     }
 
     public ResumableUploadCallSettings<RequestT, ResponseT> build() {
