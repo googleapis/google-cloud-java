@@ -46,6 +46,7 @@ jobs:
     if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || needs.filter.outputs.should_run == 'true' }}
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       issues: write
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
