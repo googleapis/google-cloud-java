@@ -40,9 +40,8 @@ jobs:
         java-version: 11
         cache: maven
     - run: java -version
-    - name: Pre-install all BOM modules to populate local cache
-      run: bash java-cloud-bom/tests/pre-install.sh
-      shell: bash
+    - name: Install snapshot modules locally
+      run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - name: Install BOMs
       run: |
         mvn -B -V -ntp install -f java-cloud-bom/pom.xml -DskipTests
@@ -70,9 +69,8 @@ jobs:
         distribution: zulu
         java-version: 11
     - run: java -version
-    - name: Pre-install all BOM modules to populate local cache
-      run: bash java-cloud-bom/tests/pre-install.sh
-      shell: bash
+    - name: Install snapshot modules locally
+      run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - name: Install BOMs
       run: |
         mvn -B -V -ntp install -f java-cloud-bom/pom.xml -DskipTests

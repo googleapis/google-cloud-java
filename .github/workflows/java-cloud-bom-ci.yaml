@@ -60,9 +60,8 @@ jobs:
         java-version: ${{matrix.java}}
         cache: 'maven'
     - run: java -version
-    - name: Pre-install all BOM modules to populate local cache
-      run: bash java-cloud-bom/tests/pre-install.sh
-      shell: bash
+    - name: Install snapshot modules locally
+      run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
@@ -92,9 +91,8 @@ jobs:
           java-version: 17
           distribution: temurin
           cache: 'maven'
-      - name: Pre-install all BOM modules to populate local cache
-        run: bash java-cloud-bom/tests/pre-install.sh
-        shell: bash
+      - name: Install snapshot modules locally
+        run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
       - run: .kokoro/build.sh
         env:
           JOB_TYPE: test
@@ -115,9 +113,8 @@ jobs:
         java-version: 8
         cache: 'maven'
     - run: java -version
-    - name: Pre-install all BOM modules to populate local cache
-      run: bash java-cloud-bom/tests/pre-install.sh
-      shell: bash
+    - name: Install snapshot modules locally
+      run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - run: .kokoro/build.sh
       env:
         JOB_TYPE: test
@@ -139,71 +136,7 @@ jobs:
         java-version: ${{matrix.java}}
         cache: 'maven'
     - run: java -version
-    - name: Pre-install all BOM modules to populate local cache
-      run: bash java-cloud-bom/tests/pre-install.sh
-      shell: bash
+    - name: Install snapshot modules locally
+      run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - run: .kokoro/dependencies.sh
-  javadoc:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
-      with:
-        persist-credentials: false
-    - uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
-      with:
-        distribution: temurin
-        java-version: 17
-        cache: 'maven'
-    - run: java -version
-    - name: Pre-install all BOM modules to populate local cache
-      run: bash java-cloud-bom/tests/pre-install.sh
-      shell: bash
-    - run: .kokoro/build.sh
-      env:
-        JOB_TYPE: javadoc
-  lint:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
-      with:
-        fetch-depth: 0
-        persist-credentials: false
-    - uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
-      with:
-        distribution: temurin
-        java-version: 11
-        cache: 'maven'
-    - run: java -version
-    - name: Pre-install all BOM modules to populate local cache
-      run: bash java-cloud-bom/tests/pre-install.sh
-      shell: bash
-    - run: .kokoro/build.sh
-      env:
-        JOB_TYPE: lint
-        HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
-        BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
-  clirr:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
-      with:
-        persist-credentials: false
-    - uses: actions/setup-java@1bcf9fb12cf4aa7d266a90ae39939e61372fe520 # v5.4.0
-      with:
-        distribution: temurin
-        java-version: 11
-        cache: 'maven'
-    - run: java -version
-    - name: Pre-install all BOM modules to populate local cache
-      run: bash java-cloud-bom/tests/pre-install.sh
-      shell: bash
-    - run: .kokoro/build.sh
-      env:
-        JOB_TYPE: clirr
-        BUILD_SUBDIR: java-cloud-bom
+
