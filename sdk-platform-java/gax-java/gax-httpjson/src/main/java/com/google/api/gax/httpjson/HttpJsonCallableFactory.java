@@ -41,6 +41,8 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.api.gax.rpc.ResumableUploadCallableImpl;
+import com.google.api.gax.rpc.ResumableUploadClient;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -235,8 +237,8 @@ public class HttpJsonCallableFactory {
           HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
           ResumableUploadCallSettings<RequestT, ResponseT> resumableUploadCallSettings,
           ClientContext clientContext) {
-    return new HttpJsonResumableUploadCallable<>(
-        httpJsonCallSettings, resumableUploadCallSettings, clientContext);
+    ResumableUploadClient uploadClient = new HttpJsonResumableUploadClient(clientContext);
+    return new ResumableUploadCallableImpl<>(uploadClient, resumableUploadCallSettings);
   }
 
   /**
