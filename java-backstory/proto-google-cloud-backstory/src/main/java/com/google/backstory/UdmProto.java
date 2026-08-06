@@ -41,9 +41,9 @@ public final class UdmProto extends com.google.protobuf.GeneratedFile {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_backstory_UDM_descriptor;
+      internal_static_google_backstory_Udm_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_google_backstory_UDM_fieldAccessorTable;
+      internal_static_google_backstory_Udm_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_backstory_Metadata_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -532,7 +532,7 @@ public final class UdmProto extends com.google.protobuf.GeneratedFile {
           + "oogle/protobuf/duration.proto\032\034google/pr"
           + "otobuf/struct.proto\032\037google/protobuf/tim"
           + "estamp.proto\032\032google/type/interval.proto\032\030google/type/latlng.proto\"\363\004\n"
-          + "\003UDM\022,\n"
+          + "\003Udm\022,\n"
           + "\010metadata\030\001 \001(\0132\032.google.backstory.Metadata\022+\n\n"
           + "additional\030\002 \001(\0132\027.google.protobuf.Struct\022)\n"
           + "\tprincipal\030\003 \001(\0132\026.google.backstory.Noun\022#\n"
@@ -2741,10 +2741,10 @@ public final class UdmProto extends com.google.protobuf.GeneratedFile {
               com.google.type.IntervalProto.getDescriptor(),
               com.google.type.LatLngProto.getDescriptor(),
             });
-    internal_static_google_backstory_UDM_descriptor = getDescriptor().getMessageType(0);
-    internal_static_google_backstory_UDM_fieldAccessorTable =
+    internal_static_google_backstory_Udm_descriptor = getDescriptor().getMessageType(0);
+    internal_static_google_backstory_Udm_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-            internal_static_google_backstory_UDM_descriptor,
+            internal_static_google_backstory_Udm_descriptor,
             new java.lang.String[] {
               "Metadata",
               "Additional",

@@ -24,7 +24,7 @@ package com.google.backstory;
  *
  *
  * <pre>
- * General information associated with a UDM event.
+ * General information associated with a Udm event.
  * </pre>
  *
  * Protobuf type {@code google.backstory.Metadata}
@@ -4576,7 +4576,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * ID of the UDM event. Can be used for raw and normalized event retrieval.
+   * ID of the Udm event. Can be used for raw and normalized event retrieval.
    * </pre>
    *
    * <code>bytes id = 15;</code>
@@ -5742,7 +5742,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The version of the parser that generated this UDM event.
+   * The version of the parser that generated this Udm event.
    * </pre>
    *
    * <code>string parser_version = 22;</code>
@@ -5766,7 +5766,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The version of the parser that generated this UDM event.
+   * The version of the parser that generated this Udm event.
    * </pre>
    *
    * <code>string parser_version = 22;</code>
@@ -6194,7 +6194,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * General information associated with a UDM event.
+   * General information associated with a Udm event.
    * </pre>
    *
    * Protobuf type {@code google.backstory.Metadata}
@@ -6766,7 +6766,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * ID of the UDM event. Can be used for raw and normalized event retrieval.
+     * ID of the Udm event. Can be used for raw and normalized event retrieval.
      * </pre>
      *
      * <code>bytes id = 15;</code>
@@ -6782,7 +6782,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * ID of the UDM event. Can be used for raw and normalized event retrieval.
+     * ID of the Udm event. Can be used for raw and normalized event retrieval.
      * </pre>
      *
      * <code>bytes id = 15;</code>
@@ -6804,7 +6804,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * ID of the UDM event. Can be used for raw and normalized event retrieval.
+     * ID of the Udm event. Can be used for raw and normalized event retrieval.
      * </pre>
      *
      * <code>bytes id = 15;</code>
@@ -10082,7 +10082,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The version of the parser that generated this UDM event.
+     * The version of the parser that generated this Udm event.
      * </pre>
      *
      * <code>string parser_version = 22;</code>
@@ -10105,7 +10105,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The version of the parser that generated this UDM event.
+     * The version of the parser that generated this Udm event.
      * </pre>
      *
      * <code>string parser_version = 22;</code>
@@ -10128,7 +10128,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The version of the parser that generated this UDM event.
+     * The version of the parser that generated this Udm event.
      * </pre>
      *
      * <code>string parser_version = 22;</code>
@@ -10150,7 +10150,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The version of the parser that generated this UDM event.
+     * The version of the parser that generated this Udm event.
      * </pre>
      *
      * <code>string parser_version = 22;</code>
@@ -10168,7 +10168,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The version of the parser that generated this UDM event.
+     * The version of the parser that generated this Udm event.
      * </pre>
      *
      * <code>string parser_version = 22;</code>

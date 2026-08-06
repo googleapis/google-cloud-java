@@ -25,7 +25,7 @@ package com.google.backstory;
  *
  * <pre>
  * Tags are event metadata which is set by examining event contents
- * post-parsing. For example, a UDM event may be assigned a tenant_id based on
+ * post-parsing. For example, a Udm event may be assigned a tenant_id based on
  * certain customer-defined parameters.
  * </pre>
  *
@@ -377,7 +377,7 @@ public final class Tags extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Tags are event metadata which is set by examining event contents
-   * post-parsing. For example, a UDM event may be assigned a tenant_id based on
+   * post-parsing. For example, a Udm event may be assigned a tenant_id based on
    * certain customer-defined parameters.
    * </pre>
    *

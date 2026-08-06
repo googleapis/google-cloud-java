@@ -34,7 +34,7 @@ option php_namespace = "Google\\Backstory";
 option ruby_package = "Google::Backstory";
 
 // A Unified Data Model event.
-message UDM {
+message Udm {
   // Event metadata such as timestamp, source product, etc.
   Metadata metadata = 1;
 

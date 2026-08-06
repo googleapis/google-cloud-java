@@ -24,7 +24,7 @@ package com.google.backstory;
  *
  *
  * <pre>
- * Identifier to identify a UDM object like a UDM event, Entity, Collection.
+ * Identifier to identify a Udm object like a Udm event, Entity, Collection.
  * The full identifier for persistence is created by setting the 32 most
  * significant bits as the Id.Namespace enum This is a convenience wrapper to
  * define the id space enum values and provide an easy interface for RPCs, most
@@ -673,7 +673,7 @@ public final class Id extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier to identify a UDM object like a UDM event, Entity, Collection.
+   * Identifier to identify a Udm object like a Udm event, Entity, Collection.
    * The full identifier for persistence is created by setting the 32 most
    * significant bits as the Id.Namespace enum This is a convenience wrapper to
    * define the id space enum values and provide an easy interface for RPCs, most

@@ -428,7 +428,7 @@ public final class FindingVariable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The UDM field path for the field which this value was derived from.
+   * The Udm field path for the field which this value was derived from.
    * Example: `principal.user.username`
    * </pre>
    *
@@ -453,7 +453,7 @@ public final class FindingVariable extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The UDM field path for the field which this value was derived from.
+   * The Udm field path for the field which this value was derived from.
    * Example: `principal.user.username`
    * </pre>
    *
@@ -2167,7 +2167,7 @@ public final class FindingVariable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The UDM field path for the field which this value was derived from.
+     * The Udm field path for the field which this value was derived from.
      * Example: `principal.user.username`
      * </pre>
      *
@@ -2191,7 +2191,7 @@ public final class FindingVariable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The UDM field path for the field which this value was derived from.
+     * The Udm field path for the field which this value was derived from.
      * Example: `principal.user.username`
      * </pre>
      *
@@ -2215,7 +2215,7 @@ public final class FindingVariable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The UDM field path for the field which this value was derived from.
+     * The Udm field path for the field which this value was derived from.
      * Example: `principal.user.username`
      * </pre>
      *
@@ -2238,7 +2238,7 @@ public final class FindingVariable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The UDM field path for the field which this value was derived from.
+     * The Udm field path for the field which this value was derived from.
      * Example: `principal.user.username`
      * </pre>
      *
@@ -2257,7 +2257,7 @@ public final class FindingVariable extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The UDM field path for the field which this value was derived from.
+     * The Udm field path for the field which this value was derived from.
      * Example: `principal.user.username`
      * </pre>
      *

@@ -27,13 +27,13 @@ package com.google.backstory;
  * A Unified Data Model event.
  * </pre>
  *
- * Protobuf type {@code google.backstory.UDM}
+ * Protobuf type {@code google.backstory.Udm}
  */
 @com.google.protobuf.Generated
-public final class UDM extends com.google.protobuf.GeneratedMessage
+public final class Udm extends com.google.protobuf.GeneratedMessage
     implements
-    // @@protoc_insertion_point(message_implements:google.backstory.UDM)
-    UDMOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.backstory.Udm)
+    UdmOrBuilder {
   private static final long serialVersionUID = 0L;
 
   static {
@@ -43,30 +43,30 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
         /* minor= */ 33,
         /* patch= */ 6,
         /* suffix= */ "",
-        "UDM");
+        "Udm");
   }
 
-  // Use UDM.newBuilder() to construct.
-  private UDM(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use Udm.newBuilder() to construct.
+  private Udm(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
 
-  private UDM() {
+  private Udm() {
     intermediary_ = java.util.Collections.emptyList();
     about_ = java.util.Collections.emptyList();
     securityResult_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_UDM_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Udm_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_UDM_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Udm_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.backstory.UDM.class, com.google.backstory.UDM.Builder.class);
+            com.google.backstory.Udm.class, com.google.backstory.Udm.Builder.class);
   }
 
   private int bitField0_;
@@ -127,7 +127,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Any important vendor-specific event data that cannot be adequately
-   * represented within the formal sections of the UDM model.
+   * represented within the formal sections of the Udm model.
    * </pre>
    *
    * <code>.google.protobuf.Struct additional = 2;</code>
@@ -144,7 +144,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Any important vendor-specific event data that cannot be adequately
-   * represented within the formal sections of the UDM model.
+   * represented within the formal sections of the Udm model.
    * </pre>
    *
    * <code>.google.protobuf.Struct additional = 2;</code>
@@ -161,7 +161,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Any important vendor-specific event data that cannot be adequately
-   * represented within the formal sections of the UDM model.
+   * represented within the formal sections of the Udm model.
    * </pre>
    *
    * <code>.google.protobuf.Struct additional = 2;</code>
@@ -246,7 +246,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
    * the device or process context for the source object (the machine where the
    * source object resides). For example, if user U copies file A on machine X
    * to file B on machine Y, both file A and machine X would be specified in the
-   * src portion of the UDM event.
+   * src portion of the Udm event.
    * </pre>
    *
    * <code>.google.backstory.Noun src = 4;</code>
@@ -266,7 +266,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
    * the device or process context for the source object (the machine where the
    * source object resides). For example, if user U copies file A on machine X
    * to file B on machine Y, both file A and machine X would be specified in the
-   * src portion of the UDM event.
+   * src portion of the Udm event.
    * </pre>
    *
    * <code>.google.backstory.Noun src = 4;</code>
@@ -286,7 +286,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
    * the device or process context for the source object (the machine where the
    * source object resides). For example, if user U copies file A on machine X
    * to file B on machine Y, both file A and machine X would be specified in the
-   * src portion of the UDM event.
+   * src portion of the Udm event.
    * </pre>
    *
    * <code>.google.backstory.Noun src = 4;</code>
@@ -864,7 +864,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Related UDM fields that are grouped together.
+   * Related Udm fields that are grouped together.
    * </pre>
    *
    * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -880,7 +880,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Related UDM fields that are grouped together.
+   * Related Udm fields that are grouped together.
    * </pre>
    *
    * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -896,7 +896,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Related UDM fields that are grouped together.
+   * Related Udm fields that are grouped together.
    * </pre>
    *
    * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -1017,10 +1017,10 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.backstory.UDM)) {
+    if (!(obj instanceof com.google.backstory.Udm)) {
       return super.equals(obj);
     }
-    com.google.backstory.UDM other = (com.google.backstory.UDM) obj;
+    com.google.backstory.Udm other = (com.google.backstory.Udm) obj;
 
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
@@ -1133,70 +1133,70 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
     return hash;
   }
 
-  public static com.google.backstory.UDM parseFrom(java.nio.ByteBuffer data)
+  public static com.google.backstory.Udm parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.backstory.UDM parseFrom(
+  public static com.google.backstory.Udm parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.backstory.UDM parseFrom(com.google.protobuf.ByteString data)
+  public static com.google.backstory.Udm parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.backstory.UDM parseFrom(
+  public static com.google.backstory.Udm parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.backstory.UDM parseFrom(byte[] data)
+  public static com.google.backstory.Udm parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.backstory.UDM parseFrom(
+  public static com.google.backstory.Udm parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.backstory.UDM parseFrom(java.io.InputStream input)
+  public static com.google.backstory.Udm parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.backstory.UDM parseFrom(
+  public static com.google.backstory.Udm parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.backstory.UDM parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.backstory.Udm parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.backstory.UDM parseDelimitedFrom(
+  public static com.google.backstory.Udm parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.backstory.UDM parseFrom(com.google.protobuf.CodedInputStream input)
+  public static com.google.backstory.Udm parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.backstory.UDM parseFrom(
+  public static com.google.backstory.Udm parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -1213,7 +1213,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.backstory.UDM prototype) {
+  public static Builder newBuilder(com.google.backstory.Udm prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -1235,25 +1235,25 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
    * A Unified Data Model event.
    * </pre>
    *
-   * Protobuf type {@code google.backstory.UDM}
+   * Protobuf type {@code google.backstory.Udm}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.backstory.UDM)
-      com.google.backstory.UDMOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.backstory.Udm)
+      com.google.backstory.UdmOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_UDM_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Udm_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_UDM_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Udm_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.backstory.UDM.class, com.google.backstory.UDM.Builder.class);
+              com.google.backstory.Udm.class, com.google.backstory.Udm.Builder.class);
     }
 
-    // Construct using com.google.backstory.UDM.newBuilder()
+    // Construct using com.google.backstory.Udm.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -1361,17 +1361,17 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_UDM_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Udm_descriptor;
     }
 
     @java.lang.Override
-    public com.google.backstory.UDM getDefaultInstanceForType() {
-      return com.google.backstory.UDM.getDefaultInstance();
+    public com.google.backstory.Udm getDefaultInstanceForType() {
+      return com.google.backstory.Udm.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.backstory.UDM build() {
-      com.google.backstory.UDM result = buildPartial();
+    public com.google.backstory.Udm build() {
+      com.google.backstory.Udm result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -1379,8 +1379,8 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
     }
 
     @java.lang.Override
-    public com.google.backstory.UDM buildPartial() {
-      com.google.backstory.UDM result = new com.google.backstory.UDM(this);
+    public com.google.backstory.Udm buildPartial() {
+      com.google.backstory.Udm result = new com.google.backstory.Udm(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
@@ -1389,7 +1389,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.google.backstory.UDM result) {
+    private void buildPartialRepeatedFields(com.google.backstory.Udm result) {
       if (intermediaryBuilder_ == null) {
         if (((bitField0_ & 0x00000020) != 0)) {
           intermediary_ = java.util.Collections.unmodifiableList(intermediary_);
@@ -1419,7 +1419,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
       }
     }
 
-    private void buildPartial0(com.google.backstory.UDM result) {
+    private void buildPartial0(com.google.backstory.Udm result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -1467,16 +1467,16 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.backstory.UDM) {
-        return mergeFrom((com.google.backstory.UDM) other);
+      if (other instanceof com.google.backstory.Udm) {
+        return mergeFrom((com.google.backstory.Udm) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.backstory.UDM other) {
-      if (other == com.google.backstory.UDM.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.backstory.Udm other) {
+      if (other == com.google.backstory.Udm.getDefaultInstance()) return this;
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
@@ -1938,7 +1938,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Any important vendor-specific event data that cannot be adequately
-     * represented within the formal sections of the UDM model.
+     * represented within the formal sections of the Udm model.
      * </pre>
      *
      * <code>.google.protobuf.Struct additional = 2;</code>
@@ -1954,7 +1954,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Any important vendor-specific event data that cannot be adequately
-     * represented within the formal sections of the UDM model.
+     * represented within the formal sections of the Udm model.
      * </pre>
      *
      * <code>.google.protobuf.Struct additional = 2;</code>
@@ -1974,7 +1974,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Any important vendor-specific event data that cannot be adequately
-     * represented within the formal sections of the UDM model.
+     * represented within the formal sections of the Udm model.
      * </pre>
      *
      * <code>.google.protobuf.Struct additional = 2;</code>
@@ -1998,7 +1998,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Any important vendor-specific event data that cannot be adequately
-     * represented within the formal sections of the UDM model.
+     * represented within the formal sections of the Udm model.
      * </pre>
      *
      * <code>.google.protobuf.Struct additional = 2;</code>
@@ -2019,7 +2019,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Any important vendor-specific event data that cannot be adequately
-     * represented within the formal sections of the UDM model.
+     * represented within the formal sections of the Udm model.
      * </pre>
      *
      * <code>.google.protobuf.Struct additional = 2;</code>
@@ -2048,7 +2048,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Any important vendor-specific event data that cannot be adequately
-     * represented within the formal sections of the UDM model.
+     * represented within the formal sections of the Udm model.
      * </pre>
      *
      * <code>.google.protobuf.Struct additional = 2;</code>
@@ -2069,7 +2069,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Any important vendor-specific event data that cannot be adequately
-     * represented within the formal sections of the UDM model.
+     * represented within the formal sections of the Udm model.
      * </pre>
      *
      * <code>.google.protobuf.Struct additional = 2;</code>
@@ -2085,7 +2085,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Any important vendor-specific event data that cannot be adequately
-     * represented within the formal sections of the UDM model.
+     * represented within the formal sections of the Udm model.
      * </pre>
      *
      * <code>.google.protobuf.Struct additional = 2;</code>
@@ -2103,7 +2103,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Any important vendor-specific event data that cannot be adequately
-     * represented within the formal sections of the UDM model.
+     * represented within the formal sections of the Udm model.
      * </pre>
      *
      * <code>.google.protobuf.Struct additional = 2;</code>
@@ -2375,7 +2375,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      * the device or process context for the source object (the machine where the
      * source object resides). For example, if user U copies file A on machine X
      * to file B on machine Y, both file A and machine X would be specified in the
-     * src portion of the UDM event.
+     * src portion of the Udm event.
      * </pre>
      *
      * <code>.google.backstory.Noun src = 4;</code>
@@ -2394,7 +2394,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      * the device or process context for the source object (the machine where the
      * source object resides). For example, if user U copies file A on machine X
      * to file B on machine Y, both file A and machine X would be specified in the
-     * src portion of the UDM event.
+     * src portion of the Udm event.
      * </pre>
      *
      * <code>.google.backstory.Noun src = 4;</code>
@@ -2417,7 +2417,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      * the device or process context for the source object (the machine where the
      * source object resides). For example, if user U copies file A on machine X
      * to file B on machine Y, both file A and machine X would be specified in the
-     * src portion of the UDM event.
+     * src portion of the Udm event.
      * </pre>
      *
      * <code>.google.backstory.Noun src = 4;</code>
@@ -2444,7 +2444,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      * the device or process context for the source object (the machine where the
      * source object resides). For example, if user U copies file A on machine X
      * to file B on machine Y, both file A and machine X would be specified in the
-     * src portion of the UDM event.
+     * src portion of the Udm event.
      * </pre>
      *
      * <code>.google.backstory.Noun src = 4;</code>
@@ -2468,7 +2468,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      * the device or process context for the source object (the machine where the
      * source object resides). For example, if user U copies file A on machine X
      * to file B on machine Y, both file A and machine X would be specified in the
-     * src portion of the UDM event.
+     * src portion of the Udm event.
      * </pre>
      *
      * <code>.google.backstory.Noun src = 4;</code>
@@ -2500,7 +2500,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      * the device or process context for the source object (the machine where the
      * source object resides). For example, if user U copies file A on machine X
      * to file B on machine Y, both file A and machine X would be specified in the
-     * src portion of the UDM event.
+     * src portion of the Udm event.
      * </pre>
      *
      * <code>.google.backstory.Noun src = 4;</code>
@@ -2524,7 +2524,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      * the device or process context for the source object (the machine where the
      * source object resides). For example, if user U copies file A on machine X
      * to file B on machine Y, both file A and machine X would be specified in the
-     * src portion of the UDM event.
+     * src portion of the Udm event.
      * </pre>
      *
      * <code>.google.backstory.Noun src = 4;</code>
@@ -2543,7 +2543,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      * the device or process context for the source object (the machine where the
      * source object resides). For example, if user U copies file A on machine X
      * to file B on machine Y, both file A and machine X would be specified in the
-     * src portion of the UDM event.
+     * src portion of the Udm event.
      * </pre>
      *
      * <code>.google.backstory.Noun src = 4;</code>
@@ -2564,7 +2564,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      * the device or process context for the source object (the machine where the
      * source object resides). For example, if user U copies file A on machine X
      * to file B on machine Y, both file A and machine X would be specified in the
-     * src portion of the UDM event.
+     * src portion of the Udm event.
      * </pre>
      *
      * <code>.google.backstory.Noun src = 4;</code>
@@ -4948,7 +4948,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Related UDM fields that are grouped together.
+     * Related Udm fields that are grouped together.
      * </pre>
      *
      * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -4963,7 +4963,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Related UDM fields that are grouped together.
+     * Related Udm fields that are grouped together.
      * </pre>
      *
      * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -4984,7 +4984,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Related UDM fields that are grouped together.
+     * Related Udm fields that are grouped together.
      * </pre>
      *
      * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -5007,7 +5007,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Related UDM fields that are grouped together.
+     * Related Udm fields that are grouped together.
      * </pre>
      *
      * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -5027,7 +5027,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Related UDM fields that are grouped together.
+     * Related Udm fields that are grouped together.
      * </pre>
      *
      * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -5055,7 +5055,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Related UDM fields that are grouped together.
+     * Related Udm fields that are grouped together.
      * </pre>
      *
      * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -5075,7 +5075,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Related UDM fields that are grouped together.
+     * Related Udm fields that are grouped together.
      * </pre>
      *
      * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -5090,7 +5090,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Related UDM fields that are grouped together.
+     * Related Udm fields that are grouped together.
      * </pre>
      *
      * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -5109,7 +5109,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Related UDM fields that are grouped together.
+     * Related Udm fields that are grouped together.
      * </pre>
      *
      * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -5131,24 +5131,24 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
       return groupedBuilder_;
     }
 
-    // @@protoc_insertion_point(builder_scope:google.backstory.UDM)
+    // @@protoc_insertion_point(builder_scope:google.backstory.Udm)
   }
 
-  // @@protoc_insertion_point(class_scope:google.backstory.UDM)
-  private static final com.google.backstory.UDM DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.backstory.Udm)
+  private static final com.google.backstory.Udm DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.backstory.UDM();
+    DEFAULT_INSTANCE = new com.google.backstory.Udm();
   }
 
-  public static com.google.backstory.UDM getDefaultInstance() {
+  public static com.google.backstory.Udm getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UDM> PARSER =
-      new com.google.protobuf.AbstractParser<UDM>() {
+  private static final com.google.protobuf.Parser<Udm> PARSER =
+      new com.google.protobuf.AbstractParser<Udm>() {
         @java.lang.Override
-        public UDM parsePartialFrom(
+        public Udm parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5167,17 +5167,17 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
         }
       };
 
-  public static com.google.protobuf.Parser<UDM> parser() {
+  public static com.google.protobuf.Parser<Udm> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<UDM> getParserForType() {
+  public com.google.protobuf.Parser<Udm> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.backstory.UDM getDefaultInstanceForType() {
+  public com.google.backstory.Udm getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

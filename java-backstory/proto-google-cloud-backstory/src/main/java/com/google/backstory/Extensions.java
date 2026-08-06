@@ -24,7 +24,7 @@ package com.google.backstory;
  *
  *
  * <pre>
- * Extensions to a UDM event.
+ * Extensions to a Udm event.
  * </pre>
  *
  * Protobuf type {@code google.backstory.Extensions}
@@ -892,7 +892,7 @@ public final class Extensions extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Extensions to a UDM event.
+   * Extensions to a Udm event.
    * </pre>
    *
    * Protobuf type {@code google.backstory.Extensions}

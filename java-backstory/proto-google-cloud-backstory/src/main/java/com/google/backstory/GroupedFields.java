@@ -24,7 +24,7 @@ package com.google.backstory;
  *
  *
  * <pre>
- * Grouped fields are aliases for groups of related UDM fields. All
+ * Grouped fields are aliases for groups of related Udm fields. All
  * fields grouped together are of type string.
  * </pre>
  *
@@ -902,7 +902,7 @@ public final class GroupedFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Grouped fields are aliases for groups of related UDM fields. All
+   * Grouped fields are aliases for groups of related Udm fields. All
    * fields grouped together are of type string.
    * </pre>
    *
