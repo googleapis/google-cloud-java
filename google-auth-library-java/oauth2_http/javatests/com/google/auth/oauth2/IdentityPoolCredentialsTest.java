@@ -1298,6 +1298,14 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     return new IdentityPoolCredentialSource(fileCredentialSourceMap);
   }
 
+  private IdentityPoolCredentialSource createFileCredentialSource(
+      String filePath, Map<String, String> formatMap) {
+    Map<String, Object> fileCredentialSourceMap = new HashMap<>();
+    fileCredentialSourceMap.put("file", filePath);
+    fileCredentialSourceMap.put("format", formatMap);
+    return new IdentityPoolCredentialSource(fileCredentialSourceMap);
+  }
+
   static class MockExternalAccountCredentialsTransportFactory implements HttpTransportFactory {
 
     MockExternalAccountCredentialsTransport transport =
@@ -1443,7 +1451,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void createScoped_preservesActorTokenConfiguration() throws Exception {
+  void createScoped_supplierSourcedWithActorToken_preservesCustomSuppliers() throws Exception {
     KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
     ks.load(null, null);
     MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
@@ -1465,6 +1473,50 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertNotNull(scoped);
     assertEquals(credentials.getActorTokenType(), scoped.getActorTokenType());
     assertEquals(newScopes, scoped.getScopes());
+    assertSame(testProvider, scoped.getIdentityPoolSubjectTokenSupplier());
+    assertSame(testActorSupplier, scoped.getIdentityPoolActorTokenSupplier());
+  }
+
+  @Test
+  void createScoped_fileSourcedWithActorToken_preservesSharedSupplierInstance() throws Exception {
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "subject_token");
+    formatMap.put("actor_token_field_name", "actor_token");
+
+    IdentityPoolCredentialSource credentialSource =
+        createFileCredentialSource("credential.json", formatMap);
+
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(mtlsTransport)
+            .setCredentialSource(credentialSource)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    // Verify initial instance shares the single supplier instance
+    assertSame(
+        credentials.getIdentityPoolSubjectTokenSupplier(),
+        credentials.getIdentityPoolActorTokenSupplier());
+
+    // Clone with new scopes
+    List<String> newScopes = Arrays.asList("https://www.googleapis.com/auth/cloud-platform");
+    IdentityPoolCredentials scoped = credentials.createScoped(newScopes);
+
+    assertNotNull(scoped);
+    assertEquals(credentials.getActorTokenType(), scoped.getActorTokenType());
+    assertEquals(newScopes, scoped.getScopes());
+    // Verify scoped clone maintains a single shared supplier instance for its own cache
+    assertSame(
+        scoped.getIdentityPoolSubjectTokenSupplier(),
+        scoped.getIdentityPoolActorTokenSupplier());
   }
 
   @Test

@@ -200,6 +200,12 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   }
 
   @VisibleForTesting
+  @Nullable
+  IdentityPoolActorTokenSupplier getIdentityPoolActorTokenSupplier() {
+    return this.actorTokenSupplier;
+  }
+
+  @VisibleForTesting
   String getActorTokenType() {
     return this.actorTokenType;
   }
@@ -276,8 +282,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       super(credentials);
       if (this.credentialSource == null) {
         this.subjectTokenSupplier = credentials.subjectTokenSupplier;
+        this.actorTokenSupplier = credentials.actorTokenSupplier;
       }
-      this.actorTokenSupplier = credentials.actorTokenSupplier;
       this.actorTokenType = credentials.actorTokenType;
       this.x509Provider = credentials.x509Provider;
     }
