@@ -223,6 +223,12 @@ case ${JOB_TYPE} in
         changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}" --relative)
         echo "${changed_file_list}"
 
+        has_librarian_change="false"
+        if grep -q "librarian.yaml" <<< "${changed_file_list}"; then
+            has_librarian_change="true"
+            echo "librarian.yaml modified; proto-* and grpc-* modules will be included in lint check."
+        fi
+
         has_code_change="false"
 
         while IFS= read -r changed_file; do
@@ -254,13 +260,13 @@ case ${JOB_TYPE} in
                     # Filter out directories not participating in the default formatting reactor:
                     # - samples are handwritten by developers
                     # - benchmarks are handwritten by developers
-                    # - proto-*/grpc-* are generated code and should use the compiler format
+                    # - proto-*/grpc-* are generated code (skipped unless librarian.yaml is updated)
                     # - *-bom/parents are POM-only and contain no Java source
                     if [[ "${dir}" != *"samples"* ]] && \
                        [[ "${dir}" != *"java-showcase"* ]] && \
                        [[ "$(basename "${dir}")" != *"benchmark"* ]] && \
-                       [[ "$(basename "${dir}")" != "proto-google-"* ]] && \
-                       [[ "$(basename "${dir}")" != "grpc-google-"* ]] && \
+                       { [ "${has_librarian_change}" == "true" ] || [[ "$(basename "${dir}")" != "proto-google-"* ]]; } && \
+                       { [ "${has_librarian_change}" == "true" ] || [[ "$(basename "${dir}")" != "grpc-google-"* ]]; } && \
                        [[ "$(basename "${dir}")" != *"-bom" ]] && \
                        [[ "$(basename "${dir}")" != "google-cloud-pom-parent" ]] && \
                        [[ "$(basename "${dir}")" != "dependency-analyzer" ]] && \
