@@ -202,6 +202,23 @@ public final class GrpcStorageOptions extends StorageOptions
     this.openTelemetry = HttpStorageOptions.getDefaultInstance().getOpenTelemetry();
   }
 
+  private static String rewriteHost(String endpoint, String oldHost, String newHost) {
+    String prefix = "";
+    String rest = endpoint;
+    int schemeIndex = endpoint.indexOf("://");
+    if (schemeIndex >= 0) {
+      prefix = endpoint.substring(0, schemeIndex + 3);
+      rest = endpoint.substring(schemeIndex + 3);
+    }
+    if (rest.startsWith(oldHost)) {
+      int len = oldHost.length();
+      if (rest.length() == len || rest.charAt(len) == ':' || rest.charAt(len) == '/') {
+        return prefix + newHost + rest.substring(len);
+      }
+    }
+    return endpoint;
+  }
+
   /**
    * We have to perform several introspections and detections to cross-wire/support several features
    * that are either gapic primitives, ServiceOption primitives or GCS semantic requirements.
@@ -236,19 +253,7 @@ public final class GrpcStorageOptions extends StorageOptions
   private Tuple<StorageSettings, Opts<UserProject>> resolveSettingsAndOpts() throws IOException {
     String endpoint = getHost();
     if (attemptDirectPathXdsOverInterconnect) {
-      if (endpoint.startsWith(DEFAULT_HOST)
-          && (endpoint.length() == DEFAULT_HOST.length()
-              || endpoint.charAt(DEFAULT_HOST.length()) == ':'
-              || endpoint.charAt(DEFAULT_HOST.length()) == '/')) {
-        endpoint = DEFAULT_HOST_DIRECT_PATH + endpoint.substring(DEFAULT_HOST.length());
-      } else if (endpoint.startsWith(DEFAULT_HOST_NO_SCHEME)
-          && (endpoint.length() == DEFAULT_HOST_NO_SCHEME.length()
-              || endpoint.charAt(DEFAULT_HOST_NO_SCHEME.length()) == ':'
-              || endpoint.charAt(DEFAULT_HOST_NO_SCHEME.length()) == '/')) {
-        endpoint =
-            DEFAULT_HOST_DIRECT_PATH_NO_SCHEME
-                + endpoint.substring(DEFAULT_HOST_NO_SCHEME.length());
-      }
+      endpoint = rewriteHost(endpoint, "storage.googleapis.com", "storage-direct.googleapis.com");
     }
     URI uri = URI.create(endpoint);
     String scheme = uri.getScheme();

@@ -98,7 +98,7 @@ public final class ITStorageOptionsTest {
   @Test
   public void clientShouldWork_directPathXdsOverInterconnect() throws Exception {
     assumeTrue(
-        "Environment cannot resolve storage.direct.googleapis.com", canResolveDirectPathAddress());
+        "Environment cannot resolve storage-direct.googleapis.com", canResolveDirectPathAddress());
     StorageOptions options =
         StorageOptions.grpc()
             .setCredentials(credentials)
@@ -134,7 +134,7 @@ public final class ITStorageOptionsTest {
 
   private static boolean canResolveDirectPathAddress() {
     try {
-      java.net.InetAddress.getAllByName("storage.direct.googleapis.com");
+      java.net.InetAddress.getAllByName("storage-direct.googleapis.com");
       return true;
     } catch (java.net.UnknownHostException e) {
       return false;
