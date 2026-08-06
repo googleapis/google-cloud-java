@@ -69,13 +69,13 @@ public final class Dhcp extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Dhcp_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_Dhcp_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Dhcp_fieldAccessorTable
+    return com.google.backstory.Udm.internal_static_google_backstory_Dhcp_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Dhcp.class, com.google.backstory.Dhcp.Builder.class);
   }
@@ -669,13 +669,13 @@ public final class Dhcp extends com.google.protobuf.GeneratedMessage
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Dhcp_Option_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Dhcp_Option_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_Dhcp_Option_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Dhcp.Option.class,
@@ -901,13 +901,13 @@ public final class Dhcp extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(builder_implements:google.backstory.Dhcp.Option)
         com.google.backstory.Dhcp.OptionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.backstory.UdmProto.internal_static_google_backstory_Dhcp_Option_descriptor;
+        return com.google.backstory.Udm.internal_static_google_backstory_Dhcp_Option_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_Dhcp_Option_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.backstory.Dhcp.Option.class,
@@ -932,7 +932,7 @@ public final class Dhcp extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.backstory.UdmProto.internal_static_google_backstory_Dhcp_Option_descriptor;
+        return com.google.backstory.Udm.internal_static_google_backstory_Dhcp_Option_descriptor;
       }
 
       @java.lang.Override
@@ -2399,13 +2399,13 @@ public final class Dhcp extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Dhcp)
       com.google.backstory.DhcpOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Dhcp_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Dhcp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Dhcp_fieldAccessorTable
+      return com.google.backstory.Udm.internal_static_google_backstory_Dhcp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Dhcp.class, com.google.backstory.Dhcp.Builder.class);
     }
@@ -2453,7 +2453,7 @@ public final class Dhcp extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Dhcp_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Dhcp_descriptor;
     }
 
     @java.lang.Override

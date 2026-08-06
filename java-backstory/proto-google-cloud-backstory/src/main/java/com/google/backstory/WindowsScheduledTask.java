@@ -61,14 +61,14 @@ public final class WindowsScheduledTask extends com.google.protobuf.GeneratedMes
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto
+    return com.google.backstory.Udm
         .internal_static_google_backstory_WindowsScheduledTask_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto
+    return com.google.backstory.Udm
         .internal_static_google_backstory_WindowsScheduledTask_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.WindowsScheduledTask.class,
@@ -784,14 +784,14 @@ public final class WindowsScheduledTask extends com.google.protobuf.GeneratedMes
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_WindowsScheduledTask_TaskAction_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_WindowsScheduledTask_TaskAction_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.WindowsScheduledTask.TaskAction.class,
@@ -1525,14 +1525,14 @@ public final class WindowsScheduledTask extends com.google.protobuf.GeneratedMes
         // @@protoc_insertion_point(builder_implements:google.backstory.WindowsScheduledTask.TaskAction)
         com.google.backstory.WindowsScheduledTask.TaskActionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_WindowsScheduledTask_TaskAction_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_WindowsScheduledTask_TaskAction_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.backstory.WindowsScheduledTask.TaskAction.class,
@@ -1560,7 +1560,7 @@ public final class WindowsScheduledTask extends com.google.protobuf.GeneratedMes
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_WindowsScheduledTask_TaskAction_descriptor;
       }
 
@@ -2568,14 +2568,14 @@ public final class WindowsScheduledTask extends com.google.protobuf.GeneratedMes
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_WindowsScheduledTask_TaskTrigger_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_WindowsScheduledTask_TaskTrigger_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.WindowsScheduledTask.TaskTrigger.class,
@@ -3376,14 +3376,14 @@ public final class WindowsScheduledTask extends com.google.protobuf.GeneratedMes
         // @@protoc_insertion_point(builder_implements:google.backstory.WindowsScheduledTask.TaskTrigger)
         com.google.backstory.WindowsScheduledTask.TaskTriggerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_WindowsScheduledTask_TaskTrigger_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_WindowsScheduledTask_TaskTrigger_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.backstory.WindowsScheduledTask.TaskTrigger.class,
@@ -3423,7 +3423,7 @@ public final class WindowsScheduledTask extends com.google.protobuf.GeneratedMes
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.backstory.UdmProto
+        return com.google.backstory.Udm
             .internal_static_google_backstory_WindowsScheduledTask_TaskTrigger_descriptor;
       }
 
@@ -4697,14 +4697,14 @@ public final class WindowsScheduledTask extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(builder_implements:google.backstory.WindowsScheduledTask)
       com.google.backstory.WindowsScheduledTaskOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_WindowsScheduledTask_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_WindowsScheduledTask_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.WindowsScheduledTask.class,
@@ -4746,7 +4746,7 @@ public final class WindowsScheduledTask extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_WindowsScheduledTask_descriptor;
     }
 

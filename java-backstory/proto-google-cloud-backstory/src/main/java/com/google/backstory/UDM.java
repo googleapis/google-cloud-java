@@ -58,13 +58,13 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_UDM_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_UDM_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_UDM_fieldAccessorTable
+    return com.google.backstory.Udm.internal_static_google_backstory_UDM_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.UDM.class, com.google.backstory.UDM.Builder.class);
   }
@@ -1242,13 +1242,13 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.UDM)
       com.google.backstory.UDMOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_UDM_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_UDM_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_UDM_fieldAccessorTable
+      return com.google.backstory.Udm.internal_static_google_backstory_UDM_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.UDM.class, com.google.backstory.UDM.Builder.class);
     }
@@ -1361,7 +1361,7 @@ public final class UDM extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_UDM_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_UDM_descriptor;
     }
 
     @java.lang.Override

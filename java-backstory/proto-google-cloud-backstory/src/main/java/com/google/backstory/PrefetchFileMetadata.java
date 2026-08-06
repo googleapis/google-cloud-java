@@ -56,14 +56,14 @@ public final class PrefetchFileMetadata extends com.google.protobuf.GeneratedMes
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto
+    return com.google.backstory.Udm
         .internal_static_google_backstory_PrefetchFileMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto
+    return com.google.backstory.Udm
         .internal_static_google_backstory_PrefetchFileMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.PrefetchFileMetadata.class,
@@ -325,14 +325,14 @@ public final class PrefetchFileMetadata extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(builder_implements:google.backstory.PrefetchFileMetadata)
       com.google.backstory.PrefetchFileMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_PrefetchFileMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_PrefetchFileMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.PrefetchFileMetadata.class,
@@ -357,7 +357,7 @@ public final class PrefetchFileMetadata extends com.google.protobuf.GeneratedMes
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_PrefetchFileMetadata_descriptor;
     }
 

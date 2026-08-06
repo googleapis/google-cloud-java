@@ -59,13 +59,13 @@ public final class SignerInfo extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_SignerInfo_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_SignerInfo_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_SignerInfo_fieldAccessorTable
+    return com.google.backstory.Udm.internal_static_google_backstory_SignerInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.SignerInfo.class, com.google.backstory.SignerInfo.Builder.class);
   }
@@ -581,13 +581,13 @@ public final class SignerInfo extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.SignerInfo)
       com.google.backstory.SignerInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_SignerInfo_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_SignerInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_SignerInfo_fieldAccessorTable
+      return com.google.backstory.Udm.internal_static_google_backstory_SignerInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.SignerInfo.class, com.google.backstory.SignerInfo.Builder.class);
     }
@@ -612,7 +612,7 @@ public final class SignerInfo extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_SignerInfo_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_SignerInfo_descriptor;
     }
 
     @java.lang.Override

@@ -57,13 +57,13 @@ public final class FileMetadataImports extends com.google.protobuf.GeneratedMess
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_FileMetadataImports_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_FileMetadataImports_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto
+    return com.google.backstory.Udm
         .internal_static_google_backstory_FileMetadataImports_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.FileMetadataImports.class,
@@ -380,14 +380,14 @@ public final class FileMetadataImports extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(builder_implements:google.backstory.FileMetadataImports)
       com.google.backstory.FileMetadataImportsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_FileMetadataImports_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_FileMetadataImports_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.FileMetadataImports.class,
@@ -412,7 +412,7 @@ public final class FileMetadataImports extends com.google.protobuf.GeneratedMess
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_FileMetadataImports_descriptor;
     }
 

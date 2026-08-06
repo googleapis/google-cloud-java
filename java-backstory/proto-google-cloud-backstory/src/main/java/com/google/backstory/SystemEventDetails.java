@@ -58,13 +58,13 @@ public final class SystemEventDetails extends com.google.protobuf.GeneratedMessa
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_SystemEventDetails_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_SystemEventDetails_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto
+    return com.google.backstory.Udm
         .internal_static_google_backstory_SystemEventDetails_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.SystemEventDetails.class,
@@ -421,14 +421,14 @@ public final class SystemEventDetails extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(builder_implements:google.backstory.SystemEventDetails)
       com.google.backstory.SystemEventDetailsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_SystemEventDetails_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_SystemEventDetails_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.SystemEventDetails.class,
@@ -454,7 +454,7 @@ public final class SystemEventDetails extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_SystemEventDetails_descriptor;
     }
 

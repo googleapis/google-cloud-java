@@ -56,13 +56,13 @@ public final class AnalyticsMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_AnalyticsMetadata_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_AnalyticsMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto
+    return com.google.backstory.Udm
         .internal_static_google_backstory_AnalyticsMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.AnalyticsMetadata.class,
@@ -295,13 +295,13 @@ public final class AnalyticsMetadata extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(builder_implements:google.backstory.AnalyticsMetadata)
       com.google.backstory.AnalyticsMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_AnalyticsMetadata_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_AnalyticsMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_AnalyticsMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.AnalyticsMetadata.class,
@@ -325,7 +325,7 @@ public final class AnalyticsMetadata extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_AnalyticsMetadata_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_AnalyticsMetadata_descriptor;
     }
 
     @java.lang.Override

@@ -95,6 +95,7 @@ public final class ITStorageOptionsTest {
     doTest(options);
   }
 
+
   @Test
   public void lackOfProjectIdDoesNotPreventConstruction_http() throws Exception {
     StorageOptions options = StorageOptions.http().setCredentials(credentials).build();
@@ -117,3 +118,4 @@ public final class ITStorageOptionsTest {
     try (Storage ignore = options.getService()) {}
   }
 }
+

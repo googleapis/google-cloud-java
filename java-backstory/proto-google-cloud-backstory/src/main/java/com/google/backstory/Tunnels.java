@@ -57,13 +57,13 @@ public final class Tunnels extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Tunnels_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_Tunnels_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Tunnels_fieldAccessorTable
+    return com.google.backstory.Udm.internal_static_google_backstory_Tunnels_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Tunnels.class, com.google.backstory.Tunnels.Builder.class);
   }
@@ -355,13 +355,13 @@ public final class Tunnels extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Tunnels)
       com.google.backstory.TunnelsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Tunnels_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Tunnels_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Tunnels_fieldAccessorTable
+      return com.google.backstory.Udm.internal_static_google_backstory_Tunnels_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Tunnels.class, com.google.backstory.Tunnels.Builder.class);
     }
@@ -384,7 +384,7 @@ public final class Tunnels extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Tunnels_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Tunnels_descriptor;
     }
 
     @java.lang.Override

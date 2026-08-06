@@ -70,13 +70,13 @@ public final class Process extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Process_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_Process_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Process_fieldAccessorTable
+    return com.google.backstory.Udm.internal_static_google_backstory_Process_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Process.class, com.google.backstory.Process.Builder.class);
   }
@@ -2256,13 +2256,13 @@ public final class Process extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Process)
       com.google.backstory.ProcessOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Process_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Process_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Process_fieldAccessorTable
+      return com.google.backstory.Udm.internal_static_google_backstory_Process_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Process.class, com.google.backstory.Process.Builder.class);
     }
@@ -2339,7 +2339,7 @@ public final class Process extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Process_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Process_descriptor;
     }
 
     @java.lang.Override

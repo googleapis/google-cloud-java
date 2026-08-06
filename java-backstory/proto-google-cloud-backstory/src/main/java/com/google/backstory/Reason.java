@@ -189,7 +189,7 @@ public enum Reason implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.backstory.UdmProto.getDescriptor().getEnumTypes().get(4);
+    return com.google.backstory.Udm.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final Reason[] VALUES = values();

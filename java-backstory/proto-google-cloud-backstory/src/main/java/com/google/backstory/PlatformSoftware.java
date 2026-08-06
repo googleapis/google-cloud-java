@@ -58,13 +58,13 @@ public final class PlatformSoftware extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_PlatformSoftware_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_PlatformSoftware_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto
+    return com.google.backstory.Udm
         .internal_static_google_backstory_PlatformSoftware_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.PlatformSoftware.class,
@@ -408,13 +408,13 @@ public final class PlatformSoftware extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.PlatformSoftware)
       com.google.backstory.PlatformSoftwareOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_PlatformSoftware_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_PlatformSoftware_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto
+      return com.google.backstory.Udm
           .internal_static_google_backstory_PlatformSoftware_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.PlatformSoftware.class,
@@ -440,7 +440,7 @@ public final class PlatformSoftware extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_PlatformSoftware_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_PlatformSoftware_descriptor;
     }
 
     @java.lang.Override

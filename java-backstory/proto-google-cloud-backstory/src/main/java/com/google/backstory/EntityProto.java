@@ -296,7 +296,7 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.backstory.EntityRiskProto.getDescriptor(),
-              com.google.backstory.UdmProto.getDescriptor(),
+              com.google.backstory.Udm.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.IntervalProto.getDescriptor(),
@@ -387,7 +387,7 @@ public final class EntityProto extends com.google.protobuf.GeneratedFile {
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.backstory.EntityRiskProto.getDescriptor();
-    com.google.backstory.UdmProto.getDescriptor();
+    com.google.backstory.Udm.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.IntervalProto.getDescriptor();

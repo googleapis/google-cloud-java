@@ -60,13 +60,13 @@ public final class Registry extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Registry_descriptor;
+    return com.google.backstory.Udm.internal_static_google_backstory_Registry_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.UdmProto.internal_static_google_backstory_Registry_fieldAccessorTable
+    return com.google.backstory.Udm.internal_static_google_backstory_Registry_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Registry.class, com.google.backstory.Registry.Builder.class);
   }
@@ -908,13 +908,13 @@ public final class Registry extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Registry)
       com.google.backstory.RegistryOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Registry_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Registry_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Registry_fieldAccessorTable
+      return com.google.backstory.Udm.internal_static_google_backstory_Registry_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Registry.class, com.google.backstory.Registry.Builder.class);
     }
@@ -940,7 +940,7 @@ public final class Registry extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.UdmProto.internal_static_google_backstory_Registry_descriptor;
+      return com.google.backstory.Udm.internal_static_google_backstory_Registry_descriptor;
     }
 
     @java.lang.Override
