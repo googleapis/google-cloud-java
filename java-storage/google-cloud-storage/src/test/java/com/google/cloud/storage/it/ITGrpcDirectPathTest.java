@@ -26,6 +26,7 @@ import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.Inject;
 import com.google.cloud.storage.it.runner.annotations.SingleBackend;
 import com.google.cloud.storage.it.runner.annotations.StorageFixture;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -37,6 +38,8 @@ public final class ITGrpcDirectPathTest {
   @StorageFixture(Transport.GRPC)
   public Storage storage;
 
+  @Ignore(
+      "Bypassed because DirectPath over Interconnect (GCI) requires a specialized hybrid network environment (Interconnect and Traffic Director configured for storage-direct) and cannot be validated in standard CI or local workstations.")
   @Test
   public void clientShouldWork_directPathXdsOverInterconnect() throws Exception {
     assumeTrue(
