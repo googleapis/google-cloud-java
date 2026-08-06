@@ -643,13 +643,6 @@ public class PublisherImplTest {
     }
   }
 
-  /**
-   * When a batch for an ordering key fails, its failure callback also cancels the messages still
-   * accumulating in that key's un-flushed batch. Those messages incremented {@code messagesWaiter}
-   * when they were published and never become part of any {@code OutstandingBatch}, so they have to
-   * be returned to the waiter there — otherwise {@code pendingCount} can never reach zero again and
-   * {@code shutdown()}, which waits on it uninterruptibly and without a timeout, never returns.
-   */
   @Test(timeout = 60_000)
   public void testShutdownAfterOrderingKeyFailureWithMoreOfThatKeyStillBatched() throws Exception {
     Publisher publisher =
@@ -665,9 +658,8 @@ public class PublisherImplTest {
     // Queued before publishing, so the fake never blocks in publishResponses.take() (see #13394).
     testPublisherServiceImpl.addPublishError(new StatusException(Status.INVALID_ARGUMENT));
 
-    // m1 and m2 meet the threshold and are popped into an outstanding batch, but the request only
-    // leaves once the fake executor runs — so m3 is published into the un-flushed batch for the
-    // same key first, and is still there when the failure lands.
+    // m1 and m2 meet the threshold, but the request only leaves once the fake executor runs, so
+    // m3 lands in the un-flushed batch for the same key and is still there when the failure does.
     ApiFuture<String> publishFuture1 = sendTestMessageWithOrderingKey(publisher, "m1", "orderA");
     ApiFuture<String> publishFuture2 = sendTestMessageWithOrderingKey(publisher, "m2", "orderA");
     ApiFuture<String> publishFuture3 = sendTestMessageWithOrderingKey(publisher, "m3", "orderA");
