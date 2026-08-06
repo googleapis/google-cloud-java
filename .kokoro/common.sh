@@ -418,6 +418,9 @@ function install_modules() {
     always_install_deps_list=(
       'java-monitoring/google-cloud-monitoring'
       'java-monitoring/google-cloud-monitoring-bom'
+      'java-kms/google-cloud-kms'
+      'java-kms/proto-google-cloud-kms-v1'
+      'java-kms/grpc-google-cloud-kms-v1'
       'google-auth-library-java/appengine'
       'google-auth-library-java/bom'
       'google-auth-library-java/cab-token-generator'

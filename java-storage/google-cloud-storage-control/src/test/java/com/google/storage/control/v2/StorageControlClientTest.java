@@ -21,6 +21,7 @@ import static com.google.storage.control.v2.StorageControlClient.ListFoldersPage
 import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingRevisionsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListManagedFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListRapidCachesPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.SummarizeIntelligenceFindingsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -722,6 +723,7 @@ public class StorageControlClientTest {
             .setMetageneration(1048558813)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setRapidCacheConfig(ManagedFolder.RapidCacheConfig.newBuilder().build())
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -770,6 +772,7 @@ public class StorageControlClientTest {
             .setMetageneration(1048558813)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setRapidCacheConfig(ManagedFolder.RapidCacheConfig.newBuilder().build())
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -886,6 +889,7 @@ public class StorageControlClientTest {
             .setMetageneration(1048558813)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setRapidCacheConfig(ManagedFolder.RapidCacheConfig.newBuilder().build())
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -927,6 +931,7 @@ public class StorageControlClientTest {
             .setMetageneration(1048558813)
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setRapidCacheConfig(ManagedFolder.RapidCacheConfig.newBuilder().build())
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -1049,6 +1054,51 @@ public class StorageControlClientTest {
   }
 
   @Test
+  public void updateManagedFolderTest() throws Exception {
+    ManagedFolder expectedResponse =
+        ManagedFolder.newBuilder()
+            .setName(ManagedFolderName.of("[PROJECT]", "[BUCKET]", "[MANAGED_FOLDER]").toString())
+            .setMetageneration(1048558813)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setRapidCacheConfig(ManagedFolder.RapidCacheConfig.newBuilder().build())
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    ManagedFolder managedFolder = ManagedFolder.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ManagedFolder actualResponse = client.updateManagedFolder(managedFolder, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateManagedFolderRequest actualRequest = ((UpdateManagedFolderRequest) actualRequests.get(0));
+
+    Assert.assertEquals(managedFolder, actualRequest.getManagedFolder());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateManagedFolderExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      ManagedFolder managedFolder = ManagedFolder.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateManagedFolder(managedFolder, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void createAnywhereCacheTest() throws Exception {
     AnywhereCache expectedResponse =
         AnywhereCache.newBuilder()
@@ -1060,6 +1110,7 @@ public class StorageControlClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setPendingUpdate(true)
+            .setIngestOnWrite(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1116,6 +1167,7 @@ public class StorageControlClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setPendingUpdate(true)
+            .setIngestOnWrite(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1172,6 +1224,7 @@ public class StorageControlClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setPendingUpdate(true)
+            .setIngestOnWrite(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1228,6 +1281,7 @@ public class StorageControlClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setPendingUpdate(true)
+            .setIngestOnWrite(true)
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -1274,6 +1328,7 @@ public class StorageControlClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setPendingUpdate(true)
+            .setIngestOnWrite(true)
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -1320,6 +1375,7 @@ public class StorageControlClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setPendingUpdate(true)
+            .setIngestOnWrite(true)
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -1365,6 +1421,7 @@ public class StorageControlClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setPendingUpdate(true)
+            .setIngestOnWrite(true)
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -1410,6 +1467,7 @@ public class StorageControlClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setPendingUpdate(true)
+            .setIngestOnWrite(true)
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -1455,6 +1513,7 @@ public class StorageControlClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setPendingUpdate(true)
+            .setIngestOnWrite(true)
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -1500,6 +1559,7 @@ public class StorageControlClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setPendingUpdate(true)
+            .setIngestOnWrite(true)
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -1545,6 +1605,7 @@ public class StorageControlClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setPendingUpdate(true)
+            .setIngestOnWrite(true)
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -1660,6 +1721,357 @@ public class StorageControlClientTest {
     try {
       String parent = "parent-995424086";
       client.listAnywhereCaches(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createRapidCacheTest() throws Exception {
+    RapidCache expectedResponse =
+        RapidCache.newBuilder()
+            .setName(RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString())
+            .setZone("zone3744684")
+            .setCacheType("cacheType-553573924")
+            .setTtl(Duration.newBuilder().build())
+            .setAdmissionPolicy("admissionPolicy-1063600485")
+            .setState("state109757585")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingUpdate(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRapidCacheTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageControl.addResponse(resultOperation);
+
+    BucketName parent = BucketName.of("[PROJECT]", "[BUCKET]");
+    RapidCache rapidCache = RapidCache.newBuilder().build();
+
+    RapidCache actualResponse = client.createRapidCacheAsync(parent, rapidCache).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRapidCacheRequest actualRequest = ((CreateRapidCacheRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(rapidCache, actualRequest.getRapidCache());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRapidCacheExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      BucketName parent = BucketName.of("[PROJECT]", "[BUCKET]");
+      RapidCache rapidCache = RapidCache.newBuilder().build();
+      client.createRapidCacheAsync(parent, rapidCache).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createRapidCacheTest2() throws Exception {
+    RapidCache expectedResponse =
+        RapidCache.newBuilder()
+            .setName(RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString())
+            .setZone("zone3744684")
+            .setCacheType("cacheType-553573924")
+            .setTtl(Duration.newBuilder().build())
+            .setAdmissionPolicy("admissionPolicy-1063600485")
+            .setState("state109757585")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingUpdate(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createRapidCacheTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageControl.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    RapidCache rapidCache = RapidCache.newBuilder().build();
+
+    RapidCache actualResponse = client.createRapidCacheAsync(parent, rapidCache).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateRapidCacheRequest actualRequest = ((CreateRapidCacheRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(rapidCache, actualRequest.getRapidCache());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createRapidCacheExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      RapidCache rapidCache = RapidCache.newBuilder().build();
+      client.createRapidCacheAsync(parent, rapidCache).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateRapidCacheTest() throws Exception {
+    RapidCache expectedResponse =
+        RapidCache.newBuilder()
+            .setName(RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString())
+            .setZone("zone3744684")
+            .setCacheType("cacheType-553573924")
+            .setTtl(Duration.newBuilder().build())
+            .setAdmissionPolicy("admissionPolicy-1063600485")
+            .setState("state109757585")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingUpdate(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateRapidCacheTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageControl.addResponse(resultOperation);
+
+    RapidCache rapidCache = RapidCache.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    RapidCache actualResponse = client.updateRapidCacheAsync(rapidCache, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateRapidCacheRequest actualRequest = ((UpdateRapidCacheRequest) actualRequests.get(0));
+
+    Assert.assertEquals(rapidCache, actualRequest.getRapidCache());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateRapidCacheExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      RapidCache rapidCache = RapidCache.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateRapidCacheAsync(rapidCache, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getRapidCacheTest() throws Exception {
+    RapidCache expectedResponse =
+        RapidCache.newBuilder()
+            .setName(RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString())
+            .setZone("zone3744684")
+            .setCacheType("cacheType-553573924")
+            .setTtl(Duration.newBuilder().build())
+            .setAdmissionPolicy("admissionPolicy-1063600485")
+            .setState("state109757585")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingUpdate(true)
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    RapidCacheName name = RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]");
+
+    RapidCache actualResponse = client.getRapidCache(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRapidCacheRequest actualRequest = ((GetRapidCacheRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRapidCacheExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      RapidCacheName name = RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]");
+      client.getRapidCache(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRapidCacheTest2() throws Exception {
+    RapidCache expectedResponse =
+        RapidCache.newBuilder()
+            .setName(RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString())
+            .setZone("zone3744684")
+            .setCacheType("cacheType-553573924")
+            .setTtl(Duration.newBuilder().build())
+            .setAdmissionPolicy("admissionPolicy-1063600485")
+            .setState("state109757585")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingUpdate(true)
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RapidCache actualResponse = client.getRapidCache(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRapidCacheRequest actualRequest = ((GetRapidCacheRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRapidCacheExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRapidCache(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRapidCachesTest() throws Exception {
+    RapidCache responsesElement = RapidCache.newBuilder().build();
+    ListRapidCachesResponse expectedResponse =
+        ListRapidCachesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRapidCaches(Arrays.asList(responsesElement))
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    BucketName parent = BucketName.of("[PROJECT]", "[BUCKET]");
+
+    ListRapidCachesPagedResponse pagedListResponse = client.listRapidCaches(parent);
+
+    List<RapidCache> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRapidCachesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRapidCachesRequest actualRequest = ((ListRapidCachesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRapidCachesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      BucketName parent = BucketName.of("[PROJECT]", "[BUCKET]");
+      client.listRapidCaches(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listRapidCachesTest2() throws Exception {
+    RapidCache responsesElement = RapidCache.newBuilder().build();
+    ListRapidCachesResponse expectedResponse =
+        ListRapidCachesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllRapidCaches(Arrays.asList(responsesElement))
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListRapidCachesPagedResponse pagedListResponse = client.listRapidCaches(parent);
+
+    List<RapidCache> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getRapidCachesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListRapidCachesRequest actualRequest = ((ListRapidCachesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listRapidCachesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listRapidCaches(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

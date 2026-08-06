@@ -55,7 +55,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -510,7 +509,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
   }
 
   @Override
-  public RetrySettings getRetrySettings() {
+  public @Nullable RetrySettings getRetrySettings() {
     return retrySettings;
   }
 
@@ -531,7 +530,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
   }
 
   @Override
-  public Set<StatusCode.Code> getRetryableCodes() {
+  public @Nullable Set<StatusCode.Code> getRetryableCodes() {
     return retryableCodes;
   }
 
@@ -588,7 +587,6 @@ public final class HttpJsonCallContext implements ApiCallContext {
     return withCallOptions(builder.setDeadline(newDeadline).build());
   }
 
-  @Nonnull
   @Override
   public ApiTracer getTracer() {
     if (tracer == null) {
@@ -599,7 +597,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
 
   /** {@inheritDoc} */
   @Override
-  public HttpJsonCallContext withTracer(@Nonnull ApiTracer newTracer) {
+  public HttpJsonCallContext withTracer(ApiTracer newTracer) {
     Preconditions.checkNotNull(newTracer);
     HttpJsonCallOptions newCallOptions = callOptions.toBuilder().setTracer(newTracer).build();
 

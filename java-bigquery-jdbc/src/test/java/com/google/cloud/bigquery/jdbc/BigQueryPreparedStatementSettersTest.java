@@ -203,7 +203,7 @@ public class BigQueryPreparedStatementSettersTest {
     Date date = new Date(1700000000000L); // 2023-11-14
 
     preparedStatement.setDate(1, date, cal);
-    assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals(Date.class, preparedStatement.parameterHandler.getType(1));
     assertEquals(originalMillis, cal.getTimeInMillis());
   }
 
@@ -215,7 +215,7 @@ public class BigQueryPreparedStatementSettersTest {
     Time time = new Time(43200000L); // 12:00:00
 
     preparedStatement.setTime(1, time, cal);
-    assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals(Time.class, preparedStatement.parameterHandler.getType(1));
     assertEquals(originalMillis, cal.getTimeInMillis());
   }
 
@@ -227,7 +227,7 @@ public class BigQueryPreparedStatementSettersTest {
     Timestamp ts = new Timestamp(1700000000000L);
 
     preparedStatement.setTimestamp(1, ts, cal);
-    assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(1));
     assertEquals(originalMillis, cal.getTimeInMillis());
   }
 
@@ -255,18 +255,18 @@ public class BigQueryPreparedStatementSettersTest {
   public void testSetObjectWithJavaTime() throws Exception {
     LocalDate localDate = LocalDate.of(2025, 12, 3);
     preparedStatement.setObject(1, localDate);
-    assertEquals(String.class, preparedStatement.parameterHandler.getType(1));
+    assertEquals(Date.class, preparedStatement.parameterHandler.getType(1));
 
     LocalTime localTime = LocalTime.of(12, 30, 0);
     preparedStatement.setObject(2, localTime);
-    assertEquals(String.class, preparedStatement.parameterHandler.getType(2));
+    assertEquals(Time.class, preparedStatement.parameterHandler.getType(2));
 
     LocalDateTime localDateTime = LocalDateTime.of(2025, 12, 3, 12, 30, 0);
     preparedStatement.setObject(3, localDateTime);
-    assertEquals(String.class, preparedStatement.parameterHandler.getType(3));
+    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(3));
 
     Instant instant = Instant.now();
     preparedStatement.setObject(4, instant);
-    assertEquals(String.class, preparedStatement.parameterHandler.getType(4));
+    assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(4));
   }
 }

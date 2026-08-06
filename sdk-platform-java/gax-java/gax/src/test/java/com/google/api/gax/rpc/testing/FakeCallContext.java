@@ -50,8 +50,7 @@ import com.google.common.collect.ImmutableSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 @InternalApi("for testing")
 public class FakeCallContext implements ApiCallContext {
@@ -248,25 +247,23 @@ public class FakeCallContext implements ApiCallContext {
 
   @Override
   public ApiCallContext withStreamWaitTimeout(
-      @Nullable org.threeten.bp.Duration streamWaitTimeout) {
+      org.threeten.bp.@Nullable Duration streamWaitTimeout) {
     return withStreamWaitTimeoutDuration(toJavaTimeDuration(streamWaitTimeout));
   }
 
-  @Nullable
   @Override
-  public java.time.Duration getStreamWaitTimeoutDuration() {
+  public java.time.@Nullable Duration getStreamWaitTimeoutDuration() {
     return streamWaitTimeout;
   }
 
   @Override
   public ApiCallContext withStreamIdleTimeout(
-      @Nullable org.threeten.bp.Duration streamIdleTimeout) {
+      org.threeten.bp.@Nullable Duration streamIdleTimeout) {
     return withStreamIdleTimeoutDuration(toJavaTimeDuration(streamIdleTimeout));
   }
 
-  @Nullable
   @Override
-  public java.time.Duration getStreamIdleTimeoutDuration() {
+  public java.time.@Nullable Duration getStreamIdleTimeoutDuration() {
     return streamIdleTimeout;
   }
 
@@ -315,7 +312,7 @@ public class FakeCallContext implements ApiCallContext {
   }
 
   @Override
-  public FakeCallContext withTimeout(@Nullable org.threeten.bp.Duration timeout) {
+  public FakeCallContext withTimeout(org.threeten.bp.@Nullable Duration timeout) {
     return withTimeoutDuration(toJavaTimeDuration(timeout));
   }
 
@@ -360,15 +357,14 @@ public class FakeCallContext implements ApiCallContext {
         this.endpointContext);
   }
 
-  @Nullable
   @Override
-  public org.threeten.bp.Duration getTimeout() {
+  public org.threeten.bp.@Nullable Duration getTimeout() {
     return toThreetenDuration(getTimeoutDuration());
   }
 
   @Override
   public ApiCallContext withStreamWaitTimeoutDuration(
-      @Nullable java.time.Duration streamWaitTimeout) {
+      java.time.@Nullable Duration streamWaitTimeout) {
     return new FakeCallContext(
         this.credentials,
         this.channel,
@@ -383,15 +379,14 @@ public class FakeCallContext implements ApiCallContext {
         this.endpointContext);
   }
 
-  @Nullable
   @Override
-  public org.threeten.bp.Duration getStreamWaitTimeout() {
+  public org.threeten.bp.@Nullable Duration getStreamWaitTimeout() {
     return toThreetenDuration(getStreamWaitTimeoutDuration());
   }
 
   @Override
   public ApiCallContext withStreamIdleTimeoutDuration(
-      @Nullable java.time.Duration streamIdleTimeout) {
+      java.time.@Nullable Duration streamIdleTimeout) {
     Preconditions.checkNotNull(streamIdleTimeout);
     return new FakeCallContext(
         this.credentials,
@@ -407,9 +402,8 @@ public class FakeCallContext implements ApiCallContext {
         this.endpointContext);
   }
 
-  @Nullable
   @Override
-  public org.threeten.bp.Duration getStreamIdleTimeout() {
+  public org.threeten.bp.@Nullable Duration getStreamIdleTimeout() {
     return toThreetenDuration(getStreamIdleTimeoutDuration());
   }
 
@@ -463,7 +457,6 @@ public class FakeCallContext implements ApiCallContext {
 
   /** {@inheritDoc} */
   @Override
-  @Nonnull
   public ApiTracer getTracer() {
     if (tracer == null) {
       return BaseApiTracer.getInstance();
@@ -473,7 +466,7 @@ public class FakeCallContext implements ApiCallContext {
 
   /** {@inheritDoc} */
   @Override
-  public ApiCallContext withTracer(@Nonnull ApiTracer tracer) {
+  public ApiCallContext withTracer(ApiTracer tracer) {
     Preconditions.checkNotNull(tracer);
 
     return new FakeCallContext(

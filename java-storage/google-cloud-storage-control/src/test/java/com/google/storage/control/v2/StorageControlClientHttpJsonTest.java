@@ -16,6 +16,7 @@
 
 package com.google.storage.control.v2;
 
+import static com.google.storage.control.v2.StorageControlClient.ListFoldersPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingRevisionsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.SummarizeIntelligenceFindingsPagedResponse;
@@ -30,6 +31,9 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Any;
+import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.storage.control.v2.stub.HttpJsonStorageControlStub;
@@ -38,6 +42,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -82,45 +87,679 @@ public class StorageControlClientHttpJsonTest {
   }
 
   @Test
-  public void createFolderUnsupportedMethodTest() throws Exception {
-    // The createFolder() method is not supported in REST transport.
-    // This empty test is generated for technical reasons.
+  public void createFolderTest() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]").toString())
+            .setMetageneration(1048558813)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingRenameInfo(PendingRenameInfo.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BucketName parent = BucketName.of("[PROJECT]", "[BUCKET]");
+    Folder folder = Folder.newBuilder().build();
+    String folderId = "folderId294109737";
+
+    Folder actualResponse = client.createFolder(parent, folder, folderId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
-  public void deleteFolderUnsupportedMethodTest() throws Exception {
-    // The deleteFolder() method is not supported in REST transport.
-    // This empty test is generated for technical reasons.
+  public void createFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BucketName parent = BucketName.of("[PROJECT]", "[BUCKET]");
+      Folder folder = Folder.newBuilder().build();
+      String folderId = "folderId294109737";
+      client.createFolder(parent, folder, folderId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test
-  public void getFolderUnsupportedMethodTest() throws Exception {
-    // The getFolder() method is not supported in REST transport.
-    // This empty test is generated for technical reasons.
+  public void createFolderTest2() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]").toString())
+            .setMetageneration(1048558813)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingRenameInfo(PendingRenameInfo.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-1468/buckets/bucket-1468";
+    Folder folder = Folder.newBuilder().build();
+    String folderId = "folderId294109737";
+
+    Folder actualResponse = client.createFolder(parent, folder, folderId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
-  public void listFoldersUnsupportedMethodTest() throws Exception {
-    // The listFolders() method is not supported in REST transport.
-    // This empty test is generated for technical reasons.
+  public void createFolderExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-1468/buckets/bucket-1468";
+      Folder folder = Folder.newBuilder().build();
+      String folderId = "folderId294109737";
+      client.createFolder(parent, folder, folderId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test
-  public void renameFolderUnsupportedMethodTest() throws Exception {
-    // The renameFolder() method is not supported in REST transport.
-    // This empty test is generated for technical reasons.
+  public void deleteFolderTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    FolderName name = FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]");
+
+    client.deleteFolder(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
   }
 
   @Test
-  public void deleteFolderRecursiveUnsupportedMethodTest() throws Exception {
-    // The deleteFolderRecursive() method is not supported in REST transport.
-    // This empty test is generated for technical reasons.
+  public void deleteFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderName name = FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]");
+      client.deleteFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test
-  public void getStorageLayoutUnsupportedMethodTest() throws Exception {
-    // The getStorageLayout() method is not supported in REST transport.
-    // This empty test is generated for technical reasons.
+  public void deleteFolderTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3692/buckets/bucket-3692/folders/folder-3692";
+
+    client.deleteFolder(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFolderExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3692/buckets/bucket-3692/folders/folder-3692";
+      client.deleteFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFolderTest() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]").toString())
+            .setMetageneration(1048558813)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingRenameInfo(PendingRenameInfo.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FolderName name = FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]");
+
+    Folder actualResponse = client.getFolder(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderName name = FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]");
+      client.getFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFolderTest2() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]").toString())
+            .setMetageneration(1048558813)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingRenameInfo(PendingRenameInfo.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3692/buckets/bucket-3692/folders/folder-3692";
+
+    Folder actualResponse = client.getFolder(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getFolderExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3692/buckets/bucket-3692/folders/folder-3692";
+      client.getFolder(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFoldersTest() throws Exception {
+    Folder responsesElement = Folder.newBuilder().build();
+    ListFoldersResponse expectedResponse =
+        ListFoldersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFolders(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    BucketName parent = BucketName.of("[PROJECT]", "[BUCKET]");
+
+    ListFoldersPagedResponse pagedListResponse = client.listFolders(parent);
+
+    List<Folder> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFoldersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listFoldersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      BucketName parent = BucketName.of("[PROJECT]", "[BUCKET]");
+      client.listFolders(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFoldersTest2() throws Exception {
+    Folder responsesElement = Folder.newBuilder().build();
+    ListFoldersResponse expectedResponse =
+        ListFoldersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFolders(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-1468/buckets/bucket-1468";
+
+    ListFoldersPagedResponse pagedListResponse = client.listFolders(parent);
+
+    List<Folder> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFoldersList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listFoldersExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-1468/buckets/bucket-1468";
+      client.listFolders(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void renameFolderTest() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]").toString())
+            .setMetageneration(1048558813)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingRenameInfo(PendingRenameInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("renameFolderTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    FolderName name = FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]");
+    String destinationFolderId = "destinationFolderId-480084905";
+
+    Folder actualResponse = client.renameFolderAsync(name, destinationFolderId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void renameFolderExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderName name = FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]");
+      String destinationFolderId = "destinationFolderId-480084905";
+      client.renameFolderAsync(name, destinationFolderId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void renameFolderTest2() throws Exception {
+    Folder expectedResponse =
+        Folder.newBuilder()
+            .setName(FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]").toString())
+            .setMetageneration(1048558813)
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingRenameInfo(PendingRenameInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("renameFolderTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-3692/buckets/bucket-3692/folders/folder-3692";
+    String destinationFolderId = "destinationFolderId-480084905";
+
+    Folder actualResponse = client.renameFolderAsync(name, destinationFolderId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void renameFolderExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3692/buckets/bucket-3692/folders/folder-3692";
+      String destinationFolderId = "destinationFolderId-480084905";
+      client.renameFolderAsync(name, destinationFolderId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteFolderRecursiveTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFolderRecursiveTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    FolderName name = FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]");
+
+    client.deleteFolderRecursiveAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFolderRecursiveExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderName name = FolderName.of("[PROJECT]", "[BUCKET]", "[FOLDER]");
+      client.deleteFolderRecursiveAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteFolderRecursiveTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFolderRecursiveTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-3692/buckets/bucket-3692/folders/folder-3692";
+
+    client.deleteFolderRecursiveAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFolderRecursiveExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3692/buckets/bucket-3692/folders/folder-3692";
+      client.deleteFolderRecursiveAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getStorageLayoutTest() throws Exception {
+    StorageLayout expectedResponse =
+        StorageLayout.newBuilder()
+            .setName(StorageLayoutName.of("[PROJECT]", "[BUCKET]").toString())
+            .setLocation("location1901043637")
+            .setLocationType("locationType-58277745")
+            .setCustomPlacementConfig(StorageLayout.CustomPlacementConfig.newBuilder().build())
+            .setHierarchicalNamespace(StorageLayout.HierarchicalNamespace.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    StorageLayoutName name = StorageLayoutName.of("[PROJECT]", "[BUCKET]");
+
+    StorageLayout actualResponse = client.getStorageLayout(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getStorageLayoutExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      StorageLayoutName name = StorageLayoutName.of("[PROJECT]", "[BUCKET]");
+      client.getStorageLayout(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getStorageLayoutTest2() throws Exception {
+    StorageLayout expectedResponse =
+        StorageLayout.newBuilder()
+            .setName(StorageLayoutName.of("[PROJECT]", "[BUCKET]").toString())
+            .setLocation("location1901043637")
+            .setLocationType("locationType-58277745")
+            .setCustomPlacementConfig(StorageLayout.CustomPlacementConfig.newBuilder().build())
+            .setHierarchicalNamespace(StorageLayout.HierarchicalNamespace.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-9051/buckets/bucket-9051/storageLayout";
+
+    StorageLayout actualResponse = client.getStorageLayout(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getStorageLayoutExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-9051/buckets/bucket-9051/storageLayout";
+      client.getStorageLayout(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
   }
 
   @Test
@@ -144,6 +783,12 @@ public class StorageControlClientHttpJsonTest {
   @Test
   public void listManagedFoldersUnsupportedMethodTest() throws Exception {
     // The listManagedFolders() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void updateManagedFolderUnsupportedMethodTest() throws Exception {
+    // The updateManagedFolder() method is not supported in REST transport.
     // This empty test is generated for technical reasons.
   }
 
@@ -186,6 +831,30 @@ public class StorageControlClientHttpJsonTest {
   @Test
   public void listAnywhereCachesUnsupportedMethodTest() throws Exception {
     // The listAnywhereCaches() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void createRapidCacheUnsupportedMethodTest() throws Exception {
+    // The createRapidCache() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void updateRapidCacheUnsupportedMethodTest() throws Exception {
+    // The updateRapidCache() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void getRapidCacheUnsupportedMethodTest() throws Exception {
+    // The getRapidCache() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void listRapidCachesUnsupportedMethodTest() throws Exception {
+    // The listRapidCaches() method is not supported in REST transport.
     // This empty test is generated for technical reasons.
   }
 

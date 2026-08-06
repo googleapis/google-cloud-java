@@ -291,13 +291,11 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
 
   @AutoValue
   abstract static class RunnableResult {
-    @Nullable
-    abstract HttpJsonMetadata getResponseHeaders();
+    abstract @Nullable HttpJsonMetadata getResponseHeaders();
 
     abstract int getStatusCode();
 
-    @Nullable
-    abstract InputStream getResponseContent();
+    abstract @Nullable InputStream getResponseContent();
 
     abstract HttpJsonMetadata getTrailers();
 
