@@ -18,8 +18,6 @@ permissions:
 name: Librarian - Formatter Version Check
 
 on:
-  schedule:
-    - cron: '30 3 * * *' # Run daily at 3:30 AM UTC
   workflow_dispatch: # Allow manual trigger
   pull_request:
 
@@ -43,11 +41,8 @@ jobs:
 
   check-formatter-version:
     needs: filter
-    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || needs.filter.outputs.should_run == 'true' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || needs.filter.outputs.should_run == 'true' }}
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      issues: write
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
@@ -86,19 +81,10 @@ jobs:
 
           if [ "${POM_VERSION}" != "${LIBRARIAN_VERSION}" ]; then
             echo "Mismatch: librarian.yaml has version '${LIBRARIAN_VERSION}', but java-shared-config/java-shared-config/pom.xml has version '${POM_VERSION}'"
-            exit 2
+            exit 1
           fi
 
           echo "Formatter versions are in sync!"
         env:
           POM_VERSION: ${{ steps.extract_pom_version.outputs.version }}
           LIBRARIAN_VERSION: ${{ steps.extract_librarian_version.outputs.version }}
-      - name: Create issue on failure
-        if: ${{ failure() && github.event_name == 'schedule' }}
-        uses: googleapis/librarian/.github/actions/create-issue-on-failure@35997441eafc2b02716804f9baba1e3f04f8a44f # v0.31.1
-        with:
-          title: "Formatter Version Mismatch: librarian.yaml and java-shared-config pom.xml out of sync"
-          body: |
-            The google-java-format version in `java-shared-config/java-shared-config/pom.xml` and `librarian.yaml` do not match. Please update them to match.
-
-            Please check the logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
