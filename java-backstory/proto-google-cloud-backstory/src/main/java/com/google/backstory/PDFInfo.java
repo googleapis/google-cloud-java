@@ -57,13 +57,13 @@ public final class PDFInfo extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_PDFInfo_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_PDFInfo_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_PDFInfo_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_PDFInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.PDFInfo.class, com.google.backstory.PDFInfo.Builder.class);
   }
@@ -885,13 +885,13 @@ public final class PDFInfo extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.PDFInfo)
       com.google.backstory.PDFInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_PDFInfo_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_PDFInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_PDFInfo_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_PDFInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.PDFInfo.class, com.google.backstory.PDFInfo.Builder.class);
     }
@@ -934,7 +934,7 @@ public final class PDFInfo extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_PDFInfo_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_PDFInfo_descriptor;
     }
 
     @java.lang.Override

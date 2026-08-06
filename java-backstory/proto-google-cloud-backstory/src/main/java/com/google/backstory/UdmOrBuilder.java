@@ -21,9 +21,9 @@
 package com.google.backstory;
 
 @com.google.protobuf.Generated
-public interface UDMOrBuilder
+public interface UdmOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.backstory.UDM)
+    // @@protoc_insertion_point(interface_extends:google.backstory.Udm)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -68,7 +68,7 @@ public interface UDMOrBuilder
    *
    * <pre>
    * Any important vendor-specific event data that cannot be adequately
-   * represented within the formal sections of the UDM model.
+   * represented within the formal sections of the Udm model.
    * </pre>
    *
    * <code>.google.protobuf.Struct additional = 2;</code>
@@ -82,7 +82,7 @@ public interface UDMOrBuilder
    *
    * <pre>
    * Any important vendor-specific event data that cannot be adequately
-   * represented within the formal sections of the UDM model.
+   * represented within the formal sections of the Udm model.
    * </pre>
    *
    * <code>.google.protobuf.Struct additional = 2;</code>
@@ -96,7 +96,7 @@ public interface UDMOrBuilder
    *
    * <pre>
    * Any important vendor-specific event data that cannot be adequately
-   * represented within the formal sections of the UDM model.
+   * represented within the formal sections of the Udm model.
    * </pre>
    *
    * <code>.google.protobuf.Struct additional = 2;</code>
@@ -163,7 +163,7 @@ public interface UDMOrBuilder
    * the device or process context for the source object (the machine where the
    * source object resides). For example, if user U copies file A on machine X
    * to file B on machine Y, both file A and machine X would be specified in the
-   * src portion of the UDM event.
+   * src portion of the Udm event.
    * </pre>
    *
    * <code>.google.backstory.Noun src = 4;</code>
@@ -180,7 +180,7 @@ public interface UDMOrBuilder
    * the device or process context for the source object (the machine where the
    * source object resides). For example, if user U copies file A on machine X
    * to file B on machine Y, both file A and machine X would be specified in the
-   * src portion of the UDM event.
+   * src portion of the Udm event.
    * </pre>
    *
    * <code>.google.backstory.Noun src = 4;</code>
@@ -197,7 +197,7 @@ public interface UDMOrBuilder
    * the device or process context for the source object (the machine where the
    * source object resides). For example, if user U copies file A on machine X
    * to file B on machine Y, both file A and machine X would be specified in the
-   * src portion of the UDM event.
+   * src portion of the Udm event.
    * </pre>
    *
    * <code>.google.backstory.Noun src = 4;</code>
@@ -648,7 +648,7 @@ public interface UDMOrBuilder
    *
    *
    * <pre>
-   * Related UDM fields that are grouped together.
+   * Related Udm fields that are grouped together.
    * </pre>
    *
    * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -661,7 +661,7 @@ public interface UDMOrBuilder
    *
    *
    * <pre>
-   * Related UDM fields that are grouped together.
+   * Related Udm fields that are grouped together.
    * </pre>
    *
    * <code>optional .google.backstory.GroupedFields grouped = 13;</code>
@@ -674,7 +674,7 @@ public interface UDMOrBuilder
    *
    *
    * <pre>
-   * Related UDM fields that are grouped together.
+   * Related Udm fields that are grouped together.
    * </pre>
    *
    * <code>optional .google.backstory.GroupedFields grouped = 13;</code>

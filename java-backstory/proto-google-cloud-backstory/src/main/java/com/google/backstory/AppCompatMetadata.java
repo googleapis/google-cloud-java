@@ -56,13 +56,13 @@ public final class AppCompatMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_AppCompatMetadata_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_AppCompatMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_AppCompatMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.AppCompatMetadata.class,
@@ -354,13 +354,13 @@ public final class AppCompatMetadata extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(builder_implements:google.backstory.AppCompatMetadata)
       com.google.backstory.AppCompatMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_AppCompatMetadata_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_AppCompatMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_AppCompatMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.AppCompatMetadata.class,
@@ -386,7 +386,7 @@ public final class AppCompatMetadata extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_AppCompatMetadata_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_AppCompatMetadata_descriptor;
     }
 
     @java.lang.Override

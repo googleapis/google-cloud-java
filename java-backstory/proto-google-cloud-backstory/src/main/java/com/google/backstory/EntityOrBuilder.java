@@ -67,7 +67,7 @@ public interface EntityOrBuilder
    *
    *
    * <pre>
-   * Noun in the UDM event that this entity represents.
+   * Noun in the Udm event that this entity represents.
    * </pre>
    *
    * <code>.google.backstory.Noun entity = 2;</code>
@@ -80,7 +80,7 @@ public interface EntityOrBuilder
    *
    *
    * <pre>
-   * Noun in the UDM event that this entity represents.
+   * Noun in the Udm event that this entity represents.
    * </pre>
    *
    * <code>.google.backstory.Noun entity = 2;</code>
@@ -93,7 +93,7 @@ public interface EntityOrBuilder
    *
    *
    * <pre>
-   * Noun in the UDM event that this entity represents.
+   * Noun in the Udm event that this entity represents.
    * </pre>
    *
    * <code>.google.backstory.Noun entity = 2;</code>

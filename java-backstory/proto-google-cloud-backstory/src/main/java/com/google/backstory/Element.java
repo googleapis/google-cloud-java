@@ -142,9 +142,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
    * <pre>
    * References to model primatives including events and entities that share a
    * common association.
-   * Even though a reference can have both UDM and entity, a collection of
+   * Even though a reference can have both Udm and entity, a collection of
    * references (of a single element) will only have one type of message in it
-   * (either UDM / Entity).
+   * (either Udm / Entity).
    * </pre>
    *
    * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -160,9 +160,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
    * <pre>
    * References to model primatives including events and entities that share a
    * common association.
-   * Even though a reference can have both UDM and entity, a collection of
+   * Even though a reference can have both Udm and entity, a collection of
    * references (of a single element) will only have one type of message in it
-   * (either UDM / Entity).
+   * (either Udm / Entity).
    * </pre>
    *
    * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -179,9 +179,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
    * <pre>
    * References to model primatives including events and entities that share a
    * common association.
-   * Even though a reference can have both UDM and entity, a collection of
+   * Even though a reference can have both Udm and entity, a collection of
    * references (of a single element) will only have one type of message in it
-   * (either UDM / Entity).
+   * (either Udm / Entity).
    * </pre>
    *
    * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -197,9 +197,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
    * <pre>
    * References to model primatives including events and entities that share a
    * common association.
-   * Even though a reference can have both UDM and entity, a collection of
+   * Even though a reference can have both Udm and entity, a collection of
    * references (of a single element) will only have one type of message in it
-   * (either UDM / Entity).
+   * (either Udm / Entity).
    * </pre>
    *
    * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -215,9 +215,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
    * <pre>
    * References to model primatives including events and entities that share a
    * common association.
-   * Even though a reference can have both UDM and entity, a collection of
+   * Even though a reference can have both Udm and entity, a collection of
    * references (of a single element) will only have one type of message in it
-   * (either UDM / Entity).
+   * (either Udm / Entity).
    * </pre>
    *
    * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -290,7 +290,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
    * Copied from the detection event_sample.too_many_event_samples field.
    * If true, the number of references will be capped at the sample limit
    * (set at rule service).
-   * This is applicable to both UDM references and Entity references.
+   * This is applicable to both Udm references and Entity references.
    * </pre>
    *
    * <code>bool references_sampled = 4;</code>
@@ -312,7 +312,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
    * Latency metrics for the specific element. These are
    * calculated from all the contributing events or entities for a single event
    * variable, not just the sampled ones included in references. This is
-   * currently only populated for UDM events.
+   * currently only populated for Udm events.
    * </pre>
    *
    * <code>.google.backstory.LatencyMetrics latency_metrics = 5;</code>
@@ -331,7 +331,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
    * Latency metrics for the specific element. These are
    * calculated from all the contributing events or entities for a single event
    * variable, not just the sampled ones included in references. This is
-   * currently only populated for UDM events.
+   * currently only populated for Udm events.
    * </pre>
    *
    * <code>.google.backstory.LatencyMetrics latency_metrics = 5;</code>
@@ -352,7 +352,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
    * Latency metrics for the specific element. These are
    * calculated from all the contributing events or entities for a single event
    * variable, not just the sampled ones included in references. This is
-   * currently only populated for UDM events.
+   * currently only populated for Udm events.
    * </pre>
    *
    * <code>.google.backstory.LatencyMetrics latency_metrics = 5;</code>
@@ -1095,9 +1095,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1116,9 +1116,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1137,9 +1137,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1158,9 +1158,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1185,9 +1185,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1210,9 +1210,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1237,9 +1237,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1264,9 +1264,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1288,9 +1288,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1313,9 +1313,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1338,9 +1338,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1362,9 +1362,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1386,9 +1386,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1403,9 +1403,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1424,9 +1424,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1446,9 +1446,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1464,9 +1464,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1482,9 +1482,9 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * <pre>
      * References to model primatives including events and entities that share a
      * common association.
-     * Even though a reference can have both UDM and entity, a collection of
+     * Even though a reference can have both Udm and entity, a collection of
      * references (of a single element) will only have one type of message in it
-     * (either UDM / Entity).
+     * (either Udm / Entity).
      * </pre>
      *
      * <code>repeated .google.backstory.Reference references = 2;</code>
@@ -1630,7 +1630,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * Copied from the detection event_sample.too_many_event_samples field.
      * If true, the number of references will be capped at the sample limit
      * (set at rule service).
-     * This is applicable to both UDM references and Entity references.
+     * This is applicable to both Udm references and Entity references.
      * </pre>
      *
      * <code>bool references_sampled = 4;</code>
@@ -1649,7 +1649,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * Copied from the detection event_sample.too_many_event_samples field.
      * If true, the number of references will be capped at the sample limit
      * (set at rule service).
-     * This is applicable to both UDM references and Entity references.
+     * This is applicable to both Udm references and Entity references.
      * </pre>
      *
      * <code>bool references_sampled = 4;</code>
@@ -1672,7 +1672,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * Copied from the detection event_sample.too_many_event_samples field.
      * If true, the number of references will be capped at the sample limit
      * (set at rule service).
-     * This is applicable to both UDM references and Entity references.
+     * This is applicable to both Udm references and Entity references.
      * </pre>
      *
      * <code>bool references_sampled = 4;</code>
@@ -1700,7 +1700,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * Latency metrics for the specific element. These are
      * calculated from all the contributing events or entities for a single event
      * variable, not just the sampled ones included in references. This is
-     * currently only populated for UDM events.
+     * currently only populated for Udm events.
      * </pre>
      *
      * <code>.google.backstory.LatencyMetrics latency_metrics = 5;</code>
@@ -1718,7 +1718,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * Latency metrics for the specific element. These are
      * calculated from all the contributing events or entities for a single event
      * variable, not just the sampled ones included in references. This is
-     * currently only populated for UDM events.
+     * currently only populated for Udm events.
      * </pre>
      *
      * <code>.google.backstory.LatencyMetrics latency_metrics = 5;</code>
@@ -1742,7 +1742,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * Latency metrics for the specific element. These are
      * calculated from all the contributing events or entities for a single event
      * variable, not just the sampled ones included in references. This is
-     * currently only populated for UDM events.
+     * currently only populated for Udm events.
      * </pre>
      *
      * <code>.google.backstory.LatencyMetrics latency_metrics = 5;</code>
@@ -1768,7 +1768,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * Latency metrics for the specific element. These are
      * calculated from all the contributing events or entities for a single event
      * variable, not just the sampled ones included in references. This is
-     * currently only populated for UDM events.
+     * currently only populated for Udm events.
      * </pre>
      *
      * <code>.google.backstory.LatencyMetrics latency_metrics = 5;</code>
@@ -1791,7 +1791,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * Latency metrics for the specific element. These are
      * calculated from all the contributing events or entities for a single event
      * variable, not just the sampled ones included in references. This is
-     * currently only populated for UDM events.
+     * currently only populated for Udm events.
      * </pre>
      *
      * <code>.google.backstory.LatencyMetrics latency_metrics = 5;</code>
@@ -1822,7 +1822,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * Latency metrics for the specific element. These are
      * calculated from all the contributing events or entities for a single event
      * variable, not just the sampled ones included in references. This is
-     * currently only populated for UDM events.
+     * currently only populated for Udm events.
      * </pre>
      *
      * <code>.google.backstory.LatencyMetrics latency_metrics = 5;</code>
@@ -1845,7 +1845,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * Latency metrics for the specific element. These are
      * calculated from all the contributing events or entities for a single event
      * variable, not just the sampled ones included in references. This is
-     * currently only populated for UDM events.
+     * currently only populated for Udm events.
      * </pre>
      *
      * <code>.google.backstory.LatencyMetrics latency_metrics = 5;</code>
@@ -1863,7 +1863,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * Latency metrics for the specific element. These are
      * calculated from all the contributing events or entities for a single event
      * variable, not just the sampled ones included in references. This is
-     * currently only populated for UDM events.
+     * currently only populated for Udm events.
      * </pre>
      *
      * <code>.google.backstory.LatencyMetrics latency_metrics = 5;</code>
@@ -1885,7 +1885,7 @@ public final class Element extends com.google.protobuf.GeneratedMessage
      * Latency metrics for the specific element. These are
      * calculated from all the contributing events or entities for a single event
      * variable, not just the sampled ones included in references. This is
-     * currently only populated for UDM events.
+     * currently only populated for Udm events.
      * </pre>
      *
      * <code>.google.backstory.LatencyMetrics latency_metrics = 5;</code>

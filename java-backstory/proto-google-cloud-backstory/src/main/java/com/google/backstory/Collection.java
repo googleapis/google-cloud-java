@@ -1839,7 +1839,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The total number of simulated events that contributed to this detection.
-   * Simulated events are realistic threat sequences (Raw Logs or UDM)
+   * Simulated events are realistic threat sequences (Raw Logs or Udm)
    * programmatically delivered into the production ingestion pipeline to verify
    * the entire detection lifecycle—from identification to action.
    * </pre>
@@ -6617,7 +6617,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The total number of simulated events that contributed to this detection.
-     * Simulated events are realistic threat sequences (Raw Logs or UDM)
+     * Simulated events are realistic threat sequences (Raw Logs or Udm)
      * programmatically delivered into the production ingestion pipeline to verify
      * the entire detection lifecycle—from identification to action.
      * </pre>
@@ -6636,7 +6636,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The total number of simulated events that contributed to this detection.
-     * Simulated events are realistic threat sequences (Raw Logs or UDM)
+     * Simulated events are realistic threat sequences (Raw Logs or Udm)
      * programmatically delivered into the production ingestion pipeline to verify
      * the entire detection lifecycle—from identification to action.
      * </pre>
@@ -6659,7 +6659,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The total number of simulated events that contributed to this detection.
-     * Simulated events are realistic threat sequences (Raw Logs or UDM)
+     * Simulated events are realistic threat sequences (Raw Logs or Udm)
      * programmatically delivered into the production ingestion pipeline to verify
      * the entire detection lifecycle—from identification to action.
      * </pre>

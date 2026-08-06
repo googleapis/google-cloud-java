@@ -741,7 +741,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * UDM data summary tracking unique values of dimensions.
+     * Udm data summary tracking unique values of dimensions.
      * </pre>
      *
      * <code>UDM_DATA_PRESENCE_SUMMARY = 39;</code>
@@ -1194,7 +1194,7 @@ public final class Metric extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * UDM data summary tracking unique values of dimensions.
+     * Udm data summary tracking unique values of dimensions.
      * </pre>
      *
      * <code>UDM_DATA_PRESENCE_SUMMARY = 39;</code>

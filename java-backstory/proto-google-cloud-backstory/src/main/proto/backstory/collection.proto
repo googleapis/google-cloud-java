@@ -270,7 +270,7 @@ message Reference {
   // reference.
   // Start one-of
   // Event being referenced.
-  UDM event = 1;
+  Udm event = 1;
 
   // Entity being referenced. In cases where the entity graph is overridden by
   // data table, this will represent the original entity.

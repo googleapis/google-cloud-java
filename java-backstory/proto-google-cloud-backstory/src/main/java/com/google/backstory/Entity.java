@@ -24,7 +24,7 @@ package com.google.backstory;
  *
  *
  * <pre>
- * An Entity provides additional context about an item in a UDM event. For
+ * An Entity provides additional context about an item in a Udm event. For
  * example, a PROCESS_LAUNCH event describes that user 'abc&#64;example.corp'
  * launched process 'shady.exe'.
  * The event does not include information that user 'abc&#64;example.com' is a
@@ -130,7 +130,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Noun in the UDM event that this entity represents.
+   * Noun in the Udm event that this entity represents.
    * </pre>
    *
    * <code>.google.backstory.Noun entity = 2;</code>
@@ -146,7 +146,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Noun in the UDM event that this entity represents.
+   * Noun in the Udm event that this entity represents.
    * </pre>
    *
    * <code>.google.backstory.Noun entity = 2;</code>
@@ -162,7 +162,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Noun in the UDM event that this entity represents.
+   * Noun in the Udm event that this entity represents.
    * </pre>
    *
    * <code>.google.backstory.Noun entity = 2;</code>
@@ -640,7 +640,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * An Entity provides additional context about an item in a UDM event. For
+   * An Entity provides additional context about an item in a Udm event. For
    * example, a PROCESS_LAUNCH event describes that user 'abc&#64;example.corp'
    * launched process 'shady.exe'.
    * The event does not include information that user 'abc&#64;example.com' is a
@@ -1144,7 +1144,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Noun in the UDM event that this entity represents.
+     * Noun in the Udm event that this entity represents.
      * </pre>
      *
      * <code>.google.backstory.Noun entity = 2;</code>
@@ -1159,7 +1159,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Noun in the UDM event that this entity represents.
+     * Noun in the Udm event that this entity represents.
      * </pre>
      *
      * <code>.google.backstory.Noun entity = 2;</code>
@@ -1178,7 +1178,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Noun in the UDM event that this entity represents.
+     * Noun in the Udm event that this entity represents.
      * </pre>
      *
      * <code>.google.backstory.Noun entity = 2;</code>
@@ -1201,7 +1201,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Noun in the UDM event that this entity represents.
+     * Noun in the Udm event that this entity represents.
      * </pre>
      *
      * <code>.google.backstory.Noun entity = 2;</code>
@@ -1221,7 +1221,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Noun in the UDM event that this entity represents.
+     * Noun in the Udm event that this entity represents.
      * </pre>
      *
      * <code>.google.backstory.Noun entity = 2;</code>
@@ -1249,7 +1249,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Noun in the UDM event that this entity represents.
+     * Noun in the Udm event that this entity represents.
      * </pre>
      *
      * <code>.google.backstory.Noun entity = 2;</code>
@@ -1269,7 +1269,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Noun in the UDM event that this entity represents.
+     * Noun in the Udm event that this entity represents.
      * </pre>
      *
      * <code>.google.backstory.Noun entity = 2;</code>
@@ -1284,7 +1284,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Noun in the UDM event that this entity represents.
+     * Noun in the Udm event that this entity represents.
      * </pre>
      *
      * <code>.google.backstory.Noun entity = 2;</code>
@@ -1301,7 +1301,7 @@ public final class Entity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Noun in the UDM event that this entity represents.
+     * Noun in the Udm event that this entity represents.
      * </pre>
      *
      * <code>.google.backstory.Noun entity = 2;</code>

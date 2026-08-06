@@ -56,13 +56,13 @@ public final class LinuxUtmp extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_LinuxUtmp_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_LinuxUtmp_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_LinuxUtmp_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_LinuxUtmp_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.LinuxUtmp.class, com.google.backstory.LinuxUtmp.Builder.class);
   }
@@ -608,13 +608,13 @@ public final class LinuxUtmp extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.LinuxUtmp)
       com.google.backstory.LinuxUtmpOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_LinuxUtmp_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_LinuxUtmp_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_LinuxUtmp_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_LinuxUtmp_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.LinuxUtmp.class, com.google.backstory.LinuxUtmp.Builder.class);
     }
@@ -636,7 +636,7 @@ public final class LinuxUtmp extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_LinuxUtmp_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_LinuxUtmp_descriptor;
     }
 
     @java.lang.Override

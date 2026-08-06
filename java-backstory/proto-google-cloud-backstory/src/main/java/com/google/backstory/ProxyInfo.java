@@ -56,13 +56,13 @@ public final class ProxyInfo extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_ProxyInfo_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_ProxyInfo_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_ProxyInfo_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_ProxyInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.ProxyInfo.class, com.google.backstory.ProxyInfo.Builder.class);
   }
@@ -572,13 +572,13 @@ public final class ProxyInfo extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.ProxyInfo)
       com.google.backstory.ProxyInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_ProxyInfo_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_ProxyInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_ProxyInfo_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_ProxyInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.ProxyInfo.class, com.google.backstory.ProxyInfo.Builder.class);
     }
@@ -610,7 +610,7 @@ public final class ProxyInfo extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_ProxyInfo_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_ProxyInfo_descriptor;
     }
 
     @java.lang.Override

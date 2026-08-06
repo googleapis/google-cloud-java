@@ -74,7 +74,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
 
   private int bitField0_;
   public static final int EVENT_FIELD_NUMBER = 1;
-  private com.google.backstory.UDM event_;
+  private com.google.backstory.Udm event_;
 
   /**
    *
@@ -86,7 +86,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
    * Event being referenced.
    * </pre>
    *
-   * <code>.google.backstory.UDM event = 1;</code>
+   * <code>.google.backstory.Udm event = 1;</code>
    *
    * @return Whether the event field is set.
    */
@@ -105,13 +105,13 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
    * Event being referenced.
    * </pre>
    *
-   * <code>.google.backstory.UDM event = 1;</code>
+   * <code>.google.backstory.Udm event = 1;</code>
    *
    * @return The event.
    */
   @java.lang.Override
-  public com.google.backstory.UDM getEvent() {
-    return event_ == null ? com.google.backstory.UDM.getDefaultInstance() : event_;
+  public com.google.backstory.Udm getEvent() {
+    return event_ == null ? com.google.backstory.Udm.getDefaultInstance() : event_;
   }
 
   /**
@@ -124,11 +124,11 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
    * Event being referenced.
    * </pre>
    *
-   * <code>.google.backstory.UDM event = 1;</code>
+   * <code>.google.backstory.Udm event = 1;</code>
    */
   @java.lang.Override
-  public com.google.backstory.UDMOrBuilder getEventOrBuilder() {
-    return event_ == null ? com.google.backstory.UDM.getDefaultInstance() : event_;
+  public com.google.backstory.UdmOrBuilder getEventOrBuilder() {
+    return event_ == null ? com.google.backstory.Udm.getDefaultInstance() : event_;
   }
 
   public static final int ENTITY_FIELD_NUMBER = 2;
@@ -957,11 +957,11 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
 
     private int bitField0_;
 
-    private com.google.backstory.UDM event_;
+    private com.google.backstory.Udm event_;
     private com.google.protobuf.SingleFieldBuilder<
-            com.google.backstory.UDM,
-            com.google.backstory.UDM.Builder,
-            com.google.backstory.UDMOrBuilder>
+            com.google.backstory.Udm,
+            com.google.backstory.Udm.Builder,
+            com.google.backstory.UdmOrBuilder>
         eventBuilder_;
 
     /**
@@ -974,7 +974,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
      * Event being referenced.
      * </pre>
      *
-     * <code>.google.backstory.UDM event = 1;</code>
+     * <code>.google.backstory.Udm event = 1;</code>
      *
      * @return Whether the event field is set.
      */
@@ -992,13 +992,13 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
      * Event being referenced.
      * </pre>
      *
-     * <code>.google.backstory.UDM event = 1;</code>
+     * <code>.google.backstory.Udm event = 1;</code>
      *
      * @return The event.
      */
-    public com.google.backstory.UDM getEvent() {
+    public com.google.backstory.Udm getEvent() {
       if (eventBuilder_ == null) {
-        return event_ == null ? com.google.backstory.UDM.getDefaultInstance() : event_;
+        return event_ == null ? com.google.backstory.Udm.getDefaultInstance() : event_;
       } else {
         return eventBuilder_.getMessage();
       }
@@ -1014,9 +1014,9 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
      * Event being referenced.
      * </pre>
      *
-     * <code>.google.backstory.UDM event = 1;</code>
+     * <code>.google.backstory.Udm event = 1;</code>
      */
-    public Builder setEvent(com.google.backstory.UDM value) {
+    public Builder setEvent(com.google.backstory.Udm value) {
       if (eventBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1040,9 +1040,9 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
      * Event being referenced.
      * </pre>
      *
-     * <code>.google.backstory.UDM event = 1;</code>
+     * <code>.google.backstory.Udm event = 1;</code>
      */
-    public Builder setEvent(com.google.backstory.UDM.Builder builderForValue) {
+    public Builder setEvent(com.google.backstory.Udm.Builder builderForValue) {
       if (eventBuilder_ == null) {
         event_ = builderForValue.build();
       } else {
@@ -1063,13 +1063,13 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
      * Event being referenced.
      * </pre>
      *
-     * <code>.google.backstory.UDM event = 1;</code>
+     * <code>.google.backstory.Udm event = 1;</code>
      */
-    public Builder mergeEvent(com.google.backstory.UDM value) {
+    public Builder mergeEvent(com.google.backstory.Udm value) {
       if (eventBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)
             && event_ != null
-            && event_ != com.google.backstory.UDM.getDefaultInstance()) {
+            && event_ != com.google.backstory.Udm.getDefaultInstance()) {
           getEventBuilder().mergeFrom(value);
         } else {
           event_ = value;
@@ -1094,7 +1094,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
      * Event being referenced.
      * </pre>
      *
-     * <code>.google.backstory.UDM event = 1;</code>
+     * <code>.google.backstory.Udm event = 1;</code>
      */
     public Builder clearEvent() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -1117,9 +1117,9 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
      * Event being referenced.
      * </pre>
      *
-     * <code>.google.backstory.UDM event = 1;</code>
+     * <code>.google.backstory.Udm event = 1;</code>
      */
-    public com.google.backstory.UDM.Builder getEventBuilder() {
+    public com.google.backstory.Udm.Builder getEventBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return internalGetEventFieldBuilder().getBuilder();
@@ -1135,13 +1135,13 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
      * Event being referenced.
      * </pre>
      *
-     * <code>.google.backstory.UDM event = 1;</code>
+     * <code>.google.backstory.Udm event = 1;</code>
      */
-    public com.google.backstory.UDMOrBuilder getEventOrBuilder() {
+    public com.google.backstory.UdmOrBuilder getEventOrBuilder() {
       if (eventBuilder_ != null) {
         return eventBuilder_.getMessageOrBuilder();
       } else {
-        return event_ == null ? com.google.backstory.UDM.getDefaultInstance() : event_;
+        return event_ == null ? com.google.backstory.Udm.getDefaultInstance() : event_;
       }
     }
 
@@ -1155,19 +1155,19 @@ public final class Reference extends com.google.protobuf.GeneratedMessage
      * Event being referenced.
      * </pre>
      *
-     * <code>.google.backstory.UDM event = 1;</code>
+     * <code>.google.backstory.Udm event = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
-            com.google.backstory.UDM,
-            com.google.backstory.UDM.Builder,
-            com.google.backstory.UDMOrBuilder>
+            com.google.backstory.Udm,
+            com.google.backstory.Udm.Builder,
+            com.google.backstory.UdmOrBuilder>
         internalGetEventFieldBuilder() {
       if (eventBuilder_ == null) {
         eventBuilder_ =
             new com.google.protobuf.SingleFieldBuilder<
-                com.google.backstory.UDM,
-                com.google.backstory.UDM.Builder,
-                com.google.backstory.UDMOrBuilder>(getEvent(), getParentForChildren(), isClean());
+                com.google.backstory.Udm,
+                com.google.backstory.Udm.Builder,
+                com.google.backstory.UdmOrBuilder>(getEvent(), getParentForChildren(), isClean());
         event_ = null;
       }
       return eventBuilder_;

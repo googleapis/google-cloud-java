@@ -167,7 +167,7 @@ public enum Verdict implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.backstory.Udm.getDescriptor().getEnumTypes().get(0);
+    return com.google.backstory.UdmProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final Verdict[] VALUES = values();

@@ -62,13 +62,13 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Certificate_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Certificate_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Certificate_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Certificate_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Certificate.class, com.google.backstory.Certificate.Builder.class);
   }
@@ -797,13 +797,13 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Certificate)
       com.google.backstory.CertificateOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Certificate_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Certificate_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_Certificate_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Certificate.class,
@@ -853,7 +853,7 @@ public final class Certificate extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Certificate_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Certificate_descriptor;
     }
 
     @java.lang.Override

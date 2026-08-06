@@ -151,7 +151,7 @@ public final class CollectionOuterClass extends com.google.protobuf.GeneratedFil
           + "\021newest_event_time\030\004 \001(\0132\032.google.protobuf.Timestamp\0224\n"
           + "\021ingestion_latency\030\005 \001(\0132\031.google.protobuf.Duration\"\235\002\n"
           + "\tReference\022$\n"
-          + "\005event\030\001 \001(\0132\025.google.backstory.UDM\022(\n"
+          + "\005event\030\001 \001(\0132\025.google.backstory.Udm\022(\n"
           + "\006entity\030\002 \001(\0132\030.google.backstory.Entity\022B\n"
           + "\026joined_data_table_rows\030\004"
           + " \003(\0132\".google.backstory.DataTableRowInfo\022A\n"
@@ -190,7 +190,7 @@ public final class CollectionOuterClass extends com.google.protobuf.GeneratedFil
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.backstory.EntityProto.getDescriptor(),
               com.google.backstory.IdOuterClass.getDescriptor(),
-              com.google.backstory.Udm.getDescriptor(),
+              com.google.backstory.UdmProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -289,7 +289,7 @@ public final class CollectionOuterClass extends com.google.protobuf.GeneratedFil
     descriptor.resolveAllFeaturesImmutable();
     com.google.backstory.EntityProto.getDescriptor();
     com.google.backstory.IdOuterClass.getDescriptor();
-    com.google.backstory.Udm.getDescriptor();
+    com.google.backstory.UdmProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
