@@ -37,7 +37,6 @@ import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.common.util.concurrent.MoreExecutors;
-import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -50,14 +49,14 @@ import org.jspecify.annotations.NullMarked;
 public class TracedOperationCallable<RequestT, ResponseT, MetadataT>
     extends OperationCallable<RequestT, ResponseT, MetadataT> {
 
-  private @Nonnull OperationCallable<RequestT, ResponseT, MetadataT> innerCallable;
-  private @Nonnull ApiTracerFactory tracerFactory;
-  private @Nonnull SpanName spanName;
+  private OperationCallable<RequestT, ResponseT, MetadataT> innerCallable;
+  private ApiTracerFactory tracerFactory;
+  private SpanName spanName;
 
   public TracedOperationCallable(
-      @Nonnull OperationCallable<RequestT, ResponseT, MetadataT> innerCallable,
-      @Nonnull ApiTracerFactory tracerFactory,
-      @Nonnull SpanName spanName) {
+      OperationCallable<RequestT, ResponseT, MetadataT> innerCallable,
+      ApiTracerFactory tracerFactory,
+      SpanName spanName) {
     this.innerCallable = innerCallable;
     this.tracerFactory = tracerFactory;
     this.spanName = spanName;

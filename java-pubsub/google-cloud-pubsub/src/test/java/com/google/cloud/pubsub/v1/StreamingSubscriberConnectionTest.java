@@ -55,6 +55,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -547,6 +548,7 @@ public class StreamingSubscriberConnectionTest {
     }
   }
 
+  @Ignore("https://github.com/googleapis/google-cloud-java/issues/13706")
   @Test
   public void testSendAckOperationsExactlyOnceEnabledErrorWithEmptyMetadataMap() {
     // Setup
