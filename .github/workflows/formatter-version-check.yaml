@@ -21,8 +21,13 @@ on:
   workflow_dispatch: # Allow manual trigger
   pull_request:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   filter:
+    name: Filter changed files
     runs-on: ubuntu-latest
     outputs:
       should_run: ${{ steps.filter.outputs.should_run }}
@@ -40,6 +45,7 @@ jobs:
               - '.github/workflows/formatter-version-check.yaml'
 
   check-formatter-version:
+    name: Check Formatter Version
     needs: filter
     if: ${{ github.event_name == 'workflow_dispatch' || needs.filter.outputs.should_run == 'true' }}
     runs-on: ubuntu-latest
@@ -47,15 +53,11 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           persist-credentials: false
-      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
-        with:
-          java-version: "17"
-          distribution: "temurin"
       - name: Extract formatter version from pom.xml
         id: extract_pom_version
         shell: bash
         run: |
-          version=$(mvn help:evaluate -Dexpression=google-java-format.version -q -DforceStdout -f java-shared-config/java-shared-config/pom.xml | tail -n 1 | tr -d '"')
+          version=$(awk -F'[<>]' '/google-java-format.version/{print $3; exit}' java-shared-config/java-shared-config/pom.xml | tr -d '"')
           echo "version=$version" >> "$GITHUB_OUTPUT"
       - name: Extract formatter version from librarian.yaml
         id: extract_librarian_version
