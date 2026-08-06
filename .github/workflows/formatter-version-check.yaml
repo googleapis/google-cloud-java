@@ -1,0 +1,103 @@
+# Copyright 2026 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+permissions:
+  contents: read
+
+name: Librarian - Formatter Version Check
+
+on:
+  schedule:
+    - cron: '30 3 * * *' # Run daily at 3:30 AM UTC
+  workflow_dispatch: # Allow manual trigger
+  pull_request:
+
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.filter.outputs.should_run }}
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+      - uses: dorny/paths-filter@d1c1ffe0248fe513906c8e24db8ea791d46f8590 # v3
+        id: filter
+        with:
+          filters: |
+            should_run:
+              - 'librarian.yaml'
+              - 'java-shared-config/java-shared-config/pom.xml'
+              - '.github/workflows/formatter-version-check.yaml'
+
+  check-formatter-version:
+    needs: filter
+    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || needs.filter.outputs.should_run == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+      - name: Extract formatter version from pom.xml
+        id: extract_pom_version
+        shell: bash
+        run: |
+          version=$(mvn help:evaluate -Dexpression=google-java-format.version -q -DforceStdout -f java-shared-config/java-shared-config/pom.xml | tail -n 1 | tr -d '"')
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+      - name: Extract formatter version from librarian.yaml
+        id: extract_librarian_version
+        shell: bash
+        run: |
+          version=$(yq '.tools.maven[] | select(.name == "google-java-format") | .version' librarian.yaml | tr -d '"')
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+      - name: Verify formatter versions match
+        shell: bash
+        run: |
+          echo "Formatter version in pom.xml: ${POM_VERSION}"
+          echo "Formatter version in librarian.yaml: ${LIBRARIAN_VERSION}"
+
+          if [ -z "${POM_VERSION}" ]; then
+            echo "Error: Could not extract google-java-format.version from java-shared-config/java-shared-config/pom.xml"
+            exit 1
+          fi
+
+          if [ -z "${LIBRARIAN_VERSION}" ]; then
+            echo "Error: Could not extract google-java-format version from librarian.yaml"
+            exit 1
+          fi
+
+          if [ "${POM_VERSION}" != "${LIBRARIAN_VERSION}" ]; then
+            echo "Mismatch: librarian.yaml has version '${LIBRARIAN_VERSION}', but java-shared-config/java-shared-config/pom.xml has version '${POM_VERSION}'"
+            exit 2
+          fi
+
+          echo "Formatter versions are in sync!"
+        env:
+          POM_VERSION: ${{ steps.extract_pom_version.outputs.version }}
+          LIBRARIAN_VERSION: ${{ steps.extract_librarian_version.outputs.version }}
+      - name: Create issue on failure
+        if: ${{ failure() && github.event_name == 'schedule' }}
+        uses: googleapis/librarian/.github/actions/create-issue-on-failure@35997441eafc2b02716804f9baba1e3f04f8a44f # v0.31.1
+        with:
+          title: "Formatter Version Mismatch: librarian.yaml and java-shared-config pom.xml out of sync"
+          body: |
+            The google-java-format version in `java-shared-config/java-shared-config/pom.xml` and `librarian.yaml` do not match. Please update them to match.
+
+            Please check the logs: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
