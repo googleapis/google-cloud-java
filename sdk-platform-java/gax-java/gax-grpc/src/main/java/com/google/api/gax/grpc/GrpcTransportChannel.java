@@ -69,6 +69,14 @@ public abstract class GrpcTransportChannel implements TransportChannel {
   }
 
   @Override
+  public void refresh() {
+    Channel channel = getChannel();
+    if (channel instanceof ChannelPool) {
+      ((ChannelPool) channel).refresh();
+    }
+  }
+
+  @Override
   public void shutdown() {
     getManagedChannel().shutdown();
   }
