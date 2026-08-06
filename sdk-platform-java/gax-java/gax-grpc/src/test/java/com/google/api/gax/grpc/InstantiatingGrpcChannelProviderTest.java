@@ -1741,6 +1741,85 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
+  @Test
+  void validateEndpoint_invalidCustomUri_throws() {
+    InstantiatingGrpcChannelProvider.Builder builder =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setExecutor(mock(Executor.class))
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()));
+
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> builder.setEndpoint("google-c2p:///invalid uri with spaces"));
+    assertThat(exception.getMessage()).contains("invalid endpoint URI:");
+  }
+
+  @Test
+  void canUseDirectPath_interconnectEnabledButDirectPathDisabled_fallsBackToCloudPath()
+      throws Exception {
+    FakeLogHandler logHandler = new FakeLogHandler();
+    InstantiatingGrpcChannelProvider.LOG.setLevel(Level.FINE);
+    InstantiatingGrpcChannelProvider.LOG.addHandler(logHandler);
+
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPath(false)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
+            .build();
+
+    TransportChannel transportChannel = provider.getTransportChannel();
+    transportChannel.close();
+    transportChannel.awaitTermination(10, TimeUnit.SECONDS);
+
+    assertThat(logHandler.getAllMessages())
+        .contains("DirectPath was requested but is not available. Falling back to CloudPath.");
+    InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
+  }
+
+  @Test
+  void canUseDirectPath_interconnectAndDirectPathEnabledButNonGduUniverse_fallsBackToCloudPath()
+      throws Exception {
+    FakeLogHandler logHandler = new FakeLogHandler();
+    InstantiatingGrpcChannelProvider.LOG.setLevel(Level.FINE);
+    InstantiatingGrpcChannelProvider.LOG.addHandler(logHandler);
+
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint("storage-direct.some-other-universe.com:443")
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
+            .build();
+
+    TransportChannel transportChannel = provider.getTransportChannel();
+    transportChannel.close();
+    transportChannel.awaitTermination(10, TimeUnit.SECONDS);
+
+    assertThat(logHandler.getAllMessages())
+        .contains("DirectPath was requested but is not available. Falling back to CloudPath.");
+    InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
+  }
+
   private static class FakeLogHandler extends Handler {
 
     List<LogRecord> records = new ArrayList<>();
