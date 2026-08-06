@@ -33,7 +33,6 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.tracing.ApiTracer;
 import java.util.Set;
-import javax.annotation.Nonnull;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -46,7 +45,6 @@ import org.jspecify.annotations.Nullable;
 @BetaApi("The surface for passing per operation state is not yet stable")
 public interface RetryingContext {
   /** Returns the {@link ApiTracer} associated with the current operation. */
-  @Nonnull
   ApiTracer getTracer();
 
   /**
