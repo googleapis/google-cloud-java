@@ -158,7 +158,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * of subnet/route in the VPC network and its peering networks. After the
      * VLAN attachment is created with the reserved IP address range, when
      * creating a new VPN gateway, its interface IP address is allocated
-     * from the associated VLAN attachment’s IP address range.
+     * from the associated VLAN attachment's IP address range.
      * </pre>
      *
      * <code>IPSEC_INTERCONNECT = 340437251;</code>
@@ -263,7 +263,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * of subnet/route in the VPC network and its peering networks. After the
      * VLAN attachment is created with the reserved IP address range, when
      * creating a new VPN gateway, its interface IP address is allocated
-     * from the associated VLAN attachment’s IP address range.
+     * from the associated VLAN attachment's IP address range.
      * </pre>
      *
      * <code>IPSEC_INTERCONNECT = 340437251;</code>
