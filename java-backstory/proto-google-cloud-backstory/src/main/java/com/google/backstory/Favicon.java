@@ -57,13 +57,13 @@ public final class Favicon extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Favicon_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Favicon_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Favicon_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Favicon_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Favicon.class, com.google.backstory.Favicon.Builder.class);
   }
@@ -355,13 +355,13 @@ public final class Favicon extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Favicon)
       com.google.backstory.FaviconOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Favicon_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Favicon_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Favicon_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Favicon_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Favicon.class, com.google.backstory.Favicon.Builder.class);
     }
@@ -384,7 +384,7 @@ public final class Favicon extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Favicon_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Favicon_descriptor;
     }
 
     @java.lang.Override

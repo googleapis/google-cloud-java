@@ -31,6 +31,7 @@ option java_multiple_files = true;
 option java_package = "com.google.backstory";
 option php_namespace = "Google\\Backstory";
 option ruby_package = "Google::Backstory";
+option java_outer_classname = "UdmProto";
 
 // A Unified Data Model event.
 message UDM {

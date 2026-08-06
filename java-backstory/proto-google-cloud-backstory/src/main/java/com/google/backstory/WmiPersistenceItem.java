@@ -63,13 +63,13 @@ public final class WmiPersistenceItem extends com.google.protobuf.GeneratedMessa
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_WmiPersistenceItem_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_WmiPersistenceItem_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_WmiPersistenceItem_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.WmiPersistenceItem.class,
@@ -794,14 +794,14 @@ public final class WmiPersistenceItem extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(builder_implements:google.backstory.WmiPersistenceItem)
       com.google.backstory.WmiPersistenceItemOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_WmiPersistenceItem_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_WmiPersistenceItem_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.WmiPersistenceItem.class,
@@ -834,7 +834,7 @@ public final class WmiPersistenceItem extends com.google.protobuf.GeneratedMessa
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_WmiPersistenceItem_descriptor;
     }
 

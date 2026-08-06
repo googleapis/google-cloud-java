@@ -64,13 +64,13 @@ public final class Browser extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Browser_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Browser_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Browser_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Browser_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Browser.class, com.google.backstory.Browser.Builder.class);
   }
@@ -1229,13 +1229,13 @@ public final class Browser extends com.google.protobuf.GeneratedMessage
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Browser_Cookie_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Browser_Cookie_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_Browser_Cookie_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Browser.Cookie.class,
@@ -2109,13 +2109,13 @@ public final class Browser extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(builder_implements:google.backstory.Browser.Cookie)
         com.google.backstory.Browser.CookieOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.backstory.Udm.internal_static_google_backstory_Browser_Cookie_descriptor;
+        return com.google.backstory.UdmProto.internal_static_google_backstory_Browser_Cookie_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.backstory.Udm
+        return com.google.backstory.UdmProto
             .internal_static_google_backstory_Browser_Cookie_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 com.google.backstory.Browser.Cookie.class,
@@ -2162,7 +2162,7 @@ public final class Browser extends com.google.protobuf.GeneratedMessage
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.backstory.Udm.internal_static_google_backstory_Browser_Cookie_descriptor;
+        return com.google.backstory.UdmProto.internal_static_google_backstory_Browser_Cookie_descriptor;
       }
 
       @java.lang.Override
@@ -4492,13 +4492,13 @@ public final class Browser extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Browser)
       com.google.backstory.BrowserOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Browser_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Browser_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Browser_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Browser_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Browser.class, com.google.backstory.Browser.Builder.class);
     }
@@ -4565,7 +4565,7 @@ public final class Browser extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Browser_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Browser_descriptor;
     }
 
     @java.lang.Override

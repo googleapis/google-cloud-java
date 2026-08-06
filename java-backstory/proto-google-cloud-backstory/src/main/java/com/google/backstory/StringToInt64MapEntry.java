@@ -48,14 +48,14 @@ public final class StringToInt64MapEntry extends com.google.protobuf.GeneratedMe
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_StringToInt64MapEntry_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_StringToInt64MapEntry_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.StringToInt64MapEntry.class,
@@ -352,14 +352,14 @@ public final class StringToInt64MapEntry extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(builder_implements:google.backstory.StringToInt64MapEntry)
       com.google.backstory.StringToInt64MapEntryOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_StringToInt64MapEntry_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_StringToInt64MapEntry_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.StringToInt64MapEntry.class,
@@ -384,7 +384,7 @@ public final class StringToInt64MapEntry extends com.google.protobuf.GeneratedMe
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_StringToInt64MapEntry_descriptor;
     }
 
