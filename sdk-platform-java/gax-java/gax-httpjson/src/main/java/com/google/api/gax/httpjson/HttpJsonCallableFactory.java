@@ -39,6 +39,7 @@ import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
@@ -225,6 +226,23 @@ public class HttpJsonCallableFactory {
    * Create a resumable upload callable object. Designed for use by generated code.
    *
    * @param httpJsonCallSettings the http/json call settings
+   * @param resumableUploadCallSettings call settings for resumable uploads
+   * @param clientContext {@link ClientContext} to use to connect to the service.
+   * @return {@link ResumableUploadCallable} callable object.
+   */
+  public static <RequestT, ResponseT>
+      ResumableUploadCallable<RequestT, ResponseT> createResumableUploadCallable(
+          HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
+          ResumableUploadCallSettings<RequestT, ResponseT> resumableUploadCallSettings,
+          ClientContext clientContext) {
+    return new HttpJsonResumableUploadCallable<>(
+        httpJsonCallSettings, resumableUploadCallSettings, clientContext);
+  }
+
+  /**
+   * Create a resumable upload callable object. Designed for use by generated code.
+   *
+   * @param httpJsonCallSettings the http/json call settings
    * @param clientContext {@link ClientContext} to use to connect to the service.
    * @return {@link ResumableUploadCallable} callable object.
    */
@@ -232,7 +250,7 @@ public class HttpJsonCallableFactory {
       ResumableUploadCallable<RequestT, ResponseT> createResumableUploadCallable(
           HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
           ClientContext clientContext) {
-    return new HttpJsonResumableUploadCallable<>(httpJsonCallSettings, clientContext);
+    return createResumableUploadCallable(httpJsonCallSettings, null, clientContext);
   }
 
   static ApiTracerContext getApiTracerContext(@Nonnull ApiMethodDescriptor<?, ?> methodDescriptor) {

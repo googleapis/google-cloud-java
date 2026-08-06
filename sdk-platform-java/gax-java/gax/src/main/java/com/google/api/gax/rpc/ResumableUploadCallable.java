@@ -61,7 +61,35 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
    * @return future for the response
    */
   public ApiFuture<ResponseT> futureCall(ResumableUploadRequest<RequestT> request) {
-    return futureCall(request, null);
+    return futureCall(request, (ApiCallContext) null);
+  }
+
+  /**
+   * Performs the resumable upload asynchronously with request-level call settings.
+   *
+   * @param request the upload request options
+   * @param perRequestSettings request-level call settings overrides
+   * @param context the context of the call
+   * @return future for the response
+   */
+  public ApiFuture<ResponseT> futureCall(
+      ResumableUploadRequest<RequestT> request,
+      ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings,
+      ApiCallContext context) {
+    return futureCall(request, context);
+  }
+
+  /**
+   * Performs the resumable upload asynchronously with request-level call settings.
+   *
+   * @param request the upload request options
+   * @param perRequestSettings request-level call settings overrides
+   * @return future for the response
+   */
+  public ApiFuture<ResponseT> futureCall(
+      ResumableUploadRequest<RequestT> request,
+      ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings) {
+    return futureCall(request, perRequestSettings, (ApiCallContext) null);
   }
 
   /**
@@ -76,12 +104,41 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
   }
 
   /**
+   * Performs the resumable upload synchronously with request-level call settings.
+   *
+   * @param request the upload request options
+   * @param perRequestSettings request-level call settings overrides
+   * @param context the context of the call
+   * @return the RPC response
+   */
+  public ResponseT call(
+      ResumableUploadRequest<RequestT> request,
+      ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings,
+      ApiCallContext context) {
+    return ApiExceptions.callAndTranslateApiException(
+        futureCall(request, perRequestSettings, context));
+  }
+
+  /**
+   * Performs the resumable upload synchronously with request-level call settings.
+   *
+   * @param request the upload request options
+   * @param perRequestSettings request-level call settings overrides
+   * @return the RPC response
+   */
+  public ResponseT call(
+      ResumableUploadRequest<RequestT> request,
+      ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings) {
+    return call(request, perRequestSettings, (ApiCallContext) null);
+  }
+
+  /**
    * Performs the resumable upload synchronously.
    *
    * @param request the upload request options
    * @return the RPC response
    */
   public ResponseT call(ResumableUploadRequest<RequestT> request) {
-    return call(request, null);
+    return call(request, (ApiCallContext) null);
   }
 }

@@ -43,6 +43,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
@@ -199,6 +200,7 @@ public class EchoStubSettings extends StubSettings<EchoStubSettings> {
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
+  private final ResumableUploadCallSettings<EchoRequest, EchoResponse> resumableUploadSettings;
 
   private static final PagedListDescriptor<PagedExpandRequest, PagedExpandResponse, EchoResponse>
       PAGED_EXPAND_PAGE_STR_DESC =
@@ -460,6 +462,10 @@ public class EchoStubSettings extends StubSettings<EchoStubSettings> {
     return testIamPermissionsSettings;
   }
 
+  public ResumableUploadCallSettings<EchoRequest, EchoResponse> resumableUploadSettings() {
+    return resumableUploadSettings;
+  }
+
   public EchoStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -581,6 +587,7 @@ public class EchoStubSettings extends StubSettings<EchoStubSettings> {
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
+    resumableUploadSettings = settingsBuilder.resumableUploadSettingsBuilder().build();
   }
 
   @Override
@@ -625,6 +632,8 @@ public class EchoStubSettings extends StubSettings<EchoStubSettings> {
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
+    private final ResumableUploadCallSettings.Builder<EchoRequest, EchoResponse>
+        resumableUploadSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -693,6 +702,7 @@ public class EchoStubSettings extends StubSettings<EchoStubSettings> {
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      resumableUploadSettings = ResumableUploadCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -732,6 +742,7 @@ public class EchoStubSettings extends StubSettings<EchoStubSettings> {
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
+      resumableUploadSettings = settings.resumableUploadSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -982,6 +993,11 @@ public class EchoStubSettings extends StubSettings<EchoStubSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
+    }
+
+    public ResumableUploadCallSettings.Builder<EchoRequest, EchoResponse>
+        resumableUploadSettingsBuilder() {
+      return resumableUploadSettings;
     }
 
     @Override

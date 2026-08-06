@@ -81,7 +81,7 @@ public class HttpJsonEchoResumableUploadStub extends EchoStub {
             .build();
     this.resumableUploadCallable =
         HttpJsonCallableFactory.createResumableUploadCallable(
-            resumableUploadTransportSettings, clientContext);
+            resumableUploadTransportSettings, settings.resumableUploadSettings(), clientContext);
   }
 
   @Override

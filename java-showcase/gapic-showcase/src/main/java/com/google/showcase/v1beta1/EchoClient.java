@@ -29,6 +29,9 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
+import com.google.api.gax.rpc.ResumableUploadCallSettings;
+import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.api.gax.rpc.ResumableUploadRequest;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
@@ -1779,5 +1782,19 @@ public class EchoClient implements BackgroundResource {
         List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
+  }
+
+  public final ResumableUploadCallable<EchoRequest, EchoResponse> resumableUploadCallable() {
+    return stub.resumableUploadCallable();
+  }
+
+  public final EchoResponse echoResumableUpload(
+      ResumableUploadRequest<EchoRequest> request,
+      ResumableUploadCallSettings<EchoRequest, EchoResponse> perRequestSettings) {
+    return resumableUploadCallable().call(request, perRequestSettings);
+  }
+
+  public final EchoResponse echoResumableUpload(ResumableUploadRequest<EchoRequest> request) {
+    return resumableUploadCallable().call(request);
   }
 }

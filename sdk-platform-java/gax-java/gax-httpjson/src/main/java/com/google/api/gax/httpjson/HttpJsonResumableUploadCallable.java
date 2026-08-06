@@ -34,10 +34,12 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.ResumableUploadRequest;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.Executor;
+import javax.annotation.Nullable;
 
 /**
  * A {@link ResumableUploadCallable} that uses HTTP/JSON transport.
@@ -50,18 +52,45 @@ public final class HttpJsonResumableUploadCallable<RequestT, ResponseT>
     extends ResumableUploadCallable<RequestT, ResponseT> {
 
   private final HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings;
+  @Nullable private final ResumableUploadCallSettings<RequestT, ResponseT> defaultCallSettings;
   private final ClientContext clientContext;
 
   public HttpJsonResumableUploadCallable(
-      HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings, ClientContext clientContext) {
+      HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings,
+      @Nullable ResumableUploadCallSettings<RequestT, ResponseT> defaultCallSettings,
+      ClientContext clientContext) {
     this.httpJsonCallSettings = Preconditions.checkNotNull(httpJsonCallSettings);
+    this.defaultCallSettings = defaultCallSettings;
     this.clientContext = Preconditions.checkNotNull(clientContext);
+  }
+
+  public HttpJsonResumableUploadCallable(
+      HttpJsonCallSettings<RequestT, ResponseT> httpJsonCallSettings, ClientContext clientContext) {
+    this(httpJsonCallSettings, null, clientContext);
   }
 
   @Override
   public ApiFuture<ResponseT> futureCall(
       ResumableUploadRequest<RequestT> request, ApiCallContext context) {
+    return futureCall(request, null, context);
+  }
+
+  @Override
+  public ApiFuture<ResponseT> futureCall(
+      ResumableUploadRequest<RequestT> request,
+      ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings,
+      ApiCallContext context) {
     Preconditions.checkNotNull(request);
+
+    ResumableUploadCallSettings<RequestT, ResponseT> activeSettings =
+        defaultCallSettings != null
+            ? defaultCallSettings.mergeWith(perRequestSettings)
+            : perRequestSettings;
+
+    int chunkSize =
+        activeSettings != null
+            ? activeSettings.getChunkSizeOrDefault()
+            : 8 * 1024 * 1024; // default 8 MB
 
     // Resolve call context
     HttpJsonCallContext httpJsonContext = HttpJsonCallContext.createDefault();
