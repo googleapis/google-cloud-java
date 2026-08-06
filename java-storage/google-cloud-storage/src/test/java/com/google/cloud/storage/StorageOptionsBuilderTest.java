@@ -70,6 +70,37 @@ public final class StorageOptionsBuilderTest {
   }
 
   @Test
+  public void grpc_attemptDirectPathXdsOverInterconnect() throws Exception {
+    com.google.auth.Credentials mockCreds = com.google.cloud.NoCredentials.getInstance();
+    GrpcStorageOptions options =
+        GrpcStorageOptions.grpc()
+            .setCredentials(mockCreds)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .build();
+
+    GrpcStorageOptions rebuilt = options.toBuilder().build();
+    assertAll(
+        () -> assertThat(rebuilt).isEqualTo(options),
+        () -> assertThat(rebuilt.hashCode()).isEqualTo(options.hashCode()));
+
+    com.google.storage.v2.StorageSettings settings = options.getStorageSettings();
+    assertThat(settings.getEndpoint()).isEqualTo("storage-direct.googleapis.com:443");
+
+    com.google.api.gax.rpc.TransportChannelProvider tcp = settings.getTransportChannelProvider();
+    assertThat(tcp).isInstanceOf(com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.class);
+    com.google.api.gax.grpc.InstantiatingGrpcChannelProvider provider =
+        (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider) tcp;
+
+    // Verify attemptDirectPathXdsOverInterconnect is set to true on the provider using reflection
+    java.lang.reflect.Field field =
+        com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.class.getDeclaredField(
+            "attemptDirectPathXdsOverInterconnect");
+    field.setAccessible(true);
+    Boolean value = (Boolean) field.get(provider);
+    assertThat(value).isTrue();
+  }
+
+  @Test
   public void useJwtAccessWithScope_defaultsToFalse() {
     HttpStorageOptions httpOptions = HttpStorageOptions.http().build();
     GrpcStorageOptions grpcOptions = GrpcStorageOptions.grpc().build();
