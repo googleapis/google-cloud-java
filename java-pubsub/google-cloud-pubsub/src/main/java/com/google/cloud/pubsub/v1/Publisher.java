@@ -546,6 +546,10 @@ public class Publisher implements PublisherInterface {
 
           @Override
           public void onFailure(Throwable t) {
+            // Messages cancelled below are dropped without ever becoming part of an
+            // OutstandingBatch, so they are owed back to messagesWaiter here; nothing else will
+            // ever decrement for them.
+            int cancelledMessagesCount = 0;
             try {
               if (outstandingBatch.orderingKey != null && !outstandingBatch.orderingKey.isEmpty()) {
                 messagesBatchLock.lock();
@@ -556,6 +560,7 @@ public class Publisher implements PublisherInterface {
                       outstanding.publishResult.setException(
                           SequentialExecutorService.CallbackExecutor.CANCELLATION_EXCEPTION);
                     }
+                    cancelledMessagesCount = messagesBatch.getMessagesCount();
                     messagesBatches.remove(outstandingBatch.orderingKey);
                   }
                 } finally {
@@ -564,7 +569,8 @@ public class Publisher implements PublisherInterface {
               }
               outstandingBatch.onFailure(t);
             } finally {
-              messagesWaiter.incrementPendingCount(-outstandingBatch.size());
+              messagesWaiter.incrementPendingCount(
+                  -(outstandingBatch.size() + cancelledMessagesCount));
             }
           }
         };
