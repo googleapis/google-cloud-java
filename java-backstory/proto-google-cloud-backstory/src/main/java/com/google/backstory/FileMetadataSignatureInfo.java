@@ -59,14 +59,14 @@ public final class FileMetadataSignatureInfo extends com.google.protobuf.Generat
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_FileMetadataSignatureInfo_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_FileMetadataSignatureInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.FileMetadataSignatureInfo.class,
@@ -611,14 +611,14 @@ public final class FileMetadataSignatureInfo extends com.google.protobuf.Generat
       // @@protoc_insertion_point(builder_implements:google.backstory.FileMetadataSignatureInfo)
       com.google.backstory.FileMetadataSignatureInfoOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_FileMetadataSignatureInfo_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_FileMetadataSignatureInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.FileMetadataSignatureInfo.class,
@@ -658,7 +658,7 @@ public final class FileMetadataSignatureInfo extends com.google.protobuf.Generat
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_FileMetadataSignatureInfo_descriptor;
     }
 

@@ -59,13 +59,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Volume_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Volume_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Volume_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Volume_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Volume.class, com.google.backstory.Volume.Builder.class);
   }
@@ -537,13 +537,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Volume)
       com.google.backstory.VolumeOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Volume_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Volume_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Volume_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Volume_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Volume.class, com.google.backstory.Volume.Builder.class);
     }
@@ -570,7 +570,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Volume_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Volume_descriptor;
     }
 
     @java.lang.Override
