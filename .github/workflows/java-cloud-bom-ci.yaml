@@ -60,7 +60,7 @@ jobs:
         java-version: ${{matrix.java}}
         cache: 'maven'
     - run: java -version
-    - name: Install snapshot modules locally
+    - name: Install modules locally
       run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - run: .kokoro/build.sh
       env:
@@ -91,7 +91,7 @@ jobs:
           java-version: 17
           distribution: temurin
           cache: 'maven'
-      - name: Install snapshot modules locally
+      - name: Install modules locally
         run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
       - run: .kokoro/build.sh
         env:
@@ -113,7 +113,7 @@ jobs:
         java-version: 8
         cache: 'maven'
     - run: java -version
-    - name: Install snapshot modules locally
+    - name: Install modules locally
       run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - run: .kokoro/build.sh
       env:
@@ -136,7 +136,7 @@ jobs:
         java-version: ${{matrix.java}}
         cache: 'maven'
     - run: java -version
-    - name: Install snapshot modules locally
+    - name: Install modules locally
       run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - run: .kokoro/dependencies.sh
 

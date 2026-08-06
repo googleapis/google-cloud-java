@@ -40,7 +40,7 @@ jobs:
         java-version: 11
         cache: maven
     - run: java -version
-    - name: Install snapshot modules locally
+    - name: Install modules locally
       run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - name: Install BOMs
       run: |
@@ -69,7 +69,7 @@ jobs:
         distribution: zulu
         java-version: 11
     - run: java -version
-    - name: Install snapshot modules locally
+    - name: Install modules locally
       run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - name: Install BOMs
       run: |
