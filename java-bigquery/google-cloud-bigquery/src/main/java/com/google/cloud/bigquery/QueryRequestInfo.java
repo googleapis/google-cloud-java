@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.api.services.bigquery.model.DataFormatOptions;
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
@@ -43,14 +42,13 @@ final class QueryRequestInfo {
   private final Boolean useQueryCache;
   private final Boolean useLegacySql;
   private final JobCreationMode jobCreationMode;
-  private final DataFormatOptions formatOptions;
+  private final com.google.api.services.bigquery.model.DataFormatOptions formatOptions;
   private final String reservation;
   private final Long jobTimeoutMs;
   private final QueryResultsFormat queryResultsFormat;
   private final ArrowSerializationOptions arrowSerializationOptions;
 
-  QueryRequestInfo(
-      QueryJobConfiguration config, com.google.cloud.bigquery.DataFormatOptions dataFormatOptions) {
+  QueryRequestInfo(QueryJobConfiguration config, DataFormatOptions dataFormatOptions) {
     this.config = config;
     this.connectionProperties = config.getConnectionProperties();
     this.defaultDataset = config.getDefaultDataset();
