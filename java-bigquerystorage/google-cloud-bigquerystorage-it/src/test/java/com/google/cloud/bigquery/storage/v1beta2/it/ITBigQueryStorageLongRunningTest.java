@@ -115,14 +115,18 @@ class ITBigQueryStorageLongRunningTest {
     }
 
     ExecutorService executor = Executors.newFixedThreadPool(tasks.size());
-    List<Future<Long>> results = executor.invokeAll(tasks);
+    try {
+      List<Future<Long>> results = executor.invokeAll(tasks);
 
-    long rowCount = 0;
-    for (Future<Long> result : results) {
-      rowCount += result.get();
+      long rowCount = 0;
+      for (Future<Long> result : results) {
+        rowCount += result.get();
+      }
+
+      assertEquals(313_797_035, rowCount);
+    } finally {
+      executor.shutdown();
     }
-
-    assertEquals(313_797_035, rowCount);
   }
 
   private long readAllRowsFromStream(ReadStream readStream) {

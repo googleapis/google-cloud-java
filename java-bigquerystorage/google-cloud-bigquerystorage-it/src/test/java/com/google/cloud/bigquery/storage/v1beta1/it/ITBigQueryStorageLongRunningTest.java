@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 
-package com.google.cloud.bigquery.storage.v1.it;
+package com.google.cloud.bigquery.storage.v1beta1.it;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
-import com.google.cloud.bigquery.storage.v1.DataFormat;
-import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
-import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
-import com.google.cloud.bigquery.storage.v1.ReadSession;
-import com.google.cloud.bigquery.storage.v1.ReadStream;
-import com.google.cloud.bigquery.storage.v1.it.util.BigQueryResource;
+import com.google.cloud.bigquery.storage.v1beta1.BigQueryStorageClient;
+import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest;
+import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse;
+import com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession;
+import com.google.cloud.bigquery.storage.v1beta1.Storage.Stream;
+import com.google.cloud.bigquery.storage.v1beta1.Storage.StreamPosition;
+import com.google.cloud.bigquery.storage.v1beta1.TableReferenceProto.TableReference;
+import com.google.protobuf.TextFormat;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,14 +61,14 @@ class ITBigQueryStorageLongRunningTest {
               + "To enable them, set system property '%s' to true.",
           LONG_TESTS_ENABLED_PROPERTY);
 
-  private static BigQueryReadClient client;
+  private static BigQueryStorageClient client;
   private static String parentProjectId;
 
   @BeforeAll
   static void beforeAll() throws IOException {
     Assumptions.assumeTrue(
         Boolean.getBoolean(LONG_TESTS_ENABLED_PROPERTY), LONG_TESTS_DISABLED_MESSAGE);
-    client = com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadClient();
+    client = BigQueryStorageClient.create();
     parentProjectId = String.format("projects/%s", ServiceOptions.getDefaultProjectId());
 
     LOG.info(
@@ -89,50 +90,49 @@ class ITBigQueryStorageLongRunningTest {
     // This test reads a larger table with the goal of doing a simple validation of timeout settings
     // for a longer running session.
 
-    String table =
-        BigQueryResource.formatTableResource(
-            /* projectId= */ "bigquery-public-data",
-            /* datasetId= */ "samples",
-            /* tableId= */ "wikipedia");
+    TableReference tableReference =
+        TableReference.newBuilder()
+            .setProjectId("bigquery-public-data")
+            .setDatasetId("samples")
+            .setTableId("wikipedia")
+            .build();
 
     ReadSession session =
         client.createReadSession(
+            /* tableReference= */ tableReference,
             /* parent= */ parentProjectId,
-            /* readSession= */ ReadSession.newBuilder()
-                .setTable(table)
-                .setDataFormat(DataFormat.AVRO)
-                .build(),
-            /* maxStreamCount= */ 5);
-
+            /* requestedStreams= */ 5);
     assertEquals(
         5,
         session.getStreamsCount(),
         String.format(
-            "Did not receive expected number of streams for table '%s' CreateReadSession"
+            "Did not receive expected number of streams for table reference '%s' CreateReadSession"
                 + " response:%n%s",
-            table, session.toString()));
+            TextFormat.printer().shortDebugString(tableReference), session.toString()));
 
     List<Callable<Long>> tasks = new ArrayList<>(session.getStreamsCount());
-    for (final ReadStream stream : session.getStreamsList()) {
+    for (final Stream stream : session.getStreamsList()) {
       tasks.add(() -> readAllRowsFromStream(stream));
     }
 
     ExecutorService executor = Executors.newFixedThreadPool(tasks.size());
-    List<Future<Long>> results = executor.invokeAll(tasks);
-    executor.shutdown();
-
-    long rowCount = 0;
-    for (Future<Long> result : results) {
-      rowCount += result.get();
+    try {
+      List<Future<Long>> results = executor.invokeAll(tasks);
+      long rowCount = 0;
+      for (Future<Long> result : results) {
+        rowCount += result.get();
+      }
+      assertEquals(313_797_035, rowCount);
+    } finally {
+      executor.shutdown();
     }
-
-    assertEquals(313_797_035, rowCount);
   }
 
-  private long readAllRowsFromStream(ReadStream readStream) {
+  private long readAllRowsFromStream(Stream stream) {
+    StreamPosition readPosition = StreamPosition.newBuilder().setStream(stream).build();
 
     ReadRowsRequest readRowsRequest =
-        ReadRowsRequest.newBuilder().setReadStream(readStream.getName()).build();
+        ReadRowsRequest.newBuilder().setReadPosition(readPosition).build();
 
     long rowCount = 0;
     ServerStream<ReadRowsResponse> serverStream = client.readRowsCallable().call(readRowsRequest);
@@ -140,8 +140,7 @@ class ITBigQueryStorageLongRunningTest {
       rowCount += response.getRowCount();
     }
 
-    LOG.info(
-        String.format("Read total of %d rows from stream '%s'.", rowCount, readStream.getName()));
+    LOG.info(String.format("Read total of %d rows from stream '%s'.", rowCount, stream.getName()));
     return rowCount;
   }
 }
