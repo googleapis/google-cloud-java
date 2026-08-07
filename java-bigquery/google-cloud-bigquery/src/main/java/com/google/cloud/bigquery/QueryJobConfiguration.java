@@ -707,11 +707,34 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * Sets the query results response format. Defaults to {@link
+     * QueryResultsFormat#STRUCT_ENCODING}.
+     *
+     * <p>When set to {@link QueryResultsFormat#ARROW}, query results are returned in binary Apache
+     * Arrow format, utilizing gRPC Storage Read streams for subsequent pages.
+     *
+     * <p><b>Prerequisite:</b> Requires the BigQuery Storage Read API ({@code
+     * bigquerystorage.googleapis.com}) to be enabled on your GCP project and your credentials to
+     * have Storage Read permissions (e.g. {@code bigquery.readsessions.create}).
+     *
+     * @param queryResultsFormat the format for query result payloads
+     * @return the Builder
+     */
     public Builder setQueryResultsFormat(QueryResultsFormat queryResultsFormat) {
       this.queryResultsFormat = queryResultsFormat;
       return this;
     }
 
+    /**
+     * Sets Arrow serialization options. Defaults to null.
+     *
+     * <p>Note: Only applied in the request payload when {@code queryResultsFormat} is {@code
+     * ARROW}.
+     *
+     * @param arrowSerializationOptions the Arrow serialization options to set
+     * @return the Builder
+     */
     public Builder setArrowSerializationOptions(
         ArrowSerializationOptions arrowSerializationOptions) {
       this.arrowSerializationOptions = arrowSerializationOptions;
