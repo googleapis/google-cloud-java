@@ -211,6 +211,7 @@ import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
@@ -1271,6 +1272,8 @@ class ITBigQueryTest {
 
   @Test
   void testListDatasets() {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     Page<Dataset> datasets = bigquery.listDatasets("bigquery-public-data");
     Iterator<Dataset> iterator = datasets.iterateAll().iterator();
     Set<String> datasetNames = new HashSet<>();
@@ -2131,6 +2134,8 @@ class ITBigQueryTest {
 
   @Test
   void testCreateAndUpdateTableWithPolicyTags() throws IOException {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     // Set up policy tags in the datacatalog service
     try (PolicyTagManagerClient policyTagManagerClient = PolicyTagManagerClient.create()) {
       CreateTaxonomyRequest createTaxonomyRequest =
@@ -2515,6 +2520,8 @@ class ITBigQueryTest {
 
   @Test
   void testSetPermExternalTableSchema() {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     String tableName = "test_create_external_table_perm";
     TableId tableId = TableId.of(DATASET, tableName);
     ExternalTableDefinition externalTableDefinition =
@@ -2926,6 +2933,8 @@ class ITBigQueryTest {
 
   @Test
   void testDeleteJob() {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     String query = "SELECT 17 as foo";
     QueryJobConfiguration config = QueryJobConfiguration.of(query);
     String jobName = "jobId_" + UUID.randomUUID().toString();
@@ -3188,6 +3197,8 @@ class ITBigQueryTest {
 
   @Test
   void testListPageWithStartIndex() {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     String tableName = "midyear_population_agespecific";
     TableId tableId = TableId.of(PUBLIC_PROJECT, PUBLIC_DATASET, tableName);
     Table table = bigquery.getTable(tableId);
@@ -3659,6 +3670,8 @@ class ITBigQueryTest {
 
   @Test
   void testExecuteSelectDefaultConnectionSettings() throws SQLException {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     // Use the default connection settings
     Connection connection = bigquery.createConnection();
     String query = "SELECT corpus FROM `bigquery-public-data.samples.shakespeare` GROUP BY corpus;";
@@ -3669,6 +3682,8 @@ class ITBigQueryTest {
 
   @Test
   void testExecuteSelectWithReadApi() throws SQLException {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     final int rowLimit = 5000;
     final String QUERY =
         "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 LIMIT %s";
@@ -3699,6 +3714,8 @@ class ITBigQueryTest {
 
   @Test
   void testExecuteSelectWithFastQueryReadApi() throws SQLException {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     final int rowLimit = 5000;
     final String QUERY =
         "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 LIMIT %s";
@@ -4785,6 +4802,8 @@ class ITBigQueryTest {
 
   @Test
   void testLocationFastSQLQueryWithJobId() throws InterruptedException {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     TableId tableIdFastQueryUk = TableId.of(UK_DATASET, "fastquery_testing_table");
     DatasetInfo infoUK =
         DatasetInfo.newBuilder(UK_DATASET)
@@ -4960,6 +4979,8 @@ class ITBigQueryTest {
 
   @Test
   void testFastQuerySlowDDL() throws InterruptedException {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     String tableName = generateRandomName("test_table_fast_query_ddl_slow_");
     // This query take more than 10s to run and should fall back on the old query path
     String slowDdlQuery =
@@ -5061,6 +5082,8 @@ class ITBigQueryTest {
 
   @Test
   void testLoadSessionSupportWriteChannelConfiguration() throws InterruptedException {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     TableId sessionTableId = TableId.of("_SESSION", "test_temp_destination_table_from_file");
 
     WriteChannelConfiguration configuration =
@@ -5288,6 +5311,8 @@ class ITBigQueryTest {
   /* TODO(prasmish): replicate the entire test case for executeSelect */
   @Test
   void testScriptStatistics() throws InterruptedException {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     String script =
         "-- Declare a variable to hold names as an array.\n"
             + "DECLARE top_names ARRAY<STRING>;\n"
@@ -6541,6 +6566,8 @@ class ITBigQueryTest {
 
   @Test
   void testCancelNonExistingJob() {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     assertFalse(bigquery.cancel("test_cancel_non_existing_job"));
   }
 
@@ -6677,6 +6704,8 @@ class ITBigQueryTest {
 
   @Test
   void testLocation() throws Exception {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     String location = "EU";
     String wrongLocation = "US";
 
@@ -7443,6 +7472,8 @@ class ITBigQueryTest {
 
   @Test
   void testStatelessQueriesWithLocation() throws Exception {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     // This test validates BigQueryOption location is used for stateless query by verifying that the
     // stateless query fails when the BigQueryOption location does not match the dataset location.
     String location = "EU";
@@ -7608,6 +7639,8 @@ class ITBigQueryTest {
 
   @Test
   void testUniverseDomainWithMatchingDomain() {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     // Test a valid domain using the default credentials and Google default universe domain.
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQueryOptions bigQueryOptions =
@@ -7701,6 +7734,8 @@ class ITBigQueryTest {
 
   @Test
   void testObjectTable() throws InterruptedException {
+    // This test queries public datasets, which are not supported by regional endpoints.
+    Assumptions.assumeTrue(!RemoteBigQueryHelper.isRegionalEndpoint(bigquery));
     String tableName = generateRandomName("test_object_table");
     TableId tableId = TableId.of(DATASET, tableName);
 

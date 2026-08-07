@@ -117,6 +117,7 @@ import org.apache.avro.util.Utf8;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -504,7 +505,7 @@ class ITBigQueryStorageReadClientTest {
 
   @BeforeAll
   static void beforeAll() throws IOException, DescriptorValidationException, InterruptedException {
-    readClient = com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadClient();
+    readClient = Helper.createBigQueryReadClient();
     projectName = ServiceOptions.getDefaultProjectId();
     parentProjectId = String.format("projects/%s", projectName);
 
@@ -515,10 +516,19 @@ class ITBigQueryStorageReadClientTest {
 
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
-    DatasetInfo datasetInfo =
-        DatasetInfo.newBuilder(/* datasetId bigquery= */ DATASET)
-            .setDescription(DESCRIPTION)
-            .build();
+    DatasetInfo datasetInfo;
+    if (Helper.isBigQueryRegionalEndpoint()) {
+      datasetInfo =
+          DatasetInfo.newBuilder(/* datasetId bigquery= */ DATASET)
+              .setDescription(DESCRIPTION)
+              .setLocation(Helper.getBigQueryRegion())
+              .build();
+    } else {
+      datasetInfo =
+          DatasetInfo.newBuilder(/* datasetId bigquery= */ DATASET)
+              .setDescription(DESCRIPTION)
+              .build();
+    }
     bigquery.create(datasetInfo);
     LOG.info("Created test dataset: " + DATASET);
 
@@ -596,6 +606,8 @@ class ITBigQueryStorageReadClientTest {
 
   @Test
   void testSimpleReadAvro() {
+    Assumptions.assumeTrue(
+        !Helper.isRegionalEndpoint(), "Regional endpoint does not support reading public datasets");
     String table =
         BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
@@ -632,6 +644,8 @@ class ITBigQueryStorageReadClientTest {
 
   @Test
   void testSimpleReadArrow() {
+    Assumptions.assumeTrue(
+        !Helper.isRegionalEndpoint(), "Regional endpoint does not support reading public datasets");
     String table =
         BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
@@ -948,6 +962,8 @@ class ITBigQueryStorageReadClientTest {
 
   @Test
   void testSimpleReadAndResume() {
+    Assumptions.assumeTrue(
+        !Helper.isRegionalEndpoint(), "Regional endpoint does not support reading public datasets");
     String table =
         BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
@@ -991,6 +1007,8 @@ class ITBigQueryStorageReadClientTest {
 
   @Test
   void testFilter() throws IOException {
+    Assumptions.assumeTrue(
+        !Helper.isRegionalEndpoint(), "Regional endpoint does not support reading public datasets");
     String table =
         BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
@@ -1052,6 +1070,8 @@ class ITBigQueryStorageReadClientTest {
 
   @Test
   void testColumnSelection() throws IOException {
+    Assumptions.assumeTrue(
+        !Helper.isRegionalEndpoint(), "Regional endpoint does not support reading public datasets");
     String table =
         BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
@@ -1597,8 +1617,10 @@ class ITBigQueryStorageReadClientTest {
 
   @Test
   void testSimpleReadWithBackgroundExecutorProvider() throws IOException {
+    Assumptions.assumeTrue(
+        !Helper.isRegionalEndpoint(), "Regional endpoint does not support reading public datasets");
     BigQueryReadSettings bigQueryReadSettings =
-        com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadSettingsBuilder()
+        Helper.createBigQueryReadSettingsBuilder()
             .setBackgroundExecutorProvider(
                 InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(14).build())
             .build();
@@ -1718,6 +1740,8 @@ class ITBigQueryStorageReadClientTest {
 
   @Test
   void testUniverseDomainWithMatchingDomain() throws IOException {
+    Assumptions.assumeTrue(
+        !Helper.isRegionalEndpoint(), "Regional endpoint does not support reading public datasets");
     // Test a valid domain using the default credentials and Google default universe domain.
     BigQueryReadSettings bigQueryReadSettings =
         BigQueryReadSettings.newBuilder().setUniverseDomain("googleapis.com").build();
@@ -1753,6 +1777,8 @@ class ITBigQueryStorageReadClientTest {
 
   @Test
   void testSimpleReadWithOtelTracing() throws IOException {
+    Assumptions.assumeTrue(
+        !Helper.isRegionalEndpoint(), "Regional endpoint does not support reading public datasets");
     SdkTracerProvider tracerProvider =
         SdkTracerProvider.builder()
             .addSpanProcessor(SimpleSpanProcessor.create(new TestSpanExporter()))
@@ -1761,7 +1787,7 @@ class ITBigQueryStorageReadClientTest {
     OpenTelemetry otel = OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
 
     BigQueryReadSettings otelSettings =
-        com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadSettingsBuilder()
+        Helper.createBigQueryReadSettingsBuilder()
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracerProvider(tracerProvider)
             .build();

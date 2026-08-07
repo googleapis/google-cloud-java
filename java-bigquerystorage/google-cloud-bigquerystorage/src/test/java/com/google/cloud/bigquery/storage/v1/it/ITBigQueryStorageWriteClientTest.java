@@ -93,6 +93,7 @@ import org.apache.avro.generic.GenericData;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.parallel.Execution;
@@ -187,10 +188,10 @@ class ITBigQueryStorageWriteClientTest {
 
   @BeforeAll
   static void beforeAll() throws IOException {
-    readClient = com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadClient();
+    readClient = Helper.createBigQueryReadClient();
 
     BigQueryWriteSettings settings =
-        com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryWriteSettingsBuilder()
+        Helper.createBigQueryWriteSettingsBuilder()
             .setHeaderProvider(USER_AGENT_HEADER_PROVIDER)
             .build();
     writeClient = BigQueryWriteClient.create(settings);
@@ -198,8 +199,17 @@ class ITBigQueryStorageWriteClientTest {
 
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
-    DatasetInfo datasetInfo =
-        DatasetInfo.newBuilder(/* datasetId= */ DATASET).setDescription(DESCRIPTION).build();
+    DatasetInfo datasetInfo;
+    if (Helper.isBigQueryRegionalEndpoint()) {
+      datasetInfo =
+          DatasetInfo.newBuilder(/* datasetId= */ DATASET)
+              .setDescription(DESCRIPTION)
+              .setLocation(Helper.getBigQueryRegion())
+              .build();
+    } else {
+      datasetInfo =
+          DatasetInfo.newBuilder(/* datasetId= */ DATASET).setDescription(DESCRIPTION).build();
+    }
     bigquery.create(datasetInfo);
     LOG.info("Created test dataset: " + DATASET);
     tableInfo =
@@ -373,6 +383,8 @@ class ITBigQueryStorageWriteClientTest {
   @Test
   void testBatchWriteWithCommittedStreamEU()
       throws IOException, InterruptedException, ExecutionException {
+    Assumptions.assumeTrue(
+        !Helper.isRegionalEndpoint(), "Regional write client cannot write to EU table");
     WriteStream writeStream =
         writeClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
@@ -2253,8 +2265,10 @@ class ITBigQueryStorageWriteClientTest {
     assertEquals(0L, response1.get().getAppendResult().getOffset().getValue());
     assertEquals(0L, response2.get().getAppendResult().getOffset().getValue());
     assertEquals(0L, response3.get().getAppendResult().getOffset().getValue());
-    assertEquals("us", streamWriter1.getLocation());
-    assertEquals("us", streamWriter2.getLocation());
+    String expectedLocation =
+        Helper.isBigQueryRegionalEndpoint() ? Helper.getBigQueryRegion() : "us";
+    assertEquals(expectedLocation, streamWriter1.getLocation());
+    assertEquals(expectedLocation, streamWriter2.getLocation());
     assertEquals("eu", streamWriter3.getLocation());
     streamWriter1.close();
     streamWriter2.close();

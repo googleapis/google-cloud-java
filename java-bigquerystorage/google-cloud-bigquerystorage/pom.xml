@@ -15,6 +15,8 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquerystorage</site.installationModule>
+    <bigquery.endpoint></bigquery.endpoint>
+    <bigquery.storage.endpoint></bigquery.storage.endpoint>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -409,6 +411,10 @@
                 <buildArg>--no-fallback</buildArg>
                 <buildArg>--no-server</buildArg>
               </buildArgs>
+              <environmentVariables>
+                <BIGQUERY_ENDPOINT>${bigquery.endpoint}</BIGQUERY_ENDPOINT>
+                <BIGQUERY_STORAGE_ENDPOINT>${bigquery.storage.endpoint}</BIGQUERY_STORAGE_ENDPOINT>
+              </environmentVariables>
             </configuration>
           </plugin>
         </plugins>

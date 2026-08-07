@@ -15,6 +15,8 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquery</site.installationModule>
+    <bigquery.endpoint></bigquery.endpoint>
+    <bigquery.storage.endpoint></bigquery.storage.endpoint>
   </properties>
   <dependencies>
     <dependency>
@@ -325,6 +327,23 @@
         </plugins>
       </build>
 
+    </profile>
+    <profile>
+      <id>native</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.graalvm.buildtools</groupId>
+            <artifactId>native-maven-plugin</artifactId>
+            <configuration>
+              <environmentVariables>
+                <BIGQUERY_ENDPOINT>${bigquery.endpoint}</BIGQUERY_ENDPOINT>
+                <BIGQUERY_STORAGE_ENDPOINT>${bigquery.storage.endpoint}</BIGQUERY_STORAGE_ENDPOINT>
+              </environmentVariables>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
   </profiles>
 </project>
