@@ -26,7 +26,6 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Ticker;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
-import com.google.common.util.concurrent.MoreExecutors;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
 import io.grpc.ManagedChannel;
@@ -296,11 +295,15 @@ public class ChannelPoolDpImpl implements ChannelPool {
     fw.numOutstanding++;
     totalStreams++;
 
-    // DirectExecutor: gRPC/Netty delivers SessionStream.Listener callbacks directly on the
-    // I/O thread. All work must be fast and non-blocking; blocking work goes to sessionSyncContext.
+    // Do NOT override the call executor with directExecutor(): SessionStream.Listener callbacks
+    // acquire the SessionPool lock (onReady/onGoAway/onClose/onVRpcComplete). directExecutor()
+    // delivers those callbacks inline on the Netty event-loop (I/O) thread, so a contended pool
+    // lock blocks the event loop; the blocked event loop then can't deliver the very completions
+    // that would release sessions and drain the lock -> self-sustaining pod-wide wedge. Leaving
+    // the executor unset delivers callbacks on gRPC's off-loop channel executor, keeping
+    // pool-lock acquisition off the transport threads.
     ClientCall<SessionRequest, SessionResponse> innerCall =
-        channelWrapper.channel.newCall(
-            desc, callOptions.withExecutor(MoreExecutors.directExecutor()));
+        channelWrapper.channel.newCall(desc, callOptions);
 
     return new SessionStreamImpl(innerCall) {
       // null until onBeforeSessionStart fires

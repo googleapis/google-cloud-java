@@ -1,0 +1,92 @@
+# Copyright 2026 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+permissions:
+  contents: read
+
+name: Librarian - Formatter Version Check
+
+on:
+  workflow_dispatch: # Allow manual trigger
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  filter:
+    name: Filter changed files
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.filter.outputs.should_run }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
+        id: filter
+        with:
+          filters: |
+            should_run:
+              - 'librarian.yaml'
+              - 'java-shared-config/java-shared-config/pom.xml'
+              - '.github/workflows/formatter-version-check.yaml'
+
+  check-formatter-version:
+    name: Check Formatter Version
+    needs: filter
+    if: ${{ github.event_name == 'workflow_dispatch' || needs.filter.outputs.should_run == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Extract formatter version from pom.xml
+        id: extract_pom_version
+        shell: bash
+        run: |
+          version=$(awk -F'[<>]' '/google-java-format.version/{print $3; exit}' java-shared-config/java-shared-config/pom.xml | tr -d '"')
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+      - name: Extract formatter version from librarian.yaml
+        id: extract_librarian_version
+        shell: bash
+        run: |
+          version=$(yq '.tools.maven[] | select(.name == "google-java-format") | .version' librarian.yaml | tr -d '"')
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+      - name: Verify formatter versions match
+        shell: bash
+        run: |
+          echo "Formatter version in pom.xml: ${POM_VERSION}"
+          echo "Formatter version in librarian.yaml: ${LIBRARIAN_VERSION}"
+
+          if [ -z "${POM_VERSION}" ]; then
+            echo "Error: Could not extract google-java-format.version from java-shared-config/java-shared-config/pom.xml"
+            exit 1
+          fi
+
+          if [ -z "${LIBRARIAN_VERSION}" ]; then
+            echo "Error: Could not extract google-java-format version from librarian.yaml"
+            exit 1
+          fi
+
+          if [ "${POM_VERSION}" != "${LIBRARIAN_VERSION}" ]; then
+            echo "Mismatch: librarian.yaml has version '${LIBRARIAN_VERSION}', but java-shared-config/java-shared-config/pom.xml has version '${POM_VERSION}'"
+            exit 1
+          fi
+
+          echo "Formatter versions are in sync!"
+        env:
+          POM_VERSION: ${{ steps.extract_pom_version.outputs.version }}
+          LIBRARIAN_VERSION: ${{ steps.extract_librarian_version.outputs.version }}
