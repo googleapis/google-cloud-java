@@ -31,6 +31,7 @@
 
 package com.google.auth.mtls;
 
+import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
@@ -38,6 +39,7 @@ import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.util.Objects;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * An HttpTransportFactory that creates {@link NetHttpTransport} instances configured for mTLS
@@ -50,7 +52,12 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @InternalApi
 public class MtlsHttpTransportFactory implements HttpTransportFactory {
-  private final KeyStore mtlsKeyStore;
+  @Nullable private final KeyStore mtlsKeyStore;
+
+  /** Constructs a default factory for mTLS transports without a custom KeyStore. */
+  public MtlsHttpTransportFactory() {
+    this.mtlsKeyStore = null;
+  }
 
   /**
    * Constructs a factory for mTLS transports.
@@ -64,7 +71,7 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory {
   }
 
   @Override
-  public NetHttpTransport create() {
+  public HttpTransport create() {
     try {
       // Build the mTLS transport using the provided KeyStore.
       return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();

@@ -50,6 +50,11 @@ import org.jspecify.annotations.Nullable;
  * Url-sourced, file-sourced, or user provided supplier method-sourced external account credentials.
  *
  * <p>By default, attempts to exchange the external credential for a GCP access token.
+ *
+ * <p>Note: Actor token extraction is currently restricted to file-based JSON credential sources
+ * over mTLS endpoints. When configuring certificate-bound OAuth 2.0 tokens for GAX channel
+ * providers, ensure you configure {@code
+ * InstantiatingGrpcChannelProvider.newBuilder().setMtlsProvider(...)} in tandem.
  */
 @NullMarked
 public class IdentityPoolCredentials extends ExternalAccountCredentials {
@@ -60,6 +65,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   private static final long serialVersionUID = 2471046175477275881L;
   private final IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
+  @Nullable private final IdentityPoolActorTokenSupplier actorTokenSupplier;
+  @Nullable private final String actorTokenType;
+  @Nullable private final transient X509Provider x509Provider;
   private final ExternalAccountSupplierContext supplierContext;
   private final String metricsHeaderValue;
 
@@ -89,7 +97,18 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       this.subjectTokenSupplier = builder.subjectTokenSupplier;
       this.metricsHeaderValue = PROGRAMMATIC_METRICS_HEADER_VALUE;
     } else if (credentialSource.credentialSourceType == IdentityPoolCredentialSourceType.FILE) {
-      this.subjectTokenSupplier = new FileIdentityPoolSubjectTokenSupplier(credentialSource);
+      if (credentialSource.getCertificateConfig() != null) {
+        try {
+          X509Provider x509Provider = getX509Provider(builder, credentialSource);
+          KeyStore mtlsKeyStore = x509Provider.getKeyStore();
+          this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+        } catch (Exception e) {
+          throw new RuntimeException(
+              "Failed to initialize mTLS transport for file credential source due to certificate error.",
+              e);
+        }
+      }
+      this.subjectTokenSupplier = new FileIdentityPoolTokenSupplier(credentialSource);
       this.metricsHeaderValue = FILE_METRICS_HEADER_VALUE;
     } else if (credentialSource.credentialSourceType == IdentityPoolCredentialSourceType.URL) {
       this.subjectTokenSupplier =
@@ -111,6 +130,38 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     } else {
       throw new IllegalArgumentException("Source type not supported.");
     }
+
+    this.actorTokenType = builder.actorTokenType;
+    if (builder.actorTokenSupplier != null) {
+      this.actorTokenSupplier = builder.actorTokenSupplier;
+    } else if (credentialSource != null && credentialSource.actorTokenFieldName != null) {
+      if (this.subjectTokenSupplier instanceof FileIdentityPoolTokenSupplier) {
+        this.actorTokenSupplier = (FileIdentityPoolTokenSupplier) this.subjectTokenSupplier;
+      } else {
+        throw new IllegalArgumentException(
+            "Actor tokens are currently only supported for file-based credential sources.");
+      }
+    } else {
+      this.actorTokenSupplier = null;
+    }
+
+    if (this.actorTokenSupplier != null
+        && (this.actorTokenType == null || this.actorTokenType.trim().isEmpty())) {
+      throw new IllegalArgumentException(
+          "An actorTokenType must be specified when an actorTokenSupplier is configured.");
+    }
+    if (this.actorTokenSupplier == null && this.actorTokenType != null) {
+      throw new IllegalArgumentException(
+          "An actorTokenSupplier must be specified when an actorTokenType is configured.");
+    }
+
+    if (this.actorTokenSupplier != null
+        && !(this.transportFactory instanceof MtlsHttpTransportFactory)) {
+      throw new IllegalArgumentException(
+          "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate source or MtlsHttpTransportFactory.");
+    }
+
+    this.x509Provider = builder.x509Provider;
   }
 
   @Override
@@ -119,6 +170,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
         StsTokenExchangeRequest.newBuilder(credential, getSubjectTokenType())
             .setAudience(getAudience());
+
+    if (this.actorTokenSupplier != null && this.actorTokenType != null) {
+      String actorToken = this.actorTokenSupplier.getActorToken(supplierContext);
+      stsTokenExchangeRequest.setActingParty(new ActingParty(actorToken, this.actorTokenType));
+    }
 
     Collection<String> scopes = getScopes();
     if (scopes != null && !scopes.isEmpty()) {
@@ -141,6 +197,22 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   @VisibleForTesting
   IdentityPoolSubjectTokenSupplier getIdentityPoolSubjectTokenSupplier() {
     return this.subjectTokenSupplier;
+  }
+
+  @VisibleForTesting
+  @Nullable
+  IdentityPoolActorTokenSupplier getIdentityPoolActorTokenSupplier() {
+    return this.actorTokenSupplier;
+  }
+
+  @VisibleForTesting
+  String getActorTokenType() {
+    return this.actorTokenType;
+  }
+
+  @VisibleForTesting
+  HttpTransportFactory getTransportFactory() {
+    return this.transportFactory;
   }
 
   /** Clones the IdentityPoolCredentials with the specified scopes. */
@@ -205,6 +277,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   public static class Builder extends ExternalAccountCredentials.Builder {
 
     private IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
+    private IdentityPoolActorTokenSupplier actorTokenSupplier;
+    private String actorTokenType;
     private X509Provider x509Provider;
 
     Builder() {}
@@ -213,7 +287,10 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       super(credentials);
       if (this.credentialSource == null) {
         this.subjectTokenSupplier = credentials.subjectTokenSupplier;
+        this.actorTokenSupplier = credentials.actorTokenSupplier;
       }
+      this.actorTokenType = credentials.actorTokenType;
+      this.x509Provider = credentials.x509Provider;
     }
 
     /**
@@ -241,6 +318,18 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     @CanIgnoreReturnValue
     public Builder setSubjectTokenSupplier(IdentityPoolSubjectTokenSupplier subjectTokenSupplier) {
       this.subjectTokenSupplier = subjectTokenSupplier;
+      return this;
+    }
+
+    @CanIgnoreReturnValue
+    public Builder setActorTokenSupplier(IdentityPoolActorTokenSupplier actorTokenSupplier) {
+      this.actorTokenSupplier = actorTokenSupplier;
+      return this;
+    }
+
+    @CanIgnoreReturnValue
+    public Builder setActorTokenType(String actorTokenType) {
+      this.actorTokenType = actorTokenType;
       return this;
     }
 
