@@ -77,8 +77,7 @@ public final class ArrowSerializationOptions implements Serializable {
     return ArrowSerializationOptionsConverter.toPb(this);
   }
 
-  static ArrowSerializationOptions fromPb(
-      com.google.api.services.bigquery.model.ArrowSerializationOptions optionsPb) {
+  static ArrowSerializationOptions fromPb(Object optionsPb) {
     return ArrowSerializationOptionsConverter.fromPb(optionsPb);
   }
 

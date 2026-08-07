@@ -69,7 +69,13 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.apache.arrow.memory.BufferAllocator;
+import org.apache.arrow.memory.RootAllocator;
+import org.apache.arrow.vector.FieldVector;
+import org.apache.arrow.vector.VectorLoader;
+import org.apache.arrow.vector.VectorSchemaRoot;
 import org.apache.arrow.vector.ipc.ReadChannel;
+import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -342,26 +348,23 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           streamIterator = stream.iterator();
         }
 
-        try (org.apache.arrow.memory.BufferAllocator allocator =
-            new org.apache.arrow.memory.RootAllocator(Long.MAX_VALUE)) {
-          List<org.apache.arrow.vector.FieldVector> vectors = new ArrayList<>();
+        try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+          List<FieldVector> vectors = new ArrayList<>();
           for (org.apache.arrow.vector.types.pojo.Field field : arrowSchemaPojo.getFields()) {
-            vectors.add((org.apache.arrow.vector.FieldVector) field.createVector(allocator));
+            vectors.add((FieldVector) field.createVector(allocator));
           }
-          try (org.apache.arrow.vector.VectorSchemaRoot root =
-              new org.apache.arrow.vector.VectorSchemaRoot(vectors)) {
-            org.apache.arrow.vector.VectorLoader loader =
-                new org.apache.arrow.vector.VectorLoader(root);
+          try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
+            VectorLoader loader = new VectorLoader(root);
 
             while (rowBatch.size() < pageSize && streamIterator.hasNext()) {
               ReadRowsResponse response = streamIterator.next();
               if (response.hasArrowRecordBatch()) {
                 com.google.cloud.bigquery.storage.v1.ArrowRecordBatch batch =
                     response.getArrowRecordBatch();
-                org.apache.arrow.vector.ipc.message.ArrowRecordBatch deserializedBatch =
-                    org.apache.arrow.vector.ipc.message.MessageSerializer.deserializeRecordBatch(
-                        new org.apache.arrow.vector.ipc.ReadChannel(
-                            new org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel(
+                ArrowRecordBatch deserializedBatch =
+                    MessageSerializer.deserializeRecordBatch(
+                        new ReadChannel(
+                            new ByteArrayReadableSeekableByteChannel(
                                 batch.getSerializedRecordBatch().toByteArray())),
                         allocator);
                 loader.load(deserializedBatch);
