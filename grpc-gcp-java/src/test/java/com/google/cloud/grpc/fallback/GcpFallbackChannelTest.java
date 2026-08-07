@@ -41,6 +41,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isNull;
+import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.clearInvocations;
 import static org.mockito.Mockito.mock;
@@ -1776,6 +1777,82 @@ public class GcpFallbackChannelTest {
       assertTrue(sharedState.getInFallbackMode().get());
     } finally {
       channel.shutdownNow();
+      sharedState.shutdown();
+    }
+  }
+
+  @Test
+  public void testPoolLevelRecovery_multipleFailoverCyclesResetProbeStatistics() {
+    GcpFallbackState sharedState = new GcpFallbackState();
+    sharedState.getInFallbackMode().set(true); // Cycle 1: Fallback active
+
+    GcpFallbackChannelOptions options1 =
+        getDefaultOptionsBuilder()
+            .setSharedState(sharedState)
+            .setEnableRecovery(true)
+            .setEnablePerChannelRecovery(false)
+            .setPrimaryProbingFunction(channel -> "OK")
+            .setMinPrimaryProbeSuccessCount(2)
+            .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
+            .build();
+
+    GcpFallbackChannelOptions options2 =
+        getDefaultOptionsBuilder()
+            .setSharedState(sharedState)
+            .setEnableRecovery(true)
+            .setEnablePerChannelRecovery(false)
+            .setPrimaryProbingFunction(channel -> "OK")
+            .setMinPrimaryProbeSuccessCount(2)
+            .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
+            .build();
+
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
+
+    GcpFallbackChannel channel1 =
+        new GcpFallbackChannel(options1, mockPrimaryBuilder, mockFallbackBuilder, mockExec);
+    GcpFallbackChannel channel2 =
+        new GcpFallbackChannel(options2, mockPrimaryBuilder, mockFallbackBuilder, mockExec);
+
+    try {
+      verify(mockExec, atLeast(2))
+          .scheduleAtFixedRate(
+              taskCaptor.capture(),
+              eq(options1.getPrimaryProbingInterval().toMillis()),
+              eq(options1.getPrimaryProbingInterval().toMillis()),
+              eq(MILLISECONDS));
+      Runnable probeTask1 = taskCaptor.getAllValues().get(0);
+      Runnable probeTask2 = taskCaptor.getAllValues().get(1);
+
+      // Both channels enter fallback
+      assertTrue(channel1.isInFallbackMode());
+      assertTrue(channel2.isInFallbackMode());
+
+      // Channel 1 probes twice -> recovers pool
+      probeTask1.run();
+      probeTask1.run();
+      assertFalse(channel1.isInFallbackMode());
+      assertFalse(channel2.isInFallbackMode());
+
+      // Now Cycle 2: Incident occurs again, pool enters fallback
+      sharedState.getInFallbackMode().set(true);
+      assertTrue(channel2.isInFallbackMode());
+
+      // Channel 2's localProbeSuccesses must be reset to 0 in new cycle
+      assertEquals(0, channel2.getLocalProbeSuccesses().get());
+
+      // Probe once: count is 1 (< 2 required), must still be in fallback
+      probeTask2.run();
+      assertEquals(1, channel2.getLocalProbeSuccesses().get());
+      assertTrue(channel2.isInFallbackMode());
+
+      // Probe second time: count is 2 (>= 2 required) -> recovers!
+      probeTask2.run();
+      assertFalse(channel2.isInFallbackMode());
+      assertFalse(sharedState.getInFallbackMode().get());
+    } finally {
+      channel1.shutdownNow();
+      channel2.shutdownNow();
       sharedState.shutdown();
     }
   }

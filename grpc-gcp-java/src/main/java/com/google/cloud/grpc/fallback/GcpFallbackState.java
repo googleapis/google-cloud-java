@@ -41,7 +41,7 @@ public class GcpFallbackState {
 
   private ScheduledExecutorService execService = null;
   private boolean ownsExecutor = false;
-  private ScheduledFuture<?> scheduledEvaluationFuture = null;
+  private volatile ScheduledFuture<?> scheduledEvaluationFuture = null;
 
   public AtomicLong getPrimarySuccesses() {
     return primarySuccesses;

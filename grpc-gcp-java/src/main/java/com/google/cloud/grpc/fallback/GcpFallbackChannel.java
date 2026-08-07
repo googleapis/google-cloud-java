@@ -59,8 +59,8 @@ public class GcpFallbackChannel extends ManagedChannel {
   private final AtomicLong localFirstPrimaryProbeSuccessNanos = new AtomicLong(0);
 
   private final ScheduledExecutorService execService;
-  private ScheduledFuture<?> primaryProbeFuture = null;
-  private ScheduledFuture<?> fallbackProbeFuture = null;
+  private volatile ScheduledFuture<?> primaryProbeFuture = null;
+  private volatile ScheduledFuture<?> fallbackProbeFuture = null;
 
   public GcpFallbackChannel(
       GcpFallbackChannelOptions options,
@@ -187,6 +187,11 @@ public class GcpFallbackChannel extends ManagedChannel {
         localProbeSuccesses.set(0);
         localFirstPrimaryProbeSuccessNanos.set(0);
       }
+    } else if (!options.isEnablePerChannelRecovery()) {
+      if (localInFallbackMode.compareAndSet(true, false)) {
+        localProbeSuccesses.set(0);
+        localFirstPrimaryProbeSuccessNanos.set(0);
+      }
     }
     if (options.isEnablePerChannelRecovery()) {
       return (localInFallbackMode.get() && fallbackChannel != null) || primaryChannel == null;
@@ -260,6 +265,11 @@ public class GcpFallbackChannel extends ManagedChannel {
         localProbeSuccesses.set(0);
         localFirstPrimaryProbeSuccessNanos.set(0);
       }
+    } else if (!options.isEnablePerChannelRecovery()) {
+      if (localInFallbackMode.compareAndSet(true, false)) {
+        localProbeSuccesses.set(0);
+        localFirstPrimaryProbeSuccessNanos.set(0);
+      }
     }
     boolean inFallback =
         options.isEnablePerChannelRecovery()
@@ -275,15 +285,16 @@ public class GcpFallbackChannel extends ManagedChannel {
       result = options.getPrimaryProbingFunction().apply(primaryDelegateChannel);
     }
     if ("OK".equals(result)) {
-      localFirstPrimaryProbeSuccessNanos.compareAndSet(0, System.nanoTime());
-      long firstSuccessNanos = localFirstPrimaryProbeSuccessNanos.get();
+      long nowNanos = System.nanoTime();
+      long firstSuccessNanos =
+          localFirstPrimaryProbeSuccessNanos.updateAndGet(prev -> prev == 0 ? nowNanos : prev);
       long primaryProbeSuccessCount = localProbeSuccesses.incrementAndGet();
 
       boolean durationSatisfied = true;
       if (options.getMinPrimaryProbeSuccessDuration() != null
           && !options.getMinPrimaryProbeSuccessDuration().isZero()
           && !options.getMinPrimaryProbeSuccessDuration().isNegative()) {
-        long elapsedNanos = System.nanoTime() - firstSuccessNanos;
+        long elapsedNanos = nowNanos - firstSuccessNanos;
         durationSatisfied = elapsedNanos >= options.getMinPrimaryProbeSuccessDuration().toNanos();
       }
 
