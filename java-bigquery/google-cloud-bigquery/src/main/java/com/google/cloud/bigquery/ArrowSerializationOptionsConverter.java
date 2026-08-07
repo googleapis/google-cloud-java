@@ -16,18 +16,17 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.api.services.bigquery.model.ArrowSerializationOptions;
-
 final class ArrowSerializationOptionsConverter {
 
   private ArrowSerializationOptionsConverter() {}
 
-  static ArrowSerializationOptions toPb(
-      com.google.cloud.bigquery.ArrowSerializationOptions options) {
+  static com.google.api.services.bigquery.model.ArrowSerializationOptions toPb(
+      ArrowSerializationOptions options) {
     if (options == null) {
       return null;
     }
-    ArrowSerializationOptions optionsPb = new ArrowSerializationOptions();
+    com.google.api.services.bigquery.model.ArrowSerializationOptions optionsPb =
+        new com.google.api.services.bigquery.model.ArrowSerializationOptions();
     if (options.getBufferCompression() != null) {
       optionsPb.setBufferCompression(options.getBufferCompression());
     }
@@ -37,12 +36,13 @@ final class ArrowSerializationOptionsConverter {
     return optionsPb;
   }
 
-  static com.google.cloud.bigquery.ArrowSerializationOptions fromPb(
-      ArrowSerializationOptions optionsPb) {
-    if (optionsPb == null) {
+  static ArrowSerializationOptions fromPb(Object optionsPbObj) {
+    if (optionsPbObj == null) {
       return null;
     }
-    return com.google.cloud.bigquery.ArrowSerializationOptions.newBuilder()
+    com.google.api.services.bigquery.model.ArrowSerializationOptions optionsPb =
+        (com.google.api.services.bigquery.model.ArrowSerializationOptions) optionsPbObj;
+    return ArrowSerializationOptions.newBuilder()
         .setBufferCompression(optionsPb.getBufferCompression())
         .setPicosTimestampPrecision(optionsPb.getPicosTimestampPrecision())
         .build();
