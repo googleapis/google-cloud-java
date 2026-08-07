@@ -285,7 +285,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     private final JobId jobId;
     private final Schema schema;
-    private final org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo;
+    private final Object arrowSchemaPojo;
     private final BigQueryOptions serviceOptions;
     private final long maxResults;
 
@@ -298,7 +298,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     ArrowQueryPageFetcher(
         JobId jobId,
         Schema schema,
-        org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo,
+        Object arrowSchemaPojo,
         BigQueryOptions serviceOptions,
         long initialRowOffset,
         Long maxResults) {
@@ -349,10 +349,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         }
 
         try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
-          List<FieldVector> vectors = new ArrayList<>();
-          for (org.apache.arrow.vector.types.pojo.Field field : arrowSchemaPojo.getFields()) {
-            vectors.add((FieldVector) field.createVector(allocator));
-          }
+          List<FieldVector> vectors = ArrowPojoUtils.createVectors(arrowSchemaPojo, allocator);
           try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
             VectorLoader loader = new VectorLoader(root);
 
@@ -2228,7 +2225,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     long numRows;
     Schema schema;
     boolean isArrow = false;
-    org.apache.arrow.vector.types.pojo.Schema arrowSchemaPojo = null;
+    Object arrowSchemaPojo = null;
 
     if (results.getJobComplete()) {
       if (results.getSchema() != null) {
