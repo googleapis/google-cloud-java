@@ -1218,7 +1218,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               this.gcpTelemetryCredentials,
               effectiveProjectId,
               this.credentials,
-              this.httpTransportOptions,
               this.headerProvider);
     }
 

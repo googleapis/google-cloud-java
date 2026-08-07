@@ -20,7 +20,6 @@ import com.google.api.gax.rpc.HeaderProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.common.hash.Hashing;
@@ -191,7 +190,6 @@ class BigQueryJdbcOpenTelemetry {
       String effectiveCredentials,
       String effectiveProjectId,
       Credentials fallbackCredentials,
-      HttpTransportOptions httpTransportOptions,
       HeaderProvider headerProvider) {
 
     if (!enableGcpLogExporter || customOpenTelemetry != null) {
@@ -210,9 +208,6 @@ class BigQueryJdbcOpenTelemetry {
           LoggingOptions.newBuilder().setProjectId(effectiveProjectId);
       if (credentials != null) {
         loggingOptionsBuilder.setCredentials(credentials);
-      }
-      if (httpTransportOptions != null) {
-        loggingOptionsBuilder.setTransportOptions(httpTransportOptions);
       }
       if (headerProvider != null) {
         loggingOptionsBuilder.setHeaderProvider(headerProvider);
