@@ -68,8 +68,7 @@ final class ArrowDeserializer {
    * @throws IOException if deserialization of the Arrow record batch fails
    */
   static List<FieldValueList> deserializeRecordBatch(
-      byte[] recordBatchBytes, Schema schema, Object arrowSchema)
-      throws IOException {
+      byte[] recordBatchBytes, Schema schema, Object arrowSchema) throws IOException {
     try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
       List<FieldVector> vectors = ArrowPojoUtils.createVectors(arrowSchema, allocator);
       try {

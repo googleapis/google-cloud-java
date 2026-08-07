@@ -21,55 +21,56 @@ import java.util.List;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.types.pojo.ArrowType;
-import org.apache.arrow.vector.types.pojo.Field;
-import org.apache.arrow.vector.types.pojo.Schema;
 
 /** Internal helper for Apache Arrow Schema/Field conversions. */
 final class ArrowPojoUtils {
 
   private ArrowPojoUtils() {}
 
-  static com.google.cloud.bigquery.Schema arrowSchemaToBigQuerySchema(Object arrowSchemaObj) {
-    Schema arrowSchema = (Schema) arrowSchemaObj;
-    List<com.google.cloud.bigquery.Field> fields = new ArrayList<>();
-    for (Field arrowField : arrowSchema.getFields()) {
+  static Schema arrowSchemaToBigQuerySchema(Object arrowSchemaObj) {
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
+        (org.apache.arrow.vector.types.pojo.Schema) arrowSchemaObj;
+    List<Field> fields = new ArrayList<>();
+    for (org.apache.arrow.vector.types.pojo.Field arrowField : arrowSchema.getFields()) {
       fields.add(arrowFieldToBigQueryField(arrowField));
     }
-    return com.google.cloud.bigquery.Schema.of(fields);
+    return Schema.of(fields);
   }
 
-  static com.google.cloud.bigquery.Field arrowFieldToBigQueryField(Field arrowField) {
+  static Field arrowFieldToBigQueryField(Object arrowFieldObj) {
+    org.apache.arrow.vector.types.pojo.Field arrowField =
+        (org.apache.arrow.vector.types.pojo.Field) arrowFieldObj;
     String name = arrowField.getName();
     ArrowType type = arrowField.getType();
-    com.google.cloud.bigquery.Field.Builder builder;
+    Field.Builder builder;
 
     if (type instanceof ArrowType.List) {
       if (arrowField.getChildren().isEmpty()) {
         throw new IllegalArgumentException(
             "Arrow List field must have at least one child field: " + name);
       }
-      Field innerField = arrowField.getChildren().get(0);
+      org.apache.arrow.vector.types.pojo.Field innerField = arrowField.getChildren().get(0);
       LegacySQLTypeName innerType = arrowTypeToLegacySQLTypeName(innerField.getType());
-      builder = com.google.cloud.bigquery.Field.newBuilder(name, innerType);
-      builder.setMode(com.google.cloud.bigquery.Field.Mode.REPEATED);
+      builder = Field.newBuilder(name, innerType);
+      builder.setMode(Field.Mode.REPEATED);
       if (!innerField.getChildren().isEmpty()) {
-        List<com.google.cloud.bigquery.Field> subFields = new ArrayList<>();
-        for (Field childField : innerField.getChildren()) {
+        List<Field> subFields = new ArrayList<>();
+        for (org.apache.arrow.vector.types.pojo.Field childField : innerField.getChildren()) {
           subFields.add(arrowFieldToBigQueryField(childField));
         }
         builder.setType(LegacySQLTypeName.RECORD, FieldList.of(subFields));
       }
     } else {
       LegacySQLTypeName bqType = arrowTypeToLegacySQLTypeName(type);
-      builder = com.google.cloud.bigquery.Field.newBuilder(name, bqType);
+      builder = Field.newBuilder(name, bqType);
       if (arrowField.isNullable()) {
-        builder.setMode(com.google.cloud.bigquery.Field.Mode.NULLABLE);
+        builder.setMode(Field.Mode.NULLABLE);
       } else {
-        builder.setMode(com.google.cloud.bigquery.Field.Mode.REQUIRED);
+        builder.setMode(Field.Mode.REQUIRED);
       }
       if (!arrowField.getChildren().isEmpty()) {
-        List<com.google.cloud.bigquery.Field> subFields = new ArrayList<>();
-        for (Field childField : arrowField.getChildren()) {
+        List<Field> subFields = new ArrayList<>();
+        for (org.apache.arrow.vector.types.pojo.Field childField : arrowField.getChildren()) {
           subFields.add(arrowFieldToBigQueryField(childField));
         }
         builder.setType(LegacySQLTypeName.RECORD, FieldList.of(subFields));
@@ -79,9 +80,10 @@ final class ArrowPojoUtils {
   }
 
   static List<FieldVector> createVectors(Object arrowSchemaObj, BufferAllocator allocator) {
-    Schema arrowSchema = (Schema) arrowSchemaObj;
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
+        (org.apache.arrow.vector.types.pojo.Schema) arrowSchemaObj;
     List<FieldVector> vectors = new ArrayList<>();
-    for (Field field : arrowSchema.getFields()) {
+    for (org.apache.arrow.vector.types.pojo.Field field : arrowSchema.getFields()) {
       vectors.add(field.createVector(allocator));
     }
     return vectors;

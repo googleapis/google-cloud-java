@@ -45,6 +45,7 @@ import com.google.cloud.bigquery.BigQueryRetryHelper.BigQueryRetryHelperExceptio
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
+import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
@@ -356,8 +357,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             while (rowBatch.size() < pageSize && streamIterator.hasNext()) {
               ReadRowsResponse response = streamIterator.next();
               if (response.hasArrowRecordBatch()) {
-                com.google.cloud.bigquery.storage.v1.ArrowRecordBatch batch =
-                    response.getArrowRecordBatch();
+                ArrowRecordBatch batch = response.getArrowRecordBatch();
                 ArrowRecordBatch deserializedBatch =
                     MessageSerializer.deserializeRecordBatch(
                         new ReadChannel(
