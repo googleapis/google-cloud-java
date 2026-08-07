@@ -250,8 +250,6 @@ public class ITOpenTelemetryTest extends ITBase {
   }
 
   private String verifyAndFetchLogs(String connectionUuid) throws Exception {
-    System.out.println(
-        "[DEBUG-OTEL-TEST] verifyAndFetchLogs called for connectionUuid: " + connectionUuid);
     GoogleCredentials credentials = getCredentials();
 
     try (Logging logging =
@@ -261,15 +259,9 @@ public class ITOpenTelemetryTest extends ITBase {
             .build()
             .getService()) {
       String filter = "labels.\"jdbc.connection_id\"=\"" + connectionUuid + "\"";
-      System.out.println("[DEBUG-OTEL-TEST] Querying Cloud Logging with filter: " + filter);
 
       List<LogEntry> entries = fetchLogsWithRetry(logging, filter);
-      System.out.println(
-          "[DEBUG-OTEL-TEST] Retrieved " + entries.size() + " log entries from Cloud Logging.");
-
-      assertFalse(
-          entries.isEmpty(),
-          "Telemetry logs should be exported to GCP for connectionUuid: " + connectionUuid);
+      assertFalse(entries.isEmpty(), "Telemetry logs should be exported to GCP");
 
       String traceId = null;
       String hexSpanId = null;
@@ -281,8 +273,6 @@ public class ITOpenTelemetryTest extends ITBase {
         }
       }
 
-      System.out.println(
-          "[DEBUG-OTEL-TEST] Extracted traceId: " + traceId + ", hexSpanId: " + hexSpanId);
       assertNotNull(traceId, "Log entry must contain TraceId");
       assertNotNull(hexSpanId, "Log entry must contain SpanId");
 
@@ -292,14 +282,6 @@ public class ITOpenTelemetryTest extends ITBase {
       }
 
       return traceId;
-    } catch (Exception e) {
-      System.err.println(
-          "[DEBUG-OTEL-TEST] Error in verifyAndFetchLogs for connectionUuid "
-              + connectionUuid
-              + ": "
-              + e.getMessage());
-      e.printStackTrace();
-      throw e;
     }
   }
 
@@ -308,8 +290,6 @@ public class ITOpenTelemetryTest extends ITBase {
     if (traceId.contains("/traces/")) {
       hexTraceId = traceId.substring(traceId.lastIndexOf("/traces/") + 8);
     }
-    System.out.println(
-        "[DEBUG-OTEL-TEST] verifyAndFetchTrace called for hexTraceId: " + hexTraceId);
 
     GoogleCredentials credentials = getCredentials();
 
@@ -320,34 +300,8 @@ public class ITOpenTelemetryTest extends ITBase {
 
     try (TraceServiceClient traceClient = TraceServiceClient.create(settings)) {
       Trace trace = fetchTraceWithRetry(traceClient, PROJECT_ID, hexTraceId);
-      if (trace != null) {
-        System.out.println(
-            "[DEBUG-OTEL-TEST] Successfully retrieved trace. Spans count: "
-                + trace.getSpansCount());
-        for (TraceSpan span : trace.getSpansList()) {
-          System.out.println(
-              "[DEBUG-OTEL-TEST]   -> Span Name: "
-                  + span.getName()
-                  + ", SpanId: "
-                  + span.getSpanId()
-                  + ", ParentSpanId: "
-                  + span.getParentSpanId());
-        }
-      } else {
-        System.err.println(
-            "[DEBUG-OTEL-TEST] Trace NOT found in Cloud Trace API after retries for hexTraceId: "
-                + hexTraceId);
-      }
       assertNotNull(trace, "Trace must be found in Cloud Trace API: " + hexTraceId);
       return trace;
-    } catch (Exception e) {
-      System.err.println(
-          "[DEBUG-OTEL-TEST] Error in verifyAndFetchTrace for hexTraceId "
-              + hexTraceId
-              + ": "
-              + e.getMessage());
-      e.printStackTrace();
-      throw e;
     }
   }
 
@@ -356,40 +310,27 @@ public class ITOpenTelemetryTest extends ITBase {
     int maxAttempts = 10;
     long delayMs = 10000;
 
-    System.out.println("[DEBUG-OTEL-TEST] Waiting initial 10s for GCP telemetry ingestion...");
+    // 10 second wait for GCP to ingest data
     Thread.sleep(10000);
 
     while (attempts < maxAttempts) {
       attempts++;
-      System.out.println("[DEBUG-OTEL-TEST] Poll attempt " + attempts + "/" + maxAttempts + "...");
       try {
         T result = task.call();
         if (result != null) {
-          System.out.println("[DEBUG-OTEL-TEST] Poll attempt " + attempts + " SUCCEEDED!");
           return result;
         }
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
         throw new RuntimeException("Test execution interrupted", e);
       } catch (Exception e) {
-        System.out.println(
-            "[DEBUG-OTEL-TEST] Poll attempt "
-                + attempts
-                + " encountered exception: "
-                + e.getMessage());
+        // Ignore exceptions during remote lookup and retry
         e.printStackTrace();
       }
       if (attempts < maxAttempts) {
-        System.out.println(
-            "[DEBUG-OTEL-TEST] Poll attempt "
-                + attempts
-                + " returned no data, sleeping "
-                + (delayMs / 1000)
-                + "s...");
         Thread.sleep(delayMs);
       }
     }
-    System.err.println("[DEBUG-OTEL-TEST] Poll timed out after " + maxAttempts + " attempts.");
     return null;
   }
 

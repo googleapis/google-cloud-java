@@ -93,11 +93,25 @@ class BigQueryJdbcOpenTelemetry {
     private final String projectId;
     private final String credentialsHashOrPath;
     private final boolean enableTrace;
+    private final String proxyHost;
+    private final String proxyPort;
 
-    SdkCacheKey(String projectId, String credentialsHashOrPath, boolean enableTrace) {
+    SdkCacheKey(
+        String projectId,
+        String credentialsHashOrPath,
+        boolean enableTrace,
+        Map<String, String> proxyProperties) {
       this.projectId = projectId;
       this.credentialsHashOrPath = credentialsHashOrPath;
       this.enableTrace = enableTrace;
+      this.proxyHost =
+          proxyProperties != null
+              ? proxyProperties.get(BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME)
+              : null;
+      this.proxyPort =
+          proxyProperties != null
+              ? proxyProperties.get(BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME)
+              : null;
     }
 
     @Override
@@ -107,12 +121,14 @@ class BigQueryJdbcOpenTelemetry {
       SdkCacheKey that = (SdkCacheKey) o;
       return enableTrace == that.enableTrace
           && Objects.equals(projectId, that.projectId)
-          && Objects.equals(credentialsHashOrPath, that.credentialsHashOrPath);
+          && Objects.equals(credentialsHashOrPath, that.credentialsHashOrPath)
+          && Objects.equals(proxyHost, that.proxyHost)
+          && Objects.equals(proxyPort, that.proxyPort);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(projectId, credentialsHashOrPath, enableTrace);
+      return Objects.hash(projectId, credentialsHashOrPath, enableTrace, proxyHost, proxyPort);
     }
   }
 
@@ -348,7 +364,8 @@ class BigQueryJdbcOpenTelemetry {
         new SdkCacheKey(
             gcpTelemetryProjectId,
             getCredentialsIdentifier(gcpTelemetryCredentials),
-            enableGcpTraceExporter);
+            enableGcpTraceExporter,
+            proxyProperties);
     CachedSdk fastCheck = sdkCache.get(key);
     if (fastCheck != null) {
       CachedSdk result =
