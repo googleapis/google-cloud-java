@@ -620,7 +620,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
           .when(
               () ->
                   BigQueryJdbcOpenTelemetry.createLoggingClient(
-                      anyBoolean(), any(), any(), any(), any()))
+                      anyBoolean(), any(), any(), any(), any(), any(), any()))
           .thenReturn(mockLogging);
 
       // Stub getOpenTelemetry to return the expected mock based on inputs
@@ -632,6 +632,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
                       eq(enableTrace),
                       eq(enableLog),
                       hasCustom ? eq(mockCustomOtel) : isNull(),
+                      any(),
                       any(),
                       any(),
                       any()))
