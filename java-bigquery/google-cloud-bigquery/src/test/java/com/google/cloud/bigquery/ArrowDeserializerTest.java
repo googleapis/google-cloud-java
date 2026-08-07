@@ -17,7 +17,6 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -126,8 +125,7 @@ public class ArrowDeserializerTest {
       tsVector.setValueCount(2);
 
       List<FieldVector> vectors =
-          ImmutableList.of(
-              intVector, nameVector, scoreVector, activeVector, bytesVector, tsVector);
+          ImmutableList.of(intVector, nameVector, scoreVector, activeVector, bytesVector, tsVector);
 
       try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
         Schema arrowSchema = root.getSchema();
