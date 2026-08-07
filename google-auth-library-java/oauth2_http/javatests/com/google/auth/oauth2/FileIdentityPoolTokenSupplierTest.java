@@ -270,4 +270,36 @@ class FileIdentityPoolTokenSupplierTest {
             "Invalid credential location. The file at %s does not exist.", credentialFile),
         exception.getMessage());
   }
+
+  @Test
+  void parseToken_textFormat_succeeds() throws IOException {
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", "dummy.txt");
+    IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
+
+    ByteArrayInputStream stream =
+        new ByteArrayInputStream("plain_text_token".getBytes(StandardCharsets.UTF_8));
+    String parsed = FileIdentityPoolTokenSupplier.parseToken(stream, source, null);
+    assertEquals("plain_text_token", parsed);
+  }
+
+  @Test
+  void parseToken_jsonFormat_missingFieldName_throws() {
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", "dummy.json");
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_token");
+    credentialSourceMap.put("format", formatMap);
+    IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
+
+    ByteArrayInputStream stream =
+        new ByteArrayInputStream("{\"sub_token\": \"my_token\"}".getBytes(StandardCharsets.UTF_8));
+    IOException exception =
+        assertThrows(
+            IOException.class,
+            () -> FileIdentityPoolTokenSupplier.parseToken(stream, source, null));
+    assertEquals(
+        "Target field name must be specified for JSON credentials.", exception.getMessage());
+  }
 }

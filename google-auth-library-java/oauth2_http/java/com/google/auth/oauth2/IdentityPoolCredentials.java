@@ -210,6 +210,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return this.actorTokenType;
   }
 
+  @VisibleForTesting
+  HttpTransportFactory getTransportFactory() {
+    return this.transportFactory;
+  }
+
   /** Clones the IdentityPoolCredentials with the specified scopes. */
   @Override
   public IdentityPoolCredentials createScoped(Collection<String> newScopes) {
