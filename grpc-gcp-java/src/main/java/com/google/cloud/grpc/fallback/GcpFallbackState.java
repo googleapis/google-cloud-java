@@ -153,7 +153,7 @@ public class GcpFallbackState {
 
     if (!inFallbackMode.get() && options.isEnableFallback()) {
       if (failures >= options.getMinFailedCalls() && errRate >= options.getErrorRateThreshold()) {
-        inFallbackMode.set(true); // Coordinated instant pool-wide switch
+        inFallbackMode.set(true);
         if (openTelemetry != null && openTelemetry.getModule() != null) {
           openTelemetry
               .getModule()

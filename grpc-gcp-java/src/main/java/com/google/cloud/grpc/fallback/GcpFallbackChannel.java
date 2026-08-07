@@ -188,7 +188,11 @@ public class GcpFallbackChannel extends ManagedChannel {
         localFirstPrimaryProbeSuccessNanos.set(0);
       }
     }
-    return (localInFallbackMode.get() && fallbackChannel != null) || primaryChannel == null;
+    if (options.isEnablePerChannelRecovery()) {
+      return (localInFallbackMode.get() && fallbackChannel != null) || primaryChannel == null;
+    }
+    return (fallbackState.getInFallbackMode().get() && fallbackChannel != null)
+        || primaryChannel == null;
   }
 
   @VisibleForTesting
@@ -257,7 +261,11 @@ public class GcpFallbackChannel extends ManagedChannel {
         localFirstPrimaryProbeSuccessNanos.set(0);
       }
     }
-    if (!localInFallbackMode.get() && primaryChannel != null) {
+    boolean inFallback =
+        options.isEnablePerChannelRecovery()
+            ? localInFallbackMode.get()
+            : fallbackState.getInFallbackMode().get();
+    if (!inFallback && primaryChannel != null) {
       return;
     }
     String result = "";
@@ -279,7 +287,8 @@ public class GcpFallbackChannel extends ManagedChannel {
         durationSatisfied = elapsedNanos >= options.getMinPrimaryProbeSuccessDuration().toNanos();
       }
 
-      if (primaryProbeSuccessCount >= options.getMinPrimaryProbeSuccessCount()
+      if (options.isEnableRecovery()
+          && primaryProbeSuccessCount >= options.getMinPrimaryProbeSuccessCount()
           && durationSatisfied) {
         fallbackState.getInFallbackMode().set(false);
         localInFallbackMode.set(false);

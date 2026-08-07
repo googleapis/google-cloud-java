@@ -40,6 +40,8 @@ public class GcpFallbackChannelOptions {
   private final Duration fallbackProbingInterval;
   private final int minPrimaryProbeSuccessCount;
   private final Duration minPrimaryProbeSuccessDuration;
+  private final boolean enableRecovery;
+  private final boolean enablePerChannelRecovery;
   private final String primaryChannelName;
   private final String fallbackChannelName;
   private final GcpFallbackOpenTelemetry openTelemetry;
@@ -58,6 +60,8 @@ public class GcpFallbackChannelOptions {
     this.fallbackProbingInterval = builder.fallbackProbingInterval;
     this.minPrimaryProbeSuccessCount = builder.minPrimaryProbeSuccessCount;
     this.minPrimaryProbeSuccessDuration = builder.minPrimaryProbeSuccessDuration;
+    this.enableRecovery = builder.enableRecovery;
+    this.enablePerChannelRecovery = builder.enablePerChannelRecovery;
     this.primaryChannelName = builder.primaryChannelName;
     this.fallbackChannelName = builder.fallbackChannelName;
     this.openTelemetry = builder.openTelemetry;
@@ -113,6 +117,14 @@ public class GcpFallbackChannelOptions {
     return minPrimaryProbeSuccessDuration;
   }
 
+  public boolean isEnableRecovery() {
+    return enableRecovery;
+  }
+
+  public boolean isEnablePerChannelRecovery() {
+    return enablePerChannelRecovery;
+  }
+
   public String getPrimaryChannelName() {
     return primaryChannelName;
   }
@@ -149,6 +161,8 @@ public class GcpFallbackChannelOptions {
 
     private int minPrimaryProbeSuccessCount = 10;
     private Duration minPrimaryProbeSuccessDuration = Duration.ZERO;
+    private boolean enableRecovery = false;
+    private boolean enablePerChannelRecovery = false;
 
     private String primaryChannelName = "primary";
     private String fallbackChannelName = "fallback";
@@ -221,6 +235,16 @@ public class GcpFallbackChannelOptions {
 
     public Builder setMinPrimaryProbeSuccessDuration(Duration minPrimaryProbeSuccessDuration) {
       this.minPrimaryProbeSuccessDuration = minPrimaryProbeSuccessDuration;
+      return this;
+    }
+
+    public Builder setEnableRecovery(boolean enableRecovery) {
+      this.enableRecovery = enableRecovery;
+      return this;
+    }
+
+    public Builder setEnablePerChannelRecovery(boolean enablePerChannelRecovery) {
+      this.enablePerChannelRecovery = enablePerChannelRecovery;
       return this;
     }
 

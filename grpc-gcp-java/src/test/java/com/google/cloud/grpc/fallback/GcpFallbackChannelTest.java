@@ -1485,6 +1485,7 @@ public class GcpFallbackChannelTest {
     GcpFallbackChannelOptions options =
         getDefaultOptionsBuilder()
             .setSharedState(sharedState)
+            .setEnableRecovery(true)
             .setPrimaryProbingFunction(channel -> "OK")
             .setMinPrimaryProbeSuccessCount(2)
             .setMinPrimaryProbeSuccessDuration(Duration.ofMillis(50))
@@ -1537,6 +1538,7 @@ public class GcpFallbackChannelTest {
     GcpFallbackChannelOptions options =
         getDefaultOptionsBuilder()
             .setSharedState(sharedState)
+            .setEnableRecovery(true)
             .setPrimaryProbingFunction(channel -> probeOk.get() ? "OK" : "UNAVAILABLE")
             .setMinPrimaryProbeSuccessCount(5)
             .setMinPrimaryProbeSuccessDuration(Duration.ofMinutes(10))
@@ -1622,6 +1624,8 @@ public class GcpFallbackChannelTest {
     GcpFallbackChannelOptions options1 =
         getDefaultOptionsBuilder()
             .setSharedState(sharedState)
+            .setEnableRecovery(true)
+            .setEnablePerChannelRecovery(true)
             .setPrimaryProbingFunction(channel -> "OK")
             .setMinPrimaryProbeSuccessCount(1)
             .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
@@ -1630,6 +1634,8 @@ public class GcpFallbackChannelTest {
     GcpFallbackChannelOptions options2 =
         getDefaultOptionsBuilder()
             .setSharedState(sharedState)
+            .setEnableRecovery(true)
+            .setEnablePerChannelRecovery(true)
             .setPrimaryProbingFunction(channel -> "UNAVAILABLE")
             .setMinPrimaryProbeSuccessCount(1)
             .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
@@ -1665,6 +1671,111 @@ public class GcpFallbackChannelTest {
     } finally {
       channel1.shutdownNow();
       channel2.shutdownNow();
+      sharedState.shutdown();
+    }
+  }
+
+  @Test
+  public void testPoolLevelRecovery_whenPerChannelRecoveryDisabled_allChannelsRecoverTogether() {
+    GcpFallbackState sharedState = new GcpFallbackState();
+    sharedState.getInFallbackMode().set(true); // Pool-wide fallback active
+
+    GcpFallbackChannelOptions options1 =
+        getDefaultOptionsBuilder()
+            .setSharedState(sharedState)
+            .setEnableRecovery(true)
+            .setEnablePerChannelRecovery(false) // Pool-level recovery
+            .setPrimaryProbingFunction(channel -> "OK")
+            .setMinPrimaryProbeSuccessCount(1)
+            .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
+            .build();
+
+    GcpFallbackChannelOptions options2 =
+        getDefaultOptionsBuilder()
+            .setSharedState(sharedState)
+            .setEnableRecovery(true)
+            .setEnablePerChannelRecovery(false) // Pool-level recovery
+            .setPrimaryProbingFunction(channel -> "UNAVAILABLE")
+            .setMinPrimaryProbeSuccessCount(1)
+            .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
+            .build();
+
+    ScheduledExecutorService mockExec1 = mock(ScheduledExecutorService.class);
+    ScheduledExecutorService mockExec2 = mock(ScheduledExecutorService.class);
+    ArgumentCaptor<Runnable> taskCaptor1 = ArgumentCaptor.forClass(Runnable.class);
+
+    GcpFallbackChannel channel1 =
+        new GcpFallbackChannel(options1, mockPrimaryBuilder, mockFallbackBuilder, mockExec1);
+    GcpFallbackChannel channel2 =
+        new GcpFallbackChannel(options2, mockPrimaryBuilder, mockFallbackBuilder, mockExec2);
+
+    try {
+      verify(mockExec1, atLeastOnce())
+          .scheduleAtFixedRate(
+              taskCaptor1.capture(),
+              eq(options1.getPrimaryProbingInterval().toMillis()),
+              eq(options1.getPrimaryProbingInterval().toMillis()),
+              eq(MILLISECONDS));
+      Runnable probeTask1 = taskCaptor1.getAllValues().get(0);
+
+      assertTrue(channel1.isInFallbackMode());
+      assertTrue(channel2.isInFallbackMode());
+
+      // Run probe on channel 1 -> channel 1 recovers to DirectPath and unlatches global fallback
+      probeTask1.run();
+
+      // With enablePerChannelRecovery=false, both channel 1 and channel 2 recover to DirectPath
+      // together
+      assertFalse("Channel 1 should recover to DirectPath", channel1.isInFallbackMode());
+      assertFalse(
+          "Channel 2 should also recover to DirectPath with pool", channel2.isInFallbackMode());
+      assertFalse("Global fallback should be unlatched", sharedState.getInFallbackMode().get());
+    } finally {
+      channel1.shutdownNow();
+      channel2.shutdownNow();
+      sharedState.shutdown();
+    }
+  }
+
+  @Test
+  public void testRecoveryDisabled_probingSucceedsButChannelRemainsInFallback() {
+    GcpFallbackState sharedState = new GcpFallbackState();
+    sharedState.getInFallbackMode().set(true); // Pool-wide fallback active
+
+    GcpFallbackChannelOptions options =
+        getDefaultOptionsBuilder()
+            .setSharedState(sharedState)
+            .setEnableRecovery(false) // Recovery disabled by default
+            .setPrimaryProbingFunction(channel -> "OK")
+            .setMinPrimaryProbeSuccessCount(1)
+            .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
+            .build();
+
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
+
+    GcpFallbackChannel channel =
+        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder, mockExec);
+
+    try {
+      verify(mockExec)
+          .scheduleAtFixedRate(
+              taskCaptor.capture(),
+              eq(options.getPrimaryProbingInterval().toMillis()),
+              eq(options.getPrimaryProbingInterval().toMillis()),
+              eq(MILLISECONDS));
+      Runnable probeTask = taskCaptor.getValue();
+
+      assertTrue(channel.isInFallbackMode());
+
+      // Run probe -> probe succeeds, but enableRecovery is false
+      probeTask.run();
+
+      // Channel must remain in fallback mode
+      assertTrue(channel.isInFallbackMode());
+      assertTrue(sharedState.getInFallbackMode().get());
+    } finally {
+      channel.shutdownNow();
       sharedState.shutdown();
     }
   }
