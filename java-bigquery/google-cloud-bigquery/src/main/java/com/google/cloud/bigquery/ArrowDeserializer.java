@@ -36,10 +36,21 @@ import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.types.pojo.Field;
 import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 
+/**
+ * Internal helper utility for converting Apache Arrow schemas and record batches into BigQuery
+ * Veneer objects.
+ */
 final class ArrowDeserializer {
 
   private ArrowDeserializer() {}
 
+  /**
+   * Converts an Apache Arrow {@link org.apache.arrow.vector.types.pojo.Schema} to a BigQuery Veneer
+   * {@link Schema}.
+   *
+   * @param arrowSchema the Apache Arrow schema to convert
+   * @return the corresponding BigQuery Veneer Schema
+   */
   static Schema arrowSchemaToBigQuerySchema(org.apache.arrow.vector.types.pojo.Schema arrowSchema) {
     List<com.google.cloud.bigquery.Field> fields = new ArrayList<>();
     for (Field arrowField : arrowSchema.getFields()) {
@@ -48,6 +59,13 @@ final class ArrowDeserializer {
     return Schema.of(fields);
   }
 
+  /**
+   * Recursively converts an Apache Arrow {@link Field} to a BigQuery Veneer {@link
+   * com.google.cloud.bigquery.Field}.
+   *
+   * @param arrowField the Arrow field to convert
+   * @return the corresponding BigQuery Veneer Field
+   */
   private static com.google.cloud.bigquery.Field arrowFieldToBigQueryField(Field arrowField) {
     String name = arrowField.getName();
     ArrowType type = arrowField.getType();
@@ -88,6 +106,13 @@ final class ArrowDeserializer {
     return builder.build();
   }
 
+  /**
+   * Maps an Apache Arrow data type {@link ArrowType} to a BigQuery {@link LegacySQLTypeName}.
+   *
+   * @param type the Arrow data type to map
+   * @return the corresponding BigQuery LegacySQLTypeName
+   * @throws IllegalArgumentException if the Arrow type is unsupported
+   */
   private static LegacySQLTypeName arrowTypeToLegacySQLTypeName(ArrowType type) {
     switch (type.getTypeID()) {
       case Int:
@@ -115,6 +140,19 @@ final class ArrowDeserializer {
     }
   }
 
+  /**
+   * Deserializes a raw binary Arrow record batch payload into a list of BigQuery {@link
+   * FieldValueList} row objects.
+   *
+   * <p>Allocates off-heap memory within a local {@link RootAllocator} scope and closes all Arrow
+   * vector resources before returning, guaranteeing that native memory is released.
+   *
+   * @param recordBatchBytes the raw binary Arrow record batch payload
+   * @param schema the target BigQuery Schema
+   * @param arrowSchema the Arrow schema describing the record batch structure
+   * @return an immutable list of FieldValueList row objects
+   * @throws IOException if deserialization of the Arrow record batch fails
+   */
   static List<FieldValueList> deserializeRecordBatch(
       byte[] recordBatchBytes, Schema schema, org.apache.arrow.vector.types.pojo.Schema arrowSchema)
       throws IOException {
@@ -152,6 +190,16 @@ final class ArrowDeserializer {
     }
   }
 
+  /**
+   * Extracts a single row at the specified index from a {@link VectorSchemaRoot} into a {@link
+   * FieldValueList}.
+   *
+   * @param root the VectorSchemaRoot containing column vectors
+   * @param rowIndex the 0-based row index to extract
+   * @param schema the BigQuery schema corresponding to the vectors
+   * @return the extracted FieldValueList row object
+   * @throws IllegalArgumentException if vector count does not match schema field count
+   */
   static FieldValueList arrowRootToFieldValueList(
       VectorSchemaRoot root, int rowIndex, Schema schema) {
     if (root.getFieldVectors().size() != schema.getFields().size()) {
@@ -169,6 +217,17 @@ final class ArrowDeserializer {
     return FieldValueList.of(fieldValues, schema.getFields());
   }
 
+  /**
+   * Converts a single cell value within a {@link FieldVector} to a BigQuery {@link FieldValue}.
+   *
+   * <p>Handles null values, repeated list vectors, nested struct vectors, and primitive type
+   * conversions.
+   *
+   * @param vector the Arrow column vector
+   * @param rowIndex the 0-based row index
+   * @param bqField the corresponding BigQuery Field definition
+   * @return the converted FieldValue object
+   */
   private static FieldValue arrowVectorToFieldValue(
       FieldVector vector, int rowIndex, com.google.cloud.bigquery.Field bqField) {
     if (vector.isNull(rowIndex)) {
