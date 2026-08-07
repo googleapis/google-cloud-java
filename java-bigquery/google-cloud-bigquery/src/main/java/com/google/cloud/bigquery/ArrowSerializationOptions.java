@@ -73,7 +73,7 @@ public final class ArrowSerializationOptions implements Serializable {
     return Objects.hash(bufferCompression, picosTimestampPrecision);
   }
 
-  Object toPb() {
+  com.google.api.services.bigquery.model.ArrowSerializationOptions toPb() {
     return ArrowSerializationOptionsConverter.toPb(this);
   }
 
