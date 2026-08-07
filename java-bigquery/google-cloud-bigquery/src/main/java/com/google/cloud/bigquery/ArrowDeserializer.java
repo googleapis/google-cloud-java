@@ -31,6 +31,7 @@ import org.apache.arrow.vector.VectorSchemaRoot;
 import org.apache.arrow.vector.complex.ListVector;
 import org.apache.arrow.vector.complex.StructVector;
 import org.apache.arrow.vector.ipc.ReadChannel;
+import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
@@ -179,7 +180,7 @@ final class ArrowDeserializer {
       }
       try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
         VectorLoader loader = new VectorLoader(root);
-        try (org.apache.arrow.vector.ipc.message.ArrowRecordBatch deserializedBatch =
+        try (ArrowRecordBatch deserializedBatch =
             MessageSerializer.deserializeRecordBatch(
                 new ReadChannel(new ByteArrayReadableSeekableByteChannel(recordBatchBytes)),
                 allocator)) {
