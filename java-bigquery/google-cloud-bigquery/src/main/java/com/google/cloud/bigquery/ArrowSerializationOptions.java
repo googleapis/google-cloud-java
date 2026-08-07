@@ -73,27 +73,13 @@ public final class ArrowSerializationOptions implements Serializable {
     return Objects.hash(bufferCompression, picosTimestampPrecision);
   }
 
-  com.google.api.services.bigquery.model.ArrowSerializationOptions toPb() {
-    com.google.api.services.bigquery.model.ArrowSerializationOptions optionsPb =
-        new com.google.api.services.bigquery.model.ArrowSerializationOptions();
-    if (bufferCompression != null) {
-      optionsPb.setBufferCompression(bufferCompression);
-    }
-    if (picosTimestampPrecision != null) {
-      optionsPb.setPicosTimestampPrecision(picosTimestampPrecision);
-    }
-    return optionsPb;
+  Object toPb() {
+    return ArrowSerializationOptionsConverter.toPb(this);
   }
 
   static ArrowSerializationOptions fromPb(
       com.google.api.services.bigquery.model.ArrowSerializationOptions optionsPb) {
-    if (optionsPb == null) {
-      return null;
-    }
-    return newBuilder()
-        .setBufferCompression(optionsPb.getBufferCompression())
-        .setPicosTimestampPrecision(optionsPb.getPicosTimestampPrecision())
-        .build();
+    return ArrowSerializationOptionsConverter.fromPb(optionsPb);
   }
 
   public static final class Builder {
