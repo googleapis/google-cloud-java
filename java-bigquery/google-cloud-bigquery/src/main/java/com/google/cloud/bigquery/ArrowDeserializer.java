@@ -33,7 +33,6 @@ import org.apache.arrow.vector.complex.StructVector;
 import org.apache.arrow.vector.ipc.ReadChannel;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.types.pojo.ArrowType;
-import org.apache.arrow.vector.types.pojo.Field;
 import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 
 /**
@@ -52,58 +51,64 @@ final class ArrowDeserializer {
    * @return the corresponding BigQuery Veneer Schema
    */
   static Schema arrowSchemaToBigQuerySchema(org.apache.arrow.vector.types.pojo.Schema arrowSchema) {
-    List<com.google.cloud.bigquery.Field> fields = new ArrayList<>();
-    for (Field arrowField : arrowSchema.getFields()) {
+    List<Field> fields = new ArrayList<>();
+    for (org.apache.arrow.vector.types.pojo.Field arrowField : arrowSchema.getFields()) {
       fields.add(arrowFieldToBigQueryField(arrowField));
     }
     return Schema.of(fields);
   }
 
   /**
-   * Recursively converts an Apache Arrow {@link Field} to a BigQuery Veneer {@link
-   * com.google.cloud.bigquery.Field}.
+   * Recursively converts an Apache Arrow {@link org.apache.arrow.vector.types.pojo.Field} to a
+   * BigQuery Veneer {@link Field}.
    *
    * @param arrowField the Arrow field to convert
    * @return the corresponding BigQuery Veneer Field
    */
-  private static com.google.cloud.bigquery.Field arrowFieldToBigQueryField(Field arrowField) {
+  private static Field arrowFieldToBigQueryField(
+      org.apache.arrow.vector.types.pojo.Field arrowField) {
     String name = arrowField.getName();
     ArrowType type = arrowField.getType();
-    com.google.cloud.bigquery.Field.Builder builder;
+    Field.Builder builder;
 
     if (type instanceof ArrowType.List) {
       if (arrowField.getChildren().isEmpty()) {
         throw new IllegalArgumentException(
             "Arrow List field must have at least one child field: " + name);
       }
-      Field innerField = arrowField.getChildren().get(0);
+      org.apache.arrow.vector.types.pojo.Field innerField = arrowField.getChildren().get(0);
       LegacySQLTypeName innerType = arrowTypeToLegacySQLTypeName(innerField.getType());
-      builder = com.google.cloud.bigquery.Field.newBuilder(name, innerType);
-      builder.setMode(com.google.cloud.bigquery.Field.Mode.REPEATED);
+      builder = Field.newBuilder(name, innerType);
+      builder.setMode(Field.Mode.REPEATED);
       if (!innerField.getChildren().isEmpty()) {
-        List<com.google.cloud.bigquery.Field> subFields = new ArrayList<>();
-        for (Field childField : innerField.getChildren()) {
+        List<Field> subFields = new ArrayList<>();
+        for (org.apache.arrow.vector.types.pojo.Field childField : innerField.getChildren()) {
           subFields.add(arrowFieldToBigQueryField(childField));
         }
         builder.setType(LegacySQLTypeName.RECORD, FieldList.of(subFields));
       }
     } else {
       LegacySQLTypeName bqType = arrowTypeToLegacySQLTypeName(type);
-      builder = com.google.cloud.bigquery.Field.newBuilder(name, bqType);
+      builder = Field.newBuilder(name, bqType);
       if (arrowField.isNullable()) {
-        builder.setMode(com.google.cloud.bigquery.Field.Mode.NULLABLE);
+        builder.setMode(Field.Mode.NULLABLE);
       } else {
-        builder.setMode(com.google.cloud.bigquery.Field.Mode.REQUIRED);
+        builder.setMode(Field.Mode.REQUIRED);
       }
       if (!arrowField.getChildren().isEmpty()) {
-        List<com.google.cloud.bigquery.Field> subFields = new ArrayList<>();
-        for (Field childField : arrowField.getChildren()) {
+        List<Field> subFields = new ArrayList<>();
+        for (org.apache.arrow.vector.types.pojo.Field childField : innerFieldChildren(arrowField)) {
           subFields.add(arrowFieldToBigQueryField(childField));
         }
         builder.setType(LegacySQLTypeName.RECORD, FieldList.of(subFields));
       }
     }
     return builder.build();
+  }
+
+  private static List<org.apache.arrow.vector.types.pojo.Field> innerFieldChildren(
+      org.apache.arrow.vector.types.pojo.Field arrowField) {
+    return arrowField.getChildren();
   }
 
   /**
@@ -159,7 +164,7 @@ final class ArrowDeserializer {
     try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
       List<FieldVector> vectors = new ArrayList<>();
       try {
-        for (Field field : arrowSchema.getFields()) {
+        for (org.apache.arrow.vector.types.pojo.Field field : arrowSchema.getFields()) {
           vectors.add(field.createVector(allocator));
         }
       } catch (Throwable t) {
@@ -211,7 +216,7 @@ final class ArrowDeserializer {
     List<FieldValue> fieldValues = new ArrayList<>();
     for (int colIndex = 0; colIndex < root.getFieldVectors().size(); colIndex++) {
       FieldVector vector = root.getVector(colIndex);
-      com.google.cloud.bigquery.Field bqField = schema.getFields().get(colIndex);
+      Field bqField = schema.getFields().get(colIndex);
       fieldValues.add(arrowVectorToFieldValue(vector, rowIndex, bqField));
     }
     return FieldValueList.of(fieldValues, schema.getFields());
@@ -229,25 +234,23 @@ final class ArrowDeserializer {
    * @return the converted FieldValue object
    */
   private static FieldValue arrowVectorToFieldValue(
-      FieldVector vector, int rowIndex, com.google.cloud.bigquery.Field bqField) {
+      FieldVector vector, int rowIndex, Field bqField) {
     if (vector.isNull(rowIndex)) {
       return FieldValue.of(FieldValue.Attribute.PRIMITIVE, null);
     }
 
     // Handle repeated fields
-    if (bqField.getMode() == com.google.cloud.bigquery.Field.Mode.REPEATED) {
+    if (bqField.getMode() == Field.Mode.REPEATED) {
       ListVector listVector = (ListVector) vector;
       FieldVector dataVector = (FieldVector) listVector.getDataVector();
       int start = listVector.getElementStartIndex(rowIndex);
       int end = listVector.getElementEndIndex(rowIndex);
       List<FieldValue> elements = new ArrayList<>(end - start);
-      com.google.cloud.bigquery.Field.Builder elementBuilder =
-          com.google.cloud.bigquery.Field.newBuilder(bqField.getName(), bqField.getType());
+      Field.Builder elementBuilder = Field.newBuilder(bqField.getName(), bqField.getType());
       if (bqField.getType() == LegacySQLTypeName.RECORD && bqField.getSubFields() != null) {
         elementBuilder.setType(LegacySQLTypeName.RECORD, bqField.getSubFields());
       }
-      com.google.cloud.bigquery.Field elementBqField =
-          elementBuilder.setMode(com.google.cloud.bigquery.Field.Mode.NULLABLE).build();
+      Field elementBqField = elementBuilder.setMode(Field.Mode.NULLABLE).build();
       for (int k = start; k < end; k++) {
         elements.add(arrowVectorToFieldValue(dataVector, k, elementBqField));
       }
@@ -267,7 +270,7 @@ final class ArrowDeserializer {
       List<FieldValue> elements = new ArrayList<>(structVector.size());
       for (int colIndex = 0; colIndex < structVector.size(); colIndex++) {
         FieldVector childVector = (FieldVector) structVector.getChildByOrdinal(colIndex);
-        com.google.cloud.bigquery.Field childBqField = bqField.getSubFields().get(colIndex);
+        Field childBqField = bqField.getSubFields().get(colIndex);
         elements.add(arrowVectorToFieldValue(childVector, rowIndex, childBqField));
       }
       return FieldValue.of(
