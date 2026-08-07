@@ -25,6 +25,7 @@ import java.util.Locale;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.FieldVector;
+import org.apache.arrow.vector.TimeStampVector;
 import org.apache.arrow.vector.VectorLoader;
 import org.apache.arrow.vector.VectorSchemaRoot;
 import org.apache.arrow.vector.complex.ListVector;
@@ -53,6 +54,10 @@ final class ArrowDeserializer {
     com.google.cloud.bigquery.Field.Builder builder;
 
     if (type instanceof ArrowType.List) {
+      if (arrowField.getChildren().isEmpty()) {
+        throw new IllegalArgumentException(
+            "Arrow List field must have at least one child field: " + name);
+      }
       Field innerField = arrowField.getChildren().get(0);
       LegacySQLTypeName innerType = arrowTypeToLegacySQLTypeName(innerField.getType());
       builder = com.google.cloud.bigquery.Field.newBuilder(name, innerType);
@@ -115,8 +120,19 @@ final class ArrowDeserializer {
       throws IOException {
     try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
       List<FieldVector> vectors = new ArrayList<>();
-      for (Field field : arrowSchema.getFields()) {
-        vectors.add(field.createVector(allocator));
+      try {
+        for (Field field : arrowSchema.getFields()) {
+          vectors.add(field.createVector(allocator));
+        }
+      } catch (Throwable t) {
+        for (int i = vectors.size() - 1; i >= 0; i--) {
+          try {
+            vectors.get(i).close();
+          } catch (Exception e) {
+            t.addSuppressed(e);
+          }
+        }
+        throw t;
       }
       try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
         VectorLoader loader = new VectorLoader(root);
@@ -138,6 +154,12 @@ final class ArrowDeserializer {
 
   static FieldValueList arrowRootToFieldValueList(
       VectorSchemaRoot root, int rowIndex, Schema schema) {
+    if (root.getFieldVectors().size() != schema.getFields().size()) {
+      throw new IllegalArgumentException(
+          String.format(
+              "Schema mismatch: Arrow vector count (%d) does not match BigQuery schema field count (%d)",
+              root.getFieldVectors().size(), schema.getFields().size()));
+    }
     List<FieldValue> fieldValues = new ArrayList<>();
     for (int colIndex = 0; colIndex < root.getFieldVectors().size(); colIndex++) {
       FieldVector vector = root.getVector(colIndex);
@@ -160,10 +182,13 @@ final class ArrowDeserializer {
       int start = listVector.getElementStartIndex(rowIndex);
       int end = listVector.getElementEndIndex(rowIndex);
       List<FieldValue> elements = new ArrayList<>(end - start);
+      com.google.cloud.bigquery.Field.Builder elementBuilder =
+          com.google.cloud.bigquery.Field.newBuilder(bqField.getName(), bqField.getType());
+      if (bqField.getType() == LegacySQLTypeName.RECORD && bqField.getSubFields() != null) {
+        elementBuilder.setType(LegacySQLTypeName.RECORD, bqField.getSubFields());
+      }
       com.google.cloud.bigquery.Field elementBqField =
-          com.google.cloud.bigquery.Field.newBuilder(bqField.getName(), bqField.getType())
-              .setMode(com.google.cloud.bigquery.Field.Mode.NULLABLE)
-              .build();
+          elementBuilder.setMode(com.google.cloud.bigquery.Field.Mode.NULLABLE).build();
       for (int k = start; k < end; k++) {
         elements.add(arrowVectorToFieldValue(dataVector, k, elementBqField));
       }
@@ -174,6 +199,12 @@ final class ArrowDeserializer {
     // Handle RECORD/STRUCT fields
     if (bqField.getType() == LegacySQLTypeName.RECORD) {
       StructVector structVector = (StructVector) vector;
+      if (structVector.size() != bqField.getSubFields().size()) {
+        throw new IllegalArgumentException(
+            String.format(
+                "Schema mismatch for field '%s': Arrow struct size (%d) does not match BigQuery subfields size (%d)",
+                bqField.getName(), structVector.size(), bqField.getSubFields().size()));
+      }
       List<FieldValue> elements = new ArrayList<>(structVector.size());
       for (int colIndex = 0; colIndex < structVector.size(); colIndex++) {
         FieldVector childVector = (FieldVector) structVector.getChildByOrdinal(colIndex);
@@ -184,20 +215,40 @@ final class ArrowDeserializer {
           FieldValue.Attribute.RECORD, FieldValueList.of(elements, bqField.getSubFields()));
     }
 
-    // Handle primitive types - convert everything to String representations to match BQ standard
-    Object value = vector.getObject(rowIndex);
+    // Handle primitive types
     String stringVal;
-    if (value instanceof byte[]) {
-      stringVal = BaseEncoding.base64().encode((byte[]) value);
-    } else if (bqField.getType() == LegacySQLTypeName.TIMESTAMP) {
-      // Arrow timestamps are long values representing epoch micro/milli/nano seconds.
+    if (bqField.getType() == LegacySQLTypeName.TIMESTAMP) {
+      // Arrow timestamps are long values representing epoch seconds/millis/micros/nanos.
       // Standard BigQuery JSON returns timestamps as string of epoch seconds with micro precision
       // (e.g. "1408452095.220000").
-      long micros = (long) value;
-      // Convert to seconds with 6 decimal places of precision
-      stringVal = String.format(Locale.US, "%.6f", micros / 1000000.0);
+      TimeStampVector tsVector = (TimeStampVector) vector;
+      long rawVal = tsVector.get(rowIndex);
+      ArrowType.Timestamp tsType = (ArrowType.Timestamp) vector.getField().getType();
+      long micros;
+      switch (tsType.getUnit()) {
+        case SECOND:
+          micros = rawVal * 1_000_000L;
+          break;
+        case MILLISECOND:
+          micros = rawVal * 1_000L;
+          break;
+        case MICROSECOND:
+          micros = rawVal;
+          break;
+        case NANOSECOND:
+          micros = rawVal / 1_000L;
+          break;
+        default:
+          micros = rawVal;
+      }
+      stringVal = String.format(Locale.US, "%.6f", micros / 1_000_000.0);
     } else {
-      stringVal = String.valueOf(value);
+      Object value = vector.getObject(rowIndex);
+      if (value instanceof byte[]) {
+        stringVal = BaseEncoding.base64().encode((byte[]) value);
+      } else {
+        stringVal = String.valueOf(value);
+      }
     }
 
     return FieldValue.of(FieldValue.Attribute.PRIMITIVE, stringVal);
