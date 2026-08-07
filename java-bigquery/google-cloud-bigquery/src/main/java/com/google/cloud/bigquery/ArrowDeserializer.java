@@ -241,7 +241,13 @@ final class ArrowDeserializer {
         default:
           micros = rawVal;
       }
-      stringVal = String.format(Locale.US, "%.6f", micros / 1_000_000.0);
+      long seconds = micros / 1_000_000L;
+      long remainingMicros = Math.abs(micros % 1_000_000L);
+      if (micros < 0 && seconds == 0) {
+        stringVal = String.format(Locale.US, "-0.%06d", remainingMicros);
+      } else {
+        stringVal = String.format(Locale.US, "%d.%06d", seconds, remainingMicros);
+      }
     } else {
       Object value = vector.getObject(rowIndex);
       if (value instanceof byte[]) {
