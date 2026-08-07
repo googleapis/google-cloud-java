@@ -69,6 +69,9 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.apache.arrow.vector.ipc.ReadChannel;
+import org.apache.arrow.vector.ipc.message.MessageSerializer;
+import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuery {
@@ -2231,9 +2234,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         isArrow = true;
         try {
           arrowSchemaPojo =
-              org.apache.arrow.vector.ipc.message.MessageSerializer.deserializeSchema(
-                  new org.apache.arrow.vector.ipc.ReadChannel(
-                      new org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel(
+              MessageSerializer.deserializeSchema(
+                  new ReadChannel(
+                      new ByteArrayReadableSeekableByteChannel(
                           results.getArrowSchema().decodeSerializedSchema())));
           schema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchemaPojo);
         } catch (IOException e) {
