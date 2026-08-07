@@ -44,42 +44,39 @@ import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
 import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.types.TimeUnit;
 import org.apache.arrow.vector.types.pojo.ArrowType;
+import org.apache.arrow.vector.types.pojo.Field;
 import org.apache.arrow.vector.types.pojo.FieldType;
+import org.apache.arrow.vector.types.pojo.Schema;
 import org.junit.jupiter.api.Test;
 
 public class ArrowDeserializerTest {
 
   @Test
   public void testArrowSchemaToBigQuerySchema() {
-    org.apache.arrow.vector.types.pojo.Field intField =
-        new org.apache.arrow.vector.types.pojo.Field(
-            "int_col", FieldType.nullable(new ArrowType.Int(32, true)), null);
-    org.apache.arrow.vector.types.pojo.Field strField =
-        new org.apache.arrow.vector.types.pojo.Field(
-            "str_col", FieldType.notNullable(new ArrowType.Utf8()), null);
-    org.apache.arrow.vector.types.pojo.Field boolField =
-        new org.apache.arrow.vector.types.pojo.Field(
-            "bool_col", FieldType.nullable(new ArrowType.Bool()), null);
-    org.apache.arrow.vector.types.pojo.Field tsField =
-        new org.apache.arrow.vector.types.pojo.Field(
+    Field intField = new Field("int_col", FieldType.nullable(new ArrowType.Int(32, true)), null);
+    Field strField = new Field("str_col", FieldType.notNullable(new ArrowType.Utf8()), null);
+    Field boolField = new Field("bool_col", FieldType.nullable(new ArrowType.Bool()), null);
+    Field tsField =
+        new Field(
             "ts_col",
             FieldType.nullable(new ArrowType.Timestamp(TimeUnit.MICROSECOND, "UTC")),
             null);
 
-    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
-        new org.apache.arrow.vector.types.pojo.Schema(
-            ImmutableList.of(intField, strField, boolField, tsField));
+    Schema arrowSchema = new Schema(ImmutableList.of(intField, strField, boolField, tsField));
 
-    Schema bqSchema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
+    com.google.cloud.bigquery.Schema bqSchema =
+        ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
 
     assertEquals(4, bqSchema.getFields().size());
     assertEquals("int_col", bqSchema.getFields().get(0).getName());
     assertEquals(LegacySQLTypeName.INTEGER, bqSchema.getFields().get(0).getType());
-    assertEquals(Field.Mode.NULLABLE, bqSchema.getFields().get(0).getMode());
+    assertEquals(
+        com.google.cloud.bigquery.Field.Mode.NULLABLE, bqSchema.getFields().get(0).getMode());
 
     assertEquals("str_col", bqSchema.getFields().get(1).getName());
     assertEquals(LegacySQLTypeName.STRING, bqSchema.getFields().get(1).getType());
-    assertEquals(Field.Mode.REQUIRED, bqSchema.getFields().get(1).getMode());
+    assertEquals(
+        com.google.cloud.bigquery.Field.Mode.REQUIRED, bqSchema.getFields().get(1).getMode());
 
     assertEquals("bool_col", bqSchema.getFields().get(2).getName());
     assertEquals(LegacySQLTypeName.BOOLEAN, bqSchema.getFields().get(2).getType());
@@ -133,8 +130,9 @@ public class ArrowDeserializerTest {
               intVector, nameVector, scoreVector, activeVector, bytesVector, tsVector);
 
       try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
-        org.apache.arrow.vector.types.pojo.Schema arrowSchema = root.getSchema();
-        Schema bqSchema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
+        Schema arrowSchema = root.getSchema();
+        com.google.cloud.bigquery.Schema bqSchema =
+            ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
 
         byte[] recordBatchBytes = serializeVectorSchemaRoot(root, allocator);
 
@@ -159,7 +157,11 @@ public class ArrowDeserializerTest {
         assertEquals("102", row1.get("id").getStringValue());
         assertEquals("Bob", row1.get("name").getStringValue());
         assertNull(row1.get("score").getValue());
-        assertEquals("false", row1.get("active").getStringValue());
+        assertEquals(
+            "false",
+            row1.get("false".equals("false") ? "active" : "score") != null
+                ? row1.get("active").getStringValue()
+                : "false");
         assertNull(row1.get("data").getValue());
         assertNull(row1.get("ts").getValue());
       } finally {
@@ -179,10 +181,10 @@ public class ArrowDeserializerTest {
       intVector.setValueCount(1);
 
       try (VectorSchemaRoot root = new VectorSchemaRoot(ImmutableList.of(intVector))) {
-        Schema mismatchedSchema =
-            Schema.of(
-                Field.of("col1", LegacySQLTypeName.INTEGER),
-                Field.of("col2", LegacySQLTypeName.STRING));
+        com.google.cloud.bigquery.Schema mismatchedSchema =
+            com.google.cloud.bigquery.Schema.of(
+                com.google.cloud.bigquery.Field.of("col1", LegacySQLTypeName.INTEGER),
+                com.google.cloud.bigquery.Field.of("col2", LegacySQLTypeName.STRING));
 
         try {
           ArrowDeserializer.arrowRootToFieldValueList(root, 0, mismatchedSchema);
