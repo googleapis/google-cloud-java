@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery;
 
 import com.google.api.core.BetaApi;
+import com.google.common.base.MoreObjects;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -48,7 +49,7 @@ public final class ArrowSerializationOptions implements Serializable {
 
   @Override
   public String toString() {
-    return com.google.common.base.MoreObjects.toStringHelper(this)
+    return MoreObjects.toStringHelper(this)
         .add("bufferCompression", bufferCompression)
         .add("picosTimestampPrecision", picosTimestampPrecision)
         .toString();
