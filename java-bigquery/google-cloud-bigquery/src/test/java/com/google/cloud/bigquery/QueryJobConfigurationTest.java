@@ -241,6 +241,35 @@ public class QueryJobConfigurationTest {
         QUERY_JOB_CONFIGURATION_SET_JOB_CREATION_MODE.toBuilder().build());
   }
 
+  @Test
+  public void testArrowConfigurations() {
+    QueryResultsFormat format = QueryResultsFormat.ARROW;
+    ArrowSerializationOptions options =
+        ArrowSerializationOptions.newBuilder()
+            .setBufferCompression("LZ4")
+            .setPicosTimestampPrecision("PRECISION_MILLIS")
+            .build();
+    QueryJobConfiguration job =
+        QueryJobConfiguration.newBuilder(QUERY)
+            .setQueryResultsFormat(format)
+            .setArrowSerializationOptions(options)
+            .build();
+
+    assertEquals(format, job.getQueryResultsFormat());
+    assertEquals(options, job.getArrowSerializationOptions());
+
+    // Test toBuilder
+    QueryJobConfiguration copiedJob = job.toBuilder().build();
+    assertEquals(job, copiedJob);
+    assertEquals(format, copiedJob.getQueryResultsFormat());
+    assertEquals(options, copiedJob.getArrowSerializationOptions());
+
+    // Test toPb/fromPb (not preserved)
+    QueryJobConfiguration jobFromPb = QueryJobConfiguration.fromPb(job.toPb());
+    assertNull(jobFromPb.getQueryResultsFormat());
+    assertNull(jobFromPb.getArrowSerializationOptions());
+  }
+
   private void compareQueryJobConfiguration(
       QueryJobConfiguration expected, QueryJobConfiguration value) {
     assertEquals(expected, value);
