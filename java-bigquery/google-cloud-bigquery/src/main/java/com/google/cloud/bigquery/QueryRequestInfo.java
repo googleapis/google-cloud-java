@@ -46,6 +46,8 @@ final class QueryRequestInfo {
   private final DataFormatOptions formatOptions;
   private final String reservation;
   private final Long jobTimeoutMs;
+  private final QueryResultsFormat queryResultsFormat;
+  private final ArrowSerializationOptions arrowSerializationOptions;
 
   QueryRequestInfo(
       QueryJobConfiguration config, com.google.cloud.bigquery.DataFormatOptions dataFormatOptions) {
@@ -63,23 +65,13 @@ final class QueryRequestInfo {
     this.useLegacySql = config.useLegacySql();
     this.useQueryCache = config.useQueryCache();
     this.jobCreationMode = config.getJobCreationMode();
-    this.formatOptions = dataFormatOptions.toPb();
+    this.formatOptions = dataFormatOptions != null ? dataFormatOptions.toPb() : null;
     this.reservation = config.getReservation();
     this.jobTimeoutMs = config.getJobTimeoutMs();
+    this.queryResultsFormat = config.getQueryResultsFormat();
+    this.arrowSerializationOptions = config.getArrowSerializationOptions();
   }
 
-  /**
-   * Determines if the query can be executed via the "fast query" path (jobs.query API) instead of
-   * the "slow path" (jobs.insert API followed by jobs.getQueryResults).
-   *
-   * <p>The fast query path is preferred because it completes in a single RPC, significantly
-   * reducing end-to-end latency for small queries.
-   *
-   * <p>However, the jobs.query API does not support all configuration options available in
-   * jobs.insert (e.g., destination table, clustering, time partitioning). This method checks the
-   * QueryJobConfiguration for any unsupported options. If any are present, we must fall back to the
-   * jobs.insert path.
-   */
   boolean isFastQuerySupported() {
     return config.getClustering() == null
         && config.getCreateDisposition() == null
@@ -142,6 +134,12 @@ final class QueryRequestInfo {
     if (jobTimeoutMs != null) {
       request.setJobTimeoutMs(jobTimeoutMs);
     }
+    if (queryResultsFormat != null) {
+      request.setQueryResultsFormat(queryResultsFormat.toString());
+    }
+    if (arrowSerializationOptions != null) {
+      request.setArrowSerializationOptions(arrowSerializationOptions.toPb());
+    }
     return request;
   }
 
@@ -161,7 +159,7 @@ final class QueryRequestInfo {
         .add("useQueryCache", useQueryCache)
         .add("useLegacySql", useLegacySql)
         .add("jobCreationMode", jobCreationMode)
-        .add("formatOptions", formatOptions.getUseInt64Timestamp())
+        .add("formatOptions", formatOptions != null ? formatOptions.getUseInt64Timestamp() : null)
         .add("reservation", reservation)
         .add("jobTimeoutMs", jobTimeoutMs)
         .toString();
