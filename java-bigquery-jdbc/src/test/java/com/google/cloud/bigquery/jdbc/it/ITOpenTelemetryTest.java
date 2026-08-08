@@ -58,7 +58,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITOpenTelemetryTest extends ITBase {
@@ -67,7 +66,6 @@ public class ITOpenTelemetryTest extends ITBase {
   private static final String CONNECTION_URL = connectionUrl;
 
   @Test
-  @Tag("known_issue")
   public void testExecute_withOpenTelemetryGcpExporter() throws Exception {
 
     // Step 1: Connect with GCP Exporters enabled via DataSource
@@ -139,7 +137,6 @@ public class ITOpenTelemetryTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue")
   public void testExecute_withErrorCorrelation() throws Exception {
     // Step 1: Connect with GCP Exporters enabled via DataSource
     DataSource ds = DataSource.fromUrl(CONNECTION_URL);
@@ -183,7 +180,6 @@ public class ITOpenTelemetryTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue")
   public void testExecute_withCustomCredentialsJson() throws Exception {
     JsonObject authJson = getAuthJson();
     DataSource ds = DataSource.fromUrl(CONNECTION_URL);
@@ -195,7 +191,6 @@ public class ITOpenTelemetryTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue")
   public void testExecute_withCustomCredentialsFilePath() throws Exception {
     JsonObject authJson = getAuthJson();
     File tempFile = File.createTempFile("auth", ".json");
@@ -211,7 +206,6 @@ public class ITOpenTelemetryTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue")
   public void testExecute_withHttpProtocol() throws Exception {
     JsonObject authJson = getAuthJson();
     System.setProperty("otel.exporter.otlp.protocol", "http/protobuf");
@@ -229,7 +223,6 @@ public class ITOpenTelemetryTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue")
   public void testExecute_withGrpcProtocol() throws Exception {
     JsonObject authJson = getAuthJson();
     System.setProperty("otel.exporter.otlp.protocol", "grpc");
