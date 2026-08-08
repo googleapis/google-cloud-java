@@ -62,8 +62,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
   private static final String BASE_QUERY =
-      "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
-          + " trip_distance asc LIMIT %s";
+      "SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));";
   private static final String CONSTRAINTS_DATASET = "JDBC_CONSTRAINTS_TEST_DATASET";
   private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
   private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
@@ -187,8 +186,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   @Test
   public void testValidLongRunningQuery() throws SQLException {
     // setup
-    String selectQuery =
-        "SELECT * FROM `bigquery-public-data.deepmind_alphafold.metadata` LIMIT 50000";
+    String selectQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 50000))";
 
     // Read data via JDBC
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
@@ -269,6 +267,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testWideColumnQueries() throws SQLException {
     String selectQuery =
         "SELECT * FROM `bigquery-public-data.covid19_open_data_eu.covid19_open_data` LIMIT 50000";
@@ -299,8 +298,7 @@ public class ITNightlyBigQueryTest extends ITBase {
     String insertQuery =
         String.format(
             "INSERT INTO %s.%s (gbifid, scientificname, individualcount) "
-                + "SELECT gbifid, scientificname, individualcount  FROM "
-                + "bigquery-public-data.gbif.occurrences;",
+                + "(SELECT 1 as gbifid, \"name\" as scientificname, 1 as individualcount FROM UNNEST(GENERATE_ARRAY(1, 10)));",
             DATASET, tableName);
     String updateQuery =
         String.format(
@@ -333,8 +331,7 @@ public class ITNightlyBigQueryTest extends ITBase {
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;"
             + "EnableHighThroughputAPI=1;";
-    String selectLegacyQuery =
-        "SELECT * FROM `bigquery-public-data.deepmind_alphafold.metadata` LIMIT 200000;";
+    String selectLegacyQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 200000))";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -720,8 +717,7 @@ public class ITNightlyBigQueryTest extends ITBase {
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;"
             + "EnableHighThroughputAPI=1;";
-    String selectLegacyQuery =
-        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200000;";
+    String selectLegacyQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 200000))";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -1536,13 +1532,12 @@ public class ITNightlyBigQueryTest extends ITBase {
 
     Statement statement = bigQueryConnectionUseStateless.createStatement();
 
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 850))";
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(850, resultSetRowCount(jsonResultSet));
 
-    String queryEmpty =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
+    String queryEmpty = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 0))";
     ResultSet jsonResultSetEmpty = statement.executeQuery(queryEmpty);
     assertTrue(jsonResultSetEmpty.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
@@ -1551,7 +1546,7 @@ public class ITNightlyBigQueryTest extends ITBase {
 
   @Test
   public void testFastQueryPathMedium() throws SQLException {
-    String query = "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 9000";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 9000))";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(9000, resultSetRowCount(jsonResultSet));
@@ -1559,7 +1554,7 @@ public class ITNightlyBigQueryTest extends ITBase {
 
   @Test
   public void testFastQueryPathLarge() throws SQLException {
-    String query = "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 18000";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 18000))";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(18000, resultSetRowCount(jsonResultSet));
@@ -1587,8 +1582,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   public void testNonEnabledUseLegacySQLThrowsSyntaxError() throws SQLException {
     // setup
     String connection_uri = ITNightlyBigQueryTest.connection_uri;
-    String selectLegacyQuery =
-        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 20000000;";
+    String selectLegacyQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 20000000))";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -1601,7 +1595,7 @@ public class ITNightlyBigQueryTest extends ITBase {
 
   @Test
   public void testFastQueryPathEmpty() throws SQLException {
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 0))";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(0, resultSetRowCount(jsonResultSet));

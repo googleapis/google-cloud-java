@@ -726,6 +726,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testDatabaseMetadataGetTables() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
@@ -826,6 +827,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testDatabaseMetadataGetSchemas() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
@@ -898,6 +900,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testDatabaseMetaDataGetFunctions() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     DatabaseMetaData databaseMetaData = connection.getMetaData();
@@ -1137,6 +1140,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testAdditionalProjectsInMetadata() throws SQLException {
     String additionalProjectsValue = "bigquery-public-data";
     String datasetInAdditionalProject = "baseball";
@@ -1193,6 +1197,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   @Tag("advanced")
+  @Tag("disable_tpc")
   public void testFilterTablesOnDefaultDataset_getTables() throws SQLException {
 
     String defaultDatasetValue = CONSTRAINTS_DATASET;
@@ -1264,6 +1269,7 @@ public class ITDatabaseMetadataTest extends ITBase {
 
   @Test
   @Tag("advanced")
+  @Tag("disable_tpc")
   public void testFilterTablesOnDefaultDataset_getColumns() throws SQLException {
     String defaultDatasetValue = CONSTRAINTS_DATASET;
     String tableInDefaultDataset = CONSTRAINTS_TABLE_NAME;
