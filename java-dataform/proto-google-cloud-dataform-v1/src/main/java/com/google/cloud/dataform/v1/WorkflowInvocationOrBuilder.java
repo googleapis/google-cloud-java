@@ -439,5 +439,51 @@ public interface WorkflowInvocationOrBuilder
   com.google.cloud.dataform.v1.PrivateResourceMetadataOrBuilder
       getPrivateResourceMetadataOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The pipeline options which defines the pipeline type and path
+   * within the Git repository.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the pipelineConfig field is set.
+   */
+  boolean hasPipelineConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The pipeline options which defines the pipeline type and path
+   * within the Git repository.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The pipelineConfig.
+   */
+  com.google.cloud.dataform.v1.PipelineConfig getPipelineConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The pipeline options which defines the pipeline type and path
+   * within the Git repository.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.PipelineConfig pipeline_config = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataform.v1.PipelineConfigOrBuilder getPipelineConfigOrBuilder();
+
   com.google.cloud.dataform.v1.WorkflowInvocation.CompilationSourceCase getCompilationSourceCase();
 }

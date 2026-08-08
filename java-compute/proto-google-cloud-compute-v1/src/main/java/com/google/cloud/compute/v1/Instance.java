@@ -775,6 +775,16 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The instance is gracefully shutting down.
+     * </pre>
+     *
+     * <code>PENDING_STOP = 362509770;</code>
+     */
+    PENDING_STOP(362509770),
+    /**
+     *
+     *
+     * <pre>
      * Resources are being allocated for the instance.
      * </pre>
      *
@@ -915,6 +925,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * The instance is gracefully shutting down.
+     * </pre>
+     *
+     * <code>PENDING_STOP = 362509770;</code>
+     */
+    public static final int PENDING_STOP_VALUE = 362509770;
+
+    /**
+     *
+     *
+     * <pre>
      * Resources are being allocated for the instance.
      * </pre>
      *
@@ -1042,6 +1063,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
           return DEPROVISIONING;
         case 35394935:
           return PENDING;
+        case 362509770:
+          return PENDING_STOP;
         case 290896621:
           return PROVISIONING;
         case 413483285:

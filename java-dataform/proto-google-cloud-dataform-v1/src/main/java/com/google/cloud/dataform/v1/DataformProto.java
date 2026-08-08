@@ -405,9 +405,21 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataform_v1_CodeCompilationConfig_VarsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataform_v1_GcsRepositorySnapshotMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataform_v1_GcsRepositorySnapshotMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataform_v1_GcsRepositorySnapshotDestination_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataform_v1_GcsRepositorySnapshotDestination_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataform_v1_NotebookRuntimeOptions_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_dataform_v1_NotebookRuntimeOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataform_v1_PipelineConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_dataform_v1_PipelineConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataform_v1_ListCompilationResultsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -1106,20 +1118,22 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "!dataform.googleapis.com/Workspace\022\021\n"
           + "\004path\030\002 \001(\tB\003\340A\002\022\025\n"
           + "\010contents\030\003 \001(\014B\003\340A\002\"\023\n"
-          + "\021WriteFileResponse\"Y\n"
+          + "\021WriteFileResponse\"\241\001\n"
           + "\031InstallNpmPackagesRequest\022<\n"
           + "\tworkspace\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!dataform.googleapis.com/Workspace\"\034\n"
+          + "!dataform.googleapis.com/Workspace\022F\n"
+          + "\017pipeline_config\030\003"
+          + " \001(\0132(.google.cloud.dataform.v1.PipelineConfigB\003\340A\001\"\034\n"
           + "\032InstallNpmPackagesResponse\"\347\006\n\r"
           + "ReleaseConfig\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\032\n\r"
           + "git_commitish\030\002 \001(\tB\003\340A\002\022U\n"
-          + "\027code_compilation_config\030\003"
-          + " \001(\0132/.google.cloud.dataform.v1.CodeCompilationConfigB\003\340A\001\022\032\n\r"
+          + "\027code_compilation_config\030\003 \001(\0132"
+          + "/.google.cloud.dataform.v1.CodeCompilationConfigB\003\340A\001\022\032\n\r"
           + "cron_schedule\030\004 \001(\tB\003\340A\001\022\026\n"
           + "\ttime_zone\030\007 \001(\tB\003\340A\001\022m\n"
-          + " recent_scheduled_release_records\030\005 \003(\0132>.goo"
-          + "gle.cloud.dataform.v1.ReleaseConfig.ScheduledReleaseRecordB\003\340A\003\022U\n"
+          + " recent_scheduled_release_records\030\005 \003(\0132>.google.clo"
+          + "ud.dataform.v1.ReleaseConfig.ScheduledReleaseRecordB\003\340A\003\022U\n"
           + "\032release_compilation_result\030\006 \001(\tB1\340A\001\372A+\n"
           + ")dataform.googleapis.com/CompilationResult\022\025\n"
           + "\010disabled\030\010 \001(\010B\003\340A\001\022#\n"
@@ -1130,9 +1144,9 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\014error_status\030\003 \001(\0132\022.google.rpc.StatusH\000\0225\n"
           + "\014release_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003B\010\n"
           + "\006result:\255\001\352A\251\001\n"
-          + "%dataform.googleapis.com/ReleaseConfig\022aprojects"
-          + "/{project}/locations/{location}/reposito"
-          + "ries/{repository}/releaseConfigs/{release_config}*\016releaseConfigs2\r"
+          + "%dataform.googleapis.com/ReleaseConfig\022aprojects/{proje"
+          + "ct}/locations/{location}/repositories/{r"
+          + "epository}/releaseConfigs/{release_config}*\016releaseConfigs2\r"
           + "releaseConfigB\024\n"
           + "\022_internal_metadata\"\210\001\n"
           + "\031ListReleaseConfigsRequest\022:\n"
@@ -1160,7 +1174,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132\'.google.cloud.dataform.v1.ReleaseConfigB\003\340A\002\"Y\n"
           + "\032DeleteReleaseConfigRequest\022;\n"
           + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
-          + "%dataform.googleapis.com/ReleaseConfig\"\312\010\n"
+          + "%dataform.googleapis.com/ReleaseConfig\"\262\t\n"
           + "\021CompilationResult\022\034\n\r"
           + "git_commitish\030\002 \001(\tB\003\340A\005H\000\022>\n"
           + "\tworkspace\030\003 \001(\tB)\340A\005\372A#\n"
@@ -1168,52 +1182,75 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\016release_config\030\007 \001(\tB-\340A\005\372A\'\n"
           + "%dataform.googleapis.com/ReleaseConfigH\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022U\n"
-          + "\027code_compilation_config\030\004 \001(\0132/.googl"
-          + "e.cloud.dataform.v1.CodeCompilationConfigB\003\340A\005\022$\n"
+          + "\027code_compilation_config\030\004 \001(\0132/.google.cloud"
+          + ".dataform.v1.CodeCompilationConfigB\003\340A\005\022$\n"
           + "\027resolved_git_commit_sha\030\010 \001(\tB\003\340A\003\022\"\n"
           + "\025dataform_core_version\030\005 \001(\tB\003\340A\003\022]\n"
-          + "\022compilation_errors\030\006 \003(\0132<.google.cl"
-          + "oud.dataform.v1.CompilationResult.CompilationErrorB\003\340A\003\022Q\n"
-          + "\025data_encryption_state\030\t"
-          + " \001(\0132-.google.cloud.dataform.v1.DataEncryptionStateB\003\340A\003\0224\n"
+          + "\022compilation_errors\030\006 \003(\0132<.google.cloud.dat"
+          + "aform.v1.CompilationResult.CompilationErrorB\003\340A\003\022Q\n"
+          + "\025data_encryption_state\030\t \001(\0132"
+          + "-.google.cloud.dataform.v1.DataEncryptionStateB\003\340A\003\0224\n"
           + "\013create_time\030\n"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022#\n"
           + "\021internal_metadata\030\013 \001(\tB\003\340A\003H\001\210\001\001\022Y\n"
-          + "\031private_resource_metadata\030\014 \001(\01321.google.cloud."
-          + "dataform.v1.PrivateResourceMetadataB\003\340A\003\032\215\001\n"
+          + "\031private_resource_metadata\030\014"
+          + " \001(\01321.google.cloud.dataform.v1.PrivateResourceMetadataB\003\340A\003\022f\n"
+          + " gcs_repository_snapshot_metadata\030\r"
+          + " \001(\01327.go"
+          + "ogle.cloud.dataform.v1.GcsRepositorySnapshotMetadataB\003\340A\003\032\215\001\n"
           + "\020CompilationError\022\024\n"
           + "\007message\030\001 \001(\tB\003\340A\003\022\022\n"
           + "\005stack\030\002 \001(\tB\003\340A\003\022\021\n"
           + "\004path\030\003 \001(\tB\003\340A\003\022<\n\r"
           + "action_target\030\004 \001(\0132"
           + " .google.cloud.dataform.v1.TargetB\003\340A\003:\301\001\352A\275\001\n"
-          + ")dataform.googleapis.com/CompilationResult\022iproj"
-          + "ects/{project}/locations/{location}/repositories/{repository}/compilationResults"
-          + "/{compilation_result}*\022compilationResults2\021compilationResultB\010\n"
+          + ")dataform.googleapis.com/CompilationResult\022iprojects/{project}/location"
+          + "s/{location}/repositories/{repository}/c"
+          + "ompilationResults/{compilation_result}*\022compilationResults2\021compilationResultB\010\n"
           + "\006sourceB\024\n"
-          + "\022_internal_metadata\"\356\003\n"
+          + "\022_internal_metadata\"\266\004\n"
           + "\025CodeCompilationConfig\022\035\n"
           + "\020default_database\030\001 \001(\tB\003\340A\001\022\033\n"
           + "\016default_schema\030\002 \001(\tB\003\340A\001\022\035\n"
           + "\020default_location\030\010 \001(\tB\003\340A\001\022\035\n"
           + "\020assertion_schema\030\003 \001(\tB\003\340A\001\022L\n"
-          + "\004vars\030\004 \003(\01329.google.cloud.dataform.v"
-          + "1.CodeCompilationConfig.VarsEntryB\003\340A\001\022\034\n"
+          + "\004vars\030\004 \003(\01329.google"
+          + ".cloud.dataform.v1.CodeCompilationConfig.VarsEntryB\003\340A\001\022\034\n"
           + "\017database_suffix\030\005 \001(\tB\003\340A\001\022\032\n\r"
           + "schema_suffix\030\006 \001(\tB\003\340A\001\022\031\n"
           + "\014table_prefix\030\007 \001(\tB\003\340A\001\022*\n"
           + "\035builtin_assertion_name_prefix\030\n"
           + " \001(\tB\003\340A\001\022_\n"
-          + " default_notebook_runtime_options\030\t"
-          + " \001(\01320.google.cloud.dataform.v1.NotebookRuntimeOptionsB\003\340A\001\032+\n"
+          + " default_notebook_runtime_options\030\t \001(\01320.google.clou"
+          + "d.dataform.v1.NotebookRuntimeOptionsB\003\340A\001\022F\n"
+          + "\017pipeline_config\030\014"
+          + " \001(\0132(.google.cloud.dataform.v1.PipelineConfigB\003\340A\001\032+\n"
           + "\tVarsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\266\001\n"
+          + "\005value\030\002 \001(\t:\0028\001\"|\n"
+          + "\035GcsRepositorySnapshotMetadata\022$\n"
+          + "\027repository_snapshot_uri\030\001 \001(\tB\003\340A\003\022\034\n"
+          + "\017crc32c_checksum\030\002 \001(\tB\003\340A\003\022\027\n\n"
+          + "generation\030\003 \001(\003B\003\340A\003\"H\n"
+          + " GcsRepositorySnapshotDestination\022$\n"
+          + "\027repository_snapshot_uri\030\001 \001(\tB\003\340A\001\"\305\002\n"
           + "\026NotebookRuntimeOptions\022 \n"
-          + "\021gcs_output_bucket\030\001 \001(\tB\003\340A\001H\000\022h\n"
+          + "\021gcs_output_bucket\030\001 \001(\tB\003\340A\001H\000\022n\n"
+          + "#gcs_repository_snapshot_destination\030\003 \001(\0132:.google.cloud."
+          + "dataform.v1.GcsRepositorySnapshotDestinationB\003\340A\001H\001\022h\n"
           + "%ai_platform_notebook_runtime_template\030\002 \001(\tB9\340A\001\372A3\n"
           + "1aiplatform.googleapis.com/NotebookRuntimeTemplateB\020\n"
-          + "\016execution_sink\"\270\001\n"
+          + "\016execution_sinkB\035\n"
+          + "\033repository_snapshot_storage\"\312\001\n"
+          + "\016PipelineConfig\022Q\n\r"
+          + "pipeline_type\030\001"
+          + " \001(\01625.google.cloud.dataform.v1.PipelineConfig.PipelineTypeB\003\340A\002\022\021\n"
+          + "\004path\030\002 \001(\tB\003\340A\002\"R\n"
+          + "\014PipelineType\022\035\n"
+          + "\031PIPELINE_TYPE_UNSPECIFIED\020\000\022\014\n"
+          + "\010DATAFORM\020\001\022\007\n"
+          + "\003SQL\020\003\022\014\n"
+          + "\010NOTEBOOK\020\004\"\270\001\n"
           + "\035ListCompilationResultsRequest\022:\n"
           + "\006parent\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"dataform.googleapis.com/Repository\022\026\n"
@@ -1240,10 +1277,10 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\003 \001(\tB\003\340A\001\"\340\002\n"
           + "\022RelationDescriptor\022\023\n"
           + "\013description\030\001 \001(\t\022N\n"
-          + "\007columns\030\002 \003(\0132"
-          + "=.google.cloud.dataform.v1.RelationDescriptor.ColumnDescriptor\022Y\n"
-          + "\017bigquery_labels\030\003"
-          + " \003(\0132@.google.cloud.dataform.v1.RelationDescriptor.BigqueryLabelsEntry\032S\n"
+          + "\007columns\030\002 \003(\0132=.g"
+          + "oogle.cloud.dataform.v1.RelationDescriptor.ColumnDescriptor\022Y\n"
+          + "\017bigquery_labels\030\003 \003(\0132@.google.cloud.dataform.v1.Relation",
+      "Descriptor.BigqueryLabelsEntry\032S\n"
           + "\020ColumnDescriptor\022\014\n"
           + "\004path\030\001 \003(\t\022\023\n"
           + "\013description\030\002 \001(\t\022\034\n"
@@ -1252,21 +1289,20 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\243\036\n"
           + "\027CompilationResultAction\022N\n"
-          + "\010relation\030\004 \001(\0132:.google.cloud.dataf"
-          + "orm.v1.CompilationResultAction.RelationH\000\022R\n\n"
-          + "operations\030\005 \001(\0132<.google.cloud.dat"
-          + "aform.v1.CompilationResultAction.OperationsH\000\022P\n"
-          + "\tassertion\030\006 \001(\0132;.google.cloud."
-          + "dataform.v1.CompilationResultAction.AssertionH\000\022T\n"
-          + "\013declaration\030\007 \001(\0132=.google.cl"
-          + "oud.dataform.v1.CompilationResultAction.DeclarationH\000\022N\n"
-          + "\010notebook\030\010 \001(\0132:.google"
-          + ".cloud.dataform.v1.CompilationResultAction.NotebookH\000\022]\n"
-          + "\020data_preparation\030\t \001(\0132"
-          + "A.google.cloud.dataform.v1.CompilationResultAction.DataPreparationH\000\0220\n"
+          + "\010relation\030\004 \001(\0132:.google.cloud.dataform"
+          + ".v1.CompilationResultAction.RelationH\000\022R\n\n"
+          + "operations\030\005 \001(\0132<.google.cloud.datafo"
+          + "rm.v1.CompilationResultAction.OperationsH\000\022P\n"
+          + "\tassertion\030\006 \001(\0132;.google.cloud.dat"
+          + "aform.v1.CompilationResultAction.AssertionH\000\022T\n"
+          + "\013declaration\030\007 \001(\0132=.google.cloud"
+          + ".dataform.v1.CompilationResultAction.DeclarationH\000\022N\n"
+          + "\010notebook\030\010 \001(\0132:.google.cl"
+          + "oud.dataform.v1.CompilationResultAction.NotebookH\000\022]\n"
+          + "\020data_preparation\030\t \001(\0132A.g"
+          + "oogle.cloud.dataform.v1.CompilationResultAction.DataPreparationH\000\0220\n"
           + "\006target\030\001 \001(\0132 .google.cloud.dataform.v1.Target\022:\n"
-          + "\020canonical_target\030\002 \001(\0132 .google.cloud.",
-      "dataform.v1.Target\022\021\n"
+          + "\020canonical_target\030\002 \001(\0132 .google.cloud.dataform.v1.Target\022\021\n"
           + "\tfile_path\030\003 \001(\t\022#\n"
           + "\021internal_metadata\030\n"
           + " \001(\tB\003\340A\003H\001\210\001\001\032\256\013\n"
@@ -1276,26 +1312,26 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\004tags\030\003 \003(\t\022I\n"
           + "\023relation_descriptor\030\004"
           + " \001(\0132,.google.cloud.dataform.v1.RelationDescriptor\022^\n\r"
-          + "relation_type\030\005 \001(\0162"
-          + "G.google.cloud.dataform.v1.CompilationResultAction.Relation.RelationType\022\024\n"
+          + "relation_type\030\005 \001(\0162G.g"
+          + "oogle.cloud.dataform.v1.CompilationResultAction.Relation.RelationType\022\024\n"
           + "\014select_query\030\006 \001(\t\022\026\n"
           + "\016pre_operations\030\007 \003(\t\022\027\n"
           + "\017post_operations\030\010 \003(\t\022s\n"
-          + "\030incremental_table_config\030\t \001(\0132Q.google.cloud.datafor"
-          + "m.v1.CompilationResultAction.Relation.IncrementalTableConfig\022\034\n"
+          + "\030incremental_table_config\030\t \001(\0132Q.google.cloud.dataform.v"
+          + "1.CompilationResultAction.Relation.IncrementalTableConfig\022\034\n"
           + "\024partition_expression\030\n"
           + " \001(\t\022\033\n"
           + "\023cluster_expressions\030\013 \003(\t\022!\n"
           + "\031partition_expiration_days\030\014 \001(\005\022 \n"
           + "\030require_partition_filter\030\r"
           + " \001(\010\022m\n"
-          + "\022additional_options\030\016 \003(\0132Q.google.cloud.dataform"
-          + ".v1.CompilationResultAction.Relation.AdditionalOptionsEntry\022\027\n\n"
+          + "\022additional_options\030\016 \003(\0132Q.google.cloud.dataform.v1"
+          + ".CompilationResultAction.Relation.AdditionalOptionsEntry\022\027\n\n"
           + "connection\030\017 \001(\tB\003\340A\001\022a\n"
-          + "\014table_format\030\020 \001(\0162F.google.clou"
-          + "d.dataform.v1.CompilationResultAction.Relation.TableFormatB\003\340A\001\022_\n"
-          + "\013file_format\030\021 \001(\0162E.google.cloud.dataform.v1.Compilat"
-          + "ionResultAction.Relation.FileFormatB\003\340A\001\022\030\n"
+          + "\014table_format\030\020 \001(\0162F.google.cloud.d"
+          + "ataform.v1.CompilationResultAction.Relation.TableFormatB\003\340A\001\022_\n"
+          + "\013file_format\030\021 \001("
+          + "\0162E.google.cloud.dataform.v1.CompilationResultAction.Relation.FileFormatB\003\340A\001\022\030\n"
           + "\013storage_uri\030\022 \001(\tB\003\340A\001\032\330\001\n"
           + "\026IncrementalTableConfig\022 \n"
           + "\030incremental_select_query\030\001 \001(\t\022\030\n"
@@ -1345,30 +1381,31 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\004tags\030\004 \003(\t\032\247\004\n"
           + "\017DataPreparation\022\027\n\r"
           + "contents_yaml\030\005 \001(\tH\000\022g\n"
-          + "\014contents_sql\030\006 \001(\0132O.google.cloud.dataform."
-          + "v1.CompilationResultAction.DataPreparation.SqlDefinitionH\000\022<\n"
+          + "\014contents_sql\030\006 \001(\0132O.google.cloud.dataform.v1."
+          + "CompilationResultAction.DataPreparation.SqlDefinitionH\000\022<\n"
           + "\022dependency_targets\030\001 \003(\0132 .google.cloud.dataform.v1.Target\022\020\n"
           + "\010disabled\030\002 \001(\010\022\014\n"
           + "\004tags\030\004 \003(\t\032\315\001\n\r"
           + "SqlDefinition\022\r\n"
           + "\005query\030\001 \001(\t\022a\n"
-          + "\013error_table\030\002 \001(\0132L.google.cloud.dataform.v1.Compil"
-          + "ationResultAction.DataPreparation.ErrorTable\022J\n"
-          + "\004load\030\003 \001(\0132<.google.cloud.datafo"
-          + "rm.v1.CompilationResultAction.LoadConfig\032V\n\n"
+          + "\013error_table\030\002 \001(\0132L.google.cloud.dataform.v1.Compilati"
+          + "onResultAction.DataPreparation.ErrorTable\022J\n"
+          + "\004load\030\003"
+          + " \001(\0132<.google.cloud.dataform.v1.CompilationResultAction.LoadConfig\032V\n"
+          + "\n"
           + "ErrorTable\0220\n"
           + "\006target\030\001 \001(\0132 .google.cloud.dataform.v1.Target\022\026\n"
           + "\016retention_days\030\002 \001(\005B\014\n\n"
           + "definition\032\360\002\n\n"
           + "LoadConfig\022S\n"
-          + "\007replace\030\001 \001(\0132@.google.cloud.dataform.v"
-          + "1.CompilationResultAction.SimpleLoadModeH\000\022R\n"
-          + "\006append\030\002 \001(\0132@.google.cloud.datafo"
-          + "rm.v1.CompilationResultAction.SimpleLoadModeH\000\022X\n"
-          + "\007maximum\030\003 \001(\0132E.google.cloud.d"
-          + "ataform.v1.CompilationResultAction.IncrementalLoadModeH\000\022W\n"
-          + "\006unique\030\004 \001(\0132E.googl"
-          + "e.cloud.dataform.v1.CompilationResultAction.IncrementalLoadModeH\000B\006\n"
+          + "\007replace\030\001 \001(\0132@.google.cloud.dataform.v1.C"
+          + "ompilationResultAction.SimpleLoadModeH\000\022R\n"
+          + "\006append\030\002 \001(\0132@.google.cloud.dataform."
+          + "v1.CompilationResultAction.SimpleLoadModeH\000\022X\n"
+          + "\007maximum\030\003 \001(\0132E.google.cloud.data"
+          + "form.v1.CompilationResultAction.IncrementalLoadModeH\000\022W\n"
+          + "\006unique\030\004 \001(\0132E.google.c"
+          + "loud.dataform.v1.CompilationResultAction.IncrementalLoadModeH\000B\006\n"
           + "\004mode\032\020\n"
           + "\016SimpleLoadMode\032%\n"
           + "\023IncrementalLoadMode\022\016\n"
@@ -1389,12 +1426,12 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB\003\340A\010\022E\n"
           + "\016release_config\030\002 \001(\tB-\340A\002\372A\'\n"
           + "%dataform.googleapis.com/ReleaseConfig\022J\n"
-          + "\021invocation_config\030\003 \001(\0132*."
-          + "google.cloud.dataform.v1.InvocationConfigB\003\340A\001\022\032\n\r"
+          + "\021invocation_config\030\003 \001(\0132*.goo"
+          + "gle.cloud.dataform.v1.InvocationConfigB\003\340A\001\022\032\n\r"
           + "cron_schedule\030\004 \001(\tB\003\340A\001\022\026\n"
           + "\ttime_zone\030\007 \001(\tB\003\340A\001\022r\n"
-          + "\"recent_scheduled_execution_records\030\005 \003(\0132A.google.cloud.da"
-          + "taform.v1.WorkflowConfig.ScheduledExecutionRecordB\003\340A\003\022\025\n"
+          + "\"recent_scheduled_execution_records\030\005 \003(\0132A.google.cloud.dataf"
+          + "orm.v1.WorkflowConfig.ScheduledExecutionRecordB\003\340A\003\022\025\n"
           + "\010disabled\030\010 \001(\010B\003\340A\001\0224\n"
           + "\013create_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\n"
@@ -1407,9 +1444,9 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\016execution_time\030\001"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003B\010\n"
           + "\006result:\262\001\352A\256\001\n"
-          + "&dataform.googleapis.com/WorkflowConfig\022cprojects/{project}/locations/"
-          + "{location}/repositories/{repository}/wor"
-          + "kflowConfigs/{workflow_config}*\017workflowConfigs2\016workflowConfigB\024\n"
+          + "&dataform.googleapis.com/WorkflowConfig\022cprojects/{project}/locations/{lo"
+          + "cation}/repositories/{repository}/workfl"
+          + "owConfigs/{workflow_config}*\017workflowConfigs2\016workflowConfigB\024\n"
           + "\022_internal_metadata\"\334\003\n"
           + "\020InvocationConfig\022?\n"
           + "\020included_targets\030\001 \003(\0132"
@@ -1419,8 +1456,8 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\036transitive_dependents_included\030\004 \001(\010B\003\340A\001\0225\n"
           + "(fully_refresh_incremental_tables_enabled\030\005 \001(\010B\003\340A\001\022\034\n"
           + "\017service_account\030\006 \001(\tB\003\340A\001\022Z\n"
-          + "\016query_priority\030\t \001(\016"
-          + "28.google.cloud.dataform.v1.InvocationConfig.QueryPriorityB\003\340A\001H\000\210\001\001\"K\n\r"
+          + "\016query_priority\030\t \001(\01628."
+          + "google.cloud.dataform.v1.InvocationConfig.QueryPriorityB\003\340A\001H\000\210\001\001\"K\n\r"
           + "QueryPriority\022\036\n"
           + "\032QUERY_PRIORITY_UNSPECIFIED\020\000\022\017\n"
           + "\013INTERACTIVE\020\001\022\t\n"
@@ -1432,8 +1469,8 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\"\217\001\n"
           + "\033ListWorkflowConfigsResponse\022B\n"
-          + "\020workflow_configs\030\001 \003"
-          + "(\0132(.google.cloud.dataform.v1.WorkflowConfig\022\027\n"
+          + "\020workflow_configs\030\001 \003(\0132"
+          + "(.google.cloud.dataform.v1.WorkflowConfig\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"X\n"
           + "\030GetWorkflowConfigRequest\022<\n"
@@ -1451,7 +1488,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132(.google.cloud.dataform.v1.WorkflowConfigB\003\340A\002\"[\n"
           + "\033DeleteWorkflowConfigRequest\022<\n"
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
-          + "&dataform.googleapis.com/WorkflowConfig\"\224\010\n"
+          + "&dataform.googleapis.com/WorkflowConfig\"\334\010\n"
           + "\022WorkflowInvocation\022O\n"
           + "\022compilation_result\030\002 \001(\tB1\340A\005\372A+\n"
           + ")dataform.googleapis.com/CompilationResultH\000\022I\n"
@@ -1460,16 +1497,18 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB\003\340A\003\022J\n"
           + "\021invocation_config\030\003"
           + " \001(\0132*.google.cloud.dataform.v1.InvocationConfigB\003\340A\005\022F\n"
-          + "\005state\030\004 \001(\01622."
-          + "google.cloud.dataform.v1.WorkflowInvocation.StateB\003\340A\003\0225\n"
+          + "\005state\030\004 \001(\01622.goo"
+          + "gle.cloud.dataform.v1.WorkflowInvocation.StateB\003\340A\003\0225\n"
           + "\021invocation_timing\030\005 \001(\0132\025.google.type.IntervalB\003\340A\003\022V\n"
           + "\033resolved_compilation_result\030\007 \001(\tB1\340A\003\372A+\n"
           + ")dataform.googleapis.com/CompilationResult\022Q\n"
-          + "\025data_encryption_state\030\010 \001(\0132-.google.cl"
-          + "oud.dataform.v1.DataEncryptionStateB\003\340A\003\022#\n"
+          + "\025data_encryption_state\030\010"
+          + " \001(\0132-.google.cloud.dataform.v1.DataEncryptionStateB\003\340A\003\022#\n"
           + "\021internal_metadata\030\t \001(\tB\003\340A\003H\001\210\001\001\022Y\n"
           + "\031private_resource_metadata\030\n"
-          + " \001(\01321.google.cloud.dataform.v1.PrivateResourceMetadataB\003\340A\003\"d\n"
+          + " \001(\01321.google.cloud.dataform.v1.PrivateResourceMetadataB\003\340A\003\022F\n"
+          + "\017pipeline_config\030\013"
+          + " \001(\0132(.google.cloud.dataform.v1.PipelineConfigB\003\340A\003\"d\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\013\n"
           + "\007RUNNING\020\001\022\r\n"
@@ -1477,9 +1516,9 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\tCANCELLED\020\003\022\n\n"
           + "\006FAILED\020\004\022\r\n"
           + "\tCANCELING\020\005:\306\001\352A\302\001\n"
-          + "*dataform.googleapis.com/WorkflowInvocation\022kprojects/{project}/locations/{locatio"
-          + "n}/repositories/{repository}/workflowInv"
-          + "ocations/{workflow_invocation}*\023workflowInvocations2\022workflowInvocationB\024\n"
+          + "*dataform.googleapis.com/WorkflowInvocation\022kprojects"
+          + "/{project}/locations/{location}/repositories/{repository}/workflowInvocations/{w"
+          + "orkflow_invocation}*\023workflowInvocations2\022workflowInvocationB\024\n"
           + "\022compilation_sourceB\024\n"
           + "\022_internal_metadata\"\271\001\n"
           + "\036ListWorkflowInvocationsRequest\022:\n"
@@ -1490,8 +1529,8 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\010order_by\030\004 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\005 \001(\tB\003\340A\001\"\233\001\n"
           + "\037ListWorkflowInvocationsResponse\022J\n"
-          + "\024workflow_invocations\030\001"
-          + " \003(\0132,.google.cloud.dataform.v1.WorkflowInvocation\022\027\n"
+          + "\024workflow_invocations\030\001 \003(\0132,"
+          + ".google.cloud.dataform.v1.WorkflowInvocation\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"`\n"
           + "\034GetWorkflowInvocationRequest\022@\n"
@@ -1500,61 +1539,63 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\037CreateWorkflowInvocationRequest\022:\n"
           + "\006parent\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"dataform.googleapis.com/Repository\022N\n"
-          + "\023workflow_invocation\030\002"
-          + " \001(\0132,.google.cloud.dataform.v1.WorkflowInvocationB\003\340A\002\"c\n"
+          + "\023workflow_invocation\030\002 \001(\0132,.goog"
+          + "le.cloud.dataform.v1.WorkflowInvocationB\003\340A\002\"c\n"
           + "\037DeleteWorkflowInvocationRequest\022@\n"
           + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
           + "*dataform.googleapis.com/WorkflowInvocation\"c\n"
           + "\037CancelWorkflowInvocationRequest\022@\n"
           + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
           + "*dataform.googleapis.com/WorkflowInvocation\"\"\n"
-          + " CancelWorkflowInvocationResponse\"\233\020\n"
+          + " CancelWorkflowInvocationResponse\"\263\020\n"
           + "\030WorkflowInvocationAction\022a\n"
-          + "\017bigquery_action\030\006 \001(\0132A.google.clo"
-          + "ud.dataform.v1.WorkflowInvocationAction.BigQueryActionB\003\340A\003H\000\022a\n"
-          + "\017notebook_action\030\010 \001(\0132A.google.cloud.dataform.v1.Workfl"
-          + "owInvocationAction.NotebookActionB\003\340A\003H\000\022p\n"
-          + "\027data_preparation_action\030\t \001(\0132H.goog"
-          + "le.cloud.dataform.v1.WorkflowInvocationAction.DataPreparationActionB\003\340A\003H\000\0225\n"
+          + "\017bigquery_action\030\006 \001(\0132A.google.cloud.dataform"
+          + ".v1.WorkflowInvocationAction.BigQueryActionB\003\340A\003H\000\022a\n"
+          + "\017notebook_action\030\010 \001(\0132A.go"
+          + "ogle.cloud.dataform.v1.WorkflowInvocationAction.NotebookActionB\003\340A\003H\000\022p\n"
+          + "\027data_preparation_action\030\t \001(\0132H.google.cloud.da"
+          + "taform.v1.WorkflowInvocationAction.DataPreparationActionB\003\340A\003H\000\0225\n"
           + "\006target\030\001 \001(\0132 .google.cloud.dataform.v1.TargetB\003\340A\003\022?\n"
           + "\020canonical_target\030\002 \001(\0132"
           + " .google.cloud.dataform.v1.TargetB\003\340A\003\022L\n"
-          + "\005state\030\004"
-          + " \001(\01628.google.cloud.dataform.v1.WorkflowInvocationAction.StateB\003\340A\003\022\033\n"
+          + "\005state\030\004 \001(\01628"
+          + ".google.cloud.dataform.v1.WorkflowInvocationAction.StateB\003\340A\003\022\033\n"
           + "\016failure_reason\030\007 \001(\tB\003\340A\003\0225\n"
           + "\021invocation_timing\030\005 \001(\0132\025.google.type.IntervalB\003\340A\003\022#\n"
           + "\021internal_metadata\030\n"
           + " \001(\tB\003\340A\003H\001\210\001\001\032>\n"
           + "\016BigQueryAction\022\027\n\n"
           + "sql_script\030\001 \001(\tB\003\340A\003\022\023\n"
-          + "\006job_id\030\002 \001(\tB\003\340A\003\032<\n"
+          + "\006job_id\030\002 \001(\tB\003\340A\003\032T\n"
           + "\016NotebookAction\022\025\n"
           + "\010contents\030\001 \001(\tB\003\340A\003\022\023\n"
-          + "\006job_id\030\002 \001(\tB\003\340A\003\032\201\t\n"
+          + "\006job_id\030\002 \001(\tB\003\340A\003\022\026\n"
+          + "\tfile_path\030\003 \001(\tB\003\340A\003\032\201\t\n"
           + "\025DataPreparationAction\022\034\n\r"
           + "contents_yaml\030\002 \001(\tB\003\340A\003H\000\022t\n"
-          + "\014contents_sql\030\006 \001(\0132\\.google.cloud.dataform.v1.WorkflowInvocat"
-          + "ionAction.DataPreparationAction.ActionSqlDefinitionH\000\022\032\n\r"
+          + "\014contents_sql\030\006 \001(\0132\\.google.cloud.dataform.v1.Wo"
+          + "rkflowInvocationAction.DataPreparationAction.ActionSqlDefinitionH\000\022\032\n\r"
           + "generated_sql\030\003 \001(\tB\003\340A\003\022\023\n"
           + "\006job_id\030\004 \001(\tB\003\340A\003\032\204\002\n"
           + "\023ActionSqlDefinition\022\r\n"
           + "\005query\030\001 \001(\t\022n\n"
-          + "\013error_table\030\002 \001(\0132Y.google.cloud.dataform.v1.WorkflowIn"
-          + "vocationAction.DataPreparationAction.ActionErrorTable\022n\n"
-          + "\013load_config\030\003 \001(\0132Y.google.cloud.dataform.v1.WorkflowInvocation"
-          + "Action.DataPreparationAction.ActionLoadConfig\032\\\n"
+          + "\013error_table\030\002 \001(\0132Y.google.cloud.dataform."
+          + "v1.WorkflowInvocationAction.DataPreparationAction.ActionErrorTable\022n\n"
+          + "\013load_config\030\003 \001(\0132Y.google.cloud.dataform.v1.Workf"
+          + "lowInvocationAction.DataPreparationAction.ActionLoadConfig\032\\\n"
           + "\020ActionErrorTable\0220\n"
           + "\006target\030\001 \001(\0132 .google.cloud.dataform.v1.Target\022\026\n"
           + "\016retention_days\030\002 \001(\005\032\352\003\n"
           + "\020ActionLoadConfig\022p\n"
-          + "\007replace\030\001 \001(\0132].google.cloud.datafor"
-          + "m.v1.WorkflowInvocationAction.DataPreparationAction.ActionSimpleLoadModeH\000\022o\n"
-          + "\006append\030\002 \001(\0132].google.cloud.dataform.v1.Wo"
-          + "rkflowInvocationAction.DataPreparationAction.ActionSimpleLoadModeH\000\022u\n"
-          + "\007maximum\030\003 \001(\0132b.google.cloud.dataform.v1.Workflow"
-          + "InvocationAction.DataPreparationAction.ActionIncrementalLoadModeH\000\022t\n"
-          + "\006unique\030\004 \001(\0132b.google.cloud.dataform.v1.WorkflowIn"
-          + "vocationAction.DataPreparationAction.ActionIncrementalLoadModeH\000B\006\n"
+          + "\007replace\030\001 \001(\0132].google.cloud.dataform.v1.WorkflowInvocationActi"
+          + "on.DataPreparationAction.ActionSimpleLoadModeH\000\022o\n"
+          + "\006append\030\002 \001(\0132].google.cloud.dataform.v1.WorkflowInvocationAction.Data"
+          + "PreparationAction.ActionSimpleLoadModeH\000\022u\n"
+          + "\007maximum\030\003 \001(\0132b.google.cloud.datafor"
+          + "m.v1.WorkflowInvocationAction.DataPrepar"
+          + "ationAction.ActionIncrementalLoadModeH\000\022t\n"
+          + "\006unique\030\004 \001(\0132b.google.cloud.dataform."
+          + "v1.WorkflowInvocationAction.DataPreparationAction.ActionIncrementalLoadModeH\000B\006\n"
           + "\004mode\032\026\n"
           + "\024ActionSimpleLoadMode\032+\n"
           + "\031ActionIncrementalLoadMode\022\016\n"
@@ -1584,8 +1625,8 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\024default_kms_key_name\030\002 \001(\tB)\340A\001\372A#\n"
           + "!cloudkms.googleapis.com/CryptoKey\022#\n"
           + "\021internal_metadata\030\007 \001(\tB\003\340A\003H\000\210\001\001:d\352Aa\n"
-          + "\036dataform.googleapis.com/Config\022.projects/{projec"
-          + "t}/locations/{location}/config*\007configs2\006configB\024\n"
+          + "\036dataform.googleapis.com/Config\022.pro"
+          + "jects/{project}/locations/{location}/config*\007configs2\006configB\024\n"
           + "\022_internal_metadata\"H\n"
           + "\020GetConfigRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
@@ -1603,8 +1644,8 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\013update_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022#\n"
           + "\021internal_metadata\030\007 \001(\tB\003\340A\003H\000\210\001\001\022\'\n"
           + "\025creator_iam_principal\030\010 \001(\tB\003\340A\003H\001\210\001\001:n\352Ak\n"
-          + "\036dataform.googleapis.com/Folder\0228projects/{project}/"
-          + "locations/{location}/folders/{folder}*\007folders2\006folderB\024\n"
+          + "\036dataform.googleapis.com/Folder\0228projec"
+          + "ts/{project}/locations/{location}/folders/{folder}*\007folders2\006folderB\024\n"
           + "\022_internal_metadataB\030\n"
           + "\026_creator_iam_principal\"\207\001\n"
           + "\023CreateFolderRequest\0229\n"
@@ -1638,15 +1679,14 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
           + "\006target\030\003 \001(\tB\003\340A\003\022L\n"
-          + "\005state\030\004 \001(\01628.google.cloud.d"
-          + "ataform.v1.DeleteFolderTreeMetadata.StateB\003\340A\003\022\035\n"
+          + "\005state\030\004 \001(\01628.g"
+          + "oogle.cloud.dataform.v1.DeleteFolderTreeMetadata.StateB\003\340A\003\022\035\n"
           + "\020percent_complete\030\005 \001(\005B\003\340A\003\"[\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\017\n"
           + "\013INITIALIZED\020\001\022\017\n"
           + "\013IN_PROGRESS\020\002\022\r\n"
-          + "\tSUCCEEDED\020\003\022\n"
-          + "\n"
+          + "\tSUCCEEDED\020\003\022\n\n"
           + "\006FAILED\020\004\"\261\001\n"
           + "\032QueryFolderContentsRequest\0226\n"
           + "\006folder\030\001 \001(\tB&\340A\002\372A \n"
@@ -1656,8 +1696,8 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\010order_by\030\004 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\005 \001(\tB\003\340A\001\"\243\002\n"
           + "\033QueryFolderContentsResponse\022Z\n"
-          + "\007entries\030\001 \003(\0132"
-          + "I.google.cloud.dataform.v1.QueryFolderContentsResponse.FolderContentsEntry\022\027\n"
+          + "\007entries\030\001 \003(\0132I.google.cloud.dataform.v1."
+          + "QueryFolderContentsResponse.FolderContentsEntry\022\027\n"
           + "\017next_page_token\030\002 \001(\t\032\216\001\n"
           + "\023FolderContentsEntry\0222\n"
           + "\006folder\030\001 \001(\0132 .google.cloud.dataform.v1.FolderH\000\022:\n\n"
@@ -1671,8 +1711,8 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\010order_by\030\004 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\005 \001(\tB\003\340A\001\"\243\002\n"
           + "\035QueryUserRootContentsResponse\022Z\n"
-          + "\007entries\030\001 \003"
-          + "(\0132I.google.cloud.dataform.v1.QueryUserRootContentsResponse.RootContentsEntry\022\027\n"
+          + "\007entries\030\001 \003(\0132I.google.cloud.dataform."
+          + "v1.QueryUserRootContentsResponse.RootContentsEntry\022\027\n"
           + "\017next_page_token\030\002 \001(\t\032\214\001\n"
           + "\021RootContentsEntry\0222\n"
           + "\006folder\030\001 \001(\0132 .google.cloud.dataform.v1.FolderH\000\022:\n\n"
@@ -1686,16 +1726,16 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\021internal_metadata\030\005 \001(\tB\003\340A\003H\000\210\001\001\022\'\n"
           + "\025creator_iam_principal\030\006 \001("
           + "\tB\003\340A\003H\001\210\001\001:\204\001\352A\200\001\n"
-          + "\"dataform.googleapis.com/TeamFolder\022Aprojects/{project}/loca"
-          + "tions/{location}/teamFolders/{team_folder}*\013teamFolders2\n"
+          + "\"dataform.googleapis.com/TeamFolder\022Aprojects/{"
+          + "project}/locations/{location}/teamFolders/{team_folder}*\013teamFolders2\n"
           + "teamFolderB\024\n"
           + "\022_internal_metadataB\030\n"
           + "\026_creator_iam_principal\"\224\001\n"
           + "\027CreateTeamFolderRequest\0229\n"
           + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\022>\n"
-          + "\013team_folder\030\002"
-          + " \001(\0132$.google.cloud.dataform.v1.TeamFolderB\003\340A\002\"P\n"
+          + "\013team_folder\030\002 \001(\0132$.g"
+          + "oogle.cloud.dataform.v1.TeamFolderB\003\340A\002\"P\n"
           + "\024GetTeamFolderRequest\0228\n"
           + "\004name\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"dataform.googleapis.com/TeamFolder\"\217\001\n"
@@ -1714,8 +1754,8 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\010order_by\030\004 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\005 \001(\tB\003\340A\001\"\263\002\n"
           + "\037QueryTeamFolderContentsResponse\022b\n"
-          + "\007entries\030\001 \003(\0132Q.google.cloud"
-          + ".dataform.v1.QueryTeamFolderContentsResponse.TeamFolderContentsEntry\022\027\n"
+          + "\007entries\030\001 \003(\0132Q.google.cloud.dataform.v1.QueryTeamFolde"
+          + "rContentsResponse.TeamFolderContentsEntry\022\027\n"
           + "\017next_page_token\030\002 \001(\t\032\222\001\n"
           + "\027TeamFolderContentsEntry\0222\n"
           + "\006folder\030\001 \001(\0132 .google.cloud.dataform.v1.FolderH\000\022:\n\n"
@@ -1729,471 +1769,461 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
           + "\010order_by\030\004 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\005 \001(\tB\003\340A\001\"\361\001\n"
           + "\031SearchTeamFoldersResponse\022[\n"
-          + "\007results\030\001 \003(\0132J.googl"
-          + "e.cloud.dataform.v1.SearchTeamFoldersResponse.TeamFolderSearchResult\022\027\n"
+          + "\007results\030\001 \003(\0132J.google.cloud.dataform.v1.SearchT"
+          + "eamFoldersResponse.TeamFolderSearchResult\022\027\n"
           + "\017next_page_token\030\002 \001(\t\032^\n"
           + "\026TeamFolderSearchResult\022;\n"
           + "\013team_folder\030\002 \001(\0132$.google.cloud.dataform.v1.TeamFolderH\000B\007\n"
           + "\005entry\"\312\002\n"
           + "\022MoveFolderMetadata\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
-          + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
-          + "\006target\030\003 \001(\tB\003\340A\003\022A\n"
-          + "\005state\030\004 \001(\01622.goog"
-          + "le.cloud.dataform.v1.MoveFolderMetadata.State\022\030\n"
-          + "\020percent_complete\030\005 \001(\005\"Y\n"
-          + "\005State\022\025\n"
-          + "\021STATE_UNSPECIFIED\020\000\022\017\n"
-          + "\013INITIALIZED\020\001\022\017\n"
-          + "\013IN_PROGRESS\020\002\022\013\n"
-          + "\007SUCCESS\020\003\022\n\n"
-          + "\006FAILED\020\004\"\322\002\n"
-          + "\026MoveRepositoryMetadata\0224\n"
-          + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
-          + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
-          + "\006target\030\003 \001(\tB\003\340A\003\022E\n"
-          + "\005state\030\004"
-          + " \001(\01626.google.cloud.dataform.v1.MoveRepositoryMetadata.State\022\030\n"
-          + "\020percent_complete\030\005 \001(\005\"Y\n"
-          + "\005State\022\025\n"
-          + "\021STATE_UNSPECIFIED\020\000\022\017\n"
-          + "\013INITIALIZED\020\001\022\017\n"
-          + "\013IN_PROGRESS\020\002\022\013\n"
-          + "\007SUCCESS\020\003\022\n\n"
-          + "\006FAILED\020\004*\211\001\n"
-          + "\025DirectoryContentsView\022\'\n"
-          + "#DIRECTORY_CONTENTS_VIEW_UNSPECIFIED\020\000\022!\n"
-          + "\035DIRECTORY_CONTENTS_VIEW_BASIC\020\001\022$\n"
-          + " DIRECTORY_CONTENTS_VIEW_METADATA\020\0022\343}\n"
-          + "\010Dataform\022\245\001\n\r"
-          + "GetTeamFolder\022..google.cloud.dataform.v1.GetTeamFolderReque"
-          + "st\032$.google.cloud.dataform.v1.TeamFolder"
-          + "\">\332A\004name\202\323\344\223\0021\022//v1/{name=projects/*/locations/*/teamFolders/*}\022\306\001\n"
-          + "\020CreateTeamF",
-      "older\0221.google.cloud.dataform.v1.CreateT"
-          + "eamFolderRequest\032$.google.cloud.dataform"
-          + ".v1.TeamFolder\"Y\332A\022parent,team_folder\202\323\344"
-          + "\223\002>\"//v1/{parent=projects/*/locations/*}"
-          + "/teamFolders:\013team_folder\022\327\001\n\020UpdateTeam"
-          + "Folder\0221.google.cloud.dataform.v1.Update"
-          + "TeamFolderRequest\032$.google.cloud.datafor"
-          + "m.v1.TeamFolder\"j\332A\027team_folder,update_m"
-          + "ask\202\323\344\223\002J2;/v1/{team_folder.name=project"
-          + "s/*/locations/*/teamFolders/*}:\013team_fol"
-          + "der\022\235\001\n\020DeleteTeamFolder\0221.google.cloud."
-          + "dataform.v1.DeleteTeamFolderRequest\032\026.go"
-          + "ogle.protobuf.Empty\">\332A\004name\202\323\344\223\0021*//v1/"
-          + "{name=projects/*/locations/*/teamFolders"
-          + "/*}\022\365\001\n\024DeleteTeamFolderTree\0225.google.cl"
-          + "oud.dataform.v1.DeleteTeamFolderTreeRequ"
-          + "est\032\035.google.longrunning.Operation\"\206\001\312A1"
-          + "\n\025google.protobuf.Empty\022\030DeleteFolderTre"
-          + "eMetadata\332A\nname,force\202\323\344\223\002?\":/v1/{name="
-          + "projects/*/locations/*/teamFolders/*}:de"
-          + "leteTree:\001*\022\352\001\n\027QueryTeamFolderContents\022"
-          + "8.google.cloud.dataform.v1.QueryTeamFold"
-          + "erContentsRequest\0329.google.cloud.datafor"
-          + "m.v1.QueryTeamFolderContentsResponse\"Z\332A"
-          + "\013team_folder\202\323\344\223\002F\022D/v1/{team_folder=pro"
-          + "jects/*/locations/*/teamFolders/*}:query"
-          + "Contents\022\276\001\n\021SearchTeamFolders\0222.google."
-          + "cloud.dataform.v1.SearchTeamFoldersReque"
-          + "st\0323.google.cloud.dataform.v1.SearchTeam"
-          + "FoldersResponse\"@\202\323\344\223\002:\0228/v1/{location=p"
-          + "rojects/*/locations/*}/teamFolders:searc"
-          + "h\022\225\001\n\tGetFolder\022*.google.cloud.dataform."
-          + "v1.GetFolderRequest\032 .google.cloud.dataf"
-          + "orm.v1.Folder\":\332A\004name\202\323\344\223\002-\022+/v1/{name="
-          + "projects/*/locations/*/folders/*}\022\254\001\n\014Cr"
-          + "eateFolder\022-.google.cloud.dataform.v1.Cr"
-          + "eateFolderRequest\032 .google.cloud.datafor"
-          + "m.v1.Folder\"K\332A\rparent,folder\202\323\344\223\0025\"+/v1"
-          + "/{parent=projects/*/locations/*}/folders"
-          + ":\006folder\022\270\001\n\014UpdateFolder\022-.google.cloud"
-          + ".dataform.v1.UpdateFolderRequest\032 .googl"
-          + "e.cloud.dataform.v1.Folder\"W\332A\022folder,up"
-          + "date_mask\202\323\344\223\002<22/v1/{folder.name=projec"
-          + "ts/*/locations/*/folders/*}:\006folder\022\221\001\n\014"
-          + "DeleteFolder\022-.google.cloud.dataform.v1."
-          + "DeleteFolderRequest\032\026.google.protobuf.Em"
-          + "pty\":\332A\004name\202\323\344\223\002-*+/v1/{name=projects/*"
-          + "/locations/*/folders/*}\022\351\001\n\020DeleteFolder"
-          + "Tree\0221.google.cloud.dataform.v1.DeleteFo"
-          + "lderTreeRequest\032\035.google.longrunning.Ope"
-          + "ration\"\202\001\312A1\n\025google.protobuf.Empty\022\030Del"
-          + "eteFolderTreeMetadata\332A\nname,force\202\323\344\223\002;"
-          + "\"6/v1/{name=projects/*/locations/*/folde"
-          + "rs/*}:deleteTree:\001*\022\326\001\n\023QueryFolderConte"
-          + "nts\0224.google.cloud.dataform.v1.QueryFold"
-          + "erContentsRequest\0325.google.cloud.datafor"
-          + "m.v1.QueryFolderContentsResponse\"R\332A\006fol"
-          + "der\202\323\344\223\002C\022A/v1/{folder=projects/*/locati"
-          + "ons/*/folders/*}:queryFolderContents\022\330\001\n"
-          + "\025QueryUserRootContents\0226.google.cloud.da"
-          + "taform.v1.QueryUserRootContentsRequest\0327"
-          + ".google.cloud.dataform.v1.QueryUserRootC"
-          + "ontentsResponse\"N\332A\010location\202\323\344\223\002=\022;/v1/"
-          + "{location=projects/*/locations/*}:queryU"
-          + "serRootContents\022\351\001\n\nMoveFolder\022+.google."
-          + "cloud.dataform.v1.MoveFolderRequest\032\035.go"
-          + "ogle.longrunning.Operation\"\216\001\312A+\n\025google"
-          + ".protobuf.Empty\022\022MoveFolderMetadata\332A\"na"
-          + "me,destination_containing_folder\202\323\344\223\0025\"0"
-          + "/v1/{name=projects/*/locations/*/folders"
-          + "/*}:move:\001*\022\274\001\n\020ListRepositories\0221.googl"
-          + "e.cloud.dataform.v1.ListRepositoriesRequ"
-          + "est\0322.google.cloud.dataform.v1.ListRepos"
-          + "itoriesResponse\"A\332A\006parent\202\323\344\223\0022\0220/v1/{p"
-          + "arent=projects/*/locations/*}/repositori"
-          + "es\022\246\001\n\rGetRepository\022..google.cloud.data"
-          + "form.v1.GetRepositoryRequest\032$.google.cl"
-          + "oud.dataform.v1.Repository\"?\332A\004name\202\323\344\223\002"
-          + "2\0220/v1/{name=projects/*/locations/*/repo"
-          + "sitories/*}\022\323\001\n\020CreateRepository\0221.googl"
-          + "e.cloud.dataform.v1.CreateRepositoryRequ"
-          + "est\032$.google.cloud.dataform.v1.Repositor"
-          + "y\"f\332A\037parent,repository,repository_id\202\323\344"
-          + "\223\002>\"0/v1/{parent=projects/*/locations/*}"
-          + "/repositories:\nrepository\022\325\001\n\020UpdateRepo"
-          + "sitory\0221.google.cloud.dataform.v1.Update"
-          + "RepositoryRequest\032$.google.cloud.datafor"
-          + "m.v1.Repository\"h\332A\026repository,update_ma"
-          + "sk\202\323\344\223\002I2;/v1/{repository.name=projects/"
-          + "*/locations/*/repositories/*}:\nrepositor"
-          + "y\022\236\001\n\020DeleteRepository\0221.google.cloud.da"
-          + "taform.v1.DeleteRepositoryRequest\032\026.goog"
-          + "le.protobuf.Empty\"?\332A\004name\202\323\344\223\0022*0/v1/{n"
+          + "\010end_time\030\002 \001(\0132\032.google.protobuf.Time",
+      "stampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022A\n\005state"
+          + "\030\004 \001(\01622.google.cloud.dataform.v1.MoveFo"
+          + "lderMetadata.State\022\030\n\020percent_complete\030\005"
+          + " \001(\005\"Y\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\017\n\013"
+          + "INITIALIZED\020\001\022\017\n\013IN_PROGRESS\020\002\022\013\n\007SUCCES"
+          + "S\020\003\022\n\n\006FAILED\020\004\"\322\002\n\026MoveRepositoryMetada"
+          + "ta\0224\n\013create_time\030\001 \001(\0132\032.google.protobu"
+          + "f.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\003\340A\003\022\023\n\006target\030\003 "
+          + "\001(\tB\003\340A\003\022E\n\005state\030\004 \001(\01626.google.cloud.d"
+          + "ataform.v1.MoveRepositoryMetadata.State\022"
+          + "\030\n\020percent_complete\030\005 \001(\005\"Y\n\005State\022\025\n\021ST"
+          + "ATE_UNSPECIFIED\020\000\022\017\n\013INITIALIZED\020\001\022\017\n\013IN"
+          + "_PROGRESS\020\002\022\013\n\007SUCCESS\020\003\022\n\n\006FAILED\020\004*\211\001\n"
+          + "\025DirectoryContentsView\022\'\n#DIRECTORY_CONT"
+          + "ENTS_VIEW_UNSPECIFIED\020\000\022!\n\035DIRECTORY_CON"
+          + "TENTS_VIEW_BASIC\020\001\022$\n DIRECTORY_CONTENTS"
+          + "_VIEW_METADATA\020\0022\343}\n\010Dataform\022\245\001\n\rGetTea"
+          + "mFolder\022..google.cloud.dataform.v1.GetTe"
+          + "amFolderRequest\032$.google.cloud.dataform."
+          + "v1.TeamFolder\">\332A\004name\202\323\344\223\0021\022//v1/{name="
+          + "projects/*/locations/*/teamFolders/*}\022\306\001"
+          + "\n\020CreateTeamFolder\0221.google.cloud.datafo"
+          + "rm.v1.CreateTeamFolderRequest\032$.google.c"
+          + "loud.dataform.v1.TeamFolder\"Y\332A\022parent,t"
+          + "eam_folder\202\323\344\223\002>\"//v1/{parent=projects/*"
+          + "/locations/*}/teamFolders:\013team_folder\022\327"
+          + "\001\n\020UpdateTeamFolder\0221.google.cloud.dataf"
+          + "orm.v1.UpdateTeamFolderRequest\032$.google."
+          + "cloud.dataform.v1.TeamFolder\"j\332A\027team_fo"
+          + "lder,update_mask\202\323\344\223\002J2;/v1/{team_folder"
+          + ".name=projects/*/locations/*/teamFolders"
+          + "/*}:\013team_folder\022\235\001\n\020DeleteTeamFolder\0221."
+          + "google.cloud.dataform.v1.DeleteTeamFolde"
+          + "rRequest\032\026.google.protobuf.Empty\">\332A\004nam"
+          + "e\202\323\344\223\0021*//v1/{name=projects/*/locations/"
+          + "*/teamFolders/*}\022\365\001\n\024DeleteTeamFolderTre"
+          + "e\0225.google.cloud.dataform.v1.DeleteTeamF"
+          + "olderTreeRequest\032\035.google.longrunning.Op"
+          + "eration\"\206\001\312A1\n\025google.protobuf.Empty\022\030De"
+          + "leteFolderTreeMetadata\332A\nname,force\202\323\344\223\002"
+          + "?\":/v1/{name=projects/*/locations/*/team"
+          + "Folders/*}:deleteTree:\001*\022\352\001\n\027QueryTeamFo"
+          + "lderContents\0228.google.cloud.dataform.v1."
+          + "QueryTeamFolderContentsRequest\0329.google."
+          + "cloud.dataform.v1.QueryTeamFolderContent"
+          + "sResponse\"Z\332A\013team_folder\202\323\344\223\002F\022D/v1/{te"
+          + "am_folder=projects/*/locations/*/teamFol"
+          + "ders/*}:queryContents\022\276\001\n\021SearchTeamFold"
+          + "ers\0222.google.cloud.dataform.v1.SearchTea"
+          + "mFoldersRequest\0323.google.cloud.dataform."
+          + "v1.SearchTeamFoldersResponse\"@\202\323\344\223\002:\0228/v"
+          + "1/{location=projects/*/locations/*}/team"
+          + "Folders:search\022\225\001\n\tGetFolder\022*.google.cl"
+          + "oud.dataform.v1.GetFolderRequest\032 .googl"
+          + "e.cloud.dataform.v1.Folder\":\332A\004name\202\323\344\223\002"
+          + "-\022+/v1/{name=projects/*/locations/*/fold"
+          + "ers/*}\022\254\001\n\014CreateFolder\022-.google.cloud.d"
+          + "ataform.v1.CreateFolderRequest\032 .google."
+          + "cloud.dataform.v1.Folder\"K\332A\rparent,fold"
+          + "er\202\323\344\223\0025\"+/v1/{parent=projects/*/locatio"
+          + "ns/*}/folders:\006folder\022\270\001\n\014UpdateFolder\022-"
+          + ".google.cloud.dataform.v1.UpdateFolderRe"
+          + "quest\032 .google.cloud.dataform.v1.Folder\""
+          + "W\332A\022folder,update_mask\202\323\344\223\002<22/v1/{folde"
+          + "r.name=projects/*/locations/*/folders/*}"
+          + ":\006folder\022\221\001\n\014DeleteFolder\022-.google.cloud"
+          + ".dataform.v1.DeleteFolderRequest\032\026.googl"
+          + "e.protobuf.Empty\":\332A\004name\202\323\344\223\002-*+/v1/{na"
+          + "me=projects/*/locations/*/folders/*}\022\351\001\n"
+          + "\020DeleteFolderTree\0221.google.cloud.datafor"
+          + "m.v1.DeleteFolderTreeRequest\032\035.google.lo"
+          + "ngrunning.Operation\"\202\001\312A1\n\025google.protob"
+          + "uf.Empty\022\030DeleteFolderTreeMetadata\332A\nnam"
+          + "e,force\202\323\344\223\002;\"6/v1/{name=projects/*/loca"
+          + "tions/*/folders/*}:deleteTree:\001*\022\326\001\n\023Que"
+          + "ryFolderContents\0224.google.cloud.dataform"
+          + ".v1.QueryFolderContentsRequest\0325.google."
+          + "cloud.dataform.v1.QueryFolderContentsRes"
+          + "ponse\"R\332A\006folder\202\323\344\223\002C\022A/v1/{folder=proj"
+          + "ects/*/locations/*/folders/*}:queryFolde"
+          + "rContents\022\330\001\n\025QueryUserRootContents\0226.go"
+          + "ogle.cloud.dataform.v1.QueryUserRootCont"
+          + "entsRequest\0327.google.cloud.dataform.v1.Q"
+          + "ueryUserRootContentsResponse\"N\332A\010locatio"
+          + "n\202\323\344\223\002=\022;/v1/{location=projects/*/locati"
+          + "ons/*}:queryUserRootContents\022\351\001\n\nMoveFol"
+          + "der\022+.google.cloud.dataform.v1.MoveFolde"
+          + "rRequest\032\035.google.longrunning.Operation\""
+          + "\216\001\312A+\n\025google.protobuf.Empty\022\022MoveFolder"
+          + "Metadata\332A\"name,destination_containing_f"
+          + "older\202\323\344\223\0025\"0/v1/{name=projects/*/locati"
+          + "ons/*/folders/*}:move:\001*\022\274\001\n\020ListReposit"
+          + "ories\0221.google.cloud.dataform.v1.ListRep"
+          + "ositoriesRequest\0322.google.cloud.dataform"
+          + ".v1.ListRepositoriesResponse\"A\332A\006parent\202"
+          + "\323\344\223\0022\0220/v1/{parent=projects/*/locations/"
+          + "*}/repositories\022\246\001\n\rGetRepository\022..goog"
+          + "le.cloud.dataform.v1.GetRepositoryReques"
+          + "t\032$.google.cloud.dataform.v1.Repository\""
+          + "?\332A\004name\202\323\344\223\0022\0220/v1/{name=projects/*/loc"
+          + "ations/*/repositories/*}\022\323\001\n\020CreateRepos"
+          + "itory\0221.google.cloud.dataform.v1.CreateR"
+          + "epositoryRequest\032$.google.cloud.dataform"
+          + ".v1.Repository\"f\332A\037parent,repository,rep"
+          + "ository_id\202\323\344\223\002>\"0/v1/{parent=projects/*"
+          + "/locations/*}/repositories:\nrepository\022\325"
+          + "\001\n\020UpdateRepository\0221.google.cloud.dataf"
+          + "orm.v1.UpdateRepositoryRequest\032$.google."
+          + "cloud.dataform.v1.Repository\"h\332A\026reposit"
+          + "ory,update_mask\202\323\344\223\002I2;/v1/{repository.n"
           + "ame=projects/*/locations/*/repositories/"
-          + "*}\022\372\001\n\016MoveRepository\022/.google.cloud.dat"
-          + "aform.v1.MoveRepositoryRequest\032\035.google."
-          + "longrunning.Operation\"\227\001\312A/\n\025google.prot"
-          + "obuf.Empty\022\026MoveRepositoryMetadata\332A\"nam"
-          + "e,destination_containing_folder\202\323\344\223\002:\"5/"
-          + "v1/{name=projects/*/locations/*/reposito"
-          + "ries/*}:move:\001*\022\322\001\n\027CommitRepositoryChan"
-          + "ges\0228.google.cloud.dataform.v1.CommitRep"
-          + "ositoryChangesRequest\0329.google.cloud.dat"
-          + "aform.v1.CommitRepositoryChangesResponse"
-          + "\"B\202\323\344\223\002<\"7/v1/{name=projects/*/locations"
-          + "/*/repositories/*}:commit:\001*\022\302\001\n\022ReadRep"
-          + "ositoryFile\0223.google.cloud.dataform.v1.R"
-          + "eadRepositoryFileRequest\0324.google.cloud."
-          + "dataform.v1.ReadRepositoryFileResponse\"A"
-          + "\202\323\344\223\002;\0229/v1/{name=projects/*/locations/*"
-          + "/repositories/*}:readFile\022\372\001\n QueryRepos"
-          + "itoryDirectoryContents\022A.google.cloud.da"
+          + "*}:\nrepository\022\236\001\n\020DeleteRepository\0221.go"
+          + "ogle.cloud.dataform.v1.DeleteRepositoryR"
+          + "equest\032\026.google.protobuf.Empty\"?\332A\004name\202"
+          + "\323\344\223\0022*0/v1/{name=projects/*/locations/*/"
+          + "repositories/*}\022\372\001\n\016MoveRepository\022/.goo"
+          + "gle.cloud.dataform.v1.MoveRepositoryRequ"
+          + "est\032\035.google.longrunning.Operation\"\227\001\312A/"
+          + "\n\025google.protobuf.Empty\022\026MoveRepositoryM"
+          + "etadata\332A\"name,destination_containing_fo"
+          + "lder\202\323\344\223\002:\"5/v1/{name=projects/*/locatio"
+          + "ns/*/repositories/*}:move:\001*\022\322\001\n\027CommitR"
+          + "epositoryChanges\0228.google.cloud.dataform"
+          + ".v1.CommitRepositoryChangesRequest\0329.goo"
+          + "gle.cloud.dataform.v1.CommitRepositoryCh"
+          + "angesResponse\"B\202\323\344\223\002<\"7/v1/{name=project"
+          + "s/*/locations/*/repositories/*}:commit:\001"
+          + "*\022\302\001\n\022ReadRepositoryFile\0223.google.cloud."
+          + "dataform.v1.ReadRepositoryFileRequest\0324."
+          + "google.cloud.dataform.v1.ReadRepositoryF"
+          + "ileResponse\"A\202\323\344\223\002;\0229/v1/{name=projects/"
+          + "*/locations/*/repositories/*}:readFile\022\372"
+          + "\001\n QueryRepositoryDirectoryContents\022A.go"
+          + "ogle.cloud.dataform.v1.QueryRepositoryDi"
+          + "rectoryContentsRequest\032B.google.cloud.da"
           + "taform.v1.QueryRepositoryDirectoryConten"
-          + "tsRequest\032B.google.cloud.dataform.v1.Que"
-          + "ryRepositoryDirectoryContentsResponse\"O\202"
-          + "\323\344\223\002I\022G/v1/{name=projects/*/locations/*/"
-          + "repositories/*}:queryDirectoryContents\022\322"
-          + "\001\n\026FetchRepositoryHistory\0227.google.cloud"
-          + ".dataform.v1.FetchRepositoryHistoryReque"
-          + "st\0328.google.cloud.dataform.v1.FetchRepos"
-          + "itoryHistoryResponse\"E\202\323\344\223\002?\022=/v1/{name="
-          + "projects/*/locations/*/repositories/*}:f"
-          + "etchHistory\022\202\002\n\"ComputeRepositoryAccessT"
-          + "okenStatus\022C.google.cloud.dataform.v1.Co"
-          + "mputeRepositoryAccessTokenStatusRequest\032"
-          + "D.google.cloud.dataform.v1.ComputeReposi"
-          + "toryAccessTokenStatusResponse\"Q\202\323\344\223\002K\022I/"
-          + "v1/{name=projects/*/locations/*/reposito"
-          + "ries/*}:computeAccessTokenStatus\022\320\001\n\023Fet"
-          + "chRemoteBranches\0224.google.cloud.dataform"
-          + ".v1.FetchRemoteBranchesRequest\0325.google."
-          + "cloud.dataform.v1.FetchRemoteBranchesRes"
-          + "ponse\"L\202\323\344\223\002F\022D/v1/{name=projects/*/loca"
-          + "tions/*/repositories/*}:fetchRemoteBranc"
-          + "hes\022\303\001\n\016ListWorkspaces\022/.google.cloud.da"
-          + "taform.v1.ListWorkspacesRequest\0320.google"
-          + ".cloud.dataform.v1.ListWorkspacesRespons"
-          + "e\"N\332A\006parent\202\323\344\223\002?\022=/v1/{parent=projects"
-          + "/*/locations/*/repositories/*}/workspace"
-          + "s\022\260\001\n\014GetWorkspace\022-.google.cloud.datafo"
-          + "rm.v1.GetWorkspaceRequest\032#.google.cloud"
-          + ".dataform.v1.Workspace\"L\332A\004name\202\323\344\223\002?\022=/"
-          + "v1/{name=projects/*/locations/*/reposito"
-          + "ries/*/workspaces/*}\022\332\001\n\017CreateWorkspace"
-          + "\0220.google.cloud.dataform.v1.CreateWorksp"
-          + "aceRequest\032#.google.cloud.dataform.v1.Wo"
-          + "rkspace\"p\332A\035parent,workspace,workspace_i"
-          + "d\202\323\344\223\002J\"=/v1/{parent=projects/*/location"
-          + "s/*/repositories/*}/workspaces:\tworkspac"
-          + "e\022\251\001\n\017DeleteWorkspace\0220.google.cloud.dat"
-          + "aform.v1.DeleteWorkspaceRequest\032\026.google"
-          + ".protobuf.Empty\"L\332A\004name\202\323\344\223\002?*=/v1/{nam"
-          + "e=projects/*/locations/*/repositories/*/"
-          + "workspaces/*}\022\341\001\n\022InstallNpmPackages\0223.g"
-          + "oogle.cloud.dataform.v1.InstallNpmPackag"
-          + "esRequest\0324.google.cloud.dataform.v1.Ins"
-          + "tallNpmPackagesResponse\"`\202\323\344\223\002Z\"U/v1/{wo"
-          + "rkspace=projects/*/locations/*/repositor"
-          + "ies/*/workspaces/*}:installNpmPackages:\001"
-          + "*\022\302\001\n\016PullGitCommits\022/.google.cloud.data"
-          + "form.v1.PullGitCommitsRequest\0320.google.c"
-          + "loud.dataform.v1.PullGitCommitsResponse\""
-          + "M\202\323\344\223\002G\"B/v1/{name=projects/*/locations/"
-          + "*/repositories/*/workspaces/*}:pull:\001*\022\302"
-          + "\001\n\016PushGitCommits\022/.google.cloud.datafor"
-          + "m.v1.PushGitCommitsRequest\0320.google.clou"
-          + "d.dataform.v1.PushGitCommitsResponse\"M\202\323"
-          + "\344\223\002G\"B/v1/{name=projects/*/locations/*/r"
-          + "epositories/*/workspaces/*}:push:\001*\022\341\001\n\024"
-          + "FetchFileGitStatuses\0225.google.cloud.data"
-          + "form.v1.FetchFileGitStatusesRequest\0326.go"
-          + "ogle.cloud.dataform.v1.FetchFileGitStatu"
-          + "sesResponse\"Z\202\323\344\223\002T\022R/v1/{name=projects/"
-          + "*/locations/*/repositories/*/workspaces/"
-          + "*}:fetchFileGitStatuses\022\335\001\n\023FetchGitAhea"
-          + "dBehind\0224.google.cloud.dataform.v1.Fetch"
-          + "GitAheadBehindRequest\0325.google.cloud.dat"
-          + "aform.v1.FetchGitAheadBehindResponse\"Y\202\323"
-          + "\344\223\002S\022Q/v1/{name=projects/*/locations/*/r"
-          + "epositories/*/workspaces/*}:fetchGitAhea"
-          + "dBehind\022\334\001\n\026CommitWorkspaceChanges\0227.goo"
-          + "gle.cloud.dataform.v1.CommitWorkspaceCha"
-          + "ngesRequest\0328.google.cloud.dataform.v1.C"
-          + "ommitWorkspaceChangesResponse\"O\202\323\344\223\002I\"D/"
-          + "v1/{name=projects/*/locations/*/reposito"
-          + "ries/*/workspaces/*}:commit:\001*\022\330\001\n\025Reset"
-          + "WorkspaceChanges\0226.google.cloud.dataform"
-          + ".v1.ResetWorkspaceChangesRequest\0327.googl"
-          + "e.cloud.dataform.v1.ResetWorkspaceChange"
-          + "sResponse\"N\202\323\344\223\002H\"C/v1/{name=projects/*/"
-          + "locations/*/repositories/*/workspaces/*}"
-          + ":reset:\001*\022\312\001\n\rFetchFileDiff\022..google.clo"
-          + "ud.dataform.v1.FetchFileDiffRequest\032/.go"
-          + "ogle.cloud.dataform.v1.FetchFileDiffResp"
-          + "onse\"X\202\323\344\223\002R\022P/v1/{workspace=projects/*/"
-          + "locations/*/repositories/*/workspaces/*}"
-          + ":fetchFileDiff\022\356\001\n\026QueryDirectoryContent"
-          + "s\0227.google.cloud.dataform.v1.QueryDirect"
-          + "oryContentsRequest\0328.google.cloud.datafo"
-          + "rm.v1.QueryDirectoryContentsResponse\"a\202\323"
-          + "\344\223\002[\022Y/v1/{workspace=projects/*/location"
-          + "s/*/repositories/*/workspaces/*}:queryDi"
-          + "rectoryContents\022\302\001\n\013SearchFiles\022,.google"
-          + ".cloud.dataform.v1.SearchFilesRequest\032-."
-          + "google.cloud.dataform.v1.SearchFilesResp"
-          + "onse\"V\202\323\344\223\002P\022N/v1/{workspace=projects/*/"
-          + "locations/*/repositories/*/workspaces/*}"
-          + ":searchFiles\022\315\001\n\rMakeDirectory\022..google."
-          + "cloud.dataform.v1.MakeDirectoryRequest\032/"
-          + ".google.cloud.dataform.v1.MakeDirectoryR"
-          + "esponse\"[\202\323\344\223\002U\"P/v1/{workspace=projects"
+          + "tsResponse\"O\202\323\344\223\002I\022G/v1/{name=projects/*"
+          + "/locations/*/repositories/*}:queryDirect"
+          + "oryContents\022\322\001\n\026FetchRepositoryHistory\0227"
+          + ".google.cloud.dataform.v1.FetchRepositor"
+          + "yHistoryRequest\0328.google.cloud.dataform."
+          + "v1.FetchRepositoryHistoryResponse\"E\202\323\344\223\002"
+          + "?\022=/v1/{name=projects/*/locations/*/repo"
+          + "sitories/*}:fetchHistory\022\202\002\n\"ComputeRepo"
+          + "sitoryAccessTokenStatus\022C.google.cloud.d"
+          + "ataform.v1.ComputeRepositoryAccessTokenS"
+          + "tatusRequest\032D.google.cloud.dataform.v1."
+          + "ComputeRepositoryAccessTokenStatusRespon"
+          + "se\"Q\202\323\344\223\002K\022I/v1/{name=projects/*/locatio"
+          + "ns/*/repositories/*}:computeAccessTokenS"
+          + "tatus\022\320\001\n\023FetchRemoteBranches\0224.google.c"
+          + "loud.dataform.v1.FetchRemoteBranchesRequ"
+          + "est\0325.google.cloud.dataform.v1.FetchRemo"
+          + "teBranchesResponse\"L\202\323\344\223\002F\022D/v1/{name=pr"
+          + "ojects/*/locations/*/repositories/*}:fet"
+          + "chRemoteBranches\022\303\001\n\016ListWorkspaces\022/.go"
+          + "ogle.cloud.dataform.v1.ListWorkspacesReq"
+          + "uest\0320.google.cloud.dataform.v1.ListWork"
+          + "spacesResponse\"N\332A\006parent\202\323\344\223\002?\022=/v1/{pa"
+          + "rent=projects/*/locations/*/repositories"
+          + "/*}/workspaces\022\260\001\n\014GetWorkspace\022-.google"
+          + ".cloud.dataform.v1.GetWorkspaceRequest\032#"
+          + ".google.cloud.dataform.v1.Workspace\"L\332A\004"
+          + "name\202\323\344\223\002?\022=/v1/{name=projects/*/locatio"
+          + "ns/*/repositories/*/workspaces/*}\022\332\001\n\017Cr"
+          + "eateWorkspace\0220.google.cloud.dataform.v1"
+          + ".CreateWorkspaceRequest\032#.google.cloud.d"
+          + "ataform.v1.Workspace\"p\332A\035parent,workspac"
+          + "e,workspace_id\202\323\344\223\002J\"=/v1/{parent=projec"
+          + "ts/*/locations/*/repositories/*}/workspa"
+          + "ces:\tworkspace\022\251\001\n\017DeleteWorkspace\0220.goo"
+          + "gle.cloud.dataform.v1.DeleteWorkspaceReq"
+          + "uest\032\026.google.protobuf.Empty\"L\332A\004name\202\323\344"
+          + "\223\002?*=/v1/{name=projects/*/locations/*/re"
+          + "positories/*/workspaces/*}\022\341\001\n\022InstallNp"
+          + "mPackages\0223.google.cloud.dataform.v1.Ins"
+          + "tallNpmPackagesRequest\0324.google.cloud.da"
+          + "taform.v1.InstallNpmPackagesResponse\"`\202\323"
+          + "\344\223\002Z\"U/v1/{workspace=projects/*/location"
+          + "s/*/repositories/*/workspaces/*}:install"
+          + "NpmPackages:\001*\022\302\001\n\016PullGitCommits\022/.goog"
+          + "le.cloud.dataform.v1.PullGitCommitsReque"
+          + "st\0320.google.cloud.dataform.v1.PullGitCom"
+          + "mitsResponse\"M\202\323\344\223\002G\"B/v1/{name=projects"
           + "/*/locations/*/repositories/*/workspaces"
-          + "/*}:makeDirectory:\001*\022\325\001\n\017RemoveDirectory"
-          + "\0220.google.cloud.dataform.v1.RemoveDirect"
-          + "oryRequest\0321.google.cloud.dataform.v1.Re"
-          + "moveDirectoryResponse\"]\202\323\344\223\002W\"R/v1/{work"
-          + "space=projects/*/locations/*/repositorie"
-          + "s/*/workspaces/*}:removeDirectory:\001*\022\315\001\n"
-          + "\rMoveDirectory\022..google.cloud.dataform.v"
-          + "1.MoveDirectoryRequest\032/.google.cloud.da"
-          + "taform.v1.MoveDirectoryResponse\"[\202\323\344\223\002U\""
-          + "P/v1/{workspace=projects/*/locations/*/r"
-          + "epositories/*/workspaces/*}:moveDirector"
-          + "y:\001*\022\266\001\n\010ReadFile\022).google.cloud.datafor"
-          + "m.v1.ReadFileRequest\032*.google.cloud.data"
-          + "form.v1.ReadFileResponse\"S\202\323\344\223\002M\022K/v1/{w"
-          + "orkspace=projects/*/locations/*/reposito"
-          + "ries/*/workspaces/*}:readFile\022\301\001\n\nRemove"
-          + "File\022+.google.cloud.dataform.v1.RemoveFi"
-          + "leRequest\032,.google.cloud.dataform.v1.Rem"
-          + "oveFileResponse\"X\202\323\344\223\002R\"M/v1/{workspace="
-          + "projects/*/locations/*/repositories/*/wo"
-          + "rkspaces/*}:removeFile:\001*\022\271\001\n\010MoveFile\022)"
-          + ".google.cloud.dataform.v1.MoveFileReques"
-          + "t\032*.google.cloud.dataform.v1.MoveFileRes"
-          + "ponse\"V\202\323\344\223\002P\"K/v1/{workspace=projects/*"
-          + "/locations/*/repositories/*/workspaces/*"
-          + "}:moveFile:\001*\022\275\001\n\tWriteFile\022*.google.clo"
-          + "ud.dataform.v1.WriteFileRequest\032+.google"
-          + ".cloud.dataform.v1.WriteFileResponse\"W\202\323"
-          + "\344\223\002Q\"L/v1/{workspace=projects/*/location"
-          + "s/*/repositories/*/workspaces/*}:writeFi"
-          + "le:\001*\022\323\001\n\022ListReleaseConfigs\0223.google.cl"
-          + "oud.dataform.v1.ListReleaseConfigsReques"
-          + "t\0324.google.cloud.dataform.v1.ListRelease"
-          + "ConfigsResponse\"R\332A\006parent\202\323\344\223\002C\022A/v1/{p"
-          + "arent=projects/*/locations/*/repositorie"
-          + "s/*}/releaseConfigs\022\300\001\n\020GetReleaseConfig"
-          + "\0221.google.cloud.dataform.v1.GetReleaseCo"
-          + "nfigRequest\032\'.google.cloud.dataform.v1.R"
-          + "eleaseConfig\"P\332A\004name\202\323\344\223\002C\022A/v1/{name=p"
-          + "rojects/*/locations/*/repositories/*/rel"
-          + "easeConfigs/*}\022\372\001\n\023CreateReleaseConfig\0224"
-          + ".google.cloud.dataform.v1.CreateReleaseC"
-          + "onfigRequest\032\'.google.cloud.dataform.v1."
-          + "ReleaseConfig\"\203\001\332A\'parent,release_config"
-          + ",release_config_id\202\323\344\223\002S\"A/v1/{parent=pr"
-          + "ojects/*/locations/*/repositories/*}/rel"
-          + "easeConfigs:\016release_config\022\374\001\n\023UpdateRe"
-          + "leaseConfig\0224.google.cloud.dataform.v1.U"
-          + "pdateReleaseConfigRequest\032\'.google.cloud"
-          + ".dataform.v1.ReleaseConfig\"\205\001\332A\032release_"
-          + "config,update_mask\202\323\344\223\002b2P/v1/{release_c"
-          + "onfig.name=projects/*/locations/*/reposi"
-          + "tories/*/releaseConfigs/*}:\016release_conf"
-          + "ig\022\265\001\n\023DeleteReleaseConfig\0224.google.clou"
-          + "d.dataform.v1.DeleteReleaseConfigRequest"
-          + "\032\026.google.protobuf.Empty\"P\332A\004name\202\323\344\223\002C*"
-          + "A/v1/{name=projects/*/locations/*/reposi"
-          + "tories/*/releaseConfigs/*}\022\343\001\n\026ListCompi"
-          + "lationResults\0227.google.cloud.dataform.v1"
-          + ".ListCompilationResultsRequest\0328.google."
-          + "cloud.dataform.v1.ListCompilationResults"
-          + "Response\"V\332A\006parent\202\323\344\223\002G\022E/v1/{parent=p"
-          + "rojects/*/locations/*/repositories/*}/co"
-          + "mpilationResults\022\320\001\n\024GetCompilationResul"
-          + "t\0225.google.cloud.dataform.v1.GetCompilat"
-          + "ionResultRequest\032+.google.cloud.dataform"
-          + ".v1.CompilationResult\"T\332A\004name\202\323\344\223\002G\022E/v"
-          + "1/{name=projects/*/locations/*/repositor"
-          + "ies/*/compilationResults/*}\022\377\001\n\027CreateCo"
-          + "mpilationResult\0228.google.cloud.dataform."
-          + "v1.CreateCompilationResultRequest\032+.goog"
-          + "le.cloud.dataform.v1.CompilationResult\"}"
-          + "\332A\031parent,compilation_result\202\323\344\223\002[\"E/v1/"
+          + "/*}:pull:\001*\022\302\001\n\016PushGitCommits\022/.google."
+          + "cloud.dataform.v1.PushGitCommitsRequest\032"
+          + "0.google.cloud.dataform.v1.PushGitCommit"
+          + "sResponse\"M\202\323\344\223\002G\"B/v1/{name=projects/*/"
+          + "locations/*/repositories/*/workspaces/*}"
+          + ":push:\001*\022\341\001\n\024FetchFileGitStatuses\0225.goog"
+          + "le.cloud.dataform.v1.FetchFileGitStatuse"
+          + "sRequest\0326.google.cloud.dataform.v1.Fetc"
+          + "hFileGitStatusesResponse\"Z\202\323\344\223\002T\022R/v1/{n"
+          + "ame=projects/*/locations/*/repositories/"
+          + "*/workspaces/*}:fetchFileGitStatuses\022\335\001\n"
+          + "\023FetchGitAheadBehind\0224.google.cloud.data"
+          + "form.v1.FetchGitAheadBehindRequest\0325.goo"
+          + "gle.cloud.dataform.v1.FetchGitAheadBehin"
+          + "dResponse\"Y\202\323\344\223\002S\022Q/v1/{name=projects/*/"
+          + "locations/*/repositories/*/workspaces/*}"
+          + ":fetchGitAheadBehind\022\334\001\n\026CommitWorkspace"
+          + "Changes\0227.google.cloud.dataform.v1.Commi"
+          + "tWorkspaceChangesRequest\0328.google.cloud."
+          + "dataform.v1.CommitWorkspaceChangesRespon"
+          + "se\"O\202\323\344\223\002I\"D/v1/{name=projects/*/locatio"
+          + "ns/*/repositories/*/workspaces/*}:commit"
+          + ":\001*\022\330\001\n\025ResetWorkspaceChanges\0226.google.c"
+          + "loud.dataform.v1.ResetWorkspaceChangesRe"
+          + "quest\0327.google.cloud.dataform.v1.ResetWo"
+          + "rkspaceChangesResponse\"N\202\323\344\223\002H\"C/v1/{nam"
+          + "e=projects/*/locations/*/repositories/*/"
+          + "workspaces/*}:reset:\001*\022\312\001\n\rFetchFileDiff"
+          + "\022..google.cloud.dataform.v1.FetchFileDif"
+          + "fRequest\032/.google.cloud.dataform.v1.Fetc"
+          + "hFileDiffResponse\"X\202\323\344\223\002R\022P/v1/{workspac"
+          + "e=projects/*/locations/*/repositories/*/"
+          + "workspaces/*}:fetchFileDiff\022\356\001\n\026QueryDir"
+          + "ectoryContents\0227.google.cloud.dataform.v"
+          + "1.QueryDirectoryContentsRequest\0328.google"
+          + ".cloud.dataform.v1.QueryDirectoryContent"
+          + "sResponse\"a\202\323\344\223\002[\022Y/v1/{workspace=projec"
+          + "ts/*/locations/*/repositories/*/workspac"
+          + "es/*}:queryDirectoryContents\022\302\001\n\013SearchF"
+          + "iles\022,.google.cloud.dataform.v1.SearchFi"
+          + "lesRequest\032-.google.cloud.dataform.v1.Se"
+          + "archFilesResponse\"V\202\323\344\223\002P\022N/v1/{workspac"
+          + "e=projects/*/locations/*/repositories/*/"
+          + "workspaces/*}:searchFiles\022\315\001\n\rMakeDirect"
+          + "ory\022..google.cloud.dataform.v1.MakeDirec"
+          + "toryRequest\032/.google.cloud.dataform.v1.M"
+          + "akeDirectoryResponse\"[\202\323\344\223\002U\"P/v1/{works"
+          + "pace=projects/*/locations/*/repositories"
+          + "/*/workspaces/*}:makeDirectory:\001*\022\325\001\n\017Re"
+          + "moveDirectory\0220.google.cloud.dataform.v1"
+          + ".RemoveDirectoryRequest\0321.google.cloud.d"
+          + "ataform.v1.RemoveDirectoryResponse\"]\202\323\344\223"
+          + "\002W\"R/v1/{workspace=projects/*/locations/"
+          + "*/repositories/*/workspaces/*}:removeDir"
+          + "ectory:\001*\022\315\001\n\rMoveDirectory\022..google.clo"
+          + "ud.dataform.v1.MoveDirectoryRequest\032/.go"
+          + "ogle.cloud.dataform.v1.MoveDirectoryResp"
+          + "onse\"[\202\323\344\223\002U\"P/v1/{workspace=projects/*/"
+          + "locations/*/repositories/*/workspaces/*}"
+          + ":moveDirectory:\001*\022\266\001\n\010ReadFile\022).google."
+          + "cloud.dataform.v1.ReadFileRequest\032*.goog"
+          + "le.cloud.dataform.v1.ReadFileResponse\"S\202"
+          + "\323\344\223\002M\022K/v1/{workspace=projects/*/locatio"
+          + "ns/*/repositories/*/workspaces/*}:readFi"
+          + "le\022\301\001\n\nRemoveFile\022+.google.cloud.datafor"
+          + "m.v1.RemoveFileRequest\032,.google.cloud.da"
+          + "taform.v1.RemoveFileResponse\"X\202\323\344\223\002R\"M/v"
+          + "1/{workspace=projects/*/locations/*/repo"
+          + "sitories/*/workspaces/*}:removeFile:\001*\022\271"
+          + "\001\n\010MoveFile\022).google.cloud.dataform.v1.M"
+          + "oveFileRequest\032*.google.cloud.dataform.v"
+          + "1.MoveFileResponse\"V\202\323\344\223\002P\"K/v1/{workspa"
+          + "ce=projects/*/locations/*/repositories/*"
+          + "/workspaces/*}:moveFile:\001*\022\275\001\n\tWriteFile"
+          + "\022*.google.cloud.dataform.v1.WriteFileReq"
+          + "uest\032+.google.cloud.dataform.v1.WriteFil"
+          + "eResponse\"W\202\323\344\223\002Q\"L/v1/{workspace=projec"
+          + "ts/*/locations/*/repositories/*/workspac"
+          + "es/*}:writeFile:\001*\022\323\001\n\022ListReleaseConfig"
+          + "s\0223.google.cloud.dataform.v1.ListRelease"
+          + "ConfigsRequest\0324.google.cloud.dataform.v"
+          + "1.ListReleaseConfigsResponse\"R\332A\006parent\202"
+          + "\323\344\223\002C\022A/v1/{parent=projects/*/locations/"
+          + "*/repositories/*}/releaseConfigs\022\300\001\n\020Get"
+          + "ReleaseConfig\0221.google.cloud.dataform.v1"
+          + ".GetReleaseConfigRequest\032\'.google.cloud."
+          + "dataform.v1.ReleaseConfig\"P\332A\004name\202\323\344\223\002C"
+          + "\022A/v1/{name=projects/*/locations/*/repos"
+          + "itories/*/releaseConfigs/*}\022\372\001\n\023CreateRe"
+          + "leaseConfig\0224.google.cloud.dataform.v1.C"
+          + "reateReleaseConfigRequest\032\'.google.cloud"
+          + ".dataform.v1.ReleaseConfig\"\203\001\332A\'parent,r"
+          + "elease_config,release_config_id\202\323\344\223\002S\"A/"
+          + "v1/{parent=projects/*/locations/*/reposi"
+          + "tories/*}/releaseConfigs:\016release_config"
+          + "\022\374\001\n\023UpdateReleaseConfig\0224.google.cloud."
+          + "dataform.v1.UpdateReleaseConfigRequest\032\'"
+          + ".google.cloud.dataform.v1.ReleaseConfig\""
+          + "\205\001\332A\032release_config,update_mask\202\323\344\223\002b2P/"
+          + "v1/{release_config.name=projects/*/locat"
+          + "ions/*/repositories/*/releaseConfigs/*}:"
+          + "\016release_config\022\265\001\n\023DeleteReleaseConfig\022"
+          + "4.google.cloud.dataform.v1.DeleteRelease"
+          + "ConfigRequest\032\026.google.protobuf.Empty\"P\332"
+          + "A\004name\202\323\344\223\002C*A/v1/{name=projects/*/locat"
+          + "ions/*/repositories/*/releaseConfigs/*}\022"
+          + "\343\001\n\026ListCompilationResults\0227.google.clou"
+          + "d.dataform.v1.ListCompilationResultsRequ"
+          + "est\0328.google.cloud.dataform.v1.ListCompi"
+          + "lationResultsResponse\"V\332A\006parent\202\323\344\223\002G\022E"
+          + "/v1/{parent=projects/*/locations/*/repos"
+          + "itories/*}/compilationResults\022\320\001\n\024GetCom"
+          + "pilationResult\0225.google.cloud.dataform.v"
+          + "1.GetCompilationResultRequest\032+.google.c"
+          + "loud.dataform.v1.CompilationResult\"T\332A\004n"
+          + "ame\202\323\344\223\002G\022E/v1/{name=projects/*/location"
+          + "s/*/repositories/*/compilationResults/*}"
+          + "\022\377\001\n\027CreateCompilationResult\0228.google.cl"
+          + "oud.dataform.v1.CreateCompilationResultR"
+          + "equest\032+.google.cloud.dataform.v1.Compil"
+          + "ationResult\"}\332A\031parent,compilation_resul"
+          + "t\202\323\344\223\002[\"E/v1/{parent=projects/*/location"
+          + "s/*/repositories/*}/compilationResults:\022"
+          + "compilation_result\022\365\001\n\035QueryCompilationR"
+          + "esultActions\022>.google.cloud.dataform.v1."
+          + "QueryCompilationResultActionsRequest\032?.g"
+          + "oogle.cloud.dataform.v1.QueryCompilation"
+          + "ResultActionsResponse\"S\202\323\344\223\002M\022K/v1/{name"
+          + "=projects/*/locations/*/repositories/*/c"
+          + "ompilationResults/*}:query\022\327\001\n\023ListWorkf"
+          + "lowConfigs\0224.google.cloud.dataform.v1.Li"
+          + "stWorkflowConfigsRequest\0325.google.cloud."
+          + "dataform.v1.ListWorkflowConfigsResponse\""
+          + "S\332A\006parent\202\323\344\223\002D\022B/v1/{parent=projects/*"
+          + "/locations/*/repositories/*}/workflowCon"
+          + "figs\022\304\001\n\021GetWorkflowConfig\0222.google.clou"
+          + "d.dataform.v1.GetWorkflowConfigRequest\032("
+          + ".google.cloud.dataform.v1.WorkflowConfig"
+          + "\"Q\332A\004name\202\323\344\223\002D\022B/v1/{name=projects/*/lo"
+          + "cations/*/repositories/*/workflowConfigs"
+          + "/*}\022\201\002\n\024CreateWorkflowConfig\0225.google.cl"
+          + "oud.dataform.v1.CreateWorkflowConfigRequ"
+          + "est\032(.google.cloud.dataform.v1.WorkflowC"
+          + "onfig\"\207\001\332A)parent,workflow_config,workfl"
+          + "ow_config_id\202\323\344\223\002U\"B/v1/{parent=projects"
+          + "/*/locations/*/repositories/*}/workflowC"
+          + "onfigs:\017workflow_config\022\203\002\n\024UpdateWorkfl"
+          + "owConfig\0225.google.cloud.dataform.v1.Upda"
+          + "teWorkflowConfigRequest\032(.google.cloud.d"
+          + "ataform.v1.WorkflowConfig\"\211\001\332A\033workflow_"
+          + "config,update_mask\202\323\344\223\002e2R/v1/{workflow_"
+          + "config.name=projects/*/locations/*/repos"
+          + "itories/*/workflowConfigs/*}:\017workflow_c"
+          + "onfig\022\270\001\n\024DeleteWorkflowConfig\0225.google."
+          + "cloud.dataform.v1.DeleteWorkflowConfigRe"
+          + "quest\032\026.google.protobuf.Empty\"Q\332A\004name\202\323"
+          + "\344\223\002D*B/v1/{name=projects/*/locations/*/r"
+          + "epositories/*/workflowConfigs/*}\022\347\001\n\027Lis"
+          + "tWorkflowInvocations\0228.google.cloud.data"
+          + "form.v1.ListWorkflowInvocationsRequest\0329"
+          + ".google.cloud.dataform.v1.ListWorkflowIn"
+          + "vocationsResponse\"W\332A\006parent\202\323\344\223\002H\022F/v1/"
           + "{parent=projects/*/locations/*/repositor"
-          + "ies/*}/compilationResults:\022compilation_r"
-          + "esult\022\365\001\n\035QueryCompilationResultActions\022"
-          + ">.google.cloud.dataform.v1.QueryCompilat"
-          + "ionResultActionsRequest\032?.google.cloud.d"
-          + "ataform.v1.QueryCompilationResultActions"
-          + "Response\"S\202\323\344\223\002M\022K/v1/{name=projects/*/l"
-          + "ocations/*/repositories/*/compilationRes"
-          + "ults/*}:query\022\327\001\n\023ListWorkflowConfigs\0224."
-          + "google.cloud.dataform.v1.ListWorkflowCon"
-          + "figsRequest\0325.google.cloud.dataform.v1.L"
-          + "istWorkflowConfigsResponse\"S\332A\006parent\202\323\344"
-          + "\223\002D\022B/v1/{parent=projects/*/locations/*/"
-          + "repositories/*}/workflowConfigs\022\304\001\n\021GetW"
-          + "orkflowConfig\0222.google.cloud.dataform.v1"
-          + ".GetWorkflowConfigRequest\032(.google.cloud"
-          + ".dataform.v1.WorkflowConfig\"Q\332A\004name\202\323\344\223"
-          + "\002D\022B/v1/{name=projects/*/locations/*/rep"
-          + "ositories/*/workflowConfigs/*}\022\201\002\n\024Creat"
-          + "eWorkflowConfig\0225.google.cloud.dataform."
-          + "v1.CreateWorkflowConfigRequest\032(.google."
-          + "cloud.dataform.v1.WorkflowConfig\"\207\001\332A)pa"
-          + "rent,workflow_config,workflow_config_id\202"
-          + "\323\344\223\002U\"B/v1/{parent=projects/*/locations/"
-          + "*/repositories/*}/workflowConfigs:\017workf"
-          + "low_config\022\203\002\n\024UpdateWorkflowConfig\0225.go"
-          + "ogle.cloud.dataform.v1.UpdateWorkflowCon"
-          + "figRequest\032(.google.cloud.dataform.v1.Wo"
-          + "rkflowConfig\"\211\001\332A\033workflow_config,update"
-          + "_mask\202\323\344\223\002e2R/v1/{workflow_config.name=p"
-          + "rojects/*/locations/*/repositories/*/wor"
-          + "kflowConfigs/*}:\017workflow_config\022\270\001\n\024Del"
-          + "eteWorkflowConfig\0225.google.cloud.datafor"
-          + "m.v1.DeleteWorkflowConfigRequest\032\026.googl"
-          + "e.protobuf.Empty\"Q\332A\004name\202\323\344\223\002D*B/v1/{na"
-          + "me=projects/*/locations/*/repositories/*"
-          + "/workflowConfigs/*}\022\347\001\n\027ListWorkflowInvo"
-          + "cations\0228.google.cloud.dataform.v1.ListW"
-          + "orkflowInvocationsRequest\0329.google.cloud"
-          + ".dataform.v1.ListWorkflowInvocationsResp"
-          + "onse\"W\332A\006parent\202\323\344\223\002H\022F/v1/{parent=proje"
-          + "cts/*/locations/*/repositories/*}/workfl"
-          + "owInvocations\022\324\001\n\025GetWorkflowInvocation\022"
-          + "6.google.cloud.dataform.v1.GetWorkflowIn"
-          + "vocationRequest\032,.google.cloud.dataform."
-          + "v1.WorkflowInvocation\"U\332A\004name\202\323\344\223\002H\022F/v"
-          + "1/{name=projects/*/locations/*/repositor"
-          + "ies/*/workflowInvocations/*}\022\206\002\n\030CreateW"
-          + "orkflowInvocation\0229.google.cloud.datafor"
-          + "m.v1.CreateWorkflowInvocationRequest\032,.g"
-          + "oogle.cloud.dataform.v1.WorkflowInvocati"
-          + "on\"\200\001\332A\032parent,workflow_invocation\202\323\344\223\002]"
-          + "\"F/v1/{parent=projects/*/locations/*/rep"
-          + "ositories/*}/workflowInvocations:\023workfl"
-          + "ow_invocation\022\304\001\n\030DeleteWorkflowInvocati"
-          + "on\0229.google.cloud.dataform.v1.DeleteWork"
-          + "flowInvocationRequest\032\026.google.protobuf."
-          + "Empty\"U\332A\004name\202\323\344\223\002H*F/v1/{name=projects"
-          + "/*/locations/*/repositories/*/workflowIn"
-          + "vocations/*}\022\353\001\n\030CancelWorkflowInvocatio"
-          + "n\0229.google.cloud.dataform.v1.CancelWorkf"
-          + "lowInvocationRequest\032:.google.cloud.data"
-          + "form.v1.CancelWorkflowInvocationResponse"
-          + "\"X\202\323\344\223\002R\"M/v1/{name=projects/*/locations"
-          + "/*/repositories/*/workflowInvocations/*}"
-          + ":cancel:\001*\022\371\001\n\036QueryWorkflowInvocationAc"
-          + "tions\022?.google.cloud.dataform.v1.QueryWo"
-          + "rkflowInvocationActionsRequest\032@.google."
-          + "cloud.dataform.v1.QueryWorkflowInvocatio"
-          + "nActionsResponse\"T\202\323\344\223\002N\022L/v1/{name=proj"
-          + "ects/*/locations/*/repositories/*/workfl"
-          + "owInvocations/*}:query\022\222\001\n\tGetConfig\022*.g"
-          + "oogle.cloud.dataform.v1.GetConfigRequest"
-          + "\032 .google.cloud.dataform.v1.Config\"7\332A\004n"
-          + "ame\202\323\344\223\002*\022(/v1/{name=projects/*/location"
-          + "s/*/config}\022\265\001\n\014UpdateConfig\022-.google.cl"
-          + "oud.dataform.v1.UpdateConfigRequest\032 .go"
-          + "ogle.cloud.dataform.v1.Config\"T\332A\022config"
-          + ",update_mask\202\323\344\223\00292//v1/{config.name=pro"
-          + "jects/*/locations/*/config}:\006config\022\367\002\n\014"
-          + "GetIamPolicy\022\".google.iam.v1.GetIamPolic"
-          + "yRequest\032\025.google.iam.v1.Policy\"\253\002\332A\010res"
-          + "ource\202\323\344\223\002\231\002\022A/v1/{resource=projects/*/l"
-          + "ocations/*/repositories/*}:getIamPolicyZ"
-          + "P\022N/v1/{resource=projects/*/locations/*/"
-          + "repositories/*/workspaces/*}:getIamPolic"
-          + "yZ>\022</v1/{resource=projects/*/locations/"
-          + "*/folders/*}:getIamPolicyZB\022@/v1/{resour"
-          + "ce=projects/*/locations/*/teamFolders/*}"
-          + ":getIamPolicy\022\370\002\n\014SetIamPolicy\022\".google."
-          + "iam.v1.SetIamPolicyRequest\032\025.google.iam."
-          + "v1.Policy\"\254\002\202\323\344\223\002\245\002\"A/v1/{resource=proje"
-          + "cts/*/locations/*/repositories/*}:setIam"
-          + "Policy:\001*ZS\"N/v1/{resource=projects/*/lo"
-          + "cations/*/repositories/*/workspaces/*}:s"
-          + "etIamPolicy:\001*ZA\"</v1/{resource=projects"
-          + "/*/locations/*/folders/*}:setIamPolicy:\001"
-          + "*ZE\"@/v1/{resource=projects/*/locations/"
-          + "*/teamFolders/*}:setIamPolicy:\001*\022\260\003\n\022Tes"
-          + "tIamPermissions\022(.google.iam.v1.TestIamP"
-          + "ermissionsRequest\032).google.iam.v1.TestIa"
-          + "mPermissionsResponse\"\304\002\202\323\344\223\002\275\002\"G/v1/{res"
-          + "ource=projects/*/locations/*/repositorie"
-          + "s/*}:testIamPermissions:\001*ZY\"T/v1/{resou"
-          + "rce=projects/*/locations/*/repositories/"
-          + "*/workspaces/*}:testIamPermissions:\001*ZG\""
-          + "B/v1/{resource=projects/*/locations/*/fo"
-          + "lders/*}:testIamPermissions:\001*ZK\"F/v1/{r"
-          + "esource=projects/*/locations/*/teamFolde"
-          + "rs/*}:testIamPermissions:\001*\032t\312A\027dataform"
-          + ".googleapis.com\322AWhttps://www.googleapis"
-          + ".com/auth/bigquery,https://www.googleapi"
-          + "s.com/auth/cloud-platformB\201\010\n\034com.google"
-          + ".cloud.dataform.v1B\rDataformProtoP\001Z8clo"
-          + "ud.google.com/go/dataform/apiv1/dataform",
-      "pb;dataformpb\252\002\030Google.Cloud.Dataform.V1"
-          + "\312\002\030Google\\Cloud\\Dataform\\V1\352\002\033Google::Cl"
-          + "oud::Dataform::V1\352Ad\n*secretmanager.goog"
-          + "leapis.com/SecretVersion\0226projects/{proj"
-          + "ect}/secrets/{secret}/versions/{version}"
-          + "\352Ax\n!cloudkms.googleapis.com/CryptoKey\022S"
-          + "projects/{project}/locations/{location}/"
-          + "keyRings/{key_ring}/cryptoKeys/{crypto_k"
-          + "ey}\352A\246\001\n(cloudkms.googleapis.com/CryptoK"
-          + "eyVersion\022zprojects/{project}/locations/"
-          + "{location}/keyRings/{key_ring}/cryptoKey"
-          + "s/{crypto_key}/cryptoKeyVersions/{crypto"
-          + "_key_version}\352A\221\001\n1aiplatform.googleapis"
-          + ".com/NotebookRuntimeTemplate\022\\projects/{"
-          + "project}/locations/{location}/notebookRu"
-          + "ntimeTemplates/{notebook_runtime_templat"
-          + "e}\352A~\n!dataplex.googleapis.com/EntryLink"
-          + "\022Yprojects/{project}/locations/{location"
-          + "}/entryGroups/{entry_group}/entryLinks/{"
-          + "entry_link}\352A\236\001\n1developerconnect.google"
-          + "apis.com/GitRepositoryLink\022iprojects/{pr"
-          + "oject}/locations/{location}/connections/"
-          + "{connection}/gitRepositoryLinks/{git_rep"
-          + "ository_link}b\006proto3"
+          + "ies/*}/workflowInvocations\022\324\001\n\025GetWorkfl"
+          + "owInvocation\0226.google.cloud.dataform.v1."
+          + "GetWorkflowInvocationRequest\032,.google.cl"
+          + "oud.dataform.v1.WorkflowInvocation\"U\332A\004n"
+          + "ame\202\323\344\223\002H\022F/v1/{name=projects/*/location"
+          + "s/*/repositories/*/workflowInvocations/*"
+          + "}\022\206\002\n\030CreateWorkflowInvocation\0229.google."
+          + "cloud.dataform.v1.CreateWorkflowInvocati"
+          + "onRequest\032,.google.cloud.dataform.v1.Wor"
+          + "kflowInvocation\"\200\001\332A\032parent,workflow_inv"
+          + "ocation\202\323\344\223\002]\"F/v1/{parent=projects/*/lo"
+          + "cations/*/repositories/*}/workflowInvoca"
+          + "tions:\023workflow_invocation\022\304\001\n\030DeleteWor"
+          + "kflowInvocation\0229.google.cloud.dataform."
+          + "v1.DeleteWorkflowInvocationRequest\032\026.goo"
+          + "gle.protobuf.Empty\"U\332A\004name\202\323\344\223\002H*F/v1/{"
+          + "name=projects/*/locations/*/repositories"
+          + "/*/workflowInvocations/*}\022\353\001\n\030CancelWork"
+          + "flowInvocation\0229.google.cloud.dataform.v"
+          + "1.CancelWorkflowInvocationRequest\032:.goog"
+          + "le.cloud.dataform.v1.CancelWorkflowInvoc"
+          + "ationResponse\"X\202\323\344\223\002R\"M/v1/{name=project"
+          + "s/*/locations/*/repositories/*/workflowI"
+          + "nvocations/*}:cancel:\001*\022\371\001\n\036QueryWorkflo"
+          + "wInvocationActions\022?.google.cloud.datafo"
+          + "rm.v1.QueryWorkflowInvocationActionsRequ"
+          + "est\032@.google.cloud.dataform.v1.QueryWork"
+          + "flowInvocationActionsResponse\"T\202\323\344\223\002N\022L/"
+          + "v1/{name=projects/*/locations/*/reposito"
+          + "ries/*/workflowInvocations/*}:query\022\222\001\n\t"
+          + "GetConfig\022*.google.cloud.dataform.v1.Get"
+          + "ConfigRequest\032 .google.cloud.dataform.v1"
+          + ".Config\"7\332A\004name\202\323\344\223\002*\022(/v1/{name=projec"
+          + "ts/*/locations/*/config}\022\265\001\n\014UpdateConfi"
+          + "g\022-.google.cloud.dataform.v1.UpdateConfi"
+          + "gRequest\032 .google.cloud.dataform.v1.Conf"
+          + "ig\"T\332A\022config,update_mask\202\323\344\223\00292//v1/{co"
+          + "nfig.name=projects/*/locations/*/config}"
+          + ":\006config\022\367\002\n\014GetIamPolicy\022\".google.iam.v"
+          + "1.GetIamPolicyRequest\032\025.google.iam.v1.Po"
+          + "licy\"\253\002\332A\010resource\202\323\344\223\002\231\002\022A/v1/{resource"
+          + "=projects/*/locations/*/repositories/*}:"
+          + "getIamPolicyZP\022N/v1/{resource=projects/*"
+          + "/locations/*/repositories/*/workspaces/*"
+          + "}:getIamPolicyZ>\022</v1/{resource=projects"
+          + "/*/locations/*/folders/*}:getIamPolicyZB"
+          + "\022@/v1/{resource=projects/*/locations/*/t"
+          + "eamFolders/*}:getIamPolicy\022\370\002\n\014SetIamPol"
+          + "icy\022\".google.iam.v1.SetIamPolicyRequest\032"
+          + "\025.google.iam.v1.Policy\"\254\002\202\323\344\223\002\245\002\"A/v1/{r"
+          + "esource=projects/*/locations/*/repositor",
+      "ies/*}:setIamPolicy:\001*ZS\"N/v1/{resource="
+          + "projects/*/locations/*/repositories/*/wo"
+          + "rkspaces/*}:setIamPolicy:\001*ZA\"</v1/{reso"
+          + "urce=projects/*/locations/*/folders/*}:s"
+          + "etIamPolicy:\001*ZE\"@/v1/{resource=projects"
+          + "/*/locations/*/teamFolders/*}:setIamPoli"
+          + "cy:\001*\022\260\003\n\022TestIamPermissions\022(.google.ia"
+          + "m.v1.TestIamPermissionsRequest\032).google."
+          + "iam.v1.TestIamPermissionsResponse\"\304\002\202\323\344\223"
+          + "\002\275\002\"G/v1/{resource=projects/*/locations/"
+          + "*/repositories/*}:testIamPermissions:\001*Z"
+          + "Y\"T/v1/{resource=projects/*/locations/*/"
+          + "repositories/*/workspaces/*}:testIamPerm"
+          + "issions:\001*ZG\"B/v1/{resource=projects/*/l"
+          + "ocations/*/folders/*}:testIamPermissions"
+          + ":\001*ZK\"F/v1/{resource=projects/*/location"
+          + "s/*/teamFolders/*}:testIamPermissions:\001*"
+          + "\032t\312A\027dataform.googleapis.com\322AWhttps://w"
+          + "ww.googleapis.com/auth/bigquery,https://"
+          + "www.googleapis.com/auth/cloud-platformB\201"
+          + "\010\n\034com.google.cloud.dataform.v1B\rDatafor"
+          + "mProtoP\001Z8cloud.google.com/go/dataform/a"
+          + "piv1/dataformpb;dataformpb\252\002\030Google.Clou"
+          + "d.Dataform.V1\312\002\030Google\\Cloud\\Dataform\\V1"
+          + "\352\002\033Google::Cloud::Dataform::V1\352Ad\n*secre"
+          + "tmanager.googleapis.com/SecretVersion\0226p"
+          + "rojects/{project}/secrets/{secret}/versi"
+          + "ons/{version}\352Ax\n!cloudkms.googleapis.co"
+          + "m/CryptoKey\022Sprojects/{project}/location"
+          + "s/{location}/keyRings/{key_ring}/cryptoK"
+          + "eys/{crypto_key}\352A\246\001\n(cloudkms.googleapi"
+          + "s.com/CryptoKeyVersion\022zprojects/{projec"
+          + "t}/locations/{location}/keyRings/{key_ri"
+          + "ng}/cryptoKeys/{crypto_key}/cryptoKeyVer"
+          + "sions/{crypto_key_version}\352A\221\001\n1aiplatfo"
+          + "rm.googleapis.com/NotebookRuntimeTemplat"
+          + "e\022\\projects/{project}/locations/{locatio"
+          + "n}/notebookRuntimeTemplates/{notebook_ru"
+          + "ntime_template}\352A~\n!dataplex.googleapis."
+          + "com/EntryLink\022Yprojects/{project}/locati"
+          + "ons/{location}/entryGroups/{entry_group}"
+          + "/entryLinks/{entry_link}\352A\236\001\n1developerc"
+          + "onnect.googleapis.com/GitRepositoryLink\022"
+          + "iprojects/{project}/locations/{location}"
+          + "/connections/{connection}/gitRepositoryL"
+          + "inks/{git_repository_link}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -2842,7 +2872,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_InstallNpmPackagesRequest_descriptor,
             new java.lang.String[] {
-              "Workspace",
+              "Workspace", "PipelineConfig",
             });
     internal_static_google_cloud_dataform_v1_InstallNpmPackagesResponse_descriptor =
         getDescriptor().getMessageType(69);
@@ -2940,6 +2970,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "CreateTime",
               "InternalMetadata",
               "PrivateResourceMetadata",
+              "GcsRepositorySnapshotMetadata",
               "Source",
             });
     internal_static_google_cloud_dataform_v1_CompilationResult_CompilationError_descriptor =
@@ -2966,6 +2997,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "TablePrefix",
               "BuiltinAssertionNamePrefix",
               "DefaultNotebookRuntimeOptions",
+              "PipelineConfig",
             });
     internal_static_google_cloud_dataform_v1_CodeCompilationConfig_VarsEntry_descriptor =
         internal_static_google_cloud_dataform_v1_CodeCompilationConfig_descriptor.getNestedType(0);
@@ -2975,16 +3007,44 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Key", "Value",
             });
-    internal_static_google_cloud_dataform_v1_NotebookRuntimeOptions_descriptor =
+    internal_static_google_cloud_dataform_v1_GcsRepositorySnapshotMetadata_descriptor =
         getDescriptor().getMessageType(79);
+    internal_static_google_cloud_dataform_v1_GcsRepositorySnapshotMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataform_v1_GcsRepositorySnapshotMetadata_descriptor,
+            new java.lang.String[] {
+              "RepositorySnapshotUri", "Crc32CChecksum", "Generation",
+            });
+    internal_static_google_cloud_dataform_v1_GcsRepositorySnapshotDestination_descriptor =
+        getDescriptor().getMessageType(80);
+    internal_static_google_cloud_dataform_v1_GcsRepositorySnapshotDestination_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataform_v1_GcsRepositorySnapshotDestination_descriptor,
+            new java.lang.String[] {
+              "RepositorySnapshotUri",
+            });
+    internal_static_google_cloud_dataform_v1_NotebookRuntimeOptions_descriptor =
+        getDescriptor().getMessageType(81);
     internal_static_google_cloud_dataform_v1_NotebookRuntimeOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_NotebookRuntimeOptions_descriptor,
             new java.lang.String[] {
-              "GcsOutputBucket", "AiPlatformNotebookRuntimeTemplate", "ExecutionSink",
+              "GcsOutputBucket",
+              "GcsRepositorySnapshotDestination",
+              "AiPlatformNotebookRuntimeTemplate",
+              "ExecutionSink",
+              "RepositorySnapshotStorage",
+            });
+    internal_static_google_cloud_dataform_v1_PipelineConfig_descriptor =
+        getDescriptor().getMessageType(82);
+    internal_static_google_cloud_dataform_v1_PipelineConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_dataform_v1_PipelineConfig_descriptor,
+            new java.lang.String[] {
+              "PipelineType", "Path",
             });
     internal_static_google_cloud_dataform_v1_ListCompilationResultsRequest_descriptor =
-        getDescriptor().getMessageType(80);
+        getDescriptor().getMessageType(83);
     internal_static_google_cloud_dataform_v1_ListCompilationResultsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_ListCompilationResultsRequest_descriptor,
@@ -2992,7 +3052,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "OrderBy", "Filter",
             });
     internal_static_google_cloud_dataform_v1_ListCompilationResultsResponse_descriptor =
-        getDescriptor().getMessageType(81);
+        getDescriptor().getMessageType(84);
     internal_static_google_cloud_dataform_v1_ListCompilationResultsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_ListCompilationResultsResponse_descriptor,
@@ -3000,7 +3060,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "CompilationResults", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_dataform_v1_GetCompilationResultRequest_descriptor =
-        getDescriptor().getMessageType(82);
+        getDescriptor().getMessageType(85);
     internal_static_google_cloud_dataform_v1_GetCompilationResultRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_GetCompilationResultRequest_descriptor,
@@ -3008,14 +3068,14 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataform_v1_CreateCompilationResultRequest_descriptor =
-        getDescriptor().getMessageType(83);
+        getDescriptor().getMessageType(86);
     internal_static_google_cloud_dataform_v1_CreateCompilationResultRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_CreateCompilationResultRequest_descriptor,
             new java.lang.String[] {
               "Parent", "CompilationResult",
             });
-    internal_static_google_cloud_dataform_v1_Target_descriptor = getDescriptor().getMessageType(84);
+    internal_static_google_cloud_dataform_v1_Target_descriptor = getDescriptor().getMessageType(87);
     internal_static_google_cloud_dataform_v1_Target_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_Target_descriptor,
@@ -3023,7 +3083,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Database", "Schema", "Name",
             });
     internal_static_google_cloud_dataform_v1_RelationDescriptor_descriptor =
-        getDescriptor().getMessageType(85);
+        getDescriptor().getMessageType(88);
     internal_static_google_cloud_dataform_v1_RelationDescriptor_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_RelationDescriptor_descriptor,
@@ -3047,7 +3107,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_dataform_v1_CompilationResultAction_descriptor =
-        getDescriptor().getMessageType(86);
+        getDescriptor().getMessageType(89);
     internal_static_google_cloud_dataform_v1_CompilationResultAction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_CompilationResultAction_descriptor,
@@ -3207,7 +3267,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Column",
             });
     internal_static_google_cloud_dataform_v1_QueryCompilationResultActionsRequest_descriptor =
-        getDescriptor().getMessageType(87);
+        getDescriptor().getMessageType(90);
     internal_static_google_cloud_dataform_v1_QueryCompilationResultActionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_QueryCompilationResultActionsRequest_descriptor,
@@ -3215,7 +3275,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_dataform_v1_QueryCompilationResultActionsResponse_descriptor =
-        getDescriptor().getMessageType(88);
+        getDescriptor().getMessageType(91);
     internal_static_google_cloud_dataform_v1_QueryCompilationResultActionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_QueryCompilationResultActionsResponse_descriptor,
@@ -3223,7 +3283,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "CompilationResultActions", "NextPageToken",
             });
     internal_static_google_cloud_dataform_v1_WorkflowConfig_descriptor =
-        getDescriptor().getMessageType(89);
+        getDescriptor().getMessageType(92);
     internal_static_google_cloud_dataform_v1_WorkflowConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_WorkflowConfig_descriptor,
@@ -3248,7 +3308,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "WorkflowInvocation", "ErrorStatus", "ExecutionTime", "Result",
             });
     internal_static_google_cloud_dataform_v1_InvocationConfig_descriptor =
-        getDescriptor().getMessageType(90);
+        getDescriptor().getMessageType(93);
     internal_static_google_cloud_dataform_v1_InvocationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_InvocationConfig_descriptor,
@@ -3262,7 +3322,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "QueryPriority",
             });
     internal_static_google_cloud_dataform_v1_ListWorkflowConfigsRequest_descriptor =
-        getDescriptor().getMessageType(91);
+        getDescriptor().getMessageType(94);
     internal_static_google_cloud_dataform_v1_ListWorkflowConfigsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_ListWorkflowConfigsRequest_descriptor,
@@ -3270,7 +3330,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_dataform_v1_ListWorkflowConfigsResponse_descriptor =
-        getDescriptor().getMessageType(92);
+        getDescriptor().getMessageType(95);
     internal_static_google_cloud_dataform_v1_ListWorkflowConfigsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_ListWorkflowConfigsResponse_descriptor,
@@ -3278,7 +3338,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "WorkflowConfigs", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_dataform_v1_GetWorkflowConfigRequest_descriptor =
-        getDescriptor().getMessageType(93);
+        getDescriptor().getMessageType(96);
     internal_static_google_cloud_dataform_v1_GetWorkflowConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_GetWorkflowConfigRequest_descriptor,
@@ -3286,7 +3346,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataform_v1_CreateWorkflowConfigRequest_descriptor =
-        getDescriptor().getMessageType(94);
+        getDescriptor().getMessageType(97);
     internal_static_google_cloud_dataform_v1_CreateWorkflowConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_CreateWorkflowConfigRequest_descriptor,
@@ -3294,7 +3354,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Parent", "WorkflowConfig", "WorkflowConfigId",
             });
     internal_static_google_cloud_dataform_v1_UpdateWorkflowConfigRequest_descriptor =
-        getDescriptor().getMessageType(95);
+        getDescriptor().getMessageType(98);
     internal_static_google_cloud_dataform_v1_UpdateWorkflowConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_UpdateWorkflowConfigRequest_descriptor,
@@ -3302,7 +3362,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "UpdateMask", "WorkflowConfig",
             });
     internal_static_google_cloud_dataform_v1_DeleteWorkflowConfigRequest_descriptor =
-        getDescriptor().getMessageType(96);
+        getDescriptor().getMessageType(99);
     internal_static_google_cloud_dataform_v1_DeleteWorkflowConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_DeleteWorkflowConfigRequest_descriptor,
@@ -3310,7 +3370,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataform_v1_WorkflowInvocation_descriptor =
-        getDescriptor().getMessageType(97);
+        getDescriptor().getMessageType(100);
     internal_static_google_cloud_dataform_v1_WorkflowInvocation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_WorkflowInvocation_descriptor,
@@ -3325,10 +3385,11 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "DataEncryptionState",
               "InternalMetadata",
               "PrivateResourceMetadata",
+              "PipelineConfig",
               "CompilationSource",
             });
     internal_static_google_cloud_dataform_v1_ListWorkflowInvocationsRequest_descriptor =
-        getDescriptor().getMessageType(98);
+        getDescriptor().getMessageType(101);
     internal_static_google_cloud_dataform_v1_ListWorkflowInvocationsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_ListWorkflowInvocationsRequest_descriptor,
@@ -3336,7 +3397,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "OrderBy", "Filter",
             });
     internal_static_google_cloud_dataform_v1_ListWorkflowInvocationsResponse_descriptor =
-        getDescriptor().getMessageType(99);
+        getDescriptor().getMessageType(102);
     internal_static_google_cloud_dataform_v1_ListWorkflowInvocationsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_ListWorkflowInvocationsResponse_descriptor,
@@ -3344,7 +3405,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "WorkflowInvocations", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_dataform_v1_GetWorkflowInvocationRequest_descriptor =
-        getDescriptor().getMessageType(100);
+        getDescriptor().getMessageType(103);
     internal_static_google_cloud_dataform_v1_GetWorkflowInvocationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_GetWorkflowInvocationRequest_descriptor,
@@ -3352,7 +3413,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataform_v1_CreateWorkflowInvocationRequest_descriptor =
-        getDescriptor().getMessageType(101);
+        getDescriptor().getMessageType(104);
     internal_static_google_cloud_dataform_v1_CreateWorkflowInvocationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_CreateWorkflowInvocationRequest_descriptor,
@@ -3360,7 +3421,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Parent", "WorkflowInvocation",
             });
     internal_static_google_cloud_dataform_v1_DeleteWorkflowInvocationRequest_descriptor =
-        getDescriptor().getMessageType(102);
+        getDescriptor().getMessageType(105);
     internal_static_google_cloud_dataform_v1_DeleteWorkflowInvocationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_DeleteWorkflowInvocationRequest_descriptor,
@@ -3368,7 +3429,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataform_v1_CancelWorkflowInvocationRequest_descriptor =
-        getDescriptor().getMessageType(103);
+        getDescriptor().getMessageType(106);
     internal_static_google_cloud_dataform_v1_CancelWorkflowInvocationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_CancelWorkflowInvocationRequest_descriptor,
@@ -3376,13 +3437,13 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataform_v1_CancelWorkflowInvocationResponse_descriptor =
-        getDescriptor().getMessageType(104);
+        getDescriptor().getMessageType(107);
     internal_static_google_cloud_dataform_v1_CancelWorkflowInvocationResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_CancelWorkflowInvocationResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_dataform_v1_WorkflowInvocationAction_descriptor =
-        getDescriptor().getMessageType(105);
+        getDescriptor().getMessageType(108);
     internal_static_google_cloud_dataform_v1_WorkflowInvocationAction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_WorkflowInvocationAction_descriptor,
@@ -3414,7 +3475,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_WorkflowInvocationAction_NotebookAction_descriptor,
             new java.lang.String[] {
-              "Contents", "JobId",
+              "Contents", "JobId", "FilePath",
             });
     internal_static_google_cloud_dataform_v1_WorkflowInvocationAction_DataPreparationAction_descriptor =
         internal_static_google_cloud_dataform_v1_WorkflowInvocationAction_descriptor.getNestedType(
@@ -3469,7 +3530,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Column",
             });
     internal_static_google_cloud_dataform_v1_QueryWorkflowInvocationActionsRequest_descriptor =
-        getDescriptor().getMessageType(106);
+        getDescriptor().getMessageType(109);
     internal_static_google_cloud_dataform_v1_QueryWorkflowInvocationActionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_QueryWorkflowInvocationActionsRequest_descriptor,
@@ -3477,7 +3538,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name", "PageSize", "PageToken",
             });
     internal_static_google_cloud_dataform_v1_QueryWorkflowInvocationActionsResponse_descriptor =
-        getDescriptor().getMessageType(107);
+        getDescriptor().getMessageType(110);
     internal_static_google_cloud_dataform_v1_QueryWorkflowInvocationActionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_QueryWorkflowInvocationActionsResponse_descriptor,
@@ -3485,7 +3546,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "WorkflowInvocationActions", "NextPageToken",
             });
     internal_static_google_cloud_dataform_v1_Config_descriptor =
-        getDescriptor().getMessageType(108);
+        getDescriptor().getMessageType(111);
     internal_static_google_cloud_dataform_v1_Config_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_Config_descriptor,
@@ -3493,7 +3554,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name", "DefaultKmsKeyName", "InternalMetadata",
             });
     internal_static_google_cloud_dataform_v1_GetConfigRequest_descriptor =
-        getDescriptor().getMessageType(109);
+        getDescriptor().getMessageType(112);
     internal_static_google_cloud_dataform_v1_GetConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_GetConfigRequest_descriptor,
@@ -3501,7 +3562,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataform_v1_UpdateConfigRequest_descriptor =
-        getDescriptor().getMessageType(110);
+        getDescriptor().getMessageType(113);
     internal_static_google_cloud_dataform_v1_UpdateConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_UpdateConfigRequest_descriptor,
@@ -3509,7 +3570,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Config", "UpdateMask",
             });
     internal_static_google_cloud_dataform_v1_Folder_descriptor =
-        getDescriptor().getMessageType(111);
+        getDescriptor().getMessageType(114);
     internal_static_google_cloud_dataform_v1_Folder_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_Folder_descriptor,
@@ -3524,7 +3585,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "CreatorIamPrincipal",
             });
     internal_static_google_cloud_dataform_v1_CreateFolderRequest_descriptor =
-        getDescriptor().getMessageType(112);
+        getDescriptor().getMessageType(115);
     internal_static_google_cloud_dataform_v1_CreateFolderRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_CreateFolderRequest_descriptor,
@@ -3532,7 +3593,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Parent", "Folder",
             });
     internal_static_google_cloud_dataform_v1_MoveFolderRequest_descriptor =
-        getDescriptor().getMessageType(113);
+        getDescriptor().getMessageType(116);
     internal_static_google_cloud_dataform_v1_MoveFolderRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_MoveFolderRequest_descriptor,
@@ -3540,7 +3601,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name", "DestinationContainingFolder",
             });
     internal_static_google_cloud_dataform_v1_GetFolderRequest_descriptor =
-        getDescriptor().getMessageType(114);
+        getDescriptor().getMessageType(117);
     internal_static_google_cloud_dataform_v1_GetFolderRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_GetFolderRequest_descriptor,
@@ -3548,7 +3609,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataform_v1_UpdateFolderRequest_descriptor =
-        getDescriptor().getMessageType(115);
+        getDescriptor().getMessageType(118);
     internal_static_google_cloud_dataform_v1_UpdateFolderRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_UpdateFolderRequest_descriptor,
@@ -3556,7 +3617,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "UpdateMask", "Folder",
             });
     internal_static_google_cloud_dataform_v1_DeleteFolderRequest_descriptor =
-        getDescriptor().getMessageType(116);
+        getDescriptor().getMessageType(119);
     internal_static_google_cloud_dataform_v1_DeleteFolderRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_DeleteFolderRequest_descriptor,
@@ -3564,7 +3625,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataform_v1_DeleteFolderTreeRequest_descriptor =
-        getDescriptor().getMessageType(117);
+        getDescriptor().getMessageType(120);
     internal_static_google_cloud_dataform_v1_DeleteFolderTreeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_DeleteFolderTreeRequest_descriptor,
@@ -3572,7 +3633,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name", "Force",
             });
     internal_static_google_cloud_dataform_v1_DeleteTeamFolderTreeRequest_descriptor =
-        getDescriptor().getMessageType(118);
+        getDescriptor().getMessageType(121);
     internal_static_google_cloud_dataform_v1_DeleteTeamFolderTreeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_DeleteTeamFolderTreeRequest_descriptor,
@@ -3580,7 +3641,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name", "Force",
             });
     internal_static_google_cloud_dataform_v1_DeleteFolderTreeMetadata_descriptor =
-        getDescriptor().getMessageType(119);
+        getDescriptor().getMessageType(122);
     internal_static_google_cloud_dataform_v1_DeleteFolderTreeMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_DeleteFolderTreeMetadata_descriptor,
@@ -3588,7 +3649,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "CreateTime", "EndTime", "Target", "State", "PercentComplete",
             });
     internal_static_google_cloud_dataform_v1_QueryFolderContentsRequest_descriptor =
-        getDescriptor().getMessageType(120);
+        getDescriptor().getMessageType(123);
     internal_static_google_cloud_dataform_v1_QueryFolderContentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_QueryFolderContentsRequest_descriptor,
@@ -3596,7 +3657,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Folder", "PageSize", "PageToken", "OrderBy", "Filter",
             });
     internal_static_google_cloud_dataform_v1_QueryFolderContentsResponse_descriptor =
-        getDescriptor().getMessageType(121);
+        getDescriptor().getMessageType(124);
     internal_static_google_cloud_dataform_v1_QueryFolderContentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_QueryFolderContentsResponse_descriptor,
@@ -3613,7 +3674,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Folder", "Repository", "Entry",
             });
     internal_static_google_cloud_dataform_v1_QueryUserRootContentsRequest_descriptor =
-        getDescriptor().getMessageType(122);
+        getDescriptor().getMessageType(125);
     internal_static_google_cloud_dataform_v1_QueryUserRootContentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_QueryUserRootContentsRequest_descriptor,
@@ -3621,7 +3682,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Location", "PageSize", "PageToken", "OrderBy", "Filter",
             });
     internal_static_google_cloud_dataform_v1_QueryUserRootContentsResponse_descriptor =
-        getDescriptor().getMessageType(123);
+        getDescriptor().getMessageType(126);
     internal_static_google_cloud_dataform_v1_QueryUserRootContentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_QueryUserRootContentsResponse_descriptor,
@@ -3638,7 +3699,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Folder", "Repository", "Entry",
             });
     internal_static_google_cloud_dataform_v1_TeamFolder_descriptor =
-        getDescriptor().getMessageType(124);
+        getDescriptor().getMessageType(127);
     internal_static_google_cloud_dataform_v1_TeamFolder_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_TeamFolder_descriptor,
@@ -3651,7 +3712,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "CreatorIamPrincipal",
             });
     internal_static_google_cloud_dataform_v1_CreateTeamFolderRequest_descriptor =
-        getDescriptor().getMessageType(125);
+        getDescriptor().getMessageType(128);
     internal_static_google_cloud_dataform_v1_CreateTeamFolderRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_CreateTeamFolderRequest_descriptor,
@@ -3659,7 +3720,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Parent", "TeamFolder",
             });
     internal_static_google_cloud_dataform_v1_GetTeamFolderRequest_descriptor =
-        getDescriptor().getMessageType(126);
+        getDescriptor().getMessageType(129);
     internal_static_google_cloud_dataform_v1_GetTeamFolderRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_GetTeamFolderRequest_descriptor,
@@ -3667,7 +3728,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataform_v1_UpdateTeamFolderRequest_descriptor =
-        getDescriptor().getMessageType(127);
+        getDescriptor().getMessageType(130);
     internal_static_google_cloud_dataform_v1_UpdateTeamFolderRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_UpdateTeamFolderRequest_descriptor,
@@ -3675,7 +3736,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "UpdateMask", "TeamFolder",
             });
     internal_static_google_cloud_dataform_v1_DeleteTeamFolderRequest_descriptor =
-        getDescriptor().getMessageType(128);
+        getDescriptor().getMessageType(131);
     internal_static_google_cloud_dataform_v1_DeleteTeamFolderRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_DeleteTeamFolderRequest_descriptor,
@@ -3683,7 +3744,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_dataform_v1_QueryTeamFolderContentsRequest_descriptor =
-        getDescriptor().getMessageType(129);
+        getDescriptor().getMessageType(132);
     internal_static_google_cloud_dataform_v1_QueryTeamFolderContentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_QueryTeamFolderContentsRequest_descriptor,
@@ -3691,7 +3752,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "TeamFolder", "PageSize", "PageToken", "OrderBy", "Filter",
             });
     internal_static_google_cloud_dataform_v1_QueryTeamFolderContentsResponse_descriptor =
-        getDescriptor().getMessageType(130);
+        getDescriptor().getMessageType(133);
     internal_static_google_cloud_dataform_v1_QueryTeamFolderContentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_QueryTeamFolderContentsResponse_descriptor,
@@ -3708,7 +3769,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Folder", "Repository", "Entry",
             });
     internal_static_google_cloud_dataform_v1_SearchTeamFoldersRequest_descriptor =
-        getDescriptor().getMessageType(131);
+        getDescriptor().getMessageType(134);
     internal_static_google_cloud_dataform_v1_SearchTeamFoldersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_SearchTeamFoldersRequest_descriptor,
@@ -3716,7 +3777,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "Location", "PageSize", "PageToken", "OrderBy", "Filter",
             });
     internal_static_google_cloud_dataform_v1_SearchTeamFoldersResponse_descriptor =
-        getDescriptor().getMessageType(132);
+        getDescriptor().getMessageType(135);
     internal_static_google_cloud_dataform_v1_SearchTeamFoldersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_SearchTeamFoldersResponse_descriptor,
@@ -3733,7 +3794,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "TeamFolder", "Entry",
             });
     internal_static_google_cloud_dataform_v1_MoveFolderMetadata_descriptor =
-        getDescriptor().getMessageType(133);
+        getDescriptor().getMessageType(136);
     internal_static_google_cloud_dataform_v1_MoveFolderMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_MoveFolderMetadata_descriptor,
@@ -3741,7 +3802,7 @@ public final class DataformProto extends com.google.protobuf.GeneratedFile {
               "CreateTime", "EndTime", "Target", "State", "PercentComplete",
             });
     internal_static_google_cloud_dataform_v1_MoveRepositoryMetadata_descriptor =
-        getDescriptor().getMessageType(134);
+        getDescriptor().getMessageType(137);
     internal_static_google_cloud_dataform_v1_MoveRepositoryMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_dataform_v1_MoveRepositoryMetadata_descriptor,

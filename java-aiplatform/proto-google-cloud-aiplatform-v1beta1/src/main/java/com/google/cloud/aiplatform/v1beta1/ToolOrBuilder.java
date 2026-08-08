@@ -430,6 +430,55 @@ public interface ToolOrBuilder
    *
    *
    * <pre>
+   * Optional. Uses Exa.ai to search for information to
+   * answer user queries. The search results will be grounded on Exa.ai
+   * and presented to the model for response generation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the exaAiSearch field is set.
+   */
+  boolean hasExaAiSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Uses Exa.ai to search for information to
+   * answer user queries. The search results will be grounded on Exa.ai
+   * and presented to the model for response generation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The exaAiSearch.
+   */
+  com.google.cloud.aiplatform.v1beta1.Tool.ExaAiSearch getExaAiSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Uses Exa.ai to search for information to
+   * answer user queries. The search results will be grounded on Exa.ai
+   * and presented to the model for response generation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.Tool.ExaAiSearch exa_ai_search = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.Tool.ExaAiSearchOrBuilder getExaAiSearchOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. CodeExecution tool type.
    * Enables the model to execute code as part of generation.
    * </pre>
