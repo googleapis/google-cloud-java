@@ -85,7 +85,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   @BetaApi
   public static Mutation fromProtoUnsafe(List<com.google.bigtable.v2.Mutation> protos) {
     Mutation mutation = new Mutation(true);
-    mutation.mutations.addAll(protos);
+    mutation.addAllFromProto(protos);
     return mutation;
   }
 
@@ -98,7 +98,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   @BetaApi
   public static Mutation fromProtoUnsafe(Iterable<com.google.bigtable.v2.Mutation> protos) {
     Mutation mutation = new Mutation(true);
-    mutation.mutations.addAll(protos);
+    mutation.addAllFromProto(protos);
     return mutation;
   }
 
@@ -114,7 +114,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
    */
   static Mutation fromProto(List<com.google.bigtable.v2.Mutation> protos) {
     Mutation mutation = new Mutation(false);
-    mutation.mutations.addAll(protos);
+    mutation.addAllFromProto(protos);
     return mutation;
   }
 
@@ -333,10 +333,22 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
         byteSize + mutation.getSerializedSize() <= MAX_BYTE_SIZE,
         "Byte size of mutations is too large");
 
-    numMutations++;
-    byteSize += mutation.getSerializedSize();
+    countTowardsLimits(mutation);
 
     mutations.add(mutation);
+  }
+
+  private void countTowardsLimits(com.google.bigtable.v2.Mutation mutation) {
+    numMutations++;
+    byteSize += mutation.getSerializedSize();
+  }
+
+  private void addAllFromProto(Iterable<com.google.bigtable.v2.Mutation> protos) {
+    // One traversal: protos may be a non-repeatable Iterable.
+    for (com.google.bigtable.v2.Mutation proto : protos) {
+      mutations.add(proto);
+      countTowardsLimits(proto);
+    }
   }
 
   private static ByteString wrapByteString(String str) {
