@@ -71,8 +71,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   static final String connection_uri = ITBase.connectionUrl;
   static final String session_enabled_connection_uri = connection_uri + "EnableSession=1;";
   private static final String BASE_QUERY =
-      "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
-          + " trip_distance asc LIMIT %s";
+      "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 100000)) LIMIT %s";
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
   private static String DATASET;
@@ -104,6 +103,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   @Tag("known_issue") // b/539615199
+  @Tag("disable_tpc")
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
@@ -144,7 +144,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testFastQueryPathSmall() throws SQLException {
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 850))";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(850, resultSetRowCount(jsonResultSet));
@@ -152,20 +152,17 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testFastQueryPathEmpty() throws SQLException {
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
     Connection connection =
         DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
     Statement bigQueryStatement = connection.createStatement();
-    ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
-    assertEquals(0, resultSetRowCount(jsonResultSet));
+    validateStatement(bigQueryStatement, 0);
     connection.close();
   }
 
   @Test
   public void testSmallSelectAndVerifyResults() throws SQLException {
     String query =
-        "SELECT word FROM `bigquery-public-data.samples.shakespeare` WHERE"
-            + " word LIKE 'X%' LIMIT 10";
+        "SELECT CONCAT('X', cast(word as STRING)) FROM UNNEST(GENERATE_ARRAY(1, 10)) AS word LIMIT 10";
 
     ResultSet resultSet = bigQueryStatement.executeQuery(query);
     int rowCount = 0;
@@ -179,6 +176,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   // reads without using ReadAPI and makes sure that they are in order, which implies threads worked
   // correctly
+  @Tag("disable_tpc")
   public void testIterateOrderJsonMultiThread_NoReadApi() throws SQLException {
     int expectedCnt = 10000;
     String query = String.format(BASE_QUERY, expectedCnt);
@@ -197,6 +195,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   // reads using ReadAPI and makes sure that they are in order, which implies threads worked
   // correctly
+  @Tag("disable_tpc")
   public void testIterateOrderArrowMultiThread() throws SQLException {
     int expectedCnt = 200000;
     String longQuery = String.format(BASE_QUERY, expectedCnt);
@@ -217,6 +216,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testReadAPIPathLarge() throws SQLException {
     Properties withReadApi = new Properties();
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
@@ -236,6 +236,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
     String connectionUri =
         ITBigQueryJDBCTest.connection_uri
@@ -279,14 +280,9 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     Statement statement = connectionUseStateless.createStatement();
 
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertEquals(850, resultSetRowCount(jsonResultSet));
+    validateStatement(statement, 850);
 
-    String queryEmpty =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
-    ResultSet jsonResultSetEmpty = statement.executeQuery(queryEmpty);
-    assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
+    validateStatement(statement, 0);
     connectionUseStateless.close();
   }
 
@@ -312,8 +308,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Connection connection = driver.connect(connection_uri, new Properties());
     assertNotNull(connection);
     Statement st = connection.createStatement();
-    boolean rs = st.execute("Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
-    assertTrue(rs);
+    validateStatement(st, 180);
     connection.close();
   }
 
@@ -358,6 +353,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testLocation() throws SQLException {
     String connection_uri = ITBigQueryJDBCTest.connection_uri + "LOCATION=EU";
 
@@ -370,10 +366,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     Statement statement = connection.createStatement();
 
     // Query a dataset in the EU
-    String query =
-        "SELECT name FROM `bigquery-public-data.covid19_italy_eu.data_by_province` LIMIT 100";
-    ResultSet resultSet = statement.executeQuery(query);
-    assertEquals(100, resultSetRowCount(resultSet));
+    validateStatement(statement, 100);
 
     String connection_uri_null_location = ITBigQueryJDBCTest.connection_uri;
 
@@ -387,6 +380,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testIncorrectLocation() throws SQLException {
     String connection_uri = ITBigQueryJDBCTest.connection_uri + "LOCATION=europe-west3";
 
@@ -397,9 +391,8 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     // Query a dataset in the US
     Statement statement = connection.createStatement();
-    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180";
     BigQueryJdbcException ex =
-        assertThrows(BigQueryJdbcException.class, () -> statement.executeQuery(query));
+        assertThrows(BigQueryJdbcException.class, () -> ITBase.validateStatement(statement, 180));
     BigQueryError error = ex.getBigQueryException().getError();
     assertNotNull(error);
     assertEquals("accessDenied", error.getReason());
@@ -933,15 +926,14 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testExecuteQueryWithMultipleReturns() throws SQLException {
-    String query = String.format("SELECT * FROM bigquery-public-data.samples.shakespeare LIMIT 1;");
+    String query = String.format("SELECT * FROM UNNEST(GENERATE_ARRAY(1, 1));");
 
     assertThrows(BigQueryJdbcException.class, () -> bigQueryStatement.executeQuery(query + query));
   }
 
   @Test
   public void testExecuteUpdateWithSelect() throws SQLException {
-    String selectQuery =
-        String.format("SELECT * FROM bigquery-public-data.samples.shakespeare LIMIT 1;");
+    String selectQuery = String.format("SELECT * FROM UNNEST(GENERATE_ARRAY(1, 1));");
 
     assertThrows(BigQueryJdbcException.class, () -> bigQueryStatement.executeUpdate(selectQuery));
   }
@@ -1101,9 +1093,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testExecuteBatchQueryTypeSelectThrowsUnsupported() throws SQLException {
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
-    String query =
-        "SELECT word FROM `bigquery-public-data.samples.shakespeare` WHERE"
-            + " word LIKE 'X%' LIMIT 10";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10));";
     Statement statement = connection.createStatement();
 
     assertThrows(IllegalArgumentException.class, () -> statement.addBatch(query));
@@ -1274,6 +1264,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testUnsupportedHTAPIFallbacksToStandardQueriesWithRange() throws SQLException {
     String selectQuery = "select * from `DATATYPERANGETEST.RangeIntervalTestTable` LIMIT 5000;";
     String connection_uri =
@@ -1298,6 +1289,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testIntervalDataTypeWithArrowResultSet() throws SQLException {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 5000;";
@@ -1323,6 +1315,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testIntervalDataTypeWithJsonResultSet() throws SQLException {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 10 ;";
@@ -1348,6 +1341,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidLEPEndpointQuery() throws SQLException {
     String DATASET = "JDBC_REGIONAL_DATASET";
     String TABLE_NAME = "REGIONAL_TABLE";
@@ -1380,6 +1374,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testLEPEndpointDataNotFoundThrows() throws SQLException {
     String DATASET = "JDBC_REGIONAL_DATASET";
     String TABLE_NAME = "REGIONAL_TABLE";
@@ -1396,6 +1391,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidREPEndpointQuery() throws SQLException {
     String DATASET = "JDBC_REGIONAL_DATASET";
     String TABLE_NAME = "REGIONAL_TABLE";
@@ -1430,7 +1426,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testCloseStatement() throws SQLException {
-    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 10";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10))";
     Statement statement = bigQueryConnection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertEquals(10, resultSetRowCount(jsonResultSet));
@@ -1440,7 +1436,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testCloseableStatementSingleResult() throws SQLException {
-    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 10";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10))";
     Statement statement = bigQueryConnection.createStatement();
     statement.closeOnCompletion();
     assertTrue(statement.isCloseOnCompletion());
@@ -1452,7 +1448,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testCloseableStatementMultiResult() throws SQLException {
-    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 10;";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10));";
     Statement statement = bigQueryConnection.createStatement();
     statement.closeOnCompletion();
     assertTrue(statement.isCloseOnCompletion());
@@ -1470,7 +1466,7 @@ public class ITBigQueryJDBCTest extends ITBase {
 
   @Test
   public void testCloseableStatementMultiResultExplicitClose() throws SQLException {
-    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 10;";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10));";
     Statement statement = bigQueryConnection.createStatement();
     statement.closeOnCompletion();
     assertTrue(statement.isCloseOnCompletion());
@@ -1517,7 +1513,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testPreparedStatementSmallSelect() throws SQLException {
     String query =
-        "SELECT * FROM `bigquery-public-data.samples.shakespeare` where corpus=? LIMIT 1000";
+        "SELECT num FROM UNNEST(GENERATE_ARRAY(1, 1000)) AS num WHERE CAST(? AS STRING) = 'hamlet'";
     PreparedStatement preparedStatement = bigQueryConnection.prepareStatement(query);
     preparedStatement.setString(1, "hamlet");
 
@@ -1683,6 +1679,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidDestinationTableSavesQueriesWithLegacySQL() throws SQLException {
     // setup
     String connection_uri =
@@ -1691,8 +1688,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             + "AllowLargeResults=1;"
             + "LargeResultTable=destination_table_test_legacy;"
             + "LargeResultDataset=INTEGRATION_TESTS;";
-    String selectLegacyQuery =
-        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200;";
+    String selectLegacyQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 200))";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -1727,12 +1723,13 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testUseLegacySQLWithLargeResultsNotAllowedQueries() throws SQLException {
     // setup
     String connection_uri =
         ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;" + "AllowLargeResults=0;";
     String selectLegacyQuery =
-        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 250000;";
+        "SELECT GENERATE_DATE_ARRAY('1900-01-01', '2000-01-01', INTERVAL 1 DAY) LIMIT 200";
     Connection connection = DriverManager.getConnection(connection_uri, new Properties());
     Statement statement = connection.createStatement();
 
@@ -1752,8 +1749,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             + "QueryDialect=SQL;"
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;";
-    String selectLegacyQuery =
-        "SELECT * FROM `bigquery-public-data.deepmind_alphafold.metadata` LIMIT 200;";
+    String selectLegacyQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 200))";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -1774,6 +1770,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testDestinationTableAndDestinationDatasetThatDoesNotExistsCreates()
       throws SQLException {
     // setup
@@ -1787,7 +1784,7 @@ public class ITBigQueryJDBCTest extends ITBase {
                 + "LargeResultDataset=%s;",
             largeResultDataset);
     String selectLegacyQuery =
-        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200;";
+        "SELECT GENERATE_DATE_ARRAY('1900-01-01', '2000-01-01', INTERVAL 1 DAY) LIMIT 200";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     try (Connection connection = driver.connect(connection_uri, new Properties())) {
       Statement statement = connection.createStatement();
@@ -1808,13 +1805,14 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testUseLegacySQLWithLargeResultsAllowedWithNoDestinationTableDefaults()
       throws SQLException {
     // setup
     String connection_uri =
         ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;" + "AllowLargeResults=1;";
     String selectLegacyQuery =
-        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 250000;";
+        "SELECT GENERATE_DATE_ARRAY('1000-01-01', '2000-01-01', INTERVAL 1 DAY) LIMIT 250000";
     Connection connection = DriverManager.getConnection(connection_uri, new Properties());
     Statement statement = connection.createStatement();
 
@@ -1827,6 +1825,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testDestinationTableWithMissingDestinationDatasetDefaults() throws SQLException {
     // setup
     String connection_uri =
@@ -1834,8 +1833,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             + "QueryDialect=BIG_QUERY;"
             + "AllowLargeResults=1;"
             + "LargeResultTable=FakeTable;";
-    String selectLegacyQuery =
-        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200;";
+    String selectLegacyQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 200))";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -1958,6 +1956,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testRangeDataTypeWithArrowResultSet() throws SQLException {
     String selectQuery =
         "select * from `DATATYPERANGETEST.RangeIntervalTestTable` order by intColumn limit 5000;";
@@ -2066,7 +2065,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   public void testQueryPropertyTimeZoneQueries() throws SQLException {
     String connection_uri =
         ITBigQueryJDBCTest.connection_uri + "QueryProperties=time_zone=America/New_York;";
-    String query = "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 180))";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -2081,6 +2080,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testQueryPropertySessionIdSetsStatementSession()
       throws SQLException, InterruptedException {
     String sessionId = getSessionId();
@@ -2107,6 +2107,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testEncryptedTableWithKmsQueries() throws SQLException {
     // setup
     String KMSKeyName = requireEnvVar("KMS_RESOURCE_PATH");
@@ -2127,6 +2128,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testIncorrectKmsThrows() throws SQLException {
     String KMSKeyName = requireEnvVar("KMS_RESOURCE_PATH");
     String connection_uri = ITBigQueryJDBCTest.connection_uri + "KMSKeyName=" + KMSKeyName + ";";
@@ -2143,6 +2145,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testQueryPropertyServiceAccountFollowsIamPermission() throws SQLException {
     final String SERVICE_ACCOUNT_EMAIL = requireEnvVar("SA_EMAIL");
     String connection_uri =
@@ -2164,13 +2167,14 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidLegacySQLStatement() throws SQLException {
     String legacyJoinQuery =
         "SELECT\n"
             + "  repo_name\n"
             + "FROM\n"
-            + "  [bigquery-public-data.github_repos.commits],\n"
-            + "  [bigquery-public-data.github_repos.sample_commits] LIMIT 10";
+            + "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10))"
+            + "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10))";
     String connection_uri = ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;";
     Connection connection = DriverManager.getConnection(connection_uri);
     Statement statement = connection.createStatement();
