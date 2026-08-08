@@ -92,7 +92,8 @@ public class PowerOfTwoReplicaSelectorTest {
 
   @Test
   public void testTwoElementsPicksBetter() {
-    PowerOfTwoReplicaSelector selector = new PowerOfTwoReplicaSelector();
+    // Use epsilon=0.0 to test pure Po2RC behavior
+    PowerOfTwoReplicaSelector selector = new PowerOfTwoReplicaSelector(0.0);
     ChannelEndpoint better = new TestEndpoint("better");
     ChannelEndpoint worse = new TestEndpoint("worse");
 
@@ -109,7 +110,8 @@ public class PowerOfTwoReplicaSelectorTest {
 
   @Test
   public void testThreeElementsNeverPicksWorst() {
-    PowerOfTwoReplicaSelector selector = new PowerOfTwoReplicaSelector();
+    // Use epsilon=0.0 to test pure Po2RC behavior
+    PowerOfTwoReplicaSelector selector = new PowerOfTwoReplicaSelector(0.0);
     ChannelEndpoint best = new TestEndpoint("best");
     ChannelEndpoint middle = new TestEndpoint("middle");
     ChannelEndpoint worst = new TestEndpoint("worst");
@@ -129,7 +131,8 @@ public class PowerOfTwoReplicaSelectorTest {
 
   @Test
   public void testNullScoresTreatedAsMax() {
-    PowerOfTwoReplicaSelector selector = new PowerOfTwoReplicaSelector();
+    // Use epsilon=0.0 to test pure Po2RC behavior
+    PowerOfTwoReplicaSelector selector = new PowerOfTwoReplicaSelector(0.0);
     ChannelEndpoint withScore = new TestEndpoint("withScore");
     ChannelEndpoint withoutScore = new TestEndpoint("withoutScore");
 
@@ -141,5 +144,28 @@ public class PowerOfTwoReplicaSelectorTest {
     for (int i = 0; i < 100; i++) {
       assertEquals(withScore, selector.select(candidates, scores::get));
     }
+  }
+
+  @Test
+  public void testEpsilonExploration() {
+    // Set epsilon to 1.0 to force 100% exploration
+    PowerOfTwoReplicaSelector selector = new PowerOfTwoReplicaSelector(1.0);
+    ChannelEndpoint best = new TestEndpoint("best");
+    ChannelEndpoint worst = new TestEndpoint("worst");
+
+    Map<ChannelEndpoint, Double> scores = new HashMap<>();
+    scores.put(best, 10.0);
+    scores.put(worst, 20.0);
+
+    List<ChannelEndpoint> candidates = Arrays.asList(best, worst);
+
+    boolean pickedWorst = false;
+    for (int i = 0; i < 100; i++) {
+      if (selector.select(candidates, scores::get) == worst) {
+        pickedWorst = true;
+        break;
+      }
+    }
+    assertTrue("Should occasionally pick worst with epsilon=1.0", pickedWorst);
   }
 }
