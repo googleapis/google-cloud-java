@@ -146,6 +146,7 @@
     <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
     <errorprone.version>2.48.0</errorprone.version>
     <errorprone.javac.args>-g</errorprone.javac.args>
+    <skipUnitTests>false</skipUnitTests>
   </properties>
 
   <dependencyManagement>
@@ -236,13 +237,6 @@
   </modules>
 
   <profiles>
-    <!-- skip tests if bulkTests profile is enabled (when testing the rest of the monorepo) -->
-    <profile>
-      <id>bulkTests</id>
-      <properties>
-        <skipTests>true</skipTests>
-      </properties>
-    </profile>
     <profile>
       <id>errorprone-jdk8</id>
       <activation>

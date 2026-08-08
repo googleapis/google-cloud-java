@@ -20,6 +20,16 @@
   </parent>
 
   <properties>
+    <!--
+      Defaults to false: unlike google-cloud-jar-parent's GAPIC-generated clients, the
+      modules here (gax-java, gapic-generator-java, java-core, ...) have handwritten tests
+      worth running by default.
+
+      Wired only into surefire's <skip> below, not maven.test.skip, so -DskipUnitTests=true
+      skips unit test execution but never compilation: google-cloud-core's test-jar is a
+      test-scope dependency of several client libraries in the same root reactor, and
+      skipping its compilation would break their dependency resolution.
+    -->
     <skipUnitTests>false</skipUnitTests>
     <checkstyle.header.file>java.header</checkstyle.header.file>
     <maven.compiler.release>8</maven.compiler.release>
@@ -46,6 +56,18 @@
     <clirr.skip>true</clirr.skip>
     <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
   </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <skip>${skipUnitTests}</skip>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
   <developers>
     <developer>
@@ -224,7 +246,11 @@
         </plugins>
       </build>
     </profile>
-    <!-- skip tests if bulkTests profile is enabled (when testing the rest of the monorepo) -->
+    <!--
+      skip tests if bulkTests profile is enabled (when testing the rest of the monorepo).
+      Uses skipTests rather than skipUnitTests since both surefire and failsafe honor it,
+      skipping ITs along with unit tests.
+    -->
     <profile>
       <id>bulkTests</id>
       <properties>

@@ -20,6 +20,7 @@
     <logging.version>3.25.0</logging.version>
     <slf4j.version>1.7.36</slf4j.version>
     <google.api-common.version>1.10.1</google.api-common.version>
+    <skipUnitTests>false</skipUnitTests>
   </properties>
 
   <parent>
@@ -168,13 +169,6 @@
       <properties>
       <!-- Skip native image tests that use mocking libs to avoid loading classes at runtime. -->
         <test>!LoggingAppenderTest</test>
-      </properties>
-    </profile>
-    <!-- skip tests if bulkTests profile is enabled (when testing the rest of the monorepo) -->
-    <profile>
-      <id>bulkTests</id>
-      <properties>
-        <skipTests>true</skipTests>
       </properties>
     </profile>
   </profiles>
