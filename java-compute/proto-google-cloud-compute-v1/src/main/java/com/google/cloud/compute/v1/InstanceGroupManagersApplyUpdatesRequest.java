@@ -377,7 +377,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    *
    * <pre>
-   * Flag to update all instances instead of specified list of “instances”.
+   * Flag to update all instances instead of specified list of "instances".
    * If the flag is set to true then the instances may not be specified
    * in the request.
    * </pre>
@@ -395,7 +395,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    *
    *
    * <pre>
-   * Flag to update all instances instead of specified list of “instances”.
+   * Flag to update all instances instead of specified list of "instances".
    * If the flag is set to true then the instances may not be specified
    * in the request.
    * </pre>
@@ -1148,7 +1148,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * Flag to update all instances instead of specified list of “instances”.
+     * Flag to update all instances instead of specified list of "instances".
      * If the flag is set to true then the instances may not be specified
      * in the request.
      * </pre>
@@ -1166,7 +1166,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * Flag to update all instances instead of specified list of “instances”.
+     * Flag to update all instances instead of specified list of "instances".
      * If the flag is set to true then the instances may not be specified
      * in the request.
      * </pre>
@@ -1184,7 +1184,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * Flag to update all instances instead of specified list of “instances”.
+     * Flag to update all instances instead of specified list of "instances".
      * If the flag is set to true then the instances may not be specified
      * in the request.
      * </pre>
@@ -1206,7 +1206,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      *
      *
      * <pre>
-     * Flag to update all instances instead of specified list of “instances”.
+     * Flag to update all instances instead of specified list of "instances".
      * If the flag is set to true then the instances may not be specified
      * in the request.
      * </pre>
