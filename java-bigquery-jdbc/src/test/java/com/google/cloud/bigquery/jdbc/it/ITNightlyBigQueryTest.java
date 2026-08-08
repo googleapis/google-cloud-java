@@ -62,7 +62,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
   private static final String BASE_QUERY =
-      "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10))" + " trip_distance asc LIMIT %s";
+      "SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));";
   private static final String CONSTRAINTS_DATASET = "JDBC_CONSTRAINTS_TEST_DATASET";
   private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
   private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
@@ -267,8 +267,10 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testWideColumnQueries() throws SQLException {
-    String selectQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 50000))";
+    String selectQuery =
+        "SELECT * FROM `bigquery-public-data.covid19_open_data_eu.covid19_open_data` LIMIT 50000";
 
     // Read data via JDBC
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);

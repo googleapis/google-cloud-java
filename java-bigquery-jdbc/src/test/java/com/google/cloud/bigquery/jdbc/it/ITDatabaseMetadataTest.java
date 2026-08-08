@@ -1142,7 +1142,7 @@ public class ITDatabaseMetadataTest extends ITBase {
   @Test
   @Tag("disable_tpc")
   public void testAdditionalProjectsInMetadata() throws SQLException {
-    String additionalProjectsValue = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 10))";
+    String additionalProjectsValue = "bigquery-public-data";
     String datasetInAdditionalProject = "baseball";
 
     String urlWithAdditionalProjects =
