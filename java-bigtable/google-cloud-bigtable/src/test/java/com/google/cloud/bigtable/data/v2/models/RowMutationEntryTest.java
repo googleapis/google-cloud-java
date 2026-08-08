@@ -165,4 +165,114 @@ public class RowMutationEntryTest {
                 .setValue(ByteString.copyFrom(Longs.toByteArray(100_000L)))
                 .build());
   }
+
+  @Test
+  public void getRowKeyTest() {
+    ByteString rowKey = ByteString.copyFromUtf8("row-key");
+
+    assertThat(RowMutationEntry.create(rowKey).getRowKey()).isEqualTo(rowKey);
+    assertThat(RowMutationEntry.create("row-key").getRowKey()).isEqualTo(rowKey);
+    assertThat(RowMutationEntry.create(ByteString.EMPTY).getRowKey()).isEqualTo(ByteString.EMPTY);
+  }
+
+  @Test
+  public void getMutationCountTest() {
+    assertThat(RowMutationEntry.create("row-key").getMutationCount()).isEqualTo(0);
+    assertThat(
+            RowMutationEntry.create("row-key")
+                .setCell("fake-family", "q1", 10_000L, "v1")
+                .setCell("fake-family", "q2", 10_000L, "v2")
+                .deleteFamily("fake-family")
+                .deleteRow()
+                .getMutationCount())
+        .isEqualTo(4);
+  }
+
+  @Test
+  public void getSerializedSizeMatchesProtoTest() {
+    assertSizeMatchesProto(RowMutationEntry.create("row-key"));
+    assertSizeMatchesProto(RowMutationEntry.create(ByteString.EMPTY));
+    assertSizeMatchesProto(
+        RowMutationEntry.create("row-key").setCell("fake-family", "q", 10_000L, "v"));
+    assertSizeMatchesProto(
+        RowMutationEntry.create("row-key").setCell("fake-family", "q", 10_000L, repeat("v", 200)));
+    assertSizeMatchesProto(
+        RowMutationEntry.create(ByteString.copyFromUtf8(repeat("k", 5_000)))
+            .setCell("fake-family", "q", 10_000L, repeat("v", 70_000)));
+    assertSizeMatchesProto(
+        RowMutationEntry.create("row-key")
+            .setCell("fake-family", "q1", 10_000L, "v1")
+            .setCell("fake-family", "q2", 10_000L, 100_000L)
+            .deleteCells("fake-family", "q1")
+            .deleteFamily("fake-family")
+            .deleteRow());
+  }
+
+  @Test
+  public void getSerializedSizeMatchesProtoForManyMutationsTest() {
+    RowMutationEntry underTest = RowMutationEntry.create("row-key");
+    for (int i = 0; i < 300; i++) {
+      underTest.setCell("fake-family", "q" + i, 10_000L, "value-" + i);
+    }
+
+    assertThat(underTest.getMutationCount()).isEqualTo(300);
+    assertSizeMatchesProto(underTest);
+  }
+
+  @Test
+  public void getSerializedSizeFromMutationUnsafeTest() {
+    com.google.cloud.bigtable.data.v2.models.Mutation mutation =
+        com.google.cloud.bigtable.data.v2.models.Mutation.fromProtoUnsafe(
+            ImmutableList.of(
+                Mutation.newBuilder()
+                    .setSetCell(
+                        Mutation.SetCell.newBuilder()
+                            .setFamilyName("fake-family")
+                            .setColumnQualifier(ByteString.copyFromUtf8("q"))
+                            .setTimestampMicros(10_000L)
+                            .setValue(ByteString.copyFromUtf8(repeat("v", 500))))
+                    .build(),
+                Mutation.newBuilder()
+                    .setDeleteFromRow(Mutation.DeleteFromRow.getDefaultInstance())
+                    .build()));
+    RowMutationEntry underTest =
+        RowMutationEntry.createFromMutationUnsafe(ByteString.copyFromUtf8("row-key"), mutation);
+
+    assertThat(underTest.getMutationCount()).isEqualTo(2);
+    assertSizeMatchesProto(underTest);
+  }
+
+  @Test
+  public void getSerializedSizeSurvivesSerializationTest()
+      throws IOException, ClassNotFoundException {
+    RowMutationEntry underTest =
+        RowMutationEntry.create("row-key")
+            .setCell("fake-family", "q", 10_000L, repeat("v", 500))
+            .deleteFamily("fake-family");
+
+    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    ObjectOutputStream oos = new ObjectOutputStream(bos);
+    oos.writeObject(underTest);
+    oos.close();
+    ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(bos.toByteArray()));
+    RowMutationEntry actual = (RowMutationEntry) ois.readObject();
+
+    assertThat(actual.getRowKey()).isEqualTo(underTest.getRowKey());
+    assertThat(actual.getMutationCount()).isEqualTo(underTest.getMutationCount());
+    assertThat(actual.getSerializedSize()).isEqualTo(underTest.getSerializedSize());
+    assertSizeMatchesProto(actual);
+  }
+
+  private static void assertSizeMatchesProto(RowMutationEntry entry) {
+    assertThat(entry.getSerializedSize()).isEqualTo(entry.toProto().getSerializedSize());
+    assertThat(entry.getMutationCount()).isEqualTo(entry.toProto().getMutationsCount());
+  }
+
+  private static String repeat(String unit, int times) {
+    StringBuilder sb = new StringBuilder(unit.length() * times);
+    for (int i = 0; i < times; i++) {
+      sb.append(unit);
+    }
+    return sb.toString();
+  }
 }
