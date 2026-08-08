@@ -548,5 +548,52 @@ public interface CompilationResultOrBuilder
   com.google.cloud.dataform.v1.PrivateResourceMetadataOrBuilder
       getPrivateResourceMetadataOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the repository snapshot used by scheduled
+   * notebooks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the gcsRepositorySnapshotMetadata field is set.
+   */
+  boolean hasGcsRepositorySnapshotMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the repository snapshot used by scheduled
+   * notebooks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The gcsRepositorySnapshotMetadata.
+   */
+  com.google.cloud.dataform.v1.GcsRepositorySnapshotMetadata getGcsRepositorySnapshotMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about the repository snapshot used by scheduled
+   * notebooks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.GcsRepositorySnapshotMetadata gcs_repository_snapshot_metadata = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataform.v1.GcsRepositorySnapshotMetadataOrBuilder
+      getGcsRepositorySnapshotMetadataOrBuilder();
+
   com.google.cloud.dataform.v1.CompilationResult.SourceCase getSourceCase();
 }

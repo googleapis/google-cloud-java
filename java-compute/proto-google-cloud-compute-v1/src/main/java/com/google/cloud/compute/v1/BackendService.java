@@ -5881,7 +5881,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessage
    * URL to networkservices.ServiceLbPolicy resource.
    *
    * Can only be set if load balancing scheme is EXTERNAL_MANAGED,
-   * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+   * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and
+   * EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a
+   * global backend service, the service lb policy must be global. For a
+   * regional backend service, the service lb policy must be regional and in the
+   * same region.
    * </pre>
    *
    * <code>optional string service_lb_policy = 94848785;</code>
@@ -5900,7 +5904,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessage
    * URL to networkservices.ServiceLbPolicy resource.
    *
    * Can only be set if load balancing scheme is EXTERNAL_MANAGED,
-   * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+   * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and
+   * EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a
+   * global backend service, the service lb policy must be global. For a
+   * regional backend service, the service lb policy must be regional and in the
+   * same region.
    * </pre>
    *
    * <code>optional string service_lb_policy = 94848785;</code>
@@ -5927,7 +5935,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessage
    * URL to networkservices.ServiceLbPolicy resource.
    *
    * Can only be set if load balancing scheme is EXTERNAL_MANAGED,
-   * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+   * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and
+   * EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a
+   * global backend service, the service lb policy must be global. For a
+   * regional backend service, the service lb policy must be regional and in the
+   * same region.
    * </pre>
    *
    * <code>optional string service_lb_policy = 94848785;</code>
@@ -18642,7 +18654,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessage
      * URL to networkservices.ServiceLbPolicy resource.
      *
      * Can only be set if load balancing scheme is EXTERNAL_MANAGED,
-     * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+     * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and
+     * EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a
+     * global backend service, the service lb policy must be global. For a
+     * regional backend service, the service lb policy must be regional and in the
+     * same region.
      * </pre>
      *
      * <code>optional string service_lb_policy = 94848785;</code>
@@ -18660,7 +18676,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessage
      * URL to networkservices.ServiceLbPolicy resource.
      *
      * Can only be set if load balancing scheme is EXTERNAL_MANAGED,
-     * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+     * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and
+     * EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a
+     * global backend service, the service lb policy must be global. For a
+     * regional backend service, the service lb policy must be regional and in the
+     * same region.
      * </pre>
      *
      * <code>optional string service_lb_policy = 94848785;</code>
@@ -18686,7 +18706,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessage
      * URL to networkservices.ServiceLbPolicy resource.
      *
      * Can only be set if load balancing scheme is EXTERNAL_MANAGED,
-     * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+     * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and
+     * EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a
+     * global backend service, the service lb policy must be global. For a
+     * regional backend service, the service lb policy must be regional and in the
+     * same region.
      * </pre>
      *
      * <code>optional string service_lb_policy = 94848785;</code>
@@ -18712,7 +18736,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessage
      * URL to networkservices.ServiceLbPolicy resource.
      *
      * Can only be set if load balancing scheme is EXTERNAL_MANAGED,
-     * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+     * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and
+     * EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a
+     * global backend service, the service lb policy must be global. For a
+     * regional backend service, the service lb policy must be regional and in the
+     * same region.
      * </pre>
      *
      * <code>optional string service_lb_policy = 94848785;</code>
@@ -18737,7 +18765,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessage
      * URL to networkservices.ServiceLbPolicy resource.
      *
      * Can only be set if load balancing scheme is EXTERNAL_MANAGED,
-     * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+     * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and
+     * EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a
+     * global backend service, the service lb policy must be global. For a
+     * regional backend service, the service lb policy must be regional and in the
+     * same region.
      * </pre>
      *
      * <code>optional string service_lb_policy = 94848785;</code>
@@ -18758,7 +18790,11 @@ public final class BackendService extends com.google.protobuf.GeneratedMessage
      * URL to networkservices.ServiceLbPolicy resource.
      *
      * Can only be set if load balancing scheme is EXTERNAL_MANAGED,
-     * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED and the scope is global.
+     * INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and
+     * EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a
+     * global backend service, the service lb policy must be global. For a
+     * regional backend service, the service lb policy must be regional and in the
+     * same region.
      * </pre>
      *
      * <code>optional string service_lb_policy = 94848785;</code>

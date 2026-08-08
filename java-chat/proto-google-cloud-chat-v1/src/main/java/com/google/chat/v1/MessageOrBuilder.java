@@ -334,8 +334,8 @@ public interface MessageOrBuilder
    *
    * * [Markup
    * syntax](https://developers.google.com/workspace/chat/format-messages)
-   * for bold, italic, strikethrough, monospace, monospace block, and bulleted
-   * list.
+   * for bold, italic, strikethrough, monospace, monospace block, bulleted
+   * list, and block quote.
    *
    * * [User
    * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
@@ -371,8 +371,8 @@ public interface MessageOrBuilder
    *
    * * [Markup
    * syntax](https://developers.google.com/workspace/chat/format-messages)
-   * for bold, italic, strikethrough, monospace, monospace block, and bulleted
-   * list.
+   * for bold, italic, strikethrough, monospace, monospace block, bulleted
+   * list, and block quote.
    *
    * * [User
    * mentions](https://developers.google.com/workspace/chat/format-messages#messages-&#64;mention)
@@ -980,8 +980,8 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Output only. A URL in `spaces.messages.text` that matches a link preview
-   * pattern. For more information, see [Preview
+   * Output only. A URL in the Chat message `text` field that matches a link
+   * preview pattern. For more information, see [Preview
    * links](https://developers.google.com/workspace/chat/preview-links).
    * </pre>
    *
@@ -996,8 +996,8 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Output only. A URL in `spaces.messages.text` that matches a link preview
-   * pattern. For more information, see [Preview
+   * Output only. A URL in the Chat message `text` field that matches a link
+   * preview pattern. For more information, see [Preview
    * links](https://developers.google.com/workspace/chat/preview-links).
    * </pre>
    *
@@ -1012,8 +1012,8 @@ public interface MessageOrBuilder
    *
    *
    * <pre>
-   * Output only. A URL in `spaces.messages.text` that matches a link preview
-   * pattern. For more information, see [Preview
+   * Output only. A URL in the Chat message `text` field that matches a link
+   * preview pattern. For more information, see [Preview
    * links](https://developers.google.com/workspace/chat/preview-links).
    * </pre>
    *
