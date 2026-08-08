@@ -544,22 +544,29 @@ class BigQueryJdbcOpenTelemetry {
   }
 
   private static ProxyOptions createProxyOptions(Map<String, String> proxyProperties) {
-    if (proxyProperties == null
-        || !proxyProperties.containsKey(BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME)
-        || !proxyProperties.containsKey(BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME)) {
+    if (proxyProperties == null) {
       return null;
     }
 
     final String host = proxyProperties.get(BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME);
-    final int port =
-        Integer.parseInt(proxyProperties.get(BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME));
+    final String portStr = proxyProperties.get(BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME);
+    if (host == null || host.isEmpty() || portStr == null || portStr.isEmpty()) {
+      return null;
+    }
+
+    int port;
+    try {
+      port = Integer.parseInt(portStr);
+    } catch (NumberFormatException e) {
+      throw new BigQueryJdbcRuntimeException("Invalid proxy port number: " + portStr, e);
+    }
 
     ProxySelector proxySelector =
         new ProxySelector() {
           @Override
           public List<Proxy> select(URI uri) {
             return Collections.singletonList(
-                new Proxy(Proxy.Type.HTTP, new InetSocketAddress(host, port)));
+                new Proxy(Proxy.Type.HTTP, InetSocketAddress.createUnresolved(host, port)));
           }
 
           @Override
