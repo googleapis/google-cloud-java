@@ -399,6 +399,102 @@ public class DocumentSnapshot {
   }
 
   /**
+   * Returns the value of the field as a MinKey.
+   *
+   * @param field The path to the field.
+   * @throws RuntimeException if the value is not a MinKey.
+   * @return The value of the field.
+   */
+  @Nullable
+  public MinKey getMinKey(@Nonnull String field) {
+    return (MinKey) get(field);
+  }
+
+  /**
+   * Returns the value of the field as a MaxKey.
+   *
+   * @param field The path to the field.
+   * @throws RuntimeException if the value is not a MaxKey.
+   * @return The value of the field.
+   */
+  @Nullable
+  public MaxKey getMaxKey(@Nonnull String field) {
+    return (MaxKey) get(field);
+  }
+
+  /**
+   * Returns the value of the field as a RegexValue.
+   *
+   * @param field The path to the field.
+   * @throws RuntimeException if the value is not a RegexValue.
+   * @return The value of the field.
+   */
+  @Nullable
+  public RegexValue getRegexValue(@Nonnull String field) {
+    return (RegexValue) get(field);
+  }
+
+  /**
+   * Returns the value of the field as a 32-bit integer.
+   *
+   * @param field The path to the field.
+   * @throws RuntimeException if the value is not a Int32Value.
+   * @return The value of the field.
+   */
+  @Nullable
+  public Int32Value getInt32Value(@Nonnull String field) {
+    return (Int32Value) get(field);
+  }
+
+  /**
+   * Returns the value of the field as a 128-bit decimal.
+   *
+   * @param field The path to the field.
+   * @throws RuntimeException if the value is not a Decimal128Value.
+   * @return The value of the field.
+   */
+  @Nullable
+  public Decimal128Value getDecimal128Value(@Nonnull String field) {
+    return (Decimal128Value) get(field);
+  }
+
+  /**
+   * Returns the value of the field as a BsonObjectId.
+   *
+   * @param field The path to the field.
+   * @throws RuntimeException if the value is not a BsonObjectId.
+   * @return The value of the field.
+   */
+  @Nullable
+  public BsonObjectId getBsonObjectId(@Nonnull String field) {
+    return (BsonObjectId) get(field);
+  }
+
+  /**
+   * Returns the value of the field as a BsonTimestamp.
+   *
+   * @param field The path to the field.
+   * @throws RuntimeException if the value is not a BsonTimestamp.
+   * @return The value of the field.
+   */
+  @Nullable
+  public BsonTimestamp getBsonTimestamp(@Nonnull String field) {
+    return (BsonTimestamp) get(field);
+  }
+
+  /**
+   * Returns the value of the field as a BsonBinaryData.
+   *
+   * @param field The path to the field.
+   * @throws RuntimeException if the value is not a BsonBinaryData.
+   * @return The value of the field.
+   */
+  @Nullable
+  public BsonBinaryData getBsonBinaryData(@Nonnull String field) {
+    return (BsonBinaryData) get(field);
+  }
+
+  /**
    * Gets the reference to the document.
    *
    * @return The reference to the document.

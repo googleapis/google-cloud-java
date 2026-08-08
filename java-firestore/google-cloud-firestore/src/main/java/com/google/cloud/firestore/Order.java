@@ -36,16 +36,22 @@ class Order implements Comparator<Value> {
   enum TypeOrder implements Comparable<TypeOrder> {
     // NOTE: This order is defined by the backend and cannot be changed.
     NULL,
+    MIN_KEY,
     BOOLEAN,
     NUMBER,
     TIMESTAMP,
+    BSON_TIMESTAMP,
     STRING,
     BLOB,
+    BSON_BINARY,
     REF,
+    BSON_OBJECT_ID,
     GEO_POINT,
+    REGEX,
     ARRAY,
     VECTOR,
-    OBJECT;
+    OBJECT,
+    MAX_KEY;
 
     static TypeOrder fromValue(Value value) {
       switch (value.getValueTypeCase()) {
@@ -54,7 +60,6 @@ class Order implements Comparator<Value> {
         case BOOLEAN_VALUE:
           return BOOLEAN;
         case INTEGER_VALUE:
-          return NUMBER;
         case DOUBLE_VALUE:
           return NUMBER;
         case TIMESTAMP_VALUE:
@@ -81,6 +86,21 @@ class Order implements Comparator<Value> {
     switch (UserDataConverter.detectMapRepresentation(mapValue)) {
       case VECTOR_VALUE:
         return TypeOrder.VECTOR;
+      case MIN_KEY:
+        return TypeOrder.MIN_KEY;
+      case MAX_KEY:
+        return TypeOrder.MAX_KEY;
+      case REGEX:
+        return TypeOrder.REGEX;
+      case DECIMAL128:
+      case INT32:
+        return TypeOrder.NUMBER;
+      case BSON_OBJECT_ID:
+        return TypeOrder.BSON_OBJECT_ID;
+      case BSON_TIMESTAMP:
+        return TypeOrder.BSON_TIMESTAMP;
+      case BSON_BINARY_DATA:
+        return TypeOrder.BSON_BINARY;
       case UNKNOWN:
       case NONE:
       default:
@@ -108,8 +128,11 @@ class Order implements Comparator<Value> {
 
     // So they are the same type.
     switch (leftType) {
+      // Nulls are all equal, MaxKeys are all equal, and MinKeys are all equal.
       case NULL:
-        return 0; // Nulls are all equal.
+      case MIN_KEY:
+      case MAX_KEY:
+        return 0;
       case BOOLEAN:
         return Boolean.compare(left.getBooleanValue(), right.getBooleanValue());
       case NUMBER:
@@ -131,6 +154,14 @@ class Order implements Comparator<Value> {
         return compareObjects(left, right);
       case VECTOR:
         return compareVectors(left, right);
+      case REGEX:
+        return compareRegex(left, right);
+      case BSON_OBJECT_ID:
+        return compareBsonObjectId(left, right);
+      case BSON_TIMESTAMP:
+        return compareBsonTimestamp(left, right);
+      case BSON_BINARY:
+        return compareBsonBinary(left, right);
       default:
         throw new IllegalArgumentException("Cannot compare " + leftType);
     }
@@ -308,6 +339,20 @@ class Order implements Comparator<Value> {
     return compareArrays(leftArray, rightArray);
   }
 
+  /**
+   * Returns a long from a 32-bit or 64-bit proto integer value. Throws an exception if the value is
+   * not an integer.
+   */
+  private long getIntegerValue(Value value) {
+    if (value.hasIntegerValue()) {
+      return value.getIntegerValue();
+    }
+    if (UserDataConverter.isInt32Value(value)) {
+      return value.getMapValue().getFieldsMap().get(MapType.RESERVED_INT32_KEY).getIntegerValue();
+    }
+    throw new IllegalArgumentException("getIntegerValue was called on a non-integer value.");
+  }
+
   private int compareNumbers(Value left, Value right) {
     // NaN is smaller than any other numbers
     if (isNaN(left)) {
@@ -316,23 +361,104 @@ class Order implements Comparator<Value> {
       return 1;
     }
 
+    // If either argument is Decimal128, we cast both to wider (128-bit) representation, and compare
+    // Quadruple values.
+    if (UserDataConverter.isDecimal128Value(left) || UserDataConverter.isDecimal128Value(right)) {
+      Quadruple leftQuadruple = convertNumberToQuadruple(left);
+      Quadruple rightQuadruple = convertNumberToQuadruple(right);
+
+      // Firestore considers +0 and -0 to be equal, but `Quadruple.compareTo()` does not.
+      if (leftQuadruple.isZero() && rightQuadruple.isZero()) return 0;
+
+      return leftQuadruple.compareTo(rightQuadruple);
+    }
+
     if (left.getValueTypeCase() == ValueTypeCase.DOUBLE_VALUE) {
       if (right.getValueTypeCase() == ValueTypeCase.DOUBLE_VALUE) {
+        // left and right are both doubles.
         return compareDoubles(left.getDoubleValue(), right.getDoubleValue());
       } else {
-        return compareDoubleAndLong(left.getDoubleValue(), right.getIntegerValue());
+        // left is a double and right is a 32/64-bit integer.
+        return compareDoubleAndLong(left.getDoubleValue(), getIntegerValue(right));
       }
     } else {
-      if (right.getValueTypeCase() == ValueTypeCase.INTEGER_VALUE) {
-        return Long.compare(left.getIntegerValue(), right.getIntegerValue());
+      if (right.getValueTypeCase() == ValueTypeCase.DOUBLE_VALUE) { // left is a 32/64-bit integer
+        // left is a 32/64-bit integer and right is a double.
+        return -compareDoubleAndLong(right.getDoubleValue(), getIntegerValue(left));
       } else {
-        return -compareDoubleAndLong(right.getDoubleValue(), left.getIntegerValue());
+        // left and right are both 32/64-bit integers.
+        return Long.compare(getIntegerValue(left), getIntegerValue(right));
       }
     }
   }
 
+  private int compareRegex(Value left, Value right) {
+    RegexValue lhs = UserDataConverter.decodeRegexValue(left.getMapValue());
+    RegexValue rhs = UserDataConverter.decodeRegexValue(right.getMapValue());
+    int comparePatterns = compareUtf8Strings(lhs.pattern, rhs.pattern);
+    return comparePatterns != 0 ? comparePatterns : lhs.options.compareTo(rhs.options);
+  }
+
+  private int compareBsonObjectId(Value left, Value right) {
+    BsonObjectId lhs = UserDataConverter.decodeBsonObjectId(left.getMapValue());
+    BsonObjectId rhs = UserDataConverter.decodeBsonObjectId(right.getMapValue());
+    return compareUtf8Strings(lhs.value, rhs.value);
+  }
+
+  private int compareBsonTimestamp(Value left, Value right) {
+    BsonTimestamp lhs = UserDataConverter.decodeBsonTimestamp(left.getMapValue());
+    BsonTimestamp rhs = UserDataConverter.decodeBsonTimestamp(right.getMapValue());
+    int secondsDiff = Long.compare(lhs.seconds, rhs.seconds);
+    return secondsDiff != 0 ? secondsDiff : Long.compare(lhs.increment, rhs.increment);
+  }
+
+  private int compareBsonBinary(Value left, Value right) {
+    ByteString lhs =
+        left.getMapValue().getFieldsMap().get(MapType.RESERVED_BSON_BINARY_KEY).getBytesValue();
+    ByteString rhs =
+        right.getMapValue().getFieldsMap().get(MapType.RESERVED_BSON_BINARY_KEY).getBytesValue();
+    return compareByteStrings(lhs, rhs);
+  }
+
   private boolean isNaN(Value value) {
-    return value.hasDoubleValue() && Double.isNaN(value.getDoubleValue());
+    if (value.hasDoubleValue() && Double.isNaN(value.getDoubleValue())) {
+      return true;
+    }
+
+    if (UserDataConverter.isDecimal128Value(value)) {
+      return value
+          .getMapValue()
+          .getFieldsMap()
+          .get(MapType.RESERVED_DECIMAL128_KEY)
+          .getStringValue()
+          .equals("NaN");
+    }
+
+    return false;
+  }
+
+  /**
+   * Converts the given number value to a Quadruple. Throws an exception if the value is not a
+   * number.
+   */
+  private Quadruple convertNumberToQuadruple(Value value) {
+    // Doubles
+    if (value.hasDoubleValue()) {
+      return Quadruple.fromDouble(value.getDoubleValue());
+    }
+
+    // 32-bit and 64-bit integers.
+    if (UserDataConverter.isIntegerValue(value)) {
+      return Quadruple.fromLong(getIntegerValue(value));
+    }
+
+    // Decimal128 numbers
+    if (UserDataConverter.isDecimal128Value(value)) {
+      return UserDataConverter.decodeDecimal128Value(value.getMapValue()).value;
+    }
+
+    throw new IllegalArgumentException(
+        "convertNumberToQuadruple was called on a non-numeric value.");
   }
 
   private int compareDoubles(double left, double right) {

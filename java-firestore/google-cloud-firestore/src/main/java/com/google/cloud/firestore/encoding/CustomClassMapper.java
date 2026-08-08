@@ -19,9 +19,17 @@ package com.google.cloud.firestore.encoding;
 import com.google.api.core.InternalApi;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.Blob;
+import com.google.cloud.firestore.BsonBinaryData;
+import com.google.cloud.firestore.BsonObjectId;
+import com.google.cloud.firestore.BsonTimestamp;
+import com.google.cloud.firestore.Decimal128Value;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.FieldValue;
 import com.google.cloud.firestore.GeoPoint;
+import com.google.cloud.firestore.Int32Value;
+import com.google.cloud.firestore.MaxKey;
+import com.google.cloud.firestore.MinKey;
+import com.google.cloud.firestore.RegexValue;
 import com.google.cloud.firestore.VectorValue;
 import com.google.cloud.firestore.annotation.DocumentId;
 import com.google.cloud.firestore.annotation.PropertyName;
@@ -156,6 +164,14 @@ public class CustomClassMapper {
       }
     } else if (o instanceof Date
         || o instanceof Timestamp
+        || o instanceof MinKey
+        || o instanceof MaxKey
+        || o instanceof RegexValue
+        || o instanceof Int32Value
+        || o instanceof Decimal128Value
+        || o instanceof BsonTimestamp
+        || o instanceof BsonObjectId
+        || o instanceof BsonBinaryData
         || o instanceof GeoPoint
         || o instanceof Blob
         || o instanceof DocumentReference
@@ -316,6 +332,22 @@ public class CustomClassMapper {
       return (T) convertGeoPoint(o, context.errorPath);
     } else if (VectorValue.class.isAssignableFrom(clazz)) {
       return (T) convertVectorValue(o, context.errorPath);
+    } else if (MinKey.class.isAssignableFrom(clazz)) {
+      return (T) convertMinKey(o, context.errorPath);
+    } else if (MaxKey.class.isAssignableFrom(clazz)) {
+      return (T) convertMaxKey(o, context.errorPath);
+    } else if (RegexValue.class.isAssignableFrom(clazz)) {
+      return (T) convertRegexValue(o, context.errorPath);
+    } else if (Int32Value.class.isAssignableFrom(clazz)) {
+      return (T) convertInt32Value(o, context.errorPath);
+    } else if (Decimal128Value.class.isAssignableFrom(clazz)) {
+      return (T) convertDecimal128Value(o, context.errorPath);
+    } else if (BsonObjectId.class.isAssignableFrom(clazz)) {
+      return (T) convertBsonObjectId(o, context.errorPath);
+    } else if (BsonTimestamp.class.isAssignableFrom(clazz)) {
+      return (T) convertBsonTimestamp(o, context.errorPath);
+    } else if (BsonBinaryData.class.isAssignableFrom(clazz)) {
+      return (T) convertBsonBinaryData(o, context.errorPath);
     } else if (DocumentReference.class.isAssignableFrom(clazz)) {
       return (T) convertDocumentReference(o, context.errorPath);
     } else if (clazz.isArray()) {
@@ -585,6 +617,82 @@ public class CustomClassMapper {
     } else {
       throw errorPath.deserializeError(
           "Failed to convert value of type " + o.getClass().getName() + " to VectorValue");
+    }
+  }
+
+  private static MinKey convertMinKey(Object o, DeserializeContext.ErrorPath errorPath) {
+    if (o instanceof MinKey) {
+      return (MinKey) o;
+    } else {
+      throw errorPath.deserializeError(
+          "Failed to convert value of type " + o.getClass().getName() + " to MinKey");
+    }
+  }
+
+  private static MaxKey convertMaxKey(Object o, DeserializeContext.ErrorPath errorPath) {
+    if (o instanceof MaxKey) {
+      return (MaxKey) o;
+    } else {
+      throw errorPath.deserializeError(
+          "Failed to convert value of type " + o.getClass().getName() + " to MaxKey");
+    }
+  }
+
+  private static RegexValue convertRegexValue(Object o, DeserializeContext.ErrorPath errorPath) {
+    if (o instanceof RegexValue) {
+      return (RegexValue) o;
+    } else {
+      throw errorPath.deserializeError(
+          "Failed to convert value of type " + o.getClass().getName() + " to RegexValue");
+    }
+  }
+
+  private static Int32Value convertInt32Value(Object o, DeserializeContext.ErrorPath errorPath) {
+    if (o instanceof Int32Value) {
+      return (Int32Value) o;
+    } else {
+      throw errorPath.deserializeError(
+          "Failed to convert value of type " + o.getClass().getName() + " to Int32Value");
+    }
+  }
+
+  private static Decimal128Value convertDecimal128Value(
+      Object o, DeserializeContext.ErrorPath errorPath) {
+    if (o instanceof Decimal128Value) {
+      return (Decimal128Value) o;
+    } else {
+      throw errorPath.deserializeError(
+          "Failed to convert value of type " + o.getClass().getName() + " to Decimal128Value");
+    }
+  }
+
+  private static BsonObjectId convertBsonObjectId(
+      Object o, DeserializeContext.ErrorPath errorPath) {
+    if (o instanceof BsonObjectId) {
+      return (BsonObjectId) o;
+    } else {
+      throw errorPath.deserializeError(
+          "Failed to convert value of type " + o.getClass().getName() + " to BsonObjectId");
+    }
+  }
+
+  private static BsonTimestamp convertBsonTimestamp(
+      Object o, DeserializeContext.ErrorPath errorPath) {
+    if (o instanceof BsonTimestamp) {
+      return (BsonTimestamp) o;
+    } else {
+      throw errorPath.deserializeError(
+          "Failed to convert value of type " + o.getClass().getName() + " to BsonTimestamp");
+    }
+  }
+
+  private static BsonBinaryData convertBsonBinaryData(
+      Object o, DeserializeContext.ErrorPath errorPath) {
+    if (o instanceof BsonBinaryData) {
+      return (BsonBinaryData) o;
+    } else {
+      throw errorPath.deserializeError(
+          "Failed to convert value of type " + o.getClass().getName() + " to BsonBinaryData");
     }
   }
 
