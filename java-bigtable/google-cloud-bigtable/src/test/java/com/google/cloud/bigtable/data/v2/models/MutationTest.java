@@ -23,6 +23,7 @@ import com.google.bigtable.v2.Mutation.DeleteFromFamily;
 import com.google.bigtable.v2.Mutation.DeleteFromRow;
 import com.google.bigtable.v2.Mutation.MergeToCell;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
+import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Longs;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayInputStream;
@@ -30,6 +31,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Iterator;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -259,6 +261,105 @@ public class MutationTest {
     }
 
     assertThat(actualError).isInstanceOf(IllegalStateException.class);
+  }
+
+  @Test
+  public void tooManyMutationsCountsWrappedProtosTest() {
+    Mutation mutation =
+        Mutation.fromProtoUnsafe(
+            ImmutableList.of(
+                com.google.bigtable.v2.Mutation.newBuilder()
+                    .setDeleteFromRow(com.google.bigtable.v2.Mutation.DeleteFromRow.newBuilder())
+                    .build()));
+
+    for (int i = 0; i < Mutation.MAX_MUTATIONS - 1; i++) {
+      mutation.setCell("f", "", "");
+    }
+
+    Exception actualError = null;
+    try {
+      mutation.setCell("f", "", "");
+    } catch (Exception e) {
+      actualError = e;
+    }
+
+    assertThat(actualError).isInstanceOf(IllegalStateException.class);
+    assertThat(mutation.getMutations()).hasSize(Mutation.MAX_MUTATIONS);
+  }
+
+  @Test
+  public void tooLargeRequestCountsWrappedProtosTest() {
+    Mutation mutation =
+        Mutation.fromProtoUnsafe(
+            ImmutableList.of(
+                com.google.bigtable.v2.Mutation.newBuilder()
+                    .setSetCell(
+                        com.google.bigtable.v2.Mutation.SetCell.newBuilder()
+                            .setFamilyName("f")
+                            .setValue(ByteString.copyFrom(new byte[Mutation.MAX_BYTE_SIZE / 2])))
+                    .build(),
+                com.google.bigtable.v2.Mutation.newBuilder()
+                    .setSetCell(
+                        com.google.bigtable.v2.Mutation.SetCell.newBuilder()
+                            .setFamilyName("f")
+                            .setValue(ByteString.copyFrom(new byte[Mutation.MAX_BYTE_SIZE / 2])))
+                    .build()));
+
+    Exception actualError = null;
+    try {
+      mutation.setCell("f", "", "");
+    } catch (Exception e) {
+      actualError = e;
+    }
+
+    assertThat(actualError).isInstanceOf(IllegalStateException.class);
+  }
+
+  @Test
+  public void fromProtoUnsafeTraversesTheIterableOnceTest() {
+    Iterable<com.google.bigtable.v2.Mutation> oneShot =
+        oneShot(
+            com.google.bigtable.v2.Mutation.newBuilder()
+                .setDeleteFromRow(com.google.bigtable.v2.Mutation.DeleteFromRow.newBuilder())
+                .build(),
+            com.google.bigtable.v2.Mutation.newBuilder()
+                .setDeleteFromRow(com.google.bigtable.v2.Mutation.DeleteFromRow.newBuilder())
+                .build());
+
+    Mutation mutation = Mutation.fromProtoUnsafe(oneShot);
+
+    assertThat(mutation.getMutations()).hasSize(2);
+
+    for (int i = 0; i < Mutation.MAX_MUTATIONS - 2; i++) {
+      mutation.setCell("f", "", "");
+    }
+
+    Exception actualError = null;
+    try {
+      mutation.setCell("f", "", "");
+    } catch (Exception e) {
+      actualError = e;
+    }
+
+    assertThat(actualError).isInstanceOf(IllegalStateException.class);
+  }
+
+  /** An Iterable that refuses a second traversal. */
+  private static Iterable<com.google.bigtable.v2.Mutation> oneShot(
+      com.google.bigtable.v2.Mutation... protos) {
+    List<com.google.bigtable.v2.Mutation> source = ImmutableList.copyOf(protos);
+    return new Iterable<com.google.bigtable.v2.Mutation>() {
+      private boolean consumed;
+
+      @Override
+      public Iterator<com.google.bigtable.v2.Mutation> iterator() {
+        if (consumed) {
+          throw new IllegalStateException("Iterable traversed more than once");
+        }
+        consumed = true;
+        return source.iterator();
+      }
+    };
   }
 
   @Test
