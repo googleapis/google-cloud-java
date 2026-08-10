@@ -486,6 +486,17 @@ public enum ProcessingErrorReason implements com.google.protobuf.ProtocolMessage
    * <code>PROCESSING_ERROR_REASON_CLICK_NOT_FOUND = 43;</code>
    */
   PROCESSING_ERROR_REASON_CLICK_NOT_FOUND(43),
+  /**
+   *
+   *
+   * <pre>
+   * External attribution data is missing. Sending events to a destination for
+   * an external attribution conversion action isn't supported.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_EXTERNAL_ATTRIBUTION_DATA_MISSING = 44;</code>
+   */
+  PROCESSING_ERROR_REASON_EXTERNAL_ATTRIBUTION_DATA_MISSING(44),
   UNRECOGNIZED(-1),
   ;
 
@@ -999,6 +1010,18 @@ public enum ProcessingErrorReason implements com.google.protobuf.ProtocolMessage
    */
   public static final int PROCESSING_ERROR_REASON_CLICK_NOT_FOUND_VALUE = 43;
 
+  /**
+   *
+   *
+   * <pre>
+   * External attribution data is missing. Sending events to a destination for
+   * an external attribution conversion action isn't supported.
+   * </pre>
+   *
+   * <code>PROCESSING_ERROR_REASON_EXTERNAL_ATTRIBUTION_DATA_MISSING = 44;</code>
+   */
+  public static final int PROCESSING_ERROR_REASON_EXTERNAL_ATTRIBUTION_DATA_MISSING_VALUE = 44;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -1111,6 +1134,8 @@ public enum ProcessingErrorReason implements com.google.protobuf.ProtocolMessage
         return PROCESSING_ERROR_REASON_INVALID_OPERATING_ACCOUNT_FOR_CLICK;
       case 43:
         return PROCESSING_ERROR_REASON_CLICK_NOT_FOUND;
+      case 44:
+        return PROCESSING_ERROR_REASON_EXTERNAL_ATTRIBUTION_DATA_MISSING;
       default:
         return null;
     }
