@@ -2145,6 +2145,37 @@ public class BigQueryImplTest {
   }
 
   @Test
+  void testCreateJobTryGetNotRandomJobNotFound() throws IOException {
+    Map<BigQueryRpc.Option, ?> withStatisticOption = optionMap(JobOption.fields(STATISTICS));
+    final String id = "testCreateJobTryGet-id";
+    String query = "SELECT * in FOO";
+
+    when(bigqueryRpcMock.createSkipExceptionTranslation(
+            jobCapture.capture(), eq(EMPTY_RPC_OPTIONS)))
+        .thenThrow(
+            new BigQueryException(
+                409,
+                "already exists, for some reason",
+                new RuntimeException("Already Exists: Job")));
+    when(bigqueryRpcMock.getJobSkipExceptionTranslation(
+            any(String.class), eq(id), eq((String) null), eq(withStatisticOption)))
+        .thenThrow(new BigQueryException(404, "Job not found"));
+
+    bigquery = options.getService();
+    BigQueryException exception =
+        Assertions.assertThrows(
+            BigQueryException.class,
+            () ->
+                ((BigQueryImpl) bigquery)
+                    .create(JobInfo.of(JobId.of(id), QueryJobConfiguration.of(query))));
+    assertEquals(409, exception.getCode());
+    assertEquals("already exists, for some reason", exception.getMessage());
+    verify(bigqueryRpcMock)
+        .getJobSkipExceptionTranslation(
+            any(String.class), eq(id), eq((String) null), eq(withStatisticOption));
+  }
+
+  @Test
   void testCreateJobWithProjectId() throws IOException {
     JobInfo jobInfo =
         JobInfo.newBuilder(QUERY_JOB_CONFIGURATION.setProjectId(OTHER_PROJECT))
