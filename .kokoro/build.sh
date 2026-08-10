@@ -50,13 +50,14 @@ case ${JOB_TYPE} in
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
-      mvn install \
+      mvn test \
         -B -ntp \
         -Pquick-build \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dmaven.wagon.http.retryHandler.count=5 \
         --also-make \
+        -T 1C \
         ${SUREFIRE_JVM_OPT} "${EXTRA_PROFILE_OPTS[@]}"
     RETURN_CODE=$?
 
