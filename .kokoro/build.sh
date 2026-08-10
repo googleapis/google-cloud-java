@@ -50,7 +50,7 @@ case ${JOB_TYPE} in
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
     retry_with_backoff 3 10 \
-      mvn test \
+      mvn install \
         -B -ntp \
         -Pquick-build \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
