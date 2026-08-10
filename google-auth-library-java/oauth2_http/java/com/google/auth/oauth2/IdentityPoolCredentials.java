@@ -31,6 +31,7 @@
 
 package com.google.auth.oauth2;
 
+import com.google.auth.http.ContextRebuildableTransportFactory;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.mtls.MtlsUtils;
@@ -154,7 +155,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     }
 
     if (this.actorTokenSupplier != null
-        && !(this.transportFactory instanceof MtlsHttpTransportFactory)) {
+        && !(this.transportFactory instanceof ContextRebuildableTransportFactory)) {
       throw new IllegalArgumentException(
           "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate source or MtlsHttpTransportFactory.");
     }
@@ -198,8 +199,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   }
 
   @VisibleForTesting
-  @Nullable
-  IdentityPoolActorTokenSupplier getIdentityPoolActorTokenSupplier() {
+  @Nullable IdentityPoolActorTokenSupplier getIdentityPoolActorTokenSupplier() {
     return this.actorTokenSupplier;
   }
 

@@ -45,6 +45,7 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Clock;
 import com.google.auth.TestUtils;
+import com.google.auth.http.ContextRebuildableTransportFactory;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.mtls.X509Provider;
@@ -1515,8 +1516,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals(newScopes, scoped.getScopes());
     // Verify scoped clone maintains a single shared supplier instance for its own cache
     assertSame(
-        scoped.getIdentityPoolSubjectTokenSupplier(),
-        scoped.getIdentityPoolActorTokenSupplier());
+        scoped.getIdentityPoolSubjectTokenSupplier(), scoped.getIdentityPoolActorTokenSupplier());
   }
 
   @Test
@@ -1525,8 +1525,11 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
         new MockExternalAccountCredentialsTransportFactory();
     KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
     ks.load(null, null);
-    MtlsHttpTransportFactory mtlsTransport =
-        new MtlsHttpTransportFactory(ks) {
+    ContextRebuildableTransportFactory mtlsTransport =
+        new ContextRebuildableTransportFactory() {
+          @Override
+          public void rebuildContext() {}
+
           @Override
           public com.google.api.client.http.HttpTransport create() {
             return transportFactory.create();
