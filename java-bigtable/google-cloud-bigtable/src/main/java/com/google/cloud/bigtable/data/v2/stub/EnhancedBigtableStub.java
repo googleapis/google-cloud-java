@@ -94,6 +94,7 @@ import com.google.cloud.bigtable.data.v2.stub.changestream.ReadChangeStreamUserC
 import com.google.cloud.bigtable.data.v2.stub.metrics.StatsHeadersServerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.StatsHeadersUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.BulkMutateRowsUserFacingCallable;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MaybePointWriteCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsAttemptResult;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsPartialErrorRetryAlgorithm;
@@ -200,8 +201,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
     sampleRowKeysCallableWithRequest = createSampleRowKeysCallableWithRequest();
     mutateRowCallable = createMutateRowCallable();
     bulkMutateRowsCallable = createMutateRowsBaseCallable();
-    externalBulkMutateRowsCallable =
+    UnaryCallable<BulkMutation, Void> bulkMutateRowsVoidCallable =
         new MutateRowsErrorConverterUnaryCallable(bulkMutateRowsCallable);
+    externalBulkMutateRowsCallable =
+        new MaybePointWriteCallable(
+            bulkMutateRowsVoidCallable, createPointWriteCallable(), requestContext);
     checkAndMutateRowCallable = createCheckAndMutateRowCallable();
     readModifyWriteRowCallable = createReadModifyWriteRowCallable();
     generateInitialChangeStreamPartitionsCallable =
@@ -668,6 +672,37 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return bigtableClientContext
         .getSessionShim()
         .decorateMutateRow(classic, perOpSettings.mutateRowSettings);
+  }
+
+  /**
+   * Creates the point-write callable used by {@link MaybePointWriteCallable} to divert single-entry
+   * {@link BulkMutation}s. This mirrors {@link #createPointReadCallable}: it exposes a single row
+   * mutation through the session-shim diversion while preserving the bulk operation's retry
+   * behavior.
+   *
+   * <p>Unlike the plain {@link #createMutateRowCallable()}, this uses the {@code MutateRow} RPC
+   * (the natural single-row write) but carries the caller's {@code bulkMutateRowsSettings} retry
+   * settings/codes, so a single-entry bulk write retries the same way it would have as a bulk
+   * operation.
+   */
+  private UnaryCallable<RowMutation, Void> createPointWriteCallable() {
+    UnaryCallSettings<RowMutation, Void> settings =
+        perOpSettings.mutateRowSettings.toBuilder()
+            .setRetrySettings(perOpSettings.bulkMutateRowsSettings.getRetrySettings())
+            .setRetryableCodes(perOpSettings.bulkMutateRowsSettings.getRetryableCodes())
+            .build();
+
+    UnaryCallable<RowMutation, Void> classic =
+        createUnaryCallable(
+            BigtableGrpc.getMutateRowMethod(),
+            req ->
+                composeRequestParams(
+                    req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
+            settings,
+            req -> req.toProto(requestContext),
+            resp -> null);
+
+    return bigtableClientContext.getSessionShim().decorateMutateRow(classic, settings);
   }
 
   /**
