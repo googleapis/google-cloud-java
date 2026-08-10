@@ -100,6 +100,12 @@ public class IngestionServiceSettings extends ClientSettings<IngestionServiceSet
     return ((IngestionServiceStubSettings) getStubSettings()).removeAudienceMembersSettings();
   }
 
+  /** Returns the object with the settings used for calls to removeAllAudienceMembers. */
+  public UnaryCallSettings<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersSettings() {
+    return ((IngestionServiceStubSettings) getStubSettings()).removeAllAudienceMembersSettings();
+  }
+
   /** Returns the object with the settings used for calls to ingestEvents. */
   public UnaryCallSettings<IngestEventsRequest, IngestEventsResponse> ingestEventsSettings() {
     return ((IngestionServiceStubSettings) getStubSettings()).ingestEventsSettings();
@@ -238,6 +244,13 @@ public class IngestionServiceSettings extends ClientSettings<IngestionServiceSet
     public UnaryCallSettings.Builder<RemoveAudienceMembersRequest, RemoveAudienceMembersResponse>
         removeAudienceMembersSettings() {
       return getStubSettingsBuilder().removeAudienceMembersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeAllAudienceMembers. */
+    public UnaryCallSettings.Builder<
+            RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+        removeAllAudienceMembersSettings() {
+      return getStubSettingsBuilder().removeAllAudienceMembersSettings();
     }
 
     /** Returns the builder for the settings used for calls to ingestEvents. */
