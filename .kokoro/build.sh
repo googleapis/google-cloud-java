@@ -68,6 +68,31 @@ case ${JOB_TYPE} in
     fi
     echo "Finished running unit tests"
     ;;
+  compile)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling all modules for ${BUILD_SUBDIR}"
+      mvn compile \
+        -B -ntp \
+        -Pquick-build \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        --projects "${BUILD_SUBDIR}" \
+        --also-make \
+        -T 1C
+    else
+      echo "Compiling all modules in repository"
+      mvn compile \
+        -B -ntp \
+        -Pquick-build \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        -T 1C
+    fi
+    RETURN_CODE=$?
+    ;;
   install)
     if [[ -n "${BUILD_SUBDIR}" ]]
     then
