@@ -180,6 +180,8 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
             ErrorDetails.builder()
                 .setRawErrorMessages(operation.getError().getDetailsList())
                 .build();
+      } else {
+        this.errorDetails = null;
       }
       return this;
     }
