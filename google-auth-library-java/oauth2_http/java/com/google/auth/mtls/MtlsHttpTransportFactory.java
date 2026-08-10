@@ -108,7 +108,7 @@ public class MtlsHttpTransportFactory implements ContextRebuildableTransportFact
     }
   }
 
-  private static SSLSocketFactory buildSslSocketFactory(KeyStore keyStore)
+  private static SSLSocketFactory buildSslSocketFactory(@Nullable KeyStore keyStore)
       throws GeneralSecurityException {
     return new NetHttpTransport.Builder()
         .trustCertificates(null, keyStore, "")
@@ -124,8 +124,10 @@ public class MtlsHttpTransportFactory implements ContextRebuildableTransportFact
   public synchronized void rebuildContext() throws IOException {
     if (this.mtlsProvider != null) {
       try {
-        this.mtlsKeyStore = this.mtlsProvider.getKeyStore();
-        this.sslSocketFactory.setDelegate(buildSslSocketFactory(this.mtlsKeyStore));
+        KeyStore newKeyStore = this.mtlsProvider.getKeyStore();
+        SSLSocketFactory newSslSocketFactory = buildSslSocketFactory(newKeyStore);
+        this.mtlsKeyStore = newKeyStore;
+        this.sslSocketFactory.setDelegate(newSslSocketFactory);
       } catch (CertificateSourceUnavailableException e) {
         throw new IOException("Failed to reload KeyStore from MtlsProvider.", e);
       } catch (GeneralSecurityException e) {
@@ -135,7 +137,7 @@ public class MtlsHttpTransportFactory implements ContextRebuildableTransportFact
   }
 
   @VisibleForTesting
-  KeyStore getKeyStore() {
+  @Nullable KeyStore getKeyStore() {
     return mtlsKeyStore;
   }
 
