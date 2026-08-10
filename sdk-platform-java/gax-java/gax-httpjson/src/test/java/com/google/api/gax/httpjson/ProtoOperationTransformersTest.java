@@ -34,6 +34,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import com.google.api.gax.httpjson.ProtoOperationTransformers.MetadataTransformer;
 import com.google.api.gax.httpjson.ProtoOperationTransformers.ResponseTransformer;
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.rpc.UnknownException;
 import com.google.common.truth.Truth;
@@ -43,6 +44,7 @@ import com.google.rpc.Code;
 import com.google.rpc.Status;
 import com.google.type.Color;
 import com.google.type.Money;
+import java.util.Collections;
 import org.junit.jupiter.api.Test;
 
 class ProtoOperationTransformersTest {
@@ -96,11 +98,13 @@ class ProtoOperationTransformersTest {
         HttpJsonOperationSnapshot.create(
             Operation.newBuilder().setResponse(Any.pack(inputMoney)).setError(status).build());
 
-    Exception exception =
+    UnavailableException exception =
         assertThrows(UnavailableException.class, () -> transformer.apply(operationSnapshot));
     Truth.assertThat(exception)
         .hasMessageThat()
         .contains("failed with status = HttpJsonStatusCode{statusCode=UNAVAILABLE}");
+    Truth.assertThat(exception.getErrorDetails())
+        .isEqualTo(ErrorDetails.builder().setRawErrorMessages(Collections.emptyList()).build());
   }
 
   @Test

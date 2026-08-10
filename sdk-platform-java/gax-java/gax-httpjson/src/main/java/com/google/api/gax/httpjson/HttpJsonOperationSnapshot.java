@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.longrunning.Operation;
+import java.util.Collections;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -52,7 +53,7 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
   private final Object response;
   private final StatusCode errorCode;
   private final String errorMessage;
-  private final @Nullable ErrorDetails errorDetails;
+  private final ErrorDetails errorDetails;
 
   private HttpJsonOperationSnapshot(
       String name,
@@ -61,7 +62,7 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
       Object response,
       StatusCode errorCode,
       String errorMessage,
-      @Nullable ErrorDetails errorDetails) {
+      ErrorDetails errorDetails) {
     this.name = name;
     this.metadata = metadata;
     this.done = done;
@@ -108,7 +109,7 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
   }
 
   @Override
-  public @Nullable ErrorDetails getErrorDetails() {
+  public ErrorDetails getErrorDetails() {
     return this.errorDetails;
   }
 
@@ -127,7 +128,8 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
     private Object response;
     private StatusCode errorCode;
     private String errorMessage;
-    private @Nullable ErrorDetails errorDetails;
+    private ErrorDetails errorDetails =
+        ErrorDetails.builder().setRawErrorMessages(Collections.emptyList()).build();
 
     /**
      * Sets the LRO error details.
@@ -136,7 +138,10 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
      * @return the builder instance
      */
     public Builder setErrorDetails(final @Nullable ErrorDetails errorDetails) {
-      this.errorDetails = errorDetails;
+      this.errorDetails =
+          errorDetails != null
+              ? errorDetails
+              : ErrorDetails.builder().setRawErrorMessages(Collections.emptyList()).build();
       return this;
     }
 
@@ -181,7 +186,8 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
                 .setRawErrorMessages(operation.getError().getDetailsList())
                 .build();
       } else {
-        this.errorDetails = null;
+        this.errorDetails =
+            ErrorDetails.builder().setRawErrorMessages(Collections.emptyList()).build();
       }
       return this;
     }

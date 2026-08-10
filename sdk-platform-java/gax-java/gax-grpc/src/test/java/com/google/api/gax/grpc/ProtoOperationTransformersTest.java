@@ -43,6 +43,7 @@ import com.google.rpc.Status;
 import com.google.type.Color;
 import com.google.type.Money;
 import io.grpc.Status.Code;
+import java.util.Collections;
 import org.junit.jupiter.api.Test;
 
 class ProtoOperationTransformersTest {
@@ -64,11 +65,13 @@ class ProtoOperationTransformersTest {
     OperationSnapshot operationSnapshot =
         GrpcOperationSnapshot.create(
             Operation.newBuilder().setResponse(Any.pack(inputMoney)).setError(status).build());
-    Exception exception =
+    UnavailableException exception =
         assertThrows(UnavailableException.class, () -> transformer.apply(operationSnapshot));
     Truth.assertThat(exception)
         .hasMessageThat()
         .contains("failed with status = GrpcStatusCode{transportCode=UNAVAILABLE}");
+    Truth.assertThat(exception.getErrorDetails())
+        .isEqualTo(ErrorDetails.builder().setRawErrorMessages(Collections.emptyList()).build());
   }
 
   @Test
