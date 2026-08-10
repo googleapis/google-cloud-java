@@ -35,8 +35,8 @@ import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.longrunning.Operation;
-import org.jspecify.annotations.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Implementation of OperationSnapshot based on REST transport.
@@ -129,7 +129,13 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
     private String errorMessage;
     private @Nullable ErrorDetails errorDetails;
 
-    public Builder setErrorDetails(@Nullable ErrorDetails errorDetails) {
+    /**
+     * Sets the LRO error details.
+     *
+     * @param errorDetails the LRO error details
+     * @return the builder instance
+     */
+    public Builder setErrorDetails(final @Nullable ErrorDetails errorDetails) {
       this.errorDetails = errorDetails;
       return this;
     }
@@ -169,9 +175,11 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
       this.errorCode =
           HttpJsonStatusCode.of(com.google.rpc.Code.forNumber(operation.getError().getCode()));
       this.errorMessage = operation.getError().getMessage();
-      if (operation.hasError()) {
+      if (operation.hasError() && operation.getError().getDetailsCount() > 0) {
         this.errorDetails =
-            ErrorDetails.builder().setRawErrorMessages(operation.getError().getDetailsList()).build();
+            ErrorDetails.builder()
+                .setRawErrorMessages(operation.getError().getDetailsList())
+                .build();
       }
       return this;
     }

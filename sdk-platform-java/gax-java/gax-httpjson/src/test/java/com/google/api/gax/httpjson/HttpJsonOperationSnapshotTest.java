@@ -95,10 +95,7 @@ class HttpJsonOperationSnapshotTest {
   void newBuilderTestWithErrorDetails() {
     ErrorDetails errorDetails =
         ErrorDetails.builder()
-            .setRawErrorMessages(
-                Collections.singletonList(
-                    Any.pack(
-                        Empty.getDefaultInstance())))
+            .setRawErrorMessages(Collections.singletonList(Any.pack(Empty.getDefaultInstance())))
             .build();
     HttpJsonOperationSnapshot testOperationSnapshot =
         HttpJsonOperationSnapshot.newBuilder()

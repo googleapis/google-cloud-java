@@ -34,8 +34,8 @@ import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
 import io.grpc.Status;
-import org.jspecify.annotations.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Implementation of OperationSnapshot based on gRPC.
@@ -83,8 +83,10 @@ class GrpcOperationSnapshot implements OperationSnapshot {
 
   @Override
   public @Nullable ErrorDetails getErrorDetails() {
-    if (operation.hasError()) {
-      return ErrorDetails.builder().setRawErrorMessages(operation.getError().getDetailsList()).build();
+    if (operation.hasError() && operation.getError().getDetailsCount() > 0) {
+      return ErrorDetails.builder()
+          .setRawErrorMessages(operation.getError().getDetailsList())
+          .build();
     }
     return null;
   }

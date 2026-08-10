@@ -201,7 +201,7 @@ class ITLongRunningOperation {
   }
 
   @Test
-  void testGRPC_LROErrorResponse_dropsErrorDetails() throws Exception {
+  void testGRPC_LROErrorResponse_propagatesErrorDetails() throws Exception {
     EchoClient grpcClient = TestClientInitializer.createGrpcEchoClient();
     try {
       PoetryError poetryError =

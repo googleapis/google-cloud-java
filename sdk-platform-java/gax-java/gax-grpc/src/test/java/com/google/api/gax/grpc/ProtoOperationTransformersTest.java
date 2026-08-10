@@ -115,7 +115,8 @@ class ProtoOperationTransformersTest {
   void testAnyResponseTransformer_exceptionWithErrorDetails() {
     ResponseTransformer<Money> transformer = ResponseTransformer.create(Money.class);
     Money inputMoney = Money.newBuilder().setCurrencyCode("USD").build();
-    Color poetryError = Color.newBuilder().setRed(1.0f).build(); // Use Color as a mock details payload
+    Color poetryError =
+        Color.newBuilder().setRed(1.0f).build(); // Use Color as a mock details payload
     Status status =
         Status.newBuilder()
             .setCode(Code.UNAVAILABLE.value())
