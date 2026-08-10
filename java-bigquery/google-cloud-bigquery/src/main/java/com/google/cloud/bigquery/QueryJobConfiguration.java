@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Strings.isNullOrEmpty;
 
+import com.google.api.core.BetaApi;
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
@@ -708,26 +709,26 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
 
     /**
-     * Sets the query results response format. Defaults to {@link
+     * <b>[Beta]</b> Sets the query results response format. Defaults to {@link
      * QueryResultsFormat#STRUCT_ENCODING}.
      *
      * <p>When set to {@link QueryResultsFormat#ARROW}, query results are returned in binary Apache
      * Arrow format, utilizing gRPC Storage Read streams for subsequent pages.
      *
      * <p><b>Prerequisite:</b> Requires the BigQuery Storage Read API ({@code
-     * bigquerystorage.googleapis.com}) to be enabled on your GCP project and your credentials to
-     * have Storage Read permissions (e.g. {@code bigquery.readsessions.create}).
+     * bigquerystorage.googleapis.com}) to be enabled on your GCP project.
      *
      * @param queryResultsFormat the format for query result payloads
      * @return the Builder
      */
+    @BetaApi
     public Builder setQueryResultsFormat(QueryResultsFormat queryResultsFormat) {
       this.queryResultsFormat = queryResultsFormat;
       return this;
     }
 
     /**
-     * Sets Arrow serialization options. Defaults to null.
+     * <b>[Beta]</b> Sets Arrow serialization options. Defaults to null.
      *
      * <p>Note: Only applied in the request payload when {@code queryResultsFormat} is {@code
      * ARROW}.
@@ -735,6 +736,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      * @param arrowSerializationOptions the Arrow serialization options to set
      * @return the Builder
      */
+    @BetaApi
     public Builder setArrowSerializationOptions(
         ArrowSerializationOptions arrowSerializationOptions) {
       this.arrowSerializationOptions = arrowSerializationOptions;
@@ -1015,10 +1017,14 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return new Builder(this);
   }
 
+  /** <b>[Beta]</b> Returns the query results response format. */
+  @BetaApi
   public QueryResultsFormat getQueryResultsFormat() {
     return queryResultsFormat;
   }
 
+  /** <b>[Beta]</b> Returns Arrow serialization options, or null if unset. */
+  @BetaApi
   public ArrowSerializationOptions getArrowSerializationOptions() {
     return arrowSerializationOptions;
   }

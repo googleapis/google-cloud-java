@@ -21,7 +21,7 @@ import com.google.common.base.MoreObjects;
 import java.io.Serializable;
 import java.util.Objects;
 
-/** Options specific to the Apache Arrow output format. */
+/** <b>[Beta]</b> Options specific to the Apache Arrow output format. */
 @BetaApi
 public final class ArrowSerializationOptions implements Serializable {
 
@@ -35,14 +35,22 @@ public final class ArrowSerializationOptions implements Serializable {
     this.picosTimestampPrecision = builder.picosTimestampPrecision;
   }
 
+  /**
+   * <b>[Beta]</b> Returns the buffer compression algorithm (e.g., LZ4_FRAME, ZSTD, UNCOMPRESSED).
+   */
+  @BetaApi
   public String getBufferCompression() {
     return bufferCompression;
   }
 
+  /** <b>[Beta]</b> Returns the timestamp precision for Arrow timestamp types. */
+  @BetaApi
   public String getPicosTimestampPrecision() {
     return picosTimestampPrecision;
   }
 
+  /** <b>[Beta]</b> Returns a new builder for {@link ArrowSerializationOptions}. */
+  @BetaApi
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -82,22 +90,32 @@ public final class ArrowSerializationOptions implements Serializable {
     return ArrowSerializationOptionsConverter.fromPb(optionsPb);
   }
 
+  /** <b>[Beta]</b> Builder for {@link ArrowSerializationOptions}. */
+  @BetaApi
   public static final class Builder {
     private String bufferCompression;
     private String picosTimestampPrecision;
 
     private Builder() {}
 
+    /**
+     * <b>[Beta]</b> Sets the buffer compression algorithm (e.g., LZ4_FRAME, ZSTD, UNCOMPRESSED).
+     */
+    @BetaApi
     public Builder setBufferCompression(String bufferCompression) {
       this.bufferCompression = bufferCompression;
       return this;
     }
 
+    /** <b>[Beta]</b> Sets the timestamp precision for Arrow timestamp types. */
+    @BetaApi
     public Builder setPicosTimestampPrecision(String picosTimestampPrecision) {
       this.picosTimestampPrecision = picosTimestampPrecision;
       return this;
     }
 
+    /** <b>[Beta]</b> Builds a new instance of {@link ArrowSerializationOptions}. */
+    @BetaApi
     public ArrowSerializationOptions build() {
       return new ArrowSerializationOptions(this);
     }
