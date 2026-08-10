@@ -33,10 +33,7 @@ package com.google.api.gax.rpc.mtls;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
@@ -104,7 +101,8 @@ class CertificateBasedAccessTest {
     TestEnv env = new TestEnv();
     env.set("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
     CertificateBasedAccess cba = createCba(env);
-    // Explicit 'true' permits mTLS if certs exist, but if no certs are present, returns false/null cleanly (Row 3)
+    // Explicit 'true' permits mTLS if certs exist, but if no certs are present, returns false/null
+    // cleanly (Row 3)
     assertFalse(cba.useMtlsClientCertificate());
     assertNull(cba.getWorkloadCertPath());
   }

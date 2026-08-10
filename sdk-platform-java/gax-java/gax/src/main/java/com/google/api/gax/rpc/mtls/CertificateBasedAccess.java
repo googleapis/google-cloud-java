@@ -58,7 +58,13 @@ public class CertificateBasedAccess {
   }
 
   public CertificateBasedAccess(EnvironmentProvider envProvider) {
-    this(envProvider, path -> new java.io.File(path).isFile(), path -> new String(java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(path)), java.nio.charset.StandardCharsets.UTF_8));
+    this(
+        envProvider,
+        path -> new java.io.File(path).isFile(),
+        path ->
+            new String(
+                java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(path)),
+                java.nio.charset.StandardCharsets.UTF_8));
   }
 
   CertificateBasedAccess(

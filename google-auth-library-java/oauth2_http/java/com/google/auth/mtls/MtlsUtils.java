@@ -60,8 +60,8 @@ public class MtlsUtils {
   }
 
   /**
-   * Returns if mutual TLS client certificate should be used.
-   * Delegates directly to getWorkloadCertPath to avoid duplicate logic.
+   * Returns if mutual TLS client certificate should be used. Delegates directly to
+   * getWorkloadCertPath to avoid duplicate logic.
    */
   public static boolean useMtlsClientCertificate(
       EnvironmentProvider envProvider, PropertyProvider propProvider) {
@@ -69,7 +69,8 @@ public class MtlsUtils {
   }
 
   /**
-   * Resolves and returns the path to the mutual TLS client certificate, or null if none should be used.
+   * Resolves and returns the path to the mutual TLS client certificate, or null if none should be
+   * used.
    */
   public static @Nullable String getWorkloadCertPath(
       EnvironmentProvider envProvider, PropertyProvider propProvider) {
@@ -112,7 +113,8 @@ public class MtlsUtils {
           return config.getCertPath();
         }
       } catch (CertificateSourceUnavailableException e) {
-        // Well-known gcloud certificate_config.json does not exist. Safe fallback to SPIFFE/well-known paths.
+        // Well-known gcloud certificate_config.json does not exist. Safe fallback to
+        // SPIFFE/well-known paths.
       } catch (Exception e) {
         // Ignore parsing errors for well-known config fallback
       }
@@ -138,18 +140,17 @@ public class MtlsUtils {
     if (bundleFile.exists()) {
       return bundleFile.getAbsolutePath();
     }
-
-    File certFile = new File(gkePath, "certificates.pem");
-    File keyFile = new File(gkePath, "private_key.pem");
-    if (certFile.exists() && keyFile.exists()) {
-      return certFile.getAbsolutePath();
-    }
     return null;
   }
 
   /** Dedicated GCE Fallback Resolution Path */
   public static @Nullable String getGceWorkloadCertPath() {
-    // Isolated GCE workload credentials fallback for independent rollout phase
+    String gcePath = "/var/run/secrets/workload-spiffe-credentials";
+    File certFile = new File(gcePath, "certificates.pem");
+    File keyFile = new File(gcePath, "private_key.pem");
+    if (certFile.exists() && keyFile.exists()) {
+      return certFile.getAbsolutePath();
+    }
     return null;
   }
 
@@ -189,23 +190,39 @@ public class MtlsUtils {
    * @throws IOException if the certificate configuration cannot be found or loaded.
    */
   public static String getCertificatePath(
-      EnvironmentProvider envProvider, PropertyProvider propProvider, @Nullable String certConfigPathOverride)
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      @Nullable String certConfigPathOverride)
       throws IOException {
     String certPath =
         getWorkloadCertificateConfiguration(envProvider, propProvider, certConfigPathOverride)
             .getCertPath();
     if (Strings.isNullOrEmpty(certPath)) {
       throw new CertificateSourceUnavailableException(
-          "Certificate configuration loaded successfully, but does not contain a 'certificate_file' path.");
+          "Certificate configuration loaded successfully, but does not contain a 'certificate_file'"
+              + " path.");
     }
     return certPath;
   }
 
   /**
    * Resolves and loads the workload certificate configuration.
+   *
+   * <p>The configuration file is resolved in the following order of precedence: 1. The provided
+   * certConfigPathOverride (if not null). 2. The path specified by the
+   * GOOGLE_API_CERTIFICATE_CONFIG environment variable. 3. The well-known certificate configuration
+   * file in the gcloud config directory.
+   *
+   * @param envProvider the environment provider to use for resolving environment variables
+   * @param propProvider the property provider to use for resolving system properties
+   * @param certConfigPathOverride optional override path for the configuration file
+   * @return the loaded WorkloadCertificateConfiguration
+   * @throws IOException if the configuration file cannot be found, read, or parsed
    */
   static WorkloadCertificateConfiguration getWorkloadCertificateConfiguration(
-      EnvironmentProvider envProvider, PropertyProvider propProvider, @Nullable String certConfigPathOverride)
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      @Nullable String certConfigPathOverride)
       throws IOException {
     File certConfig;
     if (certConfigPathOverride != null) {
