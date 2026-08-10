@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * This class marked public as it is used in showcase tests in sdk-platform-java to test GDCH:
- * https://github.com/googleapis/sdk-platform-java/blob/3db61c211b757796a3e212c384487d0f2827322b/java-showcase/gapic-showcase/src/test/java/com/google/showcase/v1beta1/it/ITGdch.java#L215-L223
+ * https://github.com/googleapis/google-cloud-java/blob/e50b96b70826f173e6d23278fea96c2af9b6e817/java-showcase/gapic-showcase/src/test/java/com/google/showcase/v1beta1/it/ITGdch.java#L217-L225
  */
 public class GdchCredentialsTestUtil {
   public static void registerGdchCredentialWithMockTransport(
