@@ -30,9 +30,11 @@
 package com.google.api.gax.grpc;
 
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
 import io.grpc.Status;
+import org.jspecify.annotations.Nullable;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -77,6 +79,14 @@ class GrpcOperationSnapshot implements OperationSnapshot {
   @Override
   public String getErrorMessage() {
     return operation.getError().getMessage();
+  }
+
+  @Override
+  public @Nullable ErrorDetails getErrorDetails() {
+    if (operation.hasError()) {
+      return ErrorDetails.builder().setRawErrorMessages(operation.getError().getDetailsList()).build();
+    }
+    return null;
   }
 
   public static GrpcOperationSnapshot create(Operation operation) {

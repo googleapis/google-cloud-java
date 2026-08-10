@@ -142,4 +142,24 @@ class ProtoOperationTransformersTest {
         assertThrows(UnknownException.class, () -> transformer.apply(operationSnapshot));
     Truth.assertThat(exception).hasMessageThat().contains("encountered a problem unpacking it");
   }
+
+  @Test
+  void testAnyResponseTransformer_exceptionWithErrorDetails() {
+    ResponseTransformer<Money> transformer = ResponseTransformer.create(Money.class);
+    Money inputMoney = Money.newBuilder().setCurrencyCode("USD").build();
+    Color poetryError = Color.newBuilder().setRed(1.0f).build(); // Use Color as a mock details payload
+    Status status =
+        Status.newBuilder()
+            .setCode(Code.UNAVAILABLE.getNumber())
+            .addDetails(Any.pack(poetryError))
+            .build();
+    OperationSnapshot operationSnapshot =
+        HttpJsonOperationSnapshot.create(
+            Operation.newBuilder().setResponse(Any.pack(inputMoney)).setError(status).build());
+
+    UnavailableException exception =
+        assertThrows(UnavailableException.class, () -> transformer.apply(operationSnapshot));
+    Truth.assertThat(exception.getErrorDetails()).isNotNull();
+    Truth.assertThat(exception.getErrorDetails().getMessage(Color.class)).isEqualTo(poetryError);
+  }
 }

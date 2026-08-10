@@ -20,13 +20,19 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.ApiException;
+import com.google.protobuf.Any;
 import com.google.protobuf.Timestamp;
+import com.google.rpc.Code;
+import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
+import com.google.showcase.v1beta1.PoetryError;
 import com.google.showcase.v1beta1.WaitMetadata;
 import com.google.showcase.v1beta1.WaitRequest;
 import com.google.showcase.v1beta1.WaitResponse;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 import org.threeten.bp.Duration;
@@ -193,4 +199,37 @@ class ITLongRunningOperation {
           TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
     }
   }
+
+  @Test
+  void testGRPC_LROErrorResponse_dropsErrorDetails() throws Exception {
+    EchoClient grpcClient = TestClientInitializer.createGrpcEchoClient();
+    try {
+      PoetryError poetryError =
+          PoetryError.newBuilder().setPoem("Roses are red, violets are blue").build();
+      Status status =
+          Status.newBuilder()
+              .setCode(Code.ALREADY_EXISTS_VALUE)
+              .setMessage("The resource already exists")
+              .addDetails(Any.pack(poetryError))
+              .build();
+      WaitRequest waitRequest = WaitRequest.newBuilder().setError(status).build();
+      OperationFuture<WaitResponse, WaitMetadata> operationFuture =
+          grpcClient.waitOperationCallable().futureCall(waitRequest);
+      ExecutionException exception = assertThrows(ExecutionException.class, operationFuture::get);
+      assertThat(exception.getCause()).isInstanceOf(ApiException.class);
+      ApiException apiException = (ApiException) exception.getCause();
+
+      // Verify that error details are successfully propagated
+      assertThat(apiException.getErrorDetails()).isNotNull();
+      PoetryError unpackedError = apiException.getErrorDetails().getMessage(PoetryError.class);
+      assertThat(unpackedError).isNotNull();
+      assertThat(unpackedError.getPoem()).isEqualTo("Roses are red, violets are blue");
+    } finally {
+      grpcClient.close();
+      grpcClient.awaitTermination(
+          TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+    }
+  }
+
+  
 }
