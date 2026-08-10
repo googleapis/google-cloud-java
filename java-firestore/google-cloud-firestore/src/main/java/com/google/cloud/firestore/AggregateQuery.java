@@ -20,6 +20,7 @@ import static com.google.cloud.firestore.telemetry.TelemetryConstants.METHOD_NAM
 import static com.google.cloud.firestore.telemetry.TraceUtil.ATTRIBUTE_KEY_ATTEMPT;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ResponseObserver;
@@ -35,6 +36,7 @@ import com.google.cloud.firestore.telemetry.TraceUtil;
 import com.google.cloud.firestore.telemetry.TraceUtil.Scope;
 import com.google.cloud.firestore.v1.FirestoreSettings;
 import com.google.common.collect.ImmutableMap;
+import com.google.firestore.v1.RequestOptions;
 import com.google.firestore.v1.RunAggregationQueryRequest;
 import com.google.firestore.v1.RunAggregationQueryResponse;
 import com.google.firestore.v1.RunQueryRequest;
@@ -100,7 +102,20 @@ public class AggregateQuery {
    */
   @Nonnull
   public ApiFuture<AggregateQuerySnapshot> get() {
-    return get(null, null);
+    return get(null, null, null, null);
+  }
+
+  /**
+   * Executes this query with execution options.
+   *
+   * @param executionOptions Options for executing the request.
+   * @return An {@link ApiFuture} that will be resolved with the results of the query.
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<AggregateQuerySnapshot> get(
+      @Nonnull FirestoreExecutionOptions executionOptions) {
+    return get(null, null, executionOptions.getExplainOptions(), executionOptions);
   }
 
   /**
@@ -113,6 +128,35 @@ public class AggregateQuery {
    */
   @Nonnull
   public ApiFuture<ExplainResults<AggregateQuerySnapshot>> explain(ExplainOptions options) {
+    return explain(options, null);
+  }
+
+  /**
+   * Plans and optionally executes this query with execution options.
+   *
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the planner information, statistics from the
+   *     query execution (if any), and the query results (if any).
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<ExplainResults<AggregateQuerySnapshot>> explain(
+      @Nonnull FirestoreExecutionOptions executionOptions) {
+    return explain(executionOptions.getExplainOptions(), executionOptions);
+  }
+
+  /**
+   * Plans and optionally executes this query with explain options and execution options.
+   *
+   * @param options The options for explain.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the planner information, statistics from the
+   *     query execution (if any), and the query results (if any).
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<ExplainResults<AggregateQuerySnapshot>> explain(
+      @Nullable ExplainOptions options, @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span =
         getTraceUtil().startSpan(TelemetryConstants.METHOD_NAME_AGGREGATION_QUERY_GET);
 
@@ -125,8 +169,11 @@ public class AggregateQuery {
               /* transactionId= */ null,
               /* readTime= */ null,
               /* startTimeNanos= */ query.rpcContext.getClock().nanoTime(),
-              /* explainOptions= */ options,
-              metricsContext);
+              /* explainOptions= */ options != null
+                  ? options
+                  : (executionOptions != null ? executionOptions.getExplainOptions() : null),
+              metricsContext,
+              executionOptions);
       runQuery(responseDeliverer, /* attempt */ 0);
       ApiFuture<ExplainResults<AggregateQuerySnapshot>> result = responseDeliverer.getFuture();
       span.endAtFuture(result);
@@ -140,6 +187,15 @@ public class AggregateQuery {
   @Nonnull
   ApiFuture<AggregateQuerySnapshot> get(
       @Nullable final ByteString transactionId, @Nullable com.google.protobuf.Timestamp readTime) {
+    return get(transactionId, readTime, null, null);
+  }
+
+  @Nonnull
+  ApiFuture<AggregateQuerySnapshot> get(
+      @Nullable final ByteString transactionId,
+      @Nullable com.google.protobuf.Timestamp readTime,
+      @Nullable ExplainOptions explainOptions,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     TraceUtil.Span span =
         getTraceUtil()
             .startSpan(
@@ -159,7 +215,8 @@ public class AggregateQuery {
               transactionId,
               readTime,
               /* startTimeNanos= */ query.rpcContext.getClock().nanoTime(),
-              metricsContext);
+              metricsContext,
+              executionOptions);
       runQuery(responseDeliverer, /* attempt= */ 0);
       ApiFuture<AggregateQuerySnapshot> result = responseDeliverer.getFuture();
       span.endAtFuture(result);
@@ -175,7 +232,8 @@ public class AggregateQuery {
         toProto(
             responseDeliverer.getTransactionId(),
             responseDeliverer.getReadTime(),
-            responseDeliverer.getExplainOptions());
+            responseDeliverer.getExplainOptions(),
+            responseDeliverer.getExecutionOptions());
     AggregateQueryResponseObserver<T> responseObserver =
         new AggregateQueryResponseObserver<T>(responseDeliverer, attempt);
     ServerStreamingCallable<RunAggregationQueryRequest, RunAggregationQueryResponse> callable =
@@ -197,16 +255,24 @@ public class AggregateQuery {
     private final long startTimeNanos;
     private final SettableApiFuture<T> future = SettableApiFuture.create();
     private MetricsContext metricsContext;
+    private final @Nullable FirestoreExecutionOptions executionOptions;
 
     ResponseDeliverer(
         @Nullable ByteString transactionId,
         @Nullable com.google.protobuf.Timestamp readTime,
         long startTimeNanos,
-        MetricsContext metricsContext) {
+        MetricsContext metricsContext,
+        @Nullable FirestoreExecutionOptions executionOptions) {
       this.transactionId = transactionId;
       this.readTime = readTime;
       this.startTimeNanos = startTimeNanos;
       this.metricsContext = metricsContext;
+      this.executionOptions = executionOptions;
+    }
+
+    @Nullable
+    FirestoreExecutionOptions getExecutionOptions() {
+      return executionOptions;
     }
 
     @Nullable
@@ -265,8 +331,9 @@ public class AggregateQuery {
         @Nullable ByteString transactionId,
         @Nullable com.google.protobuf.Timestamp readTime,
         long startTimeNanos,
-        MetricsContext metricsContext) {
-      super(transactionId, readTime, startTimeNanos, metricsContext);
+        MetricsContext metricsContext,
+        @Nullable FirestoreExecutionOptions executionOptions) {
+      super(transactionId, readTime, startTimeNanos, metricsContext, executionOptions);
     }
 
     @Override
@@ -293,8 +360,9 @@ public class AggregateQuery {
         @Nullable com.google.protobuf.Timestamp readTime,
         long startTimeNanos,
         @Nullable ExplainOptions explainOptions,
-        MetricsContext metricsContext) {
-      super(transactionId, readTime, startTimeNanos, metricsContext);
+        MetricsContext metricsContext,
+        @Nullable FirestoreExecutionOptions executionOptions) {
+      super(transactionId, readTime, startTimeNanos, metricsContext, executionOptions);
       this.explainOptions = explainOptions;
     }
 
@@ -437,7 +505,8 @@ public class AggregateQuery {
    */
   @Nonnull
   public RunAggregationQueryRequest toProto() {
-    return toProto(/* transactionId= */ null, /* readTime= */ null, /* explainOptions= */ null);
+    return toProto(
+        /* transactionId= */ null, /* readTime= */ null, /* explainOptions= */ null, null);
   }
 
   @Nonnull
@@ -445,6 +514,15 @@ public class AggregateQuery {
       @Nullable final ByteString transactionId,
       @Nullable final com.google.protobuf.Timestamp readTime,
       @Nullable ExplainOptions explainOptions) {
+    return toProto(transactionId, readTime, explainOptions, null);
+  }
+
+  @Nonnull
+  RunAggregationQueryRequest toProto(
+      @Nullable final ByteString transactionId,
+      @Nullable final com.google.protobuf.Timestamp readTime,
+      @Nullable ExplainOptions explainOptions,
+      @Nullable FirestoreExecutionOptions executionOptions) {
     RunQueryRequest runQueryRequest = query.toProto();
 
     RunAggregationQueryRequest.Builder request = RunAggregationQueryRequest.newBuilder();
@@ -458,6 +536,13 @@ public class AggregateQuery {
 
     if (explainOptions != null) {
       request.setExplainOptions(explainOptions.toProto());
+    }
+
+    RequestOptions requestOptions =
+        RequestOptionsHelper.createRequestOptions(
+            query.rpcContext.getFirestore().getOptions(), executionOptions);
+    if (!requestOptions.equals(RequestOptions.getDefaultInstance())) {
+      request.setRequestOptions(requestOptions);
     }
 
     StructuredAggregationQuery.Builder structuredAggregationQuery =

@@ -24,6 +24,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.firestore.v1.BatchWriteRequest;
 import com.google.firestore.v1.BatchWriteResponse;
+import com.google.firestore.v1.RequestOptions;
 import io.grpc.Status;
 import java.util.ArrayList;
 import java.util.List;
@@ -107,6 +108,12 @@ class BulkCommitBatch extends UpdateBuilder<ApiFuture<WriteResult>> {
     BatchWriteRequest.Builder builder = BatchWriteRequest.newBuilder();
     builder.setDatabase(firestore.getDatabaseName());
     forEachWrite(builder::addWrites);
+    RequestOptions requestOptions =
+        RequestOptionsHelper.createRequestOptions(
+            firestore.getOptions(), (FirestoreExecutionOptions) null);
+    if (!requestOptions.equals(RequestOptions.getDefaultInstance())) {
+      builder.setRequestOptions(requestOptions);
+    }
     return builder.build();
   }
 
