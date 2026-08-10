@@ -796,7 +796,9 @@ class ChannelPool extends ManagedChannel {
     @Override
     public void cancel(@Nullable String message, @Nullable Throwable cause) {
       this.cancellationException = new CancellationException(message);
-      super.cancel(message, cause);
+      if (delegate() != null) {
+        super.cancel(message, cause);
+      }
       if (!wasStarted.get() && wasReleased.compareAndSet(false, true)) {
         entry.release();
       }

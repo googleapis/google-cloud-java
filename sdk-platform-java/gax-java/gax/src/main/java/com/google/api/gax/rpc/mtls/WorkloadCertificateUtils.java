@@ -30,39 +30,16 @@
 package com.google.api.gax.rpc.mtls;
 
 import com.google.api.core.InternalApi;
-import java.io.FileInputStream;
-import java.security.MessageDigest;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.google.auth.mtls.MtlsUtils;
 
 /** Internal utility class for managing dynamic workload certificates. */
 @InternalApi
 public class WorkloadCertificateUtils {
 
-  private static final Logger LOG = Logger.getLogger(WorkloadCertificateUtils.class.getName());
-
   private WorkloadCertificateUtils() {}
 
   public static String getCertificateFingerprint(String certPath) {
-    if (certPath == null) {
-      return "";
-    }
-    try (FileInputStream fis = new FileInputStream(certPath)) {
-      CertificateFactory cf = CertificateFactory.getInstance("X.509");
-      X509Certificate cert = (X509Certificate) cf.generateCertificate(fis);
-      MessageDigest md = MessageDigest.getInstance("SHA-256");
-      byte[] der = cert.getEncoded();
-      byte[] digest = md.digest(der);
-      StringBuilder sb = new StringBuilder();
-      for (byte b : digest) {
-        sb.append(String.format("%02x", b));
-      }
-      return sb.toString();
-    } catch (Exception e) {
-      LOG.log(Level.FINE, "Could not read or parse workload certificate at path " + certPath, e);
-      return "";
-    }
+    String fingerprint = MtlsUtils.getCertificateFingerprint(certPath);
+    return fingerprint != null ? fingerprint : "";
   }
 }

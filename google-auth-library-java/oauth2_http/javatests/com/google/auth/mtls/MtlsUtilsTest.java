@@ -243,4 +243,83 @@ class MtlsUtilsTest {
 
     assertEquals("APPDATA environment variable is not set on Windows.", exception.getMessage());
   }
+
+  @Test
+  void useMtlsClientCertificate_trueWithNoCertsOnDisk_returnsFalseWithoutThrowing() {
+    EnvironmentProvider envProvider = name -> "GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name) ? "true" : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertFalse(MtlsUtils.useMtlsClientCertificate(envProvider, propProvider));
+    assertNull(MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+  }
+
+  @Test
+  void useMtlsClientCertificate_false_returnsFalse() {
+    EnvironmentProvider envProvider = name -> "GOOGLE_API_USE_CLIENT_CERTIFICATE".equals(name) ? "false" : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertFalse(MtlsUtils.useMtlsClientCertificate(envProvider, propProvider));
+    assertNull(MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+  }
+
+  @Test
+  void getWorkloadCertPath_brokenConfigPath_throwsIllegalStateException() {
+    EnvironmentProvider envProvider = name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? "/nonexistent/config.json" : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+    assertTrue(exception.getMessage().contains("Certificate config is configured but file does not exist"));
+  }
+
+  @Test
+  void getWorkloadCertPath_configPointsToMissingCertFiles_throwsIllegalStateException() throws IOException {
+    Path configFile = tempDir.resolve("config.json");
+    Files.write(
+        configFile,
+        "{\"cert_configs\":{\"workload\":{\"cert_path\":\"/nonexistent/cert.pem\",\"key_path\":\"/nonexistent/key.pem\"}}}"
+            .getBytes());
+
+    EnvironmentProvider envProvider = name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+    assertTrue(exception.getMessage().contains("files that do not exist on disk"));
+  }
+
+  @Test
+  void getWorkloadCertPath_validConfig_returnsCertPath() throws IOException {
+    Path certFile = tempDir.resolve("cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.write(certFile, "dummy cert".getBytes());
+    Files.write(keyFile, "dummy key".getBytes());
+
+    Path configFile = tempDir.resolve("config.json");
+    String configJson = String.format(
+        "{\"cert_configs\":{\"workload\":{\"cert_path\":\"%s\",\"key_path\":\"%s\"}}}",
+        certFile.toString().replace("\\", "\\\\"),
+        keyFile.toString().replace("\\", "\\\\"));
+    Files.write(configFile, configJson.getBytes());
+
+    EnvironmentProvider envProvider = name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertTrue(MtlsUtils.useMtlsClientCertificate(envProvider, propProvider));
+    assertEquals(certFile.toString(), MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+  }
+
+  @Test
+  void getCertificateFingerprint_validFile_returnsSha256() throws IOException {
+    Path file = tempDir.resolve("test.crt");
+    Files.write(file, "hello world".getBytes());
+
+    String fingerprint = MtlsUtils.getCertificateFingerprint(file.toString());
+    assertNotNull(fingerprint);
+    assertEquals(64, fingerprint.length()); // SHA-256 hex string length
+  }
 }
