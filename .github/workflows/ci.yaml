@@ -91,7 +91,7 @@ jobs:
     - run: .kokoro/build.sh
       if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' && (needs.generated-libraries-filter.outputs.src == 'true' || needs.generated-libraries-filter.outputs.ci == 'true') }}
       env:
-        JOB_TYPE: compile
+        JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
   units-8-runtime:
     runs-on: ubuntu-latest
@@ -128,7 +128,7 @@ jobs:
       if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' && (needs.generated-libraries-filter.outputs.src == 'true' || needs.generated-libraries-filter.outputs.ci == 'true') }}
       shell: bash      
       env:
-        JOB_TYPE: compile
+        JOB_TYPE: test
         JOB_NAME: units-8-runtime-${{matrix.java}}
   # detect which libraries have changed
   changes:
@@ -400,7 +400,7 @@ jobs:
     - run: java -version
     - run: .kokoro/build.sh
       env:
-        JOB_TYPE: compile
+        JOB_TYPE: test
         JOB_NAME: windows-units
   lint:
     needs: generated-libraries-filter
