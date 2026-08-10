@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
@@ -268,6 +269,21 @@ public class QueryJobConfigurationTest {
     QueryJobConfiguration jobFromPb = QueryJobConfiguration.fromPb(job.toPb());
     assertNull(jobFromPb.getQueryResultsFormat());
     assertNull(jobFromPb.getArrowSerializationOptions());
+  }
+
+  @Test
+  public void testArrowSerializationOptionsNullChecks() {
+    ArrowSerializationOptions.Builder builder = ArrowSerializationOptions.newBuilder();
+    assertNull(builder.build().getBufferCompression());
+    assertNull(builder.build().getPicosTimestampPrecision());
+
+    NullPointerException ex1 =
+        assertThrows(NullPointerException.class, () -> builder.setBufferCompression(null));
+    assertEquals("bufferCompression cannot be null", ex1.getMessage());
+
+    NullPointerException ex2 =
+        assertThrows(NullPointerException.class, () -> builder.setPicosTimestampPrecision(null));
+    assertEquals("picosTimestampPrecision cannot be null", ex2.getMessage());
   }
 
   private void compareQueryJobConfiguration(

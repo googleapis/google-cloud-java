@@ -716,7 +716,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
      * Arrow format, utilizing gRPC Storage Read streams for subsequent pages.
      *
      * <p><b>Prerequisite:</b> Requires the BigQuery Storage Read API ({@code
-     * bigquerystorage.googleapis.com}) to be enabled on your GCP project.
+     * bigquerystorage.googleapis.com}) to be enabled on your GCP project. See the <a
+     * href="https://docs.cloud.google.com/apis/docs/getting-started#enabling_apis">Google Cloud
+     * Enabling APIs Guide</a>.
      *
      * @param queryResultsFormat the format for query result payloads
      * @return the Builder

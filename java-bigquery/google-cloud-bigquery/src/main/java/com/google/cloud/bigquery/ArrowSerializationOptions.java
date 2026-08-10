@@ -16,6 +16,8 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
 import java.io.Serializable;
@@ -46,7 +48,14 @@ public final class ArrowSerializationOptions implements Serializable {
     return bufferCompression;
   }
 
-  /** <b>[Beta]</b> Returns the timestamp precision for Arrow timestamp types. */
+  /**
+   * <b>[Beta]</b> Returns the timestamp precision for Arrow timestamp types.
+   *
+   * <p>Note: Only applies when {@link QueryResultsFormat#ARROW} is enabled. For Arrow result
+   * streams, this precision setting governs binary Arrow timestamp column types and takes
+   * precedence over {@link DataFormatOptions.TimestampFormatOptions}, which applies to default
+   * {@link QueryResultsFormat#STRUCT_ENCODING} JSON results.
+   */
   @BetaApi
   public @Nullable String getPicosTimestampPrecision() {
     return picosTimestampPrecision;
@@ -105,15 +114,23 @@ public final class ArrowSerializationOptions implements Serializable {
      * <b>[Beta]</b> Sets the buffer compression algorithm (e.g., LZ4_FRAME, ZSTD, UNCOMPRESSED).
      */
     @BetaApi
-    public Builder setBufferCompression(@Nullable String bufferCompression) {
-      this.bufferCompression = bufferCompression;
+    public Builder setBufferCompression(String bufferCompression) {
+      this.bufferCompression = checkNotNull(bufferCompression, "bufferCompression cannot be null");
       return this;
     }
 
-    /** <b>[Beta]</b> Sets the timestamp precision for Arrow timestamp types. */
+    /**
+     * <b>[Beta]</b> Sets the timestamp precision for Arrow timestamp types.
+     *
+     * <p>Note: Only applies when {@link QueryResultsFormat#ARROW} is enabled. For Arrow result
+     * streams, this precision setting governs binary Arrow timestamp column types and takes
+     * precedence over {@link DataFormatOptions.TimestampFormatOptions}, which applies to default
+     * {@link QueryResultsFormat#STRUCT_ENCODING} JSON results.
+     */
     @BetaApi
-    public Builder setPicosTimestampPrecision(@Nullable String picosTimestampPrecision) {
-      this.picosTimestampPrecision = picosTimestampPrecision;
+    public Builder setPicosTimestampPrecision(String picosTimestampPrecision) {
+      this.picosTimestampPrecision =
+          checkNotNull(picosTimestampPrecision, "picosTimestampPrecision cannot be null");
       return this;
     }
 
