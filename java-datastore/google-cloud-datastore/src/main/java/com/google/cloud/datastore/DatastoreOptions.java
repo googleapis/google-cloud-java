@@ -17,6 +17,7 @@
 package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.Validator.validateNamespace;
+import static com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.ChannelPoolSettings;
@@ -30,14 +31,17 @@ import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.v1.GrpcDatastoreRpc;
 import com.google.cloud.datastore.spi.v1.HttpDatastoreRpc;
+import com.google.cloud.datastore.telemetry.TraceUtil;
 import com.google.cloud.datastore.v1.DatastoreSettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.logging.Logger;
@@ -80,9 +84,10 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   private final String namespace;
   private final String databaseId;
+  private final ImmutableList<String> requestTags;
 
   private final transient @Nonnull DatastoreOpenTelemetryOptions openTelemetryOptions;
-  private final transient @Nonnull com.google.cloud.datastore.telemetry.TraceUtil traceUtil;
+  @Nonnull private final transient TraceUtil traceUtil;
 
   public static class DefaultDatastoreFactory implements DatastoreFactory {
 
@@ -113,7 +118,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   }
 
   @Nonnull
-  com.google.cloud.datastore.telemetry.TraceUtil getTraceUtil() {
+  TraceUtil getTraceUtil() {
     return traceUtil;
   }
 
@@ -127,6 +132,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
     private String namespace;
     private String databaseId;
+    private ImmutableList<String> requestTags = ImmutableList.of();
     private TransportChannelProvider channelProvider = null;
     private String host;
 
@@ -142,6 +148,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       super(options);
       this.namespace = options.namespace;
       this.databaseId = options.databaseId;
+      this.requestTags = options.requestTags;
       this.openTelemetryOptions = options.openTelemetryOptions;
       this.channelProvider = validateChannelProvider(options.channelProvider);
       this.host = options.getHost();
@@ -234,7 +241,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
         if (this.transportOptions instanceof GrpcTransportOptions) {
           this.setHost(DatastoreSettings.getDefaultEndpoint());
         } else if (this.transportOptions instanceof HttpTransportOptions) {
-          this.setHost(com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST);
+          this.setHost(DEFAULT_HOST);
         }
       }
       return new DatastoreOptions(this);
@@ -248,6 +255,21 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
     public Builder setDatabaseId(String databaseId) {
       this.databaseId = databaseId;
+      return this;
+    }
+
+    /**
+     * Sets the request tags to be associated with all requests sent by this client.
+     *
+     * <p>These instance-level tags will be merged with any request-level options or tags specified
+     * via {@link DatastoreExecutionOptions} before sending a request.
+     *
+     * @param requestTags the list of request tags to set
+     * @return the builder object
+     */
+    public Builder setRequestTags(List<String> requestTags) {
+      Preconditions.checkNotNull(requestTags, "Request tags cannot be null");
+      this.requestTags = ImmutableList.copyOf(requestTags);
       return this;
     }
 
@@ -272,10 +294,11 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
         builder.openTelemetryOptions != null
             ? builder.openTelemetryOptions
             : DatastoreOpenTelemetryOptions.newBuilder().build();
-    this.traceUtil = com.google.cloud.datastore.telemetry.TraceUtil.getInstance(this);
+    this.traceUtil = TraceUtil.getInstance(this);
 
     namespace = MoreObjects.firstNonNull(builder.namespace, defaultNamespace());
     databaseId = MoreObjects.firstNonNull(builder.databaseId, DEFAULT_DATABASE_ID);
+    requestTags = builder.requestTags;
 
     // ChannelProvider is used by GAX but HttpJson does not use it so we safely ignore it.
     if (getTransportOptions() instanceof HttpTransportOptions && builder.channelProvider != null) {
@@ -320,7 +343,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   @Override
   protected String getDefaultHost() {
     String host = System.getProperty(LOCAL_HOST_ENV_VAR, System.getenv(LOCAL_HOST_ENV_VAR));
-    return host != null ? host : com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST;
+    return host != null ? host : DEFAULT_HOST;
   }
 
   @Override
@@ -370,6 +393,18 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     return this.databaseId;
   }
 
+  /**
+   * Returns the request tags to be associated with all requests sent by this client.
+   *
+   * <p>These instance-level tags are merged with any request-level options or tags passed via
+   * {@link DatastoreExecutionOptions} before sending a request.
+   *
+   * @return the request tags
+   */
+  public List<String> getRequestTags() {
+    return requestTags;
+  }
+
   /** Returns a default {@code DatastoreOptions} instance. */
   public static DatastoreOptions getDefaultInstance() {
     return newBuilder().build();
@@ -404,7 +439,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), namespace, databaseId);
+    return Objects.hash(baseHashCode(), namespace, databaseId, requestTags);
   }
 
   @Override
@@ -415,7 +450,8 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     DatastoreOptions other = (DatastoreOptions) obj;
     return baseEquals(other)
         && Objects.equals(namespace, other.namespace)
-        && Objects.equals(databaseId, other.databaseId);
+        && Objects.equals(databaseId, other.databaseId)
+        && Objects.equals(requestTags, other.requestTags);
   }
 
   public static Builder newBuilder() {
