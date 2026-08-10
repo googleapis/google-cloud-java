@@ -31,8 +31,8 @@ package com.google.api.gax.longrunning;
 
 import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode;
-import org.jspecify.annotations.Nullable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A snapshot of a long-running operation.
@@ -71,8 +71,8 @@ public interface OperationSnapshot {
   String getErrorMessage();
 
   /**
-   * If the operation is done and it failed, returns the ErrorDetails; if the
-   * operation is not done or if it succeeded, returns null.
+   * If the operation is done and it failed, returns the ErrorDetails; if the operation is not done
+   * or if it succeeded, returns null.
    *
    * @return the error details if the operation failed, null otherwise
    */

@@ -230,6 +230,4 @@ class ITLongRunningOperation {
           TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
     }
   }
-
-  
 }

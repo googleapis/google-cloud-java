@@ -35,7 +35,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode.Code;
+import com.google.protobuf.Any;
+import com.google.protobuf.Empty;
 import java.util.ArrayList;
+import java.util.Collections;
 import org.junit.jupiter.api.Test;
 
 class HttpJsonOperationSnapshotTest {
@@ -93,9 +96,9 @@ class HttpJsonOperationSnapshotTest {
     ErrorDetails errorDetails =
         ErrorDetails.builder()
             .setRawErrorMessages(
-                java.util.Collections.singletonList(
-                    com.google.protobuf.Any.pack(
-                        com.google.protobuf.Empty.getDefaultInstance())))
+                Collections.singletonList(
+                    Any.pack(
+                        Empty.getDefaultInstance())))
             .build();
     HttpJsonOperationSnapshot testOperationSnapshot =
         HttpJsonOperationSnapshot.newBuilder()
