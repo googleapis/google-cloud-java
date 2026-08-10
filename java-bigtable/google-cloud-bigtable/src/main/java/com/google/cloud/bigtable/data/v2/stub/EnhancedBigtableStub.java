@@ -205,7 +205,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
         new MutateRowsErrorConverterUnaryCallable(bulkMutateRowsCallable);
     externalBulkMutateRowsCallable =
         new MaybePointWriteCallable(
-            bulkMutateRowsVoidCallable, createPointWriteCallable(), requestContext);
+            bulkMutateRowsVoidCallable,
+            createPointWriteCallable(bulkMutateRowsVoidCallable),
+            requestContext);
     checkAndMutateRowCallable = createCheckAndMutateRowCallable();
     readModifyWriteRowCallable = createReadModifyWriteRowCallable();
     generateInitialChangeStreamPartitionsCallable =
@@ -680,12 +682,16 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * mutation through the session-shim diversion while preserving the bulk operation's retry
    * behavior.
    *
-   * <p>Unlike the plain {@link #createMutateRowCallable()}, this uses the {@code MutateRow} RPC
-   * (the natural single-row write) but carries the caller's {@code bulkMutateRowsSettings} retry
-   * settings/codes, so a single-entry bulk write retries the same way it would have as a bulk
-   * operation.
+   * <p>Unlike point reads (where the single-row read is just {@code ReadRows} with a limit), {@code
+   * MutateRow} and {@code MutateRows} are distinct RPCs. To preserve the existing wire behavior,
+   * the fallback classic here delegates to the bulk {@code MutateRows} callable as a single-entry
+   * batch rather than issuing a {@code MutateRow} RPC. So when the session shim does not divert
+   * (e.g. a {@link com.google.cloud.bigtable.data.v2.internal.compat.DisabledShim}), a single-entry
+   * bulk mutation still travels over {@code MutateRows} with the bulk operation's retry behavior;
+   * only when the shim actively diverts does the mutation go to the session single-row write API.
    */
-  private UnaryCallable<RowMutation, Void> createPointWriteCallable() {
+  private UnaryCallable<RowMutation, Void> createPointWriteCallable(
+      UnaryCallable<BulkMutation, Void> bulkMutateRowsVoidCallable) {
     UnaryCallSettings<RowMutation, Void> settings =
         perOpSettings.mutateRowSettings.toBuilder()
             .setRetrySettings(perOpSettings.bulkMutateRowsSettings.getRetrySettings())
@@ -693,14 +699,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
             .build();
 
     UnaryCallable<RowMutation, Void> classic =
-        createUnaryCallable(
-            BigtableGrpc.getMutateRowMethod(),
-            req ->
-                composeRequestParams(
-                    req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
-            settings,
-            req -> req.toProto(requestContext),
-            resp -> null);
+        new UnaryCallable<RowMutation, Void>() {
+          @Override
+          public ApiFuture<Void> futureCall(RowMutation request, ApiCallContext context) {
+            return bulkMutateRowsVoidCallable.futureCall(
+                BulkMutation.fromProto(request.toBulkProto(requestContext)), context);
+          }
+        };
 
     return bigtableClientContext.getSessionShim().decorateMutateRow(classic, settings);
   }

@@ -30,9 +30,10 @@ import com.google.cloud.bigtable.data.v2.models.RowMutation;
  * letting them benefit from the same session-shim diversion as {@code MutateRow}. Bulk mutations
  * with more than one entry fall through to the classic {@code MutateRows} callable.
  *
- * <p>The point-write callable itself falls back to the {@code MutateRow} RPC when the session
- * diversion does not apply, while retaining the bulk operation's retry behavior, so the single
- * entry retries the same way it would have as part of a {@code MutateRows} call.
+ * <p>When the session diversion does not apply, the point-write callable falls back to the bulk
+ * {@code MutateRows} RPC (as a single-entry batch), retaining the bulk operation's retry behavior,
+ * so the single entry travels over the wire and retries exactly as it would have as part of a
+ * {@code MutateRows} call.
  */
 @InternalApi
 public class MaybePointWriteCallable extends UnaryCallable<BulkMutation, Void> {
