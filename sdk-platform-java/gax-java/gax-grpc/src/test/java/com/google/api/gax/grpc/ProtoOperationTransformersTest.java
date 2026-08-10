@@ -34,6 +34,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import com.google.api.gax.grpc.ProtoOperationTransformers.MetadataTransformer;
 import com.google.api.gax.grpc.ProtoOperationTransformers.ResponseTransformer;
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.rpc.UnknownException;
 import com.google.common.truth.Truth;
