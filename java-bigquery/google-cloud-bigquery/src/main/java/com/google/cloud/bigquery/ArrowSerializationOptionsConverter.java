@@ -16,12 +16,16 @@
 
 package com.google.cloud.bigquery;
 
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
+@NullMarked
 final class ArrowSerializationOptionsConverter {
 
   private ArrowSerializationOptionsConverter() {}
 
-  static com.google.api.services.bigquery.model.ArrowSerializationOptions toPb(
-      ArrowSerializationOptions options) {
+  static com.google.api.services.bigquery.model.@Nullable ArrowSerializationOptions toPb(
+      @Nullable ArrowSerializationOptions options) {
     if (options == null) {
       return null;
     }
@@ -36,7 +40,7 @@ final class ArrowSerializationOptionsConverter {
     return optionsPb;
   }
 
-  static ArrowSerializationOptions fromPb(Object optionsPbObj) {
+  static @Nullable ArrowSerializationOptions fromPb(@Nullable Object optionsPbObj) {
     if (optionsPbObj == null) {
       return null;
     }

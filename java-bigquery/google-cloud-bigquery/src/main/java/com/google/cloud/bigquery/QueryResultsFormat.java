@@ -17,9 +17,11 @@
 package com.google.cloud.bigquery;
 
 import com.google.api.core.BetaApi;
+import org.jspecify.annotations.NullMarked;
 
 /** <b>[Beta]</b> The format of the query results. */
 @BetaApi
+@NullMarked
 public enum QueryResultsFormat {
   /** Serialized row data in Apache Arrow format. */
   ARROW,

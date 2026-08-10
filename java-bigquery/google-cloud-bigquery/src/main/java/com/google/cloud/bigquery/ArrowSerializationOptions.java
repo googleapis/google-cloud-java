@@ -20,15 +20,18 @@ import com.google.api.core.BetaApi;
 import com.google.common.base.MoreObjects;
 import java.io.Serializable;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** <b>[Beta]</b> Options specific to the Apache Arrow output format. */
 @BetaApi
+@NullMarked
 public final class ArrowSerializationOptions implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  private final String bufferCompression;
-  private final String picosTimestampPrecision;
+  private final @Nullable String bufferCompression;
+  private final @Nullable String picosTimestampPrecision;
 
   private ArrowSerializationOptions(Builder builder) {
     this.bufferCompression = builder.bufferCompression;
@@ -39,13 +42,13 @@ public final class ArrowSerializationOptions implements Serializable {
    * <b>[Beta]</b> Returns the buffer compression algorithm (e.g., LZ4_FRAME, ZSTD, UNCOMPRESSED).
    */
   @BetaApi
-  public String getBufferCompression() {
+  public @Nullable String getBufferCompression() {
     return bufferCompression;
   }
 
   /** <b>[Beta]</b> Returns the timestamp precision for Arrow timestamp types. */
   @BetaApi
-  public String getPicosTimestampPrecision() {
+  public @Nullable String getPicosTimestampPrecision() {
     return picosTimestampPrecision;
   }
 
@@ -64,7 +67,7 @@ public final class ArrowSerializationOptions implements Serializable {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (this == o) {
       return true;
     }
@@ -93,8 +96,8 @@ public final class ArrowSerializationOptions implements Serializable {
   /** <b>[Beta]</b> Builder for {@link ArrowSerializationOptions}. */
   @BetaApi
   public static final class Builder {
-    private String bufferCompression;
-    private String picosTimestampPrecision;
+    private @Nullable String bufferCompression;
+    private @Nullable String picosTimestampPrecision;
 
     private Builder() {}
 
@@ -102,14 +105,14 @@ public final class ArrowSerializationOptions implements Serializable {
      * <b>[Beta]</b> Sets the buffer compression algorithm (e.g., LZ4_FRAME, ZSTD, UNCOMPRESSED).
      */
     @BetaApi
-    public Builder setBufferCompression(String bufferCompression) {
+    public Builder setBufferCompression(@Nullable String bufferCompression) {
       this.bufferCompression = bufferCompression;
       return this;
     }
 
     /** <b>[Beta]</b> Sets the timestamp precision for Arrow timestamp types. */
     @BetaApi
-    public Builder setPicosTimestampPrecision(String picosTimestampPrecision) {
+    public Builder setPicosTimestampPrecision(@Nullable String picosTimestampPrecision) {
       this.picosTimestampPrecision = picosTimestampPrecision;
       return this;
     }
