@@ -29,6 +29,7 @@ import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
@@ -156,6 +157,26 @@ public class ArrowFormatTypeBigQueryCoercionUtilityTest {
   public void longToTimestamp() {
     assertThat(INSTANCE.coerceTo(Timestamp.class, 1408452095220000L))
         .isEqualTo(new Timestamp(1408452095220L));
+  }
+
+  @Test
+  public void textToTimestamp() {
+    Text textUtc = new Text("2026-04-08 10:00:00.123456789123 UTC");
+    Timestamp expected = Timestamp.from(Instant.parse("2026-04-08T10:00:00.123456789Z"));
+    assertThat(INSTANCE.coerceTo(Timestamp.class, textUtc)).isEqualTo(expected);
+
+    Text textIso = new Text("2026-04-08T10:00:00.123456789123Z");
+    assertThat(INSTANCE.coerceTo(Timestamp.class, textIso)).isEqualTo(expected);
+  }
+
+  @Test
+  public void stringToTimestamp() {
+    String strUtc = "2026-04-08 10:00:00.123456789123 UTC";
+    Timestamp expected = Timestamp.from(Instant.parse("2026-04-08T10:00:00.123456789Z"));
+    assertThat(INSTANCE.coerceTo(Timestamp.class, strUtc)).isEqualTo(expected);
+
+    String strIso = "2026-04-08T10:00:00.123456789123Z";
+    assertThat(INSTANCE.coerceTo(Timestamp.class, strIso)).isEqualTo(expected);
   }
 
   @Test

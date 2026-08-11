@@ -166,15 +166,6 @@ final class BigQueryTemporalUtility {
 
   /**
    * Formats a numeric epoch decimal string into standard SQL timestamp string format ("yyyy-MM-dd
-   * HH:mm:ss.ffffff"). Sub-microsecond precision is deterministically truncated (down) to prevent
-   * timestamp boundary rollovers.
-   */
-  public static String formatTimestampString(String epochDecimal) {
-    return formatTimestampString(epochDecimal, false);
-  }
-
-  /**
-   * Formats a numeric epoch decimal string into standard SQL timestamp string format ("yyyy-MM-dd
    * HH:mm:ss.ffffff[ffffff]"). Sub-microsecond / sub-picosecond precision is deterministically
    * truncated (down) to prevent timestamp boundary rollovers.
    */

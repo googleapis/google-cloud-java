@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static java.time.Month.MARCH;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
@@ -509,7 +510,8 @@ public class BigQueryJsonResultSetTest {
   }
 
   @Test
-  public void testGetString_timestamp() throws SQLException {
+  public void testGetString_timestampWithPicoseconds() throws SQLException {
+    when(statement.isEnableTimestampPicos()).thenReturn(true);
     assertThat(resetResultSet()).isTrue();
     bigQueryJsonResultSet.next();
     assertThat(bigQueryJsonResultSet.getString("fifth")).isEqualTo("2023-03-30 11:14:19.820000");

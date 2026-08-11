@@ -23,6 +23,7 @@ import static org.apache.arrow.vector.types.Types.MinorType.INT;
 import static org.apache.arrow.vector.types.Types.MinorType.VARCHAR;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Mode;
@@ -437,5 +438,56 @@ public class BigQueryArrowResultSetTest {
     return rowCount;
   }
 
-  // TODO: Unit Test for iteration and getters
+  @Test
+  public void testPicosecondTimestampArrowVector() throws Exception {
+    RootAllocator allocator = new RootAllocator();
+    VarCharVector timeStampPicosVector = new VarCharVector("timeStampField", allocator);
+    timeStampPicosVector.allocateNew(1);
+    timeStampPicosVector.set(0, new Text("2026-04-08T10:00:00.123456789123Z"));
+    timeStampPicosVector.setValueCount(1);
+
+    VectorSchemaRoot picosRoot = new VectorSchemaRoot(ImmutableList.of(timeStampPicosVector));
+    ArrowSchema arrowSchema =
+        ArrowSchema.newBuilder()
+            .setSerializedSchema(serializeSchema(picosRoot.getSchema()))
+            .build();
+    ArrowRecordBatch recordBatch =
+        ArrowRecordBatch.newBuilder()
+            .setSerializedRecordBatch(serializeVectorSchemaRoot(picosRoot))
+            .build();
+
+    BigQueryArrowBatchWrapper batchWrapper = BigQueryArrowBatchWrapper.of(recordBatch, false);
+    BlockingQueue<BigQueryArrowBatchWrapper> picosBuffer = new LinkedBlockingDeque<>(2);
+    picosBuffer.add(batchWrapper);
+    picosBuffer.add(BigQueryArrowBatchWrapper.of(null, true));
+
+    Schema bqSchema =
+        Schema.of(FieldList.of(Field.of("timeStampField", StandardSQLTypeName.TIMESTAMP)));
+    BigQueryStatement mockStatement = mock(BigQueryStatement.class);
+    when(mockStatement.isEnableTimestampPicos()).thenReturn(true);
+
+    BigQueryArrowResultSet rs =
+        BigQueryArrowResultSet.of(
+            bqSchema, arrowSchema, 1, mockStatement, picosBuffer, mock(Future.class), null);
+
+    assertThat(rs.next()).isTrue();
+    // getString returns full 12-digit picosecond string
+    assertThat(rs.getString("timeStampField")).isEqualTo("2026-04-08 10:00:00.123456789123");
+    assertThat(rs.getString(1)).isEqualTo("2026-04-08 10:00:00.123456789123");
+
+    // getTimestamp returns java.sql.Timestamp with 9 digits of nanoseconds
+    Timestamp ts = rs.getTimestamp("timeStampField");
+    assertThat(ts).isNotNull();
+    assertThat(ts.getNanos()).isEqualTo(123456789);
+
+    // getObject returns java.sql.Timestamp
+    Object obj = rs.getObject(1);
+    assertThat(obj).isInstanceOf(Timestamp.class);
+    assertThat(((Timestamp) obj).getNanos()).isEqualTo(123456789);
+
+    rs.close();
+    timeStampPicosVector.close();
+    picosRoot.close();
+    allocator.close();
+  }
 }
