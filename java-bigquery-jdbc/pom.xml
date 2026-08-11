@@ -104,7 +104,6 @@
                   <goal>shade</goal>
                 </goals>
                 <configuration>
-                  <skip>${shade.skip}</skip>
                   <shadedArtifactAttached>true</shadedArtifactAttached>
                   <createSourcesJar>true</createSourcesJar>
                   <shadeSourcesContent>true</shadeSourcesContent>

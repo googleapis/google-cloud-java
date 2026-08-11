@@ -29,6 +29,7 @@
 
   <properties>
     <enforcer.skip>true</enforcer.skip>
+    <shade.skip>false</shade.skip>
   </properties>
 
   <modules>
@@ -116,6 +117,7 @@
         <fmt.skip>true</fmt.skip>
         <flatten.skip>true</flatten.skip>
         <mdep.analyze.skip>true</mdep.analyze.skip>
+        <shade.skip>true</shade.skip>
       </properties>
     </profile>
     <profile>
