@@ -861,7 +861,7 @@ public abstract class ServiceOptions<
    * similar to the DEFAULT_HOST value in java-core.
    *
    * @see <a
-   *     href="https://github.com/googleapis/sdk-platform-java/blob/097964f24fa1989bc74b4807a253f0be4e9dd1ea/java-core/google-cloud-core/src/main/java/com/google/cloud/ServiceOptions.java#L85">DEFAULT_HOST</a>
+   *     href="https://github.com/googleapis/google-cloud-java/blob/e50b96b70826f173e6d23278fea96c2af9b6e817/sdk-platform-java/java-core/google-cloud-core/src/main/java/com/google/cloud/ServiceOptions.java#L86">DEFAULT_HOST</a>
    */
   @InternalApi
   public String getResolvedHost(String serviceName) {

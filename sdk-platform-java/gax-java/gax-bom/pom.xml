@@ -20,21 +20,21 @@
       <id>GoogleAPIs</id>
       <name>GoogleAPIs</name>
       <email>googleapis@googlegroups.com</email>
-      <url>https://github.com/googleapis/gax-java</url>
+      <url>https://github.com/googleapis/google-cloud-java/tree/main/sdk-platform-java/gax-java</url>
       <organization>Google, LLC</organization>
       <organizationUrl>https://www.google.com</organizationUrl>
     </developer>
   </developers>
 
   <scm>
-    <connection>scm:git:https://github.com/googleapis/gax-java.git</connection>
-    <url>https://github.com/googleapis/gax-java</url>
+    <connection>scm:git:https://github.com/googleapis/google-cloud-java.git</connection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
   </scm>
 
   <licenses>
     <license>
       <name>BSD-3-Clause</name>
-      <url>https://github.com/googleapis/gax-java/blob/master/LICENSE</url>
+      <url>https://github.com/googleapis/google-cloud-java/blob/main/LICENSE</url>
     </license>
   </licenses>
 

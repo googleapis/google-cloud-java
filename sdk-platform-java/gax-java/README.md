@@ -181,6 +181,6 @@ License
 
 BSD - See [LICENSE] for more information.
 
-[CONTRIBUTING]:https://github.com/googleapis/gax-java/blob/main/CONTRIBUTING.md
-[LICENSE]: https://github.com/googleapis/gax-java/blob/main/LICENSE
+[CONTRIBUTING]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
 

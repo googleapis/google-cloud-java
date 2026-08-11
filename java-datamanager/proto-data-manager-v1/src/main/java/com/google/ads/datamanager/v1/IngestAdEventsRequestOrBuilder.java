@@ -96,12 +96,12 @@ public interface IngestAdEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Information about encryption keys which are used to encrypt the
+   * Required. Information about encryption keys which are used to encrypt the
    * data.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the encryptionInfo field is set.
@@ -112,12 +112,12 @@ public interface IngestAdEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Information about encryption keys which are used to encrypt the
+   * Required. Information about encryption keys which are used to encrypt the
    * data.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The encryptionInfo.
@@ -128,12 +128,12 @@ public interface IngestAdEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Information about encryption keys which are used to encrypt the
+   * Required. Information about encryption keys which are used to encrypt the
    * data.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.EncryptionInfo encryption_info = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.ads.datamanager.v1.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder();
@@ -145,9 +145,13 @@ public interface IngestAdEventsRequestOrBuilder
    * Optional. If true, the request is validated, but not executed.
    * </pre>
    *
-   * <code>bool validate_only = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool validate_only = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.ads.datamanager.v1.IngestAdEventsRequest.validate_only is deprecated. See
+   *     google/ads/datamanager/v1/ingestion_service.proto;l=278
    * @return The validateOnly.
    */
+  @java.lang.Deprecated
   boolean getValidateOnly();
 }
