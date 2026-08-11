@@ -29,7 +29,6 @@
 
   <properties>
     <enforcer.skip>true</enforcer.skip>
-    <shade.skip>false</shade.skip>
   </properties>
 
   <modules>

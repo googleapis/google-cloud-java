@@ -22,7 +22,6 @@
   <properties>
     <skipUnitTests>false</skipUnitTests>
     <checkstyle.header.file>java.header</checkstyle.header.file>
-    <shade.skip>false</shade.skip>
   </properties>
 
   <developers>
