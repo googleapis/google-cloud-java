@@ -183,6 +183,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidLongRunningQuery() throws SQLException {
     // setup
     String selectQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 50000))";
@@ -285,6 +286,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testExecuteLargeUpdate() throws SQLException {
     String tableName = "JDBC_LARGE_UPDATE_TABLE_" + randomNumber;
     String createQuery =
@@ -322,6 +324,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testHTAPIWithValidDestinationTableSavesQueriesWithStandardSQL() throws SQLException {
     // setup
     String connection_uri =
@@ -708,6 +711,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testHTAPIWithValidDestinationTableSavesQueriesWithLegacy() throws SQLException {
     // setup
     String connection_uri =
@@ -1035,6 +1039,7 @@ public class ITNightlyBigQueryTest extends ITBase {
 
   @Test
   @Tag("known_issue") // b/539615199
+  @Tag("disable_tpc")
   public void testValidAllDataTypesSerializationFromSelectQuery() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_DATATYPES_INTEGRATION_TEST_TABLE";
@@ -1067,6 +1072,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testRepeatedStructFromSelectQuery() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_REPEATED_STRUCT_INTEGRATION_TEST";
@@ -1092,6 +1098,7 @@ public class ITNightlyBigQueryTest extends ITBase {
 
   @Test
   @Tag("known_issue") // b/539615199
+  @Tag("disable_tpc")
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
@@ -1560,6 +1567,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   // reads using ReadAPI and makes sure that they are in order, which implies threads worked
   // correctly
   public void testIterateOrderArrowMultiThread() throws SQLException {
@@ -1578,10 +1586,12 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testNonEnabledUseLegacySQLThrowsSyntaxError() throws SQLException {
     // setup
     String connection_uri = ITNightlyBigQueryTest.connection_uri;
-    String selectLegacyQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 20000000))";
+    String selectLegacyQuery =
+        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 20000000;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -1601,6 +1611,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testReadAPIPathLarge() throws SQLException {
     Properties withReadApi = new Properties();
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
@@ -1620,6 +1631,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
     String connectionUri =
         ITNightlyBigQueryTest.connection_uri
