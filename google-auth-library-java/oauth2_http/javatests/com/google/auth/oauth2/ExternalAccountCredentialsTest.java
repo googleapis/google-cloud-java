@@ -961,6 +961,54 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void exchangeExternalCredentialForAccessToken_withMtls401Repeated_doesNotRetryIndefinitely() {
+    AtomicInteger rebuildCount = new AtomicInteger(0);
+    MockExternalAccountCredentialsTransport mockTransport =
+        new MockExternalAccountCredentialsTransport();
+    mockTransport.addResponseStatusCodeSequence(401, 401);
+
+    ContextRebuildableTransportFactory rebuildableFactory =
+        new ContextRebuildableTransportFactory() {
+          @Override
+          public synchronized void rebuildContext() throws IOException {
+            rebuildCount.incrementAndGet();
+          }
+
+          @Override
+          public HttpTransport create() {
+            return mockTransport;
+          }
+        };
+
+    ExternalAccountCredentials credential =
+        ExternalAccountCredentials.fromJson(buildJsonIdentityPoolCredential(), rebuildableFactory);
+    StsTokenExchangeRequest stsRequest =
+        StsTokenExchangeRequest.newBuilder("credential", "subjectTokenType").build();
+
+    assertThrows(
+        IOException.class, () -> credential.exchangeExternalCredentialForAccessToken(stsRequest));
+
+    assertEquals(1, rebuildCount.get());
+  }
+
+  @Test
+  void exchangeExternalCredentialForAccessToken_withNonRebuildableTransport401_doesNotRetry() {
+    MockExternalAccountCredentialsTransport mockTransport =
+        new MockExternalAccountCredentialsTransport();
+    mockTransport.addResponseStatusCodeSequence(401);
+
+    HttpTransportFactory standardFactory = () -> mockTransport;
+
+    ExternalAccountCredentials credential =
+        ExternalAccountCredentials.fromJson(buildJsonIdentityPoolCredential(), standardFactory);
+    StsTokenExchangeRequest stsRequest =
+        StsTokenExchangeRequest.newBuilder("credential", "subjectTokenType").build();
+
+    assertThrows(
+        IOException.class, () -> credential.exchangeExternalCredentialForAccessToken(stsRequest));
+  }
+
+  @Test
   void exchangeExternalCredentialForAccessToken_withInternalOptions() throws IOException {
     ExternalAccountCredentials credential =
         ExternalAccountCredentials.fromJson(buildJsonIdentityPoolCredential(), transportFactory);

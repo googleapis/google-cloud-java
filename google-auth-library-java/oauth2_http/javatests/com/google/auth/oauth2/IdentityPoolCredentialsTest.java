@@ -1558,6 +1558,30 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void builder_actorTokenSupplierWithNonMtlsTransport_throws() {
+    MockExternalAccountCredentialsTransportFactory standardFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setSubjectTokenSupplier(testProvider)
+                    .setActorTokenSupplier(testActorSupplier)
+                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setAudience("audience")
+                    .setSubjectTokenType("subjectTokenType")
+                    .setTokenUrl("https://sts.googleapis.com/v1/token")
+                    .setHttpTransportFactory(standardFactory)
+                    .build());
+
+    assertEquals(
+        "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate source or MtlsHttpTransportFactory.",
+        exception.getMessage());
+  }
+
+  @Test
   void serialization_withX509Provider_succeeds() throws Exception {
     KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
     ks.load(null, null);
