@@ -247,6 +247,8 @@ public class BigQueryJsonResultSetTest {
       assertThat(bigQueryJsonResultSet.getFloat(3)).isEqualTo(1.5f);
       assertThat(bigQueryJsonResultSet.getString("fourth")).isEqualTo(STRING_VAL);
       assertThat(bigQueryJsonResultSet.getString(4)).isEqualTo(STRING_VAL);
+      assertThat(bigQueryJsonResultSet.getString("fifth")).isEqualTo("2023-03-30 11:14:19.820000");
+      assertThat(bigQueryJsonResultSet.getString(5)).isEqualTo("2023-03-30 11:14:19.820000");
       assertThat(bigQueryJsonResultSet.getTimestamp("fifth"))
           .isEqualTo(Timestamp.valueOf(aTimeStamp));
       assertThat(bigQueryJsonResultSet.getTimestamp(5)).isEqualTo(Timestamp.valueOf(aTimeStamp));
@@ -504,6 +506,24 @@ public class BigQueryJsonResultSetTest {
       assertThrows(
           SQLException.class, () -> bigQueryJsonResultSet.getObject((Integer) column, type));
     }
+  }
+
+  @Test
+  public void testGetString_timestamp() throws SQLException {
+    assertThat(resetResultSet()).isTrue();
+    bigQueryJsonResultSet.next();
+    assertThat(bigQueryJsonResultSet.getString("fifth")).isEqualTo("2023-03-30 11:14:19.820000");
+    assertThat(bigQueryJsonResultSet.getString(5)).isEqualTo("2023-03-30 11:14:19.820000");
+  }
+
+  @Test
+  public void testGetString_structAndArray() throws SQLException {
+    assertThat(resetResultSet()).isTrue();
+    bigQueryJsonResultSet.next();
+    assertThat(bigQueryJsonResultSet.getString("eight")).isEqualTo("[10, 20]");
+    assertThat(bigQueryJsonResultSet.getString(8)).isEqualTo("[10, 20]");
+    assertThat(bigQueryJsonResultSet.getString("ninth")).isNotNull();
+    assertThat(bigQueryJsonResultSet.getString(9)).isNotNull();
   }
 
   private int resultSetRowCount(BigQueryJsonResultSet resultSet) throws SQLException {

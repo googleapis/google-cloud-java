@@ -307,6 +307,43 @@ public class FieldValueTypeBigQueryCoercionUtilityTest {
   }
 
   @Test
+  public void fieldValueToTimestampWithNanos() {
+    FieldValue picosValue = FieldValue.of(PRIMITIVE, "1775642400.123456789123");
+    Timestamp result = INSTANCE.coerceTo(Timestamp.class, picosValue);
+    assertThat(result).isNotNull();
+    assertThat(result.getNanos()).isEqualTo(123456789);
+  }
+
+  @Test
+  public void fieldValueToTimestampScientificNotation() {
+    FieldValue scientificValue = FieldValue.of(PRIMITIVE, "1.6905474E9");
+    Timestamp result = INSTANCE.coerceTo(Timestamp.class, scientificValue);
+    assertThat(result).isNotNull();
+    assertThat(result).isEqualTo(Timestamp.valueOf("2023-07-28 12:30:00"));
+  }
+
+  @Test
+  public void fieldValueToTimestampNegativeEpoch() {
+    FieldValue negativeOneAndHalf = FieldValue.of(PRIMITIVE, "-1.5");
+    Timestamp result = INSTANCE.coerceTo(Timestamp.class, negativeOneAndHalf);
+    assertThat(result).isNotNull();
+    assertThat(result).isEqualTo(Timestamp.from(Instant.ofEpochSecond(-2, 500000000)));
+
+    FieldValue pre1970Nanos = FieldValue.of(PRIMITIVE, "-0.123456789");
+    Timestamp resultNanos = INSTANCE.coerceTo(Timestamp.class, pre1970Nanos);
+    assertThat(resultNanos).isNotNull();
+    assertThat(resultNanos).isEqualTo(Timestamp.from(Instant.ofEpochSecond(-1, 876543211)));
+  }
+
+  @Test
+  public void fieldValueToTimestampTruncation() {
+    FieldValue val = FieldValue.of(PRIMITIVE, "1680174859.8202269");
+    Timestamp ts = INSTANCE.coerceTo(Timestamp.class, val);
+    assertThat(ts).isNotNull();
+    assertThat(ts.getNanos()).isEqualTo(820226900);
+  }
+
+  @Test
   public void fieldValueToTimestampWhenNull() {
     assertThat(INSTANCE.coerceTo(Timestamp.class, null)).isNull();
   }

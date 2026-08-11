@@ -207,7 +207,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
             cause));
   }
 
-  private StandardSQLTypeName getStandardSQLTypeName(int columnIndex) throws SQLException {
+  protected StandardSQLTypeName getStandardSQLTypeName(int columnIndex) throws SQLException {
     checkClosed();
     if (isNested) {
       if (columnIndex == 1) {

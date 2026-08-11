@@ -182,6 +182,12 @@ class BigQueryTypeCoercionUtility {
                 LocalDateTime.class,
                 Timestamp.class)
             .registerTypeCoercion(Text::toString, Text.class, String.class)
+            .registerTypeCoercion(
+                text -> BigQueryTemporalUtility.boxTimestamp(text.toString()),
+                Text.class,
+                Timestamp.class)
+            .registerTypeCoercion(
+                BigQueryTemporalUtility::boxTimestamp, String.class, Timestamp.class)
             .registerTypeCoercion(new TextToInteger())
             .registerTypeCoercion(new LongToTimestamp())
             .registerTypeCoercion(new LongToTime())
@@ -438,9 +444,9 @@ class BigQueryTypeCoercionUtility {
         // Timestamp.valueOf() expects "yyyy-mm-dd hh:mm:ss.fffffffff" format.
         return Timestamp.valueOf(rawValue.replace('T', ' '));
       } else {
-        // It's a TIMESTAMP numeric string.
-        long microseconds = fieldValue.getTimestampValue();
-        Instant instant = Instant.EPOCH.plus(microseconds, ChronoUnit.MICROS);
+        // Numeric epoch decimal string from BigQuery JSON (e.g. "1775642400.123456789123" or
+        // "1.6905474E9")
+        Instant instant = BigQueryTemporalUtility.parseEpochDecimalToInstant(rawValue);
         // Timezone-agnostic conversion preserving exact point in time as mandated by JDBC spec
         return Timestamp.from(instant);
       }
