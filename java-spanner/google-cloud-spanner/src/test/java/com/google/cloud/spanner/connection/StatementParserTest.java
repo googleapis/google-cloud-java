@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -1862,6 +1863,19 @@ public class StatementParserTest {
     // The first query had a cache miss. The second a cache hit.
     assertEquals(1, stats.missCount());
     assertEquals(1, stats.hitCount());
+  }
+
+  @Test
+  public void testGetParameterName() {
+    for (int i = 1; i <= 256; i++) {
+      assertEquals("p" + i, AbstractStatementParser.getParameterName(i));
+      assertSame(
+          AbstractStatementParser.getParameterName(i), AbstractStatementParser.getParameterName(i));
+    }
+    assertEquals("p257", AbstractStatementParser.getParameterName(257));
+    assertEquals("p1000", AbstractStatementParser.getParameterName(1000));
+    assertEquals("p0", AbstractStatementParser.getParameterName(0));
+    assertEquals("p-1", AbstractStatementParser.getParameterName(-1));
   }
 
   @Test

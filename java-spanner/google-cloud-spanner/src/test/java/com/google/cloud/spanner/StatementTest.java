@@ -21,6 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 
 import com.google.cloud.ByteArray;
@@ -184,5 +185,19 @@ public class StatementTest {
         Statement.newBuilder("SELECT @x, @y").bind("x").to((Value) null).build(),
         Statement.newBuilder("SELECT @x, @y").bind("x").to((Value) null).build());
     tester.testEquals();
+  }
+
+  @Test
+  public void testGetParameterName() {
+    assertEquals("p1", Statement.getParameterName(1));
+    assertEquals("p256", Statement.getParameterName(256));
+    assertEquals("p257", Statement.getParameterName(257));
+    assertEquals("p0", Statement.getParameterName(0));
+    assertEquals("p-1", Statement.getParameterName(-1));
+
+    // Verify instance caching for indices 1..256
+    for (int i = 1; i <= 256; i++) {
+      assertSame(Statement.getParameterName(i), Statement.getParameterName(i));
+    }
   }
 }
