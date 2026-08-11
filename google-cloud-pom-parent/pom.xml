@@ -22,7 +22,7 @@
   <properties>
     <skipUnitTests>false</skipUnitTests>
     <checkstyle.header.file>java.header</checkstyle.header.file>
-    <skipShade>false</skipShade>
+    <shade.skip>false</shade.skip>
   </properties>
 
   <developers>
@@ -73,7 +73,7 @@
         <fmt.skip>true</fmt.skip>
         <flatten.skip>true</flatten.skip>
         <mdep.analyze.skip>true</mdep.analyze.skip>
-        <skipShade>true</skipShade>
+        <shade.skip>true</shade.skip>
       </properties>
     </profile>
     <profile>

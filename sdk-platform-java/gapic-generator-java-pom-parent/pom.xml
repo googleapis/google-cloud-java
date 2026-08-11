@@ -45,7 +45,7 @@
     <!--  skipping clirr check for protobuf 4.x upgrade -->
     <clirr.skip>true</clirr.skip>
     <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
-    <skipShade>false</skipShade>
+    <shade.skip>false</shade.skip>
   </properties>
 
   <developers>
@@ -96,7 +96,7 @@
         <fmt.skip>true</fmt.skip>
         <flatten.skip>true</flatten.skip>
         <mdep.analyze.skip>true</mdep.analyze.skip>
-        <skipShade>true</skipShade>
+        <shade.skip>true</shade.skip>
       </properties>
     </profile>
 

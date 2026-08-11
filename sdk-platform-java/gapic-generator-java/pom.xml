@@ -255,7 +255,7 @@
               <goal>shade</goal>
             </goals>
             <configuration>
-              <skip>${skipShade}</skip>
+              <skip>${shade.skip}</skip>
               <createDependencyReducedPom>false</createDependencyReducedPom>
               <filters>
                 <filter>
