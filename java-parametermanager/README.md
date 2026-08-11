@@ -22,7 +22,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.83.0</version>
+      <version>26.86.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -44,14 +44,14 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-parametermanager</artifactId>
-  <version>0.38.0</version>
+  <version>0.39.0</version>
 </dependency>
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies:
 
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:26.83.0')
+implementation platform('com.google.cloud:libraries-bom:26.86.0')
 
 implementation 'com.google.cloud:google-cloud-parametermanager'
 ```
@@ -59,13 +59,13 @@ implementation 'com.google.cloud:google-cloud-parametermanager'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-parametermanager:0.38.0'
+implementation 'com.google.cloud:google-cloud-parametermanager:0.39.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-parametermanager" % "0.38.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-parametermanager" % "0.39.0"
 ```
 
 ## Authentication
@@ -186,7 +186,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-parametermanager/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-preview-yellow
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-parametermanager.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-parametermanager/0.38.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-parametermanager/0.39.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

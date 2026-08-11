@@ -726,6 +726,16 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
      * <code>MEMORY_OPTIMIZED_X4_960_16T = 424752534;</code>
      */
     MEMORY_OPTIMIZED_X4_960_16T(424752534),
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for C4N (dual Diorite) machines.
+     * </pre>
+     *
+     * <code>NETWORK_OPTIMIZED_C4N = 147027572;</code>
+     */
+    NETWORK_OPTIMIZED_C4N(147027572),
     /** <code>STORAGE_OPTIMIZED_Z3 = 316796085;</code> */
     STORAGE_OPTIMIZED_Z3(316796085),
     /**
@@ -926,6 +936,17 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
      */
     public static final int MEMORY_OPTIMIZED_X4_960_16T_VALUE = 424752534;
 
+    /**
+     *
+     *
+     * <pre>
+     * CUD bucket for C4N (dual Diorite) machines.
+     * </pre>
+     *
+     * <code>NETWORK_OPTIMIZED_C4N = 147027572;</code>
+     */
+    public static final int NETWORK_OPTIMIZED_C4N_VALUE = 147027572;
+
     /** <code>STORAGE_OPTIMIZED_Z3 = 316796085;</code> */
     public static final int STORAGE_OPTIMIZED_Z3_VALUE = 316796085;
 
@@ -1044,6 +1065,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessage
           return MEMORY_OPTIMIZED_X4_960_12T;
         case 424752534:
           return MEMORY_OPTIMIZED_X4_960_16T;
+        case 147027572:
+          return NETWORK_OPTIMIZED_C4N;
         case 316796085:
           return STORAGE_OPTIMIZED_Z3;
         case 437714322:
