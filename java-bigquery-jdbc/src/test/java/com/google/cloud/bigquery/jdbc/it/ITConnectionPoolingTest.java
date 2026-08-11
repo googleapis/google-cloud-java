@@ -319,7 +319,6 @@ public class ITConnectionPoolingTest extends ITBase {
     assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
 
     // Execute query with reusable physical connection
-    statement = connection.createStatement();
     ITBase.validateStatement(statement, 850);
 
     // Return connection back to the pool.
