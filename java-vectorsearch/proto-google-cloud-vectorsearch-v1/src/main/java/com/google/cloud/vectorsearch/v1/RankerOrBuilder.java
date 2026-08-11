@@ -63,5 +63,50 @@ public interface RankerOrBuilder
    */
   com.google.cloud.vectorsearch.v1.ReciprocalRankFusionOrBuilder getRrfOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Vertex AI ranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the vertexRanker field is set.
+   */
+  boolean hasVertexRanker();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Vertex AI ranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The vertexRanker.
+   */
+  com.google.cloud.vectorsearch.v1.VertexRanker getVertexRanker();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Vertex AI ranking.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1.VertexRanker vertex_ranker = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vectorsearch.v1.VertexRankerOrBuilder getVertexRankerOrBuilder();
+
   com.google.cloud.vectorsearch.v1.Ranker.RankerCase getRankerCase();
+
+  com.google.cloud.vectorsearch.v1.Ranker.RerankerCase getRerankerCase();
 }
