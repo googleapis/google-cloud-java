@@ -137,11 +137,35 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>DONE = 2104194;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The operation has completed processing successfully or with an error.
+     * </pre>
+     *
+     * <code>DONE = 2104194;</code>
+     */
     DONE(2104194),
-    /** <code>PENDING = 35394935;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The operation is waiting to be processed.
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
     PENDING(35394935),
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The operation is actively being processed.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     RUNNING(121282975),
     UNRECOGNIZED(-1),
     ;
@@ -167,13 +191,37 @@ public final class Operation extends com.google.protobuf.GeneratedMessage
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
 
-    /** <code>DONE = 2104194;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The operation has completed processing successfully or with an error.
+     * </pre>
+     *
+     * <code>DONE = 2104194;</code>
+     */
     public static final int DONE_VALUE = 2104194;
 
-    /** <code>PENDING = 35394935;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The operation is waiting to be processed.
+     * </pre>
+     *
+     * <code>PENDING = 35394935;</code>
+     */
     public static final int PENDING_VALUE = 35394935;
 
-    /** <code>RUNNING = 121282975;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The operation is actively being processed.
+     * </pre>
+     *
+     * <code>RUNNING = 121282975;</code>
+     */
     public static final int RUNNING_VALUE = 121282975;
 
     public final int getNumber() {
