@@ -315,7 +315,7 @@ final class BigQueryJdbcUrlUtility {
                   BigQueryConnectionProperty.newBuilder()
                       .setName(ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME)
                       .setDescription(
-                          "Enable 12-digit picosecond precision for TIMESTAMP columns. Set to 1 to enable. Disabled (0) by default.")
+                          "Enables or disables 12-digit picosecond precision for TIMESTAMP columns. Disabled by default.")
                       .setDefaultValue(String.valueOf(DEFAULT_ENABLE_TIMESTAMP_PICOS_VALUE))
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
