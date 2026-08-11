@@ -46,6 +46,7 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonParser;
 import com.google.api.client.util.Clock;
 import com.google.auth.TestUtils;
+import com.google.auth.http.ContextRebuildableTransportFactory;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.ExternalAccountCredentials.SubjectTokenTypes;
 import com.google.auth.oauth2.ExternalAccountCredentialsTest.TestExternalAccountCredentials.TestCredentialSource;
@@ -59,6 +60,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -198,6 +200,33 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
     assertEquals("tokenInfoUrl", credential.getTokenInfoUrl());
     assertNotNull(credential.getCredentialSource());
     assertEquals(GOOGLE_DEFAULT_UNIVERSE, credential.getUniverseDomain());
+  }
+
+  @Test
+  void fromJson_identityPoolCredentials_withActorTokenType() throws Exception {
+    GenericJson json = buildJsonIdentityPoolCredential();
+    json.put("actor_token_type", "actorTokenType");
+
+    Map<String, Object> credentialSource = (Map<String, Object>) json.get("credential_source");
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("actor_token_field_name", "actor_token");
+    formatMap.put("subject_token_field_name", "subject_token");
+    credentialSource.put("format", formatMap);
+
+    java.security.KeyStore ks =
+        java.security.KeyStore.getInstance(java.security.KeyStore.getDefaultType());
+    ks.load(null, null);
+    com.google.auth.mtls.MtlsHttpTransportFactory mockTransportFactory =
+        new com.google.auth.mtls.MtlsHttpTransportFactory(ks);
+
+    ExternalAccountCredentials credential =
+        ExternalAccountCredentials.fromJson(json, mockTransportFactory);
+
+    assertInstanceOf(IdentityPoolCredentials.class, credential);
+    IdentityPoolCredentials idpCreds = (IdentityPoolCredentials) credential;
+    assertEquals("subjectTokenType", idpCreds.getSubjectTokenType());
+    assertEquals("actorTokenType", idpCreds.getActorTokenType());
   }
 
   @Test
@@ -893,6 +922,90 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
     Map<String, List<String>> headers =
         transportFactory.transport.getRequests().get(0).getHeaders();
     validateMetricsHeader(headers, "file", false, false);
+  }
+
+  @Test
+  void exchangeExternalCredentialForAccessToken_withMtls401_retriesAndRebuildsContext()
+      throws Exception {
+    java.security.KeyStore ks =
+        java.security.KeyStore.getInstance(java.security.KeyStore.getDefaultType());
+    ks.load(null, null);
+
+    AtomicInteger rebuildCount = new AtomicInteger(0);
+    MockExternalAccountCredentialsTransport mockTransport =
+        new MockExternalAccountCredentialsTransport();
+    mockTransport.addResponseStatusCodeSequence(401, 200);
+
+    ContextRebuildableTransportFactory rebuildableFactory =
+        new ContextRebuildableTransportFactory() {
+          @Override
+          public synchronized void rebuildContext() throws IOException {
+            rebuildCount.incrementAndGet();
+          }
+
+          @Override
+          public HttpTransport create() {
+            return mockTransport;
+          }
+        };
+
+    ExternalAccountCredentials credential =
+        ExternalAccountCredentials.fromJson(buildJsonIdentityPoolCredential(), rebuildableFactory);
+    StsTokenExchangeRequest stsRequest =
+        StsTokenExchangeRequest.newBuilder("credential", "subjectTokenType").build();
+
+    AccessToken accessToken = credential.exchangeExternalCredentialForAccessToken(stsRequest);
+
+    assertEquals(1, rebuildCount.get());
+    assertEquals(mockTransport.getAccessToken(), accessToken.getTokenValue());
+  }
+
+  @Test
+  void exchangeExternalCredentialForAccessToken_withMtls401Repeated_doesNotRetryIndefinitely() {
+    AtomicInteger rebuildCount = new AtomicInteger(0);
+    MockExternalAccountCredentialsTransport mockTransport =
+        new MockExternalAccountCredentialsTransport();
+    mockTransport.addResponseStatusCodeSequence(401, 401);
+
+    ContextRebuildableTransportFactory rebuildableFactory =
+        new ContextRebuildableTransportFactory() {
+          @Override
+          public synchronized void rebuildContext() throws IOException {
+            rebuildCount.incrementAndGet();
+          }
+
+          @Override
+          public HttpTransport create() {
+            return mockTransport;
+          }
+        };
+
+    ExternalAccountCredentials credential =
+        ExternalAccountCredentials.fromJson(buildJsonIdentityPoolCredential(), rebuildableFactory);
+    StsTokenExchangeRequest stsRequest =
+        StsTokenExchangeRequest.newBuilder("credential", "subjectTokenType").build();
+
+    assertThrows(
+        IOException.class, () -> credential.exchangeExternalCredentialForAccessToken(stsRequest));
+
+    assertEquals(1, rebuildCount.get());
+  }
+
+  @Test
+  void exchangeExternalCredentialForAccessToken_withNonRebuildableTransport401_doesNotRetry() {
+    MockExternalAccountCredentialsTransport mockTransport =
+        new MockExternalAccountCredentialsTransport();
+    mockTransport.addResponseStatusCodeSequence(401);
+
+    HttpTransportFactory standardFactory = () -> mockTransport;
+
+    ExternalAccountCredentials credential =
+        ExternalAccountCredentials.fromJson(buildJsonIdentityPoolCredential(), standardFactory);
+    StsTokenExchangeRequest stsRequest =
+        StsTokenExchangeRequest.newBuilder("credential", "subjectTokenType").build();
+
+    assertThrows(
+        IOException.class, () -> credential.exchangeExternalCredentialForAccessToken(stsRequest));
   }
 
   @Test

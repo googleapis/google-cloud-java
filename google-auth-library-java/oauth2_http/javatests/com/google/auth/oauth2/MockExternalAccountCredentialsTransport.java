@@ -88,10 +88,15 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
   private final Queue<IOException> responseErrorSequence = new ArrayDeque<>();
   private final Queue<String> refreshTokenSequence = new ArrayDeque<>();
   private final Queue<List<String>> scopeSequence = new ArrayDeque<>();
+  private final Queue<Integer> responseStatusCodeSequence = new ArrayDeque<>();
   private final List<MockLowLevelHttpRequest> requests = new ArrayList<>();
   private String expireTime;
   private String metadataServerContentType;
   private String stsContent;
+
+  public void addResponseStatusCodeSequence(Integer... statusCodes) {
+    Collections.addAll(responseStatusCodeSequence, statusCodes);
+  }
 
   public void addResponseErrorSequence(IOException... errors) {
     Collections.addAll(responseErrorSequence, errors);
@@ -168,6 +173,16 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
                   .setContent(SUBJECT_TOKEN);
             }
             if (STS_URL.equals(url)) {
+              if (!responseStatusCodeSequence.isEmpty()) {
+                int code = responseStatusCodeSequence.poll();
+                if (code != 200) {
+                  return new MockLowLevelHttpResponse()
+                      .setStatusCode(code)
+                      .setContentType(Json.MEDIA_TYPE)
+                      .setContent("{\"error\":\"unauthorized\"}");
+                }
+              }
+
               Map<String, String> query = TestUtils.parseQuery(getContentAsString());
 
               // Store STS content as multiple calls are made using this transport.
