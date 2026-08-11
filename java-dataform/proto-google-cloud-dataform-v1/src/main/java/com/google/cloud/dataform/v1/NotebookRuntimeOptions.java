@@ -117,6 +117,53 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     return ExecutionSinkCase.forNumber(executionSinkCase_);
   }
 
+  private int repositorySnapshotStorageCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object repositorySnapshotStorage_;
+
+  public enum RepositorySnapshotStorageCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    GCS_REPOSITORY_SNAPSHOT_DESTINATION(3),
+    REPOSITORYSNAPSHOTSTORAGE_NOT_SET(0);
+    private final int value;
+
+    private RepositorySnapshotStorageCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RepositorySnapshotStorageCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static RepositorySnapshotStorageCase forNumber(int value) {
+      switch (value) {
+        case 3:
+          return GCS_REPOSITORY_SNAPSHOT_DESTINATION;
+        case 0:
+          return REPOSITORYSNAPSHOTSTORAGE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public RepositorySnapshotStorageCase getRepositorySnapshotStorageCase() {
+    return RepositorySnapshotStorageCase.forNumber(repositorySnapshotStorageCase_);
+  }
+
   public static final int GCS_OUTPUT_BUCKET_FIELD_NUMBER = 1;
 
   /**
@@ -191,6 +238,76 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int GCS_REPOSITORY_SNAPSHOT_DESTINATION_FIELD_NUMBER = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Google Cloud Storage destination to upload the snapshot to.
+   * For empty URI it defaults to the provided gcs_output_bucket.
+   * Format: `gs://bucket-name/path/`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gcsRepositorySnapshotDestination field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcsRepositorySnapshotDestination() {
+    return repositorySnapshotStorageCase_ == 3;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Google Cloud Storage destination to upload the snapshot to.
+   * For empty URI it defaults to the provided gcs_output_bucket.
+   * Format: `gs://bucket-name/path/`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gcsRepositorySnapshotDestination.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination
+      getGcsRepositorySnapshotDestination() {
+    if (repositorySnapshotStorageCase_ == 3) {
+      return (com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination)
+          repositorySnapshotStorage_;
+    }
+    return com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Google Cloud Storage destination to upload the snapshot to.
+   * For empty URI it defaults to the provided gcs_output_bucket.
+   * Format: `gs://bucket-name/path/`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataform.v1.GcsRepositorySnapshotDestinationOrBuilder
+      getGcsRepositorySnapshotDestinationOrBuilder() {
+    if (repositorySnapshotStorageCase_ == 3) {
+      return (com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination)
+          repositorySnapshotStorage_;
+    }
+    return com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination.getDefaultInstance();
   }
 
   public static final int AI_PLATFORM_NOTEBOOK_RUNTIME_TEMPLATE_FIELD_NUMBER = 2;
@@ -277,6 +394,12 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
       com.google.protobuf.GeneratedMessage.writeString(
           output, 2, aiPlatformNotebookRuntimeTemplate_);
     }
+    if (repositorySnapshotStorageCase_ == 3) {
+      output.writeMessage(
+          3,
+          (com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination)
+              repositorySnapshotStorage_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -293,6 +416,13 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.GeneratedMessage.computeStringSize(
               2, aiPlatformNotebookRuntimeTemplate_);
+    }
+    if (repositorySnapshotStorageCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3,
+              (com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination)
+                  repositorySnapshotStorage_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -320,6 +450,16 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
       case 0:
       default:
     }
+    if (!getRepositorySnapshotStorageCase().equals(other.getRepositorySnapshotStorageCase()))
+      return false;
+    switch (repositorySnapshotStorageCase_) {
+      case 3:
+        if (!getGcsRepositorySnapshotDestination()
+            .equals(other.getGcsRepositorySnapshotDestination())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -337,6 +477,14 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
       case 1:
         hash = (37 * hash) + GCS_OUTPUT_BUCKET_FIELD_NUMBER;
         hash = (53 * hash) + getGcsOutputBucket().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (repositorySnapshotStorageCase_) {
+      case 3:
+        hash = (37 * hash) + GCS_REPOSITORY_SNAPSHOT_DESTINATION_FIELD_NUMBER;
+        hash = (53 * hash) + getGcsRepositorySnapshotDestination().hashCode();
         break;
       case 0:
       default:
@@ -481,9 +629,14 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (gcsRepositorySnapshotDestinationBuilder_ != null) {
+        gcsRepositorySnapshotDestinationBuilder_.clear();
+      }
       aiPlatformNotebookRuntimeTemplate_ = "";
       executionSinkCase_ = 0;
       executionSink_ = null;
+      repositorySnapshotStorageCase_ = 0;
+      repositorySnapshotStorage_ = null;
       return this;
     }
 
@@ -521,7 +674,7 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
 
     private void buildPartial0(com.google.cloud.dataform.v1.NotebookRuntimeOptions result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.aiPlatformNotebookRuntimeTemplate_ = aiPlatformNotebookRuntimeTemplate_;
       }
     }
@@ -529,6 +682,11 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     private void buildPartialOneofs(com.google.cloud.dataform.v1.NotebookRuntimeOptions result) {
       result.executionSinkCase_ = executionSinkCase_;
       result.executionSink_ = this.executionSink_;
+      result.repositorySnapshotStorageCase_ = repositorySnapshotStorageCase_;
+      result.repositorySnapshotStorage_ = this.repositorySnapshotStorage_;
+      if (repositorySnapshotStorageCase_ == 3 && gcsRepositorySnapshotDestinationBuilder_ != null) {
+        result.repositorySnapshotStorage_ = gcsRepositorySnapshotDestinationBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -546,7 +704,7 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
         return this;
       if (!other.getAiPlatformNotebookRuntimeTemplate().isEmpty()) {
         aiPlatformNotebookRuntimeTemplate_ = other.aiPlatformNotebookRuntimeTemplate_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getExecutionSinkCase()) {
@@ -558,6 +716,17 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
             break;
           }
         case EXECUTIONSINK_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getRepositorySnapshotStorageCase()) {
+        case GCS_REPOSITORY_SNAPSHOT_DESTINATION:
+          {
+            mergeGcsRepositorySnapshotDestination(other.getGcsRepositorySnapshotDestination());
+            break;
+          }
+        case REPOSITORYSNAPSHOTSTORAGE_NOT_SET:
           {
             break;
           }
@@ -598,9 +767,17 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
             case 18:
               {
                 aiPlatformNotebookRuntimeTemplate_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetGcsRepositorySnapshotDestinationFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                repositorySnapshotStorageCase_ = 3;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -628,6 +805,20 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     public Builder clearExecutionSink() {
       executionSinkCase_ = 0;
       executionSink_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int repositorySnapshotStorageCase_ = 0;
+    private java.lang.Object repositorySnapshotStorage_;
+
+    public RepositorySnapshotStorageCase getRepositorySnapshotStorageCase() {
+      return RepositorySnapshotStorageCase.forNumber(repositorySnapshotStorageCase_);
+    }
+
+    public Builder clearRepositorySnapshotStorage() {
+      repositorySnapshotStorageCase_ = 0;
+      repositorySnapshotStorage_ = null;
       onChanged();
       return this;
     }
@@ -779,6 +970,273 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination,
+            com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination.Builder,
+            com.google.cloud.dataform.v1.GcsRepositorySnapshotDestinationOrBuilder>
+        gcsRepositorySnapshotDestinationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage destination to upload the snapshot to.
+     * For empty URI it defaults to the provided gcs_output_bucket.
+     * Format: `gs://bucket-name/path/`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the gcsRepositorySnapshotDestination field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcsRepositorySnapshotDestination() {
+      return repositorySnapshotStorageCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage destination to upload the snapshot to.
+     * For empty URI it defaults to the provided gcs_output_bucket.
+     * Format: `gs://bucket-name/path/`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The gcsRepositorySnapshotDestination.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination
+        getGcsRepositorySnapshotDestination() {
+      if (gcsRepositorySnapshotDestinationBuilder_ == null) {
+        if (repositorySnapshotStorageCase_ == 3) {
+          return (com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination)
+              repositorySnapshotStorage_;
+        }
+        return com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination.getDefaultInstance();
+      } else {
+        if (repositorySnapshotStorageCase_ == 3) {
+          return gcsRepositorySnapshotDestinationBuilder_.getMessage();
+        }
+        return com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage destination to upload the snapshot to.
+     * For empty URI it defaults to the provided gcs_output_bucket.
+     * Format: `gs://bucket-name/path/`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGcsRepositorySnapshotDestination(
+        com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination value) {
+      if (gcsRepositorySnapshotDestinationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        repositorySnapshotStorage_ = value;
+        onChanged();
+      } else {
+        gcsRepositorySnapshotDestinationBuilder_.setMessage(value);
+      }
+      repositorySnapshotStorageCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage destination to upload the snapshot to.
+     * For empty URI it defaults to the provided gcs_output_bucket.
+     * Format: `gs://bucket-name/path/`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGcsRepositorySnapshotDestination(
+        com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination.Builder builderForValue) {
+      if (gcsRepositorySnapshotDestinationBuilder_ == null) {
+        repositorySnapshotStorage_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcsRepositorySnapshotDestinationBuilder_.setMessage(builderForValue.build());
+      }
+      repositorySnapshotStorageCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage destination to upload the snapshot to.
+     * For empty URI it defaults to the provided gcs_output_bucket.
+     * Format: `gs://bucket-name/path/`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGcsRepositorySnapshotDestination(
+        com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination value) {
+      if (gcsRepositorySnapshotDestinationBuilder_ == null) {
+        if (repositorySnapshotStorageCase_ == 3
+            && repositorySnapshotStorage_
+                != com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination
+                    .getDefaultInstance()) {
+          repositorySnapshotStorage_ =
+              com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination.newBuilder(
+                      (com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination)
+                          repositorySnapshotStorage_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          repositorySnapshotStorage_ = value;
+        }
+        onChanged();
+      } else {
+        if (repositorySnapshotStorageCase_ == 3) {
+          gcsRepositorySnapshotDestinationBuilder_.mergeFrom(value);
+        } else {
+          gcsRepositorySnapshotDestinationBuilder_.setMessage(value);
+        }
+      }
+      repositorySnapshotStorageCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage destination to upload the snapshot to.
+     * For empty URI it defaults to the provided gcs_output_bucket.
+     * Format: `gs://bucket-name/path/`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGcsRepositorySnapshotDestination() {
+      if (gcsRepositorySnapshotDestinationBuilder_ == null) {
+        if (repositorySnapshotStorageCase_ == 3) {
+          repositorySnapshotStorageCase_ = 0;
+          repositorySnapshotStorage_ = null;
+          onChanged();
+        }
+      } else {
+        if (repositorySnapshotStorageCase_ == 3) {
+          repositorySnapshotStorageCase_ = 0;
+          repositorySnapshotStorage_ = null;
+        }
+        gcsRepositorySnapshotDestinationBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage destination to upload the snapshot to.
+     * For empty URI it defaults to the provided gcs_output_bucket.
+     * Format: `gs://bucket-name/path/`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination.Builder
+        getGcsRepositorySnapshotDestinationBuilder() {
+      return internalGetGcsRepositorySnapshotDestinationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage destination to upload the snapshot to.
+     * For empty URI it defaults to the provided gcs_output_bucket.
+     * Format: `gs://bucket-name/path/`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataform.v1.GcsRepositorySnapshotDestinationOrBuilder
+        getGcsRepositorySnapshotDestinationOrBuilder() {
+      if ((repositorySnapshotStorageCase_ == 3)
+          && (gcsRepositorySnapshotDestinationBuilder_ != null)) {
+        return gcsRepositorySnapshotDestinationBuilder_.getMessageOrBuilder();
+      } else {
+        if (repositorySnapshotStorageCase_ == 3) {
+          return (com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination)
+              repositorySnapshotStorage_;
+        }
+        return com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The Google Cloud Storage destination to upload the snapshot to.
+     * For empty URI it defaults to the provided gcs_output_bucket.
+     * Format: `gs://bucket-name/path/`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataform.v1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination,
+            com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination.Builder,
+            com.google.cloud.dataform.v1.GcsRepositorySnapshotDestinationOrBuilder>
+        internalGetGcsRepositorySnapshotDestinationFieldBuilder() {
+      if (gcsRepositorySnapshotDestinationBuilder_ == null) {
+        if (!(repositorySnapshotStorageCase_ == 3)) {
+          repositorySnapshotStorage_ =
+              com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination.getDefaultInstance();
+        }
+        gcsRepositorySnapshotDestinationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination,
+                com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination.Builder,
+                com.google.cloud.dataform.v1.GcsRepositorySnapshotDestinationOrBuilder>(
+                (com.google.cloud.dataform.v1.GcsRepositorySnapshotDestination)
+                    repositorySnapshotStorage_,
+                getParentForChildren(),
+                isClean());
+        repositorySnapshotStorage_ = null;
+      }
+      repositorySnapshotStorageCase_ = 3;
+      onChanged();
+      return gcsRepositorySnapshotDestinationBuilder_;
+    }
+
     private java.lang.Object aiPlatformNotebookRuntimeTemplate_ = "";
 
     /**
@@ -859,7 +1317,7 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
         throw new NullPointerException();
       }
       aiPlatformNotebookRuntimeTemplate_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -883,7 +1341,7 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
     public Builder clearAiPlatformNotebookRuntimeTemplate() {
       aiPlatformNotebookRuntimeTemplate_ =
           getDefaultInstance().getAiPlatformNotebookRuntimeTemplate();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -911,7 +1369,7 @@ public final class NotebookRuntimeOptions extends com.google.protobuf.GeneratedM
       }
       checkByteStringIsUtf8(value);
       aiPlatformNotebookRuntimeTemplate_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

@@ -25,6 +25,7 @@ import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse
 import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.InternalApi;
@@ -95,6 +96,8 @@ import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
 import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchMessagesRequest;
+import com.google.chat.v1.SearchMessagesResponse;
 import com.google.chat.v1.SearchSpacesRequest;
 import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.Section;
@@ -405,6 +408,43 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
                       .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<SearchMessagesRequest, SearchMessagesResponse>
+      searchMessagesMethodDescriptor =
+          ApiMethodDescriptor.<SearchMessagesRequest, SearchMessagesResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/SearchMessages")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<SearchMessagesRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=spaces/*}/messages:search",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchMessagesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<SearchMessagesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SearchMessagesResponse>newBuilder()
+                      .setDefaultInstance(SearchMessagesResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1921,6 +1961,9 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<GetMessageRequest, Message> getMessageCallable;
   private final UnaryCallable<UpdateMessageRequest, Message> updateMessageCallable;
   private final UnaryCallable<DeleteMessageRequest, Empty> deleteMessageCallable;
+  private final UnaryCallable<SearchMessagesRequest, SearchMessagesResponse> searchMessagesCallable;
+  private final UnaryCallable<SearchMessagesRequest, SearchMessagesPagedResponse>
+      searchMessagesPagedCallable;
   private final UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable;
   private final UnaryCallable<UploadAttachmentRequest, UploadAttachmentResponse>
       uploadAttachmentCallable;
@@ -2115,6 +2158,19 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<SearchMessagesRequest, SearchMessagesResponse>
+        searchMessagesTransportSettings =
+            HttpJsonCallSettings.<SearchMessagesRequest, SearchMessagesResponse>newBuilder()
+                .setMethodDescriptor(searchMessagesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
         HttpJsonCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
             .setMethodDescriptor(getAttachmentMethodDescriptor)
@@ -2597,6 +2653,12 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     this.deleteMessageCallable =
         callableFactory.createUnaryCallable(
             deleteMessageTransportSettings, settings.deleteMessageSettings(), clientContext);
+    this.searchMessagesCallable =
+        callableFactory.createUnaryCallable(
+            searchMessagesTransportSettings, settings.searchMessagesSettings(), clientContext);
+    this.searchMessagesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchMessagesTransportSettings, settings.searchMessagesSettings(), clientContext);
     this.getAttachmentCallable =
         callableFactory.createUnaryCallable(
             getAttachmentTransportSettings, settings.getAttachmentSettings(), clientContext);
@@ -2781,6 +2843,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(getMessageMethodDescriptor);
     methodDescriptors.add(updateMessageMethodDescriptor);
     methodDescriptors.add(deleteMessageMethodDescriptor);
+    methodDescriptors.add(searchMessagesMethodDescriptor);
     methodDescriptors.add(getAttachmentMethodDescriptor);
     methodDescriptors.add(uploadAttachmentMethodDescriptor);
     methodDescriptors.add(listSpacesMethodDescriptor);
@@ -2869,6 +2932,17 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<DeleteMessageRequest, Empty> deleteMessageCallable() {
     return deleteMessageCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchMessagesRequest, SearchMessagesResponse> searchMessagesCallable() {
+    return searchMessagesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchMessagesRequest, SearchMessagesPagedResponse>
+      searchMessagesPagedCallable() {
+    return searchMessagesPagedCallable;
   }
 
   @Override

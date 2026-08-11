@@ -30,55 +30,75 @@ public interface SearchSpacesResponseOrBuilder
    *
    *
    * <pre>
-   * A page of the requested spaces.
+   * Deprecated: Please use the new `results` field instead.
+   * A page of the requested spaces. This field will be populated only when
+   * `useAdminAccess` is set to `true` and deprecated in favor of the new
+   * `results` field.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Space spaces = 1;</code>
+   * <code>repeated .google.chat.v1.Space spaces = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.util.List<com.google.chat.v1.Space> getSpacesList();
 
   /**
    *
    *
    * <pre>
-   * A page of the requested spaces.
+   * Deprecated: Please use the new `results` field instead.
+   * A page of the requested spaces. This field will be populated only when
+   * `useAdminAccess` is set to `true` and deprecated in favor of the new
+   * `results` field.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Space spaces = 1;</code>
+   * <code>repeated .google.chat.v1.Space spaces = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.chat.v1.Space getSpaces(int index);
 
   /**
    *
    *
    * <pre>
-   * A page of the requested spaces.
+   * Deprecated: Please use the new `results` field instead.
+   * A page of the requested spaces. This field will be populated only when
+   * `useAdminAccess` is set to `true` and deprecated in favor of the new
+   * `results` field.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Space spaces = 1;</code>
+   * <code>repeated .google.chat.v1.Space spaces = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   int getSpacesCount();
 
   /**
    *
    *
    * <pre>
-   * A page of the requested spaces.
+   * Deprecated: Please use the new `results` field instead.
+   * A page of the requested spaces. This field will be populated only when
+   * `useAdminAccess` is set to `true` and deprecated in favor of the new
+   * `results` field.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Space spaces = 1;</code>
+   * <code>repeated .google.chat.v1.Space spaces = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.util.List<? extends com.google.chat.v1.SpaceOrBuilder> getSpacesOrBuilderList();
 
   /**
    *
    *
    * <pre>
-   * A page of the requested spaces.
+   * Deprecated: Please use the new `results` field instead.
+   * A page of the requested spaces. This field will be populated only when
+   * `useAdminAccess` is set to `true` and deprecated in favor of the new
+   * `results` field.
    * </pre>
    *
-   * <code>repeated .google.chat.v1.Space spaces = 1;</code>
+   * <code>repeated .google.chat.v1.Space spaces = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.chat.v1.SpaceOrBuilder getSpacesOrBuilder(int index);
 
   /**
@@ -122,4 +142,70 @@ public interface SearchSpacesResponseOrBuilder
    * @return The totalSize.
    */
   int getTotalSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of search results that matched the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.chat.v1.SearchSpacesResponse.SearchSpaceResult results = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.chat.v1.SearchSpacesResponse.SearchSpaceResult> getResultsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of search results that matched the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.chat.v1.SearchSpacesResponse.SearchSpaceResult results = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.chat.v1.SearchSpacesResponse.SearchSpaceResult getResults(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of search results that matched the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.chat.v1.SearchSpacesResponse.SearchSpaceResult results = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getResultsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of search results that matched the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.chat.v1.SearchSpacesResponse.SearchSpaceResult results = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.chat.v1.SearchSpacesResponse.SearchSpaceResultOrBuilder>
+      getResultsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of search results that matched the query.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.chat.v1.SearchSpacesResponse.SearchSpaceResult results = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.chat.v1.SearchSpacesResponse.SearchSpaceResultOrBuilder getResultsOrBuilder(int index);
 }

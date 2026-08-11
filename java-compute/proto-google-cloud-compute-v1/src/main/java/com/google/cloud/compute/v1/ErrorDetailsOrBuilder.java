@@ -27,6 +27,12 @@ public interface ErrorDetailsOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * Error information containing structured domain, reason, and metadata.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code>
    *
    * @return Whether the errorInfo field is set.
@@ -34,16 +40,36 @@ public interface ErrorDetailsOrBuilder
   boolean hasErrorInfo();
 
   /**
+   *
+   *
+   * <pre>
+   * Error information containing structured domain, reason, and metadata.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code>
    *
    * @return The errorInfo.
    */
   com.google.cloud.compute.v1.ErrorInfo getErrorInfo();
 
-  /** <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Error information containing structured domain, reason, and metadata.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ErrorInfo error_info = 25251973;</code>
+   */
   com.google.cloud.compute.v1.ErrorInfoOrBuilder getErrorInfoOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Links and information to help the user resolve the error.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.Help help = 3198785;</code>
    *
    * @return Whether the help field is set.
@@ -51,16 +77,36 @@ public interface ErrorDetailsOrBuilder
   boolean hasHelp();
 
   /**
+   *
+   *
+   * <pre>
+   * Links and information to help the user resolve the error.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.Help help = 3198785;</code>
    *
    * @return The help.
    */
   com.google.cloud.compute.v1.Help getHelp();
 
-  /** <code>optional .google.cloud.compute.v1.Help help = 3198785;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Links and information to help the user resolve the error.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Help help = 3198785;</code>
+   */
   com.google.cloud.compute.v1.HelpOrBuilder getHelpOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * A localized human-readable error message intended for end users.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;</code>
    *
    * @return Whether the localizedMessage field is set.
@@ -68,6 +114,12 @@ public interface ErrorDetailsOrBuilder
   boolean hasLocalizedMessage();
 
   /**
+   *
+   *
+   * <pre>
+   * A localized human-readable error message intended for end users.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;</code>
    *
    * @return The localizedMessage.
@@ -75,11 +127,23 @@ public interface ErrorDetailsOrBuilder
   com.google.cloud.compute.v1.LocalizedMessage getLocalizedMessage();
 
   /**
+   *
+   *
+   * <pre>
+   * A localized human-readable error message intended for end users.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.LocalizedMessage localized_message = 404537155;</code>
    */
   com.google.cloud.compute.v1.LocalizedMessageOrBuilder getLocalizedMessageOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Details about quota limits and metrics when a quota is exceeded.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
    *
    * @return Whether the quotaInfo field is set.
@@ -87,12 +151,26 @@ public interface ErrorDetailsOrBuilder
   boolean hasQuotaInfo();
 
   /**
+   *
+   *
+   * <pre>
+   * Details about quota limits and metrics when a quota is exceeded.
+   * </pre>
+   *
    * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
    *
    * @return The quotaInfo.
    */
   com.google.cloud.compute.v1.QuotaExceededInfo getQuotaInfo();
 
-  /** <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * Details about quota limits and metrics when a quota is exceeded.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.QuotaExceededInfo quota_info = 93923861;</code>
+   */
   com.google.cloud.compute.v1.QuotaExceededInfoOrBuilder getQuotaInfoOrBuilder();
 }
