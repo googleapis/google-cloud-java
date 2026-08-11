@@ -177,15 +177,10 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
       this.errorCode =
           HttpJsonStatusCode.of(com.google.rpc.Code.forNumber(operation.getError().getCode()));
       this.errorMessage = operation.getError().getMessage();
-      if (operation.hasError() && operation.getError().getDetailsCount() > 0) {
-        this.errorDetails =
-            ErrorDetails.builder()
-                .setRawErrorMessages(operation.getError().getDetailsList())
-                .build();
-      } else {
-        this.errorDetails =
-            ErrorDetails.builder().setRawErrorMessages(Collections.emptyList()).build();
-      }
+      this.errorDetails =
+          ErrorDetails.builder()
+              .setRawErrorMessages(operation.getError().getDetailsList())
+              .build();
       return this;
     }
 

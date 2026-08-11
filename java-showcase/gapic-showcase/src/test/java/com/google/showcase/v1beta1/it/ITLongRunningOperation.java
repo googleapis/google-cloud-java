@@ -26,7 +26,7 @@ import com.google.protobuf.Timestamp;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
-import com.google.showcase.v1beta1.PoetryError;
+import com.google.rpc.ErrorInfo;
 import com.google.showcase.v1beta1.WaitMetadata;
 import com.google.showcase.v1beta1.WaitRequest;
 import com.google.showcase.v1beta1.WaitResponse;
@@ -204,13 +204,13 @@ class ITLongRunningOperation {
   void testGRPC_LROErrorResponse_propagatesErrorDetails() throws Exception {
     EchoClient grpcClient = TestClientInitializer.createGrpcEchoClient();
     try {
-      PoetryError poetryError =
-          PoetryError.newBuilder().setPoem("Roses are red, violets are blue").build();
+      ErrorInfo errorInfo =
+          ErrorInfo.newBuilder().setReason("TEST_REASON").setDomain("googleapis.com").build();
       Status status =
           Status.newBuilder()
               .setCode(Code.ALREADY_EXISTS_VALUE)
               .setMessage("The resource already exists")
-              .addDetails(Any.pack(poetryError))
+              .addDetails(Any.pack(errorInfo))
               .build();
       WaitRequest waitRequest = WaitRequest.newBuilder().setError(status).build();
       OperationFuture<WaitResponse, WaitMetadata> operationFuture =
@@ -221,9 +221,7 @@ class ITLongRunningOperation {
 
       // Verify that error details are successfully propagated
       assertThat(apiException.getErrorDetails()).isNotNull();
-      PoetryError unpackedError = apiException.getErrorDetails().getMessage(PoetryError.class);
-      assertThat(unpackedError).isNotNull();
-      assertThat(unpackedError.getPoem()).isEqualTo("Roses are red, violets are blue");
+      assertThat(apiException.getErrorDetails().getErrorInfo()).isEqualTo(errorInfo);
     } finally {
       grpcClient.close();
       grpcClient.awaitTermination(

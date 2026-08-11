@@ -42,7 +42,7 @@ import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.rpc.Code;
 import com.google.rpc.Status;
-import com.google.type.Color;
+import com.google.rpc.ErrorInfo;
 import com.google.type.Money;
 import java.util.Collections;
 import org.junit.jupiter.api.Test;
@@ -114,7 +114,7 @@ class ProtoOperationTransformersTest {
     OperationSnapshot operationSnapshot =
         HttpJsonOperationSnapshot.create(
             Operation.newBuilder()
-                .setResponse(Any.pack(Color.getDefaultInstance()))
+                .setResponse(Any.pack(ErrorInfo.getDefaultInstance()))
                 .setError(status)
                 .build());
     Exception exception =
@@ -139,7 +139,7 @@ class ProtoOperationTransformersTest {
     OperationSnapshot operationSnapshot =
         HttpJsonOperationSnapshot.create(
             Operation.newBuilder()
-                .setMetadata(Any.pack(Color.getDefaultInstance()))
+                .setMetadata(Any.pack(ErrorInfo.getDefaultInstance()))
                 .setError(status)
                 .build());
     Exception exception =
@@ -151,12 +151,12 @@ class ProtoOperationTransformersTest {
   void testAnyResponseTransformer_exceptionWithErrorDetails() {
     ResponseTransformer<Money> transformer = ResponseTransformer.create(Money.class);
     Money inputMoney = Money.newBuilder().setCurrencyCode("USD").build();
-    Color poetryError =
-        Color.newBuilder().setRed(1.0f).build(); // Use Color as a mock details payload
+    ErrorInfo errorInfo =
+        ErrorInfo.newBuilder().setReason("TEST_REASON").setDomain("googleapis.com").build();
     Status status =
         Status.newBuilder()
             .setCode(Code.UNAVAILABLE.getNumber())
-            .addDetails(Any.pack(poetryError))
+            .addDetails(Any.pack(errorInfo))
             .build();
     OperationSnapshot operationSnapshot =
         HttpJsonOperationSnapshot.create(
@@ -165,6 +165,6 @@ class ProtoOperationTransformersTest {
     UnavailableException exception =
         assertThrows(UnavailableException.class, () -> transformer.apply(operationSnapshot));
     Truth.assertThat(exception.getErrorDetails()).isNotNull();
-    Truth.assertThat(exception.getErrorDetails().getMessage(Color.class)).isEqualTo(poetryError);
+    Truth.assertThat(exception.getErrorDetails().getErrorInfo()).isEqualTo(errorInfo);
   }
 }
