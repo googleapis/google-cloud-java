@@ -206,6 +206,13 @@
         </plugins>
       </build>
     </profile>
+    <profile>
+      <!-- This profile is used to enable GraalVM native image testing -->
+      <id>native</id>
+      <properties>
+        <skipUnitTests>false</skipUnitTests>
+      </properties>
+    </profile>
   </profiles>
 
   <build>

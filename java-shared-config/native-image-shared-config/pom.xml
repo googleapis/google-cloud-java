@@ -227,6 +227,9 @@
     <profile>
       <!-- This profile is used to enable GraalVM native image testing -->
       <id>native</id>
+      <properties>
+        <skipUnitTests>false</skipUnitTests>
+      </properties>
       <dependencies>
         <!-- Add this dependency to resolve class org.opentest4j.TestAbortedException -->
         <dependency>
