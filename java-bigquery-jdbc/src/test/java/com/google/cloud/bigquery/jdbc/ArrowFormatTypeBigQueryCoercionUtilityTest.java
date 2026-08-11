@@ -161,16 +161,22 @@ public class ArrowFormatTypeBigQueryCoercionUtilityTest {
 
   @Test
   public void textToTimestamp() {
-    Text text = new Text("2026-04-08 10:00:00.123456789123 UTC");
+    Text textUtc = new Text("2026-04-08 10:00:00.123456789123 UTC");
     Timestamp expected = Timestamp.from(Instant.parse("2026-04-08T10:00:00.123456789Z"));
-    assertThat(INSTANCE.coerceTo(Timestamp.class, text)).isEqualTo(expected);
+    assertThat(INSTANCE.coerceTo(Timestamp.class, textUtc)).isEqualTo(expected);
+
+    Text textIso = new Text("2026-04-08T10:00:00.123456789123Z");
+    assertThat(INSTANCE.coerceTo(Timestamp.class, textIso)).isEqualTo(expected);
   }
 
   @Test
   public void stringToTimestamp() {
-    String str = "2026-04-08 10:00:00.123456789123 UTC";
+    String strUtc = "2026-04-08 10:00:00.123456789123 UTC";
     Timestamp expected = Timestamp.from(Instant.parse("2026-04-08T10:00:00.123456789Z"));
-    assertThat(INSTANCE.coerceTo(Timestamp.class, str)).isEqualTo(expected);
+    assertThat(INSTANCE.coerceTo(Timestamp.class, strUtc)).isEqualTo(expected);
+
+    String strIso = "2026-04-08T10:00:00.123456789123Z";
+    assertThat(INSTANCE.coerceTo(Timestamp.class, strIso)).isEqualTo(expected);
   }
 
   @Test

@@ -145,6 +145,11 @@ final class BigQueryTemporalUtility {
     }
   }
 
+  /**
+   * Parses a numeric epoch decimal string (e.g. from BigQuery REST JSON) into a JSR-310 {@link
+   * Instant}. Sub-nanosecond precision is deterministically truncated (floor/down) rather than
+   * rounded to avoid boundary rollovers.
+   */
   public static Instant parseEpochDecimalToInstant(String epochDecimal) {
     if (epochDecimal == null) {
       return null;
@@ -159,6 +164,11 @@ final class BigQueryTemporalUtility {
     return Instant.ofEpochSecond(seconds, nanos);
   }
 
+  /**
+   * Formats a numeric epoch decimal string into standard SQL timestamp string format ("yyyy-MM-dd
+   * HH:mm:ss.ffffff[ffffff]"). Sub-microsecond / sub-picosecond precision is deterministically
+   * truncated (down) to prevent timestamp boundary rollovers.
+   */
   public static String formatTimestampString(String epochDecimal, boolean enableTimestampPicos) {
     if (epochDecimal == null) {
       return null;

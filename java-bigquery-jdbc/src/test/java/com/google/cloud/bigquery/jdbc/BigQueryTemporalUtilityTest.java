@@ -99,4 +99,18 @@ public class BigQueryTemporalUtilityTest {
     // Null
     assertThat(BigQueryTemporalUtility.parseEpochDecimalToInstant(null)).isNull();
   }
+
+  @Test
+  public void testTimestampTruncationNotRounding() {
+    // Values ending in .8202269 or .9999999 must truncate towards zero (DOWN), never round up
+    assertThat(BigQueryTemporalUtility.formatTimestampString("1680174859.8202269", false))
+        .isEqualTo("2023-03-30 11:14:19.820226");
+    assertThat(BigQueryTemporalUtility.formatTimestampString("1680174859.9999999", false))
+        .isEqualTo("2023-03-30 11:14:19.999999");
+
+    Instant truncated =
+        BigQueryTemporalUtility.parseEpochDecimalToInstant("1680174859.820226999999");
+    assertThat(truncated).isNotNull();
+    assertThat(truncated.getNano()).isEqualTo(820226999);
+  }
 }

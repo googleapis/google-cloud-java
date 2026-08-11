@@ -443,7 +443,7 @@ public class BigQueryArrowResultSetTest {
     RootAllocator allocator = new RootAllocator();
     VarCharVector timeStampPicosVector = new VarCharVector("timeStampField", allocator);
     timeStampPicosVector.allocateNew(1);
-    timeStampPicosVector.set(0, new Text("2026-04-08 10:00:00.123456789123 UTC"));
+    timeStampPicosVector.set(0, new Text("2026-04-08T10:00:00.123456789123Z"));
     timeStampPicosVector.setValueCount(1);
 
     VectorSchemaRoot picosRoot = new VectorSchemaRoot(ImmutableList.of(timeStampPicosVector));
