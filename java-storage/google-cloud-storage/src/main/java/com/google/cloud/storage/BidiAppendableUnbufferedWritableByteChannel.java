@@ -26,6 +26,7 @@ import java.nio.channels.ClosedChannelException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 final class BidiAppendableUnbufferedWritableByteChannel implements UnbufferedWritableByteChannel {
 
@@ -36,6 +37,7 @@ final class BidiAppendableUnbufferedWritableByteChannel implements UnbufferedWri
   private boolean open;
   private long writeOffset;
   private volatile boolean nextWriteShouldFinalize;
+  private @Nullable String expectedCrc32c;
   private boolean writeCalledAtLeastOnce;
   private long lastFlushOffset;
 
@@ -53,6 +55,7 @@ final class BidiAppendableUnbufferedWritableByteChannel implements UnbufferedWri
     this.open = true;
     this.writeOffset = writeOffset;
     this.nextWriteShouldFinalize = false;
+    this.expectedCrc32c = null;
     this.writeThrewError = false;
     this.lastFlushOffset = writeOffset;
   }
@@ -96,7 +99,7 @@ final class BidiAppendableUnbufferedWritableByteChannel implements UnbufferedWri
       }
       if (nextWriteShouldFinalize) {
         //noinspection StatementWithEmptyBody
-        while (!stream.finishWrite(writeOffset)) {}
+        while (!stream.finishWrite(writeOffset, expectedCrc32c)) {}
       } else {
         //noinspection StatementWithEmptyBody
         while (!stream.closeStream(writeOffset)) {}
@@ -111,6 +114,11 @@ final class BidiAppendableUnbufferedWritableByteChannel implements UnbufferedWri
 
   public void nextWriteShouldFinalize() {
     this.nextWriteShouldFinalize = true;
+  }
+
+  public void nextWriteShouldFinalize(@Nullable String expectedCrc32c) {
+    this.nextWriteShouldFinalize = true;
+    this.expectedCrc32c = expectedCrc32c;
   }
 
   void flush() throws InterruptedException {
@@ -155,7 +163,7 @@ final class BidiAppendableUnbufferedWritableByteChannel implements UnbufferedWri
       if (i < lastIdx && !shouldFlush) {
         appended = stream.append(datum);
       } else if (i == lastIdx && remainingAfterPacking == 0 && nextWriteShouldFinalize) {
-        appended = stream.appendAndFinalize(datum);
+        appended = stream.appendAndFinalize(datum, expectedCrc32c);
       } else {
         appended = stream.appendAndFlush(datum);
       }

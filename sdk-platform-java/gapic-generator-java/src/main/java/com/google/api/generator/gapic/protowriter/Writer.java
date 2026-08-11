@@ -34,7 +34,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarOutputStream;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 public class Writer {
 
   static class GapicWriterException extends RuntimeException {
@@ -43,13 +46,13 @@ public class Writer {
     }
   }
 
-  public static final CodeGeneratorResponse EMPTY_RESPONSE = null;
+  public static final @Nullable CodeGeneratorResponse EMPTY_RESPONSE = null;
 
   @VisibleForTesting
-  protected static CodeGeneratorResponse write(
+  protected static @Nullable CodeGeneratorResponse write(
       GapicContext context,
       List<GapicClass> clazzes,
-      GapicPackageInfo gapicPackageInfo,
+      @Nullable GapicPackageInfo gapicPackageInfo,
       List<ReflectConfig> reflectConfigInfo,
       String outputFilePath,
       JarOutputStream jos,
@@ -84,10 +87,10 @@ public class Writer {
     return response.build();
   }
 
-  public static CodeGeneratorResponse write(
+  public static @Nullable CodeGeneratorResponse write(
       GapicContext context,
       List<GapicClass> clazzes,
-      GapicPackageInfo gapicPackageInfo,
+      @Nullable GapicPackageInfo gapicPackageInfo,
       List<ReflectConfig> reflectConfigInfo,
       String outputFilePath) {
     ByteString.Output output = ByteString.newOutput();

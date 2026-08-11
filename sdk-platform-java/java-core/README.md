@@ -33,9 +33,9 @@ considered stable.
 
 Apache 2.0 - See [LICENSE][license] for more information.
 
-[contributing]: https://github.com/googleapis/java-core/blob/main/CONTRIBUTING.md
-[code-of-conduct]: https://github.com/googleapis/java-core/blob/main/CODE_OF_CONDUCT.md
-[license]: https://github.com/googleapis/java-core/blob/main/LICENSE
+[contributing]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
+[code-of-conduct]: https://github.com/googleapis/google-cloud-java/blob/main/CODE_OF_CONDUCT.md
+[license]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
 [semver]: http://semver.org/
 [cloud-platform]: https://cloud.google.com/
 [api-docs]: https://googleapis.dev/java/google-cloud-core/latest

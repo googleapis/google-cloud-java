@@ -15,20 +15,21 @@
 package com.google.api.generator.gapic.model;
 
 import com.google.protobuf.DescriptorProtos.SourceCodeInfo.Location;
-import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A light wrapper around SourceCodeInfo.Location to provide cleaner protobuf comments. Please see
  * additional documentation on descriptor.proto.
  */
+@NullMarked
 public class SourceCodeInfoLocation {
-  @Nonnull private final Location location;
+  private final Location location;
 
   private SourceCodeInfoLocation(Location location) {
     this.location = location;
   }
 
-  public static SourceCodeInfoLocation create(@Nonnull Location location) {
+  public static SourceCodeInfoLocation create(Location location) {
     return new SourceCodeInfoLocation(location);
   }
 

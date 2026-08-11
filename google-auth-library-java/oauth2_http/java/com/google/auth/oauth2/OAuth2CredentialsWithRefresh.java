@@ -35,12 +35,14 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A refreshable alternative to {@link OAuth2Credentials}.
  *
  * <p>To enable automatic token refreshes, you must provide an {@link OAuth2RefreshHandler}.
  */
+@NullMarked
 public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
 
   /** Interface for the refresh handler. */

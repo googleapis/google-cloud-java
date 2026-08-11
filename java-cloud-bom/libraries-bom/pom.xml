@@ -4,7 +4,7 @@
   <!-- adding comment for testing-->
   <groupId>com.google.cloud</groupId>
   <artifactId>libraries-bom</artifactId>
-  <version>26.85.1</version><!-- {x-version-update:libraries-bom:current} -->
+  <version>26.87.0-SNAPSHOT</version><!-- {x-version-update:libraries-bom:current} -->
   <packaging>pom</packaging>
 
   <name>Google Cloud Platform Supported Libraries</name>
@@ -44,7 +44,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <first-party-dependencies.version>3.64.0</first-party-dependencies.version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+    <first-party-dependencies.version>3.66.0-SNAPSHOT</first-party-dependencies.version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
     <enforcer.skip>true</enforcer.skip>
   </properties>
 
@@ -62,7 +62,7 @@
   <dependencyManagement>
     <dependencies>
       <!-- first-party-dependencies is part of java-shared-dependencies
-           BOM in https://github.com/googleapis/sdk-platform-java/blob/main/java-shared-dependencies/first-party-dependencies/pom.xml.
+           BOM in https://github.com/googleapis/google-cloud-java/blob/main/sdk-platform-java/java-shared-dependencies/first-party-dependencies/pom.xml.
            This includes Guava, Protobuf, gRPC, Google Auth Libraries, etc. -->
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -75,7 +75,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.266.1</version><!-- {x-version-update:google-cloud-bom:current} -->
+        <version>0.268.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bom:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>

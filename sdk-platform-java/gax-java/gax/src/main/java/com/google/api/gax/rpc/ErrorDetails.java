@@ -122,14 +122,12 @@ public abstract class ErrorDetails {
    * Attempt to unpack a non-default error message type {@code T}. The first occurrence of a {@code
    * T} is returned, null otherwise.
    */
-  @Nullable
-  public <T extends Message> T getMessage(Class<T> messageClass) {
+  public <T extends Message> @Nullable T getMessage(Class<T> messageClass) {
     return unpack(messageClass);
   }
 
   /** This is a list of raw/unparsed error messages that returns from server. */
-  @Nullable
-  abstract List<Any> getRawErrorMessages();
+  abstract @Nullable List<Any> getRawErrorMessages();
 
   public static Builder builder() {
     return new AutoValue_ErrorDetails.Builder();
@@ -144,7 +142,7 @@ public abstract class ErrorDetails {
   }
 
   @VisibleForTesting
-  <T extends Message> T unpack(Class<T> errorTypeClazz) {
+  <T extends Message> @Nullable T unpack(Class<T> errorTypeClazz) {
     List<Any> rawErrorMessages = getRawErrorMessages();
     if (rawErrorMessages == null) {
       return null;

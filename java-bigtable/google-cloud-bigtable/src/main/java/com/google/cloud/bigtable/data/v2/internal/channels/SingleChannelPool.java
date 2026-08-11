@@ -19,7 +19,6 @@ package com.google.cloud.bigtable.data.v2.internal.channels;
 import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration;
 import com.google.bigtable.v2.SessionRequest;
 import com.google.bigtable.v2.SessionResponse;
-import com.google.common.util.concurrent.MoreExecutors;
 import io.grpc.CallOptions;
 import io.grpc.ManagedChannel;
 import io.grpc.MethodDescriptor;
@@ -46,10 +45,14 @@ public class SingleChannelPool implements ChannelPool {
   @Override
   public SessionStream newStream(
       MethodDescriptor<SessionRequest, SessionResponse> desc, CallOptions callOptions) {
-    // DirectExecutor: gRPC/Netty delivers SessionStream.Listener callbacks directly on the
-    // I/O thread. All work must be fast and non-blocking; blocking work goes to sessionSyncContext.
-    return new SessionStreamImpl(
-        channel.newCall(desc, callOptions.withExecutor(MoreExecutors.directExecutor())));
+    // Do NOT override the call executor with directExecutor(): SessionStream.Listener callbacks
+    // acquire the SessionPool lock (onReady/onGoAway/onClose/onVRpcComplete). directExecutor()
+    // delivers those callbacks inline on the Netty event-loop (I/O) thread, so a contended pool
+    // lock blocks the event loop; the blocked event loop then can't deliver the very completions
+    // that would release sessions and drain the lock -> self-sustaining pod-wide wedge. Leaving
+    // the executor unset delivers callbacks on gRPC's off-loop channel executor, keeping
+    // pool-lock acquisition off the transport threads.
+    return new SessionStreamImpl(channel.newCall(desc, callOptions));
   }
 
   @Override

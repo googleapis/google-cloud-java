@@ -26,8 +26,10 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.util.List;
 import java.util.Objects;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class ResourceName {
   static final String SLASH = "/";
@@ -57,8 +59,7 @@ public abstract class ResourceName {
 
   public abstract boolean isOnlyWildcard();
 
-  @Nullable
-  public String getMatchingPattern(HttpBindings bindings) {
+  public @Nullable String getMatchingPattern(HttpBindings bindings) {
     List<String> bindingPatterns =
         ImmutableList.<String>builder()
             .add(bindings.pattern())
@@ -91,11 +92,9 @@ public abstract class ResourceName {
 
   // The message in which this resource was defined. Optional.
   // This is expected to be empty for file-level definitions.
-  @Nullable
-  public abstract String parentMessageName();
+  public abstract @Nullable String parentMessageName();
 
-  @Nullable
-  public abstract String description();
+  public abstract @Nullable String description();
 
   public boolean hasParentMessageName() {
     return parentMessageName() != null;
@@ -128,7 +127,7 @@ public abstract class ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (!(o instanceof ResourceName)) {
       return false;
     }

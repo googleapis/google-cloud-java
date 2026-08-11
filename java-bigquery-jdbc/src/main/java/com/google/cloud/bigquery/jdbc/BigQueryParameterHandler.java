@@ -60,16 +60,7 @@ class BigQueryParameterHandler {
 
         Object parameterValue = getParameter(i);
         StandardSQLTypeName sqlType = getSqlType(i);
-        if (parameterValue != null) {
-          if (sqlType == StandardSQLTypeName.INT64
-              && (parameterValue instanceof Short
-                  || parameterValue instanceof Byte
-                  || parameterValue instanceof BigInteger)) {
-            parameterValue = ((Number) parameterValue).longValue();
-          } else if (sqlType == StandardSQLTypeName.FLOAT64 && parameterValue instanceof Float) {
-            parameterValue = ((Number) parameterValue).doubleValue();
-          }
-        }
+        parameterValue = formatValueForQueryParameter(parameterValue, sqlType);
         LOG.finest(
             "Parameter %s of type %s at index %s added to QueryJobConfiguration",
             parameterValue, sqlType, i);
@@ -83,6 +74,38 @@ class BigQueryParameterHandler {
       }
     }
     return jobConfigurationBuilder;
+  }
+
+  static Object formatValueForQueryParameter(Object parameterValue, StandardSQLTypeName sqlType) {
+    if (parameterValue == null) {
+      return null;
+    }
+    if (sqlType == StandardSQLTypeName.INT64
+        && (parameterValue instanceof Short
+            || parameterValue instanceof Byte
+            || parameterValue instanceof BigInteger)) {
+      return ((Number) parameterValue).longValue();
+    }
+    if (sqlType == StandardSQLTypeName.FLOAT64 && parameterValue instanceof Float) {
+      return ((Number) parameterValue).doubleValue();
+    }
+    if (parameterValue instanceof java.sql.Timestamp) {
+      java.sql.Timestamp ts = (java.sql.Timestamp) parameterValue;
+      java.sql.Timestamp copy = new java.sql.Timestamp(ts.getTime());
+      copy.setNanos((ts.getNanos() / 1000) * 1000);
+      return copy.toString();
+    }
+    if (parameterValue instanceof java.sql.Time) {
+      String timeStr = parameterValue.toString();
+      if (timeStr.length() == 8) {
+        return timeStr + ".000000";
+      }
+      return timeStr;
+    }
+    if (parameterValue instanceof java.sql.Date || parameterValue instanceof java.util.Date) {
+      return parameterValue.toString();
+    }
+    return parameterValue;
   }
 
   void setParameter(int parameterIndex, Object value, Class type)

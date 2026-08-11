@@ -18,7 +18,9 @@ package com.google.cloud.datastore.it;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.testing.RemoteDatastoreHelper;
+import com.google.cloud.datastore.testing.RemoteDatastoreOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.truth.Truth;
 import java.util.Arrays;
 import org.junit.AfterClass;
@@ -29,13 +31,22 @@ import org.junit.runners.Parameterized;
 public class ITDatastoreTestGrpc extends AbstractITDatastoreTest {
   // setup for default db, grpc transport
   protected static final RemoteDatastoreHelper HELPER_DEFAULT_GRPC =
-      RemoteDatastoreHelper.create(GrpcTransportOptions.newBuilder().build());
+      RemoteDatastoreHelper.create(
+          RemoteDatastoreOptions.newBuilder()
+              .setTransportOptions(GrpcTransportOptions.newBuilder().build())
+              .setInstanceTags(ImmutableList.of("instance-tag"))
+              .build());
   private static final DatastoreOptions OPTIONS_DEFAULT_GRPC = HELPER_DEFAULT_GRPC.getOptions();
   private static final Datastore DATASTORE_DEFAULT_GRPC = OPTIONS_DEFAULT_GRPC.getService();
 
   // setup for custom db, grpc transport
   private static final RemoteDatastoreHelper HELPER_CUSTOM_DB_GRPC =
-      RemoteDatastoreHelper.create(CUSTOM_DB_ID, GrpcTransportOptions.newBuilder().build());
+      RemoteDatastoreHelper.create(
+          RemoteDatastoreOptions.newBuilder()
+              .setDatabaseId(CUSTOM_DB_ID)
+              .setTransportOptions(GrpcTransportOptions.newBuilder().build())
+              .setInstanceTags(ImmutableList.of("instance-tag"))
+              .build());
   private static final DatastoreOptions OPTIONS_CUSTOM_DB_GRPC = HELPER_CUSTOM_DB_GRPC.getOptions();
   private static final Datastore DATASTORE_CUSTOM_DB_GRPC = OPTIONS_CUSTOM_DB_GRPC.getService();
 

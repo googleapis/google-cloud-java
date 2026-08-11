@@ -31,9 +31,13 @@ import static org.mockito.Mockito.*;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.*;
-import com.google.cloud.bigquery.BigQuery.RoutineListOption;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
+import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.trace.StatusCode;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
+import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
@@ -44,19 +48,25 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
 import java.util.*;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.MethodSource;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BigQueryDatabaseMetaDataTest {
+
+  @RegisterExtension
+  public static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
   private BigQueryConnection bigQueryConnection;
   private BigQueryDatabaseMetaData dbMetadata;
@@ -73,6 +83,22 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getConnectionUrl()).thenReturn("jdbc:bigquery://test-project");
     when(bigQueryConnection.getBigQuery()).thenReturn(bigqueryClient);
     when(bigQueryConnection.createStatement()).thenReturn(mockStatement);
+    when(bigQueryConnection.getConnectionId()).thenReturn("test-connection-id");
+    when(bigQueryConnection.getTracer())
+        .thenReturn(
+            otelTesting
+                .getOpenTelemetry()
+                .getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME));
+    when(bigQueryConnection.getOtelContext()).thenReturn(Context.current());
+
+    Page<Dataset> datasetPageMock = mock(Page.class, withSettings().withoutAnnotations());
+    when(bigqueryClient.listDatasets(anyString(), any())).thenReturn(datasetPageMock);
+
+    Page<Table> tablePageMock = mock(Page.class, withSettings().withoutAnnotations());
+    when(bigqueryClient.listTables(any(DatasetId.class), any())).thenReturn(tablePageMock);
+
+    Table mockTable = mock(Table.class);
+    when(bigqueryClient.getTable(any(TableId.class))).thenReturn(mockTable);
     when(bigQueryConnection.getMetadataExecutor()).thenReturn(metadataExecutor);
     when(bigQueryConnection.getExecutorService()).thenReturn(metadataExecutor);
 
@@ -731,7 +757,7 @@ public class BigQueryDatabaseMetaDataTest {
     String schemaName = "dataset_beta";
     Dataset dataset = mockBigQueryDataset(catalog, schemaName);
 
-    dbMetadata.processSchemaInfo(dataset, collectedResults, resultSchemaFields);
+    dbMetadata.processSchemaInfo(dataset.getDatasetId(), collectedResults, resultSchemaFields);
 
     assertEquals(1, collectedResults.size());
     FieldValueList row = collectedResults.get(0);
@@ -1582,96 +1608,6 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals("proc_1", results.get(4).get("PROCEDURE_NAME").getStringValue());
     assertEquals("proc_1_spec", results.get(4).get("SPECIFIC_NAME").getStringValue());
     assertEquals("param_a", results.get(4).get("COLUMN_NAME").getStringValue());
-  }
-
-  @Test
-  public void testListMatchingProcedureIdsFromDatasets() throws Exception {
-    String catalog = "test-proj";
-    String schema1Name = "dataset1";
-    String schema2Name = "dataset2";
-    Dataset dataset1 = mockBigQueryDataset(catalog, schema1Name);
-    Dataset dataset2 = mockBigQueryDataset(catalog, schema2Name);
-    List<Dataset> datasetsToScan = Arrays.asList(dataset1, dataset2);
-
-    Routine proc1_ds1 = mockBigQueryRoutine(catalog, schema1Name, "proc_a", "PROCEDURE", "desc a");
-    Routine func1_ds1 = mockBigQueryRoutine(catalog, schema1Name, "func_b", "FUNCTION", "desc b");
-    Routine proc2_ds2 = mockBigQueryRoutine(catalog, schema2Name, "proc_c", "PROCEDURE", "desc c");
-
-    Page<Routine> page1 = mock(Page.class, withSettings().withoutAnnotations());
-    when(page1.iterateAll()).thenReturn(Arrays.asList(proc1_ds1, func1_ds1));
-    when(bigqueryClient.listRoutines(eq(dataset1.getDatasetId()), any(RoutineListOption.class)))
-        .thenReturn(page1);
-
-    Page<Routine> page2 = mock(Page.class, withSettings().withoutAnnotations());
-    when(page2.iterateAll()).thenReturn(Collections.singletonList(proc2_ds2));
-    when(bigqueryClient.listRoutines(eq(dataset2.getDatasetId()), any(RoutineListOption.class)))
-        .thenReturn(page2);
-
-    ExecutorService mockExecutor = mock(ExecutorService.class);
-    doAnswer(
-            invocation -> {
-              Callable<?> callable = invocation.getArgument(0);
-              @SuppressWarnings("unchecked") // Suppress warning for raw Future mock
-              Future<Object> mockedFuture = mock(Future.class);
-
-              try {
-                Object result = callable.call();
-                doReturn(result).when(mockedFuture).get();
-              } catch (InterruptedException interruptedException) {
-                doThrow(interruptedException).when(mockedFuture).get();
-              } catch (Exception e) {
-                doThrow(new ExecutionException(e)).when(mockedFuture).get();
-              }
-              return mockedFuture;
-            })
-        .when(mockExecutor)
-        .submit(any(Callable.class));
-
-    List<RoutineId> resultIds =
-        dbMetadata.listMatchingProcedureIdsFromDatasets(
-            datasetsToScan, null, null, mockExecutor, catalog, dbMetadata.LOG);
-
-    assertEquals(2, resultIds.size());
-    assertTrue(resultIds.contains(proc1_ds1.getRoutineId()));
-    assertTrue(resultIds.contains(proc2_ds2.getRoutineId()));
-    assertFalse(resultIds.contains(func1_ds1.getRoutineId())); // Should not contain functions
-
-    verify(mockExecutor, times(2)).submit(any(Callable.class));
-  }
-
-  @Test
-  public void testProcessProcedureArgumentsSequentially_Basic() throws InterruptedException {
-    String catalog = "p";
-    String schemaName = "d";
-    RoutineArgument arg1 = mockRoutineArgument("arg1_name", StandardSQLTypeName.STRING, "IN");
-    Routine proc1 =
-        mockBigQueryRoutineWithArgs(
-            catalog, schemaName, "proc1", "PROCEDURE", "desc1", Collections.singletonList(arg1));
-    Routine func1 =
-        mockBigQueryRoutineWithArgs(
-            catalog,
-            schemaName,
-            "func1",
-            "FUNCTION",
-            "desc_func",
-            Collections.emptyList()); // Should be skipped
-    Routine proc2 =
-        mockBigQueryRoutineWithArgs(
-            catalog, schemaName, "proc2", "PROCEDURE", "desc2", Collections.emptyList());
-
-    List<Routine> fullRoutines = Arrays.asList(proc1, func1, proc2);
-    Pattern columnNameRegex = null;
-    List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
-    Schema resultSchema = dbMetadata.defineGetProcedureColumnsSchema();
-    FieldList resultSchemaFields = resultSchema.getFields();
-
-    dbMetadata.processProcedureArgumentsSequentially(
-        fullRoutines, columnNameRegex, collectedResults, resultSchemaFields, dbMetadata.LOG);
-
-    // Only proc1 has arguments, so collectedResults should contain 1 row.
-    assertEquals(1, collectedResults.size());
-    FieldValueList row = collectedResults.get(0);
-    assertEquals("arg1_name", row.get("COLUMN_NAME").getStringValue());
   }
 
   @Test
@@ -2978,7 +2914,7 @@ public class BigQueryDatabaseMetaDataTest {
   }
 
   @Test
-  public void testGetSchemas_NoArgs_DelegatesCorrectly() throws SQLException {
+  public void testGetSchemas_NoArgs_DelegatesCorrectly() throws Exception {
     BigQueryDatabaseMetaData spiedDbMetadata = spy(dbMetadata);
     ResultSet mockResultSet = mock(ResultSet.class);
     doReturn(mockResultSet).when(spiedDbMetadata).getSchemas(null, null);
@@ -3269,6 +3205,48 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testGetSQLStateType() throws SQLException {
     assertEquals(DatabaseMetaData.sqlStateSQL, dbMetadata.getSQLStateType());
+  }
+
+  @ParameterizedTest
+  @MethodSource("metadataOperationProvider")
+  public void testMetadataOperation_generatesSpan(
+      MetadataOperation operation, String expectedSpanName) throws Exception {
+    operation.run();
+
+    SpanData span =
+        OpenTelemetryTestUtility.findSpanByName(otelTesting.getSpans(), expectedSpanName);
+    OpenTelemetryTestUtility.assertSpanStatus(span, StatusCode.UNSET);
+
+    OpenTelemetryTestUtility.assertSpanHasAttribute(
+        span,
+        AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.DB_SYSTEM_KEY),
+        BigQueryJdbcOpenTelemetry.DB_SYSTEM_VALUE);
+    OpenTelemetryTestUtility.assertSpanHasAttribute(
+        span,
+        AttributeKey.stringKey(BigQueryJdbcOpenTelemetry.DB_CONNECTION_ID_KEY),
+        "test-connection-id");
+  }
+
+  @FunctionalInterface
+  interface MetadataOperation {
+    void run() throws SQLException;
+  }
+
+  Stream<Arguments> metadataOperationProvider() {
+    return Stream.of(
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getCatalogs(),
+            "BigQueryDatabaseMetaData.getCatalogs"),
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getSchemas("catalog", "schema"),
+            "BigQueryDatabaseMetaData.getSchemas"),
+        Arguments.of(
+            (MetadataOperation)
+                () -> dbMetadata.getTables("catalog", "schema", "table", new String[] {"TABLE"}),
+            "BigQueryDatabaseMetaData.getTables"),
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getColumns("catalog", "schema", "table", "column"),
+            "BigQueryDatabaseMetaData.getColumns"));
   }
 
   @Test
