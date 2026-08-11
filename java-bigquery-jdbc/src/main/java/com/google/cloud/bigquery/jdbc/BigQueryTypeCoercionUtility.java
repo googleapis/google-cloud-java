@@ -183,13 +183,11 @@ class BigQueryTypeCoercionUtility {
                 Timestamp.class)
             .registerTypeCoercion(Text::toString, Text.class, String.class)
             .registerTypeCoercion(
-                (Text text) -> BigQueryTemporalUtility.boxTimestamp(text.toString()),
+                text -> BigQueryTemporalUtility.boxTimestamp(text.toString()),
                 Text.class,
                 Timestamp.class)
             .registerTypeCoercion(
-                (String str) -> BigQueryTemporalUtility.boxTimestamp(str),
-                String.class,
-                Timestamp.class)
+                BigQueryTemporalUtility::boxTimestamp, String.class, Timestamp.class)
             .registerTypeCoercion(new TextToInteger())
             .registerTypeCoercion(new LongToTimestamp())
             .registerTypeCoercion(new LongToTime())
