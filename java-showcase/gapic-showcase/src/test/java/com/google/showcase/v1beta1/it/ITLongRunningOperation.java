@@ -230,4 +230,35 @@ class ITLongRunningOperation {
           TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
     }
   }
+
+  @Test
+  void testHttpJson_LROErrorResponse_propagatesErrorDetails() throws Exception {
+    EchoClient httpjsonClient = TestClientInitializer.createHttpJsonEchoClient();
+    try {
+      PoetryError poetryError =
+          PoetryError.newBuilder().setPoem("Roses are red, violets are blue").build();
+      Status status =
+          Status.newBuilder()
+              .setCode(Code.ALREADY_EXISTS_VALUE)
+              .setMessage("The resource already exists")
+              .addDetails(Any.pack(poetryError))
+              .build();
+      WaitRequest waitRequest = WaitRequest.newBuilder().setError(status).build();
+      OperationFuture<WaitResponse, WaitMetadata> operationFuture =
+          httpjsonClient.waitOperationCallable().futureCall(waitRequest);
+      ExecutionException exception = assertThrows(ExecutionException.class, operationFuture::get);
+      assertThat(exception.getCause()).isInstanceOf(ApiException.class);
+      ApiException apiException = (ApiException) exception.getCause();
+
+      // Verify that error details are successfully propagated
+      assertThat(apiException.getErrorDetails()).isNotNull();
+      PoetryError unpackedError = apiException.getErrorDetails().getMessage(PoetryError.class);
+      assertThat(unpackedError).isNotNull();
+      assertThat(unpackedError.getPoem()).isEqualTo("Roses are red, violets are blue");
+    } finally {
+      httpjsonClient.close();
+      httpjsonClient.awaitTermination(
+          TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+    }
+  }
 }

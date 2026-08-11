@@ -67,6 +67,7 @@ import com.google.showcase.v1beta1.PagedExpandLegacyMappedResponse;
 import com.google.showcase.v1beta1.PagedExpandLegacyRequest;
 import com.google.showcase.v1beta1.PagedExpandRequest;
 import com.google.showcase.v1beta1.PagedExpandResponse;
+import com.google.showcase.v1beta1.PoetryError;
 import com.google.showcase.v1beta1.WaitMetadata;
 import com.google.showcase.v1beta1.WaitRequest;
 import com.google.showcase.v1beta1.WaitResponse;
@@ -94,6 +95,7 @@ public class HttpJsonEchoStub extends EchoStub {
       TypeRegistry.newBuilder()
           .add(WaitResponse.getDescriptor())
           .add(WaitMetadata.getDescriptor())
+          .add(PoetryError.getDescriptor())
           .build();
 
   private static final ApiMethodDescriptor<EchoRequest, EchoResponse> echoMethodDescriptor =
@@ -359,7 +361,7 @@ public class HttpJsonEchoStub extends EchoStub {
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create()
+                          ProtoRestSerializer.create(typeRegistry)
                               .toBody("*", request.toBuilder().build(), false))
                   .build())
           .setResponseParser(
