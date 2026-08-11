@@ -71,7 +71,8 @@ public class ITBigQueryJDBCTest extends ITBase {
   static final String connection_uri = ITBase.connectionUrl;
   static final String session_enabled_connection_uri = connection_uri + "EnableSession=1;";
   private static final String BASE_QUERY =
-      "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by" + " trip_distance asc LIMIT %s";
+      "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
+          + " trip_distance asc LIMIT %s";
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
   private static String DATASET;
@@ -393,7 +394,11 @@ public class ITBigQueryJDBCTest extends ITBase {
     // Query a dataset in the US
     Statement statement = connection.createStatement();
     BigQueryJdbcException ex =
-        assertThrows(BigQueryJdbcException.class, () -> statement.executeQuery("SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180"));
+        assertThrows(
+            BigQueryJdbcException.class,
+            () ->
+                statement.executeQuery(
+                    "SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180"));
     BigQueryError error = ex.getBigQueryException().getError();
     assertNotNull(error);
     assertEquals("accessDenied", error.getReason());
@@ -1689,7 +1694,8 @@ public class ITBigQueryJDBCTest extends ITBase {
             + "AllowLargeResults=1;"
             + "LargeResultTable=destination_table_test_legacy;"
             + "LargeResultDataset=INTEGRATION_TESTS;";
-    String selectLegacyQuery = "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200;";
+    String selectLegacyQuery =
+        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -1730,7 +1736,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     String connection_uri =
         ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;" + "AllowLargeResults=0;";
     String selectLegacyQuery =
-"SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 250000;";
+        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 250000;";
     Connection connection = DriverManager.getConnection(connection_uri, new Properties());
     Statement statement = connection.createStatement();
 
@@ -1751,7 +1757,8 @@ public class ITBigQueryJDBCTest extends ITBase {
             + "QueryDialect=SQL;"
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;";
-    String selectLegacyQuery = "SELECT * FROM `bigquery-public-data.deepmind_alphafold.metadata` LIMIT 200;";
+    String selectLegacyQuery =
+        "SELECT * FROM `bigquery-public-data.deepmind_alphafold.metadata` LIMIT 200;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -1786,7 +1793,7 @@ public class ITBigQueryJDBCTest extends ITBase {
                 + "LargeResultDataset=%s;",
             largeResultDataset);
     String selectLegacyQuery =
-"SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200;";
+        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     try (Connection connection = driver.connect(connection_uri, new Properties())) {
       Statement statement = connection.createStatement();
@@ -1814,7 +1821,7 @@ public class ITBigQueryJDBCTest extends ITBase {
     String connection_uri =
         ITBigQueryJDBCTest.connection_uri + "QueryDialect=BIG_QUERY;" + "AllowLargeResults=1;";
     String selectLegacyQuery =
-"SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 250000;";
+        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 250000;";
     Connection connection = DriverManager.getConnection(connection_uri, new Properties());
     Statement statement = connection.createStatement();
 
@@ -1835,7 +1842,8 @@ public class ITBigQueryJDBCTest extends ITBase {
             + "QueryDialect=BIG_QUERY;"
             + "AllowLargeResults=1;"
             + "LargeResultTable=FakeTable;";
-    String selectLegacyQuery = "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200;";
+    String selectLegacyQuery =
+        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -2112,7 +2120,9 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Tag("disable_tpc")
   public void testEncryptedTableWithKmsQueries() throws SQLException {
     // setup
-    org.junit.jupiter.api.Assumptions.assumeTrue(System.getenv("KMS_RESOURCE_PATH") != null, "KMS_RESOURCE_PATH is missing"); String KMSKeyName = System.getenv("KMS_RESOURCE_PATH");
+    org.junit.jupiter.api.Assumptions.assumeTrue(
+        System.getenv("KMS_RESOURCE_PATH") != null, "KMS_RESOURCE_PATH is missing");
+    String KMSKeyName = System.getenv("KMS_RESOURCE_PATH");
     String connection_uri = ITBigQueryJDBCTest.connection_uri + "KMSKeyName=" + KMSKeyName + ";";
     String selectQuery = "SELECT * FROM `JDBC_INTEGRATION_DATASET.KMS_Test_table`;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
@@ -2132,7 +2142,9 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   @Tag("disable_tpc")
   public void testIncorrectKmsThrows() throws SQLException {
-    org.junit.jupiter.api.Assumptions.assumeTrue(System.getenv("KMS_RESOURCE_PATH") != null, "KMS_RESOURCE_PATH is missing"); String KMSKeyName = System.getenv("KMS_RESOURCE_PATH");
+    org.junit.jupiter.api.Assumptions.assumeTrue(
+        System.getenv("KMS_RESOURCE_PATH") != null, "KMS_RESOURCE_PATH is missing");
+    String KMSKeyName = System.getenv("KMS_RESOURCE_PATH");
     String connection_uri = ITBigQueryJDBCTest.connection_uri + "KMSKeyName=" + KMSKeyName + ";";
     String selectQuery =
         "INSERT INTO `bigquery-devtools-drivers.JDBC_INTEGRATION_DATASET.No_KMS_Test_table` (id,"

@@ -61,8 +61,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   static Statement bigQueryStatement;
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
-  private static final String BASE_QUERY =
-      "SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));";
+  private static final String BASE_QUERY = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));";
   private static final String CONSTRAINTS_DATASET = "JDBC_CONSTRAINTS_TEST_DATASET";
   private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
   private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
