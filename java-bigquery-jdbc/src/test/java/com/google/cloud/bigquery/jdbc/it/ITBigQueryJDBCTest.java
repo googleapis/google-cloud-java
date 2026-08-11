@@ -255,6 +255,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testReadAPIPathLargeWithThresholdNotMet() throws SQLException {
     String connectionUri =
         ITBigQueryJDBCTest.connection_uri
@@ -1742,6 +1743,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidDestinationTableSavesQueriesWithStandardSQL() throws SQLException {
     // setup
     String connection_uri =
