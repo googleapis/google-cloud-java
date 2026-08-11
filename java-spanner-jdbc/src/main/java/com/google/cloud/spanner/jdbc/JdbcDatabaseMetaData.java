@@ -26,10 +26,12 @@ import com.google.cloud.spanner.Type;
 import com.google.cloud.spanner.Type.StructField;
 import com.google.cloud.spanner.connection.Connection.InternalMetadataQuery;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -40,6 +42,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Properties;
 import java.util.Scanner;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /** {@link DatabaseMetaData} implementation for Cloud Spanner */
 class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaData {
@@ -50,18 +54,19 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
   private static final String PRODUCT_NAME = "Google Cloud Spanner";
   private static final String POSTGRESQL_PRODUCT_NAME = PRODUCT_NAME + " PostgreSQL";
 
+  private static final ConcurrentMap<String, String> SQL_CACHE = new ConcurrentHashMap<>();
+
   @VisibleForTesting
   static String readSqlFromFile(String filename, Dialect dialect) {
-    InputStream in;
-    switch (dialect) {
-      case POSTGRESQL:
-        in = JdbcDatabaseMetaData.class.getResourceAsStream("postgresql/" + filename);
-        break;
-      case GOOGLE_STANDARD_SQL:
-      default:
-        in = JdbcDatabaseMetaData.class.getResourceAsStream(filename);
-    }
-    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+    return SQL_CACHE.computeIfAbsent(
+        filename + "/" + dialect, (key) -> loadSqlFromFile(filename, dialect));
+  }
+
+  private static String loadSqlFromFile(String filename, Dialect dialect) {
+    String resourcePath = dialect == Dialect.POSTGRESQL ? "postgresql/" + filename : filename;
+    InputStream in = JdbcDatabaseMetaData.class.getResourceAsStream(resourcePath);
+    Preconditions.checkNotNull(in, "Resource not found: " + resourcePath);
+    BufferedReader reader = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
     StringBuilder builder = new StringBuilder();
     try (Scanner scanner = new Scanner(reader)) {
       while (scanner.hasNextLine()) {
