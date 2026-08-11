@@ -247,8 +247,9 @@ public class QueryJobConfigurationTest {
     QueryResultsFormat format = QueryResultsFormat.ARROW;
     ArrowSerializationOptions options =
         ArrowSerializationOptions.newBuilder()
-            .setBufferCompression("LZ4")
-            .setPicosTimestampPrecision("PRECISION_MILLIS")
+            .setBufferCompression(ArrowSerializationOptions.CompressionCodec.LZ4_FRAME)
+            .setPicosTimestampPrecision(
+                ArrowSerializationOptions.TimestampPrecision.PRECISION_MILLIS)
             .build();
     QueryJobConfiguration job =
         QueryJobConfiguration.newBuilder(QUERY)
@@ -274,8 +275,12 @@ public class QueryJobConfigurationTest {
   @Test
   public void testArrowSerializationOptionsNullChecks() {
     ArrowSerializationOptions.Builder builder = ArrowSerializationOptions.newBuilder();
-    assertNull(builder.build().getBufferCompression());
-    assertNull(builder.build().getPicosTimestampPrecision());
+    assertEquals(
+        ArrowSerializationOptions.CompressionCodec.UNCOMPRESSED,
+        builder.build().getBufferCompression());
+    assertEquals(
+        ArrowSerializationOptions.TimestampPrecision.PRECISION_MICROS,
+        builder.build().getPicosTimestampPrecision());
 
     NullPointerException ex1 =
         assertThrows(NullPointerException.class, () -> builder.setBufferCompression(null));
@@ -284,6 +289,19 @@ public class QueryJobConfigurationTest {
     NullPointerException ex2 =
         assertThrows(NullPointerException.class, () -> builder.setPicosTimestampPrecision(null));
     assertEquals("picosTimestampPrecision cannot be null", ex2.getMessage());
+  }
+
+  @Test
+  public void testQueryJobConfigurationArrowNullChecks() {
+    QueryJobConfiguration.Builder builder = QueryJobConfiguration.newBuilder(QUERY);
+
+    NullPointerException ex1 =
+        assertThrows(NullPointerException.class, () -> builder.setQueryResultsFormat(null));
+    assertEquals("queryResultsFormat cannot be null", ex1.getMessage());
+
+    NullPointerException ex2 =
+        assertThrows(NullPointerException.class, () -> builder.setArrowSerializationOptions(null));
+    assertEquals("arrowSerializationOptions cannot be null", ex2.getMessage());
   }
 
   private void compareQueryJobConfiguration(

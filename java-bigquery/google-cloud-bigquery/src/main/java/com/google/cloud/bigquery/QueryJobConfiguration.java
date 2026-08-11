@@ -725,7 +725,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @BetaApi
     public Builder setQueryResultsFormat(QueryResultsFormat queryResultsFormat) {
-      this.queryResultsFormat = queryResultsFormat;
+      this.queryResultsFormat =
+          checkNotNull(queryResultsFormat, "queryResultsFormat cannot be null");
       return this;
     }
 
@@ -741,7 +742,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     @BetaApi
     public Builder setArrowSerializationOptions(
         ArrowSerializationOptions arrowSerializationOptions) {
-      this.arrowSerializationOptions = arrowSerializationOptions;
+      this.arrowSerializationOptions =
+          checkNotNull(arrowSerializationOptions, "arrowSerializationOptions cannot be null");
       return this;
     }
 

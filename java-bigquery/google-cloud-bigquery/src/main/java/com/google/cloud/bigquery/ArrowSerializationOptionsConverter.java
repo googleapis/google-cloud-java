@@ -31,12 +31,8 @@ final class ArrowSerializationOptionsConverter {
     }
     com.google.api.services.bigquery.model.ArrowSerializationOptions optionsPb =
         new com.google.api.services.bigquery.model.ArrowSerializationOptions();
-    if (options.getBufferCompression() != null) {
-      optionsPb.setBufferCompression(options.getBufferCompression());
-    }
-    if (options.getPicosTimestampPrecision() != null) {
-      optionsPb.setPicosTimestampPrecision(options.getPicosTimestampPrecision());
-    }
+    optionsPb.setBufferCompression(options.getBufferCompression().getValue());
+    optionsPb.setPicosTimestampPrecision(options.getPicosTimestampPrecision().getValue());
     return optionsPb;
   }
 
@@ -46,9 +42,25 @@ final class ArrowSerializationOptionsConverter {
     }
     com.google.api.services.bigquery.model.ArrowSerializationOptions optionsPb =
         (com.google.api.services.bigquery.model.ArrowSerializationOptions) optionsPbObj;
-    return ArrowSerializationOptions.newBuilder()
-        .setBufferCompression(optionsPb.getBufferCompression())
-        .setPicosTimestampPrecision(optionsPb.getPicosTimestampPrecision())
-        .build();
+    ArrowSerializationOptions.Builder builder = ArrowSerializationOptions.newBuilder();
+    if (optionsPb.getBufferCompression() != null) {
+      for (ArrowSerializationOptions.CompressionCodec codec :
+          ArrowSerializationOptions.CompressionCodec.values()) {
+        if (codec.getValue().equalsIgnoreCase(optionsPb.getBufferCompression())) {
+          builder.setBufferCompression(codec);
+          break;
+        }
+      }
+    }
+    if (optionsPb.getPicosTimestampPrecision() != null) {
+      for (ArrowSerializationOptions.TimestampPrecision precision :
+          ArrowSerializationOptions.TimestampPrecision.values()) {
+        if (precision.getValue().equalsIgnoreCase(optionsPb.getPicosTimestampPrecision())) {
+          builder.setPicosTimestampPrecision(precision);
+          break;
+        }
+      }
+    }
+    return builder.build();
   }
 }

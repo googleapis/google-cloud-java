@@ -32,8 +32,55 @@ public final class ArrowSerializationOptions implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
-  private final @Nullable String bufferCompression;
-  private final @Nullable String picosTimestampPrecision;
+  /** <b>[Beta]</b> Buffer compression codec for Apache Arrow record batches. */
+  @BetaApi
+  public enum CompressionCodec {
+    UNCOMPRESSED("UNCOMPRESSED"),
+    LZ4_FRAME("LZ4_FRAME"),
+    ZSTD("ZSTD");
+
+    private final String value;
+
+    CompressionCodec(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return value;
+    }
+  }
+
+  /** <b>[Beta]</b> Timestamp precision for Apache Arrow timestamp types. */
+  @BetaApi
+  public enum TimestampPrecision {
+    PRECISION_MILLIS("PRECISION_MILLIS"),
+    PRECISION_MICROS("PRECISION_MICROS"),
+    PRECISION_NANOS("PRECISION_NANOS"),
+    PRECISION_PICOS("PRECISION_PICOS");
+
+    private final String value;
+
+    TimestampPrecision(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return value;
+    }
+  }
+
+  private final CompressionCodec bufferCompression;
+  private final TimestampPrecision picosTimestampPrecision;
 
   private ArrowSerializationOptions(Builder builder) {
     this.bufferCompression = builder.bufferCompression;
@@ -42,14 +89,16 @@ public final class ArrowSerializationOptions implements Serializable {
 
   /**
    * <b>[Beta]</b> Returns the buffer compression algorithm (e.g., LZ4_FRAME, ZSTD, UNCOMPRESSED).
+   * Defaults to {@link CompressionCodec#UNCOMPRESSED}.
    */
   @BetaApi
-  public @Nullable String getBufferCompression() {
+  public CompressionCodec getBufferCompression() {
     return bufferCompression;
   }
 
   /**
-   * <b>[Beta]</b> Returns the timestamp precision for Arrow timestamp types.
+   * <b>[Beta]</b> Returns the timestamp precision for Arrow timestamp types. Defaults to {@link
+   * TimestampPrecision#PRECISION_MICROS}.
    *
    * <p>Note: Only applies when {@link QueryResultsFormat#ARROW} is enabled. For Arrow result
    * streams, this precision setting governs binary Arrow timestamp column types and takes
@@ -57,7 +106,7 @@ public final class ArrowSerializationOptions implements Serializable {
    * {@link QueryResultsFormat#STRUCT_ENCODING} JSON results.
    */
   @BetaApi
-  public @Nullable String getPicosTimestampPrecision() {
+  public TimestampPrecision getPicosTimestampPrecision() {
     return picosTimestampPrecision;
   }
 
@@ -84,8 +133,8 @@ public final class ArrowSerializationOptions implements Serializable {
       return false;
     }
     ArrowSerializationOptions that = (ArrowSerializationOptions) o;
-    return Objects.equals(bufferCompression, that.bufferCompression)
-        && Objects.equals(picosTimestampPrecision, that.picosTimestampPrecision);
+    return bufferCompression == that.bufferCompression
+        && picosTimestampPrecision == that.picosTimestampPrecision;
   }
 
   @Override
@@ -105,8 +154,8 @@ public final class ArrowSerializationOptions implements Serializable {
   /** <b>[Beta]</b> Builder for {@link ArrowSerializationOptions}. */
   @BetaApi
   public static final class Builder {
-    private @Nullable String bufferCompression;
-    private @Nullable String picosTimestampPrecision;
+    private CompressionCodec bufferCompression = CompressionCodec.UNCOMPRESSED;
+    private TimestampPrecision picosTimestampPrecision = TimestampPrecision.PRECISION_MICROS;
 
     private Builder() {}
 
@@ -114,7 +163,7 @@ public final class ArrowSerializationOptions implements Serializable {
      * <b>[Beta]</b> Sets the buffer compression algorithm (e.g., LZ4_FRAME, ZSTD, UNCOMPRESSED).
      */
     @BetaApi
-    public Builder setBufferCompression(String bufferCompression) {
+    public Builder setBufferCompression(CompressionCodec bufferCompression) {
       this.bufferCompression = checkNotNull(bufferCompression, "bufferCompression cannot be null");
       return this;
     }
@@ -128,7 +177,7 @@ public final class ArrowSerializationOptions implements Serializable {
      * {@link QueryResultsFormat#STRUCT_ENCODING} JSON results.
      */
     @BetaApi
-    public Builder setPicosTimestampPrecision(String picosTimestampPrecision) {
+    public Builder setPicosTimestampPrecision(TimestampPrecision picosTimestampPrecision) {
       this.picosTimestampPrecision =
           checkNotNull(picosTimestampPrecision, "picosTimestampPrecision cannot be null");
       return this;
