@@ -1,0 +1,434 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.bigquery.jdbc;
+
+import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import java.math.BigDecimal;
+import java.sql.Array;
+import java.sql.Date;
+import java.sql.Struct;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.sql.Types;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+/**
+ * A central, bidirectional engine for resolving and coercing types between JDBC, Java, and
+ * BigQuery.
+ */
+final class BigQueryTypeRegistry {
+
+  private static final TypeDescriptor<?>[] DESCRIPTORS_BY_ORDINAL;
+  private static final Map<Class<?>, TypeDescriptor<?>> DESCRIPTORS_BY_CLASS;
+  private static final Map<Integer, TypeDescriptor<?>> DESCRIPTORS_BY_JDBC_TYPE;
+
+  static {
+    DESCRIPTORS_BY_ORDINAL = new TypeDescriptor<?>[StandardSQLTypeName.values().length];
+    DESCRIPTORS_BY_CLASS = new ConcurrentHashMap<>();
+    DESCRIPTORS_BY_JDBC_TYPE = new ConcurrentHashMap<>();
+
+    register(createBoolDescriptor());
+    register(createStringDescriptor());
+    register(createInt64Descriptor());
+    register(createFloat64Descriptor());
+    register(createNumericDescriptor());
+    register(createDateDescriptor());
+    register(createDatetimeDescriptor());
+    register(createTimestampDescriptor());
+    register(createTimeDescriptor());
+    register(createBytesDescriptor());
+    register(createArrayDescriptor());
+    register(createStructDescriptor());
+    register(createJsonDescriptor());
+    register(createBignumericDescriptor());
+    register(createGeographyDescriptor());
+    register(createIntervalDescriptor());
+    register(createRangeDescriptor());
+  }
+
+  static TypeDescriptor<?> createBoolDescriptor() {
+    return new TypeDescriptor<>(
+        Types.BOOLEAN,
+        Boolean.class,
+        StandardSQLTypeName.BOOL,
+        Arrays.asList(Boolean.class),
+        (val, targetClass, zone) -> {
+          if (val instanceof Boolean) return val;
+          if (val instanceof String) return Boolean.parseBoolean((String) val);
+          throw new BigQueryJdbcException("Cannot convert to BOOL: " + val);
+        });
+  }
+
+  static TypeDescriptor<?> createStringDescriptor() {
+    return new TypeDescriptor<>(
+        Types.NVARCHAR,
+        String.class,
+        StandardSQLTypeName.STRING,
+        Arrays.asList(String.class),
+        (val, targetClass, zone) -> String.valueOf(val));
+  }
+
+  static TypeDescriptor<?> createInt64Descriptor() {
+    return new TypeDescriptor<>(
+        Types.BIGINT,
+        Long.class,
+        StandardSQLTypeName.INT64,
+        Arrays.asList(Long.class, Integer.class, Short.class, Byte.class),
+        (val, targetClass, zone) -> {
+          long longVal;
+          if (val instanceof Number) longVal = ((Number) val).longValue();
+          else if (val instanceof String) longVal = Long.parseLong((String) val);
+          else throw new BigQueryJdbcException("Cannot convert to INT64: " + val);
+
+          if (targetClass == Integer.class) return (int) longVal;
+          if (targetClass == Short.class) return (short) longVal;
+          if (targetClass == Byte.class) return (byte) longVal;
+          return longVal;
+        });
+  }
+
+  static TypeDescriptor<?> createFloat64Descriptor() {
+    return new TypeDescriptor<>(
+        Types.DOUBLE,
+        Double.class,
+        StandardSQLTypeName.FLOAT64,
+        Arrays.asList(Double.class, Float.class),
+        (val, targetClass, zone) -> {
+          double doubleVal;
+          if (val instanceof Number) doubleVal = ((Number) val).doubleValue();
+          else if (val instanceof String) doubleVal = Double.parseDouble((String) val);
+          else throw new BigQueryJdbcException("Cannot convert to FLOAT64: " + val);
+
+          if (targetClass == Float.class) return (float) doubleVal;
+          return doubleVal;
+        });
+  }
+
+  static TypeDescriptor<?> createNumericDescriptor() {
+    return new TypeDescriptor<>(
+        Types.NUMERIC,
+        BigDecimal.class,
+        StandardSQLTypeName.NUMERIC,
+        Arrays.asList(BigDecimal.class),
+        (val, targetClass, zone) -> {
+          if (val instanceof BigDecimal) return val;
+          if (val instanceof Number) return new BigDecimal(val.toString());
+          if (val instanceof String) return new BigDecimal((String) val);
+          throw new BigQueryJdbcException("Cannot convert to NUMERIC: " + val);
+        });
+  }
+
+  static TypeDescriptor<?> createDateDescriptor() {
+    return new TypeDescriptor<>(
+        Types.DATE,
+        Date.class,
+        StandardSQLTypeName.DATE,
+        Arrays.asList(Date.class, LocalDate.class),
+        (val, targetClass, zone) -> {
+          // TODO(Phase 3): Add native JSR-310 fast-path to bypass boxing for LocalDate
+          Date sqlDate;
+          if (val instanceof Date) sqlDate = (Date) val;
+          else if (val instanceof java.util.Date)
+            sqlDate = new Date(((java.util.Date) val).getTime());
+          else if (val instanceof LocalDate) sqlDate = Date.valueOf((LocalDate) val);
+          else if (val instanceof String)
+            sqlDate = BigQueryTemporalUtility.boxDate((String) val, zone);
+          else throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
+
+          if (targetClass == LocalDate.class) return sqlDate.toLocalDate();
+          return sqlDate;
+        });
+  }
+
+  static TypeDescriptor<?> createDatetimeDescriptor() {
+    return new TypeDescriptor<>(
+        Types.TIMESTAMP,
+        Timestamp.class,
+        StandardSQLTypeName.DATETIME,
+        Arrays.asList(Timestamp.class, LocalDateTime.class),
+        (val, targetClass, zone) -> {
+          // TODO(Phase 3): Add native JSR-310 fast-path to bypass boxing for LocalDateTime
+          Timestamp ts;
+          if (val instanceof Timestamp) ts = (Timestamp) val;
+          else if (val instanceof java.util.Date)
+            ts = new Timestamp(((java.util.Date) val).getTime());
+          else if (val instanceof LocalDateTime) ts = Timestamp.valueOf((LocalDateTime) val);
+          else if (val instanceof String)
+            ts = BigQueryTemporalUtility.boxDateTime((String) val, zone);
+          else throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
+
+          if (targetClass == LocalDateTime.class) return ts.toLocalDateTime();
+          return ts;
+        });
+  }
+
+  static TypeDescriptor<?> createTimestampDescriptor() {
+    return new TypeDescriptor<>(
+        Types.TIMESTAMP,
+        Timestamp.class,
+        StandardSQLTypeName.TIMESTAMP,
+        Arrays.asList(Timestamp.class, OffsetDateTime.class, Instant.class, ZonedDateTime.class),
+        (val, targetClass, zone) -> {
+          // TODO(Phase 3): Add native JSR-310 fast-path to bypass boxing for Instant, etc.
+          Timestamp ts;
+          if (val instanceof Timestamp) ts = (Timestamp) val;
+          else if (val instanceof java.util.Date)
+            ts = new Timestamp(((java.util.Date) val).getTime());
+          else if (val instanceof Instant) ts = Timestamp.from((Instant) val);
+          else if (val instanceof OffsetDateTime)
+            ts = Timestamp.from(((OffsetDateTime) val).toInstant());
+          else if (val instanceof ZonedDateTime)
+            ts = Timestamp.from(((ZonedDateTime) val).toInstant());
+          else if (val instanceof String) ts = BigQueryTemporalUtility.boxTimestamp((String) val);
+          else throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
+
+          if (targetClass == Instant.class) return ts.toInstant();
+          if (targetClass == OffsetDateTime.class)
+            return ts.toInstant().atOffset(java.time.ZoneOffset.UTC);
+          if (targetClass == ZonedDateTime.class)
+            return ts.toInstant().atZone(java.time.ZoneOffset.UTC);
+          return ts;
+        });
+  }
+
+  static TypeDescriptor<?> createTimeDescriptor() {
+    return new TypeDescriptor<>(
+        Types.TIME,
+        Time.class,
+        StandardSQLTypeName.TIME,
+        Arrays.asList(Time.class, LocalTime.class),
+        (val, targetClass, zone) -> {
+          if (targetClass == LocalTime.class && val instanceof String) {
+            // Phase 3 Fast Path: Parse directly to LocalTime to preserve microsecond precision
+            return LocalTime.parse((String) val);
+          }
+
+          Time sqlTime;
+          if (val instanceof Time) sqlTime = (Time) val;
+          else if (val instanceof java.util.Date)
+            sqlTime = new Time(((java.util.Date) val).getTime());
+          else if (val instanceof LocalTime) sqlTime = Time.valueOf((LocalTime) val);
+          else if (val instanceof String)
+            sqlTime = BigQueryTemporalUtility.boxTime((String) val, zone);
+          else throw new BigQueryJdbcException("Cannot convert to TIME: " + val);
+
+          if (targetClass == LocalTime.class) {
+            // java.sql.Time.toLocalTime() drops milliseconds (JDK bug).
+            // We manually convert it using the JVM offset to preserve millisecond precision.
+            long epochMillis = sqlTime.getTime();
+            return Instant.ofEpochMilli(epochMillis).atZone(ZoneId.systemDefault()).toLocalTime();
+          }
+          return sqlTime;
+        });
+  }
+
+  static TypeDescriptor<?> createBytesDescriptor() {
+    return new TypeDescriptor<>(
+        Types.VARBINARY,
+        byte[].class,
+        StandardSQLTypeName.BYTES,
+        Arrays.asList(byte[].class),
+        (val, targetClass, zone) -> {
+          if (val instanceof byte[]) return val;
+          throw new BigQueryJdbcException("Cannot convert to BYTES: " + val);
+        });
+  }
+
+  static TypeDescriptor<?> createArrayDescriptor() {
+    return new TypeDescriptor<>(
+        Types.ARRAY,
+        Array.class,
+        StandardSQLTypeName.ARRAY,
+        Arrays.asList(Array.class),
+        (val, targetClass, zone) -> {
+          if (val instanceof Array) return val;
+          throw new BigQueryJdbcException("Cannot convert to ARRAY: " + val);
+        });
+  }
+
+  static TypeDescriptor<?> createStructDescriptor() {
+    return new TypeDescriptor<>(
+        Types.STRUCT,
+        Struct.class,
+        StandardSQLTypeName.STRUCT,
+        Arrays.asList(Struct.class),
+        (val, targetClass, zone) -> {
+          if (val instanceof Struct) return val;
+          throw new BigQueryJdbcException("Cannot convert to STRUCT: " + val);
+        });
+  }
+
+  static TypeDescriptor<?> createJsonDescriptor() {
+    return new TypeDescriptor<>(
+        Types.OTHER,
+        String.class,
+        StandardSQLTypeName.JSON,
+        Arrays.asList(com.google.gson.JsonObject.class),
+        (val, targetClass, zone) -> String.valueOf(val));
+  }
+
+  static TypeDescriptor<?> createBignumericDescriptor() {
+    return new TypeDescriptor<>(
+        Types.NUMERIC,
+        BigDecimal.class,
+        StandardSQLTypeName.BIGNUMERIC,
+        Arrays.asList(BigDecimal.class),
+        (val, targetClass, zone) -> {
+          if (val instanceof BigDecimal) return val;
+          if (val instanceof Number) return new BigDecimal(val.toString());
+          if (val instanceof String) return new BigDecimal((String) val);
+          throw new BigQueryJdbcException("Cannot convert to BIGNUMERIC: " + val);
+        });
+  }
+
+  static TypeDescriptor<?> createGeographyDescriptor() {
+    return new TypeDescriptor<>(
+        Types.OTHER,
+        String.class,
+        StandardSQLTypeName.GEOGRAPHY,
+        Arrays.asList(String.class),
+        (val, targetClass, zone) -> String.valueOf(val));
+  }
+
+  static TypeDescriptor<?> createIntervalDescriptor() {
+    return new TypeDescriptor<>(
+        Types.OTHER,
+        String.class,
+        StandardSQLTypeName.INTERVAL,
+        Arrays.asList(String.class),
+        (val, targetClass, zone) -> String.valueOf(val));
+  }
+
+  static TypeDescriptor<?> createRangeDescriptor() {
+    return new TypeDescriptor<>(
+        Types.OTHER,
+        String.class,
+        StandardSQLTypeName.RANGE,
+        Arrays.asList(String.class),
+        (val, targetClass, zone) -> String.valueOf(val));
+  }
+
+  private static void register(TypeDescriptor<?> descriptor) {
+    if (DESCRIPTORS_BY_ORDINAL[descriptor.getBqType().ordinal()] != null) {
+      throw new IllegalStateException(
+          "Error: Duplicate TypeDescriptor registration attempted for BigQuery type '"
+              + descriptor.getBqType()
+              + "'. A StandardSQLTypeName can only be registered once.");
+    }
+    DESCRIPTORS_BY_ORDINAL[descriptor.getBqType().ordinal()] = descriptor;
+    DESCRIPTORS_BY_JDBC_TYPE.putIfAbsent(descriptor.getJdbcType(), descriptor);
+    for (Class<?> clazz : descriptor.getSupportedJavaTypes()) {
+      DESCRIPTORS_BY_CLASS.putIfAbsent(clazz, descriptor);
+    }
+  }
+
+  private BigQueryTypeRegistry() {}
+
+  /**
+   * Returns the exact BigQuery StandardSQLTypeName for a given Java class. If no mapping is found,
+   * returns StandardSQLTypeName.STRING as a fallback to preserve backward compatibility.
+   */
+  public static StandardSQLTypeName toBigQueryType(Class<?> clazz) {
+    TypeDescriptor<?> descriptor = getDescriptorForClass(clazz);
+    if (descriptor != null) {
+      return descriptor.getBqType();
+    }
+    return StandardSQLTypeName.STRING; // Legacy fallback
+  }
+
+  /** Returns the default Java target class for a given JDBC type constant. */
+  public static Class<?> toJavaClass(int jdbcType) {
+    TypeDescriptor<?> descriptor = DESCRIPTORS_BY_JDBC_TYPE.get(jdbcType);
+    if (descriptor != null) {
+      return descriptor.getDefaultJavaClass();
+    }
+    return String.class; // Legacy fallback
+  }
+
+  /**
+   * Converts the input value to the target class type by looking up the target class descriptor.
+   */
+  @SuppressWarnings("unchecked")
+  public static <T> T convert(Object input, Class<T> targetClass) throws BigQueryJdbcException {
+    if (input == null) {
+      return null;
+    }
+    TypeDescriptor<?> descriptor = getDescriptorForClass(targetClass);
+    if (descriptor == null) {
+      throw new BigQueryJdbcException("Unsupported target class: " + targetClass.getName());
+    }
+    return (T) descriptor.convert(input, targetClass, null);
+  }
+
+  /**
+   * High-performance hotpath convert for ResultSets. Converts the input value using the default
+   * mapping for the given BigQuery type via O(1) array indexing.
+   */
+  public static Object convert(Object input, StandardSQLTypeName bqType, ZoneId zoneId)
+      throws BigQueryJdbcException {
+    if (input == null) return null;
+    int ordinal = bqType.ordinal();
+    if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
+      throw new BigQueryJdbcException("No type descriptor registered for BigQuery type: " + bqType);
+    }
+    TypeDescriptor<?> descriptor = DESCRIPTORS_BY_ORDINAL[ordinal];
+    return descriptor.convert(input, descriptor.getDefaultJavaClass(), zoneId);
+  }
+
+  /**
+   * High-performance hotpath convert for ResultSets. Converts the input value to the target class
+   * using the descriptor for the given BigQuery type via O(1) array indexing.
+   */
+  @SuppressWarnings("unchecked")
+  public static <T> T convert(
+      Object input, StandardSQLTypeName bqType, Class<T> targetClass, ZoneId zoneId)
+      throws BigQueryJdbcException {
+    if (input == null) return null;
+    int ordinal = bqType.ordinal();
+    if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
+      throw new BigQueryJdbcException("No type descriptor registered for BigQuery type: " + bqType);
+    }
+    return (T) DESCRIPTORS_BY_ORDINAL[ordinal].convert(input, targetClass, zoneId);
+  }
+
+  private static TypeDescriptor<?> getDescriptorForClass(Class<?> clazz) {
+    TypeDescriptor<?> descriptor = DESCRIPTORS_BY_CLASS.get(clazz);
+    if (descriptor != null) {
+      return descriptor;
+    }
+    // Fallback logic for subclasses/interfaces (O(N) initial lookup)
+    for (Map.Entry<Class<?>, TypeDescriptor<?>> entry : DESCRIPTORS_BY_CLASS.entrySet()) {
+      if (entry.getKey().isAssignableFrom(clazz)) {
+        TypeDescriptor<?> matchedDescriptor = entry.getValue();
+        // Cache the result in the ConcurrentHashMap to turn subsequent subclass lookups into O(1)
+        DESCRIPTORS_BY_CLASS.putIfAbsent(clazz, matchedDescriptor);
+        return matchedDescriptor;
+      }
+    }
+    return null;
+  }
+}
