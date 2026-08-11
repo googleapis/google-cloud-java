@@ -20,7 +20,9 @@ import static com.google.cloud.firestore.pipeline.expressions.Expression.constan
 import static com.google.cloud.firestore.pipeline.expressions.Expression.field;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.firestore.pipeline.stages.PipelineExecuteOptions;
 import com.google.cloud.firestore.pipeline.stages.Search;
+import com.google.firestore.v1.ExecutePipelineRequest;
 import com.google.firestore.v1.Pipeline.Stage;
 import com.google.firestore.v1.Value;
 import org.junit.Test;
@@ -102,5 +104,140 @@ public class PipelineProtoTest {
     // add_fields
     Value addFields = optionsMap.get("add_fields");
     assertThat(addFields.getMapValue().getFieldsMap().get("bar").getBooleanValue()).isTrue();
+  }
+
+  @Test
+  public void testInsertStageProtoEncoding() {
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId("new-project")
+            .setDatabaseId("(default)")
+            .build();
+    Firestore firestore = options.getService();
+
+    java.util.Map<String, Object> data = new java.util.HashMap<>();
+    data.put("title", "Test Book");
+
+    Pipeline pipeline =
+        firestore
+            .pipeline()
+            .literals(data)
+            .insert(
+                new com.google.cloud.firestore.pipeline.stages.Insert()
+                    .withCollection("books")
+                    .withDocumentId(constant("book1")));
+
+    com.google.firestore.v1.Pipeline protoPipeline = pipeline.toProto();
+    assertThat(protoPipeline.getStagesCount()).isEqualTo(2);
+
+    Stage insertStage = protoPipeline.getStages(1);
+    assertThat(insertStage.getName()).isEqualTo("insert");
+    assertThat(insertStage.getArgsCount()).isEqualTo(0);
+
+    java.util.Map<String, Value> optionsMap = insertStage.getOptionsMap();
+    assertThat(optionsMap.get("collection").getReferenceValue()).isEqualTo("/books");
+    assertThat(optionsMap.get("document_id").getStringValue()).isEqualTo("book1");
+  }
+
+  @Test
+  public void testUpsertStageProtoEncoding() {
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId("new-project")
+            .setDatabaseId("(default)")
+            .build();
+    Firestore firestore = options.getService();
+
+    java.util.Map<String, Object> data = new java.util.HashMap<>();
+    data.put("title", "Upsert Book");
+    data.put("count", 1);
+
+    Pipeline pipeline =
+        firestore
+            .pipeline()
+            .literals(data)
+            .upsert(
+                new com.google.cloud.firestore.pipeline.stages.Upsert(
+                        com.google.cloud.firestore.pipeline.expressions.Expression.add(
+                                field("count"), constant(1))
+                            .as("count"))
+                    .withCollection("books")
+                    .withDocumentId(constant("book1")));
+
+    com.google.firestore.v1.Pipeline protoPipeline = pipeline.toProto();
+    assertThat(protoPipeline.getStagesCount()).isEqualTo(2);
+
+    Stage upsertStage = protoPipeline.getStages(1);
+    assertThat(upsertStage.getName()).isEqualTo("upsert");
+    assertThat(upsertStage.getArgsCount()).isEqualTo(1);
+    assertThat(upsertStage.getArgs(0).getMapValue().getFieldsMap()).containsKey("count");
+
+    java.util.Map<String, Value> optionsMap = upsertStage.getOptionsMap();
+    assertThat(optionsMap.get("collection").getReferenceValue()).isEqualTo("/books");
+    assertThat(optionsMap.get("document_id").getStringValue()).isEqualTo("book1");
+  }
+
+  @Test
+  public void testAtomicExecutionOptionsConfigureNewTransactionAndAutoCommitTransaction() {
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId("new-project")
+            .setDatabaseId("(default)")
+            .build();
+    Firestore firestore = options.getService();
+
+    java.util.Map<String, Object> data = new java.util.HashMap<>();
+    data.put("title", "Atomic Book");
+
+    Pipeline pipeline =
+        firestore
+            .pipeline()
+            .literals(data)
+            .insert(
+                new com.google.cloud.firestore.pipeline.stages.Insert()
+                    .withCollection("books")
+                    .withDocumentId(constant("book1")));
+
+    PipelineExecuteOptions executeOptions = new PipelineExecuteOptions().withAtomic(true);
+    ExecutePipelineRequest request =
+        pipeline.toExecutePipelineRequest(executeOptions, null, null);
+
+    assertThat(request.hasNewTransaction()).isTrue();
+    assertThat(request.getNewTransaction().hasReadWrite()).isTrue();
+    assertThat(request.getAutoCommitTransaction()).isTrue();
+  }
+
+  @Test
+  public void testNonAtomicExecutionOptionsDoNotConfigureNewTransactionOrAutoCommitTransaction() {
+    FirestoreOptions options =
+        FirestoreOptions.newBuilder()
+            .setProjectId("new-project")
+            .setDatabaseId("(default)")
+            .build();
+    Firestore firestore = options.getService();
+
+    java.util.Map<String, Object> data = new java.util.HashMap<>();
+    data.put("title", "Non-Atomic Book");
+
+    Pipeline pipeline =
+        firestore
+            .pipeline()
+            .literals(data)
+            .insert(
+                new com.google.cloud.firestore.pipeline.stages.Insert()
+                    .withCollection("books")
+                    .withDocumentId(constant("book1")));
+
+    PipelineExecuteOptions executeOptionsDisabled = new PipelineExecuteOptions().withAtomic(false);
+    ExecutePipelineRequest requestDisabled =
+        pipeline.toExecutePipelineRequest(executeOptionsDisabled, null, null);
+    assertThat(requestDisabled.hasNewTransaction()).isFalse();
+    assertThat(requestDisabled.getAutoCommitTransaction()).isFalse();
+
+    PipelineExecuteOptions executeOptionsDefault = new PipelineExecuteOptions();
+    ExecutePipelineRequest requestDefault =
+        pipeline.toExecutePipelineRequest(executeOptionsDefault, null, null);
+    assertThat(requestDefault.hasNewTransaction()).isFalse();
+    assertThat(requestDefault.getAutoCommitTransaction()).isFalse();
   }
 }

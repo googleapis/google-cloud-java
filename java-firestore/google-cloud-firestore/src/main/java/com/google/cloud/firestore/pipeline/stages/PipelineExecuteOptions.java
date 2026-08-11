@@ -38,4 +38,13 @@ public final class PipelineExecuteOptions extends AbstractOptions<PipelineExecut
   public PipelineExecuteOptions withIndexMode(String indexMode) {
     return with("index_mode", indexMode);
   }
+
+  public PipelineExecuteOptions withAtomic(boolean atomic) {
+    return with("atomic", atomic);
+  }
+
+  public boolean isAtomic() {
+    return options.options.containsKey("atomic")
+        && options.options.get("atomic").getBooleanValue();
+  }
 }

@@ -47,6 +47,7 @@ import com.google.cloud.firestore.pipeline.stages.Delete;
 import com.google.cloud.firestore.pipeline.stages.Distinct;
 import com.google.cloud.firestore.pipeline.stages.FindNearest;
 import com.google.cloud.firestore.pipeline.stages.FindNearestOptions;
+import com.google.cloud.firestore.pipeline.stages.Insert;
 import com.google.cloud.firestore.pipeline.stages.Limit;
 import com.google.cloud.firestore.pipeline.stages.Offset;
 import com.google.cloud.firestore.pipeline.stages.PipelineExecuteOptions;
@@ -63,6 +64,7 @@ import com.google.cloud.firestore.pipeline.stages.Union;
 import com.google.cloud.firestore.pipeline.stages.Unnest;
 import com.google.cloud.firestore.pipeline.stages.UnnestOptions;
 import com.google.cloud.firestore.pipeline.stages.Update;
+import com.google.cloud.firestore.pipeline.stages.Upsert;
 import com.google.cloud.firestore.pipeline.stages.Where;
 import com.google.cloud.firestore.telemetry.MetricsUtil.MetricsContext;
 import com.google.cloud.firestore.telemetry.TelemetryConstants;
@@ -76,6 +78,7 @@ import com.google.firestore.v1.Document;
 import com.google.firestore.v1.ExecutePipelineRequest;
 import com.google.firestore.v1.ExecutePipelineResponse;
 import com.google.firestore.v1.StructuredPipeline;
+import com.google.firestore.v1.TransactionOptions;
 import com.google.firestore.v1.Value;
 import com.google.protobuf.ByteString;
 import java.util.ArrayList;
@@ -1306,6 +1309,21 @@ public final class Pipeline {
     return append(update);
   }
 
+  @BetaApi
+  public Pipeline insert(Insert insert) {
+    return append(insert);
+  }
+
+  @BetaApi
+  public Pipeline upsert(Upsert upsert) {
+    return append(upsert);
+  }
+
+  @BetaApi
+  public Pipeline upsert(Selectable... transformedFields) {
+    return append(new Upsert(transformedFields));
+  }
+
   /**
    * Performs an insert operation using documents from previous stages. Adds a generic stage to the
    * pipeline.
@@ -1509,15 +1527,13 @@ public final class Pipeline {
     }
   }
 
-  void executeInternal(
+  ExecutePipelineRequest toExecutePipelineRequest(
       @Nonnull PipelineExecuteOptions options,
       @Nullable final ByteString transactionId,
-      @Nullable com.google.protobuf.Timestamp readTime,
-      PipelineResultObserver observer,
-      MetricsContext metricsContext) {
+      @Nullable com.google.protobuf.Timestamp readTime) {
     ExecutePipelineRequest.Builder request =
         ExecutePipelineRequest.newBuilder()
-            .setDatabase(rpcContext.getDatabaseName())
+            .setDatabase(rpcContext != null ? rpcContext.getDatabaseName() : "")
             .setStructuredPipeline(
                 StructuredPipeline.newBuilder()
                     .setPipeline(toProto())
@@ -1526,14 +1542,31 @@ public final class Pipeline {
 
     if (transactionId != null) {
       request.setTransaction(transactionId);
+    } else if (options.isAtomic()) {
+      request.setNewTransaction(
+          TransactionOptions.newBuilder()
+              .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance())
+              .build());
+      request.setAutoCommitTransaction(true);
     }
 
     if (readTime != null) {
       request.setReadTime(readTime);
     }
 
+    return request.build();
+  }
+
+  void executeInternal(
+      @Nonnull PipelineExecuteOptions options,
+      @Nullable final ByteString transactionId,
+      @Nullable com.google.protobuf.Timestamp readTime,
+      PipelineResultObserver observer,
+      MetricsContext metricsContext) {
+    ExecutePipelineRequest request = toExecutePipelineRequest(options, transactionId, readTime);
+
     pipelineInternalStream(
-        request.build(),
+        request,
         new PipelineResultObserver() {
           @Override
           public void onCompleted() {
