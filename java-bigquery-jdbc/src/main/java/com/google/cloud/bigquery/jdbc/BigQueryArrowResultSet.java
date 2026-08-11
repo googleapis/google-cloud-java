@@ -50,6 +50,7 @@ import org.apache.arrow.vector.ipc.message.MessageSerializer;
 import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
+import org.apache.arrow.vector.util.Text;
 
 /** {@link ResultSet} Implementation for Arrow datasource (Using Storage Read APIs) */
 class BigQueryArrowResultSet extends BigQueryBaseResultSet {
@@ -343,6 +344,28 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     }
     setWasNull(value);
     return value;
+  }
+
+  @Override
+  public String getString(int columnIndex) throws SQLException {
+    checkClosed();
+    StandardSQLTypeName type = getStandardSQLTypeName(columnIndex);
+    if (type != StandardSQLTypeName.TIMESTAMP) {
+      return super.getString(columnIndex);
+    }
+    Object value = getObjectInternal(columnIndex);
+    if (value == null) {
+      return null;
+    }
+    if (value instanceof Text || value instanceof String) {
+      return BigQueryTemporalUtility.formatTimestampStringFromIso(
+          value.toString(), this.statement.isEnableTimestampPicos());
+    }
+    if (value instanceof Long) {
+      return BigQueryTemporalUtility.formatTimestampStringFromMicroseconds(
+          (Long) value, this.statement.isEnableTimestampPicos());
+    }
+    return super.getString(columnIndex);
   }
 
   @Override

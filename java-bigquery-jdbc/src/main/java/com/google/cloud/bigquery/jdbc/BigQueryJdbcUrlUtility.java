@@ -185,6 +185,8 @@ final class BigQueryJdbcUrlUtility {
   static final String SSL_TRUST_STORE_TYPE_PROPERTY_NAME = "SSLTrustStoreType";
   static final String SSL_TRUST_STORE_PROVIDER_PROPERTY_NAME = "SSLTrustStoreProvider";
   static final int DEFAULT_REQUEST_GOOGLE_DRIVE_SCOPE_VALUE = 0;
+  static final String ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME = "EnableTimestampPicos";
+  static final boolean DEFAULT_ENABLE_TIMESTAMP_PICOS_VALUE = false;
   static final String MAX_BYTES_BILLED_PROPERTY_NAME = "MaximumBytesBilled";
   static final Long DEFAULT_MAX_BYTES_BILLED_VALUE = 0L;
   static final String LABELS_PROPERTY_NAME = "Labels";
@@ -310,6 +312,12 @@ final class BigQueryJdbcUrlUtility {
       Collections.unmodifiableSet(
           new HashSet<>(
               Arrays.asList(
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME)
+                      .setDescription(
+                          "Enable 12-digit picosecond precision for TIMESTAMP columns. Set to 1 to enable. Disabled (0) by default.")
+                      .setDefaultValue(String.valueOf(DEFAULT_ENABLE_TIMESTAMP_PICOS_VALUE))
+                      .build(),
                   BigQueryConnectionProperty.newBuilder()
                       .setName(MAX_BYTES_BILLED_PROPERTY_NAME)
                       .setDescription(

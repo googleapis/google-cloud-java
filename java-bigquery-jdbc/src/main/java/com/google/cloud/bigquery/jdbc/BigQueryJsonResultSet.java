@@ -25,6 +25,7 @@ import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -212,6 +213,21 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
             e);
       }
     }
+  }
+
+  @Override
+  public String getString(int columnIndex) throws SQLException {
+    checkClosed();
+    StandardSQLTypeName type = getStandardSQLTypeName(columnIndex);
+    if (type != StandardSQLTypeName.TIMESTAMP) {
+      return super.getString(columnIndex);
+    }
+    FieldValue value = getObjectInternal(columnIndex);
+    if (value == null || value.isNull()) {
+      return null;
+    }
+    return BigQueryTemporalUtility.formatTimestampString(
+        value.getStringValue(), this.statement.isEnableTimestampPicos());
   }
 
   @Override

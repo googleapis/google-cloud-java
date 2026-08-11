@@ -58,6 +58,7 @@ public class DataSource implements javax.sql.DataSource {
   private Map<String, String> queryProperties;
   private String logLevel;
   private Boolean enableSession;
+  private Boolean enableTimestampPicos;
   private String logPath;
   private String gcpTelemetryProjectId;
   private String gcpTelemetryCredentials;
@@ -149,6 +150,12 @@ public class DataSource implements javax.sql.DataSource {
           .put(
               BigQueryJdbcUrlUtility.GCP_TELEMETRY_CREDENTIALS_PROPERTY_NAME,
               DataSource::setGcpTelemetryCredentials)
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableTimestampPicos(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.ENABLE_HTAPI_PROPERTY_NAME,
               (ds, val) ->
@@ -923,6 +930,16 @@ public class DataSource implements javax.sql.DataSource {
     return this.unsupportedHTAPIFallback != null
         ? this.unsupportedHTAPIFallback
         : BigQueryJdbcUrlUtility.DEFAULT_UNSUPPORTED_HTAPI_FALLBACK_VALUE;
+  }
+
+  public Boolean getEnableTimestampPicos() {
+    return enableTimestampPicos != null
+        ? enableTimestampPicos
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_TIMESTAMP_PICOS_VALUE;
+  }
+
+  public void setEnableTimestampPicos(Boolean enableTimestampPicos) {
+    this.enableTimestampPicos = enableTimestampPicos;
   }
 
   public Boolean getEnableSession() {

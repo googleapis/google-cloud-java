@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.common.base.Strings;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -24,6 +25,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 /**
@@ -31,6 +34,9 @@ import java.util.Calendar;
  * legacy JDBC Date/Time/Timestamp classes using JSR-310 timezone anchoring.
  */
 final class BigQueryTemporalUtility {
+
+  private static final DateTimeFormatter UTC_FORMATTER =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withZone(ZoneOffset.UTC);
 
   private BigQueryTemporalUtility() {}
 
@@ -90,6 +96,31 @@ final class BigQueryTemporalUtility {
   }
 
   /**
+   * Truncates a BigQuery timestamp string to 9 fractional digits (nanoseconds) because
+   * Instant.parse throws DateTimeParseException for >9 digits, and java.sql.Timestamp maxes out at
+   * nanos anyway.
+   */
+  private static String truncateToNanoseconds(String iso) {
+    // 'yyyy-MM-ddTHH:mm:ss.fffffffffZ' is 30 characters.
+    // If length is less than 30, it cannot contain more than 9 fractional digits.
+    if (iso.length() < 30) {
+      return iso;
+    }
+
+    int dotIdx = iso.indexOf('.');
+    if (dotIdx != -1) {
+      int fractionEnd = dotIdx + 1;
+      while (fractionEnd < iso.length() && Character.isDigit(iso.charAt(fractionEnd))) {
+        fractionEnd++;
+      }
+      if (fractionEnd - dotIdx - 1 > 9) {
+        return iso.substring(0, dotIdx + 10) + iso.substring(fractionEnd);
+      }
+    }
+    return iso;
+  }
+
+  /**
    * Converts a BigQuery absolute TIMESTAMP string into a legacy Timestamp. Because it is absolute,
    * the Calendar timezone is explicitly ignored per JDBC 4.2 spec.
    */
@@ -105,11 +136,79 @@ final class BigQueryTemporalUtility {
       iso = iso.substring(0, 10) + 'T' + iso.substring(11);
     }
 
+    iso = truncateToNanoseconds(iso);
+
     try {
       return Timestamp.from(Instant.parse(iso));
     } catch (java.time.format.DateTimeParseException e) {
       // Fallback for non-standard formats
       return Timestamp.valueOf(val);
     }
+  }
+
+  public static String formatTimestampString(String epochDecimal, boolean enableTimestampPicos) {
+    if (epochDecimal == null) {
+      return null;
+    }
+
+    int dotIdx = epochDecimal.indexOf('.');
+    long seconds;
+    String fraction;
+
+    if (dotIdx == -1) {
+      seconds = Long.parseLong(epochDecimal);
+      fraction = "";
+    } else {
+      seconds = Long.parseLong(epochDecimal.substring(0, dotIdx));
+      fraction = epochDecimal.substring(dotIdx + 1);
+    }
+
+    if (!enableTimestampPicos && fraction.length() > 6) {
+      fraction = fraction.substring(0, 6);
+    }
+    fraction = Strings.padEnd(fraction, 6, '0');
+
+    Instant instant = Instant.ofEpochSecond(seconds);
+    return UTC_FORMATTER.format(instant) + "." + fraction;
+  }
+
+  public static String formatTimestampStringFromMicroseconds(
+      long microseconds, boolean enableTimestampPicos) {
+    long seconds = Math.floorDiv(microseconds, 1000000L);
+    long micros = Math.floorMod(microseconds, 1000000L);
+
+    String fraction = Strings.padStart(Long.toString(micros), 6, '0');
+    Instant instant = Instant.ofEpochSecond(seconds);
+    return UTC_FORMATTER.format(instant) + "." + fraction;
+  }
+
+  public static String formatTimestampStringFromIso(
+      String isoString, boolean enableTimestampPicos) {
+    String result = isoString;
+
+    if (result.endsWith("Z")) {
+      result = result.substring(0, result.length() - 1);
+    } else if (result.endsWith(" UTC")) {
+      result = result.substring(0, result.length() - 4);
+    }
+
+    if (result.length() > 10 && result.charAt(10) == 'T') {
+      result = result.substring(0, 10) + ' ' + result.substring(11);
+    }
+
+    int dotIdx = result.indexOf('.');
+    if (dotIdx == -1) {
+      return result + ".000000";
+    }
+
+    int fractionLen = result.length() - dotIdx - 1;
+    if (!enableTimestampPicos && fractionLen > 6) {
+      return result.substring(0, dotIdx + 7);
+    }
+
+    if (fractionLen < 6) {
+      result = Strings.padEnd(result, result.length() + (6 - fractionLen), '0');
+    }
+    return result;
   }
 }

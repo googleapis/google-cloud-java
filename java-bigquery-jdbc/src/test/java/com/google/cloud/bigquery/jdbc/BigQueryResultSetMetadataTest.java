@@ -196,7 +196,7 @@ public class BigQueryResultSetMetadataTest {
     assertThat(resultSetMetaData.getColumnDisplaySize(2)).isEqualTo(10);
     assertThat(resultSetMetaData.getColumnDisplaySize(3)).isEqualTo(14);
     assertThat(resultSetMetaData.getColumnDisplaySize(12)).isEqualTo(50);
-    assertThat(resultSetMetaData.getColumnDisplaySize(5)).isEqualTo(16);
+    assertThat(resultSetMetaData.getColumnDisplaySize(5)).isEqualTo(26);
   }
 
   // Nested Types

@@ -185,6 +185,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   int highThroughputMinTableSize;
   int highThroughputActivationRatio;
   boolean enableSession;
+  boolean enableTimestampPicos;
   boolean enableProjectDiscovery;
   private List<String> discoveredProjectsCache;
   boolean unsupportedHTAPIFallback;
@@ -372,6 +373,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               this.sslTrustStoreProvider,
               this.connectionClassName);
       this.enableSession = ds.getEnableSession();
+      this.enableTimestampPicos = ds.getEnableTimestampPicos();
       this.unsupportedHTAPIFallback = ds.getUnsupportedHTAPIFallback();
       this.maxResults = ds.getMaxResults();
       Map<String, String> queryPropertiesMap = ds.getQueryProperties();
@@ -705,6 +707,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   boolean isSessionEnabled() {
     return this.enableSession;
+  }
+
+  boolean isEnableTimestampPicos() {
+    return this.enableTimestampPicos;
   }
 
   boolean isUnsupportedHTAPIFallback() {
