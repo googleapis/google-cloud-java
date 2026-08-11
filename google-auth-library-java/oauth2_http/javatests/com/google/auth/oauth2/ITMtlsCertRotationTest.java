@@ -38,7 +38,6 @@ import com.google.api.client.json.GenericJson;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.mtls.X509Provider;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -77,12 +76,13 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
 /**
- * End-to-end integration test verifying:
- * 1) mTLS Dynamic Certificate Rotation (MtlsHttpTransportFactory + X509Provider)
- * 2) STS 401 Unauthorized Retry Interception over real local HTTPS sockets requiring mTLS
+ * End-to-end integration test verifying: 1) mTLS Dynamic Certificate Rotation
+ * (MtlsHttpTransportFactory + X509Provider) 2) STS 401 Unauthorized Retry Interception over real
+ * local HTTPS sockets requiring mTLS
  *
- * Uses raw SSLServerSocket and static pre-generated test resource fixtures in testresources/mtls/
- * for zero host process / OpenSSL dependencies and zero JDK module instrumentation warnings.
+ * <p>Uses raw SSLServerSocket and static pre-generated test resource fixtures in
+ * testresources/mtls/ for zero host process / OpenSSL dependencies and zero JDK module
+ * instrumentation warnings.
  */
 public class ITMtlsCertRotationTest {
 
@@ -94,7 +94,8 @@ public class ITMtlsCertRotationTest {
   private Thread serverThread;
   private volatile boolean running = true;
   private int serverPort;
-  private final List<String> peerCertificatesReceived = Collections.synchronizedList(new ArrayList<>());
+  private final List<String> peerCertificatesReceived =
+      Collections.synchronizedList(new ArrayList<>());
   private final AtomicInteger requestCounter = new AtomicInteger(0);
   private final CountDownLatch serverReadyLatch = new CountDownLatch(1);
 
@@ -129,8 +130,12 @@ public class ITMtlsCertRotationTest {
         "{\n"
             + "  \"cert_configs\": {\n"
             + "    \"workload\": {\n"
-            + "      \"cert_path\": \"" + activeCertPath.toString().replace("\\", "/") + "\",\n"
-            + "      \"key_path\": \"" + activeKeyPath.toString().replace("\\", "/") + "\"\n"
+            + "      \"cert_path\": \""
+            + activeCertPath.toString().replace("\\", "/")
+            + "\",\n"
+            + "      \"key_path\": \""
+            + activeKeyPath.toString().replace("\\", "/")
+            + "\"\n"
             + "    }\n"
             + "  }\n"
             + "}\n";
@@ -176,7 +181,8 @@ public class ITMtlsCertRotationTest {
 
   @Test
   void endToEndMtlsCertRotation_on401Retry_reloadsRotatedCertAndSucceeds() throws Exception {
-    assertTrue(serverReadyLatch.await(5, TimeUnit.SECONDS), "Server socket failed to start in time");
+    assertTrue(
+        serverReadyLatch.await(5, TimeUnit.SECONDS), "Server socket failed to start in time");
 
     X509Provider x509Provider = new X509Provider(certConfigPath.toString());
     MtlsHttpTransportFactory transportFactory = new MtlsHttpTransportFactory(x509Provider);
@@ -197,8 +203,10 @@ public class ITMtlsCertRotationTest {
         ExternalAccountCredentials.fromJson(json, transportFactory);
 
     StsTokenExchangeRequest stsRequest =
-        StsTokenExchangeRequest.newBuilder("subject_token_payload", "urn:ietf:params:oauth:token-type:id_token")
-            .setAudience("//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+        StsTokenExchangeRequest.newBuilder(
+                "subject_token_payload", "urn:ietf:params:oauth:token-type:id_token")
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
             .build();
 
     AccessToken accessToken = credential.exchangeExternalCredentialForAccessToken(stsRequest);
@@ -230,12 +238,15 @@ public class ITMtlsCertRotationTest {
                   String peerPrincipalName = "UNKNOWN";
                   Certificate[] certs = clientSocket.getSession().getPeerCertificates();
                   if (certs != null && certs.length > 0 && certs[0] instanceof X509Certificate) {
-                    peerPrincipalName = ((X509Certificate) certs[0]).getSubjectX500Principal().getName();
+                    peerPrincipalName =
+                        ((X509Certificate) certs[0]).getSubjectX500Principal().getName();
                     peerCertificatesReceived.add(peerPrincipalName);
                   }
 
                   BufferedReader reader =
-                      new BufferedReader(new InputStreamReader(clientSocket.getInputStream(), StandardCharsets.UTF_8));
+                      new BufferedReader(
+                          new InputStreamReader(
+                              clientSocket.getInputStream(), StandardCharsets.UTF_8));
                   String line;
                   int contentLength = 0;
                   while ((line = reader.readLine()) != null && !line.isEmpty()) {
@@ -263,7 +274,9 @@ public class ITMtlsCertRotationTest {
                     String response =
                         "HTTP/1.1 401 Unauthorized\r\n"
                             + "Content-Type: application/json\r\n"
-                            + "Content-Length: " + payload.length + "\r\n"
+                            + "Content-Length: "
+                            + payload.length
+                            + "\r\n"
                             + "Connection: close\r\n\r\n";
                     os.write(response.getBytes(StandardCharsets.UTF_8));
                     os.write(payload);
@@ -277,7 +290,9 @@ public class ITMtlsCertRotationTest {
                     String response =
                         "HTTP/1.1 200 OK\r\n"
                             + "Content-Type: application/json\r\n"
-                            + "Content-Length: " + payload.length + "\r\n"
+                            + "Content-Length: "
+                            + payload.length
+                            + "\r\n"
                             + "Connection: close\r\n\r\n";
                     os.write(response.getBytes(StandardCharsets.UTF_8));
                     os.write(payload);
@@ -304,7 +319,8 @@ public class ITMtlsCertRotationTest {
     addCertToTrustStore(trustStore, cert1Path, "client-v1");
     addCertToTrustStore(trustStore, cert2Path, "client-v2");
 
-    TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+    TrustManagerFactory tmf =
+        TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
     tmf.init(trustStore);
 
     SSLContext sslContext = SSLContext.getInstance("TLS");
@@ -312,7 +328,8 @@ public class ITMtlsCertRotationTest {
     return sslContext;
   }
 
-  private void addCertToTrustStore(KeyStore trustStore, Path certPath, String alias) throws Exception {
+  private void addCertToTrustStore(KeyStore trustStore, Path certPath, String alias)
+      throws Exception {
     try (InputStream in = new FileInputStream(certPath.toFile())) {
       CertificateFactory cf = CertificateFactory.getInstance("X.509");
       X509Certificate cert = (X509Certificate) cf.generateCertificate(in);
@@ -320,17 +337,19 @@ public class ITMtlsCertRotationTest {
     }
   }
 
-  private KeyStore createKeyStoreFromPem(Path certPath, Path keyPath, String alias) throws Exception {
+  private KeyStore createKeyStoreFromPem(Path certPath, Path keyPath, String alias)
+      throws Exception {
     CertificateFactory cf = CertificateFactory.getInstance("X.509");
     X509Certificate cert;
     try (InputStream certIn = new FileInputStream(certPath.toFile())) {
       cert = (X509Certificate) cf.generateCertificate(certIn);
     }
 
-    String pemKey = new String(Files.readAllBytes(keyPath), StandardCharsets.UTF_8)
-        .replace("-----BEGIN PRIVATE KEY-----", "")
-        .replace("-----END PRIVATE KEY-----", "")
-        .replaceAll("\\s", "");
+    String pemKey =
+        new String(Files.readAllBytes(keyPath), StandardCharsets.UTF_8)
+            .replace("-----BEGIN PRIVATE KEY-----", "")
+            .replace("-----END PRIVATE KEY-----", "")
+            .replaceAll("\\s", "");
     byte[] keyBytes = Base64.getDecoder().decode(pemKey);
     PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(keyBytes);
     KeyFactory kf = KeyFactory.getInstance("RSA");
