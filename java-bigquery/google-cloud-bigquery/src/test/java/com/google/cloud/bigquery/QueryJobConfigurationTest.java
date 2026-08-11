@@ -248,8 +248,7 @@ public class QueryJobConfigurationTest {
     ArrowSerializationOptions options =
         ArrowSerializationOptions.newBuilder()
             .setBufferCompression(ArrowSerializationOptions.CompressionCodec.LZ4_FRAME)
-            .setPicosTimestampPrecision(
-                ArrowSerializationOptions.TimestampPrecision.PRECISION_MILLIS)
+            .setPicosTimestampPrecision(ArrowSerializationOptions.TimestampPrecision.NANOS)
             .build();
     QueryJobConfiguration job =
         QueryJobConfiguration.newBuilder(QUERY)
@@ -268,7 +267,7 @@ public class QueryJobConfigurationTest {
 
     // Test toPb/fromPb (not preserved)
     QueryJobConfiguration jobFromPb = QueryJobConfiguration.fromPb(job.toPb());
-    assertNull(jobFromPb.getQueryResultsFormat());
+    assertEquals(QueryResultsFormat.STRUCT_ENCODING, jobFromPb.getQueryResultsFormat());
     assertNull(jobFromPb.getArrowSerializationOptions());
   }
 
@@ -279,7 +278,7 @@ public class QueryJobConfigurationTest {
         ArrowSerializationOptions.CompressionCodec.UNCOMPRESSED,
         builder.build().getBufferCompression());
     assertEquals(
-        ArrowSerializationOptions.TimestampPrecision.PRECISION_MICROS,
+        ArrowSerializationOptions.TimestampPrecision.MICROS,
         builder.build().getPicosTimestampPrecision());
 
     NullPointerException ex1 =
@@ -289,6 +288,36 @@ public class QueryJobConfigurationTest {
     NullPointerException ex2 =
         assertThrows(NullPointerException.class, () -> builder.setPicosTimestampPrecision(null));
     assertEquals("picosTimestampPrecision cannot be null", ex2.getMessage());
+  }
+
+  @Test
+  public void testQueryJobConfigurationDefaults() {
+    QueryJobConfiguration defaultJob = QueryJobConfiguration.newBuilder(QUERY).build();
+
+    // Default query format is STRUCT_ENCODING; Arrow options are null by default
+    assertEquals(QueryResultsFormat.STRUCT_ENCODING, defaultJob.getQueryResultsFormat());
+    assertNull(defaultJob.getArrowSerializationOptions());
+
+    // Verify toBuilder preserves defaults
+    QueryJobConfiguration copiedJob = defaultJob.toBuilder().build();
+    assertEquals(QueryResultsFormat.STRUCT_ENCODING, copiedJob.getQueryResultsFormat());
+    assertNull(copiedJob.getArrowSerializationOptions());
+  }
+
+  @Test
+  public void testArrowFormatWithNullSerializationOptions() {
+    QueryJobConfiguration job =
+        QueryJobConfiguration.newBuilder(QUERY)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+
+    assertEquals(QueryResultsFormat.ARROW, job.getQueryResultsFormat());
+    assertNull(job.getArrowSerializationOptions());
+
+    // Verify toBuilder preserves ARROW format with null options
+    QueryJobConfiguration copiedJob = job.toBuilder().build();
+    assertEquals(QueryResultsFormat.ARROW, copiedJob.getQueryResultsFormat());
+    assertNull(copiedJob.getArrowSerializationOptions());
   }
 
   @Test
@@ -338,5 +367,7 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.getPositionalParameters(), value.getPositionalParameters());
     assertEquals(expected.getNamedParameters(), value.getNamedParameters());
     assertEquals(expected.getReservation(), value.getReservation());
+    assertEquals(expected.getQueryResultsFormat(), value.getQueryResultsFormat());
+    assertEquals(expected.getArrowSerializationOptions(), value.getArrowSerializationOptions());
   }
 }

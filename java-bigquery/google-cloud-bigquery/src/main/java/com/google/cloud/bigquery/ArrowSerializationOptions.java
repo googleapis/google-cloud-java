@@ -58,10 +58,9 @@ public final class ArrowSerializationOptions implements Serializable {
   /** <b>[Beta]</b> Timestamp precision for Apache Arrow timestamp types. */
   @BetaApi
   public enum TimestampPrecision {
-    PRECISION_MILLIS("PRECISION_MILLIS"),
-    PRECISION_MICROS("PRECISION_MICROS"),
-    PRECISION_NANOS("PRECISION_NANOS"),
-    PRECISION_PICOS("PRECISION_PICOS");
+    MICROS("PRECISION_MICROS"),
+    NANOS("PRECISION_NANOS"),
+    PICOS("PRECISION_PICOS");
 
     private final String value;
 
@@ -155,7 +154,7 @@ public final class ArrowSerializationOptions implements Serializable {
   @BetaApi
   public static final class Builder {
     private CompressionCodec bufferCompression = CompressionCodec.UNCOMPRESSED;
-    private TimestampPrecision picosTimestampPrecision = TimestampPrecision.PRECISION_MICROS;
+    private TimestampPrecision picosTimestampPrecision = TimestampPrecision.MICROS;
 
     private Builder() {}
 

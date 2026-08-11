@@ -147,7 +147,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Long maxResults;
     private JobCreationMode jobCreationMode;
     private String reservation;
-    private QueryResultsFormat queryResultsFormat;
+    private QueryResultsFormat queryResultsFormat = QueryResultsFormat.STRUCT_ENCODING;
     private ArrowSerializationOptions arrowSerializationOptions;
 
     private Builder() {
