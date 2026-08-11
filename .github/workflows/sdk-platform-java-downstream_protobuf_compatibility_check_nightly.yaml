@@ -86,6 +86,7 @@ jobs:
         with:
           java-version: 8
           distribution: temurin
+          cache: maven
       - run: echo "JAVA8_HOME=${JAVA_HOME}" >> $GITHUB_ENV
       # Java Client Libraries are compiled with Java 11 and target Java 8. Java 11 is required because GraalVM
       # minimum support is for Java 11.
