@@ -18,7 +18,7 @@
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * A PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
  * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
  * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
  * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
@@ -37,21 +37,18 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.google.api.client.json.GenericJson;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.mtls.X509Provider;
-import com.sun.net.httpserver.HttpExchange;
-import com.sun.net.httpserver.HttpHandler;
-import com.sun.net.httpserver.HttpsConfigurator;
-import com.sun.net.httpserver.HttpsExchange;
-import com.sun.net.httpserver.HttpsParameters;
-import com.sun.net.httpserver.HttpsServer;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.security.KeyFactory;
 import java.security.KeyStore;
@@ -66,11 +63,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLEngine;
-import javax.net.ssl.SSLParameters;
+import javax.net.ssl.SSLServerSocket;
+import javax.net.ssl.SSLSocket;
 import javax.net.ssl.TrustManagerFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -78,18 +77,26 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
 /**
- * End-to-end integration and manual verification test infrastructure for:
+ * End-to-end integration test verifying:
  * 1) mTLS Dynamic Certificate Rotation (MtlsHttpTransportFactory + X509Provider)
- * 2) STS 401 Unauthorized Retry Loop over real local HTTPS sockets requiring mTLS
+ * 2) STS 401 Unauthorized Retry Interception over real local HTTPS sockets requiring mTLS
+ *
+ * Uses raw SSLServerSocket and static pre-generated test resource fixtures in testresources/mtls/
+ * for zero host process / OpenSSL dependencies and zero JDK module instrumentation warnings.
  */
-public class MtlsCertRotationIntegrationTest {
+public class ITMtlsCertRotationTest {
+
+  private static final String TESTRESOURCES_DIR = "testresources/mtls/";
 
   @TempDir Path tempDir;
 
-  private HttpsServer server;
+  private SSLServerSocket serverSocket;
+  private Thread serverThread;
+  private volatile boolean running = true;
   private int serverPort;
   private final List<String> peerCertificatesReceived = Collections.synchronizedList(new ArrayList<>());
   private final AtomicInteger requestCounter = new AtomicInteger(0);
+  private final CountDownLatch serverReadyLatch = new CountDownLatch(1);
 
   private Path certConfigPath;
   private Path activeCertPath;
@@ -98,12 +105,19 @@ public class MtlsCertRotationIntegrationTest {
   private Path key1Path;
   private Path cert2Path;
   private Path key2Path;
+  private Path serverCertPath;
+  private Path serverKeyPath;
   private String oldTrustStore;
   private String oldTrustStorePassword;
 
   @BeforeEach
   void setUp() throws Exception {
-    generateCertificates();
+    cert1Path = Paths.get(TESTRESOURCES_DIR, "client_v1.crt");
+    key1Path = Paths.get(TESTRESOURCES_DIR, "client_v1.pem.key");
+    cert2Path = Paths.get(TESTRESOURCES_DIR, "client_v2.crt");
+    key2Path = Paths.get(TESTRESOURCES_DIR, "client_v2.pem.key");
+    serverCertPath = Paths.get(TESTRESOURCES_DIR, "server.crt");
+    serverKeyPath = Paths.get(TESTRESOURCES_DIR, "server.pem.key");
 
     activeCertPath = tempDir.resolve("active_client.crt");
     activeKeyPath = tempDir.resolve("active_client.pem.key");
@@ -122,14 +136,13 @@ public class MtlsCertRotationIntegrationTest {
             + "}\n";
     Files.write(certConfigPath, configJson.getBytes(StandardCharsets.UTF_8));
 
-    // Save previous truststore properties and set to our temporary client truststore
     oldTrustStore = System.getProperty("javax.net.ssl.trustStore");
     oldTrustStorePassword = System.getProperty("javax.net.ssl.trustStorePassword");
 
     Path clientTrustStorePath = tempDir.resolve("client_truststore.p12");
     KeyStore clientTrustStore = KeyStore.getInstance("PKCS12");
     clientTrustStore.load(null, null);
-    addCertToTrustStore(clientTrustStore, tempDir.resolve("server.crt"), "server");
+    addCertToTrustStore(clientTrustStore, serverCertPath, "server");
     try (FileOutputStream fos = new FileOutputStream(clientTrustStorePath.toFile())) {
       clientTrustStore.store(fos, "password".toCharArray());
     }
@@ -137,13 +150,17 @@ public class MtlsCertRotationIntegrationTest {
     System.setProperty("javax.net.ssl.trustStore", clientTrustStorePath.toString());
     System.setProperty("javax.net.ssl.trustStorePassword", "password");
 
-    startLocalMtlsServer();
+    startLocalMtlsServerSocket();
   }
 
   @AfterEach
   void tearDown() {
-    if (server != null) {
-      server.stop(0);
+    running = false;
+    if (serverSocket != null && !serverSocket.isClosed()) {
+      try {
+        serverSocket.close();
+      } catch (Exception ignored) {
+      }
     }
     if (oldTrustStore != null) {
       System.setProperty("javax.net.ssl.trustStore", oldTrustStore);
@@ -159,7 +176,7 @@ public class MtlsCertRotationIntegrationTest {
 
   @Test
   void endToEndMtlsCertRotation_on401Retry_reloadsRotatedCertAndSucceeds() throws Exception {
-    System.out.println("=== Starting End-to-End mTLS Certificate Rotation Integration Test ===");
+    assertTrue(serverReadyLatch.await(5, TimeUnit.SECONDS), "Server socket failed to start in time");
 
     X509Provider x509Provider = new X509Provider(certConfigPath.toString());
     MtlsHttpTransportFactory transportFactory = new MtlsHttpTransportFactory(x509Provider);
@@ -193,133 +210,91 @@ public class MtlsCertRotationIntegrationTest {
 
     assertTrue(peerCertificatesReceived.get(0).contains("CN=client-v1"));
     assertTrue(peerCertificatesReceived.get(1).contains("CN=client-v2"));
-
-    System.out.println("=== Verified: Cert V1 -> 401 -> Cert Rotation -> Cert V2 -> 200 OK Token Received! ===");
   }
 
-  private void generateCertificates() throws Exception {
-    cert1Path = tempDir.resolve("cert1.crt");
-    key1Path = tempDir.resolve("cert1.pem.key");
-    cert2Path = tempDir.resolve("cert2.crt");
-    key2Path = tempDir.resolve("cert2.pem.key");
-    Path serverCertPath = tempDir.resolve("server.crt");
-    Path serverKeyPath = tempDir.resolve("server.pem.key");
-
-    runOpenSslCommandWithSan(serverKeyPath, serverCertPath, "/CN=127.0.0.1", "subjectAltName=IP:127.0.0.1,DNS:localhost");
-    runOpenSslCommand(key1Path, cert1Path, "/CN=client-v1");
-    runOpenSslCommand(key2Path, cert2Path, "/CN=client-v2");
-  }
-
-  private void runOpenSslCommand(Path keyOut, Path certOut, String subj) throws Exception {
-    runOpenSslCommandWithSan(keyOut, certOut, subj, null);
-  }
-
-  private void runOpenSslCommandWithSan(Path keyOut, Path certOut, String subj, String sanExt) throws Exception {
-    List<String> cmd = new ArrayList<>();
-    cmd.add("openssl");
-    cmd.add("req");
-    cmd.add("-x509");
-    cmd.add("-newkey");
-    cmd.add("rsa:2048");
-    cmd.add("-keyout");
-    cmd.add(keyOut.toString());
-    cmd.add("-out");
-    cmd.add(certOut.toString());
-    cmd.add("-days");
-    cmd.add("1");
-    cmd.add("-nodes");
-    cmd.add("-subj");
-    cmd.add(subj);
-    if (sanExt != null) {
-      cmd.add("-addext");
-      cmd.add(sanExt);
-    }
-    ProcessBuilder pb = new ProcessBuilder(cmd);
-    int exitCode = pb.start().waitFor();
-    if (exitCode != 0) {
-      throw new RuntimeException("OpenSSL cert generation failed for " + subj);
-    }
-  }
-
-  private void startLocalMtlsServer() throws Exception {
-    server = HttpsServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
-    serverPort = server.getAddress().getPort();
-
+  private void startLocalMtlsServerSocket() throws Exception {
     SSLContext serverSslContext = createServerSslContext();
-    server.setHttpsConfigurator(
-        new HttpsConfigurator(serverSslContext) {
-          @Override
-          public void configure(HttpsParameters params) {
-            SSLEngine engine = serverSslContext.createSSLEngine();
-            SSLParameters sslParams = serverSslContext.getDefaultSSLParameters();
-            sslParams.setNeedClientAuth(true);
-            params.setSSLParameters(sslParams);
-          }
-        });
+    serverSocket = (SSLServerSocket) serverSslContext.getServerSocketFactory().createServerSocket();
+    serverSocket.bind(new InetSocketAddress("127.0.0.1", 0));
+    serverSocket.setNeedClientAuth(true);
+    serverPort = serverSocket.getLocalPort();
 
-    server.createContext(
-        "/sts/token",
-        new HttpHandler() {
-          @Override
-          public void handle(HttpExchange exchange) throws IOException {
-            int count = requestCounter.incrementAndGet();
-            String peerPrincipalName = "UNKNOWN";
-            try {
-              if (exchange instanceof HttpsExchange) {
-                Certificate[] certs = ((HttpsExchange) exchange).getSSLSession().getPeerCertificates();
-                if (certs != null && certs.length > 0 && certs[0] instanceof X509Certificate) {
-                  peerPrincipalName = ((X509Certificate) certs[0]).getSubjectX500Principal().getName();
-                  peerCertificatesReceived.add(peerPrincipalName);
+    serverThread =
+        new Thread(
+            () -> {
+              serverReadyLatch.countDown();
+              while (running) {
+                try (SSLSocket clientSocket = (SSLSocket) serverSocket.accept()) {
+                  clientSocket.startHandshake();
+                  int count = requestCounter.incrementAndGet();
+                  String peerPrincipalName = "UNKNOWN";
+                  Certificate[] certs = clientSocket.getSession().getPeerCertificates();
+                  if (certs != null && certs.length > 0 && certs[0] instanceof X509Certificate) {
+                    peerPrincipalName = ((X509Certificate) certs[0]).getSubjectX500Principal().getName();
+                    peerCertificatesReceived.add(peerPrincipalName);
+                  }
+
+                  BufferedReader reader =
+                      new BufferedReader(new InputStreamReader(clientSocket.getInputStream(), StandardCharsets.UTF_8));
+                  String line;
+                  int contentLength = 0;
+                  while ((line = reader.readLine()) != null && !line.isEmpty()) {
+                    if (line.toLowerCase().startsWith("content-length:")) {
+                      contentLength = Integer.parseInt(line.split(":")[1].trim());
+                    }
+                  }
+                  if (contentLength > 0) {
+                    char[] body = new char[contentLength];
+                    reader.read(body, 0, contentLength);
+                  }
+
+                  OutputStream os = clientSocket.getOutputStream();
+                  if (peerPrincipalName.contains("client-v1")) {
+                    Path tmpCert = tempDir.resolve("tmp_active_cert.crt");
+                    Path tmpKey = tempDir.resolve("tmp_active_key.pem.key");
+                    Files.copy(cert2Path, tmpCert, StandardCopyOption.REPLACE_EXISTING);
+                    Files.copy(key2Path, tmpKey, StandardCopyOption.REPLACE_EXISTING);
+                    Files.move(tmpCert, activeCertPath, StandardCopyOption.ATOMIC_MOVE);
+                    Files.move(tmpKey, activeKeyPath, StandardCopyOption.ATOMIC_MOVE);
+
+                    String jsonError =
+                        "{\"error\": \"invalid_grant\", \"error_description\": \"mTLS Certificate Expired\"}";
+                    byte[] payload = jsonError.getBytes(StandardCharsets.UTF_8);
+                    String response =
+                        "HTTP/1.1 401 Unauthorized\r\n"
+                            + "Content-Type: application/json\r\n"
+                            + "Content-Length: " + payload.length + "\r\n"
+                            + "Connection: close\r\n\r\n";
+                    os.write(response.getBytes(StandardCharsets.UTF_8));
+                    os.write(payload);
+                    os.flush();
+                  } else {
+                    String jsonOk =
+                        "{\"access_token\": \"access_token_via_rotated_mtls_cert_v2\","
+                            + " \"issued_token_type\": \"urn:ietf:params:oauth:token-type:access_token\","
+                            + " \"token_type\": \"Bearer\", \"expires_in\": 3600}";
+                    byte[] payload = jsonOk.getBytes(StandardCharsets.UTF_8);
+                    String response =
+                        "HTTP/1.1 200 OK\r\n"
+                            + "Content-Type: application/json\r\n"
+                            + "Content-Length: " + payload.length + "\r\n"
+                            + "Connection: close\r\n\r\n";
+                    os.write(response.getBytes(StandardCharsets.UTF_8));
+                    os.write(payload);
+                    os.flush();
+                  }
+                } catch (Exception e) {
+                  if (running) {
+                    e.printStackTrace();
+                  }
                 }
               }
-            } catch (Exception e) {
-              e.printStackTrace();
-            }
-
-            System.out.printf(
-                "| Server Handler | Request #%d received peer certificate: %s%n",
-                count, peerPrincipalName);
-
-            if (peerPrincipalName.contains("client-v1")) {
-              try {
-                Files.copy(cert2Path, activeCertPath, StandardCopyOption.REPLACE_EXISTING);
-                Files.copy(key2Path, activeKeyPath, StandardCopyOption.REPLACE_EXISTING);
-                System.out.println(
-                    "| Server Handler | Simulating cert rotation on disk: active cert is now Client Cert V2");
-              } catch (Exception e) {
-                e.printStackTrace();
-              }
-
-              String errorResponse =
-                  "{\"error\": \"invalid_grant\", \"error_description\": \"mTLS Certificate Expired\"}";
-              byte[] bytes = errorResponse.getBytes(StandardCharsets.UTF_8);
-              exchange.getResponseHeaders().set("Content-Type", "application/json");
-              exchange.sendResponseHeaders(401, bytes.length);
-              try (OutputStream os = exchange.getResponseBody()) {
-                os.write(bytes);
-              }
-            } else {
-              String tokenResponse =
-                  "{\"access_token\": \"access_token_via_rotated_mtls_cert_v2\","
-                      + " \"issued_token_type\": \"urn:ietf:params:oauth:token-type:access_token\","
-                      + " \"token_type\": \"Bearer\", \"expires_in\": 3600}";
-              byte[] bytes = tokenResponse.getBytes(StandardCharsets.UTF_8);
-              exchange.getResponseHeaders().set("Content-Type", "application/json");
-              exchange.sendResponseHeaders(200, bytes.length);
-              try (OutputStream os = exchange.getResponseBody()) {
-                os.write(bytes);
-              }
-            }
-          }
-        });
-
-    server.start();
+            });
+    serverThread.setDaemon(true);
+    serverThread.start();
   }
 
   private SSLContext createServerSslContext() throws Exception {
-    Path serverCertPath = tempDir.resolve("server.crt");
-    Path serverKeyPath = tempDir.resolve("server.pem.key");
-
     KeyStore keyStore = createKeyStoreFromPem(serverCertPath, serverKeyPath, "server");
     KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
     kmf.init(keyStore, "password".toCharArray());
