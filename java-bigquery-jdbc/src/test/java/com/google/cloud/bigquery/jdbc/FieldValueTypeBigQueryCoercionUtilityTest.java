@@ -315,6 +315,14 @@ public class FieldValueTypeBigQueryCoercionUtilityTest {
   }
 
   @Test
+  public void fieldValueToTimestampScientificNotation() {
+    FieldValue scientificValue = FieldValue.of(PRIMITIVE, "1.6905474E9");
+    Timestamp result = INSTANCE.coerceTo(Timestamp.class, scientificValue);
+    assertThat(result).isNotNull();
+    assertThat(result).isEqualTo(Timestamp.valueOf("2023-07-28 12:30:00"));
+  }
+
+  @Test
   public void fieldValueToTimestampWhenNull() {
     assertThat(INSTANCE.coerceTo(Timestamp.class, null)).isNull();
   }

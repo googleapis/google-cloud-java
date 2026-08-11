@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import java.time.Instant;
 import org.junit.jupiter.api.Test;
 
 public class BigQueryTemporalUtilityTest {
@@ -40,6 +41,10 @@ public class BigQueryTemporalUtilityTest {
         .isEqualTo("1969-12-31 23:59:59.000000");
     assertThat(BigQueryTemporalUtility.formatTimestampString("-0.123456789123", true))
         .isEqualTo("1969-12-31 23:59:59.876543210877");
+    assertThat(BigQueryTemporalUtility.formatTimestampString("1.6905474E9", false))
+        .isEqualTo("2023-07-28 12:30:00.000000");
+    assertThat(BigQueryTemporalUtility.formatTimestampString("1.690547400123456E9", true))
+        .isEqualTo("2023-07-28 12:30:00.123456");
   }
 
   @Test
@@ -75,5 +80,23 @@ public class BigQueryTemporalUtilityTest {
     java.sql.Timestamp tsFallback =
         BigQueryTemporalUtility.boxTimestamp("2026-04-08 10:00:00.123456789123");
     assertThat(tsFallback.getNanos()).isEqualTo(123456789);
+  }
+
+  @Test
+  public void testParseEpochDecimalToInstant() {
+    // Standard decimal
+    Instant i1 = BigQueryTemporalUtility.parseEpochDecimalToInstant("1775642400.123456789123");
+    assertThat(i1).isEqualTo(Instant.ofEpochSecond(1775642400, 123456789));
+
+    // Scientific notation
+    Instant i2 = BigQueryTemporalUtility.parseEpochDecimalToInstant("1.6905474E9");
+    assertThat(i2).isEqualTo(Instant.parse("2023-07-28T12:30:00Z"));
+
+    // Pre-1970 negative decimal
+    Instant i3 = BigQueryTemporalUtility.parseEpochDecimalToInstant("-0.123456");
+    assertThat(i3).isEqualTo(Instant.ofEpochSecond(-1, 876544000));
+
+    // Null
+    assertThat(BigQueryTemporalUtility.parseEpochDecimalToInstant(null)).isNull();
   }
 }

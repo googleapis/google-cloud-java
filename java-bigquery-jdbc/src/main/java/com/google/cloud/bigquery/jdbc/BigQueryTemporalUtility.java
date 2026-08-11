@@ -17,6 +17,8 @@
 package com.google.cloud.bigquery.jdbc;
 
 import com.google.common.base.Strings;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -143,45 +145,34 @@ final class BigQueryTemporalUtility {
     }
   }
 
+  public static Instant parseEpochDecimalToInstant(String epochDecimal) {
+    if (epochDecimal == null) {
+      return null;
+    }
+    BigDecimal bd = new BigDecimal(epochDecimal);
+    long seconds = bd.setScale(0, RoundingMode.FLOOR).longValue();
+    long nanos =
+        bd.subtract(BigDecimal.valueOf(seconds))
+            .movePointRight(9)
+            .setScale(0, RoundingMode.DOWN)
+            .longValue();
+    return Instant.ofEpochSecond(seconds, nanos);
+  }
+
   public static String formatTimestampString(String epochDecimal, boolean enableTimestampPicos) {
     if (epochDecimal == null) {
       return null;
     }
 
-    int dotIdx = epochDecimal.indexOf('.');
-    long seconds;
-    String fraction;
+    BigDecimal bd = new BigDecimal(epochDecimal);
+    long seconds = bd.setScale(0, RoundingMode.FLOOR).longValue();
+    BigDecimal fractionalSeconds = bd.subtract(BigDecimal.valueOf(seconds));
 
-    if (dotIdx == -1) {
-      seconds = Long.parseLong(epochDecimal);
-      fraction = "000000";
-    } else {
-      boolean isNegative = epochDecimal.startsWith("-");
-      long wholeSeconds = Long.parseLong(epochDecimal.substring(0, dotIdx));
-      fraction = epochDecimal.substring(dotIdx + 1);
+    int originalScale = bd.scale() > 0 ? bd.scale() : 0;
+    int scale = enableTimestampPicos ? Math.max(6, Math.min(12, originalScale)) : 6;
 
-      if (!enableTimestampPicos && fraction.length() > 6) {
-        fraction = fraction.substring(0, 6);
-      }
-      fraction = Strings.padEnd(fraction, 6, '0');
-
-      if (isNegative) {
-        long fracVal = Long.parseLong(fraction);
-        if (fracVal > 0) {
-          int len = fraction.length();
-          long divisor = 1;
-          for (int i = 0; i < len; i++) {
-            divisor *= 10;
-          }
-          seconds = wholeSeconds - 1;
-          fraction = Strings.padStart(Long.toString(divisor - fracVal), len, '0');
-        } else {
-          seconds = wholeSeconds;
-        }
-      } else {
-        seconds = wholeSeconds;
-      }
-    }
+    String fraction =
+        fractionalSeconds.setScale(scale, RoundingMode.DOWN).toPlainString().substring(2);
 
     Instant instant = Instant.ofEpochSecond(seconds);
     return UTC_FORMATTER.format(instant) + "." + fraction;
@@ -198,31 +189,36 @@ final class BigQueryTemporalUtility {
 
   public static String formatTimestampStringFromIso(
       String isoString, boolean enableTimestampPicos) {
-    String result = isoString;
-
-    if (result.endsWith("Z")) {
-      result = result.substring(0, result.length() - 1);
-    } else if (result.endsWith(" UTC")) {
-      result = result.substring(0, result.length() - 4);
+    if (isoString == null) {
+      return null;
     }
 
-    if (result.length() > 10 && result.charAt(10) == 'T') {
-      result = result.substring(0, 10) + ' ' + result.substring(11);
+    String s = isoString;
+    if (s.endsWith(" UTC")) {
+      s = s.substring(0, s.length() - 4);
+    } else if (s.endsWith("Z")) {
+      s = s.substring(0, s.length() - 1);
     }
 
-    int dotIdx = result.indexOf('.');
+    if (s.length() > 10 && s.charAt(10) == 'T') {
+      s = s.substring(0, 10) + ' ' + s.substring(11);
+    }
+
+    int dotIdx = s.indexOf('.');
     if (dotIdx == -1) {
-      return result + ".000000";
+      return s + ".000000";
     }
 
-    int fractionLen = result.length() - dotIdx - 1;
-    if (!enableTimestampPicos && fractionLen > 6) {
-      return result.substring(0, dotIdx + 7);
+    String base = s.substring(0, dotIdx);
+    String fraction = s.substring(dotIdx + 1);
+
+    int maxScale = enableTimestampPicos ? 12 : 6;
+    if (fraction.length() > maxScale) {
+      fraction = fraction.substring(0, maxScale);
+    } else if (fraction.length() < 6) {
+      fraction = Strings.padEnd(fraction, 6, '0');
     }
 
-    if (fractionLen < 6) {
-      result = Strings.padEnd(result, result.length() + (6 - fractionLen), '0');
-    }
-    return result;
+    return base + "." + fraction;
   }
 }
