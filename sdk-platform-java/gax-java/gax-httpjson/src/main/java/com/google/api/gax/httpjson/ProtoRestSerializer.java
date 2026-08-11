@@ -65,8 +65,7 @@ public class ProtoRestSerializer<RequestT extends Message> {
   }
 
   /** Creates a new instance of ProtoRestSerializer. */
-  public static <RequestT extends Message> ProtoRestSerializer<RequestT> create(
-      TypeRegistry registry) {
+  static <RequestT extends Message> ProtoRestSerializer<RequestT> create(TypeRegistry registry) {
     return new ProtoRestSerializer<>(registry);
   }
 
