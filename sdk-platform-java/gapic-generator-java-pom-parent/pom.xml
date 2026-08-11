@@ -45,6 +45,9 @@
     <!--  skipping clirr check for protobuf 4.x upgrade -->
     <clirr.skip>true</clirr.skip>
     <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
+    <!-- maven-shade-plugin does not define a built-in user property for its skip parameter;
+         shade.skip is declared here and mapped in shaded modules to allow quick-build to toggle it off. -->
+    <shade.skip>false</shade.skip>
   </properties>
 
   <developers>
