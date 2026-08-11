@@ -349,6 +349,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 11
+        cache: maven
     - run: .kokoro/build.sh
       env:
         BUILD_SUBDIR: ${{matrix.package}}
@@ -368,6 +369,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: .kokoro/dependencies.sh
       env:
         BUILD_SUBDIR: ${{matrix.package}}
