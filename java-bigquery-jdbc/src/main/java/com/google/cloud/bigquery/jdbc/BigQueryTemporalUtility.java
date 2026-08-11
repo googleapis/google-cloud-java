@@ -101,21 +101,18 @@ final class BigQueryTemporalUtility {
    * nanos anyway.
    */
   private static String truncateToNanoseconds(String iso) {
-    // 'yyyy-MM-ddTHH:mm:ss.fffffffffZ' is 30 characters.
-    // If length is less than 30, it cannot contain more than 9 fractional digits.
-    if (iso.length() < 30) {
+    int dotIdx = iso.indexOf('.');
+    // Fast path: if there is no dot or at most 9 fractional digits after the dot, return as-is.
+    if (dotIdx == -1 || iso.length() - dotIdx <= 10) {
       return iso;
     }
 
-    int dotIdx = iso.indexOf('.');
-    if (dotIdx != -1) {
-      int fractionEnd = dotIdx + 1;
-      while (fractionEnd < iso.length() && Character.isDigit(iso.charAt(fractionEnd))) {
-        fractionEnd++;
-      }
-      if (fractionEnd - dotIdx - 1 > 9) {
-        return iso.substring(0, dotIdx + 10) + iso.substring(fractionEnd);
-      }
+    int fractionEnd = dotIdx + 1;
+    while (fractionEnd < iso.length() && Character.isDigit(iso.charAt(fractionEnd))) {
+      fractionEnd++;
+    }
+    if (fractionEnd - dotIdx - 1 > 9) {
+      return iso.substring(0, dotIdx + 10) + iso.substring(fractionEnd);
     }
     return iso;
   }
@@ -142,7 +139,7 @@ final class BigQueryTemporalUtility {
       return Timestamp.from(Instant.parse(iso));
     } catch (java.time.format.DateTimeParseException e) {
       // Fallback for non-standard formats
-      return Timestamp.valueOf(val);
+      return Timestamp.valueOf(truncateToNanoseconds(val));
     }
   }
 
@@ -157,23 +154,40 @@ final class BigQueryTemporalUtility {
 
     if (dotIdx == -1) {
       seconds = Long.parseLong(epochDecimal);
-      fraction = "";
+      fraction = "000000";
     } else {
-      seconds = Long.parseLong(epochDecimal.substring(0, dotIdx));
+      boolean isNegative = epochDecimal.startsWith("-");
+      long wholeSeconds = Long.parseLong(epochDecimal.substring(0, dotIdx));
       fraction = epochDecimal.substring(dotIdx + 1);
-    }
 
-    if (!enableTimestampPicos && fraction.length() > 6) {
-      fraction = fraction.substring(0, 6);
+      if (!enableTimestampPicos && fraction.length() > 6) {
+        fraction = fraction.substring(0, 6);
+      }
+      fraction = Strings.padEnd(fraction, 6, '0');
+
+      if (isNegative) {
+        long fracVal = Long.parseLong(fraction);
+        if (fracVal > 0) {
+          int len = fraction.length();
+          long divisor = 1;
+          for (int i = 0; i < len; i++) {
+            divisor *= 10;
+          }
+          seconds = wholeSeconds - 1;
+          fraction = Strings.padStart(Long.toString(divisor - fracVal), len, '0');
+        } else {
+          seconds = wholeSeconds;
+        }
+      } else {
+        seconds = wholeSeconds;
+      }
     }
-    fraction = Strings.padEnd(fraction, 6, '0');
 
     Instant instant = Instant.ofEpochSecond(seconds);
     return UTC_FORMATTER.format(instant) + "." + fraction;
   }
 
-  public static String formatTimestampStringFromMicroseconds(
-      long microseconds, boolean enableTimestampPicos) {
+  public static String formatTimestampStringFromMicroseconds(long microseconds) {
     long seconds = Math.floorDiv(microseconds, 1000000L);
     long micros = Math.floorMod(microseconds, 1000000L);
 

@@ -32,17 +32,21 @@ public class BigQueryTemporalUtilityTest {
         .isEqualTo("2026-04-08 10:00:00.000000");
     assertThat(BigQueryTemporalUtility.formatTimestampString("0.123", false))
         .isEqualTo("1970-01-01 00:00:00.123000");
+    assertThat(BigQueryTemporalUtility.formatTimestampString("-0.123456", false))
+        .isEqualTo("1969-12-31 23:59:59.876544");
+    assertThat(BigQueryTemporalUtility.formatTimestampString("-1.500000", false))
+        .isEqualTo("1969-12-31 23:59:58.500000");
+    assertThat(BigQueryTemporalUtility.formatTimestampString("-1.000000", false))
+        .isEqualTo("1969-12-31 23:59:59.000000");
+    assertThat(BigQueryTemporalUtility.formatTimestampString("-0.123456789123", true))
+        .isEqualTo("1969-12-31 23:59:59.876543210877");
   }
 
   @Test
   public void testFormatTimestampStringFromMicroseconds() {
-    assertThat(
-            BigQueryTemporalUtility.formatTimestampStringFromMicroseconds(1775642400123456L, false))
+    assertThat(BigQueryTemporalUtility.formatTimestampStringFromMicroseconds(1775642400123456L))
         .isEqualTo("2026-04-08 10:00:00.123456");
-    assertThat(
-            BigQueryTemporalUtility.formatTimestampStringFromMicroseconds(1775642400123456L, true))
-        .isEqualTo("2026-04-08 10:00:00.123456");
-    assertThat(BigQueryTemporalUtility.formatTimestampStringFromMicroseconds(-123456L, false))
+    assertThat(BigQueryTemporalUtility.formatTimestampStringFromMicroseconds(-123456L))
         .isEqualTo("1969-12-31 23:59:59.876544");
   }
 
@@ -58,5 +62,18 @@ public class BigQueryTemporalUtilityTest {
         .isEqualTo("2026-04-08 10:00:00.123456789123");
     assertThat(BigQueryTemporalUtility.formatTimestampStringFromIso("2026-04-08T10:00:00Z", false))
         .isEqualTo("2026-04-08 10:00:00.000000");
+  }
+
+  @Test
+  public void testBoxTimestamp() {
+    // ISO format with UTC suffix and 12-digit picoseconds
+    java.sql.Timestamp tsUtc =
+        BigQueryTemporalUtility.boxTimestamp("2026-04-08 10:00:00.123456789123 UTC");
+    assertThat(tsUtc.getNanos()).isEqualTo(123456789);
+
+    // Fallback format (no timezone) with 12-digit picoseconds triggers Timestamp.valueOf fallback
+    java.sql.Timestamp tsFallback =
+        BigQueryTemporalUtility.boxTimestamp("2026-04-08 10:00:00.123456789123");
+    assertThat(tsFallback.getNanos()).isEqualTo(123456789);
   }
 }

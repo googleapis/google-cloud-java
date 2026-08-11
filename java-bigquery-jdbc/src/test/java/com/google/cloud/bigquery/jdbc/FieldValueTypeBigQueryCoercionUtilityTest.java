@@ -307,6 +307,14 @@ public class FieldValueTypeBigQueryCoercionUtilityTest {
   }
 
   @Test
+  public void fieldValueToTimestampWithNanos() {
+    FieldValue picosValue = FieldValue.of(PRIMITIVE, "1775642400.123456789123");
+    Timestamp result = INSTANCE.coerceTo(Timestamp.class, picosValue);
+    assertThat(result).isNotNull();
+    assertThat(result.getNanos()).isEqualTo(123456789);
+  }
+
+  @Test
   public void fieldValueToTimestampWhenNull() {
     assertThat(INSTANCE.coerceTo(Timestamp.class, null)).isNull();
   }

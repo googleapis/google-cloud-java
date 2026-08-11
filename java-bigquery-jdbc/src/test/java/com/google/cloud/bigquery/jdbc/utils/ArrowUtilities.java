@@ -41,8 +41,9 @@ public class ArrowUtilities {
   public static ByteString serializeVectorSchemaRoot(VectorSchemaRoot root) throws IOException {
     ByteArrayOutputStream out = new ByteArrayOutputStream();
 
-    ArrowRecordBatch recordBatch = new VectorUnloader(root).getRecordBatch();
-    MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), recordBatch);
+    try (ArrowRecordBatch recordBatch = new VectorUnloader(root).getRecordBatch()) {
+      MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), recordBatch);
+    }
     return ByteString.readFrom(new ByteArrayInputStream(out.toByteArray()));
 
     // ArrowStreamWriter writer = new ArrowStreamWriter(root, null, Channels.newChannel(out));

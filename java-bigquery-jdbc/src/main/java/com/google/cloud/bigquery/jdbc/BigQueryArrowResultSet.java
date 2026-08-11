@@ -362,8 +362,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           value.toString(), this.statement.isEnableTimestampPicos());
     }
     if (value instanceof Long) {
-      return BigQueryTemporalUtility.formatTimestampStringFromMicroseconds(
-          (Long) value, this.statement.isEnableTimestampPicos());
+      return BigQueryTemporalUtility.formatTimestampStringFromMicroseconds((Long) value);
     }
     return super.getString(columnIndex);
   }

@@ -226,6 +226,9 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     if (value == null || value.isNull()) {
       return null;
     }
+    if (value.getAttribute() == Attribute.REPEATED || value.getAttribute() == Attribute.RECORD) {
+      return super.getString(columnIndex);
+    }
     return BigQueryTemporalUtility.formatTimestampString(
         value.getStringValue(), this.statement.isEnableTimestampPicos());
   }

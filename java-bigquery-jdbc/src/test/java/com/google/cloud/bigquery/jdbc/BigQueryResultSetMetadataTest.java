@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
@@ -294,5 +295,22 @@ public class BigQueryResultSetMetadataTest {
             Schema.of(schemaFields), 1L, null, statement, new Future<?>[] {mock(Future.class)});
     ResultSetMetaData metaData = resultSet.getMetaData();
     assertThat(metaData.isSearchable(1)).isTrue();
+  }
+
+  @Test
+  public void testTimestampPicosecondsMetadata() throws SQLException {
+    Field picosTimestampField =
+        Field.newBuilder("picosTs", StandardSQLTypeName.TIMESTAMP)
+            .setTimestampPrecision(12L)
+            .build();
+    Schema schema = Schema.of(FieldList.of(picosTimestampField));
+    when(statement.isEnableTimestampPicos()).thenReturn(true);
+    BigQueryJsonResultSet jsonRs =
+        BigQueryJsonResultSet.of(schema, 1L, null, statement, (Future<?>[]) null);
+    ResultSetMetaData metadata = jsonRs.getMetaData();
+
+    assertThat(metadata.getColumnDisplaySize(1)).isEqualTo(32);
+    assertThat(metadata.getPrecision(1)).isEqualTo(32);
+    assertThat(metadata.getScale(1)).isEqualTo(12);
   }
 }

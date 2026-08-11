@@ -20,6 +20,7 @@ import com.google.api.core.InternalApi;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
 import com.google.cloud.bigquery.Range;
+import com.google.common.base.Strings;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Time;
@@ -182,6 +183,14 @@ class BigQueryTypeCoercionUtility {
                 LocalDateTime.class,
                 Timestamp.class)
             .registerTypeCoercion(Text::toString, Text.class, String.class)
+            .registerTypeCoercion(
+                (Text text) -> BigQueryTemporalUtility.boxTimestamp(text.toString()),
+                Text.class,
+                Timestamp.class)
+            .registerTypeCoercion(
+                (String str) -> BigQueryTemporalUtility.boxTimestamp(str),
+                String.class,
+                Timestamp.class)
             .registerTypeCoercion(new TextToInteger())
             .registerTypeCoercion(new LongToTimestamp())
             .registerTypeCoercion(new LongToTime())
@@ -438,9 +447,22 @@ class BigQueryTypeCoercionUtility {
         // Timestamp.valueOf() expects "yyyy-mm-dd hh:mm:ss.fffffffff" format.
         return Timestamp.valueOf(rawValue.replace('T', ' '));
       } else {
-        // It's a TIMESTAMP numeric string.
-        long microseconds = fieldValue.getTimestampValue();
-        Instant instant = Instant.EPOCH.plus(microseconds, ChronoUnit.MICROS);
+        // It's a TIMESTAMP numeric epoch decimal string (e.g. "1775642400.123456789123")
+        int dotIdx = rawValue.indexOf('.');
+        long seconds;
+        long nanos = 0;
+        if (dotIdx == -1) {
+          seconds = Long.parseLong(rawValue);
+        } else {
+          seconds = Long.parseLong(rawValue.substring(0, dotIdx));
+          String fraction = rawValue.substring(dotIdx + 1);
+          if (fraction.length() > 9) {
+            fraction = fraction.substring(0, 9);
+          }
+          fraction = Strings.padEnd(fraction, 9, '0');
+          nanos = Long.parseLong(fraction);
+        }
+        Instant instant = Instant.ofEpochSecond(seconds, nanos);
         // Timezone-agnostic conversion preserving exact point in time as mandated by JDBC spec
         return Timestamp.from(instant);
       }
