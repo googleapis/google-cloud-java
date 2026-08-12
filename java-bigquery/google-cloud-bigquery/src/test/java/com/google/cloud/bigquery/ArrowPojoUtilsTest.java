@@ -20,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.cloud.bigquery.Field.Mode;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 import org.apache.arrow.memory.BufferAllocator;
@@ -78,12 +79,10 @@ public class ArrowPojoUtilsTest {
 
     assertEquals(9, bqSchema.getFields().size());
     assertEquals(LegacySQLTypeName.INTEGER, bqSchema.getFields().get(0).getType());
-    assertEquals(
-        com.google.cloud.bigquery.Field.Mode.NULLABLE, bqSchema.getFields().get(0).getMode());
+    assertEquals(Mode.NULLABLE, bqSchema.getFields().get(0).getMode());
 
     assertEquals(LegacySQLTypeName.STRING, bqSchema.getFields().get(1).getType());
-    assertEquals(
-        com.google.cloud.bigquery.Field.Mode.REQUIRED, bqSchema.getFields().get(1).getMode());
+    assertEquals(Mode.REQUIRED, bqSchema.getFields().get(1).getMode());
 
     assertEquals(LegacySQLTypeName.BOOLEAN, bqSchema.getFields().get(2).getType());
     assertEquals(LegacySQLTypeName.BYTES, bqSchema.getFields().get(3).getType());
@@ -133,7 +132,7 @@ public class ArrowPojoUtilsTest {
     com.google.cloud.bigquery.Field tagsField = bqSchema.getFields().get(0);
     assertEquals("tags", tagsField.getName());
     assertEquals(LegacySQLTypeName.STRING, tagsField.getType());
-    assertEquals(com.google.cloud.bigquery.Field.Mode.REPEATED, tagsField.getMode());
+    assertEquals(Mode.REPEATED, tagsField.getMode());
   }
 
   @Test
@@ -157,7 +156,7 @@ public class ArrowPojoUtilsTest {
     com.google.cloud.bigquery.Field entriesField = bqSchema.getFields().get(0);
     assertEquals("entries", entriesField.getName());
     assertEquals(LegacySQLTypeName.RECORD, entriesField.getType());
-    assertEquals(com.google.cloud.bigquery.Field.Mode.REPEATED, entriesField.getMode());
+    assertEquals(Mode.REPEATED, entriesField.getMode());
     assertEquals(2, entriesField.getSubFields().size());
     assertEquals("key", entriesField.getSubFields().get(0).getName());
     assertEquals("value", entriesField.getSubFields().get(1).getName());

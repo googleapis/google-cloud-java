@@ -222,12 +222,21 @@ final class ArrowDeserializer {
    * @throws IOException if deserialization of the Arrow record batch fails
    */
   static List<FieldValueList> deserializeRecordBatch(
-      byte[] recordBatchBytes, Schema schema, org.apache.arrow.vector.types.pojo.Schema arrowSchema)
-      throws IOException {
+      byte[] recordBatchBytes, Schema schema, Object arrowSchema) throws IOException {
+    org.apache.arrow.vector.types.pojo.Schema schemaPojo =
+        arrowSchema instanceof org.apache.arrow.vector.types.pojo.Schema
+            ? (org.apache.arrow.vector.types.pojo.Schema) arrowSchema
+            : (arrowSchema instanceof String
+                ? (org.apache.arrow.vector.types.pojo.Schema)
+                    jsonToArrowSchema((String) arrowSchema)
+                : null);
+    if (schemaPojo == null) {
+      throw new IllegalArgumentException("Arrow schema must not be null");
+    }
     try (BufferAllocator childAllocator =
             AllocatorHolder.ALLOCATOR.newChildAllocator(
                 "deserializeRecordBatch", 0, Long.MAX_VALUE);
-        VectorSchemaRoot closedRoot = createVectorSchemaRoot(arrowSchema, childAllocator);
+        VectorSchemaRoot closedRoot = createVectorSchemaRoot(schemaPojo, childAllocator);
         ByteArrayReadableSeekableByteChannel byteChannel =
             new ByteArrayReadableSeekableByteChannel(recordBatchBytes);
         ReadChannel readChannel = new ReadChannel(byteChannel);

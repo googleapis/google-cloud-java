@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.cloud.bigquery.Field.Mode;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.arrow.memory.BufferAllocator;
@@ -26,16 +27,14 @@ import org.apache.arrow.vector.types.pojo.Schema;
 
 /**
  * Internal helper utility for converting Apache Arrow POJO Schema and Field definitions into
- * BigQuery Veneer {@link com.google.cloud.bigquery.Schema} and {@link
- * com.google.cloud.bigquery.Field} models.
+ * BigQuery Veneer {@link Schema} and {@link com.google.cloud.bigquery.Field} models.
  */
 final class ArrowPojoUtils {
 
   private ArrowPojoUtils() {}
 
   /**
-   * Converts an Apache Arrow {@link Schema} into a BigQuery Veneer {@link
-   * com.google.cloud.bigquery.Schema}.
+   * Converts an Apache Arrow {@link Schema} into a BigQuery Veneer {@link Schema}.
    *
    * @param arrowSchema the Apache Arrow schema definition
    * @return the corresponding BigQuery Veneer Schema
@@ -81,7 +80,7 @@ final class ArrowPojoUtils {
         LegacySQLTypeName innerType = arrowTypeToLegacySQLTypeName(innerField.getType());
         builder = com.google.cloud.bigquery.Field.newBuilder(name, innerType);
       }
-      builder.setMode(com.google.cloud.bigquery.Field.Mode.REPEATED);
+      builder.setMode(Mode.REPEATED);
     } else {
       if (!arrowField.getChildren().isEmpty()) {
         List<com.google.cloud.bigquery.Field> subFields = new ArrayList<>();
@@ -96,9 +95,9 @@ final class ArrowPojoUtils {
         builder = com.google.cloud.bigquery.Field.newBuilder(name, bqType);
       }
       if (arrowField.isNullable()) {
-        builder.setMode(com.google.cloud.bigquery.Field.Mode.NULLABLE);
+        builder.setMode(Mode.NULLABLE);
       } else {
-        builder.setMode(com.google.cloud.bigquery.Field.Mode.REQUIRED);
+        builder.setMode(Mode.REQUIRED);
       }
     }
     return builder.build();
