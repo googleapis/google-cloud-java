@@ -16,10 +16,13 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
+import java.nio.channels.Channels;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import org.apache.arrow.memory.BufferAllocator;
@@ -42,108 +45,150 @@ import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
  */
 final class ArrowDeserializer {
 
+  private static class AllocatorHolder {
+    private static final BufferAllocator ALLOCATOR = new RootAllocator(Long.MAX_VALUE);
+  }
+
+  private static VectorSchemaRoot createVectorSchemaRoot(
+      org.apache.arrow.vector.types.pojo.Schema arrowSchema, BufferAllocator allocator) {
+    List<FieldVector> vectors = ArrowPojoUtils.createVectors(arrowSchema, allocator);
+    try {
+      return new VectorSchemaRoot(vectors);
+    } catch (Throwable t) {
+      for (int i = vectors.size() - 1; i >= 0; i--) {
+        try {
+          vectors.get(i).close();
+        } catch (Exception e) {
+          t.addSuppressed(e);
+        }
+      }
+      throw t;
+    }
+  }
+
   private ArrowDeserializer() {}
 
   /**
-   * Converts an Apache Arrow {@link org.apache.arrow.vector.types.pojo.Schema} to a BigQuery Veneer
-   * {@link Schema}.
+   * Deserializes a raw binary Arrow schema payload into an Apache Arrow Schema object.
+   *
+   * @param schemaBytes the raw binary Arrow schema payload
+   * @return the deserialized Apache Arrow Schema object
+   * @throws IOException if deserialization of the Arrow schema fails
+   */
+  static Object deserializeSchema(byte[] schemaBytes) throws IOException {
+    return MessageSerializer.deserializeSchema(
+        new ReadChannel(new ByteArrayReadableSeekableByteChannel(schemaBytes)));
+  }
+
+  /**
+   * Serializes an Apache Arrow Schema object to its JSON string representation.
+   *
+   * @param arrowSchema the Apache Arrow schema object
+   * @return the JSON string representation, or null if arrowSchema is null
+   */
+  static String arrowSchemaToJson(Object arrowSchema) {
+    if (arrowSchema == null) {
+      return null;
+    }
+    return ((org.apache.arrow.vector.types.pojo.Schema) arrowSchema).toJson();
+  }
+
+  static Object jsonToArrowSchema(String json) {
+    if (json == null) {
+      return null;
+    }
+    try {
+      return org.apache.arrow.vector.types.pojo.Schema.fromJSON(json);
+    } catch (IOException e) {
+      throw new IllegalArgumentException("Invalid Arrow schema JSON", e);
+    }
+  }
+
+  /**
+   * Reads and decodes a batch of Arrow rows from the provided stream iterator into the row batch.
+   *
+   * @param iterator the stream iterator providing ReadRowsResponse messages
+   * @param arrowSchemaPojo the Arrow schema pojo (or null if restoring from json)
+   * @param arrowSchemaJson the Arrow schema JSON representation
+   * @param schema the BigQuery target Schema
+   * @param rowBatch the destination list for decoded rows
+   * @param pageSize the maximum number of rows to decode in this batch
+   * @param totalRowsReturned the running count of rows returned so far
+   * @param maxResults the maximum total rows allowed across all pages
+   * @return true if more rows are available in the stream and maxResults has not been reached
+   * @throws IOException if deserialization fails
+   */
+  static boolean loadArrowRows(
+      Iterator<ReadRowsResponse> iterator,
+      Object arrowSchemaPojo,
+      String arrowSchemaJson,
+      Schema schema,
+      List<FieldValueList> rowBatch,
+      long pageSize,
+      long totalRowsReturned,
+      long maxResults)
+      throws IOException {
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
+        arrowSchemaPojo instanceof org.apache.arrow.vector.types.pojo.Schema
+            ? (org.apache.arrow.vector.types.pojo.Schema) arrowSchemaPojo
+            : (arrowSchemaJson != null
+                ? org.apache.arrow.vector.types.pojo.Schema.fromJSON(arrowSchemaJson)
+                : null);
+
+    if (arrowSchema == null) {
+      return false;
+    }
+
+    try (BufferAllocator childAllocator =
+            AllocatorHolder.ALLOCATOR.newChildAllocator("loadArrowRows", 0, Long.MAX_VALUE);
+        VectorSchemaRoot closedRoot = createVectorSchemaRoot(arrowSchema, childAllocator)) {
+      VectorLoader loader = new VectorLoader(closedRoot);
+      boolean hasMore = false;
+      while (rowBatch.size() < pageSize
+          && iterator.hasNext()
+          && (totalRowsReturned + rowBatch.size() < maxResults)) {
+        ReadRowsResponse response = iterator.next();
+        if (response.hasArrowRecordBatch()) {
+          com.google.cloud.bigquery.storage.v1.ArrowRecordBatch batch =
+              response.getArrowRecordBatch();
+          try (ReadChannel readChannel =
+                  new ReadChannel(
+                      Channels.newChannel(batch.getSerializedRecordBatch().newInput()));
+              ArrowRecordBatch deserializedBatch =
+                  MessageSerializer.deserializeRecordBatch(readChannel, childAllocator)) {
+            loader.load(deserializedBatch);
+            int batchRowCount = closedRoot.getRowCount();
+            int i = 0;
+            for (; i < batchRowCount; i++) {
+              if (rowBatch.size() >= pageSize
+                  || totalRowsReturned + rowBatch.size() >= maxResults) {
+                break;
+              }
+              rowBatch.add(arrowRootToFieldValueList(closedRoot, i, schema));
+            }
+            if (i < batchRowCount && (totalRowsReturned + rowBatch.size() < maxResults)) {
+              hasMore = true;
+            }
+            closedRoot.clear();
+          }
+        }
+      }
+      if (!hasMore) {
+        hasMore = iterator.hasNext() && (totalRowsReturned + rowBatch.size() < maxResults);
+      }
+      return hasMore;
+    }
+  }
+
+  /**
+   * Converts an Apache Arrow Schema to a BigQuery Veneer {@link Schema}.
    *
    * @param arrowSchema the Apache Arrow schema to convert
    * @return the corresponding BigQuery Veneer Schema
    */
-  static Schema arrowSchemaToBigQuerySchema(org.apache.arrow.vector.types.pojo.Schema arrowSchema) {
-    List<Field> fields = new ArrayList<>();
-    for (org.apache.arrow.vector.types.pojo.Field arrowField : arrowSchema.getFields()) {
-      fields.add(arrowFieldToBigQueryField(arrowField));
-    }
-    return Schema.of(fields);
-  }
-
-  /**
-   * Recursively converts an Apache Arrow {@link org.apache.arrow.vector.types.pojo.Field} to a
-   * BigQuery Veneer {@link Field}.
-   *
-   * @param arrowField the Arrow field to convert
-   * @return the corresponding BigQuery Veneer Field
-   */
-  private static Field arrowFieldToBigQueryField(
-      org.apache.arrow.vector.types.pojo.Field arrowField) {
-    String name = arrowField.getName();
-    ArrowType type = arrowField.getType();
-    Field.Builder builder;
-
-    if (type instanceof ArrowType.List) {
-      if (arrowField.getChildren().isEmpty()) {
-        throw new IllegalArgumentException(
-            "Arrow List field must have at least one child field: " + name);
-      }
-      org.apache.arrow.vector.types.pojo.Field innerField = arrowField.getChildren().get(0);
-      LegacySQLTypeName innerType = arrowTypeToLegacySQLTypeName(innerField.getType());
-      builder = Field.newBuilder(name, innerType);
-      builder.setMode(Field.Mode.REPEATED);
-      if (!innerField.getChildren().isEmpty()) {
-        List<Field> subFields = new ArrayList<>();
-        for (org.apache.arrow.vector.types.pojo.Field childField : innerField.getChildren()) {
-          subFields.add(arrowFieldToBigQueryField(childField));
-        }
-        builder.setType(LegacySQLTypeName.RECORD, FieldList.of(subFields));
-      }
-    } else {
-      LegacySQLTypeName bqType = arrowTypeToLegacySQLTypeName(type);
-      builder = Field.newBuilder(name, bqType);
-      if (arrowField.isNullable()) {
-        builder.setMode(Field.Mode.NULLABLE);
-      } else {
-        builder.setMode(Field.Mode.REQUIRED);
-      }
-      if (!arrowField.getChildren().isEmpty()) {
-        List<Field> subFields = new ArrayList<>();
-        for (org.apache.arrow.vector.types.pojo.Field childField : innerFieldChildren(arrowField)) {
-          subFields.add(arrowFieldToBigQueryField(childField));
-        }
-        builder.setType(LegacySQLTypeName.RECORD, FieldList.of(subFields));
-      }
-    }
-    return builder.build();
-  }
-
-  private static List<org.apache.arrow.vector.types.pojo.Field> innerFieldChildren(
-      org.apache.arrow.vector.types.pojo.Field arrowField) {
-    return arrowField.getChildren();
-  }
-
-  /**
-   * Maps an Apache Arrow data type {@link ArrowType} to a BigQuery {@link LegacySQLTypeName}.
-   *
-   * @param type the Arrow data type to map
-   * @return the corresponding BigQuery LegacySQLTypeName
-   * @throws IllegalArgumentException if the Arrow type is unsupported
-   */
-  private static LegacySQLTypeName arrowTypeToLegacySQLTypeName(ArrowType type) {
-    switch (type.getTypeID()) {
-      case Int:
-        return LegacySQLTypeName.INTEGER;
-      case FloatingPoint:
-        return LegacySQLTypeName.FLOAT;
-      case Utf8:
-        return LegacySQLTypeName.STRING;
-      case Bool:
-        return LegacySQLTypeName.BOOLEAN;
-      case Binary:
-        return LegacySQLTypeName.BYTES;
-      case Decimal:
-        return LegacySQLTypeName.NUMERIC;
-      case Timestamp:
-        return LegacySQLTypeName.TIMESTAMP;
-      case Date:
-        return LegacySQLTypeName.DATE;
-      case Time:
-        return LegacySQLTypeName.TIME;
-      case Struct:
-        return LegacySQLTypeName.RECORD;
-      default:
-        throw new IllegalArgumentException("Unsupported Arrow type: " + type.getTypeID());
-    }
+  static Schema arrowSchemaToBigQuerySchema(Object arrowSchema) {
+    return ArrowPojoUtils.arrowSchemaToBigQuerySchema(
+        (org.apache.arrow.vector.types.pojo.Schema) arrowSchema);
   }
 
   /**
@@ -162,37 +207,23 @@ final class ArrowDeserializer {
   static List<FieldValueList> deserializeRecordBatch(
       byte[] recordBatchBytes, Schema schema, org.apache.arrow.vector.types.pojo.Schema arrowSchema)
       throws IOException {
-    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
-      List<FieldVector> vectors = new ArrayList<>();
-      try {
-        for (org.apache.arrow.vector.types.pojo.Field field : arrowSchema.getFields()) {
-          vectors.add(field.createVector(allocator));
-        }
-      } catch (Throwable t) {
-        for (int i = vectors.size() - 1; i >= 0; i--) {
-          try {
-            vectors.get(i).close();
-          } catch (Exception e) {
-            t.addSuppressed(e);
-          }
-        }
-        throw t;
+    try (BufferAllocator childAllocator =
+            AllocatorHolder.ALLOCATOR.newChildAllocator(
+                "deserializeRecordBatch", 0, Long.MAX_VALUE);
+        VectorSchemaRoot closedRoot = createVectorSchemaRoot(arrowSchema, childAllocator);
+        ByteArrayReadableSeekableByteChannel byteChannel =
+            new ByteArrayReadableSeekableByteChannel(recordBatchBytes);
+        ReadChannel readChannel = new ReadChannel(byteChannel);
+        ArrowRecordBatch deserializedBatch =
+            MessageSerializer.deserializeRecordBatch(readChannel, childAllocator)) {
+      VectorLoader loader = new VectorLoader(closedRoot);
+      loader.load(deserializedBatch);
+      int rowCount = closedRoot.getRowCount();
+      List<FieldValueList> rows = new ArrayList<>(rowCount);
+      for (int i = 0; i < rowCount; i++) {
+        rows.add(arrowRootToFieldValueList(closedRoot, i, schema));
       }
-      try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
-        VectorLoader loader = new VectorLoader(root);
-        try (ArrowRecordBatch deserializedBatch =
-            MessageSerializer.deserializeRecordBatch(
-                new ReadChannel(new ByteArrayReadableSeekableByteChannel(recordBatchBytes)),
-                allocator)) {
-          loader.load(deserializedBatch);
-          int rowCount = root.getRowCount();
-          List<FieldValueList> rows = new ArrayList<>(rowCount);
-          for (int i = 0; i < rowCount; i++) {
-            rows.add(arrowRootToFieldValueList(root, i, schema));
-          }
-          return ImmutableList.copyOf(rows);
-        }
-      }
+      return ImmutableList.copyOf(rows);
     }
   }
 
@@ -281,9 +312,6 @@ final class ArrowDeserializer {
     // Handle primitive types
     String stringVal;
     if (bqField.getType() == LegacySQLTypeName.TIMESTAMP) {
-      // Arrow timestamps are long values representing epoch seconds/millis/micros/nanos.
-      // Standard BigQuery JSON returns timestamps as string of epoch seconds with micro precision
-      // (e.g. "1408452095.220000").
       TimeStampVector tsVector = (TimeStampVector) vector;
       long rawVal = tsVector.get(rowIndex);
       ArrowType.Timestamp tsType = (ArrowType.Timestamp) vector.getField().getType();
