@@ -1299,4 +1299,52 @@ public interface AdUnitOrBuilder
    * @return The effectiveAdsenseEnabled.
    */
   boolean getEffectiveAdsenseEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Defines the type of refresh rate control for
+   * this ad unit. This field defaults to `DISABLED`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the refreshRateType field is set.
+   */
+  boolean hasRefreshRateType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Defines the type of refresh rate control for
+   * this ad unit. This field defaults to `DISABLED`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for refreshRateType.
+   */
+  int getRefreshRateTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Defines the type of refresh rate control for
+   * this ad unit. This field defaults to `DISABLED`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The refreshRateType.
+   */
+  com.google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType getRefreshRateType();
 }

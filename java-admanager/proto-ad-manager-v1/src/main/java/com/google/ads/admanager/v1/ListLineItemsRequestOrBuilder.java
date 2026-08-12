@@ -116,43 +116,42 @@ public interface ListLineItemsRequestOrBuilder
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;contractedUnitsBought&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;costType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;createTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;creativePlaceholders.size.canonicalName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;dealInfo.externalDealId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;deliveryRateType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;environmentType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;externalLineItemId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;goal.units&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;grpSettings.growbirdNielsenEnabled&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;grpSettings.inTargetRatioEstimateMilliPercent&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;lineItemType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;missingCreatives&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;notes&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;order&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;orderDisplayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;priority&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;roadblockingType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;stats.clickThroughRate&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;stats.clicksDelivered&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;stats.impressionsDelivered&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;stats.viewableImpressionsDelivered&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;targeting.inventoryTargeting.targetedAdUnits.adUnit&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;targeting.inventoryTargeting.targetedPlacements&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;targeting.mobileApplicationTargeting.firstPartyTargeting.targetedApplications&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;updateSource&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;webPropertyCode&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `archived`
+   * * `contractedUnitsBought`
+   * * `costType`
+   * * `createTime`
+   * * `creativePlaceholders.size.canonicalName`
+   * * `dealInfo.externalDealId`
+   * * `deliveryRateType`
+   * * `displayName`
+   * * `endTime`
+   * * `environmentType`
+   * * `externalLineItemId`
+   * * `goal.units`
+   * * `grpSettings.growbirdNielsenEnabled`
+   * * `grpSettings.inTargetRatioEstimateMilliPercent`
+   * * `lineItemType`
+   * * `missingCreatives`
+   * * `name`
+   * * `notes`
+   * * `order`
+   * * `orderDisplayName`
+   * * `priority`
+   * * `roadblockingType`
+   * * `startTime`
+   * * `stats.clickThroughRate`
+   * * `stats.clicksDelivered`
+   * * `stats.impressionsDelivered`
+   * * `stats.viewableImpressionsDelivered`
+   * * `status`
+   * * `targeting.inventoryTargeting.targetedAdUnits.adUnit`
+   * * `targeting.inventoryTargeting.targetedPlacements`
+   * * `targeting.mobileApplicationTargeting.firstPartyTargeting.targetedApplications`
+   * * `updateSource`
+   * * `updateTime`
+   * * `webPropertyCode`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -169,43 +168,42 @@ public interface ListLineItemsRequestOrBuilder
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;archived&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;contractedUnitsBought&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;costType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;createTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;creativePlaceholders.size.canonicalName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;dealInfo.externalDealId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;deliveryRateType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;endTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;environmentType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;externalLineItemId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;goal.units&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;grpSettings.growbirdNielsenEnabled&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;grpSettings.inTargetRatioEstimateMilliPercent&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;lineItemType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;missingCreatives&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;notes&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;order&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;orderDisplayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;priority&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;roadblockingType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;startTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;stats.clickThroughRate&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;stats.clicksDelivered&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;stats.impressionsDelivered&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;stats.viewableImpressionsDelivered&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;targeting.inventoryTargeting.targetedAdUnits.adUnit&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;targeting.inventoryTargeting.targetedPlacements&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;targeting.mobileApplicationTargeting.firstPartyTargeting.targetedApplications&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;updateSource&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;webPropertyCode&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `archived`
+   * * `contractedUnitsBought`
+   * * `costType`
+   * * `createTime`
+   * * `creativePlaceholders.size.canonicalName`
+   * * `dealInfo.externalDealId`
+   * * `deliveryRateType`
+   * * `displayName`
+   * * `endTime`
+   * * `environmentType`
+   * * `externalLineItemId`
+   * * `goal.units`
+   * * `grpSettings.growbirdNielsenEnabled`
+   * * `grpSettings.inTargetRatioEstimateMilliPercent`
+   * * `lineItemType`
+   * * `missingCreatives`
+   * * `name`
+   * * `notes`
+   * * `order`
+   * * `orderDisplayName`
+   * * `priority`
+   * * `roadblockingType`
+   * * `startTime`
+   * * `stats.clickThroughRate`
+   * * `stats.clicksDelivered`
+   * * `stats.impressionsDelivered`
+   * * `stats.viewableImpressionsDelivered`
+   * * `status`
+   * * `targeting.inventoryTargeting.targetedAdUnits.adUnit`
+   * * `targeting.inventoryTargeting.targetedPlacements`
+   * * `targeting.mobileApplicationTargeting.firstPartyTargeting.targetedApplications`
+   * * `updateSource`
+   * * `updateTime`
+   * * `webPropertyCode`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
