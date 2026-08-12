@@ -443,6 +443,8 @@ jobs:
         bom-path: gapic-libraries-bom/pom.xml
   test-cache-overwrite:
     name: verify-cache-overwrite
+    needs: bulk-filter
+    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
@@ -483,14 +485,11 @@ jobs:
         MARKER_FILE="java-common-protos/proto-google-common-protos/src/main/java/com/google/type/CacheTestMarker.java"
         mkdir -p "$(dirname "$MARKER_FILE")"
         TIMESTAMP=$(date +%s)
-        cat <<EOF > "$MARKER_FILE"
-package com.google.type;
-
-public class CacheTestMarker {
-  public static final String TIMESTAMP = "$TIMESTAMP";
-  public static final String VERSION_MARKER = "TEST_CACHE_OVERWRITE_VERIFIED_$TIMESTAMP";
-}
-EOF
+        echo "package com.google.type;" > "$MARKER_FILE"
+        echo "public class CacheTestMarker {" >> "$MARKER_FILE"
+        echo "  public static final String TIMESTAMP = \"$TIMESTAMP\";" >> "$MARKER_FILE"
+        echo "  public static final String VERSION_MARKER = \"TEST_CACHE_OVERWRITE_VERIFIED_$TIMESTAMP\";" >> "$MARKER_FILE"
+        echo "}" >> "$MARKER_FILE"
         echo "Created source marker:"
         cat "$MARKER_FILE"
         echo "Recording pre-install artifact timestamps and checksums in ~/.m2..."
