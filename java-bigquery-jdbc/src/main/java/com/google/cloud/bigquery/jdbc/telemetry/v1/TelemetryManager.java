@@ -40,8 +40,8 @@ final class TelemetryManager implements AutoCloseable {
   }
 
   /**
-   * Initializes or replaces the shared {@link TelemetryManager} instance with default
-   * configuration and transport.
+   * Initializes or replaces the shared {@link TelemetryManager} instance with default configuration
+   * and transport.
    */
   static TelemetryManager getInstance() {
     TelemetryManager localRef = instance;
@@ -60,9 +60,7 @@ final class TelemetryManager implements AutoCloseable {
     return localRef;
   }
 
-  /**
-   * Package-private lifecycle initialisation method for explicit configuration or unit testing.
-   */
+  /** Package-private lifecycle initialisation method for explicit configuration or unit testing. */
   static synchronized void init(TelemetryConfiguration config, ClearcutTransport transport) {
     closeInstance();
     if (config != null && config.isEnabled() && transport != null) {
@@ -94,16 +92,12 @@ final class TelemetryManager implements AutoCloseable {
     }
   }
 
-  /**
-   * Package-private helper to check if an active instance is present and initialized.
-   */
+  /** Package-private helper to check if an active instance is present and initialized. */
   static boolean isInitialized() {
     return instance != null;
   }
 
-  /**
-   * Flushes pending buffered metrics and shuts down the shared instance.
-   */
+  /** Flushes pending buffered metrics and shuts down the shared instance. */
   static synchronized void closeInstance() {
     TelemetryManager localRef = instance;
     instance = null;
