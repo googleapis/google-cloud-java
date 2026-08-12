@@ -148,7 +148,7 @@ public interface EventOrBuilder
    * <pre>
    * Optional. The expected action for this type of event. This should be the
    * same action provided at token generation time on client-side platforms
-   * already integrated with recaptcha enterprise.
+   * already integrated with recaptcha enterprise. Required for Universal keys.
    * </pre>
    *
    * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -163,7 +163,7 @@ public interface EventOrBuilder
    * <pre>
    * Optional. The expected action for this type of event. This should be the
    * same action provided at token generation time on client-side platforms
-   * already integrated with recaptcha enterprise.
+   * already integrated with recaptcha enterprise. Required for Universal keys.
    * </pre>
    *
    * <code>string expected_action = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -185,7 +185,7 @@ public interface EventOrBuilder
    * </code>
    *
    * @deprecated google.cloud.recaptchaenterprise.v1.Event.hashed_account_id is deprecated. See
-   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=765
+   *     google/cloud/recaptchaenterprise/v1/recaptchaenterprise.proto;l=786
    * @return The hashedAccountId.
    */
   @java.lang.Deprecated

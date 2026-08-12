@@ -30,7 +30,7 @@ public interface ListCompaniesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of Companies.
+   * Required. The parent, which owns this collection of [Companies][].
    * Format: `networks/{network_code}`
    * </pre>
    *
@@ -46,7 +46,7 @@ public interface ListCompaniesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent, which owns this collection of Companies.
+   * Required. The parent, which owns this collection of [Companies][].
    * Format: `networks/{network_code}`
    * </pre>
    *
@@ -62,8 +62,8 @@ public interface ListCompaniesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of `Companies` to return. The service may
-   * return fewer than this value. If unspecified, at most 50 `Companies` will
+   * Optional. The maximum number of [Companies][] to return. The service may
+   * return fewer than this value. If unspecified, at most 50 [Companies][] will
    * be returned. The maximum value is 1000; values greater than 1000 will be
    * coerced to 1000.
    * </pre>
@@ -78,10 +78,10 @@ public interface ListCompaniesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous `ListCompanies` call.
+   * Optional. A page token, received from a previous [ListCompanies][] call.
    * Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to `ListCompanies` must
+   * When paginating, all other parameters provided to [ListCompanies][] must
    * match the call that provided the page token.
    * </pre>
    *
@@ -95,10 +95,10 @@ public interface ListCompaniesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A page token, received from a previous `ListCompanies` call.
+   * Optional. A page token, received from a previous [ListCompanies][] call.
    * Provide this to retrieve the subsequent page.
    *
-   * When paginating, all other parameters provided to `ListCompanies` must
+   * When paginating, all other parameters provided to [ListCompanies][] must
    * match the call that provided the page token.
    * </pre>
    *
@@ -116,22 +116,21 @@ public interface ListCompaniesRequestOrBuilder
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;address&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;comment&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;companyId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;creditStatus&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;email&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;externalId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;fax&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;phone&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;thirdPartyCompanyId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;type&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `address`
+   * * `comment`
+   * * `companyId`
+   * * `creditStatus`
+   * * `displayName`
+   * * `email`
+   * * `externalId`
+   * * `fax`
+   * * `name`
+   * * `phone`
+   * * `thirdPartyCompanyId`
+   * * `type`
+   * * `updateTime`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -148,22 +147,21 @@ public interface ListCompaniesRequestOrBuilder
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;address&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;comment&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;companyId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;creditStatus&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;email&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;externalId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;fax&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;phone&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;thirdPartyCompanyId&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;type&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `address`
+   * * `comment`
+   * * `companyId`
+   * * `creditStatus`
+   * * `displayName`
+   * * `email`
+   * * `externalId`
+   * * `fax`
+   * * `name`
+   * * `phone`
+   * * `thirdPartyCompanyId`
+   * * `type`
+   * * `updateTime`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

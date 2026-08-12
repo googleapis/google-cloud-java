@@ -396,6 +396,12 @@ public class StorageControlSettings extends ClientSettings<StorageControlSetting
         .listIntelligenceFindingRevisionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to viewObjectFullContext. */
+  public UnaryCallSettings<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextSettings() {
+    return ((StorageControlStubSettings) getStubSettings()).viewObjectFullContextSettings();
+  }
+
   public static final StorageControlSettings create(StorageControlStubSettings stub)
       throws IOException {
     return new StorageControlSettings.Builder(stub.toBuilder()).build();
@@ -779,6 +785,12 @@ public class StorageControlSettings extends ClientSettings<StorageControlSetting
             ListIntelligenceFindingRevisionsPagedResponse>
         listIntelligenceFindingRevisionsSettings() {
       return getStubSettingsBuilder().listIntelligenceFindingRevisionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to viewObjectFullContext. */
+    public UnaryCallSettings.Builder<ViewObjectFullContextRequest, ObjectFullContext>
+        viewObjectFullContextSettings() {
+      return getStubSettingsBuilder().viewObjectFullContextSettings();
     }
 
     @Override

@@ -1793,6 +1793,55 @@ public final class StorageControlGrpc {
     return getListIntelligenceFindingRevisionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ViewObjectFullContextRequest,
+          com.google.storage.control.v2.ObjectFullContext>
+      getViewObjectFullContextMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ViewObjectFullContext",
+      requestType = com.google.storage.control.v2.ViewObjectFullContextRequest.class,
+      responseType = com.google.storage.control.v2.ObjectFullContext.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ViewObjectFullContextRequest,
+          com.google.storage.control.v2.ObjectFullContext>
+      getViewObjectFullContextMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.ViewObjectFullContextRequest,
+            com.google.storage.control.v2.ObjectFullContext>
+        getViewObjectFullContextMethod;
+    if ((getViewObjectFullContextMethod = StorageControlGrpc.getViewObjectFullContextMethod)
+        == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getViewObjectFullContextMethod = StorageControlGrpc.getViewObjectFullContextMethod)
+            == null) {
+          StorageControlGrpc.getViewObjectFullContextMethod =
+              getViewObjectFullContextMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.ViewObjectFullContextRequest,
+                          com.google.storage.control.v2.ObjectFullContext>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ViewObjectFullContext"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ViewObjectFullContextRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ObjectFullContext.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("ViewObjectFullContext"))
+                      .build();
+        }
+      }
+    }
+    return getViewObjectFullContextMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static StorageControlStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<StorageControlStub> factory =
@@ -2417,6 +2466,27 @@ public final class StorageControlGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListIntelligenceFindingRevisionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the full content of an object context, including its key, value,
+     * and any associated extended data for a given context key.
+     * Object contexts can optionally contain extended data. If an object context
+     * contains extended data, the metadata payload structure will contain only
+     * its type URL. To retrieve the full extended data, call this method.
+     * Returns the complete representation of the context as an
+     * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+     * </pre>
+     */
+    default void viewObjectFullContext(
+        com.google.storage.control.v2.ViewObjectFullContextRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.ObjectFullContext>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getViewObjectFullContextMethod(), responseObserver);
     }
   }
 
@@ -3089,6 +3159,29 @@ public final class StorageControlGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the full content of an object context, including its key, value,
+     * and any associated extended data for a given context key.
+     * Object contexts can optionally contain extended data. If an object context
+     * contains extended data, the metadata payload structure will contain only
+     * its type URL. To retrieve the full extended data, call this method.
+     * Returns the complete representation of the context as an
+     * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+     * </pre>
+     */
+    public void viewObjectFullContext(
+        com.google.storage.control.v2.ViewObjectFullContextRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.ObjectFullContext>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getViewObjectFullContextMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3648,6 +3741,26 @@ public final class StorageControlGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListIntelligenceFindingRevisionsMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the full content of an object context, including its key, value,
+     * and any associated extended data for a given context key.
+     * Object contexts can optionally contain extended data. If an object context
+     * contains extended data, the metadata payload structure will contain only
+     * its type URL. To retrieve the full extended data, call this method.
+     * Returns the complete representation of the context as an
+     * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+     * </pre>
+     */
+    public com.google.storage.control.v2.ObjectFullContext viewObjectFullContext(
+        com.google.storage.control.v2.ViewObjectFullContextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getViewObjectFullContextMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -4176,6 +4289,25 @@ public final class StorageControlGrpc {
             com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListIntelligenceFindingRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the full content of an object context, including its key, value,
+     * and any associated extended data for a given context key.
+     * Object contexts can optionally contain extended data. If an object context
+     * contains extended data, the metadata payload structure will contain only
+     * its type URL. To retrieve the full extended data, call this method.
+     * Returns the complete representation of the context as an
+     * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+     * </pre>
+     */
+    public com.google.storage.control.v2.ObjectFullContext viewObjectFullContext(
+        com.google.storage.control.v2.ViewObjectFullContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getViewObjectFullContextMethod(), getCallOptions(), request);
     }
   }
 
@@ -4749,6 +4881,26 @@ public final class StorageControlGrpc {
           getChannel().newCall(getListIntelligenceFindingRevisionsMethod(), getCallOptions()),
           request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the full content of an object context, including its key, value,
+     * and any associated extended data for a given context key.
+     * Object contexts can optionally contain extended data. If an object context
+     * contains extended data, the metadata payload structure will contain only
+     * its type URL. To retrieve the full extended data, call this method.
+     * Returns the complete representation of the context as an
+     * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.ObjectFullContext>
+        viewObjectFullContext(com.google.storage.control.v2.ViewObjectFullContextRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getViewObjectFullContextMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_FOLDER = 0;
@@ -4788,6 +4940,7 @@ public final class StorageControlGrpc {
   private static final int METHODID_SUMMARIZE_INTELLIGENCE_FINDINGS = 34;
   private static final int METHODID_GET_INTELLIGENCE_FINDING_REVISION = 35;
   private static final int METHODID_LIST_INTELLIGENCE_FINDING_REVISIONS = 36;
+  private static final int METHODID_VIEW_OBJECT_FULL_CONTEXT = 37;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5020,6 +5173,12 @@ public final class StorageControlGrpc {
               (com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_VIEW_OBJECT_FULL_CONTEXT:
+          serviceImpl.viewObjectFullContext(
+              (com.google.storage.control.v2.ViewObjectFullContextRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.storage.control.v2.ObjectFullContext>)
                   responseObserver);
           break;
         default:
@@ -5284,6 +5443,13 @@ public final class StorageControlGrpc {
                     com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest,
                     com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>(
                     service, METHODID_LIST_INTELLIGENCE_FINDING_REVISIONS)))
+        .addMethod(
+            getViewObjectFullContextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.ViewObjectFullContextRequest,
+                    com.google.storage.control.v2.ObjectFullContext>(
+                    service, METHODID_VIEW_OBJECT_FULL_CONTEXT)))
         .build();
   }
 
@@ -5372,6 +5538,7 @@ public final class StorageControlGrpc {
                       .addMethod(getSummarizeIntelligenceFindingsMethod())
                       .addMethod(getGetIntelligenceFindingRevisionMethod())
                       .addMethod(getListIntelligenceFindingRevisionsMethod())
+                      .addMethod(getViewObjectFullContextMethod())
                       .build();
         }
       }
