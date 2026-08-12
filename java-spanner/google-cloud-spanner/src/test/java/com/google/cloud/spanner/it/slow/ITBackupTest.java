@@ -358,7 +358,7 @@ public class ITBackupTest {
             backup));
 
     // Test pagination.
-    testPagination();
+    testPagination(database);
     logger.info("Finished listBackup tests");
 
     // Execute other tests as part of this integration test to reduce total execution time.
@@ -705,20 +705,21 @@ public class ITBackupTest {
     assertEquals(tomorrow, backup.getExpireTime());
   }
 
-  private void testPagination() {
+  private void testPagination(Database database) {
     logger.info("Listing backups using pagination");
+    Options.ListOption filter =
+        Options.filter(String.format("database:%s", database.getId().getName()));
 
     // First get all current backups without using pagination so we can compare that list with
     // the same list when pagination fails.
     List<Backup> initialBackups =
-        Lists.newArrayList(dbAdminClient.listBackups(instanceId).iterateAll());
+        Lists.newArrayList(dbAdminClient.listBackups(instanceId, filter).iterateAll());
 
     int numBackups = 0;
     logger.info("Fetching first page");
-    Page<Backup> page = dbAdminClient.listBackups(instanceId, Options.pageSize(1));
+    Page<Backup> page = dbAdminClient.listBackups(instanceId, filter, Options.pageSize(1));
     assertEquals(1, Iterables.size(page.getValues()));
     numBackups++;
-    assertFalse(page.hasNextPage());
     Set<String> seenPageTokens = new HashSet<>();
     seenPageTokens.add("");
     while (page.hasNextPage()) {
@@ -745,11 +746,11 @@ public class ITBackupTest {
       seenPageTokens.add(page.getNextPageToken());
       page =
           dbAdminClient.listBackups(
-              instanceId, Options.pageToken(page.getNextPageToken()), Options.pageSize(1));
+              instanceId, filter, Options.pageToken(page.getNextPageToken()), Options.pageSize(1));
       assertEquals(1, Iterables.size(page.getValues()));
       numBackups++;
     }
-    assertTrue(numBackups >= 1);
+    assertEquals(initialBackups.size(), numBackups);
   }
 
   private void testRestore(Backup backup, Timestamp versionTime, String expectedKey)

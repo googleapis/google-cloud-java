@@ -62,8 +62,7 @@ public abstract class GoogleCredentialsProvider implements CredentialsProvider {
   public abstract boolean getUseJwtAccessWithScope();
 
   @VisibleForTesting
-  @Nullable
-  abstract GoogleCredentials getOAuth2Credentials();
+  abstract @Nullable GoogleCredentials getOAuth2Credentials();
 
   @Override
   public Credentials getCredentials() throws IOException {

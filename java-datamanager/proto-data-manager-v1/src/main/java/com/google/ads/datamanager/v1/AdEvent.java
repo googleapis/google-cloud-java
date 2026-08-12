@@ -1239,12 +1239,12 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Information gathered about the device being used when the ad
+   * Required. Information gathered about the device being used when the ad
    * event happened.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the deviceInfo field is set.
@@ -1258,12 +1258,12 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Information gathered about the device being used when the ad
+   * Required. Information gathered about the device being used when the ad
    * event happened.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The deviceInfo.
@@ -1279,12 +1279,12 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. Information gathered about the device being used when the ad
+   * Required. Information gathered about the device being used when the ad
    * event happened.
    * </pre>
    *
    * <code>
-   * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1991,10 +1991,10 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The ISO 3166-2 country plus subdivision.
+   * Optional. The ISO 3166-2 country plus subdivision.
    * </pre>
    *
-   * <code>string region_code = 22 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string region_code = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The regionCode.
    */
@@ -2015,10 +2015,10 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The ISO 3166-2 country plus subdivision.
+   * Optional. The ISO 3166-2 country plus subdivision.
    * </pre>
    *
-   * <code>string region_code = 22 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string region_code = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for regionCode.
    */
@@ -5171,12 +5171,12 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Information gathered about the device being used when the ad
+     * Required. Information gathered about the device being used when the ad
      * event happened.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the deviceInfo field is set.
@@ -5189,12 +5189,12 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Information gathered about the device being used when the ad
+     * Required. Information gathered about the device being used when the ad
      * event happened.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The deviceInfo.
@@ -5213,12 +5213,12 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Information gathered about the device being used when the ad
+     * Required. Information gathered about the device being used when the ad
      * event happened.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setDeviceInfo(com.google.ads.datamanager.v1.DeviceInfo value) {
@@ -5239,12 +5239,12 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Information gathered about the device being used when the ad
+     * Required. Information gathered about the device being used when the ad
      * event happened.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setDeviceInfo(com.google.ads.datamanager.v1.DeviceInfo.Builder builderForValue) {
@@ -5262,12 +5262,12 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Information gathered about the device being used when the ad
+     * Required. Information gathered about the device being used when the ad
      * event happened.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeDeviceInfo(com.google.ads.datamanager.v1.DeviceInfo value) {
@@ -5293,12 +5293,12 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Information gathered about the device being used when the ad
+     * Required. Information gathered about the device being used when the ad
      * event happened.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearDeviceInfo() {
@@ -5316,12 +5316,12 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Information gathered about the device being used when the ad
+     * Required. Information gathered about the device being used when the ad
      * event happened.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.ads.datamanager.v1.DeviceInfo.Builder getDeviceInfoBuilder() {
@@ -5334,12 +5334,12 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Information gathered about the device being used when the ad
+     * Required. Information gathered about the device being used when the ad
      * event happened.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.ads.datamanager.v1.DeviceInfoOrBuilder getDeviceInfoOrBuilder() {
@@ -5356,12 +5356,12 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Information gathered about the device being used when the ad
+     * Required. Information gathered about the device being used when the ad
      * event happened.
      * </pre>
      *
      * <code>
-     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.ads.datamanager.v1.DeviceInfo device_info = 8 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
@@ -6823,10 +6823,10 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The ISO 3166-2 country plus subdivision.
+     * Optional. The ISO 3166-2 country plus subdivision.
      * </pre>
      *
-     * <code>string region_code = 22 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string region_code = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The regionCode.
      */
@@ -6846,10 +6846,10 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The ISO 3166-2 country plus subdivision.
+     * Optional. The ISO 3166-2 country plus subdivision.
      * </pre>
      *
-     * <code>string region_code = 22 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string region_code = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for regionCode.
      */
@@ -6869,10 +6869,10 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The ISO 3166-2 country plus subdivision.
+     * Optional. The ISO 3166-2 country plus subdivision.
      * </pre>
      *
-     * <code>string region_code = 22 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string region_code = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The regionCode to set.
      * @return This builder for chaining.
@@ -6891,10 +6891,10 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The ISO 3166-2 country plus subdivision.
+     * Optional. The ISO 3166-2 country plus subdivision.
      * </pre>
      *
-     * <code>string region_code = 22 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string region_code = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -6909,10 +6909,10 @@ public final class AdEvent extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The ISO 3166-2 country plus subdivision.
+     * Optional. The ISO 3166-2 country plus subdivision.
      * </pre>
      *
-     * <code>string region_code = 22 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string region_code = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for regionCode to set.
      * @return This builder for chaining.

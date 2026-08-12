@@ -77,6 +77,19 @@ public interface ConfigureExascaleCloudExadataInfrastructureRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Storage size needed for VM storage on Exascale in GBs.
+   * </pre>
+   *
+   * <code>int32 total_vm_storage_size_gb = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The totalVmStorageSizeGb.
+   */
+  int getTotalVmStorageSizeGb();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. An optional ID to identify the request.
    * </pre>
    *

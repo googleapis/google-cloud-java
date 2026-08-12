@@ -162,7 +162,7 @@ public interface AssignmentOrBuilder
    * </code>
    *
    * @deprecated google.cloud.bigquery.reservation.v1.Assignment.enable_gemini_in_bigquery is
-   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1397
+   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1398
    * @return The enableGeminiInBigquery.
    */
   @java.lang.Deprecated
@@ -279,4 +279,68 @@ public interface AssignmentOrBuilder
    * @return The bytes for principal.
    */
   com.google.protobuf.ByteString getPrincipalBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the priority precedence for this assignment. Used to
+   * resolve ambiguity when multiple assignments match a single job. Higher
+   * numerical values represent higher priority (e.g., 20 is higher than 10). If
+   * unspecified, it defaults to 0. Multiple assignments can share the same
+   * precedence, but it is recommended to use unique precedence values for
+   * assignments within the same assignee scope.
+   * </pre>
+   *
+   * <code>int64 precedence = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The precedence.
+   */
+  long getPrecedence();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Common Expression Language (CEL) condition that defines the
+   * matching criteria for this assignment.
+   * The condition must resolve to a boolean value.
+   * Supported variables will be added later.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the condition field is set.
+   */
+  boolean hasCondition();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Common Expression Language (CEL) condition that defines the
+   * matching criteria for this assignment.
+   * The condition must resolve to a boolean value.
+   * Supported variables will be added later.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The condition.
+   */
+  com.google.type.Expr getCondition();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Common Expression Language (CEL) condition that defines the
+   * matching criteria for this assignment.
+   * The condition must resolve to a boolean value.
+   * Supported variables will be added later.
+   * </pre>
+   *
+   * <code>.google.type.Expr condition = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.type.ExprOrBuilder getConditionOrBuilder();
 }

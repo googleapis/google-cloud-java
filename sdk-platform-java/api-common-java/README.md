@@ -65,6 +65,6 @@ mvn fmt:format
 mvn test
 ```
 
-[CONTRIBUTING]:https://github.com/googleapis/api-common-java/blob/main/CONTRIBUTING.md
-[LICENSE]: https://github.com/googleapis/api-common-java/blob/main/LICENSE
+[CONTRIBUTING]: https://github.com/googleapis/google-cloud-java/blob/main/CONTRIBUTING.md
+[LICENSE]: https://github.com/googleapis/google-cloud-java/blob/main/LICENSE
 

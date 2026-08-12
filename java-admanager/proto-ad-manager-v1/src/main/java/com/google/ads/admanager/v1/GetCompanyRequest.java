@@ -24,7 +24,7 @@ package com.google.ads.admanager.v1;
  *
  *
  * <pre>
- * Request object for `GetCompany` method.
+ * Request object for [GetCompany][] method.
  * </pre>
  *
  * Protobuf type {@code google.ads.admanager.v1.GetCompanyRequest}
@@ -293,7 +293,7 @@ public final class GetCompanyRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request object for `GetCompany` method.
+   * Request object for [GetCompany][] method.
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.GetCompanyRequest}

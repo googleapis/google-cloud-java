@@ -81,7 +81,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The different states of the Audit Manager report generation.
+   * Different states of report generation.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.auditmanager.v1.AuditReport.ReportGenerationState}
@@ -91,7 +91,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified. Invalid state.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>REPORT_GENERATION_STATE_UNSPECIFIED = 0;</code>
@@ -101,8 +101,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Audit report generation process is in progress, ie. operation state is
-     * neither OPERATION_STATE_DONE nor OPERATION_STATE_FAILED.
+     * The process is in progress. The operation can have any state
+     * except for `OPERATION_STATE_DONE` or `OPERATION_STATE_FAILED`.
      * </pre>
      *
      * <code>IN_PROGRESS = 1;</code>
@@ -112,8 +112,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Audit report generation process is completed. Operation state is
-     * OPERATION_STATE_DONE.
+     * The process is completed. The operation state is
+     * `OPERATION_STATE_DONE`.
      * </pre>
      *
      * <code>COMPLETED = 2;</code>
@@ -123,8 +123,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Audit report generation process has failed. Operation state is
-     * OPERATION_STATE_FAILED.
+     * The process has failed. The operation state is
+     * `OPERATION_STATE_FAILED`.
      * </pre>
      *
      * <code>FAILED = 3;</code>
@@ -134,8 +134,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Audit report generation process has completed. But report summary is
-     * unknown. This is valid for older reports.
+     * The process completed, but the report summary's status is unknown. This
+     * state isn't used for new reports.
      * </pre>
      *
      * <code>SUMMARY_UNKNOWN = 4;</code>
@@ -158,7 +158,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Unspecified. Invalid state.
+     * Default value. This value is unused.
      * </pre>
      *
      * <code>REPORT_GENERATION_STATE_UNSPECIFIED = 0;</code>
@@ -169,8 +169,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Audit report generation process is in progress, ie. operation state is
-     * neither OPERATION_STATE_DONE nor OPERATION_STATE_FAILED.
+     * The process is in progress. The operation can have any state
+     * except for `OPERATION_STATE_DONE` or `OPERATION_STATE_FAILED`.
      * </pre>
      *
      * <code>IN_PROGRESS = 1;</code>
@@ -181,8 +181,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Audit report generation process is completed. Operation state is
-     * OPERATION_STATE_DONE.
+     * The process is completed. The operation state is
+     * `OPERATION_STATE_DONE`.
      * </pre>
      *
      * <code>COMPLETED = 2;</code>
@@ -193,8 +193,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Audit report generation process has failed. Operation state is
-     * OPERATION_STATE_FAILED.
+     * The process has failed. The operation state is
+     * `OPERATION_STATE_FAILED`.
      * </pre>
      *
      * <code>FAILED = 3;</code>
@@ -205,8 +205,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Audit report generation process has completed. But report summary is
-     * unknown. This is valid for older reports.
+     * The process completed, but the report summary's status is unknown. This
+     * state isn't used for new reports.
      * </pre>
      *
      * <code>SUMMARY_UNKNOWN = 4;</code>
@@ -313,8 +313,11 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. The name of this Audit Report, in the format of scope given in
-   * request.
+   * Identifier. Name of the audit report, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+   * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+   * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -338,8 +341,11 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Identifier. The name of this Audit Report, in the format of scope given in
-   * request.
+   * Identifier. Name of the audit report, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+   * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+   * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -366,7 +372,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Report summary with compliance, violation counts etc.
+   * Output only. Report summary that includes information about compliance and
+   * violation counts.
    * </pre>
    *
    * <code>
@@ -384,7 +391,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Report summary with compliance, violation counts etc.
+   * Output only. Report summary that includes information about compliance and
+   * violation counts.
    * </pre>
    *
    * <code>
@@ -404,7 +412,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Report summary with compliance, violation counts etc.
+   * Output only. Report summary that includes information about compliance and
+   * violation counts.
    * </pre>
    *
    * <code>
@@ -427,7 +436,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. ClientOperationId
+   * Output only. Client operation ID for the audit report.
    * </pre>
    *
    * <code>string operation_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -451,7 +460,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. ClientOperationId
+   * Output only. Client operation ID for the audit report.
    * </pre>
    *
    * <code>string operation_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -478,7 +487,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The location where the generated report will be uploaded.
+   * Output only. Cloud Storage bucket where the audit report is uploaded to.
    * </pre>
    *
    * <code>
@@ -496,7 +505,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The location where the generated report will be uploaded.
+   * Output only. Cloud Storage bucket where the audit report is uploaded to.
    * </pre>
    *
    * <code>
@@ -516,7 +525,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The location where the generated report will be uploaded.
+   * Output only. Cloud Storage bucket where the audit report is uploaded to.
    * </pre>
    *
    * <code>
@@ -540,14 +549,21 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Compliance Standard.
+   * Output only. Deprecated. Compliance standard to be audited against.
+   *
+   * Use the `compliance_framework` field instead.
    * </pre>
    *
-   * <code>string compliance_standard = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string compliance_standard = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
    * @return The complianceStandard.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getComplianceStandard() {
     java.lang.Object ref = complianceStandard_;
     if (ref instanceof java.lang.String) {
@@ -564,14 +580,21 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Compliance Standard.
+   * Output only. Deprecated. Compliance standard to be audited against.
+   *
+   * Use the `compliance_framework` field instead.
    * </pre>
    *
-   * <code>string compliance_standard = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string compliance_standard = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
    * @return The bytes for complianceStandard.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getComplianceStandardBytes() {
     java.lang.Object ref = complianceStandard_;
     if (ref instanceof java.lang.String) {
@@ -593,7 +616,12 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The parent scope on which the report was generated.
+   * Output only. Organization, folder, or project that the report is generated
+   * for, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>string scope = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -617,7 +645,12 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The parent scope on which the report was generated.
+   * Output only. Organization, folder, or project that the report is generated
+   * for, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>string scope = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -698,7 +731,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The overall status of controls
+   * Output only. Overall status of the controls.
    * </pre>
    *
    * <code>
@@ -714,7 +747,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The overall status of controls
+   * Output only. Overall status of the controls.
    * </pre>
    *
    * <code>
@@ -731,7 +764,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The overall status of controls
+   * Output only. Overall status of the controls.
    * </pre>
    *
    * <code>
@@ -747,7 +780,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The overall status of controls
+   * Output only. Overall status of the controls.
    * </pre>
    *
    * <code>
@@ -763,7 +796,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The overall status of controls
+   * Output only. Overall status of the controls.
    * </pre>
    *
    * <code>
@@ -783,7 +816,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The state of Audit Report Generation.
+   * Output only. State of audit report generation.
    * </pre>
    *
    * <code>
@@ -801,7 +834,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The state of Audit Report Generation.
+   * Output only. State of audit report generation.
    * </pre>
    *
    * <code>
@@ -830,7 +863,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Compliance Framework of Audit Report
+   * Output only. Compliance framework to use for the audit report. For example,
+   * `CIS_GCP_FOUNDATIONS_V1_2_0`.
    * </pre>
    *
    * <code>string compliance_framework = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -854,7 +888,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Compliance Framework of Audit Report
+   * Output only. Compliance framework to use for the audit report. For example,
+   * `CIS_GCP_FOUNDATIONS_V1_2_0`.
    * </pre>
    *
    * <code>string compliance_framework = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -883,8 +918,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The ID/ Number for the scope on which the audit report was
-   * generated.
+   * Output only. Project number, folder ID, or organization ID that the audit
+   * report was generated for.
    * </pre>
    *
    * <code>string scope_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -908,8 +943,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. The ID/ Number for the scope on which the audit report was
-   * generated.
+   * Output only. Project number, folder ID, or organization ID that the audit
+   * report was generated for.
    * </pre>
    *
    * <code>string scope_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1581,8 +1616,11 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The name of this Audit Report, in the format of scope given in
-     * request.
+     * Identifier. Name of the audit report, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+     * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+     * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1605,8 +1643,11 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The name of this Audit Report, in the format of scope given in
-     * request.
+     * Identifier. Name of the audit report, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+     * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+     * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1629,8 +1670,11 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The name of this Audit Report, in the format of scope given in
-     * request.
+     * Identifier. Name of the audit report, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+     * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+     * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1652,8 +1696,11 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The name of this Audit Report, in the format of scope given in
-     * request.
+     * Identifier. Name of the audit report, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+     * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+     * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1671,8 +1718,11 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Identifier. The name of this Audit Report, in the format of scope given in
-     * request.
+     * Identifier. Name of the audit report, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+     * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+     * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1702,7 +1752,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Report summary with compliance, violation counts etc.
+     * Output only. Report summary that includes information about compliance and
+     * violation counts.
      * </pre>
      *
      * <code>
@@ -1719,7 +1770,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Report summary with compliance, violation counts etc.
+     * Output only. Report summary that includes information about compliance and
+     * violation counts.
      * </pre>
      *
      * <code>
@@ -1742,7 +1794,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Report summary with compliance, violation counts etc.
+     * Output only. Report summary that includes information about compliance and
+     * violation counts.
      * </pre>
      *
      * <code>
@@ -1767,7 +1820,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Report summary with compliance, violation counts etc.
+     * Output only. Report summary that includes information about compliance and
+     * violation counts.
      * </pre>
      *
      * <code>
@@ -1790,7 +1844,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Report summary with compliance, violation counts etc.
+     * Output only. Report summary that includes information about compliance and
+     * violation counts.
      * </pre>
      *
      * <code>
@@ -1821,7 +1876,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Report summary with compliance, violation counts etc.
+     * Output only. Report summary that includes information about compliance and
+     * violation counts.
      * </pre>
      *
      * <code>
@@ -1843,7 +1899,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Report summary with compliance, violation counts etc.
+     * Output only. Report summary that includes information about compliance and
+     * violation counts.
      * </pre>
      *
      * <code>
@@ -1860,7 +1917,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Report summary with compliance, violation counts etc.
+     * Output only. Report summary that includes information about compliance and
+     * violation counts.
      * </pre>
      *
      * <code>
@@ -1881,7 +1939,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Report summary with compliance, violation counts etc.
+     * Output only. Report summary that includes information about compliance and
+     * violation counts.
      * </pre>
      *
      * <code>
@@ -1911,7 +1970,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. ClientOperationId
+     * Output only. Client operation ID for the audit report.
      * </pre>
      *
      * <code>string operation_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1934,7 +1993,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. ClientOperationId
+     * Output only. Client operation ID for the audit report.
      * </pre>
      *
      * <code>string operation_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1957,7 +2016,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. ClientOperationId
+     * Output only. Client operation ID for the audit report.
      * </pre>
      *
      * <code>string operation_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1979,7 +2038,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. ClientOperationId
+     * Output only. Client operation ID for the audit report.
      * </pre>
      *
      * <code>string operation_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1997,7 +2056,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. ClientOperationId
+     * Output only. Client operation ID for the audit report.
      * </pre>
      *
      * <code>string operation_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2027,7 +2086,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The location where the generated report will be uploaded.
+     * Output only. Cloud Storage bucket where the audit report is uploaded to.
      * </pre>
      *
      * <code>
@@ -2044,7 +2103,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The location where the generated report will be uploaded.
+     * Output only. Cloud Storage bucket where the audit report is uploaded to.
      * </pre>
      *
      * <code>
@@ -2067,7 +2126,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The location where the generated report will be uploaded.
+     * Output only. Cloud Storage bucket where the audit report is uploaded to.
      * </pre>
      *
      * <code>
@@ -2093,7 +2152,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The location where the generated report will be uploaded.
+     * Output only. Cloud Storage bucket where the audit report is uploaded to.
      * </pre>
      *
      * <code>
@@ -2116,7 +2175,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The location where the generated report will be uploaded.
+     * Output only. Cloud Storage bucket where the audit report is uploaded to.
      * </pre>
      *
      * <code>
@@ -2148,7 +2207,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The location where the generated report will be uploaded.
+     * Output only. Cloud Storage bucket where the audit report is uploaded to.
      * </pre>
      *
      * <code>
@@ -2170,7 +2229,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The location where the generated report will be uploaded.
+     * Output only. Cloud Storage bucket where the audit report is uploaded to.
      * </pre>
      *
      * <code>
@@ -2188,7 +2247,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The location where the generated report will be uploaded.
+     * Output only. Cloud Storage bucket where the audit report is uploaded to.
      * </pre>
      *
      * <code>
@@ -2210,7 +2269,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The location where the generated report will be uploaded.
+     * Output only. Cloud Storage bucket where the audit report is uploaded to.
      * </pre>
      *
      * <code>
@@ -2240,13 +2299,20 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Compliance Standard.
+     * Output only. Deprecated. Compliance standard to be audited against.
+     *
+     * Use the `compliance_framework` field instead.
      * </pre>
      *
-     * <code>string compliance_standard = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string compliance_standard = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
      * @return The complianceStandard.
      */
+    @java.lang.Deprecated
     public java.lang.String getComplianceStandard() {
       java.lang.Object ref = complianceStandard_;
       if (!(ref instanceof java.lang.String)) {
@@ -2263,13 +2329,20 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Compliance Standard.
+     * Output only. Deprecated. Compliance standard to be audited against.
+     *
+     * Use the `compliance_framework` field instead.
      * </pre>
      *
-     * <code>string compliance_standard = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string compliance_standard = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
      * @return The bytes for complianceStandard.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getComplianceStandardBytes() {
       java.lang.Object ref = complianceStandard_;
       if (ref instanceof String) {
@@ -2286,14 +2359,21 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Compliance Standard.
+     * Output only. Deprecated. Compliance standard to be audited against.
+     *
+     * Use the `compliance_framework` field instead.
      * </pre>
      *
-     * <code>string compliance_standard = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string compliance_standard = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
      * @param value The complianceStandard to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setComplianceStandard(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -2308,13 +2388,20 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Compliance Standard.
+     * Output only. Deprecated. Compliance standard to be audited against.
+     *
+     * Use the `compliance_framework` field instead.
      * </pre>
      *
-     * <code>string compliance_standard = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string compliance_standard = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearComplianceStandard() {
       complianceStandard_ = getDefaultInstance().getComplianceStandard();
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -2326,14 +2413,21 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Compliance Standard.
+     * Output only. Deprecated. Compliance standard to be audited against.
+     *
+     * Use the `compliance_framework` field instead.
      * </pre>
      *
-     * <code>string compliance_standard = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string compliance_standard = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
+     * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
      * @param value The bytes for complianceStandard to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setComplianceStandardBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -2351,7 +2445,12 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The parent scope on which the report was generated.
+     * Output only. Organization, folder, or project that the report is generated
+     * for, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>string scope = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2374,7 +2473,12 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The parent scope on which the report was generated.
+     * Output only. Organization, folder, or project that the report is generated
+     * for, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>string scope = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2397,7 +2501,12 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The parent scope on which the report was generated.
+     * Output only. Organization, folder, or project that the report is generated
+     * for, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>string scope = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2419,7 +2528,12 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The parent scope on which the report was generated.
+     * Output only. Organization, folder, or project that the report is generated
+     * for, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>string scope = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2437,7 +2551,12 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The parent scope on which the report was generated.
+     * Output only. Organization, folder, or project that the report is generated
+     * for, in one of the following formats:
+     *
+     * * `projects/{project}/locations/{location}`
+     * * `folders/{folder}/locations/{location}`
+     * * `organizations/{organization}/locations/{location}`
      * </pre>
      *
      * <code>string scope = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2690,7 +2809,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2709,7 +2828,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2728,7 +2847,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2747,7 +2866,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2773,7 +2892,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2796,7 +2915,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2821,7 +2940,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2847,7 +2966,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2870,7 +2989,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2893,7 +3012,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2916,7 +3035,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2938,7 +3057,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2960,7 +3079,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2976,7 +3095,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -2996,7 +3115,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -3016,7 +3135,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -3032,7 +3151,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -3049,7 +3168,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The overall status of controls
+     * Output only. Overall status of the controls.
      * </pre>
      *
      * <code>
@@ -3087,7 +3206,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The state of Audit Report Generation.
+     * Output only. State of audit report generation.
      * </pre>
      *
      * <code>
@@ -3105,7 +3224,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The state of Audit Report Generation.
+     * Output only. State of audit report generation.
      * </pre>
      *
      * <code>
@@ -3126,7 +3245,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The state of Audit Report Generation.
+     * Output only. State of audit report generation.
      * </pre>
      *
      * <code>
@@ -3150,7 +3269,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The state of Audit Report Generation.
+     * Output only. State of audit report generation.
      * </pre>
      *
      * <code>
@@ -3175,7 +3294,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The state of Audit Report Generation.
+     * Output only. State of audit report generation.
      * </pre>
      *
      * <code>
@@ -3197,7 +3316,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Compliance Framework of Audit Report
+     * Output only. Compliance framework to use for the audit report. For example,
+     * `CIS_GCP_FOUNDATIONS_V1_2_0`.
      * </pre>
      *
      * <code>string compliance_framework = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3220,7 +3340,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Compliance Framework of Audit Report
+     * Output only. Compliance framework to use for the audit report. For example,
+     * `CIS_GCP_FOUNDATIONS_V1_2_0`.
      * </pre>
      *
      * <code>string compliance_framework = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3243,7 +3364,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Compliance Framework of Audit Report
+     * Output only. Compliance framework to use for the audit report. For example,
+     * `CIS_GCP_FOUNDATIONS_V1_2_0`.
      * </pre>
      *
      * <code>string compliance_framework = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3265,7 +3387,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Compliance Framework of Audit Report
+     * Output only. Compliance framework to use for the audit report. For example,
+     * `CIS_GCP_FOUNDATIONS_V1_2_0`.
      * </pre>
      *
      * <code>string compliance_framework = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3283,7 +3406,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Compliance Framework of Audit Report
+     * Output only. Compliance framework to use for the audit report. For example,
+     * `CIS_GCP_FOUNDATIONS_V1_2_0`.
      * </pre>
      *
      * <code>string compliance_framework = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3308,8 +3432,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The ID/ Number for the scope on which the audit report was
-     * generated.
+     * Output only. Project number, folder ID, or organization ID that the audit
+     * report was generated for.
      * </pre>
      *
      * <code>string scope_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3332,8 +3456,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The ID/ Number for the scope on which the audit report was
-     * generated.
+     * Output only. Project number, folder ID, or organization ID that the audit
+     * report was generated for.
      * </pre>
      *
      * <code>string scope_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3356,8 +3480,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The ID/ Number for the scope on which the audit report was
-     * generated.
+     * Output only. Project number, folder ID, or organization ID that the audit
+     * report was generated for.
      * </pre>
      *
      * <code>string scope_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3379,8 +3503,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The ID/ Number for the scope on which the audit report was
-     * generated.
+     * Output only. Project number, folder ID, or organization ID that the audit
+     * report was generated for.
      * </pre>
      *
      * <code>string scope_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3398,8 +3522,8 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. The ID/ Number for the scope on which the audit report was
-     * generated.
+     * Output only. Project number, folder ID, or organization ID that the audit
+     * report was generated for.
      * </pre>
      *
      * <code>string scope_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

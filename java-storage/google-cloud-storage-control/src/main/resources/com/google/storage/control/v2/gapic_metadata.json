@@ -120,6 +120,9 @@
             },
             "UpdateRapidCache": {
               "methods": ["updateRapidCacheAsync", "updateRapidCacheAsync", "updateRapidCacheOperationCallable", "updateRapidCacheCallable"]
+            },
+            "ViewObjectFullContext": {
+              "methods": ["viewObjectFullContext", "viewObjectFullContext", "viewObjectFullContext", "viewObjectFullContext", "viewObjectFullContext", "viewObjectFullContextCallable"]
             }
           }
         }

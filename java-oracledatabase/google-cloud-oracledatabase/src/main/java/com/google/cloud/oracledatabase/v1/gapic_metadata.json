@@ -88,6 +88,9 @@
             "GetAutonomousDatabase": {
               "methods": ["getAutonomousDatabase", "getAutonomousDatabase", "getAutonomousDatabase", "getAutonomousDatabaseCallable"]
             },
+            "GetAutonomousDatabaseRefreshableClones": {
+              "methods": ["getAutonomousDatabaseRefreshableClones", "getAutonomousDatabaseRefreshableClones", "getAutonomousDatabaseRefreshableClones", "getAutonomousDatabaseRefreshableClonesCallable"]
+            },
             "GetCloudExadataInfrastructure": {
               "methods": ["getCloudExadataInfrastructure", "getCloudExadataInfrastructure", "getCloudExadataInfrastructure", "getCloudExadataInfrastructureCallable"]
             },
@@ -216,6 +219,9 @@
             },
             "ListPluggableDatabases": {
               "methods": ["listPluggableDatabases", "listPluggableDatabases", "listPluggableDatabases", "listPluggableDatabasesPagedCallable", "listPluggableDatabasesCallable"]
+            },
+            "RefreshAutonomousDatabase": {
+              "methods": ["refreshAutonomousDatabaseAsync", "refreshAutonomousDatabaseAsync", "refreshAutonomousDatabaseAsync", "refreshAutonomousDatabaseOperationCallable", "refreshAutonomousDatabaseCallable"]
             },
             "RemoveVirtualMachineExadbVmCluster": {
               "methods": ["removeVirtualMachineExadbVmClusterAsync", "removeVirtualMachineExadbVmClusterAsync", "removeVirtualMachineExadbVmClusterAsync", "removeVirtualMachineExadbVmClusterOperationCallable", "removeVirtualMachineExadbVmClusterCallable"]
