@@ -56,6 +56,7 @@ jobs:
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -74,6 +75,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 11
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -91,6 +93,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: .kokoro/dependencies.sh
 
   required:

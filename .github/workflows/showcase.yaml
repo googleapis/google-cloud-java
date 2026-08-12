@@ -50,6 +50,7 @@ jobs:
         with:
           java-version: 8
           distribution: temurin
+          cache: maven
       - run: java -version
       - name: Parse showcase version
         working-directory: java-showcase/gapic-showcase
@@ -132,6 +133,7 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
           distribution: temurin
+          cache: maven
       - run: mvn -version
       - name: Install Maven modules
         shell: bash
@@ -153,6 +155,7 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
+          cache: maven
       - name: Showcase golden tests
         working-directory: java-showcase
         run: |
@@ -165,6 +168,7 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
           distribution: temurin
+          cache: maven
       - name: Parse showcase version
         working-directory: java-showcase/gapic-showcase
         run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
