@@ -32,11 +32,13 @@ package com.google.api.gax.httpjson;
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.rpc.ApiExceptionFactory;
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Public for technical reasons; intended for use by generated code. */
 @NullMarked
@@ -46,25 +48,46 @@ public class ProtoOperationTransformers {
   public static class ResponseTransformer<ResponseT extends Message>
       implements ApiFunction<OperationSnapshot, ResponseT> {
     private final AnyTransformer<ResponseT> transformer;
+    @Nullable private final HttpJsonLroErrorParser errorParser;
 
     private ResponseTransformer(Class<ResponseT> packedClass) {
       this.transformer = new AnyTransformer<>(packedClass);
+      this.errorParser = null;
+    }
+
+    private ResponseTransformer(
+        Class<ResponseT> packedClass, @Nullable HttpJsonLroErrorParser errorParser) {
+      this.transformer = new AnyTransformer<>(packedClass);
+      this.errorParser = errorParser;
     }
 
     @Override
     public ResponseT apply(OperationSnapshot operationSnapshot) {
       if (!operationSnapshot.getErrorCode().getCode().equals(Code.OK)) {
+        @Nullable ErrorDetails details = null;
+        String errorMessage = operationSnapshot.getErrorMessage();
+
+        if (errorParser != null && operationSnapshot.getResponse() != null) {
+          details = errorParser.parse(operationSnapshot.getResponse());
+          String parsedMsg = errorParser.parseErrorMessage(operationSnapshot.getResponse());
+          if (parsedMsg != null && !parsedMsg.isEmpty()) {
+            errorMessage = parsedMsg;
+          }
+        } else {
+          details = operationSnapshot.getErrorDetails();
+        }
+
         throw ApiExceptionFactory.createException(
             "Operation with name \""
                 + operationSnapshot.getName()
                 + "\" failed with status = "
                 + operationSnapshot.getErrorCode()
                 + " and message = "
-                + operationSnapshot.getErrorMessage(),
+                + errorMessage,
             null,
             operationSnapshot.getErrorCode(),
             false,
-            operationSnapshot.getErrorDetails());
+            details);
       }
 
       if (!(operationSnapshot.getResponse() instanceof Any)) {
@@ -87,6 +110,11 @@ public class ProtoOperationTransformers {
     public static <ResponseT extends Message> ResponseTransformer<ResponseT> create(
         Class<ResponseT> packedClass) {
       return new ResponseTransformer<>(packedClass);
+    }
+
+    public static <ResponseT extends Message> ResponseTransformer<ResponseT> create(
+        Class<ResponseT> packedClass, @Nullable HttpJsonLroErrorParser errorParser) {
+      return new ResponseTransformer<>(packedClass, errorParser);
     }
   }
 
