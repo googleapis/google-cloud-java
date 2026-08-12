@@ -487,11 +487,11 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Enrolls the customer resource(folder/project/organization) to the audit
-     * manager service by creating the audit managers Service Agent in customers
-     * workload and granting required permissions to the Service Agent. Please
-     * note that if enrollment request is made on the already enrolled workload
-     * then enrollment is executed overriding the existing set of destinations.
+     * Adds your project, folder, or organization to Audit
+     * Manager. This method creates the Audit Manager service agent in your
+     * workload and grants required permissions to the service agent.
+     * If you make this request on a workload that's already enrolled,
+     * then this method overrides the existing set of destinations.
      * </pre>
      */
     default void enrollResource(
@@ -505,9 +505,12 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Generates a demo report highlighting different responsibilities
-     * (Google/Customer/ shared) required to be fulfilled for the customer's
-     * workload to be compliant with the given standard.
+     * Generates an audit scope report for the given standard.
+     * The report includes the following:
+     * * The technical attributes and constraints that Audit Manager uses to
+     *   verify your compliance with a framework.
+     * * A list of Google Cloud services and resources that are within the
+     *   scope of the framework.
      * </pre>
      */
     default void generateAuditScopeReport(
@@ -522,8 +525,9 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Register the Audit Report generation requests and returns the OperationId
-     * using which the customer can track the report generation progress.
+     * Registers audit report generation requests. This method returns the
+     * operation identifier that you can use to track the report generation
+     * progress.
      * </pre>
      */
     default void generateAuditReport(
@@ -537,7 +541,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Lists audit reports in the selected parent scope
+     * Lists the audit reports for the organization, folder, or project that you
+     * specify as the parent scope.
      * </pre>
      */
     default void listAuditReports(
@@ -552,7 +557,7 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Get the overall audit report
+     * Gets the full metadata and findings for an audit report.
      * </pre>
      */
     default void getAuditReport(
@@ -567,7 +572,7 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Get a resource along with its enrollment status.
+     * Gets a resource and its enrollment status.
      * </pre>
      */
     default void getResourceEnrollmentStatus(
@@ -582,7 +587,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Fetches all resources under the parent along with their enrollment.
+     * Lists all the folders and projects in an organization or folder, along with
+     * their enrollments.
      * </pre>
      */
     default void listResourceEnrollmentStatuses(
@@ -598,7 +604,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Gets controls needed to be implemented to be compliant to a standard.
+     * Lists the controls that you must implement to become compliant to a
+     * regulatory standard.
      * </pre>
      */
     default void listControls(
@@ -648,11 +655,11 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Enrolls the customer resource(folder/project/organization) to the audit
-     * manager service by creating the audit managers Service Agent in customers
-     * workload and granting required permissions to the Service Agent. Please
-     * note that if enrollment request is made on the already enrolled workload
-     * then enrollment is executed overriding the existing set of destinations.
+     * Adds your project, folder, or organization to Audit
+     * Manager. This method creates the Audit Manager service agent in your
+     * workload and grants required permissions to the service agent.
+     * If you make this request on a workload that's already enrolled,
+     * then this method overrides the existing set of destinations.
      * </pre>
      */
     public void enrollResource(
@@ -668,9 +675,12 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Generates a demo report highlighting different responsibilities
-     * (Google/Customer/ shared) required to be fulfilled for the customer's
-     * workload to be compliant with the given standard.
+     * Generates an audit scope report for the given standard.
+     * The report includes the following:
+     * * The technical attributes and constraints that Audit Manager uses to
+     *   verify your compliance with a framework.
+     * * A list of Google Cloud services and resources that are within the
+     *   scope of the framework.
      * </pre>
      */
     public void generateAuditScopeReport(
@@ -687,8 +697,9 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Register the Audit Report generation requests and returns the OperationId
-     * using which the customer can track the report generation progress.
+     * Registers audit report generation requests. This method returns the
+     * operation identifier that you can use to track the report generation
+     * progress.
      * </pre>
      */
     public void generateAuditReport(
@@ -704,7 +715,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Lists audit reports in the selected parent scope
+     * Lists the audit reports for the organization, folder, or project that you
+     * specify as the parent scope.
      * </pre>
      */
     public void listAuditReports(
@@ -721,7 +733,7 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Get the overall audit report
+     * Gets the full metadata and findings for an audit report.
      * </pre>
      */
     public void getAuditReport(
@@ -738,7 +750,7 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Get a resource along with its enrollment status.
+     * Gets a resource and its enrollment status.
      * </pre>
      */
     public void getResourceEnrollmentStatus(
@@ -755,7 +767,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Fetches all resources under the parent along with their enrollment.
+     * Lists all the folders and projects in an organization or folder, along with
+     * their enrollments.
      * </pre>
      */
     public void listResourceEnrollmentStatuses(
@@ -773,7 +786,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Gets controls needed to be implemented to be compliant to a standard.
+     * Lists the controls that you must implement to become compliant to a
+     * regulatory standard.
      * </pre>
      */
     public void listControls(
@@ -810,11 +824,11 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Enrolls the customer resource(folder/project/organization) to the audit
-     * manager service by creating the audit managers Service Agent in customers
-     * workload and granting required permissions to the Service Agent. Please
-     * note that if enrollment request is made on the already enrolled workload
-     * then enrollment is executed overriding the existing set of destinations.
+     * Adds your project, folder, or organization to Audit
+     * Manager. This method creates the Audit Manager service agent in your
+     * workload and grants required permissions to the service agent.
+     * If you make this request on a workload that's already enrolled,
+     * then this method overrides the existing set of destinations.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.Enrollment enrollResource(
@@ -828,9 +842,12 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Generates a demo report highlighting different responsibilities
-     * (Google/Customer/ shared) required to be fulfilled for the customer's
-     * workload to be compliant with the given standard.
+     * Generates an audit scope report for the given standard.
+     * The report includes the following:
+     * * The technical attributes and constraints that Audit Manager uses to
+     *   verify your compliance with a framework.
+     * * A list of Google Cloud services and resources that are within the
+     *   scope of the framework.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.AuditScopeReport generateAuditScopeReport(
@@ -844,8 +861,9 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Register the Audit Report generation requests and returns the OperationId
-     * using which the customer can track the report generation progress.
+     * Registers audit report generation requests. This method returns the
+     * operation identifier that you can use to track the report generation
+     * progress.
      * </pre>
      */
     public com.google.longrunning.Operation generateAuditReport(
@@ -859,7 +877,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Lists audit reports in the selected parent scope
+     * Lists the audit reports for the organization, folder, or project that you
+     * specify as the parent scope.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.ListAuditReportsResponse listAuditReports(
@@ -873,7 +892,7 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Get the overall audit report
+     * Gets the full metadata and findings for an audit report.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.AuditReport getAuditReport(
@@ -887,7 +906,7 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Get a resource along with its enrollment status.
+     * Gets a resource and its enrollment status.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.ResourceEnrollmentStatus getResourceEnrollmentStatus(
@@ -901,7 +920,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Fetches all resources under the parent along with their enrollment.
+     * Lists all the folders and projects in an organization or folder, along with
+     * their enrollments.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.ListResourceEnrollmentStatusesResponse
@@ -916,7 +936,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Gets controls needed to be implemented to be compliant to a standard.
+     * Lists the controls that you must implement to become compliant to a
+     * regulatory standard.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.ListControlsResponse listControls(
@@ -950,11 +971,11 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Enrolls the customer resource(folder/project/organization) to the audit
-     * manager service by creating the audit managers Service Agent in customers
-     * workload and granting required permissions to the Service Agent. Please
-     * note that if enrollment request is made on the already enrolled workload
-     * then enrollment is executed overriding the existing set of destinations.
+     * Adds your project, folder, or organization to Audit
+     * Manager. This method creates the Audit Manager service agent in your
+     * workload and grants required permissions to the service agent.
+     * If you make this request on a workload that's already enrolled,
+     * then this method overrides the existing set of destinations.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.Enrollment enrollResource(
@@ -967,9 +988,12 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Generates a demo report highlighting different responsibilities
-     * (Google/Customer/ shared) required to be fulfilled for the customer's
-     * workload to be compliant with the given standard.
+     * Generates an audit scope report for the given standard.
+     * The report includes the following:
+     * * The technical attributes and constraints that Audit Manager uses to
+     *   verify your compliance with a framework.
+     * * A list of Google Cloud services and resources that are within the
+     *   scope of the framework.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.AuditScopeReport generateAuditScopeReport(
@@ -982,8 +1006,9 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Register the Audit Report generation requests and returns the OperationId
-     * using which the customer can track the report generation progress.
+     * Registers audit report generation requests. This method returns the
+     * operation identifier that you can use to track the report generation
+     * progress.
      * </pre>
      */
     public com.google.longrunning.Operation generateAuditReport(
@@ -996,7 +1021,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Lists audit reports in the selected parent scope
+     * Lists the audit reports for the organization, folder, or project that you
+     * specify as the parent scope.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.ListAuditReportsResponse listAuditReports(
@@ -1009,7 +1035,7 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Get the overall audit report
+     * Gets the full metadata and findings for an audit report.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.AuditReport getAuditReport(
@@ -1022,7 +1048,7 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Get a resource along with its enrollment status.
+     * Gets a resource and its enrollment status.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.ResourceEnrollmentStatus getResourceEnrollmentStatus(
@@ -1035,7 +1061,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Fetches all resources under the parent along with their enrollment.
+     * Lists all the folders and projects in an organization or folder, along with
+     * their enrollments.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.ListResourceEnrollmentStatusesResponse
@@ -1049,7 +1076,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Gets controls needed to be implemented to be compliant to a standard.
+     * Lists the controls that you must implement to become compliant to a
+     * regulatory standard.
      * </pre>
      */
     public com.google.cloud.auditmanager.v1.ListControlsResponse listControls(
@@ -1082,11 +1110,11 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Enrolls the customer resource(folder/project/organization) to the audit
-     * manager service by creating the audit managers Service Agent in customers
-     * workload and granting required permissions to the Service Agent. Please
-     * note that if enrollment request is made on the already enrolled workload
-     * then enrollment is executed overriding the existing set of destinations.
+     * Adds your project, folder, or organization to Audit
+     * Manager. This method creates the Audit Manager service agent in your
+     * workload and grants required permissions to the service agent.
+     * If you make this request on a workload that's already enrolled,
+     * then this method overrides the existing set of destinations.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1100,9 +1128,12 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Generates a demo report highlighting different responsibilities
-     * (Google/Customer/ shared) required to be fulfilled for the customer's
-     * workload to be compliant with the given standard.
+     * Generates an audit scope report for the given standard.
+     * The report includes the following:
+     * * The technical attributes and constraints that Audit Manager uses to
+     *   verify your compliance with a framework.
+     * * A list of Google Cloud services and resources that are within the
+     *   scope of the framework.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1117,8 +1148,9 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Register the Audit Report generation requests and returns the OperationId
-     * using which the customer can track the report generation progress.
+     * Registers audit report generation requests. This method returns the
+     * operation identifier that you can use to track the report generation
+     * progress.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1131,7 +1163,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Lists audit reports in the selected parent scope
+     * Lists the audit reports for the organization, folder, or project that you
+     * specify as the parent scope.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1145,7 +1178,7 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Get the overall audit report
+     * Gets the full metadata and findings for an audit report.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1159,7 +1192,7 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Get a resource along with its enrollment status.
+     * Gets a resource and its enrollment status.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1174,7 +1207,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Fetches all resources under the parent along with their enrollment.
+     * Lists all the folders and projects in an organization or folder, along with
+     * their enrollments.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1190,7 +1224,8 @@ public final class AuditManagerGrpc {
      *
      *
      * <pre>
-     * Gets controls needed to be implemented to be compliant to a standard.
+     * Lists the controls that you must implement to become compliant to a
+     * regulatory standard.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

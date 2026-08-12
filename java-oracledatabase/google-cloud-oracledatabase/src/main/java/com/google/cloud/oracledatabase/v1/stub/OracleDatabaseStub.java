@@ -55,6 +55,7 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.oracledatabase.v1.AutonomousDatabase;
+import com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones;
 import com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure;
 import com.google.cloud.oracledatabase.v1.CloudVmCluster;
 import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest;
@@ -87,6 +88,7 @@ import com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault;
 import com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse;
+import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest;
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest;
@@ -165,6 +167,7 @@ import com.google.cloud.oracledatabase.v1.OdbNetwork;
 import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
 import com.google.cloud.oracledatabase.v1.PluggableDatabase;
+import com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RemoveVirtualMachineExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
@@ -514,6 +517,24 @@ public abstract class OracleDatabaseStub implements BackgroundResource {
       failoverAutonomousDatabaseCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: failoverAutonomousDatabaseCallable()");
+  }
+
+  public OperationCallable<RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: refreshAutonomousDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: refreshAutonomousDatabaseCallable()");
+  }
+
+  public UnaryCallable<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getAutonomousDatabaseRefreshableClonesCallable()");
   }
 
   public UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksPagedResponse>

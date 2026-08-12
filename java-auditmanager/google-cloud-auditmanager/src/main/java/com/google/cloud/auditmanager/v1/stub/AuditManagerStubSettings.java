@@ -167,7 +167,10 @@ import org.jspecify.annotations.Nullable;
 public class AuditManagerStubSettings extends StubSettings<AuditManagerStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-auditmanager")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
 
   private final UnaryCallSettings<EnrollResourceRequest, Enrollment> enrollResourceSettings;
   private final UnaryCallSettings<GenerateAuditScopeReportRequest, AuditScopeReport>
