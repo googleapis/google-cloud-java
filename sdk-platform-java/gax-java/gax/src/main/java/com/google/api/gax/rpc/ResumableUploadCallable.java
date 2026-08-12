@@ -35,7 +35,7 @@ import java.io.InputStream;
 
 /**
  * A ResumableUploadCallable is an API-transport-independent wrapper for the Resumable Upload
- * protocol. Operates directly on the request object and input stream payload.
+ * protocol (Scotty). Operates directly on the request object and input stream payload.
  *
  * @param <RequestT> request type
  * @param <ResponseT> response type
@@ -46,12 +46,12 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
   protected ResumableUploadCallable() {}
 
   /**
-   * Performs the resumable upload asynchronously.
+   * Performs the resumable upload asynchronously with custom per-request settings and context.
    *
    * @param request the request message
    * @param payload the data payload input stream
-   * @param perRequestSettings request-level call settings overrides
-   * @param context the context of the call
+   * @param perRequestSettings request-level call settings overrides; may be {@code null}
+   * @param context the call context; may be {@code null}
    * @return future for the response
    */
   public abstract ApiFuture<ResponseT> futureCall(
@@ -60,6 +60,9 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
       ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings,
       ApiCallContext context);
 
+  /**
+   * Performs the resumable upload asynchronously with custom per-request settings and a null context.
+   */
   public ApiFuture<ResponseT> futureCall(
       RequestT request,
       InputStream payload,
@@ -67,11 +70,17 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
     return futureCall(request, payload, perRequestSettings, (ApiCallContext) null);
   }
 
+  /**
+   * Performs the resumable upload asynchronously with default settings and a null context.
+   */
   public ApiFuture<ResponseT> futureCall(RequestT request, InputStream payload) {
     return futureCall(
         request, payload, (ResumableUploadCallSettings<RequestT, ResponseT>) null, (ApiCallContext) null);
   }
 
+  /**
+   * Performs the resumable upload synchronously with custom per-request settings and context.
+   */
   public ResponseT call(
       RequestT request,
       InputStream payload,
@@ -81,6 +90,9 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
         futureCall(request, payload, perRequestSettings, context));
   }
 
+  /**
+   * Performs the resumable upload synchronously with custom per-request settings and a null context.
+   */
   public ResponseT call(
       RequestT request,
       InputStream payload,
@@ -88,6 +100,9 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
     return call(request, payload, perRequestSettings, (ApiCallContext) null);
   }
 
+  /**
+   * Performs the resumable upload synchronously with default settings and a null context.
+   */
   public ResponseT call(RequestT request, InputStream payload) {
     return call(
         request, payload, (ResumableUploadCallSettings<RequestT, ResponseT>) null, (ApiCallContext) null);

@@ -29,46 +29,70 @@
  */
 package com.google.api.gax.rpc;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-class ResumableUploadCallSettingsTest {
+@RunWith(JUnit4.class)
+public class ResumableUploadCallSettingsTest {
 
   @Test
-  void testDefaultChunkSize() {
-    ResumableUploadCallSettings<Object, Object> settings =
-        ResumableUploadCallSettings.newBuilder().build();
-    assertThat(settings.getChunkSize()).isNull();
-    assertThat(settings.getChunkSizeOrDefault()).isEqualTo(8 * 1024 * 1024);
+  public void testDefaultChunkSize() {
+    ResumableUploadCallSettings<String, String> settings =
+        ResumableUploadCallSettings.<String, String>newBuilder().build();
+
+    assertNull(settings.getChunkSize());
+    assertNull(settings.getTotalBytes());
+    assertEquals(8 * 1024 * 1024, settings.getChunkSizeOrDefault());
   }
 
   @Test
-  void testCustomChunkSize() {
-    ResumableUploadCallSettings<Object, Object> settings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(16 * 1024 * 1024).build();
-    assertThat(settings.getChunkSize()).isEqualTo(16 * 1024 * 1024);
-    assertThat(settings.getChunkSizeOrDefault()).isEqualTo(16 * 1024 * 1024);
+  public void testCustomInitialization() {
+    ResumableUploadCallSettings<String, String> settings =
+        ResumableUploadCallSettings.<String, String>newBuilder()
+            .setChunkSize(16 * 1024 * 1024)
+            .setTotalBytes(100L * 1024 * 1024)
+            .build();
+
+    assertEquals(Integer.valueOf(16 * 1024 * 1024), settings.getChunkSize());
+    assertEquals(16 * 1024 * 1024, settings.getChunkSizeOrDefault());
+    assertEquals(Long.valueOf(100L * 1024 * 1024), settings.getTotalBytes());
   }
 
   @Test
-  void testMergeWith() {
-    ResumableUploadCallSettings<Object, Object> defaultSettings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(4 * 1024 * 1024).build();
-    ResumableUploadCallSettings<Object, Object> requestSettings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(32 * 1024 * 1024).build();
+  public void testMergeWith_NullPerRequestSettings() {
+    ResumableUploadCallSettings<String, String> stubSettings =
+        ResumableUploadCallSettings.<String, String>newBuilder()
+            .setChunkSize(4 * 1024 * 1024)
+            .build();
 
-    ResumableUploadCallSettings<Object, Object> merged =
-        defaultSettings.mergeWith(requestSettings);
-    assertThat(merged.getChunkSize()).isEqualTo(32 * 1024 * 1024);
+    ResumableUploadCallSettings<String, String> merged = stubSettings.mergeWith(null);
+
+    assertSame(stubSettings, merged);
   }
 
   @Test
-  void testMergeWithNullRequestSettings() {
-    ResumableUploadCallSettings<Object, Object> defaultSettings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(4 * 1024 * 1024).build();
+  public void testMergeWith_PerRequestOverrides() {
+    ResumableUploadCallSettings<String, String> stubSettings =
+        ResumableUploadCallSettings.<String, String>newBuilder()
+            .setChunkSize(4 * 1024 * 1024)
+            .setTotalBytes(50L * 1024 * 1024)
+            .build();
 
-    ResumableUploadCallSettings<Object, Object> merged = defaultSettings.mergeWith(null);
-    assertThat(merged.getChunkSize()).isEqualTo(4 * 1024 * 1024);
+    ResumableUploadCallSettings<String, String> perRequestSettings =
+        ResumableUploadCallSettings.<String, String>newBuilder()
+            .setChunkSize(32 * 1024 * 1024)
+            .build();
+
+    ResumableUploadCallSettings<String, String> merged = stubSettings.mergeWith(perRequestSettings);
+
+    // Chunk size overridden by Tier-1 per-request settings
+    assertEquals(Integer.valueOf(32 * 1024 * 1024), merged.getChunkSize());
+    // Total bytes preserved from Tier-2 stub-level settings
+    assertEquals(Long.valueOf(50L * 1024 * 1024), merged.getTotalBytes());
   }
 }

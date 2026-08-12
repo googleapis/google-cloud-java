@@ -33,8 +33,11 @@ import com.google.api.core.BetaApi;
 import javax.annotation.Nullable;
 
 /**
- * A settings class to configure a {@link ResumableUploadCallable} for calls to execute
- * resumable uploads.
+ * A settings class to configure a {@link ResumableUploadCallable} for executing resumable
+ * uploads. Encapsulates protocol options such as payload chunk size and total stream length.
+ *
+ * @param <RequestT> request type
+ * @param <ResponseT> response type
  */
 @BetaApi
 public final class ResumableUploadCallSettings<RequestT, ResponseT> {
@@ -42,33 +45,36 @@ public final class ResumableUploadCallSettings<RequestT, ResponseT> {
 
   @Nullable private final Integer chunkSize;
   @Nullable private final Long totalBytes;
-  @Nullable private final ResumableUploadProgressListener progressListener;
 
   private ResumableUploadCallSettings(Builder<RequestT, ResponseT> builder) {
     this.chunkSize = builder.chunkSize;
     this.totalBytes = builder.totalBytes;
-    this.progressListener = builder.progressListener;
   }
 
+  /** Returns the configured chunk size in bytes, or {@code null} if unconfigured. */
   @Nullable
   public Integer getChunkSize() {
     return chunkSize;
   }
 
+  /** Returns the configured chunk size, or the GAX default (8 MB / 8,388,608 bytes). */
   public int getChunkSizeOrDefault() {
     return chunkSize != null ? chunkSize : DEFAULT_CHUNK_SIZE;
   }
 
+  /** Returns the total payload size in bytes, or {@code null} if unknown/streamed. */
   @Nullable
   public Long getTotalBytes() {
     return totalBytes;
   }
 
-  @Nullable
-  public ResumableUploadProgressListener getProgressListener() {
-    return progressListener;
-  }
-
+  /**
+   * Merges another {@code ResumableUploadCallSettings} instance with this one.
+   * Fields set in {@code perRequestSettings} override fields in this instance.
+   *
+   * @param perRequestSettings settings to overlay; may be {@code null}
+   * @return a new, resolved {@code ResumableUploadCallSettings} instance
+   */
   public ResumableUploadCallSettings<RequestT, ResponseT> mergeWith(
       ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings) {
     if (perRequestSettings == null) {
@@ -81,9 +87,6 @@ public final class ResumableUploadCallSettings<RequestT, ResponseT> {
     if (perRequestSettings.getTotalBytes() != null) {
       builder.setTotalBytes(perRequestSettings.getTotalBytes());
     }
-    if (perRequestSettings.getProgressListener() != null) {
-      builder.setProgressListener(perRequestSettings.getProgressListener());
-    }
     return builder.build();
   }
 
@@ -95,17 +98,16 @@ public final class ResumableUploadCallSettings<RequestT, ResponseT> {
     return new Builder<>();
   }
 
+  /** Builder for {@link ResumableUploadCallSettings}. */
   public static class Builder<RequestT, ResponseT> {
     private Integer chunkSize;
     private Long totalBytes;
-    private ResumableUploadProgressListener progressListener;
 
     private Builder() {}
 
     private Builder(ResumableUploadCallSettings<RequestT, ResponseT> settings) {
       this.chunkSize = settings.chunkSize;
       this.totalBytes = settings.totalBytes;
-      this.progressListener = settings.progressListener;
     }
 
     public Builder<RequestT, ResponseT> setChunkSize(Integer chunkSize) {
@@ -126,17 +128,6 @@ public final class ResumableUploadCallSettings<RequestT, ResponseT> {
     @Nullable
     public Long getTotalBytes() {
       return totalBytes;
-    }
-
-    public Builder<RequestT, ResponseT> setProgressListener(
-        ResumableUploadProgressListener progressListener) {
-      this.progressListener = progressListener;
-      return this;
-    }
-
-    @Nullable
-    public ResumableUploadProgressListener getProgressListener() {
-      return progressListener;
     }
 
     public ResumableUploadCallSettings<RequestT, ResponseT> build() {
