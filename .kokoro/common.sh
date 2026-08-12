@@ -440,6 +440,7 @@ function install_modules() {
       'java-iam/proto-google-iam-v3'
       'java-iam/proto-google-iam-v3beta'
       'gapic-libraries-bom'
+      'sdk-platform-java/api-common-java'
       'sdk-platform-java/java-shared-dependencies'
       'sdk-platform-java/java-shared-dependencies/first-party-dependencies'
       'sdk-platform-java/java-shared-dependencies/third-party-dependencies'
@@ -458,22 +459,6 @@ function install_modules() {
       echo "${always_install_deps_list[*]}"
     )
     printf "with always_install_deps:\n%s\n" "$all_submodules,$always_install_deps"
-
-    # Pre-install core gax-java modules (including testlib classified JARs).
-    # Maven's multi-threaded scheduler (-T) does not always recognize classifier dependencies
-    # (such as <type>test-jar</type><classifier>testlib</classifier> required by gapic-generator-java)
-    # as strict reactor ordering constraints across multi-module roots.
-    # Pre-installing gax-java ensures testlib artifacts exist in ~/.m2 before parallel builds resolve dependencies.
-    mvn install -f sdk-platform-java/gax-java/pom.xml \
-      -B -ntp \
-      -Pquick-build \
-      -DtrimStackTrace=false \
-      -Dorg.slf4j.simpleLogger.showDateTime=true \
-      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-      -DskipTests=true \
-      -Dmaven.javadoc.skip=true \
-      -Dgcloud.download.skip=true \
-      -T 1C
 
     # When working with a maven multi-module project containing other multi-module projects,
     # to build a module with its dependencies and without building its dependents:
