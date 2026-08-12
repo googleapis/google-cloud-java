@@ -58,12 +58,33 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class ITOpenTelemetryTest extends ITBase {
 
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String CONNECTION_URL = connectionUrl;
+
+  @BeforeAll
+  public static void setUpProxyProperties() {
+    DataSource ds = DataSource.fromUrl(CONNECTION_URL);
+    if (ds.getProxyHost() != null && ds.getProxyPort() != null) {
+      System.setProperty("https.proxyHost", ds.getProxyHost());
+      System.setProperty("https.proxyPort", ds.getProxyPort());
+      System.setProperty("http.proxyHost", ds.getProxyHost());
+      System.setProperty("http.proxyPort", ds.getProxyPort());
+    }
+  }
+
+  @AfterAll
+  public static void tearDownProxyProperties() {
+    System.clearProperty("https.proxyHost");
+    System.clearProperty("https.proxyPort");
+    System.clearProperty("http.proxyHost");
+    System.clearProperty("http.proxyPort");
+  }
 
   @Test
   public void testExecute_withOpenTelemetryGcpExporter() throws Exception {
