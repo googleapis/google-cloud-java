@@ -463,20 +463,33 @@ jobs:
         if [ -d "$HOME/.m2/repository" ]; then
           echo "Cache Restored! ~/.m2/repository directory size:"
           du -sh "$HOME/.m2/repository" || true
-          echo "Sample existing dependencies in ~/.m2/repository:"
-          find "$HOME/.m2/repository" -maxdepth 3 -type d | head -n 20 || true
+          echo "Sample existing 3rd-party dependencies in ~/.m2/repository:"
+          find "$HOME/.m2/repository" -maxdepth 3 -type d 2>/dev/null | sed -n '1,20p'
         else
           echo "No existing ~/.m2/repository found (first cold run for this cache key)."
         fi
-    - name: 2. Build and Install Baseline Module to ~/.m2
+    - name: 2. Build and Install Baseline Module to ~/.m2 & Assert File Absence
       run: |
         echo "============================================================"
-        echo "Building and installing java-common-protos to ~/.m2..."
+        echo "Building and installing baseline java-common-protos to ~/.m2..."
         echo "============================================================"
         mvn install -Pquick-build -DskipTests=true -pl java-common-protos/proto-google-common-protos -am -B -ntp -T 1C
         ARTIFACT_DIR="$HOME/.m2/repository/com/google/api/grpc/proto-google-common-protos"
-        echo "Baseline files in $ARTIFACT_DIR:"
-        find "$ARTIFACT_DIR" -type f -exec ls -la {} +
+        BASELINE_JAR=$(find "$ARTIFACT_DIR" -name "proto-google-common-protos-*.jar" ! -name "*-sources.jar" ! -name "*-tests.jar" | head -n 1)
+        echo "Baseline JAR Path: $BASELINE_JAR"
+        
+        BASELINE_SHA=$(sha256sum "$BASELINE_JAR" | awk '{print $1}')
+        echo "Baseline JAR SHA-256: $BASELINE_SHA"
+        echo "BASELINE_SHA=$BASELINE_SHA" >> "$GITHUB_ENV"
+        echo "BASELINE_JAR=$BASELINE_JAR" >> "$GITHUB_ENV"
+
+        echo "Verifying CacheTestMarker class DOES NOT exist in baseline JAR..."
+        if jar tf "$BASELINE_JAR" | grep -q "CacheTestMarker"; then
+          echo "ERROR: CacheTestMarker already exists in baseline JAR before code changes!"
+          exit 1
+        else
+          echo "ASSERTION PASSED: CacheTestMarker is not in the baseline JAR."
+        fi
     - name: 3. Simulate Code Change in Module & Re-install
       run: |
         echo "============================================================"
@@ -492,27 +505,36 @@ jobs:
         echo "}" >> "$MARKER_FILE"
         echo "Created source marker:"
         cat "$MARKER_FILE"
-        echo "Recording pre-install artifact timestamps and checksums in ~/.m2..."
-        find "$HOME/.m2/repository/com/google/api/grpc/proto-google-common-protos" -name "*.jar" -exec sha256sum {} + || true
 
-        echo "Re-installing modified module..."
+        echo "Re-installing modified module with mvn install..."
         mvn install -Pquick-build -DskipTests=true -pl java-common-protos/proto-google-common-protos -B -ntp -T 1C
-    - name: 4. Verify & Print Overwrite in Runner .m2
+    - name: 4. Verify & Assert Overwrite, SHA Change, and New Class in ~/.m2
       run: |
         echo "============================================================"
         echo "Verifying newly built version physically overwrote ~/.m2..."
         echo "============================================================"
         ARTIFACT_DIR="$HOME/.m2/repository/com/google/api/grpc/proto-google-common-protos"
-        echo "Files in $ARTIFACT_DIR after re-install:"
-        find "$ARTIFACT_DIR" -type f -exec ls -la {} +
+        NEW_JAR=$(find "$ARTIFACT_DIR" -name "proto-google-common-protos-*.jar" ! -name "*-sources.jar" ! -name "*-tests.jar" | head -n 1)
+        echo "New JAR Path: $NEW_JAR"
 
-        echo "New JAR SHA256 checksums in ~/.m2:"
-        find "$ARTIFACT_DIR" -name "*.jar" -exec sha256sum {} +
+        NEW_SHA=$(sha256sum "$NEW_JAR" | awk '{print $1}')
+        echo "Baseline SHA-256: $BASELINE_SHA"
+        echo "New JAR  SHA-256: $NEW_SHA"
 
-        echo "Extracting and verifying CacheTestMarker class inside ~/.m2 jar:"
-        JAR_FILE=$(find "$ARTIFACT_DIR" -name "proto-google-common-protos-*.jar" ! -name "*-sources.jar" ! -name "*-tests.jar" | head -n 1)
-        echo "Checking JAR: $JAR_FILE"
-        jar tf "$JAR_FILE" | grep "CacheTestMarker" || { echo "ERROR: Marker class not found in installed JAR!"; exit 1; }
+        if [ "$BASELINE_SHA" = "$NEW_SHA" ]; then
+          echo "ERROR: SHA-256 did not change! The artifact was not overwritten."
+          exit 1
+        fi
+        echo "ASSERTION PASSED: SHA-256 changed ($BASELINE_SHA -> $NEW_SHA), proving file was recompiled and overwritten."
 
-        echo "SUCCESS: The local module was freshly compiled and overwritten in ~/.m2/repository!"
+        echo "Verifying CacheTestMarker class NOW EXISTS inside the updated ~/.m2 jar..."
+        if jar tf "$NEW_JAR" | grep -q "CacheTestMarker"; then
+          jar tf "$NEW_JAR" | grep "CacheTestMarker"
+          echo "ASSERTION PASSED: CacheTestMarker.class is now present in the newly installed JAR."
+        else
+          echo "ERROR: CacheTestMarker class not found in installed JAR!"
+          exit 1
+        fi
+
+        echo "SUCCESS: All assertions passed! Local modules overwrite cached artifacts in ~/.m2/repository upon rebuild."
 
