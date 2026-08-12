@@ -2888,6 +2888,42 @@ public class BigQueryImplTest {
   }
 
   @Test
+  void testQueryThrowsWhenArrowResultsFormat() {
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder("SELECT 1")
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .build();
+    bigquery = options.getService();
+    IllegalArgumentException exception =
+        assertThrows(IllegalArgumentException.class, () -> bigquery.query(config));
+    assertTrue(exception.getMessage().contains("Use queryArrow() instead"));
+  }
+
+  @Test
+  void testQueryArrowDefaultsToJobCreationOptional() throws IOException, InterruptedException {
+    QueryJobConfiguration config = QueryJobConfiguration.newBuilder("SELECT 1").build();
+    com.google.api.services.bigquery.model.QueryResponse queryResponsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setQueryId("q-optional-1")
+            .setJobComplete(true)
+            .setTotalRows(java.math.BigInteger.ZERO);
+
+    ArgumentCaptor<QueryRequest> requestPbCapture = ArgumentCaptor.forClass(QueryRequest.class);
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenReturn(queryResponsePb);
+
+    bigquery = options.getService();
+    ArrowQueryResult result = bigquery.queryArrow(config);
+    assertNotNull(result);
+    assertEquals("q-optional-1", result.getQueryId());
+    assertNull(result.getJobId());
+
+    QueryRequest requestPb = requestPbCapture.getValue();
+    assertEquals("JOB_CREATION_OPTIONAL", requestPb.getJobCreationMode());
+    assertEquals("ARROW", requestPb.getQueryResultsFormat());
+  }
+
+  @Test
   void testGetQueryResults() throws IOException {
     JobId queryJob = JobId.of(JOB);
     GetQueryResultsResponse responsePb =
