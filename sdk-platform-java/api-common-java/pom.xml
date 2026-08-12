@@ -29,7 +29,7 @@
     <licenses>
         <license>
             <name>BSD-3-Clause</name>
-            <url>https://github.com/googleapis/api-common-java/blob/main/LICENSE</url>
+            <url>https://github.com/googleapis/google-cloud-java/blob/main/LICENSE</url>
         </license>
     </licenses>
 

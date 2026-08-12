@@ -49,6 +49,7 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
+          cache: maven
       - run: mvn -version
       - name: Install xmllint
         run: |
@@ -73,6 +74,7 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
+          cache: maven
       - run: mvn -version
       - name: Install xmllint
         run: |

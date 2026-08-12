@@ -62,7 +62,7 @@
   <dependencyManagement>
     <dependencies>
       <!-- first-party-dependencies is part of java-shared-dependencies
-           BOM in https://github.com/googleapis/sdk-platform-java/blob/main/java-shared-dependencies/first-party-dependencies/pom.xml.
+           BOM in https://github.com/googleapis/google-cloud-java/blob/main/sdk-platform-java/java-shared-dependencies/first-party-dependencies/pom.xml.
            This includes Guava, Protobuf, gRPC, Google Auth Libraries, etc. -->
       <dependency>
         <groupId>com.google.cloud</groupId>
