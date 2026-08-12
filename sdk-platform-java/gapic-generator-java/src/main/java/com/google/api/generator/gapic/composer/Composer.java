@@ -28,6 +28,7 @@ import com.google.api.generator.gapic.composer.grpc.ServiceStubClassComposer;
 import com.google.api.generator.gapic.composer.grpc.ServiceStubSettingsClassComposer;
 import com.google.api.generator.gapic.composer.grpcrest.HttpJsonServiceClientTestClassComposer;
 import com.google.api.generator.gapic.composer.resourcename.ResourceNameHelperClassComposer;
+import com.google.api.generator.gapic.composer.rest.ComputeLroErrorParserClassComposer;
 import com.google.api.generator.gapic.composer.rest.HttpJsonServiceCallableFactoryClassComposer;
 import com.google.api.generator.gapic.composer.rest.HttpJsonServiceStubClassComposer;
 import com.google.api.generator.gapic.model.GapicClass;
@@ -102,6 +103,10 @@ public class Composer {
                 clazzes.add(
                     HttpJsonServiceCallableFactoryClassComposer.instance().generate(context, s));
                 clazzes.add(HttpJsonServiceStubClassComposer.instance().generate(context, s));
+                if (s.pakkage().startsWith("com.google.cloud.compute.v1")) {
+                  clazzes.add(
+                      ComputeLroErrorParserClassComposer.instance().generate(context, s));
+                }
               } else if (context.transport() == Transport.GRPC) {
                 clazzes.add(ServiceStubClassComposer.instance().generate(context, s));
                 clazzes.add(ServiceStubSettingsClassComposer.instance().generate(context, s));

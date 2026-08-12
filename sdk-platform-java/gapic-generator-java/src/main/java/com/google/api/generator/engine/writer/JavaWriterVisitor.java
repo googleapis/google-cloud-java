@@ -536,11 +536,27 @@ public class JavaWriterVisitor implements AstNodeVisitor {
 
   @Override
   public void visit(UnaryOperationExpr unaryOperationExpr) {
+    boolean needsParen = unaryOperationExpr.expr() instanceof InstanceofExpr
+        || unaryOperationExpr.expr() instanceof RelationalOperationExpr
+        || unaryOperationExpr.expr() instanceof LogicalOperationExpr;
+
     if (unaryOperationExpr.operatorKind().isPrefixOperator()) {
       operator(unaryOperationExpr.operatorKind());
+      if (needsParen) {
+        leftParen();
+      }
       unaryOperationExpr.expr().accept(this);
+      if (needsParen) {
+        rightParen();
+      }
     } else {
+      if (needsParen) {
+        leftParen();
+      }
       unaryOperationExpr.expr().accept(this);
+      if (needsParen) {
+        rightParen();
+      }
       operator(unaryOperationExpr.operatorKind());
     }
   }
