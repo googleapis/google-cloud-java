@@ -440,4 +440,79 @@ jobs:
       uses: googleapis/java-cloud-bom/tests/validate-bom@377c8d1fac6b1521dc52a10f4d02e5d371a0de67 # v26.79.0
       with:
         bom-path: gapic-libraries-bom/pom.xml
+  test-cache-overwrite:
+    name: verify-cache-overwrite
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
+      with:
+        distribution: temurin
+        java-version: 17
+        cache: maven
+    - name: 1. Inspect Initial Restored .m2 Cache State
+      run: |
+        echo "============================================================"
+        echo "Checking initial state of ~/.m2/repository from cache..."
+        echo "============================================================"
+        if [ -d "$HOME/.m2/repository" ]; then
+          echo "Cache Restored! ~/.m2/repository directory size:"
+          du -sh "$HOME/.m2/repository" || true
+          echo "Sample existing dependencies in ~/.m2/repository:"
+          find "$HOME/.m2/repository" -maxdepth 3 -type d | head -n 20 || true
+        else
+          echo "No existing ~/.m2/repository found (first cold run for this cache key)."
+        fi
+    - name: 2. Build and Install Baseline Module to ~/.m2
+      run: |
+        echo "============================================================"
+        echo "Building and installing java-common-protos to ~/.m2..."
+        echo "============================================================"
+        mvn install -Pquick-build -DskipTests=true -pl java-common-protos/proto-google-common-protos -am -B -ntp -T 1C
+        ARTIFACT_DIR="$HOME/.m2/repository/com/google/api/grpc/proto-google-common-protos"
+        echo "Baseline files in $ARTIFACT_DIR:"
+        find "$ARTIFACT_DIR" -type f -exec ls -la {} +
+    - name: 3. Simulate Code Change in Module & Re-install
+      run: |
+        echo "============================================================"
+        echo "Modifying source file in java-common-protos to create a new version..."
+        echo "============================================================"
+        MARKER_FILE="java-common-protos/proto-google-common-protos/src/main/java/com/google/type/CacheTestMarker.java"
+        mkdir -p "$(dirname "$MARKER_FILE")"
+        TIMESTAMP=$(date +%s)
+        cat <<EOF > "$MARKER_FILE"
+package com.google.type;
+
+public class CacheTestMarker {
+  public static final String TIMESTAMP = "$TIMESTAMP";
+  public static final String VERSION_MARKER = "TEST_CACHE_OVERWRITE_VERIFIED_$TIMESTAMP";
+}
+EOF
+        echo "Created source marker:"
+        cat "$MARKER_FILE"
+        echo "Recording pre-install artifact timestamps and checksums in ~/.m2..."
+        find "$HOME/.m2/repository/com/google/api/grpc/proto-google-common-protos" -name "*.jar" -exec sha256sum {} + || true
+
+        echo "Re-installing modified module..."
+        mvn install -Pquick-build -DskipTests=true -pl java-common-protos/proto-google-common-protos -B -ntp -T 1C
+    - name: 4. Verify & Print Overwrite in Runner .m2
+      run: |
+        echo "============================================================"
+        echo "Verifying newly built version physically overwrote ~/.m2..."
+        echo "============================================================"
+        ARTIFACT_DIR="$HOME/.m2/repository/com/google/api/grpc/proto-google-common-protos"
+        echo "Files in $ARTIFACT_DIR after re-install:"
+        find "$ARTIFACT_DIR" -type f -exec ls -la {} +
+
+        echo "New JAR SHA256 checksums in ~/.m2:"
+        find "$ARTIFACT_DIR" -name "*.jar" -exec sha256sum {} +
+
+        echo "Extracting and verifying CacheTestMarker class inside ~/.m2 jar:"
+        JAR_FILE=$(find "$ARTIFACT_DIR" -name "proto-google-common-protos-*.jar" ! -name "*-sources.jar" ! -name "*-tests.jar" | head -n 1)
+        echo "Checking JAR: $JAR_FILE"
+        jar tf "$JAR_FILE" | grep "CacheTestMarker" || { echo "ERROR: Marker class not found in installed JAR!"; exit 1; }
+
+        echo "SUCCESS: The local module was freshly compiled and overwritten in ~/.m2/repository!"
 
