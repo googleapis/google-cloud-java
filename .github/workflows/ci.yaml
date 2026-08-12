@@ -463,8 +463,12 @@ jobs:
         if [ -d "$HOME/.m2/repository" ]; then
           echo "Cache Restored! ~/.m2/repository directory size:"
           du -sh "$HOME/.m2/repository" || true
-          echo "Sample existing 3rd-party dependencies in ~/.m2/repository:"
-          find "$HOME/.m2/repository" -maxdepth 3 -type d 2>/dev/null | sed -n '1,20p'
+          echo ""
+          echo "Total number of files in restored cache:"
+          find "$HOME/.m2/repository" -type f | wc -l
+          echo ""
+          echo "All cached JAR and POM artifacts in ~/.m2/repository:"
+          find "$HOME/.m2/repository" \( -name "*.jar" -o -name "*.pom" \) | sed "s|$HOME/.m2/repository/||" | sort
         else
           echo "No existing ~/.m2/repository found (first cold run for this cache key)."
         fi
