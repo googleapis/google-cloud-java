@@ -129,6 +129,7 @@
           </dependency>
         </dependencies>
         <configuration>
+          <skip>${shade.skip}</skip>
           <shadedArtifactAttached>true</shadedArtifactAttached>
           <relocations>
             <relocation>
