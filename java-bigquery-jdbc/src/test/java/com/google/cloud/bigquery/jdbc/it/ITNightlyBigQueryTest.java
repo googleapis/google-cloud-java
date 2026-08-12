@@ -186,7 +186,8 @@ public class ITNightlyBigQueryTest extends ITBase {
   @Tag("disable_tpc")
   public void testValidLongRunningQuery() throws SQLException {
     // setup
-    String selectQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 50000))";
+    String selectQuery =
+        "SELECT * FROM `bigquery-public-data.deepmind_alphafold.metadata` LIMIT 50000";
 
     // Read data via JDBC
     ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
@@ -299,7 +300,8 @@ public class ITNightlyBigQueryTest extends ITBase {
     String insertQuery =
         String.format(
             "INSERT INTO %s.%s (gbifid, scientificname, individualcount) "
-                + "(SELECT 1 as gbifid, \"name\" as scientificname, 1 as individualcount FROM UNNEST(GENERATE_ARRAY(1, 10)));",
+                + "SELECT gbifid, scientificname, individualcount  FROM "
+                + "bigquery-public-data.gbif.occurrences;",
             DATASET, tableName);
     String updateQuery =
         String.format(
@@ -720,7 +722,8 @@ public class ITNightlyBigQueryTest extends ITBase {
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;"
             + "EnableHighThroughputAPI=1;";
-    String selectLegacyQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 200000))";
+    String selectLegacyQuery =
+        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 200000;";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -1572,7 +1575,11 @@ public class ITNightlyBigQueryTest extends ITBase {
   // correctly
   public void testIterateOrderArrowMultiThread() throws SQLException {
     int expectedCnt = 200000;
-    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    String longQuery =
+        String.format(
+            "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
+                + " trip_distance asc LIMIT %s",
+            expectedCnt);
     ResultSet rs = bigQueryStatement.executeQuery(longQuery);
     int cnt = 0;
     double oldTriDis = 0.0d;
