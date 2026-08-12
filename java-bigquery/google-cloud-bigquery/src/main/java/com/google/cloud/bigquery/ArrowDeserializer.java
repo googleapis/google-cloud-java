@@ -51,6 +51,16 @@ final class ArrowDeserializer {
   }
 
   /**
+   * Creates a new child buffer allocator with the given name.
+   *
+   * @param name the child allocator name
+   * @return a new child buffer allocator
+   */
+  static BufferAllocator createChildAllocator(String name) {
+    return AllocatorHolder.ALLOCATOR.newChildAllocator(name, 0, Long.MAX_VALUE);
+  }
+
+  /**
    * Instantiates a new {@link VectorSchemaRoot} for the given Arrow schema using vectors allocated
    * from the provided child allocator, ensuring LIFO cleanup if an error occurs during
    * construction.
