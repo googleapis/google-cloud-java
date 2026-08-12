@@ -459,6 +459,22 @@ function install_modules() {
     )
     printf "with always_install_deps:\n%s\n" "$all_submodules,$always_install_deps"
 
+    # Pre-install core gax-java modules (including testlib classified JARs).
+    # Maven's multi-threaded scheduler (-T) does not always recognize classifier dependencies
+    # (such as <type>test-jar</type><classifier>testlib</classifier> required by gapic-generator-java)
+    # as strict reactor ordering constraints across multi-module roots.
+    # Pre-installing gax-java ensures testlib artifacts exist in ~/.m2 before parallel builds resolve dependencies.
+    mvn install -f sdk-platform-java/gax-java/pom.xml \
+      -B -ntp \
+      -Pquick-build \
+      -DtrimStackTrace=false \
+      -Dorg.slf4j.simpleLogger.showDateTime=true \
+      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+      -DskipTests=true \
+      -Dmaven.javadoc.skip=true \
+      -Dgcloud.download.skip=true \
+      -T 1C
+
     # When working with a maven multi-module project containing other multi-module projects,
     # to build a module with its dependencies and without building its dependents:
     # Perform the install command on a grandchild module with the --also-make flag.

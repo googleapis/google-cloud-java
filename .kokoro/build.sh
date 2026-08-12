@@ -44,11 +44,17 @@ case ${JOB_TYPE} in
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
+      EXCLUDE_PROJECTS_OPTS=()
     else
       # These are pure GAPIC-generated modules with no unit tests to run here; Showcase
       # integration tests already cover the generated code's behavior, so this pass only
       # needs to confirm everything compiles.
       MAVEN_GOAL="compile"
+      # gapic-generator-java is a code generation tool tested in its own dedicated workflow
+      # (sdk-platform-java-ci.yaml). Excluding it from bulk unit test runs saves 2-3 minutes per
+      # Java runtime matrix job and avoids reactor dependency resolution race conditions.
+      EXCLUDE_PROJECTS_OPTS=("--projects" "!sdk-platform-java/gapic-generator-java,!sdk-platform-java/gapic-generator-java-pom-parent")
+      install_modules "sdk-platform-java"
     fi
     echo "MAVEN_GOAL: ${MAVEN_GOAL}"
     retry_with_backoff 3 10 \
@@ -58,6 +64,7 @@ case ${JOB_TYPE} in
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dmaven.wagon.http.retryHandler.count=5 \
+        "${EXCLUDE_PROJECTS_OPTS[@]}" \
         -T 1C
     RETURN_CODE=$?
 
