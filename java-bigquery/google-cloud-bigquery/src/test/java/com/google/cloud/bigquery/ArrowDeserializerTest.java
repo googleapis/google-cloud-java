@@ -17,15 +17,21 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.io.BaseEncoding;
+import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.channels.Channels;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
@@ -190,6 +196,166 @@ public class ArrowDeserializerTest {
         }
       } finally {
         intVector.close();
+      }
+    }
+  }
+
+  @Test
+  public void testLoadArrowRows_multiBatchStream() throws IOException {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      ReadRowsResponse r1 =
+          createReadRowsResponse(Arrays.asList(1, 2), Arrays.asList("item1", "item2"), allocator);
+      ReadRowsResponse r2 =
+          createReadRowsResponse(Arrays.asList(3, 4), Arrays.asList("item3", "item4"), allocator);
+
+      org.apache.arrow.vector.types.pojo.Schema arrowSchema = createSimpleArrowSchema();
+      Schema bqSchema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
+
+      List<FieldValueList> rowBatch = new ArrayList<>();
+      boolean hasMore =
+          ArrowDeserializer.loadArrowRows(
+              Arrays.asList(r1, r2).iterator(),
+              arrowSchema,
+              null,
+              bqSchema,
+              rowBatch,
+              10L,
+              0L,
+              10L);
+
+      assertFalse(hasMore);
+      assertEquals(4, rowBatch.size());
+      assertEquals("1", rowBatch.get(0).get("id").getStringValue());
+      assertEquals("item1", rowBatch.get(0).get("name").getStringValue());
+      assertEquals("4", rowBatch.get(3).get("id").getStringValue());
+      assertEquals("item4", rowBatch.get(3).get("name").getStringValue());
+    }
+  }
+
+  @Test
+  public void testLoadArrowRows_respectsPageSize() throws IOException {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      ReadRowsResponse r1 =
+          createReadRowsResponse(Arrays.asList(1, 2), Arrays.asList("item1", "item2"), allocator);
+      ReadRowsResponse r2 =
+          createReadRowsResponse(Arrays.asList(3, 4), Arrays.asList("item3", "item4"), allocator);
+
+      org.apache.arrow.vector.types.pojo.Schema arrowSchema = createSimpleArrowSchema();
+      Schema bqSchema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
+
+      List<FieldValueList> rowBatch = new ArrayList<>();
+      boolean hasMore =
+          ArrowDeserializer.loadArrowRows(
+              Arrays.asList(r1, r2).iterator(), arrowSchema, null, bqSchema, rowBatch, 2L, 0L, 10L);
+
+      assertTrue(hasMore);
+      assertEquals(2, rowBatch.size());
+      assertEquals("1", rowBatch.get(0).get("id").getStringValue());
+      assertEquals("2", rowBatch.get(1).get("id").getStringValue());
+    }
+  }
+
+  @Test
+  public void testLoadArrowRows_respectsMaxResults() throws IOException {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      ReadRowsResponse r1 =
+          createReadRowsResponse(Arrays.asList(1, 2), Arrays.asList("item1", "item2"), allocator);
+      ReadRowsResponse r2 =
+          createReadRowsResponse(Arrays.asList(3, 4), Arrays.asList("item3", "item4"), allocator);
+
+      org.apache.arrow.vector.types.pojo.Schema arrowSchema = createSimpleArrowSchema();
+      Schema bqSchema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
+
+      List<FieldValueList> rowBatch = new ArrayList<>();
+      boolean hasMore =
+          ArrowDeserializer.loadArrowRows(
+              Arrays.asList(r1, r2).iterator(), arrowSchema, null, bqSchema, rowBatch, 10L, 0L, 3L);
+
+      assertFalse(hasMore);
+      assertEquals(3, rowBatch.size());
+      assertEquals("1", rowBatch.get(0).get("id").getStringValue());
+      assertEquals("2", rowBatch.get(1).get("id").getStringValue());
+      assertEquals("3", rowBatch.get(2).get("id").getStringValue());
+    }
+  }
+
+  @Test
+  public void testLoadArrowRows_unconsumedBatchRowsSignalHasMore() throws IOException {
+    try (BufferAllocator allocator = new RootAllocator(Long.MAX_VALUE)) {
+      ReadRowsResponse r1 =
+          createReadRowsResponse(
+              Arrays.asList(1, 2, 3, 4),
+              Arrays.asList("item1", "item2", "item3", "item4"),
+              allocator);
+
+      org.apache.arrow.vector.types.pojo.Schema arrowSchema = createSimpleArrowSchema();
+      Schema bqSchema = ArrowDeserializer.arrowSchemaToBigQuerySchema(arrowSchema);
+
+      List<FieldValueList> rowBatch = new ArrayList<>();
+      boolean hasMore =
+          ArrowDeserializer.loadArrowRows(
+              Arrays.asList(r1).iterator(), arrowSchema, null, bqSchema, rowBatch, 2L, 0L, 10L);
+
+      assertTrue(hasMore);
+      assertEquals(2, rowBatch.size());
+      assertEquals("1", rowBatch.get(0).get("id").getStringValue());
+      assertEquals("2", rowBatch.get(1).get("id").getStringValue());
+    }
+  }
+
+  @Test
+  public void testLoadArrowRows_nullSchemaReturnsFalse() throws IOException {
+    List<FieldValueList> rowBatch = new ArrayList<>();
+    boolean hasMore =
+        ArrowDeserializer.loadArrowRows(
+            Arrays.<ReadRowsResponse>asList().iterator(),
+            null,
+            null,
+            Schema.of(),
+            rowBatch,
+            10L,
+            0L,
+            10L);
+    assertFalse(hasMore);
+  }
+
+  private static org.apache.arrow.vector.types.pojo.Schema createSimpleArrowSchema() {
+    org.apache.arrow.vector.types.pojo.Field intField =
+        new org.apache.arrow.vector.types.pojo.Field(
+            "id", FieldType.nullable(new ArrowType.Int(32, true)), null);
+    org.apache.arrow.vector.types.pojo.Field strField =
+        new org.apache.arrow.vector.types.pojo.Field(
+            "name", FieldType.nullable(new ArrowType.Utf8()), null);
+    return new org.apache.arrow.vector.types.pojo.Schema(ImmutableList.of(intField, strField));
+  }
+
+  private ReadRowsResponse createReadRowsResponse(
+      List<Integer> ids, List<String> names, BufferAllocator allocator) throws IOException {
+    IntVector intVector = new IntVector("id", allocator);
+    intVector.allocateNew(ids.size());
+    for (int i = 0; i < ids.size(); i++) {
+      intVector.set(i, ids.get(i));
+    }
+    intVector.setValueCount(ids.size());
+
+    VarCharVector nameVector = new VarCharVector("name", allocator);
+    nameVector.allocateNew(names.size());
+    for (int i = 0; i < names.size(); i++) {
+      nameVector.set(i, names.get(i).getBytes(StandardCharsets.UTF_8));
+    }
+    nameVector.setValueCount(names.size());
+
+    List<FieldVector> vectors = ImmutableList.of(intVector, nameVector);
+    try (VectorSchemaRoot root = new VectorSchemaRoot(vectors)) {
+      byte[] bytes = serializeVectorSchemaRoot(root, allocator);
+      com.google.cloud.bigquery.storage.v1.ArrowRecordBatch protoBatch =
+          com.google.cloud.bigquery.storage.v1.ArrowRecordBatch.newBuilder()
+              .setSerializedRecordBatch(ByteString.copyFrom(bytes))
+              .build();
+      return ReadRowsResponse.newBuilder().setArrowRecordBatch(protoBatch).build();
+    } finally {
+      for (FieldVector vector : vectors) {
+        vector.close();
       }
     }
   }
