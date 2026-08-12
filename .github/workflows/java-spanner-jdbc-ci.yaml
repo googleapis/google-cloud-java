@@ -61,6 +61,7 @@ jobs:
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -79,6 +80,7 @@ jobs:
         with:
           java-version: 8
           distribution: temurin
+          cache: maven
       - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
         # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
         # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
@@ -88,6 +90,7 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
+          cache: maven
       - run: .kokoro/build.sh
         env:
           JOB_TYPE: test
@@ -107,6 +110,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 8
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -123,6 +127,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: .kokoro/dependencies.sh
   javadoc:
     needs: filter
@@ -136,6 +141,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -153,6 +159,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:

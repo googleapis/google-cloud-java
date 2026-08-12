@@ -29,6 +29,9 @@
 
   <properties>
     <enforcer.skip>true</enforcer.skip>
+    <!-- maven-shade-plugin does not define a built-in user property for its skip parameter;
+         shade.skip is declared here and mapped in shaded modules to allow quick-build to toggle it off. -->
+    <shade.skip>false</shade.skip>
   </properties>
 
   <modules>
@@ -116,6 +119,7 @@
         <fmt.skip>true</fmt.skip>
         <flatten.skip>true</flatten.skip>
         <mdep.analyze.skip>true</mdep.analyze.skip>
+        <shade.skip>true</shade.skip>
       </properties>
     </profile>
     <profile>
