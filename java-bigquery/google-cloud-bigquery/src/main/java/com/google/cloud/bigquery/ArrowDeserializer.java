@@ -45,10 +45,20 @@ import org.apache.arrow.vector.util.ByteArrayReadableSeekableByteChannel;
  */
 final class ArrowDeserializer {
 
+  /** Lazy initialization holder for the root {@link BufferAllocator}. */
   private static class AllocatorHolder {
     private static final BufferAllocator ALLOCATOR = new RootAllocator(Long.MAX_VALUE);
   }
 
+  /**
+   * Instantiates a new {@link VectorSchemaRoot} for the given Arrow schema using vectors allocated
+   * from the provided child allocator, ensuring LIFO cleanup if an error occurs during
+   * construction.
+   *
+   * @param arrowSchema the Apache Arrow schema definition
+   * @param allocator the buffer allocator to bind the vectors to
+   * @return a new VectorSchemaRoot containing allocated field vectors
+   */
   private static VectorSchemaRoot createVectorSchemaRoot(
       org.apache.arrow.vector.types.pojo.Schema arrowSchema, BufferAllocator allocator) {
     List<FieldVector> vectors = ArrowPojoUtils.createVectors(arrowSchema, allocator);
@@ -93,6 +103,13 @@ final class ArrowDeserializer {
     return ((org.apache.arrow.vector.types.pojo.Schema) arrowSchema).toJson();
   }
 
+  /**
+   * Deserializes an Apache Arrow Schema object from its JSON string representation.
+   *
+   * @param json the JSON string representation of the Arrow schema
+   * @return the deserialized Apache Arrow Schema object, or null if json is null
+   * @throws IllegalArgumentException if the JSON string cannot be parsed as an Arrow schema
+   */
   static Object jsonToArrowSchema(String json) {
     if (json == null) {
       return null;
@@ -195,8 +212,8 @@ final class ArrowDeserializer {
    * Deserializes a raw binary Arrow record batch payload into a list of BigQuery {@link
    * FieldValueList} row objects.
    *
-   * <p>Allocates off-heap memory within a local {@link RootAllocator} scope and closes all Arrow
-   * vector resources before returning, guaranteeing that native memory is released.
+   * <p>Allocates off-heap memory within a local child allocator scope and closes all Arrow vector
+   * resources before returning, guaranteeing that native memory is released.
    *
    * @param recordBatchBytes the raw binary Arrow record batch payload
    * @param schema the target BigQuery Schema

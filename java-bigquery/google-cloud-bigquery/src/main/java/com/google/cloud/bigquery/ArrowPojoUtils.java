@@ -24,11 +24,22 @@ import org.apache.arrow.vector.types.pojo.ArrowType;
 import org.apache.arrow.vector.types.pojo.Field;
 import org.apache.arrow.vector.types.pojo.Schema;
 
-/** Internal helper for Apache Arrow Schema/Field conversions. */
+/**
+ * Internal helper utility for converting Apache Arrow POJO Schema and Field definitions into
+ * BigQuery Veneer {@link com.google.cloud.bigquery.Schema} and {@link
+ * com.google.cloud.bigquery.Field} models.
+ */
 final class ArrowPojoUtils {
 
   private ArrowPojoUtils() {}
 
+  /**
+   * Converts an Apache Arrow {@link Schema} into a BigQuery Veneer {@link
+   * com.google.cloud.bigquery.Schema}.
+   *
+   * @param arrowSchema the Apache Arrow schema definition
+   * @return the corresponding BigQuery Veneer Schema
+   */
   static com.google.cloud.bigquery.Schema arrowSchemaToBigQuerySchema(Schema arrowSchema) {
     List<com.google.cloud.bigquery.Field> fields = new ArrayList<>();
     for (Field arrowField : arrowSchema.getFields()) {
@@ -37,6 +48,16 @@ final class ArrowPojoUtils {
     return com.google.cloud.bigquery.Schema.of(fields);
   }
 
+  /**
+   * Recursively converts an Apache Arrow {@link Field} into a BigQuery Veneer {@link
+   * com.google.cloud.bigquery.Field}.
+   *
+   * <p>Handles primitive types, repeated/list types, and nested struct/record types.
+   *
+   * @param arrowField the Apache Arrow field definition
+   * @return the corresponding BigQuery Veneer Field
+   * @throws IllegalArgumentException if an Arrow List field contains no child elements
+   */
   static com.google.cloud.bigquery.Field arrowFieldToBigQueryField(Field arrowField) {
     String name = arrowField.getName();
     ArrowType type = arrowField.getType();
@@ -83,6 +104,17 @@ final class ArrowPojoUtils {
     return builder.build();
   }
 
+  /**
+   * Instantiates a list of {@link FieldVector} instances corresponding to the fields in the
+   * provided Arrow schema using the specified allocator.
+   *
+   * <p>Guarantees exception-safe LIFO cleanup of already-allocated vectors if an allocation fails
+   * halfway through.
+   *
+   * @param arrowSchema the Apache Arrow schema definition
+   * @param allocator the buffer allocator to allocate vector memory from
+   * @return the list of allocated FieldVector instances
+   */
   static List<FieldVector> createVectors(Schema arrowSchema, BufferAllocator allocator) {
     List<FieldVector> vectors = new ArrayList<>();
     try {
@@ -102,6 +134,13 @@ final class ArrowPojoUtils {
     }
   }
 
+  /**
+   * Maps an Apache {@link ArrowType} to its corresponding BigQuery {@link LegacySQLTypeName}.
+   *
+   * @param type the Apache Arrow type
+   * @return the matching BigQuery LegacySQLTypeName
+   * @throws IllegalArgumentException if the Arrow type is unsupported
+   */
   private static LegacySQLTypeName arrowTypeToLegacySQLTypeName(ArrowType type) {
     switch (type.getTypeID()) {
       case Int:
