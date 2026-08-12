@@ -361,6 +361,16 @@ final class BigQueryTypeRegistry {
   }
 
   /** Returns the default Java target class for a given JDBC type constant. */
+  /** Returns the JDBC Type constant for a given BigQuery type. */
+  public static int toJdbcType(StandardSQLTypeName bqType) {
+    if (bqType == null) return java.sql.Types.OTHER;
+    int ordinal = bqType.ordinal();
+    if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
+      return java.sql.Types.OTHER;
+    }
+    return DESCRIPTORS_BY_ORDINAL[ordinal].getJdbcType();
+  }
+
   public static Class<?> toJavaClass(int jdbcType) {
     TypeDescriptor<?> descriptor = DESCRIPTORS_BY_JDBC_TYPE.get(jdbcType);
     if (descriptor != null) {
