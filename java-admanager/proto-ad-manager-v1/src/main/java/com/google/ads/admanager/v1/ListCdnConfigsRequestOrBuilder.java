@@ -116,14 +116,13 @@ public interface ListCdnConfigsRequestOrBuilder
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;cdnConfigStatus&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;cdnConfigType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;sourceContentConfig.ingestSettings.urlPrefix&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `cdnConfigStatus`
+   * * `cdnConfigType`
+   * * `displayName`
+   * * `name`
+   * * `sourceContentConfig.ingestSettings.urlPrefix`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -140,14 +139,13 @@ public interface ListCdnConfigsRequestOrBuilder
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;cdnConfigStatus&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;cdnConfigType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;sourceContentConfig.ingestSettings.urlPrefix&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `cdnConfigStatus`
+   * * `cdnConfigType`
+   * * `displayName`
+   * * `name`
+   * * `sourceContentConfig.ingestSettings.urlPrefix`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

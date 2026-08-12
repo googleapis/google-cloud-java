@@ -228,14 +228,13 @@ public final class ListLabelsRequest extends com.google.protobuf.GeneratedMessag
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;active&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;types&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `active`
+   * * `description`
+   * * `displayName`
+   * * `name`
+   * * `types`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -263,14 +262,13 @@ public final class ListLabelsRequest extends com.google.protobuf.GeneratedMessag
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;active&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;types&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `active`
+   * * `description`
+   * * `displayName`
+   * * `name`
+   * * `types`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1123,14 +1121,13 @@ public final class ListLabelsRequest extends com.google.protobuf.GeneratedMessag
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;active&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;types&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `active`
+     * * `description`
+     * * `displayName`
+     * * `name`
+     * * `types`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1157,14 +1154,13 @@ public final class ListLabelsRequest extends com.google.protobuf.GeneratedMessag
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;active&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;types&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `active`
+     * * `description`
+     * * `displayName`
+     * * `name`
+     * * `types`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1191,14 +1187,13 @@ public final class ListLabelsRequest extends com.google.protobuf.GeneratedMessag
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;active&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;types&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `active`
+     * * `description`
+     * * `displayName`
+     * * `name`
+     * * `types`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1224,14 +1219,13 @@ public final class ListLabelsRequest extends com.google.protobuf.GeneratedMessag
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;active&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;types&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `active`
+     * * `description`
+     * * `displayName`
+     * * `name`
+     * * `types`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1253,14 +1247,13 @@ public final class ListLabelsRequest extends com.google.protobuf.GeneratedMessag
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;active&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;types&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `active`
+     * * `description`
+     * * `displayName`
+     * * `name`
+     * * `types`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

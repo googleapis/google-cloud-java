@@ -123,8 +123,10 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Output only. Extended verdict reasons to be used for experimentation only.
-   * The set of possible reasons is subject to change.
+   * Output only. Additional reasons contributing to the risk analysis verdict.
+   * These reasons are available to Enterprise tier projects only. Contact sales
+   * for more information.
+   * The set of reasons is subject to change.
    * </pre>
    *
    * <code>
@@ -139,8 +141,10 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Output only. Extended verdict reasons to be used for experimentation only.
-   * The set of possible reasons is subject to change.
+   * Output only. Additional reasons contributing to the risk analysis verdict.
+   * These reasons are available to Enterprise tier projects only. Contact sales
+   * for more information.
+   * The set of reasons is subject to change.
    * </pre>
    *
    * <code>
@@ -155,8 +159,10 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Output only. Extended verdict reasons to be used for experimentation only.
-   * The set of possible reasons is subject to change.
+   * Output only. Additional reasons contributing to the risk analysis verdict.
+   * These reasons are available to Enterprise tier projects only. Contact sales
+   * for more information.
+   * The set of reasons is subject to change.
    * </pre>
    *
    * <code>
@@ -172,8 +178,10 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Output only. Extended verdict reasons to be used for experimentation only.
-   * The set of possible reasons is subject to change.
+   * Output only. Additional reasons contributing to the risk analysis verdict.
+   * These reasons are available to Enterprise tier projects only. Contact sales
+   * for more information.
+   * The set of reasons is subject to change.
    * </pre>
    *
    * <code>
@@ -189,8 +197,42 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
-   * keys.
+   * Output only. Type of the last challenge presented to the user for
+   * Universal, `POLICY_BASED_CHALLENGE` and `INVISIBLE` keys. The field is only
+   * set when a challenge was presented to the user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.ChallengeType last_challenge_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for lastChallengeType.
+   */
+  int getLastChallengeTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the last challenge presented to the user for
+   * Universal, `POLICY_BASED_CHALLENGE` and `INVISIBLE` keys. The field is only
+   * set when a challenge was presented to the user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.ChallengeType last_challenge_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastChallengeType.
+   */
+  com.google.recaptchaenterprise.v1.ChallengeType getLastChallengeType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Challenge information for Universal, `POLICY_BASED_CHALLENGE`
+   * and `INVISIBLE` keys.
    * </pre>
    *
    * <code>
@@ -205,8 +247,8 @@ public interface RiskAnalysisOrBuilder
    *
    *
    * <pre>
-   * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
-   * keys.
+   * Output only. Challenge information for Universal, `POLICY_BASED_CHALLENGE`
+   * and `INVISIBLE` keys.
    * </pre>
    *
    * <code>

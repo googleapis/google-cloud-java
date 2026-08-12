@@ -100,6 +100,28 @@ public class CompanyServiceSettings extends ClientSettings<CompanyServiceSetting
     return ((CompanyServiceStubSettings) getStubSettings()).listCompaniesSettings();
   }
 
+  /** Returns the object with the settings used for calls to createCompany. */
+  public UnaryCallSettings<CreateCompanyRequest, Company> createCompanySettings() {
+    return ((CompanyServiceStubSettings) getStubSettings()).createCompanySettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateCompanies. */
+  public UnaryCallSettings<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+      batchCreateCompaniesSettings() {
+    return ((CompanyServiceStubSettings) getStubSettings()).batchCreateCompaniesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCompany. */
+  public UnaryCallSettings<UpdateCompanyRequest, Company> updateCompanySettings() {
+    return ((CompanyServiceStubSettings) getStubSettings()).updateCompanySettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateCompanies. */
+  public UnaryCallSettings<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+      batchUpdateCompaniesSettings() {
+    return ((CompanyServiceStubSettings) getStubSettings()).batchUpdateCompaniesSettings();
+  }
+
   public static final CompanyServiceSettings create(CompanyServiceStubSettings stub)
       throws IOException {
     return new CompanyServiceSettings.Builder(stub.toBuilder()).build();
@@ -207,6 +229,28 @@ public class CompanyServiceSettings extends ClientSettings<CompanyServiceSetting
             ListCompaniesRequest, ListCompaniesResponse, ListCompaniesPagedResponse>
         listCompaniesSettings() {
       return getStubSettingsBuilder().listCompaniesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCompany. */
+    public UnaryCallSettings.Builder<CreateCompanyRequest, Company> createCompanySettings() {
+      return getStubSettingsBuilder().createCompanySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateCompanies. */
+    public UnaryCallSettings.Builder<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+        batchCreateCompaniesSettings() {
+      return getStubSettingsBuilder().batchCreateCompaniesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCompany. */
+    public UnaryCallSettings.Builder<UpdateCompanyRequest, Company> updateCompanySettings() {
+      return getStubSettingsBuilder().updateCompanySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateCompanies. */
+    public UnaryCallSettings.Builder<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+        batchUpdateCompaniesSettings() {
+      return getStubSettingsBuilder().batchUpdateCompaniesSettings();
     }
 
     @Override
