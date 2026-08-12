@@ -158,6 +158,7 @@
                 <goal>shade</goal>
               </goals>
               <configuration>
+                <skip>${shade.skip}</skip>
                 <filters>
                   <filter>
                     <artifact>*:*</artifact>

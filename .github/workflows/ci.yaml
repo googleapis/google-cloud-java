@@ -66,10 +66,6 @@ jobs:
       matrix:
         java: [11, 17, 21, 25, 26]
     steps:
-    - name: Get current week within the year
-      id: date
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
@@ -79,14 +75,9 @@ jobs:
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
+        cache: maven
     - run: java -version
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-    - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
-      id: mvn-cache
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' && (needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true') }}
       env:
@@ -97,10 +88,6 @@ jobs:
     needs: bulk-filter
     name: "units (8)"
     steps:
-    - name: Get current week within the year
-      id: date
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
@@ -122,12 +109,6 @@ jobs:
         java-version: 11
         distribution: temurin
         cache: maven
-    - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
-      id: mvn-cache
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' && (needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true') }}
       shell: bash      
@@ -271,9 +252,6 @@ jobs:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
         java: [11, 17, 21, 25, 26]
     steps:
-    - name: Get current week within the year
-      id: date
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
         persist-credentials: false
@@ -281,6 +259,7 @@ jobs:
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
+        cache: maven
     - run: .kokoro/build.sh
       env:
         BUILD_SUBDIR: ${{matrix.package}}
@@ -296,9 +275,6 @@ jobs:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
         java: [8]
     steps:
-    - name: Get current week within the year
-      id: date
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
         persist-credentials: false
@@ -308,11 +284,6 @@ jobs:
         distribution: temurin
         cache: maven
     - run: java -version
-    - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
-      id: mvn-cache
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - name: Install all modules using Java 11
       shell: bash
       run: .kokoro/build.sh
@@ -353,6 +324,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 11
+        cache: maven
     - run: .kokoro/build.sh
       env:
         BUILD_SUBDIR: ${{matrix.package}}
@@ -372,6 +344,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: .kokoro/dependencies.sh
       env:
         BUILD_SUBDIR: ${{matrix.package}}
@@ -419,6 +392,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -430,9 +404,6 @@ jobs:
     if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - name: Get current week within the year
-      id: date
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
         persist-credentials: false
