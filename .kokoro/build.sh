@@ -44,8 +44,13 @@ case ${JOB_TYPE} in
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
       EXTRA_PROFILE_OPTS=()
+      EXCLUDE_PROJECTS_OPTS=()
     else
       EXTRA_PROFILE_OPTS=("-PbulkTests")
+      # gapic-generator-java is a code generation tool tested in its own dedicated workflow
+      # (sdk-platform-java-ci.yaml). Excluding it from bulk unit test runs saves 2-3 minutes per
+      # Java runtime matrix job and avoids reactor dependency resolution race conditions.
+      EXCLUDE_PROJECTS_OPTS=("--projects" "!sdk-platform-java/gapic-generator-java,!sdk-platform-java/gapic-generator-java-pom-parent")
       install_modules "sdk-platform-java"
     fi
     echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
@@ -56,6 +61,7 @@ case ${JOB_TYPE} in
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dmaven.wagon.http.retryHandler.count=5 \
+        "${EXCLUDE_PROJECTS_OPTS[@]}" \
         --also-make \
         ${SUREFIRE_JVM_OPT} "${EXTRA_PROFILE_OPTS[@]}"
     RETURN_CODE=$?
