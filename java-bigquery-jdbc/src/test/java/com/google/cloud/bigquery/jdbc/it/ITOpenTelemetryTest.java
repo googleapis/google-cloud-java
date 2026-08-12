@@ -57,7 +57,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -66,11 +68,18 @@ public class ITOpenTelemetryTest extends ITBase {
 
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String CONNECTION_URL = connectionUrl;
+  private static final String[] PROXY_SYS_PROPS = {
+    "https.proxyHost", "https.proxyPort", "http.proxyHost", "http.proxyPort"
+  };
+  private static final Map<String, String> originalSystemProperties = new HashMap<>();
 
   @BeforeAll
   public static void setUpProxyProperties() {
     DataSource ds = DataSource.fromUrl(CONNECTION_URL);
     if (ds.getProxyHost() != null && ds.getProxyPort() != null) {
+      for (String prop : PROXY_SYS_PROPS) {
+        originalSystemProperties.put(prop, System.getProperty(prop));
+      }
       System.setProperty("https.proxyHost", ds.getProxyHost());
       System.setProperty("https.proxyPort", ds.getProxyPort());
       System.setProperty("http.proxyHost", ds.getProxyHost());
@@ -80,10 +89,13 @@ public class ITOpenTelemetryTest extends ITBase {
 
   @AfterAll
   public static void tearDownProxyProperties() {
-    System.clearProperty("https.proxyHost");
-    System.clearProperty("https.proxyPort");
-    System.clearProperty("http.proxyHost");
-    System.clearProperty("http.proxyPort");
+    for (Map.Entry<String, String> entry : originalSystemProperties.entrySet()) {
+      if (entry.getValue() != null) {
+        System.setProperty(entry.getKey(), entry.getValue());
+      } else {
+        System.clearProperty(entry.getKey());
+      }
+    }
   }
 
   @Test
