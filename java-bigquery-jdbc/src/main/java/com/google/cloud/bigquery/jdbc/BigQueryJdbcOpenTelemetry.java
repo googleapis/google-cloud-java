@@ -38,11 +38,7 @@ import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.autoconfigure.AutoConfiguredOpenTelemetrySdk;
 import io.opentelemetry.sdk.common.export.ProxyOptions;
-import java.io.IOException;
 import java.net.InetSocketAddress;
-import java.net.Proxy;
-import java.net.ProxySelector;
-import java.net.SocketAddress;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
@@ -561,18 +557,6 @@ class BigQueryJdbcOpenTelemetry {
       throw new BigQueryJdbcRuntimeException("Invalid proxy port number: " + portStr, e);
     }
 
-    ProxySelector proxySelector =
-        new ProxySelector() {
-          @Override
-          public List<Proxy> select(URI uri) {
-            return Collections.singletonList(
-                new Proxy(Proxy.Type.HTTP, InetSocketAddress.createUnresolved(host, port)));
-          }
-
-          @Override
-          public void connectFailed(URI uri, SocketAddress sa, IOException ioe) {}
-        };
-
-    return ProxyOptions.create(proxySelector);
+    return ProxyOptions.create(InetSocketAddress.createUnresolved(host, port));
   }
 }
