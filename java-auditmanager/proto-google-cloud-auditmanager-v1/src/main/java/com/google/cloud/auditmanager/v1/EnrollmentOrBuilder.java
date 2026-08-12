@@ -30,8 +30,11 @@ public interface EnrollmentOrBuilder
    *
    *
    * <pre>
-   * Identifier. The name of this Enrollment, in the format of scope given in
-   * request.
+   * Identifier. Name of the enrollment, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/enrollments/{enrollment}`
+   * * `folders/{folder}/locations/{location}/enrollments/{enrollment}`
+   * * `organizations/{organization}/locations/{location}/enrollments/{enrollment}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -44,8 +47,11 @@ public interface EnrollmentOrBuilder
    *
    *
    * <pre>
-   * Identifier. The name of this Enrollment, in the format of scope given in
-   * request.
+   * Identifier. Name of the enrollment, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/enrollments/{enrollment}`
+   * * `folders/{folder}/locations/{location}/enrollments/{enrollment}`
+   * * `organizations/{organization}/locations/{location}/enrollments/{enrollment}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -58,7 +64,8 @@ public interface EnrollmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The locations where the generated reports can be uploaded.
+   * Output only. Cloud Storage buckets where you want to upload the audit
+   * reports.
    * </pre>
    *
    * <code>
@@ -71,7 +78,8 @@ public interface EnrollmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The locations where the generated reports can be uploaded.
+   * Output only. Cloud Storage buckets where you want to upload the audit
+   * reports.
    * </pre>
    *
    * <code>
@@ -84,7 +92,8 @@ public interface EnrollmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The locations where the generated reports can be uploaded.
+   * Output only. Cloud Storage buckets where you want to upload the audit
+   * reports.
    * </pre>
    *
    * <code>
@@ -97,7 +106,8 @@ public interface EnrollmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The locations where the generated reports can be uploaded.
+   * Output only. Cloud Storage buckets where you want to upload the audit
+   * reports.
    * </pre>
    *
    * <code>
@@ -111,7 +121,8 @@ public interface EnrollmentOrBuilder
    *
    *
    * <pre>
-   * Output only. The locations where the generated reports can be uploaded.
+   * Output only. Cloud Storage buckets where you want to upload the audit
+   * reports.
    * </pre>
    *
    * <code>

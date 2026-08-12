@@ -40,6 +40,7 @@ public class AsyncGenerateAuditReport {
               .setScope("scope109264468")
               .setComplianceStandard("complianceStandard-1534269448")
               .setComplianceFramework("complianceFramework-1808314333")
+              .setValidateOnly(true)
               .build();
       ApiFuture<Operation> future =
           auditManagerClient.generateAuditReportCallable().futureCall(request);

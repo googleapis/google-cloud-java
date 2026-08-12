@@ -54,6 +54,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
   private RiskAnalysis() {
     reasons_ = emptyIntList();
     extendedVerdictReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    lastChallengeType_ = 0;
     challenge_ = 0;
     verifiedBots_ = java.util.Collections.emptyList();
   }
@@ -150,21 +151,31 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The request matches behavioral characteristics of a carding attack.
+     * Deprecated: Use
+     * [FraudPreventionAssessment.transaction_risk][google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.transaction_risk]
+     * and
+     * [FraudPreventionAssessment.RiskReason.Reason.EXCESSIVE_ENUMERATION_PATTERN][google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason.EXCESSIVE_ENUMERATION_PATTERN]
+     * instead.
      * </pre>
      *
-     * <code>SUSPECTED_CARDING = 6;</code>
+     * <code>SUSPECTED_CARDING = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     SUSPECTED_CARDING(6),
     /**
      *
      *
      * <pre>
-     * The request matches behavioral characteristics of chargebacks for fraud.
+     * Deprecated: Use
+     * [FraudPreventionAssessment.transaction_risk][google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.transaction_risk]
+     * and
+     * [FraudPreventionAssessment.RiskReason.Reason.ASSOCIATED_WITH_FRAUD_CLUSTER][google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason.ASSOCIATED_WITH_FRAUD_CLUSTER]
+     * instead.
      * </pre>
      *
-     * <code>SUSPECTED_CHARGEBACK = 7;</code>
+     * <code>SUSPECTED_CHARGEBACK = 7 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     SUSPECTED_CHARGEBACK(7),
     UNRECOGNIZED(-1),
     ;
@@ -251,23 +262,31 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The request matches behavioral characteristics of a carding attack.
+     * Deprecated: Use
+     * [FraudPreventionAssessment.transaction_risk][google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.transaction_risk]
+     * and
+     * [FraudPreventionAssessment.RiskReason.Reason.EXCESSIVE_ENUMERATION_PATTERN][google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason.EXCESSIVE_ENUMERATION_PATTERN]
+     * instead.
      * </pre>
      *
-     * <code>SUSPECTED_CARDING = 6;</code>
+     * <code>SUSPECTED_CARDING = 6 [deprecated = true];</code>
      */
-    public static final int SUSPECTED_CARDING_VALUE = 6;
+    @java.lang.Deprecated public static final int SUSPECTED_CARDING_VALUE = 6;
 
     /**
      *
      *
      * <pre>
-     * The request matches behavioral characteristics of chargebacks for fraud.
+     * Deprecated: Use
+     * [FraudPreventionAssessment.transaction_risk][google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.transaction_risk]
+     * and
+     * [FraudPreventionAssessment.RiskReason.Reason.ASSOCIATED_WITH_FRAUD_CLUSTER][google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.RiskReason.Reason.ASSOCIATED_WITH_FRAUD_CLUSTER]
+     * instead.
      * </pre>
      *
-     * <code>SUSPECTED_CHARGEBACK = 7;</code>
+     * <code>SUSPECTED_CHARGEBACK = 7 [deprecated = true];</code>
      */
-    public static final int SUSPECTED_CHARGEBACK_VALUE = 7;
+    @java.lang.Deprecated public static final int SUSPECTED_CHARGEBACK_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -369,8 +388,9 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE keys.
-   * Ensure that applications can handle values not explicitly listed.
+   * Challenge information for Universal, `POLICY_BASED_CHALLENGE` and
+   * `INVISIBLE` keys. Ensure that applications can handle values not explicitly
+   * listed.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.recaptchaenterprise.v1.RiskAnalysis.Challenge}
@@ -709,8 +729,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Extended verdict reasons to be used for experimentation only.
-   * The set of possible reasons is subject to change.
+   * Output only. Additional reasons contributing to the risk analysis verdict.
+   * These reasons are available to Enterprise tier projects only. Contact sales
+   * for more information.
+   * The set of reasons is subject to change.
    * </pre>
    *
    * <code>
@@ -727,8 +749,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Extended verdict reasons to be used for experimentation only.
-   * The set of possible reasons is subject to change.
+   * Output only. Additional reasons contributing to the risk analysis verdict.
+   * These reasons are available to Enterprise tier projects only. Contact sales
+   * for more information.
+   * The set of reasons is subject to change.
    * </pre>
    *
    * <code>
@@ -745,8 +769,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Extended verdict reasons to be used for experimentation only.
-   * The set of possible reasons is subject to change.
+   * Output only. Additional reasons contributing to the risk analysis verdict.
+   * These reasons are available to Enterprise tier projects only. Contact sales
+   * for more information.
+   * The set of reasons is subject to change.
    * </pre>
    *
    * <code>
@@ -764,8 +790,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Extended verdict reasons to be used for experimentation only.
-   * The set of possible reasons is subject to change.
+   * Output only. Additional reasons contributing to the risk analysis verdict.
+   * These reasons are available to Enterprise tier projects only. Contact sales
+   * for more information.
+   * The set of reasons is subject to change.
    * </pre>
    *
    * <code>
@@ -779,6 +807,51 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
     return extendedVerdictReasons_.getByteString(index);
   }
 
+  public static final int LAST_CHALLENGE_TYPE_FIELD_NUMBER = 6;
+  private int lastChallengeType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the last challenge presented to the user for
+   * Universal, `POLICY_BASED_CHALLENGE` and `INVISIBLE` keys. The field is only
+   * set when a challenge was presented to the user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.ChallengeType last_challenge_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for lastChallengeType.
+   */
+  @java.lang.Override
+  public int getLastChallengeTypeValue() {
+    return lastChallengeType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the last challenge presented to the user for
+   * Universal, `POLICY_BASED_CHALLENGE` and `INVISIBLE` keys. The field is only
+   * set when a challenge was presented to the user.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.ChallengeType last_challenge_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastChallengeType.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.ChallengeType getLastChallengeType() {
+    com.google.recaptchaenterprise.v1.ChallengeType result =
+        com.google.recaptchaenterprise.v1.ChallengeType.forNumber(lastChallengeType_);
+    return result == null ? com.google.recaptchaenterprise.v1.ChallengeType.UNRECOGNIZED : result;
+  }
+
   public static final int CHALLENGE_FIELD_NUMBER = 4;
   private int challenge_ = 0;
 
@@ -786,8 +859,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
-   * keys.
+   * Output only. Challenge information for Universal, `POLICY_BASED_CHALLENGE`
+   * and `INVISIBLE` keys.
    * </pre>
    *
    * <code>
@@ -805,8 +878,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
-   * keys.
+   * Output only. Challenge information for Universal, `POLICY_BASED_CHALLENGE`
+   * and `INVISIBLE` keys.
    * </pre>
    *
    * <code>
@@ -952,6 +1025,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < verifiedBots_.size(); i++) {
       output.writeMessage(5, verifiedBots_.get(i));
     }
+    if (lastChallengeType_
+        != com.google.recaptchaenterprise.v1.ChallengeType.CHALLENGE_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, lastChallengeType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -992,6 +1069,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < verifiedBots_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, verifiedBots_.get(i));
     }
+    if (lastChallengeType_
+        != com.google.recaptchaenterprise.v1.ChallengeType.CHALLENGE_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, lastChallengeType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1013,6 +1094,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
     if (!reasons_.equals(other.reasons_)) return false;
     if (!getExtendedVerdictReasonsList().equals(other.getExtendedVerdictReasonsList()))
       return false;
+    if (lastChallengeType_ != other.lastChallengeType_) return false;
     if (challenge_ != other.challenge_) return false;
     if (!getVerifiedBotsList().equals(other.getVerifiedBotsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1036,6 +1118,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + EXTENDED_VERDICT_REASONS_FIELD_NUMBER;
       hash = (53 * hash) + getExtendedVerdictReasonsList().hashCode();
     }
+    hash = (37 * hash) + LAST_CHALLENGE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + lastChallengeType_;
     hash = (37 * hash) + CHALLENGE_FIELD_NUMBER;
     hash = (53 * hash) + challenge_;
     if (getVerifiedBotsCount() > 0) {
@@ -1185,6 +1269,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
       score_ = 0F;
       reasons_ = emptyIntList();
       extendedVerdictReasons_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      lastChallengeType_ = 0;
       challenge_ = 0;
       if (verifiedBotsBuilder_ == null) {
         verifiedBots_ = java.util.Collections.emptyList();
@@ -1192,7 +1277,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
         verifiedBots_ = null;
         verifiedBotsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -1230,9 +1315,9 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.recaptchaenterprise.v1.RiskAnalysis result) {
       if (verifiedBotsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           verifiedBots_ = java.util.Collections.unmodifiableList(verifiedBots_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.verifiedBots_ = verifiedBots_;
       } else {
@@ -1254,6 +1339,9 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
         result.extendedVerdictReasons_ = extendedVerdictReasons_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.lastChallengeType_ = lastChallengeType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.challenge_ = challenge_;
       }
     }
@@ -1294,6 +1382,9 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
         }
         onChanged();
       }
+      if (other.lastChallengeType_ != 0) {
+        setLastChallengeTypeValue(other.getLastChallengeTypeValue());
+      }
       if (other.challenge_ != 0) {
         setChallengeValue(other.getChallengeValue());
       }
@@ -1301,7 +1392,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
         if (!other.verifiedBots_.isEmpty()) {
           if (verifiedBots_.isEmpty()) {
             verifiedBots_ = other.verifiedBots_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureVerifiedBotsIsMutable();
             verifiedBots_.addAll(other.verifiedBots_);
@@ -1314,7 +1405,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
             verifiedBotsBuilder_.dispose();
             verifiedBotsBuilder_ = null;
             verifiedBots_ = other.verifiedBots_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             verifiedBotsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetVerifiedBotsFieldBuilder()
@@ -1384,7 +1475,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
             case 32:
               {
                 challenge_ = input.readEnum();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 42:
@@ -1400,6 +1491,12 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 42
+            case 48:
+              {
+                lastChallengeType_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1760,8 +1857,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Extended verdict reasons to be used for experimentation only.
-     * The set of possible reasons is subject to change.
+     * Output only. Additional reasons contributing to the risk analysis verdict.
+     * These reasons are available to Enterprise tier projects only. Contact sales
+     * for more information.
+     * The set of reasons is subject to change.
      * </pre>
      *
      * <code>
@@ -1779,8 +1878,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Extended verdict reasons to be used for experimentation only.
-     * The set of possible reasons is subject to change.
+     * Output only. Additional reasons contributing to the risk analysis verdict.
+     * These reasons are available to Enterprise tier projects only. Contact sales
+     * for more information.
+     * The set of reasons is subject to change.
      * </pre>
      *
      * <code>
@@ -1797,8 +1898,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Extended verdict reasons to be used for experimentation only.
-     * The set of possible reasons is subject to change.
+     * Output only. Additional reasons contributing to the risk analysis verdict.
+     * These reasons are available to Enterprise tier projects only. Contact sales
+     * for more information.
+     * The set of reasons is subject to change.
      * </pre>
      *
      * <code>
@@ -1816,8 +1919,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Extended verdict reasons to be used for experimentation only.
-     * The set of possible reasons is subject to change.
+     * Output only. Additional reasons contributing to the risk analysis verdict.
+     * These reasons are available to Enterprise tier projects only. Contact sales
+     * for more information.
+     * The set of reasons is subject to change.
      * </pre>
      *
      * <code>
@@ -1835,8 +1940,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Extended verdict reasons to be used for experimentation only.
-     * The set of possible reasons is subject to change.
+     * Output only. Additional reasons contributing to the risk analysis verdict.
+     * These reasons are available to Enterprise tier projects only. Contact sales
+     * for more information.
+     * The set of reasons is subject to change.
      * </pre>
      *
      * <code>
@@ -1862,8 +1969,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Extended verdict reasons to be used for experimentation only.
-     * The set of possible reasons is subject to change.
+     * Output only. Additional reasons contributing to the risk analysis verdict.
+     * These reasons are available to Enterprise tier projects only. Contact sales
+     * for more information.
+     * The set of reasons is subject to change.
      * </pre>
      *
      * <code>
@@ -1888,8 +1997,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Extended verdict reasons to be used for experimentation only.
-     * The set of possible reasons is subject to change.
+     * Output only. Additional reasons contributing to the risk analysis verdict.
+     * These reasons are available to Enterprise tier projects only. Contact sales
+     * for more information.
+     * The set of reasons is subject to change.
      * </pre>
      *
      * <code>
@@ -1911,8 +2022,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Extended verdict reasons to be used for experimentation only.
-     * The set of possible reasons is subject to change.
+     * Output only. Additional reasons contributing to the risk analysis verdict.
+     * These reasons are available to Enterprise tier projects only. Contact sales
+     * for more information.
+     * The set of reasons is subject to change.
      * </pre>
      *
      * <code>
@@ -1933,8 +2046,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Extended verdict reasons to be used for experimentation only.
-     * The set of possible reasons is subject to change.
+     * Output only. Additional reasons contributing to the risk analysis verdict.
+     * These reasons are available to Enterprise tier projects only. Contact sales
+     * for more information.
+     * The set of reasons is subject to change.
      * </pre>
      *
      * <code>
@@ -1956,14 +2071,129 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int lastChallengeType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the last challenge presented to the user for
+     * Universal, `POLICY_BASED_CHALLENGE` and `INVISIBLE` keys. The field is only
+     * set when a challenge was presented to the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.ChallengeType last_challenge_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for lastChallengeType.
+     */
+    @java.lang.Override
+    public int getLastChallengeTypeValue() {
+      return lastChallengeType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the last challenge presented to the user for
+     * Universal, `POLICY_BASED_CHALLENGE` and `INVISIBLE` keys. The field is only
+     * set when a challenge was presented to the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.ChallengeType last_challenge_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for lastChallengeType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLastChallengeTypeValue(int value) {
+      lastChallengeType_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the last challenge presented to the user for
+     * Universal, `POLICY_BASED_CHALLENGE` and `INVISIBLE` keys. The field is only
+     * set when a challenge was presented to the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.ChallengeType last_challenge_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastChallengeType.
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.ChallengeType getLastChallengeType() {
+      com.google.recaptchaenterprise.v1.ChallengeType result =
+          com.google.recaptchaenterprise.v1.ChallengeType.forNumber(lastChallengeType_);
+      return result == null ? com.google.recaptchaenterprise.v1.ChallengeType.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the last challenge presented to the user for
+     * Universal, `POLICY_BASED_CHALLENGE` and `INVISIBLE` keys. The field is only
+     * set when a challenge was presented to the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.ChallengeType last_challenge_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The lastChallengeType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLastChallengeType(com.google.recaptchaenterprise.v1.ChallengeType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000008;
+      lastChallengeType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the last challenge presented to the user for
+     * Universal, `POLICY_BASED_CHALLENGE` and `INVISIBLE` keys. The field is only
+     * set when a challenge was presented to the user.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.ChallengeType last_challenge_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLastChallengeType() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      lastChallengeType_ = 0;
+      onChanged();
+      return this;
+    }
+
     private int challenge_ = 0;
 
     /**
      *
      *
      * <pre>
-     * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
-     * keys.
+     * Output only. Challenge information for Universal, `POLICY_BASED_CHALLENGE`
+     * and `INVISIBLE` keys.
      * </pre>
      *
      * <code>
@@ -1981,8 +2211,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
-     * keys.
+     * Output only. Challenge information for Universal, `POLICY_BASED_CHALLENGE`
+     * and `INVISIBLE` keys.
      * </pre>
      *
      * <code>
@@ -1994,7 +2224,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      */
     public Builder setChallengeValue(int value) {
       challenge_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2003,8 +2233,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
-     * keys.
+     * Output only. Challenge information for Universal, `POLICY_BASED_CHALLENGE`
+     * and `INVISIBLE` keys.
      * </pre>
      *
      * <code>
@@ -2026,8 +2256,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
-     * keys.
+     * Output only. Challenge information for Universal, `POLICY_BASED_CHALLENGE`
+     * and `INVISIBLE` keys.
      * </pre>
      *
      * <code>
@@ -2041,7 +2271,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       challenge_ = value.getNumber();
       onChanged();
       return this;
@@ -2051,8 +2281,8 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Challenge information for POLICY_BASED_CHALLENGE and INVISIBLE
-     * keys.
+     * Output only. Challenge information for Universal, `POLICY_BASED_CHALLENGE`
+     * and `INVISIBLE` keys.
      * </pre>
      *
      * <code>
@@ -2062,7 +2292,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearChallenge() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       challenge_ = 0;
       onChanged();
       return this;
@@ -2072,10 +2302,10 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureVerifiedBotsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         verifiedBots_ =
             new java.util.ArrayList<com.google.recaptchaenterprise.v1.Bot>(verifiedBots_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2333,7 +2563,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
     public Builder clearVerifiedBots() {
       if (verifiedBotsBuilder_ == null) {
         verifiedBots_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         verifiedBotsBuilder_.clear();
@@ -2483,7 +2713,7 @@ public final class RiskAnalysis extends com.google.protobuf.GeneratedMessage
                 com.google.recaptchaenterprise.v1.Bot,
                 com.google.recaptchaenterprise.v1.Bot.Builder,
                 com.google.recaptchaenterprise.v1.BotOrBuilder>(
-                verifiedBots_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                verifiedBots_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         verifiedBots_ = null;
       }
       return verifiedBotsBuilder_;

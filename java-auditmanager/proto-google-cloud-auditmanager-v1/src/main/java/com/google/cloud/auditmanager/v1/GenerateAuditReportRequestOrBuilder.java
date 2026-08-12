@@ -30,9 +30,9 @@ public interface GenerateAuditReportRequestOrBuilder
    *
    *
    * <pre>
-   * Destination Cloud storage bucket where report and evidence must be
-   * uploaded. The Cloud storage bucket provided here must be selected among
-   * the buckets entered during the enrollment process.
+   * URL for the Cloud Storage bucket where the report and evidence is
+   * uploaded. You must select a bucket that was provided during the
+   * enrollment process.
    * </pre>
    *
    * <code>string gcs_uri = 2;</code>
@@ -45,9 +45,9 @@ public interface GenerateAuditReportRequestOrBuilder
    *
    *
    * <pre>
-   * Destination Cloud storage bucket where report and evidence must be
-   * uploaded. The Cloud storage bucket provided here must be selected among
-   * the buckets entered during the enrollment process.
+   * URL for the Cloud Storage bucket where the report and evidence is
+   * uploaded. You must select a bucket that was provided during the
+   * enrollment process.
    * </pre>
    *
    * <code>string gcs_uri = 2;</code>
@@ -60,9 +60,9 @@ public interface GenerateAuditReportRequestOrBuilder
    *
    *
    * <pre>
-   * Destination Cloud storage bucket where report and evidence must be
-   * uploaded. The Cloud storage bucket provided here must be selected among
-   * the buckets entered during the enrollment process.
+   * URL for the Cloud Storage bucket where the report and evidence is
+   * uploaded. You must select a bucket that was provided during the
+   * enrollment process.
    * </pre>
    *
    * <code>string gcs_uri = 2;</code>
@@ -75,10 +75,12 @@ public interface GenerateAuditReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Scope for which the AuditScopeReport is required. Must be of
-   * format resource_type/resource_identifier Eg:
-   * projects/{project}/locations/{location},
-   * folders/{folder}/locations/{location}
+   * Required. Organization, folder, or project that the audit applies to, in
+   * one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -91,10 +93,12 @@ public interface GenerateAuditReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Scope for which the AuditScopeReport is required. Must be of
-   * format resource_type/resource_identifier Eg:
-   * projects/{project}/locations/{location},
-   * folders/{folder}/locations/{location}
+   * Required. Organization, folder, or project that the audit applies to, in
+   * one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>string scope = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -107,35 +111,47 @@ public interface GenerateAuditReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Compliance Standard against which the Scope Report must be
-   * generated. Eg: FEDRAMP_MODERATE
+   * Optional. Deprecated. Compliance standard for the audit report.
+   *
+   * Use the `compliance_framework` field instead.
    * </pre>
    *
-   * <code>string compliance_standard = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string compliance_standard = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=359
    * @return The complianceStandard.
    */
+  @java.lang.Deprecated
   java.lang.String getComplianceStandard();
 
   /**
    *
    *
    * <pre>
-   * Required. Compliance Standard against which the Scope Report must be
-   * generated. Eg: FEDRAMP_MODERATE
+   * Optional. Deprecated. Compliance standard for the audit report.
+   *
+   * Use the `compliance_framework` field instead.
    * </pre>
    *
-   * <code>string compliance_standard = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string compliance_standard = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
+   * @deprecated google.cloud.auditmanager.v1.GenerateAuditReportRequest.compliance_standard is
+   *     deprecated. See google/cloud/auditmanager/v1/auditmanager.proto;l=359
    * @return The bytes for complianceStandard.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getComplianceStandardBytes();
 
   /**
    *
    *
    * <pre>
-   * Required. The format in which the audit report should be created.
+   * Required. Format for the audit report.
    * </pre>
    *
    * <code>
@@ -150,7 +166,7 @@ public interface GenerateAuditReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The format in which the audit report should be created.
+   * Required. Format for the audit report.
    * </pre>
    *
    * <code>
@@ -165,7 +181,8 @@ public interface GenerateAuditReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Compliance framework against which the Report must be generated.
+   * Required. The framework that's used for the audit report. For example,
+   * `NIST_800_53`.
    * </pre>
    *
    * <code>string compliance_framework = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -178,7 +195,8 @@ public interface GenerateAuditReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Compliance framework against which the Report must be generated.
+   * Required. The framework that's used for the audit report. For example,
+   * `NIST_800_53`.
    * </pre>
    *
    * <code>string compliance_framework = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -186,6 +204,20 @@ public interface GenerateAuditReportRequestOrBuilder
    * @return The bytes for complianceFramework.
    */
   com.google.protobuf.ByteString getComplianceFrameworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If `true`, only validate the request and don't generate the audit
+   * report.
+   * </pre>
+   *
+   * <code>bool validate_only = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 
   com.google.cloud.auditmanager.v1.GenerateAuditReportRequest.DestinationCase getDestinationCase();
 }
