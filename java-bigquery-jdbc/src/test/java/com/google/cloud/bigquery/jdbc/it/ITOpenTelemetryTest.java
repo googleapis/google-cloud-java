@@ -23,7 +23,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.paging.Page;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.jdbc.BigQueryConnection;
@@ -36,7 +38,18 @@ import com.google.cloud.trace.v1.TraceServiceSettings;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.TraceSpan;
 import com.google.gson.JsonObject;
+import io.grpc.HttpConnectProxiedSocketAddress;
+import io.grpc.ProxiedSocketAddress;
+import io.grpc.ProxyDetector;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.api.trace.TraceFlags;
+import io.opentelemetry.api.trace.TraceState;
+import io.opentelemetry.context.Scope;
+import io.opentelemetry.sdk.trace.IdGenerator;
 import java.io.File;
+import java.net.InetSocketAddress;
+import java.net.SocketAddress;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.sql.Connection;
@@ -44,13 +57,46 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class ITOpenTelemetryTest extends ITBase {
 
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String CONNECTION_URL = connectionUrl;
+  private static final String[] PROXY_SYS_PROPS = {
+    "https.proxyHost", "https.proxyPort", "http.proxyHost", "http.proxyPort"
+  };
+  private static final Map<String, String> originalSystemProperties = new HashMap<>();
+
+  @BeforeAll
+  public static void setUpProxyProperties() {
+    DataSource ds = DataSource.fromUrl(CONNECTION_URL);
+    if (ds.getProxyHost() != null && ds.getProxyPort() != null) {
+      for (String prop : PROXY_SYS_PROPS) {
+        originalSystemProperties.put(prop, System.getProperty(prop));
+      }
+      System.setProperty("https.proxyHost", ds.getProxyHost());
+      System.setProperty("https.proxyPort", ds.getProxyPort());
+      System.setProperty("http.proxyHost", ds.getProxyHost());
+      System.setProperty("http.proxyPort", ds.getProxyPort());
+    }
+  }
+
+  @AfterAll
+  public static void tearDownProxyProperties() {
+    for (Map.Entry<String, String> entry : originalSystemProperties.entrySet()) {
+      if (entry.getValue() != null) {
+        System.setProperty(entry.getKey(), entry.getValue());
+      } else {
+        System.clearProperty(entry.getKey());
+      }
+    }
+  }
 
   @Test
   public void testExecute_withOpenTelemetryGcpExporter() throws Exception {
@@ -125,7 +171,6 @@ public class ITOpenTelemetryTest extends ITBase {
 
   @Test
   public void testExecute_withErrorCorrelation() throws Exception {
-
     // Step 1: Connect with GCP Exporters enabled via DataSource
     DataSource ds = DataSource.fromUrl(CONNECTION_URL);
     ds.setEnableGcpTraceExporter(true);
@@ -227,6 +272,39 @@ public class ITOpenTelemetryTest extends ITBase {
     }
   }
 
+  @Test
+  public void testExecute_withHttpProtocol_andDirectTraceVerification() throws Exception {
+    JsonObject authJson = getAuthJson();
+    System.setProperty("otel.exporter.otlp.protocol", "http/protobuf");
+
+    try {
+      DataSource ds = DataSource.fromUrl(CONNECTION_URL);
+      ds.setEnableGcpTraceExporter(true);
+      ds.setGcpTelemetryProjectId(PROJECT_ID);
+      ds.setGcpTelemetryCredentials(authJson.toString());
+
+      String traceId = IdGenerator.random().generateTraceId();
+      String spanId = IdGenerator.random().generateSpanId();
+      SpanContext parentContext =
+          SpanContext.create(traceId, spanId, TraceFlags.getSampled(), TraceState.getDefault());
+
+      try (Scope scope = Span.wrap(parentContext).makeCurrent()) {
+        try (Connection connection = ds.getConnection();
+            Statement statement = connection.createStatement()) {
+          String query = "SELECT 1;";
+          try (ResultSet rs = statement.executeQuery(query)) {
+            assertTrue(rs.next());
+          }
+        }
+      }
+
+      Trace trace = verifyAndFetchTrace(traceId);
+      assertNotNull(trace, "Trace must be found in Cloud Trace API: " + traceId);
+    } finally {
+      System.clearProperty("otel.exporter.otlp.protocol");
+    }
+  }
+
   private void verifyTraceDelivery(DataSource ds) throws Exception {
     ds.setEnableGcpLogExporter(true);
     ds.setLogLevel("5");
@@ -293,16 +371,40 @@ public class ITOpenTelemetryTest extends ITBase {
 
     GoogleCredentials credentials = getCredentials();
 
-    TraceServiceSettings settings =
+    TraceServiceSettings.Builder settingsBuilder =
         TraceServiceSettings.newBuilder()
-            .setCredentialsProvider(FixedCredentialsProvider.create(credentials))
-            .build();
+            .setCredentialsProvider(FixedCredentialsProvider.create(credentials));
 
-    try (TraceServiceClient traceClient = TraceServiceClient.create(settings)) {
+    DataSource ds = DataSource.fromUrl(CONNECTION_URL);
+    String proxyHost = ds.getProxyHost();
+    String proxyPortStr = ds.getProxyPort();
+    if (proxyHost != null && proxyPortStr != null) {
+      settingsBuilder.setTransportChannelProvider(
+          createProxyTransportChannelProvider(proxyHost, Integer.parseInt(proxyPortStr)));
+    }
+
+    try (TraceServiceClient traceClient = TraceServiceClient.create(settingsBuilder.build())) {
       Trace trace = fetchTraceWithRetry(traceClient, PROJECT_ID, hexTraceId);
       assertNotNull(trace, "Trace must be found in Cloud Trace API: " + hexTraceId);
       return trace;
     }
+  }
+
+  private TransportChannelProvider createProxyTransportChannelProvider(String host, int port) {
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setChannelConfigurator(
+            builder ->
+                builder.proxyDetector(
+                    new ProxyDetector() {
+                      @Override
+                      public ProxiedSocketAddress proxyFor(SocketAddress socketAddress) {
+                        return HttpConnectProxiedSocketAddress.newBuilder()
+                            .setProxyAddress(new InetSocketAddress(host, port))
+                            .setTargetAddress((InetSocketAddress) socketAddress)
+                            .build();
+                      }
+                    }))
+        .build();
   }
 
   private <T> T pollWithRetry(java.util.concurrent.Callable<T> task) throws InterruptedException {

@@ -56,6 +56,32 @@ public interface DeleteInstanceRequestOrBuilder
    *
    *
    * <pre>
+   * If set to true, Graceful Shutdown is skipped.
+   * </pre>
+   *
+   * <code>optional bool no_graceful_shutdown = 336255890;</code>
+   *
+   * @return Whether the noGracefulShutdown field is set.
+   */
+  boolean hasNoGracefulShutdown();
+
+  /**
+   *
+   *
+   * <pre>
+   * If set to true, Graceful Shutdown is skipped.
+   * </pre>
+   *
+   * <code>optional bool no_graceful_shutdown = 336255890;</code>
+   *
+   * @return The noGracefulShutdown.
+   */
+  boolean getNoGracefulShutdown();
+
+  /**
+   *
+   *
+   * <pre>
    * Project ID for this request.
    * </pre>
    *

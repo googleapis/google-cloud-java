@@ -30,7 +30,10 @@ public interface ControlFamilyOrBuilder
    *
    *
    * <pre>
-   * The ID of the regulatory control family.
+   * ID of the regulatory control family. To find the list of supported
+   * control families, use the
+   * [ListControls][google.cloud.auditmanager.v1.AuditManager.ListControls]
+   * method and review the `control_family` field in the response.
    * </pre>
    *
    * <code>string family_id = 1;</code>
@@ -43,7 +46,10 @@ public interface ControlFamilyOrBuilder
    *
    *
    * <pre>
-   * The ID of the regulatory control family.
+   * ID of the regulatory control family. To find the list of supported
+   * control families, use the
+   * [ListControls][google.cloud.auditmanager.v1.AuditManager.ListControls]
+   * method and review the `control_family` field in the response.
    * </pre>
    *
    * <code>string family_id = 1;</code>
@@ -56,7 +62,7 @@ public interface ControlFamilyOrBuilder
    *
    *
    * <pre>
-   * The display name of the regulatory control family.
+   * Display name of the regulatory control family.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -69,7 +75,7 @@ public interface ControlFamilyOrBuilder
    *
    *
    * <pre>
-   * The display name of the regulatory control family.
+   * Display name of the regulatory control family.
    * </pre>
    *
    * <code>string display_name = 2;</code>

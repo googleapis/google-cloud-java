@@ -862,4 +862,26 @@ public class MockStorageControlImpl extends StorageControlImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void viewObjectFullContext(
+      ViewObjectFullContextRequest request, StreamObserver<ObjectFullContext> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ObjectFullContext) {
+      requests.add(request);
+      responseObserver.onNext(((ObjectFullContext) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ViewObjectFullContext, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ObjectFullContext.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

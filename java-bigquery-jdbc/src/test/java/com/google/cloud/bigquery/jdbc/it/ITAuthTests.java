@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -29,7 +28,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
@@ -47,14 +45,8 @@ public class ITAuthTests extends ITBase {
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    int totalRows = 0;
-    while (jsonResultSet.next()) {
-      totalRows += 1;
-    }
-    assertEquals(totalRows, 850);
+    validateStatement(statement, 850);
     connection.close();
   }
 
@@ -177,11 +169,7 @@ public class ITAuthTests extends ITBase {
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -204,11 +192,7 @@ public class ITAuthTests extends ITBase {
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -227,11 +211,7 @@ public class ITAuthTests extends ITBase {
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -261,11 +241,7 @@ public class ITAuthTests extends ITBase {
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -275,6 +251,7 @@ public class ITAuthTests extends ITBase {
     "https://www.googleapis.com/auth/bigquery, false"
   })
   @Tag("advanced")
+  @Tag("disable_tpc")
   public void testValidPreGeneratedAccessTokenAuthentication(String scope, boolean isReadOnly)
       throws Exception {
     final JsonObject authJson = getAuthJson();
@@ -316,11 +293,7 @@ public class ITAuthTests extends ITBase {
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 

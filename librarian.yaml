@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.32.0
+version: v0.36.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: b8486a2f44f15dc578a9dc1e17b144253079d5c1
-    sha256: 12411ca5cb6c70d7c873d7058c5182a8d23fa88af8d984b0e73b1c3ad1d83766
+    commit: 240b58fe7058f6fff77cba02f51d600170b6c421
+    sha256: ca03f2c93b8f1e92fd75c87b2568992c96a2ecc37fde750c5bf83129fa17b407
   showcase:
     commit: f97fd357084b9e85ef5dd02ba084551c3f85191c
     sha256: b5d293831e6895ca139d9a0a92eec75a82e73398978b140af8f7c5e91c7c969a
@@ -30,7 +30,7 @@ tools:
       classifier: all-deps
       packaging: jar
     - name: protoc-gen-java_grpc
-      version: 1.82.2
+      version: 1.82.3
       group_id: io.grpc
       artifact_id: protoc-gen-grpc-java
       classifier: linux-x86_64
