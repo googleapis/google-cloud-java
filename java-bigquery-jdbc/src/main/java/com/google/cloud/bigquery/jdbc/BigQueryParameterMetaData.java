@@ -116,7 +116,7 @@ class BigQueryParameterMetaData implements ParameterMetaData {
     checkValidIndex(param);
     StandardSQLTypeName sqlType = getStandardSQLTypeName(param);
     if (sqlType != null) {
-      Class<?> clazz = BigQueryTypeRegistry.toJavaClass(BigQueryTypeRegistry.toJdbcType(sqlType));
+      Class<?> clazz = BigQueryTypeRegistry.toJavaClass(sqlType);
       if (clazz != null) {
         return clazz.getName();
       }
