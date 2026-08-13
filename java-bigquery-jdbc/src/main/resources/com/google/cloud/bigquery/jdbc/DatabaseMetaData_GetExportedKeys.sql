@@ -29,18 +29,18 @@ SELECT
   REGEXP_EXTRACT(fk.constraint_name, r'[^.]+$') AS FK_NAME,
   REGEXP_EXTRACT(pk.constraint_name, r'[^.]+$') AS PK_NAME,
   7                       AS DEFERRABILITY
-FROM `%1$s.%2$s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE` AS pk
-JOIN `%1$s.%2$s.INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE` AS ccu
+FROM `%1$s`.`%2$s`.INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS pk
+JOIN `%1$s`.`%2$s`.INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE AS ccu
   ON ccu.table_catalog = pk.table_catalog
  AND ccu.table_schema  = pk.table_schema
  AND ccu.table_name    = pk.table_name
  AND ccu.column_name   = pk.column_name
-JOIN `%1$s.%2$s.INFORMATION_SCHEMA.KEY_COLUMN_USAGE` AS fk
+JOIN `%1$s`.`%2$s`.INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS fk
   ON fk.constraint_catalog = ccu.constraint_catalog
  AND fk.constraint_schema  = ccu.constraint_schema
  AND fk.constraint_name    = ccu.constraint_name
  AND fk.position_in_unique_constraint = pk.ordinal_position
-JOIN `%1$s.%2$s.INFORMATION_SCHEMA.TABLE_CONSTRAINTS` AS tc
+JOIN `%1$s`.`%2$s`.INFORMATION_SCHEMA.TABLE_CONSTRAINTS AS tc
   ON tc.constraint_catalog = fk.constraint_catalog
  AND tc.constraint_schema  = fk.constraint_schema
  AND tc.constraint_name    = fk.constraint_name
