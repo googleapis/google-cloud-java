@@ -234,10 +234,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         return new BigQueryJsonStruct(
             arrayField.getSubFields(), value, this.LOG.getJsonStructLogger());
       }
-      Class<?> targetClass =
-          BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-              arrayField.getType().getStandardType());
-      return BigQueryTypeRegistry.convert(value, targetClass);
+      return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), null);
     }
 
     int extraIndex = this.isNested ? 2 : 1;
@@ -248,10 +245,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       return new BigQueryJsonStruct(
           fieldSchema.getSubFields(), value, this.LOG.getJsonStructLogger());
     } else {
-      Class<?> targetClass =
-          BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-              fieldSchema.getType().getStandardType());
-      return BigQueryTypeRegistry.convert(value, targetClass);
+      return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), null);
     }
   }
 

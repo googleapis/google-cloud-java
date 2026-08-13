@@ -74,10 +74,8 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
       return new BigQueryJsonStruct(
           currentSchema.getSubFields(), (FieldValue) currentValue, this.LOG.getJsonStructLogger());
     } else {
-      Class<?> targetClass =
-          BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-              currentSchema.getType().getStandardType());
-      return BigQueryTypeRegistry.convert(currentValue, targetClass);
+      return BigQueryTypeRegistry.convert(
+          currentValue, currentSchema.getType().getStandardType(), null);
     }
   }
 }

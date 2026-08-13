@@ -65,8 +65,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   public final int getBaseType() {
     LOG.finestTrace("getBaseType");
     ensureValid();
-    return BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(
-        schema.getType().getStandardType());
+    return BigQueryTypeRegistry.toJdbcType(schema.getType().getStandardType());
   }
 
   @Override
@@ -145,8 +144,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
     LOG.finestTrace("getTargetClass");
     return this.arrayOfStruct
         ? Struct.class
-        : BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-            this.schema.getType().getStandardType());
+        : BigQueryTypeRegistry.toJavaClass(this.schema.getType().getStandardType());
   }
 
   abstract Object getCoercedValue(int index) throws SQLException;

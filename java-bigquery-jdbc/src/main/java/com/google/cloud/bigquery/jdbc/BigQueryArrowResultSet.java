@@ -368,10 +368,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
             (JsonStringHashMap<?, ?>) value,
             this.LOG.getArrowStructLogger());
       }
-      Class<?> targetClass =
-          BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-              arrayField.getType().getStandardType());
-      return BigQueryTypeRegistry.convert(value, targetClass);
+      return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), null);
     }
 
     int fieldIndex = this.isNested ? 0 : columnIndex - 1;
@@ -437,10 +434,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         // Strip trailing zeros to match JSON API and CLI output
         return ((BigDecimal) value).stripTrailingZeros();
       }
-      Class<?> targetClass =
-          BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-              fieldSchema.getType().getStandardType());
-      return BigQueryTypeRegistry.convert(value, targetClass);
+      return BigQueryTypeRegistry.convert(value, fieldSchema.getType().getStandardType(), null);
     }
   }
 

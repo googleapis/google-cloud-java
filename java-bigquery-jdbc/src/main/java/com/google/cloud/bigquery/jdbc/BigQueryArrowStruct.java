@@ -83,10 +83,8 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
           (JsonStringHashMap<?, ?>) currentValue,
           this.LOG.getArrowStructLogger());
     } else {
-      Class<?> targetClass =
-          BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-              currentSchema.getType().getStandardType());
-      return BigQueryTypeRegistry.convert(currentValue, targetClass);
+      return BigQueryTypeRegistry.convert(
+          currentValue, currentSchema.getType().getStandardType(), null);
     }
   }
 }

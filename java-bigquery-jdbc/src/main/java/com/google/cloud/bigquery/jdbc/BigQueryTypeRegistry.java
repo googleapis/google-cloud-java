@@ -408,9 +408,11 @@ final class BigQueryTypeRegistry {
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
       return String.class;
+
     }
     return DESCRIPTORS_BY_ORDINAL[ordinal].getDefaultJavaClass();
   }
+
 
   /**
    * Returns the standard Java Class equivalent for a given JDBC SQL type.
