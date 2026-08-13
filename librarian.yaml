@@ -1944,6 +1944,13 @@ libraries:
       recommended_package: com.google.cloud.firestore
       transport_override: grpc
       skip_pom_updates: true
+  - name: ftp
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/ftp/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: functions
     version: 2.98.0-SNAPSHOT
     apis:
