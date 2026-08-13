@@ -159,8 +159,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
       @Nonnull String familyName, @Nonnull ByteString qualifier, @Nonnull ByteString value) {
     long timestamp = Instant.EPOCH.until(Instant.now(), ChronoUnit.MICROS);
 
-    return setCell(
-        familyName, qualifier, timestamp, value, TimestampOrigin.CLIENT_AUTO_GENERATED);
+    return setCell(familyName, qualifier, timestamp, value, TimestampOrigin.CLIENT_AUTO_GENERATED);
   }
 
   @Override
@@ -169,8 +168,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
       @Nonnull ByteString qualifier,
       long timestamp,
       @Nonnull ByteString value) {
-    return setCell(
-        familyName, qualifier, timestamp, value, TimestampOrigin.USER_SPECIFIED);
+    return setCell(familyName, qualifier, timestamp, value, TimestampOrigin.USER_SPECIFIED);
   }
 
   private Mutation setCell(

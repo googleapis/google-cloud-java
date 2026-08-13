@@ -26,13 +26,13 @@ import com.google.bigtable.v2.Mutation.TimestampOrigin;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
 import com.google.common.primitives.Longs;
 import com.google.protobuf.ByteString;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -284,8 +284,10 @@ public class MutationTest {
 
     assertThat(actualMutation.getSetCell().getValue())
         .isEqualTo(ByteString.copyFrom(Longs.toByteArray(100_000L)));
-    assertThat(mutations.get(0).getTimestampOrigin()).isEqualTo(TimestampOrigin.CLIENT_AUTO_GENERATED);
-    assertThat(mutations.get(1).getTimestampOrigin()).isEqualTo(TimestampOrigin.CLIENT_AUTO_GENERATED);
+    assertThat(mutations.get(0).getTimestampOrigin())
+        .isEqualTo(TimestampOrigin.CLIENT_AUTO_GENERATED);
+    assertThat(mutations.get(1).getTimestampOrigin())
+        .isEqualTo(TimestampOrigin.CLIENT_AUTO_GENERATED);
 
     assertThat(mutations.get(2).getSetCell())
         .isEqualTo(
