@@ -779,9 +779,6 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   public void setNull(String parameterName, int sqlType) throws SQLException {
     checkClosed();
     Class<?> javaType = BigQueryTypeRegistry.toJavaClass(sqlType);
-    if (javaType == null) {
-      javaType = String.class;
-    }
     this.parameterHandler.setParameter(
         parameterName, null, javaType, BigQueryStatementParameterType.IN, 0);
   }

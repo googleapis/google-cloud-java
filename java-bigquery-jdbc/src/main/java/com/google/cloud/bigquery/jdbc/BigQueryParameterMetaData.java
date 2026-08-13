@@ -97,11 +97,7 @@ class BigQueryParameterMetaData implements ParameterMetaData {
     if (sqlType == null) {
       return Types.OTHER;
     }
-    Integer jdbcType = BigQueryTypeRegistry.toJdbcType(sqlType);
-    if (jdbcType != null) {
-      return jdbcType;
-    }
-    return Types.OTHER;
+    return BigQueryTypeRegistry.toJdbcType(sqlType);
   }
 
   @Override
@@ -117,9 +113,7 @@ class BigQueryParameterMetaData implements ParameterMetaData {
     StandardSQLTypeName sqlType = getStandardSQLTypeName(param);
     if (sqlType != null) {
       Class<?> clazz = BigQueryTypeRegistry.toJavaClass(sqlType);
-      if (clazz != null) {
-        return clazz.getName();
-      }
+      return clazz.getName();
     }
     if (this.parameterHandler == null) {
       return Object.class.getName();
