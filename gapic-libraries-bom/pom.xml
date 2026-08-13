@@ -729,6 +729,13 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-ftp-bom</artifactId>
+        <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-ftp:current} -->
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-functions-bom</artifactId>
         <version>2.98.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-functions:current} -->
         <type>pom</type>
