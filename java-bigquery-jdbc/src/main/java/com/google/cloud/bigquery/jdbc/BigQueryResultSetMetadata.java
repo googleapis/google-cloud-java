@@ -211,14 +211,12 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   }
 
   @Override
-  public String getColumnClassName(int column) {
+  public String getColumnClassName(int column) throws SQLException {
     Field field = getField(column);
     if (field.getMode() == Mode.REPEATED) {
       return java.sql.Array.class.getName();
     }
-    return BigQueryTypeRegistry.toJavaClass(
-            BigQueryTypeRegistry.toJdbcType(getStandardSQLTypeName(column)))
-        .getName();
+    return BigQueryTypeRegistry.toJavaClass(getStandardSQLTypeName(column)).getName();
   }
 
   // Wrapper methods:
