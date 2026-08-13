@@ -5771,6 +5771,7 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       released_version: 0.1.0
+    skip_generate: true
   - name: storage
     version: 2.72.0-SNAPSHOT
     apis:
