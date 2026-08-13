@@ -70,17 +70,18 @@ public class ITTPCBigQueryTest {
             + TPC_PVT_KEY
             + ";";
 
-    Connection connection = DriverManager.getConnection(connection_uri);
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-    assertEquals(
-        "GOOGLE_SERVICE_ACCOUNT",
-        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
-    String query = "SELECT 1";
-    Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
-    connection.close();
+    try (Connection connection = DriverManager.getConnection(connection_uri)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+      assertEquals(
+          "GOOGLE_SERVICE_ACCOUNT",
+          connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
+      String query = "SELECT 1";
+      try (Statement statement = connection.createStatement();
+          ResultSet jsonResultSet = statement.executeQuery(query)) {
+        assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+      }
+    }
   }
 
   // You will need to change the environment variable for GOOGLE_APPLICATION_CREDENTIALS to point to
@@ -99,17 +100,18 @@ public class ITTPCBigQueryTest {
             + TPC_UNIVERSE_DOMAIN
             + ";";
 
-    Connection connection = DriverManager.getConnection(connection_uri);
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-    assertEquals(
-        "APPLICATION_DEFAULT_CREDENTIALS",
-        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
-    String query = "SELECT * FROM test.test;";
-    Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
-    connection.close();
+    try (Connection connection = DriverManager.getConnection(connection_uri)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+      assertEquals(
+          "APPLICATION_DEFAULT_CREDENTIALS",
+          connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
+      String query = "SELECT * FROM test.test;";
+      try (Statement statement = connection.createStatement();
+          ResultSet jsonResultSet = statement.executeQuery(query)) {
+        assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+      }
+    }
   }
 
   @Test
@@ -129,14 +131,15 @@ public class ITTPCBigQueryTest {
             + TPC_UNIVERSE_DOMAIN
             + ";";
 
-    Connection connection = DriverManager.getConnection(connection_uri);
-    String query = "SELECT * FROM test.test;";
-    Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-    connection.close();
+    try (Connection connection = DriverManager.getConnection(connection_uri)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+      String query = "SELECT * FROM test.test;";
+      try (Statement statement = connection.createStatement();
+          ResultSet jsonResultSet = statement.executeQuery(query)) {
+        assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+      }
+    }
   }
 
   @Test
@@ -159,17 +162,18 @@ public class ITTPCBigQueryTest {
             + TPC_PVT_KEY
             + ";"; // Plug in this value when testing from the key file
 
-    Connection connection = DriverManager.getConnection(connection_uri);
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-    assertEquals(
-        "GOOGLE_SERVICE_ACCOUNT",
-        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
-    String query = "SELECT * FROM test.test;";
-    Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
-    connection.close();
+    try (Connection connection = DriverManager.getConnection(connection_uri)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+      assertEquals(
+          "GOOGLE_SERVICE_ACCOUNT",
+          connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
+      String query = "SELECT * FROM test.test;";
+      try (Statement statement = connection.createStatement();
+          ResultSet jsonResultSet = statement.executeQuery(query)) {
+        assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+      }
+    }
   }
 
   @Test
@@ -188,17 +192,18 @@ public class ITTPCBigQueryTest {
             // Point the key path to where you have downloaded it to.
             + "OAuthPvtKeyPath=/Users/YourPathToSecretFile/SAKeyFile.json;";
 
-    Connection connection = DriverManager.getConnection(connection_uri);
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-    assertEquals(
-        "GOOGLE_SERVICE_ACCOUNT",
-        connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
-    String query = "SELECT * FROM test.test;";
-    Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
-    connection.close();
+    try (Connection connection = DriverManager.getConnection(connection_uri)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+      assertEquals(
+          "GOOGLE_SERVICE_ACCOUNT",
+          connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
+      String query = "SELECT * FROM test.test;";
+      try (Statement statement = connection.createStatement();
+          ResultSet jsonResultSet = statement.executeQuery(query)) {
+        assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+      }
+    }
   }
 
   @Test
@@ -225,76 +230,72 @@ public class ITTPCBigQueryTest {
     String pkTable = "IT_METADATA_PK_" + System.currentTimeMillis();
     String fkTable = "IT_METADATA_FK_" + System.currentTimeMillis();
 
-    Connection connection = DriverManager.getConnection(connection_uri);
-    Statement stmt = connection.createStatement();
-    try {
+    try (Connection connection = DriverManager.getConnection(connection_uri);
+        Statement stmt = connection.createStatement()) {
       assertNotNull(connection);
       assertFalse(connection.isClosed());
 
-      // Create test PK and FK tables
-      stmt.execute(
-          String.format(
-              "CREATE OR REPLACE TABLE `%s.%s.%s` (id INT64, name STRING, PRIMARY KEY (id) NOT ENFORCED);",
-              TPC_PROJECT_ID, dataset, pkTable));
-      stmt.execute(
-          String.format(
-              "CREATE OR REPLACE TABLE `%s.%s.%s` (order_id INT64, pk_id INT64, PRIMARY KEY (order_id) NOT ENFORCED, CONSTRAINT fk_order FOREIGN KEY (pk_id) REFERENCES `%s.%s.%s`(id) NOT ENFORCED);",
-              TPC_PROJECT_ID, dataset, fkTable, TPC_PROJECT_ID, dataset, pkTable));
-
-      DatabaseMetaData metaData = connection.getMetaData();
-      assertNotNull(metaData);
-
-      // 1. Test getTables
-      try (ResultSet rs = metaData.getTables(TPC_PROJECT_ID, dataset, pkTable, null)) {
-        assertTrue(rs.next(), "Expected PK table to be returned by getTables");
-        assertEquals(pkTable, rs.getString("TABLE_NAME"));
-        assertFalse(rs.next());
-      }
-
-      // 2. Test getColumns
-      try (ResultSet rs = metaData.getColumns(TPC_PROJECT_ID, dataset, pkTable, "id")) {
-        assertTrue(rs.next(), "Expected id column to be returned by getColumns");
-        assertEquals("id", rs.getString("COLUMN_NAME"));
-        assertFalse(rs.next());
-      }
-
-      // 3. Test getPrimaryKeys
-      try (ResultSet rs = metaData.getPrimaryKeys(TPC_PROJECT_ID, dataset, pkTable)) {
-        assertTrue(rs.next(), "Expected primary key to be returned by getPrimaryKeys");
-        assertEquals("id", rs.getString("COLUMN_NAME"));
-        assertFalse(rs.next());
-      }
-
-      // 4. Test getImportedKeys
-      try (ResultSet rs = metaData.getImportedKeys(TPC_PROJECT_ID, dataset, fkTable)) {
-        assertTrue(rs.next(), "Expected foreign key to be returned by getImportedKeys");
-        assertEquals(pkTable, rs.getString("PKTABLE_NAME"));
-        assertEquals("id", rs.getString("PKCOLUMN_NAME"));
-        assertEquals(fkTable, rs.getString("FKTABLE_NAME"));
-        assertEquals("pk_id", rs.getString("FKCOLUMN_NAME"));
-        assertEquals("fk_order", rs.getString("FK_NAME"));
-        assertFalse(rs.next());
-      }
-
-      // 5. Test getExportedKeys
-      try (ResultSet rs = metaData.getExportedKeys(TPC_PROJECT_ID, dataset, pkTable)) {
-        assertTrue(rs.next(), "Expected exported foreign key to be returned by getExportedKeys");
-        assertEquals(pkTable, rs.getString("PKTABLE_NAME"));
-        assertEquals("id", rs.getString("PKCOLUMN_NAME"));
-        assertEquals(fkTable, rs.getString("FKTABLE_NAME"));
-        assertEquals("pk_id", rs.getString("FKCOLUMN_NAME"));
-        assertEquals("fk_order", rs.getString("FK_NAME"));
-        assertFalse(rs.next());
-      }
-    } finally {
       try {
+        // Create test PK and FK tables
+        stmt.execute(
+            String.format(
+                "CREATE OR REPLACE TABLE `%s.%s.%s` (id INT64, name STRING, PRIMARY KEY (id) NOT ENFORCED);",
+                TPC_PROJECT_ID, dataset, pkTable));
+        stmt.execute(
+            String.format(
+                "CREATE OR REPLACE TABLE `%s.%s.%s` (order_id INT64, pk_id INT64, PRIMARY KEY (order_id) NOT ENFORCED, CONSTRAINT fk_order FOREIGN KEY (pk_id) REFERENCES `%s.%s.%s`(id) NOT ENFORCED);",
+                TPC_PROJECT_ID, dataset, fkTable, TPC_PROJECT_ID, dataset, pkTable));
+
+        DatabaseMetaData metaData = connection.getMetaData();
+        assertNotNull(metaData);
+
+        // 1. Test getTables
+        try (ResultSet rs = metaData.getTables(TPC_PROJECT_ID, dataset, pkTable, null)) {
+          assertTrue(rs.next(), "Expected PK table to be returned by getTables");
+          assertEquals(pkTable, rs.getString("TABLE_NAME"));
+          assertFalse(rs.next());
+        }
+
+        // 2. Test getColumns
+        try (ResultSet rs = metaData.getColumns(TPC_PROJECT_ID, dataset, pkTable, "id")) {
+          assertTrue(rs.next(), "Expected id column to be returned by getColumns");
+          assertEquals("id", rs.getString("COLUMN_NAME"));
+          assertFalse(rs.next());
+        }
+
+        // 3. Test getPrimaryKeys
+        try (ResultSet rs = metaData.getPrimaryKeys(TPC_PROJECT_ID, dataset, pkTable)) {
+          assertTrue(rs.next(), "Expected primary key to be returned by getPrimaryKeys");
+          assertEquals("id", rs.getString("COLUMN_NAME"));
+          assertFalse(rs.next());
+        }
+
+        // 4. Test getImportedKeys
+        try (ResultSet rs = metaData.getImportedKeys(TPC_PROJECT_ID, dataset, fkTable)) {
+          assertTrue(rs.next(), "Expected foreign key to be returned by getImportedKeys");
+          assertEquals(pkTable, rs.getString("PKTABLE_NAME"));
+          assertEquals("id", rs.getString("PKCOLUMN_NAME"));
+          assertEquals(fkTable, rs.getString("FKTABLE_NAME"));
+          assertEquals("pk_id", rs.getString("FKCOLUMN_NAME"));
+          assertEquals("fk_order", rs.getString("FK_NAME"));
+          assertFalse(rs.next());
+        }
+
+        // 5. Test getExportedKeys
+        try (ResultSet rs = metaData.getExportedKeys(TPC_PROJECT_ID, dataset, pkTable)) {
+          assertTrue(rs.next(), "Expected exported foreign key to be returned by getExportedKeys");
+          assertEquals(pkTable, rs.getString("PKTABLE_NAME"));
+          assertEquals("id", rs.getString("PKCOLUMN_NAME"));
+          assertEquals(fkTable, rs.getString("FKTABLE_NAME"));
+          assertEquals("pk_id", rs.getString("FKCOLUMN_NAME"));
+          assertEquals("fk_order", rs.getString("FK_NAME"));
+          assertFalse(rs.next());
+        }
+      } finally {
         stmt.execute(
             String.format("DROP TABLE IF EXISTS `%s.%s.%s`;", TPC_PROJECT_ID, dataset, fkTable));
         stmt.execute(
             String.format("DROP TABLE IF EXISTS `%s.%s.%s`;", TPC_PROJECT_ID, dataset, pkTable));
-      } finally {
-        stmt.close();
-        connection.close();
       }
     }
   }
