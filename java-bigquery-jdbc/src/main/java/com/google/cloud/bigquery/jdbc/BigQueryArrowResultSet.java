@@ -472,8 +472,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         return date.toString();
       case DATETIME:
         // Arrow gives DATETIME as a LocalDateTime
-        Timestamp dtTs =
-            BigQueryTypeRegistry.convert((LocalDateTime) element, Timestamp.class);
+        Timestamp dtTs = BigQueryTypeRegistry.convert((LocalDateTime) element, Timestamp.class);
         return BigQueryTypeRegistry.convert(dtTs, String.class);
       case TIMESTAMP:
         // Arrow gives TIMESTAMP as a Long (microseconds since epoch)

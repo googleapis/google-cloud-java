@@ -22,8 +22,8 @@ import com.google.api.core.InternalApi;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
-import java.sql.SQLException;
 import java.lang.reflect.Array;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -31,7 +31,6 @@ import java.util.List;
  */
 @InternalApi
 class BigQueryJsonStruct extends BigQueryBaseStruct {
-
 
   private final FieldList schema;
   private final List<FieldValue> values;
@@ -69,7 +68,8 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
   private Object getValue(Field currentSchema, Object currentValue) throws SQLException {
     LOG.finestTrace("getValue");
     if (isArray(currentSchema)) {
-      return new BigQueryJsonArray(currentSchema, (FieldValue) currentValue, this.LOG.getJsonArrayLogger());
+      return new BigQueryJsonArray(
+          currentSchema, (FieldValue) currentValue, this.LOG.getJsonArrayLogger());
     } else if (isStruct(currentSchema)) {
       return new BigQueryJsonStruct(
           currentSchema.getSubFields(), (FieldValue) currentValue, this.LOG.getJsonStructLogger());

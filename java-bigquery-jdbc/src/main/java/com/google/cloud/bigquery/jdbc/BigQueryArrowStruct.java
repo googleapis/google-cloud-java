@@ -19,9 +19,9 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.cloud.bigquery.jdbc.BigQueryBaseArray.isArray;
 
 import com.google.cloud.bigquery.Field;
-import java.sql.SQLException;
 import com.google.cloud.bigquery.FieldList;
 import java.lang.reflect.Array;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.arrow.vector.util.JsonStringArrayList;
@@ -31,7 +31,6 @@ import org.apache.arrow.vector.util.JsonStringHashMap;
  * An implementation of {@link BigQueryBaseStruct} used to represent Struct values from Arrow data.
  */
 class BigQueryArrowStruct extends BigQueryBaseStruct {
-
 
   private final FieldList schema;
 
