@@ -31,7 +31,6 @@ import com.google.cloud.bigquery.storage.v1.ArrowSchema;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -471,8 +470,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     switch (elementType) {
       case DATE:
         // Arrow gives DATE as an Integer (days since epoch)
-        Date date = BigQueryTypeRegistry.convert((Integer) element, Date.class);
-        return date.toString();
+        return LocalDate.ofEpochDay(((Integer) element).longValue()).toString();
       case DATETIME:
         // Arrow gives DATETIME as a LocalDateTime
         Timestamp dtTs = BigQueryTypeRegistry.convert((LocalDateTime) element, Timestamp.class);

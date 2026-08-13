@@ -37,7 +37,9 @@ import java.time.LocalTime;
 import java.time.OffsetDateTime;
 import java.time.Period;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Map;
@@ -102,12 +104,11 @@ final class BigQueryTypeRegistry {
           if (val == null) return null;
           if (val instanceof byte[]) return Base64.getEncoder().encodeToString((byte[]) val);
           if (val instanceof Timestamp) {
-            return java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS")
+            return DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS")
                 .format(((Timestamp) val).toLocalDateTime());
           }
           if (val instanceof Time) {
-            return java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss.SSS")
-                .format(((Time) val).toLocalTime());
+            return DateTimeFormatter.ofPattern("HH:mm:ss.SSS").format(((Time) val).toLocalTime());
           }
           return String.valueOf(val);
         });
@@ -122,6 +123,13 @@ final class BigQueryTypeRegistry {
         (val, targetClass, zone) -> {
           long longVal;
           if (val instanceof Number) {
+            if (val instanceof BigDecimal) {
+              BigDecimal bd = (BigDecimal) val;
+              if (bd.compareTo(new BigDecimal(Long.MAX_VALUE)) > 0
+                  || bd.compareTo(new BigDecimal(Long.MIN_VALUE)) < 0) {
+                throw new BigQueryJdbcException("Value out of range for Long: " + bd);
+              }
+            }
             longVal = ((Number) val).longValue();
           } else if (val instanceof String) {
             longVal = Long.parseLong((String) val);
@@ -195,7 +203,10 @@ final class BigQueryTypeRegistry {
           // TODO(Phase 3): Add native JSR-310 fast-path to bypass boxing for LocalDate
           Date sqlDate;
           if (val instanceof Date) sqlDate = (Date) val;
-          else if (val instanceof java.util.Date)
+          else if (val instanceof Timestamp) {
+            sqlDate =
+                Date.valueOf(((Timestamp) val).toInstant().atOffset(ZoneOffset.UTC).toLocalDate());
+          } else if (val instanceof java.util.Date)
             sqlDate = new Date(((java.util.Date) val).getTime());
           else if (val instanceof LocalDate) sqlDate = Date.valueOf((LocalDate) val);
           else if (val instanceof LocalDateTime)
@@ -249,7 +260,7 @@ final class BigQueryTypeRegistry {
           else if (val instanceof ZonedDateTime)
             ts = Timestamp.from(((ZonedDateTime) val).toInstant());
           else if (val instanceof LocalDateTime)
-            ts = Timestamp.from(((LocalDateTime) val).toInstant(java.time.ZoneOffset.UTC));
+            ts = Timestamp.from(((LocalDateTime) val).toInstant(ZoneOffset.UTC));
           else if (val instanceof Long)
             ts =
                 Timestamp.from(
@@ -258,10 +269,8 @@ final class BigQueryTypeRegistry {
           else throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
 
           if (targetClass == Instant.class) return ts.toInstant();
-          if (targetClass == OffsetDateTime.class)
-            return ts.toInstant().atOffset(java.time.ZoneOffset.UTC);
-          if (targetClass == ZonedDateTime.class)
-            return ts.toInstant().atZone(java.time.ZoneOffset.UTC);
+          if (targetClass == OffsetDateTime.class) return ts.toInstant().atOffset(ZoneOffset.UTC);
+          if (targetClass == ZonedDateTime.class) return ts.toInstant().atZone(ZoneOffset.UTC);
           return ts;
         });
   }
@@ -282,8 +291,9 @@ final class BigQueryTypeRegistry {
           if (val instanceof Time) sqlTime = (Time) val;
           else if (val instanceof Timestamp) {
             sqlTime =
-                Time.valueOf(
-                    ((Timestamp) val).toInstant().atOffset(java.time.ZoneOffset.UTC).toLocalTime());
+                Time.valueOf(((Timestamp) val).toInstant().atOffset(ZoneOffset.UTC).toLocalTime());
+          } else if (val instanceof java.sql.Date) {
+            throw new BigQueryJdbcException("Cannot convert to TIME: " + val);
           } else if (val instanceof java.util.Date)
             sqlTime = new Time(((java.util.Date) val).getTime());
           else if (val instanceof LocalTime) sqlTime = Time.valueOf((LocalTime) val);
