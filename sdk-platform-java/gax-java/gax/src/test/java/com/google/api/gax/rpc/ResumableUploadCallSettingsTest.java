@@ -29,70 +29,49 @@
  */
 package com.google.api.gax.rpc;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
 public class ResumableUploadCallSettingsTest {
 
   @Test
-  public void testDefaultChunkSize() {
-    ResumableUploadCallSettings<String, String> settings =
-        ResumableUploadCallSettings.<String, String>newBuilder().build();
+  public void testDefaultChunkSizeInBuilder() {
+    ResumableUploadCallSettings settings = ResumableUploadCallSettings.newBuilder().build();
 
-    assertNull(settings.getChunkSize());
-    assertNull(settings.getTotalBytes());
-    assertEquals(8 * 1024 * 1024, settings.getChunkSizeOrDefault());
+    assertEquals(8 * 1024 * 1024, settings.getChunkSize());
   }
 
   @Test
   public void testCustomInitialization() {
-    ResumableUploadCallSettings<String, String> settings =
-        ResumableUploadCallSettings.<String, String>newBuilder()
-            .setChunkSize(16 * 1024 * 1024)
-            .setTotalBytes(100L * 1024 * 1024)
-            .build();
+    ResumableUploadCallSettings settings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(16 * 1024 * 1024).build();
 
-    assertEquals(Integer.valueOf(16 * 1024 * 1024), settings.getChunkSize());
-    assertEquals(16 * 1024 * 1024, settings.getChunkSizeOrDefault());
-    assertEquals(Long.valueOf(100L * 1024 * 1024), settings.getTotalBytes());
+    assertEquals(16 * 1024 * 1024, settings.getChunkSize());
   }
 
   @Test
-  public void testMergeWith_NullPerRequestSettings() {
-    ResumableUploadCallSettings<String, String> stubSettings =
-        ResumableUploadCallSettings.<String, String>newBuilder()
-            .setChunkSize(4 * 1024 * 1024)
-            .build();
+  public void testMerge_NullSettings() {
+    ResumableUploadCallSettings stubSettings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(4 * 1024 * 1024).build();
 
-    ResumableUploadCallSettings<String, String> merged = stubSettings.mergeWith(null);
+    ResumableUploadCallSettings merged = stubSettings.merge(null);
 
     assertSame(stubSettings, merged);
   }
 
   @Test
-  public void testMergeWith_PerRequestOverrides() {
-    ResumableUploadCallSettings<String, String> stubSettings =
-        ResumableUploadCallSettings.<String, String>newBuilder()
-            .setChunkSize(4 * 1024 * 1024)
-            .setTotalBytes(50L * 1024 * 1024)
-            .build();
+  public void testMerge_SettingsOverrides() {
+    ResumableUploadCallSettings stubSettings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(4 * 1024 * 1024).build();
 
-    ResumableUploadCallSettings<String, String> perRequestSettings =
-        ResumableUploadCallSettings.<String, String>newBuilder()
-            .setChunkSize(32 * 1024 * 1024)
-            .build();
+    ResumableUploadCallSettings perRequestSettings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(32 * 1024 * 1024).build();
 
-    ResumableUploadCallSettings<String, String> merged = stubSettings.mergeWith(perRequestSettings);
+    ResumableUploadCallSettings merged = stubSettings.merge(perRequestSettings);
 
     // Chunk size overridden by Tier-1 per-request settings
-    assertEquals(Integer.valueOf(32 * 1024 * 1024), merged.getChunkSize());
-    // Total bytes preserved from Tier-2 stub-level settings
-    assertEquals(Long.valueOf(50L * 1024 * 1024), merged.getTotalBytes());
+    assertEquals(32 * 1024 * 1024, merged.getChunkSize());
   }
 }

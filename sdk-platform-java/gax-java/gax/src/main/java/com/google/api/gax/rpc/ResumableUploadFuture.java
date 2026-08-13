@@ -29,49 +29,19 @@
  */
 package com.google.api.gax.rpc;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
-import com.google.auto.value.AutoValue;
 
 /**
- * A settings class to configure a {@link ResumableUploadCallable} for executing resumable
- * uploads. Encapsulates protocol options such as payload chunk size.
+ * A specialized {@link ApiFuture} for tracking and controlling an in-flight resumable upload.
+ *
+ * @param <ResponseT> response type
  */
 @BetaApi
-@AutoValue
-public abstract class ResumableUploadCallSettings {
-  private static final int DEFAULT_CHUNK_SIZE = 8 * 1024 * 1024; // 8 MB
-
-  /** Returns the configured chunk size in bytes (defaults to 8 MB / 8,388,608 bytes). */
-  public abstract int getChunkSize();
+public interface ResumableUploadFuture<ResponseT> extends ApiFuture<ResponseT> {
 
   /**
-   * Merges another {@code ResumableUploadCallSettings} instance with this one.
-   * Fields set in {@code other} override fields in this instance.
-   *
-   * @param other settings to overlay; may be {@code null}
-   * @return a new, resolved {@code ResumableUploadCallSettings} instance
+   * Returns the upload session URL, or {@code null} if session initiation is in progress.
    */
-  public ResumableUploadCallSettings merge(ResumableUploadCallSettings other) {
-    if (other == null) {
-      return this;
-    }
-    return toBuilder().setChunkSize(other.getChunkSize()).build();
-  }
-
-  public abstract Builder toBuilder();
-
-  public static Builder newBuilder() {
-    return new AutoValue_ResumableUploadCallSettings.Builder()
-        .setChunkSize(DEFAULT_CHUNK_SIZE);
-  }
-
-  /** Builder for {@link ResumableUploadCallSettings}. */
-  @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder setChunkSize(int chunkSize);
-
-    public abstract int getChunkSize();
-
-    public abstract ResumableUploadCallSettings build();
-  }
+  String getUploadSessionUrl();
 }

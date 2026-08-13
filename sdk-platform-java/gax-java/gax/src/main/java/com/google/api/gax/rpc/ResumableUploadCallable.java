@@ -29,82 +29,100 @@
  */
 package com.google.api.gax.rpc;
 
-import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
+import com.google.common.base.Preconditions;
 import java.io.InputStream;
+import javax.annotation.Nullable;
 
 /**
  * A ResumableUploadCallable is an API-transport-independent wrapper for the Resumable Upload
- * protocol (Scotty). Operates directly on the request object and input stream payload.
+ * protocol. Operates directly on the request object and input stream payload.
  *
  * @param <RequestT> request type
  * @param <ResponseT> response type
  */
 @BetaApi
-public abstract class ResumableUploadCallable<RequestT, ResponseT> {
+public class ResumableUploadCallable<RequestT, ResponseT> {
 
-  protected ResumableUploadCallable() {}
+  private final ResumableUploadClient resumableUploadClient;
+  @Nullable private final ResumableUploadCallSettings defaultCallSettings;
+
+  public ResumableUploadCallable(
+      ResumableUploadClient resumableUploadClient,
+      @Nullable ResumableUploadCallSettings defaultCallSettings) {
+    this.resumableUploadClient = Preconditions.checkNotNull(resumableUploadClient);
+    this.defaultCallSettings = defaultCallSettings;
+  }
+
+  public ResumableUploadCallable(ResumableUploadClient resumableUploadClient) {
+    this(resumableUploadClient, null);
+  }
 
   /**
-   * Performs the resumable upload asynchronously with custom per-request settings and context.
+   * Performs a new resumable upload asynchronously.
    *
    * @param request the request message
    * @param payload the data payload input stream
-   * @param perRequestSettings request-level call settings overrides; may be {@code null}
-   * @param context the call context; may be {@code null}
-   * @return future for the response
+   * @param perRequestSettings call settings overrides; may be {@code null}
+   * @param context call context overrides; may be {@code null}
+   * @return future for tracking and controlling the upload
    */
-  public abstract ApiFuture<ResponseT> futureCall(
+  public ResumableUploadFuture<ResponseT> futureCall(
       RequestT request,
       InputStream payload,
-      ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings,
-      ApiCallContext context);
-
-  /**
-   * Performs the resumable upload asynchronously with custom per-request settings and a null context.
-   */
-  public ApiFuture<ResponseT> futureCall(
-      RequestT request,
-      InputStream payload,
-      ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings) {
-    return futureCall(request, payload, perRequestSettings, (ApiCallContext) null);
-  }
-
-  /**
-   * Performs the resumable upload asynchronously with default settings and a null context.
-   */
-  public ApiFuture<ResponseT> futureCall(RequestT request, InputStream payload) {
-    return futureCall(
-        request, payload, (ResumableUploadCallSettings<RequestT, ResponseT>) null, (ApiCallContext) null);
-  }
-
-  /**
-   * Performs the resumable upload synchronously with custom per-request settings and context.
-   */
-  public ResponseT call(
-      RequestT request,
-      InputStream payload,
-      ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings,
+      ResumableUploadCallSettings perRequestSettings,
       ApiCallContext context) {
-    return ApiExceptions.callAndTranslateApiException(
-        futureCall(request, payload, perRequestSettings, context));
+    Preconditions.checkNotNull(request);
+
+    ResumableUploadCallSettings activeSettings =
+        defaultCallSettings != null
+            ? defaultCallSettings.merge(perRequestSettings)
+            : perRequestSettings;
+
+    ResumableUploadFutureImpl<RequestT, ResponseT> future =
+        new ResumableUploadFutureImpl<>(
+            resumableUploadClient, request, payload, activeSettings, context);
+
+    future.start();
+    return future;
   }
 
   /**
-   * Performs the resumable upload synchronously with custom per-request settings and a null context.
+   * Resumes an existing resumable upload session asynchronously using a saved session URL.
+   *
+   * @param sessionUrl the upload session URL
+   * @param payload the data payload input stream
+   * @param perRequestSettings call settings overrides; may be {@code null}
+   * @param context call context overrides; may be {@code null}
+   * @return future for tracking and controlling the upload
    */
-  public ResponseT call(
-      RequestT request,
+  public ResumableUploadFuture<ResponseT> resumeCall(
+      String sessionUrl,
       InputStream payload,
-      ResumableUploadCallSettings<RequestT, ResponseT> perRequestSettings) {
-    return call(request, payload, perRequestSettings, (ApiCallContext) null);
+      ResumableUploadCallSettings perRequestSettings,
+      ApiCallContext context) {
+    Preconditions.checkNotNull(sessionUrl);
+
+    ResumableUploadCallSettings activeSettings =
+        defaultCallSettings != null
+            ? defaultCallSettings.merge(perRequestSettings)
+            : perRequestSettings;
+
+    ResumableUploadFutureImpl<RequestT, ResponseT> future =
+        new ResumableUploadFutureImpl<>(
+            resumableUploadClient, sessionUrl, payload, activeSettings, context);
+
+    future.start();
+    return future;
   }
 
-  /**
-   * Performs the resumable upload synchronously with default settings and a null context.
-   */
-  public ResponseT call(RequestT request, InputStream payload) {
-    return call(
-        request, payload, (ResumableUploadCallSettings<RequestT, ResponseT>) null, (ApiCallContext) null);
+  public ResumableUploadFuture<ResponseT> futureCall(
+      RequestT request, InputStream payload, ResumableUploadCallSettings settings) {
+    return futureCall(request, payload, settings, null);
+  }
+
+  public ResumableUploadFuture<ResponseT> resumeCall(
+      String sessionUrl, InputStream payload, ResumableUploadCallSettings settings) {
+    return resumeCall(sessionUrl, payload, settings, null);
   }
 }
