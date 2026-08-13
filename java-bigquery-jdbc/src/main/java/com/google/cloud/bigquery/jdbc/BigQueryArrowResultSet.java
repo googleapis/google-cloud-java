@@ -35,6 +35,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Future;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
+import org.apache.arrow.vector.DateDayVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.VectorLoader;
 import org.apache.arrow.vector.VectorSchemaRoot;
@@ -340,6 +342,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       FieldVector currentColumn = this.vectorSchemaRoot.getVector(columnIndex - 1);
       // get the current row
       value = currentColumn.getObject(this.currentBatchRowIndex);
+      if (value instanceof Integer && currentColumn instanceof DateDayVector) {
+        value = LocalDate.ofEpochDay(((Integer) value).longValue());
+      }
     }
     setWasNull(value);
     return value;
@@ -367,6 +372,10 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
             arrayField.getSubFields(),
             (JsonStringHashMap<?, ?>) value,
             this.LOG.getArrowStructLogger());
+      }
+      if (value instanceof Integer
+          && arrayField.getType().getStandardType() == StandardSQLTypeName.DATE) {
+        value = LocalDate.ofEpochDay(((Integer) value).longValue());
       }
       return BigQueryTypeRegistry.convert(value, arrayField.getType().getStandardType(), null);
     }

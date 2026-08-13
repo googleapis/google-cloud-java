@@ -20,8 +20,10 @@ import static com.google.cloud.bigquery.jdbc.BigQueryBaseArray.isArray;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.lang.reflect.Array;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.arrow.vector.util.JsonStringArrayList;
@@ -83,6 +85,10 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
           (JsonStringHashMap<?, ?>) currentValue,
           this.LOG.getArrowStructLogger());
     } else {
+      if (currentValue instanceof Integer
+          && currentSchema.getType().getStandardType() == StandardSQLTypeName.DATE) {
+        currentValue = LocalDate.ofEpochDay(((Integer) currentValue).longValue());
+      }
       return BigQueryTypeRegistry.convert(
           currentValue, currentSchema.getType().getStandardType(), null);
     }
