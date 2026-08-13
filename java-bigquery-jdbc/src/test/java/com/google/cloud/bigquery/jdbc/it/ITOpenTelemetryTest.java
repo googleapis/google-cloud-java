@@ -62,8 +62,10 @@ import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("disable_tpc")
 public class ITOpenTelemetryTest extends ITBase {
 
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
