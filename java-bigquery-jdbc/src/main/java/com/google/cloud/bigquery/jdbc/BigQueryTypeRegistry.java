@@ -101,45 +101,13 @@ final class BigQueryTypeRegistry {
         (val, targetClass, zone) -> {
           if (val == null) return null;
           if (val instanceof byte[]) return Base64.getEncoder().encodeToString((byte[]) val);
-          if (val instanceof Range) {
-            Range range = (Range) val;
-            String start =
-                range.getStart().isNull() ? "UNBOUNDED" : range.getStart().getStringValue();
-            String end = range.getEnd().isNull() ? "UNBOUNDED" : range.getEnd().getStringValue();
-            return String.format("[%s, %s)", start, end);
+          if (val instanceof Timestamp) {
+            return java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS")
+                .format(((Timestamp) val).toLocalDateTime());
           }
-          if (val instanceof PeriodDuration) {
-            PeriodDuration pd = (PeriodDuration) val;
-            Period period = pd.getPeriod().normalized();
-            StringBuilder builder = new StringBuilder();
-            builder
-                .append(period.getYears())
-                .append("-")
-                .append(period.getMonths())
-                .append(" ")
-                .append(period.getDays())
-                .append(" ");
-            Duration duration = pd.getDuration();
-            if (duration.isNegative()) {
-              builder.append("-");
-              duration = duration.negated();
-            }
-            long hours = duration.toHours();
-            duration = duration.minusHours(hours);
-            long minutes = duration.toMinutes();
-            duration = duration.minusMinutes(minutes);
-            long seconds = duration.getSeconds();
-            duration = duration.minusSeconds(seconds);
-            long microseconds = duration.toNanos() / 1000;
-            builder
-                .append(hours)
-                .append(":")
-                .append(minutes)
-                .append(":")
-                .append(seconds)
-                .append(".")
-                .append(microseconds);
-            return builder.toString().replaceFirst("--", "-");
+          if (val instanceof Time) {
+            return java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss.SSS")
+                .format(((Time) val).toLocalTime());
           }
           return String.valueOf(val);
         });
@@ -154,11 +122,7 @@ final class BigQueryTypeRegistry {
         (val, targetClass, zone) -> {
           long longVal;
           if (val instanceof Number) {
-            if (val instanceof BigDecimal) {
-              longVal = ((BigDecimal) val).longValueExact();
-            } else {
-              longVal = ((Number) val).longValue();
-            }
+            longVal = ((Number) val).longValue();
           } else if (val instanceof String) {
             longVal = Long.parseLong((String) val);
           } else if (val instanceof Boolean) {
@@ -234,7 +198,6 @@ final class BigQueryTypeRegistry {
           else if (val instanceof java.util.Date)
             sqlDate = new Date(((java.util.Date) val).getTime());
           else if (val instanceof LocalDate) sqlDate = Date.valueOf((LocalDate) val);
-          else if (val instanceof Long) sqlDate = Date.valueOf(LocalDate.ofEpochDay((Long) val));
           else if (val instanceof LocalDateTime)
             sqlDate = Date.valueOf(((LocalDateTime) val).toLocalDate());
           else if (val instanceof String)
@@ -317,7 +280,11 @@ final class BigQueryTypeRegistry {
 
           Time sqlTime;
           if (val instanceof Time) sqlTime = (Time) val;
-          else if (val instanceof java.util.Date)
+          else if (val instanceof Timestamp) {
+            sqlTime =
+                Time.valueOf(
+                    ((Timestamp) val).toInstant().atOffset(java.time.ZoneOffset.UTC).toLocalTime());
+          } else if (val instanceof java.util.Date)
             sqlTime = new Time(((java.util.Date) val).getTime());
           else if (val instanceof LocalTime) sqlTime = Time.valueOf((LocalTime) val);
           else if (val instanceof LocalDateTime) {
@@ -416,7 +383,43 @@ final class BigQueryTypeRegistry {
         String.class,
         StandardSQLTypeName.INTERVAL,
         Arrays.asList(String.class),
-        (val, targetClass, zone) -> String.valueOf(val));
+        (val, targetClass, zone) -> {
+          if (val == null) return null;
+          if (val instanceof PeriodDuration) {
+            PeriodDuration pd = (PeriodDuration) val;
+            Period period = pd.getPeriod().normalized();
+            StringBuilder builder = new StringBuilder();
+            builder
+                .append(period.getYears())
+                .append("-")
+                .append(period.getMonths())
+                .append(" ")
+                .append(period.getDays())
+                .append(" ");
+            Duration duration = pd.getDuration();
+            if (duration.isNegative()) {
+              builder.append("-");
+              duration = duration.negated();
+            }
+            long hours = duration.toHours();
+            duration = duration.minusHours(hours);
+            long minutes = duration.toMinutes();
+            duration = duration.minusMinutes(minutes);
+            long seconds = duration.getSeconds();
+            duration = duration.minusSeconds(seconds);
+            long microseconds = duration.toNanos() / 1000;
+            builder
+                .append(hours)
+                .append(":")
+                .append(minutes)
+                .append(":")
+                .append(seconds)
+                .append(".")
+                .append(microseconds);
+            return builder.toString().replaceFirst("--", "-");
+          }
+          return String.valueOf(val);
+        });
   }
 
   static TypeDescriptor<?> createRangeDescriptor() {
@@ -425,7 +428,17 @@ final class BigQueryTypeRegistry {
         String.class,
         StandardSQLTypeName.RANGE,
         Arrays.asList(String.class),
-        (val, targetClass, zone) -> String.valueOf(val));
+        (val, targetClass, zone) -> {
+          if (val == null) return null;
+          if (val instanceof Range) {
+            Range range = (Range) val;
+            String start =
+                range.getStart().isNull() ? "UNBOUNDED" : range.getStart().getStringValue();
+            String end = range.getEnd().isNull() ? "UNBOUNDED" : range.getEnd().getStringValue();
+            return String.format("[%s, %s)", start, end);
+          }
+          return String.valueOf(val);
+        });
   }
 
   private static void register(TypeDescriptor<?> descriptor) {
