@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -428,5 +429,17 @@ public class ITBase extends BigQueryJdbcBaseTest {
       throw e;
     }
     return result;
+  }
+
+  public static void validateStatement(Statement stmt, int expectedRows) throws SQLException {
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, " + expectedRows + "))";
+    assertTrue(stmt.execute(query));
+    int count = 0;
+    try (ResultSet rs = stmt.getResultSet()) {
+      while (rs.next()) {
+        count++;
+      }
+    }
+    assertEquals(expectedRows, count);
   }
 }

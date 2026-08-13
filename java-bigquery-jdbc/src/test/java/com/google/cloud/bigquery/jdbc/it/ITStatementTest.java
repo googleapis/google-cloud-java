@@ -46,6 +46,7 @@ import java.util.Random;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITStatementTest extends ITBase {
@@ -110,8 +111,7 @@ public class ITStatementTest extends ITBase {
   public void testExecuteQuery() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
-    String selectQuery =
-        "SELECT * FROM bigquery-public-data.chicago_taxi_trips.taxi_trips LIMIT 1000;";
+    String selectQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 1000))";
 
     ResultSet selectQueryResult = statement.executeQuery(selectQuery);
     ResultSet statementResult = statement.getResultSet();
@@ -230,9 +230,7 @@ public class ITStatementTest extends ITBase {
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
     Connection connection = DriverManager.getConnection(connection_uri, withReadApi);
     Statement statement = connection.createStatement();
-    String BASE_QUERY =
-        "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
-            + " trip_distance asc LIMIT %s;";
+    String BASE_QUERY = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));";
     int expectedCnt = 500000;
     String longQuery = String.format(BASE_QUERY, expectedCnt);
     String longerQuery = String.format(BASE_QUERY, 700000);
@@ -354,11 +352,11 @@ public class ITStatementTest extends ITBase {
     // execute
     try {
       statement.execute(
-          "CREATE TABLE "
+          "CREATE TABLE `"
               + DEFAULT_CATALOG
               + "."
               + DATASET
-              + ".RangeTable (x RANGE<DATE> OPTIONS (description = 'An optional RANGE<DATE>"
+              + ".RangeTable` (x RANGE<DATE> OPTIONS (description = 'An optional RANGE<DATE>"
               + " field'), y STRUCT <a ARRAY <RANGE<DATETIME>> OPTIONS (description = 'An array of"
               + " RANGE<DATETIME> field')>);");
       ResultSet selectQueryResult =
@@ -369,13 +367,14 @@ public class ITStatementTest extends ITBase {
     } finally {
       // clean up
       statement.execute(
-          String.format("DROP TABLE IF EXISTS %s.%s.RangeTable;", DEFAULT_CATALOG, DATASET));
+          String.format("DROP TABLE IF EXISTS `%s.%s.RangeTable`;", DEFAULT_CATALOG, DATASET));
       statement.close();
     }
     connection.close();
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testTemporaryDatasetLocation() throws SQLException, InterruptedException {
     String location = "europe-west3";
     String randomSuffix = String.valueOf(100 + new Random().nextInt(900));

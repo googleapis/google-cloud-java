@@ -52,6 +52,10 @@ public final class AdUnitEnumsProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_ads_admanager_v1_TargetWindowEnum_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_TargetWindowEnum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_RefreshRateTypeEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_RefreshRateTypeEnum_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -70,12 +74,15 @@ public final class AdUnitEnumsProto extends com.google.protobuf.GeneratedFile {
           + "ECIFIED\020\000\022\010\n\004NONE\020\001\022\020\n\014SMART_BANNER\020\002\022\020\n"
           + "\014DYNAMIC_SIZE\020\003\"U\n\020TargetWindowEnum\"A\n\014T"
           + "argetWindow\022\035\n\031TARGET_WINDOW_UNSPECIFIED"
-          + "\020\000\022\007\n\003TOP\020\001\022\t\n\005BLANK\020\002B\304\001\n\033com.google.ad"
-          + "s.admanager.v1B\020AdUnitEnumsProtoP\001Z@goog"
-          + "le.golang.org/genproto/googleapis/ads/ad"
-          + "manager/v1;admanager\252\002\027Google.Ads.AdMana"
-          + "ger.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032Googl"
-          + "e::Ads::AdManager::V1b\006proto3"
+          + "\020\000\022\007\n\003TOP\020\001\022\t\n\005BLANK\020\002\"|\n\023RefreshRateTyp"
+          + "eEnum\"e\n\017RefreshRateType\022!\n\035REFRESH_RATE"
+          + "_TYPE_UNSPECIFIED\020\000\022\014\n\010DISABLED\020\001\022\r\n\tOPT"
+          + "IMIZED\020\002\022\022\n\016FIXED_INTERVAL\020\003B\304\001\n\033com.goo"
+          + "gle.ads.admanager.v1B\020AdUnitEnumsProtoP\001"
+          + "Z@google.golang.org/genproto/googleapis/"
+          + "ads/admanager/v1;admanager\252\002\027Google.Ads."
+          + "AdManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002"
+          + "\032Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -97,6 +104,12 @@ public final class AdUnitEnumsProto extends com.google.protobuf.GeneratedFile {
     internal_static_google_ads_admanager_v1_TargetWindowEnum_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_TargetWindowEnum_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_RefreshRateTypeEnum_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_RefreshRateTypeEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_RefreshRateTypeEnum_descriptor,
             new java.lang.String[] {});
     descriptor.resolveAllFeaturesImmutable();
   }

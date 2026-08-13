@@ -1089,7 +1089,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
-   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
+   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=972
    * @return The multiRegionAuxiliary.
    */
   @java.lang.Override
@@ -3001,7 +3001,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
-     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=972
      * @return The multiRegionAuxiliary.
      */
     @java.lang.Override
@@ -3028,7 +3028,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
-     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=972
      * @param value The multiRegionAuxiliary to set.
      * @return This builder for chaining.
      */
@@ -3059,7 +3059,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
-     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=972
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

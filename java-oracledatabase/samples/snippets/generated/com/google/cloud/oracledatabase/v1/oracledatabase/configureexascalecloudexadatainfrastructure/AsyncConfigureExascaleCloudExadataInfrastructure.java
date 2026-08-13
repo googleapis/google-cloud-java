@@ -43,6 +43,7 @@ public class AsyncConfigureExascaleCloudExadataInfrastructure {
                           "[PROJECT]", "[LOCATION]", "[CLOUD_EXADATA_INFRASTRUCTURE]")
                       .toString())
               .setTotalStorageSizeGb(1493200154)
+              .setTotalVmStorageSizeGb(-1791568024)
               .setRequestId("requestId693933066")
               .build();
       ApiFuture<Operation> future =
