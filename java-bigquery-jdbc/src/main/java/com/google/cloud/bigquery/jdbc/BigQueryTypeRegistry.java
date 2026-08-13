@@ -56,6 +56,11 @@ final class BigQueryTypeRegistry {
   private static final Map<Class<?>, TypeDescriptor<?>> DESCRIPTORS_BY_CLASS;
   private static final Map<Integer, TypeDescriptor<?>> DESCRIPTORS_BY_JDBC_TYPE;
 
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
+  private static final DateTimeFormatter TIME_FORMATTER =
+      DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
+
   static {
     DESCRIPTORS_BY_ORDINAL = new TypeDescriptor<?>[StandardSQLTypeName.values().length];
     DESCRIPTORS_BY_CLASS = new ConcurrentHashMap<>();
@@ -104,11 +109,10 @@ final class BigQueryTypeRegistry {
           if (val == null) return null;
           if (val instanceof byte[]) return Base64.getEncoder().encodeToString((byte[]) val);
           if (val instanceof Timestamp) {
-            return DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS")
-                .format(((Timestamp) val).toLocalDateTime());
+            return TIMESTAMP_FORMATTER.format(((Timestamp) val).toLocalDateTime());
           }
           if (val instanceof Time) {
-            return DateTimeFormatter.ofPattern("HH:mm:ss.SSS").format(((Time) val).toLocalTime());
+            return TIME_FORMATTER.format(((Time) val).toLocalTime());
           }
           return String.valueOf(val);
         });
