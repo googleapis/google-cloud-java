@@ -2194,6 +2194,9 @@ public class JobServiceClientTest {
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
             .setModelVersionId("modelVersionId-2006125846")
             .setUnmanagedContainerModel(UnmanagedContainerModel.newBuilder().build())
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setInputConfig(BatchPredictionJob.InputConfig.newBuilder().build())
             .setInstanceConfig(BatchPredictionJob.InstanceConfig.newBuilder().build())
             .setModelParameters(Value.newBuilder().setBoolValue(true).build())
@@ -2269,6 +2272,9 @@ public class JobServiceClientTest {
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
             .setModelVersionId("modelVersionId-2006125846")
             .setUnmanagedContainerModel(UnmanagedContainerModel.newBuilder().build())
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setInputConfig(BatchPredictionJob.InputConfig.newBuilder().build())
             .setInstanceConfig(BatchPredictionJob.InstanceConfig.newBuilder().build())
             .setModelParameters(Value.newBuilder().setBoolValue(true).build())
@@ -2344,6 +2350,9 @@ public class JobServiceClientTest {
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
             .setModelVersionId("modelVersionId-2006125846")
             .setUnmanagedContainerModel(UnmanagedContainerModel.newBuilder().build())
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setInputConfig(BatchPredictionJob.InputConfig.newBuilder().build())
             .setInstanceConfig(BatchPredictionJob.InstanceConfig.newBuilder().build())
             .setModelParameters(Value.newBuilder().setBoolValue(true).build())
@@ -2418,6 +2427,9 @@ public class JobServiceClientTest {
             .setModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
             .setModelVersionId("modelVersionId-2006125846")
             .setUnmanagedContainerModel(UnmanagedContainerModel.newBuilder().build())
+            .setEndpoint(
+                EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+                    .toString())
             .setInputConfig(BatchPredictionJob.InputConfig.newBuilder().build())
             .setInstanceConfig(BatchPredictionJob.InstanceConfig.newBuilder().build())
             .setModelParameters(Value.newBuilder().setBoolValue(true).build())

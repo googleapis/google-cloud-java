@@ -113,7 +113,20 @@ class ITBigQueryStorageWriteClientTest {
   private static final String DESCRIPTION = "BigQuery Write Java manual client test dataset";
 
   private static BigQueryReadClient readClient;
+
+  /**
+   * Primary client configured dynamically via Helper.createBigQueryWriteSettingsBuilder(). Targets
+   * the endpoint under test (e.g., regional canary endpoint us-east7 in regional CI runs).
+   */
   private static BigQueryWriteClient writeClient;
+
+  /**
+   * Fallback client explicitly targeting the default global endpoint
+   * (bigquerystorage.googleapis.com). Used for tests accessing global public datasets
+   * (bigquery-public-data) or cross-region resources.
+   */
+  private static BigQueryWriteClient globalWriteClient;
+
   private static String parentProjectId;
   private static TableInfo tableInfo;
   private static TableInfo tableInfo2;
@@ -187,19 +200,29 @@ class ITBigQueryStorageWriteClientTest {
 
   @BeforeAll
   static void beforeAll() throws IOException {
-    readClient = com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadClient();
+    readClient = Helper.createBigQueryReadClient();
 
     BigQueryWriteSettings settings =
-        com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryWriteSettingsBuilder()
+        Helper.createBigQueryWriteSettingsBuilder()
             .setHeaderProvider(USER_AGENT_HEADER_PROVIDER)
             .build();
     writeClient = BigQueryWriteClient.create(settings);
+    globalWriteClient = Helper.isRegionalEndpoint() ? BigQueryWriteClient.create() : writeClient;
     parentProjectId = String.format("projects/%s", ServiceOptions.getDefaultProjectId());
 
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
-    DatasetInfo datasetInfo =
-        DatasetInfo.newBuilder(/* datasetId= */ DATASET).setDescription(DESCRIPTION).build();
+    DatasetInfo datasetInfo;
+    if (Helper.isBigQueryRegionalEndpoint()) {
+      datasetInfo =
+          DatasetInfo.newBuilder(/* datasetId= */ DATASET)
+              .setDescription(DESCRIPTION)
+              .setLocation(Helper.getBigQueryRegion())
+              .build();
+    } else {
+      datasetInfo =
+          DatasetInfo.newBuilder(/* datasetId= */ DATASET).setDescription(DESCRIPTION).build();
+    }
     bigquery.create(datasetInfo);
     LOG.info("Created test dataset: " + DATASET);
     tableInfo =
@@ -288,6 +311,11 @@ class ITBigQueryStorageWriteClientTest {
       writeClient.awaitTermination(10, TimeUnit.SECONDS);
     }
 
+    if (globalWriteClient != null && globalWriteClient != writeClient) {
+      globalWriteClient.close();
+      globalWriteClient.awaitTermination(10, TimeUnit.SECONDS);
+    }
+
     if (readClient != null) {
       readClient.close();
       readClient.awaitTermination(10, TimeUnit.SECONDS);
@@ -374,7 +402,7 @@ class ITBigQueryStorageWriteClientTest {
   void testBatchWriteWithCommittedStreamEU()
       throws IOException, InterruptedException, ExecutionException {
     WriteStream writeStream =
-        writeClient.createWriteStream(
+        globalWriteClient.createWriteStream(
             CreateWriteStreamRequest.newBuilder()
                 .setParent(tableIdEU)
                 .setWriteStream(
@@ -383,7 +411,7 @@ class ITBigQueryStorageWriteClientTest {
     ApiFuture<AppendRowsResponse> response1;
     ApiFuture<AppendRowsResponse> response2;
     try (StreamWriter streamWriter =
-        StreamWriter.newBuilder(writeStream.getName())
+        StreamWriter.newBuilder(writeStream.getName(), globalWriteClient)
             .setWriterSchema(ProtoSchemaConverter.convert(FooType.getDescriptor()))
             .build()) {
       LOG.info("Sending one message");
@@ -2253,8 +2281,10 @@ class ITBigQueryStorageWriteClientTest {
     assertEquals(0L, response1.get().getAppendResult().getOffset().getValue());
     assertEquals(0L, response2.get().getAppendResult().getOffset().getValue());
     assertEquals(0L, response3.get().getAppendResult().getOffset().getValue());
-    assertEquals("us", streamWriter1.getLocation());
-    assertEquals("us", streamWriter2.getLocation());
+    String expectedLocation =
+        Helper.isBigQueryRegionalEndpoint() ? Helper.getBigQueryRegion() : "us";
+    assertEquals(expectedLocation, streamWriter1.getLocation());
+    assertEquals(expectedLocation, streamWriter2.getLocation());
     assertEquals("eu", streamWriter3.getLocation());
     streamWriter1.close();
     streamWriter2.close();

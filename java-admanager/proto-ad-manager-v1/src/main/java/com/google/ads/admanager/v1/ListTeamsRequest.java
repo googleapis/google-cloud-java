@@ -228,16 +228,15 @@ public final class ListTeamsRequest extends com.google.protobuf.GeneratedMessage
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;accessType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;allCompaniesAccess&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;allInventoryAccess&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `accessType`
+   * * `allCompaniesAccess`
+   * * `allInventoryAccess`
+   * * `description`
+   * * `displayName`
+   * * `name`
+   * * `status`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -265,16 +264,15 @@ public final class ListTeamsRequest extends com.google.protobuf.GeneratedMessage
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;accessType&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;allCompaniesAccess&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;allInventoryAccess&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `accessType`
+   * * `allCompaniesAccess`
+   * * `allInventoryAccess`
+   * * `description`
+   * * `displayName`
+   * * `name`
+   * * `status`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1127,16 +1125,15 @@ public final class ListTeamsRequest extends com.google.protobuf.GeneratedMessage
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;accessType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;allCompaniesAccess&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;allInventoryAccess&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `accessType`
+     * * `allCompaniesAccess`
+     * * `allInventoryAccess`
+     * * `description`
+     * * `displayName`
+     * * `name`
+     * * `status`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1163,16 +1160,15 @@ public final class ListTeamsRequest extends com.google.protobuf.GeneratedMessage
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;accessType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;allCompaniesAccess&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;allInventoryAccess&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `accessType`
+     * * `allCompaniesAccess`
+     * * `allInventoryAccess`
+     * * `description`
+     * * `displayName`
+     * * `name`
+     * * `status`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1199,16 +1195,15 @@ public final class ListTeamsRequest extends com.google.protobuf.GeneratedMessage
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;accessType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;allCompaniesAccess&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;allInventoryAccess&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `accessType`
+     * * `allCompaniesAccess`
+     * * `allInventoryAccess`
+     * * `description`
+     * * `displayName`
+     * * `name`
+     * * `status`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1234,16 +1229,15 @@ public final class ListTeamsRequest extends com.google.protobuf.GeneratedMessage
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;accessType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;allCompaniesAccess&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;allInventoryAccess&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `accessType`
+     * * `allCompaniesAccess`
+     * * `allInventoryAccess`
+     * * `description`
+     * * `displayName`
+     * * `name`
+     * * `status`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1265,16 +1259,15 @@ public final class ListTeamsRequest extends com.google.protobuf.GeneratedMessage
      * See syntax details at
      * https://developers.google.com/ad-manager/api/beta/filters
      *
-     * &lt;b&gt;Filterable fields:&lt;/b&gt;
-     * &lt;ul style="list-style-type:none"&gt;
-     * &lt;li&gt;&lt;code&gt;accessType&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;allCompaniesAccess&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;allInventoryAccess&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;description&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-     * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-     * &lt;/ul&gt;
+     * **Filterable fields:**
+     *
+     * * `accessType`
+     * * `allCompaniesAccess`
+     * * `allInventoryAccess`
+     * * `description`
+     * * `displayName`
+     * * `name`
+     * * `status`
      * </pre>
      *
      * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

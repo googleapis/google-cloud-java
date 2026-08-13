@@ -3793,7 +3793,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    * @deprecated
    *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.is_local_data_guard_enabled is
-   *     deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=679
+   *     deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=781
    * @return The isLocalDataGuardEnabled.
    */
   @java.lang.Override
@@ -3821,7 +3821,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
    *
    * @deprecated
    *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.local_adg_auto_failover_max_data_loss_limit
-   *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=686
+   *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=788
    * @return The localAdgAutoFailoverMaxDataLossLimit.
    */
   @java.lang.Override
@@ -5458,6 +5458,45 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     return localAdgAutoFailoverMaxDataLossLimitDuration_;
   }
 
+  public static final int REFRESHABLE_CLONE_FIELD_NUMBER = 73;
+  private boolean refreshableClone_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates if the Autonomous Database is a refreshable clone. This
+   * field is used in update flow to connect / disconnect a refreshable clone
+   * from its source database.
+   * </pre>
+   *
+   * <code>optional bool refreshable_clone = 73 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the refreshableClone field is set.
+   */
+  @java.lang.Override
+  public boolean hasRefreshableClone() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates if the Autonomous Database is a refreshable clone. This
+   * field is used in update flow to connect / disconnect a refreshable clone
+   * from its source database.
+   * </pre>
+   *
+   * <code>optional bool refreshable_clone = 73 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The refreshableClone.
+   */
+  @java.lang.Override
+  public boolean getRefreshableClone() {
+    return refreshableClone_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5704,6 +5743,9 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       output.writeInt32(72, localAdgAutoFailoverMaxDataLossLimitDuration_);
+    }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeBool(73, refreshableClone_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -5992,6 +6034,9 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               72, localAdgAutoFailoverMaxDataLossLimitDuration_);
     }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(73, refreshableClone_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6130,6 +6175,10 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     if (hasLocalAdgAutoFailoverMaxDataLossLimitDuration()) {
       if (getLocalAdgAutoFailoverMaxDataLossLimitDuration()
           != other.getLocalAdgAutoFailoverMaxDataLossLimitDuration()) return false;
+    }
+    if (hasRefreshableClone() != other.hasRefreshableClone()) return false;
+    if (hasRefreshableClone()) {
+      if (getRefreshableClone() != other.getRefreshableClone()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -6320,6 +6369,10 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     if (hasLocalAdgAutoFailoverMaxDataLossLimitDuration()) {
       hash = (37 * hash) + LOCAL_ADG_AUTO_FAILOVER_MAX_DATA_LOSS_LIMIT_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getLocalAdgAutoFailoverMaxDataLossLimitDuration();
+    }
+    if (hasRefreshableClone()) {
+      hash = (37 * hash) + REFRESHABLE_CLONE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRefreshableClone());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -6613,6 +6666,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       serviceAgentEmail_ = "";
       localDataGuardEnabled_ = false;
       localAdgAutoFailoverMaxDataLossLimitDuration_ = 0;
+      refreshableClone_ = false;
       return this;
     }
 
@@ -6935,6 +6989,10 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
         result.localAdgAutoFailoverMaxDataLossLimitDuration_ =
             localAdgAutoFailoverMaxDataLossLimitDuration_;
         to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField2_ & 0x00000002) != 0)) {
+        result.refreshableClone_ = refreshableClone_;
+        to_bitField0_ |= 0x00004000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -7277,6 +7335,9 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
       if (other.hasLocalAdgAutoFailoverMaxDataLossLimitDuration()) {
         setLocalAdgAutoFailoverMaxDataLossLimitDuration(
             other.getLocalAdgAutoFailoverMaxDataLossLimitDuration());
+      }
+      if (other.hasRefreshableClone()) {
+        setRefreshableClone(other.getRefreshableClone());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7737,6 +7798,12 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
                 bitField2_ |= 0x00000001;
                 break;
               } // case 576
+            case 584:
+              {
+                refreshableClone_ = input.readBool();
+                bitField2_ |= 0x00000002;
+                break;
+              } // case 584
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11886,7 +11953,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      * @deprecated
      *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.is_local_data_guard_enabled
-     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=679
+     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=781
      * @return The isLocalDataGuardEnabled.
      */
     @java.lang.Override
@@ -11910,7 +11977,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      * @deprecated
      *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.is_local_data_guard_enabled
-     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=679
+     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=781
      * @param value The isLocalDataGuardEnabled to set.
      * @return This builder for chaining.
      */
@@ -11938,7 +12005,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      * @deprecated
      *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.is_local_data_guard_enabled
-     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=679
+     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=781
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -11967,7 +12034,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      * @deprecated
      *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.local_adg_auto_failover_max_data_loss_limit
-     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=686
+     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=788
      * @return The localAdgAutoFailoverMaxDataLossLimit.
      */
     @java.lang.Override
@@ -11992,7 +12059,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      * @deprecated
      *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.local_adg_auto_failover_max_data_loss_limit
-     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=686
+     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=788
      * @param value The localAdgAutoFailoverMaxDataLossLimit to set.
      * @return This builder for chaining.
      */
@@ -12021,7 +12088,7 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
      *
      * @deprecated
      *     google.cloud.oracledatabase.v1.AutonomousDatabaseProperties.local_adg_auto_failover_max_data_loss_limit
-     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=686
+     *     is deprecated. See google/cloud/oracledatabase/v1/autonomous_database.proto;l=788
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -16891,6 +16958,86 @@ public final class AutonomousDatabaseProperties extends com.google.protobuf.Gene
     public Builder clearLocalAdgAutoFailoverMaxDataLossLimitDuration() {
       bitField2_ = (bitField2_ & ~0x00000001);
       localAdgAutoFailoverMaxDataLossLimitDuration_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean refreshableClone_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the Autonomous Database is a refreshable clone. This
+     * field is used in update flow to connect / disconnect a refreshable clone
+     * from its source database.
+     * </pre>
+     *
+     * <code>optional bool refreshable_clone = 73 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the refreshableClone field is set.
+     */
+    @java.lang.Override
+    public boolean hasRefreshableClone() {
+      return ((bitField2_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the Autonomous Database is a refreshable clone. This
+     * field is used in update flow to connect / disconnect a refreshable clone
+     * from its source database.
+     * </pre>
+     *
+     * <code>optional bool refreshable_clone = 73 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The refreshableClone.
+     */
+    @java.lang.Override
+    public boolean getRefreshableClone() {
+      return refreshableClone_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the Autonomous Database is a refreshable clone. This
+     * field is used in update flow to connect / disconnect a refreshable clone
+     * from its source database.
+     * </pre>
+     *
+     * <code>optional bool refreshable_clone = 73 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The refreshableClone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefreshableClone(boolean value) {
+
+      refreshableClone_ = value;
+      bitField2_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if the Autonomous Database is a refreshable clone. This
+     * field is used in update flow to connect / disconnect a refreshable clone
+     * from its source database.
+     * </pre>
+     *
+     * <code>optional bool refreshable_clone = 73 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRefreshableClone() {
+      bitField2_ = (bitField2_ & ~0x00000002);
+      refreshableClone_ = false;
       onChanged();
       return this;
     }

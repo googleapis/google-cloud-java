@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Strings.isNullOrEmpty;
 
+import com.google.api.core.BetaApi;
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
@@ -75,6 +76,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Long maxResults;
   private final JobCreationMode jobCreationMode;
   private final String reservation;
+  private final QueryResultsFormat queryResultsFormat;
+  private final ArrowSerializationOptions arrowSerializationOptions;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be {@link
@@ -144,6 +147,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Long maxResults;
     private JobCreationMode jobCreationMode;
     private String reservation;
+    private QueryResultsFormat queryResultsFormat = QueryResultsFormat.STRUCT_ENCODING;
+    private ArrowSerializationOptions arrowSerializationOptions;
 
     private Builder() {
       super(Type.QUERY);
@@ -181,6 +186,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.maxResults = jobConfiguration.maxResults;
       this.jobCreationMode = jobConfiguration.jobCreationMode;
       this.reservation = jobConfiguration.reservation;
+      this.queryResultsFormat = jobConfiguration.queryResultsFormat;
+      this.arrowSerializationOptions = jobConfiguration.arrowSerializationOptions;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -701,6 +708,45 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * <b>[Beta]</b> Sets the query results response format. Defaults to {@link
+     * QueryResultsFormat#STRUCT_ENCODING}.
+     *
+     * <p>When set to {@link QueryResultsFormat#ARROW}, query results are returned in binary Apache
+     * Arrow format, utilizing gRPC Storage Read streams for subsequent pages.
+     *
+     * <p><b>Prerequisite:</b> Requires the BigQuery Storage Read API ({@code
+     * bigquerystorage.googleapis.com}) to be enabled on your GCP project. See the <a
+     * href="https://docs.cloud.google.com/apis/docs/getting-started#enabling_apis">Google Cloud
+     * Enabling APIs Guide</a>.
+     *
+     * @param queryResultsFormat the format for query result payloads
+     * @return the Builder
+     */
+    @BetaApi
+    public Builder setQueryResultsFormat(QueryResultsFormat queryResultsFormat) {
+      this.queryResultsFormat =
+          checkNotNull(queryResultsFormat, "queryResultsFormat cannot be null");
+      return this;
+    }
+
+    /**
+     * <b>[Beta]</b> Sets Arrow serialization options. Defaults to null.
+     *
+     * <p>Note: Only applied in the request payload when {@code queryResultsFormat} is {@code
+     * ARROW}.
+     *
+     * @param arrowSerializationOptions the Arrow serialization options to set
+     * @return the Builder
+     */
+    @BetaApi
+    public Builder setArrowSerializationOptions(
+        ArrowSerializationOptions arrowSerializationOptions) {
+      this.arrowSerializationOptions =
+          checkNotNull(arrowSerializationOptions, "arrowSerializationOptions cannot be null");
+      return this;
+    }
+
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -747,6 +793,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.maxResults = builder.maxResults;
     this.jobCreationMode = builder.jobCreationMode;
     this.reservation = builder.reservation;
+    this.queryResultsFormat = builder.queryResultsFormat;
+    this.arrowSerializationOptions = builder.arrowSerializationOptions;
   }
 
   /**
@@ -973,6 +1021,18 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return new Builder(this);
   }
 
+  /** <b>[Beta]</b> Returns the query results response format. */
+  @BetaApi
+  public QueryResultsFormat getQueryResultsFormat() {
+    return queryResultsFormat;
+  }
+
+  /** <b>[Beta]</b> Returns Arrow serialization options, or null if unset. */
+  @BetaApi
+  public ArrowSerializationOptions getArrowSerializationOptions() {
+    return arrowSerializationOptions;
+  }
+
   @Override
   ToStringHelper toStringHelper() {
     return super.toStringHelper()
@@ -1004,13 +1064,23 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("rangePartitioning", rangePartitioning)
         .add("connectionProperties", connectionProperties)
         .add("jobCreationMode", jobCreationMode)
-        .add("reservation", reservation);
+        .add("reservation", reservation)
+        .add("queryResultsFormat", queryResultsFormat)
+        .add("arrowSerializationOptions", arrowSerializationOptions);
   }
 
   @Override
   public boolean equals(Object obj) {
-    return obj == this
-        || obj instanceof QueryJobConfiguration && baseEquals((QueryJobConfiguration) obj);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !(obj instanceof QueryJobConfiguration)) {
+      return false;
+    }
+    QueryJobConfiguration other = (QueryJobConfiguration) obj;
+    return baseEquals(other)
+        && Objects.equals(queryResultsFormat, other.queryResultsFormat)
+        && Objects.equals(arrowSerializationOptions, other.arrowSerializationOptions);
   }
 
   @Override
@@ -1043,7 +1113,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
         labels,
         rangePartitioning,
         connectionProperties,
-        reservation);
+        reservation,
+        queryResultsFormat,
+        arrowSerializationOptions);
   }
 
   @Override

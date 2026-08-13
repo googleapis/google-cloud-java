@@ -15,6 +15,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 11
+        cache: maven
     - name: Install all modules first
       shell: bash
       run: .kokoro/build.sh

@@ -81,6 +81,7 @@ import com.google.storage.control.v2.ListManagedFoldersResponse;
 import com.google.storage.control.v2.ListRapidCachesRequest;
 import com.google.storage.control.v2.ListRapidCachesResponse;
 import com.google.storage.control.v2.ManagedFolder;
+import com.google.storage.control.v2.ObjectFullContext;
 import com.google.storage.control.v2.PauseAnywhereCacheRequest;
 import com.google.storage.control.v2.RapidCache;
 import com.google.storage.control.v2.RenameFolderMetadata;
@@ -97,6 +98,7 @@ import com.google.storage.control.v2.UpdateOrganizationIntelligenceConfigRequest
 import com.google.storage.control.v2.UpdateProjectIntelligenceConfigRequest;
 import com.google.storage.control.v2.UpdateRapidCacheMetadata;
 import com.google.storage.control.v2.UpdateRapidCacheRequest;
+import com.google.storage.control.v2.ViewObjectFullContextRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -548,6 +550,17 @@ public class GrpcStorageControlStub extends StorageControlStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextMethodDescriptor =
+          MethodDescriptor.<ViewObjectFullContextRequest, ObjectFullContext>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storage.control.v2.StorageControl/ViewObjectFullContext")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ViewObjectFullContextRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ObjectFullContext.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<CreateFolderRequest, Folder> createFolderCallable;
   private final UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable;
   private final UnaryCallable<GetFolderRequest, Folder> getFolderCallable;
@@ -639,6 +652,8 @@ public class GrpcStorageControlStub extends StorageControlStub {
   private final UnaryCallable<
           ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsPagedResponse>
       listIntelligenceFindingRevisionsPagedCallable;
+  private final UnaryCallable<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -704,6 +719,8 @@ public class GrpcStorageControlStub extends StorageControlStub {
       PathTemplate.create("{bucket=projects/*/buckets/*}/objects/**");
   private static final PathTemplate TEST_IAM_PERMISSIONS_2_PATH_TEMPLATE =
       PathTemplate.create("{bucket=projects/*/buckets/*}/managedFolders/**");
+  private static final PathTemplate VIEW_OBJECT_FULL_CONTEXT_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
 
   public static final GrpcStorageControlStub create(StorageControlStubSettings settings)
       throws IOException {
@@ -1345,6 +1362,19 @@ public class GrpcStorageControlStub extends StorageControlStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<ViewObjectFullContextRequest, ObjectFullContext>
+        viewObjectFullContextTransportSettings =
+            GrpcCallSettings.<ViewObjectFullContextRequest, ObjectFullContext>newBuilder()
+                .setMethodDescriptor(viewObjectFullContextMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          request.getName(), "bucket", VIEW_OBJECT_FULL_CONTEXT_0_PATH_TEMPLATE);
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
 
     this.createFolderCallable =
         callableFactory.createUnaryCallable(
@@ -1569,6 +1599,11 @@ public class GrpcStorageControlStub extends StorageControlStub {
         callableFactory.createPagedCallable(
             listIntelligenceFindingRevisionsTransportSettings,
             settings.listIntelligenceFindingRevisionsSettings(),
+            clientContext);
+    this.viewObjectFullContextCallable =
+        callableFactory.createUnaryCallable(
+            viewObjectFullContextTransportSettings,
+            settings.viewObjectFullContextSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -1856,6 +1891,12 @@ public class GrpcStorageControlStub extends StorageControlStub {
           ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsPagedResponse>
       listIntelligenceFindingRevisionsPagedCallable() {
     return listIntelligenceFindingRevisionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextCallable() {
+    return viewObjectFullContextCallable;
   }
 
   @Override

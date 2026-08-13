@@ -46,6 +46,7 @@ jobs:
       with:
         distribution: zulu
         java-version: ${{matrix.java}}
+        cache: maven
     - run: java -version
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils
@@ -85,6 +86,7 @@ jobs:
       with:
         distribution: zulu
         java-version: 11
+        cache: maven
     - run: java -version
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils
