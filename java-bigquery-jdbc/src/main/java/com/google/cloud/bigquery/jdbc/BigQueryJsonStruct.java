@@ -65,14 +65,13 @@ class BigQueryJsonStruct extends BigQueryBaseStruct {
     return attributes;
   }
 
-  private Object getValue(Field currentSchema, Object currentValue) throws SQLException {
+  private Object getValue(Field currentSchema, FieldValue currentValue) throws SQLException {
     LOG.finestTrace("getValue");
     if (isArray(currentSchema)) {
-      return new BigQueryJsonArray(
-          currentSchema, (FieldValue) currentValue, this.LOG.getJsonArrayLogger());
+      return new BigQueryJsonArray(currentSchema, currentValue, this.LOG.getJsonArrayLogger());
     } else if (isStruct(currentSchema)) {
       return new BigQueryJsonStruct(
-          currentSchema.getSubFields(), (FieldValue) currentValue, this.LOG.getJsonStructLogger());
+          currentSchema.getSubFields(), currentValue, this.LOG.getJsonStructLogger());
     } else {
       return BigQueryTypeRegistry.convert(
           currentValue, currentSchema.getType().getStandardType(), null);

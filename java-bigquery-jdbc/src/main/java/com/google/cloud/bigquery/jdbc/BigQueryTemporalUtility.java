@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -94,6 +95,21 @@ final class BigQueryTemporalUtility {
    * the Calendar timezone is explicitly ignored per JDBC 4.2 spec.
    */
   public static Timestamp boxTimestamp(String val) {
+    // Check if the value is a numeric float string (e.g. "1680174859.8202269" from JSON API)
+    try {
+      if (val.indexOf('-') < 0
+          || (val.startsWith("-")
+              && val.indexOf('-', 1) < 0)) { // Quick check to ensure it's not a date string
+        BigDecimal bd = new BigDecimal(val);
+        long secondsLong = bd.longValue();
+        int nanos = bd.remainder(BigDecimal.ONE).multiply(new BigDecimal(1_000_000_000)).intValue();
+        Timestamp ts = new Timestamp(secondsLong * 1000L);
+        ts.setNanos(nanos);
+        return ts;
+      }
+    } catch (NumberFormatException ignored) {
+    }
+
     String iso = val;
     // Handle the " UTC" suffix format
     if (iso.endsWith(" UTC")) {
@@ -104,12 +120,33 @@ final class BigQueryTemporalUtility {
     if (iso.length() > 10 && iso.charAt(10) == ' ') {
       iso = iso.substring(0, 10) + 'T' + iso.substring(11);
     }
+    // If it doesn't have a timezone designator, assume UTC 'Z'
+    if (!iso.endsWith("Z") && !iso.contains("+") && iso.lastIndexOf('-') <= 10) {
+      iso = iso + "Z";
+    }
 
     try {
       return Timestamp.from(Instant.parse(iso));
     } catch (java.time.format.DateTimeParseException e) {
       // Fallback for non-standard formats
-      return Timestamp.valueOf(val);
+      String fallback = val;
+      if (fallback.indexOf('T') > 0) {
+        fallback = fallback.replace('T', ' ');
+      }
+      return Timestamp.valueOf(fallback);
     }
+  }
+
+  /**
+   * Converts milliseconds of the day to a local epoch millis anchored to 1970-01-01 in the given
+   * timezone.
+   */
+  public static long getLocalMillis(long millisOfDay, ZoneId zoneId) {
+    ZoneId targetZone = zoneId != null ? zoneId : ZoneId.systemDefault();
+    return LocalTime.ofNanoOfDay(millisOfDay * 1_000_000L)
+        .atDate(LocalDate.of(1970, 1, 1))
+        .atZone(targetZone)
+        .toInstant()
+        .toEpochMilli();
   }
 }
