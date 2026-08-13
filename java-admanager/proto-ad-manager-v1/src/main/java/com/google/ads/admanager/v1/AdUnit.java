@@ -70,6 +70,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
     appliedLabelFrequencyCaps_ = java.util.Collections.emptyList();
     effectiveLabelFrequencyCaps_ = java.util.Collections.emptyList();
     smartSizeMode_ = 0;
+    refreshRateType_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1824,6 +1825,70 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
     return effectiveAdsenseEnabled_;
   }
 
+  public static final int REFRESH_RATE_TYPE_FIELD_NUMBER = 78;
+  private int refreshRateType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Defines the type of refresh rate control for
+   * this ad unit. This field defaults to `DISABLED`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return Whether the refreshRateType field is set.
+   */
+  @java.lang.Override
+  public boolean hasRefreshRateType() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Defines the type of refresh rate control for
+   * this ad unit. This field defaults to `DISABLED`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for refreshRateType.
+   */
+  @java.lang.Override
+  public int getRefreshRateTypeValue() {
+    return refreshRateType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Non-empty default. Defines the type of refresh rate control for
+   * this ad unit. This field defaults to `DISABLED`.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+   * </code>
+   *
+   * @return The refreshRateType.
+   */
+  @java.lang.Override
+  public com.google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType getRefreshRateType() {
+    com.google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType result =
+        com.google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType.forNumber(refreshRateType_);
+    return result == null
+        ? com.google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1912,6 +1977,9 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeEnum(45, effectiveTargetWindow_);
+    }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      output.writeEnum(78, refreshRateType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2014,6 +2082,9 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(45, effectiveTargetWindow_);
     }
+    if (((bitField0_ & 0x00008000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(78, refreshRateType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2102,6 +2173,10 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
     if (hasEffectiveAdsenseEnabled() != other.hasEffectiveAdsenseEnabled()) return false;
     if (hasEffectiveAdsenseEnabled()) {
       if (getEffectiveAdsenseEnabled() != other.getEffectiveAdsenseEnabled()) return false;
+    }
+    if (hasRefreshRateType() != other.hasRefreshRateType()) return false;
+    if (hasRefreshRateType()) {
+      if (refreshRateType_ != other.refreshRateType_) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -2209,6 +2284,10 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
     if (hasEffectiveAdsenseEnabled()) {
       hash = (37 * hash) + EFFECTIVE_ADSENSE_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEffectiveAdsenseEnabled());
+    }
+    if (hasRefreshRateType()) {
+      hash = (37 * hash) + REFRESH_RATE_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + refreshRateType_;
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2434,6 +2513,7 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
       smartSizeMode_ = 0;
       appliedAdsenseEnabled_ = false;
       effectiveAdsenseEnabled_ = false;
+      refreshRateType_ = 0;
       return this;
     }
 
@@ -2604,6 +2684,10 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x01000000) != 0)) {
         result.effectiveAdsenseEnabled_ = effectiveAdsenseEnabled_;
         to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.refreshRateType_ = refreshRateType_;
+        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2865,6 +2949,9 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
       if (other.hasEffectiveAdsenseEnabled()) {
         setEffectiveAdsenseEnabled(other.getEffectiveAdsenseEnabled());
       }
+      if (other.hasRefreshRateType()) {
+        setRefreshRateTypeValue(other.getRefreshRateTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3087,6 +3174,12 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 360
+            case 624:
+              {
+                refreshRateType_ = input.readEnum();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 624
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8341,6 +8434,139 @@ public final class AdUnit extends com.google.protobuf.GeneratedMessage
     public Builder clearEffectiveAdsenseEnabled() {
       bitField0_ = (bitField0_ & ~0x01000000);
       effectiveAdsenseEnabled_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int refreshRateType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Defines the type of refresh rate control for
+     * this ad unit. This field defaults to `DISABLED`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return Whether the refreshRateType field is set.
+     */
+    @java.lang.Override
+    public boolean hasRefreshRateType() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Defines the type of refresh rate control for
+     * this ad unit. This field defaults to `DISABLED`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for refreshRateType.
+     */
+    @java.lang.Override
+    public int getRefreshRateTypeValue() {
+      return refreshRateType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Defines the type of refresh rate control for
+     * this ad unit. This field defaults to `DISABLED`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for refreshRateType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefreshRateTypeValue(int value) {
+      refreshRateType_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Defines the type of refresh rate control for
+     * this ad unit. This field defaults to `DISABLED`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return The refreshRateType.
+     */
+    @java.lang.Override
+    public com.google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType getRefreshRateType() {
+      com.google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType result =
+          com.google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType.forNumber(
+              refreshRateType_);
+      return result == null
+          ? com.google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Defines the type of refresh rate control for
+     * this ad unit. This field defaults to `DISABLED`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @param value The refreshRateType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefreshRateType(
+        com.google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x02000000;
+      refreshRateType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Non-empty default. Defines the type of refresh rate control for
+     * this ad unit. This field defaults to `DISABLED`.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = NON_EMPTY_DEFAULT];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRefreshRateType() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      refreshRateType_ = 0;
       onChanged();
       return this;
     }

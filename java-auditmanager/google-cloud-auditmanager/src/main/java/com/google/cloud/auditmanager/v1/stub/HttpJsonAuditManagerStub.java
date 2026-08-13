@@ -143,7 +143,8 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{scope=projects/*/locations/*}/auditScopeReports:generate")
+                          "/v1/{scope=projects/*/locations/*}/auditScopeReports:generate",
+                          "/v1/{scope=organizations/*/locations/*}/auditScopeReports:generate")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -182,7 +183,8 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{scope=projects/*/locations/*}/auditReports:generate")
+                          "/v1/{scope=projects/*/locations/*}/auditReports:generate",
+                          "/v1/{scope=organizations/*/locations/*}/auditReports:generate")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -262,7 +264,9 @@ public class HttpJsonAuditManagerStub extends AuditManagerStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
-                      .setAdditionalPaths("/v1/{name=projects/*/locations/*/auditReports/*}")
+                      .setAdditionalPaths(
+                          "/v1/{name=projects/*/locations/*/auditReports/*}",
+                          "/v1/{name=organizations/*/locations/*/auditReports/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
