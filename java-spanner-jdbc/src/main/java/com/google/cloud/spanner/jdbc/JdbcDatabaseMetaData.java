@@ -20,15 +20,17 @@ import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.oauth2.UserCredentials;
 import com.google.cloud.spanner.Dialect;
+import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.ResultSets;
+import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.Struct;
 import com.google.cloud.spanner.Type;
 import com.google.cloud.spanner.Type.StructField;
 import com.google.cloud.spanner.connection.Connection.InternalMetadataQuery;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
-import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -57,22 +59,33 @@ class JdbcDatabaseMetaData extends AbstractJdbcWrapper implements DatabaseMetaDa
   private static final ConcurrentMap<String, String> SQL_CACHE = new ConcurrentHashMap<>();
 
   @VisibleForTesting
-  static String readSqlFromFile(String filename, Dialect dialect) {
-    return SQL_CACHE.computeIfAbsent(
-        filename + "/" + dialect, (key) -> loadSqlFromFile(filename, dialect));
+  static String readSqlFromFile(String filename, Dialect dialect) throws SQLException {
+    try {
+      return SQL_CACHE.computeIfAbsent(
+          filename + "/" + dialect, (key) -> loadSqlFromFile(filename, dialect));
+    } catch (SpannerException e) {
+      throw JdbcSqlExceptionFactory.of(e);
+    }
   }
 
   private static String loadSqlFromFile(String filename, Dialect dialect) {
     String resourcePath = dialect == Dialect.POSTGRESQL ? "postgresql/" + filename : filename;
     InputStream in = JdbcDatabaseMetaData.class.getResourceAsStream(resourcePath);
-    Preconditions.checkNotNull(in, "Resource not found: " + resourcePath);
-    BufferedReader reader = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
+    if (in == null) {
+      throw SpannerExceptionFactory.newSpannerException(
+          ErrorCode.NOT_FOUND, "Resource not found: " + resourcePath);
+    }
     StringBuilder builder = new StringBuilder();
-    try (Scanner scanner = new Scanner(reader)) {
+    try (InputStream input = in;
+        InputStreamReader reader = new InputStreamReader(input, StandardCharsets.UTF_8);
+        Scanner scanner = new Scanner(reader)) {
       while (scanner.hasNextLine()) {
         String line = scanner.nextLine();
         builder.append(line).append("\n");
       }
+    } catch (IOException e) {
+      throw SpannerExceptionFactory.newSpannerException(
+          ErrorCode.INTERNAL, "Could not read SQL file " + resourcePath, e);
     }
     return builder.toString();
   }

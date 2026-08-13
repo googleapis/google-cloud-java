@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -577,10 +578,19 @@ public class JdbcDatabaseMetaDataTest {
   }
 
   @Test
-  public void testReadSqlFromFileCaching() {
+  public void testReadSqlFromFileCaching() throws SQLException {
     String sql1 = JdbcDatabaseMetaData.readSqlFromFile("DatabaseMetaData_GetTables.sql", dialect);
     String sql2 = JdbcDatabaseMetaData.readSqlFromFile("DatabaseMetaData_GetTables.sql", dialect);
     assertNotNull(sql1);
     assertSame(sql1, sql2);
+  }
+
+  @Test
+  public void testReadSqlFromFileNotFound() {
+    SQLException exception =
+        assertThrows(
+            SQLException.class,
+            () -> JdbcDatabaseMetaData.readSqlFromFile("NonExistent.sql", dialect));
+    assertTrue(exception.getMessage().contains("Resource not found"));
   }
 }
