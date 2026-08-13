@@ -210,6 +210,8 @@ final class BigQueryTypeRegistry {
           else if (val instanceof Timestamp) {
             sqlDate =
                 Date.valueOf(((Timestamp) val).toInstant().atOffset(ZoneOffset.UTC).toLocalDate());
+          } else if (val instanceof java.sql.Time) {
+            throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
           } else if (val instanceof java.util.Date)
             sqlDate = new Date(((java.util.Date) val).getTime());
           else if (val instanceof LocalDate) sqlDate = Date.valueOf((LocalDate) val);
