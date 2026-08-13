@@ -16,6 +16,8 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
@@ -27,16 +29,22 @@ import java.sql.Struct;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.OffsetDateTime;
+import java.time.Period;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import org.apache.arrow.vector.PeriodDuration;
 
 /**
  * A central, bidirectional engine for resolving and coercing types between JDBC, Java, and
@@ -47,6 +55,11 @@ final class BigQueryTypeRegistry {
   private static final TypeDescriptor<?>[] DESCRIPTORS_BY_ORDINAL;
   private static final Map<Class<?>, TypeDescriptor<?>> DESCRIPTORS_BY_CLASS;
   private static final Map<Integer, TypeDescriptor<?>> DESCRIPTORS_BY_JDBC_TYPE;
+
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
+  private static final DateTimeFormatter TIME_FORMATTER =
+      DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
 
   static {
     DESCRIPTORS_BY_ORDINAL = new TypeDescriptor<?>[StandardSQLTypeName.values().length];
@@ -80,6 +93,7 @@ final class BigQueryTypeRegistry {
         Arrays.asList(Boolean.class),
         (val, targetClass, zone) -> {
           if (val instanceof Boolean) return val;
+          if (val instanceof Number) return ((Number) val).longValue() != 0;
           if (val instanceof String) return Boolean.parseBoolean((String) val);
           throw new BigQueryJdbcException("Cannot convert to BOOL: " + val);
         });
@@ -91,7 +105,17 @@ final class BigQueryTypeRegistry {
         String.class,
         StandardSQLTypeName.STRING,
         Arrays.asList(String.class),
-        (val, targetClass, zone) -> String.valueOf(val));
+        (val, targetClass, zone) -> {
+          if (val == null) return null;
+          if (val instanceof byte[]) return Base64.getEncoder().encodeToString((byte[]) val);
+          if (val instanceof Timestamp) {
+            return TIMESTAMP_FORMATTER.format(((Timestamp) val).toLocalDateTime());
+          }
+          if (val instanceof Time) {
+            return TIME_FORMATTER.format(((Time) val).toLocalTime());
+          }
+          return String.valueOf(val);
+        });
   }
 
   static TypeDescriptor<?> createInt64Descriptor() {
@@ -102,13 +126,38 @@ final class BigQueryTypeRegistry {
         Arrays.asList(Long.class, Integer.class, Short.class, Byte.class),
         (val, targetClass, zone) -> {
           long longVal;
-          if (val instanceof Number) longVal = ((Number) val).longValue();
-          else if (val instanceof String) longVal = Long.parseLong((String) val);
-          else throw new BigQueryJdbcException("Cannot convert to INT64: " + val);
+          if (val instanceof Number) {
+            if (val instanceof BigDecimal) {
+              BigDecimal bd = (BigDecimal) val;
+              if (bd.compareTo(new BigDecimal(Long.MAX_VALUE)) > 0
+                  || bd.compareTo(new BigDecimal(Long.MIN_VALUE)) < 0) {
+                throw new BigQueryJdbcException("Value out of range for Long: " + bd);
+              }
+            }
+            longVal = ((Number) val).longValue();
+          } else if (val instanceof String) {
+            longVal = Long.parseLong((String) val);
+          } else if (val instanceof Boolean) {
+            longVal = (Boolean) val ? 1L : 0L;
+          } else {
+            throw new BigQueryJdbcException("Cannot convert to INT64: " + val);
+          }
 
-          if (targetClass == Integer.class) return (int) longVal;
-          if (targetClass == Short.class) return (short) longVal;
-          if (targetClass == Byte.class) return (byte) longVal;
+          if (targetClass == Integer.class) {
+            if (longVal > Integer.MAX_VALUE || longVal < Integer.MIN_VALUE)
+              throw new BigQueryJdbcException("Value out of range for Integer: " + longVal);
+            return (int) longVal;
+          }
+          if (targetClass == Short.class) {
+            if (longVal > Short.MAX_VALUE || longVal < Short.MIN_VALUE)
+              throw new BigQueryJdbcException("Value out of range for Short: " + longVal);
+            return (short) longVal;
+          }
+          if (targetClass == Byte.class) {
+            if (longVal > Byte.MAX_VALUE || longVal < Byte.MIN_VALUE)
+              throw new BigQueryJdbcException("Value out of range for Byte: " + longVal);
+            return (byte) longVal;
+          }
           return longVal;
         });
   }
@@ -123,6 +172,7 @@ final class BigQueryTypeRegistry {
           double doubleVal;
           if (val instanceof Number) doubleVal = ((Number) val).doubleValue();
           else if (val instanceof String) doubleVal = Double.parseDouble((String) val);
+          else if (val instanceof Boolean) doubleVal = (Boolean) val ? 1.0 : 0.0;
           else throw new BigQueryJdbcException("Cannot convert to FLOAT64: " + val);
 
           if (targetClass == Float.class) return (float) doubleVal;
@@ -140,6 +190,9 @@ final class BigQueryTypeRegistry {
           if (val instanceof BigDecimal) return val;
           if (val instanceof Number) return new BigDecimal(val.toString());
           if (val instanceof String) return new BigDecimal((String) val);
+          if (val instanceof Boolean) {
+            return (Boolean) val ? BigDecimal.ONE : BigDecimal.ZERO;
+          }
           throw new BigQueryJdbcException("Cannot convert to NUMERIC: " + val);
         });
   }
@@ -154,9 +207,16 @@ final class BigQueryTypeRegistry {
           // TODO(Phase 3): Add native JSR-310 fast-path to bypass boxing for LocalDate
           Date sqlDate;
           if (val instanceof Date) sqlDate = (Date) val;
-          else if (val instanceof java.util.Date)
+          else if (val instanceof Timestamp) {
+            sqlDate =
+                Date.valueOf(((Timestamp) val).toInstant().atOffset(ZoneOffset.UTC).toLocalDate());
+          } else if (val instanceof java.sql.Time) {
+            throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
+          } else if (val instanceof java.util.Date)
             sqlDate = new Date(((java.util.Date) val).getTime());
           else if (val instanceof LocalDate) sqlDate = Date.valueOf((LocalDate) val);
+          else if (val instanceof LocalDateTime)
+            sqlDate = Date.valueOf(((LocalDateTime) val).toLocalDate());
           else if (val instanceof String)
             sqlDate = BigQueryTemporalUtility.boxDate((String) val, zone);
           else throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
@@ -205,14 +265,18 @@ final class BigQueryTypeRegistry {
             ts = Timestamp.from(((OffsetDateTime) val).toInstant());
           else if (val instanceof ZonedDateTime)
             ts = Timestamp.from(((ZonedDateTime) val).toInstant());
+          else if (val instanceof LocalDateTime)
+            ts = Timestamp.from(((LocalDateTime) val).toInstant(ZoneOffset.UTC));
+          else if (val instanceof Long)
+            ts =
+                Timestamp.from(
+                    Instant.EPOCH.plus((Long) val, java.time.temporal.ChronoUnit.MICROS));
           else if (val instanceof String) ts = BigQueryTemporalUtility.boxTimestamp((String) val);
           else throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
 
           if (targetClass == Instant.class) return ts.toInstant();
-          if (targetClass == OffsetDateTime.class)
-            return ts.toInstant().atOffset(java.time.ZoneOffset.UTC);
-          if (targetClass == ZonedDateTime.class)
-            return ts.toInstant().atZone(java.time.ZoneOffset.UTC);
+          if (targetClass == OffsetDateTime.class) return ts.toInstant().atOffset(ZoneOffset.UTC);
+          if (targetClass == ZonedDateTime.class) return ts.toInstant().atZone(ZoneOffset.UTC);
           return ts;
         });
   }
@@ -231,10 +295,22 @@ final class BigQueryTypeRegistry {
 
           Time sqlTime;
           if (val instanceof Time) sqlTime = (Time) val;
-          else if (val instanceof java.util.Date)
+          else if (val instanceof Timestamp) {
+            sqlTime =
+                Time.valueOf(((Timestamp) val).toInstant().atOffset(ZoneOffset.UTC).toLocalTime());
+          } else if (val instanceof java.sql.Date) {
+            throw new BigQueryJdbcException("Cannot convert to TIME: " + val);
+          } else if (val instanceof java.util.Date)
             sqlTime = new Time(((java.util.Date) val).getTime());
           else if (val instanceof LocalTime) sqlTime = Time.valueOf((LocalTime) val);
-          else if (val instanceof String)
+          else if (val instanceof LocalDateTime) {
+            long millisOfDay = ((LocalDateTime) val).toLocalTime().toNanoOfDay() / 1_000_000;
+            sqlTime = new Time(BigQueryTemporalUtility.getLocalMillis(millisOfDay, zone));
+          } else if (val instanceof Long) {
+            long millisOfDay = (Long) val / 1000;
+            // Align with civil time anchoring
+            sqlTime = new Time(BigQueryTemporalUtility.getLocalMillis(millisOfDay, zone));
+          } else if (val instanceof String)
             sqlTime = BigQueryTemporalUtility.boxTime((String) val, zone);
           else throw new BigQueryJdbcException("Cannot convert to TIME: " + val);
 
@@ -256,6 +332,7 @@ final class BigQueryTypeRegistry {
         Arrays.asList(byte[].class),
         (val, targetClass, zone) -> {
           if (val instanceof byte[]) return val;
+          else if (val instanceof String) return Base64.getDecoder().decode((String) val);
           throw new BigQueryJdbcException("Cannot convert to BYTES: " + val);
         });
   }
@@ -322,7 +399,43 @@ final class BigQueryTypeRegistry {
         String.class,
         StandardSQLTypeName.INTERVAL,
         Arrays.asList(String.class),
-        (val, targetClass, zone) -> String.valueOf(val));
+        (val, targetClass, zone) -> {
+          if (val == null) return null;
+          if (val instanceof PeriodDuration) {
+            PeriodDuration pd = (PeriodDuration) val;
+            Period period = pd.getPeriod().normalized();
+            StringBuilder builder = new StringBuilder();
+            builder
+                .append(period.getYears())
+                .append("-")
+                .append(period.getMonths())
+                .append(" ")
+                .append(period.getDays())
+                .append(" ");
+            Duration duration = pd.getDuration();
+            if (duration.isNegative()) {
+              builder.append("-");
+              duration = duration.negated();
+            }
+            long hours = duration.toHours();
+            duration = duration.minusHours(hours);
+            long minutes = duration.toMinutes();
+            duration = duration.minusMinutes(minutes);
+            long seconds = duration.getSeconds();
+            duration = duration.minusSeconds(seconds);
+            long microseconds = duration.toNanos() / 1000;
+            builder
+                .append(hours)
+                .append(":")
+                .append(minutes)
+                .append(":")
+                .append(seconds)
+                .append(".")
+                .append(microseconds);
+            return builder.toString().replaceFirst("--", "-");
+          }
+          return String.valueOf(val);
+        });
   }
 
   static TypeDescriptor<?> createRangeDescriptor() {
@@ -331,7 +444,17 @@ final class BigQueryTypeRegistry {
         String.class,
         StandardSQLTypeName.RANGE,
         Arrays.asList(String.class),
-        (val, targetClass, zone) -> String.valueOf(val));
+        (val, targetClass, zone) -> {
+          if (val == null) return null;
+          if (val instanceof Range) {
+            Range range = (Range) val;
+            String start =
+                range.getStart().isNull() ? "UNBOUNDED" : range.getStart().getStringValue();
+            String end = range.getEnd().isNull() ? "UNBOUNDED" : range.getEnd().getStringValue();
+            return String.format("[%s, %s)", start, end);
+          }
+          return String.valueOf(val);
+        });
   }
 
   private static void register(TypeDescriptor<?> descriptor) {
@@ -447,6 +570,14 @@ final class BigQueryTypeRegistry {
     if (input == null) {
       return null;
     }
+    if (input instanceof FieldValue) {
+      FieldValue fv = (FieldValue) input;
+      if (fv.isNull()) return null;
+      input = fv.getValue();
+    }
+    if (targetClass.isInstance(input)) {
+      return (T) input;
+    }
     TypeDescriptor<?> descriptor = getDescriptorForClass(targetClass);
     if (descriptor == null) {
       throw new BigQueryJdbcException("Unsupported target class: " + targetClass.getName());
@@ -466,6 +597,11 @@ final class BigQueryTypeRegistry {
   public static Object convert(Object input, StandardSQLTypeName bqType, ZoneId zoneId)
       throws BigQueryJdbcException {
     if (input == null) return null;
+    if (input instanceof FieldValue) {
+      FieldValue fv = (FieldValue) input;
+      if (fv.isNull()) return null;
+      input = fv.getValue();
+    }
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
       throw new BigQueryJdbcException("No type descriptor registered for BigQuery type: " + bqType);

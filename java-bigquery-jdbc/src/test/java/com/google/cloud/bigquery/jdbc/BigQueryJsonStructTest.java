@@ -241,7 +241,7 @@ public class BigQueryJsonStructTest {
   public void structWithNullValue() throws SQLException {
     assertThat(structWithNullValue.getAttributes())
         .isEqualTo(
-            Arrays.asList(0L, false, 0.0, null, null, null, null, null, null, null, null, null)
+            Arrays.asList(null, null, null, null, null, null, null, null, null, null, null, null)
                 .toArray());
   }
 
