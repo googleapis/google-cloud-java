@@ -23,6 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.bigquery.jdbc.BigQueryConnection;
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -38,11 +39,11 @@ public class ITTPCBigQueryTest {
   private static final String TPC_PROJECT_ID = System.getenv("PROJECT_ID");
 
   private static final String TPC_ENDPOINT =
-      (ENDPOINT_URL.isEmpty())
+      (ENDPOINT_URL == null || ENDPOINT_URL.isEmpty())
           ? "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443"
           : "jdbc:bigquery://" + ENDPOINT_URL;
   private static final String TPC_UNIVERSE_DOMAIN =
-      (UNIVERSE_DOMAIN.isEmpty()) ? "googleapis.com" : UNIVERSE_DOMAIN;
+      (UNIVERSE_DOMAIN == null || UNIVERSE_DOMAIN.isEmpty()) ? "googleapis.com" : UNIVERSE_DOMAIN;
 
   // See here go/bq-cli-tpc for testing setup.
   // Use the default test project.
@@ -200,20 +201,118 @@ public class ITTPCBigQueryTest {
     connection.close();
   }
 
+  @Test
+  public void testDatabaseMetadataOperationsInTPC() throws SQLException {
+    validateTPCEnvironment();
+    String connection_uri =
+        TPC_ENDPOINT
+            + ";"
+            + "ProjectId="
+            + TPC_PROJECT_ID
+            + ";"
+            + "OAuthType=0;"
+            + "universeDomain="
+            + TPC_UNIVERSE_DOMAIN
+            + ";"
+            + "OAuthServiceAcctEmail="
+            + TPC_SERVICE_ACCOUNT
+            + ";"
+            + "OAuthPvtKey="
+            + TPC_PVT_KEY
+            + ";";
+
+    String dataset = "INTEGRATION_TESTS";
+    String pkTable = "IT_METADATA_PK_" + System.currentTimeMillis();
+    String fkTable = "IT_METADATA_FK_" + System.currentTimeMillis();
+
+    Connection connection = DriverManager.getConnection(connection_uri);
+    Statement stmt = connection.createStatement();
+    try {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+
+      // Create test PK and FK tables
+      stmt.execute(
+          String.format(
+              "CREATE OR REPLACE TABLE `%s.%s.%s` (id INT64, name STRING, PRIMARY KEY (id) NOT ENFORCED);",
+              TPC_PROJECT_ID, dataset, pkTable));
+      stmt.execute(
+          String.format(
+              "CREATE OR REPLACE TABLE `%s.%s.%s` (order_id INT64, pk_id INT64, PRIMARY KEY (order_id) NOT ENFORCED, CONSTRAINT fk_order FOREIGN KEY (pk_id) REFERENCES `%s.%s.%s`(id) NOT ENFORCED);",
+              TPC_PROJECT_ID, dataset, fkTable, TPC_PROJECT_ID, dataset, pkTable));
+
+      DatabaseMetaData metaData = connection.getMetaData();
+      assertNotNull(metaData);
+
+      // 1. Test getTables
+      try (ResultSet rs = metaData.getTables(TPC_PROJECT_ID, dataset, pkTable, null)) {
+        assertTrue(rs.next(), "Expected PK table to be returned by getTables");
+        assertEquals(pkTable, rs.getString("TABLE_NAME"));
+        assertFalse(rs.next());
+      }
+
+      // 2. Test getColumns
+      try (ResultSet rs = metaData.getColumns(TPC_PROJECT_ID, dataset, pkTable, "id")) {
+        assertTrue(rs.next(), "Expected id column to be returned by getColumns");
+        assertEquals("id", rs.getString("COLUMN_NAME"));
+        assertFalse(rs.next());
+      }
+
+      // 3. Test getPrimaryKeys
+      try (ResultSet rs = metaData.getPrimaryKeys(TPC_PROJECT_ID, dataset, pkTable)) {
+        assertTrue(rs.next(), "Expected primary key to be returned by getPrimaryKeys");
+        assertEquals("id", rs.getString("COLUMN_NAME"));
+        assertFalse(rs.next());
+      }
+
+      // 4. Test getImportedKeys
+      try (ResultSet rs = metaData.getImportedKeys(TPC_PROJECT_ID, dataset, fkTable)) {
+        assertTrue(rs.next(), "Expected foreign key to be returned by getImportedKeys");
+        assertEquals(pkTable, rs.getString("PKTABLE_NAME"));
+        assertEquals("id", rs.getString("PKCOLUMN_NAME"));
+        assertEquals(fkTable, rs.getString("FKTABLE_NAME"));
+        assertEquals("pk_id", rs.getString("FKCOLUMN_NAME"));
+        assertEquals("fk_order", rs.getString("FK_NAME"));
+        assertFalse(rs.next());
+      }
+
+      // 5. Test getExportedKeys
+      try (ResultSet rs = metaData.getExportedKeys(TPC_PROJECT_ID, dataset, pkTable)) {
+        assertTrue(rs.next(), "Expected exported foreign key to be returned by getExportedKeys");
+        assertEquals(pkTable, rs.getString("PKTABLE_NAME"));
+        assertEquals("id", rs.getString("PKCOLUMN_NAME"));
+        assertEquals(fkTable, rs.getString("FKTABLE_NAME"));
+        assertEquals("pk_id", rs.getString("FKCOLUMN_NAME"));
+        assertEquals("fk_order", rs.getString("FK_NAME"));
+        assertFalse(rs.next());
+      }
+    } finally {
+      try {
+        stmt.execute(
+            String.format("DROP TABLE IF EXISTS `%s.%s.%s`;", TPC_PROJECT_ID, dataset, fkTable));
+        stmt.execute(
+            String.format("DROP TABLE IF EXISTS `%s.%s.%s`;", TPC_PROJECT_ID, dataset, pkTable));
+      } finally {
+        stmt.close();
+        connection.close();
+      }
+    }
+  }
+
   private void validateTPCEnvironment() {
-    if (TPC_PROJECT_ID.isEmpty()) {
+    if (TPC_PROJECT_ID == null || TPC_PROJECT_ID.isEmpty()) {
       throw new IllegalArgumentException("TPC_PROJECT_ID is empty");
     }
-    if (TPC_SERVICE_ACCOUNT.isEmpty()) {
+    if (TPC_SERVICE_ACCOUNT == null || TPC_SERVICE_ACCOUNT.isEmpty()) {
       throw new IllegalArgumentException("TPC_SERVICE_ACCOUNT is empty");
     }
-    if (TPC_ENDPOINT.isEmpty()) {
+    if (TPC_ENDPOINT == null || TPC_ENDPOINT.isEmpty()) {
       throw new IllegalArgumentException("TPC_ENDPOINT is empty");
     }
-    if (TPC_PVT_KEY.isEmpty()) {
+    if (TPC_PVT_KEY == null || TPC_PVT_KEY.isEmpty()) {
       throw new IllegalArgumentException("TPC_PVT_KEY is empty");
     }
-    if (TPC_UNIVERSE_DOMAIN.isEmpty()) {
+    if (TPC_UNIVERSE_DOMAIN == null || TPC_UNIVERSE_DOMAIN.isEmpty()) {
       throw new IllegalArgumentException("TPC_UNIVERSE_DOMAIN is empty");
     }
   }
