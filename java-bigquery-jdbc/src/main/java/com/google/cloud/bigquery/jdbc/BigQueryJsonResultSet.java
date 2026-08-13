@@ -225,7 +225,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
     }
 
     if (this.isNested && columnIndex == 1) {
-      return this.bigQueryTypeCoercer.coerceTo(Integer.class, value, this.LOG);
+      return BigQueryTypeRegistry.convert(value, Integer.class);
     }
 
     if (this.isNested && columnIndex == 2) {
@@ -237,7 +237,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       Class<?> targetClass =
           BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
               arrayField.getType().getStandardType());
-      return this.bigQueryTypeCoercer.coerceTo(targetClass, value, this.LOG);
+      return BigQueryTypeRegistry.convert(value, targetClass);
     }
 
     int extraIndex = this.isNested ? 2 : 1;
@@ -251,7 +251,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       Class<?> targetClass =
           BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
               fieldSchema.getType().getStandardType());
-      return this.bigQueryTypeCoercer.coerceTo(targetClass, value, this.LOG);
+      return BigQueryTypeRegistry.convert(value, targetClass);
     }
   }
 

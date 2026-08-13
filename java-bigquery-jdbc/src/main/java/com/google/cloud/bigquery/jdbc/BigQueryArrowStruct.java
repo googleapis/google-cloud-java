@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.cloud.bigquery.jdbc.BigQueryBaseArray.isArray;
 
 import com.google.cloud.bigquery.Field;
+import java.sql.SQLException;
 import com.google.cloud.bigquery.FieldList;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -30,8 +31,7 @@ import org.apache.arrow.vector.util.JsonStringHashMap;
  * An implementation of {@link BigQueryBaseStruct} used to represent Struct values from Arrow data.
  */
 class BigQueryArrowStruct extends BigQueryBaseStruct {
-  private static final BigQueryTypeCoercer BIGQUERY_TYPE_COERCER =
-      BigQueryTypeCoercionUtility.INSTANCE;
+
 
   private final FieldList schema;
 
@@ -54,7 +54,7 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
   }
 
   @Override
-  public Object[] getAttributes() {
+  public Object[] getAttributes() throws SQLException {
     LOG.finestTrace("getAttributes");
     int size = this.schema.size();
     Object[] attributes = (Object[]) Array.newInstance(Object.class, size);
@@ -73,7 +73,7 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
     return attributes;
   }
 
-  private Object getValue(Field currentSchema, Object currentValue) {
+  private Object getValue(Field currentSchema, Object currentValue) throws SQLException {
     LOG.finestTrace("getValue");
     if (isArray(currentSchema)) {
       return new BigQueryArrowArray(
@@ -87,7 +87,7 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
       Class<?> targetClass =
           BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
               currentSchema.getType().getStandardType());
-      return BIGQUERY_TYPE_COERCER.coerceTo(targetClass, currentValue, this.LOG);
+      return BigQueryTypeRegistry.convert(currentValue, targetClass);
     }
   }
 }

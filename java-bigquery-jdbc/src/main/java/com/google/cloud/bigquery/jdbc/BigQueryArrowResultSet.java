@@ -357,7 +357,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     }
 
     if (this.isNested && columnIndex == 1) {
-      return this.bigQueryTypeCoercer.coerceTo(Integer.class, value, this.LOG);
+      return BigQueryTypeRegistry.convert(value, Integer.class);
     }
 
     if (this.isNested && columnIndex == 2) {
@@ -371,7 +371,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       Class<?> targetClass =
           BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
               arrayField.getType().getStandardType());
-      return this.bigQueryTypeCoercer.coerceTo(targetClass, value, this.LOG);
+      return BigQueryTypeRegistry.convert(value, targetClass);
     }
 
     int fieldIndex = this.isNested ? 0 : columnIndex - 1;
@@ -440,7 +440,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       Class<?> targetClass =
           BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
               fieldSchema.getType().getStandardType());
-      return this.bigQueryTypeCoercer.coerceTo(targetClass, value, this.LOG);
+      return BigQueryTypeRegistry.convert(value, targetClass);
     }
   }
 
@@ -460,24 +460,25 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     return StandardSQLTypeName.STRING;
   }
 
-  private String formatRangeElement(Object element, StandardSQLTypeName elementType) {
+  private String formatRangeElement(Object element, StandardSQLTypeName elementType)
+      throws SQLException {
     if (element == null) {
       return "UNBOUNDED";
     }
     switch (elementType) {
       case DATE:
         // Arrow gives DATE as an Integer (days since epoch)
-        Date date = this.bigQueryTypeCoercer.coerceTo(Date.class, (Integer) element, this.LOG);
+        Date date = BigQueryTypeRegistry.convert((Integer) element, Date.class);
         return date.toString();
       case DATETIME:
         // Arrow gives DATETIME as a LocalDateTime
         Timestamp dtTs =
-            this.bigQueryTypeCoercer.coerceTo(Timestamp.class, (LocalDateTime) element, this.LOG);
-        return this.bigQueryTypeCoercer.coerceTo(String.class, dtTs, this.LOG);
+            BigQueryTypeRegistry.convert((LocalDateTime) element, Timestamp.class);
+        return BigQueryTypeRegistry.convert(dtTs, String.class);
       case TIMESTAMP:
         // Arrow gives TIMESTAMP as a Long (microseconds since epoch)
-        Timestamp ts = this.bigQueryTypeCoercer.coerceTo(Timestamp.class, (Long) element, this.LOG);
-        return this.bigQueryTypeCoercer.coerceTo(String.class, ts, this.LOG);
+        Timestamp ts = BigQueryTypeRegistry.convert((Long) element, Timestamp.class);
+        return BigQueryTypeRegistry.convert(ts, String.class);
       default:
         // Fallback for any other unexpected type
         return element.toString();
