@@ -76,9 +76,14 @@ public class FlowController {
     }
 
     @Override
-    public String toString() {
+    public String getMessage() {
       return String.format(
           "The maximum number of batch elements: %d have been reached.", currentMaxElementCount);
+    }
+
+    @Override
+    public String toString() {
+      return getMessage();
     }
   }
 
@@ -99,9 +104,14 @@ public class FlowController {
     }
 
     @Override
-    public String toString() {
+    public String getMessage() {
       return String.format(
           "The maximum number of batch bytes: %d have been reached.", currentMaxBytes);
+    }
+
+    @Override
+    public String toString() {
+      return getMessage();
     }
   }
 

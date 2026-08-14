@@ -774,4 +774,18 @@ class FlowControllerTest {
     executors.shutdown();
     return reserveReleaseFuture;
   }
+
+  @Test
+  void testExceptionGetMessage() {
+    FlowController.MaxOutstandingElementCountReachedException elementException =
+        new FlowController.MaxOutstandingElementCountReachedException(100);
+    assertThat(elementException.getMessage())
+        .isEqualTo("The maximum number of batch elements: 100 have been reached.");
+
+    FlowController.MaxOutstandingRequestBytesReachedException bytesException =
+        new FlowController.MaxOutstandingRequestBytesReachedException(500);
+    assertThat(bytesException.getMessage())
+        .isEqualTo("The maximum number of batch bytes: 500 have been reached.");
+  }
 }
+
