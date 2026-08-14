@@ -143,6 +143,7 @@ public class HttpJsonRegionOperationsStub extends RegionOperationsStub {
                         .setDone(Status.DONE.equals(response.getStatus()))
                         .setResponse(response)
                         .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .setErrorParser(new ComputeLroErrorParser())
                         .build();
                   })
               .setPollingRequestFactory(
