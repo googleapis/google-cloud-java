@@ -410,15 +410,20 @@ public class ClientConfigurationManager implements AutoCloseable {
     // cfg, so that a nonzero session_load supplied via the override sys-prop is honoured even when
     // the server-returned config has session_load=0.
     if (builder.getSessionConfiguration().getSessionLoad() == 0) {
-      builder.clearSessionConfiguration();
-      return builder.build();
+      if (Boolean.getBoolean("bigtable.internal.sessions-required")) {
+        builder.getSessionConfigurationBuilder().setSessionLoad(1.0f);
+      } else {
+        builder.clearSessionConfiguration();
+        return builder.build();
+      }
     }
 
     return builder.build();
   }
 
   public boolean areSessionsRequired() {
-    return overrideConfig.map(c -> c.getSessionConfiguration().getSessionLoad() > 0).orElse(false);
+    return Boolean.getBoolean("bigtable.internal.sessions-required")
+        || overrideConfig.map(c -> c.getSessionConfiguration().getSessionLoad() > 0).orElse(false);
   }
 
   private long getRetryDelay(int attempt) {
