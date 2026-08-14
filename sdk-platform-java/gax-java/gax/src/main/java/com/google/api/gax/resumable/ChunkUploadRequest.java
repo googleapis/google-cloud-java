@@ -30,17 +30,34 @@
 package com.google.api.gax.resumable;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.rpc.UnaryCallable;
+import com.google.auto.value.AutoValue;
+import com.google.protobuf.ByteString;
 import org.jspecify.annotations.NullMarked;
 
-/** Client interface for executing low-level resumable upload operations. */
+/** Request value object for uploading a chunk to an active resumable upload session. */
 @NullMarked
 @InternalApi
-public interface ResumableUploadClient {
+@AutoValue
+public abstract class ChunkUploadRequest {
 
-  /** Returns a {@link UnaryCallable} to initiate a resumable upload session. */
-  UnaryCallable<StartUploadRequest, ResumableUploadSession> startUploadCallable();
+  /** The upload session URL returned during session initialization. */
+  public abstract String getUploadUrl();
 
-  /** Returns a {@link UnaryCallable} to transmit an individual chunk. */
-  UnaryCallable<ChunkUploadRequest, ChunkUploadResponse> uploadChunkCallable();
+  /** The binary chunk payload to upload. */
+  public abstract ByteString getPayload();
+
+  /** The byte offset of this chunk in the overall stream. */
+  public abstract long getOffset();
+
+  /** Whether this is the final chunk in the stream. */
+  public abstract boolean isFinal();
+
+  public static ChunkUploadRequest create(String uploadUrl, ByteString payload, long offset) {
+    return create(uploadUrl, payload, offset, false);
+  }
+
+  public static ChunkUploadRequest create(
+      String uploadUrl, ByteString payload, long offset, boolean isFinal) {
+    return new AutoValue_ChunkUploadRequest(uploadUrl, payload, offset, isFinal);
+  }
 }

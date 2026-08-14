@@ -29,10 +29,15 @@
  */
 package com.google.api.gax.httpjson;
 
+import com.google.api.client.http.ByteArrayContent;
+import com.google.api.client.http.EmptyContent;
+import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.resumable.ChunkUploadRequest;
+import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.resumable.StartUploadRequest;
@@ -67,13 +72,19 @@ public final class HttpJsonResumableUploadClient implements ResumableUploadClien
 
   private static final String UPLOAD_PROTOCOL_HEADER = "X-Goog-Upload-Protocol";
   private static final String UPLOAD_COMMAND_HEADER = "X-Goog-Upload-Command";
+  private static final String UPLOAD_OFFSET_HEADER = "X-Goog-Upload-Offset";
   private static final String UPLOAD_URL_HEADER = "X-Goog-Upload-URL";
   private static final String UPLOAD_GRANULARITY_HEADER = "X-Goog-Upload-Chunk-Granularity";
+  private static final String UPLOAD_STATUS_HEADER = "X-Goog-Upload-Status";
+  private static final String UPLOAD_SIZE_RECEIVED_HEADER = "X-Goog-Upload-Size-Received";
+  private static final String STATUS_FINAL = "final";
 
   private static final Map<String, List<String>> START_UPLOAD_HEADERS =
       ImmutableMap.of(
           UPLOAD_PROTOCOL_HEADER, ImmutableList.of("resumable"),
           UPLOAD_COMMAND_HEADER, ImmutableList.of("start"));
+
+  private static final PathTemplate PATH_TEMPLATE = PathTemplate.create("{+path}");
 
   private static final ApiMethodDescriptor<StartUploadRequest, String> START_UPLOAD_DESCRIPTOR =
       ApiMethodDescriptor.<StartUploadRequest, String>newBuilder()
@@ -99,7 +110,46 @@ public final class HttpJsonResumableUploadClient implements ResumableUploadClien
 
                 @Override
                 public PathTemplate getPathTemplate() {
-                  return PathTemplate.create("{+path}");
+                  return PATH_TEMPLATE;
+                }
+              })
+          .setResponseParser(StringHttpResponseParser.create())
+          .build();
+
+  private static final ApiMethodDescriptor<ChunkUploadRequest, String> UPLOAD_CHUNK_DESCRIPTOR =
+      ApiMethodDescriptor.<ChunkUploadRequest, String>newBuilder()
+          .setFullMethodName("ResumableUpload/UploadChunk")
+          .setHttpMethod(HttpMethods.POST)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              new HttpRequestFormatter<ChunkUploadRequest>() {
+                @Override
+                public Map<String, List<String>> getQueryParamNames(ChunkUploadRequest request) {
+                  return Collections.emptyMap();
+                }
+
+                @Override
+                public String getRequestBody(ChunkUploadRequest request) {
+                  return "";
+                }
+
+                @Override
+                public HttpContent getHttpContent(ChunkUploadRequest request) {
+                  if (!request.getPayload().isEmpty()) {
+                    return new ByteArrayContent(
+                        "application/octet-stream", request.getPayload().toByteArray());
+                  }
+                  return new EmptyContent();
+                }
+
+                @Override
+                public String getPath(ChunkUploadRequest request) {
+                  return request.getUploadUrl();
+                }
+
+                @Override
+                public PathTemplate getPathTemplate() {
+                  return PATH_TEMPLATE;
                 }
               })
           .setResponseParser(StringHttpResponseParser.create())
@@ -135,6 +185,45 @@ public final class HttpJsonResumableUploadClient implements ResumableUploadClien
         SettableApiFuture<ResumableUploadSession> future = SettableApiFuture.create();
         HttpJsonClientCalls.startUnaryCall(
             clientCall, request, context, new StartUploadResponseListener(future));
+
+        return future;
+      }
+    };
+  }
+
+  @Override
+  public UnaryCallable<ChunkUploadRequest, ChunkUploadResponse> uploadChunkCallable() {
+    return new UnaryCallable<ChunkUploadRequest, ChunkUploadResponse>() {
+      @Override
+      public ApiFuture<ChunkUploadResponse> futureCall(
+          ChunkUploadRequest request, @Nullable ApiCallContext inputContext) {
+        Preconditions.checkNotNull(request);
+        String command;
+        if (request.isFinal()) {
+          command = !request.getPayload().isEmpty() ? "upload, finalize" : "finalize";
+        } else {
+          command = "upload";
+        }
+        Map<String, List<String>> chunkHeaders =
+            ImmutableMap.of(
+                UPLOAD_COMMAND_HEADER,
+                ImmutableList.of(command),
+                UPLOAD_OFFSET_HEADER,
+                ImmutableList.of(String.valueOf(request.getOffset())));
+
+        HttpJsonCallContext context =
+            (HttpJsonCallContext)
+                HttpJsonCallContext.createDefault()
+                    .nullToSelf(clientContext.getDefaultCallContext())
+                    .merge(inputContext)
+                    .withExtraHeaders(chunkHeaders);
+
+        HttpJsonClientCall<ChunkUploadRequest, String> clientCall =
+            HttpJsonClientCalls.newCall(UPLOAD_CHUNK_DESCRIPTOR, context);
+
+        SettableApiFuture<ChunkUploadResponse> future = SettableApiFuture.create();
+        HttpJsonClientCalls.startUnaryCall(
+            clientCall, request, context, new ChunkUploadResponseListener(request, future));
 
         return future;
       }
@@ -190,16 +279,7 @@ public final class HttpJsonResumableUploadClient implements ResumableUploadClien
                     /* retryable= */ false));
           }
         } else {
-          Throwable cause = trailers != null ? trailers.getException() : null;
-          ApiException apiException =
-              cause != null
-                  ? API_EXCEPTION_FACTORY.create(cause)
-                  : ApiExceptionFactory.createException(
-                      "Failed to start upload with status code: " + statusCode,
-                      /* cause= */ null,
-                      HttpJsonStatusCode.of(statusCode),
-                      /* retryable= */ false);
-          future.setException(apiException);
+          future.setException(createApiException(statusCode, trailers, "Failed to start upload"));
         }
       } catch (Throwable t) {
         future.setException(
@@ -210,5 +290,85 @@ public final class HttpJsonResumableUploadClient implements ResumableUploadClien
                 /* retryable= */ false));
       }
     }
+  }
+
+  private static class ChunkUploadResponseListener extends HttpJsonClientCall.Listener<String> {
+
+    private final ChunkUploadRequest request;
+    private final SettableApiFuture<ChunkUploadResponse> future;
+    private boolean isComplete = false;
+    private long committedOffset = -1L;
+    private String responseBody = "";
+
+    ChunkUploadResponseListener(
+        ChunkUploadRequest request, SettableApiFuture<ChunkUploadResponse> future) {
+      this.request = request;
+      this.future = future;
+    }
+
+    @Override
+    public void onHeaders(HttpJsonMetadata responseHeaders) {
+      Map<String, Object> headers = responseHeaders.getHeaders();
+
+      String statusStr = HttpHeadersUtils.getFirstHeader(headers, UPLOAD_STATUS_HEADER);
+      if (STATUS_FINAL.equalsIgnoreCase(statusStr)) {
+        this.isComplete = true;
+      }
+
+      String sizeReceivedStr =
+          HttpHeadersUtils.getFirstHeader(headers, UPLOAD_SIZE_RECEIVED_HEADER);
+      if (!Strings.isNullOrEmpty(sizeReceivedStr)) {
+        try {
+          this.committedOffset = Long.parseLong(sizeReceivedStr);
+        } catch (NumberFormatException ignored) {
+          // Ignore invalid/malformed size received header and fall back to local offset
+          // calculation.
+        }
+      }
+    }
+
+    @Override
+    public void onMessage(@Nullable String message) {
+      if (message != null) {
+        this.responseBody = message;
+      }
+    }
+
+    @Override
+    public void onClose(int statusCode, HttpJsonMetadata trailers) {
+      try {
+        if (statusCode >= 200 && statusCode < 300) {
+          long confirmedOffset =
+              committedOffset >= 0
+                  ? committedOffset
+                  : request.getOffset() + request.getPayload().size();
+          future.set(
+              ChunkUploadResponse.create(
+                  confirmedOffset, isComplete, isComplete ? responseBody : ""));
+        } else {
+          future.setException(createApiException(statusCode, trailers, "Failed to upload chunk"));
+        }
+      } catch (Throwable t) {
+        future.setException(
+            ApiExceptionFactory.createException(
+                "Internal error processing upload chunk response",
+                t,
+                HttpJsonStatusCode.of(StatusCode.Code.INTERNAL),
+                /* retryable= */ false));
+      }
+    }
+  }
+
+  private static ApiException createApiException(
+      int statusCode, @Nullable HttpJsonMetadata trailers, String actionDescription) {
+    Throwable cause = trailers != null ? trailers.getException() : null;
+    if (cause != null) {
+      return API_EXCEPTION_FACTORY.create(cause);
+    }
+    return ApiExceptionFactory.createException(
+        actionDescription + " with status code: " + statusCode,
+        /* cause= */ null,
+        HttpJsonStatusCode.of(statusCode),
+        /* retryable= */ false);
   }
 }

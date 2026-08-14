@@ -19,28 +19,41 @@ package com.google.showcase.v1beta1.it;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.httpjson.HttpJsonCallContext;
 import com.google.api.gax.httpjson.HttpJsonResumableUploadClient;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.ManagedHttpJsonChannel;
+import com.google.api.gax.resumable.ChunkUploadRequest;
+import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.resumable.StartUploadRequest;
+import com.google.api.gax.rpc.AbortedException;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.protobuf.ByteString;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
 
 /**
  * Integration test for resumable uploads.
@@ -58,6 +71,12 @@ class ITResumableUpload {
 
   @BeforeAll
   static void createClient() throws Exception {
+    Logger httpLogger = Logger.getLogger(HttpTransport.class.getName());
+    httpLogger.setLevel(Level.ALL);
+    ConsoleHandler handler = new ConsoleHandler();
+    handler.setLevel(Level.ALL);
+    httpLogger.addHandler(handler);
+
     channel =
         ManagedHttpJsonChannel.newBuilder()
             .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT)
@@ -80,6 +99,20 @@ class ITResumableUpload {
       channel.shutdown();
       channel.awaitTermination(10, TimeUnit.SECONDS);
     }
+  }
+
+  @BeforeEach
+  void logTestStart(TestInfo testInfo) {
+    System.out.println("\n>>> ================================================================");
+    System.out.println(">>> STARTING TEST: " + testInfo.getDisplayName());
+    System.out.println(">>> ================================================================");
+  }
+
+  @AfterEach
+  void logTestEnd(TestInfo testInfo) {
+    System.out.println(">>> ================================================================");
+    System.out.println(">>> FINISHED TEST: " + testInfo.getDisplayName());
+    System.out.println(">>> ================================================================\n");
   }
 
   @Test
@@ -177,5 +210,285 @@ class ITResumableUpload {
     assertThat(session.getUploadUrl()).isNotNull();
     assertThat(session.getUploadUrl()).contains("sid=");
     assertThat(session.getChunkGranularity()).isEqualTo(256L);
+  }
+
+  @Test
+  void testUploadChunk_singleChunk_happyPath_finalizesUpload() throws Exception {
+    StartUploadRequest startRequest =
+        StartUploadRequest.newBuilder()
+            .setPath("v1beta1/files:upload")
+            .setJsonPayload("{\"name\":\"single-chunk-test.txt\"}")
+            .build();
+    ResumableUploadSession session = uploadClient.startUploadCallable().call(startRequest);
+
+    ByteString payload = ByteString.copyFromUtf8("hello world");
+    ChunkUploadRequest chunkRequest =
+        ChunkUploadRequest.create(session.getUploadUrl(), payload, 0L, true);
+
+    ChunkUploadResponse response = uploadClient.uploadChunkCallable().call(chunkRequest);
+
+    assertThat(response.isComplete()).isTrue();
+    assertThat(response.getCommittedOffset()).isEqualTo(11L);
+    assertThat(response.getResponseBody()).isNotNull();
+    assertThat(response.getResponseBody()).contains("\"size\":11");
+  }
+
+  @Test
+  void testUploadChunk_multiChunk_happyPath_completesSuccessfully() throws Exception {
+    StartUploadRequest startRequest =
+        StartUploadRequest.newBuilder()
+            .setPath("v1beta1/files:upload")
+            .setJsonPayload("{\"name\":\"multi-chunk-test.txt\"}")
+            .build();
+    ResumableUploadSession session = uploadClient.startUploadCallable().call(startRequest);
+
+    // Chunk 1 (intermediate)
+    ByteString chunk1Payload = ByteString.copyFromUtf8("first-chunk-");
+    ChunkUploadRequest chunk1Request =
+        ChunkUploadRequest.create(session.getUploadUrl(), chunk1Payload, 0L, false);
+
+    ChunkUploadResponse chunk1Response = uploadClient.uploadChunkCallable().call(chunk1Request);
+
+    assertThat(chunk1Response.isComplete()).isFalse();
+    assertThat(chunk1Response.getCommittedOffset()).isEqualTo(12L);
+    assertThat(chunk1Response.getResponseBody()).isEmpty();
+
+    // Chunk 2 (final)
+    ByteString chunk2Payload = ByteString.copyFromUtf8("second-chunk");
+    ChunkUploadRequest chunk2Request =
+        ChunkUploadRequest.create(session.getUploadUrl(), chunk2Payload, 12L, true);
+
+    ChunkUploadResponse chunk2Response = uploadClient.uploadChunkCallable().call(chunk2Request);
+
+    assertThat(chunk2Response.isComplete()).isTrue();
+    assertThat(chunk2Response.getCommittedOffset()).isEqualTo(24L);
+    assertThat(chunk2Response.getResponseBody()).isNotNull();
+    assertThat(chunk2Response.getResponseBody()).contains("\"size\":24");
+  }
+
+  @Test
+  void testUploadChunk_multiChunkWithSeparateZeroByteFinalize_completesSuccessfully()
+      throws Exception {
+    StartUploadRequest startRequest =
+        StartUploadRequest.newBuilder()
+            .setPath("v1beta1/files:upload")
+            .setJsonPayload("{\"name\":\"separate-finalize-test.txt\"}")
+            .build();
+    ResumableUploadSession session = uploadClient.startUploadCallable().call(startRequest);
+
+    // Chunk 1 (intermediate, 12 bytes)
+    ByteString chunk1Payload = ByteString.copyFromUtf8("hello-world-");
+    ChunkUploadRequest chunk1Request =
+        ChunkUploadRequest.create(session.getUploadUrl(), chunk1Payload, 0L, false);
+
+    ChunkUploadResponse chunk1Response = uploadClient.uploadChunkCallable().call(chunk1Request);
+    assertThat(chunk1Response.isComplete()).isFalse();
+    assertThat(chunk1Response.getCommittedOffset()).isEqualTo(12L);
+
+    // Chunk 2 (0-byte separate finalize request)
+    ChunkUploadRequest finalizeRequest =
+        ChunkUploadRequest.create(session.getUploadUrl(), ByteString.EMPTY, 12L, true);
+
+    ChunkUploadResponse finalizeResponse = uploadClient.uploadChunkCallable().call(finalizeRequest);
+
+    assertThat(finalizeResponse.isComplete()).isTrue();
+    assertThat(finalizeResponse.getCommittedOffset()).isEqualTo(12L);
+    assertThat(finalizeResponse.getResponseBody()).isNotNull();
+    assertThat(finalizeResponse.getResponseBody()).contains("\"size\":12");
+  }
+
+  @Test
+  void testUploadChunk_zeroByteUpload_finalizesSuccessfully() throws Exception {
+    StartUploadRequest startRequest =
+        StartUploadRequest.newBuilder()
+            .setPath("v1beta1/files:upload")
+            .setJsonPayload("{\"name\":\"zero-byte-test.txt\"}")
+            .build();
+    ResumableUploadSession session = uploadClient.startUploadCallable().call(startRequest);
+
+    ChunkUploadRequest chunkRequest =
+        ChunkUploadRequest.create(session.getUploadUrl(), ByteString.EMPTY, 0L, true);
+
+    ChunkUploadResponse response = uploadClient.uploadChunkCallable().call(chunkRequest);
+
+    assertThat(response.isComplete()).isTrue();
+    assertThat(response.getCommittedOffset()).isEqualTo(0L);
+    assertThat(response.getResponseBody()).isNotNull();
+    assertThat(response.getResponseBody()).contains("\"size\":0");
+  }
+
+  @Test
+  void testUploadChunk_offsetMismatch_throwsException() throws Exception {
+    StartUploadRequest startRequest =
+        StartUploadRequest.newBuilder()
+            .setPath("v1beta1/files:upload")
+            .setJsonPayload("{\"name\":\"offset-mismatch-test.txt\"}")
+            .build();
+    ResumableUploadSession session = uploadClient.startUploadCallable().call(startRequest);
+
+    ByteString payload = ByteString.copyFromUtf8("mismatched data");
+    ChunkUploadRequest chunkRequest =
+        ChunkUploadRequest.create(session.getUploadUrl(), payload, 100L, false);
+
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class,
+            () -> uploadClient.uploadChunkCallable().futureCall(chunkRequest).get());
+
+    assertThat(exception.getCause()).isInstanceOf(AbortedException.class);
+    AbortedException abortedException = (AbortedException) exception.getCause();
+    assertThat(abortedException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.ABORTED);
+    assertThat(abortedException.getStatusCode().getTransportCode()).isEqualTo(409);
+  }
+
+  @Test
+  void testUploadChunk_chunkGranularityScenario_enforcesAlignment() throws Exception {
+    Map<String, List<String>> extraHeaders =
+        ImmutableMap.of("X-Goog-Test-Scenario", ImmutableList.of("chunk_granularity"));
+    ApiCallContext callContext = HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+
+    StartUploadRequest startRequest =
+        StartUploadRequest.newBuilder()
+            .setPath("v1beta1/files:upload")
+            .setJsonPayload("{\"name\":\"granularity-chunks.txt\"}")
+            .build();
+    ResumableUploadSession session =
+        uploadClient.startUploadCallable().call(startRequest, callContext);
+
+    assertThat(session.getChunkGranularity()).isEqualTo(256L);
+
+    // 1. Unaligned intermediate chunk (100 bytes is not a multiple of 256) should fail with 400 Bad
+    // Request
+    ByteString unalignedPayload = ByteString.copyFrom(new byte[100]);
+    ChunkUploadRequest unalignedRequest =
+        ChunkUploadRequest.create(session.getUploadUrl(), unalignedPayload, 0L, false);
+
+    ExecutionException unalignedException =
+        assertThrows(
+            ExecutionException.class,
+            () -> uploadClient.uploadChunkCallable().futureCall(unalignedRequest).get());
+
+    assertThat(unalignedException.getCause()).isInstanceOf(InvalidArgumentException.class);
+    InvalidArgumentException invalidArgumentException =
+        (InvalidArgumentException) unalignedException.getCause();
+    assertThat(invalidArgumentException.getStatusCode().getCode())
+        .isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
+    assertThat(invalidArgumentException.getStatusCode().getTransportCode()).isEqualTo(400);
+
+    // 2. Aligned intermediate chunk (256 bytes) should succeed
+    ByteString alignedPayload = ByteString.copyFrom(new byte[256]);
+    ChunkUploadRequest alignedRequest =
+        ChunkUploadRequest.create(session.getUploadUrl(), alignedPayload, 0L, false);
+
+    ChunkUploadResponse alignedResponse = uploadClient.uploadChunkCallable().call(alignedRequest);
+
+    assertThat(alignedResponse.isComplete()).isFalse();
+    assertThat(alignedResponse.getCommittedOffset()).isEqualTo(256L);
+
+    // 3. Final chunk of arbitrary size (50 bytes) at offset 256 should succeed
+    ByteString finalPayload = ByteString.copyFrom(new byte[50]);
+    ChunkUploadRequest finalRequest =
+        ChunkUploadRequest.create(session.getUploadUrl(), finalPayload, 256L, true);
+
+    ChunkUploadResponse finalResponse = uploadClient.uploadChunkCallable().call(finalRequest);
+
+    assertThat(finalResponse.isComplete()).isTrue();
+    assertThat(finalResponse.getCommittedOffset()).isEqualTo(306L);
+    assertThat(finalResponse.getResponseBody()).isNotNull();
+    assertThat(finalResponse.getResponseBody()).contains("\"size\":306");
+  }
+
+  @Test
+  void testUploadChunk_nonFatalErrorScenario_recoversOnRetry() throws Exception {
+    Map<String, List<String>> extraHeaders =
+        ImmutableMap.of(
+            "X-Goog-Test-Scenario",
+            ImmutableList.of("non_fatal_error_on_chunk_upload"),
+            "X-Goog-Test-Scenario-Config",
+            ImmutableList.of("{\"error_code\":503,\"failure_count\":1,\"after_offset\":0}"));
+    ApiCallContext callContext = HttpJsonCallContext.createDefault().withExtraHeaders(extraHeaders);
+
+    StartUploadRequest startRequest =
+        StartUploadRequest.newBuilder()
+            .setPath("v1beta1/files:upload")
+            .setJsonPayload("{\"name\":\"retry-test.txt\"}")
+            .build();
+    ResumableUploadSession session =
+        uploadClient.startUploadCallable().call(startRequest, callContext);
+
+    ByteString payload = ByteString.copyFromUtf8("resilient-data");
+    ChunkUploadRequest chunkRequest =
+        ChunkUploadRequest.create(session.getUploadUrl(), payload, 0L, true);
+
+    // First attempt fails with injected 503
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class,
+            () -> uploadClient.uploadChunkCallable().futureCall(chunkRequest).get());
+
+    assertThat(exception.getCause()).isInstanceOf(UnavailableException.class);
+    UnavailableException unavailableException = (UnavailableException) exception.getCause();
+    assertThat(unavailableException.getStatusCode().getCode())
+        .isEqualTo(StatusCode.Code.UNAVAILABLE);
+    assertThat(unavailableException.getStatusCode().getTransportCode()).isEqualTo(503);
+
+    // Second attempt succeeds after exhausting failure_count=1
+    ChunkUploadResponse response = uploadClient.uploadChunkCallable().call(chunkRequest);
+
+    assertThat(response.isComplete()).isTrue();
+    assertThat(response.getCommittedOffset()).isEqualTo(14L);
+    assertThat(response.getResponseBody()).isNotNull();
+    assertThat(response.getResponseBody()).contains("\"size\":14");
+  }
+
+  @Test
+  void testUploadChunk_uploadAfterFinalize_throwsException() throws Exception {
+    StartUploadRequest startRequest =
+        StartUploadRequest.newBuilder()
+            .setPath("v1beta1/files:upload")
+            .setJsonPayload("{\"name\":\"finalize-test.txt\"}")
+            .build();
+    ResumableUploadSession session = uploadClient.startUploadCallable().call(startRequest);
+
+    ByteString payload = ByteString.copyFromUtf8("initial");
+    ChunkUploadRequest finalChunkRequest =
+        ChunkUploadRequest.create(session.getUploadUrl(), payload, 0L, true);
+
+    ChunkUploadResponse response = uploadClient.uploadChunkCallable().call(finalChunkRequest);
+    assertThat(response.isComplete()).isTrue();
+
+    // Subsequent upload attempt to finalized session should return 400 Bad Request
+    ByteString morePayload = ByteString.copyFromUtf8("extra");
+    ChunkUploadRequest extraChunkRequest =
+        ChunkUploadRequest.create(session.getUploadUrl(), morePayload, 7L, false);
+
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class,
+            () -> uploadClient.uploadChunkCallable().futureCall(extraChunkRequest).get());
+
+    assertThat(exception.getCause()).isInstanceOf(InvalidArgumentException.class);
+    InvalidArgumentException invalidArgumentException =
+        (InvalidArgumentException) exception.getCause();
+    assertThat(invalidArgumentException.getStatusCode().getCode())
+        .isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
+    assertThat(invalidArgumentException.getStatusCode().getTransportCode()).isEqualTo(400);
+  }
+
+  @Test
+  void testUploadChunk_invalidSessionUrl_throwsException() {
+    String invalidUrl = DEFAULT_HTTPJSON_ENDPOINT + "/upload?sid=non-existent-sid";
+    ByteString payload = ByteString.copyFromUtf8("orphan data");
+    ChunkUploadRequest chunkRequest = ChunkUploadRequest.create(invalidUrl, payload, 0L, false);
+
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class,
+            () -> uploadClient.uploadChunkCallable().futureCall(chunkRequest).get());
+
+    assertThat(exception.getCause()).isInstanceOf(NotFoundException.class);
+    NotFoundException notFoundException = (NotFoundException) exception.getCause();
+    assertThat(notFoundException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.NOT_FOUND);
+    assertThat(notFoundException.getStatusCode().getTransportCode()).isEqualTo(404);
   }
 }
