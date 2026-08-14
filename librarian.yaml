@@ -1232,6 +1232,8 @@ libraries:
           omit_common_resources: true
     keep:
       - google-cloud-compute/src/main/java/com/google/cloud/compute/v1/stub/ComputeLroErrorParser.java
+      - google-cloud-compute/src/main/java/com/google/cloud/compute/v1/stub/HttpJsonAddressesStub.java
+      - google-cloud-compute/src/main/java/com/google/cloud/compute/v1/stub/HttpJsonRegionOperationsStub.java
       - google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration/BaseTest.java
       - google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration/ITComputeGoldenSignals.java
       - google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration/ITPaginationTest.java

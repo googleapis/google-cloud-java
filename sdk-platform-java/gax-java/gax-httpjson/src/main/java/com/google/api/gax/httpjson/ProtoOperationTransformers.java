@@ -32,13 +32,11 @@ package com.google.api.gax.httpjson;
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.rpc.ApiExceptionFactory;
-import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
 /** Public for technical reasons; intended for use by generated code. */
 @NullMarked

@@ -126,7 +126,9 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
 
   @Override
   protected boolean generateOperationsStubLogic(Service service) {
-    return service.hasLroMethods();
+    return service.hasLroMethods()
+        && (service.pakkage().startsWith("com.google.cloud.compute.v1")
+            && !service.pakkage().startsWith("com.google.cloud.compute.v1small"));
   }
 
   @Override
@@ -598,7 +600,8 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
               .apply("setError", Arrays.asList(getHttpErrorStatusCodeExpr, getHttpErrorMessageExpr))
               .apply(newBuilderExpr);
 
-      if (service.pakkage().startsWith("com.google.cloud.compute.v1")) {
+      if (service.pakkage().startsWith("com.google.cloud.compute.v1")
+          && !service.pakkage().startsWith("com.google.cloud.compute.v1small")) {
         TypeNode parserType =
             TypeNode.withReference(
                 VaporReference.builder()

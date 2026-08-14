@@ -30,12 +30,10 @@ import com.google.api.generator.engine.ast.EnumRefExpr;
 import com.google.api.generator.engine.ast.Expr;
 import com.google.api.generator.engine.ast.ExprStatement;
 import com.google.api.generator.engine.ast.MethodInvocationExpr;
-import com.google.api.generator.engine.ast.NewObjectExpr;
 import com.google.api.generator.engine.ast.PrimitiveValue;
 import com.google.api.generator.engine.ast.StringObjectValue;
 import com.google.api.generator.engine.ast.TypeNode;
 import com.google.api.generator.engine.ast.ValueExpr;
-import com.google.api.generator.engine.ast.VaporReference;
 import com.google.api.generator.engine.ast.Variable;
 import com.google.api.generator.engine.ast.VariableExpr;
 import com.google.api.generator.gapic.composer.store.TypeStore;
@@ -325,7 +323,6 @@ public class RetrySettingsComposer {
                     Variable.builder().setType(TypeNode.CLASS_OBJECT).setName("class").build())
                 .setStaticReferenceType(t)
                 .build();
-
     builderSettingsExpr =
         MethodInvocationExpr.builder()
             .setExprReferenceExpr(builderSettingsExpr)
@@ -334,8 +331,7 @@ public class RetrySettingsComposer {
                 MethodInvocationExpr.builder()
                     .setStaticReferenceType(operationResponseTransformer)
                     .setMethodName("create")
-                    .setArguments(
-                        Arrays.asList(classFieldRefFn.apply(method.lro().responseType())))
+                    .setArguments(classFieldRefFn.apply(method.lro().responseType()))
                     .build())
             .build();
     builderSettingsExpr =
