@@ -170,7 +170,7 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
           methodMaker
               .apply(
                   "setOperationSnapshotFactory",
-                  setOperationSnapshotFactoryExpr(protoMethod, messageTypes))
+                  setOperationSnapshotFactoryExpr(service, protoMethod, messageTypes))
               .apply(expr);
     }
 
@@ -453,7 +453,7 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
   }
 
   private List<Expr> setOperationSnapshotFactoryExpr(
-      Method protoMethod, Map<String, Message> messageTypes) {
+      Service service, Method protoMethod, Map<String, Message> messageTypes) {
 
     // Generate input variables for create()
     VariableExpr requestVarExpr =
@@ -597,6 +597,20 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
           methodMaker
               .apply("setError", Arrays.asList(getHttpErrorStatusCodeExpr, getHttpErrorMessageExpr))
               .apply(newBuilderExpr);
+
+      if (service.pakkage().startsWith("com.google.cloud.compute.v1")) {
+        TypeNode parserType =
+            TypeNode.withReference(
+                VaporReference.builder()
+                    .setName("ComputeLroErrorParser")
+                    .setPakkage(service.pakkage() + ".stub")
+                    .build());
+        Expr newParserExpr = NewObjectExpr.builder().setType(parserType).build();
+        newBuilderExpr =
+            methodMaker
+                .apply("setErrorParser", Collections.singletonList(newParserExpr))
+                .apply(newBuilderExpr);
+      }
 
       buildExpr =
           MethodInvocationExpr.builder()

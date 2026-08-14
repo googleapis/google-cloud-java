@@ -37,6 +37,7 @@ import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.longrunning.Operation;
 import java.util.Collections;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Implementation of OperationSnapshot based on REST transport.
@@ -130,6 +131,7 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
     private String errorMessage;
     private ErrorDetails errorDetails =
         ErrorDetails.builder().setRawErrorMessages(Collections.emptyList()).build();
+    private @Nullable HttpJsonLroErrorParser errorParser;
 
     /**
      * Sets the LRO error details.
@@ -139,6 +141,17 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
      */
     Builder setErrorDetails(final ErrorDetails errorDetails) {
       this.errorDetails = errorDetails;
+      return this;
+    }
+
+    /**
+     * Sets the LRO error parser.
+     *
+     * @param errorParser the LRO error parser
+     * @return the builder instance
+     */
+    public Builder setErrorParser(final HttpJsonLroErrorParser errorParser) {
+      this.errorParser = errorParser;
       return this;
     }
 
@@ -183,8 +196,20 @@ public class HttpJsonOperationSnapshot implements OperationSnapshot {
     }
 
     public HttpJsonOperationSnapshot build() {
+      ErrorDetails finalErrorDetails = this.errorDetails;
+      String finalErrorMessage = this.errorMessage;
+      if (errorParser != null && response != null) {
+        ErrorDetails parsedDetails = errorParser.parse(response);
+        if (parsedDetails != null) {
+          finalErrorDetails = parsedDetails;
+        }
+        String parsedMsg = errorParser.parseErrorMessage(response);
+        if (parsedMsg != null && !parsedMsg.isEmpty()) {
+          finalErrorMessage = parsedMsg;
+        }
+      }
       return new HttpJsonOperationSnapshot(
-          name, metadata, done, response, errorCode, errorMessage, errorDetails);
+          name, metadata, done, response, errorCode, finalErrorMessage, finalErrorDetails);
     }
   }
 }

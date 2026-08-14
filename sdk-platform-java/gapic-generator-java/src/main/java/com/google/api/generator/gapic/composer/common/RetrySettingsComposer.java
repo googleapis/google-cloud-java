@@ -326,25 +326,6 @@ public class RetrySettingsComposer {
                 .setStaticReferenceType(t)
                 .build();
 
-    List<Expr> createArgs = new ArrayList<>();
-    createArgs.add(classFieldRefFn.apply(method.lro().responseType()));
-    if (service.pakkage().startsWith("com.google.cloud.compute.v1")
-        && !service.pakkage().startsWith("com.google.cloud.compute.v1small")
-        && operationResponseTransformer
-            .reference()
-            .pakkage()
-            .equals("com.google.api.gax.httpjson")) {
-      createArgs.add(
-          NewObjectExpr.builder()
-              .setType(
-                  TypeNode.withReference(
-                      VaporReference.builder()
-                          .setName("ComputeLroErrorParser")
-                          .setPakkage(service.pakkage() + ".stub")
-                          .build()))
-              .build());
-    }
-
     builderSettingsExpr =
         MethodInvocationExpr.builder()
             .setExprReferenceExpr(builderSettingsExpr)
@@ -353,7 +334,8 @@ public class RetrySettingsComposer {
                 MethodInvocationExpr.builder()
                     .setStaticReferenceType(operationResponseTransformer)
                     .setMethodName("create")
-                    .setArguments(createArgs)
+                    .setArguments(
+                        Arrays.asList(classFieldRefFn.apply(method.lro().responseType())))
                     .build())
             .build();
     builderSettingsExpr =

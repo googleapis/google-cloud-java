@@ -48,46 +48,25 @@ public class ProtoOperationTransformers {
   public static class ResponseTransformer<ResponseT extends Message>
       implements ApiFunction<OperationSnapshot, ResponseT> {
     private final AnyTransformer<ResponseT> transformer;
-    @Nullable private final HttpJsonLroErrorParser errorParser;
 
     private ResponseTransformer(Class<ResponseT> packedClass) {
       this.transformer = new AnyTransformer<>(packedClass);
-      this.errorParser = null;
-    }
-
-    private ResponseTransformer(
-        Class<ResponseT> packedClass, @Nullable HttpJsonLroErrorParser errorParser) {
-      this.transformer = new AnyTransformer<>(packedClass);
-      this.errorParser = errorParser;
     }
 
     @Override
     public ResponseT apply(OperationSnapshot operationSnapshot) {
       if (!operationSnapshot.getErrorCode().getCode().equals(Code.OK)) {
-        @Nullable ErrorDetails details = null;
-        String errorMessage = operationSnapshot.getErrorMessage();
-
-        if (errorParser != null && operationSnapshot.getResponse() != null) {
-          details = errorParser.parse(operationSnapshot.getResponse());
-          String parsedMsg = errorParser.parseErrorMessage(operationSnapshot.getResponse());
-          if (parsedMsg != null && !parsedMsg.isEmpty()) {
-            errorMessage = parsedMsg;
-          }
-        } else {
-          details = operationSnapshot.getErrorDetails();
-        }
-
         throw ApiExceptionFactory.createException(
             "Operation with name \""
                 + operationSnapshot.getName()
                 + "\" failed with status = "
                 + operationSnapshot.getErrorCode()
                 + " and message = "
-                + errorMessage,
+                + operationSnapshot.getErrorMessage(),
             null,
             operationSnapshot.getErrorCode(),
             false,
-            details);
+            operationSnapshot.getErrorDetails());
       }
 
       if (!(operationSnapshot.getResponse() instanceof Any)) {
@@ -110,11 +89,6 @@ public class ProtoOperationTransformers {
     public static <ResponseT extends Message> ResponseTransformer<ResponseT> create(
         Class<ResponseT> packedClass) {
       return new ResponseTransformer<>(packedClass);
-    }
-
-    public static <ResponseT extends Message> ResponseTransformer<ResponseT> create(
-        Class<ResponseT> packedClass, @Nullable HttpJsonLroErrorParser errorParser) {
-      return new ResponseTransformer<>(packedClass, errorParser);
     }
   }
 
