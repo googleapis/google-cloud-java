@@ -95,7 +95,7 @@ public class FlowController {
     public MaxOutstandingRequestBytesReachedException(long currentMaxBytes) {
       super(
           String.format(
-              "The maximum number of batch bytes: %d have been reached.", currentMaxBytes));
+              "The maximum number of batch bytes: %d has been reached.", currentMaxBytes));
       this.currentMaxBytes = currentMaxBytes;
     }
 
