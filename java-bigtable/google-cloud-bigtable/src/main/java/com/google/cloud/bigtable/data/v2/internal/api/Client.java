@@ -80,7 +80,7 @@ public class Client implements AutoCloseable {
           .setPeerInfo(true)
           .setSessionsCompatible(true)
           .setSessionsRequired( // Internal system property internal testing, not to be used by
-                                // external customers.
+              // external customers.
               Boolean.getBoolean("bigtable.internal.sessions-required"))
           .build();
   // gRPC keep-alive interval 60 seconds.
