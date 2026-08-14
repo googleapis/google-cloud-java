@@ -32,7 +32,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -51,7 +50,8 @@ public class MutationTest {
 
   @Test
   public void setCellTest() {
-    long minTimestamp = Instant.EPOCH.until(Instant.now(), ChronoUnit.MICROS);
+    Instant minInstant = Instant.now();
+    long minTimestamp = minInstant.getEpochSecond() * 1_000_000L + minInstant.getNano() / 1_000;
 
     mutation
         .setCell(
@@ -68,7 +68,8 @@ public class MutationTest {
 
     List<com.google.bigtable.v2.Mutation> actual = mutation.getMutations();
 
-    long maxTimestamp = Instant.EPOCH.until(Instant.now(), ChronoUnit.MICROS);
+    Instant maxInstant = Instant.now();
+    long maxTimestamp = maxInstant.getEpochSecond() * 1_000_000L + maxInstant.getNano() / 1_000;
     com.google.common.collect.Range<Long> expectedTimestampRange =
         com.google.common.collect.Range.closed(minTimestamp, maxTimestamp);
 

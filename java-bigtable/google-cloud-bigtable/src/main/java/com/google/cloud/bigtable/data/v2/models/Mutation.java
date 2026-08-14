@@ -34,7 +34,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 import javax.annotation.Nonnull;
 
@@ -157,7 +156,8 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
   @Override
   public Mutation setCell(
       @Nonnull String familyName, @Nonnull ByteString qualifier, @Nonnull ByteString value) {
-    long timestamp = Instant.EPOCH.until(Instant.now(), ChronoUnit.MICROS);
+    Instant now = Instant.now();
+    long timestamp = now.getEpochSecond() * 1_000_000L + now.getNano() / 1_000;
 
     return setCell(familyName, qualifier, timestamp, value, TimestampOrigin.CLIENT_AUTO_GENERATED);
   }
@@ -176,7 +176,7 @@ public final class Mutation implements MutationApi<Mutation>, Serializable {
       @Nonnull ByteString qualifier,
       long timestamp,
       @Nonnull ByteString value,
-      TimestampOrigin timestampOrigin) {
+      @Nonnull TimestampOrigin timestampOrigin) {
     Validations.validateFamily(familyName);
     Preconditions.checkNotNull(qualifier, "qualifier can't be null.");
     Preconditions.checkNotNull(value, "value can't be null.");
