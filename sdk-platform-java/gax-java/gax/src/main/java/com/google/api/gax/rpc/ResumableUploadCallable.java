@@ -30,7 +30,9 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.core.BetaApi;
+import com.google.common.base.Preconditions;
 import java.io.InputStream;
+import javax.annotation.Nullable;
 
 /**
  * A ResumableUploadCallable is an API-transport-independent wrapper for the Resumable Upload
@@ -40,29 +42,87 @@ import java.io.InputStream;
  * @param <ResponseT> response type
  */
 @BetaApi
-public abstract class ResumableUploadCallable<RequestT, ResponseT> {
+public class ResumableUploadCallable<RequestT, ResponseT> {
 
-  protected ResumableUploadCallable() {}
+  private final ResumableUploadClient resumableUploadClient;
+  @Nullable private final ResumableUploadCallSettings defaultCallSettings;
+
+  public ResumableUploadCallable(
+      ResumableUploadClient resumableUploadClient,
+      @Nullable ResumableUploadCallSettings defaultCallSettings) {
+    this.resumableUploadClient = Preconditions.checkNotNull(resumableUploadClient);
+    this.defaultCallSettings = defaultCallSettings;
+  }
+
+  public ResumableUploadCallable(ResumableUploadClient resumableUploadClient) {
+    this(resumableUploadClient, null);
+  }
 
   /**
    * Performs a new resumable upload asynchronously.
    *
    * @param request the request message
    * @param payload the data payload input stream
-   * @param settings call settings overrides; may be {@code null}
+   * @param perRequestSettings call settings overrides; may be {@code null}
+   * @param context call context overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
-  public abstract ResumableUploadFuture<ResponseT> futureCall(
-      RequestT request, InputStream payload, ResumableUploadCallSettings settings);
+  public ResumableUploadFuture<ResponseT> futureCall(
+      RequestT request,
+      InputStream payload,
+      ResumableUploadCallSettings perRequestSettings,
+      ApiCallContext context) {
+    Preconditions.checkNotNull(request);
+
+    ResumableUploadCallSettings activeSettings =
+        defaultCallSettings != null
+            ? defaultCallSettings.merge(perRequestSettings)
+            : perRequestSettings;
+
+    ResumableUploadFutureImpl<RequestT, ResponseT> future =
+        new ResumableUploadFutureImpl<>(
+            resumableUploadClient, request, payload, activeSettings, context);
+
+    future.start();
+    return future;
+  }
 
   /**
    * Resumes an existing resumable upload session asynchronously using a saved session URL.
    *
    * @param sessionUrl the upload session URL
    * @param payload the data payload input stream
-   * @param settings call settings overrides; may be {@code null}
+   * @param perRequestSettings call settings overrides; may be {@code null}
+   * @param context call context overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
-  public abstract ResumableUploadFuture<ResponseT> resumeCall(
-      String sessionUrl, InputStream payload, ResumableUploadCallSettings settings);
+  public ResumableUploadFuture<ResponseT> resumeCall(
+      String sessionUrl,
+      InputStream payload,
+      ResumableUploadCallSettings perRequestSettings,
+      ApiCallContext context) {
+    Preconditions.checkNotNull(sessionUrl);
+
+    ResumableUploadCallSettings activeSettings =
+        defaultCallSettings != null
+            ? defaultCallSettings.merge(perRequestSettings)
+            : perRequestSettings;
+
+    ResumableUploadFutureImpl<RequestT, ResponseT> future =
+        new ResumableUploadFutureImpl<>(
+            resumableUploadClient, sessionUrl, payload, activeSettings, context);
+
+    future.start();
+    return future;
+  }
+
+  public ResumableUploadFuture<ResponseT> futureCall(
+      RequestT request, InputStream payload, ResumableUploadCallSettings settings) {
+    return futureCall(request, payload, settings, null);
+  }
+
+  public ResumableUploadFuture<ResponseT> resumeCall(
+      String sessionUrl, InputStream payload, ResumableUploadCallSettings settings) {
+    return resumeCall(sessionUrl, payload, settings, null);
+  }
 }
