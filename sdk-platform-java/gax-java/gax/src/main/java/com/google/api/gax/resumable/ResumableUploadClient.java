@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.resumable;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.UnaryCallable;
 import org.jspecify.annotations.NullMarked;
@@ -40,9 +41,13 @@ import org.jspecify.annotations.NullMarked;
  * @param <ResponseT> response type of the upload operation
  */
 @NullMarked
+@BetaApi
 @InternalApi
 public interface ResumableUploadClient<RequestT, ResponseT> {
 
   /** Returns a {@link UnaryCallable} to initiate a resumable upload session. */
   UnaryCallable<RequestT, ResumableUploadSession> startUploadCallable();
+
+  /** Returns a {@link UnaryCallable} to transmit an individual chunk. */
+  UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable();
 }
