@@ -32,45 +32,44 @@ package com.google.api.gax.resumable;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
+import com.google.protobuf.ByteString;
 import org.jspecify.annotations.NullMarked;
 
-/** Represents the session metadata returned after starting a resumable upload. */
+/** Request value object for uploading a chunk to an active resumable upload session. */
 @NullMarked
 @BetaApi
 @InternalApi
 @AutoValue
-public abstract class ResumableUploadSession {
+public abstract class ChunkUploadRequest {
 
-  private static final long DEFAULT_CHUNK_GRANULARITY = 1L;
-
-  /** Returns the server-provided URL to which data uploads are directed. */
+  /** The upload session URL returned during session initialization. */
   public abstract String getUploadUrl();
 
-  /**
-   * Returns the server-mandated chunk granularity in bytes.
-   *
-   * <p>When specified by the server (via {@code X-Goog-Upload-Chunk-Granularity}), intermediate
-   * upload chunks must have a size and offset that are an exact multiple of this value (the final
-   * chunk may be smaller). If not specified by the server, this defaults to 1 byte, indicating no
-   * alignment or granularity requirements apply.
-   *
-   * @return the chunk granularity in bytes
-   */
-  public abstract long getChunkGranularity();
+  /** The binary chunk payload to upload. */
+  public abstract ByteString getPayload();
+
+  /** The byte offset of this chunk in the overall stream. */
+  public abstract long getOffset();
+
+  /** Whether this is the final chunk in the stream. */
+  public abstract boolean isFinal();
 
   public abstract Builder toBuilder();
 
   public static Builder newBuilder() {
-    return new AutoValue_ResumableUploadSession.Builder()
-        .setChunkGranularity(DEFAULT_CHUNK_GRANULARITY);
+    return new AutoValue_ChunkUploadRequest.Builder().setFinal(false);
   }
 
   @AutoValue.Builder
   public abstract static class Builder {
     public abstract Builder setUploadUrl(String uploadUrl);
 
-    public abstract Builder setChunkGranularity(long chunkGranularity);
+    public abstract Builder setPayload(ByteString payload);
 
-    public abstract ResumableUploadSession build();
+    public abstract Builder setOffset(long offset);
+
+    public abstract Builder setFinal(boolean isFinal);
+
+    public abstract ChunkUploadRequest build();
   }
 }

@@ -33,44 +33,37 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.auto.value.AutoValue;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
-/** Represents the session metadata returned after starting a resumable upload. */
+/**
+ * Response value object representing the outcome of a chunk upload.
+ *
+ * @param <ResponseT> response type of the upload operation
+ */
 @NullMarked
 @BetaApi
 @InternalApi
 @AutoValue
-public abstract class ResumableUploadSession {
-
-  private static final long DEFAULT_CHUNK_GRANULARITY = 1L;
-
-  /** Returns the server-provided URL to which data uploads are directed. */
-  public abstract String getUploadUrl();
+public abstract class ChunkUploadResponse<ResponseT> {
 
   /**
-   * Returns the server-mandated chunk granularity in bytes.
+   * The total number of bytes successfully received and committed by the server so far.
    *
-   * <p>When specified by the server (via {@code X-Goog-Upload-Chunk-Granularity}), intermediate
-   * upload chunks must have a size and offset that are an exact multiple of this value (the final
-   * chunk may be smaller). If not specified by the server, this defaults to 1 byte, indicating no
-   * alignment or granularity requirements apply.
-   *
-   * @return the chunk granularity in bytes
+   * <p>This value is the starting offset for the next chunk upload.
    */
-  public abstract long getChunkGranularity();
+  public abstract long getCommittedOffset();
 
-  public abstract Builder toBuilder();
+  /** Whether the overall resumable upload stream has finalized and completed on the server. */
+  public abstract boolean isComplete();
 
-  public static Builder newBuilder() {
-    return new AutoValue_ResumableUploadSession.Builder()
-        .setChunkGranularity(DEFAULT_CHUNK_GRANULARITY);
-  }
+  /**
+   * The response object returned by the server upon final completion (e.g. metadata of the uploaded
+   * resource), or {@code null} if the upload is still in progress.
+   */
+  public abstract @Nullable ResponseT getResponse();
 
-  @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder setUploadUrl(String uploadUrl);
-
-    public abstract Builder setChunkGranularity(long chunkGranularity);
-
-    public abstract ResumableUploadSession build();
+  public static <ResponseT> ChunkUploadResponse<ResponseT> create(
+      long committedOffset, boolean isComplete, @Nullable ResponseT response) {
+    return new AutoValue_ChunkUploadResponse<>(committedOffset, isComplete, response);
   }
 }
