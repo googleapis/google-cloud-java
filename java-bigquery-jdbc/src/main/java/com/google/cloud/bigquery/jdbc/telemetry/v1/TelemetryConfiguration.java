@@ -113,6 +113,10 @@ final class TelemetryConfiguration {
     return new Builder();
   }
 
+  static Builder builder() {
+    return new Builder();
+  }
+
   /** Builder for {@link TelemetryConfiguration}. */
   static class Builder {
     private boolean enabled = DEFAULT_ENABLED;

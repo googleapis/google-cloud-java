@@ -9,6 +9,8 @@ tools/**/*.class
 tools/**/drivers/**
 tools/**/logs/**
 tools/**/*.jfr
+tools/**/odbc/
+tools/**/native_odbc_perf
 
 # Gemini/Jetski agent custom skills
 .agents/
