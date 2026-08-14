@@ -43,6 +43,10 @@ public class FlowController {
   /** Base exception that signals a flow control state. */
   public abstract static class FlowControlException extends Exception {
     private FlowControlException() {}
+
+    protected FlowControlException(String message) {
+      super(message);
+    }
   }
 
   /**
@@ -68,22 +72,15 @@ public class FlowController {
     private final long currentMaxElementCount;
 
     public MaxOutstandingElementCountReachedException(long currentMaxElementCount) {
+      super(
+          String.format(
+              "The maximum number of batch elements: %d have been reached.",
+              currentMaxElementCount));
       this.currentMaxElementCount = currentMaxElementCount;
     }
 
     public long getCurrentMaxBatchElementCount() {
       return currentMaxElementCount;
-    }
-
-    @Override
-    public String getMessage() {
-      return String.format(
-          "The maximum number of batch elements: %d have been reached.", currentMaxElementCount);
-    }
-
-    @Override
-    public String toString() {
-      return getMessage();
     }
   }
 
@@ -96,22 +93,14 @@ public class FlowController {
     private final long currentMaxBytes;
 
     public MaxOutstandingRequestBytesReachedException(long currentMaxBytes) {
+      super(
+          String.format(
+              "The maximum number of batch bytes: %d have been reached.", currentMaxBytes));
       this.currentMaxBytes = currentMaxBytes;
     }
 
     public long getCurrentMaxBatchBytes() {
       return currentMaxBytes;
-    }
-
-    @Override
-    public String getMessage() {
-      return String.format(
-          "The maximum number of batch bytes: %d have been reached.", currentMaxBytes);
-    }
-
-    @Override
-    public String toString() {
-      return getMessage();
     }
   }
 
