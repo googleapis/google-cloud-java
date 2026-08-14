@@ -74,7 +74,7 @@ public class FlowController {
     public MaxOutstandingElementCountReachedException(long currentMaxElementCount) {
       super(
           String.format(
-              "The maximum number of batch elements: %d have been reached.",
+              "The maximum number of batch elements: %d has been reached.",
               currentMaxElementCount));
       this.currentMaxElementCount = currentMaxElementCount;
     }
