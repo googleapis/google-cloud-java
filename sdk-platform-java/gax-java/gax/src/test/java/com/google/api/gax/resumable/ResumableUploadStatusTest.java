@@ -27,43 +27,23 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.google.api.gax.rpc;
+package com.google.api.gax.resumable;
 
-import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
-import com.google.api.gax.resumable.ResumableUploadProgressListener;
-import com.google.api.gax.resumable.ResumableUploadStatus;
-import java.util.concurrent.Executor;
-import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
+import static com.google.common.truth.Truth.assertThat;
 
-/**
- * A specialized {@link ApiFuture} for tracking and controlling an in-flight resumable upload.
- *
- * @param <ResponseT> response type
- */
-@BetaApi
-@NullMarked
-public interface ResumableUploadFuture<ResponseT> extends ApiFuture<ResponseT> {
+import org.junit.jupiter.api.Test;
 
-  /** Returns the upload session URL, or {@code null} if session initiation is in progress. */
-  @Nullable String getUploadSessionUrl();
+class ResumableUploadStatusTest {
 
-  /** Returns the current status snapshot of the upload. */
-  ResumableUploadStatus getStatus();
-
-  /**
-   * Registers a listener for progress updates on the direct executor.
-   *
-   * @param listener the listener to receive progress updates
-   */
-  void addProgressListener(ResumableUploadProgressListener listener);
-
-  /**
-   * Registers a listener for progress updates on the specified executor.
-   *
-   * @param listener the listener to receive progress updates
-   * @param executor the executor on which to run the listener
-   */
-  void addProgressListener(ResumableUploadProgressListener listener, Executor executor);
+  @Test
+  void hasTotalBytes_evaluatesNonNegativeValues() {
+    assertThat(ResumableUploadStatus.newBuilder().setTotalBytes(-1L).build().hasTotalBytes())
+        .isFalse();
+    assertThat(ResumableUploadStatus.newBuilder().setTotalBytes(-100L).build().hasTotalBytes())
+        .isFalse();
+    assertThat(ResumableUploadStatus.newBuilder().setTotalBytes(0L).build().hasTotalBytes())
+        .isTrue();
+    assertThat(ResumableUploadStatus.newBuilder().setTotalBytes(1024L).build().hasTotalBytes())
+        .isTrue();
+  }
 }
