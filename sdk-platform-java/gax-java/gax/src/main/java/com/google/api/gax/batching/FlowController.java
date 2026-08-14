@@ -42,8 +42,6 @@ import org.jspecify.annotations.Nullable;
 public class FlowController {
   /** Base exception that signals a flow control state. */
   public abstract static class FlowControlException extends Exception {
-    private FlowControlException() {}
-
     private FlowControlException(String message) {
       super(message);
     }
@@ -72,10 +70,7 @@ public class FlowController {
     private final long currentMaxElementCount;
 
     public MaxOutstandingElementCountReachedException(long currentMaxElementCount) {
-      super(
-          String.format(
-              "The maximum number of batch elements: %d has been reached.",
-              currentMaxElementCount));
+      super("The maximum number of batch elements: " + currentMaxElementCount + " has been reached.");
       this.currentMaxElementCount = currentMaxElementCount;
     }
 
@@ -93,9 +88,7 @@ public class FlowController {
     private final long currentMaxBytes;
 
     public MaxOutstandingRequestBytesReachedException(long currentMaxBytes) {
-      super(
-          String.format(
-              "The maximum number of batch bytes: %d has been reached.", currentMaxBytes));
+      super("The maximum number of batch bytes: " + currentMaxBytes + " has been reached.");
       this.currentMaxBytes = currentMaxBytes;
     }
 
