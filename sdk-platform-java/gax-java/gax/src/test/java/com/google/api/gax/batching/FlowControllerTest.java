@@ -776,7 +776,7 @@ class FlowControllerTest {
   }
 
   @Test
-  void testExceptionGetMessage() {
+  public void testExceptionGetMessage() {
     FlowController.MaxOutstandingElementCountReachedException elementException =
         new FlowController.MaxOutstandingElementCountReachedException(100);
     assertThat(elementException.getMessage())
