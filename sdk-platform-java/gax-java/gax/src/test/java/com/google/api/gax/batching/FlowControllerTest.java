@@ -785,7 +785,7 @@ class FlowControllerTest {
     FlowController.MaxOutstandingRequestBytesReachedException bytesException =
         new FlowController.MaxOutstandingRequestBytesReachedException(500);
     assertThat(bytesException.getMessage())
-        .isEqualTo("The maximum number of batch bytes: 500 have been reached.");
+        .isEqualTo("The maximum number of batch bytes: 500 has been reached.");
   }
 }
 
