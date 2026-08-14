@@ -44,7 +44,7 @@ public class FlowController {
   public abstract static class FlowControlException extends Exception {
     private FlowControlException() {}
 
-    protected FlowControlException(String message) {
+    private FlowControlException(String message) {
       super(message);
     }
   }
