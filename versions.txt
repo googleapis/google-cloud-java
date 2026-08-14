@@ -1101,3 +1101,12 @@ google-maps-navconnect-bom:0.1.0:0.2.0-SNAPSHOT
 proto-google-maps-navconnect-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-maps-navconnect-v1:0.1.0:0.2.0-SNAPSHOT
 google-maps-navconnect:0.1.0:0.2.0-SNAPSHOT
+google-cloud-workloadidentity-parent:0.0.0:0.1.0-SNAPSHOT
+google-cloud-workloadidentity-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-cloud-workloadidentity-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-workloadidentity-v1:0.0.0:0.1.0-SNAPSHOT
+google-cloud-workloadidentity:0.0.0:0.1.0-SNAPSHOT
+google-cloud-ftp-parent:0.0.0:0.1.0-SNAPSHOT
+google-cloud-ftp-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-cloud-ftp-v1:0.0.0:0.1.0-SNAPSHOT
+google-cloud-ftp:0.0.0:0.1.0-SNAPSHOT

@@ -131,7 +131,19 @@ class ITBigQueryStorageReadClientTest {
   private static final int SHAKESPEARE_SAMPELS_ROWS_MORE_THAN_100_WORDS = 1_333;
   private static final int MAX_STREAM_COUNT = 1;
 
+  /**
+   * Primary client configured dynamically via Helper.createBigQueryReadClient(). Targets the
+   * endpoint under test (e.g., regional canary endpoint us-east7 in regional CI runs).
+   */
   private static BigQueryReadClient readClient;
+
+  /**
+   * Fallback client explicitly targeting the default global endpoint
+   * (bigquerystorage.googleapis.com). Used for tests accessing global public datasets
+   * (bigquery-public-data) or cross-region resources.
+   */
+  private static BigQueryReadClient globalReadClient;
+
   private static String projectName;
   private static String parentProjectId;
   private static BigQuery bigquery;
@@ -504,7 +516,8 @@ class ITBigQueryStorageReadClientTest {
 
   @BeforeAll
   static void beforeAll() throws IOException, DescriptorValidationException, InterruptedException {
-    readClient = com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadClient();
+    readClient = Helper.createBigQueryReadClient();
+    globalReadClient = Helper.isRegionalEndpoint() ? BigQueryReadClient.create() : readClient;
     projectName = ServiceOptions.getDefaultProjectId();
     parentProjectId = String.format("projects/%s", projectName);
 
@@ -515,10 +528,19 @@ class ITBigQueryStorageReadClientTest {
 
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
-    DatasetInfo datasetInfo =
-        DatasetInfo.newBuilder(/* datasetId bigquery= */ DATASET)
-            .setDescription(DESCRIPTION)
-            .build();
+    DatasetInfo datasetInfo;
+    if (Helper.isBigQueryRegionalEndpoint()) {
+      datasetInfo =
+          DatasetInfo.newBuilder(/* datasetId bigquery= */ DATASET)
+              .setDescription(DESCRIPTION)
+              .setLocation(Helper.getBigQueryRegion())
+              .build();
+    } else {
+      datasetInfo =
+          DatasetInfo.newBuilder(/* datasetId bigquery= */ DATASET)
+              .setDescription(DESCRIPTION)
+              .build();
+    }
     bigquery.create(datasetInfo);
     LOG.info("Created test dataset: " + DATASET);
 
@@ -588,6 +610,11 @@ class ITBigQueryStorageReadClientTest {
       readClient.awaitTermination(10, TimeUnit.SECONDS);
     }
 
+    if (globalReadClient != null && globalReadClient != readClient) {
+      globalReadClient.close();
+      globalReadClient.awaitTermination(10, TimeUnit.SECONDS);
+    }
+
     if (bigquery != null) {
       RemoteBigQueryHelper.forceDelete(bigquery, DATASET);
       LOG.info("Deleted test dataset: " + DATASET);
@@ -603,7 +630,7 @@ class ITBigQueryStorageReadClientTest {
             /* tableId= */ "shakespeare");
 
     ReadSession session =
-        readClient.createReadSession(
+        globalReadClient.createReadSession(
             /* parent= */ parentProjectId,
             /* readSession= */ ReadSession.newBuilder()
                 .setTable(table)
@@ -622,7 +649,8 @@ class ITBigQueryStorageReadClientTest {
         ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
 
     long rowCount = 0;
-    ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(readRowsRequest);
+    ServerStream<ReadRowsResponse> stream =
+        globalReadClient.readRowsCallable().call(readRowsRequest);
     for (ReadRowsResponse response : stream) {
       rowCount += response.getRowCount();
     }
@@ -639,7 +667,7 @@ class ITBigQueryStorageReadClientTest {
             /* tableId= */ "shakespeare");
 
     ReadSession session =
-        readClient.createReadSession(
+        globalReadClient.createReadSession(
             /* parent= */ parentProjectId,
             /* readSession= */ ReadSession.newBuilder()
                 .setTable(table)
@@ -668,7 +696,8 @@ class ITBigQueryStorageReadClientTest {
 
     long rowCount = 0;
     // Process each block of rows as they arrive and decode using our simple row reader.
-    ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(readRowsRequest);
+    ServerStream<ReadRowsResponse> stream =
+        globalReadClient.readRowsCallable().call(readRowsRequest);
     for (ReadRowsResponse response : stream) {
       Preconditions.checkState(response.hasArrowRecordBatch());
       rowCount += response.getRowCount();
@@ -947,7 +976,7 @@ class ITBigQueryStorageReadClientTest {
   }
 
   @Test
-  void testSimpleReadAndResume() {
+  void testSimpleReadAndResume() throws IOException {
     String table =
         BigQueryResource.formatTableResource(
             /* projectId= */ "bigquery-public-data",
@@ -955,7 +984,7 @@ class ITBigQueryStorageReadClientTest {
             /* tableId= */ "shakespeare");
 
     ReadSession session =
-        readClient.createReadSession(
+        globalReadClient.createReadSession(
             /* parent= */ parentProjectId,
             /* readSession= */ ReadSession.newBuilder()
                 .setTable(table)
@@ -970,7 +999,8 @@ class ITBigQueryStorageReadClientTest {
                 + " response:%n%s",
             table, session.toString()));
 
-    long rowCount = readStreamToOffset(session.getStreams(0), /* rowOffset= */ 34_846);
+    long rowCount =
+        readStreamToOffset(globalReadClient, session.getStreams(0), /* rowOffset= */ 34_846);
 
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder()
@@ -978,7 +1008,8 @@ class ITBigQueryStorageReadClientTest {
             .setOffset(rowCount)
             .build();
 
-    ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(readRowsRequest);
+    ServerStream<ReadRowsResponse> stream =
+        globalReadClient.readRowsCallable().call(readRowsRequest);
 
     for (ReadRowsResponse response : stream) {
       rowCount += response.getRowCount();
@@ -1012,7 +1043,7 @@ class ITBigQueryStorageReadClientTest {
                     .build())
             .build();
 
-    ReadSession session = readClient.createReadSession(request);
+    ReadSession session = globalReadClient.createReadSession(request);
     assertEquals(
         1,
         session.getStreamsCount(),
@@ -1029,7 +1060,8 @@ class ITBigQueryStorageReadClientTest {
 
     long rowCount = 0;
 
-    ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(readRowsRequest);
+    ServerStream<ReadRowsResponse> stream =
+        globalReadClient.readRowsCallable().call(readRowsRequest);
     for (ReadRowsResponse response : stream) {
       rowCount += response.getRowCount();
       reader.processRows(
@@ -1077,7 +1109,7 @@ class ITBigQueryStorageReadClientTest {
                     .build())
             .build();
 
-    ReadSession session = readClient.createReadSession(request);
+    ReadSession session = globalReadClient.createReadSession(request);
     assertEquals(
         1,
         session.getStreamsCount(),
@@ -1108,7 +1140,8 @@ class ITBigQueryStorageReadClientTest {
     SimpleRowReaderAvro reader = new SimpleRowReaderAvro(avroSchema);
 
     long rowCount = 0;
-    ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(readRowsRequest);
+    ServerStream<ReadRowsResponse> stream =
+        globalReadClient.readRowsCallable().call(readRowsRequest);
     for (ReadRowsResponse response : stream) {
       rowCount += response.getRowCount();
       reader.processRows(
@@ -1597,53 +1630,58 @@ class ITBigQueryStorageReadClientTest {
 
   @Test
   void testSimpleReadWithBackgroundExecutorProvider() throws IOException {
-    BigQueryReadSettings bigQueryReadSettings =
-        com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadSettingsBuilder()
+    BigQueryReadSettings.Builder settingsBuilder =
+        Helper.createBigQueryReadSettingsBuilder()
             .setBackgroundExecutorProvider(
-                InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(14).build())
-            .build();
-    // Overriding the default client
-    readClient = BigQueryReadClient.create(bigQueryReadSettings);
-    assertTrue(
-        readClient.getStub().getStubSettings().getBackgroundExecutorProvider()
-            instanceof InstantiatingExecutorProvider);
-    assertEquals(
-        14,
-        ((InstantiatingExecutorProvider)
-                readClient.getStub().getStubSettings().getBackgroundExecutorProvider())
-            .getExecutorThreadCount());
-    String table =
-        BigQueryResource.formatTableResource(
-            /* projectId= */ "bigquery-public-data",
-            /* datasetId= */ "samples",
-            /* tableId= */ "shakespeare");
-
-    ReadSession session =
-        readClient.createReadSession(
-            /* parent= */ parentProjectId,
-            /* readSession= */ ReadSession.newBuilder()
-                .setTable(table)
-                .setDataFormat(DataFormat.AVRO)
-                .build(),
-            /* maxStreamCount= */ 1);
-    assertEquals(
-        1,
-        session.getStreamsCount(),
-        String.format(
-            "Did not receive expected number of streams for table '%s' CreateReadSession"
-                + " response:%n%s",
-            table, session.toString()));
-
-    ReadRowsRequest readRowsRequest =
-        ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
-
-    long rowCount = 0;
-    ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(readRowsRequest);
-    for (ReadRowsResponse response : stream) {
-      rowCount += response.getRowCount();
+                InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(14).build());
+    if (Helper.isRegionalEndpoint()) {
+      settingsBuilder.setEndpoint(BigQueryReadSettings.getDefaultEndpoint());
     }
+    BigQueryReadClient localClient = BigQueryReadClient.create(settingsBuilder.build());
+    try {
+      assertTrue(
+          localClient.getStub().getStubSettings().getBackgroundExecutorProvider()
+              instanceof InstantiatingExecutorProvider);
+      assertEquals(
+          14,
+          ((InstantiatingExecutorProvider)
+                  localClient.getStub().getStubSettings().getBackgroundExecutorProvider())
+              .getExecutorThreadCount());
+      String table =
+          BigQueryResource.formatTableResource(
+              /* projectId= */ "bigquery-public-data",
+              /* datasetId= */ "samples",
+              /* tableId= */ "shakespeare");
 
-    assertEquals(SHAKESPEARE_SAMPLE_ROW_COUNT, rowCount);
+      ReadSession session =
+          localClient.createReadSession(
+              /* parent= */ parentProjectId,
+              /* readSession= */ ReadSession.newBuilder()
+                  .setTable(table)
+                  .setDataFormat(DataFormat.AVRO)
+                  .build(),
+              /* maxStreamCount= */ 1);
+      assertEquals(
+          1,
+          session.getStreamsCount(),
+          String.format(
+              "Did not receive expected number of streams for table '%s' CreateReadSession"
+                  + " response:%n%s",
+              table, session.toString()));
+
+      ReadRowsRequest readRowsRequest =
+          ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
+
+      long rowCount = 0;
+      ServerStream<ReadRowsResponse> stream = localClient.readRowsCallable().call(readRowsRequest);
+      for (ReadRowsResponse response : stream) {
+        rowCount += response.getRowCount();
+      }
+
+      assertEquals(SHAKESPEARE_SAMPLE_ROW_COUNT, rowCount);
+    } finally {
+      localClient.close();
+    }
   }
 
   @Test
@@ -1722,33 +1760,35 @@ class ITBigQueryStorageReadClientTest {
     BigQueryReadSettings bigQueryReadSettings =
         BigQueryReadSettings.newBuilder().setUniverseDomain("googleapis.com").build();
     BigQueryReadClient localClient = BigQueryReadClient.create(bigQueryReadSettings);
+    try {
+      String table =
+          BigQueryResource.formatTableResource(
+              /* projectId= */ "bigquery-public-data",
+              /* datasetId= */ "samples",
+              /* tableId= */ "shakespeare");
 
-    String table =
-        BigQueryResource.formatTableResource(
-            /* projectId= */ "bigquery-public-data",
-            /* datasetId= */ "samples",
-            /* tableId= */ "shakespeare");
+      ReadSession session =
+          localClient.createReadSession(
+              /* parent= */ parentProjectId,
+              /* readSession= */ ReadSession.newBuilder()
+                  .setTable(table)
+                  .setDataFormat(DataFormat.AVRO)
+                  .build(),
+              /* maxStreamCount= */ 1);
 
-    ReadSession session =
-        localClient.createReadSession(
-            /* parent= */ parentProjectId,
-            /* readSession= */ ReadSession.newBuilder()
-                .setTable(table)
-                .setDataFormat(DataFormat.AVRO)
-                .build(),
-            /* maxStreamCount= */ 1);
+      ReadRowsRequest readRowsRequest =
+          ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
 
-    ReadRowsRequest readRowsRequest =
-        ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
+      long rowCount = 0;
+      ServerStream<ReadRowsResponse> stream = localClient.readRowsCallable().call(readRowsRequest);
+      for (ReadRowsResponse response : stream) {
+        rowCount += response.getRowCount();
+      }
 
-    long rowCount = 0;
-    ServerStream<ReadRowsResponse> stream = readClient.readRowsCallable().call(readRowsRequest);
-    for (ReadRowsResponse response : stream) {
-      rowCount += response.getRowCount();
+      assertEquals(SHAKESPEARE_SAMPLE_ROW_COUNT, rowCount);
+    } finally {
+      localClient.close();
     }
-
-    assertEquals(SHAKESPEARE_SAMPLE_ROW_COUNT, rowCount);
-    localClient.close();
   }
 
   @Test
@@ -1760,62 +1800,68 @@ class ITBigQueryStorageReadClientTest {
             .build();
     OpenTelemetry otel = OpenTelemetrySdk.builder().setTracerProvider(tracerProvider).build();
 
-    BigQueryReadSettings otelSettings =
-        com.google.cloud.bigquery.storage.v1.it.util.Helper.createBigQueryReadSettingsBuilder()
+    BigQueryReadSettings.Builder otelSettingsBuilder =
+        Helper.createBigQueryReadSettingsBuilder()
             .setEnableOpenTelemetryTracing(true)
-            .setOpenTelemetryTracerProvider(tracerProvider)
-            .build();
-    BigQueryReadClient otelClient = BigQueryReadClient.create(otelSettings);
+            .setOpenTelemetryTracerProvider(tracerProvider);
+    if (Helper.isRegionalEndpoint()) {
+      otelSettingsBuilder.setEndpoint(BigQueryReadSettings.getDefaultEndpoint());
+    }
+    BigQueryReadClient otelClient = BigQueryReadClient.create(otelSettingsBuilder.build());
+    try {
+      String table =
+          BigQueryResource.formatTableResource(
+              /* projectId= */ "bigquery-public-data",
+              /* datasetId= */ "samples",
+              /* tableId= */ "shakespeare");
 
-    String table =
-        BigQueryResource.formatTableResource(
-            /* projectId= */ "bigquery-public-data",
-            /* datasetId= */ "samples",
-            /* tableId= */ "shakespeare");
+      ReadSession session =
+          otelClient.createReadSession(
+              /* parent= */ parentProjectId,
+              /* readSession= */ ReadSession.newBuilder()
+                  .setTable(table)
+                  .setDataFormat(DataFormat.AVRO)
+                  .build(),
+              /* maxStreamCount= */ 1);
 
-    ReadSession session =
-        otelClient.createReadSession(
-            /* parent= */ parentProjectId,
-            /* readSession= */ ReadSession.newBuilder()
-                .setTable(table)
-                .setDataFormat(DataFormat.AVRO)
-                .build(),
-            /* maxStreamCount= */ 1);
+      ReadRowsRequest readRowsRequest =
+          ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
 
-    ReadRowsRequest readRowsRequest =
-        ReadRowsRequest.newBuilder().setReadStream(session.getStreams(0).getName()).build();
+      ServerStream<ReadRowsResponse> stream = otelClient.readRowsCallable().call(readRowsRequest);
 
-    ServerStream<ReadRowsResponse> stream = otelClient.readRowsCallable().call(readRowsRequest);
+      assertNotNull(
+          OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.createReadSession"));
+      assertNotNull(
+          OTEL_ATTRIBUTES.get(
+              "com.google.cloud.bigquery.storage.v1.read.createReadSessionCallable"));
+      assertNotNull(
+          OTEL_ATTRIBUTES.get(
+              "com.google.cloud.bigquery.storage.v1.read.stub.createReadSessionCallable"));
+      assertNotNull(
+          OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.readRowsCallable"));
+      assertNotNull(
+          OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.stub.readRowsCallable"));
 
-    assertNotNull(
-        OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.createReadSession"));
-    assertNotNull(
-        OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.createReadSessionCallable"));
-    assertNotNull(
-        OTEL_ATTRIBUTES.get(
-            "com.google.cloud.bigquery.storage.v1.read.stub.createReadSessionCallable"));
-    assertNotNull(
-        OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.readRowsCallable"));
-    assertNotNull(
-        OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.stub.readRowsCallable"));
+      // createReadSession is the parent span of createReadSessionCallable
+      assertEquals(
+          "com.google.cloud.bigquery.storage.v1.read.createReadSession",
+          OTEL_SPAN_IDS_TO_NAMES.get(
+              OTEL_PARENT_SPAN_IDS.get(
+                  "com.google.cloud.bigquery.storage.v1.read.createReadSessionCallable")));
 
-    // createReadSession is the parent span of createReadSessionCallable
-    assertEquals(
-        "com.google.cloud.bigquery.storage.v1.read.createReadSession",
-        OTEL_SPAN_IDS_TO_NAMES.get(
-            OTEL_PARENT_SPAN_IDS.get(
-                "com.google.cloud.bigquery.storage.v1.read.createReadSessionCallable")));
-
-    Map<AttributeKey<?>, Object> createReadSessionMap =
-        OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.createReadSession");
-    assertNotNull(createReadSessionMap);
-    assertNotNull(
-        createReadSessionMap.get(
-            AttributeKey.longKey("bq.storage.read_session.request.max_stream_count")));
-    assertEquals(
-        1L,
-        createReadSessionMap.get(
-            AttributeKey.longKey("bq.storage.read_session.request.max_stream_count")));
+      Map<AttributeKey<?>, Object> createReadSessionMap =
+          OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.storage.v1.read.createReadSession");
+      assertNotNull(createReadSessionMap);
+      assertNotNull(
+          createReadSessionMap.get(
+              AttributeKey.longKey("bq.storage.read_session.request.max_stream_count")));
+      assertEquals(
+          1L,
+          createReadSessionMap.get(
+              AttributeKey.longKey("bq.storage.read_session.request.max_stream_count")));
+    } finally {
+      otelClient.close();
+    }
   }
 
   void testUniverseDomain() throws IOException {
@@ -1862,13 +1908,13 @@ class ITBigQueryStorageReadClientTest {
    * @param rowOffset
    * @return the number of requested rows to skip or the total rows read if stream had less rows.
    */
-  private long readStreamToOffset(ReadStream readStream, long rowOffset) {
+  private long readStreamToOffset(
+      BigQueryReadClient client, ReadStream readStream, long rowOffset) {
     ReadRowsRequest readRowsRequest =
         ReadRowsRequest.newBuilder().setReadStream(readStream.getName()).build();
 
     long rowCount = 0;
-    ServerStream<ReadRowsResponse> serverStream =
-        readClient.readRowsCallable().call(readRowsRequest);
+    ServerStream<ReadRowsResponse> serverStream = client.readRowsCallable().call(readRowsRequest);
 
     for (ReadRowsResponse response : serverStream) {
       rowCount += response.getRowCount();

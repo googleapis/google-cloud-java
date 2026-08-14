@@ -211,11 +211,63 @@ public class Helper {
    */
   public static BigQueryReadSettings.Builder createBigQueryReadSettingsBuilder() {
     BigQueryReadSettings.Builder builder = BigQueryReadSettings.newBuilder();
-    String endpoint = System.getenv("BIGQUERY_STORAGE_ENDPOINT");
+    String endpoint =
+        System.getProperty("bigquery.storage.endpoint", System.getenv("BIGQUERY_STORAGE_ENDPOINT"));
     if (endpoint != null) {
       builder.setEndpoint(endpoint);
     }
     return builder;
+  }
+
+  /** Extracts the region name from the BigQuery endpoint, or returns null if not regional. */
+  public static String getBigQueryRegion() {
+    String endpoint = System.getProperty("bigquery.endpoint", System.getenv("BIGQUERY_ENDPOINT"));
+    if (endpoint == null) {
+      return null;
+    }
+    if (endpoint.contains("-bigquery.googleapis.com")) {
+      int start = endpoint.indexOf("https://");
+      start = (start == -1) ? 0 : start + 8;
+      int end = endpoint.indexOf("-bigquery.googleapis.com");
+      return endpoint.substring(start, end);
+    }
+    if (endpoint.contains(".rep.googleapis.com") && endpoint.contains("bigquery.")) {
+      int start = endpoint.indexOf("bigquery.") + 9;
+      int end = endpoint.indexOf(".rep.googleapis.com");
+      return endpoint.substring(start, end);
+    }
+    return null;
+  }
+
+  /**
+   * Extracts the region name from the BigQuery Storage endpoint, or returns null if not regional.
+   */
+  public static String getBigQueryStorageRegion() {
+    String endpoint =
+        System.getProperty("bigquery.storage.endpoint", System.getenv("BIGQUERY_STORAGE_ENDPOINT"));
+    if (endpoint == null) {
+      return null;
+    }
+    if (endpoint.contains("-bigquerystorage.googleapis.com")) {
+      int end = endpoint.indexOf("-bigquerystorage.googleapis.com");
+      return endpoint.substring(0, end);
+    }
+    if (endpoint.contains(".rep.googleapis.com") && endpoint.contains("bigquerystorage.")) {
+      int start = endpoint.indexOf("bigquerystorage.") + 16;
+      int end = endpoint.indexOf(".rep.googleapis.com");
+      return endpoint.substring(start, end);
+    }
+    return null;
+  }
+
+  /** Helper to check if the BQ Storage client is configured to target a regional endpoint. */
+  public static boolean isRegionalEndpoint() {
+    return getBigQueryStorageRegion() != null;
+  }
+
+  /** Helper to check if the BigQuery API client is configured to target a regional endpoint. */
+  public static boolean isBigQueryRegionalEndpoint() {
+    return getBigQueryRegion() != null;
   }
 
   /**
@@ -231,7 +283,8 @@ public class Helper {
    */
   public static BigQueryWriteSettings.Builder createBigQueryWriteSettingsBuilder() {
     BigQueryWriteSettings.Builder builder = BigQueryWriteSettings.newBuilder();
-    String endpoint = System.getenv("BIGQUERY_STORAGE_ENDPOINT");
+    String endpoint =
+        System.getProperty("bigquery.storage.endpoint", System.getenv("BIGQUERY_STORAGE_ENDPOINT"));
     if (endpoint != null) {
       builder.setEndpoint(endpoint);
     }
