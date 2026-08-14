@@ -29,48 +29,38 @@
  */
 package com.google.api.gax.resumable;
 
-import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
-import com.google.auto.value.AutoValue;
-import org.jspecify.annotations.NullMarked;
+import static com.google.common.truth.Truth.assertThat;
 
-/** Represents the session metadata returned after starting a resumable upload. */
-@NullMarked
-@BetaApi
-@InternalApi
-@AutoValue
-public abstract class ResumableUploadSession {
+import java.nio.charset.StandardCharsets;
+import org.junit.jupiter.api.Test;
 
-  private static final long DEFAULT_CHUNK_GRANULARITY = 1L;
+class ChunkUploadRequestTest {
 
-  /** Returns the server-provided URL to which data uploads are directed. */
-  public abstract String getUploadUrl();
+  @Test
+  void builder_defaultIsFinalFalse() {
+    byte[] payload = "test-payload".getBytes(StandardCharsets.UTF_8);
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl("https://upload.example.com/session/1")
+            .setPayload(payload)
+            .setOffset(0L)
+            .build();
 
-  /**
-   * Returns the server-mandated chunk granularity in bytes.
-   *
-   * <p>When specified by the server (via {@code X-Goog-Upload-Chunk-Granularity}), intermediate
-   * upload chunks must have a size and offset that are an exact multiple of this value (the final
-   * chunk may be smaller). If not specified by the server, this defaults to 1 byte, indicating no
-   * alignment or granularity requirements apply.
-   *
-   * @return the chunk granularity in bytes
-   */
-  public abstract long getChunkGranularity();
-
-  public abstract Builder toBuilder();
-
-  public static Builder newBuilder() {
-    return new AutoValue_ResumableUploadSession.Builder()
-        .setChunkGranularity(DEFAULT_CHUNK_GRANULARITY);
+    assertThat(request.isFinal()).isFalse();
+    assertThat(request.getPayload()).isEqualTo(payload);
   }
 
-  @AutoValue.Builder
-  public abstract static class Builder {
-    public abstract Builder setUploadUrl(String uploadUrl);
+  @Test
+  void builder_explicitIsFinalTrue_preservesValue() {
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl("https://upload.example.com/session/1")
+            .setPayload(new byte[0])
+            .setOffset(1024L)
+            .setFinal(true)
+            .build();
 
-    public abstract Builder setChunkGranularity(long chunkGranularity);
-
-    public abstract ResumableUploadSession build();
+    assertThat(request.isFinal()).isTrue();
+    assertThat(request.getPayload()).isEmpty();
   }
 }
