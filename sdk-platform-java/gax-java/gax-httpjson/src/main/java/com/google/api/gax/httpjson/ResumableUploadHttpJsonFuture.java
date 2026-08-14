@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -27,29 +27,37 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 package com.google.api.gax.httpjson;
 
+import com.google.api.core.AbstractApiFuture;
+import com.google.api.core.ApiFuture;
 import org.jspecify.annotations.NullMarked;
-import org.jspecify.annotations.Nullable;
 
 /**
- * HTTP status code in RuntimeException form, for propagating status code information via
- * exceptions.
+ * An {@link ApiFuture} that cancels the underlying {@link HttpJsonClientCall} upon cancellation to
+ * prevent connection leaks.
  */
 @NullMarked
-public class HttpJsonStatusRuntimeException extends RuntimeException {
-  private static final long serialVersionUID = -5390915748330242256L;
+class ResumableUploadHttpJsonFuture<T> extends AbstractApiFuture<T> {
 
-  private final int statusCode;
+  private final HttpJsonClientCall<?, ?> call;
 
-  public HttpJsonStatusRuntimeException(
-      int statusCode, @Nullable String message, @Nullable Throwable cause) {
-    super(message, cause);
-    this.statusCode = statusCode;
+  ResumableUploadHttpJsonFuture(HttpJsonClientCall<?, ?> call) {
+    this.call = call;
   }
 
-  public int getStatusCode() {
-    return statusCode;
+  @Override
+  protected void interruptTask() {
+    call.cancel("Call was cancelled", null);
+  }
+
+  @Override
+  public boolean set(T value) {
+    return super.set(value);
+  }
+
+  @Override
+  public boolean setException(Throwable throwable) {
+    return super.setException(throwable);
   }
 }
