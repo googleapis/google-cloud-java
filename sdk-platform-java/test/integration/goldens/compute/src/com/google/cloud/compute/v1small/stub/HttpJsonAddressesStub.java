@@ -161,7 +161,6 @@ public class HttpJsonAddressesStub extends AddressesStub {
                     .setDone(Status.DONE.equals(response.getStatus()))
                     .setResponse(response)
                     .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
-                    .setErrorParser(new ComputeLroErrorParser())
                     .build();
               })
           .build();
@@ -214,7 +213,6 @@ public class HttpJsonAddressesStub extends AddressesStub {
                     .setDone(Status.DONE.equals(response.getStatus()))
                     .setResponse(response)
                     .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
-                    .setErrorParser(new ComputeLroErrorParser())
                     .build();
               })
           .build();
