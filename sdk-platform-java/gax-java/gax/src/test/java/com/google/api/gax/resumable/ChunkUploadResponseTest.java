@@ -29,18 +29,18 @@
  */
 package com.google.api.gax.resumable;
 
-import com.google.api.core.InternalApi;
-import com.google.api.gax.rpc.UnaryCallable;
-import org.jspecify.annotations.NullMarked;
+import static com.google.common.truth.Truth.assertThat;
 
-/** Client interface for executing low-level resumable upload operations. */
-@NullMarked
-@InternalApi
-public interface ResumableUploadClient {
+import org.junit.jupiter.api.Test;
 
-  /** Returns a {@link UnaryCallable} to initiate a resumable upload session. */
-  UnaryCallable<StartUploadRequest, ResumableUploadSession> startUploadCallable();
+class ChunkUploadResponseTest {
 
-  /** Returns a {@link UnaryCallable} to transmit an individual chunk. */
-  UnaryCallable<ChunkUploadRequest, ChunkUploadResponse> uploadChunkCallable();
+  @Test
+  void create_defaultResponseBodyIsEmptyAndCompleteIsFalse() {
+    ChunkUploadResponse response = ChunkUploadResponse.create(1024L, false);
+
+    assertThat(response.getCommittedOffset()).isEqualTo(1024L);
+    assertThat(response.isComplete()).isFalse();
+    assertThat(response.getResponseBody()).isEmpty();
+  }
 }

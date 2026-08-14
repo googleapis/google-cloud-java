@@ -29,18 +29,39 @@
  */
 package com.google.api.gax.resumable;
 
-import com.google.api.core.InternalApi;
-import com.google.api.gax.rpc.UnaryCallable;
-import org.jspecify.annotations.NullMarked;
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-/** Client interface for executing low-level resumable upload operations. */
-@NullMarked
-@InternalApi
-public interface ResumableUploadClient {
+import com.google.protobuf.ByteString;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
-  /** Returns a {@link UnaryCallable} to initiate a resumable upload session. */
-  UnaryCallable<StartUploadRequest, ResumableUploadSession> startUploadCallable();
+class ChunkUploadRequestTest {
 
-  /** Returns a {@link UnaryCallable} to transmit an individual chunk. */
-  UnaryCallable<ChunkUploadRequest, ChunkUploadResponse> uploadChunkCallable();
+  private static final String UPLOAD_URL = "https://upload.googleapis.com/resumable/session/123";
+  private static final ByteString PAYLOAD = ByteString.copyFromUtf8("chunk data");
+
+  @Test
+  void create_defaultIsFinalIsFalse() {
+    ChunkUploadRequest request = ChunkUploadRequest.create(UPLOAD_URL, PAYLOAD, 1024L);
+
+    assertThat(request.isFinal()).isFalse();
+  }
+
+  @ParameterizedTest
+  @ValueSource(longs = {-1L, -100L, Long.MIN_VALUE})
+  void builder_withNegativeOffset_throwsIllegalArgumentException(long negativeOffset) {
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                ChunkUploadRequest.newBuilder()
+                    .setUploadUrl(UPLOAD_URL)
+                    .setPayload(PAYLOAD)
+                    .setOffset(negativeOffset)
+                    .build());
+
+    assertThat(exception).hasMessageThat().contains("offset must be non-negative");
+  }
 }
