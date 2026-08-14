@@ -86,8 +86,11 @@ final class ArrowDeserializer {
    * @throws IOException if deserialization of the Arrow schema fails
    */
   static Object deserializeSchema(byte[] schemaBytes) throws IOException {
-    return MessageSerializer.deserializeSchema(
-        new ReadChannel(new ByteArrayReadableSeekableByteChannel(schemaBytes)));
+    try (ByteArrayReadableSeekableByteChannel byteChannel =
+            new ByteArrayReadableSeekableByteChannel(schemaBytes);
+        ReadChannel readChannel = new ReadChannel(byteChannel)) {
+      return MessageSerializer.deserializeSchema(readChannel);
+    }
   }
 
   /**
@@ -122,11 +125,29 @@ final class ArrowDeserializer {
   }
 
   /**
+   * Resolves an Apache Arrow Schema from either an in-memory Schema POJO or a serialized JSON
+   * string.
+   *
+   * @param arrowSchema the Arrow schema POJO or JSON string representation
+   * @return the resolved Apache Arrow Schema, or null if schema cannot be resolved
+   * @throws IOException if parsing JSON fails
+   */
+  private static org.apache.arrow.vector.types.pojo.Schema resolveArrowSchema(Object arrowSchema)
+      throws IOException {
+    if (arrowSchema instanceof org.apache.arrow.vector.types.pojo.Schema) {
+      return (org.apache.arrow.vector.types.pojo.Schema) arrowSchema;
+    }
+    if (arrowSchema instanceof String) {
+      return org.apache.arrow.vector.types.pojo.Schema.fromJSON((String) arrowSchema);
+    }
+    return null;
+  }
+
+  /**
    * Reads and decodes a batch of Arrow rows from the provided stream iterator into the row batch.
    *
    * @param iterator the stream iterator providing ReadRowsResponse messages
-   * @param arrowSchemaPojo the Arrow schema pojo (or null if restoring from json)
-   * @param arrowSchemaJson the Arrow schema JSON representation
+   * @param arrowSchema the Arrow schema POJO or serialized JSON representation
    * @param schema the BigQuery target Schema
    * @param rowBatch the destination list for decoded rows
    * @param pageSize the maximum number of rows to decode in this batch
@@ -137,28 +158,24 @@ final class ArrowDeserializer {
    */
   static boolean loadArrowRows(
       Iterator<ReadRowsResponse> iterator,
-      Object arrowSchemaPojo,
-      String arrowSchemaJson,
+      Object arrowSchema,
       Schema schema,
       List<FieldValueList> rowBatch,
       long pageSize,
       long totalRowsReturned,
       long maxResults)
       throws IOException {
-    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
-        arrowSchemaPojo instanceof org.apache.arrow.vector.types.pojo.Schema
-            ? (org.apache.arrow.vector.types.pojo.Schema) arrowSchemaPojo
-            : (arrowSchemaJson != null
-                ? org.apache.arrow.vector.types.pojo.Schema.fromJSON(arrowSchemaJson)
-                : null);
+    org.apache.arrow.vector.types.pojo.Schema resolvedSchema = resolveArrowSchema(arrowSchema);
 
-    if (arrowSchema == null) {
+    if (resolvedSchema == null) {
       return false;
     }
 
+    org.apache.arrow.vector.types.pojo.Schema arrowSchemaFinal = resolvedSchema;
+
     try (BufferAllocator childAllocator =
             AllocatorHolder.ALLOCATOR.newChildAllocator("loadArrowRows", 0, Long.MAX_VALUE);
-        VectorSchemaRoot closedRoot = createVectorSchemaRoot(arrowSchema, childAllocator)) {
+        VectorSchemaRoot closedRoot = createVectorSchemaRoot(arrowSchemaFinal, childAllocator)) {
       VectorLoader loader = new VectorLoader(closedRoot);
       boolean hasMore = false;
       while (rowBatch.size() < pageSize

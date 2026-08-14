@@ -214,14 +214,7 @@ public class ArrowDeserializerTest {
       List<FieldValueList> rowBatch = new ArrayList<>();
       boolean hasMore =
           ArrowDeserializer.loadArrowRows(
-              Arrays.asList(r1, r2).iterator(),
-              arrowSchema,
-              null,
-              bqSchema,
-              rowBatch,
-              10L,
-              0L,
-              10L);
+              Arrays.asList(r1, r2).iterator(), arrowSchema, bqSchema, rowBatch, 10L, 0L, 10L);
 
       assertFalse(hasMore);
       assertEquals(4, rowBatch.size());
@@ -246,7 +239,7 @@ public class ArrowDeserializerTest {
       List<FieldValueList> rowBatch = new ArrayList<>();
       boolean hasMore =
           ArrowDeserializer.loadArrowRows(
-              Arrays.asList(r1, r2).iterator(), arrowSchema, null, bqSchema, rowBatch, 2L, 0L, 10L);
+              Arrays.asList(r1, r2).iterator(), arrowSchema, bqSchema, rowBatch, 2L, 0L, 10L);
 
       assertTrue(hasMore);
       assertEquals(2, rowBatch.size());
@@ -269,7 +262,7 @@ public class ArrowDeserializerTest {
       List<FieldValueList> rowBatch = new ArrayList<>();
       boolean hasMore =
           ArrowDeserializer.loadArrowRows(
-              Arrays.asList(r1, r2).iterator(), arrowSchema, null, bqSchema, rowBatch, 10L, 0L, 3L);
+              Arrays.asList(r1, r2).iterator(), arrowSchema, bqSchema, rowBatch, 10L, 0L, 3L);
 
       assertFalse(hasMore);
       assertEquals(3, rowBatch.size());
@@ -294,7 +287,7 @@ public class ArrowDeserializerTest {
       List<FieldValueList> rowBatch = new ArrayList<>();
       boolean hasMore =
           ArrowDeserializer.loadArrowRows(
-              Arrays.asList(r1).iterator(), arrowSchema, null, bqSchema, rowBatch, 2L, 0L, 10L);
+              Arrays.asList(r1).iterator(), arrowSchema, bqSchema, rowBatch, 2L, 0L, 10L);
 
       assertTrue(hasMore);
       assertEquals(2, rowBatch.size());
@@ -309,7 +302,6 @@ public class ArrowDeserializerTest {
     boolean hasMore =
         ArrowDeserializer.loadArrowRows(
             Arrays.<ReadRowsResponse>asList().iterator(),
-            null,
             null,
             Schema.of(),
             rowBatch,
