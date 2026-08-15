@@ -109,12 +109,12 @@ public final class DataSourceProto extends com.google.protobuf.GeneratedFile {
           + "\016FITBIT_WEB_API\020\005\022\010\n"
           + "\004NEST\020\006\022\022\n"
           + "\016GOOGLE_WEB_API\020\007\022\036\n"
-          + "\032GOOGLE_PARTNER_INTEGRATION\020\010B\205\002\n"
+          + "\032GOOGLE_PARTNER_INTEGRATION\020\010B\201\002\n"
           + "\'com.google.devicesandservices.health.v4B\017Da"
-          + "taSourceProtoP\001ZRgoogle.golang.org/genproto/googleapis/devicesandservices/health"
-          + "/apiv4main;healthpb\252\002#Google.DevicesAndS"
-          + "ervices.Health.V4\312\002#Google\\DevicesAndSer"
-          + "vices\\Health\\V4\352\002&Google::DevicesAndServices::Health::V4b\006proto3"
+          + "taSourceProtoP\001ZNgoogle.golang.org/genproto/googleapis/devicesandservices/health"
+          + "/apiv4;healthpb\252\002#Google.DevicesAndServi"
+          + "ces.Health.V4\312\002#Google\\DevicesAndService"
+          + "s\\Health\\V4\352\002&Google::DevicesAndServices::Health::V4b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

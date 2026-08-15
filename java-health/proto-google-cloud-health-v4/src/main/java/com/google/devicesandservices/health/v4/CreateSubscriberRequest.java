@@ -83,8 +83,8 @@ public final class CreateSubscriberRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The parent resource where this subscriber will be created.
-   * Format: projects/{project}
-   * Example: projects/my-project-123
+   * Format: projects/{project_number}
+   * Example: projects/1234567890
    * </pre>
    *
    * <code>
@@ -111,8 +111,8 @@ public final class CreateSubscriberRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The parent resource where this subscriber will be created.
-   * Format: projects/{project}
-   * Example: projects/my-project-123
+   * Format: projects/{project_number}
+   * Example: projects/1234567890
    * </pre>
    *
    * <code>
@@ -646,8 +646,8 @@ public final class CreateSubscriberRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent resource where this subscriber will be created.
-     * Format: projects/{project}
-     * Example: projects/my-project-123
+     * Format: projects/{project_number}
+     * Example: projects/1234567890
      * </pre>
      *
      * <code>
@@ -673,8 +673,8 @@ public final class CreateSubscriberRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent resource where this subscriber will be created.
-     * Format: projects/{project}
-     * Example: projects/my-project-123
+     * Format: projects/{project_number}
+     * Example: projects/1234567890
      * </pre>
      *
      * <code>
@@ -700,8 +700,8 @@ public final class CreateSubscriberRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent resource where this subscriber will be created.
-     * Format: projects/{project}
-     * Example: projects/my-project-123
+     * Format: projects/{project_number}
+     * Example: projects/1234567890
      * </pre>
      *
      * <code>
@@ -726,8 +726,8 @@ public final class CreateSubscriberRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent resource where this subscriber will be created.
-     * Format: projects/{project}
-     * Example: projects/my-project-123
+     * Format: projects/{project_number}
+     * Example: projects/1234567890
      * </pre>
      *
      * <code>
@@ -748,8 +748,8 @@ public final class CreateSubscriberRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The parent resource where this subscriber will be created.
-     * Format: projects/{project}
-     * Example: projects/my-project-123
+     * Format: projects/{project_number}
+     * Example: projects/1234567890
      * </pre>
      *
      * <code>

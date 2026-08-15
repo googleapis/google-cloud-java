@@ -86,8 +86,6 @@ public interface SettingsOrBuilder
    *
    * <pre>
    * Optional. The measurement unit defined in the user's account settings.
-   *
-   * Updates to this field are currently not supported.
    * </pre>
    *
    * <code>
@@ -103,8 +101,6 @@ public interface SettingsOrBuilder
    *
    * <pre>
    * Optional. The measurement unit defined in the user's account settings.
-   *
-   * Updates to this field are currently not supported.
    * </pre>
    *
    * <code>
