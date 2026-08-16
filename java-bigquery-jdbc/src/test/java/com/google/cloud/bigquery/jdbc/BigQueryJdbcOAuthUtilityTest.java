@@ -22,8 +22,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.ImpersonatedCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.auth.oauth2.UserAuthorizer;
 import com.google.auth.oauth2.UserCredentials;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
@@ -108,7 +110,8 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         DataSource.fromUrl(connectionString).getOverrideProperties();
 
     try {
-      BigQueryJdbcOAuthUtility.getCredentials(oauthProperties, overrideProperties, false, null);
+      BigQueryJdbcOAuthUtility.getCredentials(
+          oauthProperties, overrideProperties, false, null, null);
       Assertions.fail();
     } catch (BigQueryJdbcRuntimeException e) {
       assertThat(e.getMessage()).contains("Validation failure");
@@ -164,7 +167,8 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
             null);
 
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, Collections.EMPTY_MAP, false, null);
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, Collections.EMPTY_MAP, false, null, null);
     assertThat(credentials).isNotNull();
   }
 
@@ -184,7 +188,8 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     Map<String, String> overrideProperties = new HashMap<>(stringStringMap);
 
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, overrideProperties, false, null);
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, overrideProperties, false, null, null);
     assertThat(credentials.getUniverseDomain()).isEqualTo("testDomain");
   }
 
@@ -199,7 +204,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
             null);
 
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, null, false, null);
+        BigQueryJdbcOAuthUtility.getCredentials(authProperties, null, false, null, null);
     assertThat(credentials).isNotNull();
   }
 
@@ -243,7 +248,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
       UserAuthorizer userAuthorizer =
           BigQueryJdbcOAuthUtility.getUserAuthorizer(
-              authProperties, new HashMap<String, String>(), USER_AUTH_PORT, null);
+              authProperties, new HashMap<String, String>(), USER_AUTH_PORT, null, null);
 
       String userId = "test_user";
       String state = "test_state";
@@ -276,7 +281,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
       UserAuthorizer userAuthorizer =
           BigQueryJdbcOAuthUtility.getUserAuthorizer(
-              authProperties, overrideProperties, USER_AUTH_PORT, null);
+              authProperties, overrideProperties, USER_AUTH_PORT, null, null);
 
       assertThat(overrideTokenSeverURI).isEqualTo(userAuthorizer.toBuilder().getTokenServerUri());
     } catch (URISyntaxException e) {
@@ -317,7 +322,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
       UserCredentials userCredentials =
           BigQueryJdbcOAuthUtility.getPreGeneratedRefreshTokenCredentials(
-              authProperties, overrideProperties, null);
+              authProperties, overrideProperties, null, null);
 
       assertThat(userCredentials.toBuilder().getTokenServerUri())
           .isEqualTo(URI.create("https://oauth2-private.p.googleapis.com/token"));
@@ -427,7 +432,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
       GoogleCredentials credentials =
           BigQueryJdbcOAuthUtility.getCredentials(
-              authProperties, java.util.Collections.EMPTY_MAP, false, null);
+              authProperties, java.util.Collections.EMPTY_MAP, false, null, null);
 
       assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
       assertThat(((ImpersonatedCredentials) credentials).getSourceCredentials())
@@ -445,7 +450,8 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                     .toString()),
             "");
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, Collections.EMPTY_MAP, false, null);
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, Collections.EMPTY_MAP, false, null, null);
     assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
   }
 
@@ -488,5 +494,75 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     } catch (Exception e) {
       assertTrue(false);
     }
+  }
+
+  @Test
+  public void testGetCredentialsPropagatesHttpTransportFactory() {
+    Map<String, String> authProperties =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(
+            DataSource.fromUrl(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "ProjectId=MyBigQueryProject;OAuthType=0;"
+                    + "OAuthServiceAcctEmail=dummytest@dummytest.iam.gserviceaccount.com;"
+                    + "OAuthPvtKey="
+                    + fake_pkcs8_key
+                    + ";"),
+            null);
+
+    HttpTransportFactory dummyFactory = () -> null;
+
+    GoogleCredentials credentials =
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, Collections.emptyMap(), false, dummyFactory, null);
+
+    assertThat(credentials).isInstanceOf(ServiceAccountCredentials.class);
+    assertThat(((ServiceAccountCredentials) credentials).toBuilder().getHttpTransportFactory())
+        .isEqualTo(dummyFactory);
+  }
+
+  @Test
+  public void testGetImpersonatedCredentialsPropagatesHttpTransportFactory() {
+    Map<String, String> authProperties =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(
+            DataSource.fromUrl(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "ProjectId=MyBigQueryProject;OAuthType=0;"
+                    + "OAuthServiceAcctEmail=dummytest@dummytest.iam.gserviceaccount.com;"
+                    + "OAuthPvtKey="
+                    + fake_pkcs8_key
+                    + ";"
+                    + "ServiceAccountImpersonationEmail=impersonated@email.com;"),
+            null);
+
+    HttpTransportFactory dummyFactory = () -> null;
+
+    GoogleCredentials credentials =
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, Collections.emptyMap(), false, dummyFactory, null);
+
+    assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
+    assertThat(((ImpersonatedCredentials) credentials).toBuilder().getHttpTransportFactory())
+        .isEqualTo(dummyFactory);
+  }
+
+  @Test
+  public void testGetPreGeneratedRefreshTokenCredentialsPropagatesHttpTransportFactory() {
+    Map<String, String> authProperties =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(
+            DataSource.fromUrl(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "ProjectId=MyBigQueryProject;OAuthType=2;"
+                    + "OAuthRefreshToken=dummy_refresh_token;OAuthClientId=dummy_client_id;OAuthClientSecret=dummy_client_secret;"),
+            null);
+
+    HttpTransportFactory dummyFactory = () -> null;
+
+    GoogleCredentials credentials =
+        BigQueryJdbcOAuthUtility.getCredentials(
+            authProperties, Collections.emptyMap(), false, dummyFactory, null);
+
+    assertThat(credentials).isInstanceOf(UserCredentials.class);
+    assertThat(((UserCredentials) credentials).toBuilder().getHttpTransportFactory())
+        .isEqualTo(dummyFactory);
   }
 }

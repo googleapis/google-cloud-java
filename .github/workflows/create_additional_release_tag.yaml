@@ -1,9 +1,17 @@
+permissions:
+  contents: read
+
 name: Create additional tags for each release
 
 on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      target_ref:
+        description: 'Git ref (tag or SHA) to check out and tag. Defaults to branch HEAD if empty.'
+        required: false
+        default: ''
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,26 +21,32 @@ jobs:
       contents: write
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
+        ref: ${{ inputs.target_ref || github.ref }}
         token: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
+        persist-credentials: false
     - name: Set up Git
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-    - name: Fetch all tags
-      run: git fetch --tags
     - name: Create additional tags
       shell: bash
+      env:
+        GH_TOKEN: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
       run: |
-        ARTIFACT_IDS=('google-cloud-shared-dependencies' 'api-common' 'gax' 'google-cloud-bigtable')
+        ARTIFACT_IDS=('google-cloud-shared-dependencies' 'api-common' 'gax' 'google-cloud-bigtable' 'libraries-bom' 'gapic-generator-java')
         for ARTIFACT_ID in "${ARTIFACT_IDS[@]}"; do
           VERSION=$(grep "^${ARTIFACT_ID}:" versions.txt | cut -d':' -f2 | tr -d '[:space:]')
           TAG_NAME="${ARTIFACT_ID}/v$VERSION"
-          if git show-ref --tags | grep -q "refs/tags/$TAG_NAME"; then
-            echo "Tag $TAG_NAME already exists. Skipping."
+          if git ls-remote --tags origin | grep -q "refs/tags/$TAG_NAME"; then
+            echo "Tag $TAG_NAME already exists on remote. Skipping."
             continue
           fi
           git tag $TAG_NAME
-          git push origin $TAG_NAME
+          git push https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git $TAG_NAME
+          if [ "${ARTIFACT_ID}" = "libraries-bom" ]; then
+            echo "Creating GitHub Release for ${TAG_NAME}"
+            gh release create "${TAG_NAME}" --title "GCP Libraries BOM ${VERSION}" --notes "libraries-bom release."
+          fi
         done

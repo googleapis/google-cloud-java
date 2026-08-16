@@ -5,12 +5,11 @@
   "api_description": "provides OS management tools that can be used for patch management, patch compliance, and configuration management on VM instances.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-os-config/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-os-config",
   "distribution_name": "com.google.cloud:google-cloud-os-config",
   "api_id": "osconfig.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": false
+  "library_type": "GAPIC_AUTO"
 }

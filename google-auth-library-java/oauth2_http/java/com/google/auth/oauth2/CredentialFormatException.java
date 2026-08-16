@@ -32,8 +32,10 @@
 package com.google.auth.oauth2;
 
 import java.io.IOException;
+import org.jspecify.annotations.NullMarked;
 
 /** Indicates that the provided credential does not adhere to the required format. */
+@NullMarked
 class CredentialFormatException extends IOException {
   CredentialFormatException(String message, Throwable cause) {
     super(message, cause);

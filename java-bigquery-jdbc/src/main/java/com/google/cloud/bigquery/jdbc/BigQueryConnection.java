@@ -19,11 +19,13 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.api.gax.paging.Page;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.Credentials;
+import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -31,6 +33,7 @@ import com.google.cloud.bigquery.ConnectionProperty;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.Project;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
@@ -41,7 +44,16 @@ import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.http.HttpTransportOptions;
+import com.google.cloud.logging.Logging;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSortedSet;
+import io.grpc.ManagedChannelBuilder;
+import io.grpc.opentelemetry.GrpcOpenTelemetry;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.baggage.Baggage;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Context;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.CallableStatement;
@@ -121,6 +133,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               BigQueryJdbcUrlUtility.SWA_APPEND_ROW_COUNT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_PROJECT_DISCOVERY_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.SSL_TRUST_STORE_PROPERTY_NAME,
               BigQueryJdbcUrlUtility.MAX_BYTES_BILLED_PROPERTY_NAME,
@@ -152,6 +165,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   int transactionIsolation;
   List<SQLWarning> sqlWarnings;
   String catalog;
+  String gcpTelemetryCredentials;
+  String gcpTelemetryProjectId;
   int holdability;
   long retryTimeoutInSeconds;
   Duration retryTimeoutDuration;
@@ -170,6 +185,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   int highThroughputMinTableSize;
   int highThroughputActivationRatio;
   boolean enableSession;
+  boolean enableProjectDiscovery;
+  private List<String> discoveredProjectsCache;
   boolean unsupportedHTAPIFallback;
   boolean useQueryCache;
   String queryDialect;
@@ -183,6 +200,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   List<ConnectionProperty> queryProperties;
   Map<String, String> authProperties;
   Map<String, String> overrideProperties;
+  Map<String, String> proxyProperties;
   Credentials credentials;
   boolean useStatelessQueryMode;
   int numBufferedRows;
@@ -198,6 +216,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   boolean filterTablesOnDefaultDataset;
   String sslTrustStorePath;
   String sslTrustStorePassword;
+  String sslTrustStoreType;
+  String sslTrustStoreProvider;
   long maxBytesBilled;
   Map<String, String> labels;
   Integer httpConnectTimeout;
@@ -206,6 +226,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long connectionPoolSize;
   Long listenerPoolSize;
   String partnerToken;
+  boolean enableGcpTraceExporter;
+  boolean enableGcpLogExporter;
+  OpenTelemetry customOpenTelemetry;
+  boolean useGlobalOpenTelemetry;
+  private OpenTelemetry openTelemetry;
+  private Context otelContext;
+  Tracer tracer =
+      OpenTelemetry.noop().getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
   DatabaseMetaData databaseMetaData;
   Boolean reqGoogleDriveScope;
   private final Properties clientInfo = new Properties();
@@ -219,6 +247,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   BigQueryConnection(String url, DataSource ds) throws IOException {
     this.connectionId = UUID.randomUUID().toString();
+    Baggage baggage =
+        Baggage.builder()
+            .put(BigQueryJdbcOpenTelemetry.CONNECTION_ID_BAGGAGE_KEY, this.connectionId)
+            .build();
+    this.otelContext = Context.current().with(baggage);
     try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.connectionId)) {
       this.connectionUrl = url;
       if (LOG.isLoggable(java.util.logging.Level.CONFIG)) {
@@ -241,6 +274,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
       this.labels = ds.getLabels() != null ? ds.getLabels() : new java.util.HashMap<>();
       this.maxBytesBilled = ds.getMaximumBytesBilled();
+      this.gcpTelemetryCredentials = ds.getGcpTelemetryCredentials();
+      this.gcpTelemetryProjectId = ds.getGcpTelemetryProjectId();
       this.retryTimeoutInSeconds = ds.getTimeout();
       this.retryTimeoutDuration = Duration.ofMillis(retryTimeoutInSeconds * 1000L);
       this.retryInitialDelayInSeconds = ds.getRetryInitialDelay();
@@ -265,11 +300,38 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               String.valueOf(ds.getRequestGoogleDriveScope()),
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
 
+      this.proxyProperties =
+          BigQueryJdbcProxyUtility.parseProxyProperties(ds, this.connectionClassName);
+
+      this.sslTrustStorePath = ds.getSSLTrustStorePath();
+      this.sslTrustStorePassword = ds.getSSLTrustStorePassword();
+      this.sslTrustStoreType = ds.getSSLTrustStoreType();
+      this.sslTrustStoreProvider = ds.getSSLTrustStoreProvider();
+      this.httpConnectTimeout = ds.getHttpConnectTimeout();
+      this.httpReadTimeout = ds.getHttpReadTimeout();
+
+      this.httpTransportOptions =
+          BigQueryJdbcProxyUtility.getHttpTransportOptions(
+              proxyProperties,
+              this.sslTrustStorePath,
+              this.sslTrustStorePassword,
+              this.sslTrustStoreType,
+              this.sslTrustStoreProvider,
+              this.httpConnectTimeout,
+              this.httpReadTimeout,
+              this.connectionClassName);
+
+      HttpTransportFactory httpTransportFactory =
+          this.httpTransportOptions != null
+              ? this.httpTransportOptions.getHttpTransportFactory()
+              : null;
+
       this.credentials =
           BigQueryJdbcOAuthUtility.getCredentials(
               authProperties,
               overrideProperties,
               this.reqGoogleDriveScope,
+              httpTransportFactory,
               this.connectionClassName);
       String defaultDatasetString = ds.getDefaultDataset();
       if (defaultDatasetString == null || defaultDatasetString.trim().isEmpty()) {
@@ -302,27 +364,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.destinationDataset = ds.getDestinationDataset();
       this.destinationDatasetExpirationTime = ds.getDestinationDatasetExpirationTime();
       this.kmsKeyName = ds.getKmsKeyName();
-      Map<String, String> proxyProperties =
-          BigQueryJdbcProxyUtility.parseProxyProperties(ds, this.connectionClassName);
-
-      this.sslTrustStorePath = ds.getSSLTrustStorePath();
-      this.sslTrustStorePassword = ds.getSSLTrustStorePassword();
-      this.httpConnectTimeout = ds.getHttpConnectTimeout();
-      this.httpReadTimeout = ds.getHttpReadTimeout();
-
-      this.httpTransportOptions =
-          BigQueryJdbcProxyUtility.getHttpTransportOptions(
-              proxyProperties,
-              this.sslTrustStorePath,
-              this.sslTrustStorePassword,
-              this.httpConnectTimeout,
-              this.httpReadTimeout,
-              this.connectionClassName);
       this.transportChannelProvider =
           BigQueryJdbcProxyUtility.getTransportChannelProvider(
               proxyProperties,
               this.sslTrustStorePath,
               this.sslTrustStorePassword,
+              this.sslTrustStoreType,
+              this.sslTrustStoreProvider,
               this.connectionClassName);
       this.enableSession = ds.getEnableSession();
       this.unsupportedHTAPIFallback = ds.getUnsupportedHTAPIFallback();
@@ -338,6 +386,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.additionalProjects = ds.getAdditionalProjects();
 
       this.filterTablesOnDefaultDataset = ds.getFilterTablesOnDefaultDataset();
+      this.enableProjectDiscovery = ds.getEnableProjectDiscovery();
       this.requestGoogleDriveScope = ds.getRequestGoogleDriveScope();
       this.metadataFetchThreadCount = ds.getMetadataFetchThreadCount();
       this.requestReason = ds.getRequestReason();
@@ -346,9 +395,19 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.partnerToken = ds.getPartnerToken();
 
       this.headerProvider = createHeaderProvider();
+      this.enableGcpTraceExporter = ds.getEnableGcpTraceExporter();
+      this.enableGcpLogExporter = ds.getEnableGcpLogExporter();
+      this.customOpenTelemetry = ds.getCustomOpenTelemetry();
+      this.useGlobalOpenTelemetry = ds.getUseGlobalOpenTelemetry();
+      this.openTelemetry = getOpenTelemetryInstance();
       this.bigQuery = getBigQueryConnection();
-      this.metadataExecutor = BigQueryJdbcMdc.newFixedThreadPool(metadataFetchThreadCount);
-      this.queryExecutor = BigQueryJdbcMdc.newCachedThreadPool();
+      // Cached pool executes queries immediately without queueing and reclaims all idle threads
+      // when inactive, minimizing resources.
+      this.queryExecutor =
+          BigQueryJdbcMdc.newCachedThreadPool(String.format("BQ-Query-%s", connectionId));
+      this.metadataExecutor =
+          BigQueryJdbcMdc.newFixedThreadPool(
+              String.format("BQ-Metadata-%s", connectionId), this.metadataFetchThreadCount);
     }
   }
 
@@ -419,7 +478,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return connectionUrl;
   }
 
-  String getConnectionId() {
+  @VisibleForTesting
+  public String getConnectionId() {
     return this.connectionId;
   }
 
@@ -970,6 +1030,21 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       this.openStatements.clear();
 
+      if (isTransactionStarted()) {
+        try {
+          // It looks like there's no need to start a new transaction after a rollback,
+          // but the commit behavior is preserved since close() may still fail before isClosed is
+          // updated.
+          rollbackImpl();
+        } catch (SQLException e) {
+          if (exceptionToThrow == null) {
+            exceptionToThrow = e;
+          } else {
+            exceptionToThrow.addSuppressed(e);
+          }
+        }
+      }
+
       boolean interrupted = Thread.currentThread().isInterrupted();
 
       try {
@@ -1034,6 +1109,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     } finally {
       BigQueryJdbcMdc.clear();
       BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
+      BigQueryJdbcOpenTelemetry.unregisterConnection(this.connectionId);
+      BigQueryJdbcOpenTelemetry.releaseSdk(this.openTelemetry);
+      this.openTelemetry = null;
     }
     if (exceptionToThrow != null) {
       throw exceptionToThrow;
@@ -1107,6 +1185,84 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     this.openStatements.remove(statement);
   }
 
+  private OpenTelemetry getOpenTelemetryInstance() {
+    BigQueryJdbcOpenTelemetry.ensureGlobalHandlerAttached();
+
+    String effectiveProjectId =
+        (this.gcpTelemetryProjectId != null) ? this.gcpTelemetryProjectId : this.catalog;
+
+    validateTraceConfiguration(
+        this.enableGcpTraceExporter,
+        this.gcpTelemetryCredentials != null
+            ? this.gcpTelemetryCredentials
+            : resolveEffectiveCredentials());
+
+    OpenTelemetry openTelemetry =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+            this.useGlobalOpenTelemetry,
+            this.enableGcpTraceExporter,
+            this.enableGcpLogExporter,
+            this.customOpenTelemetry,
+            this.gcpTelemetryCredentials,
+            effectiveProjectId,
+            this.credentials,
+            this.proxyProperties);
+
+    boolean hasExternalOtel = this.customOpenTelemetry != null || this.useGlobalOpenTelemetry;
+    Logging localLoggingClient = null;
+    if (this.enableGcpLogExporter && !hasExternalOtel) {
+      localLoggingClient =
+          BigQueryJdbcOpenTelemetry.createLoggingClient(
+              true,
+              null,
+              this.gcpTelemetryCredentials,
+              effectiveProjectId,
+              this.credentials,
+              this.headerProvider);
+    }
+
+    if (this.enableGcpLogExporter || hasExternalOtel) {
+      BigQueryJdbcOpenTelemetry.registerConnection(
+          this.connectionId,
+          openTelemetry,
+          localLoggingClient,
+          this.enableGcpLogExporter && !hasExternalOtel);
+    }
+
+    return openTelemetry;
+  }
+
+  private String resolveEffectiveCredentials() {
+    if (this.gcpTelemetryCredentials != null) {
+      return this.gcpTelemetryCredentials;
+    }
+
+    String authTypeStr = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME);
+    if (!BigQueryJdbcOAuthUtility.AuthType.GOOGLE_SERVICE_ACCOUNT.name().equals(authTypeStr)) {
+      return null;
+    }
+
+    String pvtKey = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PROPERTY_NAME);
+    if (pvtKey != null) {
+      return pvtKey;
+    }
+
+    return this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_PVT_KEY_PATH_PROPERTY_NAME);
+  }
+
+  private void validateTraceConfiguration(boolean isTraceEnabled, String effectiveCredentials) {
+    if (isTraceEnabled && effectiveCredentials == null) {
+      String authTypeStr = this.authProperties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME);
+      if (!BigQueryJdbcOAuthUtility.AuthType.GOOGLE_SERVICE_ACCOUNT.name().equals(authTypeStr)
+          && !BigQueryJdbcOAuthUtility.AuthType.APPLICATION_DEFAULT_CREDENTIALS
+              .name()
+              .equals(authTypeStr)) {
+        throw new BigQueryJdbcRuntimeException(
+            "Exporting traces to Google Cloud is only supported when using Application Default Credentials (ADC) or Service Account authentication.");
+      }
+    }
+  }
+
   private BigQuery getBigQueryConnection() {
     BigQueryOptions.Builder bigQueryOptions = BigQueryOptions.newBuilder();
     if (this.retryTimeoutInSeconds > 0L
@@ -1143,6 +1299,15 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (this.httpTransportOptions != null) {
       bigQueryOptions.setTransportOptions(this.httpTransportOptions);
     }
+    if (this.enableGcpTraceExporter
+        || this.customOpenTelemetry != null
+        || this.useGlobalOpenTelemetry) {
+      Tracer sdkTracer = this.openTelemetry.getTracer(BigQueryJdbcOpenTelemetry.BIGQUERY_NAMESPACE);
+      bigQueryOptions.setOpenTelemetryTracer(sdkTracer);
+      bigQueryOptions.setEnableOpenTelemetryTracing(true);
+      this.tracer =
+          this.openTelemetry.getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
+    }
 
     BigQueryOptions options = bigQueryOptions.setHeaderProvider(this.headerProvider).build();
     options.setDefaultJobCreationMode(
@@ -1177,7 +1342,20 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
     TransportChannelProvider activeProvider = this.transportChannelProvider;
     if (activeProvider == null) {
-      activeProvider = BigQueryReadSettings.defaultGrpcTransportProviderBuilder().build();
+      InstantiatingGrpcChannelProvider.Builder builder =
+          BigQueryReadSettings.defaultGrpcTransportProviderBuilder();
+      if (this.enableGcpTraceExporter
+          || this.customOpenTelemetry != null
+          || this.useGlobalOpenTelemetry) {
+        GrpcOpenTelemetry grpcOpenTelemetry =
+            GrpcOpenTelemetry.newBuilder().sdk(this.openTelemetry).build();
+        builder.setChannelConfigurator(
+            b -> {
+              grpcOpenTelemetry.configureChannelBuilder((ManagedChannelBuilder) b);
+              return b;
+            });
+      }
+      activeProvider = builder.build();
     }
 
     if (activeProvider instanceof InstantiatingGrpcChannelProvider) {
@@ -1191,6 +1369,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
 
     bigQueryReadSettings.setTransportChannelProvider(activeProvider);
+
+    if (this.enableGcpTraceExporter
+        || this.customOpenTelemetry != null
+        || this.useGlobalOpenTelemetry) {
+      bigQueryReadSettings.setOpenTelemetryTracerProvider(this.openTelemetry.getTracerProvider());
+      bigQueryReadSettings.setEnableOpenTelemetryTracing(true);
+    }
 
     return BigQueryReadClient.create(bigQueryReadSettings.build());
   }
@@ -1291,6 +1476,18 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return prepareCall(sql);
   }
 
+  public Tracer getTracer() {
+    return this.tracer;
+  }
+
+  public Context getOtelContext() {
+    return this.otelContext;
+  }
+
+  public String getPartnerToken() {
+    return this.partnerToken;
+  }
+
   public boolean isReadOnlyTokenUsed() {
     return this.isReadOnlyTokenUsed;
   }
@@ -1303,6 +1500,29 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           readonlyValue, BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
     }
     return false;
+  }
+
+  public boolean isEnableProjectDiscovery() {
+    return this.enableProjectDiscovery;
+  }
+
+  public synchronized List<String> getDiscoveredProjects() throws SQLException {
+    if (this.discoveredProjectsCache != null) {
+      return this.discoveredProjectsCache;
+    }
+
+    try {
+      BigQuery bigQuery = getBigQuery();
+      List<String> projects = new ArrayList<>();
+      Page<Project> projectPage = bigQuery.listProjects();
+      for (Project project : projectPage.iterateAll()) {
+        projects.add(project.getProjectId());
+      }
+      this.discoveredProjectsCache = ImmutableList.copyOf(projects);
+    } catch (Exception e) {
+      throw new BigQueryJdbcException("Failed to list all accessible projects.", e);
+    }
+    return this.discoveredProjectsCache;
   }
 
   @Override

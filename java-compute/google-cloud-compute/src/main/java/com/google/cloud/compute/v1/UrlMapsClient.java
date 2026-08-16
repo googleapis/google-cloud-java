@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -294,9 +296,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class UrlMapsClient implements BackgroundResource {
-  private final UrlMapsSettings settings;
+  private final @Nullable UrlMapsSettings settings;
   private final UrlMapsStub stub;
 
   /** Constructs an instance of UrlMapsClient with default settings. */
@@ -334,7 +337,7 @@ public class UrlMapsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final UrlMapsSettings getSettings() {
+  public final @Nullable UrlMapsSettings getSettings() {
     return settings;
   }
 
@@ -1650,12 +1653,13 @@ public class UrlMapsClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListUrlMapsRequest,
                 UrlMapsAggregatedList,
                 Map.Entry<String, UrlMapsScopedList>>
             context,
-        UrlMapsAggregatedList response) {
+        @Nullable UrlMapsAggregatedList response) {
       super(context, response);
     }
 
@@ -1665,18 +1669,20 @@ public class UrlMapsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListUrlMapsRequest,
                 UrlMapsAggregatedList,
                 Map.Entry<String, UrlMapsScopedList>>
             context,
-        UrlMapsAggregatedList response) {
+        @Nullable UrlMapsAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListUrlMapsRequest,
                 UrlMapsAggregatedList,
                 Map.Entry<String, UrlMapsScopedList>>
@@ -1694,7 +1700,8 @@ public class UrlMapsClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1704,7 +1711,7 @@ public class UrlMapsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1731,7 +1738,8 @@ public class UrlMapsClient implements BackgroundResource {
       extends AbstractPage<ListUrlMapsRequest, UrlMapList, UrlMap, ListPage> {
 
     private ListPage(
-        PageContext<ListUrlMapsRequest, UrlMapList, UrlMap> context, UrlMapList response) {
+        @Nullable PageContext<ListUrlMapsRequest, UrlMapList, UrlMap> context,
+        @Nullable UrlMapList response) {
       super(context, response);
     }
 
@@ -1741,13 +1749,14 @@ public class UrlMapsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListUrlMapsRequest, UrlMapList, UrlMap> context, UrlMapList response) {
+        @Nullable PageContext<ListUrlMapsRequest, UrlMapList, UrlMap> context,
+        @Nullable UrlMapList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListUrlMapsRequest, UrlMapList, UrlMap> context,
+        @Nullable PageContext<ListUrlMapsRequest, UrlMapList, UrlMap> context,
         ApiFuture<UrlMapList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1757,7 +1766,7 @@ public class UrlMapsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListUrlMapsRequest, UrlMapList, UrlMap, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1766,7 +1775,8 @@ public class UrlMapsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

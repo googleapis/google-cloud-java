@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -998,9 +1000,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GkeHubClient implements BackgroundResource {
-  private final GkeHubSettings settings;
+  private final @Nullable GkeHubSettings settings;
   private final GkeHubStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1046,7 +1049,7 @@ public class GkeHubClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final GkeHubSettings getSettings() {
+  public final @Nullable GkeHubSettings getSettings() {
     return settings;
   }
 
@@ -1096,7 +1099,7 @@ public class GkeHubClient implements BackgroundResource {
    *     memberships in all the regions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMembershipsPagedResponse listMemberships(LocationName parent) {
+  public final ListMembershipsPagedResponse listMemberships(@Nullable LocationName parent) {
     ListMembershipsRequest request =
         ListMembershipsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1269,7 +1272,8 @@ public class GkeHubClient implements BackgroundResource {
    *     `projects/&#42;/locations/global/scopes/&#42;`, to which the Memberships are bound.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBoundMembershipsPagedResponse listBoundMemberships(ScopeName scopeName) {
+  public final ListBoundMembershipsPagedResponse listBoundMemberships(
+      @Nullable ScopeName scopeName) {
     ListBoundMembershipsRequest request =
         ListBoundMembershipsRequest.newBuilder()
             .setScopeName(scopeName == null ? null : scopeName.toString())
@@ -1444,7 +1448,7 @@ public class GkeHubClient implements BackgroundResource {
    *     Specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFeaturesPagedResponse listFeatures(LocationName parent) {
+  public final ListFeaturesPagedResponse listFeatures(@Nullable LocationName parent) {
     ListFeaturesRequest request =
         ListFeaturesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1614,7 +1618,7 @@ public class GkeHubClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/memberships/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Membership getMembership(MembershipName name) {
+  public final Membership getMembership(@Nullable MembershipName name) {
     GetMembershipRequest request =
         GetMembershipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMembership(request);
@@ -1724,7 +1728,7 @@ public class GkeHubClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/features/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Feature getFeature(FeatureName name) {
+  public final Feature getFeature(@Nullable FeatureName name) {
     GetFeatureRequest request =
         GetFeatureRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFeature(request);
@@ -1851,7 +1855,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Membership, OperationMetadata> createMembershipAsync(
-      LocationName parent, Membership resource, String membershipId) {
+      @Nullable LocationName parent, Membership resource, String membershipId) {
     CreateMembershipRequest request =
         CreateMembershipRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2041,7 +2045,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, OperationMetadata> createFeatureAsync(
-      LocationName parent, Feature resource, String featureId) {
+      @Nullable LocationName parent, Feature resource, String featureId) {
     CreateFeatureRequest request =
         CreateFeatureRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2209,7 +2213,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteMembershipAsync(
-      MembershipName name) {
+      @Nullable MembershipName name) {
     DeleteMembershipRequest request =
         DeleteMembershipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteMembershipAsync(request);
@@ -2371,7 +2375,8 @@ public class GkeHubClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/features/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteFeatureAsync(FeatureName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteFeatureAsync(
+      @Nullable FeatureName name) {
     DeleteFeatureRequest request =
         DeleteFeatureRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteFeatureAsync(request);
@@ -2527,7 +2532,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Membership, OperationMetadata> updateMembershipAsync(
-      MembershipName name, Membership resource, FieldMask updateMask) {
+      @Nullable MembershipName name, Membership resource, FieldMask updateMask) {
     UpdateMembershipRequest request =
         UpdateMembershipRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2705,7 +2710,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Feature, OperationMetadata> updateFeatureAsync(
-      FeatureName name, Feature resource, FieldMask updateMask) {
+      @Nullable FeatureName name, Feature resource, FieldMask updateMask) {
     UpdateFeatureRequest request =
         UpdateFeatureRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2952,7 +2957,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Fleet, OperationMetadata> createFleetAsync(
-      LocationName parent, Fleet fleet) {
+      @Nullable LocationName parent, Fleet fleet) {
     CreateFleetRequest request =
         CreateFleetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3102,7 +3107,7 @@ public class GkeHubClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/fleets/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Fleet getFleet(FleetName name) {
+  public final Fleet getFleet(@Nullable FleetName name) {
     GetFleetRequest request =
         GetFleetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFleet(request);
@@ -3336,7 +3341,8 @@ public class GkeHubClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/fleets/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteFleetAsync(FleetName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteFleetAsync(
+      @Nullable FleetName name) {
     DeleteFleetRequest request =
         DeleteFleetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteFleetAsync(request);
@@ -3485,7 +3491,7 @@ public class GkeHubClient implements BackgroundResource {
    *     `organizations/&#42;/locations/&#42;` or `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFleetsPagedResponse listFleets(LocationName parent) {
+  public final ListFleetsPagedResponse listFleets(@Nullable LocationName parent) {
     ListFleetsRequest request =
         ListFleetsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listFleets(request);
@@ -3643,7 +3649,7 @@ public class GkeHubClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/scopes/&#42;/namespaces/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Namespace getScopeNamespace(NamespaceName name) {
+  public final Namespace getScopeNamespace(@Nullable NamespaceName name) {
     GetScopeNamespaceRequest request =
         GetScopeNamespaceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3769,7 +3775,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Namespace, OperationMetadata> createScopeNamespaceAsync(
-      ScopeName parent, Namespace scopeNamespace, String scopeNamespaceId) {
+      @Nullable ScopeName parent, Namespace scopeNamespace, String scopeNamespaceId) {
     CreateScopeNamespaceRequest request =
         CreateScopeNamespaceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4061,7 +4067,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteScopeNamespaceAsync(
-      NamespaceName name) {
+      @Nullable NamespaceName name) {
     DeleteScopeNamespaceRequest request =
         DeleteScopeNamespaceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4211,7 +4217,7 @@ public class GkeHubClient implements BackgroundResource {
    *     Specified in the format `projects/&#42;/locations/&#42;/scopes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListScopeNamespacesPagedResponse listScopeNamespaces(ScopeName parent) {
+  public final ListScopeNamespacesPagedResponse listScopeNamespaces(@Nullable ScopeName parent) {
     ListScopeNamespacesRequest request =
         ListScopeNamespacesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4379,7 +4385,7 @@ public class GkeHubClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/scopes/&#42;/rbacrolebindings/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RBACRoleBinding getScopeRBACRoleBinding(RBACRoleBindingName name) {
+  public final RBACRoleBinding getScopeRBACRoleBinding(@Nullable RBACRoleBindingName name) {
     GetScopeRBACRoleBindingRequest request =
         GetScopeRBACRoleBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4516,7 +4522,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RBACRoleBinding, OperationMetadata> createScopeRBACRoleBindingAsync(
-      MembershipName parent, RBACRoleBinding rbacrolebinding, String rbacrolebindingId) {
+      @Nullable MembershipName parent, RBACRoleBinding rbacrolebinding, String rbacrolebindingId) {
     CreateScopeRBACRoleBindingRequest request =
         CreateScopeRBACRoleBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4561,7 +4567,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RBACRoleBinding, OperationMetadata> createScopeRBACRoleBindingAsync(
-      ScopeName parent, RBACRoleBinding rbacrolebinding, String rbacrolebindingId) {
+      @Nullable ScopeName parent, RBACRoleBinding rbacrolebinding, String rbacrolebindingId) {
     CreateScopeRBACRoleBindingRequest request =
         CreateScopeRBACRoleBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4861,7 +4867,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteScopeRBACRoleBindingAsync(
-      RBACRoleBindingName name) {
+      @Nullable RBACRoleBindingName name) {
     DeleteScopeRBACRoleBindingRequest request =
         DeleteScopeRBACRoleBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5022,7 +5028,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListScopeRBACRoleBindingsPagedResponse listScopeRBACRoleBindings(
-      MembershipName parent) {
+      @Nullable MembershipName parent) {
     ListScopeRBACRoleBindingsRequest request =
         ListScopeRBACRoleBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5054,7 +5060,8 @@ public class GkeHubClient implements BackgroundResource {
    *     Specified in the format `projects/&#42;/locations/&#42;/scopes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListScopeRBACRoleBindingsPagedResponse listScopeRBACRoleBindings(ScopeName parent) {
+  public final ListScopeRBACRoleBindingsPagedResponse listScopeRBACRoleBindings(
+      @Nullable ScopeName parent) {
     ListScopeRBACRoleBindingsRequest request =
         ListScopeRBACRoleBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5221,7 +5228,7 @@ public class GkeHubClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/scopes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Scope getScope(ScopeName name) {
+  public final Scope getScope(@Nullable ScopeName name) {
     GetScopeRequest request =
         GetScopeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getScope(request);
@@ -5336,7 +5343,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Scope, OperationMetadata> createScopeAsync(
-      LocationName parent, Scope scope, String scopeId) {
+      @Nullable LocationName parent, Scope scope, String scopeId) {
     CreateScopeRequest request =
         CreateScopeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5615,7 +5622,8 @@ public class GkeHubClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/scopes/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteScopeAsync(ScopeName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteScopeAsync(
+      @Nullable ScopeName name) {
     DeleteScopeRequest request =
         DeleteScopeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteScopeAsync(request);
@@ -5757,7 +5765,7 @@ public class GkeHubClient implements BackgroundResource {
    *     Specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListScopesPagedResponse listScopes(LocationName parent) {
+  public final ListScopesPagedResponse listScopes(@Nullable LocationName parent) {
     ListScopesRequest request =
         ListScopesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listScopes(request);
@@ -5917,7 +5925,7 @@ public class GkeHubClient implements BackgroundResource {
    *     Specified in the format `projects/&#42;/locations/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPermittedScopesPagedResponse listPermittedScopes(LocationName parent) {
+  public final ListPermittedScopesPagedResponse listPermittedScopes(@Nullable LocationName parent) {
     ListPermittedScopesRequest request =
         ListPermittedScopesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6084,7 +6092,7 @@ public class GkeHubClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/memberships/&#42;/bindings/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MembershipBinding getMembershipBinding(MembershipBindingName name) {
+  public final MembershipBinding getMembershipBinding(@Nullable MembershipBindingName name) {
     GetMembershipBindingRequest request =
         GetMembershipBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6215,7 +6223,9 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<MembershipBinding, OperationMetadata> createMembershipBindingAsync(
-      MembershipName parent, MembershipBinding membershipBinding, String membershipBindingId) {
+      @Nullable MembershipName parent,
+      MembershipBinding membershipBinding,
+      String membershipBindingId) {
     CreateMembershipBindingRequest request =
         CreateMembershipBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6509,7 +6519,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteMembershipBindingAsync(
-      MembershipBindingName name) {
+      @Nullable MembershipBindingName name) {
     DeleteMembershipBindingRequest request =
         DeleteMembershipBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6667,7 +6677,8 @@ public class GkeHubClient implements BackgroundResource {
    *     Specified in the format `projects/&#42;/locations/&#42;/memberships/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMembershipBindingsPagedResponse listMembershipBindings(MembershipName parent) {
+  public final ListMembershipBindingsPagedResponse listMembershipBindings(
+      @Nullable MembershipName parent) {
     ListMembershipBindingsRequest request =
         ListMembershipBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6838,7 +6849,7 @@ public class GkeHubClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/memberships/&#42;/rbacrolebindings/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RBACRoleBinding getMembershipRBACRoleBinding(RBACRoleBindingName name) {
+  public final RBACRoleBinding getMembershipRBACRoleBinding(@Nullable RBACRoleBindingName name) {
     GetMembershipRBACRoleBindingRequest request =
         GetMembershipRBACRoleBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6977,7 +6988,9 @@ public class GkeHubClient implements BackgroundResource {
    */
   public final OperationFuture<RBACRoleBinding, OperationMetadata>
       createMembershipRBACRoleBindingAsync(
-          MembershipName parent, RBACRoleBinding rbacrolebinding, String rbacrolebindingId) {
+          @Nullable MembershipName parent,
+          RBACRoleBinding rbacrolebinding,
+          String rbacrolebindingId) {
     CreateMembershipRBACRoleBindingRequest request =
         CreateMembershipRBACRoleBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7023,7 +7036,7 @@ public class GkeHubClient implements BackgroundResource {
    */
   public final OperationFuture<RBACRoleBinding, OperationMetadata>
       createMembershipRBACRoleBindingAsync(
-          ScopeName parent, RBACRoleBinding rbacrolebinding, String rbacrolebindingId) {
+          @Nullable ScopeName parent, RBACRoleBinding rbacrolebinding, String rbacrolebindingId) {
     CreateMembershipRBACRoleBindingRequest request =
         CreateMembershipRBACRoleBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7324,7 +7337,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteMembershipRBACRoleBindingAsync(
-      RBACRoleBindingName name) {
+      @Nullable RBACRoleBindingName name) {
     DeleteMembershipRBACRoleBindingRequest request =
         DeleteMembershipRBACRoleBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7486,7 +7499,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMembershipRBACRoleBindingsPagedResponse listMembershipRBACRoleBindings(
-      MembershipName parent) {
+      @Nullable MembershipName parent) {
     ListMembershipRBACRoleBindingsRequest request =
         ListMembershipRBACRoleBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7520,7 +7533,7 @@ public class GkeHubClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMembershipRBACRoleBindingsPagedResponse listMembershipRBACRoleBindings(
-      ScopeName parent) {
+      @Nullable ScopeName parent) {
     ListMembershipRBACRoleBindingsRequest request =
         ListMembershipRBACRoleBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7795,8 +7808,8 @@ public class GkeHubClient implements BackgroundResource {
           ListMembershipsRequest, ListMembershipsResponse, Membership, ListMembershipsPage> {
 
     private ListMembershipsPage(
-        PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
-        ListMembershipsResponse response) {
+        @Nullable PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
+        @Nullable ListMembershipsResponse response) {
       super(context, response);
     }
 
@@ -7806,14 +7819,14 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListMembershipsPage createPage(
-        PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
-        ListMembershipsResponse response) {
+        @Nullable PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
+        @Nullable ListMembershipsResponse response) {
       return new ListMembershipsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMembershipsPage> createPageAsync(
-        PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
+        @Nullable PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
         ApiFuture<ListMembershipsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7828,7 +7841,7 @@ public class GkeHubClient implements BackgroundResource {
           ListMembershipsFixedSizeCollection> {
 
     private ListMembershipsFixedSizeCollection(
-        List<ListMembershipsPage> pages, int collectionSize) {
+        @Nullable List<ListMembershipsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7838,7 +7851,7 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListMembershipsFixedSizeCollection createCollection(
-        List<ListMembershipsPage> pages, int collectionSize) {
+        @Nullable List<ListMembershipsPage> pages, int collectionSize) {
       return new ListMembershipsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7875,8 +7888,9 @@ public class GkeHubClient implements BackgroundResource {
           ListBoundMembershipsPage> {
 
     private ListBoundMembershipsPage(
-        PageContext<ListBoundMembershipsRequest, ListBoundMembershipsResponse, Membership> context,
-        ListBoundMembershipsResponse response) {
+        @Nullable PageContext<ListBoundMembershipsRequest, ListBoundMembershipsResponse, Membership>
+            context,
+        @Nullable ListBoundMembershipsResponse response) {
       super(context, response);
     }
 
@@ -7886,14 +7900,16 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListBoundMembershipsPage createPage(
-        PageContext<ListBoundMembershipsRequest, ListBoundMembershipsResponse, Membership> context,
-        ListBoundMembershipsResponse response) {
+        @Nullable PageContext<ListBoundMembershipsRequest, ListBoundMembershipsResponse, Membership>
+            context,
+        @Nullable ListBoundMembershipsResponse response) {
       return new ListBoundMembershipsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBoundMembershipsPage> createPageAsync(
-        PageContext<ListBoundMembershipsRequest, ListBoundMembershipsResponse, Membership> context,
+        @Nullable PageContext<ListBoundMembershipsRequest, ListBoundMembershipsResponse, Membership>
+            context,
         ApiFuture<ListBoundMembershipsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7908,7 +7924,7 @@ public class GkeHubClient implements BackgroundResource {
           ListBoundMembershipsFixedSizeCollection> {
 
     private ListBoundMembershipsFixedSizeCollection(
-        List<ListBoundMembershipsPage> pages, int collectionSize) {
+        @Nullable List<ListBoundMembershipsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7918,7 +7934,7 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListBoundMembershipsFixedSizeCollection createCollection(
-        List<ListBoundMembershipsPage> pages, int collectionSize) {
+        @Nullable List<ListBoundMembershipsPage> pages, int collectionSize) {
       return new ListBoundMembershipsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7951,8 +7967,8 @@ public class GkeHubClient implements BackgroundResource {
       extends AbstractPage<ListFeaturesRequest, ListFeaturesResponse, Feature, ListFeaturesPage> {
 
     private ListFeaturesPage(
-        PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
-        ListFeaturesResponse response) {
+        @Nullable PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
+        @Nullable ListFeaturesResponse response) {
       super(context, response);
     }
 
@@ -7962,14 +7978,14 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListFeaturesPage createPage(
-        PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
-        ListFeaturesResponse response) {
+        @Nullable PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
+        @Nullable ListFeaturesResponse response) {
       return new ListFeaturesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeaturesPage> createPageAsync(
-        PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
+        @Nullable PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
         ApiFuture<ListFeaturesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7983,7 +7999,8 @@ public class GkeHubClient implements BackgroundResource {
           ListFeaturesPage,
           ListFeaturesFixedSizeCollection> {
 
-    private ListFeaturesFixedSizeCollection(List<ListFeaturesPage> pages, int collectionSize) {
+    private ListFeaturesFixedSizeCollection(
+        @Nullable List<ListFeaturesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7993,7 +8010,7 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListFeaturesFixedSizeCollection createCollection(
-        List<ListFeaturesPage> pages, int collectionSize) {
+        @Nullable List<ListFeaturesPage> pages, int collectionSize) {
       return new ListFeaturesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8024,8 +8041,8 @@ public class GkeHubClient implements BackgroundResource {
       extends AbstractPage<ListFleetsRequest, ListFleetsResponse, Fleet, ListFleetsPage> {
 
     private ListFleetsPage(
-        PageContext<ListFleetsRequest, ListFleetsResponse, Fleet> context,
-        ListFleetsResponse response) {
+        @Nullable PageContext<ListFleetsRequest, ListFleetsResponse, Fleet> context,
+        @Nullable ListFleetsResponse response) {
       super(context, response);
     }
 
@@ -8035,14 +8052,14 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListFleetsPage createPage(
-        PageContext<ListFleetsRequest, ListFleetsResponse, Fleet> context,
-        ListFleetsResponse response) {
+        @Nullable PageContext<ListFleetsRequest, ListFleetsResponse, Fleet> context,
+        @Nullable ListFleetsResponse response) {
       return new ListFleetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFleetsPage> createPageAsync(
-        PageContext<ListFleetsRequest, ListFleetsResponse, Fleet> context,
+        @Nullable PageContext<ListFleetsRequest, ListFleetsResponse, Fleet> context,
         ApiFuture<ListFleetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8056,7 +8073,8 @@ public class GkeHubClient implements BackgroundResource {
           ListFleetsPage,
           ListFleetsFixedSizeCollection> {
 
-    private ListFleetsFixedSizeCollection(List<ListFleetsPage> pages, int collectionSize) {
+    private ListFleetsFixedSizeCollection(
+        @Nullable List<ListFleetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8066,7 +8084,7 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListFleetsFixedSizeCollection createCollection(
-        List<ListFleetsPage> pages, int collectionSize) {
+        @Nullable List<ListFleetsPage> pages, int collectionSize) {
       return new ListFleetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8103,8 +8121,9 @@ public class GkeHubClient implements BackgroundResource {
           ListScopeNamespacesPage> {
 
     private ListScopeNamespacesPage(
-        PageContext<ListScopeNamespacesRequest, ListScopeNamespacesResponse, Namespace> context,
-        ListScopeNamespacesResponse response) {
+        @Nullable PageContext<ListScopeNamespacesRequest, ListScopeNamespacesResponse, Namespace>
+            context,
+        @Nullable ListScopeNamespacesResponse response) {
       super(context, response);
     }
 
@@ -8114,14 +8133,16 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListScopeNamespacesPage createPage(
-        PageContext<ListScopeNamespacesRequest, ListScopeNamespacesResponse, Namespace> context,
-        ListScopeNamespacesResponse response) {
+        @Nullable PageContext<ListScopeNamespacesRequest, ListScopeNamespacesResponse, Namespace>
+            context,
+        @Nullable ListScopeNamespacesResponse response) {
       return new ListScopeNamespacesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListScopeNamespacesPage> createPageAsync(
-        PageContext<ListScopeNamespacesRequest, ListScopeNamespacesResponse, Namespace> context,
+        @Nullable PageContext<ListScopeNamespacesRequest, ListScopeNamespacesResponse, Namespace>
+            context,
         ApiFuture<ListScopeNamespacesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8136,7 +8157,7 @@ public class GkeHubClient implements BackgroundResource {
           ListScopeNamespacesFixedSizeCollection> {
 
     private ListScopeNamespacesFixedSizeCollection(
-        List<ListScopeNamespacesPage> pages, int collectionSize) {
+        @Nullable List<ListScopeNamespacesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8146,7 +8167,7 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListScopeNamespacesFixedSizeCollection createCollection(
-        List<ListScopeNamespacesPage> pages, int collectionSize) {
+        @Nullable List<ListScopeNamespacesPage> pages, int collectionSize) {
       return new ListScopeNamespacesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8187,12 +8208,13 @@ public class GkeHubClient implements BackgroundResource {
           ListScopeRBACRoleBindingsPage> {
 
     private ListScopeRBACRoleBindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListScopeRBACRoleBindingsRequest,
                 ListScopeRBACRoleBindingsResponse,
                 RBACRoleBinding>
             context,
-        ListScopeRBACRoleBindingsResponse response) {
+        @Nullable ListScopeRBACRoleBindingsResponse response) {
       super(context, response);
     }
 
@@ -8202,18 +8224,20 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListScopeRBACRoleBindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListScopeRBACRoleBindingsRequest,
                 ListScopeRBACRoleBindingsResponse,
                 RBACRoleBinding>
             context,
-        ListScopeRBACRoleBindingsResponse response) {
+        @Nullable ListScopeRBACRoleBindingsResponse response) {
       return new ListScopeRBACRoleBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListScopeRBACRoleBindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListScopeRBACRoleBindingsRequest,
                 ListScopeRBACRoleBindingsResponse,
                 RBACRoleBinding>
@@ -8232,7 +8256,7 @@ public class GkeHubClient implements BackgroundResource {
           ListScopeRBACRoleBindingsFixedSizeCollection> {
 
     private ListScopeRBACRoleBindingsFixedSizeCollection(
-        List<ListScopeRBACRoleBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListScopeRBACRoleBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8242,7 +8266,7 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListScopeRBACRoleBindingsFixedSizeCollection createCollection(
-        List<ListScopeRBACRoleBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListScopeRBACRoleBindingsPage> pages, int collectionSize) {
       return new ListScopeRBACRoleBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8273,8 +8297,8 @@ public class GkeHubClient implements BackgroundResource {
       extends AbstractPage<ListScopesRequest, ListScopesResponse, Scope, ListScopesPage> {
 
     private ListScopesPage(
-        PageContext<ListScopesRequest, ListScopesResponse, Scope> context,
-        ListScopesResponse response) {
+        @Nullable PageContext<ListScopesRequest, ListScopesResponse, Scope> context,
+        @Nullable ListScopesResponse response) {
       super(context, response);
     }
 
@@ -8284,14 +8308,14 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListScopesPage createPage(
-        PageContext<ListScopesRequest, ListScopesResponse, Scope> context,
-        ListScopesResponse response) {
+        @Nullable PageContext<ListScopesRequest, ListScopesResponse, Scope> context,
+        @Nullable ListScopesResponse response) {
       return new ListScopesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListScopesPage> createPageAsync(
-        PageContext<ListScopesRequest, ListScopesResponse, Scope> context,
+        @Nullable PageContext<ListScopesRequest, ListScopesResponse, Scope> context,
         ApiFuture<ListScopesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8305,7 +8329,8 @@ public class GkeHubClient implements BackgroundResource {
           ListScopesPage,
           ListScopesFixedSizeCollection> {
 
-    private ListScopesFixedSizeCollection(List<ListScopesPage> pages, int collectionSize) {
+    private ListScopesFixedSizeCollection(
+        @Nullable List<ListScopesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8315,7 +8340,7 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListScopesFixedSizeCollection createCollection(
-        List<ListScopesPage> pages, int collectionSize) {
+        @Nullable List<ListScopesPage> pages, int collectionSize) {
       return new ListScopesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8349,8 +8374,9 @@ public class GkeHubClient implements BackgroundResource {
           ListPermittedScopesRequest, ListPermittedScopesResponse, Scope, ListPermittedScopesPage> {
 
     private ListPermittedScopesPage(
-        PageContext<ListPermittedScopesRequest, ListPermittedScopesResponse, Scope> context,
-        ListPermittedScopesResponse response) {
+        @Nullable PageContext<ListPermittedScopesRequest, ListPermittedScopesResponse, Scope>
+            context,
+        @Nullable ListPermittedScopesResponse response) {
       super(context, response);
     }
 
@@ -8360,14 +8386,16 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListPermittedScopesPage createPage(
-        PageContext<ListPermittedScopesRequest, ListPermittedScopesResponse, Scope> context,
-        ListPermittedScopesResponse response) {
+        @Nullable PageContext<ListPermittedScopesRequest, ListPermittedScopesResponse, Scope>
+            context,
+        @Nullable ListPermittedScopesResponse response) {
       return new ListPermittedScopesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPermittedScopesPage> createPageAsync(
-        PageContext<ListPermittedScopesRequest, ListPermittedScopesResponse, Scope> context,
+        @Nullable PageContext<ListPermittedScopesRequest, ListPermittedScopesResponse, Scope>
+            context,
         ApiFuture<ListPermittedScopesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8382,7 +8410,7 @@ public class GkeHubClient implements BackgroundResource {
           ListPermittedScopesFixedSizeCollection> {
 
     private ListPermittedScopesFixedSizeCollection(
-        List<ListPermittedScopesPage> pages, int collectionSize) {
+        @Nullable List<ListPermittedScopesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8392,7 +8420,7 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListPermittedScopesFixedSizeCollection createCollection(
-        List<ListPermittedScopesPage> pages, int collectionSize) {
+        @Nullable List<ListPermittedScopesPage> pages, int collectionSize) {
       return new ListPermittedScopesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8431,10 +8459,11 @@ public class GkeHubClient implements BackgroundResource {
           ListMembershipBindingsPage> {
 
     private ListMembershipBindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMembershipBindingsRequest, ListMembershipBindingsResponse, MembershipBinding>
             context,
-        ListMembershipBindingsResponse response) {
+        @Nullable ListMembershipBindingsResponse response) {
       super(context, response);
     }
 
@@ -8444,16 +8473,18 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListMembershipBindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMembershipBindingsRequest, ListMembershipBindingsResponse, MembershipBinding>
             context,
-        ListMembershipBindingsResponse response) {
+        @Nullable ListMembershipBindingsResponse response) {
       return new ListMembershipBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMembershipBindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMembershipBindingsRequest, ListMembershipBindingsResponse, MembershipBinding>
             context,
         ApiFuture<ListMembershipBindingsResponse> futureResponse) {
@@ -8470,7 +8501,7 @@ public class GkeHubClient implements BackgroundResource {
           ListMembershipBindingsFixedSizeCollection> {
 
     private ListMembershipBindingsFixedSizeCollection(
-        List<ListMembershipBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListMembershipBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8480,7 +8511,7 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListMembershipBindingsFixedSizeCollection createCollection(
-        List<ListMembershipBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListMembershipBindingsPage> pages, int collectionSize) {
       return new ListMembershipBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8522,12 +8553,13 @@ public class GkeHubClient implements BackgroundResource {
           ListMembershipRBACRoleBindingsPage> {
 
     private ListMembershipRBACRoleBindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMembershipRBACRoleBindingsRequest,
                 ListMembershipRBACRoleBindingsResponse,
                 RBACRoleBinding>
             context,
-        ListMembershipRBACRoleBindingsResponse response) {
+        @Nullable ListMembershipRBACRoleBindingsResponse response) {
       super(context, response);
     }
 
@@ -8537,18 +8569,20 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListMembershipRBACRoleBindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMembershipRBACRoleBindingsRequest,
                 ListMembershipRBACRoleBindingsResponse,
                 RBACRoleBinding>
             context,
-        ListMembershipRBACRoleBindingsResponse response) {
+        @Nullable ListMembershipRBACRoleBindingsResponse response) {
       return new ListMembershipRBACRoleBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMembershipRBACRoleBindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMembershipRBACRoleBindingsRequest,
                 ListMembershipRBACRoleBindingsResponse,
                 RBACRoleBinding>
@@ -8567,7 +8601,7 @@ public class GkeHubClient implements BackgroundResource {
           ListMembershipRBACRoleBindingsFixedSizeCollection> {
 
     private ListMembershipRBACRoleBindingsFixedSizeCollection(
-        List<ListMembershipRBACRoleBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListMembershipRBACRoleBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8577,7 +8611,7 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListMembershipRBACRoleBindingsFixedSizeCollection createCollection(
-        List<ListMembershipRBACRoleBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListMembershipRBACRoleBindingsPage> pages, int collectionSize) {
       return new ListMembershipRBACRoleBindingsFixedSizeCollection(pages, collectionSize);
     }
   }

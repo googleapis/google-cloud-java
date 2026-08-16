@@ -50,6 +50,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -101,6 +103,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSettings> {
@@ -236,7 +239,7 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -316,7 +319,7 @@ public class SpacesServiceStubSettings extends StubSettings<SpacesServiceStubSet
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       createSpaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();

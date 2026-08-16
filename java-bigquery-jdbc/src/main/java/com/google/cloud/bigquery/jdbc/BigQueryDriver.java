@@ -18,8 +18,10 @@ package com.google.cloud.bigquery.jdbc;
 
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import io.grpc.LoadBalancerRegistry;
 import io.grpc.internal.PickFirstLoadBalancerProvider;
+import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Driver;
@@ -55,9 +57,6 @@ public class BigQueryDriver implements Driver {
 
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryDriver.class.getName());
-  // TODO: update this when JDBC goes GA
-  private static final int JDBC_MAJOR_VERSION = 0;
-  private static final int JDBC_MINOR_VERSION = 1;
   static BigQueryDriver registeredBigqueryJdbcDriver;
 
   static {
@@ -127,8 +126,12 @@ public class BigQueryDriver implements Driver {
     LOG.finest("++enter++");
     try {
       if (acceptsURL(url)) {
+        Properties connectInfo = info == null ? new Properties() : (Properties) info.clone();
+        Object customOpenTelemetryObj = connectInfo.remove("customOpenTelemetry");
+
         String connectionUri =
-            BigQueryJdbcUrlUtility.appendPropertiesToURL(url.substring(5), this.toString(), info);
+            BigQueryJdbcUrlUtility.appendPropertiesToURL(
+                url.substring(5), this.toString(), connectInfo);
         Level logLevel;
         String logPath;
         try {
@@ -148,7 +151,19 @@ public class BigQueryDriver implements Driver {
           if (logPath == null) {
             logPath = System.getenv(BigQueryJdbcUrlUtility.LOG_PATH_ENV_VAR);
           }
-          if (logPath == null) {
+
+          // Fallback to default path only if not specified and not in Cloud-Only mode
+          String enableGcpLogExporterStr =
+              BigQueryJdbcUrlUtility.parseUriPropertyWithoutValidation(
+                  connectionUri, BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME);
+          boolean enableGcpLogExporter = false;
+          if (enableGcpLogExporterStr != null) {
+            enableGcpLogExporter =
+                BigQueryJdbcUrlUtility.convertIntToBoolean(
+                    enableGcpLogExporterStr,
+                    BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME);
+          }
+          if (logPath == null && !enableGcpLogExporter) {
             logPath = BigQueryJdbcUrlUtility.DEFAULT_LOG_PATH;
           }
 
@@ -166,7 +181,9 @@ public class BigQueryDriver implements Driver {
           LOG.log(Level.SEVERE, "Failed to parse connection URL", e);
           throw new BigQueryJdbcException("Failed to parse connection URL", e);
         }
-
+        if (customOpenTelemetryObj instanceof OpenTelemetry) {
+          ds.setCustomOpenTelemetry((OpenTelemetry) customOpenTelemetryObj);
+        }
         BigQueryConnection connection = new BigQueryConnection(connectionUri, ds);
         LOG.info(
             "Driver info : { {Database Product Name : %s}, "
@@ -243,13 +260,13 @@ public class BigQueryDriver implements Driver {
   @Override
   public int getMajorVersion() {
     LOG.finest("++enter++");
-    return JDBC_MAJOR_VERSION;
+    return BigQueryJdbcVersionUtility.getDriverMajorVersion();
   }
 
   @Override
   public int getMinorVersion() {
     LOG.finest("++enter++");
-    return JDBC_MINOR_VERSION;
+    return BigQueryJdbcVersionUtility.getDriverMinorVersion();
   }
 
   @Override

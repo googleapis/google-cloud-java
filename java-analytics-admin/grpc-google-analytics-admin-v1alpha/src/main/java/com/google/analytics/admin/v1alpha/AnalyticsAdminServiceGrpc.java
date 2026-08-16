@@ -7841,6 +7841,59 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest,
+          com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+      getUpdateReportingIdentitySettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateReportingIdentitySettings",
+      requestType = com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ReportingIdentitySettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest,
+          com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+      getUpdateReportingIdentitySettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest,
+            com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+        getUpdateReportingIdentitySettingsMethod;
+    if ((getUpdateReportingIdentitySettingsMethod =
+            AnalyticsAdminServiceGrpc.getUpdateReportingIdentitySettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateReportingIdentitySettingsMethod =
+                AnalyticsAdminServiceGrpc.getUpdateReportingIdentitySettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateReportingIdentitySettingsMethod =
+              getUpdateReportingIdentitySettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest,
+                          com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateReportingIdentitySettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .UpdateReportingIdentitySettingsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ReportingIdentitySettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateReportingIdentitySettings"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateReportingIdentitySettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest,
           com.google.analytics.admin.v1alpha.UserProvidedDataSettings>
       getGetUserProvidedDataSettingsMethod;
@@ -10350,6 +10403,21 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetReportingIdentitySettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the reporting identity settings for this property.
+     * </pre>
+     */
+    default void updateReportingIdentitySettings(
+        com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateReportingIdentitySettingsMethod(), responseObserver);
     }
 
     /**
@@ -13116,6 +13184,23 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Updates the reporting identity settings for this property.
+     * </pre>
+     */
+    public void updateReportingIdentitySettings(
+        com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateReportingIdentitySettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Looks up settings related to user-provided data for a property.
      * </pre>
      */
@@ -15470,6 +15555,21 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Updates the reporting identity settings for this property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingIdentitySettings
+        updateReportingIdentitySettings(
+            com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateReportingIdentitySettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Looks up settings related to user-provided data for a property.
      * </pre>
      */
@@ -17662,6 +17762,20 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetReportingIdentitySettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the reporting identity settings for this property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingIdentitySettings
+        updateReportingIdentitySettings(
+            com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReportingIdentitySettingsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -20055,6 +20169,22 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Updates the reporting identity settings for this property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+        updateReportingIdentitySettings(
+            com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateReportingIdentitySettingsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Looks up settings related to user-provided data for a property.
      * </pre>
      */
@@ -20221,7 +20351,8 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_UPDATE_SUBPROPERTY_SYNC_CONFIG = 151;
   private static final int METHODID_GET_SUBPROPERTY_SYNC_CONFIG = 152;
   private static final int METHODID_GET_REPORTING_IDENTITY_SETTINGS = 153;
-  private static final int METHODID_GET_USER_PROVIDED_DATA_SETTINGS = 154;
+  private static final int METHODID_UPDATE_REPORTING_IDENTITY_SETTINGS = 154;
+  private static final int METHODID_GET_USER_PROVIDED_DATA_SETTINGS = 155;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -21225,6 +21356,13 @@ public final class AnalyticsAdminServiceGrpc {
         case METHODID_GET_REPORTING_IDENTITY_SETTINGS:
           serviceImpl.getReportingIdentitySettings(
               (com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ReportingIdentitySettings>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_REPORTING_IDENTITY_SETTINGS:
+          serviceImpl.updateReportingIdentitySettings(
+              (com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.ReportingIdentitySettings>)
                   responseObserver);
@@ -22318,6 +22456,13 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.ReportingIdentitySettings>(
                     service, METHODID_GET_REPORTING_IDENTITY_SETTINGS)))
         .addMethod(
+            getUpdateReportingIdentitySettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateReportingIdentitySettingsRequest,
+                    com.google.analytics.admin.v1alpha.ReportingIdentitySettings>(
+                    service, METHODID_UPDATE_REPORTING_IDENTITY_SETTINGS)))
+        .addMethod(
             getGetUserProvidedDataSettingsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -22529,6 +22674,7 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getUpdateSubpropertySyncConfigMethod())
                       .addMethod(getGetSubpropertySyncConfigMethod())
                       .addMethod(getGetReportingIdentitySettingsMethod())
+                      .addMethod(getUpdateReportingIdentitySettingsMethod())
                       .addMethod(getGetUserProvidedDataSettingsMethod())
                       .build();
         }

@@ -21,7 +21,7 @@ import os
 # Base directory of the script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-def run_test(url, driver_jar, driver_class, query=None, generate_rows=0, generate_cols=5, no_output=True):
+def run_test(url, driver_jar, driver_class, query=None, query_file=None, generate_rows=0, generate_cols=5, no_output=True):
     # Base client folder is tools/client. Relative to tools/perf it is ../client.
     client_dir = os.path.join(os.path.dirname(BASE_DIR), "client")
         
@@ -41,7 +41,9 @@ def run_test(url, driver_jar, driver_class, query=None, generate_rows=0, generat
     
     if query:
         cmd.extend(["--query", query])
-    if generate_rows > 0:
+    elif query_file:
+        cmd.extend(["--query-file", query_file])
+    elif generate_rows > 0:
         cmd.extend(["--generate-rows", str(generate_rows)])
         cmd.extend(["--generate-cols", str(generate_cols)])
     if no_output:
@@ -227,13 +229,23 @@ def main():
     parser.add_argument("--class1", default="com.google.cloud.bigquery.jdbc.BigQueryDriver", help="Class name for first driver")
     parser.add_argument("--class2", default="com.google.cloud.bigquery.jdbc.BigQueryDriver", help="Class name for second driver")
     parser.add_argument("-n", "--iterations", type=int, default=5, help="Number of iterations to run (default 5)")
+    parser.add_argument("--query", help="Query to run")
+    parser.add_argument("--query-file", help="Path to a SQL file containing the query to run")
     parser.add_argument("--generate-rows", type=int, default=0, help="Number of rows to generate")
     parser.add_argument("--generate-cols", type=int, default=5, help="Number of columns to generate")
-    parser.add_argument("--query", help="Query to run (if not using generated data)")
     parser.add_argument("--output-md", help="Append markdown table to this file containing the results")
     parser.add_argument("--filter-metrics", help="Comma-separated list of metrics to include in markdown tables")
     
     args = parser.parse_args()
+
+    query = args.query
+    query_file = args.query_file
+    generate_rows = args.generate_rows
+    generate_cols = args.generate_cols
+
+    if not query and not query_file and generate_rows == 0:
+        generate_rows = 1000
+        generate_cols = 5
 
     print("=" * 70)
     print(f"JDBC Performance Runner")
@@ -242,11 +254,13 @@ def main():
     print(f"Jar 1        : {args.jar1} ({args.class1})")
     if args.jar2:
         print(f"Jar 2        : {args.jar2} ({args.class2})")
-    if args.generate_rows > 0:
-        print(f"Generate Rows: {args.generate_rows}")
-        print(f"Generate Cols: {args.generate_cols}")
-    elif args.query:
-        print(f"Query        : {args.query}")
+    if query:
+        print(f"Query        : {query}")
+    elif query_file:
+        print(f"Query File   : {query_file}")
+    elif generate_rows > 0:
+        print(f"Generate Rows: {generate_rows}")
+        print(f"Generate Cols: {generate_cols}")
     print("=" * 70)
 
     driver_results = {}
@@ -270,9 +284,10 @@ def main():
                 url=args.url,
                 driver_jar=driver_jar,
                 driver_class=driver_class,
-                query=args.query,
-                generate_rows=args.generate_rows,
-                generate_cols=args.generate_cols,
+                query=query,
+                query_file=query_file,
+                generate_rows=generate_rows,
+                generate_cols=generate_cols,
                 no_output=True
             )
             if res:
@@ -284,7 +299,7 @@ def main():
         base_label=base_label, 
         new_label=new_label, 
         diff_label=diff_label, 
-        spec_name=f"Rows: {args.generate_rows}, Cols: {args.generate_cols}" if args.generate_rows > 0 else args.query,
+        spec_name=query if query else (f"File: {query_file}" if query_file else f"Rows: {generate_rows}, Cols: {generate_cols}"),
         output_md=args.output_md,
         filter_metrics=args.filter_metrics
     )

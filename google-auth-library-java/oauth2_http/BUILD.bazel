@@ -14,6 +14,7 @@ java_library(
         "@com_google_auto_value_auto_value_annotations//jar",
         "@com_google_auto_value_auto_value//jar",
         "@org_slf4j_slf4j_api//jar",
+        "@org_jspecify_jspecify//jar",
     ],
     plugins = ["@com_google_api_gax_java//:auto_value_plugin"],
     visibility = ["//visibility:public"],

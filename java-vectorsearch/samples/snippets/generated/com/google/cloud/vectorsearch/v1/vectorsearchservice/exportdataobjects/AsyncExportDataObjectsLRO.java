@@ -40,6 +40,7 @@ public class AsyncExportDataObjectsLRO {
       ExportDataObjectsRequest request =
           ExportDataObjectsRequest.newBuilder()
               .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+              .setFieldFilter(ExportDataObjectsRequest.FieldFilter.newBuilder().build())
               .build();
       OperationFuture<ExportDataObjectsResponse, ExportDataObjectsMetadata> future =
           vectorSearchServiceClient.exportDataObjectsOperationCallable().futureCall(request);

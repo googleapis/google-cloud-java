@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -229,10 +231,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GkeHubClient implements BackgroundResource {
-  private final GkeHubSettings settings;
+  private final @Nullable GkeHubSettings settings;
   private final GkeHubStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -278,7 +281,7 @@ public class GkeHubClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final GkeHubSettings getSettings() {
+  public final @Nullable GkeHubSettings getSettings() {
     return settings;
   }
 
@@ -959,8 +962,8 @@ public class GkeHubClient implements BackgroundResource {
       extends AbstractPage<ListFeaturesRequest, ListFeaturesResponse, Feature, ListFeaturesPage> {
 
     private ListFeaturesPage(
-        PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
-        ListFeaturesResponse response) {
+        @Nullable PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
+        @Nullable ListFeaturesResponse response) {
       super(context, response);
     }
 
@@ -970,14 +973,14 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListFeaturesPage createPage(
-        PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
-        ListFeaturesResponse response) {
+        @Nullable PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
+        @Nullable ListFeaturesResponse response) {
       return new ListFeaturesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeaturesPage> createPageAsync(
-        PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
+        @Nullable PageContext<ListFeaturesRequest, ListFeaturesResponse, Feature> context,
         ApiFuture<ListFeaturesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -991,7 +994,8 @@ public class GkeHubClient implements BackgroundResource {
           ListFeaturesPage,
           ListFeaturesFixedSizeCollection> {
 
-    private ListFeaturesFixedSizeCollection(List<ListFeaturesPage> pages, int collectionSize) {
+    private ListFeaturesFixedSizeCollection(
+        @Nullable List<ListFeaturesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1001,7 +1005,7 @@ public class GkeHubClient implements BackgroundResource {
 
     @Override
     protected ListFeaturesFixedSizeCollection createCollection(
-        List<ListFeaturesPage> pages, int collectionSize) {
+        @Nullable List<ListFeaturesPage> pages, int collectionSize) {
       return new ListFeaturesFixedSizeCollection(pages, collectionSize);
     }
   }

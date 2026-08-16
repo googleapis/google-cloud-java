@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -293,8 +295,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -376,10 +377,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class TestCasesClient implements BackgroundResource {
-  private final TestCasesSettings settings;
+  private final @Nullable TestCasesSettings settings;
   private final TestCasesStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -425,7 +427,7 @@ public class TestCasesClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final TestCasesSettings getSettings() {
+  public final @Nullable TestCasesSettings getSettings() {
     return settings;
   }
 
@@ -474,7 +476,7 @@ public class TestCasesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTestCasesPagedResponse listTestCases(AgentName parent) {
+  public final ListTestCasesPagedResponse listTestCases(@Nullable AgentName parent) {
     ListTestCasesRequest request =
         ListTestCasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -635,7 +637,7 @@ public class TestCasesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void batchDeleteTestCases(AgentName parent) {
+  public final void batchDeleteTestCases(@Nullable AgentName parent) {
     BatchDeleteTestCasesRequest request =
         BatchDeleteTestCasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -750,7 +752,7 @@ public class TestCasesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TestCase getTestCase(TestCaseName name) {
+  public final TestCase getTestCase(@Nullable TestCaseName name) {
     GetTestCaseRequest request =
         GetTestCaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTestCase(request);
@@ -864,7 +866,7 @@ public class TestCasesClient implements BackgroundResource {
    * @param testCase Required. The test case to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TestCase createTestCase(AgentName parent, TestCase testCase) {
+  public final TestCase createTestCase(@Nullable AgentName parent, TestCase testCase) {
     CreateTestCaseRequest request =
         CreateTestCaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1613,7 +1615,7 @@ public class TestCasesClient implements BackgroundResource {
    *     Specify a `-` as a wildcard for TestCase ID to list results across multiple test cases.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTestCaseResultsPagedResponse listTestCaseResults(TestCaseName parent) {
+  public final ListTestCaseResultsPagedResponse listTestCaseResults(@Nullable TestCaseName parent) {
     ListTestCaseResultsRequest request =
         ListTestCaseResultsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1792,7 +1794,7 @@ public class TestCasesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/testCases/&lt;TestCaseID&gt;/results/&lt;TestCaseResultID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TestCaseResult getTestCaseResult(TestCaseResultName name) {
+  public final TestCaseResult getTestCaseResult(@Nullable TestCaseResultName name) {
     GetTestCaseResultRequest request =
         GetTestCaseResultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1896,9 +1898,8 @@ public class TestCasesClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1942,9 +1943,8 @@ public class TestCasesClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1988,9 +1988,8 @@ public class TestCasesClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -2143,8 +2142,8 @@ public class TestCasesClient implements BackgroundResource {
           ListTestCasesRequest, ListTestCasesResponse, TestCase, ListTestCasesPage> {
 
     private ListTestCasesPage(
-        PageContext<ListTestCasesRequest, ListTestCasesResponse, TestCase> context,
-        ListTestCasesResponse response) {
+        @Nullable PageContext<ListTestCasesRequest, ListTestCasesResponse, TestCase> context,
+        @Nullable ListTestCasesResponse response) {
       super(context, response);
     }
 
@@ -2154,14 +2153,14 @@ public class TestCasesClient implements BackgroundResource {
 
     @Override
     protected ListTestCasesPage createPage(
-        PageContext<ListTestCasesRequest, ListTestCasesResponse, TestCase> context,
-        ListTestCasesResponse response) {
+        @Nullable PageContext<ListTestCasesRequest, ListTestCasesResponse, TestCase> context,
+        @Nullable ListTestCasesResponse response) {
       return new ListTestCasesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTestCasesPage> createPageAsync(
-        PageContext<ListTestCasesRequest, ListTestCasesResponse, TestCase> context,
+        @Nullable PageContext<ListTestCasesRequest, ListTestCasesResponse, TestCase> context,
         ApiFuture<ListTestCasesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2175,7 +2174,8 @@ public class TestCasesClient implements BackgroundResource {
           ListTestCasesPage,
           ListTestCasesFixedSizeCollection> {
 
-    private ListTestCasesFixedSizeCollection(List<ListTestCasesPage> pages, int collectionSize) {
+    private ListTestCasesFixedSizeCollection(
+        @Nullable List<ListTestCasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2185,7 +2185,7 @@ public class TestCasesClient implements BackgroundResource {
 
     @Override
     protected ListTestCasesFixedSizeCollection createCollection(
-        List<ListTestCasesPage> pages, int collectionSize) {
+        @Nullable List<ListTestCasesPage> pages, int collectionSize) {
       return new ListTestCasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2223,9 +2223,10 @@ public class TestCasesClient implements BackgroundResource {
           ListTestCaseResultsPage> {
 
     private ListTestCaseResultsPage(
-        PageContext<ListTestCaseResultsRequest, ListTestCaseResultsResponse, TestCaseResult>
+        @Nullable
+            PageContext<ListTestCaseResultsRequest, ListTestCaseResultsResponse, TestCaseResult>
             context,
-        ListTestCaseResultsResponse response) {
+        @Nullable ListTestCaseResultsResponse response) {
       super(context, response);
     }
 
@@ -2235,15 +2236,17 @@ public class TestCasesClient implements BackgroundResource {
 
     @Override
     protected ListTestCaseResultsPage createPage(
-        PageContext<ListTestCaseResultsRequest, ListTestCaseResultsResponse, TestCaseResult>
+        @Nullable
+            PageContext<ListTestCaseResultsRequest, ListTestCaseResultsResponse, TestCaseResult>
             context,
-        ListTestCaseResultsResponse response) {
+        @Nullable ListTestCaseResultsResponse response) {
       return new ListTestCaseResultsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTestCaseResultsPage> createPageAsync(
-        PageContext<ListTestCaseResultsRequest, ListTestCaseResultsResponse, TestCaseResult>
+        @Nullable
+            PageContext<ListTestCaseResultsRequest, ListTestCaseResultsResponse, TestCaseResult>
             context,
         ApiFuture<ListTestCaseResultsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2259,7 +2262,7 @@ public class TestCasesClient implements BackgroundResource {
           ListTestCaseResultsFixedSizeCollection> {
 
     private ListTestCaseResultsFixedSizeCollection(
-        List<ListTestCaseResultsPage> pages, int collectionSize) {
+        @Nullable List<ListTestCaseResultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2269,7 +2272,7 @@ public class TestCasesClient implements BackgroundResource {
 
     @Override
     protected ListTestCaseResultsFixedSizeCollection createCollection(
-        List<ListTestCaseResultsPage> pages, int collectionSize) {
+        @Nullable List<ListTestCaseResultsPage> pages, int collectionSize) {
       return new ListTestCaseResultsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2303,8 +2306,8 @@ public class TestCasesClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2314,14 +2317,14 @@ public class TestCasesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2335,7 +2338,8 @@ public class TestCasesClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2345,7 +2349,7 @@ public class TestCasesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

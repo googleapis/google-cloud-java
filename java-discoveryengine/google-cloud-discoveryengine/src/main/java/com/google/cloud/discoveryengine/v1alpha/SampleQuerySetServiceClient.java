@@ -34,6 +34,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -221,10 +223,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SampleQuerySetServiceClient implements BackgroundResource {
-  private final SampleQuerySetServiceSettings settings;
+  private final @Nullable SampleQuerySetServiceSettings settings;
   private final SampleQuerySetServiceStub stub;
 
   /** Constructs an instance of SampleQuerySetServiceClient with default settings. */
@@ -264,7 +267,7 @@ public class SampleQuerySetServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SampleQuerySetServiceSettings getSettings() {
+  public final @Nullable SampleQuerySetServiceSettings getSettings() {
     return settings;
   }
 
@@ -302,7 +305,7 @@ public class SampleQuerySetServiceClient implements BackgroundResource {
    *     does not exist, a NOT_FOUND error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SampleQuerySet getSampleQuerySet(SampleQuerySetName name) {
+  public final SampleQuerySet getSampleQuerySet(@Nullable SampleQuerySetName name) {
     GetSampleQuerySetRequest request =
         GetSampleQuerySetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -434,7 +437,7 @@ public class SampleQuerySetServiceClient implements BackgroundResource {
    *     regardless of whether or not this location exists, a `PERMISSION_DENIED` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSampleQuerySetsPagedResponse listSampleQuerySets(LocationName parent) {
+  public final ListSampleQuerySetsPagedResponse listSampleQuerySets(@Nullable LocationName parent) {
     ListSampleQuerySetsRequest request =
         ListSampleQuerySetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -630,7 +633,7 @@ public class SampleQuerySetServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SampleQuerySet createSampleQuerySet(
-      LocationName parent, SampleQuerySet sampleQuerySet, String sampleQuerySetId) {
+      @Nullable LocationName parent, SampleQuerySet sampleQuerySet, String sampleQuerySetId) {
     CreateSampleQuerySetRequest request =
         CreateSampleQuerySetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -888,7 +891,7 @@ public class SampleQuerySetServiceClient implements BackgroundResource {
    *     does not exist, a `NOT_FOUND` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSampleQuerySet(SampleQuerySetName name) {
+  public final void deleteSampleQuerySet(@Nullable SampleQuerySetName name) {
     DeleteSampleQuerySetRequest request =
         DeleteSampleQuerySetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1055,9 +1058,10 @@ public class SampleQuerySetServiceClient implements BackgroundResource {
           ListSampleQuerySetsPage> {
 
     private ListSampleQuerySetsPage(
-        PageContext<ListSampleQuerySetsRequest, ListSampleQuerySetsResponse, SampleQuerySet>
+        @Nullable
+            PageContext<ListSampleQuerySetsRequest, ListSampleQuerySetsResponse, SampleQuerySet>
             context,
-        ListSampleQuerySetsResponse response) {
+        @Nullable ListSampleQuerySetsResponse response) {
       super(context, response);
     }
 
@@ -1067,15 +1071,17 @@ public class SampleQuerySetServiceClient implements BackgroundResource {
 
     @Override
     protected ListSampleQuerySetsPage createPage(
-        PageContext<ListSampleQuerySetsRequest, ListSampleQuerySetsResponse, SampleQuerySet>
+        @Nullable
+            PageContext<ListSampleQuerySetsRequest, ListSampleQuerySetsResponse, SampleQuerySet>
             context,
-        ListSampleQuerySetsResponse response) {
+        @Nullable ListSampleQuerySetsResponse response) {
       return new ListSampleQuerySetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSampleQuerySetsPage> createPageAsync(
-        PageContext<ListSampleQuerySetsRequest, ListSampleQuerySetsResponse, SampleQuerySet>
+        @Nullable
+            PageContext<ListSampleQuerySetsRequest, ListSampleQuerySetsResponse, SampleQuerySet>
             context,
         ApiFuture<ListSampleQuerySetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1091,7 +1097,7 @@ public class SampleQuerySetServiceClient implements BackgroundResource {
           ListSampleQuerySetsFixedSizeCollection> {
 
     private ListSampleQuerySetsFixedSizeCollection(
-        List<ListSampleQuerySetsPage> pages, int collectionSize) {
+        @Nullable List<ListSampleQuerySetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1101,7 +1107,7 @@ public class SampleQuerySetServiceClient implements BackgroundResource {
 
     @Override
     protected ListSampleQuerySetsFixedSizeCollection createCollection(
-        List<ListSampleQuerySetsPage> pages, int collectionSize) {
+        @Nullable List<ListSampleQuerySetsPage> pages, int collectionSize) {
       return new ListSampleQuerySetsFixedSizeCollection(pages, collectionSize);
     }
   }

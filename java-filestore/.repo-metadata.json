@@ -5,13 +5,12 @@
   "api_description": "instances are fully managed NFS file servers on Google Cloud for use with applications running on Compute Engine virtual machines (VMs) instances or Google Kubernetes Engine clusters.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-filestore/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-filestore",
   "distribution_name": "com.google.cloud:google-cloud-filestore",
   "api_id": "file.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
   "rest_documentation": "https://cloud.google.com/filestore/docs/reference/rest"
 }

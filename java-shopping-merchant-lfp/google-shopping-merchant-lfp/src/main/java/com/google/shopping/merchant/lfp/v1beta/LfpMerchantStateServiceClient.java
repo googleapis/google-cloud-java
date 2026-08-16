@@ -24,6 +24,8 @@ import com.google.shopping.merchant.lfp.v1beta.stub.LfpMerchantStateServiceStubS
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -134,10 +136,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class LfpMerchantStateServiceClient implements BackgroundResource {
-  private final LfpMerchantStateServiceSettings settings;
+  private final @Nullable LfpMerchantStateServiceSettings settings;
   private final LfpMerchantStateServiceStub stub;
 
   /** Constructs an instance of LfpMerchantStateServiceClient with default settings. */
@@ -178,7 +181,7 @@ public class LfpMerchantStateServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LfpMerchantStateServiceSettings getSettings() {
+  public final @Nullable LfpMerchantStateServiceSettings getSettings() {
     return settings;
   }
 
@@ -209,7 +212,7 @@ public class LfpMerchantStateServiceClient implements BackgroundResource {
    *     `accounts/{account}/lfpMerchantStates/{target_merchant}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LfpMerchantState getLfpMerchantState(LfpMerchantStateName name) {
+  public final LfpMerchantState getLfpMerchantState(@Nullable LfpMerchantStateName name) {
     GetLfpMerchantStateRequest request =
         GetLfpMerchantStateRequest.newBuilder()
             .setName(name == null ? null : name.toString())

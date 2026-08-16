@@ -37,7 +37,9 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.lenient;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.auth.oauth2.IdentityPoolCredentialSource.CertificateConfig;
 import java.io.ByteArrayInputStream;
@@ -57,17 +59,13 @@ import java.util.Base64;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 /** Tests for {@link CertificateIdentityPoolSubjectTokenSupplier}. */
-@ExtendWith(MockitoExtension.class)
 class CertificateIdentityPoolSubjectTokenSupplierTest {
 
-  @Mock private IdentityPoolCredentialSource mockCredentialSource;
-  @Mock private CertificateConfig mockCertificateConfig;
-  @Mock private ExternalAccountSupplierContext mockContext;
+  private IdentityPoolCredentialSource mockCredentialSource;
+  private CertificateConfig mockCertificateConfig;
+  private ExternalAccountSupplierContext mockContext;
 
   private CertificateIdentityPoolSubjectTokenSupplier supplier;
 
@@ -85,6 +83,11 @@ class CertificateIdentityPoolSubjectTokenSupplierTest {
 
   @BeforeEach
   void setUp() throws IOException, URISyntaxException {
+    mockCredentialSource =
+        mock(IdentityPoolCredentialSource.class, withSettings().withoutAnnotations());
+    mockCertificateConfig = mock(CertificateConfig.class, withSettings().withoutAnnotations());
+    mockContext = mock(ExternalAccountSupplierContext.class, withSettings().withoutAnnotations());
+
     ClassLoader classLoader = getClass().getClassLoader();
     URL leafCertUrl = classLoader.getResource("x509_leaf_certificate.pem");
     assertNotNull(leafCertUrl, "Test leaf certificate file not found!");

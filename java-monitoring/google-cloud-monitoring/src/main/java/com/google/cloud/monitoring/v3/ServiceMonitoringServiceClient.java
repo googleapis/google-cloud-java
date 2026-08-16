@@ -51,6 +51,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -323,9 +325,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ServiceMonitoringServiceClient implements BackgroundResource {
-  private final ServiceMonitoringServiceSettings settings;
+  private final @Nullable ServiceMonitoringServiceSettings settings;
   private final ServiceMonitoringServiceStub stub;
 
   /** Constructs an instance of ServiceMonitoringServiceClient with default settings. */
@@ -367,7 +370,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ServiceMonitoringServiceSettings getSettings() {
+  public final @Nullable ServiceMonitoringServiceSettings getSettings() {
     return settings;
   }
 
@@ -402,7 +405,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Service createService(ResourceName parent, Service service) {
+  public final Service createService(@Nullable ResourceName parent, Service service) {
     CreateServiceRequest request =
         CreateServiceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -438,7 +441,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Service createService(OrganizationName parent, Service service) {
+  public final Service createService(@Nullable OrganizationName parent, Service service) {
     CreateServiceRequest request =
         CreateServiceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -474,7 +477,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @param service Required. The `Service` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Service createService(ProjectName parent, Service service) {
+  public final Service createService(@Nullable ProjectName parent, Service service) {
     CreateServiceRequest request =
         CreateServiceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -601,7 +604,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Service getService(ServiceName name) {
+  public final Service getService(@Nullable ServiceName name) {
     GetServiceRequest request =
         GetServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getService(request);
@@ -720,7 +723,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServicesPagedResponse listServices(ResourceName parent) {
+  public final ListServicesPagedResponse listServices(@Nullable ResourceName parent) {
     ListServicesRequest request =
         ListServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -755,7 +758,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServicesPagedResponse listServices(OrganizationName parent) {
+  public final ListServicesPagedResponse listServices(@Nullable OrganizationName parent) {
     ListServicesRequest request =
         ListServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -790,7 +793,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServicesPagedResponse listServices(ProjectName parent) {
+  public final ListServicesPagedResponse listServices(@Nullable ProjectName parent) {
     ListServicesRequest request =
         ListServicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1051,7 +1054,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteService(ServiceName name) {
+  public final void deleteService(@Nullable ServiceName name) {
     DeleteServiceRequest request =
         DeleteServiceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteService(request);
@@ -1171,7 +1174,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceLevelObjective createServiceLevelObjective(
-      ServiceName parent, ServiceLevelObjective serviceLevelObjective) {
+      @Nullable ServiceName parent, ServiceLevelObjective serviceLevelObjective) {
     CreateServiceLevelObjectiveRequest request =
         CreateServiceLevelObjectiveRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1308,7 +1311,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServiceLevelObjective getServiceLevelObjective(ServiceLevelObjectiveName name) {
+  public final ServiceLevelObjective getServiceLevelObjective(
+      @Nullable ServiceLevelObjectiveName name) {
     GetServiceLevelObjectiveRequest request =
         GetServiceLevelObjectiveRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1445,7 +1449,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceLevelObjectivesPagedResponse listServiceLevelObjectives(
-      ServiceName parent) {
+      @Nullable ServiceName parent) {
     ListServiceLevelObjectivesRequest request =
         ListServiceLevelObjectivesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1724,7 +1728,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteServiceLevelObjective(ServiceLevelObjectiveName name) {
+  public final void deleteServiceLevelObjective(@Nullable ServiceLevelObjectiveName name) {
     DeleteServiceLevelObjectiveRequest request =
         DeleteServiceLevelObjectiveRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1887,8 +1891,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
       extends AbstractPage<ListServicesRequest, ListServicesResponse, Service, ListServicesPage> {
 
     private ListServicesPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       super(context, response);
     }
 
@@ -1898,14 +1902,14 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected ListServicesPage createPage(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
-        ListServicesResponse response) {
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable ListServicesResponse response) {
       return new ListServicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServicesPage> createPageAsync(
-        PageContext<ListServicesRequest, ListServicesResponse, Service> context,
+        @Nullable PageContext<ListServicesRequest, ListServicesResponse, Service> context,
         ApiFuture<ListServicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1919,7 +1923,8 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
           ListServicesPage,
           ListServicesFixedSizeCollection> {
 
-    private ListServicesFixedSizeCollection(List<ListServicesPage> pages, int collectionSize) {
+    private ListServicesFixedSizeCollection(
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1929,7 +1934,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected ListServicesFixedSizeCollection createCollection(
-        List<ListServicesPage> pages, int collectionSize) {
+        @Nullable List<ListServicesPage> pages, int collectionSize) {
       return new ListServicesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1970,12 +1975,13 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
           ListServiceLevelObjectivesPage> {
 
     private ListServiceLevelObjectivesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceLevelObjectivesRequest,
                 ListServiceLevelObjectivesResponse,
                 ServiceLevelObjective>
             context,
-        ListServiceLevelObjectivesResponse response) {
+        @Nullable ListServiceLevelObjectivesResponse response) {
       super(context, response);
     }
 
@@ -1985,18 +1991,20 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected ListServiceLevelObjectivesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceLevelObjectivesRequest,
                 ListServiceLevelObjectivesResponse,
                 ServiceLevelObjective>
             context,
-        ListServiceLevelObjectivesResponse response) {
+        @Nullable ListServiceLevelObjectivesResponse response) {
       return new ListServiceLevelObjectivesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServiceLevelObjectivesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListServiceLevelObjectivesRequest,
                 ListServiceLevelObjectivesResponse,
                 ServiceLevelObjective>
@@ -2015,7 +2023,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
           ListServiceLevelObjectivesFixedSizeCollection> {
 
     private ListServiceLevelObjectivesFixedSizeCollection(
-        List<ListServiceLevelObjectivesPage> pages, int collectionSize) {
+        @Nullable List<ListServiceLevelObjectivesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2025,7 +2033,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
 
     @Override
     protected ListServiceLevelObjectivesFixedSizeCollection createCollection(
-        List<ListServiceLevelObjectivesPage> pages, int collectionSize) {
+        @Nullable List<ListServiceLevelObjectivesPage> pages, int collectionSize) {
       return new ListServiceLevelObjectivesFixedSizeCollection(pages, collectionSize);
     }
   }

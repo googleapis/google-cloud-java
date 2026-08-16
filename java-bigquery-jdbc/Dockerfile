@@ -1,4 +1,4 @@
-FROM gcr.io/cloud-devrel-public-resources/java11
+FROM gcr.io/cloud-devrel-public-resources/java11 AS base
 ARG BRANCH=main
 ENV JDBC_DOCKER_ENV=true
 
@@ -14,11 +14,22 @@ RUN bash -c " \
     && git clone -b ${BRANCH} --depth 1 --single-branch https://github.com/googleapis/google-cloud-java.git \
     && cd /git/google-cloud-java \
     && source .kokoro/common.sh \
-    && install_modules java-bigquery \
+    && install_modules java-bigquery-jdbc \
     && rm -rf /git"
 
 # This will ensure all deps are present
 WORKDIR /src
-RUN mvn install
+RUN mvn install 
 
 ENTRYPOINT []
+
+# Proxy stage: configured squid proxy and iptables to force all traffic through it
+FROM base AS proxy
+RUN apt-get update && apt-get install -y squid iptables iproute2 curl && rm -rf /var/lib/apt/lists/*
+COPY tools/environments/proxy/start-proxy.sh /usr/local/bin/start-proxy.sh
+RUN chmod +x /usr/local/bin/start-proxy.sh
+ENTRYPOINT ["/usr/local/bin/start-proxy.sh"]
+
+# Regular stage: same as base, default stage
+FROM base AS regular
+

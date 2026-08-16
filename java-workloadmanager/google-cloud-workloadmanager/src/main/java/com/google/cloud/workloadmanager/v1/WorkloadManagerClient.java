@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -396,9 +398,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class WorkloadManagerClient implements BackgroundResource {
-  private final WorkloadManagerSettings settings;
+  private final @Nullable WorkloadManagerSettings settings;
   private final WorkloadManagerStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -446,7 +449,7 @@ public class WorkloadManagerClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final WorkloadManagerSettings getSettings() {
+  public final @Nullable WorkloadManagerSettings getSettings() {
     return settings;
   }
 
@@ -494,7 +497,7 @@ public class WorkloadManagerClient implements BackgroundResource {
    * @param parent Required. Parent value for ListEvaluationsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEvaluationsPagedResponse listEvaluations(LocationName parent) {
+  public final ListEvaluationsPagedResponse listEvaluations(@Nullable LocationName parent) {
     ListEvaluationsRequest request =
         ListEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -662,7 +665,7 @@ public class WorkloadManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Evaluation getEvaluation(EvaluationName name) {
+  public final Evaluation getEvaluation(@Nullable EvaluationName name) {
     GetEvaluationRequest request =
         GetEvaluationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEvaluation(request);
@@ -778,7 +781,7 @@ public class WorkloadManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Evaluation, OperationMetadata> createEvaluationAsync(
-      LocationName parent, Evaluation evaluation, String evaluationId) {
+      @Nullable LocationName parent, Evaluation evaluation, String evaluationId) {
     CreateEvaluationRequest request =
         CreateEvaluationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1071,7 +1074,7 @@ public class WorkloadManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteEvaluationAsync(
-      EvaluationName name) {
+      @Nullable EvaluationName name) {
     DeleteEvaluationRequest request =
         DeleteEvaluationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEvaluationAsync(request);
@@ -1219,7 +1222,7 @@ public class WorkloadManagerClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/evaluations/{evaluation}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExecutionsPagedResponse listExecutions(EvaluationName parent) {
+  public final ListExecutionsPagedResponse listExecutions(@Nullable EvaluationName parent) {
     ListExecutionsRequest request =
         ListExecutionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1389,7 +1392,7 @@ public class WorkloadManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Execution getExecution(ExecutionName name) {
+  public final Execution getExecution(@Nullable ExecutionName name) {
     GetExecutionRequest request =
         GetExecutionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExecution(request);
@@ -1510,7 +1513,7 @@ public class WorkloadManagerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Execution, OperationMetadata> runEvaluationAsync(
-      EvaluationName name, Execution execution, String executionId) {
+      @Nullable EvaluationName name, Execution execution, String executionId) {
     RunEvaluationRequest request =
         RunEvaluationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1675,7 +1678,8 @@ public class WorkloadManagerClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteExecutionAsync(ExecutionName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteExecutionAsync(
+      @Nullable ExecutionName name) {
     DeleteExecutionRequest request =
         DeleteExecutionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteExecutionAsync(request);
@@ -1967,7 +1971,7 @@ public class WorkloadManagerClient implements BackgroundResource {
    *     available to all projects and all regions.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRulesResponse listRules(LocationName parent) {
+  public final ListRulesResponse listRules(@Nullable LocationName parent) {
     ListRulesRequest request =
         ListRulesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listRules(request);
@@ -2444,8 +2448,8 @@ public class WorkloadManagerClient implements BackgroundResource {
           ListEvaluationsRequest, ListEvaluationsResponse, Evaluation, ListEvaluationsPage> {
 
     private ListEvaluationsPage(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
-        ListEvaluationsResponse response) {
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable ListEvaluationsResponse response) {
       super(context, response);
     }
 
@@ -2455,14 +2459,14 @@ public class WorkloadManagerClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationsPage createPage(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
-        ListEvaluationsResponse response) {
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable ListEvaluationsResponse response) {
       return new ListEvaluationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEvaluationsPage> createPageAsync(
-        PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
+        @Nullable PageContext<ListEvaluationsRequest, ListEvaluationsResponse, Evaluation> context,
         ApiFuture<ListEvaluationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2477,7 +2481,7 @@ public class WorkloadManagerClient implements BackgroundResource {
           ListEvaluationsFixedSizeCollection> {
 
     private ListEvaluationsFixedSizeCollection(
-        List<ListEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2487,7 +2491,7 @@ public class WorkloadManagerClient implements BackgroundResource {
 
     @Override
     protected ListEvaluationsFixedSizeCollection createCollection(
-        List<ListEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListEvaluationsPage> pages, int collectionSize) {
       return new ListEvaluationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2521,8 +2525,8 @@ public class WorkloadManagerClient implements BackgroundResource {
           ListExecutionsRequest, ListExecutionsResponse, Execution, ListExecutionsPage> {
 
     private ListExecutionsPage(
-        PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
-        ListExecutionsResponse response) {
+        @Nullable PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
+        @Nullable ListExecutionsResponse response) {
       super(context, response);
     }
 
@@ -2532,14 +2536,14 @@ public class WorkloadManagerClient implements BackgroundResource {
 
     @Override
     protected ListExecutionsPage createPage(
-        PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
-        ListExecutionsResponse response) {
+        @Nullable PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
+        @Nullable ListExecutionsResponse response) {
       return new ListExecutionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExecutionsPage> createPageAsync(
-        PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
+        @Nullable PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
         ApiFuture<ListExecutionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2553,7 +2557,8 @@ public class WorkloadManagerClient implements BackgroundResource {
           ListExecutionsPage,
           ListExecutionsFixedSizeCollection> {
 
-    private ListExecutionsFixedSizeCollection(List<ListExecutionsPage> pages, int collectionSize) {
+    private ListExecutionsFixedSizeCollection(
+        @Nullable List<ListExecutionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2563,7 +2568,7 @@ public class WorkloadManagerClient implements BackgroundResource {
 
     @Override
     protected ListExecutionsFixedSizeCollection createCollection(
-        List<ListExecutionsPage> pages, int collectionSize) {
+        @Nullable List<ListExecutionsPage> pages, int collectionSize) {
       return new ListExecutionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2601,9 +2606,10 @@ public class WorkloadManagerClient implements BackgroundResource {
           ListExecutionResultsPage> {
 
     private ListExecutionResultsPage(
-        PageContext<ListExecutionResultsRequest, ListExecutionResultsResponse, ExecutionResult>
+        @Nullable
+            PageContext<ListExecutionResultsRequest, ListExecutionResultsResponse, ExecutionResult>
             context,
-        ListExecutionResultsResponse response) {
+        @Nullable ListExecutionResultsResponse response) {
       super(context, response);
     }
 
@@ -2613,15 +2619,17 @@ public class WorkloadManagerClient implements BackgroundResource {
 
     @Override
     protected ListExecutionResultsPage createPage(
-        PageContext<ListExecutionResultsRequest, ListExecutionResultsResponse, ExecutionResult>
+        @Nullable
+            PageContext<ListExecutionResultsRequest, ListExecutionResultsResponse, ExecutionResult>
             context,
-        ListExecutionResultsResponse response) {
+        @Nullable ListExecutionResultsResponse response) {
       return new ListExecutionResultsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExecutionResultsPage> createPageAsync(
-        PageContext<ListExecutionResultsRequest, ListExecutionResultsResponse, ExecutionResult>
+        @Nullable
+            PageContext<ListExecutionResultsRequest, ListExecutionResultsResponse, ExecutionResult>
             context,
         ApiFuture<ListExecutionResultsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2637,7 +2645,7 @@ public class WorkloadManagerClient implements BackgroundResource {
           ListExecutionResultsFixedSizeCollection> {
 
     private ListExecutionResultsFixedSizeCollection(
-        List<ListExecutionResultsPage> pages, int collectionSize) {
+        @Nullable List<ListExecutionResultsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2647,7 +2655,7 @@ public class WorkloadManagerClient implements BackgroundResource {
 
     @Override
     protected ListExecutionResultsFixedSizeCollection createCollection(
-        List<ListExecutionResultsPage> pages, int collectionSize) {
+        @Nullable List<ListExecutionResultsPage> pages, int collectionSize) {
       return new ListExecutionResultsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2685,9 +2693,10 @@ public class WorkloadManagerClient implements BackgroundResource {
           ListScannedResourcesPage> {
 
     private ListScannedResourcesPage(
-        PageContext<ListScannedResourcesRequest, ListScannedResourcesResponse, ScannedResource>
+        @Nullable
+            PageContext<ListScannedResourcesRequest, ListScannedResourcesResponse, ScannedResource>
             context,
-        ListScannedResourcesResponse response) {
+        @Nullable ListScannedResourcesResponse response) {
       super(context, response);
     }
 
@@ -2697,15 +2706,17 @@ public class WorkloadManagerClient implements BackgroundResource {
 
     @Override
     protected ListScannedResourcesPage createPage(
-        PageContext<ListScannedResourcesRequest, ListScannedResourcesResponse, ScannedResource>
+        @Nullable
+            PageContext<ListScannedResourcesRequest, ListScannedResourcesResponse, ScannedResource>
             context,
-        ListScannedResourcesResponse response) {
+        @Nullable ListScannedResourcesResponse response) {
       return new ListScannedResourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListScannedResourcesPage> createPageAsync(
-        PageContext<ListScannedResourcesRequest, ListScannedResourcesResponse, ScannedResource>
+        @Nullable
+            PageContext<ListScannedResourcesRequest, ListScannedResourcesResponse, ScannedResource>
             context,
         ApiFuture<ListScannedResourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2721,7 +2732,7 @@ public class WorkloadManagerClient implements BackgroundResource {
           ListScannedResourcesFixedSizeCollection> {
 
     private ListScannedResourcesFixedSizeCollection(
-        List<ListScannedResourcesPage> pages, int collectionSize) {
+        @Nullable List<ListScannedResourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2731,7 +2742,7 @@ public class WorkloadManagerClient implements BackgroundResource {
 
     @Override
     protected ListScannedResourcesFixedSizeCollection createCollection(
-        List<ListScannedResourcesPage> pages, int collectionSize) {
+        @Nullable List<ListScannedResourcesPage> pages, int collectionSize) {
       return new ListScannedResourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2765,8 +2776,8 @@ public class WorkloadManagerClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2776,14 +2787,14 @@ public class WorkloadManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2797,7 +2808,8 @@ public class WorkloadManagerClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2807,7 +2819,7 @@ public class WorkloadManagerClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

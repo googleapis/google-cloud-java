@@ -88,10 +88,6 @@ public class ITRetryDmlAsPartitionedDmlTest extends ITAbstractSpannerTest {
 
   @Test
   public void testDmlFailsIfMutationLimitExceeded() {
-    // TODO(sakthivelmani) - Re-enable once b/422916293 is resolved
-    assumeFalse(
-        "Skipping the test due to a known bug b/422916293",
-        env.getTestHelper().getOptions().isEnableDirectAccess());
     try (Connection connection = createConnection()) {
       connection.setAutocommit(true);
       assertThrows(
@@ -104,10 +100,6 @@ public class ITRetryDmlAsPartitionedDmlTest extends ITAbstractSpannerTest {
 
   @Test
   public void testRetryDmlAsPartitionedDml() throws Exception {
-    // TODO(sakthivelmani) - Re-enable once b/422916293 is resolved
-    assumeFalse(
-        "Skipping the test due to a known bug b/422916293",
-        env.getTestHelper().getOptions().isEnableDirectAccess());
     try (Connection connection = createConnection()) {
       connection.setAutocommit(true);
       connection.setAutocommitDmlMode(
@@ -148,10 +140,6 @@ public class ITRetryDmlAsPartitionedDmlTest extends ITAbstractSpannerTest {
 
   @Test
   public void testRetryDmlAsPartitionedDml_failsForLargeInserts() throws Exception {
-    // TODO(sakthivelmani) - Re-enable once b/422916293 is resolved
-    assumeFalse(
-        "Skipping the test due to a known bug b/422916293",
-        env.getTestHelper().getOptions().isEnableDirectAccess());
     try (Connection connection = createConnection()) {
       connection.setAutocommit(true);
       connection.setAutocommitDmlMode(

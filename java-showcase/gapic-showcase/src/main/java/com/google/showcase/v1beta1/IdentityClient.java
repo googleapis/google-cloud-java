@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -286,10 +288,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class IdentityClient implements BackgroundResource {
-  private final IdentitySettings settings;
+  private final @Nullable IdentitySettings settings;
   private final IdentityStub stub;
 
   /** Constructs an instance of IdentityClient with default settings. */
@@ -327,7 +330,7 @@ public class IdentityClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final IdentitySettings getSettings() {
+  public final @Nullable IdentitySettings getSettings() {
     return settings;
   }
 
@@ -498,7 +501,7 @@ public class IdentityClient implements BackgroundResource {
    * @param name The resource name of the requested user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final User getUser(UserName name) {
+  public final User getUser(@Nullable UserName name) {
     GetUserRequest request =
         GetUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getUser(request);
@@ -659,7 +662,7 @@ public class IdentityClient implements BackgroundResource {
    * @param name The resource name of the user to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteUser(UserName name) {
+  public final void deleteUser(@Nullable UserName name) {
     DeleteUserRequest request =
         DeleteUserRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteUser(request);
@@ -1237,8 +1240,8 @@ public class IdentityClient implements BackgroundResource {
       extends AbstractPage<ListUsersRequest, ListUsersResponse, User, ListUsersPage> {
 
     private ListUsersPage(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
-        ListUsersResponse response) {
+        @Nullable PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        @Nullable ListUsersResponse response) {
       super(context, response);
     }
 
@@ -1248,14 +1251,14 @@ public class IdentityClient implements BackgroundResource {
 
     @Override
     protected ListUsersPage createPage(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
-        ListUsersResponse response) {
+        @Nullable PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        @Nullable ListUsersResponse response) {
       return new ListUsersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUsersPage> createPageAsync(
-        PageContext<ListUsersRequest, ListUsersResponse, User> context,
+        @Nullable PageContext<ListUsersRequest, ListUsersResponse, User> context,
         ApiFuture<ListUsersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1265,7 +1268,7 @@ public class IdentityClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListUsersRequest, ListUsersResponse, User, ListUsersPage, ListUsersFixedSizeCollection> {
 
-    private ListUsersFixedSizeCollection(List<ListUsersPage> pages, int collectionSize) {
+    private ListUsersFixedSizeCollection(@Nullable List<ListUsersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1275,7 +1278,7 @@ public class IdentityClient implements BackgroundResource {
 
     @Override
     protected ListUsersFixedSizeCollection createCollection(
-        List<ListUsersPage> pages, int collectionSize) {
+        @Nullable List<ListUsersPage> pages, int collectionSize) {
       return new ListUsersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1309,8 +1312,8 @@ public class IdentityClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1320,14 +1323,14 @@ public class IdentityClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1341,7 +1344,8 @@ public class IdentityClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1351,7 +1355,7 @@ public class IdentityClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

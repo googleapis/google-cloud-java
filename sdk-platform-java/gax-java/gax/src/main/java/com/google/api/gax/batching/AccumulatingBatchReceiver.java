@@ -33,8 +33,10 @@ import com.google.api.core.ApiFuture;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import org.jspecify.annotations.NullMarked;
 
 /** A simple ThresholdBatchReceiver that just accumulates batches. */
+@NullMarked
 public final class AccumulatingBatchReceiver<T> implements ThresholdBatchReceiver<T> {
   private final ConcurrentLinkedQueue<T> batches = new ConcurrentLinkedQueue<>();
   private final ApiFuture<?> retFuture;

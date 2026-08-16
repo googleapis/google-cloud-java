@@ -51,8 +51,8 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.concurrent.Executor;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A base settings class to configure a client stub class.
@@ -64,6 +64,7 @@ import javax.annotation.Nullable;
  * <p>If no ExecutorProvider is set, then InstantiatingExecutorProvider will be used, which creates
  * a default executor.
  */
+@NullMarked
 public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
 
   static final String QUOTA_PROJECT_ID_HEADER_KEY = "x-goog-user-project";
@@ -75,13 +76,13 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
   private final TransportChannelProvider transportChannelProvider;
   private final ApiClock clock;
   private final String quotaProjectId;
-  @Nullable private final String gdchApiAudience;
-  @Nullable private final WatchdogProvider streamWatchdogProvider;
-  @Nonnull private final java.time.Duration streamWatchdogCheckInterval;
-  @Nonnull private final ApiTracerFactory tracerFactory;
+  private final @Nullable String gdchApiAudience;
+  private final @Nullable WatchdogProvider streamWatchdogProvider;
+  private final java.time.Duration streamWatchdogCheckInterval;
+  private final ApiTracerFactory tracerFactory;
   // Track if deprecated setExecutorProvider is called
   private boolean deprecatedExecutorProviderSet;
-  @Nonnull private final EndpointContext endpointContext;
+  private final EndpointContext endpointContext;
   private final String apiKey;
 
   /**
@@ -136,7 +137,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
    * @deprecated Please use {@link #getBackgroundExecutorProvider()}.
    */
   @Deprecated
-  public final ExecutorProvider getExecutorProvider() {
+  public final @Nullable ExecutorProvider getExecutorProvider() {
     return deprecatedExecutorProviderSet ? backgroundExecutorProvider : null;
   }
 
@@ -211,19 +212,16 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     return quotaProjectId;
   }
 
-  @Nullable
-  public final WatchdogProvider getStreamWatchdogProvider() {
+  public final @Nullable WatchdogProvider getStreamWatchdogProvider() {
     return streamWatchdogProvider;
   }
 
   /** This method is obsolete. Use {@link #getStreamWatchdogCheckIntervalDuration()} instead. */
-  @Nonnull
   @ObsoleteApi("Use getStreamWatchdogCheckIntervalDuration() instead")
   public final org.threeten.bp.Duration getStreamWatchdogCheckInterval() {
     return toThreetenDuration(getStreamWatchdogCheckIntervalDuration());
   }
 
-  @Nonnull
   public final java.time.Duration getStreamWatchdogCheckIntervalDuration() {
     return streamWatchdogCheckInterval;
   }
@@ -233,14 +231,12 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
    * operations.
    */
   @BetaApi("The surface for tracing is not stable yet and may change in the future.")
-  @Nonnull
   public ApiTracerFactory getTracerFactory() {
     return tracerFactory;
   }
 
   /** Gets the GDCH API audience to be used with {@link com.google.auth.oauth2.GdchCredentials} */
-  @Nullable
-  public final String getGdchApiAudience() {
+  public final @Nullable String getGdchApiAudience() {
     return gdchApiAudience;
   }
 
@@ -290,20 +286,20 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     private CredentialsProvider credentialsProvider;
     private HeaderProvider headerProvider;
     private HeaderProvider internalHeaderProvider;
-    private TransportChannelProvider transportChannelProvider;
+    private @Nullable TransportChannelProvider transportChannelProvider;
     private ApiClock clock;
-    private String clientSettingsEndpoint;
-    private String transportChannelProviderEndpoint;
-    private String mtlsEndpoint;
-    private String quotaProjectId;
-    @Nullable private String gdchApiAudience;
-    @Nullable private WatchdogProvider streamWatchdogProvider;
-    @Nonnull private java.time.Duration streamWatchdogCheckInterval;
-    @Nonnull private ApiTracerFactory tracerFactory;
+    private @Nullable String clientSettingsEndpoint;
+    private @Nullable String transportChannelProviderEndpoint;
+    private @Nullable String mtlsEndpoint;
+    private @Nullable String quotaProjectId;
+    private @Nullable String gdchApiAudience;
+    private @Nullable WatchdogProvider streamWatchdogProvider;
+    private java.time.Duration streamWatchdogCheckInterval;
+    private ApiTracerFactory tracerFactory;
     private boolean deprecatedExecutorProviderSet;
-    private String universeDomain;
+    private @Nullable String universeDomain;
     private final EndpointContext endpointContext;
-    private String apiKey;
+    private @Nullable String apiKey;
 
     /**
      * Indicate when creating transport whether it is allowed to use mTLS endpoint instead of the
@@ -345,7 +341,8 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     }
 
     /** Get Quota Project ID from Client Context * */
-    private static String getQuotaProjectIdFromClientContext(ClientContext clientContext) {
+    private static @Nullable String getQuotaProjectIdFromClientContext(
+        ClientContext clientContext) {
       if (clientContext.getQuotaProjectId() != null) {
         return clientContext.getQuotaProjectId();
       }
@@ -361,7 +358,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
       return null;
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       if (clientContext == null) {
         this.backgroundExecutorProvider = InstantiatingExecutorProvider.newBuilder().build();
         this.transportChannelProvider = null;
@@ -565,7 +562,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
      * #setStreamWatchdogCheckIntervalDuration(java.time.Duration)} instead.
      */
     @ObsoleteApi("Use setStreamWatchdogCheckIntervalDuration(java.time.Duration) instead")
-    public B setStreamWatchdogCheckInterval(@Nonnull org.threeten.bp.Duration checkInterval) {
+    public B setStreamWatchdogCheckInterval(org.threeten.bp.Duration checkInterval) {
       return setStreamWatchdogCheckIntervalDuration(toJavaTimeDuration(checkInterval));
     }
 
@@ -573,7 +570,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
      * Sets how often the {@link Watchdog} will check ongoing streaming RPCs. Defaults to 10 secs.
      * Use {@link java.time.Duration#ZERO} to disable.
      */
-    public B setStreamWatchdogCheckIntervalDuration(@Nonnull java.time.Duration checkInterval) {
+    public B setStreamWatchdogCheckIntervalDuration(java.time.Duration checkInterval) {
       Preconditions.checkNotNull(checkInterval);
       this.streamWatchdogCheckInterval = checkInterval;
       return self();
@@ -597,7 +594,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
      * @param tracerFactory an instance of {@link ApiTracerFactory} to set.
      */
     @BetaApi("The surface for tracing is not stable yet and may change in the future.")
-    public B setTracerFactory(@Nonnull ApiTracerFactory tracerFactory) {
+    public B setTracerFactory(ApiTracerFactory tracerFactory) {
       Preconditions.checkNotNull(tracerFactory);
       this.tracerFactory = tracerFactory;
       return self();
@@ -622,7 +619,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
      * @deprecated Please use {@link #getBackgroundExecutorProvider()}.
      */
     @Deprecated
-    public ExecutorProvider getExecutorProvider() {
+    public @Nullable ExecutorProvider getExecutorProvider() {
       return deprecatedExecutorProviderSet ? backgroundExecutorProvider : null;
     }
 
@@ -652,8 +649,7 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
     }
 
     /** Gets the {@link WatchdogProvider }that was previously set on this Builder. */
-    @Nullable
-    public WatchdogProvider getStreamWatchdogProvider() {
+    public @Nullable WatchdogProvider getStreamWatchdogProvider() {
       return streamWatchdogProvider;
     }
 
@@ -697,13 +693,11 @@ public abstract class StubSettings<SettingsT extends StubSettings<SettingsT>> {
       return toThreetenDuration(getStreamWatchdogCheckIntervalDuration());
     }
 
-    @Nonnull
     public java.time.Duration getStreamWatchdogCheckIntervalDuration() {
       return Preconditions.checkNotNull(streamWatchdogCheckInterval);
     }
 
     @BetaApi("The surface for tracing is not stable yet and may change in the future.")
-    @Nonnull
     public ApiTracerFactory getTracerFactory() {
       return tracerFactory;
     }

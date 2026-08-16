@@ -43,12 +43,15 @@ import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Url-sourced, file-sourced, or user provided supplier method-sourced external account credentials.
  *
  * <p>By default, attempts to exchange the external credential for a GCP access token.
  */
+@NullMarked
 public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   static final String FILE_METRICS_HEADER_VALUE = "file";
@@ -187,7 +190,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return x509Provider;
   }
 
-  private static String getExplicitCertConfigPath(IdentityPoolCredentialSource credentialSource) {
+  private static @Nullable String getExplicitCertConfigPath(
+      IdentityPoolCredentialSource credentialSource) {
     IdentityPoolCredentialSource.CertificateConfig certConfig =
         credentialSource.getCertificateConfig();
     if (certConfig == null) {

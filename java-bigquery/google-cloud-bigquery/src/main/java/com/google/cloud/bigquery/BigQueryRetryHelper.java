@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigquery;
 
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.core.ApiClock;
 import com.google.api.gax.retrying.DirectRetryingExecutor;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
@@ -23,6 +24,7 @@ import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingExecutor;
 import com.google.api.gax.retrying.RetryingFuture;
+import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.cloud.RetryHelper;
 import io.opentelemetry.api.trace.Span;
@@ -117,6 +119,50 @@ public class BigQueryRetryHelper extends RetryHelper {
     RetryingFuture<V> retryingFuture = executor.createFuture(callable);
     executor.submit(retryingFuture);
     return retryingFuture.get();
+  }
+
+  /**
+   * Conditionally wraps the provided retry algorithm with a wrapper that retries on transient HTTP
+   * errors.
+   *
+   * <p>Wrapping only occurs if the provided algorithm is the default {@link
+   * BigQueryBaseService#DEFAULT_BIGQUERY_EXCEPTION_HANDLER}. Custom user-defined retry algorithms
+   * are returned unmodified to preserve custom retry policies.
+   */
+  @SuppressWarnings("unchecked")
+  static <V> ResultRetryAlgorithm<V> maybeWrapForHttpRetry(ResultRetryAlgorithm<?> algorithm) {
+    if (algorithm == BigQueryBaseService.DEFAULT_BIGQUERY_EXCEPTION_HANDLER) {
+      return wrapDefaultAlgorithm((ResultRetryAlgorithm<V>) algorithm);
+    }
+    return (ResultRetryAlgorithm<V>) algorithm;
+  }
+
+  /**
+   * Wraps the default retry algorithm to additionally retry on transient HTTP status codes 500,
+   * 502, 503, and 504. Other retry decisions and timing logic are delegated back to the default
+   * algorithm.
+   */
+  private static <V> ResultRetryAlgorithm<V> wrapDefaultAlgorithm(
+      ResultRetryAlgorithm<V> defaultAlgorithm) {
+    return new ResultRetryAlgorithm<V>() {
+      @Override
+      public TimedAttemptSettings createNextAttempt(
+          Throwable previousThrowable, V previousResponse, TimedAttemptSettings previousSettings) {
+        return defaultAlgorithm.createNextAttempt(
+            previousThrowable, previousResponse, previousSettings);
+      }
+
+      @Override
+      public boolean shouldRetry(Throwable previousThrowable, V previousResponse) {
+        if (previousThrowable instanceof HttpResponseException) {
+          int statusCode = ((HttpResponseException) previousThrowable).getStatusCode();
+          if (statusCode == 500 || statusCode == 502 || statusCode == 503 || statusCode == 504) {
+            return true;
+          }
+        }
+        return defaultAlgorithm.shouldRetry(previousThrowable, previousResponse);
+      }
+    };
   }
 
   public static class BigQueryRetryHelperException extends RuntimeException {

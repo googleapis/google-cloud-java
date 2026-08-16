@@ -68,16 +68,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
-/**
- * Internal utilities for the com.google.auth.oauth2 namespace.
- *
- * <p>These classes are marked public but should be treated effectively as internal classes only.
- * They are not subject to any backwards compatibility guarantees and might change or be removed at
- * any time. They are provided only as a convenience for other libraries within the {@code
- * com.google.auth} family. Application developers should avoid using these classes directly; they
- * are not part of the public API.
- */
+/** Internal utilities for the com.google.auth.oauth2 namespace. */
+@NullMarked
 @InternalApi
 public class OAuth2Utils {
 
@@ -189,8 +184,8 @@ public class OAuth2Utils {
   }
 
   /** Return the specified optional string from JSON or throw a helpful error message. */
-  static String validateOptionalString(Map<String, Object> map, String key, String errorPrefix)
-      throws IOException {
+  static @Nullable String validateOptionalString(
+      Map<String, Object> map, String key, String errorPrefix) throws IOException {
     Object value = map.get(key);
     if (value == null) {
       return null;
@@ -203,7 +198,7 @@ public class OAuth2Utils {
 
   /** Return the specified list of strings from JSON or throw a helpful error message. */
   @SuppressWarnings("unchecked")
-  static List<String> validateOptionalListString(
+  static @Nullable List<String> validateOptionalListString(
       Map<String, Object> map, String key, String errorPrefix) throws IOException {
     Object value = map.get(key);
     if (value == null) {

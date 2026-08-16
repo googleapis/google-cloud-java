@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -565,9 +567,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ModelServiceClient implements BackgroundResource {
-  private final ModelServiceSettings settings;
+  private final @Nullable ModelServiceSettings settings;
   private final ModelServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -609,7 +612,7 @@ public class ModelServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final ModelServiceSettings getSettings() {
+  public final @Nullable ModelServiceSettings getSettings() {
     return settings;
   }
 
@@ -650,7 +653,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<UploadModelResponse, UploadModelOperationMetadata> uploadModelAsync(
-      LocationName parent, Model model) {
+      @Nullable LocationName parent, Model model) {
     UploadModelRequest request =
         UploadModelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -817,7 +820,7 @@ public class ModelServiceClient implements BackgroundResource {
    *     There will be exactly one default version.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Model getModel(ModelName name) {
+  public final Model getModel(@Nullable ModelName name) {
     GetModelRequest request =
         GetModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getModel(request);
@@ -936,7 +939,7 @@ public class ModelServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListModelsPagedResponse listModels(LocationName parent) {
+  public final ListModelsPagedResponse listModels(@Nullable LocationName parent) {
     ListModelsRequest request =
         ListModelsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listModels(request);
@@ -1104,7 +1107,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @param name Required. The name of the model to list versions for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListModelVersionsPagedResponse listModelVersions(ModelName name) {
+  public final ListModelVersionsPagedResponse listModelVersions(@Nullable ModelName name) {
     ListModelVersionsRequest request =
         ListModelVersionsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1283,7 +1286,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListModelVersionCheckpointsPagedResponse listModelVersionCheckpoints(
-      ModelName name) {
+      @Nullable ModelName name) {
     ListModelVersionCheckpointsRequest request =
         ListModelVersionCheckpointsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1557,7 +1560,7 @@ public class ModelServiceClient implements BackgroundResource {
    */
   public final OperationFuture<
           UpdateExplanationDatasetResponse, UpdateExplanationDatasetOperationMetadata>
-      updateExplanationDatasetAsync(ModelName model) {
+      updateExplanationDatasetAsync(@Nullable ModelName model) {
     UpdateExplanationDatasetRequest request =
         UpdateExplanationDatasetRequest.newBuilder()
             .setModel(model == null ? null : model.toString())
@@ -1718,7 +1721,8 @@ public class ModelServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/models/{model}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, DeleteOperationMetadata> deleteModelAsync(ModelName name) {
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteModelAsync(
+      @Nullable ModelName name) {
     DeleteModelRequest request =
         DeleteModelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteModelAsync(request);
@@ -1882,7 +1886,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteModelVersionAsync(
-      ModelName name) {
+      @Nullable ModelName name) {
     DeleteModelVersionRequest request =
         DeleteModelVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2062,7 +2066,7 @@ public class ModelServiceClient implements BackgroundResource {
    *     cancelled out.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Model mergeVersionAliases(ModelName name, List<String> versionAliases) {
+  public final Model mergeVersionAliases(@Nullable ModelName name, List<String> versionAliases) {
     MergeVersionAliasesRequest request =
         MergeVersionAliasesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2199,7 +2203,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ExportModelResponse, ExportModelOperationMetadata> exportModelAsync(
-      ModelName name, ExportModelRequest.OutputConfig outputConfig) {
+      @Nullable ModelName name, ExportModelRequest.OutputConfig outputConfig) {
     ExportModelRequest request =
         ExportModelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2367,7 +2371,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CopyModelResponse, CopyModelOperationMetadata> copyModelAsync(
-      LocationName parent, ModelName sourceModel) {
+      @Nullable LocationName parent, @Nullable ModelName sourceModel) {
     CopyModelRequest request =
         CopyModelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2405,7 +2409,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CopyModelResponse, CopyModelOperationMetadata> copyModelAsync(
-      LocationName parent, String sourceModel) {
+      @Nullable LocationName parent, String sourceModel) {
     CopyModelRequest request =
         CopyModelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2443,7 +2447,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<CopyModelResponse, CopyModelOperationMetadata> copyModelAsync(
-      String parent, ModelName sourceModel) {
+      String parent, @Nullable ModelName sourceModel) {
     CopyModelRequest request =
         CopyModelRequest.newBuilder()
             .setParent(parent)
@@ -2615,7 +2619,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ModelEvaluation importModelEvaluation(
-      ModelName parent, ModelEvaluation modelEvaluation) {
+      @Nullable ModelName parent, ModelEvaluation modelEvaluation) {
     ImportModelEvaluationRequest request =
         ImportModelEvaluationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2744,7 +2748,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchImportModelEvaluationSlicesResponse batchImportModelEvaluationSlices(
-      ModelEvaluationName parent, List<ModelEvaluationSlice> modelEvaluationSlices) {
+      @Nullable ModelEvaluationName parent, List<ModelEvaluationSlice> modelEvaluationSlices) {
     BatchImportModelEvaluationSlicesRequest request =
         BatchImportModelEvaluationSlicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2883,7 +2887,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchImportEvaluatedAnnotationsResponse batchImportEvaluatedAnnotations(
-      ModelEvaluationSliceName parent, List<EvaluatedAnnotation> evaluatedAnnotations) {
+      @Nullable ModelEvaluationSliceName parent, List<EvaluatedAnnotation> evaluatedAnnotations) {
     BatchImportEvaluatedAnnotationsRequest request =
         BatchImportEvaluatedAnnotationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3021,7 +3025,7 @@ public class ModelServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ModelEvaluation getModelEvaluation(ModelEvaluationName name) {
+  public final ModelEvaluation getModelEvaluation(@Nullable ModelEvaluationName name) {
     GetModelEvaluationRequest request =
         GetModelEvaluationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3143,7 +3147,7 @@ public class ModelServiceClient implements BackgroundResource {
    *     Format: `projects/{project}/locations/{location}/models/{model}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListModelEvaluationsPagedResponse listModelEvaluations(ModelName parent) {
+  public final ListModelEvaluationsPagedResponse listModelEvaluations(@Nullable ModelName parent) {
     ListModelEvaluationsRequest request =
         ListModelEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3318,7 +3322,8 @@ public class ModelServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}/slices/{slice}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ModelEvaluationSlice getModelEvaluationSlice(ModelEvaluationSliceName name) {
+  public final ModelEvaluationSlice getModelEvaluationSlice(
+      @Nullable ModelEvaluationSliceName name) {
     GetModelEvaluationSliceRequest request =
         GetModelEvaluationSliceRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3449,7 +3454,7 @@ public class ModelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListModelEvaluationSlicesPagedResponse listModelEvaluationSlices(
-      ModelEvaluationName parent) {
+      @Nullable ModelEvaluationName parent) {
     ListModelEvaluationSlicesRequest request =
         ListModelEvaluationSlicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4030,8 +4035,8 @@ public class ModelServiceClient implements BackgroundResource {
       extends AbstractPage<ListModelsRequest, ListModelsResponse, Model, ListModelsPage> {
 
     private ListModelsPage(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
-        ListModelsResponse response) {
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable ListModelsResponse response) {
       super(context, response);
     }
 
@@ -4041,14 +4046,14 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelsPage createPage(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
-        ListModelsResponse response) {
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable ListModelsResponse response) {
       return new ListModelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListModelsPage> createPageAsync(
-        PageContext<ListModelsRequest, ListModelsResponse, Model> context,
+        @Nullable PageContext<ListModelsRequest, ListModelsResponse, Model> context,
         ApiFuture<ListModelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4062,7 +4067,8 @@ public class ModelServiceClient implements BackgroundResource {
           ListModelsPage,
           ListModelsFixedSizeCollection> {
 
-    private ListModelsFixedSizeCollection(List<ListModelsPage> pages, int collectionSize) {
+    private ListModelsFixedSizeCollection(
+        @Nullable List<ListModelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4072,7 +4078,7 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelsFixedSizeCollection createCollection(
-        List<ListModelsPage> pages, int collectionSize) {
+        @Nullable List<ListModelsPage> pages, int collectionSize) {
       return new ListModelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4106,8 +4112,8 @@ public class ModelServiceClient implements BackgroundResource {
           ListModelVersionsRequest, ListModelVersionsResponse, Model, ListModelVersionsPage> {
 
     private ListModelVersionsPage(
-        PageContext<ListModelVersionsRequest, ListModelVersionsResponse, Model> context,
-        ListModelVersionsResponse response) {
+        @Nullable PageContext<ListModelVersionsRequest, ListModelVersionsResponse, Model> context,
+        @Nullable ListModelVersionsResponse response) {
       super(context, response);
     }
 
@@ -4117,14 +4123,14 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelVersionsPage createPage(
-        PageContext<ListModelVersionsRequest, ListModelVersionsResponse, Model> context,
-        ListModelVersionsResponse response) {
+        @Nullable PageContext<ListModelVersionsRequest, ListModelVersionsResponse, Model> context,
+        @Nullable ListModelVersionsResponse response) {
       return new ListModelVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListModelVersionsPage> createPageAsync(
-        PageContext<ListModelVersionsRequest, ListModelVersionsResponse, Model> context,
+        @Nullable PageContext<ListModelVersionsRequest, ListModelVersionsResponse, Model> context,
         ApiFuture<ListModelVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4139,7 +4145,7 @@ public class ModelServiceClient implements BackgroundResource {
           ListModelVersionsFixedSizeCollection> {
 
     private ListModelVersionsFixedSizeCollection(
-        List<ListModelVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListModelVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4149,7 +4155,7 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelVersionsFixedSizeCollection createCollection(
-        List<ListModelVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListModelVersionsPage> pages, int collectionSize) {
       return new ListModelVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4191,12 +4197,13 @@ public class ModelServiceClient implements BackgroundResource {
           ListModelVersionCheckpointsPage> {
 
     private ListModelVersionCheckpointsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListModelVersionCheckpointsRequest,
                 ListModelVersionCheckpointsResponse,
                 ModelVersionCheckpoint>
             context,
-        ListModelVersionCheckpointsResponse response) {
+        @Nullable ListModelVersionCheckpointsResponse response) {
       super(context, response);
     }
 
@@ -4206,18 +4213,20 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelVersionCheckpointsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListModelVersionCheckpointsRequest,
                 ListModelVersionCheckpointsResponse,
                 ModelVersionCheckpoint>
             context,
-        ListModelVersionCheckpointsResponse response) {
+        @Nullable ListModelVersionCheckpointsResponse response) {
       return new ListModelVersionCheckpointsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListModelVersionCheckpointsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListModelVersionCheckpointsRequest,
                 ListModelVersionCheckpointsResponse,
                 ModelVersionCheckpoint>
@@ -4236,7 +4245,7 @@ public class ModelServiceClient implements BackgroundResource {
           ListModelVersionCheckpointsFixedSizeCollection> {
 
     private ListModelVersionCheckpointsFixedSizeCollection(
-        List<ListModelVersionCheckpointsPage> pages, int collectionSize) {
+        @Nullable List<ListModelVersionCheckpointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4246,7 +4255,7 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelVersionCheckpointsFixedSizeCollection createCollection(
-        List<ListModelVersionCheckpointsPage> pages, int collectionSize) {
+        @Nullable List<ListModelVersionCheckpointsPage> pages, int collectionSize) {
       return new ListModelVersionCheckpointsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4284,9 +4293,10 @@ public class ModelServiceClient implements BackgroundResource {
           ListModelEvaluationsPage> {
 
     private ListModelEvaluationsPage(
-        PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
+        @Nullable
+            PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
             context,
-        ListModelEvaluationsResponse response) {
+        @Nullable ListModelEvaluationsResponse response) {
       super(context, response);
     }
 
@@ -4296,15 +4306,17 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelEvaluationsPage createPage(
-        PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
+        @Nullable
+            PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
             context,
-        ListModelEvaluationsResponse response) {
+        @Nullable ListModelEvaluationsResponse response) {
       return new ListModelEvaluationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListModelEvaluationsPage> createPageAsync(
-        PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
+        @Nullable
+            PageContext<ListModelEvaluationsRequest, ListModelEvaluationsResponse, ModelEvaluation>
             context,
         ApiFuture<ListModelEvaluationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4320,7 +4332,7 @@ public class ModelServiceClient implements BackgroundResource {
           ListModelEvaluationsFixedSizeCollection> {
 
     private ListModelEvaluationsFixedSizeCollection(
-        List<ListModelEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListModelEvaluationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4330,7 +4342,7 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelEvaluationsFixedSizeCollection createCollection(
-        List<ListModelEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListModelEvaluationsPage> pages, int collectionSize) {
       return new ListModelEvaluationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4371,12 +4383,13 @@ public class ModelServiceClient implements BackgroundResource {
           ListModelEvaluationSlicesPage> {
 
     private ListModelEvaluationSlicesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListModelEvaluationSlicesRequest,
                 ListModelEvaluationSlicesResponse,
                 ModelEvaluationSlice>
             context,
-        ListModelEvaluationSlicesResponse response) {
+        @Nullable ListModelEvaluationSlicesResponse response) {
       super(context, response);
     }
 
@@ -4386,18 +4399,20 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelEvaluationSlicesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListModelEvaluationSlicesRequest,
                 ListModelEvaluationSlicesResponse,
                 ModelEvaluationSlice>
             context,
-        ListModelEvaluationSlicesResponse response) {
+        @Nullable ListModelEvaluationSlicesResponse response) {
       return new ListModelEvaluationSlicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListModelEvaluationSlicesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListModelEvaluationSlicesRequest,
                 ListModelEvaluationSlicesResponse,
                 ModelEvaluationSlice>
@@ -4416,7 +4431,7 @@ public class ModelServiceClient implements BackgroundResource {
           ListModelEvaluationSlicesFixedSizeCollection> {
 
     private ListModelEvaluationSlicesFixedSizeCollection(
-        List<ListModelEvaluationSlicesPage> pages, int collectionSize) {
+        @Nullable List<ListModelEvaluationSlicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4426,7 +4441,7 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListModelEvaluationSlicesFixedSizeCollection createCollection(
-        List<ListModelEvaluationSlicesPage> pages, int collectionSize) {
+        @Nullable List<ListModelEvaluationSlicesPage> pages, int collectionSize) {
       return new ListModelEvaluationSlicesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4460,8 +4475,8 @@ public class ModelServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -4471,14 +4486,14 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4492,7 +4507,8 @@ public class ModelServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4502,7 +4518,7 @@ public class ModelServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -97,6 +97,8 @@ public class HiveMetastoreServiceClientTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .addAllReplicas(new ArrayList<HiveCatalog.Replica>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -144,6 +146,8 @@ public class HiveMetastoreServiceClientTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .addAllReplicas(new ArrayList<HiveCatalog.Replica>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -191,6 +195,8 @@ public class HiveMetastoreServiceClientTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .addAllReplicas(new ArrayList<HiveCatalog.Replica>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -232,6 +238,8 @@ public class HiveMetastoreServiceClientTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .addAllReplicas(new ArrayList<HiveCatalog.Replica>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -361,6 +369,8 @@ public class HiveMetastoreServiceClientTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .addAllReplicas(new ArrayList<HiveCatalog.Replica>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -473,6 +483,8 @@ public class HiveMetastoreServiceClientTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .putAllParameters(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -520,6 +532,8 @@ public class HiveMetastoreServiceClientTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .putAllParameters(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -567,6 +581,8 @@ public class HiveMetastoreServiceClientTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .putAllParameters(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -608,6 +624,8 @@ public class HiveMetastoreServiceClientTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .putAllParameters(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -737,6 +755,8 @@ public class HiveMetastoreServiceClientTest {
             .setDescription("description-1724546052")
             .setLocationUri("locationUri552310135")
             .putAllParameters(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -851,7 +871,10 @@ public class HiveMetastoreServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllPartitionKeys(new ArrayList<FieldSchema>())
             .putAllParameters(new HashMap<String, String>())
+            .setViewOriginalText("viewOriginalText1490924003")
+            .setViewExpandedText("viewExpandedText-1166335797")
             .setTableType("tableType-1988515800")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -901,7 +924,10 @@ public class HiveMetastoreServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllPartitionKeys(new ArrayList<FieldSchema>())
             .putAllParameters(new HashMap<String, String>())
+            .setViewOriginalText("viewOriginalText1490924003")
+            .setViewExpandedText("viewExpandedText-1166335797")
             .setTableType("tableType-1988515800")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -951,7 +977,10 @@ public class HiveMetastoreServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllPartitionKeys(new ArrayList<FieldSchema>())
             .putAllParameters(new HashMap<String, String>())
+            .setViewOriginalText("viewOriginalText1490924003")
+            .setViewExpandedText("viewExpandedText-1166335797")
             .setTableType("tableType-1988515800")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -995,7 +1024,10 @@ public class HiveMetastoreServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllPartitionKeys(new ArrayList<FieldSchema>())
             .putAllParameters(new HashMap<String, String>())
+            .setViewOriginalText("viewOriginalText1490924003")
+            .setViewExpandedText("viewExpandedText-1166335797")
             .setTableType("tableType-1988515800")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -1127,7 +1159,10 @@ public class HiveMetastoreServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .addAllPartitionKeys(new ArrayList<FieldSchema>())
             .putAllParameters(new HashMap<String, String>())
+            .setViewOriginalText("viewOriginalText1490924003")
+            .setViewExpandedText("viewExpandedText-1166335797")
             .setTableType("tableType-1988515800")
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockHiveMetastoreService.addResponse(expectedResponse);
 
@@ -1503,6 +1538,47 @@ public class HiveMetastoreServiceClientTest {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void failoverHiveCatalogTest() throws Exception {
+    FailoverHiveCatalogResponse expectedResponse =
+        FailoverHiveCatalogResponse.newBuilder()
+            .setReplicationTime(Timestamp.newBuilder().build())
+            .build();
+    mockHiveMetastoreService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String primaryReplica = "primaryReplica-389090218";
+
+    FailoverHiveCatalogResponse actualResponse = client.failoverHiveCatalog(name, primaryReplica);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockHiveMetastoreService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FailoverHiveCatalogRequest actualRequest = ((FailoverHiveCatalogRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(primaryReplica, actualRequest.getPrimaryReplica());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void failoverHiveCatalogExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockHiveMetastoreService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String primaryReplica = "primaryReplica-389090218";
+      client.failoverHiveCatalog(name, primaryReplica);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

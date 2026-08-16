@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkservices.v1.stub;
 
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListAgentGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
@@ -38,6 +39,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.networkservices.v1.AgentGateway;
+import com.google.cloud.networkservices.v1.CreateAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.CreateEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.CreateGatewayRequest;
 import com.google.cloud.networkservices.v1.CreateGrpcRouteRequest;
@@ -49,6 +52,7 @@ import com.google.cloud.networkservices.v1.CreateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateTlsRouteRequest;
 import com.google.cloud.networkservices.v1.CreateWasmPluginRequest;
 import com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest;
+import com.google.cloud.networkservices.v1.DeleteAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteGatewayRequest;
 import com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest;
@@ -63,6 +67,7 @@ import com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.EndpointPolicy;
 import com.google.cloud.networkservices.v1.Gateway;
 import com.google.cloud.networkservices.v1.GatewayRouteView;
+import com.google.cloud.networkservices.v1.GetAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.GetEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest;
@@ -78,6 +83,8 @@ import com.google.cloud.networkservices.v1.GetWasmPluginRequest;
 import com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.GrpcRoute;
 import com.google.cloud.networkservices.v1.HttpRoute;
+import com.google.cloud.networkservices.v1.ListAgentGatewaysRequest;
+import com.google.cloud.networkservices.v1.ListAgentGatewaysResponse;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesResponse;
 import com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest;
@@ -111,6 +118,7 @@ import com.google.cloud.networkservices.v1.ServiceBinding;
 import com.google.cloud.networkservices.v1.ServiceLbPolicy;
 import com.google.cloud.networkservices.v1.TcpRoute;
 import com.google.cloud.networkservices.v1.TlsRoute;
+import com.google.cloud.networkservices.v1.UpdateAgentGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.UpdateGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateGrpcRouteRequest;
@@ -132,6 +140,8 @@ import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -139,14 +149,16 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class NetworkServicesStub implements BackgroundResource {
 
-  public OperationsStub getOperationsStub() {
+  public @Nullable OperationsStub getOperationsStub() {
     return null;
   }
 
-  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+  public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
+      getHttpJsonOperationsStub() {
     return null;
   }
 
@@ -626,6 +638,50 @@ public abstract class NetworkServicesStub implements BackgroundResource {
   public UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
       listMeshRouteViewsCallable() {
     throw new UnsupportedOperationException("Not implemented: listMeshRouteViewsCallable()");
+  }
+
+  public UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysPagedResponse>
+      listAgentGatewaysPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAgentGatewaysPagedCallable()");
+  }
+
+  public UnaryCallable<ListAgentGatewaysRequest, ListAgentGatewaysResponse>
+      listAgentGatewaysCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAgentGatewaysCallable()");
+  }
+
+  public UnaryCallable<GetAgentGatewayRequest, AgentGateway> getAgentGatewayCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAgentGatewayCallable()");
+  }
+
+  public OperationCallable<CreateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      createAgentGatewayOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createAgentGatewayOperationCallable()");
+  }
+
+  public UnaryCallable<CreateAgentGatewayRequest, Operation> createAgentGatewayCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAgentGatewayCallable()");
+  }
+
+  public OperationCallable<UpdateAgentGatewayRequest, AgentGateway, OperationMetadata>
+      updateAgentGatewayOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateAgentGatewayOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateAgentGatewayRequest, Operation> updateAgentGatewayCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAgentGatewayCallable()");
+  }
+
+  public OperationCallable<DeleteAgentGatewayRequest, Empty, OperationMetadata>
+      deleteAgentGatewayOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteAgentGatewayOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteAgentGatewayRequest, Operation> deleteAgentGatewayCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAgentGatewayCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

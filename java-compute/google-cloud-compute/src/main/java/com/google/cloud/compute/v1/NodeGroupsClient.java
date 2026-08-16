@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -389,9 +391,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NodeGroupsClient implements BackgroundResource {
-  private final NodeGroupsSettings settings;
+  private final @Nullable NodeGroupsSettings settings;
   private final NodeGroupsStub stub;
 
   /** Constructs an instance of NodeGroupsClient with default settings. */
@@ -429,7 +432,7 @@ public class NodeGroupsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final NodeGroupsSettings getSettings() {
+  public final @Nullable NodeGroupsSettings getSettings() {
     return settings;
   }
 
@@ -2520,12 +2523,13 @@ public class NodeGroupsClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListNodeGroupsRequest,
                 NodeGroupAggregatedList,
                 Map.Entry<String, NodeGroupsScopedList>>
             context,
-        NodeGroupAggregatedList response) {
+        @Nullable NodeGroupAggregatedList response) {
       super(context, response);
     }
 
@@ -2535,18 +2539,20 @@ public class NodeGroupsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListNodeGroupsRequest,
                 NodeGroupAggregatedList,
                 Map.Entry<String, NodeGroupsScopedList>>
             context,
-        NodeGroupAggregatedList response) {
+        @Nullable NodeGroupAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListNodeGroupsRequest,
                 NodeGroupAggregatedList,
                 Map.Entry<String, NodeGroupsScopedList>>
@@ -2564,7 +2570,8 @@ public class NodeGroupsClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2574,7 +2581,7 @@ public class NodeGroupsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2601,8 +2608,8 @@ public class NodeGroupsClient implements BackgroundResource {
       extends AbstractPage<ListNodeGroupsRequest, NodeGroupList, NodeGroup, ListPage> {
 
     private ListPage(
-        PageContext<ListNodeGroupsRequest, NodeGroupList, NodeGroup> context,
-        NodeGroupList response) {
+        @Nullable PageContext<ListNodeGroupsRequest, NodeGroupList, NodeGroup> context,
+        @Nullable NodeGroupList response) {
       super(context, response);
     }
 
@@ -2612,14 +2619,14 @@ public class NodeGroupsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListNodeGroupsRequest, NodeGroupList, NodeGroup> context,
-        NodeGroupList response) {
+        @Nullable PageContext<ListNodeGroupsRequest, NodeGroupList, NodeGroup> context,
+        @Nullable NodeGroupList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListNodeGroupsRequest, NodeGroupList, NodeGroup> context,
+        @Nullable PageContext<ListNodeGroupsRequest, NodeGroupList, NodeGroup> context,
         ApiFuture<NodeGroupList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2629,7 +2636,7 @@ public class NodeGroupsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListNodeGroupsRequest, NodeGroupList, NodeGroup, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2638,7 +2645,8 @@ public class NodeGroupsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2670,8 +2678,9 @@ public class NodeGroupsClient implements BackgroundResource {
           ListNodesNodeGroupsRequest, NodeGroupsListNodes, NodeGroupNode, ListNodesPage> {
 
     private ListNodesPage(
-        PageContext<ListNodesNodeGroupsRequest, NodeGroupsListNodes, NodeGroupNode> context,
-        NodeGroupsListNodes response) {
+        @Nullable PageContext<ListNodesNodeGroupsRequest, NodeGroupsListNodes, NodeGroupNode>
+            context,
+        @Nullable NodeGroupsListNodes response) {
       super(context, response);
     }
 
@@ -2681,14 +2690,16 @@ public class NodeGroupsClient implements BackgroundResource {
 
     @Override
     protected ListNodesPage createPage(
-        PageContext<ListNodesNodeGroupsRequest, NodeGroupsListNodes, NodeGroupNode> context,
-        NodeGroupsListNodes response) {
+        @Nullable PageContext<ListNodesNodeGroupsRequest, NodeGroupsListNodes, NodeGroupNode>
+            context,
+        @Nullable NodeGroupsListNodes response) {
       return new ListNodesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNodesPage> createPageAsync(
-        PageContext<ListNodesNodeGroupsRequest, NodeGroupsListNodes, NodeGroupNode> context,
+        @Nullable PageContext<ListNodesNodeGroupsRequest, NodeGroupsListNodes, NodeGroupNode>
+            context,
         ApiFuture<NodeGroupsListNodes> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2702,7 +2713,7 @@ public class NodeGroupsClient implements BackgroundResource {
           ListNodesPage,
           ListNodesFixedSizeCollection> {
 
-    private ListNodesFixedSizeCollection(List<ListNodesPage> pages, int collectionSize) {
+    private ListNodesFixedSizeCollection(@Nullable List<ListNodesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2712,7 +2723,7 @@ public class NodeGroupsClient implements BackgroundResource {
 
     @Override
     protected ListNodesFixedSizeCollection createCollection(
-        List<ListNodesPage> pages, int collectionSize) {
+        @Nullable List<ListNodesPage> pages, int collectionSize) {
       return new ListNodesFixedSizeCollection(pages, collectionSize);
     }
   }

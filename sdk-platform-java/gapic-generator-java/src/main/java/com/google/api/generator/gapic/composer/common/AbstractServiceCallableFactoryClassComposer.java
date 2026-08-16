@@ -48,6 +48,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 public abstract class AbstractServiceCallableFactoryClassComposer implements ClassComposer {
   private final TransportContext transportContext;
@@ -93,6 +94,7 @@ public abstract class AbstractServiceCallableFactoryClassComposer implements Cla
 
   protected List<AnnotationNode> createClassAnnotations(Service service, TypeStore typeStore) {
     List<AnnotationNode> annotations = new ArrayList<>();
+    annotations.add(AnnotationNode.withType(typeStore.get("NullMarked")));
     if (!PackageChecker.isGaApi(service.pakkage())) {
       annotations.add(AnnotationNode.withType(typeStore.get("BetaApi")));
     }
@@ -349,7 +351,8 @@ public abstract class AbstractServiceCallableFactoryClassComposer implements Cla
             UnaryCallSettings.class,
             UnaryCallable.class,
             Generated.class,
-            UnsupportedOperationException.class);
+            UnsupportedOperationException.class,
+            NullMarked.class);
     return new TypeStore(concreteClazzes);
   }
 }

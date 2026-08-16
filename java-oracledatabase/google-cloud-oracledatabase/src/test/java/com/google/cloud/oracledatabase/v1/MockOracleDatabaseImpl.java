@@ -150,6 +150,29 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
+  public void configureExascaleCloudExadataInfrastructure(
+      ConfigureExascaleCloudExadataInfrastructureRequest request,
+      StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method"
+                      + " ConfigureExascaleCloudExadataInfrastructure, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listCloudVmClusters(
       ListCloudVmClustersRequest request,
       StreamObserver<ListCloudVmClustersResponse> responseObserver) {
@@ -695,6 +718,51 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
                       + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void refreshAutonomousDatabase(
+      RefreshAutonomousDatabaseRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RefreshAutonomousDatabase, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAutonomousDatabaseRefreshableClones(
+      GetAutonomousDatabaseRefreshableClonesRequest request,
+      StreamObserver<AutonomousDatabaseRefreshableClones> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AutonomousDatabaseRefreshableClones) {
+      requests.add(request);
+      responseObserver.onNext(((AutonomousDatabaseRefreshableClones) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAutonomousDatabaseRefreshableClones,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AutonomousDatabaseRefreshableClones.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -1506,29 +1574,6 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
-  public void getGoldengateDeploymentVersion(
-      GetGoldengateDeploymentVersionRequest request,
-      StreamObserver<GoldengateDeploymentVersion> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof GoldengateDeploymentVersion) {
-      requests.add(request);
-      responseObserver.onNext(((GoldengateDeploymentVersion) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method GetGoldengateDeploymentVersion,"
-                      + " expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  GoldengateDeploymentVersion.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void listGoldengateDeploymentVersions(
       ListGoldengateDeploymentVersionsRequest request,
       StreamObserver<ListGoldengateDeploymentVersionsResponse> responseObserver) {
@@ -1547,29 +1592,6 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
                       + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListGoldengateDeploymentVersionsResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void getGoldengateDeploymentType(
-      GetGoldengateDeploymentTypeRequest request,
-      StreamObserver<GoldengateDeploymentType> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof GoldengateDeploymentType) {
-      requests.add(request);
-      responseObserver.onNext(((GoldengateDeploymentType) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method GetGoldengateDeploymentType, expected"
-                      + " %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  GoldengateDeploymentType.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -1598,29 +1620,6 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
-  public void getGoldengateDeploymentEnvironment(
-      GetGoldengateDeploymentEnvironmentRequest request,
-      StreamObserver<GoldengateDeploymentEnvironment> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof GoldengateDeploymentEnvironment) {
-      requests.add(request);
-      responseObserver.onNext(((GoldengateDeploymentEnvironment) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method GetGoldengateDeploymentEnvironment,"
-                      + " expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  GoldengateDeploymentEnvironment.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void listGoldengateDeploymentEnvironments(
       ListGoldengateDeploymentEnvironmentsRequest request,
       StreamObserver<ListGoldengateDeploymentEnvironmentsResponse> responseObserver) {
@@ -1639,29 +1638,6 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
                       + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListGoldengateDeploymentEnvironmentsResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void getGoldengateConnectionType(
-      GetGoldengateConnectionTypeRequest request,
-      StreamObserver<GoldengateConnectionType> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof GoldengateConnectionType) {
-      requests.add(request);
-      responseObserver.onNext(((GoldengateConnectionType) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method GetGoldengateConnectionType, expected"
-                      + " %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  GoldengateConnectionType.class.getName(),
                   Exception.class.getName())));
     }
   }

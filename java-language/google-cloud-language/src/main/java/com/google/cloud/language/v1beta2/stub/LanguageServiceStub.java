@@ -34,6 +34,7 @@ import com.google.cloud.language.v1beta2.ClassifyTextResponse;
 import com.google.cloud.language.v1beta2.ModerateTextRequest;
 import com.google.cloud.language.v1beta2.ModerateTextResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -41,6 +42,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class LanguageServiceStub implements BackgroundResource {

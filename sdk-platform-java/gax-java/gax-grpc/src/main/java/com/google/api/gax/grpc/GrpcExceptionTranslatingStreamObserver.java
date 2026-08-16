@@ -30,6 +30,7 @@
 package com.google.api.gax.grpc;
 
 import com.google.api.gax.rpc.ApiStreamObserver;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An {@link ApiStreamObserver} that wraps grpc's errors into {@link
@@ -39,6 +40,7 @@ import com.google.api.gax.rpc.ApiStreamObserver;
  *
  * @param <ResponseT>
  */
+@NullMarked
 final class GrpcExceptionTranslatingStreamObserver<ResponseT>
     implements ApiStreamObserver<ResponseT> {
   private final ApiStreamObserver<ResponseT> innerObserver;

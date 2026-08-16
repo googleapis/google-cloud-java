@@ -1,3 +1,0 @@
-java_gapic_library(
-    grpc_service_config = "test_service_config.json"
-)

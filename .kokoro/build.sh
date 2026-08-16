@@ -212,7 +212,10 @@ case ${JOB_TYPE} in
 
     MODULE_FILTER=""
 
-    if [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
+    if [ -n "${BUILD_SUBDIR}" ] && ( [ -z "${BASE_SHA}" ] || [ -z "${HEAD_SHA}" ] ); then
+        echo "BASE_SHA or HEAD_SHA is empty, but BUILD_SUBDIR is set. Running full lint check on ${BUILD_SUBDIR}."
+        MODULE_FILTER=""
+    elif [ -n "${BASE_SHA}" ] && [ -n "${HEAD_SHA}" ]; then
         # Optimize the build by identifying ONLY the Maven modules that contain changed Java source files.
         # Format those specific modules instead of the entire codebase, reducing format check time.
         # The --relative flag is when building in the submodule as only files modified in the module

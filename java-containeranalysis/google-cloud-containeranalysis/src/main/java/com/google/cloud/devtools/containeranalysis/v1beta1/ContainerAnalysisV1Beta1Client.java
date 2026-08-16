@@ -35,6 +35,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -242,10 +244,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
-  private final ContainerAnalysisV1Beta1Settings settings;
+  private final @Nullable ContainerAnalysisV1Beta1Settings settings;
   private final ContainerAnalysisV1Beta1Stub stub;
 
   /** Constructs an instance of ContainerAnalysisV1Beta1Client with default settings. */
@@ -287,7 +290,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ContainerAnalysisV1Beta1Settings getSettings() {
+  public final @Nullable ContainerAnalysisV1Beta1Settings getSettings() {
     return settings;
   }
 
@@ -345,7 +348,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -528,7 +531,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -708,7 +711,7 @@ public class ContainerAnalysisV1Beta1Client implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())

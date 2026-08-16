@@ -99,14 +99,17 @@ public class RemoteBigQueryHelper {
               .setConnectTimeout(CONNECT_TIMEOUT_IN_MS)
               .setReadTimeout(CONNECT_TIMEOUT_IN_MS)
               .build();
-      BigQueryOptions bigqueryOptions =
+      BigQueryOptions.Builder builder =
           BigQueryOptions.newBuilder()
               .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
               .setProjectId(projectId)
               .setRetrySettings(retrySettings())
-              .setTransportOptions(transportOptions)
-              .build();
-      return new RemoteBigQueryHelper(bigqueryOptions);
+              .setTransportOptions(transportOptions);
+      String endpoint = System.getProperty("bigquery.endpoint", System.getenv("BIGQUERY_ENDPOINT"));
+      if (endpoint != null) {
+        builder.setHost(endpoint);
+      }
+      return new RemoteBigQueryHelper(builder.build());
     } catch (IOException ex) {
       if (log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, ex.getMessage());
@@ -140,6 +143,10 @@ public class RemoteBigQueryHelper {
         bigqueryOptionsBuilder
             .setRetrySettings(retrySettings())
             .setTransportOptions(transportOptions);
+    String endpoint = System.getProperty("bigquery.endpoint", System.getenv("BIGQUERY_ENDPOINT"));
+    if (endpoint != null) {
+      builder.setHost(endpoint);
+    }
     return new RemoteBigQueryHelper(builder.build());
   }
 
@@ -176,5 +183,17 @@ public class RemoteBigQueryHelper {
     public static BigQueryHelperException translate(Exception ex) {
       return new BigQueryHelperException(ex.getMessage(), ex);
     }
+  }
+
+  /**
+   * Helper to check if the provided BigQuery client is configured to target a regional endpoint.
+   */
+  public static boolean isRegionalEndpoint(BigQuery bigquery) {
+    if (bigquery == null || bigquery.getOptions() == null) {
+      return false;
+    }
+    String host = bigquery.getOptions().getHost();
+    return host != null
+        && (host.contains("-bigquery.googleapis.com") || host.contains(".rep.googleapis.com"));
   }
 }

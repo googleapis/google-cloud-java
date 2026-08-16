@@ -38,8 +38,10 @@ import java.io.PipedReader;
 import java.io.PipedWriter;
 import java.io.Reader;
 import java.util.Iterator;
+import org.jspecify.annotations.NullMarked;
 
 /** This class is not thread-safe and is expected to be used under external synchronization. */
+@NullMarked
 class ProtoMessageJsonStreamIterator implements Closeable, Iterator<Reader> {
   private volatile boolean arrayStarted;
   private final JsonReader jsonReader;

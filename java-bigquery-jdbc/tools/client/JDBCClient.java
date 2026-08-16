@@ -23,6 +23,7 @@ public class JDBCClient {
         String driverClass = "com.google.cloud.bigquery.jdbc.BigQueryDriver";
         String action = null;
         String query = null;
+        String queryFile = null;
         boolean noOutput = false;
         int generateRows = 0;
         int generateCols = 5;
@@ -53,6 +54,7 @@ public class JDBCClient {
                     case "driver-class": driverClass = val; break;
                     case "action": action = val; break;
                     case "query": query = val; break;
+                    case "query-file": queryFile = val; break;
                     case "no-output": noOutput = true; break;
                     case "generate-rows": generateRows = Integer.parseInt(val); break;
                     case "generate-cols": generateCols = Integer.parseInt(val); break;
@@ -88,11 +90,19 @@ public class JDBCClient {
         System.out.println("Connection successful.\n");
 
         if ("query".equals(action)) {
-            if (generateRows > 0) {
+            if (query == null && queryFile != null) {
+                try {
+                    query = readQueryFromFile(queryFile);
+                } catch (Exception e) {
+                    System.err.println("Error reading query from file: " + e.getMessage());
+                    System.exit(1);
+                }
+            }
+            if (query == null && generateRows > 0) {
                 query = generateDataQuery(generateRows, generateCols);
             }
             if (query == null) {
-                System.err.println("Error: --query or --generate-rows is required when action is 'query'");
+                System.err.println("Error: --query, --query-file, or --generate-rows is required when action is 'query'");
                 System.exit(1);
             }
             warmup(conn);
@@ -120,6 +130,10 @@ public class JDBCClient {
             System.err.println("Warning: Warmup query failed: " + e.getMessage());
         }
         System.out.println("Warmup complete.\n");
+    }
+
+    private static String readQueryFromFile(String path) throws Exception {
+        return new String(java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(path)), java.nio.charset.StandardCharsets.UTF_8);
     }
 
     private static String generateDataQuery(int rows, int cols) {

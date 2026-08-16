@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -166,8 +168,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -249,9 +250,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ExamplesClient implements BackgroundResource {
-  private final ExamplesSettings settings;
+  private final @Nullable ExamplesSettings settings;
   private final ExamplesStub stub;
 
   /** Constructs an instance of ExamplesClient with default settings. */
@@ -289,7 +291,7 @@ public class ExamplesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ExamplesSettings getSettings() {
+  public final @Nullable ExamplesSettings getSettings() {
     return settings;
   }
 
@@ -321,7 +323,7 @@ public class ExamplesClient implements BackgroundResource {
    * @param example Required. The example to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Example createExample(PlaybookName parent, Example example) {
+  public final Example createExample(@Nullable PlaybookName parent, Example example) {
     CreateExampleRequest request =
         CreateExampleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -443,7 +445,7 @@ public class ExamplesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/examples/&lt;ExampleID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteExample(ExampleName name) {
+  public final void deleteExample(@Nullable ExampleName name) {
     DeleteExampleRequest request =
         DeleteExampleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteExample(request);
@@ -561,7 +563,7 @@ public class ExamplesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExamplesPagedResponse listExamples(PlaybookName parent) {
+  public final ListExamplesPagedResponse listExamples(@Nullable PlaybookName parent) {
     ListExamplesRequest request =
         ListExamplesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -730,7 +732,7 @@ public class ExamplesClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/playbooks/&lt;PlaybookID&gt;/examples/&lt;ExampleID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Example getExample(ExampleName name) {
+  public final Example getExample(@Nullable ExampleName name) {
     GetExampleRequest request =
         GetExampleRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExample(request);
@@ -916,9 +918,8 @@ public class ExamplesClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -962,9 +963,8 @@ public class ExamplesClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1008,9 +1008,8 @@ public class ExamplesClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1162,8 +1161,8 @@ public class ExamplesClient implements BackgroundResource {
       extends AbstractPage<ListExamplesRequest, ListExamplesResponse, Example, ListExamplesPage> {
 
     private ListExamplesPage(
-        PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
-        ListExamplesResponse response) {
+        @Nullable PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
+        @Nullable ListExamplesResponse response) {
       super(context, response);
     }
 
@@ -1173,14 +1172,14 @@ public class ExamplesClient implements BackgroundResource {
 
     @Override
     protected ListExamplesPage createPage(
-        PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
-        ListExamplesResponse response) {
+        @Nullable PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
+        @Nullable ListExamplesResponse response) {
       return new ListExamplesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExamplesPage> createPageAsync(
-        PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
+        @Nullable PageContext<ListExamplesRequest, ListExamplesResponse, Example> context,
         ApiFuture<ListExamplesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1194,7 +1193,8 @@ public class ExamplesClient implements BackgroundResource {
           ListExamplesPage,
           ListExamplesFixedSizeCollection> {
 
-    private ListExamplesFixedSizeCollection(List<ListExamplesPage> pages, int collectionSize) {
+    private ListExamplesFixedSizeCollection(
+        @Nullable List<ListExamplesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1204,7 +1204,7 @@ public class ExamplesClient implements BackgroundResource {
 
     @Override
     protected ListExamplesFixedSizeCollection createCollection(
-        List<ListExamplesPage> pages, int collectionSize) {
+        @Nullable List<ListExamplesPage> pages, int collectionSize) {
       return new ListExamplesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1238,8 +1238,8 @@ public class ExamplesClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1249,14 +1249,14 @@ public class ExamplesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1270,7 +1270,8 @@ public class ExamplesClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1280,7 +1281,7 @@ public class ExamplesClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -204,9 +206,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ProgramsServiceClient implements BackgroundResource {
-  private final ProgramsServiceSettings settings;
+  private final @Nullable ProgramsServiceSettings settings;
   private final ProgramsServiceStub stub;
 
   /** Constructs an instance of ProgramsServiceClient with default settings. */
@@ -246,7 +249,7 @@ public class ProgramsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ProgramsServiceSettings getSettings() {
+  public final @Nullable ProgramsServiceSettings getSettings() {
     return settings;
   }
 
@@ -277,7 +280,7 @@ public class ProgramsServiceClient implements BackgroundResource {
    *     `accounts/123456/programs/free-listings`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Program getProgram(ProgramName name) {
+  public final Program getProgram(@Nullable ProgramName name) {
     GetProgramRequest request =
         GetProgramRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProgram(request);
@@ -390,7 +393,7 @@ public class ProgramsServiceClient implements BackgroundResource {
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListProgramsPagedResponse listPrograms(AccountName parent) {
+  public final ListProgramsPagedResponse listPrograms(@Nullable AccountName parent) {
     ListProgramsRequest request =
         ListProgramsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -553,7 +556,7 @@ public class ProgramsServiceClient implements BackgroundResource {
    *     `accounts/123456/programs/free-listings`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Program enableProgram(ProgramName name) {
+  public final Program enableProgram(@Nullable ProgramName name) {
     EnableProgramRequest request =
         EnableProgramRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return enableProgram(request);
@@ -665,7 +668,7 @@ public class ProgramsServiceClient implements BackgroundResource {
    *     `accounts/123456/programs/free-listings`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Program disableProgram(ProgramName name) {
+  public final Program disableProgram(@Nullable ProgramName name) {
     DisableProgramRequest request =
         DisableProgramRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return disableProgram(request);
@@ -813,8 +816,8 @@ public class ProgramsServiceClient implements BackgroundResource {
       extends AbstractPage<ListProgramsRequest, ListProgramsResponse, Program, ListProgramsPage> {
 
     private ListProgramsPage(
-        PageContext<ListProgramsRequest, ListProgramsResponse, Program> context,
-        ListProgramsResponse response) {
+        @Nullable PageContext<ListProgramsRequest, ListProgramsResponse, Program> context,
+        @Nullable ListProgramsResponse response) {
       super(context, response);
     }
 
@@ -824,14 +827,14 @@ public class ProgramsServiceClient implements BackgroundResource {
 
     @Override
     protected ListProgramsPage createPage(
-        PageContext<ListProgramsRequest, ListProgramsResponse, Program> context,
-        ListProgramsResponse response) {
+        @Nullable PageContext<ListProgramsRequest, ListProgramsResponse, Program> context,
+        @Nullable ListProgramsResponse response) {
       return new ListProgramsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProgramsPage> createPageAsync(
-        PageContext<ListProgramsRequest, ListProgramsResponse, Program> context,
+        @Nullable PageContext<ListProgramsRequest, ListProgramsResponse, Program> context,
         ApiFuture<ListProgramsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -845,7 +848,8 @@ public class ProgramsServiceClient implements BackgroundResource {
           ListProgramsPage,
           ListProgramsFixedSizeCollection> {
 
-    private ListProgramsFixedSizeCollection(List<ListProgramsPage> pages, int collectionSize) {
+    private ListProgramsFixedSizeCollection(
+        @Nullable List<ListProgramsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -855,7 +859,7 @@ public class ProgramsServiceClient implements BackgroundResource {
 
     @Override
     protected ListProgramsFixedSizeCollection createCollection(
-        List<ListProgramsPage> pages, int collectionSize) {
+        @Nullable List<ListProgramsPage> pages, int collectionSize) {
       return new ListProgramsFixedSizeCollection(pages, collectionSize);
     }
   }

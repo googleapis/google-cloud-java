@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -24,23 +23,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -48,37 +41,12 @@ import org.junit.jupiter.params.provider.CsvSource;
 public class ITAuthTests extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
 
-  private JsonObject getAuthJson() throws IOException {
-    final String secret = requireEnvVar("SA_SECRET");
-    JsonObject authJson;
-    // Supporting both formats of SA_SECRET:
-    // - Local runs can point to a json file
-    // - Cloud Build has JSON value
-    try {
-      InputStream stream = Files.newInputStream(Paths.get(secret));
-      InputStreamReader reader = new InputStreamReader(stream);
-      authJson = JsonParser.parseReader(reader).getAsJsonObject();
-    } catch (IOException e) {
-      authJson = JsonParser.parseString(secret).getAsJsonObject();
-    }
-    assertTrue(authJson.has("client_email"));
-    assertTrue(authJson.has("private_key"));
-    assertTrue(authJson.has("project_id"));
-    return authJson;
-  }
-
   private void validateConnection(String connection_uri) throws SQLException {
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    int totalRows = 0;
-    while (jsonResultSet.next()) {
-      totalRows += 1;
-    }
-    assertEquals(totalRows, 850);
+    validateStatement(statement, 850);
     connection.close();
   }
 
@@ -90,7 +58,7 @@ public class ITAuthTests extends ITBase {
     Files.write(tempFile.toPath(), authJson.toString().getBytes());
 
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+        getBaseConnectionUrl()
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"
@@ -104,11 +72,7 @@ public class ITAuthTests extends ITBase {
 
   @Test
   public void testServiceAccountAuthenticationMissingOAuthPvtKeyPath() throws SQLException {
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "ProjectId="
-            + PROJECT_ID
-            + ";OAuthType=0;";
+    String connection_uri = getBaseConnectionUrl() + "ProjectId=" + PROJECT_ID + ";OAuthType=0;";
 
     try {
       DriverManager.getConnection(connection_uri);
@@ -127,7 +91,7 @@ public class ITAuthTests extends ITBase {
     Files.write(tempFile.toPath(), authJson.toString().getBytes());
 
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+        getBaseConnectionUrl()
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"
@@ -139,12 +103,13 @@ public class ITAuthTests extends ITBase {
   }
 
   @Test
+  @Tag("advanced")
   public void testValidServiceAccountAuthenticationViaEmailAndPkcs8Key()
       throws SQLException, IOException {
     final JsonObject authJson = getAuthJson();
 
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+        getBaseConnectionUrl()
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"
@@ -162,7 +127,7 @@ public class ITAuthTests extends ITBase {
     final JsonObject authJson = getAuthJson();
 
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+        getBaseConnectionUrl()
             + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=0;"
@@ -192,20 +157,19 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidGoogleUserAccountAuthentication() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
-            + ";OAuthType=1;OAuthClientId=client_id;OAuthClientSecret=client_secret;";
+            + ";OAuthType=1;"
+            + "OAuthClientId=client_id;"
+            + "OAuthClientSecret=client_secret;";
 
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -213,23 +177,22 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidExternalAccountAuthentication() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
             + ";OAUTHTYPE=4;"
             + "BYOID_AudienceUri=//iam.googleapis.com/projects/<project>/locations/<location>/workloadIdentityPools/<pool>/providers/<provider>;"
-            + "BYOID_SubjectTokenType=<type>;BYOID_CredentialSource={\"file\":\"/path/to/file\"};"
-            + "BYOID_SA_Impersonation_Uri=<sa>;BYOID_TokenUri=<uri>;";
+            + "BYOID_SubjectTokenType=<type>;"
+            + "BYOID_CredentialSource={\"file\":\"/path/to/file\"};"
+            + "BYOID_SA_Impersonation_Uri=<sa>;"
+            + "BYOID_TokenUri=<uri>;";
 
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -237,7 +200,8 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidExternalAccountAuthenticationFromFile() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
             + ";OAUTHTYPE=4;"
             + "OAuthPvtKeyPath=/path/to/file;";
@@ -247,11 +211,7 @@ public class ITAuthTests extends ITBase {
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -259,9 +219,11 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidExternalAccountAuthenticationRawJson() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
-            + ";OAUTHTYPE=4;OAuthPvtKey={\n"
+            + ";OAUTHTYPE=4;"
+            + "OAuthPvtKey={\n"
             + "  \"universe_domain\": \"googleapis.com\",\n"
             + "  \"type\": \"external_account\",\n"
             + "  \"audience\":"
@@ -279,11 +241,7 @@ public class ITAuthTests extends ITBase {
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -292,18 +250,21 @@ public class ITAuthTests extends ITBase {
     "https://www.googleapis.com/auth/bigquery.readonly, true",
     "https://www.googleapis.com/auth/bigquery, false"
   })
+  @Tag("advanced")
+  @Tag("disable_tpc")
   public void testValidPreGeneratedAccessTokenAuthentication(String scope, boolean isReadOnly)
       throws Exception {
     final JsonObject authJson = getAuthJson();
-    InputStream stream =
-        new ByteArrayInputStream(authJson.toString().getBytes(StandardCharsets.UTF_8));
+
     GoogleCredentials credentials =
-        GoogleCredentials.fromStream(stream).createScoped(Arrays.asList(scope));
+        ((GoogleCredentials) bigQuery.getOptions().getCredentials())
+            .createScoped(Arrays.asList(scope));
     credentials.refresh();
     String accessToken = credentials.getAccessToken().getTokenValue();
 
     String connectionUri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
+        getBaseConnectionUrl()
+            + "ProjectId="
             + authJson.get("project_id").getAsString()
             + ";OAuthType=2"
             + ";OAuthAccessToken="
@@ -319,21 +280,20 @@ public class ITAuthTests extends ITBase {
   @Disabled
   public void testValidRefreshTokenAuthentication() throws SQLException {
     String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+        getBaseConnectionUrl()
+            + "PROJECTID="
             + PROJECT_ID
-            + ";OAUTHTYPE=2;OAuthRefreshToken=refresh_token;"
-            + ";OAuthClientId=client;OAuthClientSecret=secret;";
+            + ";OAUTHTYPE=2;"
+            + "OAuthRefreshToken=refresh_token;"
+            + ";OAuthClientId=client;"
+            + "OAuthClientSecret=secret;";
 
     Connection connection = DriverManager.getConnection(connection_uri);
     assertNotNull(connection);
     assertFalse(connection.isClosed());
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
+    validateStatement(statement, 50);
     connection.close();
   }
 
@@ -351,6 +311,7 @@ public class ITAuthTests extends ITBase {
   // It requires account to have 'tokenCreator' permission, see
   // https://cloud.google.com/docs/authentication/use-service-account-impersonation#required-roles
   @Test
+  @Tag("advanced")
   public void testServiceAccountAuthenticationWithImpersonation() throws IOException, SQLException {
     final JsonObject authJson = getAuthJson();
 
@@ -366,6 +327,7 @@ public class ITAuthTests extends ITBase {
   // This test uses the same client email for the main authorization and a chain of impersonations.
   // It requires the account to have 'tokenCreator' permission on itself.
   @Test
+  @Tag("advanced")
   public void testServiceAccountAuthenticationWithChainedImpersonation()
       throws IOException, SQLException {
     final JsonObject authJson = getAuthJson();

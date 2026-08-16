@@ -5,12 +5,11 @@
   "api_description": "Lineage is used to track data flows between assets over time.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-datalineage/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-datalineage",
   "distribution_name": "com.google.cloud:google-cloud-datalineage",
   "api_id": "datalineage.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

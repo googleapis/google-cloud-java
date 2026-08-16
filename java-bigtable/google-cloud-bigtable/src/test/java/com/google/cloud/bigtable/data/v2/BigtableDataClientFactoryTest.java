@@ -134,27 +134,42 @@ public class BigtableDataClientFactoryTest {
     transportChannelProvider =
         Mockito.mock(
             TransportChannelProvider.class,
-            new BuilderAnswer<>(
-                TransportChannelProvider.class,
-                builder.stubSettings().getTransportChannelProvider()));
+            Mockito.withSettings()
+                .withoutAnnotations()
+                .defaultAnswer(
+                    new BuilderAnswer<>(
+                        TransportChannelProvider.class,
+                        builder.stubSettings().getTransportChannelProvider())));
 
     credentialsProvider =
         Mockito.mock(
             CredentialsProvider.class,
-            new BuilderAnswer<>(
-                CredentialsProvider.class, builder.stubSettings().getCredentialsProvider()));
+            Mockito.withSettings()
+                .withoutAnnotations()
+                .defaultAnswer(
+                    new BuilderAnswer<>(
+                        CredentialsProvider.class,
+                        builder.stubSettings().getCredentialsProvider())));
 
     executorProvider =
         Mockito.mock(
             ExecutorProvider.class,
-            new BuilderAnswer<>(
-                ExecutorProvider.class, builder.stubSettings().getBackgroundExecutorProvider()));
+            Mockito.withSettings()
+                .withoutAnnotations()
+                .defaultAnswer(
+                    new BuilderAnswer<>(
+                        ExecutorProvider.class,
+                        builder.stubSettings().getBackgroundExecutorProvider())));
 
     watchdogProvider =
         Mockito.mock(
             WatchdogProvider.class,
-            new BuilderAnswer<>(
-                WatchdogProvider.class, builder.stubSettings().getStreamWatchdogProvider()));
+            Mockito.withSettings()
+                .withoutAnnotations()
+                .defaultAnswer(
+                    new BuilderAnswer<>(
+                        WatchdogProvider.class,
+                        builder.stubSettings().getStreamWatchdogProvider())));
 
     ApiClock apiClock = builder.stubSettings().getClock();
 

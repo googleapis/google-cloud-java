@@ -39,12 +39,14 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Utility class for mTLS related operations.
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi
 public class MtlsUtils {
   static final String CERTIFICATE_CONFIGURATION_ENV_VARIABLE = "GOOGLE_API_CERTIFICATE_CONFIG";

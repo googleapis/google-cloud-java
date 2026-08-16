@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -202,9 +204,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class TargetGrpcProxiesClient implements BackgroundResource {
-  private final TargetGrpcProxiesSettings settings;
+  private final @Nullable TargetGrpcProxiesSettings settings;
   private final TargetGrpcProxiesStub stub;
 
   /** Constructs an instance of TargetGrpcProxiesClient with default settings. */
@@ -244,7 +247,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TargetGrpcProxiesSettings getSettings() {
+  public final @Nullable TargetGrpcProxiesSettings getSettings() {
     return settings;
   }
 
@@ -928,8 +931,9 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
           ListTargetGrpcProxiesRequest, TargetGrpcProxyList, TargetGrpcProxy, ListPage> {
 
     private ListPage(
-        PageContext<ListTargetGrpcProxiesRequest, TargetGrpcProxyList, TargetGrpcProxy> context,
-        TargetGrpcProxyList response) {
+        @Nullable PageContext<ListTargetGrpcProxiesRequest, TargetGrpcProxyList, TargetGrpcProxy>
+            context,
+        @Nullable TargetGrpcProxyList response) {
       super(context, response);
     }
 
@@ -939,14 +943,16 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListTargetGrpcProxiesRequest, TargetGrpcProxyList, TargetGrpcProxy> context,
-        TargetGrpcProxyList response) {
+        @Nullable PageContext<ListTargetGrpcProxiesRequest, TargetGrpcProxyList, TargetGrpcProxy>
+            context,
+        @Nullable TargetGrpcProxyList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListTargetGrpcProxiesRequest, TargetGrpcProxyList, TargetGrpcProxy> context,
+        @Nullable PageContext<ListTargetGrpcProxiesRequest, TargetGrpcProxyList, TargetGrpcProxy>
+            context,
         ApiFuture<TargetGrpcProxyList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -960,7 +966,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -969,7 +975,8 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

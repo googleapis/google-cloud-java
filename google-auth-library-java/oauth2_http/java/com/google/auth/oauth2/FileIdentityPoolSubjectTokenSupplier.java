@@ -44,11 +44,13 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Paths;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Internal provider for retrieving the subject tokens for {@link IdentityPoolCredentials} to
  * exchange for GCP access tokens via a local file.
  */
+@NullMarked
 class FileIdentityPoolSubjectTokenSupplier implements IdentityPoolSubjectTokenSupplier {
 
   private final long serialVersionUID = 2475549052347431992L;

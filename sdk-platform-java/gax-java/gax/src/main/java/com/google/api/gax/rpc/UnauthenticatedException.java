@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Exception thrown when the request does not have valid authentication credentials for the
  * operation.
  */
+@NullMarked
 public class UnauthenticatedException extends ApiException {
   public UnauthenticatedException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

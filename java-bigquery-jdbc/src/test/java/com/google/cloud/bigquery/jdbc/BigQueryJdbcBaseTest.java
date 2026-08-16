@@ -16,7 +16,13 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
 import com.google.cloud.bigquery.jdbc.utils.URIBuilder;
+import java.lang.reflect.Method;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class BigQueryJdbcBaseTest {
 
@@ -42,8 +48,24 @@ public class BigQueryJdbcBaseTest {
           + //
           "-----END PRIVATE KEY-----";
 
+  protected static BigQuery getBigQuery(String connectionUrl) {
+    try {
+      Class<?> bqConnClass = Class.forName("com.google.cloud.bigquery.jdbc.BigQueryConnection");
+      Connection conn = DriverManager.getConnection(connectionUrl);
+      Object unwrapped = conn.unwrap(bqConnClass);
+      if (unwrapped != null) {
+        Method method = bqConnClass.getDeclaredMethod("getBigQuery");
+        method.setAccessible(true);
+        return (BigQuery) method.invoke(unwrapped);
+      }
+    } catch (Throwable e) {
+      // ignore for some set of tests; Proxy/TPC tests will fail if it doesn't work.
+    }
+    return BigQueryOptions.getDefaultInstance().getService();
+  }
+
   protected static URIBuilder getBaseUri() {
-    return new URIBuilder("jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;");
+    return new URIBuilder(TestUtilities.getBaseConnectionUrl());
   }
 
   protected static URIBuilder getBaseUri(int authType) {

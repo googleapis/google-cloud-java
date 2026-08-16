@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "OracleDatabaseClient",
           "rpcs": {
+            "ConfigureExascaleCloudExadataInfrastructure": {
+              "methods": ["configureExascaleCloudExadataInfrastructureAsync", "configureExascaleCloudExadataInfrastructureAsync", "configureExascaleCloudExadataInfrastructureAsync", "configureExascaleCloudExadataInfrastructureOperationCallable", "configureExascaleCloudExadataInfrastructureCallable"]
+            },
             "CreateAutonomousDatabase": {
               "methods": ["createAutonomousDatabaseAsync", "createAutonomousDatabaseAsync", "createAutonomousDatabaseAsync", "createAutonomousDatabaseOperationCallable", "createAutonomousDatabaseCallable"]
             },
@@ -85,6 +88,9 @@
             "GetAutonomousDatabase": {
               "methods": ["getAutonomousDatabase", "getAutonomousDatabase", "getAutonomousDatabase", "getAutonomousDatabaseCallable"]
             },
+            "GetAutonomousDatabaseRefreshableClones": {
+              "methods": ["getAutonomousDatabaseRefreshableClones", "getAutonomousDatabaseRefreshableClones", "getAutonomousDatabaseRefreshableClones", "getAutonomousDatabaseRefreshableClonesCallable"]
+            },
             "GetCloudExadataInfrastructure": {
               "methods": ["getCloudExadataInfrastructure", "getCloudExadataInfrastructure", "getCloudExadataInfrastructure", "getCloudExadataInfrastructureCallable"]
             },
@@ -109,20 +115,8 @@
             "GetGoldengateConnectionAssignment": {
               "methods": ["getGoldengateConnectionAssignment", "getGoldengateConnectionAssignment", "getGoldengateConnectionAssignment", "getGoldengateConnectionAssignmentCallable"]
             },
-            "GetGoldengateConnectionType": {
-              "methods": ["getGoldengateConnectionType", "getGoldengateConnectionType", "getGoldengateConnectionType", "getGoldengateConnectionTypeCallable"]
-            },
             "GetGoldengateDeployment": {
               "methods": ["getGoldengateDeployment", "getGoldengateDeployment", "getGoldengateDeployment", "getGoldengateDeploymentCallable"]
-            },
-            "GetGoldengateDeploymentEnvironment": {
-              "methods": ["getGoldengateDeploymentEnvironment", "getGoldengateDeploymentEnvironment", "getGoldengateDeploymentEnvironment", "getGoldengateDeploymentEnvironmentCallable"]
-            },
-            "GetGoldengateDeploymentType": {
-              "methods": ["getGoldengateDeploymentType", "getGoldengateDeploymentType", "getGoldengateDeploymentType", "getGoldengateDeploymentTypeCallable"]
-            },
-            "GetGoldengateDeploymentVersion": {
-              "methods": ["getGoldengateDeploymentVersion", "getGoldengateDeploymentVersion", "getGoldengateDeploymentVersion", "getGoldengateDeploymentVersionCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
@@ -225,6 +219,9 @@
             },
             "ListPluggableDatabases": {
               "methods": ["listPluggableDatabases", "listPluggableDatabases", "listPluggableDatabases", "listPluggableDatabasesPagedCallable", "listPluggableDatabasesCallable"]
+            },
+            "RefreshAutonomousDatabase": {
+              "methods": ["refreshAutonomousDatabaseAsync", "refreshAutonomousDatabaseAsync", "refreshAutonomousDatabaseAsync", "refreshAutonomousDatabaseOperationCallable", "refreshAutonomousDatabaseCallable"]
             },
             "RemoveVirtualMachineExadbVmCluster": {
               "methods": ["removeVirtualMachineExadbVmClusterAsync", "removeVirtualMachineExadbVmClusterAsync", "removeVirtualMachineExadbVmClusterAsync", "removeVirtualMachineExadbVmClusterOperationCallable", "removeVirtualMachineExadbVmClusterCallable"]

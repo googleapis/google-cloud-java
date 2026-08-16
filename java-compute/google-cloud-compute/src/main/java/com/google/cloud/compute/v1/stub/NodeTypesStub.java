@@ -28,6 +28,7 @@ import com.google.cloud.compute.v1.NodeType;
 import com.google.cloud.compute.v1.NodeTypeAggregatedList;
 import com.google.cloud.compute.v1.NodeTypeList;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -35,6 +36,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class NodeTypesStub implements BackgroundResource {
 

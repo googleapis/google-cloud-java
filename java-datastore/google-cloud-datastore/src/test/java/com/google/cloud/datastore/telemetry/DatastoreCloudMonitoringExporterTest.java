@@ -42,6 +42,7 @@ import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.common.CompletableResultCode;
 import io.opentelemetry.sdk.common.InstrumentationScopeInfo;
 import io.opentelemetry.sdk.metrics.data.AggregationTemporality;
 import io.opentelemetry.sdk.metrics.data.LongPointData;
@@ -188,6 +189,35 @@ public class DatastoreCloudMonitoringExporterTest {
     assertThat(DatastoreCloudMonitoringExporter.METRICS_CLIENT_CACHE.containsKey(key)).isFalse();
 
     verify(mockClient);
+  }
+
+  @Test
+  public void testExportingIgnoredMetrics() {
+    // No expectations on mockMetricServiceStub means we expect NO calls to it.
+    replay(mockMetricServiceStub);
+
+    long fakeValue = 11L;
+    long startEpoch = 10;
+    long endEpoch = 15;
+    LongPointData longPointData =
+        ImmutableLongPointData.create(startEpoch, endEpoch, attributes, fakeValue);
+
+    String ignoredMetricName = "otel.sdk.metric_reader.collection.duration";
+    MetricData ignoredData =
+        ImmutableMetricData.createLongSum(
+            resource,
+            scope,
+            ignoredMetricName,
+            "description",
+            "1",
+            ImmutableSumData.create(
+                true, AggregationTemporality.CUMULATIVE, ImmutableList.of(longPointData)));
+
+    CompletableResultCode result = exporter.export(Collections.singletonList(ignoredData));
+
+    assertThat(result.isSuccess()).isTrue();
+
+    verify(mockMetricServiceStub);
   }
 
   private static class FakeMetricServiceClient extends MetricServiceClient {

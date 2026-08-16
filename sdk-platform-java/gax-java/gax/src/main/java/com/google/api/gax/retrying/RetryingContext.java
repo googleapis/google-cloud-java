@@ -33,31 +33,29 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.tracing.ApiTracer;
 import java.util.Set;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Context for a retryable operation.
  *
  * <p>It provides state to individual {@link RetryingFuture}s via the {@link RetryingExecutor}.
  */
+@NullMarked
 @BetaApi("The surface for passing per operation state is not yet stable")
 public interface RetryingContext {
   /** Returns the {@link ApiTracer} associated with the current operation. */
-  @Nonnull
   ApiTracer getTracer();
 
   /**
    * Returns the {@link RetrySettings} to use with this context, or <code>null</code> if the default
    * {@link RetrySettings} should be used.
    */
-  @Nullable
-  RetrySettings getRetrySettings();
+  @Nullable RetrySettings getRetrySettings();
 
   /**
    * Returns the retryable codes to use with this context, or <code>null</code> if the default
    * retryable codes should be used.
    */
-  @Nullable
-  Set<StatusCode.Code> getRetryableCodes();
+  @Nullable Set<StatusCode.Code> getRetryableCodes();
 }

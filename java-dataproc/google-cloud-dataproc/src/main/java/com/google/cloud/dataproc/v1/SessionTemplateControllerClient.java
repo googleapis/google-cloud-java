@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -268,9 +270,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SessionTemplateControllerClient implements BackgroundResource {
-  private final SessionTemplateControllerSettings settings;
+  private final @Nullable SessionTemplateControllerSettings settings;
   private final SessionTemplateControllerStub stub;
 
   /** Constructs an instance of SessionTemplateControllerClient with default settings. */
@@ -312,7 +315,7 @@ public class SessionTemplateControllerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SessionTemplateControllerSettings getSettings() {
+  public final @Nullable SessionTemplateControllerSettings getSettings() {
     return settings;
   }
 
@@ -346,7 +349,7 @@ public class SessionTemplateControllerClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionTemplate createSessionTemplate(
-      LocationName parent, SessionTemplate sessionTemplate) {
+      @Nullable LocationName parent, SessionTemplate sessionTemplate) {
     CreateSessionTemplateRequest request =
         CreateSessionTemplateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -561,7 +564,7 @@ public class SessionTemplateControllerClient implements BackgroundResource {
    * @param name Required. The name of the session template to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SessionTemplate getSessionTemplate(SessionTemplateName name) {
+  public final SessionTemplate getSessionTemplate(@Nullable SessionTemplateName name) {
     GetSessionTemplateRequest request =
         GetSessionTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -681,7 +684,8 @@ public class SessionTemplateControllerClient implements BackgroundResource {
    * @param parent Required. The parent that owns this collection of session templates.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSessionTemplatesPagedResponse listSessionTemplates(LocationName parent) {
+  public final ListSessionTemplatesPagedResponse listSessionTemplates(
+      @Nullable LocationName parent) {
     ListSessionTemplatesRequest request =
         ListSessionTemplatesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -855,7 +859,7 @@ public class SessionTemplateControllerClient implements BackgroundResource {
    * @param name Required. The name of the session template resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSessionTemplate(SessionTemplateName name) {
+  public final void deleteSessionTemplate(@Nullable SessionTemplateName name) {
     DeleteSessionTemplateRequest request =
         DeleteSessionTemplateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1230,9 +1234,10 @@ public class SessionTemplateControllerClient implements BackgroundResource {
           ListSessionTemplatesPage> {
 
     private ListSessionTemplatesPage(
-        PageContext<ListSessionTemplatesRequest, ListSessionTemplatesResponse, SessionTemplate>
+        @Nullable
+            PageContext<ListSessionTemplatesRequest, ListSessionTemplatesResponse, SessionTemplate>
             context,
-        ListSessionTemplatesResponse response) {
+        @Nullable ListSessionTemplatesResponse response) {
       super(context, response);
     }
 
@@ -1242,15 +1247,17 @@ public class SessionTemplateControllerClient implements BackgroundResource {
 
     @Override
     protected ListSessionTemplatesPage createPage(
-        PageContext<ListSessionTemplatesRequest, ListSessionTemplatesResponse, SessionTemplate>
+        @Nullable
+            PageContext<ListSessionTemplatesRequest, ListSessionTemplatesResponse, SessionTemplate>
             context,
-        ListSessionTemplatesResponse response) {
+        @Nullable ListSessionTemplatesResponse response) {
       return new ListSessionTemplatesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSessionTemplatesPage> createPageAsync(
-        PageContext<ListSessionTemplatesRequest, ListSessionTemplatesResponse, SessionTemplate>
+        @Nullable
+            PageContext<ListSessionTemplatesRequest, ListSessionTemplatesResponse, SessionTemplate>
             context,
         ApiFuture<ListSessionTemplatesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1266,7 +1273,7 @@ public class SessionTemplateControllerClient implements BackgroundResource {
           ListSessionTemplatesFixedSizeCollection> {
 
     private ListSessionTemplatesFixedSizeCollection(
-        List<ListSessionTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListSessionTemplatesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1276,7 +1283,7 @@ public class SessionTemplateControllerClient implements BackgroundResource {
 
     @Override
     protected ListSessionTemplatesFixedSizeCollection createCollection(
-        List<ListSessionTemplatesPage> pages, int collectionSize) {
+        @Nullable List<ListSessionTemplatesPage> pages, int collectionSize) {
       return new ListSessionTemplatesFixedSizeCollection(pages, collectionSize);
     }
   }

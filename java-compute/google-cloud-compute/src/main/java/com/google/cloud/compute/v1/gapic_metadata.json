@@ -722,6 +722,24 @@
         }
       }
     },
+    "Hosts": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HostsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetVersion": {
+              "methods": ["getVersionAsync", "getVersionAsync", "getVersionOperationCallable", "getVersionCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
     "ImageFamilyViews": {
       "clients": {
         "grpc": {
@@ -3023,6 +3041,21 @@
         }
       }
     },
+    "ReliabilityRisks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReliabilityRisksClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
     "ReservationBlocks": {
       "clients": {
         "grpc": {
@@ -3208,6 +3241,9 @@
         "grpc": {
           "libraryClient": "RolloutsClient",
           "rpcs": {
+            "Advance": {
+              "methods": ["advanceAsync", "advanceAsync", "advanceOperationCallable", "advanceCallable"]
+            },
             "Cancel": {
               "methods": ["cancelAsync", "cancelAsync", "cancelOperationCallable", "cancelCallable"]
             },
@@ -3219,6 +3255,12 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Pause": {
+              "methods": ["pauseAsync", "pauseAsync", "pauseOperationCallable", "pauseCallable"]
+            },
+            "Resume": {
+              "methods": ["resumeAsync", "resumeAsync", "resumeOperationCallable", "resumeCallable"]
             }
           }
         }
@@ -3235,11 +3277,17 @@
             "Delete": {
               "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
+            "DeleteNamedSet": {
+              "methods": ["deleteNamedSetAsync", "deleteNamedSetAsync", "deleteNamedSetOperationCallable", "deleteNamedSetCallable"]
+            },
             "DeleteRoutePolicy": {
               "methods": ["deleteRoutePolicyAsync", "deleteRoutePolicyAsync", "deleteRoutePolicyOperationCallable", "deleteRoutePolicyCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
+            },
+            "GetNamedSet": {
+              "methods": ["getNamedSet", "getNamedSet", "getNamedSetCallable"]
             },
             "GetNatIpInfo": {
               "methods": ["getNatIpInfo", "getNatIpInfo", "getNatIpInfoCallable"]
@@ -3262,11 +3310,17 @@
             "ListBgpRoutes": {
               "methods": ["listBgpRoutes", "listBgpRoutes", "listBgpRoutesPagedCallable", "listBgpRoutesCallable"]
             },
+            "ListNamedSets": {
+              "methods": ["listNamedSets", "listNamedSets", "listNamedSetsPagedCallable", "listNamedSetsCallable"]
+            },
             "ListRoutePolicies": {
               "methods": ["listRoutePolicies", "listRoutePolicies", "listRoutePoliciesPagedCallable", "listRoutePoliciesCallable"]
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "PatchNamedSet": {
+              "methods": ["patchNamedSetAsync", "patchNamedSetAsync", "patchNamedSetOperationCallable", "patchNamedSetCallable"]
             },
             "PatchRoutePolicy": {
               "methods": ["patchRoutePolicyAsync", "patchRoutePolicyAsync", "patchRoutePolicyOperationCallable", "patchRoutePolicyCallable"]
@@ -3276,6 +3330,9 @@
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            },
+            "UpdateNamedSet": {
+              "methods": ["updateNamedSetAsync", "updateNamedSetAsync", "updateNamedSetOperationCallable", "updateNamedSetCallable"]
             },
             "UpdateRoutePolicy": {
               "methods": ["updateRoutePolicyAsync", "updateRoutePolicyAsync", "updateRoutePolicyOperationCallable", "updateRoutePolicyCallable"]

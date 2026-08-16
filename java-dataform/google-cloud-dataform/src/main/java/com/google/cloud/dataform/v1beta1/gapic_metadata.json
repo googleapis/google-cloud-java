@@ -49,14 +49,23 @@
             "DeleteFolder": {
               "methods": ["deleteFolder", "deleteFolder", "deleteFolder", "deleteFolderCallable"]
             },
+            "DeleteFolderTree": {
+              "methods": ["deleteFolderTreeAsync", "deleteFolderTreeAsync", "deleteFolderTreeAsync", "deleteFolderTreeOperationCallable", "deleteFolderTreeCallable"]
+            },
             "DeleteReleaseConfig": {
               "methods": ["deleteReleaseConfig", "deleteReleaseConfig", "deleteReleaseConfig", "deleteReleaseConfigCallable"]
             },
             "DeleteRepository": {
               "methods": ["deleteRepository", "deleteRepository", "deleteRepository", "deleteRepositoryCallable"]
             },
+            "DeleteRepositoryLongRunning": {
+              "methods": ["deleteRepositoryLongRunningAsync", "deleteRepositoryLongRunningAsync", "deleteRepositoryLongRunningAsync", "deleteRepositoryLongRunningOperationCallable", "deleteRepositoryLongRunningCallable"]
+            },
             "DeleteTeamFolder": {
               "methods": ["deleteTeamFolder", "deleteTeamFolder", "deleteTeamFolder", "deleteTeamFolderCallable"]
+            },
+            "DeleteTeamFolderTree": {
+              "methods": ["deleteTeamFolderTreeAsync", "deleteTeamFolderTreeAsync", "deleteTeamFolderTreeAsync", "deleteTeamFolderTreeOperationCallable", "deleteTeamFolderTreeCallable"]
             },
             "DeleteWorkflowConfig": {
               "methods": ["deleteWorkflowConfig", "deleteWorkflowConfig", "deleteWorkflowConfig", "deleteWorkflowConfigCallable"]

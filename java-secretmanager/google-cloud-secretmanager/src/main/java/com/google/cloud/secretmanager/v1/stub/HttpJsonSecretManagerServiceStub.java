@@ -38,6 +38,7 @@ import com.google.cloud.secretmanager.v1.CreateSecretRequest;
 import com.google.cloud.secretmanager.v1.DeleteSecretRequest;
 import com.google.cloud.secretmanager.v1.DestroySecretVersionRequest;
 import com.google.cloud.secretmanager.v1.DisableSecretVersionRequest;
+import com.google.cloud.secretmanager.v1.EnableManagedRotationRequest;
 import com.google.cloud.secretmanager.v1.EnableSecretVersionRequest;
 import com.google.cloud.secretmanager.v1.GetSecretRequest;
 import com.google.cloud.secretmanager.v1.GetSecretVersionRequest;
@@ -45,6 +46,7 @@ import com.google.cloud.secretmanager.v1.ListSecretVersionsRequest;
 import com.google.cloud.secretmanager.v1.ListSecretVersionsResponse;
 import com.google.cloud.secretmanager.v1.ListSecretsRequest;
 import com.google.cloud.secretmanager.v1.ListSecretsResponse;
+import com.google.cloud.secretmanager.v1.RotateSecretRequest;
 import com.google.cloud.secretmanager.v1.Secret;
 import com.google.cloud.secretmanager.v1.SecretVersion;
 import com.google.cloud.secretmanager.v1.UpdateSecretRequest;
@@ -62,6 +64,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -69,6 +72,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
@@ -648,6 +652,85 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<EnableManagedRotationRequest, SecretVersion>
+      enableManagedRotationMethodDescriptor =
+          ApiMethodDescriptor.<EnableManagedRotationRequest, SecretVersion>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.secretmanager.v1.SecretManagerService/EnableManagedRotation")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<EnableManagedRotationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/secrets/*}:enableManagedRotation",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<EnableManagedRotationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*/secrets/*}:enableManagedRotation")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<EnableManagedRotationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SecretVersion>newBuilder()
+                      .setDefaultInstance(SecretVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<RotateSecretRequest, SecretVersion>
+      rotateSecretMethodDescriptor =
+          ApiMethodDescriptor.<RotateSecretRequest, SecretVersion>newBuilder()
+              .setFullMethodName("google.cloud.secretmanager.v1.SecretManagerService/RotateSecret")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RotateSecretRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/secrets/*}:rotateSecret",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RotateSecretRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{parent=projects/*/locations/*/secrets/*}:rotateSecret")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RotateSecretRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<SecretVersion>newBuilder()
+                      .setDefaultInstance(SecretVersion.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListSecretsRequest, ListSecretsResponse> listSecretsCallable;
   private final UnaryCallable<ListSecretsRequest, ListSecretsPagedResponse>
       listSecretsPagedCallable;
@@ -673,6 +756,9 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<EnableManagedRotationRequest, SecretVersion>
+      enableManagedRotationCallable;
+  private final UnaryCallable<RotateSecretRequest, SecretVersion> rotateSecretCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -904,6 +990,31 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getResource())
                 .build();
+    HttpJsonCallSettings<EnableManagedRotationRequest, SecretVersion>
+        enableManagedRotationTransportSettings =
+            HttpJsonCallSettings.<EnableManagedRotationRequest, SecretVersion>newBuilder()
+                .setMethodDescriptor(enableManagedRotationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<RotateSecretRequest, SecretVersion> rotateSecretTransportSettings =
+        HttpJsonCallSettings.<RotateSecretRequest, SecretVersion>newBuilder()
+            .setMethodDescriptor(rotateSecretMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
 
     this.listSecretsCallable =
         callableFactory.createUnaryCallable(
@@ -970,6 +1081,14 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.enableManagedRotationCallable =
+        callableFactory.createUnaryCallable(
+            enableManagedRotationTransportSettings,
+            settings.enableManagedRotationSettings(),
+            clientContext);
+    this.rotateSecretCallable =
+        callableFactory.createUnaryCallable(
+            rotateSecretTransportSettings, settings.rotateSecretSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -993,6 +1112,8 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(getIamPolicyMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    methodDescriptors.add(enableManagedRotationMethodDescriptor);
+    methodDescriptors.add(rotateSecretMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1083,6 +1204,17 @@ public class HttpJsonSecretManagerServiceStub extends SecretManagerServiceStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnableManagedRotationRequest, SecretVersion>
+      enableManagedRotationCallable() {
+    return enableManagedRotationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RotateSecretRequest, SecretVersion> rotateSecretCallable() {
+    return rotateSecretCallable;
   }
 
   @Override

@@ -19,6 +19,7 @@ package com.google.cloud.dataform.v1beta1.samples;
 // [START dataform_v1beta1_generated_Dataform_QueryDirectoryContents_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.dataform.v1beta1.DataformClient;
+import com.google.cloud.dataform.v1beta1.DirectoryContentsView;
 import com.google.cloud.dataform.v1beta1.DirectoryEntry;
 import com.google.cloud.dataform.v1beta1.QueryDirectoryContentsRequest;
 import com.google.cloud.dataform.v1beta1.WorkspaceName;
@@ -44,6 +45,7 @@ public class AsyncQueryDirectoryContents {
               .setPath("path3433509")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setView(DirectoryContentsView.forNumber(0))
               .build();
       ApiFuture<DirectoryEntry> future =
           dataformClient.queryDirectoryContentsPagedCallable().futureCall(request);

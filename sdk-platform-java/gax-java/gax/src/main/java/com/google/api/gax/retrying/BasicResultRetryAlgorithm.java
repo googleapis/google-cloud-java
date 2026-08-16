@@ -30,6 +30,7 @@
 package com.google.api.gax.retrying;
 
 import java.util.concurrent.CancellationException;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A basic implementation of {@link ResultRetryAlgorithm}. Using this implementation would mean that
@@ -38,6 +39,7 @@ import java.util.concurrent.CancellationException;
  *
  * @param <ResponseT> attempt response type
  */
+@NullMarked
 public class BasicResultRetryAlgorithm<ResponseT>
     implements ResultRetryAlgorithmWithContext<ResponseT> {
   /**

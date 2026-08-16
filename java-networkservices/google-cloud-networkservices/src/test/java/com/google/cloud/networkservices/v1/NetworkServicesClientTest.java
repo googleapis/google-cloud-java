@@ -16,6 +16,7 @@
 
 package com.google.cloud.networkservices.v1;
 
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListAgentGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
@@ -1534,6 +1535,7 @@ public class NetworkServicesClientTest {
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
             .addAllPorts(new ArrayList<Integer>())
+            .setAllPorts(true)
             .setScope("scope109264468")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
             .addAllCertificateUrls(new ArrayList<String>())
@@ -1541,6 +1543,7 @@ public class NetworkServicesClientTest {
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
             .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
+            .setAllowGlobalAccess(true)
             .build();
     mockNetworkServices.addResponse(expectedResponse);
 
@@ -1586,6 +1589,7 @@ public class NetworkServicesClientTest {
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
             .addAllPorts(new ArrayList<Integer>())
+            .setAllPorts(true)
             .setScope("scope109264468")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
             .addAllCertificateUrls(new ArrayList<String>())
@@ -1593,6 +1597,7 @@ public class NetworkServicesClientTest {
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
             .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
+            .setAllowGlobalAccess(true)
             .build();
     mockNetworkServices.addResponse(expectedResponse);
 
@@ -1638,6 +1643,7 @@ public class NetworkServicesClientTest {
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
             .addAllPorts(new ArrayList<Integer>())
+            .setAllPorts(true)
             .setScope("scope109264468")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
             .addAllCertificateUrls(new ArrayList<String>())
@@ -1645,6 +1651,7 @@ public class NetworkServicesClientTest {
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
             .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
+            .setAllowGlobalAccess(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1704,6 +1711,7 @@ public class NetworkServicesClientTest {
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
             .addAllPorts(new ArrayList<Integer>())
+            .setAllPorts(true)
             .setScope("scope109264468")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
             .addAllCertificateUrls(new ArrayList<String>())
@@ -1711,6 +1719,7 @@ public class NetworkServicesClientTest {
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
             .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
+            .setAllowGlobalAccess(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1770,6 +1779,7 @@ public class NetworkServicesClientTest {
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
             .addAllPorts(new ArrayList<Integer>())
+            .setAllPorts(true)
             .setScope("scope109264468")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")
             .addAllCertificateUrls(new ArrayList<String>())
@@ -1777,6 +1787,7 @@ public class NetworkServicesClientTest {
             .setNetwork("network1843485230")
             .setSubnetwork("subnetwork-1302785042")
             .setEnvoyHeaders(EnvoyHeaders.forNumber(0))
+            .setAllowGlobalAccess(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3338,6 +3349,7 @@ public class NetworkServicesClientTest {
             .addAllRules(new ArrayList<TlsRoute.RouteRule>())
             .addAllMeshes(new ArrayList<String>())
             .addAllGateways(new ArrayList<String>())
+            .addAllTargetProxies(new ArrayList<String>())
             .putAllLabels(new HashMap<String, String>())
             .build();
     mockNetworkServices.addResponse(expectedResponse);
@@ -3384,6 +3396,7 @@ public class NetworkServicesClientTest {
             .addAllRules(new ArrayList<TlsRoute.RouteRule>())
             .addAllMeshes(new ArrayList<String>())
             .addAllGateways(new ArrayList<String>())
+            .addAllTargetProxies(new ArrayList<String>())
             .putAllLabels(new HashMap<String, String>())
             .build();
     mockNetworkServices.addResponse(expectedResponse);
@@ -3430,6 +3443,7 @@ public class NetworkServicesClientTest {
             .addAllRules(new ArrayList<TlsRoute.RouteRule>())
             .addAllMeshes(new ArrayList<String>())
             .addAllGateways(new ArrayList<String>())
+            .addAllTargetProxies(new ArrayList<String>())
             .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
@@ -3490,6 +3504,7 @@ public class NetworkServicesClientTest {
             .addAllRules(new ArrayList<TlsRoute.RouteRule>())
             .addAllMeshes(new ArrayList<String>())
             .addAllGateways(new ArrayList<String>())
+            .addAllTargetProxies(new ArrayList<String>())
             .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
@@ -3550,6 +3565,7 @@ public class NetworkServicesClientTest {
             .addAllRules(new ArrayList<TlsRoute.RouteRule>())
             .addAllMeshes(new ArrayList<String>())
             .addAllGateways(new ArrayList<String>())
+            .addAllTargetProxies(new ArrayList<String>())
             .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
@@ -5371,6 +5387,454 @@ public class NetworkServicesClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAgentGatewaysTest() throws Exception {
+    AgentGateway responsesElement = AgentGateway.newBuilder().build();
+    ListAgentGatewaysResponse expectedResponse =
+        ListAgentGatewaysResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAgentGateways(Arrays.asList(responsesElement))
+            .build();
+    mockNetworkServices.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListAgentGatewaysPagedResponse pagedListResponse = client.listAgentGateways(parent);
+
+    List<AgentGateway> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAgentGatewaysList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAgentGatewaysRequest actualRequest = ((ListAgentGatewaysRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAgentGatewaysExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listAgentGateways(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listAgentGatewaysTest2() throws Exception {
+    AgentGateway responsesElement = AgentGateway.newBuilder().build();
+    ListAgentGatewaysResponse expectedResponse =
+        ListAgentGatewaysResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllAgentGateways(Arrays.asList(responsesElement))
+            .build();
+    mockNetworkServices.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListAgentGatewaysPagedResponse pagedListResponse = client.listAgentGateways(parent);
+
+    List<AgentGateway> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getAgentGatewaysList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListAgentGatewaysRequest actualRequest = ((ListAgentGatewaysRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listAgentGatewaysExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listAgentGateways(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAgentGatewayTest() throws Exception {
+    AgentGateway expectedResponse =
+        AgentGateway.newBuilder()
+            .setName(AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .addAllProtocols(new ArrayList<AgentGateway.Protocol>())
+            .addAllRegistries(new ArrayList<String>())
+            .setNetworkConfig(AgentGateway.NetworkConfig.newBuilder().build())
+            .setAgentGatewayCard(AgentGateway.AgentGatewayOutputCard.newBuilder().build())
+            .build();
+    mockNetworkServices.addResponse(expectedResponse);
+
+    AgentGatewayName name = AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]");
+
+    AgentGateway actualResponse = client.getAgentGateway(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAgentGatewayRequest actualRequest = ((GetAgentGatewayRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAgentGatewayExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      AgentGatewayName name = AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]");
+      client.getAgentGateway(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAgentGatewayTest2() throws Exception {
+    AgentGateway expectedResponse =
+        AgentGateway.newBuilder()
+            .setName(AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .addAllProtocols(new ArrayList<AgentGateway.Protocol>())
+            .addAllRegistries(new ArrayList<String>())
+            .setNetworkConfig(AgentGateway.NetworkConfig.newBuilder().build())
+            .setAgentGatewayCard(AgentGateway.AgentGatewayOutputCard.newBuilder().build())
+            .build();
+    mockNetworkServices.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AgentGateway actualResponse = client.getAgentGateway(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAgentGatewayRequest actualRequest = ((GetAgentGatewayRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAgentGatewayExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAgentGateway(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createAgentGatewayTest() throws Exception {
+    AgentGateway expectedResponse =
+        AgentGateway.newBuilder()
+            .setName(AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .addAllProtocols(new ArrayList<AgentGateway.Protocol>())
+            .addAllRegistries(new ArrayList<String>())
+            .setNetworkConfig(AgentGateway.NetworkConfig.newBuilder().build())
+            .setAgentGatewayCard(AgentGateway.AgentGatewayOutputCard.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAgentGatewayTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    AgentGateway agentGateway = AgentGateway.newBuilder().build();
+    String agentGatewayId = "agentGatewayId1729577210";
+
+    AgentGateway actualResponse =
+        client.createAgentGatewayAsync(parent, agentGateway, agentGatewayId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAgentGatewayRequest actualRequest = ((CreateAgentGatewayRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(agentGateway, actualRequest.getAgentGateway());
+    Assert.assertEquals(agentGatewayId, actualRequest.getAgentGatewayId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAgentGatewayExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      AgentGateway agentGateway = AgentGateway.newBuilder().build();
+      String agentGatewayId = "agentGatewayId1729577210";
+      client.createAgentGatewayAsync(parent, agentGateway, agentGatewayId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createAgentGatewayTest2() throws Exception {
+    AgentGateway expectedResponse =
+        AgentGateway.newBuilder()
+            .setName(AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .addAllProtocols(new ArrayList<AgentGateway.Protocol>())
+            .addAllRegistries(new ArrayList<String>())
+            .setNetworkConfig(AgentGateway.NetworkConfig.newBuilder().build())
+            .setAgentGatewayCard(AgentGateway.AgentGatewayOutputCard.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createAgentGatewayTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    AgentGateway agentGateway = AgentGateway.newBuilder().build();
+    String agentGatewayId = "agentGatewayId1729577210";
+
+    AgentGateway actualResponse =
+        client.createAgentGatewayAsync(parent, agentGateway, agentGatewayId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateAgentGatewayRequest actualRequest = ((CreateAgentGatewayRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(agentGateway, actualRequest.getAgentGateway());
+    Assert.assertEquals(agentGatewayId, actualRequest.getAgentGatewayId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createAgentGatewayExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      AgentGateway agentGateway = AgentGateway.newBuilder().build();
+      String agentGatewayId = "agentGatewayId1729577210";
+      client.createAgentGatewayAsync(parent, agentGateway, agentGatewayId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateAgentGatewayTest() throws Exception {
+    AgentGateway expectedResponse =
+        AgentGateway.newBuilder()
+            .setName(AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setDescription("description-1724546052")
+            .setEtag("etag3123477")
+            .addAllProtocols(new ArrayList<AgentGateway.Protocol>())
+            .addAllRegistries(new ArrayList<String>())
+            .setNetworkConfig(AgentGateway.NetworkConfig.newBuilder().build())
+            .setAgentGatewayCard(AgentGateway.AgentGatewayOutputCard.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateAgentGatewayTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    AgentGateway agentGateway = AgentGateway.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    AgentGateway actualResponse = client.updateAgentGatewayAsync(agentGateway, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateAgentGatewayRequest actualRequest = ((UpdateAgentGatewayRequest) actualRequests.get(0));
+
+    Assert.assertEquals(agentGateway, actualRequest.getAgentGateway());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateAgentGatewayExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      AgentGateway agentGateway = AgentGateway.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateAgentGatewayAsync(agentGateway, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAgentGatewayTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAgentGatewayTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    AgentGatewayName name = AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]");
+
+    client.deleteAgentGatewayAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAgentGatewayRequest actualRequest = ((DeleteAgentGatewayRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAgentGatewayExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      AgentGatewayName name = AgentGatewayName.of("[PROJECT]", "[LOCATION]", "[AGENT_GATEWAY]");
+      client.deleteAgentGatewayAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteAgentGatewayTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteAgentGatewayTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockNetworkServices.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteAgentGatewayAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockNetworkServices.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteAgentGatewayRequest actualRequest = ((DeleteAgentGatewayRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteAgentGatewayExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockNetworkServices.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteAgentGatewayAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

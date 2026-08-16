@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -242,9 +244,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class PacketMirroringsClient implements BackgroundResource {
-  private final PacketMirroringsSettings settings;
+  private final @Nullable PacketMirroringsSettings settings;
   private final PacketMirroringsStub stub;
 
   /** Constructs an instance of PacketMirroringsClient with default settings. */
@@ -284,7 +287,7 @@ public class PacketMirroringsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PacketMirroringsSettings getSettings() {
+  public final @Nullable PacketMirroringsSettings getSettings() {
     return settings;
   }
 
@@ -1282,12 +1285,13 @@ public class PacketMirroringsClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListPacketMirroringsRequest,
                 PacketMirroringAggregatedList,
                 Map.Entry<String, PacketMirroringsScopedList>>
             context,
-        PacketMirroringAggregatedList response) {
+        @Nullable PacketMirroringAggregatedList response) {
       super(context, response);
     }
 
@@ -1297,18 +1301,20 @@ public class PacketMirroringsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListPacketMirroringsRequest,
                 PacketMirroringAggregatedList,
                 Map.Entry<String, PacketMirroringsScopedList>>
             context,
-        PacketMirroringAggregatedList response) {
+        @Nullable PacketMirroringAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListPacketMirroringsRequest,
                 PacketMirroringAggregatedList,
                 Map.Entry<String, PacketMirroringsScopedList>>
@@ -1326,7 +1332,8 @@ public class PacketMirroringsClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1336,7 +1343,7 @@ public class PacketMirroringsClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1368,8 +1375,9 @@ public class PacketMirroringsClient implements BackgroundResource {
           ListPacketMirroringsRequest, PacketMirroringList, PacketMirroring, ListPage> {
 
     private ListPage(
-        PageContext<ListPacketMirroringsRequest, PacketMirroringList, PacketMirroring> context,
-        PacketMirroringList response) {
+        @Nullable PageContext<ListPacketMirroringsRequest, PacketMirroringList, PacketMirroring>
+            context,
+        @Nullable PacketMirroringList response) {
       super(context, response);
     }
 
@@ -1379,14 +1387,16 @@ public class PacketMirroringsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListPacketMirroringsRequest, PacketMirroringList, PacketMirroring> context,
-        PacketMirroringList response) {
+        @Nullable PageContext<ListPacketMirroringsRequest, PacketMirroringList, PacketMirroring>
+            context,
+        @Nullable PacketMirroringList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListPacketMirroringsRequest, PacketMirroringList, PacketMirroring> context,
+        @Nullable PageContext<ListPacketMirroringsRequest, PacketMirroringList, PacketMirroring>
+            context,
         ApiFuture<PacketMirroringList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1400,7 +1410,7 @@ public class PacketMirroringsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1409,7 +1419,8 @@ public class PacketMirroringsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

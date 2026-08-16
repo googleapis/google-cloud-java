@@ -26,10 +26,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import org.jspecify.annotations.NullMarked;
 import org.yaml.snakeyaml.LoaderOptions;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
 
+@NullMarked
 public class GapicLroRetrySettingsParser {
   private static final String YAML_KEY_INTERFACES = "interfaces";
   private static final String YAML_KEY_NAME = "name";

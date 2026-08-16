@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -231,10 +233,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class JobsV1Beta3Client implements BackgroundResource {
-  private final JobsV1Beta3Settings settings;
+  private final @Nullable JobsV1Beta3Settings settings;
   private final JobsV1Beta3Stub stub;
 
   /** Constructs an instance of JobsV1Beta3Client with default settings. */
@@ -273,7 +276,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final JobsV1Beta3Settings getSettings() {
+  public final @Nullable JobsV1Beta3Settings getSettings() {
     return settings;
   }
 
@@ -927,7 +930,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
       extends AbstractPage<ListJobsRequest, ListJobsResponse, Job, ListJobsPage> {
 
     private ListJobsPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       super(context, response);
     }
 
@@ -937,13 +941,14 @@ public class JobsV1Beta3Client implements BackgroundResource {
 
     @Override
     protected ListJobsPage createPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       return new ListJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListJobsPage> createPageAsync(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
         ApiFuture<ListJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -953,7 +958,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListJobsRequest, ListJobsResponse, Job, ListJobsPage, ListJobsFixedSizeCollection> {
 
-    private ListJobsFixedSizeCollection(List<ListJobsPage> pages, int collectionSize) {
+    private ListJobsFixedSizeCollection(@Nullable List<ListJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -963,7 +968,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
 
     @Override
     protected ListJobsFixedSizeCollection createCollection(
-        List<ListJobsPage> pages, int collectionSize) {
+        @Nullable List<ListJobsPage> pages, int collectionSize) {
       return new ListJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -996,7 +1001,8 @@ public class JobsV1Beta3Client implements BackgroundResource {
       extends AbstractPage<ListJobsRequest, ListJobsResponse, Job, AggregatedListJobsPage> {
 
     private AggregatedListJobsPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       super(context, response);
     }
 
@@ -1006,13 +1012,14 @@ public class JobsV1Beta3Client implements BackgroundResource {
 
     @Override
     protected AggregatedListJobsPage createPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       return new AggregatedListJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListJobsPage> createPageAsync(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
         ApiFuture<ListJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1027,7 +1034,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
           AggregatedListJobsFixedSizeCollection> {
 
     private AggregatedListJobsFixedSizeCollection(
-        List<AggregatedListJobsPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1037,7 +1044,7 @@ public class JobsV1Beta3Client implements BackgroundResource {
 
     @Override
     protected AggregatedListJobsFixedSizeCollection createCollection(
-        List<AggregatedListJobsPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListJobsPage> pages, int collectionSize) {
       return new AggregatedListJobsFixedSizeCollection(pages, collectionSize);
     }
   }

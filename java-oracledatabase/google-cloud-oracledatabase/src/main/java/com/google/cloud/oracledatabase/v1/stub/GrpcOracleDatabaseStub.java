@@ -60,8 +60,10 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.cloud.oracledatabase.v1.AutonomousDatabase;
+import com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones;
 import com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure;
 import com.google.cloud.oracledatabase.v1.CloudVmCluster;
+import com.google.cloud.oracledatabase.v1.ConfigureExascaleCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.CreateCloudVmClusterRequest;
@@ -91,6 +93,7 @@ import com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault;
 import com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse;
+import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest;
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest;
@@ -100,21 +103,13 @@ import com.google.cloud.oracledatabase.v1.GetExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.GetExascaleDbStorageVaultRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionAssignmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateConnectionTypeRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentEnvironmentRequest;
 import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentTypeRequest;
-import com.google.cloud.oracledatabase.v1.GetGoldengateDeploymentVersionRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbNetworkRequest;
 import com.google.cloud.oracledatabase.v1.GetOdbSubnetRequest;
 import com.google.cloud.oracledatabase.v1.GetPluggableDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GoldengateConnection;
 import com.google.cloud.oracledatabase.v1.GoldengateConnectionAssignment;
-import com.google.cloud.oracledatabase.v1.GoldengateConnectionType;
 import com.google.cloud.oracledatabase.v1.GoldengateDeployment;
-import com.google.cloud.oracledatabase.v1.GoldengateDeploymentEnvironment;
-import com.google.cloud.oracledatabase.v1.GoldengateDeploymentType;
-import com.google.cloud.oracledatabase.v1.GoldengateDeploymentVersion;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsRequest;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseBackupsResponse;
 import com.google.cloud.oracledatabase.v1.ListAutonomousDatabaseCharacterSetsRequest;
@@ -177,6 +172,7 @@ import com.google.cloud.oracledatabase.v1.OdbNetwork;
 import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
 import com.google.cloud.oracledatabase.v1.PluggableDatabase;
+import com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RemoveVirtualMachineExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
@@ -197,6 +193,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -204,6 +201,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private static final MethodDescriptor<
@@ -261,6 +259,21 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(
                       DeleteCloudExadataInfrastructureRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureMethodDescriptor =
+          MethodDescriptor
+              .<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/ConfigureExascaleCloudExadataInfrastructure")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ConfigureExascaleCloudExadataInfrastructureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -584,6 +597,35 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(FailoverAutonomousDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseMethodDescriptor =
+          MethodDescriptor.<RefreshAutonomousDatabaseRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/RefreshAutonomousDatabase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RefreshAutonomousDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesMethodDescriptor =
+          MethodDescriptor
+              .<GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.oracledatabase.v1.OracleDatabase/GetAutonomousDatabaseRefreshableClones")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetAutonomousDatabaseRefreshableClonesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AutonomousDatabaseRefreshableClones.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -1039,21 +1081,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .build();
 
   private static final MethodDescriptor<
-          GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-      getGoldengateDeploymentVersionMethodDescriptor =
-          MethodDescriptor
-              .<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateDeploymentVersion")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetGoldengateDeploymentVersionRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(GoldengateDeploymentVersion.getDefaultInstance()))
-              .setSampledToLocalTracing(true)
-              .build();
-
-  private static final MethodDescriptor<
           ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
       listGoldengateDeploymentVersionsMethodDescriptor =
           MethodDescriptor
@@ -1068,21 +1095,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListGoldengateDeploymentVersionsResponse.getDefaultInstance()))
-              .setSampledToLocalTracing(true)
-              .build();
-
-  private static final MethodDescriptor<
-          GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-      getGoldengateDeploymentTypeMethodDescriptor =
-          MethodDescriptor
-              .<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateDeploymentType")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetGoldengateDeploymentTypeRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(GoldengateDeploymentType.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -1103,23 +1115,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .build();
 
   private static final MethodDescriptor<
-          GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-      getGoldengateDeploymentEnvironmentMethodDescriptor =
-          MethodDescriptor
-              .<GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-                  newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateDeploymentEnvironment")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(
-                      GetGoldengateDeploymentEnvironmentRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(GoldengateDeploymentEnvironment.getDefaultInstance()))
-              .setSampledToLocalTracing(true)
-              .build();
-
-  private static final MethodDescriptor<
           ListGoldengateDeploymentEnvironmentsRequest, ListGoldengateDeploymentEnvironmentsResponse>
       listGoldengateDeploymentEnvironmentsMethodDescriptor =
           MethodDescriptor
@@ -1135,21 +1130,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListGoldengateDeploymentEnvironmentsResponse.getDefaultInstance()))
-              .setSampledToLocalTracing(true)
-              .build();
-
-  private static final MethodDescriptor<
-          GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-      getGoldengateConnectionTypeMethodDescriptor =
-          MethodDescriptor
-              .<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.oracledatabase.v1.OracleDatabase/GetGoldengateConnectionType")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(GetGoldengateConnectionTypeRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(GoldengateConnectionType.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -1315,6 +1295,13 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
       deleteCloudExadataInfrastructureCallable;
   private final OperationCallable<DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
       deleteCloudExadataInfrastructureOperationCallable;
+  private final UnaryCallable<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureCallable;
+  private final OperationCallable<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationCallable;
   private final UnaryCallable<ListCloudVmClustersRequest, ListCloudVmClustersResponse>
       listCloudVmClustersCallable;
   private final UnaryCallable<ListCloudVmClustersRequest, ListCloudVmClustersPagedResponse>
@@ -1418,6 +1405,14 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   private final OperationCallable<
           FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       failoverAutonomousDatabaseOperationCallable;
+  private final UnaryCallable<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseCallable;
+  private final OperationCallable<
+          RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseOperationCallable;
+  private final UnaryCallable<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesCallable;
   private final UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksResponse>
       listOdbNetworksCallable;
   private final UnaryCallable<ListOdbNetworksRequest, ListOdbNetworksPagedResponse>
@@ -1543,16 +1538,12 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
       deleteGoldengateConnectionCallable;
   private final OperationCallable<DeleteGoldengateConnectionRequest, Empty, OperationMetadata>
       deleteGoldengateConnectionOperationCallable;
-  private final UnaryCallable<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-      getGoldengateDeploymentVersionCallable;
   private final UnaryCallable<
           ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
       listGoldengateDeploymentVersionsCallable;
   private final UnaryCallable<
           ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsPagedResponse>
       listGoldengateDeploymentVersionsPagedCallable;
-  private final UnaryCallable<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-      getGoldengateDeploymentTypeCallable;
   private final UnaryCallable<
           ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
       listGoldengateDeploymentTypesCallable;
@@ -1560,17 +1551,12 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesPagedResponse>
       listGoldengateDeploymentTypesPagedCallable;
   private final UnaryCallable<
-          GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-      getGoldengateDeploymentEnvironmentCallable;
-  private final UnaryCallable<
           ListGoldengateDeploymentEnvironmentsRequest, ListGoldengateDeploymentEnvironmentsResponse>
       listGoldengateDeploymentEnvironmentsCallable;
   private final UnaryCallable<
           ListGoldengateDeploymentEnvironmentsRequest,
           ListGoldengateDeploymentEnvironmentsPagedResponse>
       listGoldengateDeploymentEnvironmentsPagedCallable;
-  private final UnaryCallable<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-      getGoldengateConnectionTypeCallable;
   private final UnaryCallable<
           ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
       listGoldengateConnectionTypesCallable;
@@ -1703,6 +1689,19 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         deleteCloudExadataInfrastructureTransportSettings =
             GrpcCallSettings.<DeleteCloudExadataInfrastructureRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteCloudExadataInfrastructureMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+        configureExascaleCloudExadataInfrastructureTransportSettings =
+            GrpcCallSettings
+                .<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>newBuilder()
+                .setMethodDescriptor(configureExascaleCloudExadataInfrastructureMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -2010,6 +2009,34 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         failoverAutonomousDatabaseTransportSettings =
             GrpcCallSettings.<FailoverAutonomousDatabaseRequest, Operation>newBuilder()
                 .setMethodDescriptor(failoverAutonomousDatabaseMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<RefreshAutonomousDatabaseRequest, Operation>
+        refreshAutonomousDatabaseTransportSettings =
+            GrpcCallSettings.<RefreshAutonomousDatabaseRequest, Operation>newBuilder()
+                .setMethodDescriptor(refreshAutonomousDatabaseMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+        getAutonomousDatabaseRefreshableClonesTransportSettings =
+            GrpcCallSettings
+                .<GetAutonomousDatabaseRefreshableClonesRequest,
+                    AutonomousDatabaseRefreshableClones>
+                    newBuilder()
+                .setMethodDescriptor(getAutonomousDatabaseRefreshableClonesMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -2455,19 +2482,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
-    GrpcCallSettings<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-        getGoldengateDeploymentVersionTransportSettings =
-            GrpcCallSettings
-                .<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>newBuilder()
-                .setMethodDescriptor(getGoldengateDeploymentVersionMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .setResourceNameExtractor(request -> request.getName())
-                .build();
     GrpcCallSettings<
             ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
         listGoldengateDeploymentVersionsTransportSettings =
@@ -2483,19 +2497,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
-    GrpcCallSettings<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-        getGoldengateDeploymentTypeTransportSettings =
-            GrpcCallSettings
-                .<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>newBuilder()
-                .setMethodDescriptor(getGoldengateDeploymentTypeMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .setResourceNameExtractor(request -> request.getName())
-                .build();
     GrpcCallSettings<ListGoldengateDeploymentTypesRequest, ListGoldengateDeploymentTypesResponse>
         listGoldengateDeploymentTypesTransportSettings =
             GrpcCallSettings
@@ -2509,20 +2510,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
-                .build();
-    GrpcCallSettings<GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-        getGoldengateDeploymentEnvironmentTransportSettings =
-            GrpcCallSettings
-                .<GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-                    newBuilder()
-                .setMethodDescriptor(getGoldengateDeploymentEnvironmentMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             ListGoldengateDeploymentEnvironmentsRequest,
@@ -2540,19 +2527,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
-                .build();
-    GrpcCallSettings<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-        getGoldengateConnectionTypeTransportSettings =
-            GrpcCallSettings
-                .<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>newBuilder()
-                .setMethodDescriptor(getGoldengateConnectionTypeMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("name", String.valueOf(request.getName()));
-                      return builder.build();
-                    })
-                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListGoldengateConnectionTypesRequest, ListGoldengateConnectionTypesResponse>
         listGoldengateConnectionTypesTransportSettings =
@@ -2719,6 +2693,17 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createOperationCallable(
             deleteCloudExadataInfrastructureTransportSettings,
             settings.deleteCloudExadataInfrastructureOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.configureExascaleCloudExadataInfrastructureCallable =
+        callableFactory.createUnaryCallable(
+            configureExascaleCloudExadataInfrastructureTransportSettings,
+            settings.configureExascaleCloudExadataInfrastructureSettings(),
+            clientContext);
+    this.configureExascaleCloudExadataInfrastructureOperationCallable =
+        callableFactory.createOperationCallable(
+            configureExascaleCloudExadataInfrastructureTransportSettings,
+            settings.configureExascaleCloudExadataInfrastructureOperationSettings(),
             clientContext,
             operationsStub);
     this.listCloudVmClustersCallable =
@@ -2951,6 +2936,22 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.failoverAutonomousDatabaseOperationSettings(),
             clientContext,
             operationsStub);
+    this.refreshAutonomousDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            refreshAutonomousDatabaseTransportSettings,
+            settings.refreshAutonomousDatabaseSettings(),
+            clientContext);
+    this.refreshAutonomousDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            refreshAutonomousDatabaseTransportSettings,
+            settings.refreshAutonomousDatabaseOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getAutonomousDatabaseRefreshableClonesCallable =
+        callableFactory.createUnaryCallable(
+            getAutonomousDatabaseRefreshableClonesTransportSettings,
+            settings.getAutonomousDatabaseRefreshableClonesSettings(),
+            clientContext);
     this.listOdbNetworksCallable =
         callableFactory.createUnaryCallable(
             listOdbNetworksTransportSettings, settings.listOdbNetworksSettings(), clientContext);
@@ -3258,11 +3259,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             settings.deleteGoldengateConnectionOperationSettings(),
             clientContext,
             operationsStub);
-    this.getGoldengateDeploymentVersionCallable =
-        callableFactory.createUnaryCallable(
-            getGoldengateDeploymentVersionTransportSettings,
-            settings.getGoldengateDeploymentVersionSettings(),
-            clientContext);
     this.listGoldengateDeploymentVersionsCallable =
         callableFactory.createUnaryCallable(
             listGoldengateDeploymentVersionsTransportSettings,
@@ -3272,11 +3268,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createPagedCallable(
             listGoldengateDeploymentVersionsTransportSettings,
             settings.listGoldengateDeploymentVersionsSettings(),
-            clientContext);
-    this.getGoldengateDeploymentTypeCallable =
-        callableFactory.createUnaryCallable(
-            getGoldengateDeploymentTypeTransportSettings,
-            settings.getGoldengateDeploymentTypeSettings(),
             clientContext);
     this.listGoldengateDeploymentTypesCallable =
         callableFactory.createUnaryCallable(
@@ -3288,11 +3279,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
             listGoldengateDeploymentTypesTransportSettings,
             settings.listGoldengateDeploymentTypesSettings(),
             clientContext);
-    this.getGoldengateDeploymentEnvironmentCallable =
-        callableFactory.createUnaryCallable(
-            getGoldengateDeploymentEnvironmentTransportSettings,
-            settings.getGoldengateDeploymentEnvironmentSettings(),
-            clientContext);
     this.listGoldengateDeploymentEnvironmentsCallable =
         callableFactory.createUnaryCallable(
             listGoldengateDeploymentEnvironmentsTransportSettings,
@@ -3302,11 +3288,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
         callableFactory.createPagedCallable(
             listGoldengateDeploymentEnvironmentsTransportSettings,
             settings.listGoldengateDeploymentEnvironmentsSettings(),
-            clientContext);
-    this.getGoldengateConnectionTypeCallable =
-        callableFactory.createUnaryCallable(
-            getGoldengateConnectionTypeTransportSettings,
-            settings.getGoldengateConnectionTypeSettings(),
             clientContext);
     this.listGoldengateConnectionTypesCallable =
         callableFactory.createUnaryCallable(
@@ -3437,6 +3418,21 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<DeleteCloudExadataInfrastructureRequest, Empty, OperationMetadata>
       deleteCloudExadataInfrastructureOperationCallable() {
     return deleteCloudExadataInfrastructureOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ConfigureExascaleCloudExadataInfrastructureRequest, Operation>
+      configureExascaleCloudExadataInfrastructureCallable() {
+    return configureExascaleCloudExadataInfrastructureCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          ConfigureExascaleCloudExadataInfrastructureRequest,
+          CloudExadataInfrastructure,
+          OperationMetadata>
+      configureExascaleCloudExadataInfrastructureOperationCallable() {
+    return configureExascaleCloudExadataInfrastructureOperationCallable;
   }
 
   @Override
@@ -3717,6 +3713,25 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   public OperationCallable<FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       failoverAutonomousDatabaseOperationCallable() {
     return failoverAutonomousDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseCallable() {
+    return refreshAutonomousDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseOperationCallable() {
+    return refreshAutonomousDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesCallable() {
+    return getAutonomousDatabaseRefreshableClonesCallable;
   }
 
   @Override
@@ -4099,12 +4114,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
-  public UnaryCallable<GetGoldengateDeploymentVersionRequest, GoldengateDeploymentVersion>
-      getGoldengateDeploymentVersionCallable() {
-    return getGoldengateDeploymentVersionCallable;
-  }
-
-  @Override
   public UnaryCallable<
           ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsResponse>
       listGoldengateDeploymentVersionsCallable() {
@@ -4116,12 +4125,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           ListGoldengateDeploymentVersionsRequest, ListGoldengateDeploymentVersionsPagedResponse>
       listGoldengateDeploymentVersionsPagedCallable() {
     return listGoldengateDeploymentVersionsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetGoldengateDeploymentTypeRequest, GoldengateDeploymentType>
-      getGoldengateDeploymentTypeCallable() {
-    return getGoldengateDeploymentTypeCallable;
   }
 
   @Override
@@ -4138,12 +4141,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
   }
 
   @Override
-  public UnaryCallable<GetGoldengateDeploymentEnvironmentRequest, GoldengateDeploymentEnvironment>
-      getGoldengateDeploymentEnvironmentCallable() {
-    return getGoldengateDeploymentEnvironmentCallable;
-  }
-
-  @Override
   public UnaryCallable<
           ListGoldengateDeploymentEnvironmentsRequest, ListGoldengateDeploymentEnvironmentsResponse>
       listGoldengateDeploymentEnvironmentsCallable() {
@@ -4156,12 +4153,6 @@ public class GrpcOracleDatabaseStub extends OracleDatabaseStub {
           ListGoldengateDeploymentEnvironmentsPagedResponse>
       listGoldengateDeploymentEnvironmentsPagedCallable() {
     return listGoldengateDeploymentEnvironmentsPagedCallable;
-  }
-
-  @Override
-  public UnaryCallable<GetGoldengateConnectionTypeRequest, GoldengateConnectionType>
-      getGoldengateConnectionTypeCallable() {
-    return getGoldengateConnectionTypeCallable;
   }
 
   @Override

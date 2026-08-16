@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -203,9 +205,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class OnlineReturnPolicyServiceClient implements BackgroundResource {
-  private final OnlineReturnPolicyServiceSettings settings;
+  private final @Nullable OnlineReturnPolicyServiceSettings settings;
   private final OnlineReturnPolicyServiceStub stub;
 
   /** Constructs an instance of OnlineReturnPolicyServiceClient with default settings. */
@@ -247,7 +250,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final OnlineReturnPolicyServiceSettings getSettings() {
+  public final @Nullable OnlineReturnPolicyServiceSettings getSettings() {
     return settings;
   }
 
@@ -278,7 +281,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
    *     `accounts/{account}/onlineReturnPolicies/{return_policy}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OnlineReturnPolicy getOnlineReturnPolicy(OnlineReturnPolicyName name) {
+  public final OnlineReturnPolicy getOnlineReturnPolicy(@Nullable OnlineReturnPolicyName name) {
     GetOnlineReturnPolicyRequest request =
         GetOnlineReturnPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -400,7 +403,8 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListOnlineReturnPoliciesPagedResponse listOnlineReturnPolicies(AccountName parent) {
+  public final ListOnlineReturnPoliciesPagedResponse listOnlineReturnPolicies(
+      @Nullable AccountName parent) {
     ListOnlineReturnPoliciesRequest request =
         ListOnlineReturnPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -579,7 +583,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OnlineReturnPolicy createOnlineReturnPolicy(
-      AccountName parent, OnlineReturnPolicy onlineReturnPolicy) {
+      @Nullable AccountName parent, OnlineReturnPolicy onlineReturnPolicy) {
     CreateOnlineReturnPolicyRequest request =
         CreateOnlineReturnPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -710,7 +714,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
    *     `accounts/{account}/onlineReturnPolicies/{return_policy}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteOnlineReturnPolicy(OnlineReturnPolicyName name) {
+  public final void deleteOnlineReturnPolicy(@Nullable OnlineReturnPolicyName name) {
     DeleteOnlineReturnPolicyRequest request =
         DeleteOnlineReturnPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -872,12 +876,13 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
           ListOnlineReturnPoliciesPage> {
 
     private ListOnlineReturnPoliciesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOnlineReturnPoliciesRequest,
                 ListOnlineReturnPoliciesResponse,
                 OnlineReturnPolicy>
             context,
-        ListOnlineReturnPoliciesResponse response) {
+        @Nullable ListOnlineReturnPoliciesResponse response) {
       super(context, response);
     }
 
@@ -887,18 +892,20 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
     @Override
     protected ListOnlineReturnPoliciesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOnlineReturnPoliciesRequest,
                 ListOnlineReturnPoliciesResponse,
                 OnlineReturnPolicy>
             context,
-        ListOnlineReturnPoliciesResponse response) {
+        @Nullable ListOnlineReturnPoliciesResponse response) {
       return new ListOnlineReturnPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOnlineReturnPoliciesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOnlineReturnPoliciesRequest,
                 ListOnlineReturnPoliciesResponse,
                 OnlineReturnPolicy>
@@ -917,7 +924,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
           ListOnlineReturnPoliciesFixedSizeCollection> {
 
     private ListOnlineReturnPoliciesFixedSizeCollection(
-        List<ListOnlineReturnPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListOnlineReturnPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -927,7 +934,7 @@ public class OnlineReturnPolicyServiceClient implements BackgroundResource {
 
     @Override
     protected ListOnlineReturnPoliciesFixedSizeCollection createCollection(
-        List<ListOnlineReturnPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListOnlineReturnPoliciesPage> pages, int collectionSize) {
       return new ListOnlineReturnPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }

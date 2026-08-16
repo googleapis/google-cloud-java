@@ -23,6 +23,8 @@ import com.google.cloud.eventarc.publishing.v1.stub.PublisherStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -179,9 +181,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class PublisherClient implements BackgroundResource {
-  private final PublisherSettings settings;
+  private final @Nullable PublisherSettings settings;
   private final PublisherStub stub;
 
   /** Constructs an instance of PublisherClient with default settings. */
@@ -219,7 +222,7 @@ public class PublisherClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final PublisherSettings getSettings() {
+  public final @Nullable PublisherSettings getSettings() {
     return settings;
   }
 

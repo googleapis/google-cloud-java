@@ -52,12 +52,14 @@ public class SyncSearch {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setQuery("query107944136")
+              .addAllPageCategories(new ArrayList<String>())
               .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
               .setOneBoxPageSize(1988477988)
               .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+              .setNumResultsPerDataStore(397658288)
               .setFilter("filter-1274492040")
               .setCanonicalFilter("canonicalFilter-722283124")
               .setOrderBy("orderBy-1207110587")
@@ -78,12 +80,19 @@ public class SyncSearch {
               .setNaturalLanguageQueryUnderstandingSpec(
                   SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
               .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+              .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+              .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
               .setSession(
                   SessionName.ofProjectLocationDataStoreSessionName(
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+              .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
               .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+              .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+              .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+              .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+              .setEntity("entity-1298275357")
               .build();
       for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
         // doThingsWith(element);

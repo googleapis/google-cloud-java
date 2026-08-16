@@ -24,6 +24,8 @@ import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -170,9 +172,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BigQueryExportServiceClient implements BackgroundResource {
-  private final BigQueryExportServiceSettings settings;
+  private final @Nullable BigQueryExportServiceSettings settings;
   private final BigQueryExportServiceStub stub;
 
   /** Constructs an instance of BigQueryExportServiceClient with default settings. */
@@ -212,7 +215,7 @@ public class BigQueryExportServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BigQueryExportServiceSettings getSettings() {
+  public final @Nullable BigQueryExportServiceSettings getSettings() {
     return settings;
   }
 
@@ -243,7 +246,7 @@ public class BigQueryExportServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}/bigQueryExport
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BigQueryExport getBigQueryExport(BigQueryExportName name) {
+  public final BigQueryExport getBigQueryExport(@Nullable BigQueryExportName name) {
     GetBigQueryExportRequest request =
         GetBigQueryExportRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -459,7 +462,7 @@ public class BigQueryExportServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BigQueryExport provisionBigQueryExport(InstanceName parent) {
+  public final BigQueryExport provisionBigQueryExport(@Nullable InstanceName parent) {
     ProvisionBigQueryExportRequest request =
         ProvisionBigQueryExportRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

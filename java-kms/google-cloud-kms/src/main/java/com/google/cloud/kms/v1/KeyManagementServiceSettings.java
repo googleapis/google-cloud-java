@@ -51,6 +51,8 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -129,6 +131,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class KeyManagementServiceSettings extends ClientSettings<KeyManagementServiceSettings> {
 
@@ -247,6 +250,26 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
   public UnaryCallSettings<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).importCryptoKeyVersionSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to importTrustedKeyWrappedCryptoKeyVersion.
+   */
+  public UnaryCallSettings<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+      importTrustedKeyWrappedCryptoKeyVersionSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings())
+        .importTrustedKeyWrappedCryptoKeyVersionSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to exportTrustedKeyWrappedCryptoKeyVersion.
+   */
+  public UnaryCallSettings<
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      exportTrustedKeyWrappedCryptoKeyVersionSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings())
+        .exportTrustedKeyWrappedCryptoKeyVersionSettings();
   }
 
   /** Returns the object with the settings used for calls to createImportJob. */
@@ -419,7 +442,7 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -440,7 +463,7 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(KeyManagementServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -591,6 +614,27 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     public UnaryCallSettings.Builder<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
         importCryptoKeyVersionSettings() {
       return getStubSettingsBuilder().importCryptoKeyVersionSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * importTrustedKeyWrappedCryptoKeyVersion.
+     */
+    public UnaryCallSettings.Builder<
+            ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+        importTrustedKeyWrappedCryptoKeyVersionSettings() {
+      return getStubSettingsBuilder().importTrustedKeyWrappedCryptoKeyVersionSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * exportTrustedKeyWrappedCryptoKeyVersion.
+     */
+    public UnaryCallSettings.Builder<
+            ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+            ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+        exportTrustedKeyWrappedCryptoKeyVersionSettings() {
+      return getStubSettingsBuilder().exportTrustedKeyWrappedCryptoKeyVersionSettings();
     }
 
     /** Returns the builder for the settings used for calls to createImportJob. */

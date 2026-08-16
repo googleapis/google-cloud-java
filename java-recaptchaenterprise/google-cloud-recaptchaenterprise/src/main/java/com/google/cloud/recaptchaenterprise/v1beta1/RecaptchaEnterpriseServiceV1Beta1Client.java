@@ -30,6 +30,8 @@ import com.google.recaptchaenterprise.v1beta1.ProjectName;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -160,10 +162,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResource {
-  private final RecaptchaEnterpriseServiceV1Beta1Settings settings;
+  private final @Nullable RecaptchaEnterpriseServiceV1Beta1Settings settings;
   private final RecaptchaEnterpriseServiceV1Beta1Stub stub;
 
   /** Constructs an instance of RecaptchaEnterpriseServiceV1Beta1Client with default settings. */
@@ -208,7 +211,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
     this.stub = stub;
   }
 
-  public final RecaptchaEnterpriseServiceV1Beta1Settings getSettings() {
+  public final @Nullable RecaptchaEnterpriseServiceV1Beta1Settings getSettings() {
     return settings;
   }
 
@@ -242,7 +245,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Assessment createAssessment(ProjectName parent, Assessment assessment) {
+  public final Assessment createAssessment(@Nullable ProjectName parent, Assessment assessment) {
     CreateAssessmentRequest request =
         CreateAssessmentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -374,7 +377,7 @@ public class RecaptchaEnterpriseServiceV1Beta1Client implements BackgroundResour
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateAssessmentResponse annotateAssessment(
-      AssessmentName name, AnnotateAssessmentRequest.Annotation annotation) {
+      @Nullable AssessmentName name, AnnotateAssessmentRequest.Annotation annotation) {
     AnnotateAssessmentRequest request =
         AnnotateAssessmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())

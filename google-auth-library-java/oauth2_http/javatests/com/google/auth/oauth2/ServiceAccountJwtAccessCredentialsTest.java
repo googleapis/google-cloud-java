@@ -914,6 +914,8 @@ class ServiceAccountJwtAccessCredentialsTest extends BaseSerializationTest {
     }
     assertNotNull(assertion, "Bearer assertion not found");
     JsonWebSignature signature = JsonWebSignature.parse(JSON_FACTORY, assertion);
+    assertEquals("RS256", signature.getHeader().getAlgorithm());
+    assertEquals("JWT", signature.getHeader().getType());
     assertEquals(
         ServiceAccountJwtAccessCredentialsTest.SA_CLIENT_EMAIL, signature.getPayload().getIssuer());
     assertEquals(
@@ -922,6 +924,14 @@ class ServiceAccountJwtAccessCredentialsTest extends BaseSerializationTest {
     assertEquals(expectedAudience.toString(), signature.getPayload().getAudience());
     assertEquals(
         ServiceAccountJwtAccessCredentialsTest.SA_PRIVATE_KEY_ID, signature.getHeader().getKeyId());
+
+    Long iat = signature.getPayload().getIssuedAtTimeSeconds();
+    Long exp = signature.getPayload().getExpirationTimeSeconds();
+    assertNotNull(iat);
+    assertNotNull(exp);
+    assertEquals(3600L, exp - iat);
+    long currentTimeSecs = System.currentTimeMillis() / 1000;
+    assertTrue(Math.abs(currentTimeSecs - iat) < 60);
   }
 
   private static void testFromStreamException(InputStream stream, String expectedMessageContent) {

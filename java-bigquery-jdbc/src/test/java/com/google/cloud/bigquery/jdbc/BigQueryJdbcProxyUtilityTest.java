@@ -139,7 +139,7 @@ public class BigQueryJdbcProxyUtilityTest {
         BigQueryJdbcProxyUtility.parseProxyProperties(connection_uri, null);
     HttpTransportOptions result =
         BigQueryJdbcProxyUtility.getHttpTransportOptions(
-            proxyProperties, null, null, null, null, "TestClass");
+            proxyProperties, null, null, null, null, null, null, "TestClass");
     assertNotNull(result);
   }
 
@@ -156,12 +156,12 @@ public class BigQueryJdbcProxyUtilityTest {
         BigQueryJdbcProxyUtility.parseProxyProperties(connection_uri, null);
     HttpTransportOptions result =
         BigQueryJdbcProxyUtility.getHttpTransportOptions(
-            proxyProperties, null, null, null, null, "TestClass");
+            proxyProperties, null, null, null, null, null, null, "TestClass");
     assertNotNull(result);
   }
 
   @Test
-  public void testGetHttpTransportOptionsWithNoProxySettingsReturnsNull() {
+  public void testGetHttpTransportOptionsWithNoProxySettingsReturnsDefaultOptions() {
     String connection_uri =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
             + "ProjectId=TestProject"
@@ -171,8 +171,9 @@ public class BigQueryJdbcProxyUtilityTest {
         BigQueryJdbcProxyUtility.parseProxyProperties(connection_uri, null);
     HttpTransportOptions result =
         BigQueryJdbcProxyUtility.getHttpTransportOptions(
-            proxyProperties, null, null, null, null, "TestClass");
-    assertNull(result);
+            proxyProperties, null, null, null, null, null, null, "TestClass");
+    assertNotNull(result);
+    assertNotNull(result.getHttpTransportFactory());
   }
 
   private String getTestResourcePath(String resourceName) throws URISyntaxException {
@@ -188,7 +189,14 @@ public class BigQueryJdbcProxyUtilityTest {
     String trustStorePath = getTestResourcePath("test_truststore_nopass.jks");
     HttpTransportOptions options =
         BigQueryJdbcProxyUtility.getHttpTransportOptions(
-            Collections.<String, String>emptyMap(), trustStorePath, null, null, null, "TestClass");
+            Collections.<String, String>emptyMap(),
+            trustStorePath,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "TestClass");
     assertNotNull(options);
     assertNotNull(options.getHttpTransportFactory());
   }
@@ -201,6 +209,8 @@ public class BigQueryJdbcProxyUtilityTest {
             Collections.<String, String>emptyMap(),
             trustStorePath,
             "testpassword",
+            null,
+            null,
             null,
             null,
             "TestClass");
@@ -222,6 +232,8 @@ public class BigQueryJdbcProxyUtilityTest {
                     "wrongpassword",
                     null,
                     null,
+                    null,
+                    null,
                     "TestClass"));
     assertThat(exception.getCause()).isInstanceOf(IOException.class);
   }
@@ -239,6 +251,8 @@ public class BigQueryJdbcProxyUtilityTest {
                     null,
                     null,
                     null,
+                    null,
+                    null,
                     "TestClass"));
 
     assertThat(exception.getCause()).isInstanceOf(FileNotFoundException.class);
@@ -253,7 +267,7 @@ public class BigQueryJdbcProxyUtilityTest {
 
     HttpTransportOptions options =
         BigQueryJdbcProxyUtility.getHttpTransportOptions(
-            proxyProperties, trustStorePath, null, null, null, "TestClass");
+            proxyProperties, trustStorePath, null, null, null, null, null, "TestClass");
     assertNotNull(options);
     assertNotNull(options.getHttpTransportFactory());
   }
@@ -263,7 +277,7 @@ public class BigQueryJdbcProxyUtilityTest {
     String trustStorePath = getTestResourcePath("test_truststore_nopass.jks");
     TransportChannelProvider provider =
         BigQueryJdbcProxyUtility.getTransportChannelProvider(
-            Collections.<String, String>emptyMap(), trustStorePath, null, "TestClass");
+            Collections.<String, String>emptyMap(), trustStorePath, null, null, null, "TestClass");
     assertNotNull(provider);
   }
 
@@ -273,7 +287,12 @@ public class BigQueryJdbcProxyUtilityTest {
     String trustStorePath = getTestResourcePath("test_truststore_withpass.jks");
     TransportChannelProvider provider =
         BigQueryJdbcProxyUtility.getTransportChannelProvider(
-            Collections.<String, String>emptyMap(), trustStorePath, "testpassword", "TestClass");
+            Collections.<String, String>emptyMap(),
+            trustStorePath,
+            "testpassword",
+            null,
+            null,
+            "TestClass");
     assertNotNull(provider);
   }
 
@@ -286,7 +305,7 @@ public class BigQueryJdbcProxyUtilityTest {
 
     TransportChannelProvider provider =
         BigQueryJdbcProxyUtility.getTransportChannelProvider(
-            proxyProperties, trustStorePath, null, "TestClass");
+            proxyProperties, trustStorePath, null, null, null, "TestClass");
     assertNotNull(provider);
   }
 
@@ -294,23 +313,38 @@ public class BigQueryJdbcProxyUtilityTest {
   public void testGetTransportChannelProvider_noProxyNoSsl_returnsNull() {
     TransportChannelProvider provider =
         BigQueryJdbcProxyUtility.getTransportChannelProvider(
-            Collections.<String, String>emptyMap(), null, null, "TestClass");
+            Collections.<String, String>emptyMap(), null, null, null, null, "TestClass");
     assertNull(provider);
   }
 
   @Test
-  public void testGetHttpTransportOptions_noProxyNoSsl_returnsNull() {
+  public void testGetHttpTransportOptions_noProxyNoSsl_returnsDefaultOptions() {
     HttpTransportOptions options =
         BigQueryJdbcProxyUtility.getHttpTransportOptions(
-            Collections.<String, String>emptyMap(), null, null, null, null, "TestClass");
-    assertNull(options);
+            Collections.<String, String>emptyMap(),
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "TestClass");
+    assertNotNull(options);
+    assertNotNull(options.getHttpTransportFactory());
   }
 
   @Test
   public void testGetHttpTransportOptions_withTimeouts_returnsOptions() {
     HttpTransportOptions options =
         BigQueryJdbcProxyUtility.getHttpTransportOptions(
-            Collections.<String, String>emptyMap(), null, null, 10000, 20000, "TestClass");
+            Collections.<String, String>emptyMap(),
+            null,
+            null,
+            null,
+            null,
+            10000,
+            20000,
+            "TestClass");
     assertNotNull(options);
     assertThat(options.getConnectTimeout()).isEqualTo(10000);
     assertThat(options.getReadTimeout()).isEqualTo(20000);
@@ -320,7 +354,14 @@ public class BigQueryJdbcProxyUtilityTest {
   public void testGetHttpTransportOptions_withConnectTimeoutOnly_returnsOptions() {
     HttpTransportOptions options =
         BigQueryJdbcProxyUtility.getHttpTransportOptions(
-            Collections.<String, String>emptyMap(), null, null, 10000, null, "TestClass");
+            Collections.<String, String>emptyMap(),
+            null,
+            null,
+            null,
+            null,
+            10000,
+            null,
+            "TestClass");
     assertNotNull(options);
     assertThat(options.getConnectTimeout()).isEqualTo(10000);
     // readTimeout defaults to HttpTransport's internal default, not asserted here.
@@ -330,9 +371,52 @@ public class BigQueryJdbcProxyUtilityTest {
   public void testGetHttpTransportOptions_withReadTimeoutOnly_returnsOptions() {
     HttpTransportOptions options =
         BigQueryJdbcProxyUtility.getHttpTransportOptions(
-            Collections.<String, String>emptyMap(), null, null, null, 20000, "TestClass");
+            Collections.<String, String>emptyMap(),
+            null,
+            null,
+            null,
+            null,
+            null,
+            20000,
+            "TestClass");
     assertNotNull(options);
     assertThat(options.getReadTimeout()).isEqualTo(20000);
     // connectTimeout defaults to HttpTransport's internal default, not asserted here.
+  }
+
+  @Test
+  public void testGetHttpTransportOptions_withSslTrustStore_withCustomType() throws Exception {
+    String trustStorePath = getTestResourcePath("test_truststore_nopass.jks");
+    HttpTransportOptions options =
+        BigQueryJdbcProxyUtility.getHttpTransportOptions(
+            Collections.<String, String>emptyMap(),
+            trustStorePath,
+            null,
+            "JKS",
+            null,
+            null,
+            null,
+            "TestClass");
+    assertNotNull(options);
+    assertNotNull(options.getHttpTransportFactory());
+  }
+
+  @Test
+  public void testGetHttpTransportOptions_withSslTrustStore_withInvalidProvider() throws Exception {
+    String trustStorePath = getTestResourcePath("test_truststore_nopass.jks");
+    BigQueryJdbcRuntimeException exception =
+        assertThrows(
+            BigQueryJdbcRuntimeException.class,
+            () ->
+                BigQueryJdbcProxyUtility.getHttpTransportOptions(
+                    Collections.<String, String>emptyMap(),
+                    trustStorePath,
+                    null,
+                    "JKS",
+                    "FakeProvider",
+                    null,
+                    null,
+                    "TestClass"));
+    assertThat(exception.getCause()).isInstanceOf(java.security.NoSuchProviderException.class);
   }
 }

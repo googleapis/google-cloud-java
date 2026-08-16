@@ -245,7 +245,8 @@ class ConnectionImpl implements Connection {
       labelMap = labels[0];
     }
     try {
-      // use jobs.query if possible
+      // The fast query path (jobs.query API) is preferred to reduce latency by avoiding
+      // the slow fallback path (jobs.insert API). We will opt to use it if possible.
       if (isFastQuerySupported()) {
         logger.log(Level.INFO, "\n Using Fast Query Path");
         final String projectId = bigQueryOptions.getProjectId();
@@ -810,7 +811,8 @@ class ConnectionImpl implements Connection {
             Level.WARNING,
             "\n"
                 + Thread.currentThread().getName()
-                + " Could not flag End of Stream, both the buffer types are null. This might happen when the connection is close without executing a query");
+                + " Could not flag End of Stream, both the buffer types are null. This might happen"
+                + " when the connection is close without executing a query");
       }
     } catch (InterruptedException e) {
       logger.log(
@@ -1260,7 +1262,6 @@ class ConnectionImpl implements Connection {
         && connectionSettings.getCreateDisposition() == null
         && connectionSettings.getDestinationEncryptionConfiguration() == null
         && connectionSettings.getDestinationTable() == null
-        && connectionSettings.getJobTimeoutMs() == null
         && connectionSettings.getMaximumBillingTier() == null
         && connectionSettings.getPriority() == null
         && connectionSettings.getRangePartitioning() == null
@@ -1361,6 +1362,9 @@ class ConnectionImpl implements Connection {
     content.setRequestId(requestId);
     // The new Connection interface only supports StandardSQL dialect
     content.setUseLegacySql(false);
+    if (connectionSettings.getJobTimeoutMs() != null) {
+      content.setJobTimeoutMs(connectionSettings.getJobTimeoutMs());
+    }
     return content;
   }
 

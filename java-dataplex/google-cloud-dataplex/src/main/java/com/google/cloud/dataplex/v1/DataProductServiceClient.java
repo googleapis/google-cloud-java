@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -421,9 +423,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataProductServiceClient implements BackgroundResource {
-  private final DataProductServiceSettings settings;
+  private final @Nullable DataProductServiceSettings settings;
   private final DataProductServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -471,7 +474,7 @@ public class DataProductServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataProductServiceSettings getSettings() {
+  public final @Nullable DataProductServiceSettings getSettings() {
     return settings;
   }
 
@@ -528,7 +531,7 @@ public class DataProductServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataProduct, OperationMetadata> createDataProductAsync(
-      LocationName parent, DataProduct dataProduct, String dataProductId) {
+      @Nullable LocationName parent, DataProduct dataProduct, String dataProductId) {
     CreateDataProductRequest request =
         CreateDataProductRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -699,7 +702,7 @@ public class DataProductServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDataProductAsync(
-      DataProductName name) {
+      @Nullable DataProductName name) {
     DeleteDataProductRequest request =
         DeleteDataProductRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -852,7 +855,7 @@ public class DataProductServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/dataProducts/{data_product_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataProduct getDataProduct(DataProductName name) {
+  public final DataProduct getDataProduct(@Nullable DataProductName name) {
     GetDataProductRequest request =
         GetDataProductRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataProduct(request);
@@ -967,7 +970,7 @@ public class DataProductServiceClient implements BackgroundResource {
    *     `projects/{project_id_or_number}/locations/-`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataProductsPagedResponse listDataProducts(LocationName parent) {
+  public final ListDataProductsPagedResponse listDataProducts(@Nullable LocationName parent) {
     ListDataProductsRequest request =
         ListDataProductsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1274,7 +1277,7 @@ public class DataProductServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RequestDataProductAccessResponse requestDataProductAccess(
-      DataProductName parent, ChangeRequest changeRequest) {
+      @Nullable DataProductName parent, ChangeRequest changeRequest) {
     RequestDataProductAccessRequest request =
         RequestDataProductAccessRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1419,7 +1422,7 @@ public class DataProductServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataAsset, OperationMetadata> createDataAssetAsync(
-      DataProductName parent, DataAsset dataAsset, String dataAssetId) {
+      @Nullable DataProductName parent, DataAsset dataAsset, String dataAssetId) {
     CreateDataAssetRequest request =
         CreateDataAssetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1717,7 +1720,8 @@ public class DataProductServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/dataProducts/{data_product_id}/dataAssets/{data_asset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteDataAssetAsync(DataAssetName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteDataAssetAsync(
+      @Nullable DataAssetName name) {
     DeleteDataAssetRequest request =
         DeleteDataAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDataAssetAsync(request);
@@ -1872,7 +1876,7 @@ public class DataProductServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/dataProducts/{data_product_id}/dataAssets/{data_asset_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataAsset getDataAsset(DataAssetName name) {
+  public final DataAsset getDataAsset(@Nullable DataAssetName name) {
     GetDataAssetRequest request =
         GetDataAssetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataAsset(request);
@@ -1990,7 +1994,7 @@ public class DataProductServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/dataProducts/{data_product_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataAssetsPagedResponse listDataAssets(DataProductName parent) {
+  public final ListDataAssetsPagedResponse listDataAssets(@Nullable DataProductName parent) {
     ListDataAssetsRequest request =
         ListDataAssetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2583,8 +2587,9 @@ public class DataProductServiceClient implements BackgroundResource {
           ListDataProductsRequest, ListDataProductsResponse, DataProduct, ListDataProductsPage> {
 
     private ListDataProductsPage(
-        PageContext<ListDataProductsRequest, ListDataProductsResponse, DataProduct> context,
-        ListDataProductsResponse response) {
+        @Nullable PageContext<ListDataProductsRequest, ListDataProductsResponse, DataProduct>
+            context,
+        @Nullable ListDataProductsResponse response) {
       super(context, response);
     }
 
@@ -2594,14 +2599,16 @@ public class DataProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataProductsPage createPage(
-        PageContext<ListDataProductsRequest, ListDataProductsResponse, DataProduct> context,
-        ListDataProductsResponse response) {
+        @Nullable PageContext<ListDataProductsRequest, ListDataProductsResponse, DataProduct>
+            context,
+        @Nullable ListDataProductsResponse response) {
       return new ListDataProductsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataProductsPage> createPageAsync(
-        PageContext<ListDataProductsRequest, ListDataProductsResponse, DataProduct> context,
+        @Nullable PageContext<ListDataProductsRequest, ListDataProductsResponse, DataProduct>
+            context,
         ApiFuture<ListDataProductsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2616,7 +2623,7 @@ public class DataProductServiceClient implements BackgroundResource {
           ListDataProductsFixedSizeCollection> {
 
     private ListDataProductsFixedSizeCollection(
-        List<ListDataProductsPage> pages, int collectionSize) {
+        @Nullable List<ListDataProductsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2626,7 +2633,7 @@ public class DataProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataProductsFixedSizeCollection createCollection(
-        List<ListDataProductsPage> pages, int collectionSize) {
+        @Nullable List<ListDataProductsPage> pages, int collectionSize) {
       return new ListDataProductsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2660,8 +2667,8 @@ public class DataProductServiceClient implements BackgroundResource {
           ListDataAssetsRequest, ListDataAssetsResponse, DataAsset, ListDataAssetsPage> {
 
     private ListDataAssetsPage(
-        PageContext<ListDataAssetsRequest, ListDataAssetsResponse, DataAsset> context,
-        ListDataAssetsResponse response) {
+        @Nullable PageContext<ListDataAssetsRequest, ListDataAssetsResponse, DataAsset> context,
+        @Nullable ListDataAssetsResponse response) {
       super(context, response);
     }
 
@@ -2671,14 +2678,14 @@ public class DataProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAssetsPage createPage(
-        PageContext<ListDataAssetsRequest, ListDataAssetsResponse, DataAsset> context,
-        ListDataAssetsResponse response) {
+        @Nullable PageContext<ListDataAssetsRequest, ListDataAssetsResponse, DataAsset> context,
+        @Nullable ListDataAssetsResponse response) {
       return new ListDataAssetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataAssetsPage> createPageAsync(
-        PageContext<ListDataAssetsRequest, ListDataAssetsResponse, DataAsset> context,
+        @Nullable PageContext<ListDataAssetsRequest, ListDataAssetsResponse, DataAsset> context,
         ApiFuture<ListDataAssetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2692,7 +2699,8 @@ public class DataProductServiceClient implements BackgroundResource {
           ListDataAssetsPage,
           ListDataAssetsFixedSizeCollection> {
 
-    private ListDataAssetsFixedSizeCollection(List<ListDataAssetsPage> pages, int collectionSize) {
+    private ListDataAssetsFixedSizeCollection(
+        @Nullable List<ListDataAssetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2702,7 +2710,7 @@ public class DataProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataAssetsFixedSizeCollection createCollection(
-        List<ListDataAssetsPage> pages, int collectionSize) {
+        @Nullable List<ListDataAssetsPage> pages, int collectionSize) {
       return new ListDataAssetsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2736,8 +2744,8 @@ public class DataProductServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2747,14 +2755,14 @@ public class DataProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2768,7 +2776,8 @@ public class DataProductServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2778,7 +2787,7 @@ public class DataProductServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

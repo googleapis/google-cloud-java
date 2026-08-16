@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -249,9 +251,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DataFusionClient implements BackgroundResource {
-  private final DataFusionSettings settings;
+  private final @Nullable DataFusionSettings settings;
   private final DataFusionStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -297,7 +300,7 @@ public class DataFusionClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DataFusionSettings getSettings() {
+  public final @Nullable DataFusionSettings getSettings() {
     return settings;
   }
 
@@ -346,7 +349,8 @@ public class DataFusionClient implements BackgroundResource {
    *     the format projects/{project}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAvailableVersionsPagedResponse listAvailableVersions(LocationName parent) {
+  public final ListAvailableVersionsPagedResponse listAvailableVersions(
+      @Nullable LocationName parent) {
     ListAvailableVersionsRequest request =
         ListAvailableVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -684,7 +688,7 @@ public class DataFusionClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> createInstanceAsync(
-      LocationName parent, Instance instance, String instanceId) {
+      @Nullable LocationName parent, Instance instance, String instanceId) {
     CreateInstanceRequest request =
         CreateInstanceRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -844,7 +848,8 @@ public class DataFusionClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(InstanceName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(
+      @Nullable InstanceName name) {
     DeleteInstanceRequest request =
         DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteInstanceAsync(request);
@@ -1233,8 +1238,9 @@ public class DataFusionClient implements BackgroundResource {
           ListAvailableVersionsPage> {
 
     private ListAvailableVersionsPage(
-        PageContext<ListAvailableVersionsRequest, ListAvailableVersionsResponse, Version> context,
-        ListAvailableVersionsResponse response) {
+        @Nullable PageContext<ListAvailableVersionsRequest, ListAvailableVersionsResponse, Version>
+            context,
+        @Nullable ListAvailableVersionsResponse response) {
       super(context, response);
     }
 
@@ -1244,14 +1250,16 @@ public class DataFusionClient implements BackgroundResource {
 
     @Override
     protected ListAvailableVersionsPage createPage(
-        PageContext<ListAvailableVersionsRequest, ListAvailableVersionsResponse, Version> context,
-        ListAvailableVersionsResponse response) {
+        @Nullable PageContext<ListAvailableVersionsRequest, ListAvailableVersionsResponse, Version>
+            context,
+        @Nullable ListAvailableVersionsResponse response) {
       return new ListAvailableVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAvailableVersionsPage> createPageAsync(
-        PageContext<ListAvailableVersionsRequest, ListAvailableVersionsResponse, Version> context,
+        @Nullable PageContext<ListAvailableVersionsRequest, ListAvailableVersionsResponse, Version>
+            context,
         ApiFuture<ListAvailableVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1266,7 +1274,7 @@ public class DataFusionClient implements BackgroundResource {
           ListAvailableVersionsFixedSizeCollection> {
 
     private ListAvailableVersionsFixedSizeCollection(
-        List<ListAvailableVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListAvailableVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1276,7 +1284,7 @@ public class DataFusionClient implements BackgroundResource {
 
     @Override
     protected ListAvailableVersionsFixedSizeCollection createCollection(
-        List<ListAvailableVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListAvailableVersionsPage> pages, int collectionSize) {
       return new ListAvailableVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1310,8 +1318,8 @@ public class DataFusionClient implements BackgroundResource {
           ListInstancesRequest, ListInstancesResponse, Instance, ListInstancesPage> {
 
     private ListInstancesPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       super(context, response);
     }
 
@@ -1321,14 +1329,14 @@ public class DataFusionClient implements BackgroundResource {
 
     @Override
     protected ListInstancesPage createPage(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
-        ListInstancesResponse response) {
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable ListInstancesResponse response) {
       return new ListInstancesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInstancesPage> createPageAsync(
-        PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
+        @Nullable PageContext<ListInstancesRequest, ListInstancesResponse, Instance> context,
         ApiFuture<ListInstancesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1342,7 +1350,8 @@ public class DataFusionClient implements BackgroundResource {
           ListInstancesPage,
           ListInstancesFixedSizeCollection> {
 
-    private ListInstancesFixedSizeCollection(List<ListInstancesPage> pages, int collectionSize) {
+    private ListInstancesFixedSizeCollection(
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1352,7 +1361,7 @@ public class DataFusionClient implements BackgroundResource {
 
     @Override
     protected ListInstancesFixedSizeCollection createCollection(
-        List<ListInstancesPage> pages, int collectionSize) {
+        @Nullable List<ListInstancesPage> pages, int collectionSize) {
       return new ListInstancesFixedSizeCollection(pages, collectionSize);
     }
   }

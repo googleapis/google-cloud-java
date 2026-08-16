@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -649,9 +651,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ConfigDeliveryClient implements BackgroundResource {
-  private final ConfigDeliverySettings settings;
+  private final @Nullable ConfigDeliverySettings settings;
   private final ConfigDeliveryStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -699,7 +702,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ConfigDeliverySettings getSettings() {
+  public final @Nullable ConfigDeliverySettings getSettings() {
     return settings;
   }
 
@@ -747,7 +750,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param parent Required. Parent value for ListResourceBundlesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListResourceBundlesPagedResponse listResourceBundles(LocationName parent) {
+  public final ListResourceBundlesPagedResponse listResourceBundles(@Nullable LocationName parent) {
     ListResourceBundlesRequest request =
         ListResourceBundlesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -919,7 +922,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ResourceBundle getResourceBundle(ResourceBundleName name) {
+  public final ResourceBundle getResourceBundle(@Nullable ResourceBundleName name) {
     GetResourceBundleRequest request =
         GetResourceBundleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1043,7 +1046,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ResourceBundle, OperationMetadata> createResourceBundleAsync(
-      LocationName parent, ResourceBundle resourceBundle, String resourceBundleId) {
+      @Nullable LocationName parent, ResourceBundle resourceBundle, String resourceBundleId) {
     CreateResourceBundleRequest request =
         CreateResourceBundleRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1343,7 +1346,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteResourceBundleAsync(
-      ResourceBundleName name) {
+      @Nullable ResourceBundleName name) {
     DeleteResourceBundleRequest request =
         DeleteResourceBundleRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1498,7 +1501,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param parent Required. Parent value for ListFleetPackagesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFleetPackagesPagedResponse listFleetPackages(LocationName parent) {
+  public final ListFleetPackagesPagedResponse listFleetPackages(@Nullable LocationName parent) {
     ListFleetPackagesRequest request =
         ListFleetPackagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1667,7 +1670,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FleetPackage getFleetPackage(FleetPackageName name) {
+  public final FleetPackage getFleetPackage(@Nullable FleetPackageName name) {
     GetFleetPackageRequest request =
         GetFleetPackageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFleetPackage(request);
@@ -1783,7 +1786,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<FleetPackage, OperationMetadata> createFleetPackageAsync(
-      LocationName parent, FleetPackage fleetPackage, String fleetPackageId) {
+      @Nullable LocationName parent, FleetPackage fleetPackage, String fleetPackageId) {
     CreateFleetPackageRequest request =
         CreateFleetPackageRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2077,7 +2080,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteFleetPackageAsync(
-      FleetPackageName name) {
+      @Nullable FleetPackageName name) {
     DeleteFleetPackageRequest request =
         DeleteFleetPackageRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2231,7 +2234,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param parent Required. Parent value for ListReleasesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReleasesPagedResponse listReleases(ResourceBundleName parent) {
+  public final ListReleasesPagedResponse listReleases(@Nullable ResourceBundleName parent) {
     ListReleasesRequest request =
         ListReleasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2402,7 +2405,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Release getRelease(ReleaseName name) {
+  public final Release getRelease(@Nullable ReleaseName name) {
     GetReleaseRequest request =
         GetReleaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRelease(request);
@@ -2522,7 +2525,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Release, OperationMetadata> createReleaseAsync(
-      ResourceBundleName parent, Release release, String releaseId) {
+      @Nullable ResourceBundleName parent, Release release, String releaseId) {
     CreateReleaseRequest request =
         CreateReleaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2815,7 +2818,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteReleaseAsync(ReleaseName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteReleaseAsync(
+      @Nullable ReleaseName name) {
     DeleteReleaseRequest request =
         DeleteReleaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteReleaseAsync(request);
@@ -2970,7 +2974,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param parent Required. Parent value for ListVariantsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVariantsPagedResponse listVariants(ReleaseName parent) {
+  public final ListVariantsPagedResponse listVariants(@Nullable ReleaseName parent) {
     ListVariantsRequest request =
         ListVariantsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3144,7 +3148,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Variant getVariant(VariantName name) {
+  public final Variant getVariant(@Nullable VariantName name) {
     GetVariantRequest request =
         GetVariantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getVariant(request);
@@ -3266,7 +3270,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Variant, OperationMetadata> createVariantAsync(
-      ReleaseName parent, Variant variant, String variantId) {
+      @Nullable ReleaseName parent, Variant variant, String variantId) {
     CreateVariantRequest request =
         CreateVariantRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3561,7 +3565,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteVariantAsync(VariantName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteVariantAsync(
+      @Nullable VariantName name) {
     DeleteVariantRequest request =
         DeleteVariantRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteVariantAsync(request);
@@ -3716,7 +3721,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param parent Required. Parent value for ListRolloutsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRolloutsPagedResponse listRollouts(FleetPackageName parent) {
+  public final ListRolloutsPagedResponse listRollouts(@Nullable FleetPackageName parent) {
     ListRolloutsRequest request =
         ListRolloutsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3885,7 +3890,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Rollout getRollout(RolloutName name) {
+  public final Rollout getRollout(@Nullable RolloutName name) {
     GetRolloutRequest request =
         GetRolloutRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRollout(request);
@@ -3998,7 +4003,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param name Required. Name of the Rollout.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Rollout, OperationMetadata> suspendRolloutAsync(RolloutName name) {
+  public final OperationFuture<Rollout, OperationMetadata> suspendRolloutAsync(
+      @Nullable RolloutName name) {
     SuspendRolloutRequest request =
         SuspendRolloutRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return suspendRolloutAsync(request);
@@ -4147,7 +4153,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param name Required. Name of the Rollout.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Rollout, OperationMetadata> resumeRolloutAsync(RolloutName name) {
+  public final OperationFuture<Rollout, OperationMetadata> resumeRolloutAsync(
+      @Nullable RolloutName name) {
     ResumeRolloutRequest request =
         ResumeRolloutRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return resumeRolloutAsync(request);
@@ -4296,7 +4303,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
    * @param name Required. Name of the Rollout.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Rollout, OperationMetadata> abortRolloutAsync(RolloutName name) {
+  public final OperationFuture<Rollout, OperationMetadata> abortRolloutAsync(
+      @Nullable RolloutName name) {
     AbortRolloutRequest request =
         AbortRolloutRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return abortRolloutAsync(request);
@@ -4641,9 +4649,10 @@ public class ConfigDeliveryClient implements BackgroundResource {
           ListResourceBundlesPage> {
 
     private ListResourceBundlesPage(
-        PageContext<ListResourceBundlesRequest, ListResourceBundlesResponse, ResourceBundle>
+        @Nullable
+            PageContext<ListResourceBundlesRequest, ListResourceBundlesResponse, ResourceBundle>
             context,
-        ListResourceBundlesResponse response) {
+        @Nullable ListResourceBundlesResponse response) {
       super(context, response);
     }
 
@@ -4653,15 +4662,17 @@ public class ConfigDeliveryClient implements BackgroundResource {
 
     @Override
     protected ListResourceBundlesPage createPage(
-        PageContext<ListResourceBundlesRequest, ListResourceBundlesResponse, ResourceBundle>
+        @Nullable
+            PageContext<ListResourceBundlesRequest, ListResourceBundlesResponse, ResourceBundle>
             context,
-        ListResourceBundlesResponse response) {
+        @Nullable ListResourceBundlesResponse response) {
       return new ListResourceBundlesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListResourceBundlesPage> createPageAsync(
-        PageContext<ListResourceBundlesRequest, ListResourceBundlesResponse, ResourceBundle>
+        @Nullable
+            PageContext<ListResourceBundlesRequest, ListResourceBundlesResponse, ResourceBundle>
             context,
         ApiFuture<ListResourceBundlesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4677,7 +4688,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
           ListResourceBundlesFixedSizeCollection> {
 
     private ListResourceBundlesFixedSizeCollection(
-        List<ListResourceBundlesPage> pages, int collectionSize) {
+        @Nullable List<ListResourceBundlesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4687,7 +4698,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
 
     @Override
     protected ListResourceBundlesFixedSizeCollection createCollection(
-        List<ListResourceBundlesPage> pages, int collectionSize) {
+        @Nullable List<ListResourceBundlesPage> pages, int collectionSize) {
       return new ListResourceBundlesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4724,8 +4735,9 @@ public class ConfigDeliveryClient implements BackgroundResource {
           ListFleetPackagesPage> {
 
     private ListFleetPackagesPage(
-        PageContext<ListFleetPackagesRequest, ListFleetPackagesResponse, FleetPackage> context,
-        ListFleetPackagesResponse response) {
+        @Nullable PageContext<ListFleetPackagesRequest, ListFleetPackagesResponse, FleetPackage>
+            context,
+        @Nullable ListFleetPackagesResponse response) {
       super(context, response);
     }
 
@@ -4735,14 +4747,16 @@ public class ConfigDeliveryClient implements BackgroundResource {
 
     @Override
     protected ListFleetPackagesPage createPage(
-        PageContext<ListFleetPackagesRequest, ListFleetPackagesResponse, FleetPackage> context,
-        ListFleetPackagesResponse response) {
+        @Nullable PageContext<ListFleetPackagesRequest, ListFleetPackagesResponse, FleetPackage>
+            context,
+        @Nullable ListFleetPackagesResponse response) {
       return new ListFleetPackagesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFleetPackagesPage> createPageAsync(
-        PageContext<ListFleetPackagesRequest, ListFleetPackagesResponse, FleetPackage> context,
+        @Nullable PageContext<ListFleetPackagesRequest, ListFleetPackagesResponse, FleetPackage>
+            context,
         ApiFuture<ListFleetPackagesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4757,7 +4771,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
           ListFleetPackagesFixedSizeCollection> {
 
     private ListFleetPackagesFixedSizeCollection(
-        List<ListFleetPackagesPage> pages, int collectionSize) {
+        @Nullable List<ListFleetPackagesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4767,7 +4781,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
 
     @Override
     protected ListFleetPackagesFixedSizeCollection createCollection(
-        List<ListFleetPackagesPage> pages, int collectionSize) {
+        @Nullable List<ListFleetPackagesPage> pages, int collectionSize) {
       return new ListFleetPackagesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4800,8 +4814,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
       extends AbstractPage<ListReleasesRequest, ListReleasesResponse, Release, ListReleasesPage> {
 
     private ListReleasesPage(
-        PageContext<ListReleasesRequest, ListReleasesResponse, Release> context,
-        ListReleasesResponse response) {
+        @Nullable PageContext<ListReleasesRequest, ListReleasesResponse, Release> context,
+        @Nullable ListReleasesResponse response) {
       super(context, response);
     }
 
@@ -4811,14 +4825,14 @@ public class ConfigDeliveryClient implements BackgroundResource {
 
     @Override
     protected ListReleasesPage createPage(
-        PageContext<ListReleasesRequest, ListReleasesResponse, Release> context,
-        ListReleasesResponse response) {
+        @Nullable PageContext<ListReleasesRequest, ListReleasesResponse, Release> context,
+        @Nullable ListReleasesResponse response) {
       return new ListReleasesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReleasesPage> createPageAsync(
-        PageContext<ListReleasesRequest, ListReleasesResponse, Release> context,
+        @Nullable PageContext<ListReleasesRequest, ListReleasesResponse, Release> context,
         ApiFuture<ListReleasesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4832,7 +4846,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
           ListReleasesPage,
           ListReleasesFixedSizeCollection> {
 
-    private ListReleasesFixedSizeCollection(List<ListReleasesPage> pages, int collectionSize) {
+    private ListReleasesFixedSizeCollection(
+        @Nullable List<ListReleasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4842,7 +4857,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
 
     @Override
     protected ListReleasesFixedSizeCollection createCollection(
-        List<ListReleasesPage> pages, int collectionSize) {
+        @Nullable List<ListReleasesPage> pages, int collectionSize) {
       return new ListReleasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4875,8 +4890,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
       extends AbstractPage<ListVariantsRequest, ListVariantsResponse, Variant, ListVariantsPage> {
 
     private ListVariantsPage(
-        PageContext<ListVariantsRequest, ListVariantsResponse, Variant> context,
-        ListVariantsResponse response) {
+        @Nullable PageContext<ListVariantsRequest, ListVariantsResponse, Variant> context,
+        @Nullable ListVariantsResponse response) {
       super(context, response);
     }
 
@@ -4886,14 +4901,14 @@ public class ConfigDeliveryClient implements BackgroundResource {
 
     @Override
     protected ListVariantsPage createPage(
-        PageContext<ListVariantsRequest, ListVariantsResponse, Variant> context,
-        ListVariantsResponse response) {
+        @Nullable PageContext<ListVariantsRequest, ListVariantsResponse, Variant> context,
+        @Nullable ListVariantsResponse response) {
       return new ListVariantsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVariantsPage> createPageAsync(
-        PageContext<ListVariantsRequest, ListVariantsResponse, Variant> context,
+        @Nullable PageContext<ListVariantsRequest, ListVariantsResponse, Variant> context,
         ApiFuture<ListVariantsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4907,7 +4922,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
           ListVariantsPage,
           ListVariantsFixedSizeCollection> {
 
-    private ListVariantsFixedSizeCollection(List<ListVariantsPage> pages, int collectionSize) {
+    private ListVariantsFixedSizeCollection(
+        @Nullable List<ListVariantsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4917,7 +4933,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
 
     @Override
     protected ListVariantsFixedSizeCollection createCollection(
-        List<ListVariantsPage> pages, int collectionSize) {
+        @Nullable List<ListVariantsPage> pages, int collectionSize) {
       return new ListVariantsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4950,8 +4966,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
       extends AbstractPage<ListRolloutsRequest, ListRolloutsResponse, Rollout, ListRolloutsPage> {
 
     private ListRolloutsPage(
-        PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> context,
-        ListRolloutsResponse response) {
+        @Nullable PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> context,
+        @Nullable ListRolloutsResponse response) {
       super(context, response);
     }
 
@@ -4961,14 +4977,14 @@ public class ConfigDeliveryClient implements BackgroundResource {
 
     @Override
     protected ListRolloutsPage createPage(
-        PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> context,
-        ListRolloutsResponse response) {
+        @Nullable PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> context,
+        @Nullable ListRolloutsResponse response) {
       return new ListRolloutsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRolloutsPage> createPageAsync(
-        PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> context,
+        @Nullable PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> context,
         ApiFuture<ListRolloutsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4982,7 +4998,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
           ListRolloutsPage,
           ListRolloutsFixedSizeCollection> {
 
-    private ListRolloutsFixedSizeCollection(List<ListRolloutsPage> pages, int collectionSize) {
+    private ListRolloutsFixedSizeCollection(
+        @Nullable List<ListRolloutsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4992,7 +5009,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
 
     @Override
     protected ListRolloutsFixedSizeCollection createCollection(
-        List<ListRolloutsPage> pages, int collectionSize) {
+        @Nullable List<ListRolloutsPage> pages, int collectionSize) {
       return new ListRolloutsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5026,8 +5043,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -5037,14 +5054,14 @@ public class ConfigDeliveryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5058,7 +5075,8 @@ public class ConfigDeliveryClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5068,7 +5086,7 @@ public class ConfigDeliveryClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.GrpcRawCallableFactory;
 import com.google.api.gax.retrying.BasicResultRetryAlgorithm;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingExecutorWithContext;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.retrying.SimpleStreamResumptionStrategy;
@@ -37,6 +38,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.SpanName;
@@ -61,6 +63,7 @@ import com.google.cloud.bigtable.data.v2.internal.PrepareQueryRequest;
 import com.google.cloud.bigtable.data.v2.internal.PrepareResponse;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.internal.SqlRow;
+import com.google.cloud.bigtable.data.v2.internal.api.MaterializedViewName;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.BigtableTracerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.BigtableTracerUnaryCallable;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.TracedBatcherUnaryCallable;
@@ -91,12 +94,14 @@ import com.google.cloud.bigtable.data.v2.stub.changestream.ReadChangeStreamUserC
 import com.google.cloud.bigtable.data.v2.stub.metrics.StatsHeadersServerStreamingCallable;
 import com.google.cloud.bigtable.data.v2.stub.metrics.StatsHeadersUnaryCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.BulkMutateRowsUserFacingCallable;
+import com.google.cloud.bigtable.data.v2.stub.mutaterows.MaybePointWriteCallable;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsAttemptResult;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsPartialErrorRetryAlgorithm;
 import com.google.cloud.bigtable.data.v2.stub.mutaterows.MutateRowsRetryingCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.FilterMarkerRowsCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.LargeReadRowsResumptionStrategy;
+import com.google.cloud.bigtable.data.v2.stub.readrows.MaybePointReadCallable;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsResumptionStrategy;
 import com.google.cloud.bigtable.data.v2.stub.readrows.ReadRowsRetryCompletedCallable;
@@ -119,6 +124,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import javax.annotation.Nonnull;
@@ -195,8 +201,13 @@ public class EnhancedBigtableStub implements AutoCloseable {
     sampleRowKeysCallableWithRequest = createSampleRowKeysCallableWithRequest();
     mutateRowCallable = createMutateRowCallable();
     bulkMutateRowsCallable = createMutateRowsBaseCallable();
-    externalBulkMutateRowsCallable =
+    UnaryCallable<BulkMutation, Void> bulkMutateRowsVoidCallable =
         new MutateRowsErrorConverterUnaryCallable(bulkMutateRowsCallable);
+    externalBulkMutateRowsCallable =
+        new MaybePointWriteCallable(
+            bulkMutateRowsVoidCallable,
+            createPointWriteCallable(bulkMutateRowsVoidCallable),
+            requestContext);
     checkAndMutateRowCallable = createCheckAndMutateRowCallable();
     readModifyWriteRowCallable = createReadModifyWriteRowCallable();
     generateInitialChangeStreamPartitionsCallable =
@@ -259,11 +270,20 @@ public class EnhancedBigtableStub implements AutoCloseable {
             bigtableClientContext.getClientContext().getTracerFactory(),
             span);
 
-    return traced.withDefaultCallContext(
-        bigtableClientContext
-            .getClientContext()
-            .getDefaultCallContext()
-            .withRetrySettings(perOpSettings.readRowsSettings.getRetrySettings()));
+    ServerStreamingCallable<Query, RowT> classic =
+        traced.withDefaultCallContext(
+            bigtableClientContext
+                .getClientContext()
+                .getDefaultCallContext()
+                .withRetrySettings(perOpSettings.readRowsSettings.getRetrySettings()));
+
+    return new MaybePointReadCallable<>(
+        classic,
+        createPointReadCallable(
+            rowAdapter,
+            "ReadRows",
+            perOpSettings.readRowsSettings.getRetrySettings(),
+            perOpSettings.readRowsSettings.getRetryableCodes()));
   }
 
   /**
@@ -281,13 +301,25 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   public <RowT> UnaryCallable<Query, RowT> createReadRowCallable(RowAdapter<RowT> rowAdapter) {
+    return createPointReadCallable(
+        rowAdapter,
+        "ReadRow",
+        perOpSettings.readRowSettings.getRetrySettings(),
+        perOpSettings.readRowSettings.getRetryableCodes());
+  }
+
+  private <RowT> UnaryCallable<Query, RowT> createPointReadCallable(
+      RowAdapter<RowT> rowAdapter,
+      String spanName,
+      RetrySettings retrySettings,
+      Set<StatusCode.Code> retryableCodes) {
     ClientContext clientContext = bigtableClientContext.getClientContext();
 
     ServerStreamingCallable<ReadRowsRequest, RowT> readRowsCallable =
         createReadRowsBaseCallable(
             ServerStreamingCallSettings.<ReadRowsRequest, Row>newBuilder()
-                .setRetryableCodes(perOpSettings.readRowSettings.getRetryableCodes())
-                .setRetrySettings(perOpSettings.readRowSettings.getRetrySettings())
+                .setRetryableCodes(retryableCodes)
+                .setRetrySettings(retrySettings)
                 .setIdleTimeoutDuration(Duration.ZERO)
                 .setWaitTimeoutDuration(Duration.ZERO)
                 .build(),
@@ -302,16 +334,20 @@ public class EnhancedBigtableStub implements AutoCloseable {
     BigtableUnaryOperationCallable<Query, RowT> classic =
         new BigtableUnaryOperationCallable<>(
             readRowCallable,
-            clientContext
-                .getDefaultCallContext()
-                .withRetrySettings(perOpSettings.readRowSettings.getRetrySettings()),
+            clientContext.getDefaultCallContext().withRetrySettings(retrySettings),
             clientContext.getTracerFactory(),
-            getSpanName("ReadRow"),
+            getSpanName(spanName),
             /* allowNoResponse= */ true);
+
+    UnaryCallSettings<?, ?> shimSettings =
+        perOpSettings.readRowSettings.toBuilder()
+            .setRetrySettings(retrySettings)
+            .setRetryableCodes(retryableCodes)
+            .build();
 
     return bigtableClientContext
         .getSessionShim()
-        .decorateReadRow(classic, rowAdapter, perOpSettings.readRowSettings);
+        .decorateReadRow(classic, rowAdapter, shimSettings);
   }
 
   private <ReqT, RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsBaseCallable(
@@ -345,8 +381,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .setMethodDescriptor(BigtableGrpc.getReadRowsMethod())
                 .setParamsExtractor(
                     r ->
-                        composeRequestParams(
-                            r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName()))
+                        r.getMaterializedViewName().isEmpty()
+                            ? composeRequestParams(
+                                r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName())
+                            : composeInstanceLevelRequestParams(
+                                MaterializedViewName.parse(r.getMaterializedViewName())
+                                    .getInstanceName()
+                                    .toString(),
+                                r.getAppProfileId()))
                 .build(),
             readRowsSettings.getRetryableCodes());
 
@@ -419,8 +461,14 @@ public class EnhancedBigtableStub implements AutoCloseable {
                 .setMethodDescriptor(BigtableGrpc.getReadRowsMethod())
                 .setParamsExtractor(
                     r ->
-                        composeRequestParams(
-                            r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName()))
+                        r.getMaterializedViewName().isEmpty()
+                            ? composeRequestParams(
+                                r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName())
+                            : composeInstanceLevelRequestParams(
+                                MaterializedViewName.parse(r.getMaterializedViewName())
+                                    .getInstanceName()
+                                    .toString(),
+                                r.getAppProfileId()))
                 .build(),
             readRowsSettings.getRetryableCodes());
 
@@ -569,8 +617,16 @@ public class EnhancedBigtableStub implements AutoCloseable {
                     .setMethodDescriptor(BigtableGrpc.getSampleRowKeysMethod())
                     .setParamsExtractor(
                         r ->
-                            composeRequestParams(
-                                r.getAppProfileId(), r.getTableName(), r.getAuthorizedViewName()))
+                            r.getMaterializedViewName().isEmpty()
+                                ? composeRequestParams(
+                                    r.getAppProfileId(),
+                                    r.getTableName(),
+                                    r.getAuthorizedViewName())
+                                : composeInstanceLevelRequestParams(
+                                    MaterializedViewName.parse(r.getMaterializedViewName())
+                                        .getInstanceName()
+                                        .toString(),
+                                    r.getAppProfileId()))
                     .build(),
                 perOpSettings.sampleRowKeysSettings.getRetryableCodes());
 
@@ -618,6 +674,40 @@ public class EnhancedBigtableStub implements AutoCloseable {
     return bigtableClientContext
         .getSessionShim()
         .decorateMutateRow(classic, perOpSettings.mutateRowSettings);
+  }
+
+  /**
+   * Creates the point-write callable used by {@link MaybePointWriteCallable} to divert single-entry
+   * {@link BulkMutation}s. This mirrors {@link #createPointReadCallable}: it exposes a single row
+   * mutation through the session-shim diversion while preserving the bulk operation's retry
+   * behavior.
+   *
+   * <p>Unlike point reads (where the single-row read is just {@code ReadRows} with a limit), {@code
+   * MutateRow} and {@code MutateRows} are distinct RPCs. To preserve the existing wire behavior,
+   * the fallback classic here delegates to the bulk {@code MutateRows} callable as a single-entry
+   * batch rather than issuing a {@code MutateRow} RPC. So when the session shim does not divert
+   * (e.g. a {@link com.google.cloud.bigtable.data.v2.internal.compat.DisabledShim}), a single-entry
+   * bulk mutation still travels over {@code MutateRows} with the bulk operation's retry behavior;
+   * only when the shim actively diverts does the mutation go to the session single-row write API.
+   */
+  private UnaryCallable<RowMutation, Void> createPointWriteCallable(
+      UnaryCallable<BulkMutation, Void> bulkMutateRowsVoidCallable) {
+    UnaryCallSettings<RowMutation, Void> settings =
+        perOpSettings.mutateRowSettings.toBuilder()
+            .setRetrySettings(perOpSettings.bulkMutateRowsSettings.getRetrySettings())
+            .setRetryableCodes(perOpSettings.bulkMutateRowsSettings.getRetryableCodes())
+            .build();
+
+    UnaryCallable<RowMutation, Void> classic =
+        new UnaryCallable<RowMutation, Void>() {
+          @Override
+          public ApiFuture<Void> futureCall(RowMutation request, ApiCallContext context) {
+            return bulkMutateRowsVoidCallable.futureCall(
+                BulkMutation.fromProto(request.toBulkProto(requestContext)), context);
+          }
+        };
+
+    return bigtableClientContext.getSessionShim().decorateMutateRow(classic, settings);
   }
 
   /**

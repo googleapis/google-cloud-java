@@ -20,6 +20,7 @@ import static com.google.cloud.bigquery.storage.v1.stub.BigQueryReadStubSettings
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.apache.v5.Apache5HttpTransport;
+import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
@@ -58,6 +59,7 @@ final class BigQueryJdbcProxyUtility {
       new BigQueryJdbcCustomLogger(BigQueryJdbcProxyUtility.class.getName());
   static final String validPortRegex =
       "^([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$";
+  private static final HttpTransport DEFAULT_TRANSPORT = new NetHttpTransport.Builder().build();
 
   private BigQueryJdbcProxyUtility() {}
 
@@ -128,6 +130,8 @@ final class BigQueryJdbcProxyUtility {
       Map<String, String> proxyProperties,
       String sslTrustStorePath,
       String sslTrustStorePassword,
+      String sslTrustStoreType,
+      String sslTrustStoreProvider,
       Integer connectTimeout,
       Integer readTimeout,
       String callerClassName) {
@@ -136,17 +140,19 @@ final class BigQueryJdbcProxyUtility {
     boolean hasProxyOrSsl =
         proxyProperties.containsKey(BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME)
             || sslTrustStorePath != null;
-    boolean hasTimeoutConfig = connectTimeout != null || readTimeout != null;
-
-    if (!hasProxyOrSsl && !hasTimeoutConfig) {
-      return null;
-    }
 
     HttpTransportOptions.Builder httpTransportOptionsBuilder = HttpTransportOptions.newBuilder();
     if (hasProxyOrSsl) {
       httpTransportOptionsBuilder.setHttpTransportFactory(
           getHttpTransportFactory(
-              proxyProperties, sslTrustStorePath, sslTrustStorePassword, callerClassName));
+              proxyProperties,
+              sslTrustStorePath,
+              sslTrustStorePassword,
+              sslTrustStoreType,
+              sslTrustStoreProvider,
+              callerClassName));
+    } else {
+      httpTransportOptionsBuilder.setHttpTransportFactory(() -> DEFAULT_TRANSPORT);
     }
 
     if (connectTimeout != null) {
@@ -163,6 +169,8 @@ final class BigQueryJdbcProxyUtility {
       Map<String, String> proxyProperties,
       String sslTrustStorePath,
       String sslTrustStorePassword,
+      String sslTrustStoreType,
+      String sslTrustStoreProvider,
       String callerClassName) {
     LOG.finest("++enter++\t" + callerClassName);
     HttpClientBuilder httpClientBuilder = HttpClients.custom();
@@ -178,13 +186,12 @@ final class BigQueryJdbcProxyUtility {
       HttpRoutePlanner httpRoutePlanner = new DefaultProxyRoutePlanner(proxyHostDetails);
       httpClientBuilder.setRoutePlanner(httpRoutePlanner);
       addAuthToProxyIfPresent(proxyProperties, httpClientBuilder, callerClassName);
-    } else {
-      httpClientBuilder.useSystemProperties();
     }
+    httpClientBuilder.useSystemProperties();
 
     if (sslTrustStorePath != null) {
       try (FileInputStream trustStoreStream = new FileInputStream(sslTrustStorePath)) {
-        KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
+        KeyStore trustStore = loadKeyStore(sslTrustStoreType, sslTrustStoreProvider);
         char[] trustStorePasswordChars =
             sslTrustStorePassword != null ? sslTrustStorePassword.toCharArray() : null;
         trustStore.load(trustStoreStream, trustStorePasswordChars);
@@ -245,6 +252,8 @@ final class BigQueryJdbcProxyUtility {
       Map<String, String> proxyProperties,
       String sslTrustStorePath,
       String sslTrustStorePassword,
+      String sslTrustStoreType,
+      String sslTrustStoreProvider,
       String callerClassName) {
     LOG.finest("++enter++\t" + callerClassName);
     boolean hasProxy = proxyProperties.containsKey(BigQueryJdbcUrlUtility.PROXY_HOST_PROPERTY_NAME);
@@ -273,7 +282,7 @@ final class BigQueryJdbcProxyUtility {
                           instanceof io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder) {
                     try (FileInputStream trustStoreStream =
                         new FileInputStream(sslTrustStorePath)) {
-                      KeyStore trustStore = KeyStore.getInstance(KeyStore.getDefaultType());
+                      KeyStore trustStore = loadKeyStore(sslTrustStoreType, sslTrustStoreProvider);
                       char[] trustStorePasswordChars =
                           sslTrustStorePassword != null
                               ? sslTrustStorePassword.toCharArray()
@@ -300,6 +309,15 @@ final class BigQueryJdbcProxyUtility {
                 })
             .build();
     return transportChannelProvider;
+  }
+
+  private static KeyStore loadKeyStore(String type, String provider)
+      throws GeneralSecurityException {
+    String resolvedType =
+        (type != null && !type.trim().isEmpty()) ? type.trim() : KeyStore.getDefaultType();
+    return (provider != null && !provider.trim().isEmpty())
+        ? KeyStore.getInstance(resolvedType, provider.trim())
+        : KeyStore.getInstance(resolvedType);
   }
 
   private static HttpConnectProxiedSocketAddress getHttpConnectProxiedSocketAddress(

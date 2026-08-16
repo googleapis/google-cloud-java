@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -64,7 +66,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetLabel</td>
- *      <td><p> API to retrieve a `Label` object.</td>
+ *      <td><p> Retrieves a `Label` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -83,7 +85,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLabels</td>
- *      <td><p> API to retrieve a list of `Label` objects.</td>
+ *      <td><p> Lists `Label` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -103,7 +105,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateLabel</td>
- *      <td><p> API to create a `Label` object.</td>
+ *      <td><p> Creates a `Label` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -122,7 +124,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateLabels</td>
- *      <td><p> API to batch create `Label` objects.</td>
+ *      <td><p> Creates `Label` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -138,7 +140,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateLabel</td>
- *      <td><p> API to update a `Label` object.</td>
+ *      <td><p> Updates a `Label` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -156,7 +158,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateLabels</td>
- *      <td><p> API to batch update `Label` objects.</td>
+ *      <td><p> Batch updates `Label` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -172,7 +174,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchActivateLabels</td>
- *      <td><p> API to activate `Label` objects.</td>
+ *      <td><p> Activates `Label` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -191,7 +193,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchDeactivateLabels</td>
- *      <td><p> API to deactivate `Label` objects.</td>
+ *      <td><p> Deactivates `Label` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -249,9 +251,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class LabelServiceClient implements BackgroundResource {
-  private final LabelServiceSettings settings;
+  private final @Nullable LabelServiceSettings settings;
   private final LabelServiceStub stub;
 
   /** Constructs an instance of LabelServiceClient with default settings. */
@@ -290,7 +293,7 @@ public class LabelServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final LabelServiceSettings getSettings() {
+  public final @Nullable LabelServiceSettings getSettings() {
     return settings;
   }
 
@@ -300,7 +303,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Label` object.
+   * Retrieves a `Label` object.
    *
    * <p>Sample code:
    *
@@ -320,7 +323,7 @@ public class LabelServiceClient implements BackgroundResource {
    *     `networks/{network_code}/labels/{label_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Label getLabel(LabelName name) {
+  public final Label getLabel(@Nullable LabelName name) {
     GetLabelRequest request =
         GetLabelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLabel(request);
@@ -328,7 +331,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Label` object.
+   * Retrieves a `Label` object.
    *
    * <p>Sample code:
    *
@@ -355,7 +358,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Label` object.
+   * Retrieves a `Label` object.
    *
    * <p>Sample code:
    *
@@ -383,7 +386,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Label` object.
+   * Retrieves a `Label` object.
    *
    * <p>Sample code:
    *
@@ -410,7 +413,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Label` objects.
+   * Lists `Label` objects.
    *
    * <p>Sample code:
    *
@@ -432,7 +435,7 @@ public class LabelServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListLabelsPagedResponse listLabels(NetworkName parent) {
+  public final ListLabelsPagedResponse listLabels(@Nullable NetworkName parent) {
     ListLabelsRequest request =
         ListLabelsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listLabels(request);
@@ -440,7 +443,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Label` objects.
+   * Lists `Label` objects.
    *
    * <p>Sample code:
    *
@@ -469,7 +472,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Label` objects.
+   * Lists `Label` objects.
    *
    * <p>Sample code:
    *
@@ -504,7 +507,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Label` objects.
+   * Lists `Label` objects.
    *
    * <p>Sample code:
    *
@@ -538,7 +541,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Label` objects.
+   * Lists `Label` objects.
    *
    * <p>Sample code:
    *
@@ -579,7 +582,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Label` object.
+   * Creates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -601,7 +604,7 @@ public class LabelServiceClient implements BackgroundResource {
    * @param label Required. The `Label` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Label createLabel(NetworkName parent, Label label) {
+  public final Label createLabel(@Nullable NetworkName parent, Label label) {
     CreateLabelRequest request =
         CreateLabelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -612,7 +615,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Label` object.
+   * Creates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -642,7 +645,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Label` object.
+   * Creates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -671,7 +674,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Label` object.
+   * Creates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -699,7 +702,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Label` objects.
+   * Creates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -723,7 +726,7 @@ public class LabelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateLabelsResponse batchCreateLabels(
-      NetworkName parent, List<CreateLabelRequest> requests) {
+      @Nullable NetworkName parent, List<CreateLabelRequest> requests) {
     BatchCreateLabelsRequest request =
         BatchCreateLabelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -734,7 +737,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Label` objects.
+   * Creates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -766,7 +769,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Label` objects.
+   * Creates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -795,7 +798,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Label` objects.
+   * Creates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -825,7 +828,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Label` object.
+   * Updates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -855,7 +858,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Label` object.
+   * Updates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -884,7 +887,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Label` object.
+   * Updates a `Label` object.
    *
    * <p>Sample code:
    *
@@ -912,7 +915,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Label` objects.
+   * Batch updates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -936,7 +939,7 @@ public class LabelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateLabelsResponse batchUpdateLabels(
-      NetworkName parent, List<UpdateLabelRequest> requests) {
+      @Nullable NetworkName parent, List<UpdateLabelRequest> requests) {
     BatchUpdateLabelsRequest request =
         BatchUpdateLabelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -947,7 +950,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Label` objects.
+   * Batch updates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -979,7 +982,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Label` objects.
+   * Batch updates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1008,7 +1011,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Label` objects.
+   * Batch updates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1038,7 +1041,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate `Label` objects.
+   * Activates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1061,7 +1064,7 @@ public class LabelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchActivateLabelsResponse batchActivateLabels(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchActivateLabelsRequest request =
         BatchActivateLabelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1072,7 +1075,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate `Label` objects.
+   * Activates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1102,7 +1105,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate `Label` objects.
+   * Activates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1131,7 +1134,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate `Label` objects.
+   * Activates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1161,7 +1164,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate `Label` objects.
+   * Deactivates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1185,7 +1188,7 @@ public class LabelServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchDeactivateLabelsResponse batchDeactivateLabels(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchDeactivateLabelsRequest request =
         BatchDeactivateLabelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1196,7 +1199,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate `Label` objects.
+   * Deactivates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1228,7 +1231,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate `Label` objects.
+   * Deactivates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1258,7 +1261,7 @@ public class LabelServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate `Label` objects.
+   * Deactivates `Label` objects.
    *
    * <p>Sample code:
    *
@@ -1342,8 +1345,8 @@ public class LabelServiceClient implements BackgroundResource {
       extends AbstractPage<ListLabelsRequest, ListLabelsResponse, Label, ListLabelsPage> {
 
     private ListLabelsPage(
-        PageContext<ListLabelsRequest, ListLabelsResponse, Label> context,
-        ListLabelsResponse response) {
+        @Nullable PageContext<ListLabelsRequest, ListLabelsResponse, Label> context,
+        @Nullable ListLabelsResponse response) {
       super(context, response);
     }
 
@@ -1353,14 +1356,14 @@ public class LabelServiceClient implements BackgroundResource {
 
     @Override
     protected ListLabelsPage createPage(
-        PageContext<ListLabelsRequest, ListLabelsResponse, Label> context,
-        ListLabelsResponse response) {
+        @Nullable PageContext<ListLabelsRequest, ListLabelsResponse, Label> context,
+        @Nullable ListLabelsResponse response) {
       return new ListLabelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLabelsPage> createPageAsync(
-        PageContext<ListLabelsRequest, ListLabelsResponse, Label> context,
+        @Nullable PageContext<ListLabelsRequest, ListLabelsResponse, Label> context,
         ApiFuture<ListLabelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1374,7 +1377,8 @@ public class LabelServiceClient implements BackgroundResource {
           ListLabelsPage,
           ListLabelsFixedSizeCollection> {
 
-    private ListLabelsFixedSizeCollection(List<ListLabelsPage> pages, int collectionSize) {
+    private ListLabelsFixedSizeCollection(
+        @Nullable List<ListLabelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1384,7 +1388,7 @@ public class LabelServiceClient implements BackgroundResource {
 
     @Override
     protected ListLabelsFixedSizeCollection createCollection(
-        List<ListLabelsPage> pages, int collectionSize) {
+        @Nullable List<ListLabelsPage> pages, int collectionSize) {
       return new ListLabelsFixedSizeCollection(pages, collectionSize);
     }
   }

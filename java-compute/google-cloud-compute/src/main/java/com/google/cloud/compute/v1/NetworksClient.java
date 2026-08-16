@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -344,9 +346,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NetworksClient implements BackgroundResource {
-  private final NetworksSettings settings;
+  private final @Nullable NetworksSettings settings;
   private final NetworksStub stub;
 
   /** Constructs an instance of NetworksClient with default settings. */
@@ -384,7 +387,7 @@ public class NetworksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final NetworksSettings getSettings() {
+  public final @Nullable NetworksSettings getSettings() {
     return settings;
   }
 
@@ -2142,7 +2145,8 @@ public class NetworksClient implements BackgroundResource {
       extends AbstractPage<ListNetworksRequest, NetworkList, Network, ListPage> {
 
     private ListPage(
-        PageContext<ListNetworksRequest, NetworkList, Network> context, NetworkList response) {
+        @Nullable PageContext<ListNetworksRequest, NetworkList, Network> context,
+        @Nullable NetworkList response) {
       super(context, response);
     }
 
@@ -2152,13 +2156,14 @@ public class NetworksClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListNetworksRequest, NetworkList, Network> context, NetworkList response) {
+        @Nullable PageContext<ListNetworksRequest, NetworkList, Network> context,
+        @Nullable NetworkList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListNetworksRequest, NetworkList, Network> context,
+        @Nullable PageContext<ListNetworksRequest, NetworkList, Network> context,
         ApiFuture<NetworkList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2168,7 +2173,7 @@ public class NetworksClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListNetworksRequest, NetworkList, Network, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2177,7 +2182,8 @@ public class NetworksClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2216,10 +2222,11 @@ public class NetworksClient implements BackgroundResource {
           ListPeeringRoutesPage> {
 
     private ListPeeringRoutesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList, ExchangedPeeringRoute>
             context,
-        ExchangedPeeringRoutesList response) {
+        @Nullable ExchangedPeeringRoutesList response) {
       super(context, response);
     }
 
@@ -2229,16 +2236,18 @@ public class NetworksClient implements BackgroundResource {
 
     @Override
     protected ListPeeringRoutesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList, ExchangedPeeringRoute>
             context,
-        ExchangedPeeringRoutesList response) {
+        @Nullable ExchangedPeeringRoutesList response) {
       return new ListPeeringRoutesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPeeringRoutesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList, ExchangedPeeringRoute>
             context,
         ApiFuture<ExchangedPeeringRoutesList> futureResponse) {
@@ -2255,7 +2264,7 @@ public class NetworksClient implements BackgroundResource {
           ListPeeringRoutesFixedSizeCollection> {
 
     private ListPeeringRoutesFixedSizeCollection(
-        List<ListPeeringRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListPeeringRoutesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2265,7 +2274,7 @@ public class NetworksClient implements BackgroundResource {
 
     @Override
     protected ListPeeringRoutesFixedSizeCollection createCollection(
-        List<ListPeeringRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListPeeringRoutesPage> pages, int collectionSize) {
       return new ListPeeringRoutesFixedSizeCollection(pages, collectionSize);
     }
   }

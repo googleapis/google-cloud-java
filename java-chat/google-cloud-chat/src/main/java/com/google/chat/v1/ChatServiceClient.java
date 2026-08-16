@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -231,6 +233,31 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> SearchMessages</td>
+ *      <td><p> Searches for messages in Google Chat that the calling user has access to. Returns a list of messages matching the search criteria.
+ * <p>  To search across all spaces the user has access to, set `parent` to `spaces/-`. Using any other value for `parent` results in an `INVALID_ARGUMENT` error. The returned messages have their `name` field populated with the full resource name, which includes the specific `space` in which the message resides.
+ * <p>  This API doesn't return all message types. The types of messages listed below aren't included in the response. Use [ListMessages][google.chat.v1.ChatService.ListMessages] to list all messages.
+ * <p>  - Private Messages that are visible to the authenticated user. - Messages posted by Chat apps in spaces or group chats. - Messages in a Chat app DM. - Messages from blocked users. - Messages in spaces that the caller has muted.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.messages.readonly`   - `https://www.googleapis.com/auth/chat.messages`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> searchMessages(SearchMessagesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> searchMessages(SpaceName parent, String filter)
+ *           <li><p> searchMessages(String parent, String filter)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> searchMessagesPagedCallable()
+ *           <li><p> searchMessagesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetAttachment</td>
  *      <td><p> Gets the metadata of a message attachment. The attachment data is fetched using the [media API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download). For an example, see [Get metadata about a message attachment](https://developers.google.com/workspace/chat/get-media-attachments).
  * <p>  Requires [app authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) with the [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
@@ -293,9 +320,11 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> SearchSpaces</td>
- *      <td><p> Returns a list of spaces in a Google Workspace organization based on an administrator's search. In the request, set `use_admin_access` to `true`. For an example, see [Search for and manage spaces](https://developers.google.com/workspace/chat/search-manage-admin).
- * <p>  Requires [user authentication with administrator privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges) and one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
- * <p>    - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`   - `https://www.googleapis.com/auth/chat.admin.spaces`</td>
+ *      <td><p> Returns a list of spaces in a Google Workspace organization. For an example, see [Search for and manage spaces](https://developers.google.com/workspace/chat/search-manage-admin).
+ * <p>  When `use_admin_access` is set to `false`, the results are limited to spaces where the calling user is a joined member. To search with administrator privileges, set `use_admin_access` to `true`.
+ * <p>  Supports the following types of [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+ * <p>  - [User authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following authorization scopes:     - `https://www.googleapis.com/auth/chat.spaces.readonly`     - `https://www.googleapis.com/auth/chat.spaces`
+ * <p>  - [User authentication with administrator privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges) and one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):     - `https://www.googleapis.com/auth/chat.admin.spaces.readonly`     - `https://www.googleapis.com/auth/chat.admin.spaces`</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -775,6 +804,103 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetAvailability</td>
+ *      <td><p> Returns availability information for a human user in Google Chat. For example, this can be used to check if a user is online or away, or to retrieve their custom status message.
+ * <p>  This method only retrieves the authenticated user's availability.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.availability.readonly`   - `https://www.googleapis.com/auth/chat.users.availability`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getAvailability(GetAvailabilityRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getAvailability(AvailabilityName name)
+ *           <li><p> getAvailability(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getAvailabilityCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MarkAsActive</td>
+ *      <td><p> Marks user as `ACTIVE` in Google Chat.
+ * <p>  Sets the user's availability state to `ACTIVE`. The `ACTIVE` state lasts until the specified expiration, at which point the user's state becomes `AWAY`. Note that if the user is actively using Chat, the `ACTIVE` state duration may extend beyond the provided expiration.
+ * <p>  This method only updates the authenticated user's availability.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.availability`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> markAsActive(MarkAsActiveRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> markAsActiveCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MarkAsAway</td>
+ *      <td><p> Marks user as `AWAY` in Google Chat.
+ * <p>  Sets the user's state to away and is not affected by the user's activity.
+ * <p>  This method only updates the authenticated user's availability.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.availability`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> markAsAway(MarkAsAwayRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> markAsAwayCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MarkAsDoNotDisturb</td>
+ *      <td><p> Marks user as `DO_NOT_DISTURB` in Google Chat.
+ * <p>  Sets a user's availability state to `DO_NOT_DISTURB` until a specified expiration time. When in `DO_NOT_DISTURB`, users typically won't receive notifications.
+ * <p>  This method only updates the authenticated user's availability.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.availability`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> markAsDoNotDisturb(MarkAsDoNotDisturbRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> markAsDoNotDisturbCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateAvailability</td>
+ *      <td><p> Updates availability information for a human user. Only the `custom_status` field can be updated through this method.
+ * <p>  This method only updates the authenticated user's availability.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.availability`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateAvailability(UpdateAvailabilityRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateAvailability(Availability availability, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateAvailabilityCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetSpaceEvent</td>
  *      <td><p> Returns an event from a Google Chat space. The [event payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload) contains the most recent version of the resource that changed. For example, if you request an event about a new message but the message was later updated, the server returns the updated `Message` resource in the event payload.
  * <p>  Note: The `permissionSettings` field is not returned in the Space object of the Space event data for this request.
@@ -1067,9 +1193,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ChatServiceClient implements BackgroundResource {
-  private final ChatServiceSettings settings;
+  private final @Nullable ChatServiceSettings settings;
   private final ChatServiceStub stub;
 
   /** Constructs an instance of ChatServiceClient with default settings. */
@@ -1108,7 +1235,7 @@ public class ChatServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ChatServiceSettings getSettings() {
+  public final @Nullable ChatServiceSettings getSettings() {
     return settings;
   }
 
@@ -1190,7 +1317,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     message](https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Message createMessage(SpaceName parent, Message message, String messageId) {
+  public final Message createMessage(
+      @Nullable SpaceName parent, Message message, String messageId) {
     CreateMessageRequest request =
         CreateMessageRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1468,7 +1596,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMessagesPagedResponse listMessages(SpaceName parent) {
+  public final ListMessagesPagedResponse listMessages(@Nullable SpaceName parent) {
     ListMessagesRequest request =
         ListMessagesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1751,7 +1879,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: spaces/{space}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMembershipsPagedResponse listMemberships(SpaceName parent) {
+  public final ListMembershipsPagedResponse listMemberships(@Nullable SpaceName parent) {
     ListMembershipsRequest request =
         ListMembershipsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2061,7 +2189,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     is the email of the Google Chat user.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Membership getMembership(MembershipName name) {
+  public final Membership getMembership(@Nullable MembershipName name) {
     GetMembershipRequest request =
         GetMembershipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMembership(request);
@@ -2264,7 +2392,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Message getMessage(MessageName name) {
+  public final Message getMessage(@Nullable MessageName name) {
     GetMessageRequest request =
         GetMessageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMessage(request);
@@ -2617,7 +2745,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     (https://developers.google.com/workspace/chat/create-messages#name_a_created_message).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMessage(MessageName name) {
+  public final void deleteMessage(@Nullable MessageName name) {
     DeleteMessageRequest request =
         DeleteMessageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteMessage(request);
@@ -2763,6 +2891,450 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Searches for messages in Google Chat that the calling user has access to. Returns a list of
+   * messages matching the search criteria.
+   *
+   * <p>To search across all spaces the user has access to, set `parent` to `spaces/-`. Using any
+   * other value for `parent` results in an `INVALID_ARGUMENT` error. The returned messages have
+   * their `name` field populated with the full resource name, which includes the specific `space`
+   * in which the message resides.
+   *
+   * <p>This API doesn't return all message types. The types of messages listed below aren't
+   * included in the response. Use [ListMessages][google.chat.v1.ChatService.ListMessages] to list
+   * all messages.
+   *
+   * <p>- Private Messages that are visible to the authenticated user. - Messages posted by Chat
+   * apps in spaces or group chats. - Messages in a Chat app DM. - Messages from blocked users. -
+   * Messages in spaces that the caller has muted.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.messages.readonly` -
+   * `https://www.googleapis.com/auth/chat.messages`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SpaceName parent = SpaceName.of("[SPACE]");
+   *   String filter = "filter-1274492040";
+   *   for (SearchMessageResult element :
+   *       chatServiceClient.searchMessages(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the space to search within.
+   *     <p>To search across all spaces the user has access to, set this field to `spaces/-`. Using
+   *     any other value for `parent` results in an `INVALID_ARGUMENT` error.
+   *     <p>To limit the search to one or more spaces, use `space.name` or `space.display_name` in
+   *     the `filter`.
+   * @param filter Required. A search query.
+   *     <p>The query can specify one or more search keywords, which are used to filter the results,
+   *     <p>You can also filter the results using the following message fields:
+   *     <p>- `create_time`: Accepts a timestamp in
+   *     [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339) format and the supported comparison
+   *     operators are: `&lt;` and `&gt;=`. - `sender.name`: The resource name of the sender
+   *     (`users/{user}`). Only supports `=`. You can use the e-mail as an alias for `{user}`. For
+   *     example, `users/example{@literal @}gmail.com`, where `example{@literal @}gmail.com` is the
+   *     e-mail of the Google Chat user. - `space.name`: The resource name of the space where the
+   *     message is posted. (`spaces/{space}`). Only supports `=`. If this filter is not set, the
+   *     search is performed across all direct messages and spaces the user has access to as a space
+   *     member. - `space.display_name`: Supports the operator `:` (has) and filters spaces based on
+   *     a partial match of their display name. Results are limited to the top five space matches.
+   *     For example, `space.display_name:Project` searches for messages in the top five spaces that
+   *     contain the word "Project" in their display names. - `attachment`: Supports the operator
+   *     `:&#42;` (has any) to check for the presence of attachments. If `attachment:&#42;` is
+   *     specified, only messages that have at least one attachment are returned. -
+   *     `annotations.user_mentions.user.name`: The resource name of the mentioned user
+   *     (`users/{user}`). Only supports `:` (has). For example:
+   *     `annotations.user_mentions.user.name:"users/1234567890"` returns only messages that contain
+   *     a mention to the specified user. Alternatively, the alias `me` can be used to filter for
+   *     messages that mention the caller user, for example:
+   *     `annotations.user_mentions.user.name:users/me`. You can also use the e-mail as an alias for
+   *     `{user}`, for example, `users/example{@literal @}gmail.com`.
+   *     <p>For advanced filtering, the following functions are also available:
+   *     <p>- `has_link()`: Returns only messages that have at least one hyperlink in the message
+   *     text. - `is_unread()`: Filters out messages that have been read by the calling user.
+   *     <p>Using the `space.display_name` filter requires that the calling credentials include one
+   *     of the following [authorization
+   *     scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *     <p>- `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   *     `https://www.googleapis.com/auth/chat.spaces`
+   *     <p>Using the `is_unread()` filter requires that the calling credentials include one of the
+   *     following [authorization
+   *     scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *     <p>- `https://www.googleapis.com/auth/chat.users.readstate.readonly` -
+   *     `https://www.googleapis.com/auth/chat.users.readstate`
+   *     <p>Across different fields, only `AND` operators are supported. A valid example is
+   *     `sender.name = "users/1234567890" AND is_unread()`. The word `AND` is optional and is
+   *     implied if omitted. For example, `sender.name = "users/1234567890" is_unread()` is valid
+   *     and is equivalent to the previous example. An invalid example is `sender.name =
+   *     "users/1234567890" OR is_unread()` because `OR` is not supported between different fields.
+   *     <p>Among the same field:
+   *     <p>- `create_time` supports only `AND`, and can only be used to represent an interval, such
+   *     as `create_time &gt;= "2022-01-01T00:00:00+00:00" AND create_time &lt;
+   *     "2023-01-01T00:00:00+00:00"`. - `sender.name` supports only the `OR` operator, for example:
+   *     `sender.name = "users/1234567890" OR sender.name = "users/0987654321"`. - `space.name`
+   *     supports only the `OR` operator, for example: `space.name = "spaces/ABCDEFGH" OR space.name
+   *     = "spaces/QWERTYUI"`. - `space.display_name` supports the operators `AND` and `OR`, but not
+   *     a mix of both. For example: `space.display_name:Project AND space.display_name:Tasks`
+   *     returns messages that are in spaces with display names containing both `Project` and
+   *     `Tasks`, whereas `space.display_name:Project OR space.display_name:Tasks` returns messages
+   *     that are in spaces with display names containing either `Project` or `Tasks` or both. -
+   *     `annotations.user_mentions.user.name` supports the operators `AND` and `OR`, but not a mix
+   *     of both. For example: `annotations.user_mentions.user.name:"users/1234567890" AND
+   *     annotations.user_mentions.user.name:"users/0987654321"` returns only messages that mentions
+   *     both users, whereas `annotations.user_mentions.user.name:"users/1234567890" OR
+   *     annotations.user_mentions.user.name:"users/0987654321"` returns messages that mention
+   *     either user or both.
+   *     <p>Parentheses are required to disambiguate operator precedence when combining `AND` and
+   *     `OR` operators in the same query. For example: `(sender.name="users/me" OR
+   *     sender.name="users/123456") AND is_unread()`. Otherwise, parentheses are optional.
+   *     <p>The following example queries are valid:
+   *     <p>``` "Pending reports" AND create_time &gt;= "2023-01-01T00:00:00Z"
+   *     <p>sender.name = "users/example{@literal @}gmail.com"
+   *     <p>annotations.user_mentions.user.name:"users/0987654321"
+   *     <p>attachment:&#42; AND space.name = "spaces/ABCDEFGH"
+   *     <p>tasks AND is_unread() AND sender.name = "users/1234567890"
+   *     <p>"things to do" "urgent"
+   *     <p>(sender.name = "users/1234567890") AND (create_time &lt; "2023-05-01T00:00:00Z")
+   *     <p>tasks AND space.name = "spaces/ABCDEFGH" AND has_link()
+   *     <p>"project one" is_unread()
+   *     <p>space.display_name:Project tasks ```
+   *     <p>The maximum query length is 1,000 characters.
+   *     <p>Invalid queries are rejected by the server with an `INVALID_ARGUMENT` error.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchMessagesPagedResponse searchMessages(
+      @Nullable SpaceName parent, String filter) {
+    SearchMessagesRequest request =
+        SearchMessagesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFilter(filter)
+            .build();
+    return searchMessages(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for messages in Google Chat that the calling user has access to. Returns a list of
+   * messages matching the search criteria.
+   *
+   * <p>To search across all spaces the user has access to, set `parent` to `spaces/-`. Using any
+   * other value for `parent` results in an `INVALID_ARGUMENT` error. The returned messages have
+   * their `name` field populated with the full resource name, which includes the specific `space`
+   * in which the message resides.
+   *
+   * <p>This API doesn't return all message types. The types of messages listed below aren't
+   * included in the response. Use [ListMessages][google.chat.v1.ChatService.ListMessages] to list
+   * all messages.
+   *
+   * <p>- Private Messages that are visible to the authenticated user. - Messages posted by Chat
+   * apps in spaces or group chats. - Messages in a Chat app DM. - Messages from blocked users. -
+   * Messages in spaces that the caller has muted.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.messages.readonly` -
+   * `https://www.googleapis.com/auth/chat.messages`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String parent = SpaceName.of("[SPACE]").toString();
+   *   String filter = "filter-1274492040";
+   *   for (SearchMessageResult element :
+   *       chatServiceClient.searchMessages(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the space to search within.
+   *     <p>To search across all spaces the user has access to, set this field to `spaces/-`. Using
+   *     any other value for `parent` results in an `INVALID_ARGUMENT` error.
+   *     <p>To limit the search to one or more spaces, use `space.name` or `space.display_name` in
+   *     the `filter`.
+   * @param filter Required. A search query.
+   *     <p>The query can specify one or more search keywords, which are used to filter the results,
+   *     <p>You can also filter the results using the following message fields:
+   *     <p>- `create_time`: Accepts a timestamp in
+   *     [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339) format and the supported comparison
+   *     operators are: `&lt;` and `&gt;=`. - `sender.name`: The resource name of the sender
+   *     (`users/{user}`). Only supports `=`. You can use the e-mail as an alias for `{user}`. For
+   *     example, `users/example{@literal @}gmail.com`, where `example{@literal @}gmail.com` is the
+   *     e-mail of the Google Chat user. - `space.name`: The resource name of the space where the
+   *     message is posted. (`spaces/{space}`). Only supports `=`. If this filter is not set, the
+   *     search is performed across all direct messages and spaces the user has access to as a space
+   *     member. - `space.display_name`: Supports the operator `:` (has) and filters spaces based on
+   *     a partial match of their display name. Results are limited to the top five space matches.
+   *     For example, `space.display_name:Project` searches for messages in the top five spaces that
+   *     contain the word "Project" in their display names. - `attachment`: Supports the operator
+   *     `:&#42;` (has any) to check for the presence of attachments. If `attachment:&#42;` is
+   *     specified, only messages that have at least one attachment are returned. -
+   *     `annotations.user_mentions.user.name`: The resource name of the mentioned user
+   *     (`users/{user}`). Only supports `:` (has). For example:
+   *     `annotations.user_mentions.user.name:"users/1234567890"` returns only messages that contain
+   *     a mention to the specified user. Alternatively, the alias `me` can be used to filter for
+   *     messages that mention the caller user, for example:
+   *     `annotations.user_mentions.user.name:users/me`. You can also use the e-mail as an alias for
+   *     `{user}`, for example, `users/example{@literal @}gmail.com`.
+   *     <p>For advanced filtering, the following functions are also available:
+   *     <p>- `has_link()`: Returns only messages that have at least one hyperlink in the message
+   *     text. - `is_unread()`: Filters out messages that have been read by the calling user.
+   *     <p>Using the `space.display_name` filter requires that the calling credentials include one
+   *     of the following [authorization
+   *     scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *     <p>- `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   *     `https://www.googleapis.com/auth/chat.spaces`
+   *     <p>Using the `is_unread()` filter requires that the calling credentials include one of the
+   *     following [authorization
+   *     scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *     <p>- `https://www.googleapis.com/auth/chat.users.readstate.readonly` -
+   *     `https://www.googleapis.com/auth/chat.users.readstate`
+   *     <p>Across different fields, only `AND` operators are supported. A valid example is
+   *     `sender.name = "users/1234567890" AND is_unread()`. The word `AND` is optional and is
+   *     implied if omitted. For example, `sender.name = "users/1234567890" is_unread()` is valid
+   *     and is equivalent to the previous example. An invalid example is `sender.name =
+   *     "users/1234567890" OR is_unread()` because `OR` is not supported between different fields.
+   *     <p>Among the same field:
+   *     <p>- `create_time` supports only `AND`, and can only be used to represent an interval, such
+   *     as `create_time &gt;= "2022-01-01T00:00:00+00:00" AND create_time &lt;
+   *     "2023-01-01T00:00:00+00:00"`. - `sender.name` supports only the `OR` operator, for example:
+   *     `sender.name = "users/1234567890" OR sender.name = "users/0987654321"`. - `space.name`
+   *     supports only the `OR` operator, for example: `space.name = "spaces/ABCDEFGH" OR space.name
+   *     = "spaces/QWERTYUI"`. - `space.display_name` supports the operators `AND` and `OR`, but not
+   *     a mix of both. For example: `space.display_name:Project AND space.display_name:Tasks`
+   *     returns messages that are in spaces with display names containing both `Project` and
+   *     `Tasks`, whereas `space.display_name:Project OR space.display_name:Tasks` returns messages
+   *     that are in spaces with display names containing either `Project` or `Tasks` or both. -
+   *     `annotations.user_mentions.user.name` supports the operators `AND` and `OR`, but not a mix
+   *     of both. For example: `annotations.user_mentions.user.name:"users/1234567890" AND
+   *     annotations.user_mentions.user.name:"users/0987654321"` returns only messages that mentions
+   *     both users, whereas `annotations.user_mentions.user.name:"users/1234567890" OR
+   *     annotations.user_mentions.user.name:"users/0987654321"` returns messages that mention
+   *     either user or both.
+   *     <p>Parentheses are required to disambiguate operator precedence when combining `AND` and
+   *     `OR` operators in the same query. For example: `(sender.name="users/me" OR
+   *     sender.name="users/123456") AND is_unread()`. Otherwise, parentheses are optional.
+   *     <p>The following example queries are valid:
+   *     <p>``` "Pending reports" AND create_time &gt;= "2023-01-01T00:00:00Z"
+   *     <p>sender.name = "users/example{@literal @}gmail.com"
+   *     <p>annotations.user_mentions.user.name:"users/0987654321"
+   *     <p>attachment:&#42; AND space.name = "spaces/ABCDEFGH"
+   *     <p>tasks AND is_unread() AND sender.name = "users/1234567890"
+   *     <p>"things to do" "urgent"
+   *     <p>(sender.name = "users/1234567890") AND (create_time &lt; "2023-05-01T00:00:00Z")
+   *     <p>tasks AND space.name = "spaces/ABCDEFGH" AND has_link()
+   *     <p>"project one" is_unread()
+   *     <p>space.display_name:Project tasks ```
+   *     <p>The maximum query length is 1,000 characters.
+   *     <p>Invalid queries are rejected by the server with an `INVALID_ARGUMENT` error.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchMessagesPagedResponse searchMessages(String parent, String filter) {
+    SearchMessagesRequest request =
+        SearchMessagesRequest.newBuilder().setParent(parent).setFilter(filter).build();
+    return searchMessages(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for messages in Google Chat that the calling user has access to. Returns a list of
+   * messages matching the search criteria.
+   *
+   * <p>To search across all spaces the user has access to, set `parent` to `spaces/-`. Using any
+   * other value for `parent` results in an `INVALID_ARGUMENT` error. The returned messages have
+   * their `name` field populated with the full resource name, which includes the specific `space`
+   * in which the message resides.
+   *
+   * <p>This API doesn't return all message types. The types of messages listed below aren't
+   * included in the response. Use [ListMessages][google.chat.v1.ChatService.ListMessages] to list
+   * all messages.
+   *
+   * <p>- Private Messages that are visible to the authenticated user. - Messages posted by Chat
+   * apps in spaces or group chats. - Messages in a Chat app DM. - Messages from blocked users. -
+   * Messages in spaces that the caller has muted.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.messages.readonly` -
+   * `https://www.googleapis.com/auth/chat.messages`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SearchMessagesRequest request =
+   *       SearchMessagesRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (SearchMessageResult element : chatServiceClient.searchMessages(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SearchMessagesPagedResponse searchMessages(SearchMessagesRequest request) {
+    return searchMessagesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for messages in Google Chat that the calling user has access to. Returns a list of
+   * messages matching the search criteria.
+   *
+   * <p>To search across all spaces the user has access to, set `parent` to `spaces/-`. Using any
+   * other value for `parent` results in an `INVALID_ARGUMENT` error. The returned messages have
+   * their `name` field populated with the full resource name, which includes the specific `space`
+   * in which the message resides.
+   *
+   * <p>This API doesn't return all message types. The types of messages listed below aren't
+   * included in the response. Use [ListMessages][google.chat.v1.ChatService.ListMessages] to list
+   * all messages.
+   *
+   * <p>- Private Messages that are visible to the authenticated user. - Messages posted by Chat
+   * apps in spaces or group chats. - Messages in a Chat app DM. - Messages from blocked users. -
+   * Messages in spaces that the caller has muted.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.messages.readonly` -
+   * `https://www.googleapis.com/auth/chat.messages`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SearchMessagesRequest request =
+   *       SearchMessagesRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<SearchMessageResult> future =
+   *       chatServiceClient.searchMessagesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SearchMessageResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchMessagesRequest, SearchMessagesPagedResponse>
+      searchMessagesPagedCallable() {
+    return stub.searchMessagesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Searches for messages in Google Chat that the calling user has access to. Returns a list of
+   * messages matching the search criteria.
+   *
+   * <p>To search across all spaces the user has access to, set `parent` to `spaces/-`. Using any
+   * other value for `parent` results in an `INVALID_ARGUMENT` error. The returned messages have
+   * their `name` field populated with the full resource name, which includes the specific `space`
+   * in which the message resides.
+   *
+   * <p>This API doesn't return all message types. The types of messages listed below aren't
+   * included in the response. Use [ListMessages][google.chat.v1.ChatService.ListMessages] to list
+   * all messages.
+   *
+   * <p>- Private Messages that are visible to the authenticated user. - Messages posted by Chat
+   * apps in spaces or group chats. - Messages in a Chat app DM. - Messages from blocked users. -
+   * Messages in spaces that the caller has muted.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.messages.readonly` -
+   * `https://www.googleapis.com/auth/chat.messages`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SearchMessagesRequest request =
+   *       SearchMessagesRequest.newBuilder()
+   *           .setParent(SpaceName.of("[SPACE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     SearchMessagesResponse response = chatServiceClient.searchMessagesCallable().call(request);
+   *     for (SearchMessageResult element : response.getResultsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SearchMessagesRequest, SearchMessagesResponse>
+      searchMessagesCallable() {
+    return stub.searchMessagesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Gets the metadata of a message attachment. The attachment data is fetched using the [media
    * API](https://developers.google.com/workspace/chat/api/reference/rest/v1/media/download). For an
    * example, see [Get metadata about a message
@@ -2793,7 +3365,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     `spaces/{space}/messages/{message}/attachments/{attachment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Attachment getAttachment(AttachmentName name) {
+  public final Attachment getAttachment(@Nullable AttachmentName name) {
     GetAttachmentRequest request =
         GetAttachmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAttachment(request);
@@ -3204,16 +3776,27 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of spaces in a Google Workspace organization based on an administrator's search.
-   * In the request, set `use_admin_access` to `true`. For an example, see [Search for and manage
-   * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
+   * Returns a list of spaces in a Google Workspace organization. For an example, see [Search for
+   * and manage spaces](https://developers.google.com/workspace/chat/search-manage-admin).
    *
-   * <p>Requires [user authentication with administrator
+   * <p>When `use_admin_access` is set to `false`, the results are limited to spaces where the
+   * calling user is a joined member. To search with administrator privileges, set
+   * `use_admin_access` to `true`.
+   *
+   * <p>Supports the following types of
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+   *
+   * <p>- [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following authorization scopes: -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>- [User authentication with administrator
    * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
    * and one of the following [authorization
-   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-   *
-   * <p>- `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): -
+   * `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.admin.spaces`
    *
    * <p>Sample code:
@@ -3241,16 +3824,27 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of spaces in a Google Workspace organization based on an administrator's search.
-   * In the request, set `use_admin_access` to `true`. For an example, see [Search for and manage
-   * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
+   * Returns a list of spaces in a Google Workspace organization. For an example, see [Search for
+   * and manage spaces](https://developers.google.com/workspace/chat/search-manage-admin).
    *
-   * <p>Requires [user authentication with administrator
+   * <p>When `use_admin_access` is set to `false`, the results are limited to spaces where the
+   * calling user is a joined member. To search with administrator privileges, set
+   * `use_admin_access` to `true`.
+   *
+   * <p>Supports the following types of
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+   *
+   * <p>- [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following authorization scopes: -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>- [User authentication with administrator
    * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
    * and one of the following [authorization
-   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-   *
-   * <p>- `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): -
+   * `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.admin.spaces`
    *
    * <p>Sample code:
@@ -3285,16 +3879,27 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of spaces in a Google Workspace organization based on an administrator's search.
-   * In the request, set `use_admin_access` to `true`. For an example, see [Search for and manage
-   * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
+   * Returns a list of spaces in a Google Workspace organization. For an example, see [Search for
+   * and manage spaces](https://developers.google.com/workspace/chat/search-manage-admin).
    *
-   * <p>Requires [user authentication with administrator
+   * <p>When `use_admin_access` is set to `false`, the results are limited to spaces where the
+   * calling user is a joined member. To search with administrator privileges, set
+   * `use_admin_access` to `true`.
+   *
+   * <p>Supports the following types of
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+   *
+   * <p>- [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following authorization scopes: -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>- [User authentication with administrator
    * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
    * and one of the following [authorization
-   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-   *
-   * <p>- `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): -
+   * `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.admin.spaces`
    *
    * <p>Sample code:
@@ -3329,16 +3934,27 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns a list of spaces in a Google Workspace organization based on an administrator's search.
-   * In the request, set `use_admin_access` to `true`. For an example, see [Search for and manage
-   * spaces](https://developers.google.com/workspace/chat/search-manage-admin).
+   * Returns a list of spaces in a Google Workspace organization. For an example, see [Search for
+   * and manage spaces](https://developers.google.com/workspace/chat/search-manage-admin).
    *
-   * <p>Requires [user authentication with administrator
+   * <p>When `use_admin_access` is set to `false`, the results are limited to spaces where the
+   * calling user is a joined member. To search with administrator privileges, set
+   * `use_admin_access` to `true`.
+   *
+   * <p>Supports the following types of
+   * [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
+   *
+   * <p>- [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following authorization scopes: -
+   * `https://www.googleapis.com/auth/chat.spaces.readonly` -
+   * `https://www.googleapis.com/auth/chat.spaces`
+   *
+   * <p>- [User authentication with administrator
    * privileges](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user#admin-privileges)
    * and one of the following [authorization
-   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
-   *
-   * <p>- `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes): -
+   * `https://www.googleapis.com/auth/chat.admin.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.admin.spaces`
    *
    * <p>Sample code:
@@ -3425,7 +4041,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Space getSpace(SpaceName name) {
+  public final Space getSpace(@Nullable SpaceName name) {
     GetSpaceRequest request =
         GetSpaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSpace(request);
@@ -4030,6 +4646,19 @@ public class ChatServiceClient implements BackgroundResource {
    *     see [Make a space discoverable to specific
    *     users](https://developers.google.com/workspace/chat/space-target-audience).
    *     `access_settings.audience` is not supported with `useAdminAccess`.
+   *     <p>`access_settings.access_permission_settings`: Updates the [access permission
+   *     settings](https://support.google.com/chat/answer/11971020) of who can discover and join the
+   *     space where `spaceType` field is `SPACE`. Principals allowed to join the space must also be
+   *     allowed to discover it. To update access permission settings for a space, the
+   *     authenticating user must be a space manager or assistant manager and omit all other field
+   *     masks in the request. You can't update this field if the space is in [import
+   *     mode](https://developers.google.com/workspace/chat/import-data-overview). To learn more,
+   *     see [Make a space discoverable to specific
+   *     users](https://developers.google.com/workspace/chat/space-target-audience).
+   *     `access_settings.access_permission_settings` is not supported with `useAdminAccess`. The
+   *     supported field masks include:
+   *     <p>- `access_settings.access_permission_settings.discoverSpaceSetting` -
+   *     `access_settings.access_permission_settings.joinSpaceSetting`
    *     <p>`permission_settings`: Supports changing the [permission
    *     settings](https://support.google.com/chat/answer/13340792) of a space. When updating
    *     permission settings, you can only specify `permissionSettings` field masks; you cannot
@@ -4200,7 +4829,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSpace(SpaceName name) {
+  public final void deleteSpace(@Nullable SpaceName name) {
     DeleteSpaceRequest request =
         DeleteSpaceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSpace(request);
@@ -4767,7 +5396,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     `users/app`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Membership createMembership(SpaceName parent, Membership membership) {
+  public final Membership createMembership(@Nullable SpaceName parent, Membership membership) {
     CreateMembershipRequest request =
         CreateMembershipRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5211,7 +5840,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}/members/{member}` or `spaces/{space}/members/app`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Membership deleteMembership(MembershipName name) {
+  public final Membership deleteMembership(@Nullable MembershipName name) {
     DeleteMembershipRequest request =
         DeleteMembershipRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteMembership(request);
@@ -5431,7 +6060,7 @@ public class ChatServiceClient implements BackgroundResource {
    * @param reaction Required. The reaction to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Reaction createReaction(MessageName parent, Reaction reaction) {
+  public final Reaction createReaction(@Nullable MessageName parent, Reaction reaction) {
     CreateReactionRequest request =
         CreateReactionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5595,7 +6224,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}/messages/{message}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReactionsPagedResponse listReactions(MessageName parent) {
+  public final ListReactionsPagedResponse listReactions(@Nullable MessageName parent) {
     ListReactionsRequest request =
         ListReactionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5814,7 +6443,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteReaction(ReactionName name) {
+  public final void deleteReaction(@Nullable ReactionName name) {
     DeleteReactionRequest request =
         DeleteReactionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteReaction(request);
@@ -6089,7 +6718,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     emoji.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CustomEmoji getCustomEmoji(CustomEmojiName name) {
+  public final CustomEmoji getCustomEmoji(@Nullable CustomEmojiName name) {
     GetCustomEmojiRequest request =
         GetCustomEmojiRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCustomEmoji(request);
@@ -6444,7 +7073,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     emoji.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCustomEmoji(CustomEmojiName name) {
+  public final void deleteCustomEmoji(@Nullable CustomEmojiName name) {
     DeleteCustomEmojiRequest request =
         DeleteCustomEmojiRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6620,7 +7249,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: users/{user}/spaces/{space}/spaceReadState
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SpaceReadState getSpaceReadState(SpaceReadStateName name) {
+  public final SpaceReadState getSpaceReadState(@Nullable SpaceReadStateName name) {
     GetSpaceReadStateRequest request =
         GetSpaceReadStateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6921,7 +7550,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: users/{user}/spaces/{space}/threads/{thread}/threadReadState
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ThreadReadState getThreadReadState(ThreadReadStateName name) {
+  public final ThreadReadState getThreadReadState(@Nullable ThreadReadStateName name) {
     GetThreadReadStateRequest request =
         GetThreadReadStateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -7054,6 +7683,524 @@ public class ChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Returns availability information for a human user in Google Chat. For example, this can be used
+   * to check if a user is online or away, or to retrieve their custom status message.
+   *
+   * <p>This method only retrieves the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability.readonly` -
+   * `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   AvailabilityName name = AvailabilityName.of("[USER]");
+   *   Availability response = chatServiceClient.getAvailability(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the availability to retrieve.
+   *     <p>Format: users/{user}/availability
+   *     <p>`{user}` is the id for the Person in the People API or Admin SDK directory API. For
+   *     example, `users/123456789`.
+   *     <p>The user's email address or `me` can also be used as an alias to refer to the caller.
+   *     For example, `users/user{@literal @}example.com` or `users/me`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability getAvailability(@Nullable AvailabilityName name) {
+    GetAvailabilityRequest request =
+        GetAvailabilityRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getAvailability(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns availability information for a human user in Google Chat. For example, this can be used
+   * to check if a user is online or away, or to retrieve their custom status message.
+   *
+   * <p>This method only retrieves the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability.readonly` -
+   * `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String name = AvailabilityName.of("[USER]").toString();
+   *   Availability response = chatServiceClient.getAvailability(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the availability to retrieve.
+   *     <p>Format: users/{user}/availability
+   *     <p>`{user}` is the id for the Person in the People API or Admin SDK directory API. For
+   *     example, `users/123456789`.
+   *     <p>The user's email address or `me` can also be used as an alias to refer to the caller.
+   *     For example, `users/user{@literal @}example.com` or `users/me`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability getAvailability(String name) {
+    GetAvailabilityRequest request = GetAvailabilityRequest.newBuilder().setName(name).build();
+    return getAvailability(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns availability information for a human user in Google Chat. For example, this can be used
+   * to check if a user is online or away, or to retrieve their custom status message.
+   *
+   * <p>This method only retrieves the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability.readonly` -
+   * `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetAvailabilityRequest request =
+   *       GetAvailabilityRequest.newBuilder()
+   *           .setName(AvailabilityName.of("[USER]").toString())
+   *           .build();
+   *   Availability response = chatServiceClient.getAvailability(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability getAvailability(GetAvailabilityRequest request) {
+    return getAvailabilityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns availability information for a human user in Google Chat. For example, this can be used
+   * to check if a user is online or away, or to retrieve their custom status message.
+   *
+   * <p>This method only retrieves the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability.readonly` -
+   * `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   GetAvailabilityRequest request =
+   *       GetAvailabilityRequest.newBuilder()
+   *           .setName(AvailabilityName.of("[USER]").toString())
+   *           .build();
+   *   ApiFuture<Availability> future =
+   *       chatServiceClient.getAvailabilityCallable().futureCall(request);
+   *   // Do something.
+   *   Availability response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetAvailabilityRequest, Availability> getAvailabilityCallable() {
+    return stub.getAvailabilityCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks user as `ACTIVE` in Google Chat.
+   *
+   * <p>Sets the user's availability state to `ACTIVE`. The `ACTIVE` state lasts until the specified
+   * expiration, at which point the user's state becomes `AWAY`. Note that if the user is actively
+   * using Chat, the `ACTIVE` state duration may extend beyond the provided expiration.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MarkAsActiveRequest request =
+   *       MarkAsActiveRequest.newBuilder()
+   *           .setName(AvailabilityName.of("[USER]").toString())
+   *           .build();
+   *   Availability response = chatServiceClient.markAsActive(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability markAsActive(MarkAsActiveRequest request) {
+    return markAsActiveCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks user as `ACTIVE` in Google Chat.
+   *
+   * <p>Sets the user's availability state to `ACTIVE`. The `ACTIVE` state lasts until the specified
+   * expiration, at which point the user's state becomes `AWAY`. Note that if the user is actively
+   * using Chat, the `ACTIVE` state duration may extend beyond the provided expiration.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MarkAsActiveRequest request =
+   *       MarkAsActiveRequest.newBuilder()
+   *           .setName(AvailabilityName.of("[USER]").toString())
+   *           .build();
+   *   ApiFuture<Availability> future = chatServiceClient.markAsActiveCallable().futureCall(request);
+   *   // Do something.
+   *   Availability response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MarkAsActiveRequest, Availability> markAsActiveCallable() {
+    return stub.markAsActiveCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks user as `AWAY` in Google Chat.
+   *
+   * <p>Sets the user's state to away and is not affected by the user's activity.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MarkAsAwayRequest request =
+   *       MarkAsAwayRequest.newBuilder().setName(AvailabilityName.of("[USER]").toString()).build();
+   *   Availability response = chatServiceClient.markAsAway(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability markAsAway(MarkAsAwayRequest request) {
+    return markAsAwayCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks user as `AWAY` in Google Chat.
+   *
+   * <p>Sets the user's state to away and is not affected by the user's activity.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MarkAsAwayRequest request =
+   *       MarkAsAwayRequest.newBuilder().setName(AvailabilityName.of("[USER]").toString()).build();
+   *   ApiFuture<Availability> future = chatServiceClient.markAsAwayCallable().futureCall(request);
+   *   // Do something.
+   *   Availability response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MarkAsAwayRequest, Availability> markAsAwayCallable() {
+    return stub.markAsAwayCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks user as `DO_NOT_DISTURB` in Google Chat.
+   *
+   * <p>Sets a user's availability state to `DO_NOT_DISTURB` until a specified expiration time. When
+   * in `DO_NOT_DISTURB`, users typically won't receive notifications.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MarkAsDoNotDisturbRequest request =
+   *       MarkAsDoNotDisturbRequest.newBuilder()
+   *           .setName(AvailabilityName.of("[USER]").toString())
+   *           .build();
+   *   Availability response = chatServiceClient.markAsDoNotDisturb(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability markAsDoNotDisturb(MarkAsDoNotDisturbRequest request) {
+    return markAsDoNotDisturbCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Marks user as `DO_NOT_DISTURB` in Google Chat.
+   *
+   * <p>Sets a user's availability state to `DO_NOT_DISTURB` until a specified expiration time. When
+   * in `DO_NOT_DISTURB`, users typically won't receive notifications.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MarkAsDoNotDisturbRequest request =
+   *       MarkAsDoNotDisturbRequest.newBuilder()
+   *           .setName(AvailabilityName.of("[USER]").toString())
+   *           .build();
+   *   ApiFuture<Availability> future =
+   *       chatServiceClient.markAsDoNotDisturbCallable().futureCall(request);
+   *   // Do something.
+   *   Availability response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MarkAsDoNotDisturbRequest, Availability> markAsDoNotDisturbCallable() {
+    return stub.markAsDoNotDisturbCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates availability information for a human user. Only the `custom_status` field can be
+   * updated through this method.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   Availability availability = Availability.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Availability response = chatServiceClient.updateAvailability(availability, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param availability Required. The availability to update.
+   * @param updateMask Required. The list of fields to update. The only field that can be updated is
+   *     `custom_status`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability updateAvailability(Availability availability, FieldMask updateMask) {
+    UpdateAvailabilityRequest request =
+        UpdateAvailabilityRequest.newBuilder()
+            .setAvailability(availability)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateAvailability(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates availability information for a human user. Only the `custom_status` field can be
+   * updated through this method.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateAvailabilityRequest request =
+   *       UpdateAvailabilityRequest.newBuilder()
+   *           .setAvailability(Availability.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Availability response = chatServiceClient.updateAvailability(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Availability updateAvailability(UpdateAvailabilityRequest request) {
+    return updateAvailabilityCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates availability information for a human user. Only the `custom_status` field can be
+   * updated through this method.
+   *
+   * <p>This method only updates the authenticated user's availability.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.availability`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateAvailabilityRequest request =
+   *       UpdateAvailabilityRequest.newBuilder()
+   *           .setAvailability(Availability.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Availability> future =
+   *       chatServiceClient.updateAvailabilityCallable().futureCall(request);
+   *   // Do something.
+   *   Availability response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateAvailabilityRequest, Availability> updateAvailabilityCallable() {
+    return stub.updateAvailabilityCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Returns an event from a Google Chat space. The [event
    * payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload)
    * contains the most recent version of the resource that changed. For example, if you request an
@@ -7113,7 +8260,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `spaces/{space}/spaceEvents/{spaceEvent}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SpaceEvent getSpaceEvent(SpaceEventName name) {
+  public final SpaceEvent getSpaceEvent(@Nullable SpaceEventName name) {
     GetSpaceEventRequest request =
         GetSpaceEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSpaceEvent(request);
@@ -7411,7 +8558,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Invalid queries are rejected by the server with an `INVALID_ARGUMENT` error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSpaceEventsPagedResponse listSpaceEvents(SpaceName parent, String filter) {
+  public final ListSpaceEventsPagedResponse listSpaceEvents(
+      @Nullable SpaceName parent, String filter) {
     ListSpaceEventsRequest request =
         ListSpaceEventsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -7772,7 +8920,7 @@ public class ChatServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SpaceNotificationSetting getSpaceNotificationSetting(
-      SpaceNotificationSettingName name) {
+      @Nullable SpaceNotificationSettingName name) {
     GetSpaceNotificationSettingRequest request =
         GetSpaceNotificationSettingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -8053,7 +9201,7 @@ public class ChatServiceClient implements BackgroundResource {
    * @param section Required. The section to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Section createSection(UserName parent, Section section) {
+  public final Section createSection(@Nullable UserName parent, Section section) {
     CreateSectionRequest request =
         CreateSectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8214,7 +9362,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `users/{user}/sections/{section}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSection(SectionName name) {
+  public final void deleteSection(@Nullable SectionName name) {
     DeleteSectionRequest request =
         DeleteSectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSection(request);
@@ -8492,7 +9640,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `users/{user}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSectionsPagedResponse listSections(UserName parent) {
+  public final ListSectionsPagedResponse listSections(@Nullable UserName parent) {
     ListSectionsRequest request =
         ListSectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -8787,7 +9935,7 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `users/{user}/sections/{section}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSectionItemsPagedResponse listSectionItems(SectionName parent) {
+  public final ListSectionItemsPagedResponse listSectionItems(@Nullable SectionName parent) {
     ListSectionItemsRequest request =
         ListSectionItemsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -9015,7 +10163,7 @@ public class ChatServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MoveSectionItemResponse moveSectionItem(
-      SectionItemName name, SectionName targetSection) {
+      @Nullable SectionItemName name, @Nullable SectionName targetSection) {
     MoveSectionItemRequest request =
         MoveSectionItemRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9058,7 +10206,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `users/{user}/sections/{section}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MoveSectionItemResponse moveSectionItem(SectionItemName name, String targetSection) {
+  public final MoveSectionItemResponse moveSectionItem(
+      @Nullable SectionItemName name, String targetSection) {
     MoveSectionItemRequest request =
         MoveSectionItemRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -9101,7 +10250,8 @@ public class ChatServiceClient implements BackgroundResource {
    *     <p>Format: `users/{user}/sections/{section}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MoveSectionItemResponse moveSectionItem(String name, SectionName targetSection) {
+  public final MoveSectionItemResponse moveSectionItem(
+      String name, @Nullable SectionName targetSection) {
     MoveSectionItemRequest request =
         MoveSectionItemRequest.newBuilder()
             .setName(name)
@@ -9285,8 +10435,8 @@ public class ChatServiceClient implements BackgroundResource {
       extends AbstractPage<ListMessagesRequest, ListMessagesResponse, Message, ListMessagesPage> {
 
     private ListMessagesPage(
-        PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
-        ListMessagesResponse response) {
+        @Nullable PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
+        @Nullable ListMessagesResponse response) {
       super(context, response);
     }
 
@@ -9296,14 +10446,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListMessagesPage createPage(
-        PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
-        ListMessagesResponse response) {
+        @Nullable PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
+        @Nullable ListMessagesResponse response) {
       return new ListMessagesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMessagesPage> createPageAsync(
-        PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
+        @Nullable PageContext<ListMessagesRequest, ListMessagesResponse, Message> context,
         ApiFuture<ListMessagesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9317,7 +10467,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListMessagesPage,
           ListMessagesFixedSizeCollection> {
 
-    private ListMessagesFixedSizeCollection(List<ListMessagesPage> pages, int collectionSize) {
+    private ListMessagesFixedSizeCollection(
+        @Nullable List<ListMessagesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9327,7 +10478,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListMessagesFixedSizeCollection createCollection(
-        List<ListMessagesPage> pages, int collectionSize) {
+        @Nullable List<ListMessagesPage> pages, int collectionSize) {
       return new ListMessagesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9361,8 +10512,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListMembershipsRequest, ListMembershipsResponse, Membership, ListMembershipsPage> {
 
     private ListMembershipsPage(
-        PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
-        ListMembershipsResponse response) {
+        @Nullable PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
+        @Nullable ListMembershipsResponse response) {
       super(context, response);
     }
 
@@ -9372,14 +10523,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListMembershipsPage createPage(
-        PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
-        ListMembershipsResponse response) {
+        @Nullable PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
+        @Nullable ListMembershipsResponse response) {
       return new ListMembershipsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMembershipsPage> createPageAsync(
-        PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
+        @Nullable PageContext<ListMembershipsRequest, ListMembershipsResponse, Membership> context,
         ApiFuture<ListMembershipsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9394,7 +10545,7 @@ public class ChatServiceClient implements BackgroundResource {
           ListMembershipsFixedSizeCollection> {
 
     private ListMembershipsFixedSizeCollection(
-        List<ListMembershipsPage> pages, int collectionSize) {
+        @Nullable List<ListMembershipsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9404,8 +10555,88 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListMembershipsFixedSizeCollection createCollection(
-        List<ListMembershipsPage> pages, int collectionSize) {
+        @Nullable List<ListMembershipsPage> pages, int collectionSize) {
       return new ListMembershipsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class SearchMessagesPagedResponse
+      extends AbstractPagedListResponse<
+          SearchMessagesRequest,
+          SearchMessagesResponse,
+          SearchMessageResult,
+          SearchMessagesPage,
+          SearchMessagesFixedSizeCollection> {
+
+    public static ApiFuture<SearchMessagesPagedResponse> createAsync(
+        PageContext<SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult> context,
+        ApiFuture<SearchMessagesResponse> futureResponse) {
+      ApiFuture<SearchMessagesPage> futurePage =
+          SearchMessagesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new SearchMessagesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private SearchMessagesPagedResponse(SearchMessagesPage page) {
+      super(page, SearchMessagesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class SearchMessagesPage
+      extends AbstractPage<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult, SearchMessagesPage> {
+
+    private SearchMessagesPage(
+        @Nullable PageContext<SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult>
+            context,
+        @Nullable SearchMessagesResponse response) {
+      super(context, response);
+    }
+
+    private static SearchMessagesPage createEmptyPage() {
+      return new SearchMessagesPage(null, null);
+    }
+
+    @Override
+    protected SearchMessagesPage createPage(
+        @Nullable PageContext<SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult>
+            context,
+        @Nullable SearchMessagesResponse response) {
+      return new SearchMessagesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<SearchMessagesPage> createPageAsync(
+        @Nullable PageContext<SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult>
+            context,
+        ApiFuture<SearchMessagesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class SearchMessagesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          SearchMessagesRequest,
+          SearchMessagesResponse,
+          SearchMessageResult,
+          SearchMessagesPage,
+          SearchMessagesFixedSizeCollection> {
+
+    private SearchMessagesFixedSizeCollection(
+        @Nullable List<SearchMessagesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static SearchMessagesFixedSizeCollection createEmptyCollection() {
+      return new SearchMessagesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected SearchMessagesFixedSizeCollection createCollection(
+        @Nullable List<SearchMessagesPage> pages, int collectionSize) {
+      return new SearchMessagesFixedSizeCollection(pages, collectionSize);
     }
   }
 
@@ -9435,8 +10666,8 @@ public class ChatServiceClient implements BackgroundResource {
       extends AbstractPage<ListSpacesRequest, ListSpacesResponse, Space, ListSpacesPage> {
 
     private ListSpacesPage(
-        PageContext<ListSpacesRequest, ListSpacesResponse, Space> context,
-        ListSpacesResponse response) {
+        @Nullable PageContext<ListSpacesRequest, ListSpacesResponse, Space> context,
+        @Nullable ListSpacesResponse response) {
       super(context, response);
     }
 
@@ -9446,14 +10677,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSpacesPage createPage(
-        PageContext<ListSpacesRequest, ListSpacesResponse, Space> context,
-        ListSpacesResponse response) {
+        @Nullable PageContext<ListSpacesRequest, ListSpacesResponse, Space> context,
+        @Nullable ListSpacesResponse response) {
       return new ListSpacesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSpacesPage> createPageAsync(
-        PageContext<ListSpacesRequest, ListSpacesResponse, Space> context,
+        @Nullable PageContext<ListSpacesRequest, ListSpacesResponse, Space> context,
         ApiFuture<ListSpacesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9467,7 +10698,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListSpacesPage,
           ListSpacesFixedSizeCollection> {
 
-    private ListSpacesFixedSizeCollection(List<ListSpacesPage> pages, int collectionSize) {
+    private ListSpacesFixedSizeCollection(
+        @Nullable List<ListSpacesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9477,7 +10709,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSpacesFixedSizeCollection createCollection(
-        List<ListSpacesPage> pages, int collectionSize) {
+        @Nullable List<ListSpacesPage> pages, int collectionSize) {
       return new ListSpacesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9510,8 +10742,8 @@ public class ChatServiceClient implements BackgroundResource {
       extends AbstractPage<SearchSpacesRequest, SearchSpacesResponse, Space, SearchSpacesPage> {
 
     private SearchSpacesPage(
-        PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
-        SearchSpacesResponse response) {
+        @Nullable PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
+        @Nullable SearchSpacesResponse response) {
       super(context, response);
     }
 
@@ -9521,14 +10753,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected SearchSpacesPage createPage(
-        PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
-        SearchSpacesResponse response) {
+        @Nullable PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
+        @Nullable SearchSpacesResponse response) {
       return new SearchSpacesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchSpacesPage> createPageAsync(
-        PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
+        @Nullable PageContext<SearchSpacesRequest, SearchSpacesResponse, Space> context,
         ApiFuture<SearchSpacesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9542,7 +10774,8 @@ public class ChatServiceClient implements BackgroundResource {
           SearchSpacesPage,
           SearchSpacesFixedSizeCollection> {
 
-    private SearchSpacesFixedSizeCollection(List<SearchSpacesPage> pages, int collectionSize) {
+    private SearchSpacesFixedSizeCollection(
+        @Nullable List<SearchSpacesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9552,7 +10785,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected SearchSpacesFixedSizeCollection createCollection(
-        List<SearchSpacesPage> pages, int collectionSize) {
+        @Nullable List<SearchSpacesPage> pages, int collectionSize) {
       return new SearchSpacesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9586,8 +10819,8 @@ public class ChatServiceClient implements BackgroundResource {
           FindGroupChatsRequest, FindGroupChatsResponse, Space, FindGroupChatsPage> {
 
     private FindGroupChatsPage(
-        PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
-        FindGroupChatsResponse response) {
+        @Nullable PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
+        @Nullable FindGroupChatsResponse response) {
       super(context, response);
     }
 
@@ -9597,14 +10830,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected FindGroupChatsPage createPage(
-        PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
-        FindGroupChatsResponse response) {
+        @Nullable PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
+        @Nullable FindGroupChatsResponse response) {
       return new FindGroupChatsPage(context, response);
     }
 
     @Override
     public ApiFuture<FindGroupChatsPage> createPageAsync(
-        PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
+        @Nullable PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
         ApiFuture<FindGroupChatsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9618,7 +10851,8 @@ public class ChatServiceClient implements BackgroundResource {
           FindGroupChatsPage,
           FindGroupChatsFixedSizeCollection> {
 
-    private FindGroupChatsFixedSizeCollection(List<FindGroupChatsPage> pages, int collectionSize) {
+    private FindGroupChatsFixedSizeCollection(
+        @Nullable List<FindGroupChatsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9628,7 +10862,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected FindGroupChatsFixedSizeCollection createCollection(
-        List<FindGroupChatsPage> pages, int collectionSize) {
+        @Nullable List<FindGroupChatsPage> pages, int collectionSize) {
       return new FindGroupChatsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9662,8 +10896,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListReactionsRequest, ListReactionsResponse, Reaction, ListReactionsPage> {
 
     private ListReactionsPage(
-        PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> context,
-        ListReactionsResponse response) {
+        @Nullable PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> context,
+        @Nullable ListReactionsResponse response) {
       super(context, response);
     }
 
@@ -9673,14 +10907,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListReactionsPage createPage(
-        PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> context,
-        ListReactionsResponse response) {
+        @Nullable PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> context,
+        @Nullable ListReactionsResponse response) {
       return new ListReactionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReactionsPage> createPageAsync(
-        PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> context,
+        @Nullable PageContext<ListReactionsRequest, ListReactionsResponse, Reaction> context,
         ApiFuture<ListReactionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9694,7 +10928,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListReactionsPage,
           ListReactionsFixedSizeCollection> {
 
-    private ListReactionsFixedSizeCollection(List<ListReactionsPage> pages, int collectionSize) {
+    private ListReactionsFixedSizeCollection(
+        @Nullable List<ListReactionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9704,7 +10939,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListReactionsFixedSizeCollection createCollection(
-        List<ListReactionsPage> pages, int collectionSize) {
+        @Nullable List<ListReactionsPage> pages, int collectionSize) {
       return new ListReactionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9738,8 +10973,9 @@ public class ChatServiceClient implements BackgroundResource {
           ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji, ListCustomEmojisPage> {
 
     private ListCustomEmojisPage(
-        PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji> context,
-        ListCustomEmojisResponse response) {
+        @Nullable PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>
+            context,
+        @Nullable ListCustomEmojisResponse response) {
       super(context, response);
     }
 
@@ -9749,14 +10985,16 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomEmojisPage createPage(
-        PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji> context,
-        ListCustomEmojisResponse response) {
+        @Nullable PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>
+            context,
+        @Nullable ListCustomEmojisResponse response) {
       return new ListCustomEmojisPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomEmojisPage> createPageAsync(
-        PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji> context,
+        @Nullable PageContext<ListCustomEmojisRequest, ListCustomEmojisResponse, CustomEmoji>
+            context,
         ApiFuture<ListCustomEmojisResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9771,7 +11009,7 @@ public class ChatServiceClient implements BackgroundResource {
           ListCustomEmojisFixedSizeCollection> {
 
     private ListCustomEmojisFixedSizeCollection(
-        List<ListCustomEmojisPage> pages, int collectionSize) {
+        @Nullable List<ListCustomEmojisPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9781,7 +11019,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListCustomEmojisFixedSizeCollection createCollection(
-        List<ListCustomEmojisPage> pages, int collectionSize) {
+        @Nullable List<ListCustomEmojisPage> pages, int collectionSize) {
       return new ListCustomEmojisFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9815,8 +11053,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent, ListSpaceEventsPage> {
 
     private ListSpaceEventsPage(
-        PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
-        ListSpaceEventsResponse response) {
+        @Nullable PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
+        @Nullable ListSpaceEventsResponse response) {
       super(context, response);
     }
 
@@ -9826,14 +11064,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSpaceEventsPage createPage(
-        PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
-        ListSpaceEventsResponse response) {
+        @Nullable PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
+        @Nullable ListSpaceEventsResponse response) {
       return new ListSpaceEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSpaceEventsPage> createPageAsync(
-        PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
+        @Nullable PageContext<ListSpaceEventsRequest, ListSpaceEventsResponse, SpaceEvent> context,
         ApiFuture<ListSpaceEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9848,7 +11086,7 @@ public class ChatServiceClient implements BackgroundResource {
           ListSpaceEventsFixedSizeCollection> {
 
     private ListSpaceEventsFixedSizeCollection(
-        List<ListSpaceEventsPage> pages, int collectionSize) {
+        @Nullable List<ListSpaceEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9858,7 +11096,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSpaceEventsFixedSizeCollection createCollection(
-        List<ListSpaceEventsPage> pages, int collectionSize) {
+        @Nullable List<ListSpaceEventsPage> pages, int collectionSize) {
       return new ListSpaceEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9891,8 +11129,8 @@ public class ChatServiceClient implements BackgroundResource {
       extends AbstractPage<ListSectionsRequest, ListSectionsResponse, Section, ListSectionsPage> {
 
     private ListSectionsPage(
-        PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
-        ListSectionsResponse response) {
+        @Nullable PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
+        @Nullable ListSectionsResponse response) {
       super(context, response);
     }
 
@@ -9902,14 +11140,14 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSectionsPage createPage(
-        PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
-        ListSectionsResponse response) {
+        @Nullable PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
+        @Nullable ListSectionsResponse response) {
       return new ListSectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSectionsPage> createPageAsync(
-        PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
+        @Nullable PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
         ApiFuture<ListSectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -9923,7 +11161,8 @@ public class ChatServiceClient implements BackgroundResource {
           ListSectionsPage,
           ListSectionsFixedSizeCollection> {
 
-    private ListSectionsFixedSizeCollection(List<ListSectionsPage> pages, int collectionSize) {
+    private ListSectionsFixedSizeCollection(
+        @Nullable List<ListSectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -9933,7 +11172,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSectionsFixedSizeCollection createCollection(
-        List<ListSectionsPage> pages, int collectionSize) {
+        @Nullable List<ListSectionsPage> pages, int collectionSize) {
       return new ListSectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -9967,8 +11206,9 @@ public class ChatServiceClient implements BackgroundResource {
           ListSectionItemsRequest, ListSectionItemsResponse, SectionItem, ListSectionItemsPage> {
 
     private ListSectionItemsPage(
-        PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem> context,
-        ListSectionItemsResponse response) {
+        @Nullable PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem>
+            context,
+        @Nullable ListSectionItemsResponse response) {
       super(context, response);
     }
 
@@ -9978,14 +11218,16 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSectionItemsPage createPage(
-        PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem> context,
-        ListSectionItemsResponse response) {
+        @Nullable PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem>
+            context,
+        @Nullable ListSectionItemsResponse response) {
       return new ListSectionItemsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSectionItemsPage> createPageAsync(
-        PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem> context,
+        @Nullable PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem>
+            context,
         ApiFuture<ListSectionItemsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -10000,7 +11242,7 @@ public class ChatServiceClient implements BackgroundResource {
           ListSectionItemsFixedSizeCollection> {
 
     private ListSectionItemsFixedSizeCollection(
-        List<ListSectionItemsPage> pages, int collectionSize) {
+        @Nullable List<ListSectionItemsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -10010,7 +11252,7 @@ public class ChatServiceClient implements BackgroundResource {
 
     @Override
     protected ListSectionItemsFixedSizeCollection createCollection(
-        List<ListSectionItemsPage> pages, int collectionSize) {
+        @Nullable List<ListSectionItemsPage> pages, int collectionSize) {
       return new ListSectionItemsFixedSizeCollection(pages, collectionSize);
     }
   }

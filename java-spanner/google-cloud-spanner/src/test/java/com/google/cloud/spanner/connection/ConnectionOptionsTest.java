@@ -40,6 +40,7 @@ import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.Files;
@@ -1346,6 +1347,29 @@ public class ConnectionOptionsTest {
   }
 
   @Test
+  public void testBuildWithOmniCredentialsProperties() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/singers-db;usePlainText=true;type=omni;username=test_user;password=test_pass")
+            .build();
+    assertEquals(SpannerOptions.InstanceType.OMNI, options.getInstanceType());
+    assertTrue(options.isSpannerOmni());
+    assertTrue(options.getCredentials() instanceof SpannerOmniCredentials);
+  }
+
+  @Test
+  public void testBuildWithOmniCredentialsPropertiesMissingPassword() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "spanner://localhost:15000/projects/default/instances/default/databases/singers-db;usePlainText=true;type=omni;username=test_user")
+            .build();
+    assertEquals(SpannerOptions.InstanceType.OMNI, options.getInstanceType());
+    assertTrue(options.isSpannerOmni());
+  }
+
+  @Test
   public void testInvalidInstanceType() {
     assertThrows(
         SpannerException.class,
@@ -1572,5 +1596,45 @@ public class ConnectionOptionsTest {
     assertEquals(Integer.valueOf(3), options.getDcpMinChannels());
     assertEquals(Integer.valueOf(15), options.getDcpMaxChannels());
     assertEquals(Integer.valueOf(5), options.getDcpInitialChannels());
+  }
+
+  @Test
+  public void testGrpcKeepAliveTimeOption() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database"
+                    + "?grpcKeepAliveTime='20s'")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals(Duration.ofSeconds(20), options.getGrpcKeepAliveTime());
+
+    ConnectionOptions defaultOptions =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertNull(defaultOptions.getGrpcKeepAliveTime());
+  }
+
+  @Test
+  public void testGrpcKeepAliveTimeoutOption() {
+    ConnectionOptions options =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database"
+                    + "?grpcKeepAliveTimeout='15s'")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals(Duration.ofSeconds(15), options.getGrpcKeepAliveTimeout());
+
+    ConnectionOptions defaultOptions =
+        ConnectionOptions.newBuilder()
+            .setUri(
+                "cloudspanner:/projects/test-project-123/instances/test-instance/databases/test-database")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertNull(defaultOptions.getGrpcKeepAliveTimeout());
   }
 }

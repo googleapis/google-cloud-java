@@ -2,6 +2,8 @@
 
 # Defaults
 ITERATIONS ?= 5
+QUERY ?=
+QUERY_FILE ?=
 ROWS ?= 1000
 COLS ?= 5
 VERSION ?= $(shell sed -n 's/.*<version>\([^<]*\)<\/version>.*/\1/p' ../../pom.xml | head -n 1)
@@ -25,7 +27,18 @@ HTAPI_OPTS = EnableHighThroughputAPI=1;HighThroughputActivationRatio=0;HighThrou
 RUN_PERF = python3 run_perf.py
 
 # Common flags for run_perf.py
-COMMON_FLAGS = -n $(ITERATIONS) --generate-rows $(ROWS) --generate-cols $(COLS) --jar1 $(JAR1) --class1 $(CLASS1)
+COMMON_FLAGS = -n $(ITERATIONS) --jar1 $(JAR1) --class1 $(CLASS1)
+
+ifeq ($(QUERY)$(QUERY_FILE),)
+  COMMON_FLAGS += --generate-rows $(ROWS) --generate-cols $(COLS)
+else
+  ifneq ($(QUERY),)
+    COMMON_FLAGS += --query "$(QUERY)"
+  endif
+  ifneq ($(QUERY_FILE),)
+    COMMON_FLAGS += --query-file "$(QUERY_FILE)"
+  endif
+endif
 
 ifneq ($(JAR2),)
   COMMON_FLAGS += --jar2 $(JAR2) --class2 $(CLASS2)

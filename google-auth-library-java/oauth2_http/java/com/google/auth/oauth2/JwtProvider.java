@@ -31,7 +31,10 @@
 
 package com.google.auth.oauth2;
 
+import org.jspecify.annotations.NullMarked;
+
 /** Interface for creating custom JWT tokens */
+@NullMarked
 public interface JwtProvider {
 
   /**

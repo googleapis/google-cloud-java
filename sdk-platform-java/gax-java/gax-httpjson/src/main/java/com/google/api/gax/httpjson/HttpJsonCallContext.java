@@ -55,8 +55,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * HttpJsonCallContext encapsulates context data used to make an http-json call.
@@ -66,19 +66,20 @@ import javax.annotation.Nullable;
  * copies of the object, but with one field changed. The immutability and thread safety of the
  * arguments solely depends on the arguments themselves.
  */
+@NullMarked
 public final class HttpJsonCallContext implements ApiCallContext {
   private static final HttpJsonStatusCode UNAUTHENTICATED_STATUS_CODE =
       HttpJsonStatusCode.of(StatusCode.Code.UNAUTHENTICATED);
-  private final HttpJsonChannel channel;
+  private final @Nullable HttpJsonChannel channel;
   private final HttpJsonCallOptions callOptions;
-  @Nullable private final java.time.Duration timeout;
-  @Nullable private final java.time.Duration streamWaitTimeout;
-  @Nullable private final java.time.Duration streamIdleTimeout;
+  private final java.time.@Nullable Duration timeout;
+  private final java.time.@Nullable Duration streamWaitTimeout;
+  private final java.time.@Nullable Duration streamIdleTimeout;
   private final ImmutableMap<String, List<String>> extraHeaders;
   private final ApiCallContextOptions options;
   private final ApiTracer tracer;
-  @Nullable private final RetrySettings retrySettings;
-  @Nullable private final ImmutableSet<StatusCode.Code> retryableCodes;
+  private final @Nullable RetrySettings retrySettings;
+  private final @Nullable ImmutableSet<StatusCode.Code> retryableCodes;
   private final EndpointContext endpointContext;
 
   /** Returns an empty instance. */
@@ -113,16 +114,16 @@ public final class HttpJsonCallContext implements ApiCallContext {
   }
 
   private HttpJsonCallContext(
-      HttpJsonChannel channel,
+      @Nullable HttpJsonChannel channel,
       HttpJsonCallOptions callOptions,
-      java.time.Duration timeout,
-      java.time.Duration streamWaitTimeout,
-      java.time.Duration streamIdleTimeout,
+      java.time.@Nullable Duration timeout,
+      java.time.@Nullable Duration streamWaitTimeout,
+      java.time.@Nullable Duration streamIdleTimeout,
       ImmutableMap<String, List<String>> extraHeaders,
       ApiCallContextOptions options,
-      ApiTracer tracer,
-      RetrySettings defaultRetrySettings,
-      Set<StatusCode.Code> defaultRetryableCodes,
+      @Nullable ApiTracer tracer,
+      @Nullable RetrySettings defaultRetrySettings,
+      @Nullable Set<StatusCode.Code> defaultRetryableCodes,
       @Nullable EndpointContext endpointContext) {
     this.channel = channel;
     this.callOptions = callOptions;
@@ -303,16 +304,14 @@ public final class HttpJsonCallContext implements ApiCallContext {
   }
 
   /** This method is obsolete. Use {@link #getTimeoutDuration()} instead. */
-  @Nullable
   @Override
   @ObsoleteApi("Use getTimeoutDuration instead")
-  public org.threeten.bp.Duration getTimeout() {
+  public org.threeten.bp.@Nullable Duration getTimeout() {
     return toThreetenDuration(getTimeoutDuration());
   }
 
-  @Nullable
   @Override
-  public java.time.Duration getTimeoutDuration() {
+  public java.time.@Nullable Duration getTimeoutDuration() {
     return timeout;
   }
 
@@ -323,13 +322,13 @@ public final class HttpJsonCallContext implements ApiCallContext {
   @Override
   @ObsoleteApi("Use withStreamWaitTimeoutDuration(java.time.Duration) instead")
   public HttpJsonCallContext withStreamWaitTimeout(
-      @Nullable org.threeten.bp.Duration streamWaitTimeout) {
+      org.threeten.bp.@Nullable Duration streamWaitTimeout) {
     return withStreamWaitTimeoutDuration(toJavaTimeDuration(streamWaitTimeout));
   }
 
   @Override
   public HttpJsonCallContext withStreamWaitTimeoutDuration(
-      @Nullable java.time.Duration streamWaitTimeout) {
+      java.time.@Nullable Duration streamWaitTimeout) {
     if (streamWaitTimeout != null) {
       Preconditions.checkArgument(
           streamWaitTimeout.compareTo(java.time.Duration.ZERO) >= 0, "Invalid timeout: < 0 s");
@@ -351,9 +350,8 @@ public final class HttpJsonCallContext implements ApiCallContext {
 
   /** This method is obsolete. Use {@link #getStreamWaitTimeoutDuration()} instead. */
   @Override
-  @Nullable
   @ObsoleteApi("Use getStreamWaitTimeoutDuration() instead")
-  public org.threeten.bp.Duration getStreamWaitTimeout() {
+  public org.threeten.bp.@Nullable Duration getStreamWaitTimeout() {
     return toThreetenDuration(getStreamWaitTimeoutDuration());
   }
 
@@ -363,8 +361,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
    * @see ApiCallContext#withStreamWaitTimeoutDuration(java.time.Duration)
    */
   @Override
-  @Nullable
-  public java.time.Duration getStreamWaitTimeoutDuration() {
+  public java.time.@Nullable Duration getStreamWaitTimeoutDuration() {
     return streamWaitTimeout;
   }
 
@@ -375,13 +372,13 @@ public final class HttpJsonCallContext implements ApiCallContext {
   @Override
   @ObsoleteApi("Use withStreamIdleTimeoutDuration(java.time.Duration) instead")
   public HttpJsonCallContext withStreamIdleTimeout(
-      @Nullable org.threeten.bp.Duration streamIdleTimeout) {
+      org.threeten.bp.@Nullable Duration streamIdleTimeout) {
     return withStreamIdleTimeoutDuration(toJavaTimeDuration(streamIdleTimeout));
   }
 
   @Override
   public HttpJsonCallContext withStreamIdleTimeoutDuration(
-      @Nullable java.time.Duration streamIdleTimeout) {
+      java.time.@Nullable Duration streamIdleTimeout) {
     if (streamIdleTimeout != null) {
       Preconditions.checkArgument(
           streamIdleTimeout.compareTo(java.time.Duration.ZERO) >= 0, "Invalid timeout: < 0 s");
@@ -403,9 +400,8 @@ public final class HttpJsonCallContext implements ApiCallContext {
 
   /** This method is obsolete. Use {@link #getStreamIdleTimeoutDuration()} instead. */
   @Override
-  @Nullable
   @ObsoleteApi("Use getStreamIdleTimeoutDuration() instead")
-  public org.threeten.bp.Duration getStreamIdleTimeout() {
+  public org.threeten.bp.@Nullable Duration getStreamIdleTimeout() {
     return toThreetenDuration(getStreamIdleTimeoutDuration());
   }
 
@@ -415,8 +411,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
    * @see ApiCallContext#withStreamIdleTimeoutDuration(java.time.Duration)
    */
   @Override
-  @Nullable
-  public java.time.Duration getStreamIdleTimeoutDuration() {
+  public java.time.@Nullable Duration getStreamIdleTimeoutDuration() {
     return streamIdleTimeout;
   }
 
@@ -495,7 +490,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
     }
   }
 
-  public HttpJsonChannel getChannel() {
+  public @Nullable HttpJsonChannel getChannel() {
     return channel;
   }
 
@@ -504,19 +499,17 @@ public final class HttpJsonCallContext implements ApiCallContext {
   }
 
   @Deprecated
-  @Nullable
-  public org.threeten.bp.Instant getDeadline() {
+  public org.threeten.bp.@Nullable Instant getDeadline() {
     return getCallOptions() != null ? getCallOptions().getDeadline() : null;
   }
 
   @Deprecated
-  @Nullable
-  public Credentials getCredentials() {
+  public @Nullable Credentials getCredentials() {
     return getCallOptions() != null ? getCallOptions().getCredentials() : null;
   }
 
   @Override
-  public RetrySettings getRetrySettings() {
+  public @Nullable RetrySettings getRetrySettings() {
     return retrySettings;
   }
 
@@ -537,7 +530,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
   }
 
   @Override
-  public Set<StatusCode.Code> getRetryableCodes() {
+  public @Nullable Set<StatusCode.Code> getRetryableCodes() {
     return retryableCodes;
   }
 
@@ -557,7 +550,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
         this.endpointContext);
   }
 
-  public HttpJsonCallContext withChannel(HttpJsonChannel newChannel) {
+  public HttpJsonCallContext withChannel(@Nullable HttpJsonChannel newChannel) {
     return new HttpJsonCallContext(
         newChannel,
         this.callOptions,
@@ -594,7 +587,6 @@ public final class HttpJsonCallContext implements ApiCallContext {
     return withCallOptions(builder.setDeadline(newDeadline).build());
   }
 
-  @Nonnull
   @Override
   public ApiTracer getTracer() {
     if (tracer == null) {
@@ -605,7 +597,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
 
   /** {@inheritDoc} */
   @Override
-  public HttpJsonCallContext withTracer(@Nonnull ApiTracer newTracer) {
+  public HttpJsonCallContext withTracer(ApiTracer newTracer) {
     Preconditions.checkNotNull(newTracer);
     HttpJsonCallOptions newCallOptions = callOptions.toBuilder().setTracer(newTracer).build();
 
@@ -624,7 +616,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (this == o) {
       return true;
     }

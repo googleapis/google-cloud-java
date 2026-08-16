@@ -2,9 +2,10 @@
 """
 sparse-bootstrap.py
 
-Given a seed module directory, walks its parent-chain and BOM-import graph,
-adds the discovered dependency directories to the sparse checkout, and
-installs them into ~/.m2 in dependency order.
+Given a seed module directory, walks its parent chain, BOM-import graph, and
+regular <dependency> edges that resolve to other poms in this monorepo, adds
+the discovered directories to the sparse checkout, and installs them into
+~/.m2 in dependency order.
 
 Prerequisites:
     git clone --sparse git@github.com:googleapis/google-cloud-java.git
@@ -46,6 +47,7 @@ class GitBlob:
 @dataclass(frozen=True)
 class ParentRef:
     coord: Coord
+    version: str
     relative_path: str  # '' means <relativePath/> was explicit → fetch from ~/.m2
 
 
@@ -68,7 +70,9 @@ def ls_tree_poms() -> list[GitBlob]:
     results: list[GitBlob] = []
     for line in out.splitlines():
         meta, path = line.split('\t', 1)
-        if not path.endswith('pom.xml'):
+        # Match the basename exactly — endswith('pom.xml') would also accept
+        # things like src/test/resources/gax-example-pom.xml.
+        if Path(path).name != 'pom.xml':
             continue
         _, _, sha = meta.split()
         results.append(GitBlob(sha=sha, path=Path(path)))
@@ -123,6 +127,11 @@ def get_coordinates(root: ET.Element) -> Coord:
     return Coord(group_id=g, artifact_id=a)
 
 
+def get_version(root: ET.Element) -> Optional[str]:
+    """The pom's own version (or inherited from <parent><version>)."""
+    return child_text(root, 'version') or child_text(root, 'parent/version')
+
+
 def get_parent(root: ET.Element) -> Optional[ParentRef]:
     p = root.find(t('parent'))
     if p is None:
@@ -137,21 +146,41 @@ def get_parent(root: ET.Element) -> Optional[ParentRef]:
             group_id=child_text(p, 'groupId'),
             artifact_id=child_text(p, 'artifactId'),
         ),
+        version=child_text(p, 'version') or '',
         relative_path=rel,
     )
 
 
-def get_bom_imports(root: ET.Element) -> list[Coord]:
-    """Coord for every scope=import dependency."""
-    results: list[Coord] = []
+def get_bom_imports(root: ET.Element) -> list[tuple[Coord, str]]:
+    """(Coord, version) for every scope=import dependency."""
+    results: list[tuple[Coord, str]] = []
     for dep in root.findall(
         f'.//{t("dependencyManagement")}/{t("dependencies")}/{t("dependency")}'
     ):
         if child_text(dep, 'scope') == 'import':
             g = child_text(dep, 'groupId')
             a = child_text(dep, 'artifactId')
-            if g and a:
-                results.append(Coord(group_id=g, artifact_id=a))
+            v = child_text(dep, 'version')
+            if g and a and v:
+                results.append((Coord(group_id=g, artifact_id=a), v))
+    return results
+
+
+def get_regular_deps(root: ET.Element) -> list[tuple[Coord, Optional[str]]]:
+    """(Coord, version) for every <dependency> under <dependencies>.
+
+    version is None when the dep relies on dependencyManagement to supply it.
+    """
+    results: list[tuple[Coord, Optional[str]]] = []
+    deps = root.find(t('dependencies'))
+    if deps is None:
+        return results
+    for dep in deps.findall(t('dependency')):
+        g = child_text(dep, 'groupId')
+        a = child_text(dep, 'artifactId')
+        v = child_text(dep, 'version')
+        if g and a:
+            results.append((Coord(group_id=g, artifact_id=a), v))
     return results
 
 
@@ -182,6 +211,27 @@ def find_needed_modules(
         needed.add(pom_path)
         queue.append(pom_path)
 
+    def resolve_local(coord: Coord, declared_version: Optional[str]) -> Optional[Path]:
+        """Local pom whose version matches the declared version, or None.
+
+        - No coord match in the monorepo → None.
+        - declared_version is None (regular dep inheriting from depMgmt) → follow
+          the local pom optimistically; we'd need full Maven evaluation to know
+          the resolved version, and in this monorepo unversioned deps virtually
+          always inherit from a SNAPSHOT BOM.
+        - Either version contains a Maven property (${…}) → follow optimistically.
+        - Otherwise the versions must equal.
+        """
+        local = coord_to_pom.get(coord)
+        if local is None:
+            return None
+        if declared_version is None:
+            return local
+        local_version = get_version(ET.fromstring(pom_contents[local])) or ''
+        if '${' in declared_version or '${' in local_version:
+            return local
+        return local if local_version == declared_version else None
+
     # Seed: every pom under seed_dir — pre-visited so they won't enter `needed`
     for path in pom_contents:
         if path.is_relative_to(seed_dir):
@@ -203,17 +253,41 @@ def find_needed_modules(
                 if local_parent.name != 'pom.xml':
                     local_parent = local_parent / 'pom.xml'
                 if local_parent in pom_contents:
-                    resolved = local_parent
-            # fall back to coordinate lookup if relativePath missing or not found locally
-            if resolved is None and parent.coord in coord_to_pom:
-                resolved = coord_to_pom[parent.coord]
+                    # Maven only uses the pom at <relativePath> if its coords AND
+                    # version match <parent>; otherwise it falls back to the repo.
+                    # The default ../pom.xml routinely resolves to an unrelated
+                    # repo-root pom.
+                    local_root = ET.fromstring(pom_contents[local_parent])
+                    if (get_coordinates(local_root) == parent.coord
+                            and (get_version(local_root) or '') == parent.version):
+                        resolved = local_parent
+            # fall back to coordinate lookup if relativePath missing, not found
+            # locally, or the local pom didn't match the declared parent
+            if resolved is None:
+                resolved = resolve_local(parent.coord, parent.version)
             if resolved is not None:
                 enqueue(resolved, required_by=pom_path)
 
         # Follow BOM imports
-        for coord in get_bom_imports(root):
-            if coord in coord_to_pom:
-                enqueue(coord_to_pom[coord], required_by=pom_path)
+        for coord, version in get_bom_imports(root):
+            local = resolve_local(coord, version)
+            if local is not None:
+                enqueue(local, required_by=pom_path)
+
+        # Follow regular <dependency> edges that resolve to another pom in this repo
+        for coord, version in get_regular_deps(root):
+            local = resolve_local(coord, version)
+            if local is not None:
+                enqueue(local, required_by=pom_path)
+
+        # Operational dep on the project's aggregator pom: we'll `cd <project>`
+        # to run mvn, which forces Maven to load <project>/pom.xml regardless
+        # of -pl, so its parent chain must already be installed. The aggregator
+        # is often unrelated to the module's own parent chain (e.g. pubsub-bom
+        # parents to a shared pom, not java-pubsub/pom.xml).
+        project_root = Path(pom_path.parts[0]) / 'pom.xml'
+        if project_root != pom_path and project_root in pom_contents:
+            enqueue(project_root, required_by=pom_path)
 
     return needed, dep_edges
 
@@ -244,25 +318,29 @@ def topo_sort(
 # ── install command generation ─────────────────────────────────────────────────
 
 def make_install_commands(sorted_poms: list[Path]) -> list[InstallCommand]:
-    """One mvn install command per top-level project, in dependency order."""
-    by_project: dict[str, list[str]] = defaultdict(list)
-    project_order: list[str] = []
-    seen_projects: set[str] = set()
+    """One mvn install per consecutive run of poms in the same top-level project.
+
+    We can't collapse all poms under a project into a single mvn invocation:
+    the topo order may interleave projects (e.g. A1, A2, B1, A3) when A3 has
+    a cross-project dep on B1. Flushing on project change preserves the order.
+    """
+    groups: list[tuple[str, list[str]]] = []  # [(project, [module_rel_paths])]
 
     for pom_path in sorted_poms:
         project = pom_path.parts[0]
-        if project not in seen_projects:
-            seen_projects.add(project)
-            project_order.append(project)
-
         pom_dir = pom_path.parent
         rel = str(pom_dir.relative_to(project)) if pom_dir != Path(project) else '.'
-        if rel not in by_project[project]:
-            by_project[project].append(rel)
+
+        if groups and groups[-1][0] == project:
+            modules = groups[-1][1]
+            if rel not in modules:
+                modules.append(rel)
+        else:
+            groups.append((project, [rel]))
 
     commands: list[InstallCommand] = []
-    for project in project_order:
-        sub_modules = [m for m in by_project[project] if m != '.']
+    for project, modules in groups:
+        sub_modules = [m for m in modules if m != '.']
         cmd = ['mvn', 'install', '-T', '1C', '-DskipTests', '-P', 'quick-build']
         if sub_modules:
             for m in sub_modules:

@@ -1762,6 +1762,17 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     assertNull(newAccessToken);
   }
 
+  @Test
+  void getRequestMetadata_withMultipleScopes_selfSignedJWT() throws IOException {
+    List<String> scopes = Arrays.asList("scope1", "scope2");
+    ServiceAccountCredentials credentials =
+        createDefaultBuilderWithKey(OAuth2Utils.privateKeyFromPkcs8(PRIVATE_KEY_PKCS8))
+            .setScopes(scopes)
+            .setUseJwtAccessWithScope(true)
+            .build();
+    verifyJwtAccess(credentials.getRequestMetadata(CALL_URI), "scope1 scope2");
+  }
+
   private void verifyJwtAccess(Map<String, List<String>> metadata, String expectedScopeClaim)
       throws IOException {
     assertNotNull(metadata);
@@ -1777,16 +1788,26 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
     assertNotNull(assertion, "Bearer assertion not found");
     JsonWebSignature signature =
         JsonWebSignature.parse(GsonFactory.getDefaultInstance(), assertion);
+    assertEquals("RS256", signature.getHeader().getAlgorithm());
+    assertEquals("JWT", signature.getHeader().getType());
     assertEquals(CLIENT_EMAIL, signature.getPayload().getIssuer());
     assertEquals(CLIENT_EMAIL, signature.getPayload().getSubject());
     if (expectedScopeClaim != null) {
       assertEquals(expectedScopeClaim, signature.getPayload().get("scope"));
-      assertFalse(signature.getPayload().containsKey("aud"));
+      assertNull(signature.getPayload().getAudience());
     } else {
       assertEquals(JWT_AUDIENCE, signature.getPayload().getAudience());
       assertFalse(signature.getPayload().containsKey("scope"));
     }
     assertEquals(PRIVATE_KEY_ID, signature.getHeader().getKeyId());
+
+    Long iat = signature.getPayload().getIssuedAtTimeSeconds();
+    Long exp = signature.getPayload().getExpirationTimeSeconds();
+    assertNotNull(iat);
+    assertNotNull(exp);
+    assertEquals(3600L, exp - iat);
+    long currentTimeSecs = System.currentTimeMillis() / 1000;
+    assertTrue(Math.abs(currentTimeSecs - iat) < 60);
   }
 
   static GenericJson writeServiceAccountJson(

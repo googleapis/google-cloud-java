@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -197,9 +199,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DomainMappingsClient implements BackgroundResource {
-  private final DomainMappingsSettings settings;
+  private final @Nullable DomainMappingsSettings settings;
   private final DomainMappingsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -247,7 +250,7 @@ public class DomainMappingsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final DomainMappingsSettings getSettings() {
+  public final @Nullable DomainMappingsSettings getSettings() {
     return settings;
   }
 
@@ -771,8 +774,9 @@ public class DomainMappingsClient implements BackgroundResource {
           ListDomainMappingsPage> {
 
     private ListDomainMappingsPage(
-        PageContext<ListDomainMappingsRequest, ListDomainMappingsResponse, DomainMapping> context,
-        ListDomainMappingsResponse response) {
+        @Nullable PageContext<ListDomainMappingsRequest, ListDomainMappingsResponse, DomainMapping>
+            context,
+        @Nullable ListDomainMappingsResponse response) {
       super(context, response);
     }
 
@@ -782,14 +786,16 @@ public class DomainMappingsClient implements BackgroundResource {
 
     @Override
     protected ListDomainMappingsPage createPage(
-        PageContext<ListDomainMappingsRequest, ListDomainMappingsResponse, DomainMapping> context,
-        ListDomainMappingsResponse response) {
+        @Nullable PageContext<ListDomainMappingsRequest, ListDomainMappingsResponse, DomainMapping>
+            context,
+        @Nullable ListDomainMappingsResponse response) {
       return new ListDomainMappingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDomainMappingsPage> createPageAsync(
-        PageContext<ListDomainMappingsRequest, ListDomainMappingsResponse, DomainMapping> context,
+        @Nullable PageContext<ListDomainMappingsRequest, ListDomainMappingsResponse, DomainMapping>
+            context,
         ApiFuture<ListDomainMappingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -804,7 +810,7 @@ public class DomainMappingsClient implements BackgroundResource {
           ListDomainMappingsFixedSizeCollection> {
 
     private ListDomainMappingsFixedSizeCollection(
-        List<ListDomainMappingsPage> pages, int collectionSize) {
+        @Nullable List<ListDomainMappingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -814,7 +820,7 @@ public class DomainMappingsClient implements BackgroundResource {
 
     @Override
     protected ListDomainMappingsFixedSizeCollection createCollection(
-        List<ListDomainMappingsPage> pages, int collectionSize) {
+        @Nullable List<ListDomainMappingsPage> pages, int collectionSize) {
       return new ListDomainMappingsFixedSizeCollection(pages, collectionSize);
     }
   }

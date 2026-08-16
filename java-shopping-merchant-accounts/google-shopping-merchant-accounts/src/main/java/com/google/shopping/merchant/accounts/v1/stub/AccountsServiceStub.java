@@ -33,6 +33,7 @@ import com.google.shopping.merchant.accounts.v1.ListSubAccountsRequest;
 import com.google.shopping.merchant.accounts.v1.ListSubAccountsResponse;
 import com.google.shopping.merchant.accounts.v1.UpdateAccountRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -40,6 +41,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class AccountsServiceStub implements BackgroundResource {
 

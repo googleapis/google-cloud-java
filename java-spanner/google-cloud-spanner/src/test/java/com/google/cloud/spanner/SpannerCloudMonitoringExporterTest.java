@@ -35,6 +35,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.Distribution;
 import com.google.api.core.ApiFuture;
@@ -72,13 +73,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
 
 public class SpannerCloudMonitoringExporterTest {
 
@@ -91,9 +88,7 @@ public class SpannerCloudMonitoringExporterTest {
   private static final String clientHash = "spanner-test";
   private static final String instanceConfigId = "fake-instance-config-id";
 
-  @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
-
-  @Mock private MetricServiceStub mockMetricServiceStub;
+  private MetricServiceStub mockMetricServiceStub;
   private MetricServiceClient fakeMetricServiceClient;
   private SpannerCloudMonitoringExporter exporter;
 
@@ -107,6 +102,8 @@ public class SpannerCloudMonitoringExporterTest {
 
   @Before
   public void setUp() {
+    mockMetricServiceStub =
+        Mockito.mock(MetricServiceStub.class, Mockito.withSettings().withoutAnnotations());
     fakeMetricServiceClient = new FakeMetricServiceClient(mockMetricServiceStub);
     exporter = new SpannerCloudMonitoringExporter(fakeMetricServiceClient);
 
@@ -143,7 +140,8 @@ public class SpannerCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = Mockito.mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        Mockito.mock(UnaryCallable.class, withSettings().withoutAnnotations());
     Mockito.when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     Mockito.when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
@@ -207,7 +205,8 @@ public class SpannerCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = Mockito.mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        Mockito.mock(UnaryCallable.class, withSettings().withoutAnnotations());
     Mockito.when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     Mockito.when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
@@ -275,7 +274,8 @@ public class SpannerCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
     when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
@@ -315,7 +315,8 @@ public class SpannerCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
     when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
@@ -359,7 +360,8 @@ public class SpannerCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
     when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
@@ -408,7 +410,8 @@ public class SpannerCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
     when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
@@ -480,7 +483,8 @@ public class SpannerCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
     when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
@@ -556,7 +560,8 @@ public class SpannerCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        mock(UnaryCallable.class, withSettings().withoutAnnotations());
     when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);

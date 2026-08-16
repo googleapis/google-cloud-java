@@ -40,6 +40,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -89,6 +90,7 @@ class ConnectionWorkerPoolTest {
             .build();
     ConnectionWorker.Load.setOverwhelmedCountsThreshold(0.5);
     ConnectionWorker.Load.setOverwhelmedBytesThreshold(0.6);
+    ConnectionWorker.Load.setOverwhelmedTimeSinceLastCallbackThreshold(Duration.ofSeconds(3));
   }
 
   @Test
@@ -228,15 +230,27 @@ class ConnectionWorkerPoolTest {
         createConnectionWorkerPool(
             /* maxRequests= */ 3, /* maxBytes= */ 1000, java.time.Duration.ofSeconds(5));
 
-    // Sets the sleep time to simulate requests stuck in connection.
-    testBigQueryWrite.setResponseSleep(Duration.ofMillis(50L));
     StreamWriter writeStream1 = getTestStreamWriter(TEST_STREAM_1);
     StreamWriter writeStream2 = getTestStreamWriter(TEST_STREAM_2);
 
     // Try append 20 requests, at the end we should have 2 requests per connection.
     long appendCount = 20;
+    // Use a CountDownLatch to block mock server responses. This ensures all 20 requests
+    // remain in-flight simultaneously, forcing the ConnectionWorkerPool to scale up to
+    // 10 connections. Without this blocking, requests might finish early and prevent scaling.
+    CountDownLatch latch = new CountDownLatch(1);
     for (long i = 0; i < appendCount; i++) {
-      testBigQueryWrite.addResponse(createAppendResponse(i));
+      long offset = i;
+      testBigQueryWrite.addResponse(
+          () -> {
+            try {
+              latch.await();
+            } catch (InterruptedException e) {
+              Thread.currentThread().interrupt();
+              throw new RuntimeException(e);
+            }
+            return new FakeBigQueryWriteImpl.Response(createAppendResponse(offset));
+          });
     }
     List<ApiFuture<?>> futures = new ArrayList<>();
 
@@ -252,12 +266,18 @@ class ConnectionWorkerPoolTest {
               writeStream, connectionWorkerPool, new String[] {String.valueOf(i)}, i));
     }
 
+    // At the end we should scale up to 10 connections.
+    try {
+      assertThat(connectionWorkerPool.getCreateConnectionCount()).isEqualTo(10);
+      assertThat(connectionWorkerPool.getTotalConnectionCount()).isEqualTo(10);
+    } finally {
+      // Release the latch to allow requests to complete.
+      latch.countDown();
+    }
+
     for (ApiFuture<?> future : futures) {
       future.get();
     }
-    // At the end we should scale up to 10 connections.
-    assertThat(connectionWorkerPool.getCreateConnectionCount()).isEqualTo(10);
-    assertThat(connectionWorkerPool.getTotalConnectionCount()).isEqualTo(10);
 
     // Start testing calling close on each stream.
     // When we close the first stream, only the connection that only serve stream 1 will be closed.
@@ -272,14 +292,16 @@ class ConnectionWorkerPoolTest {
 
   @Test
   void testMultiStreamAppend_appendWhileClosing() throws Exception {
+    // Limit max connections to 5 (same as min connections) to prevent timing-dependent
+    // scale up during concurrent appends in this test, which expects exactly 5 connections.
     ConnectionWorkerPool.setOptions(
-        Settings.builder().setMaxConnectionsPerRegion(10).setMinConnectionsPerRegion(5).build());
+        Settings.builder().setMaxConnectionsPerRegion(5).setMinConnectionsPerRegion(5).build());
     ConnectionWorkerPool connectionWorkerPool =
         createConnectionWorkerPool(
             /* maxRequests= */ 3, /* maxBytes= */ 100000, java.time.Duration.ofSeconds(5));
 
     // Sets the sleep time to simulate requests stuck in connection.
-    testBigQueryWrite.setResponseSleep(Duration.ofMillis(50L));
+    testBigQueryWrite.setResponseSleep(Duration.ofMillis(200L));
     StreamWriter writeStream1 = getTestStreamWriter(TEST_STREAM_1);
     StreamWriter writeStream2 = getTestStreamWriter(TEST_STREAM_2);
 
@@ -553,6 +575,55 @@ class ConnectionWorkerPoolTest {
       rowsBuilder.addSerializedRows(foo.toByteString());
     }
     return rowsBuilder.build();
+  }
+
+  @Test
+  void testSingleTableConnections_overwhelmed_timeSinceLastCallback() throws Exception {
+    // Set count/bytes thresholds to be very high so they don't trigger.
+    ConnectionWorker.Load.setOverwhelmedCountsThreshold(0.9);
+    ConnectionWorker.Load.setOverwhelmedBytesThreshold(0.9);
+    // Set time threshold to 100ms.
+    ConnectionWorker.Load.setOverwhelmedTimeSinceLastCallbackThreshold(Duration.ofMillis(100));
+
+    // We use a pool with max 8 connections.
+    ConnectionWorkerPool.setOptions(
+        Settings.builder()
+            .setMinConnectionsPerRegion(1) // Start with 1 connection to make scaling obvious.
+            .setMaxConnectionsPerRegion(8)
+            .build());
+
+    // We set maxRequests to a large value (100) so it's not overwhelmed by count (threshold 90).
+    ConnectionWorkerPool connectionWorkerPool =
+        createConnectionWorkerPool(
+            /* maxRequests= */ 100, /* maxBytes= */ 1000000, java.time.Duration.ofSeconds(5));
+
+    // Stuck requests for 500ms (larger than 100ms threshold).
+    testBigQueryWrite.setResponseSleep(Duration.ofSeconds(1));
+
+    // Send 1 request. It will go to Connection 1.
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+    StreamWriter writer = getTestStreamWriter(TEST_STREAM_1);
+
+    ApiFuture<AppendRowsResponse> future1 =
+        sendFooStringTestMessage(writer, connectionWorkerPool, new String[] {"0"}, 0);
+
+    // Wait 500ms. Request 1 is still in flight (needs 1000ms).
+    // Connection 1 timeSinceLastCallback should be ~500ms > 100ms.
+    // So Connection 1 is now overwhelmed.
+    Thread.sleep(500);
+
+    // Send Request 2. Since Connection 1 is overwhelmed, it should scale up and create Connection
+    // 2.
+    testBigQueryWrite.addResponse(createAppendResponse(1));
+    ApiFuture<AppendRowsResponse> future2 =
+        sendFooStringTestMessage(writer, connectionWorkerPool, new String[] {"1"}, 1);
+
+    // Wait for both to finish.
+    future1.get();
+    future2.get();
+
+    // Verify that we created 2 connections.
+    assertThat(connectionWorkerPool.getCreateConnectionCount()).isEqualTo(2);
   }
 
   ConnectionWorkerPool createConnectionWorkerPool(

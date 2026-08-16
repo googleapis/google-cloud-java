@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -335,9 +337,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CloudControlsPartnerCoreClient implements BackgroundResource {
-  private final CloudControlsPartnerCoreSettings settings;
+  private final @Nullable CloudControlsPartnerCoreSettings settings;
   private final CloudControlsPartnerCoreStub stub;
 
   /** Constructs an instance of CloudControlsPartnerCoreClient with default settings. */
@@ -379,7 +382,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CloudControlsPartnerCoreSettings getSettings() {
+  public final @Nullable CloudControlsPartnerCoreSettings getSettings() {
     return settings;
   }
 
@@ -411,7 +414,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Workload getWorkload(WorkloadName name) {
+  public final Workload getWorkload(@Nullable WorkloadName name) {
     GetWorkloadRequest request =
         GetWorkloadRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWorkload(request);
@@ -533,7 +536,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *     `organizations/{organization}/locations/{location}/customers/{customer}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListWorkloadsPagedResponse listWorkloads(CustomerName parent) {
+  public final ListWorkloadsPagedResponse listWorkloads(@Nullable CustomerName parent) {
     ListWorkloadsRequest request =
         ListWorkloadsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -707,7 +710,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *     `organizations/{organization}/locations/{location}/customers/{customer}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Customer getCustomer(CustomerName name) {
+  public final Customer getCustomer(@Nullable CustomerName name) {
     GetCustomerRequest request =
         GetCustomerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCustomer(request);
@@ -824,7 +827,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *     `organizations/{organization}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCustomersPagedResponse listCustomers(OrganizationLocationName parent) {
+  public final ListCustomersPagedResponse listCustomers(@Nullable OrganizationLocationName parent) {
     ListCustomersRequest request =
         ListCustomersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -999,7 +1002,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/ekmConnections`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EkmConnections getEkmConnections(EkmConnectionsName name) {
+  public final EkmConnections getEkmConnections(@Nullable EkmConnectionsName name) {
     GetEkmConnectionsRequest request =
         GetEkmConnectionsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1123,7 +1126,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/partnerPermissions`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PartnerPermissions getPartnerPermissions(PartnerPermissionsName name) {
+  public final PartnerPermissions getPartnerPermissions(@Nullable PartnerPermissionsName name) {
     GetPartnerPermissionsRequest request =
         GetPartnerPermissionsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1258,7 +1261,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    */
   @Deprecated
   public final ListAccessApprovalRequestsPagedResponse listAccessApprovalRequests(
-      WorkloadName parent) {
+      @Nullable WorkloadName parent) {
     ListAccessApprovalRequestsRequest request =
         ListAccessApprovalRequestsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1460,7 +1463,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    * @param name Required. Format: `organizations/{organization}/locations/{location}/partner`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Partner getPartner(PartnerName name) {
+  public final Partner getPartner(@Nullable PartnerName name) {
     GetPartnerRequest request =
         GetPartnerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPartner(request);
@@ -1582,7 +1585,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Customer createCustomer(
-      OrganizationLocationName parent, Customer customer, String customerId) {
+      @Nullable OrganizationLocationName parent, Customer customer, String customerId) {
     CreateCustomerRequest request =
         CreateCustomerRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1808,7 +1811,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
    *     name=organizations/&#42;/locations/&#42;/customers/&#42;
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCustomer(CustomerName name) {
+  public final void deleteCustomer(@Nullable CustomerName name) {
     DeleteCustomerRequest request =
         DeleteCustomerRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteCustomer(request);
@@ -1959,8 +1962,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
           ListWorkloadsRequest, ListWorkloadsResponse, Workload, ListWorkloadsPage> {
 
     private ListWorkloadsPage(
-        PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
-        ListWorkloadsResponse response) {
+        @Nullable PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
+        @Nullable ListWorkloadsResponse response) {
       super(context, response);
     }
 
@@ -1970,14 +1973,14 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
     @Override
     protected ListWorkloadsPage createPage(
-        PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
-        ListWorkloadsResponse response) {
+        @Nullable PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
+        @Nullable ListWorkloadsResponse response) {
       return new ListWorkloadsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListWorkloadsPage> createPageAsync(
-        PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
+        @Nullable PageContext<ListWorkloadsRequest, ListWorkloadsResponse, Workload> context,
         ApiFuture<ListWorkloadsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1991,7 +1994,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
           ListWorkloadsPage,
           ListWorkloadsFixedSizeCollection> {
 
-    private ListWorkloadsFixedSizeCollection(List<ListWorkloadsPage> pages, int collectionSize) {
+    private ListWorkloadsFixedSizeCollection(
+        @Nullable List<ListWorkloadsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2001,7 +2005,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
     @Override
     protected ListWorkloadsFixedSizeCollection createCollection(
-        List<ListWorkloadsPage> pages, int collectionSize) {
+        @Nullable List<ListWorkloadsPage> pages, int collectionSize) {
       return new ListWorkloadsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2035,8 +2039,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
           ListCustomersRequest, ListCustomersResponse, Customer, ListCustomersPage> {
 
     private ListCustomersPage(
-        PageContext<ListCustomersRequest, ListCustomersResponse, Customer> context,
-        ListCustomersResponse response) {
+        @Nullable PageContext<ListCustomersRequest, ListCustomersResponse, Customer> context,
+        @Nullable ListCustomersResponse response) {
       super(context, response);
     }
 
@@ -2046,14 +2050,14 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
     @Override
     protected ListCustomersPage createPage(
-        PageContext<ListCustomersRequest, ListCustomersResponse, Customer> context,
-        ListCustomersResponse response) {
+        @Nullable PageContext<ListCustomersRequest, ListCustomersResponse, Customer> context,
+        @Nullable ListCustomersResponse response) {
       return new ListCustomersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCustomersPage> createPageAsync(
-        PageContext<ListCustomersRequest, ListCustomersResponse, Customer> context,
+        @Nullable PageContext<ListCustomersRequest, ListCustomersResponse, Customer> context,
         ApiFuture<ListCustomersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2067,7 +2071,8 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
           ListCustomersPage,
           ListCustomersFixedSizeCollection> {
 
-    private ListCustomersFixedSizeCollection(List<ListCustomersPage> pages, int collectionSize) {
+    private ListCustomersFixedSizeCollection(
+        @Nullable List<ListCustomersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2077,7 +2082,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
     @Override
     protected ListCustomersFixedSizeCollection createCollection(
-        List<ListCustomersPage> pages, int collectionSize) {
+        @Nullable List<ListCustomersPage> pages, int collectionSize) {
       return new ListCustomersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2118,12 +2123,13 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
           ListAccessApprovalRequestsPage> {
 
     private ListAccessApprovalRequestsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAccessApprovalRequestsRequest,
                 ListAccessApprovalRequestsResponse,
                 AccessApprovalRequest>
             context,
-        ListAccessApprovalRequestsResponse response) {
+        @Nullable ListAccessApprovalRequestsResponse response) {
       super(context, response);
     }
 
@@ -2133,18 +2139,20 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
     @Override
     protected ListAccessApprovalRequestsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAccessApprovalRequestsRequest,
                 ListAccessApprovalRequestsResponse,
                 AccessApprovalRequest>
             context,
-        ListAccessApprovalRequestsResponse response) {
+        @Nullable ListAccessApprovalRequestsResponse response) {
       return new ListAccessApprovalRequestsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAccessApprovalRequestsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListAccessApprovalRequestsRequest,
                 ListAccessApprovalRequestsResponse,
                 AccessApprovalRequest>
@@ -2163,7 +2171,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
           ListAccessApprovalRequestsFixedSizeCollection> {
 
     private ListAccessApprovalRequestsFixedSizeCollection(
-        List<ListAccessApprovalRequestsPage> pages, int collectionSize) {
+        @Nullable List<ListAccessApprovalRequestsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2173,7 +2181,7 @@ public class CloudControlsPartnerCoreClient implements BackgroundResource {
 
     @Override
     protected ListAccessApprovalRequestsFixedSizeCollection createCollection(
-        List<ListAccessApprovalRequestsPage> pages, int collectionSize) {
+        @Nullable List<ListAccessApprovalRequestsPage> pages, int collectionSize) {
       return new ListAccessApprovalRequestsFixedSizeCollection(pages, collectionSize);
     }
   }

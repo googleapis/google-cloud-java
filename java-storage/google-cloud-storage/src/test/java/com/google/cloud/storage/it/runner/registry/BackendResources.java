@@ -259,10 +259,10 @@ final class BackendResources implements ManagedLifecycle {
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
                   BucketInfo.newBuilder(bucketName)
-                      .setLocation(zone.get().get().getRegion())
+                      .setLocation("us-central1")
                       .setCustomPlacementConfig(
                           CustomPlacementConfig.newBuilder()
-                              .setDataLocations(ImmutableList.of(zone.get().get().getZone()))
+                              .setDataLocations(ImmutableList.of("us-central1-c"))
                               .build())
                       .setStorageClass(StorageClass.valueOf("RAPID"))
                       .setHierarchicalNamespace(

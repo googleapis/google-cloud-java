@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AnnotatedDatasetName implements ResourceName {
   private static final PathTemplate PROJECT_DATASET_ANNOTATED_DATASET =
@@ -87,7 +90,7 @@ public class AnnotatedDatasetName implements ResourceName {
         .toString();
   }
 
-  public static AnnotatedDatasetName parse(String formattedString) {
+  public static @Nullable AnnotatedDatasetName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -105,7 +108,7 @@ public class AnnotatedDatasetName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<AnnotatedDatasetName> values) {
+  public static List<String> toStringList(List<@Nullable AnnotatedDatasetName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (AnnotatedDatasetName value : values) {
       if (value == null) {
@@ -154,7 +157,7 @@ public class AnnotatedDatasetName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

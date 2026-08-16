@@ -141,7 +141,7 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testExecutorPropagatesMdc() throws Exception {
     BigQueryJdbcMdc.registerInstance("JdbcConnection-Executor-Test");
-    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(2);
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool("Metadata Fetch Pool", 2);
 
     try {
       // Test Runnable submission
@@ -196,7 +196,7 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testExecutorThrowsNpeOnNullCommand() {
-    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(2);
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool("Metadata Fetch Pool", 2);
     try {
       assertThrows(NullPointerException.class, () -> executor.execute(null));
     } finally {
@@ -207,7 +207,7 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testExecutorWrapsCustomRunnableFuture() throws Exception {
     BigQueryJdbcMdc.registerInstance("JdbcConnection-CustomFuture-Test");
-    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(2);
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool("Metadata Fetch Pool", 2);
     try {
       CountDownLatch latch = new CountDownLatch(1);
       AtomicReference<String> mdcVal = new AtomicReference<>();
@@ -230,7 +230,7 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testPoolThreadInheritanceSevered() throws Exception {
     BigQueryJdbcMdc.registerInstance("JdbcConnection-ParentContext");
-    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(1);
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool("Metadata Fetch Pool", 1);
     try {
       CountDownLatch initLatch = new CountDownLatch(1);
       executor.execute(initLatch::countDown);
@@ -255,11 +255,11 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testNewFixedThreadPoolTimeout() {
-    ExecutorService exec2 = BigQueryJdbcMdc.newFixedThreadPool(2);
-    ExecutorService exec3 = BigQueryJdbcMdc.newFixedThreadPool(3);
-    ExecutorService exec4 = BigQueryJdbcMdc.newFixedThreadPool(4);
-    ExecutorService exec5 = BigQueryJdbcMdc.newFixedThreadPool(5);
-    ExecutorService exec10 = BigQueryJdbcMdc.newFixedThreadPool(10);
+    ExecutorService exec2 = BigQueryJdbcMdc.newFixedThreadPool("Metadata Fetch Pool", 2);
+    ExecutorService exec3 = BigQueryJdbcMdc.newFixedThreadPool("Metadata Fetch Pool", 3);
+    ExecutorService exec4 = BigQueryJdbcMdc.newFixedThreadPool("Metadata Fetch Pool", 4);
+    ExecutorService exec5 = BigQueryJdbcMdc.newFixedThreadPool("Metadata Fetch Pool", 5);
+    ExecutorService exec10 = BigQueryJdbcMdc.newFixedThreadPool("Metadata Fetch Pool", 10);
 
     try {
       assertEquals(2, ((ThreadPoolExecutor) exec2).getCorePoolSize());
@@ -358,7 +358,7 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testThreadPoolSaturatingWarning() throws Exception {
-    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(1);
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool("Metadata Fetch Pool", 1);
     try {
       CountDownLatch blockLatch = new CountDownLatch(1);
 
@@ -391,7 +391,7 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testThreadPoolHysteresisWarning() throws Exception {
-    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool(1);
+    ExecutorService executor = BigQueryJdbcMdc.newFixedThreadPool("Metadata Fetch Pool", 1);
     try {
       CountDownLatch blockLatch1 = new CountDownLatch(1);
 
@@ -450,6 +450,51 @@ public class BigQueryJdbcMdcTest extends BigQueryJdbcLoggingBaseTest {
       blockLatch2.countDown();
     } finally {
       executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testThreadNaming() throws Exception {
+    String fixedPoolNamePrefix = "Test Fixed Pool";
+    ExecutorService fixedExecutor = BigQueryJdbcMdc.newFixedThreadPool(fixedPoolNamePrefix, 1);
+    try {
+      AtomicReference<String> threadNameRef = new AtomicReference<>();
+      CountDownLatch latch = new CountDownLatch(1);
+      fixedExecutor.execute(
+          () -> {
+            threadNameRef.set(Thread.currentThread().getName());
+            latch.countDown();
+          });
+      assertTrue(latch.await(5, TimeUnit.SECONDS));
+      assertTrue(
+          threadNameRef.get().startsWith(fixedPoolNamePrefix + "-"),
+          "Expected thread name to start with '"
+              + fixedPoolNamePrefix
+              + "-', but was: "
+              + threadNameRef.get());
+    } finally {
+      fixedExecutor.shutdownNow();
+    }
+
+    String cachedPoolNamePrefix = "Test Cached Pool";
+    ExecutorService cachedExecutor = BigQueryJdbcMdc.newCachedThreadPool(cachedPoolNamePrefix);
+    try {
+      AtomicReference<String> threadNameRef = new AtomicReference<>();
+      CountDownLatch latch = new CountDownLatch(1);
+      cachedExecutor.execute(
+          () -> {
+            threadNameRef.set(Thread.currentThread().getName());
+            latch.countDown();
+          });
+      assertTrue(latch.await(5, TimeUnit.SECONDS));
+      assertTrue(
+          threadNameRef.get().startsWith(cachedPoolNamePrefix + "-"),
+          "Expected thread name to start with '"
+              + cachedPoolNamePrefix
+              + "-', but was: "
+              + threadNameRef.get());
+    } finally {
+      cachedExecutor.shutdownNow();
     }
   }
 }

@@ -48,10 +48,7 @@ import org.junit.jupiter.api.Test;
 
 public class ITCallableStatementTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
-  static final String connection_uri =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-          + PROJECT_ID
-          + ";OAUTHTYPE=3";
+  static final String connection_uri = ITBase.connectionUrl;
   private static final Random random = new Random();
   private static String DATASET;
   private static final String CALLABLE_STMT_PROC_NAME = "IT_CALLABLE_STMT_PROC_TEST";
@@ -607,9 +604,7 @@ public class ITCallableStatementTest extends ITBase {
 
   @Test
   public void testScript() throws SQLException {
-    String BASE_QUERY =
-        "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
-            + " trip_distance asc LIMIT %s;";
+    String BASE_QUERY = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));";
     String query1 = String.format(BASE_QUERY, 5000);
     String query2 = String.format(BASE_QUERY, 7000);
     String query3 = String.format(BASE_QUERY, 9000);

@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class LbRouteExtensionName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_LB_ROUTE_EXTENSION =
@@ -87,7 +90,7 @@ public class LbRouteExtensionName implements ResourceName {
         .toString();
   }
 
-  public static LbRouteExtensionName parse(String formattedString) {
+  public static @Nullable LbRouteExtensionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -106,7 +109,7 @@ public class LbRouteExtensionName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<LbRouteExtensionName> values) {
+  public static List<String> toStringList(List<@Nullable LbRouteExtensionName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (LbRouteExtensionName value : values) {
       if (value == null) {
@@ -155,7 +158,7 @@ public class LbRouteExtensionName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

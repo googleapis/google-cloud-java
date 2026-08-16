@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class TransitionRouteGroupName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_AGENT_FLOW_TRANSITION_ROUTE_GROUP =
@@ -176,7 +179,7 @@ public class TransitionRouteGroupName implements ResourceName {
         .toString();
   }
 
-  public static TransitionRouteGroupName parse(String formattedString) {
+  public static @Nullable TransitionRouteGroupName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -210,7 +213,7 @@ public class TransitionRouteGroupName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<TransitionRouteGroupName> values) {
+  public static List<String> toStringList(List<@Nullable TransitionRouteGroupName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (TransitionRouteGroupName value : values) {
       if (value == null) {
@@ -265,7 +268,7 @@ public class TransitionRouteGroupName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

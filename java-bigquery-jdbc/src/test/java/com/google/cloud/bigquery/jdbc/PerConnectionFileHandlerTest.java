@@ -31,6 +31,7 @@ import java.nio.file.Path;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Optional;
+import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import org.junit.jupiter.api.AfterEach;
@@ -45,12 +46,15 @@ public class PerConnectionFileHandlerTest {
 
   private PerConnectionFileHandler handler;
   private BigQueryConnection mockConnection;
+  private Level originalLevel;
 
   @BeforeEach
   public void setUp() {
     handler = new PerConnectionFileHandler(tempDir.toString(), Level.INFO);
     mockConnection = Mockito.mock(BigQueryConnection.class);
     BigQueryJdbcMdc.clear();
+    originalLevel = BigQueryJdbcRootLogger.getRootLogger().getLevel();
+    BigQueryJdbcRootLogger.getRootLogger().setLevel(Level.ALL);
   }
 
   @AfterEach
@@ -59,6 +63,7 @@ public class PerConnectionFileHandlerTest {
       handler.close();
     }
     BigQueryJdbcMdc.clear();
+    BigQueryJdbcRootLogger.getRootLogger().setLevel(originalLevel);
   }
 
   private Optional<Path> findLogFile(String suffix) throws IOException {
@@ -195,7 +200,8 @@ public class PerConnectionFileHandlerTest {
 
       // Instantiate a real BigQueryJsonResultSet (which extends BigQueryBaseResultSet)
       // passing the mock statement carrying connectionId "c789"
-      BigQueryJsonResultSet rs = BigQueryJsonResultSet.of(schema, 0, null, mockStmt, new Thread[0]);
+      BigQueryJsonResultSet rs =
+          BigQueryJsonResultSet.of(schema, 0, null, mockStmt, new Future<?>[0]);
 
       // Calling findColumn(null) throws SQLException because column label is null
       assertThrows(SQLException.class, () -> rs.findColumn(null));

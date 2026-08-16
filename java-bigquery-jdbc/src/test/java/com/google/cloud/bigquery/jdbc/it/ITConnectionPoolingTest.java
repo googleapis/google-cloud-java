@@ -28,12 +28,12 @@ import com.google.cloud.bigquery.jdbc.PooledConnectionDataSource;
 import com.google.cloud.bigquery.jdbc.PooledConnectionListener;
 import com.google.cloud.bigquery.jdbc.utils.TestUtilities.TestConnectionListener;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import javax.sql.PooledConnection;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITConnectionPoolingTest extends ITBase {
@@ -43,8 +43,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionDataSourceSuccess() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -62,9 +61,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionDataSourceFailInvalidConnectionURl() {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;"
-            + "ListenerPoolSize=invalid";
+    String connectionUrl = ITBase.connectionUrl + "ListenerPoolSize=invalid;";
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
 
@@ -73,8 +70,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionAddConnectionListener() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -89,8 +85,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionRemoveConnectionListener() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -105,8 +100,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionConnectionClosed() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -129,8 +123,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionClose() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -149,8 +142,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionConnectionError() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -178,8 +170,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionListenerAddListener() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -194,8 +185,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionListenerRemoveListener() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -213,8 +203,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionListenerCloseConnection() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -236,8 +225,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionListenerClosePooledConnection() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -254,8 +242,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
   @Test
   public void testPooledConnectionListenerConnectionError() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
+    String connectionUrl = ITBase.connectionUrl + "ConnectionPoolSize=20;" + "ListenerPoolSize=20;";
 
     PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
     pooledDataSource.setURL(connectionUrl);
@@ -280,25 +267,18 @@ public class ITConnectionPoolingTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testExecuteQueryWithConnectionPoolingEnabledDefaultPoolSize() throws SQLException {
-    String connectionURL =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;ProjectId="
-            + PROJECT_ID
-            + ";";
+    String connectionURL = ITBase.connectionUrl;
+
     assertConnectionPoolingResults(connectionURL, DEFAULT_CONN_POOL_SIZE);
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testExecuteQueryWithConnectionPoolingEnabledCustomPoolSize() throws SQLException {
     String connectionURL =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;ProjectId="
-            + PROJECT_ID
-            + ";"
-            + "ConnectionPoolSize="
-            + CUSTOM_CONN_POOL_SIZE
-            + ";";
+        ITBase.connectionUrl + "ConnectionPoolSize=" + CUSTOM_CONN_POOL_SIZE + ";";
     assertConnectionPoolingResults(connectionURL, CUSTOM_CONN_POOL_SIZE);
   }
 
@@ -321,10 +301,8 @@ public class ITConnectionPoolingTest extends ITBase {
     assertFalse(connection.isClosed());
 
     // Execute query with physical connection
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+    ITBase.validateStatement(statement, 850);
 
     // Close physical connection
     connection.close();
@@ -341,8 +319,7 @@ public class ITConnectionPoolingTest extends ITBase {
     assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
 
     // Execute query with reusable physical connection
-    jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+    ITBase.validateStatement(statement, 850);
 
     // Return connection back to the pool.
     connection.close();
@@ -350,7 +327,6 @@ public class ITConnectionPoolingTest extends ITBase {
     assertEquals(1, listener.getConnectionPoolCurrentCapacity());
     assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
     pooledConnection.close();
-    jsonResultSet.close();
     statement.close();
     connection.close();
   }

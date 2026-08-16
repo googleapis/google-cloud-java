@@ -16,7 +16,10 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
 
+import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
+import io.opentelemetry.api.OpenTelemetry;
 import java.sql.Connection;
 import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
@@ -78,12 +81,14 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testGetMajorVersionMatchesDriverMajorVersion() {
-    assertThat(bigQueryDriver.getMajorVersion()).isEqualTo(0);
+    assertThat(bigQueryDriver.getMajorVersion())
+        .isEqualTo(BigQueryJdbcVersionUtility.getDriverMajorVersion());
   }
 
   @Test
   public void testGetMinorVersionMatchesDriverMinorVersion() {
-    assertThat(bigQueryDriver.getMinorVersion()).isEqualTo(1);
+    assertThat(bigQueryDriver.getMinorVersion())
+        .isEqualTo(BigQueryJdbcVersionUtility.getDriverMinorVersion());
   }
 
   @Test
@@ -104,6 +109,23 @@ public class BigQueryDriverTest extends BigQueryJdbcLoggingBaseTest {
                 + "OAuthType=2;OAuthAccessToken=redactedToken;ProjectId=t;"
                 + "InvalidProperty=Value",
             new Properties());
+    assertThat(connection.isClosed()).isFalse();
+  }
+
+  @Test
+  public void testConnect_withCustomOpenTelemetry_injectsIntoDataSource() throws SQLException {
+    OpenTelemetry mockOtel = mock(OpenTelemetry.class);
+    Properties props = new Properties();
+    props.put("customOpenTelemetry", mockOtel);
+
+    // Connect using standard URL setup but pass the SDK via Properties
+    Connection connection =
+        bigQueryDriver.connect(
+            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                + "OAuthType=2;ProjectId=MyBigQueryProject;OAuthAccessToken=redacted;",
+            props);
+
+    assertThat(connection).isNotNull();
     assertThat(connection.isClosed()).isFalse();
   }
 

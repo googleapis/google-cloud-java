@@ -5,14 +5,11 @@
   "api_description": "n/a",
   "client_documentation": "https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-iam-policy",
   "distribution_name": "com.google.cloud:google-iam-policy",
   "api_id": "iam.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true,
-  "excluded_dependencies": "google-iam-policy",
-  "excluded_poms": "proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1"
+  "library_type": "GAPIC_AUTO"
 }

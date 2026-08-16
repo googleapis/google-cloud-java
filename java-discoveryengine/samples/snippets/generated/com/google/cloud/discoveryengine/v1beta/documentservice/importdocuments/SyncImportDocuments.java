@@ -47,6 +47,7 @@ public class SyncImportDocuments {
               .setUpdateMask(FieldMask.newBuilder().build())
               .setAutoGenerateIds(true)
               .setIdField("idField1629396127")
+              .setForceRefreshContent(true)
               .build();
       ImportDocumentsResponse response = documentServiceClient.importDocumentsAsync(request).get();
     }

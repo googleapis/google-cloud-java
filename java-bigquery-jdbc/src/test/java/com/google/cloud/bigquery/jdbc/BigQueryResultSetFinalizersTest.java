@@ -16,52 +16,33 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
+import java.util.concurrent.Future;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BigQueryResultSetFinalizersTest {
-  Thread arrowWorker;
-  Thread[] jsonWorkers;
+  Future<?>[] jsonWorkers;
 
   @BeforeEach
   public void setUp() {
-    // create and start the demon threads
-    arrowWorker =
-        new Thread(
-            () -> {
-              while (true) {
-                if (Thread.currentThread().isInterrupted()) {
-                  break;
-                }
-              }
-            });
-    arrowWorker.setDaemon(true);
-    Thread jsonWorker =
-        new Thread(
-            () -> {
-              while (true) {
-                if (Thread.currentThread().isInterrupted()) {
-                  break;
-                }
-              }
-            });
-    jsonWorker.setDaemon(true);
-    jsonWorkers = new Thread[] {jsonWorker};
-    arrowWorker.start();
-    jsonWorker.start();
+    Future<?> mockFuture = mock(Future.class);
+    jsonWorkers = new Future<?>[] {mockFuture};
   }
 
   @Test
   public void testFinalizeResources() {
+    Future<?> mockFuture = mock(Future.class);
     BigQueryResultSetFinalizers.ArrowResultSetFinalizer arrowResultSetFinalizer =
-        new BigQueryResultSetFinalizers.ArrowResultSetFinalizer(null, null, arrowWorker);
+        new BigQueryResultSetFinalizers.ArrowResultSetFinalizer(null, null, mockFuture);
     arrowResultSetFinalizer.finalizeResources();
-    assertThat(arrowWorker.isInterrupted()).isTrue();
+    verify(mockFuture).cancel(true);
+
     BigQueryResultSetFinalizers.JsonResultSetFinalizer jsonResultSetFinalizer =
         new BigQueryResultSetFinalizers.JsonResultSetFinalizer(null, null, jsonWorkers);
     jsonResultSetFinalizer.finalizeResources();
-    assertThat(jsonWorkers[0].isInterrupted()).isTrue();
+    verify(jsonWorkers[0]).cancel(true);
   }
 }

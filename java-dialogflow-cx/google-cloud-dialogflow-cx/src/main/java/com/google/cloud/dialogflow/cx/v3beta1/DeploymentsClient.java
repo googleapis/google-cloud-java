@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -110,8 +112,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -193,10 +194,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class DeploymentsClient implements BackgroundResource {
-  private final DeploymentsSettings settings;
+  private final @Nullable DeploymentsSettings settings;
   private final DeploymentsStub stub;
 
   /** Constructs an instance of DeploymentsClient with default settings. */
@@ -235,7 +237,7 @@ public class DeploymentsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DeploymentsSettings getSettings() {
+  public final @Nullable DeploymentsSettings getSettings() {
     return settings;
   }
 
@@ -270,7 +272,7 @@ public class DeploymentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeploymentsPagedResponse listDeployments(EnvironmentName parent) {
+  public final ListDeploymentsPagedResponse listDeployments(@Nullable EnvironmentName parent) {
     ListDeploymentsRequest request =
         ListDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -448,7 +450,7 @@ public class DeploymentsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/environments/&lt;EnvironmentID&gt;/deployments/&lt;DeploymentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Deployment getDeployment(DeploymentName name) {
+  public final Deployment getDeployment(@Nullable DeploymentName name) {
     GetDeploymentRequest request =
         GetDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDeployment(request);
@@ -550,9 +552,8 @@ public class DeploymentsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -596,9 +597,8 @@ public class DeploymentsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -643,9 +643,8 @@ public class DeploymentsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -798,8 +797,8 @@ public class DeploymentsClient implements BackgroundResource {
           ListDeploymentsRequest, ListDeploymentsResponse, Deployment, ListDeploymentsPage> {
 
     private ListDeploymentsPage(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
-        ListDeploymentsResponse response) {
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable ListDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -809,14 +808,14 @@ public class DeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentsPage createPage(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
-        ListDeploymentsResponse response) {
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable ListDeploymentsResponse response) {
       return new ListDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeploymentsPage> createPageAsync(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
         ApiFuture<ListDeploymentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -831,7 +830,7 @@ public class DeploymentsClient implements BackgroundResource {
           ListDeploymentsFixedSizeCollection> {
 
     private ListDeploymentsFixedSizeCollection(
-        List<ListDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -841,7 +840,7 @@ public class DeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentsFixedSizeCollection createCollection(
-        List<ListDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentsPage> pages, int collectionSize) {
       return new ListDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -875,8 +874,8 @@ public class DeploymentsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -886,14 +885,14 @@ public class DeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -907,7 +906,8 @@ public class DeploymentsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -917,7 +917,7 @@ public class DeploymentsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

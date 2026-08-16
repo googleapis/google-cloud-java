@@ -50,6 +50,9 @@ public class SyncAdvancedCompleteQuery {
               .setIncludeTailSuggestions(true)
               .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
               .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+              .addAllSuggestionTypeSpecs(
+                  new ArrayList<AdvancedCompleteQueryRequest.SuggestionTypeSpec>())
+              .addAllExperimentIds(new ArrayList<String>())
               .build();
       AdvancedCompleteQueryResponse response =
           completionServiceClient.advancedCompleteQuery(request);

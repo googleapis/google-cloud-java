@@ -126,12 +126,13 @@ final class BidiUploadStreamingStream {
     }
   }
 
-  public boolean appendAndFinalize(ChunkSegmenter.@NonNull ChunkSegment data) {
+  public boolean appendAndFinalize(
+      ChunkSegmenter.@NonNull ChunkSegment data, @Nullable String expectedCrc32c) {
     lock.lock();
     try {
       boolean offered = state.offer(data);
       if (offered) {
-        finishWrite(state.getTotalSentBytes());
+        finishWrite(state.getTotalSentBytes(), expectedCrc32c);
       }
       return offered;
     } finally {
@@ -163,6 +164,10 @@ final class BidiUploadStreamingStream {
   }
 
   public boolean finishWrite(long length) {
+    return finishWrite(length, null);
+  }
+
+  public boolean finishWrite(long length, @Nullable String expectedCrc32c) {
     lock.lock();
     try {
       // if we're already finalizing, ack rather than enqueueing again
@@ -172,10 +177,15 @@ final class BidiUploadStreamingStream {
 
       BidiWriteObjectRequest.Builder b =
           BidiWriteObjectRequest.newBuilder().setWriteOffset(length).setFinishWrite(true);
-      Crc32cLengthKnown cumulativeCrc32c = state.getCumulativeCrc32c();
-      if (cumulativeCrc32c != null) {
-        b.setObjectChecksums(
-            ObjectChecksums.newBuilder().setCrc32C(cumulativeCrc32c.getValue()).build());
+      if (expectedCrc32c != null) {
+        int crc32cInt = Utils.crc32cCodec.decode(expectedCrc32c);
+        b.setObjectChecksums(ObjectChecksums.newBuilder().setCrc32C(crc32cInt).build());
+      } else {
+        Crc32cLengthKnown cumulativeCrc32c = state.getCumulativeCrc32c();
+        if (cumulativeCrc32c != null) {
+          b.setObjectChecksums(
+              ObjectChecksums.newBuilder().setCrc32C(cumulativeCrc32c.getValue()).build());
+        }
       }
       BidiWriteObjectRequest msg = b.build();
       boolean offer = state.offer(msg);

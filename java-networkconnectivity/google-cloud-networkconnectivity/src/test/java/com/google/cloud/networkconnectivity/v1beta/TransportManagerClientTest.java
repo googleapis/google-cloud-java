@@ -298,6 +298,92 @@ public class TransportManagerClientTest {
   }
 
   @Test
+  public void parseFromActivationKeyTest() throws Exception {
+    ParseFromActivationKeyResponse expectedResponse =
+        ParseFromActivationKeyResponse.newBuilder()
+            .setRemoteTransportProfile(RemoteTransportProfile.newBuilder().build())
+            .build();
+    mockTransportManager.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    String activationKey = "activationKey1757742441";
+
+    ParseFromActivationKeyResponse actualResponse =
+        client.parseFromActivationKey(parent, activationKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTransportManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ParseFromActivationKeyRequest actualRequest =
+        ((ParseFromActivationKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(activationKey, actualRequest.getActivationKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void parseFromActivationKeyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTransportManager.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      String activationKey = "activationKey1757742441";
+      client.parseFromActivationKey(parent, activationKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void parseFromActivationKeyTest2() throws Exception {
+    ParseFromActivationKeyResponse expectedResponse =
+        ParseFromActivationKeyResponse.newBuilder()
+            .setRemoteTransportProfile(RemoteTransportProfile.newBuilder().build())
+            .build();
+    mockTransportManager.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String activationKey = "activationKey1757742441";
+
+    ParseFromActivationKeyResponse actualResponse =
+        client.parseFromActivationKey(parent, activationKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockTransportManager.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ParseFromActivationKeyRequest actualRequest =
+        ((ParseFromActivationKeyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(activationKey, actualRequest.getActivationKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void parseFromActivationKeyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockTransportManager.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String activationKey = "activationKey1757742441";
+      client.parseFromActivationKey(parent, activationKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listTransportsTest() throws Exception {
     Transport responsesElement = Transport.newBuilder().build();
     ListTransportsResponse expectedResponse =
@@ -406,6 +492,9 @@ public class TransportManagerClientTest {
             .addAllAdvertisedRoutes(new ArrayList<String>())
             .setRemoteAccountId("remoteAccountId-416492926")
             .setPeeringNetwork("peeringNetwork-975063346")
+            .setHub(HubName.of("[PROJECT]", "[HUB]").toString())
+            .setPscRoutingEnabled(true)
+            .setAutoAccept(true)
             .build();
     mockTransportManager.addResponse(expectedResponse);
 
@@ -460,6 +549,9 @@ public class TransportManagerClientTest {
             .addAllAdvertisedRoutes(new ArrayList<String>())
             .setRemoteAccountId("remoteAccountId-416492926")
             .setPeeringNetwork("peeringNetwork-975063346")
+            .setHub(HubName.of("[PROJECT]", "[HUB]").toString())
+            .setPscRoutingEnabled(true)
+            .setAutoAccept(true)
             .build();
     mockTransportManager.addResponse(expectedResponse);
 
@@ -584,6 +676,9 @@ public class TransportManagerClientTest {
             .addAllAdvertisedRoutes(new ArrayList<String>())
             .setRemoteAccountId("remoteAccountId-416492926")
             .setPeeringNetwork("peeringNetwork-975063346")
+            .setHub(HubName.of("[PROJECT]", "[HUB]").toString())
+            .setPscRoutingEnabled(true)
+            .setAutoAccept(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -652,6 +747,9 @@ public class TransportManagerClientTest {
             .addAllAdvertisedRoutes(new ArrayList<String>())
             .setRemoteAccountId("remoteAccountId-416492926")
             .setPeeringNetwork("peeringNetwork-975063346")
+            .setHub(HubName.of("[PROJECT]", "[HUB]").toString())
+            .setPscRoutingEnabled(true)
+            .setAutoAccept(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -720,6 +818,9 @@ public class TransportManagerClientTest {
             .addAllAdvertisedRoutes(new ArrayList<String>())
             .setRemoteAccountId("remoteAccountId-416492926")
             .setPeeringNetwork("peeringNetwork-975063346")
+            .setHub(HubName.of("[PROJECT]", "[HUB]").toString())
+            .setPscRoutingEnabled(true)
+            .setAutoAccept(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

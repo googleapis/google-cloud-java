@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -388,10 +390,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class RecommenderClient implements BackgroundResource {
-  private final RecommenderSettings settings;
+  private final @Nullable RecommenderSettings settings;
   private final RecommenderStub stub;
 
   /** Constructs an instance of RecommenderClient with default settings. */
@@ -430,7 +433,7 @@ public class RecommenderClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RecommenderSettings getSettings() {
+  public final @Nullable RecommenderSettings getSettings() {
     return settings;
   }
 
@@ -483,7 +486,7 @@ public class RecommenderClient implements BackgroundResource {
    *     https://cloud.google.com/recommender/docs/insights/insight-types.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListInsightsPagedResponse listInsights(InsightTypeName parent) {
+  public final ListInsightsPagedResponse listInsights(@Nullable InsightTypeName parent) {
     ListInsightsRequest request =
         ListInsightsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -683,7 +686,7 @@ public class RecommenderClient implements BackgroundResource {
    * @param name Required. Name of the insight.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Insight getInsight(InsightName name) {
+  public final Insight getInsight(@Nullable InsightName name) {
     GetInsightRequest request =
         GetInsightRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getInsight(request);
@@ -816,7 +819,7 @@ public class RecommenderClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Insight markInsightAccepted(
-      InsightName name, Map<String, String> stateMetadata, String etag) {
+      @Nullable InsightName name, Map<String, String> stateMetadata, String etag) {
     MarkInsightAcceptedRequest request =
         MarkInsightAcceptedRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1021,7 +1024,7 @@ public class RecommenderClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRecommendationsPagedResponse listRecommendations(
-      RecommenderName parent, String filter) {
+      @Nullable RecommenderName parent, String filter) {
     ListRecommendationsRequest request =
         ListRecommendationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1255,7 +1258,7 @@ public class RecommenderClient implements BackgroundResource {
    * @param name Required. Name of the recommendation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Recommendation getRecommendation(RecommendationName name) {
+  public final Recommendation getRecommendation(@Nullable RecommendationName name) {
     GetRecommendationRequest request =
         GetRecommendationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1395,7 +1398,7 @@ public class RecommenderClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Recommendation markRecommendationClaimed(
-      RecommendationName name, Map<String, String> stateMetadata, String etag) {
+      @Nullable RecommendationName name, Map<String, String> stateMetadata, String etag) {
     MarkRecommendationClaimedRequest request =
         MarkRecommendationClaimedRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1574,7 +1577,7 @@ public class RecommenderClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Recommendation markRecommendationSucceeded(
-      RecommendationName name, Map<String, String> stateMetadata, String etag) {
+      @Nullable RecommendationName name, Map<String, String> stateMetadata, String etag) {
     MarkRecommendationSucceededRequest request =
         MarkRecommendationSucceededRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1757,7 +1760,7 @@ public class RecommenderClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Recommendation markRecommendationFailed(
-      RecommendationName name, Map<String, String> stateMetadata, String etag) {
+      @Nullable RecommendationName name, Map<String, String> stateMetadata, String etag) {
     MarkRecommendationFailedRequest request =
         MarkRecommendationFailedRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1935,7 +1938,7 @@ public class RecommenderClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RecommenderConfig getRecommenderConfig(RecommenderConfigName name) {
+  public final RecommenderConfig getRecommenderConfig(@Nullable RecommenderConfigName name) {
     GetRecommenderConfigRequest request =
         GetRecommenderConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2180,7 +2183,7 @@ public class RecommenderClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final InsightTypeConfig getInsightTypeConfig(InsightTypeConfigName name) {
+  public final InsightTypeConfig getInsightTypeConfig(@Nullable InsightTypeConfigName name) {
     GetInsightTypeConfigRequest request =
         GetInsightTypeConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2652,8 +2655,8 @@ public class RecommenderClient implements BackgroundResource {
       extends AbstractPage<ListInsightsRequest, ListInsightsResponse, Insight, ListInsightsPage> {
 
     private ListInsightsPage(
-        PageContext<ListInsightsRequest, ListInsightsResponse, Insight> context,
-        ListInsightsResponse response) {
+        @Nullable PageContext<ListInsightsRequest, ListInsightsResponse, Insight> context,
+        @Nullable ListInsightsResponse response) {
       super(context, response);
     }
 
@@ -2663,14 +2666,14 @@ public class RecommenderClient implements BackgroundResource {
 
     @Override
     protected ListInsightsPage createPage(
-        PageContext<ListInsightsRequest, ListInsightsResponse, Insight> context,
-        ListInsightsResponse response) {
+        @Nullable PageContext<ListInsightsRequest, ListInsightsResponse, Insight> context,
+        @Nullable ListInsightsResponse response) {
       return new ListInsightsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInsightsPage> createPageAsync(
-        PageContext<ListInsightsRequest, ListInsightsResponse, Insight> context,
+        @Nullable PageContext<ListInsightsRequest, ListInsightsResponse, Insight> context,
         ApiFuture<ListInsightsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2684,7 +2687,8 @@ public class RecommenderClient implements BackgroundResource {
           ListInsightsPage,
           ListInsightsFixedSizeCollection> {
 
-    private ListInsightsFixedSizeCollection(List<ListInsightsPage> pages, int collectionSize) {
+    private ListInsightsFixedSizeCollection(
+        @Nullable List<ListInsightsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2694,7 +2698,7 @@ public class RecommenderClient implements BackgroundResource {
 
     @Override
     protected ListInsightsFixedSizeCollection createCollection(
-        List<ListInsightsPage> pages, int collectionSize) {
+        @Nullable List<ListInsightsPage> pages, int collectionSize) {
       return new ListInsightsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2732,9 +2736,10 @@ public class RecommenderClient implements BackgroundResource {
           ListRecommendationsPage> {
 
     private ListRecommendationsPage(
-        PageContext<ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>
+        @Nullable
+            PageContext<ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>
             context,
-        ListRecommendationsResponse response) {
+        @Nullable ListRecommendationsResponse response) {
       super(context, response);
     }
 
@@ -2744,15 +2749,17 @@ public class RecommenderClient implements BackgroundResource {
 
     @Override
     protected ListRecommendationsPage createPage(
-        PageContext<ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>
+        @Nullable
+            PageContext<ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>
             context,
-        ListRecommendationsResponse response) {
+        @Nullable ListRecommendationsResponse response) {
       return new ListRecommendationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRecommendationsPage> createPageAsync(
-        PageContext<ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>
+        @Nullable
+            PageContext<ListRecommendationsRequest, ListRecommendationsResponse, Recommendation>
             context,
         ApiFuture<ListRecommendationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2768,7 +2775,7 @@ public class RecommenderClient implements BackgroundResource {
           ListRecommendationsFixedSizeCollection> {
 
     private ListRecommendationsFixedSizeCollection(
-        List<ListRecommendationsPage> pages, int collectionSize) {
+        @Nullable List<ListRecommendationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2778,7 +2785,7 @@ public class RecommenderClient implements BackgroundResource {
 
     @Override
     protected ListRecommendationsFixedSizeCollection createCollection(
-        List<ListRecommendationsPage> pages, int collectionSize) {
+        @Nullable List<ListRecommendationsPage> pages, int collectionSize) {
       return new ListRecommendationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2815,8 +2822,9 @@ public class RecommenderClient implements BackgroundResource {
           ListRecommendersPage> {
 
     private ListRecommendersPage(
-        PageContext<ListRecommendersRequest, ListRecommendersResponse, RecommenderType> context,
-        ListRecommendersResponse response) {
+        @Nullable PageContext<ListRecommendersRequest, ListRecommendersResponse, RecommenderType>
+            context,
+        @Nullable ListRecommendersResponse response) {
       super(context, response);
     }
 
@@ -2826,14 +2834,16 @@ public class RecommenderClient implements BackgroundResource {
 
     @Override
     protected ListRecommendersPage createPage(
-        PageContext<ListRecommendersRequest, ListRecommendersResponse, RecommenderType> context,
-        ListRecommendersResponse response) {
+        @Nullable PageContext<ListRecommendersRequest, ListRecommendersResponse, RecommenderType>
+            context,
+        @Nullable ListRecommendersResponse response) {
       return new ListRecommendersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRecommendersPage> createPageAsync(
-        PageContext<ListRecommendersRequest, ListRecommendersResponse, RecommenderType> context,
+        @Nullable PageContext<ListRecommendersRequest, ListRecommendersResponse, RecommenderType>
+            context,
         ApiFuture<ListRecommendersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2848,7 +2858,7 @@ public class RecommenderClient implements BackgroundResource {
           ListRecommendersFixedSizeCollection> {
 
     private ListRecommendersFixedSizeCollection(
-        List<ListRecommendersPage> pages, int collectionSize) {
+        @Nullable List<ListRecommendersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2858,7 +2868,7 @@ public class RecommenderClient implements BackgroundResource {
 
     @Override
     protected ListRecommendersFixedSizeCollection createCollection(
-        List<ListRecommendersPage> pages, int collectionSize) {
+        @Nullable List<ListRecommendersPage> pages, int collectionSize) {
       return new ListRecommendersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2892,8 +2902,9 @@ public class RecommenderClient implements BackgroundResource {
           ListInsightTypesRequest, ListInsightTypesResponse, InsightType, ListInsightTypesPage> {
 
     private ListInsightTypesPage(
-        PageContext<ListInsightTypesRequest, ListInsightTypesResponse, InsightType> context,
-        ListInsightTypesResponse response) {
+        @Nullable PageContext<ListInsightTypesRequest, ListInsightTypesResponse, InsightType>
+            context,
+        @Nullable ListInsightTypesResponse response) {
       super(context, response);
     }
 
@@ -2903,14 +2914,16 @@ public class RecommenderClient implements BackgroundResource {
 
     @Override
     protected ListInsightTypesPage createPage(
-        PageContext<ListInsightTypesRequest, ListInsightTypesResponse, InsightType> context,
-        ListInsightTypesResponse response) {
+        @Nullable PageContext<ListInsightTypesRequest, ListInsightTypesResponse, InsightType>
+            context,
+        @Nullable ListInsightTypesResponse response) {
       return new ListInsightTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListInsightTypesPage> createPageAsync(
-        PageContext<ListInsightTypesRequest, ListInsightTypesResponse, InsightType> context,
+        @Nullable PageContext<ListInsightTypesRequest, ListInsightTypesResponse, InsightType>
+            context,
         ApiFuture<ListInsightTypesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2925,7 +2938,7 @@ public class RecommenderClient implements BackgroundResource {
           ListInsightTypesFixedSizeCollection> {
 
     private ListInsightTypesFixedSizeCollection(
-        List<ListInsightTypesPage> pages, int collectionSize) {
+        @Nullable List<ListInsightTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2935,7 +2948,7 @@ public class RecommenderClient implements BackgroundResource {
 
     @Override
     protected ListInsightTypesFixedSizeCollection createCollection(
-        List<ListInsightTypesPage> pages, int collectionSize) {
+        @Nullable List<ListInsightTypesPage> pages, int collectionSize) {
       return new ListInsightTypesFixedSizeCollection(pages, collectionSize);
     }
   }

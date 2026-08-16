@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -356,9 +358,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ConfigClient implements BackgroundResource {
-  private final ConfigSettings settings;
+  private final @Nullable ConfigSettings settings;
   private final ConfigStub stub;
 
   /** Constructs an instance of ConfigClient with default settings. */
@@ -396,7 +399,7 @@ public class ConfigClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ConfigSettings getSettings() {
+  public final @Nullable ConfigSettings getSettings() {
     return settings;
   }
 
@@ -431,7 +434,7 @@ public class ConfigClient implements BackgroundResource {
    *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFrameworksPagedResponse listFrameworks(LocationName parent) {
+  public final ListFrameworksPagedResponse listFrameworks(@Nullable LocationName parent) {
     ListFrameworksRequest request =
         ListFrameworksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -466,7 +469,8 @@ public class ConfigClient implements BackgroundResource {
    *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFrameworksPagedResponse listFrameworks(OrganizationLocationName parent) {
+  public final ListFrameworksPagedResponse listFrameworks(
+      @Nullable OrganizationLocationName parent) {
     ListFrameworksRequest request =
         ListFrameworksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -641,7 +645,7 @@ public class ConfigClient implements BackgroundResource {
    *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Framework getFramework(FrameworkName name) {
+  public final Framework getFramework(@Nullable FrameworkName name) {
     GetFrameworkRequest request =
         GetFrameworkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFramework(request);
@@ -782,7 +786,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Framework createFramework(
-      LocationName parent, Framework framework, String frameworkId) {
+      @Nullable LocationName parent, Framework framework, String frameworkId) {
     CreateFrameworkRequest request =
         CreateFrameworkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -823,7 +827,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Framework createFramework(
-      OrganizationLocationName parent, Framework framework, String frameworkId) {
+      @Nullable OrganizationLocationName parent, Framework framework, String frameworkId) {
     CreateFrameworkRequest request =
         CreateFrameworkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1083,7 +1087,7 @@ public class ConfigClient implements BackgroundResource {
    *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteFramework(FrameworkName name) {
+  public final void deleteFramework(@Nullable FrameworkName name) {
     DeleteFrameworkRequest request =
         DeleteFrameworkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteFramework(request);
@@ -1225,7 +1229,7 @@ public class ConfigClient implements BackgroundResource {
    *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCloudControlsPagedResponse listCloudControls(LocationName parent) {
+  public final ListCloudControlsPagedResponse listCloudControls(@Nullable LocationName parent) {
     ListCloudControlsRequest request =
         ListCloudControlsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1261,7 +1265,8 @@ public class ConfigClient implements BackgroundResource {
    *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCloudControlsPagedResponse listCloudControls(OrganizationLocationName parent) {
+  public final ListCloudControlsPagedResponse listCloudControls(
+      @Nullable OrganizationLocationName parent) {
     ListCloudControlsRequest request =
         ListCloudControlsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1443,7 +1448,7 @@ public class ConfigClient implements BackgroundResource {
    *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CloudControl getCloudControl(CloudControlName name) {
+  public final CloudControl getCloudControl(@Nullable CloudControlName name) {
     GetCloudControlRequest request =
         GetCloudControlRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCloudControl(request);
@@ -1587,7 +1592,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CloudControl createCloudControl(
-      LocationName parent, CloudControl cloudControl, String cloudControlId) {
+      @Nullable LocationName parent, CloudControl cloudControl, String cloudControlId) {
     CreateCloudControlRequest request =
         CreateCloudControlRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1628,7 +1633,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CloudControl createCloudControl(
-      OrganizationLocationName parent, CloudControl cloudControl, String cloudControlId) {
+      @Nullable OrganizationLocationName parent, CloudControl cloudControl, String cloudControlId) {
     CreateCloudControlRequest request =
         CreateCloudControlRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1891,7 +1896,7 @@ public class ConfigClient implements BackgroundResource {
    *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteCloudControl(CloudControlName name) {
+  public final void deleteCloudControl(@Nullable CloudControlName name) {
     DeleteCloudControlRequest request =
         DeleteCloudControlRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2257,8 +2262,8 @@ public class ConfigClient implements BackgroundResource {
           ListFrameworksRequest, ListFrameworksResponse, Framework, ListFrameworksPage> {
 
     private ListFrameworksPage(
-        PageContext<ListFrameworksRequest, ListFrameworksResponse, Framework> context,
-        ListFrameworksResponse response) {
+        @Nullable PageContext<ListFrameworksRequest, ListFrameworksResponse, Framework> context,
+        @Nullable ListFrameworksResponse response) {
       super(context, response);
     }
 
@@ -2268,14 +2273,14 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListFrameworksPage createPage(
-        PageContext<ListFrameworksRequest, ListFrameworksResponse, Framework> context,
-        ListFrameworksResponse response) {
+        @Nullable PageContext<ListFrameworksRequest, ListFrameworksResponse, Framework> context,
+        @Nullable ListFrameworksResponse response) {
       return new ListFrameworksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFrameworksPage> createPageAsync(
-        PageContext<ListFrameworksRequest, ListFrameworksResponse, Framework> context,
+        @Nullable PageContext<ListFrameworksRequest, ListFrameworksResponse, Framework> context,
         ApiFuture<ListFrameworksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2289,7 +2294,8 @@ public class ConfigClient implements BackgroundResource {
           ListFrameworksPage,
           ListFrameworksFixedSizeCollection> {
 
-    private ListFrameworksFixedSizeCollection(List<ListFrameworksPage> pages, int collectionSize) {
+    private ListFrameworksFixedSizeCollection(
+        @Nullable List<ListFrameworksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2299,7 +2305,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListFrameworksFixedSizeCollection createCollection(
-        List<ListFrameworksPage> pages, int collectionSize) {
+        @Nullable List<ListFrameworksPage> pages, int collectionSize) {
       return new ListFrameworksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2336,8 +2342,9 @@ public class ConfigClient implements BackgroundResource {
           ListCloudControlsPage> {
 
     private ListCloudControlsPage(
-        PageContext<ListCloudControlsRequest, ListCloudControlsResponse, CloudControl> context,
-        ListCloudControlsResponse response) {
+        @Nullable PageContext<ListCloudControlsRequest, ListCloudControlsResponse, CloudControl>
+            context,
+        @Nullable ListCloudControlsResponse response) {
       super(context, response);
     }
 
@@ -2347,14 +2354,16 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListCloudControlsPage createPage(
-        PageContext<ListCloudControlsRequest, ListCloudControlsResponse, CloudControl> context,
-        ListCloudControlsResponse response) {
+        @Nullable PageContext<ListCloudControlsRequest, ListCloudControlsResponse, CloudControl>
+            context,
+        @Nullable ListCloudControlsResponse response) {
       return new ListCloudControlsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCloudControlsPage> createPageAsync(
-        PageContext<ListCloudControlsRequest, ListCloudControlsResponse, CloudControl> context,
+        @Nullable PageContext<ListCloudControlsRequest, ListCloudControlsResponse, CloudControl>
+            context,
         ApiFuture<ListCloudControlsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2369,7 +2378,7 @@ public class ConfigClient implements BackgroundResource {
           ListCloudControlsFixedSizeCollection> {
 
     private ListCloudControlsFixedSizeCollection(
-        List<ListCloudControlsPage> pages, int collectionSize) {
+        @Nullable List<ListCloudControlsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2379,7 +2388,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListCloudControlsFixedSizeCollection createCollection(
-        List<ListCloudControlsPage> pages, int collectionSize) {
+        @Nullable List<ListCloudControlsPage> pages, int collectionSize) {
       return new ListCloudControlsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2413,8 +2422,8 @@ public class ConfigClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2424,14 +2433,14 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2445,7 +2454,8 @@ public class ConfigClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2455,7 +2465,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

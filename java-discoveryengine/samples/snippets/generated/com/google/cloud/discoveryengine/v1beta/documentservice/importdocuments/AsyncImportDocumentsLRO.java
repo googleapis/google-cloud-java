@@ -49,6 +49,7 @@ public class AsyncImportDocumentsLRO {
               .setUpdateMask(FieldMask.newBuilder().build())
               .setAutoGenerateIds(true)
               .setIdField("idField1629396127")
+              .setForceRefreshContent(true)
               .build();
       OperationFuture<ImportDocumentsResponse, ImportDocumentsMetadata> future =
           documentServiceClient.importDocumentsOperationCallable().futureCall(request);

@@ -1117,6 +1117,8 @@ public class ParticipantsClientTest {
             .setKnowledgeAssistAnswer(KnowledgeAssistAnswer.newBuilder().build())
             .setLatestMessage("latestMessage-1424305536")
             .setContextSize(1116903569)
+            .addAllAdditionalSuggestedQueryResults(
+                new ArrayList<KnowledgeAssistAnswer.AdditionalSuggestedQueryResult>())
             .build();
     mockParticipants.addResponse(expectedResponse);
 

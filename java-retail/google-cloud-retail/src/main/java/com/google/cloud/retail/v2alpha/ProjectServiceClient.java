@@ -29,6 +29,8 @@ import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -262,10 +264,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ProjectServiceClient implements BackgroundResource {
-  private final ProjectServiceSettings settings;
+  private final @Nullable ProjectServiceSettings settings;
   private final ProjectServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -313,7 +316,7 @@ public class ProjectServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ProjectServiceSettings getSettings() {
+  public final @Nullable ProjectServiceSettings getSettings() {
     return settings;
   }
 
@@ -362,7 +365,7 @@ public class ProjectServiceClient implements BackgroundResource {
    *     `projects/{project_number_or_id}/retailProject`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Project getProject(RetailProjectName name) {
+  public final Project getProject(@Nullable RetailProjectName name) {
     GetProjectRequest request =
         GetProjectRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getProject(request);
@@ -479,7 +482,7 @@ public class ProjectServiceClient implements BackgroundResource {
    *     `projects/{project_number_or_id}/retailProject`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Project acceptTerms(RetailProjectName project) {
+  public final Project acceptTerms(@Nullable RetailProjectName project) {
     AcceptTermsRequest request =
         AcceptTermsRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -701,7 +704,7 @@ public class ProjectServiceClient implements BackgroundResource {
    * @param parent Required. Full resource name of parent. Format: `projects/{project_number_or_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEnrolledSolutionsResponse listEnrolledSolutions(ProjectName parent) {
+  public final ListEnrolledSolutionsResponse listEnrolledSolutions(@Nullable ProjectName parent) {
     ListEnrolledSolutionsRequest request =
         ListEnrolledSolutionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -816,7 +819,7 @@ public class ProjectServiceClient implements BackgroundResource {
    *     projects/{project_number}/loggingConfig
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LoggingConfig getLoggingConfig(LoggingConfigName name) {
+  public final LoggingConfig getLoggingConfig(@Nullable LoggingConfigName name) {
     GetLoggingConfigRequest request =
         GetLoggingConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getLoggingConfig(request);
@@ -1035,7 +1038,7 @@ public class ProjectServiceClient implements BackgroundResource {
    *     projects/{project_number}/alertConfig
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AlertConfig getAlertConfig(AlertConfigName name) {
+  public final AlertConfig getAlertConfig(@Nullable AlertConfigName name) {
     GetAlertConfigRequest request =
         GetAlertConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAlertConfig(request);

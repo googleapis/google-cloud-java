@@ -25,6 +25,8 @@ import com.google.cloud.bigquery.storage.v1beta2.stub.BigQueryWriteStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -212,11 +214,12 @@ import javax.annotation.Generated;
  *
  * @deprecated This class is deprecated and will be removed in the next major version update.
  */
+@NullMarked
 @BetaApi
 @Deprecated
 @Generated("by gapic-generator-java")
 public class BigQueryWriteClient implements BackgroundResource {
-  private final BigQueryWriteSettings settings;
+  private final @Nullable BigQueryWriteSettings settings;
   private final BigQueryWriteStub stub;
 
   /** Constructs an instance of BigQueryWriteClient with default settings. */
@@ -256,7 +259,7 @@ public class BigQueryWriteClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BigQueryWriteSettings getSettings() {
+  public final @Nullable BigQueryWriteSettings getSettings() {
     return settings;
   }
 
@@ -294,7 +297,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final WriteStream createWriteStream(TableName parent, WriteStream writeStream) {
+  public final WriteStream createWriteStream(@Nullable TableName parent, WriteStream writeStream) {
     CreateWriteStreamRequest request =
         CreateWriteStreamRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -485,7 +488,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final WriteStream getWriteStream(WriteStreamName name) {
+  public final WriteStream getWriteStream(@Nullable WriteStreamName name) {
     GetWriteStreamRequest request =
         GetWriteStreamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWriteStream(request);
@@ -608,7 +611,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final FinalizeWriteStreamResponse finalizeWriteStream(WriteStreamName name) {
+  public final FinalizeWriteStreamResponse finalizeWriteStream(@Nullable WriteStreamName name) {
     FinalizeWriteStreamRequest request =
         FinalizeWriteStreamRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -843,7 +846,7 @@ public class BigQueryWriteClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final FlushRowsResponse flushRows(WriteStreamName writeStream) {
+  public final FlushRowsResponse flushRows(@Nullable WriteStreamName writeStream) {
     FlushRowsRequest request =
         FlushRowsRequest.newBuilder()
             .setWriteStream(writeStream == null ? null : writeStream.toString())

@@ -44,7 +44,8 @@ import com.google.common.net.HostAndPort;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * EndpointContext is an internal class used by the client library to resolve the endpoint. It is
@@ -52,6 +53,7 @@ import javax.annotation.Nullable;
  *
  * <p>Contains the fields required to resolve the endpoint and Universe Domain
  */
+@NullMarked
 @InternalApi
 @AutoValue
 public abstract class EndpointContext {
@@ -87,8 +89,7 @@ public abstract class EndpointContext {
    * `{ServiceName}.googleapis.com`. For example, speech.googleapis.com would have a ServiceName of
    * speech and cloudasset.googleapis.com would have a ServiceName of cloudasset.
    */
-  @Nullable
-  public abstract String serviceName();
+  public abstract @Nullable String serviceName();
 
   /**
    * Universe Domain is the domain for Google Cloud Services. It follows the format of
@@ -96,37 +97,30 @@ public abstract class EndpointContext {
    * Domain value of `googleapis.com` and cloudasset.test.com would have a Universe Domain of
    * `test.com`. If this value is not set, this will default to `googleapis.com`.
    */
-  @Nullable
-  public abstract String universeDomain();
+  public abstract @Nullable String universeDomain();
 
   /**
    * ClientSettingsEndpoint is the endpoint value set via the ClientSettings/StubSettings classes.
    */
-  @Nullable
-  public abstract String clientSettingsEndpoint();
+  public abstract @Nullable String clientSettingsEndpoint();
 
   /**
    * TransportChannelProviderEndpoint is the endpoint value set via the TransportChannelProvider
    * class.
    */
-  @Nullable
-  public abstract String transportChannelProviderEndpoint();
+  public abstract @Nullable String transportChannelProviderEndpoint();
 
   abstract boolean useS2A();
 
-  @Nullable
-  abstract EnvironmentProvider envProvider();
+  abstract @Nullable EnvironmentProvider envProvider();
 
-  @Nullable
-  public abstract String mtlsEndpoint();
+  public abstract @Nullable String mtlsEndpoint();
 
   public abstract boolean switchToMtlsEndpointAllowed();
 
-  @Nullable
-  public abstract MtlsProvider mtlsProvider();
+  public abstract @Nullable MtlsProvider mtlsProvider();
 
-  @Nullable
-  abstract CertificateBasedAccess certificateBasedAccess();
+  abstract @Nullable CertificateBasedAccess certificateBasedAccess();
 
   public abstract boolean usingGDCH();
 
@@ -134,14 +128,11 @@ public abstract class EndpointContext {
 
   public abstract String resolvedEndpoint();
 
-  @Nullable
-  public abstract String resolvedServerAddress();
+  public abstract @Nullable String resolvedServerAddress();
 
-  @Nullable
-  public abstract Integer resolvedServerPort();
+  public abstract @Nullable Integer resolvedServerPort();
 
-  @Nullable
-  String getUrlDomain() {
+  @Nullable String getUrlDomain() {
     if (!Strings.isNullOrEmpty(serviceName()) && !Strings.isNullOrEmpty(resolvedUniverseDomain())) {
       return serviceName() + "." + resolvedUniverseDomain();
     }
@@ -176,7 +167,8 @@ public abstract class EndpointContext {
    *     whether the RPC should be retried or not.
    */
   public void validateUniverseDomain(
-      Credentials credentials, StatusCode invalidUniverseDomainStatusCode) throws IOException {
+      @Nullable Credentials credentials, StatusCode invalidUniverseDomainStatusCode)
+      throws IOException {
     if (usingGDCH()) {
       // GDC-H has no universe domain, return
       return;
@@ -235,7 +227,7 @@ public abstract class EndpointContext {
 
     public abstract Builder setSwitchToMtlsEndpointAllowed(boolean switchToMtlsEndpointAllowed);
 
-    public abstract Builder setMtlsProvider(MtlsProvider mtlsProvider);
+    public abstract Builder setMtlsProvider(@Nullable MtlsProvider mtlsProvider);
 
     abstract Builder setCertificateBasedAccess(CertificateBasedAccess certificateBasedAccess);
 
@@ -243,9 +235,9 @@ public abstract class EndpointContext {
 
     public abstract Builder setResolvedEndpoint(String resolvedEndpoint);
 
-    public abstract Builder setResolvedServerAddress(String serverAddress);
+    public abstract Builder setResolvedServerAddress(@Nullable String serverAddress);
 
-    public abstract Builder setResolvedServerPort(Integer serverPort);
+    public abstract Builder setResolvedServerPort(@Nullable Integer serverPort);
 
     public abstract Builder setResolvedUniverseDomain(String resolvedUniverseDomain);
 
@@ -269,8 +261,7 @@ public abstract class EndpointContext {
 
     abstract boolean switchToMtlsEndpointAllowed();
 
-    @Nullable
-    abstract MtlsProvider mtlsProvider();
+    abstract @Nullable MtlsProvider mtlsProvider();
 
     abstract CertificateBasedAccess certificateBasedAccess();
 
@@ -403,7 +394,7 @@ public abstract class EndpointContext {
       return mtlsEndpoint().contains(Credentials.GOOGLE_DEFAULT_UNIVERSE);
     }
 
-    private String parseServerAddress(String endpoint) {
+    private @Nullable String parseServerAddress(String endpoint) {
       if (endpoint.isEmpty()) {
         return endpoint;
       }
@@ -414,7 +405,7 @@ public abstract class EndpointContext {
       return hostAndPort.getHost();
     }
 
-    private Integer parseServerPort(String endpoint) {
+    private @Nullable Integer parseServerPort(String endpoint) {
       if (endpoint.isEmpty()) {
         return null;
       }
@@ -425,7 +416,7 @@ public abstract class EndpointContext {
       return hostAndPort.getPort();
     }
 
-    private HostAndPort parseServerHostAndPort(String endpoint) {
+    private @Nullable HostAndPort parseServerHostAndPort(String endpoint) {
       String hostPort = endpoint;
       if (hostPort.contains("://")) {
         // Strip the scheme if present. HostAndPort doesn't support schemes.
@@ -450,7 +441,7 @@ public abstract class EndpointContext {
         String endpoint,
         String mtlsEndpoint,
         boolean switchToMtlsEndpointAllowed,
-        MtlsProvider mtlsProvider,
+        @Nullable MtlsProvider mtlsProvider,
         CertificateBasedAccess certificateBasedAccess)
         throws IOException {
       if (switchToMtlsEndpointAllowed && certificateBasedAccess != null && mtlsProvider != null) {

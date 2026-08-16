@@ -21,12 +21,16 @@ import static com.google.cloud.discoveryengine.v1beta.ServingConfigServiceClient
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.discoveryengine.v1beta.CreateServingConfigRequest;
+import com.google.cloud.discoveryengine.v1beta.DeleteServingConfigRequest;
 import com.google.cloud.discoveryengine.v1beta.GetServingConfigRequest;
 import com.google.cloud.discoveryengine.v1beta.ListServingConfigsRequest;
 import com.google.cloud.discoveryengine.v1beta.ListServingConfigsResponse;
 import com.google.cloud.discoveryengine.v1beta.ServingConfig;
 import com.google.cloud.discoveryengine.v1beta.UpdateServingConfigRequest;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -34,9 +38,18 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class ServingConfigServiceStub implements BackgroundResource {
+
+  public UnaryCallable<CreateServingConfigRequest, ServingConfig> createServingConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: createServingConfigCallable()");
+  }
+
+  public UnaryCallable<DeleteServingConfigRequest, Empty> deleteServingConfigCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteServingConfigCallable()");
+  }
 
   public UnaryCallable<UpdateServingConfigRequest, ServingConfig> updateServingConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: updateServingConfigCallable()");

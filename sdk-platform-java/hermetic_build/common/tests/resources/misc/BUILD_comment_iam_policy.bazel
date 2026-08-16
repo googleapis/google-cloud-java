@@ -1,5 +1,0 @@
-proto_library_with_info(
-  deps = [
-    # "//google/iam/v1:iam_policy_proto",
-  ]
-)

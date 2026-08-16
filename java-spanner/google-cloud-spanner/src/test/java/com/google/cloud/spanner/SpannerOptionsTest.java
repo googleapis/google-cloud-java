@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -30,6 +31,7 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 
 import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
@@ -43,6 +45,7 @@ import com.google.cloud.spanner.SpannerOptions.FixedCloseableExecutorProvider;
 import com.google.cloud.spanner.SpannerOptions.SpannerCallContextTimeoutConfigurator;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.base.Strings;
 import com.google.spanner.v1.BatchCreateSessionsRequest;
@@ -616,6 +619,39 @@ public class SpannerOptionsTest {
             .build();
     assertThat(options.getHost()).isEqualTo("http://localhost:1234");
     assertThat(options.getEndpoint()).isEqualTo("localhost:1234");
+  }
+
+  @Test
+  public void testIsEmulatorEnabledWithEmulatorHostWithoutProtocol() {
+    // The builder prepends "http://" to the host, but not to the emulator host. The emulator
+    // gate must still detect that the emulator is being used.
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setEmulatorHost("localhost:1234")
+            .build();
+    assertTrue(options.isEmulatorEnabled());
+  }
+
+  @Test
+  public void testIsEmulatorEnabledWithEmulatorHostWithProtocol() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setEmulatorHost("http://localhost:1234")
+            .build();
+    assertTrue(options.isEmulatorEnabled());
+  }
+
+  @Test
+  public void testIsEmulatorEnabledWithoutEmulatorHost() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .setHost("http://localhost:1234")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertFalse(options.isEmulatorEnabled());
   }
 
   @Test
@@ -1343,6 +1379,20 @@ public class SpannerOptionsTest {
   }
 
   @Test
+  public void testDynamicChannelPoolDefaultValues() {
+    // Pins the documented dynamic channel pool default values. If this test fails, the defaults
+    // changed: update these literals deliberately and call the change out in the PR description.
+    assertEquals(25, SpannerOptions.DEFAULT_DYNAMIC_POOL_MAX_RPC);
+    assertEquals(15, SpannerOptions.DEFAULT_DYNAMIC_POOL_MIN_RPC);
+    assertEquals(Duration.ofMinutes(3), SpannerOptions.DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL);
+    assertEquals(4, SpannerOptions.DEFAULT_DYNAMIC_POOL_INITIAL_SIZE);
+    assertEquals(10, SpannerOptions.DEFAULT_DYNAMIC_POOL_MAX_CHANNELS);
+    assertEquals(2, SpannerOptions.DEFAULT_DYNAMIC_POOL_MIN_CHANNELS);
+    assertEquals(Duration.ofMinutes(10), SpannerOptions.DEFAULT_DYNAMIC_POOL_AFFINITY_KEY_LIFETIME);
+    assertEquals(Duration.ofMinutes(1), SpannerOptions.DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL);
+  }
+
+  @Test
   public void testCreateDefaultDynamicChannelPoolOptions() {
     // Test the static factory method for creating default options
     GcpChannelPoolOptions defaults = SpannerOptions.createDefaultDynamicChannelPoolOptions();
@@ -1433,5 +1483,119 @@ public class SpannerOptionsTest {
     assertTrue(options.getSessionPoolOptions().getUseMultiplexedSession());
     assertEquals(
         Duration.ofSeconds(42), options.getSessionPoolOptions().getAcquireSessionTimeout());
+  }
+
+  @Test
+  public void enableGrpcMetricsKeepsOneArgOverloadForCompatibility() throws Exception {
+    assertNotNull(
+        SpannerOptions.class.getMethod(
+            "enablegRPCMetrics", InstantiatingGrpcChannelProvider.Builder.class));
+  }
+
+  @Test
+  public void testCustomProviderKeepsCloudMonitoringSinkOnNonOmni() {
+    SpannerOptions.useEnvironment(new SpannerOptions.SpannerEnvironment() {});
+    try {
+      CustomOpenTelemetryMetricsProvider provider =
+          CustomOpenTelemetryMetricsProvider.create(OpenTelemetry.noop());
+      // Additive semantics: a custom sink on a non-OMNI client leaves the Cloud Monitoring sink on.
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("some-project")
+              .setCredentials(NoCredentials.getInstance())
+              .setClientMetricsProvider(provider)
+              .build();
+      assertSame(provider, options.getClientMetricsProvider());
+      assertTrue(options.isEnableBuiltInMetrics());
+
+      // Disabling the built-in flag turns off only the Cloud Monitoring sink; the custom sink
+      // stays.
+      SpannerOptions customOnly = options.toBuilder().setBuiltInMetricsEnabled(false).build();
+      assertSame(provider, customOnly.getClientMetricsProvider());
+      assertFalse(customOnly.isEnableBuiltInMetrics());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testLogin() {
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder()
+            .setHost("http://localhost:15000")
+            .setType(SpannerOptions.InstanceType.OMNI);
+    char[] password = new char[] {'p', 'a', 's', 's', 'w', 'o', 'r', 'd'};
+    builder.login("user", password);
+
+    // Password array should be cleared
+    assertArrayEquals(new char[] {'\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}, password);
+
+    SpannerOptions options = builder.build();
+    assertTrue(options.getCredentials() instanceof SpannerOmniCredentials);
+  }
+
+  @Test
+  public void testGrpcKeepAliveTime() {
+    SpannerOptions defaultOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals(Duration.ofSeconds(120), defaultOptions.getGrpcKeepAliveTime());
+
+    SpannerOptions customOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setGrpcKeepAliveTime(Duration.ofSeconds(20))
+            .build();
+    assertEquals(Duration.ofSeconds(20), customOptions.getGrpcKeepAliveTime());
+
+    SpannerOptions optionsFromBuilder = customOptions.toBuilder().build();
+    assertEquals(Duration.ofSeconds(20), optionsFromBuilder.getGrpcKeepAliveTime());
+
+    assertThrows(
+        NullPointerException.class, () -> SpannerOptions.newBuilder().setGrpcKeepAliveTime(null));
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().setGrpcKeepAliveTime(Duration.ZERO));
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().setGrpcKeepAliveTime(Duration.ofSeconds(-10)));
+  }
+
+  @Test
+  public void testGrpcKeepAliveTimeout() {
+    SpannerOptions defaultOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertEquals(Duration.ofSeconds(20), defaultOptions.getGrpcKeepAliveTimeout());
+
+    SpannerOptions customOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setGrpcKeepAliveTimeout(Duration.ofSeconds(5))
+            .build();
+    assertEquals(Duration.ofSeconds(5), customOptions.getGrpcKeepAliveTimeout());
+
+    SpannerOptions optionsFromBuilder = customOptions.toBuilder().build();
+    assertEquals(Duration.ofSeconds(5), optionsFromBuilder.getGrpcKeepAliveTimeout());
+
+    assertThrows(
+        NullPointerException.class,
+        () -> SpannerOptions.newBuilder().setGrpcKeepAliveTimeout(null));
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().setGrpcKeepAliveTimeout(Duration.ZERO));
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> SpannerOptions.newBuilder().setGrpcKeepAliveTimeout(Duration.ofSeconds(-10)));
   }
 }

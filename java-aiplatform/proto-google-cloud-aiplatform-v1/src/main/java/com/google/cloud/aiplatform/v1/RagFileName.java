@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RagFileName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_RAG_CORPUS_RAG_FILE =
@@ -96,7 +99,7 @@ public class RagFileName implements ResourceName {
         .toString();
   }
 
-  public static RagFileName parse(String formattedString) {
+  public static @Nullable RagFileName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -118,7 +121,7 @@ public class RagFileName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<RagFileName> values) {
+  public static List<String> toStringList(List<@Nullable RagFileName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (RagFileName value : values) {
       if (value == null) {
@@ -170,7 +173,7 @@ public class RagFileName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

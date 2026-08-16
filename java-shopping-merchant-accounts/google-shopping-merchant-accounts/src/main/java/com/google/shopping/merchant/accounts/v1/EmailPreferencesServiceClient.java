@@ -24,6 +24,8 @@ import com.google.shopping.merchant.accounts.v1.stub.EmailPreferencesServiceStub
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -154,9 +156,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EmailPreferencesServiceClient implements BackgroundResource {
-  private final EmailPreferencesServiceSettings settings;
+  private final @Nullable EmailPreferencesServiceSettings settings;
   private final EmailPreferencesServiceStub stub;
 
   /** Constructs an instance of EmailPreferencesServiceClient with default settings. */
@@ -197,7 +200,7 @@ public class EmailPreferencesServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final EmailPreferencesServiceSettings getSettings() {
+  public final @Nullable EmailPreferencesServiceSettings getSettings() {
     return settings;
   }
 
@@ -231,7 +234,7 @@ public class EmailPreferencesServiceClient implements BackgroundResource {
    *     `accounts/{account}/users/{email}/emailPreferences`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EmailPreferences getEmailPreferences(EmailPreferencesName name) {
+  public final EmailPreferences getEmailPreferences(@Nullable EmailPreferencesName name) {
     GetEmailPreferencesRequest request =
         GetEmailPreferencesRequest.newBuilder()
             .setName(name == null ? null : name.toString())

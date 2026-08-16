@@ -33,6 +33,8 @@ import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -111,6 +113,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CompletionServiceSettings extends ClientSettings<CompletionServiceSettings> {
@@ -193,6 +196,12 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
         .purgeCompletionSuggestionsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to removeSuggestion. */
+  public UnaryCallSettings<RemoveSuggestionRequest, RemoveSuggestionResponse>
+      removeSuggestionSettings() {
+    return ((CompletionServiceStubSettings) getStubSettings()).removeSuggestionSettings();
+  }
+
   public static final CompletionServiceSettings create(CompletionServiceStubSettings stub)
       throws IOException {
     return new CompletionServiceSettings.Builder(stub.toBuilder()).build();
@@ -249,7 +258,7 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -269,7 +278,7 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(CompletionServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -375,6 +384,12 @@ public class CompletionServiceSettings extends ClientSettings<CompletionServiceS
             PurgeCompletionSuggestionsMetadata>
         purgeCompletionSuggestionsOperationSettings() {
       return getStubSettingsBuilder().purgeCompletionSuggestionsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to removeSuggestion. */
+    public UnaryCallSettings.Builder<RemoveSuggestionRequest, RemoveSuggestionResponse>
+        removeSuggestionSettings() {
+      return getStubSettingsBuilder().removeSuggestionSettings();
     }
 
     @Override

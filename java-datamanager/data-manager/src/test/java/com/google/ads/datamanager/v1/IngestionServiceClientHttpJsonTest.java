@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +76,10 @@ public class IngestionServiceClientHttpJsonTest {
   @Test
   public void ingestAudienceMembersTest() throws Exception {
     IngestAudienceMembersResponse expectedResponse =
-        IngestAudienceMembersResponse.newBuilder().setRequestId("requestId693933066").build();
+        IngestAudienceMembersResponse.newBuilder()
+            .setRequestId("requestId693933066")
+            .addAllFieldWarnings(new ArrayList<FieldWarning>())
+            .build();
     mockService.addResponse(expectedResponse);
 
     IngestAudienceMembersRequest request =
@@ -189,9 +193,64 @@ public class IngestionServiceClientHttpJsonTest {
   }
 
   @Test
+  public void removeAllAudienceMembersTest() throws Exception {
+    RemoveAllAudienceMembersResponse expectedResponse =
+        RemoveAllAudienceMembersResponse.newBuilder().setRequestId("requestId693933066").build();
+    mockService.addResponse(expectedResponse);
+
+    RemoveAllAudienceMembersRequest request =
+        RemoveAllAudienceMembersRequest.newBuilder()
+            .addAllDestinations(new ArrayList<Destination>())
+            .setRemoveAsOfTime(Timestamp.newBuilder().build())
+            .setValidateOnly(true)
+            .build();
+
+    RemoveAllAudienceMembersResponse actualResponse = client.removeAllAudienceMembers(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void removeAllAudienceMembersExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RemoveAllAudienceMembersRequest request =
+          RemoveAllAudienceMembersRequest.newBuilder()
+              .addAllDestinations(new ArrayList<Destination>())
+              .setRemoveAsOfTime(Timestamp.newBuilder().build())
+              .setValidateOnly(true)
+              .build();
+      client.removeAllAudienceMembers(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void ingestEventsTest() throws Exception {
     IngestEventsResponse expectedResponse =
-        IngestEventsResponse.newBuilder().setRequestId("requestId693933066").build();
+        IngestEventsResponse.newBuilder()
+            .setRequestId("requestId693933066")
+            .addAllFieldWarnings(new ArrayList<FieldWarning>())
+            .build();
     mockService.addResponse(expectedResponse);
 
     IngestEventsRequest request =
@@ -240,6 +299,57 @@ public class IngestionServiceClientHttpJsonTest {
               .setEncryptionInfo(EncryptionInfo.newBuilder().build())
               .build();
       client.ingestEvents(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void ingestAdEventsTest() throws Exception {
+    IngestAdEventsResponse expectedResponse = IngestAdEventsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    IngestAdEventsRequest request =
+        IngestAdEventsRequest.newBuilder()
+            .addAllAdEvents(new ArrayList<AdEvent>())
+            .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setValidateOnly(true)
+            .build();
+
+    IngestAdEventsResponse actualResponse = client.ingestAdEvents(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void ingestAdEventsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      IngestAdEventsRequest request =
+          IngestAdEventsRequest.newBuilder()
+              .addAllAdEvents(new ArrayList<AdEvent>())
+              .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+              .setValidateOnly(true)
+              .build();
+      client.ingestAdEvents(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

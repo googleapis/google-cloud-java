@@ -55,7 +55,9 @@ import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
+@Timeout(30)
 public class ClientTest {
   private ClientConfiguration defaultConfig;
 
@@ -103,6 +105,41 @@ public class ClientTest {
     client.close();
     server.shutdownNow();
     executor.shutdownNow();
+  }
+
+  @Test
+  public void openAfterCloseThrows() {
+    client.close();
+
+    IllegalStateException tableEx =
+        assertThrows(
+            IllegalStateException.class,
+            () -> client.openTableAsync("fake-table", OpenTableRequest.Permission.PERMISSION_READ));
+    assertThat(tableEx).hasMessageThat().contains("closed");
+
+    IllegalStateException viewEx =
+        assertThrows(
+            IllegalStateException.class,
+            () ->
+                client.openAuthorizedViewAsync(
+                    "fake-table",
+                    "fake-view",
+                    OpenAuthorizedViewRequest.Permission.PERMISSION_READ));
+    assertThat(viewEx).hasMessageThat().contains("closed");
+
+    IllegalStateException mvEx =
+        assertThrows(
+            IllegalStateException.class,
+            () ->
+                client.openMaterializedViewAsync(
+                    "fake-view", OpenMaterializedViewRequest.Permission.PERMISSION_READ));
+    assertThat(mvEx).hasMessageThat().contains("closed");
+  }
+
+  @Test
+  public void closeIsIdempotent() {
+    client.close();
+    client.close(); // must not throw or hang
   }
 
   @Test

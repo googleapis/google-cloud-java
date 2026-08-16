@@ -40,6 +40,7 @@ public class AsyncDeleteCollection {
           DeleteCollectionRequest.newBuilder()
               .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       ApiFuture<Operation> future =
           vectorSearchServiceClient.deleteCollectionCallable().futureCall(request);

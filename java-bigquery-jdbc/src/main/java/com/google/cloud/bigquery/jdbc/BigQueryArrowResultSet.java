@@ -28,6 +28,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
+import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Date;
@@ -38,6 +39,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Future;
 import org.apache.arrow.memory.BufferAllocator;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.FieldVector;
@@ -80,8 +82,8 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   // Decoder object will be reused to avoid re-allocation and too much garbage collection.
   private VectorSchemaRoot vectorSchemaRoot;
   private VectorLoader vectorLoader;
-  // producer thread's reference
-  private final Thread ownedThread;
+  // producer task's reference
+  private final Future<?> ownedTask;
 
   private BigQueryArrowResultSet(
       Schema schema,
@@ -93,7 +95,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       boolean isNested,
       int fromIndex,
       int toIndexExclusive,
-      Thread ownedThread,
+      Future<?> ownedTask,
       BigQuery bigQuery,
       Job job)
       throws SQLException {
@@ -105,7 +107,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     this.fromIndex = fromIndex;
     this.toIndexExclusive = toIndexExclusive;
     this.nestedRowIndex = fromIndex - 1;
-    this.ownedThread = ownedThread;
+    this.ownedTask = ownedTask;
     if (!isNested && arrowSchema != null) {
       try {
         this.arrowDeserializer = new ArrowDeserializer(arrowSchema);
@@ -127,10 +129,10 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       long totalRows,
       BigQueryStatement statement,
       BlockingQueue<BigQueryArrowBatchWrapper> buffer,
-      Thread ownedThread,
+      Future<?> ownedTask,
       BigQuery bigQuery)
       throws SQLException {
-    return of(schema, arrowSchema, totalRows, statement, buffer, ownedThread, bigQuery, null);
+    return of(schema, arrowSchema, totalRows, statement, buffer, ownedTask, bigQuery, null);
   }
 
   static BigQueryArrowResultSet of(
@@ -139,7 +141,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       long totalRows,
       BigQueryStatement statement,
       BlockingQueue<BigQueryArrowBatchWrapper> buffer,
-      Thread ownedThread,
+      Future<?> ownedTask,
       BigQuery bigQuery,
       Job job)
       throws SQLException {
@@ -153,7 +155,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         false,
         -1,
         -1,
-        ownedThread,
+        ownedTask,
         bigQuery,
         job);
   }
@@ -165,7 +167,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     this.currentNestedBatch = null;
     this.fromIndex = 0;
     this.toIndexExclusive = 0;
-    this.ownedThread = null;
+    this.ownedTask = null;
     this.arrowDeserializer = null;
     this.vectorSchemaRoot = null;
     this.vectorLoader = null;
@@ -263,29 +265,31 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
             || this.currentBatchRowIndex == (this.vectorSchemaRoot.getRowCount() - 1)) {
           /* Start of iteration or we have exhausted the current batch */
           // Advance the cursor. Potentially blocking operation.
-          BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
-          if (batchWrapper.getException() != null) {
-            throw new BigQueryJdbcRuntimeException(batchWrapper.getException());
-          }
-          if (batchWrapper.isLast()) {
-            /* Marks the end of the records */
-            if (this.vectorSchemaRoot != null) {
-              // IMP: To avoid memory leak: clear vectorSchemaRoot as it still holds
-              // the last batch
-              this.vectorSchemaRoot.clear();
+          try (Scope scope = makeOriginalContextCurrent()) {
+            BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
+            if (batchWrapper.getException() != null) {
+              throw new BigQueryJdbcRuntimeException(batchWrapper.getException());
             }
-            this.hasReachedEnd = true;
+            if (batchWrapper.isLast()) {
+              /* Marks the end of the records */
+              if (this.vectorSchemaRoot != null) {
+                // IMP: To avoid memory leak: clear vectorSchemaRoot as it still holds
+                // the last batch
+                this.vectorSchemaRoot.clear();
+              }
+              this.hasReachedEnd = true;
+              this.rowCount++;
+              return false;
+            }
+            // Valid batch, process it
+            ArrowRecordBatch arrowBatch = batchWrapper.getCurrentArrowBatch();
+            // Populates vectorSchemaRoot
+            this.arrowDeserializer.deserializeArrowBatch(arrowBatch);
+            // Pointing to the first row in this fresh batch
+            this.currentBatchRowIndex = 0;
             this.rowCount++;
-            return false;
+            return true;
           }
-          // Valid batch, process it
-          ArrowRecordBatch arrowBatch = batchWrapper.getCurrentArrowBatch();
-          // Populates vectorSchemaRoot
-          this.arrowDeserializer.deserializeArrowBatch(arrowBatch);
-          // Pointing to the first row in this fresh batch
-          this.currentBatchRowIndex = 0;
-          this.rowCount++;
-          return true;
         }
         // There are rows left in the current batch.
         else if (this.currentBatchRowIndex < this.vectorSchemaRoot.getRowCount()) {
@@ -484,9 +488,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   public void close() {
     LOG.fineTrace("close", () -> String.format("Closing BigqueryArrowResultSet %s.", this));
     this.isClosed = true;
-    if (ownedThread != null && !ownedThread.isInterrupted()) {
-      // interrupt the producer thread when result set is closed
-      ownedThread.interrupt();
+    if (ownedTask != null) {
+      // cancel the producer task when result set is closed
+      ownedTask.cancel(true);
     }
     super.close();
   }

@@ -23,6 +23,8 @@ import com.google.shopping.merchant.issueresolution.v1.stub.IssueResolutionServi
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -172,9 +174,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class IssueResolutionServiceClient implements BackgroundResource {
-  private final IssueResolutionServiceSettings settings;
+  private final @Nullable IssueResolutionServiceSettings settings;
   private final IssueResolutionServiceStub stub;
 
   /** Constructs an instance of IssueResolutionServiceClient with default settings. */
@@ -215,7 +218,7 @@ public class IssueResolutionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final IssueResolutionServiceSettings getSettings() {
+  public final @Nullable IssueResolutionServiceSettings getSettings() {
     return settings;
   }
 
@@ -247,7 +250,7 @@ public class IssueResolutionServiceClient implements BackgroundResource {
    * @param name Required. The account to fetch issues for. Format: `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RenderAccountIssuesResponse renderAccountIssues(AccountName name) {
+  public final RenderAccountIssuesResponse renderAccountIssues(@Nullable AccountName name) {
     RenderAccountIssuesRequest request =
         RenderAccountIssuesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -380,7 +383,7 @@ public class IssueResolutionServiceClient implements BackgroundResource {
    *     `accounts/{account}/products/{product}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RenderProductIssuesResponse renderProductIssues(ProductName name) {
+  public final RenderProductIssuesResponse renderProductIssues(@Nullable ProductName name) {
     RenderProductIssuesRequest request =
         RenderProductIssuesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -520,7 +523,7 @@ public class IssueResolutionServiceClient implements BackgroundResource {
    *     `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TriggerActionResponse triggerAction(AccountName name) {
+  public final TriggerActionResponse triggerAction(@Nullable AccountName name) {
     TriggerActionRequest request =
         TriggerActionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return triggerAction(request);

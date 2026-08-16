@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.data.v2.internal.csm.exporter;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -64,7 +63,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
@@ -81,7 +80,7 @@ public class BigtableCloudMonitoringExporterTest {
 
   @Rule public final MockitoRule mockitoRule = MockitoJUnit.rule();
 
-  @Mock private MetricServiceStub mockMetricServiceStub;
+  private MetricServiceStub mockMetricServiceStub;
   private MetricServiceClient fakeMetricServiceClient;
   private BigtableCloudMonitoringExporter exporter;
 
@@ -107,6 +106,8 @@ public class BigtableCloudMonitoringExporterTest {
 
   @Before
   public void setUp() {
+    mockMetricServiceStub =
+        Mockito.mock(MetricServiceStub.class, Mockito.withSettings().withoutAnnotations());
     fakeMetricServiceClient = new FakeMetricServiceClient(mockMetricServiceStub);
 
     exporter =
@@ -142,7 +143,8 @@ public class BigtableCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
@@ -199,7 +201,8 @@ public class BigtableCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
@@ -265,7 +268,8 @@ public class BigtableCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
@@ -350,7 +354,8 @@ public class BigtableCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     when(mockCallable.futureCall(argumentCaptor.capture())).thenReturn(future);
@@ -428,7 +433,8 @@ public class BigtableCloudMonitoringExporterTest {
     ArgumentCaptor<CreateTimeSeriesRequest> argumentCaptor =
         ArgumentCaptor.forClass(CreateTimeSeriesRequest.class);
 
-    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = mock(UnaryCallable.class);
+    UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
     when(mockMetricServiceStub.createServiceTimeSeriesCallable()).thenReturn(mockCallable);
     ApiFuture<Empty> future = ApiFutures.immediateFuture(Empty.getDefaultInstance());
     when(mockCallable.futureCall(any())).thenReturn(future);

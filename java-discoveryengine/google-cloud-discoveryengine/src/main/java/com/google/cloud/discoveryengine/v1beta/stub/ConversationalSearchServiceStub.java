@@ -21,6 +21,7 @@ import static com.google.cloud.discoveryengine.v1beta.ConversationalSearchServic
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.discoveryengine.v1beta.Answer;
 import com.google.cloud.discoveryengine.v1beta.AnswerQueryRequest;
@@ -44,6 +45,7 @@ import com.google.cloud.discoveryengine.v1beta.UpdateConversationRequest;
 import com.google.cloud.discoveryengine.v1beta.UpdateSessionRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -51,6 +53,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class ConversationalSearchServiceStub implements BackgroundResource {
@@ -88,6 +91,11 @@ public abstract class ConversationalSearchServiceStub implements BackgroundResou
 
   public UnaryCallable<AnswerQueryRequest, AnswerQueryResponse> answerQueryCallable() {
     throw new UnsupportedOperationException("Not implemented: answerQueryCallable()");
+  }
+
+  public ServerStreamingCallable<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: streamAnswerQueryCallable()");
   }
 
   public UnaryCallable<GetAnswerRequest, Answer> getAnswerCallable() {

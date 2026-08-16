@@ -26,7 +26,10 @@ import com.google.cloud.chronicle.v1.ListReferenceListsRequest;
 import com.google.cloud.chronicle.v1.ListReferenceListsResponse;
 import com.google.cloud.chronicle.v1.ReferenceList;
 import com.google.cloud.chronicle.v1.UpdateReferenceListRequest;
+import com.google.cloud.chronicle.v1.VerifyReferenceListRequest;
+import com.google.cloud.chronicle.v1.VerifyReferenceListResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -34,6 +37,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class ReferenceListServiceStub implements BackgroundResource {
 
@@ -57,6 +61,11 @@ public abstract class ReferenceListServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateReferenceListRequest, ReferenceList> updateReferenceListCallable() {
     throw new UnsupportedOperationException("Not implemented: updateReferenceListCallable()");
+  }
+
+  public UnaryCallable<VerifyReferenceListRequest, VerifyReferenceListResponse>
+      verifyReferenceListCallable() {
+    throw new UnsupportedOperationException("Not implemented: verifyReferenceListCallable()");
   }
 
   @Override

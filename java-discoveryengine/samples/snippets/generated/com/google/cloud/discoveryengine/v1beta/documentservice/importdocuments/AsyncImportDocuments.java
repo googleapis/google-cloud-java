@@ -48,6 +48,7 @@ public class AsyncImportDocuments {
               .setUpdateMask(FieldMask.newBuilder().build())
               .setAutoGenerateIds(true)
               .setIdField("idField1629396127")
+              .setForceRefreshContent(true)
               .build();
       ApiFuture<Operation> future =
           documentServiceClient.importDocumentsCallable().futureCall(request);

@@ -28,7 +28,8 @@ public class ComposeObject {
       String firstObjectName,
       String secondObjectName,
       String targetObjectName,
-      String projectId) {
+      String projectId,
+      boolean deleteSourceObjects) {
     // The ID of your GCP project
     // String projectId = "your-project-id";
 
@@ -70,17 +71,20 @@ public class ComposeObject {
             .addSource(firstObjectName, secondObjectName)
             .setTarget(BlobInfo.newBuilder(bucketName, targetObjectName).build())
             .setTargetOptions(precondition)
+            .setDeleteSourceObjects(deleteSourceObjects)
             .build();
 
     Blob compositeObject = storage.compose(composeRequest);
 
+    String deletionMessage = deleteSourceObjects ? " and the source objects were deleted." : ".";
     System.out.println(
         "New composite object "
             + compositeObject.getName()
             + " was created by combining "
             + firstObjectName
             + " and "
-            + secondObjectName);
+            + secondObjectName
+            + deletionMessage);
   }
 }
 // [END storage_compose_file]

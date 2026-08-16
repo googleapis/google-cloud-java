@@ -205,6 +205,27 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
   }
 
   @Override
+  public void searchMessages(
+      SearchMessagesRequest request, StreamObserver<SearchMessagesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SearchMessagesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SearchMessagesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchMessages, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SearchMessagesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getAttachment(
       GetAttachmentRequest request, StreamObserver<Attachment> responseObserver) {
     Object response = responses.poll();
@@ -722,6 +743,110 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
                   "Unrecognized response type %s for method GetThreadReadState, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ThreadReadState.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAvailability(
+      GetAvailabilityRequest request, StreamObserver<Availability> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Availability) {
+      requests.add(request);
+      responseObserver.onNext(((Availability) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAvailability, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Availability.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void markAsActive(
+      MarkAsActiveRequest request, StreamObserver<Availability> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Availability) {
+      requests.add(request);
+      responseObserver.onNext(((Availability) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MarkAsActive, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Availability.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void markAsAway(MarkAsAwayRequest request, StreamObserver<Availability> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Availability) {
+      requests.add(request);
+      responseObserver.onNext(((Availability) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MarkAsAway, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Availability.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void markAsDoNotDisturb(
+      MarkAsDoNotDisturbRequest request, StreamObserver<Availability> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Availability) {
+      requests.add(request);
+      responseObserver.onNext(((Availability) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MarkAsDoNotDisturb, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Availability.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAvailability(
+      UpdateAvailabilityRequest request, StreamObserver<Availability> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Availability) {
+      requests.add(request);
+      responseObserver.onNext(((Availability) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAvailability, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Availability.class.getName(),
                   Exception.class.getName())));
     }
   }
