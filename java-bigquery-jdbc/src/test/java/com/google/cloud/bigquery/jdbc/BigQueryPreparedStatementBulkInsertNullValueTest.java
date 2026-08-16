@@ -16,58 +16,96 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.mockito.ArgumentMatchers.any;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.testing.LocalChannelProvider;
+import com.google.api.gax.grpc.testing.MockGrpcService;
+import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
+import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
-import com.google.cloud.bigquery.storage.v1.CreateWriteStreamRequest;
+import com.google.cloud.bigquery.storage.v1.FinalizeWriteStreamResponse;
+import com.google.cloud.bigquery.storage.v1.MockBigQueryWrite;
+import com.google.cloud.bigquery.storage.v1.TableFieldSchema;
 import com.google.cloud.bigquery.storage.v1.TableName;
 import com.google.cloud.bigquery.storage.v1.TableSchema;
 import com.google.cloud.bigquery.storage.v1.WriteStream;
-import java.lang.reflect.InvocationTargetException;
+import com.google.protobuf.Int64Value;
+import com.google.protobuf.Timestamp;
 import java.lang.reflect.Method;
 import java.sql.Types;
+import java.util.Arrays;
+import java.util.UUID;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
  * Regression test for https://github.com/googleapis/google-cloud-java/issues/14066: a
  * null-valued STRING parameter in a Storage Write API batch insert used to throw NPE while
- * building the row's JSON representation, instead of writing a JSON null.
+ * building the row's JSON representation, instead of writing a JSON null. Drives the real
+ * bulkInsertWithWriteAPI code path end-to-end against an in-process fake Storage Write service so
+ * the fix is verified without any real network dependency.
  */
 public class BigQueryPreparedStatementBulkInsertNullValueTest {
 
-  private BigQueryConnection connection;
+  private static final String STREAM_NAME =
+      "projects/test-project/datasets/test_dataset/tables/test_table/streams/test-stream";
+
+  private MockBigQueryWrite mockBigQueryWrite;
+  private MockServiceHelper serviceHelper;
+  private BigQueryWriteClient writeClient;
   private BigQueryPreparedStatement preparedStatement;
-  private BigQueryWriteClient mockWriteClient;
 
   @BeforeEach
   public void setUp() throws Exception {
-    connection = mock(BigQueryConnection.class);
-    mockWriteClient = mock(BigQueryWriteClient.class);
+    mockBigQueryWrite = new MockBigQueryWrite();
+    serviceHelper =
+        new MockServiceHelper(
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockBigQueryWrite));
+    serviceHelper.start();
 
-    BigQueryWriteSettings mockSettings =
-        BigQueryWriteSettings.newBuilder()
-            .setCredentialsProvider(NoCredentialsProvider.create())
+    LocalChannelProvider channelProvider = serviceHelper.createChannelProvider();
+    writeClient =
+        BigQueryWriteClient.create(
+            BigQueryWriteSettings.newBuilder()
+                .setTransportChannelProvider(channelProvider)
+                .setCredentialsProvider(NoCredentialsProvider.create())
+                .build());
+
+    TableFieldSchema nameField =
+        TableFieldSchema.newBuilder()
+            .setName("name")
+            .setType(TableFieldSchema.Type.STRING)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
             .build();
-    when(mockWriteClient.getSettings()).thenReturn(mockSettings);
-
-    WriteStream stream =
+    WriteStream writeStream =
         WriteStream.newBuilder()
-            .setName(
-                "projects/test-project/datasets/test_dataset/tables/test_table/streams/_default")
-            .setTableSchema(TableSchema.newBuilder().build())
+            .setName(STREAM_NAME)
+            .setTableSchema(TableSchema.newBuilder().addFields(nameField).build())
             .build();
-    when(mockWriteClient.createWriteStream(any(CreateWriteStreamRequest.class)))
-        .thenReturn(stream);
 
+    // Responses are consumed in call order by bulkInsertWithWriteAPI: createWriteStream, then
+    // append, then finalizeWriteStream, then batchCommitWriteStreams.
+    mockBigQueryWrite.addResponse(writeStream);
+    mockBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)))
+            .build());
+    mockBigQueryWrite.addResponse(FinalizeWriteStreamResponse.newBuilder().setRowCount(1).build());
+    mockBigQueryWrite.addResponse(
+        BatchCommitWriteStreamsResponse.newBuilder()
+            .setCommitTime(Timestamp.newBuilder().build())
+            .build());
+
+    BigQueryConnection connection = mock(BigQueryConnection.class);
     preparedStatement =
         new BigQueryPreparedStatement(connection, "INSERT INTO test_table (name) VALUES (?)");
     preparedStatement.insertSchema = Schema.of(Field.of("name", StandardSQLTypeName.STRING));
@@ -79,8 +117,14 @@ public class BigQueryPreparedStatementBulkInsertNullValueTest {
         preparedStatement, TableName.of("test-project", "test_dataset", "test_table"));
   }
 
+  @AfterEach
+  public void tearDown() throws Exception {
+    writeClient.close();
+    serviceHelper.stop();
+  }
+
   @Test
-  public void testBulkInsertWithWriteApiDoesNotThrowNpeForNullStringParameter() throws Exception {
+  public void testBulkInsertWithWriteApiCompletesForNullStringParameter() throws Exception {
     preparedStatement.setNull(1, Types.VARCHAR);
     preparedStatement.addBatch();
 
@@ -89,12 +133,6 @@ public class BigQueryPreparedStatementBulkInsertNullValueTest {
             "bulkInsertWithWriteAPI", BigQueryWriteClient.class);
     bulkInsertMethod.setAccessible(true);
 
-    try {
-      bulkInsertMethod.invoke(preparedStatement, mockWriteClient);
-    } catch (InvocationTargetException e) {
-      assertFalse(
-          e.getCause() instanceof NullPointerException,
-          "Row construction should not NPE on a null STRING parameter, but got: " + e.getCause());
-    }
+    assertDoesNotThrow(() -> bulkInsertMethod.invoke(preparedStatement, writeClient));
   }
 }
