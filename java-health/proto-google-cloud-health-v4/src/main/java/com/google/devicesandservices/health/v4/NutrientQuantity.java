@@ -78,7 +78,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Value representing the quantity of the nutrient.
+   * Required. The quantity of the nutrient, measured in grams.
    * </pre>
    *
    * <code>
@@ -96,7 +96,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Value representing the quantity of the nutrient.
+   * Required. The quantity of the nutrient, measured in grams.
    * </pre>
    *
    * <code>
@@ -116,7 +116,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Value representing the quantity of the nutrient.
+   * Required. The quantity of the nutrient, measured in grams.
    * </pre>
    *
    * <code>
@@ -137,7 +137,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Value representing the nutrient.
+   * Required. The nutrient type.
    * </pre>
    *
    * <code>
@@ -155,7 +155,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Value representing the nutrient.
+   * Required. The nutrient type.
    * </pre>
    *
    * <code>
@@ -537,7 +537,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the quantity of the nutrient.
+     * Required. The quantity of the nutrient, measured in grams.
      * </pre>
      *
      * <code>
@@ -554,7 +554,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the quantity of the nutrient.
+     * Required. The quantity of the nutrient, measured in grams.
      * </pre>
      *
      * <code>
@@ -577,7 +577,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the quantity of the nutrient.
+     * Required. The quantity of the nutrient, measured in grams.
      * </pre>
      *
      * <code>
@@ -602,7 +602,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the quantity of the nutrient.
+     * Required. The quantity of the nutrient, measured in grams.
      * </pre>
      *
      * <code>
@@ -625,7 +625,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the quantity of the nutrient.
+     * Required. The quantity of the nutrient, measured in grams.
      * </pre>
      *
      * <code>
@@ -656,7 +656,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the quantity of the nutrient.
+     * Required. The quantity of the nutrient, measured in grams.
      * </pre>
      *
      * <code>
@@ -678,7 +678,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the quantity of the nutrient.
+     * Required. The quantity of the nutrient, measured in grams.
      * </pre>
      *
      * <code>
@@ -695,7 +695,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the quantity of the nutrient.
+     * Required. The quantity of the nutrient, measured in grams.
      * </pre>
      *
      * <code>
@@ -716,7 +716,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the quantity of the nutrient.
+     * Required. The quantity of the nutrient, measured in grams.
      * </pre>
      *
      * <code>
@@ -746,7 +746,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the nutrient.
+     * Required. The nutrient type.
      * </pre>
      *
      * <code>
@@ -764,7 +764,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the nutrient.
+     * Required. The nutrient type.
      * </pre>
      *
      * <code>
@@ -785,7 +785,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the nutrient.
+     * Required. The nutrient type.
      * </pre>
      *
      * <code>
@@ -807,7 +807,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the nutrient.
+     * Required. The nutrient type.
      * </pre>
      *
      * <code>
@@ -831,7 +831,7 @@ public final class NutrientQuantity extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Value representing the nutrient.
+     * Required. The nutrient type.
      * </pre>
      *
      * <code>
