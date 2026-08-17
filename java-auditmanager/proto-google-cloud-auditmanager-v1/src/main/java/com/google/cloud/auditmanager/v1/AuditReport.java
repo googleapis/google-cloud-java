@@ -559,7 +559,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-   *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=758
    * @return The complianceStandard.
    */
   @java.lang.Override
@@ -590,7 +590,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-   *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=758
    * @return The bytes for complianceStandard.
    */
   @java.lang.Override
@@ -2309,7 +2309,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=758
      * @return The complianceStandard.
      */
     @java.lang.Deprecated
@@ -2339,7 +2339,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=758
      * @return The bytes for complianceStandard.
      */
     @java.lang.Deprecated
@@ -2369,7 +2369,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=758
      * @param value The complianceStandard to set.
      * @return This builder for chaining.
      */
@@ -2398,7 +2398,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=758
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2423,7 +2423,7 @@ public final class AuditReport extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=747
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=758
      * @param value The bytes for complianceStandard to set.
      * @return This builder for chaining.
      */
