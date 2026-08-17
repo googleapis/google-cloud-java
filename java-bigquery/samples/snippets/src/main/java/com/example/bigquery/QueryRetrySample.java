@@ -30,12 +30,10 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
-import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.http.HttpTransportOptions;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Tracer;
@@ -195,16 +193,6 @@ public class QueryRetrySample {
         System.out.println("Job created: " + job.getJobId().getJob() + ", waiting for completion...");
         job = job.waitFor();
         logErrorIfAnyForGCloud(job);
-
-        if (job.getStatus().getError() == null) {
-          TableResult result = job.getQueryResults();
-          System.out.println("\nQuery Results (succeeded after simulated retries):");
-          for (FieldValueList row : result.iterateAll()) {
-            System.out.printf(
-                "corpus: %s, count: %d%n",
-                row.get("corpus").getStringValue(), row.get("corpus_count").getLongValue());
-          }
-        }
       }
     } catch (BigQueryException e) {
       System.out.println("\nCaught BigQueryException after retry attempts: " + e.getMessage());
