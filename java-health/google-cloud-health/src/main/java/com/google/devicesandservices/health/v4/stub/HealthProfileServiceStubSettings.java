@@ -134,8 +134,13 @@ public class HealthProfileServiceStubSettings
           .add(
               "https://www.googleapis.com/auth/googlehealth.health_metrics_and_measurements.readonly")
           .add("https://www.googleapis.com/auth/googlehealth.irn.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.logged_symptoms.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.mindfulness.readonly")
           .add("https://www.googleapis.com/auth/googlehealth.profile.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.profile.writeonly")
+          .add("https://www.googleapis.com/auth/googlehealth.reproductive_health.readonly")
           .add("https://www.googleapis.com/auth/googlehealth.settings.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.settings.writeonly")
           .add("https://www.googleapis.com/auth/googlehealth.sleep.readonly")
           .build();
 

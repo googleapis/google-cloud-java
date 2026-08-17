@@ -30,7 +30,7 @@ public interface WeightQuantityOrBuilder
    *
    *
    * <pre>
-   * Required. Value representing the weight in grams.
+   * Required. The weight value in grams.
    * </pre>
    *
    * <code>optional double grams = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -43,7 +43,7 @@ public interface WeightQuantityOrBuilder
    *
    *
    * <pre>
-   * Required. Value representing the weight in grams.
+   * Required. The weight value in grams.
    * </pre>
    *
    * <code>optional double grams = 1 [(.google.api.field_behavior) = REQUIRED];</code>

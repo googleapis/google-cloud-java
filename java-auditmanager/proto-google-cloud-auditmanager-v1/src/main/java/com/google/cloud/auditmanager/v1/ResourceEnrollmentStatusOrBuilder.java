@@ -119,7 +119,7 @@ public interface ResourceEnrollmentStatusOrBuilder
    * <code>bool enrolled = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.cloud.auditmanager.v1.ResourceEnrollmentStatus.enrolled is deprecated. See
-   *     google/cloud/auditmanager/v1/auditmanager.proto;l=682
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=693
    * @return The enrolled.
    */
   @java.lang.Deprecated
