@@ -31,12 +31,16 @@ package com.google.api.gax.httpjson;
 
 import static org.mockito.Mockito.mock;
 
+import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.EmptyContent;
+import com.google.api.client.http.HttpContent;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.gax.tracing.ApiTracer;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.truth.Truth;
 import com.google.longrunning.ListOperationsRequest;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.Field;
 import com.google.protobuf.util.JsonFormat;
@@ -44,6 +48,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -325,5 +330,63 @@ class HttpRequestRunnableTest {
     HttpRequest httpRequest = httpRequestRunnable.createHttpRequest();
     Truth.assertThat(httpRequest.getReadTimeout()).isEqualTo(30000L);
     Truth.assertThat(httpRequest.getConnectTimeout()).isEqualTo(30000L);
+  }
+
+  @Test
+  void testNonJsonHttpContent() throws IOException {
+    ByteString rawPayload = ByteString.copyFromUtf8("binary \0 raw \1 payload");
+    HttpRequestFormatter<Field> binaryRequestFormatter =
+        new HttpRequestFormatter<Field>() {
+          @Override
+          public Map<String, List<String>> getQueryParamNames(Field apiMessage) {
+            return Collections.emptyMap();
+          }
+
+          @Override
+          public String getRequestBody(Field apiMessage) {
+            return "";
+          }
+
+          @Override
+          public HttpContent getHttpContent(Field apiMessage) {
+            return new ByteArrayContent("application/octet-stream", rawPayload.toByteArray());
+          }
+
+          @Override
+          public String getPath(Field apiMessage) {
+            return "/upload";
+          }
+
+          @Override
+          public PathTemplate getPathTemplate() {
+            return PathTemplate.create("{+path}");
+          }
+        };
+
+    ApiMethodDescriptor<Field, Empty> methodDescriptor =
+        ApiMethodDescriptor.<Field, Empty>newBuilder()
+            .setFullMethodName("upload.binary")
+            .setHttpMethod("POST")
+            .setRequestFormatter(binaryRequestFormatter)
+            .setResponseParser(responseParser)
+            .build();
+
+    HttpRequestRunnable<Field, Empty> httpRequestRunnable =
+        new HttpRequestRunnable<>(
+            requestMessage,
+            methodDescriptor,
+            ENDPOINT,
+            HttpJsonCallOptions.newBuilder().build(),
+            new MockHttpTransport(),
+            HttpJsonMetadata.newBuilder().build(),
+            (result) -> {});
+
+    HttpRequest httpRequest = httpRequestRunnable.createHttpRequest();
+    Truth.assertThat(httpRequest.getContent()).isInstanceOf(ByteArrayContent.class);
+    Truth.assertThat(httpRequest.getContent().getType()).isEqualTo("application/octet-stream");
+    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+      httpRequest.getContent().writeTo(out);
+      Truth.assertThat(out.toByteArray()).isEqualTo(rawPayload.toByteArray());
+    }
   }
 }

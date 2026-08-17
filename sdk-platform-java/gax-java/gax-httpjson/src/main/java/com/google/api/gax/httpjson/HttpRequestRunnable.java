@@ -29,26 +29,21 @@
  */
 package com.google.api.gax.httpjson;
 
-import com.google.api.client.http.EmptyContent;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpContent;
-import com.google.api.client.http.HttpMediaType;
 import com.google.api.client.http.HttpMethods;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
-import com.google.api.client.util.GenericData;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.auth.Credentials;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auto.value.AutoValue;
-import com.google.common.base.Strings;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -154,8 +149,6 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
   }
 
   HttpRequest createHttpRequest() throws IOException {
-    GenericData tokenRequest = new GenericData();
-
     HttpRequestFormatter<RequestT> requestFormatter = methodDescriptor.getRequestFormatter();
 
     HttpRequestFactory requestFactory;
@@ -166,20 +159,8 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
       requestFactory = httpTransport.createRequestFactory();
     }
 
-    JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
     // Create HTTP request body.
-    String requestBody = requestFormatter.getRequestBody(request);
-    HttpContent jsonHttpContent;
-    if (!Strings.isNullOrEmpty(requestBody)) {
-      jsonFactory.createJsonParser(requestBody).parse(tokenRequest);
-      jsonHttpContent =
-          new JsonHttpContent(jsonFactory, tokenRequest)
-              .setMediaType((new HttpMediaType("application/json; charset=utf-8")));
-    } else {
-      // Force underlying HTTP lib to set Content-Length header to avoid 411s.
-      // See EmptyContent.java.
-      jsonHttpContent = new EmptyContent();
-    }
+    HttpContent httpContent = requestFormatter.getHttpContent(request);
 
     // Populate URL path and query parameters.
     String normalizedEndpoint = normalizeEndpoint(endpoint);
@@ -196,20 +177,21 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
       tracer.requestUrlResolved(url.build());
     }
 
-    HttpRequest httpRequest = buildRequest(requestFactory, url, jsonHttpContent);
+    HttpRequest httpRequest = buildRequest(requestFactory, url, httpContent);
 
     for (Map.Entry<String, Object> entry : headers.getHeaders().entrySet()) {
       HttpHeadersUtils.setHeader(
           httpRequest.getHeaders(), entry.getKey(), (String) entry.getValue());
     }
 
+    JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
     httpRequest.setParser(new JsonObjectParser(jsonFactory));
 
     return httpRequest;
   }
 
   private HttpRequest buildRequest(
-      HttpRequestFactory requestFactory, GenericUrl url, HttpContent jsonHttpContent)
+      HttpRequestFactory requestFactory, GenericUrl url, HttpContent httpContent)
       throws IOException {
     // A workaround to support PATCH request. This assumes support of "X-HTTP-Method-Override"
     // header on the server side, which GCP services usually do.
@@ -235,7 +217,7 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
     if (HttpMethods.PATCH.equals(actualHttpMethod)) {
       actualHttpMethod = HttpMethods.POST;
     }
-    HttpRequest httpRequest = requestFactory.buildRequest(actualHttpMethod, url, jsonHttpContent);
+    HttpRequest httpRequest = requestFactory.buildRequest(actualHttpMethod, url, httpContent);
     if (originalHttpMethod != null && !originalHttpMethod.equals(actualHttpMethod)) {
       HttpHeadersUtils.setHeader(
           httpRequest.getHeaders(), "X-HTTP-Method-Override", originalHttpMethod);
