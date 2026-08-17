@@ -124,6 +124,7 @@ public class QueryRetrySample {
     } finally {
       // 7. Flush and close the SDK to ensure all batched spans reach Cloud Trace
       tracerProvider.close();
+      otlpExporter.close();
     }
   }
 
