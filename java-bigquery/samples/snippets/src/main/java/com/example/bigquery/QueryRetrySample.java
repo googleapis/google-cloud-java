@@ -16,12 +16,15 @@
 
 package com.example.bigquery;
 
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.Json;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
+import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
@@ -136,8 +139,36 @@ public class QueryRetrySample {
             .setHttpTransportFactory(() -> new TransientErrorHttpTransport(simulatedFailures))
             .build();
 
+    // Wrap default retry algorithm to retry transient HTTP 5xx errors (500, 502, 503, 504)
+    // This allows applications using existing released SDK versions to enable 5xx retries
+    @SuppressWarnings("unchecked")
+    ResultRetryAlgorithm<Object> defaultAlgorithm =
+        (ResultRetryAlgorithm<Object>)
+            BigQueryOptions.getDefaultInstance().getResultRetryAlgorithm();
+
+    ResultRetryAlgorithm<Object> http5xxRetryAlgorithm =
+        new ResultRetryAlgorithm<Object>() {
+          @Override
+          public TimedAttemptSettings createNextAttempt(
+              Throwable prevThrowable, Object prevResponse, TimedAttemptSettings prevSettings) {
+            return defaultAlgorithm.createNextAttempt(prevThrowable, prevResponse, prevSettings);
+          }
+
+          @Override
+          public boolean shouldRetry(Throwable prevThrowable, Object prevResponse) {
+            if (prevThrowable instanceof HttpResponseException) {
+              int statusCode = ((HttpResponseException) prevThrowable).getStatusCode();
+              if (statusCode == 500 || statusCode == 502 || statusCode == 503 || statusCode == 504) {
+                return true;
+              }
+            }
+            return defaultAlgorithm.shouldRetry(prevThrowable, prevResponse);
+          }
+        };
+
     BigQueryOptions.Builder optionsBuilder =
         BigQueryOptions.newBuilder()
+            .setResultRetryAlgorithm(http5xxRetryAlgorithm)
             .setTransportOptions(transportOptions)
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracer(tracer);
