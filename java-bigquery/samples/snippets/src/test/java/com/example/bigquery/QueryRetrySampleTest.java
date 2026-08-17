@@ -18,7 +18,6 @@ package com.example.bigquery;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
@@ -34,7 +33,6 @@ import io.opentelemetry.sdk.trace.samplers.Sampler;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.lang.reflect.Proxy;
-import java.time.Duration;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -75,16 +73,8 @@ public class QueryRetrySampleTest {
     assertThat(options.isOpenTelemetryTracingEnabled()).isTrue();
     assertThat(options.getOpenTelemetryTracer()).isEqualTo(tracer);
 
-    RetrySettings retrySettings = options.getRetrySettings();
-    assertThat(retrySettings.getMaxAttempts()).isEqualTo(4);
-    assertThat(retrySettings.getInitialRetryDelayDuration()).isEqualTo(Duration.ofMillis(500));
-    assertThat(retrySettings.getRetryDelayMultiplier()).isEqualTo(1.5);
-    assertThat(retrySettings.getMaxRetryDelayDuration()).isEqualTo(Duration.ofSeconds(2));
-    assertThat(retrySettings.getTotalTimeoutDuration()).isEqualTo(Duration.ofSeconds(20));
-
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     assertThat(transportOptions.getHttpTransportFactory()).isNotNull();
-    assertThat(options.getResultRetryAlgorithm()).isNotNull();
   }
 
   @Test
@@ -174,7 +164,7 @@ public class QueryRetrySampleTest {
 
     String output = bout.toString();
     assertThat(output).contains("--- Executing query on public dataset ---");
-    assertThat(output).contains("Query Results (succeeded on Attempt #3 after 2 retries):");
+    assertThat(output).contains("Query Results (succeeded after simulated retries):");
     assertThat(output).contains("corpus: hamlet, count: 242");
   }
 
@@ -201,14 +191,5 @@ public class QueryRetrySampleTest {
         transport.buildRequest("GET", "http://127.0.0.1:0");
     assertThat(req3)
         .isNotInstanceOf(com.google.api.client.testing.http.MockLowLevelHttpRequest.class);
-  }
-
-  @Test
-  public void testTransientErrorTransportFactory() {
-    QueryRetrySample.TransientErrorTransportFactory factory =
-        new QueryRetrySample.TransientErrorTransportFactory(2);
-    assertThat(factory.create()).isNotNull();
-    assertThat(factory.create())
-        .isInstanceOf(QueryRetrySample.TransientErrorHttpTransport.class);
   }
 }

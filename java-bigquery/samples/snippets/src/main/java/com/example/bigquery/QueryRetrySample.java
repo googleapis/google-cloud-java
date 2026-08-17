@@ -22,8 +22,6 @@ import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.Json;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
-import com.google.api.gax.retrying.RetrySettings;
-import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
@@ -48,7 +46,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -134,25 +131,13 @@ public class QueryRetrySample {
   public static BigQuery createBigQueryClient(
       Tracer tracer, GoogleCredentials credentials, String projectId, int simulatedFailures) {
 
-    // Configure retry settings with 4 max attempts and exponential backoff
-    RetrySettings retrySettings =
-        RetrySettings.newBuilder()
-            .setMaxAttempts(4)
-            .setInitialRetryDelayDuration(Duration.ofMillis(500))
-            .setRetryDelayMultiplier(1.5)
-            .setMaxRetryDelayDuration(Duration.ofSeconds(2))
-            .setTotalTimeoutDuration(Duration.ofSeconds(20))
-            .build();
-
-    // Intercept HTTP transport to return HTTP 503 for the first N attempts
-    HttpTransportFactory transportFactory = new TransientErrorTransportFactory(simulatedFailures);
-
     HttpTransportOptions transportOptions =
-        HttpTransportOptions.newBuilder().setHttpTransportFactory(transportFactory).build();
+        HttpTransportOptions.newBuilder()
+            .setHttpTransportFactory(() -> new TransientErrorHttpTransport(simulatedFailures))
+            .build();
 
     BigQueryOptions.Builder optionsBuilder =
         BigQueryOptions.newBuilder()
-            .setRetrySettings(retrySettings)
             .setTransportOptions(transportOptions)
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracer(tracer);
@@ -176,7 +161,7 @@ public class QueryRetrySample {
       QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
       TableResult result = bigquery.query(queryConfig);
 
-      System.out.println("\nQuery Results (succeeded on Attempt #3 after 2 retries):");
+      System.out.println("\nQuery Results (succeeded after simulated retries):");
       for (FieldValueList row : result.iterateAll()) {
         System.out.printf(
             "corpus: %s, count: %d%n",
@@ -185,22 +170,6 @@ public class QueryRetrySample {
     } catch (BigQueryException e) {
       System.out.println(
           "\nCaught expected BigQueryException after retry attempts: " + e.getMessage());
-    }
-  }
-
-  /**
-   * Factory providing an HttpTransport that simulates transient HTTP 503 errors.
-   */
-  static class TransientErrorTransportFactory implements HttpTransportFactory {
-    private final HttpTransport transport;
-
-    public TransientErrorTransportFactory(int maxFailures) {
-      this.transport = new TransientErrorHttpTransport(maxFailures);
-    }
-
-    @Override
-    public HttpTransport create() {
-      return transport;
     }
   }
 
@@ -223,31 +192,20 @@ public class QueryRetrySample {
         System.out.printf(
             "[Retry Demo] Attempt #%d: Simulating transient HTTP 503 Service Unavailable (retrying...)%n",
             attempt);
-        return new MockLowLevelHttpRequest() {
-          @Override
-          public LowLevelHttpResponse execute() throws IOException {
-            MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
-            response.setStatusCode(503);
-            response.setContentType(Json.MEDIA_TYPE);
-            response.setContent(
-                "{\n"
-                    + "  \"error\": {\n"
-                    + "    \"code\": 503,\n"
-                    + "    \"message\": \"Service Unavailable (simulated transient error for retry demonstration)\",\n"
-                    + "    \"status\": \"UNAVAILABLE\"\n"
-                    + "  }\n"
-                    + "}");
-            return response;
-          }
-        };
+        MockLowLevelHttpRequest mock = new MockLowLevelHttpRequest();
+        MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+        response.setStatusCode(503);
+        response.setContentType(Json.MEDIA_TYPE);
+        response.setContent("{\"error\": {\"code\": 503, \"message\": \"Service Unavailable\"}}");
+        mock.setResponse(response);
+        return mock;
       }
+
       System.out.printf(
-          "[Retry Demo] Attempt #%d: Forwarding query to live BigQuery endpoint (succeeded)%n", attempt);
-      URL targetUrl = new URL(url);
-      HttpURLConnection connection = (HttpURLConnection) targetUrl.openConnection();
+          "[Retry Demo] Attempt #%d: Forwarding query to live BigQuery endpoint (succeeded)%n",
+          attempt);
+      HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
       connection.setRequestMethod(method);
-      connection.setUseCaches(false);
-      connection.setInstanceFollowRedirects(false);
 
       return new LowLevelHttpRequest() {
         @Override
@@ -256,32 +214,16 @@ public class QueryRetrySample {
         }
 
         @Override
-        public void setTimeout(int connectTimeout, int readTimeout) {
-          connection.setConnectTimeout(connectTimeout);
-          connection.setReadTimeout(readTimeout);
-        }
-
-        @Override
         public LowLevelHttpResponse execute() throws IOException {
           if (getStreamingContent() != null) {
-            String contentType = getContentType();
-            if (contentType != null) {
-              addHeader("Content-Type", contentType);
+            if (getContentType() != null) {
+              addHeader("Content-Type", getContentType());
             }
-            String contentEncoding = getContentEncoding();
-            if (contentEncoding != null) {
-              addHeader("Content-Encoding", contentEncoding);
-            }
-            long contentLength = getContentLength();
-            if (contentLength >= 0) {
-              connection.setRequestProperty("Content-Length", Long.toString(contentLength));
+            if (getContentLength() >= 0) {
+              connection.setRequestProperty("Content-Length", Long.toString(getContentLength()));
+              connection.setFixedLengthStreamingMode((int) getContentLength());
             }
             connection.setDoOutput(true);
-            if (contentLength >= 0 && contentLength <= Integer.MAX_VALUE) {
-              connection.setFixedLengthStreamingMode((int) contentLength);
-            } else {
-              connection.setChunkedStreamingMode(0);
-            }
             try (OutputStream out = connection.getOutputStream()) {
               getStreamingContent().writeTo(out);
             }
@@ -301,10 +243,9 @@ public class QueryRetrySample {
     RealLowLevelHttpResponse(HttpURLConnection connection) {
       this.connection = connection;
       for (Map.Entry<String, List<String>> entry : connection.getHeaderFields().entrySet()) {
-        String key = entry.getKey();
-        if (key != null) {
+        if (entry.getKey() != null) {
           for (String value : entry.getValue()) {
-            headerNames.add(key);
+            headerNames.add(entry.getKey());
             headerValues.add(value);
           }
         }
@@ -314,10 +255,7 @@ public class QueryRetrySample {
     @Override
     public InputStream getContent() throws IOException {
       InputStream in = connection.getErrorStream();
-      if (in == null) {
-        in = connection.getInputStream();
-      }
-      return in;
+      return in != null ? in : connection.getInputStream();
     }
 
     @Override
