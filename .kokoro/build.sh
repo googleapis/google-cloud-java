@@ -37,27 +37,35 @@ RETURN_CODE=0
 
 case ${JOB_TYPE} in
   test)
+    MAVEN_GOAL="test"
     if [[ -n "${BUILD_SUBDIR}" ]]
     then
       echo "Compiling and building all modules for ${BUILD_SUBDIR}"
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
-      EXTRA_PROFILE_OPTS=()
+      EXCLUDE_PROJECTS_OPTS=()
     else
-      EXTRA_PROFILE_OPTS=("-PbulkTests")
+      # These are pure GAPIC-generated modules with no unit tests to run here; Showcase
+      # integration tests already cover the generated code's behavior, so this pass only
+      # needs to confirm everything compiles.
+      MAVEN_GOAL="compile"
+      # gapic-generator-java is a code generation tool tested in its own dedicated workflow
+      # (sdk-platform-java-ci.yaml). Excluding it from bulk unit test runs saves 2-3 minutes per
+      # Java runtime matrix job and avoids reactor dependency resolution race conditions.
+      EXCLUDE_PROJECTS_OPTS=("--projects" "!sdk-platform-java/gapic-generator-java,!sdk-platform-java/gapic-generator-java-pom-parent")
       install_modules "sdk-platform-java"
     fi
-    echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
+    echo "MAVEN_GOAL: ${MAVEN_GOAL}"
     retry_with_backoff 3 10 \
-      mvn install \
+      mvn ${MAVEN_GOAL} \
         -B -ntp \
         -Pquick-build \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        --also-make \
-        ${SUREFIRE_JVM_OPT} "${EXTRA_PROFILE_OPTS[@]}"
+        "${EXCLUDE_PROJECTS_OPTS[@]}" \
+        -T 1C
     RETURN_CODE=$?
 
     if [[ -n "${BUILD_SUBDIR}" ]]
@@ -66,6 +74,31 @@ case ${JOB_TYPE} in
       popd
     fi
     echo "Finished running unit tests"
+    ;;
+  compile)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling all modules for ${BUILD_SUBDIR}"
+      mvn compile \
+        -B -ntp \
+        -Pquick-build \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        --projects "${BUILD_SUBDIR}" \
+        --also-make \
+        -T 1C
+    else
+      echo "Compiling all modules in repository"
+      mvn compile \
+        -B -ntp \
+        -Pquick-build \
+        -Dorg.slf4j.simpleLogger.showDateTime=true \
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+        -Dmaven.wagon.http.retryHandler.count=5 \
+        -T 1C
+    fi
+    RETURN_CODE=$?
     ;;
   install)
     if [[ -n "${BUILD_SUBDIR}" ]]

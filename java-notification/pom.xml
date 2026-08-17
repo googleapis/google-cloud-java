@@ -19,6 +19,7 @@
     <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
   <properties>
+    <skipUnitTests>false</skipUnitTests>
     <site.installationModule>google-cloud-notification</site.installationModule>
   </properties>
   <dependencyManagement>

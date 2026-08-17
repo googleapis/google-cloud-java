@@ -56,11 +56,11 @@ then
   pushd "${BUILD_SUBDIR}"
 fi
 
-# this should run maven enforcer
-mvn install -B -V -ntp \
-  -Pquick-build -DskipTests=true -Dmaven.javadoc.skip=true -Denforcer.skip=false
+# this should run maven enforcer and compile test dependencies
+mvn test-compile -B -V -ntp \
+  -Pquick-build -DskipTests=true -Dmaven.javadoc.skip=true -Denforcer.skip=false -T 1C
 
-mvn -B dependency:analyze -Pquick-build -DfailOnWarning=true -Dmdep.analyze.skip=false
+mvn -B dependency:analyze -Pquick-build -DfailOnWarning=true -Dmdep.analyze.skip=false -T 1C
 
 if [[ -n "${BUILD_SUBDIR}" ]]
 then
