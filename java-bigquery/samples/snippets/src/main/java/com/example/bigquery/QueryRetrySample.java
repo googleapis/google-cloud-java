@@ -16,21 +16,24 @@
 
 package com.example.bigquery;
 
-import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.Json;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
-import com.google.api.gax.retrying.ResultRetryAlgorithm;
-import com.google.api.gax.retrying.TimedAttemptSettings;
+import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobId;
+import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.http.HttpTransportOptions;
@@ -49,10 +52,13 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class QueryRetrySample {
@@ -115,7 +121,7 @@ public class QueryRetrySample {
       BigQuery bigquery =
           createBigQueryClient(tracer, credentials, projectId, simulatedFailures);
 
-      // 7. Query a BigQuery public dataset
+      // 6. Execute query on a BigQuery public dataset
       String query =
           "SELECT corpus, count(*) AS corpus_count "
               + "FROM `bigquery-public-data.samples.shakespeare` "
@@ -123,7 +129,7 @@ public class QueryRetrySample {
               + "ORDER BY corpus_count DESC "
               + "LIMIT 5;";
 
-      executeQuery(bigquery, query);
+      executeQuery(bigquery, projectId, query);
     } finally {
       // 7. Flush and close the SDK to ensure all batched spans reach Cloud Trace
       tracerProvider.close();
@@ -134,41 +140,31 @@ public class QueryRetrySample {
   public static BigQuery createBigQueryClient(
       Tracer tracer, GoogleCredentials credentials, String projectId, int simulatedFailures) {
 
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setMaxAttempts(3)
+            .setRetryDelayMultiplier(2.0)
+            .setInitialRetryDelayDuration(Duration.ofSeconds(1))
+            .setMaxRetryDelayDuration(Duration.ofSeconds(32))
+            .setTotalTimeoutDuration(Duration.ofSeconds(50))
+            .build();
+
+    HeaderProvider headerProvider =
+        () -> {
+          Map<String, String> headers = new HashMap<>();
+          headers.put("user-agent", "INFA_CDI_Informatica Cloud Connector for Google BigQuery");
+          return headers;
+        };
+
     HttpTransportOptions transportOptions =
         HttpTransportOptions.newBuilder()
             .setHttpTransportFactory(() -> new TransientErrorHttpTransport(simulatedFailures))
             .build();
 
-    // Wrap default retry algorithm to retry transient HTTP 5xx errors (500, 502, 503, 504)
-    // This allows applications using existing released SDK versions to enable 5xx retries
-    @SuppressWarnings("unchecked")
-    ResultRetryAlgorithm<Object> defaultAlgorithm =
-        (ResultRetryAlgorithm<Object>)
-            BigQueryOptions.getDefaultInstance().getResultRetryAlgorithm();
-
-    ResultRetryAlgorithm<Object> http5xxRetryAlgorithm =
-        new ResultRetryAlgorithm<Object>() {
-          @Override
-          public TimedAttemptSettings createNextAttempt(
-              Throwable prevThrowable, Object prevResponse, TimedAttemptSettings prevSettings) {
-            return defaultAlgorithm.createNextAttempt(prevThrowable, prevResponse, prevSettings);
-          }
-
-          @Override
-          public boolean shouldRetry(Throwable prevThrowable, Object prevResponse) {
-            if (prevThrowable instanceof HttpResponseException) {
-              int statusCode = ((HttpResponseException) prevThrowable).getStatusCode();
-              if (statusCode == 500 || statusCode == 502 || statusCode == 503 || statusCode == 504) {
-                return true;
-              }
-            }
-            return defaultAlgorithm.shouldRetry(prevThrowable, prevResponse);
-          }
-        };
-
     BigQueryOptions.Builder optionsBuilder =
         BigQueryOptions.newBuilder()
-            .setResultRetryAlgorithm(http5xxRetryAlgorithm)
+            .setRetrySettings(retrySettings)
+            .setHeaderProvider(headerProvider)
             .setTransportOptions(transportOptions)
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracer(tracer);
@@ -184,29 +180,55 @@ public class QueryRetrySample {
     return optionsBuilder.build().getService();
   }
 
-  public static void executeQuery(BigQuery bigquery, String query) throws InterruptedException {
-    System.out.println("\n--- Executing query on public dataset ---");
+  public static void executeQuery(BigQuery bigquery, String projectId, String query)
+      throws InterruptedException {
+    System.out.println("\n--- Executing query via job creation (bigquery.create) ---");
     System.out.println("Query: " + query + "\n");
 
     try {
       QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
-      TableResult result = bigquery.query(queryConfig);
+      String jobId = UUID.randomUUID().toString();
+      JobId jobInfo = JobId.of(projectId, jobId);
 
-      System.out.println("\nQuery Results (succeeded after simulated retries):");
-      for (FieldValueList row : result.iterateAll()) {
-        System.out.printf(
-            "corpus: %s, count: %d%n",
-            row.get("corpus").getStringValue(), row.get("corpus_count").getLongValue());
+      Job job = bigquery.create(JobInfo.of(jobInfo, queryConfig));
+      if (job != null) {
+        System.out.println("Job created: " + job.getJobId().getJob() + ", waiting for completion...");
+        job = job.waitFor();
+        logErrorIfAnyForGCloud(job);
+
+        if (job.getStatus().getError() == null) {
+          TableResult result = job.getQueryResults();
+          System.out.println("\nQuery Results (succeeded after simulated retries):");
+          for (FieldValueList row : result.iterateAll()) {
+            System.out.printf(
+                "corpus: %s, count: %d%n",
+                row.get("corpus").getStringValue(), row.get("corpus_count").getLongValue());
+          }
+        }
       }
     } catch (BigQueryException e) {
-      System.out.println(
-          "\nCaught expected BigQueryException after retry attempts: " + e.getMessage());
+      System.out.println("\nCaught BigQueryException after retry attempts: " + e.getMessage());
+    }
+  }
+
+  private static void logErrorIfAnyForGCloud(Job job) {
+    if (job == null || job.getStatus() == null) {
+      return;
+    }
+    if (job.getStatus().getExecutionErrors() != null) {
+      List<BigQueryError> errors = job.getStatus().getExecutionErrors();
+      for (BigQueryError error : errors) {
+        System.out.println("Execution error: " + error.getMessage());
+      }
+      System.out.println("Total errors: " + errors.size());
+    } else if (job.getStatus().getError() != null) {
+      System.out.println("Job error: " + job.getStatus().getError().toString());
     }
   }
 
   /**
-   * Custom HttpTransport that simulates transient errors for the first N attempts,
-   * then executes real HTTP requests against BigQuery via HttpURLConnection.
+   * Custom HttpTransport that simulates transient HTTP 503 "Exceeded rate limits:" errors
+   * for the first N attempts, then executes real HTTP requests against BigQuery via HttpURLConnection.
    */
   static class TransientErrorHttpTransport extends HttpTransport {
     private final int maxFailures;
@@ -221,19 +243,19 @@ public class QueryRetrySample {
       int attempt = attemptCount.incrementAndGet();
       if (attempt <= maxFailures) {
         System.out.printf(
-            "[Retry Demo] Attempt #%d: Simulating transient HTTP 503 Service Unavailable (retrying...)%n",
+            "[Retry Demo] Attempt #%d: Simulating transient HTTP 503 'Exceeded rate limits:' (retrying...)%n",
             attempt);
         MockLowLevelHttpRequest mock = new MockLowLevelHttpRequest();
         MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
         response.setStatusCode(503);
         response.setContentType(Json.MEDIA_TYPE);
-        response.setContent("{\"error\": {\"code\": 503, \"message\": \"Service Unavailable\"}}");
+        response.setContent("{\"error\": \"Exceeded rate limits:\"}");
         mock.setResponse(response);
         return mock;
       }
 
       System.out.printf(
-          "[Retry Demo] Attempt #%d: Forwarding query to live BigQuery endpoint (succeeded)%n",
+          "[Retry Demo] Attempt #%d: Forwarding request to live BigQuery endpoint (succeeded)%n",
           attempt);
       HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
       connection.setRequestMethod(method);

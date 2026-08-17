@@ -21,6 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.http.HttpTransportOptions;
 import io.opentelemetry.api.OpenTelemetry;
@@ -86,14 +87,8 @@ public class QueryRetrySampleTest {
                 BigQuery.class.getClassLoader(),
                 new Class<?>[] {BigQuery.class},
                 (proxy, method, methodArgs) -> {
-                  if (method.getName().equals("getOptions")) {
-                    return BigQueryOptions.newBuilder().setProjectId("test-project").build();
-                  }
-                  if (method.getName().equals("query")
-                      && methodArgs != null
-                      && methodArgs.length > 0
-                      && methodArgs[0] instanceof QueryJobConfiguration) {
-                    throw new BigQueryException(503, "Rate limit exceeded (simulated retry failure)");
+                  if (method.getName().equals("create")) {
+                    throw new BigQueryException(503, "Exceeded rate limits:");
                   }
                   return null;
                 });
@@ -105,12 +100,12 @@ public class QueryRetrySampleTest {
             + "ORDER BY corpus_count DESC "
             + "LIMIT 5;";
 
-    QueryRetrySample.executeQuery(mockBigQuery, query);
+    QueryRetrySample.executeQuery(mockBigQuery, "test-project", query);
 
     String output = bout.toString();
-    assertThat(output).contains("--- Executing query on public dataset ---");
-    assertThat(output).contains("Caught expected BigQueryException after retry attempts");
-    assertThat(output).contains("Rate limit exceeded");
+    assertThat(output).contains("--- Executing query via job creation (bigquery.create) ---");
+    assertThat(output).contains("Caught BigQueryException after retry attempts");
+    assertThat(output).contains("Exceeded rate limits:");
   }
 
   @Test
@@ -136,6 +131,45 @@ public class QueryRetrySampleTest {
             .setTotalRows(1L)
             .build();
 
+    Class<?> queryResponseClass = Class.forName("com.google.cloud.bigquery.QueryResponse");
+    java.lang.reflect.Method newBuilderMethod = queryResponseClass.getDeclaredMethod("newBuilder");
+    newBuilderMethod.setAccessible(true);
+    Object qrBuilder = newBuilderMethod.invoke(null);
+    for (java.lang.reflect.Method m : qrBuilder.getClass().getDeclaredMethods()) {
+      if (m.getName().equals("setCompleted")) {
+        m.setAccessible(true);
+        m.invoke(qrBuilder, true);
+      } else if (m.getName().equals("setTotalRows")) {
+        m.setAccessible(true);
+        m.invoke(qrBuilder, 1L);
+      } else if (m.getName().equals("setErrors")) {
+        m.setAccessible(true);
+        m.invoke(qrBuilder, com.google.common.collect.ImmutableList.of());
+      }
+    }
+    java.lang.reflect.Method buildMethod = qrBuilder.getClass().getDeclaredMethod("build");
+    buildMethod.setAccessible(true);
+    Object queryResponse = buildMethod.invoke(qrBuilder);
+
+    com.google.api.services.bigquery.model.Job jobPb =
+        new com.google.api.services.bigquery.model.Job()
+            .setId("mock-job-id")
+            .setJobReference(
+                new com.google.api.services.bigquery.model.JobReference()
+                    .setProjectId("test-project")
+                    .setJobId("mock-job-id"))
+            .setStatus(new com.google.api.services.bigquery.model.JobStatus().setState("DONE"))
+            .setConfiguration(
+                new com.google.api.services.bigquery.model.JobConfiguration()
+                    .setQuery(
+                        new com.google.api.services.bigquery.model.JobConfigurationQuery()
+                            .setQuery("SELECT 1")));
+
+    java.lang.reflect.Method fromPbMethod =
+        Job.class.getDeclaredMethod(
+            "fromPb", BigQuery.class, com.google.api.services.bigquery.model.Job.class);
+    fromPbMethod.setAccessible(true);
+
     BigQuery mockBigQuery =
         (BigQuery)
             Proxy.newProxyInstance(
@@ -145,10 +179,16 @@ public class QueryRetrySampleTest {
                   if (method.getName().equals("getOptions")) {
                     return BigQueryOptions.newBuilder().setProjectId("test-project").build();
                   }
-                  if (method.getName().equals("query")
-                      && methodArgs != null
-                      && methodArgs.length > 0
-                      && methodArgs[0] instanceof QueryJobConfiguration) {
+                  if (method.getName().equals("create")) {
+                    return fromPbMethod.invoke(null, (BigQuery) proxy, jobPb);
+                  }
+                  if (method.getName().equals("getJob")) {
+                    return fromPbMethod.invoke(null, (BigQuery) proxy, jobPb);
+                  }
+                  if (method.getName().equals("getQueryResults")) {
+                    return queryResponse;
+                  }
+                  if (method.getName().equals("listTableData")) {
                     return tableResult;
                   }
                   return null;
@@ -161,10 +201,11 @@ public class QueryRetrySampleTest {
             + "ORDER BY corpus_count DESC "
             + "LIMIT 5;";
 
-    QueryRetrySample.executeQuery(mockBigQuery, query);
+    QueryRetrySample.executeQuery(mockBigQuery, "test-project", query);
 
     String output = bout.toString();
-    assertThat(output).contains("--- Executing query on public dataset ---");
+    assertThat(output).contains("--- Executing query via job creation (bigquery.create) ---");
+    assertThat(output).contains("Job created: mock-job-id, waiting for completion...");
     assertThat(output).contains("Query Results (succeeded after simulated retries):");
     assertThat(output).contains("corpus: hamlet, count: 242");
   }
