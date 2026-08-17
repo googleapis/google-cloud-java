@@ -49,6 +49,7 @@ import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import io.opentelemetry.sdk.trace.samplers.Sampler;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.Duration;
@@ -300,8 +301,27 @@ public class QueryRetrySample {
         @Override
         public LowLevelHttpResponse execute() throws IOException {
           if (getStreamingContent() != null) {
+            String contentType = getContentType();
+            if (contentType != null) {
+              addHeader("Content-Type", contentType);
+            }
+            String contentEncoding = getContentEncoding();
+            if (contentEncoding != null) {
+              addHeader("Content-Encoding", contentEncoding);
+            }
+            long contentLength = getContentLength();
+            if (contentLength >= 0) {
+              connection.setRequestProperty("Content-Length", Long.toString(contentLength));
+            }
             connection.setDoOutput(true);
-            getStreamingContent().writeTo(connection.getOutputStream());
+            if (contentLength >= 0 && contentLength <= Integer.MAX_VALUE) {
+              connection.setFixedLengthStreamingMode((int) contentLength);
+            } else {
+              connection.setChunkedStreamingMode(0);
+            }
+            try (OutputStream out = connection.getOutputStream()) {
+              getStreamingContent().writeTo(out);
+            }
           }
           connection.connect();
           return new RealLowLevelHttpResponse(connection);
