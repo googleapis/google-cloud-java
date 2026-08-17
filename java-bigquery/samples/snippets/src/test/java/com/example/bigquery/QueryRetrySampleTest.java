@@ -22,7 +22,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
-import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.http.HttpTransportOptions;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
@@ -115,10 +115,10 @@ public class QueryRetrySampleTest {
                   if (method.getName().equals("getOptions")) {
                     return BigQueryOptions.newBuilder().setProjectId("test-project").build();
                   }
-                  if (method.getName().equals("create")
+                  if (method.getName().equals("query")
                       && methodArgs != null
                       && methodArgs.length > 0
-                      && methodArgs[0] instanceof JobInfo) {
+                      && methodArgs[0] instanceof QueryJobConfiguration) {
                     throw new BigQueryException(503, "Rate limit exceeded (simulated retry failure)");
                   }
                   return null;
@@ -137,5 +137,95 @@ public class QueryRetrySampleTest {
     assertThat(output).contains("--- Executing query on public dataset ---");
     assertThat(output).contains("Caught expected BigQueryException after retry attempts");
     assertThat(output).contains("Rate limit exceeded");
+  }
+
+  @Test
+  public void testExecuteQuerySuccess() throws Exception {
+    com.google.cloud.bigquery.FieldValue f1 =
+        com.google.cloud.bigquery.FieldValue.of(
+            com.google.cloud.bigquery.FieldValue.Attribute.PRIMITIVE, "hamlet");
+    com.google.cloud.bigquery.FieldValue f2 =
+        com.google.cloud.bigquery.FieldValue.of(
+            com.google.cloud.bigquery.FieldValue.Attribute.PRIMITIVE, "242");
+    com.google.cloud.bigquery.FieldValueList row =
+        com.google.cloud.bigquery.FieldValueList.of(
+            com.google.common.collect.ImmutableList.of(f1, f2),
+            com.google.cloud.bigquery.Field.of("corpus", com.google.cloud.bigquery.StandardSQLTypeName.STRING),
+            com.google.cloud.bigquery.Field.of("corpus_count", com.google.cloud.bigquery.StandardSQLTypeName.INT64));
+
+    com.google.cloud.PageImpl<com.google.cloud.bigquery.FieldValueList> page =
+        new com.google.cloud.PageImpl<>(
+            null, null, com.google.common.collect.ImmutableList.of(row));
+    com.google.cloud.bigquery.TableResult tableResult =
+        com.google.cloud.bigquery.TableResult.newBuilder()
+            .setPageNoSchema(page)
+            .setTotalRows(1L)
+            .build();
+
+    BigQuery mockBigQuery =
+        (BigQuery)
+            Proxy.newProxyInstance(
+                BigQuery.class.getClassLoader(),
+                new Class<?>[] {BigQuery.class},
+                (proxy, method, methodArgs) -> {
+                  if (method.getName().equals("getOptions")) {
+                    return BigQueryOptions.newBuilder().setProjectId("test-project").build();
+                  }
+                  if (method.getName().equals("query")
+                      && methodArgs != null
+                      && methodArgs.length > 0
+                      && methodArgs[0] instanceof QueryJobConfiguration) {
+                    return tableResult;
+                  }
+                  return null;
+                });
+
+    String query =
+        "SELECT corpus, count(*) AS corpus_count "
+            + "FROM `bigquery-public-data.samples.shakespeare` "
+            + "GROUP BY corpus "
+            + "ORDER BY corpus_count DESC "
+            + "LIMIT 5;";
+
+    QueryRetrySample.executeQuery(mockBigQuery, query);
+
+    String output = bout.toString();
+    assertThat(output).contains("--- Executing query on public dataset ---");
+    assertThat(output).contains("Query Results (succeeded on Attempt #3 after 2 retries):");
+    assertThat(output).contains("corpus: hamlet, count: 242");
+  }
+
+  @Test
+  public void testTransientErrorHttpTransport() throws java.io.IOException {
+    QueryRetrySample.TransientErrorHttpTransport transport =
+        new QueryRetrySample.TransientErrorHttpTransport(2);
+
+    // Attempt #1 -> simulated 503
+    com.google.api.client.http.LowLevelHttpRequest req1 =
+        transport.buildRequest("GET", "https://bigquery.googleapis.com/test");
+    com.google.api.client.http.LowLevelHttpResponse resp1 = req1.execute();
+    assertThat(resp1.getStatusCode()).isEqualTo(503);
+    assertThat(resp1.getContentType()).isEqualTo("application/json; charset=UTF-8");
+
+    // Attempt #2 -> simulated 503
+    com.google.api.client.http.LowLevelHttpRequest req2 =
+        transport.buildRequest("GET", "https://bigquery.googleapis.com/test");
+    com.google.api.client.http.LowLevelHttpResponse resp2 = req2.execute();
+    assertThat(resp2.getStatusCode()).isEqualTo(503);
+
+    // Attempt #3 -> forwards to live connection
+    com.google.api.client.http.LowLevelHttpRequest req3 =
+        transport.buildRequest("GET", "http://127.0.0.1:0");
+    assertThat(req3)
+        .isNotInstanceOf(com.google.api.client.testing.http.MockLowLevelHttpRequest.class);
+  }
+
+  @Test
+  public void testTransientErrorTransportFactory() {
+    QueryRetrySample.TransientErrorTransportFactory factory =
+        new QueryRetrySample.TransientErrorTransportFactory(2);
+    assertThat(factory.create()).isNotNull();
+    assertThat(factory.create())
+        .isInstanceOf(QueryRetrySample.TransientErrorHttpTransport.class);
   }
 }

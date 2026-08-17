@@ -3306,6 +3306,121 @@ public class BigQueryImplTest {
   }
 
   @Test
+  void testFastQueryFailureShouldRetryServerErrors() throws IOException, InterruptedException {
+    GoogleJsonError error = new GoogleJsonError();
+    error.setMessage("Backend error. Please retry the request");
+    error.setCode(503);
+    GoogleJsonError.ErrorInfo errorInfo = new GoogleJsonError.ErrorInfo();
+    errorInfo.setReason("backendError");
+    error.setErrors(ImmutableList.of(errorInfo));
+
+    com.google.api.services.bigquery.model.QueryResponse responsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setJobComplete(true)
+            .setPageToken(null)
+            .setRows(ImmutableList.of())
+            .setSchema(new com.google.api.services.bigquery.model.TableSchema());
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenThrow(new GoogleJsonResponseException(serverErrorResponse(), error))
+        .thenReturn(responsePb);
+
+    bigquery =
+        options.toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
+            .getService();
+
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY);
+
+    assertNotNull(result);
+    verify(bigqueryRpcMock, times(2))
+        .queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture());
+  }
+
+  @Test
+  void testFastQueryFailureShouldRetryAll5xxServerErrors()
+      throws IOException, InterruptedException {
+    GoogleJsonError error500 = new GoogleJsonError();
+    error500.setMessage("Internal Server Error");
+    error500.setCode(500);
+
+    GoogleJsonError error502 = new GoogleJsonError();
+    error502.setMessage("Bad Gateway");
+    error502.setCode(502);
+
+    GoogleJsonError error503 = new GoogleJsonError();
+    error503.setMessage("Service Unavailable");
+    error503.setCode(503);
+
+    GoogleJsonError error504 = new GoogleJsonError();
+    error504.setMessage("Gateway Timeout");
+    error504.setCode(504);
+
+    com.google.api.services.bigquery.model.QueryResponse responsePb =
+        new com.google.api.services.bigquery.model.QueryResponse()
+            .setJobComplete(true)
+            .setPageToken(null)
+            .setRows(ImmutableList.of())
+            .setSchema(new com.google.api.services.bigquery.model.TableSchema());
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenThrow(
+            new GoogleJsonResponseException(
+                new HttpResponseException.Builder(500, "Internal Server Error", new HttpHeaders()),
+                error500))
+        .thenThrow(
+            new GoogleJsonResponseException(
+                new HttpResponseException.Builder(502, "Bad Gateway", new HttpHeaders()), error502))
+        .thenThrow(
+            new GoogleJsonResponseException(
+                new HttpResponseException.Builder(503, "Service Unavailable", new HttpHeaders()),
+                error503))
+        .thenThrow(
+            new GoogleJsonResponseException(
+                new HttpResponseException.Builder(504, "Gateway Timeout", new HttpHeaders()),
+                error504))
+        .thenReturn(responsePb);
+
+    bigquery =
+        options.toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
+            .getService();
+
+    TableResult result = bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY);
+
+    assertNotNull(result);
+    verify(bigqueryRpcMock, times(5))
+        .queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture());
+  }
+
+  @Test
+  void testFastQueryFailureShouldNotRetry4xxClientErrors() throws IOException {
+    GoogleJsonError error400 = new GoogleJsonError();
+    error400.setMessage("Bad Request");
+    error400.setCode(400);
+
+    when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
+        .thenThrow(
+            new GoogleJsonResponseException(
+                new HttpResponseException.Builder(400, "Bad Request", new HttpHeaders()),
+                error400));
+
+    bigquery =
+        options.toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .build()
+            .getService();
+
+    assertThrows(
+        BigQueryException.class, () -> bigquery.query(QUERY_JOB_CONFIGURATION_FOR_QUERY));
+
+    verify(bigqueryRpcMock, times(1))
+        .queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture());
+  }
+
+  @Test
   void testCreateRoutine() throws IOException {
     RoutineInfo routineInfo = ROUTINE_INFO.setProjectId(OTHER_PROJECT);
     when(bigqueryRpcMock.createSkipExceptionTranslation(routineInfo.toPb(), EMPTY_RPC_OPTIONS))

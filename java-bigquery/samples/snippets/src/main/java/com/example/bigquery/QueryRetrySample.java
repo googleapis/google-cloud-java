@@ -31,9 +31,6 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.FieldValueList;
-import com.google.cloud.bigquery.Job;
-import com.google.cloud.bigquery.JobId;
-import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 import com.google.cloud.http.HttpTransportOptions;
@@ -56,7 +53,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Handler;
@@ -188,29 +184,13 @@ public class QueryRetrySample {
 
     try {
       QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query).build();
-      String jobId = UUID.randomUUID().toString();
-      String projectId = bigquery.getOptions().getProjectId();
-      JobId jobInfo = projectId != null ? JobId.of(projectId, jobId) : JobId.of(jobId);
+      TableResult result = bigquery.query(queryConfig);
 
-      // Create and wait for the job
-      Job job = bigquery.create(JobInfo.of(jobInfo, queryConfig));
-      job = job.waitFor();
-
-      if (job == null) {
-        System.out.println("Job no longer exists.");
-        return;
-      }
-
-      if (job.getStatus().getError() != null) {
-        System.out.println("Job failed with error: " + job.getStatus().getError());
-      } else {
-        TableResult result = job.getQueryResults();
-        System.out.println("\nQuery Results (succeeded on Attempt #3 after 2 retries):");
-        for (FieldValueList row : result.iterateAll()) {
-          System.out.printf(
-              "corpus: %s, count: %d%n",
-              row.get("corpus").getStringValue(), row.get("corpus_count").getLongValue());
-        }
+      System.out.println("\nQuery Results (succeeded on Attempt #3 after 2 retries):");
+      for (FieldValueList row : result.iterateAll()) {
+        System.out.printf(
+            "corpus: %s, count: %d%n",
+            row.get("corpus").getStringValue(), row.get("corpus_count").getLongValue());
       }
     } catch (BigQueryException e) {
       System.out.println(
@@ -251,13 +231,23 @@ public class QueryRetrySample {
       int attempt = attemptCount.incrementAndGet();
       if (attempt <= maxFailures) {
         System.out.printf(
-            "[Transport Injector] Attempt #%d -> Simulating transient network failure (SocketException: Connection reset)%n",
+            "[Transport Injector] Attempt #%d -> Simulating transient HTTP 503 Service Unavailable%n",
             attempt);
         return new MockLowLevelHttpRequest() {
           @Override
           public LowLevelHttpResponse execute() throws IOException {
-            throw new java.net.SocketException(
-                "Connection reset by peer (simulated transient error for retry demonstration)");
+            MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+            response.setStatusCode(503);
+            response.setContentType(Json.MEDIA_TYPE);
+            response.setContent(
+                "{\n"
+                    + "  \"error\": {\n"
+                    + "    \"code\": 503,\n"
+                    + "    \"message\": \"Service Unavailable (simulated transient error for retry demonstration)\",\n"
+                    + "    \"status\": \"UNAVAILABLE\"\n"
+                    + "  }\n"
+                    + "}");
+            return response;
           }
         };
       }
