@@ -122,9 +122,8 @@ public class QueryRetrySample {
 
       executeQuery(bigquery, query);
     } finally {
-      // 8. Flush and close the SDK to ensure all batched spans reach Cloud Trace
-      tracerProvider.forceFlush();
-      otel.close();
+      // 7. Flush and close the SDK to ensure all batched spans reach Cloud Trace
+      tracerProvider.close();
     }
   }
 
@@ -219,9 +218,15 @@ public class QueryRetrySample {
             if (getContentType() != null) {
               addHeader("Content-Type", getContentType());
             }
-            if (getContentLength() >= 0) {
-              connection.setRequestProperty("Content-Length", Long.toString(getContentLength()));
-              connection.setFixedLengthStreamingMode((int) getContentLength());
+            if (getContentEncoding() != null) {
+              addHeader("Content-Encoding", getContentEncoding());
+            }
+            long contentLength = getContentLength();
+            if (contentLength >= 0) {
+              connection.setRequestProperty("Content-Length", Long.toString(contentLength));
+              connection.setFixedLengthStreamingMode((int) contentLength);
+            } else {
+              connection.setChunkedStreamingMode(0);
             }
             connection.setDoOutput(true);
             try (OutputStream out = connection.getOutputStream()) {
