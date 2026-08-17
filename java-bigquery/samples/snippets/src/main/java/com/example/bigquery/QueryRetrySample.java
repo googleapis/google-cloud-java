@@ -17,13 +17,16 @@
 package com.example.bigquery;
 
 // [START bigquery_query_retry_tracing]
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.json.Json;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
@@ -160,9 +163,32 @@ public class QueryRetrySample {
             .setReadTimeout(10000)
             .build();
 
+    // Configure retry algorithm to retry transient HTTP 5xx errors (500, 502, 503, 504)
+    ResultRetryAlgorithm<?> resultRetryAlgorithm =
+        new ResultRetryAlgorithm<Object>() {
+          @Override
+          public TimedAttemptSettings createNextAttempt(
+              Throwable prevThrowable, Object prevResponse, TimedAttemptSettings prevSettings) {
+            return null;
+          }
+
+          @Override
+          public boolean shouldRetry(Throwable prevThrowable, Object prevResponse) {
+            if (prevThrowable instanceof HttpResponseException) {
+              int code = ((HttpResponseException) prevThrowable).getStatusCode();
+              return code == 500 || code == 502 || code == 503 || code == 504;
+            }
+            if (prevThrowable instanceof BigQueryException) {
+              return ((BigQueryException) prevThrowable).isRetryable();
+            }
+            return false;
+          }
+        };
+
     BigQueryOptions.Builder optionsBuilder =
         BigQueryOptions.newBuilder()
             .setRetrySettings(retrySettings)
+            .setResultRetryAlgorithm(resultRetryAlgorithm)
             .setTransportOptions(transportOptions)
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracer(tracer);

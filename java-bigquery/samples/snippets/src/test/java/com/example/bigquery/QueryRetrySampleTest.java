@@ -102,6 +102,7 @@ public class QueryRetrySampleTest {
 
     HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();
     assertThat(transportOptions.getHttpTransportFactory()).isNotNull();
+    assertThat(options.getResultRetryAlgorithm()).isNotNull();
   }
 
   @Test
