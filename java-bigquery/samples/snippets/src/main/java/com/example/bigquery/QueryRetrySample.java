@@ -54,21 +54,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 
 public class QueryRetrySample {
 
   private static final String TELEMETRY_ENDPOINT = "https://telemetry.googleapis.com/v1/traces";
 
   public static void main(String[] args) throws IOException, InterruptedException {
-    // 1. Configure Java Util Logging (JUL) to output FINEST retry and HTTP logs to console
-    configureLogging();
-
-    // 2. Obtain Application Default Credentials (ADC) and project ID
+    // 1. Obtain Application Default Credentials (ADC) and project ID
     GoogleCredentials credentials =
         GoogleCredentials.getApplicationDefault()
             .createScoped(Collections.singletonList("https://www.googleapis.com/auth/cloud-platform"));
@@ -80,7 +72,9 @@ public class QueryRetrySample {
       projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
     }
     if (projectId == null || projectId.isEmpty()) {
-      projectId = "lawrence-test-project-2";
+      System.err.println(
+          "Project ID not found. Please set the GOOGLE_CLOUD_PROJECT environment variable or authenticate with 'gcloud auth application-default login'.");
+      return;
     }
 
     // 3. Configure OTLP HTTP Span Exporter targeting Google Cloud Trace
@@ -227,7 +221,7 @@ public class QueryRetrySample {
       int attempt = attemptCount.incrementAndGet();
       if (attempt <= maxFailures) {
         System.out.printf(
-            "[Transport Injector] Attempt #%d -> Simulating transient HTTP 503 Service Unavailable%n",
+            "[Retry Demo] Attempt #%d: Simulating transient HTTP 503 Service Unavailable (retrying...)%n",
             attempt);
         return new MockLowLevelHttpRequest() {
           @Override
@@ -248,7 +242,7 @@ public class QueryRetrySample {
         };
       }
       System.out.printf(
-          "[Transport Injector] Attempt #%d -> Forwarding to live BigQuery endpoint%n", attempt);
+          "[Retry Demo] Attempt #%d: Forwarding query to live BigQuery endpoint (succeeded)%n", attempt);
       URL targetUrl = new URL(url);
       HttpURLConnection connection = (HttpURLConnection) targetUrl.openConnection();
       connection.setRequestMethod(method);
@@ -371,26 +365,6 @@ public class QueryRetrySample {
     public String getHeaderValue(int index) {
       return headerValues.get(index);
     }
-  }
-
-  public static void configureLogging() {
-    Logger rootLogger = Logger.getLogger("");
-    rootLogger.setLevel(Level.ALL);
-
-    // Remove existing handlers to avoid duplicates and ensure a clean ALL level handler
-    for (Handler handler : rootLogger.getHandlers()) {
-      rootLogger.removeHandler(handler);
-    }
-
-    ConsoleHandler consoleHandler = new ConsoleHandler();
-    consoleHandler.setLevel(Level.ALL);
-    consoleHandler.setFormatter(new SimpleFormatter());
-    rootLogger.addHandler(consoleHandler);
-
-    // Enable FINEST logging on BigQuery, GAX, and Google HTTP client packages
-    Logger.getLogger("com.google.cloud.bigquery").setLevel(Level.FINEST);
-    Logger.getLogger("com.google.api.gax").setLevel(Level.FINEST);
-    Logger.getLogger(LoggingSpanExporter.class.getName()).setLevel(Level.ALL);
   }
 }
 // [END bigquery_query_retry_tracing]

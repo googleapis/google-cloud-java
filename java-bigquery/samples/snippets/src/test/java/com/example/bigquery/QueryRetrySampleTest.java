@@ -35,9 +35,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.lang.reflect.Proxy;
 import java.time.Duration;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -58,21 +55,6 @@ public class QueryRetrySampleTest {
   public void tearDown() {
     System.out.flush();
     System.setOut(originalPrintStream);
-  }
-
-  @Test
-  public void testConfigureLogging() {
-    QueryRetrySample.configureLogging();
-
-    Logger rootLogger = Logger.getLogger("");
-    for (Handler handler : rootLogger.getHandlers()) {
-      assertThat(handler.getLevel()).isEqualTo(Level.ALL);
-    }
-
-    assertThat(Logger.getLogger("com.google.cloud.bigquery").getLevel()).isEqualTo(Level.FINEST);
-    assertThat(Logger.getLogger("com.google.api.gax").getLevel()).isEqualTo(Level.FINEST);
-    assertThat(Logger.getLogger(LoggingSpanExporter.class.getName()).getLevel())
-        .isEqualTo(Level.ALL);
   }
 
   @Test
