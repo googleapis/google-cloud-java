@@ -251,17 +251,13 @@ public class QueryRetrySample {
       int attempt = attemptCount.incrementAndGet();
       if (attempt <= maxFailures) {
         System.out.printf(
-            "[Transport Injector] Attempt #%d -> Returning simulated transient HTTP 503 (rateLimitExceeded)%n",
+            "[Transport Injector] Attempt #%d -> Simulating transient network failure (SocketException: Connection reset)%n",
             attempt);
         return new MockLowLevelHttpRequest() {
           @Override
-          public LowLevelHttpResponse execute() {
-            MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
-            response.setStatusCode(503);
-            response.setContentType(Json.MEDIA_TYPE);
-            response.setContent(
-                "{\"error\": {\"code\": 503, \"message\": \"Exceeded rate limits (simulated transient error)\"}}");
-            return response;
+          public LowLevelHttpResponse execute() throws IOException {
+            throw new java.net.SocketException(
+                "Connection reset by peer (simulated transient error for retry demonstration)");
           }
         };
       }
