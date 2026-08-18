@@ -1868,12 +1868,12 @@ public class StatementParserTest {
 
   @Test
   public void testGetParameterName() {
-    for (int i = 1; i <= 256; i++) {
+    for (int i = 1; i <= 950; i++) {
       assertEquals("p" + i, AbstractStatementParser.getParameterName(i));
       assertSame(
           AbstractStatementParser.getParameterName(i), AbstractStatementParser.getParameterName(i));
     }
-    assertEquals("p257", AbstractStatementParser.getParameterName(257));
+    assertEquals("p951", AbstractStatementParser.getParameterName(951));
     assertEquals("p1000", AbstractStatementParser.getParameterName(1000));
     assertEquals("p0", AbstractStatementParser.getParameterName(0));
     assertEquals("p-1", AbstractStatementParser.getParameterName(-1));

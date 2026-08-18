@@ -190,13 +190,13 @@ public class StatementTest {
   @Test
   public void testGetParameterName() {
     assertEquals("p1", Statement.getParameterName(1));
-    assertEquals("p256", Statement.getParameterName(256));
-    assertEquals("p257", Statement.getParameterName(257));
+    assertEquals("p950", Statement.getParameterName(950));
+    assertEquals("p951", Statement.getParameterName(951));
     assertEquals("p0", Statement.getParameterName(0));
     assertEquals("p-1", Statement.getParameterName(-1));
 
-    // Verify instance caching for indices 1..256
-    for (int i = 1; i <= 256; i++) {
+    // Verify instance caching for indices 1..950
+    for (int i = 1; i <= 950; i++) {
       assertSame(Statement.getParameterName(i), Statement.getParameterName(i));
     }
   }
