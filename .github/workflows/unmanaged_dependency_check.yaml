@@ -41,7 +41,7 @@ jobs:
       - name: Install all modules
         shell: bash
         run: |
-          mvn install -Pquick-build -DskipTests -Djacoco.skip=true -Dcheckstyle.skip=true -Denforcer.skip=true -Dspotless.check.skip=true -B -ntp -T 1C
+          mvn install -Pquick-build -DskipTests -B -ntp -T 1C
       - name: Unmanaged dependency check
         uses: ./sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
         with:
