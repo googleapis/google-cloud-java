@@ -20,6 +20,7 @@ package com.google.chat.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.chat.v1.ChatServiceClient;
 import com.google.chat.v1.GetMessageRequest;
+import com.google.chat.v1.MarkupSyntax;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.MessageName;
 
@@ -39,6 +40,7 @@ public class AsyncGetMessage {
       GetMessageRequest request =
           GetMessageRequest.newBuilder()
               .setName(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+              .setMarkupSyntax(MarkupSyntax.forNumber(0))
               .build();
       ApiFuture<Message> future = chatServiceClient.getMessageCallable().futureCall(request);
       // Do something.

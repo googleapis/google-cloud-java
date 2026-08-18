@@ -1205,6 +1205,52 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Output only. Information about the Private Service Connect (PSC) for the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.PscInstanceInfo psc_instance_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the pscInstanceInfo field is set.
+   */
+  boolean hasPscInstanceInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the Private Service Connect (PSC) for the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.PscInstanceInfo psc_instance_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The pscInstanceInfo.
+   */
+  com.google.cloud.alloydb.v1alpha.Instance.PscInstanceInfo getPscInstanceInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about the Private Service Connect (PSC) for the
+   * instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.PscInstanceInfo psc_instance_info = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1alpha.Instance.PscInstanceInfoOrBuilder getPscInstanceInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Instance-level network configuration.
    * </pre>
    *
@@ -1258,7 +1304,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=1331
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=1396
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Deprecated
@@ -1277,7 +1323,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1alpha.Instance.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1alpha/resources.proto;l=1331
+   *     google/cloud/alloydb/v1alpha/resources.proto;l=1396
    * @return The geminiConfig.
    */
   @java.lang.Deprecated
