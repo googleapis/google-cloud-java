@@ -483,7 +483,13 @@ public abstract class AbstractStatementParser {
    * Cache for parsed statements. This prevents statements that are executed multiple times by the
    * application to be parsed over and over again. The default maximum size is 5Mb.
    */
-  private final Cache<String, ParsedStatement> statementCache;
+  @Nullable private final Cache<String, ParsedStatement> statementCache;
+
+  /**
+   * Cache for positional parameters info. This prevents statements that are executed multiple times
+   * using positional parameters from having to be scanned and translated repeatedly.
+   */
+  @Nullable private final Cache<String, ParametersInfo> positionalParametersCache;
 
   AbstractStatementParser(Set<ClientSideStatementImpl> statements) {
     this.statements = Collections.unmodifiableSet(statements);
@@ -502,14 +508,34 @@ public abstract class AbstractStatementParser {
         cacheBuilder.recordStats();
       }
       this.statementCache = cacheBuilder.build();
+
+      CacheBuilder<String, ParametersInfo> positionalCacheBuilder =
+          CacheBuilder.newBuilder()
+              .maximumWeight(maxCacheSize * 1024L * 1024L)
+              .weigher(
+                  (String key, ParametersInfo value) ->
+                      2 * key.length() + 2 * value.sqlWithNamedParameters.length())
+              .concurrencyLevel(Runtime.getRuntime().availableProcessors());
+      if (isRecordStatementCacheStats()) {
+        positionalCacheBuilder.recordStats();
+      }
+      this.positionalParametersCache = positionalCacheBuilder.build();
     } else {
       this.statementCache = null;
+      this.positionalParametersCache = null;
     }
   }
 
   @VisibleForTesting
+  @Nullable
   CacheStats getStatementCacheStats() {
     return statementCache == null ? null : statementCache.stats();
+  }
+
+  @VisibleForTesting
+  @Nullable
+  CacheStats getPositionalParametersCacheStats() {
+    return positionalParametersCache == null ? null : positionalParametersCache.stats();
   }
 
   @VisibleForTesting
@@ -776,8 +802,21 @@ public abstract class AbstractStatementParser {
   @InternalApi
   public ParametersInfo convertPositionalParametersToNamedParameters(char paramChar, String sql) {
     Preconditions.checkNotNull(sql);
+    if (positionalParametersCache == null) {
+      return internalConvertPositionalParametersToNamedParameters(paramChar, sql);
+    }
+    String cacheKey = paramChar == '?' ? sql : paramChar + "\0" + sql;
+    ParametersInfo info = positionalParametersCache.getIfPresent(cacheKey);
+    if (info == null) {
+      info = internalConvertPositionalParametersToNamedParameters(paramChar, sql);
+      positionalParametersCache.put(cacheKey, info);
+    }
+    return info;
+  }
+
+  ParametersInfo internalConvertPositionalParametersToNamedParameters(char paramChar, String sql) {
     final String namedParamPrefix = getQueryParameterPrefix();
-    StringBuilder named = new StringBuilder(sql.length() + countOccurrencesOf(paramChar, sql));
+    StringBuilder named = new StringBuilder(sql.length() + 32);
     int index = 0;
     int paramIndex = 1;
     while (index < sql.length()) {
