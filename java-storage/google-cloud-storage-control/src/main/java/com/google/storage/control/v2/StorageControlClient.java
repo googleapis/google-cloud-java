@@ -787,6 +787,29 @@ import org.jspecify.annotations.Nullable;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> ViewObjectFullContext</td>
+ *      <td><p> Retrieves the full content of an object context, including its key, value, and any associated extended data for a given context key.
+ * <p>  Object contexts can optionally contain extended data. If an object context contains extended data, the metadata payload structure will contain only its type URL. To retrieve the full extended data, call this method.
+ * <p>  Returns the complete representation of the context as an [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> viewObjectFullContext(ViewObjectFullContextRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> viewObjectFullContext(ObjectName name, String contextKey)
+ *           <li><p> viewObjectFullContext(String name, String contextKey)
+ *           <li><p> viewObjectFullContext(ObjectName name, long generation, String contextKey)
+ *           <li><p> viewObjectFullContext(String name, long generation, String contextKey)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> viewObjectFullContextCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -5939,6 +5962,257 @@ public class StorageControlClient implements BackgroundResource {
           ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
       listIntelligenceFindingRevisionsCallable() {
     return stub.listIntelligenceFindingRevisionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the full content of an object context, including its key, value, and any associated
+   * extended data for a given context key.
+   *
+   * <p>Object contexts can optionally contain extended data. If an object context contains extended
+   * data, the metadata payload structure will contain only its type URL. To retrieve the full
+   * extended data, call this method.
+   *
+   * <p>Returns the complete representation of the context as an
+   * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ObjectName name = ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]");
+   *   String contextKey = "contextKey273767984";
+   *   ObjectFullContext response = storageControlClient.viewObjectFullContext(name, contextKey);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the object. Format:
+   *     `projects/{project}/buckets/{bucket}/objects/{object}`
+   * @param contextKey Required. The key of the object context to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ObjectFullContext viewObjectFullContext(
+      @Nullable ObjectName name, String contextKey) {
+    ViewObjectFullContextRequest request =
+        ViewObjectFullContextRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setContextKey(contextKey)
+            .build();
+    return viewObjectFullContext(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the full content of an object context, including its key, value, and any associated
+   * extended data for a given context key.
+   *
+   * <p>Object contexts can optionally contain extended data. If an object context contains extended
+   * data, the metadata payload structure will contain only its type URL. To retrieve the full
+   * extended data, call this method.
+   *
+   * <p>Returns the complete representation of the context as an
+   * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   String name = ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]").toString();
+   *   String contextKey = "contextKey273767984";
+   *   ObjectFullContext response = storageControlClient.viewObjectFullContext(name, contextKey);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the object. Format:
+   *     `projects/{project}/buckets/{bucket}/objects/{object}`
+   * @param contextKey Required. The key of the object context to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ObjectFullContext viewObjectFullContext(String name, String contextKey) {
+    ViewObjectFullContextRequest request =
+        ViewObjectFullContextRequest.newBuilder().setName(name).setContextKey(contextKey).build();
+    return viewObjectFullContext(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the full content of an object context, including its key, value, and any associated
+   * extended data for a given context key.
+   *
+   * <p>Object contexts can optionally contain extended data. If an object context contains extended
+   * data, the metadata payload structure will contain only its type URL. To retrieve the full
+   * extended data, call this method.
+   *
+   * <p>Returns the complete representation of the context as an
+   * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ObjectName name = ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]");
+   *   long generation = 305703192;
+   *   String contextKey = "contextKey273767984";
+   *   ObjectFullContext response =
+   *       storageControlClient.viewObjectFullContext(name, generation, contextKey);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the object. Format:
+   *     `projects/{project}/buckets/{bucket}/objects/{object}`
+   * @param generation Optional. If present, selects a specific revision of this object (as opposed
+   *     to the latest version, the default).
+   * @param contextKey Required. The key of the object context to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ObjectFullContext viewObjectFullContext(
+      @Nullable ObjectName name, long generation, String contextKey) {
+    ViewObjectFullContextRequest request =
+        ViewObjectFullContextRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setGeneration(generation)
+            .setContextKey(contextKey)
+            .build();
+    return viewObjectFullContext(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the full content of an object context, including its key, value, and any associated
+   * extended data for a given context key.
+   *
+   * <p>Object contexts can optionally contain extended data. If an object context contains extended
+   * data, the metadata payload structure will contain only its type URL. To retrieve the full
+   * extended data, call this method.
+   *
+   * <p>Returns the complete representation of the context as an
+   * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   String name = ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]").toString();
+   *   long generation = 305703192;
+   *   String contextKey = "contextKey273767984";
+   *   ObjectFullContext response =
+   *       storageControlClient.viewObjectFullContext(name, generation, contextKey);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the object. Format:
+   *     `projects/{project}/buckets/{bucket}/objects/{object}`
+   * @param generation Optional. If present, selects a specific revision of this object (as opposed
+   *     to the latest version, the default).
+   * @param contextKey Required. The key of the object context to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ObjectFullContext viewObjectFullContext(
+      String name, long generation, String contextKey) {
+    ViewObjectFullContextRequest request =
+        ViewObjectFullContextRequest.newBuilder()
+            .setName(name)
+            .setGeneration(generation)
+            .setContextKey(contextKey)
+            .build();
+    return viewObjectFullContext(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the full content of an object context, including its key, value, and any associated
+   * extended data for a given context key.
+   *
+   * <p>Object contexts can optionally contain extended data. If an object context contains extended
+   * data, the metadata payload structure will contain only its type URL. To retrieve the full
+   * extended data, call this method.
+   *
+   * <p>Returns the complete representation of the context as an
+   * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ViewObjectFullContextRequest request =
+   *       ViewObjectFullContextRequest.newBuilder()
+   *           .setGeneration(305703192)
+   *           .setContextKey("contextKey273767984")
+   *           .setName(ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]").toString())
+   *           .build();
+   *   ObjectFullContext response = storageControlClient.viewObjectFullContext(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ObjectFullContext viewObjectFullContext(ViewObjectFullContextRequest request) {
+    return viewObjectFullContextCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieves the full content of an object context, including its key, value, and any associated
+   * extended data for a given context key.
+   *
+   * <p>Object contexts can optionally contain extended data. If an object context contains extended
+   * data, the metadata payload structure will contain only its type URL. To retrieve the full
+   * extended data, call this method.
+   *
+   * <p>Returns the complete representation of the context as an
+   * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (StorageControlClient storageControlClient = StorageControlClient.create()) {
+   *   ViewObjectFullContextRequest request =
+   *       ViewObjectFullContextRequest.newBuilder()
+   *           .setGeneration(305703192)
+   *           .setContextKey("contextKey273767984")
+   *           .setName(ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]").toString())
+   *           .build();
+   *   ApiFuture<ObjectFullContext> future =
+   *       storageControlClient.viewObjectFullContextCallable().futureCall(request);
+   *   // Do something.
+   *   ObjectFullContext response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextCallable() {
+    return stub.viewObjectFullContextCallable();
   }
 
   @Override

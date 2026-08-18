@@ -640,6 +640,7 @@ public class StorageControlClientTest {
             .setLocationType("locationType-58277745")
             .setCustomPlacementConfig(StorageLayout.CustomPlacementConfig.newBuilder().build())
             .setHierarchicalNamespace(StorageLayout.HierarchicalNamespace.newBuilder().build())
+            .setRapidCacheInfo(StorageLayout.RapidCacheInfo.newBuilder().build())
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -682,6 +683,7 @@ public class StorageControlClientTest {
             .setLocationType("locationType-58277745")
             .setCustomPlacementConfig(StorageLayout.CustomPlacementConfig.newBuilder().build())
             .setHierarchicalNamespace(StorageLayout.HierarchicalNamespace.newBuilder().build())
+            .setRapidCacheInfo(StorageLayout.RapidCacheInfo.newBuilder().build())
             .build();
     mockStorageControl.addResponse(expectedResponse);
 
@@ -3168,6 +3170,196 @@ public class StorageControlClientTest {
     try {
       String parent = "parent-995424086";
       client.listIntelligenceFindingRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void viewObjectFullContextTest() throws Exception {
+    ObjectFullContext expectedResponse =
+        ObjectFullContext.newBuilder()
+            .setKey("key106079")
+            .setValue("value111972721")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setExtendedData(Any.newBuilder().build())
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    ObjectName name = ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]");
+    String contextKey = "contextKey273767984";
+
+    ObjectFullContext actualResponse = client.viewObjectFullContext(name, contextKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ViewObjectFullContextRequest actualRequest =
+        ((ViewObjectFullContextRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(contextKey, actualRequest.getContextKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void viewObjectFullContextExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      ObjectName name = ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]");
+      String contextKey = "contextKey273767984";
+      client.viewObjectFullContext(name, contextKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void viewObjectFullContextTest2() throws Exception {
+    ObjectFullContext expectedResponse =
+        ObjectFullContext.newBuilder()
+            .setKey("key106079")
+            .setValue("value111972721")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setExtendedData(Any.newBuilder().build())
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String contextKey = "contextKey273767984";
+
+    ObjectFullContext actualResponse = client.viewObjectFullContext(name, contextKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ViewObjectFullContextRequest actualRequest =
+        ((ViewObjectFullContextRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(contextKey, actualRequest.getContextKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void viewObjectFullContextExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String contextKey = "contextKey273767984";
+      client.viewObjectFullContext(name, contextKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void viewObjectFullContextTest3() throws Exception {
+    ObjectFullContext expectedResponse =
+        ObjectFullContext.newBuilder()
+            .setKey("key106079")
+            .setValue("value111972721")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setExtendedData(Any.newBuilder().build())
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    ObjectName name = ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]");
+    long generation = 305703192;
+    String contextKey = "contextKey273767984";
+
+    ObjectFullContext actualResponse = client.viewObjectFullContext(name, generation, contextKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ViewObjectFullContextRequest actualRequest =
+        ((ViewObjectFullContextRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(generation, actualRequest.getGeneration());
+    Assert.assertEquals(contextKey, actualRequest.getContextKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void viewObjectFullContextExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      ObjectName name = ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]");
+      long generation = 305703192;
+      String contextKey = "contextKey273767984";
+      client.viewObjectFullContext(name, generation, contextKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void viewObjectFullContextTest4() throws Exception {
+    ObjectFullContext expectedResponse =
+        ObjectFullContext.newBuilder()
+            .setKey("key106079")
+            .setValue("value111972721")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setExtendedData(Any.newBuilder().build())
+            .build();
+    mockStorageControl.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    long generation = 305703192;
+    String contextKey = "contextKey273767984";
+
+    ObjectFullContext actualResponse = client.viewObjectFullContext(name, generation, contextKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ViewObjectFullContextRequest actualRequest =
+        ((ViewObjectFullContextRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(generation, actualRequest.getGeneration());
+    Assert.assertEquals(contextKey, actualRequest.getContextKey());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void viewObjectFullContextExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      String name = "name3373707";
+      long generation = 305703192;
+      String contextKey = "contextKey273767984";
+      client.viewObjectFullContext(name, generation, contextKey);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

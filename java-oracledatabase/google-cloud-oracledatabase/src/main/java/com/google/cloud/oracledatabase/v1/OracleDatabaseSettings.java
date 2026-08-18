@@ -471,6 +471,30 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
         .failoverAutonomousDatabaseOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to refreshAutonomousDatabase. */
+  public UnaryCallSettings<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).refreshAutonomousDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to refreshAutonomousDatabase. */
+  public OperationCallSettings<
+          RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .refreshAutonomousDatabaseOperationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getAutonomousDatabaseRefreshableClones.
+   */
+  public UnaryCallSettings<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .getAutonomousDatabaseRefreshableClonesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listOdbNetworks. */
   public PagedCallSettings<
           ListOdbNetworksRequest, ListOdbNetworksResponse, ListOdbNetworksPagedResponse>
@@ -1377,6 +1401,29 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
         failoverAutonomousDatabaseOperationSettings() {
       return getStubSettingsBuilder().failoverAutonomousDatabaseOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to refreshAutonomousDatabase. */
+    public UnaryCallSettings.Builder<RefreshAutonomousDatabaseRequest, Operation>
+        refreshAutonomousDatabaseSettings() {
+      return getStubSettingsBuilder().refreshAutonomousDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to refreshAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        refreshAutonomousDatabaseOperationSettings() {
+      return getStubSettingsBuilder().refreshAutonomousDatabaseOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * getAutonomousDatabaseRefreshableClones.
+     */
+    public UnaryCallSettings.Builder<
+            GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+        getAutonomousDatabaseRefreshableClonesSettings() {
+      return getStubSettingsBuilder().getAutonomousDatabaseRefreshableClonesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listOdbNetworks. */

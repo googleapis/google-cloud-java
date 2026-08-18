@@ -30,6 +30,7 @@ import com.google.cloud.spanner.Dialect;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.Statement;
+import com.google.cloud.spanner.connection.AbstractStatementParser.ParametersInfo;
 import com.google.cloud.spanner.connection.AbstractStatementParser.ParsedStatement;
 import com.google.cloud.spanner.connection.AbstractStatementParser.StatementType;
 import com.google.cloud.spanner.connection.ClientSideStatementImpl.CompileException;
@@ -1876,6 +1877,43 @@ public class StatementParserTest {
     assertEquals("p1000", AbstractStatementParser.getParameterName(1000));
     assertEquals("p0", AbstractStatementParser.getParameterName(0));
     assertEquals("p-1", AbstractStatementParser.getParameterName(-1));
+  }
+
+  @Test
+  public void testPositionalParametersCache() {
+    CacheStats statsBefore = parser.getPositionalParametersCacheStats();
+
+    String sql = "select * from foo where id=? and name=? and value=" + UUID.randomUUID();
+    ParametersInfo info1 = parser.convertPositionalParametersToNamedParameters('?', sql);
+    assertEquals(2, info1.numberOfParameters);
+    if (dialect == Dialect.POSTGRESQL) {
+      assertTrue(info1.sqlWithNamedParameters.contains("$1"));
+      assertTrue(info1.sqlWithNamedParameters.contains("$2"));
+    } else {
+      assertTrue(info1.sqlWithNamedParameters.contains("@p1"));
+      assertTrue(info1.sqlWithNamedParameters.contains("@p2"));
+    }
+
+    ParametersInfo info2 = parser.convertPositionalParametersToNamedParameters('?', sql);
+    assertEquals(info1.numberOfParameters, info2.numberOfParameters);
+    assertEquals(info1.sqlWithNamedParameters, info2.sqlWithNamedParameters);
+    assertSame(info1, info2);
+
+    // Test with non-'?' parameter character.
+    String sqlDollar = "select * from foo where id=$ and name=$ and value=" + UUID.randomUUID();
+    ParametersInfo infoDollar1 =
+        parser.convertPositionalParametersToNamedParameters('$', sqlDollar);
+    assertEquals(2, infoDollar1.numberOfParameters);
+    ParametersInfo infoDollar2 =
+        parser.convertPositionalParametersToNamedParameters('$', sqlDollar);
+    assertSame(infoDollar1, infoDollar2);
+
+    CacheStats statsAfter = parser.getPositionalParametersCacheStats();
+    CacheStats stats = statsAfter.minus(statsBefore);
+
+    // Two distinct queries had cache misses. Two repeated queries had cache hits.
+    assertEquals(2, stats.missCount());
+    assertEquals(2, stats.hitCount());
   }
 
   @Test

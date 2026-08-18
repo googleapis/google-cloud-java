@@ -25,6 +25,17 @@ package com.google.devicesandservices.health.v4;
  *
  * <pre>
  * Represents the result of the rollup of the user's total calories.
+ *
+ * Note: Queries for the `total-calories` data type must include a time
+ * interval filter (such as
+ * [`total_calories.interval.start_time`][google.devicesandservices.health.v4main.ObservationTimeInterval.start_time]
+ * or
+ * [`total_calories.interval.civil_start_time`][google.devicesandservices.health.v4main.ObservationTimeInterval.civil_start_time]).
+ * The maximum range is 14 days.
+ *
+ * Example filter query:
+ * `total_calories.interval.start_time &gt;= "2026-04-20T00:00:00Z" AND
+ * total_calories.interval.start_time &lt; "2026-04-21T00:00:00Z"`
  * </pre>
  *
  * Protobuf type {@code google.devicesandservices.health.v4.TotalCaloriesRollupValue}
@@ -279,6 +290,17 @@ public final class TotalCaloriesRollupValue extends com.google.protobuf.Generate
    *
    * <pre>
    * Represents the result of the rollup of the user's total calories.
+   *
+   * Note: Queries for the `total-calories` data type must include a time
+   * interval filter (such as
+   * [`total_calories.interval.start_time`][google.devicesandservices.health.v4main.ObservationTimeInterval.start_time]
+   * or
+   * [`total_calories.interval.civil_start_time`][google.devicesandservices.health.v4main.ObservationTimeInterval.civil_start_time]).
+   * The maximum range is 14 days.
+   *
+   * Example filter query:
+   * `total_calories.interval.start_time &gt;= "2026-04-20T00:00:00Z" AND
+   * total_calories.interval.start_time &lt; "2026-04-21T00:00:00Z"`
    * </pre>
    *
    * Protobuf type {@code google.devicesandservices.health.v4.TotalCaloriesRollupValue}

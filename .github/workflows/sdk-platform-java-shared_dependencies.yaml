@@ -41,6 +41,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: java -version
     - name: Install maven modules
       run: |

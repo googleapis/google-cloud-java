@@ -30,9 +30,11 @@ public interface GetAuditReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format
-   * projects/{project}/locations/{location}/auditReports/{audit_report},
-   * folders/{folder}/locations/{location}/auditReports/{audit_report}
+   * Required. Name of the audit report, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+   * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+   * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
    * </pre>
    *
    * <code>
@@ -47,9 +49,11 @@ public interface GetAuditReportRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format
-   * projects/{project}/locations/{location}/auditReports/{audit_report},
-   * folders/{folder}/locations/{location}/auditReports/{audit_report}
+   * Required. Name of the audit report, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+   * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+   * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
    * </pre>
    *
    * <code>

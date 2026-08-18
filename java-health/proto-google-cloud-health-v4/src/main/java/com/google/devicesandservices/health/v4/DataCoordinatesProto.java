@@ -107,14 +107,14 @@ public final class DataCoordinatesProto extends com.google.protobuf.GeneratedFil
           + "ampB\003\340A\002\0222\n\nutc_offset\030\002 \001(\0132\031.google.pr"
           + "otobuf.DurationB\003\340A\002\022K\n\ncivil_time\030\003 \001(\013"
           + "22.google.devicesandservices.health.v4.C"
-          + "ivilDateTimeB\003\340A\003B\212\002\n\'com.google.devices"
+          + "ivilDateTimeB\003\340A\003B\206\002\n\'com.google.devices"
           + "andservices.health.v4B\024DataCoordinatesPr"
-          + "otoP\001ZRgoogle.golang.org/genproto/google"
-          + "apis/devicesandservices/health/apiv4main"
-          + ";healthpb\252\002#Google.DevicesAndServices.He"
-          + "alth.V4\312\002#Google\\DevicesAndServices\\Heal"
-          + "th\\V4\352\002&Google::DevicesAndServices::Heal"
-          + "th::V4b\006proto3"
+          + "otoP\001ZNgoogle.golang.org/genproto/google"
+          + "apis/devicesandservices/health/apiv4;hea"
+          + "lthpb\252\002#Google.DevicesAndServices.Health"
+          + ".V4\312\002#Google\\DevicesAndServices\\Health\\V"
+          + "4\352\002&Google::DevicesAndServices::Health::"
+          + "V4b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
