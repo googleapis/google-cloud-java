@@ -29,12 +29,14 @@
  */
 package com.google.api.gax.httpjson;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 import com.google.api.client.http.HttpHeaders;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import java.util.Collections;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 
@@ -129,5 +131,76 @@ class HttpHeadersUtilsTest {
 
     headersMap = ImmutableMap.of("Custom-Header", "CustomHeader", "accept", "Accept");
     assertNull(HttpHeadersUtils.getUserAgentValue(headersMap));
+  }
+
+  @Test
+  void getFirstHeader_exactMatch_returnsValue() {
+    Map<String, Object> headers =
+        ImmutableMap.of("X-Goog-Upload-URL", "https://test.googleapis.com/upload");
+
+    assertThat(HttpHeadersUtils.getFirstHeader(headers, "X-Goog-Upload-URL"))
+        .isEqualTo("https://test.googleapis.com/upload");
+  }
+
+  @Test
+  void getFirstHeader_caseInsensitiveMatch_returnsValue() {
+    Map<String, Object> headers =
+        ImmutableMap.of("X-Goog-Upload-URL", "https://test.googleapis.com/upload");
+
+    assertThat(HttpHeadersUtils.getFirstHeader(headers, "x-goog-upload-url"))
+        .isEqualTo("https://test.googleapis.com/upload");
+  }
+
+  @Test
+  void getFirstHeader_iterableValue_returnsFirstElement() {
+    Map<String, Object> headers =
+        ImmutableMap.of(
+            "Location", ImmutableList.of("https://redirect.url", "https://secondary.url"));
+
+    assertThat(HttpHeadersUtils.getFirstHeader(headers, "location"))
+        .isEqualTo("https://redirect.url");
+  }
+
+  @Test
+  void getFirstHeader_nonStringValue_convertsToString() {
+    Map<String, Object> headers = ImmutableMap.of("Content-Length", 1024L);
+
+    assertThat(HttpHeadersUtils.getFirstHeader(headers, "content-length")).isEqualTo("1024");
+  }
+
+  @Test
+  void getFirstHeader_emptyIterable_returnsNull() {
+    Map<String, Object> headers = ImmutableMap.of("Empty-List-Header", ImmutableList.of());
+
+    assertThat(HttpHeadersUtils.getFirstHeader(headers, "empty-list-header")).isNull();
+  }
+
+  @Test
+  void getFirstHeader_nullFirstElementInIterable_returnsNull() {
+    Map<String, Object> headers =
+        Collections.singletonMap("Null-First-Header", Collections.singletonList(null));
+
+    assertThat(HttpHeadersUtils.getFirstHeader(headers, "null-first-header")).isNull();
+  }
+
+  @Test
+  void getFirstHeader_nullValueInMap_returnsNull() {
+    Map<String, Object> headers = Collections.singletonMap("Null-Value-Header", null);
+
+    assertThat(HttpHeadersUtils.getFirstHeader(headers, "null-value-header")).isNull();
+  }
+
+  @Test
+  void getFirstHeader_nullKeyInMap_returnsNull() {
+    Map<String, Object> headers = Collections.singletonMap(null, "some-value");
+
+    assertThat(HttpHeadersUtils.getFirstHeader(headers, "any-header")).isNull();
+  }
+
+  @Test
+  void getFirstHeader_headerNotFound_returnsNull() {
+    Map<String, Object> headers = ImmutableMap.of("Existing-Header", "value");
+
+    assertThat(HttpHeadersUtils.getFirstHeader(headers, "non-existent-header")).isNull();
   }
 }
