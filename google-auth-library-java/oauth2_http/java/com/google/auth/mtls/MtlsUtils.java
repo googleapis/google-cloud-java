@@ -79,47 +79,78 @@ public class MtlsUtils {
       return null;
     }
 
-    String certConfigPath = envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE);
-    if (!Strings.isNullOrEmpty(certConfigPath)) {
+    String explicitConfigPath = envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE);
+
+    // 1. Explicit Configuration Path (Fail Closed)
+    if (!Strings.isNullOrEmpty(explicitConfigPath)) {
+      File configFile = new File(explicitConfigPath);
+      if (!configFile.exists()) {
+        throw new IllegalStateException(
+            "Certificate configuration file specified via GOOGLE_API_CERTIFICATE_CONFIG at '"
+                + explicitConfigPath
+                + "' does not exist.");
+      }
+      if (!configFile.isFile() || !configFile.canRead()) {
+        throw new IllegalStateException(
+            "Failed to read certificate configuration file specified via"
+                + " GOOGLE_API_CERTIFICATE_CONFIG at '"
+                + explicitConfigPath
+                + "'.");
+      }
       try {
         WorkloadCertificateConfiguration config =
-            getWorkloadCertificateConfiguration(envProvider, propProvider, certConfigPath);
-
-        File certFile = new File(config.getCertPath());
-        File keyFile = new File(config.getPrivateKeyPath());
-        if (!certFile.exists() || !keyFile.exists()) {
-          throw new IllegalStateException(
-              "Certificate config points to certificate/key files that do not exist on disk: "
-                  + "cert_path="
-                  + config.getCertPath()
-                  + ", key_path="
-                  + config.getPrivateKeyPath());
-        }
+            getWorkloadCertificateConfiguration(envProvider, propProvider, explicitConfigPath);
+        validateCertAndKeyFiles(config, explicitConfigPath, false);
         return config.getCertPath();
       } catch (CertificateSourceUnavailableException e) {
-        // Certificate config file does not exist on disk -> safe fallback
+        // ECP / PKCS11 configuration without workload section; safe fallback
+        return null;
       } catch (IllegalStateException e) {
         throw e;
       } catch (Exception e) {
-        throw new IllegalStateException("Failed to parse certificate config: " + certConfigPath, e);
-      }
-    } else {
-      try {
-        WorkloadCertificateConfiguration config =
-            getWorkloadCertificateConfiguration(envProvider, propProvider, null);
-        File certFile = new File(config.getCertPath());
-        File keyFile = new File(config.getPrivateKeyPath());
-        if (certFile.exists() && keyFile.exists()) {
-          return config.getCertPath();
-        }
-      } catch (CertificateSourceUnavailableException e) {
-        // Well-known gcloud certificate_config.json does not exist. Safe fallback to
-        // SPIFFE/well-known paths.
-      } catch (Exception e) {
-        // Ignore parsing errors for well-known config fallback
+        throw new IllegalStateException(
+            "Certificate configuration file specified via GOOGLE_API_CERTIFICATE_CONFIG at '"
+                + explicitConfigPath
+                + "' is malformed: "
+                + e.getMessage(),
+            e);
       }
     }
 
+    // 2. Implicit / Default gcloud Configuration Path
+    File defaultConfigFile = null;
+    try {
+      defaultConfigFile = getWellKnownCertificateConfigFile(envProvider, propProvider);
+    } catch (IOException e) {
+      // APPDATA missing on Windows, etc. Safe fallback.
+    }
+    if (defaultConfigFile != null && defaultConfigFile.exists()) {
+      if (!defaultConfigFile.isFile() || !defaultConfigFile.canRead()) {
+        throw new IllegalStateException(
+            "Default certificate configuration file at '"
+                + defaultConfigFile.getAbsolutePath()
+                + "' exists but could not be read.");
+      }
+      try {
+        WorkloadCertificateConfiguration config =
+            getWorkloadCertificateConfiguration(envProvider, propProvider, null);
+        validateCertAndKeyFiles(config, defaultConfigFile.getAbsolutePath(), true);
+        return config.getCertPath();
+      } catch (CertificateSourceUnavailableException e) {
+        // ECP-only configuration without workload section; safe fallback
+      } catch (IllegalStateException e) {
+        throw e;
+      } catch (Exception e) {
+        throw new IllegalStateException(
+            "Default certificate configuration file at '"
+                + defaultConfigFile.getAbsolutePath()
+                + "' is malformed: "
+                + e.getMessage(),
+            e);
+      }
+    }
+
+    // 3. Platform SPIFFE Fallbacks (Stubs)
     String gkeCertPath = getGkeWorkloadCertPath();
     if (gkeCertPath != null) {
       return gkeCertPath;
@@ -133,24 +164,40 @@ public class MtlsUtils {
     return null;
   }
 
-  /** Dedicated GKE Fallback Resolution Path */
-  public static @Nullable String getGkeWorkloadCertPath() {
-    String gkePath = "/var/run/secrets/workload-spiffe-credentials";
-    File bundleFile = new File(gkePath, "credentialbundle.pem");
-    if (bundleFile.exists()) {
-      return bundleFile.getAbsolutePath();
+  private static void validateCertAndKeyFiles(
+      WorkloadCertificateConfiguration config, String configPath, boolean isDefaultConfig) {
+    File certFile = new File(config.getCertPath());
+    File keyFile = new File(config.getPrivateKeyPath());
+    if (!certFile.isFile() || !certFile.canRead() || !keyFile.isFile() || !keyFile.canRead()) {
+      String sourcePrefix =
+          isDefaultConfig
+              ? "referenced by default configuration '"
+              : "referenced by configuration '";
+      throw new IllegalStateException(
+          "Failed to read certificate/key file at '"
+              + config.getCertPath()
+              + "' or '"
+              + config.getPrivateKeyPath()
+              + "' "
+              + sourcePrefix
+              + configPath
+              + "'.");
     }
+  }
+
+  /** Dedicated GKE Fallback Resolution Path */
+  static @Nullable String getGkeWorkloadCertPath() {
+    // GKE workload certificate resolution is temporarily disabled (returns null)
+    // pending Phase 1 rollout of bound token support on GKE
+    // (go/agentic-bound-token-sdk-rollout-plan).
     return null;
   }
 
   /** Dedicated GCE Fallback Resolution Path */
-  public static @Nullable String getGceWorkloadCertPath() {
-    String gcePath = "/var/run/secrets/workload-spiffe-credentials";
-    File certFile = new File(gcePath, "certificates.pem");
-    File keyFile = new File(gcePath, "private_key.pem");
-    if (certFile.exists() && keyFile.exists()) {
-      return certFile.getAbsolutePath();
-    }
+  static @Nullable String getGceWorkloadCertPath() {
+    // GCE workload certificate resolution is temporarily disabled (returns null)
+    // pending Phase 2 rollout of bound token support on GCE
+    // (go/agentic-bound-token-sdk-rollout-plan).
     return null;
   }
 
@@ -160,7 +207,7 @@ public class MtlsUtils {
       return null;
     }
     File file = new File(certPath);
-    if (!file.exists()) {
+    if (!file.isFile() || !file.canRead()) {
       return null;
     }
     try {
@@ -199,8 +246,8 @@ public class MtlsUtils {
             .getCertPath();
     if (Strings.isNullOrEmpty(certPath)) {
       throw new CertificateSourceUnavailableException(
-          "Certificate configuration loaded successfully, but does not contain a 'certificate_file'"
-              + " path.");
+          "Certificate configuration loaded successfully, but does not contain a"
+              + " 'cert_configs.workload.cert_path' path.");
     }
     return certPath;
   }
@@ -236,7 +283,7 @@ public class MtlsUtils {
       }
     }
 
-    if (!certConfig.isFile()) {
+    if (!certConfig.isFile() || !certConfig.canRead()) {
       throw new CertificateSourceUnavailableException(
           "Certificate configuration file does not exist or is not a file: "
               + certConfig.getAbsolutePath());

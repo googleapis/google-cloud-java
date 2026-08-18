@@ -264,23 +264,81 @@ class MtlsUtilsTest {
     assertNull(MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
   }
 
+  // --- Explicit GOOGLE_API_CERTIFICATE_CONFIG Tests (Fail Closed) ---
+
   @Test
-  void getWorkloadCertPath_missingConfigFile_returnsNullSafely() {
+  void getWorkloadCertPath_explicitConfigMissing_throwsIllegalStateException() {
     EnvironmentProvider envProvider =
         name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? "/nonexistent/config.json" : null;
     PropertyProvider propProvider = (name, def) -> def;
 
-    assertNull(MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+    assertTrue(
+        exception
+            .getMessage()
+            .contains(
+                "specified via GOOGLE_API_CERTIFICATE_CONFIG at '/nonexistent/config.json' does not"
+                    + " exist"));
   }
 
   @Test
-  void getWorkloadCertPath_configPointsToMissingCertFiles_throwsIllegalStateException()
+  void getWorkloadCertPath_explicitConfigIsDirectory_throwsIllegalStateException()
       throws IOException {
-    Path configFile = tempDir.resolve("config.json");
-    Files.write(
-        configFile,
-        "{\"cert_configs\":{\"workload\":{\"cert_path\":\"/nonexistent/cert.pem\",\"key_path\":\"/nonexistent/key.pem\"}}}"
-            .getBytes());
+    Path configDir = tempDir.resolve("config_dir");
+    Files.createDirectory(configDir);
+
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configDir.toString() : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+    assertTrue(
+        exception
+            .getMessage()
+            .contains(
+                "Failed to read certificate configuration file specified via"
+                    + " GOOGLE_API_CERTIFICATE_CONFIG"));
+  }
+
+  @Test
+  void getWorkloadCertPath_explicitConfigUnreadable_throwsIllegalStateException()
+      throws IOException {
+    Path configFile = tempDir.resolve("unreadable_config.json");
+    Files.write(configFile, "{}".getBytes());
+    File file = configFile.toFile();
+    if (file.setReadable(false)) {
+      try {
+        EnvironmentProvider envProvider =
+            name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+        PropertyProvider propProvider = (name, def) -> def;
+
+        IllegalStateException exception =
+            assertThrows(
+                IllegalStateException.class,
+                () -> MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+        assertTrue(
+            exception
+                .getMessage()
+                .contains(
+                    "Failed to read certificate configuration file specified via"
+                        + " GOOGLE_API_CERTIFICATE_CONFIG"));
+      } finally {
+        file.setReadable(true);
+      }
+    }
+  }
+
+  @Test
+  void getWorkloadCertPath_explicitConfigMalformedJson_throwsIllegalStateException()
+      throws IOException {
+    Path configFile = tempDir.resolve("malformed.json");
+    Files.write(configFile, "{ invalid json".getBytes());
 
     EnvironmentProvider envProvider =
         name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
@@ -290,11 +348,111 @@ class MtlsUtilsTest {
         assertThrows(
             IllegalStateException.class,
             () -> MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
-    assertTrue(exception.getMessage().contains("files that do not exist on disk"));
+    assertTrue(
+        exception
+            .getMessage()
+            .contains(
+                "specified via GOOGLE_API_CERTIFICATE_CONFIG at '"
+                    + configFile.toString()
+                    + "' is malformed"));
   }
 
   @Test
-  void getWorkloadCertPath_validConfig_returnsCertPath() throws IOException {
+  void getWorkloadCertPath_explicitConfigOnlyEcp_returnsNullSafely() throws IOException {
+    Path configFile = tempDir.resolve("ecp_config.json");
+    Files.write(configFile, "{\"cert_configs\":{\"enterprise_certificates\":{}}}".getBytes());
+
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertNull(MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+  }
+
+  @Test
+  void getWorkloadCertPath_explicitConfigCertFileMissing_throwsIllegalStateException()
+      throws IOException {
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.write(keyFile, "dummy key".getBytes());
+
+    Path configFile = tempDir.resolve("config.json");
+    String configJson =
+        String.format(
+            "{\"cert_configs\":{\"workload\":{\"cert_path\":\"/nonexistent/cert.pem\",\"key_path\":\"%s\"}}}",
+            keyFile.toString().replace("\\", "\\\\"));
+    Files.write(configFile, configJson.getBytes());
+
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+    assertTrue(exception.getMessage().contains("Failed to read certificate/key file"));
+    assertTrue(
+        exception
+            .getMessage()
+            .contains("referenced by configuration '" + configFile.toString() + "'"));
+  }
+
+  @Test
+  void getWorkloadCertPath_explicitConfigCertFileIsDirectory_throwsIllegalStateException()
+      throws IOException {
+    Path certDir = tempDir.resolve("cert_dir");
+    Files.createDirectory(certDir);
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.write(keyFile, "dummy key".getBytes());
+
+    Path configFile = tempDir.resolve("config.json");
+    String configJson =
+        String.format(
+            "{\"cert_configs\":{\"workload\":{\"cert_path\":\"%s\",\"key_path\":\"%s\"}}}",
+            certDir.toString().replace("\\", "\\\\"), keyFile.toString().replace("\\", "\\\\"));
+    Files.write(configFile, configJson.getBytes());
+
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+    assertTrue(exception.getMessage().contains("Failed to read certificate/key file"));
+  }
+
+  @Test
+  void getWorkloadCertPath_explicitConfigKeyFileMissing_throwsIllegalStateException()
+      throws IOException {
+    Path certFile = tempDir.resolve("cert.pem");
+    Files.write(certFile, "dummy cert".getBytes());
+
+    Path configFile = tempDir.resolve("config.json");
+    String configJson =
+        String.format(
+            "{\"cert_configs\":{\"workload\":{\"cert_path\":\"%s\",\"key_path\":\"/nonexistent/key.pem\"}}}",
+            certFile.toString().replace("\\", "\\\\"));
+    Files.write(configFile, configJson.getBytes());
+
+    EnvironmentProvider envProvider =
+        name -> "GOOGLE_API_CERTIFICATE_CONFIG".equals(name) ? configFile.toString() : null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+    assertTrue(exception.getMessage().contains("Failed to read certificate/key file"));
+    assertTrue(
+        exception
+            .getMessage()
+            .contains("referenced by configuration '" + configFile.toString() + "'"));
+  }
+
+  @Test
+  void getWorkloadCertPath_explicitConfigValid_returnsCertPath() throws IOException {
     Path certFile = tempDir.resolve("cert.pem");
     Path keyFile = tempDir.resolve("key.pem");
     Files.write(certFile, "dummy cert".getBytes());
@@ -315,6 +473,166 @@ class MtlsUtilsTest {
     assertEquals(certFile.toString(), MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
   }
 
+  // --- Implicit / Default gcloud Config Tests ---
+
+  @Test
+  void getWorkloadCertPath_defaultConfigMissing_returnsNullSafely() {
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider =
+        (name, def) -> {
+          if ("user.home".equals(name)) return tempDir.toString();
+          if ("os.name".equals(name)) return "Linux";
+          return def;
+        };
+
+    assertNull(MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+  }
+
+  @Test
+  void getWorkloadCertPath_defaultConfigIsDirectory_throwsIllegalStateException()
+      throws IOException {
+    Path gcloudDir = tempDir.resolve(".config/gcloud");
+    Files.createDirectories(gcloudDir);
+    Path defaultConfigFile = gcloudDir.resolve("certificate_config.json");
+    Files.createDirectory(defaultConfigFile);
+
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider =
+        (name, def) -> {
+          if ("user.home".equals(name)) return tempDir.toString();
+          if ("os.name".equals(name)) return "Linux";
+          return def;
+        };
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+    assertTrue(
+        exception
+            .getMessage()
+            .contains(
+                "Default certificate configuration file at '"
+                    + defaultConfigFile.toFile().getAbsolutePath()
+                    + "' exists but could not be read"));
+  }
+
+  @Test
+  void getWorkloadCertPath_defaultConfigMalformedJson_throwsIllegalStateException()
+      throws IOException {
+    Path gcloudDir = tempDir.resolve(".config/gcloud");
+    Files.createDirectories(gcloudDir);
+    Path defaultConfigFile = gcloudDir.resolve("certificate_config.json");
+    Files.write(defaultConfigFile, "{ malformed json".getBytes());
+
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider =
+        (name, def) -> {
+          if ("user.home".equals(name)) return tempDir.toString();
+          if ("os.name".equals(name)) return "Linux";
+          return def;
+        };
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+    assertTrue(
+        exception
+            .getMessage()
+            .contains(
+                "Default certificate configuration file at '"
+                    + defaultConfigFile.toFile().getAbsolutePath()
+                    + "' is malformed"));
+  }
+
+  @Test
+  void getWorkloadCertPath_defaultConfigOnlyEcp_returnsNullSafely() throws IOException {
+    Path gcloudDir = tempDir.resolve(".config/gcloud");
+    Files.createDirectories(gcloudDir);
+    Path defaultConfigFile = gcloudDir.resolve("certificate_config.json");
+    Files.write(
+        defaultConfigFile,
+        "{\"cert_configs\":{\"enterprise_certificates\":{\"libs\":[]}}}".getBytes());
+
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider =
+        (name, def) -> {
+          if ("user.home".equals(name)) return tempDir.toString();
+          if ("os.name".equals(name)) return "Linux";
+          return def;
+        };
+
+    assertNull(MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+  }
+
+  @Test
+  void getWorkloadCertPath_defaultConfigCertFileMissing_throwsIllegalStateException()
+      throws IOException {
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.write(keyFile, "dummy key".getBytes());
+
+    Path gcloudDir = tempDir.resolve(".config/gcloud");
+    Files.createDirectories(gcloudDir);
+    Path defaultConfigFile = gcloudDir.resolve("certificate_config.json");
+    String configJson =
+        String.format(
+            "{\"cert_configs\":{\"workload\":{\"cert_path\":\"/nonexistent/cert.pem\",\"key_path\":\"%s\"}}}",
+            keyFile.toString().replace("\\", "\\\\"));
+    Files.write(defaultConfigFile, configJson.getBytes());
+
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider =
+        (name, def) -> {
+          if ("user.home".equals(name)) return tempDir.toString();
+          if ("os.name".equals(name)) return "Linux";
+          return def;
+        };
+
+    IllegalStateException exception =
+        assertThrows(
+            IllegalStateException.class,
+            () -> MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+    assertTrue(exception.getMessage().contains("Failed to read certificate/key file"));
+    assertTrue(
+        exception
+            .getMessage()
+            .contains(
+                "referenced by default configuration '"
+                    + defaultConfigFile.toFile().getAbsolutePath()
+                    + "'"));
+  }
+
+  @Test
+  void getWorkloadCertPath_defaultConfigValid_returnsCertPath() throws IOException {
+    Path certFile = tempDir.resolve("cert.pem");
+    Path keyFile = tempDir.resolve("key.pem");
+    Files.write(certFile, "dummy cert".getBytes());
+    Files.write(keyFile, "dummy key".getBytes());
+
+    Path gcloudDir = tempDir.resolve(".config/gcloud");
+    Files.createDirectories(gcloudDir);
+    Path defaultConfigFile = gcloudDir.resolve("certificate_config.json");
+    String configJson =
+        String.format(
+            "{\"cert_configs\":{\"workload\":{\"cert_path\":\"%s\",\"key_path\":\"%s\"}}}",
+            certFile.toString().replace("\\", "\\\\"), keyFile.toString().replace("\\", "\\\\"));
+    Files.write(defaultConfigFile, configJson.getBytes());
+
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider =
+        (name, def) -> {
+          if ("user.home".equals(name)) return tempDir.toString();
+          if ("os.name".equals(name)) return "Linux";
+          return def;
+        };
+
+    assertTrue(MtlsUtils.useMtlsClientCertificate(envProvider, propProvider));
+    assertEquals(certFile.toString(), MtlsUtils.getWorkloadCertPath(envProvider, propProvider));
+  }
+
+  // --- General Helpers & Stubs Tests ---
+
   @Test
   void getCertificateFingerprint_validFile_returnsSha256() throws IOException {
     Path file = tempDir.resolve("test.crt");
@@ -326,12 +644,19 @@ class MtlsUtilsTest {
   }
 
   @Test
-  void getGkeWorkloadCertPath_nonexistent_returnsNull() {
+  void getCertificateFingerprint_invalidOrNull_returnsNull() {
+    assertNull(MtlsUtils.getCertificateFingerprint(null));
+    assertNull(MtlsUtils.getCertificateFingerprint("/nonexistent/file.crt"));
+    assertNull(MtlsUtils.getCertificateFingerprint(tempDir.toString())); // Directory
+  }
+
+  @Test
+  void getGkeWorkloadCertPath_returnsNull() {
     assertNull(MtlsUtils.getGkeWorkloadCertPath());
   }
 
   @Test
-  void getGceWorkloadCertPath_nonexistent_returnsNull() {
+  void getGceWorkloadCertPath_returnsNull() {
     assertNull(MtlsUtils.getGceWorkloadCertPath());
   }
 }

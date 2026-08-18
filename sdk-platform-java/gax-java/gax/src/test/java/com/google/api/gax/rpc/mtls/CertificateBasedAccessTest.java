@@ -33,6 +33,7 @@ package com.google.api.gax.rpc.mtls;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -42,6 +43,11 @@ class CertificateBasedAccessTest {
 
   private static class TestEnv {
     private final Map<String, String> env = new HashMap<>();
+
+    TestEnv() {
+      // Hermetically isolate tests from the host's ~/.config/gcloud/certificate_config.json
+      env.put("CLOUDSDK_CONFIG", "/nonexistent/test/gcloud");
+    }
 
     void set(String key, String val) {
       env.put(key, val);
@@ -126,14 +132,15 @@ class CertificateBasedAccessTest {
   }
 
   @Test
-  void testUseMtlsClientCertificateConfigMissingConfigFile_returnsNullSafely() {
+  void testUseMtlsClientCertificateConfigMissingConfigFile_throwsIllegalStateException() {
     TestEnv env = new TestEnv();
     env.set("GOOGLE_API_CERTIFICATE_CONFIG", "/nonexistent/config.json");
 
     CertificateBasedAccess cba = createCba(env);
 
-    // Non-existent config file on disk returns false/null safely per Row 3
-    assertFalse(cba.useMtlsClientCertificate());
-    assertNull(cba.getWorkloadCertPath());
+    // Non-existent config file on disk specified via explicit env var throws IllegalStateException
+    // (Fail Closed)
+    assertThrows(IllegalStateException.class, () -> cba.useMtlsClientCertificate());
+    assertThrows(IllegalStateException.class, () -> cba.getWorkloadCertPath());
   }
 }
