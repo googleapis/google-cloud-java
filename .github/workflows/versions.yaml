@@ -45,7 +45,8 @@ jobs:
     - name: Install xmllint
       timeout-minutes: 5
       run: |
-        # Retry apt-get update and install up to 3 times with a 15-second per-request timeout
+        # Retry apt-get update and install up to 3 times with a 15-second per-request timeout.
+        # Retries protect against transient network glitches, mirror timeouts, and apt lock contention on runner startup.
         for i in {1..3}; do
           sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 update && \
           sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 -y install libxml2-utils && \
