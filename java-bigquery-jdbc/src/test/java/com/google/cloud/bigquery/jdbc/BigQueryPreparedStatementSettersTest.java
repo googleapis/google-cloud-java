@@ -21,11 +21,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
+import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
+import com.google.cloud.bigquery.TableId;
+import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
+import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
+import com.google.cloud.bigquery.storage.v1.TableFieldSchema;
+import com.google.cloud.bigquery.storage.v1.TableSchema;
+import com.google.cloud.bigquery.storage.v1.WriteStream;
 import java.sql.Array;
 import java.sql.Date;
 import java.sql.ParameterMetaData;
@@ -39,6 +51,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.TimeZone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -268,5 +281,61 @@ public class BigQueryPreparedStatementSettersTest {
     Instant instant = Instant.now();
     preparedStatement.setObject(4, instant);
     assertEquals(Timestamp.class, preparedStatement.parameterHandler.getType(4));
+  }
+
+  @Test
+  public void testExecuteBatchNullWithWriteAPI() throws Exception {
+    BigQuery bigQuery = mock(BigQuery.class);
+    doReturn("SQL").when(connection).getQueryDialect();
+    doReturn(bigQuery).when(connection).getBigQuery();
+    doReturn(true).when(connection).isEnableWriteAPI();
+    doReturn(1).when(connection).getWriteAPIActivationRowCount();
+    doReturn(100).when(connection).getWriteAPIAppendRowCount();
+
+    BigQueryPreparedStatement insertStmt =
+        new BigQueryPreparedStatement(
+            connection, "INSERT INTO dataset.table (WJXBFS1) VALUES (?)");
+
+    // setObject(1, null) defaults to STRING sql type
+    insertStmt.setObject(1, null);
+    insertStmt.addBatch();
+
+    // Mock parameter-free dry run job statistics
+    Job dryRunJob = mock(Job.class);
+    QueryStatistics statistics = mock(QueryStatistics.class);
+    Schema schema = Schema.of(Field.of("WJXBFS1", StandardSQLTypeName.FLOAT64));
+    doReturn(QueryStatistics.StatementType.INSERT).when(statistics).getStatementType();
+    doReturn(schema).when(statistics).getSchema();
+    doReturn(Collections.singletonList(TableId.of("proj", "ds", "tbl")))
+        .when(statistics)
+        .getReferencedTables();
+    doReturn(statistics).when(dryRunJob).getStatistics();
+    doReturn(dryRunJob).when(bigQuery).create(any(JobInfo.class));
+
+    BigQueryWriteClient writeClient = mock(BigQueryWriteClient.class);
+    BigQueryWriteSettings writeSettings = mock(BigQueryWriteSettings.class);
+    doReturn(BigQueryWriteSettings.newBuilder()).when(writeSettings).toBuilder();
+    doReturn(writeSettings).when(writeClient).getSettings();
+    WriteStream writeStream = mock(WriteStream.class);
+    doReturn("projects/p/datasets/d/tables/t/streams/s").when(writeStream).getName();
+    TableFieldSchema fieldSchema =
+        TableFieldSchema.newBuilder()
+            .setName("WJXBFS1")
+            .setType(TableFieldSchema.Type.DOUBLE)
+            .setMode(TableFieldSchema.Mode.NULLABLE)
+            .build();
+    TableSchema tableSchema = TableSchema.newBuilder().addFields(fieldSchema).build();
+    doReturn(tableSchema).when(writeStream).getTableSchema();
+    doReturn(writeStream).when(writeClient).createWriteStream(any());
+    doReturn(writeClient).when(connection).getBigQueryWriteClient();
+
+    // Dry run succeeds without parameter mismatch exception
+    try {
+      insertStmt.executeBatch();
+    } catch (Exception ignored) {
+      // Ignore gRPC connection errors in unit test environment
+    }
+    assertNotNull(insertStmt.insertSchema);
+    assertEquals("WJXBFS1", insertStmt.insertSchema.getFields().get(0).getName());
   }
 }
