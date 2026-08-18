@@ -34,6 +34,7 @@ import com.google.api.client.util.ClassInfo;
 import com.google.api.client.util.FieldInfo;
 import com.google.api.core.InternalApi;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 import java.util.List;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
@@ -50,6 +51,33 @@ public class HttpHeadersUtils {
       }
     }
     return null;
+  }
+
+  /**
+   * Retrieves the first string value of a header by case-insensitive name from a headers map.
+   *
+   * @param headers the map of header names to header values
+   * @param name the case-insensitive header name to look up
+   * @return the first string value of the header, or {@code null} if not found
+   */
+  public static @Nullable String getFirstHeader(Map<String, Object> headers, String name) {
+    for (Map.Entry<String, Object> entry : headers.entrySet()) {
+      if (entry.getKey().equalsIgnoreCase(name)) {
+        return extractFirstString(entry.getValue());
+      }
+    }
+    return null;
+  }
+
+  private static @Nullable String extractFirstString(@Nullable Object headerValue) {
+    if (headerValue == null) {
+      return null;
+    }
+    if (headerValue instanceof Iterable) {
+      Object firstElement = Iterables.getFirst((Iterable<?>) headerValue, null);
+      return firstElement != null ? firstElement.toString() : null;
+    }
+    return headerValue.toString();
   }
 
   public static HttpHeaders setHeaders(HttpHeaders headers, Map<String, String> headersMap) {
