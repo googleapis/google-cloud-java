@@ -437,7 +437,7 @@ jobs:
       env:
         JOB_TYPE: install
     - name: Validate gapic-libraries-bom
-      uses: googleapis/java-cloud-bom/tests/validate-bom@377c8d1fac6b1521dc52a10f4d02e5d371a0de67 # v26.79.0
+      uses: googleapis/java-cloud-bom/tests/validate-bom@a634dd9327474415b45a6c1c0e42c3375800a249 # v26.84.0
       with:
         bom-path: gapic-libraries-bom/pom.xml
 
