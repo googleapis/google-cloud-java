@@ -776,6 +776,17 @@ public abstract class AbstractStatementParser {
   static final ReadQueryUpdateTransactionOption[] EMPTY_OPTIONS =
       new ReadQueryUpdateTransactionOption[0];
 
+  /**
+   * Returns the parameter name for the given 1-based parameter index with the standard 'p' prefix
+   * (e.g. "p1", "p2").
+   *
+   * <p>Delegates to {@link Statement#getParameterName(int)}.
+   */
+  @InternalApi
+  public static String getParameterName(int index) {
+    return Statement.getParameterName(index);
+  }
+
   /** Parameter information with positional parameters translated to named parameters. */
   @InternalApi
   public static class ParametersInfo {
