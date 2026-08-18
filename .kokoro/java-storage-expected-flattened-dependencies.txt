@@ -80,7 +80,7 @@ org.apache.httpcomponents:httpcore:jar:4.4.16:compile
 org.checkerframework:checker-qual:jar:3.49.0:compile
 org.codehaus.mojo:animal-sniffer-annotations:jar:1.27:compile
 org.codehaus.woodstox:stax2-api:jar:4.2.2:compile
-org.conscrypt:conscrypt-openjdk-uber:jar:2.6.0:compile
+org.conscrypt:conscrypt-openjdk-uber:jar:2.6.2:compile
 org.jspecify:jspecify:jar:1.0.0:compile
 org.slf4j:slf4j-api:jar:2.0.16:compile
 org.threeten:threetenbp:jar:1.7.0:compile

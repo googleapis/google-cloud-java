@@ -49,7 +49,7 @@ This is the table of modules included in the latest libraries-bom release:
 | Artifact ID | Library Type | Google Cloud Library Reference | Google Cloud Product Reference | 
 | --------- | ------------ | ------------ | ------------ |
 | api-common | Runtime | [2.66.0](https://cloud.google.com/java/docs/reference/api-common/latest/overview) | N/A |
-| conscrypt-openjdk-uber | Product | [2.6.0](https://cloud.google.com/java/docs/reference/conscrypt-openjdk-uber/latest/overview) | N/A |
+| conscrypt-openjdk-uber | Product | [2.6.2](https://cloud.google.com/java/docs/reference/conscrypt-openjdk-uber/latest/overview) | N/A |
 | gax | Runtime | [2.83.0](https://cloud.google.com/java/docs/reference/gax/latest/overview) | N/A |
 | google-analytics-admin | Product | [0.105.0](https://cloud.google.com/java/docs/reference/google-analytics-admin/latest/overview) | [Analytics Admin](https://developers.google.com/analytics) |
 | google-analytics-data | Product | [0.106.0](https://cloud.google.com/java/docs/reference/google-analytics-data/latest/overview) | [Analytics Data](https://developers.google.com/analytics/trusted-testing/analytics-data) |
