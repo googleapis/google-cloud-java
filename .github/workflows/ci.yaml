@@ -66,7 +66,7 @@ jobs:
       matrix:
         java: [11, 17, 21, 25, 26]
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         persist-credentials: false
@@ -88,7 +88,7 @@ jobs:
     needs: bulk-filter
     name: "units (8)"
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       with:
         persist-credentials: false
@@ -252,7 +252,7 @@ jobs:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
         java: [11, 17, 21, 25, 26]
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
@@ -275,7 +275,7 @@ jobs:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
         java: [8]
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
@@ -317,7 +317,7 @@ jobs:
       matrix:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
@@ -337,7 +337,7 @@ jobs:
       matrix:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
@@ -366,7 +366,7 @@ jobs:
     steps:
     - name: Support longpaths
       run: git config --system core.longpaths true
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
@@ -384,7 +384,7 @@ jobs:
     if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         fetch-depth: 0
         persist-credentials: false
@@ -404,7 +404,7 @@ jobs:
     if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
@@ -424,7 +424,7 @@ jobs:
     if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
     - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
