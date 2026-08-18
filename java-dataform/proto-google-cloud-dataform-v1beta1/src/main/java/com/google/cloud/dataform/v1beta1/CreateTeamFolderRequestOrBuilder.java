@@ -114,7 +114,7 @@ public interface CreateTeamFolderRequestOrBuilder
    * <code>string team_folder_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dataform.v1beta1.CreateTeamFolderRequest.team_folder_id is deprecated.
-   *     See google/cloud/dataform/v1beta1/dataform.proto;l=4030
+   *     See google/cloud/dataform/v1beta1/dataform.proto;l=4186
    * @return The teamFolderId.
    */
   @java.lang.Deprecated
@@ -133,7 +133,7 @@ public interface CreateTeamFolderRequestOrBuilder
    * <code>string team_folder_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dataform.v1beta1.CreateTeamFolderRequest.team_folder_id is deprecated.
-   *     See google/cloud/dataform/v1beta1/dataform.proto;l=4030
+   *     See google/cloud/dataform/v1beta1/dataform.proto;l=4186
    * @return The bytes for teamFolderId.
    */
   @java.lang.Deprecated
