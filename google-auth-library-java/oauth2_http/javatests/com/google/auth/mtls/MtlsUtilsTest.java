@@ -102,6 +102,21 @@ class MtlsUtilsTest {
   }
 
   @Test
+  void getCertificatePath_ecpOnlyConfig_throwsCertificateSourceUnavailableException()
+      throws IOException {
+    Path configFile = tempDir.resolve("ecp_config.json");
+    Files.write(
+        configFile, "{\"cert_configs\":{\"enterprise_certificates\":{\"libs\":[]}}}".getBytes());
+
+    EnvironmentProvider envProvider = name -> null;
+    PropertyProvider propProvider = (name, def) -> def;
+
+    assertThrows(
+        CertificateSourceUnavailableException.class,
+        () -> MtlsUtils.getCertificatePath(envProvider, propProvider, configFile.toString()));
+  }
+
+  @Test
   void getWorkloadCertificateConfiguration_overridePath() throws IOException {
     Path configFile = tempDir.resolve("custom_config.json");
     Files.write(
