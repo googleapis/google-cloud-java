@@ -35,7 +35,7 @@ jobs:
       # runnable is true if there are changes outside the .github/workflows directory OR if ci.yaml itself (or kokoro scripts) is modified.
       runnable: ${{ fromJSON(steps.filter.outputs.all_count) > fromJSON(steps.filter.outputs.workflows_count) || fromJSON(steps.filter.outputs.ci_count) > 0 }}
     steps:
-    - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
       with:
         persist-credentials: false
       # Use this action, rather than a file filter so that we can make this
@@ -125,7 +125,7 @@ jobs:
     outputs:
       packages: ${{ steps.filter.outputs.changes }}
     steps:
-    - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
       with:
         persist-credentials: false
     - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
