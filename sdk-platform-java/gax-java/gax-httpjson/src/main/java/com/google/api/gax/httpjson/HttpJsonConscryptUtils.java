@@ -55,7 +55,7 @@ public class HttpJsonConscryptUtils {
    * ClientHello extension in preference order. The server selects the first group it supports.
    *
    * <p>For details on Conscrypt's supported TLS algorithms, see <a
-   * href="https://github.com/google/conscrypt/blob/2.6.0/CAPABILITIES.md">Conscrypt
+   * href="https://github.com/google/conscrypt/blob/2.6.2/CAPABILITIES.md">Conscrypt
    * CAPABILITIES.md</a>.
    */
   static final String[] DEFAULT_CONSCRYPT_NAMED_GROUPS =
