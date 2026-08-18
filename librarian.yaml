@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.36.0
+version: v0.38.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
@@ -1117,13 +1117,6 @@ libraries:
           generate_resource_names: false
           samples: false
       - path: google/logging/type
-        java:
-          omit_common_resources: true
-          proto_artifact_id_override: proto-google-common-protos
-          generate_gapic: false
-          generate_resource_names: false
-          samples: false
-      - path: google/rpc/context
         java:
           omit_common_resources: true
           proto_artifact_id_override: proto-google-common-protos
