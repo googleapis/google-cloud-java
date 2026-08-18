@@ -32,52 +32,115 @@ package com.google.api.gax.rpc.mtls;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 class CertificateBasedAccessTest {
 
+  private static class TestEnv {
+    private final Map<String, String> env = new HashMap<>();
+
+    TestEnv() {
+      // Hermetically isolate tests from the host's ~/.config/gcloud/certificate_config.json
+      env.put("CLOUDSDK_CONFIG", "/nonexistent/test/gcloud");
+    }
+
+    void set(String key, String val) {
+      env.put(key, val);
+    }
+
+    String get(String name) {
+      return env.get(name);
+    }
+  }
+
+  private CertificateBasedAccess createCba(TestEnv env) {
+    return new CertificateBasedAccess(env::get);
+  }
+
   @Test
   void testUseMtlsEndpointAlways() {
-    CertificateBasedAccess cba =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "always" : "false");
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_MTLS_ENDPOINT", "always");
+    CertificateBasedAccess cba = createCba(env);
     assertEquals(
         CertificateBasedAccess.MtlsEndpointUsagePolicy.ALWAYS, cba.getMtlsEndpointUsagePolicy());
   }
 
   @Test
   void testUseMtlsEndpointAuto() {
-    CertificateBasedAccess cba =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "auto" : "false");
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_MTLS_ENDPOINT", "auto");
+    CertificateBasedAccess cba = createCba(env);
     assertEquals(
         CertificateBasedAccess.MtlsEndpointUsagePolicy.AUTO, cba.getMtlsEndpointUsagePolicy());
   }
 
   @Test
   void testUseMtlsEndpointNever() {
-    CertificateBasedAccess cba =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_MTLS_ENDPOINT") ? "never" : "false");
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_MTLS_ENDPOINT", "never");
+    CertificateBasedAccess cba = createCba(env);
     assertEquals(
         CertificateBasedAccess.MtlsEndpointUsagePolicy.NEVER, cba.getMtlsEndpointUsagePolicy());
   }
 
   @Test
-  void testUseMtlsClientCertificateTrue() {
-    CertificateBasedAccess cba =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_CLIENT_CERTIFICATE") ? "true" : "auto");
-    assertTrue(cba.useMtlsClientCertificate());
+  void testUseMtlsEndpointCaseInsensitive() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_MTLS_ENDPOINT", "ALWAYS");
+    CertificateBasedAccess cba = createCba(env);
+    assertEquals(
+        CertificateBasedAccess.MtlsEndpointUsagePolicy.ALWAYS, cba.getMtlsEndpointUsagePolicy());
+
+    env.set("GOOGLE_API_USE_MTLS_ENDPOINT", "NEVER");
+    assertEquals(
+        CertificateBasedAccess.MtlsEndpointUsagePolicy.NEVER, cba.getMtlsEndpointUsagePolicy());
   }
 
   @Test
-  void testUseMtlsClientCertificateFalse() {
-    CertificateBasedAccess cba =
-        new CertificateBasedAccess(
-            name -> name.equals("GOOGLE_API_USE_CLIENT_CERTIFICATE") ? "false" : "auto");
+  void testUseMtlsClientCertificateExplicitTrueNoCredentials() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_CLIENT_CERTIFICATE", "true");
+    CertificateBasedAccess cba = createCba(env);
+    // Explicit 'true' permits mTLS if certs exist, but if no certs are present, returns false/null
+    // cleanly (Row 3)
     assertFalse(cba.useMtlsClientCertificate());
+    assertNull(cba.getWorkloadCertPath());
+  }
+
+  @Test
+  void testUseMtlsClientCertificateExplicitFalse() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_USE_CLIENT_CERTIFICATE", "false");
+
+    CertificateBasedAccess cba = createCba(env);
+    assertFalse(cba.useMtlsClientCertificate());
+    assertNull(cba.getWorkloadCertPath());
+  }
+
+  @Test
+  void testUseMtlsClientCertificateUnsetNoFiles() {
+    TestEnv env = new TestEnv();
+    CertificateBasedAccess cba = createCba(env);
+    assertFalse(cba.useMtlsClientCertificate());
+    assertNull(cba.getWorkloadCertPath());
+  }
+
+  @Test
+  void testUseMtlsClientCertificateConfigMissingConfigFile_throwsIllegalStateException() {
+    TestEnv env = new TestEnv();
+    env.set("GOOGLE_API_CERTIFICATE_CONFIG", "/nonexistent/config.json");
+
+    CertificateBasedAccess cba = createCba(env);
+
+    // Non-existent config file on disk specified via explicit env var throws IllegalStateException
+    // (Fail Closed)
+    assertThrows(IllegalStateException.class, () -> cba.useMtlsClientCertificate());
+    assertThrows(IllegalStateException.class, () -> cba.getWorkloadCertPath());
   }
 }

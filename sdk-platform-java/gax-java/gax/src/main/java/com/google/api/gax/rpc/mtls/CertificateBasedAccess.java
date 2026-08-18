@@ -32,22 +32,45 @@ package com.google.api.gax.rpc.mtls;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
-import org.jspecify.annotations.NullMarked;
+import com.google.auth.mtls.MtlsUtils;
+import com.google.auth.oauth2.PropertyProvider;
+import java.io.IOException;
 
 /**
  * Utility class for handling certificate-based access configurations.
  *
- * <p>This class handles the processing of GOOGLE_API_USE_CLIENT_CERTIFICATE and
- * GOOGLE_API_USE_MTLS_ENDPOINT environment variables according to https://google.aip.dev/auth/4114
+ * <p>This class handles the processing of GOOGLE_API_USE_CLIENT_CERTIFICATE,
+ * GOOGLE_API_CERTIFICATE_CONFIG, and GOOGLE_API_USE_MTLS_ENDPOINT configurations.
  */
-@NullMarked
 @InternalApi
 public class CertificateBasedAccess {
 
   private final EnvironmentProvider envProvider;
 
-  /** The EnvironmentProvider mechanism supports env var injection for unit tests. */
+  @InternalApi
+  public interface FileExistenceProvider {
+    boolean exists(String path);
+  }
+
+  @InternalApi
+  public interface FileContentReader {
+    String read(String path) throws IOException;
+  }
+
   public CertificateBasedAccess(EnvironmentProvider envProvider) {
+    this(
+        envProvider,
+        path -> new java.io.File(path).isFile(),
+        path ->
+            new String(
+                java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(path)),
+                java.nio.charset.StandardCharsets.UTF_8));
+  }
+
+  CertificateBasedAccess(
+      EnvironmentProvider envProvider,
+      FileExistenceProvider fileExistenceProvider,
+      FileContentReader fileContentReader) {
     this.envProvider = envProvider;
   }
 
@@ -66,20 +89,35 @@ public class CertificateBasedAccess {
     ALWAYS;
   }
 
+  private com.google.auth.oauth2.EnvironmentProvider getAuthEnvProvider() {
+    return name -> envProvider.getenv(name);
+  }
+
+  private PropertyProvider getAuthPropertyProvider() {
+    return System::getProperty;
+  }
+
   /** Returns if mutual TLS client certificate should be used. */
   public boolean useMtlsClientCertificate() {
-    String useClientCertificate = envProvider.getenv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
-    return "true".equals(useClientCertificate);
+    return MtlsUtils.useMtlsClientCertificate(getAuthEnvProvider(), getAuthPropertyProvider());
   }
 
   /** Returns the current mutual TLS endpoint usage policy. */
   public MtlsEndpointUsagePolicy getMtlsEndpointUsagePolicy() {
     String mtlsEndpointUsagePolicy = envProvider.getenv("GOOGLE_API_USE_MTLS_ENDPOINT");
-    if ("never".equals(mtlsEndpointUsagePolicy)) {
+    if ("never".equalsIgnoreCase(mtlsEndpointUsagePolicy)) {
       return MtlsEndpointUsagePolicy.NEVER;
-    } else if ("always".equals(mtlsEndpointUsagePolicy)) {
+    } else if ("always".equalsIgnoreCase(mtlsEndpointUsagePolicy)) {
       return MtlsEndpointUsagePolicy.ALWAYS;
     }
     return MtlsEndpointUsagePolicy.AUTO;
+  }
+
+  /**
+   * Resolves and returns the path to the mutual TLS client certificate, or null if none should be
+   * used.
+   */
+  public String getWorkloadCertPath() {
+    return MtlsUtils.getWorkloadCertPath(getAuthEnvProvider(), getAuthPropertyProvider());
   }
 }

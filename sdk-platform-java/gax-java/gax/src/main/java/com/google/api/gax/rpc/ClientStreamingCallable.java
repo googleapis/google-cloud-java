@@ -77,9 +77,46 @@ public abstract class ClientStreamingCallable<RequestT, ResponseT> {
     return new ClientStreamingCallable<RequestT, ResponseT>() {
       @Override
       public ApiStreamObserver<RequestT> clientStreamingCall(
-          ApiStreamObserver<ResponseT> responseObserver, ApiCallContext thisCallContext) {
-        return ClientStreamingCallable.this.clientStreamingCall(
-            responseObserver, defaultCallContext.merge(thisCallContext));
+          final ApiStreamObserver<ResponseT> responseObserver, ApiCallContext thisCallContext) {
+        final ApiCallContext mergedContext = defaultCallContext.merge(thisCallContext);
+        ApiStreamObserver<ResponseT> refreshingObserver =
+            new ApiStreamObserver<ResponseT>() {
+              @Override
+              public void onNext(ResponseT response) {
+                responseObserver.onNext(response);
+              }
+
+              @Override
+              public void onError(Throwable t) {
+                if (t instanceof UnauthenticatedException) {
+                  TransportChannel transportChannel = mergedContext.getTransportChannel();
+                  if (transportChannel != null && transportChannel.shouldRefresh()) {
+                    transportChannel.refresh();
+                    UnauthenticatedException causeEx = (UnauthenticatedException) t;
+                    UnauthenticatedException newEx =
+                        new UnauthenticatedException(
+                            causeEx.getMessage(),
+                            causeEx.getCause(),
+                            causeEx.getStatusCode(),
+                            true, // isRetryable = true
+                            causeEx.getErrorDetails());
+                    newEx.setStackTrace(causeEx.getStackTrace());
+                    for (Throwable suppressed : causeEx.getSuppressed()) {
+                      newEx.addSuppressed(suppressed);
+                    }
+                    t = newEx;
+                  }
+                }
+                responseObserver.onError(t);
+              }
+
+              @Override
+              public void onCompleted() {
+                responseObserver.onCompleted();
+              }
+            };
+
+        return ClientStreamingCallable.this.clientStreamingCall(refreshingObserver, mergedContext);
       }
     };
   }
