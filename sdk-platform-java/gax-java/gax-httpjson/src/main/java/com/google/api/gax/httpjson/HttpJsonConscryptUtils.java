@@ -48,7 +48,6 @@ public class HttpJsonConscryptUtils {
    *
    * <ol>
    *   <li><b>Standard ML-KEM algorithms</b>: Prioritized first for quantum resistance.
-   *   <li><b>Draft Kyber algorithms</b>: Retained as a fallback for legacy draft PQC deployments.
    *   <li><b>Classical curves</b>: Fallback for endpoints without PQC support.
    * </ol>
    *
@@ -59,17 +58,8 @@ public class HttpJsonConscryptUtils {
    * href="https://github.com/google/conscrypt/blob/2.6.0/CAPABILITIES.md">Conscrypt
    * CAPABILITIES.md</a>.
    */
-  public static final String[] DEFAULT_CONSCRYPT_NAMED_GROUPS =
-      new String[] {
-        "X25519MLKEM768",
-        "SecP256r1MLKEM768",
-        "MLKEM1024",
-        "MLKEM768",
-        "X25519Kyber768Draft00",
-        "X25519",
-        "secp256r1",
-        "secp384r1"
-      };
+  static final String[] DEFAULT_CONSCRYPT_NAMED_GROUPS =
+      new String[] {"X25519MLKEM768", "MLKEM1024", "X25519", "secp256r1", "secp384r1"};
 
   /**
    * Lazy initialization holder for Conscrypt {@link Provider}.
