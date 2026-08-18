@@ -42,8 +42,15 @@ jobs:
       github.repository_owner == 'googleapis' && github.head_ref == 'release-please--branches--main' &&
       !endsWith(github.event.pull_request.title, 'SNAPSHOT')
     steps:
-    - run: sudo apt-get update -y
-    - run: sudo apt-get install libxml2-utils
+    - name: Install xmllint
+      timeout-minutes: 5
+      run: |
+        # Retry apt-get update and install up to 3 times with a 15-second per-request timeout
+        for i in {1..3}; do
+          sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 update && \
+          sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 -y install libxml2-utils && \
+          break || sleep 5
+        done
     - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       with:
         persist-credentials: false
