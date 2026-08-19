@@ -560,13 +560,7 @@ public class Publisher implements PublisherInterface {
           Level.FINER,
           String.format("Publishing hedged attempt %d", attemptNumber),
           outstandingBatch.getMessageWrappers().get(0));
-      context =
-          context
-              .withExtraHeaders(
-                  ImmutableMap.of(
-                      "x-goog-pubsub-hedged-count",
-                      Collections.singletonList(Integer.toString(attemptNumber))))
-              .withRetryableCodes(Collections.<StatusCode.Code>emptySet());
+      context = context.withRetryableCodes(Collections.<StatusCode.Code>emptySet());
     }
 
     int numMessagesInBatch = outstandingBatch.size();
@@ -578,7 +572,7 @@ public class Publisher implements PublisherInterface {
     }
 
     outstandingBatch.publishRpcSpan =
-        tracer.startPublishRpcSpan(topicNameObject, messageWrappers, attemptNumber);
+      tracer.startPublishRpcSpan(topicNameObject, messageWrappers, attemptNumber);
 
     return publisherStub
         .publishCallable()
@@ -772,7 +766,7 @@ public class Publisher implements PublisherInterface {
           continue;
         }
 
-        long remainingTimeoutMs = coordinator.getDeadlineMs() - clock.millisTime();
+        long remainingTimeoutMs = coordinator.getAbsoluteDeadlineMs() - clock.millisTime();
         if (remainingTimeoutMs <= 0) {
           coordinator.isInQueue().set(false);
           coordinator.checkCompletionOnQueueExit();
@@ -901,6 +895,9 @@ public class Publisher implements PublisherInterface {
     }
     if (queueProcessingFuture != null) {
       queueProcessingFuture.cancel(false);
+    }
+    if (hedgingQueue != null) {
+      hedgingQueue.clear();
     }
     publishAllOutstanding();
     messagesWaiter.waitComplete();

@@ -56,15 +56,25 @@ public final class HedgingSettings {
    *
    * @return the hedging delay.
    */
-  Duration getHedgeDelay() {
+  public Duration getHedgeDelay() {
     return hedgeDelay;
   }
 
-  int getMaxTokens() {
+  /**
+   * Returns the maximum number of tokens in the token bucket rate limiter.
+   *
+   * @return the max tokens.
+   */
+  public int getMaxTokens() {
     return maxTokens;
   }
 
-  float getRefillRatio() {
+  /**
+   * Returns the token bucket refill ratio per successful request.
+   *
+   * @return the refill ratio.
+   */
+  public float getRefillRatio() {
     return refillRatio;
   }
 

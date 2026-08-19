@@ -186,8 +186,11 @@ public class OpenTelemetryPubsubTracer {
     return startPublishRpcSpan(topicName, messages, 0);
   }
 
-  Span startPublishRpcSpan(
-      TopicName topicName, List<PubsubMessageWrapper> messages, int attemptNumber) {
+  /**
+   * Note: Hedged publish attempts do not create distinct publish RPC spans. Instead, we rely on
+   * the hedged publish start and end events on each message.
+   */
+  Span startPublishRpcSpan(TopicName topicName, List<PubsubMessageWrapper> messages, int attemptNumber) {
     if (!enabled) {
       return null;
     }
