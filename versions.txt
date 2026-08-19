@@ -1110,3 +1110,8 @@ google-cloud-ftp-parent:0.0.0:0.1.0-SNAPSHOT
 google-cloud-ftp-bom:0.0.0:0.1.0-SNAPSHOT
 proto-google-cloud-ftp-v1:0.0.0:0.1.0-SNAPSHOT
 google-cloud-ftp:0.0.0:0.1.0-SNAPSHOT
+google-cloud-biglake-hive-parent:0.0.0:0.1.0-SNAPSHOT
+google-cloud-biglake-hive-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-cloud-biglake-hive-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-biglake-hive-v1:0.0.0:0.1.0-SNAPSHOT
+google-cloud-biglake-hive:0.0.0:0.1.0-SNAPSHOT
