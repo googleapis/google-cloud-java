@@ -98,6 +98,19 @@ public class NativeImageUtils {
     }
   }
 
+  /** Registers an entire class for JNI use. */
+  public static void registerClassForJni(FeatureAccess access, String name) {
+    Class<?> clazz = access.findClassByName(name);
+    if (clazz != null) {
+      org.graalvm.nativeimage.hosted.RuntimeJNIAccess.register(clazz);
+      org.graalvm.nativeimage.hosted.RuntimeJNIAccess.register(clazz.getDeclaredConstructors());
+      org.graalvm.nativeimage.hosted.RuntimeJNIAccess.register(clazz.getDeclaredFields());
+      org.graalvm.nativeimage.hosted.RuntimeJNIAccess.register(clazz.getDeclaredMethods());
+    } else {
+      LOGGER.log(Level.WARNING, CLASS_REFLECTION_ERROR_MESSAGE, name);
+    }
+  }
+
   /**
    * Registers the transitive class hierarchy of the provided {@code className} for reflection.
    *
