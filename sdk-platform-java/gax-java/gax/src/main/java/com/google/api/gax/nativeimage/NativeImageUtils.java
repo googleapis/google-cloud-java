@@ -36,6 +36,7 @@ import java.lang.reflect.Modifier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.graalvm.nativeimage.hosted.Feature.FeatureAccess;
+import org.graalvm.nativeimage.hosted.RuntimeJNIAccess;
 import org.graalvm.nativeimage.hosted.RuntimeReflection;
 import org.jspecify.annotations.NullMarked;
 
@@ -102,10 +103,10 @@ public class NativeImageUtils {
   public static void registerClassForJni(FeatureAccess access, String name) {
     Class<?> clazz = access.findClassByName(name);
     if (clazz != null) {
-      org.graalvm.nativeimage.hosted.RuntimeJNIAccess.register(clazz);
-      org.graalvm.nativeimage.hosted.RuntimeJNIAccess.register(clazz.getDeclaredConstructors());
-      org.graalvm.nativeimage.hosted.RuntimeJNIAccess.register(clazz.getDeclaredFields());
-      org.graalvm.nativeimage.hosted.RuntimeJNIAccess.register(clazz.getDeclaredMethods());
+      RuntimeJNIAccess.register(clazz);
+      RuntimeJNIAccess.register(clazz.getDeclaredConstructors());
+      RuntimeJNIAccess.register(clazz.getDeclaredFields());
+      RuntimeJNIAccess.register(clazz.getDeclaredMethods());
     } else {
       LOGGER.log(Level.WARNING, CLASS_REFLECTION_ERROR_MESSAGE, name);
     }
