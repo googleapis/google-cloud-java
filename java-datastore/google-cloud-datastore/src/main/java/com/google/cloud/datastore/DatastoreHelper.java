@@ -74,7 +74,7 @@ class DatastoreHelper {
     return compileEntities(keys, reader.get(Arrays.asList(keys), options));
   }
 
-  private static List<Entity> compileEntities(Key[] keys, Iterator<Entity> entities) {
+  static List<Entity> compileEntities(Key[] keys, Iterator<Entity> entities) {
     Map<Key, Entity> map = Maps.newHashMapWithExpectedSize(keys.length);
     while (entities.hasNext()) {
       Entity entity = entities.next();

@@ -311,6 +311,26 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
     return sessionsRequired_;
   }
 
+  public static final int MICROSECOND_TIMESTAMP_FIELD_NUMBER = 14;
+  private boolean microsecondTimestamp_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the client supports microsecond precision
+   * timestamps.
+   * </pre>
+   *
+   * <code>bool microsecond_timestamp = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The microsecondTimestamp.
+   */
+  @java.lang.Override
+  public boolean getMicrosecondTimestamp() {
+    return microsecondTimestamp_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -361,6 +381,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
     if (sessionsRequired_ != false) {
       output.writeBool(13, sessionsRequired_);
     }
+    if (microsecondTimestamp_ != false) {
+      output.writeBool(14, microsecondTimestamp_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -406,6 +429,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
     if (sessionsRequired_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, sessionsRequired_);
     }
+    if (microsecondTimestamp_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, microsecondTimestamp_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -433,6 +459,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
     if (getPeerInfo() != other.getPeerInfo()) return false;
     if (getSessionsCompatible() != other.getSessionsCompatible()) return false;
     if (getSessionsRequired() != other.getSessionsRequired()) return false;
+    if (getMicrosecondTimestamp() != other.getMicrosecondTimestamp()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -468,6 +495,8 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSessionsCompatible());
     hash = (37 * hash) + SESSIONS_REQUIRED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSessionsRequired());
+    hash = (37 * hash) + MICROSECOND_TIMESTAMP_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMicrosecondTimestamp());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -626,6 +655,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
       peerInfo_ = false;
       sessionsCompatible_ = false;
       sessionsRequired_ = false;
+      microsecondTimestamp_ = false;
       return this;
     }
 
@@ -697,6 +727,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.sessionsRequired_ = sessionsRequired_;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.microsecondTimestamp_ = microsecondTimestamp_;
+      }
     }
 
     @java.lang.Override
@@ -746,6 +779,9 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
       }
       if (other.getSessionsRequired() != false) {
         setSessionsRequired(other.getSessionsRequired());
+      }
+      if (other.getMicrosecondTimestamp() != false) {
+        setMicrosecondTimestamp(other.getMicrosecondTimestamp());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -845,6 +881,12 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 104
+            case 112:
+              {
+                microsecondTimestamp_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1556,6 +1598,65 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
     public Builder clearSessionsRequired() {
       bitField0_ = (bitField0_ & ~0x00000800);
       sessionsRequired_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean microsecondTimestamp_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the client supports microsecond precision
+     * timestamps.
+     * </pre>
+     *
+     * <code>bool microsecond_timestamp = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The microsecondTimestamp.
+     */
+    @java.lang.Override
+    public boolean getMicrosecondTimestamp() {
+      return microsecondTimestamp_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the client supports microsecond precision
+     * timestamps.
+     * </pre>
+     *
+     * <code>bool microsecond_timestamp = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The microsecondTimestamp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMicrosecondTimestamp(boolean value) {
+
+      microsecondTimestamp_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates whether the client supports microsecond precision
+     * timestamps.
+     * </pre>
+     *
+     * <code>bool microsecond_timestamp = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMicrosecondTimestamp() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      microsecondTimestamp_ = false;
       onChanged();
       return this;
     }

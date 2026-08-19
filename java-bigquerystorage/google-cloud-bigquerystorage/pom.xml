@@ -15,6 +15,8 @@
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquerystorage</site.installationModule>
+    <bigquery.endpoint>https://us-east7-bigquery.googleapis.com</bigquery.endpoint>
+    <bigquery.storage.endpoint>us-east7-bigquerystorage.googleapis.com:443</bigquery.storage.endpoint>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -248,7 +250,6 @@
     <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
-      <version>1.11.4</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -257,13 +258,13 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java-util</artifactId>
+      <groupId>org.apache.arrow</groupId>
+      <artifactId>arrow-memory-netty</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-bigquery</artifactId>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -409,6 +410,10 @@
                 <buildArg>--no-fallback</buildArg>
                 <buildArg>--no-server</buildArg>
               </buildArgs>
+              <environmentVariables>
+                <BIGQUERY_ENDPOINT>${bigquery.endpoint}</BIGQUERY_ENDPOINT>
+                <BIGQUERY_STORAGE_ENDPOINT>${bigquery.storage.endpoint}</BIGQUERY_STORAGE_ENDPOINT>
+              </environmentVariables>
             </configuration>
           </plugin>
         </plugins>

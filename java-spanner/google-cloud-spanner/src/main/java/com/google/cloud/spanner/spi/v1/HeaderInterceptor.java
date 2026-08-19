@@ -25,13 +25,23 @@ import static com.google.cloud.spanner.spi.v1.SpannerRpcViews.SPANNER_GFE_HEADER
 import static com.google.cloud.spanner.spi.v1.SpannerRpcViews.SPANNER_GFE_LATENCY;
 
 import com.google.api.gax.tracing.ApiTracer;
-import com.google.cloud.spanner.*;
+import com.google.cloud.spanner.BuiltInMetricsConstant;
+import com.google.cloud.spanner.CompositeTracer;
+import com.google.cloud.spanner.SpannerExceptionFactory;
+import com.google.cloud.spanner.SpannerRpcMetrics;
+import com.google.cloud.spanner.XGoogSpannerRequestId;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.spanner.admin.database.v1.DatabaseName;
-import io.grpc.*;
+import io.grpc.CallOptions;
+import io.grpc.Channel;
+import io.grpc.ClientCall;
+import io.grpc.ClientInterceptor;
 import io.grpc.ForwardingClientCall.SimpleForwardingClientCall;
 import io.grpc.ForwardingClientCallListener.SimpleForwardingClientCallListener;
+import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
+import io.grpc.Status;
 import io.grpc.alts.AltsContextUtil;
 import io.opencensus.stats.MeasureMap;
 import io.opencensus.stats.Stats;
@@ -52,6 +62,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.annotation.Nullable;
 
 /**
  * Intercepts all gRPC calls to extract server-timing header. Captures GFE Latency and GFE Header
@@ -89,8 +100,6 @@ class HeaderInterceptor implements ClientInterceptor {
   private static final Logger LOGGER = Logger.getLogger(HeaderInterceptor.class.getName());
   private static final Level LEVEL = Level.INFO;
   private final SpannerRpcMetrics spannerRpcMetrics;
-  private Float gfeLatency;
-  private Float afeLatency;
 
   HeaderInterceptor(SpannerRpcMetrics spannerRpcMetrics) {
     this.spannerRpcMetrics = spannerRpcMetrics;
@@ -118,48 +127,65 @@ class HeaderInterceptor implements ClientInterceptor {
 
           super.start(
               new SimpleForwardingClientCallListener<RespT>(responseListener) {
+                private Float gfeLatency;
+                private Float afeLatency;
+
                 @Override
                 public void onHeaders(Metadata metadata) {
-                  recordFirstResponseLatency(requestId, startedAtNanos, firstResponseRecorded);
-                  String serverTiming = metadata.get(SERVER_TIMING_HEADER_KEY);
                   try {
-                    // Get gfe and afe Latency value
-                    Map<String, Float> serverTimingMetrics = parseServerTimingHeader(serverTiming);
-                    gfeLatency = serverTimingMetrics.get(GFE_TIMING_HEADER);
-                    afeLatency = serverTimingMetrics.get(AFE_TIMING_HEADER);
-                  } catch (NumberFormatException e) {
-                    LOGGER.log(LEVEL, "Invalid server-timing object in header: {}", serverTiming);
+                    recordFirstResponseLatency(requestId, startedAtNanos, firstResponseRecorded);
+                    String serverTiming = metadata.get(SERVER_TIMING_HEADER_KEY);
+                    try {
+                      // Get gfe and afe Latency value
+                      Map<String, Float> serverTimingMetrics =
+                          parseServerTimingHeader(serverTiming);
+                      gfeLatency = serverTimingMetrics.get(GFE_TIMING_HEADER);
+                      afeLatency = serverTimingMetrics.get(AFE_TIMING_HEADER);
+                    } catch (NumberFormatException e) {
+                      LOGGER.log(
+                          LEVEL, "Invalid server-timing object in header: {0}", serverTiming);
+                    }
+                  } catch (Throwable throwable) {
+                    LOGGER.log(
+                        Level.WARNING, "Error processing headers in HeaderInterceptor", throwable);
+                  } finally {
+                    super.onHeaders(metadata);
                   }
-
-                  super.onHeaders(metadata);
                 }
 
                 @Override
                 public void onClose(Status status, Metadata trailers) {
-                  // Record Built-in Metrics
-                  boolean isDirectPathUsed = AltsContextUtil.check(getAttributes());
-                  boolean isAfeEnabled = GapicSpannerRpc.isEnableAFEServerTiming();
-                  recordSpan(span, requestId);
-                  recordCustomMetrics(tagContext, attributes, isDirectPathUsed);
-                  Map<String, String> builtInMetricsAttributes = new HashMap<>();
                   try {
-                    builtInMetricsAttributes =
-                        new HashMap<>(getBuiltInMetricAttributes(key, databaseName));
-                  } catch (ExecutionException e) {
-                    LOGGER.log(
-                        LEVEL, "Unable to get built-in metric attributes {}", e.getMessage());
+                    // Record Built-in Metrics
+                    boolean isDirectPathUsed = AltsContextUtil.check(getAttributes());
+                    boolean isAfeEnabled = GapicSpannerRpc.isEnableAFEServerTiming();
+                    recordSpan(span, requestId, gfeLatency, afeLatency);
+                    recordCustomMetrics(tagContext, attributes, isDirectPathUsed, gfeLatency);
+                    Map<String, String> builtInMetricsAttributes = new HashMap<>();
+                    try {
+                      builtInMetricsAttributes =
+                          new HashMap<>(getBuiltInMetricAttributes(key, databaseName));
+                    } catch (ExecutionException e) {
+                      LOGGER.log(
+                          LEVEL, "Unable to get built-in metric attributes {0}", e.getMessage());
+                    }
+                    if (status.isOk()) {
+                      recordFirstResponseLatency(requestId, startedAtNanos, firstResponseRecorded);
+                    }
+                    recordBuiltInMetrics(
+                        compositeTracer,
+                        builtInMetricsAttributes,
+                        requestId,
+                        isDirectPathUsed,
+                        isAfeEnabled,
+                        gfeLatency,
+                        afeLatency);
+                  } catch (Throwable throwable) {
+                    LOGGER.log(Level.WARNING, "Error recording metrics in onClose", throwable);
+                  } finally {
+                    RequestIdTargetTracker.remove(requestId);
+                    super.onClose(status, trailers);
                   }
-                  if (status.isOk()) {
-                    recordFirstResponseLatency(requestId, startedAtNanos, firstResponseRecorded);
-                  }
-                  recordBuiltInMetrics(
-                      compositeTracer,
-                      builtInMetricsAttributes,
-                      requestId,
-                      isDirectPathUsed,
-                      isAfeEnabled);
-                  RequestIdTargetTracker.remove(requestId);
-                  super.onClose(status, trailers);
                 }
               },
               headers);
@@ -172,11 +198,14 @@ class HeaderInterceptor implements ClientInterceptor {
   }
 
   private void recordCustomMetrics(
-      TagContext tagContext, Attributes attributes, Boolean isDirectPathUsed) {
+      TagContext tagContext,
+      Attributes attributes,
+      Boolean isDirectPathUsed,
+      @Nullable Float gfeLatency) {
     // Record OpenCensus and Custom OpenTelemetry Metrics
     MeasureMap measureMap = STATS_RECORDER.newMeasureMap();
 
-    if (!isDirectPathUsed) {
+    if (!Boolean.TRUE.equals(isDirectPathUsed)) {
       if (gfeLatency != null) {
         long gfeVal = gfeLatency.longValue();
         measureMap.put(SPANNER_GFE_LATENCY, gfeVal);
@@ -191,7 +220,11 @@ class HeaderInterceptor implements ClientInterceptor {
     measureMap.record(tagContext);
   }
 
-  private void recordSpan(Span span, String requestId) {
+  private void recordSpan(
+      @Nullable Span span,
+      @Nullable String requestId,
+      @Nullable Float gfeLatency,
+      @Nullable Float afeLatency) {
     if (span != null) {
       if (gfeLatency != null) {
         span.setAttribute("gfe_latency", gfeLatency.toString());
@@ -199,23 +232,33 @@ class HeaderInterceptor implements ClientInterceptor {
       if (afeLatency != null) {
         span.setAttribute("afe_latency", afeLatency.toString());
       }
-      span.setAttribute(XGoogSpannerRequestId.REQUEST_ID_HEADER_NAME, requestId);
+      if (requestId != null) {
+        span.setAttribute(XGoogSpannerRequestId.REQUEST_ID_HEADER_NAME, requestId);
+      }
     }
   }
 
   private void recordBuiltInMetrics(
-      CompositeTracer compositeTracer,
+      @Nullable CompositeTracer compositeTracer,
       Map<String, String> builtInMetricsAttributes,
-      String requestId,
+      @Nullable String requestId,
       Boolean isDirectPathUsed,
-      Boolean isAfeEnabled) {
+      Boolean isAfeEnabled,
+      @Nullable Float gfeLatency,
+      @Nullable Float afeLatency) {
     if (compositeTracer != null) {
-      builtInMetricsAttributes.put(BuiltInMetricsConstant.REQUEST_ID_KEY.getKey(), requestId);
+      if (requestId != null) {
+        builtInMetricsAttributes.put(BuiltInMetricsConstant.REQUEST_ID_KEY.getKey(), requestId);
+      }
       builtInMetricsAttributes.put(
-          BuiltInMetricsConstant.DIRECT_PATH_USED_KEY.getKey(), Boolean.toString(isDirectPathUsed));
+          BuiltInMetricsConstant.DIRECT_PATH_USED_KEY.getKey(),
+          Boolean.toString(Boolean.TRUE.equals(isDirectPathUsed)));
       compositeTracer.addAttributes(builtInMetricsAttributes);
       compositeTracer.recordServerTimingHeaderMetrics(
-          gfeLatency, afeLatency, isDirectPathUsed, isAfeEnabled);
+          gfeLatency,
+          afeLatency,
+          Boolean.TRUE.equals(isDirectPathUsed),
+          Boolean.TRUE.equals(isAfeEnabled));
     }
   }
 

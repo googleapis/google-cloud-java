@@ -30,8 +30,11 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Identifier. The name of this Audit Report, in the format of scope given in
-   * request.
+   * Identifier. Name of the audit report, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+   * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+   * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -44,8 +47,11 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Identifier. The name of this Audit Report, in the format of scope given in
-   * request.
+   * Identifier. Name of the audit report, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/auditReports/{audit_report}`
+   * * `folders/{folder}/locations/{location}/auditReports/{audit_report}`
+   * * `organizations/{organization}/locations/{location}/auditReports/{audit_report}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -58,7 +64,8 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. Report summary with compliance, violation counts etc.
+   * Output only. Report summary that includes information about compliance and
+   * violation counts.
    * </pre>
    *
    * <code>
@@ -73,7 +80,8 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. Report summary with compliance, violation counts etc.
+   * Output only. Report summary that includes information about compliance and
+   * violation counts.
    * </pre>
    *
    * <code>
@@ -88,7 +96,8 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. Report summary with compliance, violation counts etc.
+   * Output only. Report summary that includes information about compliance and
+   * violation counts.
    * </pre>
    *
    * <code>
@@ -101,7 +110,7 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. ClientOperationId
+   * Output only. Client operation ID for the audit report.
    * </pre>
    *
    * <code>string operation_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -114,7 +123,7 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. ClientOperationId
+   * Output only. Client operation ID for the audit report.
    * </pre>
    *
    * <code>string operation_id = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -127,7 +136,7 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The location where the generated report will be uploaded.
+   * Output only. Cloud Storage bucket where the audit report is uploaded to.
    * </pre>
    *
    * <code>
@@ -142,7 +151,7 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The location where the generated report will be uploaded.
+   * Output only. Cloud Storage bucket where the audit report is uploaded to.
    * </pre>
    *
    * <code>
@@ -157,7 +166,7 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The location where the generated report will be uploaded.
+   * Output only. Cloud Storage bucket where the audit report is uploaded to.
    * </pre>
    *
    * <code>
@@ -170,33 +179,52 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. Compliance Standard.
+   * Output only. Deprecated. Compliance standard to be audited against.
+   *
+   * Use the `compliance_framework` field instead.
    * </pre>
    *
-   * <code>string compliance_standard = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string compliance_standard = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=758
    * @return The complianceStandard.
    */
+  @java.lang.Deprecated
   java.lang.String getComplianceStandard();
 
   /**
    *
    *
    * <pre>
-   * Output only. Compliance Standard.
+   * Output only. Deprecated. Compliance standard to be audited against.
+   *
+   * Use the `compliance_framework` field instead.
    * </pre>
    *
-   * <code>string compliance_standard = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>
+   * string compliance_standard = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
+   * @deprecated google.cloud.auditmanager.v1.AuditReport.compliance_standard is deprecated. See
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=758
    * @return The bytes for complianceStandard.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getComplianceStandardBytes();
 
   /**
    *
    *
    * <pre>
-   * Output only. The parent scope on which the report was generated.
+   * Output only. Organization, folder, or project that the report is generated
+   * for, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>string scope = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -209,7 +237,12 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The parent scope on which the report was generated.
+   * Output only. Organization, folder, or project that the report is generated
+   * for, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}`
+   * * `folders/{folder}/locations/{location}`
+   * * `organizations/{organization}/locations/{location}`
    * </pre>
    *
    * <code>string scope = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -262,7 +295,7 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The overall status of controls
+   * Output only. Overall status of the controls.
    * </pre>
    *
    * <code>
@@ -275,7 +308,7 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The overall status of controls
+   * Output only. Overall status of the controls.
    * </pre>
    *
    * <code>
@@ -288,7 +321,7 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The overall status of controls
+   * Output only. Overall status of the controls.
    * </pre>
    *
    * <code>
@@ -301,7 +334,7 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The overall status of controls
+   * Output only. Overall status of the controls.
    * </pre>
    *
    * <code>
@@ -315,7 +348,7 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The overall status of controls
+   * Output only. Overall status of the controls.
    * </pre>
    *
    * <code>
@@ -328,7 +361,7 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The state of Audit Report Generation.
+   * Output only. State of audit report generation.
    * </pre>
    *
    * <code>
@@ -343,7 +376,7 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The state of Audit Report Generation.
+   * Output only. State of audit report generation.
    * </pre>
    *
    * <code>
@@ -358,7 +391,8 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. Compliance Framework of Audit Report
+   * Output only. Compliance framework to use for the audit report. For example,
+   * `CIS_GCP_FOUNDATIONS_V1_2_0`.
    * </pre>
    *
    * <code>string compliance_framework = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -371,7 +405,8 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. Compliance Framework of Audit Report
+   * Output only. Compliance framework to use for the audit report. For example,
+   * `CIS_GCP_FOUNDATIONS_V1_2_0`.
    * </pre>
    *
    * <code>string compliance_framework = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -384,8 +419,8 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The ID/ Number for the scope on which the audit report was
-   * generated.
+   * Output only. Project number, folder ID, or organization ID that the audit
+   * report was generated for.
    * </pre>
    *
    * <code>string scope_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -398,8 +433,8 @@ public interface AuditReportOrBuilder
    *
    *
    * <pre>
-   * Output only. The ID/ Number for the scope on which the audit report was
-   * generated.
+   * Output only. Project number, folder ID, or organization ID that the audit
+   * report was generated for.
    * </pre>
    *
    * <code>string scope_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

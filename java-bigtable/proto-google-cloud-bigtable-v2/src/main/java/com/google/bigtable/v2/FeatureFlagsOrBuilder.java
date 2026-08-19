@@ -189,4 +189,18 @@ public interface FeatureFlagsOrBuilder
    * @return The sessionsRequired.
    */
   boolean getSessionsRequired();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates whether the client supports microsecond precision
+   * timestamps.
+   * </pre>
+   *
+   * <code>bool microsecond_timestamp = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The microsecondTimestamp.
+   */
+  boolean getMicrosecondTimestamp();
 }

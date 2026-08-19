@@ -45,6 +45,34 @@ public final class McmEnumsProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_DelegationTypeEnum_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_McmReadinessStatusEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_McmReadinessStatusEnum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_DelegationInvitationStatusEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_DelegationInvitationStatusEnum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_DelegationAccountStatusEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_DelegationAccountStatusEnum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_DelegationApprovalStatusEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_DelegationApprovalStatusEnum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ChildPublisherIdentityVerificationStatusEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ChildPublisherIdentityVerificationStatusEnum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ChildPublisherAddressVerificationStatusEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ChildPublisherAddressVerificationStatusEnum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ChildPublisherOnboardingTaskEnum_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ChildPublisherOnboardingTaskEnum_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_admanager_v1_McmEarningsProductTypeEnum_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_McmEarningsProductTypeEnum_fieldAccessorTable;
@@ -61,23 +89,66 @@ public final class McmEnumsProto extends com.google.protobuf.GeneratedFile {
           + "o\022\027google.ads.admanager.v1\"q\n\022Delegation"
           + "TypeEnum\"[\n\016DelegationType\022\037\n\033DELEGATION"
           + "_TYPE_UNSPECIFIED\020\000\022\022\n\016MANAGE_ACCOUNT\020\001\022"
-          + "\024\n\020MANAGE_INVENTORY\020\002\"\254\003\n\032McmEarningsPro"
-          + "ductTypeEnum\"\215\003\n\026McmEarningsProductType\022"
-          + ")\n%MCM_EARNINGS_PRODUCT_TYPE_UNSPECIFIED"
-          + "\020\000\022\027\n\023AD_EXCHANGE_CONTENT\020\001\022\034\n\030AD_EXCHAN"
-          + "GE_CONTENT_HOST\020\002\022\025\n\021AD_EXCHANGE_GAMES\020\003"
-          + "\022\032\n\026AD_EXCHANGE_GAMES_HOST\020\004\022\"\n\036AD_EXCHA"
-          + "NGE_MOBILE_CONTENT_APP\020\005\022\'\n#AD_EXCHANGE_"
-          + "MOBILE_CONTENT_APP_HOST\020\006\022\025\n\021AD_EXCHANGE"
-          + "_VIDEO\020\007\022\032\n\026AD_EXCHANGE_VIDEO_HOST\020\010\022\034\n\030"
-          + "AD_EXCHANGE_RESERVATIONS\020\t\022\037\n\033AD_EXCHANG"
-          + "E_PREFERRED_DEALS\020\n\022\r\n\tOFFERWALL\020\013\022\020\n\014BU"
-          + "YER_DIRECT\020\014B\301\001\n\033com.google.ads.admanage"
-          + "r.v1B\rMcmEnumsProtoP\001Z@google.golang.org"
-          + "/genproto/googleapis/ads/admanager/v1;ad"
-          + "manager\252\002\027Google.Ads.AdManager.V1\312\002\027Goog"
-          + "le\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdMan"
-          + "ager::V1b\006proto3"
+          + "\024\n\020MANAGE_INVENTORY\020\002\"|\n\026McmReadinessSta"
+          + "tusEnum\"b\n\022McmReadinessStatus\022$\n MCM_REA"
+          + "DINESS_STATUS_UNSPECIFIED\020\000\022\014\n\010INACTIVE\020"
+          + "\001\022\r\n\tNOT_READY\020\002\022\t\n\005READY\020\003\"\321\001\n\036Delegati"
+          + "onInvitationStatusEnum\"\256\001\n\032DelegationInv"
+          + "itationStatus\022,\n(DELEGATION_INVITATION_S"
+          + "TATUS_UNSPECIFIED\020\000\022\014\n\010ACCEPTED\020\001\022\013\n\007EXP"
+          + "IRED\020\002\022\013\n\007PENDING\020\003\022\014\n\010REJECTED\020\004\022\r\n\tWIT"
+          + "HDRAWN\020\005\022\035\n\031DEACTIVATED_BY_AD_MANAGER\020\006\""
+          + "\366\002\n\033DelegationAccountStatusEnum\"\326\002\n\027Dele"
+          + "gationAccountStatus\022)\n%DELEGATION_ACCOUN"
+          + "T_STATUS_UNSPECIFIED\020\000\022\013\n\007INVITED\020\001\022\014\n\010D"
+          + "ECLINED\020\002\022\014\n\010APPROVED\020\003\022\027\n\023CLOSED_BY_PUB"
+          + "LISHER\020\004\022\033\n\027CLOSED_INVALID_ACTIVITY\020\005\022\033\n"
+          + "\027CLOSED_POLICY_VIOLATION\020\006\022\035\n\031DEACTIVATE"
+          + "D_BY_AD_MANAGER\020\007\022!\n\035DISAPPROVED_DUPLICA"
+          + "TE_ACCOUNT\020\010\022\032\n\026DISAPPROVED_INELIGIBLE\020\t"
+          + "\022\033\n\027PENDING_GOOGLE_APPROVAL\020\n\022\013\n\007EXPIRED"
+          + "\020\013\022\014\n\010INACTIVE\020\014\"\303\002\n\034DelegationApprovalS"
+          + "tatusEnum\"\242\002\n\030DelegationApprovalStatus\022*"
+          + "\n&DELEGATION_APPROVAL_STATUS_UNSPECIFIED"
+          + "\020\000\022\014\n\010APPROVED\020\001\022\027\n\023CLOSED_BY_PUBLISHER\020"
+          + "\002\022\033\n\027CLOSED_INVALID_ACTIVITY\020\003\022\033\n\027CLOSED"
+          + "_POLICY_VIOLATION\020\004\022\035\n\031DEACTIVATED_BY_AD"
+          + "_MANAGER\020\005\022!\n\035DISAPPROVED_DUPLICATE_ACCO"
+          + "UNT\020\006\022\032\n\026DISAPPROVED_INELIGIBLE\020\007\022\033\n\027PEN"
+          + "DING_GOOGLE_APPROVAL\020\010\"\353\001\n,ChildPublishe"
+          + "rIdentityVerificationStatusEnum\"\272\001\n(Chil"
+          + "dPublisherIdentityVerificationStatus\022<\n8"
+          + "CHILD_PUBLISHER_IDENTITY_VERIFICATION_ST"
+          + "ATUS_UNSPECIFIED\020\000\022\n\n\006EXEMPT\020\001\022\013\n\007EXPIRE"
+          + "D\020\002\022\n\n\006FAILED\020\003\022\013\n\007PENDING\020\004\022\020\n\014NOT_ELIG"
+          + "IBLE\020\005\022\014\n\010VERIFIED\020\006\"\350\001\n+ChildPublisherA"
+          + "ddressVerificationStatusEnum\"\270\001\n\'ChildPu"
+          + "blisherAddressVerificationStatus\022;\n7CHIL"
+          + "D_PUBLISHER_ADDRESS_VERIFICATION_STATUS_"
+          + "UNSPECIFIED\020\000\022\n\n\006EXEMPT\020\001\022\013\n\007EXPIRED\020\002\022\n"
+          + "\n\006FAILED\020\003\022\013\n\007PENDING\020\004\022\020\n\014NOT_ELIGIBLE\020"
+          + "\005\022\014\n\010VERIFIED\020\006\"\314\001\n ChildPublisherOnboar"
+          + "dingTaskEnum\"\247\001\n\034ChildPublisherOnboardin"
+          + "gTask\022/\n+CHILD_PUBLISHER_ONBOARDING_TASK"
+          + "_UNSPECIFIED\020\000\022\034\n\030BILLING_PROFILE_CREATI"
+          + "ON\020\001\022\032\n\026PHONE_PIN_VERIFICATION\020\002\022\034\n\030AD_M"
+          + "ANAGER_ACCOUNT_SETUP\020\004\"\254\003\n\032McmEarningsPr"
+          + "oductTypeEnum\"\215\003\n\026McmEarningsProductType"
+          + "\022)\n%MCM_EARNINGS_PRODUCT_TYPE_UNSPECIFIE"
+          + "D\020\000\022\027\n\023AD_EXCHANGE_CONTENT\020\001\022\034\n\030AD_EXCHA"
+          + "NGE_CONTENT_HOST\020\002\022\025\n\021AD_EXCHANGE_GAMES\020"
+          + "\003\022\032\n\026AD_EXCHANGE_GAMES_HOST\020\004\022\"\n\036AD_EXCH"
+          + "ANGE_MOBILE_CONTENT_APP\020\005\022\'\n#AD_EXCHANGE"
+          + "_MOBILE_CONTENT_APP_HOST\020\006\022\025\n\021AD_EXCHANG"
+          + "E_VIDEO\020\007\022\032\n\026AD_EXCHANGE_VIDEO_HOST\020\010\022\034\n"
+          + "\030AD_EXCHANGE_RESERVATIONS\020\t\022\037\n\033AD_EXCHAN"
+          + "GE_PREFERRED_DEALS\020\n\022\r\n\tOFFERWALL\020\013\022\020\n\014B"
+          + "UYER_DIRECT\020\014B\301\001\n\033com.google.ads.admanag"
+          + "er.v1B\rMcmEnumsProtoP\001Z@google.golang.or"
+          + "g/genproto/googleapis/ads/admanager/v1;a"
+          + "dmanager\252\002\027Google.Ads.AdManager.V1\312\002\027Goo"
+          + "gle\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdMa"
+          + "nager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -88,8 +159,50 @@ public final class McmEnumsProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_DelegationTypeEnum_descriptor,
             new java.lang.String[] {});
-    internal_static_google_ads_admanager_v1_McmEarningsProductTypeEnum_descriptor =
+    internal_static_google_ads_admanager_v1_McmReadinessStatusEnum_descriptor =
         getDescriptor().getMessageType(1);
+    internal_static_google_ads_admanager_v1_McmReadinessStatusEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_McmReadinessStatusEnum_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_DelegationInvitationStatusEnum_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_ads_admanager_v1_DelegationInvitationStatusEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_DelegationInvitationStatusEnum_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_DelegationAccountStatusEnum_descriptor =
+        getDescriptor().getMessageType(3);
+    internal_static_google_ads_admanager_v1_DelegationAccountStatusEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_DelegationAccountStatusEnum_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_DelegationApprovalStatusEnum_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_DelegationApprovalStatusEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_DelegationApprovalStatusEnum_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_ChildPublisherIdentityVerificationStatusEnum_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_ChildPublisherIdentityVerificationStatusEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ChildPublisherIdentityVerificationStatusEnum_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_ChildPublisherAddressVerificationStatusEnum_descriptor =
+        getDescriptor().getMessageType(6);
+    internal_static_google_ads_admanager_v1_ChildPublisherAddressVerificationStatusEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ChildPublisherAddressVerificationStatusEnum_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_ChildPublisherOnboardingTaskEnum_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_ads_admanager_v1_ChildPublisherOnboardingTaskEnum_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ChildPublisherOnboardingTaskEnum_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_McmEarningsProductTypeEnum_descriptor =
+        getDescriptor().getMessageType(8);
     internal_static_google_ads_admanager_v1_McmEarningsProductTypeEnum_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_McmEarningsProductTypeEnum_descriptor,

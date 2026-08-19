@@ -232,6 +232,7 @@ public class StoragePoolsClientTest {
             .setResourceStatus(StoragePoolResourceStatus.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .setSelfLinkWithId("selfLinkWithId-776809081")
+            .setShareSettings(StoragePoolShareSettings.newBuilder().build())
             .setState("state109757585")
             .setStatus(StoragePoolResourceStatus.newBuilder().build())
             .setStoragePoolType("storagePoolType-354080495")

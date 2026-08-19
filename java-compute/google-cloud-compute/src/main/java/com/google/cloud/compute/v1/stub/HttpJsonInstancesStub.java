@@ -498,6 +498,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasNoGracefulShutdown()) {
+                              serializer.putQueryParam(
+                                  fields, "noGracefulShutdown", request.getNoGracefulShutdown());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
@@ -2395,6 +2399,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                         if (request.hasDiscardLocalSsd()) {
                           serializer.putQueryParam(
                               fields, "discardLocalSsd", request.getDiscardLocalSsd());
+                        }
+                        if (request.hasNoGracefulShutdown()) {
+                          serializer.putQueryParam(
+                              fields, "noGracefulShutdown", request.getNoGracefulShutdown());
                         }
                         if (request.hasRequestId()) {
                           serializer.putQueryParam(fields, "requestId", request.getRequestId());

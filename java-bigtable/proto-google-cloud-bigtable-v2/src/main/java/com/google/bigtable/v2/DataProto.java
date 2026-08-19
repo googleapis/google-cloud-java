@@ -289,7 +289,7 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
           + "\020predicate_filter\030\001 \001(\0132\035.google.bigtable.v2.RowFilter\0222\n"
           + "\013true_filter\030\002 \001(\0132\035.google.bigtable.v2.RowFilter\0223\n"
           + "\014false_filter\030\003 \001(\0132\035.google.bigtable.v2.RowFilterB\010\n"
-          + "\006filter\"\255\010\n"
+          + "\006filter\"\336\t\n"
           + "\010Mutation\0228\n"
           + "\010set_cell\030\001 \001(\0132$.google.bigtable.v2.Mutation.SetCellH\000\022=\n"
           + "\013add_to_cell\030\005"
@@ -300,7 +300,9 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
           + "\022delete_from_family\030\003"
           + " \001(\0132-.google.bigtable.v2.Mutation.DeleteFromFamilyH\000\022E\n"
           + "\017delete_from_row\030\004"
-          + " \001(\0132*.google.bigtable.v2.Mutation.DeleteFromRowH\000\032a\n"
+          + " \001(\0132*.google.bigtable.v2.Mutation.DeleteFromRowH\000\022K\n"
+          + "\020timestamp_origin\030\007"
+          + " \001(\0162,.google.bigtable.v2.Mutation.TimestampOriginB\003\340A\001\032a\n"
           + "\007SetCell\022\023\n"
           + "\013family_name\030\001 \001(\t\022\030\n"
           + "\020column_qualifier\030\002 \001(\014\022\030\n"
@@ -322,7 +324,11 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
           + "time_range\030\003 \001(\0132\".google.bigtable.v2.TimestampRange\032\'\n"
           + "\020DeleteFromFamily\022\023\n"
           + "\013family_name\030\001 \001(\t\032\017\n\r"
-          + "DeleteFromRowB\n\n"
+          + "DeleteFromRow\"b\n"
+          + "\017TimestampOrigin\022 \n"
+          + "\034TIMESTAMP_ORIGIN_UNSPECIFIED\020\000\022\022\n"
+          + "\016USER_SPECIFIED\020\001\022\031\n"
+          + "\025CLIENT_AUTO_GENERATED\020\002B\n\n"
           + "\010mutation\"\200\001\n"
           + "\023ReadModifyWriteRule\022\023\n"
           + "\013family_name\030\001 \001(\t\022\030\n"
@@ -363,10 +369,10 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
           + "\013Idempotency\022\r\n"
           + "\005token\030\001 \001(\014\022.\n\n"
           + "start_time\030\002 \001(\0132\032.google.protobuf.TimestampB\263\001\n"
-          + "\026com.google.bigtable.v2B\tDataProtoP\001Z8cloud.google.com/go/bigtable/apiv2/b"
-          + "igtablepb;bigtablepb\252\002\030Google.Cloud.Bigt"
-          + "able.V2\312\002\030Google\\Cloud\\Bigtable\\V2\352\002\033Goo"
-          + "gle::Cloud::Bigtable::V2b\006proto3"
+          + "\026com.google.bigtable.v2B\tDataProtoP\001Z8cloud.google.com/go"
+          + "/bigtable/apiv2/bigtablepb;bigtablepb\252\002\030"
+          + "Google.Cloud.Bigtable.V2\312\002\030Google\\Cloud\\"
+          + "Bigtable\\V2\352\002\033Google::Cloud::Bigtable::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -546,6 +552,7 @@ public final class DataProto extends com.google.protobuf.GeneratedFile {
               "DeleteFromColumn",
               "DeleteFromFamily",
               "DeleteFromRow",
+              "TimestampOrigin",
               "Mutation",
             });
     internal_static_google_bigtable_v2_Mutation_SetCell_descriptor =

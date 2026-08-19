@@ -200,6 +200,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   List<ConnectionProperty> queryProperties;
   Map<String, String> authProperties;
   Map<String, String> overrideProperties;
+  Map<String, String> proxyProperties;
   Credentials credentials;
   boolean useStatelessQueryMode;
   int numBufferedRows;
@@ -299,7 +300,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               String.valueOf(ds.getRequestGoogleDriveScope()),
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
 
-      Map<String, String> proxyProperties =
+      this.proxyProperties =
           BigQueryJdbcProxyUtility.parseProxyProperties(ds, this.connectionClassName);
 
       this.sslTrustStorePath = ds.getSSLTrustStorePath();
@@ -1185,6 +1186,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   private OpenTelemetry getOpenTelemetryInstance() {
+    BigQueryJdbcOpenTelemetry.ensureGlobalHandlerAttached();
 
     String effectiveProjectId =
         (this.gcpTelemetryProjectId != null) ? this.gcpTelemetryProjectId : this.catalog;
@@ -1203,14 +1205,20 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
             this.customOpenTelemetry,
             this.gcpTelemetryCredentials,
             effectiveProjectId,
-            this.credentials);
+            this.credentials,
+            this.proxyProperties);
 
     boolean hasExternalOtel = this.customOpenTelemetry != null || this.useGlobalOpenTelemetry;
     Logging localLoggingClient = null;
     if (this.enableGcpLogExporter && !hasExternalOtel) {
       localLoggingClient =
           BigQueryJdbcOpenTelemetry.createLoggingClient(
-              true, null, this.gcpTelemetryCredentials, effectiveProjectId, this.credentials);
+              true,
+              null,
+              this.gcpTelemetryCredentials,
+              effectiveProjectId,
+              this.credentials,
+              this.headerProvider);
     }
 
     if (this.enableGcpLogExporter || hasExternalOtel) {
