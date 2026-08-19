@@ -35,8 +35,14 @@ import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.it.GrpcPlainRequestLoggingInterceptor;
+import com.google.cloud.storage.it.runner.CrossRunIntersection;
 import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.BucketType;
+import com.google.cloud.storage.it.runner.annotations.Colocation;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import org.junit.runners.model.FrameworkField;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.storage.control.v2.StorageControlClient;
@@ -48,20 +54,23 @@ import java.net.URI;
 import java.util.Locale;
 import java.util.UUID;
 
+
 /** The set of resources which are defined for a single backend. */
 final class BackendResources implements ManagedLifecycle {
 
   private final Backend backend;
   private final ProtectedBucketNames protectedBucketNames;
-
+  private final ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets;
   private final ImmutableList<RegistryEntry<?>> registryEntries;
 
   private BackendResources(
       Backend backend,
       ProtectedBucketNames protectedBucketNames,
+      ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets,
       ImmutableList<RegistryEntry<?>> registryEntries) {
     this.backend = backend;
     this.protectedBucketNames = protectedBucketNames;
+    this.dynamicBuckets = dynamicBuckets;
     this.registryEntries = registryEntries;
   }
 
@@ -80,6 +89,8 @@ final class BackendResources implements ManagedLifecycle {
   @Override
   public void stop() {
     protectedBucketNames.stop();
+    dynamicBuckets.values().forEach(BucketInfoShim::stop);
+    dynamicBuckets.clear();
   }
 
   @Override
@@ -93,6 +104,8 @@ final class BackendResources implements ManagedLifecycle {
       TestRunScopedInstance<OtelSdkShim> otelSdk,
       TestRunScopedInstance<Zone.ZoneShim> zone) {
     ProtectedBucketNames protectedBucketNames = new ProtectedBucketNames();
+    ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets = new ConcurrentHashMap<>();
+
     TestRunScopedInstance<StorageInstance> storageJson =
         TestRunScopedInstance.of(
             "fixture/STORAGE/[JSON][" + backend.name() + "]",
@@ -105,6 +118,13 @@ final class BackendResources implements ManagedLifecycle {
                           .setCredentials(NoCredentials.getInstance())
                           .setHost(Registry.getInstance().testBench().getBaseUri())
                           .setProjectId("test-project-id");
+                  break;
+                case PREPROD:
+                  optionsBuilder =
+                      StorageOptions.http()
+                          .setHost("https://storage-preprod-test-unified.googleusercontent.com/storage/v1_preprod/")
+                          .setProjectId(getPreprodProjectId())
+                          .setOpenTelemetry(otelSdk.get().get());
                   break;
                 default: // PROD, java8 doesn't have exhaustive checking for enum switch
                   // Register the exporters with OpenTelemetry
@@ -129,6 +149,13 @@ final class BackendResources implements ManagedLifecycle {
                           .setHost(Registry.getInstance().testBench().getGRPCBaseUri())
                           .setAttemptDirectPath(false)
                           .setProjectId("test-project-id");
+                  break;
+                case PREPROD:
+                  optionsBuilder =
+                      StorageOptions.grpc()
+                          .setHost("storage-preprod-test-grpc.googleusercontent.com:443")
+                          .setProjectId(getPreprodProjectId())
+                          .setOpenTelemetry(otelSdk.get().get());
                   break;
                 default: // PROD, java8 doesn't have exhaustive checking for enum switch
                   // Register the exporters with OpenTelemetry
@@ -168,6 +195,18 @@ final class BackendResources implements ManagedLifecycle {
                           .setEndpoint(endpoint)
                           .setTransportChannelProvider(instantiatingGrpcChannelProvider);
                   break;
+                case PREPROD:
+                  String preProdEndpoint = "storage-preprod-test-grpc.googleusercontent.com:443";
+                  builder =
+                      StorageControlSettings.newBuilder()
+                          .setEndpoint(preProdEndpoint)
+                          .setTransportChannelProvider(
+                              StorageControlStubSettings.defaultGrpcTransportProviderBuilder()
+                                  .setInterceptorProvider(
+                                      GrpcPlainRequestLoggingInterceptor.getInterceptorProvider())
+                                  .setEndpoint(preProdEndpoint)
+                                  .build());
+                  break;
                 default: // PROD, java8 doesn't have exhaustive checking for enum switch
                   builder =
                       StorageControlSettings.newBuilder()
@@ -186,20 +225,12 @@ final class BackendResources implements ManagedLifecycle {
                 throw new RuntimeException(e);
               }
             });
-    TestRunScopedInstance<BucketInfoShim> bucket =
+    TestRunScopedInstance<DynamicBucketLifecycle> bucket =
         TestRunScopedInstance.of(
-            "fixture/BUCKET/[" + backend.name() + "]",
-            () -> {
-              String bucketName =
-                  String.format(Locale.US, "java-storage-grpc-%s", UUID.randomUUID());
-              protectedBucketNames.add(bucketName);
-              return new BucketInfoShim(
-                  BucketInfo.newBuilder(bucketName)
-                      .setLocation(zone.get().get().getRegion())
-                      .build(),
-                  storageJson.get().getStorage(),
-                  ctrl.get().getCtrl());
-            });
+            "fixture/BUCKET/[" + backend.name() + "]/DYNAMIC",
+            () ->
+                new DynamicBucketLifecycle(
+                    backend, storageJson, ctrl, zone, protectedBucketNames, dynamicBuckets));
     TestRunScopedInstance<BucketInfoShim> bucketRp =
         TestRunScopedInstance.of(
             "fixture/BUCKET/[" + backend.name() + "]/REQUESTER_PAYS",
@@ -278,7 +309,18 @@ final class BackendResources implements ManagedLifecycle {
     TestRunScopedInstance<ObjectsFixture> objectsFixture =
         TestRunScopedInstance.of(
             "fixture/OBJECTS/[" + backend.name() + "]",
-            () -> new ObjectsFixture(storageJson.get().getStorage(), bucket.get().getBucketInfo()));
+            () ->
+                new ObjectsFixture(
+                    storageJson.get().getStorage(),
+                    bucket
+                        .get()
+                        .resolve(
+                            null,
+                            CrossRunIntersection.of(
+                                backend,
+                                null,
+                                LocationType.REGIONAL_STANDARD,
+                                Colocation.CO_LOCATED))));
     TestRunScopedInstance<ObjectsFixture> objectsFixtureRp =
         TestRunScopedInstance.of(
             "fixture/OBJECTS/[" + backend.name() + "]/REQUESTER_PAYS",
@@ -298,6 +340,7 @@ final class BackendResources implements ManagedLifecycle {
     return new BackendResources(
         backend,
         protectedBucketNames,
+        dynamicBuckets,
         ImmutableList.of(
             RegistryEntry.of(
                 40, Storage.class, storageJson, transportAndBackendAre(Transport.HTTP, backend)),
@@ -342,5 +385,180 @@ final class BackendResources implements ManagedLifecycle {
                 objectsFixtureHns,
                 backendIs(backend).and(bucketTypeIs(BucketType.HNS))),
             RegistryEntry.of(100, KmsFixture.class, kmsFixture, backendIs(backend))));
+  }
+
+  private static final class BucketKey {
+    private final LocationType locationType;
+    private final Colocation colocation;
+
+    private BucketKey(LocationType locationType, Colocation colocation) {
+      this.locationType = locationType;
+      this.colocation = colocation;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof BucketKey)) {
+        return false;
+      }
+      BucketKey bucketKey = (BucketKey) o;
+      return locationType == bucketKey.locationType && colocation == bucketKey.colocation;
+    }
+
+    @Override
+    public int hashCode() {
+      return java.util.Objects.hash(locationType, colocation);
+    }
+
+    @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this)
+          .add("locationType", locationType)
+          .add("colocation", colocation)
+          .toString();
+    }
+  }
+
+  private static final class DynamicBucketLifecycle
+      implements Registry.StatelessManagedLifecycle<BucketInfo> {
+    private final Backend backend;
+    private final TestRunScopedInstance<StorageInstance> storageJson;
+    private final TestRunScopedInstance<StorageControlInstance> ctrl;
+    private final TestRunScopedInstance<Zone.ZoneShim> zone;
+    private final ProtectedBucketNames protectedBucketNames;
+    private final ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets;
+
+    private DynamicBucketLifecycle(
+        Backend backend,
+        TestRunScopedInstance<StorageInstance> storageJson,
+        TestRunScopedInstance<StorageControlInstance> ctrl,
+        TestRunScopedInstance<Zone.ZoneShim> zone,
+        ProtectedBucketNames protectedBucketNames,
+        ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets) {
+      this.backend = backend;
+      this.storageJson = storageJson;
+      this.ctrl = ctrl;
+      this.zone = zone;
+      this.protectedBucketNames = protectedBucketNames;
+      this.dynamicBuckets = dynamicBuckets;
+    }
+
+    @Override
+    public BucketInfo resolve(FrameworkField ff, CrossRunIntersection crossRunIntersection) {
+      LocationType lt = crossRunIntersection.getLocationType();
+      Colocation col = crossRunIntersection.getColocation();
+
+      if (lt == null) {
+        lt = LocationType.REGIONAL_STANDARD;
+      }
+      if (col == null) {
+        col = Colocation.CO_LOCATED;
+      }
+
+      BucketKey key = new BucketKey(lt, col);
+      BucketInfoShim shim = dynamicBuckets.computeIfAbsent(key, this::createBucketShim);
+      return (BucketInfo) shim.get();
+    }
+
+    private BucketInfoShim createBucketShim(BucketKey key) {
+      Zone z = zone.get().get();
+      String region = z.getRegion();
+      String zoneName = z.getZone();
+
+      String rAlt;
+      String vAlt;
+      if ("us-east1".equals(region)) {
+        rAlt = "us-central1";
+        vAlt = "us-central1-a";
+      } else {
+        rAlt = "us-east1";
+        vAlt = "us-east1-b";
+      }
+
+      String targetRegion = region;
+      String targetZone = zoneName;
+
+      if (key.colocation == Colocation.NON_CO_LOCATED) {
+        targetRegion = rAlt;
+        targetZone = vAlt;
+      }
+
+      BucketInfo.Builder builder;
+      String prefix;
+
+      switch (key.locationType) {
+        case REGIONAL_STANDARD:
+          prefix = "java-storage-reg-std";
+          builder = BucketInfo.newBuilder("").setLocation(targetRegion);
+          break;
+        case REGIONAL_RAPID:
+          prefix = "java-storage-reg-rapid";
+          builder =
+              BucketInfo.newBuilder("")
+                  .setLocation(targetRegion)
+                  .setHierarchicalNamespace(
+                      HierarchicalNamespace.newBuilder().setEnabled(true).build())
+                  .setIamConfiguration(
+                      IamConfiguration.newBuilder()
+                          .setIsUniformBucketLevelAccessEnabled(true)
+                          .build());
+          break;
+        case ZONAL_RAPID:
+          prefix = "java-storage-zon-rapid";
+          builder =
+              BucketInfo.newBuilder("")
+                  .setLocation(targetRegion)
+                  .setCustomPlacementConfig(
+                      CustomPlacementConfig.newBuilder()
+                          .setDataLocations(ImmutableList.of(targetZone))
+                          .build())
+                  .setStorageClass(StorageClass.valueOf("RAPID"))
+                  .setHierarchicalNamespace(
+                      HierarchicalNamespace.newBuilder().setEnabled(true).build())
+                  .setIamConfiguration(
+                      IamConfiguration.newBuilder()
+                          .setIsUniformBucketLevelAccessEnabled(true)
+                          .build());
+          break;
+        default:
+          throw new IllegalArgumentException("Unknown location type: " + key.locationType);
+      }
+
+      String bucketName =
+          String.format(
+              Locale.US,
+              "%s-%s-%s",
+              prefix,
+              backend.name().toLowerCase(Locale.US),
+              UUID.randomUUID().toString().substring(0, 8));
+
+      builder.setName(bucketName);
+      protectedBucketNames.add(bucketName);
+
+      BucketInfoShim shim =
+          new BucketInfoShim(
+              builder.build(),
+              key.locationType,
+              targetZone,
+              storageJson.get().getStorage(),
+              ctrl.get().getCtrl());
+
+      shim.start();
+      return shim;
+    }
+  }
+
+  private static String getPreprodProjectId() {
+    String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
+    if (projectId == null || projectId.isEmpty()) {
+      projectId = System.getProperty("google.cloud.project");
+    }
+    if (projectId == null || projectId.isEmpty()) {
+      projectId = "gcs-hyd-connector-benchmarks";
+    }
+    return projectId;
   }
 }

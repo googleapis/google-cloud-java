@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,7 @@
 
 package com.google.cloud.storage.it.runner.annotations;
 
-/** An enum to signify the backends we test against. */
-public enum Backend {
-  /** Use the "Production" GCS endpoints */
-  PROD,
-  /** Use the GCS Pre-prod (Staging) endpoints */
-  PREPROD,
-  /** Use the test bench as a backend */
-  TEST_BENCH
+public enum Colocation {
+  CO_LOCATED,
+  NON_CO_LOCATED
 }

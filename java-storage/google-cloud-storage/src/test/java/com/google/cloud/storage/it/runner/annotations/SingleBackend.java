@@ -34,4 +34,8 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SingleBackend {
   Backend value();
+
+  LocationType[] locations() default {LocationType.REGIONAL_STANDARD};
+
+  Colocation[] colocations() default {Colocation.CO_LOCATED};
 }

@@ -23,6 +23,8 @@ import com.google.cloud.storage.it.runner.annotations.ParallelFriendly;
 import com.google.cloud.storage.it.runner.annotations.Parameterized;
 import com.google.cloud.storage.it.runner.annotations.Parameterized.Parameter;
 import com.google.cloud.storage.it.runner.annotations.Parameterized.ParametersProvider;
+import com.google.cloud.storage.it.runner.annotations.Colocation;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
 import com.google.cloud.storage.it.runner.annotations.SingleBackend;
 import com.google.cloud.storage.it.runner.registry.Registry;
 import com.google.common.collect.ImmutableList;
@@ -166,7 +168,16 @@ public final class StorageITRunner extends Suite {
                   .flatMap(
                       b ->
                           ImmutableSet.copyOf(crossRun.transports()).stream()
-                              .map(t -> CrossRunIntersection.of(b, t)))
+                              .flatMap(
+                                  t ->
+                                      ImmutableSet.copyOf(crossRun.locations()).stream()
+                                          .flatMap(
+                                              l ->
+                                                  ImmutableSet.copyOf(crossRun.colocations()).stream()
+                                                      .map(
+                                                          c ->
+                                                              CrossRunIntersection.of(
+                                                                  b, t, l, c)))))
                   .flatMap(
                       c -> {
                         TestInitializer ti = registry.newTestInitializerForCell(c);
@@ -187,23 +198,38 @@ public final class StorageITRunner extends Suite {
                   .collect(ImmutableList.toImmutableList()));
     } else {
       Backend backend = singleBackend.value();
-      CrossRunIntersection crossRunIntersection = CrossRunIntersection.of(backend, null);
-      TestInitializer ti = registry.newTestInitializerForCell(crossRunIntersection);
-      if (parameters != null) {
-        return SneakyException.unwrap(
-            () ->
-                parameters.stream()
-                    .map(
-                        param ->
-                            StorageITLeafRunner.unsafeOf(
-                                testClass,
-                                crossRunIntersection,
-                                fmtParam(param),
-                                ti.andThen(setFieldTo(testClass, param))))
-                    .collect(ImmutableList.toImmutableList()));
-      } else {
-        return ImmutableList.of(StorageITLeafRunner.of(testClass, crossRunIntersection, null, ti));
-      }
+      boolean isDefault =
+          singleBackend.locations().length == 1
+              && singleBackend.locations()[0] == LocationType.REGIONAL_STANDARD
+              && singleBackend.colocations().length == 1
+              && singleBackend.colocations()[0] == Colocation.CO_LOCATED;
+
+      return SneakyException.unwrap(
+          () ->
+              ImmutableSet.copyOf(singleBackend.locations()).stream()
+                  .flatMap(
+                      l ->
+                          ImmutableSet.copyOf(singleBackend.colocations()).stream()
+                              .map(c -> CrossRunIntersection.of(backend, null, l, c)))
+                  .flatMap(
+                      c -> {
+                        TestInitializer ti = registry.newTestInitializerForCell(c);
+                        if (parameters != null) {
+                          return parameters.stream()
+                              .map(
+                                  param ->
+                                      StorageITLeafRunner.unsafeOf(
+                                          testClass,
+                                          c,
+                                          isDefault ? fmtParam(param) : fmtParam(c, param),
+                                          ti.andThen(setFieldTo(testClass, param))));
+                        } else {
+                          return Stream.of(
+                              StorageITLeafRunner.unsafeOf(
+                                  testClass, c, isDefault ? null : c.fmtSuiteName(), ti));
+                        }
+                      })
+                  .collect(ImmutableList.toImmutableList()));
     }
   }
 

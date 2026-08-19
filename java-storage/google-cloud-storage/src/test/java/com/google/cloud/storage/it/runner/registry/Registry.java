@@ -91,6 +91,8 @@ public final class Registry extends RunListener {
 
   private final BackendResources prodBackendResources =
       BackendResources.of(Backend.PROD, otelSdk, zone);
+  private final BackendResources preProdBackendResources =
+      BackendResources.of(Backend.PREPROD, otelSdk, zone);
   private final BackendResources testBenchBackendResource =
       BackendResources.of(Backend.TEST_BENCH, otelSdk, zone);
 
@@ -104,6 +106,7 @@ public final class Registry extends RunListener {
               registryEntry(3, Backend.class, CrossRunIntersection::getBackend),
               registryEntry(4, Transport.class, CrossRunIntersection::getTransport))
           .addAll(prodBackendResources.getRegistryEntries())
+          .addAll(preProdBackendResources.getRegistryEntries())
           .addAll(testBenchBackendResource.getRegistryEntries())
           .build();
 
@@ -281,7 +284,7 @@ public final class Registry extends RunListener {
   }
 
   @FunctionalInterface
-  private interface StatelessManagedLifecycle<T> extends ManagedLifecycle {
+  interface StatelessManagedLifecycle<T> extends ManagedLifecycle {
     T resolve(FrameworkField ff, CrossRunIntersection crossRunIntersection);
 
     @Override
