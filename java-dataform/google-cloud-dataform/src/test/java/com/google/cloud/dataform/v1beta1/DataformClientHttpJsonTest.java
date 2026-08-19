@@ -17,6 +17,7 @@
 package com.google.cloud.dataform.v1beta1;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -2638,7 +2639,11 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setDisableMoves(true)
+            .setOriginalBranch("originalBranch1098005203")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setEnableBranchManagement(true)
+            .setDepth(95472323)
+            .setShallow(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2690,7 +2695,11 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setDisableMoves(true)
+            .setOriginalBranch("originalBranch1098005203")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setEnableBranchManagement(true)
+            .setDepth(95472323)
+            .setShallow(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2743,7 +2752,11 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setDisableMoves(true)
+            .setOriginalBranch("originalBranch1098005203")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setEnableBranchManagement(true)
+            .setDepth(95472323)
+            .setShallow(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2798,7 +2811,11 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setDisableMoves(true)
+            .setOriginalBranch("originalBranch1098005203")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setEnableBranchManagement(true)
+            .setDepth(95472323)
+            .setShallow(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3027,6 +3044,291 @@ public class DataformClientHttpJsonTest {
               .setAuthor(CommitAuthor.newBuilder().build())
               .build();
       client.pullGitCommits(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void syncWorkspaceRefsTest() throws Exception {
+    SyncWorkspaceRefsResponse expectedResponse = SyncWorkspaceRefsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SyncWorkspaceRefsRequest request =
+        SyncWorkspaceRefsRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setRemoteBranchName("remoteBranchName2129930291")
+            .setDeepen(-1335656811)
+            .build();
+
+    SyncWorkspaceRefsResponse actualResponse = client.syncWorkspaceRefs(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void syncWorkspaceRefsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SyncWorkspaceRefsRequest request =
+          SyncWorkspaceRefsRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setRemoteBranchName("remoteBranchName2129930291")
+              .setDeepen(-1335656811)
+              .build();
+      client.syncWorkspaceRefs(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchWorkspaceBranchesTest() throws Exception {
+    BranchMetadata responsesElement = BranchMetadata.newBuilder().build();
+    FetchWorkspaceBranchesResponse expectedResponse =
+        FetchWorkspaceBranchesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBranches(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FetchWorkspaceBranchesRequest request =
+        FetchWorkspaceBranchesRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    FetchWorkspaceBranchesPagedResponse pagedListResponse = client.fetchWorkspaceBranches(request);
+
+    List<BranchMetadata> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBranchesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchWorkspaceBranchesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FetchWorkspaceBranchesRequest request =
+          FetchWorkspaceBranchesRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.fetchWorkspaceBranches(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteBranchTest() throws Exception {
+    DeleteBranchResponse expectedResponse = DeleteBranchResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    DeleteBranchRequest request =
+        DeleteBranchRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setBranch("branch-1381030494")
+            .setForce(true)
+            .build();
+
+    DeleteBranchResponse actualResponse = client.deleteBranch(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteBranchExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DeleteBranchRequest request =
+          DeleteBranchRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setBranch("branch-1381030494")
+              .setForce(true)
+              .build();
+      client.deleteBranch(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void checkoutWorkspaceBranchTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    CheckoutWorkspaceBranchRequest request =
+        CheckoutWorkspaceBranchRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setBranch("branch-1381030494")
+            .setCreateIfNotExists(true)
+            .setSourceBranch("sourceBranch838777245")
+            .build();
+
+    client.checkoutWorkspaceBranch(request);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void checkoutWorkspaceBranchExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CheckoutWorkspaceBranchRequest request =
+          CheckoutWorkspaceBranchRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setBranch("branch-1381030494")
+              .setCreateIfNotExists(true)
+              .setSourceBranch("sourceBranch838777245")
+              .build();
+      client.checkoutWorkspaceBranch(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchCurrentWorkspaceBranchTest() throws Exception {
+    FetchCurrentWorkspaceBranchResponse expectedResponse =
+        FetchCurrentWorkspaceBranchResponse.newBuilder()
+            .setBranchName("branchName1352954701")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FetchCurrentWorkspaceBranchRequest request =
+        FetchCurrentWorkspaceBranchRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .build();
+
+    FetchCurrentWorkspaceBranchResponse actualResponse =
+        client.fetchCurrentWorkspaceBranch(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchCurrentWorkspaceBranchExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FetchCurrentWorkspaceBranchRequest request =
+          FetchCurrentWorkspaceBranchRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .build();
+      client.fetchCurrentWorkspaceBranch(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
