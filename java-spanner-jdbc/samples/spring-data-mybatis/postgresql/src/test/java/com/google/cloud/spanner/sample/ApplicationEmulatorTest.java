@@ -16,16 +16,53 @@
 
 package com.google.cloud.spanner.sample;
 
+import static org.junit.Assume.assumeTrue;
+
+import com.google.cloud.spanner.connection.SpannerPool;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.springframework.boot.SpringApplication;
+import org.testcontainers.DockerClientFactory;
+import org.testcontainers.containers.GenericContainer;
+import org.testcontainers.containers.wait.strategy.Wait;
+import org.testcontainers.images.PullPolicy;
+import org.testcontainers.utility.DockerImageName;
 
 @RunWith(JUnit4.class)
 public class ApplicationEmulatorTest {
+  private static GenericContainer<?> emulator;
+
+  @BeforeClass
+  public static void startEmulator() {
+    assumeTrue(DockerClientFactory.instance().isDockerAvailable());
+
+    emulator =
+        new GenericContainer<>(
+                DockerImageName.parse("gcr.io/cloud-spanner-emulator/emulator:latest"))
+            .withImagePullPolicy(PullPolicy.alwaysPull())
+            .withExposedPorts(9010)
+            .waitingFor(Wait.forLogMessage(".*gRPC server listening at.*\\n", 1));
+    emulator.start();
+  }
+
+  @AfterClass
+  public static void cleanup() {
+    SpannerPool.closeSpannerPool();
+    if (emulator != null) {
+      emulator.stop();
+    }
+  }
 
   @Test
-  public void testRunApplicationOnEmulator() {
+  public void testRunApplication() {
+    System.setProperty("open_telemetry.enabled", "false");
+    System.setProperty("open_telemetry.project", "test-project");
     System.setProperty("spanner.emulator", "true");
-    Application.main(new String[] {});
+    System.setProperty(
+        "spanner.endpoint", String.format("//localhost:%d", emulator.getMappedPort(9010)));
+    SpringApplication.run(Application.class).close();
   }
 }
