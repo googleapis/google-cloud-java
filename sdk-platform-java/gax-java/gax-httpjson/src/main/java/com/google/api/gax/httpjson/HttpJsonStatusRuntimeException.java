@@ -42,6 +42,11 @@ public class HttpJsonStatusRuntimeException extends RuntimeException {
 
   private final int statusCode;
 
+  public HttpJsonStatusRuntimeException(int statusCode, String message) {
+    super(message);
+    this.statusCode = statusCode;
+  }
+
   public HttpJsonStatusRuntimeException(int statusCode, String message, Throwable cause) {
     super(message, cause);
     this.statusCode = statusCode;

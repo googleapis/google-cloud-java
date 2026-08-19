@@ -212,7 +212,7 @@ final class HttpJsonClientCallImpl<RequestT, ResponseT>
           StatusCode.Code.DEADLINE_EXCEEDED.getHttpStatusCode(),
           "Deadline exceeded",
           new HttpJsonStatusRuntimeException(
-              StatusCode.Code.DEADLINE_EXCEEDED.getHttpStatusCode(), "Deadline exceeded", null),
+              StatusCode.Code.DEADLINE_EXCEEDED.getHttpStatusCode(), "Deadline exceeded"),
           true);
     }
 
