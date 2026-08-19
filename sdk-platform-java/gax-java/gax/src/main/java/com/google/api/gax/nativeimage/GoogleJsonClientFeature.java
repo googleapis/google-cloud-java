@@ -31,6 +31,7 @@
 package com.google.api.gax.nativeimage;
 
 import static com.google.api.gax.nativeimage.NativeImageUtils.registerClassForReflection;
+import static com.google.api.gax.nativeimage.NativeImageUtils.registerClassHierarchyForReflection;
 
 import org.graalvm.nativeimage.hosted.Feature;
 import org.jspecify.annotations.NullMarked;
@@ -51,7 +52,29 @@ final class GoogleJsonClientFeature implements Feature {
   public void beforeAnalysis(BeforeAnalysisAccess access) {
     loadApiClient(access);
     loadHttpClient(access);
+    loadConscrypt(access);
     loadMiscClasses(access);
+  }
+
+  /**
+   * Registers Conscrypt SSLContext and Security Provider SPI implementation classes (and their
+   * nested protocol subclasses) for GraalVM reflection when Conscrypt is present on the classpath.
+   *
+   * <p>When Conscrypt is configured as the security provider for HTTP/JSON transports, Java's JCA
+   * framework reflectively instantiates provider implementation classes (e.g. {@code
+   * OpenSSLContextImpl$TLSv13}) via String lookup in {@code SSLContext.getInstance("TLS",
+   * provider)}. In GraalVM Native Image builds, these reflectively looked-up SPI classes are
+   * stripped by static analysis unless explicitly registered for reflection, leading to {@code
+   * ClassNotFoundException} / {@code NoSuchAlgorithmException} at runtime.
+   */
+  private void loadConscrypt(BeforeAnalysisAccess access) {
+    Class<?> conscryptClass = access.findClassByName("org.conscrypt.Conscrypt");
+    if (conscryptClass != null) {
+      registerClassHierarchyForReflection(access, "org.conscrypt.OpenSSLContextImpl");
+      registerClassHierarchyForReflection(access, "org.conscrypt.OpenSSLProvider");
+      registerClassHierarchyForReflection(access, "org.conscrypt.KeyManagerFactoryImpl");
+      registerClassHierarchyForReflection(access, "org.conscrypt.TrustManagerFactoryImpl");
+    }
   }
 
   private void loadApiClient(BeforeAnalysisAccess access) {
