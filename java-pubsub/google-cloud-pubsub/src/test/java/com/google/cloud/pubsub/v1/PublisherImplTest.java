@@ -1673,11 +1673,11 @@ public class PublisherImplTest {
   }
 
   @Test
-  public void testPermanentErrorTerminatesMetaRequest() throws Exception {
+  public void testPermanentErrorOnHedgedAttemptDiscarded() throws Exception {
     Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
     fillTokenBucket(publisher, 5);
 
-    // 1. Configure the first response to be slow (200ms)
+    // 1. Configure the first response to be slow (200ms) and return success ("1")
     testPublisherServiceImpl.setAutoPublishResponse(false);
     testPublisherServiceImpl.setPublishResponseDelay(Duration.ofMillis(200));
     testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
@@ -1696,18 +1696,17 @@ public class PublisherImplTest {
     fakeExecutor.advanceTime(Duration.ofMillis(70));
     waitForRequests(testPublisherServiceImpl, 2);
 
-    // Attempt 2 fails immediately with a permanent error.
-    // It should fail the client future immediately at t=120ms,
-    // without waiting for Attempt 1 to complete at t=200ms.
-    try {
-      future.get(1, TimeUnit.SECONDS);
-      fail("Should have failed with ExecutionException");
-    } catch (ExecutionException e) {
-      assertThat(e.getCause()).isInstanceOf(PermissionDeniedException.class);
-    }
+    // Attempt 2 fails with PERMISSION_DENIED, but the error should be discarded.
+    // The future should remain pending while Attempt 1 is still in flight.
+    assertThat(future.isDone()).isFalse();
+
+    // 4. Advance time so Attempt 1 completes successfully at t=200ms
+    fakeExecutor.advanceTime(Duration.ofMillis(80));
+    assertThat(future.get(1, TimeUnit.SECONDS)).isEqualTo("1");
 
     shutdownTestPublisher(publisher);
   }
+
 
   private Builder getTestPublisherBuilder() {
     return Publisher.newBuilder(TEST_TOPIC)

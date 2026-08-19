@@ -721,7 +721,6 @@ public class Publisher implements PublisherInterface {
     long delayMs = hedgingSettings.getHedgeDelay().toMillis();
     HedgedRequest item = new HedgedRequest(coordinator, 1, clock.millisTime() + delayMs);
     hedgingQueue.add(item);
-    coordinator.isInQueue().set(true);
     scheduleQueueProcessing();
 
     return coordinator;
@@ -762,14 +761,11 @@ public class Publisher implements PublisherInterface {
         CancellationSharer coordinator = item.getCoordinator();
         OutstandingBatch batch = coordinator.getBatchIfActive();
         if (batch == null) {
-          coordinator.isInQueue().set(false);
           continue;
         }
 
         long remainingTimeoutMs = coordinator.getAbsoluteDeadlineMs() - clock.millisTime();
         if (remainingTimeoutMs <= 0) {
-          coordinator.isInQueue().set(false);
-          coordinator.checkCompletionOnQueueExit();
           continue;
         }
         long attemptTimeoutMs = Math.min(10000, remainingTimeoutMs);
@@ -791,8 +787,6 @@ public class Publisher implements PublisherInterface {
               Level.FINER,
               "Hedging rate limited due to lack of tokens.",
               batch.getMessageWrappers().get(0));
-          coordinator.isInQueue().set(false);
-          coordinator.checkCompletionOnQueueExit();
         }
       }
       isQueueProcessingScheduled.set(false);

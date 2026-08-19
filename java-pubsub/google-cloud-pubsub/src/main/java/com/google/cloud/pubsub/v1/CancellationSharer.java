@@ -46,7 +46,6 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   private Throwable lastError;
 
   private final Lock lock = new ReentrantLock();
-  private final AtomicBoolean isInQueue = new AtomicBoolean(false);
 
   private void cleanupLocked() {
     runningAttempts.clear();
@@ -113,33 +112,10 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
       }
       runningAttempts.remove(attemptNumber);
       lastError = t;
-
-      boolean isRetryable = true;
-      if (t instanceof ApiException) {
-        isRetryable =
-            publisher.getRetryableCodes().contains(((ApiException) t).getStatusCode().getCode());
-      }
-
-      if (runningAttempts.isEmpty() || !isRetryable) {
+      if (attemptNumber == 0 || runningAttempts.isEmpty()) {
         done = true;
         setException(lastError);
         cancelAllLocked();
-        cleanupLocked();
-      }
-    } finally {
-      lock.unlock();
-    }
-  }
-
-  void checkCompletionOnQueueExit() {
-    lock.lock();
-    try {
-      if (!done && runningAttempts.isEmpty() && !isInQueue.get()) {
-        done = true;
-        setException(
-            lastError != null
-                ? lastError
-                : new RuntimeException("Hedging failed with no active attempts"));
         cleanupLocked();
       }
     } finally {
@@ -179,10 +155,6 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
           }
         });
     runningAttempts.clear();
-  }
-
-  AtomicBoolean isInQueue() {
-    return isInQueue;
   }
 
   Publisher.OutstandingBatch getBatchIfActive() {
