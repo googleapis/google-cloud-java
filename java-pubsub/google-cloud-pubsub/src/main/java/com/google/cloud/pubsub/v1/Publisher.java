@@ -567,12 +567,17 @@ public class Publisher implements PublisherInterface {
     List<PubsubMessage> pubsubMessagesList = new ArrayList<PubsubMessage>(numMessagesInBatch);
     List<PubsubMessageWrapper> messageWrappers = outstandingBatch.getMessageWrappers();
     for (PubsubMessageWrapper messageWrapper : messageWrappers) {
-      tracer.endPublishBatchingSpan(messageWrapper);
+      if (attemptNumber == 0) {
+        tracer.endPublishBatchingSpan(messageWrapper);
+      }
+      else{
+        tracer.addHedgedPublishStartEvent(messageWrapper);
+      }
       pubsubMessagesList.add(messageWrapper.getPubsubMessage());
     }
 
     outstandingBatch.publishRpcSpan =
-      tracer.startPublishRpcSpan(topicNameObject, messageWrappers, attemptNumber);
+      tracer.startPublishRpcSpan(topicNameObject, messageWrappers);
 
     return publisherStub
         .publishCallable()
