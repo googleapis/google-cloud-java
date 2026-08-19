@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -73,7 +75,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreatePolicyBinding</td>
- *      <td><p> Creates a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. Once the binding is created, the policy is applied to the target.</td>
+ *      <td><p> Creates a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. After the binding is created, the policy is applied to the target.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -114,7 +116,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdatePolicyBinding</td>
- *      <td><p> Updates a policy binding and returns a long-running operation. Callers will need the IAM permissions on the policy and target in the binding to update, and the IAM permission to remove the existing policy from the binding. Target is immutable and cannot be updated. Once the binding is updated, the new policy is applied to the target.</td>
+ *      <td><p> Updates a policy binding and returns a long-running operation. Callers will need the IAM permissions on the policy and target in the binding to update. Target and policy are immutable and cannot be updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -133,7 +135,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeletePolicyBinding</td>
- *      <td><p> Deletes a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. Once the binding is deleted, the policy no longer applies to the target.</td>
+ *      <td><p> Deletes a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. After the binding is deleted, the policy no longer applies to the target.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -250,9 +252,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class PolicyBindingsClient implements BackgroundResource {
-  private final PolicyBindingsSettings settings;
+  private final @Nullable PolicyBindingsSettings settings;
   private final PolicyBindingsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -300,7 +303,7 @@ public class PolicyBindingsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final PolicyBindingsSettings getSettings() {
+  public final @Nullable PolicyBindingsSettings getSettings() {
     return settings;
   }
 
@@ -328,7 +331,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -369,7 +372,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PolicyBinding, OperationMetadata> createPolicyBindingAsync(
-      FolderLocationName parent, PolicyBinding policyBinding, String policyBindingId) {
+      @Nullable FolderLocationName parent, PolicyBinding policyBinding, String policyBindingId) {
     CreatePolicyBindingRequest request =
         CreatePolicyBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -382,7 +385,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -423,7 +426,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PolicyBinding, OperationMetadata> createPolicyBindingAsync(
-      LocationName parent, PolicyBinding policyBinding, String policyBindingId) {
+      @Nullable LocationName parent, PolicyBinding policyBinding, String policyBindingId) {
     CreatePolicyBindingRequest request =
         CreatePolicyBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -436,7 +439,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -477,7 +480,9 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PolicyBinding, OperationMetadata> createPolicyBindingAsync(
-      OrganizationLocationName parent, PolicyBinding policyBinding, String policyBindingId) {
+      @Nullable OrganizationLocationName parent,
+      PolicyBinding policyBinding,
+      String policyBindingId) {
     CreatePolicyBindingRequest request =
         CreatePolicyBindingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -490,7 +495,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -544,7 +549,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -578,7 +583,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -612,7 +617,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -673,7 +678,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PolicyBinding getPolicyBinding(PolicyBindingName name) {
+  public final PolicyBinding getPolicyBinding(@Nullable PolicyBindingName name) {
     GetPolicyBindingRequest request =
         GetPolicyBindingRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPolicyBinding(request);
@@ -781,9 +786,8 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on the policy and target in the binding to update, and the IAM permission to remove
-   * the existing policy from the binding. Target is immutable and cannot be updated. Once the
-   * binding is updated, the new policy is applied to the target.
+   * permissions on the policy and target in the binding to update. Target and policy are immutable
+   * and cannot be updated.
    *
    * <p>Sample code:
    *
@@ -819,9 +823,8 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on the policy and target in the binding to update, and the IAM permission to remove
-   * the existing policy from the binding. Target is immutable and cannot be updated. Once the
-   * binding is updated, the new policy is applied to the target.
+   * permissions on the policy and target in the binding to update. Target and policy are immutable
+   * and cannot be updated.
    *
    * <p>Sample code:
    *
@@ -853,9 +856,8 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on the policy and target in the binding to update, and the IAM permission to remove
-   * the existing policy from the binding. Target is immutable and cannot be updated. Once the
-   * binding is updated, the new policy is applied to the target.
+   * permissions on the policy and target in the binding to update. Target and policy are immutable
+   * and cannot be updated.
    *
    * <p>Sample code:
    *
@@ -887,9 +889,8 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on the policy and target in the binding to update, and the IAM permission to remove
-   * the existing policy from the binding. Target is immutable and cannot be updated. Once the
-   * binding is updated, the new policy is applied to the target.
+   * permissions on the policy and target in the binding to update. Target and policy are immutable
+   * and cannot be updated.
    *
    * <p>Sample code:
    *
@@ -920,7 +921,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is deleted, the policy no longer
+   * permissions on both the policy and target. After the binding is deleted, the policy no longer
    * applies to the target.
    *
    * <p>Sample code:
@@ -951,7 +952,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePolicyBindingAsync(
-      PolicyBindingName name) {
+      @Nullable PolicyBindingName name) {
     DeletePolicyBindingRequest request =
         DeletePolicyBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -962,7 +963,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is deleted, the policy no longer
+   * permissions on both the policy and target. After the binding is deleted, the policy no longer
    * applies to the target.
    *
    * <p>Sample code:
@@ -1002,7 +1003,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is deleted, the policy no longer
+   * permissions on both the policy and target. After the binding is deleted, the policy no longer
    * applies to the target.
    *
    * <p>Sample code:
@@ -1038,7 +1039,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is deleted, the policy no longer
+   * permissions on both the policy and target. After the binding is deleted, the policy no longer
    * applies to the target.
    *
    * <p>Sample code:
@@ -1074,7 +1075,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is deleted, the policy no longer
+   * permissions on both the policy and target. After the binding is deleted, the policy no longer
    * applies to the target.
    *
    * <p>Sample code:
@@ -1137,7 +1138,8 @@ public class PolicyBindingsClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPolicyBindingsPagedResponse listPolicyBindings(FolderLocationName parent) {
+  public final ListPolicyBindingsPagedResponse listPolicyBindings(
+      @Nullable FolderLocationName parent) {
     ListPolicyBindingsRequest request =
         ListPolicyBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1176,7 +1178,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPolicyBindingsPagedResponse listPolicyBindings(LocationName parent) {
+  public final ListPolicyBindingsPagedResponse listPolicyBindings(@Nullable LocationName parent) {
     ListPolicyBindingsRequest request =
         ListPolicyBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1215,7 +1217,8 @@ public class PolicyBindingsClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPolicyBindingsPagedResponse listPolicyBindings(OrganizationLocationName parent) {
+  public final ListPolicyBindingsPagedResponse listPolicyBindings(
+      @Nullable OrganizationLocationName parent) {
     ListPolicyBindingsRequest request =
         ListPolicyBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1415,7 +1418,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchTargetPolicyBindingsPagedResponse searchTargetPolicyBindings(
-      FolderLocationName parent, String target) {
+      @Nullable FolderLocationName parent, String target) {
     SearchTargetPolicyBindingsRequest request =
         SearchTargetPolicyBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1470,7 +1473,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchTargetPolicyBindingsPagedResponse searchTargetPolicyBindings(
-      LocationName parent, String target) {
+      @Nullable LocationName parent, String target) {
     SearchTargetPolicyBindingsRequest request =
         SearchTargetPolicyBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1525,7 +1528,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchTargetPolicyBindingsPagedResponse searchTargetPolicyBindings(
-      OrganizationLocationName parent, String target) {
+      @Nullable OrganizationLocationName parent, String target) {
     SearchTargetPolicyBindingsRequest request =
         SearchTargetPolicyBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1605,6 +1608,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (PolicyBinding element :
    *       policyBindingsClient.searchTargetPolicyBindings(request).iterateAll()) {
@@ -1640,6 +1644,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<PolicyBinding> future =
    *       policyBindingsClient.searchTargetPolicyBindingsPagedCallable().futureCall(request);
@@ -1675,6 +1680,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     SearchTargetPolicyBindingsResponse response =
@@ -1759,8 +1765,9 @@ public class PolicyBindingsClient implements BackgroundResource {
           ListPolicyBindingsPage> {
 
     private ListPolicyBindingsPage(
-        PageContext<ListPolicyBindingsRequest, ListPolicyBindingsResponse, PolicyBinding> context,
-        ListPolicyBindingsResponse response) {
+        @Nullable PageContext<ListPolicyBindingsRequest, ListPolicyBindingsResponse, PolicyBinding>
+            context,
+        @Nullable ListPolicyBindingsResponse response) {
       super(context, response);
     }
 
@@ -1770,14 +1777,16 @@ public class PolicyBindingsClient implements BackgroundResource {
 
     @Override
     protected ListPolicyBindingsPage createPage(
-        PageContext<ListPolicyBindingsRequest, ListPolicyBindingsResponse, PolicyBinding> context,
-        ListPolicyBindingsResponse response) {
+        @Nullable PageContext<ListPolicyBindingsRequest, ListPolicyBindingsResponse, PolicyBinding>
+            context,
+        @Nullable ListPolicyBindingsResponse response) {
       return new ListPolicyBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPolicyBindingsPage> createPageAsync(
-        PageContext<ListPolicyBindingsRequest, ListPolicyBindingsResponse, PolicyBinding> context,
+        @Nullable PageContext<ListPolicyBindingsRequest, ListPolicyBindingsResponse, PolicyBinding>
+            context,
         ApiFuture<ListPolicyBindingsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1792,7 +1801,7 @@ public class PolicyBindingsClient implements BackgroundResource {
           ListPolicyBindingsFixedSizeCollection> {
 
     private ListPolicyBindingsFixedSizeCollection(
-        List<ListPolicyBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListPolicyBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1802,7 +1811,7 @@ public class PolicyBindingsClient implements BackgroundResource {
 
     @Override
     protected ListPolicyBindingsFixedSizeCollection createCollection(
-        List<ListPolicyBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListPolicyBindingsPage> pages, int collectionSize) {
       return new ListPolicyBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1843,12 +1852,13 @@ public class PolicyBindingsClient implements BackgroundResource {
           SearchTargetPolicyBindingsPage> {
 
     private SearchTargetPolicyBindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchTargetPolicyBindingsRequest,
                 SearchTargetPolicyBindingsResponse,
                 PolicyBinding>
             context,
-        SearchTargetPolicyBindingsResponse response) {
+        @Nullable SearchTargetPolicyBindingsResponse response) {
       super(context, response);
     }
 
@@ -1858,18 +1868,20 @@ public class PolicyBindingsClient implements BackgroundResource {
 
     @Override
     protected SearchTargetPolicyBindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchTargetPolicyBindingsRequest,
                 SearchTargetPolicyBindingsResponse,
                 PolicyBinding>
             context,
-        SearchTargetPolicyBindingsResponse response) {
+        @Nullable SearchTargetPolicyBindingsResponse response) {
       return new SearchTargetPolicyBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchTargetPolicyBindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchTargetPolicyBindingsRequest,
                 SearchTargetPolicyBindingsResponse,
                 PolicyBinding>
@@ -1888,7 +1900,7 @@ public class PolicyBindingsClient implements BackgroundResource {
           SearchTargetPolicyBindingsFixedSizeCollection> {
 
     private SearchTargetPolicyBindingsFixedSizeCollection(
-        List<SearchTargetPolicyBindingsPage> pages, int collectionSize) {
+        @Nullable List<SearchTargetPolicyBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1898,7 +1910,7 @@ public class PolicyBindingsClient implements BackgroundResource {
 
     @Override
     protected SearchTargetPolicyBindingsFixedSizeCollection createCollection(
-        List<SearchTargetPolicyBindingsPage> pages, int collectionSize) {
+        @Nullable List<SearchTargetPolicyBindingsPage> pages, int collectionSize) {
       return new SearchTargetPolicyBindingsFixedSizeCollection(pages, collectionSize);
     }
   }

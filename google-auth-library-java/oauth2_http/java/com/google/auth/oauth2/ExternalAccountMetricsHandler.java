@@ -31,10 +31,13 @@
 
 package com.google.auth.oauth2;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * A handler for generating the x-goog-api-client header value for BYOID external account
  * credentials.
  */
+@NullMarked
 class ExternalAccountMetricsHandler implements java.io.Serializable {
   private static final String SOURCE_KEY = "source";
   private static final String IMPERSONATION_KEY = "sa-impersonation";

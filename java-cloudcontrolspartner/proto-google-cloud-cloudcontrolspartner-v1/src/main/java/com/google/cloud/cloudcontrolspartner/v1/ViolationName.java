@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ViolationName implements ResourceName {
   private static final PathTemplate ORGANIZATION_LOCATION_CUSTOMER_WORKLOAD_VIOLATION =
@@ -107,7 +110,7 @@ public class ViolationName implements ResourceName {
         .toString();
   }
 
-  public static ViolationName parse(String formattedString) {
+  public static @Nullable ViolationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -130,7 +133,7 @@ public class ViolationName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ViolationName> values) {
+  public static List<String> toStringList(List<@Nullable ViolationName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ViolationName value : values) {
       if (value == null) {
@@ -194,7 +197,7 @@ public class ViolationName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

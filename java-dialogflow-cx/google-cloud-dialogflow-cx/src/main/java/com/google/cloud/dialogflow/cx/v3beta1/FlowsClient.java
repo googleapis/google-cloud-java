@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -347,10 +349,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class FlowsClient implements BackgroundResource {
-  private final FlowsSettings settings;
+  private final @Nullable FlowsSettings settings;
   private final FlowsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -396,7 +399,7 @@ public class FlowsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final FlowsSettings getSettings() {
+  public final @Nullable FlowsSettings getSettings() {
     return settings;
   }
 
@@ -448,7 +451,7 @@ public class FlowsClient implements BackgroundResource {
    * @param flow Required. The flow to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Flow createFlow(AgentName parent, Flow flow) {
+  public final Flow createFlow(@Nullable AgentName parent, Flow flow) {
     CreateFlowRequest request =
         CreateFlowRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -577,7 +580,7 @@ public class FlowsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteFlow(FlowName name) {
+  public final void deleteFlow(@Nullable FlowName name) {
     DeleteFlowRequest request =
         DeleteFlowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteFlow(request);
@@ -691,7 +694,7 @@ public class FlowsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFlowsPagedResponse listFlows(AgentName parent) {
+  public final ListFlowsPagedResponse listFlows(@Nullable AgentName parent) {
     ListFlowsRequest request =
         ListFlowsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listFlows(request);
@@ -852,7 +855,7 @@ public class FlowsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Flow getFlow(FlowName name) {
+  public final Flow getFlow(@Nullable FlowName name) {
     GetFlowRequest request =
         GetFlowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFlow(request);
@@ -1074,7 +1077,7 @@ public class FlowsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, Struct> trainFlowAsync(FlowName name) {
+  public final OperationFuture<Empty, Struct> trainFlowAsync(@Nullable FlowName name) {
     TrainFlowRequest request =
         TrainFlowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return trainFlowAsync(request);
@@ -1322,7 +1325,8 @@ public class FlowsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/validationResult`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FlowValidationResult getFlowValidationResult(FlowValidationResultName name) {
+  public final FlowValidationResult getFlowValidationResult(
+      @Nullable FlowValidationResultName name) {
     GetFlowValidationResultRequest request =
         GetFlowValidationResultRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1913,8 +1917,8 @@ public class FlowsClient implements BackgroundResource {
       extends AbstractPage<ListFlowsRequest, ListFlowsResponse, Flow, ListFlowsPage> {
 
     private ListFlowsPage(
-        PageContext<ListFlowsRequest, ListFlowsResponse, Flow> context,
-        ListFlowsResponse response) {
+        @Nullable PageContext<ListFlowsRequest, ListFlowsResponse, Flow> context,
+        @Nullable ListFlowsResponse response) {
       super(context, response);
     }
 
@@ -1924,14 +1928,14 @@ public class FlowsClient implements BackgroundResource {
 
     @Override
     protected ListFlowsPage createPage(
-        PageContext<ListFlowsRequest, ListFlowsResponse, Flow> context,
-        ListFlowsResponse response) {
+        @Nullable PageContext<ListFlowsRequest, ListFlowsResponse, Flow> context,
+        @Nullable ListFlowsResponse response) {
       return new ListFlowsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFlowsPage> createPageAsync(
-        PageContext<ListFlowsRequest, ListFlowsResponse, Flow> context,
+        @Nullable PageContext<ListFlowsRequest, ListFlowsResponse, Flow> context,
         ApiFuture<ListFlowsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1941,7 +1945,7 @@ public class FlowsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListFlowsRequest, ListFlowsResponse, Flow, ListFlowsPage, ListFlowsFixedSizeCollection> {
 
-    private ListFlowsFixedSizeCollection(List<ListFlowsPage> pages, int collectionSize) {
+    private ListFlowsFixedSizeCollection(@Nullable List<ListFlowsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1951,7 +1955,7 @@ public class FlowsClient implements BackgroundResource {
 
     @Override
     protected ListFlowsFixedSizeCollection createCollection(
-        List<ListFlowsPage> pages, int collectionSize) {
+        @Nullable List<ListFlowsPage> pages, int collectionSize) {
       return new ListFlowsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1985,8 +1989,8 @@ public class FlowsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1996,14 +2000,14 @@ public class FlowsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2017,7 +2021,8 @@ public class FlowsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2027,7 +2032,7 @@ public class FlowsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

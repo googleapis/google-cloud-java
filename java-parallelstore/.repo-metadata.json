@@ -11,6 +11,5 @@
   "repo_short": "java-parallelstore",
   "distribution_name": "com.google.cloud:google-cloud-parallelstore",
   "api_id": "parallelstore.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

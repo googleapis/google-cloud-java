@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -220,9 +222,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ExternalVpnGatewaysClient implements BackgroundResource {
-  private final ExternalVpnGatewaysSettings settings;
+  private final @Nullable ExternalVpnGatewaysSettings settings;
   private final ExternalVpnGatewaysStub stub;
 
   /** Constructs an instance of ExternalVpnGatewaysClient with default settings. */
@@ -262,7 +265,7 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ExternalVpnGatewaysSettings getSettings() {
+  public final @Nullable ExternalVpnGatewaysSettings getSettings() {
     return settings;
   }
 
@@ -1049,9 +1052,10 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
           ListExternalVpnGatewaysRequest, ExternalVpnGatewayList, ExternalVpnGateway, ListPage> {
 
     private ListPage(
-        PageContext<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList, ExternalVpnGateway>
+        @Nullable
+            PageContext<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList, ExternalVpnGateway>
             context,
-        ExternalVpnGatewayList response) {
+        @Nullable ExternalVpnGatewayList response) {
       super(context, response);
     }
 
@@ -1061,15 +1065,17 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList, ExternalVpnGateway>
+        @Nullable
+            PageContext<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList, ExternalVpnGateway>
             context,
-        ExternalVpnGatewayList response) {
+        @Nullable ExternalVpnGatewayList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList, ExternalVpnGateway>
+        @Nullable
+            PageContext<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList, ExternalVpnGateway>
             context,
         ApiFuture<ExternalVpnGatewayList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -1084,7 +1090,7 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1093,7 +1099,8 @@ public class ExternalVpnGatewaysClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

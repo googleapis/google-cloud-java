@@ -46,6 +46,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -495,9 +497,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class FirewallActivationClient implements BackgroundResource {
-  private final FirewallActivationSettings settings;
+  private final @Nullable FirewallActivationSettings settings;
   private final FirewallActivationStub stub;
   private final OperationsClient operationsClient;
 
@@ -540,7 +543,7 @@ public class FirewallActivationClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final FirewallActivationSettings getSettings() {
+  public final @Nullable FirewallActivationSettings getSettings() {
     return settings;
   }
 
@@ -580,7 +583,8 @@ public class FirewallActivationClient implements BackgroundResource {
    * @param parent Required. Parent value for ListEndpointsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFirewallEndpointsPagedResponse listFirewallEndpoints(LocationName parent) {
+  public final ListFirewallEndpointsPagedResponse listFirewallEndpoints(
+      @Nullable LocationName parent) {
     ListFirewallEndpointsRequest request =
         ListFirewallEndpointsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -613,7 +617,7 @@ public class FirewallActivationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFirewallEndpointsPagedResponse listFirewallEndpoints(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListFirewallEndpointsRequest request =
         ListFirewallEndpointsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -789,7 +793,7 @@ public class FirewallActivationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListProjectFirewallEndpointsPagedResponse listProjectFirewallEndpoints(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListFirewallEndpointsRequest request =
         ListFirewallEndpointsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -822,7 +826,7 @@ public class FirewallActivationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListProjectFirewallEndpointsPagedResponse listProjectFirewallEndpoints(
-      OrganizationLocationName parent) {
+      @Nullable OrganizationLocationName parent) {
     ListFirewallEndpointsRequest request =
         ListFirewallEndpointsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -998,7 +1002,7 @@ public class FirewallActivationClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FirewallEndpoint getFirewallEndpoint(FirewallEndpointName name) {
+  public final FirewallEndpoint getFirewallEndpoint(@Nullable FirewallEndpointName name) {
     GetFirewallEndpointRequest request =
         GetFirewallEndpointRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1122,7 +1126,7 @@ public class FirewallActivationClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FirewallEndpoint getProjectFirewallEndpoint(FirewallEndpointName name) {
+  public final FirewallEndpoint getProjectFirewallEndpoint(@Nullable FirewallEndpointName name) {
     GetFirewallEndpointRequest request =
         GetFirewallEndpointRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1254,7 +1258,7 @@ public class FirewallActivationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<FirewallEndpoint, OperationMetadata> createFirewallEndpointAsync(
-      LocationName parent, FirewallEndpoint firewallEndpoint, String firewallEndpointId) {
+      @Nullable LocationName parent, FirewallEndpoint firewallEndpoint, String firewallEndpointId) {
     CreateFirewallEndpointRequest request =
         CreateFirewallEndpointRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1295,7 +1299,7 @@ public class FirewallActivationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<FirewallEndpoint, OperationMetadata> createFirewallEndpointAsync(
-      OrganizationLocationName parent,
+      @Nullable OrganizationLocationName parent,
       FirewallEndpoint firewallEndpoint,
       String firewallEndpointId) {
     CreateFirewallEndpointRequest request =
@@ -1477,7 +1481,9 @@ public class FirewallActivationClient implements BackgroundResource {
    */
   public final OperationFuture<FirewallEndpoint, OperationMetadata>
       createProjectFirewallEndpointAsync(
-          LocationName parent, FirewallEndpoint firewallEndpoint, String firewallEndpointId) {
+          @Nullable LocationName parent,
+          FirewallEndpoint firewallEndpoint,
+          String firewallEndpointId) {
     CreateFirewallEndpointRequest request =
         CreateFirewallEndpointRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1519,7 +1525,7 @@ public class FirewallActivationClient implements BackgroundResource {
    */
   public final OperationFuture<FirewallEndpoint, OperationMetadata>
       createProjectFirewallEndpointAsync(
-          OrganizationLocationName parent,
+          @Nullable OrganizationLocationName parent,
           FirewallEndpoint firewallEndpoint,
           String firewallEndpointId) {
     CreateFirewallEndpointRequest request =
@@ -1696,7 +1702,7 @@ public class FirewallActivationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteFirewallEndpointAsync(
-      FirewallEndpointName name) {
+      @Nullable FirewallEndpointName name) {
     DeleteFirewallEndpointRequest request =
         DeleteFirewallEndpointRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1857,7 +1863,7 @@ public class FirewallActivationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteProjectFirewallEndpointAsync(
-      FirewallEndpointName name) {
+      @Nullable FirewallEndpointName name) {
     DeleteFirewallEndpointRequest request =
         DeleteFirewallEndpointRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2288,7 +2294,7 @@ public class FirewallActivationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFirewallEndpointAssociationsPagedResponse listFirewallEndpointAssociations(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListFirewallEndpointAssociationsRequest request =
         ListFirewallEndpointAssociationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2469,7 +2475,7 @@ public class FirewallActivationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FirewallEndpointAssociation getFirewallEndpointAssociation(
-      FirewallEndpointAssociationName name) {
+      @Nullable FirewallEndpointAssociationName name) {
     GetFirewallEndpointAssociationRequest request =
         GetFirewallEndpointAssociationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2607,7 +2613,7 @@ public class FirewallActivationClient implements BackgroundResource {
    */
   public final OperationFuture<FirewallEndpointAssociation, OperationMetadata>
       createFirewallEndpointAssociationAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           FirewallEndpointAssociation firewallEndpointAssociation,
           String firewallEndpointAssociationId) {
     CreateFirewallEndpointAssociationRequest request =
@@ -2789,7 +2795,7 @@ public class FirewallActivationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteFirewallEndpointAssociationAsync(
-      FirewallEndpointAssociationName name) {
+      @Nullable FirewallEndpointAssociationName name) {
     DeleteFirewallEndpointAssociationRequest request =
         DeleteFirewallEndpointAssociationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3534,9 +3540,11 @@ public class FirewallActivationClient implements BackgroundResource {
           ListFirewallEndpointsPage> {
 
     private ListFirewallEndpointsPage(
-        PageContext<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
+        @Nullable
+            PageContext<
+                ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
             context,
-        ListFirewallEndpointsResponse response) {
+        @Nullable ListFirewallEndpointsResponse response) {
       super(context, response);
     }
 
@@ -3546,15 +3554,19 @@ public class FirewallActivationClient implements BackgroundResource {
 
     @Override
     protected ListFirewallEndpointsPage createPage(
-        PageContext<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
+        @Nullable
+            PageContext<
+                ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
             context,
-        ListFirewallEndpointsResponse response) {
+        @Nullable ListFirewallEndpointsResponse response) {
       return new ListFirewallEndpointsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFirewallEndpointsPage> createPageAsync(
-        PageContext<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
+        @Nullable
+            PageContext<
+                ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
             context,
         ApiFuture<ListFirewallEndpointsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3570,7 +3582,7 @@ public class FirewallActivationClient implements BackgroundResource {
           ListFirewallEndpointsFixedSizeCollection> {
 
     private ListFirewallEndpointsFixedSizeCollection(
-        List<ListFirewallEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListFirewallEndpointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3580,7 +3592,7 @@ public class FirewallActivationClient implements BackgroundResource {
 
     @Override
     protected ListFirewallEndpointsFixedSizeCollection createCollection(
-        List<ListFirewallEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListFirewallEndpointsPage> pages, int collectionSize) {
       return new ListFirewallEndpointsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3619,9 +3631,11 @@ public class FirewallActivationClient implements BackgroundResource {
           ListProjectFirewallEndpointsPage> {
 
     private ListProjectFirewallEndpointsPage(
-        PageContext<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
+        @Nullable
+            PageContext<
+                ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
             context,
-        ListFirewallEndpointsResponse response) {
+        @Nullable ListFirewallEndpointsResponse response) {
       super(context, response);
     }
 
@@ -3631,15 +3645,19 @@ public class FirewallActivationClient implements BackgroundResource {
 
     @Override
     protected ListProjectFirewallEndpointsPage createPage(
-        PageContext<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
+        @Nullable
+            PageContext<
+                ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
             context,
-        ListFirewallEndpointsResponse response) {
+        @Nullable ListFirewallEndpointsResponse response) {
       return new ListProjectFirewallEndpointsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListProjectFirewallEndpointsPage> createPageAsync(
-        PageContext<ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
+        @Nullable
+            PageContext<
+                ListFirewallEndpointsRequest, ListFirewallEndpointsResponse, FirewallEndpoint>
             context,
         ApiFuture<ListFirewallEndpointsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3655,7 +3673,7 @@ public class FirewallActivationClient implements BackgroundResource {
           ListProjectFirewallEndpointsFixedSizeCollection> {
 
     private ListProjectFirewallEndpointsFixedSizeCollection(
-        List<ListProjectFirewallEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListProjectFirewallEndpointsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3665,7 +3683,7 @@ public class FirewallActivationClient implements BackgroundResource {
 
     @Override
     protected ListProjectFirewallEndpointsFixedSizeCollection createCollection(
-        List<ListProjectFirewallEndpointsPage> pages, int collectionSize) {
+        @Nullable List<ListProjectFirewallEndpointsPage> pages, int collectionSize) {
       return new ListProjectFirewallEndpointsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3708,12 +3726,13 @@ public class FirewallActivationClient implements BackgroundResource {
           ListFirewallEndpointAssociationsPage> {
 
     private ListFirewallEndpointAssociationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFirewallEndpointAssociationsRequest,
                 ListFirewallEndpointAssociationsResponse,
                 FirewallEndpointAssociation>
             context,
-        ListFirewallEndpointAssociationsResponse response) {
+        @Nullable ListFirewallEndpointAssociationsResponse response) {
       super(context, response);
     }
 
@@ -3723,18 +3742,20 @@ public class FirewallActivationClient implements BackgroundResource {
 
     @Override
     protected ListFirewallEndpointAssociationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFirewallEndpointAssociationsRequest,
                 ListFirewallEndpointAssociationsResponse,
                 FirewallEndpointAssociation>
             context,
-        ListFirewallEndpointAssociationsResponse response) {
+        @Nullable ListFirewallEndpointAssociationsResponse response) {
       return new ListFirewallEndpointAssociationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFirewallEndpointAssociationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFirewallEndpointAssociationsRequest,
                 ListFirewallEndpointAssociationsResponse,
                 FirewallEndpointAssociation>
@@ -3753,7 +3774,7 @@ public class FirewallActivationClient implements BackgroundResource {
           ListFirewallEndpointAssociationsFixedSizeCollection> {
 
     private ListFirewallEndpointAssociationsFixedSizeCollection(
-        List<ListFirewallEndpointAssociationsPage> pages, int collectionSize) {
+        @Nullable List<ListFirewallEndpointAssociationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3763,7 +3784,7 @@ public class FirewallActivationClient implements BackgroundResource {
 
     @Override
     protected ListFirewallEndpointAssociationsFixedSizeCollection createCollection(
-        List<ListFirewallEndpointAssociationsPage> pages, int collectionSize) {
+        @Nullable List<ListFirewallEndpointAssociationsPage> pages, int collectionSize) {
       return new ListFirewallEndpointAssociationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3797,8 +3818,8 @@ public class FirewallActivationClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3808,14 +3829,14 @@ public class FirewallActivationClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3829,7 +3850,8 @@ public class FirewallActivationClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3839,7 +3861,7 @@ public class FirewallActivationClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

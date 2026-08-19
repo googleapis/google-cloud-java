@@ -16,13 +16,25 @@
 
 package com.google.cloud.bigquery.jdbc.it;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcBaseTest;
 import com.google.cloud.bigquery.jdbc.utils.TestUtilities;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -372,6 +384,31 @@ public class ITBase extends BigQueryJdbcBaseTest {
     return value;
   }
 
+  protected static JsonObject getAuthJson() throws IOException {
+    final String secret = requireEnvVar("SA_SECRET");
+    JsonObject authJson;
+    // Supporting both formats of SA_SECRET:
+    // - Local runs can point to a json file
+    // - Cloud Build has JSON value
+    try {
+      InputStream stream = Files.newInputStream(Paths.get(secret));
+      InputStreamReader reader = new InputStreamReader(stream);
+      authJson = JsonParser.parseReader(reader).getAsJsonObject();
+    } catch (IOException e) {
+      authJson = JsonParser.parseString(secret).getAsJsonObject();
+    }
+    assertTrue(authJson.has("client_email"));
+    assertTrue(authJson.has("private_key"));
+    assertTrue(authJson.has("project_id"));
+    return authJson;
+  }
+
+  protected static GoogleCredentials getCredentials() throws IOException {
+    JsonObject authJson = getAuthJson();
+    return GoogleCredentials.fromStream(
+        new ByteArrayInputStream(authJson.toString().getBytes(StandardCharsets.UTF_8)));
+  }
+
   protected int resultSetRowCount(ResultSet resultSet) throws SQLException {
     int rowCount = 0;
     while (resultSet.next()) {
@@ -392,5 +429,17 @@ public class ITBase extends BigQueryJdbcBaseTest {
       throw e;
     }
     return result;
+  }
+
+  public static void validateStatement(Statement stmt, int expectedRows) throws SQLException {
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, " + expectedRows + "))";
+    assertTrue(stmt.execute(query));
+    int count = 0;
+    try (ResultSet rs = stmt.getResultSet()) {
+      while (rs.next()) {
+        count++;
+      }
+    }
+    assertEquals(expectedRows, count);
   }
 }

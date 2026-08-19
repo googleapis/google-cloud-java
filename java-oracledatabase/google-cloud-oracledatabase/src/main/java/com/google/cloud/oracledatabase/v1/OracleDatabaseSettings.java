@@ -70,6 +70,8 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -148,6 +150,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSettings> {
 
@@ -466,6 +469,30 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       failoverAutonomousDatabaseOperationSettings() {
     return ((OracleDatabaseStubSettings) getStubSettings())
         .failoverAutonomousDatabaseOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to refreshAutonomousDatabase. */
+  public UnaryCallSettings<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).refreshAutonomousDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to refreshAutonomousDatabase. */
+  public OperationCallSettings<
+          RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .refreshAutonomousDatabaseOperationSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getAutonomousDatabaseRefreshableClones.
+   */
+  public UnaryCallSettings<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .getAutonomousDatabaseRefreshableClonesSettings();
   }
 
   /** Returns the object with the settings used for calls to listOdbNetworks. */
@@ -1007,7 +1034,7 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -1027,7 +1054,7 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(OracleDatabaseStubSettings.newBuilder(clientContext));
     }
 
@@ -1374,6 +1401,29 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
         failoverAutonomousDatabaseOperationSettings() {
       return getStubSettingsBuilder().failoverAutonomousDatabaseOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to refreshAutonomousDatabase. */
+    public UnaryCallSettings.Builder<RefreshAutonomousDatabaseRequest, Operation>
+        refreshAutonomousDatabaseSettings() {
+      return getStubSettingsBuilder().refreshAutonomousDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to refreshAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        refreshAutonomousDatabaseOperationSettings() {
+      return getStubSettingsBuilder().refreshAutonomousDatabaseOperationSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * getAutonomousDatabaseRefreshableClones.
+     */
+    public UnaryCallSettings.Builder<
+            GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+        getAutonomousDatabaseRefreshableClonesSettings() {
+      return getStubSettingsBuilder().getAutonomousDatabaseRefreshableClonesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listOdbNetworks. */

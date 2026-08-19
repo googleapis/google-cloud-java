@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -298,9 +300,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class VersionsClient implements BackgroundResource {
-  private final VersionsSettings settings;
+  private final @Nullable VersionsSettings settings;
   private final VersionsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -346,7 +349,7 @@ public class VersionsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final VersionsSettings getSettings() {
+  public final @Nullable VersionsSettings getSettings() {
     return settings;
   }
 
@@ -396,7 +399,7 @@ public class VersionsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVersionsPagedResponse listVersions(FlowName parent) {
+  public final ListVersionsPagedResponse listVersions(@Nullable FlowName parent) {
     ListVersionsRequest request =
         ListVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -559,7 +562,7 @@ public class VersionsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Version getVersion(VersionName name) {
+  public final Version getVersion(@Nullable VersionName name) {
     GetVersionRequest request =
         GetVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getVersion(request);
@@ -687,7 +690,7 @@ public class VersionsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Version, CreateVersionOperationMetadata> createVersionAsync(
-      FlowName parent, Version version) {
+      @Nullable FlowName parent, Version version) {
     CreateVersionRequest request =
         CreateVersionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -963,7 +966,7 @@ public class VersionsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteVersion(VersionName name) {
+  public final void deleteVersion(@Nullable VersionName name) {
     DeleteVersionRequest request =
         DeleteVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteVersion(request);
@@ -1090,7 +1093,7 @@ public class VersionsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, Struct> loadVersionAsync(VersionName name) {
+  public final OperationFuture<Empty, Struct> loadVersionAsync(@Nullable VersionName name) {
     LoadVersionRequest request =
         LoadVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return loadVersionAsync(request);
@@ -1278,7 +1281,7 @@ public class VersionsClient implements BackgroundResource {
    *     `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CompareVersionsResponse compareVersions(VersionName baseVersion) {
+  public final CompareVersionsResponse compareVersions(@Nullable VersionName baseVersion) {
     CompareVersionsRequest request =
         CompareVersionsRequest.newBuilder()
             .setBaseVersion(baseVersion == null ? null : baseVersion.toString())
@@ -1634,8 +1637,8 @@ public class VersionsClient implements BackgroundResource {
       extends AbstractPage<ListVersionsRequest, ListVersionsResponse, Version, ListVersionsPage> {
 
     private ListVersionsPage(
-        PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
-        ListVersionsResponse response) {
+        @Nullable PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
+        @Nullable ListVersionsResponse response) {
       super(context, response);
     }
 
@@ -1645,14 +1648,14 @@ public class VersionsClient implements BackgroundResource {
 
     @Override
     protected ListVersionsPage createPage(
-        PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
-        ListVersionsResponse response) {
+        @Nullable PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
+        @Nullable ListVersionsResponse response) {
       return new ListVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVersionsPage> createPageAsync(
-        PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
+        @Nullable PageContext<ListVersionsRequest, ListVersionsResponse, Version> context,
         ApiFuture<ListVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1666,7 +1669,8 @@ public class VersionsClient implements BackgroundResource {
           ListVersionsPage,
           ListVersionsFixedSizeCollection> {
 
-    private ListVersionsFixedSizeCollection(List<ListVersionsPage> pages, int collectionSize) {
+    private ListVersionsFixedSizeCollection(
+        @Nullable List<ListVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1676,7 +1680,7 @@ public class VersionsClient implements BackgroundResource {
 
     @Override
     protected ListVersionsFixedSizeCollection createCollection(
-        List<ListVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListVersionsPage> pages, int collectionSize) {
       return new ListVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1710,8 +1714,8 @@ public class VersionsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1721,14 +1725,14 @@ public class VersionsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1742,7 +1746,8 @@ public class VersionsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1752,7 +1757,7 @@ public class VersionsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -165,6 +165,7 @@ public class InterconnectsClientTest {
             .setCreationTimestamp("creationTimestamp-370203401")
             .setCustomerName("customerName900157321")
             .setDescription("description-1724546052")
+            .setEffectiveLocation("effectiveLocation-167012740")
             .addAllExpectedOutages(new ArrayList<InterconnectOutageNotification>())
             .setGoogleIpAddress("googleIpAddress-1542975852")
             .setGoogleReferenceId("googleReferenceId600178125")

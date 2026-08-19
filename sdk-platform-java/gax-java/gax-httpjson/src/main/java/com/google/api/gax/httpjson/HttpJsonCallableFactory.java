@@ -45,9 +45,10 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.tracing.ApiTracerContext;
 import com.google.api.gax.tracing.TracedUnaryCallable;
-import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /** Class with utility methods to create http/json-based direct callables. */
+@NullMarked
 public class HttpJsonCallableFactory {
 
   private HttpJsonCallableFactory() {}
@@ -220,7 +221,7 @@ public class HttpJsonCallableFactory {
     return callable.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
 
-  static ApiTracerContext getApiTracerContext(@Nonnull ApiMethodDescriptor<?, ?> methodDescriptor) {
+  static ApiTracerContext getApiTracerContext(ApiMethodDescriptor<?, ?> methodDescriptor) {
     return ApiTracerContext.newBuilder()
         .setFullMethodName(methodDescriptor.getFullMethodName())
         .setHttpMethod(methodDescriptor.getHttpMethod())

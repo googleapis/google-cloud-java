@@ -30,11 +30,14 @@
 package com.google.api.gax.core;
 
 import com.google.auth.Credentials;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** NoCredentialsProvider is a CredentialsProvider which always returns null. */
+@NullMarked
 public final class NoCredentialsProvider implements CredentialsProvider {
   @Override
-  public Credentials getCredentials() {
+  public @Nullable Credentials getCredentials() {
     return null;
   }
 

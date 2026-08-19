@@ -11,6 +11,5 @@
   "repo_short": "java-area120-tables",
   "distribution_name": "com.google.area120:google-area120-tables",
   "api_id": "area120tables.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

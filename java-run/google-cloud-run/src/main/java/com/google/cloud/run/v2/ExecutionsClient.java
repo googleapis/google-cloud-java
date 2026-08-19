@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -199,9 +201,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ExecutionsClient implements BackgroundResource {
-  private final ExecutionsSettings settings;
+  private final @Nullable ExecutionsSettings settings;
   private final ExecutionsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -247,7 +250,7 @@ public class ExecutionsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ExecutionsSettings getSettings() {
+  public final @Nullable ExecutionsSettings getSettings() {
     return settings;
   }
 
@@ -295,7 +298,7 @@ public class ExecutionsClient implements BackgroundResource {
    *     `{project}` can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Execution getExecution(ExecutionName name) {
+  public final Execution getExecution(@Nullable ExecutionName name) {
     GetExecutionRequest request =
         GetExecutionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getExecution(request);
@@ -412,7 +415,7 @@ public class ExecutionsClient implements BackgroundResource {
    *     or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListExecutionsPagedResponse listExecutions(JobName parent) {
+  public final ListExecutionsPagedResponse listExecutions(@Nullable JobName parent) {
     ListExecutionsRequest request =
         ListExecutionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -581,7 +584,8 @@ public class ExecutionsClient implements BackgroundResource {
    *     `{project}` can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Execution, Execution> deleteExecutionAsync(ExecutionName name) {
+  public final OperationFuture<Execution, Execution> deleteExecutionAsync(
+      @Nullable ExecutionName name) {
     DeleteExecutionRequest request =
         DeleteExecutionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteExecutionAsync(request);
@@ -732,7 +736,8 @@ public class ExecutionsClient implements BackgroundResource {
    *     `{project}` can be project id or number.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Execution, Execution> cancelExecutionAsync(ExecutionName name) {
+  public final OperationFuture<Execution, Execution> cancelExecutionAsync(
+      @Nullable ExecutionName name) {
     CancelExecutionRequest request =
         CancelExecutionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return cancelExecutionAsync(request);
@@ -919,8 +924,8 @@ public class ExecutionsClient implements BackgroundResource {
           ListExecutionsRequest, ListExecutionsResponse, Execution, ListExecutionsPage> {
 
     private ListExecutionsPage(
-        PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
-        ListExecutionsResponse response) {
+        @Nullable PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
+        @Nullable ListExecutionsResponse response) {
       super(context, response);
     }
 
@@ -930,14 +935,14 @@ public class ExecutionsClient implements BackgroundResource {
 
     @Override
     protected ListExecutionsPage createPage(
-        PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
-        ListExecutionsResponse response) {
+        @Nullable PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
+        @Nullable ListExecutionsResponse response) {
       return new ListExecutionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListExecutionsPage> createPageAsync(
-        PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
+        @Nullable PageContext<ListExecutionsRequest, ListExecutionsResponse, Execution> context,
         ApiFuture<ListExecutionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -951,7 +956,8 @@ public class ExecutionsClient implements BackgroundResource {
           ListExecutionsPage,
           ListExecutionsFixedSizeCollection> {
 
-    private ListExecutionsFixedSizeCollection(List<ListExecutionsPage> pages, int collectionSize) {
+    private ListExecutionsFixedSizeCollection(
+        @Nullable List<ListExecutionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -961,7 +967,7 @@ public class ExecutionsClient implements BackgroundResource {
 
     @Override
     protected ListExecutionsFixedSizeCollection createCollection(
-        List<ListExecutionsPage> pages, int collectionSize) {
+        @Nullable List<ListExecutionsPage> pages, int collectionSize) {
       return new ListExecutionsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -35,6 +35,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.api.core.ApiClock;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -44,8 +45,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class InstantiatingWatchdogProviderTest {
   @Mock private ScheduledExecutorService executor;
-  @Mock private ApiClock clock;
+  private ApiClock clock;
   private java.time.Duration checkInterval = java.time.Duration.ofSeconds(11);
+
+  @BeforeEach
+  void setUp() {
+    clock = Mockito.mock(ApiClock.class, Mockito.withSettings().withoutAnnotations());
+  }
 
   @Test
   void happyPath() {

@@ -68,6 +68,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -93,6 +95,7 @@ import javax.annotation.Generated;
  *       GetDocumentRequest.newBuilder()
  *           .setName("name3373707")
  *           .setMask(DocumentMask.newBuilder().build())
+ *           .setRequestOptions(RequestOptions.newBuilder().build())
  *           .build();
  *   Document response = firestoreClient.getDocument(request);
  * }
@@ -409,9 +412,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class FirestoreClient implements BackgroundResource {
-  private final FirestoreSettings settings;
+  private final @Nullable FirestoreSettings settings;
   private final FirestoreStub stub;
 
   /** Constructs an instance of FirestoreClient with default settings. */
@@ -449,7 +453,7 @@ public class FirestoreClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final FirestoreSettings getSettings() {
+  public final @Nullable FirestoreSettings getSettings() {
     return settings;
   }
 
@@ -474,6 +478,7 @@ public class FirestoreClient implements BackgroundResource {
    *       GetDocumentRequest.newBuilder()
    *           .setName("name3373707")
    *           .setMask(DocumentMask.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   Document response = firestoreClient.getDocument(request);
    * }
@@ -503,6 +508,7 @@ public class FirestoreClient implements BackgroundResource {
    *       GetDocumentRequest.newBuilder()
    *           .setName("name3373707")
    *           .setMask(DocumentMask.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Document> future = firestoreClient.getDocumentCallable().futureCall(request);
    *   // Do something.
@@ -536,6 +542,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setMask(DocumentMask.newBuilder().build())
    *           .setShowMissing(true)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   for (Document element : firestoreClient.listDocuments(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -572,6 +579,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setMask(DocumentMask.newBuilder().build())
    *           .setShowMissing(true)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Document> future = firestoreClient.listDocumentsPagedCallable().futureCall(request);
    *   // Do something.
@@ -608,6 +616,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setOrderBy("orderBy-1207110587")
    *           .setMask(DocumentMask.newBuilder().build())
    *           .setShowMissing(true)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   while (true) {
    *     ListDocumentsResponse response = firestoreClient.listDocumentsCallable().call(request);
@@ -681,6 +690,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setUpdateMask(DocumentMask.newBuilder().build())
    *           .setMask(DocumentMask.newBuilder().build())
    *           .setCurrentDocument(Precondition.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   Document response = firestoreClient.updateDocument(request);
    * }
@@ -712,6 +722,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setUpdateMask(DocumentMask.newBuilder().build())
    *           .setMask(DocumentMask.newBuilder().build())
    *           .setCurrentDocument(Precondition.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Document> future = firestoreClient.updateDocumentCallable().futureCall(request);
    *   // Do something.
@@ -767,6 +778,7 @@ public class FirestoreClient implements BackgroundResource {
    *       DeleteDocumentRequest.newBuilder()
    *           .setName("name3373707")
    *           .setCurrentDocument(Precondition.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   firestoreClient.deleteDocument(request);
    * }
@@ -796,6 +808,7 @@ public class FirestoreClient implements BackgroundResource {
    *       DeleteDocumentRequest.newBuilder()
    *           .setName("name3373707")
    *           .setCurrentDocument(Precondition.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Empty> future = firestoreClient.deleteDocumentCallable().futureCall(request);
    *   // Do something.
@@ -828,6 +841,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setDatabase("database1789464955")
    *           .addAllDocuments(new ArrayList<String>())
    *           .setMask(DocumentMask.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ServerStream<BatchGetDocumentsResponse> stream =
    *       firestoreClient.batchGetDocumentsCallable().call(request);
@@ -887,6 +901,7 @@ public class FirestoreClient implements BackgroundResource {
    *       BeginTransactionRequest.newBuilder()
    *           .setDatabase("database1789464955")
    *           .setOptions(TransactionOptions.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   BeginTransactionResponse response = firestoreClient.beginTransaction(request);
    * }
@@ -916,6 +931,7 @@ public class FirestoreClient implements BackgroundResource {
    *       BeginTransactionRequest.newBuilder()
    *           .setDatabase("database1789464955")
    *           .setOptions(TransactionOptions.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<BeginTransactionResponse> future =
    *       firestoreClient.beginTransactionCallable().futureCall(request);
@@ -978,6 +994,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setDatabase("database1789464955")
    *           .addAllWrites(new ArrayList<Write>())
    *           .setTransaction(ByteString.EMPTY)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   CommitResponse response = firestoreClient.commit(request);
    * }
@@ -1008,6 +1025,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setDatabase("database1789464955")
    *           .addAllWrites(new ArrayList<Write>())
    *           .setTransaction(ByteString.EMPTY)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<CommitResponse> future = firestoreClient.commitCallable().futureCall(request);
    *   // Do something.
@@ -1066,6 +1084,7 @@ public class FirestoreClient implements BackgroundResource {
    *       RollbackRequest.newBuilder()
    *           .setDatabase("database1789464955")
    *           .setTransaction(ByteString.EMPTY)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   firestoreClient.rollback(request);
    * }
@@ -1095,6 +1114,7 @@ public class FirestoreClient implements BackgroundResource {
    *       RollbackRequest.newBuilder()
    *           .setDatabase("database1789464955")
    *           .setTransaction(ByteString.EMPTY)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Empty> future = firestoreClient.rollbackCallable().futureCall(request);
    *   // Do something.
@@ -1123,6 +1143,7 @@ public class FirestoreClient implements BackgroundResource {
    *       RunQueryRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setExplainOptions(ExplainOptions.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ServerStream<RunQueryResponse> stream = firestoreClient.runQueryCallable().call(request);
    *   for (RunQueryResponse response : stream) {
@@ -1152,6 +1173,7 @@ public class FirestoreClient implements BackgroundResource {
    *       ExecutePipelineRequest.newBuilder()
    *           .setDatabase("database1789464955")
    *           .setAutoCommitTransaction(true)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ServerStream<ExecutePipelineResponse> stream =
    *       firestoreClient.executePipelineCallable().call(request);
@@ -1193,6 +1215,7 @@ public class FirestoreClient implements BackgroundResource {
    *       RunAggregationQueryRequest.newBuilder()
    *           .setParent("parent-995424086")
    *           .setExplainOptions(ExplainOptions.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ServerStream<RunAggregationQueryResponse> stream =
    *       firestoreClient.runAggregationQueryCallable().call(request);
@@ -1228,6 +1251,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setPartitionCount(-1738969222)
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   for (Cursor element : firestoreClient.partitionQuery(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1263,6 +1287,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setPartitionCount(-1738969222)
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Cursor> future = firestoreClient.partitionQueryPagedCallable().futureCall(request);
    *   // Do something.
@@ -1298,6 +1323,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setPartitionCount(-1738969222)
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   while (true) {
    *     PartitionQueryResponse response = firestoreClient.partitionQueryCallable().call(request);
@@ -1341,6 +1367,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .addAllWrites(new ArrayList<Write>())
    *           .setStreamToken(ByteString.EMPTY)
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   bidiStream.send(request);
    *   for (WriteResponse response : bidiStream) {
@@ -1372,6 +1399,7 @@ public class FirestoreClient implements BackgroundResource {
    *       ListenRequest.newBuilder()
    *           .setDatabase("database1789464955")
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   bidiStream.send(request);
    *   for (ListenResponse response : bidiStream) {
@@ -1435,6 +1463,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   for (String element : firestoreClient.listCollectionIds(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1467,6 +1496,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<String> future =
    *       firestoreClient.listCollectionIdsPagedCallable().futureCall(request);
@@ -1500,6 +1530,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   while (true) {
    *     ListCollectionIdsResponse response =
@@ -1548,6 +1579,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setDatabase("database1789464955")
    *           .addAllWrites(new ArrayList<Write>())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   BatchWriteResponse response = firestoreClient.batchWrite(request);
    * }
@@ -1586,6 +1618,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setDatabase("database1789464955")
    *           .addAllWrites(new ArrayList<Write>())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<BatchWriteResponse> future =
    *       firestoreClient.batchWriteCallable().futureCall(request);
@@ -1618,6 +1651,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setDocumentId("documentId-814940266")
    *           .setDocument(Document.newBuilder().build())
    *           .setMask(DocumentMask.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   Document response = firestoreClient.createDocument(request);
    * }
@@ -1650,6 +1684,7 @@ public class FirestoreClient implements BackgroundResource {
    *           .setDocumentId("documentId-814940266")
    *           .setDocument(Document.newBuilder().build())
    *           .setMask(DocumentMask.newBuilder().build())
+   *           .setRequestOptions(RequestOptions.newBuilder().build())
    *           .build();
    *   ApiFuture<Document> future = firestoreClient.createDocumentCallable().futureCall(request);
    *   // Do something.
@@ -1720,8 +1755,8 @@ public class FirestoreClient implements BackgroundResource {
           ListDocumentsRequest, ListDocumentsResponse, Document, ListDocumentsPage> {
 
     private ListDocumentsPage(
-        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
-        ListDocumentsResponse response) {
+        @Nullable PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        @Nullable ListDocumentsResponse response) {
       super(context, response);
     }
 
@@ -1731,14 +1766,14 @@ public class FirestoreClient implements BackgroundResource {
 
     @Override
     protected ListDocumentsPage createPage(
-        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
-        ListDocumentsResponse response) {
+        @Nullable PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        @Nullable ListDocumentsResponse response) {
       return new ListDocumentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDocumentsPage> createPageAsync(
-        PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
+        @Nullable PageContext<ListDocumentsRequest, ListDocumentsResponse, Document> context,
         ApiFuture<ListDocumentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1752,7 +1787,8 @@ public class FirestoreClient implements BackgroundResource {
           ListDocumentsPage,
           ListDocumentsFixedSizeCollection> {
 
-    private ListDocumentsFixedSizeCollection(List<ListDocumentsPage> pages, int collectionSize) {
+    private ListDocumentsFixedSizeCollection(
+        @Nullable List<ListDocumentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1762,7 +1798,7 @@ public class FirestoreClient implements BackgroundResource {
 
     @Override
     protected ListDocumentsFixedSizeCollection createCollection(
-        List<ListDocumentsPage> pages, int collectionSize) {
+        @Nullable List<ListDocumentsPage> pages, int collectionSize) {
       return new ListDocumentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1796,8 +1832,8 @@ public class FirestoreClient implements BackgroundResource {
           PartitionQueryRequest, PartitionQueryResponse, Cursor, PartitionQueryPage> {
 
     private PartitionQueryPage(
-        PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
-        PartitionQueryResponse response) {
+        @Nullable PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
+        @Nullable PartitionQueryResponse response) {
       super(context, response);
     }
 
@@ -1807,14 +1843,14 @@ public class FirestoreClient implements BackgroundResource {
 
     @Override
     protected PartitionQueryPage createPage(
-        PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
-        PartitionQueryResponse response) {
+        @Nullable PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
+        @Nullable PartitionQueryResponse response) {
       return new PartitionQueryPage(context, response);
     }
 
     @Override
     public ApiFuture<PartitionQueryPage> createPageAsync(
-        PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
+        @Nullable PageContext<PartitionQueryRequest, PartitionQueryResponse, Cursor> context,
         ApiFuture<PartitionQueryResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1828,7 +1864,8 @@ public class FirestoreClient implements BackgroundResource {
           PartitionQueryPage,
           PartitionQueryFixedSizeCollection> {
 
-    private PartitionQueryFixedSizeCollection(List<PartitionQueryPage> pages, int collectionSize) {
+    private PartitionQueryFixedSizeCollection(
+        @Nullable List<PartitionQueryPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1838,7 +1875,7 @@ public class FirestoreClient implements BackgroundResource {
 
     @Override
     protected PartitionQueryFixedSizeCollection createCollection(
-        List<PartitionQueryPage> pages, int collectionSize) {
+        @Nullable List<PartitionQueryPage> pages, int collectionSize) {
       return new PartitionQueryFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1872,8 +1909,8 @@ public class FirestoreClient implements BackgroundResource {
           ListCollectionIdsRequest, ListCollectionIdsResponse, String, ListCollectionIdsPage> {
 
     private ListCollectionIdsPage(
-        PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
-        ListCollectionIdsResponse response) {
+        @Nullable PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
+        @Nullable ListCollectionIdsResponse response) {
       super(context, response);
     }
 
@@ -1883,14 +1920,14 @@ public class FirestoreClient implements BackgroundResource {
 
     @Override
     protected ListCollectionIdsPage createPage(
-        PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
-        ListCollectionIdsResponse response) {
+        @Nullable PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
+        @Nullable ListCollectionIdsResponse response) {
       return new ListCollectionIdsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCollectionIdsPage> createPageAsync(
-        PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
+        @Nullable PageContext<ListCollectionIdsRequest, ListCollectionIdsResponse, String> context,
         ApiFuture<ListCollectionIdsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1905,7 +1942,7 @@ public class FirestoreClient implements BackgroundResource {
           ListCollectionIdsFixedSizeCollection> {
 
     private ListCollectionIdsFixedSizeCollection(
-        List<ListCollectionIdsPage> pages, int collectionSize) {
+        @Nullable List<ListCollectionIdsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1915,7 +1952,7 @@ public class FirestoreClient implements BackgroundResource {
 
     @Override
     protected ListCollectionIdsFixedSizeCollection createCollection(
-        List<ListCollectionIdsPage> pages, int collectionSize) {
+        @Nullable List<ListCollectionIdsPage> pages, int collectionSize) {
       return new ListCollectionIdsFixedSizeCollection(pages, collectionSize);
     }
   }

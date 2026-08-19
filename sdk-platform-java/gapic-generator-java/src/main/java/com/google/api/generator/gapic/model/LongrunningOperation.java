@@ -16,16 +16,17 @@ package com.google.api.generator.gapic.model;
 
 import com.google.api.generator.engine.ast.TypeNode;
 import com.google.auto.value.AutoValue;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
+@NullMarked
 @AutoValue
 public abstract class LongrunningOperation {
   public abstract TypeNode responseType();
 
   public abstract TypeNode metadataType();
 
-  @Nullable
-  public abstract TypeNode operationServiceStubType();
+  public abstract @Nullable TypeNode operationServiceStubType();
 
   public static Builder builder() {
     return new AutoValue_LongrunningOperation.Builder();

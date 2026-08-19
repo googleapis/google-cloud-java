@@ -27,6 +27,7 @@ import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest;
 import com.google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
@@ -55,6 +56,13 @@ import java.sql.SQLException;
 import java.sql.SQLXML;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.sql.Types;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -68,7 +76,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   protected int parameterCount = 0;
   protected String currentQuery;
   private Queue<ArrayList<BigQueryJdbcParameter>> batchParameters = new LinkedList<>();
-  private Schema insertSchema = null;
+  Schema insertSchema = null;
   private TableName insertTableName = null;
 
   BigQueryPreparedStatement(BigQueryConnection connection, String query) {
@@ -89,12 +97,20 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public ResultSet executeQuery() throws SQLException {
-    return super.executeQuery(this.currentQuery);
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        "BigQueryPreparedStatement.executeQuery",
+        this.connection,
+        this.currentQuery,
+        () -> super.executeQuery(this.currentQuery));
   }
 
   @Override
   public long executeLargeUpdate() throws SQLException {
-    return super.executeLargeUpdate(this.currentQuery);
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        "BigQueryPreparedStatement.executeLargeUpdate",
+        this.connection,
+        this.currentQuery,
+        () -> super.executeLargeUpdate(this.currentQuery));
   }
 
   @Override
@@ -104,7 +120,11 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public boolean execute() throws SQLException {
-    return super.execute(this.currentQuery);
+    return BigQueryJdbcOpenTelemetry.withTracing(
+        "BigQueryPreparedStatement.execute",
+        this.connection,
+        this.currentQuery,
+        () -> super.execute(this.currentQuery));
   }
 
   @Override
@@ -114,115 +134,163 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setNull(int parameterIndex, int sqlType) {
-    // TODO(neenu): implement null case
-  }
-
-  @Override
-  public void setBoolean(int parameterIndex, boolean x) throws SQLException {
+  public void setNull(int parameterIndex, int sqlType) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Boolean.class);
+    Class<?> javaType = BigQueryJdbcTypeMappings.getJavaType(sqlType);
+    this.parameterHandler.setParameter(parameterIndex, null, javaType);
   }
 
   @Override
-  public void setByte(int parameterIndex, byte x) throws SQLException {
+  public void setBoolean(int parameterIndex, boolean value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Byte.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Boolean.class);
   }
 
   @Override
-  public void setShort(int parameterIndex, short x) {
-    // TODO(neenu): implement Bytes conversion.
-  }
-
-  @Override
-  public void setInt(int parameterIndex, int x) throws SQLException {
+  public void setByte(int parameterIndex, byte value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Integer.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Byte.class);
   }
 
   @Override
-  public void setLong(int parameterIndex, long x) throws SQLException {
+  public void setShort(int parameterIndex, short value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Long.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Short.class);
   }
 
   @Override
-  public void setFloat(int parameterIndex, float x) throws SQLException {
+  public void setInt(int parameterIndex, int value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Float.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Integer.class);
   }
 
   @Override
-  public void setDouble(int parameterIndex, double x) throws SQLException {
+  public void setLong(int parameterIndex, long value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, Double.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Long.class);
   }
 
   @Override
-  public void setBigDecimal(int parameterIndex, BigDecimal x) throws SQLException {
+  public void setFloat(int parameterIndex, float value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, BigDecimal.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Float.class);
   }
 
   @Override
-  public void setString(int parameterIndex, String x) throws SQLException {
+  public void setDouble(int parameterIndex, double value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x, String.class);
+    this.parameterHandler.setParameter(parameterIndex, value, Double.class);
   }
 
   @Override
-  public void setBytes(int parameterIndex, byte[] x) {
-    // TODO(neenu): implement Bytes conversion.
-  }
-
-  @Override
-  public void setDate(int parameterIndex, Date x) throws SQLException {
+  public void setBigDecimal(int parameterIndex, BigDecimal value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x.toString(), String.class);
+    this.parameterHandler.setParameter(parameterIndex, value, BigDecimal.class);
   }
 
   @Override
-  public void setTime(int parameterIndex, Time x) throws SQLException {
+  public void setString(int parameterIndex, String value) throws SQLException {
     checkClosed();
-    this.parameterHandler.setParameter(parameterIndex, x.toString(), String.class);
+    this.parameterHandler.setParameter(parameterIndex, value, String.class);
   }
 
   @Override
-  public void setTimestamp(int parameterIndex, Timestamp x) throws SQLException {
+  public void setBytes(int parameterIndex, byte[] value) throws SQLException {
     checkClosed();
-    if (x == null) {
-      this.parameterHandler.setParameter(parameterIndex, null, String.class);
-      return;
-    }
-    Timestamp copy = new Timestamp(x.getTime());
-    copy.setNanos((x.getNanos() / 1000) * 1000);
-    this.parameterHandler.setParameter(parameterIndex, copy.toString(), String.class);
+    this.parameterHandler.setParameter(parameterIndex, value, byte[].class);
   }
 
   @Override
-  public void setAsciiStream(int parameterIndex, InputStream x, int length) {
-    // TODO :NOT IMPLEMENTED
+  public void setDate(int parameterIndex, Date value) throws SQLException {
+    checkClosed();
+    this.parameterHandler.setParameter(parameterIndex, value, Date.class);
+  }
+
+  @Override
+  public void setTime(int parameterIndex, Time value) throws SQLException {
+    checkClosed();
+    this.parameterHandler.setParameter(parameterIndex, value, Time.class);
+  }
+
+  @Override
+  public void setTimestamp(int parameterIndex, Timestamp value) throws SQLException {
+    checkClosed();
+    this.parameterHandler.setParameter(parameterIndex, value, Timestamp.class);
+  }
+
+  @Override
+  public void setAsciiStream(int parameterIndex, InputStream value, int length)
+      throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setAsciiStream is not supported.");
   }
 
   @Override
   @Deprecated
   @SuppressWarnings("deprecation")
-  public void setUnicodeStream(int parameterIndex, InputStream x, int length) {
-    // TODO :NOT IMPLEMENTED
+  public void setUnicodeStream(int parameterIndex, InputStream value, int length)
+      throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setUnicodeStream is not supported.");
   }
 
   @Override
-  public void setBinaryStream(int parameterIndex, InputStream x, int length) {
-    // TODO :NOT IMPLEMENTED
+  public void setBinaryStream(int parameterIndex, InputStream value, int length)
+      throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setBinaryStream is not supported.");
   }
 
   @Override
-  public void setObject(int parameterIndex, Object x, int targetSqlType) {}
+  public void setObject(int parameterIndex, Object value, int targetSqlType) throws SQLException {
+    checkClosed();
+    if (value == null) {
+      setNull(parameterIndex, targetSqlType);
+      return;
+    }
+    if (setTemporalObject(parameterIndex, value)) {
+      return;
+    }
+    Class<?> javaType = BigQueryJdbcTypeMappings.getJavaType(targetSqlType);
+    this.parameterHandler.setParameter(parameterIndex, value, javaType);
+  }
 
   @Override
-  public void setObject(int parameterIndex, Object x) {
-    // TODO :NOT IMPLEMENTED
+  public void setObject(int parameterIndex, Object value) throws SQLException {
+    checkClosed();
+    if (value == null) {
+      setNull(parameterIndex, Types.NULL);
+      return;
+    }
+    if (setTemporalObject(parameterIndex, value)) {
+      return;
+    }
+    this.parameterHandler.setParameter(parameterIndex, value, value.getClass());
+  }
+
+  private boolean setTemporalObject(int parameterIndex, Object value) throws SQLException {
+    if (value instanceof LocalDate) {
+      setDate(parameterIndex, Date.valueOf((LocalDate) value));
+      return true;
+    }
+    if (value instanceof LocalTime) {
+      setTime(parameterIndex, Time.valueOf((LocalTime) value));
+      return true;
+    }
+    if (value instanceof LocalDateTime) {
+      setTimestamp(parameterIndex, Timestamp.valueOf((LocalDateTime) value));
+      return true;
+    }
+    if (value instanceof OffsetDateTime) {
+      setTimestamp(parameterIndex, Timestamp.from(((OffsetDateTime) value).toInstant()));
+      return true;
+    }
+    if (value instanceof Instant) {
+      setTimestamp(parameterIndex, Timestamp.from((Instant) value));
+      return true;
+    }
+    if (value instanceof ZonedDateTime) {
+      setTimestamp(parameterIndex, Timestamp.from(((ZonedDateTime) value).toInstant()));
+      return true;
+    }
+    return false;
   }
 
   @Override
@@ -402,7 +470,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       ArrayList<BigQueryJdbcParameter> parameterList = this.batchParameters.poll();
 
       for (BigQueryJdbcParameter parameter : parameterList) {
-        Object parameterValue = parameter.getValue();
+        Object parameterValue =
+            BigQueryParameterHandler.formatValueForQueryParameter(
+                parameter.getValue(), parameter.getSqlType());
         StandardSQLTypeName sqlType = parameter.getSqlType();
         LOG.finer(
             "Parameter %s of type %s at index %s added to QueryJobConfiguration",
@@ -424,159 +494,179 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   @Override
-  public void setCharacterStream(int parameterIndex, Reader reader, int length) {
-    // TODO :NOT IMPLEMENTED
+  public void setCharacterStream(int parameterIndex, Reader reader, int length)
+      throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setCharacterStream is not supported.");
   }
 
   @Override
-  public void setRef(int parameterIndex, Ref x) {
-    // TODO :NOT IMPLEMENTED
+  public void setRef(int parameterIndex, Ref x) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setRef is not supported.");
   }
 
   @Override
-  public void setBlob(int parameterIndex, Blob x) {
-    // TODO :NOT IMPLEMENTED
+  public void setBlob(int parameterIndex, Blob x) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setBlob is not supported.");
   }
 
   @Override
-  public void setClob(int parameterIndex, Clob x) {
-    // TODO :NOT IMPLEMENTED
+  public void setClob(int parameterIndex, Clob x) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setClob is not supported.");
   }
 
   @Override
-  public void setArray(int parameterIndex, Array x) {
-    // TODO(neenu) :IMPLEMENT ARRAY
+  public void setArray(int parameterIndex, Array value) throws SQLException {
+    checkClosed();
+    this.parameterHandler.setParameter(parameterIndex, value, Array.class);
   }
 
   @Override
-  public ResultSetMetaData getMetaData() {
-    // TODO(neenu) :IMPLEMENT metadata
+  public ResultSetMetaData getMetaData() throws SQLException {
+    checkClosed();
+    if (this.insertSchema != null) {
+      return BigQueryResultSetMetadata.of(this.insertSchema.getFields(), this);
+    }
     return null;
   }
 
   @Override
-  public void setDate(int parameterIndex, Date x, Calendar cal) {
-    // TODO :NOT IMPLEMENTED
+  public void setDate(int parameterIndex, Date value, Calendar calendar) throws SQLException {
+    checkClosed();
+    setDate(parameterIndex, BigQueryTypeCoercionUtility.convertDateToCalendar(value, calendar));
   }
 
   @Override
-  public void setTime(int parameterIndex, Time x, Calendar cal) {
-    // TODO :NOT IMPLEMENTED
+  public void setTime(int parameterIndex, Time value, Calendar calendar) throws SQLException {
+    checkClosed();
+    setTime(parameterIndex, BigQueryTypeCoercionUtility.convertTimeWithCalendar(value, calendar));
   }
 
   @Override
-  public void setTimestamp(int parameterIndex, Timestamp x, Calendar cal) {
-    // TODO :NOT IMPLEMENTED
+  public void setTimestamp(int parameterIndex, Timestamp value, Calendar calendar)
+      throws SQLException {
+    checkClosed();
+    setTimestamp(
+        parameterIndex, BigQueryTypeCoercionUtility.convertTimestampWithCalendar(value, calendar));
   }
 
   @Override
-  public void setNull(int parameterIndex, int sqlType, String typeName) {
-    // TODO :NOT IMPLEMENTED
+  public void setNull(int parameterIndex, int sqlType, String typeName) throws SQLException {
+    setNull(parameterIndex, sqlType);
   }
 
   @Override
-  public void setURL(int parameterIndex, URL x) {
-    // TODO :NOT IMPLEMENTED
+  public void setURL(int parameterIndex, URL x) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setURL is not supported.");
   }
 
   @Override
-  public ParameterMetaData getParameterMetaData() {
-    // TODO(neenu) :IMPLEMENT
-    return null;
+  public ParameterMetaData getParameterMetaData() throws SQLException {
+    checkClosed();
+    return new BigQueryParameterMetaData(this.parameterCount, this.parameterHandler);
   }
 
   @Override
-  public void setRowId(int parameterIndex, RowId x) {
-    // TODO :NOT IMPLEMENTED
+  public void setRowId(int parameterIndex, RowId x) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setRowId is not supported.");
   }
 
   @Override
-  public void setNString(int parameterIndex, String value) {
-    // TODO :NOT IMPLEMENTED
+  public void setNString(int parameterIndex, String value) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setNString is not supported.");
   }
 
   @Override
-  public void setNCharacterStream(int parameterIndex, Reader value, long length) {
-    // TODO :NOT IMPLEMENTED
+  public void setNCharacterStream(int parameterIndex, Reader value, long length)
+      throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setNCharacterStream is not supported.");
   }
 
   @Override
-  public void setNClob(int parameterIndex, NClob value) {
-    // TODO :NOT IMPLEMENTED
+  public void setNClob(int parameterIndex, NClob value) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setNClob is not supported.");
   }
 
   @Override
-  public void setClob(int parameterIndex, Reader reader, long length) {
-    // TODO :NOT IMPLEMENTED
+  public void setClob(int parameterIndex, Reader reader, long length) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setClob is not supported.");
   }
 
   @Override
-  public void setBlob(int parameterIndex, InputStream inputStream, long length) {
-    // TODO :NOT IMPLEMENTED
+  public void setBlob(int parameterIndex, InputStream inputStream, long length)
+      throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setBlob is not supported.");
   }
 
   @Override
-  public void setNClob(int parameterIndex, Reader reader, long length) {
-    // TODO :NOT IMPLEMENTED
+  public void setNClob(int parameterIndex, Reader reader, long length) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setNClob is not supported.");
   }
 
   @Override
-  public void setSQLXML(int parameterIndex, SQLXML xmlObject) {
-    // TODO :NOT IMPLEMENTED
+  public void setSQLXML(int parameterIndex, SQLXML xmlObject) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setSQLXML is not supported.");
+  }
+
+  /**
+   * Note: BigQuery handles numeric scale and precision dynamically for NUMERIC (DECIMAL) and
+   * BIGNUMERIC data types. The scaleOrLength parameter is ignored and delegates directly to {@link
+   * #setObject(int, Object, int)}.
+   */
+  @Override
+  public void setObject(int parameterIndex, Object value, int targetSqlType, int scaleOrLength)
+      throws SQLException {
+    checkClosed();
+    setObject(parameterIndex, value, targetSqlType);
   }
 
   @Override
-  public void setObject(int parameterIndex, Object x, int targetSqlType, int scaleOrLength) {
-    // TODO(neenu) : IMPLEMENT?
+  public void setAsciiStream(int parameterIndex, InputStream x, long length) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setAsciiStream is not supported.");
   }
 
   @Override
-  public void setAsciiStream(int parameterIndex, InputStream x, long length) {
-    // TODO :NOT IMPLEMENTED
+  public void setBinaryStream(int parameterIndex, InputStream x, long length) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setBinaryStream is not supported.");
   }
 
   @Override
-  public void setBinaryStream(int parameterIndex, InputStream x, long length) {
-    // TODO :NOT IMPLEMENTED
+  public void setCharacterStream(int parameterIndex, Reader reader, long length)
+      throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setCharacterStream is not supported.");
   }
 
   @Override
-  public void setCharacterStream(int parameterIndex, Reader reader, long length) {
-    // TODO :NOT IMPLEMENTED
+  public void setAsciiStream(int parameterIndex, InputStream x) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setAsciiStream is not supported.");
   }
 
   @Override
-  public void setAsciiStream(int parameterIndex, InputStream x) {
-    // TODO :NOT IMPLEMENTED
+  public void setBinaryStream(int parameterIndex, InputStream x) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setBinaryStream is not supported.");
   }
 
   @Override
-  public void setBinaryStream(int parameterIndex, InputStream x) {
-    // TODO :NOT IMPLEMENTED
+  public void setCharacterStream(int parameterIndex, Reader reader) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setCharacterStream is not supported.");
   }
 
   @Override
-  public void setCharacterStream(int parameterIndex, Reader reader) {
-    // TODO :NOT IMPLEMENTED
+  public void setNCharacterStream(int parameterIndex, Reader value) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setNCharacterStream is not supported.");
   }
 
   @Override
-  public void setNCharacterStream(int parameterIndex, Reader value) {
-    // TODO :NOT IMPLEMENTED
+  public void setClob(int parameterIndex, Reader reader) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setClob is not supported.");
   }
 
   @Override
-  public void setClob(int parameterIndex, Reader reader) {
-    // TODO :NOT IMPLEMENTED
+  public void setBlob(int parameterIndex, InputStream inputStream) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setBlob is not supported.");
   }
 
   @Override
-  public void setBlob(int parameterIndex, InputStream inputStream) {
-    // TODO :NOT IMPLEMENTED
-  }
-
-  @Override
-  public void setNClob(int parameterIndex, Reader reader) {
-    // TODO :NOT IMPLEMENTED
+  public void setNClob(int parameterIndex, Reader reader) throws SQLException {
+    throw new BigQueryJdbcSqlFeatureNotSupportedException("setNClob is not supported.");
   }
 }

@@ -14,6 +14,9 @@
 
 package com.google.api.generator.engine.ast;
 
+import org.jspecify.annotations.NullMarked;
+
+@NullMarked
 public interface AstNode {
   /** Writes the syntatically-correct Java code representation of this node. */
   public void accept(AstNodeVisitor visitor);

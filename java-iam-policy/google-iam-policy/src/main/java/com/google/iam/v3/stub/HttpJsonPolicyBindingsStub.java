@@ -56,6 +56,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -63,6 +64,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonPolicyBindingsStub extends PolicyBindingsStub {
   private static final TypeRegistry typeRegistry =
@@ -313,6 +315,7 @@ public class HttpJsonPolicyBindingsStub extends PolicyBindingsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<SearchTargetPolicyBindingsRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "target", request.getTarget());

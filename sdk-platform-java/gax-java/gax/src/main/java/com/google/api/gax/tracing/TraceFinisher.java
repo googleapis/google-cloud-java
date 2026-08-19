@@ -32,13 +32,14 @@ package com.google.api.gax.tracing;
 import com.google.api.core.ApiFutureCallback;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.CancellationException;
-import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
 /** An {@link ApiFutureCallback} to mark a started operation trace as finished. */
+@NullMarked
 class TraceFinisher<T> implements ApiFutureCallback<T> {
   private final ApiTracer tracer;
 
-  TraceFinisher(@Nonnull ApiTracer tracer) {
+  TraceFinisher(ApiTracer tracer) {
     this.tracer = Preconditions.checkNotNull(tracer, "tracer can't be null");
   }
 

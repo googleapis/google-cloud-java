@@ -34,6 +34,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -231,10 +233,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ServingConfigServiceClient implements BackgroundResource {
-  private final ServingConfigServiceSettings settings;
+  private final @Nullable ServingConfigServiceSettings settings;
   private final ServingConfigServiceStub stub;
 
   /** Constructs an instance of ServingConfigServiceClient with default settings. */
@@ -274,7 +277,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ServingConfigServiceSettings getSettings() {
+  public final @Nullable ServingConfigServiceSettings getSettings() {
     return settings;
   }
 
@@ -322,7 +325,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig createServingConfig(
-      DataStoreName parent, ServingConfig servingConfig, String servingConfigId) {
+      @Nullable DataStoreName parent, ServingConfig servingConfig, String servingConfigId) {
     CreateServingConfigRequest request =
         CreateServingConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -371,7 +374,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServingConfig createServingConfig(
-      EngineName parent, ServingConfig servingConfig, String servingConfigId) {
+      @Nullable EngineName parent, ServingConfig servingConfig, String servingConfigId) {
     CreateServingConfigRequest request =
         CreateServingConfigRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -542,7 +545,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteServingConfig(ServingConfigName name) {
+  public final void deleteServingConfig(@Nullable ServingConfigName name) {
     DeleteServingConfigRequest request =
         DeleteServingConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -787,7 +790,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServingConfig getServingConfig(ServingConfigName name) {
+  public final ServingConfig getServingConfig(@Nullable ServingConfigName name) {
     GetServingConfigRequest request =
         GetServingConfigRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getServingConfig(request);
@@ -921,7 +924,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServingConfigsPagedResponse listServingConfigs(DataStoreName parent) {
+  public final ListServingConfigsPagedResponse listServingConfigs(@Nullable DataStoreName parent) {
     ListServingConfigsRequest request =
         ListServingConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -955,7 +958,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServingConfigsPagedResponse listServingConfigs(EngineName parent) {
+  public final ListServingConfigsPagedResponse listServingConfigs(@Nullable EngineName parent) {
     ListServingConfigsRequest request =
         ListServingConfigsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1178,8 +1181,9 @@ public class ServingConfigServiceClient implements BackgroundResource {
           ListServingConfigsPage> {
 
     private ListServingConfigsPage(
-        PageContext<ListServingConfigsRequest, ListServingConfigsResponse, ServingConfig> context,
-        ListServingConfigsResponse response) {
+        @Nullable PageContext<ListServingConfigsRequest, ListServingConfigsResponse, ServingConfig>
+            context,
+        @Nullable ListServingConfigsResponse response) {
       super(context, response);
     }
 
@@ -1189,14 +1193,16 @@ public class ServingConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListServingConfigsPage createPage(
-        PageContext<ListServingConfigsRequest, ListServingConfigsResponse, ServingConfig> context,
-        ListServingConfigsResponse response) {
+        @Nullable PageContext<ListServingConfigsRequest, ListServingConfigsResponse, ServingConfig>
+            context,
+        @Nullable ListServingConfigsResponse response) {
       return new ListServingConfigsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServingConfigsPage> createPageAsync(
-        PageContext<ListServingConfigsRequest, ListServingConfigsResponse, ServingConfig> context,
+        @Nullable PageContext<ListServingConfigsRequest, ListServingConfigsResponse, ServingConfig>
+            context,
         ApiFuture<ListServingConfigsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1211,7 +1217,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
           ListServingConfigsFixedSizeCollection> {
 
     private ListServingConfigsFixedSizeCollection(
-        List<ListServingConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListServingConfigsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1221,7 +1227,7 @@ public class ServingConfigServiceClient implements BackgroundResource {
 
     @Override
     protected ListServingConfigsFixedSizeCollection createCollection(
-        List<ListServingConfigsPage> pages, int collectionSize) {
+        @Nullable List<ListServingConfigsPage> pages, int collectionSize) {
       return new ListServingConfigsFixedSizeCollection(pages, collectionSize);
     }
   }

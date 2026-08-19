@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.stub;
 import static com.google.cloud.compute.v1.RoutersClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.GetNatMappingInfoPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListBgpRoutesPagedResponse;
+import static com.google.cloud.compute.v1.RoutersClient.ListNamedSetsPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListPagedResponse;
 import static com.google.cloud.compute.v1.RoutersClient.ListRoutePoliciesPagedResponse;
 
@@ -51,8 +52,10 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRoutersRequest;
 import com.google.cloud.compute.v1.BgpRoute;
+import com.google.cloud.compute.v1.DeleteNamedSetRouterRequest;
 import com.google.cloud.compute.v1.DeleteRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.DeleteRouterRequest;
+import com.google.cloud.compute.v1.GetNamedSetRouterRequest;
 import com.google.cloud.compute.v1.GetNatIpInfoRouterRequest;
 import com.google.cloud.compute.v1.GetNatMappingInfoRoutersRequest;
 import com.google.cloud.compute.v1.GetRoutePolicyRouterRequest;
@@ -60,10 +63,13 @@ import com.google.cloud.compute.v1.GetRouterRequest;
 import com.google.cloud.compute.v1.GetRouterStatusRouterRequest;
 import com.google.cloud.compute.v1.InsertRouterRequest;
 import com.google.cloud.compute.v1.ListBgpRoutesRoutersRequest;
+import com.google.cloud.compute.v1.ListNamedSetsRoutersRequest;
 import com.google.cloud.compute.v1.ListRoutePoliciesRoutersRequest;
 import com.google.cloud.compute.v1.ListRoutersRequest;
+import com.google.cloud.compute.v1.NamedSet;
 import com.google.cloud.compute.v1.NatIpInfoResponse;
 import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PatchNamedSetRouterRequest;
 import com.google.cloud.compute.v1.PatchRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.PatchRouterRequest;
 import com.google.cloud.compute.v1.PreviewRouterRequest;
@@ -72,11 +78,14 @@ import com.google.cloud.compute.v1.Router;
 import com.google.cloud.compute.v1.RouterAggregatedList;
 import com.google.cloud.compute.v1.RouterList;
 import com.google.cloud.compute.v1.RouterStatusResponse;
+import com.google.cloud.compute.v1.RoutersGetNamedSetResponse;
 import com.google.cloud.compute.v1.RoutersGetRoutePolicyResponse;
 import com.google.cloud.compute.v1.RoutersListBgpRoutes;
+import com.google.cloud.compute.v1.RoutersListNamedSets;
 import com.google.cloud.compute.v1.RoutersListRoutePolicies;
 import com.google.cloud.compute.v1.RoutersPreviewResponse;
 import com.google.cloud.compute.v1.RoutersScopedList;
+import com.google.cloud.compute.v1.UpdateNamedSetRouterRequest;
 import com.google.cloud.compute.v1.UpdateRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.UpdateRouterRequest;
 import com.google.cloud.compute.v1.VmEndpointNatMappings;
@@ -90,6 +99,8 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -165,6 +176,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
@@ -181,11 +193,16 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
   private final UnaryCallSettings<DeleteRouterRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeleteRouterRequest, Operation, Operation>
       deleteOperationSettings;
+  private final UnaryCallSettings<DeleteNamedSetRouterRequest, Operation> deleteNamedSetSettings;
+  private final OperationCallSettings<DeleteNamedSetRouterRequest, Operation, Operation>
+      deleteNamedSetOperationSettings;
   private final UnaryCallSettings<DeleteRoutePolicyRouterRequest, Operation>
       deleteRoutePolicySettings;
   private final OperationCallSettings<DeleteRoutePolicyRouterRequest, Operation, Operation>
       deleteRoutePolicyOperationSettings;
   private final UnaryCallSettings<GetRouterRequest, Router> getSettings;
+  private final UnaryCallSettings<GetNamedSetRouterRequest, RoutersGetNamedSetResponse>
+      getNamedSetSettings;
   private final UnaryCallSettings<GetNatIpInfoRouterRequest, NatIpInfoResponse>
       getNatIpInfoSettings;
   private final PagedCallSettings<
@@ -205,11 +222,17 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, ListBgpRoutesPagedResponse>
       listBgpRoutesSettings;
   private final PagedCallSettings<
+          ListNamedSetsRoutersRequest, RoutersListNamedSets, ListNamedSetsPagedResponse>
+      listNamedSetsSettings;
+  private final PagedCallSettings<
           ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, ListRoutePoliciesPagedResponse>
       listRoutePoliciesSettings;
   private final UnaryCallSettings<PatchRouterRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchRouterRequest, Operation, Operation>
       patchOperationSettings;
+  private final UnaryCallSettings<PatchNamedSetRouterRequest, Operation> patchNamedSetSettings;
+  private final OperationCallSettings<PatchNamedSetRouterRequest, Operation, Operation>
+      patchNamedSetOperationSettings;
   private final UnaryCallSettings<PatchRoutePolicyRouterRequest, Operation>
       patchRoutePolicySettings;
   private final OperationCallSettings<PatchRoutePolicyRouterRequest, Operation, Operation>
@@ -218,6 +241,9 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
   private final UnaryCallSettings<UpdateRouterRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateRouterRequest, Operation, Operation>
       updateOperationSettings;
+  private final UnaryCallSettings<UpdateNamedSetRouterRequest, Operation> updateNamedSetSettings;
+  private final OperationCallSettings<UpdateNamedSetRouterRequest, Operation, Operation>
+      updateNamedSetOperationSettings;
   private final UnaryCallSettings<UpdateRoutePolicyRouterRequest, Operation>
       updateRoutePolicySettings;
   private final OperationCallSettings<UpdateRoutePolicyRouterRequest, Operation, Operation>
@@ -383,6 +409,45 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           };
 
   private static final PagedListDescriptor<
+          ListNamedSetsRoutersRequest, RoutersListNamedSets, NamedSet>
+      LIST_NAMED_SETS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListNamedSetsRoutersRequest, RoutersListNamedSets, NamedSet>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListNamedSetsRoutersRequest injectToken(
+                ListNamedSetsRoutersRequest payload, String token) {
+              return ListNamedSetsRoutersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListNamedSetsRoutersRequest injectPageSize(
+                ListNamedSetsRoutersRequest payload, int pageSize) {
+              return ListNamedSetsRoutersRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListNamedSetsRoutersRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(RoutersListNamedSets payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<NamedSet> extractResources(RoutersListNamedSets payload) {
+              return payload.getResultList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, RoutePolicy>
       LIST_ROUTE_POLICIES_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -504,6 +569,23 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          ListNamedSetsRoutersRequest, RoutersListNamedSets, ListNamedSetsPagedResponse>
+      LIST_NAMED_SETS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListNamedSetsRoutersRequest, RoutersListNamedSets, ListNamedSetsPagedResponse>() {
+            @Override
+            public ApiFuture<ListNamedSetsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListNamedSetsRoutersRequest, RoutersListNamedSets> callable,
+                ListNamedSetsRoutersRequest request,
+                ApiCallContext context,
+                ApiFuture<RoutersListNamedSets> futureResponse) {
+              PageContext<ListNamedSetsRoutersRequest, RoutersListNamedSets, NamedSet> pageContext =
+                  PageContext.create(callable, LIST_NAMED_SETS_PAGE_STR_DESC, request, context);
+              return ListNamedSetsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, ListRoutePoliciesPagedResponse>
       LIST_ROUTE_POLICIES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -542,6 +624,17 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     return deleteOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteNamedSet. */
+  public UnaryCallSettings<DeleteNamedSetRouterRequest, Operation> deleteNamedSetSettings() {
+    return deleteNamedSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteNamedSet. */
+  public OperationCallSettings<DeleteNamedSetRouterRequest, Operation, Operation>
+      deleteNamedSetOperationSettings() {
+    return deleteNamedSetOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteRoutePolicy. */
   public UnaryCallSettings<DeleteRoutePolicyRouterRequest, Operation> deleteRoutePolicySettings() {
     return deleteRoutePolicySettings;
@@ -556,6 +649,12 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetRouterRequest, Router> getSettings() {
     return getSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getNamedSet. */
+  public UnaryCallSettings<GetNamedSetRouterRequest, RoutersGetNamedSetResponse>
+      getNamedSetSettings() {
+    return getNamedSetSettings;
   }
 
   /** Returns the object with the settings used for calls to getNatIpInfo. */
@@ -607,6 +706,13 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     return listBgpRoutesSettings;
   }
 
+  /** Returns the object with the settings used for calls to listNamedSets. */
+  public PagedCallSettings<
+          ListNamedSetsRoutersRequest, RoutersListNamedSets, ListNamedSetsPagedResponse>
+      listNamedSetsSettings() {
+    return listNamedSetsSettings;
+  }
+
   /** Returns the object with the settings used for calls to listRoutePolicies. */
   public PagedCallSettings<
           ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies, ListRoutePoliciesPagedResponse>
@@ -622,6 +728,17 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
   /** Returns the object with the settings used for calls to patch. */
   public OperationCallSettings<PatchRouterRequest, Operation, Operation> patchOperationSettings() {
     return patchOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchNamedSet. */
+  public UnaryCallSettings<PatchNamedSetRouterRequest, Operation> patchNamedSetSettings() {
+    return patchNamedSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to patchNamedSet. */
+  public OperationCallSettings<PatchNamedSetRouterRequest, Operation, Operation>
+      patchNamedSetOperationSettings() {
+    return patchNamedSetOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to patchRoutePolicy. */
@@ -649,6 +766,17 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
   public OperationCallSettings<UpdateRouterRequest, Operation, Operation>
       updateOperationSettings() {
     return updateOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateNamedSet. */
+  public UnaryCallSettings<UpdateNamedSetRouterRequest, Operation> updateNamedSetSettings() {
+    return updateNamedSetSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateNamedSet. */
+  public OperationCallSettings<UpdateNamedSetRouterRequest, Operation, Operation>
+      updateNamedSetOperationSettings() {
+    return updateNamedSetOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to updateRoutePolicy. */
@@ -731,7 +859,7 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -746,10 +874,13 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
+    deleteNamedSetSettings = settingsBuilder.deleteNamedSetSettings().build();
+    deleteNamedSetOperationSettings = settingsBuilder.deleteNamedSetOperationSettings().build();
     deleteRoutePolicySettings = settingsBuilder.deleteRoutePolicySettings().build();
     deleteRoutePolicyOperationSettings =
         settingsBuilder.deleteRoutePolicyOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
+    getNamedSetSettings = settingsBuilder.getNamedSetSettings().build();
     getNatIpInfoSettings = settingsBuilder.getNatIpInfoSettings().build();
     getNatMappingInfoSettings = settingsBuilder.getNatMappingInfoSettings().build();
     getRoutePolicySettings = settingsBuilder.getRoutePolicySettings().build();
@@ -758,14 +889,19 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
     listBgpRoutesSettings = settingsBuilder.listBgpRoutesSettings().build();
+    listNamedSetsSettings = settingsBuilder.listNamedSetsSettings().build();
     listRoutePoliciesSettings = settingsBuilder.listRoutePoliciesSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
+    patchNamedSetSettings = settingsBuilder.patchNamedSetSettings().build();
+    patchNamedSetOperationSettings = settingsBuilder.patchNamedSetOperationSettings().build();
     patchRoutePolicySettings = settingsBuilder.patchRoutePolicySettings().build();
     patchRoutePolicyOperationSettings = settingsBuilder.patchRoutePolicyOperationSettings().build();
     previewSettings = settingsBuilder.previewSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
+    updateNamedSetSettings = settingsBuilder.updateNamedSetSettings().build();
+    updateNamedSetOperationSettings = settingsBuilder.updateNamedSetOperationSettings().build();
     updateRoutePolicySettings = settingsBuilder.updateRoutePolicySettings().build();
     updateRoutePolicyOperationSettings =
         settingsBuilder.updateRoutePolicyOperationSettings().build();
@@ -789,12 +925,18 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     private final UnaryCallSettings.Builder<DeleteRouterRequest, Operation> deleteSettings;
     private final OperationCallSettings.Builder<DeleteRouterRequest, Operation, Operation>
         deleteOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteNamedSetRouterRequest, Operation>
+        deleteNamedSetSettings;
+    private final OperationCallSettings.Builder<DeleteNamedSetRouterRequest, Operation, Operation>
+        deleteNamedSetOperationSettings;
     private final UnaryCallSettings.Builder<DeleteRoutePolicyRouterRequest, Operation>
         deleteRoutePolicySettings;
     private final OperationCallSettings.Builder<
             DeleteRoutePolicyRouterRequest, Operation, Operation>
         deleteRoutePolicyOperationSettings;
     private final UnaryCallSettings.Builder<GetRouterRequest, Router> getSettings;
+    private final UnaryCallSettings.Builder<GetNamedSetRouterRequest, RoutersGetNamedSetResponse>
+        getNamedSetSettings;
     private final UnaryCallSettings.Builder<GetNatIpInfoRouterRequest, NatIpInfoResponse>
         getNatIpInfoSettings;
     private final PagedCallSettings.Builder<
@@ -816,6 +958,9 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
             ListBgpRoutesRoutersRequest, RoutersListBgpRoutes, ListBgpRoutesPagedResponse>
         listBgpRoutesSettings;
     private final PagedCallSettings.Builder<
+            ListNamedSetsRoutersRequest, RoutersListNamedSets, ListNamedSetsPagedResponse>
+        listNamedSetsSettings;
+    private final PagedCallSettings.Builder<
             ListRoutePoliciesRoutersRequest,
             RoutersListRoutePolicies,
             ListRoutePoliciesPagedResponse>
@@ -823,6 +968,10 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     private final UnaryCallSettings.Builder<PatchRouterRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchRouterRequest, Operation, Operation>
         patchOperationSettings;
+    private final UnaryCallSettings.Builder<PatchNamedSetRouterRequest, Operation>
+        patchNamedSetSettings;
+    private final OperationCallSettings.Builder<PatchNamedSetRouterRequest, Operation, Operation>
+        patchNamedSetOperationSettings;
     private final UnaryCallSettings.Builder<PatchRoutePolicyRouterRequest, Operation>
         patchRoutePolicySettings;
     private final OperationCallSettings.Builder<PatchRoutePolicyRouterRequest, Operation, Operation>
@@ -832,6 +981,10 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     private final UnaryCallSettings.Builder<UpdateRouterRequest, Operation> updateSettings;
     private final OperationCallSettings.Builder<UpdateRouterRequest, Operation, Operation>
         updateOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateNamedSetRouterRequest, Operation>
+        updateNamedSetSettings;
+    private final OperationCallSettings.Builder<UpdateNamedSetRouterRequest, Operation, Operation>
+        updateNamedSetOperationSettings;
     private final UnaryCallSettings.Builder<UpdateRoutePolicyRouterRequest, Operation>
         updateRoutePolicySettings;
     private final OperationCallSettings.Builder<
@@ -884,15 +1037,18 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
+      deleteNamedSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteNamedSetOperationSettings = OperationCallSettings.newBuilder();
       deleteRoutePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteRoutePolicyOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getNamedSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getNatIpInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getNatMappingInfoSettings = PagedCallSettings.newBuilder(GET_NAT_MAPPING_INFO_PAGE_STR_FACT);
       getRoutePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -901,14 +1057,19 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
       listBgpRoutesSettings = PagedCallSettings.newBuilder(LIST_BGP_ROUTES_PAGE_STR_FACT);
+      listNamedSetsSettings = PagedCallSettings.newBuilder(LIST_NAMED_SETS_PAGE_STR_FACT);
       listRoutePoliciesSettings = PagedCallSettings.newBuilder(LIST_ROUTE_POLICIES_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
+      patchNamedSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      patchNamedSetOperationSettings = OperationCallSettings.newBuilder();
       patchRoutePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchRoutePolicyOperationSettings = OperationCallSettings.newBuilder();
       previewSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
+      updateNamedSetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateNamedSetOperationSettings = OperationCallSettings.newBuilder();
       updateRoutePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateRoutePolicyOperationSettings = OperationCallSettings.newBuilder();
 
@@ -916,8 +1077,10 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListSettings,
               deleteSettings,
+              deleteNamedSetSettings,
               deleteRoutePolicySettings,
               getSettings,
+              getNamedSetSettings,
               getNatIpInfoSettings,
               getNatMappingInfoSettings,
               getRoutePolicySettings,
@@ -925,11 +1088,14 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
               insertSettings,
               listSettings,
               listBgpRoutesSettings,
+              listNamedSetsSettings,
               listRoutePoliciesSettings,
               patchSettings,
+              patchNamedSetSettings,
               patchRoutePolicySettings,
               previewSettings,
               updateSettings,
+              updateNamedSetSettings,
               updateRoutePolicySettings);
       initDefaults(this);
     }
@@ -940,9 +1106,12 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
+      deleteNamedSetSettings = settings.deleteNamedSetSettings.toBuilder();
+      deleteNamedSetOperationSettings = settings.deleteNamedSetOperationSettings.toBuilder();
       deleteRoutePolicySettings = settings.deleteRoutePolicySettings.toBuilder();
       deleteRoutePolicyOperationSettings = settings.deleteRoutePolicyOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
+      getNamedSetSettings = settings.getNamedSetSettings.toBuilder();
       getNatIpInfoSettings = settings.getNatIpInfoSettings.toBuilder();
       getNatMappingInfoSettings = settings.getNatMappingInfoSettings.toBuilder();
       getRoutePolicySettings = settings.getRoutePolicySettings.toBuilder();
@@ -951,14 +1120,19 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
       listBgpRoutesSettings = settings.listBgpRoutesSettings.toBuilder();
+      listNamedSetsSettings = settings.listNamedSetsSettings.toBuilder();
       listRoutePoliciesSettings = settings.listRoutePoliciesSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
+      patchNamedSetSettings = settings.patchNamedSetSettings.toBuilder();
+      patchNamedSetOperationSettings = settings.patchNamedSetOperationSettings.toBuilder();
       patchRoutePolicySettings = settings.patchRoutePolicySettings.toBuilder();
       patchRoutePolicyOperationSettings = settings.patchRoutePolicyOperationSettings.toBuilder();
       previewSettings = settings.previewSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
+      updateNamedSetSettings = settings.updateNamedSetSettings.toBuilder();
+      updateNamedSetOperationSettings = settings.updateNamedSetOperationSettings.toBuilder();
       updateRoutePolicySettings = settings.updateRoutePolicySettings.toBuilder();
       updateRoutePolicyOperationSettings = settings.updateRoutePolicyOperationSettings.toBuilder();
 
@@ -966,8 +1140,10 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               aggregatedListSettings,
               deleteSettings,
+              deleteNamedSetSettings,
               deleteRoutePolicySettings,
               getSettings,
+              getNamedSetSettings,
               getNatIpInfoSettings,
               getNatMappingInfoSettings,
               getRoutePolicySettings,
@@ -975,11 +1151,14 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
               insertSettings,
               listSettings,
               listBgpRoutesSettings,
+              listNamedSetsSettings,
               listRoutePoliciesSettings,
               patchSettings,
+              patchNamedSetSettings,
               patchRoutePolicySettings,
               previewSettings,
               updateSettings,
+              updateNamedSetSettings,
               updateRoutePolicySettings);
     }
 
@@ -1007,12 +1186,22 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .deleteNamedSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .deleteRoutePolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getNamedSetSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1052,12 +1241,22 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .listNamedSetsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listRoutePoliciesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .patchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .patchNamedSetSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1077,6 +1276,11 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
+          .updateNamedSetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .updateRoutePolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -1086,6 +1290,30 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteRouterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .deleteNamedSetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteNamedSetRouterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -1177,6 +1405,30 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
                       .build()));
 
       builder
+          .patchNamedSetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PatchNamedSetRouterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
           .patchRoutePolicyOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -1205,6 +1457,30 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
           .setInitialCallSettings(
               UnaryCallSettings
                   .<UpdateRouterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
+      builder
+          .updateNamedSetOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateNamedSetRouterRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
                   .build())
@@ -1284,6 +1560,18 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       return deleteOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteNamedSet. */
+    public UnaryCallSettings.Builder<DeleteNamedSetRouterRequest, Operation>
+        deleteNamedSetSettings() {
+      return deleteNamedSetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNamedSet. */
+    public OperationCallSettings.Builder<DeleteNamedSetRouterRequest, Operation, Operation>
+        deleteNamedSetOperationSettings() {
+      return deleteNamedSetOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteRoutePolicy. */
     public UnaryCallSettings.Builder<DeleteRoutePolicyRouterRequest, Operation>
         deleteRoutePolicySettings() {
@@ -1299,6 +1587,12 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRouterRequest, Router> getSettings() {
       return getSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getNamedSet. */
+    public UnaryCallSettings.Builder<GetNamedSetRouterRequest, RoutersGetNamedSetResponse>
+        getNamedSetSettings() {
+      return getNamedSetSettings;
     }
 
     /** Returns the builder for the settings used for calls to getNatIpInfo. */
@@ -1352,6 +1646,13 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
       return listBgpRoutesSettings;
     }
 
+    /** Returns the builder for the settings used for calls to listNamedSets. */
+    public PagedCallSettings.Builder<
+            ListNamedSetsRoutersRequest, RoutersListNamedSets, ListNamedSetsPagedResponse>
+        listNamedSetsSettings() {
+      return listNamedSetsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listRoutePolicies. */
     public PagedCallSettings.Builder<
             ListRoutePoliciesRoutersRequest,
@@ -1370,6 +1671,18 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     public OperationCallSettings.Builder<PatchRouterRequest, Operation, Operation>
         patchOperationSettings() {
       return patchOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchNamedSet. */
+    public UnaryCallSettings.Builder<PatchNamedSetRouterRequest, Operation>
+        patchNamedSetSettings() {
+      return patchNamedSetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to patchNamedSet. */
+    public OperationCallSettings.Builder<PatchNamedSetRouterRequest, Operation, Operation>
+        patchNamedSetOperationSettings() {
+      return patchNamedSetOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to patchRoutePolicy. */
@@ -1399,6 +1712,18 @@ public class RoutersStubSettings extends StubSettings<RoutersStubSettings> {
     public OperationCallSettings.Builder<UpdateRouterRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateNamedSet. */
+    public UnaryCallSettings.Builder<UpdateNamedSetRouterRequest, Operation>
+        updateNamedSetSettings() {
+      return updateNamedSetSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateNamedSet. */
+    public OperationCallSettings.Builder<UpdateNamedSetRouterRequest, Operation, Operation>
+        updateNamedSetOperationSettings() {
+      return updateNamedSetOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateRoutePolicy. */

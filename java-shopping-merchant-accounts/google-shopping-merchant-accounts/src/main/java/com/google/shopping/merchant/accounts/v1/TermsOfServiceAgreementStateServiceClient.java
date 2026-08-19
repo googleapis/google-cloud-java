@@ -23,6 +23,8 @@ import com.google.shopping.merchant.accounts.v1.stub.TermsOfServiceAgreementStat
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -157,9 +159,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class TermsOfServiceAgreementStateServiceClient implements BackgroundResource {
-  private final TermsOfServiceAgreementStateServiceSettings settings;
+  private final @Nullable TermsOfServiceAgreementStateServiceSettings settings;
   private final TermsOfServiceAgreementStateServiceStub stub;
 
   /** Constructs an instance of TermsOfServiceAgreementStateServiceClient with default settings. */
@@ -205,7 +208,7 @@ public class TermsOfServiceAgreementStateServiceClient implements BackgroundReso
     this.stub = stub;
   }
 
-  public final TermsOfServiceAgreementStateServiceSettings getSettings() {
+  public final @Nullable TermsOfServiceAgreementStateServiceSettings getSettings() {
     return settings;
   }
 
@@ -240,7 +243,7 @@ public class TermsOfServiceAgreementStateServiceClient implements BackgroundReso
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TermsOfServiceAgreementState getTermsOfServiceAgreementState(
-      TermsOfServiceAgreementStateName name) {
+      @Nullable TermsOfServiceAgreementStateName name) {
     GetTermsOfServiceAgreementStateRequest request =
         GetTermsOfServiceAgreementStateRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -371,7 +374,7 @@ public class TermsOfServiceAgreementStateServiceClient implements BackgroundReso
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TermsOfServiceAgreementState retrieveForApplicationTermsOfServiceAgreementState(
-      AccountName parent) {
+      @Nullable AccountName parent) {
     RetrieveForApplicationTermsOfServiceAgreementStateRequest request =
         RetrieveForApplicationTermsOfServiceAgreementStateRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())

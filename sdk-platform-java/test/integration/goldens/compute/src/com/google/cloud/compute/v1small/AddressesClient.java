@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -186,9 +188,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AddressesClient implements BackgroundResource {
-  private final AddressesSettings settings;
+  private final @Nullable AddressesSettings settings;
   private final AddressesStub stub;
 
   /** Constructs an instance of AddressesClient with default settings. */
@@ -226,7 +229,7 @@ public class AddressesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AddressesSettings getSettings() {
+  public final @Nullable AddressesSettings getSettings() {
     return settings;
   }
 
@@ -855,12 +858,13 @@ public class AddressesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
-                AggregatedListAddressesRequest,
-                AddressAggregatedList,
-                Map.Entry<String, AddressesScopedList>>
-            context,
-        AddressAggregatedList response) {
+        @Nullable
+            PageContext<
+                    AggregatedListAddressesRequest,
+                    AddressAggregatedList,
+                    Map.Entry<String, AddressesScopedList>>
+                context,
+        @Nullable AddressAggregatedList response) {
       super(context, response);
     }
 
@@ -870,22 +874,24 @@ public class AddressesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
-                AggregatedListAddressesRequest,
-                AddressAggregatedList,
-                Map.Entry<String, AddressesScopedList>>
-            context,
-        AddressAggregatedList response) {
+        @Nullable
+            PageContext<
+                    AggregatedListAddressesRequest,
+                    AddressAggregatedList,
+                    Map.Entry<String, AddressesScopedList>>
+                context,
+        @Nullable AddressAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
-                AggregatedListAddressesRequest,
-                AddressAggregatedList,
-                Map.Entry<String, AddressesScopedList>>
-            context,
+        @Nullable
+            PageContext<
+                    AggregatedListAddressesRequest,
+                    AddressAggregatedList,
+                    Map.Entry<String, AddressesScopedList>>
+                context,
         ApiFuture<AddressAggregatedList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -899,7 +905,8 @@ public class AddressesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -909,7 +916,7 @@ public class AddressesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -936,7 +943,8 @@ public class AddressesClient implements BackgroundResource {
       extends AbstractPage<ListAddressesRequest, AddressList, Address, ListPage> {
 
     private ListPage(
-        PageContext<ListAddressesRequest, AddressList, Address> context, AddressList response) {
+        @Nullable PageContext<ListAddressesRequest, AddressList, Address> context,
+        @Nullable AddressList response) {
       super(context, response);
     }
 
@@ -946,13 +954,14 @@ public class AddressesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListAddressesRequest, AddressList, Address> context, AddressList response) {
+        @Nullable PageContext<ListAddressesRequest, AddressList, Address> context,
+        @Nullable AddressList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListAddressesRequest, AddressList, Address> context,
+        @Nullable PageContext<ListAddressesRequest, AddressList, Address> context,
         ApiFuture<AddressList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -962,7 +971,7 @@ public class AddressesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListAddressesRequest, AddressList, Address, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -971,7 +980,8 @@ public class AddressesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

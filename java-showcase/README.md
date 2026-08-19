@@ -8,7 +8,6 @@ the Showcase API which can communicate with a local Showcase server to perform i
 ## Requirements
 
 * Install [Go](https://go.dev) in your `PATH` (version 1.20 or later).
-* Install the [protoc](https://github.com/protocolbuffers/protobuf/releases) compiler in your `PATH`.
 
 ## Installing the Server
 
@@ -77,7 +76,7 @@ mvn verify -P enable-integration-tests
 This verify check compares the current checked-in files in `java-showcase` against a newly generated client.
 
 ### Prerequisites (One-time Setup)
-Make sure you have **Go** and **protoc** installed and available in your `PATH` (see the [Requirements](#requirements) section), then run the following setup steps from the repository root:
+Make sure you have **Go** installed and available in your `PATH` (see the [Requirements](#requirements) section), then run the following setup steps from the repository root:
 
 ```shell
 # Setup and activate Python virtual environment

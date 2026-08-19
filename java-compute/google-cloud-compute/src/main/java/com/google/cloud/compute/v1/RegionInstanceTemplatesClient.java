@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -186,9 +188,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionInstanceTemplatesClient implements BackgroundResource {
-  private final RegionInstanceTemplatesSettings settings;
+  private final @Nullable RegionInstanceTemplatesSettings settings;
   private final RegionInstanceTemplatesStub stub;
 
   /** Constructs an instance of RegionInstanceTemplatesClient with default settings. */
@@ -229,7 +232,7 @@ public class RegionInstanceTemplatesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionInstanceTemplatesSettings getSettings() {
+  public final @Nullable RegionInstanceTemplatesSettings getSettings() {
     return settings;
   }
 
@@ -835,9 +838,10 @@ public class RegionInstanceTemplatesClient implements BackgroundResource {
           ListRegionInstanceTemplatesRequest, InstanceTemplateList, InstanceTemplate, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionInstanceTemplatesRequest, InstanceTemplateList, InstanceTemplate>
+        @Nullable
+            PageContext<ListRegionInstanceTemplatesRequest, InstanceTemplateList, InstanceTemplate>
             context,
-        InstanceTemplateList response) {
+        @Nullable InstanceTemplateList response) {
       super(context, response);
     }
 
@@ -847,15 +851,17 @@ public class RegionInstanceTemplatesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionInstanceTemplatesRequest, InstanceTemplateList, InstanceTemplate>
+        @Nullable
+            PageContext<ListRegionInstanceTemplatesRequest, InstanceTemplateList, InstanceTemplate>
             context,
-        InstanceTemplateList response) {
+        @Nullable InstanceTemplateList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionInstanceTemplatesRequest, InstanceTemplateList, InstanceTemplate>
+        @Nullable
+            PageContext<ListRegionInstanceTemplatesRequest, InstanceTemplateList, InstanceTemplate>
             context,
         ApiFuture<InstanceTemplateList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -870,7 +876,7 @@ public class RegionInstanceTemplatesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -879,7 +885,8 @@ public class RegionInstanceTemplatesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -36,6 +36,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * This class computes golden signal metrics that can be observed in the lifecycle of an RPC
@@ -43,6 +45,7 @@ import java.util.concurrent.TimeUnit;
  * GoldenSignalsMetricsRecorder}, hence this class should not have any knowledge about the
  * observability framework (e.g. OpenTelemetry).
  */
+@NullMarked
 class OpenTelemetryMetricsTracer implements ApiTracer {
   private final Stopwatch clientRequestTimer;
   private final GoldenSignalsMetricsRecorder metricsRecorder;
@@ -88,7 +91,7 @@ class OpenTelemetryMetricsTracer implements ApiTracer {
     recordMetric(error);
   }
 
-  private void recordMetric(Throwable error) {
+  private void recordMetric(@Nullable Throwable error) {
     Map<String, Object> responseAttributes =
         ObservabilityUtils.getResponseAttributes(error, transport);
     attributes.putAll(responseAttributes);

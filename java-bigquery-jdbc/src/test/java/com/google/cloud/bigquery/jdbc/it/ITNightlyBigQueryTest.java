@@ -26,8 +26,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
@@ -54,18 +52,16 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITNightlyBigQueryTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   static Connection bigQueryConnection;
   static Statement bigQueryStatement;
-  static BigQuery bigQuery;
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
-  private static final String BASE_QUERY =
-      "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
-          + " trip_distance asc LIMIT %s";
+  private static final String BASE_QUERY = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));";
   private static final String CONSTRAINTS_DATASET = "JDBC_CONSTRAINTS_TEST_DATASET";
   private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
   private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
@@ -91,7 +87,6 @@ public class ITNightlyBigQueryTest extends ITBase {
     DATASET2 = ITBase.getSharedDataset2();
     bigQueryConnection = DriverManager.getConnection(connection_uri, new Properties());
     bigQueryStatement = bigQueryConnection.createStatement();
-    bigQuery = BigQueryOptions.newBuilder().build().getService();
   }
 
   @AfterAll
@@ -188,6 +183,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testValidLongRunningQuery() throws SQLException {
     // setup
     String selectQuery =
@@ -272,6 +268,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testWideColumnQueries() throws SQLException {
     String selectQuery =
         "SELECT * FROM `bigquery-public-data.covid19_open_data_eu.covid19_open_data` LIMIT 50000";
@@ -290,6 +287,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testExecuteLargeUpdate() throws SQLException {
     String tableName = "JDBC_LARGE_UPDATE_TABLE_" + randomNumber;
     String createQuery =
@@ -328,6 +326,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testHTAPIWithValidDestinationTableSavesQueriesWithStandardSQL() throws SQLException {
     // setup
     String connection_uri =
@@ -336,8 +335,7 @@ public class ITNightlyBigQueryTest extends ITBase {
             + "LargeResultTable=destination_table_test;"
             + "LargeResultDataset=INTEGRATION_TESTS;"
             + "EnableHighThroughputAPI=1;";
-    String selectLegacyQuery =
-        "SELECT * FROM `bigquery-public-data.deepmind_alphafold.metadata` LIMIT 200000;";
+    String selectLegacyQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 200000))";
     Driver driver = BigQueryDriver.getRegisteredDriver();
     Connection connection = driver.connect(connection_uri, new Properties());
     Statement statement = connection.createStatement();
@@ -715,6 +713,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testHTAPIWithValidDestinationTableSavesQueriesWithLegacy() throws SQLException {
     // setup
     String connection_uri =
@@ -1042,6 +1041,8 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("known_issue") // b/539615199
+  @Tag("disable_tpc")
   public void testValidAllDataTypesSerializationFromSelectQuery() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_DATATYPES_INTEGRATION_TEST_TABLE";
@@ -1074,6 +1075,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testRepeatedStructFromSelectQuery() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_REPEATED_STRUCT_INTEGRATION_TEST";
@@ -1098,6 +1100,8 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("known_issue") // b/539615199
+  @Tag("disable_tpc")
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
@@ -1537,13 +1541,12 @@ public class ITNightlyBigQueryTest extends ITBase {
 
     Statement statement = bigQueryConnectionUseStateless.createStatement();
 
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 850))";
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(850, resultSetRowCount(jsonResultSet));
 
-    String queryEmpty =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
+    String queryEmpty = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 0))";
     ResultSet jsonResultSetEmpty = statement.executeQuery(queryEmpty);
     assertTrue(jsonResultSetEmpty.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
@@ -1552,7 +1555,7 @@ public class ITNightlyBigQueryTest extends ITBase {
 
   @Test
   public void testFastQueryPathMedium() throws SQLException {
-    String query = "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 9000";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 9000))";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(9000, resultSetRowCount(jsonResultSet));
@@ -1560,18 +1563,23 @@ public class ITNightlyBigQueryTest extends ITBase {
 
   @Test
   public void testFastQueryPathLarge() throws SQLException {
-    String query = "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 18000";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 18000))";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(18000, resultSetRowCount(jsonResultSet));
   }
 
   @Test
+  @Tag("disable_tpc")
   // reads using ReadAPI and makes sure that they are in order, which implies threads worked
   // correctly
   public void testIterateOrderArrowMultiThread() throws SQLException {
     int expectedCnt = 200000;
-    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    String longQuery =
+        String.format(
+            "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
+                + " trip_distance asc LIMIT %s",
+            expectedCnt);
     ResultSet rs = bigQueryStatement.executeQuery(longQuery);
     int cnt = 0;
     double oldTriDis = 0.0d;
@@ -1585,6 +1593,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testNonEnabledUseLegacySQLThrowsSyntaxError() throws SQLException {
     // setup
     String connection_uri = ITNightlyBigQueryTest.connection_uri;
@@ -1602,13 +1611,14 @@ public class ITNightlyBigQueryTest extends ITBase {
 
   @Test
   public void testFastQueryPathEmpty() throws SQLException {
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 0";
+    String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 0))";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(0, resultSetRowCount(jsonResultSet));
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testReadAPIPathLarge() throws SQLException {
     Properties withReadApi = new Properties();
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
@@ -1628,6 +1638,7 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
     String connectionUri =
         ITNightlyBigQueryTest.connection_uri

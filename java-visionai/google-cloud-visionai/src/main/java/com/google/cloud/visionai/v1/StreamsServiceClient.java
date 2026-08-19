@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -607,9 +609,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class StreamsServiceClient implements BackgroundResource {
-  private final StreamsServiceSettings settings;
+  private final @Nullable StreamsServiceSettings settings;
   private final StreamsServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -657,7 +660,7 @@ public class StreamsServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final StreamsServiceSettings getSettings() {
+  public final @Nullable StreamsServiceSettings getSettings() {
     return settings;
   }
 
@@ -705,7 +708,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for ListClustersRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListClustersPagedResponse listClusters(LocationName parent) {
+  public final ListClustersPagedResponse listClusters(@Nullable LocationName parent) {
     ListClustersRequest request =
         ListClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -871,7 +874,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Cluster getCluster(ClusterName name) {
+  public final Cluster getCluster(@Nullable ClusterName name) {
     GetClusterRequest request =
         GetClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCluster(request);
@@ -984,7 +987,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, OperationMetadata> createClusterAsync(
-      LocationName parent, Cluster cluster, String clusterId) {
+      @Nullable LocationName parent, Cluster cluster, String clusterId) {
     CreateClusterRequest request =
         CreateClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1271,7 +1274,8 @@ public class StreamsServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteClusterAsync(ClusterName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteClusterAsync(
+      @Nullable ClusterName name) {
     DeleteClusterRequest request =
         DeleteClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteClusterAsync(request);
@@ -1415,7 +1419,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for ListStreamsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListStreamsPagedResponse listStreams(ClusterName parent) {
+  public final ListStreamsPagedResponse listStreams(@Nullable ClusterName parent) {
     ListStreamsRequest request =
         ListStreamsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1581,7 +1585,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Stream getStream(StreamName name) {
+  public final Stream getStream(@Nullable StreamName name) {
     GetStreamRequest request =
         GetStreamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getStream(request);
@@ -1694,7 +1698,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Stream, OperationMetadata> createStreamAsync(
-      ClusterName parent, Stream stream, String streamId) {
+      @Nullable ClusterName parent, Stream stream, String streamId) {
     CreateStreamRequest request =
         CreateStreamRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1979,7 +1983,8 @@ public class StreamsServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteStreamAsync(StreamName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteStreamAsync(
+      @Nullable StreamName name) {
     DeleteStreamRequest request =
         DeleteStreamRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteStreamAsync(request);
@@ -2335,7 +2340,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for ListEventsRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEventsPagedResponse listEvents(ClusterName parent) {
+  public final ListEventsPagedResponse listEvents(@Nullable ClusterName parent) {
     ListEventsRequest request =
         ListEventsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listEvents(request);
@@ -2497,7 +2502,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Event getEvent(EventName name) {
+  public final Event getEvent(@Nullable EventName name) {
     GetEventRequest request =
         GetEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEvent(request);
@@ -2610,7 +2615,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Event, OperationMetadata> createEventAsync(
-      ClusterName parent, Event event, String eventId) {
+      @Nullable ClusterName parent, Event event, String eventId) {
     CreateEventRequest request =
         CreateEventRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2895,7 +2900,8 @@ public class StreamsServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteEventAsync(EventName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteEventAsync(
+      @Nullable EventName name) {
     DeleteEventRequest request =
         DeleteEventRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEventAsync(request);
@@ -3038,7 +3044,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for ListSeriesRequest.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSeriesPagedResponse listSeries(ClusterName parent) {
+  public final ListSeriesPagedResponse listSeries(@Nullable ClusterName parent) {
     ListSeriesRequest request =
         ListSeriesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSeries(request);
@@ -3200,7 +3206,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Series getSeries(SeriesName name) {
+  public final Series getSeries(@Nullable SeriesName name) {
     GetSeriesRequest request =
         GetSeriesRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSeries(request);
@@ -3313,7 +3319,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Series, OperationMetadata> createSeriesAsync(
-      ClusterName parent, Series series, String seriesId) {
+      @Nullable ClusterName parent, Series series, String seriesId) {
     CreateSeriesRequest request =
         CreateSeriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3598,7 +3604,8 @@ public class StreamsServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteSeriesAsync(SeriesName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteSeriesAsync(
+      @Nullable SeriesName name) {
     DeleteSeriesRequest request =
         DeleteSeriesRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSeriesAsync(request);
@@ -3745,7 +3752,7 @@ public class StreamsServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Channel, OperationMetadata> materializeChannelAsync(
-      ClusterName parent, Channel channel, String channelId) {
+      @Nullable ClusterName parent, Channel channel, String channelId) {
     MaterializeChannelRequest request =
         MaterializeChannelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4100,8 +4107,8 @@ public class StreamsServiceClient implements BackgroundResource {
       extends AbstractPage<ListClustersRequest, ListClustersResponse, Cluster, ListClustersPage> {
 
     private ListClustersPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       super(context, response);
     }
 
@@ -4111,14 +4118,14 @@ public class StreamsServiceClient implements BackgroundResource {
 
     @Override
     protected ListClustersPage createPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       return new ListClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListClustersPage> createPageAsync(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
         ApiFuture<ListClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4132,7 +4139,8 @@ public class StreamsServiceClient implements BackgroundResource {
           ListClustersPage,
           ListClustersFixedSizeCollection> {
 
-    private ListClustersFixedSizeCollection(List<ListClustersPage> pages, int collectionSize) {
+    private ListClustersFixedSizeCollection(
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4142,7 +4150,7 @@ public class StreamsServiceClient implements BackgroundResource {
 
     @Override
     protected ListClustersFixedSizeCollection createCollection(
-        List<ListClustersPage> pages, int collectionSize) {
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       return new ListClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4173,8 +4181,8 @@ public class StreamsServiceClient implements BackgroundResource {
       extends AbstractPage<ListStreamsRequest, ListStreamsResponse, Stream, ListStreamsPage> {
 
     private ListStreamsPage(
-        PageContext<ListStreamsRequest, ListStreamsResponse, Stream> context,
-        ListStreamsResponse response) {
+        @Nullable PageContext<ListStreamsRequest, ListStreamsResponse, Stream> context,
+        @Nullable ListStreamsResponse response) {
       super(context, response);
     }
 
@@ -4184,14 +4192,14 @@ public class StreamsServiceClient implements BackgroundResource {
 
     @Override
     protected ListStreamsPage createPage(
-        PageContext<ListStreamsRequest, ListStreamsResponse, Stream> context,
-        ListStreamsResponse response) {
+        @Nullable PageContext<ListStreamsRequest, ListStreamsResponse, Stream> context,
+        @Nullable ListStreamsResponse response) {
       return new ListStreamsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListStreamsPage> createPageAsync(
-        PageContext<ListStreamsRequest, ListStreamsResponse, Stream> context,
+        @Nullable PageContext<ListStreamsRequest, ListStreamsResponse, Stream> context,
         ApiFuture<ListStreamsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4205,7 +4213,8 @@ public class StreamsServiceClient implements BackgroundResource {
           ListStreamsPage,
           ListStreamsFixedSizeCollection> {
 
-    private ListStreamsFixedSizeCollection(List<ListStreamsPage> pages, int collectionSize) {
+    private ListStreamsFixedSizeCollection(
+        @Nullable List<ListStreamsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4215,7 +4224,7 @@ public class StreamsServiceClient implements BackgroundResource {
 
     @Override
     protected ListStreamsFixedSizeCollection createCollection(
-        List<ListStreamsPage> pages, int collectionSize) {
+        @Nullable List<ListStreamsPage> pages, int collectionSize) {
       return new ListStreamsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4246,8 +4255,8 @@ public class StreamsServiceClient implements BackgroundResource {
       extends AbstractPage<ListEventsRequest, ListEventsResponse, Event, ListEventsPage> {
 
     private ListEventsPage(
-        PageContext<ListEventsRequest, ListEventsResponse, Event> context,
-        ListEventsResponse response) {
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, Event> context,
+        @Nullable ListEventsResponse response) {
       super(context, response);
     }
 
@@ -4257,14 +4266,14 @@ public class StreamsServiceClient implements BackgroundResource {
 
     @Override
     protected ListEventsPage createPage(
-        PageContext<ListEventsRequest, ListEventsResponse, Event> context,
-        ListEventsResponse response) {
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, Event> context,
+        @Nullable ListEventsResponse response) {
       return new ListEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEventsPage> createPageAsync(
-        PageContext<ListEventsRequest, ListEventsResponse, Event> context,
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, Event> context,
         ApiFuture<ListEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4278,7 +4287,8 @@ public class StreamsServiceClient implements BackgroundResource {
           ListEventsPage,
           ListEventsFixedSizeCollection> {
 
-    private ListEventsFixedSizeCollection(List<ListEventsPage> pages, int collectionSize) {
+    private ListEventsFixedSizeCollection(
+        @Nullable List<ListEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4288,7 +4298,7 @@ public class StreamsServiceClient implements BackgroundResource {
 
     @Override
     protected ListEventsFixedSizeCollection createCollection(
-        List<ListEventsPage> pages, int collectionSize) {
+        @Nullable List<ListEventsPage> pages, int collectionSize) {
       return new ListEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4319,8 +4329,8 @@ public class StreamsServiceClient implements BackgroundResource {
       extends AbstractPage<ListSeriesRequest, ListSeriesResponse, Series, ListSeriesPage> {
 
     private ListSeriesPage(
-        PageContext<ListSeriesRequest, ListSeriesResponse, Series> context,
-        ListSeriesResponse response) {
+        @Nullable PageContext<ListSeriesRequest, ListSeriesResponse, Series> context,
+        @Nullable ListSeriesResponse response) {
       super(context, response);
     }
 
@@ -4330,14 +4340,14 @@ public class StreamsServiceClient implements BackgroundResource {
 
     @Override
     protected ListSeriesPage createPage(
-        PageContext<ListSeriesRequest, ListSeriesResponse, Series> context,
-        ListSeriesResponse response) {
+        @Nullable PageContext<ListSeriesRequest, ListSeriesResponse, Series> context,
+        @Nullable ListSeriesResponse response) {
       return new ListSeriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSeriesPage> createPageAsync(
-        PageContext<ListSeriesRequest, ListSeriesResponse, Series> context,
+        @Nullable PageContext<ListSeriesRequest, ListSeriesResponse, Series> context,
         ApiFuture<ListSeriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4351,7 +4361,8 @@ public class StreamsServiceClient implements BackgroundResource {
           ListSeriesPage,
           ListSeriesFixedSizeCollection> {
 
-    private ListSeriesFixedSizeCollection(List<ListSeriesPage> pages, int collectionSize) {
+    private ListSeriesFixedSizeCollection(
+        @Nullable List<ListSeriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4361,7 +4372,7 @@ public class StreamsServiceClient implements BackgroundResource {
 
     @Override
     protected ListSeriesFixedSizeCollection createCollection(
-        List<ListSeriesPage> pages, int collectionSize) {
+        @Nullable List<ListSeriesPage> pages, int collectionSize) {
       return new ListSeriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4395,8 +4406,8 @@ public class StreamsServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -4406,14 +4417,14 @@ public class StreamsServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4427,7 +4438,8 @@ public class StreamsServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4437,7 +4449,7 @@ public class StreamsServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

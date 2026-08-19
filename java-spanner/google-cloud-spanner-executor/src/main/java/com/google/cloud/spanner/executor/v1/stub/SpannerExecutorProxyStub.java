@@ -21,6 +21,7 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.spanner.executor.v1.SpannerAsyncActionRequest;
 import com.google.spanner.executor.v1.SpannerAsyncActionResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -28,6 +29,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class SpannerExecutorProxyStub implements BackgroundResource {
 

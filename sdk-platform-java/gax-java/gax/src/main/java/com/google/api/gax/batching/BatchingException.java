@@ -29,10 +29,14 @@
  */
 package com.google.api.gax.batching;
 
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
 /** Represents exception occurred during batching. */
+@NullMarked
 public final class BatchingException extends RuntimeException {
 
-  BatchingException(String message) {
+  BatchingException(@Nullable String message) {
     super(message);
   }
 }

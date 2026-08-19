@@ -188,6 +188,42 @@
         }
       }
     },
+    "FindingsRefinementService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "FindingsRefinementServiceClient",
+          "rpcs": {
+            "ComputeAllFindingsRefinementActivities": {
+              "methods": ["computeAllFindingsRefinementActivities", "computeAllFindingsRefinementActivities", "computeAllFindingsRefinementActivities", "computeAllFindingsRefinementActivitiesCallable"]
+            },
+            "ComputeFindingsRefinementActivity": {
+              "methods": ["computeFindingsRefinementActivity", "computeFindingsRefinementActivity", "computeFindingsRefinementActivity", "computeFindingsRefinementActivityCallable"]
+            },
+            "CreateFindingsRefinement": {
+              "methods": ["createFindingsRefinement", "createFindingsRefinement", "createFindingsRefinement", "createFindingsRefinementCallable"]
+            },
+            "GetFindingsRefinement": {
+              "methods": ["getFindingsRefinement", "getFindingsRefinement", "getFindingsRefinement", "getFindingsRefinementCallable"]
+            },
+            "GetFindingsRefinementDeployment": {
+              "methods": ["getFindingsRefinementDeployment", "getFindingsRefinementDeployment", "getFindingsRefinementDeployment", "getFindingsRefinementDeploymentCallable"]
+            },
+            "ListAllFindingsRefinementDeployments": {
+              "methods": ["listAllFindingsRefinementDeployments", "listAllFindingsRefinementDeployments", "listAllFindingsRefinementDeployments", "listAllFindingsRefinementDeploymentsPagedCallable", "listAllFindingsRefinementDeploymentsCallable"]
+            },
+            "ListFindingsRefinements": {
+              "methods": ["listFindingsRefinements", "listFindingsRefinements", "listFindingsRefinements", "listFindingsRefinementsPagedCallable", "listFindingsRefinementsCallable"]
+            },
+            "UpdateFindingsRefinement": {
+              "methods": ["updateFindingsRefinement", "updateFindingsRefinement", "updateFindingsRefinementCallable"]
+            },
+            "UpdateFindingsRefinementDeployment": {
+              "methods": ["updateFindingsRefinementDeployment", "updateFindingsRefinementDeployment", "updateFindingsRefinementDeploymentCallable"]
+            }
+          }
+        }
+      }
+    },
     "InstanceService": {
       "clients": {
         "grpc": {

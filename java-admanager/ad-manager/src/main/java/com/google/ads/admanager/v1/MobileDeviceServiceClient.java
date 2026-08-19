@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -64,7 +66,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetMobileDevice</td>
- *      <td><p> API to retrieve a `MobileDevice` object.</td>
+ *      <td><p> Retrieves a `MobileDevice` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -83,7 +85,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListMobileDevices</td>
- *      <td><p> API to retrieve a list of `MobileDevice` objects.</td>
+ *      <td><p> Lists `MobileDevice` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -144,9 +146,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MobileDeviceServiceClient implements BackgroundResource {
-  private final MobileDeviceServiceSettings settings;
+  private final @Nullable MobileDeviceServiceSettings settings;
   private final MobileDeviceServiceStub stub;
 
   /** Constructs an instance of MobileDeviceServiceClient with default settings. */
@@ -186,7 +189,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MobileDeviceServiceSettings getSettings() {
+  public final @Nullable MobileDeviceServiceSettings getSettings() {
     return settings;
   }
 
@@ -196,7 +199,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileDevice` object.
+   * Retrieves a `MobileDevice` object.
    *
    * <p>Sample code:
    *
@@ -216,7 +219,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
    *     `networks/{network_code}/mobileDevices/{mobile_device_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MobileDevice getMobileDevice(MobileDeviceName name) {
+  public final MobileDevice getMobileDevice(@Nullable MobileDeviceName name) {
     GetMobileDeviceRequest request =
         GetMobileDeviceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMobileDevice(request);
@@ -224,7 +227,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileDevice` object.
+   * Retrieves a `MobileDevice` object.
    *
    * <p>Sample code:
    *
@@ -251,7 +254,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileDevice` object.
+   * Retrieves a `MobileDevice` object.
    *
    * <p>Sample code:
    *
@@ -279,7 +282,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `MobileDevice` object.
+   * Retrieves a `MobileDevice` object.
    *
    * <p>Sample code:
    *
@@ -307,7 +310,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDevice` objects.
+   * Lists `MobileDevice` objects.
    *
    * <p>Sample code:
    *
@@ -330,7 +333,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMobileDevicesPagedResponse listMobileDevices(NetworkName parent) {
+  public final ListMobileDevicesPagedResponse listMobileDevices(@Nullable NetworkName parent) {
     ListMobileDevicesRequest request =
         ListMobileDevicesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -340,7 +343,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDevice` objects.
+   * Lists `MobileDevice` objects.
    *
    * <p>Sample code:
    *
@@ -371,7 +374,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDevice` objects.
+   * Lists `MobileDevice` objects.
    *
    * <p>Sample code:
    *
@@ -407,7 +410,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDevice` objects.
+   * Lists `MobileDevice` objects.
    *
    * <p>Sample code:
    *
@@ -443,7 +446,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `MobileDevice` objects.
+   * Lists `MobileDevice` objects.
    *
    * <p>Sample code:
    *
@@ -546,8 +549,9 @@ public class MobileDeviceServiceClient implements BackgroundResource {
           ListMobileDevicesPage> {
 
     private ListMobileDevicesPage(
-        PageContext<ListMobileDevicesRequest, ListMobileDevicesResponse, MobileDevice> context,
-        ListMobileDevicesResponse response) {
+        @Nullable PageContext<ListMobileDevicesRequest, ListMobileDevicesResponse, MobileDevice>
+            context,
+        @Nullable ListMobileDevicesResponse response) {
       super(context, response);
     }
 
@@ -557,14 +561,16 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
     @Override
     protected ListMobileDevicesPage createPage(
-        PageContext<ListMobileDevicesRequest, ListMobileDevicesResponse, MobileDevice> context,
-        ListMobileDevicesResponse response) {
+        @Nullable PageContext<ListMobileDevicesRequest, ListMobileDevicesResponse, MobileDevice>
+            context,
+        @Nullable ListMobileDevicesResponse response) {
       return new ListMobileDevicesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMobileDevicesPage> createPageAsync(
-        PageContext<ListMobileDevicesRequest, ListMobileDevicesResponse, MobileDevice> context,
+        @Nullable PageContext<ListMobileDevicesRequest, ListMobileDevicesResponse, MobileDevice>
+            context,
         ApiFuture<ListMobileDevicesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -579,7 +585,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
           ListMobileDevicesFixedSizeCollection> {
 
     private ListMobileDevicesFixedSizeCollection(
-        List<ListMobileDevicesPage> pages, int collectionSize) {
+        @Nullable List<ListMobileDevicesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -589,7 +595,7 @@ public class MobileDeviceServiceClient implements BackgroundResource {
 
     @Override
     protected ListMobileDevicesFixedSizeCollection createCollection(
-        List<ListMobileDevicesPage> pages, int collectionSize) {
+        @Nullable List<ListMobileDevicesPage> pages, int collectionSize) {
       return new ListMobileDevicesFixedSizeCollection(pages, collectionSize);
     }
   }

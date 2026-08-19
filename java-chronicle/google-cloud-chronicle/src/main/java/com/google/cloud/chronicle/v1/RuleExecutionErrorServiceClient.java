@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -145,9 +147,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RuleExecutionErrorServiceClient implements BackgroundResource {
-  private final RuleExecutionErrorServiceSettings settings;
+  private final @Nullable RuleExecutionErrorServiceSettings settings;
   private final RuleExecutionErrorServiceStub stub;
 
   /** Constructs an instance of RuleExecutionErrorServiceClient with default settings. */
@@ -189,7 +192,7 @@ public class RuleExecutionErrorServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RuleExecutionErrorServiceSettings getSettings() {
+  public final @Nullable RuleExecutionErrorServiceSettings getSettings() {
     return settings;
   }
 
@@ -223,7 +226,8 @@ public class RuleExecutionErrorServiceClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/instances/{instance}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRuleExecutionErrorsPagedResponse listRuleExecutionErrors(InstanceName parent) {
+  public final ListRuleExecutionErrorsPagedResponse listRuleExecutionErrors(
+      @Nullable InstanceName parent) {
     ListRuleExecutionErrorsRequest request =
         ListRuleExecutionErrorsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -442,10 +446,11 @@ public class RuleExecutionErrorServiceClient implements BackgroundResource {
           ListRuleExecutionErrorsPage> {
 
     private ListRuleExecutionErrorsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRuleExecutionErrorsRequest, ListRuleExecutionErrorsResponse, RuleExecutionError>
             context,
-        ListRuleExecutionErrorsResponse response) {
+        @Nullable ListRuleExecutionErrorsResponse response) {
       super(context, response);
     }
 
@@ -455,16 +460,18 @@ public class RuleExecutionErrorServiceClient implements BackgroundResource {
 
     @Override
     protected ListRuleExecutionErrorsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRuleExecutionErrorsRequest, ListRuleExecutionErrorsResponse, RuleExecutionError>
             context,
-        ListRuleExecutionErrorsResponse response) {
+        @Nullable ListRuleExecutionErrorsResponse response) {
       return new ListRuleExecutionErrorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRuleExecutionErrorsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRuleExecutionErrorsRequest, ListRuleExecutionErrorsResponse, RuleExecutionError>
             context,
         ApiFuture<ListRuleExecutionErrorsResponse> futureResponse) {
@@ -481,7 +488,7 @@ public class RuleExecutionErrorServiceClient implements BackgroundResource {
           ListRuleExecutionErrorsFixedSizeCollection> {
 
     private ListRuleExecutionErrorsFixedSizeCollection(
-        List<ListRuleExecutionErrorsPage> pages, int collectionSize) {
+        @Nullable List<ListRuleExecutionErrorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -491,7 +498,7 @@ public class RuleExecutionErrorServiceClient implements BackgroundResource {
 
     @Override
     protected ListRuleExecutionErrorsFixedSizeCollection createCollection(
-        List<ListRuleExecutionErrorsPage> pages, int collectionSize) {
+        @Nullable List<ListRuleExecutionErrorsPage> pages, int collectionSize) {
       return new ListRuleExecutionErrorsFixedSizeCollection(pages, collectionSize);
     }
   }

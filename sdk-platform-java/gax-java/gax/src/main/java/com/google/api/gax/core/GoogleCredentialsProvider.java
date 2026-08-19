@@ -39,7 +39,8 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.List;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * GoogleCredentialsProvider acquires credentials using Application Default Credentials.
@@ -48,6 +49,7 @@ import javax.annotation.Nullable;
  * href="https://developers.google.com/identity/protocols/application-default-credentials">
  * https://developers.google.com/identity/protocols/application-default-credentials</a>.
  */
+@NullMarked
 @AutoValue
 public abstract class GoogleCredentialsProvider implements CredentialsProvider {
 
@@ -60,8 +62,7 @@ public abstract class GoogleCredentialsProvider implements CredentialsProvider {
   public abstract boolean getUseJwtAccessWithScope();
 
   @VisibleForTesting
-  @Nullable
-  abstract GoogleCredentials getOAuth2Credentials();
+  abstract @Nullable GoogleCredentials getOAuth2Credentials();
 
   @Override
   public Credentials getCredentials() throws IOException {

@@ -25,6 +25,7 @@ import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse
 import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
@@ -35,6 +36,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
+import com.google.chat.v1.Availability;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
 import com.google.chat.v1.CreateCustomEmojiRequest;
@@ -54,6 +56,7 @@ import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.FindGroupChatsRequest;
 import com.google.chat.v1.FindGroupChatsResponse;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetAvailabilityRequest;
 import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
@@ -78,6 +81,9 @@ import com.google.chat.v1.ListSpaceEventsRequest;
 import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
+import com.google.chat.v1.MarkAsActiveRequest;
+import com.google.chat.v1.MarkAsAwayRequest;
+import com.google.chat.v1.MarkAsDoNotDisturbRequest;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.MoveSectionItemRequest;
@@ -85,6 +91,8 @@ import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
 import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchMessagesRequest;
+import com.google.chat.v1.SearchMessagesResponse;
 import com.google.chat.v1.SearchSpacesRequest;
 import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.Section;
@@ -94,6 +102,7 @@ import com.google.chat.v1.SpaceEvent;
 import com.google.chat.v1.SpaceNotificationSetting;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
+import com.google.chat.v1.UpdateAvailabilityRequest;
 import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
 import com.google.chat.v1.UpdateSectionRequest;
@@ -109,6 +118,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -116,6 +126,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcChatServiceStub extends ChatServiceStub {
   private static final MethodDescriptor<CreateMessageRequest, Message>
@@ -191,6 +202,18 @@ public class GrpcChatServiceStub extends ChatServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<SearchMessagesRequest, SearchMessagesResponse>
+      searchMessagesMethodDescriptor =
+          MethodDescriptor.<SearchMessagesRequest, SearchMessagesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/SearchMessages")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SearchMessagesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SearchMessagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<GetAttachmentRequest, Attachment>
       getAttachmentMethodDescriptor =
@@ -461,6 +484,59 @@ public class GrpcChatServiceStub extends ChatServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetAvailabilityRequest, Availability>
+      getAvailabilityMethodDescriptor =
+          MethodDescriptor.<GetAvailabilityRequest, Availability>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/GetAvailability")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAvailabilityRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Availability.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<MarkAsActiveRequest, Availability>
+      markAsActiveMethodDescriptor =
+          MethodDescriptor.<MarkAsActiveRequest, Availability>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/MarkAsActive")
+              .setRequestMarshaller(ProtoUtils.marshaller(MarkAsActiveRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Availability.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<MarkAsAwayRequest, Availability>
+      markAsAwayMethodDescriptor =
+          MethodDescriptor.<MarkAsAwayRequest, Availability>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/MarkAsAway")
+              .setRequestMarshaller(ProtoUtils.marshaller(MarkAsAwayRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Availability.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<MarkAsDoNotDisturbRequest, Availability>
+      markAsDoNotDisturbMethodDescriptor =
+          MethodDescriptor.<MarkAsDoNotDisturbRequest, Availability>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/MarkAsDoNotDisturb")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(MarkAsDoNotDisturbRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Availability.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateAvailabilityRequest, Availability>
+      updateAvailabilityMethodDescriptor =
+          MethodDescriptor.<UpdateAvailabilityRequest, Availability>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chat.v1.ChatService/UpdateAvailability")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAvailabilityRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Availability.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<GetSpaceEventRequest, SpaceEvent>
       getSpaceEventMethodDescriptor =
           MethodDescriptor.<GetSpaceEventRequest, SpaceEvent>newBuilder()
@@ -602,6 +678,9 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<GetMessageRequest, Message> getMessageCallable;
   private final UnaryCallable<UpdateMessageRequest, Message> updateMessageCallable;
   private final UnaryCallable<DeleteMessageRequest, Empty> deleteMessageCallable;
+  private final UnaryCallable<SearchMessagesRequest, SearchMessagesResponse> searchMessagesCallable;
+  private final UnaryCallable<SearchMessagesRequest, SearchMessagesPagedResponse>
+      searchMessagesPagedCallable;
   private final UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable;
   private final UnaryCallable<UploadAttachmentRequest, UploadAttachmentResponse>
       uploadAttachmentCallable;
@@ -641,6 +720,11 @@ public class GrpcChatServiceStub extends ChatServiceStub {
       updateSpaceReadStateCallable;
   private final UnaryCallable<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateCallable;
+  private final UnaryCallable<GetAvailabilityRequest, Availability> getAvailabilityCallable;
+  private final UnaryCallable<MarkAsActiveRequest, Availability> markAsActiveCallable;
+  private final UnaryCallable<MarkAsAwayRequest, Availability> markAsAwayCallable;
+  private final UnaryCallable<MarkAsDoNotDisturbRequest, Availability> markAsDoNotDisturbCallable;
+  private final UnaryCallable<UpdateAvailabilityRequest, Availability> updateAvailabilityCallable;
   private final UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable;
   private final UnaryCallable<ListSpaceEventsRequest, ListSpaceEventsResponse>
       listSpaceEventsCallable;
@@ -784,6 +868,18 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<SearchMessagesRequest, SearchMessagesResponse>
+        searchMessagesTransportSettings =
+            GrpcCallSettings.<SearchMessagesRequest, SearchMessagesResponse>newBuilder()
+                .setMethodDescriptor(searchMessagesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<GetAttachmentRequest, Attachment> getAttachmentTransportSettings =
         GrpcCallSettings.<GetAttachmentRequest, Attachment>newBuilder()
             .setMethodDescriptor(getAttachmentMethodDescriptor)
@@ -1008,6 +1104,61 @@ public class GrpcChatServiceStub extends ChatServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<GetAvailabilityRequest, Availability> getAvailabilityTransportSettings =
+        GrpcCallSettings.<GetAvailabilityRequest, Availability>newBuilder()
+            .setMethodDescriptor(getAvailabilityMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<MarkAsActiveRequest, Availability> markAsActiveTransportSettings =
+        GrpcCallSettings.<MarkAsActiveRequest, Availability>newBuilder()
+            .setMethodDescriptor(markAsActiveMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<MarkAsAwayRequest, Availability> markAsAwayTransportSettings =
+        GrpcCallSettings.<MarkAsAwayRequest, Availability>newBuilder()
+            .setMethodDescriptor(markAsAwayMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<MarkAsDoNotDisturbRequest, Availability> markAsDoNotDisturbTransportSettings =
+        GrpcCallSettings.<MarkAsDoNotDisturbRequest, Availability>newBuilder()
+            .setMethodDescriptor(markAsDoNotDisturbMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdateAvailabilityRequest, Availability> updateAvailabilityTransportSettings =
+        GrpcCallSettings.<UpdateAvailabilityRequest, Availability>newBuilder()
+            .setMethodDescriptor(updateAvailabilityMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "availability.name", String.valueOf(request.getAvailability().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventTransportSettings =
         GrpcCallSettings.<GetSpaceEventRequest, SpaceEvent>newBuilder()
             .setMethodDescriptor(getSpaceEventMethodDescriptor)
@@ -1165,6 +1316,12 @@ public class GrpcChatServiceStub extends ChatServiceStub {
     this.deleteMessageCallable =
         callableFactory.createUnaryCallable(
             deleteMessageTransportSettings, settings.deleteMessageSettings(), clientContext);
+    this.searchMessagesCallable =
+        callableFactory.createUnaryCallable(
+            searchMessagesTransportSettings, settings.searchMessagesSettings(), clientContext);
+    this.searchMessagesPagedCallable =
+        callableFactory.createPagedCallable(
+            searchMessagesTransportSettings, settings.searchMessagesSettings(), clientContext);
     this.getAttachmentCallable =
         callableFactory.createUnaryCallable(
             getAttachmentTransportSettings, settings.getAttachmentSettings(), clientContext);
@@ -1269,6 +1426,25 @@ public class GrpcChatServiceStub extends ChatServiceStub {
             getThreadReadStateTransportSettings,
             settings.getThreadReadStateSettings(),
             clientContext);
+    this.getAvailabilityCallable =
+        callableFactory.createUnaryCallable(
+            getAvailabilityTransportSettings, settings.getAvailabilitySettings(), clientContext);
+    this.markAsActiveCallable =
+        callableFactory.createUnaryCallable(
+            markAsActiveTransportSettings, settings.markAsActiveSettings(), clientContext);
+    this.markAsAwayCallable =
+        callableFactory.createUnaryCallable(
+            markAsAwayTransportSettings, settings.markAsAwaySettings(), clientContext);
+    this.markAsDoNotDisturbCallable =
+        callableFactory.createUnaryCallable(
+            markAsDoNotDisturbTransportSettings,
+            settings.markAsDoNotDisturbSettings(),
+            clientContext);
+    this.updateAvailabilityCallable =
+        callableFactory.createUnaryCallable(
+            updateAvailabilityTransportSettings,
+            settings.updateAvailabilitySettings(),
+            clientContext);
     this.getSpaceEventCallable =
         callableFactory.createUnaryCallable(
             getSpaceEventTransportSettings, settings.getSpaceEventSettings(), clientContext);
@@ -1368,6 +1544,17 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<DeleteMessageRequest, Empty> deleteMessageCallable() {
     return deleteMessageCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchMessagesRequest, SearchMessagesResponse> searchMessagesCallable() {
+    return searchMessagesCallable;
+  }
+
+  @Override
+  public UnaryCallable<SearchMessagesRequest, SearchMessagesPagedResponse>
+      searchMessagesPagedCallable() {
+    return searchMessagesPagedCallable;
   }
 
   @Override
@@ -1524,6 +1711,31 @@ public class GrpcChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<GetThreadReadStateRequest, ThreadReadState> getThreadReadStateCallable() {
     return getThreadReadStateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAvailabilityRequest, Availability> getAvailabilityCallable() {
+    return getAvailabilityCallable;
+  }
+
+  @Override
+  public UnaryCallable<MarkAsActiveRequest, Availability> markAsActiveCallable() {
+    return markAsActiveCallable;
+  }
+
+  @Override
+  public UnaryCallable<MarkAsAwayRequest, Availability> markAsAwayCallable() {
+    return markAsAwayCallable;
+  }
+
+  @Override
+  public UnaryCallable<MarkAsDoNotDisturbRequest, Availability> markAsDoNotDisturbCallable() {
+    return markAsDoNotDisturbCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAvailabilityRequest, Availability> updateAvailabilityCallable() {
+    return updateAvailabilityCallable;
   }
 
   @Override

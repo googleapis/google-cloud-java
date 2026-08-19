@@ -20,6 +20,7 @@ import static com.google.common.truth.extensions.proto.ProtoTruth.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -59,11 +60,14 @@ import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
@@ -71,8 +75,15 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
+// Backstop against a wedged blocking call (e.g. manager.start().get()) hanging the CI runner
+// indefinitely. If any test exceeds this, fail fast with a diagnosable timeout instead.
+@Timeout(value = 60, unit = TimeUnit.SECONDS)
 class ClientConfigurationManagerTest {
   private static final FeatureFlags FEATURE_FLAGS = FeatureFlags.getDefaultInstance();
+
+  // Retries of a failed fetch are scheduled with sub-second delays, while the next poll is
+  // scheduled minutes out. Anything below this threshold is treated as a retry and run inline.
+  private static final long POLL_VS_RETRY_THRESHOLD_MS = 1_000;
 
   private static final ClientInfo CLIENT_INFO =
       ClientInfo.builder()
@@ -104,6 +115,25 @@ class ClientConfigurationManagerTest {
           }
         };
 
+    // The manager schedules two kinds of tasks on this executor: short-delay retries of a failed
+    // fetch, and the long-delay next poll. Run retries inline so a transient failure of the initial
+    // fetch (e.g. a flaky loopback connection) recovers instead of wedging a caller blocked on
+    // start().get() forever — a plain mock executor would otherwise silently drop the retry.
+    // Long-delay polls are left for tests to trigger manually via the captured Runnable.
+    lenient()
+        .when(mockExecutor.schedule(any(Runnable.class), anyLong(), any(TimeUnit.class)))
+        .thenAnswer(
+            invocation -> {
+              long delayMs =
+                  invocation
+                      .getArgument(2, TimeUnit.class)
+                      .toMillis(invocation.getArgument(1, Long.class));
+              if (delayMs < POLL_VS_RETRY_THRESHOLD_MS) {
+                invocation.getArgument(0, Runnable.class).run();
+              }
+              return Mockito.mock(ScheduledFuture.class);
+            });
+
     manager =
         new ClientConfigurationManager(
             FEATURE_FLAGS, CLIENT_INFO, channelProvider, noopDebugTracer, mockExecutor);
@@ -130,6 +160,19 @@ class ClientConfigurationManagerTest {
         .isEqualTo(
             Durations.toMillis(
                 service.config.get().getPollingConfiguration().getPollingInterval()));
+  }
+
+  @Test
+  void initialFetchRetriesAndRecovers() throws Exception {
+    // The first request is answered without a config message; for a unary RPC gRPC surfaces this to
+    // the client as a non-OK status, which drives the retry path. start().get() must recover via a
+    // retry instead of wedging forever. Under a plain mock executor the scheduled retry would be
+    // silently dropped and this would hang (caught by the class @Timeout).
+    service.emptyResponses.set(1);
+
+    ClientConfiguration initialConfig = manager.start().get();
+
+    assertThat(initialConfig).isEqualTo(service.config.get());
   }
 
   @Test
@@ -423,6 +466,10 @@ class ClientConfigurationManagerTest {
   static class FakeConfigService extends BigtableGrpc.BigtableImplBase {
     private final AtomicReference<ClientConfiguration> config = new AtomicReference<>();
 
+    // Number of leading requests to answer with a clean (OK) close that delivers no message,
+    // simulating the server closing the stream without ever returning a configuration.
+    private final AtomicInteger emptyResponses = new AtomicInteger(0);
+
     public FakeConfigService() throws IOException {
       ClientConfiguration.Builder builder = ClientConfigurationManager.loadDefault().toBuilder();
       builder.getSessionConfigurationBuilder().setSessionLoad(0.25f);
@@ -433,6 +480,11 @@ class ClientConfigurationManagerTest {
     public void getClientConfiguration(
         GetClientConfigurationRequest request,
         StreamObserver<ClientConfiguration> responseObserver) {
+      if (emptyResponses.getAndDecrement() > 0) {
+        // Close cleanly without sending a message.
+        responseObserver.onCompleted();
+        return;
+      }
       responseObserver.onNext(config.get());
       responseObserver.onCompleted();
     }

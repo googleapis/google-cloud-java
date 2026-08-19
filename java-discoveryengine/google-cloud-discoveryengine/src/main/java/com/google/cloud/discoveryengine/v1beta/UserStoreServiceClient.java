@@ -25,6 +25,8 @@ import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -151,10 +153,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class UserStoreServiceClient implements BackgroundResource {
-  private final UserStoreServiceSettings settings;
+  private final @Nullable UserStoreServiceSettings settings;
   private final UserStoreServiceStub stub;
 
   /** Constructs an instance of UserStoreServiceClient with default settings. */
@@ -194,7 +197,7 @@ public class UserStoreServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final UserStoreServiceSettings getSettings() {
+  public final @Nullable UserStoreServiceSettings getSettings() {
     return settings;
   }
 
@@ -224,7 +227,7 @@ public class UserStoreServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/userStores/{user_store_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UserStore getUserStore(UserStoreName name) {
+  public final UserStore getUserStore(@Nullable UserStoreName name) {
     GetUserStoreRequest request =
         GetUserStoreRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getUserStore(request);

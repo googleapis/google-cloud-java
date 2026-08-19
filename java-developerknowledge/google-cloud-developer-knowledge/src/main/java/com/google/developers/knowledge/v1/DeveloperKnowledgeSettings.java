@@ -34,6 +34,8 @@ import com.google.developers.knowledge.v1.stub.DeveloperKnowledgeStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -87,6 +89,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class DeveloperKnowledgeSettings extends ClientSettings<DeveloperKnowledgeSettings> {
 
@@ -108,6 +111,11 @@ public class DeveloperKnowledgeSettings extends ClientSettings<DeveloperKnowledg
   public UnaryCallSettings<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
       batchGetDocumentsSettings() {
     return ((DeveloperKnowledgeStubSettings) getStubSettings()).batchGetDocumentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to answerQuery. */
+  public UnaryCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQuerySettings() {
+    return ((DeveloperKnowledgeStubSettings) getStubSettings()).answerQuerySettings();
   }
 
   public static final DeveloperKnowledgeSettings create(DeveloperKnowledgeStubSettings stub)
@@ -166,7 +174,7 @@ public class DeveloperKnowledgeSettings extends ClientSettings<DeveloperKnowledg
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -186,7 +194,7 @@ public class DeveloperKnowledgeSettings extends ClientSettings<DeveloperKnowledg
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(DeveloperKnowledgeStubSettings.newBuilder(clientContext));
     }
 
@@ -240,6 +248,12 @@ public class DeveloperKnowledgeSettings extends ClientSettings<DeveloperKnowledg
     public UnaryCallSettings.Builder<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
         batchGetDocumentsSettings() {
       return getStubSettingsBuilder().batchGetDocumentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to answerQuery. */
+    public UnaryCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
+        answerQuerySettings() {
+      return getStubSettingsBuilder().answerQuerySettings();
     }
 
     @Override

@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -65,7 +67,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetCmsMetadataValue</td>
- *      <td><p> API to retrieve a `CmsMetadataValue` object.</td>
+ *      <td><p> Retrieves a `CmsMetadataValue` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -84,7 +86,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListCmsMetadataValues</td>
- *      <td><p> API to retrieve a list of `CmsMetadataValue` objects.</td>
+ *      <td><p> Lists `CmsMetadataValue` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -104,7 +106,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchActivateCmsMetadataValues</td>
- *      <td><p> API to activate a list of `CmsMetadataValue` objects.</td>
+ *      <td><p> Activates a list of `CmsMetadataValue` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -123,7 +125,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchDeactivateCmsMetadataValues</td>
- *      <td><p> API to deactivate a list of `CmsMetadataValue` objects.</td>
+ *      <td><p> Deactivates a list of `CmsMetadataValue` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -183,9 +185,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CmsMetadataValueServiceClient implements BackgroundResource {
-  private final CmsMetadataValueServiceSettings settings;
+  private final @Nullable CmsMetadataValueServiceSettings settings;
   private final CmsMetadataValueServiceStub stub;
 
   /** Constructs an instance of CmsMetadataValueServiceClient with default settings. */
@@ -226,7 +229,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CmsMetadataValueServiceSettings getSettings() {
+  public final @Nullable CmsMetadataValueServiceSettings getSettings() {
     return settings;
   }
 
@@ -236,7 +239,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataValue` object.
+   * Retrieves a `CmsMetadataValue` object.
    *
    * <p>Sample code:
    *
@@ -257,7 +260,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
    *     `networks/{network_code}/cmsMetadataValues/{cms_metadata_value_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final CmsMetadataValue getCmsMetadataValue(CmsMetadataValueName name) {
+  public final CmsMetadataValue getCmsMetadataValue(@Nullable CmsMetadataValueName name) {
     GetCmsMetadataValueRequest request =
         GetCmsMetadataValueRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -267,7 +270,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataValue` object.
+   * Retrieves a `CmsMetadataValue` object.
    *
    * <p>Sample code:
    *
@@ -296,7 +299,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataValue` object.
+   * Retrieves a `CmsMetadataValue` object.
    *
    * <p>Sample code:
    *
@@ -325,7 +328,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `CmsMetadataValue` object.
+   * Retrieves a `CmsMetadataValue` object.
    *
    * <p>Sample code:
    *
@@ -355,7 +358,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataValue` objects.
+   * Lists `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -379,7 +382,8 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCmsMetadataValuesPagedResponse listCmsMetadataValues(NetworkName parent) {
+  public final ListCmsMetadataValuesPagedResponse listCmsMetadataValues(
+      @Nullable NetworkName parent) {
     ListCmsMetadataValuesRequest request =
         ListCmsMetadataValuesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -389,7 +393,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataValue` objects.
+   * Lists `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -421,7 +425,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataValue` objects.
+   * Lists `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -459,7 +463,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataValue` objects.
+   * Lists `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -496,7 +500,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `CmsMetadataValue` objects.
+   * Lists `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -540,7 +544,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataValue` objects.
+   * Activates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -566,7 +570,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchActivateCmsMetadataValuesResponse batchActivateCmsMetadataValues(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchActivateCmsMetadataValuesRequest request =
         BatchActivateCmsMetadataValuesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -577,7 +581,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataValue` objects.
+   * Activates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -614,7 +618,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataValue` objects.
+   * Activates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -646,7 +650,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to activate a list of `CmsMetadataValue` objects.
+   * Activates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -680,7 +684,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataValue` objects.
+   * Deactivates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -706,7 +710,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchDeactivateCmsMetadataValuesResponse batchDeactivateCmsMetadataValues(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchDeactivateCmsMetadataValuesRequest request =
         BatchDeactivateCmsMetadataValuesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -717,7 +721,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataValue` objects.
+   * Deactivates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -754,7 +758,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataValue` objects.
+   * Deactivates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -786,7 +790,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to deactivate a list of `CmsMetadataValue` objects.
+   * Deactivates a list of `CmsMetadataValue` objects.
    *
    * <p>Sample code:
    *
@@ -881,9 +885,11 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
           ListCmsMetadataValuesPage> {
 
     private ListCmsMetadataValuesPage(
-        PageContext<ListCmsMetadataValuesRequest, ListCmsMetadataValuesResponse, CmsMetadataValue>
+        @Nullable
+            PageContext<
+                ListCmsMetadataValuesRequest, ListCmsMetadataValuesResponse, CmsMetadataValue>
             context,
-        ListCmsMetadataValuesResponse response) {
+        @Nullable ListCmsMetadataValuesResponse response) {
       super(context, response);
     }
 
@@ -893,15 +899,19 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
     @Override
     protected ListCmsMetadataValuesPage createPage(
-        PageContext<ListCmsMetadataValuesRequest, ListCmsMetadataValuesResponse, CmsMetadataValue>
+        @Nullable
+            PageContext<
+                ListCmsMetadataValuesRequest, ListCmsMetadataValuesResponse, CmsMetadataValue>
             context,
-        ListCmsMetadataValuesResponse response) {
+        @Nullable ListCmsMetadataValuesResponse response) {
       return new ListCmsMetadataValuesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCmsMetadataValuesPage> createPageAsync(
-        PageContext<ListCmsMetadataValuesRequest, ListCmsMetadataValuesResponse, CmsMetadataValue>
+        @Nullable
+            PageContext<
+                ListCmsMetadataValuesRequest, ListCmsMetadataValuesResponse, CmsMetadataValue>
             context,
         ApiFuture<ListCmsMetadataValuesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -917,7 +927,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
           ListCmsMetadataValuesFixedSizeCollection> {
 
     private ListCmsMetadataValuesFixedSizeCollection(
-        List<ListCmsMetadataValuesPage> pages, int collectionSize) {
+        @Nullable List<ListCmsMetadataValuesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -927,7 +937,7 @@ public class CmsMetadataValueServiceClient implements BackgroundResource {
 
     @Override
     protected ListCmsMetadataValuesFixedSizeCollection createCollection(
-        List<ListCmsMetadataValuesPage> pages, int collectionSize) {
+        @Nullable List<ListCmsMetadataValuesPage> pages, int collectionSize) {
       return new ListCmsMetadataValuesFixedSizeCollection(pages, collectionSize);
     }
   }

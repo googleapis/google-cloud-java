@@ -32,6 +32,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -84,6 +86,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ContentBundleServiceSettings extends ClientSettings<ContentBundleServiceSettings> {
 
@@ -97,6 +100,21 @@ public class ContentBundleServiceSettings extends ClientSettings<ContentBundleSe
           ListContentBundlesRequest, ListContentBundlesResponse, ListContentBundlesPagedResponse>
       listContentBundlesSettings() {
     return ((ContentBundleServiceStubSettings) getStubSettings()).listContentBundlesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateContentBundles. */
+  public UnaryCallSettings<BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+      batchActivateContentBundlesSettings() {
+    return ((ContentBundleServiceStubSettings) getStubSettings())
+        .batchActivateContentBundlesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateContentBundles. */
+  public UnaryCallSettings<
+          BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+      batchDeactivateContentBundlesSettings() {
+    return ((ContentBundleServiceStubSettings) getStubSettings())
+        .batchDeactivateContentBundlesSettings();
   }
 
   public static final ContentBundleServiceSettings create(ContentBundleServiceStubSettings stub)
@@ -144,7 +162,7 @@ public class ContentBundleServiceSettings extends ClientSettings<ContentBundleSe
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -165,7 +183,7 @@ public class ContentBundleServiceSettings extends ClientSettings<ContentBundleSe
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(ContentBundleServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -208,6 +226,20 @@ public class ContentBundleServiceSettings extends ClientSettings<ContentBundleSe
             ListContentBundlesRequest, ListContentBundlesResponse, ListContentBundlesPagedResponse>
         listContentBundlesSettings() {
       return getStubSettingsBuilder().listContentBundlesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateContentBundles. */
+    public UnaryCallSettings.Builder<
+            BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+        batchActivateContentBundlesSettings() {
+      return getStubSettingsBuilder().batchActivateContentBundlesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateContentBundles. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+        batchDeactivateContentBundlesSettings() {
+      return getStubSettingsBuilder().batchDeactivateContentBundlesSettings();
     }
 
     @Override

@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SitemapName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_DATA_STORE_SITEMAP =
@@ -172,7 +175,7 @@ public class SitemapName implements ResourceName {
         .toString();
   }
 
-  public static SitemapName parse(String formattedString) {
+  public static @Nullable SitemapName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -204,7 +207,7 @@ public class SitemapName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<SitemapName> values) {
+  public static List<String> toStringList(List<@Nullable SitemapName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SitemapName value : values) {
       if (value == null) {
@@ -259,7 +262,7 @@ public class SitemapName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -70,6 +70,8 @@ import com.google.pubsub.v1.ValidateSchemaResponse;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -121,6 +123,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSettings> {
@@ -400,7 +403,7 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -482,7 +485,7 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       createSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();

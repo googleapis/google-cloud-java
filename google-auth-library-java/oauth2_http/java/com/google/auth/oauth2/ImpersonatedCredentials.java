@@ -70,6 +70,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * ImpersonatedCredentials allowing credentials issued to a user or service account to impersonate
@@ -97,6 +99,7 @@ import java.util.Objects;
  *     System.out.println(b);
  * </pre>
  */
+@NullMarked
 public class ImpersonatedCredentials extends GoogleCredentials
     implements ServiceAccountSigner, IdTokenProvider {
 
@@ -731,7 +734,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof ImpersonatedCredentials)) {
       return false;
     }

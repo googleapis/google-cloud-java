@@ -85,6 +85,7 @@ import com.google.cloud.location.Location;
 import com.google.cloud.oracledatabase.v1.AutonomousDatabase;
 import com.google.cloud.oracledatabase.v1.AutonomousDatabaseBackup;
 import com.google.cloud.oracledatabase.v1.AutonomousDatabaseCharacterSet;
+import com.google.cloud.oracledatabase.v1.AutonomousDatabaseRefreshableClones;
 import com.google.cloud.oracledatabase.v1.AutonomousDbVersion;
 import com.google.cloud.oracledatabase.v1.CloudExadataInfrastructure;
 import com.google.cloud.oracledatabase.v1.CloudVmCluster;
@@ -125,6 +126,7 @@ import com.google.cloud.oracledatabase.v1.ExascaleDbStorageVault;
 import com.google.cloud.oracledatabase.v1.FailoverAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletRequest;
 import com.google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse;
+import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRefreshableClonesRequest;
 import com.google.cloud.oracledatabase.v1.GetAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudExadataInfrastructureRequest;
 import com.google.cloud.oracledatabase.v1.GetCloudVmClusterRequest;
@@ -209,6 +211,7 @@ import com.google.cloud.oracledatabase.v1.OdbNetwork;
 import com.google.cloud.oracledatabase.v1.OdbSubnet;
 import com.google.cloud.oracledatabase.v1.OperationMetadata;
 import com.google.cloud.oracledatabase.v1.PluggableDatabase;
+import com.google.cloud.oracledatabase.v1.RefreshAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RemoveVirtualMachineExadbVmClusterRequest;
 import com.google.cloud.oracledatabase.v1.RestartAutonomousDatabaseRequest;
 import com.google.cloud.oracledatabase.v1.RestoreAutonomousDatabaseRequest;
@@ -231,6 +234,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -309,6 +314,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubSettings> {
@@ -440,6 +446,14 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   private final OperationCallSettings<
           FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
       failoverAutonomousDatabaseOperationSettings;
+  private final UnaryCallSettings<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseSettings;
+  private final OperationCallSettings<
+          RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseOperationSettings;
+  private final UnaryCallSettings<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesSettings;
   private final PagedCallSettings<
           ListOdbNetworksRequest, ListOdbNetworksResponse, ListOdbNetworksPagedResponse>
       listOdbNetworksSettings;
@@ -2909,6 +2923,28 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     return failoverAutonomousDatabaseOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to refreshAutonomousDatabase. */
+  public UnaryCallSettings<RefreshAutonomousDatabaseRequest, Operation>
+      refreshAutonomousDatabaseSettings() {
+    return refreshAutonomousDatabaseSettings;
+  }
+
+  /** Returns the object with the settings used for calls to refreshAutonomousDatabase. */
+  public OperationCallSettings<
+          RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      refreshAutonomousDatabaseOperationSettings() {
+    return refreshAutonomousDatabaseOperationSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getAutonomousDatabaseRefreshableClones.
+   */
+  public UnaryCallSettings<
+          GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+      getAutonomousDatabaseRefreshableClonesSettings() {
+    return getAutonomousDatabaseRefreshableClonesSettings;
+  }
+
   /** Returns the object with the settings used for calls to listOdbNetworks. */
   public PagedCallSettings<
           ListOdbNetworksRequest, ListOdbNetworksResponse, ListOdbNetworksPagedResponse>
@@ -3471,7 +3507,7 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -3551,6 +3587,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
         settingsBuilder.failoverAutonomousDatabaseSettings().build();
     failoverAutonomousDatabaseOperationSettings =
         settingsBuilder.failoverAutonomousDatabaseOperationSettings().build();
+    refreshAutonomousDatabaseSettings = settingsBuilder.refreshAutonomousDatabaseSettings().build();
+    refreshAutonomousDatabaseOperationSettings =
+        settingsBuilder.refreshAutonomousDatabaseOperationSettings().build();
+    getAutonomousDatabaseRefreshableClonesSettings =
+        settingsBuilder.getAutonomousDatabaseRefreshableClonesSettings().build();
     listOdbNetworksSettings = settingsBuilder.listOdbNetworksSettings().build();
     getOdbNetworkSettings = settingsBuilder.getOdbNetworkSettings().build();
     createOdbNetworkSettings = settingsBuilder.createOdbNetworkSettings().build();
@@ -3798,6 +3839,14 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
     private final OperationCallSettings.Builder<
             FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
         failoverAutonomousDatabaseOperationSettings;
+    private final UnaryCallSettings.Builder<RefreshAutonomousDatabaseRequest, Operation>
+        refreshAutonomousDatabaseSettings;
+    private final OperationCallSettings.Builder<
+            RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        refreshAutonomousDatabaseOperationSettings;
+    private final UnaryCallSettings.Builder<
+            GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+        getAutonomousDatabaseRefreshableClonesSettings;
     private final PagedCallSettings.Builder<
             ListOdbNetworksRequest, ListOdbNetworksResponse, ListOdbNetworksPagedResponse>
         listOdbNetworksSettings;
@@ -4043,7 +4092,7 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       listCloudExadataInfrastructuresSettings =
@@ -4099,6 +4148,10 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       switchoverAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
       failoverAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       failoverAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
+      refreshAutonomousDatabaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      refreshAutonomousDatabaseOperationSettings = OperationCallSettings.newBuilder();
+      getAutonomousDatabaseRefreshableClonesSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       listOdbNetworksSettings = PagedCallSettings.newBuilder(LIST_ODB_NETWORKS_PAGE_STR_FACT);
       getOdbNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createOdbNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -4216,6 +4269,8 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               restartAutonomousDatabaseSettings,
               switchoverAutonomousDatabaseSettings,
               failoverAutonomousDatabaseSettings,
+              refreshAutonomousDatabaseSettings,
+              getAutonomousDatabaseRefreshableClonesSettings,
               listOdbNetworksSettings,
               getOdbNetworkSettings,
               createOdbNetworkSettings,
@@ -4339,6 +4394,11 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
       failoverAutonomousDatabaseSettings = settings.failoverAutonomousDatabaseSettings.toBuilder();
       failoverAutonomousDatabaseOperationSettings =
           settings.failoverAutonomousDatabaseOperationSettings.toBuilder();
+      refreshAutonomousDatabaseSettings = settings.refreshAutonomousDatabaseSettings.toBuilder();
+      refreshAutonomousDatabaseOperationSettings =
+          settings.refreshAutonomousDatabaseOperationSettings.toBuilder();
+      getAutonomousDatabaseRefreshableClonesSettings =
+          settings.getAutonomousDatabaseRefreshableClonesSettings.toBuilder();
       listOdbNetworksSettings = settings.listOdbNetworksSettings.toBuilder();
       getOdbNetworkSettings = settings.getOdbNetworkSettings.toBuilder();
       createOdbNetworkSettings = settings.createOdbNetworkSettings.toBuilder();
@@ -4470,6 +4530,8 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
               restartAutonomousDatabaseSettings,
               switchoverAutonomousDatabaseSettings,
               failoverAutonomousDatabaseSettings,
+              refreshAutonomousDatabaseSettings,
+              getAutonomousDatabaseRefreshableClonesSettings,
               listOdbNetworksSettings,
               getOdbNetworkSettings,
               createOdbNetworkSettings,
@@ -4694,6 +4756,16 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
 
       builder
           .failoverAutonomousDatabaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .refreshAutonomousDatabaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getAutonomousDatabaseRefreshableClonesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -5272,6 +5344,31 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
           .setInitialCallSettings(
               UnaryCallSettings
                   .<FailoverAutonomousDatabaseRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AutonomousDatabase.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .refreshAutonomousDatabaseOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RefreshAutonomousDatabaseRequest, OperationSnapshot>
                       newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
@@ -6111,6 +6208,29 @@ public class OracleDatabaseStubSettings extends StubSettings<OracleDatabaseStubS
             FailoverAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
         failoverAutonomousDatabaseOperationSettings() {
       return failoverAutonomousDatabaseOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to refreshAutonomousDatabase. */
+    public UnaryCallSettings.Builder<RefreshAutonomousDatabaseRequest, Operation>
+        refreshAutonomousDatabaseSettings() {
+      return refreshAutonomousDatabaseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to refreshAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            RefreshAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        refreshAutonomousDatabaseOperationSettings() {
+      return refreshAutonomousDatabaseOperationSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * getAutonomousDatabaseRefreshableClones.
+     */
+    public UnaryCallSettings.Builder<
+            GetAutonomousDatabaseRefreshableClonesRequest, AutonomousDatabaseRefreshableClones>
+        getAutonomousDatabaseRefreshableClonesSettings() {
+      return getAutonomousDatabaseRefreshableClonesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listOdbNetworks. */

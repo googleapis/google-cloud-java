@@ -33,12 +33,14 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.support.v2beta.CreateSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2beta.DeleteSupportEventSubscriptionRequest;
+import com.google.cloud.support.v2beta.ExpungeSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2beta.GetSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2beta.ListSupportEventSubscriptionsRequest;
 import com.google.cloud.support.v2beta.ListSupportEventSubscriptionsResponse;
 import com.google.cloud.support.v2beta.SupportEventSubscription;
 import com.google.cloud.support.v2beta.UndeleteSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2beta.UpdateSupportEventSubscriptionRequest;
+import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -47,6 +49,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -54,6 +57,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class HttpJsonSupportEventSubscriptionServiceStub
@@ -72,7 +76,7 @@ public class HttpJsonSupportEventSubscriptionServiceStub
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<CreateSupportEventSubscriptionRequest>newBuilder()
                       .setPath(
-                          "/v2beta/{parent=*/*}/supportEventSubscriptions",
+                          "/v2beta/{parent=organizations/*}/supportEventSubscriptions",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<CreateSupportEventSubscriptionRequest> serializer =
@@ -115,7 +119,7 @@ public class HttpJsonSupportEventSubscriptionServiceStub
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<GetSupportEventSubscriptionRequest>newBuilder()
                       .setPath(
-                          "/v2beta/{name=*/*/supportEventSubscriptions/*}",
+                          "/v2beta/{name=organizations/*/supportEventSubscriptions/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<GetSupportEventSubscriptionRequest> serializer =
@@ -153,7 +157,7 @@ public class HttpJsonSupportEventSubscriptionServiceStub
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<ListSupportEventSubscriptionsRequest>newBuilder()
                       .setPath(
-                          "/v2beta/{parent=*/*}/supportEventSubscriptions",
+                          "/v2beta/{parent=organizations/*}/supportEventSubscriptions",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<ListSupportEventSubscriptionsRequest> serializer =
@@ -196,7 +200,7 @@ public class HttpJsonSupportEventSubscriptionServiceStub
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UpdateSupportEventSubscriptionRequest>newBuilder()
                       .setPath(
-                          "/v2beta/{supportEventSubscription.name=*/*/supportEventSubscriptions/*}",
+                          "/v2beta/{supportEventSubscription.name=organizations/*/supportEventSubscriptions/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<UpdateSupportEventSubscriptionRequest> serializer =
@@ -243,7 +247,7 @@ public class HttpJsonSupportEventSubscriptionServiceStub
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<DeleteSupportEventSubscriptionRequest>newBuilder()
                       .setPath(
-                          "/v2beta/{name=*/*/supportEventSubscriptions/*}",
+                          "/v2beta/{name=organizations/*/supportEventSubscriptions/*}",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteSupportEventSubscriptionRequest> serializer =
@@ -280,7 +284,7 @@ public class HttpJsonSupportEventSubscriptionServiceStub
               .setRequestFormatter(
                   ProtoMessageRequestFormatter.<UndeleteSupportEventSubscriptionRequest>newBuilder()
                       .setPath(
-                          "/v2beta/{name=*/*/supportEventSubscriptions/*}:undelete",
+                          "/v2beta/{name=organizations/*/supportEventSubscriptions/*}:undelete",
                           request -> {
                             Map<String, String> fields = new HashMap<>();
                             ProtoRestSerializer<UndeleteSupportEventSubscriptionRequest>
@@ -308,6 +312,44 @@ public class HttpJsonSupportEventSubscriptionServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionMethodDescriptor =
+          ApiMethodDescriptor.<ExpungeSupportEventSubscriptionRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.support.v2beta.SupportEventSubscriptionService/ExpungeSupportEventSubscription")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ExpungeSupportEventSubscriptionRequest>newBuilder()
+                      .setPath(
+                          "/v2beta/{name=organizations/*/supportEventSubscriptions/*}:expunge",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ExpungeSupportEventSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ExpungeSupportEventSubscriptionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateSupportEventSubscriptionRequest, SupportEventSubscription>
       createSupportEventSubscriptionCallable;
   private final UnaryCallable<GetSupportEventSubscriptionRequest, SupportEventSubscription>
@@ -324,6 +366,8 @@ public class HttpJsonSupportEventSubscriptionServiceStub
       deleteSupportEventSubscriptionCallable;
   private final UnaryCallable<UndeleteSupportEventSubscriptionRequest, SupportEventSubscription>
       undeleteSupportEventSubscriptionCallable;
+  private final UnaryCallable<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -458,6 +502,19 @@ public class HttpJsonSupportEventSubscriptionServiceStub
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    HttpJsonCallSettings<ExpungeSupportEventSubscriptionRequest, Empty>
+        expungeSupportEventSubscriptionTransportSettings =
+            HttpJsonCallSettings.<ExpungeSupportEventSubscriptionRequest, Empty>newBuilder()
+                .setMethodDescriptor(expungeSupportEventSubscriptionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
 
     this.createSupportEventSubscriptionCallable =
         callableFactory.createUnaryCallable(
@@ -494,6 +551,11 @@ public class HttpJsonSupportEventSubscriptionServiceStub
             undeleteSupportEventSubscriptionTransportSettings,
             settings.undeleteSupportEventSubscriptionSettings(),
             clientContext);
+    this.expungeSupportEventSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            expungeSupportEventSubscriptionTransportSettings,
+            settings.expungeSupportEventSubscriptionSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -508,6 +570,7 @@ public class HttpJsonSupportEventSubscriptionServiceStub
     methodDescriptors.add(updateSupportEventSubscriptionMethodDescriptor);
     methodDescriptors.add(deleteSupportEventSubscriptionMethodDescriptor);
     methodDescriptors.add(undeleteSupportEventSubscriptionMethodDescriptor);
+    methodDescriptors.add(expungeSupportEventSubscriptionMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -552,6 +615,12 @@ public class HttpJsonSupportEventSubscriptionServiceStub
   public UnaryCallable<UndeleteSupportEventSubscriptionRequest, SupportEventSubscription>
       undeleteSupportEventSubscriptionCallable() {
     return undeleteSupportEventSubscriptionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionCallable() {
+    return expungeSupportEventSubscriptionCallable;
   }
 
   @Override

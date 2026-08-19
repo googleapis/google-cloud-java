@@ -15,7 +15,9 @@
 package com.google.api.generator.engine.lexicon;
 
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class Separator {
   private static final Pattern SEPARATOR_PATTERN = Pattern.compile("[\\[\\]\\{\\}\\(\\)\\.;]");
 

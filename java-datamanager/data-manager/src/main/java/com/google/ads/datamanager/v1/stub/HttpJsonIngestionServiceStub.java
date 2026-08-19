@@ -22,6 +22,8 @@ import com.google.ads.datamanager.v1.IngestAudienceMembersRequest;
 import com.google.ads.datamanager.v1.IngestAudienceMembersResponse;
 import com.google.ads.datamanager.v1.IngestEventsRequest;
 import com.google.ads.datamanager.v1.IngestEventsResponse;
+import com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest;
+import com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse;
 import com.google.ads.datamanager.v1.RemoveAudienceMembersRequest;
 import com.google.ads.datamanager.v1.RemoveAudienceMembersResponse;
 import com.google.ads.datamanager.v1.RetrieveRequestStatusRequest;
@@ -45,6 +47,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -52,6 +55,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
@@ -128,6 +132,45 @@ public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<RemoveAudienceMembersResponse>newBuilder()
                       .setDefaultInstance(RemoveAudienceMembersResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersMethodDescriptor =
+          ApiMethodDescriptor
+              .<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.datamanager.v1.IngestionService/RemoveAllAudienceMembers")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<RemoveAllAudienceMembersRequest>newBuilder()
+                      .setPath(
+                          "/v1/audienceMembers:removeAll",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveAllAudienceMembersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<RemoveAllAudienceMembersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RemoveAllAudienceMembersResponse>newBuilder()
+                      .setDefaultInstance(RemoveAllAudienceMembersResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -244,6 +287,8 @@ public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
       ingestAudienceMembersCallable;
   private final UnaryCallable<RemoveAudienceMembersRequest, RemoveAudienceMembersResponse>
       removeAudienceMembersCallable;
+  private final UnaryCallable<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersCallable;
   private final UnaryCallable<IngestEventsRequest, IngestEventsResponse> ingestEventsCallable;
   private final UnaryCallable<IngestAdEventsRequest, IngestAdEventsResponse> ingestAdEventsCallable;
   private final UnaryCallable<RetrieveRequestStatusRequest, RetrieveRequestStatusResponse>
@@ -305,6 +350,13 @@ public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
                 .setMethodDescriptor(removeAudienceMembersMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .build();
+    HttpJsonCallSettings<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+        removeAllAudienceMembersTransportSettings =
+            HttpJsonCallSettings
+                .<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>newBuilder()
+                .setMethodDescriptor(removeAllAudienceMembersMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<IngestEventsRequest, IngestEventsResponse> ingestEventsTransportSettings =
         HttpJsonCallSettings.<IngestEventsRequest, IngestEventsResponse>newBuilder()
             .setMethodDescriptor(ingestEventsMethodDescriptor)
@@ -334,6 +386,11 @@ public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
             removeAudienceMembersTransportSettings,
             settings.removeAudienceMembersSettings(),
             clientContext);
+    this.removeAllAudienceMembersCallable =
+        callableFactory.createUnaryCallable(
+            removeAllAudienceMembersTransportSettings,
+            settings.removeAllAudienceMembersSettings(),
+            clientContext);
     this.ingestEventsCallable =
         callableFactory.createUnaryCallable(
             ingestEventsTransportSettings, settings.ingestEventsSettings(), clientContext);
@@ -355,6 +412,7 @@ public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(ingestAudienceMembersMethodDescriptor);
     methodDescriptors.add(removeAudienceMembersMethodDescriptor);
+    methodDescriptors.add(removeAllAudienceMembersMethodDescriptor);
     methodDescriptors.add(ingestEventsMethodDescriptor);
     methodDescriptors.add(ingestAdEventsMethodDescriptor);
     methodDescriptors.add(retrieveRequestStatusMethodDescriptor);
@@ -371,6 +429,12 @@ public class HttpJsonIngestionServiceStub extends IngestionServiceStub {
   public UnaryCallable<RemoveAudienceMembersRequest, RemoveAudienceMembersResponse>
       removeAudienceMembersCallable() {
     return removeAudienceMembersCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersCallable() {
+    return removeAllAudienceMembersCallable;
   }
 
   @Override

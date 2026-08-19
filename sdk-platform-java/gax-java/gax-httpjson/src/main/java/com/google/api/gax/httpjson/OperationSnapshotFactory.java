@@ -30,6 +30,7 @@
 package com.google.api.gax.httpjson;
 
 import com.google.api.gax.longrunning.OperationSnapshot;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A factory which creates an {@link OperationSnapshot} from an initial request message (the one
@@ -41,6 +42,7 @@ import com.google.api.gax.longrunning.OperationSnapshot;
  * @param <RequestT> initial request message type
  * @param <OperationT> initial or polling response type
  */
+@NullMarked
 public interface OperationSnapshotFactory<RequestT, OperationT> {
   OperationSnapshot create(RequestT request, OperationT response);
 }

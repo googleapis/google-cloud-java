@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -68,7 +70,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetEntitySignalsMapping</td>
- *      <td><p> API to retrieve a `EntitySignalsMapping` object.</td>
+ *      <td><p> Retrieves a `EntitySignalsMapping` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -87,7 +89,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListEntitySignalsMappings</td>
- *      <td><p> API to retrieve a list of `EntitySignalsMapping` objects.</td>
+ *      <td><p> Lists `EntitySignalsMapping` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -107,7 +109,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateEntitySignalsMapping</td>
- *      <td><p> API to create an `EntitySignalsMapping` object.</td>
+ *      <td><p> Creates an `EntitySignalsMapping` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -126,7 +128,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateEntitySignalsMapping</td>
- *      <td><p> API to update an `EntitySignalsMapping` object.</td>
+ *      <td><p> Updates an `EntitySignalsMapping` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -144,7 +146,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateEntitySignalsMappings</td>
- *      <td><p> API to batch create `EntitySignalsMapping` objects.</td>
+ *      <td><p> Creates `EntitySignalsMapping` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -160,7 +162,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateEntitySignalsMappings</td>
- *      <td><p> API to batch update `EntitySignalsMapping` objects.</td>
+ *      <td><p> Batch updates `EntitySignalsMapping` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -217,9 +219,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EntitySignalsMappingServiceClient implements BackgroundResource {
-  private final EntitySignalsMappingServiceSettings settings;
+  private final @Nullable EntitySignalsMappingServiceSettings settings;
   private final EntitySignalsMappingServiceStub stub;
 
   /** Constructs an instance of EntitySignalsMappingServiceClient with default settings. */
@@ -262,7 +265,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final EntitySignalsMappingServiceSettings getSettings() {
+  public final @Nullable EntitySignalsMappingServiceSettings getSettings() {
     return settings;
   }
 
@@ -272,7 +275,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `EntitySignalsMapping` object.
+   * Retrieves a `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -295,7 +298,8 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
    *     `networks/{network_code}/entitySignalsMappings/{entity_signals_mapping_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EntitySignalsMapping getEntitySignalsMapping(EntitySignalsMappingName name) {
+  public final EntitySignalsMapping getEntitySignalsMapping(
+      @Nullable EntitySignalsMappingName name) {
     GetEntitySignalsMappingRequest request =
         GetEntitySignalsMappingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -305,7 +309,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `EntitySignalsMapping` object.
+   * Retrieves a `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -336,7 +340,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `EntitySignalsMapping` object.
+   * Retrieves a `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -369,7 +373,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `EntitySignalsMapping` object.
+   * Retrieves a `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -401,7 +405,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `EntitySignalsMapping` objects.
+   * Lists `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -426,7 +430,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListEntitySignalsMappingsPagedResponse listEntitySignalsMappings(
-      NetworkName parent) {
+      @Nullable NetworkName parent) {
     ListEntitySignalsMappingsRequest request =
         ListEntitySignalsMappingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -436,7 +440,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `EntitySignalsMapping` objects.
+   * Lists `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -468,7 +472,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `EntitySignalsMapping` objects.
+   * Lists `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -506,7 +510,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `EntitySignalsMapping` objects.
+   * Lists `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -546,7 +550,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `EntitySignalsMapping` objects.
+   * Lists `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -590,7 +594,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `EntitySignalsMapping` object.
+   * Creates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -616,7 +620,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntitySignalsMapping createEntitySignalsMapping(
-      NetworkName parent, EntitySignalsMapping entitySignalsMapping) {
+      @Nullable NetworkName parent, EntitySignalsMapping entitySignalsMapping) {
     CreateEntitySignalsMappingRequest request =
         CreateEntitySignalsMappingRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -627,7 +631,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `EntitySignalsMapping` object.
+   * Creates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -664,7 +668,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `EntitySignalsMapping` object.
+   * Creates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -696,7 +700,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `EntitySignalsMapping` object.
+   * Creates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -729,7 +733,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `EntitySignalsMapping` object.
+   * Updates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -767,7 +771,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `EntitySignalsMapping` object.
+   * Updates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -799,7 +803,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `EntitySignalsMapping` object.
+   * Updates an `EntitySignalsMapping` object.
    *
    * <p>Sample code:
    *
@@ -832,7 +836,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `EntitySignalsMapping` objects.
+   * Creates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -859,7 +863,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateEntitySignalsMappingsResponse batchCreateEntitySignalsMappings(
-      NetworkName parent, List<CreateEntitySignalsMappingRequest> requests) {
+      @Nullable NetworkName parent, List<CreateEntitySignalsMappingRequest> requests) {
     BatchCreateEntitySignalsMappingsRequest request =
         BatchCreateEntitySignalsMappingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -870,7 +874,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `EntitySignalsMapping` objects.
+   * Creates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -908,7 +912,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `EntitySignalsMapping` objects.
+   * Creates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -940,7 +944,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `EntitySignalsMapping` objects.
+   * Creates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -974,7 +978,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `EntitySignalsMapping` objects.
+   * Batch updates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -1001,7 +1005,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateEntitySignalsMappingsResponse batchUpdateEntitySignalsMappings(
-      NetworkName parent, List<UpdateEntitySignalsMappingRequest> requests) {
+      @Nullable NetworkName parent, List<UpdateEntitySignalsMappingRequest> requests) {
     BatchUpdateEntitySignalsMappingsRequest request =
         BatchUpdateEntitySignalsMappingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1012,7 +1016,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `EntitySignalsMapping` objects.
+   * Batch updates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -1050,7 +1054,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `EntitySignalsMapping` objects.
+   * Batch updates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -1082,7 +1086,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `EntitySignalsMapping` objects.
+   * Batch updates `EntitySignalsMapping` objects.
    *
    * <p>Sample code:
    *
@@ -1180,12 +1184,13 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
           ListEntitySignalsMappingsPage> {
 
     private ListEntitySignalsMappingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEntitySignalsMappingsRequest,
                 ListEntitySignalsMappingsResponse,
                 EntitySignalsMapping>
             context,
-        ListEntitySignalsMappingsResponse response) {
+        @Nullable ListEntitySignalsMappingsResponse response) {
       super(context, response);
     }
 
@@ -1195,18 +1200,20 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntitySignalsMappingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEntitySignalsMappingsRequest,
                 ListEntitySignalsMappingsResponse,
                 EntitySignalsMapping>
             context,
-        ListEntitySignalsMappingsResponse response) {
+        @Nullable ListEntitySignalsMappingsResponse response) {
       return new ListEntitySignalsMappingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntitySignalsMappingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListEntitySignalsMappingsRequest,
                 ListEntitySignalsMappingsResponse,
                 EntitySignalsMapping>
@@ -1225,7 +1232,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
           ListEntitySignalsMappingsFixedSizeCollection> {
 
     private ListEntitySignalsMappingsFixedSizeCollection(
-        List<ListEntitySignalsMappingsPage> pages, int collectionSize) {
+        @Nullable List<ListEntitySignalsMappingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1235,7 +1242,7 @@ public class EntitySignalsMappingServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntitySignalsMappingsFixedSizeCollection createCollection(
-        List<ListEntitySignalsMappingsPage> pages, int collectionSize) {
+        @Nullable List<ListEntitySignalsMappingsPage> pages, int collectionSize) {
       return new ListEntitySignalsMappingsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerystorage</artifactId>
-  <version>3.30.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+  <version>3.32.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
   <packaging>jar</packaging>
   <name>BigQuery Storage</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
@@ -11,10 +11,12 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquerystorage-parent</artifactId>
-    <version>3.30.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+    <version>3.32.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquerystorage</site.installationModule>
+    <bigquery.endpoint>https://us-east7-bigquery.googleapis.com</bigquery.endpoint>
+    <bigquery.storage.endpoint>us-east7-bigquerystorage.googleapis.com:443</bigquery.storage.endpoint>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -177,6 +179,10 @@
       <groupId>org.apache.arrow</groupId>
       <artifactId>arrow-vector</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.jspecify</groupId>
+      <artifactId>jspecify</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>io.opentelemetry</groupId>
@@ -191,6 +197,11 @@
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-sdk-trace</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.awaitility</groupId>
+      <artifactId>awaitility</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -234,13 +245,11 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>3.12.4</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
-      <version>1.11.4</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -249,13 +258,13 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java-util</artifactId>
+      <groupId>org.apache.arrow</groupId>
+      <artifactId>arrow-memory-netty</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-bigquery</artifactId>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java-util</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -401,6 +410,10 @@
                 <buildArg>--no-fallback</buildArg>
                 <buildArg>--no-server</buildArg>
               </buildArgs>
+              <environmentVariables>
+                <BIGQUERY_ENDPOINT>${bigquery.endpoint}</BIGQUERY_ENDPOINT>
+                <BIGQUERY_STORAGE_ENDPOINT>${bigquery.storage.endpoint}</BIGQUERY_STORAGE_ENDPOINT>
+              </environmentVariables>
             </configuration>
           </plugin>
         </plugins>

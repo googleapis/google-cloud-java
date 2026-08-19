@@ -10,8 +10,5 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-common-protos",
   "distribution_name": "com.google.api.grpc:proto-google-common-protos",
-  "library_type": "OTHER",
-  "requires_billing": true,
-  "excluded_dependencies": "grpc-google-common-protos,proto-google-common-protos,proto-google-common-protos-parent",
-  "excluded_poms": "proto-google-common-protos-bom,proto-google-common-protos"
+  "library_type": "OTHER"
 }

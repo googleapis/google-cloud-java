@@ -608,6 +608,9 @@ public class SecurityCenterClientTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -711,6 +714,9 @@ public class SecurityCenterClientTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -3912,6 +3918,9 @@ public class SecurityCenterClientTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4014,6 +4023,9 @@ public class SecurityCenterClientTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4202,6 +4214,9 @@ public class SecurityCenterClientTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4304,6 +4319,9 @@ public class SecurityCenterClientTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -4586,6 +4604,9 @@ public class SecurityCenterClientTest {
             .setAiModel(AiModel.newBuilder().build())
             .setChokepoint(Chokepoint.newBuilder().build())
             .setVertexAi(VertexAi.newBuilder().build())
+            .setAgent(Agent.newBuilder().build())
+            .addAllAgentSessions(new ArrayList<AgentSession>())
+            .setAgentAnomaly(AgentAnomaly.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 

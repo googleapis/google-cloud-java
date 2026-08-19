@@ -17,7 +17,9 @@ package com.google.api.generator.gapic.model;
 import com.google.auto.value.AutoValue;
 import com.google.protobuf.Duration;
 import io.grpc.serviceconfig.MethodConfig.RetryPolicy;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 @AutoValue
 public abstract class RetrySettings {
   public abstract Duration timeout();

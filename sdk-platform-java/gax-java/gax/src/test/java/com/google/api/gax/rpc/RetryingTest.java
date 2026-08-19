@@ -57,7 +57,8 @@ import org.mockito.Mockito;
 class RetryingTest {
 
   @SuppressWarnings("unchecked")
-  private UnaryCallable<Integer, Integer> callInt = Mockito.mock(UnaryCallable.class);
+  private UnaryCallable<Integer, Integer> callInt =
+      Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
 
   private RecordingScheduler executor;
   private FakeApiClock fakeClock;

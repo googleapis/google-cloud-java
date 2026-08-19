@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -149,10 +151,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class MessagesV1Beta3Client implements BackgroundResource {
-  private final MessagesV1Beta3Settings settings;
+  private final @Nullable MessagesV1Beta3Settings settings;
   private final MessagesV1Beta3Stub stub;
 
   /** Constructs an instance of MessagesV1Beta3Client with default settings. */
@@ -192,7 +195,7 @@ public class MessagesV1Beta3Client implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MessagesV1Beta3Settings getSettings() {
+  public final @Nullable MessagesV1Beta3Settings getSettings() {
     return settings;
   }
 
@@ -397,8 +400,8 @@ public class MessagesV1Beta3Client implements BackgroundResource {
           ListJobMessagesRequest, ListJobMessagesResponse, JobMessage, ListJobMessagesPage> {
 
     private ListJobMessagesPage(
-        PageContext<ListJobMessagesRequest, ListJobMessagesResponse, JobMessage> context,
-        ListJobMessagesResponse response) {
+        @Nullable PageContext<ListJobMessagesRequest, ListJobMessagesResponse, JobMessage> context,
+        @Nullable ListJobMessagesResponse response) {
       super(context, response);
     }
 
@@ -408,14 +411,14 @@ public class MessagesV1Beta3Client implements BackgroundResource {
 
     @Override
     protected ListJobMessagesPage createPage(
-        PageContext<ListJobMessagesRequest, ListJobMessagesResponse, JobMessage> context,
-        ListJobMessagesResponse response) {
+        @Nullable PageContext<ListJobMessagesRequest, ListJobMessagesResponse, JobMessage> context,
+        @Nullable ListJobMessagesResponse response) {
       return new ListJobMessagesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListJobMessagesPage> createPageAsync(
-        PageContext<ListJobMessagesRequest, ListJobMessagesResponse, JobMessage> context,
+        @Nullable PageContext<ListJobMessagesRequest, ListJobMessagesResponse, JobMessage> context,
         ApiFuture<ListJobMessagesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -430,7 +433,7 @@ public class MessagesV1Beta3Client implements BackgroundResource {
           ListJobMessagesFixedSizeCollection> {
 
     private ListJobMessagesFixedSizeCollection(
-        List<ListJobMessagesPage> pages, int collectionSize) {
+        @Nullable List<ListJobMessagesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -440,7 +443,7 @@ public class MessagesV1Beta3Client implements BackgroundResource {
 
     @Override
     protected ListJobMessagesFixedSizeCollection createCollection(
-        List<ListJobMessagesPage> pages, int collectionSize) {
+        @Nullable List<ListJobMessagesPage> pages, int collectionSize) {
       return new ListJobMessagesFixedSizeCollection(pages, collectionSize);
     }
   }

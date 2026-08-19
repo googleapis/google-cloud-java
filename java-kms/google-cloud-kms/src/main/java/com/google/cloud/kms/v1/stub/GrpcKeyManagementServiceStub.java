@@ -52,6 +52,8 @@ import com.google.cloud.kms.v1.DeleteCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.EncryptRequest;
 import com.google.cloud.kms.v1.EncryptResponse;
+import com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionRequest;
+import com.google.cloud.kms.v1.ExportTrustedKeyWrappedCryptoKeyVersionResponse;
 import com.google.cloud.kms.v1.GenerateRandomBytesRequest;
 import com.google.cloud.kms.v1.GenerateRandomBytesResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
@@ -62,6 +64,7 @@ import com.google.cloud.kms.v1.GetPublicKeyRequest;
 import com.google.cloud.kms.v1.GetRetiredResourceRequest;
 import com.google.cloud.kms.v1.ImportCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.ImportJob;
+import com.google.cloud.kms.v1.ImportTrustedKeyWrappedCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse;
@@ -104,6 +107,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -111,6 +115,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
   private static final MethodDescriptor<ListKeyRingsRequest, ListKeyRingsResponse>
@@ -296,6 +301,41 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportCryptoKeyVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+      importTrustedKeyWrappedCryptoKeyVersionMethodDescriptor =
+          MethodDescriptor
+              .<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.kms.v1.KeyManagementService/ImportTrustedKeyWrappedCryptoKeyVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ImportTrustedKeyWrappedCryptoKeyVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(CryptoKeyVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      exportTrustedKeyWrappedCryptoKeyVersionMethodDescriptor =
+          MethodDescriptor
+              .<ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+                  ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.kms.v1.KeyManagementService/ExportTrustedKeyWrappedCryptoKeyVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ExportTrustedKeyWrappedCryptoKeyVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ExportTrustedKeyWrappedCryptoKeyVersionResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -560,6 +600,12 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
       deleteCryptoKeyVersionOperationCallable;
   private final UnaryCallable<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionCallable;
+  private final UnaryCallable<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+      importTrustedKeyWrappedCryptoKeyVersionCallable;
+  private final UnaryCallable<
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      exportTrustedKeyWrappedCryptoKeyVersionCallable;
   private final UnaryCallable<CreateImportJobRequest, ImportJob> createImportJobCallable;
   private final UnaryCallable<UpdateCryptoKeyRequest, CryptoKey> updateCryptoKeyCallable;
   private final UnaryCallable<UpdateCryptoKeyVersionRequest, CryptoKeyVersion>
@@ -831,6 +877,35 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+        importTrustedKeyWrappedCryptoKeyVersionTransportSettings =
+            GrpcCallSettings
+                .<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>newBuilder()
+                .setMethodDescriptor(importTrustedKeyWrappedCryptoKeyVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+            ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+        exportTrustedKeyWrappedCryptoKeyVersionTransportSettings =
+            GrpcCallSettings
+                .<ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+                    ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+                    newBuilder()
+                .setMethodDescriptor(exportTrustedKeyWrappedCryptoKeyVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateImportJobRequest, ImportJob> createImportJobTransportSettings =
         GrpcCallSettings.<CreateImportJobRequest, ImportJob>newBuilder()
@@ -1163,6 +1238,16 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
             importCryptoKeyVersionTransportSettings,
             settings.importCryptoKeyVersionSettings(),
             clientContext);
+    this.importTrustedKeyWrappedCryptoKeyVersionCallable =
+        callableFactory.createUnaryCallable(
+            importTrustedKeyWrappedCryptoKeyVersionTransportSettings,
+            settings.importTrustedKeyWrappedCryptoKeyVersionSettings(),
+            clientContext);
+    this.exportTrustedKeyWrappedCryptoKeyVersionCallable =
+        callableFactory.createUnaryCallable(
+            exportTrustedKeyWrappedCryptoKeyVersionTransportSettings,
+            settings.exportTrustedKeyWrappedCryptoKeyVersionSettings(),
+            clientContext);
     this.createImportJobCallable =
         callableFactory.createUnaryCallable(
             createImportJobTransportSettings, settings.createImportJobSettings(), clientContext);
@@ -1380,6 +1465,20 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
   public UnaryCallable<ImportCryptoKeyVersionRequest, CryptoKeyVersion>
       importCryptoKeyVersionCallable() {
     return importCryptoKeyVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportTrustedKeyWrappedCryptoKeyVersionRequest, CryptoKeyVersion>
+      importTrustedKeyWrappedCryptoKeyVersionCallable() {
+    return importTrustedKeyWrappedCryptoKeyVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ExportTrustedKeyWrappedCryptoKeyVersionRequest,
+          ExportTrustedKeyWrappedCryptoKeyVersionResponse>
+      exportTrustedKeyWrappedCryptoKeyVersionCallable() {
+    return exportTrustedKeyWrappedCryptoKeyVersionCallable;
   }
 
   @Override

@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CryptoKeyVersionName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_KEY_RING_CRYPTO_KEY_CRYPTO_KEY_VERSION =
@@ -107,7 +110,7 @@ public class CryptoKeyVersionName implements ResourceName {
         .toString();
   }
 
-  public static CryptoKeyVersionName parse(String formattedString) {
+  public static @Nullable CryptoKeyVersionName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -130,7 +133,7 @@ public class CryptoKeyVersionName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<CryptoKeyVersionName> values) {
+  public static List<String> toStringList(List<@Nullable CryptoKeyVersionName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (CryptoKeyVersionName value : values) {
       if (value == null) {
@@ -194,7 +197,7 @@ public class CryptoKeyVersionName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

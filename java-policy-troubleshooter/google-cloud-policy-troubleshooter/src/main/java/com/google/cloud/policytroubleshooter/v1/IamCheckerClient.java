@@ -23,6 +23,8 @@ import com.google.cloud.policytroubleshooter.v1.stub.IamCheckerStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -126,9 +128,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class IamCheckerClient implements BackgroundResource {
-  private final IamCheckerSettings settings;
+  private final @Nullable IamCheckerSettings settings;
   private final IamCheckerStub stub;
 
   /** Constructs an instance of IamCheckerClient with default settings. */
@@ -166,7 +169,7 @@ public class IamCheckerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final IamCheckerSettings getSettings() {
+  public final @Nullable IamCheckerSettings getSettings() {
     return settings;
   }
 

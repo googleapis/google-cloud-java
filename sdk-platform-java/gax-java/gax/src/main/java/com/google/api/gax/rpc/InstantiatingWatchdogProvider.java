@@ -36,8 +36,8 @@ import com.google.api.core.InternalApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.ScheduledExecutorService;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A watchdog provider which instantiates a new provider on every request.
@@ -45,11 +45,12 @@ import javax.annotation.Nullable;
  * <p>This is the internal class and is public only for technical reasons. It may change any time
  * without notice, please do not depend on it explicitly.
  */
+@NullMarked
 @InternalApi
 public final class InstantiatingWatchdogProvider implements WatchdogProvider {
-  @Nullable private final ApiClock clock;
-  @Nullable private final ScheduledExecutorService executor;
-  @Nullable private final java.time.Duration checkInterval;
+  private final @Nullable ApiClock clock;
+  private final @Nullable ScheduledExecutorService executor;
+  private final java.time.@Nullable Duration checkInterval;
 
   public static WatchdogProvider create() {
     return new InstantiatingWatchdogProvider(null, null, null);
@@ -58,7 +59,7 @@ public final class InstantiatingWatchdogProvider implements WatchdogProvider {
   private InstantiatingWatchdogProvider(
       @Nullable ApiClock clock,
       @Nullable ScheduledExecutorService executor,
-      @Nullable java.time.Duration checkInterval) {
+      java.time.@Nullable Duration checkInterval) {
     this.clock = clock;
     this.executor = executor;
     this.checkInterval = checkInterval;
@@ -70,7 +71,7 @@ public final class InstantiatingWatchdogProvider implements WatchdogProvider {
   }
 
   @Override
-  public WatchdogProvider withClock(@Nonnull ApiClock clock) {
+  public WatchdogProvider withClock(ApiClock clock) {
     return new InstantiatingWatchdogProvider(
         Preconditions.checkNotNull(clock), executor, checkInterval);
   }
@@ -85,12 +86,12 @@ public final class InstantiatingWatchdogProvider implements WatchdogProvider {
    */
   @Override
   @ObsoleteApi("Use withCheckIntervalDuration(java.time.Duration) instead")
-  public WatchdogProvider withCheckInterval(@Nonnull org.threeten.bp.Duration checkInterval) {
+  public WatchdogProvider withCheckInterval(org.threeten.bp.Duration checkInterval) {
     return withCheckIntervalDuration(toJavaTimeDuration(checkInterval));
   }
 
   @Override
-  public WatchdogProvider withCheckIntervalDuration(@Nonnull java.time.Duration checkInterval) {
+  public WatchdogProvider withCheckIntervalDuration(java.time.Duration checkInterval) {
     return new InstantiatingWatchdogProvider(
         clock, executor, Preconditions.checkNotNull(checkInterval));
   }
@@ -107,9 +108,8 @@ public final class InstantiatingWatchdogProvider implements WatchdogProvider {
   }
 
   @SuppressWarnings("ConstantConditions")
-  @Nullable
   @Override
-  public Watchdog getWatchdog() {
+  public @Nullable Watchdog getWatchdog() {
     Preconditions.checkState(!needsClock(), "A clock is needed");
     Preconditions.checkState(!needsCheckInterval(), "A check interval is needed");
     Preconditions.checkState(!needsExecutor(), "An executor is needed");

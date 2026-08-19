@@ -24,6 +24,8 @@ import com.google.cloud.binaryauthorization.v1beta1.stub.SystemPolicyV1Beta1Stub
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -132,10 +134,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SystemPolicyV1Beta1Client implements BackgroundResource {
-  private final SystemPolicyV1Beta1Settings settings;
+  private final @Nullable SystemPolicyV1Beta1Settings settings;
   private final SystemPolicyV1Beta1Stub stub;
 
   /** Constructs an instance of SystemPolicyV1Beta1Client with default settings. */
@@ -175,7 +178,7 @@ public class SystemPolicyV1Beta1Client implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SystemPolicyV1Beta1Settings getSettings() {
+  public final @Nullable SystemPolicyV1Beta1Settings getSettings() {
     return settings;
   }
 
@@ -205,7 +208,7 @@ public class SystemPolicyV1Beta1Client implements BackgroundResource {
    *     system policy is not associated with a project.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getSystemPolicy(PolicyName name) {
+  public final Policy getSystemPolicy(@Nullable PolicyName name) {
     GetSystemPolicyRequest request =
         GetSystemPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSystemPolicy(request);

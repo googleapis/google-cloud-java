@@ -46,6 +46,7 @@ import com.google.recaptchaenterprise.v1.FirewallPolicy;
 import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
+import com.google.recaptchaenterprise.v1.GetPolicyRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
@@ -59,6 +60,7 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.Policy;
 import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
 import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
@@ -69,11 +71,13 @@ import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsReq
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
+import com.google.recaptchaenterprise.v1.UpdatePolicyRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -81,6 +85,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServiceStub {
   private static final MethodDescriptor<CreateAssessmentRequest, Assessment>
@@ -233,6 +238,26 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<GetPolicyRequest, Policy> getPolicyMethodDescriptor =
+      MethodDescriptor.<GetPolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/GetPolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetPolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<UpdatePolicyRequest, Policy> updatePolicyMethodDescriptor =
+      MethodDescriptor.<UpdatePolicyRequest, Policy>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/UpdatePolicy")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdatePolicyRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
   private static final MethodDescriptor<CreateFirewallPolicyRequest, FirewallPolicy>
       createFirewallPolicyMethodDescriptor =
           MethodDescriptor.<CreateFirewallPolicyRequest, FirewallPolicy>newBuilder()
@@ -382,6 +407,8 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   private final UnaryCallable<ListIpOverridesRequest, ListIpOverridesPagedResponse>
       listIpOverridesPagedCallable;
   private final UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable;
+  private final UnaryCallable<GetPolicyRequest, Policy> getPolicyCallable;
+  private final UnaryCallable<UpdatePolicyRequest, Policy> updatePolicyCallable;
   private final UnaryCallable<CreateFirewallPolicyRequest, FirewallPolicy>
       createFirewallPolicyCallable;
   private final UnaryCallable<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse>
@@ -608,6 +635,27 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<GetPolicyRequest, Policy> getPolicyTransportSettings =
+        GrpcCallSettings.<GetPolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(getPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<UpdatePolicyRequest, Policy> updatePolicyTransportSettings =
+        GrpcCallSettings.<UpdatePolicyRequest, Policy>newBuilder()
+            .setMethodDescriptor(updatePolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("policy.name", String.valueOf(request.getPolicy().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<CreateFirewallPolicyRequest, FirewallPolicy>
         createFirewallPolicyTransportSettings =
             GrpcCallSettings.<CreateFirewallPolicyRequest, FirewallPolicy>newBuilder()
@@ -776,6 +824,12 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
     this.getMetricsCallable =
         callableFactory.createUnaryCallable(
             getMetricsTransportSettings, settings.getMetricsSettings(), clientContext);
+    this.getPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getPolicyTransportSettings, settings.getPolicySettings(), clientContext);
+    this.updatePolicyCallable =
+        callableFactory.createUnaryCallable(
+            updatePolicyTransportSettings, settings.updatePolicySettings(), clientContext);
     this.createFirewallPolicyCallable =
         callableFactory.createUnaryCallable(
             createFirewallPolicyTransportSettings,
@@ -927,6 +981,16 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
   @Override
   public UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {
     return getMetricsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetPolicyRequest, Policy> getPolicyCallable() {
+    return getPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdatePolicyRequest, Policy> updatePolicyCallable() {
+    return updatePolicyCallable;
   }
 
   @Override

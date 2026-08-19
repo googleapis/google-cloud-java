@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -237,9 +239,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionUrlMapsClient implements BackgroundResource {
-  private final RegionUrlMapsSettings settings;
+  private final @Nullable RegionUrlMapsSettings settings;
   private final RegionUrlMapsStub stub;
 
   /** Constructs an instance of RegionUrlMapsClient with default settings. */
@@ -279,7 +282,7 @@ public class RegionUrlMapsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionUrlMapsSettings getSettings() {
+  public final @Nullable RegionUrlMapsSettings getSettings() {
     return settings;
   }
 
@@ -1231,7 +1234,8 @@ public class RegionUrlMapsClient implements BackgroundResource {
       extends AbstractPage<ListRegionUrlMapsRequest, UrlMapList, UrlMap, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionUrlMapsRequest, UrlMapList, UrlMap> context, UrlMapList response) {
+        @Nullable PageContext<ListRegionUrlMapsRequest, UrlMapList, UrlMap> context,
+        @Nullable UrlMapList response) {
       super(context, response);
     }
 
@@ -1241,13 +1245,14 @@ public class RegionUrlMapsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionUrlMapsRequest, UrlMapList, UrlMap> context, UrlMapList response) {
+        @Nullable PageContext<ListRegionUrlMapsRequest, UrlMapList, UrlMap> context,
+        @Nullable UrlMapList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionUrlMapsRequest, UrlMapList, UrlMap> context,
+        @Nullable PageContext<ListRegionUrlMapsRequest, UrlMapList, UrlMap> context,
         ApiFuture<UrlMapList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1257,7 +1262,7 @@ public class RegionUrlMapsClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRegionUrlMapsRequest, UrlMapList, UrlMap, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1266,7 +1271,8 @@ public class RegionUrlMapsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

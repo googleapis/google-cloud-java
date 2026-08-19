@@ -19,13 +19,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A common-prefix trie. T represents the type of each "char" in a word (which is a T-typed list).
  */
+@NullMarked
 public class Trie<T> {
   private static class Node<U> {
-    final U chr;
+    final @Nullable U chr;
     // Maintain insertion order to enable deterministic test output.
     Map<U, Node<U>> children = new LinkedHashMap<>();
     boolean isLeaf;
@@ -119,7 +122,7 @@ public class Trie<T> {
     return parentPostprocFn.apply(node.chr, baseValue, leafReducedValue);
   }
 
-  private Node<T> searchNode(List<T> word) {
+  private @Nullable Node<T> searchNode(List<T> word) {
     Map<T, Node<T>> children = root.children;
     Node<T> t = null;
     for (T chr : word) {

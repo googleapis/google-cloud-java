@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.support.v2.CreateSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2.DeleteSupportEventSubscriptionRequest;
+import com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2.GetSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2.ListSupportEventSubscriptionsRequest;
 import com.google.cloud.support.v2.ListSupportEventSubscriptionsResponse;
@@ -34,11 +35,13 @@ import com.google.cloud.support.v2.SupportEventSubscription;
 import com.google.cloud.support.v2.UndeleteSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2.UpdateSupportEventSubscriptionRequest;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -46,6 +49,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcSupportEventSubscriptionServiceStub extends SupportEventSubscriptionServiceStub {
   private static final MethodDescriptor<
@@ -140,6 +144,19 @@ public class GrpcSupportEventSubscriptionServiceStub extends SupportEventSubscri
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionMethodDescriptor =
+          MethodDescriptor.<ExpungeSupportEventSubscriptionRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.support.v2.SupportEventSubscriptionService/ExpungeSupportEventSubscription")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ExpungeSupportEventSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<CreateSupportEventSubscriptionRequest, SupportEventSubscription>
       createSupportEventSubscriptionCallable;
   private final UnaryCallable<GetSupportEventSubscriptionRequest, SupportEventSubscription>
@@ -156,6 +173,8 @@ public class GrpcSupportEventSubscriptionServiceStub extends SupportEventSubscri
       deleteSupportEventSubscriptionCallable;
   private final UnaryCallable<UndeleteSupportEventSubscriptionRequest, SupportEventSubscription>
       undeleteSupportEventSubscriptionCallable;
+  private final UnaryCallable<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -284,6 +303,18 @@ public class GrpcSupportEventSubscriptionServiceStub extends SupportEventSubscri
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<ExpungeSupportEventSubscriptionRequest, Empty>
+        expungeSupportEventSubscriptionTransportSettings =
+            GrpcCallSettings.<ExpungeSupportEventSubscriptionRequest, Empty>newBuilder()
+                .setMethodDescriptor(expungeSupportEventSubscriptionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
 
     this.createSupportEventSubscriptionCallable =
         callableFactory.createUnaryCallable(
@@ -319,6 +350,11 @@ public class GrpcSupportEventSubscriptionServiceStub extends SupportEventSubscri
         callableFactory.createUnaryCallable(
             undeleteSupportEventSubscriptionTransportSettings,
             settings.undeleteSupportEventSubscriptionSettings(),
+            clientContext);
+    this.expungeSupportEventSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            expungeSupportEventSubscriptionTransportSettings,
+            settings.expungeSupportEventSubscriptionSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -370,6 +406,12 @@ public class GrpcSupportEventSubscriptionServiceStub extends SupportEventSubscri
   public UnaryCallable<UndeleteSupportEventSubscriptionRequest, SupportEventSubscription>
       undeleteSupportEventSubscriptionCallable() {
     return undeleteSupportEventSubscriptionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionCallable() {
+    return expungeSupportEventSubscriptionCallable;
   }
 
   @Override

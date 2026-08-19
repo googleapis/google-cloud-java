@@ -43,7 +43,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.ArgumentMatchers;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
@@ -63,11 +62,9 @@ public class AwaitConsistencyCallableTest {
   private static final TableAdminRequestContext REQUEST_CONTEXT =
       TableAdminRequestContext.create(PROJECT_ID, INSTANCE_ID);
 
-  @Mock
   private UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
       mockGenerateConsistencyTokenCallable;
 
-  @Mock
   private UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse>
       mockCheckConsistencyCallable;
 
@@ -77,6 +74,11 @@ public class AwaitConsistencyCallableTest {
 
   @Before
   public void setUp() {
+    mockGenerateConsistencyTokenCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+    mockCheckConsistencyCallable =
+        Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
+
     ClientContext clientContext =
         ClientContext.newBuilder().setDefaultCallContext(CALL_CONTEXT).build();
 

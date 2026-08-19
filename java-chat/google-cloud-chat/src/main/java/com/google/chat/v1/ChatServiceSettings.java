@@ -25,6 +25,7 @@ import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse
 import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -44,6 +45,8 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -94,6 +97,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
 
@@ -133,6 +137,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
   /** Returns the object with the settings used for calls to deleteMessage. */
   public UnaryCallSettings<DeleteMessageRequest, Empty> deleteMessageSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).deleteMessageSettings();
+  }
+
+  /** Returns the object with the settings used for calls to searchMessages. */
+  public PagedCallSettings<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+      searchMessagesSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).searchMessagesSettings();
   }
 
   /** Returns the object with the settings used for calls to getAttachment. */
@@ -271,6 +282,31 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     return ((ChatServiceStubSettings) getStubSettings()).getThreadReadStateSettings();
   }
 
+  /** Returns the object with the settings used for calls to getAvailability. */
+  public UnaryCallSettings<GetAvailabilityRequest, Availability> getAvailabilitySettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).getAvailabilitySettings();
+  }
+
+  /** Returns the object with the settings used for calls to markAsActive. */
+  public UnaryCallSettings<MarkAsActiveRequest, Availability> markAsActiveSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).markAsActiveSettings();
+  }
+
+  /** Returns the object with the settings used for calls to markAsAway. */
+  public UnaryCallSettings<MarkAsAwayRequest, Availability> markAsAwaySettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).markAsAwaySettings();
+  }
+
+  /** Returns the object with the settings used for calls to markAsDoNotDisturb. */
+  public UnaryCallSettings<MarkAsDoNotDisturbRequest, Availability> markAsDoNotDisturbSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).markAsDoNotDisturbSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateAvailability. */
+  public UnaryCallSettings<UpdateAvailabilityRequest, Availability> updateAvailabilitySettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).updateAvailabilitySettings();
+  }
+
   /** Returns the object with the settings used for calls to getSpaceEvent. */
   public UnaryCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).getSpaceEventSettings();
@@ -390,7 +426,7 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -410,7 +446,7 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(ChatServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -483,6 +519,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     /** Returns the builder for the settings used for calls to deleteMessage. */
     public UnaryCallSettings.Builder<DeleteMessageRequest, Empty> deleteMessageSettings() {
       return getStubSettingsBuilder().deleteMessageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchMessages. */
+    public PagedCallSettings.Builder<
+            SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+        searchMessagesSettings() {
+      return getStubSettingsBuilder().searchMessagesSettings();
     }
 
     /** Returns the builder for the settings used for calls to getAttachment. */
@@ -626,6 +669,34 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     public UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
         getThreadReadStateSettings() {
       return getStubSettingsBuilder().getThreadReadStateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAvailability. */
+    public UnaryCallSettings.Builder<GetAvailabilityRequest, Availability>
+        getAvailabilitySettings() {
+      return getStubSettingsBuilder().getAvailabilitySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to markAsActive. */
+    public UnaryCallSettings.Builder<MarkAsActiveRequest, Availability> markAsActiveSettings() {
+      return getStubSettingsBuilder().markAsActiveSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to markAsAway. */
+    public UnaryCallSettings.Builder<MarkAsAwayRequest, Availability> markAsAwaySettings() {
+      return getStubSettingsBuilder().markAsAwaySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to markAsDoNotDisturb. */
+    public UnaryCallSettings.Builder<MarkAsDoNotDisturbRequest, Availability>
+        markAsDoNotDisturbSettings() {
+      return getStubSettingsBuilder().markAsDoNotDisturbSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateAvailability. */
+    public UnaryCallSettings.Builder<UpdateAvailabilityRequest, Availability>
+        updateAvailabilitySettings() {
+      return getStubSettingsBuilder().updateAvailabilitySettings();
     }
 
     /** Returns the builder for the settings used for calls to getSpaceEvent. */

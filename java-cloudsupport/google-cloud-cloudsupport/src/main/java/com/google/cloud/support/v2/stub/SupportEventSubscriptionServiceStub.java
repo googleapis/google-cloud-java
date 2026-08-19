@@ -22,13 +22,16 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.support.v2.CreateSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2.DeleteSupportEventSubscriptionRequest;
+import com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2.GetSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2.ListSupportEventSubscriptionsRequest;
 import com.google.cloud.support.v2.ListSupportEventSubscriptionsResponse;
 import com.google.cloud.support.v2.SupportEventSubscription;
 import com.google.cloud.support.v2.UndeleteSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2.UpdateSupportEventSubscriptionRequest;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -36,6 +39,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class SupportEventSubscriptionServiceStub implements BackgroundResource {
 
@@ -80,6 +84,12 @@ public abstract class SupportEventSubscriptionServiceStub implements BackgroundR
       undeleteSupportEventSubscriptionCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: undeleteSupportEventSubscriptionCallable()");
+  }
+
+  public UnaryCallable<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: expungeSupportEventSubscriptionCallable()");
   }
 
   @Override

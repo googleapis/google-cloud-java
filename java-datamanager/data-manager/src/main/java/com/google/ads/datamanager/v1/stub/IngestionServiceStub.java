@@ -22,6 +22,8 @@ import com.google.ads.datamanager.v1.IngestAudienceMembersRequest;
 import com.google.ads.datamanager.v1.IngestAudienceMembersResponse;
 import com.google.ads.datamanager.v1.IngestEventsRequest;
 import com.google.ads.datamanager.v1.IngestEventsResponse;
+import com.google.ads.datamanager.v1.RemoveAllAudienceMembersRequest;
+import com.google.ads.datamanager.v1.RemoveAllAudienceMembersResponse;
 import com.google.ads.datamanager.v1.RemoveAudienceMembersRequest;
 import com.google.ads.datamanager.v1.RemoveAudienceMembersResponse;
 import com.google.ads.datamanager.v1.RetrieveRequestStatusRequest;
@@ -29,6 +31,7 @@ import com.google.ads.datamanager.v1.RetrieveRequestStatusResponse;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -36,6 +39,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class IngestionServiceStub implements BackgroundResource {
 
@@ -47,6 +51,11 @@ public abstract class IngestionServiceStub implements BackgroundResource {
   public UnaryCallable<RemoveAudienceMembersRequest, RemoveAudienceMembersResponse>
       removeAudienceMembersCallable() {
     throw new UnsupportedOperationException("Not implemented: removeAudienceMembersCallable()");
+  }
+
+  public UnaryCallable<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeAllAudienceMembersCallable()");
   }
 
   public UnaryCallable<IngestEventsRequest, IngestEventsResponse> ingestEventsCallable() {

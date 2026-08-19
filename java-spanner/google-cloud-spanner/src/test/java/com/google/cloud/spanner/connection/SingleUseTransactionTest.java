@@ -32,6 +32,7 @@ import static org.mockito.Mockito.doCallRealMethod;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.withSettings;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.longrunning.OperationFuture;
@@ -314,7 +315,7 @@ public class SingleUseTransactionTest {
       DdlClient ddlClient = mock(DdlClient.class);
       @SuppressWarnings("unchecked")
       final OperationFuture<Void, UpdateDatabaseDdlMetadata> operation =
-          mock(OperationFuture.class);
+          mock(OperationFuture.class, withSettings().withoutAnnotations());
       when(operation.get()).thenReturn(null);
       when(ddlClient.executeDdl(anyString(), any())).thenCallRealMethod();
       when(ddlClient.executeDdl(anyList(), any())).thenReturn(operation);
@@ -622,7 +623,7 @@ public class SingleUseTransactionTest {
     ParsedStatement ddl = createParsedDdl(sql);
     DdlClient ddlClient = createDefaultMockDdlClient();
     when(ddlClient.executeCreateDatabase(sql, Dialect.GOOGLE_STANDARD_SQL))
-        .thenReturn(mock(OperationFuture.class));
+        .thenReturn(mock(OperationFuture.class, withSettings().withoutAnnotations()));
 
     SingleUseTransaction singleUseTransaction = createDdlSubject(ddlClient);
     get(singleUseTransaction.executeDdlAsync(CallType.SYNC, ddl));

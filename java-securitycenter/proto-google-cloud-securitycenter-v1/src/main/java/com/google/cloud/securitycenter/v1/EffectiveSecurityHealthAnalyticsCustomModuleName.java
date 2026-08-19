@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EffectiveSecurityHealthAnalyticsCustomModuleName implements ResourceName {
   private static final PathTemplate ORGANIZATION_EFFECTIVE_CUSTOM_MODULE =
@@ -184,7 +187,8 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
         .toString();
   }
 
-  public static EffectiveSecurityHealthAnalyticsCustomModuleName parse(String formattedString) {
+  public static @Nullable EffectiveSecurityHealthAnalyticsCustomModuleName parse(
+      String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -217,7 +221,7 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
   }
 
   public static List<String> toStringList(
-      List<EffectiveSecurityHealthAnalyticsCustomModuleName> values) {
+      List<@Nullable EffectiveSecurityHealthAnalyticsCustomModuleName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (EffectiveSecurityHealthAnalyticsCustomModuleName value : values) {
       if (value == null) {
@@ -270,7 +274,7 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
   }
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(java.lang.@Nullable Object o) {
     if (o == this) {
       return true;
     }

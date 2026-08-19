@@ -59,7 +59,9 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class RetrySettingsComposer {
   private static final TypeStore FIXED_TYPESTORE = createStaticTypes();
   private static final TypeNode STATUS_CODE_CODE_TYPE =

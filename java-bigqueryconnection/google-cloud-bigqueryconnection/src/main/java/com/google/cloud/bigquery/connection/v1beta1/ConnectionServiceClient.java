@@ -35,6 +35,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -299,10 +301,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ConnectionServiceClient implements BackgroundResource {
-  private final ConnectionServiceSettings settings;
+  private final @Nullable ConnectionServiceSettings settings;
   private final ConnectionServiceStub stub;
 
   /** Constructs an instance of ConnectionServiceClient with default settings. */
@@ -342,7 +345,7 @@ public class ConnectionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ConnectionServiceSettings getSettings() {
+  public final @Nullable ConnectionServiceSettings getSettings() {
     return settings;
   }
 
@@ -378,7 +381,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConnectionProto.Connection createConnection(
-      LocationName parent, ConnectionProto.Connection connection, String connectionId) {
+      @Nullable LocationName parent, ConnectionProto.Connection connection, String connectionId) {
     ConnectionProto.CreateConnectionRequest request =
         ConnectionProto.CreateConnectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -510,7 +513,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ConnectionProto.Connection getConnection(ConnectionName name) {
+  public final ConnectionProto.Connection getConnection(@Nullable ConnectionName name) {
     ConnectionProto.GetConnectionRequest request =
         ConnectionProto.GetConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -630,7 +633,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConnectionProto.ListConnectionsResponse listConnections(
-      LocationName parent, UInt32Value maxResults) {
+      @Nullable LocationName parent, UInt32Value maxResults) {
     ConnectionProto.ListConnectionsRequest request =
         ConnectionProto.ListConnectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -767,7 +770,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ConnectionProto.Connection updateConnection(
-      ConnectionName name, ConnectionProto.Connection connection, FieldMask updateMask) {
+      @Nullable ConnectionName name, ConnectionProto.Connection connection, FieldMask updateMask) {
     ConnectionProto.UpdateConnectionRequest request =
         ConnectionProto.UpdateConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -997,7 +1000,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteConnection(ConnectionName name) {
+  public final void deleteConnection(@Nullable ConnectionName name) {
     ConnectionProto.DeleteConnectionRequest request =
         ConnectionProto.DeleteConnectionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1115,7 +1118,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    * @param options OPTIONAL: A `GetPolicyOptions` object for specifying options to `GetIamPolicy`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource, GetPolicyOptions options) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource, GetPolicyOptions options) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1242,7 +1245,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1381,7 +1384,7 @@ public class ConnectionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())

@@ -38,6 +38,7 @@ import com.google.cloud.databasecenter.v1beta.QueryIssuesResponse;
 import com.google.cloud.databasecenter.v1beta.QueryProductsRequest;
 import com.google.cloud.databasecenter.v1beta.QueryProductsResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -45,6 +46,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class DatabaseCenterStub implements BackgroundResource {

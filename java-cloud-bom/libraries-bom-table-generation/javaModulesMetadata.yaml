@@ -15,8 +15,6 @@ google-cloud-analyticshub: https://cloud.google.com/bigquery/TBD, Analytics Hub 
 google-cloud-api-gateway: https://cloud.google.com/api-gateway/docs, API Gateway
 google-cloud-apigee-connect: https://cloud.google.com/apigee/docs/hybrid/v1.3/apigee-connect/,
   Apigee Connect
-google-cloud-apigee-registry: https://cloud.google.com/apigee/docs/api-hub/get-started-registry-api,
-  Registry API
 google-cloud-apikeys: https://cloud.google.com/api-keys/, API Keys API
 google-cloud-appengine-admin: https://cloud.google.com/appengine/docs/admin-api/,
   App Engine Admin API

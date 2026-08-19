@@ -38,6 +38,7 @@ import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.ThresholdBatchReceiver;
 import com.google.common.base.Preconditions;
 import java.util.List;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A ThresholdBatchReceiver which uses a provided {@link BatchingDescriptor} to merge the items from
@@ -50,6 +51,7 @@ import java.util.List;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class BatchExecutor<RequestT, ResponseT>
     implements ThresholdBatchReceiver<Batch<RequestT, ResponseT>> {
 

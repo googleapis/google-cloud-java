@@ -11,6 +11,5 @@
   "repo_short": "java-shopping-merchant-inventories",
   "distribution_name": "com.google.shopping:google-shopping-merchant-inventories",
   "api_id": "merchantapi.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

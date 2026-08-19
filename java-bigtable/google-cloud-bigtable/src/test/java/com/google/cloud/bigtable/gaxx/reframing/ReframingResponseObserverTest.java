@@ -419,7 +419,8 @@ public class ReframingResponseObserverTest {
         new ReframingResponseObserver<>(outerObserver, brokenReframer);
 
     // Configure the mock inner controller to fail cancellation.
-    StreamController mockInnerController = Mockito.mock(StreamController.class);
+    StreamController mockInnerController =
+        Mockito.mock(StreamController.class, Mockito.withSettings().withoutAnnotations());
     RuntimeException fakeCancelError = new RuntimeException("fake cancel error");
     Mockito.doThrow(fakeCancelError).when(mockInnerController).cancel();
 

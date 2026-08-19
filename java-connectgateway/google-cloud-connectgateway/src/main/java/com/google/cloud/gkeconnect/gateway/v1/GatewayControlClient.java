@@ -23,6 +23,8 @@ import com.google.cloud.gkeconnect.gateway.v1.stub.GatewayControlStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -114,9 +116,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GatewayControlClient implements BackgroundResource {
-  private final GatewayControlSettings settings;
+  private final @Nullable GatewayControlSettings settings;
   private final GatewayControlStub stub;
 
   /** Constructs an instance of GatewayControlClient with default settings. */
@@ -156,7 +159,7 @@ public class GatewayControlClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GatewayControlSettings getSettings() {
+  public final @Nullable GatewayControlSettings getSettings() {
     return settings;
   }
 

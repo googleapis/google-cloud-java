@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -318,10 +320,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class JobServiceClient implements BackgroundResource {
-  private final JobServiceSettings settings;
+  private final @Nullable JobServiceSettings settings;
   private final JobServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -367,7 +370,7 @@ public class JobServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final JobServiceSettings getSettings() {
+  public final @Nullable JobServiceSettings getSettings() {
     return settings;
   }
 
@@ -420,7 +423,7 @@ public class JobServiceClient implements BackgroundResource {
    * @param job Required. The Job to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job createJob(ProjectName parent, Job job) {
+  public final Job createJob(@Nullable ProjectName parent, Job job) {
     CreateJobRequest request =
         CreateJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -457,7 +460,7 @@ public class JobServiceClient implements BackgroundResource {
    * @param job Required. The Job to be created.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job createJob(TenantName parent, Job job) {
+  public final Job createJob(@Nullable TenantName parent, Job job) {
     CreateJobRequest request =
         CreateJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -587,7 +590,7 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
-      ProjectName parent, List<Job> jobs) {
+      @Nullable ProjectName parent, List<Job> jobs) {
     BatchCreateJobsRequest request =
         BatchCreateJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -623,7 +626,7 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchCreateJobsAsync(
-      TenantName parent, List<Job> jobs) {
+      @Nullable TenantName parent, List<Job> jobs) {
     BatchCreateJobsRequest request =
         BatchCreateJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -778,7 +781,7 @@ public class JobServiceClient implements BackgroundResource {
    *     "projects/foo/jobs/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Job getJob(JobName name) {
+  public final Job getJob(@Nullable JobName name) {
     GetJobRequest request =
         GetJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getJob(request);
@@ -988,7 +991,7 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
-      ProjectName parent, List<Job> jobs) {
+      @Nullable ProjectName parent, List<Job> jobs) {
     BatchUpdateJobsRequest request =
         BatchUpdateJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1024,7 +1027,7 @@ public class JobServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<JobOperationResult, BatchOperationMetadata> batchUpdateJobsAsync(
-      TenantName parent, List<Job> jobs) {
+      @Nullable TenantName parent, List<Job> jobs) {
     BatchUpdateJobsRequest request =
         BatchUpdateJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1184,7 +1187,7 @@ public class JobServiceClient implements BackgroundResource {
    *     "projects/foo/jobs/bar".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteJob(JobName name) {
+  public final void deleteJob(@Nullable JobName name) {
     DeleteJobRequest request =
         DeleteJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteJob(request);
@@ -1314,7 +1317,7 @@ public class JobServiceClient implements BackgroundResource {
    *     <p>Sample Query: companyName = "projects/foo/companies/bar" AND requisitionId = "req-1"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void batchDeleteJobs(ProjectName parent, String filter) {
+  public final void batchDeleteJobs(@Nullable ProjectName parent, String filter) {
     BatchDeleteJobsRequest request =
         BatchDeleteJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1356,7 +1359,7 @@ public class JobServiceClient implements BackgroundResource {
    *     <p>Sample Query: companyName = "projects/foo/companies/bar" AND requisitionId = "req-1"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void batchDeleteJobs(TenantName parent, String filter) {
+  public final void batchDeleteJobs(@Nullable TenantName parent, String filter) {
     BatchDeleteJobsRequest request =
         BatchDeleteJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1508,7 +1511,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListJobsPagedResponse listJobs(ProjectName parent, String filter) {
+  public final ListJobsPagedResponse listJobs(@Nullable ProjectName parent, String filter) {
     ListJobsRequest request =
         ListJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1564,7 +1567,7 @@ public class JobServiceClient implements BackgroundResource {
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListJobsPagedResponse listJobs(TenantName parent, String filter) {
+  public final ListJobsPagedResponse listJobs(@Nullable TenantName parent, String filter) {
     ListJobsRequest request =
         ListJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2091,7 +2094,8 @@ public class JobServiceClient implements BackgroundResource {
       extends AbstractPage<ListJobsRequest, ListJobsResponse, Job, ListJobsPage> {
 
     private ListJobsPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       super(context, response);
     }
 
@@ -2101,13 +2105,14 @@ public class JobServiceClient implements BackgroundResource {
 
     @Override
     protected ListJobsPage createPage(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context, ListJobsResponse response) {
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable ListJobsResponse response) {
       return new ListJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListJobsPage> createPageAsync(
-        PageContext<ListJobsRequest, ListJobsResponse, Job> context,
+        @Nullable PageContext<ListJobsRequest, ListJobsResponse, Job> context,
         ApiFuture<ListJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2117,7 +2122,7 @@ public class JobServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListJobsRequest, ListJobsResponse, Job, ListJobsPage, ListJobsFixedSizeCollection> {
 
-    private ListJobsFixedSizeCollection(List<ListJobsPage> pages, int collectionSize) {
+    private ListJobsFixedSizeCollection(@Nullable List<ListJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2127,7 +2132,7 @@ public class JobServiceClient implements BackgroundResource {
 
     @Override
     protected ListJobsFixedSizeCollection createCollection(
-        List<ListJobsPage> pages, int collectionSize) {
+        @Nullable List<ListJobsPage> pages, int collectionSize) {
       return new ListJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2159,8 +2164,9 @@ public class JobServiceClient implements BackgroundResource {
           SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob, SearchJobsPage> {
 
     private SearchJobsPage(
-        PageContext<SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob> context,
-        SearchJobsResponse response) {
+        @Nullable PageContext<SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob>
+            context,
+        @Nullable SearchJobsResponse response) {
       super(context, response);
     }
 
@@ -2170,14 +2176,16 @@ public class JobServiceClient implements BackgroundResource {
 
     @Override
     protected SearchJobsPage createPage(
-        PageContext<SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob> context,
-        SearchJobsResponse response) {
+        @Nullable PageContext<SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob>
+            context,
+        @Nullable SearchJobsResponse response) {
       return new SearchJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchJobsPage> createPageAsync(
-        PageContext<SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob> context,
+        @Nullable PageContext<SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob>
+            context,
         ApiFuture<SearchJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2191,7 +2199,8 @@ public class JobServiceClient implements BackgroundResource {
           SearchJobsPage,
           SearchJobsFixedSizeCollection> {
 
-    private SearchJobsFixedSizeCollection(List<SearchJobsPage> pages, int collectionSize) {
+    private SearchJobsFixedSizeCollection(
+        @Nullable List<SearchJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2201,7 +2210,7 @@ public class JobServiceClient implements BackgroundResource {
 
     @Override
     protected SearchJobsFixedSizeCollection createCollection(
-        List<SearchJobsPage> pages, int collectionSize) {
+        @Nullable List<SearchJobsPage> pages, int collectionSize) {
       return new SearchJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2238,8 +2247,9 @@ public class JobServiceClient implements BackgroundResource {
           SearchJobsForAlertPage> {
 
     private SearchJobsForAlertPage(
-        PageContext<SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob> context,
-        SearchJobsResponse response) {
+        @Nullable PageContext<SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob>
+            context,
+        @Nullable SearchJobsResponse response) {
       super(context, response);
     }
 
@@ -2249,14 +2259,16 @@ public class JobServiceClient implements BackgroundResource {
 
     @Override
     protected SearchJobsForAlertPage createPage(
-        PageContext<SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob> context,
-        SearchJobsResponse response) {
+        @Nullable PageContext<SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob>
+            context,
+        @Nullable SearchJobsResponse response) {
       return new SearchJobsForAlertPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchJobsForAlertPage> createPageAsync(
-        PageContext<SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob> context,
+        @Nullable PageContext<SearchJobsRequest, SearchJobsResponse, SearchJobsResponse.MatchingJob>
+            context,
         ApiFuture<SearchJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2271,7 +2283,7 @@ public class JobServiceClient implements BackgroundResource {
           SearchJobsForAlertFixedSizeCollection> {
 
     private SearchJobsForAlertFixedSizeCollection(
-        List<SearchJobsForAlertPage> pages, int collectionSize) {
+        @Nullable List<SearchJobsForAlertPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2281,7 +2293,7 @@ public class JobServiceClient implements BackgroundResource {
 
     @Override
     protected SearchJobsForAlertFixedSizeCollection createCollection(
-        List<SearchJobsForAlertPage> pages, int collectionSize) {
+        @Nullable List<SearchJobsForAlertPage> pages, int collectionSize) {
       return new SearchJobsForAlertFixedSizeCollection(pages, collectionSize);
     }
   }

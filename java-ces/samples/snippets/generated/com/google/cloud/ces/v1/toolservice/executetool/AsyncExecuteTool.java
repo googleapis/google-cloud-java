@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.cloud.ces.v1.AppName;
 import com.google.cloud.ces.v1.ExecuteToolRequest;
 import com.google.cloud.ces.v1.ExecuteToolResponse;
+import com.google.cloud.ces.v1.MockConfig;
 import com.google.cloud.ces.v1.ToolServiceClient;
 import com.google.protobuf.Struct;
 
@@ -41,6 +42,7 @@ public class AsyncExecuteTool {
           ExecuteToolRequest.newBuilder()
               .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
               .setArgs(Struct.newBuilder().build())
+              .setMockConfig(MockConfig.newBuilder().build())
               .build();
       ApiFuture<ExecuteToolResponse> future =
           toolServiceClient.executeToolCallable().futureCall(request);

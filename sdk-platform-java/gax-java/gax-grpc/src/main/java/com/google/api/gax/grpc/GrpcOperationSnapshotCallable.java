@@ -38,6 +38,7 @@ import com.google.api.gax.longrunning.OperationSnapshot;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.Operation;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@code UnaryCallable} that wraps a UnaryCallable returning an Operation and returns an
@@ -45,6 +46,7 @@ import com.google.longrunning.Operation;
  *
  * <p>Package-private for internal usage.
  */
+@NullMarked
 class GrpcOperationSnapshotCallable<RequestT> extends UnaryCallable<RequestT, OperationSnapshot> {
   private final UnaryCallable<RequestT, Operation> innerCallable;
 

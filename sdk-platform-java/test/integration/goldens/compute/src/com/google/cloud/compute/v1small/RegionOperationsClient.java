@@ -23,6 +23,8 @@ import com.google.cloud.compute.v1small.stub.RegionOperationsStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -136,9 +138,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionOperationsClient implements BackgroundResource {
-  private final RegionOperationsSettings settings;
+  private final @Nullable RegionOperationsSettings settings;
   private final RegionOperationsStub stub;
 
   /** Constructs an instance of RegionOperationsClient with default settings. */
@@ -178,7 +181,7 @@ public class RegionOperationsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionOperationsSettings getSettings() {
+  public final @Nullable RegionOperationsSettings getSettings() {
     return settings;
   }
 

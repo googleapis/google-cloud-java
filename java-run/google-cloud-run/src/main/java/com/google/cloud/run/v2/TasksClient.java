@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -153,9 +155,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class TasksClient implements BackgroundResource {
-  private final TasksSettings settings;
+  private final @Nullable TasksSettings settings;
   private final TasksStub stub;
 
   /** Constructs an instance of TasksClient with default settings. */
@@ -193,7 +196,7 @@ public class TasksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TasksSettings getSettings() {
+  public final @Nullable TasksSettings getSettings() {
     return settings;
   }
 
@@ -223,7 +226,7 @@ public class TasksClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}/tasks/{task}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Task getTask(TaskName name) {
+  public final Task getTask(@Nullable TaskName name) {
     GetTaskRequest request =
         GetTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTask(request);
@@ -342,7 +345,7 @@ public class TasksClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/jobs/{job}/executions/{execution}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTasksPagedResponse listTasks(ExecutionName parent) {
+  public final ListTasksPagedResponse listTasks(@Nullable ExecutionName parent) {
     ListTasksRequest request =
         ListTasksRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTasks(request);
@@ -539,8 +542,8 @@ public class TasksClient implements BackgroundResource {
       extends AbstractPage<ListTasksRequest, ListTasksResponse, Task, ListTasksPage> {
 
     private ListTasksPage(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
-        ListTasksResponse response) {
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable ListTasksResponse response) {
       super(context, response);
     }
 
@@ -550,14 +553,14 @@ public class TasksClient implements BackgroundResource {
 
     @Override
     protected ListTasksPage createPage(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
-        ListTasksResponse response) {
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable ListTasksResponse response) {
       return new ListTasksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTasksPage> createPageAsync(
-        PageContext<ListTasksRequest, ListTasksResponse, Task> context,
+        @Nullable PageContext<ListTasksRequest, ListTasksResponse, Task> context,
         ApiFuture<ListTasksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -567,7 +570,7 @@ public class TasksClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListTasksRequest, ListTasksResponse, Task, ListTasksPage, ListTasksFixedSizeCollection> {
 
-    private ListTasksFixedSizeCollection(List<ListTasksPage> pages, int collectionSize) {
+    private ListTasksFixedSizeCollection(@Nullable List<ListTasksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -577,7 +580,7 @@ public class TasksClient implements BackgroundResource {
 
     @Override
     protected ListTasksFixedSizeCollection createCollection(
-        List<ListTasksPage> pages, int collectionSize) {
+        @Nullable List<ListTasksPage> pages, int collectionSize) {
       return new ListTasksFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -186,9 +188,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class FeaturedContentNativeDashboardServiceClient implements BackgroundResource {
-  private final FeaturedContentNativeDashboardServiceSettings settings;
+  private final @Nullable FeaturedContentNativeDashboardServiceSettings settings;
   private final FeaturedContentNativeDashboardServiceStub stub;
 
   /**
@@ -237,7 +240,7 @@ public class FeaturedContentNativeDashboardServiceClient implements BackgroundRe
     this.stub = stub;
   }
 
-  public final FeaturedContentNativeDashboardServiceSettings getSettings() {
+  public final @Nullable FeaturedContentNativeDashboardServiceSettings getSettings() {
     return settings;
   }
 
@@ -273,7 +276,7 @@ public class FeaturedContentNativeDashboardServiceClient implements BackgroundRe
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FeaturedContentNativeDashboard getFeaturedContentNativeDashboard(
-      FeaturedContentNativeDashboardName name) {
+      @Nullable FeaturedContentNativeDashboardName name) {
     GetFeaturedContentNativeDashboardRequest request =
         GetFeaturedContentNativeDashboardRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -421,7 +424,7 @@ public class FeaturedContentNativeDashboardServiceClient implements BackgroundRe
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFeaturedContentNativeDashboardsPagedResponse listFeaturedContentNativeDashboards(
-      ContentHubName parent) {
+      @Nullable ContentHubName parent) {
     ListFeaturedContentNativeDashboardsRequest request =
         ListFeaturedContentNativeDashboardsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -616,7 +619,7 @@ public class FeaturedContentNativeDashboardServiceClient implements BackgroundRe
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final InstallFeaturedContentNativeDashboardResponse installFeaturedContentNativeDashboard(
-      FeaturedContentNativeDashboardName name) {
+      @Nullable FeaturedContentNativeDashboardName name) {
     InstallFeaturedContentNativeDashboardRequest request =
         InstallFeaturedContentNativeDashboardRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -809,12 +812,13 @@ public class FeaturedContentNativeDashboardServiceClient implements BackgroundRe
           ListFeaturedContentNativeDashboardsPage> {
 
     private ListFeaturedContentNativeDashboardsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFeaturedContentNativeDashboardsRequest,
                 ListFeaturedContentNativeDashboardsResponse,
                 FeaturedContentNativeDashboard>
             context,
-        ListFeaturedContentNativeDashboardsResponse response) {
+        @Nullable ListFeaturedContentNativeDashboardsResponse response) {
       super(context, response);
     }
 
@@ -824,18 +828,20 @@ public class FeaturedContentNativeDashboardServiceClient implements BackgroundRe
 
     @Override
     protected ListFeaturedContentNativeDashboardsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFeaturedContentNativeDashboardsRequest,
                 ListFeaturedContentNativeDashboardsResponse,
                 FeaturedContentNativeDashboard>
             context,
-        ListFeaturedContentNativeDashboardsResponse response) {
+        @Nullable ListFeaturedContentNativeDashboardsResponse response) {
       return new ListFeaturedContentNativeDashboardsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFeaturedContentNativeDashboardsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListFeaturedContentNativeDashboardsRequest,
                 ListFeaturedContentNativeDashboardsResponse,
                 FeaturedContentNativeDashboard>
@@ -854,7 +860,7 @@ public class FeaturedContentNativeDashboardServiceClient implements BackgroundRe
           ListFeaturedContentNativeDashboardsFixedSizeCollection> {
 
     private ListFeaturedContentNativeDashboardsFixedSizeCollection(
-        List<ListFeaturedContentNativeDashboardsPage> pages, int collectionSize) {
+        @Nullable List<ListFeaturedContentNativeDashboardsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -864,7 +870,7 @@ public class FeaturedContentNativeDashboardServiceClient implements BackgroundRe
 
     @Override
     protected ListFeaturedContentNativeDashboardsFixedSizeCollection createCollection(
-        List<ListFeaturedContentNativeDashboardsPage> pages, int collectionSize) {
+        @Nullable List<ListFeaturedContentNativeDashboardsPage> pages, int collectionSize) {
       return new ListFeaturedContentNativeDashboardsFixedSizeCollection(pages, collectionSize);
     }
   }

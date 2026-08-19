@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BrowserLanguageName implements ResourceName {
   private static final PathTemplate NETWORK_CODE_BROWSER_LANGUAGE =
@@ -75,7 +78,7 @@ public class BrowserLanguageName implements ResourceName {
         .toString();
   }
 
-  public static BrowserLanguageName parse(String formattedString) {
+  public static @Nullable BrowserLanguageName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -93,7 +96,7 @@ public class BrowserLanguageName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<BrowserLanguageName> values) {
+  public static List<String> toStringList(List<@Nullable BrowserLanguageName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (BrowserLanguageName value : values) {
       if (value == null) {
@@ -139,7 +142,7 @@ public class BrowserLanguageName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

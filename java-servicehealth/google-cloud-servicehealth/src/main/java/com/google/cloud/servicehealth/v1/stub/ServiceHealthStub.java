@@ -40,6 +40,7 @@ import com.google.cloud.servicehealth.v1.ListOrganizationImpactsResponse;
 import com.google.cloud.servicehealth.v1.OrganizationEvent;
 import com.google.cloud.servicehealth.v1.OrganizationImpact;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -47,6 +48,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class ServiceHealthStub implements BackgroundResource {
 

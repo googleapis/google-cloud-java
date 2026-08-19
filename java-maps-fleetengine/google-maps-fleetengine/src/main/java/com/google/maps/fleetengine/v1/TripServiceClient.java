@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -200,9 +202,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class TripServiceClient implements BackgroundResource {
-  private final TripServiceSettings settings;
+  private final @Nullable TripServiceSettings settings;
   private final TripServiceStub stub;
 
   /** Constructs an instance of TripServiceClient with default settings. */
@@ -241,7 +244,7 @@ public class TripServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final TripServiceSettings getSettings() {
+  public final @Nullable TripServiceSettings getSettings() {
     return settings;
   }
 
@@ -404,7 +407,7 @@ public class TripServiceClient implements BackgroundResource {
    *     which the service account making this call is a member.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTrip(TripName name) {
+  public final void deleteTrip(@Nullable TripName name) {
     DeleteTripRequest request =
         DeleteTripRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTrip(request);
@@ -793,8 +796,8 @@ public class TripServiceClient implements BackgroundResource {
       extends AbstractPage<SearchTripsRequest, SearchTripsResponse, Trip, SearchTripsPage> {
 
     private SearchTripsPage(
-        PageContext<SearchTripsRequest, SearchTripsResponse, Trip> context,
-        SearchTripsResponse response) {
+        @Nullable PageContext<SearchTripsRequest, SearchTripsResponse, Trip> context,
+        @Nullable SearchTripsResponse response) {
       super(context, response);
     }
 
@@ -804,14 +807,14 @@ public class TripServiceClient implements BackgroundResource {
 
     @Override
     protected SearchTripsPage createPage(
-        PageContext<SearchTripsRequest, SearchTripsResponse, Trip> context,
-        SearchTripsResponse response) {
+        @Nullable PageContext<SearchTripsRequest, SearchTripsResponse, Trip> context,
+        @Nullable SearchTripsResponse response) {
       return new SearchTripsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchTripsPage> createPageAsync(
-        PageContext<SearchTripsRequest, SearchTripsResponse, Trip> context,
+        @Nullable PageContext<SearchTripsRequest, SearchTripsResponse, Trip> context,
         ApiFuture<SearchTripsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -825,7 +828,8 @@ public class TripServiceClient implements BackgroundResource {
           SearchTripsPage,
           SearchTripsFixedSizeCollection> {
 
-    private SearchTripsFixedSizeCollection(List<SearchTripsPage> pages, int collectionSize) {
+    private SearchTripsFixedSizeCollection(
+        @Nullable List<SearchTripsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -835,7 +839,7 @@ public class TripServiceClient implements BackgroundResource {
 
     @Override
     protected SearchTripsFixedSizeCollection createCollection(
-        List<SearchTripsPage> pages, int collectionSize) {
+        @Nullable List<SearchTripsPage> pages, int collectionSize) {
       return new SearchTripsFixedSizeCollection(pages, collectionSize);
     }
   }

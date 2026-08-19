@@ -43,6 +43,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -301,9 +303,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class TagValuesClient implements BackgroundResource {
-  private final TagValuesSettings settings;
+  private final @Nullable TagValuesSettings settings;
   private final TagValuesStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -349,7 +352,7 @@ public class TagValuesClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final TagValuesSettings getSettings() {
+  public final @Nullable TagValuesSettings getSettings() {
     return settings;
   }
 
@@ -397,7 +400,7 @@ public class TagValuesClient implements BackgroundResource {
    * @param parent Required.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTagValuesPagedResponse listTagValues(ResourceName parent) {
+  public final ListTagValuesPagedResponse listTagValues(@Nullable ResourceName parent) {
     ListTagValuesRequest request =
         ListTagValuesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -557,7 +560,7 @@ public class TagValuesClient implements BackgroundResource {
    * @param name Required. Resource name for TagValue to be fetched in the format `tagValues/456`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TagValue getTagValue(TagValueName name) {
+  public final TagValue getTagValue(@Nullable TagValueName name) {
     GetTagValueRequest request =
         GetTagValueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTagValue(request);
@@ -673,7 +676,7 @@ public class TagValuesClient implements BackgroundResource {
    *     under the key with short name "bar" under the project with ID "r2-d2"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TagValue getNamespacedTagValue(TagValueName name) {
+  public final TagValue getNamespacedTagValue(@Nullable TagValueName name) {
     GetNamespacedTagValueRequest request =
         GetNamespacedTagValueRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1042,7 +1045,7 @@ public class TagValuesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<TagValue, DeleteTagValueMetadata> deleteTagValueAsync(
-      TagValueName name) {
+      @Nullable TagValueName name) {
     DeleteTagValueRequest request =
         DeleteTagValueRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteTagValueAsync(request);
@@ -1191,7 +1194,7 @@ public class TagValuesClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1323,7 +1326,7 @@ public class TagValuesClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1460,7 +1463,7 @@ public class TagValuesClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -1633,8 +1636,8 @@ public class TagValuesClient implements BackgroundResource {
           ListTagValuesRequest, ListTagValuesResponse, TagValue, ListTagValuesPage> {
 
     private ListTagValuesPage(
-        PageContext<ListTagValuesRequest, ListTagValuesResponse, TagValue> context,
-        ListTagValuesResponse response) {
+        @Nullable PageContext<ListTagValuesRequest, ListTagValuesResponse, TagValue> context,
+        @Nullable ListTagValuesResponse response) {
       super(context, response);
     }
 
@@ -1644,14 +1647,14 @@ public class TagValuesClient implements BackgroundResource {
 
     @Override
     protected ListTagValuesPage createPage(
-        PageContext<ListTagValuesRequest, ListTagValuesResponse, TagValue> context,
-        ListTagValuesResponse response) {
+        @Nullable PageContext<ListTagValuesRequest, ListTagValuesResponse, TagValue> context,
+        @Nullable ListTagValuesResponse response) {
       return new ListTagValuesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTagValuesPage> createPageAsync(
-        PageContext<ListTagValuesRequest, ListTagValuesResponse, TagValue> context,
+        @Nullable PageContext<ListTagValuesRequest, ListTagValuesResponse, TagValue> context,
         ApiFuture<ListTagValuesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1665,7 +1668,8 @@ public class TagValuesClient implements BackgroundResource {
           ListTagValuesPage,
           ListTagValuesFixedSizeCollection> {
 
-    private ListTagValuesFixedSizeCollection(List<ListTagValuesPage> pages, int collectionSize) {
+    private ListTagValuesFixedSizeCollection(
+        @Nullable List<ListTagValuesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1675,7 +1679,7 @@ public class TagValuesClient implements BackgroundResource {
 
     @Override
     protected ListTagValuesFixedSizeCollection createCollection(
-        List<ListTagValuesPage> pages, int collectionSize) {
+        @Nullable List<ListTagValuesPage> pages, int collectionSize) {
       return new ListTagValuesFixedSizeCollection(pages, collectionSize);
     }
   }

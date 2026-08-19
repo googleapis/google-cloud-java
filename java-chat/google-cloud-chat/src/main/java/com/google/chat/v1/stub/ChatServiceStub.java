@@ -25,11 +25,13 @@ import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse
 import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
+import com.google.chat.v1.Availability;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
 import com.google.chat.v1.CreateCustomEmojiRequest;
@@ -49,6 +51,7 @@ import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.FindGroupChatsRequest;
 import com.google.chat.v1.FindGroupChatsResponse;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetAvailabilityRequest;
 import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
@@ -73,6 +76,9 @@ import com.google.chat.v1.ListSpaceEventsRequest;
 import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
+import com.google.chat.v1.MarkAsActiveRequest;
+import com.google.chat.v1.MarkAsAwayRequest;
+import com.google.chat.v1.MarkAsDoNotDisturbRequest;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.MoveSectionItemRequest;
@@ -80,6 +86,8 @@ import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
 import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchMessagesRequest;
+import com.google.chat.v1.SearchMessagesResponse;
 import com.google.chat.v1.SearchSpacesRequest;
 import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.Section;
@@ -89,6 +97,7 @@ import com.google.chat.v1.SpaceEvent;
 import com.google.chat.v1.SpaceNotificationSetting;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
+import com.google.chat.v1.UpdateAvailabilityRequest;
 import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
 import com.google.chat.v1.UpdateSectionRequest;
@@ -99,6 +108,7 @@ import com.google.chat.v1.UploadAttachmentRequest;
 import com.google.chat.v1.UploadAttachmentResponse;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -106,6 +116,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class ChatServiceStub implements BackgroundResource {
 
@@ -144,6 +155,15 @@ public abstract class ChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteMessageRequest, Empty> deleteMessageCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteMessageCallable()");
+  }
+
+  public UnaryCallable<SearchMessagesRequest, SearchMessagesPagedResponse>
+      searchMessagesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchMessagesPagedCallable()");
+  }
+
+  public UnaryCallable<SearchMessagesRequest, SearchMessagesResponse> searchMessagesCallable() {
+    throw new UnsupportedOperationException("Not implemented: searchMessagesCallable()");
   }
 
   public UnaryCallable<GetAttachmentRequest, Attachment> getAttachmentCallable() {
@@ -270,6 +290,26 @@ public abstract class ChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetThreadReadStateRequest, ThreadReadState> getThreadReadStateCallable() {
     throw new UnsupportedOperationException("Not implemented: getThreadReadStateCallable()");
+  }
+
+  public UnaryCallable<GetAvailabilityRequest, Availability> getAvailabilityCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAvailabilityCallable()");
+  }
+
+  public UnaryCallable<MarkAsActiveRequest, Availability> markAsActiveCallable() {
+    throw new UnsupportedOperationException("Not implemented: markAsActiveCallable()");
+  }
+
+  public UnaryCallable<MarkAsAwayRequest, Availability> markAsAwayCallable() {
+    throw new UnsupportedOperationException("Not implemented: markAsAwayCallable()");
+  }
+
+  public UnaryCallable<MarkAsDoNotDisturbRequest, Availability> markAsDoNotDisturbCallable() {
+    throw new UnsupportedOperationException("Not implemented: markAsDoNotDisturbCallable()");
+  }
+
+  public UnaryCallable<UpdateAvailabilityRequest, Availability> updateAvailabilityCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateAvailabilityCallable()");
   }
 
   public UnaryCallable<GetSpaceEventRequest, SpaceEvent> getSpaceEventCallable() {

@@ -36,28 +36,29 @@ import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import com.google.common.base.Preconditions;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A wrapper callable that will wrap a callable chain in a trace.
  *
  * <p>For internal use only.
  */
+@NullMarked
 @BetaApi("The surface for tracing is not stable and might change in the future")
 @InternalApi("For internal use by google-cloud-java clients only")
 public final class TracedServerStreamingCallable<RequestT, ResponseT>
     extends ServerStreamingCallable<RequestT, ResponseT> {
 
-  @Nonnull private final ApiTracerFactory tracerFactory;
-  @Nonnull private final SpanName spanName;
-  @Nullable private final ApiTracerContext apiTracerContext;
-  @Nonnull private final ServerStreamingCallable<RequestT, ResponseT> innerCallable;
+  private final ApiTracerFactory tracerFactory;
+  private final SpanName spanName;
+  private final @Nullable ApiTracerContext apiTracerContext;
+  private final ServerStreamingCallable<RequestT, ResponseT> innerCallable;
 
   public TracedServerStreamingCallable(
-      @Nonnull ServerStreamingCallable<RequestT, ResponseT> innerCallable,
-      @Nonnull ApiTracerFactory tracerFactory,
-      @Nonnull SpanName spanName) {
+      ServerStreamingCallable<RequestT, ResponseT> innerCallable,
+      ApiTracerFactory tracerFactory,
+      SpanName spanName) {
     this.tracerFactory = Preconditions.checkNotNull(tracerFactory, "tracerFactory can't be null");
     this.spanName = Preconditions.checkNotNull(spanName, "spanName can't be null");
     this.innerCallable = Preconditions.checkNotNull(innerCallable, "innerCallable can't be null");
@@ -65,9 +66,9 @@ public final class TracedServerStreamingCallable<RequestT, ResponseT>
   }
 
   public TracedServerStreamingCallable(
-      @Nonnull ServerStreamingCallable<RequestT, ResponseT> innerCallable,
-      @Nonnull ApiTracerFactory tracerFactory,
-      @Nonnull ApiTracerContext apiTracerContext) {
+      ServerStreamingCallable<RequestT, ResponseT> innerCallable,
+      ApiTracerFactory tracerFactory,
+      ApiTracerContext apiTracerContext) {
     this.tracerFactory = Preconditions.checkNotNull(tracerFactory, "tracerFactory can't be null");
     this.apiTracerContext =
         Preconditions.checkNotNull(apiTracerContext, "apiTracerContext can't be null").toBuilder()

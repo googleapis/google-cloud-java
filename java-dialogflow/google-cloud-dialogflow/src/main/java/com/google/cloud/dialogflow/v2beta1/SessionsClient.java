@@ -37,6 +37,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -189,10 +191,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SessionsClient implements BackgroundResource {
-  private final SessionsSettings settings;
+  private final @Nullable SessionsSettings settings;
   private final SessionsStub stub;
 
   /** Constructs an instance of SessionsClient with default settings. */
@@ -230,7 +233,7 @@ public class SessionsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SessionsSettings getSettings() {
+  public final @Nullable SessionsSettings getSettings() {
     return settings;
   }
 
@@ -292,7 +295,8 @@ public class SessionsClient implements BackgroundResource {
    *     <p>3. an event that specifies which intent to trigger.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DetectIntentResponse detectIntent(SessionName session, QueryInput queryInput) {
+  public final DetectIntentResponse detectIntent(
+      @Nullable SessionName session, QueryInput queryInput) {
     DetectIntentRequest request =
         DetectIntentRequest.newBuilder()
             .setSession(session == null ? null : session.toString())
@@ -747,8 +751,8 @@ public class SessionsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -758,14 +762,14 @@ public class SessionsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -779,7 +783,8 @@ public class SessionsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -789,7 +794,7 @@ public class SessionsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

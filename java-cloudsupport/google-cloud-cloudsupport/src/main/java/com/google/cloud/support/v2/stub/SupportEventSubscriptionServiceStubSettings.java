@@ -47,6 +47,7 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.support.v2.CreateSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2.DeleteSupportEventSubscriptionRequest;
+import com.google.cloud.support.v2.ExpungeSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2.GetSupportEventSubscriptionRequest;
 import com.google.cloud.support.v2.ListSupportEventSubscriptionsRequest;
 import com.google.cloud.support.v2.ListSupportEventSubscriptionsResponse;
@@ -57,9 +58,12 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -113,6 +117,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class SupportEventSubscriptionServiceStubSettings
@@ -136,6 +141,8 @@ public class SupportEventSubscriptionServiceStubSettings
       deleteSupportEventSubscriptionSettings;
   private final UnaryCallSettings<UndeleteSupportEventSubscriptionRequest, SupportEventSubscription>
       undeleteSupportEventSubscriptionSettings;
+  private final UnaryCallSettings<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionSettings;
 
   private static final PagedListDescriptor<
           ListSupportEventSubscriptionsRequest,
@@ -255,6 +262,12 @@ public class SupportEventSubscriptionServiceStubSettings
     return undeleteSupportEventSubscriptionSettings;
   }
 
+  /** Returns the object with the settings used for calls to expungeSupportEventSubscription. */
+  public UnaryCallSettings<ExpungeSupportEventSubscriptionRequest, Empty>
+      expungeSupportEventSubscriptionSettings() {
+    return expungeSupportEventSubscriptionSettings;
+  }
+
   public SupportEventSubscriptionServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -356,7 +369,7 @@ public class SupportEventSubscriptionServiceStubSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -381,6 +394,8 @@ public class SupportEventSubscriptionServiceStubSettings
         settingsBuilder.deleteSupportEventSubscriptionSettings().build();
     undeleteSupportEventSubscriptionSettings =
         settingsBuilder.undeleteSupportEventSubscriptionSettings().build();
+    expungeSupportEventSubscriptionSettings =
+        settingsBuilder.expungeSupportEventSubscriptionSettings().build();
   }
 
   @Override
@@ -416,6 +431,8 @@ public class SupportEventSubscriptionServiceStubSettings
     private final UnaryCallSettings.Builder<
             UndeleteSupportEventSubscriptionRequest, SupportEventSubscription>
         undeleteSupportEventSubscriptionSettings;
+    private final UnaryCallSettings.Builder<ExpungeSupportEventSubscriptionRequest, Empty>
+        expungeSupportEventSubscriptionSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -440,7 +457,7 @@ public class SupportEventSubscriptionServiceStubSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       createSupportEventSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -450,6 +467,7 @@ public class SupportEventSubscriptionServiceStubSettings
       updateSupportEventSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSupportEventSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       undeleteSupportEventSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      expungeSupportEventSubscriptionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -458,7 +476,8 @@ public class SupportEventSubscriptionServiceStubSettings
               listSupportEventSubscriptionsSettings,
               updateSupportEventSubscriptionSettings,
               deleteSupportEventSubscriptionSettings,
-              undeleteSupportEventSubscriptionSettings);
+              undeleteSupportEventSubscriptionSettings,
+              expungeSupportEventSubscriptionSettings);
       initDefaults(this);
     }
 
@@ -477,6 +496,8 @@ public class SupportEventSubscriptionServiceStubSettings
           settings.deleteSupportEventSubscriptionSettings.toBuilder();
       undeleteSupportEventSubscriptionSettings =
           settings.undeleteSupportEventSubscriptionSettings.toBuilder();
+      expungeSupportEventSubscriptionSettings =
+          settings.expungeSupportEventSubscriptionSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -485,7 +506,8 @@ public class SupportEventSubscriptionServiceStubSettings
               listSupportEventSubscriptionsSettings,
               updateSupportEventSubscriptionSettings,
               deleteSupportEventSubscriptionSettings,
-              undeleteSupportEventSubscriptionSettings);
+              undeleteSupportEventSubscriptionSettings,
+              expungeSupportEventSubscriptionSettings);
     }
 
     private static Builder createDefault() {
@@ -540,6 +562,11 @@ public class SupportEventSubscriptionServiceStubSettings
 
       builder
           .undeleteSupportEventSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .expungeSupportEventSubscriptionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -602,6 +629,12 @@ public class SupportEventSubscriptionServiceStubSettings
             UndeleteSupportEventSubscriptionRequest, SupportEventSubscription>
         undeleteSupportEventSubscriptionSettings() {
       return undeleteSupportEventSubscriptionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to expungeSupportEventSubscription. */
+    public UnaryCallSettings.Builder<ExpungeSupportEventSubscriptionRequest, Empty>
+        expungeSupportEventSubscriptionSettings() {
+      return expungeSupportEventSubscriptionSettings;
     }
 
     @Override

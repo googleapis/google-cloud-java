@@ -19,12 +19,14 @@ import com.google.api.generator.engine.ast.LineComment;
 import com.google.api.generator.gapic.utils.JavaStyle;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 // TODO: alicejli edit RegionTag to match other languages
 /**
  * This model represents a code sample region tag. Matching region start and end region tag comments
  * are used to determine the boundaries of code snippets to be used in documentation.
  */
+@NullMarked
 @AutoValue
 public abstract class RegionTag {
   public abstract String apiShortName();

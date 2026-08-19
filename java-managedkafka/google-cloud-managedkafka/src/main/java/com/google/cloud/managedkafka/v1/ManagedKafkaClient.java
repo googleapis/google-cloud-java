@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -558,9 +560,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ManagedKafkaClient implements BackgroundResource {
-  private final ManagedKafkaSettings settings;
+  private final @Nullable ManagedKafkaSettings settings;
   private final ManagedKafkaStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -607,7 +610,7 @@ public class ManagedKafkaClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ManagedKafkaSettings getSettings() {
+  public final @Nullable ManagedKafkaSettings getSettings() {
     return settings;
   }
 
@@ -656,7 +659,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListClustersPagedResponse listClusters(LocationName parent) {
+  public final ListClustersPagedResponse listClusters(@Nullable LocationName parent) {
     ListClustersRequest request =
         ListClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -823,7 +826,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    * @param name Required. The name of the cluster whose configuration to return.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Cluster getCluster(ClusterName name) {
+  public final Cluster getCluster(@Nullable ClusterName name) {
     GetClusterRequest request =
         GetClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCluster(request);
@@ -940,7 +943,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Cluster, OperationMetadata> createClusterAsync(
-      LocationName parent, Cluster cluster, String clusterId) {
+      @Nullable LocationName parent, Cluster cluster, String clusterId) {
     CreateClusterRequest request =
         CreateClusterRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1229,7 +1232,8 @@ public class ManagedKafkaClient implements BackgroundResource {
    * @param name Required. The name of the cluster to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteClusterAsync(ClusterName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteClusterAsync(
+      @Nullable ClusterName name) {
     DeleteClusterRequest request =
         DeleteClusterRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteClusterAsync(request);
@@ -1373,7 +1377,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/clusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTopicsPagedResponse listTopics(ClusterName parent) {
+  public final ListTopicsPagedResponse listTopics(@Nullable ClusterName parent) {
     ListTopicsRequest request =
         ListTopicsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTopics(request);
@@ -1531,7 +1535,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/clusters/{cluster}/topics/{topic}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Topic getTopic(TopicName name) {
+  public final Topic getTopic(@Nullable TopicName name) {
     GetTopicRequest request =
         GetTopicRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTopic(request);
@@ -1647,7 +1651,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    *     <p>This value is structured like: `my-topic-name`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Topic createTopic(ClusterName parent, Topic topic, String topicId) {
+  public final Topic createTopic(@Nullable ClusterName parent, Topic topic, String topicId) {
     CreateTopicRequest request =
         CreateTopicRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1865,7 +1869,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/clusters/{cluster}/topics/{topic}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteTopic(TopicName name) {
+  public final void deleteTopic(@Nullable TopicName name) {
     DeleteTopicRequest request =
         DeleteTopicRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteTopic(request);
@@ -1977,7 +1981,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    *     like `projects/{project}/locations/{location}/clusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListConsumerGroupsPagedResponse listConsumerGroups(ClusterName parent) {
+  public final ListConsumerGroupsPagedResponse listConsumerGroups(@Nullable ClusterName parent) {
     ListConsumerGroupsRequest request =
         ListConsumerGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2144,7 +2148,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/clusters/{cluster}/consumerGroups/{consumerGroup}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ConsumerGroup getConsumerGroup(ConsumerGroupName name) {
+  public final ConsumerGroup getConsumerGroup(@Nullable ConsumerGroupName name) {
     GetConsumerGroupRequest request =
         GetConsumerGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getConsumerGroup(request);
@@ -2358,7 +2362,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/clusters/{cluster}/consumerGroups/{consumerGroup}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteConsumerGroup(ConsumerGroupName name) {
+  public final void deleteConsumerGroup(@Nullable ConsumerGroupName name) {
     DeleteConsumerGroupRequest request =
         DeleteConsumerGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2480,7 +2484,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/clusters/{cluster}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAclsPagedResponse listAcls(ClusterName parent) {
+  public final ListAclsPagedResponse listAcls(@Nullable ClusterName parent) {
     ListAclsRequest request =
         ListAclsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listAcls(request);
@@ -2640,7 +2644,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    *     pattern_type) of the acl. See `Acl.name` for details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Acl getAcl(AclName name) {
+  public final Acl getAcl(@Nullable AclName name) {
     GetAclRequest request =
         GetAclRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAcl(request);
@@ -2766,7 +2770,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    *     `consumerGroup/&#42;`) `allTransactionalIds` (represents `transactionalId/&#42;`)
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Acl createAcl(ClusterName parent, Acl acl, String aclId) {
+  public final Acl createAcl(@Nullable ClusterName parent, Acl acl, String aclId) {
     CreateAclRequest request =
         CreateAclRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2991,7 +2995,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    *     pattern_type) of the acl. See `Acl.name` for details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAcl(AclName name) {
+  public final void deleteAcl(@Nullable AclName name) {
     DeleteAclRequest request =
         DeleteAclRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAcl(request);
@@ -3107,7 +3111,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    * @param aclEntry Required. The acl entry to add.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AddAclEntryResponse addAclEntry(AclName acl, AclEntry aclEntry) {
+  public final AddAclEntryResponse addAclEntry(@Nullable AclName acl, AclEntry aclEntry) {
     AddAclEntryRequest request =
         AddAclEntryRequest.newBuilder()
             .setAcl(acl == null ? null : acl.toString())
@@ -3233,7 +3237,7 @@ public class ManagedKafkaClient implements BackgroundResource {
    * @param aclEntry Required. The acl entry to remove.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RemoveAclEntryResponse removeAclEntry(AclName acl, AclEntry aclEntry) {
+  public final RemoveAclEntryResponse removeAclEntry(@Nullable AclName acl, AclEntry aclEntry) {
     RemoveAclEntryRequest request =
         RemoveAclEntryRequest.newBuilder()
             .setAcl(acl == null ? null : acl.toString())
@@ -3549,8 +3553,8 @@ public class ManagedKafkaClient implements BackgroundResource {
       extends AbstractPage<ListClustersRequest, ListClustersResponse, Cluster, ListClustersPage> {
 
     private ListClustersPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       super(context, response);
     }
 
@@ -3560,14 +3564,14 @@ public class ManagedKafkaClient implements BackgroundResource {
 
     @Override
     protected ListClustersPage createPage(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
-        ListClustersResponse response) {
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable ListClustersResponse response) {
       return new ListClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListClustersPage> createPageAsync(
-        PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
+        @Nullable PageContext<ListClustersRequest, ListClustersResponse, Cluster> context,
         ApiFuture<ListClustersResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3581,7 +3585,8 @@ public class ManagedKafkaClient implements BackgroundResource {
           ListClustersPage,
           ListClustersFixedSizeCollection> {
 
-    private ListClustersFixedSizeCollection(List<ListClustersPage> pages, int collectionSize) {
+    private ListClustersFixedSizeCollection(
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3591,7 +3596,7 @@ public class ManagedKafkaClient implements BackgroundResource {
 
     @Override
     protected ListClustersFixedSizeCollection createCollection(
-        List<ListClustersPage> pages, int collectionSize) {
+        @Nullable List<ListClustersPage> pages, int collectionSize) {
       return new ListClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3622,8 +3627,8 @@ public class ManagedKafkaClient implements BackgroundResource {
       extends AbstractPage<ListTopicsRequest, ListTopicsResponse, Topic, ListTopicsPage> {
 
     private ListTopicsPage(
-        PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
-        ListTopicsResponse response) {
+        @Nullable PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
+        @Nullable ListTopicsResponse response) {
       super(context, response);
     }
 
@@ -3633,14 +3638,14 @@ public class ManagedKafkaClient implements BackgroundResource {
 
     @Override
     protected ListTopicsPage createPage(
-        PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
-        ListTopicsResponse response) {
+        @Nullable PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
+        @Nullable ListTopicsResponse response) {
       return new ListTopicsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTopicsPage> createPageAsync(
-        PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
+        @Nullable PageContext<ListTopicsRequest, ListTopicsResponse, Topic> context,
         ApiFuture<ListTopicsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3654,7 +3659,8 @@ public class ManagedKafkaClient implements BackgroundResource {
           ListTopicsPage,
           ListTopicsFixedSizeCollection> {
 
-    private ListTopicsFixedSizeCollection(List<ListTopicsPage> pages, int collectionSize) {
+    private ListTopicsFixedSizeCollection(
+        @Nullable List<ListTopicsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3664,7 +3670,7 @@ public class ManagedKafkaClient implements BackgroundResource {
 
     @Override
     protected ListTopicsFixedSizeCollection createCollection(
-        List<ListTopicsPage> pages, int collectionSize) {
+        @Nullable List<ListTopicsPage> pages, int collectionSize) {
       return new ListTopicsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3701,8 +3707,9 @@ public class ManagedKafkaClient implements BackgroundResource {
           ListConsumerGroupsPage> {
 
     private ListConsumerGroupsPage(
-        PageContext<ListConsumerGroupsRequest, ListConsumerGroupsResponse, ConsumerGroup> context,
-        ListConsumerGroupsResponse response) {
+        @Nullable PageContext<ListConsumerGroupsRequest, ListConsumerGroupsResponse, ConsumerGroup>
+            context,
+        @Nullable ListConsumerGroupsResponse response) {
       super(context, response);
     }
 
@@ -3712,14 +3719,16 @@ public class ManagedKafkaClient implements BackgroundResource {
 
     @Override
     protected ListConsumerGroupsPage createPage(
-        PageContext<ListConsumerGroupsRequest, ListConsumerGroupsResponse, ConsumerGroup> context,
-        ListConsumerGroupsResponse response) {
+        @Nullable PageContext<ListConsumerGroupsRequest, ListConsumerGroupsResponse, ConsumerGroup>
+            context,
+        @Nullable ListConsumerGroupsResponse response) {
       return new ListConsumerGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListConsumerGroupsPage> createPageAsync(
-        PageContext<ListConsumerGroupsRequest, ListConsumerGroupsResponse, ConsumerGroup> context,
+        @Nullable PageContext<ListConsumerGroupsRequest, ListConsumerGroupsResponse, ConsumerGroup>
+            context,
         ApiFuture<ListConsumerGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3734,7 +3743,7 @@ public class ManagedKafkaClient implements BackgroundResource {
           ListConsumerGroupsFixedSizeCollection> {
 
     private ListConsumerGroupsFixedSizeCollection(
-        List<ListConsumerGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListConsumerGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3744,7 +3753,7 @@ public class ManagedKafkaClient implements BackgroundResource {
 
     @Override
     protected ListConsumerGroupsFixedSizeCollection createCollection(
-        List<ListConsumerGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListConsumerGroupsPage> pages, int collectionSize) {
       return new ListConsumerGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3771,7 +3780,8 @@ public class ManagedKafkaClient implements BackgroundResource {
       extends AbstractPage<ListAclsRequest, ListAclsResponse, Acl, ListAclsPage> {
 
     private ListAclsPage(
-        PageContext<ListAclsRequest, ListAclsResponse, Acl> context, ListAclsResponse response) {
+        @Nullable PageContext<ListAclsRequest, ListAclsResponse, Acl> context,
+        @Nullable ListAclsResponse response) {
       super(context, response);
     }
 
@@ -3781,13 +3791,14 @@ public class ManagedKafkaClient implements BackgroundResource {
 
     @Override
     protected ListAclsPage createPage(
-        PageContext<ListAclsRequest, ListAclsResponse, Acl> context, ListAclsResponse response) {
+        @Nullable PageContext<ListAclsRequest, ListAclsResponse, Acl> context,
+        @Nullable ListAclsResponse response) {
       return new ListAclsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAclsPage> createPageAsync(
-        PageContext<ListAclsRequest, ListAclsResponse, Acl> context,
+        @Nullable PageContext<ListAclsRequest, ListAclsResponse, Acl> context,
         ApiFuture<ListAclsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3797,7 +3808,7 @@ public class ManagedKafkaClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListAclsRequest, ListAclsResponse, Acl, ListAclsPage, ListAclsFixedSizeCollection> {
 
-    private ListAclsFixedSizeCollection(List<ListAclsPage> pages, int collectionSize) {
+    private ListAclsFixedSizeCollection(@Nullable List<ListAclsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3807,7 +3818,7 @@ public class ManagedKafkaClient implements BackgroundResource {
 
     @Override
     protected ListAclsFixedSizeCollection createCollection(
-        List<ListAclsPage> pages, int collectionSize) {
+        @Nullable List<ListAclsPage> pages, int collectionSize) {
       return new ListAclsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3841,8 +3852,8 @@ public class ManagedKafkaClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -3852,14 +3863,14 @@ public class ManagedKafkaClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3873,7 +3884,8 @@ public class ManagedKafkaClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3883,7 +3895,7 @@ public class ManagedKafkaClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
