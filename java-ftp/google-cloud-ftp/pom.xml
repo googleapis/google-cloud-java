@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-ftp</artifactId>
-  <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-ftp:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-ftp:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud FTP</name>
   <description>Cloud FTP A managed, cloud-native solution to move data in and out of Google Cloud by
@@ -11,7 +11,7 @@ using SSH File Transfer Protocol (SFTP).</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-ftp-parent</artifactId>
-    <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-ftp:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-cloud-ftp:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-ftp</site.installationModule>
