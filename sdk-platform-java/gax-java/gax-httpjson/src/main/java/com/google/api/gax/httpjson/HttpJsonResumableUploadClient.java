@@ -38,6 +38,8 @@ import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.resumable.StartUploadRequest;
@@ -85,6 +87,9 @@ public final class HttpJsonResumableUploadClient implements ResumableUploadClien
           UPLOAD_COMMAND_HEADER, ImmutableList.of("start"));
 
   private static final PathTemplate PATH_TEMPLATE = PathTemplate.create("{+path}");
+
+  private static final Map<String, List<String>> QUERY_STATUS_HEADERS =
+      ImmutableMap.of(UPLOAD_COMMAND_HEADER, ImmutableList.of("query"));
 
   private static final ApiMethodDescriptor<StartUploadRequest, String> START_UPLOAD_DESCRIPTOR =
       ApiMethodDescriptor.<StartUploadRequest, String>newBuilder()
@@ -144,6 +149,41 @@ public final class HttpJsonResumableUploadClient implements ResumableUploadClien
 
                 @Override
                 public String getPath(ChunkUploadRequest request) {
+                  return request.getUploadUrl();
+                }
+
+                @Override
+                public PathTemplate getPathTemplate() {
+                  return PATH_TEMPLATE;
+                }
+              })
+          .setResponseParser(StringHttpResponseParser.create())
+          .build();
+
+  private static final ApiMethodDescriptor<QueryStatusRequest, String> QUERY_STATUS_DESCRIPTOR =
+      ApiMethodDescriptor.<QueryStatusRequest, String>newBuilder()
+          .setFullMethodName("ResumableUpload/QueryStatus")
+          .setHttpMethod(HttpMethods.POST)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              new HttpRequestFormatter<QueryStatusRequest>() {
+                @Override
+                public Map<String, List<String>> getQueryParamNames(QueryStatusRequest request) {
+                  return Collections.emptyMap();
+                }
+
+                @Override
+                public String getRequestBody(QueryStatusRequest request) {
+                  return "";
+                }
+
+                @Override
+                public HttpContent getHttpContent(QueryStatusRequest request) {
+                  return new EmptyContent();
+                }
+
+                @Override
+                public String getPath(QueryStatusRequest request) {
                   return request.getUploadUrl();
                 }
 
@@ -230,6 +270,32 @@ public final class HttpJsonResumableUploadClient implements ResumableUploadClien
     };
   }
 
+  @Override
+  public UnaryCallable<QueryStatusRequest, QueryStatusResponse> queryStatusCallable() {
+    return new UnaryCallable<QueryStatusRequest, QueryStatusResponse>() {
+      @Override
+      public ApiFuture<QueryStatusResponse> futureCall(
+          QueryStatusRequest request, @Nullable ApiCallContext inputContext) {
+        Preconditions.checkNotNull(request);
+        HttpJsonCallContext context =
+            (HttpJsonCallContext)
+                HttpJsonCallContext.createDefault()
+                    .nullToSelf(clientContext.getDefaultCallContext())
+                    .merge(inputContext)
+                    .withExtraHeaders(QUERY_STATUS_HEADERS);
+
+        HttpJsonClientCall<QueryStatusRequest, String> clientCall =
+            HttpJsonClientCalls.newCall(QUERY_STATUS_DESCRIPTOR, context);
+
+        SettableApiFuture<QueryStatusResponse> future = SettableApiFuture.create();
+        HttpJsonClientCalls.startUnaryCall(
+            clientCall, request, context, new QueryStatusResponseListener(future));
+
+        return future;
+      }
+    };
+  }
+
   private static class StartUploadResponseListener extends HttpJsonClientCall.Listener<String> {
 
     private final SettableApiFuture<ResumableUploadSession> future;
@@ -308,22 +374,10 @@ public final class HttpJsonResumableUploadClient implements ResumableUploadClien
 
     @Override
     public void onHeaders(HttpJsonMetadata responseHeaders) {
-      Map<String, Object> headers = responseHeaders.getHeaders();
-
-      String statusStr = HttpHeadersUtils.getFirstHeader(headers, UPLOAD_STATUS_HEADER);
-      if (STATUS_FINAL.equalsIgnoreCase(statusStr)) {
-        this.isComplete = true;
-      }
-
-      String sizeReceivedStr =
-          HttpHeadersUtils.getFirstHeader(headers, UPLOAD_SIZE_RECEIVED_HEADER);
-      if (!Strings.isNullOrEmpty(sizeReceivedStr)) {
-        try {
-          this.committedOffset = Long.parseLong(sizeReceivedStr);
-        } catch (NumberFormatException ignored) {
-          // Ignore invalid/malformed size received header and fall back to local offset
-          // calculation.
-        }
+      this.isComplete = isUploadFinal(responseHeaders);
+      Long sizeReceived = parseSizeReceived(responseHeaders);
+      if (sizeReceived != null) {
+        this.committedOffset = sizeReceived;
       }
     }
 
@@ -357,6 +411,83 @@ public final class HttpJsonResumableUploadClient implements ResumableUploadClien
                 /* retryable= */ false));
       }
     }
+  }
+
+  private static class QueryStatusResponseListener extends HttpJsonClientCall.Listener<String> {
+
+    private final SettableApiFuture<QueryStatusResponse> future;
+    private boolean isComplete = false;
+    @Nullable private Long committedOffset = null;
+    private String responseBody = "";
+
+    QueryStatusResponseListener(SettableApiFuture<QueryStatusResponse> future) {
+      this.future = future;
+    }
+
+    @Override
+    public void onHeaders(HttpJsonMetadata responseHeaders) {
+      this.isComplete = isUploadFinal(responseHeaders);
+      this.committedOffset = parseSizeReceived(responseHeaders);
+    }
+
+    @Override
+    public void onMessage(@Nullable String message) {
+      if (message != null) {
+        this.responseBody = message;
+      }
+    }
+
+    @Override
+    public void onClose(int statusCode, HttpJsonMetadata trailers) {
+      try {
+        if (statusCode >= 200 && statusCode < 300) {
+          if (isComplete || committedOffset != null) {
+            future.set(
+                QueryStatusResponse.create(
+                    committedOffset != null ? committedOffset : 0L,
+                    isComplete,
+                    isComplete ? responseBody : ""));
+          } else {
+            future.setException(
+                ApiExceptionFactory.createException(
+                    "Query status response did not contain valid X-Goog-Upload-Size-Received header",
+                    /* cause= */ null,
+                    HttpJsonStatusCode.of(StatusCode.Code.INTERNAL),
+                    /* retryable= */ false));
+          }
+        } else {
+          future.setException(
+              createApiException(statusCode, trailers, "Failed to query upload status"));
+        }
+      } catch (Throwable t) {
+        future.setException(
+            ApiExceptionFactory.createException(
+                "Internal error processing query status response",
+                t,
+                HttpJsonStatusCode.of(StatusCode.Code.INTERNAL),
+                /* retryable= */ false));
+      }
+    }
+  }
+
+  private static boolean isUploadFinal(HttpJsonMetadata responseHeaders) {
+    String statusStr =
+        HttpHeadersUtils.getFirstHeader(responseHeaders.getHeaders(), UPLOAD_STATUS_HEADER);
+    return STATUS_FINAL.equalsIgnoreCase(statusStr);
+  }
+
+  @Nullable
+  private static Long parseSizeReceived(HttpJsonMetadata responseHeaders) {
+    String sizeReceivedStr =
+        HttpHeadersUtils.getFirstHeader(responseHeaders.getHeaders(), UPLOAD_SIZE_RECEIVED_HEADER);
+    if (!Strings.isNullOrEmpty(sizeReceivedStr)) {
+      try {
+        return Long.parseLong(sizeReceivedStr);
+      } catch (NumberFormatException ignored) {
+        // Unparseable header; return null and let the listener decide how to handle it.
+      }
+    }
+    return null;
   }
 
   private static ApiException createApiException(

@@ -40,6 +40,8 @@ import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.resumable.StartUploadRequest;
 import com.google.api.gax.rpc.AbortedException;
@@ -500,6 +502,222 @@ class HttpJsonResumableUploadClientTest {
     ExecutionException exception =
         assertThrows(
             ExecutionException.class, () -> client.uploadChunkCallable().futureCall(request).get());
+
+    assertThat(exception.getCause()).isInstanceOf(ApiException.class);
+    assertThat(exception.getCause()).hasMessageThat().contains("500");
+  }
+
+  @Test
+  void queryStatus_activeUpload_returnsCommittedOffset() {
+    Map<String, List<String>> capturedHeaders = new HashMap<>();
+    String[] capturedUrl = new String[1];
+
+    HttpTransport httpTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            capturedUrl[0] = url;
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                capturedHeaders.putAll(getHeaders());
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                response.setStatusCode(200);
+                response.addHeader("X-Goog-Upload-Status", "active");
+                response.addHeader("X-Goog-Upload-Size-Received", "524288");
+                return response;
+              }
+            };
+          }
+        };
+
+    HttpJsonResumableUploadClient client = createClient(httpTransport);
+    QueryStatusRequest request =
+        QueryStatusRequest.create("https://test.googleapis.com/upload/session/123");
+
+    QueryStatusResponse response = client.queryStatusCallable().call(request);
+
+    assertThat(response.isComplete()).isFalse();
+    assertThat(response.getCommittedOffset()).isEqualTo(524288L);
+    assertThat(response.getResponseBody()).isEmpty();
+
+    assertThat(capturedUrl[0]).contains("https://test.googleapis.com/upload/session/123");
+    assertThat(capturedHeaders).containsKey("x-goog-upload-command");
+    assertThat(capturedHeaders.get("x-goog-upload-command")).contains("query");
+  }
+
+  @Test
+  void queryStatus_finalUpload_returnsCompleteAndResponseBody() {
+    Map<String, List<String>> capturedHeaders = new HashMap<>();
+    String[] capturedUrl = new String[1];
+
+    HttpTransport httpTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            capturedUrl[0] = url;
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                capturedHeaders.putAll(getHeaders());
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                response.setStatusCode(200);
+                response.addHeader("X-Goog-Upload-Status", "final");
+                response.addHeader("X-Goog-Upload-Size-Received", "1048576");
+                response.setContent("{\"name\":\"uploaded-file.txt\",\"size\":1048576}");
+                return response;
+              }
+            };
+          }
+        };
+
+    HttpJsonResumableUploadClient client = createClient(httpTransport);
+    QueryStatusRequest request =
+        QueryStatusRequest.create("https://test.googleapis.com/upload/session/123");
+
+    QueryStatusResponse response = client.queryStatusCallable().call(request);
+
+    assertThat(response.isComplete()).isTrue();
+    assertThat(response.getCommittedOffset()).isEqualTo(1048576L);
+    assertThat(response.getResponseBody())
+        .isEqualTo("{\"name\":\"uploaded-file.txt\",\"size\":1048576}");
+
+    assertThat(capturedHeaders).containsKey("x-goog-upload-command");
+    assertThat(capturedHeaders.get("x-goog-upload-command")).contains("query");
+  }
+
+  @Test
+  void queryStatus_finalUploadWithoutSizeReceivedHeader_returnsCompleteAndResponseBody() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(200);
+    httpResponse.addHeader("X-Goog-Upload-Status", "final");
+    httpResponse.setContent("{\"name\":\"uploaded-file.txt\",\"size\":1048576}");
+
+    HttpJsonResumableUploadClient client = createClient(httpResponse);
+    QueryStatusRequest request =
+        QueryStatusRequest.create("https://test.googleapis.com/upload/session/123");
+
+    QueryStatusResponse response = client.queryStatusCallable().call(request);
+
+    assertThat(response.isComplete()).isTrue();
+    assertThat(response.getCommittedOffset()).isEqualTo(0L);
+    assertThat(response.getResponseBody())
+        .isEqualTo("{\"name\":\"uploaded-file.txt\",\"size\":1048576}");
+  }
+
+  @Test
+  void queryStatus_withCustomExtraHeaders_preservesHeaders() {
+    Map<String, List<String>> capturedHeaders = new HashMap<>();
+
+    HttpTransport httpTransport =
+        new MockHttpTransport() {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) {
+            return new MockLowLevelHttpRequest() {
+              @Override
+              public LowLevelHttpResponse execute() {
+                capturedHeaders.putAll(getHeaders());
+                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
+                response.setStatusCode(200);
+                response.addHeader("X-Goog-Upload-Status", "active");
+                response.addHeader("X-Goog-Upload-Size-Received", "256");
+                return response;
+              }
+            };
+          }
+        };
+
+    HttpJsonResumableUploadClient client = createClient(httpTransport);
+    QueryStatusRequest request =
+        QueryStatusRequest.create("https://test.googleapis.com/upload/session/123");
+
+    Map<String, List<String>> customHeaders = new HashMap<>();
+    customHeaders.put("X-Custom-Query-Header", Collections.singletonList("CustomQueryValue"));
+
+    ApiCallContext callContext =
+        HttpJsonCallContext.createDefault().withExtraHeaders(customHeaders);
+
+    QueryStatusResponse response = client.queryStatusCallable().call(request, callContext);
+
+    assertThat(response.getCommittedOffset()).isEqualTo(256L);
+    assertThat(capturedHeaders).containsKey("x-custom-query-header");
+    assertThat(capturedHeaders.get("x-custom-query-header")).contains("CustomQueryValue");
+    assertThat(capturedHeaders).containsKey("x-goog-upload-command");
+    assertThat(capturedHeaders.get("x-goog-upload-command")).contains("query");
+  }
+
+  @Test
+  void queryStatus_serverReturnsError_throwsApiException() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(404);
+    httpResponse.setContent("{\"error\":{\"message\":\"Session not found\"}}");
+
+    HttpJsonResumableUploadClient client = createClient(httpResponse);
+    QueryStatusRequest request =
+        QueryStatusRequest.create("https://test.googleapis.com/upload/session/invalid");
+
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class, () -> client.queryStatusCallable().futureCall(request).get());
+
+    assertThat(exception.getCause()).isInstanceOf(NotFoundException.class);
+    NotFoundException notFoundException = (NotFoundException) exception.getCause();
+    assertThat(notFoundException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.NOT_FOUND);
+  }
+
+  @Test
+  void queryStatus_missingSizeReceivedHeader_throwsException() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(200);
+    httpResponse.addHeader("X-Goog-Upload-Status", "active");
+
+    HttpJsonResumableUploadClient client = createClient(httpResponse);
+    QueryStatusRequest request =
+        QueryStatusRequest.create("https://test.googleapis.com/upload/session/123");
+
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class, () -> client.queryStatusCallable().futureCall(request).get());
+
+    assertThat(exception.getCause()).isInstanceOf(InternalException.class);
+    assertThat(exception.getCause())
+        .hasMessageThat()
+        .contains("Query status response did not contain valid X-Goog-Upload-Size-Received header");
+  }
+
+  @Test
+  void queryStatus_malformedSizeReceivedHeader_throwsException() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(200);
+    httpResponse.addHeader("X-Goog-Upload-Status", "active");
+    httpResponse.addHeader("X-Goog-Upload-Size-Received", "not-a-number");
+
+    HttpJsonResumableUploadClient client = createClient(httpResponse);
+    QueryStatusRequest request =
+        QueryStatusRequest.create("https://test.googleapis.com/upload/session/123");
+
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class, () -> client.queryStatusCallable().futureCall(request).get());
+
+    assertThat(exception.getCause()).isInstanceOf(InternalException.class);
+    assertThat(exception.getCause())
+        .hasMessageThat()
+        .contains("Query status response did not contain valid X-Goog-Upload-Size-Received header");
+  }
+
+  @Test
+  void queryStatus_serverReturnsErrorWithoutException_throwsApiException() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(500);
+
+    HttpJsonResumableUploadClient client = createClient(httpResponse);
+    QueryStatusRequest request =
+        QueryStatusRequest.create("https://test.googleapis.com/upload/session/123");
+
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class, () -> client.queryStatusCallable().futureCall(request).get());
 
     assertThat(exception.getCause()).isInstanceOf(ApiException.class);
     assertThat(exception.getCause()).hasMessageThat().contains("500");
