@@ -36,6 +36,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -87,6 +89,9 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
 
   private static final PathTemplate PATH_TEMPLATE = PathTemplate.create("{+path}");
 
+  private static final Map<String, List<String>> QUERY_STATUS_HEADERS =
+      ImmutableMap.of(UPLOAD_COMMAND_HEADER, ImmutableList.of("query"));
+
   private static final ApiMethodDescriptor<ChunkUploadRequest, String> UPLOAD_CHUNK_DESCRIPTOR =
       ApiMethodDescriptor.<ChunkUploadRequest, String>newBuilder()
           .setFullMethodName("ResumableUpload/UploadChunk")
@@ -117,10 +122,42 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
           .setResponseParser(ResumableUploadResponseParser.create())
           .build();
 
+  private static final ApiMethodDescriptor<QueryStatusRequest, String> QUERY_STATUS_DESCRIPTOR =
+      ApiMethodDescriptor.<QueryStatusRequest, String>newBuilder()
+          .setFullMethodName("ResumableUpload/QueryStatus")
+          .setHttpMethod(HttpMethods.POST)
+          .setType(ApiMethodDescriptor.MethodType.UNARY)
+          .setRequestFormatter(
+              new HttpRequestFormatter<QueryStatusRequest>() {
+                @Override
+                public Map<String, List<String>> getQueryParamNames(QueryStatusRequest request) {
+                  return Collections.emptyMap();
+                }
+
+                @Override
+                public String getRequestBody(QueryStatusRequest request) {
+                  return "";
+                }
+
+                @Override
+                public String getPath(QueryStatusRequest request) {
+                  return request.getUploadUrl();
+                }
+
+                @Override
+                public PathTemplate getPathTemplate() {
+                  return PATH_TEMPLATE;
+                }
+              })
+          .setResponseParser(ResumableUploadResponseParser.create())
+          .build();
+
   private final ApiMethodDescriptor<RequestT, String> startUploadDescriptor;
   private final UnaryCallable<RequestT, ResumableUploadSession> startUploadCallable;
   private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
       uploadChunkCallable;
+  private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
+      queryStatusCallable;
 
   public static <RequestT, ResponseT> HttpJsonResumableUploadClient<RequestT, ResponseT> create(
       ClientContext clientContext, ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor) {
@@ -144,6 +181,7 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
             .build();
     this.startUploadCallable = createStartUploadCallable(clientContext);
     this.uploadChunkCallable = createUploadChunkCallable(clientContext, responseParser);
+    this.queryStatusCallable = createQueryStatusCallable(clientContext, responseParser);
   }
 
   @Override
@@ -154,6 +192,11 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
   @Override
   public UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable() {
     return uploadChunkCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable() {
+    return queryStatusCallable;
   }
 
   private UnaryCallable<RequestT, ResumableUploadSession> createStartUploadCallable(
@@ -224,6 +267,35 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
     return createClientCallable(rawCallable, clientContext);
   }
 
+  private UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
+      createQueryStatusCallable(
+          ClientContext clientContext, HttpResponseParser<ResponseT> responseParser) {
+    UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> rawCallable =
+        new UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>() {
+          @Override
+          public ApiFuture<QueryStatusResponse<ResponseT>> futureCall(
+              QueryStatusRequest request, @Nullable ApiCallContext inputContext) {
+            Preconditions.checkNotNull(request);
+            HttpJsonCallContext context =
+                createCallContext(clientContext, inputContext, QUERY_STATUS_HEADERS);
+
+            HttpJsonClientCall<QueryStatusRequest, String> clientCall =
+                HttpJsonClientCalls.newCall(QUERY_STATUS_DESCRIPTOR, context);
+
+            HttpJsonCallFuture<QueryStatusResponse<ResponseT>> future =
+                new HttpJsonCallFuture<>(clientCall);
+            HttpJsonClientCalls.startUnaryCall(
+                clientCall,
+                request,
+                context,
+                new QueryStatusResponseListener<>(future, responseParser));
+
+            return future;
+          }
+        };
+    return createClientCallable(rawCallable, clientContext);
+  }
+
   private static HttpJsonCallContext createCallContext(
       ClientContext clientContext,
       @Nullable ApiCallContext inputContext,
@@ -246,6 +318,22 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
   }
 
   @Nullable
+  private static <ResponseT> ResponseT parseResponseBody(
+      String responseBody, HttpResponseParser<ResponseT> responseParser) {
+    InputStream stream = new ByteArrayInputStream(responseBody.getBytes(StandardCharsets.UTF_8));
+    return responseParser.parse(stream);
+  }
+
+  @Nullable
+  private static String getUploadStatus(HttpJsonMetadata responseHeaders) {
+    return HttpHeadersUtils.getSingleHeader(responseHeaders.getHeaders(), UPLOAD_STATUS_HEADER);
+  }
+
+  private static boolean isUploadFinal(HttpJsonMetadata responseHeaders) {
+    return STATUS_FINAL.equalsIgnoreCase(getUploadStatus(responseHeaders));
+  }
+
+  @Nullable
   private static Long parseSizeReceived(HttpJsonMetadata responseHeaders) {
     String sizeReceivedStr =
         HttpHeadersUtils.getSingleHeader(responseHeaders.getHeaders(), UPLOAD_SIZE_RECEIVED_HEADER);
@@ -257,6 +345,15 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
       }
     }
     return null;
+  }
+
+  private static Throwable createStatusException(
+      int statusCode, HttpJsonMetadata trailers, String actionMessage) {
+    Throwable cause = trailers.getException();
+    return cause != null
+        ? cause
+        : new HttpJsonStatusRuntimeException(
+            statusCode, actionMessage + " with status code: " + statusCode, null);
   }
 
   /**
@@ -402,16 +499,11 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
 
     @Override
     public void onHeaders(HttpJsonMetadata responseHeaders) {
-      Map<String, Object> headers = responseHeaders.getHeaders();
-
-      String statusStr = HttpHeadersUtils.getSingleHeader(headers, UPLOAD_STATUS_HEADER);
+      String statusStr = getUploadStatus(responseHeaders);
       if (statusStr != null) {
         this.hasUploadStatusHeader = true;
-        if (STATUS_FINAL.equalsIgnoreCase(statusStr)) {
-          this.isComplete = true;
-        }
+        this.isComplete = STATUS_FINAL.equalsIgnoreCase(statusStr);
       }
-
       this.committedOffset = parseSizeReceived(responseHeaders);
     }
 
@@ -439,20 +531,70 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
               committedOffset != null
                   ? committedOffset
                   : request.getOffset() + request.getPayload().size();
-          ResponseT response = null;
-          if (isComplete) {
-            InputStream stream =
-                new ByteArrayInputStream(responseBody.getBytes(StandardCharsets.UTF_8));
-            response = responseParser.parse(stream);
-          }
+          ResponseT response = isComplete ? parseResponseBody(responseBody, responseParser) : null;
           future.set(ChunkUploadResponse.create(confirmedOffset, isComplete, response));
         } else {
-          Throwable cause = trailers.getException();
           future.setException(
-              cause != null
-                  ? cause
-                  : new HttpJsonStatusRuntimeException(
-                      statusCode, "Failed to upload chunk with status code: " + statusCode, null));
+              createStatusException(statusCode, trailers, "Failed to upload chunk"));
+        }
+      } catch (Throwable t) {
+        future.setException(t);
+      }
+    }
+  }
+
+  /** A listener that parses query response headers to produce the {@link QueryStatusResponse}. */
+  private static class QueryStatusResponseListener<ResponseT>
+      extends HttpJsonClientCall.Listener<String> {
+
+    private final HttpJsonCallFuture<QueryStatusResponse<ResponseT>> future;
+    private final HttpResponseParser<ResponseT> responseParser;
+    private boolean isComplete = false;
+    @Nullable private Long committedOffset = null;
+    private String responseBody = "";
+
+    QueryStatusResponseListener(
+        HttpJsonCallFuture<QueryStatusResponse<ResponseT>> future,
+        HttpResponseParser<ResponseT> responseParser) {
+      this.future = future;
+      this.responseParser = responseParser;
+    }
+
+    @Override
+    public void onHeaders(HttpJsonMetadata responseHeaders) {
+      this.isComplete = isUploadFinal(responseHeaders);
+      this.committedOffset = parseSizeReceived(responseHeaders);
+    }
+
+    @Override
+    public void onMessage(@Nullable String message) {
+      if (message != null) {
+        this.responseBody = message;
+      }
+    }
+
+    @Override
+    public void onClose(int statusCode, HttpJsonMetadata trailers) {
+      try {
+        if (statusCode >= 200 && statusCode < 300) {
+          if (isComplete || committedOffset != null) {
+            ResponseT response =
+                isComplete ? parseResponseBody(responseBody, responseParser) : null;
+            future.set(
+                QueryStatusResponse.create(
+                    committedOffset != null ? committedOffset : 0L, isComplete, response));
+          } else {
+            future.setException(
+                ApiExceptionFactory.createException(
+                    "Query status response did not contain valid X-Goog-Upload-Size-Received"
+                        + " header",
+                    /* cause= */ null,
+                    HttpJsonStatusCode.of(StatusCode.Code.INTERNAL),
+                    /* retryable= */ false));
+          }
+        } else {
+          future.setException(
+              createStatusException(statusCode, trailers, "Failed to query upload status"));
         }
       } catch (Throwable t) {
         future.setException(t);

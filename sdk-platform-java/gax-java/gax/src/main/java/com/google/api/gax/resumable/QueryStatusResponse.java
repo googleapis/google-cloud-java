@@ -31,26 +31,39 @@ package com.google.api.gax.resumable;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
-import com.google.api.gax.rpc.UnaryCallable;
+import com.google.auto.value.AutoValue;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
- * Client interface for executing low-level resumable upload operations.
+ * Response value object representing the status and committed offset of a resumable upload session.
  *
- * @param <RequestT> request type for starting an upload
  * @param <ResponseT> response type of the upload operation
  */
 @NullMarked
 @BetaApi
 @InternalApi
-public interface ResumableUploadClient<RequestT, ResponseT> {
+@AutoValue
+public abstract class QueryStatusResponse<ResponseT> {
 
-  /** Returns a {@link UnaryCallable} to initiate a resumable upload session. */
-  UnaryCallable<RequestT, ResumableUploadSession> startUploadCallable();
+  /**
+   * The total number of bytes successfully received and committed by the server so far.
+   *
+   * <p>This value is the starting offset for resuming the upload.
+   */
+  public abstract long getCommittedOffset();
 
-  /** Returns a {@link UnaryCallable} to transmit an individual chunk. */
-  UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable();
+  /** Whether the resumable upload session has finalized and completed on the server. */
+  public abstract boolean isComplete();
 
-  /** Returns a {@link UnaryCallable} to query the status and offset of an active upload session. */
-  UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable();
+  /**
+   * The response object returned by the server upon final completion (e.g. metadata of the uploaded
+   * resource), or {@code null} if the upload is still in progress.
+   */
+  public abstract @Nullable ResponseT getResponse();
+
+  public static <ResponseT> QueryStatusResponse<ResponseT> create(
+      long committedOffset, boolean isComplete, @Nullable ResponseT response) {
+    return new AutoValue_QueryStatusResponse<>(committedOffset, isComplete, response);
+  }
 }
