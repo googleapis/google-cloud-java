@@ -492,13 +492,7 @@ function install_modules() {
 # ex: update_dependency google-cloud-java/google-cloud-jar-parent google-cloud-shared-dependencies 1.2.3
 function update_pom_dependency {
   pushd "$1" || exit 1
-  xmllint --shell pom.xml &>/dev/null <<EOF
-setns x=http://maven.apache.org/POM/4.0.0
-cd .//x:artifactId[text()="$2"]
-cd ../x:version
-set $3
-save pom.xml
-EOF
+  go run "${commonScriptDir}/../.github/scripts/pomtool.go" set-dep-version pom.xml "$2" "$3"
   popd || exit 1
 }
 
@@ -506,7 +500,7 @@ EOF
 function find_all_poms_with_versioned_dependency {
   poms=($(find . -name pom.xml))
   for pom in "${poms[@]}"; do
-    if xmllint --xpath "//*[local-name()='artifactId' and text()='$1']/following-sibling::*[local-name()='version']" "$pom" &>/dev/null; then
+    if go run "${commonScriptDir}/../.github/scripts/pomtool.go" has-versioned-dep "$pom" "$1" &>/dev/null; then
       found+=("$pom")
     fi
   done
@@ -531,8 +525,7 @@ function update_all_poms_dependency {
 # Parse the version of the pom.xml file in the given directory ($1)
 # ex: VERSION=$(parse_pom_version java-shared-dependencies)
 function parse_pom_version {
-  # Namespace (xmlns) prevents xmllint from specifying tag names in XPath
-  result=$(sed -e 's/xmlns=".*"//' "$1/pom.xml" | xmllint --xpath '/project/version/text()' -)
+  result=$(go run "${commonScriptDir}/../.github/scripts/pomtool.go" get-version "$1/pom.xml")
 
   if [ -z "${result}" ]; then
     echo "Version is not found in $1"
