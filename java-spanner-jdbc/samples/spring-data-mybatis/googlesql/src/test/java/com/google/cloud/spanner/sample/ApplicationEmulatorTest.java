@@ -28,7 +28,6 @@ import org.springframework.boot.SpringApplication;
 import org.testcontainers.DockerClientFactory;
 import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.wait.strategy.Wait;
-import org.testcontainers.images.PullPolicy;
 import org.testcontainers.utility.DockerImageName;
 
 @RunWith(JUnit4.class)
@@ -42,7 +41,6 @@ public class ApplicationEmulatorTest {
     emulator =
         new GenericContainer<>(
                 DockerImageName.parse("gcr.io/cloud-spanner-emulator/emulator:latest"))
-            .withImagePullPolicy(PullPolicy.alwaysPull())
             .withExposedPorts(9010)
             .waitingFor(Wait.forLogMessage(".*gRPC server listening at.*\\n", 1));
     emulator.start();
@@ -54,6 +52,11 @@ public class ApplicationEmulatorTest {
     if (emulator != null) {
       emulator.stop();
     }
+    System.clearProperty("open_telemetry.enabled");
+    System.clearProperty("open_telemetry.project");
+    System.clearProperty("spanner.emulator");
+    System.clearProperty("spanner.auto_start_emulator");
+    System.clearProperty("spanner.endpoint");
   }
 
   @Test
