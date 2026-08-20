@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import com.google.api.gax.paging.Page;
 import com.google.auto.value.AutoValue;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
@@ -50,6 +51,16 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
     public abstract TableResult.Builder setJobCreationReason(JobCreationReason jobCreationReason);
 
     abstract TableResult.Builder setRowsInPage(Long rowsInPage);
+
+    public abstract TableResult.Builder setStatementType(StatementType statementType);
+
+    public abstract TableResult.Builder setTotalBytesBilled(Long totalBytesBilled);
+
+    public abstract TableResult.Builder setTotalBytesProcessed(Long totalBytesProcessed);
+
+    public abstract TableResult.Builder setTotalSlotMs(Long totalSlotMs);
+
+    public abstract TableResult.Builder setNumDmlAffectedRows(Long numDmlAffectedRows);
 
     /** Creates a @code TableResult} object. */
     public abstract TableResult build();
@@ -87,6 +98,32 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
   @Nullable
   public abstract Long getRowsInPage();
 
+  /**
+   * Returns the statement type of the query (e.g. SELECT, INSERT, UPDATE, DDL, SCRIPT), if
+   * available.
+   */
+  @Nullable
+  public abstract StatementType getStatementType();
+
+  /** Returns the total number of bytes billed for the query, if available. */
+  @Nullable
+  public abstract Long getTotalBytesBilled();
+
+  /** Returns the total number of bytes processed by the query, if available. */
+  @Nullable
+  public abstract Long getTotalBytesProcessed();
+
+  /** Returns the total slot milliseconds for the query, if available. */
+  @Nullable
+  public abstract Long getTotalSlotMs();
+
+  /**
+   * Returns the number of rows affected by a DML statement (INSERT, UPDATE, DELETE, MERGE), if
+   * available.
+   */
+  @Nullable
+  public abstract Long getNumDmlAffectedRows();
+
   @Override
   public boolean hasNextPage() {
     return getPageNoSchema().hasNextPage();
@@ -109,6 +146,11 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
           .setQueryId(getQueryId())
           .setJobCreationReason(getJobCreationReason())
           .setRowsInPage(nextRows)
+          .setStatementType(getStatementType())
+          .setTotalBytesBilled(getTotalBytesBilled())
+          .setTotalBytesProcessed(getTotalBytesProcessed())
+          .setTotalSlotMs(getTotalSlotMs())
+          .setNumDmlAffectedRows(getNumDmlAffectedRows())
           .build();
     }
     return null;
@@ -147,13 +189,27 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
         .add("cursor", getNextPageToken())
         .add("queryId", getQueryId())
         .add("rowsInPage", getRowsInPage())
+        .add("statementType", getStatementType())
+        .add("totalBytesBilled", getTotalBytesBilled())
+        .add("totalBytesProcessed", getTotalBytesProcessed())
+        .add("totalSlotMs", getTotalSlotMs())
+        .add("numDmlAffectedRows", getNumDmlAffectedRows())
         .toString();
   }
 
   @Override
   public final int hashCode() {
     return Objects.hash(
-        getPageNoSchema(), getSchema(), getTotalRows(), getQueryId(), getRowsInPage());
+        getPageNoSchema(),
+        getSchema(),
+        getTotalRows(),
+        getQueryId(),
+        getRowsInPage(),
+        getStatementType(),
+        getTotalBytesBilled(),
+        getTotalBytesProcessed(),
+        getTotalSlotMs(),
+        getNumDmlAffectedRows());
   }
 
   @Override
@@ -170,6 +226,11 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
         && Objects.equals(getSchema(), response.getSchema())
         && getTotalRows() == response.getTotalRows()
         && Objects.equals(getQueryId(), response.getQueryId())
-        && Objects.equals(getRowsInPage(), response.getRowsInPage());
+        && Objects.equals(getRowsInPage(), response.getRowsInPage())
+        && Objects.equals(getStatementType(), response.getStatementType())
+        && Objects.equals(getTotalBytesBilled(), response.getTotalBytesBilled())
+        && Objects.equals(getTotalBytesProcessed(), response.getTotalBytesProcessed())
+        && Objects.equals(getTotalSlotMs(), response.getTotalSlotMs())
+        && Objects.equals(getNumDmlAffectedRows(), response.getNumDmlAffectedRows());
   }
 }

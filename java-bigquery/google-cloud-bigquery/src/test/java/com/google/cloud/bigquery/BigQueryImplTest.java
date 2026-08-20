@@ -65,6 +65,7 @@ import com.google.cloud.bigquery.BigQuery.DatasetOption;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
@@ -2874,7 +2875,11 @@ public class BigQueryImplTest {
             .setPageToken(null)
             .setRows(ImmutableList.of(TABLE_ROW))
             .setSchema(TABLE_SCHEMA.toPb())
+            .setStatementType("SELECT")
+            .setTotalBytesBilled(100L)
             .setTotalBytesProcessed(42L)
+            .setTotalSlotMs(50L)
+            .setNumDmlAffectedRows(0L)
             .setTotalRows(BigInteger.valueOf(1L));
 
     when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
@@ -2883,6 +2888,12 @@ public class BigQueryImplTest {
     bigquery = options.getService();
     Object result = bigquery.queryWithTimeout(QUERY_JOB_CONFIGURATION_FOR_QUERY, null, 1000L);
     assertTrue(result instanceof TableResult);
+    TableResult tableResult = (TableResult) result;
+    assertEquals(StatementType.SELECT, tableResult.getStatementType());
+    assertEquals((Long) 100L, tableResult.getTotalBytesBilled());
+    assertEquals((Long) 42L, tableResult.getTotalBytesProcessed());
+    assertEquals((Long) 50L, tableResult.getTotalSlotMs());
+    assertEquals((Long) 0L, tableResult.getNumDmlAffectedRows());
     QueryRequest requestPb = requestPbCapture.getValue();
     assertEquals((Long) 1000L, requestPb.getTimeoutMs());
   }

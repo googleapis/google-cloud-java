@@ -115,4 +115,110 @@ class TableResultTest {
             newFieldValueList("2").withSchema(SCHEMA.getFields()))
         .inOrder();
   }
+
+  @Test
+  void testStatementTypeAndExecutionStats() {
+    TableResult result =
+        TableResult.newBuilder()
+            .setSchema(SCHEMA)
+            .setTotalRows(3L)
+            .setPageNoSchema(INNER_PAGE_0)
+            .setRowsInPage(2L)
+            .setStatementType(JobStatistics.QueryStatistics.StatementType.SELECT)
+            .setTotalBytesBilled(1024L)
+            .setTotalBytesProcessed(2048L)
+            .setTotalSlotMs(500L)
+            .setNumDmlAffectedRows(0L)
+            .build();
+
+    assertThat(result.getStatementType())
+        .isEqualTo(JobStatistics.QueryStatistics.StatementType.SELECT);
+    assertThat(result.getTotalBytesBilled()).isEqualTo(1024L);
+    assertThat(result.getTotalBytesProcessed()).isEqualTo(2048L);
+    assertThat(result.getTotalSlotMs()).isEqualTo(500L);
+    assertThat(result.getNumDmlAffectedRows()).isEqualTo(0L);
+
+    TableResult next = result.getNextPage();
+    assertThat(next.getStatementType())
+        .isEqualTo(JobStatistics.QueryStatistics.StatementType.SELECT);
+    assertThat(next.getTotalBytesBilled()).isEqualTo(1024L);
+    assertThat(next.getTotalBytesProcessed()).isEqualTo(2048L);
+    assertThat(next.getTotalSlotMs()).isEqualTo(500L);
+    assertThat(next.getNumDmlAffectedRows()).isEqualTo(0L);
+  }
+
+  @Test
+  void testToBuilder() {
+    TableResult result =
+        TableResult.newBuilder()
+            .setSchema(SCHEMA)
+            .setTotalRows(3L)
+            .setPageNoSchema(INNER_PAGE_0)
+            .setRowsInPage(2L)
+            .setStatementType(JobStatistics.QueryStatistics.StatementType.INSERT)
+            .setTotalBytesBilled(500L)
+            .setTotalBytesProcessed(1000L)
+            .setTotalSlotMs(250L)
+            .setNumDmlAffectedRows(5L)
+            .build();
+
+    TableResult modified =
+        result.toBuilder()
+            .setStatementType(JobStatistics.QueryStatistics.StatementType.UPDATE)
+            .setNumDmlAffectedRows(10L)
+            .build();
+
+    assertThat(modified.getStatementType())
+        .isEqualTo(JobStatistics.QueryStatistics.StatementType.UPDATE);
+    assertThat(modified.getNumDmlAffectedRows()).isEqualTo(10L);
+    assertThat(modified.getTotalBytesBilled()).isEqualTo(500L);
+  }
+
+  @Test
+  void testEqualsAndHashCode() {
+    TableResult result1 =
+        TableResult.newBuilder()
+            .setSchema(SCHEMA)
+            .setTotalRows(3L)
+            .setPageNoSchema(INNER_PAGE_0)
+            .setRowsInPage(2L)
+            .setStatementType(JobStatistics.QueryStatistics.StatementType.SELECT)
+            .setTotalBytesBilled(100L)
+            .setTotalBytesProcessed(200L)
+            .setTotalSlotMs(50L)
+            .setNumDmlAffectedRows(0L)
+            .build();
+
+    TableResult result2 =
+        TableResult.newBuilder()
+            .setSchema(SCHEMA)
+            .setTotalRows(3L)
+            .setPageNoSchema(INNER_PAGE_0)
+            .setRowsInPage(2L)
+            .setStatementType(JobStatistics.QueryStatistics.StatementType.SELECT)
+            .setTotalBytesBilled(100L)
+            .setTotalBytesProcessed(200L)
+            .setTotalSlotMs(50L)
+            .setNumDmlAffectedRows(0L)
+            .build();
+
+    TableResult result3 =
+        TableResult.newBuilder()
+            .setSchema(SCHEMA)
+            .setTotalRows(3L)
+            .setPageNoSchema(INNER_PAGE_0)
+            .setRowsInPage(2L)
+            .setStatementType(JobStatistics.QueryStatistics.StatementType.DELETE)
+            .setTotalBytesBilled(100L)
+            .setTotalBytesProcessed(200L)
+            .setTotalSlotMs(50L)
+            .setNumDmlAffectedRows(1L)
+            .build();
+
+    assertThat(result1).isEqualTo(result2);
+    assertThat(result1.hashCode()).isEqualTo(result2.hashCode());
+    assertThat(result1).isNotEqualTo(result3);
+    assertThat(result1.toString()).contains("statementType=SELECT");
+    assertThat(result1.toString()).contains("totalBytesBilled=100");
+  }
 }
