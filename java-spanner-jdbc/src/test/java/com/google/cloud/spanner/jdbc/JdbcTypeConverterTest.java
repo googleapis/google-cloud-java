@@ -32,10 +32,13 @@ import static com.google.cloud.spanner.jdbc.JdbcTypeConverter.toSqlTimestamps;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.ByteArray;
+import com.google.cloud.spanner.Interval;
 import com.google.cloud.spanner.Type;
+import com.google.cloud.spanner.Value;
 import com.google.cloud.spanner.connection.ReadOnlyStalenessUtil;
 import com.google.cloud.spanner.jdbc.JdbcSqlExceptionFactory.JdbcSqlExceptionImpl;
 import com.google.cloud.spanner.jdbc.it.SingerProto.Genre;
@@ -51,6 +54,8 @@ import java.sql.SQLException;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
+import java.time.Duration;
+import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
@@ -1043,5 +1048,114 @@ public class JdbcTypeConverterTest {
                 com.google.cloud.Timestamp.parseTimestamp("1970-01-01T10:31:15+01:00")
                     .toSqlTimestamp()
                     .getTime()));
+  }
+
+  @Test
+  public void testConvertInterval() throws SQLException {
+    Interval interval = Interval.ofMonths(3);
+    assertEquals(interval, convert(interval, Type.interval(), Interval.class));
+    assertEquals(interval, convert(interval.toString(), Type.string(), Interval.class));
+    assertEquals(interval.toString(), convert(interval, Type.interval(), String.class));
+
+    // Invalid interval string
+    SQLException sqlException =
+        assertThrows(
+            SQLException.class, () -> convert("invalid-interval", Type.string(), Interval.class));
+    assertEquals(Code.INVALID_ARGUMENT.getNumber(), sqlException.getErrorCode());
+  }
+
+  @Test
+  public void testConvertToSpannerValueInterval() throws SQLException {
+    Interval interval = Interval.parseFromString("P1Y2M3DT4H5M6S");
+    Value value = JdbcTypeConverter.convertToSpannerValue(interval, Type.interval());
+    assertEquals(Value.interval(interval), value);
+  }
+
+  @Test
+  public void testConvertToSpannerValueIntervalArray() throws SQLException {
+    Interval interval1 = Interval.ofMonths(1);
+    Interval interval2 = Interval.ofDays(5);
+    Array array = JdbcArray.createArray("INTERVAL", new Interval[] {interval1, interval2});
+    Value value = JdbcTypeConverter.convertToSpannerValue(array, Type.array(Type.interval()));
+    assertEquals(Value.intervalArray(Arrays.asList(interval1, interval2)), value);
+  }
+
+  @Test
+  public void testConvertDuration() throws SQLException {
+    // Time-only and days/time intervals should convert to Duration (consistent with pgjdbc)
+    Interval intervalTime = Interval.parseFromString("PT1H2M3.004S");
+    Duration expectedDuration =
+        Duration.ofHours(1).plusMinutes(2).plusSeconds(3).plusNanos(4_000_000);
+    assertEquals(expectedDuration, convert(intervalTime, Type.interval(), Duration.class));
+    assertEquals(expectedDuration, convert(intervalTime.toString(), Type.string(), Duration.class));
+
+    Interval intervalDaysAndTime = Interval.parseFromString("P2DT5H");
+    Duration expectedDaysDuration = Duration.ofDays(2).plusHours(5);
+    assertEquals(
+        expectedDaysDuration, convert(intervalDaysAndTime, Type.interval(), Duration.class));
+
+    // Roundtrip via toInterval
+    assertEquals(intervalTime, JdbcTypeConverter.toInterval(expectedDuration));
+
+    // Intervals containing months or years should fail to convert to Duration (consistent with
+    // pgjdbc)
+    SQLException sqlException =
+        assertThrows(
+            SQLException.class,
+            () -> convert(Interval.ofMonths(1), Type.interval(), Duration.class));
+    assertEquals(Code.INVALID_ARGUMENT.getNumber(), sqlException.getErrorCode());
+
+    sqlException =
+        assertThrows(
+            SQLException.class,
+            () -> convert(Interval.parseFromString("P1Y"), Type.interval(), Duration.class));
+    assertEquals(Code.INVALID_ARGUMENT.getNumber(), sqlException.getErrorCode());
+
+    // Overflow Duration
+    BigInteger overflowNanos =
+        BigInteger.valueOf(Long.MAX_VALUE)
+            .multiply(BigInteger.valueOf(1_000_000_000L))
+            .add(BigInteger.valueOf(1_000_000_000L));
+    Interval hugeInterval = Interval.fromMonthsDaysNanos(0, 0, overflowNanos);
+    sqlException =
+        assertThrows(SQLException.class, () -> JdbcTypeConverter.toDuration(hugeInterval));
+    assertEquals(Code.INVALID_ARGUMENT.getNumber(), sqlException.getErrorCode());
+
+    // Underflow Duration (Long.MIN_VALUE seconds with negative nano adjustment)
+    BigInteger underflowNanos =
+        BigInteger.valueOf(Long.MIN_VALUE)
+            .multiply(BigInteger.valueOf(1_000_000_000L))
+            .subtract(BigInteger.valueOf(1L));
+    Interval hugeNegativeInterval = Interval.fromMonthsDaysNanos(0, 0, underflowNanos);
+    sqlException =
+        assertThrows(SQLException.class, () -> JdbcTypeConverter.toDuration(hugeNegativeInterval));
+    assertEquals(Code.INVALID_ARGUMENT.getNumber(), sqlException.getErrorCode());
+  }
+
+  @Test
+  public void testConvertPeriod() throws SQLException {
+    // Date-only intervals should convert to Period (consistent with pgjdbc)
+    Interval intervalDate = Interval.parseFromString("P1Y2M3D");
+    Period expectedPeriod = Period.of(1, 2, 3);
+    assertEquals(expectedPeriod, convert(intervalDate, Type.interval(), Period.class));
+    assertEquals(expectedPeriod, convert(intervalDate.toString(), Type.string(), Period.class));
+
+    // Roundtrip via toInterval
+    assertEquals(intervalDate, JdbcTypeConverter.toInterval(expectedPeriod));
+
+    // Intervals containing time components should fail to convert to Period (consistent with
+    // pgjdbc)
+    SQLException sqlException =
+        assertThrows(
+            SQLException.class,
+            () -> convert(Interval.parseFromString("PT1H"), Type.interval(), Period.class));
+    assertEquals(Code.INVALID_ARGUMENT.getNumber(), sqlException.getErrorCode());
+
+    // Period total months overflow
+    sqlException =
+        assertThrows(
+            SQLException.class,
+            () -> JdbcTypeConverter.toInterval(Period.of(Integer.MAX_VALUE, 12, 0)));
+    assertEquals(Code.INVALID_ARGUMENT.getNumber(), sqlException.getErrorCode());
   }
 }

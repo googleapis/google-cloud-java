@@ -522,6 +522,10 @@ public class JdbcDatabaseMetaDataTest {
         assertEquals(Types.OTHER, rs.getInt("DATA_TYPE"));
         assertEquals(Types.OTHER, rs.getShort("DATA_TYPE"));
         assertTrue(rs.next());
+        assertEquals("INTERVAL", rs.getString("TYPE_NAME"));
+        assertEquals(IntervalType.VENDOR_TYPE_NUMBER, rs.getInt("DATA_TYPE"));
+        assertEquals(IntervalType.SHORT_VENDOR_TYPE_NUMBER, rs.getShort("DATA_TYPE"));
+        assertTrue(rs.next());
         if (dialect == Dialect.POSTGRESQL) {
           assertEquals("JSONB", rs.getString("TYPE_NAME"));
           assertEquals(PgJsonbType.VENDOR_TYPE_NUMBER, rs.getInt("DATA_TYPE"));
