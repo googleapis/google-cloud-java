@@ -685,7 +685,6 @@ public class UserAuthorizer {
       this.pkce = pkce;
       return this;
     }
-    }
 
     /**
      * Sets the optional {@link ClientAuthenticationType}, one of the client authentication methods
