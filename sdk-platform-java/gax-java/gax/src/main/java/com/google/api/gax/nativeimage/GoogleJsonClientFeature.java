@@ -32,6 +32,7 @@ package com.google.api.gax.nativeimage;
 
 import static com.google.api.gax.nativeimage.NativeImageUtils.registerClassForJni;
 import static com.google.api.gax.nativeimage.NativeImageUtils.registerClassForReflection;
+import static com.google.api.gax.nativeimage.NativeImageUtils.registerClassHierarchyForJni;
 import static com.google.api.gax.nativeimage.NativeImageUtils.registerClassHierarchyForReflection;
 
 import org.graalvm.nativeimage.hosted.Feature;
@@ -68,7 +69,7 @@ final class GoogleJsonClientFeature implements Feature {
    * provider)}. In GraalVM Native Image builds, these reflectively looked-up SPI classes are
    * stripped by static analysis unless explicitly registered for reflection, leading to {@code
    * ClassNotFoundException} / {@code NoSuchAlgorithmException} at runtime. Additionally, native
-   * JNI methods in {@code NativeCrypto} and native shared library resources must be registered for
+   * JNI methods and JDK classes accessed by Conscrypt's native C library must be registered for
    * GraalVM JNI linkage.
    */
   private void loadConscrypt(BeforeAnalysisAccess access) {
@@ -82,11 +83,26 @@ final class GoogleJsonClientFeature implements Feature {
       // Register Conscrypt native JNI bridge classes and hierarchy
       registerClassHierarchyForReflection(access, "org.conscrypt.NativeCrypto");
       registerClassHierarchyForReflection(access, "org.conscrypt.NativeCryptoJni");
-      registerClassHierarchyForReflection(access, "org.conscrypt.OpenSSLBioSession");
+      registerClassHierarchyForReflection(access, "org.conscrypt.CryptoUpcalls");
+      registerClassHierarchyForReflection(access, "org.conscrypt.NativeRef");
+      registerClassHierarchyForReflection(access, "org.conscrypt.OpenSSLBIOInputStream");
 
-      registerClassForJni(access, "org.conscrypt.NativeCrypto");
-      registerClassForJni(access, "org.conscrypt.NativeCryptoJni");
-      registerClassForJni(access, "org.conscrypt.OpenSSLBioSession");
+      registerClassHierarchyForJni(access, "org.conscrypt.NativeCrypto");
+      registerClassHierarchyForJni(access, "org.conscrypt.NativeCryptoJni");
+      registerClassHierarchyForJni(access, "org.conscrypt.CryptoUpcalls");
+      registerClassHierarchyForJni(access, "org.conscrypt.NativeRef");
+      registerClassHierarchyForJni(access, "org.conscrypt.OpenSSLBIOInputStream");
+
+      // Register standard JDK classes accessed via JNI by Conscrypt native C code
+      registerClassHierarchyForJni(access, "java.util.Calendar");
+      registerClassHierarchyForJni(access, "java.io.InputStream");
+      registerClassHierarchyForJni(access, "java.io.OutputStream");
+      registerClassHierarchyForJni(access, "java.io.FileDescriptor");
+      registerClassHierarchyForJni(access, "java.lang.Integer");
+      registerClassHierarchyForJni(access, "java.lang.String");
+      registerClassHierarchyForJni(access, "java.lang.Object");
+      registerClassHierarchyForJni(access, "java.nio.Buffer");
+      registerClassHierarchyForJni(access, "java.nio.ByteBuffer");
     }
   }
 

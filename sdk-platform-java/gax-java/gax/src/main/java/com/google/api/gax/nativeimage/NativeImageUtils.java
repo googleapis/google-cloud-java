@@ -113,6 +113,26 @@ public class NativeImageUtils {
   }
 
   /**
+   * Registers the transitive class hierarchy of the provided {@code className} for JNI use.
+   *
+   * <p>The transitive class hierarchy contains the class itself and its transitive set of
+   * *non-private* nested subclasses.
+   */
+  public static void registerClassHierarchyForJni(FeatureAccess access, String className) {
+    Class<?> clazz = access.findClassByName(className);
+    if (clazz != null) {
+      registerClassForJni(access, className);
+      for (Class<?> nestedClass : clazz.getDeclaredClasses()) {
+        if (!Modifier.isPrivate(nestedClass.getModifiers())) {
+          registerClassHierarchyForJni(access, nestedClass.getName());
+        }
+      }
+    } else {
+      LOGGER.log(Level.WARNING, CLASS_REFLECTION_ERROR_MESSAGE, className);
+    }
+  }
+
+  /**
    * Registers the transitive class hierarchy of the provided {@code className} for reflection.
    *
    * <p>The transitive class hierarchy contains the class itself and its transitive set of
