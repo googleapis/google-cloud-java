@@ -85,12 +85,12 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   @VisibleForTesting static final long LIFE_SPAN_SECS = TimeUnit.HOURS.toSeconds(1);
   private static final long CLOCK_SKEW = TimeUnit.MINUTES.toSeconds(5);
 
-  private final String clientId;
+  private final @Nullable String clientId;
   private final String clientEmail;
   private final PrivateKey privateKey;
-  private final String privateKeyId;
-  private final URI defaultAudience;
-  private final String quotaProjectId;
+  private final @Nullable String privateKeyId;
+  private final @Nullable URI defaultAudience;
+  private final @Nullable String quotaProjectId;
   private final String universeDomain;
 
   private transient LoadingCache<JwtClaims, JwtCredentials> credentialsCache;
@@ -508,19 +508,20 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   }
 
   @Override
+  @Nullable
   public String getQuotaProjectId() {
     return quotaProjectId;
   }
 
   public static class Builder {
 
-    private String clientId;
-    private String clientEmail;
-    private PrivateKey privateKey;
-    private String privateKeyId;
-    private URI defaultAudience;
-    private String quotaProjectId;
-    private String universeDomain;
+    private @Nullable String clientId;
+    private @Nullable String clientEmail;
+    private @Nullable PrivateKey privateKey;
+    private @Nullable String privateKeyId;
+    private @Nullable URI defaultAudience;
+    private @Nullable String quotaProjectId;
+    private @Nullable String universeDomain;
 
     protected Builder() {}
 
@@ -535,7 +536,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
     }
 
     @CanIgnoreReturnValue
-    public Builder setClientId(String clientId) {
+    public Builder setClientId(@Nullable String clientId) {
       this.clientId = clientId;
       return this;
     }
@@ -553,55 +554,62 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
     }
 
     @CanIgnoreReturnValue
-    public Builder setPrivateKeyId(String privateKeyId) {
+    public Builder setPrivateKeyId(@Nullable String privateKeyId) {
       this.privateKeyId = privateKeyId;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setDefaultAudience(URI defaultAudience) {
+    public Builder setDefaultAudience(@Nullable URI defaultAudience) {
       this.defaultAudience = defaultAudience;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       this.quotaProjectId = quotaProjectId;
       return this;
     }
 
     @CanIgnoreReturnValue
     /** Sets the universe domain (example, googleapis.com). */
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       this.universeDomain = universeDomain;
       return this;
     }
 
+    @Nullable
     public String getClientId() {
       return clientId;
     }
 
+    @Nullable
     public String getClientEmail() {
       return clientEmail;
     }
 
+    @Nullable
     public PrivateKey getPrivateKey() {
       return privateKey;
     }
 
+    @Nullable
     public String getPrivateKeyId() {
       return privateKeyId;
     }
 
+    @Nullable
     public URI getDefaultAudience() {
       return defaultAudience;
     }
 
+    @Nullable
     public String getQuotaProjectId() {
       return quotaProjectId;
     }
 
     /** Returns the universe domain (example, googleapis.com) for the credentials instance. */
+    @Nullable
     public String getUniverseDomain() {
       return universeDomain;
     }

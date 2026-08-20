@@ -115,16 +115,16 @@ public class OAuth2Credentials extends Credentials {
   }
 
   protected OAuth2Credentials(
-      AccessToken accessToken, Duration refreshMargin, Duration expirationMargin) {
+      @Nullable AccessToken accessToken, Duration refreshMargin, Duration expirationMargin) {
     if (accessToken != null) {
       this.value = OAuthValue.create(accessToken, EMPTY_EXTRA_HEADERS);
     }
 
-    this.refreshMargin = Preconditions.checkNotNull(refreshMargin, "refreshMargin");
-    Preconditions.checkArgument(!refreshMargin.isNegative(), "refreshMargin can't be negative");
-    this.expirationMargin = Preconditions.checkNotNull(expirationMargin, "expirationMargin");
+    this.refreshMargin = refreshMargin == null ? DEFAULT_REFRESH_MARGIN : refreshMargin;
+    Preconditions.checkArgument(!this.refreshMargin.isNegative(), "refreshMargin can't be negative");
+    this.expirationMargin = expirationMargin == null ? DEFAULT_EXPIRATION_MARGIN : expirationMargin;
     Preconditions.checkArgument(
-        !expirationMargin.isNegative(), "expirationMargin can't be negative");
+        !this.expirationMargin.isNegative(), "expirationMargin can't be negative");
   }
 
   @Override
@@ -711,7 +711,7 @@ public class OAuth2Credentials extends Credentials {
 
   public static class Builder {
 
-    private AccessToken accessToken;
+    private @Nullable AccessToken accessToken;
     private Duration refreshMargin = DEFAULT_REFRESH_MARGIN;
     private Duration expirationMargin = DEFAULT_EXPIRATION_MARGIN;
 
@@ -724,7 +724,7 @@ public class OAuth2Credentials extends Credentials {
     }
 
     @CanIgnoreReturnValue
-    public Builder setAccessToken(AccessToken token) {
+    public Builder setAccessToken(@Nullable AccessToken token) {
       this.accessToken = token;
       return this;
     }
@@ -749,6 +749,7 @@ public class OAuth2Credentials extends Credentials {
       return expirationMargin;
     }
 
+    @Nullable
     public AccessToken getAccessToken() {
       return accessToken;
     }

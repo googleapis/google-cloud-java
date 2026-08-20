@@ -103,12 +103,12 @@ public class ServiceAccountCredentials extends GoogleCredentials
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(ServiceAccountCredentials.class);
 
-  private final String clientId;
+  private final @Nullable String clientId;
   private final String clientEmail;
   private final PrivateKey privateKey;
-  private final String privateKeyId;
-  private final String serviceAccountUser;
-  private final String projectId;
+  private final @Nullable String privateKeyId;
+  private final @Nullable String serviceAccountUser;
+  private final @Nullable String projectId;
   private final String transportFactoryClassName;
   private final URI tokenServerUri;
   private final Collection<String> scopes;
@@ -784,6 +784,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     return this.toBuilder().setServiceAccountUser(user).build();
   }
 
+  @Nullable
   public final String getClientId() {
     return clientId;
   }
@@ -796,6 +797,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     return privateKey;
   }
 
+  @Nullable
   public final String getPrivateKeyId() {
     return privateKeyId;
   }
@@ -808,6 +810,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     return defaultScopes;
   }
 
+  @Nullable
   public final String getServiceAccountUser() {
     return serviceAccountUser;
   }
@@ -816,6 +819,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * @return the projectId set in the SA Key file or the user set projectId
    */
   @Override
+  @Nullable
   public final String getProjectId() {
     return projectId;
   }
@@ -1150,16 +1154,16 @@ public class ServiceAccountCredentials extends GoogleCredentials
 
   public static class Builder extends GoogleCredentials.Builder {
 
-    private String clientId;
-    private String clientEmail;
-    private PrivateKey privateKey;
-    private String privateKeyId;
-    private String serviceAccountUser;
-    private String projectId;
-    private URI tokenServerUri;
-    private Collection<String> scopes;
-    private Collection<String> defaultScopes;
-    private HttpTransportFactory transportFactory;
+    private @Nullable String clientId;
+    private @Nullable String clientEmail;
+    private @Nullable PrivateKey privateKey;
+    private @Nullable String privateKeyId;
+    private @Nullable String serviceAccountUser;
+    private @Nullable String projectId;
+    private @Nullable URI tokenServerUri;
+    private @Nullable Collection<String> scopes;
+    private @Nullable Collection<String> defaultScopes;
+    private @Nullable HttpTransportFactory transportFactory;
     private int lifetime = DEFAULT_LIFETIME_IN_SECONDS;
     private boolean useJwtAccessWithScope = false;
     private boolean defaultRetriesEnabled = true;
@@ -1253,7 +1257,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
@@ -1280,47 +1284,59 @@ public class ServiceAccountCredentials extends GoogleCredentials
       return this;
     }
 
-    public Builder setUniverseDomain(String universeDomain) {
-      super.universeDomain = universeDomain;
+    @Override
+    @CanIgnoreReturnValue
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
+      super.setUniverseDomain(universeDomain);
       return this;
     }
 
+    @Nullable
     public String getClientId() {
       return clientId;
     }
 
+    @Nullable
     public String getClientEmail() {
       return clientEmail;
     }
 
+    @Nullable
     public PrivateKey getPrivateKey() {
       return privateKey;
     }
 
+    @Nullable
     public String getPrivateKeyId() {
       return privateKeyId;
     }
 
+    @Nullable
     public Collection<String> getScopes() {
       return scopes;
     }
 
+    @Nullable
     public Collection<String> getDefaultScopes() {
       return defaultScopes;
     }
 
+    @Nullable
     public String getServiceAccountUser() {
       return serviceAccountUser;
     }
 
+    @Nullable
     public String getProjectId() {
       return projectId;
     }
 
+    @Nullable
     public URI getTokenServerUri() {
       return tokenServerUri;
     }
 
+    @Nullable
     public HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }

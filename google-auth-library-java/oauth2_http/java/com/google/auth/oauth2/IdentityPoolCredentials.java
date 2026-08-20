@@ -204,8 +204,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   public static class Builder extends ExternalAccountCredentials.Builder {
 
-    private IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
-    private X509Provider x509Provider;
+    @Nullable private IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
+    @Nullable private X509Provider x509Provider;
 
     Builder() {}
 
@@ -292,8 +292,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
@@ -329,8 +330,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       super.setUniverseDomain(universeDomain);
       return this;
     }

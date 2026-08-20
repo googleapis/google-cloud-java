@@ -237,9 +237,9 @@ public class AwsCredentials extends ExternalAccountCredentials {
 
   public static class Builder extends ExternalAccountCredentials.Builder {
 
-    private AwsSecurityCredentialsSupplier awsSecurityCredentialsSupplier;
+    @Nullable private AwsSecurityCredentialsSupplier awsSecurityCredentialsSupplier;
 
-    private String regionalCredentialVerificationUrlOverride;
+    @Nullable private String regionalCredentialVerificationUrlOverride;
 
     Builder() {}
 
@@ -330,8 +330,9 @@ public class AwsCredentials extends ExternalAccountCredentials {
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
@@ -366,8 +367,9 @@ public class AwsCredentials extends ExternalAccountCredentials {
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       super.setUniverseDomain(universeDomain);
       return this;
     }

@@ -79,7 +79,7 @@ public class JwtCredentials extends Credentials implements JwtProvider {
   // byte[] is serializable, so the lock variable can be final
   private final Object lock = new byte[0];
   private final PrivateKey privateKey;
-  private final String privateKeyId;
+  private final @Nullable String privateKeyId;
   private final JwtClaims jwtClaims;
   private final Long lifeSpanSeconds;
   @VisibleForTesting transient Clock clock;
@@ -93,8 +93,11 @@ public class JwtCredentials extends Credentials implements JwtProvider {
     this.privateKeyId = builder.getPrivateKeyId();
     this.jwtClaims = Preconditions.checkNotNull(builder.getJwtClaims());
     Preconditions.checkState(jwtClaims.isComplete(), JWT_INCOMPLETE_ERROR_MESSAGE);
-    this.lifeSpanSeconds = Preconditions.checkNotNull(builder.getLifeSpanSeconds());
-    this.clock = Preconditions.checkNotNull(builder.getClock());
+    this.lifeSpanSeconds =
+        builder.lifeSpanSeconds == null
+            ? TimeUnit.HOURS.toSeconds(1)
+            : builder.lifeSpanSeconds;
+    this.clock = builder.clock == null ? Clock.SYSTEM : builder.clock;
   }
 
   public static Builder newBuilder() {
@@ -206,9 +209,9 @@ public class JwtCredentials extends Credentials implements JwtProvider {
   }
 
   public static class Builder {
-    private PrivateKey privateKey;
-    private String privateKeyId;
-    private JwtClaims jwtClaims;
+    private @Nullable PrivateKey privateKey;
+    private @Nullable String privateKeyId;
+    private @Nullable JwtClaims jwtClaims;
     private Clock clock = Clock.SYSTEM;
     private Long lifeSpanSeconds = TimeUnit.HOURS.toSeconds(1);
 
@@ -216,37 +219,40 @@ public class JwtCredentials extends Credentials implements JwtProvider {
 
     @CanIgnoreReturnValue
     public Builder setPrivateKey(PrivateKey privateKey) {
-      this.privateKey = Preconditions.checkNotNull(privateKey);
+      this.privateKey = privateKey;
       return this;
     }
 
+    @Nullable
     public PrivateKey getPrivateKey() {
       return privateKey;
     }
 
     @CanIgnoreReturnValue
-    public Builder setPrivateKeyId(String privateKeyId) {
+    public Builder setPrivateKeyId(@Nullable String privateKeyId) {
       this.privateKeyId = privateKeyId;
       return this;
     }
 
+    @Nullable
     public String getPrivateKeyId() {
       return privateKeyId;
     }
 
     @CanIgnoreReturnValue
     public Builder setJwtClaims(JwtClaims claims) {
-      this.jwtClaims = Preconditions.checkNotNull(claims);
+      this.jwtClaims = claims;
       return this;
     }
 
+    @Nullable
     public JwtClaims getJwtClaims() {
       return jwtClaims;
     }
 
     @CanIgnoreReturnValue
     public Builder setLifeSpanSeconds(Long lifeSpanSeconds) {
-      this.lifeSpanSeconds = Preconditions.checkNotNull(lifeSpanSeconds);
+      this.lifeSpanSeconds = lifeSpanSeconds;
       return this;
     }
 

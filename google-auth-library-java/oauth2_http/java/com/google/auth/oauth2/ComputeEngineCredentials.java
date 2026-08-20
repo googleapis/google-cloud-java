@@ -125,8 +125,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
 
   private final Collection<String> scopes;
 
-  private final GoogleAuthTransport transport;
-  private final BindingEnforcement bindingEnforcement;
+  private final @Nullable GoogleAuthTransport transport;
+  private final @Nullable BindingEnforcement bindingEnforcement;
 
   private transient HttpTransportFactory transportFactory;
 
@@ -867,12 +867,12 @@ public class ComputeEngineCredentials extends GoogleCredentials
   }
 
   public static class Builder extends GoogleCredentials.Builder {
-    private HttpTransportFactory transportFactory;
-    private Collection<String> scopes;
-    private Collection<String> defaultScopes;
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable Collection<String> scopes;
+    private @Nullable Collection<String> defaultScopes;
 
-    private GoogleAuthTransport transport;
-    private BindingEnforcement bindingEnforcement;
+    private @Nullable GoogleAuthTransport transport;
+    private @Nullable BindingEnforcement bindingEnforcement;
 
     protected Builder() {
       setRefreshMargin(COMPUTE_REFRESH_MARGIN);
@@ -903,15 +903,17 @@ public class ComputeEngineCredentials extends GoogleCredentials
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setUniverseDomain(String universeDomain) {
-      this.universeDomain = universeDomain;
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
+      super.setUniverseDomain(universeDomain);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
-      super.quotaProjectId = quotaProjectId;
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
+      super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 
@@ -937,14 +939,17 @@ public class ComputeEngineCredentials extends GoogleCredentials
       return this;
     }
 
+    @Nullable
     public HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
+    @Nullable
     public Collection<String> getScopes() {
       return scopes;
     }
 
+    @Nullable
     public Collection<String> getDefaultScopes() {
       return defaultScopes;
     }
@@ -954,6 +959,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
      *
      * @return the transport type over which to authenticate to Google APIs
      */
+    @Nullable
     public GoogleAuthTransport getGoogleAuthTransport() {
       return transport;
     }
@@ -963,6 +969,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
      *
      * @return the token binding enforcement policy.
      */
+    @Nullable
     public BindingEnforcement getBindingEnforcement() {
       return bindingEnforcement;
     }

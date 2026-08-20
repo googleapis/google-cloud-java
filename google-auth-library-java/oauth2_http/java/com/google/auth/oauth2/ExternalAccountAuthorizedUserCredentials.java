@@ -417,14 +417,14 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
   /** Builder for {@link ExternalAccountAuthorizedUserCredentials}. */
   public static class Builder extends GoogleCredentials.Builder {
 
-    private HttpTransportFactory transportFactory;
-    private String audience;
-    private String refreshToken;
-    private String tokenUrl;
-    private String tokenInfoUrl;
-    private String revokeUrl;
-    private String clientId;
-    private String clientSecret;
+    @Nullable private HttpTransportFactory transportFactory;
+    @Nullable private String audience;
+    @Nullable private String refreshToken;
+    @Nullable private String tokenUrl;
+    @Nullable private String tokenInfoUrl;
+    @Nullable private String revokeUrl;
+    @Nullable private String clientId;
+    @Nullable private String clientSecret;
 
     protected Builder() {}
 
@@ -545,7 +545,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      */
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
@@ -558,7 +558,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      */
     @Override
     @CanIgnoreReturnValue
-    public Builder setAccessToken(AccessToken accessToken) {
+    public Builder setAccessToken(@Nullable AccessToken accessToken) {
       super.setAccessToken(accessToken);
       return this;
     }
@@ -571,7 +571,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      */
     @CanIgnoreReturnValue
     @Override
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       super.setUniverseDomain(universeDomain);
       return this;
     }

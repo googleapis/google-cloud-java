@@ -111,14 +111,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private List<String> delegates;
   private final List<String> scopes;
   private final int lifetime;
-  private final String iamEndpointOverride;
+  private final @Nullable String iamEndpointOverride;
   private final String transportFactoryClassName;
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(ImpersonatedCredentials.class);
 
   private transient HttpTransportFactory transportFactory;
 
-  private transient Calendar calendar;
+  private transient @Nullable Calendar calendar;
 
   /**
    * @param sourceCredentials the source credential used to acquire the impersonated credentials. It
@@ -312,6 +312,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   }
 
   @VisibleForTesting
+  @Nullable
   String getIamEndpointOverride() {
     return this.iamEndpointOverride;
   }
@@ -535,8 +536,10 @@ public class ImpersonatedCredentials extends GoogleCredentials
     super(builder);
     this.sourceCredentials = builder.getSourceCredentials();
     this.targetPrincipal = builder.getTargetPrincipal();
-    this.delegates = builder.getDelegates();
-    this.scopes = ImmutableList.copyOf(builder.getScopes());
+    this.delegates =
+        (builder.delegates == null) ? ImmutableList.of() : ImmutableList.copyOf(builder.delegates);
+    this.scopes =
+        (builder.scopes == null) ? ImmutableList.of() : ImmutableList.copyOf(builder.scopes);
     this.lifetime = builder.getLifetime();
     this.transportFactory =
         firstNonNull(
@@ -545,9 +548,6 @@ public class ImpersonatedCredentials extends GoogleCredentials
     this.iamEndpointOverride = builder.iamEndpointOverride;
     this.transportFactoryClassName = this.transportFactory.getClass().getName();
     this.calendar = builder.getCalendar();
-    if (this.delegates == null) {
-      this.delegates = new ArrayList<>();
-    }
     if (this.lifetime > TWELVE_HOURS_IN_SECONDS) {
       throw new IllegalStateException("lifetime must be less than or equal to 43200");
     }
@@ -558,7 +558,8 @@ public class ImpersonatedCredentials extends GoogleCredentials
     // Do not expect explicit universe domain, throw exception if the explicit universe domain
     // does not match the source credential.
     // Do nothing if it matches the source credential
-    if (isExplicitUniverseDomain()
+    if (this.sourceCredentials != null
+        && isExplicitUniverseDomain()
         && !this.sourceCredentials.getUniverseDomain().equals(builder.getUniverseDomain())) {
       throw new IllegalStateException(
           String.format(
@@ -763,14 +764,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
 
   public static class Builder extends GoogleCredentials.Builder {
 
-    private GoogleCredentials sourceCredentials;
-    private String targetPrincipal;
-    private List<String> delegates;
-    private List<String> scopes;
+    private @Nullable GoogleCredentials sourceCredentials;
+    private @Nullable String targetPrincipal;
+    private @Nullable List<String> delegates;
+    private @Nullable List<String> scopes;
     private int lifetime = DEFAULT_LIFETIME_IN_SECONDS;
-    private HttpTransportFactory transportFactory;
-    private String iamEndpointOverride;
-    private Calendar calendar = Calendar.getInstance();
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable String iamEndpointOverride;
+    private @Nullable Calendar calendar = Calendar.getInstance();
 
     protected Builder() {}
 
@@ -803,6 +804,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
+    @Nullable
     public GoogleCredentials getSourceCredentials() {
       return this.sourceCredentials;
     }
@@ -813,16 +815,18 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
+    @Nullable
     public String getTargetPrincipal() {
       return this.targetPrincipal;
     }
 
     @CanIgnoreReturnValue
-    public Builder setDelegates(List<String> delegates) {
+    public Builder setDelegates(@Nullable List<String> delegates) {
       this.delegates = delegates;
       return this;
     }
 
+    @Nullable
     public List<String> getDelegates() {
       return this.delegates;
     }
@@ -843,6 +847,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
     /**
      * @return List of scopes to be applied to the impersonated token.
      */
+    @Nullable
     public List<String> getScopes() {
       return this.scopes;
     }
@@ -863,19 +868,20 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
+    @Nullable
     public HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setIamEndpointOverride(String iamEndpointOverride) {
+    public Builder setIamEndpointOverride(@Nullable String iamEndpointOverride) {
       this.iamEndpointOverride = iamEndpointOverride;
       return this;
     }
@@ -891,7 +897,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
      */
     @CanIgnoreReturnValue
     @ObsoleteApi("This method is obsolete and will be removed in a future release.")
-    public Builder setCalendar(Calendar calendar) {
+    public Builder setCalendar(@Nullable Calendar calendar) {
       this.calendar = calendar;
       return this;
     }
@@ -904,6 +910,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
      *
      * @return the calendar
      */
+    @Nullable
     @ObsoleteApi("This method is obsolete and will be removed in a future release.")
     public Calendar getCalendar() {
       return this.calendar;

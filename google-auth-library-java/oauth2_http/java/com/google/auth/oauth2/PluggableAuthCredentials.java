@@ -217,7 +217,7 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
   public static class Builder extends ExternalAccountCredentials.Builder {
 
-    private ExecutableHandler handler;
+    @Nullable private ExecutableHandler handler;
 
     Builder() {}
 

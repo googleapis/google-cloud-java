@@ -109,8 +109,8 @@ public class IdTokenCredentials extends OAuth2Credentials {
   private static final long serialVersionUID = -2133257318957588431L;
 
   private final IdTokenProvider idTokenProvider;
-  private final List<IdTokenProvider.Option> options;
-  private String targetAudience;
+  private final @Nullable List<IdTokenProvider.Option> options;
+  private @Nullable String targetAudience;
 
   private IdTokenCredentials(Builder builder) {
     this.idTokenProvider = Preconditions.checkNotNull(builder.getIdTokenProvider());
@@ -155,10 +155,12 @@ public class IdTokenCredentials extends OAuth2Credentials {
 
   @Override
   public Builder toBuilder() {
-    return new Builder()
-        .setIdTokenProvider(this.idTokenProvider)
-        .setTargetAudience(this.targetAudience)
-        .setOptions(this.options);
+    Builder builder =
+        new Builder().setIdTokenProvider(this.idTokenProvider).setOptions(this.options);
+    if (this.targetAudience != null) {
+      builder.setTargetAudience(this.targetAudience);
+    }
+    return builder;
   }
 
   public static Builder newBuilder() {
@@ -167,9 +169,9 @@ public class IdTokenCredentials extends OAuth2Credentials {
 
   public static class Builder extends OAuth2Credentials.Builder {
 
-    private IdTokenProvider idTokenProvider;
-    private String targetAudience;
-    private List<IdTokenProvider.Option> options;
+    private @Nullable IdTokenProvider idTokenProvider;
+    private @Nullable String targetAudience;
+    private @Nullable List<IdTokenProvider.Option> options;
 
     protected Builder() {}
 
@@ -181,10 +183,11 @@ public class IdTokenCredentials extends OAuth2Credentials {
      */
     @CanIgnoreReturnValue
     public Builder setIdTokenProvider(IdTokenProvider idTokenProvider) {
-      this.idTokenProvider = Preconditions.checkNotNull(idTokenProvider);
+      this.idTokenProvider = idTokenProvider;
       return this;
     }
 
+    @Nullable
     public IdTokenProvider getIdTokenProvider() {
       return this.idTokenProvider;
     }
@@ -197,11 +200,12 @@ public class IdTokenCredentials extends OAuth2Credentials {
      * @return the builder object
      */
     @CanIgnoreReturnValue
-    public Builder setTargetAudience(String targetAudience) {
+    public Builder setTargetAudience(@Nullable String targetAudience) {
       this.targetAudience = targetAudience;
       return this;
     }
 
+    @Nullable
     public String getTargetAudience() {
       return this.targetAudience;
     }
@@ -213,11 +217,12 @@ public class IdTokenCredentials extends OAuth2Credentials {
      * @return the builder object
      */
     @CanIgnoreReturnValue
-    public Builder setOptions(List<IdTokenProvider.Option> options) {
+    public Builder setOptions(@Nullable List<IdTokenProvider.Option> options) {
       this.options = options;
       return this;
     }
 
+    @Nullable
     public List<IdTokenProvider.Option> getOptions() {
       return this.options;
     }

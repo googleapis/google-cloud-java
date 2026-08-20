@@ -115,11 +115,11 @@ public abstract class JwtClaims implements Serializable {
 
   @AutoValue.Builder
   public abstract static class Builder {
-    public abstract Builder setAudience(String audience);
+    public abstract Builder setAudience(@Nullable String audience);
 
-    public abstract Builder setIssuer(String issuer);
+    public abstract Builder setIssuer(@Nullable String issuer);
 
-    public abstract Builder setSubject(String subject);
+    public abstract Builder setSubject(@Nullable String subject);
 
     public abstract Builder setAdditionalClaims(Map<String, String> additionalClaims);
 

@@ -75,7 +75,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
 
   private final String clientId;
   private final String clientSecret;
-  private final String refreshToken;
+  private final @Nullable String refreshToken;
   private final URI tokenServerUri;
   private final String transportFactoryClassName;
 
@@ -257,6 +257,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
    *
    * @return refresh token
    */
+  @Nullable
   public final String getRefreshToken() {
     return refreshToken;
   }
@@ -321,15 +322,9 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
     if (refreshToken != null) {
       json.put("refresh_token", refreshToken);
     }
-    if (tokenServerUri != null) {
-      json.put("token_server_uri", tokenServerUri);
-    }
-    if (clientId != null) {
-      json.put("client_id", clientId);
-    }
-    if (clientSecret != null) {
-      json.put("client_secret", clientSecret);
-    }
+    json.put("token_server_uri", tokenServerUri);
+    json.put("client_id", clientId);
+    json.put("client_secret", clientSecret);
     if (quotaProjectId != null) {
       json.put("quota_project_id", quotaProjectId);
     }
@@ -417,12 +412,12 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
 
   public static class Builder extends GoogleCredentials.Builder {
 
-    private String clientId;
-    private String clientSecret;
-    private String refreshToken;
-    private URI tokenServerUri;
-    private String account;
-    private HttpTransportFactory transportFactory;
+    private @Nullable String clientId;
+    private @Nullable String clientSecret;
+    private @Nullable String refreshToken;
+    private @Nullable URI tokenServerUri;
+    private @Nullable String account;
+    private @Nullable HttpTransportFactory transportFactory;
 
     protected Builder() {}
 
@@ -495,31 +490,37 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 
+    @Nullable
     public String getClientId() {
       return clientId;
     }
 
+    @Nullable
     public String getClientSecret() {
       return clientSecret;
     }
 
+    @Nullable
     public String getRefreshToken() {
       return refreshToken;
     }
 
+    @Nullable
     public URI getTokenServerUri() {
       return tokenServerUri;
     }
 
+    @Nullable
     String getAccount() {
       return account;
     }
 
+    @Nullable
     public HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }

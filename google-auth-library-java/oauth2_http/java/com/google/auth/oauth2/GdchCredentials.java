@@ -113,7 +113,7 @@ public class GdchCredentials extends GoogleCredentials {
   private final String apiAudience;
   private final int lifetime;
   private final String transportFactoryClassName;
-  private final String caCertPath;
+  private final @Nullable String caCertPath;
   private transient HttpTransportFactory transportFactory;
 
   /**
@@ -472,6 +472,7 @@ public class GdchCredentials extends GoogleCredentials {
     return transportFactory;
   }
 
+  @Nullable
   public final String getCaCertPath() {
     return caCertPath;
   }
@@ -542,14 +543,14 @@ public class GdchCredentials extends GoogleCredentials {
   }
 
   public static class Builder extends GoogleCredentials.Builder {
-    private String projectId;
-    private String privateKeyId;
-    private PrivateKey privateKey;
-    private String serviceIdentityName;
-    private URI tokenServerUri;
-    private String apiAudience;
-    private HttpTransportFactory transportFactory;
-    private String caCertPath;
+    private @Nullable String projectId;
+    private @Nullable String privateKeyId;
+    private @Nullable PrivateKey privateKey;
+    private @Nullable String serviceIdentityName;
+    private @Nullable URI tokenServerUri;
+    private @Nullable String apiAudience;
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable String caCertPath;
     private int lifetime = DEFAULT_LIFETIME_IN_SECONDS;
 
     protected Builder() {}
@@ -602,7 +603,7 @@ public class GdchCredentials extends GoogleCredentials {
     }
 
     @CanIgnoreReturnValue
-    public Builder setCaCertPath(String caCertPath) {
+    public Builder setCaCertPath(@Nullable String caCertPath) {
       this.caCertPath = caCertPath;
       return this;
     }
@@ -624,30 +625,37 @@ public class GdchCredentials extends GoogleCredentials {
       return this;
     }
 
+    @Nullable
     public String getProjectId() {
       return projectId;
     }
 
+    @Nullable
     public String getPrivateKeyId() {
       return privateKeyId;
     }
 
+    @Nullable
     public PrivateKey getPrivateKey() {
       return privateKey;
     }
 
+    @Nullable
     public String getServiceIdentityName() {
       return serviceIdentityName;
     }
 
+    @Nullable
     public URI getTokenServerUri() {
       return tokenServerUri;
     }
 
+    @Nullable
     public HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
+    @Nullable
     public String getCaCertPath() {
       return caCertPath;
     }

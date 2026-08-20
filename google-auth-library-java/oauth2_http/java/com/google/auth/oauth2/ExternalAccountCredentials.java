@@ -768,14 +768,14 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   /** Base builder for external account credentials. */
   public abstract static class Builder extends GoogleCredentials.Builder {
 
-    protected String audience;
-    protected String subjectTokenType;
-    protected String tokenUrl;
-    protected String tokenInfoUrl;
-    protected CredentialSource credentialSource;
-    protected EnvironmentProvider environmentProvider;
-    protected PropertyProvider propertyProvider;
-    protected HttpTransportFactory transportFactory;
+    @Nullable protected String audience;
+    @Nullable protected String subjectTokenType;
+    @Nullable protected String tokenUrl;
+    @Nullable protected String tokenInfoUrl;
+    @Nullable protected CredentialSource credentialSource;
+    @Nullable protected EnvironmentProvider environmentProvider;
+    @Nullable protected PropertyProvider propertyProvider;
+    @Nullable protected HttpTransportFactory transportFactory;
 
     @Nullable protected String serviceAccountImpersonationUrl;
     @Nullable protected String clientId;
@@ -922,7 +922,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      */
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
@@ -997,7 +997,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      */
     @CanIgnoreReturnValue
     @Override
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       super.setUniverseDomain(universeDomain);
       return this;
     }
