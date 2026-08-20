@@ -33,6 +33,8 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.ApiFutures;
@@ -63,6 +65,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -265,6 +268,8 @@ class ResumableUploadCallableImplTest {
         new ResumableUploadCallableImpl<>(
             mockClient, adaptiveRetryingCallable, defaultSettings, FakeCallContext.createDefault());
 
+    when(mockQueryCallable.futureCall(any(QueryStatusRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFuture(QueryStatusResponse.create(0, false, null)));
     when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
         .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(8, true, "done")));
 
@@ -276,6 +281,107 @@ class ResumableUploadCallableImplTest {
     String result = future.get();
     assertThat(result).isEqualTo("done");
     assertThat(future.getUploadSessionUrl()).isEqualTo("https://upload.url/existing-session");
+  }
+
+  @Test
+  void testResumeExistingUploadSession_alreadyComplete() throws Exception {
+    ResumableUploadCallableImpl<String, String> callable =
+        new ResumableUploadCallableImpl<>(
+            mockClient, adaptiveRetryingCallable, defaultSettings, FakeCallContext.createDefault());
+
+    when(mockQueryCallable.futureCall(any(QueryStatusRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(QueryStatusResponse.create(8, true, "already-done")));
+
+    byte[] payload = "01234567".getBytes(StandardCharsets.UTF_8);
+    ResumableUploadFuture<String> future =
+        callable.resumeCall(
+            "https://upload.url/existing-session", new ByteArrayInputStream(payload), null);
+
+    String result = future.get();
+    assertThat(result).isEqualTo("already-done");
+    assertThat(future.getStatus().getState()).isEqualTo(ResumableUploadStatus.State.FINALIZED);
+    verifyNoInteractions(mockChunkCallable);
+  }
+
+  @Test
+  void testChunkFailureAndRecoveryViaQueryStatus() throws Exception {
+    ResumableUploadCallableImpl<String, String> callable =
+        new ResumableUploadCallableImpl<>(
+            mockClient, adaptiveRetryingCallable, defaultSettings, FakeCallContext.createDefault());
+
+    when(mockStartCallable.futureCall(any(String.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ResumableUploadSession.newBuilder()
+                    .setUploadUrl("https://upload.url/session-recovery")
+                    .build()));
+
+    AtomicInteger chunkAttempt = new AtomicInteger(0);
+
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenAnswer(
+            invocation -> {
+              int count = chunkAttempt.incrementAndGet();
+              if (count == 1) {
+                // First chunk attempt drops connection / unavailable
+                return ApiFutures.immediateFailedFuture(
+                    new UnavailableException(
+                        "connection reset",
+                        null,
+                        FakeStatusCode.of(StatusCode.Code.UNAVAILABLE),
+                        true));
+              }
+              // Second chunk attempt succeeds
+              return ApiFutures.immediateFuture(
+                  ChunkUploadResponse.create(8, true, "recovered-body"));
+            });
+
+    // queryStatus reports server committed 0 bytes so far
+    when(mockQueryCallable.futureCall(any(QueryStatusRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFuture(QueryStatusResponse.create(0, false, null)));
+
+    byte[] payload = "01234567".getBytes(StandardCharsets.UTF_8);
+    ResumableUploadFuture<String> future =
+        callable.futureCall("path", new ByteArrayInputStream(payload), null);
+
+    String result = future.get();
+    assertThat(result).isEqualTo("recovered-body");
+    assertThat(chunkAttempt.get()).isEqualTo(2);
+    verify(mockQueryCallable).futureCall(any(QueryStatusRequest.class), any());
+  }
+
+  @Test
+  void testRecoveryReportsAlreadyFinalized() throws Exception {
+    ResumableUploadCallableImpl<String, String> callable =
+        new ResumableUploadCallableImpl<>(
+            mockClient, adaptiveRetryingCallable, defaultSettings, FakeCallContext.createDefault());
+
+    when(mockStartCallable.futureCall(any(String.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ResumableUploadSession.newBuilder()
+                    .setUploadUrl("https://upload.url/session-final")
+                    .build()));
+
+    // Chunk drops connection after server actually finalized it
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                new UnavailableException(
+                    "timeout", null, FakeStatusCode.of(StatusCode.Code.UNAVAILABLE), true)));
+
+    // queryStatus reports server finalized the upload
+    when(mockQueryCallable.futureCall(any(QueryStatusRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(QueryStatusResponse.create(8, true, "server-final-json")));
+
+    byte[] payload = "01234567".getBytes(StandardCharsets.UTF_8);
+    ResumableUploadFuture<String> future =
+        callable.futureCall("path", new ByteArrayInputStream(payload), null);
+
+    String result = future.get();
+    assertThat(result).isEqualTo("server-final-json");
   }
 
   @Test
@@ -327,6 +433,74 @@ class ResumableUploadCallableImplTest {
   }
 
   @Test
+  void testProgressTrackingWithRecovery() throws Exception {
+    List<ResumableUploadStatus> progressEvents = new CopyOnWriteArrayList<>();
+    ResumableUploadProgressListener listener = progressEvents::add;
+
+    ResumableUploadCallSettings customSettings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(8).build();
+
+    ResumableUploadCallableImpl<String, String> callable =
+        new ResumableUploadCallableImpl<>(
+            mockClient, adaptiveRetryingCallable, customSettings, FakeCallContext.createDefault());
+
+    SettableApiFuture<ResumableUploadSession> startFuture = SettableApiFuture.create();
+    when(mockStartCallable.futureCall(any(String.class), any())).thenReturn(startFuture);
+
+    AtomicInteger chunkAttempt = new AtomicInteger(0);
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenAnswer(
+            invocation -> {
+              int count = chunkAttempt.incrementAndGet();
+              if (count == 1) {
+                return ApiFutures.immediateFailedFuture(
+                    new UnavailableException(
+                        "connection dropped",
+                        null,
+                        FakeStatusCode.of(StatusCode.Code.UNAVAILABLE),
+                        true));
+              }
+              return ApiFutures.immediateFuture(
+                  ChunkUploadResponse.create(8, true, "recovered-body"));
+            });
+
+    when(mockQueryCallable.futureCall(any(QueryStatusRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFuture(QueryStatusResponse.create(0, false, null)));
+
+    byte[] payload = "01234567".getBytes(StandardCharsets.UTF_8);
+    ResumableUploadFuture<String> future =
+        callable.futureCall("path", new ByteArrayInputStream(payload), null);
+    future.addProgressListener(listener);
+
+    startFuture.set(
+        ResumableUploadSession.newBuilder()
+            .setUploadUrl("https://upload.url/session-rec-progress")
+            .build());
+
+    String result = future.get();
+    assertThat(result).isEqualTo("recovered-body");
+
+    // Check that RECOVERING state occurred in events
+    boolean hadRecoveringState =
+        progressEvents.stream()
+            .anyMatch(p -> p.getState() == ResumableUploadStatus.State.RECOVERING);
+    assertThat(hadRecoveringState).isTrue();
+
+    // Check that OFFSET_RECEIVED state occurred in events with server-reported offset
+    boolean hadOffsetReceivedState =
+        progressEvents.stream()
+            .anyMatch(
+                p ->
+                    p.getState() == ResumableUploadStatus.State.OFFSET_RECEIVED
+                        && p.getBytesUploaded() == 0);
+    assertThat(hadOffsetReceivedState).isTrue();
+
+    ResumableUploadStatus finalStatus = future.getStatus();
+    assertThat(finalStatus.getState()).isEqualTo(ResumableUploadStatus.State.FINALIZED);
+    assertThat(finalStatus.getBytesUploaded()).isEqualTo(8);
+  }
+
+  @Test
   void testDynamicAddProgressListenerReceivesCurrentSnapshot() {
     ResumableUploadCallableImpl<String, String> callable =
         new ResumableUploadCallableImpl<>(
@@ -346,5 +520,123 @@ class ResumableUploadCallableImplTest {
     assertThat(dynamicEvents).isNotEmpty();
     assertThat(dynamicEvents.get(0).getUploadUrl())
         .isEqualTo("https://upload.url/existing-session");
+  }
+
+  @Test
+  void testProgressTrackingOnResumedSessionEmitsOffsetReceived() throws Exception {
+    List<ResumableUploadStatus> progressEvents = new CopyOnWriteArrayList<>();
+    ResumableUploadProgressListener listener = progressEvents::add;
+
+    ResumableUploadCallSettings customSettings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(8).build();
+
+    ResumableUploadCallableImpl<String, String> callable =
+        new ResumableUploadCallableImpl<>(
+            mockClient, adaptiveRetryingCallable, customSettings, FakeCallContext.createDefault());
+
+    SettableApiFuture<QueryStatusResponse<String>> queryFuture = SettableApiFuture.create();
+    when(mockQueryCallable.futureCall(any(QueryStatusRequest.class), any()))
+        .thenReturn(queryFuture);
+
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(ChunkUploadResponse.create(8, true, "resumed-done")));
+
+    byte[] payload = "01234567".getBytes(StandardCharsets.UTF_8);
+    ResumableUploadFuture<String> future =
+        callable.resumeCall(
+            "https://upload.url/existing-session", new ByteArrayInputStream(payload), null);
+    future.addProgressListener(listener);
+
+    queryFuture.set(QueryStatusResponse.create(4, false, null));
+
+    String result = future.get();
+    assertThat(result).isEqualTo("resumed-done");
+
+    boolean hadOffsetReceivedState =
+        progressEvents.stream()
+            .anyMatch(
+                p ->
+                    p.getState() == ResumableUploadStatus.State.OFFSET_RECEIVED
+                        && p.getBytesUploaded() == 4);
+    assertThat(hadOffsetReceivedState).isTrue();
+  }
+
+  @Test
+  void testChunkFailureWithCategory2OutOfRangeAndRecoveryViaQueryStatus() throws Exception {
+    ResumableUploadCallableImpl<String, String> callable =
+        new ResumableUploadCallableImpl<>(
+            mockClient, adaptiveRetryingCallable, defaultSettings, FakeCallContext.createDefault());
+
+    when(mockStartCallable.futureCall(any(String.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ResumableUploadSession.newBuilder()
+                    .setUploadUrl("https://upload.url/session-416")
+                    .build()));
+
+    AtomicInteger chunkAttempt = new AtomicInteger(0);
+
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenAnswer(
+            invocation -> {
+              int count = chunkAttempt.incrementAndGet();
+              if (count == 1) {
+                // First chunk attempt returns 416 OutOfRange (offset mismatch)
+                return ApiFutures.immediateFailedFuture(
+                    new OutOfRangeException(
+                        "range not satisfiable",
+                        null,
+                        FakeStatusCode.of(StatusCode.Code.OUT_OF_RANGE),
+                        false));
+              }
+              // Second chunk attempt succeeds
+              return ApiFutures.immediateFuture(
+                  ChunkUploadResponse.create(8, true, "recovered-416-body"));
+            });
+
+    // queryStatus reports server committed 0 bytes so far
+    when(mockQueryCallable.futureCall(any(QueryStatusRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFuture(QueryStatusResponse.create(0, false, null)));
+
+    byte[] payload = "01234567".getBytes(StandardCharsets.UTF_8);
+    ResumableUploadFuture<String> future =
+        callable.futureCall("path", new ByteArrayInputStream(payload), null);
+
+    String result = future.get();
+    assertThat(result).isEqualTo("recovered-416-body");
+    assertThat(chunkAttempt.get()).isEqualTo(2);
+    verify(mockQueryCallable).futureCall(any(QueryStatusRequest.class), any());
+  }
+
+  @Test
+  void testChunkFailureWithCategory3TerminalErrorFailsImmediately() {
+    ResumableUploadCallableImpl<String, String> callable =
+        new ResumableUploadCallableImpl<>(
+            mockClient, adaptiveRetryingCallable, defaultSettings, FakeCallContext.createDefault());
+
+    when(mockStartCallable.futureCall(any(String.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                ResumableUploadSession.newBuilder()
+                    .setUploadUrl("https://upload.url/session-404")
+                    .build()));
+
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFailedFuture(
+                new NotFoundException(
+                    "session not found",
+                    null,
+                    FakeStatusCode.of(StatusCode.Code.NOT_FOUND),
+                    false)));
+
+    byte[] payload = "01234567".getBytes(StandardCharsets.UTF_8);
+    ResumableUploadFuture<String> future =
+        callable.futureCall("path", new ByteArrayInputStream(payload), null);
+
+    ExecutionException exception = assertThrows(ExecutionException.class, future::get);
+    assertThat(exception.getCause()).isInstanceOf(NotFoundException.class);
+    verifyNoInteractions(mockQueryCallable);
   }
 }
