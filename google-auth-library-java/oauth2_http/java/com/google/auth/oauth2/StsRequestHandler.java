@@ -224,13 +224,13 @@ public final class StsRequestHandler {
     }
 
     @CanIgnoreReturnValue
-    public StsRequestHandler.Builder setHeaders(HttpHeaders headers) {
+    public StsRequestHandler.Builder setHeaders(@Nullable HttpHeaders headers) {
       this.headers = headers;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public StsRequestHandler.Builder setInternalOptions(String internalOptions) {
+    public StsRequestHandler.Builder setInternalOptions(@Nullable String internalOptions) {
       this.internalOptions = internalOptions;
       return this;
     }

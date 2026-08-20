@@ -111,18 +111,15 @@ public final class StsTokenExchangeResponse {
     return tokenType;
   }
 
-  @Nullable
-  public Long getExpiresInSeconds() {
+  public @Nullable Long getExpiresInSeconds() {
     return expiresInSeconds;
   }
 
-  @Nullable
-  public String getRefreshToken() {
+  public @Nullable String getRefreshToken() {
     return refreshToken;
   }
 
-  @Nullable
-  public List<String> getScopes() {
+  public @Nullable List<String> getScopes() {
     if (scopes == null) {
       return null;
     }
@@ -134,8 +131,7 @@ public final class StsTokenExchangeResponse {
    *
    * @return the access boundary session key or {@code null} if not present
    */
-  @Nullable
-  public String getAccessBoundarySessionKey() {
+  public @Nullable String getAccessBoundarySessionKey() {
     return accessBoundarySessionKey;
   }
 
@@ -162,13 +158,13 @@ public final class StsTokenExchangeResponse {
     }
 
     @CanIgnoreReturnValue
-    public StsTokenExchangeResponse.Builder setRefreshToken(String refreshToken) {
+    public StsTokenExchangeResponse.Builder setRefreshToken(@Nullable String refreshToken) {
       this.refreshToken = refreshToken;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public StsTokenExchangeResponse.Builder setScopes(List<String> scopes) {
+    public StsTokenExchangeResponse.Builder setScopes(@Nullable List<String> scopes) {
       if (scopes != null) {
         this.scopes = new ArrayList<>(scopes);
       }
@@ -183,7 +179,7 @@ public final class StsTokenExchangeResponse {
      */
     @CanIgnoreReturnValue
     public StsTokenExchangeResponse.Builder setAccessBoundarySessionKey(
-        String accessBoundarySessionKey) {
+        @Nullable String accessBoundarySessionKey) {
       this.accessBoundarySessionKey = accessBoundarySessionKey;
       return this;
     }

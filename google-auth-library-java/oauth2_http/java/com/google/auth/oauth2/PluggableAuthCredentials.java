@@ -233,7 +233,7 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     }
 
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       super.setHttpTransportFactory(transportFactory);
       return this;
     }
@@ -269,55 +269,56 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
     }
 
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationUrl(String serviceAccountImpersonationUrl) {
+    public Builder setServiceAccountImpersonationUrl(
+        @Nullable String serviceAccountImpersonationUrl) {
       super.setServiceAccountImpersonationUrl(serviceAccountImpersonationUrl);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setTokenInfoUrl(String tokenInfoUrl) {
+    public Builder setTokenInfoUrl(@Nullable String tokenInfoUrl) {
       super.setTokenInfoUrl(tokenInfoUrl);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setClientId(String clientId) {
+    public Builder setClientId(@Nullable String clientId) {
       super.setClientId(clientId);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setClientSecret(String clientSecret) {
+    public Builder setClientSecret(@Nullable String clientSecret) {
       super.setClientSecret(clientSecret);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setScopes(Collection<String> scopes) {
+    public Builder setScopes(@Nullable Collection<String> scopes) {
       super.setScopes(scopes);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setWorkforcePoolUserProject(String workforcePoolUserProject) {
+    public Builder setWorkforcePoolUserProject(@Nullable String workforcePoolUserProject) {
       super.setWorkforcePoolUserProject(workforcePoolUserProject);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationOptions(Map<String, Object> optionsMap) {
+    public Builder setServiceAccountImpersonationOptions(@Nullable Map<String, Object> optionsMap) {
       super.setServiceAccountImpersonationOptions(optionsMap);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       super.setUniverseDomain(universeDomain);
       return this;
     }

@@ -110,10 +110,10 @@ public class GdchCredentials extends GoogleCredentials {
   private final String projectId;
   private final String serviceIdentityName;
   private final URI tokenServerUri;
-  private final String apiAudience;
+  private final @Nullable String apiAudience;
   private final int lifetime;
   private final String transportFactoryClassName;
-  private final String caCertPath;
+  private final @Nullable String caCertPath;
   private transient HttpTransportFactory transportFactory;
 
   /**
@@ -444,7 +444,7 @@ public class GdchCredentials extends GoogleCredentials {
    *
    * @return the audience string, or null if no audience has been set.
    */
-  public final String getGdchAudience() {
+  public final @Nullable String getGdchAudience() {
     return apiAudience;
   }
 
@@ -472,7 +472,7 @@ public class GdchCredentials extends GoogleCredentials {
     return transportFactory;
   }
 
-  public final String getCaCertPath() {
+  public final @Nullable String getCaCertPath() {
     return caCertPath;
   }
 
@@ -602,7 +602,7 @@ public class GdchCredentials extends GoogleCredentials {
     }
 
     @CanIgnoreReturnValue
-    public Builder setCaCertPath(String caCertPath) {
+    public Builder setCaCertPath(@Nullable String caCertPath) {
       this.caCertPath = caCertPath;
       return this;
     }
@@ -628,7 +628,7 @@ public class GdchCredentials extends GoogleCredentials {
       return projectId;
     }
 
-    public String getPrivateKeyId() {
+    public @Nullable String getPrivateKeyId() {
       return privateKeyId;
     }
 
@@ -648,7 +648,7 @@ public class GdchCredentials extends GoogleCredentials {
       return transportFactory;
     }
 
-    public String getCaCertPath() {
+    public @Nullable String getCaCertPath() {
       return caCertPath;
     }
 
@@ -942,7 +942,8 @@ public class GdchCredentials extends GoogleCredentials {
       throw new GoogleAuthException(
           false,
           0,
-          "Failed to create EC Private Key for GDCH. Please ensure the private key data is valid and represents a P-256 private key.",
+          "Failed to create EC Private Key for GDCH. Please ensure the private key data is valid"
+              + " and represents a P-256 private key.",
           e);
     }
   }

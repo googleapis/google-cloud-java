@@ -108,33 +108,27 @@ public final class StsTokenExchangeRequest {
     return subjectTokenType;
   }
 
-  @Nullable
-  public String getResource() {
+  public @Nullable String getResource() {
     return resource;
   }
 
-  @Nullable
-  public String getAudience() {
+  public @Nullable String getAudience() {
     return audience;
   }
 
-  @Nullable
-  public String getRequestedTokenType() {
+  public @Nullable String getRequestedTokenType() {
     return requestedTokenType;
   }
 
-  @Nullable
-  public List<String> getScopes() {
+  public @Nullable List<String> getScopes() {
     return scopes;
   }
 
-  @Nullable
-  public ActingParty getActingParty() {
+  public @Nullable ActingParty getActingParty() {
     return actingParty;
   }
 
-  @Nullable
-  public String getInternalOptions() {
+  public @Nullable String getInternalOptions() {
     return internalOptions;
   }
 
@@ -175,37 +169,38 @@ public final class StsTokenExchangeRequest {
     }
 
     @CanIgnoreReturnValue
-    public StsTokenExchangeRequest.Builder setResource(String resource) {
+    public StsTokenExchangeRequest.Builder setResource(@Nullable String resource) {
       this.resource = resource;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public StsTokenExchangeRequest.Builder setAudience(String audience) {
+    public StsTokenExchangeRequest.Builder setAudience(@Nullable String audience) {
       this.audience = audience;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public StsTokenExchangeRequest.Builder setRequestTokenType(String requestedTokenType) {
+    public StsTokenExchangeRequest.Builder setRequestTokenType(
+        @Nullable String requestedTokenType) {
       this.requestedTokenType = requestedTokenType;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public StsTokenExchangeRequest.Builder setScopes(List<String> scopes) {
+    public StsTokenExchangeRequest.Builder setScopes(@Nullable List<String> scopes) {
       this.scopes = scopes;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public StsTokenExchangeRequest.Builder setActingParty(ActingParty actingParty) {
+    public StsTokenExchangeRequest.Builder setActingParty(@Nullable ActingParty actingParty) {
       this.actingParty = actingParty;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public StsTokenExchangeRequest.Builder setInternalOptions(String internalOptions) {
+    public StsTokenExchangeRequest.Builder setInternalOptions(@Nullable String internalOptions) {
       this.internalOptions = internalOptions;
       return this;
     }

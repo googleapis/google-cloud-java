@@ -184,7 +184,7 @@ public class UserAuthorizer {
    * @param baseUri The URI to resolve the OAuth2 callback URI relative to.
    * @return The URL that can be navigated or redirected to.
    */
-  public URL getAuthorizationUrl(String userId, String state, @Nullable URI baseUri) {
+  public URL getAuthorizationUrl(@Nullable String userId, @Nullable String state, @Nullable URI baseUri) {
     return this.getAuthorizationUrl(userId, state, baseUri, null);
   }
 
@@ -198,8 +198,8 @@ public class UserAuthorizer {
    * @return The URL that can be navigated or redirected to.
    */
   public URL getAuthorizationUrl(
-      String userId,
-      String state,
+      @Nullable String userId,
+      @Nullable String state,
       @Nullable URI baseUri,
       @Nullable Map<String, String> additionalParameters) {
     URI resolvedCallbackUri = getCallbackUri(baseUri);
@@ -241,7 +241,7 @@ public class UserAuthorizer {
    * @throws IOException If there is error retrieving or loading the credentials.
    */
   @Nullable
-  public UserCredentials getCredentials(String userId) throws IOException {
+  public @Nullable UserCredentials getCredentials(String userId) throws IOException {
     Preconditions.checkNotNull(userId);
     if (tokenStore == null) {
       throw new IllegalStateException("Method cannot be called if token store is not specified.");

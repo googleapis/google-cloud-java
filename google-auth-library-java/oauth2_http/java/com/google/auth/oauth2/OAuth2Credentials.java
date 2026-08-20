@@ -115,7 +115,7 @@ public class OAuth2Credentials extends Credentials {
   }
 
   protected OAuth2Credentials(
-      AccessToken accessToken, Duration refreshMargin, Duration expirationMargin) {
+      @Nullable AccessToken accessToken, Duration refreshMargin, Duration expirationMargin) {
     if (accessToken != null) {
       this.value = OAuthValue.create(accessToken, EMPTY_EXTRA_HEADERS);
     }
@@ -172,7 +172,7 @@ public class OAuth2Credentials extends Credentials {
 
   @Override
   public void getRequestMetadata(
-      final URI uri, Executor executor, final RequestMetadataCallback callback) {
+      final @Nullable URI uri, Executor executor, final RequestMetadataCallback callback) {
 
     Futures.addCallback(
         asyncFetch(executor),
@@ -711,7 +711,7 @@ public class OAuth2Credentials extends Credentials {
 
   public static class Builder {
 
-    private AccessToken accessToken;
+    private @Nullable AccessToken accessToken;
     private Duration refreshMargin = DEFAULT_REFRESH_MARGIN;
     private Duration expirationMargin = DEFAULT_EXPIRATION_MARGIN;
 
@@ -724,7 +724,7 @@ public class OAuth2Credentials extends Credentials {
     }
 
     @CanIgnoreReturnValue
-    public Builder setAccessToken(AccessToken token) {
+    public Builder setAccessToken(@Nullable AccessToken token) {
       this.accessToken = token;
       return this;
     }
@@ -749,7 +749,7 @@ public class OAuth2Credentials extends Credentials {
       return expirationMargin;
     }
 
-    public AccessToken getAccessToken() {
+    public @Nullable AccessToken getAccessToken() {
       return accessToken;
     }
 

@@ -68,7 +68,8 @@ public class AppEngineCredentials extends GoogleCredentials implements ServiceAc
 
   private transient AppIdentityService appIdentityService;
 
-  private AppEngineCredentials(Collection<String> scopes, AppIdentityService appIdentityService) {
+  private AppEngineCredentials(
+      @Nullable Collection<String> scopes, @Nullable AppIdentityService appIdentityService) {
     this.scopes = scopes == null ? ImmutableSet.<String>of() : ImmutableList.copyOf(scopes);
     this.appIdentityService =
         appIdentityService != null
@@ -175,8 +176,8 @@ public class AppEngineCredentials extends GoogleCredentials implements ServiceAc
 
   public static class Builder extends GoogleCredentials.Builder {
 
-    private Collection<String> scopes;
-    private AppIdentityService appIdentityService;
+    private @Nullable Collection<String> scopes;
+    private @Nullable AppIdentityService appIdentityService;
 
     protected Builder() {}
 
@@ -186,22 +187,22 @@ public class AppEngineCredentials extends GoogleCredentials implements ServiceAc
     }
 
     @CanIgnoreReturnValue
-    public Builder setScopes(Collection<String> scopes) {
+    public Builder setScopes(@Nullable Collection<String> scopes) {
       this.scopes = scopes;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setAppIdentityService(AppIdentityService appIdentityService) {
+    public Builder setAppIdentityService(@Nullable AppIdentityService appIdentityService) {
       this.appIdentityService = appIdentityService;
       return this;
     }
 
-    public Collection<String> getScopes() {
+    public @Nullable Collection<String> getScopes() {
       return scopes;
     }
 
-    public AppIdentityService getAppIdentityService() {
+    public @Nullable AppIdentityService getAppIdentityService() {
       return appIdentityService;
     }
 

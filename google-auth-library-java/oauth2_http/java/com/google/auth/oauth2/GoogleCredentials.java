@@ -97,12 +97,12 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
 
   // The following package-private fields to provide additional info for errors message
   // Source of the credential (e.g. env var value or well know file location)
-  String source;
+  @Nullable String source;
   // User-friendly name of the Credential class
-  String name;
+  @Nullable String name;
   // Identity of the credential
   // Note: This field may contain data such as serviceAccountEmail which should not be serialized
-  transient String principal;
+  transient @Nullable String principal;
 
   private final String universeDomain;
   private final boolean isExplicitUniverseDomain;
@@ -230,7 +230,8 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    * @throws IOException if the credential cannot be created from the stream.
    */
   @ObsoleteApi(
-      "This method is obsolete because of a potential security risk. Use the credential specific load method instead")
+      "This method is obsolete because of a potential security risk. Use the credential specific"
+          + " load method instead")
   public static GoogleCredentials fromStream(InputStream credentialsStream) throws IOException {
     return fromStream(credentialsStream, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
   }
@@ -296,7 +297,8 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    * @throws IOException if the credential cannot be created from the stream.
    */
   @ObsoleteApi(
-      "This method is obsolete because of a potential security risk. Use the credential specific load method instead")
+      "This method is obsolete because of a potential security risk. Use the credential specific"
+          + " load method instead")
   public static GoogleCredentials fromStream(
       InputStream credentialsStream, HttpTransportFactory transportFactory) throws IOException {
     Preconditions.checkNotNull(transportFactory);
@@ -344,7 +346,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    * @param quotaProject the quota project to set on the credential
    * @return credential with the provided quota project
    */
-  public GoogleCredentials createWithQuotaProject(String quotaProject) {
+  public GoogleCredentials createWithQuotaProject(@Nullable String quotaProject) {
     return this.toBuilder().setQuotaProjectId(quotaProject).build();
   }
 
@@ -424,7 +426,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    * @param quotaProjectId a quotaProjectId, a project id to be used for billing purposes
    */
   @Deprecated
-  protected GoogleCredentials(AccessToken accessToken, @Nullable String quotaProjectId) {
+  protected GoogleCredentials(@Nullable AccessToken accessToken, @Nullable String quotaProjectId) {
     this(
         GoogleCredentials.newBuilder()
             .setAccessToken(accessToken)
@@ -437,7 +439,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    * @param accessToken initial or temporary access token
    */
   @Deprecated
-  public GoogleCredentials(AccessToken accessToken) {
+  public GoogleCredentials(@Nullable AccessToken accessToken) {
     this(accessToken, null);
   }
 
@@ -527,7 +529,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   }
 
   @Override
-  public String getQuotaProjectId() {
+  public @Nullable String getQuotaProjectId() {
     return this.quotaProjectId;
   }
 
@@ -538,6 +540,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    *
    * @return the project id for a Credential type
    */
+  @Nullable
   public String getProjectId() {
     return null;
   }
@@ -679,32 +682,32 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
     }
 
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       this.quotaProjectId = quotaProjectId;
       return this;
     }
 
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       this.universeDomain = universeDomain;
       return this;
     }
 
-    public String getQuotaProjectId() {
+    public @Nullable String getQuotaProjectId() {
       return this.quotaProjectId;
     }
 
-    public String getUniverseDomain() {
+    public @Nullable String getUniverseDomain() {
       return this.universeDomain;
     }
 
-    Builder setSource(String source) {
+    Builder setSource(@Nullable String source) {
       this.source = source;
       return this;
     }
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setAccessToken(AccessToken token) {
+    public Builder setAccessToken(@Nullable AccessToken token) {
       super.setAccessToken(token);
       return this;
     }

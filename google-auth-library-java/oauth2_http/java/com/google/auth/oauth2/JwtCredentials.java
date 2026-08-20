@@ -79,14 +79,14 @@ public class JwtCredentials extends Credentials implements JwtProvider {
   // byte[] is serializable, so the lock variable can be final
   private final Object lock = new byte[0];
   private final PrivateKey privateKey;
-  private final String privateKeyId;
+  private final @Nullable String privateKeyId;
   private final JwtClaims jwtClaims;
   private final Long lifeSpanSeconds;
   @VisibleForTesting transient Clock clock;
 
-  private transient String jwt;
+  private transient @Nullable String jwt;
   // The date (represented as seconds since the epoch) that the generated JWT expires
-  private transient Long expiryInSeconds;
+  private transient @Nullable Long expiryInSeconds;
 
   private JwtCredentials(Builder builder) {
     this.privateKey = Preconditions.checkNotNull(builder.getPrivateKey());
@@ -207,7 +207,7 @@ public class JwtCredentials extends Credentials implements JwtProvider {
 
   public static class Builder {
     private PrivateKey privateKey;
-    private String privateKeyId;
+    private @Nullable String privateKeyId;
     private JwtClaims jwtClaims;
     private Clock clock = Clock.SYSTEM;
     private Long lifeSpanSeconds = TimeUnit.HOURS.toSeconds(1);
@@ -225,12 +225,12 @@ public class JwtCredentials extends Credentials implements JwtProvider {
     }
 
     @CanIgnoreReturnValue
-    public Builder setPrivateKeyId(String privateKeyId) {
+    public Builder setPrivateKeyId(@Nullable String privateKeyId) {
       this.privateKeyId = privateKeyId;
       return this;
     }
 
-    public String getPrivateKeyId() {
+    public @Nullable String getPrivateKeyId() {
       return privateKeyId;
     }
 

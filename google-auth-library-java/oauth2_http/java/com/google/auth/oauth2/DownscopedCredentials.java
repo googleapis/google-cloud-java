@@ -41,6 +41,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * DownscopedCredentials enables the ability to downscope, or restrict, the Identity and Access
@@ -206,8 +207,8 @@ public final class DownscopedCredentials extends OAuth2Credentials {
 
     private GoogleCredentials sourceCredential;
     private CredentialAccessBoundary credentialAccessBoundary;
-    private HttpTransportFactory transportFactory;
-    private String universeDomain;
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable String universeDomain;
 
     private Builder() {}
 
@@ -243,7 +244,7 @@ public final class DownscopedCredentials extends OAuth2Credentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       this.transportFactory = transportFactory;
       return this;
     }
@@ -255,7 +256,7 @@ public final class DownscopedCredentials extends OAuth2Credentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       this.universeDomain = universeDomain;
       return this;
     }

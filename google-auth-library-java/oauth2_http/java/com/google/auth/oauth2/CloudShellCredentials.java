@@ -145,7 +145,7 @@ public class CloudShellCredentials extends GoogleCredentials {
     }
 
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.quotaProjectId = quotaProjectId;
       return this;
     }

@@ -197,8 +197,7 @@ public final class CredentialAccessBoundary {
       return availablePermissions;
     }
 
-    @Nullable
-    public AvailabilityCondition getAvailabilityCondition() {
+    public @Nullable AvailabilityCondition getAvailabilityCondition() {
       return availabilityCondition;
     }
 
@@ -269,7 +268,8 @@ public final class CredentialAccessBoundary {
        * @return this {@code Builder} object
        */
       @CanIgnoreReturnValue
-      public Builder setAvailabilityCondition(AvailabilityCondition availabilityCondition) {
+      public Builder setAvailabilityCondition(
+          @Nullable AvailabilityCondition availabilityCondition) {
         this.availabilityCondition = availabilityCondition;
         return this;
       }
@@ -358,7 +358,7 @@ public final class CredentialAccessBoundary {
          * @return this {@code Builder} object
          */
         @CanIgnoreReturnValue
-        public Builder setTitle(String title) {
+        public Builder setTitle(@Nullable String title) {
           this.title = title;
           return this;
         }
@@ -370,7 +370,7 @@ public final class CredentialAccessBoundary {
          * @return this {@code Builder} object
          */
         @CanIgnoreReturnValue
-        public Builder setDescription(String description) {
+        public Builder setDescription(@Nullable String description) {
           this.description = description;
           return this;
         }

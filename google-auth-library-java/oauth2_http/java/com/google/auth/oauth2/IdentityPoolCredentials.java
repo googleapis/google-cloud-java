@@ -77,7 +77,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     // Check that one and only one of supplier or credential source are provided.
     if (builder.subjectTokenSupplier != null && credentialSource != null) {
       throw new IllegalArgumentException(
-          "IdentityPoolCredentials cannot have both a subjectTokenSupplier and a credentialSource.");
+          "IdentityPoolCredentials cannot have both a subjectTokenSupplier and a"
+              + " credentialSource.");
     }
     if (builder.subjectTokenSupplier == null && credentialSource == null) {
       throw new IllegalArgumentException(
@@ -104,7 +105,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         throw new RuntimeException(
             // Wrap IOException in RuntimeException because constructors cannot throw checked
             // exceptions.
-            "Failed to initialize IdentityPoolCredentials from certificate source due to an I/O error.",
+            "Failed to initialize IdentityPoolCredentials from certificate source due to an I/O"
+                + " error.",
             e);
       }
       this.metricsHeaderValue = CERTIFICATE_METRICS_HEADER_VALUE;
@@ -245,7 +247,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     }
 
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       super.setHttpTransportFactory(transportFactory);
       return this;
     }
@@ -281,56 +283,57 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     }
 
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationUrl(String serviceAccountImpersonationUrl) {
+    public Builder setServiceAccountImpersonationUrl(
+        @Nullable String serviceAccountImpersonationUrl) {
       super.setServiceAccountImpersonationUrl(serviceAccountImpersonationUrl);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setTokenInfoUrl(String tokenInfoUrl) {
+    public Builder setTokenInfoUrl(@Nullable String tokenInfoUrl) {
       super.setTokenInfoUrl(tokenInfoUrl);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setClientId(String clientId) {
+    public Builder setClientId(@Nullable String clientId) {
       super.setClientId(clientId);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setClientSecret(String clientSecret) {
+    public Builder setClientSecret(@Nullable String clientSecret) {
       super.setClientSecret(clientSecret);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setScopes(Collection<String> scopes) {
+    public Builder setScopes(@Nullable Collection<String> scopes) {
       super.setScopes(scopes);
       return this;
     }
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setWorkforcePoolUserProject(String workforcePoolUserProject) {
+    public Builder setWorkforcePoolUserProject(@Nullable String workforcePoolUserProject) {
       super.setWorkforcePoolUserProject(workforcePoolUserProject);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationOptions(Map<String, Object> optionsMap) {
+    public Builder setServiceAccountImpersonationOptions(@Nullable Map<String, Object> optionsMap) {
       super.setServiceAccountImpersonationOptions(optionsMap);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       super.setUniverseDomain(universeDomain);
       return this;
     }

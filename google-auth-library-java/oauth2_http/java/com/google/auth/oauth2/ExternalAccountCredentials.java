@@ -265,7 +265,8 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     this.workforcePoolUserProject = builder.workforcePoolUserProject;
     if (workforcePoolUserProject != null && !isWorkforcePoolConfiguration()) {
       throw new IllegalArgumentException(
-          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool configuration.");
+          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool"
+              + " configuration.");
     }
 
     validateTokenUrl(tokenUrl);
@@ -318,7 +319,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
 
   @Override
   public void getRequestMetadata(
-      URI uri, Executor executor, final RequestMetadataCallback callback) {
+      @Nullable URI uri, Executor executor, final RequestMetadataCallback callback) {
     super.getRequestMetadata(
         uri,
         executor,
@@ -591,6 +592,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     return tokenUrl;
   }
 
+  @Nullable
   public String getTokenInfoUrl() {
     return tokenInfoUrl;
   }
@@ -771,11 +773,11 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     protected String audience;
     protected String subjectTokenType;
     protected String tokenUrl;
-    protected String tokenInfoUrl;
+    protected @Nullable String tokenInfoUrl;
     protected CredentialSource credentialSource;
     protected EnvironmentProvider environmentProvider;
     protected PropertyProvider propertyProvider;
-    protected HttpTransportFactory transportFactory;
+    protected @Nullable HttpTransportFactory transportFactory;
 
     @Nullable protected String serviceAccountImpersonationUrl;
     @Nullable protected String clientId;
@@ -819,7 +821,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       this.transportFactory = transportFactory;
       return this;
     }
@@ -896,7 +898,8 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationUrl(String serviceAccountImpersonationUrl) {
+    public Builder setServiceAccountImpersonationUrl(
+        @Nullable String serviceAccountImpersonationUrl) {
       this.serviceAccountImpersonationUrl = serviceAccountImpersonationUrl;
       return this;
     }
@@ -909,7 +912,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setTokenInfoUrl(String tokenInfoUrl) {
+    public Builder setTokenInfoUrl(@Nullable String tokenInfoUrl) {
       this.tokenInfoUrl = tokenInfoUrl;
       return this;
     }
@@ -922,7 +925,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      */
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
@@ -934,7 +937,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setClientId(String clientId) {
+    public Builder setClientId(@Nullable String clientId) {
       this.clientId = clientId;
       return this;
     }
@@ -946,7 +949,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setClientSecret(String clientSecret) {
+    public Builder setClientSecret(@Nullable String clientSecret) {
       this.clientSecret = clientSecret;
       return this;
     }
@@ -958,7 +961,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setScopes(Collection<String> scopes) {
+    public Builder setScopes(@Nullable Collection<String> scopes) {
       this.scopes = scopes;
       return this;
     }
@@ -972,7 +975,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setWorkforcePoolUserProject(String workforcePoolUserProject) {
+    public Builder setWorkforcePoolUserProject(@Nullable String workforcePoolUserProject) {
       this.workforcePoolUserProject = workforcePoolUserProject;
       return this;
     }
@@ -984,7 +987,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationOptions(Map<String, Object> optionsMap) {
+    public Builder setServiceAccountImpersonationOptions(@Nullable Map<String, Object> optionsMap) {
       this.serviceAccountImpersonationOptions = new ServiceAccountImpersonationOptions(optionsMap);
       return this;
     }
@@ -997,7 +1000,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      */
     @CanIgnoreReturnValue
     @Override
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       super.setUniverseDomain(universeDomain);
       return this;
     }

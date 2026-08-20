@@ -33,6 +33,7 @@ package com.google.auth.oauth2;
 import com.google.api.core.InternalApi;
 import java.io.Serializable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Represents the default system property provider.
@@ -48,7 +49,7 @@ public class SystemPropertyProvider implements PropertyProvider, Serializable {
   private SystemPropertyProvider() {}
 
   @Override
-  public String getProperty(String property, String def) {
+  public @Nullable String getProperty(String property, @Nullable String def) {
     return System.getProperty(property, def);
   }
 

@@ -56,7 +56,7 @@ public class AccessToken implements Serializable {
    * @param tokenValue String representation of the access token.
    * @param expirationTime Time when access token will expire.
    */
-  public AccessToken(String tokenValue, Date expirationTime) {
+  public AccessToken(String tokenValue, @Nullable Date expirationTime) {
     this.tokenValue = tokenValue;
     this.expirationTimeMillis = (expirationTime == null) ? null : expirationTime.getTime();
     this.scopes = new ArrayList<>();
@@ -108,7 +108,7 @@ public class AccessToken implements Serializable {
     return new Date(expirationTimeMillis);
   }
 
-  Long getExpirationTimeMillis() {
+  @Nullable Long getExpirationTimeMillis() {
     return expirationTimeMillis;
   }
 
@@ -145,8 +145,8 @@ public class AccessToken implements Serializable {
   }
 
   public static class Builder {
-    private String tokenValue;
-    private Date expirationTime;
+    private @Nullable String tokenValue;
+    private @Nullable Date expirationTime;
     private List<String> scopes = new ArrayList<>();
 
     protected Builder() {}
@@ -157,7 +157,7 @@ public class AccessToken implements Serializable {
       this.scopes = accessToken.getScopes();
     }
 
-    public String getTokenValue() {
+    public @Nullable String getTokenValue() {
       return this.tokenValue;
     }
 
@@ -165,7 +165,7 @@ public class AccessToken implements Serializable {
       return this.scopes;
     }
 
-    public Date getExpirationTime() {
+    public @Nullable Date getExpirationTime() {
       return this.expirationTime;
     }
 
@@ -176,7 +176,7 @@ public class AccessToken implements Serializable {
     }
 
     @CanIgnoreReturnValue
-    public Builder setScopes(String scopes) {
+    public Builder setScopes(@Nullable String scopes) {
       if (scopes != null && scopes.trim().length() > 0) {
         this.scopes = Arrays.asList(scopes.split(" "));
       }
@@ -184,7 +184,7 @@ public class AccessToken implements Serializable {
     }
 
     @CanIgnoreReturnValue
-    public Builder setScopes(List<String> scopes) {
+    public Builder setScopes(@Nullable List<String> scopes) {
       if (scopes == null) {
         this.scopes = new ArrayList<>();
       } else {
@@ -195,7 +195,7 @@ public class AccessToken implements Serializable {
     }
 
     @CanIgnoreReturnValue
-    public Builder setExpirationTime(Date expirationTime) {
+    public Builder setExpirationTime(@Nullable Date expirationTime) {
       this.expirationTime = expirationTime;
       return this;
     }

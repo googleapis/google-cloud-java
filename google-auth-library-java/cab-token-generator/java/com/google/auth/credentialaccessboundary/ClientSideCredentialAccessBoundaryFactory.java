@@ -604,8 +604,8 @@ public class ClientSideCredentialAccessBoundaryFactory {
    */
   public static class Builder {
     private GoogleCredentials sourceCredential;
-    private HttpTransportFactory transportFactory;
-    private String universeDomain;
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable String universeDomain;
     private String tokenExchangeEndpoint;
     private Duration minimumTokenLifetime;
     private Duration refreshMargin;
@@ -686,7 +686,7 @@ public class ClientSideCredentialAccessBoundaryFactory {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       this.transportFactory = transportFactory;
       return this;
     }
@@ -698,7 +698,7 @@ public class ClientSideCredentialAccessBoundaryFactory {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       this.universeDomain = universeDomain;
       return this;
     }
@@ -742,8 +742,8 @@ public class ClientSideCredentialAccessBoundaryFactory {
       try {
         if (!universeDomain.equals(sourceCredential.getUniverseDomain())) {
           throw new IllegalArgumentException(
-              "The client side access boundary credential's universe domain must be the same as the source "
-                  + "credential.");
+              "The client side access boundary credential's universe domain must be the same as the"
+                  + " source credential.");
         }
       } catch (IOException e) {
         // Throwing an IOException would be a breaking change, so wrap it here.

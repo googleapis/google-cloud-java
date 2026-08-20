@@ -32,6 +32,7 @@ package com.google.auth.oauth2;
 
 import com.google.api.core.InternalApi;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Interface for a system property provider.
@@ -41,5 +42,5 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @InternalApi
 public interface PropertyProvider {
-  String getProperty(String property, String def);
+  @Nullable String getProperty(String property, @Nullable String def);
 }

@@ -223,11 +223,11 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * @throws IOException if the credential cannot be created from the private key.
    */
   public static ServiceAccountCredentials fromPkcs8(
-      String clientId,
+      @Nullable String clientId,
       String clientEmail,
       String privateKeyPkcs8,
-      String privateKeyId,
-      Collection<String> scopes)
+      @Nullable String privateKeyId,
+      @Nullable Collection<String> scopes)
       throws IOException {
     ServiceAccountCredentials.Builder builder =
         ServiceAccountCredentials.newBuilder()
@@ -252,12 +252,12 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * @throws IOException if the credential cannot be created from the private key
    */
   public static ServiceAccountCredentials fromPkcs8(
-      String clientId,
+      @Nullable String clientId,
       String clientEmail,
       String privateKeyPkcs8,
-      String privateKeyId,
-      Collection<String> scopes,
-      Collection<String> defaultScopes)
+      @Nullable String privateKeyId,
+      @Nullable Collection<String> scopes,
+      @Nullable Collection<String> defaultScopes)
       throws IOException {
     ServiceAccountCredentials.Builder builder =
         ServiceAccountCredentials.newBuilder()
@@ -286,13 +286,13 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * @throws IOException if the credential cannot be created from the private key.
    */
   public static ServiceAccountCredentials fromPkcs8(
-      String clientId,
+      @Nullable String clientId,
       String clientEmail,
       String privateKeyPkcs8,
-      String privateKeyId,
-      Collection<String> scopes,
-      HttpTransportFactory transportFactory,
-      URI tokenServerUri)
+      @Nullable String privateKeyId,
+      @Nullable Collection<String> scopes,
+      @Nullable HttpTransportFactory transportFactory,
+      @Nullable URI tokenServerUri)
       throws IOException {
 
     ServiceAccountCredentials.Builder builder =
@@ -326,14 +326,14 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * @throws IOException if the credential cannot be created from the private key
    */
   public static ServiceAccountCredentials fromPkcs8(
-      String clientId,
+      @Nullable String clientId,
       String clientEmail,
       String privateKeyPkcs8,
-      String privateKeyId,
-      Collection<String> scopes,
-      Collection<String> defaultScopes,
-      HttpTransportFactory transportFactory,
-      URI tokenServerUri)
+      @Nullable String privateKeyId,
+      @Nullable Collection<String> scopes,
+      @Nullable Collection<String> defaultScopes,
+      @Nullable HttpTransportFactory transportFactory,
+      @Nullable URI tokenServerUri)
       throws IOException {
 
     ServiceAccountCredentials.Builder builder =
@@ -367,14 +367,14 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * @throws IOException if the credential cannot be created from the private key.
    */
   public static ServiceAccountCredentials fromPkcs8(
-      String clientId,
+      @Nullable String clientId,
       String clientEmail,
       String privateKeyPkcs8,
-      String privateKeyId,
-      Collection<String> scopes,
-      HttpTransportFactory transportFactory,
-      URI tokenServerUri,
-      String serviceAccountUser)
+      @Nullable String privateKeyId,
+      @Nullable Collection<String> scopes,
+      @Nullable HttpTransportFactory transportFactory,
+      @Nullable URI tokenServerUri,
+      @Nullable String serviceAccountUser)
       throws IOException {
 
     ServiceAccountCredentials.Builder builder =
@@ -411,15 +411,15 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * @throws IOException if the credential cannot be created from the private key
    */
   public static ServiceAccountCredentials fromPkcs8(
-      String clientId,
+      @Nullable String clientId,
       String clientEmail,
       String privateKeyPkcs8,
-      String privateKeyId,
-      Collection<String> scopes,
-      Collection<String> defaultScopes,
-      HttpTransportFactory transportFactory,
-      URI tokenServerUri,
-      String serviceAccountUser)
+      @Nullable String privateKeyId,
+      @Nullable Collection<String> scopes,
+      @Nullable Collection<String> defaultScopes,
+      @Nullable HttpTransportFactory transportFactory,
+      @Nullable URI tokenServerUri,
+      @Nullable String serviceAccountUser)
       throws IOException {
     ServiceAccountCredentials.Builder builder =
         ServiceAccountCredentials.newBuilder()
@@ -606,8 +606,8 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * @return IdToken object which includes the raw id_token, expiration and audience
    */
   @Override
-  public IdToken idTokenWithAudience(String targetAudience, List<Option> options)
-      throws IOException {
+  public IdToken idTokenWithAudience(
+      @Nullable String targetAudience, @Nullable List<Option> options) throws IOException {
     return isDefaultUniverseDomain()
         ? getIdTokenOauthEndpoint(targetAudience)
         : getIdTokenIamEndpoint(targetAudience);
@@ -784,7 +784,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     return this.toBuilder().setServiceAccountUser(user).build();
   }
 
-  public final String getClientId() {
+  public final @Nullable String getClientId() {
     return clientId;
   }
 
@@ -796,7 +796,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     return privateKey;
   }
 
-  public final String getPrivateKeyId() {
+  public final @Nullable String getPrivateKeyId() {
     return privateKeyId;
   }
 
@@ -808,7 +808,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     return defaultScopes;
   }
 
-  public final String getServiceAccountUser() {
+  public final @Nullable String getServiceAccountUser() {
     return serviceAccountUser;
   }
 
@@ -816,7 +816,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * @return the projectId set in the SA Key file or the user set projectId
    */
   @Override
-  public final String getProjectId() {
+  public final @Nullable String getProjectId() {
     return projectId;
   }
 
@@ -963,8 +963,8 @@ public class ServiceAccountCredentials extends GoogleCredentials
   }
 
   @VisibleForTesting
-  String createAssertionForIdToken(long currentTime, String audience, String targetAudience)
-      throws IOException {
+  String createAssertionForIdToken(
+      long currentTime, @Nullable String audience, String targetAudience) throws IOException {
     JsonFactory jsonFactory = OAuth2Utils.JSON_FACTORY;
     JsonWebSignature.Header header = new JsonWebSignature.Header();
     header.setAlgorithm("RS256");
@@ -1184,7 +1184,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     }
 
     @CanIgnoreReturnValue
-    public Builder setClientId(String clientId) {
+    public Builder setClientId(@Nullable String clientId) {
       this.clientId = clientId;
       return this;
     }
@@ -1208,52 +1208,53 @@ public class ServiceAccountCredentials extends GoogleCredentials
     }
 
     @CanIgnoreReturnValue
-    public Builder setPrivateKeyId(String privateKeyId) {
+    public Builder setPrivateKeyId(@Nullable String privateKeyId) {
       this.privateKeyId = privateKeyId;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setScopes(Collection<String> scopes) {
+    public Builder setScopes(@Nullable Collection<String> scopes) {
       this.scopes = scopes;
       this.defaultScopes = ImmutableSet.<String>of();
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setScopes(Collection<String> scopes, Collection<String> defaultScopes) {
+    public Builder setScopes(
+        @Nullable Collection<String> scopes, @Nullable Collection<String> defaultScopes) {
       this.scopes = scopes;
       this.defaultScopes = defaultScopes;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setServiceAccountUser(String serviceAccountUser) {
+    public Builder setServiceAccountUser(@Nullable String serviceAccountUser) {
       this.serviceAccountUser = serviceAccountUser;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setProjectId(String projectId) {
+    public Builder setProjectId(@Nullable String projectId) {
       this.projectId = projectId;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setTokenServerUri(URI tokenServerUri) {
+    public Builder setTokenServerUri(@Nullable URI tokenServerUri) {
       this.tokenServerUri = tokenServerUri;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       this.transportFactory = transportFactory;
       return this;
     }
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
@@ -1280,12 +1281,12 @@ public class ServiceAccountCredentials extends GoogleCredentials
       return this;
     }
 
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       super.universeDomain = universeDomain;
       return this;
     }
 
-    public String getClientId() {
+    public @Nullable String getClientId() {
       return clientId;
     }
 
@@ -1297,31 +1298,31 @@ public class ServiceAccountCredentials extends GoogleCredentials
       return privateKey;
     }
 
-    public String getPrivateKeyId() {
+    public @Nullable String getPrivateKeyId() {
       return privateKeyId;
     }
 
-    public Collection<String> getScopes() {
+    public @Nullable Collection<String> getScopes() {
       return scopes;
     }
 
-    public Collection<String> getDefaultScopes() {
+    public @Nullable Collection<String> getDefaultScopes() {
       return defaultScopes;
     }
 
-    public String getServiceAccountUser() {
+    public @Nullable String getServiceAccountUser() {
       return serviceAccountUser;
     }
 
-    public String getProjectId() {
+    public @Nullable String getProjectId() {
       return projectId;
     }
 
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 

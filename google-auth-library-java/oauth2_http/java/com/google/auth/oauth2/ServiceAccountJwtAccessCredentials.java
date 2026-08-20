@@ -85,10 +85,10 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   @VisibleForTesting static final long LIFE_SPAN_SECS = TimeUnit.HOURS.toSeconds(1);
   private static final long CLOCK_SKEW = TimeUnit.MINUTES.toSeconds(5);
 
-  private final String clientId;
+  private final @Nullable String clientId;
   private final String clientEmail;
   private final PrivateKey privateKey;
-  private final String privateKeyId;
+  private final @Nullable String privateKeyId;
   private final URI defaultAudience;
   private final String quotaProjectId;
   private final String universeDomain;
@@ -107,7 +107,10 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
    * @param privateKeyId Private key identifier for the service account. May be null.
    */
   private ServiceAccountJwtAccessCredentials(
-      String clientId, String clientEmail, PrivateKey privateKey, String privateKeyId) {
+      @Nullable String clientId,
+      String clientEmail,
+      PrivateKey privateKey,
+      @Nullable String privateKeyId) {
     this(
         clientId,
         clientEmail,
@@ -130,10 +133,10 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
    *     googleapis.com
    */
   private ServiceAccountJwtAccessCredentials(
-      String clientId,
+      @Nullable String clientId,
       String clientEmail,
       PrivateKey privateKey,
-      String privateKeyId,
+      @Nullable String privateKeyId,
       @Nullable URI defaultAudience,
       @Nullable String quotaProjectId,
       String universeDomain) {
@@ -212,7 +215,10 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
    * @throws IOException if the credential cannot be created from the private key.
    */
   public static ServiceAccountJwtAccessCredentials fromPkcs8(
-      String clientId, String clientEmail, String privateKeyPkcs8, String privateKeyId)
+      @Nullable String clientId,
+      String clientEmail,
+      String privateKeyPkcs8,
+      @Nullable String privateKeyId)
       throws IOException {
     return fromPkcs8(clientId, clientEmail, privateKeyPkcs8, privateKeyId, null);
   }
@@ -229,10 +235,10 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
    * @throws IOException if the credential cannot be created from the private key.
    */
   public static ServiceAccountJwtAccessCredentials fromPkcs8(
-      String clientId,
+      @Nullable String clientId,
       String clientEmail,
       String privateKeyPkcs8,
-      String privateKeyId,
+      @Nullable String privateKeyId,
       @Nullable URI defaultAudience)
       throws IOException {
     return ServiceAccountJwtAccessCredentials.fromPkcs8(
@@ -246,11 +252,11 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   }
 
   static ServiceAccountJwtAccessCredentials fromPkcs8(
-      String clientId,
+      @Nullable String clientId,
       String clientEmail,
       String privateKeyPkcs8,
-      String privateKeyId,
-      URI defaultAudience,
+      @Nullable String privateKeyId,
+      @Nullable URI defaultAudience,
       @Nullable String quotaProjectId,
       String universeDomain)
       throws IOException {
@@ -423,7 +429,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
     credentialsCache.invalidateAll();
   }
 
-  public final String getClientId() {
+  public final @Nullable String getClientId() {
     return clientId;
   }
 
@@ -435,7 +441,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
     return privateKey;
   }
 
-  public final String getPrivateKeyId() {
+  public final @Nullable String getPrivateKeyId() {
     return privateKeyId;
   }
 
@@ -508,19 +514,19 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   }
 
   @Override
-  public String getQuotaProjectId() {
+  public @Nullable String getQuotaProjectId() {
     return quotaProjectId;
   }
 
   public static class Builder {
 
-    private String clientId;
+    private @Nullable String clientId;
     private String clientEmail;
     private PrivateKey privateKey;
-    private String privateKeyId;
-    private URI defaultAudience;
-    private String quotaProjectId;
-    private String universeDomain;
+    private @Nullable String privateKeyId;
+    private @Nullable URI defaultAudience;
+    private @Nullable String quotaProjectId;
+    private @Nullable String universeDomain;
 
     protected Builder() {}
 
@@ -535,7 +541,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
     }
 
     @CanIgnoreReturnValue
-    public Builder setClientId(String clientId) {
+    public Builder setClientId(@Nullable String clientId) {
       this.clientId = clientId;
       return this;
     }
@@ -553,31 +559,31 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
     }
 
     @CanIgnoreReturnValue
-    public Builder setPrivateKeyId(String privateKeyId) {
+    public Builder setPrivateKeyId(@Nullable String privateKeyId) {
       this.privateKeyId = privateKeyId;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setDefaultAudience(URI defaultAudience) {
+    public Builder setDefaultAudience(@Nullable URI defaultAudience) {
       this.defaultAudience = defaultAudience;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       this.quotaProjectId = quotaProjectId;
       return this;
     }
 
     @CanIgnoreReturnValue
     /** Sets the universe domain (example, googleapis.com). */
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       this.universeDomain = universeDomain;
       return this;
     }
 
-    public String getClientId() {
+    public @Nullable String getClientId() {
       return clientId;
     }
 
@@ -589,20 +595,20 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
       return privateKey;
     }
 
-    public String getPrivateKeyId() {
+    public @Nullable String getPrivateKeyId() {
       return privateKeyId;
     }
 
-    public URI getDefaultAudience() {
+    public @Nullable URI getDefaultAudience() {
       return defaultAudience;
     }
 
-    public String getQuotaProjectId() {
+    public @Nullable String getQuotaProjectId() {
       return quotaProjectId;
     }
 
     /** Returns the universe domain (example, googleapis.com) for the credentials instance. */
-    public String getUniverseDomain() {
+    public @Nullable String getUniverseDomain() {
       return universeDomain;
     }
 

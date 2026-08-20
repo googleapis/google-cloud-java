@@ -358,7 +358,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
    *     no fallback project ID can be determined.
    */
   @Override
-  public String getProjectId() {
+  public @Nullable String getProjectId() {
     synchronized (this) {
       if (this.projectId != null) {
         return this.projectId;
@@ -377,7 +377,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
     return this.projectId;
   }
 
-  private String getProjectIdFromMetadata() {
+  private @Nullable String getProjectIdFromMetadata() {
     try {
       HttpResponse response = getMetadataResponse(getProjectIdUrl(), RequestType.UNTRACKED, false);
       int statusCode = response.getStatusCode();
@@ -427,11 +427,10 @@ public class ComputeEngineCredentials extends GoogleCredentials
     if (statusCode == HttpStatusCodes.STATUS_CODE_NOT_FOUND) {
       throw new IOException(
           String.format(
-              "Error code %s trying to get security access token from"
-                  + " Compute Engine metadata for the default service account. This may be because"
-                  + " the virtual machine instance does not have permission scopes specified."
-                  + " It is possible to skip checking for Compute Engine metadata by specifying the environment "
-                  + " variable "
+              "Error code %s trying to get security access token from Compute Engine metadata for"
+                  + " the default service account. This may be because the virtual machine instance"
+                  + " does not have permission scopes specified. It is possible to skip checking"
+                  + " for Compute Engine metadata by specifying the environment  variable "
                   + DefaultCredentialsProvider.NO_GCE_CHECK_ENV_VAR
                   + "=true.",
               statusCode));
@@ -476,7 +475,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
    * @return IdToken object which includes the raw id_token, JsonWebSignature
    */
   @Override
-  public IdToken idTokenWithAudience(String targetAudience, List<IdTokenProvider.Option> options)
+  public IdToken idTokenWithAudience(
+      @Nullable String targetAudience, @Nullable List<IdTokenProvider.Option> options)
       throws IOException {
     GenericUrl documentUrl = new GenericUrl(getIdentityDocumentUrl());
     if (options != null) {
@@ -504,7 +504,8 @@ public class ComputeEngineCredentials extends GoogleCredentials
     if (statusCode != HttpStatusCodes.STATUS_CODE_OK) {
       throw new IOException(
           String.format(
-              "Unexpected Error code %s trying to get identity token from Compute Engine metadata: %s",
+              "Unexpected Error code %s trying to get identity token from Compute Engine metadata:"
+                  + " %s",
               statusCode, response.parseAsString()));
     }
     InputStream content = response.getContent();
@@ -644,7 +645,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
   }
 
   @VisibleForTesting
-  void setProjectId(String projectId) {
+  void setProjectId(@Nullable String projectId) {
     this.projectId = projectId;
   }
 
@@ -867,12 +868,12 @@ public class ComputeEngineCredentials extends GoogleCredentials
   }
 
   public static class Builder extends GoogleCredentials.Builder {
-    private HttpTransportFactory transportFactory;
-    private Collection<String> scopes;
-    private Collection<String> defaultScopes;
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable Collection<String> scopes;
+    private @Nullable Collection<String> defaultScopes;
 
-    private GoogleAuthTransport transport;
-    private BindingEnforcement bindingEnforcement;
+    private @Nullable GoogleAuthTransport transport;
+    private @Nullable BindingEnforcement bindingEnforcement;
 
     protected Builder() {
       setRefreshMargin(COMPUTE_REFRESH_MARGIN);
@@ -886,31 +887,31 @@ public class ComputeEngineCredentials extends GoogleCredentials
     }
 
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       this.transportFactory = transportFactory;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setScopes(Collection<String> scopes) {
+    public Builder setScopes(@Nullable Collection<String> scopes) {
       this.scopes = scopes;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setDefaultScopes(Collection<String> defaultScopes) {
+    public Builder setDefaultScopes(@Nullable Collection<String> defaultScopes) {
       this.defaultScopes = defaultScopes;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       this.universeDomain = universeDomain;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.quotaProjectId = quotaProjectId;
       return this;
     }
@@ -921,7 +922,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
      * @param transport the transport type over which to authenticate to Google APIs
      */
     @CanIgnoreReturnValue
-    public Builder setGoogleAuthTransport(GoogleAuthTransport transport) {
+    public Builder setGoogleAuthTransport(@Nullable GoogleAuthTransport transport) {
       this.transport = transport;
       return this;
     }
@@ -932,20 +933,20 @@ public class ComputeEngineCredentials extends GoogleCredentials
      * @param bindingEnforcement the token binding enforcement policy.
      */
     @CanIgnoreReturnValue
-    public Builder setBindingEnforcement(BindingEnforcement bindingEnforcement) {
+    public Builder setBindingEnforcement(@Nullable BindingEnforcement bindingEnforcement) {
       this.bindingEnforcement = bindingEnforcement;
       return this;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
-    public Collection<String> getScopes() {
+    public @Nullable Collection<String> getScopes() {
       return scopes;
     }
 
-    public Collection<String> getDefaultScopes() {
+    public @Nullable Collection<String> getDefaultScopes() {
       return defaultScopes;
     }
 
@@ -954,7 +955,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
      *
      * @return the transport type over which to authenticate to Google APIs
      */
-    public GoogleAuthTransport getGoogleAuthTransport() {
+    public @Nullable GoogleAuthTransport getGoogleAuthTransport() {
       return transport;
     }
 
@@ -963,7 +964,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
      *
      * @return the token binding enforcement policy.
      */
-    public BindingEnforcement getBindingEnforcement() {
+    public @Nullable BindingEnforcement getBindingEnforcement() {
       return bindingEnforcement;
     }
 

@@ -75,7 +75,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
 
   private final String clientId;
   private final String clientSecret;
-  private final String refreshToken;
+  private final @Nullable String refreshToken;
   private final URI tokenServerUri;
   private final String transportFactoryClassName;
 
@@ -217,8 +217,8 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
    * @return IdToken object which includes the raw id_token, expiration and audience
    */
   @Override
-  public IdToken idTokenWithAudience(String targetAudience, List<Option> options)
-      throws IOException {
+  public IdToken idTokenWithAudience(
+      @Nullable String targetAudience, @Nullable List<Option> options) throws IOException {
     GenericData responseData = doRefreshAccessToken();
     String idTokenKey = "id_token";
     if (responseData.containsKey(idTokenKey)) {
@@ -257,6 +257,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
    *
    * @return refresh token
    */
+  @Nullable
   public final String getRefreshToken() {
     return refreshToken;
   }
@@ -417,12 +418,12 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
 
   public static class Builder extends GoogleCredentials.Builder {
 
-    private String clientId;
-    private String clientSecret;
-    private String refreshToken;
-    private URI tokenServerUri;
-    private String account;
-    private HttpTransportFactory transportFactory;
+    private @Nullable String clientId;
+    private @Nullable String clientSecret;
+    private @Nullable String refreshToken;
+    private @Nullable URI tokenServerUri;
+    private @Nullable String account;
+    private @Nullable HttpTransportFactory transportFactory;
 
     protected Builder() {}
 
@@ -449,25 +450,25 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
     }
 
     @CanIgnoreReturnValue
-    public Builder setRefreshToken(String refreshToken) {
+    public Builder setRefreshToken(@Nullable String refreshToken) {
       this.refreshToken = refreshToken;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setTokenServerUri(URI tokenServerUri) {
+    public Builder setTokenServerUri(@Nullable URI tokenServerUri) {
       this.tokenServerUri = tokenServerUri;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       this.transportFactory = transportFactory;
       return this;
     }
 
     @CanIgnoreReturnValue
-    Builder setAccount(String account) {
+    Builder setAccount(@Nullable String account) {
       this.account = account;
       return this;
     }
@@ -495,32 +496,32 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 
-    public String getClientId() {
+    public @Nullable String getClientId() {
       return clientId;
     }
 
-    public String getClientSecret() {
+    public @Nullable String getClientSecret() {
       return clientSecret;
     }
 
-    public String getRefreshToken() {
+    public @Nullable String getRefreshToken() {
       return refreshToken;
     }
 
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    String getAccount() {
+    @Nullable String getAccount() {
       return account;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 

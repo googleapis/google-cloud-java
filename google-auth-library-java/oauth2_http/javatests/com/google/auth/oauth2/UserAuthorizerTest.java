@@ -202,7 +202,7 @@ class UserAuthorizerTest {
   }
 
   @Test
-  void getAuthorizationUrl_nullBaseUri() throws IOException {
+  void getAuthorizationUrl_nullArguments() throws IOException {
     final String protocol = "https";
     final String host = "accounts.test.com";
     final String path = "/o/o/oauth2/auth";
@@ -216,18 +216,21 @@ class UserAuthorizerTest {
             .setUserAuthUri(authUri)
             .build();
 
-    URL authorizationUrl = authorizer.getAuthorizationUrl(USER_ID, "state", null);
+    URL authorizationUrl = authorizer.getAuthorizationUrl(null, null, null);
 
     assertEquals(protocol, authorizationUrl.getProtocol());
     assertEquals(path, authorizationUrl.getPath());
     assertEquals(host, authorizationUrl.getHost());
     String query = authorizationUrl.getQuery();
     Map<String, String> parameters = TestUtils.parseQuery(query);
-    assertEquals("state", parameters.get("state"));
-    assertEquals(USER_ID, parameters.get("login_hint"));
+    assertFalse(parameters.containsKey("state"));
+    assertFalse(parameters.containsKey("login_hint"));
     assertEquals(absoluteCallbackUri.toString(), parameters.get("redirect_uri"));
     assertEquals(CLIENT_ID_VALUE, parameters.get("client_id"));
     assertEquals(DUMMY_SCOPE, parameters.get("scope"));
+
+    URL authorizationUrlWithNullMap = authorizer.getAuthorizationUrl(null, null, null, null);
+    assertEquals(authorizationUrl, authorizationUrlWithNullMap);
   }
 
   @Test
