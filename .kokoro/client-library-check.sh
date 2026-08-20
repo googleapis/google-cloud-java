@@ -37,37 +37,17 @@ function get_released_version_from_versions_txt() {
 
 function replace_java_shared_config_version() {
   version=$1
-  # replace version
-  xmllint --shell <(cat pom.xml) << EOF
-  setns x=http://maven.apache.org/POM/4.0.0
-  cd .//x:artifactId[text()="google-cloud-shared-config"]
-  cd ../x:version
-  set ${version}
-  save pom.xml
-EOF
+  java "${scriptDir}/../.github/scripts/PomTool.java" set-dep-version pom.xml "google-cloud-shared-config" "${version}"
 }
 
 function replace_java_shared_dependencies_version() {
   version=$1
-  # replace version
-  xmllint --shell <(cat pom.xml) << EOF
-  setns x=http://maven.apache.org/POM/4.0.0
-  cd .//x:properties/x:google-cloud-shared-dependencies.version
-  set ${version}
-  save pom.xml
-EOF
+  java "${scriptDir}/../.github/scripts/PomTool.java" set-prop-version pom.xml "google-cloud-shared-dependencies.version" "${version}"
 }
 
 function replace_sdk_platform_java_config_version() {
   version=$1
-  # replace version in the shared parent POM
-  xmllint --shell <(cat ../google-cloud-pom-parent/pom.xml) << EOF
-  setns x=http://maven.apache.org/POM/4.0.0
-  cd .//x:artifactId[text()="sdk-platform-java-config"]
-  cd ../x:version
-  set ${version}
-  save ../google-cloud-pom-parent/pom.xml
-EOF
+  java "${scriptDir}/../.github/scripts/PomTool.java" set-dep-version ../google-cloud-pom-parent/pom.xml "sdk-platform-java-config" "${version}"
 }
 
 if [[ $# -ne 2 ]];
@@ -93,8 +73,7 @@ popd
 
 # Read the current version of this BOM in the POM. Example version: '0.116.1-alpha-SNAPSHOT'
 VERSION_POM=java-shared-config/java-shared-config/pom.xml
-# Namespace (xmlns) prevents xmllint from specifying tag names in XPath
-JAVA_SHARED_CONFIG_VERSION=`sed -e 's/xmlns=".*"//' ${VERSION_POM} | xmllint --xpath '/project/version/text()' -`
+JAVA_SHARED_CONFIG_VERSION=$(java "${scriptDir}/../.github/scripts/PomTool.java" get-version "${VERSION_POM}")
 
 if [ -z "${JAVA_SHARED_CONFIG_VERSION}" ]; then
   echo "Version is not found in ${VERSION_POM}"
@@ -109,7 +88,7 @@ LATEST_TAG=$(git ls-remote --tags https://github.com/googleapis/google-cloud-jav
 echo "Cloning google-cloud-java at tag: ${LATEST_TAG}"
 git clone "https://github.com/googleapis/google-cloud-java.git" -b "${LATEST_TAG}" --depth=1
 pushd google-cloud-java/sdk-platform-java
-SDK_PLATFORM_JAVA_CONFIG_VERSION=$(sed -e 's/xmlns=".*"//' sdk-platform-java-config/pom.xml | xmllint --xpath '/project/version/text()' -)
+SDK_PLATFORM_JAVA_CONFIG_VERSION=$(java "${scriptDir}/../.github/scripts/PomTool.java" get-version sdk-platform-java-config/pom.xml)
 
 pushd sdk-platform-java-config
 # Use released version of google-cloud-shared-dependencies to avoid verifying SNAPSHOT changes.
