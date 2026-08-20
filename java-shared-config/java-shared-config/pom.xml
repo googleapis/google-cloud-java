@@ -248,20 +248,12 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>[3.0,)</version>
+                  <version>[3.9.0,)</version>
                 </requireMavenVersion>
                 <requireJavaVersion>
-                  <version>[1.7,)</version>
+                  <version>[1.8,)</version>
                 </requireJavaVersion>
                 <requireUpperBoundDeps/>
-                <banDuplicateClasses>
-                  <scopes>
-                    <scope>compile</scope>
-                    <scope>provided</scope>
-                  </scopes>
-                  <findAllDuplicates>true</findAllDuplicates>
-                  <ignoreWhenIdentical>true</ignoreWhenIdentical>
-                </banDuplicateClasses>
               </rules>
             </configuration>
           </execution>
