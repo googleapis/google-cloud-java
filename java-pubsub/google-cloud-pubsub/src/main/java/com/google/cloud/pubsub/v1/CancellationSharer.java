@@ -20,12 +20,10 @@ import com.google.api.core.AbstractApiFuture;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
-import com.google.api.gax.rpc.ApiException;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PublishResponse;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -53,7 +51,9 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   }
 
   CancellationSharer(
-      final Publisher.OutstandingBatch batch, final Publisher publisher, final long absoluteDeadlineMs) {
+      final Publisher.OutstandingBatch batch,
+      final Publisher publisher,
+      final long absoluteDeadlineMs) {
     this.batch = batch;
     this.publisher = publisher;
     this.absoluteDeadlineMs = absoluteDeadlineMs;

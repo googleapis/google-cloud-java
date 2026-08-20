@@ -49,7 +49,6 @@ import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.CodedOutputStream;
 import com.google.pubsub.v1.PublishRequest;
@@ -569,15 +568,13 @@ public class Publisher implements PublisherInterface {
     for (PubsubMessageWrapper messageWrapper : messageWrappers) {
       if (attemptNumber == 0) {
         tracer.endPublishBatchingSpan(messageWrapper);
-      }
-      else{
+      } else {
         tracer.addHedgedPublishStartEvent(messageWrapper);
       }
       pubsubMessagesList.add(messageWrapper.getPubsubMessage());
     }
 
-    outstandingBatch.publishRpcSpan =
-      tracer.startPublishRpcSpan(topicNameObject, messageWrappers);
+    outstandingBatch.publishRpcSpan = tracer.startPublishRpcSpan(topicNameObject, messageWrappers);
 
     return publisherStub
         .publishCallable()

@@ -670,7 +670,7 @@ public class OpenTelemetryTest {
     OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(openTelemetryTracer, true);
 
     // Start Publisher span
-       tracer.startPublisherSpan(messageWrapper);
+    tracer.startPublisherSpan(messageWrapper);
 
     // Original Attempt 0 (creates RPC span and emits initial publish start event)
     Span publishRpcSpan1 = tracer.startPublishRpcSpan(FULL_TOPIC_NAME, messageWrappers);
@@ -681,7 +681,6 @@ public class OpenTelemetryTest {
 
     // End Publisher span
     tracer.endPublisherSpan(messageWrapper, true);
-
 
     List<SpanData> allSpans = openTelemetryTesting.getSpans();
     // 2 Spans: publishRpcSpan1, publisherSpan

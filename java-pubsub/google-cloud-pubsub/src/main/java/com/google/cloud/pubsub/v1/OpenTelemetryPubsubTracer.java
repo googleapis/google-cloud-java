@@ -189,7 +189,7 @@ public class OpenTelemetryPubsubTracer {
    * Creates, starts, and returns a publish RPC span for the given message batch. Bi-directional
    * links with the publisher parent span are created for sampled messages in the batch.
    *
-   * Note: Hedged publish attempts do not create distinct publish RPC spans. Instead, we rely on
+   * <p>Note: Hedged publish attempts do not create distinct publish RPC spans. Instead, we rely on
    * the hedged publish start and end events on each message.
    */
   Span startPublishRpcSpan(TopicName topicName, List<PubsubMessageWrapper> messages) {

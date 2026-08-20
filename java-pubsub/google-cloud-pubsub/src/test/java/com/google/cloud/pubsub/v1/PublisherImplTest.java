@@ -36,7 +36,6 @@ import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.rpc.DataLossException;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
-import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.pubsub.v1.Publisher.Builder;
 import com.google.protobuf.ByteString;
@@ -1706,7 +1705,6 @@ public class PublisherImplTest {
 
     shutdownTestPublisher(publisher);
   }
-
 
   private Builder getTestPublisherBuilder() {
     return Publisher.newBuilder(TEST_TOPIC)
