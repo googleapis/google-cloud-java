@@ -147,7 +147,7 @@ public class UserAuthorizer {
    * @param baseUri The URI to resolve the callback URI relative to.
    * @return The resolved URI.
    */
-  public URI getCallbackUri(URI baseUri) {
+  public URI getCallbackUri(@Nullable URI baseUri) {
     if (callbackUri.isAbsolute()) {
       return callbackUri;
     }
@@ -184,7 +184,7 @@ public class UserAuthorizer {
    * @param baseUri The URI to resolve the OAuth2 callback URI relative to.
    * @return The URL that can be navigated or redirected to.
    */
-  public URL getAuthorizationUrl(String userId, String state, URI baseUri) {
+  public URL getAuthorizationUrl(String userId, String state, @Nullable URI baseUri) {
     return this.getAuthorizationUrl(userId, state, baseUri, null);
   }
 
@@ -200,7 +200,7 @@ public class UserAuthorizer {
   public URL getAuthorizationUrl(
       String userId,
       String state,
-      URI baseUri,
+      @Nullable URI baseUri,
       @Nullable Map<String, String> additionalParameters) {
     URI resolvedCallbackUri = getCallbackUri(baseUri);
     String scopesString = Joiner.on(' ').join(scopes);
@@ -288,7 +288,7 @@ public class UserAuthorizer {
    * @return the UserCredentials instance created from the authorization code.
    * @throws IOException An error from the server API call to get the tokens.
    */
-  public UserCredentials getCredentialsFromCode(String code, URI baseUri) throws IOException {
+  public UserCredentials getCredentialsFromCode(String code, @Nullable URI baseUri) throws IOException {
     return getCredentialsFromCode(code, baseUri, null);
   }
 
@@ -303,7 +303,7 @@ public class UserAuthorizer {
    * @throws IOException An error from the server API call to get the tokens.
    */
   public UserCredentials getCredentialsFromCode(
-      String code, URI baseUri, @Nullable Map<String, String> additionalParameters)
+      String code, @Nullable URI baseUri, @Nullable Map<String, String> additionalParameters)
       throws IOException {
     TokenResponseWithConfig tokenResponseWithConfig =
         getCredentialsFromCodeInternal(code, baseUri, additionalParameters);
@@ -330,7 +330,7 @@ public class UserAuthorizer {
    * @throws IOException If an error occurs during the token exchange process.
    */
   public TokenResponseWithConfig getTokenResponseFromAuthCodeExchange(
-      String code, URI callbackUri, Map<String, String> additionalParameters) throws IOException {
+      String code, @Nullable URI callbackUri, @Nullable Map<String, String> additionalParameters) throws IOException {
     return getCredentialsFromCodeInternal(code, callbackUri, additionalParameters);
   }
 
@@ -343,7 +343,7 @@ public class UserAuthorizer {
    * @return UserCredentials instance created from the authorization code.
    * @throws IOException An error from the server API call to get the tokens or store the tokens.
    */
-  public UserCredentials getAndStoreCredentialsFromCode(String userId, String code, URI baseUri)
+  public UserCredentials getAndStoreCredentialsFromCode(String userId, String code, @Nullable URI baseUri)
       throws IOException {
     Preconditions.checkNotNull(userId);
     Preconditions.checkNotNull(code);
@@ -451,7 +451,7 @@ public class UserAuthorizer {
   }
 
   private TokenResponseWithConfig getCredentialsFromCodeInternal(
-      String code, URI baseUri, Map<String, String> additionalParameters) throws IOException {
+      String code, @Nullable URI baseUri, @Nullable Map<String, String> additionalParameters) throws IOException {
     Preconditions.checkNotNull(code);
     URI resolvedCallbackUri = getCallbackUri(baseUri);
 
