@@ -31,6 +31,8 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.BetaApi;
 import java.io.InputStream;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A ResumableUploadCallable is an API-transport-independent wrapper for the Resumable Upload
@@ -40,6 +42,7 @@ import java.io.InputStream;
  * @param <ResponseT> response type
  */
 @BetaApi
+@NullMarked
 public abstract class ResumableUploadCallable<RequestT, ResponseT> {
 
   protected ResumableUploadCallable() {}
@@ -53,7 +56,19 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
    * @return future for tracking and controlling the upload
    */
   public abstract ResumableUploadFuture<ResponseT> futureCall(
-      RequestT request, InputStream payload, ResumableUploadCallSettings settings);
+      RequestT request, InputStream payload, @Nullable ResumableUploadCallSettings settings);
+
+  /**
+   * Same as {@link #futureCall(Object, InputStream, ResumableUploadCallSettings)}, with null
+   * settings.
+   *
+   * @param request the request message
+   * @param payload the data payload input stream
+   * @return future for tracking and controlling the upload
+   */
+  public ResumableUploadFuture<ResponseT> futureCall(RequestT request, InputStream payload) {
+    return futureCall(request, payload, null);
+  }
 
   /**
    * Resumes an existing resumable upload session asynchronously using a saved session URL.
@@ -64,5 +79,17 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
    * @return future for tracking and controlling the upload
    */
   public abstract ResumableUploadFuture<ResponseT> resumeCall(
-      String sessionUrl, InputStream payload, ResumableUploadCallSettings settings);
+      String sessionUrl, InputStream payload, @Nullable ResumableUploadCallSettings settings);
+
+  /**
+   * Same as {@link #resumeCall(String, InputStream, ResumableUploadCallSettings)}, with null
+   * settings.
+   *
+   * @param sessionUrl the upload session URL
+   * @param payload the data payload input stream
+   * @return future for tracking and controlling the upload
+   */
+  public ResumableUploadFuture<ResponseT> resumeCall(String sessionUrl, InputStream payload) {
+    return resumeCall(sessionUrl, payload, null);
+  }
 }

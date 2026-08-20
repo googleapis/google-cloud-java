@@ -30,11 +30,13 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.core.BetaApi;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.auto.value.AutoValue;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A settings class to configure a {@link ResumableUploadCallable} for executing resumable uploads.
- * Encapsulates protocol options such as payload chunk size.
+ * Encapsulates protocol options such as payload chunk size and retry settings.
  */
 @BetaApi
 @AutoValue
@@ -43,6 +45,9 @@ public abstract class ResumableUploadCallSettings {
 
   /** Returns the configured chunk size in bytes (defaults to 8 MB / 8,388,608 bytes). */
   public abstract int getChunkSize();
+
+  /** Returns the configured retry settings, or null if defaults should be used. */
+  public abstract @Nullable RetrySettings getRetrySettings();
 
   /**
    * Merges another {@code ResumableUploadCallSettings} instance with this one. Fields set in {@code
@@ -55,7 +60,11 @@ public abstract class ResumableUploadCallSettings {
     if (other == null) {
       return this;
     }
-    return toBuilder().setChunkSize(other.getChunkSize()).build();
+    Builder builder = toBuilder().setChunkSize(other.getChunkSize());
+    if (other.getRetrySettings() != null) {
+      builder.setRetrySettings(other.getRetrySettings());
+    }
+    return builder.build();
   }
 
   public abstract Builder toBuilder();
@@ -70,6 +79,10 @@ public abstract class ResumableUploadCallSettings {
     public abstract Builder setChunkSize(int chunkSize);
 
     public abstract int getChunkSize();
+
+    public abstract Builder setRetrySettings(@Nullable RetrySettings retrySettings);
+
+    public abstract @Nullable RetrySettings getRetrySettings();
 
     public abstract ResumableUploadCallSettings build();
   }

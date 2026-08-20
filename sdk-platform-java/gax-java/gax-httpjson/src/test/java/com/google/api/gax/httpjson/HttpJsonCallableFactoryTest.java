@@ -34,6 +34,11 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static org.mockito.Mockito.mock;
 
 import com.google.api.client.http.HttpMethods;
+import com.google.api.gax.resumable.ResumableUploadClient;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ResumableUploadCallSettings;
+import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.api.gax.rpc.testing.FakeCallContext;
 import com.google.api.gax.tracing.ApiTracerContext;
 import com.google.api.gax.tracing.SpanName;
 import com.google.api.pathtemplate.PathTemplate;
@@ -42,6 +47,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ScheduledExecutorService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -106,5 +112,24 @@ class HttpJsonCallableFactoryTest {
       }
       assertThat(actualError).isNotNull();
     }
+  }
+
+  @Test
+  void testCreateResumableUploadCallable() {
+    @SuppressWarnings("unchecked")
+    ResumableUploadClient<String, String> mockUploadClient = mock(ResumableUploadClient.class);
+    ScheduledExecutorService mockExecutor = mock(ScheduledExecutorService.class);
+    ClientContext context =
+        ClientContext.newBuilder()
+            .setDefaultCallContext(FakeCallContext.createDefault())
+            .setExecutor(mockExecutor)
+            .build();
+    ResumableUploadCallSettings settings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(1024).build();
+
+    ResumableUploadCallable<String, String> callable =
+        HttpJsonCallableFactory.createResumableUploadCallable(mockUploadClient, settings, context);
+
+    assertThat(callable).isNotNull();
   }
 }

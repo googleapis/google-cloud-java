@@ -30,6 +30,8 @@
 package com.google.api.gax.rpc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
@@ -42,6 +44,7 @@ import static org.mockito.Mockito.when;
 import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.SettableApiFuture;
+import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.testing.FakeCallContext;
 import java.util.concurrent.ScheduledExecutorService;
@@ -206,5 +209,25 @@ class CallableTest {
     Callables.watched(callable, callSettings, clientContext);
     verify(callContext, atLeastOnce()).withStreamIdleTimeoutDuration(eq(timeout));
     verify(callContext, atLeastOnce()).withStreamWaitTimeoutDuration(eq(timeout));
+  }
+
+  @Test
+  void testResumableUploadCallable() {
+    ResumableUploadClient<String, String> mockUploadClient =
+        Mockito.mock(ResumableUploadClient.class);
+    ScheduledExecutorService mockExecutor = Mockito.mock(ScheduledExecutorService.class);
+    ClientContext context =
+        ClientContext.newBuilder()
+            .setDefaultCallContext(callContext)
+            .setExecutor(mockExecutor)
+            .build();
+    ResumableUploadCallSettings settings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(1024).build();
+
+    ResumableUploadCallable<String, String> callable =
+        Callables.resumableUpload(mockUploadClient, settings, context);
+
+    assertNotNull(callable);
+    assertInstanceOf(ResumableUploadCallableImpl.class, callable);
   }
 }

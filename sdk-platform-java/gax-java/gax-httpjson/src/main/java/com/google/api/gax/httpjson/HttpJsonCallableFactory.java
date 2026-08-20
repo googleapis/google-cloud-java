@@ -31,6 +31,7 @@ package com.google.api.gax.httpjson;
 
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.Callables;
 import com.google.api.gax.rpc.ClientContext;
@@ -39,6 +40,8 @@ import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ResumableUploadCallSettings;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -192,6 +195,23 @@ public class HttpJsonCallableFactory {
         Callables.longRunningOperation(
             operationSnapshotCallable, operationCallSettings, clientContext, longRunningClient);
     return operationCallable.withDefaultCallContext(clientContext.getDefaultCallContext());
+  }
+
+  /**
+   * Creates a {@link ResumableUploadCallable} to execute resumable uploads. Designed for use by
+   * generated code.
+   *
+   * @param uploadClient client executing the wire-level upload protocol
+   * @param callSettings settings configuring chunk size and retry behavior
+   * @param clientContext client context providing executor, clock, and default call context
+   * @return {@link ResumableUploadCallable} callable object
+   */
+  public static <RequestT, ResponseT>
+      ResumableUploadCallable<RequestT, ResponseT> createResumableUploadCallable(
+          ResumableUploadClient<RequestT, ResponseT> uploadClient,
+          ResumableUploadCallSettings callSettings,
+          ClientContext clientContext) {
+    return Callables.resumableUpload(uploadClient, callSettings, clientContext);
   }
 
   public static <RequestT, ResponseT>
