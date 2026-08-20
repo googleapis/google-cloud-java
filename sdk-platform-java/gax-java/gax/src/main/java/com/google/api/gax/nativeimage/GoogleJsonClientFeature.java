@@ -60,17 +60,17 @@ final class GoogleJsonClientFeature implements Feature {
 
   /**
    * Registers Conscrypt SSLContext and Security Provider SPI implementation classes (and their
-   * nested protocol subclasses) for GraalVM reflection, as well as Conscrypt native JNI classes
-   * and native C shared library resources when Conscrypt is present on the classpath.
+   * nested protocol subclasses) for GraalVM reflection, as well as Conscrypt native JNI classes and
+   * native C shared library resources when Conscrypt is present on the classpath.
    *
    * <p>When Conscrypt is configured as the security provider for HTTP/JSON transports, Java's JCA
    * framework reflectively instantiates provider implementation classes (e.g. {@code
    * OpenSSLContextImpl$TLSv13}) via String lookup in {@code SSLContext.getInstance("TLS",
    * provider)}. In GraalVM Native Image builds, these reflectively looked-up SPI classes are
    * stripped by static analysis unless explicitly registered for reflection, leading to {@code
-   * ClassNotFoundException} / {@code NoSuchAlgorithmException} at runtime. Additionally, native
-   * JNI methods and JDK classes accessed by Conscrypt's native C library must be registered for
-   * GraalVM JNI linkage.
+   * ClassNotFoundException} / {@code NoSuchAlgorithmException} at runtime. Additionally, native JNI
+   * methods and JDK classes accessed by Conscrypt's native C library must be registered for GraalVM
+   * JNI linkage.
    */
   private void loadConscrypt(BeforeAnalysisAccess access) {
     Class<?> conscryptClass = access.findClassByName("org.conscrypt.Conscrypt");
