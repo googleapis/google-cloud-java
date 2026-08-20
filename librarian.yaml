@@ -16,8 +16,8 @@ version: v0.38.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: ca91093129b6744ee1dbb062381cdf63dcec669b
-    sha256: 00a17d6b7b6269c2f3aacc094a8f89a06dc0d8fa92f517841fa2032940887d22
+    commit: 184cb4401494cbe915f7e3526c7a25aab094ac36
+    sha256: 496e9b38c1a4d68a3b5416d5e0e7a463cd33ea2d2d6234c99b20ca4ca2f065fe
   showcase:
     commit: f97fd357084b9e85ef5dd02ba084551c3f85191c
     sha256: b5d293831e6895ca139d9a0a92eec75a82e73398978b140af8f7c5e91c7c969a
@@ -2966,12 +2966,14 @@ libraries:
   - name: maps-mapmanagement
     version: 0.5.0-SNAPSHOT
     apis:
+      - path: google/maps/mapmanagement/v2
       - path: google/maps/mapmanagement/v2beta
     java:
       api_id_override: mapmanagement.googleapis.com
       api_description_override: The Map Management API is a RESTful service that accepts HTTP requests for map styling data through a variety of methods. It returns formatted configuration data about map styling resources so that you can programmatically manage your Cloud-based map styles.
       artifact_id: google-maps-mapmanagement
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-mapmanagement/latest/overview
+      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Map Management API
       product_documentation_override: https://developers.google.com/maps/documentation/mapmanagement/overview
