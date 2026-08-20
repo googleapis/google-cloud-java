@@ -86,7 +86,7 @@ public class OAuth2Credentials extends Credentials {
   @Nullable @VisibleForTesting transient RefreshTask refreshTask;
 
   // Change listeners are not serialized
-  private transient List<CredentialsChangedListener> changeListeners;
+  private transient @Nullable List<CredentialsChangedListener> changeListeners;
   // Until we expose this to the users it can remain transient and non-serializable
   transient Clock clock = Clock.SYSTEM;
 

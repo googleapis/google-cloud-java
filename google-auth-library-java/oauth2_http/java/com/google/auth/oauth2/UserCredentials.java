@@ -461,7 +461,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
     }
 
     @CanIgnoreReturnValue
-    Builder setAccount(String account) {
+    Builder setAccount(@Nullable String account) {
       this.account = account;
       return this;
     }
@@ -510,8 +510,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
       return tokenServerUri;
     }
 
-    @Nullable
-    String getAccount() {
+    @Nullable String getAccount() {
       return account;
     }
 

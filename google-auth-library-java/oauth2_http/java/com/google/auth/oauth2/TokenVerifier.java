@@ -90,10 +90,10 @@ public class TokenVerifier {
       "https://www.googleapis.com/oauth2/v3/certs";
   private static final Set<String> SUPPORTED_ALGORITHMS = ImmutableSet.of("RS256", "ES256");
 
-  private final String audience;
-  private final String certificatesLocation;
-  private final String issuer;
-  private final PublicKey publicKey;
+  private final @Nullable String audience;
+  private final @Nullable String certificatesLocation;
+  private final @Nullable String issuer;
+  private final @Nullable PublicKey publicKey;
   private final Clock clock;
   private final LoadingCache<String, Map<String, PublicKey>> publicKeyCache;
 
@@ -193,12 +193,12 @@ public class TokenVerifier {
   }
 
   public static class Builder {
-    private String audience;
-    private String certificatesLocation;
-    private String issuer;
-    private PublicKey publicKey;
-    private Clock clock;
-    private HttpTransportFactory httpTransportFactory;
+    private @Nullable String audience;
+    private @Nullable String certificatesLocation;
+    private @Nullable String issuer;
+    private @Nullable PublicKey publicKey;
+    private @Nullable Clock clock;
+    private @Nullable HttpTransportFactory httpTransportFactory;
 
     /**
      * Set a target audience to verify.
@@ -206,7 +206,7 @@ public class TokenVerifier {
      * @param audience the audience claim to verify
      * @return the builder
      */
-    public Builder setAudience(String audience) {
+    public Builder setAudience(@Nullable String audience) {
       this.audience = audience;
       return this;
     }
@@ -218,7 +218,7 @@ public class TokenVerifier {
      * @param certificatesLocation URL to published public keys
      * @return the builder
      */
-    public Builder setCertificatesLocation(String certificatesLocation) {
+    public Builder setCertificatesLocation(@Nullable String certificatesLocation) {
       this.certificatesLocation = certificatesLocation;
       return this;
     }
@@ -229,7 +229,7 @@ public class TokenVerifier {
      * @param issuer the issuer claim to verify
      * @return the builder
      */
-    public Builder setIssuer(String issuer) {
+    public Builder setIssuer(@Nullable String issuer) {
       this.issuer = issuer;
       return this;
     }
@@ -241,7 +241,7 @@ public class TokenVerifier {
      * @param publicKey the public key to validate the signature
      * @return the builder
      */
-    public Builder setPublicKey(PublicKey publicKey) {
+    public Builder setPublicKey(@Nullable PublicKey publicKey) {
       this.publicKey = publicKey;
       return this;
     }
@@ -252,7 +252,7 @@ public class TokenVerifier {
      * @param clock the clock to use. Defaults to the system clock
      * @return the builder
      */
-    public Builder setClock(Clock clock) {
+    public Builder setClock(@Nullable Clock clock) {
       this.clock = clock;
       return this;
     }
@@ -264,7 +264,7 @@ public class TokenVerifier {
      * @param httpTransportFactory the HttpTransportFactory used to build certificate URL requests
      * @return the builder
      */
-    public Builder setHttpTransportFactory(HttpTransportFactory httpTransportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory httpTransportFactory) {
       this.httpTransportFactory = httpTransportFactory;
       return this;
     }

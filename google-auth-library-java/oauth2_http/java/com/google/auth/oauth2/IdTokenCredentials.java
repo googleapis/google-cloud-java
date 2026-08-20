@@ -128,7 +128,7 @@ public class IdTokenCredentials extends OAuth2Credentials {
     return this.idTokenProvider.idTokenWithAudience(targetAudience, options);
   }
 
-  public IdToken getIdToken() {
+  public @Nullable IdToken getIdToken() {
     return (IdToken) getAccessToken();
   }
 

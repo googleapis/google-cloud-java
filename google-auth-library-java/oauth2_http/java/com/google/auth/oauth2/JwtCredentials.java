@@ -84,9 +84,9 @@ public class JwtCredentials extends Credentials implements JwtProvider {
   private final Long lifeSpanSeconds;
   @VisibleForTesting transient Clock clock;
 
-  private transient String jwt;
+  private transient @Nullable String jwt;
   // The date (represented as seconds since the epoch) that the generated JWT expires
-  private transient Long expiryInSeconds;
+  private transient @Nullable Long expiryInSeconds;
 
   private JwtCredentials(Builder builder) {
     this.privateKey = Preconditions.checkNotNull(builder.getPrivateKey());
@@ -212,8 +212,8 @@ public class JwtCredentials extends Credentials implements JwtProvider {
     private @Nullable PrivateKey privateKey;
     private @Nullable String privateKeyId;
     private @Nullable JwtClaims jwtClaims;
-    private Clock clock = Clock.SYSTEM;
-    private Long lifeSpanSeconds = TimeUnit.HOURS.toSeconds(1);
+    private @Nullable Clock clock = Clock.SYSTEM;
+    private @Nullable Long lifeSpanSeconds = TimeUnit.HOURS.toSeconds(1);
 
     protected Builder() {}
 

@@ -110,7 +110,7 @@ public class GdchCredentials extends GoogleCredentials {
   private final String projectId;
   private final String serviceIdentityName;
   private final URI tokenServerUri;
-  private final String apiAudience;
+  private final @Nullable String apiAudience;
   private final int lifetime;
   private final String transportFactoryClassName;
   private final @Nullable String caCertPath;
@@ -444,7 +444,7 @@ public class GdchCredentials extends GoogleCredentials {
    *
    * @return the audience string, or null if no audience has been set.
    */
-  public final String getGdchAudience() {
+  public final @Nullable String getGdchAudience() {
     return apiAudience;
   }
 

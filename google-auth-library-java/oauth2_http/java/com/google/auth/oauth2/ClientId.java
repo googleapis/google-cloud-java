@@ -40,6 +40,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * An OAuth2 user authorization Client ID and associated information.
@@ -56,7 +57,7 @@ public class ClientId {
   private static final String JSON_PARSE_ERROR = "Error parsing Client ID JSON: ";
 
   private final String clientId;
-  private final String clientSecret;
+  private final @Nullable String clientSecret;
 
   /**
    * Constructs a client ID from an explicit ID and secret.
@@ -68,7 +69,7 @@ public class ClientId {
    * @param clientSecret Secret to associated with the Client ID.
    * @return The ClientId instance.
    */
-  public static ClientId of(String clientId, String clientSecret) {
+  public static ClientId of(String clientId, @Nullable String clientSecret) {
     return new ClientId(clientId, clientSecret);
   }
 
@@ -143,7 +144,7 @@ public class ClientId {
    * @param clientId Text identifier of the Client ID.
    * @param clientSecret Secret to associated with the Client ID.
    */
-  private ClientId(String clientId, String clientSecret) {
+  private ClientId(String clientId, @Nullable String clientSecret) {
     this.clientId = Preconditions.checkNotNull(clientId);
     this.clientSecret = clientSecret;
   }
@@ -162,7 +163,7 @@ public class ClientId {
    *
    * @return The secret associated with the Client ID.
    */
-  public final String getClientSecret() {
+  public final @Nullable String getClientSecret() {
     return clientSecret;
   }
 
@@ -176,9 +177,9 @@ public class ClientId {
 
   public static class Builder {
 
-    private String clientId;
+    private @Nullable String clientId;
 
-    private String clientSecret;
+    private @Nullable String clientSecret;
 
     protected Builder() {}
 
@@ -188,18 +189,18 @@ public class ClientId {
     }
 
     @CanIgnoreReturnValue
-    public Builder setClientId(String clientId) {
+    public Builder setClientId(@Nullable String clientId) {
       this.clientId = clientId;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setClientSecret(String clientSecret) {
+    public Builder setClientSecret(@Nullable String clientSecret) {
       this.clientSecret = clientSecret;
       return this;
     }
 
-    public String getClientSecret() {
+    public @Nullable String getClientSecret() {
       return clientSecret;
     }
 
