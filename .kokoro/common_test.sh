@@ -49,17 +49,10 @@ function test_update_pom_dependency {
 
   update_pom_dependency . truth "99.88.77"
 
-  xmllint --shell pom.xml &>/dev/null <<EOF
-setns x=http://maven.apache.org/POM/4.0.0
-cd .//x:artifactId[text()="truth"]
-cd ../x:version
-write found-version.txt
-EOF
-  if ! grep 99.88.77 found-version.txt &>/dev/null; then
+  if ! grep "<version>99.88.77</version>" pom.xml &>/dev/null; then
     echo "update_pom_dependency failed to change version to expected value."
     exit 1
   fi
-  rm found-version.txt
   popd
 }
 
@@ -71,6 +64,7 @@ function test_parse_pom_version {
   VERSION=$(parse_pom_version .)
   if [ "$VERSION" != "0.0.1-SNAPSHOT" ]; then
     echo "parse_pom_version failed to read expected version of gapic-showcase."
+    exit 1
   fi
   popd
 }
@@ -78,3 +72,4 @@ function test_parse_pom_version {
 test_find_all_poms_with_versioned_dependency
 test_update_pom_dependency
 test_parse_pom_version
+echo "All common.sh tests passed!"

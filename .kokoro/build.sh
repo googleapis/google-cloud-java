@@ -283,6 +283,9 @@ case ${JOB_TYPE} in
             unique_modules=$(printf '%s\n' "${changed_modules[@]}" | sort -u | paste -sd ',' -)
             MODULE_FILTER="-pl ${unique_modules}"
             echo "Formatting only changed modules: ${unique_modules}"
+        else
+            echo "No maven java modules affected. Skipping linter check."
+            exit 0
         fi
     else
         echo "BASE_SHA or HEAD_SHA is empty. Cannot continue linting."
