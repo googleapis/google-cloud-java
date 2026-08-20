@@ -77,6 +77,8 @@ public class ResumableUploadFutureImpl<RequestT, ResponseT>
   private final List<ListenerExecutorPair> progressListeners = new CopyOnWriteArrayList<>();
   private volatile ResumableUploadStatus currentStatus;
 
+  private final boolean isResumedSession;
+  private boolean initialQueryDone;
   private volatile @Nullable String sessionUrl;
   private volatile long committedOffset = 0L;
   private volatile boolean isUploadFinal = false;
@@ -93,6 +95,8 @@ public class ResumableUploadFutureImpl<RequestT, ResponseT>
       ApiFunction<String, ResponseT> responseTransformer) {
     this.client = checkNotNull(client);
     this.sessionUrl = sessionUrl;
+    this.isResumedSession = sessionUrl != null;
+    this.initialQueryDone = !isResumedSession;
     this.initialRequest = initialRequest;
     this.streamBuffer = new RewindableStreamBuffer(payload, chunkSize);
     this.chunkSize = chunkSize;
@@ -234,6 +238,47 @@ public class ResumableUploadFutureImpl<RequestT, ResponseT>
           MoreExecutors.directExecutor());
     }
 
+    if (isResumedSession && !initialQueryDone) {
+      initialQueryDone = true;
+      QueryStatusRequest queryRequest = QueryStatusRequest.create(sessionUrl);
+      return ApiFutures.transformAsync(
+          client.queryStatusCallable().futureCall(queryRequest, attemptContext),
+          queryResponse -> {
+            if (queryResponse.isComplete()) {
+              isUploadFinal = true;
+              finalResponseBody = queryResponse.getResponseBody();
+              long finalBytes = queryResponse.getCommittedOffset();
+              updateStatus(
+                  currentStatus
+                      .toBuilder()
+                      .setState(ResumableUploadStatus.State.FINALIZED)
+                      .setBytesUploaded(finalBytes)
+                      .setTotalBytes(finalBytes)
+                      .setException(null)
+                      .build());
+              return ApiFutures.immediateFuture(
+                  responseTransformer.apply(queryResponse.getResponseBody()));
+            }
+
+            long serverCommitted = queryResponse.getCommittedOffset();
+            this.committedOffset = serverCommitted;
+            try {
+              streamBuffer.seek(serverCommitted);
+            } catch (IOException e) {
+              return ApiFutures.immediateFailedFuture(e);
+            }
+            updateStatus(
+                currentStatus
+                    .toBuilder()
+                    .setState(ResumableUploadStatus.State.UPLOADING)
+                    .setBytesUploaded(serverCommitted)
+                    .setException(null)
+                    .build());
+            return transmitChunks(attemptContext);
+          },
+          MoreExecutors.directExecutor());
+    }
+
     return transmitChunks(attemptContext);
   }
 
@@ -245,15 +290,9 @@ public class ResumableUploadFutureImpl<RequestT, ResponseT>
       return ApiFutures.immediateFailedFuture(e);
     }
 
-    boolean isLast = streamBuffer.isEndOfStream();
-    String currentSessionUrl = checkNotNull(sessionUrl, "sessionUrl must not be null");
-
+    boolean isFinal = streamBuffer.isEndOfStream();
     ChunkUploadRequest chunkRequest =
-        ChunkUploadRequest.create(
-            currentSessionUrl,
-            chunkData,
-            committedOffset,
-            isLast);
+        ChunkUploadRequest.create(checkNotNull(sessionUrl, "sessionUrl must not be null"), chunkData, committedOffset, isFinal);
 
     return ApiFutures.transformAsync(
         client.uploadChunkCallable().futureCall(chunkRequest, attemptContext),
@@ -288,10 +327,6 @@ public class ResumableUploadFutureImpl<RequestT, ResponseT>
                   .setException(null)
                   .build());
 
-          if (isLast && chunkData.isEmpty()) {
-            return transmitChunks(attemptContext);
-          }
-
           return transmitChunks(attemptContext);
         },
         MoreExecutors.directExecutor());
@@ -300,13 +335,52 @@ public class ResumableUploadFutureImpl<RequestT, ResponseT>
   @Override
   public ApiFuture<Boolean> onAttemptFailure(
       Throwable previousThrowable, ApiCallContext attemptContext) {
+    if (sessionUrl == null) {
+      return ApiFutures.immediateFuture(true);
+    }
+
     updateStatus(
         currentStatus
             .toBuilder()
             .setState(ResumableUploadStatus.State.RECOVERING)
             .setException(previousThrowable)
             .build());
-    return ApiFutures.immediateFuture(true);
+
+    QueryStatusRequest queryRequest = QueryStatusRequest.create(sessionUrl);
+    return ApiFutures.transform(
+        client.queryStatusCallable().futureCall(queryRequest, attemptContext),
+        (QueryStatusResponse queryResponse) -> {
+          if (queryResponse.isComplete()) {
+            isUploadFinal = true;
+            finalResponseBody = queryResponse.getResponseBody();
+            updateStatus(
+                currentStatus
+                    .toBuilder()
+                    .setState(ResumableUploadStatus.State.FINALIZED)
+                    .setBytesUploaded(committedOffset)
+                    .setTotalBytes(committedOffset)
+                    .setException(null)
+                    .build());
+            return true;
+          }
+
+          long serverCommitted = queryResponse.getCommittedOffset();
+          this.committedOffset = serverCommitted;
+          try {
+            streamBuffer.seek(serverCommitted);
+          } catch (IOException e) {
+            throw new RuntimeException(e);
+          }
+          updateStatus(
+              currentStatus
+                  .toBuilder()
+                  .setState(ResumableUploadStatus.State.UPLOADING)
+                  .setBytesUploaded(serverCommitted)
+                  .setException(null)
+                  .build());
+          return true;
+        },
+        MoreExecutors.directExecutor());
   }
 
   // --------------------------------------------------------------------------
