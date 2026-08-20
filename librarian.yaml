@@ -531,6 +531,10 @@ libraries:
       api_description_override: The BigLake API provides access to BigLake Metastore, a serverless, fully managed, and highly available metastore for open-source data that can be used for querying Apache Iceberg tables in BigQuery.
       name_pretty_override: BigLake
       product_documentation_override: https://cloud.google.com/biglake
+  - name: biglake-hive
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/biglake/hive/v1
   - name: bigquery-data-exchange
     version: 2.91.0-SNAPSHOT
     apis:
