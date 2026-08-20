@@ -79,7 +79,11 @@ final class GoogleJsonClientFeature implements Feature {
       registerClassHierarchyForReflection(access, "org.conscrypt.KeyManagerFactoryImpl");
       registerClassHierarchyForReflection(access, "org.conscrypt.TrustManagerFactoryImpl");
 
-      // Register Conscrypt native JNI bridge classes
+      // Register Conscrypt native JNI bridge classes and hierarchy
+      registerClassHierarchyForReflection(access, "org.conscrypt.NativeCrypto");
+      registerClassHierarchyForReflection(access, "org.conscrypt.NativeCryptoJni");
+      registerClassHierarchyForReflection(access, "org.conscrypt.OpenSSLBioSession");
+
       registerClassForJni(access, "org.conscrypt.NativeCrypto");
       registerClassForJni(access, "org.conscrypt.NativeCryptoJni");
       registerClassForJni(access, "org.conscrypt.OpenSSLBioSession");
