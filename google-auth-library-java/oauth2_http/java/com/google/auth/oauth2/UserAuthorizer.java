@@ -76,8 +76,8 @@ public class UserAuthorizer {
 
   static final URI DEFAULT_CALLBACK_URI = URI.create("/oauth2callback");
 
-  private final String TOKEN_STORE_ERROR = "Error parsing stored token data.";
-  private final String FETCH_TOKEN_ERROR = "Error reading result of Token API:";
+  private static final String TOKEN_STORE_ERROR = "Error parsing stored token data.";
+  private static final String FETCH_TOKEN_ERROR = "Error reading result of Token API:";
 
   private final ClientId clientId;
   private final Collection<String> scopes;
@@ -241,7 +241,7 @@ public class UserAuthorizer {
     GenericJson tokenJson = OAuth2Utils.parseJson(tokenData);
     String accessTokenValue =
         OAuth2Utils.validateString(tokenJson, "access_token", TOKEN_STORE_ERROR);
-    Long expirationMillis =
+    long expirationMillis =
         OAuth2Utils.validateLong(tokenJson, "expiration_time_millis", TOKEN_STORE_ERROR);
     Date expirationTime = new Date(expirationMillis);
     List<String> scopes =
@@ -492,7 +492,7 @@ public class UserAuthorizer {
     String accessTokenValue =
         OAuth2Utils.validateString(parsedTokens, "access_token", FETCH_TOKEN_ERROR);
     int expiresInSecs = OAuth2Utils.validateInt32(parsedTokens, "expires_in", FETCH_TOKEN_ERROR);
-    Date expirationTime = new Date(new Date().getTime() + expiresInSecs * 1000);
+    Date expirationTime = new Date(new Date().getTime() + expiresInSecs * 1000L);
     String scopes =
         OAuth2Utils.validateOptionalString(
             parsedTokens, OAuth2Utils.TOKEN_RESPONSE_SCOPE, FETCH_TOKEN_ERROR);
@@ -669,7 +669,6 @@ public class UserAuthorizer {
         if (pkce.getCodeChallenge() == null
             || pkce.getCodeVerifier() == null
             || pkce.getCodeChallengeMethod() == null) {
-
           throw new IllegalArgumentException(
               "PKCE provider contained null implementations. PKCE object must implement all"
                   + " PKCEProvider methods.");
