@@ -602,6 +602,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return new ExecuteResult(tableResult, job);
   }
 
+  private StatementType getStatementType(ExecuteResult executeResult) {
+    if (executeResult.tableResult != null && executeResult.tableResult.getStatementType() != null) {
+      return executeResult.tableResult.getStatementType();
+    }
+    if (executeResult.job != null && executeResult.job.getStatistics() instanceof QueryStatistics) {
+      return ((QueryStatistics) executeResult.job.getStatistics()).getStatementType();
+    }
+    return null;
+  }
+
   /**
    * Execute the SQL script and sets the reference of the underlying job, passing null querySettings
    * will result in the FastQueryPath
@@ -620,10 +630,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     try {
       resetStatementFields();
       ExecuteResult executeResult = executeJob(jobConfiguration);
-      StatementType statementType =
-          executeResult.job == null
-              ? getStatementType(jobConfiguration)
-              : ((QueryStatistics) executeResult.job.getStatistics()).getStatementType();
+      StatementType statementType = getStatementType(executeResult);
       SqlType queryType = getQueryType(jobConfiguration, statementType);
       handleQueryResult(query, executeResult.tableResult, queryType, executeResult.job);
     } catch (InterruptedException ex) {
@@ -709,11 +716,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         break;
       case DML:
       case DML_EXTRA:
-        QueryStatistics dmlStats = getQueryStatisticsFromJob(results, job);
-        Long dmlRowCount =
-            (dmlStats != null && dmlStats.getNumDmlAffectedRows() != null)
-                ? dmlStats.getNumDmlAffectedRows()
-                : 0L;
+        Long dmlRowCount;
+        if (results != null && results.getNumDmlAffectedRows() != null) {
+          dmlRowCount = results.getNumDmlAffectedRows();
+        } else {
+          QueryStatistics dmlStats = getQueryStatisticsFromJob(results, job);
+          dmlRowCount =
+              (dmlStats != null && dmlStats.getNumDmlAffectedRows() != null)
+                  ? dmlStats.getNumDmlAffectedRows()
+                  : 0L;
+        }
         updateAffectedRowCount(dmlRowCount);
         break;
       case TCL:
