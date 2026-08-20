@@ -414,21 +414,23 @@ public class UserAuthorizer {
    */
   public void storeCredentials(String userId, UserCredentials credentials) throws IOException {
     AccessToken accessToken = credentials.getAccessToken();
-    String acessTokenValue = null;
+    String accessTokenValue = null;
     Date expiresBy = null;
     List<String> grantedScopes = new ArrayList<>();
 
     if (accessToken != null) {
-      acessTokenValue = accessToken.getTokenValue();
+      accessTokenValue = accessToken.getTokenValue();
       expiresBy = accessToken.getExpirationTime();
       grantedScopes = accessToken.getScopes();
     }
     String refreshToken = credentials.getRefreshToken();
     GenericJson tokenStateJson = new GenericJson();
     tokenStateJson.setFactory(OAuth2Utils.JSON_FACTORY);
-    tokenStateJson.put("access_token", acessTokenValue);
+    tokenStateJson.put("access_token", accessTokenValue);
     tokenStateJson.put(OAuth2Utils.TOKEN_RESPONSE_SCOPE, grantedScopes);
-    tokenStateJson.put("expiration_time_millis", expiresBy.getTime());
+    if (expiresBy != null) {
+      tokenStateJson.put("expiration_time_millis", expiresBy.getTime());
+    }
     if (refreshToken != null) {
       tokenStateJson.put("refresh_token", refreshToken);
     }
@@ -551,15 +553,15 @@ public class UserAuthorizer {
 
   public static class Builder {
 
-    private ClientId clientId;
-    private TokenStore tokenStore;
-    private URI callbackUri;
-    private URI tokenServerUri;
-    private URI userAuthUri;
-    private Collection<String> scopes;
-    private HttpTransportFactory transportFactory;
+    private @Nullable ClientId clientId;
+    private @Nullable TokenStore tokenStore;
+    private @Nullable URI callbackUri;
+    private @Nullable URI tokenServerUri;
+    private @Nullable URI userAuthUri;
+    private @Nullable Collection<String> scopes;
+    private @Nullable HttpTransportFactory transportFactory;
     private @Nullable PKCEProvider pkce;
-    private ClientAuthenticationType clientAuthenticationType;
+    private @Nullable ClientAuthenticationType clientAuthenticationType;
 
     protected Builder() {}
 
@@ -583,7 +585,7 @@ public class UserAuthorizer {
      */
     @CanIgnoreReturnValue
     public Builder setClientId(ClientId clientId) {
-      this.clientId = clientId;
+      this.clientId = Preconditions.checkNotNull(clientId);
       return this;
     }
 
@@ -595,7 +597,7 @@ public class UserAuthorizer {
      */
     @CanIgnoreReturnValue
     public Builder setTokenStore(TokenStore tokenStore) {
-      this.tokenStore = tokenStore;
+      this.tokenStore = Preconditions.checkNotNull(tokenStore);
       return this;
     }
 
@@ -607,7 +609,7 @@ public class UserAuthorizer {
      */
     @CanIgnoreReturnValue
     public Builder setScopes(Collection<String> scopes) {
-      this.scopes = scopes;
+      this.scopes = Preconditions.checkNotNull(scopes);
       return this;
     }
 
@@ -619,7 +621,7 @@ public class UserAuthorizer {
      */
     @CanIgnoreReturnValue
     public Builder setTokenServerUri(URI tokenServerUri) {
-      this.tokenServerUri = tokenServerUri;
+      this.tokenServerUri = Preconditions.checkNotNull(tokenServerUri);
       return this;
     }
 
@@ -632,7 +634,7 @@ public class UserAuthorizer {
      */
     @CanIgnoreReturnValue
     public Builder setCallbackUri(URI callbackUri) {
-      this.callbackUri = callbackUri;
+      this.callbackUri = Preconditions.checkNotNull(callbackUri);
       return this;
     }
 
@@ -644,7 +646,7 @@ public class UserAuthorizer {
      */
     @CanIgnoreReturnValue
     public Builder setUserAuthUri(URI userAuthUri) {
-      this.userAuthUri = userAuthUri;
+      this.userAuthUri = Preconditions.checkNotNull(userAuthUri);
       return this;
     }
 
@@ -656,7 +658,7 @@ public class UserAuthorizer {
      */
     @CanIgnoreReturnValue
     public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
-      this.transportFactory = transportFactory;
+      this.transportFactory = Preconditions.checkNotNull(transportFactory);
       return this;
     }
 
@@ -669,16 +671,15 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setPKCEProvider(@Nullable PKCEProvider pkce) {
-      if (pkce != null) {
-        if (pkce.getCodeChallenge() == null
-            || pkce.getCodeVerifier() == null
-            || pkce.getCodeChallengeMethod() == null) {
+    public Builder setPKCEProvider(PKCEProvider pkce) {
+      Preconditions.checkNotNull(pkce);
+      if (pkce.getCodeChallenge() == null
+          || pkce.getCodeVerifier() == null
+          || pkce.getCodeChallengeMethod() == null) {
 
-          throw new IllegalArgumentException(
-              "PKCE provider contained null implementations. PKCE object must implement all"
-                  + " PKCEProvider methods.");
-        }
+        throw new IllegalArgumentException(
+            "PKCE provider contained null implementations. PKCE object must implement all"
+                + " PKCEProvider methods.");
       }
       this.pkce = pkce;
       return this;
@@ -694,35 +695,35 @@ public class UserAuthorizer {
      */
     @CanIgnoreReturnValue
     public Builder setClientAuthenticationType(ClientAuthenticationType clientAuthentication) {
-      this.clientAuthenticationType = clientAuthentication;
+      this.clientAuthenticationType = Preconditions.checkNotNull(clientAuthentication);
       return this;
     }
 
-    public ClientId getClientId() {
+    public @Nullable ClientId getClientId() {
       return clientId;
     }
 
-    public TokenStore getTokenStore() {
+    public @Nullable TokenStore getTokenStore() {
       return tokenStore;
     }
 
-    public Collection<String> getScopes() {
+    public @Nullable Collection<String> getScopes() {
       return scopes;
     }
 
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    public URI getCallbackUri() {
+    public @Nullable URI getCallbackUri() {
       return callbackUri;
     }
 
-    public URI getUserAuthUri() {
+    public @Nullable URI getUserAuthUri() {
       return userAuthUri;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
@@ -730,7 +731,7 @@ public class UserAuthorizer {
       return pkce;
     }
 
-    public ClientAuthenticationType getClientAuthenticationType() {
+    public @Nullable ClientAuthenticationType getClientAuthenticationType() {
       return clientAuthenticationType;
     }
 
@@ -771,18 +772,18 @@ public class UserAuthorizer {
   public static class TokenResponseWithConfig {
 
     private final String clientId;
-    private final String clientSecret;
-    private final String refreshToken;
+    private final @Nullable String clientSecret;
+    private final @Nullable String refreshToken;
     private final AccessToken accessToken;
-    private URI tokenServerUri;
+    private final URI tokenServerUri;
     private final HttpTransportFactory httpTransportFactory;
 
     private TokenResponseWithConfig(Builder builder) {
-      this.clientId = builder.clientId;
+      this.clientId = Preconditions.checkNotNull(builder.clientId);
       this.clientSecret = builder.clientSecret;
-      this.accessToken = builder.accessToken;
-      this.httpTransportFactory = builder.httpTransportFactory;
-      this.tokenServerUri = builder.tokenServerUri;
+      this.accessToken = Preconditions.checkNotNull(builder.accessToken);
+      this.httpTransportFactory = Preconditions.checkNotNull(builder.httpTransportFactory);
+      this.tokenServerUri = Preconditions.checkNotNull(builder.tokenServerUri);
       this.refreshToken = builder.refreshToken;
     }
 
@@ -800,7 +801,7 @@ public class UserAuthorizer {
      *
      * @return The client secret.
      */
-    public String getClientSecret() {
+    public @Nullable String getClientSecret() {
       return clientSecret;
     }
 
@@ -836,8 +837,7 @@ public class UserAuthorizer {
      *
      * @return The refresh token, or null if not granted.
      */
-    @Nullable
-    public String getRefreshToken() {
+    public @Nullable String getRefreshToken() {
       return refreshToken;
     }
 
@@ -846,12 +846,12 @@ public class UserAuthorizer {
     }
 
     static class Builder {
-      private String clientId;
-      private String clientSecret;
-      private String refreshToken;
-      private AccessToken accessToken;
-      private URI tokenServerUri;
-      private HttpTransportFactory httpTransportFactory;
+      private @Nullable String clientId;
+      private @Nullable String clientSecret;
+      private @Nullable String refreshToken;
+      private @Nullable AccessToken accessToken;
+      private @Nullable URI tokenServerUri;
+      private @Nullable HttpTransportFactory httpTransportFactory;
 
       @CanIgnoreReturnValue
       Builder setClientId(String clientId) {
@@ -860,13 +860,13 @@ public class UserAuthorizer {
       }
 
       @CanIgnoreReturnValue
-      Builder setClientSecret(String clientSecret) {
+      Builder setClientSecret(@Nullable String clientSecret) {
         this.clientSecret = clientSecret;
         return this;
       }
 
       @CanIgnoreReturnValue
-      Builder setRefreshToken(String refreshToken) {
+      Builder setRefreshToken(@Nullable String refreshToken) {
         this.refreshToken = refreshToken;
         return this;
       }
