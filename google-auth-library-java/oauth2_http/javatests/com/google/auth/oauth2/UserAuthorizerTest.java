@@ -174,6 +174,63 @@ class UserAuthorizerTest {
   }
 
   @Test
+  void getCallbackUri_absoluteCallback_nullBaseUri() {
+    final URI callbackURI = URI.create("http://example.com/bar");
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setScopes(DUMMY_SCOPES)
+            .setCallbackUri(callbackURI)
+            .build();
+
+    URI resultCallbackURI = authorizer.getCallbackUri(null);
+
+    assertEquals(callbackURI, resultCallbackURI);
+  }
+
+  @Test
+  void getCallbackUri_relativeCallback_nullBaseUri_throwsIllegalStateException() {
+    final URI callbackURI = URI.create("/bar");
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setScopes(DUMMY_SCOPES)
+            .setCallbackUri(callbackURI)
+            .build();
+
+    assertThrows(IllegalStateException.class, () -> authorizer.getCallbackUri(null));
+  }
+
+  @Test
+  void getAuthorizationUrl_nullBaseUri() throws IOException {
+    final String protocol = "https";
+    final String host = "accounts.test.com";
+    final String path = "/o/o/oauth2/auth";
+    final URI authUri = URI.create(protocol + "://" + host + path);
+    final URI absoluteCallbackUri = URI.create("http://example.com/oauth2callback");
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setScopes(DUMMY_SCOPES)
+            .setCallbackUri(absoluteCallbackUri)
+            .setUserAuthUri(authUri)
+            .build();
+
+    URL authorizationUrl = authorizer.getAuthorizationUrl(USER_ID, "state", null);
+
+    assertEquals(protocol, authorizationUrl.getProtocol());
+    assertEquals(path, authorizationUrl.getPath());
+    assertEquals(host, authorizationUrl.getHost());
+    String query = authorizationUrl.getQuery();
+    Map<String, String> parameters = TestUtils.parseQuery(query);
+    assertEquals("state", parameters.get("state"));
+    assertEquals(USER_ID, parameters.get("login_hint"));
+    assertEquals(absoluteCallbackUri.toString(), parameters.get("redirect_uri"));
+    assertEquals(CLIENT_ID_VALUE, parameters.get("client_id"));
+    assertEquals(DUMMY_SCOPE, parameters.get("scope"));
+  }
+
+  @Test
   void getAuthorizationUrl() throws IOException {
     final String customState = "custom_state";
     final String protocol = "https";
@@ -888,5 +945,108 @@ class UserAuthorizerTest {
     assertEquals(tokenServerUri, tokenResponse.getTokenServerUri());
     assertEquals(httpTransportFactory, tokenResponse.getHttpTransportFactory());
     assertNull(tokenResponse.getRefreshToken());
+  }
+
+  @Test
+  void testTokenResponseWithConfig_noClientSecret() {
+    String clientId = "testClientId";
+    AccessToken accessToken = new AccessToken("token", new Date());
+    URI tokenServerUri = URI.create("https://example.com/token");
+    HttpTransportFactory httpTransportFactory = new MockTokenServerTransportFactory();
+
+    TokenResponseWithConfig tokenResponse =
+        TokenResponseWithConfig.newBuilder()
+            .setClientId(clientId)
+            .setClientSecret(null)
+            .setAccessToken(accessToken)
+            .setTokenServerUri(tokenServerUri)
+            .setHttpTransportFactory(httpTransportFactory)
+            .build();
+
+    assertEquals(clientId, tokenResponse.getClientId());
+    assertNull(tokenResponse.getClientSecret());
+    assertEquals(accessToken, tokenResponse.getAccessToken());
+    assertEquals(tokenServerUri, tokenResponse.getTokenServerUri());
+    assertEquals(httpTransportFactory, tokenResponse.getHttpTransportFactory());
+    assertNull(tokenResponse.getRefreshToken());
+  }
+
+  @Test
+  void toBuilder_preservesAllAttributes() {
+    TokenStore store = new MemoryTokensStorage();
+    URI tokenServerUri = URI.create("https://example.com/token");
+    URI userAuthUri = URI.create("https://example.com/auth");
+    HttpTransportFactory transportFactory = new MockTokenServerTransportFactory();
+
+    UserAuthorizer original =
+        UserAuthorizer.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setScopes(DUMMY_SCOPES)
+            .setTokenStore(store)
+            .setCallbackUri(CALLBACK_URI)
+            .setTokenServerUri(tokenServerUri)
+            .setUserAuthUri(userAuthUri)
+            .setHttpTransportFactory(transportFactory)
+            .setClientAuthenticationType(
+                UserAuthorizer.ClientAuthenticationType.CLIENT_SECRET_BASIC)
+            .build();
+
+    UserAuthorizer.Builder copyBuilder = original.toBuilder();
+
+    assertSame(original.getClientId(), copyBuilder.getClientId());
+    assertEquals(original.getScopes(), copyBuilder.getScopes());
+    assertSame(original.getTokenStore(), copyBuilder.getTokenStore());
+    assertEquals(original.getCallbackUri(), copyBuilder.getCallbackUri());
+    assertEquals(original.getClientAuthenticationType(), copyBuilder.getClientAuthenticationType());
+    assertNotNull(copyBuilder.getPKCEProvider());
+  }
+
+  @Test
+  void builder_getters_returnNullBeforeSet() {
+    UserAuthorizer.Builder builder = UserAuthorizer.newBuilder();
+    assertNull(builder.getClientId());
+    assertNull(builder.getScopes());
+    assertNull(builder.getTokenStore());
+    assertNull(builder.getCallbackUri());
+    assertNull(builder.getTokenServerUri());
+    assertNull(builder.getUserAuthUri());
+    assertNull(builder.getHttpTransportFactory());
+    assertNull(builder.getPKCEProvider());
+    assertNull(builder.getClientAuthenticationType());
+  }
+
+  @Test
+  void builder_defaultValues() {
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder().setClientId(CLIENT_ID).setScopes(DUMMY_SCOPES).build();
+
+    assertNotNull(authorizer.getTokenStore());
+    assertEquals(UserAuthorizer.DEFAULT_CALLBACK_URI, authorizer.getCallbackUri());
+    assertEquals(
+        UserAuthorizer.ClientAuthenticationType.CLIENT_SECRET_POST,
+        authorizer.getClientAuthenticationType());
+  }
+
+  @Test
+  void storeCredentials_nullAccessToken() throws IOException {
+    TokenStore store = new MemoryTokensStorage();
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setScopes(DUMMY_SCOPES)
+            .setTokenStore(store)
+            .build();
+
+    UserCredentials credentials =
+        UserCredentials.newBuilder()
+            .setClientId(CLIENT_ID_VALUE)
+            .setClientSecret(CLIENT_SECRET)
+            .setRefreshToken(REFRESH_TOKEN)
+            .build();
+
+    authorizer.storeCredentials(USER_ID, credentials);
+    String loaded = store.load(USER_ID);
+    assertNotNull(loaded);
+    assertTrue(loaded.contains(REFRESH_TOKEN));
   }
 }
