@@ -584,7 +584,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setClientId(@Nullable ClientId clientId) {
+    public Builder setClientId(ClientId clientId) {
       this.clientId = clientId;
       return this;
     }
@@ -596,7 +596,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setTokenStore(@Nullable TokenStore tokenStore) {
+    public Builder setTokenStore(TokenStore tokenStore) {
       this.tokenStore = tokenStore;
       return this;
     }
@@ -608,7 +608,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setScopes(@Nullable Collection<String> scopes) {
+    public Builder setScopes(Collection<String> scopes) {
       this.scopes = scopes;
       return this;
     }
@@ -620,7 +620,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setTokenServerUri(@Nullable URI tokenServerUri) {
+    public Builder setTokenServerUri(URI tokenServerUri) {
       this.tokenServerUri = tokenServerUri;
       return this;
     }
@@ -633,7 +633,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setCallbackUri(@Nullable URI callbackUri) {
+    public Builder setCallbackUri(URI callbackUri) {
       this.callbackUri = callbackUri;
       return this;
     }
@@ -645,7 +645,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setUserAuthUri(@Nullable URI userAuthUri) {
+    public Builder setUserAuthUri(URI userAuthUri) {
       this.userAuthUri = userAuthUri;
       return this;
     }
@@ -657,7 +657,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
       this.transportFactory = transportFactory;
       return this;
     }
@@ -694,8 +694,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setClientAuthenticationType(
-        @Nullable ClientAuthenticationType clientAuthentication) {
+    public Builder setClientAuthenticationType(ClientAuthenticationType clientAuthentication) {
       this.clientAuthenticationType = clientAuthentication;
       return this;
     }
