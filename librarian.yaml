@@ -2970,12 +2970,14 @@ libraries:
   - name: maps-mapmanagement
     version: 0.5.0-SNAPSHOT
     apis:
+      - path: google/maps/mapmanagement/v2
       - path: google/maps/mapmanagement/v2beta
     java:
       api_id_override: mapmanagement.googleapis.com
       api_description_override: The Map Management API is a RESTful service that accepts HTTP requests for map styling data through a variety of methods. It returns formatted configuration data about map styling resources so that you can programmatically manage your Cloud-based map styles.
       artifact_id: google-maps-mapmanagement
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-mapmanagement/latest/overview
+      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Map Management API
       product_documentation_override: https://developers.google.com/maps/documentation/mapmanagement/overview

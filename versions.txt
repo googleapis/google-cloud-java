@@ -1115,3 +1115,5 @@ google-cloud-biglake-hive-bom:0.0.0:0.1.0-SNAPSHOT
 proto-google-cloud-biglake-hive-v1:0.0.0:0.1.0-SNAPSHOT
 grpc-google-cloud-biglake-hive-v1:0.0.0:0.1.0-SNAPSHOT
 google-cloud-biglake-hive:0.0.0:0.1.0-SNAPSHOT
+proto-google-maps-mapmanagement-v2:0.4.0:0.5.0-SNAPSHOT
+grpc-google-maps-mapmanagement-v2:0.4.0:0.5.0-SNAPSHOT
