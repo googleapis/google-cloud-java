@@ -40,7 +40,7 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
 import com.google.api.client.util.Joiner;
-import com.google.api.client.util.Preconditions;
+import com.google.common.base.Preconditions;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
@@ -836,8 +836,7 @@ public class UserAuthorizer {
      *
      * @return The refresh token, or null if not granted.
      */
-    @Nullable
-    public String getRefreshToken() {
+    public @Nullable String getRefreshToken() {
       return refreshToken;
     }
 

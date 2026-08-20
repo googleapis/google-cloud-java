@@ -804,8 +804,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
-    @Nullable
-    public GoogleCredentials getSourceCredentials() {
+    public @Nullable GoogleCredentials getSourceCredentials() {
       return this.sourceCredentials;
     }
 
@@ -815,8 +814,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
-    @Nullable
-    public String getTargetPrincipal() {
+    public @Nullable String getTargetPrincipal() {
       return this.targetPrincipal;
     }
 
@@ -826,8 +824,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
-    @Nullable
-    public List<String> getDelegates() {
+    public @Nullable List<String> getDelegates() {
       return this.delegates;
     }
 
@@ -847,8 +844,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
     /**
      * @return List of scopes to be applied to the impersonated token.
      */
-    @Nullable
-    public List<String> getScopes() {
+    public @Nullable List<String> getScopes() {
       return this.scopes;
     }
 
@@ -868,8 +864,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
-    @Nullable
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
@@ -910,9 +905,8 @@ public class ImpersonatedCredentials extends GoogleCredentials
      *
      * @return the calendar
      */
-    @Nullable
     @ObsoleteApi("This method is obsolete and will be removed in a future release.")
-    public Calendar getCalendar() {
+    public @Nullable Calendar getCalendar() {
       return this.calendar;
     }
 

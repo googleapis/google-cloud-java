@@ -42,7 +42,7 @@ import com.google.api.client.http.UrlEncodedContent;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
-import com.google.api.client.util.Preconditions;
+import com.google.common.base.Preconditions;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.base.MoreObjects;
 import com.google.common.io.BaseEncoding;
@@ -231,38 +231,31 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
         .build();
   }
 
-  @Nullable
-  public String getAudience() {
+  public @Nullable String getAudience() {
     return audience;
   }
 
-  @Nullable
-  public String getClientId() {
+  public @Nullable String getClientId() {
     return clientId;
   }
 
-  @Nullable
-  public String getClientSecret() {
+  public @Nullable String getClientSecret() {
     return clientSecret;
   }
 
-  @Nullable
-  public String getRevokeUrl() {
+  public @Nullable String getRevokeUrl() {
     return revokeUrl;
   }
 
-  @Nullable
-  public String getTokenUrl() {
+  public @Nullable String getTokenUrl() {
     return tokenUrl;
   }
 
-  @Nullable
-  public String getTokenInfoUrl() {
+  public @Nullable String getTokenInfoUrl() {
     return tokenInfoUrl;
   }
 
-  @Nullable
-  public String getRefreshToken() {
+  public @Nullable String getRefreshToken() {
     return refreshToken;
   }
 
@@ -417,14 +410,14 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
   /** Builder for {@link ExternalAccountAuthorizedUserCredentials}. */
   public static class Builder extends GoogleCredentials.Builder {
 
-    @Nullable private HttpTransportFactory transportFactory;
-    @Nullable private String audience;
-    @Nullable private String refreshToken;
-    @Nullable private String tokenUrl;
-    @Nullable private String tokenInfoUrl;
-    @Nullable private String revokeUrl;
-    @Nullable private String clientId;
-    @Nullable private String clientSecret;
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable String audience;
+    private @Nullable String refreshToken;
+    private @Nullable String tokenUrl;
+    private @Nullable String tokenInfoUrl;
+    private @Nullable String revokeUrl;
+    private @Nullable String clientId;
+    private @Nullable String clientSecret;
 
     protected Builder() {}
 

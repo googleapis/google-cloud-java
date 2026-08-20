@@ -67,8 +67,8 @@ public class AwsCredentials extends ExternalAccountCredentials {
   private final ExternalAccountSupplierContext supplierContext;
   // Regional credential verification url override. This needs to be its own value so we can
   // correctly pass it to a builder.
-  @Nullable private final String regionalCredentialVerificationUrlOverride;
-  @Nullable private final String regionalCredentialVerificationUrl;
+  private final @Nullable String regionalCredentialVerificationUrlOverride;
+  private final @Nullable String regionalCredentialVerificationUrl;
   private final String metricsHeaderValue;
 
   /** Internal constructor. See {@link AwsCredentials.Builder}. */
@@ -203,8 +203,7 @@ public class AwsCredentials extends ExternalAccountCredentials {
     return this.awsSecurityCredentialsSupplier;
   }
 
-  @Nullable
-  public String getRegionalCredentialVerificationUrlOverride() {
+  public @Nullable String getRegionalCredentialVerificationUrlOverride() {
     return this.regionalCredentialVerificationUrlOverride;
   }
 
@@ -237,9 +236,9 @@ public class AwsCredentials extends ExternalAccountCredentials {
 
   public static class Builder extends ExternalAccountCredentials.Builder {
 
-    @Nullable private AwsSecurityCredentialsSupplier awsSecurityCredentialsSupplier;
+    private @Nullable AwsSecurityCredentialsSupplier awsSecurityCredentialsSupplier;
 
-    @Nullable private String regionalCredentialVerificationUrlOverride;
+    private @Nullable String regionalCredentialVerificationUrlOverride;
 
     Builder() {}
 

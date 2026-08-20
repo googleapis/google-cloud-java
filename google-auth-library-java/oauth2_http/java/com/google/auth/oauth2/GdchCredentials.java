@@ -472,8 +472,7 @@ public class GdchCredentials extends GoogleCredentials {
     return transportFactory;
   }
 
-  @Nullable
-  public final String getCaCertPath() {
+  public final @Nullable String getCaCertPath() {
     return caCertPath;
   }
 
@@ -625,38 +624,31 @@ public class GdchCredentials extends GoogleCredentials {
       return this;
     }
 
-    @Nullable
-    public String getProjectId() {
+    public @Nullable String getProjectId() {
       return projectId;
     }
 
-    @Nullable
-    public String getPrivateKeyId() {
+    public @Nullable String getPrivateKeyId() {
       return privateKeyId;
     }
 
-    @Nullable
-    public PrivateKey getPrivateKey() {
+    public @Nullable PrivateKey getPrivateKey() {
       return privateKey;
     }
 
-    @Nullable
-    public String getServiceIdentityName() {
+    public @Nullable String getServiceIdentityName() {
       return serviceIdentityName;
     }
 
-    @Nullable
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    @Nullable
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
-    @Nullable
-    public String getCaCertPath() {
+    public @Nullable String getCaCertPath() {
       return caCertPath;
     }
 

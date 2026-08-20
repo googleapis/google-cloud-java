@@ -31,7 +31,7 @@
 
 package com.google.auth.oauth2;
 
-import com.google.api.client.util.Preconditions;
+import com.google.common.base.Preconditions;
 import com.google.common.base.MoreObjects;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
@@ -187,8 +187,7 @@ public class IdTokenCredentials extends OAuth2Credentials {
       return this;
     }
 
-    @Nullable
-    public IdTokenProvider getIdTokenProvider() {
+    public @Nullable IdTokenProvider getIdTokenProvider() {
       return this.idTokenProvider;
     }
 
@@ -205,8 +204,7 @@ public class IdTokenCredentials extends OAuth2Credentials {
       return this;
     }
 
-    @Nullable
-    public String getTargetAudience() {
+    public @Nullable String getTargetAudience() {
       return this.targetAudience;
     }
 
@@ -222,8 +220,7 @@ public class IdTokenCredentials extends OAuth2Credentials {
       return this;
     }
 
-    @Nullable
-    public List<IdTokenProvider.Option> getOptions() {
+    public @Nullable List<IdTokenProvider.Option> getOptions() {
       return this.options;
     }
 

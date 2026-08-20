@@ -174,9 +174,9 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
             return executableTimeoutMs;
           }
 
-          @Nullable
           @Override
-          public String getOutputFilePath() {
+
+          public @Nullable String getOutputFilePath() {
             return outputFilePath;
           }
         };
@@ -217,7 +217,7 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
   public static class Builder extends ExternalAccountCredentials.Builder {
 
-    @Nullable private ExecutableHandler handler;
+    private @Nullable ExecutableHandler handler;
 
     Builder() {}
 

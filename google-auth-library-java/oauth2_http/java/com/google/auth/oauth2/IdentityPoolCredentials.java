@@ -204,8 +204,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   public static class Builder extends ExternalAccountCredentials.Builder {
 
-    @Nullable private IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
-    @Nullable private X509Provider x509Provider;
+    private @Nullable IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
+    private @Nullable X509Provider x509Provider;
 
     Builder() {}
 

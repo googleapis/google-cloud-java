@@ -75,8 +75,8 @@ public final class StsRequestHandler {
   private final StsTokenExchangeRequest request;
   private final HttpRequestFactory httpRequestFactory;
 
-  @Nullable private final HttpHeaders headers;
-  @Nullable private final String internalOptions;
+  private final @Nullable HttpHeaders headers;
+  private final @Nullable String internalOptions;
 
   private StsRequestHandler(Builder builder) {
     this.tokenExchangeEndpoint = builder.tokenExchangeEndpoint;
@@ -211,8 +211,8 @@ public final class StsRequestHandler {
     private final StsTokenExchangeRequest request;
     private final HttpRequestFactory httpRequestFactory;
 
-    @Nullable private HttpHeaders headers;
-    @Nullable private String internalOptions;
+    private @Nullable HttpHeaders headers;
+    private @Nullable String internalOptions;
 
     private Builder(
         String tokenExchangeEndpoint,

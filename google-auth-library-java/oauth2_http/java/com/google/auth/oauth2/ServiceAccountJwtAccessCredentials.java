@@ -37,7 +37,7 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.Clock;
-import com.google.api.client.util.Preconditions;
+import com.google.common.base.Preconditions;
 import com.google.auth.Credentials;
 import com.google.auth.RequestMetadataCallback;
 import com.google.auth.ServiceAccountSigner;
@@ -508,8 +508,7 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   }
 
   @Override
-  @Nullable
-  public String getQuotaProjectId() {
+  public @Nullable String getQuotaProjectId() {
     return quotaProjectId;
   }
 
@@ -578,39 +577,32 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
       return this;
     }
 
-    @Nullable
-    public String getClientId() {
+    public @Nullable String getClientId() {
       return clientId;
     }
 
-    @Nullable
-    public String getClientEmail() {
+    public @Nullable String getClientEmail() {
       return clientEmail;
     }
 
-    @Nullable
-    public PrivateKey getPrivateKey() {
+    public @Nullable PrivateKey getPrivateKey() {
       return privateKey;
     }
 
-    @Nullable
-    public String getPrivateKeyId() {
+    public @Nullable String getPrivateKeyId() {
       return privateKeyId;
     }
 
-    @Nullable
-    public URI getDefaultAudience() {
+    public @Nullable URI getDefaultAudience() {
       return defaultAudience;
     }
 
-    @Nullable
-    public String getQuotaProjectId() {
+    public @Nullable String getQuotaProjectId() {
       return quotaProjectId;
     }
 
     /** Returns the universe domain (example, googleapis.com) for the credentials instance. */
-    @Nullable
-    public String getUniverseDomain() {
+    public @Nullable String getUniverseDomain() {
       return universeDomain;
     }
 

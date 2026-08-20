@@ -58,10 +58,10 @@ public final class StsTokenExchangeResponse {
   private final String issuedTokenType;
   private final String tokenType;
 
-  @Nullable private final Long expiresInSeconds;
-  @Nullable private final String refreshToken;
-  @Nullable private final List<String> scopes;
-  @Nullable private final String accessBoundarySessionKey;
+  private final @Nullable Long expiresInSeconds;
+  private final @Nullable String refreshToken;
+  private final @Nullable List<String> scopes;
+  private final @Nullable String accessBoundarySessionKey;
 
   private StsTokenExchangeResponse(
       String accessToken,
@@ -111,18 +111,15 @@ public final class StsTokenExchangeResponse {
     return tokenType;
   }
 
-  @Nullable
-  public Long getExpiresInSeconds() {
+  public @Nullable Long getExpiresInSeconds() {
     return expiresInSeconds;
   }
 
-  @Nullable
-  public String getRefreshToken() {
+  public @Nullable String getRefreshToken() {
     return refreshToken;
   }
 
-  @Nullable
-  public List<String> getScopes() {
+  public @Nullable List<String> getScopes() {
     if (scopes == null) {
       return null;
     }
@@ -134,8 +131,7 @@ public final class StsTokenExchangeResponse {
    *
    * @return the access boundary session key or {@code null} if not present
    */
-  @Nullable
-  public String getAccessBoundarySessionKey() {
+  public @Nullable String getAccessBoundarySessionKey() {
     return accessBoundarySessionKey;
   }
 
@@ -144,10 +140,10 @@ public final class StsTokenExchangeResponse {
     private final String issuedTokenType;
     private final String tokenType;
 
-    @Nullable private Long expiresInSeconds;
-    @Nullable private String refreshToken;
-    @Nullable private List<String> scopes;
-    @Nullable private String accessBoundarySessionKey;
+    private @Nullable Long expiresInSeconds;
+    private @Nullable String refreshToken;
+    private @Nullable List<String> scopes;
+    private @Nullable String accessBoundarySessionKey;
 
     private Builder(String accessToken, String issuedTokenType, String tokenType) {
       this.accessToken = accessToken;

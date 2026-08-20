@@ -939,18 +939,15 @@ public class ComputeEngineCredentials extends GoogleCredentials
       return this;
     }
 
-    @Nullable
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
-    @Nullable
-    public Collection<String> getScopes() {
+    public @Nullable Collection<String> getScopes() {
       return scopes;
     }
 
-    @Nullable
-    public Collection<String> getDefaultScopes() {
+    public @Nullable Collection<String> getDefaultScopes() {
       return defaultScopes;
     }
 
@@ -959,8 +956,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
      *
      * @return the transport type over which to authenticate to Google APIs
      */
-    @Nullable
-    public GoogleAuthTransport getGoogleAuthTransport() {
+    public @Nullable GoogleAuthTransport getGoogleAuthTransport() {
       return transport;
     }
 
@@ -969,8 +965,7 @@ public class ComputeEngineCredentials extends GoogleCredentials
      *
      * @return the token binding enforcement policy.
      */
-    @Nullable
-    public BindingEnforcement getBindingEnforcement() {
+    public @Nullable BindingEnforcement getBindingEnforcement() {
       return bindingEnforcement;
     }
 

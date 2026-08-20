@@ -83,19 +83,19 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   private final ServiceAccountImpersonationOptions serviceAccountImpersonationOptions;
   private ExternalAccountMetricsHandler metricsHandler;
 
-  @Nullable private final String tokenInfoUrl;
-  @Nullable private final String serviceAccountImpersonationUrl;
-  @Nullable private final String clientId;
-  @Nullable private final String clientSecret;
+  private final @Nullable String tokenInfoUrl;
+  private final @Nullable String serviceAccountImpersonationUrl;
+  private final @Nullable String clientId;
+  private final @Nullable String clientSecret;
 
   // This is used for Workforce Pools. It is passed to the Security Token Service during token
   // exchange in the `options` param and will be embedded in the token by the Security Token
   // Service.
-  @Nullable private final String workforcePoolUserProject;
+  private final @Nullable String workforcePoolUserProject;
 
   protected transient HttpTransportFactory transportFactory;
 
-  @Nullable protected ImpersonatedCredentials impersonatedCredentials;
+  protected @Nullable ImpersonatedCredentials impersonatedCredentials;
 
   private EnvironmentProvider environmentProvider;
   private PropertyProvider propertyProvider;
@@ -606,44 +606,37 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     transportFactory = newInstance(transportFactoryClassName);
   }
 
-  @Nullable
-  public String getServiceAccountImpersonationUrl() {
+  public @Nullable String getServiceAccountImpersonationUrl() {
     return serviceAccountImpersonationUrl;
   }
 
   /**
    * @return The service account email to be impersonated, if available
    */
-  @Nullable
-  public String getServiceAccountEmail() {
+  public @Nullable String getServiceAccountEmail() {
     if (serviceAccountImpersonationUrl == null || serviceAccountImpersonationUrl.isEmpty()) {
       return null;
     }
     return ImpersonatedCredentials.extractTargetPrincipal(serviceAccountImpersonationUrl);
   }
 
-  @Nullable
-  public String getClientId() {
+  public @Nullable String getClientId() {
     return clientId;
   }
 
-  @Nullable
-  public String getClientSecret() {
+  public @Nullable String getClientSecret() {
     return clientSecret;
   }
 
-  @Nullable
-  public Collection<String> getScopes() {
+  public @Nullable Collection<String> getScopes() {
     return scopes;
   }
 
-  @Nullable
-  public String getWorkforcePoolUserProject() {
+  public @Nullable String getWorkforcePoolUserProject() {
     return workforcePoolUserProject;
   }
 
-  @Nullable
-  public ServiceAccountImpersonationOptions getServiceAccountImpersonationOptions() {
+  public @Nullable ServiceAccountImpersonationOptions getServiceAccountImpersonationOptions() {
     return serviceAccountImpersonationOptions;
   }
 
@@ -768,28 +761,28 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   /** Base builder for external account credentials. */
   public abstract static class Builder extends GoogleCredentials.Builder {
 
-    @Nullable protected String audience;
-    @Nullable protected String subjectTokenType;
-    @Nullable protected String tokenUrl;
-    @Nullable protected String tokenInfoUrl;
-    @Nullable protected CredentialSource credentialSource;
-    @Nullable protected EnvironmentProvider environmentProvider;
-    @Nullable protected PropertyProvider propertyProvider;
-    @Nullable protected HttpTransportFactory transportFactory;
+    protected @Nullable String audience;
+    protected @Nullable String subjectTokenType;
+    protected @Nullable String tokenUrl;
+    protected @Nullable String tokenInfoUrl;
+    protected @Nullable CredentialSource credentialSource;
+    protected @Nullable EnvironmentProvider environmentProvider;
+    protected @Nullable PropertyProvider propertyProvider;
+    protected @Nullable HttpTransportFactory transportFactory;
 
-    @Nullable protected String serviceAccountImpersonationUrl;
-    @Nullable protected String clientId;
-    @Nullable protected String clientSecret;
-    @Nullable protected Collection<String> scopes;
-    @Nullable protected String workforcePoolUserProject;
-    @Nullable protected ServiceAccountImpersonationOptions serviceAccountImpersonationOptions;
+    protected @Nullable String serviceAccountImpersonationUrl;
+    protected @Nullable String clientId;
+    protected @Nullable String clientSecret;
+    protected @Nullable Collection<String> scopes;
+    protected @Nullable String workforcePoolUserProject;
+    protected @Nullable ServiceAccountImpersonationOptions serviceAccountImpersonationOptions;
 
     /* The field is not being used and value not set. Superseded by the same field in the
     {@link GoogleCredentials.Builder}.
     */
-    @Nullable @Deprecated protected String universeDomain;
+    @Deprecated protected @Nullable String universeDomain;
 
-    @Nullable protected ExternalAccountMetricsHandler metricsHandler;
+    protected @Nullable ExternalAccountMetricsHandler metricsHandler;
 
     protected Builder() {}
 

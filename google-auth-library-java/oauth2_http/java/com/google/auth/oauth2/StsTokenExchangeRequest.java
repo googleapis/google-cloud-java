@@ -57,12 +57,12 @@ public final class StsTokenExchangeRequest {
   private final String subjectToken;
   private final String subjectTokenType;
 
-  @Nullable private final ActingParty actingParty;
-  @Nullable private final List<String> scopes;
-  @Nullable private final String resource;
-  @Nullable private final String audience;
-  @Nullable private final String requestedTokenType;
-  @Nullable private final String internalOptions;
+  private final @Nullable ActingParty actingParty;
+  private final @Nullable List<String> scopes;
+  private final @Nullable String resource;
+  private final @Nullable String audience;
+  private final @Nullable String requestedTokenType;
+  private final @Nullable String internalOptions;
 
   private StsTokenExchangeRequest(
       String subjectToken,
@@ -108,33 +108,27 @@ public final class StsTokenExchangeRequest {
     return subjectTokenType;
   }
 
-  @Nullable
-  public String getResource() {
+  public @Nullable String getResource() {
     return resource;
   }
 
-  @Nullable
-  public String getAudience() {
+  public @Nullable String getAudience() {
     return audience;
   }
 
-  @Nullable
-  public String getRequestedTokenType() {
+  public @Nullable String getRequestedTokenType() {
     return requestedTokenType;
   }
 
-  @Nullable
-  public List<String> getScopes() {
+  public @Nullable List<String> getScopes() {
     return scopes;
   }
 
-  @Nullable
-  public ActingParty getActingParty() {
+  public @Nullable ActingParty getActingParty() {
     return actingParty;
   }
 
-  @Nullable
-  public String getInternalOptions() {
+  public @Nullable String getInternalOptions() {
     return internalOptions;
   }
 
@@ -162,12 +156,12 @@ public final class StsTokenExchangeRequest {
     private final String subjectToken;
     private final String subjectTokenType;
 
-    @Nullable private String resource;
-    @Nullable private String audience;
-    @Nullable private String requestedTokenType;
-    @Nullable private List<String> scopes;
-    @Nullable private ActingParty actingParty;
-    @Nullable private String internalOptions;
+    private @Nullable String resource;
+    private @Nullable String audience;
+    private @Nullable String requestedTokenType;
+    private @Nullable List<String> scopes;
+    private @Nullable ActingParty actingParty;
+    private @Nullable String internalOptions;
 
     private Builder(String subjectToken, String subjectTokenType) {
       this.subjectToken = subjectToken;

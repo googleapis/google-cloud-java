@@ -82,7 +82,7 @@ public class OAuth2Credentials extends Credentials {
 
   // byte[] is serializable, so the lock variable can be final
   @VisibleForTesting final Object lock = new byte[0];
-  @Nullable private volatile OAuthValue value = null;
+  private volatile @Nullable OAuthValue value = null;
   @Nullable @VisibleForTesting transient RefreshTask refreshTask;
 
   // Change listeners are not serialized
@@ -149,8 +149,7 @@ public class OAuth2Credentials extends Credentials {
    *
    * @return The cached access token.
    */
-  @Nullable
-  public final AccessToken getAccessToken() {
+  public final @Nullable AccessToken getAccessToken() {
     OAuthValue localState = value;
     if (localState != null) {
       return localState.temporaryAccess;
@@ -440,8 +439,7 @@ public class OAuth2Credentials extends Credentials {
     return Objects.hashCode(value);
   }
 
-  @Nullable
-  protected Map<String, List<String>> getRequestMetadataInternal() {
+  protected @Nullable Map<String, List<String>> getRequestMetadataInternal() {
     OAuthValue localValue = value;
     if (localValue != null) {
       return localValue.requestMetadata;
@@ -749,8 +747,7 @@ public class OAuth2Credentials extends Credentials {
       return expirationMargin;
     }
 
-    @Nullable
-    public AccessToken getAccessToken() {
+    public @Nullable AccessToken getAccessToken() {
       return accessToken;
     }
 

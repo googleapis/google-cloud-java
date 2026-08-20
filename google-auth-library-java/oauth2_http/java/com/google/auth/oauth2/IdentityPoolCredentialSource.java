@@ -52,7 +52,7 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
   private String credentialLocation;
   @Nullable String subjectTokenFieldName;
   @Nullable Map<String, String> headers;
-  @Nullable private CertificateConfig certificateConfig;
+  private @Nullable CertificateConfig certificateConfig;
 
   /**
    * Gets the location of the credential source. This could be a file path or a URL, depending on
@@ -80,8 +80,7 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
    * @return The {@link CertificateConfig} object, or {@code null} if not configured for
    *     certificate-based credentials.
    */
-  @Nullable
-  public CertificateConfig getCertificateConfig() {
+  public @Nullable CertificateConfig getCertificateConfig() {
     return certificateConfig;
   }
 
@@ -176,7 +175,7 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
      * useDefaultCertificateConfig} is false or unset. Must be set if {@code
      * useDefaultCertificateConfig} is false.
      */
-    @Nullable private final String certificateConfigLocation;
+    private final @Nullable String certificateConfigLocation;
 
     /**
      * Specifies the path to a PEM-formatted file containing the X.509 certificate trust chain. This
@@ -186,7 +185,7 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
      * workload identity pool's trust store are optional in this file. Certificates should be
      * ordered with the leaf certificate (or the certificate which signed the leaf) first.
      */
-    @Nullable private final String trustChainPath;
+    private final @Nullable String trustChainPath;
 
     /**
      * Constructor for {@code CertificateConfig}.
@@ -225,14 +224,12 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
     }
 
     /** Returns the path to the client certificate file, or null if not set. */
-    @Nullable
-    public String getCertificateConfigLocation() {
+    public @Nullable String getCertificateConfigLocation() {
       return certificateConfigLocation;
     }
 
     /** Returns the path to the trust chain file, or null if not set. */
-    @Nullable
-    public String getTrustChainPath() {
+    public @Nullable String getTrustChainPath() {
       return trustChainPath;
     }
   }

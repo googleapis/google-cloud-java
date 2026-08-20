@@ -33,7 +33,7 @@ package com.google.auth.oauth2;
 
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
-import com.google.api.client.util.Preconditions;
+import com.google.common.base.Preconditions;
 import com.google.api.core.ObsoleteApi;
 import com.google.auth.Credentials;
 import com.google.auth.http.HttpTransportFactory;
@@ -79,7 +79,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
     COMPUTE_ENGINE_CREDENTIALS("Compute Engine Credentials", null);
 
     private final String credentialName;
-    @Nullable private final String fileType;
+    private final @Nullable String fileType;
 
     GoogleCredentialsInfo(String credentialName, @Nullable String fileType) {
       this.credentialName = credentialName;
@@ -527,8 +527,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   }
 
   @Override
-  @Nullable
-  public String getQuotaProjectId() {
+  public @Nullable String getQuotaProjectId() {
     return this.quotaProjectId;
   }
 
@@ -539,8 +538,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    *
    * @return the project id for a Credential type
    */
-  @Nullable
-  public String getProjectId() {
+  public @Nullable String getProjectId() {
     return null;
   }
 
@@ -655,8 +653,8 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
   }
 
   public static class Builder extends OAuth2Credentials.Builder {
-    @Nullable protected String quotaProjectId;
-    @Nullable protected String universeDomain;
+    protected @Nullable String quotaProjectId;
+    protected @Nullable String universeDomain;
     @Nullable String source;
 
     protected Builder() {}
@@ -691,13 +689,11 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
       return this;
     }
 
-    @Nullable
-    public String getQuotaProjectId() {
+    public @Nullable String getQuotaProjectId() {
       return this.quotaProjectId;
     }
 
-    @Nullable
-    public String getUniverseDomain() {
+    public @Nullable String getUniverseDomain() {
       return this.universeDomain;
     }
 

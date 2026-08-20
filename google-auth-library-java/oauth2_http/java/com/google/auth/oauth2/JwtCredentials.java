@@ -223,8 +223,7 @@ public class JwtCredentials extends Credentials implements JwtProvider {
       return this;
     }
 
-    @Nullable
-    public PrivateKey getPrivateKey() {
+    public @Nullable PrivateKey getPrivateKey() {
       return privateKey;
     }
 
@@ -234,8 +233,7 @@ public class JwtCredentials extends Credentials implements JwtProvider {
       return this;
     }
 
-    @Nullable
-    public String getPrivateKeyId() {
+    public @Nullable String getPrivateKeyId() {
       return privateKeyId;
     }
 
@@ -245,8 +243,7 @@ public class JwtCredentials extends Credentials implements JwtProvider {
       return this;
     }
 
-    @Nullable
-    public JwtClaims getJwtClaims() {
+    public @Nullable JwtClaims getJwtClaims() {
       return jwtClaims;
     }
 

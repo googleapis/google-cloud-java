@@ -56,14 +56,11 @@ import org.jspecify.annotations.Nullable;
 public abstract class JwtClaims implements Serializable {
   private static final long serialVersionUID = 4974444151019426702L;
 
-  @Nullable
-  abstract String getAudience();
+  abstract @Nullable String getAudience();
 
-  @Nullable
-  abstract String getIssuer();
+  abstract @Nullable String getIssuer();
 
-  @Nullable
-  abstract String getSubject();
+  abstract @Nullable String getSubject();
 
   /**
    * Returns additional claims for this object. The returned map is not guaranteed to be mutable.

@@ -51,7 +51,7 @@ import com.google.api.client.json.webtoken.JsonWebToken;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.client.util.GenericData;
 import com.google.api.client.util.Joiner;
-import com.google.api.client.util.Preconditions;
+import com.google.common.base.Preconditions;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
 import com.google.auth.RequestMetadataCallback;
@@ -784,8 +784,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     return this.toBuilder().setServiceAccountUser(user).build();
   }
 
-  @Nullable
-  public final String getClientId() {
+  public final @Nullable String getClientId() {
     return clientId;
   }
 
@@ -797,8 +796,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     return privateKey;
   }
 
-  @Nullable
-  public final String getPrivateKeyId() {
+  public final @Nullable String getPrivateKeyId() {
     return privateKeyId;
   }
 
@@ -810,8 +808,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     return defaultScopes;
   }
 
-  @Nullable
-  public final String getServiceAccountUser() {
+  public final @Nullable String getServiceAccountUser() {
     return serviceAccountUser;
   }
 
@@ -819,8 +816,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * @return the projectId set in the SA Key file or the user set projectId
    */
   @Override
-  @Nullable
-  public final String getProjectId() {
+  public final @Nullable String getProjectId() {
     return projectId;
   }
 
@@ -1291,53 +1287,43 @@ public class ServiceAccountCredentials extends GoogleCredentials
       return this;
     }
 
-    @Nullable
-    public String getClientId() {
+    public @Nullable String getClientId() {
       return clientId;
     }
 
-    @Nullable
-    public String getClientEmail() {
+    public @Nullable String getClientEmail() {
       return clientEmail;
     }
 
-    @Nullable
-    public PrivateKey getPrivateKey() {
+    public @Nullable PrivateKey getPrivateKey() {
       return privateKey;
     }
 
-    @Nullable
-    public String getPrivateKeyId() {
+    public @Nullable String getPrivateKeyId() {
       return privateKeyId;
     }
 
-    @Nullable
-    public Collection<String> getScopes() {
+    public @Nullable Collection<String> getScopes() {
       return scopes;
     }
 
-    @Nullable
-    public Collection<String> getDefaultScopes() {
+    public @Nullable Collection<String> getDefaultScopes() {
       return defaultScopes;
     }
 
-    @Nullable
-    public String getServiceAccountUser() {
+    public @Nullable String getServiceAccountUser() {
       return serviceAccountUser;
     }
 
-    @Nullable
-    public String getProjectId() {
+    public @Nullable String getProjectId() {
       return projectId;
     }
 
-    @Nullable
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    @Nullable
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 

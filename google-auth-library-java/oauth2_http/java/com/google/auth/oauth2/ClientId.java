@@ -33,7 +33,7 @@ package com.google.auth.oauth2;
 
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
-import com.google.api.client.util.Preconditions;
+import com.google.common.base.Preconditions;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.io.InputStream;

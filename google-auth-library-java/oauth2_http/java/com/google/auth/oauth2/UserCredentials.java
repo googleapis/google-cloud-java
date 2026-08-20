@@ -43,7 +43,7 @@ import com.google.api.client.http.UrlEncodedContent;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
-import com.google.api.client.util.Preconditions;
+import com.google.common.base.Preconditions;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.MetricsUtils.RequestType;
@@ -257,8 +257,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
    *
    * @return refresh token
    */
-  @Nullable
-  public final String getRefreshToken() {
+  public final @Nullable String getRefreshToken() {
     return refreshToken;
   }
 
@@ -495,23 +494,19 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
       return this;
     }
 
-    @Nullable
-    public String getClientId() {
+    public @Nullable String getClientId() {
       return clientId;
     }
 
-    @Nullable
-    public String getClientSecret() {
+    public @Nullable String getClientSecret() {
       return clientSecret;
     }
 
-    @Nullable
-    public String getRefreshToken() {
+    public @Nullable String getRefreshToken() {
       return refreshToken;
     }
 
-    @Nullable
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
@@ -520,8 +515,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
       return account;
     }
 
-    @Nullable
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 

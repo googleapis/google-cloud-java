@@ -261,23 +261,19 @@ public final class DownscopedCredentials extends OAuth2Credentials {
       return this;
     }
 
-    @Nullable
-    public GoogleCredentials getSourceCredentials() {
+    public @Nullable GoogleCredentials getSourceCredentials() {
       return sourceCredential;
     }
 
-    @Nullable
-    public CredentialAccessBoundary getCredentialAccessBoundary() {
+    public @Nullable CredentialAccessBoundary getCredentialAccessBoundary() {
       return credentialAccessBoundary;
     }
 
-    @Nullable
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
-    @Nullable
-    public String getUniverseDomain() {
+    public @Nullable String getUniverseDomain() {
       return universeDomain;
     }
 

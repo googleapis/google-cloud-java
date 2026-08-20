@@ -166,7 +166,7 @@ public final class CredentialAccessBoundary {
     private final String availableResource;
     private final List<String> availablePermissions;
 
-    @Nullable private final AvailabilityCondition availabilityCondition;
+    private final @Nullable AvailabilityCondition availabilityCondition;
 
     AccessBoundaryRule(
         String availableResource,
@@ -197,8 +197,7 @@ public final class CredentialAccessBoundary {
       return availablePermissions;
     }
 
-    @Nullable
-    public AvailabilityCondition getAvailabilityCondition() {
+    public @Nullable AvailabilityCondition getAvailabilityCondition() {
       return availabilityCondition;
     }
 
@@ -210,7 +209,7 @@ public final class CredentialAccessBoundary {
       private String availableResource;
       private List<String> availablePermissions;
 
-      @Nullable private AvailabilityCondition availabilityCondition;
+      private @Nullable AvailabilityCondition availabilityCondition;
 
       private Builder() {}
 
@@ -296,8 +295,8 @@ public final class CredentialAccessBoundary {
     public static final class AvailabilityCondition {
       private final String expression;
 
-      @Nullable private final String title;
-      @Nullable private final String description;
+      private final @Nullable String title;
+      private final @Nullable String description;
 
       AvailabilityCondition(
           String expression, @Nullable String title, @Nullable String description) {
@@ -312,13 +311,11 @@ public final class CredentialAccessBoundary {
         return expression;
       }
 
-      @Nullable
-      public String getTitle() {
+      public @Nullable String getTitle() {
         return title;
       }
 
-      @Nullable
-      public String getDescription() {
+      public @Nullable String getDescription() {
         return description;
       }
 
@@ -329,8 +326,8 @@ public final class CredentialAccessBoundary {
       public static final class Builder {
         private String expression;
 
-        @Nullable private String title;
-        @Nullable private String description;
+        private @Nullable String title;
+        private @Nullable String description;
 
         private Builder() {}
 

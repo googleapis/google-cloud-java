@@ -287,9 +287,9 @@ class AwsRequestSigner {
     private final String url;
     private final String region;
 
-    @Nullable private String requestPayload;
-    @Nullable private Map<String, String> additionalHeaders;
-    @Nullable private AwsDates dates;
+    private @Nullable String requestPayload;
+    private @Nullable Map<String, String> additionalHeaders;
+    private @Nullable AwsDates dates;
 
     private Builder(
         AwsSecurityCredentials awsSecurityCredentials,
