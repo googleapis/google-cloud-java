@@ -87,26 +87,36 @@ public class NativeImageUtils {
   }
 
   /** Registers an entire class for reflection use. */
+  public static void registerClassForReflection(Class<?> clazz) {
+    RuntimeReflection.register(clazz);
+    RuntimeReflection.register(clazz.getDeclaredConstructors());
+    RuntimeReflection.register(clazz.getDeclaredFields());
+    RuntimeReflection.register(clazz.getDeclaredMethods());
+  }
+
+  /** Registers an entire class for reflection use. */
   public static void registerClassForReflection(FeatureAccess access, String name) {
     Class<?> clazz = access.findClassByName(name);
     if (clazz != null) {
-      RuntimeReflection.register(clazz);
-      RuntimeReflection.register(clazz.getDeclaredConstructors());
-      RuntimeReflection.register(clazz.getDeclaredFields());
-      RuntimeReflection.register(clazz.getDeclaredMethods());
+      registerClassForReflection(clazz);
     } else {
       LOGGER.log(Level.WARNING, CLASS_REFLECTION_ERROR_MESSAGE, name);
     }
   }
 
   /** Registers an entire class for JNI use. */
+  public static void registerClassForJni(Class<?> clazz) {
+    RuntimeJNIAccess.register(clazz);
+    RuntimeJNIAccess.register(clazz.getDeclaredConstructors());
+    RuntimeJNIAccess.register(clazz.getDeclaredFields());
+    RuntimeJNIAccess.register(clazz.getDeclaredMethods());
+  }
+
+  /** Registers an entire class for JNI use. */
   public static void registerClassForJni(FeatureAccess access, String name) {
     Class<?> clazz = access.findClassByName(name);
     if (clazz != null) {
-      RuntimeJNIAccess.register(clazz);
-      RuntimeJNIAccess.register(clazz.getDeclaredConstructors());
-      RuntimeJNIAccess.register(clazz.getDeclaredFields());
-      RuntimeJNIAccess.register(clazz.getDeclaredMethods());
+      registerClassForJni(clazz);
     } else {
       LOGGER.log(Level.WARNING, CLASS_REFLECTION_ERROR_MESSAGE, name);
     }

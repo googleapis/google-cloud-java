@@ -93,7 +93,12 @@ final class GoogleJsonClientFeature implements Feature {
       registerClassHierarchyForJni(access, "org.conscrypt.NativeRef");
       registerClassHierarchyForJni(access, "org.conscrypt.OpenSSLBIOInputStream");
 
-      // Register standard JDK classes accessed via JNI by Conscrypt native C code
+      // Register array types and JDK classes accessed via JNI by Conscrypt native C code
+      registerClassForJni(Object[].class);
+      registerClassForJni(byte[].class);
+      registerClassForJni(byte[][].class);
+      registerClassForJni(int[].class);
+
       registerClassHierarchyForJni(access, "java.util.Calendar");
       registerClassHierarchyForJni(access, "java.io.InputStream");
       registerClassHierarchyForJni(access, "java.io.OutputStream");
@@ -103,6 +108,8 @@ final class GoogleJsonClientFeature implements Feature {
       registerClassHierarchyForJni(access, "java.lang.Object");
       registerClassHierarchyForJni(access, "java.nio.Buffer");
       registerClassHierarchyForJni(access, "java.nio.ByteBuffer");
+      registerClassHierarchyForJni(access, "java.security.PrivateKey");
+      registerClassHierarchyForJni(access, "java.security.Key");
     }
   }
 
