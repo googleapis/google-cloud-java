@@ -671,18 +671,20 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setPKCEProvider(PKCEProvider pkce) {
-      Preconditions.checkNotNull(pkce);
-      if (pkce.getCodeChallenge() == null
-          || pkce.getCodeVerifier() == null
-          || pkce.getCodeChallengeMethod() == null) {
+    public Builder setPKCEProvider(@Nullable PKCEProvider pkce) {
+      if (pkce != null) {
+        if (pkce.getCodeChallenge() == null
+            || pkce.getCodeVerifier() == null
+            || pkce.getCodeChallengeMethod() == null) {
 
-        throw new IllegalArgumentException(
-            "PKCE provider contained null implementations. PKCE object must implement all"
-                + " PKCEProvider methods.");
+          throw new IllegalArgumentException(
+              "PKCE provider contained null implementations. PKCE object must implement all"
+                  + " PKCEProvider methods.");
+        }
       }
       this.pkce = pkce;
       return this;
+    }
     }
 
     /**
