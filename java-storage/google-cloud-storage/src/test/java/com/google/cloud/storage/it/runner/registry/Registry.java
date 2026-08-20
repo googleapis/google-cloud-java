@@ -16,8 +16,10 @@
 
 package com.google.cloud.storage.it.runner.registry;
 
+import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.TransportCompatibility.Transport;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
 import com.google.cloud.storage.it.runner.CrossRunIntersection;
 import com.google.cloud.storage.it.runner.TestInitializer;
 import com.google.cloud.storage.it.runner.annotations.Backend;
@@ -106,7 +108,6 @@ public final class Registry extends RunListener {
               registryEntry(3, Backend.class, CrossRunIntersection::getBackend),
               registryEntry(4, Transport.class, CrossRunIntersection::getTransport))
           .addAll(prodBackendResources.getRegistryEntries())
-          .addAll(preProdBackendResources.getRegistryEntries())
           .addAll(testBenchBackendResource.getRegistryEntries())
           .build();
 
@@ -155,6 +156,10 @@ public final class Registry extends RunListener {
 
   TestBench testBench() {
     return testBench.get();
+  }
+
+  BackendResources getPreProdBackendResources() {
+    return preProdBackendResources;
   }
 
   @Nullable
@@ -224,6 +229,12 @@ public final class Registry extends RunListener {
     } else {
       finalCrossRunIntersection = crossRunIntersection;
     }
+    if (ff.getType() == Storage.class
+        && finalCrossRunIntersection.getLocationType() == LocationType.REGIONAL_RAPID
+        && finalCrossRunIntersection.getBackend() == Backend.PROD) {
+      return preProdBackendResources.getStorage(finalCrossRunIntersection.getTransport());
+    }
+
     Optional<RegistryEntry<?>> first =
         entries.stream()
             .filter(re -> re.getPredicate().test(ff, finalCrossRunIntersection))

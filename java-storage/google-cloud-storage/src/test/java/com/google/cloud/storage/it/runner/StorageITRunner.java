@@ -23,7 +23,6 @@ import com.google.cloud.storage.it.runner.annotations.ParallelFriendly;
 import com.google.cloud.storage.it.runner.annotations.Parameterized;
 import com.google.cloud.storage.it.runner.annotations.Parameterized.Parameter;
 import com.google.cloud.storage.it.runner.annotations.Parameterized.ParametersProvider;
-import com.google.cloud.storage.it.runner.annotations.Colocation;
 import com.google.cloud.storage.it.runner.annotations.LocationType;
 import com.google.cloud.storage.it.runner.annotations.SingleBackend;
 import com.google.cloud.storage.it.runner.registry.Registry;
@@ -171,13 +170,10 @@ public final class StorageITRunner extends Suite {
                               .flatMap(
                                   t ->
                                       ImmutableSet.copyOf(crossRun.locations()).stream()
-                                          .flatMap(
+                                          .map(
                                               l ->
-                                                  ImmutableSet.copyOf(crossRun.colocations()).stream()
-                                                      .map(
-                                                          c ->
-                                                              CrossRunIntersection.of(
-                                                                  b, t, l, c)))))
+                                                  CrossRunIntersection.of(
+                                                      b, t, l))))
                   .flatMap(
                       c -> {
                         TestInitializer ti = registry.newTestInitializerForCell(c);
@@ -200,17 +196,12 @@ public final class StorageITRunner extends Suite {
       Backend backend = singleBackend.value();
       boolean isDefault =
           singleBackend.locations().length == 1
-              && singleBackend.locations()[0] == LocationType.REGIONAL_STANDARD
-              && singleBackend.colocations().length == 1
-              && singleBackend.colocations()[0] == Colocation.CO_LOCATED;
+              && singleBackend.locations()[0] == LocationType.REGIONAL_STANDARD;
 
       return SneakyException.unwrap(
           () ->
               ImmutableSet.copyOf(singleBackend.locations()).stream()
-                  .flatMap(
-                      l ->
-                          ImmutableSet.copyOf(singleBackend.colocations()).stream()
-                              .map(c -> CrossRunIntersection.of(backend, null, l, c)))
+                  .map(l -> CrossRunIntersection.of(backend, null, l))
                   .flatMap(
                       c -> {
                         TestInitializer ti = registry.newTestInitializerForCell(c);

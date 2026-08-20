@@ -37,5 +37,4 @@ public @interface SingleBackend {
 
   LocationType[] locations() default {LocationType.REGIONAL_STANDARD};
 
-  Colocation[] colocations() default {Colocation.CO_LOCATED};
 }

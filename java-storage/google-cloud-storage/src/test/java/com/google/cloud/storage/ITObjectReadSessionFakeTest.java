@@ -210,8 +210,16 @@ public final class ITObjectReadSessionFakeTest {
                 req3,
                 respond -> respond.onNext(res2)));
 
+    GrpcRequestAuditing requestAuditing = new GrpcRequestAuditing();
     try (FakeServer fakeServer = FakeServer.of(fake);
-        Storage storage = fakeServer.getGrpcStorageOptions().toBuilder().build().getService()) {
+        Storage storage =
+            fakeServer.getGrpcStorageOptions().toBuilder()
+                .setGrpcInterceptorProvider(
+                    () ->
+                        ImmutableList.of(
+                            requestAuditing, GrpcPlainRequestLoggingInterceptor.getInstance()))
+                .build()
+                .getService()) {
 
       BlobId id = BlobId.of("b", "o");
       ApiFuture<BlobReadSession> futureBlobDescriptor = storage.blobReadSession(id);
@@ -222,6 +230,12 @@ public final class ITObjectReadSessionFakeTest {
                 .get(1, TimeUnit.SECONDS);
 
         assertThat(xxd(actual)).isEqualTo(xxd(content.getBytes()));
+
+        requestAuditing
+            .assertRequestHeader("x-goog-request-params")
+            .containsExactly(
+                "bucket=projects/_/buckets/b",
+                "bucket=projects/_/buckets/b&routing_token=" + routingToken);
       }
     }
   }
@@ -1805,6 +1819,193 @@ public final class ITObjectReadSessionFakeTest {
     return orsi;
   }
 
+  private static Consumer<StreamObserver<BidiReadObjectResponse>> onRedirect(
+      BidiReadHandle handle, String token) {
+    return respond -> {
+      BidiReadObjectRedirectedError redirect =
+          BidiReadObjectRedirectedError.newBuilder()
+              .setReadHandle(handle)
+              .setRoutingToken(token)
+              .build();
+
+      com.google.rpc.Status grpcStatusDetails =
+          com.google.rpc.Status.newBuilder()
+              .setCode(com.google.rpc.Code.UNAVAILABLE_VALUE)
+              .setMessage("redirect")
+              .addDetails(Any.pack(redirect))
+              .build();
+
+      Metadata trailers = new Metadata();
+      trailers.put(GRPC_STATUS_DETAILS_KEY, grpcStatusDetails);
+      StatusRuntimeException statusRuntimeException =
+          Status.UNAVAILABLE.withDescription("redirect").asRuntimeException(trailers);
+      respond.onError(statusRuntimeException);
+    };
+  }
+
+  @Test
+  public void bidiReadObjectRedirectedError_redirectCounterResetOnResponse() throws Exception {
+    BidiReadHandle handle1 = BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-1")).build();
+    BidiReadHandle handle2 = BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-2")).build();
+    BidiReadHandle handle3 = BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-3")).build();
+    BidiReadHandle handle4 = BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-4")).build();
+    BidiReadHandle handle5 = BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-5")).build();
+
+    BidiReadObjectRequest req_read_1 = read(1, 10, 5);
+
+    BidiReadObjectRequest req_read_1_redirected_1 =
+        BidiReadObjectRequest.newBuilder()
+            .setReadObjectSpec(
+                BidiReadObjectSpec.newBuilder()
+                    .setBucket(METADATA.getBucket())
+                    .setObject(METADATA.getName())
+                    .setGeneration(1)
+                    .setReadHandle(handle1)
+                    .setRoutingToken("token-1")
+                    .build())
+            .addReadRanges(getReadRange(1, 10, 5))
+            .build();
+
+    BidiReadObjectRequest req_read_2 =
+        BidiReadObjectRequest.newBuilder()
+            .addReadRanges(getReadRange(2, 15, 5))
+            .build();
+
+    BidiReadObjectRequest req_read_2_redirected_2 =
+        BidiReadObjectRequest.newBuilder()
+            .setReadObjectSpec(
+                BidiReadObjectSpec.newBuilder()
+                    .setBucket(METADATA.getBucket())
+                    .setObject(METADATA.getName())
+                    .setGeneration(1)
+                    .setReadHandle(handle2)
+                    .setRoutingToken("token-2")
+                    .build())
+            .addReadRanges(getReadRange(2, 15, 5))
+            .build();
+
+    BidiReadObjectRequest req_read_3 =
+        BidiReadObjectRequest.newBuilder()
+            .addReadRanges(getReadRange(3, 20, 5))
+            .build();
+
+    BidiReadObjectRequest req_read_3_redirected_3 =
+        BidiReadObjectRequest.newBuilder()
+            .setReadObjectSpec(
+                BidiReadObjectSpec.newBuilder()
+                    .setBucket(METADATA.getBucket())
+                    .setObject(METADATA.getName())
+                    .setGeneration(1)
+                    .setReadHandle(handle3)
+                    .setRoutingToken("token-3")
+                    .build())
+            .addReadRanges(getReadRange(3, 20, 5))
+            .build();
+
+    BidiReadObjectRequest req_read_3_redirected_4 =
+        BidiReadObjectRequest.newBuilder()
+            .setReadObjectSpec(
+                BidiReadObjectSpec.newBuilder()
+                    .setBucket(METADATA.getBucket())
+                    .setObject(METADATA.getName())
+                    .setGeneration(1)
+                    .setReadHandle(handle4)
+                    .setRoutingToken("token-4")
+                    .build())
+            .addReadRanges(getReadRange(3, 20, 5))
+            .build();
+
+    BidiReadObjectRequest req_read_3_redirected_5 =
+        BidiReadObjectRequest.newBuilder()
+            .setReadObjectSpec(
+                BidiReadObjectSpec.newBuilder()
+                    .setBucket(METADATA.getBucket())
+                    .setObject(METADATA.getName())
+                    .setGeneration(1)
+                    .setReadHandle(handle5)
+                    .setRoutingToken("token-5")
+                    .build())
+            .addReadRanges(getReadRange(3, 20, 5))
+            .build();
+
+    ChecksummedTestContent content1 = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 10, 5);
+    BidiReadObjectResponse res_read_1 =
+        BidiReadObjectResponse.newBuilder()
+            .setMetadata(METADATA)
+            .addObjectDataRanges(
+                ObjectRangeData.newBuilder()
+                    .setChecksummedData(content1.asChecksummedData())
+                    .setReadRange(getReadRange(1, 10, 5))
+                    .setRangeEnd(true)
+                    .build())
+            .build();
+
+    ChecksummedTestContent content2 = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 15, 5);
+    BidiReadObjectResponse res_read_2 =
+        BidiReadObjectResponse.newBuilder()
+            .setMetadata(METADATA)
+            .addObjectDataRanges(
+                ObjectRangeData.newBuilder()
+                    .setChecksummedData(content2.asChecksummedData())
+                    .setReadRange(getReadRange(2, 15, 5))
+                    .setRangeEnd(true)
+                    .build())
+            .build();
+
+    ChecksummedTestContent content3 = ChecksummedTestContent.of(ALL_OBJECT_BYTES, 20, 5);
+    BidiReadObjectResponse res_read_3 =
+        BidiReadObjectResponse.newBuilder()
+            .setMetadata(METADATA)
+            .addObjectDataRanges(
+                ObjectRangeData.newBuilder()
+                    .setChecksummedData(content3.asChecksummedData())
+                    .setReadRange(getReadRange(3, 20, 5))
+                    .setRangeEnd(true)
+                    .build())
+            .build();
+
+    FakeStorage fake =
+        FakeStorage.of(
+            ImmutableMap.<BidiReadObjectRequest, Consumer<StreamObserver<BidiReadObjectResponse>>>builder()
+                .put(REQ_OPEN, respond -> respond.onNext(RES_OPEN))
+                .put(req_read_1, onRedirect(handle1, "token-1"))
+                .put(req_read_1_redirected_1, respond -> respond.onNext(res_read_1))
+                .put(req_read_2, onRedirect(handle2, "token-2"))
+                .put(req_read_2_redirected_2, respond -> respond.onNext(res_read_2))
+                .put(req_read_3, onRedirect(handle3, "token-3"))
+                .put(req_read_3_redirected_3, onRedirect(handle4, "token-4"))
+                .put(req_read_3_redirected_4, onRedirect(handle5, "token-5"))
+                .put(req_read_3_redirected_5, respond -> respond.onNext(res_read_3))
+                .build());
+
+    try (FakeServer fakeServer = FakeServer.of(fake);
+        Storage storage = fakeServer.getGrpcStorageOptions().toBuilder().build().getService()) {
+
+      BlobId id = BlobId.of("b", "o");
+      ApiFuture<BlobReadSession> futureBlobDescriptor = storage.blobReadSession(id);
+
+      try (BlobReadSession bd = futureBlobDescriptor.get(5, TimeUnit.SECONDS)) {
+        // Read 1 (should trigger Redirect 1, then succeed)
+        byte[] actual1 =
+            bd.readAs(ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(10L, 5L)))
+                .get(1, TimeUnit.SECONDS);
+        assertThat(xxd(actual1)).isEqualTo(xxd(content1.getBytes()));
+
+        // Read 2 (should trigger Redirect 2, then succeed)
+        byte[] actual2 =
+            bd.readAs(ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(15L, 5L)))
+                .get(1, TimeUnit.SECONDS);
+        assertThat(xxd(actual2)).isEqualTo(xxd(content2.getBytes()));
+
+        // Read 3 (should trigger Redirect 3, Redirect 4, Redirect 5, then succeed)
+        byte[] actual3 =
+            bd.readAs(ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(20L, 5L)))
+                .get(1, TimeUnit.SECONDS);
+        assertThat(xxd(actual3)).isEqualTo(xxd(content3.getBytes()));
+      }
+    }
+  }
+
   static final class FakeStorage extends StorageImplBase {
 
     private final Map<BidiReadObjectRequest, Consumer<StreamObserver<BidiReadObjectResponse>>> db;
@@ -1823,6 +2024,7 @@ public final class ITObjectReadSessionFakeTest {
           if (db.containsKey(req)) {
             db.get(req).accept(respond);
           } else {
+            System.err.println("FakeStorage: UNEXPECTED REQUEST:\n" + req);
             respond.onError(TestUtils.apiException(Code.UNIMPLEMENTED, "Unexpected request"));
           }
         }

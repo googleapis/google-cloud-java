@@ -41,8 +41,6 @@ public @interface CrossRun {
 
   LocationType[] locations() default {LocationType.REGIONAL_STANDARD};
 
-  Colocation[] colocations() default {Colocation.CO_LOCATED};
-
   /**
    * Exclude a method from being included in the generated test suite if it's backend and transport
    * match with those defined. When matching, if the empty set is defined as a value it will be
@@ -59,8 +57,6 @@ public @interface CrossRun {
     TransportCompatibility.Transport[] transports() default {};
 
     LocationType[] locations() default {};
-
-    Colocation[] colocations() default {};
   }
 
   /**
@@ -79,8 +75,6 @@ public @interface CrossRun {
     TransportCompatibility.Transport[] transports() default {};
 
     LocationType[] locations() default {};
-
-    Colocation[] colocations() default {};
   }
 
   /**

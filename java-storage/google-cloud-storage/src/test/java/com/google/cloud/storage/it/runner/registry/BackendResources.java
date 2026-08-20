@@ -38,7 +38,6 @@ import com.google.cloud.storage.it.GrpcPlainRequestLoggingInterceptor;
 import com.google.cloud.storage.it.runner.CrossRunIntersection;
 import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.BucketType;
-import com.google.cloud.storage.it.runner.annotations.Colocation;
 import com.google.cloud.storage.it.runner.annotations.LocationType;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -61,16 +60,25 @@ final class BackendResources implements ManagedLifecycle {
   private final Backend backend;
   private final ProtectedBucketNames protectedBucketNames;
   private final ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets;
+  private final TestRunScopedInstance<StorageInstance> storageJson;
+  private final TestRunScopedInstance<StorageInstance> storageGrpc;
+  private final TestRunScopedInstance<StorageControlInstance> ctrl;
   private final ImmutableList<RegistryEntry<?>> registryEntries;
 
   private BackendResources(
       Backend backend,
       ProtectedBucketNames protectedBucketNames,
       ConcurrentMap<BucketKey, BucketInfoShim> dynamicBuckets,
+      TestRunScopedInstance<StorageInstance> storageJson,
+      TestRunScopedInstance<StorageInstance> storageGrpc,
+      TestRunScopedInstance<StorageControlInstance> ctrl,
       ImmutableList<RegistryEntry<?>> registryEntries) {
     this.backend = backend;
     this.protectedBucketNames = protectedBucketNames;
     this.dynamicBuckets = dynamicBuckets;
+    this.storageJson = storageJson;
+    this.storageGrpc = storageGrpc;
+    this.ctrl = ctrl;
     this.registryEntries = registryEntries;
   }
 
@@ -96,6 +104,14 @@ final class BackendResources implements ManagedLifecycle {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this).add("backend", backend).toString();
+  }
+
+  public Storage getStorage(Transport transport) {
+    return transport == Transport.GRPC ? storageGrpc.get().getStorage() : storageJson.get().getStorage();
+  }
+
+  public StorageControlClient getStorageControlClient() {
+    return ctrl.get().getCtrl();
   }
 
   @SuppressWarnings("SwitchStatementWithTooFewBranches")
@@ -128,7 +144,10 @@ final class BackendResources implements ManagedLifecycle {
                   break;
                 default: // PROD, java8 doesn't have exhaustive checking for enum switch
                   // Register the exporters with OpenTelemetry
-                  optionsBuilder = StorageOptions.http().setOpenTelemetry(otelSdk.get().get());
+                  optionsBuilder =
+                      StorageOptions.http()
+                          .setProjectId(getPreprodProjectId())
+                          .setOpenTelemetry(otelSdk.get().get());
                   break;
               }
               HttpStorageOptions built = optionsBuilder.build();
@@ -159,7 +178,10 @@ final class BackendResources implements ManagedLifecycle {
                   break;
                 default: // PROD, java8 doesn't have exhaustive checking for enum switch
                   // Register the exporters with OpenTelemetry
-                  optionsBuilder = StorageOptions.grpc().setOpenTelemetry(otelSdk.get().get());
+                  optionsBuilder =
+                      StorageOptions.grpc()
+                          .setProjectId(getPreprodProjectId())
+                          .setOpenTelemetry(otelSdk.get().get());
                   break;
               }
               GrpcStorageOptions built =
@@ -239,6 +261,7 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-rp-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
+                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation(zone.get().get().getRegion())
                       .setRequesterPays(true)
@@ -254,6 +277,7 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-v-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
+                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation(zone.get().get().getRegion())
                       .setVersioningEnabled(true)
@@ -269,6 +293,7 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-hns-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
+                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation(zone.get().get().getRegion())
                       .setHierarchicalNamespace(
@@ -289,6 +314,7 @@ final class BackendResources implements ManagedLifecycle {
                   String.format(Locale.US, "java-storage-grpc-rapid-%s", UUID.randomUUID());
               protectedBucketNames.add(bucketName);
               return new BucketInfoShim(
+                  backend,
                   BucketInfo.newBuilder(bucketName)
                       .setLocation("us-central1")
                       .setCustomPlacementConfig(
@@ -319,8 +345,7 @@ final class BackendResources implements ManagedLifecycle {
                             CrossRunIntersection.of(
                                 backend,
                                 null,
-                                LocationType.REGIONAL_STANDARD,
-                                Colocation.CO_LOCATED))));
+                                LocationType.REGIONAL_STANDARD))));
     TestRunScopedInstance<ObjectsFixture> objectsFixtureRp =
         TestRunScopedInstance.of(
             "fixture/OBJECTS/[" + backend.name() + "]/REQUESTER_PAYS",
@@ -341,6 +366,9 @@ final class BackendResources implements ManagedLifecycle {
         backend,
         protectedBucketNames,
         dynamicBuckets,
+        storageJson,
+        storageGrpc,
+        ctrl,
         ImmutableList.of(
             RegistryEntry.of(
                 40, Storage.class, storageJson, transportAndBackendAre(Transport.HTTP, backend)),
@@ -389,11 +417,9 @@ final class BackendResources implements ManagedLifecycle {
 
   private static final class BucketKey {
     private final LocationType locationType;
-    private final Colocation colocation;
 
-    private BucketKey(LocationType locationType, Colocation colocation) {
+    private BucketKey(LocationType locationType) {
       this.locationType = locationType;
-      this.colocation = colocation;
     }
 
     @Override
@@ -405,19 +431,18 @@ final class BackendResources implements ManagedLifecycle {
         return false;
       }
       BucketKey bucketKey = (BucketKey) o;
-      return locationType == bucketKey.locationType && colocation == bucketKey.colocation;
+      return locationType == bucketKey.locationType;
     }
 
     @Override
     public int hashCode() {
-      return java.util.Objects.hash(locationType, colocation);
+      return java.util.Objects.hash(locationType);
     }
 
     @Override
     public String toString() {
       return MoreObjects.toStringHelper(this)
           .add("locationType", locationType)
-          .add("colocation", colocation)
           .toString();
     }
   }
@@ -449,16 +474,12 @@ final class BackendResources implements ManagedLifecycle {
     @Override
     public BucketInfo resolve(FrameworkField ff, CrossRunIntersection crossRunIntersection) {
       LocationType lt = crossRunIntersection.getLocationType();
-      Colocation col = crossRunIntersection.getColocation();
 
       if (lt == null) {
         lt = LocationType.REGIONAL_STANDARD;
       }
-      if (col == null) {
-        col = Colocation.CO_LOCATED;
-      }
 
-      BucketKey key = new BucketKey(lt, col);
+      BucketKey key = new BucketKey(lt);
       BucketInfoShim shim = dynamicBuckets.computeIfAbsent(key, this::createBucketShim);
       return (BucketInfo) shim.get();
     }
@@ -468,22 +489,20 @@ final class BackendResources implements ManagedLifecycle {
       String region = z.getRegion();
       String zoneName = z.getZone();
 
-      String rAlt;
-      String vAlt;
-      if ("us-east1".equals(region)) {
-        rAlt = "us-central1";
-        vAlt = "us-central1-a";
-      } else {
-        rAlt = "us-east1";
-        vAlt = "us-east1-b";
-      }
-
       String targetRegion = region;
       String targetZone = zoneName;
 
-      if (key.colocation == Colocation.NON_CO_LOCATED) {
-        targetRegion = rAlt;
-        targetZone = vAlt;
+      Storage storageClientToUse = storageJson.get().getStorage();
+      StorageControlClient controlClientToUse = ctrl.get().getCtrl();
+
+      if (key.locationType == LocationType.REGIONAL_RAPID) {
+        targetRegion = "us-central1";
+        targetZone = "us-central1-a";
+        if (backend == Backend.PROD) {
+          BackendResources preprod = Registry.getInstance().getPreProdBackendResources();
+          storageClientToUse = preprod.getStorage(Transport.GRPC);
+          controlClientToUse = preprod.getStorageControlClient();
+        }
       }
 
       BucketInfo.Builder builder;
@@ -540,11 +559,12 @@ final class BackendResources implements ManagedLifecycle {
 
       BucketInfoShim shim =
           new BucketInfoShim(
+              backend,
               builder.build(),
               key.locationType,
               targetZone,
-              storageJson.get().getStorage(),
-              ctrl.get().getCtrl());
+              storageClientToUse,
+              controlClientToUse);
 
       shim.start();
       return shim;
