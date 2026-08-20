@@ -94,13 +94,21 @@ public class UserAuthorizer {
   private UserAuthorizer(Builder builder) {
     this.clientId = Preconditions.checkNotNull(builder.clientId);
     this.scopes = ImmutableList.copyOf(Preconditions.checkNotNull(builder.scopes));
-    this.callbackUri = builder.callbackUri;
-    this.transportFactory = builder.transportFactory;
-    this.tokenServerUri = builder.tokenServerUri;
-    this.userAuthUri = builder.userAuthUri;
-    this.tokenStore = builder.tokenStore;
+    this.callbackUri = (builder.callbackUri == null) ? DEFAULT_CALLBACK_URI : builder.callbackUri;
+    this.transportFactory =
+        (builder.transportFactory == null)
+            ? OAuth2Utils.HTTP_TRANSPORT_FACTORY
+            : builder.transportFactory;
+    this.tokenServerUri =
+        (builder.tokenServerUri == null) ? OAuth2Utils.TOKEN_SERVER_URI : builder.tokenServerUri;
+    this.userAuthUri =
+        (builder.userAuthUri == null) ? OAuth2Utils.USER_AUTH_URI : builder.userAuthUri;
+    this.tokenStore = (builder.tokenStore == null) ? new MemoryTokensStorage() : builder.tokenStore;
     this.pkce = builder.pkce;
-    this.clientAuthenticationType = builder.clientAuthenticationType;
+    this.clientAuthenticationType =
+        (builder.clientAuthenticationType == null)
+            ? ClientAuthenticationType.CLIENT_SECRET_POST
+            : builder.clientAuthenticationType;
   }
 
   /**
@@ -546,15 +554,14 @@ public class UserAuthorizer {
   public static class Builder {
 
     private @Nullable ClientId clientId;
+    private @Nullable TokenStore tokenStore;
+    private @Nullable URI callbackUri;
+    private @Nullable URI tokenServerUri;
+    private @Nullable URI userAuthUri;
     private @Nullable Collection<String> scopes;
-    private TokenStore tokenStore = new MemoryTokensStorage();
-    private URI callbackUri = DEFAULT_CALLBACK_URI;
-    private URI tokenServerUri = OAuth2Utils.TOKEN_SERVER_URI;
-    private URI userAuthUri = OAuth2Utils.USER_AUTH_URI;
-    private HttpTransportFactory transportFactory = OAuth2Utils.HTTP_TRANSPORT_FACTORY;
+    private @Nullable HttpTransportFactory transportFactory;
     private @Nullable PKCEProvider pkce;
-    private ClientAuthenticationType clientAuthenticationType =
-        ClientAuthenticationType.CLIENT_SECRET_POST;
+    private @Nullable ClientAuthenticationType clientAuthenticationType;
 
     protected Builder() {}
 
@@ -577,8 +584,8 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setClientId(ClientId clientId) {
-      this.clientId = Preconditions.checkNotNull(clientId);
+    public Builder setClientId(@Nullable ClientId clientId) {
+      this.clientId = clientId;
       return this;
     }
 
@@ -589,8 +596,8 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setTokenStore(TokenStore tokenStore) {
-      this.tokenStore = Preconditions.checkNotNull(tokenStore);
+    public Builder setTokenStore(@Nullable TokenStore tokenStore) {
+      this.tokenStore = tokenStore;
       return this;
     }
 
@@ -601,8 +608,8 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setScopes(Collection<String> scopes) {
-      this.scopes = Preconditions.checkNotNull(scopes);
+    public Builder setScopes(@Nullable Collection<String> scopes) {
+      this.scopes = scopes;
       return this;
     }
 
@@ -613,8 +620,8 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setTokenServerUri(URI tokenServerUri) {
-      this.tokenServerUri = Preconditions.checkNotNull(tokenServerUri);
+    public Builder setTokenServerUri(@Nullable URI tokenServerUri) {
+      this.tokenServerUri = tokenServerUri;
       return this;
     }
 
@@ -626,8 +633,8 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setCallbackUri(URI callbackUri) {
-      this.callbackUri = Preconditions.checkNotNull(callbackUri);
+    public Builder setCallbackUri(@Nullable URI callbackUri) {
+      this.callbackUri = callbackUri;
       return this;
     }
 
@@ -638,8 +645,8 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setUserAuthUri(URI userAuthUri) {
-      this.userAuthUri = Preconditions.checkNotNull(userAuthUri);
+    public Builder setUserAuthUri(@Nullable URI userAuthUri) {
+      this.userAuthUri = userAuthUri;
       return this;
     }
 
@@ -650,8 +657,8 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
-      this.transportFactory = Preconditions.checkNotNull(transportFactory);
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
+      this.transportFactory = transportFactory;
       return this;
     }
 
@@ -687,8 +694,9 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setClientAuthenticationType(ClientAuthenticationType clientAuthentication) {
-      this.clientAuthenticationType = Preconditions.checkNotNull(clientAuthentication);
+    public Builder setClientAuthenticationType(
+        @Nullable ClientAuthenticationType clientAuthentication) {
+      this.clientAuthenticationType = clientAuthentication;
       return this;
     }
 
@@ -696,7 +704,7 @@ public class UserAuthorizer {
       return clientId;
     }
 
-    public TokenStore getTokenStore() {
+    public @Nullable TokenStore getTokenStore() {
       return tokenStore;
     }
 
@@ -704,19 +712,19 @@ public class UserAuthorizer {
       return scopes;
     }
 
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    public URI getCallbackUri() {
+    public @Nullable URI getCallbackUri() {
       return callbackUri;
     }
 
-    public URI getUserAuthUri() {
+    public @Nullable URI getUserAuthUri() {
       return userAuthUri;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
@@ -724,7 +732,7 @@ public class UserAuthorizer {
       return pkce;
     }
 
-    public ClientAuthenticationType getClientAuthenticationType() {
+    public @Nullable ClientAuthenticationType getClientAuthenticationType() {
       return clientAuthenticationType;
     }
 
