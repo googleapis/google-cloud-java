@@ -174,6 +174,63 @@ class UserAuthorizerTest {
   }
 
   @Test
+  void getCallbackUri_absoluteCallback_nullBaseUri() {
+    final URI callbackURI = URI.create("http://example.com/bar");
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setScopes(DUMMY_SCOPES)
+            .setCallbackUri(callbackURI)
+            .build();
+
+    URI resultCallbackURI = authorizer.getCallbackUri(null);
+
+    assertEquals(callbackURI, resultCallbackURI);
+  }
+
+  @Test
+  void getCallbackUri_relativeCallback_nullBaseUri_throwsIllegalStateException() {
+    final URI callbackURI = URI.create("/bar");
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setScopes(DUMMY_SCOPES)
+            .setCallbackUri(callbackURI)
+            .build();
+
+    assertThrows(IllegalStateException.class, () -> authorizer.getCallbackUri(null));
+  }
+
+  @Test
+  void getAuthorizationUrl_nullBaseUri() throws IOException {
+    final String protocol = "https";
+    final String host = "accounts.test.com";
+    final String path = "/o/o/oauth2/auth";
+    final URI authUri = URI.create(protocol + "://" + host + path);
+    final URI absoluteCallbackUri = URI.create("http://example.com/oauth2callback");
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setScopes(DUMMY_SCOPES)
+            .setCallbackUri(absoluteCallbackUri)
+            .setUserAuthUri(authUri)
+            .build();
+
+    URL authorizationUrl = authorizer.getAuthorizationUrl(USER_ID, "state", null);
+
+    assertEquals(protocol, authorizationUrl.getProtocol());
+    assertEquals(path, authorizationUrl.getPath());
+    assertEquals(host, authorizationUrl.getHost());
+    String query = authorizationUrl.getQuery();
+    Map<String, String> parameters = TestUtils.parseQuery(query);
+    assertEquals("state", parameters.get("state"));
+    assertEquals(USER_ID, parameters.get("login_hint"));
+    assertEquals(absoluteCallbackUri.toString(), parameters.get("redirect_uri"));
+    assertEquals(CLIENT_ID_VALUE, parameters.get("client_id"));
+    assertEquals(DUMMY_SCOPE, parameters.get("scope"));
+  }
+
+  @Test
   void getAuthorizationUrl() throws IOException {
     final String customState = "custom_state";
     final String protocol = "https";

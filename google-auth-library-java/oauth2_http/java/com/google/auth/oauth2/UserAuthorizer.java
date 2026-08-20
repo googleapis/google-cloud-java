@@ -49,6 +49,7 @@ import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -86,7 +87,7 @@ public class UserAuthorizer {
   private final HttpTransportFactory transportFactory;
   private final URI tokenServerUri;
   private final URI userAuthUri;
-  private final PKCEProvider pkce;
+  private final @Nullable PKCEProvider pkce;
   private final ClientAuthenticationType clientAuthenticationType;
 
   /** Internal constructor. See {@link Builder}. */
@@ -147,7 +148,7 @@ public class UserAuthorizer {
    * @param baseUri The URI to resolve the callback URI relative to.
    * @return The resolved URI.
    */
-  public URI getCallbackUri(URI baseUri) {
+  public URI getCallbackUri(@Nullable URI baseUri) {
     if (callbackUri.isAbsolute()) {
       return callbackUri;
     }
@@ -184,7 +185,8 @@ public class UserAuthorizer {
    * @param baseUri The URI to resolve the OAuth2 callback URI relative to.
    * @return The URL that can be navigated or redirected to.
    */
-  public URL getAuthorizationUrl(String userId, String state, URI baseUri) {
+  public URL getAuthorizationUrl(
+      @Nullable String userId, @Nullable String state, @Nullable URI baseUri) {
     return this.getAuthorizationUrl(userId, state, baseUri, null);
   }
 
@@ -198,9 +200,9 @@ public class UserAuthorizer {
    * @return The URL that can be navigated or redirected to.
    */
   public URL getAuthorizationUrl(
-      String userId,
-      String state,
-      URI baseUri,
+      @Nullable String userId,
+      @Nullable String state,
+      @Nullable URI baseUri,
       @Nullable Map<String, String> additionalParameters) {
     URI resolvedCallbackUri = getCallbackUri(baseUri);
     String scopesString = Joiner.on(' ').join(scopes);
@@ -221,9 +223,7 @@ public class UserAuthorizer {
     url.put("include_granted_scopes", true);
 
     if (additionalParameters != null) {
-      for (Map.Entry<String, String> entry : additionalParameters.entrySet()) {
-        url.put(entry.getKey(), entry.getValue());
-      }
+      url.putAll(additionalParameters);
     }
 
     if (pkce != null) {
@@ -240,12 +240,8 @@ public class UserAuthorizer {
    * @return The loaded credentials or null if there are no valid approved credentials.
    * @throws IOException If there is error retrieving or loading the credentials.
    */
-  @Nullable
-  public UserCredentials getCredentials(String userId) throws IOException {
+  public @Nullable UserCredentials getCredentials(String userId) throws IOException {
     Preconditions.checkNotNull(userId);
-    if (tokenStore == null) {
-      throw new IllegalStateException("Method cannot be called if token store is not specified.");
-    }
     String tokenData = tokenStore.load(userId);
     if (tokenData == null) {
       return null;
@@ -288,8 +284,9 @@ public class UserAuthorizer {
    * @return the UserCredentials instance created from the authorization code.
    * @throws IOException An error from the server API call to get the tokens.
    */
-  public UserCredentials getCredentialsFromCode(String code, URI baseUri) throws IOException {
-    return getCredentialsFromCode(code, baseUri, null);
+  public UserCredentials getCredentialsFromCode(String code, @Nullable URI baseUri)
+      throws IOException {
+    return getCredentialsFromCode(code, baseUri, Collections.emptyMap());
   }
 
   /**
@@ -303,10 +300,12 @@ public class UserAuthorizer {
    * @throws IOException An error from the server API call to get the tokens.
    */
   public UserCredentials getCredentialsFromCode(
-      String code, URI baseUri, @Nullable Map<String, String> additionalParameters)
+      String code, @Nullable URI baseUri, @Nullable Map<String, String> additionalParameters)
       throws IOException {
+    Map<String, String> effectiveAdditionalParameters =
+        additionalParameters != null ? additionalParameters : Collections.emptyMap();
     TokenResponseWithConfig tokenResponseWithConfig =
-        getCredentialsFromCodeInternal(code, baseUri, additionalParameters);
+        getCredentialsFromCodeInternal(code, baseUri, effectiveAdditionalParameters);
     return UserCredentials.newBuilder()
         .setClientId(tokenResponseWithConfig.getClientId())
         .setClientSecret(tokenResponseWithConfig.getClientSecret())
@@ -330,8 +329,11 @@ public class UserAuthorizer {
    * @throws IOException If an error occurs during the token exchange process.
    */
   public TokenResponseWithConfig getTokenResponseFromAuthCodeExchange(
-      String code, URI callbackUri, Map<String, String> additionalParameters) throws IOException {
-    return getCredentialsFromCodeInternal(code, callbackUri, additionalParameters);
+      String code, @Nullable URI callbackUri, @Nullable Map<String, String> additionalParameters)
+      throws IOException {
+    Map<String, String> effectiveAdditionalParameters =
+        additionalParameters != null ? additionalParameters : Collections.emptyMap();
+    return getCredentialsFromCodeInternal(code, callbackUri, effectiveAdditionalParameters);
   }
 
   /**
@@ -343,8 +345,8 @@ public class UserAuthorizer {
    * @return UserCredentials instance created from the authorization code.
    * @throws IOException An error from the server API call to get the tokens or store the tokens.
    */
-  public UserCredentials getAndStoreCredentialsFromCode(String userId, String code, URI baseUri)
-      throws IOException {
+  public UserCredentials getAndStoreCredentialsFromCode(
+      String userId, String code, @Nullable URI baseUri) throws IOException {
     Preconditions.checkNotNull(userId);
     Preconditions.checkNotNull(code);
     UserCredentials credentials = getCredentialsFromCode(code, baseUri);
@@ -361,9 +363,6 @@ public class UserAuthorizer {
    */
   public void revokeAuthorization(String userId) throws IOException {
     Preconditions.checkNotNull(userId);
-    if (tokenStore == null) {
-      throw new IllegalStateException("Method cannot be called if token store is not specified.");
-    }
     String tokenData = tokenStore.load(userId);
     if (tokenData == null) {
       return;
@@ -414,9 +413,6 @@ public class UserAuthorizer {
    * @throws IOException An error storing the credentials.
    */
   public void storeCredentials(String userId, UserCredentials credentials) throws IOException {
-    if (tokenStore == null) {
-      throw new IllegalStateException("Cannot store tokens if tokenStore is not specified.");
-    }
     AccessToken accessToken = credentials.getAccessToken();
     String acessTokenValue = null;
     Date expiresBy = null;
@@ -451,7 +447,8 @@ public class UserAuthorizer {
   }
 
   private TokenResponseWithConfig getCredentialsFromCodeInternal(
-      String code, URI baseUri, Map<String, String> additionalParameters) throws IOException {
+      String code, @Nullable URI baseUri, Map<String, String> additionalParameters)
+      throws IOException {
     Preconditions.checkNotNull(code);
     URI resolvedCallbackUri = getCallbackUri(baseUri);
 
@@ -461,11 +458,7 @@ public class UserAuthorizer {
     tokenData.put("redirect_uri", resolvedCallbackUri);
     tokenData.put("grant_type", "authorization_code");
 
-    if (additionalParameters != null) {
-      for (Map.Entry<String, String> entry : additionalParameters.entrySet()) {
-        tokenData.put(entry.getKey(), entry.getValue());
-      }
-    }
+    tokenData.putAll(additionalParameters);
 
     if (pkce != null) {
       tokenData.put("code_verifier", pkce.getCodeVerifier());
@@ -565,7 +558,7 @@ public class UserAuthorizer {
     private URI userAuthUri;
     private Collection<String> scopes;
     private HttpTransportFactory transportFactory;
-    private PKCEProvider pkce;
+    private @Nullable PKCEProvider pkce;
     private ClientAuthenticationType clientAuthenticationType;
 
     protected Builder() {}
@@ -676,14 +669,15 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setPKCEProvider(PKCEProvider pkce) {
+    public Builder setPKCEProvider(@Nullable PKCEProvider pkce) {
       if (pkce != null) {
         if (pkce.getCodeChallenge() == null
             || pkce.getCodeVerifier() == null
             || pkce.getCodeChallengeMethod() == null) {
 
           throw new IllegalArgumentException(
-              "PKCE provider contained null implementations. PKCE object must implement all PKCEProvider methods.");
+              "PKCE provider contained null implementations. PKCE object must implement all"
+                  + " PKCEProvider methods.");
         }
       }
       this.pkce = pkce;
@@ -732,7 +726,7 @@ public class UserAuthorizer {
       return transportFactory;
     }
 
-    public PKCEProvider getPKCEProvider() {
+    public @Nullable PKCEProvider getPKCEProvider() {
       return pkce;
     }
 
