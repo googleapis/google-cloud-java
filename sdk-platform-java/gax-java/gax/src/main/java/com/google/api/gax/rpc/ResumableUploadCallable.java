@@ -30,6 +30,7 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.core.BetaApi;
+import com.google.api.gax.resumable.ResumableUploadFuture;
 import java.io.InputStream;
 
 /**

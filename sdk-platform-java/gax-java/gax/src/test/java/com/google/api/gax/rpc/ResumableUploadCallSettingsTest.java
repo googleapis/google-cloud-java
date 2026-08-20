@@ -30,8 +30,12 @@
 package com.google.api.gax.rpc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
+import com.google.api.gax.resumable.ResumableUploadProgressListener;
+import com.google.common.util.concurrent.MoreExecutors;
+import java.util.concurrent.Executor;
 import org.junit.jupiter.api.Test;
 
 public class ResumableUploadCallSettingsTest {
@@ -41,14 +45,25 @@ public class ResumableUploadCallSettingsTest {
     ResumableUploadCallSettings settings = ResumableUploadCallSettings.newBuilder().build();
 
     assertEquals(8 * 1024 * 1024, settings.getChunkSize());
+    assertNull(settings.getProgressListener());
+    assertNull(settings.getProgressListenerExecutor());
   }
 
   @Test
   public void testCustomInitialization() {
+    ResumableUploadProgressListener listener = progress -> {};
+    Executor executor = MoreExecutors.directExecutor();
+
     ResumableUploadCallSettings settings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(16 * 1024 * 1024).build();
+        ResumableUploadCallSettings.newBuilder()
+            .setChunkSize(16 * 1024 * 1024)
+            .setProgressListener(listener)
+            .setProgressListenerExecutor(executor)
+            .build();
 
     assertEquals(16 * 1024 * 1024, settings.getChunkSize());
+    assertSame(listener, settings.getProgressListener());
+    assertSame(executor, settings.getProgressListenerExecutor());
   }
 
   @Test
@@ -63,15 +78,24 @@ public class ResumableUploadCallSettingsTest {
 
   @Test
   public void testMerge_SettingsOverrides() {
+    ResumableUploadProgressListener listener = progress -> {};
+    Executor executor = MoreExecutors.directExecutor();
+
     ResumableUploadCallSettings stubSettings =
         ResumableUploadCallSettings.newBuilder().setChunkSize(4 * 1024 * 1024).build();
 
     ResumableUploadCallSettings perRequestSettings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(32 * 1024 * 1024).build();
+        ResumableUploadCallSettings.newBuilder()
+            .setChunkSize(32 * 1024 * 1024)
+            .setProgressListener(listener)
+            .setProgressListenerExecutor(executor)
+            .build();
 
     ResumableUploadCallSettings merged = stubSettings.merge(perRequestSettings);
 
-    // Chunk size overridden by Tier-1 per-request settings
+    // Chunk size and listener overridden by Tier-1 per-request settings
     assertEquals(32 * 1024 * 1024, merged.getChunkSize());
+    assertSame(listener, merged.getProgressListener());
+    assertSame(executor, merged.getProgressListenerExecutor());
   }
 }

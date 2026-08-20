@@ -30,19 +30,30 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.core.BetaApi;
+import com.google.api.gax.resumable.ResumableUploadProgressListener;
 import com.google.auto.value.AutoValue;
+import java.util.concurrent.Executor;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A settings class to configure a {@link ResumableUploadCallable} for executing resumable uploads.
- * Encapsulates protocol options such as payload chunk size.
+ * Encapsulates protocol options such as payload chunk size and progress tracking listeners.
  */
 @BetaApi
+@NullMarked
 @AutoValue
 public abstract class ResumableUploadCallSettings {
   private static final int DEFAULT_CHUNK_SIZE = 8 * 1024 * 1024; // 8 MB
 
   /** Returns the configured chunk size in bytes (defaults to 8 MB / 8,388,608 bytes). */
   public abstract int getChunkSize();
+
+  /** Returns the optional progress listener configured for uploads. */
+  public abstract @Nullable ResumableUploadProgressListener getProgressListener();
+
+  /** Returns the optional executor for executing progress listener callbacks. */
+  public abstract @Nullable Executor getProgressListenerExecutor();
 
   /**
    * Merges another {@code ResumableUploadCallSettings} instance with this one. Fields set in {@code
@@ -51,11 +62,16 @@ public abstract class ResumableUploadCallSettings {
    * @param other settings to overlay; may be {@code null}
    * @return a new, resolved {@code ResumableUploadCallSettings} instance
    */
-  public ResumableUploadCallSettings merge(ResumableUploadCallSettings other) {
+  public ResumableUploadCallSettings merge(@Nullable ResumableUploadCallSettings other) {
     if (other == null) {
       return this;
     }
-    return toBuilder().setChunkSize(other.getChunkSize()).build();
+    Builder builder = toBuilder().setChunkSize(other.getChunkSize());
+    if (other.getProgressListener() != null) {
+      builder.setProgressListener(other.getProgressListener());
+      builder.setProgressListenerExecutor(other.getProgressListenerExecutor());
+    }
+    return builder.build();
   }
 
   public abstract Builder toBuilder();
@@ -71,6 +87,16 @@ public abstract class ResumableUploadCallSettings {
 
     public abstract int getChunkSize();
 
+    public abstract Builder setProgressListener(
+        @Nullable ResumableUploadProgressListener progressListener);
+
+    public abstract @Nullable ResumableUploadProgressListener getProgressListener();
+
+    public abstract Builder setProgressListenerExecutor(@Nullable Executor executor);
+
+    public abstract @Nullable Executor getProgressListenerExecutor();
+
     public abstract ResumableUploadCallSettings build();
   }
 }
+
