@@ -40,8 +40,8 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
 import com.google.api.client.util.Joiner;
-import com.google.api.client.util.Preconditions;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
@@ -94,21 +94,13 @@ public class UserAuthorizer {
   private UserAuthorizer(Builder builder) {
     this.clientId = Preconditions.checkNotNull(builder.clientId);
     this.scopes = ImmutableList.copyOf(Preconditions.checkNotNull(builder.scopes));
-    this.callbackUri = (builder.callbackUri == null) ? DEFAULT_CALLBACK_URI : builder.callbackUri;
-    this.transportFactory =
-        (builder.transportFactory == null)
-            ? OAuth2Utils.HTTP_TRANSPORT_FACTORY
-            : builder.transportFactory;
-    this.tokenServerUri =
-        (builder.tokenServerUri == null) ? OAuth2Utils.TOKEN_SERVER_URI : builder.tokenServerUri;
-    this.userAuthUri =
-        (builder.userAuthUri == null) ? OAuth2Utils.USER_AUTH_URI : builder.userAuthUri;
-    this.tokenStore = (builder.tokenStore == null) ? new MemoryTokensStorage() : builder.tokenStore;
+    this.callbackUri = builder.callbackUri;
+    this.transportFactory = builder.transportFactory;
+    this.tokenServerUri = builder.tokenServerUri;
+    this.userAuthUri = builder.userAuthUri;
+    this.tokenStore = builder.tokenStore;
     this.pkce = builder.pkce;
-    this.clientAuthenticationType =
-        (builder.clientAuthenticationType == null)
-            ? ClientAuthenticationType.CLIENT_SECRET_POST
-            : builder.clientAuthenticationType;
+    this.clientAuthenticationType = builder.clientAuthenticationType;
   }
 
   /**
@@ -554,14 +546,15 @@ public class UserAuthorizer {
   public static class Builder {
 
     private @Nullable ClientId clientId;
-    private @Nullable TokenStore tokenStore;
-    private @Nullable URI callbackUri;
-    private @Nullable URI tokenServerUri;
-    private @Nullable URI userAuthUri;
     private @Nullable Collection<String> scopes;
-    private @Nullable HttpTransportFactory transportFactory;
+    private TokenStore tokenStore = new MemoryTokensStorage();
+    private URI callbackUri = DEFAULT_CALLBACK_URI;
+    private URI tokenServerUri = OAuth2Utils.TOKEN_SERVER_URI;
+    private URI userAuthUri = OAuth2Utils.USER_AUTH_URI;
+    private HttpTransportFactory transportFactory = OAuth2Utils.HTTP_TRANSPORT_FACTORY;
     private @Nullable PKCEProvider pkce;
-    private @Nullable ClientAuthenticationType clientAuthenticationType;
+    private ClientAuthenticationType clientAuthenticationType =
+        ClientAuthenticationType.CLIENT_SECRET_POST;
 
     protected Builder() {}
 
@@ -704,7 +697,7 @@ public class UserAuthorizer {
       return clientId;
     }
 
-    public @Nullable TokenStore getTokenStore() {
+    public TokenStore getTokenStore() {
       return tokenStore;
     }
 
@@ -712,19 +705,19 @@ public class UserAuthorizer {
       return scopes;
     }
 
-    public @Nullable URI getTokenServerUri() {
+    public URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    public @Nullable URI getCallbackUri() {
+    public URI getCallbackUri() {
       return callbackUri;
     }
 
-    public @Nullable URI getUserAuthUri() {
+    public URI getUserAuthUri() {
       return userAuthUri;
     }
 
-    public @Nullable HttpTransportFactory getHttpTransportFactory() {
+    public HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
@@ -732,7 +725,7 @@ public class UserAuthorizer {
       return pkce;
     }
 
-    public @Nullable ClientAuthenticationType getClientAuthenticationType() {
+    public ClientAuthenticationType getClientAuthenticationType() {
       return clientAuthenticationType;
     }
 

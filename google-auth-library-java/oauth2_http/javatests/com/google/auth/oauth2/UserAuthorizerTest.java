@@ -1002,25 +1002,28 @@ class UserAuthorizerTest {
   }
 
   @Test
-  void builder_getters_returnNullBeforeSet() {
+  void builder_defaultValues() {
     UserAuthorizer.Builder builder = UserAuthorizer.newBuilder();
     assertNull(builder.getClientId());
     assertNull(builder.getScopes());
-    assertNull(builder.getTokenStore());
-    assertNull(builder.getCallbackUri());
-    assertNull(builder.getTokenServerUri());
-    assertNull(builder.getUserAuthUri());
-    assertNull(builder.getHttpTransportFactory());
     assertNull(builder.getPKCEProvider());
-    assertNull(builder.getClientAuthenticationType());
+    assertTrue(builder.getTokenStore() instanceof MemoryTokensStorage);
+    assertEquals(UserAuthorizer.DEFAULT_CALLBACK_URI, builder.getCallbackUri());
+    assertEquals(OAuth2Utils.TOKEN_SERVER_URI, builder.getTokenServerUri());
+    assertEquals(OAuth2Utils.USER_AUTH_URI, builder.getUserAuthUri());
+    assertSame(OAuth2Utils.HTTP_TRANSPORT_FACTORY, builder.getHttpTransportFactory());
+    assertEquals(
+        UserAuthorizer.ClientAuthenticationType.CLIENT_SECRET_POST,
+        builder.getClientAuthenticationType());
   }
 
   @Test
-  void builder_defaultValues() {
+  void build_withDefaults() {
     UserAuthorizer authorizer =
         UserAuthorizer.newBuilder().setClientId(CLIENT_ID).setScopes(DUMMY_SCOPES).build();
 
     assertNotNull(authorizer.getTokenStore());
+    assertEquals(DUMMY_SCOPES, authorizer.getScopes());
     assertEquals(UserAuthorizer.DEFAULT_CALLBACK_URI, authorizer.getCallbackUri());
     assertEquals(
         UserAuthorizer.ClientAuthenticationType.CLIENT_SECRET_POST,
