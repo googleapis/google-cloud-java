@@ -302,11 +302,10 @@ public class UserAuthorizer {
   public UserCredentials getCredentialsFromCode(
       String code, @Nullable URI baseUri, @Nullable Map<String, String> additionalParameters)
       throws IOException {
-    if (additionalParameters == null) {
-      additionalParameters = Collections.emptyMap();
-    }
+    Map<String, String> effectiveAdditionalParameters =
+        additionalParameters != null ? additionalParameters : Collections.emptyMap();
     TokenResponseWithConfig tokenResponseWithConfig =
-        getCredentialsFromCodeInternal(code, baseUri, additionalParameters);
+        getCredentialsFromCodeInternal(code, baseUri, effectiveAdditionalParameters);
     return UserCredentials.newBuilder()
         .setClientId(tokenResponseWithConfig.getClientId())
         .setClientSecret(tokenResponseWithConfig.getClientSecret())
@@ -332,10 +331,9 @@ public class UserAuthorizer {
   public TokenResponseWithConfig getTokenResponseFromAuthCodeExchange(
       String code, @Nullable URI callbackUri, @Nullable Map<String, String> additionalParameters)
       throws IOException {
-    if (additionalParameters == null) {
-      additionalParameters = Collections.emptyMap();
-    }
-    return getCredentialsFromCodeInternal(code, callbackUri, additionalParameters);
+    Map<String, String> effectiveAdditionalParameters =
+        additionalParameters != null ? additionalParameters : Collections.emptyMap();
+    return getCredentialsFromCodeInternal(code, callbackUri, effectiveAdditionalParameters);
   }
 
   /**
