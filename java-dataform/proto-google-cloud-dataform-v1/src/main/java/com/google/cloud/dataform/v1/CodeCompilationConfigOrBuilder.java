@@ -401,4 +401,34 @@ public interface CodeCompilationConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataform.v1.PipelineConfigOrBuilder getPipelineConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether OpenLineage events are emitted for actions in this
+   * workflow. Reflects the `lineage.enabled` setting from
+   * `workflow_settings.yaml`.
+   * </pre>
+   *
+   * <code>optional bool lineage_enabled = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the lineageEnabled field is set.
+   */
+  boolean hasLineageEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether OpenLineage events are emitted for actions in this
+   * workflow. Reflects the `lineage.enabled` setting from
+   * `workflow_settings.yaml`.
+   * </pre>
+   *
+   * <code>optional bool lineage_enabled = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The lineageEnabled.
+   */
+  boolean getLineageEnabled();
 }
