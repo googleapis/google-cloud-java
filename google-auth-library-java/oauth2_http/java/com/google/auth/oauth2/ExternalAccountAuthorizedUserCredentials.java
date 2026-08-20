@@ -85,14 +85,14 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
   private static final long serialVersionUID = -2181779590486283287L;
 
   private final String transportFactoryClassName;
-  private final String audience;
-  private final String tokenUrl;
-  private final String tokenInfoUrl;
-  private final String revokeUrl;
-  private final String clientId;
-  private final String clientSecret;
+  private final @Nullable String audience;
+  private final @Nullable String tokenUrl;
+  private final @Nullable String tokenInfoUrl;
+  private final @Nullable String revokeUrl;
+  private final @Nullable String clientId;
+  private final @Nullable String clientSecret;
 
-  private String refreshToken;
+  private @Nullable String refreshToken;
 
   private transient HttpTransportFactory transportFactory;
 
@@ -417,14 +417,14 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
   /** Builder for {@link ExternalAccountAuthorizedUserCredentials}. */
   public static class Builder extends GoogleCredentials.Builder {
 
-    private HttpTransportFactory transportFactory;
-    private String audience;
-    private String refreshToken;
-    private String tokenUrl;
-    private String tokenInfoUrl;
-    private String revokeUrl;
-    private String clientId;
-    private String clientSecret;
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable String audience;
+    private @Nullable String refreshToken;
+    private @Nullable String tokenUrl;
+    private @Nullable String tokenInfoUrl;
+    private @Nullable String revokeUrl;
+    private @Nullable String clientId;
+    private @Nullable String clientSecret;
 
     protected Builder() {}
 
@@ -447,7 +447,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       this.transportFactory = transportFactory;
       return this;
     }
@@ -460,7 +460,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setAudience(String audience) {
+    public Builder setAudience(@Nullable String audience) {
       this.audience = audience;
       return this;
     }
@@ -472,7 +472,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setTokenUrl(String tokenUrl) {
+    public Builder setTokenUrl(@Nullable String tokenUrl) {
       this.tokenUrl = tokenUrl;
       return this;
     }
@@ -484,7 +484,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setTokenInfoUrl(String tokenInfoUrl) {
+    public Builder setTokenInfoUrl(@Nullable String tokenInfoUrl) {
       this.tokenInfoUrl = tokenInfoUrl;
       return this;
     }
@@ -496,7 +496,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setRevokeUrl(String revokeUrl) {
+    public Builder setRevokeUrl(@Nullable String revokeUrl) {
       this.revokeUrl = revokeUrl;
       return this;
     }
@@ -508,7 +508,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setRefreshToken(String refreshToken) {
+    public Builder setRefreshToken(@Nullable String refreshToken) {
       this.refreshToken = refreshToken;
       return this;
     }
@@ -520,7 +520,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setClientId(String clientId) {
+    public Builder setClientId(@Nullable String clientId) {
       this.clientId = clientId;
       return this;
     }
@@ -532,7 +532,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setClientSecret(String clientSecret) {
+    public Builder setClientSecret(@Nullable String clientSecret) {
       this.clientSecret = clientSecret;
       return this;
     }
@@ -545,7 +545,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      */
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
@@ -558,7 +558,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      */
     @Override
     @CanIgnoreReturnValue
-    public Builder setAccessToken(AccessToken accessToken) {
+    public Builder setAccessToken(@Nullable AccessToken accessToken) {
       super.setAccessToken(accessToken);
       return this;
     }
@@ -571,7 +571,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      */
     @CanIgnoreReturnValue
     @Override
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       super.setUniverseDomain(universeDomain);
       return this;
     }

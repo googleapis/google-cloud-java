@@ -35,6 +35,7 @@ import com.google.auth.oauth2.ExternalAccountCredentials.SubjectTokenTypes;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.Serializable;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Context object to pass relevant variables from external account credentials to suppliers. This
@@ -87,8 +88,8 @@ public class ExternalAccountSupplierContext implements Serializable {
   /** Builder for external account supplier context. */
   static class Builder {
 
-    protected String audience;
-    protected String subjectTokenType;
+    protected @Nullable String audience;
+    protected @Nullable String subjectTokenType;
 
     /**
      * Sets the Audience.

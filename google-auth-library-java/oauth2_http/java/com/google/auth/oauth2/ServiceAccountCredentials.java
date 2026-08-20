@@ -103,12 +103,12 @@ public class ServiceAccountCredentials extends GoogleCredentials
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(ServiceAccountCredentials.class);
 
-  private final String clientId;
+  private final @Nullable String clientId;
   private final String clientEmail;
   private final PrivateKey privateKey;
-  private final String privateKeyId;
-  private final String serviceAccountUser;
-  private final String projectId;
+  private final @Nullable String privateKeyId;
+  private final @Nullable String serviceAccountUser;
+  private final @Nullable String projectId;
   private final String transportFactoryClassName;
   private final URI tokenServerUri;
   private final Collection<String> scopes;
@@ -1150,16 +1150,16 @@ public class ServiceAccountCredentials extends GoogleCredentials
 
   public static class Builder extends GoogleCredentials.Builder {
 
-    private String clientId;
-    private String clientEmail;
-    private PrivateKey privateKey;
-    private String privateKeyId;
-    private String serviceAccountUser;
-    private String projectId;
-    private URI tokenServerUri;
-    private Collection<String> scopes;
-    private Collection<String> defaultScopes;
-    private HttpTransportFactory transportFactory;
+    private @Nullable String clientId;
+    private @Nullable String clientEmail;
+    private @Nullable PrivateKey privateKey;
+    private @Nullable String privateKeyId;
+    private @Nullable String serviceAccountUser;
+    private @Nullable String projectId;
+    private @Nullable URI tokenServerUri;
+    private @Nullable Collection<String> scopes;
+    private @Nullable Collection<String> defaultScopes;
+    private @Nullable HttpTransportFactory transportFactory;
     private int lifetime = DEFAULT_LIFETIME_IN_SECONDS;
     private boolean useJwtAccessWithScope = false;
     private boolean defaultRetriesEnabled = true;
@@ -1290,11 +1290,11 @@ public class ServiceAccountCredentials extends GoogleCredentials
       return clientId;
     }
 
-    public String getClientEmail() {
+    public @Nullable String getClientEmail() {
       return clientEmail;
     }
 
-    public PrivateKey getPrivateKey() {
+    public @Nullable PrivateKey getPrivateKey() {
       return privateKey;
     }
 

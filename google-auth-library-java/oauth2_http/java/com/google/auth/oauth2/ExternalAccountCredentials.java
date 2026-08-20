@@ -770,13 +770,13 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   /** Base builder for external account credentials. */
   public abstract static class Builder extends GoogleCredentials.Builder {
 
-    protected String audience;
-    protected String subjectTokenType;
-    protected String tokenUrl;
+    protected @Nullable String audience;
+    protected @Nullable String subjectTokenType;
+    protected @Nullable String tokenUrl;
     protected @Nullable String tokenInfoUrl;
-    protected CredentialSource credentialSource;
-    protected EnvironmentProvider environmentProvider;
-    protected PropertyProvider propertyProvider;
+    protected @Nullable CredentialSource credentialSource;
+    protected @Nullable EnvironmentProvider environmentProvider;
+    protected @Nullable PropertyProvider propertyProvider;
     protected @Nullable HttpTransportFactory transportFactory;
 
     @Nullable protected String serviceAccountImpersonationUrl;

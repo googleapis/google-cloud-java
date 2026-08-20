@@ -521,8 +521,8 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
   public static class Builder {
 
     private @Nullable String clientId;
-    private String clientEmail;
-    private PrivateKey privateKey;
+    private @Nullable String clientEmail;
+    private @Nullable PrivateKey privateKey;
     private @Nullable String privateKeyId;
     private @Nullable URI defaultAudience;
     private @Nullable String quotaProjectId;
@@ -587,11 +587,11 @@ public class ServiceAccountJwtAccessCredentials extends Credentials
       return clientId;
     }
 
-    public String getClientEmail() {
+    public @Nullable String getClientEmail() {
       return clientEmail;
     }
 
-    public PrivateKey getPrivateKey() {
+    public @Nullable PrivateKey getPrivateKey() {
       return privateKey;
     }
 

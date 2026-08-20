@@ -206,8 +206,8 @@ public final class CredentialAccessBoundary {
     }
 
     public static class Builder {
-      private String availableResource;
-      private List<String> availablePermissions;
+      private @Nullable String availableResource;
+      private @Nullable List<String> availablePermissions;
 
       @Nullable private AvailabilityCondition availabilityCondition;
 
@@ -327,7 +327,7 @@ public final class CredentialAccessBoundary {
       }
 
       public static final class Builder {
-        private String expression;
+        private @Nullable String expression;
 
         @Nullable private String title;
         @Nullable private String description;

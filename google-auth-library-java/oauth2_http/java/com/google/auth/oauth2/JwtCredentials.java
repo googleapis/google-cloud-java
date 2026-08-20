@@ -206,9 +206,9 @@ public class JwtCredentials extends Credentials implements JwtProvider {
   }
 
   public static class Builder {
-    private PrivateKey privateKey;
+    private @Nullable PrivateKey privateKey;
     private @Nullable String privateKeyId;
-    private JwtClaims jwtClaims;
+    private @Nullable JwtClaims jwtClaims;
     private Clock clock = Clock.SYSTEM;
     private Long lifeSpanSeconds = TimeUnit.HOURS.toSeconds(1);
 
@@ -220,7 +220,7 @@ public class JwtCredentials extends Credentials implements JwtProvider {
       return this;
     }
 
-    public PrivateKey getPrivateKey() {
+    public @Nullable PrivateKey getPrivateKey() {
       return privateKey;
     }
 
@@ -240,7 +240,7 @@ public class JwtCredentials extends Credentials implements JwtProvider {
       return this;
     }
 
-    public JwtClaims getJwtClaims() {
+    public @Nullable JwtClaims getJwtClaims() {
       return jwtClaims;
     }
 

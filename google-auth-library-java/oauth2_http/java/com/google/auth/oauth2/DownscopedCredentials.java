@@ -205,8 +205,8 @@ public final class DownscopedCredentials extends OAuth2Credentials {
 
   public static class Builder extends OAuth2Credentials.Builder {
 
-    private GoogleCredentials sourceCredential;
-    private CredentialAccessBoundary credentialAccessBoundary;
+    private @Nullable GoogleCredentials sourceCredential;
+    private @Nullable CredentialAccessBoundary credentialAccessBoundary;
     private @Nullable HttpTransportFactory transportFactory;
     private @Nullable String universeDomain;
 

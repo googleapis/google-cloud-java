@@ -184,7 +184,8 @@ public class UserAuthorizer {
    * @param baseUri The URI to resolve the OAuth2 callback URI relative to.
    * @return The URL that can be navigated or redirected to.
    */
-  public URL getAuthorizationUrl(@Nullable String userId, @Nullable String state, @Nullable URI baseUri) {
+  public URL getAuthorizationUrl(
+      @Nullable String userId, @Nullable String state, @Nullable URI baseUri) {
     return this.getAuthorizationUrl(userId, state, baseUri, null);
   }
 
@@ -241,7 +242,7 @@ public class UserAuthorizer {
    * @throws IOException If there is error retrieving or loading the credentials.
    */
   @Nullable
-  public @Nullable UserCredentials getCredentials(String userId) throws IOException {
+  public UserCredentials getCredentials(String userId) throws IOException {
     Preconditions.checkNotNull(userId);
     if (tokenStore == null) {
       throw new IllegalStateException("Method cannot be called if token store is not specified.");
@@ -288,7 +289,8 @@ public class UserAuthorizer {
    * @return the UserCredentials instance created from the authorization code.
    * @throws IOException An error from the server API call to get the tokens.
    */
-  public UserCredentials getCredentialsFromCode(String code, @Nullable URI baseUri) throws IOException {
+  public UserCredentials getCredentialsFromCode(String code, @Nullable URI baseUri)
+      throws IOException {
     return getCredentialsFromCode(code, baseUri, null);
   }
 
@@ -330,7 +332,8 @@ public class UserAuthorizer {
    * @throws IOException If an error occurs during the token exchange process.
    */
   public TokenResponseWithConfig getTokenResponseFromAuthCodeExchange(
-      String code, @Nullable URI callbackUri, @Nullable Map<String, String> additionalParameters) throws IOException {
+      String code, @Nullable URI callbackUri, @Nullable Map<String, String> additionalParameters)
+      throws IOException {
     return getCredentialsFromCodeInternal(code, callbackUri, additionalParameters);
   }
 
@@ -343,8 +346,8 @@ public class UserAuthorizer {
    * @return UserCredentials instance created from the authorization code.
    * @throws IOException An error from the server API call to get the tokens or store the tokens.
    */
-  public UserCredentials getAndStoreCredentialsFromCode(String userId, String code, @Nullable URI baseUri)
-      throws IOException {
+  public UserCredentials getAndStoreCredentialsFromCode(
+      String userId, String code, @Nullable URI baseUri) throws IOException {
     Preconditions.checkNotNull(userId);
     Preconditions.checkNotNull(code);
     UserCredentials credentials = getCredentialsFromCode(code, baseUri);
@@ -451,7 +454,8 @@ public class UserAuthorizer {
   }
 
   private TokenResponseWithConfig getCredentialsFromCodeInternal(
-      String code, @Nullable URI baseUri, @Nullable Map<String, String> additionalParameters) throws IOException {
+      String code, @Nullable URI baseUri, @Nullable Map<String, String> additionalParameters)
+      throws IOException {
     Preconditions.checkNotNull(code);
     URI resolvedCallbackUri = getCallbackUri(baseUri);
 
@@ -558,15 +562,15 @@ public class UserAuthorizer {
 
   public static class Builder {
 
-    private ClientId clientId;
-    private TokenStore tokenStore;
-    private URI callbackUri;
-    private URI tokenServerUri;
-    private URI userAuthUri;
-    private Collection<String> scopes;
-    private HttpTransportFactory transportFactory;
-    private PKCEProvider pkce;
-    private ClientAuthenticationType clientAuthenticationType;
+    private @Nullable ClientId clientId;
+    private @Nullable TokenStore tokenStore;
+    private @Nullable URI callbackUri;
+    private @Nullable URI tokenServerUri;
+    private @Nullable URI userAuthUri;
+    private @Nullable Collection<String> scopes;
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable PKCEProvider pkce;
+    private @Nullable ClientAuthenticationType clientAuthenticationType;
 
     protected Builder() {}
 
@@ -589,7 +593,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setClientId(ClientId clientId) {
+    public Builder setClientId(@Nullable ClientId clientId) {
       this.clientId = clientId;
       return this;
     }
@@ -601,7 +605,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setTokenStore(TokenStore tokenStore) {
+    public Builder setTokenStore(@Nullable TokenStore tokenStore) {
       this.tokenStore = tokenStore;
       return this;
     }
@@ -613,7 +617,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setScopes(Collection<String> scopes) {
+    public Builder setScopes(@Nullable Collection<String> scopes) {
       this.scopes = scopes;
       return this;
     }
@@ -625,7 +629,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setTokenServerUri(URI tokenServerUri) {
+    public Builder setTokenServerUri(@Nullable URI tokenServerUri) {
       this.tokenServerUri = tokenServerUri;
       return this;
     }
@@ -638,7 +642,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setCallbackUri(URI callbackUri) {
+    public Builder setCallbackUri(@Nullable URI callbackUri) {
       this.callbackUri = callbackUri;
       return this;
     }
@@ -650,7 +654,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setUserAuthUri(URI userAuthUri) {
+    public Builder setUserAuthUri(@Nullable URI userAuthUri) {
       this.userAuthUri = userAuthUri;
       return this;
     }
@@ -662,7 +666,7 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       this.transportFactory = transportFactory;
       return this;
     }
@@ -676,14 +680,15 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setPKCEProvider(PKCEProvider pkce) {
+    public Builder setPKCEProvider(@Nullable PKCEProvider pkce) {
       if (pkce != null) {
         if (pkce.getCodeChallenge() == null
             || pkce.getCodeVerifier() == null
             || pkce.getCodeChallengeMethod() == null) {
 
           throw new IllegalArgumentException(
-              "PKCE provider contained null implementations. PKCE object must implement all PKCEProvider methods.");
+              "PKCE provider contained null implementations. PKCE object must implement all"
+                  + " PKCEProvider methods.");
         }
       }
       this.pkce = pkce;
@@ -699,44 +704,45 @@ public class UserAuthorizer {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
-    public Builder setClientAuthenticationType(ClientAuthenticationType clientAuthentication) {
+    public Builder setClientAuthenticationType(
+        @Nullable ClientAuthenticationType clientAuthentication) {
       this.clientAuthenticationType = clientAuthentication;
       return this;
     }
 
-    public ClientId getClientId() {
+    public @Nullable ClientId getClientId() {
       return clientId;
     }
 
-    public TokenStore getTokenStore() {
+    public @Nullable TokenStore getTokenStore() {
       return tokenStore;
     }
 
-    public Collection<String> getScopes() {
+    public @Nullable Collection<String> getScopes() {
       return scopes;
     }
 
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    public URI getCallbackUri() {
+    public @Nullable URI getCallbackUri() {
       return callbackUri;
     }
 
-    public URI getUserAuthUri() {
+    public @Nullable URI getUserAuthUri() {
       return userAuthUri;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
-    public PKCEProvider getPKCEProvider() {
+    public @Nullable PKCEProvider getPKCEProvider() {
       return pkce;
     }
 
-    public ClientAuthenticationType getClientAuthenticationType() {
+    public @Nullable ClientAuthenticationType getClientAuthenticationType() {
       return clientAuthenticationType;
     }
 
@@ -776,12 +782,12 @@ public class UserAuthorizer {
    */
   public static class TokenResponseWithConfig {
 
-    private final String clientId;
-    private final String clientSecret;
-    private final String refreshToken;
-    private final AccessToken accessToken;
-    private URI tokenServerUri;
-    private final HttpTransportFactory httpTransportFactory;
+    private final @Nullable String clientId;
+    private final @Nullable String clientSecret;
+    private final @Nullable String refreshToken;
+    private final @Nullable AccessToken accessToken;
+    private @Nullable URI tokenServerUri;
+    private final @Nullable HttpTransportFactory httpTransportFactory;
 
     private TokenResponseWithConfig(Builder builder) {
       this.clientId = builder.clientId;
@@ -797,7 +803,7 @@ public class UserAuthorizer {
      *
      * @return The client ID.
      */
-    public String getClientId() {
+    public @Nullable String getClientId() {
       return clientId;
     }
 
@@ -806,7 +812,7 @@ public class UserAuthorizer {
      *
      * @return The client secret.
      */
-    public String getClientSecret() {
+    public @Nullable String getClientSecret() {
       return clientSecret;
     }
 
@@ -815,7 +821,7 @@ public class UserAuthorizer {
      *
      * @return The access token.
      */
-    public AccessToken getAccessToken() {
+    public @Nullable AccessToken getAccessToken() {
       return accessToken;
     }
 
@@ -824,7 +830,7 @@ public class UserAuthorizer {
      *
      * @return The HTTP transport factory.
      */
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return httpTransportFactory;
     }
 
@@ -833,7 +839,7 @@ public class UserAuthorizer {
      *
      * @return The token server URI.
      */
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
@@ -852,45 +858,45 @@ public class UserAuthorizer {
     }
 
     static class Builder {
-      private String clientId;
-      private String clientSecret;
-      private String refreshToken;
-      private AccessToken accessToken;
-      private URI tokenServerUri;
-      private HttpTransportFactory httpTransportFactory;
+      private @Nullable String clientId;
+      private @Nullable String clientSecret;
+      private @Nullable String refreshToken;
+      private @Nullable AccessToken accessToken;
+      private @Nullable URI tokenServerUri;
+      private @Nullable HttpTransportFactory httpTransportFactory;
 
       @CanIgnoreReturnValue
-      Builder setClientId(String clientId) {
+      Builder setClientId(@Nullable String clientId) {
         this.clientId = clientId;
         return this;
       }
 
       @CanIgnoreReturnValue
-      Builder setClientSecret(String clientSecret) {
+      Builder setClientSecret(@Nullable String clientSecret) {
         this.clientSecret = clientSecret;
         return this;
       }
 
       @CanIgnoreReturnValue
-      Builder setRefreshToken(String refreshToken) {
+      Builder setRefreshToken(@Nullable String refreshToken) {
         this.refreshToken = refreshToken;
         return this;
       }
 
       @CanIgnoreReturnValue
-      Builder setAccessToken(AccessToken accessToken) {
+      Builder setAccessToken(@Nullable AccessToken accessToken) {
         this.accessToken = accessToken;
         return this;
       }
 
       @CanIgnoreReturnValue
-      Builder setHttpTransportFactory(HttpTransportFactory httpTransportFactory) {
+      Builder setHttpTransportFactory(@Nullable HttpTransportFactory httpTransportFactory) {
         this.httpTransportFactory = httpTransportFactory;
         return this;
       }
 
       @CanIgnoreReturnValue
-      Builder setTokenServerUri(URI tokenServerUri) {
+      Builder setTokenServerUri(@Nullable URI tokenServerUri) {
         this.tokenServerUri = tokenServerUri;
         return this;
       }

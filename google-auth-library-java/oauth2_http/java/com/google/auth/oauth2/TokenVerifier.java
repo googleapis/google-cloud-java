@@ -194,11 +194,11 @@ public class TokenVerifier {
 
   public static class Builder {
     private @Nullable String audience;
-    private String certificatesLocation;
+    private @Nullable String certificatesLocation;
     private @Nullable String issuer;
     private @Nullable PublicKey publicKey;
-    private Clock clock;
-    private HttpTransportFactory httpTransportFactory;
+    private @Nullable Clock clock;
+    private @Nullable HttpTransportFactory httpTransportFactory;
 
     /**
      * Set a target audience to verify.
@@ -218,7 +218,7 @@ public class TokenVerifier {
      * @param certificatesLocation URL to published public keys
      * @return the builder
      */
-    public Builder setCertificatesLocation(String certificatesLocation) {
+    public Builder setCertificatesLocation(@Nullable String certificatesLocation) {
       this.certificatesLocation = certificatesLocation;
       return this;
     }
@@ -252,7 +252,7 @@ public class TokenVerifier {
      * @param clock the clock to use. Defaults to the system clock
      * @return the builder
      */
-    public Builder setClock(Clock clock) {
+    public Builder setClock(@Nullable Clock clock) {
       this.clock = clock;
       return this;
     }
@@ -264,7 +264,7 @@ public class TokenVerifier {
      * @param httpTransportFactory the HttpTransportFactory used to build certificate URL requests
      * @return the builder
      */
-    public Builder setHttpTransportFactory(HttpTransportFactory httpTransportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory httpTransportFactory) {
       this.httpTransportFactory = httpTransportFactory;
       return this;
     }

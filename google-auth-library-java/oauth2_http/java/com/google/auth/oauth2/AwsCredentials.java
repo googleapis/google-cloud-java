@@ -237,7 +237,7 @@ public class AwsCredentials extends ExternalAccountCredentials {
 
   public static class Builder extends ExternalAccountCredentials.Builder {
 
-    private AwsSecurityCredentialsSupplier awsSecurityCredentialsSupplier;
+    private @Nullable AwsSecurityCredentialsSupplier awsSecurityCredentialsSupplier;
 
     private @Nullable String regionalCredentialVerificationUrlOverride;
 

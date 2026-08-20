@@ -764,8 +764,8 @@ public class ImpersonatedCredentials extends GoogleCredentials
 
   public static class Builder extends GoogleCredentials.Builder {
 
-    private GoogleCredentials sourceCredentials;
-    private String targetPrincipal;
+    private @Nullable GoogleCredentials sourceCredentials;
+    private @Nullable String targetPrincipal;
     private @Nullable List<String> delegates;
     private @Nullable List<String> scopes;
     private int lifetime = DEFAULT_LIFETIME_IN_SECONDS;
@@ -804,7 +804,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
-    public GoogleCredentials getSourceCredentials() {
+    public @Nullable GoogleCredentials getSourceCredentials() {
       return this.sourceCredentials;
     }
 
@@ -814,7 +814,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
-    public String getTargetPrincipal() {
+    public @Nullable String getTargetPrincipal() {
       return this.targetPrincipal;
     }
 

@@ -50,6 +50,7 @@ import java.util.ServiceLoader;
 import java.util.Set;
 import javax.annotation.concurrent.ThreadSafe;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Utilities to fetch the S2A (Secure Session Agent) address from the mTLS configuration.
@@ -76,7 +77,7 @@ public class SecureSessionAgent {
   private static final String MDS_MTLS_ENDPOINT =
       ComputeEngineCredentials.getMetadataServerUrl() + S2A_CONFIG_ENDPOINT_POSTFIX;
 
-  private transient HttpTransportFactory transportFactory;
+  private transient @Nullable HttpTransportFactory transportFactory;
 
   SecureSessionAgent(SecureSessionAgent.Builder builder) {
     this.transportFactory = builder.getHttpTransportFactory();
@@ -104,17 +105,17 @@ public class SecureSessionAgent {
   }
 
   public static class Builder {
-    private HttpTransportFactory transportFactory;
+    private @Nullable HttpTransportFactory transportFactory;
 
     protected Builder() {}
 
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       this.transportFactory = transportFactory;
       return this;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return this.transportFactory;
     }
 

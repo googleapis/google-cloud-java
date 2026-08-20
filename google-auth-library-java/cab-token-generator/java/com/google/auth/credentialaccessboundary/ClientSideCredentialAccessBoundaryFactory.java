@@ -603,12 +603,12 @@ public class ClientSideCredentialAccessBoundaryFactory {
    * with the desired configuration options.
    */
   public static class Builder {
-    private GoogleCredentials sourceCredential;
+    private @Nullable GoogleCredentials sourceCredential;
     private @Nullable HttpTransportFactory transportFactory;
     private @Nullable String universeDomain;
-    private String tokenExchangeEndpoint;
-    private Duration minimumTokenLifetime;
-    private Duration refreshMargin;
+    private @Nullable String tokenExchangeEndpoint;
+    private @Nullable Duration minimumTokenLifetime;
+    private @Nullable Duration refreshMargin;
     private Clock clock = Clock.SYSTEM; // Default to system clock;
 
     private Builder() {}

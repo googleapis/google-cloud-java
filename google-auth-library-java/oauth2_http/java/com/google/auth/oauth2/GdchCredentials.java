@@ -542,14 +542,14 @@ public class GdchCredentials extends GoogleCredentials {
   }
 
   public static class Builder extends GoogleCredentials.Builder {
-    private String projectId;
-    private String privateKeyId;
-    private PrivateKey privateKey;
-    private String serviceIdentityName;
-    private URI tokenServerUri;
-    private String apiAudience;
-    private HttpTransportFactory transportFactory;
-    private String caCertPath;
+    private @Nullable String projectId;
+    private @Nullable String privateKeyId;
+    private @Nullable PrivateKey privateKey;
+    private @Nullable String serviceIdentityName;
+    private @Nullable URI tokenServerUri;
+    private @Nullable String apiAudience;
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable String caCertPath;
     private int lifetime = DEFAULT_LIFETIME_IN_SECONDS;
 
     protected Builder() {}
@@ -624,7 +624,7 @@ public class GdchCredentials extends GoogleCredentials {
       return this;
     }
 
-    public String getProjectId() {
+    public @Nullable String getProjectId() {
       return projectId;
     }
 
@@ -632,19 +632,19 @@ public class GdchCredentials extends GoogleCredentials {
       return privateKeyId;
     }
 
-    public PrivateKey getPrivateKey() {
+    public @Nullable PrivateKey getPrivateKey() {
       return privateKey;
     }
 
-    public String getServiceIdentityName() {
+    public @Nullable String getServiceIdentityName() {
       return serviceIdentityName;
     }
 
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 

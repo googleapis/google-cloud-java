@@ -35,6 +35,7 @@ import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.HashMap;
 import java.util.Map;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Stores the AWS API request signature based on the AWS Signature Version 4 signing process, and
@@ -122,16 +123,16 @@ class AwsRequestSignature {
 
   static class Builder {
 
-    private AwsSecurityCredentials awsSecurityCredentials;
-    private Map<String, String> canonicalHeaders;
+    private @Nullable AwsSecurityCredentials awsSecurityCredentials;
+    private @Nullable Map<String, String> canonicalHeaders;
 
-    private String signature;
-    private String credentialScope;
-    private String url;
-    private String httpMethod;
-    private String date;
-    private String region;
-    private String authorizationHeader;
+    private @Nullable String signature;
+    private @Nullable String credentialScope;
+    private @Nullable String url;
+    private @Nullable String httpMethod;
+    private @Nullable String date;
+    private @Nullable String region;
+    private @Nullable String authorizationHeader;
 
     @CanIgnoreReturnValue
     Builder setSignature(String signature) {

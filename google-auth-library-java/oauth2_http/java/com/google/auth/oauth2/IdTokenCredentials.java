@@ -167,7 +167,7 @@ public class IdTokenCredentials extends OAuth2Credentials {
 
   public static class Builder extends OAuth2Credentials.Builder {
 
-    private IdTokenProvider idTokenProvider;
+    private @Nullable IdTokenProvider idTokenProvider;
     private @Nullable String targetAudience;
     private @Nullable List<IdTokenProvider.Option> options;
 
@@ -185,7 +185,7 @@ public class IdTokenCredentials extends OAuth2Credentials {
       return this;
     }
 
-    public IdTokenProvider getIdTokenProvider() {
+    public @Nullable IdTokenProvider getIdTokenProvider() {
       return this.idTokenProvider;
     }
 
