@@ -534,9 +534,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     this.batchQueries.clear();
     this.currentUpdateCount = -1;
     this.currentJobIdIndex = -1;
-    if (this.connection != null) {
-      this.connection.removeStatement(this);
-    }
+    this.connection.removeStatement(this);
   }
 
   private boolean isSingularResultSet() {
@@ -1474,18 +1472,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     queryConfigBuilder.setUseQueryCache(this.querySettings.getUseQueryCache());
     queryConfigBuilder.setMaxResults(this.querySettings.getMaxResultPerPage());
 
-    ConnectionProperty sessionProperty =
-        this.connection != null
-            ? this.connection.getSessionInfoConnectionProperty()
-            : this.querySettings.getSessionInfoConnectionProperty();
-    boolean isSessionEnabled =
-        this.connection != null
-            ? this.connection.isSessionEnabled()
-            : this.querySettings.isEnableSession();
-    List<ConnectionProperty> queryProperties =
-        this.connection != null
-            ? this.connection.getQueryProperties()
-            : this.querySettings.getQueryProperties();
+    ConnectionProperty sessionProperty = this.connection.getSessionInfoConnectionProperty();
+    boolean isSessionEnabled = this.connection.isSessionEnabled();
+    List<ConnectionProperty> queryProperties = this.connection.getQueryProperties();
 
     if (isSessionEnabled) {
       if (sessionProperty != null) {

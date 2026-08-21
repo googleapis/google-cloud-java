@@ -809,7 +809,8 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testUserSuppliedSessionId() throws Exception {
-    String urlWithSessionId = BASE_URL + ";EnableSession=1;session_id=user_supplied_session_999";
+    String urlWithSessionId =
+        BASE_URL + ";EnableSession=1;QueryProperties=session_id=user_supplied_session_999";
     try (BigQueryConnection connection = new BigQueryConnection(urlWithSessionId)) {
       assertTrue(connection.isSessionEnabled());
       assertNotNull(connection.getSessionInfoConnectionProperty());
