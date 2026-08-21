@@ -52,6 +52,10 @@ import org.jspecify.annotations.Nullable;
 /**
  * Internal provider for retrieving the subject and actor tokens for {@link IdentityPoolCredentials}
  * to exchange for GCP access tokens via a local file.
+ *
+ * <p>Note: Despite the name, this class handles both subject <em>and</em> actor tokens. The class
+ * name retains "Subject" for serialization backward compatibility; renaming it would break
+ * deserialization of previously serialized credentials.
  */
 @NullMarked
 class FileIdentityPoolSubjectTokenSupplier

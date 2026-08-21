@@ -167,11 +167,14 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   /**
    * Checks whether mTLS is properly configured by verifying that an X509Provider is set or the
-   * transport factory is an MtlsHttpTransportFactory. This avoids relying solely on instanceof
-   * checks which could pass for a misconfigured factory.
+   * transport factory is an MtlsHttpTransportFactory with a non-null KeyStore. This avoids false
+   * positives from a no-arg-constructed MtlsHttpTransportFactory (e.g. after deserialization)
+   * that has no actual certificates.
    */
   private boolean isMtlsConfigured() {
-    return this.x509Provider != null || this.transportFactory instanceof MtlsHttpTransportFactory;
+    return this.x509Provider != null
+        || (this.transportFactory instanceof MtlsHttpTransportFactory
+            && ((MtlsHttpTransportFactory) this.transportFactory).hasKeyStore());
   }
 
   @Override
@@ -338,6 +341,10 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         this.subjectTokenSupplier = credentials.subjectTokenSupplier;
         this.actorTokenSupplier = credentials.actorTokenSupplier;
       }
+      // Note: when credentialSource is present, subjectTokenSupplier and actorTokenSupplier
+      // are intentionally NOT copied here. They will be reconstructed from credentialSource
+      // during build(), which ensures they share the same FileIdentityPoolSubjectTokenSupplier
+      // instance for atomic token reads.
       this.actorTokenType = credentials.actorTokenType;
       this.x509Provider = credentials.x509Provider;
     }

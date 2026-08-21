@@ -1730,6 +1730,46 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                 "Actor tokens are only supported for mTLS token exchanges."));
   }
 
+  @Test
+  void builder_actorTokenWithNoArgMtlsFactory_throws() throws Exception {
+    // A no-arg MtlsHttpTransportFactory (e.g. from deserialization) has no KeyStore,
+    // so isMtlsConfigured() should return false and building should fail.
+    MtlsHttpTransportFactory noArgFactory = new MtlsHttpTransportFactory();
+    assertFalse(noArgFactory.hasKeyStore());
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setSubjectTokenSupplier(testProvider)
+                    .setActorTokenSupplier(testActorSupplier)
+                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setHttpTransportFactory(noArgFactory)
+                    .setAudience("audience")
+                    .setSubjectTokenType("subjectTokenType")
+                    .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+                    .build());
+    assertTrue(
+        e.getMessage()
+            .contains(
+                "Actor tokens are only supported for mTLS token exchanges."));
+  }
+
+  @Test
+  void mtlsHttpTransportFactory_hasKeyStore_withKeyStore_returnsTrue() throws Exception {
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(ks);
+    assertTrue(factory.hasKeyStore());
+  }
+
+  @Test
+  void mtlsHttpTransportFactory_hasKeyStore_noArg_returnsFalse() {
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory();
+    assertFalse(factory.hasKeyStore());
+  }
+
   // ==================================================================================
   // Section A: Cert Pinning & Transport Factory Tests
   // ==================================================================================
