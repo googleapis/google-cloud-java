@@ -697,7 +697,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
   }
 
-  public synchronized void updateSessionInfo(String sessionId) {
+  synchronized void updateSessionInfo(String sessionId) {
     if (sessionId != null && !sessionId.isEmpty()) {
       if (this.sessionInfoConnectionProperty == null
           || !sessionId.equals(this.sessionInfoConnectionProperty.getValue())) {
