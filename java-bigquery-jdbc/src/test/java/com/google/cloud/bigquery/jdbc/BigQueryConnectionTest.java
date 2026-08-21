@@ -776,4 +776,46 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       assertEquals(exception, ex.getCause());
     }
   }
+
+  @Test
+  public void testUpdateSessionInfo() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      assertNull(connection.getSessionInfoConnectionProperty());
+
+      connection.updateSessionInfo("test_session_id_1");
+      assertNotNull(connection.getSessionInfoConnectionProperty());
+      assertEquals("session_id", connection.getSessionInfoConnectionProperty().getKey());
+      assertEquals("test_session_id_1", connection.getSessionInfoConnectionProperty().getValue());
+
+      // Verify queryProperties contains session_id
+      boolean found =
+          connection.getQueryProperties().stream()
+              .anyMatch(
+                  cp ->
+                      "session_id".equalsIgnoreCase(cp.getKey())
+                          && "test_session_id_1".equals(cp.getValue()));
+      assertTrue(found, "queryProperties should contain session_id property");
+
+      // Update to a new session ID and ensure it updates without creating duplicates
+      connection.updateSessionInfo("test_session_id_2");
+      assertEquals("test_session_id_2", connection.getSessionInfoConnectionProperty().getValue());
+      long count =
+          connection.getQueryProperties().stream()
+              .filter(cp -> "session_id".equalsIgnoreCase(cp.getKey()))
+              .count();
+      assertEquals(1, count, "Should only have 1 session_id property in queryProperties");
+    }
+  }
+
+  @Test
+  public void testUserSuppliedSessionId() throws Exception {
+    String urlWithSessionId = BASE_URL + ";EnableSession=1;session_id=user_supplied_session_999";
+    try (BigQueryConnection connection = new BigQueryConnection(urlWithSessionId)) {
+      assertTrue(connection.isSessionEnabled());
+      assertNotNull(connection.getSessionInfoConnectionProperty());
+      assertEquals("session_id", connection.getSessionInfoConnectionProperty().getKey());
+      assertEquals(
+          "user_supplied_session_999", connection.getSessionInfoConnectionProperty().getValue());
+    }
+  }
 }

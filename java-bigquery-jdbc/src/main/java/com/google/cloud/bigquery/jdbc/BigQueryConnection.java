@@ -686,17 +686,37 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       Job job = this.bigQuery.create(JobInfo.of(transactionBeginJobConfig.build()));
       job = job.waitFor();
       Job transactionBeginJob = this.bigQuery.getJob(job.getJobId());
-      if (this.sessionInfoConnectionProperty == null) {
-        this.sessionInfoConnectionProperty =
-            ConnectionProperty.newBuilder()
-                .setKey("session_id")
-                .setValue(transactionBeginJob.getStatistics().getSessionInfo().getSessionId())
-                .build();
-        this.queryProperties.add(this.sessionInfoConnectionProperty);
+      if (this.sessionInfoConnectionProperty == null
+          && transactionBeginJob.getStatistics() != null
+          && transactionBeginJob.getStatistics().getSessionInfo() != null) {
+        updateSessionInfo(transactionBeginJob.getStatistics().getSessionInfo().getSessionId());
       }
       this.transactionStarted = true;
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcRuntimeException("Failed to begin transaction", ex);
+    }
+  }
+
+  public synchronized void updateSessionInfo(String sessionId) {
+    if (sessionId != null && !sessionId.isEmpty()) {
+      if (this.sessionInfoConnectionProperty == null
+          || !sessionId.equals(this.sessionInfoConnectionProperty.getValue())) {
+        this.sessionInfoConnectionProperty =
+            ConnectionProperty.newBuilder().setKey("session_id").setValue(sessionId).build();
+        boolean found = false;
+        if (this.queryProperties != null) {
+          for (int i = 0; i < this.queryProperties.size(); i++) {
+            if ("session_id".equalsIgnoreCase(this.queryProperties.get(i).getKey())) {
+              this.queryProperties.set(i, this.sessionInfoConnectionProperty);
+              found = true;
+              break;
+            }
+          }
+          if (!found) {
+            this.queryProperties.add(this.sessionInfoConnectionProperty);
+          }
+        }
+      }
     }
   }
 
@@ -712,7 +732,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return this.unsupportedHTAPIFallback;
   }
 
-  ConnectionProperty getSessionInfoConnectionProperty() {
+  public ConnectionProperty getSessionInfoConnectionProperty() {
     return this.sessionInfoConnectionProperty;
   }
 
@@ -1158,7 +1178,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       if (queryPropertiesMap.containsKey("session_id")) {
         return ConnectionProperty.newBuilder()
             .setKey("session_id")
-            .setValue(queryPropertiesMap.get("session_id"))
+            .setValue(queryPropertiesMap.remove("session_id"))
             .build();
       }
     }

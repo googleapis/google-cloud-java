@@ -1091,4 +1091,24 @@ public class BigQueryStatementTest {
     assertEquals("temp_dataset", createdDatasetInfo.getDatasetId().getDataset());
     assertEquals("europe-west3", createdDatasetInfo.getLocation());
   }
+
+  @Test
+  public void testSessionIdSavedFromTableResult() throws Exception {
+    TableResult tableResult = mock(TableResult.class);
+    com.google.cloud.bigquery.JobStatistics.SessionInfo sessionInfo =
+        mock(com.google.cloud.bigquery.JobStatistics.SessionInfo.class);
+
+    doReturn("session_xyz_123").when(sessionInfo).getSessionId();
+    doReturn(sessionInfo).when(tableResult).getSessionInfo();
+
+    doReturn(tableResult)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+
+    QueryJobConfiguration jobConfig =
+        QueryJobConfiguration.newBuilder("CREATE TEMP TABLE t1 (id INT64)").build();
+    bigQueryStatement.executeJob(jobConfig);
+
+    verify(bigQueryConnection).updateSessionInfo("session_xyz_123");
+  }
 }
