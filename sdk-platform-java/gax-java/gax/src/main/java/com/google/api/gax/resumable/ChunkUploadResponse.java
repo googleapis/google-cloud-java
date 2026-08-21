@@ -30,17 +30,38 @@
 package com.google.api.gax.resumable;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.rpc.UnaryCallable;
+import com.google.auto.value.AutoValue;
 import org.jspecify.annotations.NullMarked;
 
-/** Client interface for executing low-level resumable upload operations. */
+/** Response value object representing the outcome of a chunk upload. */
 @NullMarked
 @InternalApi
-public interface ResumableUploadClient {
+@AutoValue
+public abstract class ChunkUploadResponse {
 
-  /** Returns a {@link UnaryCallable} to initiate a resumable upload session. */
-  UnaryCallable<StartUploadRequest, ResumableUploadSession> startUploadCallable();
+  /**
+   * The total number of bytes successfully received and committed by the server so far.
+   *
+   * <p>This value is the starting offset for the next chunk upload.
+   */
+  public abstract long getCommittedOffset();
 
-  /** Returns a {@link UnaryCallable} to transmit an individual chunk. */
-  UnaryCallable<ChunkUploadRequest, ChunkUploadResponse> uploadChunkCallable();
+  /** Whether the overall resumable upload stream has finalized and completed on the server. */
+  public abstract boolean isComplete();
+
+  /**
+   * The response body returned by the server upon final completion (e.g. JSON metadata of the
+   * uploaded resource), or an empty string if no body was returned or the upload is still in
+   * progress.
+   */
+  public abstract String getResponseBody();
+
+  public static ChunkUploadResponse create(long committedOffset, boolean isComplete) {
+    return create(committedOffset, isComplete, "");
+  }
+
+  public static ChunkUploadResponse create(
+      long committedOffset, boolean isComplete, String responseBody) {
+    return new AutoValue_ChunkUploadResponse(committedOffset, isComplete, responseBody);
+  }
 }
