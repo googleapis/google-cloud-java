@@ -956,6 +956,51 @@ public class SessionImplTest {
     assertThat(sessionListener.popUntil(Status.class)).isOk();
   }
 
+  @Test
+  void invalidSessionParamsUpdateIsDiscarded() throws Exception {
+    SessionImpl session = new SessionImpl(metrics, poolInfo, 0, sessionFactory.createNew(), timer);
+
+    int validSoftmax = 4096;
+    // Open with valid params, then have the server push an invalid update (softmax == 0) shortly
+    // after. The invalid update must be discarded so the session keeps the last-known-good budget
+    // instead of wedging streaming prefetch (maybeContinue would never pull under a 0 budget).
+    OpenSessionRequest open =
+        OpenSessionRequest.newBuilder()
+            .setPayload(
+                OpenFakeSessionRequest.newBuilder()
+                    .setSessionParams(
+                        SessionParametersResponse.newBuilder()
+                            .setKeepAlive(Durations.fromSeconds(30))
+                            .setSoftmaxStreamingPrefetchBufferSize(validSoftmax)
+                            .build())
+                    .setUpdatedSessionParams(
+                        SessionParametersResponse.newBuilder()
+                            .setKeepAlive(Durations.fromSeconds(30))
+                            .setSoftmaxStreamingPrefetchBufferSize(0)
+                            .build())
+                    .setUpdatedSessionParamsDelay(Durations.fromMillis(50))
+                    .build()
+                    .toByteString())
+            .build();
+
+    FakeSessionListener sessionListener = new FakeSessionListener();
+    session.start(open, new Metadata(), sessionListener);
+    assertThat(sessionListener.popUntil(OpenSessionResponse.class))
+        .isInstanceOf(OpenSessionResponse.class);
+    awaitSoftmax(session, validSoftmax);
+
+    // Give the invalid update time to arrive and be processed, then confirm it was rejected: the
+    // session still reports the last-known-good budget rather than the malformed 0.
+    Thread.sleep(200);
+    assertThat(session.getSoftmaxStreamingPrefetchBufferSize()).isEqualTo(validSoftmax);
+
+    session.close(
+        CloseSessionRequest.newBuilder()
+            .setReason(CloseSessionReason.CLOSE_SESSION_REASON_USER)
+            .build());
+    assertThat(sessionListener.popUntil(Status.class)).isOk();
+  }
+
   private OpenSessionRequest streamingOpen(int softmax, ActionList actions) {
     return OpenSessionRequest.newBuilder()
         .setPayload(

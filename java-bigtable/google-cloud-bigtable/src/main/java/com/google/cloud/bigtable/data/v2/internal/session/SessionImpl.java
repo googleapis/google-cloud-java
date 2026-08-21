@@ -667,8 +667,37 @@ public class SessionImpl implements Session, VRpcSessionApi {
       return;
     }
 
-    if (!sessionParameters.equals(resp)) {
-      this.sessionParameters = resp;
+    // Common case: the server re-advertises the params we already hold. Nothing to validate or
+    // merge, so skip the per-field work and the builder allocation.
+    if (sessionParameters.equals(resp)) {
+      return;
+    }
+
+    // The params differ, so merge the update field-by-field, adopting only valid values and
+    // otherwise keeping the last-known-good (the default is always valid). This prevents a malformed
+    // update from wedging the session: a non-positive keep_alive would zero the heartbeat interval
+    // and force-close a healthy stream, and a non-positive softmax budget would deadlock streaming
+    // prefetch (maybeContinue never pulls). Both fields treat 0/unset as "no opinion, keep current"
+    // rather than adopting the zero -- softmax is a presence-less int32 so 0 is indistinguishable
+    // from unset anyway.
+    SessionParametersResponse.Builder merged = sessionParameters.toBuilder();
+
+    if (resp.hasKeepAlive()) {
+      // keep_alive "must be set and positive" (proto contract). A present-but-non-positive value is
+      // a protocol violation; ignore it and flag it.
+      if (Durations.toMillis(resp.getKeepAlive()) > 0) {
+        merged.setKeepAlive(resp.getKeepAlive());
+      } else {
+        debugTagTracer.record(TelemetryConfiguration.Level.WARN, "session_params_invalid_discarded");
+      }
+    }
+    if (resp.getSoftmaxStreamingPrefetchBufferSize() > 0) {
+      merged.setSoftmaxStreamingPrefetchBufferSize(resp.getSoftmaxStreamingPrefetchBufferSize());
+    }
+
+    SessionParametersResponse next = merged.build();
+    if (!sessionParameters.equals(next)) {
+      this.sessionParameters = next;
       this.heartbeatInterval =
           Duration.ofMillis(Durations.toMillis(sessionParameters.getKeepAlive()));
       logger.log(
@@ -677,7 +706,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
               String.format(
                   "%s session params changed: %s",
                   info.getLogName(),
-                  TextFormat.printer().emittingSingleLine(true).printToString(resp)));
+                  TextFormat.printer().emittingSingleLine(true).printToString(next)));
     }
   }
 
