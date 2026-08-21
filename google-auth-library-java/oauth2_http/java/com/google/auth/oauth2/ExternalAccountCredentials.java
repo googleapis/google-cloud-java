@@ -122,7 +122,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
    * @param scopes the scopes to request during the authorization grant. May be null.
    */
   protected ExternalAccountCredentials(
-      HttpTransportFactory transportFactory,
+      @Nullable HttpTransportFactory transportFactory,
       String audience,
       String subjectTokenType,
       String tokenUrl,
@@ -172,7 +172,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
    *     SystemEnvironmentProvider}.
    */
   protected ExternalAccountCredentials(
-      HttpTransportFactory transportFactory,
+      @Nullable HttpTransportFactory transportFactory,
       String audience,
       String subjectTokenType,
       String tokenUrl,
@@ -265,7 +265,8 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     this.workforcePoolUserProject = builder.workforcePoolUserProject;
     if (workforcePoolUserProject != null && !isWorkforcePoolConfiguration()) {
       throw new IllegalArgumentException(
-          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool configuration.");
+          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool"
+              + " configuration.");
     }
 
     validateTokenUrl(tokenUrl);
@@ -768,28 +769,28 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   /** Base builder for external account credentials. */
   public abstract static class Builder extends GoogleCredentials.Builder {
 
-    protected String audience;
-    protected String subjectTokenType;
-    protected String tokenUrl;
-    protected String tokenInfoUrl;
-    protected CredentialSource credentialSource;
-    protected EnvironmentProvider environmentProvider;
-    protected PropertyProvider propertyProvider;
-    protected HttpTransportFactory transportFactory;
+    protected @Nullable String audience;
+    protected @Nullable String subjectTokenType;
+    protected @Nullable String tokenUrl;
+    protected @Nullable String tokenInfoUrl;
+    protected @Nullable CredentialSource credentialSource;
+    protected @Nullable EnvironmentProvider environmentProvider;
+    protected @Nullable PropertyProvider propertyProvider;
+    protected @Nullable HttpTransportFactory transportFactory;
 
-    @Nullable protected String serviceAccountImpersonationUrl;
-    @Nullable protected String clientId;
-    @Nullable protected String clientSecret;
-    @Nullable protected Collection<String> scopes;
-    @Nullable protected String workforcePoolUserProject;
-    @Nullable protected ServiceAccountImpersonationOptions serviceAccountImpersonationOptions;
+    protected @Nullable String serviceAccountImpersonationUrl;
+    protected @Nullable String clientId;
+    protected @Nullable String clientSecret;
+    protected @Nullable Collection<String> scopes;
+    protected @Nullable String workforcePoolUserProject;
+    protected @Nullable ServiceAccountImpersonationOptions serviceAccountImpersonationOptions;
 
     /* The field is not being used and value not set. Superseded by the same field in the
     {@link GoogleCredentials.Builder}.
     */
     @Nullable @Deprecated protected String universeDomain;
 
-    @Nullable protected ExternalAccountMetricsHandler metricsHandler;
+    protected @Nullable ExternalAccountMetricsHandler metricsHandler;
 
     protected Builder() {}
 
@@ -922,7 +923,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      */
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
@@ -985,7 +986,8 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
      */
     @CanIgnoreReturnValue
     public Builder setServiceAccountImpersonationOptions(Map<String, Object> optionsMap) {
-      this.serviceAccountImpersonationOptions = new ServiceAccountImpersonationOptions(optionsMap);
+      this.serviceAccountImpersonationOptions =
+          optionsMap == null ? null : new ServiceAccountImpersonationOptions(optionsMap);
       return this;
     }
 
