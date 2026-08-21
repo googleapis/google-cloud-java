@@ -397,6 +397,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (isClosed()) {
       return;
     }
+    this.isClosed = true;
     LOG.fine("Closing Statement %s.", this);
 
     boolean cancelSucceeded = false;
@@ -410,7 +411,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         closeStatementResources();
       }
       this.connection = null;
-      this.isClosed = true;
     }
   }
 
@@ -534,7 +534,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     this.batchQueries.clear();
     this.currentUpdateCount = -1;
     this.currentJobIdIndex = -1;
-    this.connection.removeStatement(this);
+    if (this.connection != null) {
+      this.connection.removeStatement(this);
+    }
   }
 
   private boolean isSingularResultSet() {
