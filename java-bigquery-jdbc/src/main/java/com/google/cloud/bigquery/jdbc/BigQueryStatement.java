@@ -717,9 +717,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       case DML:
       case DML_EXTRA:
         Long dmlRowCount;
-        if (results != null) {
-          Long affectedRows = results.getNumDmlAffectedRows();
-          dmlRowCount = affectedRows != null ? affectedRows : 0L;
+        if (results != null && results.getNumDmlAffectedRows() != null) {
+          dmlRowCount = results.getNumDmlAffectedRows();
         } else {
           QueryStatistics dmlStats = getQueryStatisticsFromJob(results, job);
           dmlRowCount =
