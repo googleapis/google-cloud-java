@@ -20,6 +20,8 @@ import static com.google.cloud.bigquery.jdbc.utils.ArrowUtilities.serializeSchem
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
@@ -49,6 +51,7 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
+import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.cloud.bigquery.Schema;
@@ -169,6 +172,10 @@ public class BigQueryStatementTest {
     TableResult tableResultMock = mock(TableResult.class);
     doReturn(jobId).when(tableResultMock).getJobId();
     doReturn(Schema.of()).when(tableResultMock).getSchema();
+    doReturn(type).when(tableResultMock).getStatementType();
+    if (affectedRows != null) {
+      doReturn(affectedRows).when(tableResultMock).getNumDmlAffectedRows();
+    }
     doReturn(tableResultMock)
         .when(bigquery)
         .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
@@ -447,6 +454,7 @@ public class BigQueryStatementTest {
     TableResult tableResultMock = mock(TableResult.class);
     doReturn("queryId").when(tableResultMock).getQueryId();
     doReturn(null).when(tableResultMock).getJobId();
+    doReturn(StatementType.SELECT).when(tableResultMock).getStatementType();
     doReturn(tableResultMock)
         .when(bigquery)
         .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
@@ -454,17 +462,10 @@ public class BigQueryStatementTest {
         .when(joblessStatementSpy)
         .processJsonResultSet(eq(tableResultMock), any());
 
-    Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
-    ArgumentCaptor<JobInfo> dryRunCaptor = ArgumentCaptor.forClass(JobInfo.class);
-    doReturn(dryRunJobMock).when(bigquery).create(dryRunCaptor.capture());
-
     joblessStatementSpy.executeQuery("SELECT 1");
 
     verify(bigquery).queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
-    verify(bigquery).create(any(JobInfo.class));
-    assertTrue(
-        Boolean.TRUE.equals(
-            ((QueryJobConfiguration) dryRunCaptor.getValue().getConfiguration()).dryRun()));
+    verify(bigquery, Mockito.never()).create(any(JobInfo.class));
 
     // 2. Test JobCreationMode=1 (jobful)
     Mockito.reset(bigquery);
@@ -914,6 +915,7 @@ public class BigQueryStatementTest {
               TableResult tableResultMock = mock(TableResult.class);
               doReturn(jobId).when(tableResultMock).getJobId();
               doReturn(Schema.of()).when(tableResultMock).getSchema();
+              doReturn(StatementType.SELECT).when(tableResultMock).getStatementType();
               return tableResultMock;
             })
         .when(bigquery)
@@ -923,8 +925,6 @@ public class BigQueryStatementTest {
 
     // Setup connection mocks to allow the statement to execute successfully
     doReturn(true).when(bigQueryConnection).getUseStatelessQueryMode();
-    Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
-    doReturn(dryRunJobMock).when(bigquery).create(Mockito.any(JobInfo.class));
 
     BigQueryJsonResultSet resultSetMock = mock(BigQueryJsonResultSet.class);
     doReturn(resultSetMock)
@@ -937,6 +937,7 @@ public class BigQueryStatementTest {
     // Verify the SDK call actually occurred
     verify(bigquery)
         .queryWithTimeout(Mockito.any(QueryJobConfiguration.class), Mockito.any(), Mockito.any());
+    verify(bigquery, Mockito.never()).create(Mockito.any(JobInfo.class));
   }
 
   @Test
@@ -1065,13 +1066,10 @@ public class BigQueryStatementTest {
     // 2. Mock bigQuery.getDataset to return null (triggering creation)
     doReturn(null).when(bigquery).getDataset(eq(DatasetId.of("temp_dataset")));
 
-    // 2b. Mock bigQuery.create for dry run during getStatementType
-    Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
-    doReturn(dryRunJobMock).when(bigquery).create(any(JobInfo.class));
-
     // 3. Mock bigquery.queryWithTimeout(...) to return tableResult (so execution doesn't fail on
     // query execution)
     TableResult result = mock(TableResult.class);
+    doReturn(StatementType.SELECT).when(result).getStatementType();
     doReturn(result)
         .when(bigquery)
         .queryWithTimeout(any(QueryJobConfiguration.class), any(JobId.class), any());
@@ -1095,8 +1093,7 @@ public class BigQueryStatementTest {
   @Test
   public void testSessionIdSavedFromTableResult() throws Exception {
     TableResult tableResult = mock(TableResult.class);
-    com.google.cloud.bigquery.JobStatistics.SessionInfo sessionInfo =
-        mock(com.google.cloud.bigquery.JobStatistics.SessionInfo.class);
+    SessionInfo sessionInfo = mock(SessionInfo.class);
 
     doReturn("session_xyz_123").when(sessionInfo).getSessionId();
     doReturn(sessionInfo).when(tableResult).getSessionInfo();
@@ -1110,5 +1107,33 @@ public class BigQueryStatementTest {
     bigQueryStatement.executeJob(jobConfig);
 
     verify(bigQueryConnection).updateSessionInfo("session_xyz_123");
+  }
+
+  @Test
+  public void testStatelessQueryExecutionDoesNotInvokeDryRun() throws Exception {
+    TableResult tableResultMock = setupMockQueryResults(null, StatementType.SELECT, null);
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    doReturn(mock(BigQueryJsonResultSet.class))
+        .when(statementSpy)
+        .processJsonResultSet(eq(tableResultMock), any());
+
+    boolean hasResultSet = statementSpy.execute("SELECT 1");
+
+    assertTrue(hasResultSet);
+    assertNotNull(statementSpy.getResultSet());
+    verify(bigquery, Mockito.never()).create(any(JobInfo.class));
+  }
+
+  @Test
+  public void testStatelessDmlExecutionUsesTableResultWithoutDryRunOrGetJob() throws Exception {
+    setupMockQueryResults(null, StatementType.UPDATE, 15L);
+
+    int updatedCount = bigQueryStatement.executeUpdate("UPDATE dataset.table SET col = 1");
+
+    assertEquals(15, updatedCount);
+    assertEquals(15L, bigQueryStatement.getLargeUpdateCount());
+    assertNull(bigQueryStatement.getResultSet());
+    verify(bigquery, Mockito.never()).create(any(JobInfo.class));
+    verify(bigquery, Mockito.never()).getJob(any(JobId.class));
   }
 }
