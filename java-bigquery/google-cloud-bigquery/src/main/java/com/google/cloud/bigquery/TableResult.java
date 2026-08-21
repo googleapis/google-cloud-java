@@ -26,7 +26,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import java.io.Serializable;
 import java.util.Objects;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 @AutoValue
 public abstract class TableResult implements Page<FieldValueList>, Serializable {
@@ -53,17 +53,17 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
 
     abstract TableResult.Builder setRowsInPage(Long rowsInPage);
 
-    public abstract TableResult.Builder setStatementType(StatementType statementType);
+    abstract TableResult.Builder setStatementType(@Nullable StatementType statementType);
 
-    public abstract TableResult.Builder setTotalBytesBilled(Long totalBytesBilled);
+    abstract TableResult.Builder setTotalBytesBilled(@Nullable Long totalBytesBilled);
 
-    public abstract TableResult.Builder setTotalBytesProcessed(Long totalBytesProcessed);
+    abstract TableResult.Builder setTotalBytesProcessed(@Nullable Long totalBytesProcessed);
 
-    public abstract TableResult.Builder setTotalSlotMs(Long totalSlotMs);
+    abstract TableResult.Builder setTotalSlotMs(@Nullable Long totalSlotMs);
 
-    public abstract TableResult.Builder setNumDmlAffectedRows(Long numDmlAffectedRows);
+    abstract TableResult.Builder setNumDmlAffectedRows(@Nullable Long numDmlAffectedRows);
 
-    public abstract TableResult.Builder setSessionInfo(SessionInfo sessionInfo);
+    abstract TableResult.Builder setSessionInfo(@Nullable SessionInfo sessionInfo);
 
     /** Creates a @code TableResult} object. */
     public abstract TableResult build();
@@ -76,8 +76,7 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
   }
 
   /** Returns the schema of the results. Null if the schema is not supplied. */
-  @Nullable
-  public abstract Schema getSchema();
+  public abstract @Nullable Schema getSchema();
 
   /**
    * Returns the total number of rows in the complete result set, which can be more than the number
@@ -88,48 +87,38 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
 
   public abstract Page<FieldValueList> getPageNoSchema();
 
-  @Nullable
-  public abstract JobId getJobId();
+  public abstract @Nullable JobId getJobId();
 
-  @Nullable
-  public abstract String getQueryId();
+  public abstract @Nullable String getQueryId();
 
-  @Nullable
-  public abstract JobCreationReason getJobCreationReason();
+  public abstract @Nullable JobCreationReason getJobCreationReason();
 
   /** Returns the number of rows in the current page of results. */
-  @Nullable
-  public abstract Long getRowsInPage();
+  public abstract @Nullable Long getRowsInPage();
 
   /**
    * Returns the statement type of the query (e.g. SELECT, INSERT, UPDATE, DDL, SCRIPT), if
    * available.
    */
-  @Nullable
-  public abstract StatementType getStatementType();
+  public abstract @Nullable StatementType getStatementType();
 
   /** Returns the total number of bytes billed for the query, if available. */
-  @Nullable
-  public abstract Long getTotalBytesBilled();
+  public abstract @Nullable Long getTotalBytesBilled();
 
   /** Returns the total number of bytes processed by the query, if available. */
-  @Nullable
-  public abstract Long getTotalBytesProcessed();
+  public abstract @Nullable Long getTotalBytesProcessed();
 
   /** Returns the total slot milliseconds for the query, if available. */
-  @Nullable
-  public abstract Long getTotalSlotMs();
+  public abstract @Nullable Long getTotalSlotMs();
 
   /**
    * Returns the number of rows affected by a DML statement (INSERT, UPDATE, DELETE, MERGE), if
    * available.
    */
-  @Nullable
-  public abstract Long getNumDmlAffectedRows();
+  public abstract @Nullable Long getNumDmlAffectedRows();
 
   /** Returns information about the session if this query is part of one, if available. */
-  @Nullable
-  public abstract SessionInfo getSessionInfo();
+  public abstract @Nullable SessionInfo getSessionInfo();
 
   @Override
   public boolean hasNextPage() {
