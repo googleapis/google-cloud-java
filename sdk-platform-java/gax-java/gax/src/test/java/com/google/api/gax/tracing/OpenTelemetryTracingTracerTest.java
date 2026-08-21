@@ -88,6 +88,16 @@ class OpenTelemetryTracingTracerTest {
   }
 
   @Test
+  void testAttemptFailed_setsErrorStatus() {
+    openTelemetryTracingTracer.attemptStarted(new Object(), 1);
+    openTelemetryTracingTracer.attemptFailedDuration(
+        new RuntimeException("Test error"), java.time.Duration.ofSeconds(1));
+
+    verify(span).setStatus(io.opentelemetry.api.trace.StatusCode.ERROR);
+    verify(span).end();
+  }
+
+  @Test
   void testAttemptSucceeded_grpc() {
     ApiTracerContext context =
         ApiTracerContext.newBuilder()
