@@ -241,11 +241,7 @@
         <artifactId>j2objc-annotations</artifactId>
         <version>${j2objc-annotations.version}</version>
       </dependency>
-      <dependency>
-        <groupId>com.google.cloud.opentelemetry</groupId>
-        <artifactId>detector-resources-support</artifactId>
-        <version>${google.cloud.opentelemetry.version}</version>
-      </dependency>
+
       <dependency>
         <groupId>org.json</groupId>
         <artifactId>json</artifactId>
