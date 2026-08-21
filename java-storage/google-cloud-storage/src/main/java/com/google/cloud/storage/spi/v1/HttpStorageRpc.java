@@ -826,6 +826,7 @@ public class HttpStorageRpc implements StorageRpc {
           storage
               .objects()
               .compose(target.getBucket(), target.getName(), request)
+              .setDestinationPredefinedAcl(Option.PREDEFINED_ACL.getString(targetOptions))
               .setIfMetagenerationMatch(Option.IF_METAGENERATION_MATCH.getLong(targetOptions))
               .setIfGenerationMatch(Option.IF_GENERATION_MATCH.getLong(targetOptions))
               .setUserProject(Option.USER_PROJECT.getString(targetOptions));
