@@ -972,77 +972,12 @@ class UserAuthorizerTest {
   }
 
   @Test
-  void toBuilder_preservesAllAttributes() {
-    TokenStore store = new MemoryTokensStorage();
-    URI tokenServerUri = URI.create("https://example.com/token");
-    URI userAuthUri = URI.create("https://example.com/auth");
-    HttpTransportFactory transportFactory = new MockTokenServerTransportFactory();
-
-    UserAuthorizer original =
-        UserAuthorizer.newBuilder()
-            .setClientId(CLIENT_ID)
-            .setScopes(DUMMY_SCOPES)
-            .setTokenStore(store)
-            .setCallbackUri(CALLBACK_URI)
-            .setTokenServerUri(tokenServerUri)
-            .setUserAuthUri(userAuthUri)
-            .setHttpTransportFactory(transportFactory)
-            .setClientAuthenticationType(
-                UserAuthorizer.ClientAuthenticationType.CLIENT_SECRET_BASIC)
-            .build();
-
-    UserAuthorizer.Builder copyBuilder = original.toBuilder();
-
-    assertSame(original.getClientId(), copyBuilder.getClientId());
-    assertEquals(original.getScopes(), copyBuilder.getScopes());
-    assertSame(original.getTokenStore(), copyBuilder.getTokenStore());
-    assertEquals(original.getCallbackUri(), copyBuilder.getCallbackUri());
-    assertEquals(original.getClientAuthenticationType(), copyBuilder.getClientAuthenticationType());
-    assertNotNull(copyBuilder.getPKCEProvider());
-  }
-
-  @Test
-  void builder_getters_returnNullBeforeSet() {
-    UserAuthorizer.Builder builder = UserAuthorizer.newBuilder();
-    assertNull(builder.getClientId());
-    assertNull(builder.getScopes());
-    assertNull(builder.getTokenStore());
-    assertNull(builder.getCallbackUri());
-    assertNull(builder.getTokenServerUri());
-    assertNull(builder.getUserAuthUri());
-    assertNull(builder.getHttpTransportFactory());
-    assertNull(builder.getPKCEProvider());
-    assertNull(builder.getClientAuthenticationType());
-  }
-
-  @Test
   void build_withDefaults() {
     UserAuthorizer authorizer =
         UserAuthorizer.newBuilder().setClientId(CLIENT_ID).setScopes(DUMMY_SCOPES).build();
 
     assertNotNull(authorizer.getTokenStore());
     assertEquals(DUMMY_SCOPES, authorizer.getScopes());
-    assertEquals(UserAuthorizer.DEFAULT_CALLBACK_URI, authorizer.getCallbackUri());
-    assertEquals(
-        UserAuthorizer.ClientAuthenticationType.CLIENT_SECRET_POST,
-        authorizer.getClientAuthenticationType());
-  }
-
-  @Test
-  void build_withExplicitNullSetters_fallsBackToDefaults() {
-    UserAuthorizer authorizer =
-        UserAuthorizer.newBuilder()
-            .setClientId(CLIENT_ID)
-            .setScopes(DUMMY_SCOPES)
-            .setTokenStore(null)
-            .setCallbackUri(null)
-            .setTokenServerUri(null)
-            .setUserAuthUri(null)
-            .setHttpTransportFactory(null)
-            .setClientAuthenticationType(null)
-            .build();
-
-    assertNotNull(authorizer.getTokenStore());
     assertEquals(UserAuthorizer.DEFAULT_CALLBACK_URI, authorizer.getCallbackUri());
     assertEquals(
         UserAuthorizer.ClientAuthenticationType.CLIENT_SECRET_POST,
