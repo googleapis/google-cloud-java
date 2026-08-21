@@ -76,6 +76,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * An implementation of {@link java.sql.Connection} for establishing a connection with BigQuery and
@@ -86,6 +87,7 @@ import java.util.concurrent.TimeUnit;
 public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private final ReentrantLock queryPropertiesLock = new ReentrantLock();
   String connectionClassName = this.toString();
   private final String connectionId;
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
@@ -613,7 +615,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   List<ConnectionProperty> getQueryProperties() {
-    return this.queryProperties;
+    queryPropertiesLock.lock();
+    try {
+      return this.queryProperties;
+    } finally {
+      queryPropertiesLock.unlock();
+    }
   }
 
   public String getLocation() {
@@ -686,17 +693,43 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       Job job = this.bigQuery.create(JobInfo.of(transactionBeginJobConfig.build()));
       job = job.waitFor();
       Job transactionBeginJob = this.bigQuery.getJob(job.getJobId());
-      if (this.sessionInfoConnectionProperty == null) {
-        this.sessionInfoConnectionProperty =
-            ConnectionProperty.newBuilder()
-                .setKey("session_id")
-                .setValue(transactionBeginJob.getStatistics().getSessionInfo().getSessionId())
-                .build();
-        this.queryProperties.add(this.sessionInfoConnectionProperty);
+      if (this.sessionInfoConnectionProperty == null
+          && transactionBeginJob != null
+          && transactionBeginJob.getStatistics() != null
+          && transactionBeginJob.getStatistics().getSessionInfo() != null) {
+        updateSessionInfo(transactionBeginJob.getStatistics().getSessionInfo().getSessionId());
       }
       this.transactionStarted = true;
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcRuntimeException("Failed to begin transaction", ex);
+    }
+  }
+
+  void updateSessionInfo(String sessionId) {
+    if (sessionId != null && !sessionId.isEmpty()) {
+      queryPropertiesLock.lock();
+      try {
+        if (this.sessionInfoConnectionProperty == null
+            || !sessionId.equals(this.sessionInfoConnectionProperty.getValue())) {
+          this.sessionInfoConnectionProperty =
+              ConnectionProperty.newBuilder().setKey("session_id").setValue(sessionId).build();
+          boolean found = false;
+          if (this.queryProperties != null) {
+            for (int i = 0; i < this.queryProperties.size(); i++) {
+              if ("session_id".equalsIgnoreCase(this.queryProperties.get(i).getKey())) {
+                this.queryProperties.set(i, this.sessionInfoConnectionProperty);
+                found = true;
+                break;
+              }
+            }
+            if (!found) {
+              this.queryProperties.add(this.sessionInfoConnectionProperty);
+            }
+          }
+        }
+      } finally {
+        queryPropertiesLock.unlock();
+      }
     }
   }
 
@@ -712,8 +745,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return this.unsupportedHTAPIFallback;
   }
 
-  ConnectionProperty getSessionInfoConnectionProperty() {
-    return this.sessionInfoConnectionProperty;
+  public ConnectionProperty getSessionInfoConnectionProperty() {
+    queryPropertiesLock.lock();
+    try {
+      return this.sessionInfoConnectionProperty;
+    } finally {
+      queryPropertiesLock.unlock();
+    }
   }
 
   boolean isEnableHighThroughputAPI() {
@@ -1154,13 +1192,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private ConnectionProperty getSessionPropertyFromQueryProperties(
       Map<String, String> queryPropertiesMap) {
     LOG.finer("++enter++");
-    if (queryPropertiesMap != null) {
-      if (queryPropertiesMap.containsKey("session_id")) {
-        return ConnectionProperty.newBuilder()
-            .setKey("session_id")
-            .setValue(queryPropertiesMap.get("session_id"))
-            .build();
-      }
+    if (queryPropertiesMap != null && queryPropertiesMap.containsKey("session_id")) {
+      return ConnectionProperty.newBuilder()
+          .setKey("session_id")
+          .setValue(queryPropertiesMap.get("session_id"))
+          .build();
     }
     return null;
   }
