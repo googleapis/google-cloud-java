@@ -30,20 +30,38 @@
 package com.google.api.gax.resumable;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.rpc.UnaryCallable;
+import com.google.auto.value.AutoValue;
 import org.jspecify.annotations.NullMarked;
 
-/** Client interface for executing low-level resumable upload operations. */
+/** Response value object representing the status and committed offset of a resumable upload session. */
 @NullMarked
 @InternalApi
-public interface ResumableUploadClient {
+@AutoValue
+public abstract class QueryStatusResponse {
 
-  /** Returns a {@link UnaryCallable} to initiate a resumable upload session. */
-  UnaryCallable<StartUploadRequest, ResumableUploadSession> startUploadCallable();
+  /**
+   * The total number of bytes successfully received and committed by the server so far.
+   *
+   * <p>This value is the starting offset for resuming the upload.
+   */
+  public abstract long getCommittedOffset();
 
-  /** Returns a {@link UnaryCallable} to transmit an individual chunk. */
-  UnaryCallable<ChunkUploadRequest, ChunkUploadResponse> uploadChunkCallable();
+  /** Whether the resumable upload session has finalized and completed on the server. */
+  public abstract boolean isComplete();
 
-  /** Returns a {@link UnaryCallable} to query the status and offset of an active upload session. */
-  UnaryCallable<QueryStatusRequest, QueryStatusResponse> queryStatusCallable();
+  /**
+   * The response body returned by the server upon final completion (e.g. JSON metadata of the
+   * uploaded resource), or an empty string if no body was returned or the upload is still in
+   * progress.
+   */
+  public abstract String getResponseBody();
+
+  public static QueryStatusResponse create(long committedOffset, boolean isComplete) {
+    return create(committedOffset, isComplete, "");
+  }
+
+  public static QueryStatusResponse create(
+      long committedOffset, boolean isComplete, String responseBody) {
+    return new AutoValue_QueryStatusResponse(committedOffset, isComplete, responseBody);
+  }
 }
