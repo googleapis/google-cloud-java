@@ -66,6 +66,7 @@
     <module>java-billing</module>
     <module>java-billingbudgets</module>
     <module>java-binary-authorization</module>
+    <module>java-blockchainnodeengine</module>
     <module>java-capacityplanner</module>
     <module>java-certificate-manager</module>
     <module>java-ces</module>

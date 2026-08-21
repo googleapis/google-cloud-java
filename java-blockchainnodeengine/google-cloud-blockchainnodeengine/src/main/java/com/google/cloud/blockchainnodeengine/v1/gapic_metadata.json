@@ -1,0 +1,39 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.blockchainnodeengine.v1",
+  "libraryPackage": "com.google.cloud.blockchainnodeengine.v1",
+  "services": {
+    "BlockchainNodeEngine": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BlockchainNodeEngineClient",
+          "rpcs": {
+            "CreateBlockchainNode": {
+              "methods": ["createBlockchainNodeAsync", "createBlockchainNodeAsync", "createBlockchainNodeAsync", "createBlockchainNodeOperationCallable", "createBlockchainNodeCallable"]
+            },
+            "DeleteBlockchainNode": {
+              "methods": ["deleteBlockchainNodeAsync", "deleteBlockchainNodeAsync", "deleteBlockchainNodeAsync", "deleteBlockchainNodeOperationCallable", "deleteBlockchainNodeCallable"]
+            },
+            "GetBlockchainNode": {
+              "methods": ["getBlockchainNode", "getBlockchainNode", "getBlockchainNode", "getBlockchainNodeCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListBlockchainNodes": {
+              "methods": ["listBlockchainNodes", "listBlockchainNodes", "listBlockchainNodes", "listBlockchainNodesPagedCallable", "listBlockchainNodesCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateBlockchainNode": {
+              "methods": ["updateBlockchainNodeAsync", "updateBlockchainNodeAsync", "updateBlockchainNodeOperationCallable", "updateBlockchainNodeCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

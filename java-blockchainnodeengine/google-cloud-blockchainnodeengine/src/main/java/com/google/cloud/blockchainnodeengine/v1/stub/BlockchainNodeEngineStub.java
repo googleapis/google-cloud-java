@@ -1,0 +1,122 @@
+/*
+ * Copyright 2026 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.blockchainnodeengine.v1.stub;
+
+import static com.google.cloud.blockchainnodeengine.v1.BlockchainNodeEngineClient.ListBlockchainNodesPagedResponse;
+import static com.google.cloud.blockchainnodeengine.v1.BlockchainNodeEngineClient.ListLocationsPagedResponse;
+
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.blockchainnodeengine.v1.BlockchainNode;
+import com.google.cloud.blockchainnodeengine.v1.CreateBlockchainNodeRequest;
+import com.google.cloud.blockchainnodeengine.v1.DeleteBlockchainNodeRequest;
+import com.google.cloud.blockchainnodeengine.v1.GetBlockchainNodeRequest;
+import com.google.cloud.blockchainnodeengine.v1.ListBlockchainNodesRequest;
+import com.google.cloud.blockchainnodeengine.v1.ListBlockchainNodesResponse;
+import com.google.cloud.blockchainnodeengine.v1.OperationMetadata;
+import com.google.cloud.blockchainnodeengine.v1.UpdateBlockchainNodeRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
+import com.google.protobuf.Empty;
+import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * Base stub class for the BlockchainNodeEngine service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@NullMarked
+@Generated("by gapic-generator-java")
+public abstract class BlockchainNodeEngineStub implements BackgroundResource {
+
+  public @Nullable OperationsStub getOperationsStub() {
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
+      getHttpJsonOperationsStub() {
+    return null;
+  }
+
+  public UnaryCallable<ListBlockchainNodesRequest, ListBlockchainNodesPagedResponse>
+      listBlockchainNodesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBlockchainNodesPagedCallable()");
+  }
+
+  public UnaryCallable<ListBlockchainNodesRequest, ListBlockchainNodesResponse>
+      listBlockchainNodesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBlockchainNodesCallable()");
+  }
+
+  public UnaryCallable<GetBlockchainNodeRequest, BlockchainNode> getBlockchainNodeCallable() {
+    throw new UnsupportedOperationException("Not implemented: getBlockchainNodeCallable()");
+  }
+
+  public OperationCallable<CreateBlockchainNodeRequest, BlockchainNode, OperationMetadata>
+      createBlockchainNodeOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createBlockchainNodeOperationCallable()");
+  }
+
+  public UnaryCallable<CreateBlockchainNodeRequest, Operation> createBlockchainNodeCallable() {
+    throw new UnsupportedOperationException("Not implemented: createBlockchainNodeCallable()");
+  }
+
+  public OperationCallable<UpdateBlockchainNodeRequest, BlockchainNode, OperationMetadata>
+      updateBlockchainNodeOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateBlockchainNodeOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateBlockchainNodeRequest, Operation> updateBlockchainNodeCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateBlockchainNodeCallable()");
+  }
+
+  public OperationCallable<DeleteBlockchainNodeRequest, Empty, OperationMetadata>
+      deleteBlockchainNodeOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteBlockchainNodeOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteBlockchainNodeRequest, Operation> deleteBlockchainNodeCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBlockchainNodeCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
+  }
+
+  @Override
+  public abstract void close();
+}

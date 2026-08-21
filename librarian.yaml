@@ -881,6 +881,13 @@ libraries:
       product_documentation_override: https://cloud.google.com/binary-authorization/docs
       rest_documentation: https://cloud.google.com/binary-authorization/docs/reference/rest
       rpc_documentation: https://cloud.google.com/binary-authorization/docs/reference/rpc
+  - name: blockchainnodeengine
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/blockchainnodeengine/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: capacityplanner
     version: 0.19.0-SNAPSHOT
     apis:
