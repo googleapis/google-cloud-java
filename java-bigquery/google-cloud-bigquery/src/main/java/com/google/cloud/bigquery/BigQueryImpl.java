@@ -588,7 +588,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                       ? getBigQueryRetryConfig(optionsMap)
                       : DEFAULT_RETRY_CONFIG,
                   getOptions().isOpenTelemetryTracingEnabled(),
-                  getOptions().getOpenTelemetryTracer()));
+                  getOptions().getOpenTelemetryTracer(),
+                  getOptions().getApiTracerFactory()));
         } catch (BigQueryRetryHelperException e) {
           throw BigQueryException.translateAndThrow(e);
         }

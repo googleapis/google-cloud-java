@@ -22,10 +22,16 @@ import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.RetryingContext;
 import com.google.api.gax.retrying.RetryingExecutor;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.retrying.TimedRetryAlgorithm;
+import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.tracing.ApiTracer;
+import com.google.api.gax.tracing.ApiTracerFactory;
+import com.google.api.gax.tracing.BaseApiTracer;
+import com.google.api.gax.tracing.SpanName;
 import com.google.cloud.RetryHelper;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
@@ -33,6 +39,9 @@ import io.opentelemetry.context.Context;
 import io.opentelemetry.context.ContextKey;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.Collections;
+import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -53,7 +62,19 @@ public class BigQueryRetryHelper extends RetryHelper {
       ApiClock clock,
       BigQueryRetryConfig bigQueryRetryConfig,
       boolean isOpenTelemetryEnabled,
-      Tracer openTelemetryTracer)
+      Tracer openTelemetryTracer) {
+    return runWithRetries(callable, retrySettings, resultRetryAlgorithm, clock, bigQueryRetryConfig, isOpenTelemetryEnabled, openTelemetryTracer, null);
+  }
+
+  public static <V> V runWithRetries(
+      Callable<V> callable,
+      RetrySettings retrySettings,
+      ResultRetryAlgorithm<?> resultRetryAlgorithm,
+      ApiClock clock,
+      BigQueryRetryConfig bigQueryRetryConfig,
+      boolean isOpenTelemetryEnabled,
+      Tracer openTelemetryTracer,
+      ApiTracerFactory apiTracerFactory)
       throws RetryHelperException {
     Span runWithRetries = null;
     if (isOpenTelemetryEnabled && openTelemetryTracer != null) {
@@ -75,7 +96,9 @@ public class BigQueryRetryHelper extends RetryHelper {
           callable,
           new ExponentialRetryAlgorithm(retrySettings, clock),
           algorithm,
-          bigQueryRetryConfig);
+          bigQueryRetryConfig,
+          retrySettings,
+          apiTracerFactory);
     } catch (Exception e) {
       // Checks for IOException and translate it into BigQueryException. The BigQueryException
       // constructor parses the IOException and translate it into internal code.
@@ -94,7 +117,9 @@ public class BigQueryRetryHelper extends RetryHelper {
       Callable<V> callable,
       TimedRetryAlgorithm timedAlgorithm,
       ResultRetryAlgorithm<V> resultAlgorithm,
-      BigQueryRetryConfig bigQueryRetryConfig)
+      BigQueryRetryConfig bigQueryRetryConfig,
+      RetrySettings retrySettings,
+      ApiTracerFactory apiTracerFactory)
       throws ExecutionException, InterruptedException {
     RetryAlgorithm<V> retryAlgorithm =
         new BigQueryRetryAlgorithm<>(
@@ -104,6 +129,40 @@ public class BigQueryRetryHelper extends RetryHelper {
     // com.google.api.gax.retrying.RetryAlgorithm, as
     // BigQueryRetryAlgorithm retries considering bigQueryRetryConfig
     RetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
+
+    // 1. Resolve method name for the tracer span
+    String methodName = "execute";
+    try {
+      Method enclosingMethod = callable.getClass().getEnclosingMethod();
+      if (enclosingMethod != null) {
+        methodName = enclosingMethod.getName();
+      }
+    } catch (Exception ignored) {
+    }
+
+    // 2. Obtain ApiTracer from the factory
+    final ApiTracer tracer = (apiTracerFactory != null)
+        ? apiTracerFactory.newTracer(
+        null, SpanName.of("BigQuery", methodName), ApiTracerFactory.OperationType.Unary)
+        : BaseApiTracer.getInstance();
+
+    // 3. Construct RetryingContext
+    RetryingContext context = new RetryingContext() {
+      @Override
+      public ApiTracer getTracer() {
+        return tracer;
+      }
+
+      @Override
+      public RetrySettings getRetrySettings() {
+        return retrySettings;
+      }
+
+      @Override
+      public Set<StatusCode.Code> getRetryableCodes() {
+        return Collections.emptySet();
+      }
+    };
 
     // Log retry info
     if (LOG.isLoggable(Level.FINEST)) {
