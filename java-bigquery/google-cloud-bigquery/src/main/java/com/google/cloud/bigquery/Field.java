@@ -57,7 +57,7 @@ public final class Field implements Serializable {
   private final String name;
   private final LegacySQLTypeName type;
   private final FieldList subFields;
-  private final String mode;
+  private final Mode mode;
   private final String description;
   private final PolicyTags policyTags;
   private final Long maxLength;
@@ -84,7 +84,7 @@ public final class Field implements Serializable {
     private String name;
     private LegacySQLTypeName type;
     private FieldList subFields;
-    private String mode;
+    private Mode mode;
     private String description;
     private PolicyTags policyTags;
     private Long maxLength;
@@ -205,7 +205,7 @@ public final class Field implements Serializable {
 
     /** Sets the mode of the field. When not specified {@link Mode#NULLABLE} is used. */
     public Builder setMode(Mode mode) {
-      this.mode = mode != null ? mode.name() : null;
+      this.mode = mode;
       return this;
     }
 
@@ -357,7 +357,7 @@ public final class Field implements Serializable {
 
   /** Returns the field mode. By default {@link Mode#NULLABLE} is used. */
   public Mode getMode() {
-    return mode != null ? Mode.valueOf(mode) : null;
+    return mode;
   }
 
   /** Returns the field description. */
@@ -509,7 +509,7 @@ public final class Field implements Serializable {
     fieldSchemaPb.setName(name);
     fieldSchemaPb.setType(type.name());
     if (mode != null) {
-      fieldSchemaPb.setMode(mode);
+      fieldSchemaPb.setMode(mode.name());
     }
     if (description != null) {
       fieldSchemaPb.setDescription(description);
