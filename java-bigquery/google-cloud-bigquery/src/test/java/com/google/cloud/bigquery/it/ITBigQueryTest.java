@@ -119,6 +119,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.cloud.bigquery.QueryParameterValue;
+import com.google.cloud.bigquery.QueryResultsFormat;
 import com.google.cloud.bigquery.Range;
 import com.google.cloud.bigquery.RangePartitioning;
 import com.google.cloud.bigquery.Routine;
@@ -160,6 +161,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -7595,6 +7597,45 @@ class ITBigQueryTest {
     ((Job) result).cancel();
     // Allow 2 seconds of timeout value to account for random delays
     assertTrue(millis < 1_000_000 * 2);
+  }
+
+  @Test
+  void testQueryResultsFormatArrow() throws InterruptedException {
+    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
+    BigQuery bigQuery = bigqueryHelper.getOptions().getService();
+    String query = "SELECT 1 as id, 'hello' as name, TIMESTAMP('2026-08-10T12:00:00Z') as ts";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .build();
+    TableResult result = bigQuery.query(config);
+    assertNotNull(result);
+    List<FieldValueList> rows = Lists.newArrayList(result.iterateAll());
+    assertEquals(1, rows.size());
+    FieldValueList row = rows.get(0);
+    assertEquals(1L, row.get("id").getLongValue());
+    assertEquals("hello", row.get("name").getStringValue());
+    assertNotNull(row.get("ts").getValue());
+  }
+
+  @Test
+  void testQueryResultsFormatArrowMultiPage() throws InterruptedException {
+    RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
+    BigQuery bigQuery = bigqueryHelper.getOptions().getService();
+    String query = "SELECT x FROM UNNEST(GENERATE_ARRAY(1, 15000)) AS x";
+    QueryJobConfiguration config =
+        QueryJobConfiguration.newBuilder(query)
+            .setQueryResultsFormat(QueryResultsFormat.ARROW)
+            .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
+            .build();
+    TableResult result = bigQuery.query(config);
+    assertNotNull(result);
+    List<FieldValueList> rows = Lists.newArrayList(result.iterateAll());
+    assertEquals(15000, rows.size());
+    for (int i = 0; i < 15000; i++) {
+      assertEquals((long) (i + 1), rows.get(i).get(0).getLongValue());
+    }
   }
 
   @Test
