@@ -413,11 +413,6 @@ jobs:
         java-version: 11
         cache: maven
     - run: java -version
-    - name: Install Maven modules to local Maven repository
-      run: .kokoro/build.sh
-      env:
-        JOB_TYPE: install
-    - run: java -version
     - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
   gapic-libraries-bom:
     needs: bulk-filter
