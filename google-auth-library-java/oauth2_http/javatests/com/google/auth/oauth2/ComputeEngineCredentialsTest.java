@@ -72,6 +72,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -422,6 +423,34 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         scopedCredentialCopy.getRequestMetadata(CALL_URI);
     TestUtils.assertContainsBearerToken(metadataForCopiedCredentials, ACCESS_TOKEN_WITH_SCOPES);
     TestUtils.assertNotContainsBearerToken(metadataForCopiedCredentials, ACCESS_TOKEN);
+  }
+
+  @Test
+  void getRequestMetadata_multipleCalls_usesCachedToken() throws IOException {
+    final AtomicInteger requestCount = new AtomicInteger(0);
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport =
+        new MockMetadataServerTransport(SCOPE_TO_ACCESS_TOKEN_MAP) {
+          @Override
+          public LowLevelHttpRequest buildRequest(String method, String url) throws IOException {
+            if (url.startsWith(ComputeEngineCredentials.getTokenServerEncodedUrl())) {
+              requestCount.incrementAndGet();
+            }
+            return super.buildRequest(method, url);
+          }
+        };
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
+    TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
+    assertEquals(1, requestCount.get());
+
+    Map<String, List<String>> metadata2 = credentials.getRequestMetadata(CALL_URI);
+    TestUtils.assertContainsBearerToken(metadata2, ACCESS_TOKEN);
+    assertEquals(1, requestCount.get());
   }
 
   @Test
