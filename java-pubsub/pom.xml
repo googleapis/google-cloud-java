@@ -55,6 +55,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-pubsub-parent</site.installationModule>
+    <skipUnitTests>false</skipUnitTests>
   </properties>
 
   <dependencyManagement>
@@ -143,13 +144,4 @@
     <!-- {x-generated-modules-end} -->
     <module>google-cloud-pubsub-bom</module>
   </modules>
-
-  <profiles>
-    <profile>
-      <id>bulkTests</id>
-      <properties>
-        <skipTests>true</skipTests>
-      </properties>
-    </profile>
-  </profiles>
 </project>

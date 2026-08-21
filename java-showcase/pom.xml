@@ -27,6 +27,7 @@
     <maven.deploy.skip>true</maven.deploy.skip>
     <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
     <mdep.analyze.skip>true</mdep.analyze.skip><!-- The showcase modules are not meant for library customers. -->
+    <skipUnitTests>false</skipUnitTests>
   </properties>
 
   <dependencyManagement>
@@ -258,13 +259,6 @@
           </plugin>
         </plugins>
       </build>
-    </profile>
-    <!-- skip tests if bulkTests profile is enabled (when testing the rest of the monorepo) -->
-    <profile>
-      <id>bulkTests</id>
-      <properties>
-        <skipTests>true</skipTests>
-      </properties>
     </profile>
   </profiles>
 </project>
