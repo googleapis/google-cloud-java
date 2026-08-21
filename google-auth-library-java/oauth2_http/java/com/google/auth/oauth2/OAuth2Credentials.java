@@ -82,11 +82,11 @@ public class OAuth2Credentials extends Credentials {
 
   // byte[] is serializable, so the lock variable can be final
   @VisibleForTesting final Object lock = new byte[0];
-  @Nullable private volatile OAuthValue value = null;
+  private volatile @Nullable OAuthValue value = null;
   @Nullable @VisibleForTesting transient RefreshTask refreshTask;
 
   // Change listeners are not serialized
-  private transient List<CredentialsChangedListener> changeListeners;
+  private transient @Nullable List<CredentialsChangedListener> changeListeners;
   // Until we expose this to the users it can remain transient and non-serializable
   transient Clock clock = Clock.SYSTEM;
 
@@ -115,7 +115,7 @@ public class OAuth2Credentials extends Credentials {
   }
 
   protected OAuth2Credentials(
-      AccessToken accessToken, Duration refreshMargin, Duration expirationMargin) {
+      @Nullable AccessToken accessToken, Duration refreshMargin, Duration expirationMargin) {
     if (accessToken != null) {
       this.value = OAuthValue.create(accessToken, EMPTY_EXTRA_HEADERS);
     }
@@ -149,8 +149,7 @@ public class OAuth2Credentials extends Credentials {
    *
    * @return The cached access token.
    */
-  @Nullable
-  public final AccessToken getAccessToken() {
+  public final @Nullable AccessToken getAccessToken() {
     OAuthValue localState = value;
     if (localState != null) {
       return localState.temporaryAccess;
@@ -440,8 +439,7 @@ public class OAuth2Credentials extends Credentials {
     return Objects.hashCode(value);
   }
 
-  @Nullable
-  protected Map<String, List<String>> getRequestMetadataInternal() {
+  protected @Nullable Map<String, List<String>> getRequestMetadataInternal() {
     OAuthValue localValue = value;
     if (localValue != null) {
       return localValue.requestMetadata;
@@ -711,7 +709,7 @@ public class OAuth2Credentials extends Credentials {
 
   public static class Builder {
 
-    private AccessToken accessToken;
+    private @Nullable AccessToken accessToken;
     private Duration refreshMargin = DEFAULT_REFRESH_MARGIN;
     private Duration expirationMargin = DEFAULT_EXPIRATION_MARGIN;
 
@@ -724,7 +722,7 @@ public class OAuth2Credentials extends Credentials {
     }
 
     @CanIgnoreReturnValue
-    public Builder setAccessToken(AccessToken token) {
+    public Builder setAccessToken(@Nullable AccessToken token) {
       this.accessToken = token;
       return this;
     }
@@ -749,7 +747,7 @@ public class OAuth2Credentials extends Credentials {
       return expirationMargin;
     }
 
-    public AccessToken getAccessToken() {
+    public @Nullable AccessToken getAccessToken() {
       return accessToken;
     }
 
