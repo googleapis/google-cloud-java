@@ -1901,6 +1901,114 @@ public class StorageControlClientTest {
   }
 
   @Test
+  public void disableRapidCacheTest() throws Exception {
+    RapidCache expectedResponse =
+        RapidCache.newBuilder()
+            .setName(RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString())
+            .setZone("zone3744684")
+            .setCacheType("cacheType-553573924")
+            .setTtl(Duration.newBuilder().build())
+            .setAdmissionPolicy("admissionPolicy-1063600485")
+            .setState("state109757585")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingUpdate(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("disableRapidCacheTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageControl.addResponse(resultOperation);
+
+    RapidCacheName name = RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]");
+
+    RapidCache actualResponse = client.disableRapidCacheAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DisableRapidCacheRequest actualRequest = ((DisableRapidCacheRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void disableRapidCacheExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      RapidCacheName name = RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]");
+      client.disableRapidCacheAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void disableRapidCacheTest2() throws Exception {
+    RapidCache expectedResponse =
+        RapidCache.newBuilder()
+            .setName(RapidCacheName.of("[PROJECT]", "[BUCKET]", "[RAPID_CACHE]").toString())
+            .setZone("zone3744684")
+            .setCacheType("cacheType-553573924")
+            .setTtl(Duration.newBuilder().build())
+            .setAdmissionPolicy("admissionPolicy-1063600485")
+            .setState("state109757585")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setPendingUpdate(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("disableRapidCacheTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockStorageControl.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    RapidCache actualResponse = client.disableRapidCacheAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockStorageControl.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DisableRapidCacheRequest actualRequest = ((DisableRapidCacheRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void disableRapidCacheExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockStorageControl.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.disableRapidCacheAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void getRapidCacheTest() throws Exception {
     RapidCache expectedResponse =
         RapidCache.newBuilder()

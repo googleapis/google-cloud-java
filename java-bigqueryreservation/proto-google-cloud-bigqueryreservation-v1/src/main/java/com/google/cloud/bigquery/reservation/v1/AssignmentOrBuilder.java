@@ -231,10 +231,10 @@ public interface AssignmentOrBuilder
    *
    * <pre>
    * Optional. Represents the principal for this assignment. If not empty, jobs
-   * run by this principal will utilize the associated reservation. Otherwise,
-   * jobs will fall back to using the reservation assigned to the project,
-   * folder, or organization (in that order). If no reservation is assigned at
-   * any of these levels, on-demand capacity will be used.
+   * run by this principal utilize the associated reservation. Otherwise, jobs
+   * fall back to using the reservation assigned to the project, folder,
+   * or organization, in that order. If no reservation is assigned at any of
+   * these levels, on-demand capacity is used.
    *
    * The supported formats are:
    *
@@ -244,7 +244,7 @@ public interface AssignmentOrBuilder
    * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
    * for workload identity pool identities.
    * * The special value `unknown_or_deleted_user` represents principals which
-   * cannot be read from the user info service, for example deleted users.
+   * cannot be read from the user info service, for example, deleted users.
    * </pre>
    *
    * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -258,10 +258,10 @@ public interface AssignmentOrBuilder
    *
    * <pre>
    * Optional. Represents the principal for this assignment. If not empty, jobs
-   * run by this principal will utilize the associated reservation. Otherwise,
-   * jobs will fall back to using the reservation assigned to the project,
-   * folder, or organization (in that order). If no reservation is assigned at
-   * any of these levels, on-demand capacity will be used.
+   * run by this principal utilize the associated reservation. Otherwise, jobs
+   * fall back to using the reservation assigned to the project, folder,
+   * or organization, in that order. If no reservation is assigned at any of
+   * these levels, on-demand capacity is used.
    *
    * The supported formats are:
    *
@@ -271,7 +271,7 @@ public interface AssignmentOrBuilder
    * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
    * for workload identity pool identities.
    * * The special value `unknown_or_deleted_user` represents principals which
-   * cannot be read from the user info service, for example deleted users.
+   * cannot be read from the user info service, for example, deleted users.
    * </pre>
    *
    * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
