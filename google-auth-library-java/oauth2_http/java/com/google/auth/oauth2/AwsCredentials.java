@@ -83,7 +83,8 @@ public class AwsCredentials extends ExternalAccountCredentials {
     // Check that one and only one of supplier or credential source are provided.
     if (builder.awsSecurityCredentialsSupplier != null && builder.credentialSource != null) {
       throw new IllegalArgumentException(
-          "AwsCredentials cannot have both an awsSecurityCredentialsSupplier and a credentialSource.");
+          "AwsCredentials cannot have both an awsSecurityCredentialsSupplier and a"
+              + " credentialSource.");
     }
     if (builder.awsSecurityCredentialsSupplier == null && builder.credentialSource == null) {
       throw new IllegalArgumentException(
@@ -203,8 +204,7 @@ public class AwsCredentials extends ExternalAccountCredentials {
     return this.awsSecurityCredentialsSupplier;
   }
 
-  @Nullable
-  public String getRegionalCredentialVerificationUrlOverride() {
+  public @Nullable String getRegionalCredentialVerificationUrlOverride() {
     return this.regionalCredentialVerificationUrlOverride;
   }
 
@@ -237,9 +237,9 @@ public class AwsCredentials extends ExternalAccountCredentials {
 
   public static class Builder extends ExternalAccountCredentials.Builder {
 
-    private AwsSecurityCredentialsSupplier awsSecurityCredentialsSupplier;
+    private @Nullable AwsSecurityCredentialsSupplier awsSecurityCredentialsSupplier;
 
-    private String regionalCredentialVerificationUrlOverride;
+    private @Nullable String regionalCredentialVerificationUrlOverride;
 
     Builder() {}
 
@@ -261,7 +261,7 @@ public class AwsCredentials extends ExternalAccountCredentials {
      */
     @CanIgnoreReturnValue
     public Builder setAwsSecurityCredentialsSupplier(
-        AwsSecurityCredentialsSupplier awsSecurityCredentialsSupplier) {
+        @Nullable AwsSecurityCredentialsSupplier awsSecurityCredentialsSupplier) {
       this.awsSecurityCredentialsSupplier = awsSecurityCredentialsSupplier;
       return this;
     }
@@ -277,37 +277,42 @@ public class AwsCredentials extends ExternalAccountCredentials {
      */
     @CanIgnoreReturnValue
     public Builder setRegionalCredentialVerificationUrlOverride(
-        String regionalCredentialVerificationUrlOverride) {
+        @Nullable String regionalCredentialVerificationUrlOverride) {
       this.regionalCredentialVerificationUrlOverride = regionalCredentialVerificationUrlOverride;
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       super.setHttpTransportFactory(transportFactory);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setAudience(String audience) {
       super.setAudience(audience);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setSubjectTokenType(String subjectTokenType) {
       super.setSubjectTokenType(subjectTokenType);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setSubjectTokenType(SubjectTokenTypes subjectTokenType) {
       super.setSubjectTokenType(subjectTokenType);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setTokenUrl(String tokenUrl) {
+    public Builder setTokenUrl(@Nullable String tokenUrl) {
       super.setTokenUrl(tokenUrl);
       return this;
     }
@@ -318,62 +323,73 @@ public class AwsCredentials extends ExternalAccountCredentials {
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationUrl(String serviceAccountImpersonationUrl) {
+    public Builder setServiceAccountImpersonationUrl(
+        @Nullable String serviceAccountImpersonationUrl) {
       super.setServiceAccountImpersonationUrl(serviceAccountImpersonationUrl);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setTokenInfoUrl(String tokenInfoUrl) {
+    public Builder setTokenInfoUrl(@Nullable String tokenInfoUrl) {
       super.setTokenInfoUrl(tokenInfoUrl);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setClientId(String clientId) {
+    public Builder setClientId(@Nullable String clientId) {
       super.setClientId(clientId);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setClientSecret(String clientSecret) {
+    public Builder setClientSecret(@Nullable String clientSecret) {
       super.setClientSecret(clientSecret);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setScopes(Collection<String> scopes) {
+    public Builder setScopes(@Nullable Collection<String> scopes) {
       super.setScopes(scopes);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setWorkforcePoolUserProject(String workforcePoolUserProject) {
+    public Builder setWorkforcePoolUserProject(@Nullable String workforcePoolUserProject) {
       super.setWorkforcePoolUserProject(workforcePoolUserProject);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationOptions(Map<String, Object> optionsMap) {
+    public Builder setServiceAccountImpersonationOptions(@Nullable Map<String, Object> optionsMap) {
       super.setServiceAccountImpersonationOptions(optionsMap);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setUniverseDomain(String universeDomain) {
+    public Builder setUniverseDomain(@Nullable String universeDomain) {
       super.setUniverseDomain(universeDomain);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    Builder setEnvironmentProvider(EnvironmentProvider environmentProvider) {
+    Builder setEnvironmentProvider(@Nullable EnvironmentProvider environmentProvider) {
       super.setEnvironmentProvider(environmentProvider);
       return this;
     }
