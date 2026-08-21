@@ -603,7 +603,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private StatementType getStatementType(ExecuteResult executeResult) {
-    if (executeResult.tableResult != null && executeResult.tableResult.getStatementType() != null) {
+    if (executeResult.tableResult.getStatementType() != null) {
       return executeResult.tableResult.getStatementType();
     }
     if (executeResult.job != null && executeResult.job.getStatistics() instanceof QueryStatistics) {
@@ -717,7 +717,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       case DML:
       case DML_EXTRA:
         Long dmlRowCount;
-        if (results != null && results.getNumDmlAffectedRows() != null) {
+        if (results.getNumDmlAffectedRows() != null) {
           dmlRowCount = results.getNumDmlAffectedRows();
         } else {
           QueryStatistics dmlStats = getQueryStatisticsFromJob(results, job);
@@ -785,7 +785,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       throws SQLException {
     try {
       Job activeJob = job;
-      if (activeJob == null) {
+      if (activeJob == null && results.getJobId() != null) {
         activeJob = this.bigQuery.getJob(results.getJobId());
       }
       Job completedJob = (activeJob != null) ? activeJob.waitFor() : null;
