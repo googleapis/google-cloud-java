@@ -97,27 +97,47 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
   public abstract @Nullable Long getRowsInPage();
 
   /**
-   * Returns the statement type of the query (e.g. SELECT, INSERT, UPDATE, DDL, SCRIPT), if
-   * available.
+   * Returns the statement type of the query (e.g. SELECT, INSERT, UPDATE, DDL, SCRIPT).
+   *
+   * @return statement type, or {@code null} if not populated by the service
    */
   public abstract @Nullable StatementType getStatementType();
 
-  /** Returns the total number of bytes billed for the query, if available. */
+  /**
+   * Returns the total number of bytes billed for the query.
+   *
+   * @return total bytes billed, or {@code null} if not populated by the service
+   */
   public abstract @Nullable Long getTotalBytesBilled();
 
-  /** Returns the total number of bytes processed by the query, if available. */
+  /**
+   * Returns the total number of bytes processed by the query.
+   *
+   * @return total bytes processed, or {@code null} if not populated by the service
+   */
   public abstract @Nullable Long getTotalBytesProcessed();
 
-  /** Returns the total slot milliseconds for the query, if available. */
+  /**
+   * Returns the total slot milliseconds consumed by the query.
+   *
+   * @return total slot milliseconds, or {@code null} if not populated by the service
+   */
   public abstract @Nullable Long getTotalSlotMs();
 
   /**
-   * Returns the number of rows affected by a DML statement (INSERT, UPDATE, DELETE, MERGE), if
-   * available.
+   * Returns the number of rows affected by a DML statement (INSERT, UPDATE, DELETE, MERGE).
+   *
+   * @return number of affected rows for DML queries, or {@code null} if not populated by the
+   *     service
    */
   public abstract @Nullable Long getNumDmlAffectedRows();
 
-  /** Returns information about the session if this query is part of one, if available. */
+  /**
+   * Returns information about the BigQuery session if this query was executed within or created a
+   * session.
+   *
+   * @return session information, or {@code null} if not populated by the service
+   */
   public abstract @Nullable SessionInfo getSessionInfo();
 
   @Override

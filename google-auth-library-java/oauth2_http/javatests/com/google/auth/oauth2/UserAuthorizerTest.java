@@ -946,4 +946,64 @@ class UserAuthorizerTest {
     assertEquals(httpTransportFactory, tokenResponse.getHttpTransportFactory());
     assertNull(tokenResponse.getRefreshToken());
   }
+
+  @Test
+  void testTokenResponseWithConfig_noClientSecret() {
+    String clientId = "testClientId";
+    AccessToken accessToken = new AccessToken("token", new Date());
+    URI tokenServerUri = URI.create("https://example.com/token");
+    HttpTransportFactory httpTransportFactory = new MockTokenServerTransportFactory();
+
+    TokenResponseWithConfig tokenResponse =
+        TokenResponseWithConfig.newBuilder()
+            .setClientId(clientId)
+            .setClientSecret(null)
+            .setAccessToken(accessToken)
+            .setTokenServerUri(tokenServerUri)
+            .setHttpTransportFactory(httpTransportFactory)
+            .build();
+
+    assertEquals(clientId, tokenResponse.getClientId());
+    assertNull(tokenResponse.getClientSecret());
+    assertEquals(accessToken, tokenResponse.getAccessToken());
+    assertEquals(tokenServerUri, tokenResponse.getTokenServerUri());
+    assertEquals(httpTransportFactory, tokenResponse.getHttpTransportFactory());
+    assertNull(tokenResponse.getRefreshToken());
+  }
+
+  @Test
+  void build_withDefaults() {
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder().setClientId(CLIENT_ID).setScopes(DUMMY_SCOPES).build();
+
+    assertNotNull(authorizer.getTokenStore());
+    assertEquals(DUMMY_SCOPES, authorizer.getScopes());
+    assertEquals(UserAuthorizer.DEFAULT_CALLBACK_URI, authorizer.getCallbackUri());
+    assertEquals(
+        UserAuthorizer.ClientAuthenticationType.CLIENT_SECRET_POST,
+        authorizer.getClientAuthenticationType());
+  }
+
+  @Test
+  void storeCredentials_nullAccessToken() throws IOException {
+    TokenStore store = new MemoryTokensStorage();
+    UserAuthorizer authorizer =
+        UserAuthorizer.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setScopes(DUMMY_SCOPES)
+            .setTokenStore(store)
+            .build();
+
+    UserCredentials credentials =
+        UserCredentials.newBuilder()
+            .setClientId(CLIENT_ID_VALUE)
+            .setClientSecret(CLIENT_SECRET)
+            .setRefreshToken(REFRESH_TOKEN)
+            .build();
+
+    authorizer.storeCredentials(USER_ID, credentials);
+    String loaded = store.load(USER_ID);
+    assertNotNull(loaded);
+    assertTrue(loaded.contains(REFRESH_TOKEN));
+  }
 }
