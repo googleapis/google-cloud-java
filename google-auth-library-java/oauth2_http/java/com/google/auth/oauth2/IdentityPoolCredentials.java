@@ -52,9 +52,8 @@ import org.jspecify.annotations.Nullable;
  * <p>By default, attempts to exchange the external credential for a GCP access token.
  *
  * <p>Note: Actor token extraction is currently restricted to file-based JSON credential sources
- * over mTLS endpoints. When configuring certificate-bound OAuth 2.0 tokens for GAX channel
- * providers, ensure you configure {@code
- * InstantiatingGrpcChannelProvider.newBuilder().setMtlsProvider(...)} in tandem.
+ * over mTLS endpoints. When configuring certificate-bound OAuth 2.0 tokens, ensure your transport
+ * layer is configured for mTLS in tandem.
  */
 @NullMarked
 public class IdentityPoolCredentials extends ExternalAccountCredentials {
@@ -67,6 +66,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   private final IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
   @Nullable private final IdentityPoolActorTokenSupplier actorTokenSupplier;
   @Nullable private final String actorTokenType;
+  // Transient: not serialized. After deserialization, per-cycle cert pinning and 401 retry
+  // are disabled; the credential falls back to the class-level transportFactory for mTLS.
   @Nullable private final transient X509Provider x509Provider;
   private final ExternalAccountSupplierContext supplierContext;
   private final String metricsHeaderValue;
@@ -92,6 +93,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           "A subjectTokenSupplier or a credentialSource must be provided.");
     }
 
+    // Store the x509Provider for per-cycle cert pinning.
+    this.x509Provider = builder.x509Provider;
+
     // Initialize based on the source type
     if (builder.subjectTokenSupplier != null) {
       this.subjectTokenSupplier = builder.subjectTokenSupplier;
@@ -108,7 +112,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
               e);
         }
       }
-      this.subjectTokenSupplier = new FileIdentityPoolTokenSupplier(credentialSource);
+      this.subjectTokenSupplier = new FileIdentityPoolSubjectTokenSupplier(credentialSource);
       this.metricsHeaderValue = FILE_METRICS_HEADER_VALUE;
     } else if (credentialSource.credentialSourceType == IdentityPoolCredentialSourceType.URL) {
       this.subjectTokenSupplier =
@@ -135,8 +139,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     if (builder.actorTokenSupplier != null) {
       this.actorTokenSupplier = builder.actorTokenSupplier;
     } else if (credentialSource != null && credentialSource.actorTokenFieldName != null) {
-      if (this.subjectTokenSupplier instanceof FileIdentityPoolTokenSupplier) {
-        this.actorTokenSupplier = (FileIdentityPoolTokenSupplier) this.subjectTokenSupplier;
+      if (this.subjectTokenSupplier instanceof FileIdentityPoolSubjectTokenSupplier) {
+        this.actorTokenSupplier = (FileIdentityPoolSubjectTokenSupplier) this.subjectTokenSupplier;
       } else {
         throw new IllegalArgumentException(
             "Actor tokens are currently only supported for file-based credential sources.");
@@ -155,24 +159,52 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           "An actorTokenSupplier must be specified when an actorTokenType is configured.");
     }
 
-    if (this.actorTokenSupplier != null
-        && !(this.transportFactory instanceof MtlsHttpTransportFactory)) {
+    if (this.actorTokenSupplier != null && !isMtlsConfigured()) {
       throw new IllegalArgumentException(
           "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate source or MtlsHttpTransportFactory.");
     }
+  }
 
-    this.x509Provider = builder.x509Provider;
+  /**
+   * Checks whether mTLS is properly configured by verifying that an X509Provider is set or the
+   * transport factory is an MtlsHttpTransportFactory. This avoids relying solely on instanceof
+   * checks which could pass for a misconfigured factory.
+   */
+  private boolean isMtlsConfigured() {
+    return this.x509Provider != null || this.transportFactory instanceof MtlsHttpTransportFactory;
   }
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
-    String credential = retrieveSubjectToken();
+    // Per-cycle cert pinning: snapshot the KeyStore at the start of each refresh cycle.
+    HttpTransportFactory cycleTransportFactory = this.transportFactory;
+    if (this.x509Provider != null) {
+      KeyStore pinnedKeyStore = this.x509Provider.getKeyStore();
+      cycleTransportFactory = new MtlsHttpTransportFactory(pinnedKeyStore);
+    }
+
+    // Read subject and actor tokens, atomically if from the same file supplier.
+    String subjectToken;
+    String actorToken = null;
+    if (this.subjectTokenSupplier instanceof FileIdentityPoolSubjectTokenSupplier
+        && this.actorTokenSupplier == this.subjectTokenSupplier) {
+      FileIdentityPoolSubjectTokenSupplier.TokenPair tokens =
+          ((FileIdentityPoolSubjectTokenSupplier) this.subjectTokenSupplier)
+              .readTokens(supplierContext);
+      subjectToken = tokens.subject;
+      actorToken = tokens.actor;
+    } else {
+      subjectToken = retrieveSubjectToken();
+      if (this.actorTokenSupplier != null) {
+        actorToken = this.actorTokenSupplier.getActorToken(supplierContext);
+      }
+    }
+
     StsTokenExchangeRequest.Builder stsTokenExchangeRequest =
-        StsTokenExchangeRequest.newBuilder(credential, getSubjectTokenType())
+        StsTokenExchangeRequest.newBuilder(subjectToken, getSubjectTokenType())
             .setAudience(getAudience());
 
-    if (this.actorTokenSupplier != null && this.actorTokenType != null) {
-      String actorToken = this.actorTokenSupplier.getActorToken(supplierContext);
+    if (actorToken != null && this.actorTokenType != null) {
       stsTokenExchangeRequest.setActingParty(new ActingParty(actorToken, this.actorTokenType));
     }
 
@@ -181,7 +213,24 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       stsTokenExchangeRequest.setScopes(new ArrayList<>(scopes));
     }
 
-    return exchangeExternalCredentialForAccessToken(stsTokenExchangeRequest.build());
+    try {
+      return exchangeExternalCredentialForAccessToken(
+          stsTokenExchangeRequest.build(), cycleTransportFactory);
+    } catch (OAuthException e) {
+      if (e.getHttpStatusCode() == 401 && this.x509Provider != null) {
+        try {
+          // On 401, re-read from X509Provider for fresh certs and retry once.
+          KeyStore freshKeyStore = this.x509Provider.getKeyStore();
+          HttpTransportFactory retryTransportFactory = new MtlsHttpTransportFactory(freshKeyStore);
+          return exchangeExternalCredentialForAccessToken(
+              stsTokenExchangeRequest.build(), retryTransportFactory);
+        } catch (IOException retryException) {
+          retryException.addSuppressed(e);
+          throw retryException;
+        }
+      }
+      throw e;
+    }
   }
 
   @Override
@@ -321,14 +370,36 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       return this;
     }
 
+    /**
+     * Sets the actor token supplier used for certificate-bound OAuth 2.0 token exchanges. The
+     * supplier provides an actor token representing the entity on whose behalf the subject is
+     * acting.
+     *
+     * <p>An actor token supplier must be paired with an {@link #setActorTokenType actor token type}
+     * and requires an mTLS-configured transport.
+     *
+     * @param actorTokenSupplier the supplier to use for retrieving actor tokens
+     * @return this {@code Builder} object
+     */
     @CanIgnoreReturnValue
-    public Builder setActorTokenSupplier(IdentityPoolActorTokenSupplier actorTokenSupplier) {
+    Builder setActorTokenSupplier(IdentityPoolActorTokenSupplier actorTokenSupplier) {
       this.actorTokenSupplier = actorTokenSupplier;
       return this;
     }
 
+    /**
+     * Sets the actor token type for the STS token exchange request. This specifies the type of the
+     * actor token provided by the {@link #setActorTokenSupplier actor token supplier}, such as
+     * {@code "urn:ietf:params:oauth:token-type:jwt"}.
+     *
+     * <p>An actor token type must be paired with an {@link #setActorTokenSupplier actor token
+     * supplier}.
+     *
+     * @param actorTokenType the token type URI for the actor token
+     * @return this {@code Builder} object
+     */
     @CanIgnoreReturnValue
-    public Builder setActorTokenType(String actorTokenType) {
+    Builder setActorTokenType(String actorTokenType) {
       this.actorTokenType = actorTokenType;
       return this;
     }

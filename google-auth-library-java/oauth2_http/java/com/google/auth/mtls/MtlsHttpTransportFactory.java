@@ -54,7 +54,11 @@ import org.jspecify.annotations.Nullable;
 public class MtlsHttpTransportFactory implements HttpTransportFactory {
   @Nullable private final KeyStore mtlsKeyStore;
 
-  /** Constructs a default factory for mTLS transports without a custom KeyStore. */
+  /**
+   * No-arg constructor required for deserialization via reflection. Not intended for direct use;
+   * callers should use {@link #MtlsHttpTransportFactory(KeyStore)}.
+   */
+  @InternalApi
   public MtlsHttpTransportFactory() {
     this.mtlsKeyStore = null;
   }

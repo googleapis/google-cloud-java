@@ -31,7 +31,7 @@
 
 package com.google.auth.oauth2;
 
-import static com.google.auth.oauth2.FileIdentityPoolTokenSupplier.parseToken;
+import static com.google.auth.oauth2.FileIdentityPoolSubjectTokenSupplier.parseToken;
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpHeaders;

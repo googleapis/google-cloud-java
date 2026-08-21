@@ -533,6 +533,22 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
    */
   protected AccessToken exchangeExternalCredentialForAccessToken(
       StsTokenExchangeRequest stsTokenExchangeRequest) throws IOException {
+    return exchangeExternalCredentialForAccessToken(stsTokenExchangeRequest, this.transportFactory);
+  }
+
+  /**
+   * Exchanges the external credential for a Google Cloud access token using the specified
+   * transport factory. This overload allows callers to provide a per-cycle transport factory,
+   * for example one pinned to a specific mTLS certificate.
+   *
+   * @param stsTokenExchangeRequest the Security Token Service token exchange request
+   * @param cycleTransportFactory the HTTP transport factory to use for this exchange
+   * @return the access token returned by the Security Token Service
+   * @throws OAuthException if the call to the Security Token Service fails
+   */
+  protected AccessToken exchangeExternalCredentialForAccessToken(
+      StsTokenExchangeRequest stsTokenExchangeRequest, HttpTransportFactory cycleTransportFactory)
+      throws IOException {
     // Handle service account impersonation if necessary.
     if (this.shouldBuildImpersonatedCredential()) {
       this.impersonatedCredentials = this.buildImpersonatedCredentials();
@@ -543,7 +559,9 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
 
     StsRequestHandler.Builder requestHandler =
         StsRequestHandler.newBuilder(
-            tokenUrl, stsTokenExchangeRequest, transportFactory.create().createRequestFactory());
+            tokenUrl,
+            stsTokenExchangeRequest,
+            cycleTransportFactory.create().createRequestFactory());
 
     // If this credential was initialized with a Workforce configuration then the
     // workforcePoolUserProject must be passed to the Security Token Service via the internal

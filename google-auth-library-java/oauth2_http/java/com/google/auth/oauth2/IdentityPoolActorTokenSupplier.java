@@ -37,7 +37,7 @@ import org.jspecify.annotations.NullMarked;
 /** Functional interface for supplying an actor token for IdentityPool credentials. */
 @NullMarked
 @FunctionalInterface
-public interface IdentityPoolActorTokenSupplier extends java.io.Serializable {
+interface IdentityPoolActorTokenSupplier extends java.io.Serializable {
 
   /**
    * Returns a valid actor token as a string.

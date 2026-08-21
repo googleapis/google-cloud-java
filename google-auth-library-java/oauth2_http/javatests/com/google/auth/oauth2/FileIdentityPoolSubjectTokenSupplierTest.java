@@ -34,6 +34,7 @@ package com.google.auth.oauth2;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayInputStream;
@@ -44,13 +45,13 @@ import java.io.ObjectOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.attribute.FileTime;
+
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
-class FileIdentityPoolTokenSupplierTest {
+class FileIdentityPoolSubjectTokenSupplierTest {
 
   @Test
   void getToken_textFormat(@TempDir Path tempDir) throws IOException {
@@ -61,8 +62,8 @@ class FileIdentityPoolTokenSupplierTest {
     credentialSourceMap.put("file", credentialFile.toString());
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
-    FileIdentityPoolTokenSupplier supplier =
-        new FileIdentityPoolTokenSupplier(source); // TEXT doesn't need targetFieldName
+    FileIdentityPoolSubjectTokenSupplier supplier =
+        new FileIdentityPoolSubjectTokenSupplier(source); // TEXT doesn't need targetFieldName
 
     assertEquals("plain_token", supplier.getSubjectToken(null));
 
@@ -74,13 +75,12 @@ class FileIdentityPoolTokenSupplierTest {
   }
 
   @Test
-  void getToken_jsonFormat_cachingLogic(@TempDir Path tempDir) throws IOException {
+  void getToken_jsonFormat_reReadsFileOnEachCall(@TempDir Path tempDir) throws IOException {
     Path credentialFile = tempDir.resolve("credential.json");
     Files.write(
         credentialFile,
         "{\"sub_token\": \"my_sub_token\", \"act_token\": \"my_act_token\"}"
             .getBytes(StandardCharsets.UTF_8));
-    Files.setLastModifiedTime(credentialFile, FileTime.fromMillis(10000));
 
     Map<String, Object> credentialSourceMap = new HashMap<>();
     credentialSourceMap.put("file", credentialFile.toString());
@@ -91,18 +91,17 @@ class FileIdentityPoolTokenSupplierTest {
     credentialSourceMap.put("format", formatMap);
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
-    FileIdentityPoolTokenSupplier supplier = new FileIdentityPoolTokenSupplier(source);
+    FileIdentityPoolSubjectTokenSupplier supplier = new FileIdentityPoolSubjectTokenSupplier(source);
 
     // Initial read
     assertEquals("my_sub_token", supplier.getSubjectToken(null));
     assertEquals("my_act_token", supplier.getActorToken(null));
 
-    // Modify file with advance in modification time
+    // Modify file contents
     Files.write(
         credentialFile,
         "{\"sub_token\": \"new_sub\", \"act_token\": \"new_act\"}"
             .getBytes(StandardCharsets.UTF_8));
-    Files.setLastModifiedTime(credentialFile, FileTime.fromMillis(20000));
 
     // Validate we read the new token after file modification
     assertEquals("new_sub", supplier.getSubjectToken(null));
@@ -110,7 +109,7 @@ class FileIdentityPoolTokenSupplierTest {
   }
 
   @Test
-  void getToken_jsonFormat_cachingLogic_multithreaded(@TempDir Path tempDir)
+  void getToken_jsonFormat_concurrentReads(@TempDir Path tempDir)
       throws IOException, InterruptedException {
     Path credentialFile = tempDir.resolve("credential.json");
     Files.write(
@@ -127,7 +126,7 @@ class FileIdentityPoolTokenSupplierTest {
     credentialSourceMap.put("format", formatMap);
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
-    FileIdentityPoolTokenSupplier supplier = new FileIdentityPoolTokenSupplier(source);
+    FileIdentityPoolSubjectTokenSupplier supplier = new FileIdentityPoolSubjectTokenSupplier(source);
 
     int numThreads = 10;
     java.util.concurrent.ExecutorService executor =
@@ -173,7 +172,7 @@ class FileIdentityPoolTokenSupplierTest {
     credentialSourceMap.put("format", formatMap);
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
-    FileIdentityPoolTokenSupplier actSupplier = new FileIdentityPoolTokenSupplier(source);
+    FileIdentityPoolSubjectTokenSupplier actSupplier = new FileIdentityPoolSubjectTokenSupplier(source);
 
     IOException exception = assertThrows(IOException.class, () -> actSupplier.getActorToken(null));
     assertEquals(
@@ -194,7 +193,7 @@ class FileIdentityPoolTokenSupplierTest {
     credentialSourceMap.put("format", formatMap);
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
-    FileIdentityPoolTokenSupplier supplier = new FileIdentityPoolTokenSupplier(source);
+    FileIdentityPoolSubjectTokenSupplier supplier = new FileIdentityPoolSubjectTokenSupplier(source);
 
     IOException exception = assertThrows(IOException.class, () -> supplier.getSubjectToken(null));
     assertTrue(exception.getMessage().contains("No token was found for field: sub_token"));
@@ -214,13 +213,13 @@ class FileIdentityPoolTokenSupplierTest {
     credentialSourceMap.put("format", formatMap);
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
-    FileIdentityPoolTokenSupplier supplier = new FileIdentityPoolTokenSupplier(source);
+    FileIdentityPoolSubjectTokenSupplier supplier = new FileIdentityPoolSubjectTokenSupplier(source);
 
     assertEquals("12345", supplier.getSubjectToken(null));
   }
 
   @Test
-  void serialization_postCachePopulation_succeeds(@TempDir Path tempDir) throws Exception {
+  void serialization_roundTrip_succeeds(@TempDir Path tempDir) throws Exception {
     Path credentialFile = tempDir.resolve("credential.json");
     Files.write(
         credentialFile,
@@ -236,7 +235,7 @@ class FileIdentityPoolTokenSupplierTest {
     credentialSourceMap.put("format", formatMap);
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
-    FileIdentityPoolTokenSupplier supplier = new FileIdentityPoolTokenSupplier(source);
+    FileIdentityPoolSubjectTokenSupplier supplier = new FileIdentityPoolSubjectTokenSupplier(source);
 
     // Populate cache
     assertEquals("my_sub_token", supplier.getSubjectToken(null));
@@ -248,7 +247,7 @@ class FileIdentityPoolTokenSupplierTest {
     }
     try (ObjectInputStream ois =
         new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
-      FileIdentityPoolTokenSupplier deserialized = (FileIdentityPoolTokenSupplier) ois.readObject();
+      FileIdentityPoolSubjectTokenSupplier deserialized = (FileIdentityPoolSubjectTokenSupplier) ois.readObject();
       assertNotNull(deserialized);
       assertEquals("my_sub_token", deserialized.getSubjectToken(null));
     }
@@ -262,7 +261,7 @@ class FileIdentityPoolTokenSupplierTest {
     credentialSourceMap.put("file", credentialFile.toString());
 
     IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
-    FileIdentityPoolTokenSupplier supplier = new FileIdentityPoolTokenSupplier(source);
+    FileIdentityPoolSubjectTokenSupplier supplier = new FileIdentityPoolSubjectTokenSupplier(source);
 
     IOException exception = assertThrows(IOException.class, () -> supplier.getSubjectToken(null));
     assertEquals(
@@ -279,7 +278,7 @@ class FileIdentityPoolTokenSupplierTest {
 
     ByteArrayInputStream stream =
         new ByteArrayInputStream("plain_text_token".getBytes(StandardCharsets.UTF_8));
-    String parsed = FileIdentityPoolTokenSupplier.parseToken(stream, source, null);
+    String parsed = FileIdentityPoolSubjectTokenSupplier.parseToken(stream, source, null);
     assertEquals("plain_text_token", parsed);
   }
 
@@ -298,8 +297,123 @@ class FileIdentityPoolTokenSupplierTest {
     IOException exception =
         assertThrows(
             IOException.class,
-            () -> FileIdentityPoolTokenSupplier.parseToken(stream, source, null));
+            () -> FileIdentityPoolSubjectTokenSupplier.parseToken(stream, source, null));
     assertEquals(
         "Target field name must be specified for JSON credentials.", exception.getMessage());
+  }
+
+  @Test
+  void readTokens_extractsBothFields(@TempDir Path tempDir) throws IOException {
+    Path credentialFile = tempDir.resolve("credential.json");
+    Files.write(
+        credentialFile,
+        "{\"sub_token\": \"my_sub_token\", \"act_token\": \"my_act_token\"}"
+            .getBytes(StandardCharsets.UTF_8));
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", credentialFile.toString());
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_token");
+    formatMap.put("actor_token_field_name", "act_token");
+    credentialSourceMap.put("format", formatMap);
+
+    IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
+    FileIdentityPoolSubjectTokenSupplier supplier =
+        new FileIdentityPoolSubjectTokenSupplier(source);
+
+    FileIdentityPoolSubjectTokenSupplier.TokenPair tokens = supplier.readTokens(null);
+    assertEquals("my_sub_token", tokens.subject);
+    assertEquals("my_act_token", tokens.actor);
+  }
+
+  @Test
+  void readTokens_missingActorField_throwsIOException(@TempDir Path tempDir) throws IOException {
+    Path credentialFile = tempDir.resolve("credential.json");
+    Files.write(
+        credentialFile,
+        "{\"sub_token\": \"my_sub_token\"}"
+            .getBytes(StandardCharsets.UTF_8));
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", credentialFile.toString());
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_token");
+    formatMap.put("actor_token_field_name", "act_token");
+    credentialSourceMap.put("format", formatMap);
+
+    IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
+    FileIdentityPoolSubjectTokenSupplier supplier =
+        new FileIdentityPoolSubjectTokenSupplier(source);
+
+    IOException exception = assertThrows(IOException.class, () -> supplier.readTokens(null));
+    assertTrue(exception.getMessage().contains("No token was found for field: act_token"));
+  }
+
+  @Test
+  void readTokens_missingSubjectField_throwsIOException(@TempDir Path tempDir) throws IOException {
+    Path credentialFile = tempDir.resolve("credential.json");
+    Files.write(
+        credentialFile,
+        "{\"act_token\": \"my_act_token\"}"
+            .getBytes(StandardCharsets.UTF_8));
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", credentialFile.toString());
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_token");
+    formatMap.put("actor_token_field_name", "act_token");
+    credentialSourceMap.put("format", formatMap);
+
+    IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
+    FileIdentityPoolSubjectTokenSupplier supplier =
+        new FileIdentityPoolSubjectTokenSupplier(source);
+
+    IOException exception = assertThrows(IOException.class, () -> supplier.readTokens(null));
+    assertTrue(exception.getMessage().contains("No token was found for field: sub_token"));
+  }
+
+  @Test
+  void readTokens_noActorFieldConfigured_returnsNullActor(@TempDir Path tempDir)
+      throws IOException {
+    Path credentialFile = tempDir.resolve("credential.json");
+    Files.write(
+        credentialFile,
+        "{\"sub_token\": \"my_sub_token\"}"
+            .getBytes(StandardCharsets.UTF_8));
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", credentialFile.toString());
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_token");
+    credentialSourceMap.put("format", formatMap);
+
+    IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
+    FileIdentityPoolSubjectTokenSupplier supplier =
+        new FileIdentityPoolSubjectTokenSupplier(source);
+
+    FileIdentityPoolSubjectTokenSupplier.TokenPair tokens = supplier.readTokens(null);
+    assertEquals("my_sub_token", tokens.subject);
+    assertNull(tokens.actor);
+  }
+
+  @Test
+  void readTokens_textFormat_throwsIOException(@TempDir Path tempDir) throws IOException {
+    Path credentialFile = tempDir.resolve("credential.txt");
+    Files.write(credentialFile, "plain_token".getBytes(StandardCharsets.UTF_8));
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", credentialFile.toString());
+
+    IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
+    FileIdentityPoolSubjectTokenSupplier supplier =
+        new FileIdentityPoolSubjectTokenSupplier(source);
+
+    IOException exception = assertThrows(IOException.class, () -> supplier.readTokens(null));
+    assertTrue(
+        exception.getMessage().contains("only supported for JSON-formatted"));
   }
 }
