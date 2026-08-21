@@ -26,8 +26,8 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 import java.util.Collections;
 import java.util.Locale;
-import java.util.Set;
 import java.util.Objects;
+import java.util.Set;
 import javax.annotation.concurrent.Immutable;
 import javax.annotation.concurrent.ThreadSafe;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -193,9 +193,7 @@ public final class CrossRunIntersection {
   }
 
   public static CrossRunIntersection of(
-      @Nullable Backend b,
-      @Nullable Transport t,
-      @Nullable LocationType lt) {
+      @Nullable Backend b, @Nullable Transport t, @Nullable LocationType lt) {
     return new CrossRunIntersection(b, t, lt);
   }
 
@@ -232,15 +230,8 @@ public final class CrossRunIntersection {
         .flatMap(
             b ->
                 tSet.stream()
-                    .flatMap(
-                        t ->
-                            lSet.stream()
-                                .map(l -> new CrossRunIntersection(b, t, l))))
-        .filter(
-            i ->
-                !(i.backend == null
-                    && i.transport == null
-                    && i.locationType == null))
+                    .flatMap(t -> lSet.stream().map(l -> new CrossRunIntersection(b, t, l))))
+        .filter(i -> !(i.backend == null && i.transport == null && i.locationType == null))
         .collect(ImmutableSet.toImmutableSet());
   }
 }

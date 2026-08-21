@@ -30,7 +30,6 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.ZeroCopySupport.DisposableByteString;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.UUID;
@@ -43,17 +42,19 @@ import org.junit.Test;
 public final class ITRcuBidiReadTempTest {
 
   private static final String PROJECT_ID = "gcs-hyd-connector-benchmarks";
-  private static final String BUCKET_NAME = "java-storage-reg-rapid-preprod-3fe2bb58"; // Reusing active bucket with running cache
+  private static final String BUCKET_NAME =
+      "java-storage-reg-rapid-preprod-3fe2bb58"; // Reusing active bucket with running cache
   private static Storage storage;
 
   @BeforeClass
   public static void setUpClass() throws Exception {
     System.out.println("Initializing storage client pointing to pre-prod endpoint...");
-    storage = StorageOptions.grpc()
-        .setHost("storage-preprod-test-grpc.googleusercontent.com:443")
-        .setProjectId(PROJECT_ID)
-        .build()
-        .getService();
+    storage =
+        StorageOptions.grpc()
+            .setHost("storage-preprod-test-grpc.googleusercontent.com:443")
+            .setProjectId(PROJECT_ID)
+            .build()
+            .getService();
   }
 
   @AfterClass

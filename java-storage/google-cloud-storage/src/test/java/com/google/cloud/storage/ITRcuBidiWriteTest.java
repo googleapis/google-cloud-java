@@ -59,9 +59,7 @@ import org.junit.runner.RunWith;
 @CrossRun(
     backends = {Backend.PROD},
     transports = Transport.GRPC,
-    locations = {
-      LocationType.REGIONAL_RAPID
-    })
+    locations = {LocationType.REGIONAL_RAPID})
 @Parameterized(UploadConfigParameters.class)
 public final class ITRcuBidiWriteTest {
 
@@ -88,7 +86,8 @@ public final class ITRcuBidiWriteTest {
         storage.blobAppendableUpload(
             BlobInfo.newBuilder(bucket, UUID.randomUUID().toString())
                 .setStorageClass(StorageClass.valueOf("RAPID"))
-                .build(), p.uploadConfig);
+                .build(),
+            p.uploadConfig);
 
     upload.open().close();
 
@@ -113,7 +112,8 @@ public final class ITRcuBidiWriteTest {
         storage.blobAppendableUpload(
             BlobInfo.newBuilder(bucket, UUID.randomUUID().toString())
                 .setStorageClass(StorageClass.valueOf("RAPID"))
-                .build(), p.uploadConfig);
+                .build(),
+            p.uploadConfig);
 
     // cut out the middle + 1 byte
     int length = p.content.length();
@@ -147,7 +147,8 @@ public final class ITRcuBidiWriteTest {
         storage.blobAppendableUpload(
             BlobInfo.newBuilder(bucket, UUID.randomUUID().toString())
                 .setStorageClass(StorageClass.valueOf("RAPID"))
-                .build(), p.uploadConfig);
+                .build(),
+            p.uploadConfig);
 
     try (AppendableUploadWriteableByteChannel channel = upload.open()) {
       ByteBuffer src = p.content.asByteBuffer();
@@ -200,7 +201,8 @@ public final class ITRcuBidiWriteTest {
         storage.blobAppendableUpload(
             BlobInfo.newBuilder(done1.getBlobId())
                 .setStorageClass(StorageClass.valueOf("RAPID"))
-                .build(), p.uploadConfig);
+                .build(),
+            p.uploadConfig);
     try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(c2.getBytes()), channel);
       assertThat(written).isEqualTo(c2.length());
@@ -268,7 +270,8 @@ public final class ITRcuBidiWriteTest {
         storage.blobAppendableUpload(
             BlobInfo.newBuilder(done1.getBlobId())
                 .setStorageClass(StorageClass.valueOf("RAPID"))
-                .build(), p.uploadConfig);
+                .build(),
+            p.uploadConfig);
     takeOver.open().finalizeAndClose();
 
     BlobInfo done2 = takeOver.getResult().get(5, TimeUnit.SECONDS);
@@ -363,7 +366,8 @@ public final class ITRcuBidiWriteTest {
         storage.blobAppendableUpload(
             BlobInfo.newBuilder(done1.getBlobId())
                 .setStorageClass(StorageClass.valueOf("RAPID"))
-                .build(), p.uploadConfig);
+                .build(),
+            p.uploadConfig);
 
     String badCrc = Utils.crc32cCodec.encode(Crc32cValue.zero().getValue());
     try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
@@ -407,7 +411,8 @@ public final class ITRcuBidiWriteTest {
         storage.blobAppendableUpload(
             BlobInfo.newBuilder(done1.getBlobId())
                 .setStorageClass(StorageClass.valueOf("RAPID"))
-                .build(), p.uploadConfig);
+                .build(),
+            p.uploadConfig);
 
     try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);
@@ -447,7 +452,8 @@ public final class ITRcuBidiWriteTest {
         storage.blobAppendableUpload(
             BlobInfo.newBuilder(done1.getBlobId())
                 .setStorageClass(StorageClass.valueOf("RAPID"))
-                .build(), p.uploadConfig);
+                .build(),
+            p.uploadConfig);
 
     try (AppendableUploadWriteableByteChannel channel = takeOver.open()) {
       int written = Buffers.emptyTo(ByteBuffer.wrap(p.content.getBytes()), channel);

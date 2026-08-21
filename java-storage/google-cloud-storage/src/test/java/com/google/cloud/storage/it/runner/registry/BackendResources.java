@@ -39,9 +39,6 @@ import com.google.cloud.storage.it.runner.CrossRunIntersection;
 import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.BucketType;
 import com.google.cloud.storage.it.runner.annotations.LocationType;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-import org.junit.runners.model.FrameworkField;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.storage.control.v2.StorageControlClient;
@@ -52,7 +49,9 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.Locale;
 import java.util.UUID;
-
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import org.junit.runners.model.FrameworkField;
 
 /** The set of resources which are defined for a single backend. */
 final class BackendResources implements ManagedLifecycle {
@@ -107,7 +106,9 @@ final class BackendResources implements ManagedLifecycle {
   }
 
   public Storage getStorage(Transport transport) {
-    return transport == Transport.GRPC ? storageGrpc.get().getStorage() : storageJson.get().getStorage();
+    return transport == Transport.GRPC
+        ? storageGrpc.get().getStorage()
+        : storageJson.get().getStorage();
   }
 
   public StorageControlClient getStorageControlClient() {
@@ -138,7 +139,8 @@ final class BackendResources implements ManagedLifecycle {
                 case PREPROD:
                   optionsBuilder =
                       StorageOptions.http()
-                          .setHost("https://storage-preprod-test-unified.googleusercontent.com/storage/v1_preprod/")
+                          .setHost(
+                              "https://storage-preprod-test-unified.googleusercontent.com/storage/v1_preprod/")
                           .setProjectId(getPreprodProjectId())
                           .setOpenTelemetry(otelSdk.get().get());
                   break;
@@ -343,9 +345,7 @@ final class BackendResources implements ManagedLifecycle {
                         .resolve(
                             null,
                             CrossRunIntersection.of(
-                                backend,
-                                null,
-                                LocationType.REGIONAL_STANDARD))));
+                                backend, null, LocationType.REGIONAL_STANDARD))));
     TestRunScopedInstance<ObjectsFixture> objectsFixtureRp =
         TestRunScopedInstance.of(
             "fixture/OBJECTS/[" + backend.name() + "]/REQUESTER_PAYS",
@@ -441,9 +441,7 @@ final class BackendResources implements ManagedLifecycle {
 
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("locationType", locationType)
-          .toString();
+      return MoreObjects.toStringHelper(this).add("locationType", locationType).toString();
     }
   }
 

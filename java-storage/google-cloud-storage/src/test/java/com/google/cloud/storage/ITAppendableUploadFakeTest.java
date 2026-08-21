@@ -300,17 +300,11 @@ public class ITAppendableUploadFakeTest {
     String routingToken5 = "routingToken5";
 
     BidiWriteHandle writeHandle1 =
-        BidiWriteHandle.newBuilder()
-            .setHandle(ByteString.copyFromUtf8("handle-1"))
-            .build();
+        BidiWriteHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-1")).build();
     BidiWriteHandle writeHandle2 =
-        BidiWriteHandle.newBuilder()
-            .setHandle(ByteString.copyFromUtf8("handle-2"))
-            .build();
+        BidiWriteHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-2")).build();
     BidiWriteHandle writeHandle3 =
-        BidiWriteHandle.newBuilder()
-            .setHandle(ByteString.copyFromUtf8("handle-3"))
-            .build();
+        BidiWriteHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-3")).build();
 
     // 1. First write of "ABC".
     BidiWriteObjectRequest req_open_abc = BidiUploadTestUtils.withFlushAndStateLookup(open_abc);
@@ -372,7 +366,8 @@ public class ITAppendableUploadFakeTest {
 
     // 8. Fourth write of "J" (finalize/finish write)
     BidiWriteObjectRequest req_j_finish = j_finish;
-    BidiWriteObjectResponse res_j_final = resource_10.toBuilder().setWriteHandle(writeHandle3).build();
+    BidiWriteObjectResponse res_j_final =
+        resource_10.toBuilder().setWriteHandle(writeHandle3).build();
 
     // 9. Reconnect to routingToken3
     BidiWriteObjectRequest reconnect_token3 =
@@ -454,15 +449,25 @@ public class ITAppendableUploadFakeTest {
 
     FakeStorage fake =
         FakeStorage.of(
-            ImmutableMap.<BidiWriteObjectRequest, Consumer<StreamObserver<BidiWriteObjectResponse>>>builder()
+            ImmutableMap
+                .<BidiWriteObjectRequest, Consumer<StreamObserver<BidiWriteObjectResponse>>>
+                    builder()
                 .put(req_open_abc, respond -> respond.onNext(res_abc_h1))
                 .put(req_def, defHandler)
                 .put(reconnect_token1, respond -> respond.onNext(res_lookup_token1))
                 .put(req_ghi, ghiHandler)
                 .put(reconnect_token2, respond -> respond.onNext(res_lookup_token2))
                 .put(req_j_finish, jHandler)
-                .put(reconnect_token3, respond -> respond.onError(packRedirectIntoAbortedException(makeRedirect(routingToken4))))
-                .put(reconnect_token4, respond -> respond.onError(packRedirectIntoAbortedException(makeRedirect(routingToken5))))
+                .put(
+                    reconnect_token3,
+                    respond ->
+                        respond.onError(
+                            packRedirectIntoAbortedException(makeRedirect(routingToken4))))
+                .put(
+                    reconnect_token4,
+                    respond ->
+                        respond.onError(
+                            packRedirectIntoAbortedException(makeRedirect(routingToken5))))
                 .put(reconnect_token5, respond -> respond.onNext(res_lookup_token5))
                 .build());
 

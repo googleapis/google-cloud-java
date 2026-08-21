@@ -78,15 +78,26 @@ final class BucketInfoShim implements ManagedLifecycle {
   public void start() {
     try {
       if (locationType == LocationType.REGIONAL_RAPID && backend != Backend.TEST_BENCH) {
-        System.out.println(">>> REUSING static pre-created RCU bucket java-storage-reg-rapid-preprod-3fe2bb58 for REGIONAL_RAPID test!");
-        createdBucket = BucketInfo.newBuilder("java-storage-reg-rapid-preprod-3fe2bb58")
-            .setLocation("US-CENTRAL1")
-            .build();
+        System.out.println(
+            ">>> REUSING static pre-created RCU bucket java-storage-reg-rapid-preprod-3fe2bb58 for REGIONAL_RAPID test!");
+        createdBucket =
+            BucketInfo.newBuilder("java-storage-reg-rapid-preprod-3fe2bb58")
+                .setLocation("US-CENTRAL1")
+                .build();
         return;
       }
-      System.out.println("Starting resource creation for LocationType: " + locationType + " in zone: " + targetZone);
+      System.out.println(
+          "Starting resource creation for LocationType: "
+              + locationType
+              + " in zone: "
+              + targetZone);
       createdBucket = s.create(bucketInfo).asBucketInfo();
-      System.out.println("Successfully created bucket: " + createdBucket.getName() + " (Location: " + createdBucket.getLocation() + ")");
+      System.out.println(
+          "Successfully created bucket: "
+              + createdBucket.getName()
+              + " (Location: "
+              + createdBucket.getLocation()
+              + ")");
       if (locationType == LocationType.REGIONAL_RAPID) {
         if (ctrl == null) {
           throw new IllegalStateException(
@@ -106,20 +117,25 @@ final class BucketInfoShim implements ManagedLifecycle {
                 .setTtl(Duration.newBuilder().setSeconds(86400).build()) // 24 hours
                 .build();
         try {
-          System.out.println("Submitting CreateRapidCache LRO for bucket: " + createdBucket.getName() + " in zone: " + targetZone);
+          System.out.println(
+              "Submitting CreateRapidCache LRO for bucket: "
+                  + createdBucket.getName()
+                  + " in zone: "
+                  + targetZone);
           ctrl.createRapidCacheAsync(BucketName.format("_", createdBucket.getName()), rapidCache)
               .get(30, java.util.concurrent.TimeUnit.SECONDS);
           System.out.println("Successfully created Rapid Cache in zone: " + targetZone);
         } catch (java.util.concurrent.TimeoutException te) {
           System.out.println("WARNING: CreateRapidCache LRO timed out after 30s. Skipping test.");
           assumeTrue(
-              "Skipping test because Rapid Cache creation LRO timed out (30s) in zone: " + targetZone,
+              "Skipping test because Rapid Cache creation LRO timed out (30s) in zone: "
+                  + targetZone,
               false);
         } catch (Exception e) {
-          System.out.println("WARNING: CreateRapidCache LRO failed: " + e.getMessage() + ". Skipping test.");
+          System.out.println(
+              "WARNING: CreateRapidCache LRO failed: " + e.getMessage() + ". Skipping test.");
           assumeTrue(
-              "Skipping test due to failure during Rapid Cache creation: " + e.getMessage(),
-              false);
+              "Skipping test due to failure during Rapid Cache creation: " + e.getMessage(), false);
         }
       }
     } catch (StorageException se) {

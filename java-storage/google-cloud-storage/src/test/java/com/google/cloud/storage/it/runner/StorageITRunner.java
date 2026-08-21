@@ -19,11 +19,11 @@ package com.google.cloud.storage.it.runner;
 import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.CrossRun;
 import com.google.cloud.storage.it.runner.annotations.CrossRun.AllowClassRule;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
 import com.google.cloud.storage.it.runner.annotations.ParallelFriendly;
 import com.google.cloud.storage.it.runner.annotations.Parameterized;
 import com.google.cloud.storage.it.runner.annotations.Parameterized.Parameter;
 import com.google.cloud.storage.it.runner.annotations.Parameterized.ParametersProvider;
-import com.google.cloud.storage.it.runner.annotations.LocationType;
 import com.google.cloud.storage.it.runner.annotations.SingleBackend;
 import com.google.cloud.storage.it.runner.registry.Registry;
 import com.google.common.collect.ImmutableList;
@@ -170,10 +170,7 @@ public final class StorageITRunner extends Suite {
                               .flatMap(
                                   t ->
                                       ImmutableSet.copyOf(crossRun.locations()).stream()
-                                          .map(
-                                              l ->
-                                                  CrossRunIntersection.of(
-                                                      b, t, l))))
+                                          .map(l -> CrossRunIntersection.of(b, t, l))))
                   .flatMap(
                       c -> {
                         TestInitializer ti = registry.newTestInitializerForCell(c);

@@ -27,13 +27,13 @@ import com.google.cloud.storage.BlobAppendableUploadConfig;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.BlobReadSession;
-import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.BucketInfo;
-import com.google.cloud.storage.StorageClass;
-import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.RangeSpec;
 import com.google.cloud.storage.ReadProjectionConfigs;
 import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.Storage.BlobWriteOption;
+import com.google.cloud.storage.StorageClass;
+import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.ZeroCopySupport.DisposableByteString;
 import com.google.cloud.storage.it.runner.StorageITRunner;
@@ -41,9 +41,7 @@ import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.CrossRun;
 import com.google.cloud.storage.it.runner.annotations.Inject;
 import com.google.cloud.storage.it.runner.annotations.LocationType;
-import java.io.IOException;
 import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.UUID;
@@ -60,9 +58,7 @@ import org.junit.runner.RunWith;
 @CrossRun(
     backends = {Backend.PROD},
     transports = {Transport.GRPC},
-    locations = {
-      LocationType.REGIONAL_RAPID
-    })
+    locations = {LocationType.REGIONAL_RAPID})
 public final class ITRcuBidiReadTest {
 
   @Inject public Storage storage;
@@ -105,8 +101,10 @@ public final class ITRcuBidiReadTest {
 
     closeTestBlobId = BlobId.of(bucket.getName(), "test-bidi-read-close-" + UUID.randomUUID());
     zeroCopyTestBlobId = BlobId.of(bucket.getName(), "test-bidi-zero-copy-" + UUID.randomUUID());
-    multipleRangeTestBlobId = BlobId.of(bucket.getName(), "test-bidi-multiple-range-" + UUID.randomUUID());
-    outOfRangeTestBlobId = BlobId.of(bucket.getName(), "test-bidi-out-of-range-" + UUID.randomUUID());
+    multipleRangeTestBlobId =
+        BlobId.of(bucket.getName(), "test-bidi-multiple-range-" + UUID.randomUUID());
+    outOfRangeTestBlobId =
+        BlobId.of(bucket.getName(), "test-bidi-out-of-range-" + UUID.randomUUID());
 
     System.out.println("Pre-creating objects for read integration tests...");
     createObjectForWarming(closeTestBlobId, closeTestData);
@@ -115,7 +113,8 @@ public final class ITRcuBidiReadTest {
     createObjectForWarming(outOfRangeTestBlobId, outOfRangeTestData);
 
     if (bucket.getName().contains("reg-rapid")) {
-      System.out.println("Regional Rapid bucket detected. Triggering Ingest-On-Read on all objects...");
+      System.out.println(
+          "Regional Rapid bucket detected. Triggering Ingest-On-Read on all objects...");
       triggerIngestOnRead(closeTestBlobId);
       triggerIngestOnRead(zeroCopyTestBlobId);
       triggerIngestOnRead(multipleRangeTestBlobId);
@@ -130,10 +129,10 @@ public final class ITRcuBidiReadTest {
   private void createObjectForWarming(BlobId blobId, byte[] data) throws Exception {
     StorageClass storageClass = bucket.getStorageClass();
     if (StorageClass.valueOf("RAPID").equals(storageClass)) {
-      System.out.println("Bucket is ZONAL_RAPID, writing via Appendable upload with RAPID storage class...");
-      BlobInfo info = BlobInfo.newBuilder(blobId)
-          .setStorageClass(StorageClass.valueOf("RAPID"))
-          .build();
+      System.out.println(
+          "Bucket is ZONAL_RAPID, writing via Appendable upload with RAPID storage class...");
+      BlobInfo info =
+          BlobInfo.newBuilder(blobId).setStorageClass(StorageClass.valueOf("RAPID")).build();
       BlobAppendableUploadConfig config = BlobAppendableUploadConfig.of();
       BlobAppendableUpload upload =
           storage.blobAppendableUpload(info, config, BlobWriteOption.doesNotExist());
@@ -155,12 +154,14 @@ public final class ITRcuBidiReadTest {
     try {
       ApiFuture<BlobReadSession> futureSession = storage.blobReadSession(blobId);
       try (BlobReadSession session = futureSession.get(10, TimeUnit.SECONDS)) {
-        ApiFuture<byte[]> readFuture = session.readAs(
-            ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(0, 100)));
+        ApiFuture<byte[]> readFuture =
+            session.readAs(
+                ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(0, 100)));
         readFuture.get(10, TimeUnit.SECONDS);
       }
     } catch (Exception e) {
-      System.out.println("Warning: Ingest-on-read trigger failed for " + blobId + ": " + e.getMessage());
+      System.out.println(
+          "Warning: Ingest-on-read trigger failed for " + blobId + ": " + e.getMessage());
     }
   }
 
@@ -200,7 +201,8 @@ public final class ITRcuBidiReadTest {
         Throwable cause = e.getCause();
         assertThat(cause).isInstanceOf(StorageException.class);
         assertThat(cause.getCause()).isInstanceOf(AsyncSessionClosedException.class);
-        System.out.println(">>> SUCCESS: readPostStreamClose verified AsyncSessionClosedException.");
+        System.out.println(
+            ">>> SUCCESS: readPostStreamClose verified AsyncSessionClosedException.");
       }
     }
   }
@@ -284,15 +286,18 @@ public final class ITRcuBidiReadTest {
 
         // Resolve and verify Range 2
         byte[] b2 = f2.get(10, TimeUnit.SECONDS);
-        assertThat(b2).isEqualTo(Arrays.copyOfRange(multipleRangeTestData, rangeSize, 2 * rangeSize));
+        assertThat(b2)
+            .isEqualTo(Arrays.copyOfRange(multipleRangeTestData, rangeSize, 2 * rangeSize));
 
         // Resolve and verify Range 3
         byte[] b3 = f3.get(10, TimeUnit.SECONDS);
-        assertThat(b3).isEqualTo(Arrays.copyOfRange(multipleRangeTestData, 2 * rangeSize, 3 * rangeSize));
+        assertThat(b3)
+            .isEqualTo(Arrays.copyOfRange(multipleRangeTestData, 2 * rangeSize, 3 * rangeSize));
 
         // Resolve and verify Range 4
         byte[] b4 = f4.get(10, TimeUnit.SECONDS);
-        assertThat(b4).isEqualTo(Arrays.copyOfRange(multipleRangeTestData, 3 * rangeSize, 4 * rangeSize));
+        assertThat(b4)
+            .isEqualTo(Arrays.copyOfRange(multipleRangeTestData, 3 * rangeSize, 4 * rangeSize));
 
         System.out.println(">>> SUCCESS: multipleRangedRead concurrent offsets verified.");
       }
@@ -304,7 +309,8 @@ public final class ITRcuBidiReadTest {
   @Test
   public void readFromBucketThatDoesNotExistShouldRaiseStorageExceptionWith404() throws Exception {
     Assume.assumeTrue(transport == Transport.GRPC);
-    System.out.println(">>> START: readFromBucketThatDoesNotExistShouldRaiseStorageExceptionWith404");
+    System.out.println(
+        ">>> START: readFromBucketThatDoesNotExistShouldRaiseStorageExceptionWith404");
 
     String nonExistentBucketName = "java-storage-non-existent-bucket-" + UUID.randomUUID();
     BlobId blobId = BlobId.of(nonExistentBucketName, "someobject");
@@ -319,7 +325,8 @@ public final class ITRcuBidiReadTest {
       assertThat(cause).isInstanceOf(StorageException.class);
       StorageException se = (StorageException) cause;
       assertThat(se.getCode()).isIn(Arrays.asList(404, 403));
-      System.out.println(">>> SUCCESS: readFromBucketThatDoesNotExistShouldRaiseStorageExceptionWith404 verified StorageException 404 or 403.");
+      System.out.println(
+          ">>> SUCCESS: readFromBucketThatDoesNotExistShouldRaiseStorageExceptionWith404 verified StorageException 404 or 403.");
     }
   }
 
@@ -333,13 +340,16 @@ public final class ITRcuBidiReadTest {
       try (BlobReadSession session = futureSession.get(10, TimeUnit.SECONDS)) {
         // Start a valid range read on the session first to verify it succeeds
         ApiFuture<byte[]> fValid =
-            session.readAs(ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(0, 1000)));
+            session.readAs(
+                ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.of(0, 1000)));
         byte[] bytes = fValid.get(10, TimeUnit.SECONDS);
         assertThat(bytes).isEqualTo(Arrays.copyOfRange(outOfRangeTestData, 0, 1000));
 
         // Start an out-of-bounds range read (offset > size)
         ApiFuture<byte[]> fOutOfRange =
-            session.readAs(ReadProjectionConfigs.asFutureBytes().withRangeSpec(RangeSpec.beginAt(100 * 1024 + 1000)));
+            session.readAs(
+                ReadProjectionConfigs.asFutureBytes()
+                    .withRangeSpec(RangeSpec.beginAt(100 * 1024 + 1000)));
 
         // Verify that resolving it throws OutOfRangeException
         try {
@@ -350,7 +360,8 @@ public final class ITRcuBidiReadTest {
           assertThat(cause).isInstanceOf(StorageException.class);
           assertThat(cause.getCause()).isInstanceOf(OutOfRangeException.class);
         }
-        System.out.println(">>> SUCCESS: outOfRange verified valid read success and subsequent out of range exception.");
+        System.out.println(
+            ">>> SUCCESS: outOfRange verified valid read success and subsequent out of range exception.");
       }
     } finally {
       // Do not delete

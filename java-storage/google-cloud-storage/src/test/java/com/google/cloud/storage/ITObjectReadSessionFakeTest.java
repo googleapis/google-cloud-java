@@ -1845,11 +1845,16 @@ public final class ITObjectReadSessionFakeTest {
 
   @Test
   public void bidiReadObjectRedirectedError_redirectCounterResetOnResponse() throws Exception {
-    BidiReadHandle handle1 = BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-1")).build();
-    BidiReadHandle handle2 = BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-2")).build();
-    BidiReadHandle handle3 = BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-3")).build();
-    BidiReadHandle handle4 = BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-4")).build();
-    BidiReadHandle handle5 = BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-5")).build();
+    BidiReadHandle handle1 =
+        BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-1")).build();
+    BidiReadHandle handle2 =
+        BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-2")).build();
+    BidiReadHandle handle3 =
+        BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-3")).build();
+    BidiReadHandle handle4 =
+        BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-4")).build();
+    BidiReadHandle handle5 =
+        BidiReadHandle.newBuilder().setHandle(ByteString.copyFromUtf8("handle-5")).build();
 
     BidiReadObjectRequest req_read_1 = read(1, 10, 5);
 
@@ -1867,9 +1872,7 @@ public final class ITObjectReadSessionFakeTest {
             .build();
 
     BidiReadObjectRequest req_read_2 =
-        BidiReadObjectRequest.newBuilder()
-            .addReadRanges(getReadRange(2, 15, 5))
-            .build();
+        BidiReadObjectRequest.newBuilder().addReadRanges(getReadRange(2, 15, 5)).build();
 
     BidiReadObjectRequest req_read_2_redirected_2 =
         BidiReadObjectRequest.newBuilder()
@@ -1885,9 +1888,7 @@ public final class ITObjectReadSessionFakeTest {
             .build();
 
     BidiReadObjectRequest req_read_3 =
-        BidiReadObjectRequest.newBuilder()
-            .addReadRanges(getReadRange(3, 20, 5))
-            .build();
+        BidiReadObjectRequest.newBuilder().addReadRanges(getReadRange(3, 20, 5)).build();
 
     BidiReadObjectRequest req_read_3_redirected_3 =
         BidiReadObjectRequest.newBuilder()
@@ -1966,7 +1967,8 @@ public final class ITObjectReadSessionFakeTest {
 
     FakeStorage fake =
         FakeStorage.of(
-            ImmutableMap.<BidiReadObjectRequest, Consumer<StreamObserver<BidiReadObjectResponse>>>builder()
+            ImmutableMap
+                .<BidiReadObjectRequest, Consumer<StreamObserver<BidiReadObjectResponse>>>builder()
                 .put(REQ_OPEN, respond -> respond.onNext(RES_OPEN))
                 .put(req_read_1, onRedirect(handle1, "token-1"))
                 .put(req_read_1_redirected_1, respond -> respond.onNext(res_read_1))

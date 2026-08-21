@@ -36,5 +36,4 @@ public @interface SingleBackend {
   Backend value();
 
   LocationType[] locations() default {LocationType.REGIONAL_STANDARD};
-
 }
