@@ -42,6 +42,7 @@ import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryRetryHelper.BigQueryRetryHelperException;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
+import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
 import com.google.common.annotations.VisibleForTesting;
@@ -2104,6 +2105,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
     Long totalBytesProcessed = results.getTotalBytesProcessed();
     Long totalSlotMs = results.getTotalSlotMs();
     Long numDmlAffectedRows = results.getNumDmlAffectedRows();
+    SessionInfo sessionInfo =
+        results.getSessionInfo() != null ? SessionInfo.fromPb(results.getSessionInfo()) : null;
 
     if (results.getPageToken() != null) {
       JobId jobId = JobId.fromPb(results.getJobReference());
@@ -2129,6 +2132,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setTotalBytesProcessed(totalBytesProcessed)
           .setTotalSlotMs(totalSlotMs)
           .setNumDmlAffectedRows(numDmlAffectedRows)
+          .setSessionInfo(sessionInfo)
           .build();
     }
     // only 1 page of result
@@ -2154,6 +2158,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         .setTotalBytesProcessed(totalBytesProcessed)
         .setTotalSlotMs(totalSlotMs)
         .setNumDmlAffectedRows(numDmlAffectedRows)
+        .setSessionInfo(sessionInfo)
         .build();
   }
 

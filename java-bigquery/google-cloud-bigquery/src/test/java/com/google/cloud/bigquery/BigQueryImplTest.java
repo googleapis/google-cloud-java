@@ -52,6 +52,7 @@ import com.google.api.services.bigquery.model.JobStatistics;
 import com.google.api.services.bigquery.model.ProjectList;
 import com.google.api.services.bigquery.model.ProjectReference;
 import com.google.api.services.bigquery.model.QueryRequest;
+import com.google.api.services.bigquery.model.SessionInfo;
 import com.google.api.services.bigquery.model.TableCell;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
@@ -170,6 +171,8 @@ public class BigQueryImplTest {
           .setField("timestampField");
   private static final TimePartitioning TIME_PARTITIONING_NULL_TYPE =
       TimePartitioning.fromPb(PB_TIMEPARTITIONING);
+  private static final String SESSION_ID = "test-session-id";
+  private static final SessionInfo PB_SESSION_INFO = new SessionInfo().setSessionId(SESSION_ID);
   private static final ImmutableMap<String, String> LABELS = ImmutableMap.of("key", "value");
   private static final StandardTableDefinition TABLE_DEFINITION_WITH_PARTITIONING =
       StandardTableDefinition.newBuilder()
@@ -2880,6 +2883,7 @@ public class BigQueryImplTest {
             .setTotalBytesProcessed(42L)
             .setTotalSlotMs(50L)
             .setNumDmlAffectedRows(0L)
+            .setSessionInfo(PB_SESSION_INFO)
             .setTotalRows(BigInteger.valueOf(1L));
 
     when(bigqueryRpcMock.queryRpcSkipExceptionTranslation(eq(PROJECT), requestPbCapture.capture()))
@@ -2894,6 +2898,8 @@ public class BigQueryImplTest {
     assertEquals((Long) 42L, tableResult.getTotalBytesProcessed());
     assertEquals((Long) 50L, tableResult.getTotalSlotMs());
     assertEquals((Long) 0L, tableResult.getNumDmlAffectedRows());
+    assertNotNull(tableResult.getSessionInfo());
+    assertEquals(SESSION_ID, tableResult.getSessionInfo().getSessionId());
     QueryRequest requestPb = requestPbCapture.getValue();
     assertEquals((Long) 1000L, requestPb.getTimeoutMs());
   }

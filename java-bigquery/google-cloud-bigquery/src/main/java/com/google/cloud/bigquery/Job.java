@@ -30,6 +30,7 @@ import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.JobConfiguration.Type;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
+import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.common.collect.ImmutableList;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
@@ -425,6 +426,7 @@ public class Job extends JobInfo {
       Long totalBytesProcessed = stats != null ? stats.getTotalBytesProcessed() : null;
       Long totalSlotMs = stats != null ? stats.getTotalSlotMs() : null;
       Long numDmlAffectedRows = stats != null ? stats.getNumDmlAffectedRows() : null;
+      SessionInfo sessionInfo = stats != null ? stats.getSessionInfo() : null;
 
       // If there are no rows in the result, this may have been a DDL query.
       // Listing table data might fail, such as with CREATE VIEW queries.
@@ -442,6 +444,7 @@ public class Job extends JobInfo {
                 .setTotalBytesProcessed(totalBytesProcessed)
                 .setTotalSlotMs(totalSlotMs)
                 .setNumDmlAffectedRows(numDmlAffectedRows)
+                .setSessionInfo(sessionInfo)
                 .build();
         return emptyTableResult;
       }
@@ -461,6 +464,7 @@ public class Job extends JobInfo {
               .setTotalBytesProcessed(totalBytesProcessed)
               .setTotalSlotMs(totalSlotMs)
               .setNumDmlAffectedRows(numDmlAffectedRows)
+              .setSessionInfo(sessionInfo)
               .build();
       return tableResultWithJobId;
     } finally {

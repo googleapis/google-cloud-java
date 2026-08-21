@@ -21,6 +21,8 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.PageImpl;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
+import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.common.collect.ImmutableList;
 import org.junit.jupiter.api.Test;
 
@@ -46,6 +48,15 @@ class TableResultTest {
           null,
           ImmutableList.of(newFieldValueList("2")));
   private static final Schema SCHEMA = Schema.of(Field.of("field", LegacySQLTypeName.INTEGER));
+  private static final String SESSION_ID = "session_123";
+  private static final SessionInfo SESSION_INFO =
+      SessionInfo.newBuilder().setSessionId(SESSION_ID).build();
+  private static final String SESSION_ID_1 = "session_1";
+  private static final SessionInfo SESSION_INFO_1 =
+      SessionInfo.newBuilder().setSessionId(SESSION_ID_1).build();
+  private static final String SESSION_ID_2 = "session_2";
+  private static final SessionInfo SESSION_INFO_2 =
+      SessionInfo.newBuilder().setSessionId(SESSION_ID_2).build();
 
   private static FieldValueList newFieldValueList(String s) {
     return FieldValueList.of(ImmutableList.of(FieldValue.of(PRIMITIVE, s)));
@@ -124,27 +135,29 @@ class TableResultTest {
             .setTotalRows(3L)
             .setPageNoSchema(INNER_PAGE_0)
             .setRowsInPage(2L)
-            .setStatementType(JobStatistics.QueryStatistics.StatementType.SELECT)
+            .setStatementType(StatementType.SELECT)
             .setTotalBytesBilled(1024L)
             .setTotalBytesProcessed(2048L)
             .setTotalSlotMs(500L)
             .setNumDmlAffectedRows(0L)
+            .setSessionInfo(SESSION_INFO)
             .build();
 
-    assertThat(result.getStatementType())
-        .isEqualTo(JobStatistics.QueryStatistics.StatementType.SELECT);
+    assertThat(result.getStatementType()).isEqualTo(StatementType.SELECT);
     assertThat(result.getTotalBytesBilled()).isEqualTo(1024L);
     assertThat(result.getTotalBytesProcessed()).isEqualTo(2048L);
     assertThat(result.getTotalSlotMs()).isEqualTo(500L);
     assertThat(result.getNumDmlAffectedRows()).isEqualTo(0L);
+    assertThat(result.getSessionInfo()).isEqualTo(SESSION_INFO);
+    assertThat(result.getSessionInfo().getSessionId()).isEqualTo(SESSION_ID);
 
     TableResult next = result.getNextPage();
-    assertThat(next.getStatementType())
-        .isEqualTo(JobStatistics.QueryStatistics.StatementType.SELECT);
+    assertThat(next.getStatementType()).isEqualTo(StatementType.SELECT);
     assertThat(next.getTotalBytesBilled()).isEqualTo(1024L);
     assertThat(next.getTotalBytesProcessed()).isEqualTo(2048L);
     assertThat(next.getTotalSlotMs()).isEqualTo(500L);
     assertThat(next.getNumDmlAffectedRows()).isEqualTo(0L);
+    assertThat(next.getSessionInfo()).isEqualTo(SESSION_INFO);
   }
 
   @Test
@@ -155,23 +168,24 @@ class TableResultTest {
             .setTotalRows(3L)
             .setPageNoSchema(INNER_PAGE_0)
             .setRowsInPage(2L)
-            .setStatementType(JobStatistics.QueryStatistics.StatementType.INSERT)
+            .setStatementType(StatementType.INSERT)
             .setTotalBytesBilled(500L)
             .setTotalBytesProcessed(1000L)
             .setTotalSlotMs(250L)
             .setNumDmlAffectedRows(5L)
+            .setSessionInfo(SESSION_INFO)
             .build();
 
     TableResult modified =
         result.toBuilder()
-            .setStatementType(JobStatistics.QueryStatistics.StatementType.UPDATE)
+            .setStatementType(StatementType.UPDATE)
             .setNumDmlAffectedRows(10L)
             .build();
 
-    assertThat(modified.getStatementType())
-        .isEqualTo(JobStatistics.QueryStatistics.StatementType.UPDATE);
+    assertThat(modified.getStatementType()).isEqualTo(StatementType.UPDATE);
     assertThat(modified.getNumDmlAffectedRows()).isEqualTo(10L);
     assertThat(modified.getTotalBytesBilled()).isEqualTo(500L);
+    assertThat(modified.getSessionInfo()).isEqualTo(SESSION_INFO);
   }
 
   @Test
@@ -182,11 +196,12 @@ class TableResultTest {
             .setTotalRows(3L)
             .setPageNoSchema(INNER_PAGE_0)
             .setRowsInPage(2L)
-            .setStatementType(JobStatistics.QueryStatistics.StatementType.SELECT)
+            .setStatementType(StatementType.SELECT)
             .setTotalBytesBilled(100L)
             .setTotalBytesProcessed(200L)
             .setTotalSlotMs(50L)
             .setNumDmlAffectedRows(0L)
+            .setSessionInfo(SESSION_INFO_1)
             .build();
 
     TableResult result2 =
@@ -195,11 +210,12 @@ class TableResultTest {
             .setTotalRows(3L)
             .setPageNoSchema(INNER_PAGE_0)
             .setRowsInPage(2L)
-            .setStatementType(JobStatistics.QueryStatistics.StatementType.SELECT)
+            .setStatementType(StatementType.SELECT)
             .setTotalBytesBilled(100L)
             .setTotalBytesProcessed(200L)
             .setTotalSlotMs(50L)
             .setNumDmlAffectedRows(0L)
+            .setSessionInfo(SESSION_INFO_1)
             .build();
 
     TableResult result3 =
@@ -208,11 +224,12 @@ class TableResultTest {
             .setTotalRows(3L)
             .setPageNoSchema(INNER_PAGE_0)
             .setRowsInPage(2L)
-            .setStatementType(JobStatistics.QueryStatistics.StatementType.DELETE)
+            .setStatementType(StatementType.DELETE)
             .setTotalBytesBilled(100L)
             .setTotalBytesProcessed(200L)
             .setTotalSlotMs(50L)
             .setNumDmlAffectedRows(1L)
+            .setSessionInfo(SESSION_INFO_2)
             .build();
 
     assertThat(result1).isEqualTo(result2);
@@ -220,5 +237,6 @@ class TableResultTest {
     assertThat(result1).isNotEqualTo(result3);
     assertThat(result1.toString()).contains("statementType=SELECT");
     assertThat(result1.toString()).contains("totalBytesBilled=100");
+    assertThat(result1.toString()).contains("sessionId=" + SESSION_ID_1);
   }
 }

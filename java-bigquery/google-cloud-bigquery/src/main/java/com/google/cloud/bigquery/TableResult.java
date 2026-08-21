@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import com.google.api.gax.paging.Page;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
+import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Iterables;
@@ -61,6 +62,8 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
     public abstract TableResult.Builder setTotalSlotMs(Long totalSlotMs);
 
     public abstract TableResult.Builder setNumDmlAffectedRows(Long numDmlAffectedRows);
+
+    public abstract TableResult.Builder setSessionInfo(SessionInfo sessionInfo);
 
     /** Creates a @code TableResult} object. */
     public abstract TableResult build();
@@ -124,6 +127,10 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
   @Nullable
   public abstract Long getNumDmlAffectedRows();
 
+  /** Returns information about the session if this query is part of one, if available. */
+  @Nullable
+  public abstract SessionInfo getSessionInfo();
+
   @Override
   public boolean hasNextPage() {
     return getPageNoSchema().hasNextPage();
@@ -151,6 +158,7 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
           .setTotalBytesProcessed(getTotalBytesProcessed())
           .setTotalSlotMs(getTotalSlotMs())
           .setNumDmlAffectedRows(getNumDmlAffectedRows())
+          .setSessionInfo(getSessionInfo())
           .build();
     }
     return null;
@@ -194,6 +202,7 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
         .add("totalBytesProcessed", getTotalBytesProcessed())
         .add("totalSlotMs", getTotalSlotMs())
         .add("numDmlAffectedRows", getNumDmlAffectedRows())
+        .add("sessionInfo", getSessionInfo())
         .toString();
   }
 
@@ -209,7 +218,8 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
         getTotalBytesBilled(),
         getTotalBytesProcessed(),
         getTotalSlotMs(),
-        getNumDmlAffectedRows());
+        getNumDmlAffectedRows(),
+        getSessionInfo());
   }
 
   @Override
@@ -231,6 +241,7 @@ public abstract class TableResult implements Page<FieldValueList>, Serializable 
         && Objects.equals(getTotalBytesBilled(), response.getTotalBytesBilled())
         && Objects.equals(getTotalBytesProcessed(), response.getTotalBytesProcessed())
         && Objects.equals(getTotalSlotMs(), response.getTotalSlotMs())
-        && Objects.equals(getNumDmlAffectedRows(), response.getNumDmlAffectedRows());
+        && Objects.equals(getNumDmlAffectedRows(), response.getNumDmlAffectedRows())
+        && Objects.equals(getSessionInfo(), response.getSessionInfo());
   }
 }
