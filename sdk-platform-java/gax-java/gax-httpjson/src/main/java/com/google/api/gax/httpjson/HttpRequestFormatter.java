@@ -29,7 +29,12 @@
  */
 package com.google.api.gax.httpjson;
 
+import com.google.api.client.http.ByteArrayContent;
+import com.google.api.client.http.EmptyContent;
+import com.google.api.client.http.HttpContent;
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.common.base.Strings;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -55,5 +60,18 @@ public interface HttpRequestFormatter<MessageFormatT> {
   /** Additional (alternative) path templates for endpoint URL path. */
   default List<PathTemplate> getAdditionalPathTemplates() {
     return Collections.emptyList();
+  }
+
+  /**
+   * Return {@link HttpContent} representing the request body. Defaults to converting {@link
+   * #getRequestBody(Object)} to JSON, or {@link EmptyContent} if the body is empty.
+   */
+  @BetaApi
+  default HttpContent getHttpContent(MessageFormatT apiMessage) {
+    String requestBody = getRequestBody(apiMessage);
+    if (!Strings.isNullOrEmpty(requestBody)) {
+      return ByteArrayContent.fromString("application/json; charset=utf-8", requestBody);
+    }
+    return new EmptyContent();
   }
 }
