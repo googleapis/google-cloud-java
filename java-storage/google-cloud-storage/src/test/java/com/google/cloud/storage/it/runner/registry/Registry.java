@@ -16,12 +16,14 @@
 
 package com.google.cloud.storage.it.runner.registry;
 
+import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.TransportCompatibility.Transport;
 import com.google.cloud.storage.it.runner.CrossRunIntersection;
 import com.google.cloud.storage.it.runner.TestInitializer;
 import com.google.cloud.storage.it.runner.annotations.Backend;
 import com.google.cloud.storage.it.runner.annotations.Inject;
+import com.google.cloud.storage.it.runner.annotations.LocationType;
 import com.google.cloud.storage.it.runner.annotations.SingleBackend;
 import com.google.cloud.storage.it.runner.annotations.StorageFixture;
 import com.google.common.base.Joiner;
@@ -91,6 +93,8 @@ public final class Registry extends RunListener {
 
   private final BackendResources prodBackendResources =
       BackendResources.of(Backend.PROD, otelSdk, zone);
+  private final BackendResources preProdBackendResources =
+      BackendResources.of(Backend.PREPROD, otelSdk, zone);
   private final BackendResources testBenchBackendResource =
       BackendResources.of(Backend.TEST_BENCH, otelSdk, zone);
 
@@ -152,6 +156,10 @@ public final class Registry extends RunListener {
 
   TestBench testBench() {
     return testBench.get();
+  }
+
+  BackendResources getPreProdBackendResources() {
+    return preProdBackendResources;
   }
 
   @Nullable
@@ -221,6 +229,12 @@ public final class Registry extends RunListener {
     } else {
       finalCrossRunIntersection = crossRunIntersection;
     }
+    if (ff.getType() == Storage.class
+        && finalCrossRunIntersection.getLocationType() == LocationType.REGIONAL_RAPID
+        && finalCrossRunIntersection.getBackend() == Backend.PROD) {
+      return preProdBackendResources.getStorage(finalCrossRunIntersection.getTransport());
+    }
+
     Optional<RegistryEntry<?>> first =
         entries.stream()
             .filter(re -> re.getPredicate().test(ff, finalCrossRunIntersection))
@@ -281,7 +295,7 @@ public final class Registry extends RunListener {
   }
 
   @FunctionalInterface
-  private interface StatelessManagedLifecycle<T> extends ManagedLifecycle {
+  interface StatelessManagedLifecycle<T> extends ManagedLifecycle {
     T resolve(FrameworkField ff, CrossRunIntersection crossRunIntersection);
 
     @Override
