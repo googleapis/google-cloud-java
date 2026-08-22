@@ -49,12 +49,14 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedExc
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
 import com.google.cloud.bigquery.storage.v1.ArrowRecordBatch;
 import com.google.cloud.bigquery.storage.v1.ArrowSchema;
+import com.google.cloud.bigquery.storage.v1.ArrowSerializationOptions;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
 import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.DataFormat;
 import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
 import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
+import com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.Uninterruptibles;
@@ -857,6 +859,15 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       // format
       ReadSession.Builder sessionBuilder =
           ReadSession.newBuilder().setTable(srcTable).setDataFormat(DataFormat.ARROW);
+
+      if (this.connection.isEnableTimestampPicos()) {
+        TableReadOptions.Builder tableReadOptionsBuilder = TableReadOptions.newBuilder();
+        tableReadOptionsBuilder
+            .getArrowSerializationOptionsBuilder()
+            .setPicosTimestampPrecision(
+                ArrowSerializationOptions.PicosTimestampPrecision.TIMESTAMP_PRECISION_PICOS);
+        sessionBuilder.setReadOptions(tableReadOptionsBuilder.build());
+      }
 
       CreateReadSessionRequest.Builder builder =
           CreateReadSessionRequest.newBuilder()
@@ -1681,6 +1692,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public Connection getConnection() {
     return this.connection;
+  }
+
+  boolean isEnableTimestampPicos() {
+    return this.connection.isEnableTimestampPicos();
   }
 
   public boolean hasMoreResults() {

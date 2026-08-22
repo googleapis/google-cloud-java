@@ -51,6 +51,16 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
     return this.statement;
   }
 
+  private boolean isTimestampPicosEnabled() {
+    return this.statement instanceof BigQueryStatement
+        && ((BigQueryStatement) this.statement).isEnableTimestampPicos();
+  }
+
+  private boolean supportsPicoseconds(int sqlColumn) {
+    Long timestampPrecision = getField(sqlColumn).getTimestampPrecision();
+    return timestampPrecision != null && timestampPrecision > 6;
+  }
+
   private Field getField(int sqlColumn) {
     return this.schemaFieldList.get(sqlColumn - 1);
   }
@@ -116,7 +126,10 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
       case Types.NUMERIC:
         return 14;
       case Types.TIMESTAMP:
-        return 16;
+        if (isTimestampPicosEnabled() && supportsPicoseconds(column)) {
+          return 32;
+        }
+        return 26;
       default:
         return DEFAULT_DISPLAY_SIZE;
     }
@@ -139,6 +152,11 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
       return precision.intValue();
     }
     StandardSQLTypeName type = getStandardSQLTypeName(column);
+    if (type == StandardSQLTypeName.TIMESTAMP
+        && isTimestampPicosEnabled()
+        && supportsPicoseconds(column)) {
+      return 32;
+    }
     BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
         BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(type);
     if (typeInfo != null && typeInfo.columnSize != null) {
@@ -154,6 +172,11 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
       return scale.intValue();
     }
     StandardSQLTypeName type = getStandardSQLTypeName(column);
+    if (type == StandardSQLTypeName.TIMESTAMP
+        && isTimestampPicosEnabled()
+        && supportsPicoseconds(column)) {
+      return 12;
+    }
     BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
         BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(type);
     if (typeInfo != null && typeInfo.decimalDigits != null) {
