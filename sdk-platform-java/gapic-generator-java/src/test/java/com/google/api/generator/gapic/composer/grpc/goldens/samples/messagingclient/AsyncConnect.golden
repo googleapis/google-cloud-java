@@ -34,14 +34,18 @@ public class AsyncConnect {
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (MessagingClient messagingClient = MessagingClient.create()) {
-      BidiStream<ConnectRequest, StreamBlurbsResponse> bidiStream =
-          messagingClient.connectCallable().call();
-      ConnectRequest request = ConnectRequest.newBuilder().build();
-      bidiStream.send(request);
-      for (StreamBlurbsResponse response : bidiStream) {
-        // Do something when a response is received.
-      }
+    // - The samples create a client that can be re-used for multiple requests
+    // and are expected to be long-lived.
+    // The clients should be resource managed properly and eventually closed.
+    // For more information on client lifecycle, see
+    // https://docs.cloud.google.com/java/docs/client-lifecycle
+    MessagingClient messagingClient = MessagingClient.create();
+    BidiStream<ConnectRequest, StreamBlurbsResponse> bidiStream =
+        messagingClient.connectCallable().call();
+    ConnectRequest request = ConnectRequest.newBuilder().build();
+    bidiStream.send(request);
+    for (StreamBlurbsResponse response : bidiStream) {
+      // Do something when a response is received.
     }
   }
 }
