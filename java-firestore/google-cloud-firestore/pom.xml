@@ -362,6 +362,36 @@
         </dependency>
       </dependencies>
     </profile>
+    <!--
+      Matrix-test profiles for opentelemetry-instrumentation-grpc-1.6.
+      GrpcTelemetry.newClientInterceptor() was renamed createClientInterceptor();
+      these profiles run tests under both APIs to verify the reflection-based fallback.
+      See https://github.com/googleapis/google-cloud-java/issues/13095
+    -->
+    <profile>
+      <id>otel-grpc-old</id>
+      <dependencyManagement>
+        <dependencies>
+          <dependency>
+            <groupId>io.opentelemetry.instrumentation</groupId>
+            <artifactId>opentelemetry-grpc-1.6</artifactId>
+            <version>2.1.0-alpha</version>
+          </dependency>
+        </dependencies>
+      </dependencyManagement>
+    </profile>
+    <profile>
+      <id>otel-grpc-new</id>
+      <dependencyManagement>
+        <dependencies>
+          <dependency>
+            <groupId>io.opentelemetry.instrumentation</groupId>
+            <artifactId>opentelemetry-grpc-1.6</artifactId>
+            <version>2.25.0-alpha</version>
+          </dependency>
+        </dependencies>
+      </dependencyManagement>
+    </profile>
     <profile>
       <!-- JDK17 set up for tests in src/test-jdk17 -->
       <id>java17-test</id>
