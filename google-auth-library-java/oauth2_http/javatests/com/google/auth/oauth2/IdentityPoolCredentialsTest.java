@@ -36,7 +36,9 @@ import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SER
 import static com.google.auth.oauth2.OAuth2Utils.JSON_FACTORY;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -46,12 +48,16 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Clock;
 import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.mtls.X509Provider;
 import com.google.auth.oauth2.GoogleCredentials.GoogleCredentialsInfo;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
@@ -61,6 +67,13 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -74,6 +87,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   private static final IdentityPoolSubjectTokenSupplier testProvider =
       (ExternalAccountSupplierContext context) -> "testSubjectToken";
+
+  private static final IdentityPoolActorTokenSupplier testActorSupplier =
+      (ExternalAccountSupplierContext context) -> "testActorToken";
 
   @Test
   void createdScoped_clonedCredentialWithAddedScopes() {
@@ -250,6 +266,35 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .build();
 
     String subjectToken = credential.retrieveSubjectToken();
+
+    assertEquals(transportFactory.transport.getSubjectToken(), subjectToken);
+  }
+
+  @Test
+  void retrieveSubjectToken_urlSourcedWithJsonFormat_withActorTokenField() throws IOException {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    transportFactory.transport.setMetadataServerContentType("json");
+
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "subjectToken");
+    formatMap.put("actor_token_field_name", "actorToken");
+
+    IdentityPoolCredentialSource credentialSource =
+        buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl(), formatMap);
+
+    UrlIdentityPoolSubjectTokenSupplier supplier =
+        new UrlIdentityPoolSubjectTokenSupplier(credentialSource, transportFactory);
+
+    ExternalAccountSupplierContext dummyContext =
+        ExternalAccountSupplierContext.newBuilder()
+            .setAudience("aud")
+            .setSubjectTokenType("urn")
+            .build();
+
+    String subjectToken = supplier.getSubjectToken(dummyContext);
 
     assertEquals(transportFactory.transport.getSubjectToken(), subjectToken);
   }
@@ -686,7 +731,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             IllegalArgumentException.class,
             () -> new IdentityPoolCredentialSource(credentialSourceMap));
     assertEquals(
-        "Missing credential source file location, URL, or certificate. At least one must be specified.",
+        "Missing credential source file location, URL, or certificate. At least one must be"
+            + " specified.",
         e.getMessage());
   }
 
@@ -825,7 +871,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
               .setQuotaProjectId("quotaProjectId");
       IllegalArgumentException e = assertThrows(IllegalArgumentException.class, builder::build);
       assertEquals(
-          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool configuration.",
+          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool"
+              + " configuration.",
           e.getMessage());
     }
   }
@@ -1265,6 +1312,14 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     return new IdentityPoolCredentialSource(fileCredentialSourceMap);
   }
 
+  private IdentityPoolCredentialSource createFileCredentialSource(
+      String filePath, Map<String, String> formatMap) {
+    Map<String, Object> fileCredentialSourceMap = new HashMap<>();
+    fileCredentialSourceMap.put("file", filePath);
+    fileCredentialSourceMap.put("format", formatMap);
+    return new IdentityPoolCredentialSource(fileCredentialSourceMap);
+  }
+
   static class MockExternalAccountCredentialsTransportFactory implements HttpTransportFactory {
 
     MockExternalAccountCredentialsTransport transport =
@@ -1297,6 +1352,1201 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     void setShouldThrowOnGetKeyStore(boolean shouldThrow) {
       this.shouldThrowOnGetKeyStore = shouldThrow;
+    }
+  }
+
+  @Test
+  void builder_actorTokenWithNonMtlsTransportFactory_throws() {
+    IdentityPoolCredentialSource credentialSource = createFileCredentialSource();
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+                    .setAudience("audience")
+                    .setSubjectTokenType("subjectTokenType")
+                    .setTokenUrl("https://invalid.googleapis.com/")
+                    .setCredentialSource(credentialSource)
+                    .setActorTokenType("actorTokenType")
+                    .setActorTokenSupplier(
+                        new IdentityPoolActorTokenSupplier() {
+                          @Override
+                          public String getActorToken(ExternalAccountSupplierContext context) {
+                            return "token";
+                          }
+                        })
+                    .build());
+
+    assertEquals(
+        "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate"
+            + " source or MtlsHttpTransportFactory.",
+        e.getMessage());
+  }
+
+  @Test
+  void builder_actorTokenWithMissingTokenType_throws() {
+    IdentityPoolCredentialSource credentialSource = createFileCredentialSource();
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+                    .setAudience("audience")
+                    .setSubjectTokenType("subjectTokenType")
+                    .setTokenUrl("https://sts.mtls.googleapis.com/")
+                    .setCredentialSource(credentialSource)
+                    .setActorTokenSupplier(
+                        new IdentityPoolActorTokenSupplier() {
+                          @Override
+                          public String getActorToken(ExternalAccountSupplierContext context) {
+                            return "token";
+                          }
+                        })
+                    .build());
+
+    assertEquals(
+        "An actorTokenType must be specified when an actorTokenSupplier is configured.",
+        e.getMessage());
+  }
+
+  @Test
+  void builder_actorTokenWithInvalidCredentialSource_throws() {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "subject_token");
+    formatMap.put("actor_token_field_name", "actor_token");
+
+    // Not a file credential source
+    IdentityPoolCredentialSource credentialSource =
+        buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl(), formatMap);
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+                    .setAudience("audience")
+                    .setSubjectTokenType("subjectTokenType")
+                    .setTokenUrl("https://sts.mtls.googleapis.com/") // Valid URL
+                    .setCredentialSource(credentialSource) // Invalid source for actor tokens
+                    .build());
+
+    assertEquals(
+        "Actor tokens are currently only supported for file-based credential sources.",
+        e.getMessage());
+  }
+
+  @Test
+  void builder_supplierSourcedActorToken() throws Exception {
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setActorTokenSupplier(testActorSupplier)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setHttpTransportFactory(mtlsTransport)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    assertNotNull(credentials);
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", credentials.getActorTokenType());
+  }
+
+  @Test
+  void createScoped_supplierSourcedWithActorToken_preservesCustomSuppliers() throws Exception {
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(mtlsTransport)
+            .setSubjectTokenSupplier(testProvider)
+            .setActorTokenSupplier(testActorSupplier)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    List<String> newScopes = Arrays.asList("https://www.googleapis.com/auth/cloud-platform");
+    IdentityPoolCredentials scoped = credentials.createScoped(newScopes);
+
+    assertNotNull(scoped);
+    assertEquals(credentials.getActorTokenType(), scoped.getActorTokenType());
+    assertEquals(newScopes, scoped.getScopes());
+    assertSame(testProvider, scoped.getIdentityPoolSubjectTokenSupplier());
+    assertSame(testActorSupplier, scoped.getIdentityPoolActorTokenSupplier());
+  }
+
+  @Test
+  void createScoped_fileSourcedWithActorToken_preservesSharedSupplierInstance() throws Exception {
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "subject_token");
+    formatMap.put("actor_token_field_name", "actor_token");
+
+    IdentityPoolCredentialSource credentialSource =
+        createFileCredentialSource("credential.json", formatMap);
+
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(mtlsTransport)
+            .setCredentialSource(credentialSource)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    // Verify initial instance shares the single supplier instance
+    assertSame(
+        credentials.getIdentityPoolSubjectTokenSupplier(),
+        credentials.getIdentityPoolActorTokenSupplier());
+
+    // Clone with new scopes
+    List<String> newScopes = Arrays.asList("https://www.googleapis.com/auth/cloud-platform");
+    IdentityPoolCredentials scoped = credentials.createScoped(newScopes);
+
+    assertNotNull(scoped);
+    assertEquals(credentials.getActorTokenType(), scoped.getActorTokenType());
+    assertEquals(newScopes, scoped.getScopes());
+    // Verify scoped clone maintains a single shared supplier instance for its own cache
+    assertSame(
+        scoped.getIdentityPoolSubjectTokenSupplier(), scoped.getIdentityPoolActorTokenSupplier());
+  }
+
+  @Test
+  void refreshAccessToken_withActorToken_injectsActingPartyIntoStsRequest() throws Exception {
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    MtlsHttpTransportFactory mtlsTransport =
+        new MtlsHttpTransportFactory(ks) {
+          @Override
+          public com.google.api.client.http.HttpTransport create() {
+            return transportFactory.create();
+          }
+        };
+
+    IdentityPoolCredentials credential =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setActorTokenSupplier(testActorSupplier)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+            .setTokenUrl(transportFactory.transport.getStsUrl())
+            .setHttpTransportFactory(mtlsTransport)
+            .build();
+
+    AccessToken token = credential.refreshAccessToken();
+    assertEquals(transportFactory.transport.getAccessToken(), token.getTokenValue());
+
+    Map<String, String> query =
+        TestUtils.parseQuery(transportFactory.transport.getLastRequest().getContentAsString());
+    assertEquals("testActorToken", query.get("actor_token"));
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", query.get("actor_token_type"));
+  }
+
+  @Test
+  void serialization_withX509Provider_succeeds() throws Exception {
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
+    X509Provider x509Provider = new TestX509Provider(ks, "certificate_config_location");
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(mtlsTransport)
+            .setSubjectTokenSupplier(testProvider)
+            .setX509Provider(x509Provider)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    serializeAndDeserialize(credentials);
+  }
+
+  @Test
+  void builder_actorTokenTypeWithoutSupplier_throws() {
+    IdentityPoolCredentialSource credentialSource = createFileCredentialSource();
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setCredentialSource(credentialSource)
+                    .setAudience("audience")
+                    .setSubjectTokenType("subjectTokenType")
+                    .setTokenUrl("https://sts.googleapis.com/v1/token")
+                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .build());
+    assertEquals(
+        "An actorTokenSupplier must be specified when an actorTokenType is configured.",
+        exception.getMessage());
+  }
+
+  @Test
+  void builder_fileWithCertificateConfig_initializesMtlsTransport() throws Exception {
+    Map<String, Object> certMap = new HashMap<>();
+    certMap.put("use_default_certificate_config", true);
+
+    Map<String, Object> sourceMap = new HashMap<>();
+    sourceMap.put("file", "credential.json");
+    sourceMap.put("certificate", certMap);
+
+    IdentityPoolCredentialSource credentialSource = new IdentityPoolCredentialSource(sourceMap);
+
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    X509Provider x509Provider = new TestX509Provider(ks, "certificate_config_location");
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setCredentialSource(credentialSource)
+            .setX509Provider(x509Provider)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    assertNotNull(credentials);
+    assertNotNull(credentials.getTransportFactory());
+    assertTrue(credentials.getTransportFactory() instanceof MtlsHttpTransportFactory);
+  }
+
+  @Test
+  void toBuilder_preservesConfiguration() throws Exception {
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(mtlsTransport)
+            .setSubjectTokenSupplier(testProvider)
+            .setActorTokenSupplier(testActorSupplier)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    IdentityPoolCredentials rebuilt = credentials.toBuilder().build();
+
+    assertNotNull(rebuilt);
+    assertEquals(credentials.getActorTokenType(), rebuilt.getActorTokenType());
+    assertSame(testProvider, rebuilt.getIdentityPoolSubjectTokenSupplier());
+    assertSame(testActorSupplier, rebuilt.getIdentityPoolActorTokenSupplier());
+  }
+
+  @Test
+  void builder_actorTokenWithX509Provider_succeeds() throws Exception {
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    X509Provider x509Provider = new TestX509Provider(ks, "certificate_config_location");
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setActorTokenSupplier(testActorSupplier)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setHttpTransportFactory(mtlsTransport)
+            .setX509Provider(x509Provider)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    assertNotNull(credentials);
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", credentials.getActorTokenType());
+  }
+
+  @Test
+  void toBuilder_preservesActorTokenType() throws Exception {
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(mtlsTransport)
+            .setSubjectTokenSupplier(testProvider)
+            .setActorTokenSupplier(testActorSupplier)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    IdentityPoolCredentials rebuilt = credentials.toBuilder().build();
+
+    assertNotNull(rebuilt);
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", rebuilt.getActorTokenType());
+    assertSame(testProvider, rebuilt.getIdentityPoolSubjectTokenSupplier());
+    assertSame(testActorSupplier, rebuilt.getIdentityPoolActorTokenSupplier());
+  }
+
+  @Test
+  void builder_actorTokenWithoutMtls_throws() {
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setSubjectTokenSupplier(testProvider)
+                    .setActorTokenSupplier(testActorSupplier)
+                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+                    .setAudience("audience")
+                    .setSubjectTokenType("subjectTokenType")
+                    .setTokenUrl("https://sts.googleapis.com/v1/token")
+                    .build());
+    assertTrue(
+        e.getMessage().contains("Actor tokens are only supported for mTLS token exchanges."));
+  }
+
+  @Test
+  void builder_actorTokenWithNoArgMtlsFactory_throws() throws Exception {
+    // A no-arg MtlsHttpTransportFactory (e.g. from deserialization) has no KeyStore,
+    // so isMtlsConfigured() should return false and building should fail.
+    MtlsHttpTransportFactory noArgFactory = new MtlsHttpTransportFactory();
+    assertFalse(noArgFactory.hasKeyStore());
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setSubjectTokenSupplier(testProvider)
+                    .setActorTokenSupplier(testActorSupplier)
+                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setHttpTransportFactory(noArgFactory)
+                    .setAudience("audience")
+                    .setSubjectTokenType("subjectTokenType")
+                    .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+                    .build());
+    assertTrue(
+        e.getMessage().contains("Actor tokens are only supported for mTLS token exchanges."));
+  }
+
+  @Test
+  void mtlsHttpTransportFactory_hasKeyStore_withKeyStore_returnsTrue() throws Exception {
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(ks);
+    assertTrue(factory.hasKeyStore());
+  }
+
+  @Test
+  void mtlsHttpTransportFactory_hasKeyStore_noArg_returnsFalse() {
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory();
+    assertFalse(factory.hasKeyStore());
+  }
+
+  // ==================================================================================
+  // Section A: Cert Pinning & Transport Factory Tests
+  // ==================================================================================
+
+  @Test
+  void refreshAccessToken_useSameCertForStsAndIam() throws Exception {
+    // Verify that both STS and IAM use the same transport factory (from the same KeyStore
+    // snapshot) within one refresh cycle.
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+
+    AtomicInteger getKeyStoreCallCount = new AtomicInteger(0);
+    X509Provider x509Provider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            getKeyStoreCallCount.incrementAndGet();
+            return ks;
+          }
+        };
+
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    MtlsHttpTransportFactory mtlsTransport =
+        new MtlsHttpTransportFactory(ks) {
+          @Override
+          public HttpTransport create() {
+            return transportFactory.create();
+          }
+        };
+
+    // Use TransportCapturingCredentials so we can capture the factory passed to exchange.
+    TransportCapturingCredentials credential =
+        new TransportCapturingCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(x509Provider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(transportFactory.transport.getStsUrl())
+                .setHttpTransportFactory(mtlsTransport));
+
+    AccessToken token = credential.refreshAccessToken();
+    assertNotNull(token);
+
+    // getKeyStore() should be called exactly once per refresh cycle for the snapshot.
+    assertEquals(1, getKeyStoreCallCount.get());
+    // The exchange should have been called once, and a single transport factory was used.
+    assertEquals(1, credential.getCapturedFactories().size());
+    assertTrue(
+        credential.getCapturedFactories().get(0) instanceof MtlsHttpTransportFactory,
+        "Exchange should use MtlsHttpTransportFactory from the cert snapshot");
+  }
+
+  @Test
+  void refreshAccessToken_certRotationBetweenCycles_usesNewCert() throws Exception {
+    // First refresh uses cert A, rotate the provider, second refresh uses cert B.
+    KeyStore ksA = KeyStore.getInstance(KeyStore.getDefaultType());
+    ksA.load(null, null);
+    KeyStore ksB = KeyStore.getInstance(KeyStore.getDefaultType());
+    ksB.load(null, null);
+
+    AtomicInteger callCount = new AtomicInteger(0);
+    X509Provider rotatingProvider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            return callCount.getAndIncrement() == 0 ? ksA : ksB;
+          }
+        };
+
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    MtlsHttpTransportFactory mtlsTransport =
+        new MtlsHttpTransportFactory(ksA) {
+          @Override
+          public HttpTransport create() {
+            return transportFactory.create();
+          }
+        };
+
+    TransportCapturingCredentials credential =
+        new TransportCapturingCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(rotatingProvider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(transportFactory.transport.getStsUrl())
+                .setHttpTransportFactory(mtlsTransport));
+
+    // First refresh — uses ksA
+    AccessToken token1 = credential.refreshAccessToken();
+    assertNotNull(token1);
+    assertEquals(1, callCount.get());
+
+    // Second refresh — uses ksB (rotated)
+    AccessToken token2 = credential.refreshAccessToken();
+    assertNotNull(token2);
+    assertEquals(2, callCount.get());
+
+    // Each cycle should have created a distinct MtlsHttpTransportFactory
+    assertEquals(2, credential.getCapturedFactories().size());
+    assertNotSame(
+        credential.getCapturedFactories().get(0),
+        credential.getCapturedFactories().get(1),
+        "Each cycle should use a distinct transport factory");
+  }
+
+  @Test
+  void refreshAccessToken_401Retry_reReadsFromDisk() throws Exception {
+    // On 401, the code should re-read from X509Provider to get fresh certs and retry.
+    KeyStore ksA = KeyStore.getInstance(KeyStore.getDefaultType());
+    ksA.load(null, null);
+    KeyStore ksB = KeyStore.getInstance(KeyStore.getDefaultType());
+    ksB.load(null, null);
+
+    AtomicInteger callCount = new AtomicInteger(0);
+    X509Provider rotatingProvider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            // First call: ksA (for initial snapshot)
+            // Second call: ksB (for retry after 401)
+            return callCount.getAndIncrement() == 0 ? ksA : ksB;
+          }
+        };
+
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    MtlsHttpTransportFactory mtlsTransport =
+        new MtlsHttpTransportFactory(ksA) {
+          @Override
+          public HttpTransport create() {
+            return transportFactory.create();
+          }
+        };
+
+    // Testable credential: throws 401 on first exchange, succeeds on retry.
+    TestableIdentityPoolCredentials credential =
+        new TestableIdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(rotatingProvider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(transportFactory.transport.getStsUrl())
+                .setHttpTransportFactory(mtlsTransport),
+            /* failOnFirstExchange= */ true);
+
+    AccessToken token = credential.refreshAccessToken();
+    assertNotNull(token);
+    // Verify the provider was called twice: once for initial snapshot, once for retry
+    assertEquals(2, callCount.get());
+    assertEquals(2, credential.getExchangeCallCount());
+  }
+
+  @Test
+  void refreshAccessToken_401Retry_nonMtls_bubblesUp() throws Exception {
+    // When x509Provider is null (non-mTLS), a 401 should bubble up, not retry.
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    TestableIdentityPoolCredentials credential =
+        new TestableIdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(transportFactory.transport.getStsUrl())
+                .setHttpTransportFactory(transportFactory),
+            /* failOnFirstExchange= */ true);
+
+    // Should throw the 401 error without retry since there's no x509Provider.
+    OAuthException e = assertThrows(OAuthException.class, credential::refreshAccessToken);
+    assertEquals(401, e.getHttpStatusCode());
+    assertEquals(1, credential.getExchangeCallCount());
+  }
+
+  @Test
+  void refreshAccessToken_401Retry_secondAttemptFails_throws() throws Exception {
+    // 401 → retry → retry also fails → exception propagates.
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+
+    X509Provider provider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            return ks;
+          }
+        };
+
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    MtlsHttpTransportFactory mtlsTransport =
+        new MtlsHttpTransportFactory(ks) {
+          @Override
+          public HttpTransport create() {
+            return transportFactory.create();
+          }
+        };
+
+    // Testable credential that always throws 401 (both first and retry).
+    TestableIdentityPoolCredentials credential =
+        new TestableIdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(provider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(transportFactory.transport.getStsUrl())
+                .setHttpTransportFactory(mtlsTransport),
+            /* failOnFirstExchange= */ true,
+            /* failOnAllExchanges= */ true);
+
+    OAuthException e = assertThrows(OAuthException.class, credential::refreshAccessToken);
+    assertEquals(401, e.getHttpStatusCode());
+    // First attempt + one retry = 2
+    assertEquals(2, credential.getExchangeCallCount());
+  }
+
+  @Test
+  void refreshAccessToken_401Retry_certLoadFailure_preservesOriginalError() throws Exception {
+    // When a 401 triggers retry but X509Provider.getKeyStore() throws on the retry,
+    // the IOException from cert loading should be thrown with the original OAuthException
+    // as a suppressed exception.
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+
+    AtomicInteger providerCallCount = new AtomicInteger(0);
+    X509Provider failingOnRetryProvider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() throws IOException {
+            int call = providerCallCount.getAndIncrement();
+            if (call == 0) {
+              // First call: return valid KeyStore for initial snapshot
+              return ks;
+            }
+            // Second call: fail during retry (simulates cert file rotation/corruption)
+            throw new IOException("Certificate file not found during retry");
+          }
+        };
+
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    MtlsHttpTransportFactory mtlsTransport =
+        new MtlsHttpTransportFactory(ks) {
+          @Override
+          public HttpTransport create() {
+            return transportFactory.create();
+          }
+        };
+
+    // Testable credential: throws 401 on first exchange to trigger retry path.
+    TestableIdentityPoolCredentials credential =
+        new TestableIdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(failingOnRetryProvider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(transportFactory.transport.getStsUrl())
+                .setHttpTransportFactory(mtlsTransport),
+            /* failOnFirstExchange= */ true);
+
+    IOException thrown = assertThrows(IOException.class, credential::refreshAccessToken);
+    assertEquals("Certificate file not found during retry", thrown.getMessage());
+
+    // Verify the original OAuthException is preserved as a suppressed exception
+    Throwable[] suppressed = thrown.getSuppressed();
+    assertTrue(suppressed.length > 0, "Should have suppressed exceptions");
+    assertTrue(suppressed[0] instanceof OAuthException);
+    assertEquals(401, ((OAuthException) suppressed[0]).getHttpStatusCode());
+  }
+
+  @Test
+  void refreshAccessToken_subjectAndActorFromSameFileParse() throws Exception {
+    // Verify when both subject and actor tokens come from the same file supplier,
+    // readTokens() is called (single file read) rather than separate getSubjectToken()
+    // + getActorToken() calls.
+    File file = File.createTempFile("ATOMIC_READ_TOKEN", /* suffix= */ null, /* directory= */ null);
+    file.deleteOnExit();
+
+    GenericJson tokenJson = new GenericJson();
+    tokenJson.setFactory(JSON_FACTORY);
+    tokenJson.put("subject_token", "mySubjectToken");
+    tokenJson.put("actor_token", "myActorToken");
+    OAuth2Utils.writeInputStreamToFile(
+        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+        file.getAbsolutePath());
+
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "subject_token");
+    formatMap.put("actor_token_field_name", "actor_token");
+    IdentityPoolCredentialSource credentialSource =
+        createFileCredentialSource(file.getAbsolutePath(), formatMap);
+
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    MtlsHttpTransportFactory mtlsTransport =
+        new MtlsHttpTransportFactory(ks) {
+          @Override
+          public HttpTransport create() {
+            return transportFactory.create();
+          }
+        };
+
+    IdentityPoolCredentials credential =
+        IdentityPoolCredentials.newBuilder()
+            .setCredentialSource(credentialSource)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+            .setTokenUrl(transportFactory.transport.getStsUrl())
+            .setHttpTransportFactory(mtlsTransport)
+            .build();
+
+    // The subject and actor suppliers should be the same instance (both FileIdentityPool...)
+    assertSame(
+        credential.getIdentityPoolSubjectTokenSupplier(),
+        credential.getIdentityPoolActorTokenSupplier(),
+        "Subject and actor suppliers should be the same instance for file-based sources");
+
+    // Refresh should succeed, reading both tokens from the single file
+    AccessToken token = credential.refreshAccessToken();
+    assertNotNull(token);
+
+    // Verify the STS request included the actor token from the file
+    Map<String, String> query =
+        TestUtils.parseQuery(transportFactory.transport.getLastRequest().getContentAsString());
+    assertEquals("myActorToken", query.get("actor_token"));
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", query.get("actor_token_type"));
+  }
+
+  // ==================================================================================
+  // Section B: Concurrency Tests
+  // ==================================================================================
+
+  @Test
+  void refreshAccessToken_concurrent_eachGetOwnSnapshot() throws Exception {
+    // Two threads refresh simultaneously. Each should get their own KeyStore snapshot.
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    KeyStore ks1 = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks1.load(null, null);
+    KeyStore ks2 = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks2.load(null, null);
+
+    X509Provider countingProvider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            int count = getKeyStoreCount.incrementAndGet();
+            return count <= 1 ? ks1 : ks2;
+          }
+        };
+
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    MtlsHttpTransportFactory mtlsTransport =
+        new MtlsHttpTransportFactory(ks1) {
+          @Override
+          public HttpTransport create() {
+            return transportFactory.create();
+          }
+        };
+
+    TransportCapturingCredentials credential =
+        new TransportCapturingCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(countingProvider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(transportFactory.transport.getStsUrl())
+                .setHttpTransportFactory(mtlsTransport));
+
+    CyclicBarrier barrier = new CyclicBarrier(2);
+    ExecutorService executor = Executors.newFixedThreadPool(2);
+    try {
+      Future<AccessToken> future1 =
+          executor.submit(
+              () -> {
+                barrier.await(5, TimeUnit.SECONDS);
+                return credential.refreshAccessToken();
+              });
+      Future<AccessToken> future2 =
+          executor.submit(
+              () -> {
+                barrier.await(5, TimeUnit.SECONDS);
+                return credential.refreshAccessToken();
+              });
+
+      AccessToken token1 = future1.get(10, TimeUnit.SECONDS);
+      AccessToken token2 = future2.get(10, TimeUnit.SECONDS);
+
+      assertNotNull(token1);
+      assertNotNull(token2);
+      // Each thread should have called getKeyStore(), so we expect at least 2 calls.
+      assertTrue(
+          getKeyStoreCount.get() >= 2,
+          "Expected at least 2 getKeyStore calls, got " + getKeyStoreCount.get());
+      // Each thread should get its own factory instance
+      assertEquals(2, credential.getCapturedFactories().size());
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  void refreshAccessToken_concurrent_401OnOneThread_doesNotAffectOther() throws Exception {
+    // Thread A refreshes normally (succeeds on first exchange).
+    // Thread B gets a 401, causing a retry with a fresh cert from X509Provider.
+    // Verify that Thread B's retry (re-read from X509Provider) does not affect Thread A's
+    // transport — each thread has its own local cycleTransportFactory.
+    KeyStore ksInitial = KeyStore.getInstance(KeyStore.getDefaultType());
+    ksInitial.load(null, null);
+    KeyStore ksRetry = KeyStore.getInstance(KeyStore.getDefaultType());
+    ksRetry.load(null, null);
+
+    AtomicInteger getKeyStoreCount = new AtomicInteger(0);
+    X509Provider provider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            int count = getKeyStoreCount.incrementAndGet();
+            // First two calls are for the two threads' initial snapshots,
+            // third call is for Thread B's retry after 401.
+            return count <= 2 ? ksInitial : ksRetry;
+          }
+        };
+
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    MtlsHttpTransportFactory mtlsTransport =
+        new MtlsHttpTransportFactory(ksInitial) {
+          @Override
+          public HttpTransport create() {
+            return transportFactory.create();
+          }
+        };
+
+    // Use a credential where one thread gets a 401 (first exchange fails) and the other
+    // succeeds. The AtomicInteger tracks per-thread exchange behavior.
+    AtomicInteger exchangeCallCount = new AtomicInteger(0);
+    CyclicBarrier barrier = new CyclicBarrier(2);
+
+    // Subclass that alternates: first exchange call throws 401, all others succeed.
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(provider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(transportFactory.transport.getStsUrl())
+                .setHttpTransportFactory(mtlsTransport)) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory)
+              throws IOException {
+            int count = exchangeCallCount.incrementAndGet();
+            if (count == 1) {
+              // First exchange call (Thread B): throw 401 to trigger retry
+              throw new OAuthException("invalid_client", "Unauthorized", null, 401);
+            }
+            // All other calls succeed
+            return new AccessToken("token_" + count, null);
+          }
+        };
+
+    ExecutorService executor = Executors.newFixedThreadPool(2);
+    try {
+      Future<AccessToken> futureA =
+          executor.submit(
+              () -> {
+                barrier.await(5, TimeUnit.SECONDS);
+                return credential.refreshAccessToken();
+              });
+
+      Future<AccessToken> futureB =
+          executor.submit(
+              () -> {
+                barrier.await(5, TimeUnit.SECONDS);
+                return credential.refreshAccessToken();
+              });
+
+      AccessToken tokenA = futureA.get(10, TimeUnit.SECONDS);
+      AccessToken tokenB = futureB.get(10, TimeUnit.SECONDS);
+
+      assertNotNull(tokenA);
+      assertNotNull(tokenB);
+
+      // Both threads did initial snapshots (2 calls), plus Thread B's retry (1 more)
+      assertTrue(
+          getKeyStoreCount.get() >= 3,
+          "Expected at least 3 getKeyStore calls (2 initial + 1 retry), got "
+              + getKeyStoreCount.get());
+      // 3 exchange calls total: one 401 + one retry success + one normal success
+      assertEquals(3, exchangeCallCount.get());
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  void refreshAccessToken_certRotationDuringRefresh_pinnedCertUsed() throws Exception {
+    // Cert rotates mid-refresh (during the exchange call).
+    // Verify the transport factory used in exchange is the one pinned at snapshot time,
+    // not the rotated cert.
+    KeyStore ksOriginal = KeyStore.getInstance(KeyStore.getDefaultType());
+    ksOriginal.load(null, null);
+    KeyStore ksRotated = KeyStore.getInstance(KeyStore.getDefaultType());
+    ksRotated.load(null, null);
+
+    AtomicReference<KeyStore> currentKeyStore = new AtomicReference<>(ksOriginal);
+    AtomicInteger snapshotCount = new AtomicInteger(0);
+
+    X509Provider provider =
+        new X509Provider() {
+          @Override
+          public KeyStore getKeyStore() {
+            snapshotCount.incrementAndGet();
+            return currentKeyStore.get();
+          }
+        };
+
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    MtlsHttpTransportFactory mtlsTransport =
+        new MtlsHttpTransportFactory(ksOriginal) {
+          @Override
+          public HttpTransport create() {
+            return transportFactory.create();
+          }
+        };
+
+    // A credential that rotates the cert DURING the exchange call, then captures
+    // the transport factory to verify it's still the original pinned one.
+    AtomicReference<HttpTransportFactory> capturedFactory = new AtomicReference<>();
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(provider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(transportFactory.transport.getStsUrl())
+                .setHttpTransportFactory(mtlsTransport)) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory)
+              throws IOException {
+            // Rotate the cert on the provider DURING the exchange.
+            // This simulates a cert rotation happening while STS/IAM is in-flight.
+            currentKeyStore.set(ksRotated);
+            // Capture the factory that was passed — it should be the original pinned one.
+            capturedFactory.set(cycleTransportFactory);
+            return new AccessToken("pinnedCertToken", null);
+          }
+        };
+
+    // Call refresh — this will snapshot ksOriginal, then during exchange, rotate to ksRotated.
+    AccessToken token = credential.refreshAccessToken();
+    assertNotNull(token);
+    // Snapshot was taken exactly once (at the start of the cycle)
+    assertEquals(1, snapshotCount.get());
+
+    // The transport factory used in exchange should be an MtlsHttpTransportFactory
+    // built from the ORIGINAL snapshot, not the rotated cert.
+    assertNotNull(capturedFactory.get());
+    assertTrue(
+        capturedFactory.get() instanceof MtlsHttpTransportFactory,
+        "Exchange should use MtlsHttpTransportFactory pinned to original cert");
+
+    // Verify that a SECOND refresh picks up the rotated cert (ksRotated).
+    AtomicReference<HttpTransportFactory> secondCapturedFactory = new AtomicReference<>();
+    IdentityPoolCredentials credential2 =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setX509Provider(provider)
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(transportFactory.transport.getStsUrl())
+                .setHttpTransportFactory(mtlsTransport)) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory)
+              throws IOException {
+            secondCapturedFactory.set(cycleTransportFactory);
+            return new AccessToken("rotatedCertToken", null);
+          }
+        };
+
+    AccessToken token2 = credential2.refreshAccessToken();
+    assertNotNull(token2);
+    // Second refresh should have taken a new snapshot
+    assertEquals(2, snapshotCount.get());
+
+    // The two factories should be different instances (different cert snapshots)
+    assertNotSame(
+        capturedFactory.get(),
+        secondCapturedFactory.get(),
+        "Each refresh cycle should create a distinct transport factory from its cert snapshot");
+  }
+
+  // ==================================================================================
+  // Section D: Serialization Tests
+  // ==================================================================================
+
+  @Test
+  void serialize_deserialize_withActorTokenConfig_roundTrips() throws Exception {
+    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+    ks.load(null, null);
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(mtlsTransport)
+            .setSubjectTokenSupplier(testProvider)
+            .setActorTokenSupplier(testActorSupplier)
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .setQuotaProjectId("quotaProjectId")
+            .setClientId("clientId")
+            .setClientSecret("clientSecret")
+            .build();
+
+    IdentityPoolCredentials deserialized = serializeAndDeserialize(credentials);
+    assertEquals(credentials.getAudience(), deserialized.getAudience());
+    assertEquals(credentials.getSubjectTokenType(), deserialized.getSubjectTokenType());
+    assertEquals(credentials.getTokenUrl(), deserialized.getTokenUrl());
+    assertEquals(credentials.getQuotaProjectId(), deserialized.getQuotaProjectId());
+    assertEquals(credentials.getClientId(), deserialized.getClientId());
+    assertEquals(credentials.getClientSecret(), deserialized.getClientSecret());
+    assertEquals(credentials.getActorTokenType(), deserialized.getActorTokenType());
+  }
+
+  @Test
+  void serialize_deserialize_backwardCompatible() throws Exception {
+    // Verify that credentials serialized WITHOUT actor token config
+    // can still be deserialized. This simulates loading pre-actor-token bytes.
+    IdentityPoolCredentials original =
+        IdentityPoolCredentials.newBuilder(createBaseFileSourcedCredentials())
+            .setServiceAccountImpersonationUrl(SERVICE_ACCOUNT_IMPERSONATION_URL)
+            .setQuotaProjectId("quotaProjectId")
+            .setClientId("clientId")
+            .setClientSecret("clientSecret")
+            .build();
+
+    // Serialize (simulates old format without actor token fields)
+    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+    try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
+      output.writeObject(original);
+    }
+
+    // Deserialize the bytes — should succeed even if internal layout changes
+    IdentityPoolCredentials deserialized;
+    try (ObjectInputStream input =
+        new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
+      deserialized = (IdentityPoolCredentials) input.readObject();
+    }
+
+    // Core fields should survive serialization round-trip
+    assertEquals(original.getAudience(), deserialized.getAudience());
+    assertEquals(original.getSubjectTokenType(), deserialized.getSubjectTokenType());
+    assertEquals(original.getTokenUrl(), deserialized.getTokenUrl());
+    assertEquals(original.getQuotaProjectId(), deserialized.getQuotaProjectId());
+    assertEquals(original.getClientId(), deserialized.getClientId());
+    assertEquals(original.getClientSecret(), deserialized.getClientSecret());
+    assertEquals(
+        original.getServiceAccountImpersonationUrl(),
+        deserialized.getServiceAccountImpersonationUrl());
+    // Actor token fields should be null in pre-actor-token credentials
+    assertEquals(null, deserialized.getActorTokenType());
+  }
+
+  // ==================================================================================
+  // Helper: TestableIdentityPoolCredentials — overrides exchange for 401 testing
+  // ==================================================================================
+
+  /**
+   * A test subclass that overrides exchangeExternalCredentialForAccessToken to throw
+   * OAuthException(401) on configurable calls, simulating the cert rotation retry path. This is
+   * necessary because the real STS handler wraps HttpResponseException into OAuthException, which
+   * is what the catch(OAuthException) in refreshAccessToken expects via normal STS flow.
+   */
+  private static class TestableIdentityPoolCredentials extends IdentityPoolCredentials {
+    private final AtomicInteger exchangeCallCount = new AtomicInteger(0);
+    private final boolean failOnFirstExchange;
+    private final boolean failOnAllExchanges;
+
+    TestableIdentityPoolCredentials(
+        IdentityPoolCredentials.Builder builder, boolean failOnFirstExchange) {
+      this(builder, failOnFirstExchange, false);
+    }
+
+    TestableIdentityPoolCredentials(
+        IdentityPoolCredentials.Builder builder,
+        boolean failOnFirstExchange,
+        boolean failOnAllExchanges) {
+      super(builder);
+      this.failOnFirstExchange = failOnFirstExchange;
+      this.failOnAllExchanges = failOnAllExchanges;
+    }
+
+    @Override
+    protected AccessToken exchangeExternalCredentialForAccessToken(
+        StsTokenExchangeRequest stsTokenExchangeRequest, HttpTransportFactory cycleTransportFactory)
+        throws IOException {
+      int count = exchangeCallCount.incrementAndGet();
+      if (failOnAllExchanges || (failOnFirstExchange && count == 1)) {
+        throw new OAuthException("invalid_client", "Unauthorized", null, 401);
+      }
+      // Return a dummy access token for the retry path
+      return new AccessToken("retryAccessToken", null);
+    }
+
+    int getExchangeCallCount() {
+      return exchangeCallCount.get();
+    }
+  }
+
+  // ==================================================================================
+  // Helper: TransportCapturingCredentials — captures transport factory for cert tests
+  // ==================================================================================
+
+  /**
+   * A test subclass that captures the HttpTransportFactory passed to
+   * exchangeExternalCredentialForAccessToken, allowing tests to verify cert pinning behavior
+   * without making real HTTP calls.
+   */
+  private static class TransportCapturingCredentials extends IdentityPoolCredentials {
+    private final java.util.List<HttpTransportFactory> capturedFactories =
+        java.util.Collections.synchronizedList(new java.util.ArrayList<>());
+
+    TransportCapturingCredentials(IdentityPoolCredentials.Builder builder) {
+      super(builder);
+    }
+
+    @Override
+    protected AccessToken exchangeExternalCredentialForAccessToken(
+        StsTokenExchangeRequest stsTokenExchangeRequest, HttpTransportFactory cycleTransportFactory)
+        throws IOException {
+      capturedFactories.add(cycleTransportFactory);
+      // Return a dummy access token
+      return new AccessToken("capturedAccessToken", null);
+    }
+
+    java.util.List<HttpTransportFactory> getCapturedFactories() {
+      return capturedFactories;
     }
   }
 }

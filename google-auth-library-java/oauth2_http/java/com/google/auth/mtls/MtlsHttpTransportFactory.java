@@ -31,6 +31,7 @@
 
 package com.google.auth.mtls;
 
+import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
@@ -38,6 +39,7 @@ import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.util.Objects;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * An HttpTransportFactory that creates {@link NetHttpTransport} instances configured for mTLS
@@ -50,7 +52,17 @@ import org.jspecify.annotations.NullMarked;
 @NullMarked
 @InternalApi
 public class MtlsHttpTransportFactory implements HttpTransportFactory {
-  private final KeyStore mtlsKeyStore;
+  @Nullable private final KeyStore mtlsKeyStore;
+
+  /**
+   * No-arg constructor required for Java serialization. {@link IdentityPoolCredentials} stores this
+   * factory in its serializable {@code transportFactory} field, and {@link
+   * java.io.ObjectInputStream} needs a no-arg constructor to reconstruct it during deserialization.
+   * Not intended for direct use; callers should use {@link #MtlsHttpTransportFactory(KeyStore)}.
+   */
+  public MtlsHttpTransportFactory() {
+    this.mtlsKeyStore = null;
+  }
 
   /**
    * Constructs a factory for mTLS transports.
@@ -63,8 +75,17 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory {
     this.mtlsKeyStore = Objects.requireNonNull(mtlsKeyStore, "mtlsKeyStore cannot be null");
   }
 
+  /**
+   * Returns whether this factory was constructed with a non-null {@link KeyStore} containing client
+   * certificates for mTLS. A factory created via the no-arg constructor (e.g. during
+   * deserialization) will return {@code false}.
+   */
+  public boolean hasKeyStore() {
+    return this.mtlsKeyStore != null;
+  }
+
   @Override
-  public NetHttpTransport create() {
+  public HttpTransport create() {
     try {
       // Build the mTLS transport using the provided KeyStore.
       return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();

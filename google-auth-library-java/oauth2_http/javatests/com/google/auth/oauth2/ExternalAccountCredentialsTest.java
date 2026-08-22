@@ -201,6 +201,33 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void fromJson_identityPoolCredentials_withActorTokenType() throws Exception {
+    GenericJson json = buildJsonIdentityPoolCredential();
+    json.put("actor_token_type", "actorTokenType");
+
+    Map<String, Object> credentialSource = (Map<String, Object>) json.get("credential_source");
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("actor_token_field_name", "actor_token");
+    formatMap.put("subject_token_field_name", "subject_token");
+    credentialSource.put("format", formatMap);
+
+    java.security.KeyStore ks =
+        java.security.KeyStore.getInstance(java.security.KeyStore.getDefaultType());
+    ks.load(null, null);
+    com.google.auth.mtls.MtlsHttpTransportFactory mockTransportFactory =
+        new com.google.auth.mtls.MtlsHttpTransportFactory(ks);
+
+    ExternalAccountCredentials credential =
+        ExternalAccountCredentials.fromJson(json, mockTransportFactory);
+
+    assertInstanceOf(IdentityPoolCredentials.class, credential);
+    IdentityPoolCredentials idpCreds = (IdentityPoolCredentials) credential;
+    assertEquals("subjectTokenType", idpCreds.getSubjectTokenType());
+    assertEquals("actorTokenType", idpCreds.getActorTokenType());
+  }
+
+  @Test
   void fromJson_identityPoolCredentialsWorkforce() {
     ExternalAccountCredentials credential =
         ExternalAccountCredentials.fromJson(
