@@ -679,7 +679,7 @@ public final class LocalFirestoreHelper {
                                 Value.newBuilder()
                                     .setArrayValue(vectorArrayBuilder.build())
                                     .build())))
-            .setLimit(Int32Value.newBuilder().setValue(limit))
+            .setLimit(com.google.protobuf.Int32Value.newBuilder().setValue(limit))
             .setDistanceMeasure(measure);
 
     StructuredQuery.Builder structuredQuery = StructuredQuery.newBuilder();
@@ -968,6 +968,13 @@ public final class LocalFirestoreHelper {
 
     return builder.build();
   }
+  private static boolean supportsExtendedTypes() {
+    String edition = System.getProperty("FIRESTORE_EDITION");
+    if (edition == null) {
+      edition = System.getenv("FIRESTORE_EDITION");
+    }
+    return edition != null && "enterprise".equalsIgnoreCase(edition);
+  }
 
   public static class AllSupportedTypes {
 
@@ -989,6 +996,27 @@ public final class LocalFirestoreHelper {
     public GeoPoint geoPointValue = GEO_POINT;
     public Map<String, Object> model = ImmutableMap.of("foo", SINGLE_FIELD_OBJECT.foo);
     public VectorValue vectorValue = FieldValue.vector(new double[] {0.1, 0.2, 0.3});
+    public MinKey minKey;
+    public MaxKey maxKey;
+    public RegexValue regexValue;
+    public Int32Value int32Value;
+    public Decimal128Value decimal128Value;
+    public BsonObjectId bsonObjectId;
+    public BsonTimestamp bsonTimestamp;
+    public BsonBinaryData bsonBinaryData;
+
+    public AllSupportedTypes() {
+      if (supportsExtendedTypes()) {
+        minKey = MinKey.instance();
+        maxKey = MaxKey.instance();
+        regexValue = new RegexValue("^foo", "i");
+        int32Value = new Int32Value(55);
+        decimal128Value = new Decimal128Value("1.2e3");
+        bsonObjectId = new BsonObjectId("507f191e810c19729de860eb");
+        bsonTimestamp = new BsonTimestamp(100, 10);
+        bsonBinaryData = BsonBinaryData.fromBytes(127, new byte[] {1, 2, 3});
+      }
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -1016,7 +1044,15 @@ public final class LocalFirestoreHelper {
           && Objects.equals(bytesValue, that.bytesValue)
           && Objects.equals(geoPointValue, that.geoPointValue)
           && Objects.equals(model, that.model)
-          && Objects.equals(vectorValue, that.vectorValue);
+          && Objects.equals(vectorValue, that.vectorValue)
+          && Objects.equals(minKey, that.minKey)
+          && Objects.equals(maxKey, that.maxKey)
+          && Objects.equals(regexValue, that.regexValue)
+          && Objects.equals(int32Value, that.int32Value)
+          && Objects.equals(decimal128Value, that.decimal128Value)
+          && Objects.equals(bsonObjectId, that.bsonObjectId)
+          && Objects.equals(bsonTimestamp, that.bsonTimestamp)
+          && Objects.equals(bsonBinaryData, that.bsonBinaryData);
     }
   }
 
@@ -1138,7 +1174,27 @@ public final class LocalFirestoreHelper {
     ALL_SUPPORTED_TYPES_MAP.put("geoPointValue", GEO_POINT);
     ALL_SUPPORTED_TYPES_MAP.put("model", map("foo", SINGLE_FIELD_OBJECT.foo));
     ALL_SUPPORTED_TYPES_MAP.put("vectorValue", FieldValue.vector(new double[] {0.1, 0.2, 0.3}));
-    ALL_SUPPORTED_TYPES_PROTO =
+    if (supportsExtendedTypes()) {
+      ALL_SUPPORTED_TYPES_MAP.put("minKey", MinKey.instance());
+      ALL_SUPPORTED_TYPES_MAP.put("maxKey", MaxKey.instance());
+      ALL_SUPPORTED_TYPES_MAP.put("regexValue", new RegexValue("^foo", "i"));
+      ALL_SUPPORTED_TYPES_MAP.put("int32Value", new Int32Value(55));
+      ALL_SUPPORTED_TYPES_MAP.put("decimal128Value", new Decimal128Value("1.2e3"));
+      ALL_SUPPORTED_TYPES_MAP.put("bsonObjectId", new BsonObjectId("507f191e810c19729de860eb"));
+      ALL_SUPPORTED_TYPES_MAP.put("bsonTimestamp", new BsonTimestamp(100, 10));
+      ALL_SUPPORTED_TYPES_MAP.put(
+          "bsonBinaryData", BsonBinaryData.fromBytes(127, new byte[] {1, 2, 3}));
+    } else {
+      ALL_SUPPORTED_TYPES_MAP.put("minKey", null);
+      ALL_SUPPORTED_TYPES_MAP.put("maxKey", null);
+      ALL_SUPPORTED_TYPES_MAP.put("regexValue", null);
+      ALL_SUPPORTED_TYPES_MAP.put("int32Value", null);
+      ALL_SUPPORTED_TYPES_MAP.put("decimal128Value", null);
+      ALL_SUPPORTED_TYPES_MAP.put("bsonObjectId", null);
+      ALL_SUPPORTED_TYPES_MAP.put("bsonTimestamp", null);
+      ALL_SUPPORTED_TYPES_MAP.put("bsonBinaryData", null);
+    }
+    ImmutableMap.Builder<String, Value> protoBuilder =
         ImmutableMap.<String, Value>builder()
             .put("foo", Value.newBuilder().setStringValue("bar").build())
             .put("doubleValue", Value.newBuilder().setDoubleValue(0.0).build())
@@ -1213,8 +1269,126 @@ public final class LocalFirestoreHelper {
                 "model",
                 Value.newBuilder()
                     .setMapValue(MapValue.newBuilder().putAllFields(SINGLE_FIELD_PROTO))
-                    .build())
-            .build();
+                    .build());
+    if (supportsExtendedTypes()) {
+      protoBuilder
+          .put(
+              "minKey",
+              Value.newBuilder()
+                  .setMapValue(
+                      MapValue.newBuilder()
+                          .putAllFields(
+                              map(
+                                  "__min__",
+                                  Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build()))
+                          .build())
+                  .build())
+          .put(
+              "maxKey",
+              Value.newBuilder()
+                  .setMapValue(
+                      MapValue.newBuilder()
+                          .putAllFields(
+                              map(
+                                  "__max__",
+                                  Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build()))
+                          .build())
+                  .build())
+          .put(
+              "regexValue",
+              Value.newBuilder()
+                  .setMapValue(
+                      MapValue.newBuilder()
+                          .putFields(
+                              "__regex__",
+                              Value.newBuilder()
+                                  .setMapValue(
+                                      MapValue.newBuilder()
+                                          .putFields(
+                                              "pattern",
+                                              Value.newBuilder().setStringValue("^foo").build())
+                                          .putFields(
+                                              "options",
+                                              Value.newBuilder().setStringValue("i").build())
+                                          .build())
+                                  .build())
+                          .build())
+                  .build())
+          .put(
+              "int32Value",
+              Value.newBuilder()
+                  .setMapValue(
+                      MapValue.newBuilder()
+                          .putFields("__int__", Value.newBuilder().setIntegerValue(55).build())
+                          .build())
+                  .build())
+          .put(
+              "decimal128Value",
+              Value.newBuilder()
+                  .setMapValue(
+                      MapValue.newBuilder()
+                          .putFields(
+                              "__decimal128__",
+                              Value.newBuilder().setStringValue("1.2e3").build())
+                          .build())
+                  .build())
+          .put(
+              "bsonObjectId",
+              Value.newBuilder()
+                  .setMapValue(
+                      MapValue.newBuilder()
+                          .putFields(
+                              "__oid__",
+                              Value.newBuilder()
+                                  .setStringValue("507f191e810c19729de860eb")
+                                  .build())
+                          .build())
+                  .build())
+          .put(
+              "bsonTimestamp",
+              Value.newBuilder()
+                  .setMapValue(
+                      MapValue.newBuilder()
+                          .putFields(
+                              "__request_timestamp__",
+                              Value.newBuilder()
+                                  .setMapValue(
+                                      MapValue.newBuilder()
+                                          .putFields(
+                                              "seconds",
+                                              Value.newBuilder().setIntegerValue(100).build())
+                                          .putFields(
+                                              "increment",
+                                              Value.newBuilder().setIntegerValue(10).build())
+                                          .build())
+                                  .build())
+                          .build())
+                  .build())
+          .put(
+              "bsonBinaryData",
+              Value.newBuilder()
+                  .setMapValue(
+                      MapValue.newBuilder()
+                          .putFields(
+                              "__binary__",
+                              Value.newBuilder()
+                                  .setBytesValue(ByteString.copyFrom(new byte[] {127, 1, 2, 3}))
+                                  .build())
+                          .build())
+                  .build());
+    } else {
+      Value nullValueProto = Value.newBuilder().setNullValue(NullValue.NULL_VALUE).build();
+      protoBuilder
+          .put("minKey", nullValueProto)
+          .put("maxKey", nullValueProto)
+          .put("regexValue", nullValueProto)
+          .put("int32Value", nullValueProto)
+          .put("decimal128Value", nullValueProto)
+          .put("bsonObjectId", nullValueProto)
+          .put("bsonTimestamp", nullValueProto)
+          .put("bsonBinaryData", nullValueProto);
+    }
+    ALL_SUPPORTED_TYPES_PROTO = protoBuilder.build();
     ALL_SUPPORTED_TYPES_OBJECT = new AllSupportedTypes();
     SINGLE_WRITE_COMMIT_RESPONSE = commitResponse(/* adds= */ 1, /* deletes= */ 0);
     SINGLE_DELETE_COMMIT_RESPONSE = commitResponse(/* adds= */ 0, /* deletes= */ 1);
