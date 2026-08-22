@@ -610,18 +610,20 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             // If the Job ALREADY EXISTS, retrieve it.
             Job job = this.getJob(jobInfo.getJobId(), JobOption.fields(JobField.STATISTICS));
 
-            long jobCreationTime = job.getStatistics().getCreationTime();
-            long jobMinStaleTime = System.currentTimeMillis();
-            long jobMaxStaleTime =
-                java.time.Instant.ofEpochMilli(jobMinStaleTime)
-                    .minus(1, java.time.temporal.ChronoUnit.DAYS)
-                    .toEpochMilli();
+            if (job != null) {
+              long jobCreationTime = job.getStatistics().getCreationTime();
+              long jobMinStaleTime = System.currentTimeMillis();
+              long jobMaxStaleTime =
+                  java.time.Instant.ofEpochMilli(jobMinStaleTime)
+                      .minus(1, java.time.temporal.ChronoUnit.DAYS)
+                      .toEpochMilli();
 
-            // Only return the job if it has been created in the past 24 hours.
-            // This is assuming any job older than 24 hours is a valid duplicate JobID
-            // and not a false positive like b/290419183
-            if (jobCreationTime >= jobMaxStaleTime && jobCreationTime <= jobMinStaleTime) {
-              return job;
+              // Only return the job if it has been created in the past 24 hours.
+              // This is assuming any job older than 24 hours is a valid duplicate JobID
+              // and not a false positive like b/290419183
+              if (jobCreationTime >= jobMaxStaleTime && jobCreationTime <= jobMinStaleTime) {
+                return job;
+              }
             }
           }
         }
