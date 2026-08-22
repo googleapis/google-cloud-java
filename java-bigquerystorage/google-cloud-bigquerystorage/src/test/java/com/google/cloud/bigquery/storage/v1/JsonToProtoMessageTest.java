@@ -1112,6 +1112,120 @@ class JsonToProtoMessageTest {
     assertEquals(expectedProto, protoMsg);
   }
 
+  private TableSchema bytesTableSchema(String fieldName, TableFieldSchema.Mode mode) {
+    return TableSchema.newBuilder()
+        .addFields(TableFieldSchema.newBuilder(TEST_BYTES).setName(fieldName).setMode(mode).build())
+        .build();
+  }
+
+  @Test
+  void testBytesFromBase64() throws Exception {
+    TableSchema tableSchema = bytesTableSchema("test_field_type", TableFieldSchema.Mode.NULLABLE);
+    BytesType expectedProto =
+        BytesType.newBuilder().setTestFieldType(ByteString.copyFromUtf8("hi")).build();
+    for (String encoded : ImmutableList.of("aGk=", "aGk")) {
+      JSONObject json = new JSONObject();
+      json.put("test_field_type", encoded);
+      DynamicMessage protoMsg =
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+              BytesType.getDescriptor(), tableSchema, json);
+      assertEquals(expectedProto, protoMsg);
+    }
+  }
+
+  @Test
+  void testBytesFromBase64EitherAlphabet() throws Exception {
+    TableSchema tableSchema = bytesTableSchema("test_field_type", TableFieldSchema.Mode.NULLABLE);
+    BytesType expectedProto =
+        BytesType.newBuilder().setTestFieldType(ByteString.copyFrom(new byte[] {-5, -1})).build();
+    // 0xFB 0xFF is "+/8" in the standard alphabet and "-_8" in the URL-safe one.
+    for (String encoded : ImmutableList.of("+/8=", "-_8=", "+/8", "-_8")) {
+      JSONObject json = new JSONObject();
+      json.put("test_field_type", encoded);
+      DynamicMessage protoMsg =
+          JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+              BytesType.getDescriptor(), tableSchema, json);
+      assertEquals(expectedProto, protoMsg);
+    }
+  }
+
+  @Test
+  void testBytesRepeatedFromBase64() throws Exception {
+    TableSchema tableSchema = bytesTableSchema("test_repeated", TableFieldSchema.Mode.REPEATED);
+    RepeatedBytes expectedProto =
+        RepeatedBytes.newBuilder()
+            .addTestRepeated(ByteString.copyFromUtf8("hi"))
+            .addTestRepeated(ByteString.copyFromUtf8("yo"))
+            .build();
+    JSONObject json = new JSONObject();
+    json.put("test_repeated", new JSONArray(ImmutableList.of("aGk=", "eW8=")));
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+            RepeatedBytes.getDescriptor(), tableSchema, json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
+  void testBytesFromInvalidBase64() throws Exception {
+    TableSchema tableSchema = bytesTableSchema("test_field_type", TableFieldSchema.Mode.NULLABLE);
+    JSONObject json = new JSONObject();
+    json.put("test_field_type", "not base64 at all");
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+                    BytesType.getDescriptor(), tableSchema, json));
+    assertTrue(
+        e.getMessage().contains("could not be converted to byte[]: not a valid base64 string."));
+  }
+
+  @Test
+  void testBytesFromBase64NeedsTableSchema() throws Exception {
+    // Without a TableSchema, BYTES is indistinguishable from NUMERIC and BIGNUMERIC.
+    JSONObject json = new JSONObject();
+    json.put("test_field_type", "aGk=");
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                JsonToProtoMessage.INSTANCE.convertToProtoMessage(BytesType.getDescriptor(), json));
+    assertTrue(
+        e.getMessage().contains("JSONObject does not have a bytes field at root.test_field_type."));
+  }
+
+  @Test
+  void testNumericFromStringIsNotDecodedAsBase64() throws Exception {
+    TableSchema tableSchema =
+        TableSchema.newBuilder()
+            .addFields(TableFieldSchema.newBuilder(TEST_NUMERIC).setName("test_field_type").build())
+            .build();
+    BytesType expectedProto =
+        BytesType.newBuilder()
+            .setTestFieldType(
+                BigDecimalByteStringEncoder.encodeToNumericByteString(new BigDecimal("1.5")))
+            .build();
+    JSONObject json = new JSONObject();
+    json.put("test_field_type", "1.5");
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+            BytesType.getDescriptor(), tableSchema, json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
+  @Test
+  void testBytesFromByteArray() throws Exception {
+    TableSchema tableSchema = bytesTableSchema("test_field_type", TableFieldSchema.Mode.NULLABLE);
+    BytesType expectedProto =
+        BytesType.newBuilder().setTestFieldType(ByteString.copyFromUtf8("hi")).build();
+    JSONObject json = new JSONObject();
+    json.put("test_field_type", new byte[] {104, 105});
+    DynamicMessage protoMsg =
+        JsonToProtoMessage.INSTANCE.convertToProtoMessage(
+            BytesType.getDescriptor(), tableSchema, json);
+    assertEquals(expectedProto, protoMsg);
+  }
+
   @Test
   void testAllTypes() throws Exception {
     for (Map.Entry<Descriptor, String> entry : AllTypesToDebugMessageTest.entrySet()) {
