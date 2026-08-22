@@ -24,7 +24,7 @@ package com.google.backstory;
  *
  *
  * <pre>
- * General information associated with a UDM event.
+ * General information associated with a Udm event.
  * </pre>
  *
  * Protobuf type {@code google.backstory.Metadata}
@@ -70,13 +70,13 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Metadata_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Metadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Metadata_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Metadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Metadata.class, com.google.backstory.Metadata.Builder.class);
   }
@@ -4576,7 +4576,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * ID of the UDM event. Can be used for raw and normalized event retrieval.
+   * ID of the Udm event. Can be used for raw and normalized event retrieval.
    * </pre>
    *
    * <code>bytes id = 15;</code>
@@ -5742,7 +5742,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The version of the parser that generated this UDM event.
+   * The version of the parser that generated this Udm event.
    * </pre>
    *
    * <code>string parser_version = 22;</code>
@@ -5766,7 +5766,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The version of the parser that generated this UDM event.
+   * The version of the parser that generated this Udm event.
    * </pre>
    *
    * <code>string parser_version = 22;</code>
@@ -6194,7 +6194,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * General information associated with a UDM event.
+   * General information associated with a Udm event.
    * </pre>
    *
    * Protobuf type {@code google.backstory.Metadata}
@@ -6204,13 +6204,13 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Metadata)
       com.google.backstory.MetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Metadata_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Metadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Metadata_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Metadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Metadata.class, com.google.backstory.Metadata.Builder.class);
     }
@@ -6303,7 +6303,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Metadata_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Metadata_descriptor;
     }
 
     @java.lang.Override
@@ -6766,7 +6766,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * ID of the UDM event. Can be used for raw and normalized event retrieval.
+     * ID of the Udm event. Can be used for raw and normalized event retrieval.
      * </pre>
      *
      * <code>bytes id = 15;</code>
@@ -6782,7 +6782,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * ID of the UDM event. Can be used for raw and normalized event retrieval.
+     * ID of the Udm event. Can be used for raw and normalized event retrieval.
      * </pre>
      *
      * <code>bytes id = 15;</code>
@@ -6804,7 +6804,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * ID of the UDM event. Can be used for raw and normalized event retrieval.
+     * ID of the Udm event. Can be used for raw and normalized event retrieval.
      * </pre>
      *
      * <code>bytes id = 15;</code>
@@ -10082,7 +10082,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The version of the parser that generated this UDM event.
+     * The version of the parser that generated this Udm event.
      * </pre>
      *
      * <code>string parser_version = 22;</code>
@@ -10105,7 +10105,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The version of the parser that generated this UDM event.
+     * The version of the parser that generated this Udm event.
      * </pre>
      *
      * <code>string parser_version = 22;</code>
@@ -10128,7 +10128,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The version of the parser that generated this UDM event.
+     * The version of the parser that generated this Udm event.
      * </pre>
      *
      * <code>string parser_version = 22;</code>
@@ -10150,7 +10150,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The version of the parser that generated this UDM event.
+     * The version of the parser that generated this Udm event.
      * </pre>
      *
      * <code>string parser_version = 22;</code>
@@ -10168,7 +10168,7 @@ public final class Metadata extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The version of the parser that generated this UDM event.
+     * The version of the parser that generated this Udm event.
      * </pre>
      *
      * <code>string parser_version = 22;</code>

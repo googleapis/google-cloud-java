@@ -166,7 +166,7 @@ public enum Reputation implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.backstory.Udm.getDescriptor().getEnumTypes().get(1);
+    return com.google.backstory.UdmProto.getDescriptor().getEnumTypes().get(1);
   }
 
   private static final Reputation[] VALUES = values();

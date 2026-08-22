@@ -30,7 +30,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * ID of the UDM event. Can be used for raw and normalized event retrieval.
+   * ID of the Udm event. Can be used for raw and normalized event retrieval.
    * </pre>
    *
    * <code>bytes id = 15;</code>
@@ -755,7 +755,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * The version of the parser that generated this UDM event.
+   * The version of the parser that generated this Udm event.
    * </pre>
    *
    * <code>string parser_version = 22;</code>
@@ -768,7 +768,7 @@ public interface MetadataOrBuilder
    *
    *
    * <pre>
-   * The version of the parser that generated this UDM event.
+   * The version of the parser that generated this Udm event.
    * </pre>
    *
    * <code>string parser_version = 22;</code>

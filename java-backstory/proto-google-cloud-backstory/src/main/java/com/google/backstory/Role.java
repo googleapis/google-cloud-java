@@ -58,13 +58,13 @@ public final class Role extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Role_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Role_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_Role_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_Role_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.Role.class, com.google.backstory.Role.Builder.class);
   }
@@ -570,13 +570,13 @@ public final class Role extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.Role)
       com.google.backstory.RoleOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Role_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Role_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Role_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Role_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.Role.class, com.google.backstory.Role.Builder.class);
     }
@@ -600,7 +600,7 @@ public final class Role extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_Role_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_Role_descriptor;
     }
 
     @java.lang.Override

@@ -36,7 +36,7 @@ public interface ReferenceOrBuilder
    * Event being referenced.
    * </pre>
    *
-   * <code>.google.backstory.UDM event = 1;</code>
+   * <code>.google.backstory.Udm event = 1;</code>
    *
    * @return Whether the event field is set.
    */
@@ -52,11 +52,11 @@ public interface ReferenceOrBuilder
    * Event being referenced.
    * </pre>
    *
-   * <code>.google.backstory.UDM event = 1;</code>
+   * <code>.google.backstory.Udm event = 1;</code>
    *
    * @return The event.
    */
-  com.google.backstory.UDM getEvent();
+  com.google.backstory.Udm getEvent();
 
   /**
    *
@@ -68,9 +68,9 @@ public interface ReferenceOrBuilder
    * Event being referenced.
    * </pre>
    *
-   * <code>.google.backstory.UDM event = 1;</code>
+   * <code>.google.backstory.Udm event = 1;</code>
    */
-  com.google.backstory.UDMOrBuilder getEventOrBuilder();
+  com.google.backstory.UdmOrBuilder getEventOrBuilder();
 
   /**
    *

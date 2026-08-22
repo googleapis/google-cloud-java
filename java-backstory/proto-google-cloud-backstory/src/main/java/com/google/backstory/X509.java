@@ -60,13 +60,13 @@ public final class X509 extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_X509_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_X509_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm.internal_static_google_backstory_X509_fieldAccessorTable
+    return com.google.backstory.UdmProto.internal_static_google_backstory_X509_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.X509.class, com.google.backstory.X509.Builder.class);
   }
@@ -544,13 +544,13 @@ public final class X509 extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.X509)
       com.google.backstory.X509OrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_X509_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_X509_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm.internal_static_google_backstory_X509_fieldAccessorTable
+      return com.google.backstory.UdmProto.internal_static_google_backstory_X509_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.X509.class, com.google.backstory.X509.Builder.class);
     }
@@ -576,7 +576,7 @@ public final class X509 extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_X509_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_X509_descriptor;
     }
 
     @java.lang.Override

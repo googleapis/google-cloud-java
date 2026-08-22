@@ -204,7 +204,7 @@ public interface DataAccessLabelsOrBuilder
    *
    *
    * <pre>
-   * All the complex labels (UDM search syntax based).
+   * All the complex labels (Udm search syntax based).
    * </pre>
    *
    * <code>repeated string custom_labels = 4;</code>
@@ -217,7 +217,7 @@ public interface DataAccessLabelsOrBuilder
    *
    *
    * <pre>
-   * All the complex labels (UDM search syntax based).
+   * All the complex labels (Udm search syntax based).
    * </pre>
    *
    * <code>repeated string custom_labels = 4;</code>
@@ -230,7 +230,7 @@ public interface DataAccessLabelsOrBuilder
    *
    *
    * <pre>
-   * All the complex labels (UDM search syntax based).
+   * All the complex labels (Udm search syntax based).
    * </pre>
    *
    * <code>repeated string custom_labels = 4;</code>
@@ -244,7 +244,7 @@ public interface DataAccessLabelsOrBuilder
    *
    *
    * <pre>
-   * All the complex labels (UDM search syntax based).
+   * All the complex labels (Udm search syntax based).
    * </pre>
    *
    * <code>repeated string custom_labels = 4;</code>

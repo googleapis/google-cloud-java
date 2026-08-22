@@ -24,7 +24,7 @@ package com.google.backstory;
  *
  *
  * <pre>
- * Grouped fields are aliases for groups of related UDM fields. All
+ * Grouped fields are aliases for groups of related Udm fields. All
  * fields grouped together are of type string.
  * </pre>
  *
@@ -64,13 +64,13 @@ public final class GroupedFields extends com.google.protobuf.GeneratedMessage
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_GroupedFields_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_GroupedFields_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_GroupedFields_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.GroupedFields.class,
@@ -902,7 +902,7 @@ public final class GroupedFields extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Grouped fields are aliases for groups of related UDM fields. All
+   * Grouped fields are aliases for groups of related Udm fields. All
    * fields grouped together are of type string.
    * </pre>
    *
@@ -913,13 +913,13 @@ public final class GroupedFields extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(builder_implements:google.backstory.GroupedFields)
       com.google.backstory.GroupedFieldsOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_GroupedFields_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_GroupedFields_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_GroupedFields_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.GroupedFields.class,
@@ -950,7 +950,7 @@ public final class GroupedFields extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_GroupedFields_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_GroupedFields_descriptor;
     }
 
     @java.lang.Override

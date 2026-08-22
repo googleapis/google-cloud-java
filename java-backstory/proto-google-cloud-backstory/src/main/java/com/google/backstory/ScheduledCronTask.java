@@ -64,13 +64,13 @@ public final class ScheduledCronTask extends com.google.protobuf.GeneratedMessag
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-    return com.google.backstory.Udm.internal_static_google_backstory_ScheduledCronTask_descriptor;
+    return com.google.backstory.UdmProto.internal_static_google_backstory_ScheduledCronTask_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.backstory.Udm
+    return com.google.backstory.UdmProto
         .internal_static_google_backstory_ScheduledCronTask_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.backstory.ScheduledCronTask.class,
@@ -823,13 +823,13 @@ public final class ScheduledCronTask extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(builder_implements:google.backstory.ScheduledCronTask)
       com.google.backstory.ScheduledCronTaskOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.backstory.Udm.internal_static_google_backstory_ScheduledCronTask_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_ScheduledCronTask_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.backstory.Udm
+      return com.google.backstory.UdmProto
           .internal_static_google_backstory_ScheduledCronTask_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.backstory.ScheduledCronTask.class,
@@ -861,7 +861,7 @@ public final class ScheduledCronTask extends com.google.protobuf.GeneratedMessag
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-      return com.google.backstory.Udm.internal_static_google_backstory_ScheduledCronTask_descriptor;
+      return com.google.backstory.UdmProto.internal_static_google_backstory_ScheduledCronTask_descriptor;
     }
 
     @java.lang.Override
