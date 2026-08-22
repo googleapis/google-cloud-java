@@ -86,7 +86,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     // Check that one and only one of supplier or credential source are provided.
     if (builder.subjectTokenSupplier != null && credentialSource != null) {
       throw new IllegalArgumentException(
-          "IdentityPoolCredentials cannot have both a subjectTokenSupplier and a credentialSource.");
+          "IdentityPoolCredentials cannot have both a subjectTokenSupplier and a"
+              + " credentialSource.");
     }
     if (builder.subjectTokenSupplier == null && credentialSource == null) {
       throw new IllegalArgumentException(
@@ -108,7 +109,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
         } catch (Exception e) {
           throw new RuntimeException(
-              "Failed to initialize mTLS transport for file credential source due to certificate error.",
+              "Failed to initialize mTLS transport for file credential source due to certificate"
+                  + " error.",
               e);
         }
       }
@@ -127,7 +129,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         throw new RuntimeException(
             // Wrap IOException in RuntimeException because constructors cannot throw checked
             // exceptions.
-            "Failed to initialize IdentityPoolCredentials from certificate source due to an I/O error.",
+            "Failed to initialize IdentityPoolCredentials from certificate source due to an I/O"
+                + " error.",
             e);
       }
       this.metricsHeaderValue = CERTIFICATE_METRICS_HEADER_VALUE;
@@ -161,15 +164,16 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
     if (this.actorTokenSupplier != null && !isMtlsConfigured()) {
       throw new IllegalArgumentException(
-          "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate source or MtlsHttpTransportFactory.");
+          "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate"
+              + " source or MtlsHttpTransportFactory.");
     }
   }
 
   /**
    * Checks whether mTLS is properly configured by verifying that an X509Provider is set or the
    * transport factory is an MtlsHttpTransportFactory with a non-null KeyStore. This avoids false
-   * positives from a no-arg-constructed MtlsHttpTransportFactory (e.g. after deserialization)
-   * that has no actual certificates.
+   * positives from a no-arg-constructed MtlsHttpTransportFactory (e.g. after deserialization) that
+   * has no actual certificates.
    */
   private boolean isMtlsConfigured() {
     return this.x509Provider != null
@@ -252,8 +256,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   }
 
   @VisibleForTesting
-  @Nullable
-  IdentityPoolActorTokenSupplier getIdentityPoolActorTokenSupplier() {
+  @Nullable IdentityPoolActorTokenSupplier getIdentityPoolActorTokenSupplier() {
     return this.actorTokenSupplier;
   }
 

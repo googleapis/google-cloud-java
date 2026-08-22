@@ -57,9 +57,8 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory {
   /**
    * No-arg constructor required for Java serialization. {@link IdentityPoolCredentials} stores this
    * factory in its serializable {@code transportFactory} field, and {@link
-   * java.io.ObjectInputStream} needs a no-arg constructor to reconstruct it during
-   * deserialization. Not intended for direct use; callers should use {@link
-   * #MtlsHttpTransportFactory(KeyStore)}.
+   * java.io.ObjectInputStream} needs a no-arg constructor to reconstruct it during deserialization.
+   * Not intended for direct use; callers should use {@link #MtlsHttpTransportFactory(KeyStore)}.
    */
   public MtlsHttpTransportFactory() {
     this.mtlsKeyStore = null;
@@ -77,8 +76,8 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory {
   }
 
   /**
-   * Returns whether this factory was constructed with a non-null {@link KeyStore} containing
-   * client certificates for mTLS. A factory created via the no-arg constructor (e.g. during
+   * Returns whether this factory was constructed with a non-null {@link KeyStore} containing client
+   * certificates for mTLS. A factory created via the no-arg constructor (e.g. during
    * deserialization) will return {@code false}.
    */
   public boolean hasKeyStore() {

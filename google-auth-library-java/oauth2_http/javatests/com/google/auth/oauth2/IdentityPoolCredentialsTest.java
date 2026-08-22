@@ -36,7 +36,9 @@ import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SER
 import static com.google.auth.oauth2.OAuth2Utils.JSON_FACTORY;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -76,10 +78,6 @@ import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotSame;
-import static org.junit.jupiter.api.Assertions.fail;
 
 /** Tests for {@link IdentityPoolCredentials}. */
 @ExtendWith(MockitoExtension.class)
@@ -733,7 +731,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             IllegalArgumentException.class,
             () -> new IdentityPoolCredentialSource(credentialSourceMap));
     assertEquals(
-        "Missing credential source file location, URL, or certificate. At least one must be specified.",
+        "Missing credential source file location, URL, or certificate. At least one must be"
+            + " specified.",
         e.getMessage());
   }
 
@@ -872,7 +871,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
               .setQuotaProjectId("quotaProjectId");
       IllegalArgumentException e = assertThrows(IllegalArgumentException.class, builder::build);
       assertEquals(
-          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool configuration.",
+          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool"
+              + " configuration.",
           e.getMessage());
     }
   }
@@ -1380,7 +1380,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                     .build());
 
     assertEquals(
-        "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate source or MtlsHttpTransportFactory.",
+        "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate"
+            + " source or MtlsHttpTransportFactory.",
         e.getMessage());
   }
 
@@ -1529,8 +1530,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals(newScopes, scoped.getScopes());
     // Verify scoped clone maintains a single shared supplier instance for its own cache
     assertSame(
-        scoped.getIdentityPoolSubjectTokenSupplier(),
-        scoped.getIdentityPoolActorTokenSupplier());
+        scoped.getIdentityPoolSubjectTokenSupplier(), scoped.getIdentityPoolActorTokenSupplier());
   }
 
   @Test
@@ -1725,9 +1725,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                     .setTokenUrl("https://sts.googleapis.com/v1/token")
                     .build());
     assertTrue(
-        e.getMessage()
-            .contains(
-                "Actor tokens are only supported for mTLS token exchanges."));
+        e.getMessage().contains("Actor tokens are only supported for mTLS token exchanges."));
   }
 
   @Test
@@ -1751,9 +1749,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                     .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
                     .build());
     assertTrue(
-        e.getMessage()
-            .contains(
-                "Actor tokens are only supported for mTLS token exchanges."));
+        e.getMessage().contains("Actor tokens are only supported for mTLS token exchanges."));
   }
 
   @Test
@@ -1951,8 +1947,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             /* failOnFirstExchange= */ true);
 
     // Should throw the 401 error without retry since there's no x509Provider.
-    OAuthException e =
-        assertThrows(OAuthException.class, credential::refreshAccessToken);
+    OAuthException e = assertThrows(OAuthException.class, credential::refreshAccessToken);
     assertEquals(401, e.getHttpStatusCode());
     assertEquals(1, credential.getExchangeCallCount());
   }
@@ -1996,8 +1991,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             /* failOnFirstExchange= */ true,
             /* failOnAllExchanges= */ true);
 
-    OAuthException e =
-        assertThrows(OAuthException.class, credential::refreshAccessToken);
+    OAuthException e = assertThrows(OAuthException.class, credential::refreshAccessToken);
     assertEquals(401, e.getHttpStatusCode());
     // First attempt + one retry = 2
     assertEquals(2, credential.getExchangeCallCount());
@@ -2065,8 +2059,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     // Verify when both subject and actor tokens come from the same file supplier,
     // readTokens() is called (single file read) rather than separate getSubjectToken()
     // + getActorToken() calls.
-    File file =
-        File.createTempFile("ATOMIC_READ_TOKEN", /* suffix= */ null, /* directory= */ null);
+    File file = File.createTempFile("ATOMIC_READ_TOKEN", /* suffix= */ null, /* directory= */ null);
     file.deleteOnExit();
 
     GenericJson tokenJson = new GenericJson();
@@ -2486,10 +2479,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   /**
    * A test subclass that overrides exchangeExternalCredentialForAccessToken to throw
-   * OAuthException(401) on configurable calls, simulating the cert rotation retry path.
-   * This is necessary because the real STS handler wraps HttpResponseException into
-   * OAuthException, which is what the catch(OAuthException) in refreshAccessToken expects
-   * via normal STS flow.
+   * OAuthException(401) on configurable calls, simulating the cert rotation retry path. This is
+   * necessary because the real STS handler wraps HttpResponseException into OAuthException, which
+   * is what the catch(OAuthException) in refreshAccessToken expects via normal STS flow.
    */
   private static class TestableIdentityPoolCredentials extends IdentityPoolCredentials {
     private final AtomicInteger exchangeCallCount = new AtomicInteger(0);
@@ -2533,8 +2525,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   /**
    * A test subclass that captures the HttpTransportFactory passed to
-   * exchangeExternalCredentialForAccessToken, allowing tests to verify cert pinning
-   * behavior without making real HTTP calls.
+   * exchangeExternalCredentialForAccessToken, allowing tests to verify cert pinning behavior
+   * without making real HTTP calls.
    */
   private static class TransportCapturingCredentials extends IdentityPoolCredentials {
     private final java.util.List<HttpTransportFactory> capturedFactories =
@@ -2558,4 +2550,3 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     }
   }
 }
-

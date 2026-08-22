@@ -209,11 +209,13 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
 
       checkArgument(
           (useDefault || locationIsPresent),
-          "Invalid 'certificate' configuration in credential source: Must specify either 'certificate_config_location' or set 'use_default_certificate_config' to true.");
+          "Invalid 'certificate' configuration in credential source: Must specify either"
+              + " 'certificate_config_location' or set 'use_default_certificate_config' to true.");
 
       checkArgument(
           !(useDefault && locationIsPresent),
-          "Invalid 'certificate' configuration in credential source: Cannot specify both 'certificate_config_location' and set 'use_default_certificate_config' to true.");
+          "Invalid 'certificate' configuration in credential source: Cannot specify both"
+              + " 'certificate_config_location' and set 'use_default_certificate_config' to true.");
 
       this.useDefaultCertificateConfig = useDefault;
       this.certificateConfigLocation = certificateConfigLocation;
@@ -281,7 +283,8 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
       this.certificateConfig = certificateConfigFromSourceMap(credentialSourceMap);
     } else {
       throw new IllegalArgumentException(
-          "Missing credential source file location, URL, or certificate. At least one must be specified.");
+          "Missing credential source file location, URL, or certificate. At least one must be"
+              + " specified.");
     }
 
     Map<String, String> headersMap = (Map<String, String>) credentialSourceMap.get("headers");
@@ -308,8 +311,7 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
         actorTokenFieldName = formatMap.get("actor_token_field_name");
         if (actorTokenFieldName != null) {
           if (actorTokenFieldName.trim().isEmpty()) {
-            throw new IllegalArgumentException(
-                "The actor_token_field_name must not be empty.");
+            throw new IllegalArgumentException("The actor_token_field_name must not be empty.");
           }
           if (actorTokenFieldName.equals(subjectTokenFieldName)) {
             throw new IllegalArgumentException(

@@ -78,7 +78,8 @@ class FileIdentityPoolSubjectTokenSupplier
   public String getActorToken(ExternalAccountSupplierContext context) throws IOException {
     if (credentialSource.credentialFormatType == CredentialFormatType.TEXT) {
       throw new IllegalArgumentException(
-          "Actor tokens are only supported for JSON-formatted credential files with distinct field names.");
+          "Actor tokens are only supported for JSON-formatted credential files with distinct field"
+              + " names.");
     }
     return getToken(credentialSource.actorTokenFieldName);
   }
@@ -152,16 +153,14 @@ class FileIdentityPoolSubjectTokenSupplier
       JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
       return parser.parseAndClose(inputStream, StandardCharsets.UTF_8, GenericJson.class);
     } catch (Exception e) {
-      throw new IOException(
-          "Error when attempting to read the token from the credential file.", e);
+      throw new IOException("Error when attempting to read the token from the credential file.", e);
     }
   }
 
   private static String extractField(GenericJson json, String fieldName) throws IOException {
     Object value = json.get(fieldName);
     if (value == null || Data.isNull(value)) {
-      throw new IOException(
-          "Invalid token field name. No token was found for field: " + fieldName);
+      throw new IOException("Invalid token field name. No token was found for field: " + fieldName);
     }
     return value.toString();
   }

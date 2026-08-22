@@ -265,7 +265,8 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     this.workforcePoolUserProject = builder.workforcePoolUserProject;
     if (workforcePoolUserProject != null && !isWorkforcePoolConfiguration()) {
       throw new IllegalArgumentException(
-          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool configuration.");
+          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool"
+              + " configuration.");
     }
 
     validateTokenUrl(tokenUrl);
@@ -537,9 +538,9 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   }
 
   /**
-   * Exchanges the external credential for a Google Cloud access token using the specified
-   * transport factory. This overload allows callers to provide a per-cycle transport factory,
-   * for example one pinned to a specific mTLS certificate.
+   * Exchanges the external credential for a Google Cloud access token using the specified transport
+   * factory. This overload allows callers to provide a per-cycle transport factory, for example one
+   * pinned to a specific mTLS certificate.
    *
    * @param stsTokenExchangeRequest the Security Token Service token exchange request
    * @param cycleTransportFactory the HTTP transport factory to use for this exchange
