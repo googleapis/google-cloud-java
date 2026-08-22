@@ -19,6 +19,7 @@ package com.google.cloud.bigtable.data.v2.models;
 import com.google.api.core.InternalApi;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
+import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import java.io.Serializable;
@@ -27,15 +28,32 @@ import javax.annotation.Nonnull;
 /** Wraps a {@link com.google.bigtable.v2.SampleRowKeysRequest}. */
 public final class SampleRowKeysRequest implements Serializable {
   private final TargetId targetId;
+  private final ByteStringRange rowRange;
 
-  private SampleRowKeysRequest(TargetId targetId) {
-    Preconditions.checkNotNull(targetId, "target id can't be null.");
-    this.targetId = targetId;
+  private SampleRowKeysRequest(Builder builder) {
+    this.targetId = Preconditions.checkNotNull(builder.targetId, "target id can't be null.");
+    this.rowRange = builder.rowRange;
   }
 
   /** Creates a new instance of the sample row keys builder for the given target with targetId */
   public static SampleRowKeysRequest create(TargetId targetId) {
-    return new SampleRowKeysRequest(targetId);
+    return newBuilder().setTargetId(targetId).build();
+  }
+
+  public static Builder newBuilder() {
+    return new Builder();
+  }
+
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  public TargetId getTargetId() {
+    return targetId;
+  }
+
+  public ByteStringRange getRowRange() {
+    return rowRange;
   }
 
   @InternalApi
@@ -50,6 +68,9 @@ public final class SampleRowKeysRequest implements Serializable {
       builder.setAuthorizedViewName(resourceName);
     } else {
       builder.setTableName(resourceName);
+    }
+    if (rowRange != null && !rowRange.equals(ByteStringRange.unbounded())) {
+      builder.setRowRange(rowRange.toProto());
     }
     return builder.setAppProfileId(requestContext.getAppProfileId()).build();
   }
@@ -67,11 +88,14 @@ public final class SampleRowKeysRequest implements Serializable {
     String authorizedViewName = request.getAuthorizedViewName();
     String materializedViewName = request.getMaterializedViewName();
 
-    SampleRowKeysRequest sampleRowKeysRequest =
-        SampleRowKeysRequest.create(
-            NameUtil.extractTargetId(tableName, authorizedViewName, materializedViewName));
-
-    return sampleRowKeysRequest;
+    Builder builder =
+        newBuilder()
+            .setTargetId(
+                NameUtil.extractTargetId(tableName, authorizedViewName, materializedViewName));
+    if (request.hasRowRange()) {
+      builder.setRowRange(ByteStringRange.fromProto(request.getRowRange()));
+    }
+    return builder.build();
   }
 
   @Override
@@ -83,11 +107,38 @@ public final class SampleRowKeysRequest implements Serializable {
       return false;
     }
     SampleRowKeysRequest sampleRowKeysRequest = (SampleRowKeysRequest) o;
-    return Objects.equal(targetId, sampleRowKeysRequest.targetId);
+    return Objects.equal(targetId, sampleRowKeysRequest.targetId)
+        && Objects.equal(rowRange, sampleRowKeysRequest.rowRange);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(targetId);
+    return Objects.hashCode(targetId, rowRange);
+  }
+
+  public static final class Builder {
+    private TargetId targetId;
+    private ByteStringRange rowRange = ByteStringRange.unbounded();
+
+    private Builder() {}
+
+    private Builder(SampleRowKeysRequest request) {
+      this.targetId = request.targetId;
+      this.rowRange = request.rowRange;
+    }
+
+    public Builder setTargetId(TargetId targetId) {
+      this.targetId = targetId;
+      return this;
+    }
+
+    public Builder setRowRange(ByteStringRange rowRange) {
+      this.rowRange = Preconditions.checkNotNull(rowRange, "rowRange can't be null.");
+      return this;
+    }
+
+    public SampleRowKeysRequest build() {
+      return new SampleRowKeysRequest(this);
+    }
   }
 }
