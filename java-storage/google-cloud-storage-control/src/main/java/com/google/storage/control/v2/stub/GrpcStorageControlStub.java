@@ -54,6 +54,8 @@ import com.google.storage.control.v2.DeleteFolderRecursiveRequest;
 import com.google.storage.control.v2.DeleteFolderRequest;
 import com.google.storage.control.v2.DeleteManagedFolderRequest;
 import com.google.storage.control.v2.DisableAnywhereCacheRequest;
+import com.google.storage.control.v2.DisableRapidCacheMetadata;
+import com.google.storage.control.v2.DisableRapidCacheRequest;
 import com.google.storage.control.v2.Folder;
 import com.google.storage.control.v2.GetAnywhereCacheRequest;
 import com.google.storage.control.v2.GetFolderIntelligenceConfigRequest;
@@ -342,6 +344,17 @@ public class GrpcStorageControlStub extends StorageControlStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<DisableRapidCacheRequest, Operation>
+      disableRapidCacheMethodDescriptor =
+          MethodDescriptor.<DisableRapidCacheRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storage.control.v2.StorageControl/DisableRapidCache")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DisableRapidCacheRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<GetRapidCacheRequest, RapidCache>
       getRapidCacheMethodDescriptor =
           MethodDescriptor.<GetRapidCacheRequest, RapidCache>newBuilder()
@@ -610,6 +623,9 @@ public class GrpcStorageControlStub extends StorageControlStub {
   private final UnaryCallable<UpdateRapidCacheRequest, Operation> updateRapidCacheCallable;
   private final OperationCallable<UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
       updateRapidCacheOperationCallable;
+  private final UnaryCallable<DisableRapidCacheRequest, Operation> disableRapidCacheCallable;
+  private final OperationCallable<DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+      disableRapidCacheOperationCallable;
   private final UnaryCallable<GetRapidCacheRequest, RapidCache> getRapidCacheCallable;
   private final UnaryCallable<ListRapidCachesRequest, ListRapidCachesResponse>
       listRapidCachesCallable;
@@ -700,6 +716,8 @@ public class GrpcStorageControlStub extends StorageControlStub {
   private static final PathTemplate CREATE_RAPID_CACHE_0_PATH_TEMPLATE =
       PathTemplate.create("{bucket=**}");
   private static final PathTemplate UPDATE_RAPID_CACHE_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
+  private static final PathTemplate DISABLE_RAPID_CACHE_0_PATH_TEMPLATE =
       PathTemplate.create("{bucket=projects/*/buckets/*}/**");
   private static final PathTemplate GET_RAPID_CACHE_0_PATH_TEMPLATE =
       PathTemplate.create("{bucket=projects/*/buckets/*}/**");
@@ -1154,6 +1172,17 @@ public class GrpcStorageControlStub extends StorageControlStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<DisableRapidCacheRequest, Operation> disableRapidCacheTransportSettings =
+        GrpcCallSettings.<DisableRapidCacheRequest, Operation>newBuilder()
+            .setMethodDescriptor(disableRapidCacheMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "bucket", DISABLE_RAPID_CACHE_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
     GrpcCallSettings<GetRapidCacheRequest, RapidCache> getRapidCacheTransportSettings =
         GrpcCallSettings.<GetRapidCacheRequest, RapidCache>newBuilder()
             .setMethodDescriptor(getRapidCacheMethodDescriptor)
@@ -1510,6 +1539,17 @@ public class GrpcStorageControlStub extends StorageControlStub {
             settings.updateRapidCacheOperationSettings(),
             clientContext,
             operationsStub);
+    this.disableRapidCacheCallable =
+        callableFactory.createUnaryCallable(
+            disableRapidCacheTransportSettings,
+            settings.disableRapidCacheSettings(),
+            clientContext);
+    this.disableRapidCacheOperationCallable =
+        callableFactory.createOperationCallable(
+            disableRapidCacheTransportSettings,
+            settings.disableRapidCacheOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getRapidCacheCallable =
         callableFactory.createUnaryCallable(
             getRapidCacheTransportSettings, settings.getRapidCacheSettings(), clientContext);
@@ -1772,6 +1812,17 @@ public class GrpcStorageControlStub extends StorageControlStub {
   public OperationCallable<UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
       updateRapidCacheOperationCallable() {
     return updateRapidCacheOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DisableRapidCacheRequest, Operation> disableRapidCacheCallable() {
+    return disableRapidCacheCallable;
+  }
+
+  @Override
+  public OperationCallable<DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+      disableRapidCacheOperationCallable() {
+    return disableRapidCacheOperationCallable;
   }
 
   @Override

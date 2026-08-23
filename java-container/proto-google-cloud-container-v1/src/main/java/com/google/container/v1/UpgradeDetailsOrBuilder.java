@@ -207,4 +207,56 @@ public interface UpgradeDetailsOrBuilder
    * @return The startType.
    */
   com.google.container.v1.UpgradeDetails.StartType getStartType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The emulated version before the upgrade.
+   * </pre>
+   *
+   * <code>string initial_emulated_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The initialEmulatedVersion.
+   */
+  java.lang.String getInitialEmulatedVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The emulated version before the upgrade.
+   * </pre>
+   *
+   * <code>string initial_emulated_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for initialEmulatedVersion.
+   */
+  com.google.protobuf.ByteString getInitialEmulatedVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The emulated version after the upgrade.
+   * </pre>
+   *
+   * <code>string target_emulated_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The targetEmulatedVersion.
+   */
+  java.lang.String getTargetEmulatedVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The emulated version after the upgrade.
+   * </pre>
+   *
+   * <code>string target_emulated_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for targetEmulatedVersion.
+   */
+  com.google.protobuf.ByteString getTargetEmulatedVersionBytes();
 }
