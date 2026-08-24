@@ -80,7 +80,6 @@ google-cloud-contentwarehouse: https://cloud.google.com/document-warehouse/docs/
   Document AI Warehouse
 google-cloud-core: n/a, Google Cloud Core
 google-cloud-data-fusion: https://cloud.google.com/data-fusion/docs, Cloud Data Fusion
-google-cloud-datacatalog: https://cloud.google.com/data-catalog, Data Catalog
 google-cloud-dataflow: https://cloud.google.com/dataflow/docs, Dataflow
 google-cloud-dataform: https://cloud.google.com/dataform/docs, Cloud Dataform
 google-cloud-datalabeling: https://cloud.google.com/ai-platform/data-labeling/docs/,
