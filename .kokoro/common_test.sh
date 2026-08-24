@@ -49,17 +49,20 @@ function test_update_pom_dependency {
 
   update_pom_dependency . truth "99.88.77"
 
-  xmllint --shell pom.xml &>/dev/null <<EOF
-setns x=http://maven.apache.org/POM/4.0.0
-cd .//x:artifactId[text()="truth"]
-cd ../x:version
-write found-version.txt
-EOF
-  if ! grep 99.88.77 found-version.txt &>/dev/null; then
+  version=$(python3 -c "
+import xml.etree.ElementTree as ET
+root = ET.parse('pom.xml').getroot()
+for elem in root.iter():
+    art = elem.find('{*}artifactId')
+    ver = elem.find('{*}version')
+    if art is not None and art.text == 'truth' and ver is not None:
+        print(ver.text)
+        break
+")
+  if [ "$version" != "99.88.77" ]; then
     echo "update_pom_dependency failed to change version to expected value."
     exit 1
   fi
-  rm found-version.txt
   popd
 }
 

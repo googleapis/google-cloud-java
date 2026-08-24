@@ -17,13 +17,19 @@ set -eo pipefail
 set -x
 
 function modify_shared_config() {
-  xmllint --shell pom.xml <<EOF
-  setns x=http://maven.apache.org/POM/4.0.0
-  cd .//x:artifactId[text()="google-cloud-shared-config"]
-  cd ../x:version
-  set ${SHARED_CONFIG_VERSION}
-  save pom.xml
-EOF
+  python3 -c "
+import xml.etree.ElementTree as ET, sys
+file = 'pom.xml'
+ET.register_namespace('', 'http://maven.apache.org/POM/4.0.0')
+tree = ET.parse(file)
+root = tree.getroot()
+for elem in root.iter():
+    art = elem.find('{*}artifactId')
+    ver = elem.find('{*}version')
+    if art is not None and art.text == 'google-cloud-shared-config' and ver is not None:
+        ver.text = sys.argv[1]
+tree.write(file, encoding='utf-8', xml_declaration=True)
+" "${SHARED_CONFIG_VERSION}"
 }
 
 ## Get the directory of the build script and install all modules in the monorepo
@@ -36,7 +42,12 @@ mvn -B -ntp install -Dcheckstyle.skip -Dfmt.skip -DskipTests
 
 # Get the version of java-shared-config under test
 VERSION_POM=java-shared-config/java-shared-config/pom.xml
-SHARED_CONFIG_VERSION=$(sed -e 's/xmlns=".*"//' ${VERSION_POM} | xmllint --xpath '/project/version/text()' -)
+SHARED_CONFIG_VERSION=$(python3 -c "
+import xml.etree.ElementTree as ET
+root = ET.parse('${VERSION_POM}').getroot()
+v = root.find('{*}version') or root.find('{*}parent/{*}version')
+print(v.text if v is not None and v.text else '')
+")
 
 # Use GCP Maven Mirror (as in original script)
 mkdir -p "${HOME}/.m2"

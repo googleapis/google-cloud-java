@@ -11,12 +11,20 @@ function find_existing_version_pom() {
     echo "Empty pom file name"
     exit 1
   fi
-  local group_id=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="groupId"]/text()' \
-      "${pom_file}")
-  local artifact_id=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="artifactId"]/text()' \
-      "${pom_file}")
-  local version=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="version"]/text()' \
-      "${pom_file}")
+  local group_id
+  local artifact_id
+  local version
+  read -r group_id artifact_id version < <(python3 -c "
+import xml.etree.ElementTree as ET, sys
+try:
+    root = ET.parse(sys.argv[1]).getroot()
+    gid = root.find('{*}groupId')
+    aid = root.find('{*}artifactId')
+    ver = root.find('{*}version')
+    print(f\"{gid.text if gid is not None and gid.text else ''} {aid.text if aid is not None and aid.text else ''} {ver.text if ver is not None and ver.text else ''}\")
+except Exception:
+    print('  ')
+" "${pom_file}")
   echo -n "Checking ${group_id}:${artifact_id}:${version}:"
   if [ -z "${artifact_id}" ]; then
     echo "Couldn't parse artifact_id in the pom file: $pom_file"
