@@ -61,7 +61,7 @@ import org.jspecify.annotations.Nullable;
 class FileIdentityPoolSubjectTokenSupplier
     implements IdentityPoolSubjectTokenSupplier, IdentityPoolActorTokenSupplier {
 
-  private static final long serialVersionUID = 2475549052347431992L;
+  private static final long serialVersionUID = 7152208690659890358L;
 
   private final IdentityPoolCredentialSource credentialSource;
 

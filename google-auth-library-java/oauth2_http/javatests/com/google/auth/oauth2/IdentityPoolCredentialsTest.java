@@ -52,18 +52,23 @@ import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.mtls.X509Provider;
 import com.google.auth.oauth2.GoogleCredentials.GoogleCredentialsInfo;
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
+import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
 import java.util.Arrays;
+import java.util.Base64;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,6 +82,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.io.TempDir;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 /** Tests for {@link IdentityPoolCredentials}. */
@@ -90,6 +96,22 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   private static final IdentityPoolActorTokenSupplier testActorSupplier =
       (ExternalAccountSupplierContext context) -> "testActorToken";
+
+  private static KeyStore createPopulatedKeyStore() {
+    try {
+      KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+      ks.load(null, null);
+      CertificateFactory cf = CertificateFactory.getInstance("X.509");
+      try (FileInputStream fis =
+          new FileInputStream(new File("testresources/mtls/test_cert.pem"))) {
+        Certificate cert = cf.generateCertificate(fis);
+        ks.setCertificateEntry("test-alias", cert);
+      }
+      return ks;
+    } catch (Exception e) {
+      throw new RuntimeException("Failed to create test KeyStore", e);
+    }
+  }
 
   @Test
   void createdScoped_clonedCredentialWithAddedScopes() {
@@ -1446,8 +1468,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   @Test
   void builder_supplierSourcedActorToken() throws Exception {
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+    KeyStore ks = createPopulatedKeyStore();
     MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
 
     IdentityPoolCredentials credentials =
@@ -1467,8 +1488,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   @Test
   void createScoped_supplierSourcedWithActorToken_preservesCustomSuppliers() throws Exception {
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+    KeyStore ks = createPopulatedKeyStore();
     MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
 
     IdentityPoolCredentials credentials =
@@ -1502,8 +1522,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     IdentityPoolCredentialSource credentialSource =
         createFileCredentialSource("credential.json", formatMap);
 
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+    KeyStore ks = createPopulatedKeyStore();
     MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
 
     IdentityPoolCredentials credentials =
@@ -1535,43 +1554,44 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   @Test
   void refreshAccessToken_withActorToken_injectsActingPartyIntoStsRequest() throws Exception {
-    MockExternalAccountCredentialsTransportFactory transportFactory =
+    MockExternalAccountCredentialsTransportFactory mockTransportFactory =
         new MockExternalAccountCredentialsTransportFactory();
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
-    MtlsHttpTransportFactory mtlsTransport =
-        new MtlsHttpTransportFactory(ks) {
+    KeyStore ks = createPopulatedKeyStore();
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
+
+    IdentityPoolCredentials credential =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setSubjectTokenSupplier(testProvider)
+                .setActorTokenSupplier(testActorSupplier)
+                .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(mockTransportFactory.transport.getStsUrl())
+                .setHttpTransportFactory(mtlsTransport)) {
           @Override
-          public com.google.api.client.http.HttpTransport create() {
-            return transportFactory.create();
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory)
+              throws IOException {
+            return super.exchangeExternalCredentialForAccessToken(
+                stsTokenExchangeRequest, mockTransportFactory);
           }
         };
 
-    IdentityPoolCredentials credential =
-        IdentityPoolCredentials.newBuilder()
-            .setSubjectTokenSupplier(testProvider)
-            .setActorTokenSupplier(testActorSupplier)
-            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
-            .setAudience(
-                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
-            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
-            .setTokenUrl(transportFactory.transport.getStsUrl())
-            .setHttpTransportFactory(mtlsTransport)
-            .build();
-
     AccessToken token = credential.refreshAccessToken();
-    assertEquals(transportFactory.transport.getAccessToken(), token.getTokenValue());
+    assertEquals(mockTransportFactory.transport.getAccessToken(), token.getTokenValue());
 
     Map<String, String> query =
-        TestUtils.parseQuery(transportFactory.transport.getLastRequest().getContentAsString());
+        TestUtils.parseQuery(mockTransportFactory.transport.getLastRequest().getContentAsString());
     assertEquals("testActorToken", query.get("actor_token"));
     assertEquals("urn:ietf:params:oauth:token-type:jwt", query.get("actor_token_type"));
   }
 
   @Test
   void serialization_withX509Provider_succeeds() throws Exception {
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+    KeyStore ks = createPopulatedKeyStore();
     MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
     X509Provider x509Provider = new TestX509Provider(ks, "certificate_config_location");
 
@@ -1618,8 +1638,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     IdentityPoolCredentialSource credentialSource = new IdentityPoolCredentialSource(sourceMap);
 
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+    KeyStore ks = createPopulatedKeyStore();
     X509Provider x509Provider = new TestX509Provider(ks, "certificate_config_location");
 
     IdentityPoolCredentials credentials =
@@ -1638,8 +1657,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   @Test
   void toBuilder_preservesConfiguration() throws Exception {
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+    KeyStore ks = createPopulatedKeyStore();
     MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
 
     IdentityPoolCredentials credentials =
@@ -1663,8 +1681,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   @Test
   void builder_actorTokenWithX509Provider_succeeds() throws Exception {
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+    KeyStore ks = createPopulatedKeyStore();
     X509Provider x509Provider = new TestX509Provider(ks, "certificate_config_location");
     MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
 
@@ -1686,8 +1703,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   @Test
   void toBuilder_preservesActorTokenType() throws Exception {
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+    KeyStore ks = createPopulatedKeyStore();
     MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
 
     IdentityPoolCredentials credentials =
@@ -1753,11 +1769,42 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void mtlsHttpTransportFactory_hasKeyStore_withKeyStore_returnsTrue() throws Exception {
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+  void builder_actorTokenWithEmptyMtlsFactory_throws() throws Exception {
+    KeyStore emptyKeyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+    emptyKeyStore.load(null, null);
+    MtlsHttpTransportFactory emptyFactory = new MtlsHttpTransportFactory(emptyKeyStore);
+    assertFalse(emptyFactory.hasKeyStore());
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setSubjectTokenSupplier(testProvider)
+                    .setActorTokenSupplier(testActorSupplier)
+                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setHttpTransportFactory(emptyFactory)
+                    .setAudience("audience")
+                    .setSubjectTokenType("subjectTokenType")
+                    .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+                    .build());
+    assertTrue(
+        e.getMessage().contains("Actor tokens are only supported for mTLS token exchanges."));
+  }
+
+  @Test
+  void mtlsHttpTransportFactory_hasKeyStore_withPopulatedKeyStore_returnsTrue() throws Exception {
+    KeyStore ks = createPopulatedKeyStore();
     MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(ks);
     assertTrue(factory.hasKeyStore());
+  }
+
+  @Test
+  void mtlsHttpTransportFactory_hasKeyStore_withEmptyKeyStore_returnsFalse() throws Exception {
+    KeyStore emptyKeyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+    emptyKeyStore.load(null, null);
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(emptyKeyStore);
+    assertFalse(factory.hasKeyStore());
   }
 
   @Test
@@ -1774,8 +1821,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   void refreshAccessToken_useSameCertForStsAndIam() throws Exception {
     // Verify that both STS and IAM use the same transport factory (from the same KeyStore
     // snapshot) within one refresh cycle.
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+    KeyStore ks = createPopulatedKeyStore();
 
     AtomicInteger getKeyStoreCallCount = new AtomicInteger(0);
     X509Provider x509Provider =
@@ -1790,13 +1836,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     MockExternalAccountCredentialsTransportFactory transportFactory =
         new MockExternalAccountCredentialsTransportFactory();
 
-    MtlsHttpTransportFactory mtlsTransport =
-        new MtlsHttpTransportFactory(ks) {
-          @Override
-          public HttpTransport create() {
-            return transportFactory.create();
-          }
-        };
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
 
     // Use TransportCapturingCredentials so we can capture the factory passed to exchange.
     TransportCapturingCredentials credential =
@@ -1825,10 +1865,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   @Test
   void refreshAccessToken_certRotationBetweenCycles_usesNewCert() throws Exception {
     // First refresh uses cert A, rotate the provider, second refresh uses cert B.
-    KeyStore ksA = KeyStore.getInstance(KeyStore.getDefaultType());
-    ksA.load(null, null);
-    KeyStore ksB = KeyStore.getInstance(KeyStore.getDefaultType());
-    ksB.load(null, null);
+    KeyStore ksA = createPopulatedKeyStore();
+    KeyStore ksB = createPopulatedKeyStore();
 
     AtomicInteger callCount = new AtomicInteger(0);
     X509Provider rotatingProvider =
@@ -1842,13 +1880,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     MockExternalAccountCredentialsTransportFactory transportFactory =
         new MockExternalAccountCredentialsTransportFactory();
 
-    MtlsHttpTransportFactory mtlsTransport =
-        new MtlsHttpTransportFactory(ksA) {
-          @Override
-          public HttpTransport create() {
-            return transportFactory.create();
-          }
-        };
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ksA);
 
     TransportCapturingCredentials credential =
         new TransportCapturingCredentials(
@@ -1882,10 +1914,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   @Test
   void refreshAccessToken_401Retry_reReadsFromDisk() throws Exception {
     // On 401, the code should re-read from X509Provider to get fresh certs and retry.
-    KeyStore ksA = KeyStore.getInstance(KeyStore.getDefaultType());
-    ksA.load(null, null);
-    KeyStore ksB = KeyStore.getInstance(KeyStore.getDefaultType());
-    ksB.load(null, null);
+    KeyStore ksA = createPopulatedKeyStore();
+    KeyStore ksB = createPopulatedKeyStore();
 
     AtomicInteger callCount = new AtomicInteger(0);
     X509Provider rotatingProvider =
@@ -1901,13 +1931,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     MockExternalAccountCredentialsTransportFactory transportFactory =
         new MockExternalAccountCredentialsTransportFactory();
 
-    MtlsHttpTransportFactory mtlsTransport =
-        new MtlsHttpTransportFactory(ksA) {
-          @Override
-          public HttpTransport create() {
-            return transportFactory.create();
-          }
-        };
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ksA);
 
     // Testable credential: throws 401 on first exchange, succeeds on retry.
     TestableIdentityPoolCredentials credential =
@@ -1955,8 +1979,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   @Test
   void refreshAccessToken_401Retry_secondAttemptFails_throws() throws Exception {
     // 401 → retry → retry also fails → exception propagates.
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+    KeyStore ks = createPopulatedKeyStore();
 
     X509Provider provider =
         new X509Provider() {
@@ -1969,13 +1992,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     MockExternalAccountCredentialsTransportFactory transportFactory =
         new MockExternalAccountCredentialsTransportFactory();
 
-    MtlsHttpTransportFactory mtlsTransport =
-        new MtlsHttpTransportFactory(ks) {
-          @Override
-          public HttpTransport create() {
-            return transportFactory.create();
-          }
-        };
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
 
     // Testable credential that always throws 401 (both first and retry).
     TestableIdentityPoolCredentials credential =
@@ -2002,8 +2019,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     // When a 401 triggers retry but X509Provider.getKeyStore() throws on the retry,
     // the IOException from cert loading should be thrown with the original OAuthException
     // as a suppressed exception.
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+    KeyStore ks = createPopulatedKeyStore();
 
     AtomicInteger providerCallCount = new AtomicInteger(0);
     X509Provider failingOnRetryProvider =
@@ -2023,13 +2039,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     MockExternalAccountCredentialsTransportFactory transportFactory =
         new MockExternalAccountCredentialsTransportFactory();
 
-    MtlsHttpTransportFactory mtlsTransport =
-        new MtlsHttpTransportFactory(ks) {
-          @Override
-          public HttpTransport create() {
-            return transportFactory.create();
-          }
-        };
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
 
     // Testable credential: throws 401 on first exchange to trigger retry path.
     TestableIdentityPoolCredentials credential =
@@ -2077,29 +2087,31 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     IdentityPoolCredentialSource credentialSource =
         createFileCredentialSource(file.getAbsolutePath(), formatMap);
 
-    MockExternalAccountCredentialsTransportFactory transportFactory =
+    MockExternalAccountCredentialsTransportFactory mockTransportFactory =
         new MockExternalAccountCredentialsTransportFactory();
 
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
-    MtlsHttpTransportFactory mtlsTransport =
-        new MtlsHttpTransportFactory(ks) {
-          @Override
-          public HttpTransport create() {
-            return transportFactory.create();
-          }
-        };
+    KeyStore ks = createPopulatedKeyStore();
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
 
     IdentityPoolCredentials credential =
-        IdentityPoolCredentials.newBuilder()
-            .setCredentialSource(credentialSource)
-            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
-            .setAudience(
-                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
-            .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
-            .setTokenUrl(transportFactory.transport.getStsUrl())
-            .setHttpTransportFactory(mtlsTransport)
-            .build();
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setCredentialSource(credentialSource)
+                .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setTokenUrl(mockTransportFactory.transport.getStsUrl())
+                .setHttpTransportFactory(mtlsTransport)) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory)
+              throws IOException {
+            return super.exchangeExternalCredentialForAccessToken(
+                stsTokenExchangeRequest, mockTransportFactory);
+          }
+        };
 
     // The subject and actor suppliers should be the same instance (both FileIdentityPool...)
     assertSame(
@@ -2113,7 +2125,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     // Verify the STS request included the actor token from the file
     Map<String, String> query =
-        TestUtils.parseQuery(transportFactory.transport.getLastRequest().getContentAsString());
+        TestUtils.parseQuery(mockTransportFactory.transport.getLastRequest().getContentAsString());
     assertEquals("myActorToken", query.get("actor_token"));
     assertEquals("urn:ietf:params:oauth:token-type:jwt", query.get("actor_token_type"));
   }
@@ -2126,10 +2138,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   void refreshAccessToken_concurrent_eachGetOwnSnapshot() throws Exception {
     // Two threads refresh simultaneously. Each should get their own KeyStore snapshot.
     AtomicInteger getKeyStoreCount = new AtomicInteger(0);
-    KeyStore ks1 = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks1.load(null, null);
-    KeyStore ks2 = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks2.load(null, null);
+    KeyStore ks1 = createPopulatedKeyStore();
+    KeyStore ks2 = createPopulatedKeyStore();
 
     X509Provider countingProvider =
         new X509Provider() {
@@ -2143,13 +2153,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     MockExternalAccountCredentialsTransportFactory transportFactory =
         new MockExternalAccountCredentialsTransportFactory();
 
-    MtlsHttpTransportFactory mtlsTransport =
-        new MtlsHttpTransportFactory(ks1) {
-          @Override
-          public HttpTransport create() {
-            return transportFactory.create();
-          }
-        };
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks1);
 
     TransportCapturingCredentials credential =
         new TransportCapturingCredentials(
@@ -2200,10 +2204,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     // Thread B gets a 401, causing a retry with a fresh cert from X509Provider.
     // Verify that Thread B's retry (re-read from X509Provider) does not affect Thread A's
     // transport — each thread has its own local cycleTransportFactory.
-    KeyStore ksInitial = KeyStore.getInstance(KeyStore.getDefaultType());
-    ksInitial.load(null, null);
-    KeyStore ksRetry = KeyStore.getInstance(KeyStore.getDefaultType());
-    ksRetry.load(null, null);
+    KeyStore ksInitial = createPopulatedKeyStore();
+    KeyStore ksRetry = createPopulatedKeyStore();
 
     AtomicInteger getKeyStoreCount = new AtomicInteger(0);
     X509Provider provider =
@@ -2220,13 +2222,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     MockExternalAccountCredentialsTransportFactory transportFactory =
         new MockExternalAccountCredentialsTransportFactory();
 
-    MtlsHttpTransportFactory mtlsTransport =
-        new MtlsHttpTransportFactory(ksInitial) {
-          @Override
-          public HttpTransport create() {
-            return transportFactory.create();
-          }
-        };
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ksInitial);
 
     // Use a credential where one thread gets a 401 (first exchange fails) and the other
     // succeeds. The AtomicInteger tracks per-thread exchange behavior.
@@ -2298,10 +2294,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     // Cert rotates mid-refresh (during the exchange call).
     // Verify the transport factory used in exchange is the one pinned at snapshot time,
     // not the rotated cert.
-    KeyStore ksOriginal = KeyStore.getInstance(KeyStore.getDefaultType());
-    ksOriginal.load(null, null);
-    KeyStore ksRotated = KeyStore.getInstance(KeyStore.getDefaultType());
-    ksRotated.load(null, null);
+    KeyStore ksOriginal = createPopulatedKeyStore();
+    KeyStore ksRotated = createPopulatedKeyStore();
 
     AtomicReference<KeyStore> currentKeyStore = new AtomicReference<>(ksOriginal);
     AtomicInteger snapshotCount = new AtomicInteger(0);
@@ -2318,13 +2312,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     MockExternalAccountCredentialsTransportFactory transportFactory =
         new MockExternalAccountCredentialsTransportFactory();
 
-    MtlsHttpTransportFactory mtlsTransport =
-        new MtlsHttpTransportFactory(ksOriginal) {
-          @Override
-          public HttpTransport create() {
-            return transportFactory.create();
-          }
-        };
+    MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ksOriginal);
 
     // A credential that rotates the cert DURING the exchange call, then captures
     // the transport factory to verify it's still the original pinned one.
@@ -2406,8 +2394,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   @Test
   void serialize_deserialize_withActorTokenConfig_roundTrips() throws Exception {
-    KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-    ks.load(null, null);
+    KeyStore ks = createPopulatedKeyStore();
     MtlsHttpTransportFactory mtlsTransport = new MtlsHttpTransportFactory(ks);
 
     IdentityPoolCredentials credentials =
@@ -2434,43 +2421,355 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals(credentials.getActorTokenType(), deserialized.getActorTokenType());
   }
 
+  private static final String PRE_PR_SERIALIZED_BYTES_BASE64 =
+      "rO0ABXNyAC5jb20uZ29vZ2xlLmF1dGgub2F1dGgyLklkZW50aXR5UG9vbENyZWRlbnRpYWxzIkrrZ4jpHOkCAAVMABJh"
+          + "Y3RvclRva2VuU3VwcGxpZXJ0ADdMY29tL2dvb2dsZS9hdXRoL29hdXRoMi9JZGVudGl0eVBvb2xBY3RvclRva2Vu"
+          + "U3VwcGxpZXI7TAAOYWN0b3JUb2tlblR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMABJtZXRyaWNzSGVhZGVyVmFs"
+          + "dWVxAH4AAkwAFHN1YmplY3RUb2tlblN1cHBsaWVydAA5TGNvbS9nb29nbGUvYXV0aC9vYXV0aDIvSWRlbnRpdHlQ"
+          + "b29sU3ViamVjdFRva2VuU3VwcGxpZXI7TAAPc3VwcGxpZXJDb250ZXh0dAA3TGNvbS9nb29nbGUvYXV0aC9vYXV0"
+          + "aDIvRXh0ZXJuYWxBY2NvdW50U3VwcGxpZXJDb250ZXh0O3hyADFjb20uZ29vZ2xlLmF1dGgub2F1dGgyLkV4dGVy"
+          + "bmFsQWNjb3VudENyZWRlbnRpYWxzb7Q9oKQPk/8CABBMAAhhdWRpZW5jZXEAfgACTAAIY2xpZW50SWRxAH4AAkwA"
+          + "DGNsaWVudFNlY3JldHEAfgACTAAQY3JlZGVudGlhbFNvdXJjZXQARExjb20vZ29vZ2xlL2F1dGgvb2F1dGgyL0V4"
+          + "dGVybmFsQWNjb3VudENyZWRlbnRpYWxzJENyZWRlbnRpYWxTb3VyY2U7TAATZW52aXJvbm1lbnRQcm92aWRlcnQA"
+          + "LExjb20vZ29vZ2xlL2F1dGgvb2F1dGgyL0Vudmlyb25tZW50UHJvdmlkZXI7TAAXaW1wZXJzb25hdGVkQ3JlZGVu"
+          + "dGlhbHN0ADBMY29tL2dvb2dsZS9hdXRoL29hdXRoMi9JbXBlcnNvbmF0ZWRDcmVkZW50aWFscztMAA5tZXRyaWNz"
+          + "SGFuZGxlcnQANkxjb20vZ29vZ2xlL2F1dGgvb2F1dGgyL0V4dGVybmFsQWNjb3VudE1ldHJpY3NIYW5kbGVyO0wA"
+          + "EHByb3BlcnR5UHJvdmlkZXJ0AClMY29tL2dvb2dsZS9hdXRoL29hdXRoMi9Qcm9wZXJ0eVByb3ZpZGVyO0wABnNj"
+          + "b3Blc3QAFkxqYXZhL3V0aWwvQ29sbGVjdGlvbjtMACJzZXJ2aWNlQWNjb3VudEltcGVyc29uYXRpb25PcHRpb25z"
+          + "dABWTGNvbS9nb29nbGUvYXV0aC9vYXV0aDIvRXh0ZXJuYWxBY2NvdW50Q3JlZGVudGlhbHMkU2VydmljZUFjY291"
+          + "bnRJbXBlcnNvbmF0aW9uT3B0aW9ucztMAB5zZXJ2aWNlQWNjb3VudEltcGVyc29uYXRpb25VcmxxAH4AAkwAEHN1"
+          + "YmplY3RUb2tlblR5cGVxAH4AAkwADHRva2VuSW5mb1VybHEAfgACTAAIdG9rZW5VcmxxAH4AAkwAGXRyYW5zcG9y"
+          + "dEZhY3RvcnlDbGFzc05hbWVxAH4AAkwAGHdvcmtmb3JjZVBvb2xVc2VyUHJvamVjdHEAfgACeHIAKGNvbS5nb29n"
+          + "bGUuYXV0aC5vYXV0aDIuR29vZ2xlQ3JlZGVudGlhbHPq3b3FouFfJQIABVoAGGlzRXhwbGljaXRVbml2ZXJzZURv"
+          + "bWFpbkwABG5hbWVxAH4AAkwADnF1b3RhUHJvamVjdElkcQB+AAJMAAZzb3VyY2VxAH4AAkwADnVuaXZlcnNlRG9t"
+          + "YWlucQB+AAJ4cgAoY29tLmdvb2dsZS5hdXRoLm9hdXRoMi5PQXV0aDJDcmVkZW50aWFscz89fXrppVFXAgAETAAQ"
+          + "ZXhwaXJhdGlvbk1hcmdpbnQAFExqYXZhL3RpbWUvRHVyYXRpb247TAAEbG9ja3QAEkxqYXZhL2xhbmcvT2JqZWN0"
+          + "O0wADXJlZnJlc2hNYXJnaW5xAH4AD0wABXZhbHVldAA1TGNvbS9nb29nbGUvYXV0aC9vYXV0aDIvT0F1dGgyQ3Jl"
+          + "ZGVudGlhbHMkT0F1dGhWYWx1ZTt4cgAbY29tLmdvb2dsZS5hdXRoLkNyZWRlbnRpYWxzCzii14w9kIECAAB4cHNy"
+          + "AA1qYXZhLnRpbWUuU2VylV2EuhsiSLIMAAB4cHcNAQAAAAAAAAC0AAAAAHh1cgACW0Ks8xf4BghU4AIAAHhwAAAA"
+          + "AHNxAH4AFHcNAQAAAAAAAADhAAAAAHhwAHQAHEV4dGVybmFsIEFjY291bnQgQ3JlZGVudGlhbHN0AA5xdW90YVBy"
+          + "b2plY3RJZHB0AA5nb29nbGVhcGlzLmNvbXQAYC8vaWFtLmdvb2dsZWFwaXMuY29tL3Byb2plY3RzLzEyMy9sb2Nh"
+          + "dGlvbnMvZ2xvYmFsL3dvcmtsb2FkSWRlbnRpdHlQb29scy9wb29sL3Byb3ZpZGVycy9wcm92aWRlcnQACGNsaWVu"
+          + "dElkdAAMY2xpZW50U2VjcmV0c3IAM2NvbS5nb29nbGUuYXV0aC5vYXV0aDIuSWRlbnRpdHlQb29sQ3JlZGVudGlh"
+          + "bFNvdXJjZfWmMJrBt+rCAgAHTAATYWN0b3JUb2tlbkZpZWxkTmFtZXEAfgACTAARY2VydGlmaWNhdGVDb25maWd0"
+          + "AEdMY29tL2dvb2dsZS9hdXRoL29hdXRoMi9JZGVudGl0eVBvb2xDcmVkZW50aWFsU291cmNlJENlcnRpZmljYXRl"
+          + "Q29uZmlnO0wAFGNyZWRlbnRpYWxGb3JtYXRUeXBldABKTGNvbS9nb29nbGUvYXV0aC9vYXV0aDIvSWRlbnRpdHlQ"
+          + "b29sQ3JlZGVudGlhbFNvdXJjZSRDcmVkZW50aWFsRm9ybWF0VHlwZTtMABJjcmVkZW50aWFsTG9jYXRpb25xAH4A"
+          + "AkwAFGNyZWRlbnRpYWxTb3VyY2VUeXBldABWTGNvbS9nb29nbGUvYXV0aC9vYXV0aDIvSWRlbnRpdHlQb29sQ3Jl"
+          + "ZGVudGlhbFNvdXJjZSRJZGVudGl0eVBvb2xDcmVkZW50aWFsU291cmNlVHlwZTtMAAdoZWFkZXJzdAAPTGphdmEv"
+          + "dXRpbC9NYXA7TAAVc3ViamVjdFRva2VuRmllbGROYW1lcQB+AAJ4cgBCY29tLmdvb2dsZS5hdXRoLm9hdXRoMi5F"
+          + "eHRlcm5hbEFjY291bnRDcmVkZW50aWFscyRDcmVkZW50aWFsU291cmNlcdzMzznPiMgCAAB4cHBwfnIASGNvbS5n"
+          + "b29nbGUuYXV0aC5vYXV0aDIuSWRlbnRpdHlQb29sQ3JlZGVudGlhbFNvdXJjZSRDcmVkZW50aWFsRm9ybWF0VHlw"
+          + "ZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABFRFWFR0AARmaWxlfnIAVGNvbS5n"
+          + "b29nbGUuYXV0aC5vYXV0aDIuSWRlbnRpdHlQb29sQ3JlZGVudGlhbFNvdXJjZSRJZGVudGl0eVBvb2xDcmVkZW50"
+          + "aWFsU291cmNlVHlwZQAAAAAAAAAAEgAAeHEAfgAndAAERklMRXBwc3IAMGNvbS5nb29nbGUuYXV0aC5vYXV0aDIu"
+          + "U3lzdGVtRW52aXJvbm1lbnRQcm92aWRlcr7Mw9ZYOzw0AgAAeHBwc3IANGNvbS5nb29nbGUuYXV0aC5vYXV0aDIu"
+          + "RXh0ZXJuYWxBY2NvdW50TWV0cmljc0hhbmRsZXILhDC5uzFxHgIAA1oADmNvbmZpZ0xpZmV0aW1lWgAPc2FJbXBl"
+          + "cnNvbmF0aW9uTAALY3JlZGVudGlhbHN0ADNMY29tL2dvb2dsZS9hdXRoL29hdXRoMi9FeHRlcm5hbEFjY291bnRD"
+          + "cmVkZW50aWFsczt4cAAAc3EAfgAAcQB+ABV1cQB+ABYAAAAAcQB+ABhwAHEAfgAZcHBxAH4AG3EAfgAccHBxAH4A"
+          + "JXEAfgAvcHEAfgAyc3IALWNvbS5nb29nbGUuYXV0aC5vYXV0aDIuU3lzdGVtUHJvcGVydHlQcm92aWRlcgAAAAAA"
+          + "AAABAgAAeHBzcgAjamF2YS51dGlsLkNvbGxlY3Rpb25zJFNpbmdsZXRvbkxpc3Qq7ykQPKeblwIAAUwAB2VsZW1l"
+          + "bnRxAH4AEHhwdAAuaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybXNyAFRjb20u"
+          + "Z29vZ2xlLmF1dGgub2F1dGgyLkV4dGVybmFsQWNjb3VudENyZWRlbnRpYWxzJFNlcnZpY2VBY2NvdW50SW1wZXJz"
+          + "b25hdGlvbk9wdGlvbnM6/caKmTx8+QIAAloAHGN1c3RvbVRva2VuTGlmZXRpbWVSZXF1ZXN0ZWRJAAhsaWZldGlt"
+          + "ZXhwAAAADhBwdAAQc3ViamVjdFRva2VuVHlwZXQADHRva2VuSW5mb1VybHQAI2h0dHBzOi8vc3RzLmdvb2dsZWFw"
+          + "aXMuY29tL3YxL3Rva2VudAA+Y29tLmdvb2dsZS5hdXRoLm9hdXRoMi5PQXV0aDJVdGlscyREZWZhdWx0SHR0cFRy"
+          + "YW5zcG9ydEZhY3RvcnlwcHBxAH4AKnNyADtjb20uZ29vZ2xlLmF1dGgub2F1dGgyLkZpbGVJZGVudGl0eVBvb2xT"
+          + "dWJqZWN0VG9rZW5TdXBwbGllcmNBv+j+PpS2AgABTAAQY3JlZGVudGlhbFNvdXJjZXQANUxjb20vZ29vZ2xlL2F1"
+          + "dGgvb2F1dGgyL0lkZW50aXR5UG9vbENyZWRlbnRpYWxTb3VyY2U7eHBxAH4AJXNyADVjb20uZ29vZ2xlLmF1dGgu"
+          + "b2F1dGgyLkV4dGVybmFsQWNjb3VudFN1cHBsaWVyQ29udGV4dJMHoJdQucHqAgACTAAIYXVkaWVuY2VxAH4AAkwA"
+          + "EHN1YmplY3RUb2tlblR5cGVxAH4AAnhwcQB+ABxxAH4APHEAfgA2cQB+ADhxAH4AO3QAemh0dHBzOi8vaWFtY3Jl"
+          + "ZGVudGlhbHMuZ29vZ2xlYXBpcy5jb20vdjEvcHJvamVjdHMvLS9zZXJ2aWNlQWNjb3VudHMvdGVzdG5AdGVzdC5p"
+          + "YW0uZ3NlcnZpY2VhY2NvdW50LmNvbTpnZW5lcmF0ZUFjY2Vzc1Rva2VucQB+ADxxAH4APXEAfgA+cQB+AD9wcHBx"
+          + "AH4AKnNxAH4AQHEAfgAlc3EAfgBDcQB+ABxxAH4APA==";
+
   @Test
   void serialize_deserialize_backwardCompatible() throws Exception {
-    // Verify that credentials serialized WITHOUT actor token config
-    // can still be deserialized. This simulates loading pre-actor-token bytes.
-    IdentityPoolCredentials original =
-        IdentityPoolCredentials.newBuilder(createBaseFileSourcedCredentials())
-            .setServiceAccountImpersonationUrl(SERVICE_ACCOUNT_IMPERSONATION_URL)
-            .setQuotaProjectId("quotaProjectId")
-            .setClientId("clientId")
-            .setClientSecret("clientSecret")
-            .build();
-
-    // Serialize (simulates old format without actor token fields)
-    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-    try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
-      output.writeObject(original);
-    }
-
-    // Deserialize the bytes — should succeed even if internal layout changes
+    // Verify that credentials serialized BEFORE this PR (hardcoded byte fixture using synthetic
+    // SUID
+    // 7152208690659890358L for FileIdentityPoolSubjectTokenSupplier) deserialize successfully.
+    byte[] fixtureBytes = Base64.getDecoder().decode(PRE_PR_SERIALIZED_BYTES_BASE64);
     IdentityPoolCredentials deserialized;
-    try (ObjectInputStream input =
-        new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
+    try (ObjectInputStream input = new ObjectInputStream(new ByteArrayInputStream(fixtureBytes))) {
       deserialized = (IdentityPoolCredentials) input.readObject();
     }
 
-    // Core fields should survive serialization round-trip
-    assertEquals(original.getAudience(), deserialized.getAudience());
-    assertEquals(original.getSubjectTokenType(), deserialized.getSubjectTokenType());
-    assertEquals(original.getTokenUrl(), deserialized.getTokenUrl());
-    assertEquals(original.getQuotaProjectId(), deserialized.getQuotaProjectId());
-    assertEquals(original.getClientId(), deserialized.getClientId());
-    assertEquals(original.getClientSecret(), deserialized.getClientSecret());
+    assertNotNull(deserialized);
     assertEquals(
-        original.getServiceAccountImpersonationUrl(),
-        deserialized.getServiceAccountImpersonationUrl());
-    // Actor token fields should be null in pre-actor-token credentials
+        "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider",
+        deserialized.getAudience());
+    assertEquals("subjectTokenType", deserialized.getSubjectTokenType());
+    assertEquals("https://sts.googleapis.com/v1/token", deserialized.getTokenUrl());
+    assertEquals("quotaProjectId", deserialized.getQuotaProjectId());
+    assertEquals("clientId", deserialized.getClientId());
+    assertEquals("clientSecret", deserialized.getClientSecret());
+    assertEquals(
+        SERVICE_ACCOUNT_IMPERSONATION_URL, deserialized.getServiceAccountImpersonationUrl());
     assertEquals(null, deserialized.getActorTokenType());
+  }
+
+  @Test
+  void
+      serialize_deserialize_fileCredentialSource_withCertificateConfig_restoresX509ProviderAndTransport(
+          @TempDir Path tempDir) throws Exception {
+    Path tokenFile = tempDir.resolve("credential.txt");
+    Files.write(tokenFile, "token_from_file".getBytes(StandardCharsets.UTF_8));
+
+    Map<String, Object> certMap = new HashMap<>();
+    certMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+
+    Map<String, Object> sourceMap = new HashMap<>();
+    sourceMap.put("file", tokenFile.toString());
+    sourceMap.put("certificate", certMap);
+
+    IdentityPoolCredentialSource credentialSource = new IdentityPoolCredentialSource(sourceMap);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setCredentialSource(credentialSource)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    assertNotNull(credentials.getX509Provider());
+    assertTrue(credentials.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertTrue(((MtlsHttpTransportFactory) credentials.getTransportFactory()).hasKeyStore());
+
+    IdentityPoolCredentials deserialized = serializeAndDeserialize(credentials);
+    assertNotNull(deserialized);
+    assertNotNull(deserialized.getX509Provider());
+    assertTrue(deserialized.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertTrue(((MtlsHttpTransportFactory) deserialized.getTransportFactory()).hasKeyStore());
+
+    // createScoped() should succeed without throwing
+    IdentityPoolCredentials scoped =
+        deserialized.createScoped(
+            Collections.singletonList("https://www.googleapis.com/auth/cloud-platform"));
+    assertNotNull(scoped);
+    assertNotNull(scoped.getX509Provider());
+    assertTrue(scoped.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertTrue(((MtlsHttpTransportFactory) scoped.getTransportFactory()).hasKeyStore());
+
+    // refreshAccessToken() on deserialized credentials creates MtlsHttpTransportFactory from
+    // restored X509Provider
+    AtomicReference<HttpTransportFactory> capturedFactory = new AtomicReference<>();
+    IdentityPoolCredentials testable =
+        new IdentityPoolCredentials(deserialized.toBuilder()) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory) {
+            capturedFactory.set(cycleTransportFactory);
+            return new AccessToken("deserializedToken", null);
+          }
+        };
+    AccessToken token = testable.refreshAccessToken();
+    assertEquals("deserializedToken", token.getTokenValue());
+    assertNotNull(capturedFactory.get());
+    assertTrue(capturedFactory.get() instanceof MtlsHttpTransportFactory);
+    assertTrue(((MtlsHttpTransportFactory) capturedFactory.get()).hasKeyStore());
+  }
+
+  @Test
+  void serialize_deserialize_certificateCredentialSource_restoresX509ProviderAndTransport()
+      throws Exception {
+    Map<String, Object> certMap = new HashMap<>();
+    certMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+
+    Map<String, Object> sourceMap = new HashMap<>();
+    sourceMap.put("certificate", certMap);
+
+    IdentityPoolCredentialSource credentialSource = new IdentityPoolCredentialSource(sourceMap);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setCredentialSource(credentialSource)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .build();
+
+    assertNotNull(credentials.getX509Provider());
+    assertTrue(credentials.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertTrue(((MtlsHttpTransportFactory) credentials.getTransportFactory()).hasKeyStore());
+
+    IdentityPoolCredentials deserialized = serializeAndDeserialize(credentials);
+    assertNotNull(deserialized);
+    assertNotNull(deserialized.getX509Provider());
+    assertTrue(deserialized.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertTrue(((MtlsHttpTransportFactory) deserialized.getTransportFactory()).hasKeyStore());
+
+    // createScoped() should succeed without throwing
+    IdentityPoolCredentials scoped =
+        deserialized.createScoped(
+            Collections.singletonList("https://www.googleapis.com/auth/cloud-platform"));
+    assertNotNull(scoped);
+    assertNotNull(scoped.getX509Provider());
+    assertTrue(scoped.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertTrue(((MtlsHttpTransportFactory) scoped.getTransportFactory()).hasKeyStore());
+
+    // refreshAccessToken() on deserialized credentials creates MtlsHttpTransportFactory from
+    // restored X509Provider
+    AtomicReference<HttpTransportFactory> capturedFactory = new AtomicReference<>();
+    IdentityPoolCredentials testable =
+        new IdentityPoolCredentials(deserialized.toBuilder()) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory) {
+            capturedFactory.set(cycleTransportFactory);
+            return new AccessToken("deserializedCertToken", null);
+          }
+        };
+    AccessToken token = testable.refreshAccessToken();
+    assertEquals("deserializedCertToken", token.getTokenValue());
+    assertNotNull(capturedFactory.get());
+    assertTrue(capturedFactory.get() instanceof MtlsHttpTransportFactory);
+    assertTrue(((MtlsHttpTransportFactory) capturedFactory.get()).hasKeyStore());
+  }
+
+  // ==================================================================================
+  // Section E: Production Path (fromStream) Tests
+  // ==================================================================================
+
+  @Test
+  void fromStream_fileCredentialSource_withCertificateConfig_andActorToken_refreshesSuccessfully(
+      @TempDir Path tempDir) throws Exception {
+    Path tokenFile = tempDir.resolve("credential.json");
+    GenericJson tokenJson = new GenericJson();
+    tokenJson.setFactory(JSON_FACTORY);
+    tokenJson.put("subject_token", "testSubjectTokenFromStream");
+    tokenJson.put("actor_token", "testActorTokenFromStream");
+    OAuth2Utils.writeInputStreamToFile(
+        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+        tokenFile.toString());
+
+    String configJson =
+        "{\n"
+            + "  \"type\": \"external_account\",\n"
+            + "  \"audience\":"
+            + " \"//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider\",\n"
+            + "  \"subject_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",\n"
+            + "  \"actor_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",\n"
+            + "  \"token_url\": \"https://sts.googleapis.com/v1/token\",\n"
+            + "  \"credential_source\": {\n"
+            + "    \"file\": \""
+            + tokenFile.toString()
+            + "\",\n"
+            + "    \"format\": {\n"
+            + "      \"type\": \"json\",\n"
+            + "      \"subject_token_field_name\": \"subject_token\",\n"
+            + "      \"actor_token_field_name\": \"actor_token\"\n"
+            + "    },\n"
+            + "    \"certificate\": {\n"
+            + "      \"certificate_config_location\": \"testresources/mtls/certificate_config.json\"\n"
+            + "    }\n"
+            + "  }\n"
+            + "}";
+
+    ExternalAccountCredentials credentials =
+        ExternalAccountCredentials.fromStream(
+            new ByteArrayInputStream(configJson.getBytes(StandardCharsets.UTF_8)));
+
+    assertTrue(credentials instanceof IdentityPoolCredentials);
+    IdentityPoolCredentials idp = (IdentityPoolCredentials) credentials;
+    assertNotNull(idp.getX509Provider());
+    assertEquals("urn:ietf:params:oauth:token-type:jwt", idp.getActorTokenType());
+    assertTrue(idp.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertTrue(((MtlsHttpTransportFactory) idp.getTransportFactory()).hasKeyStore());
+    assertSame(idp.getIdentityPoolSubjectTokenSupplier(), idp.getIdentityPoolActorTokenSupplier());
+
+    // Execute refreshAccessToken() on testable credentials constructed from idp.toBuilder()
+    AtomicReference<StsTokenExchangeRequest> capturedRequest = new AtomicReference<>();
+    AtomicReference<HttpTransportFactory> capturedFactory = new AtomicReference<>();
+    IdentityPoolCredentials testable =
+        new IdentityPoolCredentials(idp.toBuilder()) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory) {
+            capturedRequest.set(stsTokenExchangeRequest);
+            capturedFactory.set(cycleTransportFactory);
+            return new AccessToken("prodAccessToken", null);
+          }
+        };
+
+    AccessToken token = testable.refreshAccessToken();
+    assertEquals("prodAccessToken", token.getTokenValue());
+    assertNotNull(capturedRequest.get());
+    assertEquals("testSubjectTokenFromStream", capturedRequest.get().getSubjectToken());
+    assertEquals(
+        "urn:ietf:params:oauth:token-type:jwt", capturedRequest.get().getSubjectTokenType());
+    assertNotNull(capturedRequest.get().getActingParty());
+    assertEquals(
+        "testActorTokenFromStream", capturedRequest.get().getActingParty().getActorToken());
+    assertEquals(
+        "urn:ietf:params:oauth:token-type:jwt",
+        capturedRequest.get().getActingParty().getActorTokenType());
+    assertNotNull(capturedFactory.get());
+    assertTrue(capturedFactory.get() instanceof MtlsHttpTransportFactory);
+    assertTrue(((MtlsHttpTransportFactory) capturedFactory.get()).hasKeyStore());
+  }
+
+  @Test
+  void fromStream_fileCredentialSource_certRotation_401Retry_succeeds(@TempDir Path tempDir)
+      throws Exception {
+    Path tokenFile = tempDir.resolve("credential.json");
+    GenericJson tokenJson = new GenericJson();
+    tokenJson.setFactory(JSON_FACTORY);
+    tokenJson.put("subject_token", "testSubjectToken401");
+    OAuth2Utils.writeInputStreamToFile(
+        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+        tokenFile.toString());
+
+    String configJson =
+        "{\n"
+            + "  \"type\": \"external_account\",\n"
+            + "  \"audience\":"
+            + " \"//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider\",\n"
+            + "  \"subject_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",\n"
+            + "  \"token_url\": \"https://sts.googleapis.com/v1/token\",\n"
+            + "  \"credential_source\": {\n"
+            + "    \"file\": \""
+            + tokenFile.toString()
+            + "\",\n"
+            + "    \"format\": {\n"
+            + "      \"type\": \"json\",\n"
+            + "      \"subject_token_field_name\": \"subject_token\"\n"
+            + "    },\n"
+            + "    \"certificate\": {\n"
+            + "      \"certificate_config_location\": \"testresources/mtls/certificate_config.json\"\n"
+            + "    }\n"
+            + "  }\n"
+            + "}";
+
+    ExternalAccountCredentials credentials =
+        ExternalAccountCredentials.fromStream(
+            new ByteArrayInputStream(configJson.getBytes(StandardCharsets.UTF_8)));
+
+    assertTrue(credentials instanceof IdentityPoolCredentials);
+    IdentityPoolCredentials idp = (IdentityPoolCredentials) credentials;
+    assertNotNull(idp.getX509Provider());
+
+    AtomicInteger exchangeCount = new AtomicInteger(0);
+    IdentityPoolCredentials testable =
+        new IdentityPoolCredentials(idp.toBuilder()) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory)
+              throws IOException {
+            if (exchangeCount.incrementAndGet() == 1) {
+              throw new OAuthException("invalid_client", "Unauthorized", null, 401);
+            }
+            return new AccessToken("rotatedRetryToken", null);
+          }
+        };
+
+    AccessToken token = testable.refreshAccessToken();
+    assertEquals("rotatedRetryToken", token.getTokenValue());
+    assertEquals(2, exchangeCount.get());
   }
 
   // ==================================================================================

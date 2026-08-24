@@ -261,6 +261,14 @@ class FileIdentityPoolSubjectTokenSupplierTest {
   }
 
   @Test
+  void serialVersionUID_matchesPrePrSyntheticSuid() {
+    assertEquals(
+        7152208690659890358L,
+        java.io.ObjectStreamClass.lookup(FileIdentityPoolSubjectTokenSupplier.class)
+            .getSerialVersionUID());
+  }
+
+  @Test
   void getToken_missingFile_throws(@TempDir Path tempDir) {
     Path credentialFile = tempDir.resolve("missing_file.txt");
 

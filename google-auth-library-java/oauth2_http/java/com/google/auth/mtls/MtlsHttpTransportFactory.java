@@ -31,12 +31,12 @@
 
 package com.google.auth.mtls;
 
-import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
+import java.security.KeyStoreException;
 import java.util.Objects;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -78,14 +78,21 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory {
   /**
    * Returns whether this factory was constructed with a non-null {@link KeyStore} containing client
    * certificates for mTLS. A factory created via the no-arg constructor (e.g. during
-   * deserialization) will return {@code false}.
+   * deserialization) or with an empty KeyStore will return {@code false}.
    */
   public boolean hasKeyStore() {
-    return this.mtlsKeyStore != null;
+    if (this.mtlsKeyStore == null) {
+      return false;
+    }
+    try {
+      return this.mtlsKeyStore.size() > 0;
+    } catch (KeyStoreException e) {
+      return false;
+    }
   }
 
   @Override
-  public HttpTransport create() {
+  public NetHttpTransport create() {
     try {
       // Build the mTLS transport using the provided KeyStore.
       return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();

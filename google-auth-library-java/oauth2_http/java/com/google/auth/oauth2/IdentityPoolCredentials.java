@@ -39,6 +39,7 @@ import com.google.auth.oauth2.IdentityPoolCredentialSource.IdentityPoolCredentia
 import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -66,9 +67,9 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
   private final IdentityPoolSubjectTokenSupplier subjectTokenSupplier;
   @Nullable private final IdentityPoolActorTokenSupplier actorTokenSupplier;
   @Nullable private final String actorTokenType;
-  // Transient: not serialized. After deserialization, per-cycle cert pinning and 401 retry
-  // are disabled; the credential falls back to the class-level transportFactory for mTLS.
-  @Nullable private final transient X509Provider x509Provider;
+  // Transient: not serialized directly. Reconstructed in readObject() from the credentialSource
+  // certificate config so deserialized credentials remain usable for mTLS and refresh.
+  @Nullable private transient X509Provider x509Provider;
   private final ExternalAccountSupplierContext supplierContext;
   private final String metricsHeaderValue;
 
@@ -105,6 +106,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       if (credentialSource.getCertificateConfig() != null) {
         try {
           X509Provider x509Provider = getX509Provider(builder, credentialSource);
+          this.x509Provider = x509Provider;
           KeyStore mtlsKeyStore = x509Provider.getKeyStore();
           this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
         } catch (Exception e) {
@@ -270,6 +272,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return this.transportFactory;
   }
 
+  @VisibleForTesting
+  @Nullable X509Provider getX509Provider() {
+    return this.x509Provider;
+  }
+
   /** Clones the IdentityPoolCredentials with the specified scopes. */
   @Override
   public IdentityPoolCredentials createScoped(Collection<String> newScopes) {
@@ -293,6 +300,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       Builder builder, IdentityPoolCredentialSource credentialSource) throws IOException {
     // Configure the mTLS transport with the x509 keystore.
     X509Provider x509Provider = getX509Provider(builder, credentialSource);
+    this.x509Provider = x509Provider;
     KeyStore mtlsKeyStore = x509Provider.getKeyStore();
     this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
 
@@ -302,6 +310,27 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
         MtlsUtils.getCertificatePath(
             getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath));
     return new CertificateIdentityPoolSubjectTokenSupplier(credentialSource);
+  }
+
+  @SuppressWarnings("unused")
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    IdentityPoolCredentialSource credentialSource =
+        (IdentityPoolCredentialSource) getCredentialSource();
+    if (credentialSource != null
+        && (credentialSource.getCertificateConfig() != null
+            || credentialSource.credentialSourceType
+                == IdentityPoolCredentialSourceType.CERTIFICATE)) {
+      String explicitCertConfigPath = getExplicitCertConfigPath(credentialSource);
+      this.x509Provider =
+          new X509Provider(getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath);
+      try {
+        KeyStore mtlsKeyStore = this.x509Provider.getKeyStore();
+        this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+      } catch (Exception e) {
+        // Cert loading failure will be handled on refreshAccessToken()
+      }
+    }
   }
 
   private X509Provider getX509Provider(

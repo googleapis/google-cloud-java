@@ -50,9 +50,14 @@ import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.ExternalAccountCredentials.SubjectTokenTypes;
 import com.google.auth.oauth2.ExternalAccountCredentialsTest.TestExternalAccountCredentials.TestCredentialSource;
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.net.URI;
+import java.security.KeyStore;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateFactory;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -67,6 +72,22 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
 
   private static final String STS_URL = "https://sts.googleapis.com/v1/token";
   private static final String GOOGLE_DEFAULT_UNIVERSE = "googleapis.com";
+
+  private static KeyStore createPopulatedKeyStore() {
+    try {
+      KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
+      ks.load(null, null);
+      CertificateFactory cf = CertificateFactory.getInstance("X.509");
+      try (FileInputStream fis =
+          new FileInputStream(new File("testresources/mtls/test_cert.pem"))) {
+        Certificate cert = cf.generateCertificate(fis);
+        ks.setCertificateEntry("test-alias", cert);
+      }
+      return ks;
+    } catch (Exception e) {
+      throw new RuntimeException("Failed to create test KeyStore", e);
+    }
+  }
 
   private static final Map<String, Object> FILE_CREDENTIAL_SOURCE_MAP =
       new HashMap<String, Object>() {
@@ -212,9 +233,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
     formatMap.put("subject_token_field_name", "subject_token");
     credentialSource.put("format", formatMap);
 
-    java.security.KeyStore ks =
-        java.security.KeyStore.getInstance(java.security.KeyStore.getDefaultType());
-    ks.load(null, null);
+    java.security.KeyStore ks = createPopulatedKeyStore();
     com.google.auth.mtls.MtlsHttpTransportFactory mockTransportFactory =
         new com.google.auth.mtls.MtlsHttpTransportFactory(ks);
 
