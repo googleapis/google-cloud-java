@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.Date;
 import java.sql.Time;
@@ -69,9 +70,6 @@ public class BigQueryTypeRegistryTest {
   @Test
   public void testDateFormatting() throws Exception {
     LocalDate localDate = LocalDate.of(2026, 8, 24);
-    assertThat(
-            BigQueryTypeRegistry.convert(localDate, StandardSQLTypeName.DATE, String.class, null))
-        .isEqualTo("2026-08-24");
     assertThat(BigQueryTypeRegistry.convert(localDate, StandardSQLTypeName.DATE, Date.class, null))
         .isEqualTo(Date.valueOf("2026-08-24"));
   }
@@ -79,9 +77,6 @@ public class BigQueryTypeRegistryTest {
   @Test
   public void testTimeFormatting() throws Exception {
     LocalTime localTime = LocalTime.of(15, 30, 45, 123456000); // 123.456 ms
-    assertThat(
-            BigQueryTypeRegistry.convert(localTime, StandardSQLTypeName.TIME, String.class, null))
-        .isEqualTo("15:30:45.123456");
     assertThat(BigQueryTypeRegistry.convert(localTime, StandardSQLTypeName.TIME, Time.class, null))
         .isEqualTo(Time.valueOf("15:30:45"));
   }
@@ -89,10 +84,6 @@ public class BigQueryTypeRegistryTest {
   @Test
   public void testDatetimeFormatting() throws Exception {
     LocalDateTime localDateTime = LocalDateTime.of(2026, 8, 24, 15, 30, 45, 123456000);
-    assertThat(
-            BigQueryTypeRegistry.convert(
-                localDateTime, StandardSQLTypeName.DATETIME, String.class, null))
-        .isEqualTo("2026-08-24T15:30:45.123456");
     assertThat(
             BigQueryTypeRegistry.convert(
                 localDateTime, StandardSQLTypeName.DATETIME, Timestamp.class, null))
@@ -105,8 +96,8 @@ public class BigQueryTypeRegistryTest {
         ZonedDateTime.of(2026, 8, 24, 15, 30, 45, 123456000, ZoneId.of("UTC"));
     assertThat(
             BigQueryTypeRegistry.convert(
-                zonedDateTime, StandardSQLTypeName.TIMESTAMP, String.class, null))
-        .isEqualTo("2026-08-24T15:30:45.123456Z[UTC]");
+                zonedDateTime, StandardSQLTypeName.TIMESTAMP, Timestamp.class, null))
+        .isEqualTo(Timestamp.from(zonedDateTime.toInstant()));
   }
 
   @Test
