@@ -79,8 +79,12 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.BOOL,
         Arrays.asList(Boolean.class),
         (val, targetClass, zone) -> {
-          if (val instanceof Boolean) return val;
-          if (val instanceof String) return Boolean.parseBoolean((String) val);
+          if (val instanceof Boolean) {
+            return val;
+          }
+          if (val instanceof String) {
+            return Boolean.parseBoolean((String) val);
+          }
           throw new BigQueryJdbcException("Cannot convert to BOOL: " + val);
         });
   }
@@ -106,9 +110,15 @@ final class BigQueryTypeRegistry {
           else if (val instanceof String) longVal = Long.parseLong((String) val);
           else throw new BigQueryJdbcException("Cannot convert to INT64: " + val);
 
-          if (targetClass == Integer.class) return (int) longVal;
-          if (targetClass == Short.class) return (short) longVal;
-          if (targetClass == Byte.class) return (byte) longVal;
+          if (targetClass == Integer.class) {
+            return (int) longVal;
+          }
+          if (targetClass == Short.class) {
+            return (short) longVal;
+          }
+          if (targetClass == Byte.class) {
+            return (byte) longVal;
+          }
           return longVal;
         });
   }
@@ -125,7 +135,9 @@ final class BigQueryTypeRegistry {
           else if (val instanceof String) doubleVal = Double.parseDouble((String) val);
           else throw new BigQueryJdbcException("Cannot convert to FLOAT64: " + val);
 
-          if (targetClass == Float.class) return (float) doubleVal;
+          if (targetClass == Float.class) {
+            return (float) doubleVal;
+          }
           return doubleVal;
         });
   }
@@ -137,9 +149,15 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.NUMERIC,
         Arrays.asList(BigDecimal.class),
         (val, targetClass, zone) -> {
-          if (val instanceof BigDecimal) return val;
-          if (val instanceof Number) return new BigDecimal(val.toString());
-          if (val instanceof String) return new BigDecimal((String) val);
+          if (val instanceof BigDecimal) {
+            return val;
+          }
+          if (val instanceof Number) {
+            return new BigDecimal(val.toString());
+          }
+          if (val instanceof String) {
+            return new BigDecimal((String) val);
+          }
           throw new BigQueryJdbcException("Cannot convert to NUMERIC: " + val);
         });
   }
@@ -161,7 +179,9 @@ final class BigQueryTypeRegistry {
             sqlDate = BigQueryTemporalUtility.boxDate((String) val, zone);
           else throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
 
-          if (targetClass == LocalDate.class) return sqlDate.toLocalDate();
+          if (targetClass == LocalDate.class) {
+            return sqlDate.toLocalDate();
+          }
           return sqlDate;
         });
   }
@@ -183,7 +203,9 @@ final class BigQueryTypeRegistry {
             ts = BigQueryTemporalUtility.boxDateTime((String) val, zone);
           else throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
 
-          if (targetClass == LocalDateTime.class) return ts.toLocalDateTime();
+          if (targetClass == LocalDateTime.class) {
+            return ts.toLocalDateTime();
+          }
           return ts;
         });
   }
@@ -208,7 +230,9 @@ final class BigQueryTypeRegistry {
           else if (val instanceof String) ts = BigQueryTemporalUtility.boxTimestamp((String) val);
           else throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
 
-          if (targetClass == Instant.class) return ts.toInstant();
+          if (targetClass == Instant.class) {
+            return ts.toInstant();
+          }
           if (targetClass == OffsetDateTime.class)
             return ts.toInstant().atOffset(java.time.ZoneOffset.UTC);
           if (targetClass == ZonedDateTime.class)
@@ -255,7 +279,9 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.BYTES,
         Arrays.asList(byte[].class),
         (val, targetClass, zone) -> {
-          if (val instanceof byte[]) return val;
+          if (val instanceof byte[]) {
+            return val;
+          }
           throw new BigQueryJdbcException("Cannot convert to BYTES: " + val);
         });
   }
@@ -267,7 +293,9 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.ARRAY,
         Arrays.asList(Array.class),
         (val, targetClass, zone) -> {
-          if (val instanceof Array) return val;
+          if (val instanceof Array) {
+            return val;
+          }
           throw new BigQueryJdbcException("Cannot convert to ARRAY: " + val);
         });
   }
@@ -279,7 +307,9 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.STRUCT,
         Arrays.asList(Struct.class),
         (val, targetClass, zone) -> {
-          if (val instanceof Struct) return val;
+          if (val instanceof Struct) {
+            return val;
+          }
           throw new BigQueryJdbcException("Cannot convert to STRUCT: " + val);
         });
   }
@@ -300,9 +330,15 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.BIGNUMERIC,
         Arrays.asList(BigDecimal.class),
         (val, targetClass, zone) -> {
-          if (val instanceof BigDecimal) return val;
-          if (val instanceof Number) return new BigDecimal(val.toString());
-          if (val instanceof String) return new BigDecimal((String) val);
+          if (val instanceof BigDecimal) {
+            return val;
+          }
+          if (val instanceof Number) {
+            return new BigDecimal(val.toString());
+          }
+          if (val instanceof String) {
+            return new BigDecimal((String) val);
+          }
           throw new BigQueryJdbcException("Cannot convert to BIGNUMERIC: " + val);
         });
   }
@@ -362,10 +398,11 @@ final class BigQueryTypeRegistry {
     return StandardSQLTypeName.STRING; // Legacy fallback
   }
 
-  /** Returns the default Java target class for a given JDBC type constant. */
   /** Returns the JDBC Type constant for a given BigQuery type. */
   public static int toJdbcType(StandardSQLTypeName bqType) {
-    if (bqType == null) return java.sql.Types.OTHER;
+    if (bqType == null) {
+      return java.sql.Types.OTHER;
+    }
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
       return java.sql.Types.OTHER;
@@ -414,7 +451,9 @@ final class BigQueryTypeRegistry {
 
   /** Returns the exact default Java Class for a given BigQuery type, avoiding lossy mappings. */
   public static Class<?> toJavaClass(StandardSQLTypeName bqType) {
-    if (bqType == null) return String.class;
+    if (bqType == null) {
+      return String.class;
+    }
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
       return String.class;
@@ -465,7 +504,9 @@ final class BigQueryTypeRegistry {
    */
   public static Object convert(Object input, StandardSQLTypeName bqType, ZoneId zoneId)
       throws BigQueryJdbcException {
-    if (input == null) return null;
+    if (input == null) {
+      return null;
+    }
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
       throw new BigQueryJdbcException("No type descriptor registered for BigQuery type: " + bqType);
@@ -487,7 +528,9 @@ final class BigQueryTypeRegistry {
   public static <T> T convert(
       Object input, StandardSQLTypeName bqType, Class<T> targetClass, ZoneId zoneId)
       throws BigQueryJdbcException {
-    if (input == null) return null;
+    if (input == null) {
+      return null;
+    }
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
       throw new BigQueryJdbcException("No type descriptor registered for BigQuery type: " + bqType);
@@ -578,6 +621,8 @@ final class BigQueryTypeRegistry {
           .put(
               StandardSQLTypeName.STRUCT,
               new ColumnTypeInfo(Types.STRUCT, "STRUCT", null, null, null))
+          .put(
+              StandardSQLTypeName.ARRAY, new ColumnTypeInfo(Types.ARRAY, "ARRAY", null, null, null))
           .build();
 
   public static ColumnTypeInfo getColumnTypeInfo(StandardSQLTypeName bqType) {
