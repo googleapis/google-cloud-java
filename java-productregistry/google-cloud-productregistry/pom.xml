@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-productregistry</artifactId>
-  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-productregistry:current} -->
+  <version>0.2.0</version><!-- {x-version-update:google-cloud-productregistry:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Product Registry</name>
   <description>Cloud Product Registry cloudproductregistry.googleapis.com API.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-productregistry-parent</artifactId>
-    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-productregistry:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-productregistry:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-productregistry</site.installationModule>
