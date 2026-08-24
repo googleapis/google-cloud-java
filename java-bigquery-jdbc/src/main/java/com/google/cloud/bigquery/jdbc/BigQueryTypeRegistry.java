@@ -347,9 +347,15 @@ final class BigQueryTypeRegistry {
               throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
             }
 
-            if (targetClass == Instant.class) return instant;
-            if (targetClass == OffsetDateTime.class) return instant.atOffset(ZoneOffset.UTC);
-            if (targetClass == ZonedDateTime.class) return instant.atZone(ZoneOffset.UTC);
+            if (targetClass == Instant.class) {
+              return instant;
+            }
+            if (targetClass == OffsetDateTime.class) {
+              return instant.atOffset(ZoneOffset.UTC);
+            }
+            if (targetClass == ZonedDateTime.class) {
+              return instant.atZone(ZoneOffset.UTC);
+            }
           }
 
           // Legacy path: Box values into java.sql.Timestamp
@@ -388,7 +394,7 @@ final class BigQueryTypeRegistry {
         Arrays.asList(Time.class, LocalTime.class),
         (val, targetClass, zone) -> {
           if (targetClass == LocalTime.class && val instanceof String) {
-            // Phase 3 Fast Path: Parse directly to LocalTime to preserve microsecond precision
+            // Fast Path: Parse directly to LocalTime to preserve microsecond precision
             return LocalTime.parse((String) val);
           }
 
