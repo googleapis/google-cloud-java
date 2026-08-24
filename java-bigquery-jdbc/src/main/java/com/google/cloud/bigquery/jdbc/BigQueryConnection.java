@@ -66,6 +66,7 @@ import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 import java.util.Map;
@@ -76,7 +77,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * An implementation of {@link java.sql.Connection} for establishing a connection with BigQuery and
@@ -87,7 +87,6 @@ import java.util.concurrent.locks.ReentrantLock;
 public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
-  private final ReentrantLock queryPropertiesLock = new ReentrantLock();
   String connectionClassName = this.toString();
   private final String connectionId;
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
@@ -179,7 +178,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   // transactionStarted is false by default.
   // when autocommit is false transaction starts and session is initialized.
   boolean transactionStarted;
-  ConnectionProperty sessionInfoConnectionProperty;
+  volatile ConnectionProperty sessionInfoConnectionProperty;
   boolean isClosed;
   DatasetId defaultDataset;
   String location;
@@ -199,7 +198,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   long destinationDatasetExpirationTime;
   String kmsKeyName;
   String universeDomain;
-  List<ConnectionProperty> queryProperties;
+  private volatile List<ConnectionProperty> queryProperties;
   Map<String, String> authProperties;
   Map<String, String> overrideProperties;
   Map<String, String> proxyProperties;
@@ -615,12 +614,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   List<ConnectionProperty> getQueryProperties() {
-    queryPropertiesLock.lock();
-    try {
-      return this.queryProperties;
-    } finally {
-      queryPropertiesLock.unlock();
-    }
+    return this.queryProperties;
   }
 
   public String getLocation() {
@@ -705,30 +699,29 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
   }
 
-  void updateSessionInfo(String sessionId) {
+  synchronized void updateSessionInfo(String sessionId) {
     if (sessionId != null && !sessionId.isEmpty()) {
-      queryPropertiesLock.lock();
-      try {
-        if (this.sessionInfoConnectionProperty == null
-            || !sessionId.equals(this.sessionInfoConnectionProperty.getValue())) {
-          this.sessionInfoConnectionProperty =
-              ConnectionProperty.newBuilder().setKey("session_id").setValue(sessionId).build();
-          boolean found = false;
-          if (this.queryProperties != null) {
-            for (int i = 0; i < this.queryProperties.size(); i++) {
-              if ("session_id".equalsIgnoreCase(this.queryProperties.get(i).getKey())) {
-                this.queryProperties.set(i, this.sessionInfoConnectionProperty);
-                found = true;
-                break;
-              }
-            }
-            if (!found) {
-              this.queryProperties.add(this.sessionInfoConnectionProperty);
-            }
+      if (this.sessionInfoConnectionProperty == null
+          || !sessionId.equals(this.sessionInfoConnectionProperty.getValue())) {
+        ConnectionProperty sessionProperty =
+            ConnectionProperty.newBuilder().setKey("session_id").setValue(sessionId).build();
+        this.sessionInfoConnectionProperty = sessionProperty;
+        List<ConnectionProperty> updated =
+            this.queryProperties != null
+                ? new ArrayList<>(this.queryProperties)
+                : new ArrayList<>();
+        boolean found = false;
+        for (int i = 0; i < updated.size(); i++) {
+          if ("session_id".equalsIgnoreCase(updated.get(i).getKey())) {
+            updated.set(i, sessionProperty);
+            found = true;
+            break;
           }
         }
-      } finally {
-        queryPropertiesLock.unlock();
+        if (!found) {
+          updated.add(sessionProperty);
+        }
+        this.queryProperties = Collections.unmodifiableList(updated);
       }
     }
   }
@@ -746,12 +739,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   public ConnectionProperty getSessionInfoConnectionProperty() {
-    queryPropertiesLock.lock();
-    try {
-      return this.sessionInfoConnectionProperty;
-    } finally {
-      queryPropertiesLock.unlock();
-    }
+    return this.sessionInfoConnectionProperty;
   }
 
   boolean isEnableHighThroughputAPI() {
@@ -1214,7 +1202,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
                 .build());
       }
     }
-    return connectionProperties;
+    return Collections.unmodifiableList(connectionProperties);
   }
 
   void removeStatement(Statement statement) {

@@ -330,7 +330,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.finer("++enter++");
     // BQ Read-only tokens are not recommended to use, they have a lot of known flaws.
     // We're supporting them in a limited capacity, for pure SELECT statements.
-    if (this.connection.isReadOnlyTokenUsed()) {
+    if (this.connection != null && this.connection.isReadOnlyTokenUsed()) {
       LOG.warning(
           "Read-only token detected, skipping dry run and assuming StatementType is SELECT.");
       return StatementType.SELECT;
@@ -1474,30 +1474,34 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     queryConfigBuilder.setUseQueryCache(this.querySettings.getUseQueryCache());
     queryConfigBuilder.setMaxResults(this.querySettings.getMaxResultPerPage());
 
-    ConnectionProperty sessionProperty = this.connection.getSessionInfoConnectionProperty();
-    boolean isSessionEnabled = this.connection.isSessionEnabled();
-    List<ConnectionProperty> queryProperties = this.connection.getQueryProperties();
+    ConnectionProperty sessionProperty =
+        this.connection != null
+            ? this.connection.getSessionInfoConnectionProperty()
+            : this.querySettings.getSessionInfoConnectionProperty();
+    boolean isSessionEnabled =
+        this.connection != null
+            ? this.connection.isSessionEnabled()
+            : this.querySettings.isEnableSession();
+    List<ConnectionProperty> queryProperties =
+        this.connection != null
+            ? this.connection.getQueryProperties()
+            : this.querySettings.getQueryProperties();
 
-    if (isSessionEnabled) {
-      if (sessionProperty != null) {
-        List<ConnectionProperty> props =
-            queryProperties != null ? new ArrayList<>(queryProperties) : new ArrayList<>();
-        boolean hasSessionId =
-            props.stream().anyMatch(cp -> "session_id".equalsIgnoreCase(cp.getKey()));
-        if (!hasSessionId) {
-          props.add(sessionProperty);
-        }
-        queryConfigBuilder.setConnectionProperties(props);
-      } else {
-        queryConfigBuilder.setCreateSession(true);
-        if (queryProperties != null && !queryProperties.isEmpty()) {
-          queryConfigBuilder.setConnectionProperties(queryProperties);
-        }
+    List<ConnectionProperty> props =
+        queryProperties != null ? new ArrayList<>(queryProperties) : new ArrayList<>();
+
+    if (sessionProperty != null) {
+      boolean hasSessionId =
+          props.stream().anyMatch(cp -> "session_id".equalsIgnoreCase(cp.getKey()));
+      if (!hasSessionId) {
+        props.add(sessionProperty);
       }
-    } else {
-      if (queryProperties != null && !queryProperties.isEmpty()) {
-        queryConfigBuilder.setConnectionProperties(queryProperties);
-      }
+    } else if (isSessionEnabled) {
+      queryConfigBuilder.setCreateSession(true);
+    }
+
+    if (!props.isEmpty()) {
+      queryConfigBuilder.setConnectionProperties(props);
     }
     if (this.querySettings.getKmsKeyName() != null) {
       EncryptionConfiguration encryption =
