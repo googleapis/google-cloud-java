@@ -740,7 +740,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return this.unsupportedHTAPIFallback;
   }
 
-  ConnectionProperty getSessionInfoConnectionProperty() {
+  public ConnectionProperty getSessionInfoConnectionProperty() {
     return this.sessionInfoConnectionProperty;
   }
 
