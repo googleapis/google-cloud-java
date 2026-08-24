@@ -1387,7 +1387,8 @@ public class PublisherImplTest {
           .setRetrySettings(retrySettings)
           .build();
       fail(
-          "Should have thrown IllegalArgumentException because hedgeDelay (500ms) > RPC timeout (400ms)");
+          "Should have thrown IllegalArgumentException because hedgeDelay (500ms) > RPC timeout"
+              + " (400ms)");
     } catch (IllegalArgumentException e) {
       assertThat(e.getMessage())
           .contains("must be strictly less than the initial RPC timeout duration");
@@ -1411,10 +1412,27 @@ public class PublisherImplTest {
           .setRetrySettings(retrySettings)
           .build();
       fail(
-          "Should have thrown IllegalArgumentException because hedgeDelay (500ms) == RPC timeout (500ms)");
+          "Should have thrown IllegalArgumentException because hedgeDelay (500ms) == RPC timeout"
+              + " (500ms)");
     } catch (IllegalArgumentException e) {
       assertThat(e.getMessage())
           .contains("must be strictly less than the initial RPC timeout duration");
+    }
+  }
+
+  @Test
+  public void testPublisherThrowsIfMessageOrderingAndHedgingBothEnabled() throws Exception {
+    HedgingSettings hedgingSettings =
+        HedgingSettings.newBuilder().setHedgeDelay(Duration.ofMillis(100)).build();
+    try {
+      getTestPublisherBuilder()
+          .setEnableMessageOrdering(true)
+          .setHedgingSettings(hedgingSettings)
+          .build();
+      fail("Should have thrown IllegalStateException when ordering and hedging are both enabled");
+    } catch (IllegalStateException e) {
+      assertThat(e.getMessage())
+          .contains("Publish hedging and message ordering cannot be enabled at the same time.");
     }
   }
 

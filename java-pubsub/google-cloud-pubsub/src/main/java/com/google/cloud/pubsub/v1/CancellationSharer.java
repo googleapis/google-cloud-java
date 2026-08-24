@@ -88,6 +88,7 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
   }
 
   private void handleAttemptSuccess(final int attemptNumber, final PublishResponse response) {
+    boolean shouldSetResponse = false;
     lock.lock();
     try {
       if (done) {
@@ -96,15 +97,19 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
       done = true;
       batch.successfulAttempt = attemptNumber;
       publisher.refillTokenBucket();
-      set(response);
       cancelAllExceptLocked(attemptNumber);
       cleanupLocked();
+      shouldSetResponse = true;
     } finally {
       lock.unlock();
+    }
+    if (shouldSetResponse) {
+      set(response);
     }
   }
 
   private void handleAttemptFailure(final int attemptNumber, final Throwable t) {
+    boolean shouldSetException = false;
     lock.lock();
     try {
       if (done) {
@@ -114,12 +119,16 @@ class CancellationSharer extends AbstractApiFuture<PublishResponse> {
       lastError = t;
       if (attemptNumber == 0 || runningAttempts.isEmpty()) {
         done = true;
-        setException(lastError);
         cancelAllLocked();
         cleanupLocked();
+        shouldSetException = true;
       }
     } finally {
       lock.unlock();
+    }
+
+    if (shouldSetException) {
+      setException(lastError);
     }
   }
 
