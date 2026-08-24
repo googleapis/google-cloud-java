@@ -660,7 +660,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
               .setDirectAccessRequested(isDirectPathRequested)
               .setTrafficDirectorEnabled(isDirectPathRequested)
               .setPeerInfo(true)
-              .setSessionsCompatible(true);
+              .setSessionsCompatible(true)
+              .setMicrosecondTimestamp(true);
     }
 
     private Builder(EnhancedBigtableStubSettings settings) {
@@ -1008,6 +1009,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       featureFlags.setRoutingCookie(true);
       featureFlags.setRetryInfo(true);
+      featureFlags.setMicrosecondTimestamp(true);
       // client_Side_metrics_enabled feature flag is only set when a user is running with a
       // DefaultMetricsProvider. This may cause false negatives when a user registered the
       // metrics on their CustomOpenTelemetryMetricsProvider.

@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 language: java
-version: v0.36.0
+version: v0.38.0
 repo: googleapis/google-cloud-java
 sources:
   googleapis:
-    commit: 240b58fe7058f6fff77cba02f51d600170b6c421
-    sha256: ca03f2c93b8f1e92fd75c87b2568992c96a2ecc37fde750c5bf83129fa17b407
+    commit: 184cb4401494cbe915f7e3526c7a25aab094ac36
+    sha256: 496e9b38c1a4d68a3b5416d5e0e7a463cd33ea2d2d6234c99b20ca4ca2f065fe
   showcase:
     commit: f97fd357084b9e85ef5dd02ba084551c3f85191c
     sha256: b5d293831e6895ca139d9a0a92eec75a82e73398978b140af8f7c5e91c7c969a
@@ -30,7 +30,7 @@ tools:
       classifier: all-deps
       packaging: jar
     - name: protoc-gen-java_grpc
-      version: 1.82.3
+      version: 1.82.4
       group_id: io.grpc
       artifact_id: protoc-gen-grpc-java
       classifier: linux-x86_64
@@ -531,6 +531,10 @@ libraries:
       api_description_override: The BigLake API provides access to BigLake Metastore, a serverless, fully managed, and highly available metastore for open-source data that can be used for querying Apache Iceberg tables in BigQuery.
       name_pretty_override: BigLake
       product_documentation_override: https://cloud.google.com/biglake
+  - name: biglake-hive
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/biglake/hive/v1
   - name: bigquery-data-exchange
     version: 2.91.0-SNAPSHOT
     apis:
@@ -1117,13 +1121,6 @@ libraries:
           generate_resource_names: false
           samples: false
       - path: google/logging/type
-        java:
-          omit_common_resources: true
-          proto_artifact_id_override: proto-google-common-protos
-          generate_gapic: false
-          generate_resource_names: false
-          samples: false
-      - path: google/rpc/context
         java:
           omit_common_resources: true
           proto_artifact_id_override: proto-google-common-protos
@@ -2973,12 +2970,14 @@ libraries:
   - name: maps-mapmanagement
     version: 0.5.0-SNAPSHOT
     apis:
+      - path: google/maps/mapmanagement/v2
       - path: google/maps/mapmanagement/v2beta
     java:
       api_id_override: mapmanagement.googleapis.com
       api_description_override: The Map Management API is a RESTful service that accepts HTTP requests for map styling data through a variety of methods. It returns formatted configuration data about map styling resources so that you can programmatically manage your Cloud-based map styles.
       artifact_id: google-maps-mapmanagement
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-maps-mapmanagement/latest/overview
+      group_id: com.google.maps
       library_type_override: GAPIC_AUTO
       name_pretty_override: Map Management API
       product_documentation_override: https://developers.google.com/maps/documentation/mapmanagement/overview

@@ -82,8 +82,9 @@ public interface SubscriptionOrBuilder
    * A subscriber will only receive notifications for data types that are
    * declared here.
    * A subscription can only subscribe to the data types of the subscriber.
-   * Supported data types are: "altitude", "distance", "floors", "sleep",
-   * "steps", "weight".
+   * The values should be in the format
+   * "users/{health_user_id}/dataTypes/{data_type}" where `{data_type}` is one
+   * of "altitude", "distance", "floors", "sleep", "steps", "weight".
    * </pre>
    *
    * <code>
@@ -102,8 +103,9 @@ public interface SubscriptionOrBuilder
    * A subscriber will only receive notifications for data types that are
    * declared here.
    * A subscription can only subscribe to the data types of the subscriber.
-   * Supported data types are: "altitude", "distance", "floors", "sleep",
-   * "steps", "weight".
+   * The values should be in the format
+   * "users/{health_user_id}/dataTypes/{data_type}" where `{data_type}` is one
+   * of "altitude", "distance", "floors", "sleep", "steps", "weight".
    * </pre>
    *
    * <code>
@@ -122,8 +124,9 @@ public interface SubscriptionOrBuilder
    * A subscriber will only receive notifications for data types that are
    * declared here.
    * A subscription can only subscribe to the data types of the subscriber.
-   * Supported data types are: "altitude", "distance", "floors", "sleep",
-   * "steps", "weight".
+   * The values should be in the format
+   * "users/{health_user_id}/dataTypes/{data_type}" where `{data_type}` is one
+   * of "altitude", "distance", "floors", "sleep", "steps", "weight".
    * </pre>
    *
    * <code>
@@ -143,8 +146,9 @@ public interface SubscriptionOrBuilder
    * A subscriber will only receive notifications for data types that are
    * declared here.
    * A subscription can only subscribe to the data types of the subscriber.
-   * Supported data types are: "altitude", "distance", "floors", "sleep",
-   * "steps", "weight".
+   * The values should be in the format
+   * "users/{health_user_id}/dataTypes/{data_type}" where `{data_type}` is one
+   * of "altitude", "distance", "floors", "sleep", "steps", "weight".
    * </pre>
    *
    * <code>
