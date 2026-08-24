@@ -49,16 +49,7 @@ function test_update_pom_dependency {
 
   update_pom_dependency . truth "99.88.77"
 
-  version=$(python3 -c "
-import xml.etree.ElementTree as ET
-root = ET.parse('pom.xml').getroot()
-for elem in root.iter():
-    art = elem.find('{*}artifactId')
-    ver = elem.find('{*}version')
-    if art is not None and art.text == 'truth' and ver is not None:
-        print(ver.text)
-        break
-")
+  version=$(python3 "${scriptDir}/pom_utils.py" get-dep-version pom.xml truth)
   if [ "$version" != "99.88.77" ]; then
     echo "update_pom_dependency failed to change version to expected value."
     exit 1

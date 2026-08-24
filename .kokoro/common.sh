@@ -492,22 +492,7 @@ function install_modules() {
 # ex: update_dependency google-cloud-java/google-cloud-jar-parent google-cloud-shared-dependencies 1.2.3
 function update_pom_dependency {
   pushd "$1" || exit 1
-  python3 -c "
-import xml.etree.ElementTree as ET, sys
-file, artifact_id, new_ver = 'pom.xml', sys.argv[1], sys.argv[2]
-ET.register_namespace('', 'http://maven.apache.org/POM/4.0.0')
-tree = ET.parse(file)
-root = tree.getroot()
-updated = False
-for elem in root.iter():
-    art = elem.find('{*}artifactId')
-    ver = elem.find('{*}version')
-    if art is not None and art.text == artifact_id and ver is not None:
-        ver.text = new_ver
-        updated = True
-if updated:
-    tree.write(file, encoding='utf-8', xml_declaration=True)
-" "$2" "$3"
+  python3 "${commonScriptDir}/pom_utils.py" update-dep-version pom.xml "$2" "$3"
   popd || exit 1
 }
 
@@ -516,21 +501,7 @@ function find_all_poms_with_versioned_dependency {
   poms=($(find . -name pom.xml))
   found=()
   for pom in "${poms[@]}"; do
-    if python3 -c "
-import xml.etree.ElementTree as ET, sys
-try:
-    root = ET.parse(sys.argv[1]).getroot()
-    found = False
-    for elem in root.iter():
-        art = elem.find('{*}artifactId')
-        ver = elem.find('{*}version')
-        if art is not None and art.text == sys.argv[2] and ver is not None and ver.text:
-            found = True
-            break
-    sys.exit(0 if found else 1)
-except Exception:
-    sys.exit(1)
-" "$pom" "$1" &>/dev/null; then
+    if python3 "${commonScriptDir}/pom_utils.py" has-versioned-dep "$pom" "$1"; then
       found+=("$pom")
     fi
   done
@@ -555,20 +526,11 @@ function update_all_poms_dependency {
 # Parse the version of the pom.xml file in the given directory ($1)
 # ex: VERSION=$(parse_pom_version java-shared-dependencies)
 function parse_pom_version {
-  result=$(python3 -c "
-import xml.etree.ElementTree as ET, sys
-try:
-    root = ET.parse('$1/pom.xml').getroot()
-    v = root.find('{*}version')
-    if v is None:
-        v = root.find('{*}parent/{*}version')
-    if v is not None and v.text:
-        print(v.text.strip())
-    else:
-        sys.exit(1)
-except Exception:
-    sys.exit(1)
-")
+  local pom_file="$1/pom.xml"
+  if [ ! -f "${pom_file}" ]; then
+    pom_file="$1"
+  fi
+  result=$(python3 "${commonScriptDir}/pom_utils.py" get-version "${pom_file}")
 
   if [ -z "${result}" ]; then
     echo "Version is not found in $1"

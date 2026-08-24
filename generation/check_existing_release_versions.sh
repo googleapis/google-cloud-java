@@ -5,6 +5,9 @@ MAVEN_SITE=https://maven-central.storage-download.googleapis.com/maven2
 
 set -e
 
+scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+POM_UTILS="${scriptDir}/../.kokoro/pom_utils.py"
+
 function find_existing_version_pom() {  
   local pom_file=$1
   if [ -z "${pom_file}" ]; then
@@ -14,17 +17,7 @@ function find_existing_version_pom() {
   local group_id
   local artifact_id
   local version
-  read -r group_id artifact_id version < <(python3 -c "
-import xml.etree.ElementTree as ET, sys
-try:
-    root = ET.parse(sys.argv[1]).getroot()
-    gid = root.find('{*}groupId')
-    aid = root.find('{*}artifactId')
-    ver = root.find('{*}version')
-    print(f\"{gid.text if gid is not None and gid.text else ''} {aid.text if aid is not None and aid.text else ''} {ver.text if ver is not None and ver.text else ''}\")
-except Exception:
-    print('  ')
-" "${pom_file}")
+  read -r group_id artifact_id version < <(python3 "${POM_UTILS}" get-coordinates "${pom_file}")
   echo -n "Checking ${group_id}:${artifact_id}:${version}:"
   if [ -z "${artifact_id}" ]; then
     echo "Couldn't parse artifact_id in the pom file: $pom_file"

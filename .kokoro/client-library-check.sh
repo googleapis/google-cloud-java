@@ -21,6 +21,10 @@ set -eo pipefail
 # Display commands being run.
 set -x
 
+## Get the directory of the build script
+scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+POM_UTILS="${scriptDir}/pom_utils.py"
+
 function get_current_version_from_versions_txt() {
   versions=$1
   key=$2
@@ -37,55 +41,17 @@ function get_released_version_from_versions_txt() {
 
 function replace_java_shared_config_version() {
   version=$1
-  # replace version
-  python3 -c "
-import xml.etree.ElementTree as ET, sys
-file = 'pom.xml'
-ET.register_namespace('', 'http://maven.apache.org/POM/4.0.0')
-tree = ET.parse(file)
-root = tree.getroot()
-for elem in root.iter():
-    art = elem.find('{*}artifactId')
-    ver = elem.find('{*}version')
-    if art is not None and art.text == 'google-cloud-shared-config' and ver is not None:
-        ver.text = sys.argv[1]
-tree.write(file, encoding='utf-8', xml_declaration=True)
-" "${version}"
+  python3 "${POM_UTILS}" update-dep-version pom.xml google-cloud-shared-config "${version}"
 }
 
 function replace_java_shared_dependencies_version() {
   version=$1
-  # replace version
-  python3 -c "
-import xml.etree.ElementTree as ET, sys
-file = 'pom.xml'
-ET.register_namespace('', 'http://maven.apache.org/POM/4.0.0')
-tree = ET.parse(file)
-root = tree.getroot()
-for prop in root.findall('.//{*}properties'):
-    target = prop.find('{*}google-cloud-shared-dependencies.version')
-    if target is not None:
-        target.text = sys.argv[1]
-tree.write(file, encoding='utf-8', xml_declaration=True)
-" "${version}"
+  python3 "${POM_UTILS}" update-property pom.xml google-cloud-shared-dependencies.version "${version}"
 }
 
 function replace_sdk_platform_java_config_version() {
   version=$1
-  # replace version in the shared parent POM
-  python3 -c "
-import xml.etree.ElementTree as ET, sys
-file = '../google-cloud-pom-parent/pom.xml'
-ET.register_namespace('', 'http://maven.apache.org/POM/4.0.0')
-tree = ET.parse(file)
-root = tree.getroot()
-for elem in root.iter():
-    art = elem.find('{*}artifactId')
-    ver = elem.find('{*}version')
-    if art is not None and art.text == 'sdk-platform-java-config' and ver is not None:
-        ver.text = sys.argv[1]
-tree.write(file, encoding='utf-8', xml_declaration=True)
-" "${version}"
+  python3 "${POM_UTILS}" update-dep-version ../google-cloud-pom-parent/pom.xml sdk-platform-java-config "${version}"
 }
 
 if [[ $# -ne 2 ]];
@@ -99,10 +65,8 @@ LIBRARY_NAME="google-cloud-${REPO#java-}"
 # build.sh uses this environment variable
 export JOB_TYPE=$2
 
-## Get the directory of the build script
-scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 ## cd to the parent directory, i.e. the root of the git repo
-cd ${scriptDir}/..
+cd "${scriptDir}/.."
 
 # Make artifacts available for 'mvn validate' at the bottom
 pushd java-shared-config
@@ -111,12 +75,7 @@ popd
 
 # Read the current version of this BOM in the POM. Example version: '0.116.1-alpha-SNAPSHOT'
 VERSION_POM=java-shared-config/java-shared-config/pom.xml
-JAVA_SHARED_CONFIG_VERSION=$(python3 -c "
-import xml.etree.ElementTree as ET
-root = ET.parse('${VERSION_POM}').getroot()
-v = root.find('{*}version') or root.find('{*}parent/{*}version')
-print(v.text if v is not None and v.text else '')
-")
+JAVA_SHARED_CONFIG_VERSION=$(python3 "${POM_UTILS}" get-version "${VERSION_POM}")
 
 if [ -z "${JAVA_SHARED_CONFIG_VERSION}" ]; then
   echo "Version is not found in ${VERSION_POM}"
@@ -131,12 +90,7 @@ LATEST_TAG=$(git ls-remote --tags https://github.com/googleapis/google-cloud-jav
 echo "Cloning google-cloud-java at tag: ${LATEST_TAG}"
 git clone "https://github.com/googleapis/google-cloud-java.git" -b "${LATEST_TAG}" --depth=1
 pushd google-cloud-java/sdk-platform-java
-SDK_PLATFORM_JAVA_CONFIG_VERSION=$(python3 -c "
-import xml.etree.ElementTree as ET
-root = ET.parse('sdk-platform-java-config/pom.xml').getroot()
-v = root.find('{*}version') or root.find('{*}parent/{*}version')
-print(v.text if v is not None and v.text else '')
-")
+SDK_PLATFORM_JAVA_CONFIG_VERSION=$(python3 "${POM_UTILS}" get-version sdk-platform-java-config/pom.xml)
 
 pushd sdk-platform-java-config
 # Use released version of google-cloud-shared-dependencies to avoid verifying SNAPSHOT changes.
