@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-agentidentity</artifactId>
-  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-agentidentity:current} -->
+  <version>0.2.0</version><!-- {x-version-update:google-cloud-agentidentity:current} -->
   <packaging>jar</packaging>
   <name>Google Agent Identity</name>
   <description>Agent Identity </description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-agentidentity-parent</artifactId>
-    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-agentidentity:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-agentidentity:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-agentidentity</site.installationModule>
