@@ -33,7 +33,7 @@ cd "${scriptDir}/../.."
 
 # Use GCP Maven Mirror from repository root
 mkdir -p "${HOME}/.m2"
-cp settings.xml "${HOME}/.m2"
+cp settings.xml "${HOME}/.m2/settings.xml"
 
 # Build and install the entire monorepo to local cache (including the under-test java-shared-config)
 mvn -B -ntp install -Dcheckstyle.skip -Dfmt.skip -DskipTests
