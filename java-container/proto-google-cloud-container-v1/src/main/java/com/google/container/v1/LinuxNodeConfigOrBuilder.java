@@ -67,6 +67,7 @@ public interface LinuxNodeConfigOrBuilder
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.core_pattern
    * kernel.perf_event_paranoid
    * kernel.sched_rt_runtime_us
    * kernel.softlockup_panic
@@ -139,6 +140,7 @@ public interface LinuxNodeConfigOrBuilder
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.core_pattern
    * kernel.perf_event_paranoid
    * kernel.sched_rt_runtime_us
    * kernel.softlockup_panic
@@ -215,6 +217,7 @@ public interface LinuxNodeConfigOrBuilder
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.core_pattern
    * kernel.perf_event_paranoid
    * kernel.sched_rt_runtime_us
    * kernel.softlockup_panic
@@ -287,6 +290,7 @@ public interface LinuxNodeConfigOrBuilder
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.core_pattern
    * kernel.perf_event_paranoid
    * kernel.sched_rt_runtime_us
    * kernel.softlockup_panic
@@ -363,6 +367,7 @@ public interface LinuxNodeConfigOrBuilder
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * kernel.core_pattern
    * kernel.perf_event_paranoid
    * kernel.sched_rt_runtime_us
    * kernel.softlockup_panic
@@ -733,4 +738,90 @@ public interface LinuxNodeConfigOrBuilder
    */
   com.google.container.v1.LinuxNodeConfig.AccurateTimeConfigOrBuilder
       getAccurateTimeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains VFIO-related configurations for this node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the nodeVfioConfig field is set.
+   */
+  boolean hasNodeVfioConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains VFIO-related configurations for this node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The nodeVfioConfig.
+   */
+  com.google.container.v1.LinuxNodeConfig.NodeVfioConfig getNodeVfioConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Contains VFIO-related configurations for this node.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.NodeVfioConfig node_vfio_config = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.LinuxNodeConfig.NodeVfioConfigOrBuilder getNodeVfioConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the configuration for the disk IO scheduler.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the diskIoScheduler field is set.
+   */
+  boolean hasDiskIoScheduler();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the configuration for the disk IO scheduler.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The diskIoScheduler.
+   */
+  com.google.container.v1.DiskIoScheduler getDiskIoScheduler();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the configuration for the disk IO scheduler.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.DiskIoScheduler disk_io_scheduler = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1.DiskIoSchedulerOrBuilder getDiskIoSchedulerOrBuilder();
 }

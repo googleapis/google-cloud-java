@@ -89,11 +89,13 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * No channel specified.
+     * Deprecated: No channel specified. it will be removed in the future, use
+     * RAPID, REGULAR, STABLE or EXTENDED instead.
      * </pre>
      *
-     * <code>UNSPECIFIED = 0;</code>
+     * <code>UNSPECIFIED = 0 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     UNSPECIFIED(0),
     /**
      *
@@ -161,12 +163,13 @@ public final class ReleaseChannel extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * No channel specified.
+     * Deprecated: No channel specified. it will be removed in the future, use
+     * RAPID, REGULAR, STABLE or EXTENDED instead.
      * </pre>
      *
-     * <code>UNSPECIFIED = 0;</code>
+     * <code>UNSPECIFIED = 0 [deprecated = true];</code>
      */
-    public static final int UNSPECIFIED_VALUE = 0;
+    @java.lang.Deprecated public static final int UNSPECIFIED_VALUE = 0;
 
     /**
      *
