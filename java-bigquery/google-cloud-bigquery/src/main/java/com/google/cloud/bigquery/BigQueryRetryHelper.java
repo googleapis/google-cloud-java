@@ -128,7 +128,7 @@ public class BigQueryRetryHelper extends RetryHelper {
             bigQueryRetryConfig); // using BigQueryRetryAlgorithm in place of
     // com.google.api.gax.retrying.RetryAlgorithm, as
     // BigQueryRetryAlgorithm retries considering bigQueryRetryConfig
-    RetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
+    DirectRetryingExecutor<V> executor = new DirectRetryingExecutor<>(retryAlgorithm);
 
     // 1. Resolve method name for the tracer span
     String methodName = "execute";
@@ -175,7 +175,7 @@ public class BigQueryRetryHelper extends RetryHelper {
           });
     }
 
-    RetryingFuture<V> retryingFuture = executor.createFuture(callable);
+    RetryingFuture<V> retryingFuture = executor.createFuture(callable, context);
     executor.submit(retryingFuture);
     return retryingFuture.get();
   }
