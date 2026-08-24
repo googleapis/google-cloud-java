@@ -142,7 +142,7 @@
       <dependency>
         <groupId>com.google.apis</groupId>
         <artifactId>google-api-services-bigquery</artifactId>
-        <version>v2-rev20260707-2.0.0</version>
+        <version>v2-rev20260731-2.0.0</version>
       </dependency>
 
     </dependencies>

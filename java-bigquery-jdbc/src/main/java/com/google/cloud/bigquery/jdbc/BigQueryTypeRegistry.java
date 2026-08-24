@@ -92,9 +92,15 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.BOOL,
         Arrays.asList(Boolean.class),
         (val, targetClass, zone) -> {
-          if (val instanceof Boolean) return val;
-          if (val instanceof Number) return ((Number) val).longValue() != 0;
-          if (val instanceof String) return Boolean.parseBoolean((String) val);
+          if (val instanceof Boolean) {
+            return val;
+          }
+          if (val instanceof Number) {
+            return ((Number) val).longValue() != 0;
+          }
+          if (val instanceof String) {
+            return Boolean.parseBoolean((String) val);
+          }
           throw new BigQueryJdbcException("Cannot convert to BOOL: " + val);
         });
   }
@@ -106,8 +112,12 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.STRING,
         Arrays.asList(String.class),
         (val, targetClass, zone) -> {
-          if (val == null) return null;
-          if (val instanceof byte[]) return Base64.getEncoder().encodeToString((byte[]) val);
+          if (val == null) {
+            return null;
+          }
+          if (val instanceof byte[]) {
+            return Base64.getEncoder().encodeToString((byte[]) val);
+          }
           if (val instanceof Timestamp) {
             return TIMESTAMP_FORMATTER.format(((Timestamp) val).toLocalDateTime());
           }
@@ -144,18 +154,21 @@ final class BigQueryTypeRegistry {
           }
 
           if (targetClass == Integer.class) {
-            if (longVal > Integer.MAX_VALUE || longVal < Integer.MIN_VALUE)
+            if (longVal > Integer.MAX_VALUE || longVal < Integer.MIN_VALUE) {
               throw new BigQueryJdbcException("Value out of range for Integer: " + longVal);
+            }
             return (int) longVal;
           }
           if (targetClass == Short.class) {
-            if (longVal > Short.MAX_VALUE || longVal < Short.MIN_VALUE)
+            if (longVal > Short.MAX_VALUE || longVal < Short.MIN_VALUE) {
               throw new BigQueryJdbcException("Value out of range for Short: " + longVal);
+            }
             return (short) longVal;
           }
           if (targetClass == Byte.class) {
-            if (longVal > Byte.MAX_VALUE || longVal < Byte.MIN_VALUE)
+            if (longVal > Byte.MAX_VALUE || longVal < Byte.MIN_VALUE) {
               throw new BigQueryJdbcException("Value out of range for Byte: " + longVal);
+            }
             return (byte) longVal;
           }
           return longVal;
@@ -175,7 +188,9 @@ final class BigQueryTypeRegistry {
           else if (val instanceof Boolean) doubleVal = (Boolean) val ? 1.0 : 0.0;
           else throw new BigQueryJdbcException("Cannot convert to FLOAT64: " + val);
 
-          if (targetClass == Float.class) return (float) doubleVal;
+          if (targetClass == Float.class) {
+            return (float) doubleVal;
+          }
           return doubleVal;
         });
   }
@@ -187,9 +202,15 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.NUMERIC,
         Arrays.asList(BigDecimal.class),
         (val, targetClass, zone) -> {
-          if (val instanceof BigDecimal) return val;
-          if (val instanceof Number) return new BigDecimal(val.toString());
-          if (val instanceof String) return new BigDecimal((String) val);
+          if (val instanceof BigDecimal) {
+            return val;
+          }
+          if (val instanceof Number) {
+            return new BigDecimal(val.toString());
+          }
+          if (val instanceof String) {
+            return new BigDecimal((String) val);
+          }
           if (val instanceof Boolean) {
             return (Boolean) val ? BigDecimal.ONE : BigDecimal.ZERO;
           }
@@ -204,24 +225,48 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.DATE,
         Arrays.asList(Date.class, LocalDate.class),
         (val, targetClass, zone) -> {
-          // TODO(Phase 3): Add native JSR-310 fast-path to bypass boxing for LocalDate
+          // Modern fast-path: Bypass intermediate object creation for JSR-310 targets
+          if (targetClass == LocalDate.class) {
+            if (val instanceof LocalDate) {
+              return val;
+            } else if (val instanceof Date) {
+              return ((Date) val).toLocalDate();
+            } else if (val instanceof Timestamp) {
+              return ((Timestamp) val).toInstant().atOffset(ZoneOffset.UTC).toLocalDate();
+            } else if (val instanceof java.sql.Time) {
+              throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
+            } else if (val instanceof java.util.Date) {
+              return new Date(((java.util.Date) val).getTime()).toLocalDate();
+            } else if (val instanceof LocalDateTime) {
+              return ((LocalDateTime) val).toLocalDate();
+            } else if (val instanceof String) {
+              return LocalDate.parse((String) val);
+            } else {
+              throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
+            }
+          }
+
+          // Legacy path: Box values into java.sql.Date
           Date sqlDate;
-          if (val instanceof Date) sqlDate = (Date) val;
-          else if (val instanceof Timestamp) {
+          if (val instanceof Date) {
+            sqlDate = (Date) val;
+          } else if (val instanceof Timestamp) {
             sqlDate =
                 Date.valueOf(((Timestamp) val).toInstant().atOffset(ZoneOffset.UTC).toLocalDate());
           } else if (val instanceof java.sql.Time) {
             throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
-          } else if (val instanceof java.util.Date)
+          } else if (val instanceof java.util.Date) {
             sqlDate = new Date(((java.util.Date) val).getTime());
-          else if (val instanceof LocalDate) sqlDate = Date.valueOf((LocalDate) val);
-          else if (val instanceof LocalDateTime)
+          } else if (val instanceof LocalDate) {
+            sqlDate = Date.valueOf((LocalDate) val);
+          } else if (val instanceof LocalDateTime) {
             sqlDate = Date.valueOf(((LocalDateTime) val).toLocalDate());
-          else if (val instanceof String)
+          } else if (val instanceof String) {
             sqlDate = BigQueryTemporalUtility.boxDate((String) val, zone);
-          else throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
+          } else {
+            throw new BigQueryJdbcException("Cannot convert to DATE: " + val);
+          }
 
-          if (targetClass == LocalDate.class) return sqlDate.toLocalDate();
           return sqlDate;
         });
   }
@@ -233,17 +278,35 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.DATETIME,
         Arrays.asList(Timestamp.class, LocalDateTime.class),
         (val, targetClass, zone) -> {
-          // TODO(Phase 3): Add native JSR-310 fast-path to bypass boxing for LocalDateTime
-          Timestamp ts;
-          if (val instanceof Timestamp) ts = (Timestamp) val;
-          else if (val instanceof java.util.Date)
-            ts = new Timestamp(((java.util.Date) val).getTime());
-          else if (val instanceof LocalDateTime) ts = Timestamp.valueOf((LocalDateTime) val);
-          else if (val instanceof String)
-            ts = BigQueryTemporalUtility.boxDateTime((String) val, zone);
-          else throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
+          // Modern fast-path: Bypass intermediate object creation for JSR-310 targets
+          if (targetClass == LocalDateTime.class) {
+            if (val instanceof LocalDateTime) {
+              return val;
+            } else if (val instanceof Timestamp) {
+              return ((Timestamp) val).toLocalDateTime();
+            } else if (val instanceof java.util.Date) {
+              return new Timestamp(((java.util.Date) val).getTime()).toLocalDateTime();
+            } else if (val instanceof String) {
+              return LocalDateTime.parse(((String) val).replace(' ', 'T'));
+            } else {
+              throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
+            }
+          }
 
-          if (targetClass == LocalDateTime.class) return ts.toLocalDateTime();
+          // Legacy path: Box values into java.sql.Timestamp
+          Timestamp ts;
+          if (val instanceof Timestamp) {
+            ts = (Timestamp) val;
+          } else if (val instanceof java.util.Date) {
+            ts = new Timestamp(((java.util.Date) val).getTime());
+          } else if (val instanceof LocalDateTime) {
+            ts = Timestamp.valueOf((LocalDateTime) val);
+          } else if (val instanceof String) {
+            ts = BigQueryTemporalUtility.boxDateTime((String) val, zone);
+          } else {
+            throw new BigQueryJdbcException("Cannot convert to DATETIME: " + val);
+          }
+
           return ts;
         });
   }
@@ -255,28 +318,56 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.TIMESTAMP,
         Arrays.asList(Timestamp.class, OffsetDateTime.class, Instant.class, ZonedDateTime.class),
         (val, targetClass, zone) -> {
-          // TODO(Phase 3): Add native JSR-310 fast-path to bypass boxing for Instant, etc.
-          Timestamp ts;
-          if (val instanceof Timestamp) ts = (Timestamp) val;
-          else if (val instanceof java.util.Date)
-            ts = new Timestamp(((java.util.Date) val).getTime());
-          else if (val instanceof Instant) ts = Timestamp.from((Instant) val);
-          else if (val instanceof OffsetDateTime)
-            ts = Timestamp.from(((OffsetDateTime) val).toInstant());
-          else if (val instanceof ZonedDateTime)
-            ts = Timestamp.from(((ZonedDateTime) val).toInstant());
-          else if (val instanceof LocalDateTime)
-            ts = Timestamp.from(((LocalDateTime) val).toInstant(ZoneOffset.UTC));
-          else if (val instanceof Long)
-            ts =
-                Timestamp.from(
-                    Instant.EPOCH.plus((Long) val, java.time.temporal.ChronoUnit.MICROS));
-          else if (val instanceof String) ts = BigQueryTemporalUtility.boxTimestamp((String) val);
-          else throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
+          // Modern fast-path: Bypass intermediate object creation for JSR-310 targets
+          if (targetClass == Instant.class || targetClass == OffsetDateTime.class || targetClass == ZonedDateTime.class) {
+            Instant instant;
+            if (val instanceof Instant) {
+              instant = (Instant) val;
+            } else if (val instanceof OffsetDateTime) {
+              instant = ((OffsetDateTime) val).toInstant();
+            } else if (val instanceof ZonedDateTime) {
+              instant = ((ZonedDateTime) val).toInstant();
+            } else if (val instanceof Timestamp) {
+              instant = ((Timestamp) val).toInstant();
+            } else if (val instanceof java.util.Date) {
+              instant = Instant.ofEpochMilli(((java.util.Date) val).getTime());
+            } else if (val instanceof LocalDateTime) {
+              instant = ((LocalDateTime) val).toInstant(ZoneOffset.UTC);
+            } else if (val instanceof Long) {
+              instant = Instant.EPOCH.plus((Long) val, java.time.temporal.ChronoUnit.MICROS);
+            } else if (val instanceof String) {
+              instant = BigQueryTemporalUtility.boxTimestamp((String) val).toInstant();
+            } else {
+              throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
+            }
 
-          if (targetClass == Instant.class) return ts.toInstant();
-          if (targetClass == OffsetDateTime.class) return ts.toInstant().atOffset(ZoneOffset.UTC);
-          if (targetClass == ZonedDateTime.class) return ts.toInstant().atZone(ZoneOffset.UTC);
+            if (targetClass == Instant.class) return instant;
+            if (targetClass == OffsetDateTime.class) return instant.atOffset(ZoneOffset.UTC);
+            if (targetClass == ZonedDateTime.class) return instant.atZone(ZoneOffset.UTC);
+          }
+
+          // Legacy path: Box values into java.sql.Timestamp
+          Timestamp ts;
+          if (val instanceof Timestamp) {
+            ts = (Timestamp) val;
+          } else if (val instanceof java.util.Date) {
+            ts = new Timestamp(((java.util.Date) val).getTime());
+          } else if (val instanceof Instant) {
+            ts = Timestamp.from((Instant) val);
+          } else if (val instanceof OffsetDateTime) {
+            ts = Timestamp.from(((OffsetDateTime) val).toInstant());
+          } else if (val instanceof ZonedDateTime) {
+            ts = Timestamp.from(((ZonedDateTime) val).toInstant());
+          } else if (val instanceof LocalDateTime) {
+            ts = Timestamp.from(((LocalDateTime) val).toInstant(ZoneOffset.UTC));
+          } else if (val instanceof Long) {
+            ts = Timestamp.from(Instant.EPOCH.plus((Long) val, java.time.temporal.ChronoUnit.MICROS));
+          } else if (val instanceof String) {
+            ts = BigQueryTemporalUtility.boxTimestamp((String) val);
+          } else {
+            throw new BigQueryJdbcException("Cannot convert to TIMESTAMP: " + val);
+          }
+
           return ts;
         });
   }
@@ -331,8 +422,11 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.BYTES,
         Arrays.asList(byte[].class),
         (val, targetClass, zone) -> {
-          if (val instanceof byte[]) return val;
-          else if (val instanceof String) return Base64.getDecoder().decode((String) val);
+          if (val instanceof byte[]) {
+            return val;
+          } else if (val instanceof String) {
+            return Base64.getDecoder().decode((String) val);
+          }
           throw new BigQueryJdbcException("Cannot convert to BYTES: " + val);
         });
   }
@@ -344,7 +438,9 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.ARRAY,
         Arrays.asList(Array.class),
         (val, targetClass, zone) -> {
-          if (val instanceof Array) return val;
+          if (val instanceof Array) {
+            return val;
+          }
           throw new BigQueryJdbcException("Cannot convert to ARRAY: " + val);
         });
   }
@@ -356,7 +452,9 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.STRUCT,
         Arrays.asList(Struct.class),
         (val, targetClass, zone) -> {
-          if (val instanceof Struct) return val;
+          if (val instanceof Struct) {
+            return val;
+          }
           throw new BigQueryJdbcException("Cannot convert to STRUCT: " + val);
         });
   }
@@ -377,9 +475,15 @@ final class BigQueryTypeRegistry {
         StandardSQLTypeName.BIGNUMERIC,
         Arrays.asList(BigDecimal.class),
         (val, targetClass, zone) -> {
-          if (val instanceof BigDecimal) return val;
-          if (val instanceof Number) return new BigDecimal(val.toString());
-          if (val instanceof String) return new BigDecimal((String) val);
+          if (val instanceof BigDecimal) {
+            return val;
+          }
+          if (val instanceof Number) {
+            return new BigDecimal(val.toString());
+          }
+          if (val instanceof String) {
+            return new BigDecimal((String) val);
+          }
           throw new BigQueryJdbcException("Cannot convert to BIGNUMERIC: " + val);
         });
   }
@@ -485,10 +589,11 @@ final class BigQueryTypeRegistry {
     return StandardSQLTypeName.STRING; // Legacy fallback
   }
 
-  /** Returns the default Java target class for a given JDBC type constant. */
   /** Returns the JDBC Type constant for a given BigQuery type. */
   public static int toJdbcType(StandardSQLTypeName bqType) {
-    if (bqType == null) return java.sql.Types.OTHER;
+    if (bqType == null) {
+      return java.sql.Types.OTHER;
+    }
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
       return java.sql.Types.OTHER;
@@ -537,7 +642,9 @@ final class BigQueryTypeRegistry {
 
   /** Returns the exact default Java Class for a given BigQuery type, avoiding lossy mappings. */
   public static Class<?> toJavaClass(StandardSQLTypeName bqType) {
-    if (bqType == null) return String.class;
+    if (bqType == null) {
+      return String.class;
+    }
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
       return String.class;
@@ -596,10 +703,14 @@ final class BigQueryTypeRegistry {
    */
   public static Object convert(Object input, StandardSQLTypeName bqType, ZoneId zoneId)
       throws BigQueryJdbcException {
-    if (input == null) return null;
+    if (input == null) {
+      return null;
+    }
     if (input instanceof FieldValue) {
       FieldValue fv = (FieldValue) input;
-      if (fv.isNull()) return null;
+      if (fv.isNull()) {
+        return null;
+      }
       input = fv.getValue();
     }
     int ordinal = bqType.ordinal();
@@ -623,7 +734,9 @@ final class BigQueryTypeRegistry {
   public static <T> T convert(
       Object input, StandardSQLTypeName bqType, Class<T> targetClass, ZoneId zoneId)
       throws BigQueryJdbcException {
-    if (input == null) return null;
+    if (input == null) {
+      return null;
+    }
     int ordinal = bqType.ordinal();
     if (ordinal >= DESCRIPTORS_BY_ORDINAL.length || DESCRIPTORS_BY_ORDINAL[ordinal] == null) {
       throw new BigQueryJdbcException("No type descriptor registered for BigQuery type: " + bqType);
@@ -714,6 +827,8 @@ final class BigQueryTypeRegistry {
           .put(
               StandardSQLTypeName.STRUCT,
               new ColumnTypeInfo(Types.STRUCT, "STRUCT", null, null, null))
+          .put(
+              StandardSQLTypeName.ARRAY, new ColumnTypeInfo(Types.ARRAY, "ARRAY", null, null, null))
           .build();
 
   public static ColumnTypeInfo getColumnTypeInfo(StandardSQLTypeName bqType) {

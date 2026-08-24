@@ -806,19 +806,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       setNull(parameterName, targetSqlType);
       return;
     }
+    Class<?> javaType = BigQueryTypeRegistry.toJavaClass(targetSqlType);
     this.parameterHandler.setParameter(
-        parameterName, value, value.getClass(), BigQueryStatementParameterType.IN, 0);
-    StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(parameterName);
-    if (sqlType != null) {
-      int javaSqlType = BigQueryTypeRegistry.toJdbcType(sqlType);
-      if (javaSqlType != targetSqlType) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException(
-            String.format("Unsupported  sql type:%s ", targetSqlType));
-      }
-    } else {
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          String.format("parameter sql type not supported: %s", sqlType));
-    }
+        parameterName, value, javaType, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
@@ -829,19 +819,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       setNull(parameterName, targetSqlType);
       return;
     }
+    Class<?> javaType = BigQueryTypeRegistry.toJavaClass(targetSqlType);
     this.parameterHandler.setParameter(
-        parameterName, value, value.getClass(), BigQueryStatementParameterType.IN, scaleOrLength);
-    StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(parameterName);
-    if (sqlType != null) {
-      int javaSqlType = BigQueryTypeRegistry.toJdbcType(sqlType);
-      if (javaSqlType != targetSqlType) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException(
-            String.format("Unsupported  sql type:%s ", targetSqlType));
-      }
-    } else {
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          String.format("parameter sql type not supported: %s", sqlType));
-    }
+        parameterName, value, javaType, BigQueryStatementParameterType.IN, scaleOrLength);
   }
 
   @Override
