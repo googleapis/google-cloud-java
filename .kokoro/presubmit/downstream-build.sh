@@ -31,16 +31,16 @@ scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 ## cd to the parent directory, i.e. the root of the git repo
 cd "${scriptDir}/../.."
 
+# Use GCP Maven Mirror from repository root
+mkdir -p "${HOME}/.m2"
+cp settings.xml "${HOME}/.m2"
+
 # Build and install the entire monorepo to local cache (including the under-test java-shared-config)
 mvn -B -ntp install -Dcheckstyle.skip -Dfmt.skip -DskipTests
 
 # Get the version of java-shared-config under test
 VERSION_POM=java-shared-config/java-shared-config/pom.xml
 SHARED_CONFIG_VERSION=$(sed -e 's/xmlns=".*"//' ${VERSION_POM} | xmllint --xpath '/project/version/text()' -)
-
-# Use GCP Maven Mirror (as in original script)
-mkdir -p "${HOME}/.m2"
-cp java-shared-config/settings.xml "${HOME}/.m2"
 
 # Update the shared-config version in the local java-showcase parent
 pushd java-showcase
