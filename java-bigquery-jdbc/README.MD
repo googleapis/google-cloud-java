@@ -80,7 +80,7 @@ pooling).
 
 Client-side usage telemetry behaves as a global background service for
 the application's JVM. Settings can be configured using JDBC connection
-properties, environment variables, or java system properties. The driver
+properties, environment variables, or Java system properties. The driver
 resolves settings in the following priority: system property > environment
 variable > JDBC connection property.
 
