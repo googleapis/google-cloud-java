@@ -43,11 +43,11 @@ import com.google.api.client.http.UrlEncodedContent;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
-import com.google.api.client.util.Preconditions;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.MetricsUtils.RequestType;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -75,7 +75,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
 
   private final String clientId;
   private final String clientSecret;
-  private final String refreshToken;
+  private final @Nullable String refreshToken;
   private final URI tokenServerUri;
   private final String transportFactoryClassName;
 
@@ -257,7 +257,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
    *
    * @return refresh token
    */
-  public final String getRefreshToken() {
+  public final @Nullable String getRefreshToken() {
     return refreshToken;
   }
 
@@ -321,15 +321,9 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
     if (refreshToken != null) {
       json.put("refresh_token", refreshToken);
     }
-    if (tokenServerUri != null) {
-      json.put("token_server_uri", tokenServerUri);
-    }
-    if (clientId != null) {
-      json.put("client_id", clientId);
-    }
-    if (clientSecret != null) {
-      json.put("client_secret", clientSecret);
-    }
+    json.put("token_server_uri", tokenServerUri);
+    json.put("client_id", clientId);
+    json.put("client_secret", clientSecret);
     if (quotaProjectId != null) {
       json.put("quota_project_id", quotaProjectId);
     }
@@ -417,12 +411,12 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
 
   public static class Builder extends GoogleCredentials.Builder {
 
-    private String clientId;
-    private String clientSecret;
-    private String refreshToken;
-    private URI tokenServerUri;
-    private String account;
-    private HttpTransportFactory transportFactory;
+    private @Nullable String clientId;
+    private @Nullable String clientSecret;
+    private @Nullable String refreshToken;
+    private @Nullable URI tokenServerUri;
+    private @Nullable String account;
+    private @Nullable HttpTransportFactory transportFactory;
 
     protected Builder() {}
 
@@ -455,7 +449,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
     }
 
     @CanIgnoreReturnValue
-    public Builder setTokenServerUri(URI tokenServerUri) {
+    public Builder setTokenServerUri(@Nullable URI tokenServerUri) {
       this.tokenServerUri = tokenServerUri;
       return this;
     }
@@ -467,7 +461,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
     }
 
     @CanIgnoreReturnValue
-    Builder setAccount(String account) {
+    Builder setAccount(@Nullable String account) {
       this.account = account;
       return this;
     }
@@ -495,32 +489,32 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 
-    public String getClientId() {
+    public @Nullable String getClientId() {
       return clientId;
     }
 
-    public String getClientSecret() {
+    public @Nullable String getClientSecret() {
       return clientSecret;
     }
 
-    public String getRefreshToken() {
+    public @Nullable String getRefreshToken() {
       return refreshToken;
     }
 
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    String getAccount() {
+    @Nullable String getAccount() {
       return account;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
