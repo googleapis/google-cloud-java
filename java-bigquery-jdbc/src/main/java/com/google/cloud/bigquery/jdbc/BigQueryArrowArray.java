@@ -19,10 +19,8 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Schema;
-import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
 
@@ -102,10 +100,6 @@ class BigQueryArrowArray extends BigQueryBaseArray {
   Object getCoercedValue(int index) throws SQLException {
     LOG.finestTrace("getCoercedValue");
     Object value = this.values.get(index);
-    if (value instanceof Integer
-        && schema.getType().getStandardType() == StandardSQLTypeName.DATE) {
-      value = LocalDate.ofEpochDay(((Integer) value).longValue());
-    }
     return this.arrayOfStruct
         ? new BigQueryArrowStruct(
             schema.getSubFields(), (JsonStringHashMap<?, ?>) value, this.LOG.getArrowStructLogger())

@@ -239,6 +239,8 @@ final class BigQueryTypeRegistry {
               return new Date(((java.util.Date) val).getTime()).toLocalDate();
             } else if (val instanceof LocalDateTime) {
               return ((LocalDateTime) val).toLocalDate();
+            } else if (val instanceof Number) {
+              return LocalDate.ofEpochDay(((Number) val).longValue());
             } else if (val instanceof String) {
               return LocalDate.parse((String) val);
             } else {
@@ -261,6 +263,8 @@ final class BigQueryTypeRegistry {
             sqlDate = Date.valueOf((LocalDate) val);
           } else if (val instanceof LocalDateTime) {
             sqlDate = Date.valueOf(((LocalDateTime) val).toLocalDate());
+          } else if (val instanceof Number) {
+            sqlDate = Date.valueOf(LocalDate.ofEpochDay(((Number) val).longValue()));
           } else if (val instanceof String) {
             sqlDate = BigQueryTemporalUtility.boxDate((String) val, zone);
           } else {
@@ -319,7 +323,9 @@ final class BigQueryTypeRegistry {
         Arrays.asList(Timestamp.class, OffsetDateTime.class, Instant.class, ZonedDateTime.class),
         (val, targetClass, zone) -> {
           // Modern fast-path: Bypass intermediate object creation for JSR-310 targets
-          if (targetClass == Instant.class || targetClass == OffsetDateTime.class || targetClass == ZonedDateTime.class) {
+          if (targetClass == Instant.class
+              || targetClass == OffsetDateTime.class
+              || targetClass == ZonedDateTime.class) {
             Instant instant;
             if (val instanceof Instant) {
               instant = (Instant) val;
@@ -361,7 +367,9 @@ final class BigQueryTypeRegistry {
           } else if (val instanceof LocalDateTime) {
             ts = Timestamp.from(((LocalDateTime) val).toInstant(ZoneOffset.UTC));
           } else if (val instanceof Long) {
-            ts = Timestamp.from(Instant.EPOCH.plus((Long) val, java.time.temporal.ChronoUnit.MICROS));
+            ts =
+                Timestamp.from(
+                    Instant.EPOCH.plus((Long) val, java.time.temporal.ChronoUnit.MICROS));
           } else if (val instanceof String) {
             ts = BigQueryTemporalUtility.boxTimestamp((String) val);
           } else {
@@ -531,11 +539,12 @@ final class BigQueryTypeRegistry {
             builder
                 .append(hours)
                 .append(":")
-                .append(minutes)
+                .append(String.format("%02d", minutes))
                 .append(":")
-                .append(seconds)
-                .append(".")
-                .append(microseconds);
+                .append(String.format("%02d", seconds));
+            if (microseconds > 0) {
+              builder.append(".").append(String.format("%06d", microseconds));
+            }
             return builder.toString().replaceFirst("--", "-");
           }
           return String.valueOf(val);
