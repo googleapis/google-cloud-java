@@ -51,6 +51,7 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
+import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.cloud.bigquery.Schema;
@@ -1087,6 +1088,25 @@ public class BigQueryStatementTest {
     DatasetInfo createdDatasetInfo = datasetInfoCaptor.getValue();
     assertEquals("temp_dataset", createdDatasetInfo.getDatasetId().getDataset());
     assertEquals("europe-west3", createdDatasetInfo.getLocation());
+  }
+
+  @Test
+  public void testSessionIdSavedFromTableResult() throws Exception {
+    TableResult tableResult = mock(TableResult.class);
+    SessionInfo sessionInfo = mock(SessionInfo.class);
+
+    doReturn("session_xyz_123").when(sessionInfo).getSessionId();
+    doReturn(sessionInfo).when(tableResult).getSessionInfo();
+
+    doReturn(tableResult)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+
+    QueryJobConfiguration jobConfig =
+        QueryJobConfiguration.newBuilder("CREATE TEMP TABLE t1 (id INT64)").build();
+    bigQueryStatement.executeJob(jobConfig);
+
+    verify(bigQueryConnection).updateSessionInfo("session_xyz_123");
   }
 
   @Test

@@ -26,6 +26,7 @@ import com.google.cloud.bigquery.BigQuery.JobListOption;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.ConnectionProperty;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
@@ -56,7 +57,6 @@ import com.google.cloud.bigquery.storage.v1.ReadRowsRequest;
 import com.google.cloud.bigquery.storage.v1.ReadRowsResponse;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.Uninterruptibles;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -208,13 +208,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           this.connection.getDestinationDatasetExpirationTime());
     }
     // only create session if enable session and session info is null
-    if (this.connection.enableSession) {
-      if (this.connection.sessionInfoConnectionProperty == null) {
-        querySettings.setEnableSession(this.connection.isSessionEnabled());
-      } else {
-        querySettings.setSessionInfoConnectionProperty(
-            this.connection.getSessionInfoConnectionProperty());
-      }
+    if (this.connection.isSessionEnabled()) {
+      querySettings.setEnableSession(this.connection.isSessionEnabled());
+      querySettings.setSessionInfoConnectionProperty(
+          this.connection.getSessionInfoConnectionProperty());
     }
     querySettings.setUseWriteAPI(this.connection.isEnableWriteAPI());
     querySettings.setWriteAPIActivationRowCount(this.connection.getWriteAPIActivationRowCount());
@@ -333,7 +330,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     LOG.finer("++enter++");
     // BQ Read-only tokens are not recommended to use, they have a lot of known flaws.
     // We're supporting them in a limited capacity, for pure SELECT statements.
-    if (this.connection.isReadOnlyTokenUsed()) {
+    if (this.connection != null && this.connection.isReadOnlyTokenUsed()) {
       LOG.warning(
           "Read-only token detected, skipping dry run and assuming StatementType is SELECT.");
       return StatementType.SELECT;
@@ -400,6 +397,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (isClosed()) {
       return;
     }
+    this.isClosed = true;
     LOG.fine("Closing Statement %s.", this);
 
     boolean cancelSucceeded = false;
@@ -413,7 +411,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         closeStatementResources();
       }
       this.connection = null;
-      this.isClosed = true;
     }
   }
 
@@ -573,6 +570,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     Object result = bigQuery.queryWithTimeout(jobConfiguration, jobId, null);
     if (result instanceof TableResult) {
       TableResult tableResult = (TableResult) result;
+      saveSessionIdIfPresent(tableResult);
       if (tableResult.getJobId() != null) {
         return new ExecuteResult(tableResult, bigQuery.getJob(tableResult.getJobId()));
       }
@@ -599,7 +597,20 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     synchronized (cancelLock) {
       jobIds.remove(jobId);
     }
+    saveSessionIdIfPresent(tableResult);
     return new ExecuteResult(tableResult, job);
+  }
+
+  private void saveSessionIdIfPresent(TableResult tableResult) {
+    if (this.connection == null || tableResult == null) {
+      return;
+    }
+    if (tableResult.getSessionInfo() != null) {
+      String sessionId = tableResult.getSessionInfo().getSessionId();
+      if (sessionId != null && !sessionId.isEmpty()) {
+        this.connection.updateSessionInfo(sessionId);
+      }
+    }
   }
 
   private StatementType getStatementType(ExecuteResult executeResult) {
@@ -1462,11 +1473,35 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     queryConfigBuilder.setLabels(mergedLabels);
     queryConfigBuilder.setUseQueryCache(this.querySettings.getUseQueryCache());
     queryConfigBuilder.setMaxResults(this.querySettings.getMaxResultPerPage());
-    if (this.querySettings.getSessionInfoConnectionProperty() != null) {
-      queryConfigBuilder.setConnectionProperties(
-          ImmutableList.of(this.querySettings.getSessionInfoConnectionProperty()));
-    } else {
-      queryConfigBuilder.setCreateSession(querySettings.isEnableSession());
+
+    ConnectionProperty sessionProperty =
+        this.connection != null
+            ? this.connection.getSessionInfoConnectionProperty()
+            : this.querySettings.getSessionInfoConnectionProperty();
+    boolean isSessionEnabled =
+        this.connection != null
+            ? this.connection.isSessionEnabled()
+            : this.querySettings.isEnableSession();
+    List<ConnectionProperty> queryProperties =
+        this.connection != null
+            ? this.connection.getQueryProperties()
+            : this.querySettings.getQueryProperties();
+
+    List<ConnectionProperty> props =
+        queryProperties != null ? new ArrayList<>(queryProperties) : new ArrayList<>();
+
+    if (sessionProperty != null) {
+      boolean hasSessionId =
+          props.stream().anyMatch(cp -> "session_id".equalsIgnoreCase(cp.getKey()));
+      if (!hasSessionId) {
+        props.add(sessionProperty);
+      }
+    } else if (isSessionEnabled) {
+      queryConfigBuilder.setCreateSession(true);
+    }
+
+    if (!props.isEmpty()) {
+      queryConfigBuilder.setConnectionProperties(props);
     }
     if (this.querySettings.getKmsKeyName() != null) {
       EncryptionConfiguration encryption =
@@ -1474,9 +1509,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
               .setKmsKeyName(this.querySettings.getKmsKeyName())
               .build();
       queryConfigBuilder.setDestinationEncryptionConfiguration(encryption);
-    }
-    if (this.querySettings.getQueryProperties() != null) {
-      queryConfigBuilder.setConnectionProperties(this.querySettings.getQueryProperties());
     }
     queryConfigBuilder.setUseLegacySql(getUseLegacySql());
 
