@@ -56,7 +56,7 @@ public class MaybePointWriteCallableTest {
     ApiFuture<Void> future = callable.futureCall(request, null);
     pointWriter.response.set(null);
 
-    assertThat((Object) future.get()).isNull();
+    future.get();
     assertThat(classic.request).isNull();
     assertThat(pointWriter.request).isNotNull();
     // The single entry is converted back into a RowMutation targeting the same row.
