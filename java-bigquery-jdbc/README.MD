@@ -44,6 +44,76 @@ See the [Authentication][authentication] section in the base directory's README.
 
 The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired BigQuery JDBC APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the BigQuery JDBC API calls.
 
+## Client-side usage telemetry
+
+The JDBC driver for BigQuery includes client-side telemetry that
+automatically collects anonymous usage and diagnostic metrics to help Google
+improve driver stability and features. Client-side usage telemetry collection is
+designed to run in the background without affecting driver performance or JDBC
+functionality. Any telemetry transmission failures fail silently and don't
+surface errors to the application or incur any cost.
+
+Client-side usage telemetry never collects SQL query text, parameter values,
+database schema information, or data contents. Telemetry collection doesn't work
+in environments using custom endpoint URLs or restricted network access that
+blocks outbound connections to Google's public logging services.
+
+### Collected diagnostics
+
+The driver collects the following information:
+
+* Environment information: The Driver version, JVM major version, operating
+system platform and version, and an anonymous device correlation ID stored
+locally in the `~/.bigquery-jdbc/telemetry-tag` folder.
+* Connection metrics: Connection outcome status (success, failure, or
+cancellation) and authentication method used (such as service account, ADC,
+or token).
+* Execution metrics: High-level query operation types (such as `SELECT`,
+INSERT, and CREATE TABLE), execution engine substrate used (standard REST API
+or high-throughput API), and duration latency distributions.
+* Error and feature metrics: Internal exception codes, origin methods, and
+feature usage counters (such as prepared statements, batching, and connection
+pooling).
+
+<a id="telemetry-configuration"></a>
+### Client-side usage telemetry configuration
+
+Client-side usage telemetry behaves as a global background service for
+the application's JVM. Settings can be configured using JDBC connection
+properties, environment variables, or Java system properties. The driver
+resolves settings in the following priority: system property > environment
+variable > JDBC connection property.
+
+Due to its global nature, client-side usage telemetry connection properties
+exhibit the following lifecycle behaviors:
+
+* Opt-Out Control: If client-side usage telemetry is disabled at any point using
+a connection property (`EnableDiagnosticTelemetry=0`), environment variable,
+or system property, the service immediately shuts down and remains permanently
+off for the remainder of the JVM lifecycle. It will only restart when
+the JVM restarts.
+* Global Worker Settings: Because the telemetry batcher is a shared global
+resource, properties that configure its behavior (`TelemetryUploadInterval`
+and `TelemetryBatchSize`) are exclusively evaluated upon establishing the first
+connection. Subsequent overrides for these specific properties are ignored.
+
+#### Configuration Keys
+
+To configure these properties, you can use the following keys:
+
+* Opt-Out Control:
+  * Connection Property: `EnableDiagnosticTelemetry=0;`
+  * Environment Variable: `GOOGLE_BIGQUERY_JDBC_TELEMETRY_ENABLED=false`
+  * System Property: `-Dgoogle.bigquery.jdbc.telemetry.enabled=false`
+* Upload Interval:
+  * Connection Property: `TelemetryUploadInterval=300000;`
+  * Environment Variable: `GOOGLE_BIGQUERY_JDBC_TELEMETRY_INTERVAL_MS=300000`
+  * System Property: `-Dgoogle.bigquery.jdbc.telemetry.interval_ms=300000`
+* Batch Size:
+  * Connection Property: `TelemetryBatchSize=5000;`
+  * Environment Variable: `GOOGLE_BIGQUERY_JDBC_TELEMETRY_BATCH_SIZE=5000`
+  * System Property: `-Dgoogle.bigquery.jdbc.telemetry.batch_size=5000`
+
 ## Developer Guide
 
 ### Prerequisites
