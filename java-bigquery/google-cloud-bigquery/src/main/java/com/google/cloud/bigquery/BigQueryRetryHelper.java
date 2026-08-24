@@ -23,7 +23,6 @@ import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.RetryingContext;
-import com.google.api.gax.retrying.RetryingExecutor;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.retrying.TimedAttemptSettings;
 import com.google.api.gax.retrying.TimedRetryAlgorithm;
@@ -63,7 +62,15 @@ public class BigQueryRetryHelper extends RetryHelper {
       BigQueryRetryConfig bigQueryRetryConfig,
       boolean isOpenTelemetryEnabled,
       Tracer openTelemetryTracer) {
-    return runWithRetries(callable, retrySettings, resultRetryAlgorithm, clock, bigQueryRetryConfig, isOpenTelemetryEnabled, openTelemetryTracer, null);
+    return runWithRetries(
+        callable,
+        retrySettings,
+        resultRetryAlgorithm,
+        clock,
+        bigQueryRetryConfig,
+        isOpenTelemetryEnabled,
+        openTelemetryTracer,
+        null);
   }
 
   public static <V> V runWithRetries(
@@ -141,28 +148,30 @@ public class BigQueryRetryHelper extends RetryHelper {
     }
 
     // 2. Obtain ApiTracer from the factory
-    final ApiTracer tracer = (apiTracerFactory != null)
-        ? apiTracerFactory.newTracer(
-        null, SpanName.of("BigQuery", methodName), ApiTracerFactory.OperationType.Unary)
-        : BaseApiTracer.getInstance();
+    final ApiTracer tracer =
+        (apiTracerFactory != null)
+            ? apiTracerFactory.newTracer(
+                null, SpanName.of("BigQuery", methodName), ApiTracerFactory.OperationType.Unary)
+            : BaseApiTracer.getInstance();
 
     // 3. Construct RetryingContext
-    RetryingContext context = new RetryingContext() {
-      @Override
-      public ApiTracer getTracer() {
-        return tracer;
-      }
+    RetryingContext context =
+        new RetryingContext() {
+          @Override
+          public ApiTracer getTracer() {
+            return tracer;
+          }
 
-      @Override
-      public RetrySettings getRetrySettings() {
-        return retrySettings;
-      }
+          @Override
+          public RetrySettings getRetrySettings() {
+            return retrySettings;
+          }
 
-      @Override
-      public Set<StatusCode.Code> getRetryableCodes() {
-        return Collections.emptySet();
-      }
-    };
+          @Override
+          public Set<StatusCode.Code> getRetryableCodes() {
+            return Collections.emptySet();
+          }
+        };
 
     // Log retry info
     if (LOG.isLoggable(Level.FINEST)) {
