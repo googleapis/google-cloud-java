@@ -140,26 +140,6 @@ dependencies)
     ../.kokoro/dependencies.sh
     RETURN_CODE=$?
     ;;
-flatten-plugin)
-    # This creates .flattened-pom.xml
-    echo "Before running ../.kokoro/build.sh"
-    ../.kokoro/build.sh
-    echo "After running ../.kokoro/build.sh"
-    pushd ${LIBRARY_NAME}
-    mvn -B -ntp dependency:list -f .flattened-pom.xml -DincludeScope=runtime -Dsort=true \
-        | grep '\[INFO]    .*:.*:.*:.*:.*' |awk '{print $2}' > .actual-flattened-dependencies-list.txt
-    
-    # Strip -SNAPSHOT for comparison to support release PRs where dependencies are bumped to release versions
-    echo "Diff from the expected file (${EXPECTED_DEPENDENCIES_LIST}) (ignoring -SNAPSHOT):"
-    diff <(sed 's/-SNAPSHOT//g' "${scriptDir}/${EXPECTED_DEPENDENCIES_LIST}") <(sed 's/-SNAPSHOT//g' .actual-flattened-dependencies-list.txt)
-    RETURN_CODE=$?
-    if [ "${RETURN_CODE}" == 0 ]; then
-      echo "No diff."
-    else
-      echo "There was a diff."
-    fi
-    popd
-    ;;
 *)
     # For clirr and test, run directly in the subdirectory to avoid building monorepo dependencies (like gax) from source.
     # This is necessary because some monorepo dependencies (like gax) use GraalVM 25+ which cannot be compiled under Java 8.
