@@ -69,7 +69,7 @@ locally in the `~/.bigquery-jdbc/telemetry-tag` folder.
 cancellation) and authentication method used (such as service account, ADC,
 or token).
 * Execution metrics: High-level query operation types (such as `SELECT`,
-`INSERT`, and `CREATE TABLE`) , execution engine substrate used (standard REST API
+INSERT, and CREATE TABLE), execution engine substrate used (standard REST API
 or high-throughput API), and duration latency distributions.
 * Error and feature metrics: Internal exception codes, origin methods, and
 feature usage counters (such as prepared statements, batching, and connection
