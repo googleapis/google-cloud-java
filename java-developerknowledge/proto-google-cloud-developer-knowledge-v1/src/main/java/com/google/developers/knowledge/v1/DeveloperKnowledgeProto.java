@@ -194,13 +194,13 @@ public final class DeveloperKnowledgeProto extends com.google.protobuf.Generated
           + "est\0323.google.developers.knowledge.v1.Ans"
           + "werQueryResponse\"\032\202\323\344\223\002\024\"\017/v1:answerQuer"
           + "y:\001*\032U\312A!developerknowledge.googleapis.c"
-          + "om\322A.https://www.googleapis.com/auth/cloud-platformB\211\002\n"
-          + "\"com.google.developers.knowledge.v1B\027DeveloperKnowledgeProtoP\001ZGg"
-          + "oogle.golang.org/genproto/googleapis/dev"
-          + "elopers/knowledge/v1;knowledge\252\002\'Google."
-          + "Developers.DeveloperKnowledge.V1\312\002\'Googl"
-          + "e\\Developers\\DeveloperKnowledge\\V1\352\002*Goo"
-          + "gle::Developers::DeveloperKnowledge::V1b\006proto3"
+          + "om\322A.https://www.googleapis.com/auth/cloud-platformB\203\002\n"
+          + "\"com.google.developers.knowledge.v1B\027DeveloperKnowledgeProtoP\001ZAc"
+          + "loud.google.com/go/developerknowledge/ap"
+          + "iv1/developerknowledgepb\252\002\'Google.Develo"
+          + "pers.DeveloperKnowledge.V1\312\002\'Google\\Deve"
+          + "lopers\\DeveloperKnowledge\\V1\352\002*Google::D"
+          + "evelopers::DeveloperKnowledge::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

@@ -1354,7 +1354,10 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Sends an insert all request.
    *
-   * <p>Example of inserting rows into a table without running a load job.
+   * <p>Example of inserting rows into a table without running a load job. To prevent duplicate
+   * rows, this method does not perform automatic retries unless insert IDs are provided. Transient
+   * service errors (such as UNAVAILABLE) may be thrown and should be handled by the caller when
+   * insert IDs are not provided.
    *
    * <pre>{@code
    * String datasetName = "my_dataset_name";

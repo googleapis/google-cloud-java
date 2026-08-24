@@ -81,7 +81,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> SearchDocumentChunks</td>
- *      <td><p> Searches for developer knowledge across Google's developer documentation. Returns [DocumentChunk][google.developers.knowledge.v1.DocumentChunk]s based on the user's query. There may be many chunks from the same [Document][google.developers.knowledge.v1.Document].  To retrieve full documents, use [DeveloperKnowledge.GetDocument][google.developers.knowledge.v1.DeveloperKnowledge.GetDocument] or [DeveloperKnowledge.BatchGetDocuments][google.developers.knowledge.v1.DeveloperKnowledge.BatchGetDocuments] with the [DocumentChunk.parent][google.developers.knowledge.v1.DocumentChunk.parent] returned in the [SearchDocumentChunksResponse.results][google.developers.knowledge.v1.SearchDocumentChunksResponse.results].</td>
+ *      <td><p> Searches for developer knowledge across Google's developer documentation. Returns [DocumentChunk][google.developers.knowledge.v1.DocumentChunk]s based on the user's query. There may be many chunks from the same [Document][google.developers.knowledge.v1.Document]. To retrieve full documents, use [DeveloperKnowledge.GetDocument][google.developers.knowledge.v1.DeveloperKnowledge.GetDocument] or [DeveloperKnowledge.BatchGetDocuments][google.developers.knowledge.v1.DeveloperKnowledge.BatchGetDocuments] with the [DocumentChunk.parent][google.developers.knowledge.v1.DocumentChunk.parent] returned in the [SearchDocumentChunksResponse.results][google.developers.knowledge.v1.SearchDocumentChunksResponse.results].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>

@@ -44,6 +44,10 @@
     <!-- {x-generated-proto-dependencies-start} -->
     <dependency>
       <groupId>com.google.maps.api.grpc</groupId>
+      <artifactId>proto-google-maps-mapmanagement-v2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.maps.api.grpc</groupId>
       <artifactId>proto-google-maps-mapmanagement-v2beta</artifactId>
     </dependency>
     <!-- {x-generated-proto-dependencies-end} -->
@@ -90,6 +94,11 @@
     </dependency>
 
     <!-- {x-generated-grpc-dependencies-start} -->
+    <dependency>
+      <groupId>com.google.maps.api.grpc</groupId>
+      <artifactId>grpc-google-maps-mapmanagement-v2</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>com.google.maps.api.grpc</groupId>
       <artifactId>grpc-google-maps-mapmanagement-v2beta</artifactId>

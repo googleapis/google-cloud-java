@@ -19,7 +19,6 @@ package com.google.cloud.bigquery.jdbc.it;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
@@ -66,15 +65,13 @@ public class ITProxyBigQueryTest {
       assertNotNull(connection);
       assertFalse(connection.isClosed());
       Statement statement = connection.createStatement();
-      boolean result =
-          statement.execute("Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
-      assertTrue(result);
+      ITBase.validateStatement(statement, 180);
       connection.close();
     }
 
     @Test
     public void testAuthenticatedProxyWithOutAuthDetailsThrows() throws SQLException {
-      String query = "Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180";
+      String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 180))";
       String connection_uri =
           "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
               + "ProjectId="
@@ -94,7 +91,7 @@ public class ITProxyBigQueryTest {
 
     @Test
     public void testNonExistingProxyTimesOut() throws SQLException {
-      String query = "Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180";
+      String query = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 180))";
       String connection_uri =
           "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
               + "ProjectId="
@@ -129,9 +126,7 @@ public class ITProxyBigQueryTest {
       assertNotNull(connection);
       assertFalse(connection.isClosed());
       Statement statement = connection.createStatement();
-      boolean result =
-          statement.execute("Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
-      assertTrue(result);
+      ITBase.validateStatement(statement, 180);
       connection.close();
     }
 
@@ -147,9 +142,7 @@ public class ITProxyBigQueryTest {
       assertNotNull(connection);
       assertFalse(connection.isClosed());
       Statement statement = connection.createStatement();
-      boolean result =
-          statement.execute("Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
-      assertTrue(result);
+      ITBase.validateStatement(statement, 180);
       connection.close();
     }
 
@@ -175,10 +168,7 @@ public class ITProxyBigQueryTest {
       assertNotNull(connection);
       assertFalse(connection.isClosed());
       Statement statement = connection.createStatement();
-      boolean result =
-          statement.execute(
-              "SELECT * FROM `bigquery-public-data.covid19_open_data_eu.covid19_open_data` LIMIT 200000");
-      assertTrue(result);
+      ITBase.validateStatement(statement, 200000);
       connection.close();
     }
   }

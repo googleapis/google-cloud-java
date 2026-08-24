@@ -1236,7 +1236,7 @@ class ITBigQueryStorageTest {
     CreateReadSessionRequest request = createSessionRequestBuilder.build();
     AtomicReference<ReadSession> sessionRef = new AtomicReference<>();
     await()
-        .atMost(Duration.ofSeconds(10))
+        .atMost(Duration.ofMinutes(1))
         .pollInterval(Duration.ofSeconds(1))
         // retry if the newly-created table has not yet fully propagated
         .ignoreException(NotFoundException.class)

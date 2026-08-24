@@ -28,12 +28,12 @@ import com.google.cloud.bigquery.jdbc.PooledConnectionDataSource;
 import com.google.cloud.bigquery.jdbc.PooledConnectionListener;
 import com.google.cloud.bigquery.jdbc.utils.TestUtilities.TestConnectionListener;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import javax.sql.PooledConnection;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITConnectionPoolingTest extends ITBase {
@@ -267,6 +267,7 @@ public class ITConnectionPoolingTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testExecuteQueryWithConnectionPoolingEnabledDefaultPoolSize() throws SQLException {
     String connectionURL = ITBase.connectionUrl;
 
@@ -274,6 +275,7 @@ public class ITConnectionPoolingTest extends ITBase {
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testExecuteQueryWithConnectionPoolingEnabledCustomPoolSize() throws SQLException {
     String connectionURL =
         ITBase.connectionUrl + "ConnectionPoolSize=" + CUSTOM_CONN_POOL_SIZE + ";";
@@ -299,10 +301,8 @@ public class ITConnectionPoolingTest extends ITBase {
     assertFalse(connection.isClosed());
 
     // Execute query with physical connection
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+    ITBase.validateStatement(statement, 850);
 
     // Close physical connection
     connection.close();
@@ -319,8 +319,7 @@ public class ITConnectionPoolingTest extends ITBase {
     assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
 
     // Execute query with reusable physical connection
-    jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+    ITBase.validateStatement(statement, 850);
 
     // Return connection back to the pool.
     connection.close();
@@ -328,7 +327,6 @@ public class ITConnectionPoolingTest extends ITBase {
     assertEquals(1, listener.getConnectionPoolCurrentCapacity());
     assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
     pooledConnection.close();
-    jsonResultSet.close();
     statement.close();
     connection.close();
   }
