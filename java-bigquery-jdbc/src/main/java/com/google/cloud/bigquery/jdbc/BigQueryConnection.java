@@ -700,6 +700,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   synchronized void updateSessionInfo(String sessionId) {
+    LOG.fine("++enter++ ");
     if (sessionId != null && !sessionId.isEmpty()) {
       if (this.sessionInfoConnectionProperty == null
           || !sessionId.equals(this.sessionInfoConnectionProperty.getValue())) {
@@ -721,6 +722,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         if (!found) {
           updated.add(sessionProperty);
         }
+        LOG.info("Updated session info: " + sessionId);
         this.queryProperties = Collections.unmodifiableList(updated);
       }
     }
