@@ -123,7 +123,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
             .setAudience(getAudience());
 
     Collection<String> scopes = getScopes();
-    if (!scopes.isEmpty()) {
+    if (scopes != null && !scopes.isEmpty()) {
       stsTokenExchangeRequest.setScopes(new ArrayList<>(scopes));
     }
 

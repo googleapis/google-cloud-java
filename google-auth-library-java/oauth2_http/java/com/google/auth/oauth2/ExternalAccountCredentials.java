@@ -608,44 +608,37 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     transportFactory = newInstance(transportFactoryClassName);
   }
 
-  @Nullable
-  public String getServiceAccountImpersonationUrl() {
+  public @Nullable String getServiceAccountImpersonationUrl() {
     return serviceAccountImpersonationUrl;
   }
 
   /**
    * @return The service account email to be impersonated, if available
    */
-  @Nullable
-  public String getServiceAccountEmail() {
+  public @Nullable String getServiceAccountEmail() {
     if (serviceAccountImpersonationUrl == null || serviceAccountImpersonationUrl.isEmpty()) {
       return null;
     }
     return ImpersonatedCredentials.extractTargetPrincipal(serviceAccountImpersonationUrl);
   }
 
-  @Nullable
-  public String getClientId() {
+  public @Nullable String getClientId() {
     return clientId;
   }
 
-  @Nullable
-  public String getClientSecret() {
+  public @Nullable String getClientSecret() {
     return clientSecret;
   }
 
-  @Nullable
-  public Collection<String> getScopes() {
+  public @Nullable Collection<String> getScopes() {
     return scopes;
   }
 
-  @Nullable
-  public String getWorkforcePoolUserProject() {
+  public @Nullable String getWorkforcePoolUserProject() {
     return workforcePoolUserProject;
   }
 
-  @Nullable
-  public ServiceAccountImpersonationOptions getServiceAccountImpersonationOptions() {
+  public @Nullable ServiceAccountImpersonationOptions getServiceAccountImpersonationOptions() {
     return serviceAccountImpersonationOptions;
   }
 
