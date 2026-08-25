@@ -98,6 +98,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
     ANDROID_SETTINGS(4),
     IOS_SETTINGS(5),
     EXPRESS_SETTINGS(11),
+    UNIVERSAL_SETTINGS(13),
     PLATFORMSETTINGS_NOT_SET(0);
     private final int value;
 
@@ -125,6 +126,8 @@ public final class Key extends com.google.protobuf.GeneratedMessage
           return IOS_SETTINGS;
         case 11:
           return EXPRESS_SETTINGS;
+        case 13:
+          return UNIVERSAL_SETTINGS;
         case 0:
           return PLATFORMSETTINGS_NOT_SET;
         default:
@@ -467,6 +470,61 @@ public final class Key extends com.google.protobuf.GeneratedMessage
     return com.google.recaptchaenterprise.v1.ExpressKeySettings.getDefaultInstance();
   }
 
+  public static final int UNIVERSAL_SETTINGS_FIELD_NUMBER = 13;
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for keys that are configured through their Policy.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;</code>
+   *
+   * @return Whether the universalSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasUniversalSettings() {
+    return platformSettingsCase_ == 13;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for keys that are configured through their Policy.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;</code>
+   *
+   * @return The universalSettings.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.UniversalKeySettings getUniversalSettings() {
+    if (platformSettingsCase_ == 13) {
+      return (com.google.recaptchaenterprise.v1.UniversalKeySettings) platformSettings_;
+    }
+    return com.google.recaptchaenterprise.v1.UniversalKeySettings.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for keys that are configured through their Policy.
+   * </pre>
+   *
+   * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.UniversalKeySettingsOrBuilder
+      getUniversalSettingsOrBuilder() {
+    if (platformSettingsCase_ == 13) {
+      return (com.google.recaptchaenterprise.v1.UniversalKeySettings) platformSettings_;
+    }
+    return com.google.recaptchaenterprise.v1.UniversalKeySettings.getDefaultInstance();
+  }
+
   public static final int LABELS_FIELD_NUMBER = 6;
 
   private static final class LabelsDefaultEntryHolder {
@@ -793,6 +851,10 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       output.writeMessage(
           11, (com.google.recaptchaenterprise.v1.ExpressKeySettings) platformSettings_);
     }
+    if (platformSettingsCase_ == 13) {
+      output.writeMessage(
+          13, (com.google.recaptchaenterprise.v1.UniversalKeySettings) platformSettings_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -847,6 +909,11 @@ public final class Key extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, (com.google.recaptchaenterprise.v1.ExpressKeySettings) platformSettings_);
     }
+    if (platformSettingsCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.recaptchaenterprise.v1.UniversalKeySettings) platformSettings_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -890,6 +957,9 @@ public final class Key extends com.google.protobuf.GeneratedMessage
         break;
       case 11:
         if (!getExpressSettings().equals(other.getExpressSettings())) return false;
+        break;
+      case 13:
+        if (!getUniversalSettings().equals(other.getUniversalSettings())) return false;
         break;
       case 0:
       default:
@@ -941,6 +1011,10 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       case 11:
         hash = (37 * hash) + EXPRESS_SETTINGS_FIELD_NUMBER;
         hash = (53 * hash) + getExpressSettings().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + UNIVERSAL_SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getUniversalSettings().hashCode();
         break;
       case 0:
       default:
@@ -1132,6 +1206,9 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       if (expressSettingsBuilder_ != null) {
         expressSettingsBuilder_.clear();
       }
+      if (universalSettingsBuilder_ != null) {
+        universalSettingsBuilder_.clear();
+      }
       internalGetMutableLabels().clear();
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -1193,21 +1270,21 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.testingOptions_ =
             testingOptionsBuilder_ == null ? testingOptions_ : testingOptionsBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.wafSettings_ =
             wafSettingsBuilder_ == null ? wafSettings_ : wafSettingsBuilder_.build();
         to_bitField0_ |= 0x00000004;
@@ -1229,6 +1306,9 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       }
       if (platformSettingsCase_ == 11 && expressSettingsBuilder_ != null) {
         result.platformSettings_ = expressSettingsBuilder_.build();
+      }
+      if (platformSettingsCase_ == 13 && universalSettingsBuilder_ != null) {
+        result.platformSettings_ = universalSettingsBuilder_.build();
       }
     }
 
@@ -1255,7 +1335,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -1284,6 +1364,11 @@ public final class Key extends com.google.protobuf.GeneratedMessage
         case EXPRESS_SETTINGS:
           {
             mergeExpressSettings(other.getExpressSettings());
+            break;
+          }
+        case UNIVERSAL_SETTINGS:
+          {
+            mergeUniversalSettings(other.getUniversalSettings());
             break;
           }
         case PLATFORMSETTINGS_NOT_SET:
@@ -1359,28 +1444,28 @@ public final class Key extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 74:
               {
                 input.readMessage(
                     internalGetTestingOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(
                     internalGetWafSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 90:
@@ -1390,6 +1475,13 @@ public final class Key extends com.google.protobuf.GeneratedMessage
                 platformSettingsCase_ = 11;
                 break;
               } // case 90
+            case 106:
+              {
+                input.readMessage(
+                    internalGetUniversalSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                platformSettingsCase_ = 13;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2534,6 +2626,239 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       return expressSettingsBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.recaptchaenterprise.v1.UniversalKeySettings,
+            com.google.recaptchaenterprise.v1.UniversalKeySettings.Builder,
+            com.google.recaptchaenterprise.v1.UniversalKeySettingsOrBuilder>
+        universalSettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that are configured through their Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;
+     * </code>
+     *
+     * @return Whether the universalSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasUniversalSettings() {
+      return platformSettingsCase_ == 13;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that are configured through their Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;
+     * </code>
+     *
+     * @return The universalSettings.
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.UniversalKeySettings getUniversalSettings() {
+      if (universalSettingsBuilder_ == null) {
+        if (platformSettingsCase_ == 13) {
+          return (com.google.recaptchaenterprise.v1.UniversalKeySettings) platformSettings_;
+        }
+        return com.google.recaptchaenterprise.v1.UniversalKeySettings.getDefaultInstance();
+      } else {
+        if (platformSettingsCase_ == 13) {
+          return universalSettingsBuilder_.getMessage();
+        }
+        return com.google.recaptchaenterprise.v1.UniversalKeySettings.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that are configured through their Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;
+     * </code>
+     */
+    public Builder setUniversalSettings(
+        com.google.recaptchaenterprise.v1.UniversalKeySettings value) {
+      if (universalSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        platformSettings_ = value;
+        onChanged();
+      } else {
+        universalSettingsBuilder_.setMessage(value);
+      }
+      platformSettingsCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that are configured through their Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;
+     * </code>
+     */
+    public Builder setUniversalSettings(
+        com.google.recaptchaenterprise.v1.UniversalKeySettings.Builder builderForValue) {
+      if (universalSettingsBuilder_ == null) {
+        platformSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        universalSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      platformSettingsCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that are configured through their Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;
+     * </code>
+     */
+    public Builder mergeUniversalSettings(
+        com.google.recaptchaenterprise.v1.UniversalKeySettings value) {
+      if (universalSettingsBuilder_ == null) {
+        if (platformSettingsCase_ == 13
+            && platformSettings_
+                != com.google.recaptchaenterprise.v1.UniversalKeySettings.getDefaultInstance()) {
+          platformSettings_ =
+              com.google.recaptchaenterprise.v1.UniversalKeySettings.newBuilder(
+                      (com.google.recaptchaenterprise.v1.UniversalKeySettings) platformSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          platformSettings_ = value;
+        }
+        onChanged();
+      } else {
+        if (platformSettingsCase_ == 13) {
+          universalSettingsBuilder_.mergeFrom(value);
+        } else {
+          universalSettingsBuilder_.setMessage(value);
+        }
+      }
+      platformSettingsCase_ = 13;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that are configured through their Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;
+     * </code>
+     */
+    public Builder clearUniversalSettings() {
+      if (universalSettingsBuilder_ == null) {
+        if (platformSettingsCase_ == 13) {
+          platformSettingsCase_ = 0;
+          platformSettings_ = null;
+          onChanged();
+        }
+      } else {
+        if (platformSettingsCase_ == 13) {
+          platformSettingsCase_ = 0;
+          platformSettings_ = null;
+        }
+        universalSettingsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that are configured through their Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.UniversalKeySettings.Builder
+        getUniversalSettingsBuilder() {
+      return internalGetUniversalSettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that are configured through their Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.recaptchaenterprise.v1.UniversalKeySettingsOrBuilder
+        getUniversalSettingsOrBuilder() {
+      if ((platformSettingsCase_ == 13) && (universalSettingsBuilder_ != null)) {
+        return universalSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        if (platformSettingsCase_ == 13) {
+          return (com.google.recaptchaenterprise.v1.UniversalKeySettings) platformSettings_;
+        }
+        return com.google.recaptchaenterprise.v1.UniversalKeySettings.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Settings for keys that are configured through their Policy.
+     * </pre>
+     *
+     * <code>.google.cloud.recaptchaenterprise.v1.UniversalKeySettings universal_settings = 13;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.recaptchaenterprise.v1.UniversalKeySettings,
+            com.google.recaptchaenterprise.v1.UniversalKeySettings.Builder,
+            com.google.recaptchaenterprise.v1.UniversalKeySettingsOrBuilder>
+        internalGetUniversalSettingsFieldBuilder() {
+      if (universalSettingsBuilder_ == null) {
+        if (!(platformSettingsCase_ == 13)) {
+          platformSettings_ =
+              com.google.recaptchaenterprise.v1.UniversalKeySettings.getDefaultInstance();
+        }
+        universalSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.recaptchaenterprise.v1.UniversalKeySettings,
+                com.google.recaptchaenterprise.v1.UniversalKeySettings.Builder,
+                com.google.recaptchaenterprise.v1.UniversalKeySettingsOrBuilder>(
+                (com.google.recaptchaenterprise.v1.UniversalKeySettings) platformSettings_,
+                getParentForChildren(),
+                isClean());
+        platformSettings_ = null;
+      }
+      platformSettingsCase_ = 13;
+      onChanged();
+      return universalSettingsBuilder_;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -2551,7 +2876,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return labels_;
     }
@@ -2645,7 +2970,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2671,7 +2996,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -2693,7 +3018,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -2709,7 +3034,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       return this;
     }
 
@@ -2734,7 +3059,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2780,7 +3105,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2802,7 +3127,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2820,7 +3145,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2831,7 +3156,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2849,7 +3174,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2871,7 +3196,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -2946,7 +3271,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      * @return Whether the testingOptions field is set.
      */
     public boolean hasTestingOptions() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2992,7 +3317,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       } else {
         testingOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3015,7 +3340,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       } else {
         testingOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3033,7 +3358,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTestingOptions(com.google.recaptchaenterprise.v1.TestingOptions value) {
       if (testingOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && testingOptions_ != null
             && testingOptions_
                 != com.google.recaptchaenterprise.v1.TestingOptions.getDefaultInstance()) {
@@ -3045,7 +3370,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
         testingOptionsBuilder_.mergeFrom(value);
       }
       if (testingOptions_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3063,7 +3388,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTestingOptions() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       testingOptions_ = null;
       if (testingOptionsBuilder_ != null) {
         testingOptionsBuilder_.dispose();
@@ -3085,7 +3410,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TestingOptions.Builder getTestingOptionsBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetTestingOptionsFieldBuilder().getBuilder();
     }
@@ -3160,7 +3485,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      * @return Whether the wafSettings field is set.
      */
     public boolean hasWafSettings() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3206,7 +3531,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       } else {
         wafSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3229,7 +3554,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
       } else {
         wafSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3247,7 +3572,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeWafSettings(com.google.recaptchaenterprise.v1.WafSettings value) {
       if (wafSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && wafSettings_ != null
             && wafSettings_ != com.google.recaptchaenterprise.v1.WafSettings.getDefaultInstance()) {
           getWafSettingsBuilder().mergeFrom(value);
@@ -3258,7 +3583,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
         wafSettingsBuilder_.mergeFrom(value);
       }
       if (wafSettings_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3276,7 +3601,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearWafSettings() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       wafSettings_ = null;
       if (wafSettingsBuilder_ != null) {
         wafSettingsBuilder_.dispose();
@@ -3298,7 +3623,7 @@ public final class Key extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.recaptchaenterprise.v1.WafSettings.Builder getWafSettingsBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetWafSettingsFieldBuilder().getBuilder();
     }

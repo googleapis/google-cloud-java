@@ -352,6 +352,7 @@ public interface SearchSpacesRequestOrBuilder
    *
    * - `create_time DESC`
    * - `relevance DESC`
+   * [Developer Preview](https://developers.google.com/workspace/preview).
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -397,6 +398,7 @@ public interface SearchSpacesRequestOrBuilder
    *
    * - `create_time DESC`
    * - `relevance DESC`
+   * [Developer Preview](https://developers.google.com/workspace/preview).
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -840,11 +840,13 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: This option is not supported. Please use ECPU instead.
      * The compute model is physical.
      * </pre>
      *
-     * <code>OCPU = 2;</code>
+     * <code>OCPU = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     OCPU(2),
     UNRECOGNIZED(-1),
     ;
@@ -885,12 +887,13 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: This option is not supported. Please use ECPU instead.
      * The compute model is physical.
      * </pre>
      *
-     * <code>OCPU = 2;</code>
+     * <code>OCPU = 2 [deprecated = true];</code>
      */
-    public static final int OCPU_VALUE = 2;
+    @java.lang.Deprecated public static final int OCPU_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1658,7 +1661,9 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The memory size in GB.
+   * Optional. The memory size in GB. This value can not be set and is
+   * automatically calculated based on the number of ECPUs allocated to the
+   * DbSystem.
    * </pre>
    *
    * <code>int32 memory_size_gb = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1721,7 +1726,8 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. The data storage size in GB that is currently available to
-   * DbSystems.
+   * DbSystems. The value is same as initial_data_storage_size_gb. This can be
+   * modified from OCI console.
    * </pre>
    *
    * <code>int32 data_storage_size_gb = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1740,7 +1746,8 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The reco/redo storage size in GB.
+   * Optional. The reco/redo storage size in GB. The value for recovery storage
+   * size is based on the available data storage size.
    * </pre>
    *
    * <code>int32 reco_storage_size_gb = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1812,7 +1819,8 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The number of nodes in the DbSystem.
+   * Optional. The number of nodes to launch for a virtual machine DbSystem. By
+   * default this will be set to 1.
    * </pre>
    *
    * <code>int32 node_count = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4558,7 +4566,9 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The memory size in GB.
+     * Optional. The memory size in GB. This value can not be set and is
+     * automatically calculated based on the number of ECPUs allocated to the
+     * DbSystem.
      * </pre>
      *
      * <code>int32 memory_size_gb = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4574,7 +4584,9 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The memory size in GB.
+     * Optional. The memory size in GB. This value can not be set and is
+     * automatically calculated based on the number of ECPUs allocated to the
+     * DbSystem.
      * </pre>
      *
      * <code>int32 memory_size_gb = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4594,7 +4606,9 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The memory size in GB.
+     * Optional. The memory size in GB. This value can not be set and is
+     * automatically calculated based on the number of ECPUs allocated to the
+     * DbSystem.
      * </pre>
      *
      * <code>int32 memory_size_gb = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4724,7 +4738,8 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. The data storage size in GB that is currently available to
-     * DbSystems.
+     * DbSystems. The value is same as initial_data_storage_size_gb. This can be
+     * modified from OCI console.
      * </pre>
      *
      * <code>int32 data_storage_size_gb = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4741,7 +4756,8 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. The data storage size in GB that is currently available to
-     * DbSystems.
+     * DbSystems. The value is same as initial_data_storage_size_gb. This can be
+     * modified from OCI console.
      * </pre>
      *
      * <code>int32 data_storage_size_gb = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4762,7 +4778,8 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. The data storage size in GB that is currently available to
-     * DbSystems.
+     * DbSystems. The value is same as initial_data_storage_size_gb. This can be
+     * modified from OCI console.
      * </pre>
      *
      * <code>int32 data_storage_size_gb = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4782,7 +4799,8 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The reco/redo storage size in GB.
+     * Optional. The reco/redo storage size in GB. The value for recovery storage
+     * size is based on the available data storage size.
      * </pre>
      *
      * <code>int32 reco_storage_size_gb = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4798,7 +4816,8 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The reco/redo storage size in GB.
+     * Optional. The reco/redo storage size in GB. The value for recovery storage
+     * size is based on the available data storage size.
      * </pre>
      *
      * <code>int32 reco_storage_size_gb = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4818,7 +4837,8 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The reco/redo storage size in GB.
+     * Optional. The reco/redo storage size in GB. The value for recovery storage
+     * size is based on the available data storage size.
      * </pre>
      *
      * <code>int32 reco_storage_size_gb = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4949,7 +4969,8 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The number of nodes in the DbSystem.
+     * Optional. The number of nodes to launch for a virtual machine DbSystem. By
+     * default this will be set to 1.
      * </pre>
      *
      * <code>int32 node_count = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4965,7 +4986,8 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The number of nodes in the DbSystem.
+     * Optional. The number of nodes to launch for a virtual machine DbSystem. By
+     * default this will be set to 1.
      * </pre>
      *
      * <code>int32 node_count = 20 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4985,7 +5007,8 @@ public final class DbSystemProperties extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The number of nodes in the DbSystem.
+     * Optional. The number of nodes to launch for a virtual machine DbSystem. By
+     * default this will be set to 1.
      * </pre>
      *
      * <code>int32 node_count = 20 [(.google.api.field_behavior) = OPTIONAL];</code>

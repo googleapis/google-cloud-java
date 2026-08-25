@@ -33,6 +33,7 @@ import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableResult;
+import com.google.cloud.bigquery.jdbc.BigQueryConnection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -46,6 +47,7 @@ import java.util.Random;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class ITStatementTest extends ITBase {
@@ -110,8 +112,7 @@ public class ITStatementTest extends ITBase {
   public void testExecuteQuery() throws SQLException {
     Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
     Statement statement = connection.createStatement();
-    String selectQuery =
-        "SELECT * FROM bigquery-public-data.chicago_taxi_trips.taxi_trips LIMIT 1000;";
+    String selectQuery = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, 1000))";
 
     ResultSet selectQueryResult = statement.executeQuery(selectQuery);
     ResultSet statementResult = statement.getResultSet();
@@ -230,9 +231,7 @@ public class ITStatementTest extends ITBase {
     withReadApi.setProperty("EnableHighThroughputAPI", "1");
     Connection connection = DriverManager.getConnection(connection_uri, withReadApi);
     Statement statement = connection.createStatement();
-    String BASE_QUERY =
-        "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
-            + " trip_distance asc LIMIT %s;";
+    String BASE_QUERY = "SELECT * FROM UNNEST(GENERATE_ARRAY(1, %s));";
     int expectedCnt = 500000;
     String longQuery = String.format(BASE_QUERY, expectedCnt);
     String longerQuery = String.format(BASE_QUERY, 700000);
@@ -354,11 +353,11 @@ public class ITStatementTest extends ITBase {
     // execute
     try {
       statement.execute(
-          "CREATE TABLE "
+          "CREATE TABLE `"
               + DEFAULT_CATALOG
               + "."
               + DATASET
-              + ".RangeTable (x RANGE<DATE> OPTIONS (description = 'An optional RANGE<DATE>"
+              + ".RangeTable` (x RANGE<DATE> OPTIONS (description = 'An optional RANGE<DATE>"
               + " field'), y STRUCT <a ARRAY <RANGE<DATETIME>> OPTIONS (description = 'An array of"
               + " RANGE<DATETIME> field')>);");
       ResultSet selectQueryResult =
@@ -369,13 +368,14 @@ public class ITStatementTest extends ITBase {
     } finally {
       // clean up
       statement.execute(
-          String.format("DROP TABLE IF EXISTS %s.%s.RangeTable;", DEFAULT_CATALOG, DATASET));
+          String.format("DROP TABLE IF EXISTS `%s.%s.RangeTable`;", DEFAULT_CATALOG, DATASET));
       statement.close();
     }
     connection.close();
   }
 
   @Test
+  @Tag("disable_tpc")
   public void testTemporaryDatasetLocation() throws SQLException, InterruptedException {
     String location = "europe-west3";
     String randomSuffix = String.valueOf(100 + new Random().nextInt(900));
@@ -423,6 +423,40 @@ public class ITStatementTest extends ITBase {
             DatasetId.of(tempDatasetName), BigQuery.DatasetDeleteOption.deleteContents());
       } catch (Exception e) {
         // Ignore cleanup exceptions to avoid masking the primary test failure
+      }
+    }
+  }
+
+  @Test
+  public void testSessionPersistenceAcrossQueries() throws SQLException {
+    Properties properties = new Properties();
+    properties.setProperty("EnableSession", "1");
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl, properties)) {
+      BigQueryConnection bqConnection = connection.unwrap(BigQueryConnection.class);
+
+      assertNull(bqConnection.getSessionInfoConnectionProperty());
+
+      try (Statement statement = connection.createStatement()) {
+        statement.execute("CREATE TEMP TABLE temp_session_test (id INT64, name STRING);");
+
+        assertNotNull(bqConnection.getSessionInfoConnectionProperty());
+        String sessionId = bqConnection.getSessionInfoConnectionProperty().getValue();
+        assertNotNull(sessionId);
+        assertFalse(sessionId.isEmpty());
+
+        int rowsInserted =
+            statement.executeUpdate(
+                "INSERT INTO temp_session_test (id, name) VALUES (1, 'session_val');");
+        assertEquals(1, rowsInserted);
+        assertEquals(sessionId, bqConnection.getSessionInfoConnectionProperty().getValue());
+
+        try (ResultSet rs = statement.executeQuery("SELECT id, name FROM temp_session_test;")) {
+          assertTrue(rs.next());
+          assertEquals(1, rs.getLong("id"));
+          assertEquals("session_val", rs.getString("name"));
+          assertFalse(rs.next());
+        }
+        assertEquals(sessionId, bqConnection.getSessionInfoConnectionProperty().getValue());
       }
     }
   }

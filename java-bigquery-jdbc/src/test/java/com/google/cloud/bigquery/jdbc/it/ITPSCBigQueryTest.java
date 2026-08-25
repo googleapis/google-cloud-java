@@ -70,9 +70,8 @@ public class ITPSCBigQueryTest {
         "APPLICATION_DEFAULT_CREDENTIALS",
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    assertThrows(BigQueryException.class, () -> statement.executeQuery(query));
+    assertThrows(BigQueryException.class, () -> ITBase.validateStatement(statement, 850));
   }
 
   @Test
@@ -91,10 +90,8 @@ public class ITPSCBigQueryTest {
         "APPLICATION_DEFAULT_CREDENTIALS",
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+    ITBase.validateStatement(statement, 850);
     connection.close();
   }
 
@@ -115,10 +112,8 @@ public class ITPSCBigQueryTest {
         "PRE_GENERATED_TOKEN",
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+    ITBase.validateStatement(statement, 850);
     connection.close();
   }
 
@@ -165,10 +160,8 @@ public class ITPSCBigQueryTest {
     assertEquals(
         "GOOGLE_SERVICE_ACCOUNT",
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
-    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
+    ITBase.validateStatement(statement, 850);
     connection.close();
   }
 
@@ -286,11 +279,7 @@ public class ITPSCBigQueryTest {
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
     Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 50");
-
-    assertNotNull(resultSet);
+    ITBase.validateStatement(statement, 50);
     connection.close();
   }
 }

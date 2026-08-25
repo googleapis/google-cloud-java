@@ -24,7 +24,7 @@ package com.google.cloud.auditmanager.v1;
  *
  *
  * <pre>
- * The metadata of the long-running operation.
+ * Metadata for the long-running operation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.auditmanager.v1.OperationMetadata}
@@ -81,7 +81,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The time the operation was created.
+   * Output only. Time that the operation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -98,7 +98,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The time the operation was created.
+   * Output only. Time that the operation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -115,7 +115,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The time the operation was created.
+   * Output only. Time that the operation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -133,7 +133,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The time the operation finished running.
+   * Output only. Time that the operation finished running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -150,7 +150,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The time the operation finished running.
+   * Output only. Time that the operation finished running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -167,7 +167,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. The time the operation finished running.
+   * Output only. Time that the operation finished running.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -187,7 +187,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Server-defined resource path for the target of the operation.
+   * Output only. A server-defined resource path for the target of the
+   * operation.
    * </pre>
    *
    * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -211,7 +212,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Server-defined resource path for the target of the operation.
+   * Output only. A server-defined resource path for the target of the
+   * operation.
    * </pre>
    *
    * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -240,7 +242,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Name of the verb executed by the operation.
+   * Output only. The name of the verb that was executed by the operation.
    * </pre>
    *
    * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -264,7 +266,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Name of the verb executed by the operation.
+   * Output only. The name of the verb that was executed by the operation.
    * </pre>
    *
    * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -293,7 +295,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Human-readable status of the operation, if any.
+   * Output only. A human-readable status of the operation, if any.
    * </pre>
    *
    * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -317,7 +319,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Human-readable status of the operation, if any.
+   * Output only. A human-readable status of the operation, if any.
    * </pre>
    *
    * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -344,11 +346,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Identifies whether the user has requested cancellation
-   * of the operation. Operations that have been cancelled successfully
-   * have [Operation.error][] value with a
-   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-   * `Code.CANCELLED`.
+   * Output only. Whether you requested that the operation be cancelled.
+   * Operations that were cancelled successfully have an
+   * [Operation.error][google.longrunning.Operation.error]
+   * value with a status code
+   * [Code.CANCELLED][google.rpc.Status.code.CANCELLED].
    * </pre>
    *
    * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -369,7 +371,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. API version used to start the operation.
+   * Output only. The API version used to start the operation. For example,
+   * `v1`.
    * </pre>
    *
    * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -393,7 +396,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. API version used to start the operation.
+   * Output only. The API version used to start the operation. For example,
+   * `v1`.
    * </pre>
    *
    * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -641,7 +645,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The metadata of the long-running operation.
+   * Metadata for the long-running operation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.auditmanager.v1.OperationMetadata}
@@ -905,7 +909,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation was created.
+     * Output only. Time that the operation was created.
      * </pre>
      *
      * <code>
@@ -922,7 +926,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation was created.
+     * Output only. Time that the operation was created.
      * </pre>
      *
      * <code>
@@ -945,7 +949,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation was created.
+     * Output only. Time that the operation was created.
      * </pre>
      *
      * <code>
@@ -970,7 +974,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation was created.
+     * Output only. Time that the operation was created.
      * </pre>
      *
      * <code>
@@ -992,7 +996,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation was created.
+     * Output only. Time that the operation was created.
      * </pre>
      *
      * <code>
@@ -1022,7 +1026,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation was created.
+     * Output only. Time that the operation was created.
      * </pre>
      *
      * <code>
@@ -1044,7 +1048,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation was created.
+     * Output only. Time that the operation was created.
      * </pre>
      *
      * <code>
@@ -1061,7 +1065,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation was created.
+     * Output only. Time that the operation was created.
      * </pre>
      *
      * <code>
@@ -1082,7 +1086,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation was created.
+     * Output only. Time that the operation was created.
      * </pre>
      *
      * <code>
@@ -1117,7 +1121,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Time that the operation finished running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1133,7 +1137,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Time that the operation finished running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1153,7 +1157,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Time that the operation finished running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1177,7 +1181,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Time that the operation finished running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1198,7 +1202,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Time that the operation finished running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1227,7 +1231,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Time that the operation finished running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1248,7 +1252,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Time that the operation finished running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1264,7 +1268,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Time that the operation finished running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1282,7 +1286,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. The time the operation finished running.
+     * Output only. Time that the operation finished running.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1311,7 +1315,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Server-defined resource path for the target of the operation.
+     * Output only. A server-defined resource path for the target of the
+     * operation.
      * </pre>
      *
      * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1334,7 +1339,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Server-defined resource path for the target of the operation.
+     * Output only. A server-defined resource path for the target of the
+     * operation.
      * </pre>
      *
      * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1357,7 +1363,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Server-defined resource path for the target of the operation.
+     * Output only. A server-defined resource path for the target of the
+     * operation.
      * </pre>
      *
      * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1379,7 +1386,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Server-defined resource path for the target of the operation.
+     * Output only. A server-defined resource path for the target of the
+     * operation.
      * </pre>
      *
      * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1397,7 +1405,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Server-defined resource path for the target of the operation.
+     * Output only. A server-defined resource path for the target of the
+     * operation.
      * </pre>
      *
      * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1422,7 +1431,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Name of the verb executed by the operation.
+     * Output only. The name of the verb that was executed by the operation.
      * </pre>
      *
      * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1445,7 +1454,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Name of the verb executed by the operation.
+     * Output only. The name of the verb that was executed by the operation.
      * </pre>
      *
      * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1468,7 +1477,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Name of the verb executed by the operation.
+     * Output only. The name of the verb that was executed by the operation.
      * </pre>
      *
      * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1490,7 +1499,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Name of the verb executed by the operation.
+     * Output only. The name of the verb that was executed by the operation.
      * </pre>
      *
      * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1508,7 +1517,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Name of the verb executed by the operation.
+     * Output only. The name of the verb that was executed by the operation.
      * </pre>
      *
      * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1533,7 +1542,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Human-readable status of the operation, if any.
+     * Output only. A human-readable status of the operation, if any.
      * </pre>
      *
      * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1556,7 +1565,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Human-readable status of the operation, if any.
+     * Output only. A human-readable status of the operation, if any.
      * </pre>
      *
      * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1579,7 +1588,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Human-readable status of the operation, if any.
+     * Output only. A human-readable status of the operation, if any.
      * </pre>
      *
      * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1601,7 +1610,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Human-readable status of the operation, if any.
+     * Output only. A human-readable status of the operation, if any.
      * </pre>
      *
      * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1619,7 +1628,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Human-readable status of the operation, if any.
+     * Output only. A human-readable status of the operation, if any.
      * </pre>
      *
      * <code>string status_message = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1644,11 +1653,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Identifies whether the user has requested cancellation
-     * of the operation. Operations that have been cancelled successfully
-     * have [Operation.error][] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * Output only. Whether you requested that the operation be cancelled.
+     * Operations that were cancelled successfully have an
+     * [Operation.error][google.longrunning.Operation.error]
+     * value with a status code
+     * [Code.CANCELLED][google.rpc.Status.code.CANCELLED].
      * </pre>
      *
      * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1664,11 +1673,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Identifies whether the user has requested cancellation
-     * of the operation. Operations that have been cancelled successfully
-     * have [Operation.error][] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * Output only. Whether you requested that the operation be cancelled.
+     * Operations that were cancelled successfully have an
+     * [Operation.error][google.longrunning.Operation.error]
+     * value with a status code
+     * [Code.CANCELLED][google.rpc.Status.code.CANCELLED].
      * </pre>
      *
      * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1688,11 +1697,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Identifies whether the user has requested cancellation
-     * of the operation. Operations that have been cancelled successfully
-     * have [Operation.error][] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * Output only. Whether you requested that the operation be cancelled.
+     * Operations that were cancelled successfully have an
+     * [Operation.error][google.longrunning.Operation.error]
+     * value with a status code
+     * [Code.CANCELLED][google.rpc.Status.code.CANCELLED].
      * </pre>
      *
      * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1712,7 +1721,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. API version used to start the operation.
+     * Output only. The API version used to start the operation. For example,
+     * `v1`.
      * </pre>
      *
      * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1735,7 +1745,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. API version used to start the operation.
+     * Output only. The API version used to start the operation. For example,
+     * `v1`.
      * </pre>
      *
      * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1758,7 +1769,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. API version used to start the operation.
+     * Output only. The API version used to start the operation. For example,
+     * `v1`.
      * </pre>
      *
      * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1780,7 +1792,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. API version used to start the operation.
+     * Output only. The API version used to start the operation. For example,
+     * `v1`.
      * </pre>
      *
      * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1798,7 +1811,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. API version used to start the operation.
+     * Output only. The API version used to start the operation. For example,
+     * `v1`.
      * </pre>
      *
      * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
