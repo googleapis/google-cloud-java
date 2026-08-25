@@ -9384,6 +9384,1123 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface KubeletCertInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1.NodePool.KubeletCertInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the tpmBootstrapCertExpireTime field is set.
+     */
+    boolean hasTpmBootstrapCertExpireTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The tpmBootstrapCertExpireTime.
+     */
+    com.google.protobuf.Timestamp getTpmBootstrapCertExpireTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getTpmBootstrapCertExpireTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the nonTpmBootstrapCertExpireTime field is set.
+     */
+    boolean hasNonTpmBootstrapCertExpireTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The nonTpmBootstrapCertExpireTime.
+     */
+    com.google.protobuf.Timestamp getNonTpmBootstrapCertExpireTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getNonTpmBootstrapCertExpireTimeOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Contains expiry information about the kubelet certificate.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1.NodePool.KubeletCertInfo}
+   */
+  public static final class KubeletCertInfo extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1.NodePool.KubeletCertInfo)
+      KubeletCertInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "KubeletCertInfo");
+    }
+
+    // Use KubeletCertInfo.newBuilder() to construct.
+    private KubeletCertInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private KubeletCertInfo() {}
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_KubeletCertInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodePool_KubeletCertInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1.NodePool.KubeletCertInfo.class,
+              com.google.container.v1.NodePool.KubeletCertInfo.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TPM_BOOTSTRAP_CERT_EXPIRE_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp tpmBootstrapCertExpireTime_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the tpmBootstrapCertExpireTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasTpmBootstrapCertExpireTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The tpmBootstrapCertExpireTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getTpmBootstrapCertExpireTime() {
+      return tpmBootstrapCertExpireTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : tpmBootstrapCertExpireTime_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getTpmBootstrapCertExpireTimeOrBuilder() {
+      return tpmBootstrapCertExpireTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : tpmBootstrapCertExpireTime_;
+    }
+
+    public static final int NON_TPM_BOOTSTRAP_CERT_EXPIRE_TIME_FIELD_NUMBER = 2;
+    private com.google.protobuf.Timestamp nonTpmBootstrapCertExpireTime_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the nonTpmBootstrapCertExpireTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasNonTpmBootstrapCertExpireTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The nonTpmBootstrapCertExpireTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getNonTpmBootstrapCertExpireTime() {
+      return nonTpmBootstrapCertExpireTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : nonTpmBootstrapCertExpireTime_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getNonTpmBootstrapCertExpireTimeOrBuilder() {
+      return nonTpmBootstrapCertExpireTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : nonTpmBootstrapCertExpireTime_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getTpmBootstrapCertExpireTime());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getNonTpmBootstrapCertExpireTime());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1, getTpmBootstrapCertExpireTime());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, getNonTpmBootstrapCertExpireTime());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1.NodePool.KubeletCertInfo)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1.NodePool.KubeletCertInfo other =
+          (com.google.container.v1.NodePool.KubeletCertInfo) obj;
+
+      if (hasTpmBootstrapCertExpireTime() != other.hasTpmBootstrapCertExpireTime()) return false;
+      if (hasTpmBootstrapCertExpireTime()) {
+        if (!getTpmBootstrapCertExpireTime().equals(other.getTpmBootstrapCertExpireTime()))
+          return false;
+      }
+      if (hasNonTpmBootstrapCertExpireTime() != other.hasNonTpmBootstrapCertExpireTime())
+        return false;
+      if (hasNonTpmBootstrapCertExpireTime()) {
+        if (!getNonTpmBootstrapCertExpireTime().equals(other.getNonTpmBootstrapCertExpireTime()))
+          return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTpmBootstrapCertExpireTime()) {
+        hash = (37 * hash) + TPM_BOOTSTRAP_CERT_EXPIRE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getTpmBootstrapCertExpireTime().hashCode();
+      }
+      if (hasNonTpmBootstrapCertExpireTime()) {
+        hash = (37 * hash) + NON_TPM_BOOTSTRAP_CERT_EXPIRE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getNonTpmBootstrapCertExpireTime().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.container.v1.NodePool.KubeletCertInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Contains expiry information about the kubelet certificate.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1.NodePool.KubeletCertInfo}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1.NodePool.KubeletCertInfo)
+        com.google.container.v1.NodePool.KubeletCertInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_KubeletCertInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_KubeletCertInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1.NodePool.KubeletCertInfo.class,
+                com.google.container.v1.NodePool.KubeletCertInfo.Builder.class);
+      }
+
+      // Construct using com.google.container.v1.NodePool.KubeletCertInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetTpmBootstrapCertExpireTimeFieldBuilder();
+          internalGetNonTpmBootstrapCertExpireTimeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        tpmBootstrapCertExpireTime_ = null;
+        if (tpmBootstrapCertExpireTimeBuilder_ != null) {
+          tpmBootstrapCertExpireTimeBuilder_.dispose();
+          tpmBootstrapCertExpireTimeBuilder_ = null;
+        }
+        nonTpmBootstrapCertExpireTime_ = null;
+        if (nonTpmBootstrapCertExpireTimeBuilder_ != null) {
+          nonTpmBootstrapCertExpireTimeBuilder_.dispose();
+          nonTpmBootstrapCertExpireTimeBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1.ClusterServiceProto
+            .internal_static_google_container_v1_NodePool_KubeletCertInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.KubeletCertInfo getDefaultInstanceForType() {
+        return com.google.container.v1.NodePool.KubeletCertInfo.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.KubeletCertInfo build() {
+        com.google.container.v1.NodePool.KubeletCertInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1.NodePool.KubeletCertInfo buildPartial() {
+        com.google.container.v1.NodePool.KubeletCertInfo result =
+            new com.google.container.v1.NodePool.KubeletCertInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.container.v1.NodePool.KubeletCertInfo result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.tpmBootstrapCertExpireTime_ =
+              tpmBootstrapCertExpireTimeBuilder_ == null
+                  ? tpmBootstrapCertExpireTime_
+                  : tpmBootstrapCertExpireTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.nonTpmBootstrapCertExpireTime_ =
+              nonTpmBootstrapCertExpireTimeBuilder_ == null
+                  ? nonTpmBootstrapCertExpireTime_
+                  : nonTpmBootstrapCertExpireTimeBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1.NodePool.KubeletCertInfo) {
+          return mergeFrom((com.google.container.v1.NodePool.KubeletCertInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.container.v1.NodePool.KubeletCertInfo other) {
+        if (other == com.google.container.v1.NodePool.KubeletCertInfo.getDefaultInstance())
+          return this;
+        if (other.hasTpmBootstrapCertExpireTime()) {
+          mergeTpmBootstrapCertExpireTime(other.getTpmBootstrapCertExpireTime());
+        }
+        if (other.hasNonTpmBootstrapCertExpireTime()) {
+          mergeNonTpmBootstrapCertExpireTime(other.getNonTpmBootstrapCertExpireTime());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetTpmBootstrapCertExpireTimeFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetNonTpmBootstrapCertExpireTimeFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Timestamp tpmBootstrapCertExpireTime_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          tpmBootstrapCertExpireTimeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the tpmBootstrapCertExpireTime field is set.
+       */
+      public boolean hasTpmBootstrapCertExpireTime() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The tpmBootstrapCertExpireTime.
+       */
+      public com.google.protobuf.Timestamp getTpmBootstrapCertExpireTime() {
+        if (tpmBootstrapCertExpireTimeBuilder_ == null) {
+          return tpmBootstrapCertExpireTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : tpmBootstrapCertExpireTime_;
+        } else {
+          return tpmBootstrapCertExpireTimeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setTpmBootstrapCertExpireTime(com.google.protobuf.Timestamp value) {
+        if (tpmBootstrapCertExpireTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tpmBootstrapCertExpireTime_ = value;
+        } else {
+          tpmBootstrapCertExpireTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setTpmBootstrapCertExpireTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (tpmBootstrapCertExpireTimeBuilder_ == null) {
+          tpmBootstrapCertExpireTime_ = builderForValue.build();
+        } else {
+          tpmBootstrapCertExpireTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeTpmBootstrapCertExpireTime(com.google.protobuf.Timestamp value) {
+        if (tpmBootstrapCertExpireTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && tpmBootstrapCertExpireTime_ != null
+              && tpmBootstrapCertExpireTime_
+                  != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getTpmBootstrapCertExpireTimeBuilder().mergeFrom(value);
+          } else {
+            tpmBootstrapCertExpireTime_ = value;
+          }
+        } else {
+          tpmBootstrapCertExpireTimeBuilder_.mergeFrom(value);
+        }
+        if (tpmBootstrapCertExpireTime_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearTpmBootstrapCertExpireTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        tpmBootstrapCertExpireTime_ = null;
+        if (tpmBootstrapCertExpireTimeBuilder_ != null) {
+          tpmBootstrapCertExpireTimeBuilder_.dispose();
+          tpmBootstrapCertExpireTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getTpmBootstrapCertExpireTimeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetTpmBootstrapCertExpireTimeFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getTpmBootstrapCertExpireTimeOrBuilder() {
+        if (tpmBootstrapCertExpireTimeBuilder_ != null) {
+          return tpmBootstrapCertExpireTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return tpmBootstrapCertExpireTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : tpmBootstrapCertExpireTime_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp tpm_bootstrap_cert_expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          internalGetTpmBootstrapCertExpireTimeFieldBuilder() {
+        if (tpmBootstrapCertExpireTimeBuilder_ == null) {
+          tpmBootstrapCertExpireTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getTpmBootstrapCertExpireTime(), getParentForChildren(), isClean());
+          tpmBootstrapCertExpireTime_ = null;
+        }
+        return tpmBootstrapCertExpireTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp nonTpmBootstrapCertExpireTime_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          nonTpmBootstrapCertExpireTimeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the nonTpmBootstrapCertExpireTime field is set.
+       */
+      public boolean hasNonTpmBootstrapCertExpireTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The nonTpmBootstrapCertExpireTime.
+       */
+      public com.google.protobuf.Timestamp getNonTpmBootstrapCertExpireTime() {
+        if (nonTpmBootstrapCertExpireTimeBuilder_ == null) {
+          return nonTpmBootstrapCertExpireTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : nonTpmBootstrapCertExpireTime_;
+        } else {
+          return nonTpmBootstrapCertExpireTimeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setNonTpmBootstrapCertExpireTime(com.google.protobuf.Timestamp value) {
+        if (nonTpmBootstrapCertExpireTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          nonTpmBootstrapCertExpireTime_ = value;
+        } else {
+          nonTpmBootstrapCertExpireTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setNonTpmBootstrapCertExpireTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (nonTpmBootstrapCertExpireTimeBuilder_ == null) {
+          nonTpmBootstrapCertExpireTime_ = builderForValue.build();
+        } else {
+          nonTpmBootstrapCertExpireTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeNonTpmBootstrapCertExpireTime(com.google.protobuf.Timestamp value) {
+        if (nonTpmBootstrapCertExpireTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && nonTpmBootstrapCertExpireTime_ != null
+              && nonTpmBootstrapCertExpireTime_
+                  != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getNonTpmBootstrapCertExpireTimeBuilder().mergeFrom(value);
+          } else {
+            nonTpmBootstrapCertExpireTime_ = value;
+          }
+        } else {
+          nonTpmBootstrapCertExpireTimeBuilder_.mergeFrom(value);
+        }
+        if (nonTpmBootstrapCertExpireTime_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearNonTpmBootstrapCertExpireTime() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        nonTpmBootstrapCertExpireTime_ = null;
+        if (nonTpmBootstrapCertExpireTimeBuilder_ != null) {
+          nonTpmBootstrapCertExpireTimeBuilder_.dispose();
+          nonTpmBootstrapCertExpireTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getNonTpmBootstrapCertExpireTimeBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetNonTpmBootstrapCertExpireTimeFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getNonTpmBootstrapCertExpireTimeOrBuilder() {
+        if (nonTpmBootstrapCertExpireTimeBuilder_ != null) {
+          return nonTpmBootstrapCertExpireTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return nonTpmBootstrapCertExpireTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : nonTpmBootstrapCertExpireTime_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp non_tpm_bootstrap_cert_expire_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          internalGetNonTpmBootstrapCertExpireTimeFieldBuilder() {
+        if (nonTpmBootstrapCertExpireTimeBuilder_ == null) {
+          nonTpmBootstrapCertExpireTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getNonTpmBootstrapCertExpireTime(), getParentForChildren(), isClean());
+          nonTpmBootstrapCertExpireTime_ = null;
+        }
+        return nonTpmBootstrapCertExpireTimeBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1.NodePool.KubeletCertInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1.NodePool.KubeletCertInfo)
+    private static final com.google.container.v1.NodePool.KubeletCertInfo DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1.NodePool.KubeletCertInfo();
+    }
+
+    public static com.google.container.v1.NodePool.KubeletCertInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<KubeletCertInfo> PARSER =
+        new com.google.protobuf.AbstractParser<KubeletCertInfo>() {
+          @java.lang.Override
+          public KubeletCertInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<KubeletCertInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<KubeletCertInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1.NodePool.KubeletCertInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -9928,7 +11045,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5361
+   *     google/container/v1/cluster_service.proto;l=5441
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -9959,7 +11076,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=5361
+   *     google/container/v1/cluster_service.proto;l=5441
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -10150,10 +11267,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Which conditions caused the current node pool state.
+   * Output only. Which conditions caused the current node pool state.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.container.v1.StatusCondition> getConditionsList() {
@@ -10164,10 +11283,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Which conditions caused the current node pool state.
+   * Output only. Which conditions caused the current node pool state.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
@@ -10179,10 +11300,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Which conditions caused the current node pool state.
+   * Output only. Which conditions caused the current node pool state.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public int getConditionsCount() {
@@ -10193,10 +11316,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Which conditions caused the current node pool state.
+   * Output only. Which conditions caused the current node pool state.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.container.v1.StatusCondition getConditions(int index) {
@@ -10207,10 +11332,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Which conditions caused the current node pool state.
+   * Output only. Which conditions caused the current node pool state.
    * </pre>
    *
-   * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+   * <code>
+   * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.container.v1.StatusConditionOrBuilder getConditionsOrBuilder(int index) {
@@ -10413,12 +11540,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * This checksum is computed by the server based on the value of node pool
-   * fields, and may be sent on update requests to ensure the client has an
-   * up-to-date value before proceeding.
+   * Output only. This checksum is computed by the server based on the value of
+   * node pool fields, and may be sent on update requests to ensure the client
+   * has an up-to-date value before proceeding.
    * </pre>
    *
-   * <code>string etag = 110;</code>
+   * <code>string etag = 110 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The etag.
    */
@@ -10439,12 +11566,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * This checksum is computed by the server based on the value of node pool
-   * fields, and may be sent on update requests to ensure the client has an
-   * up-to-date value before proceeding.
+   * Output only. This checksum is computed by the server based on the value of
+   * node pool fields, and may be sent on update requests to ensure the client
+   * has an up-to-date value before proceeding.
    * </pre>
    *
-   * <code>string etag = 110;</code>
+   * <code>string etag = 110 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for etag.
    */
@@ -10682,6 +11809,65 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
         : maintenancePolicy_;
   }
 
+  public static final int KUBELET_CERT_INFO_FIELD_NUMBER = 119;
+  private com.google.container.v1.NodePool.KubeletCertInfo kubeletCertInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains expiry information about the kubelet certificate.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the kubeletCertInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasKubeletCertInfo() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains expiry information about the kubelet certificate.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The kubeletCertInfo.
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.KubeletCertInfo getKubeletCertInfo() {
+    return kubeletCertInfo_ == null
+        ? com.google.container.v1.NodePool.KubeletCertInfo.getDefaultInstance()
+        : kubeletCertInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains expiry information about the kubelet certificate.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.NodePool.KubeletCertInfoOrBuilder getKubeletCertInfoOrBuilder() {
+    return kubeletCertInfo_ == null
+        ? com.google.container.v1.NodePool.KubeletCertInfo.getDefaultInstance()
+        : kubeletCertInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -10764,6 +11950,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(118, getMaintenancePolicy());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeMessage(119, getKubeletCertInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -10856,6 +12045,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(118, getMaintenancePolicy());
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(119, getKubeletCertInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -10929,6 +12121,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
     if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
     if (hasMaintenancePolicy()) {
       if (!getMaintenancePolicy().equals(other.getMaintenancePolicy())) return false;
+    }
+    if (hasKubeletCertInfo() != other.hasKubeletCertInfo()) return false;
+    if (hasKubeletCertInfo()) {
+      if (!getKubeletCertInfo().equals(other.getKubeletCertInfo())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -11016,6 +12212,10 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
     if (hasMaintenancePolicy()) {
       hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getMaintenancePolicy().hashCode();
+    }
+    if (hasKubeletCertInfo()) {
+      hash = (37 * hash) + KUBELET_CERT_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getKubeletCertInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -11175,6 +12375,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
         internalGetBestEffortProvisioningFieldBuilder();
         internalGetNodeDrainConfigFieldBuilder();
         internalGetMaintenancePolicyFieldBuilder();
+        internalGetKubeletCertInfoFieldBuilder();
       }
     }
 
@@ -11258,6 +12459,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
       if (maintenancePolicyBuilder_ != null) {
         maintenancePolicyBuilder_.dispose();
         maintenancePolicyBuilder_ = null;
+      }
+      kubeletCertInfo_ = null;
+      if (kubeletCertInfoBuilder_ != null) {
+        kubeletCertInfoBuilder_.dispose();
+        kubeletCertInfoBuilder_ = null;
       }
       return this;
     }
@@ -11405,6 +12611,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
                 : maintenancePolicyBuilder_.build();
         to_bitField0_ |= 0x00000800;
       }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.kubeletCertInfo_ =
+            kubeletCertInfoBuilder_ == null ? kubeletCertInfo_ : kubeletCertInfoBuilder_.build();
+        to_bitField0_ |= 0x00001000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -11536,6 +12747,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasMaintenancePolicy()) {
         mergeMaintenancePolicy(other.getMaintenancePolicy());
+      }
+      if (other.hasKubeletCertInfo()) {
+        mergeKubeletCertInfo(other.getKubeletCertInfo());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -11722,6 +12936,13 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00400000;
                 break;
               } // case 946
+            case 954:
+              {
+                input.readMessage(
+                    internalGetKubeletCertInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 954
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13159,7 +14380,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5361
+     *     google/container/v1/cluster_service.proto;l=5441
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -13189,7 +14410,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5361
+     *     google/container/v1/cluster_service.proto;l=5441
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -13219,7 +14440,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5361
+     *     google/container/v1/cluster_service.proto;l=5441
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -13248,7 +14469,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5361
+     *     google/container/v1/cluster_service.proto;l=5441
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -13273,7 +14494,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.container.v1.NodePool.status_message is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=5361
+     *     google/container/v1/cluster_service.proto;l=5441
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -13912,10 +15133,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.container.v1.StatusCondition> getConditionsList() {
       if (conditionsBuilder_ == null) {
@@ -13929,10 +15152,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getConditionsCount() {
       if (conditionsBuilder_ == null) {
@@ -13946,10 +15171,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.container.v1.StatusCondition getConditions(int index) {
       if (conditionsBuilder_ == null) {
@@ -13963,10 +15190,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setConditions(int index, com.google.container.v1.StatusCondition value) {
       if (conditionsBuilder_ == null) {
@@ -13986,10 +15215,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setConditions(
         int index, com.google.container.v1.StatusCondition.Builder builderForValue) {
@@ -14007,10 +15238,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addConditions(com.google.container.v1.StatusCondition value) {
       if (conditionsBuilder_ == null) {
@@ -14030,10 +15263,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addConditions(int index, com.google.container.v1.StatusCondition value) {
       if (conditionsBuilder_ == null) {
@@ -14053,10 +15288,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addConditions(com.google.container.v1.StatusCondition.Builder builderForValue) {
       if (conditionsBuilder_ == null) {
@@ -14073,10 +15310,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addConditions(
         int index, com.google.container.v1.StatusCondition.Builder builderForValue) {
@@ -14094,10 +15333,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllConditions(
         java.lang.Iterable<? extends com.google.container.v1.StatusCondition> values) {
@@ -14115,10 +15356,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
@@ -14135,10 +15378,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeConditions(int index) {
       if (conditionsBuilder_ == null) {
@@ -14155,10 +15400,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.container.v1.StatusCondition.Builder getConditionsBuilder(int index) {
       return internalGetConditionsFieldBuilder().getBuilder(index);
@@ -14168,10 +15415,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.container.v1.StatusConditionOrBuilder getConditionsOrBuilder(int index) {
       if (conditionsBuilder_ == null) {
@@ -14185,10 +15434,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.container.v1.StatusConditionOrBuilder>
         getConditionsOrBuilderList() {
@@ -14203,10 +15454,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.container.v1.StatusCondition.Builder addConditionsBuilder() {
       return internalGetConditionsFieldBuilder()
@@ -14217,10 +15470,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.container.v1.StatusCondition.Builder addConditionsBuilder(int index) {
       return internalGetConditionsFieldBuilder()
@@ -14231,10 +15486,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Which conditions caused the current node pool state.
+     * Output only. Which conditions caused the current node pool state.
      * </pre>
      *
-     * <code>repeated .google.container.v1.StatusCondition conditions = 105;</code>
+     * <code>
+     * repeated .google.container.v1.StatusCondition conditions = 105 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.container.v1.StatusCondition.Builder>
         getConditionsBuilderList() {
@@ -14934,12 +16191,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of node pool
-     * fields, and may be sent on update requests to ensure the client has an
-     * up-to-date value before proceeding.
+     * Output only. This checksum is computed by the server based on the value of
+     * node pool fields, and may be sent on update requests to ensure the client
+     * has an up-to-date value before proceeding.
      * </pre>
      *
-     * <code>string etag = 110;</code>
+     * <code>string etag = 110 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The etag.
      */
@@ -14959,12 +16216,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of node pool
-     * fields, and may be sent on update requests to ensure the client has an
-     * up-to-date value before proceeding.
+     * Output only. This checksum is computed by the server based on the value of
+     * node pool fields, and may be sent on update requests to ensure the client
+     * has an up-to-date value before proceeding.
      * </pre>
      *
-     * <code>string etag = 110;</code>
+     * <code>string etag = 110 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for etag.
      */
@@ -14984,12 +16241,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of node pool
-     * fields, and may be sent on update requests to ensure the client has an
-     * up-to-date value before proceeding.
+     * Output only. This checksum is computed by the server based on the value of
+     * node pool fields, and may be sent on update requests to ensure the client
+     * has an up-to-date value before proceeding.
      * </pre>
      *
-     * <code>string etag = 110;</code>
+     * <code>string etag = 110 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -15008,12 +16265,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of node pool
-     * fields, and may be sent on update requests to ensure the client has an
-     * up-to-date value before proceeding.
+     * Output only. This checksum is computed by the server based on the value of
+     * node pool fields, and may be sent on update requests to ensure the client
+     * has an up-to-date value before proceeding.
      * </pre>
      *
-     * <code>string etag = 110;</code>
+     * <code>string etag = 110 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -15028,12 +16285,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * This checksum is computed by the server based on the value of node pool
-     * fields, and may be sent on update requests to ensure the client has an
-     * up-to-date value before proceeding.
+     * Output only. This checksum is computed by the server based on the value of
+     * node pool fields, and may be sent on update requests to ensure the client
+     * has an up-to-date value before proceeding.
      * </pre>
      *
-     * <code>string etag = 110;</code>
+     * <code>string etag = 110 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -15861,6 +17118,220 @@ public final class NodePool extends com.google.protobuf.GeneratedMessage
         maintenancePolicy_ = null;
       }
       return maintenancePolicyBuilder_;
+    }
+
+    private com.google.container.v1.NodePool.KubeletCertInfo kubeletCertInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.NodePool.KubeletCertInfo,
+            com.google.container.v1.NodePool.KubeletCertInfo.Builder,
+            com.google.container.v1.NodePool.KubeletCertInfoOrBuilder>
+        kubeletCertInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains expiry information about the kubelet certificate.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the kubeletCertInfo field is set.
+     */
+    public boolean hasKubeletCertInfo() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains expiry information about the kubelet certificate.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The kubeletCertInfo.
+     */
+    public com.google.container.v1.NodePool.KubeletCertInfo getKubeletCertInfo() {
+      if (kubeletCertInfoBuilder_ == null) {
+        return kubeletCertInfo_ == null
+            ? com.google.container.v1.NodePool.KubeletCertInfo.getDefaultInstance()
+            : kubeletCertInfo_;
+      } else {
+        return kubeletCertInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains expiry information about the kubelet certificate.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setKubeletCertInfo(com.google.container.v1.NodePool.KubeletCertInfo value) {
+      if (kubeletCertInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        kubeletCertInfo_ = value;
+      } else {
+        kubeletCertInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains expiry information about the kubelet certificate.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setKubeletCertInfo(
+        com.google.container.v1.NodePool.KubeletCertInfo.Builder builderForValue) {
+      if (kubeletCertInfoBuilder_ == null) {
+        kubeletCertInfo_ = builderForValue.build();
+      } else {
+        kubeletCertInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains expiry information about the kubelet certificate.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeKubeletCertInfo(com.google.container.v1.NodePool.KubeletCertInfo value) {
+      if (kubeletCertInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)
+            && kubeletCertInfo_ != null
+            && kubeletCertInfo_
+                != com.google.container.v1.NodePool.KubeletCertInfo.getDefaultInstance()) {
+          getKubeletCertInfoBuilder().mergeFrom(value);
+        } else {
+          kubeletCertInfo_ = value;
+        }
+      } else {
+        kubeletCertInfoBuilder_.mergeFrom(value);
+      }
+      if (kubeletCertInfo_ != null) {
+        bitField0_ |= 0x00800000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains expiry information about the kubelet certificate.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearKubeletCertInfo() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      kubeletCertInfo_ = null;
+      if (kubeletCertInfoBuilder_ != null) {
+        kubeletCertInfoBuilder_.dispose();
+        kubeletCertInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains expiry information about the kubelet certificate.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1.NodePool.KubeletCertInfo.Builder getKubeletCertInfoBuilder() {
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return internalGetKubeletCertInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains expiry information about the kubelet certificate.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1.NodePool.KubeletCertInfoOrBuilder getKubeletCertInfoOrBuilder() {
+      if (kubeletCertInfoBuilder_ != null) {
+        return kubeletCertInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return kubeletCertInfo_ == null
+            ? com.google.container.v1.NodePool.KubeletCertInfo.getDefaultInstance()
+            : kubeletCertInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains expiry information about the kubelet certificate.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.NodePool.KubeletCertInfo kubelet_cert_info = 119 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.container.v1.NodePool.KubeletCertInfo,
+            com.google.container.v1.NodePool.KubeletCertInfo.Builder,
+            com.google.container.v1.NodePool.KubeletCertInfoOrBuilder>
+        internalGetKubeletCertInfoFieldBuilder() {
+      if (kubeletCertInfoBuilder_ == null) {
+        kubeletCertInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.container.v1.NodePool.KubeletCertInfo,
+                com.google.container.v1.NodePool.KubeletCertInfo.Builder,
+                com.google.container.v1.NodePool.KubeletCertInfoOrBuilder>(
+                getKubeletCertInfo(), getParentForChildren(), isClean());
+        kubeletCertInfo_ = null;
+      }
+      return kubeletCertInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.NodePool)

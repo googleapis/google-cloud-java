@@ -114,6 +114,55 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
+   * Optional. Configuration for a schema provided as a pre-compiled Protocol
+   * Buffer FileDescriptorSet. The `type` field above must be set to
+   * PROTOCOL_BUFFER.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.CompiledProtoSchema compiled_proto_schema = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the compiledProtoSchema field is set.
+   */
+  boolean hasCompiledProtoSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for a schema provided as a pre-compiled Protocol
+   * Buffer FileDescriptorSet. The `type` field above must be set to
+   * PROTOCOL_BUFFER.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.CompiledProtoSchema compiled_proto_schema = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The compiledProtoSchema.
+   */
+  com.google.pubsub.v1.CompiledProtoSchema getCompiledProtoSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for a schema provided as a pre-compiled Protocol
+   * Buffer FileDescriptorSet. The `type` field above must be set to
+   * PROTOCOL_BUFFER.
+   * </pre>
+   *
+   * <code>
+   * .google.pubsub.v1.CompiledProtoSchema compiled_proto_schema = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.pubsub.v1.CompiledProtoSchemaOrBuilder getCompiledProtoSchemaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Immutable. The revision ID of the schema.
    * </pre>
    *
@@ -182,4 +231,6 @@ public interface SchemaOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getRevisionCreateTimeOrBuilder();
+
+  com.google.pubsub.v1.Schema.ConfigurationCase getConfigurationCase();
 }
