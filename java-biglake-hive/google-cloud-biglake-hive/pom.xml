@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-biglake-hive</artifactId>
-  <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-biglake-hive:current} -->
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-biglake-hive:current} -->
   <packaging>jar</packaging>
   <name>Google Lakehouse</name>
   <description>Lakehouse The Lakehouse API (formerly BigLake API) provides access to a serverless,
@@ -19,7 +19,7 @@ Snowflake, Databricks, and AWS Glue.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-biglake-hive-parent</artifactId>
-    <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-biglake-hive:current} -->
+    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-biglake-hive:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-biglake-hive</site.installationModule>
