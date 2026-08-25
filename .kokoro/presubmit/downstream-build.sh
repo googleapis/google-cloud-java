@@ -31,9 +31,9 @@ scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 ## cd to the parent directory, i.e. the root of the git repo
 cd "${scriptDir}/../.."
 
-# Use GCP Maven Mirror from repository root
-mkdir -p "${HOME}/.m2"
-cp settings.xml "${HOME}/.m2/settings.xml"
+# include common functions
+source "${scriptDir}/../common.sh"
+setup_maven_mirror
 
 # Build and install the entire monorepo to local cache (including the under-test java-shared-config)
 mvn -B -ntp install -Dcheckstyle.skip -Dfmt.skip -DskipTests

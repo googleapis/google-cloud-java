@@ -18,9 +18,9 @@ set -eo pipefail
 scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 cd ${scriptDir}/..
 
-# Use GCP Maven Mirror from repository root
-mkdir -p "${HOME}/.m2"
-cp settings.xml "${HOME}/.m2"
+# include common functions
+source ${scriptDir}/common.sh
+setup_maven_mirror
 
 outputFile="$scriptDir/../java-cloud-bom/dashboard/target/tmp/output.txt"
 

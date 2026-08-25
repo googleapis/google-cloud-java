@@ -24,7 +24,7 @@ monorepoRoot=$(realpath "${scriptDir}/../../..")
 
 # Use GCP Maven Mirror from monorepo root
 mkdir -p "${HOME}/.m2"
-cp "${monorepoRoot}/settings.xml" "${HOME}/.m2"
+cp "${monorepoRoot}/settings.xml" "${HOME}/.m2/settings.xml"
 
 # MODULES_UNDER_TEST Env Var accepts a comma separated list of monorepo submodules to test. For Github CI,
 # this will be a single module as Github will build a matrix of modules with each being tested in parallel.

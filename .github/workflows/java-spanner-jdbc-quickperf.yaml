@@ -50,7 +50,7 @@ jobs:
           java-version: 17
           cache: maven
       - name: Use GCP Maven Mirror
-        run: mkdir -p "${HOME}/.m2" && cp settings.xml "${HOME}/.m2"
+        run: mkdir -p "${HOME}/.m2" && cp settings.xml "${HOME}/.m2/settings.xml"
       - name: Run tests
         run: mvn test
         working-directory: java-spanner-jdbc/samples/quickperf

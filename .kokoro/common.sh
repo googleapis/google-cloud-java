@@ -564,15 +564,15 @@ function find_last_release_version {
   echo "${parts[1]}"
 }
 
-# copies settings.xml from the root of sdk-platform-java into Maven's home
-# folder
+# copies settings.xml from the root of the repo into Maven's home folder
 function setup_maven_mirror {
   echo "Setup maven mirror"
   mkdir -p "${HOME}/.m2"
-  cp "${commonScriptDir}/../settings.xml" "${HOME}/.m2"
+  cp "${commonScriptDir}/../settings.xml" "${HOME}/.m2/settings.xml"
 }
 
 function install_repo_modules {
+  setup_maven_mirror
   target_projects="$1"
   projects_arg=""
   if [ -n "${target_projects}" ]; then

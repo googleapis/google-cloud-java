@@ -96,7 +96,7 @@ function find_last_release_version {
 function setup_maven_mirror {
   echo "Setup maven mirror"
   mkdir -p "${HOME}/.m2"
-  cp "${commonScriptDir}/../../../settings.xml" "${HOME}/.m2"
+  cp "${commonScriptDir}/../../../settings.xml" "${HOME}/.m2/settings.xml"
 }
 
 function install_repo_modules {

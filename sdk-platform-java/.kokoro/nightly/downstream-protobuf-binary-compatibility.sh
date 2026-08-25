@@ -24,7 +24,7 @@ monorepoRoot=$(realpath "${scriptDir}/../../..")
 
 # Use GCP Maven Mirror from monorepo root
 mkdir -p "${HOME}/.m2"
-cp "${monorepoRoot}/settings.xml" "${HOME}/.m2"
+cp "${monorepoRoot}/settings.xml" "${HOME}/.m2/settings.xml"
 
 # Declare a map of downstream handwritten libraries and the relevant artifacts to test. The map stores a
 # K/V pairing of (Key: module name, Value: comma separate list of Group ID:Artifact ID pairings). Note: The
