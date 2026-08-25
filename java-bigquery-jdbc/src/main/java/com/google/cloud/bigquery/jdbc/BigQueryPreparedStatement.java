@@ -137,7 +137,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public void setNull(int parameterIndex, int sqlType) throws SQLException {
     checkClosed();
-    Class<?> javaType = BigQueryJdbcTypeMappings.getJavaType(sqlType);
+    Class<?> javaType = BigQueryTypeRegistry.toJavaClass(sqlType);
     this.parameterHandler.setParameter(parameterIndex, null, javaType);
   }
 
@@ -249,7 +249,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     if (setTemporalObject(parameterIndex, value)) {
       return;
     }
-    Class<?> javaType = BigQueryJdbcTypeMappings.getJavaType(targetSqlType);
+    Class<?> javaType = BigQueryTypeRegistry.toJavaClass(targetSqlType);
     this.parameterHandler.setParameter(parameterIndex, value, javaType);
   }
 

@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api</groupId>
   <artifactId>gapic-generator-java-pom-parent</artifactId>
-  <version>2.76.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+  <version>2.77.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
   <packaging>pom</packaging>
   <name>GAPIC Generator Java POM Parent</name>
   <url>https://github.com/googleapis/google-cloud-java/tree/main/sdk-platform-java</url>
@@ -15,7 +15,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.20.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-config:current} -->
+    <version>1.21.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-config:current} -->
     <relativePath>../../java-shared-config/java-shared-config/pom.xml</relativePath>
   </parent>
 
@@ -27,7 +27,7 @@
     <!-- External dependencies, especially gRPC and Protobuf version, should be
         consistent across modules in this repository -->
     <javax.annotation-api.version>1.3.2</javax.annotation-api.version>
-    <grpc.version>1.82.3</grpc.version>
+    <grpc.version>1.82.4</grpc.version>
     <google.http-client.version>2.2.0</google.http-client.version>
     <gson.version>2.13.2</gson.version>
     <guava.version>33.6.0-jre</guava.version>
@@ -41,7 +41,7 @@
     <mockito.version>4.11.0</mockito.version>
     <awaitility.version>4.3.0</awaitility.version>
     <slf4j.version>2.0.16</slf4j.version>
-    <conscrypt.version>2.6.0</conscrypt.version>
+    <conscrypt.version>2.6.2</conscrypt.version>
     <!--  skipping clirr check for protobuf 4.x upgrade -->
     <clirr.skip>true</clirr.skip>
     <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
@@ -81,23 +81,6 @@
   </licenses>
 
   <profiles>
-    <profile>
-      <!-- skips all plugins that would have been activated by the Maven lifecycle -->
-      <id>quick-build</id>
-      <properties>
-        <checkstyle.skip>true</checkstyle.skip>
-        <enforcer.skip>true</enforcer.skip>
-        <jacoco.skip>true</jacoco.skip>
-        <clirr.skip>true</clirr.skip>
-        <spotbugs.skip>true</spotbugs.skip>
-        <pmd.skip>true</pmd.skip>
-        <animal.sniffer.skip>true</animal.sniffer.skip>
-        <fmt.skip>true</fmt.skip>
-        <flatten.skip>true</flatten.skip>
-        <mdep.analyze.skip>true</mdep.analyze.skip>
-      </properties>
-    </profile>
-
     <profile>
       <!-- Only run checkstyle plugin on Java 11+ (checkstyle artifact only supports Java 11+) -->
       <id>checkstyle-tests</id>

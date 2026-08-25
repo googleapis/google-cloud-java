@@ -92,6 +92,11 @@ public class ReadIT {
 
   @Test
   public void isRowExists() throws Exception {
+    assume()
+        .withMessage("Emulator does not support microsecond timestamp granularity")
+        .that(testEnvRule.env())
+        .isNotInstanceOf(EmulatorEnv.class);
+
     String rowKey = prefix + "-test-row-key";
     TableId tableId = testEnvRule.env().getTableId();
     testEnvRule

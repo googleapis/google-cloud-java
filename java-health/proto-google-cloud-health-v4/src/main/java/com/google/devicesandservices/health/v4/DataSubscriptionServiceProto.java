@@ -269,12 +269,12 @@ public final class DataSubscriptionServiceProto extends com.google.protobuf.Gene
           + "iptionRequest\032\026.google.protobuf.Empty\"B\332"
           + "A\004name\202\323\344\223\0025*3/v4/{name=projects/*/subsc"
           + "ribers/*/subscriptions/*}\032I\312A\025health.goo"
-          + "gleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\222\002\n"
+          + "gleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\216\002\n"
           + "\'com.google.devicesandservices.health.v4B\034DataSubscripti"
-          + "onServiceProtoP\001ZRgoogle.golang.org/genproto/googleapis/devicesandservices/healt"
-          + "h/apiv4main;healthpb\252\002#Google.DevicesAnd"
-          + "Services.Health.V4\312\002#Google\\DevicesAndSe"
-          + "rvices\\Health\\V4\352\002&Google::DevicesAndServices::Health::V4b\006proto3"
+          + "onServiceProtoP\001ZNgoogle.golang.org/genproto/googleapis/devicesandservices/healt"
+          + "h/apiv4;healthpb\252\002#Google.DevicesAndServ"
+          + "ices.Health.V4\312\002#Google\\DevicesAndServic"
+          + "es\\Health\\V4\352\002&Google::DevicesAndServices::Health::V4b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
