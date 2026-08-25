@@ -1818,9 +1818,10 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   // ==================================================================================
 
   @Test
-  void refreshAccessToken_useSameCertForStsAndIam() throws Exception {
-    // Verify that both STS and IAM use the same transport factory (from the same KeyStore
-    // snapshot) within one refresh cycle.
+  void refreshAccessToken_pinsTransportForStsExchange() throws Exception {
+    // Verify that the STS exchange uses the pinned transport factory from the KeyStore snapshot
+    // within one refresh cycle. Threading the pinned transport to IAM impersonation is deferred
+    // to a follow-up PR.
     KeyStore ks = createPopulatedKeyStore();
 
     AtomicInteger getKeyStoreCallCount = new AtomicInteger(0);
