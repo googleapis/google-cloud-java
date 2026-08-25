@@ -94,7 +94,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
 
   private @Nullable String refreshToken;
 
-  private transient @Nullable HttpTransportFactory transportFactory;
+  private transient HttpTransportFactory transportFactory;
 
   /**
    * Internal constructor.
@@ -221,7 +221,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
     String refreshToken =
         OAuth2Utils.validateOptionalString(
             responseData, /* key= */ "refresh_token", PARSE_ERROR_PREFIX);
-    if (refreshToken != null && refreshToken.trim().length() > 0) {
+    if (refreshToken != null && !refreshToken.trim().isEmpty()) {
       this.refreshToken = refreshToken;
     }
 
@@ -369,13 +369,13 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
 
   private boolean canRefresh() {
     return refreshToken != null
-        && refreshToken.trim().length() > 0
+        && !refreshToken.trim().isEmpty()
         && tokenUrl != null
-        && tokenUrl.trim().length() > 0
+        && !tokenUrl.trim().isEmpty()
         && clientId != null
-        && clientId.trim().length() > 0
+        && !clientId.trim().isEmpty()
         && clientSecret != null
-        && clientSecret.trim().length() > 0;
+        && !clientSecret.trim().isEmpty();
   }
 
   private HttpRequest buildRefreshRequest() throws IOException {

@@ -289,7 +289,8 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationUrl(String serviceAccountImpersonationUrl) {
+    public Builder setServiceAccountImpersonationUrl(
+        @Nullable String serviceAccountImpersonationUrl) {
       super.setServiceAccountImpersonationUrl(serviceAccountImpersonationUrl);
       return this;
     }

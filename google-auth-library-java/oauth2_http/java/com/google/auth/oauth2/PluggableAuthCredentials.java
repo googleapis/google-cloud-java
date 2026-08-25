@@ -188,8 +188,7 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
   /** Clones the PluggableAuthCredentials with the specified scopes. */
   @Override
   public PluggableAuthCredentials createScoped(Collection<String> newScopes) {
-    return new PluggableAuthCredentials(
-        (PluggableAuthCredentials.Builder) newBuilder(this).setScopes(newScopes));
+    return newBuilder(this).setScopes(newScopes).build();
   }
 
   @Override
@@ -275,7 +274,8 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationUrl(String serviceAccountImpersonationUrl) {
+    public Builder setServiceAccountImpersonationUrl(
+        @Nullable String serviceAccountImpersonationUrl) {
       super.setServiceAccountImpersonationUrl(serviceAccountImpersonationUrl);
       return this;
     }

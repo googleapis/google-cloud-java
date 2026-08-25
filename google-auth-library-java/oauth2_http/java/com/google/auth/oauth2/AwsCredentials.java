@@ -67,8 +67,8 @@ public class AwsCredentials extends ExternalAccountCredentials {
   private final ExternalAccountSupplierContext supplierContext;
   // Regional credential verification url override. This needs to be its own value so we can
   // correctly pass it to a builder.
-  @Nullable private final String regionalCredentialVerificationUrlOverride;
-  @Nullable private final String regionalCredentialVerificationUrl;
+  private final @Nullable String regionalCredentialVerificationUrlOverride;
+  private final @Nullable String regionalCredentialVerificationUrl;
   private final String metricsHeaderValue;
 
   /** Internal constructor. See {@link AwsCredentials.Builder}. */
@@ -163,7 +163,7 @@ public class AwsCredentials extends ExternalAccountCredentials {
   /** Clones the AwsCredentials with the specified scopes. */
   @Override
   public GoogleCredentials createScoped(Collection<String> newScopes) {
-    return new AwsCredentials((AwsCredentials.Builder) newBuilder(this).setScopes(newScopes));
+    return newBuilder(this).setScopes(newScopes).build();
   }
 
   @Override
@@ -195,7 +195,7 @@ public class AwsCredentials extends ExternalAccountCredentials {
   }
 
   @VisibleForTesting
-  String getRegionalCredentialVerificationUrl() {
+  @Nullable String getRegionalCredentialVerificationUrl() {
     return this.regionalCredentialVerificationUrl;
   }
 
@@ -325,7 +325,8 @@ public class AwsCredentials extends ExternalAccountCredentials {
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationUrl(String serviceAccountImpersonationUrl) {
+    public Builder setServiceAccountImpersonationUrl(
+        @Nullable String serviceAccountImpersonationUrl) {
       super.setServiceAccountImpersonationUrl(serviceAccountImpersonationUrl);
       return this;
     }
