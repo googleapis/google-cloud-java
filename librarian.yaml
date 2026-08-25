@@ -1386,6 +1386,7 @@ libraries:
       client_documentation_override: https://cloud.google.com/java/docs/reference/google-cloud-databasecenter/latest/overview
       library_type_override: GAPIC_AUTO
       name_pretty_override: Database Center API
+      product_documentation_override: https://cloud.google.com/database-center/docs/overview
       released_version: 0.17.0
   - name: dataflow
     version: 0.100.0
