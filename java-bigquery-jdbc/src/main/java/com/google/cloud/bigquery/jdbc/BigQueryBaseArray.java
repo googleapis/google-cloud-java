@@ -65,8 +65,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   public final int getBaseType() {
     LOG.finestTrace("getBaseType");
     ensureValid();
-    return BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(
-        schema.getType().getStandardType());
+    return BigQueryTypeRegistry.toJdbcType(schema.getType().getStandardType());
   }
 
   @Override
@@ -91,7 +90,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
     throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
-  protected Object getArrayInternal(int fromIndex, int toIndexExclusive) {
+  protected Object getArrayInternal(int fromIndex, int toIndexExclusive) throws SQLException {
     LOG.finestTrace("getArrayInternal");
     Class<?> targetClass = getTargetClass();
     int size = toIndexExclusive - fromIndex;
@@ -145,11 +144,10 @@ abstract class BigQueryBaseArray implements java.sql.Array {
     LOG.finestTrace("getTargetClass");
     return this.arrayOfStruct
         ? Struct.class
-        : BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-            this.schema.getType().getStandardType());
+        : BigQueryTypeRegistry.toJavaClass(this.schema.getType().getStandardType());
   }
 
-  abstract Object getCoercedValue(int index);
+  abstract Object getCoercedValue(int index) throws SQLException;
 
   static boolean isArray(Field currentSchema) {
     return currentSchema.getMode() == REPEATED;
