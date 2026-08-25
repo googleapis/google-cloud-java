@@ -45,7 +45,6 @@
     </dependencies>
   </dependencyManagement>
 
-  <!-- adding comment for testing-->
   <dependencies>
     <dependency>
       <groupId>com.google.guava</groupId>
