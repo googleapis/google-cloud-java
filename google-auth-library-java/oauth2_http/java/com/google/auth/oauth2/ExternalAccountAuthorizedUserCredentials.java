@@ -356,6 +356,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
         .setRevokeUrl(revokeUrl)
         .setClientId(clientId)
         .setClientSecret(clientSecret)
+        .setRefreshToken(refreshToken)
         .setHttpTransportFactory(transportFactory)
         .setQuotaProjectId(quotaProjectId)
         .setUniverseDomain(universeDomain)
