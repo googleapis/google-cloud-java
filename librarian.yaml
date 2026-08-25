@@ -1417,19 +1417,6 @@ libraries:
       name_pretty_override: Cloud Dataform
       product_documentation_override: https://cloud.google.com/dataform/docs
       released_version: 0.95.0
-  - name: datalabeling
-    version: 0.217.0-SNAPSHOT
-    apis:
-      - path: google/cloud/datalabeling/v1beta1
-    keep:
-      - google-cloud-datalabeling/src/test/java/com/google/cloud/datalabeling/it/ITSystemTest.java
-    java:
-      api_description_override: is a service that lets you work with human labelers to generate highly accurate labels for a collection of data that you can use to train your machine learning models.
-      name_pretty_override: Data Labeling
-      product_documentation_override: https://cloud.google.com/ai-platform/data-labeling/docs/
-      rest_documentation: https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest
-      rpc_documentation: https://cloud.google.com/ai-platform/data-labeling/docs/reference/rpc
-      released_version: 0.216.0
   - name: datalineage
     version: 0.89.0-SNAPSHOT
     apis:
