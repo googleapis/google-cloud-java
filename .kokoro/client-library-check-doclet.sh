@@ -75,6 +75,10 @@ scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 ## cd to the parent directory, i.e. the root of the git repo
 cd ${scriptDir}/..
 
+# Use GCP Maven Mirror from repository root
+mkdir -p "${HOME}/.m2"
+cp settings.xml "${HOME}/.m2"
+
 # Make artifacts available for 'mvn validate' at the bottom
 pushd java-shared-config
 mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q --no-transfer-progress
