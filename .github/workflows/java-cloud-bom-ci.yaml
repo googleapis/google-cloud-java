@@ -59,6 +59,8 @@ jobs:
         java-version: ${{matrix.java}}
         cache: 'maven'
     - run: java -version
+    - name: Use GCP Maven Mirror
+      run: mkdir -p "${HOME}/.m2" && cp settings.xml "${HOME}/.m2"
     - name: Install modules locally
       run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - run: .kokoro/dependencies.sh
@@ -77,6 +79,8 @@ jobs:
         java-version: 11
         cache: maven
     - run: java -version
+    - name: Use GCP Maven Mirror
+      run: mkdir -p "${HOME}/.m2" && cp settings.xml "${HOME}/.m2"
     - name: Install modules locally
       run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - name: Install BOMs
@@ -107,6 +111,8 @@ jobs:
         java-version: 11
         cache: maven
     - run: java -version
+    - name: Use GCP Maven Mirror
+      run: mkdir -p "${HOME}/.m2" && cp settings.xml "${HOME}/.m2"
     - name: Install modules locally
       run: mvn install -B -ntp -Pquick-build -DskipTests=true -T 1C
     - name: Install BOMs

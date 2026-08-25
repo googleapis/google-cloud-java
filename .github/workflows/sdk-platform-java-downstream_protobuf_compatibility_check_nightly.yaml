@@ -34,6 +34,8 @@ jobs:
           java-version: 11
           distribution: temurin
           cache: maven
+      - name: Use GCP Maven Mirror
+        run: mkdir -p "${HOME}/.m2" && cp settings.xml "${HOME}/.m2"
       - id: resolve-versions
         name: Resolve Protobuf versions
         env:

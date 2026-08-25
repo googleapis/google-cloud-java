@@ -49,6 +49,8 @@ jobs:
           distribution: temurin
           java-version: 17
           cache: maven
+      - name: Use GCP Maven Mirror
+        run: mkdir -p "${HOME}/.m2" && cp settings.xml "${HOME}/.m2"
       - name: Run tests on GoogleSQL
         run: mvn test
         working-directory: java-spanner-jdbc/samples/spring-data-jdbc/googlesql
