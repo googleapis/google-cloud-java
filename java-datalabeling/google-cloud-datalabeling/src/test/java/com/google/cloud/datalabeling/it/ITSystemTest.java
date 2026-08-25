@@ -83,10 +83,11 @@ public class ITSystemTest {
         RetrySettings.newBuilder()
             .setInitialRetryDelayDuration(Duration.ofSeconds(2))
             .setRetryDelayMultiplier(1.5)
-            .setMaxRetryDelayDuration(Duration.ofSeconds(10))
-            .setInitialRpcTimeoutDuration(Duration.ofSeconds(30))
-            .setMaxRpcTimeoutDuration(Duration.ofSeconds(60))
-            .setTotalTimeoutDuration(Duration.ofMinutes(2))
+            .setMaxRetryDelayDuration(Duration.ofSeconds(30))
+            .setInitialRpcTimeoutDuration(Duration.ofSeconds(60))
+            .setRpcTimeoutMultiplier(1.5)
+            .setMaxRpcTimeoutDuration(Duration.ofSeconds(120))
+            .setTotalTimeoutDuration(Duration.ofMinutes(5))
             .build();
     Set<StatusCode.Code> retryableCodes =
         ImmutableSet.of(StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED);
