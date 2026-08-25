@@ -94,7 +94,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
 
   private @Nullable String refreshToken;
 
-  private transient HttpTransportFactory transportFactory;
+  private transient @Nullable HttpTransportFactory transportFactory;
 
   /**
    * Internal constructor.
