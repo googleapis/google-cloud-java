@@ -3280,7 +3280,7 @@ public class BigQueryDatabaseMetaDataTest {
     }
 
     ColumnTypeInfo metadataTypeInfo = dbMetadata.mapBigQueryTypeToJdbc(field);
-    Integer resultSetType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(type);
+    Integer resultSetType = BigQueryTypeRegistry.toJdbcType(type);
 
     assertNotNull(resultSetType, "ResultSet mapping should exist for " + type);
     assertEquals(

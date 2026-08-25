@@ -127,10 +127,10 @@ public class BigQueryJsonArrayOfPrimitivesTest {
             TIMESTAMP,
             arraySchemaAndValue(
                 TIMESTAMP,
-                "1680174859.8202269",
-                "1680261259.8202269",
-                "1680347659.8202269",
-                "1680434059.8202269"),
+                "1680174859.820227",
+                "1680261259.820227",
+                "1680347659.820227",
+                "1680434059.820227"),
             new Timestamp[] {
               Timestamp.valueOf(aTimeStamp), // 2023-03-30 16:44:19.82
               Timestamp.valueOf(aTimeStamp.plusDays(1)),
