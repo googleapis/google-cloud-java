@@ -87,7 +87,7 @@ public class TelemetryBatcherTest {
       batcher.offerStatementExecution(
           StatementExecution.newBuilder().setStatus(Status.STATUS_SUCCESS).build());
       batcher.offerErrorMetric(
-          ErrorMetric.newBuilder().setErrorCode("ERR_001").setCount(1).build());
+          ErrorMetric.newBuilder().setErrorCode(1).setCount(1).build());
       batcher.offerFeatureUsage(
           FeatureUsage.newBuilder().setDriverFeature(DriverFeature.DRIVER_FEATURE_CUSTOM).build());
 

@@ -156,6 +156,33 @@ final class TelemetryConfiguration {
       return this;
     }
 
+    Builder resolveEnabledFlag(java.util.Properties connectionProperties) {
+      if (connectionProperties != null) {
+        String propValue = connectionProperties.getProperty("EnableDiagnosticTelemetry");
+        if (propValue == null) {
+          propValue = connectionProperties.getProperty("enableDiagnosticTelemetry");
+        }
+        if (propValue != null) {
+          if ("0".equals(propValue) || "false".equalsIgnoreCase(propValue)) {
+            this.enabled = false;
+            return this;
+          }
+          if ("1".equals(propValue) || "true".equalsIgnoreCase(propValue)) {
+            this.enabled = true;
+            return this;
+          }
+        }
+      }
+      String envValue = System.getenv("GOOGLE_CLOUD_TELEMETRY_ENABLED");
+      if (envValue != null) {
+        if ("0".equals(envValue) || "false".equalsIgnoreCase(envValue)) {
+          this.enabled = false;
+          return this;
+        }
+      }
+      return this;
+    }
+
     TelemetryConfiguration build() {
       return new TelemetryConfiguration(this);
     }

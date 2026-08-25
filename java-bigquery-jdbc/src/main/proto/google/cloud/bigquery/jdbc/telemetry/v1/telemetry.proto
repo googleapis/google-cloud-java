@@ -77,7 +77,7 @@ enum AuthenticationType {
 // Aggregated metrics for connection attempts.
 message ConnectionAttempt {
   Status status = 1;
-  string error_code = 2;
+  int32 error_code = 2;
   AuthenticationType auth_type = 3;
   int64 count = 4;
 }
@@ -117,7 +117,7 @@ message StatementExecution {
   StatementType statement_type = 1;
   QueryApiType query_api_type = 2;
   Status status = 3;
-  string error_code = 4;
+  int32 error_code = 4;
   int64 count = 5;
   DurationHistogram duration = 6;
 }
@@ -139,7 +139,7 @@ message DurationHistogram {
 
 // Aggregated error counts grouped by error code, SQL state, and method.
 message ErrorMetric {
-  string error_code = 1;
+  int32 error_code = 1;
   string error_xdbc_code = 2;
   string method_name = 3;
   int64 count = 4;
