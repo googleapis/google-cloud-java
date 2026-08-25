@@ -239,8 +239,8 @@ final class BigQueryTypeRegistry {
               return new Date(((java.util.Date) val).getTime()).toLocalDate();
             } else if (val instanceof LocalDateTime) {
               return ((LocalDateTime) val).toLocalDate();
-            } else if (val instanceof Number) {
-              return LocalDate.ofEpochDay(((Number) val).longValue());
+            } else if (val instanceof Integer) {
+              return LocalDate.ofEpochDay(((Integer) val).longValue());
             } else if (val instanceof String) {
               return LocalDate.parse((String) val);
             } else {
@@ -263,8 +263,8 @@ final class BigQueryTypeRegistry {
             sqlDate = Date.valueOf((LocalDate) val);
           } else if (val instanceof LocalDateTime) {
             sqlDate = Date.valueOf(((LocalDateTime) val).toLocalDate());
-          } else if (val instanceof Number) {
-            sqlDate = Date.valueOf(LocalDate.ofEpochDay(((Number) val).longValue()));
+          } else if (val instanceof Integer) {
+            sqlDate = Date.valueOf(LocalDate.ofEpochDay(((Integer) val).longValue()));
           } else if (val instanceof String) {
             sqlDate = BigQueryTemporalUtility.boxDate((String) val, zone);
           } else {
@@ -545,11 +545,25 @@ final class BigQueryTypeRegistry {
             builder
                 .append(hours)
                 .append(":")
-                .append(String.format("%02d", minutes))
+                .append(minutes)
                 .append(":")
-                .append(String.format("%02d", seconds));
-            if (microseconds > 0) {
-              builder.append(".").append(String.format("%06d", microseconds));
+                .append(seconds)
+                .append(".");
+
+            if (microseconds == 0) {
+              builder.append("0");
+            } else {
+              // Left pad to 6 digits to preserve mathematical correctness
+              // e.g. 50 microseconds -> "000050" (so it prints .000050, not .50)
+              String microsStr = String.format("%06d", microseconds);
+
+              // Strip trailing zeroes to cleanly format the fraction
+              // e.g. 1000 microseconds -> "001000" -> "001" (prints .001)
+              int lastNonZero = microsStr.length() - 1;
+              while (lastNonZero >= 0 && microsStr.charAt(lastNonZero) == '0') {
+                lastNonZero--;
+              }
+              builder.append(microsStr.substring(0, lastNonZero + 1));
             }
             return builder.toString().replaceFirst("--", "-");
           }

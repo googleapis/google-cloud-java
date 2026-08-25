@@ -44,7 +44,7 @@ public class BigQueryTypeRegistryTest {
     PeriodDuration pd = new PeriodDuration(p, d);
     String result =
         BigQueryTypeRegistry.convert(pd, StandardSQLTypeName.INTERVAL, String.class, null);
-    assertThat(result).isEqualTo("1-2 3 4:05:06.000078");
+    assertThat(result).isEqualTo("1-2 3 4:5:6.000078");
   }
 
   @Test
@@ -54,7 +54,7 @@ public class BigQueryTypeRegistryTest {
     PeriodDuration pd = new PeriodDuration(p, d);
     String result =
         BigQueryTypeRegistry.convert(pd, StandardSQLTypeName.INTERVAL, String.class, null);
-    assertThat(result).isEqualTo("0-0 0 1:00:00");
+    assertThat(result).isEqualTo("0-0 0 1:0:0.0");
   }
 
   @Test
@@ -64,7 +64,7 @@ public class BigQueryTypeRegistryTest {
     PeriodDuration pd = new PeriodDuration(p, d);
     String result =
         BigQueryTypeRegistry.convert(pd, StandardSQLTypeName.INTERVAL, String.class, null);
-    assertThat(result).isEqualTo("0-0 0 -1:05:06.000078");
+    assertThat(result).isEqualTo("0-0 0 -1:5:6.000078");
   }
 
   @Test
