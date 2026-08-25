@@ -160,11 +160,6 @@ proto-google-cloud-container-v1beta1:2.99.0:2.99.0
 google-cloud-contentwarehouse:0.92.0:0.92.0
 proto-google-cloud-contentwarehouse-v1:0.92.0:0.92.0
 grpc-google-cloud-contentwarehouse-v1:0.92.0:0.92.0
-google-cloud-datacatalog:1.102.0:1.102.0
-grpc-google-cloud-datacatalog-v1:1.102.0:1.102.0
-grpc-google-cloud-datacatalog-v1beta1:1.102.0:1.102.0
-proto-google-cloud-datacatalog-v1:1.102.0:1.102.0
-proto-google-cloud-datacatalog-v1beta1:1.102.0:1.102.0
 google-cloud-dataflow:0.100.0:0.100.0
 grpc-google-cloud-dataflow-v1beta3:0.100.0:0.100.0
 proto-google-cloud-dataflow-v1beta3:0.100.0:0.100.0

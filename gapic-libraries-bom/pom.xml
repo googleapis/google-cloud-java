@@ -514,13 +514,6 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-datacatalog-bom</artifactId>
-        <version>1.102.0</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dataflow-bom</artifactId>
         <version>0.100.0</version><!-- {x-version-update:google-cloud-dataflow:current} -->
         <type>pom</type>

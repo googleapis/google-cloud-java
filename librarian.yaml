@@ -1388,24 +1388,6 @@ libraries:
       name_pretty_override: Database Center API
       product_documentation_override: https://cloud.google.com/database-center/docs/overview
       released_version: 0.17.0
-  - name: datacatalog
-    version: 1.102.0
-    apis:
-      - path: google/cloud/datacatalog/v1
-        java:
-          additional_protos:
-            - path: google/iam/v1/iam_policy.proto
-      - path: google/cloud/datacatalog/v1beta1
-        java:
-          additional_protos:
-            - path: google/iam/v1/iam_policy.proto
-    keep:
-      - proto-google-cloud-datacatalog-v1beta1/src/main/java/com/google/cloud/datacatalog/v1beta1/FieldName.java
-    java:
-      api_description_override: is a fully managed and highly scalable data discovery and metadata management service.
-      name_pretty_override: Data Catalog
-      product_documentation_override: https://cloud.google.com/data-catalog
-      released_version: 1.102.0
   - name: dataflow
     version: 0.100.0
     apis:
