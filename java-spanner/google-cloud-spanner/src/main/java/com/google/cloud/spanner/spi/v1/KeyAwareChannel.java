@@ -25,9 +25,12 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Ticker;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
+import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Descriptors;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Message;
 import com.google.protobuf.util.Durations;
 import com.google.rpc.RetryInfo;
 import com.google.spanner.v1.BeginTransactionRequest;
@@ -39,6 +42,7 @@ import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.ResultSet;
+import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionSelector;
@@ -58,6 +62,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
 import java.time.Duration;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -67,12 +72,13 @@ import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
 /**
- * ManagedChannel that routes eligible requests using location-aware routing hints.
+ * ManagedChannel that routes eligible Spanner requests using location-aware routing hints and
+ * transaction affinity.
  *
  * <p>Routing hints are applied to streaming read/query and unary ExecuteSql. Mutation-based
- * BeginTransaction and Commit requests also carry routing hints when recipes are available.
- * Commit/Rollback and ExecuteBatchDml use transaction affinity when available. BeginTransaction is
- * routed only when a mutation key is provided.
+ * BeginTransaction and Commit requests also carry routing hints when recipes are available. Other
+ * eligible methods use transaction affinity when their request contains a transaction selector or
+ * transaction ID. Partition, BatchWrite, and session methods always use the default channel.
  */
 @InternalApi
 final class KeyAwareChannel extends ManagedChannel {
@@ -82,16 +88,17 @@ final class KeyAwareChannel extends ManagedChannel {
   private static final long MAX_TRACKED_TRANSACTION_AFFINITIES = 100_000L;
   private static final long TRANSACTION_AFFINITY_TTL_MINUTES = 10L;
   private static final int CHANNEL_FINDER_CLEANUP_INTERVAL = 1024;
-  private static final String STREAMING_READ_METHOD = "google.spanner.v1.Spanner/StreamingRead";
-  private static final String STREAMING_SQL_METHOD =
-      "google.spanner.v1.Spanner/ExecuteStreamingSql";
-  private static final String UNARY_SQL_METHOD = "google.spanner.v1.Spanner/ExecuteSql";
-  private static final String BEGIN_TRANSACTION_METHOD =
-      "google.spanner.v1.Spanner/BeginTransaction";
-  private static final String COMMIT_METHOD = "google.spanner.v1.Spanner/Commit";
-  private static final String ROLLBACK_METHOD = "google.spanner.v1.Spanner/Rollback";
-  private static final String EXECUTE_BATCH_DML_METHOD =
-      "google.spanner.v1.Spanner/ExecuteBatchDml";
+  private static final String SPANNER_METHOD_PREFIX = "google.spanner.v1.Spanner/";
+  private static final Set<String> DEFAULT_CHANNEL_METHODS =
+      ImmutableSet.of(
+          SPANNER_METHOD_PREFIX + "PartitionQuery",
+          SPANNER_METHOD_PREFIX + "PartitionRead",
+          SPANNER_METHOD_PREFIX + "BatchWrite",
+          SPANNER_METHOD_PREFIX + "CreateSession",
+          SPANNER_METHOD_PREFIX + "BatchCreateSessions",
+          SPANNER_METHOD_PREFIX + "GetSession",
+          SPANNER_METHOD_PREFIX + "ListSessions",
+          SPANNER_METHOD_PREFIX + "DeleteSession");
   private static final Metadata.Key<RetryInfo> RETRY_INFO_KEY =
       ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
 
@@ -324,13 +331,7 @@ final class KeyAwareChannel extends ManagedChannel {
 
   private static boolean isKeyAware(MethodDescriptor<?, ?> methodDescriptor) {
     String method = methodDescriptor.getFullMethodName();
-    return STREAMING_READ_METHOD.equals(method)
-        || STREAMING_SQL_METHOD.equals(method)
-        || UNARY_SQL_METHOD.equals(method)
-        || BEGIN_TRANSACTION_METHOD.equals(method)
-        || COMMIT_METHOD.equals(method)
-        || ROLLBACK_METHOD.equals(method)
-        || EXECUTE_BATCH_DML_METHOD.equals(method);
+    return method.startsWith(SPANNER_METHOD_PREFIX) && !DEFAULT_CHANNEL_METHODS.contains(method);
   }
 
   @Nullable
@@ -484,6 +485,110 @@ final class KeyAwareChannel extends ManagedChannel {
       return selector.getId();
     }
     return ByteString.EMPTY;
+  }
+
+  @Nullable
+  private static TransactionSelector transactionSelectorFromGenericRequest(Object request) {
+    if (!(request instanceof Message)) {
+      return null;
+    }
+    Message message = (Message) request;
+    Descriptors.FieldDescriptor field =
+        message.getDescriptorForType().findFieldByName("transaction");
+    if (!isMessageFieldOfType(field, TransactionSelector.getDescriptor().getFullName())
+        || !message.hasField(field)) {
+      return null;
+    }
+    Object value = message.getField(field);
+    if (value instanceof TransactionSelector) {
+      return (TransactionSelector) value;
+    }
+    if (value instanceof Message) {
+      try {
+        return TransactionSelector.parseFrom(((Message) value).toByteString());
+      } catch (InvalidProtocolBufferException e) {
+        return null;
+      }
+    }
+    return null;
+  }
+
+  private static ByteString transactionIdFieldFromGenericRequest(Object request) {
+    if (!(request instanceof Message)) {
+      return ByteString.EMPTY;
+    }
+    Message message = (Message) request;
+    Descriptors.FieldDescriptor field =
+        message.getDescriptorForType().findFieldByName("transaction_id");
+    if (field == null
+        || field.isRepeated()
+        || field.getJavaType() != Descriptors.FieldDescriptor.JavaType.BYTE_STRING) {
+      return ByteString.EMPTY;
+    }
+    Object value = message.getField(field);
+    return value instanceof ByteString ? (ByteString) value : ByteString.EMPTY;
+  }
+
+  @Nullable
+  private static ByteString transactionIdFromGenericResponse(Object response) {
+    if (!(response instanceof Message)) {
+      return null;
+    }
+    Message message = (Message) response;
+    ByteString transactionId = transactionIdFromReflectedTransactionField(message);
+    if (transactionId != null) {
+      return transactionId;
+    }
+    Descriptors.FieldDescriptor metadataField =
+        message.getDescriptorForType().findFieldByName("metadata");
+    if (!isMessageFieldOfType(metadataField, ResultSetMetadata.getDescriptor().getFullName())
+        || !message.hasField(metadataField)) {
+      return null;
+    }
+    Object metadata = message.getField(metadataField);
+    return metadata instanceof Message
+        ? transactionIdFromReflectedTransactionField((Message) metadata)
+        : null;
+  }
+
+  @Nullable
+  private static ByteString transactionIdFromReflectedTransactionField(Message message) {
+    for (Map.Entry<Descriptors.FieldDescriptor, Object> entry : message.getAllFields().entrySet()) {
+      if (isMessageFieldOfType(entry.getKey(), Transaction.getDescriptor().getFullName())) {
+        ByteString transactionId = transactionIdFromReflectedTransaction(entry.getValue());
+        if (transactionId != null) {
+          return transactionId;
+        }
+      }
+    }
+    return null;
+  }
+
+  @Nullable
+  private static ByteString transactionIdFromReflectedTransaction(Object value) {
+    if (value instanceof Transaction) {
+      return transactionIdFromTransaction((Transaction) value);
+    }
+    if (!(value instanceof Message)) {
+      return null;
+    }
+    Message transaction = (Message) value;
+    Descriptors.FieldDescriptor idField = transaction.getDescriptorForType().findFieldByName("id");
+    if (idField == null
+        || idField.isRepeated()
+        || idField.getJavaType() != Descriptors.FieldDescriptor.JavaType.BYTE_STRING) {
+      return null;
+    }
+    Object id = transaction.getField(idField);
+    return id instanceof ByteString && !((ByteString) id).isEmpty() ? (ByteString) id : null;
+  }
+
+  private static boolean isMessageFieldOfType(
+      @Nullable Descriptors.FieldDescriptor field, String messageType) {
+    return field != null
+        && !field.isRepeated()
+        && field.getJavaType() == Descriptors.FieldDescriptor.JavaType.MESSAGE
+        && field.getMessageType().getFullName().equals(messageType);
   }
 
   @Nullable
@@ -692,9 +797,17 @@ final class KeyAwareChannel extends ManagedChannel {
           maybeTrackReadWriteBegin(request.getTransaction());
           endpoint = routeFromRequest(request);
         } else {
-          throw new IllegalStateException(
-              "Only read, query, batch DML, begin transaction, commit, and rollback requests are"
-                  + " supported for key-aware calls.");
+          TransactionSelector selector = transactionSelectorFromGenericRequest(message);
+          if (selector != null) {
+            maybeTrackReadWriteBegin(selector);
+            endpoint =
+                parentChannel.affinityEndpoint(
+                    transactionIdFromSelector(selector), excludedEndpoints);
+          } else {
+            endpoint =
+                parentChannel.affinityEndpoint(
+                    transactionIdFieldFromGenericRequest(message), excludedEndpoints);
+          }
         }
 
         if (endpoint == null) {
@@ -1012,6 +1125,8 @@ final class KeyAwareChannel extends ManagedChannel {
         if (response.getResultSetsCount() > 0) {
           transactionId = transactionIdFromMetadata(response.getResultSets(0));
         }
+      } else {
+        transactionId = transactionIdFromGenericResponse(message);
       }
       if (transactionId != null && call.shouldRecordTransactionAffinity) {
         call.maybeRecordAffinity(transactionId);
