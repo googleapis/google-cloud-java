@@ -210,4 +210,43 @@ public interface DbSystemShapeOrBuilder
    * @return The minDbNodeStoragePerNodeGb.
    */
   int getMinDbNodeStoragePerNodeGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Minimum core count per node.
+   * </pre>
+   *
+   * <code>int32 minimum_core_count = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minimumCoreCount.
+   */
+  int getMinimumCoreCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Available core count.
+   * </pre>
+   *
+   * <code>int32 available_core_count = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The availableCoreCount.
+   */
+  int getAvailableCoreCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Core count increment.
+   * </pre>
+   *
+   * <code>int32 core_count_increment = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The coreCountIncrement.
+   */
+  int getCoreCountIncrement();
 }

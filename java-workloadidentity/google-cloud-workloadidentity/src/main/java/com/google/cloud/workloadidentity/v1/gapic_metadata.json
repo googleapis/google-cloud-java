@@ -1,0 +1,27 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.workloadidentity.v1",
+  "libraryPackage": "com.google.cloud.workloadidentity.v1",
+  "services": {
+    "WorkloadIdentity": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "WorkloadIdentityClient",
+          "rpcs": {
+            "GenerateServiceAgents": {
+              "methods": ["generateServiceAgentsAsync", "generateServiceAgentsAsync", "generateServiceAgentsAsync", "generateServiceAgentsOperationCallable", "generateServiceAgentsCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

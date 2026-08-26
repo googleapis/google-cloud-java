@@ -19,6 +19,7 @@ package com.google.chat.v1.samples;
 // [START chat_v1_generated_ChatService_GetMessage_sync]
 import com.google.chat.v1.ChatServiceClient;
 import com.google.chat.v1.GetMessageRequest;
+import com.google.chat.v1.MarkupSyntax;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.MessageName;
 
@@ -38,6 +39,7 @@ public class SyncGetMessage {
       GetMessageRequest request =
           GetMessageRequest.newBuilder()
               .setName(MessageName.of("[SPACE]", "[MESSAGE]").toString())
+              .setMarkupSyntax(MarkupSyntax.forNumber(0))
               .build();
       Message response = chatServiceClient.getMessage(request);
     }

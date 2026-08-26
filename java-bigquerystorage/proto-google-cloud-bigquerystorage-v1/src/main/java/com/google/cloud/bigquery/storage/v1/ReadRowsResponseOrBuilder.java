@@ -330,6 +330,42 @@ public interface ReadRowsResponseOrBuilder
    */
   long getUncompressedByteSize();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total estimated number of rows in the query results.
+   * Only populated when reading data from a BigQuery job.
+   *
+   * This feature is not yet available.
+   * </pre>
+   *
+   * <code>
+   * optional int64 total_estimated_row_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the totalEstimatedRowCount field is set.
+   */
+  boolean hasTotalEstimatedRowCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The total estimated number of rows in the query results.
+   * Only populated when reading data from a BigQuery job.
+   *
+   * This feature is not yet available.
+   * </pre>
+   *
+   * <code>
+   * optional int64 total_estimated_row_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The totalEstimatedRowCount.
+   */
+  long getTotalEstimatedRowCount();
+
   com.google.cloud.bigquery.storage.v1.ReadRowsResponse.RowsCase getRowsCase();
 
   com.google.cloud.bigquery.storage.v1.ReadRowsResponse.SchemaCase getSchemaCase();

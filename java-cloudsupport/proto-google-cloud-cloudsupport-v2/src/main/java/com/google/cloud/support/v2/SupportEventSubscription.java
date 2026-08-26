@@ -25,6 +25,19 @@ package com.google.cloud.support.v2;
  *
  * <pre>
  * A support event subscription.
+ *
+ * You can also manage support event subscriptions using other tools:
+ *
+ * * [`gcloud support
+ * support-event-subscriptions`](/sdk/gcloud/reference/support/support-event-subscriptions)
+ * (or [`gcloud
+ * beta`](/sdk/gcloud/reference/beta/support/support-event-subscriptions)
+ * for beta)
+ * * [Terraform
+ * `google_cloud_support_support_event_subscription`](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_support_support_event_subscription)
+ * (or [google-beta
+ * provider](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/cloud_support_support_event_subscription)
+ * for beta)
  * </pre>
  *
  * Protobuf type {@code google.cloud.support.v2.SupportEventSubscription}
@@ -1135,6 +1148,19 @@ public final class SupportEventSubscription extends com.google.protobuf.Generate
    *
    * <pre>
    * A support event subscription.
+   *
+   * You can also manage support event subscriptions using other tools:
+   *
+   * * [`gcloud support
+   * support-event-subscriptions`](/sdk/gcloud/reference/support/support-event-subscriptions)
+   * (or [`gcloud
+   * beta`](/sdk/gcloud/reference/beta/support/support-event-subscriptions)
+   * for beta)
+   * * [Terraform
+   * `google_cloud_support_support_event_subscription`](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/cloud_support_support_event_subscription)
+   * (or [google-beta
+   * provider](https://registry.terraform.io/providers/hashicorp/google-beta/latest/docs/resources/cloud_support_support_event_subscription)
+   * for beta)
    * </pre>
    *
    * Protobuf type {@code google.cloud.support.v2.SupportEventSubscription}

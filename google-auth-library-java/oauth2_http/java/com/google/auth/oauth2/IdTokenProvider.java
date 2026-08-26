@@ -34,6 +34,7 @@ package com.google.auth.oauth2;
 import java.io.IOException;
 import java.util.List;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Interface for an Google OIDC token provider. This type represents a google issued OIDC token. */
 @NullMarked
@@ -83,5 +84,6 @@ public interface IdTokenProvider {
    * @throws IOException if token creation fails
    * @return IdToken object which includes the raw id_token, expiration and audience.
    */
-  IdToken idTokenWithAudience(String targetAudience, List<Option> options) throws IOException;
+  IdToken idTokenWithAudience(@Nullable String targetAudience, @Nullable List<Option> options)
+      throws IOException;
 }
