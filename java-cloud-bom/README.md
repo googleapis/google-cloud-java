@@ -17,7 +17,7 @@ To use it in Maven, add the following to your POM:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.86.0</version>
+      <version>26.87.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -42,14 +42,14 @@ The content of the Libraries BOM consists of 2 categories:
 This is the table of modules included in the latest libraries-bom release:
 
 <!--- {x-version-update-start:libraries-bom:released} -->
-### libraries-bom: v<version>26.86.0</version>
+### libraries-bom: v<version>26.87.0</version>
 <!--- {x-version-update-end} -->
 
 <!-- TABLE_START -->
 | Artifact ID | Library Type | Google Cloud Library Reference | Google Cloud Product Reference | 
 | --------- | ------------ | ------------ | ------------ |
 | api-common | Runtime | [2.66.0](https://cloud.google.com/java/docs/reference/api-common/latest/overview) | N/A |
-| conscrypt-openjdk-uber | Product | [2.6.0](https://cloud.google.com/java/docs/reference/conscrypt-openjdk-uber/latest/overview) | N/A |
+| conscrypt-openjdk-uber | Product | [2.6.2](https://cloud.google.com/java/docs/reference/conscrypt-openjdk-uber/latest/overview) | N/A |
 | gax | Runtime | [2.83.0](https://cloud.google.com/java/docs/reference/gax/latest/overview) | N/A |
 | google-analytics-admin | Product | [0.105.0](https://cloud.google.com/java/docs/reference/google-analytics-admin/latest/overview) | [Analytics Admin](https://developers.google.com/analytics) |
 | google-analytics-data | Product | [0.106.0](https://cloud.google.com/java/docs/reference/google-analytics-data/latest/overview) | [Analytics Data](https://developers.google.com/analytics/trusted-testing/analytics-data) |
@@ -123,7 +123,6 @@ This is the table of modules included in the latest libraries-bom release:
 | google-cloud-core | Runtime | [2.73.0](https://cloud.google.com/java/docs/reference/google-cloud-core/latest/overview) | [Google Cloud Core](n/a) |
 | google-cloud-data-fusion | Product | [1.95.0](https://cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/overview) | [Cloud Data Fusion](https://cloud.google.com/data-fusion/docs) |
 | google-cloud-databasecenter | Product | [0.16.0](https://cloud.google.com/java/docs/reference/google-cloud-databasecenter/latest/overview) | N/A |
-| google-cloud-datacatalog | Product | [1.101.0](https://cloud.google.com/java/docs/reference/google-cloud-datacatalog/latest/overview) | [Data Catalog](https://cloud.google.com/data-catalog) |
 | google-cloud-dataflow | Product | [0.99.0](https://cloud.google.com/java/docs/reference/google-cloud-dataflow/latest/overview) | [Dataflow](https://cloud.google.com/dataflow/docs) |
 | google-cloud-dataform | Product | [0.94.0](https://cloud.google.com/java/docs/reference/google-cloud-dataform/latest/overview) | [Cloud Dataform](https://cloud.google.com/dataform/docs) |
 | google-cloud-datalabeling | Product | [0.215.0](https://cloud.google.com/java/docs/reference/google-cloud-datalabeling/latest/overview) | [Data Labeling](https://cloud.google.com/ai-platform/data-labeling/docs/) |

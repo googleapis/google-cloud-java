@@ -106,6 +106,7 @@ import com.google.storage.control.v2.ListManagedFoldersResponse;
 import com.google.storage.control.v2.ListRapidCachesRequest;
 import com.google.storage.control.v2.ListRapidCachesResponse;
 import com.google.storage.control.v2.ManagedFolder;
+import com.google.storage.control.v2.ObjectFullContext;
 import com.google.storage.control.v2.PauseAnywhereCacheRequest;
 import com.google.storage.control.v2.RapidCache;
 import com.google.storage.control.v2.RenameFolderMetadata;
@@ -122,6 +123,7 @@ import com.google.storage.control.v2.UpdateOrganizationIntelligenceConfigRequest
 import com.google.storage.control.v2.UpdateProjectIntelligenceConfigRequest;
 import com.google.storage.control.v2.UpdateRapidCacheMetadata;
 import com.google.storage.control.v2.UpdateRapidCacheRequest;
+import com.google.storage.control.v2.ViewObjectFullContextRequest;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
@@ -308,6 +310,8 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
           ListIntelligenceFindingRevisionsResponse,
           ListIntelligenceFindingRevisionsPagedResponse>
       listIntelligenceFindingRevisionsSettings;
+  private final UnaryCallSettings<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextSettings;
 
   private static final PagedListDescriptor<ListFoldersRequest, ListFoldersResponse, Folder>
       LIST_FOLDERS_PAGE_STR_DESC =
@@ -1021,6 +1025,12 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
     return listIntelligenceFindingRevisionsSettings;
   }
 
+  /** Returns the object with the settings used for calls to viewObjectFullContext. */
+  public UnaryCallSettings<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextSettings() {
+    return viewObjectFullContextSettings;
+  }
+
   public StorageControlStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -1187,6 +1197,7 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
         settingsBuilder.getIntelligenceFindingRevisionSettings().build();
     listIntelligenceFindingRevisionsSettings =
         settingsBuilder.listIntelligenceFindingRevisionsSettings().build();
+    viewObjectFullContextSettings = settingsBuilder.viewObjectFullContextSettings().build();
   }
 
   @Override
@@ -1303,6 +1314,8 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
             ListIntelligenceFindingRevisionsResponse,
             ListIntelligenceFindingRevisionsPagedResponse>
         listIntelligenceFindingRevisionsSettings;
+    private final UnaryCallSettings.Builder<ViewObjectFullContextRequest, ObjectFullContext>
+        viewObjectFullContextSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1403,6 +1416,7 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
       getIntelligenceFindingRevisionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listIntelligenceFindingRevisionsSettings =
           PagedCallSettings.newBuilder(LIST_INTELLIGENCE_FINDING_REVISIONS_PAGE_STR_FACT);
+      viewObjectFullContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1442,7 +1456,8 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
               listIntelligenceFindingsSettings,
               summarizeIntelligenceFindingsSettings,
               getIntelligenceFindingRevisionSettings,
-              listIntelligenceFindingRevisionsSettings);
+              listIntelligenceFindingRevisionsSettings,
+              viewObjectFullContextSettings);
       initDefaults(this);
     }
 
@@ -1504,6 +1519,7 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
           settings.getIntelligenceFindingRevisionSettings.toBuilder();
       listIntelligenceFindingRevisionsSettings =
           settings.listIntelligenceFindingRevisionsSettings.toBuilder();
+      viewObjectFullContextSettings = settings.viewObjectFullContextSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1543,7 +1559,8 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
               listIntelligenceFindingsSettings,
               summarizeIntelligenceFindingsSettings,
               getIntelligenceFindingRevisionSettings,
-              listIntelligenceFindingRevisionsSettings);
+              listIntelligenceFindingRevisionsSettings,
+              viewObjectFullContextSettings);
     }
 
     private static Builder createDefault() {
@@ -1755,6 +1772,11 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
           .listIntelligenceFindingRevisionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .viewObjectFullContextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
       builder
           .renameFolderOperationSettings()
@@ -2192,6 +2214,12 @@ public class StorageControlStubSettings extends StubSettings<StorageControlStubS
             ListIntelligenceFindingRevisionsPagedResponse>
         listIntelligenceFindingRevisionsSettings() {
       return listIntelligenceFindingRevisionsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to viewObjectFullContext. */
+    public UnaryCallSettings.Builder<ViewObjectFullContextRequest, ObjectFullContext>
+        viewObjectFullContextSettings() {
+      return viewObjectFullContextSettings;
     }
 
     @Override

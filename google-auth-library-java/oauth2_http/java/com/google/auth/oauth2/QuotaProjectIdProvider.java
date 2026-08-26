@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Interface for {@link GoogleCredentials} that return a quota project ID. */
 @NullMarked
@@ -39,5 +40,5 @@ public interface QuotaProjectIdProvider {
   /**
    * @return the quota project ID used for quota and billing purposes
    */
-  String getQuotaProjectId();
+  @Nullable String getQuotaProjectId();
 }

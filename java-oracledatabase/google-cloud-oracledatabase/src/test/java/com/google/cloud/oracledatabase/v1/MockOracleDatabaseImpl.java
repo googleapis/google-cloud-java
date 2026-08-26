@@ -723,6 +723,51 @@ public class MockOracleDatabaseImpl extends OracleDatabaseImplBase {
   }
 
   @Override
+  public void refreshAutonomousDatabase(
+      RefreshAutonomousDatabaseRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RefreshAutonomousDatabase, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAutonomousDatabaseRefreshableClones(
+      GetAutonomousDatabaseRefreshableClonesRequest request,
+      StreamObserver<AutonomousDatabaseRefreshableClones> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AutonomousDatabaseRefreshableClones) {
+      requests.add(request);
+      responseObserver.onNext(((AutonomousDatabaseRefreshableClones) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAutonomousDatabaseRefreshableClones,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AutonomousDatabaseRefreshableClones.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listOdbNetworks(
       ListOdbNetworksRequest request, StreamObserver<ListOdbNetworksResponse> responseObserver) {
     Object response = responses.poll();

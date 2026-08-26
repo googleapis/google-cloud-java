@@ -436,7 +436,12 @@ public interface ExerciseOrBuilder
    *
    *
    * <pre>
-   * Required. Exercise display name.
+   * Required. The localized, human-readable name of the exercise.
+   * For all exercise types other than `OTHER`, the system ignores client
+   * input and overrides this field with a generated name based on
+   * `exercise_type` (e.g., "Walking" for `WALKING`). If `exercise_type` is
+   * `OTHER`, this field can contain the user's custom, free-form display
+   * name.
    * </pre>
    *
    * <code>string display_name = 12 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -449,7 +454,12 @@ public interface ExerciseOrBuilder
    *
    *
    * <pre>
-   * Required. Exercise display name.
+   * Required. The localized, human-readable name of the exercise.
+   * For all exercise types other than `OTHER`, the system ignores client
+   * input and overrides this field with a generated name based on
+   * `exercise_type` (e.g., "Walking" for `WALKING`). If `exercise_type` is
+   * `OTHER`, this field can contain the user's custom, free-form display
+   * name.
    * </pre>
    *
    * <code>string display_name = 12 [(.google.api.field_behavior) = REQUIRED];</code>

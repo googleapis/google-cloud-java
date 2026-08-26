@@ -32,7 +32,7 @@ import static org.mockito.Mockito.*;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
+import com.google.cloud.bigquery.jdbc.BigQueryTypeRegistry.ColumnTypeInfo;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.context.Context;
@@ -3280,7 +3280,7 @@ public class BigQueryDatabaseMetaDataTest {
     }
 
     ColumnTypeInfo metadataTypeInfo = dbMetadata.mapBigQueryTypeToJdbc(field);
-    Integer resultSetType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(type);
+    Integer resultSetType = BigQueryTypeRegistry.toJdbcType(type);
 
     assertNotNull(resultSetType, "ResultSet mapping should exist for " + type);
     assertEquals(

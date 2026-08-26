@@ -173,6 +173,27 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessage
      * <code>UNEXPECTED_ACTION = 7;</code>
      */
     UNEXPECTED_ACTION(7),
+    /**
+     *
+     *
+     * <pre>
+     * The key used to generate the token does not match the `site_key`.
+     * </pre>
+     *
+     * <code>KEY_MISMATCH = 8;</code>
+     */
+    KEY_MISMATCH(8),
+    /**
+     *
+     *
+     * <pre>
+     * The domain of the page on which the token was generated does not match
+     * the `allowed_domains` configured in the `site_key`.
+     * </pre>
+     *
+     * <code>DOMAIN_MISMATCH = 9;</code>
+     */
+    DOMAIN_MISMATCH(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -282,6 +303,29 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessage
      */
     public static final int UNEXPECTED_ACTION_VALUE = 7;
 
+    /**
+     *
+     *
+     * <pre>
+     * The key used to generate the token does not match the `site_key`.
+     * </pre>
+     *
+     * <code>KEY_MISMATCH = 8;</code>
+     */
+    public static final int KEY_MISMATCH_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * The domain of the page on which the token was generated does not match
+     * the `allowed_domains` configured in the `site_key`.
+     * </pre>
+     *
+     * <code>DOMAIN_MISMATCH = 9;</code>
+     */
+    public static final int DOMAIN_MISMATCH_VALUE = 9;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -322,6 +366,10 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessage
           return BROWSER_ERROR;
         case 7:
           return UNEXPECTED_ACTION;
+        case 8:
+          return KEY_MISMATCH;
+        case 9:
+          return DOMAIN_MISMATCH;
         default:
           return null;
       }
@@ -385,11 +433,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Whether the provided user response token is valid. When valid
-   * = false, the reason could be specified in invalid_reason or it could also
-   * be due to a user failing to solve a challenge or a sitekey mismatch (i.e
-   * the sitekey used to generate the token was different than the one specified
-   * in the assessment).
+   * Output only. Indicates whether the provided user response token is valid.
+   * If `false`, the token is invalid, either because the user failed the
+   * challenge or for a reason provided in the `invalid_reason` field.
    * </pre>
    *
    * <code>bool valid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1196,11 +1242,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Whether the provided user response token is valid. When valid
-     * = false, the reason could be specified in invalid_reason or it could also
-     * be due to a user failing to solve a challenge or a sitekey mismatch (i.e
-     * the sitekey used to generate the token was different than the one specified
-     * in the assessment).
+     * Output only. Indicates whether the provided user response token is valid.
+     * If `false`, the token is invalid, either because the user failed the
+     * challenge or for a reason provided in the `invalid_reason` field.
      * </pre>
      *
      * <code>bool valid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1216,11 +1260,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Whether the provided user response token is valid. When valid
-     * = false, the reason could be specified in invalid_reason or it could also
-     * be due to a user failing to solve a challenge or a sitekey mismatch (i.e
-     * the sitekey used to generate the token was different than the one specified
-     * in the assessment).
+     * Output only. Indicates whether the provided user response token is valid.
+     * If `false`, the token is invalid, either because the user failed the
+     * challenge or for a reason provided in the `invalid_reason` field.
      * </pre>
      *
      * <code>bool valid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1240,11 +1282,9 @@ public final class TokenProperties extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Whether the provided user response token is valid. When valid
-     * = false, the reason could be specified in invalid_reason or it could also
-     * be due to a user failing to solve a challenge or a sitekey mismatch (i.e
-     * the sitekey used to generate the token was different than the one specified
-     * in the assessment).
+     * Output only. Indicates whether the provided user response token is valid.
+     * If `false`, the token is invalid, either because the user failed the
+     * challenge or for a reason provided in the `invalid_reason` field.
      * </pre>
      *
      * <code>bool valid = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
