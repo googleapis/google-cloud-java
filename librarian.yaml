@@ -30,7 +30,7 @@ tools:
       classifier: all-deps
       packaging: jar
     - name: protoc-gen-java_grpc
-      version: 1.82.4
+      version: 1.83.0
       group_id: io.grpc
       artifact_id: protoc-gen-grpc-java
       classifier: linux-x86_64
@@ -5750,6 +5750,7 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       released_version: 0.2.0
+    skip_generate: true
   - name: storage
     version: 2.73.0-SNAPSHOT
     apis:
