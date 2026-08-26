@@ -25,6 +25,7 @@ import static org.junit.Assert.assertThrows;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.spanner.XGoogSpannerRequestId;
 import com.google.common.base.Ticker;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.testing.FakeTicker;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
@@ -74,8 +75,10 @@ import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
@@ -1137,6 +1140,38 @@ public class KeyAwareChannelTest {
   }
 
   @Test
+  public void executeBatchDmlResponseAppliesFirstResultSetCacheUpdate() throws Exception {
+    TestHarness harness = createHarness();
+
+    ClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> batchDmlCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteBatchDmlMethod(), CallOptions.DEFAULT);
+    batchDmlCall.start(new CapturingListener<ExecuteBatchDmlResponse>(), new Metadata());
+    batchDmlCall.sendMessage(ExecuteBatchDmlRequest.newBuilder().setSession(SESSION).build());
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> batchDmlDelegate =
+        (RecordingClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>)
+            harness.defaultManagedChannel.latestCall();
+    batchDmlDelegate.emitOnMessage(
+        ExecuteBatchDmlResponse.newBuilder()
+            .addResultSets(ResultSet.newBuilder().setCacheUpdate(createTwoRangeCacheUpdate()))
+            .build());
+    harness.channel.awaitPendingCacheUpdates();
+
+    ClientCall<ExecuteSqlRequest, ResultSet> queryCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), CallOptions.DEFAULT);
+    queryCall.start(new CapturingListener<ResultSet>(), new Metadata());
+    queryCall.sendMessage(
+        ExecuteSqlRequest.newBuilder()
+            .setSession(SESSION)
+            .setRoutingHint(RoutingHint.newBuilder().setKey(bytes("b")))
+            .build());
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+  }
+
+  @Test
   public void genericRequestWithTransactionIdRoutesToAffinityEndpoint() throws Exception {
     TestHarness harness = createHarness();
     ByteString transactionId = ByteString.copyFromUtf8("generic-affinity");
@@ -1207,19 +1242,163 @@ public class KeyAwareChannelTest {
   }
 
   @Test
-  public void denylistedMethodRoutesToDefaultEndpointDespiteTransactionAffinity() throws Exception {
+  public void denylistedMethodsRouteToDefaultEndpointDespiteTransactionAffinity() throws Exception {
     TestHarness harness = createHarness();
     ByteString transactionId = ByteString.copyFromUtf8("denylisted-affinity");
     seedReadWriteTransactionAffinity(harness, transactionId);
-    GenericRpcFixture rpc = createGenericRpcFixture("google.spanner.v1.Spanner/PartitionQuery");
+
+    for (String method : KeyAwareChannel.defaultChannelMethods()) {
+      GenericRpcFixture rpc = createGenericRpcFixture(method);
+      ClientCall<DynamicMessage, DynamicMessage> call =
+          harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+      call.start(new CapturingListener<DynamicMessage>(), new Metadata());
+      call.sendMessage(rpc.request(TransactionSelector.newBuilder().setId(transactionId).build()));
+    }
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
+    assertThat(harness.defaultManagedChannel.callCount())
+        .isEqualTo(1 + KeyAwareChannel.defaultChannelMethods().size());
+  }
+
+  @Test
+  public void everySpannerMethodIsExplicitlyTypedGenericOrDenylisted() {
+    Set<String> typedMethods =
+        ImmutableSet.of(
+            "google.spanner.v1.Spanner/ExecuteSql",
+            "google.spanner.v1.Spanner/ExecuteStreamingSql",
+            "google.spanner.v1.Spanner/ExecuteBatchDml",
+            "google.spanner.v1.Spanner/Read",
+            "google.spanner.v1.Spanner/StreamingRead",
+            "google.spanner.v1.Spanner/BeginTransaction",
+            "google.spanner.v1.Spanner/Commit",
+            "google.spanner.v1.Spanner/Rollback");
+    Set<String> genericMethods = ImmutableSet.of();
+    Set<String> classifiedMethods = new HashSet<>(typedMethods);
+    classifiedMethods.addAll(genericMethods);
+    classifiedMethods.addAll(KeyAwareChannel.defaultChannelMethods());
+    Set<String> serviceMethods = new HashSet<>();
+    for (MethodDescriptor<?, ?> method : SpannerGrpc.getServiceDescriptor().getMethods()) {
+      serviceMethods.add(method.getFullMethodName());
+    }
+
+    assertThat(KeyAwareChannel.defaultChannelMethods())
+        .containsExactly(
+            "google.spanner.v1.Spanner/PartitionQuery",
+            "google.spanner.v1.Spanner/PartitionRead",
+            "google.spanner.v1.Spanner/BatchWrite",
+            "google.spanner.v1.Spanner/FetchCacheUpdate",
+            "google.spanner.v1.Spanner/CreateSession",
+            "google.spanner.v1.Spanner/BatchCreateSessions",
+            "google.spanner.v1.Spanner/GetSession",
+            "google.spanner.v1.Spanner/ListSessions",
+            "google.spanner.v1.Spanner/DeleteSession");
+    assertThat(serviceMethods).containsExactlyElementsIn(classifiedMethods);
+  }
+
+  @Test
+  public void unaryReadWithTransactionIdRoutesToAffinityEndpoint() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("unary-read-affinity");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+
+    ClientCall<ReadRequest, ResultSet> call =
+        harness.channel.newCall(SpannerGrpc.getReadMethod(), CallOptions.DEFAULT);
+    call.start(new CapturingListener<ResultSet>(), new Metadata());
+    call.sendMessage(
+        ReadRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .build());
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+  }
+
+  @Test
+  public void genericUnimplementedReroutesOnceAndLearnsDefaultOnlyMethod() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("generic-unimplemented");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+    GenericRpcFixture rpc = createGenericRpcFixture("google.spanner.v1.Spanner/AckQueueMessage");
+    DynamicMessage request =
+        rpc.request(TransactionSelector.newBuilder().setId(transactionId).build());
+    CapturingListener<DynamicMessage> listener = new CapturingListener<>();
 
     ClientCall<DynamicMessage, DynamicMessage> call =
         harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
-    call.start(new CapturingListener<DynamicMessage>(), new Metadata());
-    call.sendMessage(rpc.request(TransactionSelector.newBuilder().setId(transactionId).build()));
+    call.start(listener, new Metadata());
+    call.request(1);
+    call.sendMessage(request);
+    call.halfClose();
 
-    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
-    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<DynamicMessage, DynamicMessage> routedDelegate =
+        (RecordingClientCall<DynamicMessage, DynamicMessage>)
+            harness.endpointCache.latestCallForAddress("server-a:1234");
+    routedDelegate.emitOnClose(Status.UNIMPLEMENTED, new Metadata());
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<DynamicMessage, DynamicMessage> fallbackDelegate =
+        (RecordingClientCall<DynamicMessage, DynamicMessage>)
+            harness.defaultManagedChannel.latestCall();
+    assertThat(fallbackDelegate.lastMessage).isEqualTo(request);
+    assertThat(fallbackDelegate.requestedMessages).isEqualTo(1);
+    assertThat(fallbackDelegate.halfCloseCalled).isTrue();
+    assertThat(listener.closeCount).isEqualTo(0);
+    fallbackDelegate.emitOnMessage(rpc.response(Transaction.getDefaultInstance()));
+    fallbackDelegate.emitOnClose(Status.OK, new Metadata());
+    assertThat(listener.closedStatus).isEqualTo(Status.OK);
+
+    ClientCall<DynamicMessage, DynamicMessage> learnedCall =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    learnedCall.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    learnedCall.sendMessage(request);
+
+    ClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> affinityCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteBatchDmlMethod(), CallOptions.DEFAULT);
+    affinityCall.start(new CapturingListener<ExecuteBatchDmlResponse>(), new Metadata());
+    affinityCall.sendMessage(
+        ExecuteBatchDmlRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .build());
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(3);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(3);
+    assertThat(harness.channel.isCoolingDown("server-a:1234")).isFalse();
+  }
+
+  @Test
+  public void typedUnimplementedDoesNotRerouteOrLearnDefaultOnlyMethod() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("typed-unimplemented");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+    ExecuteBatchDmlRequest request =
+        ExecuteBatchDmlRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .build();
+    CapturingListener<ExecuteBatchDmlResponse> listener = new CapturingListener<>();
+
+    ClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> firstCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteBatchDmlMethod(), CallOptions.DEFAULT);
+    firstCall.start(listener, new Metadata());
+    firstCall.sendMessage(request);
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> firstDelegate =
+        (RecordingClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>)
+            harness.endpointCache.latestCallForAddress("server-a:1234");
+    firstDelegate.emitOnClose(Status.UNIMPLEMENTED, new Metadata());
+
+    ClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> secondCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteBatchDmlMethod(), CallOptions.DEFAULT);
+    secondCall.start(new CapturingListener<ExecuteBatchDmlResponse>(), new Metadata());
+    secondCall.sendMessage(request);
+
+    assertThat(listener.closedStatus).isEqualTo(Status.UNIMPLEMENTED);
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(3);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+    assertThat(harness.channel.isCoolingDown("server-a:1234")).isFalse();
   }
 
   @Test
@@ -1291,6 +1470,143 @@ public class KeyAwareChannelTest {
 
     assertThat(harness.endpointCache.getIfPresentCount(DEFAULT_ADDRESS)).isEqualTo(1);
     assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
+  }
+
+  @Test
+  public void genericForeignTransactionSelectorDescriptorRoutesToAffinityEndpoint()
+      throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("generic-foreign-selector");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+    GenericRpcFixture rpc =
+        createForeignSelectorRpcFixture("google.spanner.v1.Spanner/AckQueueMessage");
+
+    ClientCall<DynamicMessage, DynamicMessage> call =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    call.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    call.sendMessage(rpc.foreignSelectorRequest(transactionId));
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+  }
+
+  @Test
+  public void genericWrongTypedTransactionFieldRoutesToDefaultEndpoint() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("generic-wrong-transaction-type");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+    GenericRpcFixture rpc =
+        createCustomGenericRpcFixture(
+            "google.spanner.v1.Spanner/AckQueueMessage",
+            messageField(
+                "transaction",
+                1,
+                DescriptorProtos.FieldDescriptorProto.Label.LABEL_OPTIONAL,
+                ".google.spanner.v1.Transaction"),
+            null);
+
+    ClientCall<DynamicMessage, DynamicMessage> call =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    call.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    call.sendMessage(
+        rpc.requestField("transaction", Transaction.newBuilder().setId(transactionId).build()));
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
+  }
+
+  @Test
+  public void genericRepeatedTransactionFieldRoutesToDefaultEndpoint() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("generic-repeated-transaction");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+    GenericRpcFixture rpc =
+        createCustomGenericRpcFixture(
+            "google.spanner.v1.Spanner/AckQueueMessage",
+            messageField(
+                "transaction",
+                1,
+                DescriptorProtos.FieldDescriptorProto.Label.LABEL_REPEATED,
+                ".google.spanner.v1.TransactionSelector"),
+            null);
+
+    ClientCall<DynamicMessage, DynamicMessage> call =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    call.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    call.sendMessage(
+        rpc.requestField(
+            "transaction",
+            java.util.Collections.singletonList(
+                TransactionSelector.newBuilder().setId(transactionId).build())));
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
+  }
+
+  @Test
+  public void genericWrongTypedMetadataDoesNotRecordAffinity() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("generic-wrong-metadata");
+    GenericRpcFixture rpc =
+        createCustomGenericRpcFixture(
+            "google.spanner.v1.Spanner/AckQueueMessage",
+            messageField(
+                "transaction",
+                1,
+                DescriptorProtos.FieldDescriptorProto.Label.LABEL_OPTIONAL,
+                ".google.spanner.v1.TransactionSelector"),
+            messageField(
+                "metadata",
+                1,
+                DescriptorProtos.FieldDescriptorProto.Label.LABEL_OPTIONAL,
+                ".google.spanner.v1.Transaction"));
+
+    sendGenericInlineBeginAndResponse(
+        harness,
+        rpc,
+        rpc.responseField("metadata", Transaction.newBuilder().setId(transactionId).build()));
+
+    assertGenericTransactionWasNotPinned(harness, rpc, transactionId);
+  }
+
+  @Test
+  public void genericEmptyTransactionResponseDoesNotRecordAffinity() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("generic-empty-response-transaction");
+    GenericRpcFixture rpc = createGenericRpcFixture("google.spanner.v1.Spanner/AckQueueMessage");
+
+    sendGenericInlineBeginAndResponse(harness, rpc, rpc.response(Transaction.getDefaultInstance()));
+
+    assertGenericTransactionWasNotPinned(harness, rpc, transactionId);
+  }
+
+  @Test
+  public void genericRepeatedTransactionResponseDoesNotRecordAffinity() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("generic-repeated-response-transaction");
+    GenericRpcFixture rpc =
+        createCustomGenericRpcFixture(
+            "google.spanner.v1.Spanner/AckQueueMessage",
+            messageField(
+                "transaction",
+                1,
+                DescriptorProtos.FieldDescriptorProto.Label.LABEL_OPTIONAL,
+                ".google.spanner.v1.TransactionSelector"),
+            messageField(
+                "transaction",
+                1,
+                DescriptorProtos.FieldDescriptorProto.Label.LABEL_REPEATED,
+                ".google.spanner.v1.Transaction"));
+
+    sendGenericInlineBeginAndResponse(
+        harness,
+        rpc,
+        rpc.responseField(
+            "transaction",
+            java.util.Collections.singletonList(
+                Transaction.newBuilder().setId(transactionId).build())));
+
+    assertGenericTransactionWasNotPinned(harness, rpc, transactionId);
   }
 
   @Test
@@ -1849,21 +2165,124 @@ public class KeyAwareChannelTest {
                     .setType(DescriptorProtos.FieldDescriptorProto.Type.TYPE_MESSAGE)
                     .setTypeName(".google.spanner.v1.ResultSetMetadata"))
             .build();
-    Descriptors.FileDescriptor fileDescriptor =
+    return buildGenericRpcFixture(
+        fullMethodName,
+        requestType,
+        responseType,
+        new Descriptors.FileDescriptor[] {transactionProto, resultSetProto});
+  }
+
+  private static GenericRpcFixture createCustomGenericRpcFixture(
+      String fullMethodName,
+      @Nullable DescriptorProtos.FieldDescriptorProto requestField,
+      @Nullable DescriptorProtos.FieldDescriptorProto responseField)
+      throws Descriptors.DescriptorValidationException {
+    DescriptorProtos.DescriptorProto.Builder requestType =
+        DescriptorProtos.DescriptorProto.newBuilder().setName("GenericRequest");
+    if (requestField != null) {
+      requestType.addField(requestField);
+    }
+    DescriptorProtos.DescriptorProto.Builder responseType =
+        DescriptorProtos.DescriptorProto.newBuilder().setName("GenericResponse");
+    if (responseField != null) {
+      responseType.addField(responseField);
+    }
+    return buildGenericRpcFixture(
+        fullMethodName,
+        requestType.build(),
+        responseType.build(),
+        new Descriptors.FileDescriptor[] {
+          TransactionSelector.getDescriptor().getFile(), ResultSetMetadata.getDescriptor().getFile()
+        });
+  }
+
+  private static GenericRpcFixture createForeignSelectorRpcFixture(String fullMethodName)
+      throws Descriptors.DescriptorValidationException {
+    Descriptors.FileDescriptor original = TransactionSelector.getDescriptor().getFile();
+    Descriptors.FileDescriptor foreign =
         Descriptors.FileDescriptor.buildFrom(
-            DescriptorProtos.FileDescriptorProto.newBuilder()
-                .setName("key_aware_channel_test.proto")
-                .setPackage("keyawaretest")
-                .addDependency(transactionProto.getName())
-                .addDependency(resultSetProto.getName())
-                .addMessageType(requestType)
-                .addMessageType(responseType)
-                .build(),
-            new Descriptors.FileDescriptor[] {transactionProto, resultSetProto});
+            original.toProto(),
+            original.getDependencies().toArray(new Descriptors.FileDescriptor[0]));
+    DescriptorProtos.DescriptorProto requestType =
+        DescriptorProtos.DescriptorProto.newBuilder()
+            .setName("GenericRequest")
+            .addField(
+                messageField(
+                    "transaction",
+                    1,
+                    DescriptorProtos.FieldDescriptorProto.Label.LABEL_OPTIONAL,
+                    ".google.spanner.v1.TransactionSelector"))
+            .build();
+    return buildGenericRpcFixture(
+        fullMethodName,
+        requestType,
+        DescriptorProtos.DescriptorProto.newBuilder().setName("GenericResponse").build(),
+        new Descriptors.FileDescriptor[] {foreign});
+  }
+
+  private static GenericRpcFixture buildGenericRpcFixture(
+      String fullMethodName,
+      DescriptorProtos.DescriptorProto requestType,
+      DescriptorProtos.DescriptorProto responseType,
+      Descriptors.FileDescriptor[] dependencies)
+      throws Descriptors.DescriptorValidationException {
+    DescriptorProtos.FileDescriptorProto.Builder file =
+        DescriptorProtos.FileDescriptorProto.newBuilder()
+            .setName("key_aware_channel_test.proto")
+            .setPackage("keyawaretest")
+            .addMessageType(requestType)
+            .addMessageType(responseType);
+    for (Descriptors.FileDescriptor dependency : dependencies) {
+      file.addDependency(dependency.getName());
+    }
+    Descriptors.FileDescriptor fileDescriptor =
+        Descriptors.FileDescriptor.buildFrom(file.build(), dependencies);
     return new GenericRpcFixture(
         fullMethodName,
         fileDescriptor.findMessageTypeByName("GenericRequest"),
         fileDescriptor.findMessageTypeByName("GenericResponse"));
+  }
+
+  private static DescriptorProtos.FieldDescriptorProto messageField(
+      String name, int number, DescriptorProtos.FieldDescriptorProto.Label label, String typeName) {
+    return DescriptorProtos.FieldDescriptorProto.newBuilder()
+        .setName(name)
+        .setNumber(number)
+        .setLabel(label)
+        .setType(DescriptorProtos.FieldDescriptorProto.Type.TYPE_MESSAGE)
+        .setTypeName(typeName)
+        .build();
+  }
+
+  private static void sendGenericInlineBeginAndResponse(
+      TestHarness harness, GenericRpcFixture rpc, DynamicMessage response) {
+    ClientCall<DynamicMessage, DynamicMessage> beginCall =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    beginCall.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    beginCall.sendMessage(
+        rpc.request(
+            TransactionSelector.newBuilder()
+                .setBegin(
+                    TransactionOptions.newBuilder()
+                        .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+                .build()));
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<DynamicMessage, DynamicMessage> beginDelegate =
+        (RecordingClientCall<DynamicMessage, DynamicMessage>)
+            harness.defaultManagedChannel.latestCall();
+    beginDelegate.emitOnMessage(response);
+  }
+
+  private static void assertGenericTransactionWasNotPinned(
+      TestHarness harness, GenericRpcFixture rpc, ByteString transactionId) {
+    ClientCall<DynamicMessage, DynamicMessage> nextCall =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    nextCall.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    nextCall.sendMessage(
+        rpc.request(TransactionSelector.newBuilder().setId(transactionId).build()));
+
+    assertThat(harness.endpointCache.getIfPresentCount(DEFAULT_ADDRESS)).isEqualTo(0);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
   }
 
   private static Mutation createInsertMutation(String keyValue) {
@@ -1990,6 +2409,31 @@ public class KeyAwareChannelTest {
     private DynamicMessage metadataResponse(ResultSetMetadata metadata) {
       return DynamicMessage.newBuilder(responseDescriptor)
           .setField(responseDescriptor.findFieldByName("metadata"), metadata)
+          .build();
+    }
+
+    private DynamicMessage requestField(String name, Object value) {
+      return DynamicMessage.newBuilder(requestDescriptor)
+          .setField(requestDescriptor.findFieldByName(name), value)
+          .build();
+    }
+
+    private DynamicMessage responseField(String name, Object value) {
+      return DynamicMessage.newBuilder(responseDescriptor)
+          .setField(responseDescriptor.findFieldByName(name), value)
+          .build();
+    }
+
+    private DynamicMessage foreignSelectorRequest(ByteString transactionId) {
+      Descriptors.FieldDescriptor transactionField =
+          requestDescriptor.findFieldByName("transaction");
+      Descriptors.Descriptor selectorDescriptor = transactionField.getMessageType();
+      DynamicMessage selector =
+          DynamicMessage.newBuilder(selectorDescriptor)
+              .setField(selectorDescriptor.findFieldByName("id"), transactionId)
+              .build();
+      return DynamicMessage.newBuilder(requestDescriptor)
+          .setField(transactionField, selector)
           .build();
     }
   }
@@ -2201,6 +2645,8 @@ public class KeyAwareChannelTest {
     private boolean cancelCalled;
     @Nullable private String cancelMessage;
     @Nullable private Throwable cancelCause;
+    private int requestedMessages;
+    private boolean halfCloseCalled;
 
     @Override
     public void start(ClientCall.Listener<ResponseT> responseListener, Metadata headers) {
@@ -2208,7 +2654,9 @@ public class KeyAwareChannelTest {
     }
 
     @Override
-    public void request(int numMessages) {}
+    public void request(int numMessages) {
+      requestedMessages += numMessages;
+    }
 
     @Override
     public void cancel(@Nullable String message, @Nullable Throwable cause) {
@@ -2218,7 +2666,9 @@ public class KeyAwareChannelTest {
     }
 
     @Override
-    public void halfClose() {}
+    public void halfClose() {
+      halfCloseCalled = true;
+    }
 
     @Override
     public void sendMessage(RequestT message) {
