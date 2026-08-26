@@ -33,6 +33,8 @@ import com.google.rpc.RetryInfo;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
@@ -69,8 +71,8 @@ import javax.annotation.Nullable;
  *
  * <p>Routing hints are applied to streaming read/query and unary ExecuteSql. Mutation-based
  * BeginTransaction and Commit requests also carry routing hints when recipes are available.
- * Commit/Rollback use transaction affinity when available. BeginTransaction is routed only when a
- * mutation key is provided.
+ * Commit/Rollback and ExecuteBatchDml use transaction affinity when available. BeginTransaction is
+ * routed only when a mutation key is provided.
  */
 @InternalApi
 final class KeyAwareChannel extends ManagedChannel {
@@ -88,6 +90,8 @@ final class KeyAwareChannel extends ManagedChannel {
       "google.spanner.v1.Spanner/BeginTransaction";
   private static final String COMMIT_METHOD = "google.spanner.v1.Spanner/Commit";
   private static final String ROLLBACK_METHOD = "google.spanner.v1.Spanner/Rollback";
+  private static final String EXECUTE_BATCH_DML_METHOD =
+      "google.spanner.v1.Spanner/ExecuteBatchDml";
   private static final Metadata.Key<RetryInfo> RETRY_INFO_KEY =
       ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
 
@@ -325,7 +329,8 @@ final class KeyAwareChannel extends ManagedChannel {
         || UNARY_SQL_METHOD.equals(method)
         || BEGIN_TRANSACTION_METHOD.equals(method)
         || COMMIT_METHOD.equals(method)
-        || ROLLBACK_METHOD.equals(method);
+        || ROLLBACK_METHOD.equals(method)
+        || EXECUTE_BATCH_DML_METHOD.equals(method);
   }
 
   @Nullable
@@ -682,10 +687,14 @@ final class KeyAwareChannel extends ManagedChannel {
                 parentChannel.affinityEndpoint(request.getTransactionId(), excludedEndpoints);
             transactionIdToClear = request.getTransactionId();
           }
+        } else if (message instanceof ExecuteBatchDmlRequest) {
+          ExecuteBatchDmlRequest request = (ExecuteBatchDmlRequest) message;
+          maybeTrackReadWriteBegin(request.getTransaction());
+          endpoint = routeFromRequest(request);
         } else {
           throw new IllegalStateException(
-              "Only read, query, begin transaction, commit, and rollback requests are supported for"
-                  + " key-aware calls.");
+              "Only read, query, batch DML, begin transaction, commit, and rollback requests are"
+                  + " supported for key-aware calls.");
         }
 
         if (endpoint == null) {
@@ -909,6 +918,11 @@ final class KeyAwareChannel extends ManagedChannel {
       return new RoutingDecision(
           finder, endpoint, databaseId, operationUid(reqBuilder.getRoutingHint()), preferLeader);
     }
+
+    @Nullable
+    private ChannelEndpoint routeFromRequest(ExecuteBatchDmlRequest request) {
+      return parentChannel.affinityEndpoint(request.getTransaction().getId(), excludedEndpoints());
+    }
   }
 
   private static final class RoutingDecision {
@@ -992,6 +1006,11 @@ final class KeyAwareChannel extends ManagedChannel {
         CommitResponse response = (CommitResponse) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
           call.channelFinder.updateAsync(response.getCacheUpdate());
+        }
+      } else if (message instanceof ExecuteBatchDmlResponse) {
+        ExecuteBatchDmlResponse response = (ExecuteBatchDmlResponse) message;
+        if (response.getResultSetsCount() > 0) {
+          transactionId = transactionIdFromMetadata(response.getResultSets(0));
         }
       }
       if (transactionId != null && call.shouldRecordTransactionAffinity) {

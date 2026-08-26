@@ -38,6 +38,8 @@ import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.Group;
 import com.google.spanner.v1.Mutation;
@@ -998,6 +1000,140 @@ public class KeyAwareChannelTest {
   }
 
   @Test
+  public void executeBatchDmlWithTransactionIdRoutesToAffinityEndpoint() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("batch-dml-affinity");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+
+    ClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> batchDmlCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteBatchDmlMethod(), CallOptions.DEFAULT);
+    batchDmlCall.start(new CapturingListener<ExecuteBatchDmlResponse>(), new Metadata());
+    batchDmlCall.sendMessage(
+        ExecuteBatchDmlRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .build());
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+  }
+
+  @Test
+  public void executeBatchDmlWithInlineBeginRoutesToDefaultEndpoint() throws Exception {
+    TestHarness harness = createHarness();
+
+    ClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> batchDmlCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteBatchDmlMethod(), CallOptions.DEFAULT);
+    batchDmlCall.start(new CapturingListener<ExecuteBatchDmlResponse>(), new Metadata());
+    batchDmlCall.sendMessage(
+        ExecuteBatchDmlRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(
+                TransactionSelector.newBuilder()
+                    .setBegin(
+                        TransactionOptions.newBuilder()
+                            .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance())))
+            .build());
+
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(0);
+  }
+
+  @Test
+  public void executeBatchDmlWithoutTransactionAffinityRoutesToDefaultEndpoint() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("batch-dml-no-affinity");
+
+    ClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> batchDmlCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteBatchDmlMethod(), CallOptions.DEFAULT);
+    batchDmlCall.start(new CapturingListener<ExecuteBatchDmlResponse>(), new Metadata());
+    batchDmlCall.sendMessage(
+        ExecuteBatchDmlRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .build());
+
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(0);
+  }
+
+  @Test
+  public void executeBatchDmlAvoidsCooledDownAffinityEndpointOnRetry() throws Exception {
+    TestHarness harness = createHarness(createDeterministicCooldownTracker());
+    ByteString transactionId = ByteString.copyFromUtf8("batch-dml-cooled-affinity");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+    ExecuteBatchDmlRequest request =
+        ExecuteBatchDmlRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .build();
+
+    ClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> firstCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteBatchDmlMethod(), CallOptions.DEFAULT);
+    firstCall.start(new CapturingListener<ExecuteBatchDmlResponse>(), new Metadata());
+    firstCall.sendMessage(request);
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> firstDelegate =
+        (RecordingClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>)
+            harness.endpointCache.latestCallForAddress("server-a:1234");
+    firstDelegate.emitOnClose(Status.RESOURCE_EXHAUSTED, new Metadata());
+
+    ClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> retryCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteBatchDmlMethod(), CallOptions.DEFAULT);
+    retryCall.start(new CapturingListener<ExecuteBatchDmlResponse>(), new Metadata());
+    retryCall.sendMessage(request);
+
+    assertThat(harness.channel.isCoolingDown("server-a:1234")).isTrue();
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
+  }
+
+  @Test
+  public void executeBatchDmlInlineBeginResponseRecordsDefaultEndpointAffinity() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("batch-dml-inline-begin");
+
+    ClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> beginCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteBatchDmlMethod(), CallOptions.DEFAULT);
+    beginCall.start(new CapturingListener<ExecuteBatchDmlResponse>(), new Metadata());
+    beginCall.sendMessage(
+        ExecuteBatchDmlRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(
+                TransactionSelector.newBuilder()
+                    .setBegin(
+                        TransactionOptions.newBuilder()
+                            .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance())))
+            .build());
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> beginDelegate =
+        (RecordingClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>)
+            harness.defaultManagedChannel.latestCall();
+    beginDelegate.emitOnMessage(
+        ExecuteBatchDmlResponse.newBuilder()
+            .addResultSets(
+                ResultSet.newBuilder()
+                    .setMetadata(
+                        ResultSetMetadata.newBuilder()
+                            .setTransaction(Transaction.newBuilder().setId(transactionId))))
+            .build());
+
+    ClientCall<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> nextCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteBatchDmlMethod(), CallOptions.DEFAULT);
+    nextCall.start(new CapturingListener<ExecuteBatchDmlResponse>(), new Metadata());
+    nextCall.sendMessage(
+        ExecuteBatchDmlRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(TransactionSelector.newBuilder().setId(transactionId))
+            .build());
+
+    assertThat(harness.endpointCache.getIfPresentCount(DEFAULT_ADDRESS)).isEqualTo(1);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
+  }
+
+  @Test
   public void readOnlyTransactionRoutesEachReadIndependently() throws Exception {
     TestHarness harness = createHarness();
     ByteString transactionId = ByteString.copyFromUtf8("ro-tx-1");
@@ -1485,6 +1621,35 @@ public class KeyAwareChannelTest {
     }
   }
 
+  private static void seedReadWriteTransactionAffinity(
+      TestHarness harness, ByteString transactionId) {
+    seedCache(harness, createTwoRangeCacheUpdate());
+    ClientCall<ExecuteSqlRequest, ResultSet> beginCall =
+        harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), CallOptions.DEFAULT);
+    beginCall.start(new CapturingListener<ResultSet>(), new Metadata());
+    beginCall.sendMessage(
+        ExecuteSqlRequest.newBuilder()
+            .setSession(SESSION)
+            .setTransaction(
+                TransactionSelector.newBuilder()
+                    .setBegin(
+                        TransactionOptions.newBuilder()
+                            .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance())))
+            .setRoutingHint(RoutingHint.newBuilder().setKey(bytes("b")))
+            .build());
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteSqlRequest, ResultSet> beginDelegate =
+        (RecordingClientCall<ExecuteSqlRequest, ResultSet>)
+            harness.endpointCache.latestCallForAddress("server-a:1234");
+    beginDelegate.emitOnMessage(
+        ResultSet.newBuilder()
+            .setMetadata(
+                ResultSetMetadata.newBuilder()
+                    .setTransaction(Transaction.newBuilder().setId(transactionId)))
+            .build());
+    beginDelegate.emitOnClose(Status.OK, new Metadata());
+  }
+
   private static Mutation createInsertMutation(String keyValue) {
     return Mutation.newBuilder()
         .setInsert(
@@ -1584,6 +1749,7 @@ public class KeyAwareChannelTest {
     private final FakeEndpoint defaultEndpoint;
     private final Map<String, FakeEndpoint> endpoints = new HashMap<>();
     private final Map<String, Integer> getCount = new HashMap<>();
+    private final Map<String, Integer> getIfPresentCount = new HashMap<>();
 
     private FakeEndpointCache(String defaultAddress) {
       this.defaultAddress = defaultAddress;
@@ -1606,6 +1772,7 @@ public class KeyAwareChannelTest {
 
     @Override
     public ChannelEndpoint getIfPresent(String address) {
+      getIfPresentCount.put(address, getIfPresentCount.getOrDefault(address, 0) + 1);
       if (defaultAddress.equals(address)) {
         return defaultEndpoint;
       }
@@ -1630,6 +1797,10 @@ public class KeyAwareChannelTest {
 
     int getCount(String address) {
       return getCount.getOrDefault(address, 0);
+    }
+
+    int getIfPresentCount(String address) {
+      return getIfPresentCount.getOrDefault(address, 0);
     }
 
     FakeManagedChannel defaultManagedChannel() {
