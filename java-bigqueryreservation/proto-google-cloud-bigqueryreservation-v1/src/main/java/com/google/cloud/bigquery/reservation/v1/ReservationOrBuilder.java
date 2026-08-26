@@ -265,7 +265,7 @@ public interface ReservationOrBuilder
    * <code>bool multi_region_auxiliary = 14 [deprecated = true];</code>
    *
    * @deprecated google.cloud.bigquery.reservation.v1.Reservation.multi_region_auxiliary is
-   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=677
+   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=678
    * @return The multiRegionAuxiliary.
    */
   @java.lang.Deprecated

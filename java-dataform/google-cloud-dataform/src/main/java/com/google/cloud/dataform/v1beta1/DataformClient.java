@@ -695,6 +695,77 @@ import org.jspecify.annotations.Nullable;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> SyncWorkspaceRefs</td>
+ *      <td><p> Syncs the refs of a Workspace.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> syncWorkspaceRefs(SyncWorkspaceRefsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> syncWorkspaceRefsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchWorkspaceBranches</td>
+ *      <td><p> Fetches branches in a Workspace.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchWorkspaceBranches(FetchWorkspaceBranchesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchWorkspaceBranchesPagedCallable()
+ *           <li><p> fetchWorkspaceBranchesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteBranch</td>
+ *      <td><p> Deletes a branch in a Workspace.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteBranch(DeleteBranchRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteBranchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CheckoutWorkspaceBranch</td>
+ *      <td><p> Checkout a branch in a Workspace.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> checkoutWorkspaceBranch(CheckoutWorkspaceBranchRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> checkoutWorkspaceBranchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchCurrentWorkspaceBranch</td>
+ *      <td><p> Fetches the current branch of a Workspace.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchCurrentWorkspaceBranch(FetchCurrentWorkspaceBranchRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchCurrentWorkspaceBranchCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> PushGitCommits</td>
  *      <td><p> Pushes Git commits from a Workspace to the Repository's remote.</td>
  *      <td>
@@ -5534,6 +5605,7 @@ public class DataformClient implements BackgroundResource {
    *           .setWorkspace(
    *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
    *                   .toString())
+   *           .setPipelineConfig(PipelineConfig.newBuilder().build())
    *           .build();
    *   InstallNpmPackagesResponse response = dataformClient.installNpmPackages(request);
    * }
@@ -5564,6 +5636,7 @@ public class DataformClient implements BackgroundResource {
    *           .setWorkspace(
    *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
    *                   .toString())
+   *           .setPipelineConfig(PipelineConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<InstallNpmPackagesResponse> future =
    *       dataformClient.installNpmPackagesCallable().futureCall(request);
@@ -5640,6 +5713,378 @@ public class DataformClient implements BackgroundResource {
   public final UnaryCallable<PullGitCommitsRequest, PullGitCommitsResponse>
       pullGitCommitsCallable() {
     return stub.pullGitCommitsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Syncs the refs of a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   SyncWorkspaceRefsRequest request =
+   *       SyncWorkspaceRefsRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setRemoteBranchName("remoteBranchName2129930291")
+   *           .setDeepen(-1335656811)
+   *           .build();
+   *   SyncWorkspaceRefsResponse response = dataformClient.syncWorkspaceRefs(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SyncWorkspaceRefsResponse syncWorkspaceRefs(SyncWorkspaceRefsRequest request) {
+    return syncWorkspaceRefsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Syncs the refs of a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   SyncWorkspaceRefsRequest request =
+   *       SyncWorkspaceRefsRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setRemoteBranchName("remoteBranchName2129930291")
+   *           .setDeepen(-1335656811)
+   *           .build();
+   *   ApiFuture<SyncWorkspaceRefsResponse> future =
+   *       dataformClient.syncWorkspaceRefsCallable().futureCall(request);
+   *   // Do something.
+   *   SyncWorkspaceRefsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+      syncWorkspaceRefsCallable() {
+    return stub.syncWorkspaceRefsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches branches in a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FetchWorkspaceBranchesRequest request =
+   *       FetchWorkspaceBranchesRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (BranchMetadata element : dataformClient.fetchWorkspaceBranches(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchWorkspaceBranchesPagedResponse fetchWorkspaceBranches(
+      FetchWorkspaceBranchesRequest request) {
+    return fetchWorkspaceBranchesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches branches in a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FetchWorkspaceBranchesRequest request =
+   *       FetchWorkspaceBranchesRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<BranchMetadata> future =
+   *       dataformClient.fetchWorkspaceBranchesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BranchMetadata element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesPagedResponse>
+      fetchWorkspaceBranchesPagedCallable() {
+    return stub.fetchWorkspaceBranchesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches branches in a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FetchWorkspaceBranchesRequest request =
+   *       FetchWorkspaceBranchesRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     FetchWorkspaceBranchesResponse response =
+   *         dataformClient.fetchWorkspaceBranchesCallable().call(request);
+   *     for (BranchMetadata element : response.getBranchesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>
+      fetchWorkspaceBranchesCallable() {
+    return stub.fetchWorkspaceBranchesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a branch in a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteBranchRequest request =
+   *       DeleteBranchRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setBranch("branch-1381030494")
+   *           .setForce(true)
+   *           .build();
+   *   DeleteBranchResponse response = dataformClient.deleteBranch(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeleteBranchResponse deleteBranch(DeleteBranchRequest request) {
+    return deleteBranchCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a branch in a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   DeleteBranchRequest request =
+   *       DeleteBranchRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setBranch("branch-1381030494")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<DeleteBranchResponse> future =
+   *       dataformClient.deleteBranchCallable().futureCall(request);
+   *   // Do something.
+   *   DeleteBranchResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteBranchRequest, DeleteBranchResponse> deleteBranchCallable() {
+    return stub.deleteBranchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Checkout a branch in a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CheckoutWorkspaceBranchRequest request =
+   *       CheckoutWorkspaceBranchRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setBranch("branch-1381030494")
+   *           .setCreateIfNotExists(true)
+   *           .setSourceBranch("sourceBranch838777245")
+   *           .build();
+   *   dataformClient.checkoutWorkspaceBranch(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void checkoutWorkspaceBranch(CheckoutWorkspaceBranchRequest request) {
+    checkoutWorkspaceBranchCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Checkout a branch in a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   CheckoutWorkspaceBranchRequest request =
+   *       CheckoutWorkspaceBranchRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .setBranch("branch-1381030494")
+   *           .setCreateIfNotExists(true)
+   *           .setSourceBranch("sourceBranch838777245")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       dataformClient.checkoutWorkspaceBranchCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CheckoutWorkspaceBranchRequest, Empty>
+      checkoutWorkspaceBranchCallable() {
+    return stub.checkoutWorkspaceBranchCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches the current branch of a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FetchCurrentWorkspaceBranchRequest request =
+   *       FetchCurrentWorkspaceBranchRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .build();
+   *   FetchCurrentWorkspaceBranchResponse response =
+   *       dataformClient.fetchCurrentWorkspaceBranch(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchCurrentWorkspaceBranchResponse fetchCurrentWorkspaceBranch(
+      FetchCurrentWorkspaceBranchRequest request) {
+    return fetchCurrentWorkspaceBranchCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetches the current branch of a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DataformClient dataformClient = DataformClient.create()) {
+   *   FetchCurrentWorkspaceBranchRequest request =
+   *       FetchCurrentWorkspaceBranchRequest.newBuilder()
+   *           .setName(
+   *               WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<FetchCurrentWorkspaceBranchResponse> future =
+   *       dataformClient.fetchCurrentWorkspaceBranchCallable().futureCall(request);
+   *   // Do something.
+   *   FetchCurrentWorkspaceBranchResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+      fetchCurrentWorkspaceBranchCallable() {
+    return stub.fetchCurrentWorkspaceBranchCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -10716,6 +11161,96 @@ public class DataformClient implements BackgroundResource {
     protected ListWorkspacesFixedSizeCollection createCollection(
         @Nullable List<ListWorkspacesPage> pages, int collectionSize) {
       return new ListWorkspacesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class FetchWorkspaceBranchesPagedResponse
+      extends AbstractPagedListResponse<
+          FetchWorkspaceBranchesRequest,
+          FetchWorkspaceBranchesResponse,
+          BranchMetadata,
+          FetchWorkspaceBranchesPage,
+          FetchWorkspaceBranchesFixedSizeCollection> {
+
+    public static ApiFuture<FetchWorkspaceBranchesPagedResponse> createAsync(
+        PageContext<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse, BranchMetadata>
+            context,
+        ApiFuture<FetchWorkspaceBranchesResponse> futureResponse) {
+      ApiFuture<FetchWorkspaceBranchesPage> futurePage =
+          FetchWorkspaceBranchesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new FetchWorkspaceBranchesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private FetchWorkspaceBranchesPagedResponse(FetchWorkspaceBranchesPage page) {
+      super(page, FetchWorkspaceBranchesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class FetchWorkspaceBranchesPage
+      extends AbstractPage<
+          FetchWorkspaceBranchesRequest,
+          FetchWorkspaceBranchesResponse,
+          BranchMetadata,
+          FetchWorkspaceBranchesPage> {
+
+    private FetchWorkspaceBranchesPage(
+        @Nullable
+            PageContext<
+                FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse, BranchMetadata>
+            context,
+        @Nullable FetchWorkspaceBranchesResponse response) {
+      super(context, response);
+    }
+
+    private static FetchWorkspaceBranchesPage createEmptyPage() {
+      return new FetchWorkspaceBranchesPage(null, null);
+    }
+
+    @Override
+    protected FetchWorkspaceBranchesPage createPage(
+        @Nullable
+            PageContext<
+                FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse, BranchMetadata>
+            context,
+        @Nullable FetchWorkspaceBranchesResponse response) {
+      return new FetchWorkspaceBranchesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<FetchWorkspaceBranchesPage> createPageAsync(
+        @Nullable
+            PageContext<
+                FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse, BranchMetadata>
+            context,
+        ApiFuture<FetchWorkspaceBranchesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class FetchWorkspaceBranchesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          FetchWorkspaceBranchesRequest,
+          FetchWorkspaceBranchesResponse,
+          BranchMetadata,
+          FetchWorkspaceBranchesPage,
+          FetchWorkspaceBranchesFixedSizeCollection> {
+
+    private FetchWorkspaceBranchesFixedSizeCollection(
+        @Nullable List<FetchWorkspaceBranchesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static FetchWorkspaceBranchesFixedSizeCollection createEmptyCollection() {
+      return new FetchWorkspaceBranchesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected FetchWorkspaceBranchesFixedSizeCollection createCollection(
+        @Nullable List<FetchWorkspaceBranchesPage> pages, int collectionSize) {
+      return new FetchWorkspaceBranchesFixedSizeCollection(pages, collectionSize);
     }
   }
 

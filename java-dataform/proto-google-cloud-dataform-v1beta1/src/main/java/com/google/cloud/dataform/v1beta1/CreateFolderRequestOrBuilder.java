@@ -114,7 +114,7 @@ public interface CreateFolderRequestOrBuilder
    * <code>string folder_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dataform.v1beta1.CreateFolderRequest.folder_id is deprecated. See
-   *     google/cloud/dataform/v1beta1/dataform.proto;l=3552
+   *     google/cloud/dataform/v1beta1/dataform.proto;l=3874
    * @return The folderId.
    */
   @java.lang.Deprecated
@@ -133,7 +133,7 @@ public interface CreateFolderRequestOrBuilder
    * <code>string folder_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dataform.v1beta1.CreateFolderRequest.folder_id is deprecated. See
-   *     google/cloud/dataform/v1beta1/dataform.proto;l=3552
+   *     google/cloud/dataform/v1beta1/dataform.proto;l=3874
    * @return The bytes for folderId.
    */
   @java.lang.Deprecated

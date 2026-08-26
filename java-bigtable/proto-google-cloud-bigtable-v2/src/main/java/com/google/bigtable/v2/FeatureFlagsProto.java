@@ -54,25 +54,30 @@ public final class FeatureFlagsProto extends com.google.protobuf.GeneratedFile {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/bigtable/v2/feature_flags.proto"
-          + "\022\022google.bigtable.v2\"\351\002\n\014FeatureFlags\022\025\n"
-          + "\rreverse_scans\030\001 \001(\010\022\036\n\026mutate_rows_rate"
-          + "_limit\030\003 \001(\010\022\037\n\027mutate_rows_rate_limit2\030"
-          + "\005 \001(\010\022\"\n\032last_scanned_row_responses\030\004 \001("
-          + "\010\022\026\n\016routing_cookie\030\006 \001(\010\022\022\n\nretry_info\030"
-          + "\007 \001(\010\022#\n\033client_side_metrics_enabled\030\010 \001"
-          + "(\010\022 \n\030traffic_director_enabled\030\t \001(\010\022\037\n\027"
-          + "direct_access_requested\030\n \001(\010\022\021\n\tpeer_in"
-          + "fo\030\013 \001(\010\022\033\n\023sessions_compatible\030\014 \001(\010\022\031\n"
-          + "\021sessions_required\030\r \001(\010B\273\001\n\026com.google."
-          + "bigtable.v2B\021FeatureFlagsProtoP\001Z8cloud."
-          + "google.com/go/bigtable/apiv2/bigtablepb;"
-          + "bigtablepb\252\002\030Google.Cloud.Bigtable.V2\312\002\030"
-          + "Google\\Cloud\\Bigtable\\V2\352\002\033Google::Cloud"
-          + "::Bigtable::V2b\006proto3"
+          + "\022\022google.bigtable.v2\032\037google/api/field_b"
+          + "ehavior.proto\"\215\003\n\014FeatureFlags\022\025\n\rrevers"
+          + "e_scans\030\001 \001(\010\022\036\n\026mutate_rows_rate_limit\030"
+          + "\003 \001(\010\022\037\n\027mutate_rows_rate_limit2\030\005 \001(\010\022\""
+          + "\n\032last_scanned_row_responses\030\004 \001(\010\022\026\n\016ro"
+          + "uting_cookie\030\006 \001(\010\022\022\n\nretry_info\030\007 \001(\010\022#"
+          + "\n\033client_side_metrics_enabled\030\010 \001(\010\022 \n\030t"
+          + "raffic_director_enabled\030\t \001(\010\022\037\n\027direct_"
+          + "access_requested\030\n \001(\010\022\021\n\tpeer_info\030\013 \001("
+          + "\010\022\033\n\023sessions_compatible\030\014 \001(\010\022\031\n\021sessio"
+          + "ns_required\030\r \001(\010\022\"\n\025microsecond_timesta"
+          + "mp\030\016 \001(\010B\003\340A\001B\273\001\n\026com.google.bigtable.v2"
+          + "B\021FeatureFlagsProtoP\001Z8cloud.google.com/"
+          + "go/bigtable/apiv2/bigtablepb;bigtablepb\252"
+          + "\002\030Google.Cloud.Bigtable.V2\312\002\030Google\\Clou"
+          + "d\\Bigtable\\V2\352\002\033Google::Cloud::Bigtable:"
+          + ":V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
-            descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[] {});
+            descriptorData,
+            new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
+            });
     internal_static_google_bigtable_v2_FeatureFlags_descriptor = getDescriptor().getMessageType(0);
     internal_static_google_bigtable_v2_FeatureFlags_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
@@ -90,8 +95,15 @@ public final class FeatureFlagsProto extends com.google.protobuf.GeneratedFile {
               "PeerInfo",
               "SessionsCompatible",
               "SessionsRequired",
+              "MicrosecondTimestamp",
             });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -139,8 +139,7 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
       return precision.intValue();
     }
     StandardSQLTypeName type = getStandardSQLTypeName(column);
-    BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
-        BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(type);
+    BigQueryTypeRegistry.ColumnTypeInfo typeInfo = BigQueryTypeRegistry.getColumnTypeInfo(type);
     if (typeInfo != null && typeInfo.columnSize != null) {
       return typeInfo.columnSize;
     }
@@ -154,8 +153,7 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
       return scale.intValue();
     }
     StandardSQLTypeName type = getStandardSQLTypeName(column);
-    BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
-        BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(type);
+    BigQueryTypeRegistry.ColumnTypeInfo typeInfo = BigQueryTypeRegistry.getColumnTypeInfo(type);
     if (typeInfo != null && typeInfo.decimalDigits != null) {
       return typeInfo.decimalDigits;
     }
@@ -189,8 +187,7 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   @Override
   public int getColumnType(int column) {
-    return BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(
-        getStandardSQLTypeName(column));
+    return BigQueryTypeRegistry.toJdbcType(getStandardSQLTypeName(column));
   }
 
   @Override
@@ -214,14 +211,12 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   }
 
   @Override
-  public String getColumnClassName(int column) {
+  public String getColumnClassName(int column) throws SQLException {
     Field field = getField(column);
     if (field.getMode() == Mode.REPEATED) {
       return java.sql.Array.class.getName();
     }
-    return BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping
-        .get(field.getType().getStandardType())
-        .getName();
+    return BigQueryTypeRegistry.toJavaClass(getStandardSQLTypeName(column)).getName();
   }
 
   // Wrapper methods:

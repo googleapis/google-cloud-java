@@ -59,6 +59,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
     pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
     instanceUid_ = "";
     pscDnsName_ = "";
+    pscAutoDnsName_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -270,7 +271,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1382
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1447
    * @return A list containing the pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -291,7 +292,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1382
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1447
    * @return The count of pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -312,7 +313,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1382
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1447
    * @param index The index of the element to return.
    * @return The pemCertificateChain at the given index.
    */
@@ -334,7 +335,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=1382
+   *     google/cloud/alloydb/v1beta/resources.proto;l=1447
    * @param index The index of the value to return.
    * @return The bytes of the pemCertificateChain at the given index.
    */
@@ -449,6 +450,61 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int PSC_AUTO_DNS_NAME_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pscAutoDnsName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the DNS name to use with PSC service automation for
+   * the Instance.
+   * </pre>
+   *
+   * <code>string psc_auto_dns_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The pscAutoDnsName.
+   */
+  @java.lang.Override
+  public java.lang.String getPscAutoDnsName() {
+    java.lang.Object ref = pscAutoDnsName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pscAutoDnsName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the DNS name to use with PSC service automation for
+   * the Instance.
+   * </pre>
+   *
+   * <code>string psc_auto_dns_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for pscAutoDnsName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPscAutoDnsNameBytes() {
+    java.lang.Object ref = pscAutoDnsName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      pscAutoDnsName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -480,6 +536,9 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pscDnsName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, pscDnsName_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pscAutoDnsName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, pscAutoDnsName_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -513,6 +572,9 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pscDnsName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(6, pscDnsName_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pscAutoDnsName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, pscAutoDnsName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -535,6 +597,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
     if (!getPemCertificateChainList().equals(other.getPemCertificateChainList())) return false;
     if (!getInstanceUid().equals(other.getInstanceUid())) return false;
     if (!getPscDnsName().equals(other.getPscDnsName())) return false;
+    if (!getPscAutoDnsName().equals(other.getPscAutoDnsName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -560,6 +623,8 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getInstanceUid().hashCode();
     hash = (37 * hash) + PSC_DNS_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getPscDnsName().hashCode();
+    hash = (37 * hash) + PSC_AUTO_DNS_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getPscAutoDnsName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -707,6 +772,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
       pemCertificateChain_ = com.google.protobuf.LazyStringArrayList.emptyList();
       instanceUid_ = "";
       pscDnsName_ = "";
+      pscAutoDnsName_ = "";
       return this;
     }
 
@@ -762,6 +828,9 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.pscDnsName_ = pscDnsName_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.pscAutoDnsName_ = pscAutoDnsName_;
+      }
     }
 
     @java.lang.Override
@@ -809,6 +878,11 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
       if (!other.getPscDnsName().isEmpty()) {
         pscDnsName_ = other.pscDnsName_;
         bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getPscAutoDnsName().isEmpty()) {
+        pscAutoDnsName_ = other.pscAutoDnsName_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -874,6 +948,12 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 74:
+              {
+                pscAutoDnsName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1289,7 +1369,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1382
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1447
      * @return A list containing the pemCertificateChain.
      */
     @java.lang.Deprecated
@@ -1311,7 +1391,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1382
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1447
      * @return The count of pemCertificateChain.
      */
     @java.lang.Deprecated
@@ -1332,7 +1412,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1382
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1447
      * @param index The index of the element to return.
      * @return The pemCertificateChain at the given index.
      */
@@ -1354,7 +1434,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1382
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1447
      * @param index The index of the value to return.
      * @return The bytes of the pemCertificateChain at the given index.
      */
@@ -1376,7 +1456,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1382
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1447
      * @param index The index to set the value at.
      * @param value The pemCertificateChain to set.
      * @return This builder for chaining.
@@ -1406,7 +1486,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1382
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1447
      * @param value The pemCertificateChain to add.
      * @return This builder for chaining.
      */
@@ -1435,7 +1515,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1382
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1447
      * @param values The pemCertificateChain to add.
      * @return This builder for chaining.
      */
@@ -1461,7 +1541,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1382
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1447
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1486,7 +1566,7 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated.
-     *     See google/cloud/alloydb/v1beta/resources.proto;l=1382
+     *     See google/cloud/alloydb/v1beta/resources.proto;l=1447
      * @param value The bytes of the pemCertificateChain to add.
      * @return This builder for chaining.
      */
@@ -1721,6 +1801,122 @@ public final class ConnectionInfo extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       pscDnsName_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pscAutoDnsName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the DNS name to use with PSC service automation for
+     * the Instance.
+     * </pre>
+     *
+     * <code>string psc_auto_dns_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The pscAutoDnsName.
+     */
+    public java.lang.String getPscAutoDnsName() {
+      java.lang.Object ref = pscAutoDnsName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pscAutoDnsName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the DNS name to use with PSC service automation for
+     * the Instance.
+     * </pre>
+     *
+     * <code>string psc_auto_dns_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for pscAutoDnsName.
+     */
+    public com.google.protobuf.ByteString getPscAutoDnsNameBytes() {
+      java.lang.Object ref = pscAutoDnsName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pscAutoDnsName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the DNS name to use with PSC service automation for
+     * the Instance.
+     * </pre>
+     *
+     * <code>string psc_auto_dns_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The pscAutoDnsName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscAutoDnsName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      pscAutoDnsName_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the DNS name to use with PSC service automation for
+     * the Instance.
+     * </pre>
+     *
+     * <code>string psc_auto_dns_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPscAutoDnsName() {
+      pscAutoDnsName_ = getDefaultInstance().getPscAutoDnsName();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the DNS name to use with PSC service automation for
+     * the Instance.
+     * </pre>
+     *
+     * <code>string psc_auto_dns_name = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for pscAutoDnsName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscAutoDnsNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      pscAutoDnsName_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

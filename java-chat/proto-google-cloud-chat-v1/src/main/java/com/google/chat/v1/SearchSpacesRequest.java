@@ -89,9 +89,6 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * Requires either the `chat.admin.spaces.readonly` or `chat.admin.spaces`
    * [OAuth 2.0
    * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
-   *
-   * This method currently only supports admin access, thus only `true` is
-   * accepted for this field.
    * </pre>
    *
    * <code>bool use_admin_access = 1;</code>
@@ -202,7 +199,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. A search query.
    *
-   * You can search by using the following parameters:
+   * You can search by using the following parameters when `useAdminAccess`
+   * is set to `true`:
    *
    * - `create_time`
    * - `customer`
@@ -212,18 +210,27 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * - `space_history_state`
    * - `space_type`
    *
+   * When `useAdminAccess` is set to `false`:
+   *
+   * - `display_name`
+   * - `external_user_allowed`
+   * - `space_type`
+   *
    * `create_time` and `last_active_time` accept a timestamp in
    * [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339) format and the supported
    * comparison operators are: `=`, `&lt;`, `&gt;`, `&lt;=`, `&gt;=`.
    *
-   * `customer` is required and is used to indicate which customer
-   * to fetch spaces from. `customers/my_customer` is the only supported value.
+   * `customer` is required when `useAdminAccess` is set to `true`, and is
+   * used to indicate which customer to fetch spaces from.
+   * `customers/my_customer` is the only supported value.
    *
    * `display_name` only accepts the `HAS` (`:`) operator. The text to
    * match is first tokenized into tokens and each token is prefix-matched
    * case-insensitively and independently as a substring anywhere in the space's
    * `display_name`. For example, `Fun Eve` matches `Fun event` or `The
-   * evening was fun`, but not `notFun event` or `even`.
+   * evening was fun`, but not `notFun event` or `even`. When `useAdminAccess`
+   * is set to `false`, `display_name` is required to retrieve meaningful
+   * results. Otherwise, the default behavior is to return an empty response.
    *
    * `external_user_allowed` accepts either `true` or `false`.
    *
@@ -246,7 +253,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * &lt; "2022-01-01T00:00:00+00:00" AND last_active_time &gt;
    * "2023-01-01T00:00:00+00:00"`.
    *
-   * The following example queries are valid:
+   * The following example queries are valid when `useAdminAccess` is set to
+   * `true`:
    *
    * ```
    * customer = "customers/my_customer" AND space_type = "SPACE"
@@ -267,6 +275,21 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * (create_time &gt; "2019-01-01T00:00:00+00:00" AND create_time &lt;
    * "2020-01-01T00:00:00+00:00") AND (external_user_allowed = "true") AND
    * (space_history_state = "HISTORY_ON" OR space_history_state = "HISTORY_OFF")
+   * ```
+   *
+   * The following example queries are valid when `useAdminAccess` is set to
+   * `false`:
+   *
+   * ```
+   * display_name:"Hello World" AND space_type = "SPACE"
+   *
+   * (display_name:"Hello" OR display_name:"Fun") AND space_type = "SPACE"
+   *
+   * (external_user_allowed = "true" AND space_type = "SPACE") // Returns an
+   * empty response.
+   *
+   * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
+   * "SPACE")
    * ```
    * </pre>
    *
@@ -293,7 +316,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. A search query.
    *
-   * You can search by using the following parameters:
+   * You can search by using the following parameters when `useAdminAccess`
+   * is set to `true`:
    *
    * - `create_time`
    * - `customer`
@@ -303,18 +327,27 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * - `space_history_state`
    * - `space_type`
    *
+   * When `useAdminAccess` is set to `false`:
+   *
+   * - `display_name`
+   * - `external_user_allowed`
+   * - `space_type`
+   *
    * `create_time` and `last_active_time` accept a timestamp in
    * [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339) format and the supported
    * comparison operators are: `=`, `&lt;`, `&gt;`, `&lt;=`, `&gt;=`.
    *
-   * `customer` is required and is used to indicate which customer
-   * to fetch spaces from. `customers/my_customer` is the only supported value.
+   * `customer` is required when `useAdminAccess` is set to `true`, and is
+   * used to indicate which customer to fetch spaces from.
+   * `customers/my_customer` is the only supported value.
    *
    * `display_name` only accepts the `HAS` (`:`) operator. The text to
    * match is first tokenized into tokens and each token is prefix-matched
    * case-insensitively and independently as a substring anywhere in the space's
    * `display_name`. For example, `Fun Eve` matches `Fun event` or `The
-   * evening was fun`, but not `notFun event` or `even`.
+   * evening was fun`, but not `notFun event` or `even`. When `useAdminAccess`
+   * is set to `false`, `display_name` is required to retrieve meaningful
+   * results. Otherwise, the default behavior is to return an empty response.
    *
    * `external_user_allowed` accepts either `true` or `false`.
    *
@@ -337,7 +370,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * &lt; "2022-01-01T00:00:00+00:00" AND last_active_time &gt;
    * "2023-01-01T00:00:00+00:00"`.
    *
-   * The following example queries are valid:
+   * The following example queries are valid when `useAdminAccess` is set to
+   * `true`:
    *
    * ```
    * customer = "customers/my_customer" AND space_type = "SPACE"
@@ -358,6 +392,21 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * (create_time &gt; "2019-01-01T00:00:00+00:00" AND create_time &lt;
    * "2020-01-01T00:00:00+00:00") AND (external_user_allowed = "true") AND
    * (space_history_state = "HISTORY_ON" OR space_history_state = "HISTORY_OFF")
+   * ```
+   *
+   * The following example queries are valid when `useAdminAccess` is set to
+   * `false`:
+   *
+   * ```
+   * display_name:"Hello World" AND space_type = "SPACE"
+   *
+   * (display_name:"Hello" OR display_name:"Fun") AND space_type = "SPACE"
+   *
+   * (external_user_allowed = "true" AND space_type = "SPACE") // Returns an
+   * empty response.
+   *
+   * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
+   * "SPACE")
    * ```
    * </pre>
    *
@@ -397,13 +446,17 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * any topic of this space.
    * - `create_time` — Denotes the time of the space creation.
    *
+   * When `useAdminAccess` is `false`, only `create_time` and `relevance` are
+   * supported for ordering. Only `DESC` is supported for these fields in
+   * non-admin searches.
+   *
    * Valid ordering operation values are:
    *
    * - `ASC` for ascending. Default value.
    *
    * - `DESC` for descending.
    *
-   * The supported syntax are:
+   * The supported syntax are when `useAdminAccess` is set to `true`:
    *
    * - `membership_count.joined_direct_human_user_count DESC`
    * - `membership_count.joined_direct_human_user_count ASC`
@@ -411,6 +464,12 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * - `last_active_time ASC`
    * - `create_time DESC`
    * - `create_time ASC`
+   *
+   * When `useAdminAccess` is set to `false`:
+   *
+   * - `create_time DESC`
+   * - `relevance DESC`
+   * [Developer Preview](https://developers.google.com/workspace/preview).
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -444,13 +503,17 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * any topic of this space.
    * - `create_time` — Denotes the time of the space creation.
    *
+   * When `useAdminAccess` is `false`, only `create_time` and `relevance` are
+   * supported for ordering. Only `DESC` is supported for these fields in
+   * non-admin searches.
+   *
    * Valid ordering operation values are:
    *
    * - `ASC` for ascending. Default value.
    *
    * - `DESC` for descending.
    *
-   * The supported syntax are:
+   * The supported syntax are when `useAdminAccess` is set to `true`:
    *
    * - `membership_count.joined_direct_human_user_count DESC`
    * - `membership_count.joined_direct_human_user_count ASC`
@@ -458,6 +521,12 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
    * - `last_active_time ASC`
    * - `create_time DESC`
    * - `create_time ASC`
+   *
+   * When `useAdminAccess` is set to `false`:
+   *
+   * - `create_time DESC`
+   * - `relevance DESC`
+   * [Developer Preview](https://developers.google.com/workspace/preview).
    * </pre>
    *
    * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -893,9 +962,6 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * Requires either the `chat.admin.spaces.readonly` or `chat.admin.spaces`
      * [OAuth 2.0
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
-     *
-     * This method currently only supports admin access, thus only `true` is
-     * accepted for this field.
      * </pre>
      *
      * <code>bool use_admin_access = 1;</code>
@@ -921,9 +987,6 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * Requires either the `chat.admin.spaces.readonly` or `chat.admin.spaces`
      * [OAuth 2.0
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
-     *
-     * This method currently only supports admin access, thus only `true` is
-     * accepted for this field.
      * </pre>
      *
      * <code>bool use_admin_access = 1;</code>
@@ -953,9 +1016,6 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * Requires either the `chat.admin.spaces.readonly` or `chat.admin.spaces`
      * [OAuth 2.0
      * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes).
-     *
-     * This method currently only supports admin access, thus only `true` is
-     * accepted for this field.
      * </pre>
      *
      * <code>bool use_admin_access = 1;</code>
@@ -1187,7 +1247,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A search query.
      *
-     * You can search by using the following parameters:
+     * You can search by using the following parameters when `useAdminAccess`
+     * is set to `true`:
      *
      * - `create_time`
      * - `customer`
@@ -1197,18 +1258,27 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * - `space_history_state`
      * - `space_type`
      *
+     * When `useAdminAccess` is set to `false`:
+     *
+     * - `display_name`
+     * - `external_user_allowed`
+     * - `space_type`
+     *
      * `create_time` and `last_active_time` accept a timestamp in
      * [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339) format and the supported
      * comparison operators are: `=`, `&lt;`, `&gt;`, `&lt;=`, `&gt;=`.
      *
-     * `customer` is required and is used to indicate which customer
-     * to fetch spaces from. `customers/my_customer` is the only supported value.
+     * `customer` is required when `useAdminAccess` is set to `true`, and is
+     * used to indicate which customer to fetch spaces from.
+     * `customers/my_customer` is the only supported value.
      *
      * `display_name` only accepts the `HAS` (`:`) operator. The text to
      * match is first tokenized into tokens and each token is prefix-matched
      * case-insensitively and independently as a substring anywhere in the space's
      * `display_name`. For example, `Fun Eve` matches `Fun event` or `The
-     * evening was fun`, but not `notFun event` or `even`.
+     * evening was fun`, but not `notFun event` or `even`. When `useAdminAccess`
+     * is set to `false`, `display_name` is required to retrieve meaningful
+     * results. Otherwise, the default behavior is to return an empty response.
      *
      * `external_user_allowed` accepts either `true` or `false`.
      *
@@ -1231,7 +1301,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * &lt; "2022-01-01T00:00:00+00:00" AND last_active_time &gt;
      * "2023-01-01T00:00:00+00:00"`.
      *
-     * The following example queries are valid:
+     * The following example queries are valid when `useAdminAccess` is set to
+     * `true`:
      *
      * ```
      * customer = "customers/my_customer" AND space_type = "SPACE"
@@ -1252,6 +1323,21 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * (create_time &gt; "2019-01-01T00:00:00+00:00" AND create_time &lt;
      * "2020-01-01T00:00:00+00:00") AND (external_user_allowed = "true") AND
      * (space_history_state = "HISTORY_ON" OR space_history_state = "HISTORY_OFF")
+     * ```
+     *
+     * The following example queries are valid when `useAdminAccess` is set to
+     * `false`:
+     *
+     * ```
+     * display_name:"Hello World" AND space_type = "SPACE"
+     *
+     * (display_name:"Hello" OR display_name:"Fun") AND space_type = "SPACE"
+     *
+     * (external_user_allowed = "true" AND space_type = "SPACE") // Returns an
+     * empty response.
+     *
+     * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
+     * "SPACE")
      * ```
      * </pre>
      *
@@ -1277,7 +1363,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A search query.
      *
-     * You can search by using the following parameters:
+     * You can search by using the following parameters when `useAdminAccess`
+     * is set to `true`:
      *
      * - `create_time`
      * - `customer`
@@ -1287,18 +1374,27 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * - `space_history_state`
      * - `space_type`
      *
+     * When `useAdminAccess` is set to `false`:
+     *
+     * - `display_name`
+     * - `external_user_allowed`
+     * - `space_type`
+     *
      * `create_time` and `last_active_time` accept a timestamp in
      * [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339) format and the supported
      * comparison operators are: `=`, `&lt;`, `&gt;`, `&lt;=`, `&gt;=`.
      *
-     * `customer` is required and is used to indicate which customer
-     * to fetch spaces from. `customers/my_customer` is the only supported value.
+     * `customer` is required when `useAdminAccess` is set to `true`, and is
+     * used to indicate which customer to fetch spaces from.
+     * `customers/my_customer` is the only supported value.
      *
      * `display_name` only accepts the `HAS` (`:`) operator. The text to
      * match is first tokenized into tokens and each token is prefix-matched
      * case-insensitively and independently as a substring anywhere in the space's
      * `display_name`. For example, `Fun Eve` matches `Fun event` or `The
-     * evening was fun`, but not `notFun event` or `even`.
+     * evening was fun`, but not `notFun event` or `even`. When `useAdminAccess`
+     * is set to `false`, `display_name` is required to retrieve meaningful
+     * results. Otherwise, the default behavior is to return an empty response.
      *
      * `external_user_allowed` accepts either `true` or `false`.
      *
@@ -1321,7 +1417,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * &lt; "2022-01-01T00:00:00+00:00" AND last_active_time &gt;
      * "2023-01-01T00:00:00+00:00"`.
      *
-     * The following example queries are valid:
+     * The following example queries are valid when `useAdminAccess` is set to
+     * `true`:
      *
      * ```
      * customer = "customers/my_customer" AND space_type = "SPACE"
@@ -1342,6 +1439,21 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * (create_time &gt; "2019-01-01T00:00:00+00:00" AND create_time &lt;
      * "2020-01-01T00:00:00+00:00") AND (external_user_allowed = "true") AND
      * (space_history_state = "HISTORY_ON" OR space_history_state = "HISTORY_OFF")
+     * ```
+     *
+     * The following example queries are valid when `useAdminAccess` is set to
+     * `false`:
+     *
+     * ```
+     * display_name:"Hello World" AND space_type = "SPACE"
+     *
+     * (display_name:"Hello" OR display_name:"Fun") AND space_type = "SPACE"
+     *
+     * (external_user_allowed = "true" AND space_type = "SPACE") // Returns an
+     * empty response.
+     *
+     * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
+     * "SPACE")
      * ```
      * </pre>
      *
@@ -1367,7 +1479,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A search query.
      *
-     * You can search by using the following parameters:
+     * You can search by using the following parameters when `useAdminAccess`
+     * is set to `true`:
      *
      * - `create_time`
      * - `customer`
@@ -1377,18 +1490,27 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * - `space_history_state`
      * - `space_type`
      *
+     * When `useAdminAccess` is set to `false`:
+     *
+     * - `display_name`
+     * - `external_user_allowed`
+     * - `space_type`
+     *
      * `create_time` and `last_active_time` accept a timestamp in
      * [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339) format and the supported
      * comparison operators are: `=`, `&lt;`, `&gt;`, `&lt;=`, `&gt;=`.
      *
-     * `customer` is required and is used to indicate which customer
-     * to fetch spaces from. `customers/my_customer` is the only supported value.
+     * `customer` is required when `useAdminAccess` is set to `true`, and is
+     * used to indicate which customer to fetch spaces from.
+     * `customers/my_customer` is the only supported value.
      *
      * `display_name` only accepts the `HAS` (`:`) operator. The text to
      * match is first tokenized into tokens and each token is prefix-matched
      * case-insensitively and independently as a substring anywhere in the space's
      * `display_name`. For example, `Fun Eve` matches `Fun event` or `The
-     * evening was fun`, but not `notFun event` or `even`.
+     * evening was fun`, but not `notFun event` or `even`. When `useAdminAccess`
+     * is set to `false`, `display_name` is required to retrieve meaningful
+     * results. Otherwise, the default behavior is to return an empty response.
      *
      * `external_user_allowed` accepts either `true` or `false`.
      *
@@ -1411,7 +1533,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * &lt; "2022-01-01T00:00:00+00:00" AND last_active_time &gt;
      * "2023-01-01T00:00:00+00:00"`.
      *
-     * The following example queries are valid:
+     * The following example queries are valid when `useAdminAccess` is set to
+     * `true`:
      *
      * ```
      * customer = "customers/my_customer" AND space_type = "SPACE"
@@ -1432,6 +1555,21 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * (create_time &gt; "2019-01-01T00:00:00+00:00" AND create_time &lt;
      * "2020-01-01T00:00:00+00:00") AND (external_user_allowed = "true") AND
      * (space_history_state = "HISTORY_ON" OR space_history_state = "HISTORY_OFF")
+     * ```
+     *
+     * The following example queries are valid when `useAdminAccess` is set to
+     * `false`:
+     *
+     * ```
+     * display_name:"Hello World" AND space_type = "SPACE"
+     *
+     * (display_name:"Hello" OR display_name:"Fun") AND space_type = "SPACE"
+     *
+     * (external_user_allowed = "true" AND space_type = "SPACE") // Returns an
+     * empty response.
+     *
+     * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
+     * "SPACE")
      * ```
      * </pre>
      *
@@ -1456,7 +1594,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A search query.
      *
-     * You can search by using the following parameters:
+     * You can search by using the following parameters when `useAdminAccess`
+     * is set to `true`:
      *
      * - `create_time`
      * - `customer`
@@ -1466,18 +1605,27 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * - `space_history_state`
      * - `space_type`
      *
+     * When `useAdminAccess` is set to `false`:
+     *
+     * - `display_name`
+     * - `external_user_allowed`
+     * - `space_type`
+     *
      * `create_time` and `last_active_time` accept a timestamp in
      * [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339) format and the supported
      * comparison operators are: `=`, `&lt;`, `&gt;`, `&lt;=`, `&gt;=`.
      *
-     * `customer` is required and is used to indicate which customer
-     * to fetch spaces from. `customers/my_customer` is the only supported value.
+     * `customer` is required when `useAdminAccess` is set to `true`, and is
+     * used to indicate which customer to fetch spaces from.
+     * `customers/my_customer` is the only supported value.
      *
      * `display_name` only accepts the `HAS` (`:`) operator. The text to
      * match is first tokenized into tokens and each token is prefix-matched
      * case-insensitively and independently as a substring anywhere in the space's
      * `display_name`. For example, `Fun Eve` matches `Fun event` or `The
-     * evening was fun`, but not `notFun event` or `even`.
+     * evening was fun`, but not `notFun event` or `even`. When `useAdminAccess`
+     * is set to `false`, `display_name` is required to retrieve meaningful
+     * results. Otherwise, the default behavior is to return an empty response.
      *
      * `external_user_allowed` accepts either `true` or `false`.
      *
@@ -1500,7 +1648,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * &lt; "2022-01-01T00:00:00+00:00" AND last_active_time &gt;
      * "2023-01-01T00:00:00+00:00"`.
      *
-     * The following example queries are valid:
+     * The following example queries are valid when `useAdminAccess` is set to
+     * `true`:
      *
      * ```
      * customer = "customers/my_customer" AND space_type = "SPACE"
@@ -1521,6 +1670,21 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * (create_time &gt; "2019-01-01T00:00:00+00:00" AND create_time &lt;
      * "2020-01-01T00:00:00+00:00") AND (external_user_allowed = "true") AND
      * (space_history_state = "HISTORY_ON" OR space_history_state = "HISTORY_OFF")
+     * ```
+     *
+     * The following example queries are valid when `useAdminAccess` is set to
+     * `false`:
+     *
+     * ```
+     * display_name:"Hello World" AND space_type = "SPACE"
+     *
+     * (display_name:"Hello" OR display_name:"Fun") AND space_type = "SPACE"
+     *
+     * (external_user_allowed = "true" AND space_type = "SPACE") // Returns an
+     * empty response.
+     *
+     * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
+     * "SPACE")
      * ```
      * </pre>
      *
@@ -1541,7 +1705,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. A search query.
      *
-     * You can search by using the following parameters:
+     * You can search by using the following parameters when `useAdminAccess`
+     * is set to `true`:
      *
      * - `create_time`
      * - `customer`
@@ -1551,18 +1716,27 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * - `space_history_state`
      * - `space_type`
      *
+     * When `useAdminAccess` is set to `false`:
+     *
+     * - `display_name`
+     * - `external_user_allowed`
+     * - `space_type`
+     *
      * `create_time` and `last_active_time` accept a timestamp in
      * [RFC-3339](https://www.rfc-editor.org/rfc/rfc3339) format and the supported
      * comparison operators are: `=`, `&lt;`, `&gt;`, `&lt;=`, `&gt;=`.
      *
-     * `customer` is required and is used to indicate which customer
-     * to fetch spaces from. `customers/my_customer` is the only supported value.
+     * `customer` is required when `useAdminAccess` is set to `true`, and is
+     * used to indicate which customer to fetch spaces from.
+     * `customers/my_customer` is the only supported value.
      *
      * `display_name` only accepts the `HAS` (`:`) operator. The text to
      * match is first tokenized into tokens and each token is prefix-matched
      * case-insensitively and independently as a substring anywhere in the space's
      * `display_name`. For example, `Fun Eve` matches `Fun event` or `The
-     * evening was fun`, but not `notFun event` or `even`.
+     * evening was fun`, but not `notFun event` or `even`. When `useAdminAccess`
+     * is set to `false`, `display_name` is required to retrieve meaningful
+     * results. Otherwise, the default behavior is to return an empty response.
      *
      * `external_user_allowed` accepts either `true` or `false`.
      *
@@ -1585,7 +1759,8 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * &lt; "2022-01-01T00:00:00+00:00" AND last_active_time &gt;
      * "2023-01-01T00:00:00+00:00"`.
      *
-     * The following example queries are valid:
+     * The following example queries are valid when `useAdminAccess` is set to
+     * `true`:
      *
      * ```
      * customer = "customers/my_customer" AND space_type = "SPACE"
@@ -1606,6 +1781,21 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * (create_time &gt; "2019-01-01T00:00:00+00:00" AND create_time &lt;
      * "2020-01-01T00:00:00+00:00") AND (external_user_allowed = "true") AND
      * (space_history_state = "HISTORY_ON" OR space_history_state = "HISTORY_OFF")
+     * ```
+     *
+     * The following example queries are valid when `useAdminAccess` is set to
+     * `false`:
+     *
+     * ```
+     * display_name:"Hello World" AND space_type = "SPACE"
+     *
+     * (display_name:"Hello" OR display_name:"Fun") AND space_type = "SPACE"
+     *
+     * (external_user_allowed = "true" AND space_type = "SPACE") // Returns an
+     * empty response.
+     *
+     * (external_user_allowed = "true" AND display_name:"Hello" AND space_type =
+     * "SPACE")
      * ```
      * </pre>
      *
@@ -1641,13 +1831,17 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * any topic of this space.
      * - `create_time` — Denotes the time of the space creation.
      *
+     * When `useAdminAccess` is `false`, only `create_time` and `relevance` are
+     * supported for ordering. Only `DESC` is supported for these fields in
+     * non-admin searches.
+     *
      * Valid ordering operation values are:
      *
      * - `ASC` for ascending. Default value.
      *
      * - `DESC` for descending.
      *
-     * The supported syntax are:
+     * The supported syntax are when `useAdminAccess` is set to `true`:
      *
      * - `membership_count.joined_direct_human_user_count DESC`
      * - `membership_count.joined_direct_human_user_count ASC`
@@ -1655,6 +1849,12 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * - `last_active_time ASC`
      * - `create_time DESC`
      * - `create_time ASC`
+     *
+     * When `useAdminAccess` is set to `false`:
+     *
+     * - `create_time DESC`
+     * - `relevance DESC`
+     * [Developer Preview](https://developers.google.com/workspace/preview).
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1687,13 +1887,17 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * any topic of this space.
      * - `create_time` — Denotes the time of the space creation.
      *
+     * When `useAdminAccess` is `false`, only `create_time` and `relevance` are
+     * supported for ordering. Only `DESC` is supported for these fields in
+     * non-admin searches.
+     *
      * Valid ordering operation values are:
      *
      * - `ASC` for ascending. Default value.
      *
      * - `DESC` for descending.
      *
-     * The supported syntax are:
+     * The supported syntax are when `useAdminAccess` is set to `true`:
      *
      * - `membership_count.joined_direct_human_user_count DESC`
      * - `membership_count.joined_direct_human_user_count ASC`
@@ -1701,6 +1905,12 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * - `last_active_time ASC`
      * - `create_time DESC`
      * - `create_time ASC`
+     *
+     * When `useAdminAccess` is set to `false`:
+     *
+     * - `create_time DESC`
+     * - `relevance DESC`
+     * [Developer Preview](https://developers.google.com/workspace/preview).
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1733,13 +1943,17 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * any topic of this space.
      * - `create_time` — Denotes the time of the space creation.
      *
+     * When `useAdminAccess` is `false`, only `create_time` and `relevance` are
+     * supported for ordering. Only `DESC` is supported for these fields in
+     * non-admin searches.
+     *
      * Valid ordering operation values are:
      *
      * - `ASC` for ascending. Default value.
      *
      * - `DESC` for descending.
      *
-     * The supported syntax are:
+     * The supported syntax are when `useAdminAccess` is set to `true`:
      *
      * - `membership_count.joined_direct_human_user_count DESC`
      * - `membership_count.joined_direct_human_user_count ASC`
@@ -1747,6 +1961,12 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * - `last_active_time ASC`
      * - `create_time DESC`
      * - `create_time ASC`
+     *
+     * When `useAdminAccess` is set to `false`:
+     *
+     * - `create_time DESC`
+     * - `relevance DESC`
+     * [Developer Preview](https://developers.google.com/workspace/preview).
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1778,13 +1998,17 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * any topic of this space.
      * - `create_time` — Denotes the time of the space creation.
      *
+     * When `useAdminAccess` is `false`, only `create_time` and `relevance` are
+     * supported for ordering. Only `DESC` is supported for these fields in
+     * non-admin searches.
+     *
      * Valid ordering operation values are:
      *
      * - `ASC` for ascending. Default value.
      *
      * - `DESC` for descending.
      *
-     * The supported syntax are:
+     * The supported syntax are when `useAdminAccess` is set to `true`:
      *
      * - `membership_count.joined_direct_human_user_count DESC`
      * - `membership_count.joined_direct_human_user_count ASC`
@@ -1792,6 +2016,12 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * - `last_active_time ASC`
      * - `create_time DESC`
      * - `create_time ASC`
+     *
+     * When `useAdminAccess` is set to `false`:
+     *
+     * - `create_time DESC`
+     * - `relevance DESC`
+     * [Developer Preview](https://developers.google.com/workspace/preview).
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1819,13 +2049,17 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * any topic of this space.
      * - `create_time` — Denotes the time of the space creation.
      *
+     * When `useAdminAccess` is `false`, only `create_time` and `relevance` are
+     * supported for ordering. Only `DESC` is supported for these fields in
+     * non-admin searches.
+     *
      * Valid ordering operation values are:
      *
      * - `ASC` for ascending. Default value.
      *
      * - `DESC` for descending.
      *
-     * The supported syntax are:
+     * The supported syntax are when `useAdminAccess` is set to `true`:
      *
      * - `membership_count.joined_direct_human_user_count DESC`
      * - `membership_count.joined_direct_human_user_count ASC`
@@ -1833,6 +2067,12 @@ public final class SearchSpacesRequest extends com.google.protobuf.GeneratedMess
      * - `last_active_time ASC`
      * - `create_time DESC`
      * - `create_time ASC`
+     *
+     * When `useAdminAccess` is set to `false`:
+     *
+     * - `create_time DESC`
+     * - `relevance DESC`
+     * [Developer Preview](https://developers.google.com/workspace/preview).
      * </pre>
      *
      * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

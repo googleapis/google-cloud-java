@@ -59,14 +59,14 @@ public final class WebhookNotificationCloudLogProto extends com.google.protobuf.
           + "api/field_behavior.proto\032\025google/rpc/htt"
           + "p.proto\"S\n\033WebhookNotificationCloudLog\0224"
           + "\n\rhttp_response\030\001 \001(\0132\030.google.rpc.HttpR"
-          + "esponseB\003\340A\002B\226\002\n\'com.google.devicesandse"
+          + "esponseB\003\340A\002B\222\002\n\'com.google.devicesandse"
           + "rvices.health.v4B WebhookNotificationClo"
-          + "udLogProtoP\001ZRgoogle.golang.org/genproto"
+          + "udLogProtoP\001ZNgoogle.golang.org/genproto"
           + "/googleapis/devicesandservices/health/ap"
-          + "iv4main;healthpb\252\002#Google.DevicesAndServ"
-          + "ices.Health.V4\312\002#Google\\DevicesAndServic"
-          + "es\\Health\\V4\352\002&Google::DevicesAndService"
-          + "s::Health::V4b\006proto3"
+          + "iv4;healthpb\252\002#Google.DevicesAndServices"
+          + ".Health.V4\312\002#Google\\DevicesAndServices\\H"
+          + "ealth\\V4\352\002&Google::DevicesAndServices::H"
+          + "ealth::V4b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

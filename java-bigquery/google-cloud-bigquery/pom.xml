@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>2.70.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+  <version>2.71.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   <packaging>jar</packaging>
   <name>BigQuery</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
@@ -11,10 +11,12 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquery-parent</artifactId>
-    <version>2.70.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+    <version>2.71.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-bigquery</site.installationModule>
+    <bigquery.endpoint>https://us-east7-bigquery.googleapis.com</bigquery.endpoint>
+    <bigquery.storage.endpoint>us-east7-bigquerystorage.googleapis.com:443</bigquery.storage.endpoint>
   </properties>
   <dependencies>
     <dependency>
@@ -100,12 +102,12 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerystorage</artifactId>
-      <version>3.32.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+      <version>3.33.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigquerystorage-v1</artifactId>
-      <version>3.32.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
+      <version>3.33.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerystorage-v1:current} -->
     </dependency>
     <dependency>
       <groupId>org.apache.arrow</groupId>
@@ -146,21 +148,15 @@
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-datacatalog</artifactId>
-      <scope>test</scope>
-      <version>1.102.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
-    </dependency>
-    <dependency>
-      <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigqueryconnection</artifactId>
       <scope>test</scope>
-      <version>2.98.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
+      <version>2.99.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryconnection:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-bigqueryconnection-v1</artifactId>
       <scope>test</scope>
-      <version>2.98.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigqueryconnection-v1:current} -->
+      <version>2.99.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigqueryconnection-v1:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
@@ -193,16 +189,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-datacatalog</artifactId>
-      <scope>test</scope>
-      <version>1.102.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-datacatalog:current} -->
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>proto-google-cloud-datacatalog-v1</artifactId>
-      <scope>test</scope>
-      <version>1.102.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-datacatalog-v1:current} -->
+      <groupId>org.jspecify</groupId>
+      <artifactId>jspecify</artifactId>
     </dependency>
 
     <dependency>
@@ -325,6 +313,23 @@
         </plugins>
       </build>
 
+    </profile>
+    <profile>
+      <id>native</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.graalvm.buildtools</groupId>
+            <artifactId>native-maven-plugin</artifactId>
+            <configuration>
+              <environmentVariables>
+                <BIGQUERY_ENDPOINT>${bigquery.endpoint}</BIGQUERY_ENDPOINT>
+                <BIGQUERY_STORAGE_ENDPOINT>${bigquery.storage.endpoint}</BIGQUERY_STORAGE_ENDPOINT>
+              </environmentVariables>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
   </profiles>
 </project>
