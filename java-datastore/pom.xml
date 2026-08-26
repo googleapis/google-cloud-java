@@ -144,7 +144,7 @@
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-datastore-parent</site.installationModule>
     <project.javadoc.protobufBaseURL>https://googleapis.dev/java/google-api-grpc/latest</project.javadoc.protobufBaseURL>
-    <errorprone.version>2.48.0</errorprone.version>
+    <errorprone.version>2.50.0</errorprone.version>
     <errorprone.javac.args>-g</errorprone.javac.args>
   </properties>
 
