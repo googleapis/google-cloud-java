@@ -40,15 +40,19 @@ case ${JOB_TYPE} in
     MAVEN_GOAL="test"
     if [[ -n "${BUILD_SUBDIR}" ]]
     then
+      # Targeted module build (invoked by split-units for handwritten/combo libraries).
+      # Compiles and runs all unit tests for the specific changed library submodule.
       echo "Compiling and building all modules for ${BUILD_SUBDIR}"
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
       EXCLUDE_PROJECTS_OPTS=()
     else
-      # These are pure GAPIC-generated modules with no unit tests to run here; Showcase
-      # integration tests already cover the generated code's behavior, so this pass only
-      # needs to confirm everything compiles.
+      # Full monorepo smoke pass across Java runtime matrix versions (units job).
+      # Pure GAPIC-generated modules skip unit tests by default via <skipUnitTests>true</skipUnitTests>
+      # in google-cloud-jar-parent; generator correctness and GAX runtime behaviors are covered by
+      # java-showcase (showcase.yaml). Running a parallel compile pass confirms compatibility
+      # across all supported JDKs in ~2 minutes instead of 40+ minutes.
       MAVEN_GOAL="compile"
       # gapic-generator-java is a code generation tool tested in its own dedicated workflow
       # (sdk-platform-java-ci.yaml). Excluding it from bulk unit test runs saves 2-3 minutes per
