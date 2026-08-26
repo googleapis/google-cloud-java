@@ -28,6 +28,9 @@ import com.google.common.base.Ticker;
 import com.google.common.testing.FakeTicker;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.DescriptorProtos;
+import com.google.protobuf.Descriptors;
+import com.google.protobuf.DynamicMessage;
 import com.google.protobuf.Empty;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.TextFormat;
@@ -1134,6 +1137,163 @@ public class KeyAwareChannelTest {
   }
 
   @Test
+  public void genericRequestWithTransactionIdRoutesToAffinityEndpoint() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("generic-affinity");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+    GenericRpcFixture rpc = createGenericRpcFixture("google.spanner.v1.Spanner/AckQueueMessage");
+
+    ClientCall<DynamicMessage, DynamicMessage> call =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    call.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    call.sendMessage(rpc.request(TransactionSelector.newBuilder().setId(transactionId).build()));
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+  }
+
+  @Test
+  public void genericRequestWithTransactionIdFieldRoutesToAffinityEndpoint() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("generic-transaction-id-field");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+    GenericRpcFixture rpc = createGenericRpcFixture("google.spanner.v1.Spanner/AckQueueMessage");
+
+    ClientCall<DynamicMessage, DynamicMessage> call =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    call.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    call.sendMessage(rpc.request(transactionId));
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+  }
+
+  @Test
+  public void genericRequestWithoutTransactionAffinityRoutesToDefaultEndpoint() throws Exception {
+    TestHarness harness = createHarness();
+    GenericRpcFixture rpc = createGenericRpcFixture("google.spanner.v1.Spanner/AckQueueMessage");
+
+    ClientCall<DynamicMessage, DynamicMessage> call =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    call.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    call.sendMessage(
+        rpc.request(
+            TransactionSelector.newBuilder()
+                .setId(ByteString.copyFromUtf8("generic-no-affinity"))
+                .build()));
+
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(0);
+  }
+
+  @Test
+  public void genericRequestWithInlineBeginRoutesToDefaultEndpoint() throws Exception {
+    TestHarness harness = createHarness();
+    GenericRpcFixture rpc = createGenericRpcFixture("google.spanner.v1.Spanner/AckQueueMessage");
+
+    ClientCall<DynamicMessage, DynamicMessage> call =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    call.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    call.sendMessage(
+        rpc.request(
+            TransactionSelector.newBuilder()
+                .setBegin(
+                    TransactionOptions.newBuilder()
+                        .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+                .build()));
+
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(0);
+  }
+
+  @Test
+  public void denylistedMethodRoutesToDefaultEndpointDespiteTransactionAffinity() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("denylisted-affinity");
+    seedReadWriteTransactionAffinity(harness, transactionId);
+    GenericRpcFixture rpc = createGenericRpcFixture("google.spanner.v1.Spanner/PartitionQuery");
+
+    ClientCall<DynamicMessage, DynamicMessage> call =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    call.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    call.sendMessage(rpc.request(TransactionSelector.newBuilder().setId(transactionId).build()));
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
+  }
+
+  @Test
+  public void genericInlineBeginResponseRecordsDefaultEndpointAffinity() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("generic-inline-begin");
+    GenericRpcFixture rpc = createGenericRpcFixture("google.spanner.v1.Spanner/AckQueueMessage");
+
+    ClientCall<DynamicMessage, DynamicMessage> beginCall =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    beginCall.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    beginCall.sendMessage(
+        rpc.request(
+            TransactionSelector.newBuilder()
+                .setBegin(
+                    TransactionOptions.newBuilder()
+                        .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+                .build()));
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<DynamicMessage, DynamicMessage> beginDelegate =
+        (RecordingClientCall<DynamicMessage, DynamicMessage>)
+            harness.defaultManagedChannel.latestCall();
+    beginDelegate.emitOnMessage(
+        rpc.response(Transaction.newBuilder().setId(transactionId).build()));
+
+    ClientCall<DynamicMessage, DynamicMessage> nextCall =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    nextCall.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    nextCall.sendMessage(
+        rpc.request(TransactionSelector.newBuilder().setId(transactionId).build()));
+
+    assertThat(harness.endpointCache.getIfPresentCount(DEFAULT_ADDRESS)).isEqualTo(1);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
+  }
+
+  @Test
+  public void genericMetadataResponseRecordsDefaultEndpointAffinity() throws Exception {
+    TestHarness harness = createHarness();
+    ByteString transactionId = ByteString.copyFromUtf8("generic-metadata-inline-begin");
+    GenericRpcFixture rpc = createGenericRpcFixture("google.spanner.v1.Spanner/AckQueueMessage");
+
+    ClientCall<DynamicMessage, DynamicMessage> beginCall =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    beginCall.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    beginCall.sendMessage(
+        rpc.request(
+            TransactionSelector.newBuilder()
+                .setBegin(
+                    TransactionOptions.newBuilder()
+                        .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()))
+                .build()));
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<DynamicMessage, DynamicMessage> beginDelegate =
+        (RecordingClientCall<DynamicMessage, DynamicMessage>)
+            harness.defaultManagedChannel.latestCall();
+    beginDelegate.emitOnMessage(
+        rpc.metadataResponse(
+            ResultSetMetadata.newBuilder()
+                .setTransaction(Transaction.newBuilder().setId(transactionId))
+                .build()));
+
+    ClientCall<DynamicMessage, DynamicMessage> nextCall =
+        harness.channel.newCall(rpc.methodDescriptor, CallOptions.DEFAULT);
+    nextCall.start(new CapturingListener<DynamicMessage>(), new Metadata());
+    nextCall.sendMessage(
+        rpc.request(TransactionSelector.newBuilder().setId(transactionId).build()));
+
+    assertThat(harness.endpointCache.getIfPresentCount(DEFAULT_ADDRESS)).isEqualTo(1);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
+  }
+
+  @Test
   public void readOnlyTransactionRoutesEachReadIndependently() throws Exception {
     TestHarness harness = createHarness();
     ByteString transactionId = ByteString.copyFromUtf8("ro-tx-1");
@@ -1650,6 +1810,62 @@ public class KeyAwareChannelTest {
     beginDelegate.emitOnClose(Status.OK, new Metadata());
   }
 
+  private static GenericRpcFixture createGenericRpcFixture(String fullMethodName)
+      throws Descriptors.DescriptorValidationException {
+    Descriptors.FileDescriptor transactionProto = TransactionSelector.getDescriptor().getFile();
+    Descriptors.FileDescriptor resultSetProto = ResultSetMetadata.getDescriptor().getFile();
+    DescriptorProtos.DescriptorProto requestType =
+        DescriptorProtos.DescriptorProto.newBuilder()
+            .setName("GenericRequest")
+            .addField(
+                DescriptorProtos.FieldDescriptorProto.newBuilder()
+                    .setName("transaction")
+                    .setNumber(1)
+                    .setLabel(DescriptorProtos.FieldDescriptorProto.Label.LABEL_OPTIONAL)
+                    .setType(DescriptorProtos.FieldDescriptorProto.Type.TYPE_MESSAGE)
+                    .setTypeName(".google.spanner.v1.TransactionSelector"))
+            .addField(
+                DescriptorProtos.FieldDescriptorProto.newBuilder()
+                    .setName("transaction_id")
+                    .setNumber(2)
+                    .setLabel(DescriptorProtos.FieldDescriptorProto.Label.LABEL_OPTIONAL)
+                    .setType(DescriptorProtos.FieldDescriptorProto.Type.TYPE_BYTES))
+            .build();
+    DescriptorProtos.DescriptorProto responseType =
+        DescriptorProtos.DescriptorProto.newBuilder()
+            .setName("GenericResponse")
+            .addField(
+                DescriptorProtos.FieldDescriptorProto.newBuilder()
+                    .setName("transaction")
+                    .setNumber(1)
+                    .setLabel(DescriptorProtos.FieldDescriptorProto.Label.LABEL_OPTIONAL)
+                    .setType(DescriptorProtos.FieldDescriptorProto.Type.TYPE_MESSAGE)
+                    .setTypeName(".google.spanner.v1.Transaction"))
+            .addField(
+                DescriptorProtos.FieldDescriptorProto.newBuilder()
+                    .setName("metadata")
+                    .setNumber(2)
+                    .setLabel(DescriptorProtos.FieldDescriptorProto.Label.LABEL_OPTIONAL)
+                    .setType(DescriptorProtos.FieldDescriptorProto.Type.TYPE_MESSAGE)
+                    .setTypeName(".google.spanner.v1.ResultSetMetadata"))
+            .build();
+    Descriptors.FileDescriptor fileDescriptor =
+        Descriptors.FileDescriptor.buildFrom(
+            DescriptorProtos.FileDescriptorProto.newBuilder()
+                .setName("key_aware_channel_test.proto")
+                .setPackage("keyawaretest")
+                .addDependency(transactionProto.getName())
+                .addDependency(resultSetProto.getName())
+                .addMessageType(requestType)
+                .addMessageType(responseType)
+                .build(),
+            new Descriptors.FileDescriptor[] {transactionProto, resultSetProto});
+    return new GenericRpcFixture(
+        fullMethodName,
+        fileDescriptor.findMessageTypeByName("GenericRequest"),
+        fileDescriptor.findMessageTypeByName("GenericResponse"));
+  }
+
   private static Mutation createInsertMutation(String keyValue) {
     return Mutation.newBuilder()
         .setInsert(
@@ -1728,6 +1944,53 @@ public class KeyAwareChannelTest {
       this.channel = channel;
       this.endpointCache = endpointCache;
       this.defaultManagedChannel = defaultManagedChannel;
+    }
+  }
+
+  private static final class GenericRpcFixture {
+    private final Descriptors.Descriptor requestDescriptor;
+    private final Descriptors.Descriptor responseDescriptor;
+    private final MethodDescriptor<DynamicMessage, DynamicMessage> methodDescriptor;
+
+    private GenericRpcFixture(
+        String fullMethodName,
+        Descriptors.Descriptor requestDescriptor,
+        Descriptors.Descriptor responseDescriptor) {
+      this.requestDescriptor = requestDescriptor;
+      this.responseDescriptor = responseDescriptor;
+      this.methodDescriptor =
+          MethodDescriptor.<DynamicMessage, DynamicMessage>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(fullMethodName)
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DynamicMessage.getDefaultInstance(requestDescriptor)))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DynamicMessage.getDefaultInstance(responseDescriptor)))
+              .build();
+    }
+
+    private DynamicMessage request(TransactionSelector transaction) {
+      return DynamicMessage.newBuilder(requestDescriptor)
+          .setField(requestDescriptor.findFieldByName("transaction"), transaction)
+          .build();
+    }
+
+    private DynamicMessage request(ByteString transactionId) {
+      return DynamicMessage.newBuilder(requestDescriptor)
+          .setField(requestDescriptor.findFieldByName("transaction_id"), transactionId)
+          .build();
+    }
+
+    private DynamicMessage response(Transaction transaction) {
+      return DynamicMessage.newBuilder(responseDescriptor)
+          .setField(responseDescriptor.findFieldByName("transaction"), transaction)
+          .build();
+    }
+
+    private DynamicMessage metadataResponse(ResultSetMetadata metadata) {
+      return DynamicMessage.newBuilder(responseDescriptor)
+          .setField(responseDescriptor.findFieldByName("metadata"), metadata)
+          .build();
     }
   }
 
