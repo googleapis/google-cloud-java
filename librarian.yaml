@@ -5763,6 +5763,7 @@ libraries:
             - path: google/cloud/location/locations.proto
     java:
       released_version: 0.2.0
+    skip_generate: true
   - name: storage
     version: 2.73.0-SNAPSHOT
     apis:
