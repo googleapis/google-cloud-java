@@ -33,6 +33,7 @@ import com.google.bigtable.v2.LoadBalancingOptions;
 import com.google.bigtable.v2.LoadBalancingOptions.LeastInFlight;
 import com.google.bigtable.v2.LoadBalancingOptions.PeakEwma;
 import com.google.bigtable.v2.SessionClientConfiguration;
+import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration.DirectAccessWithFallback;
 import com.google.bigtable.v2.SessionClientConfiguration.SessionPoolConfiguration;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders;
@@ -463,6 +464,59 @@ class ClientConfigurationManagerTest {
     assertThat(retrievedConfig.get()).isNotNull();
   }
 
+  @Test
+  void disableDirectPathFallbackTest() throws Exception {
+    Properties sysProps = new Properties();
+    sysProps.setProperty(
+        ClientConfigurationManager.DISABLE_DIRECT_ACCESS_FALLBACK_SYS_PROP_KEY, "true");
+    String clientConfigOverrides =
+        TextFormat.printer()
+            .printToString(
+                ClientConfiguration.newBuilder()
+                    .setSessionConfiguration(
+                        SessionClientConfiguration.newBuilder()
+                            .setSessionLoad(0.75f)
+                            .setChannelConfiguration(
+                                SessionClientConfiguration.ChannelPoolConfiguration.newBuilder()
+                                    .setDirectAccessWithFallback(
+                                        DirectAccessWithFallback.getDefaultInstance())))
+                    .build());
+    sysProps.setProperty(ClientConfigurationManager.OVERRIDE_SYS_PROP_KEY, clientConfigOverrides);
+
+    try (ClientConfigurationManager fallbackDisabledManager =
+        new ClientConfigurationManager(
+            sysProps, FEATURE_FLAGS, CLIENT_INFO, channelProvider, noopDebugTracer, mockExecutor)) {
+
+      // Check initial default config with override has fallback disabled and direct_access_only set
+      SessionClientConfiguration.ChannelPoolConfiguration initialChannelConfig =
+          fallbackDisabledManager
+              .getClientConfiguration()
+              .getSessionConfiguration()
+              .getChannelConfiguration();
+      assertThat(initialChannelConfig.hasDirectAccessOnly()).isTrue();
+      assertThat(initialChannelConfig.hasDirectAccessWithFallback()).isFalse();
+
+      // Start manager and fetch server config (which sends direct_access_with_fallback)
+      ClientConfiguration fetchedConfig = fallbackDisabledManager.start().get();
+      SessionClientConfiguration.ChannelPoolConfiguration fetchedChannelConfig =
+          fetchedConfig.getSessionConfiguration().getChannelConfiguration();
+
+      // Verify that direct_access_with_fallback is converted to direct_access_only
+      assertThat(fetchedChannelConfig.hasDirectAccessOnly()).isTrue();
+      assertThat(fetchedChannelConfig.hasDirectAccessWithFallback()).isFalse();
+
+      // Verify other channel pool configuration fields from the server are preserved
+      SessionClientConfiguration.ChannelPoolConfiguration serverChannelConfig =
+          service.config.get().getSessionConfiguration().getChannelConfiguration();
+      assertThat(fetchedChannelConfig.getMinServerCount())
+          .isEqualTo(serverChannelConfig.getMinServerCount());
+      assertThat(fetchedChannelConfig.getMaxServerCount())
+          .isEqualTo(serverChannelConfig.getMaxServerCount());
+      assertThat(fetchedChannelConfig.getPerServerSessionCount())
+          .isEqualTo(serverChannelConfig.getPerServerSessionCount());
+    }
+  }
+
   static class FakeConfigService extends BigtableGrpc.BigtableImplBase {
     private final AtomicReference<ClientConfiguration> config = new AtomicReference<>();
 
@@ -473,6 +527,12 @@ class ClientConfigurationManagerTest {
     public FakeConfigService() throws IOException {
       ClientConfiguration.Builder builder = ClientConfigurationManager.loadDefault().toBuilder();
       builder.getSessionConfigurationBuilder().setSessionLoad(0.25f);
+      builder
+          .getSessionConfigurationBuilder()
+          .getChannelConfigurationBuilder()
+          .setMinServerCount(2)
+          .setMaxServerCount(10)
+          .setPerServerSessionCount(15);
       config.set(builder.build());
     }
 
