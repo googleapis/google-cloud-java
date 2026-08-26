@@ -306,6 +306,8 @@ public class FutureReservationsClientTest {
             .setPlanningStatus("planningStatus-1676056145")
             .setReservationMode("reservationMode-337958001")
             .setReservationName("reservationName-337941385")
+            .setResourceMetadata(ResourceMetadata.newBuilder().build())
+            .setResourceName("resourceName-384566343")
             .setSchedulingType("schedulingType144670446")
             .setSelfLink("selfLink1191800166")
             .setSelfLinkWithId("selfLinkWithId-776809081")
@@ -313,6 +315,7 @@ public class FutureReservationsClientTest {
             .setSpecificReservationRequired(true)
             .setSpecificSkuProperties(FutureReservationSpecificSKUProperties.newBuilder().build())
             .setStatus(FutureReservationStatus.newBuilder().build())
+            .setStoragePoolProperties(FutureReservationStoragePoolProperties.newBuilder().build())
             .setTimeWindow(FutureReservationTimeWindow.newBuilder().build())
             .setZone("zone3744684")
             .build();
