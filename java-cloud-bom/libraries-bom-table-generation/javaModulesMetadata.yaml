@@ -82,8 +82,6 @@ google-cloud-core: n/a, Google Cloud Core
 google-cloud-data-fusion: https://cloud.google.com/data-fusion/docs, Cloud Data Fusion
 google-cloud-dataflow: https://cloud.google.com/dataflow/docs, Dataflow
 google-cloud-dataform: https://cloud.google.com/dataform/docs, Cloud Dataform
-google-cloud-datalabeling: https://cloud.google.com/ai-platform/data-labeling/docs/,
-  Data Labeling
 google-cloud-datalineage: https://cloud.google.com/data-catalog/docs/data-lineage/,
   Data Lineage
 google-cloud-dataplex: https://cloud.google.com/dataplex, Cloud Dataplex
