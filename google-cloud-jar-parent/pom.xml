@@ -25,11 +25,10 @@
       running (java-spanner, java-bigtable, java-storage, ...) override this back to false in
       their own top-level pom.xml.
 
-      Wired exclusively into surefire's <skip> (below) and NOT to Maven's built-in maven.test.skip
-      or skipTests:
-      1. Unlike maven.test.skip=true, test sources and dependencies are still compiled (test-compile),
-         preventing broken reactor test-jar dependencies and false-positives in dependency:analyze.
-      2. Unlike skipTests=true, it does not suppress failsafe integration tests (ITs).
+      Wired exclusively into surefire's <skip> (below):
+      1. Compiles test sources and dependencies so reactor test-jar dependencies are built
+         and dependency:analyze accurately recognizes test-scoped usage.
+      2. Does not suppress failsafe integration tests (ITs).
       3. The native profile overrides this back to false so GraalVM native-maven-plugin test
          discovery generates required test metadata.
     -->
