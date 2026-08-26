@@ -298,7 +298,8 @@ public class IntegrationTestEnv extends ExternalResource {
     String TEST_DB_REGEX = "(testdb_(.*)_(.*))|(mysample-(.*))";
 
     logger.log(Level.INFO, "Dropping old test databases from {0}", instanceId.getName());
-    while (true) {
+    int retries = 0;
+    while (retries < 3) {
       try {
         for (Database db :
             databaseAdminClient.listDatabases(instanceId.getInstance()).iterateAll()) {
@@ -327,14 +328,32 @@ public class IntegrationTestEnv extends ExternalResource {
         }
         break;
       } catch (SpannerException exception) {
-        if (exception.getErrorCode() != ErrorCode.RESOURCE_EXHAUSTED) {
-          throw exception;
-        }
-        // Wait a little and try again.
-        try {
-          Thread.sleep(10_000);
-        } catch (InterruptedException interruptedException) {
-          throw SpannerExceptionFactory.propagateInterrupt(interruptedException);
+        retries++;
+        if (exception.getErrorCode() == ErrorCode.RESOURCE_EXHAUSTED
+            || exception.getErrorCode() == ErrorCode.DEADLINE_EXCEEDED
+            || exception.getErrorCode() == ErrorCode.UNAVAILABLE) {
+          logger.log(
+              Level.WARNING,
+              "Transient error during database cleanup (attempt " + retries + "/3)",
+              exception);
+          if (retries >= 3) {
+            logger.log(
+                Level.WARNING,
+                "Exhausted retries cleaning up old databases from {0}. Continuing test execution...",
+                instanceId.getName());
+            break;
+          }
+          try {
+            Thread.sleep(10_000);
+          } catch (InterruptedException interruptedException) {
+            throw SpannerExceptionFactory.propagateInterrupt(interruptedException);
+          }
+        } else {
+          logger.log(
+              Level.WARNING,
+              "Failed to clean up old databases from " + instanceId.getName(),
+              exception);
+          break;
         }
       }
     }

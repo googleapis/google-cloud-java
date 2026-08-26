@@ -18,8 +18,11 @@ package com.example.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.spanner.admin.database.v1.BackupSchedule;
 import com.google.spanner.admin.database.v1.BackupScheduleName;
+import com.google.spanner.admin.database.v1.DatabaseName;
 import java.util.UUID;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -28,6 +31,23 @@ import org.junit.runners.JUnit4;
 public class ListBackupSchedulesSampleIT extends SampleTestBaseV2 {
   // Default instance and given db should exist for tests to pass.
   private static String databaseId = System.getProperty("spanner.sample.database", "mysample");
+
+  @Before
+  public void setUp() {
+    try {
+      DatabaseName databaseName = DatabaseName.of(projectId, instanceId, databaseId);
+      for (BackupSchedule schedule :
+          databaseAdminClient.listBackupSchedules(databaseName).iterateAll()) {
+        try {
+          databaseAdminClient.deleteBackupSchedule(schedule.getName());
+        } catch (Exception e) {
+          // Ignore deletion errors for pre-existing schedules.
+        }
+      }
+    } catch (Exception e) {
+      // Ignore list errors during best-effort cleanup.
+    }
+  }
 
   @Test
   public void testListBackupSchedulesSample() throws Exception {
