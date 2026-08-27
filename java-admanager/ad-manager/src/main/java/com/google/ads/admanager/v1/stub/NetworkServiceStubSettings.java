@@ -18,10 +18,14 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.NetworkServiceClient.ListNetworksPagedResponse;
 
+import com.google.ads.admanager.v1.DefaultThirdPartyDataDeclaration;
+import com.google.ads.admanager.v1.GetDefaultThirdPartyDataDeclarationRequest;
 import com.google.ads.admanager.v1.GetNetworkRequest;
 import com.google.ads.admanager.v1.ListNetworksRequest;
 import com.google.ads.admanager.v1.ListNetworksResponse;
 import com.google.ads.admanager.v1.Network;
+import com.google.ads.admanager.v1.ProvisionTestNetworkRequest;
+import com.google.ads.admanager.v1.UpdateNetworkRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -120,6 +124,12 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
   private final PagedCallSettings<
           ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
       listNetworksSettings;
+  private final UnaryCallSettings<UpdateNetworkRequest, Network> updateNetworkSettings;
+  private final UnaryCallSettings<ProvisionTestNetworkRequest, Network>
+      provisionTestNetworkSettings;
+  private final UnaryCallSettings<
+          GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+      getDefaultThirdPartyDataDeclarationSettings;
 
   private static final PagedListDescriptor<ListNetworksRequest, ListNetworksResponse, Network>
       LIST_NETWORKS_PAGE_STR_DESC =
@@ -181,6 +191,23 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
   public PagedCallSettings<ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
       listNetworksSettings() {
     return listNetworksSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateNetwork. */
+  public UnaryCallSettings<UpdateNetworkRequest, Network> updateNetworkSettings() {
+    return updateNetworkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to provisionTestNetwork. */
+  public UnaryCallSettings<ProvisionTestNetworkRequest, Network> provisionTestNetworkSettings() {
+    return provisionTestNetworkSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDefaultThirdPartyDataDeclaration. */
+  public UnaryCallSettings<
+          GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+      getDefaultThirdPartyDataDeclarationSettings() {
+    return getDefaultThirdPartyDataDeclarationSettings;
   }
 
   public NetworkServiceStub createStub() throws IOException {
@@ -267,6 +294,10 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
 
     getNetworkSettings = settingsBuilder.getNetworkSettings().build();
     listNetworksSettings = settingsBuilder.listNetworksSettings().build();
+    updateNetworkSettings = settingsBuilder.updateNetworkSettings().build();
+    provisionTestNetworkSettings = settingsBuilder.provisionTestNetworkSettings().build();
+    getDefaultThirdPartyDataDeclarationSettings =
+        settingsBuilder.getDefaultThirdPartyDataDeclarationSettings().build();
   }
 
   @Override
@@ -285,6 +316,12 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
     private final PagedCallSettings.Builder<
             ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
         listNetworksSettings;
+    private final UnaryCallSettings.Builder<UpdateNetworkRequest, Network> updateNetworkSettings;
+    private final UnaryCallSettings.Builder<ProvisionTestNetworkRequest, Network>
+        provisionTestNetworkSettings;
+    private final UnaryCallSettings.Builder<
+            GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+        getDefaultThirdPartyDataDeclarationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -314,10 +351,17 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
 
       getNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listNetworksSettings = PagedCallSettings.newBuilder(LIST_NETWORKS_PAGE_STR_FACT);
+      updateNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      provisionTestNetworkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getDefaultThirdPartyDataDeclarationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getNetworkSettings, listNetworksSettings);
+              getNetworkSettings,
+              listNetworksSettings,
+              updateNetworkSettings,
+              provisionTestNetworkSettings,
+              getDefaultThirdPartyDataDeclarationSettings);
       initDefaults(this);
     }
 
@@ -326,10 +370,18 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
 
       getNetworkSettings = settings.getNetworkSettings.toBuilder();
       listNetworksSettings = settings.listNetworksSettings.toBuilder();
+      updateNetworkSettings = settings.updateNetworkSettings.toBuilder();
+      provisionTestNetworkSettings = settings.provisionTestNetworkSettings.toBuilder();
+      getDefaultThirdPartyDataDeclarationSettings =
+          settings.getDefaultThirdPartyDataDeclarationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getNetworkSettings, listNetworksSettings);
+              getNetworkSettings,
+              listNetworksSettings,
+              updateNetworkSettings,
+              provisionTestNetworkSettings,
+              getDefaultThirdPartyDataDeclarationSettings);
     }
 
     private static Builder createDefault() {
@@ -352,6 +404,21 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
 
       builder
           .listNetworksSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateNetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .provisionTestNetworkSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getDefaultThirdPartyDataDeclarationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -383,6 +450,26 @@ public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubS
             ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
         listNetworksSettings() {
       return listNetworksSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateNetwork. */
+    public UnaryCallSettings.Builder<UpdateNetworkRequest, Network> updateNetworkSettings() {
+      return updateNetworkSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to provisionTestNetwork. */
+    public UnaryCallSettings.Builder<ProvisionTestNetworkRequest, Network>
+        provisionTestNetworkSettings() {
+      return provisionTestNetworkSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getDefaultThirdPartyDataDeclaration.
+     */
+    public UnaryCallSettings.Builder<
+            GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+        getDefaultThirdPartyDataDeclarationSettings() {
+      return getDefaultThirdPartyDataDeclarationSettings;
     }
 
     @Override

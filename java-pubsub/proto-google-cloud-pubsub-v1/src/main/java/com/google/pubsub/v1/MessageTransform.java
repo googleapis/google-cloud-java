@@ -78,6 +78,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     JAVASCRIPT_UDF(2),
+    COMPRESSION(7),
     AI_INFERENCE(6),
     TRANSFORM_NOT_SET(0);
     private final int value;
@@ -100,6 +101,8 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 2:
           return JAVASCRIPT_UDF;
+        case 7:
+          return COMPRESSION;
         case 6:
           return AI_INFERENCE;
         case 0:
@@ -181,6 +184,63 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     return com.google.pubsub.v1.JavaScriptUDF.getDefaultInstance();
   }
 
+  public static final int COMPRESSION_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Compression/Decompression.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the compression field is set.
+   */
+  @java.lang.Override
+  public boolean hasCompression() {
+    return transformCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Compression/Decompression.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The compression.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.Compression getCompression() {
+    if (transformCase_ == 7) {
+      return (com.google.pubsub.v1.Compression) transform_;
+    }
+    return com.google.pubsub.v1.Compression.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Compression/Decompression.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.CompressionOrBuilder getCompressionOrBuilder() {
+    if (transformCase_ == 7) {
+      return (com.google.pubsub.v1.Compression) transform_;
+    }
+    return com.google.pubsub.v1.Compression.getDefaultInstance();
+  }
+
   public static final int AI_INFERENCE_FIELD_NUMBER = 6;
 
   /**
@@ -258,7 +318,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
    * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
-   *     google/pubsub/v1/pubsub.proto;l=857
+   *     google/pubsub/v1/pubsub.proto;l=922
    * @return The enabled.
    */
   @java.lang.Override
@@ -313,6 +373,9 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     if (transformCase_ == 6) {
       output.writeMessage(6, (com.google.pubsub.v1.AIInference) transform_);
     }
+    if (transformCase_ == 7) {
+      output.writeMessage(7, (com.google.pubsub.v1.Compression) transform_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -338,6 +401,11 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.pubsub.v1.AIInference) transform_);
     }
+    if (transformCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.pubsub.v1.Compression) transform_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -359,6 +427,9 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     switch (transformCase_) {
       case 2:
         if (!getJavascriptUdf().equals(other.getJavascriptUdf())) return false;
+        break;
+      case 7:
+        if (!getCompression().equals(other.getCompression())) return false;
         break;
       case 6:
         if (!getAiInference().equals(other.getAiInference())) return false;
@@ -385,6 +456,10 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
       case 2:
         hash = (37 * hash) + JAVASCRIPT_UDF_FIELD_NUMBER;
         hash = (53 * hash) + getJavascriptUdf().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + COMPRESSION_FIELD_NUMBER;
+        hash = (53 * hash) + getCompression().hashCode();
         break;
       case 6:
         hash = (37 * hash) + AI_INFERENCE_FIELD_NUMBER;
@@ -535,6 +610,9 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
       if (javascriptUdfBuilder_ != null) {
         javascriptUdfBuilder_.clear();
       }
+      if (compressionBuilder_ != null) {
+        compressionBuilder_.clear();
+      }
       if (aiInferenceBuilder_ != null) {
         aiInferenceBuilder_.clear();
       }
@@ -579,10 +657,10 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.pubsub.v1.MessageTransform result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.enabled_ = enabled_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.disabled_ = disabled_;
       }
     }
@@ -592,6 +670,9 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
       result.transform_ = this.transform_;
       if (transformCase_ == 2 && javascriptUdfBuilder_ != null) {
         result.transform_ = javascriptUdfBuilder_.build();
+      }
+      if (transformCase_ == 7 && compressionBuilder_ != null) {
+        result.transform_ = compressionBuilder_.build();
       }
       if (transformCase_ == 6 && aiInferenceBuilder_ != null) {
         result.transform_ = aiInferenceBuilder_.build();
@@ -620,6 +701,11 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
         case JAVASCRIPT_UDF:
           {
             mergeJavascriptUdf(other.getJavascriptUdf());
+            break;
+          }
+        case COMPRESSION:
+          {
+            mergeCompression(other.getCompression());
             break;
           }
         case AI_INFERENCE:
@@ -668,13 +754,13 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
             case 24:
               {
                 enabled_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 32:
               {
                 disabled_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 32
             case 50:
@@ -684,6 +770,13 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
                 transformCase_ = 6;
                 break;
               } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetCompressionFieldBuilder().getBuilder(), extensionRegistry);
+                transformCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -960,6 +1053,239 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     }
 
     private com.google.protobuf.SingleFieldBuilder<
+            com.google.pubsub.v1.Compression,
+            com.google.pubsub.v1.Compression.Builder,
+            com.google.pubsub.v1.CompressionOrBuilder>
+        compressionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compression/Decompression.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the compression field is set.
+     */
+    @java.lang.Override
+    public boolean hasCompression() {
+      return transformCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compression/Decompression.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The compression.
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.Compression getCompression() {
+      if (compressionBuilder_ == null) {
+        if (transformCase_ == 7) {
+          return (com.google.pubsub.v1.Compression) transform_;
+        }
+        return com.google.pubsub.v1.Compression.getDefaultInstance();
+      } else {
+        if (transformCase_ == 7) {
+          return compressionBuilder_.getMessage();
+        }
+        return com.google.pubsub.v1.Compression.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compression/Decompression.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCompression(com.google.pubsub.v1.Compression value) {
+      if (compressionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        transform_ = value;
+        onChanged();
+      } else {
+        compressionBuilder_.setMessage(value);
+      }
+      transformCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compression/Decompression.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCompression(com.google.pubsub.v1.Compression.Builder builderForValue) {
+      if (compressionBuilder_ == null) {
+        transform_ = builderForValue.build();
+        onChanged();
+      } else {
+        compressionBuilder_.setMessage(builderForValue.build());
+      }
+      transformCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compression/Decompression.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCompression(com.google.pubsub.v1.Compression value) {
+      if (compressionBuilder_ == null) {
+        if (transformCase_ == 7
+            && transform_ != com.google.pubsub.v1.Compression.getDefaultInstance()) {
+          transform_ =
+              com.google.pubsub.v1.Compression.newBuilder(
+                      (com.google.pubsub.v1.Compression) transform_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          transform_ = value;
+        }
+        onChanged();
+      } else {
+        if (transformCase_ == 7) {
+          compressionBuilder_.mergeFrom(value);
+        } else {
+          compressionBuilder_.setMessage(value);
+        }
+      }
+      transformCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compression/Decompression.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCompression() {
+      if (compressionBuilder_ == null) {
+        if (transformCase_ == 7) {
+          transformCase_ = 0;
+          transform_ = null;
+          onChanged();
+        }
+      } else {
+        if (transformCase_ == 7) {
+          transformCase_ = 0;
+          transform_ = null;
+        }
+        compressionBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compression/Decompression.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.pubsub.v1.Compression.Builder getCompressionBuilder() {
+      return internalGetCompressionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compression/Decompression.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.pubsub.v1.CompressionOrBuilder getCompressionOrBuilder() {
+      if ((transformCase_ == 7) && (compressionBuilder_ != null)) {
+        return compressionBuilder_.getMessageOrBuilder();
+      } else {
+        if (transformCase_ == 7) {
+          return (com.google.pubsub.v1.Compression) transform_;
+        }
+        return com.google.pubsub.v1.Compression.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Compression/Decompression.
+     * </pre>
+     *
+     * <code>
+     * .google.pubsub.v1.Compression compression = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.pubsub.v1.Compression,
+            com.google.pubsub.v1.Compression.Builder,
+            com.google.pubsub.v1.CompressionOrBuilder>
+        internalGetCompressionFieldBuilder() {
+      if (compressionBuilder_ == null) {
+        if (!(transformCase_ == 7)) {
+          transform_ = com.google.pubsub.v1.Compression.getDefaultInstance();
+        }
+        compressionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.pubsub.v1.Compression,
+                com.google.pubsub.v1.Compression.Builder,
+                com.google.pubsub.v1.CompressionOrBuilder>(
+                (com.google.pubsub.v1.Compression) transform_, getParentForChildren(), isClean());
+        transform_ = null;
+      }
+      transformCase_ = 7;
+      onChanged();
+      return compressionBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.pubsub.v1.AIInference,
             com.google.pubsub.v1.AIInference.Builder,
             com.google.pubsub.v1.AIInferenceOrBuilder>
@@ -1223,7 +1549,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
      * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=857
+     *     google/pubsub/v1/pubsub.proto;l=922
      * @return The enabled.
      */
     @java.lang.Override
@@ -1243,7 +1569,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
      * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=857
+     *     google/pubsub/v1/pubsub.proto;l=922
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -1251,7 +1577,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     public Builder setEnabled(boolean value) {
 
       enabled_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1267,12 +1593,12 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
      * <code>bool enabled = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.pubsub.v1.MessageTransform.enabled is deprecated. See
-     *     google/pubsub/v1/pubsub.proto;l=857
+     *     google/pubsub/v1/pubsub.proto;l=922
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
     public Builder clearEnabled() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       enabled_ = false;
       onChanged();
       return this;
@@ -1313,7 +1639,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     public Builder setDisabled(boolean value) {
 
       disabled_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1331,7 +1657,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearDisabled() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       disabled_ = false;
       onChanged();
       return this;

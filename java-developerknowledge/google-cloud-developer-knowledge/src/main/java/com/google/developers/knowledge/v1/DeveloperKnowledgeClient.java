@@ -408,6 +408,8 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
    * @param name Required. Specifies the name of the document to retrieve. Format:
    *     `documents/{uri_without_scheme}` Example:
    *     `documents/docs.cloud.google.com/storage/docs/creating-buckets`
+   *     <p>The name must not exceed 500 characters; values longer than 500 characters will result
+   *     in an `INVALID_ARGUMENT` error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document getDocument(@Nullable DocumentName name) {
@@ -437,6 +439,8 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
    * @param name Required. Specifies the name of the document to retrieve. Format:
    *     `documents/{uri_without_scheme}` Example:
    *     `documents/docs.cloud.google.com/storage/docs/creating-buckets`
+   *     <p>The name must not exceed 500 characters; values longer than 500 characters will result
+   *     in an `INVALID_ARGUMENT` error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document getDocument(String name) {
