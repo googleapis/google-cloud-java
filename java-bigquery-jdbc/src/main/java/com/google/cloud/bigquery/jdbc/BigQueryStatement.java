@@ -1633,7 +1633,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   @Override
-  public void addBatch(String sql) {
+  public void addBatch(String sql) throws SQLException {
     if (sql == null || sql.isEmpty()) {
       return;
     }
