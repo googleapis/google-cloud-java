@@ -17,9 +17,11 @@
 package com.google.cloud.grpc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -255,6 +257,31 @@ public final class GcpClientCallTest {
     verify(delegateCall, never()).sendMessage(any());
     listenerCaptor.getValue().onClose(Status.CANCELLED, new Metadata());
 
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
+  }
+
+  @Test
+  public void affinityQueuedCallFailureClearsQueueAndReleasesCountOnce() {
+    gcpChannel.channelRefs.add(channelRef);
+    IllegalStateException failure = new IllegalStateException("queued start failed");
+    doThrow(failure).when(delegateCall).start(any(), any(Metadata.class));
+    GcpClientCall<String, String> call =
+        new GcpClientCall<>(
+            gcpChannel,
+            METHOD_DESCRIPTOR,
+            CallOptions.DEFAULT,
+            AffinityConfig.newBuilder().setCommand(AffinityConfig.Command.BOUND).build());
+    call.start(new ClientCall.Listener<String>() {}, new Metadata());
+    call.request(1);
+    assertThat(call.queuedCallCountForTest()).isEqualTo(2);
+
+    IllegalStateException thrown =
+        assertThrows(IllegalStateException.class, () -> call.sendMessage("request"));
+
+    assertThat(thrown).isSameInstanceAs(failure);
+    assertThat(call.queuedCallCountForTest()).isEqualTo(0);
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
+    call.cancel("late cancel", null);
     assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
   }
 

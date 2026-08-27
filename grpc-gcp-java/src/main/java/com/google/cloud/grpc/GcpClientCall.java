@@ -17,6 +17,7 @@
 package com.google.cloud.grpc;
 
 import com.google.cloud.grpc.proto.AffinityConfig;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import io.grpc.Attributes;
 import io.grpc.CallOptions;
@@ -68,6 +69,11 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
   private boolean cancelled;
 
   private long startNanos = 0;
+
+  @VisibleForTesting
+  synchronized int queuedCallCountForTest() {
+    return calls.size();
+  }
 
   protected GcpClientCall(
       GcpManagedChannel delegateChannel,
@@ -160,8 +166,9 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         } catch (RuntimeException | Error failure) {
           finishCount(Status.fromThrowable(failure), true);
           throw failure;
+        } finally {
+          calls.clear();
         }
-        calls.clear();
         started = true;
       }
       send = !cancelled;

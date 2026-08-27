@@ -628,7 +628,7 @@ public class GcpManagedChannelOptions {
 
       /**
        * Sets the maximum number of attempts to prime one scaled-up channel. Zero uses the default
-       * of 3.
+       * of 3. Retry backoff is exponential from 100 ms and capped at 5 s.
        */
       public Builder setChannelPrimeMaxAttempts(int channelPrimeMaxAttempts) {
         Preconditions.checkArgument(

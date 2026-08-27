@@ -85,6 +85,12 @@ import javax.annotation.Nullable;
 
 /** A channel management factory that implements grpc.Channel APIs. */
 public class GcpManagedChannel extends ManagedChannel {
+
+  @FunctionalInterface
+  interface PrimeSleeper {
+    void sleep(long millis) throws InterruptedException;
+  }
+
   private static final Logger logger = Logger.getLogger(GcpManagedChannel.class.getName());
   static final AtomicInteger channelPoolIndex = new AtomicInteger();
 
@@ -301,6 +307,7 @@ public class GcpManagedChannel extends ManagedChannel {
       bound -> ThreadLocalRandom.current().nextInt(bound);
   @Nullable private volatile Consumer<ChannelRef> pickerValidationHookForTest;
   @Nullable private volatile Runnable inactiveMappingRemovedHookForTest;
+  private PrimeSleeper primeSleeper = millis -> MILLISECONDS.sleep(millis);
 
   @VisibleForTesting
   void setNanoClock(Supplier<Long> nanoClock) {
@@ -320,6 +327,11 @@ public class GcpManagedChannel extends ManagedChannel {
   @VisibleForTesting
   void setInactiveMappingRemovedHookForTest(Runnable hook) {
     inactiveMappingRemovedHookForTest = hook;
+  }
+
+  @VisibleForTesting
+  void setPrimeSleeperForTest(PrimeSleeper primeSleeper) {
+    this.primeSleeper = primeSleeper;
   }
 
   private boolean validatePickedChannel(ChannelRef channelRef) {
@@ -2216,7 +2228,8 @@ public class GcpManagedChannel extends ManagedChannel {
         }
         if (attempt < channelPrimeMaxAttempts - 1) {
           try {
-            MILLISECONDS.sleep(100L << Math.min(attempt, 20));
+            long sleepMillis = Math.min(100L << Math.min(attempt, 12), 5000L);
+            primeSleeper.sleep(sleepMillis);
           } catch (InterruptedException interrupted) {
             Thread.currentThread().interrupt();
             lastFailure = interrupted;

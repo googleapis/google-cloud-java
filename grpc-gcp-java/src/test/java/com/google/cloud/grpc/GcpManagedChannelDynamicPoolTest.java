@@ -30,6 +30,8 @@ import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.time.Duration;
 import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -221,6 +223,29 @@ public final class GcpManagedChannelDynamicPoolTest {
     assertThat(primeCalls.get()).isEqualTo(3);
     assertThat(pool.getNumberOfChannels()).isEqualTo(2);
     awaitCondition(() -> rejected.get() != null && rejected.get().isShutdown());
+  }
+
+  @Test
+  public void primerBackoffIsCappedForManyAttempts() throws Exception {
+    AtomicInteger primeCalls = new AtomicInteger();
+    List<Long> backoffs = new CopyOnWriteArrayList<>();
+    GcpChannelPrimer primer =
+        channel -> {
+          primeCalls.incrementAndGet();
+          return Futures.immediateFailedFuture(new IllegalStateException("prime failed"));
+        };
+    pool = newPrimedPool(primer, Duration.ofSeconds(5), 50, builder());
+    pool.setPrimeSleeperForTest(backoffs::add);
+    ChannelRef hot = pool.channelRefs.get(0);
+    hot.setActiveStreamsForTest(6);
+
+    hot.activeStreamsCountIncr();
+
+    awaitCondition(() -> pool.scaleUpPrimeFailuresForTest() == 1);
+    assertThat(primeCalls.get()).isEqualTo(50);
+    assertThat(backoffs).hasSize(49);
+    assertThat(backoffs.stream().mapToLong(Long::longValue).max().orElse(0)).isAtMost(5_000L);
+    assertThat(backoffs.stream().mapToLong(Long::longValue).sum()).isEqualTo(221_300L);
   }
 
   @Test
