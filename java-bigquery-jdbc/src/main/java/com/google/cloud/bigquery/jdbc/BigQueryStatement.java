@@ -316,7 +316,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
       jobConfiguration = applyParametersIfPresent(jobConfiguration);
       if (isLargeResultsEnabled()
-          && getStatementType(jobConfiguration.build()) == StatementType.SELECT) {
+          && getQueryType(jobConfiguration.build(), null) == SqlType.SELECT) {
         jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
       }
       runQuery(sql, jobConfiguration.build());
@@ -351,8 +351,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return statistics.getStatementType();
   }
 
-  SqlType getQueryType(QueryJobConfiguration jobConfiguration, StatementType statementType) {
+  SqlType getQueryType(QueryJobConfiguration jobConfiguration, StatementType statementType)
+      throws SQLException {
     LOG.finer("++enter++");
+    if (statementType == null) {
+      statementType = getStatementType(jobConfiguration);
+    }
+
     SqlType sqlType = BigQuerySqlTypeConverter.getSqlTypeFromStatementType(statementType);
     LOG.fine(
         "Query: %s, Statement Type: %s, SQL Type: %s",
@@ -590,6 +595,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       jobIds.remove(jobId);
     }
     saveSessionIdIfPresent(tableResult);
+    if (jobId != null && bigQuery != null) {
+      Job refreshedJob = bigQuery.getJob(jobId);
+      if (refreshedJob != null) {
+        job = refreshedJob;
+      }
+    }
     return new ExecuteResult(tableResult, job);
   }
 
@@ -1641,8 +1652,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (!sql.endsWith(";")) {
       sql += "; ";
     }
-    StatementType statementType = getStatementType(QueryJobConfiguration.newBuilder(sql).build());
-    SqlType sqlType = BigQuerySqlTypeConverter.getSqlTypeFromStatementType(statementType);
+    SqlType sqlType = getQueryType(QueryJobConfiguration.newBuilder(sql).build(), null);
     if (!SqlType.DML.equals(sqlType)) {
       IllegalArgumentException ex =
           new IllegalArgumentException("addBatch currently supports DML operations.");

@@ -1136,16 +1136,4 @@ public class BigQueryStatementTest {
     verify(bigquery, Mockito.never()).create(any(JobInfo.class));
     verify(bigquery, Mockito.never()).getJob(any(JobId.class));
   }
-
-  @Test
-  public void testNullStatementTypeDoesNotTriggerDryRunFallback() throws Exception {
-    TableResult tableResultMock = setupMockQueryResults(null, null, 10L);
-    doReturn(10L).when(tableResultMock).getTotalRows();
-
-    int count = bigQueryStatement.executeUpdate("UNMAPPED_COMMAND");
-
-    assertEquals(10, count);
-    verify(bigquery, Mockito.never()).create(any(JobInfo.class));
-    verify(bigquery, Mockito.never()).getJob(any(JobId.class));
-  }
 }
