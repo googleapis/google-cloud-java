@@ -808,6 +808,22 @@ public final class GcpManagedChannelDynamicPoolTest {
   }
 
   @Test
+  public void affinityKeyReResolvesAwayFromDrainingChannel() throws Exception {
+    pool = newPool(2, 1, 2, 1, 3, Duration.ofSeconds(30), builder());
+    ChannelRef victim = pool.channelRefs.get(0);
+    String key = "session";
+    pool.bind(victim, Collections.singletonList(key));
+    pool.channelRefs.get(1).activeStreamsCountIncr();
+
+    pool.checkScaleDown();
+
+    assertThat(pool.removedChannelRefs).contains(victim);
+    ChannelRef resolved = pool.getChannelRef(key);
+    assertThat(resolved).isNotSameInstanceAs(victim);
+    assertThat(resolved.isActive()).isTrue();
+  }
+
+  @Test
   public void readyAccountingRemainsExactWhenDrainingChannelIsReused() throws Exception {
     pool = newPool(2, 1, 2, 1, 3, Duration.ofSeconds(30), Duration.ofSeconds(5), builder());
     for (ChannelRef ref : pool.channelRefs) {
@@ -938,21 +954,40 @@ public final class GcpManagedChannelDynamicPoolTest {
   }
 
   @Test
-  public void affinityReferenceReResolvesAwayFromDrainingChannel() throws Exception {
-    pool = newPool(4, 2, 4, 1, 3, Duration.ofSeconds(30), builder());
+  public void affinityReferenceStaysOnDrainingChannelUntilShutdown() throws Exception {
+    AtomicLong clock = new AtomicLong(System.nanoTime());
+    pool = newPool(4, 2, 4, 1, 3, Duration.ofSeconds(30), Duration.ofMinutes(1), builder());
+    pool.setNanoClock(clock::get);
     ChannelRef victim = pool.channelRefs.get(0);
     ChannelAffinityRef handle = new ChannelAffinityRef();
     handle.setChannelIdForTest(victim.getId());
 
     pool.checkScaleDown();
+    assertThat(pool.removedChannelRefs).contains(victim);
 
-    ChannelRef resolved = pool.getChannelRefByAffinityRef(handle);
-    assertThat(resolved).isNotSameInstanceAs(victim);
-    assertThat(resolved.isActive()).isTrue();
+    ChannelRef firstCall = pool.getChannelRefByAffinityRef(handle);
+    firstCall.activeStreamsCountIncr();
+    assertThat(firstCall).isSameInstanceAs(victim);
+    assertThat(firstCall.getId()).isEqualTo(victim.getId());
+    pool.finishDrain(victim);
+    assertThat(victim.getChannel().isShutdown()).isFalse();
+
+    ChannelRef secondCall = pool.getChannelRefByAffinityRef(handle);
+    assertThat(secondCall).isSameInstanceAs(victim);
+    assertThat(secondCall.getId()).isEqualTo(firstCall.getId());
+    secondCall.activeStreamsCountDecr(clock.get(), Status.OK, false);
+
+    clock.addAndGet(Duration.ofMinutes(1).plusNanos(1).toNanos());
+    pool.finishDrain(victim);
+    assertThat(victim.getChannel().isShutdown()).isTrue();
+
+    ChannelRef afterShutdown = pool.getChannelRefByAffinityRef(handle);
+    assertThat(afterShutdown).isNotSameInstanceAs(victim);
+    assertThat(afterShutdown.isActive()).isTrue();
   }
 
   @Test
-  public void removedHandlesRebindWithoutHerdingOntoLateCreatedChannel() throws Exception {
+  public void shutdownHandlesRebindWithoutHerdingOntoLateCreatedChannel() throws Exception {
     pool = newPool(8, 8, 9, 2, 5, Duration.ofSeconds(30), builder());
     AtomicLong clock = new AtomicLong(System.nanoTime() + Duration.ofMinutes(1).toNanos());
     pool.setNanoClock(clock::get);
@@ -961,6 +996,7 @@ public final class GcpManagedChannelDynamicPoolTest {
     pool.channelRefs.remove(removed);
     removed.deactivateForTest();
     pool.removedChannelRefs.add(removed);
+    removed.getChannel().shutdownNow();
 
     int[] picksById = new int[9];
     for (int i = 0; i < 10_000; i++) {

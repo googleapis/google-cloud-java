@@ -186,7 +186,7 @@ public final class GcpManagedChannelHotChannelReproducerTest {
   }
 
   @Test
-  public void affinityReferencesRedistributeAfterHystereticScaleDown() throws Exception {
+  public void affinityReferencesRedistributeAfterDrainingChannelsShutdown() throws Exception {
     ScheduledExecutorService responses = Executors.newSingleThreadScheduledExecutor();
     ExecutorService executor = Executors.newFixedThreadPool(100);
     GcpManagedChannel pool = null;
@@ -215,6 +215,15 @@ public final class GcpManagedChannelHotChannelReproducerTest {
         }
       }
       assertThat(orphaned).hasSize(100);
+      for (int i = 0; i < affinityRefs.size(); i++) {
+        if (removedIds.contains(originalIds.get(i))) {
+          assertThat(pool.getChannelRefByAffinityRef(affinityRefs.get(i)).getId())
+              .isEqualTo(originalIds.get(i));
+        }
+      }
+      for (ChannelRef removed : pool.removedChannelRefs) {
+        removed.getChannel().shutdownNow();
+      }
 
       ChannelRef first = pool.channelRefs.get(0);
       ChannelRef second = pool.channelRefs.get(1);
@@ -276,7 +285,9 @@ public final class GcpManagedChannelHotChannelReproducerTest {
       assertThat(pool.removedChannelRefs).hasSize(2);
       for (ChannelRef removed : pool.removedChannelRefs) {
         ChannelRef resolved = pool.getChannelRefByAffinityRef(handles.get(removed.getId()));
-        assertThat(resolved.isActive()).isTrue();
+        assertThat(resolved).isSameInstanceAs(removed);
+        assertThat(resolved.isActive()).isFalse();
+        assertThat(resolved.getChannel().isShutdown()).isFalse();
       }
 
       invokeScaleDownCheck(pool, 3);

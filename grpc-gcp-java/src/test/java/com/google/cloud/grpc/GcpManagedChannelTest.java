@@ -362,7 +362,7 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
-  public void testChannelAffinityRefRemovedChannelPicksAvailableChannel() throws Exception {
+  public void testChannelAffinityRefRemovedOpenChannelStaysStickyUntilShutdown() throws Exception {
     resetGcpChannel();
     ExecutorService executorService = Executors.newSingleThreadExecutor();
     try {
@@ -374,12 +374,16 @@ public final class GcpManagedChannelTest {
       removed.deactivateForTest();
 
       ChannelRef selected = gcpChannel.getChannelRefByAffinityRef(affinityRef);
-      ChannelRef next = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+      assertThat(selected).isSameInstanceAs(removed);
+      assertThat(selected.isActive()).isFalse();
 
-      assertThat(selected).isNotSameInstanceAs(removed);
-      assertThat(selected).isIn(gcpChannel.channelRefs);
-      assertThat(selected.isActive()).isTrue();
-      assertThat(next).isSameInstanceAs(selected);
+      removed.getChannel().shutdownNow();
+      ChannelRef afterShutdown = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+      ChannelRef next = gcpChannel.getChannelRefByAffinityRef(affinityRef);
+      assertThat(afterShutdown).isNotSameInstanceAs(removed);
+      assertThat(afterShutdown).isIn(gcpChannel.channelRefs);
+      assertThat(afterShutdown.isActive()).isTrue();
+      assertThat(next).isSameInstanceAs(afterShutdown);
     } finally {
       gcpChannel.shutdownNow();
       executorService.shutdownNow();

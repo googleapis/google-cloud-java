@@ -133,7 +133,12 @@ public class GcpManagedChannel extends ManagedChannel {
   public static final CallOptions.Key<ChannelAffinityRef> CHANNEL_AFFINITY_REF_KEY =
       CallOptions.Key.create("GcpChannelAffinityRef");
 
-  /** Opaque sticky channel reference for callers that should not depend on {@link ChannelRef}. */
+  /**
+   * Opaque caller-owned channel reference for transaction-lifetime stickiness.
+   *
+   * <p>The reference remains on a draining channel until its delegate shuts down. Call {@link
+   * #useDifferentChannelOnNextCall()} to move the next RPC to another active channel.
+   */
   public static final class ChannelAffinityRef {
     private static final int USE_DIFFERENT_CHANNEL_ON_NEXT_CALL_MASK = 1 << 31;
     private static final int CHANNEL_ID_MASK = ~USE_DIFFERENT_CHANNEL_ON_NEXT_CALL_MASK;
@@ -1986,7 +1991,9 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /**
-   * Pick a {@link ChannelRef} using a caller-owned reference instead of grpc-gcp's affinity map.
+   * Picks a {@link ChannelRef} using a caller-owned reference instead of grpc-gcp's affinity map. A
+   * reference remains sticky while its delegate is open, including while the channel drains, and
+   * re-resolves after delegate shutdown or an explicit request to use a different channel.
    */
   protected ChannelRef getChannelRefByAffinityRef(ChannelAffinityRef affinityRef) {
     // Retry if another thread updates the caller-owned affinity ref while we are picking a channel.
@@ -1999,7 +2006,7 @@ public class GcpManagedChannel extends ManagedChannel {
           channelId == ChannelAffinityRef.NO_CHANNEL_ID
               ? null
               : channelIdToChannelRef.get(channelId);
-      if (!useDifferentChannel && channelRef != null && channelRef.isActive()) {
+      if (!useDifferentChannel && channelRef != null && !channelRef.getChannel().isShutdown()) {
         return channelRef;
       }
 
@@ -2108,7 +2115,10 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private void maybeSignalScaleUp(ChannelRef selectedChannel) {
-    if (!isDynamicScalingEnabled || shuttingDown || channelRefs.size() >= maxSize) {
+    if (!selectedChannel.isActive()
+        || !isDynamicScalingEnabled
+        || shuttingDown
+        || channelRefs.size() >= maxSize) {
       return;
     }
     int activeChannels = channelRefs.size();
