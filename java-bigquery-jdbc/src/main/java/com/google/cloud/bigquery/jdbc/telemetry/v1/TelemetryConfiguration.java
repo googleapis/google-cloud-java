@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
 import java.util.Objects;
+import java.util.Properties;
 
 /** Configuration settings for the BigQuery JDBC driver telemetry client. */
 final class TelemetryConfiguration {
@@ -156,7 +157,7 @@ final class TelemetryConfiguration {
       return this;
     }
 
-    Builder resolveEnabledFlag(java.util.Properties connectionProperties) {
+    Builder resolveProperties(Properties connectionProperties) {
       if (connectionProperties != null) {
         String propValue = connectionProperties.getProperty("EnableDiagnosticTelemetry");
         if (propValue == null) {
@@ -165,21 +166,51 @@ final class TelemetryConfiguration {
         if (propValue != null) {
           if ("0".equals(propValue) || "false".equalsIgnoreCase(propValue)) {
             this.enabled = false;
-            return this;
-          }
-          if ("1".equals(propValue) || "true".equalsIgnoreCase(propValue)) {
+          } else if ("1".equals(propValue) || "true".equalsIgnoreCase(propValue)) {
             this.enabled = true;
-            return this;
+          }
+        }
+
+        String uploadIntervalStr = connectionProperties.getProperty("TelemetryUploadInterval");
+        if (uploadIntervalStr != null) {
+          try {
+            this.uploadIntervalMs = Long.parseLong(uploadIntervalStr);
+          } catch (NumberFormatException ignored) {
+          }
+        }
+
+        String batchSizeStr = connectionProperties.getProperty("TelemetryBatchSize");
+        if (batchSizeStr != null) {
+          try {
+            this.batchSizeThreshold = Integer.parseInt(batchSizeStr);
+          } catch (NumberFormatException ignored) {
           }
         }
       }
+
       String envValue = System.getenv("GOOGLE_CLOUD_TELEMETRY_ENABLED");
       if (envValue != null) {
         if ("0".equals(envValue) || "false".equalsIgnoreCase(envValue)) {
           this.enabled = false;
-          return this;
         }
       }
+
+      String envInterval = System.getenv("GOOGLE_CLOUD_TELEMETRY_UPLOAD_INTERVAL");
+      if (envInterval != null) {
+        try {
+          this.uploadIntervalMs = Long.parseLong(envInterval);
+        } catch (NumberFormatException ignored) {
+        }
+      }
+
+      String envBatch = System.getenv("GOOGLE_CLOUD_TELEMETRY_BATCH_SIZE");
+      if (envBatch != null) {
+        try {
+          this.batchSizeThreshold = Integer.parseInt(envBatch);
+        } catch (NumberFormatException ignored) {
+        }
+      }
+
       return this;
     }
 

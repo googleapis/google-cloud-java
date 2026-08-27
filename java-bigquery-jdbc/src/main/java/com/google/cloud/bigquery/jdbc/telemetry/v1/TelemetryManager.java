@@ -18,6 +18,8 @@ package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
+import com.google.protobuf.Descriptors.EnumValueDescriptor;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,6 +35,7 @@ final class TelemetryManager implements AutoCloseable {
       new BigQueryJdbcCustomLogger(TelemetryManager.class.getName());
 
   private static volatile TelemetryManager instance;
+  private static volatile boolean globallyDisabled = false;
 
   private final TelemetryBatcher batcher;
 
@@ -48,14 +51,33 @@ final class TelemetryManager implements AutoCloseable {
     return getInstance(null);
   }
 
-  static TelemetryManager getInstance(java.util.Properties properties) {
+  static TelemetryManager getInstance(Properties properties) {
+    if (globallyDisabled) {
+      return null;
+    }
+
+    if (properties != null) {
+      TelemetryConfiguration configCheck =
+          TelemetryConfiguration.builder().resolveProperties(properties).build();
+      if (!configCheck.isEnabled()) {
+        synchronized (TelemetryManager.class) {
+          globallyDisabled = true;
+          closeInstance();
+        }
+        return null;
+      }
+    }
+
     TelemetryManager localRef = instance;
     if (localRef == null) {
       synchronized (TelemetryManager.class) {
+        if (globallyDisabled) {
+          return null;
+        }
         localRef = instance;
         if (localRef == null) {
           TelemetryConfiguration config =
-              TelemetryConfiguration.builder().resolveEnabledFlag(properties).build();
+              TelemetryConfiguration.builder().resolveProperties(properties).build();
           ClearcutTransport transport = new ClearcutTransport(config);
           TelemetryBatcher batcher = new TelemetryBatcher(config, transport);
           localRef = new TelemetryManager(batcher);
@@ -123,94 +145,20 @@ final class TelemetryManager implements AutoCloseable {
     }
   }
 
+  // Package-private test helper to reset the global kill switch between test runs
+  static synchronized void resetGlobalDisableForTest() {
+    globallyDisabled = false;
+  }
+
   static StatementType toStatementType(QueryStatistics.StatementType bqStatementType) {
     if (bqStatementType == null) {
       return StatementType.STATEMENT_TYPE_UNSPECIFIED;
     }
-    switch (bqStatementType.name()) {
-      case "SELECT":
-        return StatementType.STATEMENT_TYPE_SELECT;
-      case "INSERT":
-        return StatementType.STATEMENT_TYPE_INSERT;
-      case "UPDATE":
-        return StatementType.STATEMENT_TYPE_UPDATE;
-      case "DELETE":
-        return StatementType.STATEMENT_TYPE_DELETE;
-      case "MERGE":
-        return StatementType.STATEMENT_TYPE_MERGE;
-      case "CREATE_TABLE":
-        return StatementType.STATEMENT_TYPE_CREATE_TABLE;
-      case "CREATE_TABLE_AS_SELECT":
-        return StatementType.STATEMENT_TYPE_CREATE_TABLE_AS_SELECT;
-      case "CREATE_MODEL":
-        return StatementType.STATEMENT_TYPE_CREATE_MODEL;
-      case "CREATE_VIEW":
-        return StatementType.STATEMENT_TYPE_CREATE_VIEW;
-      case "CREATE_FUNCTION":
-        return StatementType.STATEMENT_TYPE_CREATE_FUNCTION;
-      case "CREATE_PROCEDURE":
-        return StatementType.STATEMENT_TYPE_CREATE_PROCEDURE;
-      case "CREATE_MATERIALIZED_VIEW":
-        return StatementType.STATEMENT_TYPE_CREATE_MATERIALIZED_VIEW;
-      case "CREATE_TABLE_FUNCTION":
-        return StatementType.STATEMENT_TYPE_CREATE_TABLE_FUNCTION;
-      case "CREATE_ROW_ACCESS_POLICY":
-        return StatementType.STATEMENT_TYPE_CREATE_ROW_ACCESS_POLICY;
-      case "CREATE_SCHEMA":
-        return StatementType.STATEMENT_TYPE_CREATE_SCHEMA;
-      case "CREATE_SNAPSHOT_TABLE":
-        return StatementType.STATEMENT_TYPE_CREATE_SNAPSHOT_TABLE;
-      case "CREATE_SEARCH_INDEX":
-        return StatementType.STATEMENT_TYPE_CREATE_SEARCH_INDEX;
-      case "CREATE_EXTERNAL_TABLE":
-        return StatementType.STATEMENT_TYPE_CREATE_EXTERNAL_TABLE;
-      case "DROP_TABLE":
-        return StatementType.STATEMENT_TYPE_DROP_TABLE;
-      case "DROP_VIEW":
-        return StatementType.STATEMENT_TYPE_DROP_VIEW;
-      case "DROP_FUNCTION":
-        return StatementType.STATEMENT_TYPE_DROP_FUNCTION;
-      case "DROP_PROCEDURE":
-        return StatementType.STATEMENT_TYPE_DROP_PROCEDURE;
-      case "DROP_EXTERNAL_TABLE":
-        return StatementType.STATEMENT_TYPE_DROP_EXTERNAL_TABLE;
-      case "DROP_MODEL":
-        return StatementType.STATEMENT_TYPE_DROP_MODEL;
-      case "DROP_MATERIALIZED_VIEW":
-        return StatementType.STATEMENT_TYPE_DROP_MATERIALIZED_VIEW;
-      case "DROP_TABLE_FUNCTION":
-        return StatementType.STATEMENT_TYPE_DROP_TABLE_FUNCTION;
-      case "DROP_SEARCH_INDEX":
-        return StatementType.STATEMENT_TYPE_DROP_SEARCH_INDEX;
-      case "DROP_SCHEMA":
-        return StatementType.STATEMENT_TYPE_DROP_SCHEMA;
-      case "DROP_SNAPSHOT_TABLE":
-        return StatementType.STATEMENT_TYPE_DROP_SNAPSHOT_TABLE;
-      case "DROP_ROW_ACCESS_POLICY":
-        return StatementType.STATEMENT_TYPE_DROP_ROW_ACCESS_POLICY;
-      case "ALTER_TABLE":
-        return StatementType.STATEMENT_TYPE_ALTER_TABLE;
-      case "ALTER_VIEW":
-        return StatementType.STATEMENT_TYPE_ALTER_VIEW;
-      case "ALTER_MATERIALIZED_VIEW":
-        return StatementType.STATEMENT_TYPE_ALTER_MATERIALIZED_VIEW;
-      case "ALTER_SCHEMA":
-        return StatementType.STATEMENT_TYPE_ALTER_SCHEMA;
-      case "TRUNCATE_TABLE":
-        return StatementType.STATEMENT_TYPE_TRUNCATE_TABLE;
-      case "EXPORT_DATA":
-        return StatementType.STATEMENT_TYPE_EXPORT_DATA;
-      case "EXPORT_MODEL":
-        return StatementType.STATEMENT_TYPE_EXPORT_MODEL;
-      case "LOAD_DATA":
-        return StatementType.STATEMENT_TYPE_LOAD_DATA;
-      case "CALL":
-        return StatementType.STATEMENT_TYPE_CALL;
-      case "SCRIPT":
-        return StatementType.STATEMENT_TYPE_SCRIPT;
-      default:
-        return StatementType.STATEMENT_TYPE_OTHER;
-    }
+
+    EnumValueDescriptor desc =
+        StatementType.getDescriptor().findValueByName("STATEMENT_TYPE_" + bqStatementType.name());
+
+    return desc != null ? StatementType.valueOf(desc) : StatementType.STATEMENT_TYPE_OTHER;
   }
 
   static AuthenticationType toAuthenticationType(int oauthType) {

@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.jdbc.telemetry.v1;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -35,6 +36,7 @@ public class TelemetryManagerTest {
   @AfterEach
   public void cleanUp() {
     TelemetryManager.closeInstance();
+    TelemetryManager.resetGlobalDisableForTest();
   }
 
   @Test
@@ -192,20 +194,39 @@ public class TelemetryManagerTest {
     Properties props = new Properties();
 
     // Default is true
-    assertTrue(TelemetryConfiguration.builder().resolveEnabledFlag(props).build().isEnabled());
+    assertTrue(TelemetryConfiguration.builder().resolveProperties(props).build().isEnabled());
 
     // Disabled via lowercase
     props.setProperty("enableDiagnosticTelemetry", "false");
-    assertFalse(TelemetryConfiguration.builder().resolveEnabledFlag(props).build().isEnabled());
+    assertFalse(TelemetryConfiguration.builder().resolveProperties(props).build().isEnabled());
 
     // Disabled via uppercase and "0"
     props.clear();
     props.setProperty("EnableDiagnosticTelemetry", "0");
-    assertFalse(TelemetryConfiguration.builder().resolveEnabledFlag(props).build().isEnabled());
+    assertFalse(TelemetryConfiguration.builder().resolveProperties(props).build().isEnabled());
 
     // Enabled via "1"
     props.clear();
     props.setProperty("EnableDiagnosticTelemetry", "1");
-    assertTrue(TelemetryConfiguration.builder().resolveEnabledFlag(props).build().isEnabled());
+    assertTrue(TelemetryConfiguration.builder().resolveProperties(props).build().isEnabled());
+  }
+
+  @Test
+  public void testGlobalKillSwitch() {
+    // Turn it on
+    java.util.Properties props1 = new java.util.Properties();
+    props1.setProperty("EnableDiagnosticTelemetry", "1");
+    TelemetryManager mgr1 = TelemetryManager.getInstance(props1);
+    assertNotNull(mgr1);
+
+    // Any connection passes '0', it gets permanently killed
+    java.util.Properties props2 = new java.util.Properties();
+    props2.setProperty("EnableDiagnosticTelemetry", "0");
+    TelemetryManager mgr2 = TelemetryManager.getInstance(props2);
+
+    // The manager should be null and killed globally
+    assertNull(mgr2);
+    assertNull(TelemetryManager.getInstance());
+    assertNull(TelemetryManager.getInstance(props1));
   }
 }
