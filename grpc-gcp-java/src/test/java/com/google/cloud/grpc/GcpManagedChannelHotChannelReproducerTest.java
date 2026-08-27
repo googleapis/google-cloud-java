@@ -306,8 +306,7 @@ public final class GcpManagedChannelHotChannelReproducerTest {
         GcpChannelPoolOptions.newBuilder()
             .setMinSize(minimum)
             .setInitSize(initial)
-            .setMaxSize(initial)
-            .setDrainIdleGrace(Duration.ofMinutes(1));
+            .setMaxSize(initial);
     if (dynamic) {
       options
           .setDynamicScaling(10, 20, Duration.ofMinutes(1))
@@ -357,7 +356,6 @@ public final class GcpManagedChannelHotChannelReproducerTest {
         poolOptions.disableDynamicScaling();
       } else {
         poolOptions.setDynamicScaling(MIN_RPC_PER_CHANNEL, MAX_RPC_PER_CHANNEL, scaleDownInterval);
-        compressBranchSpecificScaleUpTimer(poolOptions);
       }
 
       pool =
@@ -426,10 +424,6 @@ public final class GcpManagedChannelHotChannelReproducerTest {
       callersExecutor.awaitTermination(10, TimeUnit.SECONDS);
       responses.awaitTermination(10, TimeUnit.SECONDS);
     }
-  }
-
-  private static void compressBranchSpecificScaleUpTimer(GcpChannelPoolOptions.Builder builder) {
-    builder.setScaleUpCooldown(Duration.ofNanos(1));
   }
 
   private static void runTransactionsAcrossScaleDown(

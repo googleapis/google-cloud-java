@@ -49,13 +49,12 @@ public class GcpManagedChannelOptions {
     LINEAR_SCAN,
 
     /**
-     * Picks two channels at random and returns the one with fewer active streams. Ties are broken
-     * by preferring the more recently active channel (warmth-preserving).
+     * Samples two channels at random with replacement and returns the one with fewer active
+     * streams. The first sample wins ties. Inactive or draining samples are retried.
      *
-     * <p>This is the default strategy. It avoids the thundering herd problem while keeping warm
-     * channels preferred under low traffic. The trade-off is that it may not always find the global
-     * minimum, but in practice the difference is negligible because stream counts are inherently
-     * racy.
+     * <p>This is the default strategy. It avoids the thundering herd problem without preferring
+     * channel warmth. The trade-off is that it may not always find the global minimum, but in
+     * practice the difference is negligible because stream counts are inherently racy.
      */
     POWER_OF_TWO,
   }
@@ -212,10 +211,8 @@ public class GcpManagedChannelOptions {
     private final int maxRpcPerChannel;
     // How often to check for a possibility to scale down.
     private final Duration scaleDownInterval;
-    private final Duration scaleUpCooldown;
     private final int scaleDownConsecutiveLowLoadChecks;
     private final int maxScaleDownChannels;
-    private final Duration drainIdleGrace;
 
     // Use round-robin channel selection for affinity binding calls.
     private final boolean useRoundRobinOnBind;
@@ -233,10 +230,8 @@ public class GcpManagedChannelOptions {
       minRpcPerChannel = builder.minRpcPerChannel;
       maxRpcPerChannel = builder.maxRpcPerChannel;
       scaleDownInterval = builder.scaleDownInterval;
-      scaleUpCooldown = builder.scaleUpCooldown;
       scaleDownConsecutiveLowLoadChecks = builder.scaleDownConsecutiveLowLoadChecks;
       maxScaleDownChannels = builder.maxScaleDownChannels;
-      drainIdleGrace = builder.drainIdleGrace;
       concurrentStreamsLowWatermark = builder.concurrentStreamsLowWatermark;
       useRoundRobinOnBind = builder.useRoundRobinOnBind;
       affinityKeyLifetime = builder.affinityKeyLifetime;
@@ -268,20 +263,12 @@ public class GcpManagedChannelOptions {
       return scaleDownInterval;
     }
 
-    public Duration getScaleUpCooldown() {
-      return scaleUpCooldown;
-    }
-
     public int getScaleDownConsecutiveLowLoadChecks() {
       return scaleDownConsecutiveLowLoadChecks;
     }
 
     public int getMaxScaleDownChannels() {
       return maxScaleDownChannels;
-    }
-
-    public Duration getDrainIdleGrace() {
-      return drainIdleGrace;
     }
 
     public int getConcurrentStreamsLowWatermark() {
@@ -328,10 +315,8 @@ public class GcpManagedChannelOptions {
       private int minRpcPerChannel = 0;
       private int maxRpcPerChannel = 0;
       private Duration scaleDownInterval = Duration.ZERO;
-      private Duration scaleUpCooldown = Duration.ofSeconds(10);
       private int scaleDownConsecutiveLowLoadChecks = 3;
       private int maxScaleDownChannels = 2;
-      private Duration drainIdleGrace = Duration.ofMinutes(1);
       private int concurrentStreamsLowWatermark = GcpManagedChannel.DEFAULT_MAX_STREAM;
       private boolean useRoundRobinOnBind = false;
       private Duration affinityKeyLifetime = Duration.ZERO;
@@ -351,10 +336,8 @@ public class GcpManagedChannelOptions {
         this.minRpcPerChannel = options.getMinRpcPerChannel();
         this.maxRpcPerChannel = options.getMaxRpcPerChannel();
         this.scaleDownInterval = options.getScaleDownInterval();
-        this.scaleUpCooldown = options.getScaleUpCooldown();
         this.scaleDownConsecutiveLowLoadChecks = options.getScaleDownConsecutiveLowLoadChecks();
         this.maxScaleDownChannels = options.getMaxScaleDownChannels();
-        this.drainIdleGrace = options.getDrainIdleGrace();
         this.concurrentStreamsLowWatermark = options.getConcurrentStreamsLowWatermark();
         this.useRoundRobinOnBind = options.isUseRoundRobinOnBind();
         this.affinityKeyLifetime = options.getAffinityKeyLifetime();
@@ -456,14 +439,6 @@ public class GcpManagedChannelOptions {
         return this;
       }
 
-      public Builder setScaleUpCooldown(Duration scaleUpCooldown) {
-        Preconditions.checkNotNull(scaleUpCooldown, "Scale up cooldown must not be null.");
-        Preconditions.checkArgument(
-            !scaleUpCooldown.isNegative(), "Scale up cooldown must not be negative.");
-        this.scaleUpCooldown = scaleUpCooldown.isZero() ? Duration.ofSeconds(10) : scaleUpCooldown;
-        return this;
-      }
-
       public Builder setScaleDownConsecutiveLowLoadChecks(int checks) {
         Preconditions.checkArgument(checks > 0, "Scale down checks must be positive.");
         this.scaleDownConsecutiveLowLoadChecks = checks;
@@ -473,14 +448,6 @@ public class GcpManagedChannelOptions {
       public Builder setMaxScaleDownChannels(int channels) {
         Preconditions.checkArgument(channels > 0, "Scale down channel limit must be positive.");
         this.maxScaleDownChannels = channels;
-        return this;
-      }
-
-      public Builder setDrainIdleGrace(Duration drainIdleGrace) {
-        Preconditions.checkNotNull(drainIdleGrace, "Drain idle grace must not be null.");
-        Preconditions.checkArgument(
-            !drainIdleGrace.isNegative(), "Drain idle grace must not be negative.");
-        this.drainIdleGrace = drainIdleGrace;
         return this;
       }
 
@@ -542,8 +509,9 @@ public class GcpManagedChannelOptions {
        * Sets the strategy for picking the least busy channel from the pool.
        *
        * <p>Defaults to {@link ChannelPickStrategy#POWER_OF_TWO} which avoids the thundering herd
-       * problem by randomly sampling two channels and picking the less busy one, with ties broken
-       * by channel warmth (most recently active).
+       * problem by sampling two channels with replacement and picking the less busy one. The first
+       * sample wins ties, with no channel-warmth preference. Inactive or draining samples are
+       * retried.
        *
        * <p>Use {@link ChannelPickStrategy#LINEAR_SCAN} to restore the legacy behavior of scanning
        * all channels and always picking the one with the fewest active streams.

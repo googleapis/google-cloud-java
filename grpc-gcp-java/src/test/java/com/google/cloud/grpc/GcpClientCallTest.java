@@ -17,9 +17,11 @@
 package com.google.cloud.grpc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -222,6 +224,44 @@ public final class GcpClientCallTest {
     verify(delegateCall).start(listenerCaptor.capture(), any(Metadata.class));
     listenerCaptor.getValue().onClose(Status.OK, new Metadata());
     call.cancel("late cancel", null);
+
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
+  }
+
+  @Test
+  public void gcpClientCall_exceptionInQueuedStart_doesNotLeakActiveStreamCount() {
+    gcpChannel.channelRefs.add(channelRef);
+    doThrow(new IllegalStateException("start failed"))
+        .when(delegateCall)
+        .start(any(), any(Metadata.class));
+    GcpClientCall<String, String> call =
+        new GcpClientCall<>(
+            gcpChannel,
+            METHOD_DESCRIPTOR,
+            CallOptions.DEFAULT,
+            AffinityConfig.newBuilder()
+                .setCommand(AffinityConfig.Command.BOUND)
+                .setAffinityKey("name")
+                .build());
+    call.start(new ClientCall.Listener<String>() {}, new Metadata());
+
+    assertThrows(IllegalStateException.class, () -> call.sendMessage("request"));
+
+    assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
+  }
+
+  @Test
+  public void simpleGcpClientCall_exceptionInStart_doesNotLeakActiveStreamCount() {
+    doThrow(new IllegalStateException("start failed"))
+        .when(delegateCall)
+        .start(any(), any(Metadata.class));
+    GcpClientCall.SimpleGcpClientCall<String, String> call =
+        new GcpClientCall.SimpleGcpClientCall<>(
+            gcpChannel, channelRef, METHOD_DESCRIPTOR, CallOptions.DEFAULT);
+
+    assertThrows(
+        IllegalStateException.class,
+        () -> call.start(new ClientCall.Listener<String>() {}, new Metadata()));
 
     assertThat(channelRef.getActiveStreamsCount()).isEqualTo(0);
   }

@@ -18,6 +18,7 @@ package com.google.cloud.grpc;
 
 import com.google.cloud.grpc.proto.AffinityConfig;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import io.grpc.Attributes;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
@@ -124,7 +125,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
           delegateChannelRef = delegateChannel.getChannelRef(key);
         }
         delegateChannelRef.activeStreamsCountIncr();
-        countState.set(1);
+        Preconditions.checkState(countState.compareAndSet(0, 1));
 
         // Create the client call and do the previous operations.
         CallOptions callOptionsWithChannelId =
@@ -132,14 +133,15 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         try {
           delegateCall =
               delegateChannelRef.getChannel().newCall(methodDescriptor, callOptionsWithChannelId);
+          for (Runnable call : calls) {
+            call.run();
+          }
         } catch (RuntimeException | Error failure) {
           finishCount(Status.fromThrowable(failure), true);
           throw failure;
+        } finally {
+          calls.clear();
         }
-        for (Runnable call : calls) {
-          call.run();
-        }
-        calls.clear();
         started = true;
       }
     }
@@ -179,8 +181,6 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
   private void finishCount(Status status, boolean cancelled) {
     if (countState.compareAndSet(1, 2)) {
       delegateChannelRef.activeStreamsCountDecr(startNanos, status, cancelled);
-    } else {
-      countState.compareAndSet(0, 2);
     }
   }
 
@@ -261,7 +261,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
           callOptions.withOption(GcpManagedChannel.CHANNEL_ID_KEY, channelRef.getId());
       startNanos = System.nanoTime();
       channelRef.activeStreamsCountIncr();
-      countState.set(1);
+      Preconditions.checkState(countState.compareAndSet(0, 1));
       try {
         this.delegateCall =
             channelRef.getChannel().newCall(methodDescriptor, callOptionsWithChannelId);
@@ -300,7 +300,12 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
             }
           };
 
-      delegateCall.start(listener, headers);
+      try {
+        delegateCall.start(listener, headers);
+      } catch (RuntimeException | Error failure) {
+        finishCount(Status.fromThrowable(failure), true);
+        throw failure;
+      }
     }
 
     @Override
@@ -316,8 +321,6 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     private void finishCount(Status status, boolean cancelled) {
       if (countState.compareAndSet(1, 2)) {
         channelRef.activeStreamsCountDecr(startNanos, status, cancelled);
-      } else {
-        countState.compareAndSet(0, 2);
       }
     }
   }

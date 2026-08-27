@@ -20,10 +20,12 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.grpc.GcpManagedChannel.ChannelRef;
+import com.google.cloud.grpc.GcpManagedChannelOptions.ChannelPickStrategy;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.time.Duration;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.Test;
@@ -83,6 +85,31 @@ public final class GcpManagedChannelSkewFixTest {
   }
 
   @Test
+  public void pickFromCandidates_concurrentScaleDownShrink_doesNotThrowIndexOutOfBounds() {
+    pool = newPool(2, 1);
+    AtomicBoolean shrunk = new AtomicBoolean();
+    pool.setCandidateIndexPickerForTest(
+        size -> {
+          if (shrunk.compareAndSet(false, true)) {
+            pool.channelRefs.remove(size - 1);
+          }
+          return size - 1;
+        });
+
+    assertThat(pool.pickFromCandidates(pool.channelRefs)).isNotNull();
+  }
+
+  @Test
+  public void pickLeastBusyNoFallback_linearScan_skipsInactiveChannels() {
+    pool = newPool(2, 2, ChannelPickStrategy.LINEAR_SCAN);
+    ChannelRef inactive = pool.channelRefs.get(0);
+    ChannelRef active = pool.channelRefs.get(1);
+    inactive.deactivateForTest();
+
+    assertThat(pool.getChannelRef(null)).isSameInstanceAs(active);
+  }
+
+  @Test
   public void affinityReferenceStaysStickyUntilDelegateShutdown() {
     pool = newPool(4, 2);
     reserveOneStreamPerChannel();
@@ -100,6 +127,11 @@ public final class GcpManagedChannelSkewFixTest {
   }
 
   private GcpManagedChannel newPool(int initial, int minimum) {
+    return newPool(initial, minimum, ChannelPickStrategy.POWER_OF_TWO);
+  }
+
+  private GcpManagedChannel newPool(
+      int initial, int minimum, ChannelPickStrategy channelPickStrategy) {
     GcpChannelPoolOptions options =
         GcpChannelPoolOptions.newBuilder()
             .setInitSize(initial)
@@ -108,6 +140,7 @@ public final class GcpManagedChannelSkewFixTest {
             .setDynamicScaling(10, 20, Duration.ofMinutes(1))
             .setScaleDownConsecutiveLowLoadChecks(3)
             .setMaxScaleDownChannels(2)
+            .setChannelPickStrategy(channelPickStrategy)
             .build();
     return (GcpManagedChannel)
         GcpManagedChannelBuilder.forDelegateBuilder(

@@ -251,7 +251,6 @@ public class GcpManagedChannel extends ManagedChannel {
   private AtomicInteger maxActiveStreams = new AtomicInteger();
   private AtomicInteger minTotalActiveStreams = new AtomicInteger();
   private AtomicInteger maxTotalActiveStreams = new AtomicInteger();
-  private AtomicInteger maxTotalActiveStreamsForScaleDown = new AtomicInteger();
   private long minOkCalls = 0;
   private long maxOkCalls = 0;
   private final AtomicLong totalOkCalls = new AtomicLong();
@@ -1952,11 +1951,10 @@ public class GcpManagedChannel extends ManagedChannel {
    * GcpManagedChannelOptions.ChannelPickStrategy}.
    */
   private ChannelRef pickLeastBusyNoFallback() {
-    ChannelRef channelCandidate;
+    ChannelRef channelCandidate = pickFromCandidates(channelRefs);
     int minStreams;
 
     if (channelPickStrategy == GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO) {
-      channelCandidate = pickFromCandidates(channelRefs);
       // With power-of-two, streams distribute approximately (not exactly) evenly.
       // Use max streams for scale-up: if ANY channel hits the watermark, it's overloaded now
       // and we should add capacity before other channels follow. This preserves the original
@@ -1964,15 +1962,7 @@ public class GcpManagedChannel extends ManagedChannel {
       // Global min would delay scale-up; sampled min would be noisy.
       minStreams = getMaxActiveStreams();
     } else {
-      channelCandidate = channelRefs.get(0);
       minStreams = channelCandidate.getActiveStreamsCount();
-      for (ChannelRef channelRef : channelRefs) {
-        int cnt = channelRef.getActiveStreamsCount();
-        if (cnt < minStreams) {
-          minStreams = cnt;
-          channelCandidate = channelRef;
-        }
-      }
     }
 
     if (shouldScaleUp(minStreams)) {
@@ -2053,19 +2043,20 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Picks a channel from the given candidate list using the configured strategy.
    *
-   * <p>For {@code POWER_OF_TWO}: samples two distinct random candidates and picks the less busy
-   * one. On tie, prefers the channel with more recent activity (warmer) to preserve connection
-   * warmth under low traffic.
+   * <p>For {@code POWER_OF_TWO}: samples twice with replacement and picks the less busy candidate.
+   * The first sample wins ties. Draining or inactive candidates are retried before falling back to
+   * a full scan.
    *
-   * <p>For {@code LINEAR_SCAN}: deterministic scan picking the first least-busy channel.
+   * <p>For {@code LINEAR_SCAN}: deterministic scan picking the first least-busy active channel.
    */
   @VisibleForTesting
   ChannelRef pickFromCandidates(List<ChannelRef> candidates) {
-    int size = candidates.size();
+    Object[] snapshot = candidates.toArray();
+    int size = snapshot.length;
     if (channelPickStrategy == GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO) {
       for (int attempt = 0; attempt < 2 * size; attempt++) {
-        ChannelRef first = candidates.get(candidateIndexPicker.applyAsInt(size));
-        ChannelRef second = candidates.get(candidateIndexPicker.applyAsInt(size));
+        ChannelRef first = (ChannelRef) snapshot[candidateIndexPicker.applyAsInt(size)];
+        ChannelRef second = (ChannelRef) snapshot[candidateIndexPicker.applyAsInt(size)];
         if (!first.isActive() || !second.isActive()) {
           continue;
         }
@@ -2074,7 +2065,8 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     ChannelRef best = null;
     int bestStreams = Integer.MAX_VALUE;
-    for (ChannelRef candidate : candidates) {
+    for (Object element : snapshot) {
+      ChannelRef candidate = (ChannelRef) element;
       if (!candidate.isActive()) {
         continue;
       }
@@ -2548,7 +2540,6 @@ public class GcpManagedChannel extends ManagedChannel {
       maxActiveStreams.accumulateAndGet(actStreams, Math::max);
       int totalActStreams = totalActiveStreams.incrementAndGet();
       maxTotalActiveStreams.accumulateAndGet(totalActStreams, Math::max);
-      maxTotalActiveStreamsForScaleDown.accumulateAndGet(totalActStreams, Math::max);
     }
 
     protected void activeStreamsCountDecr(long startNanos, Status status, boolean fromClientSide) {

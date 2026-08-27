@@ -756,11 +756,7 @@ public final class GcpManagedChannelTest {
     }
   }
 
-  /**
-   * Verifies that under low traffic with POWER_OF_TWO, the warm channel (most recently active) is
-   * preferred when stream counts are tied. This preserves connection warmth without the thundering
-   * herd problem.
-   */
+  /** Verifies that POWER_OF_TWO does not prefer a warm channel when stream counts are tied. */
   @Test
   public void testPowerOfTwoDoesNotPreferWarmChannelOnTie() throws Exception {
     resetGcpChannel();
@@ -900,15 +896,14 @@ public final class GcpManagedChannelTest {
     }
     pool.channelRefs.get(1).activeStreamsCountIncr();
     // As we reached max size and cannot create new channels and having ready channels with low
-    // watermark and low watermark + 1 streams, the best channel for the next channel request with
-    // the fallback enabled is the channel 2 with low watermark streams because it's the least busy
-    // ready channel.
+    // watermark and low watermark + 1 streams, power-of-two selection can return either ready
+    // channel because it samples with replacement.
     assertEquals(lowWatermark + 1, pool.channelRefs.get(1).getActiveStreamsCount());
     assertEquals(lowWatermark, pool.channelRefs.get(2).getActiveStreamsCount());
     chRef = pool.getChannelRef(null);
-    assertEquals(2, chRef.getId());
+    assertThat(chRef.getId()).isAnyOf(1, 2);
     assertEquals(3, pool.getNumberOfChannels());
-    // This was the third fallback from non-ready channel 0 to the channel 2.
+    // This was the third fallback from non-ready channel 0 to a ready channel.
     assertFallbacksMetric(fakeRegistry, 3, 0);
 
     // Let's bring channel 1 to max streams and mark channel 2 as not ready.
