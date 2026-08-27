@@ -127,6 +127,11 @@ public class GcpManagedChannel extends ManagedChannel {
       state.getAndUpdate(value -> value | USE_DIFFERENT_CHANNEL_ON_NEXT_CALL_MASK);
     }
 
+    @VisibleForTesting
+    void setChannelIdForTest(int channelId) {
+      state.set(stateFromChannelId(channelId));
+    }
+
     private static int channelIdFromState(int state) {
       int encodedChannelId = state & CHANNEL_ID_MASK;
       return encodedChannelId == 0 ? NO_CHANNEL_ID : encodedChannelId - 1;
@@ -369,7 +374,8 @@ public class GcpManagedChannel extends ManagedChannel {
         });
   }
 
-  private synchronized void checkScaleDown() {
+  @VisibleForTesting
+  synchronized void checkScaleDown() {
     if (!isDynamicScalingEnabled) {
       return;
     }

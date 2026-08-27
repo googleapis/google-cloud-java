@@ -212,6 +212,10 @@ public class GcpManagedChannelOptions {
     private final int maxRpcPerChannel;
     // How often to check for a possibility to scale down.
     private final Duration scaleDownInterval;
+    private final Duration scaleUpCooldown;
+    private final int scaleDownConsecutiveLowLoadChecks;
+    private final int maxScaleDownChannels;
+    private final Duration drainIdleGrace;
 
     // Use round-robin channel selection for affinity binding calls.
     private final boolean useRoundRobinOnBind;
@@ -229,6 +233,10 @@ public class GcpManagedChannelOptions {
       minRpcPerChannel = builder.minRpcPerChannel;
       maxRpcPerChannel = builder.maxRpcPerChannel;
       scaleDownInterval = builder.scaleDownInterval;
+      scaleUpCooldown = builder.scaleUpCooldown;
+      scaleDownConsecutiveLowLoadChecks = builder.scaleDownConsecutiveLowLoadChecks;
+      maxScaleDownChannels = builder.maxScaleDownChannels;
+      drainIdleGrace = builder.drainIdleGrace;
       concurrentStreamsLowWatermark = builder.concurrentStreamsLowWatermark;
       useRoundRobinOnBind = builder.useRoundRobinOnBind;
       affinityKeyLifetime = builder.affinityKeyLifetime;
@@ -258,6 +266,22 @@ public class GcpManagedChannelOptions {
 
     public Duration getScaleDownInterval() {
       return scaleDownInterval;
+    }
+
+    public Duration getScaleUpCooldown() {
+      return scaleUpCooldown;
+    }
+
+    public int getScaleDownConsecutiveLowLoadChecks() {
+      return scaleDownConsecutiveLowLoadChecks;
+    }
+
+    public int getMaxScaleDownChannels() {
+      return maxScaleDownChannels;
+    }
+
+    public Duration getDrainIdleGrace() {
+      return drainIdleGrace;
     }
 
     public int getConcurrentStreamsLowWatermark() {
@@ -304,6 +328,10 @@ public class GcpManagedChannelOptions {
       private int minRpcPerChannel = 0;
       private int maxRpcPerChannel = 0;
       private Duration scaleDownInterval = Duration.ZERO;
+      private Duration scaleUpCooldown = Duration.ofSeconds(10);
+      private int scaleDownConsecutiveLowLoadChecks = 3;
+      private int maxScaleDownChannels = 2;
+      private Duration drainIdleGrace = Duration.ofMinutes(1);
       private int concurrentStreamsLowWatermark = GcpManagedChannel.DEFAULT_MAX_STREAM;
       private boolean useRoundRobinOnBind = false;
       private Duration affinityKeyLifetime = Duration.ZERO;
@@ -323,6 +351,10 @@ public class GcpManagedChannelOptions {
         this.minRpcPerChannel = options.getMinRpcPerChannel();
         this.maxRpcPerChannel = options.getMaxRpcPerChannel();
         this.scaleDownInterval = options.getScaleDownInterval();
+        this.scaleUpCooldown = options.getScaleUpCooldown();
+        this.scaleDownConsecutiveLowLoadChecks = options.getScaleDownConsecutiveLowLoadChecks();
+        this.maxScaleDownChannels = options.getMaxScaleDownChannels();
+        this.drainIdleGrace = options.getDrainIdleGrace();
         this.concurrentStreamsLowWatermark = options.getConcurrentStreamsLowWatermark();
         this.useRoundRobinOnBind = options.isUseRoundRobinOnBind();
         this.affinityKeyLifetime = options.getAffinityKeyLifetime();
@@ -421,6 +453,34 @@ public class GcpManagedChannelOptions {
         this.minRpcPerChannel = 0;
         this.maxRpcPerChannel = 0;
         this.scaleDownInterval = Duration.ZERO;
+        return this;
+      }
+
+      public Builder setScaleUpCooldown(Duration scaleUpCooldown) {
+        Preconditions.checkNotNull(scaleUpCooldown, "Scale up cooldown must not be null.");
+        Preconditions.checkArgument(
+            !scaleUpCooldown.isNegative(), "Scale up cooldown must not be negative.");
+        this.scaleUpCooldown = scaleUpCooldown.isZero() ? Duration.ofSeconds(10) : scaleUpCooldown;
+        return this;
+      }
+
+      public Builder setScaleDownConsecutiveLowLoadChecks(int checks) {
+        Preconditions.checkArgument(checks > 0, "Scale down checks must be positive.");
+        this.scaleDownConsecutiveLowLoadChecks = checks;
+        return this;
+      }
+
+      public Builder setMaxScaleDownChannels(int channels) {
+        Preconditions.checkArgument(channels > 0, "Scale down channel limit must be positive.");
+        this.maxScaleDownChannels = channels;
+        return this;
+      }
+
+      public Builder setDrainIdleGrace(Duration drainIdleGrace) {
+        Preconditions.checkNotNull(drainIdleGrace, "Drain idle grace must not be null.");
+        Preconditions.checkArgument(
+            !drainIdleGrace.isNegative(), "Drain idle grace must not be negative.");
+        this.drainIdleGrace = drainIdleGrace;
         return this;
       }
 
