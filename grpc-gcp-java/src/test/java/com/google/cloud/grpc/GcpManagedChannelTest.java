@@ -365,6 +365,72 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
+  public void fallbackUsesChannelIdMapAfterPoolHasIndexGap() {
+    resetGcpChannel();
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    try {
+      List<FakeManagedChannel> channels = new ArrayList<>();
+      for (int i = 0; i < 3; i++) {
+        FakeManagedChannel channel = new FakeManagedChannel(executorService);
+        channel.setState(ConnectivityState.READY);
+        channels.add(channel);
+      }
+      gcpChannel =
+          (GcpManagedChannel)
+              GcpManagedChannelBuilder.forDelegateBuilder(new FakeManagedChannelBuilder(channels))
+                  .withOptions(
+                      GcpManagedChannelOptions.newBuilder()
+                          .withChannelPoolOptions(
+                              GcpChannelPoolOptions.newBuilder()
+                                  .setMinSize(3)
+                                  .setMaxSize(3)
+                                  .build())
+                          .withResiliencyOptions(
+                              GcpResiliencyOptions.newBuilder().setNotReadyFallback(true).build())
+                          .build())
+                  .build();
+      ChannelRef removed = gcpChannel.channelRefs.get(0);
+      ChannelRef mapped = gcpChannel.channelRefs.get(1);
+      ChannelRef fallback = gcpChannel.channelRefs.get(2);
+      String key = "session";
+      gcpChannel.bind(mapped, Collections.singletonList(key));
+      gcpChannel.processChannelStateChange(mapped.getId(), ConnectivityState.TRANSIENT_FAILURE);
+      gcpChannel.fallbackMapForTest().get(mapped.getId()).put(key, fallback.getId());
+      gcpChannel.channelRefs.remove(removed);
+
+      assertThat(gcpChannel.getChannelRef(key)).isSameInstanceAs(fallback);
+    } finally {
+      gcpChannel.shutdownNow();
+      executorService.shutdownNow();
+    }
+  }
+
+  @Test
+  public void readyAccountingRemainsExactWhenReadyChannelIsReused() {
+    resetGcpChannel();
+    ExecutorService executorService = Executors.newSingleThreadExecutor();
+    try {
+      gcpChannel = createPoolWithFakeReadyChannels(executorService, 2);
+      assertThat(gcpChannel.readyChannelCountForTest()).isEqualTo(2);
+
+      ChannelRef reused = gcpChannel.channelRefs.get(0);
+      gcpChannel.channelRefs.remove(reused);
+      reused.deactivateForTest();
+      gcpChannel.removedChannelRefs.add(reused);
+      assertThat(gcpChannel.readyChannelCountForTest()).isEqualTo(1);
+
+      assertThat(gcpChannel.createNewChannel()).isSameInstanceAs(reused);
+      assertThat(gcpChannel.readyChannelCountForTest()).isEqualTo(2);
+      reused.deactivateForTest();
+      reused.deactivateForTest();
+      assertThat(gcpChannel.readyChannelCountForTest()).isEqualTo(1);
+    } finally {
+      gcpChannel.shutdownNow();
+      executorService.shutdownNow();
+    }
+  }
+
+  @Test
   public void testChannelAffinityRefRemovedChannelPicksAvailableChannel() throws Exception {
     resetGcpChannel();
     ExecutorService executorService = Executors.newSingleThreadExecutor();

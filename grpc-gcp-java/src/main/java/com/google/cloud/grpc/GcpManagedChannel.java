@@ -270,6 +270,16 @@ public class GcpManagedChannel extends ManagedChannel {
   private Supplier<Long> nanoClock = System::nanoTime;
 
   @VisibleForTesting
+  Map<Integer, Map<String, Integer>> fallbackMapForTest() {
+    return fallbackMap;
+  }
+
+  @VisibleForTesting
+  int readyChannelCountForTest() {
+    return readyChannels.get();
+  }
+
+  @VisibleForTesting
   void setNanoClock(Supplier<Long> nanoClock) {
     this.nanoClock = nanoClock;
   }
@@ -408,10 +418,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
     for (ChannelRef channelRef : channelsToRemove) {
       channelRef.resetAffinityCount();
-      channelRef.deactivate();
-      if (channelRef.getState() == ConnectivityState.READY) {
-        decReadyChannels(false);
-      }
+      channelRef.deactivateAndAccountReadiness();
     }
 
     // Remove affinity keys mapping for the channels.
@@ -1482,6 +1489,9 @@ public class GcpManagedChannel extends ManagedChannel {
     private long connectingStartNanos;
     private long connectedSinceNanos;
 
+    @GuardedBy("channelRef")
+    private boolean readyAccounted;
+
     private ChannelStateMonitor(ManagedChannel channel, ChannelRef channelRef) {
       this.channelRef = channelRef;
       this.channel = channel;
@@ -1496,14 +1506,25 @@ public class GcpManagedChannel extends ManagedChannel {
       return currentState;
     }
 
+    private void accountReadyIfNeeded() {
+      if (currentState == ConnectivityState.READY && !readyAccounted) {
+        readyAccounted = true;
+        incReadyChannels(false);
+      }
+    }
+
+    private void unaccountReadyIfNeeded() {
+      if (readyAccounted) {
+        readyAccounted = false;
+        decReadyChannels(false);
+      }
+    }
+
     @Override
     public void run() {
       if (channel == null) {
         return;
       }
-
-      // Is the channel in the pool?
-      boolean isActive = channelRefs.contains(this.channelRef);
 
       // Keep minSize channels always connected.
       boolean requestConnection =
@@ -1515,35 +1536,39 @@ public class GcpManagedChannel extends ManagedChannel {
                   .anyMatch(id -> (id == channelRef.getId()));
 
       ConnectivityState newState = channel.getState(requestConnection);
-      if (logger.isLoggable(Level.FINER)) {
-        logger.finer(
-            log(
-                "Channel %d state change detected: %s -> %s",
-                channelRef.getId(), currentState, newState));
-      }
-      if (newState == ConnectivityState.READY && currentState != ConnectivityState.READY) {
-        connectedSinceNanos = System.nanoTime();
-        if (isActive) {
-          incReadyChannels(true);
-          if (connectingStartNanos > 0) {
-            saveReadinessTime(System.nanoTime() - connectingStartNanos);
-          }
+      boolean isActive;
+      synchronized (channelRef) {
+        isActive = channelRef.isActive() && channelRefs.contains(channelRef);
+        if (logger.isLoggable(Level.FINER)) {
+          logger.finer(
+              log(
+                  "Channel %d state change detected: %s -> %s",
+                  channelRef.getId(), currentState, newState));
         }
-        connectingStartNanos = 0;
+        if (newState == ConnectivityState.READY && currentState != ConnectivityState.READY) {
+          connectedSinceNanos = System.nanoTime();
+          if (isActive && !readyAccounted) {
+            readyAccounted = true;
+            incReadyChannels(true);
+            if (connectingStartNanos > 0) {
+              saveReadinessTime(System.nanoTime() - connectingStartNanos);
+            }
+          }
+          connectingStartNanos = 0;
+        }
+        if (newState != ConnectivityState.READY && readyAccounted) {
+          readyAccounted = false;
+          decReadyChannels(true);
+        }
+        if (newState == ConnectivityState.CONNECTING
+            && currentState != ConnectivityState.CONNECTING) {
+          connectingStartNanos = System.nanoTime();
+        }
+        if (newState != ConnectivityState.READY) {
+          connectedSinceNanos = 0;
+        }
+        currentState = newState;
       }
-      if (isActive
-          && newState != ConnectivityState.READY
-          && currentState == ConnectivityState.READY) {
-        decReadyChannels(true);
-      }
-      if (newState == ConnectivityState.CONNECTING
-          && currentState != ConnectivityState.CONNECTING) {
-        connectingStartNanos = System.nanoTime();
-      }
-      if (newState != ConnectivityState.READY) {
-        connectedSinceNanos = 0;
-      }
-      currentState = newState;
 
       processChannelStateChange(channelRef.getId(), newState);
       if (isActive) {
@@ -1686,8 +1711,12 @@ public class GcpManagedChannel extends ManagedChannel {
       if (logger.isLoggable(Level.FINEST)) {
         logger.finest(log("Using fallback channel: %d -> %d", mappedChannel.getId(), channelId));
       }
-      fallbacksSucceeded.incrementAndGet();
-      return channelRefs.get(channelId);
+      ChannelRef fallbackChannel = channelIdToChannelRef.get(channelId);
+      if (fallbackChannel != null && fallbackChannel.isActive()) {
+        fallbacksSucceeded.incrementAndGet();
+        return fallbackChannel;
+      }
+      tempMap.remove(key, channelId);
     }
     // No temp mapping for this key or fallback channel is also broken.
     ChannelRef channelRef = pickLeastBusyChannel(/* forFallback= */ true);
@@ -1710,7 +1739,10 @@ public class GcpManagedChannel extends ManagedChannel {
     fallbacksFailed.incrementAndGet();
     if (channelId != null) {
       // Stick with previous mapping if fallback has failed.
-      return channelRefs.get(channelId);
+      ChannelRef fallbackChannel = channelIdToChannelRef.get(channelId);
+      if (fallbackChannel != null && fallbackChannel.isActive()) {
+        return fallbackChannel;
+      }
     }
     return mappedChannel;
   }
@@ -1779,9 +1811,8 @@ public class GcpManagedChannel extends ManagedChannel {
       channelRefs.add(chRef);
       removedChannelRefs.remove(chRef);
       channelIdToChannelRef.put(chRef.getId(), chRef);
-      chRef.activate();
+      chRef.activateAndAccountReadiness();
       logger.finer(log("Channel %d reused.", chRef.getId()));
-      incReadyChannels(false);
       maxChannels.accumulateAndGet(getNumberOfChannels(), Math::max);
       return chRef;
     }
@@ -1789,6 +1820,7 @@ public class GcpManagedChannel extends ManagedChannel {
     ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build());
     channelRefs.add(channelRef);
     channelIdToChannelRef.put(channelRef.getId(), channelRef);
+    channelRef.activateAndAccountReadiness();
     logger.finer(log("Channel %d created.", channelRef.getId()));
     maxChannels.accumulateAndGet(getNumberOfChannels(), Math::max);
     return channelRef;
@@ -2447,12 +2479,27 @@ public class GcpManagedChannel extends ManagedChannel {
       return active;
     }
 
-    private void activate() {
-      active = true;
+    private void activateAndAccountReadiness() {
+      synchronized (this) {
+        active = true;
+        channelStateMonitor.accountReadyIfNeeded();
+      }
+    }
+
+    private void deactivateAndAccountReadiness() {
+      synchronized (this) {
+        channelStateMonitor.unaccountReadyIfNeeded();
+        active = false;
+      }
     }
 
     private void deactivate() {
-      active = false;
+      deactivateAndAccountReadiness();
+    }
+
+    @VisibleForTesting
+    void deactivateForTest() {
+      deactivateAndAccountReadiness();
     }
 
     protected void affinityCountIncr() {
