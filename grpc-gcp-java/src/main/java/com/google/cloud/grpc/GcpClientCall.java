@@ -30,7 +30,7 @@ import java.util.ArrayDeque;
 import java.util.Collections;
 import java.util.List;
 import java.util.Queue;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
@@ -52,7 +52,8 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
   private ClientCall<ReqT, RespT> delegateCall = null;
   private List<String> keys = null;
   private boolean received = false;
-  private final AtomicBoolean decremented = new AtomicBoolean(false);
+  // 0 = not counted, 1 = counted, 2 = finished.
+  private final AtomicInteger countState = new AtomicInteger();
 
   @GuardedBy("this")
   private final Queue<Runnable> calls = new ArrayDeque<>();
@@ -123,12 +124,18 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
           delegateChannelRef = delegateChannel.getChannelRef(key);
         }
         delegateChannelRef.activeStreamsCountIncr();
+        countState.set(1);
 
         // Create the client call and do the previous operations.
         CallOptions callOptionsWithChannelId =
             callOptions.withOption(GcpManagedChannel.CHANNEL_ID_KEY, delegateChannelRef.getId());
-        delegateCall =
-            delegateChannelRef.getChannel().newCall(methodDescriptor, callOptionsWithChannelId);
+        try {
+          delegateCall =
+              delegateChannelRef.getChannel().newCall(methodDescriptor, callOptionsWithChannelId);
+        } catch (RuntimeException | Error failure) {
+          finishCount(Status.fromThrowable(failure), true);
+          throw failure;
+        }
         for (Runnable call : calls) {
           call.run();
         }
@@ -165,10 +172,16 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
   }
 
   private void checkedCancel(@Nullable String message, @Nullable Throwable cause) {
-    if (!decremented.getAndSet(true)) {
-      delegateChannelRef.activeStreamsCountDecr(startNanos, Status.CANCELLED, true);
-    }
+    finishCount(Status.CANCELLED, true);
     delegateCall.cancel(message, cause);
+  }
+
+  private void finishCount(Status status, boolean cancelled) {
+    if (countState.compareAndSet(1, 2)) {
+      delegateChannelRef.activeStreamsCountDecr(startNanos, status, cancelled);
+    } else {
+      countState.compareAndSet(0, 2);
+    }
   }
 
   private void checkSendMessage(Runnable call) {
@@ -188,9 +201,7 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       // Decrement the stream number by one when the call is closed.
       @Override
       public void onClose(Status status, Metadata trailers) {
-        if (!decremented.getAndSet(true)) {
-          delegateChannelRef.activeStreamsCountDecr(startNanos, status, false);
-        }
+        finishCount(status, false);
         // If the operation completed successfully, bind/unbind the affinity key.
         if (keys != null && status.getCode() == Status.Code.OK) {
           if (affinity.getCommand() == AffinityConfig.Command.UNBIND) {
@@ -231,9 +242,10 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     private final ClientCall<ReqT, RespT> delegateCall;
     @Nullable private final String affinityKey;
     private final boolean unbindOnComplete;
-    private long startNanos = 0;
+    private long startNanos;
 
-    private final AtomicBoolean decremented = new AtomicBoolean(false);
+    // 0 = not counted, 1 = counted, 2 = finished.
+    private final AtomicInteger countState = new AtomicInteger();
 
     protected SimpleGcpClientCall(
         GcpManagedChannel delegateChannel,
@@ -247,8 +259,16 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       // Set the actual channel ID in callOptions so downstream interceptors can access it.
       CallOptions callOptionsWithChannelId =
           callOptions.withOption(GcpManagedChannel.CHANNEL_ID_KEY, channelRef.getId());
-      this.delegateCall =
-          channelRef.getChannel().newCall(methodDescriptor, callOptionsWithChannelId);
+      startNanos = System.nanoTime();
+      channelRef.activeStreamsCountIncr();
+      countState.set(1);
+      try {
+        this.delegateCall =
+            channelRef.getChannel().newCall(methodDescriptor, callOptionsWithChannelId);
+      } catch (RuntimeException | Error failure) {
+        finishCount(Status.fromThrowable(failure), true);
+        throw failure;
+      }
     }
 
     @Override
@@ -258,16 +278,12 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
 
     @Override
     public void start(Listener<RespT> responseListener, Metadata headers) {
-      startNanos = System.nanoTime();
-
       Listener<RespT> listener =
           new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(
               responseListener) {
             @Override
             public void onClose(Status status, Metadata trailers) {
-              if (!decremented.getAndSet(true)) {
-                channelRef.activeStreamsCountDecr(startNanos, status, false);
-              }
+              finishCount(status, false);
               // Unbind the affinity key when the caller explicitly requests it
               // (e.g., on terminal RPCs like Commit or Rollback) to prevent
               // unbounded growth of the affinity map.
@@ -284,20 +300,25 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
             }
           };
 
-      channelRef.activeStreamsCountIncr();
       delegateCall.start(listener, headers);
     }
 
     @Override
     public void cancel(String message, Throwable cause) {
-      if (!decremented.getAndSet(true)) {
-        channelRef.activeStreamsCountDecr(startNanos, Status.CANCELLED, true);
-      }
+      finishCount(Status.CANCELLED, true);
       // Always unbind on cancel — the transaction is being abandoned.
       if (affinityKey != null) {
         delegateChannel.unbind(Collections.singletonList(affinityKey));
       }
       delegateCall.cancel(message, cause);
+    }
+
+    private void finishCount(Status status, boolean cancelled) {
+      if (countState.compareAndSet(1, 2)) {
+        channelRef.activeStreamsCountDecr(startNanos, status, cancelled);
+      } else {
+        countState.compareAndSet(0, 2);
+      }
     }
   }
 }

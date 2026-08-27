@@ -201,6 +201,9 @@ public final class GcpManagedChannelHotChannelReproducerTest {
         affinityRefs.add(affinityRef);
         originalIds.add(channelId);
       }
+      for (ChannelRef channelRef : pool.channelRefs) {
+        channelRef.activeStreamsCountIncr();
+      }
 
       invokeScaleDownCheck(pool, 3);
       assertThat(pool.channelRefs).hasSize(2);
@@ -274,10 +277,6 @@ public final class GcpManagedChannelHotChannelReproducerTest {
         handle.setChannelIdForTest(channelRef.getId());
         handles.add(handle);
       }
-      for (ChannelRef channelRef : pool.channelRefs) {
-        channelRef.activeStreamsCountDecr(System.nanoTime(), Status.OK, false);
-      }
-
       invokeScaleDownCheck(pool, 2);
       assertThat(pool.channelRefs).hasSize(48);
       invokeScaleDownCheck(pool, 1);

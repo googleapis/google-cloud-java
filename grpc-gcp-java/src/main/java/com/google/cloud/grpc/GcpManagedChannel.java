@@ -74,6 +74,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.IntUnaryOperator;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -161,6 +162,9 @@ public class GcpManagedChannel extends ManagedChannel {
   private int minRpcPerChannel = 0;
   private int maxRpcPerChannel = 0;
   private Duration scaleDownInterval = Duration.ZERO;
+  private int scaleDownConsecutiveLowLoadChecks = 3;
+  private int consecutiveLowLoadChecks;
+  private int maxScaleDownChannels = 2;
   private boolean isDynamicScalingEnabled = false;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
   private GcpManagedChannelOptions.ChannelPickStrategy channelPickStrategy =
@@ -273,6 +277,13 @@ public class GcpManagedChannel extends ManagedChannel {
 
   // Clock supplier for nanoTime, injectable for testing.
   private Supplier<Long> nanoClock = System::nanoTime;
+  private IntUnaryOperator candidateIndexPicker =
+      bound -> ThreadLocalRandom.current().nextInt(bound);
+
+  @VisibleForTesting
+  void setCandidateIndexPickerForTest(IntUnaryOperator candidateIndexPicker) {
+    this.candidateIndexPicker = candidateIndexPicker;
+  }
 
   @VisibleForTesting
   Map<Integer, Map<String, Integer>> fallbackMapForTest() {
@@ -380,18 +391,26 @@ public class GcpManagedChannel extends ManagedChannel {
       return;
     }
 
-    // Use and reset maxTotalActiveStreamsForScaleDown.
-    int maxTotalActiveStreamsCount =
-        maxTotalActiveStreamsForScaleDown.getAndSet(totalActiveStreams.get());
-    // Number of channels to support maximum seen (since last check) concurrent streams
-    // with lowest desired utilization (minRpcPerChannel).
-    int desiredSize =
-        maxTotalActiveStreamsCount / minRpcPerChannel
-            + ((maxTotalActiveStreamsCount % minRpcPerChannel == 0) ? 0 : 1);
-
-    int scaleDownTo = Math.max(minSize, desiredSize);
-    // Remove those extra channels that are the oldest.
-    removeOldestChannels(channelRefs.size() - scaleDownTo);
+    int channelCount = channelRefs.size();
+    if (channelCount <= minSize) {
+      consecutiveLowLoadChecks = 0;
+    } else {
+      long activeLoad = totalActiveStreams.get();
+      if (activeLoad > (long) minRpcPerChannel * channelCount) {
+        consecutiveLowLoadChecks = 0;
+      } else if (++consecutiveLowLoadChecks >= scaleDownConsecutiveLowLoadChecks) {
+        consecutiveLowLoadChecks = 0;
+        int targetRpcPerChannel = Math.max(1, (minRpcPerChannel + maxRpcPerChannel) / 2);
+        int desiredSize =
+            activeLoad == 0
+                ? minSize
+                : (int) Math.min(Integer.MAX_VALUE, 1 + ((activeLoad - 1) / targetRpcPerChannel));
+        int removeCount =
+            Math.min(
+                maxScaleDownChannels, Math.max(0, channelCount - Math.max(minSize, desiredSize)));
+        removeOldestChannels(removeCount);
+      }
+    }
 
     // Shutdown removed channels where all RPCs are completed.
     List<ChannelRef> completedChRefs =
@@ -471,6 +490,8 @@ public class GcpManagedChannel extends ManagedChannel {
       minRpcPerChannel = poolOptions.getMinRpcPerChannel();
       maxRpcPerChannel = poolOptions.getMaxRpcPerChannel();
       scaleDownInterval = poolOptions.getScaleDownInterval();
+      scaleDownConsecutiveLowLoadChecks = poolOptions.getScaleDownConsecutiveLowLoadChecks();
+      maxScaleDownChannels = poolOptions.getMaxScaleDownChannels();
       isDynamicScalingEnabled =
           minRpcPerChannel > 0 && maxRpcPerChannel > 0 && !scaleDownInterval.isZero();
       channelPickStrategy = poolOptions.getChannelPickStrategy();
@@ -1768,7 +1789,7 @@ public class GcpManagedChannel extends ManagedChannel {
           channelId == ChannelAffinityRef.NO_CHANNEL_ID
               ? null
               : channelIdToChannelRef.get(channelId);
-      if (!useDifferentChannel && channelRef != null && channelRef.isActive()) {
+      if (!useDifferentChannel && channelRef != null && !channelRef.getChannel().isShutdown()) {
         return channelRef;
       }
 
@@ -2038,35 +2059,33 @@ public class GcpManagedChannel extends ManagedChannel {
    *
    * <p>For {@code LINEAR_SCAN}: deterministic scan picking the first least-busy channel.
    */
-  private ChannelRef pickFromCandidates(List<ChannelRef> candidates) {
-    if (candidates.size() == 1) {
-      return candidates.get(0);
-    }
+  @VisibleForTesting
+  ChannelRef pickFromCandidates(List<ChannelRef> candidates) {
+    int size = candidates.size();
     if (channelPickStrategy == GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO) {
-      ThreadLocalRandom random = ThreadLocalRandom.current();
-      int i = random.nextInt(candidates.size());
-      int j = random.nextInt(candidates.size() - 1);
-      if (j >= i) {
-        j++;
+      for (int attempt = 0; attempt < 2 * size; attempt++) {
+        ChannelRef first = candidates.get(candidateIndexPicker.applyAsInt(size));
+        ChannelRef second = candidates.get(candidateIndexPicker.applyAsInt(size));
+        if (!first.isActive() || !second.isActive()) {
+          continue;
+        }
+        return first.getActiveStreamsCount() <= second.getActiveStreamsCount() ? first : second;
       }
-      ChannelRef a = candidates.get(i);
-      ChannelRef b = candidates.get(j);
-      int aStreams = a.getActiveStreamsCount();
-      int bStreams = b.getActiveStreamsCount();
-      if (aStreams < bStreams) return a;
-      if (bStreams < aStreams) return b;
-      // Tie: prefer the warmer channel (more recent activity).
-      return a.lastResponseNanos >= b.lastResponseNanos ? a : b;
     }
-    // LINEAR_SCAN: pick the least busy.
-    ChannelRef best = candidates.get(0);
-    int bestStreams = best.getActiveStreamsCount();
-    for (int k = 1; k < candidates.size(); k++) {
-      int cnt = candidates.get(k).getActiveStreamsCount();
-      if (cnt < bestStreams) {
-        bestStreams = cnt;
-        best = candidates.get(k);
+    ChannelRef best = null;
+    int bestStreams = Integer.MAX_VALUE;
+    for (ChannelRef candidate : candidates) {
+      if (!candidate.isActive()) {
+        continue;
       }
+      int cnt = candidate.getActiveStreamsCount();
+      if (best == null || cnt < bestStreams) {
+        bestStreams = cnt;
+        best = candidate;
+      }
+    }
+    if (best == null) {
+      throw new IllegalStateException("No active channel available");
     }
     return best;
   }
