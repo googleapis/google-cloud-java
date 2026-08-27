@@ -137,10 +137,6 @@
       <groupId>com.google.cloud</groupId>
     </dependency>
     <dependency>
-      <artifactId>google-cloud-datalabeling</artifactId>
-      <groupId>com.google.cloud</groupId>
-    </dependency>
-    <dependency>
       <artifactId>google-cloud-dataproc</artifactId>
       <groupId>com.google.cloud</groupId>
     </dependency>

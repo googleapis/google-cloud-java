@@ -62,6 +62,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     planningStatus_ = "";
     reservationMode_ = "";
     reservationName_ = "";
+    resourceName_ = "";
     schedulingType_ = "";
     selfLink_ = "";
     selfLinkWithId_ = "";
@@ -2147,6 +2148,146 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int RESOURCE_METADATA_FIELD_NUMBER = 99063872;
+  private com.google.cloud.compute.v1.ResourceMetadata resourceMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains standard resource metadata for an FutureReservation
+   * resource. It is populated for each instance of the FutureReservation
+   * resource, and includes the api_version the
+   * instance was retrieved through, and its canonical
+   * resource_type name.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+   *
+   * @return Whether the resourceMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasResourceMetadata() {
+    return ((bitField0_ & 0x00040000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains standard resource metadata for an FutureReservation
+   * resource. It is populated for each instance of the FutureReservation
+   * resource, and includes the api_version the
+   * instance was retrieved through, and its canonical
+   * resource_type name.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+   *
+   * @return The resourceMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourceMetadata getResourceMetadata() {
+    return resourceMetadata_ == null
+        ? com.google.cloud.compute.v1.ResourceMetadata.getDefaultInstance()
+        : resourceMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contains standard resource metadata for an FutureReservation
+   * resource. It is populated for each instance of the FutureReservation
+   * resource, and includes the api_version the
+   * instance was retrieved through, and its canonical
+   * resource_type name.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourceMetadataOrBuilder getResourceMetadataOrBuilder() {
+    return resourceMetadata_ == null
+        ? com.google.cloud.compute.v1.ResourceMetadata.getDefaultInstance()
+        : resourceMetadata_;
+  }
+
+  public static final int RESOURCE_NAME_FIELD_NUMBER = 442550300;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource intended to be delivered. Name should conform to
+   * RFC1035. This will be the name of storage pool or Exapool for persistent
+   * disk FRs.
+   * </pre>
+   *
+   * <code>optional string resource_name = 442550300;</code>
+   *
+   * @return Whether the resourceName field is set.
+   */
+  @java.lang.Override
+  public boolean hasResourceName() {
+    return ((bitField0_ & 0x00080000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource intended to be delivered. Name should conform to
+   * RFC1035. This will be the name of storage pool or Exapool for persistent
+   * disk FRs.
+   * </pre>
+   *
+   * <code>optional string resource_name = 442550300;</code>
+   *
+   * @return The resourceName.
+   */
+  @java.lang.Override
+  public java.lang.String getResourceName() {
+    java.lang.Object ref = resourceName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resourceName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the resource intended to be delivered. Name should conform to
+   * RFC1035. This will be the name of storage pool or Exapool for persistent
+   * disk FRs.
+   * </pre>
+   *
+   * <code>optional string resource_name = 442550300;</code>
+   *
+   * @return The bytes for resourceName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getResourceNameBytes() {
+    java.lang.Object ref = resourceName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      resourceName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SCHEDULING_TYPE_FIELD_NUMBER = 199835397;
 
   @SuppressWarnings("serial")
@@ -2166,7 +2307,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasSchedulingType() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
 
   /**
@@ -2237,7 +2378,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
 
   /**
@@ -2306,7 +2447,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasSelfLinkWithId() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
 
   /**
@@ -2373,7 +2514,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasShareSettings() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
 
   /**
@@ -2428,7 +2569,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasSpecificReservationRequired() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
 
   /**
@@ -2468,7 +2609,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasSpecificSkuProperties() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
 
   /**
@@ -2529,7 +2670,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
 
   /**
@@ -2566,6 +2707,67 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
         : status_;
   }
 
+  public static final int STORAGE_POOL_PROPERTIES_FIELD_NUMBER = 71410546;
+  private com.google.cloud.compute.v1.FutureReservationStoragePoolProperties storagePoolProperties_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Storage pool details for the future reservation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+   * </code>
+   *
+   * @return Whether the storagePoolProperties field is set.
+   */
+  @java.lang.Override
+  public boolean hasStoragePoolProperties() {
+    return ((bitField0_ & 0x08000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Storage pool details for the future reservation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+   * </code>
+   *
+   * @return The storagePoolProperties.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.FutureReservationStoragePoolProperties
+      getStoragePoolProperties() {
+    return storagePoolProperties_ == null
+        ? com.google.cloud.compute.v1.FutureReservationStoragePoolProperties.getDefaultInstance()
+        : storagePoolProperties_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Storage pool details for the future reservation.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.FutureReservationStoragePoolPropertiesOrBuilder
+      getStoragePoolPropertiesOrBuilder() {
+    return storagePoolProperties_ == null
+        ? com.google.cloud.compute.v1.FutureReservationStoragePoolProperties.getDefaultInstance()
+        : storagePoolProperties_;
+  }
+
   public static final int TIME_WINDOW_FIELD_NUMBER = 422983074;
   private com.google.cloud.compute.v1.FutureReservationTimeWindow timeWindow_;
 
@@ -2583,7 +2785,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasTimeWindow() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
 
   /**
@@ -2640,7 +2842,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasZone() {
-    return ((bitField0_ & 0x04000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
 
   /**
@@ -2714,7 +2916,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3744684, zone_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
@@ -2723,25 +2925,31 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 44520962, selfLinkWithId_);
+    }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      output.writeMessage(71410546, getStoragePoolProperties());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(78313862, getParams());
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
+      output.writeMessage(99063872, getResourceMetadata());
+    }
+    if (((bitField0_ & 0x02000000) != 0)) {
       output.writeMessage(108887106, getSpecificSkuProperties());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(164362136, getCommitmentInfo());
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       output.writeMessage(181260274, getStatus());
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 199835397, schedulingType_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       output.writeBool(226550687, specificReservationRequired_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
@@ -2751,7 +2959,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       com.google.protobuf.GeneratedMessage.writeString(
           output, 242855120, autoCreatedReservationsDeleteTime_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeMessage(266668163, getShareSettings());
     }
     if (((bitField0_ & 0x00010000) != 0)) {
@@ -2775,10 +2983,13 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 422937596, description_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       output.writeMessage(422983074, getTimeWindow());
     }
     if (((bitField0_ & 0x00080000) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 442550300, resourceName_);
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -2805,7 +3016,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3744684, zone_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
@@ -2814,13 +3025,22 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(30525366, creationTimestamp_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(44520962, selfLinkWithId_);
+    }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              71410546, getStoragePoolProperties());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(78313862, getParams());
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(99063872, getResourceMetadata());
+    }
+    if (((bitField0_ & 0x02000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               108887106, getSpecificSkuProperties());
@@ -2829,13 +3049,13 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(164362136, getCommitmentInfo());
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(181260274, getStatus());
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(199835397, schedulingType_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
               226550687, specificReservationRequired_);
@@ -2848,7 +3068,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.GeneratedMessage.computeStringSize(
               242855120, autoCreatedReservationsDeleteTime_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(266668163, getShareSettings());
     }
@@ -2879,10 +3099,13 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(422937596, description_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(422983074, getTimeWindow());
     }
     if (((bitField0_ & 0x00080000) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(442550300, resourceName_);
+    }
+    if (((bitField0_ & 0x00200000) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -2989,6 +3212,14 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     if (hasReservationName()) {
       if (!getReservationName().equals(other.getReservationName())) return false;
     }
+    if (hasResourceMetadata() != other.hasResourceMetadata()) return false;
+    if (hasResourceMetadata()) {
+      if (!getResourceMetadata().equals(other.getResourceMetadata())) return false;
+    }
+    if (hasResourceName() != other.hasResourceName()) return false;
+    if (hasResourceName()) {
+      if (!getResourceName().equals(other.getResourceName())) return false;
+    }
     if (hasSchedulingType() != other.hasSchedulingType()) return false;
     if (hasSchedulingType()) {
       if (!getSchedulingType().equals(other.getSchedulingType())) return false;
@@ -3016,6 +3247,10 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
       if (!getStatus().equals(other.getStatus())) return false;
+    }
+    if (hasStoragePoolProperties() != other.hasStoragePoolProperties()) return false;
+    if (hasStoragePoolProperties()) {
+      if (!getStoragePoolProperties().equals(other.getStoragePoolProperties())) return false;
     }
     if (hasTimeWindow() != other.hasTimeWindow()) return false;
     if (hasTimeWindow()) {
@@ -3110,6 +3345,14 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + RESERVATION_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getReservationName().hashCode();
     }
+    if (hasResourceMetadata()) {
+      hash = (37 * hash) + RESOURCE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceMetadata().hashCode();
+    }
+    if (hasResourceName()) {
+      hash = (37 * hash) + RESOURCE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceName().hashCode();
+    }
     if (hasSchedulingType()) {
       hash = (37 * hash) + SCHEDULING_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getSchedulingType().hashCode();
@@ -3138,6 +3381,10 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
+    }
+    if (hasStoragePoolProperties()) {
+      hash = (37 * hash) + STORAGE_POOL_PROPERTIES_FIELD_NUMBER;
+      hash = (53 * hash) + getStoragePoolProperties().hashCode();
     }
     if (hasTimeWindow()) {
       hash = (37 * hash) + TIME_WINDOW_FIELD_NUMBER;
@@ -3291,9 +3538,11 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
         internalGetAutoCreatedReservationsDurationFieldBuilder();
         internalGetCommitmentInfoFieldBuilder();
         internalGetParamsFieldBuilder();
+        internalGetResourceMetadataFieldBuilder();
         internalGetShareSettingsFieldBuilder();
         internalGetSpecificSkuPropertiesFieldBuilder();
         internalGetStatusFieldBuilder();
+        internalGetStoragePoolPropertiesFieldBuilder();
         internalGetTimeWindowFieldBuilder();
       }
     }
@@ -3336,6 +3585,12 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       planningStatus_ = "";
       reservationMode_ = "";
       reservationName_ = "";
+      resourceMetadata_ = null;
+      if (resourceMetadataBuilder_ != null) {
+        resourceMetadataBuilder_.dispose();
+        resourceMetadataBuilder_ = null;
+      }
+      resourceName_ = "";
       schedulingType_ = "";
       selfLink_ = "";
       selfLinkWithId_ = "";
@@ -3354,6 +3609,11 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
         statusBuilder_ = null;
+      }
+      storagePoolProperties_ = null;
+      if (storagePoolPropertiesBuilder_ != null) {
+        storagePoolPropertiesBuilder_.dispose();
+        storagePoolPropertiesBuilder_ = null;
       }
       timeWindow_ = null;
       if (timeWindowBuilder_ != null) {
@@ -3478,44 +3738,60 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.schedulingType_ = schedulingType_;
+        result.resourceMetadata_ =
+            resourceMetadataBuilder_ == null ? resourceMetadata_ : resourceMetadataBuilder_.build();
         to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.resourceName_ = resourceName_;
         to_bitField0_ |= 0x00080000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.selfLinkWithId_ = selfLinkWithId_;
+        result.schedulingType_ = schedulingType_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.shareSettings_ =
-            shareSettingsBuilder_ == null ? shareSettings_ : shareSettingsBuilder_.build();
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00200000;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.specificReservationRequired_ = specificReservationRequired_;
+        result.selfLinkWithId_ = selfLinkWithId_;
         to_bitField0_ |= 0x00400000;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.shareSettings_ =
+            shareSettingsBuilder_ == null ? shareSettings_ : shareSettingsBuilder_.build();
+        to_bitField0_ |= 0x00800000;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.specificReservationRequired_ = specificReservationRequired_;
+        to_bitField0_ |= 0x01000000;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.specificSkuProperties_ =
             specificSkuPropertiesBuilder_ == null
                 ? specificSkuProperties_
                 : specificSkuPropertiesBuilder_.build();
-        to_bitField0_ |= 0x00800000;
-      }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
-        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
-        to_bitField0_ |= 0x01000000;
-      }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.timeWindow_ = timeWindowBuilder_ == null ? timeWindow_ : timeWindowBuilder_.build();
         to_bitField0_ |= 0x02000000;
       }
       if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.zone_ = zone_;
+        result.status_ = statusBuilder_ == null ? status_ : statusBuilder_.build();
         to_bitField0_ |= 0x04000000;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.storagePoolProperties_ =
+            storagePoolPropertiesBuilder_ == null
+                ? storagePoolProperties_
+                : storagePoolPropertiesBuilder_.build();
+        to_bitField0_ |= 0x08000000;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.timeWindow_ = timeWindowBuilder_ == null ? timeWindow_ : timeWindowBuilder_.build();
+        to_bitField0_ |= 0x10000000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.zone_ = zone_;
+        to_bitField0_ |= 0x20000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3608,19 +3884,27 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00020000;
         onChanged();
       }
+      if (other.hasResourceMetadata()) {
+        mergeResourceMetadata(other.getResourceMetadata());
+      }
+      if (other.hasResourceName()) {
+        resourceName_ = other.resourceName_;
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
       if (other.hasSchedulingType()) {
         schedulingType_ = other.schedulingType_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasSelfLinkWithId()) {
         selfLinkWithId_ = other.selfLinkWithId_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       if (other.hasShareSettings()) {
@@ -3635,12 +3919,15 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       if (other.hasStatus()) {
         mergeStatus(other.getStatus());
       }
+      if (other.hasStoragePoolProperties()) {
+        mergeStoragePoolProperties(other.getStoragePoolProperties());
+      }
       if (other.hasTimeWindow()) {
         mergeTimeWindow(other.getTimeWindow());
       }
       if (other.hasZone()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3690,7 +3977,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 29957474
             case 157718690:
@@ -3708,20 +3995,34 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
             case 356167698:
               {
                 selfLinkWithId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 356167698
+            case 571284370:
+              {
+                input.readMessage(
+                    internalGetStoragePoolPropertiesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 571284370
             case 626510898:
               {
                 input.readMessage(internalGetParamsFieldBuilder().getBuilder(), extensionRegistry);
                 bitField0_ |= 0x00004000;
                 break;
               } // case 626510898
+            case 792510978:
+              {
+                input.readMessage(
+                    internalGetResourceMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 792510978
             case 871096850:
               {
                 input.readMessage(
                     internalGetSpecificSkuPropertiesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 871096850
             case 1314897090:
@@ -3734,19 +4035,19 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
             case 1450082194:
               {
                 input.readMessage(internalGetStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 1450082194
             case 1598683178:
               {
                 schedulingType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 1598683178
             case 1812405496:
               {
                 specificReservationRequired_ = input.readBool();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 1812405496
             case 1891276338:
@@ -3765,7 +4066,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     internalGetShareSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 2133345306
             case -2076610126:
@@ -3815,13 +4116,19 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     internalGetTimeWindowFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case -911102702
+            case -754564894:
+              {
+                resourceName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case -754564894
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case -645248918
             case -364147376:
@@ -6535,6 +6842,376 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private com.google.cloud.compute.v1.ResourceMetadata resourceMetadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ResourceMetadata,
+            com.google.cloud.compute.v1.ResourceMetadata.Builder,
+            com.google.cloud.compute.v1.ResourceMetadataOrBuilder>
+        resourceMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains standard resource metadata for an FutureReservation
+     * resource. It is populated for each instance of the FutureReservation
+     * resource, and includes the api_version the
+     * instance was retrieved through, and its canonical
+     * resource_type name.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+     *
+     * @return Whether the resourceMetadata field is set.
+     */
+    public boolean hasResourceMetadata() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains standard resource metadata for an FutureReservation
+     * resource. It is populated for each instance of the FutureReservation
+     * resource, and includes the api_version the
+     * instance was retrieved through, and its canonical
+     * resource_type name.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+     *
+     * @return The resourceMetadata.
+     */
+    public com.google.cloud.compute.v1.ResourceMetadata getResourceMetadata() {
+      if (resourceMetadataBuilder_ == null) {
+        return resourceMetadata_ == null
+            ? com.google.cloud.compute.v1.ResourceMetadata.getDefaultInstance()
+            : resourceMetadata_;
+      } else {
+        return resourceMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains standard resource metadata for an FutureReservation
+     * resource. It is populated for each instance of the FutureReservation
+     * resource, and includes the api_version the
+     * instance was retrieved through, and its canonical
+     * resource_type name.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+     */
+    public Builder setResourceMetadata(com.google.cloud.compute.v1.ResourceMetadata value) {
+      if (resourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceMetadata_ = value;
+      } else {
+        resourceMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains standard resource metadata for an FutureReservation
+     * resource. It is populated for each instance of the FutureReservation
+     * resource, and includes the api_version the
+     * instance was retrieved through, and its canonical
+     * resource_type name.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+     */
+    public Builder setResourceMetadata(
+        com.google.cloud.compute.v1.ResourceMetadata.Builder builderForValue) {
+      if (resourceMetadataBuilder_ == null) {
+        resourceMetadata_ = builderForValue.build();
+      } else {
+        resourceMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains standard resource metadata for an FutureReservation
+     * resource. It is populated for each instance of the FutureReservation
+     * resource, and includes the api_version the
+     * instance was retrieved through, and its canonical
+     * resource_type name.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+     */
+    public Builder mergeResourceMetadata(com.google.cloud.compute.v1.ResourceMetadata value) {
+      if (resourceMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && resourceMetadata_ != null
+            && resourceMetadata_
+                != com.google.cloud.compute.v1.ResourceMetadata.getDefaultInstance()) {
+          getResourceMetadataBuilder().mergeFrom(value);
+        } else {
+          resourceMetadata_ = value;
+        }
+      } else {
+        resourceMetadataBuilder_.mergeFrom(value);
+      }
+      if (resourceMetadata_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains standard resource metadata for an FutureReservation
+     * resource. It is populated for each instance of the FutureReservation
+     * resource, and includes the api_version the
+     * instance was retrieved through, and its canonical
+     * resource_type name.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+     */
+    public Builder clearResourceMetadata() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      resourceMetadata_ = null;
+      if (resourceMetadataBuilder_ != null) {
+        resourceMetadataBuilder_.dispose();
+        resourceMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains standard resource metadata for an FutureReservation
+     * resource. It is populated for each instance of the FutureReservation
+     * resource, and includes the api_version the
+     * instance was retrieved through, and its canonical
+     * resource_type name.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+     */
+    public com.google.cloud.compute.v1.ResourceMetadata.Builder getResourceMetadataBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return internalGetResourceMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains standard resource metadata for an FutureReservation
+     * resource. It is populated for each instance of the FutureReservation
+     * resource, and includes the api_version the
+     * instance was retrieved through, and its canonical
+     * resource_type name.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+     */
+    public com.google.cloud.compute.v1.ResourceMetadataOrBuilder getResourceMetadataOrBuilder() {
+      if (resourceMetadataBuilder_ != null) {
+        return resourceMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return resourceMetadata_ == null
+            ? com.google.cloud.compute.v1.ResourceMetadata.getDefaultInstance()
+            : resourceMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Contains standard resource metadata for an FutureReservation
+     * resource. It is populated for each instance of the FutureReservation
+     * resource, and includes the api_version the
+     * instance was retrieved through, and its canonical
+     * resource_type name.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.ResourceMetadata resource_metadata = 99063872;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.ResourceMetadata,
+            com.google.cloud.compute.v1.ResourceMetadata.Builder,
+            com.google.cloud.compute.v1.ResourceMetadataOrBuilder>
+        internalGetResourceMetadataFieldBuilder() {
+      if (resourceMetadataBuilder_ == null) {
+        resourceMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.ResourceMetadata,
+                com.google.cloud.compute.v1.ResourceMetadata.Builder,
+                com.google.cloud.compute.v1.ResourceMetadataOrBuilder>(
+                getResourceMetadata(), getParentForChildren(), isClean());
+        resourceMetadata_ = null;
+      }
+      return resourceMetadataBuilder_;
+    }
+
+    private java.lang.Object resourceName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource intended to be delivered. Name should conform to
+     * RFC1035. This will be the name of storage pool or Exapool for persistent
+     * disk FRs.
+     * </pre>
+     *
+     * <code>optional string resource_name = 442550300;</code>
+     *
+     * @return Whether the resourceName field is set.
+     */
+    public boolean hasResourceName() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource intended to be delivered. Name should conform to
+     * RFC1035. This will be the name of storage pool or Exapool for persistent
+     * disk FRs.
+     * </pre>
+     *
+     * <code>optional string resource_name = 442550300;</code>
+     *
+     * @return The resourceName.
+     */
+    public java.lang.String getResourceName() {
+      java.lang.Object ref = resourceName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource intended to be delivered. Name should conform to
+     * RFC1035. This will be the name of storage pool or Exapool for persistent
+     * disk FRs.
+     * </pre>
+     *
+     * <code>optional string resource_name = 442550300;</code>
+     *
+     * @return The bytes for resourceName.
+     */
+    public com.google.protobuf.ByteString getResourceNameBytes() {
+      java.lang.Object ref = resourceName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resourceName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource intended to be delivered. Name should conform to
+     * RFC1035. This will be the name of storage pool or Exapool for persistent
+     * disk FRs.
+     * </pre>
+     *
+     * <code>optional string resource_name = 442550300;</code>
+     *
+     * @param value The resourceName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      resourceName_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource intended to be delivered. Name should conform to
+     * RFC1035. This will be the name of storage pool or Exapool for persistent
+     * disk FRs.
+     * </pre>
+     *
+     * <code>optional string resource_name = 442550300;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceName() {
+      resourceName_ = getDefaultInstance().getResourceName();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Name of the resource intended to be delivered. Name should conform to
+     * RFC1035. This will be the name of storage pool or Exapool for persistent
+     * disk FRs.
+     * </pre>
+     *
+     * <code>optional string resource_name = 442550300;</code>
+     *
+     * @param value The bytes for resourceName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      resourceName_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object schedulingType_ = "";
 
     /**
@@ -6550,7 +7227,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * @return Whether the schedulingType field is set.
      */
     public boolean hasSchedulingType() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6619,7 +7296,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       schedulingType_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6638,7 +7315,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSchedulingType() {
       schedulingType_ = getDefaultInstance().getSchedulingType();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -6662,7 +7339,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       schedulingType_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6681,7 +7358,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -6747,7 +7424,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6765,7 +7442,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -6788,7 +7465,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6807,7 +7484,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * @return Whether the selfLinkWithId field is set.
      */
     public boolean hasSelfLinkWithId() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -6873,7 +7550,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6891,7 +7568,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearSelfLinkWithId() {
       selfLinkWithId_ = getDefaultInstance().getSelfLinkWithId();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       onChanged();
       return this;
     }
@@ -6914,7 +7591,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       selfLinkWithId_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6938,7 +7615,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * @return Whether the shareSettings field is set.
      */
     public boolean hasShareSettings() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -6980,7 +7657,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       } else {
         shareSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7001,7 +7678,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       } else {
         shareSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7017,7 +7694,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeShareSettings(com.google.cloud.compute.v1.ShareSettings value) {
       if (shareSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && shareSettings_ != null
             && shareSettings_ != com.google.cloud.compute.v1.ShareSettings.getDefaultInstance()) {
           getShareSettingsBuilder().mergeFrom(value);
@@ -7028,7 +7705,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
         shareSettingsBuilder_.mergeFrom(value);
       }
       if (shareSettings_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       return this;
@@ -7044,7 +7721,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
      */
     public Builder clearShareSettings() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       shareSettings_ = null;
       if (shareSettingsBuilder_ != null) {
         shareSettingsBuilder_.dispose();
@@ -7064,7 +7741,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.ShareSettings share_settings = 266668163;</code>
      */
     public com.google.cloud.compute.v1.ShareSettings.Builder getShareSettingsBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return internalGetShareSettingsFieldBuilder().getBuilder();
     }
@@ -7131,7 +7808,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      */
     @java.lang.Override
     public boolean hasSpecificReservationRequired() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -7169,7 +7846,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     public Builder setSpecificReservationRequired(boolean value) {
 
       specificReservationRequired_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7188,7 +7865,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearSpecificReservationRequired() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       specificReservationRequired_ = false;
       onChanged();
       return this;
@@ -7217,7 +7894,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * @return Whether the specificSkuProperties field is set.
      */
     public boolean hasSpecificSkuProperties() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
 
     /**
@@ -7268,7 +7945,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       } else {
         specificSkuPropertiesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7293,7 +7970,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       } else {
         specificSkuPropertiesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7313,7 +7990,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
     public Builder mergeSpecificSkuProperties(
         com.google.cloud.compute.v1.FutureReservationSpecificSKUProperties value) {
       if (specificSkuPropertiesBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && specificSkuProperties_ != null
             && specificSkuProperties_
                 != com.google.cloud.compute.v1.FutureReservationSpecificSKUProperties
@@ -7326,7 +8003,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
         specificSkuPropertiesBuilder_.mergeFrom(value);
       }
       if (specificSkuProperties_ != null) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       return this;
@@ -7345,7 +8022,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearSpecificSkuProperties() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       specificSkuProperties_ = null;
       if (specificSkuPropertiesBuilder_ != null) {
         specificSkuPropertiesBuilder_.dispose();
@@ -7369,7 +8046,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.compute.v1.FutureReservationSpecificSKUProperties.Builder
         getSpecificSkuPropertiesBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return internalGetSpecificSkuPropertiesFieldBuilder().getBuilder();
     }
@@ -7446,7 +8123,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
 
     /**
@@ -7488,7 +8165,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       } else {
         statusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7509,7 +8186,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       } else {
         statusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -7525,7 +8202,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeStatus(com.google.cloud.compute.v1.FutureReservationStatus value) {
       if (statusBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)
+        if (((bitField0_ & 0x04000000) != 0)
             && status_ != null
             && status_
                 != com.google.cloud.compute.v1.FutureReservationStatus.getDefaultInstance()) {
@@ -7537,7 +8214,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
         statusBuilder_.mergeFrom(value);
       }
       if (status_ != null) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x04000000;
         onChanged();
       }
       return this;
@@ -7553,7 +8230,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.FutureReservationStatus status = 181260274;</code>
      */
     public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       status_ = null;
       if (statusBuilder_ != null) {
         statusBuilder_.dispose();
@@ -7573,7 +8250,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * <code>optional .google.cloud.compute.v1.FutureReservationStatus status = 181260274;</code>
      */
     public com.google.cloud.compute.v1.FutureReservationStatus.Builder getStatusBuilder() {
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return internalGetStatusFieldBuilder().getBuilder();
     }
@@ -7623,6 +8300,230 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       return statusBuilder_;
     }
 
+    private com.google.cloud.compute.v1.FutureReservationStoragePoolProperties
+        storagePoolProperties_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.FutureReservationStoragePoolProperties,
+            com.google.cloud.compute.v1.FutureReservationStoragePoolProperties.Builder,
+            com.google.cloud.compute.v1.FutureReservationStoragePoolPropertiesOrBuilder>
+        storagePoolPropertiesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Storage pool details for the future reservation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+     * </code>
+     *
+     * @return Whether the storagePoolProperties field is set.
+     */
+    public boolean hasStoragePoolProperties() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Storage pool details for the future reservation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+     * </code>
+     *
+     * @return The storagePoolProperties.
+     */
+    public com.google.cloud.compute.v1.FutureReservationStoragePoolProperties
+        getStoragePoolProperties() {
+      if (storagePoolPropertiesBuilder_ == null) {
+        return storagePoolProperties_ == null
+            ? com.google.cloud.compute.v1.FutureReservationStoragePoolProperties
+                .getDefaultInstance()
+            : storagePoolProperties_;
+      } else {
+        return storagePoolPropertiesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Storage pool details for the future reservation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+     * </code>
+     */
+    public Builder setStoragePoolProperties(
+        com.google.cloud.compute.v1.FutureReservationStoragePoolProperties value) {
+      if (storagePoolPropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        storagePoolProperties_ = value;
+      } else {
+        storagePoolPropertiesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Storage pool details for the future reservation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+     * </code>
+     */
+    public Builder setStoragePoolProperties(
+        com.google.cloud.compute.v1.FutureReservationStoragePoolProperties.Builder
+            builderForValue) {
+      if (storagePoolPropertiesBuilder_ == null) {
+        storagePoolProperties_ = builderForValue.build();
+      } else {
+        storagePoolPropertiesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Storage pool details for the future reservation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+     * </code>
+     */
+    public Builder mergeStoragePoolProperties(
+        com.google.cloud.compute.v1.FutureReservationStoragePoolProperties value) {
+      if (storagePoolPropertiesBuilder_ == null) {
+        if (((bitField0_ & 0x08000000) != 0)
+            && storagePoolProperties_ != null
+            && storagePoolProperties_
+                != com.google.cloud.compute.v1.FutureReservationStoragePoolProperties
+                    .getDefaultInstance()) {
+          getStoragePoolPropertiesBuilder().mergeFrom(value);
+        } else {
+          storagePoolProperties_ = value;
+        }
+      } else {
+        storagePoolPropertiesBuilder_.mergeFrom(value);
+      }
+      if (storagePoolProperties_ != null) {
+        bitField0_ |= 0x08000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Storage pool details for the future reservation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+     * </code>
+     */
+    public Builder clearStoragePoolProperties() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      storagePoolProperties_ = null;
+      if (storagePoolPropertiesBuilder_ != null) {
+        storagePoolPropertiesBuilder_.dispose();
+        storagePoolPropertiesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Storage pool details for the future reservation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FutureReservationStoragePoolProperties.Builder
+        getStoragePoolPropertiesBuilder() {
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return internalGetStoragePoolPropertiesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Storage pool details for the future reservation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FutureReservationStoragePoolPropertiesOrBuilder
+        getStoragePoolPropertiesOrBuilder() {
+      if (storagePoolPropertiesBuilder_ != null) {
+        return storagePoolPropertiesBuilder_.getMessageOrBuilder();
+      } else {
+        return storagePoolProperties_ == null
+            ? com.google.cloud.compute.v1.FutureReservationStoragePoolProperties
+                .getDefaultInstance()
+            : storagePoolProperties_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Storage pool details for the future reservation.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProperties storage_pool_properties = 71410546;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.FutureReservationStoragePoolProperties,
+            com.google.cloud.compute.v1.FutureReservationStoragePoolProperties.Builder,
+            com.google.cloud.compute.v1.FutureReservationStoragePoolPropertiesOrBuilder>
+        internalGetStoragePoolPropertiesFieldBuilder() {
+      if (storagePoolPropertiesBuilder_ == null) {
+        storagePoolPropertiesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.FutureReservationStoragePoolProperties,
+                com.google.cloud.compute.v1.FutureReservationStoragePoolProperties.Builder,
+                com.google.cloud.compute.v1.FutureReservationStoragePoolPropertiesOrBuilder>(
+                getStoragePoolProperties(), getParentForChildren(), isClean());
+        storagePoolProperties_ = null;
+      }
+      return storagePoolPropertiesBuilder_;
+    }
+
     private com.google.cloud.compute.v1.FutureReservationTimeWindow timeWindow_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.compute.v1.FutureReservationTimeWindow,
@@ -7643,7 +8544,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * @return Whether the timeWindow field is set.
      */
     public boolean hasTimeWindow() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
 
     /**
@@ -7687,7 +8588,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       } else {
         timeWindowBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -7709,7 +8610,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       } else {
         timeWindowBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -7726,7 +8627,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeTimeWindow(com.google.cloud.compute.v1.FutureReservationTimeWindow value) {
       if (timeWindowBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)
+        if (((bitField0_ & 0x10000000) != 0)
             && timeWindow_ != null
             && timeWindow_
                 != com.google.cloud.compute.v1.FutureReservationTimeWindow.getDefaultInstance()) {
@@ -7738,7 +8639,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
         timeWindowBuilder_.mergeFrom(value);
       }
       if (timeWindow_ != null) {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       return this;
@@ -7755,7 +8656,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearTimeWindow() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       timeWindow_ = null;
       if (timeWindowBuilder_ != null) {
         timeWindowBuilder_.dispose();
@@ -7776,7 +8677,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.cloud.compute.v1.FutureReservationTimeWindow.Builder getTimeWindowBuilder() {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return internalGetTimeWindowFieldBuilder().getBuilder();
     }
@@ -7843,7 +8744,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      * @return Whether the zone field is set.
      */
     public boolean hasZone() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
 
     /**
@@ -7909,7 +8810,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -7927,7 +8828,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       onChanged();
       return this;
     }
@@ -7950,7 +8851,7 @@ public final class FutureReservation extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
