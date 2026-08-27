@@ -154,7 +154,7 @@ public final class GcpManagedChannelDynamicPoolTest {
 
     awaitCondition(() -> pool.scaleUpPrimeFailuresForTest() == 1);
     assertThat(pool.getNumberOfChannels()).isEqualTo(2);
-    assertThat(rejected.get().isShutdown()).isTrue();
+    awaitCondition(() -> rejected.get() != null && rejected.get().isShutdown());
     awaitCondition(() -> !pool.scaleUpWorkerRunningForTest());
     clock.incrementAndGet();
     hot.activeStreamsCountIncr();
@@ -179,7 +179,7 @@ public final class GcpManagedChannelDynamicPoolTest {
 
     awaitCondition(() -> pool.scaleUpPrimeFailuresForTest() == 1);
     assertThat(pool.getNumberOfChannels()).isEqualTo(2);
-    assertThat(rejected.get().isShutdown()).isTrue();
+    awaitCondition(() -> rejected.get() != null && rejected.get().isShutdown());
   }
 
   @Test
@@ -220,7 +220,7 @@ public final class GcpManagedChannelDynamicPoolTest {
     awaitCondition(() -> pool.scaleUpPrimeFailuresForTest() == 1);
     assertThat(primeCalls.get()).isEqualTo(3);
     assertThat(pool.getNumberOfChannels()).isEqualTo(2);
-    assertThat(rejected.get().isShutdown()).isTrue();
+    awaitCondition(() -> rejected.get() != null && rejected.get().isShutdown());
   }
 
   @Test

@@ -2212,9 +2212,9 @@ public class GcpManagedChannel extends ManagedChannel {
         }
       }
     }
-    scaleUpPrimeFailures.incrementAndGet();
-    logger.log(Level.WARNING, log("Scaled-up channel priming failed"), lastFailure);
     channel.shutdownNow();
+    logger.log(Level.WARNING, log("Scaled-up channel priming failed"), lastFailure);
+    scaleUpPrimeFailures.incrementAndGet();
     return false;
   }
 
