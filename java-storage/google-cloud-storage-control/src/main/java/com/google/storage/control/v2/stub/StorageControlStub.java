@@ -47,6 +47,8 @@ import com.google.storage.control.v2.DeleteFolderRecursiveRequest;
 import com.google.storage.control.v2.DeleteFolderRequest;
 import com.google.storage.control.v2.DeleteManagedFolderRequest;
 import com.google.storage.control.v2.DisableAnywhereCacheRequest;
+import com.google.storage.control.v2.DisableRapidCacheMetadata;
+import com.google.storage.control.v2.DisableRapidCacheRequest;
 import com.google.storage.control.v2.Folder;
 import com.google.storage.control.v2.GetAnywhereCacheRequest;
 import com.google.storage.control.v2.GetFolderIntelligenceConfigRequest;
@@ -246,6 +248,16 @@ public abstract class StorageControlStub implements BackgroundResource {
 
   public UnaryCallable<UpdateRapidCacheRequest, Operation> updateRapidCacheCallable() {
     throw new UnsupportedOperationException("Not implemented: updateRapidCacheCallable()");
+  }
+
+  public OperationCallable<DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+      disableRapidCacheOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: disableRapidCacheOperationCallable()");
+  }
+
+  public UnaryCallable<DisableRapidCacheRequest, Operation> disableRapidCacheCallable() {
+    throw new UnsupportedOperationException("Not implemented: disableRapidCacheCallable()");
   }
 
   public UnaryCallable<GetRapidCacheRequest, RapidCache> getRapidCacheCallable() {

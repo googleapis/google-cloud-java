@@ -61,6 +61,8 @@ public interface ForwardingRuleOrBuilder
    *
    *
    *
+   * The IP address can only be set at creation. Once set, it cannot be updated.
+   *
    * The forwarding rule's target or backendService,
    * and in most cases, also the loadBalancingScheme, determine the
    * type of IP address that you can use. For detailed information, see
@@ -69,6 +71,10 @@ public interface ForwardingRuleOrBuilder
    *
    * When reading an IPAddress, the API always returns the IP
    * address number.
+   *
+   * When creating a global external Passthrough Network Load Balancer
+   * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud generated child
+   * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
    * </pre>
    *
    * <code>optional string I_p_address = 42976943;</code>
@@ -112,6 +118,8 @@ public interface ForwardingRuleOrBuilder
    *
    *
    *
+   * The IP address can only be set at creation. Once set, it cannot be updated.
+   *
    * The forwarding rule's target or backendService,
    * and in most cases, also the loadBalancingScheme, determine the
    * type of IP address that you can use. For detailed information, see
@@ -120,6 +128,10 @@ public interface ForwardingRuleOrBuilder
    *
    * When reading an IPAddress, the API always returns the IP
    * address number.
+   *
+   * When creating a global external Passthrough Network Load Balancer
+   * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud generated child
+   * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
    * </pre>
    *
    * <code>optional string I_p_address = 42976943;</code>
@@ -163,6 +175,8 @@ public interface ForwardingRuleOrBuilder
    *
    *
    *
+   * The IP address can only be set at creation. Once set, it cannot be updated.
+   *
    * The forwarding rule's target or backendService,
    * and in most cases, also the loadBalancingScheme, determine the
    * type of IP address that you can use. For detailed information, see
@@ -171,6 +185,10 @@ public interface ForwardingRuleOrBuilder
    *
    * When reading an IPAddress, the API always returns the IP
    * address number.
+   *
+   * When creating a global external Passthrough Network Load Balancer
+   * forwarding rule (a parent forwarding rule), you must use theIPAddresses field, but the Google Cloud generated child
+   * forwarding rules set the IPAddress field instead. Refer to theavailabilityGroup field for further details.
    * </pre>
    *
    * <code>optional string I_p_address = 42976943;</code>
@@ -435,8 +453,18 @@ public interface ForwardingRuleOrBuilder
    *
    * <pre>
    * Identifies the backend service to which the forwarding rule sends traffic.
-   * Required for internal and external passthrough Network Load Balancers;
-   * must be omitted for all other load balancer types.
+   *
+   * It is a required field for the following load balancers:
+   *
+   * - Internal passthrough Network Load Balancers
+   * - Backend service-based regional external passthrough Network Load
+   * Balancers
+   * - Global external passthrough Network Load Balancers
+   *
+   *
+   *
+   * It cannot be set by other load balancer types and protocol forwarding
+   * rules.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -450,8 +478,18 @@ public interface ForwardingRuleOrBuilder
    *
    * <pre>
    * Identifies the backend service to which the forwarding rule sends traffic.
-   * Required for internal and external passthrough Network Load Balancers;
-   * must be omitted for all other load balancer types.
+   *
+   * It is a required field for the following load balancers:
+   *
+   * - Internal passthrough Network Load Balancers
+   * - Backend service-based regional external passthrough Network Load
+   * Balancers
+   * - Global external passthrough Network Load Balancers
+   *
+   *
+   *
+   * It cannot be set by other load balancer types and protocol forwarding
+   * rules.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -465,8 +503,18 @@ public interface ForwardingRuleOrBuilder
    *
    * <pre>
    * Identifies the backend service to which the forwarding rule sends traffic.
-   * Required for internal and external passthrough Network Load Balancers;
-   * must be omitted for all other load balancer types.
+   *
+   * It is a required field for the following load balancers:
+   *
+   * - Internal passthrough Network Load Balancers
+   * - Backend service-based regional external passthrough Network Load
+   * Balancers
+   * - Global external passthrough Network Load Balancers
+   *
+   *
+   *
+   * It cannot be set by other load balancer types and protocol forwarding
+   * rules.
    * </pre>
    *
    * <code>optional string backend_service = 306946058;</code>
@@ -1149,8 +1197,8 @@ public interface ForwardingRuleOrBuilder
    * <pre>
    * Specifies the forwarding rule type.
    *
-   * For more information about forwarding rules, refer to
-   * Forwarding rule concepts.
+   * For more information, refer to
+   * Forwarding rule product and scheme table.
    * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
@@ -1166,8 +1214,8 @@ public interface ForwardingRuleOrBuilder
    * <pre>
    * Specifies the forwarding rule type.
    *
-   * For more information about forwarding rules, refer to
-   * Forwarding rule concepts.
+   * For more information, refer to
+   * Forwarding rule product and scheme table.
    * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
@@ -1183,8 +1231,8 @@ public interface ForwardingRuleOrBuilder
    * <pre>
    * Specifies the forwarding rule type.
    *
-   * For more information about forwarding rules, refer to
-   * Forwarding rule concepts.
+   * For more information, refer to
+   * Forwarding rule product and scheme table.
    * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
@@ -1360,6 +1408,13 @@ public interface ForwardingRuleOrBuilder
    * For Private Service Connect forwarding rules that forward traffic to Google
    * APIs, the forwarding rule name must be a 1-20 characters string with
    * lowercase letters and numbers and must start with a letter.
+   *
+   * For global external Passthrough Network Load Balancer forwarding rules, the
+   * forwarding rule name must be 1-43 characters long. For each global external
+   * Passthrough Network Load Balancer forwarding rule (a parent forwarding
+   * rule) that you create, Google Cloud generates two output-only child
+   * forwarding rules that are named by concatenating the parent forwarding rule
+   * name with the `-ag0` and `-ag1` suffixes, respectively. Refer to theavailabilityGroup field for further details.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1383,6 +1438,13 @@ public interface ForwardingRuleOrBuilder
    * For Private Service Connect forwarding rules that forward traffic to Google
    * APIs, the forwarding rule name must be a 1-20 characters string with
    * lowercase letters and numbers and must start with a letter.
+   *
+   * For global external Passthrough Network Load Balancer forwarding rules, the
+   * forwarding rule name must be 1-43 characters long. For each global external
+   * Passthrough Network Load Balancer forwarding rule (a parent forwarding
+   * rule) that you create, Google Cloud generates two output-only child
+   * forwarding rules that are named by concatenating the parent forwarding rule
+   * name with the `-ag0` and `-ag1` suffixes, respectively. Refer to theavailabilityGroup field for further details.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1406,6 +1468,13 @@ public interface ForwardingRuleOrBuilder
    * For Private Service Connect forwarding rules that forward traffic to Google
    * APIs, the forwarding rule name must be a 1-20 characters string with
    * lowercase letters and numbers and must start with a letter.
+   *
+   * For global external Passthrough Network Load Balancer forwarding rules, the
+   * forwarding rule name must be 1-43 characters long. For each global external
+   * Passthrough Network Load Balancer forwarding rule (a parent forwarding
+   * rule) that you create, Google Cloud generates two output-only child
+   * forwarding rules that are named by concatenating the parent forwarding rule
+   * name with the `-ag0` and `-ag1` suffixes, respectively. Refer to theavailabilityGroup field for further details.
    * </pre>
    *
    * <code>optional string name = 3373707;</code>
@@ -1599,7 +1668,8 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * For external forwarding rules, two or more forwarding rules cannot use the
-   * same [IPAddress, IPProtocol] pair, and cannot have overlappingportRanges.
+   * same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol
+   * fields) if they have overlapping portRanges.
    *
    * For internal forwarding rules within the same VPC network, two or more
    * forwarding rules cannot use the same [IPAddress, IPProtocol]
@@ -1637,7 +1707,8 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * For external forwarding rules, two or more forwarding rules cannot use the
-   * same [IPAddress, IPProtocol] pair, and cannot have overlappingportRanges.
+   * same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol
+   * fields) if they have overlapping portRanges.
    *
    * For internal forwarding rules within the same VPC network, two or more
    * forwarding rules cannot use the same [IPAddress, IPProtocol]
@@ -1675,7 +1746,8 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * For external forwarding rules, two or more forwarding rules cannot use the
-   * same [IPAddress, IPProtocol] pair, and cannot have overlappingportRanges.
+   * same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol
+   * fields) if they have overlapping portRanges.
    *
    * For internal forwarding rules within the same VPC network, two or more
    * forwarding rules cannot use the same [IPAddress, IPProtocol]
@@ -1712,8 +1784,8 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * For external forwarding rules, two or more forwarding rules cannot use the
-   * same [IPAddress, IPProtocol] pair if they share at least one
-   * port number.
+   * same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol
+   * fields) if they share at least one port number.
    *
    * For internal forwarding rules within the same VPC network, two or more
    * forwarding rules cannot use the same [IPAddress, IPProtocol]
@@ -1750,8 +1822,8 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * For external forwarding rules, two or more forwarding rules cannot use the
-   * same [IPAddress, IPProtocol] pair if they share at least one
-   * port number.
+   * same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol
+   * fields) if they share at least one port number.
    *
    * For internal forwarding rules within the same VPC network, two or more
    * forwarding rules cannot use the same [IPAddress, IPProtocol]
@@ -1788,8 +1860,8 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * For external forwarding rules, two or more forwarding rules cannot use the
-   * same [IPAddress, IPProtocol] pair if they share at least one
-   * port number.
+   * same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol
+   * fields) if they share at least one port number.
    *
    * For internal forwarding rules within the same VPC network, two or more
    * forwarding rules cannot use the same [IPAddress, IPProtocol]
@@ -1827,8 +1899,8 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * For external forwarding rules, two or more forwarding rules cannot use the
-   * same [IPAddress, IPProtocol] pair if they share at least one
-   * port number.
+   * same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol
+   * fields) if they share at least one port number.
    *
    * For internal forwarding rules within the same VPC network, two or more
    * forwarding rules cannot use the same [IPAddress, IPProtocol]
@@ -2385,6 +2457,15 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * -  For Private Service Connect forwarding rules that forward traffic to managed services, the target must be a service attachment. The target is not mutable once set as a service attachment.
+   *
+   *
+   *
+   * The following load balancers cannot set the target field (they should set the backendService field instead):
+   *
+   * - Internal passthrough Network Load Balancers
+   * - Backend service-based regional external passthrough Network Load
+   * Balancers
+   * - Global external passthrough Network Load Balancers
    * </pre>
    *
    * <code>optional string target = 192835985;</code>
@@ -2414,6 +2495,15 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * -  For Private Service Connect forwarding rules that forward traffic to managed services, the target must be a service attachment. The target is not mutable once set as a service attachment.
+   *
+   *
+   *
+   * The following load balancers cannot set the target field (they should set the backendService field instead):
+   *
+   * - Internal passthrough Network Load Balancers
+   * - Backend service-based regional external passthrough Network Load
+   * Balancers
+   * - Global external passthrough Network Load Balancers
    * </pre>
    *
    * <code>optional string target = 192835985;</code>
@@ -2443,6 +2533,15 @@ public interface ForwardingRuleOrBuilder
    *
    *
    * -  For Private Service Connect forwarding rules that forward traffic to managed services, the target must be a service attachment. The target is not mutable once set as a service attachment.
+   *
+   *
+   *
+   * The following load balancers cannot set the target field (they should set the backendService field instead):
+   *
+   * - Internal passthrough Network Load Balancers
+   * - Backend service-based regional external passthrough Network Load
+   * Balancers
+   * - Global external passthrough Network Load Balancers
    * </pre>
    *
    * <code>optional string target = 192835985;</code>

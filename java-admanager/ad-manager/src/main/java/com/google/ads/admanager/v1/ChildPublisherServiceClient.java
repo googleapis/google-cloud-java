@@ -175,6 +175,85 @@ import org.jspecify.annotations.Nullable;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> BatchResendChildPublisherInvitationEmails</td>
+ *      <td><p> Batch resends invitation emails to [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+ * <p>  Only expired and pending [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be sent invitation emails. Rejected, withdrawn, and accepted [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchResendChildPublisherInvitationEmails(BatchResendChildPublisherInvitationEmailsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchResendChildPublisherInvitationEmails(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchResendChildPublisherInvitationEmails(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchResendChildPublisherInvitationEmailsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchRenegotiateChildPublisherAgreements</td>
+ *      <td><p> Batch renegotiates [ChildPublisher][google.ads.admanager.v1.ChildPublisher] agreements (i.e., invite with updated terms).
+ * <p>  Only the agreements of rejected or withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be renegotiated. Expired, pending, and accepted [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchRenegotiateChildPublisherAgreements(NetworkName parent, List&lt;RenegotiateChildPublisherAgreementRequest&gt; requests)
+ *           <li><p> batchRenegotiateChildPublisherAgreements(String parent, List&lt;RenegotiateChildPublisherAgreementRequest&gt; requests)
+ *           <li><p> batchRenegotiateChildPublisherAgreements(BatchRenegotiateChildPublisherAgreementsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchRenegotiateChildPublisherAgreementsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchRejectChildPublishers</td>
+ *      <td><p> Batch rejects [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+ * <p>  Only pending or active [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be rejected. Expired, rejected, and withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+ * <p>  This method is only intended to be called in response to a child user rejecting an invitation and exists to support the rejection of [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that are not yet associated with an Ad Manager network.
+ * <p>  To sever the relationship from the parent publisher's side, use [BatchWithdrawChildPublisher][].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchRejectChildPublishers(BatchRejectChildPublishersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchRejectChildPublishers(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchRejectChildPublishers(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchRejectChildPublishersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchWithdrawChildPublishers</td>
+ *      <td><p> Batch withdraws [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+ * <p>  Only expired, pending, and accepted [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be withdrawn. Rejected or withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchWithdrawChildPublishers(BatchWithdrawChildPublishersRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchWithdrawChildPublishers(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchWithdrawChildPublishers(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchWithdrawChildPublishersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -1090,6 +1169,666 @@ public class ChildPublisherServiceClient implements BackgroundResource {
   public final UnaryCallable<BatchUpdateChildPublishersRequest, BatchUpdateChildPublishersResponse>
       batchUpdateChildPublishersCallable() {
     return stub.batchUpdateChildPublishersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch resends invitation emails to [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   *
+   * <p>Only expired and pending [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be
+   * sent invitation emails. Rejected, withdrawn, and accepted
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchResendChildPublisherInvitationEmailsResponse response =
+   *       childPublisherServiceClient.batchResendChildPublisherInvitationEmails(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names of the
+   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that should be resent invitation
+   *     emails. Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchResendChildPublisherInvitationEmailsResponse
+      batchResendChildPublisherInvitationEmails(@Nullable NetworkName parent, List<String> names) {
+    BatchResendChildPublisherInvitationEmailsRequest request =
+        BatchResendChildPublisherInvitationEmailsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchResendChildPublisherInvitationEmails(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch resends invitation emails to [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   *
+   * <p>Only expired and pending [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be
+   * sent invitation emails. Rejected, withdrawn, and accepted
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchResendChildPublisherInvitationEmailsResponse response =
+   *       childPublisherServiceClient.batchResendChildPublisherInvitationEmails(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names of the
+   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that should be resent invitation
+   *     emails. Format: `networks/{network_code}/childPublisher/{child_publisher_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchResendChildPublisherInvitationEmailsResponse
+      batchResendChildPublisherInvitationEmails(String parent, List<String> names) {
+    BatchResendChildPublisherInvitationEmailsRequest request =
+        BatchResendChildPublisherInvitationEmailsRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchResendChildPublisherInvitationEmails(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch resends invitation emails to [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   *
+   * <p>Only expired and pending [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be
+   * sent invitation emails. Rejected, withdrawn, and accepted
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   BatchResendChildPublisherInvitationEmailsRequest request =
+   *       BatchResendChildPublisherInvitationEmailsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchResendChildPublisherInvitationEmailsResponse response =
+   *       childPublisherServiceClient.batchResendChildPublisherInvitationEmails(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchResendChildPublisherInvitationEmailsResponse
+      batchResendChildPublisherInvitationEmails(
+          BatchResendChildPublisherInvitationEmailsRequest request) {
+    return batchResendChildPublisherInvitationEmailsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch resends invitation emails to [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   *
+   * <p>Only expired and pending [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be
+   * sent invitation emails. Rejected, withdrawn, and accepted
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   BatchResendChildPublisherInvitationEmailsRequest request =
+   *       BatchResendChildPublisherInvitationEmailsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchResendChildPublisherInvitationEmailsResponse> future =
+   *       childPublisherServiceClient
+   *           .batchResendChildPublisherInvitationEmailsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchResendChildPublisherInvitationEmailsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchResendChildPublisherInvitationEmailsRequest,
+          BatchResendChildPublisherInvitationEmailsResponse>
+      batchResendChildPublisherInvitationEmailsCallable() {
+    return stub.batchResendChildPublisherInvitationEmailsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch renegotiates [ChildPublisher][google.ads.admanager.v1.ChildPublisher] agreements (i.e.,
+   * invite with updated terms).
+   *
+   * <p>Only the agreements of rejected or withdrawn
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be renegotiated. Expired,
+   * pending, and accepted [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be
+   * ignored.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<RenegotiateChildPublisherAgreementRequest> requests = new ArrayList<>();
+   *   BatchRenegotiateChildPublisherAgreementsResponse response =
+   *       childPublisherServiceClient.batchRenegotiateChildPublisherAgreements(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param requests Required. The requests to renegotiate
+   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher] agreements.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchRenegotiateChildPublisherAgreementsResponse
+      batchRenegotiateChildPublisherAgreements(
+          @Nullable NetworkName parent, List<RenegotiateChildPublisherAgreementRequest> requests) {
+    BatchRenegotiateChildPublisherAgreementsRequest request =
+        BatchRenegotiateChildPublisherAgreementsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchRenegotiateChildPublisherAgreements(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch renegotiates [ChildPublisher][google.ads.admanager.v1.ChildPublisher] agreements (i.e.,
+   * invite with updated terms).
+   *
+   * <p>Only the agreements of rejected or withdrawn
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be renegotiated. Expired,
+   * pending, and accepted [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be
+   * ignored.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<RenegotiateChildPublisherAgreementRequest> requests = new ArrayList<>();
+   *   BatchRenegotiateChildPublisherAgreementsResponse response =
+   *       childPublisherServiceClient.batchRenegotiateChildPublisherAgreements(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param requests Required. The requests to renegotiate
+   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher] agreements.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchRenegotiateChildPublisherAgreementsResponse
+      batchRenegotiateChildPublisherAgreements(
+          String parent, List<RenegotiateChildPublisherAgreementRequest> requests) {
+    BatchRenegotiateChildPublisherAgreementsRequest request =
+        BatchRenegotiateChildPublisherAgreementsRequest.newBuilder()
+            .setParent(parent)
+            .addAllRequests(requests)
+            .build();
+    return batchRenegotiateChildPublisherAgreements(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch renegotiates [ChildPublisher][google.ads.admanager.v1.ChildPublisher] agreements (i.e.,
+   * invite with updated terms).
+   *
+   * <p>Only the agreements of rejected or withdrawn
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be renegotiated. Expired,
+   * pending, and accepted [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be
+   * ignored.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   BatchRenegotiateChildPublisherAgreementsRequest request =
+   *       BatchRenegotiateChildPublisherAgreementsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<RenegotiateChildPublisherAgreementRequest>())
+   *           .build();
+   *   BatchRenegotiateChildPublisherAgreementsResponse response =
+   *       childPublisherServiceClient.batchRenegotiateChildPublisherAgreements(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchRenegotiateChildPublisherAgreementsResponse
+      batchRenegotiateChildPublisherAgreements(
+          BatchRenegotiateChildPublisherAgreementsRequest request) {
+    return batchRenegotiateChildPublisherAgreementsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch renegotiates [ChildPublisher][google.ads.admanager.v1.ChildPublisher] agreements (i.e.,
+   * invite with updated terms).
+   *
+   * <p>Only the agreements of rejected or withdrawn
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be renegotiated. Expired,
+   * pending, and accepted [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be
+   * ignored.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   BatchRenegotiateChildPublisherAgreementsRequest request =
+   *       BatchRenegotiateChildPublisherAgreementsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<RenegotiateChildPublisherAgreementRequest>())
+   *           .build();
+   *   ApiFuture<BatchRenegotiateChildPublisherAgreementsResponse> future =
+   *       childPublisherServiceClient
+   *           .batchRenegotiateChildPublisherAgreementsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchRenegotiateChildPublisherAgreementsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchRenegotiateChildPublisherAgreementsRequest,
+          BatchRenegotiateChildPublisherAgreementsResponse>
+      batchRenegotiateChildPublisherAgreementsCallable() {
+    return stub.batchRenegotiateChildPublisherAgreementsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch rejects [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   *
+   * <p>Only pending or active [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be
+   * rejected. Expired, rejected, and withdrawn
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   *
+   * <p>This method is only intended to be called in response to a child user rejecting an
+   * invitation and exists to support the rejection of
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that are not yet associated with an
+   * Ad Manager network.
+   *
+   * <p>To sever the relationship from the parent publisher's side, use
+   * [BatchWithdrawChildPublisher][].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchRejectChildPublishersResponse response =
+   *       childPublisherServiceClient.batchRejectChildPublishers(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names of the
+   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject. Format:
+   *     `networks/{network_code}/childPublisher/{child_publisher_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchRejectChildPublishersResponse batchRejectChildPublishers(
+      @Nullable NetworkName parent, List<String> names) {
+    BatchRejectChildPublishersRequest request =
+        BatchRejectChildPublishersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchRejectChildPublishers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch rejects [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   *
+   * <p>Only pending or active [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be
+   * rejected. Expired, rejected, and withdrawn
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   *
+   * <p>This method is only intended to be called in response to a child user rejecting an
+   * invitation and exists to support the rejection of
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that are not yet associated with an
+   * Ad Manager network.
+   *
+   * <p>To sever the relationship from the parent publisher's side, use
+   * [BatchWithdrawChildPublisher][].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchRejectChildPublishersResponse response =
+   *       childPublisherServiceClient.batchRejectChildPublishers(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names of the
+   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to reject. Format:
+   *     `networks/{network_code}/childPublisher/{child_publisher_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchRejectChildPublishersResponse batchRejectChildPublishers(
+      String parent, List<String> names) {
+    BatchRejectChildPublishersRequest request =
+        BatchRejectChildPublishersRequest.newBuilder().setParent(parent).addAllNames(names).build();
+    return batchRejectChildPublishers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch rejects [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   *
+   * <p>Only pending or active [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be
+   * rejected. Expired, rejected, and withdrawn
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   *
+   * <p>This method is only intended to be called in response to a child user rejecting an
+   * invitation and exists to support the rejection of
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that are not yet associated with an
+   * Ad Manager network.
+   *
+   * <p>To sever the relationship from the parent publisher's side, use
+   * [BatchWithdrawChildPublisher][].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   BatchRejectChildPublishersRequest request =
+   *       BatchRejectChildPublishersRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchRejectChildPublishersResponse response =
+   *       childPublisherServiceClient.batchRejectChildPublishers(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchRejectChildPublishersResponse batchRejectChildPublishers(
+      BatchRejectChildPublishersRequest request) {
+    return batchRejectChildPublishersCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch rejects [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   *
+   * <p>Only pending or active [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be
+   * rejected. Expired, rejected, and withdrawn
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   *
+   * <p>This method is only intended to be called in response to a child user rejecting an
+   * invitation and exists to support the rejection of
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s that are not yet associated with an
+   * Ad Manager network.
+   *
+   * <p>To sever the relationship from the parent publisher's side, use
+   * [BatchWithdrawChildPublisher][].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   BatchRejectChildPublishersRequest request =
+   *       BatchRejectChildPublishersRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchRejectChildPublishersResponse> future =
+   *       childPublisherServiceClient.batchRejectChildPublishersCallable().futureCall(request);
+   *   // Do something.
+   *   BatchRejectChildPublishersResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>
+      batchRejectChildPublishersCallable() {
+    return stub.batchRejectChildPublishersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch withdraws [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   *
+   * <p>Only expired, pending, and accepted
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be withdrawn. Rejected or
+   * withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchWithdrawChildPublishersResponse response =
+   *       childPublisherServiceClient.batchWithdrawChildPublishers(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names of the
+   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw. Format:
+   *     `networks/{network_code}/childPublisher/{child_publisher_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchWithdrawChildPublishersResponse batchWithdrawChildPublishers(
+      @Nullable NetworkName parent, List<String> names) {
+    BatchWithdrawChildPublishersRequest request =
+        BatchWithdrawChildPublishersRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchWithdrawChildPublishers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch withdraws [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   *
+   * <p>Only expired, pending, and accepted
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be withdrawn. Rejected or
+   * withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchWithdrawChildPublishersResponse response =
+   *       childPublisherServiceClient.batchWithdrawChildPublishers(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names of the
+   *     [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s to withdraw. Format:
+   *     `networks/{network_code}/childPublisher/{child_publisher_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchWithdrawChildPublishersResponse batchWithdrawChildPublishers(
+      String parent, List<String> names) {
+    BatchWithdrawChildPublishersRequest request =
+        BatchWithdrawChildPublishersRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchWithdrawChildPublishers(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch withdraws [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   *
+   * <p>Only expired, pending, and accepted
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be withdrawn. Rejected or
+   * withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   BatchWithdrawChildPublishersRequest request =
+   *       BatchWithdrawChildPublishersRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchWithdrawChildPublishersResponse response =
+   *       childPublisherServiceClient.batchWithdrawChildPublishers(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchWithdrawChildPublishersResponse batchWithdrawChildPublishers(
+      BatchWithdrawChildPublishersRequest request) {
+    return batchWithdrawChildPublishersCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch withdraws [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s.
+   *
+   * <p>Only expired, pending, and accepted
+   * [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s can be withdrawn. Rejected or
+   * withdrawn [ChildPublisher][google.ads.admanager.v1.ChildPublisher]s will be ignored.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChildPublisherServiceClient childPublisherServiceClient =
+   *     ChildPublisherServiceClient.create()) {
+   *   BatchWithdrawChildPublishersRequest request =
+   *       BatchWithdrawChildPublishersRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchWithdrawChildPublishersResponse> future =
+   *       childPublisherServiceClient.batchWithdrawChildPublishersCallable().futureCall(request);
+   *   // Do something.
+   *   BatchWithdrawChildPublishersResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+      batchWithdrawChildPublishersCallable() {
+    return stub.batchWithdrawChildPublishersCallable();
   }
 
   @Override

@@ -100,6 +100,24 @@ public class NetworkServiceSettings extends ClientSettings<NetworkServiceSetting
     return ((NetworkServiceStubSettings) getStubSettings()).listNetworksSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateNetwork. */
+  public UnaryCallSettings<UpdateNetworkRequest, Network> updateNetworkSettings() {
+    return ((NetworkServiceStubSettings) getStubSettings()).updateNetworkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to provisionTestNetwork. */
+  public UnaryCallSettings<ProvisionTestNetworkRequest, Network> provisionTestNetworkSettings() {
+    return ((NetworkServiceStubSettings) getStubSettings()).provisionTestNetworkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDefaultThirdPartyDataDeclaration. */
+  public UnaryCallSettings<
+          GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+      getDefaultThirdPartyDataDeclarationSettings() {
+    return ((NetworkServiceStubSettings) getStubSettings())
+        .getDefaultThirdPartyDataDeclarationSettings();
+  }
+
   public static final NetworkServiceSettings create(NetworkServiceStubSettings stub)
       throws IOException {
     return new NetworkServiceSettings.Builder(stub.toBuilder()).build();
@@ -207,6 +225,26 @@ public class NetworkServiceSettings extends ClientSettings<NetworkServiceSetting
             ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
         listNetworksSettings() {
       return getStubSettingsBuilder().listNetworksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateNetwork. */
+    public UnaryCallSettings.Builder<UpdateNetworkRequest, Network> updateNetworkSettings() {
+      return getStubSettingsBuilder().updateNetworkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to provisionTestNetwork. */
+    public UnaryCallSettings.Builder<ProvisionTestNetworkRequest, Network>
+        provisionTestNetworkSettings() {
+      return getStubSettingsBuilder().provisionTestNetworkSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getDefaultThirdPartyDataDeclaration.
+     */
+    public UnaryCallSettings.Builder<
+            GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+        getDefaultThirdPartyDataDeclarationSettings() {
+      return getStubSettingsBuilder().getDefaultThirdPartyDataDeclarationSettings();
     }
 
     @Override
