@@ -11,8 +11,8 @@
     first-party-dependencies, which is imported by google-cloud-shared-dependencies;
     importing shared dependency management from grpc-gcp would create a dependency
     management cycle. -->
-    <version>1.17.0</version>
-    <relativePath/>
+    <version>1.21.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-config:current} -->
+    <relativePath>../java-shared-config/java-shared-config/pom.xml</relativePath>
   </parent>
 
   <groupId>com.google.cloud</groupId>
