@@ -54,7 +54,8 @@ final class TelemetryManager implements AutoCloseable {
       synchronized (TelemetryManager.class) {
         localRef = instance;
         if (localRef == null) {
-          TelemetryConfiguration config = TelemetryConfiguration.builder().resolveEnabledFlag(properties).build();
+          TelemetryConfiguration config =
+              TelemetryConfiguration.builder().resolveEnabledFlag(properties).build();
           ClearcutTransport transport = new ClearcutTransport(config);
           TelemetryBatcher batcher = new TelemetryBatcher(config, transport);
           localRef = new TelemetryManager(batcher);
@@ -127,43 +128,116 @@ final class TelemetryManager implements AutoCloseable {
       return StatementType.STATEMENT_TYPE_UNSPECIFIED;
     }
     switch (bqStatementType.name()) {
-      case "SELECT": return StatementType.STATEMENT_TYPE_SELECT;
-      case "INSERT": return StatementType.STATEMENT_TYPE_INSERT;
-      case "UPDATE": return StatementType.STATEMENT_TYPE_UPDATE;
-      case "DELETE": return StatementType.STATEMENT_TYPE_DELETE;
-      case "MERGE": return StatementType.STATEMENT_TYPE_MERGE;
+      case "SELECT":
+        return StatementType.STATEMENT_TYPE_SELECT;
+      case "INSERT":
+        return StatementType.STATEMENT_TYPE_INSERT;
+      case "UPDATE":
+        return StatementType.STATEMENT_TYPE_UPDATE;
+      case "DELETE":
+        return StatementType.STATEMENT_TYPE_DELETE;
+      case "MERGE":
+        return StatementType.STATEMENT_TYPE_MERGE;
       case "CREATE_TABLE":
-      case "CREATE_TABLE_AS_SELECT": return StatementType.STATEMENT_TYPE_CREATE_TABLE;
-      case "CREATE_MODEL": return StatementType.STATEMENT_TYPE_CREATE_MODEL;
-      case "CREATE_VIEW": return StatementType.STATEMENT_TYPE_CREATE_VIEW;
-      case "DROP_TABLE": return StatementType.STATEMENT_TYPE_DROP_TABLE;
-      case "DROP_VIEW": return StatementType.STATEMENT_TYPE_DROP_VIEW;
-      case "ALTER_TABLE": return StatementType.STATEMENT_TYPE_ALTER_TABLE;
-      case "ALTER_VIEW": return StatementType.STATEMENT_TYPE_ALTER_VIEW;
-      case "CALL": return StatementType.STATEMENT_TYPE_CALL;
-      case "SCRIPT": return StatementType.STATEMENT_TYPE_SCRIPT;
-      default: return StatementType.STATEMENT_TYPE_OTHER;
+        return StatementType.STATEMENT_TYPE_CREATE_TABLE;
+      case "CREATE_TABLE_AS_SELECT":
+        return StatementType.STATEMENT_TYPE_CREATE_TABLE_AS_SELECT;
+      case "CREATE_MODEL":
+        return StatementType.STATEMENT_TYPE_CREATE_MODEL;
+      case "CREATE_VIEW":
+        return StatementType.STATEMENT_TYPE_CREATE_VIEW;
+      case "CREATE_FUNCTION":
+        return StatementType.STATEMENT_TYPE_CREATE_FUNCTION;
+      case "CREATE_PROCEDURE":
+        return StatementType.STATEMENT_TYPE_CREATE_PROCEDURE;
+      case "CREATE_MATERIALIZED_VIEW":
+        return StatementType.STATEMENT_TYPE_CREATE_MATERIALIZED_VIEW;
+      case "CREATE_TABLE_FUNCTION":
+        return StatementType.STATEMENT_TYPE_CREATE_TABLE_FUNCTION;
+      case "CREATE_ROW_ACCESS_POLICY":
+        return StatementType.STATEMENT_TYPE_CREATE_ROW_ACCESS_POLICY;
+      case "CREATE_SCHEMA":
+        return StatementType.STATEMENT_TYPE_CREATE_SCHEMA;
+      case "CREATE_SNAPSHOT_TABLE":
+        return StatementType.STATEMENT_TYPE_CREATE_SNAPSHOT_TABLE;
+      case "CREATE_SEARCH_INDEX":
+        return StatementType.STATEMENT_TYPE_CREATE_SEARCH_INDEX;
+      case "CREATE_EXTERNAL_TABLE":
+        return StatementType.STATEMENT_TYPE_CREATE_EXTERNAL_TABLE;
+      case "DROP_TABLE":
+        return StatementType.STATEMENT_TYPE_DROP_TABLE;
+      case "DROP_VIEW":
+        return StatementType.STATEMENT_TYPE_DROP_VIEW;
+      case "DROP_FUNCTION":
+        return StatementType.STATEMENT_TYPE_DROP_FUNCTION;
+      case "DROP_PROCEDURE":
+        return StatementType.STATEMENT_TYPE_DROP_PROCEDURE;
+      case "DROP_EXTERNAL_TABLE":
+        return StatementType.STATEMENT_TYPE_DROP_EXTERNAL_TABLE;
+      case "DROP_MODEL":
+        return StatementType.STATEMENT_TYPE_DROP_MODEL;
+      case "DROP_MATERIALIZED_VIEW":
+        return StatementType.STATEMENT_TYPE_DROP_MATERIALIZED_VIEW;
+      case "DROP_TABLE_FUNCTION":
+        return StatementType.STATEMENT_TYPE_DROP_TABLE_FUNCTION;
+      case "DROP_SEARCH_INDEX":
+        return StatementType.STATEMENT_TYPE_DROP_SEARCH_INDEX;
+      case "DROP_SCHEMA":
+        return StatementType.STATEMENT_TYPE_DROP_SCHEMA;
+      case "DROP_SNAPSHOT_TABLE":
+        return StatementType.STATEMENT_TYPE_DROP_SNAPSHOT_TABLE;
+      case "DROP_ROW_ACCESS_POLICY":
+        return StatementType.STATEMENT_TYPE_DROP_ROW_ACCESS_POLICY;
+      case "ALTER_TABLE":
+        return StatementType.STATEMENT_TYPE_ALTER_TABLE;
+      case "ALTER_VIEW":
+        return StatementType.STATEMENT_TYPE_ALTER_VIEW;
+      case "ALTER_MATERIALIZED_VIEW":
+        return StatementType.STATEMENT_TYPE_ALTER_MATERIALIZED_VIEW;
+      case "ALTER_SCHEMA":
+        return StatementType.STATEMENT_TYPE_ALTER_SCHEMA;
+      case "TRUNCATE_TABLE":
+        return StatementType.STATEMENT_TYPE_TRUNCATE_TABLE;
+      case "EXPORT_DATA":
+        return StatementType.STATEMENT_TYPE_EXPORT_DATA;
+      case "EXPORT_MODEL":
+        return StatementType.STATEMENT_TYPE_EXPORT_MODEL;
+      case "LOAD_DATA":
+        return StatementType.STATEMENT_TYPE_LOAD_DATA;
+      case "CALL":
+        return StatementType.STATEMENT_TYPE_CALL;
+      case "SCRIPT":
+        return StatementType.STATEMENT_TYPE_SCRIPT;
+      default:
+        return StatementType.STATEMENT_TYPE_OTHER;
     }
   }
 
   static AuthenticationType toAuthenticationType(int oauthType) {
     switch (oauthType) {
-      case 0: return AuthenticationType.AUTHENTICATION_TYPE_SERVICE_ACCOUNT;
-      case 1: return AuthenticationType.AUTHENTICATION_TYPE_USER_AUTHENTICATION;
-      case 2: return AuthenticationType.AUTHENTICATION_TYPE_APPLICATION_DEFAULT_CREDENTIALS;
-      case 3: return AuthenticationType.AUTHENTICATION_TYPE_EXTERNAL;
-      case 4: return AuthenticationType.AUTHENTICATION_TYPE_TOKEN;
-      default: return AuthenticationType.AUTHENTICATION_TYPE_CUSTOM;
+      case 0:
+        return AuthenticationType.AUTHENTICATION_TYPE_SERVICE_ACCOUNT;
+      case 1:
+        return AuthenticationType.AUTHENTICATION_TYPE_USER_AUTHENTICATION;
+      case 2:
+        return AuthenticationType.AUTHENTICATION_TYPE_APPLICATION_DEFAULT_CREDENTIALS;
+      case 3:
+        return AuthenticationType.AUTHENTICATION_TYPE_EXTERNAL;
+      case 4:
+        return AuthenticationType.AUTHENTICATION_TYPE_TOKEN;
+      default:
+        return AuthenticationType.AUTHENTICATION_TYPE_CUSTOM;
     }
   }
 
-  static final double[] HISTOGRAM_BOUNDS = {10.0, 50.0, 100.0, 250.0, 500.0, 1000.0, 5000.0, 10000.0};
+  static final double[] HISTOGRAM_BOUNDS = {
+    10.0, 50.0, 100.0, 250.0, 500.0, 1000.0, 5000.0, 10000.0
+  };
 
   static DurationHistogram toDurationBucketMs(long durationMs) {
-    DurationHistogram.Builder builder = DurationHistogram.newBuilder()
-        .setCount(1)
-        .setSum(durationMs);
-    
+    DurationHistogram.Builder builder =
+        DurationHistogram.newBuilder().setCount(1).setSum(durationMs);
+
     int bucketIndex = HISTOGRAM_BOUNDS.length;
     for (int i = 0; i < HISTOGRAM_BOUNDS.length; i++) {
       builder.addExplicitBounds(HISTOGRAM_BOUNDS[i]);
@@ -178,48 +252,59 @@ final class TelemetryManager implements AutoCloseable {
   }
 
   static void recordConnectionAttempt(Status status, int errorCode, AuthenticationType authType) {
-    runSafely(() -> {
-      TelemetryManager mgr = instance;
-      if (mgr != null && mgr.getBatcher() != null) {
-        mgr.getBatcher().offerConnectionAttempt(
-            ConnectionAttempt.newBuilder()
-                .setStatus(status)
-                .setErrorCode(errorCode)
-                .setAuthType(authType)
-                .setCount(1)
-                .build());
-      }
-    });
+    runSafely(
+        () -> {
+          TelemetryManager mgr = instance;
+          if (mgr != null && mgr.getBatcher() != null) {
+            mgr.getBatcher()
+                .offerConnectionAttempt(
+                    ConnectionAttempt.newBuilder()
+                        .setStatus(status)
+                        .setErrorCode(errorCode)
+                        .setAuthType(authType)
+                        .setCount(1)
+                        .build());
+          }
+        });
   }
 
-  static void recordStatementExecution(StatementType statementType, QueryApiType apiType, Status status, int errorCode, long durationMs) {
-    runSafely(() -> {
-      TelemetryManager mgr = instance;
-      if (mgr != null && mgr.getBatcher() != null) {
-        mgr.getBatcher().offerStatementExecution(
-            StatementExecution.newBuilder()
-                .setStatementType(statementType)
-                .setQueryApiType(apiType)
-                .setStatus(status)
-                .setErrorCode(errorCode)
-                .setCount(1)
-                .setDuration(toDurationBucketMs(durationMs))
-                .build());
-      }
-    });
+  static void recordStatementExecution(
+      StatementType statementType,
+      QueryApiType apiType,
+      Status status,
+      int errorCode,
+      long durationMs) {
+    runSafely(
+        () -> {
+          TelemetryManager mgr = instance;
+          if (mgr != null && mgr.getBatcher() != null) {
+            mgr.getBatcher()
+                .offerStatementExecution(
+                    StatementExecution.newBuilder()
+                        .setStatementType(statementType)
+                        .setQueryApiType(apiType)
+                        .setStatus(status)
+                        .setErrorCode(errorCode)
+                        .setCount(1)
+                        .setDuration(toDurationBucketMs(durationMs))
+                        .build());
+          }
+        });
   }
 
   static void recordFeatureUsage(DriverFeature feature, String customFeatureName) {
-    runSafely(() -> {
-      TelemetryManager mgr = instance;
-      if (mgr != null && mgr.getBatcher() != null) {
-        mgr.getBatcher().offerFeatureUsage(
-            FeatureUsage.newBuilder()
-                .setDriverFeature(feature)
-                .setCustomFeatureName(customFeatureName == null ? "" : customFeatureName)
-                .setCount(1)
-                .build());
-      }
-    });
+    runSafely(
+        () -> {
+          TelemetryManager mgr = instance;
+          if (mgr != null && mgr.getBatcher() != null) {
+            mgr.getBatcher()
+                .offerFeatureUsage(
+                    FeatureUsage.newBuilder()
+                        .setDriverFeature(feature)
+                        .setCustomFeatureName(customFeatureName == null ? "" : customFeatureName)
+                        .setCount(1)
+                        .build());
+          }
+        });
   }
 }

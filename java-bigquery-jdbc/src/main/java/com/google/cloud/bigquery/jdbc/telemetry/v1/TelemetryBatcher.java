@@ -208,7 +208,12 @@ final class TelemetryBatcher implements AutoCloseable {
     for (Message event : events) {
       if (event instanceof ConnectionAttempt) {
         ConnectionAttempt attempt = (ConnectionAttempt) event;
-        String key = attempt.getAuthType().name() + "|" + attempt.getStatus().name() + "|" + attempt.getErrorCode();
+        String key =
+            attempt.getAuthType().name()
+                + "|"
+                + attempt.getStatus().name()
+                + "|"
+                + attempt.getErrorCode();
         ConnectionAttempt.Builder b = connections.get(key);
         if (b == null) {
           connections.put(key, attempt.toBuilder());
@@ -217,7 +222,14 @@ final class TelemetryBatcher implements AutoCloseable {
         }
       } else if (event instanceof StatementExecution) {
         StatementExecution exec = (StatementExecution) event;
-        String key = exec.getStatementType().name() + "|" + exec.getQueryApiType().name() + "|" + exec.getStatus().name() + "|" + exec.getErrorCode();
+        String key =
+            exec.getStatementType().name()
+                + "|"
+                + exec.getQueryApiType().name()
+                + "|"
+                + exec.getStatus().name()
+                + "|"
+                + exec.getErrorCode();
         StatementExecution.Builder b = statements.get(key);
         if (b == null) {
           statements.put(key, exec.toBuilder());
