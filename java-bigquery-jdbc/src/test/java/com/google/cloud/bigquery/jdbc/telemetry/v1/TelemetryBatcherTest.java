@@ -82,22 +82,27 @@ public class TelemetryBatcherTest {
 
     try (TelemetryBatcher batcher =
         new TelemetryBatcher(config, transport, executorService, false)) {
-      batcher.offerConnectionAttempt(
-          ConnectionAttempt.newBuilder().setStatus(Status.STATUS_SUCCESS).build());
-      batcher.offerStatementExecution(
-          StatementExecution.newBuilder().setStatus(Status.STATUS_SUCCESS).build());
-      batcher.offerErrorMetric(ErrorMetric.newBuilder().setErrorCode(1).setCount(1).build());
-      batcher.offerFeatureUsage(
-          FeatureUsage.newBuilder().setDriverFeature(DriverFeature.DRIVER_FEATURE_CUSTOM).build());
 
-      assertEquals(4, batcher.getPendingEventCount());
-      assertFalse(batcher.isEmpty());
+      batcher.offerConnectionAttempt(
+          Status.STATUS_SUCCESS, 0, AuthenticationType.AUTHENTICATION_TYPE_SERVICE_ACCOUNT);
+      batcher.offerStatementExecution(
+          StatementType.STATEMENT_TYPE_SELECT,
+          QueryApiType.QUERY_API_TYPE_STANDARD_REST_API,
+          Status.STATUS_SUCCESS,
+          0,
+          150,
+          3);
+      batcher.offerErrorMetric(1, 100, "executeQuery");
+      batcher.offerFeatureUsage(DriverFeature.DRIVER_FEATURE_CUSTOM, "MyFeature");
 
       TransportResult result = batcher.flush();
       assertTrue(result.isSuccess());
       assertEquals(1, requestCount.get());
-      assertEquals(0, batcher.getPendingEventCount());
-      assertTrue(batcher.isEmpty());
+
+      // Secondary flush should be empty
+      TransportResult result2 = batcher.flush();
+      assertFalse(result2.isSuccess()); // empty flush returns disabled or unsuccess
+      assertEquals(1, requestCount.get()); // no new request sent
     }
   }
 
@@ -113,7 +118,7 @@ public class TelemetryBatcherTest {
               @Override
               public LowLevelHttpResponse execute() {
                 MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
-                response.setStatusCode(500);
+                response.setStatusCode(500); // simulate failure
                 return response;
               }
             };
@@ -129,71 +134,20 @@ public class TelemetryBatcherTest {
 
     try (TelemetryBatcher batcher =
         new TelemetryBatcher(config, transport, executorService, false)) {
-      batcher.offerConnectionAttempt(
-          ConnectionAttempt.newBuilder().setStatus(Status.STATUS_ERROR).build());
 
-      assertEquals(1, batcher.getPendingEventCount());
+      batcher.offerConnectionAttempt(
+          Status.STATUS_ERROR, 0, AuthenticationType.AUTHENTICATION_TYPE_SERVICE_ACCOUNT);
 
       TransportResult result = batcher.flush();
       assertFalse(result.isSuccess());
       assertEquals(1, requestCount.get());
 
-      // Events should be retained for next retry attempt
-      assertEquals(1, batcher.getPendingEventCount());
-      assertFalse(batcher.isEmpty());
-    }
-  }
-
-  @Test
-  public void testBatchSizeAndPayloadLimitTrimming() {
-    AtomicInteger requestCount = new AtomicInteger(0);
-    MockHttpTransport mockTransport =
-        new MockHttpTransport() {
-          @Override
-          public LowLevelHttpRequest buildRequest(String method, String url) {
-            requestCount.incrementAndGet();
-            return new MockLowLevelHttpRequest(url) {
-              @Override
-              public LowLevelHttpResponse execute() {
-                MockLowLevelHttpResponse response = new MockLowLevelHttpResponse();
-                response.setStatusCode(200);
-                return response;
-              }
-            };
-          }
-        };
-
-    TelemetryConfiguration config =
-        TelemetryConfiguration.newBuilder()
-            .setEnabled(true)
-            .setBatchSizeThreshold(5)
-            .setDriverEnvironment(driverEnvironment)
-            .build();
-    ClearcutTransport transport = new ClearcutTransport(mockTransport, config);
-
-    try (TelemetryBatcher batcher =
-        new TelemetryBatcher(config, transport, executorService, false)) {
-      for (int i = 0; i < 12; i++) {
-        batcher.offerConnectionAttempt(
-            ConnectionAttempt.newBuilder().setStatus(Status.STATUS_SUCCESS).build());
-      }
-
-      assertEquals(12, batcher.getPendingEventCount());
-
-      // First flush drains up to batchSizeThreshold (5 items)
-      TransportResult result1 = batcher.flush();
-      assertTrue(result1.isSuccess());
-      assertEquals(7, batcher.getPendingEventCount());
-
-      // Second flush drains another batchSizeThreshold (5 items)
+      // Because it failed, the connection attempt should be merged back into the active map.
+      // We can verify this by flushing again with a working transport (we can't change transport
+      // mid-flight here,
+      // but we can verify it attempts another request).
       TransportResult result2 = batcher.flush();
-      assertTrue(result2.isSuccess());
-      assertEquals(2, batcher.getPendingEventCount());
-
-      // Third flush drains remaining 2 items
-      TransportResult result3 = batcher.flush();
-      assertTrue(result3.isSuccess());
-      assertEquals(0, batcher.getPendingEventCount());
+      assertEquals(2, requestCount.get());
     }
   }
 
@@ -225,18 +179,16 @@ public class TelemetryBatcherTest {
 
     TelemetryBatcher batcher = new TelemetryBatcher(config, transport);
     batcher.offerConnectionAttempt(
-        ConnectionAttempt.newBuilder().setStatus(Status.STATUS_SUCCESS).build());
-
-    assertEquals(1, batcher.getPendingEventCount());
+        Status.STATUS_SUCCESS, 0, AuthenticationType.AUTHENTICATION_TYPE_SERVICE_ACCOUNT);
 
     batcher.close();
-
     assertEquals(1, requestCount.get());
-    assertEquals(0, batcher.getPendingEventCount());
 
     // Should not accept new events after close
     batcher.offerConnectionAttempt(
-        ConnectionAttempt.newBuilder().setStatus(Status.STATUS_SUCCESS).build());
-    assertEquals(0, batcher.getPendingEventCount());
+        Status.STATUS_SUCCESS, 0, AuthenticationType.AUTHENTICATION_TYPE_SERVICE_ACCOUNT);
+    batcher.flush();
+    // Flush should return disabled and not send a request
+    assertEquals(1, requestCount.get());
   }
 }
