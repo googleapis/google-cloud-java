@@ -538,8 +538,6 @@ public class SessionImpl implements Session, VRpcSessionApi {
       return;
     }
     if (clock.instant().isAfter(nextHeartbeat)) {
-      logger.warning(
-          String.format("Missed heartbeat for %s, forcing session close", info.getLogName()));
       forceClose(MISSED_HEARTBEAT_CLOSE_REQUEST);
       return;
     }

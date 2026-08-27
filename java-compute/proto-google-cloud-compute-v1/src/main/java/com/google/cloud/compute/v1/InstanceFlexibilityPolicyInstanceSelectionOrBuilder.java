@@ -153,6 +153,48 @@ public interface InstanceFlexibilityPolicyInstanceSelectionOrBuilder
    *
    *
    * <pre>
+   * Name of the minimum CPU platform to be used by this instance selection.
+   * e.g. 'Intel Ice Lake'.
+   * </pre>
+   *
+   * <code>optional string min_cpu_platform = 242912759;</code>
+   *
+   * @return Whether the minCpuPlatform field is set.
+   */
+  boolean hasMinCpuPlatform();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the minimum CPU platform to be used by this instance selection.
+   * e.g. 'Intel Ice Lake'.
+   * </pre>
+   *
+   * <code>optional string min_cpu_platform = 242912759;</code>
+   *
+   * @return The minCpuPlatform.
+   */
+  java.lang.String getMinCpuPlatform();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the minimum CPU platform to be used by this instance selection.
+   * e.g. 'Intel Ice Lake'.
+   * </pre>
+   *
+   * <code>optional string min_cpu_platform = 242912759;</code>
+   *
+   * @return The bytes for minCpuPlatform.
+   */
+  com.google.protobuf.ByteString getMinCpuPlatformBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Rank when prioritizing the shape flexibilities.
    * The instance selections with rank are considered
    * first, in the ascending order of the rank.

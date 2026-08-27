@@ -52,6 +52,7 @@
     <module>java-beyondcorp-clientconnectorservices</module>
     <module>java-beyondcorp-clientgateways</module>
     <module>java-biglake</module>
+    <module>java-biglake-hive</module>
     <module>java-bigquery</module>
     <module>java-bigquery-data-exchange</module>
     <module>java-bigquery-jdbc</module>
@@ -91,10 +92,8 @@
     <module>java-contentwarehouse</module>
     <module>java-data-fusion</module>
     <module>java-databasecenter</module>
-    <module>java-datacatalog</module>
     <module>java-dataflow</module>
     <module>java-dataform</module>
-    <module>java-datalabeling</module>
     <module>java-datalineage</module>
     <module>java-datamanager</module>
     <module>java-dataplex</module>
@@ -124,6 +123,7 @@
     <module>java-filestore</module>
     <module>java-financialservices</module>
     <module>java-firestore</module>
+    <module>java-ftp</module>
     <module>java-functions</module>
     <module>java-gdchardwaremanagement</module>
     <module>java-geminidataanalytics</module>
@@ -277,6 +277,7 @@
     <module>java-websecurityscanner</module>
     <module>java-workflow-executions</module>
     <module>java-workflows</module>
+    <module>java-workloadidentity</module>
     <module>java-workloadmanager</module>
     <module>java-workspaceevents</module>
     <module>java-workstations</module>

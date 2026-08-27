@@ -52,6 +52,7 @@ jobs:
       with:
         distribution: zulu
         java-version: 11
+        cache: maven
     - name: Install java-shared-dependencies and common dependencies
       run: |
         .kokoro/build.sh
@@ -66,9 +67,18 @@ jobs:
       with:
         distribution: zulu
         java-version: ${{matrix.java}}
+        cache: maven
     - run: java -version
-    - run: sudo apt-get update -y
-    - run: sudo apt-get install libxml2-utils
+    - name: Install xmllint
+      timeout-minutes: 5
+      run: |
+        # Retry apt-get update and install up to 3 times with a 15-second per-request timeout.
+        # Retries protect against transient network glitches, mirror timeouts, and apt lock contention on runner startup.
+        for i in {1..3}; do
+          sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 update && \
+          sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 -y install libxml2-utils && \
+          break || sleep 5
+        done
     - run: .kokoro/client-library-check.sh ${{matrix.repo}} ${{matrix.job-type}}
   lint:
     needs: filter
@@ -92,9 +102,18 @@ jobs:
       with:
         distribution: zulu
         java-version: ${{matrix.java}}
+        cache: maven
     - run: java -version
-    - run: sudo apt-get update -y
-    - run: sudo apt-get install libxml2-utils
+    - name: Install xmllint
+      timeout-minutes: 5
+      run: |
+        # Retry apt-get update and install up to 3 times with a 15-second per-request timeout.
+        # Retries protect against transient network glitches, mirror timeouts, and apt lock contention on runner startup.
+        for i in {1..3}; do
+          sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 update && \
+          sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 -y install libxml2-utils && \
+          break || sleep 5
+        done
     - name: Install java-shared-dependencies and common dependencies
       run: |
         .kokoro/build.sh
@@ -146,9 +165,18 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: java -version
-    - run: sudo apt-get update -y
-    - run: sudo apt-get install libxml2-utils
+    - name: Install xmllint
+      timeout-minutes: 5
+      run: |
+        # Retry apt-get update and install up to 3 times with a 15-second per-request timeout.
+        # Retries protect against transient network glitches, mirror timeouts, and apt lock contention on runner startup.
+        for i in {1..3}; do
+          sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 update && \
+          sudo apt-get -o Acquire::http::Timeout="15" -o Acquire::Retries=3 -y install libxml2-utils && \
+          break || sleep 5
+        done
     - name: Install java-shared-dependencies and common dependencies
       run: |
         .kokoro/build.sh

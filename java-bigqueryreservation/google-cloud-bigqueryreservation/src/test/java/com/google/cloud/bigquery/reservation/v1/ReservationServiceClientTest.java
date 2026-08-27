@@ -45,6 +45,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import com.google.protobuf.Timestamp;
 import com.google.rpc.Status;
+import com.google.type.Expr;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -119,6 +120,7 @@ public class ReservationServiceClientTest {
             .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .addAllReservationGroupPath(new ArrayList<String>())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -179,6 +181,7 @@ public class ReservationServiceClientTest {
             .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .addAllReservationGroupPath(new ArrayList<String>())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -327,6 +330,7 @@ public class ReservationServiceClientTest {
             .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .addAllReservationGroupPath(new ArrayList<String>())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -381,6 +385,7 @@ public class ReservationServiceClientTest {
             .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .addAllReservationGroupPath(new ArrayList<String>())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -503,6 +508,7 @@ public class ReservationServiceClientTest {
             .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .addAllReservationGroupPath(new ArrayList<String>())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -560,6 +566,7 @@ public class ReservationServiceClientTest {
             .setReservationGroup("reservationGroup-1892204013")
             .setReplicationStatus(Reservation.ReplicationStatus.newBuilder().build())
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .addAllReservationGroupPath(new ArrayList<String>())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1221,6 +1228,8 @@ public class ReservationServiceClientTest {
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .setPrincipal("principal-1812041682")
+            .setPrecedence(159695370)
+            .setCondition(Expr.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1268,6 +1277,8 @@ public class ReservationServiceClientTest {
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .setPrincipal("principal-1812041682")
+            .setPrecedence(159695370)
+            .setCondition(Expr.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1665,6 +1676,8 @@ public class ReservationServiceClientTest {
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .setPrincipal("principal-1812041682")
+            .setPrecedence(159695370)
+            .setCondition(Expr.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1715,6 +1728,8 @@ public class ReservationServiceClientTest {
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .setPrincipal("principal-1812041682")
+            .setPrecedence(159695370)
+            .setCondition(Expr.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1764,6 +1779,8 @@ public class ReservationServiceClientTest {
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .setPrincipal("principal-1812041682")
+            .setPrecedence(159695370)
+            .setCondition(Expr.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1812,6 +1829,8 @@ public class ReservationServiceClientTest {
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .setPrincipal("principal-1812041682")
+            .setPrecedence(159695370)
+            .setCondition(Expr.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1859,6 +1878,8 @@ public class ReservationServiceClientTest {
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
             .setPrincipal("principal-1812041682")
+            .setPrecedence(159695370)
+            .setCondition(Expr.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -2251,6 +2272,9 @@ public class ReservationServiceClientTest {
             .setName(
                 ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
                     .toString())
+            .setParentGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -2304,6 +2328,9 @@ public class ReservationServiceClientTest {
             .setName(
                 ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
                     .toString())
+            .setParentGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -2346,6 +2373,9 @@ public class ReservationServiceClientTest {
             .setName(
                 ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
                     .toString())
+            .setParentGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -2535,6 +2565,53 @@ public class ReservationServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.listReservationGroups(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateReservationGroupTest() throws Exception {
+    ReservationGroup expectedResponse =
+        ReservationGroup.newBuilder()
+            .setName(
+                ReservationGroupName.of("[PROJECT]", "[LOCATION]", "[RESERVATION_GROUP]")
+                    .toString())
+            .setParentGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockReservationService.addResponse(expectedResponse);
+
+    ReservationGroup reservationGroup = ReservationGroup.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ReservationGroup actualResponse = client.updateReservationGroup(reservationGroup, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReservationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateReservationGroupRequest actualRequest =
+        ((UpdateReservationGroupRequest) actualRequests.get(0));
+
+    Assert.assertEquals(reservationGroup, actualRequest.getReservationGroup());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateReservationGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReservationService.addException(exception);
+
+    try {
+      ReservationGroup reservationGroup = ReservationGroup.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateReservationGroup(reservationGroup, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

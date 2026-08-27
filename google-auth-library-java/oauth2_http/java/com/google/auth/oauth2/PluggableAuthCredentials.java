@@ -188,8 +188,7 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
   /** Clones the PluggableAuthCredentials with the specified scopes. */
   @Override
   public PluggableAuthCredentials createScoped(Collection<String> newScopes) {
-    return new PluggableAuthCredentials(
-        (PluggableAuthCredentials.Builder) newBuilder(this).setScopes(newScopes));
+    return newBuilder(this).setScopes(newScopes).build();
   }
 
   @Override
@@ -211,13 +210,13 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
   }
 
   @VisibleForTesting
-  @Nullable ExecutableHandler getExecutableHandler() {
+  ExecutableHandler getExecutableHandler() {
     return this.handler;
   }
 
   public static class Builder extends ExternalAccountCredentials.Builder {
 
-    private ExecutableHandler handler;
+    private @Nullable ExecutableHandler handler;
 
     Builder() {}
 
@@ -232,30 +231,35 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
       super.setHttpTransportFactory(transportFactory);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setAudience(String audience) {
       super.setAudience(audience);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setSubjectTokenType(String subjectTokenType) {
       super.setSubjectTokenType(subjectTokenType);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setSubjectTokenType(SubjectTokenTypes subjectTokenType) {
       super.setSubjectTokenType(subjectTokenType);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setTokenUrl(String tokenUrl) {
       super.setTokenUrl(tokenUrl);
@@ -268,60 +272,71 @@ public class PluggableAuthCredentials extends ExternalAccountCredentials {
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setServiceAccountImpersonationUrl(String serviceAccountImpersonationUrl) {
+    public Builder setServiceAccountImpersonationUrl(
+        @Nullable String serviceAccountImpersonationUrl) {
       super.setServiceAccountImpersonationUrl(serviceAccountImpersonationUrl);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setTokenInfoUrl(String tokenInfoUrl) {
       super.setTokenInfoUrl(tokenInfoUrl);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setClientId(String clientId) {
       super.setClientId(clientId);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setClientSecret(String clientSecret) {
       super.setClientSecret(clientSecret);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setScopes(Collection<String> scopes) {
       super.setScopes(scopes);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setWorkforcePoolUserProject(String workforcePoolUserProject) {
       super.setWorkforcePoolUserProject(workforcePoolUserProject);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setServiceAccountImpersonationOptions(Map<String, Object> optionsMap) {
       super.setServiceAccountImpersonationOptions(optionsMap);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     public Builder setUniverseDomain(String universeDomain) {
       super.setUniverseDomain(universeDomain);
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
     Builder setEnvironmentProvider(EnvironmentProvider environmentProvider) {
       super.setEnvironmentProvider(environmentProvider);

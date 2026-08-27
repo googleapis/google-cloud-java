@@ -67,7 +67,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetAudienceSegment</td>
- *      <td><p> API to retrieve an `AudienceSegment` object.</td>
+ *      <td><p> Retrieves an `AudienceSegment` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -86,7 +86,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListAudienceSegments</td>
- *      <td><p> API to retrieve a list of `AudienceSegment` objects.</td>
+ *      <td><p> Lists `AudienceSegment` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -101,6 +101,101 @@ import org.jspecify.annotations.Nullable;
  *      <ul>
  *           <li><p> listAudienceSegmentsPagedCallable()
  *           <li><p> listAudienceSegmentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchActivateAudienceSegments</td>
+ *      <td><p> Activates `AudienceSegment` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchActivateAudienceSegments(BatchActivateAudienceSegmentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchActivateAudienceSegments(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchActivateAudienceSegments(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchActivateAudienceSegmentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchDeactivateAudienceSegments</td>
+ *      <td><p> Deactivates `AudienceSegment` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateAudienceSegments(BatchDeactivateAudienceSegmentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateAudienceSegments(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchDeactivateAudienceSegments(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchDeactivateAudienceSegmentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchApproveAudienceSegments</td>
+ *      <td><p> Approves `AudienceSegment` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchApproveAudienceSegments(BatchApproveAudienceSegmentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchApproveAudienceSegments(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchApproveAudienceSegments(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchApproveAudienceSegmentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchRejectAudienceSegments</td>
+ *      <td><p> Rejects `AudienceSegment` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchRejectAudienceSegments(BatchRejectAudienceSegmentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchRejectAudienceSegments(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchRejectAudienceSegments(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchRejectAudienceSegmentsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchPopulateAudienceSegments</td>
+ *      <td><p> Populates `AudienceSegment` objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchPopulateAudienceSegments(BatchPopulateAudienceSegmentsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> batchPopulateAudienceSegments(NetworkName parent, List&lt;String&gt; names)
+ *           <li><p> batchPopulateAudienceSegments(String parent, List&lt;String&gt; names)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchPopulateAudienceSegmentsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -201,7 +296,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an `AudienceSegment` object.
+   * Retrieves an `AudienceSegment` object.
    *
    * <p>Sample code:
    *
@@ -232,7 +327,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an `AudienceSegment` object.
+   * Retrieves an `AudienceSegment` object.
    *
    * <p>Sample code:
    *
@@ -261,7 +356,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an `AudienceSegment` object.
+   * Retrieves an `AudienceSegment` object.
    *
    * <p>Sample code:
    *
@@ -290,7 +385,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an `AudienceSegment` object.
+   * Retrieves an `AudienceSegment` object.
    *
    * <p>Sample code:
    *
@@ -320,7 +415,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `AudienceSegment` objects.
+   * Lists `AudienceSegment` objects.
    *
    * <p>Sample code:
    *
@@ -355,7 +450,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `AudienceSegment` objects.
+   * Lists `AudienceSegment` objects.
    *
    * <p>Sample code:
    *
@@ -387,7 +482,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `AudienceSegment` objects.
+   * Lists `AudienceSegment` objects.
    *
    * <p>Sample code:
    *
@@ -425,7 +520,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `AudienceSegment` objects.
+   * Lists `AudienceSegment` objects.
    *
    * <p>Sample code:
    *
@@ -462,7 +557,7 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `AudienceSegment` objects.
+   * Lists `AudienceSegment` objects.
    *
    * <p>Sample code:
    *
@@ -502,6 +597,688 @@ public class AudienceSegmentServiceClient implements BackgroundResource {
   public final UnaryCallable<ListAudienceSegmentsRequest, ListAudienceSegmentsResponse>
       listAudienceSegmentsCallable() {
     return stub.listAudienceSegmentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchActivateAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchActivateAudienceSegments(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names for the AudienceSegments. Format:
+   *     `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateAudienceSegmentsResponse batchActivateAudienceSegments(
+      @Nullable NetworkName parent, List<String> names) {
+    BatchActivateAudienceSegmentsRequest request =
+        BatchActivateAudienceSegmentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchActivateAudienceSegments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchActivateAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchActivateAudienceSegments(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names for the AudienceSegments. Format:
+   *     `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateAudienceSegmentsResponse batchActivateAudienceSegments(
+      String parent, List<String> names) {
+    BatchActivateAudienceSegmentsRequest request =
+        BatchActivateAudienceSegmentsRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchActivateAudienceSegments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   BatchActivateAudienceSegmentsRequest request =
+   *       BatchActivateAudienceSegmentsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchActivateAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchActivateAudienceSegments(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchActivateAudienceSegmentsResponse batchActivateAudienceSegments(
+      BatchActivateAudienceSegmentsRequest request) {
+    return batchActivateAudienceSegmentsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Activates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   BatchActivateAudienceSegmentsRequest request =
+   *       BatchActivateAudienceSegmentsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchActivateAudienceSegmentsResponse> future =
+   *       audienceSegmentServiceClient.batchActivateAudienceSegmentsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchActivateAudienceSegmentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>
+      batchActivateAudienceSegmentsCallable() {
+    return stub.batchActivateAudienceSegmentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeactivateAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchDeactivateAudienceSegments(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names for the AudienceSegments. Format:
+   *     `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateAudienceSegmentsResponse batchDeactivateAudienceSegments(
+      @Nullable NetworkName parent, List<String> names) {
+    BatchDeactivateAudienceSegmentsRequest request =
+        BatchDeactivateAudienceSegmentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchDeactivateAudienceSegments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeactivateAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchDeactivateAudienceSegments(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names for the AudienceSegments. Format:
+   *     `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateAudienceSegmentsResponse batchDeactivateAudienceSegments(
+      String parent, List<String> names) {
+    BatchDeactivateAudienceSegmentsRequest request =
+        BatchDeactivateAudienceSegmentsRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchDeactivateAudienceSegments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   BatchDeactivateAudienceSegmentsRequest request =
+   *       BatchDeactivateAudienceSegmentsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchDeactivateAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchDeactivateAudienceSegments(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchDeactivateAudienceSegmentsResponse batchDeactivateAudienceSegments(
+      BatchDeactivateAudienceSegmentsRequest request) {
+    return batchDeactivateAudienceSegmentsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deactivates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   BatchDeactivateAudienceSegmentsRequest request =
+   *       BatchDeactivateAudienceSegmentsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchDeactivateAudienceSegmentsResponse> future =
+   *       audienceSegmentServiceClient
+   *           .batchDeactivateAudienceSegmentsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchDeactivateAudienceSegmentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchDeactivateAudienceSegmentsRequest, BatchDeactivateAudienceSegmentsResponse>
+      batchDeactivateAudienceSegmentsCallable() {
+    return stub.batchDeactivateAudienceSegmentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchApproveAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchApproveAudienceSegments(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names for the AudienceSegments. Format:
+   *     `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchApproveAudienceSegmentsResponse batchApproveAudienceSegments(
+      @Nullable NetworkName parent, List<String> names) {
+    BatchApproveAudienceSegmentsRequest request =
+        BatchApproveAudienceSegmentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchApproveAudienceSegments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchApproveAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchApproveAudienceSegments(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names for the AudienceSegments. Format:
+   *     `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchApproveAudienceSegmentsResponse batchApproveAudienceSegments(
+      String parent, List<String> names) {
+    BatchApproveAudienceSegmentsRequest request =
+        BatchApproveAudienceSegmentsRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchApproveAudienceSegments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   BatchApproveAudienceSegmentsRequest request =
+   *       BatchApproveAudienceSegmentsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchApproveAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchApproveAudienceSegments(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchApproveAudienceSegmentsResponse batchApproveAudienceSegments(
+      BatchApproveAudienceSegmentsRequest request) {
+    return batchApproveAudienceSegmentsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   BatchApproveAudienceSegmentsRequest request =
+   *       BatchApproveAudienceSegmentsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchApproveAudienceSegmentsResponse> future =
+   *       audienceSegmentServiceClient.batchApproveAudienceSegmentsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchApproveAudienceSegmentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchApproveAudienceSegmentsRequest, BatchApproveAudienceSegmentsResponse>
+      batchApproveAudienceSegmentsCallable() {
+    return stub.batchApproveAudienceSegmentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchRejectAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchRejectAudienceSegments(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names for the AudienceSegments. Format:
+   *     `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchRejectAudienceSegmentsResponse batchRejectAudienceSegments(
+      @Nullable NetworkName parent, List<String> names) {
+    BatchRejectAudienceSegmentsRequest request =
+        BatchRejectAudienceSegmentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchRejectAudienceSegments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchRejectAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchRejectAudienceSegments(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names for the AudienceSegments. Format:
+   *     `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchRejectAudienceSegmentsResponse batchRejectAudienceSegments(
+      String parent, List<String> names) {
+    BatchRejectAudienceSegmentsRequest request =
+        BatchRejectAudienceSegmentsRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchRejectAudienceSegments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   BatchRejectAudienceSegmentsRequest request =
+   *       BatchRejectAudienceSegmentsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchRejectAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchRejectAudienceSegments(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchRejectAudienceSegmentsResponse batchRejectAudienceSegments(
+      BatchRejectAudienceSegmentsRequest request) {
+    return batchRejectAudienceSegmentsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   BatchRejectAudienceSegmentsRequest request =
+   *       BatchRejectAudienceSegmentsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchRejectAudienceSegmentsResponse> future =
+   *       audienceSegmentServiceClient.batchRejectAudienceSegmentsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchRejectAudienceSegmentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchRejectAudienceSegmentsRequest, BatchRejectAudienceSegmentsResponse>
+      batchRejectAudienceSegmentsCallable() {
+    return stub.batchRejectAudienceSegmentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Populates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchPopulateAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchPopulateAudienceSegments(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names for the AudienceSegments. Format:
+   *     `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchPopulateAudienceSegmentsResponse batchPopulateAudienceSegments(
+      @Nullable NetworkName parent, List<String> names) {
+    BatchPopulateAudienceSegmentsRequest request =
+        BatchPopulateAudienceSegmentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllNames(names)
+            .build();
+    return batchPopulateAudienceSegments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Populates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchPopulateAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchPopulateAudienceSegments(parent, names);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: `networks/{network_code}`
+   * @param names Required. Resource names for the AudienceSegments. Format:
+   *     `networks/{network_code}/audienceSegments/{audience_segment_id}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchPopulateAudienceSegmentsResponse batchPopulateAudienceSegments(
+      String parent, List<String> names) {
+    BatchPopulateAudienceSegmentsRequest request =
+        BatchPopulateAudienceSegmentsRequest.newBuilder()
+            .setParent(parent)
+            .addAllNames(names)
+            .build();
+    return batchPopulateAudienceSegments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Populates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   BatchPopulateAudienceSegmentsRequest request =
+   *       BatchPopulateAudienceSegmentsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchPopulateAudienceSegmentsResponse response =
+   *       audienceSegmentServiceClient.batchPopulateAudienceSegments(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchPopulateAudienceSegmentsResponse batchPopulateAudienceSegments(
+      BatchPopulateAudienceSegmentsRequest request) {
+    return batchPopulateAudienceSegmentsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Populates `AudienceSegment` objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AudienceSegmentServiceClient audienceSegmentServiceClient =
+   *     AudienceSegmentServiceClient.create()) {
+   *   BatchPopulateAudienceSegmentsRequest request =
+   *       BatchPopulateAudienceSegmentsRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchPopulateAudienceSegmentsResponse> future =
+   *       audienceSegmentServiceClient.batchPopulateAudienceSegmentsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchPopulateAudienceSegmentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          BatchPopulateAudienceSegmentsRequest, BatchPopulateAudienceSegmentsResponse>
+      batchPopulateAudienceSegmentsCallable() {
+    return stub.batchPopulateAudienceSegmentsCallable();
   }
 
   @Override
