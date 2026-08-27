@@ -196,7 +196,9 @@ public class GcpManagedChannel extends ManagedChannel {
   // A set of channels that we removed from the pool and wait for their RPCs to be completed before
   // we can shut them down.
   final Set<ChannelRef> removedChannelRefs = ConcurrentHashMap.newKeySet();
-  private final Map<ChannelRef, ScheduledFuture<?>> drainTasks = new ConcurrentHashMap<>();
+
+  @GuardedBy("this")
+  private final Map<ChannelRef, ScheduledFuture<?>> drainTasks = new HashMap<>();
 
   // One-slot scale-up signal. At most one worker mutates pool size at a time.
   private final AtomicBoolean scaleUpSignalPending = new AtomicBoolean();
@@ -298,6 +300,7 @@ public class GcpManagedChannel extends ManagedChannel {
   private IntUnaryOperator candidateIndexPicker =
       bound -> ThreadLocalRandom.current().nextInt(bound);
   @Nullable private volatile Consumer<ChannelRef> pickerValidationHookForTest;
+  @Nullable private volatile Runnable inactiveMappingRemovedHookForTest;
 
   @VisibleForTesting
   void setNanoClock(Supplier<Long> nanoClock) {
@@ -312,6 +315,11 @@ public class GcpManagedChannel extends ManagedChannel {
   @VisibleForTesting
   void setCandidateIndexPickerForTest(IntUnaryOperator candidateIndexPicker) {
     this.candidateIndexPicker = candidateIndexPicker;
+  }
+
+  @VisibleForTesting
+  void setInactiveMappingRemovedHookForTest(Runnable hook) {
+    inactiveMappingRemovedHookForTest = hook;
   }
 
   private boolean validatePickedChannel(ChannelRef channelRef) {
@@ -351,6 +359,11 @@ public class GcpManagedChannel extends ManagedChannel {
   @VisibleForTesting
   boolean scaleUpWorkerRunningForTest() {
     return scaleUpWorkerRunning.get();
+  }
+
+  @VisibleForTesting
+  synchronized int drainTaskCountForTest() {
+    return drainTasks.size();
   }
 
   private static ScheduledThreadPoolExecutor createSharedBackgroundService() {
@@ -428,7 +441,8 @@ public class GcpManagedChannel extends ManagedChannel {
     }
   }
 
-  private void cleanupAffinityKeys() {
+  @VisibleForTesting
+  void cleanupAffinityKeys() {
     final long cutoff = nanoClock.get() - affinityKeyLifetime.toNanos();
     affinityKeyLastUsed.forEach(
         (String key, Long time) -> {
@@ -514,7 +528,9 @@ public class GcpManagedChannel extends ManagedChannel {
     executeStateChangeCallbacks();
   }
 
-  private void scheduleDrain(ChannelRef channelRef) {
+  /** Drain task bookkeeping is guarded by the pool monitor. */
+  @VisibleForTesting
+  synchronized void scheduleDrain(ChannelRef channelRef) {
     if (channelRef.isActive() || channelRef.getActiveStreamsCount() != 0 || shuttingDown) {
       return;
     }
@@ -1876,10 +1892,7 @@ public class GcpManagedChannel extends ManagedChannel {
     ChannelRef mappedChannel = affinityKeyToChannelRef.get(key);
     affinityKeyLastUsed.put(key, nanoClock.get());
     if (mappedChannel != null && !mappedChannel.isActive()) {
-      if (affinityKeyToChannelRef.remove(key, mappedChannel)) {
-        affinityKeyLastUsed.remove(key);
-        mappedChannel.affinityCountDecr();
-      }
+      unbindInactiveMapping(key, mappedChannel);
       mappedChannel = null;
     }
     if (mappedChannel == null) {
@@ -2724,8 +2737,20 @@ public class GcpManagedChannel extends ManagedChannel {
     }
   }
 
+  private synchronized void unbindInactiveMapping(String affinityKey, ChannelRef mappedChannel) {
+    if (affinityKeyToChannelRef.remove(affinityKey, mappedChannel)) {
+      Runnable hook = inactiveMappingRemovedHookForTest;
+      if (hook != null) {
+        inactiveMappingRemovedHookForTest = null;
+        hook.run();
+      }
+      affinityKeyLastUsed.remove(affinityKey);
+      mappedChannel.affinityCountDecr();
+    }
+  }
+
   /** Unbind channel with affinity key. */
-  protected void unbind(List<String> affinityKeys) {
+  protected synchronized void unbind(List<String> affinityKeys) {
     if (affinityKeys == null) {
       return;
     }

@@ -285,6 +285,62 @@ public final class GcpManagedChannelDynamicPoolTest {
   }
 
   @Test
+  public void inactiveMappingCleanupIsAtomicWithConcurrentBind() throws Exception {
+    AtomicLong clock = new AtomicLong(1);
+    pool = affinityPool(Duration.ofNanos(1), builder());
+    pool.setNanoClock(clock::get);
+    ChannelRef inactive = pool.channelRefs.get(0);
+    ChannelRef rebound = pool.channelRefs.get(1);
+    String key = "session";
+    pool.bind(inactive, Collections.singletonList(key));
+    inactive.deactivateForTest();
+
+    CountDownLatch mappingRemoved = new CountDownLatch(1);
+    CountDownLatch bindAttempted = new CountDownLatch(1);
+    AtomicReference<Thread> bindingThread = new AtomicReference<>();
+    pool.setInactiveMappingRemovedHookForTest(
+        () -> {
+          mappingRemoved.countDown();
+          try {
+            assertThat(bindAttempted.await(5, TimeUnit.SECONDS)).isTrue();
+            // Binding must wait for inactive cleanup to remove the matching timestamp.
+            await()
+                .atMost(Duration.ofSeconds(5))
+                .until(() -> bindingThread.get().getState() == Thread.State.BLOCKED);
+          } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new AssertionError(e);
+          }
+        });
+    ExecutorService callers = Executors.newFixedThreadPool(2);
+    try {
+      Future<ChannelRef> resolver = callers.submit(() -> pool.getChannelRef(key));
+      assertThat(mappingRemoved.await(5, TimeUnit.SECONDS)).isTrue();
+      Future<?> binder =
+          callers.submit(
+              () -> {
+                bindingThread.set(Thread.currentThread());
+                bindAttempted.countDown();
+                pool.bind(rebound, Collections.singletonList(key));
+              });
+
+      resolver.get(5, TimeUnit.SECONDS);
+      binder.get(5, TimeUnit.SECONDS);
+      boolean hasMapping = pool.affinityKeyToChannelRef.containsKey(key);
+      boolean hasLastUsed = pool.affinityKeyLastUsed.containsKey(key);
+      assertThat(hasMapping).isEqualTo(hasLastUsed);
+      assertThat(hasMapping).isTrue();
+
+      clock.addAndGet(2);
+      pool.cleanupAffinityKeys();
+      assertThat(pool.affinityKeyToChannelRef).doesNotContainKey(key);
+      assertThat(pool.affinityKeyLastUsed).doesNotContainKey(key);
+    } finally {
+      callers.shutdownNow();
+    }
+  }
+
+  @Test
   public void shutdownPoolPickerCompletesWithUnavailable() throws Exception {
     ExecutorService picker = Executors.newSingleThreadExecutor();
     try {
@@ -433,6 +489,42 @@ public final class GcpManagedChannelDynamicPoolTest {
     assertThat(draining.getChannel().isShutdown()).isFalse();
     draining.activeStreamsCountDecr(startNanos, Status.OK, false);
     awaitCondition(() -> pool.removedChannelRefs.isEmpty() && pool.channelIdMapSizeForTest() == 1);
+  }
+
+  @Test
+  public void concurrentDrainSchedulingKeepsOneTaskPerChannel() throws Exception {
+    pool = newPool(1, 1, 1, 1, 3, Duration.ofSeconds(30), Duration.ofMinutes(1), builder());
+    ChannelRef draining = pool.channelRefs.get(0);
+    draining.deactivateForTest();
+    CountDownLatch schedulersReady = new CountDownLatch(2);
+    CountDownLatch start = new CountDownLatch(1);
+    ExecutorService schedulers = Executors.newFixedThreadPool(2);
+    try {
+      Future<?> first =
+          schedulers.submit(
+              () -> {
+                schedulersReady.countDown();
+                start.await();
+                pool.scheduleDrain(draining);
+                return null;
+              });
+      Future<?> second =
+          schedulers.submit(
+              () -> {
+                schedulersReady.countDown();
+                start.await();
+                pool.scheduleDrain(draining);
+                return null;
+              });
+      assertThat(schedulersReady.await(5, TimeUnit.SECONDS)).isTrue();
+      start.countDown();
+      first.get(5, TimeUnit.SECONDS);
+      second.get(5, TimeUnit.SECONDS);
+
+      assertThat(pool.drainTaskCountForTest()).isEqualTo(1);
+    } finally {
+      schedulers.shutdownNow();
+    }
   }
 
   @Test
@@ -836,6 +928,22 @@ public final class GcpManagedChannelDynamicPoolTest {
                     .withResiliencyOptions(
                         GcpResiliencyOptions.newBuilder().setNotReadyFallback(true).build())
                     .build())
+            .build();
+  }
+
+  private GcpManagedChannel affinityPool(
+      Duration affinityKeyLifetime, GcpManagedChannelTest.FakeManagedChannelBuilder delegate) {
+    GcpChannelPoolOptions poolOptions =
+        GcpChannelPoolOptions.newBuilder()
+            .setInitSize(2)
+            .setMinSize(2)
+            .setMaxSize(2)
+            .setAffinityKeyLifetime(affinityKeyLifetime)
+            .build();
+    return (GcpManagedChannel)
+        GcpManagedChannelBuilder.forDelegateBuilder(delegate)
+            .withOptions(
+                GcpManagedChannelOptions.newBuilder().withChannelPoolOptions(poolOptions).build())
             .build();
   }
 
