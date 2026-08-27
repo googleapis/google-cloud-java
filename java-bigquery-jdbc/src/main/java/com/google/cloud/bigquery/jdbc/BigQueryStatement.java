@@ -571,10 +571,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (result instanceof TableResult) {
       TableResult tableResult = (TableResult) result;
       saveSessionIdIfPresent(tableResult);
-      if (tableResult.getJobId() != null) {
-        return new ExecuteResult(tableResult, bigQuery.getJob(tableResult.getJobId()));
-      }
-      return new ExecuteResult((TableResult) result, null);
+      return new ExecuteResult(tableResult, null);
     }
 
     if (result instanceof Job) {
@@ -598,6 +595,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       jobIds.remove(jobId);
     }
     saveSessionIdIfPresent(tableResult);
+    if (jobId != null && bigQuery != null) {
+      Job refreshedJob = bigQuery.getJob(jobId);
+      if (refreshedJob != null) {
+        job = refreshedJob;
+      }
+    }
     return new ExecuteResult(tableResult, job);
   }
 
