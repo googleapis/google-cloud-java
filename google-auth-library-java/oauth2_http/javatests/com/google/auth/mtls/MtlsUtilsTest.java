@@ -656,6 +656,16 @@ class MtlsUtilsTest {
     String fingerprint = MtlsUtils.getCertificateFingerprint(file.toString());
     assertNotNull(fingerprint);
     assertEquals(64, fingerprint.length()); // SHA-256 hex string length
+    assertEquals("b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9", fingerprint);
+  }
+
+  @Test
+  void getCertificateFingerprint_emptyFile_returnsValidSha256() throws IOException {
+    Path emptyFile = tempDir.resolve("empty.crt");
+    Files.write(emptyFile, new byte[0]);
+
+    String fingerprint = MtlsUtils.getCertificateFingerprint(emptyFile.toString());
+    assertEquals("e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", fingerprint);
   }
 
   @Test
@@ -663,15 +673,5 @@ class MtlsUtilsTest {
     assertNull(MtlsUtils.getCertificateFingerprint(null));
     assertNull(MtlsUtils.getCertificateFingerprint("/nonexistent/file.crt"));
     assertNull(MtlsUtils.getCertificateFingerprint(tempDir.toString())); // Directory
-  }
-
-  @Test
-  void getGkeWorkloadCertPath_returnsNull() {
-    assertNull(MtlsUtils.getGkeWorkloadCertPath());
-  }
-
-  @Test
-  void getGceWorkloadCertPath_returnsNull() {
-    assertNull(MtlsUtils.getGceWorkloadCertPath());
   }
 }

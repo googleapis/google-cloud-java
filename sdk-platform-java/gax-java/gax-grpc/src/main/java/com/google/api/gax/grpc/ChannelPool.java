@@ -449,13 +449,12 @@ class ChannelPool extends ManagedChannel {
   private void refreshSafely() {
     try {
       synchronized (entryWriteLock) {
-        if (workloadCertPath != null) {
+        if (refreshAll() && workloadCertPath != null) {
           String currentDiskFingerprint = getOrUpdateDiskFingerprint(workloadCertPath);
           if (!currentDiskFingerprint.isEmpty()) {
             this.activeCertFingerprint = currentDiskFingerprint;
           }
         }
-        refreshAll();
       }
     } catch (Exception e) {
       LOG.log(Level.WARNING, "Failed to pre-emptively refresh channels", e);
@@ -534,13 +533,14 @@ class ChannelPool extends ManagedChannel {
         return;
       }
 
-      this.activeCertFingerprint = currentDiskFingerprint;
-      refreshAll();
+      if (refreshAll()) {
+        this.activeCertFingerprint = currentDiskFingerprint;
+      }
     }
   }
 
   @InternalApi("Visible for testing")
-  void refreshAll() {
+  boolean refreshAll() {
     synchronized (entryWriteLock) {
       LOG.fine(
           "Refreshing all channels"
@@ -548,13 +548,19 @@ class ChannelPool extends ManagedChannel {
                   ? ""
                   : " with certificate fingerprint: " + activeCertFingerprint));
       ArrayList<Entry> newEntries = new ArrayList<>(entries.get());
+      boolean anyCreated = false;
 
       for (int i = 0; i < newEntries.size(); i++) {
         try {
           newEntries.set(i, new Entry(channelFactory.createSingleChannel()));
+          anyCreated = true;
         } catch (IOException e) {
           LOG.log(Level.WARNING, "Failed to refresh channel, leaving old channel", e);
         }
+      }
+
+      if (!anyCreated && !newEntries.isEmpty()) {
+        return false;
       }
 
       ImmutableList<Entry> replacedEntries = entries.getAndSet(ImmutableList.copyOf(newEntries));
@@ -565,6 +571,7 @@ class ChannelPool extends ManagedChannel {
           e.requestShutdown();
         }
       }
+      return true;
     }
   }
 

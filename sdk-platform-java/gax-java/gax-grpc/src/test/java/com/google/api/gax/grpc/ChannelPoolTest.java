@@ -507,6 +507,65 @@ class ChannelPoolTest {
   }
 
   @Test
+  void channelReactiveMTlsRefresh_failedCreationDoesNotMutateFingerprintAndAllowsRetry()
+      throws IOException {
+    ManagedChannel channel1 = Mockito.mock(ManagedChannel.class);
+    ManagedChannel channel2 = Mockito.mock(ManagedChannel.class);
+    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+
+    // Initial creation returns channel1, refresh attempt 1 throws IOException, refresh attempt 2
+    // returns channel2
+    Mockito.when(channelFactory.createSingleChannel())
+        .thenReturn(channel1)
+        .thenThrow(new IOException("Transient channel creation error"))
+        .thenReturn(channel2);
+
+    tempCert = java.nio.file.Files.createTempFile("cert", ".pem");
+    java.nio.file.Path clientCert =
+        java.nio.file.Paths.get("src", "test", "resources", "client_cert.pem");
+    java.nio.file.Files.copy(
+        clientCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+
+    ChannelPoolSettings channelPoolSettings =
+        ChannelPoolSettings.builder().setInitialChannelCount(1).build();
+
+    pool = ChannelPool.create(channelPoolSettings, channelFactory, null, tempCert.toString());
+
+    // Initially uses channel1
+    pool.newCall(FakeMethodDescriptor.<String, Integer>create(), CallOptions.DEFAULT);
+    Mockito.verify(channel1, Mockito.times(1))
+        .newCall(Mockito.<MethodDescriptor<String, Integer>>any(), Mockito.any(CallOptions.class));
+
+    // Rotate cert on disk
+    pool.invalidateDiskFingerprintCache();
+    java.nio.file.Path rootCert =
+        java.nio.file.Paths.get("src", "test", "resources", "root_cert.pem");
+    java.nio.file.Files.copy(rootCert, tempCert, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+
+    // Refresh attempt 1: createSingleChannel throws IOException.
+    // Refresh should fail to replace channel and MUST NOT record the new cert fingerprint as
+    // active.
+    pool.refresh();
+
+    // Verify still channel1
+    pool.newCall(FakeMethodDescriptor.<String, Integer>create(), CallOptions.DEFAULT);
+    Mockito.verify(channel1, Mockito.times(2))
+        .newCall(Mockito.<MethodDescriptor<String, Integer>>any(), Mockito.any(CallOptions.class));
+
+    // Refresh attempt 2: with the same cert file on disk (cache expired), channelFactory now
+    // succeeds.
+    // If the fingerprint had been mutated on the failed attempt, this call would be skipped as a
+    // duplicate!
+    pool.invalidateDiskFingerprintCache();
+    pool.refresh();
+
+    // Verify it has now swapped to channel2!
+    pool.newCall(FakeMethodDescriptor.<String, Integer>create(), CallOptions.DEFAULT);
+    Mockito.verify(channel2, Mockito.times(1))
+        .newCall(Mockito.<MethodDescriptor<String, Integer>>any(), Mockito.any(CallOptions.class));
+  }
+
+  @Test
   void channelRefreshShouldSwapChannels() throws IOException {
     ManagedChannel underlyingChannel1 = mock(ManagedChannel.class);
     ManagedChannel underlyingChannel2 = mock(ManagedChannel.class);

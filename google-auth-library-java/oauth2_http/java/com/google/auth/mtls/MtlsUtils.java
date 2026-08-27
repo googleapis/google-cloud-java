@@ -34,10 +34,12 @@ import com.google.api.core.InternalApi;
 import com.google.auth.oauth2.EnvironmentProvider;
 import com.google.auth.oauth2.PropertyProvider;
 import com.google.common.base.Strings;
+import com.google.common.io.BaseEncoding;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.util.Locale;
 import org.jspecify.annotations.NullMarked;
@@ -97,16 +99,12 @@ public class MtlsUtils {
                 + explicitConfigPath
                 + "'.");
       }
+      WorkloadCertificateConfiguration config;
       try {
-        WorkloadCertificateConfiguration config =
-            getWorkloadCertificateConfiguration(envProvider, propProvider, explicitConfigPath);
-        validateCertAndKeyFiles(config, explicitConfigPath, false);
-        return config.getCertPath();
+        config = getWorkloadCertificateConfiguration(envProvider, propProvider, explicitConfigPath);
       } catch (CertificateSourceUnavailableException e) {
         // ECP / PKCS11 configuration without workload section; safe fallback
         return null;
-      } catch (IllegalStateException e) {
-        throw e;
       } catch (Exception e) {
         throw new IllegalStateException(
             "Certificate configuration file specified via GOOGLE_API_CERTIFICATE_CONFIG at '"
@@ -115,6 +113,8 @@ public class MtlsUtils {
                 + e.getMessage(),
             e);
       }
+      checkCertAndKeyFilesReadable(config, explicitConfigPath, false);
+      return config.getCertPath();
     }
 
     // 2. Implicit / Default gcloud Configuration Path
@@ -131,15 +131,11 @@ public class MtlsUtils {
                 + defaultConfigFile.getAbsolutePath()
                 + "' exists but could not be read.");
       }
+      WorkloadCertificateConfiguration config = null;
       try {
-        WorkloadCertificateConfiguration config =
-            getWorkloadCertificateConfiguration(envProvider, propProvider, null);
-        validateCertAndKeyFiles(config, defaultConfigFile.getAbsolutePath(), true);
-        return config.getCertPath();
+        config = getWorkloadCertificateConfiguration(envProvider, propProvider, null);
       } catch (CertificateSourceUnavailableException e) {
         // ECP-only configuration without workload section; safe fallback
-      } catch (IllegalStateException e) {
-        throw e;
       } catch (Exception e) {
         throw new IllegalStateException(
             "Default certificate configuration file at '"
@@ -148,23 +144,16 @@ public class MtlsUtils {
                 + e.getMessage(),
             e);
       }
-    }
-
-    // 3. Platform SPIFFE Fallbacks (Stubs)
-    String gkeCertPath = getGkeWorkloadCertPath();
-    if (gkeCertPath != null) {
-      return gkeCertPath;
-    }
-
-    String gceCertPath = getGceWorkloadCertPath();
-    if (gceCertPath != null) {
-      return gceCertPath;
+      if (config != null) {
+        checkCertAndKeyFilesReadable(config, defaultConfigFile.getAbsolutePath(), true);
+        return config.getCertPath();
+      }
     }
 
     return null;
   }
 
-  private static void validateCertAndKeyFiles(
+  private static void checkCertAndKeyFilesReadable(
       WorkloadCertificateConfiguration config, String configPath, boolean isDefaultConfig) {
     File certFile = new File(config.getCertPath());
     File keyFile = new File(config.getPrivateKeyPath());
@@ -185,22 +174,6 @@ public class MtlsUtils {
     }
   }
 
-  /** Dedicated GKE Fallback Resolution Path */
-  static @Nullable String getGkeWorkloadCertPath() {
-    // GKE workload certificate resolution is temporarily disabled (returns null)
-    // pending Phase 1 rollout of bound token support on GKE
-    // (go/agentic-bound-token-sdk-rollout-plan).
-    return null;
-  }
-
-  /** Dedicated GCE Fallback Resolution Path */
-  static @Nullable String getGceWorkloadCertPath() {
-    // GCE workload certificate resolution is temporarily disabled (returns null)
-    // pending Phase 2 rollout of bound token support on GCE
-    // (go/agentic-bound-token-sdk-rollout-plan).
-    return null;
-  }
-
   /** Centralized SHA-256 Fingerprint Calculator */
   public static @Nullable String getCertificateFingerprint(@Nullable String certPath) {
     if (certPath == null) {
@@ -211,19 +184,9 @@ public class MtlsUtils {
       return null;
     }
     try {
-      MessageDigest digest = MessageDigest.getInstance("SHA-256");
-      try (FileInputStream fis = new FileInputStream(file)) {
-        byte[] byteArray = new byte[1024];
-        int bytesCount;
-        while ((bytesCount = fis.read(byteArray)) != -1) {
-          digest.update(byteArray, 0, bytesCount);
-        }
-      }
-      StringBuilder sb = new StringBuilder();
-      for (byte b : digest.digest()) {
-        sb.append(String.format("%02x", b));
-      }
-      return sb.toString();
+      byte[] certBytes = Files.readAllBytes(file.toPath());
+      byte[] digest = MessageDigest.getInstance("SHA-256").digest(certBytes);
+      return BaseEncoding.base16().lowerCase().encode(digest);
     } catch (Exception e) {
       return null;
     }
