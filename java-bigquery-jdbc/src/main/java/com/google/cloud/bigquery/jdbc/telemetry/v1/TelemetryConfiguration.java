@@ -158,6 +158,7 @@ final class TelemetryConfiguration {
     }
 
     Builder resolveProperties(Properties connectionProperties) {
+      // 1. Connection Properties (lowest precedence)
       if (connectionProperties != null) {
         String propValue = connectionProperties.getProperty("EnableDiagnosticTelemetry");
         if (propValue == null) {
@@ -188,10 +189,13 @@ final class TelemetryConfiguration {
         }
       }
 
-      String envValue = System.getenv("GOOGLE_CLOUD_TELEMETRY_ENABLED");
-      if (envValue != null) {
-        if ("0".equals(envValue) || "false".equalsIgnoreCase(envValue)) {
+      // 2. Environment Variables (overrides connection properties)
+      String envEnabled = System.getenv("GOOGLE_CLOUD_TELEMETRY_ENABLED");
+      if (envEnabled != null) {
+        if ("0".equals(envEnabled) || "false".equalsIgnoreCase(envEnabled)) {
           this.enabled = false;
+        } else if ("1".equals(envEnabled) || "true".equalsIgnoreCase(envEnabled)) {
+          this.enabled = true;
         }
       }
 
@@ -207,6 +211,32 @@ final class TelemetryConfiguration {
       if (envBatch != null) {
         try {
           this.batchSizeThreshold = Integer.parseInt(envBatch);
+        } catch (NumberFormatException ignored) {
+        }
+      }
+
+      // 3. JVM System Properties (highest precedence)
+      String sysEnabled = System.getProperty("GOOGLE_CLOUD_TELEMETRY_ENABLED");
+      if (sysEnabled != null) {
+        if ("0".equals(sysEnabled) || "false".equalsIgnoreCase(sysEnabled)) {
+          this.enabled = false;
+        } else if ("1".equals(sysEnabled) || "true".equalsIgnoreCase(sysEnabled)) {
+          this.enabled = true;
+        }
+      }
+
+      String sysInterval = System.getProperty("GOOGLE_CLOUD_TELEMETRY_UPLOAD_INTERVAL");
+      if (sysInterval != null) {
+        try {
+          this.uploadIntervalMs = Long.parseLong(sysInterval);
+        } catch (NumberFormatException ignored) {
+        }
+      }
+
+      String sysBatch = System.getProperty("GOOGLE_CLOUD_TELEMETRY_BATCH_SIZE");
+      if (sysBatch != null) {
+        try {
+          this.batchSizeThreshold = Integer.parseInt(sysBatch);
         } catch (NumberFormatException ignored) {
         }
       }
