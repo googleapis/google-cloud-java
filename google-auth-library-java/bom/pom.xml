@@ -45,6 +45,10 @@
 
   <build>
     <plugins>
+      <!-- Temporary enforcer configuration override until a new version of google-cloud-shared-config is released to Maven Central.
+           Because this module inherits a released version of google-cloud-shared-config from Central (which includes banDuplicateClasses in its default enforce execution),
+           we override the enforce execution here to avoid running banDuplicateClasses on standard PRs where intra-repo SNAPSHOT JARs are unbuilt.
+           Remove this override once the parent version is bumped to the newly released google-cloud-shared-config. -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
