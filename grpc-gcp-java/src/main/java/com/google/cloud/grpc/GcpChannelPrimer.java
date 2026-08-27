@@ -19,14 +19,15 @@ package com.google.cloud.grpc;
 import com.google.common.util.concurrent.ListenableFuture;
 import io.grpc.ManagedChannel;
 
-/** Primes a newly built delegate channel before a dynamic pool publishes it for request picking. */
+/** Primes newly built delegate channels concurrently before dynamic-pool publication. */
 @FunctionalInterface
 public interface GcpChannelPrimer {
 
   /**
    * Issues a cheap end-to-end RPC on {@code channel} so its connection is warm before real traffic.
-   * For example, a Cloud Spanner implementation can execute {@code SELECT 1}. Return a failed
-   * future to reject and close the channel.
+   * Scale-up batches invoke this method concurrently and publish each channel as soon as its own
+   * future succeeds. For example, a Cloud Spanner implementation can execute {@code SELECT 1}.
+   * Return a failed future to reject and close the channel.
    */
   ListenableFuture<Void> prime(ManagedChannel channel);
 }

@@ -28,6 +28,8 @@ import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.cloud.grpc.proto.MethodConfig;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Joiner;
+import com.google.common.util.concurrent.FutureCallback;
+import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import com.google.protobuf.Descriptors.FieldDescriptor;
@@ -57,6 +59,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.LongSummaryStatistics;
@@ -72,6 +75,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
@@ -86,9 +90,18 @@ import javax.annotation.Nullable;
 /** A channel management factory that implements grpc.Channel APIs. */
 public class GcpManagedChannel extends ManagedChannel {
 
-  @FunctionalInterface
-  interface PrimeSleeper {
-    void sleep(long millis) throws InterruptedException;
+  private static final class PendingPrime {
+    private final ManagedChannel channel;
+    private int attempt = -1;
+    private boolean invoking;
+    private boolean finished;
+    @Nullable private ListenableFuture<Void> future;
+    @Nullable private ScheduledFuture<?> timeoutTask;
+    @Nullable private ScheduledFuture<?> retryTask;
+
+    private PendingPrime(ManagedChannel channel) {
+      this.channel = channel;
+    }
   }
 
   private static final Logger logger = Logger.getLogger(GcpManagedChannel.class.getName());
@@ -210,6 +223,11 @@ public class GcpManagedChannel extends ManagedChannel {
   private final AtomicBoolean scaleUpSignalPending = new AtomicBoolean();
   private final AtomicBoolean scaleUpWorkerRunning = new AtomicBoolean();
   private final AtomicLong totalErrorPenaltyLoad = new AtomicLong();
+  private final AtomicInteger inFlightPrimeCount = new AtomicInteger();
+
+  @GuardedBy("this")
+  private final Set<PendingPrime> pendingPrimes = new HashSet<>();
+
   private volatile long lastScaleUpNanos = Long.MIN_VALUE;
   private int consecutiveLowLoadChecks;
   private volatile boolean shuttingDown;
@@ -307,7 +325,6 @@ public class GcpManagedChannel extends ManagedChannel {
       bound -> ThreadLocalRandom.current().nextInt(bound);
   @Nullable private volatile Consumer<ChannelRef> pickerValidationHookForTest;
   @Nullable private volatile Runnable inactiveMappingRemovedHookForTest;
-  private PrimeSleeper primeSleeper = millis -> MILLISECONDS.sleep(millis);
 
   @VisibleForTesting
   void setNanoClock(Supplier<Long> nanoClock) {
@@ -327,11 +344,6 @@ public class GcpManagedChannel extends ManagedChannel {
   @VisibleForTesting
   void setInactiveMappingRemovedHookForTest(Runnable hook) {
     inactiveMappingRemovedHookForTest = hook;
-  }
-
-  @VisibleForTesting
-  void setPrimeSleeperForTest(PrimeSleeper primeSleeper) {
-    this.primeSleeper = primeSleeper;
   }
 
   private boolean validatePickedChannel(ChannelRef channelRef) {
@@ -371,6 +383,16 @@ public class GcpManagedChannel extends ManagedChannel {
   @VisibleForTesting
   boolean scaleUpWorkerRunningForTest() {
     return scaleUpWorkerRunning.get();
+  }
+
+  @VisibleForTesting
+  int inFlightPrimeCountForTest() {
+    return inFlightPrimeCount.get();
+  }
+
+  @VisibleForTesting
+  static long primeBackoffMillisForTest(int attempt) {
+    return primeBackoffMillis(attempt);
   }
 
   @VisibleForTesting
@@ -2135,7 +2157,6 @@ public class GcpManagedChannel extends ManagedChannel {
 
   private void dynamicUpscale() {
     final int channelsToBuild;
-    final long scaleStartedNanos;
     int reused = 0;
     synchronized (this) {
       if (!isDynamicScalingEnabled || shuttingDown || channelRefs.size() >= maxSize) {
@@ -2160,33 +2181,31 @@ public class GcpManagedChannel extends ManagedChannel {
       if (add <= 0) {
         return;
       }
-      scaleStartedNanos = now;
       while (reused < add && reuseDrainingChannel() != null) {
         reused++;
       }
       channelsToBuild = add - reused;
+      // Claim cooldown before delegate construction or asynchronous priming begins.
+      lastScaleUpNanos = now;
     }
 
+    scaleUpCount.addAndGet(reused);
     List<ManagedChannel> builtChannels = new ArrayList<>(channelsToBuild);
     try {
-      for (int i = 0; i < channelsToBuild && !shuttingDown; i++) {
-        ManagedChannel channel = delegateChannelBuilder.build();
-        if (channelPrimer == null || primeChannel(channel)) {
-          builtChannels.add(channel);
-        }
+      for (int i = 0; i < channelsToBuild; i++) {
+        builtChannels.add(delegateChannelBuilder.build());
       }
     } catch (Throwable failure) {
       builtChannels.forEach(ManagedChannel::shutdownNow);
-      if (reused > 0) {
-        synchronized (this) {
-          lastScaleUpNanos = scaleStartedNanos;
-        }
-        scaleUpCount.addAndGet(reused);
-      }
       throw failure;
     }
 
-    int added = reused;
+    if (channelPrimer != null) {
+      builtChannels.forEach(this::startPrime);
+      return;
+    }
+
+    int added = 0;
     List<ManagedChannel> surplus = new ArrayList<>();
     synchronized (this) {
       for (ManagedChannel channel : builtChannels) {
@@ -2197,51 +2216,220 @@ public class GcpManagedChannel extends ManagedChannel {
           added++;
         }
       }
-      if (added > 0) {
-        lastScaleUpNanos = scaleStartedNanos;
-      }
     }
     surplus.forEach(ManagedChannel::shutdownNow);
     scaleUpCount.addAndGet(added);
   }
 
-  /** Primes a newly built channel with bounded retries before publishing it. */
-  private boolean primeChannel(ManagedChannel channel) {
-    Throwable lastFailure = null;
-    for (int attempt = 0; attempt < channelPrimeMaxAttempts; attempt++) {
-      ListenableFuture<Void> primeFuture = null;
-      try {
-        primeFuture = channelPrimer.prime(channel);
-        if (primeFuture == null) {
-          throw new NullPointerException("Channel primer returned null");
-        }
-        primeFuture.get(channelPrimeTimeout.toNanos(), NANOSECONDS);
-        return true;
-      } catch (Throwable failure) {
-        lastFailure = failure;
-        if (primeFuture != null) {
-          primeFuture.cancel(true);
-        }
-        if (failure instanceof InterruptedException) {
-          Thread.currentThread().interrupt();
-          break;
-        }
-        if (attempt < channelPrimeMaxAttempts - 1) {
-          try {
-            long sleepMillis = Math.min(100L << Math.min(attempt, 12), 5000L);
-            primeSleeper.sleep(sleepMillis);
-          } catch (InterruptedException interrupted) {
-            Thread.currentThread().interrupt();
-            lastFailure = interrupted;
-            break;
-          }
+  /** Starts bounded asynchronous priming without holding the scale-up worker. */
+  private void startPrime(ManagedChannel channel) {
+    PendingPrime pendingPrime = new PendingPrime(channel);
+    synchronized (this) {
+      if (shuttingDown) {
+        channel.shutdownNow();
+        return;
+      }
+      pendingPrimes.add(pendingPrime);
+      inFlightPrimeCount.incrementAndGet();
+    }
+    try {
+      SHARED_BACKGROUND_SERVICE.execute(() -> startPrimeAttempt(pendingPrime, 0));
+    } catch (RejectedExecutionException failure) {
+      rejectPendingPrime(pendingPrime, failure);
+    }
+  }
+
+  private void startPrimeAttempt(PendingPrime pendingPrime, int attempt) {
+    synchronized (this) {
+      if (pendingPrime.finished) {
+        return;
+      }
+      if (shuttingDown) {
+        finishPendingPrime(pendingPrime);
+        pendingPrime.channel.shutdownNow();
+        return;
+      }
+      pendingPrime.attempt = attempt;
+      pendingPrime.invoking = true;
+      pendingPrime.retryTask = null;
+    }
+
+    ListenableFuture<Void> future;
+    try {
+      future = channelPrimer.prime(pendingPrime.channel);
+      if (future == null) {
+        throw new NullPointerException("Channel primer returned null");
+      }
+    } catch (Throwable failure) {
+      finishPrimeFailure(pendingPrime, attempt, null, failure, false);
+      return;
+    }
+
+    boolean cancelFuture = false;
+    Throwable schedulingFailure = null;
+    synchronized (this) {
+      if (pendingPrime.finished
+          || pendingPrime.attempt != attempt
+          || !pendingPrime.invoking
+          || shuttingDown) {
+        cancelFuture = true;
+      } else {
+        pendingPrime.invoking = false;
+        pendingPrime.future = future;
+        try {
+          pendingPrime.timeoutTask =
+              SHARED_BACKGROUND_SERVICE.schedule(
+                  () ->
+                      finishPrimeFailure(
+                          pendingPrime,
+                          attempt,
+                          future,
+                          new TimeoutException("Channel priming timed out"),
+                          true),
+                  channelPrimeTimeout.toNanos(),
+                  NANOSECONDS);
+        } catch (RejectedExecutionException failure) {
+          schedulingFailure = failure;
         }
       }
     }
-    channel.shutdownNow();
-    logger.log(Level.WARNING, log("Scaled-up channel priming failed"), lastFailure);
-    scaleUpPrimeFailures.incrementAndGet();
-    return false;
+    if (cancelFuture) {
+      future.cancel(true);
+      pendingPrime.channel.shutdownNow();
+      return;
+    }
+    if (schedulingFailure != null) {
+      finishPrimeFailure(pendingPrime, attempt, future, schedulingFailure, true);
+      return;
+    }
+
+    Futures.addCallback(
+        future,
+        new FutureCallback<Void>() {
+          @Override
+          public void onSuccess(@Nullable Void unused) {
+            finishPrimeSuccess(pendingPrime, attempt, future);
+          }
+
+          @Override
+          public void onFailure(Throwable failure) {
+            finishPrimeFailure(pendingPrime, attempt, future, failure, false);
+          }
+        },
+        SHARED_BACKGROUND_SERVICE);
+  }
+
+  private void finishPrimeSuccess(
+      PendingPrime pendingPrime, int attempt, ListenableFuture<Void> future) {
+    boolean surplus;
+    synchronized (this) {
+      if (!isCurrentPrimeAttempt(pendingPrime, attempt, future)) {
+        return;
+      }
+      cancelPrimeTimeout(pendingPrime);
+      pendingPrime.future = null;
+      finishPendingPrime(pendingPrime);
+      surplus = shuttingDown || channelRefs.size() >= maxSize;
+      if (!surplus) {
+        addBuiltChannel(pendingPrime.channel);
+        scaleUpCount.incrementAndGet();
+      }
+    }
+    if (surplus) {
+      pendingPrime.channel.shutdownNow();
+    }
+  }
+
+  private void finishPrimeFailure(
+      PendingPrime pendingPrime,
+      int attempt,
+      @Nullable ListenableFuture<Void> future,
+      Throwable failure,
+      boolean cancelFuture) {
+    boolean finalFailure = false;
+    boolean publishFailure = false;
+    synchronized (this) {
+      if (pendingPrime.finished
+          || pendingPrime.attempt != attempt
+          || (future == null ? !pendingPrime.invoking : pendingPrime.future != future)) {
+        return;
+      }
+      pendingPrime.invoking = false;
+      pendingPrime.future = null;
+      cancelPrimeTimeout(pendingPrime);
+      if (shuttingDown || attempt + 1 >= channelPrimeMaxAttempts) {
+        finishPendingPrime(pendingPrime);
+        finalFailure = true;
+        publishFailure = !shuttingDown;
+      } else {
+        long delayMillis = primeBackoffMillis(attempt);
+        try {
+          pendingPrime.retryTask =
+              SHARED_BACKGROUND_SERVICE.schedule(
+                  () -> startPrimeAttempt(pendingPrime, attempt + 1), delayMillis, MILLISECONDS);
+        } catch (RejectedExecutionException rejected) {
+          failure.addSuppressed(rejected);
+          finishPendingPrime(pendingPrime);
+          finalFailure = true;
+          publishFailure = true;
+        }
+      }
+    }
+    if (cancelFuture && future != null) {
+      future.cancel(true);
+    }
+    if (finalFailure) {
+      pendingPrime.channel.shutdownNow();
+      if (publishFailure) {
+        scaleUpPrimeFailures.incrementAndGet();
+        logger.log(Level.WARNING, log("Scaled-up channel priming failed"), failure);
+      }
+    }
+  }
+
+  private void rejectPendingPrime(PendingPrime pendingPrime, Throwable failure) {
+    boolean publishFailure;
+    synchronized (this) {
+      if (pendingPrime.finished) {
+        return;
+      }
+      finishPendingPrime(pendingPrime);
+      publishFailure = !shuttingDown;
+    }
+    pendingPrime.channel.shutdownNow();
+    if (publishFailure) {
+      scaleUpPrimeFailures.incrementAndGet();
+      logger.log(Level.WARNING, log("Scaled-up channel priming failed"), failure);
+    }
+  }
+
+  @GuardedBy("this")
+  private boolean isCurrentPrimeAttempt(
+      PendingPrime pendingPrime, int attempt, ListenableFuture<Void> future) {
+    return !pendingPrime.finished
+        && pendingPrime.attempt == attempt
+        && pendingPrime.future == future;
+  }
+
+  @GuardedBy("this")
+  private void cancelPrimeTimeout(PendingPrime pendingPrime) {
+    if (pendingPrime.timeoutTask != null) {
+      pendingPrime.timeoutTask.cancel(false);
+      pendingPrime.timeoutTask = null;
+    }
+  }
+
+  @GuardedBy("this")
+  private void finishPendingPrime(PendingPrime pendingPrime) {
+    if (!pendingPrime.finished) {
+      pendingPrime.finished = true;
+      pendingPrimes.remove(pendingPrime);
+      inFlightPrimeCount.decrementAndGet();
+    }
+  }
+
+  private static long primeBackoffMillis(int attempt) {
+    return Math.min(100L << Math.min(attempt, 12), 5000L);
   }
 
   @GuardedBy("this")
@@ -2564,7 +2752,7 @@ public class GcpManagedChannel extends ManagedChannel {
     return key;
   }
 
-  private synchronized void cancelBackgroundTasks() {
+  private synchronized List<PendingPrime> cancelBackgroundTasks() {
     shuttingDown = true;
     scaleUpSignalPending.set(false);
     if (cleanupTask != null) {
@@ -2581,12 +2769,35 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     drainTasks.values().forEach(task -> task.cancel(false));
     drainTasks.clear();
+    List<PendingPrime> primesToCancel = new ArrayList<>(pendingPrimes);
+    primesToCancel.forEach(this::finishPendingPrime);
+    return primesToCancel;
+  }
+
+  private void cancelPendingPrimes(List<PendingPrime> pendingPrimes, boolean force) {
+    for (PendingPrime pendingPrime : pendingPrimes) {
+      if (pendingPrime.future != null) {
+        pendingPrime.future.cancel(true);
+      }
+      if (pendingPrime.timeoutTask != null) {
+        pendingPrime.timeoutTask.cancel(false);
+      }
+      if (pendingPrime.retryTask != null) {
+        pendingPrime.retryTask.cancel(false);
+      }
+      if (force) {
+        pendingPrime.channel.shutdownNow();
+      } else {
+        pendingPrime.channel.shutdown();
+      }
+    }
   }
 
   @Override
   public ManagedChannel shutdownNow() {
     logger.finer(log("Shutdown now started."));
-    cancelBackgroundTasks();
+    List<PendingPrime> primesToCancel = cancelBackgroundTasks();
+    cancelPendingPrimes(primesToCancel, true);
     List<ChannelRef> activeSnapshot = new ArrayList<>(channelRefs);
     List<ChannelRef> removedSnapshot = new ArrayList<>(removedChannelRefs);
     for (ChannelRef channelRef : activeSnapshot) {
@@ -2608,7 +2819,8 @@ public class GcpManagedChannel extends ManagedChannel {
   @Override
   public ManagedChannel shutdown() {
     logger.finer(log("Shutdown started."));
-    cancelBackgroundTasks();
+    List<PendingPrime> primesToCancel = cancelBackgroundTasks();
+    cancelPendingPrimes(primesToCancel, false);
     List<ChannelRef> activeSnapshot = new ArrayList<>(channelRefs);
     List<ChannelRef> removedSnapshot = new ArrayList<>(removedChannelRefs);
     for (ChannelRef channelRef : activeSnapshot) {

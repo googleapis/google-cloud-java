@@ -31,6 +31,7 @@ import io.grpc.StatusRuntimeException;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
@@ -128,10 +129,158 @@ public final class GcpManagedChannelDynamicPoolTest {
     hot.activeStreamsCountIncr();
 
     awaitCondition(() -> primingChannel.get() != null);
+    awaitCondition(() -> !pool.scaleUpWorkerRunningForTest());
+    assertThat(pool.inFlightPrimeCountForTest()).isEqualTo(1);
     assertThat(pool.getNumberOfChannels()).isEqualTo(2);
     assertThat(primerThread.get()).startsWith("gcp-mc-bg-");
     primeFuture.set(null);
     awaitCondition(() -> pool.getNumberOfChannels() == 3);
+  }
+
+  @Test
+  public void scaleUpStartsAllChannelPrimersConcurrently() throws Exception {
+    CountDownLatch allPrimersStarted = new CountDownLatch(3);
+    List<SettableFuture<Void>> primeFutures = new CopyOnWriteArrayList<>();
+    GcpChannelPrimer primer =
+        channel -> {
+          SettableFuture<Void> future = SettableFuture.create();
+          primeFutures.add(future);
+          allPrimersStarted.countDown();
+          return future;
+        };
+    pool = newPrimedPool(10, 13, primer, Duration.ofSeconds(5), 1, builder());
+    ChannelRef hot = pool.channelRefs.get(0);
+    hot.setActiveStreamsForTest(99);
+
+    hot.activeStreamsCountIncr();
+
+    assertThat(allPrimersStarted.await(5, TimeUnit.SECONDS)).isTrue();
+    assertThat(pool.inFlightPrimeCountForTest()).isEqualTo(3);
+    assertThat(pool.getNumberOfChannels()).isEqualTo(10);
+    primeFutures.forEach(future -> future.set(null));
+    awaitCondition(() -> pool.inFlightPrimeCountForTest() == 0);
+    awaitCondition(() -> pool.getNumberOfChannels() == 13);
+    assertThat(pool.getNumberOfChannels()).isEqualTo(13);
+  }
+
+  @Test
+  public void primedChannelIsPublishedBeforeRestOfBatchCompletes() throws Exception {
+    CountDownLatch allPrimersStarted = new CountDownLatch(3);
+    List<SettableFuture<Void>> primeFutures = new CopyOnWriteArrayList<>();
+    Map<SettableFuture<Void>, GcpManagedChannelTest.FakeManagedChannel> primingChannels =
+        new java.util.concurrent.ConcurrentHashMap<>();
+    GcpChannelPrimer primer =
+        channel -> {
+          SettableFuture<Void> future = SettableFuture.create();
+          primingChannels.put(future, (GcpManagedChannelTest.FakeManagedChannel) channel);
+          primeFutures.add(future);
+          allPrimersStarted.countDown();
+          return future;
+        };
+    pool = newPrimedPool(10, 13, primer, Duration.ofSeconds(5), 1, builder());
+    ChannelRef hot = pool.channelRefs.get(0);
+    hot.setActiveStreamsForTest(99);
+
+    hot.activeStreamsCountIncr();
+
+    assertThat(allPrimersStarted.await(5, TimeUnit.SECONDS)).isTrue();
+    SettableFuture<Void> firstFuture = primeFutures.get(0);
+    GcpManagedChannelTest.FakeManagedChannel firstChannel = primingChannels.get(firstFuture);
+    firstFuture.set(null);
+    awaitCondition(() -> pool.getNumberOfChannels() == 11);
+    assertThat(
+            pool.channelRefs.stream()
+                .anyMatch(channelRef -> channelRef.getChannel() == firstChannel))
+        .isTrue();
+    assertThat(pool.inFlightPrimeCountForTest()).isEqualTo(2);
+    assertThat(primeFutures.get(1).isDone()).isFalse();
+    assertThat(primeFutures.get(2).isDone()).isFalse();
+    primeFutures.get(1).set(null);
+    primeFutures.get(2).set(null);
+    awaitCondition(() -> pool.inFlightPrimeCountForTest() == 0);
+    awaitCondition(() -> pool.getNumberOfChannels() == 13);
+  }
+
+  @Test
+  public void failedPrimeDoesNotDelayOtherChannels() throws Exception {
+    CountDownLatch allPrimersStarted = new CountDownLatch(3);
+    List<SettableFuture<Void>> primeFutures = new CopyOnWriteArrayList<>();
+    GcpChannelPrimer primer =
+        channel -> {
+          SettableFuture<Void> future = SettableFuture.create();
+          primeFutures.add(future);
+          allPrimersStarted.countDown();
+          return future;
+        };
+    pool = newPrimedPool(10, 13, primer, Duration.ofSeconds(5), 1, builder());
+    ChannelRef hot = pool.channelRefs.get(0);
+    hot.setActiveStreamsForTest(99);
+
+    hot.activeStreamsCountIncr();
+
+    assertThat(allPrimersStarted.await(5, TimeUnit.SECONDS)).isTrue();
+    primeFutures.get(0).setException(new IllegalStateException("prime failed"));
+    primeFutures.get(1).set(null);
+    primeFutures.get(2).set(null);
+    awaitCondition(() -> pool.scaleUpPrimeFailuresForTest() == 1);
+    awaitCondition(() -> pool.inFlightPrimeCountForTest() == 0);
+    awaitCondition(() -> pool.getNumberOfChannels() == 12);
+    assertThat(pool.scaleUpPrimeFailuresForTest()).isEqualTo(1);
+  }
+
+  @Test
+  public void timedOutPrimeDoesNotDelayOtherChannels() throws Exception {
+    CountDownLatch allPrimersStarted = new CountDownLatch(3);
+    List<SettableFuture<Void>> primeFutures = new CopyOnWriteArrayList<>();
+    GcpChannelPrimer primer =
+        channel -> {
+          SettableFuture<Void> future = SettableFuture.create();
+          primeFutures.add(future);
+          allPrimersStarted.countDown();
+          return future;
+        };
+    pool = newPrimedPool(10, 13, primer, Duration.ofSeconds(1), 1, builder());
+    ChannelRef hot = pool.channelRefs.get(0);
+    hot.setActiveStreamsForTest(99);
+
+    hot.activeStreamsCountIncr();
+
+    assertThat(allPrimersStarted.await(5, TimeUnit.SECONDS)).isTrue();
+    primeFutures.get(1).set(null);
+    primeFutures.get(2).set(null);
+    awaitCondition(() -> pool.getNumberOfChannels() == 12);
+    assertThat(primeFutures.get(0).isDone()).isFalse();
+    assertThat(pool.inFlightPrimeCountForTest()).isEqualTo(1);
+    awaitCondition(() -> pool.scaleUpPrimeFailuresForTest() == 1);
+    awaitCondition(() -> pool.inFlightPrimeCountForTest() == 0);
+  }
+
+  @Test
+  public void shutdownClosesEveryUnpublishedPrimingChannel() throws Exception {
+    CountDownLatch allPrimersStarted = new CountDownLatch(3);
+    List<GcpManagedChannelTest.FakeManagedChannel> primingChannels = new CopyOnWriteArrayList<>();
+    List<SettableFuture<Void>> primeFutures = new CopyOnWriteArrayList<>();
+    GcpChannelPrimer primer =
+        channel -> {
+          primingChannels.add((GcpManagedChannelTest.FakeManagedChannel) channel);
+          SettableFuture<Void> future = SettableFuture.create();
+          primeFutures.add(future);
+          allPrimersStarted.countDown();
+          return future;
+        };
+    pool = newPrimedPool(10, 13, primer, Duration.ofSeconds(5), 1, builder());
+    ChannelRef hot = pool.channelRefs.get(0);
+    hot.setActiveStreamsForTest(99);
+    hot.activeStreamsCountIncr();
+    assertThat(allPrimersStarted.await(5, TimeUnit.SECONDS)).isTrue();
+
+    pool.shutdownNow();
+
+    awaitCondition(() -> pool.inFlightPrimeCountForTest() == 0);
+    assertThat(primingChannels).hasSize(3);
+    assertThat(primingChannels.stream().allMatch(channel -> channel.isShutdown())).isTrue();
+    assertThat(primeFutures.stream().allMatch(Future::isCancelled)).isTrue();
+    assertThat(pool.getNumberOfChannels()).isEqualTo(10);
   }
 
   @Test
@@ -226,23 +375,13 @@ public final class GcpManagedChannelDynamicPoolTest {
   }
 
   @Test
-  public void primerBackoffIsCappedForManyAttempts() throws Exception {
-    AtomicInteger primeCalls = new AtomicInteger();
+  public void primerBackoffIsCappedForManyAttempts() {
     List<Long> backoffs = new CopyOnWriteArrayList<>();
-    GcpChannelPrimer primer =
-        channel -> {
-          primeCalls.incrementAndGet();
-          return Futures.immediateFailedFuture(new IllegalStateException("prime failed"));
-        };
-    pool = newPrimedPool(primer, Duration.ofSeconds(5), 50, builder());
-    pool.setPrimeSleeperForTest(backoffs::add);
-    ChannelRef hot = pool.channelRefs.get(0);
-    hot.setActiveStreamsForTest(6);
 
-    hot.activeStreamsCountIncr();
+    for (int attempt = 0; attempt < 49; attempt++) {
+      backoffs.add(GcpManagedChannel.primeBackoffMillisForTest(attempt));
+    }
 
-    awaitCondition(() -> pool.scaleUpPrimeFailuresForTest() == 1);
-    assertThat(primeCalls.get()).isEqualTo(50);
     assertThat(backoffs).hasSize(49);
     assertThat(backoffs.stream().mapToLong(Long::longValue).max().orElse(0)).isAtMost(5_000L);
     assertThat(backoffs.stream().mapToLong(Long::longValue).sum()).isEqualTo(221_300L);
@@ -964,6 +1103,35 @@ public final class GcpManagedChannelDynamicPoolTest {
             .setMinSize(2)
             .setMaxSize(2)
             .setAffinityKeyLifetime(affinityKeyLifetime)
+            .build();
+    return (GcpManagedChannel)
+        GcpManagedChannelBuilder.forDelegateBuilder(delegate)
+            .withOptions(
+                GcpManagedChannelOptions.newBuilder().withChannelPoolOptions(poolOptions).build())
+            .build();
+  }
+
+  private GcpManagedChannel newPrimedPool(
+      int initial,
+      int maximum,
+      GcpChannelPrimer primer,
+      Duration primeTimeout,
+      int primeMaxAttempts,
+      GcpManagedChannelTest.FakeManagedChannelBuilder delegate) {
+    GcpChannelPoolOptions poolOptions =
+        GcpChannelPoolOptions.newBuilder()
+            .setInitSize(initial)
+            .setMinSize(1)
+            .setMaxSize(maximum)
+            .setDynamicScaling(1, 3, Duration.ofSeconds(30))
+            .setScaleUpCooldown(Duration.ofNanos(1))
+            .setScaleDownConsecutiveLowLoadChecks(1)
+            .setMaxScaleUpPercent(30)
+            .setMaxScaleDownChannels(2)
+            .setDrainIdleGrace(Duration.ofMinutes(1))
+            .setChannelPrimer(primer)
+            .setChannelPrimeTimeout(primeTimeout)
+            .setChannelPrimeMaxAttempts(primeMaxAttempts)
             .build();
     return (GcpManagedChannel)
         GcpManagedChannelBuilder.forDelegateBuilder(delegate)

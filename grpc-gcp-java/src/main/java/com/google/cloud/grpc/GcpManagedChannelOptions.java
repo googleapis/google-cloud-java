@@ -605,8 +605,9 @@ public class GcpManagedChannelOptions {
       }
 
       /**
-       * Sets the optional hook that primes each newly built scale-up channel before publication. A
-       * {@code null} primer disables priming and preserves the existing scale-up path.
+       * Sets the optional hook that primes newly built scale-up channels concurrently. Each channel
+       * is published individually when its own primer future succeeds. A {@code null} primer
+       * disables priming and preserves the existing scale-up path.
        */
       public Builder setChannelPrimer(@Nullable GcpChannelPrimer channelPrimer) {
         this.channelPrimer = channelPrimer;
@@ -614,8 +615,8 @@ public class GcpManagedChannelOptions {
       }
 
       /**
-       * Sets the maximum time the scale-up worker waits for one channel-primer future. Zero uses
-       * the 10-second default.
+       * Sets the maximum time allowed for each channel-primer attempt. Zero uses the 10-second
+       * default.
        */
       public Builder setChannelPrimeTimeout(Duration channelPrimeTimeout) {
         Preconditions.checkNotNull(channelPrimeTimeout, "Channel prime timeout must not be null.");
