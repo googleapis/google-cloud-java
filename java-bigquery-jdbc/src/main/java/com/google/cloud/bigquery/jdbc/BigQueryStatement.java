@@ -316,7 +316,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
       jobConfiguration = applyParametersIfPresent(jobConfiguration);
       if (isLargeResultsEnabled()
-          && getQueryType(jobConfiguration.build(), null) == SqlType.SELECT) {
+          && getStatementType(jobConfiguration.build()) == StatementType.SELECT) {
         jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
       }
       runQuery(sql, jobConfiguration.build());
@@ -351,13 +351,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     return statistics.getStatementType();
   }
 
-  SqlType getQueryType(QueryJobConfiguration jobConfiguration, StatementType statementType)
-      throws SQLException {
+  SqlType getQueryType(QueryJobConfiguration jobConfiguration, StatementType statementType) {
     LOG.finer("++enter++");
-    if (statementType == null) {
-      statementType = getStatementType(jobConfiguration);
-    }
-
     SqlType sqlType = BigQuerySqlTypeConverter.getSqlTypeFromStatementType(statementType);
     LOG.fine(
         "Query: %s, Statement Type: %s, SQL Type: %s",
@@ -571,10 +566,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (result instanceof TableResult) {
       TableResult tableResult = (TableResult) result;
       saveSessionIdIfPresent(tableResult);
-      if (tableResult.getJobId() != null) {
-        return new ExecuteResult(tableResult, bigQuery.getJob(tableResult.getJobId()));
-      }
-      return new ExecuteResult((TableResult) result, null);
+      return new ExecuteResult(tableResult, null);
     }
 
     if (result instanceof Job) {
@@ -1641,20 +1633,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   @Override
-  public void addBatch(String sql) throws SQLException {
+  public void addBatch(String sql) {
     if (sql == null || sql.isEmpty()) {
       return;
     }
     sql = sql.trim();
     if (!sql.endsWith(";")) {
       sql += "; ";
-    }
-    SqlType sqlType = getQueryType(QueryJobConfiguration.newBuilder(sql).build(), null);
-    if (!SqlType.DML.equals(sqlType)) {
-      IllegalArgumentException ex =
-          new IllegalArgumentException("addBatch currently supports DML operations.");
-      LOG.severe(ex.getMessage(), ex);
-      throw ex;
     }
     this.batchQueries.add(sql);
   }
