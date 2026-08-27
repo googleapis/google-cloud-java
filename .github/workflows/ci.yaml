@@ -401,6 +401,21 @@ jobs:
         BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
   enforcer:
     needs: bulk-filter
+    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
+      with:
+        distribution: temurin
+        java-version: 11
+        cache: maven
+    - run: java -version
+    - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
+  ban-duplicate-classes:
+    needs: bulk-filter
     if: |
       needs.bulk-filter.outputs.runnable == 'true' &&
       github.head_ref == 'release-please--branches--main' &&
@@ -421,7 +436,7 @@ jobs:
       env:
         JOB_TYPE: install
     - run: java -version
-    - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
+    - run: mvn -B -ntp enforcer:enforce@enforce-banned-duplicate-classes -T 1C
   gapic-libraries-bom:
     needs: bulk-filter
     if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
