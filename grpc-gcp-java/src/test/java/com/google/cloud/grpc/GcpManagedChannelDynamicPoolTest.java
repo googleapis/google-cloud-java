@@ -718,6 +718,16 @@ public final class GcpManagedChannelDynamicPoolTest {
   }
 
   @Test
+  public void pickerDoesNotRetainActiveChannelSnapshotHelper() {
+    try {
+      GcpManagedChannel.class.getDeclaredMethod("activeChannelSnapshot");
+      throw new AssertionError("picker still allocates active-channel snapshots");
+    } catch (NoSuchMethodException expected) {
+      // Method removal keeps the picker on the CopyOnWriteArrayList hot path.
+    }
+  }
+
+  @Test
   public void powerOfTwoTieKeepsFirstSample() {
     pool = newPool(2, 2, 2, 2, 5, Duration.ofSeconds(30), builder());
     ChannelRef first = pool.channelRefs.get(0);

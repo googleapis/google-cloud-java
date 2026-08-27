@@ -625,11 +625,25 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private long activeLoad(List<ChannelRef> refs) {
-    return refs.stream().mapToLong(ChannelRef::getActiveStreamsCount).sum();
+    long load = 0;
+    for (int i = 0; i < refs.size(); i++) {
+      ChannelRef channelRef = candidateAt(refs, i);
+      if (channelRef != null && channelRef.isActive()) {
+        load += channelRef.getActiveStreamsCount();
+      }
+    }
+    return load;
   }
 
   private long pickerLoad(List<ChannelRef> refs) {
-    return refs.stream().mapToLong(ChannelRef::getPickerLoad).sum();
+    long load = 0;
+    for (int i = 0; i < refs.size(); i++) {
+      ChannelRef channelRef = candidateAt(refs, i);
+      if (channelRef != null && channelRef.isActive()) {
+        load += channelRef.getPickerLoad();
+      }
+    }
+    return load;
   }
 
   private Supplier<String> log(Supplier<String> messageSupplier) {
@@ -1862,11 +1876,25 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   public int getMinActiveStreams() {
-    return channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).min().orElse(0);
+    int minimum = Integer.MAX_VALUE;
+    for (int i = 0; i < channelRefs.size(); i++) {
+      ChannelRef channelRef = candidateAt(channelRefs, i);
+      if (channelRef != null && channelRef.isActive()) {
+        minimum = Math.min(minimum, channelRef.getActiveStreamsCount());
+      }
+    }
+    return minimum == Integer.MAX_VALUE ? 0 : minimum;
   }
 
   public int getMaxActiveStreams() {
-    return channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).max().orElse(0);
+    int maximum = 0;
+    for (int i = 0; i < channelRefs.size(); i++) {
+      ChannelRef channelRef = candidateAt(channelRefs, i);
+      if (channelRef != null && channelRef.isActive()) {
+        maximum = Math.max(maximum, channelRef.getActiveStreamsCount());
+      }
+    }
+    return maximum;
   }
 
   /**
@@ -2023,17 +2051,14 @@ public class GcpManagedChannel extends ManagedChannel {
 
   private ChannelRef pickLeastBusyChannelDifferentFrom(@Nullable ChannelRef excludedChannelRef) {
     ChannelRef channelRef = pickLeastBusyChannel(/* forFallback= */ false);
-    List<ChannelRef> activeChannels = activeChannelSnapshot();
-    if (excludedChannelRef == null || activeChannels.size() <= 1) {
-      return channelRef;
-    }
-    if (channelRef != excludedChannelRef && channelRef.isActive()) {
+    if (excludedChannelRef == null || channelRef != excludedChannelRef) {
       return channelRef;
     }
     ChannelRef leastBusyChannelRef = null;
     int leastBusyStreams = Integer.MAX_VALUE;
-    for (ChannelRef candidate : activeChannels) {
-      if (candidate == excludedChannelRef) {
+    for (int i = 0; i < channelRefs.size(); i++) {
+      ChannelRef candidate = candidateAt(channelRefs, i);
+      if (candidate == null || !candidate.isActive() || candidate == excludedChannelRef) {
         continue;
       }
       int streams = candidate.getPickerLoad();
@@ -2491,7 +2516,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * be provided if available.
    */
   private ChannelRef pickLeastBusyChannel(boolean forFallback) {
-    // Retries cover post-snapshot deactivation, not draining density.
+    // Retries cover deactivation after selection.
     for (int attempt = 0; attempt < 3; attempt++) {
       ChannelRef first = createFirstChannel();
       if (first != null) {
@@ -2503,7 +2528,7 @@ public class GcpManagedChannel extends ManagedChannel {
         return picked;
       }
     }
-    return leastLoadedActiveChannel(activeChannelSnapshot());
+    return leastLoadedActiveChannel(channelRefs);
   }
 
   /**
@@ -2511,23 +2536,22 @@ public class GcpManagedChannel extends ManagedChannel {
    * GcpManagedChannelOptions.ChannelPickStrategy}.
    */
   private ChannelRef pickLeastBusyNoFallback() {
-    // Retries cover post-snapshot deactivation, not draining density.
+    // Retries cover deactivation after selection.
     for (int attempt = 0; attempt < 3; attempt++) {
       ChannelRef candidate = pickLeastBusyNoFallbackOnce();
       if (candidate.isActive()) {
         return candidate;
       }
     }
-    return leastLoadedActiveChannel(activeChannelSnapshot());
+    return leastLoadedActiveChannel(channelRefs);
   }
 
   private ChannelRef pickLeastBusyNoFallbackOnce() {
-    List<ChannelRef> activeChannels = activeChannelSnapshot();
     ChannelRef channelCandidate;
     int minStreams;
 
     if (channelPickStrategy == GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO) {
-      channelCandidate = pickFromCandidates(activeChannels);
+      channelCandidate = pickFromCandidates(channelRefs);
       // With power-of-two, streams distribute approximately (not exactly) evenly.
       // Use max streams for scale-up: if ANY channel hits the watermark, it's overloaded now
       // and we should add capacity before other channels follow. This preserves the original
@@ -2535,15 +2559,8 @@ public class GcpManagedChannel extends ManagedChannel {
       // Global min would delay scale-up; sampled min would be noisy.
       minStreams = getMaxActiveStreams();
     } else {
-      channelCandidate = activeChannels.get(0);
+      channelCandidate = leastLoadedActiveChannel(channelRefs);
       minStreams = channelCandidate.getPickerLoad();
-      for (ChannelRef channelRef : activeChannels) {
-        int cnt = channelRef.getPickerLoad();
-        if (cnt < minStreams) {
-          minStreams = cnt;
-          channelCandidate = channelRef;
-        }
-      }
     }
 
     if (shouldScaleUp(minStreams)) {
@@ -2557,38 +2574,41 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /**
-   * Fallback-enabled channel selection. Always uses a full linear scan because the fallback logic
-   * needs to filter channels by readiness state and max stream limits.
+   * Fallback-enabled channel selection. Uses allocation-free scans because fallback selection must
+   * filter channels by readiness state and max stream limits.
    */
   private ChannelRef pickLeastBusyWithFallback(boolean forFallback) {
-    List<ChannelRef> activeChannels = activeChannelSnapshot();
-    // Full scan to collect eligible ("ready") channels not in fallbackMap and under max streams.
-    List<ChannelRef> readyCandidates = new ArrayList<>();
-    ChannelRef overallCandidate = activeChannels.get(0);
-    int overallMinStreams = overallCandidate.getPickerLoad();
+    ChannelRef overallCandidate = null;
+    int overallMinStreams = Integer.MAX_VALUE;
     int readyMaxStreams = 0;
+    int readyCount = 0;
 
-    for (ChannelRef channelRef : activeChannels) {
-      int cnt = channelRef.getPickerLoad();
-      if (cnt < overallMinStreams) {
-        overallMinStreams = cnt;
+    for (int i = 0; i < channelRefs.size(); i++) {
+      ChannelRef channelRef = candidateAt(channelRefs, i);
+      if (channelRef == null || !channelRef.isActive()) {
+        continue;
+      }
+      int count = channelRef.getPickerLoad();
+      if (overallCandidate == null || count < overallMinStreams) {
+        overallMinStreams = count;
         overallCandidate = channelRef;
       }
-      if (!fallbackMap.containsKey(channelRef.getId()) && cnt < maxConcurrentStreamsLowWatermark) {
-        readyCandidates.add(channelRef);
-        if (cnt > readyMaxStreams) {
-          readyMaxStreams = cnt;
-        }
+      if (isReadyCandidate(channelRef, count)) {
+        readyCount++;
+        readyMaxStreams = Math.max(readyMaxStreams, count);
       }
     }
 
-    // For scale-up, use maxStreams among ready channels (consistent with non-fallback path).
-    int scaleUpStreams = readyCandidates.isEmpty() ? Integer.MAX_VALUE : readyMaxStreams;
+    if (overallCandidate == null) {
+      return leastLoadedActiveChannel(channelRefs);
+    }
+
+    int scaleUpStreams = readyCount == 0 ? Integer.MAX_VALUE : readyMaxStreams;
     if (shouldScaleUp(scaleUpStreams)) {
       ChannelRef newChannel = tryCreateNewChannel();
       if (newChannel != null) {
         scaleUpCount.incrementAndGet();
-        if (!forFallback && readyCandidates.isEmpty()) {
+        if (!forFallback && readyCount == 0) {
           if (logger.isLoggable(Level.FINEST)) {
             logger.finest(log("Fallback to newly created channel %d", newChannel.getId()));
           }
@@ -2598,9 +2618,8 @@ public class GcpManagedChannel extends ManagedChannel {
       }
     }
 
-    if (!readyCandidates.isEmpty()) {
-      // Apply power-of-two among eligible channels to avoid thundering herd.
-      ChannelRef readyCandidate = pickFromCandidates(readyCandidates);
+    if (readyCount > 0) {
+      ChannelRef readyCandidate = pickReadyCandidate(readyCount);
       if (!forFallback && readyCandidate.getId() != overallCandidate.getId()) {
         if (logger.isLoggable(Level.FINEST)) {
           logger.finest(
@@ -2622,6 +2641,56 @@ public class GcpManagedChannel extends ManagedChannel {
     return overallCandidate;
   }
 
+  private boolean isReadyCandidate(ChannelRef channelRef, int pickerLoad) {
+    return channelRef.isActive()
+        && !fallbackMap.containsKey(channelRef.getId())
+        && pickerLoad < maxConcurrentStreamsLowWatermark;
+  }
+
+  private ChannelRef pickReadyCandidate(int readyCount) {
+    for (int attempt = 0; attempt < 2 * readyCount; attempt++) {
+      ChannelRef first = readyCandidateAt(candidateIndexPicker.applyAsInt(readyCount));
+      ChannelRef second = readyCandidateAt(candidateIndexPicker.applyAsInt(readyCount));
+      if (first == null || second == null) {
+        continue;
+      }
+      ChannelRef picked = pickLessBusy(first, second);
+      if (picked.isActive()) {
+        return picked;
+      }
+    }
+
+    ChannelRef best = null;
+    int bestLoad = Integer.MAX_VALUE;
+    for (int i = 0; i < channelRefs.size(); i++) {
+      ChannelRef candidate = candidateAt(channelRefs, i);
+      if (candidate == null) {
+        continue;
+      }
+      int load = candidate.getPickerLoad();
+      if (isReadyCandidate(candidate, load) && (best == null || load < bestLoad)) {
+        best = candidate;
+        bestLoad = load;
+      }
+    }
+    return best == null ? leastLoadedActiveChannel(channelRefs) : best;
+  }
+
+  @Nullable
+  private ChannelRef readyCandidateAt(int readyIndex) {
+    int seen = 0;
+    for (int i = 0; i < channelRefs.size(); i++) {
+      ChannelRef candidate = candidateAt(channelRefs, i);
+      if (candidate != null && isReadyCandidate(candidate, candidate.getPickerLoad())) {
+        if (seen == readyIndex) {
+          return candidate;
+        }
+        seen++;
+      }
+    }
+    return null;
+  }
+
   /**
    * Picks a channel from the given candidate list using the configured strategy.
    *
@@ -2633,15 +2702,12 @@ public class GcpManagedChannel extends ManagedChannel {
    */
   @VisibleForTesting
   ChannelRef pickFromCandidates(List<ChannelRef> candidates) {
-    if (candidates.size() == 1) {
-      return candidates.get(0);
-    }
+    int size = candidates.size();
     if (channelPickStrategy == GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO) {
-      // Retry draining samples before falling back to a full active-channel scan.
-      for (int attempt = 0; attempt < 2 * candidates.size(); attempt++) {
-        ChannelRef first = candidates.get(candidateIndexPicker.applyAsInt(candidates.size()));
-        ChannelRef second = candidates.get(candidateIndexPicker.applyAsInt(candidates.size()));
-        if (!first.isActive() || !second.isActive()) {
+      for (int attempt = 0; attempt < 2 * size; attempt++) {
+        ChannelRef first = candidateAt(candidates, candidateIndexPicker.applyAsInt(size));
+        ChannelRef second = candidateAt(candidates, candidateIndexPicker.applyAsInt(size));
+        if (first == null || second == null || !first.isActive() || !second.isActive()) {
           continue;
         }
         ChannelRef picked = pickLessBusy(first, second);
@@ -2649,46 +2715,45 @@ public class GcpManagedChannel extends ManagedChannel {
           return picked;
         }
       }
-      return leastLoadedActiveChannel(candidates);
     }
     return leastLoadedActiveChannel(candidates);
   }
 
   private ChannelRef leastLoadedActiveChannel(List<ChannelRef> candidates) {
     ChannelRef best = null;
-    for (ChannelRef candidate : candidates) {
-      if (candidate.isActive()
-          && (best == null || candidate.getPickerLoad() < best.getPickerLoad())) {
+    int bestLoad = Integer.MAX_VALUE;
+    for (int i = 0; i < candidates.size(); i++) {
+      ChannelRef candidate = candidateAt(candidates, i);
+      if (candidate == null || !candidate.isActive()) {
+        continue;
+      }
+      int load = candidate.getPickerLoad();
+      if (best == null || load < bestLoad) {
         best = candidate;
+        bestLoad = load;
       }
     }
     if (best != null) {
       return best;
     }
-    throw Status.UNAVAILABLE.withDescription("No available channels").asRuntimeException();
-  }
-
-  private List<ChannelRef> activeChannelSnapshot() {
-    // Retries cover post-snapshot deactivation, not draining density.
-    for (int attempt = 0; attempt < 3; attempt++) {
-      List<ChannelRef> activeChannels =
-          channelRefs.stream().filter(ChannelRef::isActive).collect(Collectors.toList());
-      if (!activeChannels.isEmpty()) {
-        return activeChannels;
-      }
-      ChannelRef first = createFirstChannel();
-      if (first != null) {
-        return Collections.singletonList(first);
-      }
+    ChannelRef first = createFirstChannel();
+    if (first != null) {
+      return first;
     }
     if (shuttingDown) {
       throw Status.UNAVAILABLE.withDescription("Channel pool is shut down").asRuntimeException();
     }
-    List<ChannelRef> fallback = new ArrayList<>(channelRefs);
-    if (!fallback.isEmpty()) {
-      return fallback;
-    }
     throw Status.UNAVAILABLE.withDescription("No available channels").asRuntimeException();
+  }
+
+  @Nullable
+  private static ChannelRef candidateAt(List<ChannelRef> candidates, int index) {
+    try {
+      return candidates.get(index);
+    } catch (IndexOutOfBoundsException ignored) {
+      // CopyOnWriteArrayList may shrink between size() and get() during scale-down.
+      return null;
+    }
   }
 
   @VisibleForTesting
