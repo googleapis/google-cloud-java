@@ -22,6 +22,9 @@ import com.google.cloud.bigquery.jdbc.BigQueryStatement.SqlType;
 class BigQuerySqlTypeConverter {
 
   static SqlType getSqlTypeFromStatementType(StatementType statementType) {
+    if (statementType == null) {
+      return SqlType.OTHER;
+    }
     switch (statementType.toString()) {
       case "SELECT":
         return SqlType.SELECT;
