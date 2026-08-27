@@ -44,7 +44,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Go-parity dynamic channel pool behavior tests. */
+/** Dynamic channel pool behavior tests. */
 @RunWith(JUnit4.class)
 public final class GcpManagedChannelDynamicPoolTest {
   private final ExecutorService stateExecutor = Executors.newSingleThreadExecutor();
@@ -469,6 +469,25 @@ public final class GcpManagedChannelDynamicPoolTest {
 
     assertThat(pool.pickLessBusy(first, second)).isSameInstanceAs(first);
     assertThat(pool.pickLessBusy(second, first)).isSameInstanceAs(second);
+  }
+
+  @Test
+  public void powerOfTwoUsesCandidateRetryBoundBeforeFullScan() {
+    pool = newPool(4, 4, 4, 2, 5, Duration.ofSeconds(30), builder());
+    pool.channelRefs.get(0).deactivateForTest();
+    pool.channelRefs.get(1).deactivateForTest();
+    ChannelRef leastLoaded = pool.channelRefs.get(2);
+    ChannelRef finalSample = pool.channelRefs.get(3);
+    finalSample.setActiveStreamsForTest(10);
+    int[] samples = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3};
+    AtomicInteger nextSample = new AtomicInteger();
+    pool.setCandidateIndexPickerForTest(bound -> samples[nextSample.getAndIncrement()]);
+
+    ChannelRef picked = pool.pickFromCandidates(pool.channelRefs);
+
+    assertThat(picked).isSameInstanceAs(finalSample);
+    assertThat(picked).isNotSameInstanceAs(leastLoaded);
+    assertThat(nextSample.get()).isEqualTo(4 * pool.channelRefs.size());
   }
 
   @Test

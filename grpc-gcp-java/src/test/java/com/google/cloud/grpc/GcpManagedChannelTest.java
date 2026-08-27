@@ -696,7 +696,7 @@ public final class GcpManagedChannelTest {
     ChannelRef warmChannel = gcpChannel.channelRefs.get(5);
     warmChannel.messageReceived();
 
-    // Pick many times. Go DCP keeps the first sample on a tie, so warmth does not bias picks.
+    // Repeated picks keep the first sample on ties, so warmth does not bias selection.
     int warmPicks = 0;
     final int numPicks = 1000;
     for (int i = 0; i < numPicks; i++) {

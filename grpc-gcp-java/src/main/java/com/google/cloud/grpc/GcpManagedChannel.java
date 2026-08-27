@@ -76,6 +76,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Consumer;
+import java.util.function.IntUnaryOperator;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -294,6 +295,8 @@ public class GcpManagedChannel extends ManagedChannel {
 
   // Clock supplier for nanoTime, injectable for testing.
   private Supplier<Long> nanoClock = System::nanoTime;
+  private IntUnaryOperator candidateIndexPicker =
+      bound -> ThreadLocalRandom.current().nextInt(bound);
   @Nullable private volatile Consumer<ChannelRef> pickerValidationHookForTest;
 
   @VisibleForTesting
@@ -304,6 +307,11 @@ public class GcpManagedChannel extends ManagedChannel {
   @VisibleForTesting
   void setPickerValidationHookForTest(Consumer<ChannelRef> hook) {
     pickerValidationHookForTest = hook;
+  }
+
+  @VisibleForTesting
+  void setCandidateIndexPickerForTest(IntUnaryOperator candidateIndexPicker) {
+    this.candidateIndexPicker = candidateIndexPicker;
   }
 
   private boolean validatePickedChannel(ChannelRef channelRef) {
@@ -465,7 +473,7 @@ public class GcpManagedChannel extends ManagedChannel {
       return;
     }
 
-    // Match Go DCP: least loaded first, oldest allocation breaks ties.
+    // Drain least-loaded channels first; the oldest allocation breaks ties.
     final List<ChannelRef> channelsToRemove =
         channelRefs.stream()
             .sorted(
@@ -2120,7 +2128,7 @@ public class GcpManagedChannel extends ManagedChannel {
       }
       int desired = ceilDiv(pickerLoad(activeChannels), targetRpcPerChannel());
       int add = desired - active;
-      // Match dynamic_channel_pool.go:647-652: small pools may add two channels per event.
+      // Small pools may add two channels per event before percentage growth dominates.
       int percentCap = Math.max(2, ceilDiv((long) active * maxScaleUpPercent, 100));
       add = Math.min(add, percentCap);
       add = Math.min(add, maxSize - active);
@@ -2172,7 +2180,7 @@ public class GcpManagedChannel extends ManagedChannel {
     scaleUpCount.addAndGet(added);
   }
 
-  /** Mirrors scaled-entry validation in dynamic_channel_pool.go:412-444. */
+  /** Primes a newly built channel with bounded retries before publishing it. */
   private boolean primeChannel(ManagedChannel channel) {
     Throwable lastFailure = null;
     for (int attempt = 0; attempt < channelPrimeMaxAttempts; attempt++) {
@@ -2259,6 +2267,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * be provided if available.
    */
   private ChannelRef pickLeastBusyChannel(boolean forFallback) {
+    // Retries cover post-snapshot deactivation, not draining density.
     for (int attempt = 0; attempt < 3; attempt++) {
       ChannelRef first = createFirstChannel();
       if (first != null) {
@@ -2278,6 +2287,7 @@ public class GcpManagedChannel extends ManagedChannel {
    * GcpManagedChannelOptions.ChannelPickStrategy}.
    */
   private ChannelRef pickLeastBusyNoFallback() {
+    // Retries cover post-snapshot deactivation, not draining density.
     for (int attempt = 0; attempt < 3; attempt++) {
       ChannelRef candidate = pickLeastBusyNoFallbackOnce();
       if (candidate.isActive()) {
@@ -2392,7 +2402,8 @@ public class GcpManagedChannel extends ManagedChannel {
    * Picks a channel from the given candidate list using the configured strategy.
    *
    * <p>For {@code POWER_OF_TWO}: samples twice with replacement and picks the less busy sample. The
-   * first sample wins ties, matching Go DCP.
+   * first sample wins ties. Draining samples are retried up to twice the candidate count before a
+   * full active-channel scan.
    *
    * <p>For {@code LINEAR_SCAN}: deterministic scan picking the first least-busy channel.
    */
@@ -2402,10 +2413,10 @@ public class GcpManagedChannel extends ManagedChannel {
       return candidates.get(0);
     }
     if (channelPickStrategy == GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO) {
-      ThreadLocalRandom random = ThreadLocalRandom.current();
-      for (int attempt = 0; attempt < 3; attempt++) {
-        ChannelRef first = candidates.get(random.nextInt(candidates.size()));
-        ChannelRef second = candidates.get(random.nextInt(candidates.size()));
+      // Retry draining samples before falling back to a full active-channel scan.
+      for (int attempt = 0; attempt < 2 * candidates.size(); attempt++) {
+        ChannelRef first = candidates.get(candidateIndexPicker.applyAsInt(candidates.size()));
+        ChannelRef second = candidates.get(candidateIndexPicker.applyAsInt(candidates.size()));
         if (!first.isActive() || !second.isActive()) {
           continue;
         }
@@ -2434,6 +2445,7 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private List<ChannelRef> activeChannelSnapshot() {
+    // Retries cover post-snapshot deactivation, not draining density.
     for (int attempt = 0; attempt < 3; attempt++) {
       List<ChannelRef> activeChannels =
           channelRefs.stream().filter(ChannelRef::isActive).collect(Collectors.toList());

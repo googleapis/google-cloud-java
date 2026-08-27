@@ -212,7 +212,7 @@ public final class GcpManagedChannelOptionsTest {
   }
 
   @Test
-  public void testDynamicScalingKnobsHaveGoDefaultsAndSurviveCopy() {
+  public void testDynamicScalingKnobsHaveDefaultsAndSurviveCopy() {
     GcpChannelPoolOptions defaults = GcpChannelPoolOptions.newBuilder().build();
 
     assertThat(defaults.getScaleUpCooldown()).isEqualTo(Duration.ofSeconds(10));
@@ -269,7 +269,7 @@ public final class GcpManagedChannelOptionsTest {
   }
 
   @Test
-  public void dynamicScalingGoDefaultKnobsRejectNegativeValues() {
+  public void dynamicScalingDefaultKnobsRejectNegativeValues() {
     assertThrows(
         IllegalArgumentException.class,
         () -> GcpChannelPoolOptions.newBuilder().setScaleUpCooldown(Duration.ofNanos(-1)));
