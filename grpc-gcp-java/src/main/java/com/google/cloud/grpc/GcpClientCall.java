@@ -278,13 +278,8 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     private final boolean unbindOnComplete;
     private long startNanos = 0;
 
-    private final Object countLock = new Object();
-
-    @GuardedBy("countLock")
-    private boolean counted;
-
-    @GuardedBy("countLock")
-    private boolean finished;
+    // 0 = not counted, 1 = counted, 2 = finished.
+    private final AtomicInteger countState = new AtomicInteger();
 
     protected SimpleGcpClientCall(
         GcpManagedChannel delegateChannel,
@@ -299,10 +294,8 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
       CallOptions callOptionsWithChannelId =
           callOptions.withOption(GcpManagedChannel.CHANNEL_ID_KEY, channelRef.getId());
       startNanos = System.nanoTime();
-      synchronized (countLock) {
-        channelRef.activeStreamsCountIncr();
-        counted = true;
-      }
+      channelRef.activeStreamsCountIncr();
+      countState.set(1);
       try {
         this.delegateCall =
             channelRef.getChannel().newCall(methodDescriptor, callOptionsWithChannelId);
@@ -360,14 +353,8 @@ public class GcpClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     }
 
     private void finishCount(Status status, boolean fromClientSide) {
-      synchronized (countLock) {
-        if (finished) {
-          return;
-        }
-        finished = true;
-        if (counted) {
-          channelRef.activeStreamsCountDecr(startNanos, status, fromClientSide);
-        }
+      if (countState.compareAndSet(1, 2)) {
+        channelRef.activeStreamsCountDecr(startNanos, status, fromClientSide);
       }
     }
   }
