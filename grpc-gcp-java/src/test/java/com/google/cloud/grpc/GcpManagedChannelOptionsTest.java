@@ -254,6 +254,7 @@ public final class GcpManagedChannelOptionsTest {
     assertThat(options).contains("scaleDownConsecutiveLowLoadChecks:");
     assertThat(options).contains("maxScaleUpPercent:");
     assertThat(options).contains("maxScaleDownChannels:");
+    assertThat(options).contains("drainIdleGrace:");
     assertThat(options).contains("concurrentStreamsLowWatermark:");
     assertThat(options).contains("useRoundRobinOnBind:");
     assertThat(options).contains("affinityKeyLifetime:");
