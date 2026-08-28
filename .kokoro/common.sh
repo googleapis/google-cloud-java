@@ -416,6 +416,8 @@ function install_modules() {
     printf "Installing submodules:\n%s\n" "$all_submodules"
 
     always_install_deps_list=(
+      # Required upstream dependency for java-spanner and java-spanner-jdbc
+      'grpc-gcp-java'
       'java-monitoring/google-cloud-monitoring'
       'java-monitoring/google-cloud-monitoring-bom'
       'java-kms/google-cloud-kms'
@@ -439,6 +441,8 @@ function install_modules() {
       'java-iam/proto-google-iam-v3'
       'java-iam/proto-google-iam-v3beta'
       'gapic-libraries-bom'
+      # Required upstream dependency for gax-java, google-cloud-core, and all client libraries
+      'sdk-platform-java/api-common-java'
       'sdk-platform-java/java-shared-dependencies'
       'sdk-platform-java/java-shared-dependencies/first-party-dependencies'
       'sdk-platform-java/java-shared-dependencies/third-party-dependencies'

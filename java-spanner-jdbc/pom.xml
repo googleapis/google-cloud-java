@@ -49,6 +49,7 @@
     </license>
   </licenses>
   <properties>
+    <skipUnitTests>false</skipUnitTests>
     <site.installationModule>google-cloud-spanner-jdbc</site.installationModule>
     <junit.version>4.13.2</junit.version>
     <findbugs.version>3.0.2</findbugs.version>
