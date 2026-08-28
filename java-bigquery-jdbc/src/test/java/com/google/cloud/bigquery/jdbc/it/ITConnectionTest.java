@@ -469,15 +469,19 @@ public class ITConnectionTest {
 
   @Test
   public void testPcntDefaultDataset3TierNamespace() throws SQLException {
-    String pcntSchema = "bq-drivers-test-warehouse.jdbc_pcnt_test_namespace";
-    String pcntTable = "PCNT_TEST_TABLE";
     String urlWithPcnt =
-        ITBase.connectionUrl + ";DefaultDataset=" + DEFAULT_CATALOG + ":" + pcntSchema + ";";
+        ITBase.connectionUrl
+            + ";DefaultDataset="
+            + DEFAULT_CATALOG
+            + ":"
+            + ITBase.PCNT_SCHEMA
+            + ";";
     try (Connection connection = DriverManager.getConnection(urlWithPcnt)) {
       assertNotNull(connection);
       assertFalse(connection.isClosed());
       try (Statement stmt = connection.createStatement();
-          ResultSet rs = stmt.executeQuery("SELECT * FROM " + pcntTable + " LIMIT 5")) {
+          ResultSet rs =
+              stmt.executeQuery("SELECT * FROM " + ITBase.PCNT_TABLE_NAME + " LIMIT 5")) {
         assertTrue(rs.getMetaData().getColumnCount() > 0);
       }
     }

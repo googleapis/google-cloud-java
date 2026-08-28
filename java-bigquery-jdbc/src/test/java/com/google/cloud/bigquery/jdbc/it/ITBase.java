@@ -49,6 +49,9 @@ public class ITBase extends BigQueryJdbcBaseTest {
       "DECLARE DELAY_TIME DATETIME; SET DELAY_TIME = DATETIME_ADD(CURRENT_DATETIME, INTERVAL 300"
           + " SECOND); WHILE CURRENT_DATETIME < DELAY_TIME DO  END WHILE;";
 
+  public static final String PCNT_SCHEMA = "bq-drivers-test-warehouse.jdbc_pcnt_test_namespace";
+  public static final String PCNT_TABLE_NAME = "PCNT_TEST_TABLE";
+
   private static String sharedDataset;
   private static String sharedDataset2;
 
