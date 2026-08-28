@@ -29,7 +29,9 @@
  */
 package com.google.api.gax.httpjson;
 
+import com.google.api.client.http.HttpTransport;
 import com.google.common.annotations.VisibleForTesting;
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import org.jspecify.annotations.NullMarked;
 
@@ -41,9 +43,14 @@ class ManagedHttpJsonInterceptorChannel extends ManagedHttpJsonChannel {
 
   ManagedHttpJsonInterceptorChannel(
       ManagedHttpJsonChannel channel, HttpJsonClientInterceptor interceptor) {
-    super();
+    super(true);
     this.channel = channel;
     this.interceptor = interceptor;
+  }
+
+  @Override
+  public long getGeneration() {
+    return channel.getGeneration();
   }
 
   @VisibleForTesting
@@ -52,9 +59,36 @@ class ManagedHttpJsonInterceptorChannel extends ManagedHttpJsonChannel {
   }
 
   @Override
+  String getEndpoint() {
+    return channel.getEndpoint();
+  }
+
+  @Override
+  @VisibleForTesting
+  HttpTransport getHttpTransport() {
+    return channel.getHttpTransport();
+  }
+
+  @Override
+  @VisibleForTesting
+  Executor getExecutor() {
+    return channel.getExecutor();
+  }
+
+  @Override
   public <RequestT, ResponseT> HttpJsonClientCall<RequestT, ResponseT> newCall(
       ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor, HttpJsonCallOptions callOptions) {
     return interceptor.interceptCall(methodDescriptor, callOptions, channel);
+  }
+
+  @Override
+  public void refresh() {
+    channel.refresh();
+  }
+
+  @Override
+  public boolean shouldRefresh() {
+    return channel.shouldRefresh();
   }
 
   @Override

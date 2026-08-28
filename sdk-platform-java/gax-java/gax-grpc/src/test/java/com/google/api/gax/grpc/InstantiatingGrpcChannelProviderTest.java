@@ -664,7 +664,9 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     createAndCloseTransportChannel(provider);
     assertThat(logHandler.getAllMessages())
         .contains(
-            "DirectPath is misconfigured. The DirectPath XDS option was set, but the attemptDirectPath option was not. Please set both the attemptDirectPath and attemptDirectPathXds options.");
+            "DirectPath is misconfigured. The DirectPath XDS option was set, but the"
+                + " attemptDirectPath option was not. Please set both the attemptDirectPath and"
+                + " attemptDirectPathXds options.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -682,8 +684,10 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     createAndCloseTransportChannel(provider);
     assertThat(logHandler.getAllMessages())
         .contains(
-            "Env var GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS was found and set to TRUE, but DirectPath was not enabled for this client. If this is intended for "
-                + "this client, please note that this is a misconfiguration and set the attemptDirectPath option as well.");
+            "Env var GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS was found and set to TRUE, but DirectPath"
+                + " was not enabled for this client. If this is intended for this client, please"
+                + " note that this is a misconfiguration and set the attemptDirectPath option as"
+                + " well.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -711,6 +715,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         InstantiatingGrpcChannelProvider.newBuilder()
             .setAttemptDirectPathXds()
             .setAttemptDirectPath(true)
+            .setEnvProvider(name -> null)
             .setHeaderProvider(
                 mock(HeaderProvider.class, Mockito.withSettings().withoutAnnotations()))
             .setExecutor(mock(Executor.class))
@@ -877,12 +882,14 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_directPathEnvVarNotSet_attemptDirectPathIsTrue() {
     System.setProperty("os.name", "Linux");
+    EnvironmentProvider envProvider = name -> null;
     InstantiatingGrpcChannelProvider.Builder builder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setCertificateBasedAccess(certificateBasedAccess)
             .setAttemptDirectPath(true)
             .setCredentials(computeEngineCredentials)
-            .setEndpoint(DEFAULT_ENDPOINT);
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setEnvProvider(envProvider);
     InstantiatingGrpcChannelProvider provider =
         new InstantiatingGrpcChannelProvider(builder, GCE_PRODUCTION_NAME_AFTER_2016);
     Truth.assertThat(provider.canUseDirectPath()).isTrue();
@@ -891,12 +898,14 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
   @Test
   public void canUseDirectPath_directPathEnvVarNotSet_attemptDirectPathIsFalse() {
     System.setProperty("os.name", "Linux");
+    EnvironmentProvider envProvider = name -> null;
     InstantiatingGrpcChannelProvider.Builder builder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setCertificateBasedAccess(certificateBasedAccess)
             .setAttemptDirectPath(false)
             .setCredentials(computeEngineCredentials)
-            .setEndpoint(DEFAULT_ENDPOINT);
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setEnvProvider(envProvider);
     InstantiatingGrpcChannelProvider provider =
         new InstantiatingGrpcChannelProvider(builder, GCE_PRODUCTION_NAME_AFTER_2016);
     Truth.assertThat(provider.canUseDirectPath()).isFalse();
@@ -1201,7 +1210,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     assertThat(provider.createS2ASecuredChannelCredentials()).isNotNull();
     assertThat(logHandler.getAllMessages())
         .contains(
-            "Cannot establish an mTLS connection to S2A because autoconfig endpoint did not return a mtls address to reach S2A.");
+            "Cannot establish an mTLS connection to S2A because autoconfig endpoint did not return"
+                + " a mtls address to reach S2A.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -1247,7 +1257,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     assertThat(provider.createS2ASecuredChannelCredentials()).isNotNull();
     assertThat(logHandler.getAllMessages())
         .contains(
-            "Cannot establish an mTLS connection to S2A because MTLS to MDS credentials do not exist on filesystem, falling back to plaintext connection to S2A");
+            "Cannot establish an mTLS connection to S2A because MTLS to MDS credentials do not"
+                + " exist on filesystem, falling back to plaintext connection to S2A");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 

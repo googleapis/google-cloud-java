@@ -34,12 +34,16 @@ import com.google.api.core.InternalApi;
 import com.google.auth.oauth2.EnvironmentProvider;
 import com.google.auth.oauth2.PropertyProvider;
 import com.google.common.base.Strings;
+import com.google.common.io.BaseEncoding;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.security.MessageDigest;
 import java.util.Locale;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Utility class for mTLS related operations.
@@ -58,6 +62,137 @@ public class MtlsUtils {
   }
 
   /**
+   * Returns if mutual TLS client certificate should be used. Delegates directly to
+   * getWorkloadCertPath to avoid duplicate logic.
+   */
+  public static boolean useMtlsClientCertificate(
+      EnvironmentProvider envProvider, PropertyProvider propProvider) {
+    return getWorkloadCertPath(envProvider, propProvider) != null;
+  }
+
+  /**
+   * Resolves and returns the path to the mutual TLS client certificate, or null if none should be
+   * used.
+   */
+  public static @Nullable String getWorkloadCertPath(
+      EnvironmentProvider envProvider, PropertyProvider propProvider) {
+    String useClientCertificate = envProvider.getEnv("GOOGLE_API_USE_CLIENT_CERTIFICATE");
+    if ("false".equalsIgnoreCase(useClientCertificate)) {
+      return null;
+    }
+
+    String explicitConfigPath = envProvider.getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE);
+
+    // 1. Explicit Configuration Path (Fail Closed)
+    if (!Strings.isNullOrEmpty(explicitConfigPath)) {
+      File configFile = new File(explicitConfigPath);
+      if (!configFile.exists()) {
+        throw new IllegalStateException(
+            "Certificate configuration file specified via GOOGLE_API_CERTIFICATE_CONFIG at '"
+                + explicitConfigPath
+                + "' does not exist.");
+      }
+      if (!configFile.isFile() || !configFile.canRead()) {
+        throw new IllegalStateException(
+            "Failed to read certificate configuration file specified via"
+                + " GOOGLE_API_CERTIFICATE_CONFIG at '"
+                + explicitConfigPath
+                + "'.");
+      }
+      WorkloadCertificateConfiguration config;
+      try {
+        config = getWorkloadCertificateConfiguration(envProvider, propProvider, explicitConfigPath);
+      } catch (CertificateSourceUnavailableException e) {
+        // ECP / PKCS11 configuration without workload section; safe fallback
+        return null;
+      } catch (Exception e) {
+        throw new IllegalStateException(
+            "Certificate configuration file specified via GOOGLE_API_CERTIFICATE_CONFIG at '"
+                + explicitConfigPath
+                + "' is malformed: "
+                + e.getMessage(),
+            e);
+      }
+      checkCertAndKeyFilesReadable(config, explicitConfigPath, false);
+      return config.getCertPath();
+    }
+
+    // 2. Implicit / Default gcloud Configuration Path
+    File defaultConfigFile = null;
+    try {
+      defaultConfigFile = getWellKnownCertificateConfigFile(envProvider, propProvider);
+    } catch (IOException e) {
+      // APPDATA missing on Windows, etc. Safe fallback.
+    }
+    if (defaultConfigFile != null && defaultConfigFile.exists()) {
+      if (!defaultConfigFile.isFile() || !defaultConfigFile.canRead()) {
+        throw new IllegalStateException(
+            "Default certificate configuration file at '"
+                + defaultConfigFile.getAbsolutePath()
+                + "' exists but could not be read.");
+      }
+      WorkloadCertificateConfiguration config = null;
+      try {
+        config = getWorkloadCertificateConfiguration(envProvider, propProvider, null);
+      } catch (CertificateSourceUnavailableException e) {
+        // ECP-only configuration without workload section; safe fallback
+      } catch (Exception e) {
+        throw new IllegalStateException(
+            "Default certificate configuration file at '"
+                + defaultConfigFile.getAbsolutePath()
+                + "' is malformed: "
+                + e.getMessage(),
+            e);
+      }
+      if (config != null) {
+        checkCertAndKeyFilesReadable(config, defaultConfigFile.getAbsolutePath(), true);
+        return config.getCertPath();
+      }
+    }
+
+    return null;
+  }
+
+  private static void checkCertAndKeyFilesReadable(
+      WorkloadCertificateConfiguration config, String configPath, boolean isDefaultConfig) {
+    File certFile = new File(config.getCertPath());
+    File keyFile = new File(config.getPrivateKeyPath());
+    if (!certFile.isFile() || !certFile.canRead() || !keyFile.isFile() || !keyFile.canRead()) {
+      String sourcePrefix =
+          isDefaultConfig
+              ? "referenced by default configuration '"
+              : "referenced by configuration '";
+      throw new IllegalStateException(
+          "Failed to read certificate/key file at '"
+              + config.getCertPath()
+              + "' or '"
+              + config.getPrivateKeyPath()
+              + "' "
+              + sourcePrefix
+              + configPath
+              + "'.");
+    }
+  }
+
+  /** Centralized SHA-256 Fingerprint Calculator */
+  public static @Nullable String getCertificateFingerprint(@Nullable String certPath) {
+    if (certPath == null) {
+      return null;
+    }
+    File file = new File(certPath);
+    if (!file.isFile() || !file.canRead()) {
+      return null;
+    }
+    try {
+      byte[] certBytes = Files.readAllBytes(file.toPath());
+      byte[] digest = MessageDigest.getInstance("SHA-256").digest(certBytes);
+      return BaseEncoding.base16().lowerCase().encode(digest);
+    } catch (Exception e) {
+      return null;
+    }
+  }
+
+  /**
    * Returns the path to the client certificate file specified by the loaded workload certificate
    * configuration.
    *
@@ -65,14 +200,17 @@ public class MtlsUtils {
    * @throws IOException if the certificate configuration cannot be found or loaded.
    */
   public static String getCertificatePath(
-      EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride)
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      @Nullable String certConfigPathOverride)
       throws IOException {
     String certPath =
         getWorkloadCertificateConfiguration(envProvider, propProvider, certConfigPathOverride)
             .getCertPath();
     if (Strings.isNullOrEmpty(certPath)) {
       throw new CertificateSourceUnavailableException(
-          "Certificate configuration loaded successfully, but does not contain a 'certificate_file' path.");
+          "Certificate configuration loaded successfully, but does not contain a"
+              + " 'cert_configs.workload.cert_path' path.");
     }
     return certPath;
   }
@@ -92,7 +230,9 @@ public class MtlsUtils {
    * @throws IOException if the configuration file cannot be found, read, or parsed
    */
   static WorkloadCertificateConfiguration getWorkloadCertificateConfiguration(
-      EnvironmentProvider envProvider, PropertyProvider propProvider, String certConfigPathOverride)
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      @Nullable String certConfigPathOverride)
       throws IOException {
     File certConfig;
     if (certConfigPathOverride != null) {
@@ -106,7 +246,7 @@ public class MtlsUtils {
       }
     }
 
-    if (!certConfig.isFile()) {
+    if (!certConfig.isFile() || !certConfig.canRead()) {
       throw new CertificateSourceUnavailableException(
           "Certificate configuration file does not exist or is not a file: "
               + certConfig.getAbsolutePath());

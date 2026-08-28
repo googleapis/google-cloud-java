@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.rpc;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 
 import com.google.api.core.AbstractApiFuture;
@@ -246,6 +247,82 @@ class ServerStreamingAttemptCallableTest {
 
     // Verify the request and send a response
     Truth.assertThat(call.getRequest()).isEqualTo("request > 0");
+  }
+
+  @Test
+  @SuppressWarnings("ConstantConditions")
+  void testUnauthenticatedRefresh() {
+    TransportChannel transportChannel = Mockito.mock(TransportChannel.class);
+    Mockito.when(transportChannel.shouldRefresh()).thenReturn(true);
+
+    ApiCallContext context = Mockito.mock(ApiCallContext.class);
+    Mockito.when(context.getTransportChannel()).thenReturn(transportChannel);
+    Mockito.when(context.getTracer()).thenReturn(BaseApiTracer.getInstance());
+    Mockito.when(context.getTimeoutDuration()).thenReturn(java.time.Duration.ofHours(5));
+
+    resumptionStrategy = new MyStreamResumptionStrategy();
+    ServerStreamingAttemptCallable<String, String> callable = createCallable(context);
+    callable.start();
+
+    MockServerStreamingCall<String, String> call = innerCallable.popLastCall();
+
+    // Send initial error
+    UnauthenticatedException initialError =
+        new UnauthenticatedException(
+            "test",
+            null,
+            com.google.api.gax.rpc.testing.FakeStatusCode.of(Code.UNAUTHENTICATED),
+            false);
+    call.getController().getObserver().onError(initialError);
+
+    // Should notify the outer future
+    ExecutionException ee =
+        assertThrows(
+            ExecutionException.class,
+            () -> fakeRetryingFuture.getAttemptResult().get(1, TimeUnit.SECONDS));
+    Throwable outerError = ee.getCause();
+    Mockito.verify(transportChannel).refresh();
+    Truth.assertThat(outerError).isInstanceOf(ServerStreamingAttemptException.class);
+    Truth.assertThat(((ServerStreamingAttemptException) outerError).hasSeenResponses()).isFalse();
+    Truth.assertThat(((ServerStreamingAttemptException) outerError).canResume()).isTrue();
+    Truth.assertThat(outerError.getCause()).isInstanceOf(UnauthenticatedException.class);
+    Truth.assertThat(((UnauthenticatedException) outerError.getCause()).isRetryable()).isFalse();
+  }
+
+  @Test
+  @SuppressWarnings("ConstantConditions")
+  void testRefreshThrowsException_originalErrorNotLost() {
+    TransportChannel transportChannel = Mockito.mock(TransportChannel.class);
+    Mockito.when(transportChannel.shouldRefresh()).thenReturn(true);
+    Mockito.doThrow(new RuntimeException("Refresh error")).when(transportChannel).refresh();
+
+    ApiCallContext context = Mockito.mock(ApiCallContext.class);
+    Mockito.when(context.getTransportChannel()).thenReturn(transportChannel);
+    Mockito.when(context.getTracer()).thenReturn(BaseApiTracer.getInstance());
+    Mockito.when(context.getTimeoutDuration()).thenReturn(java.time.Duration.ofHours(5));
+
+    resumptionStrategy = new MyStreamResumptionStrategy();
+    ServerStreamingAttemptCallable<String, String> callable = createCallable(context);
+    callable.start();
+
+    MockServerStreamingCall<String, String> call = innerCallable.popLastCall();
+
+    UnauthenticatedException initialError =
+        new UnauthenticatedException(
+            "test",
+            null,
+            com.google.api.gax.rpc.testing.FakeStatusCode.of(Code.UNAUTHENTICATED),
+            false);
+    call.getController().getObserver().onError(initialError);
+
+    ExecutionException ee =
+        assertThrows(
+            ExecutionException.class,
+            () -> fakeRetryingFuture.getAttemptResult().get(1, TimeUnit.SECONDS));
+    Throwable outerError = ee.getCause();
+    Mockito.verify(transportChannel).refresh();
+    Truth.assertThat(outerError).isInstanceOf(ServerStreamingAttemptException.class);
+    Truth.assertThat(outerError.getCause()).isEqualTo(initialError);
   }
 
   @Test

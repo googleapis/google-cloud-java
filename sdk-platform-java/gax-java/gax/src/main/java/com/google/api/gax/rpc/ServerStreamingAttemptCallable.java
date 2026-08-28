@@ -37,6 +37,8 @@ import com.google.common.base.Preconditions;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -96,6 +98,8 @@ import org.jspecify.annotations.NullMarked;
  */
 @NullMarked
 final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Callable<Void> {
+  private static final Logger LOG =
+      Logger.getLogger(ServerStreamingAttemptCallable.class.getName());
   private final Object lock = new Object();
 
   private final ServerStreamingCallable<RequestT, ResponseT> innerCallable;
@@ -221,6 +225,7 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
         .getTracer()
         .attemptStarted(request, outerRetryingFuture.getAttemptSettings().getOverallAttemptCount());
 
+    final ApiCallContext finalContext = attemptContext;
     innerCallable.call(
         request,
         new StateCheckingResponseObserver<ResponseT>() {
@@ -236,6 +241,23 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
 
           @Override
           public void onErrorImpl(Throwable t) {
+            Throwable cause = t;
+            if (cause instanceof com.google.api.gax.retrying.ServerStreamingAttemptException) {
+              cause = cause.getCause();
+            }
+            if (cause instanceof UnauthenticatedException) {
+              TransportChannel transportChannel = finalContext.getTransportChannel();
+              if (transportChannel != null && transportChannel.shouldRefresh()) {
+                try {
+                  transportChannel.refresh();
+                } catch (Exception e) {
+                  LOG.log(
+                      Level.WARNING,
+                      "Failed to refresh transport channel after authentication error",
+                      e);
+                }
+              }
+            }
             onAttemptError(t);
           }
 

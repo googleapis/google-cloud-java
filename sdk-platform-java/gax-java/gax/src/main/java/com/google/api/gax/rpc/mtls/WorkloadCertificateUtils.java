@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -27,40 +27,19 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.google.api.gax.rpc.testing;
+package com.google.api.gax.rpc.mtls;
 
 import com.google.api.core.InternalApi;
+import com.google.auth.mtls.MtlsUtils;
 
-@InternalApi("for testing")
-public class FakeChannel {
-  private volatile boolean shouldRefresh = false;
-  private volatile int refreshCount = 0;
+/** Internal utility class for managing dynamic workload certificates. */
+@InternalApi
+public class WorkloadCertificateUtils {
 
-  public FakeChannel setShouldRefresh(boolean shouldRefresh) {
-    this.shouldRefresh = shouldRefresh;
-    return this;
-  }
+  private WorkloadCertificateUtils() {}
 
-  public boolean shouldRefresh() {
-    return shouldRefresh;
-  }
-
-  public void refresh() {
-    refreshCount++;
-  }
-
-  public int getRefreshCount() {
-    return refreshCount;
-  }
-
-  private volatile long generation = 0;
-
-  public FakeChannel setGeneration(long generation) {
-    this.generation = generation;
-    return this;
-  }
-
-  public long getGeneration() {
-    return generation;
+  public static String getCertificateFingerprint(String certPath) {
+    String fingerprint = MtlsUtils.getCertificateFingerprint(certPath);
+    return fingerprint != null ? fingerprint : "";
   }
 }
