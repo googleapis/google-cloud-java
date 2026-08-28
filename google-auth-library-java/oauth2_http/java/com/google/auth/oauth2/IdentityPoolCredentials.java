@@ -40,7 +40,6 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.net.URI;
 import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -173,44 +172,6 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       throw new IllegalArgumentException(
           "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate"
               + " source or MtlsHttpTransportFactory.");
-    }
-
-    if (this.actorTokenSupplier != null) {
-      validateMtlsEndpoint(getTokenUrl(), "tokenUrl");
-      if (getServiceAccountImpersonationUrl() != null) {
-        validateMtlsEndpoint(getServiceAccountImpersonationUrl(), "serviceAccountImpersonationUrl");
-      }
-    }
-  }
-
-  private static void validateMtlsEndpoint(@Nullable String url, String fieldName) {
-    if (url == null) {
-      return;
-    }
-    try {
-      URI uri = URI.create(url);
-      String host = uri.getHost();
-      if (host != null && host.endsWith("googleapis.com") && !host.contains(".mtls.")) {
-        throw new IllegalArgumentException(
-            "The "
-                + fieldName
-                + " endpoint ("
-                + url
-                + ") must be an mTLS endpoint (e.g. contain '.mtls.') when an actor token is"
-                + " configured.");
-      }
-    } catch (IllegalArgumentException e) {
-      throw e;
-    } catch (Exception e) {
-      if (url.contains("googleapis.com") && !url.contains(".mtls.")) {
-        throw new IllegalArgumentException(
-            "The "
-                + fieldName
-                + " endpoint ("
-                + url
-                + ") must be an mTLS endpoint (e.g. contain '.mtls.') when an actor token is"
-                + " configured.");
-      }
     }
   }
 
