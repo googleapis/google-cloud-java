@@ -30,10 +30,12 @@ import com.google.api.generator.engine.ast.EnumRefExpr;
 import com.google.api.generator.engine.ast.Expr;
 import com.google.api.generator.engine.ast.ExprStatement;
 import com.google.api.generator.engine.ast.MethodInvocationExpr;
+import com.google.api.generator.engine.ast.NewObjectExpr;
 import com.google.api.generator.engine.ast.PrimitiveValue;
 import com.google.api.generator.engine.ast.StringObjectValue;
 import com.google.api.generator.engine.ast.TypeNode;
 import com.google.api.generator.engine.ast.ValueExpr;
+import com.google.api.generator.engine.ast.VaporReference;
 import com.google.api.generator.engine.ast.Variable;
 import com.google.api.generator.engine.ast.VariableExpr;
 import com.google.api.generator.gapic.composer.store.TypeStore;
@@ -323,6 +325,26 @@ public class RetrySettingsComposer {
                     Variable.builder().setType(TypeNode.CLASS_OBJECT).setName("class").build())
                 .setStaticReferenceType(t)
                 .build();
+
+    List<Expr> createArgs = new ArrayList<>();
+    createArgs.add(classFieldRefFn.apply(method.lro().responseType()));
+    if (service.pakkage().startsWith("com.google.cloud.compute.v1")
+        && !service.pakkage().startsWith("com.google.cloud.compute.v1small")
+        && operationResponseTransformer
+            .reference()
+            .pakkage()
+            .equals("com.google.api.gax.httpjson")) {
+      createArgs.add(
+          NewObjectExpr.builder()
+              .setType(
+                  TypeNode.withReference(
+                      VaporReference.builder()
+                          .setName("ComputeLroErrorParser")
+                          .setPakkage(service.pakkage() + ".stub")
+                          .build()))
+              .build());
+    }
+
     builderSettingsExpr =
         MethodInvocationExpr.builder()
             .setExprReferenceExpr(builderSettingsExpr)
@@ -331,7 +353,7 @@ public class RetrySettingsComposer {
                 MethodInvocationExpr.builder()
                     .setStaticReferenceType(operationResponseTransformer)
                     .setMethodName("create")
-                    .setArguments(classFieldRefFn.apply(method.lro().responseType()))
+                    .setArguments(createArgs)
                     .build())
             .build();
     builderSettingsExpr =
