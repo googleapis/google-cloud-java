@@ -278,6 +278,48 @@
       </plugins>
     </pluginManagement>
     <plugins>
+      <!-- Temporary enforcer configuration override until a new version of google-cloud-shared-config is released to Maven Central.
+           Because this module inherits a released version of google-cloud-shared-config from Central (which includes banDuplicateClasses in its default enforce execution),
+           we override the enforce execution here to avoid running banDuplicateClasses on standard PRs where intra-repo SNAPSHOT JARs are unbuilt.
+           Remove this override once the parent version is bumped to the newly released google-cloud-shared-config. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce</id>
+            <configuration>
+              <rules combine.self="override">
+                <requireMavenVersion>
+                  <version>[3.8.0,)</version>
+                </requireMavenVersion>
+                <requireJavaVersion>
+                  <version>[1.8,)</version>
+                </requireJavaVersion>
+                <requireUpperBoundDeps/>
+              </rules>
+            </configuration>
+          </execution>
+          <execution>
+            <id>enforce-banned-duplicate-classes</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <banDuplicateClasses>
+                  <scopes>
+                    <scope>compile</scope>
+                    <scope>provided</scope>
+                  </scopes>
+                  <findAllDuplicates>true</findAllDuplicates>
+                  <ignoreWhenIdentical>true</ignoreWhenIdentical>
+                </banDuplicateClasses>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.14.0</version>

@@ -171,9 +171,6 @@ grpc-google-cloud-data-fusion-v1beta1:1.96.0:1.97.0-SNAPSHOT
 grpc-google-cloud-data-fusion-v1:1.96.0:1.97.0-SNAPSHOT
 proto-google-cloud-data-fusion-v1beta1:1.96.0:1.97.0-SNAPSHOT
 proto-google-cloud-data-fusion-v1:1.96.0:1.97.0-SNAPSHOT
-google-cloud-datalabeling:0.216.0:0.217.0-SNAPSHOT
-grpc-google-cloud-datalabeling-v1beta1:0.216.0:0.217.0-SNAPSHOT
-proto-google-cloud-datalabeling-v1beta1:0.216.0:0.217.0-SNAPSHOT
 google-cloud-dataplex:1.94.0:1.95.0-SNAPSHOT
 proto-google-cloud-dataplex-v1:1.94.0:1.95.0-SNAPSHOT
 grpc-google-cloud-dataplex-v1:1.94.0:1.95.0-SNAPSHOT
