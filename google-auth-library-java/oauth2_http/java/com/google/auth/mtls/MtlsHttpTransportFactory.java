@@ -37,6 +37,8 @@ import com.google.auth.http.HttpTransportFactory;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
+import java.security.cert.Certificate;
+import java.util.Enumeration;
 import java.util.Objects;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
@@ -78,14 +80,28 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory {
   /**
    * Returns whether this factory was constructed with a non-null {@link KeyStore} containing client
    * certificates for mTLS. A factory created via the no-arg constructor (e.g. during
-   * deserialization) or with an empty KeyStore will return {@code false}.
+   * deserialization), with an empty KeyStore, or with a KeyStore containing only trusted CA
+   * certificates (without a private key entry and certificate chain) will return {@code false}.
    */
   public boolean hasKeyStore() {
     if (this.mtlsKeyStore == null) {
       return false;
     }
     try {
-      return this.mtlsKeyStore.size() > 0;
+      Enumeration<String> aliases = this.mtlsKeyStore.aliases();
+      if (aliases == null) {
+        return false;
+      }
+      while (aliases.hasMoreElements()) {
+        String alias = aliases.nextElement();
+        if (this.mtlsKeyStore.isKeyEntry(alias)) {
+          Certificate[] chain = this.mtlsKeyStore.getCertificateChain(alias);
+          if (chain != null && chain.length > 0) {
+            return true;
+          }
+        }
+      }
+      return false;
     } catch (KeyStoreException e) {
       return false;
     }

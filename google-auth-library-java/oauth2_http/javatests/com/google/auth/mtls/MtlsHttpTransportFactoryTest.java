@@ -38,8 +38,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.util.SecurityUtils;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.SequenceInputStream;
 import java.security.KeyStore;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
@@ -48,6 +51,7 @@ import org.junit.jupiter.api.Test;
 class MtlsHttpTransportFactoryTest {
 
   private static final String TEST_CERT_PATH = "testresources/mtls/test_cert.pem";
+  private static final String TEST_KEY_PATH = "testresources/mtls/test_key.pem";
 
   @Test
   void hasKeyStore_noArgConstructor_returnsFalse() {
@@ -66,18 +70,31 @@ class MtlsHttpTransportFactoryTest {
   }
 
   @Test
-  void hasKeyStore_populatedKeyStore_returnsTrue() throws Exception {
-    KeyStore populatedKeyStore = KeyStore.getInstance(KeyStore.getDefaultType());
-    populatedKeyStore.load(null, null);
+  void hasKeyStore_keyStoreWithOnlyCaCertificates_returnsFalse() throws Exception {
+    KeyStore caKeyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+    caKeyStore.load(null, null);
 
     CertificateFactory cf = CertificateFactory.getInstance("X.509");
     try (FileInputStream fis = new FileInputStream(new File(TEST_CERT_PATH))) {
       Certificate cert = cf.generateCertificate(fis);
-      populatedKeyStore.setCertificateEntry("test-alias", cert);
+      caKeyStore.setCertificateEntry("ca-alias", cert);
     }
-    assertEquals(1, populatedKeyStore.size());
+    assertEquals(1, caKeyStore.size());
 
-    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(populatedKeyStore);
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(caKeyStore);
+    assertFalse(factory.hasKeyStore());
+  }
+
+  @Test
+  void hasKeyStore_keyStoreWithPrivateKeyAndCertChain_returnsTrue() throws Exception {
+    KeyStore keyStore;
+    try (InputStream certStream = new FileInputStream(new File(TEST_CERT_PATH));
+        InputStream keyStream = new FileInputStream(new File(TEST_KEY_PATH));
+        InputStream combined = new SequenceInputStream(certStream, keyStream)) {
+      keyStore = SecurityUtils.createMtlsKeyStore(combined);
+    }
+
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(keyStore);
     assertTrue(factory.hasKeyStore());
   }
 

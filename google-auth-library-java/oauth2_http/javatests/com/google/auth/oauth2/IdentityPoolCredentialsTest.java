@@ -39,6 +39,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -46,6 +47,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Clock;
+import com.google.api.client.util.SecurityUtils;
 import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
@@ -57,15 +59,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectStreamClass;
+import java.io.SequenceInputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
-import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Collections;
@@ -98,16 +100,11 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
       (ExternalAccountSupplierContext context) -> "testActorToken";
 
   private static KeyStore createPopulatedKeyStore() {
-    try {
-      KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-      ks.load(null, null);
-      CertificateFactory cf = CertificateFactory.getInstance("X.509");
-      try (FileInputStream fis =
-          new FileInputStream(new File("testresources/mtls/test_cert.pem"))) {
-        Certificate cert = cf.generateCertificate(fis);
-        ks.setCertificateEntry("test-alias", cert);
-      }
-      return ks;
+    try (InputStream certStream =
+            new FileInputStream(new File("testresources/mtls/test_cert.pem"));
+        InputStream keyStream = new FileInputStream(new File("testresources/mtls/test_key.pem"));
+        InputStream combined = new SequenceInputStream(certStream, keyStream)) {
+      return SecurityUtils.createMtlsKeyStore(combined);
     } catch (Exception e) {
       throw new RuntimeException("Failed to create test KeyStore", e);
     }
@@ -1568,7 +1565,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                 .setAudience(
                     "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
                 .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
-                .setTokenUrl(mockTransportFactory.transport.getStsUrl())
+                .setTokenUrl(mockTransportFactory.transport.getStsMtlsUrl())
                 .setHttpTransportFactory(mtlsTransport)) {
           @Override
           protected AccessToken exchangeExternalCredentialForAccessToken(
@@ -2102,7 +2099,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                 .setAudience(
                     "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
                 .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
-                .setTokenUrl(mockTransportFactory.transport.getStsUrl())
+                .setTokenUrl(mockTransportFactory.transport.getStsMtlsUrl())
                 .setHttpTransportFactory(mtlsTransport)) {
           @Override
           protected AccessToken exchangeExternalCredentialForAccessToken(
@@ -2423,75 +2420,75 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   private static final String PRE_PR_SERIALIZED_BYTES_BASE64 =
-      "rO0ABXNyAC5jb20uZ29vZ2xlLmF1dGgub2F1dGgyLklkZW50aXR5UG9vbENyZWRlbnRpYWxzIkrrZ4jpHOkCAAVMABJh"
-          + "Y3RvclRva2VuU3VwcGxpZXJ0ADdMY29tL2dvb2dsZS9hdXRoL29hdXRoMi9JZGVudGl0eVBvb2xBY3RvclRva2Vu"
-          + "U3VwcGxpZXI7TAAOYWN0b3JUb2tlblR5cGV0ABJMamF2YS9sYW5nL1N0cmluZztMABJtZXRyaWNzSGVhZGVyVmFs"
-          + "dWVxAH4AAkwAFHN1YmplY3RUb2tlblN1cHBsaWVydAA5TGNvbS9nb29nbGUvYXV0aC9vYXV0aDIvSWRlbnRpdHlQ"
-          + "b29sU3ViamVjdFRva2VuU3VwcGxpZXI7TAAPc3VwcGxpZXJDb250ZXh0dAA3TGNvbS9nb29nbGUvYXV0aC9vYXV0"
-          + "aDIvRXh0ZXJuYWxBY2NvdW50U3VwcGxpZXJDb250ZXh0O3hyADFjb20uZ29vZ2xlLmF1dGgub2F1dGgyLkV4dGVy"
-          + "bmFsQWNjb3VudENyZWRlbnRpYWxzb7Q9oKQPk/8CABBMAAhhdWRpZW5jZXEAfgACTAAIY2xpZW50SWRxAH4AAkwA"
-          + "DGNsaWVudFNlY3JldHEAfgACTAAQY3JlZGVudGlhbFNvdXJjZXQARExjb20vZ29vZ2xlL2F1dGgvb2F1dGgyL0V4"
-          + "dGVybmFsQWNjb3VudENyZWRlbnRpYWxzJENyZWRlbnRpYWxTb3VyY2U7TAATZW52aXJvbm1lbnRQcm92aWRlcnQA"
-          + "LExjb20vZ29vZ2xlL2F1dGgvb2F1dGgyL0Vudmlyb25tZW50UHJvdmlkZXI7TAAXaW1wZXJzb25hdGVkQ3JlZGVu"
-          + "dGlhbHN0ADBMY29tL2dvb2dsZS9hdXRoL29hdXRoMi9JbXBlcnNvbmF0ZWRDcmVkZW50aWFscztMAA5tZXRyaWNz"
-          + "SGFuZGxlcnQANkxjb20vZ29vZ2xlL2F1dGgvb2F1dGgyL0V4dGVybmFsQWNjb3VudE1ldHJpY3NIYW5kbGVyO0wA"
-          + "EHByb3BlcnR5UHJvdmlkZXJ0AClMY29tL2dvb2dsZS9hdXRoL29hdXRoMi9Qcm9wZXJ0eVByb3ZpZGVyO0wABnNj"
-          + "b3Blc3QAFkxqYXZhL3V0aWwvQ29sbGVjdGlvbjtMACJzZXJ2aWNlQWNjb3VudEltcGVyc29uYXRpb25PcHRpb25z"
-          + "dABWTGNvbS9nb29nbGUvYXV0aC9vYXV0aDIvRXh0ZXJuYWxBY2NvdW50Q3JlZGVudGlhbHMkU2VydmljZUFjY291"
-          + "bnRJbXBlcnNvbmF0aW9uT3B0aW9ucztMAB5zZXJ2aWNlQWNjb3VudEltcGVyc29uYXRpb25VcmxxAH4AAkwAEHN1"
-          + "YmplY3RUb2tlblR5cGVxAH4AAkwADHRva2VuSW5mb1VybHEAfgACTAAIdG9rZW5VcmxxAH4AAkwAGXRyYW5zcG9y"
-          + "dEZhY3RvcnlDbGFzc05hbWVxAH4AAkwAGHdvcmtmb3JjZVBvb2xVc2VyUHJvamVjdHEAfgACeHIAKGNvbS5nb29n"
-          + "bGUuYXV0aC5vYXV0aDIuR29vZ2xlQ3JlZGVudGlhbHPq3b3FouFfJQIABVoAGGlzRXhwbGljaXRVbml2ZXJzZURv"
-          + "bWFpbkwABG5hbWVxAH4AAkwADnF1b3RhUHJvamVjdElkcQB+AAJMAAZzb3VyY2VxAH4AAkwADnVuaXZlcnNlRG9t"
-          + "YWlucQB+AAJ4cgAoY29tLmdvb2dsZS5hdXRoLm9hdXRoMi5PQXV0aDJDcmVkZW50aWFscz89fXrppVFXAgAETAAQ"
-          + "ZXhwaXJhdGlvbk1hcmdpbnQAFExqYXZhL3RpbWUvRHVyYXRpb247TAAEbG9ja3QAEkxqYXZhL2xhbmcvT2JqZWN0"
-          + "O0wADXJlZnJlc2hNYXJnaW5xAH4AD0wABXZhbHVldAA1TGNvbS9nb29nbGUvYXV0aC9vYXV0aDIvT0F1dGgyQ3Jl"
-          + "ZGVudGlhbHMkT0F1dGhWYWx1ZTt4cgAbY29tLmdvb2dsZS5hdXRoLkNyZWRlbnRpYWxzCzii14w9kIECAAB4cHNy"
-          + "AA1qYXZhLnRpbWUuU2VylV2EuhsiSLIMAAB4cHcNAQAAAAAAAAC0AAAAAHh1cgACW0Ks8xf4BghU4AIAAHhwAAAA"
-          + "AHNxAH4AFHcNAQAAAAAAAADhAAAAAHhwAHQAHEV4dGVybmFsIEFjY291bnQgQ3JlZGVudGlhbHN0AA5xdW90YVBy"
-          + "b2plY3RJZHB0AA5nb29nbGVhcGlzLmNvbXQAYC8vaWFtLmdvb2dsZWFwaXMuY29tL3Byb2plY3RzLzEyMy9sb2Nh"
-          + "dGlvbnMvZ2xvYmFsL3dvcmtsb2FkSWRlbnRpdHlQb29scy9wb29sL3Byb3ZpZGVycy9wcm92aWRlcnQACGNsaWVu"
-          + "dElkdAAMY2xpZW50U2VjcmV0c3IAM2NvbS5nb29nbGUuYXV0aC5vYXV0aDIuSWRlbnRpdHlQb29sQ3JlZGVudGlh"
-          + "bFNvdXJjZfWmMJrBt+rCAgAHTAATYWN0b3JUb2tlbkZpZWxkTmFtZXEAfgACTAARY2VydGlmaWNhdGVDb25maWd0"
-          + "AEdMY29tL2dvb2dsZS9hdXRoL29hdXRoMi9JZGVudGl0eVBvb2xDcmVkZW50aWFsU291cmNlJENlcnRpZmljYXRl"
-          + "Q29uZmlnO0wAFGNyZWRlbnRpYWxGb3JtYXRUeXBldABKTGNvbS9nb29nbGUvYXV0aC9vYXV0aDIvSWRlbnRpdHlQ"
-          + "b29sQ3JlZGVudGlhbFNvdXJjZSRDcmVkZW50aWFsRm9ybWF0VHlwZTtMABJjcmVkZW50aWFsTG9jYXRpb25xAH4A"
-          + "AkwAFGNyZWRlbnRpYWxTb3VyY2VUeXBldABWTGNvbS9nb29nbGUvYXV0aC9vYXV0aDIvSWRlbnRpdHlQb29sQ3Jl"
-          + "ZGVudGlhbFNvdXJjZSRJZGVudGl0eVBvb2xDcmVkZW50aWFsU291cmNlVHlwZTtMAAdoZWFkZXJzdAAPTGphdmEv"
-          + "dXRpbC9NYXA7TAAVc3ViamVjdFRva2VuRmllbGROYW1lcQB+AAJ4cgBCY29tLmdvb2dsZS5hdXRoLm9hdXRoMi5F"
-          + "eHRlcm5hbEFjY291bnRDcmVkZW50aWFscyRDcmVkZW50aWFsU291cmNlcdzMzznPiMgCAAB4cHBwfnIASGNvbS5n"
-          + "b29nbGUuYXV0aC5vYXV0aDIuSWRlbnRpdHlQb29sQ3JlZGVudGlhbFNvdXJjZSRDcmVkZW50aWFsRm9ybWF0VHlw"
-          + "ZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABFRFWFR0AARmaWxlfnIAVGNvbS5n"
-          + "b29nbGUuYXV0aC5vYXV0aDIuSWRlbnRpdHlQb29sQ3JlZGVudGlhbFNvdXJjZSRJZGVudGl0eVBvb2xDcmVkZW50"
-          + "aWFsU291cmNlVHlwZQAAAAAAAAAAEgAAeHEAfgAndAAERklMRXBwc3IAMGNvbS5nb29nbGUuYXV0aC5vYXV0aDIu"
-          + "U3lzdGVtRW52aXJvbm1lbnRQcm92aWRlcr7Mw9ZYOzw0AgAAeHBwc3IANGNvbS5nb29nbGUuYXV0aC5vYXV0aDIu"
-          + "RXh0ZXJuYWxBY2NvdW50TWV0cmljc0hhbmRsZXILhDC5uzFxHgIAA1oADmNvbmZpZ0xpZmV0aW1lWgAPc2FJbXBl"
-          + "cnNvbmF0aW9uTAALY3JlZGVudGlhbHN0ADNMY29tL2dvb2dsZS9hdXRoL29hdXRoMi9FeHRlcm5hbEFjY291bnRD"
-          + "cmVkZW50aWFsczt4cAAAc3EAfgAAcQB+ABV1cQB+ABYAAAAAcQB+ABhwAHEAfgAZcHBxAH4AG3EAfgAccHBxAH4A"
-          + "JXEAfgAvcHEAfgAyc3IALWNvbS5nb29nbGUuYXV0aC5vYXV0aDIuU3lzdGVtUHJvcGVydHlQcm92aWRlcgAAAAAA"
-          + "AAABAgAAeHBzcgAjamF2YS51dGlsLkNvbGxlY3Rpb25zJFNpbmdsZXRvbkxpc3Qq7ykQPKeblwIAAUwAB2VsZW1l"
-          + "bnRxAH4AEHhwdAAuaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybXNyAFRjb20u"
-          + "Z29vZ2xlLmF1dGgub2F1dGgyLkV4dGVybmFsQWNjb3VudENyZWRlbnRpYWxzJFNlcnZpY2VBY2NvdW50SW1wZXJz"
-          + "b25hdGlvbk9wdGlvbnM6/caKmTx8+QIAAloAHGN1c3RvbVRva2VuTGlmZXRpbWVSZXF1ZXN0ZWRJAAhsaWZldGlt"
-          + "ZXhwAAAADhBwdAAQc3ViamVjdFRva2VuVHlwZXQADHRva2VuSW5mb1VybHQAI2h0dHBzOi8vc3RzLmdvb2dsZWFw"
-          + "aXMuY29tL3YxL3Rva2VudAA+Y29tLmdvb2dsZS5hdXRoLm9hdXRoMi5PQXV0aDJVdGlscyREZWZhdWx0SHR0cFRy"
-          + "YW5zcG9ydEZhY3RvcnlwcHBxAH4AKnNyADtjb20uZ29vZ2xlLmF1dGgub2F1dGgyLkZpbGVJZGVudGl0eVBvb2xT"
-          + "dWJqZWN0VG9rZW5TdXBwbGllcmNBv+j+PpS2AgABTAAQY3JlZGVudGlhbFNvdXJjZXQANUxjb20vZ29vZ2xlL2F1"
-          + "dGgvb2F1dGgyL0lkZW50aXR5UG9vbENyZWRlbnRpYWxTb3VyY2U7eHBxAH4AJXNyADVjb20uZ29vZ2xlLmF1dGgu"
-          + "b2F1dGgyLkV4dGVybmFsQWNjb3VudFN1cHBsaWVyQ29udGV4dJMHoJdQucHqAgACTAAIYXVkaWVuY2VxAH4AAkwA"
-          + "EHN1YmplY3RUb2tlblR5cGVxAH4AAnhwcQB+ABxxAH4APHEAfgA2cQB+ADhxAH4AO3QAemh0dHBzOi8vaWFtY3Jl"
-          + "ZGVudGlhbHMuZ29vZ2xlYXBpcy5jb20vdjEvcHJvamVjdHMvLS9zZXJ2aWNlQWNjb3VudHMvdGVzdG5AdGVzdC5p"
-          + "YW0uZ3NlcnZpY2VhY2NvdW50LmNvbTpnZW5lcmF0ZUFjY2Vzc1Rva2VucQB+ADxxAH4APXEAfgA+cQB+AD9wcHBx"
-          + "AH4AKnNxAH4AQHEAfgAlc3EAfgBDcQB+ABxxAH4APA==";
+      "rO0ABXNyAC5jb20uZ29vZ2xlLmF1dGgub2F1dGgyLklkZW50aXR5UG9vbENyZWRlbnRpYWxzIkrrZ4jpHOkCAANMABJtZXRy"
+          + "aWNzSGVhZGVyVmFsdWV0ABJMamF2YS9sYW5nL1N0cmluZztMABRzdWJqZWN0VG9rZW5TdXBwbGllcnQAOUxjb20vZ29vZ2xl"
+          + "L2F1dGgvb2F1dGgyL0lkZW50aXR5UG9vbFN1YmplY3RUb2tlblN1cHBsaWVyO0wAD3N1cHBsaWVyQ29udGV4dHQAN0xjb20v"
+          + "Z29vZ2xlL2F1dGgvb2F1dGgyL0V4dGVybmFsQWNjb3VudFN1cHBsaWVyQ29udGV4dDt4cgAxY29tLmdvb2dsZS5hdXRoLm9h"
+          + "dXRoMi5FeHRlcm5hbEFjY291bnRDcmVkZW50aWFsc2+0PaCkD5P/AgAQTAAIYXVkaWVuY2VxAH4AAUwACGNsaWVudElkcQB+"
+          + "AAFMAAxjbGllbnRTZWNyZXRxAH4AAUwAEGNyZWRlbnRpYWxTb3VyY2V0AERMY29tL2dvb2dsZS9hdXRoL29hdXRoMi9FeHRl"
+          + "cm5hbEFjY291bnRDcmVkZW50aWFscyRDcmVkZW50aWFsU291cmNlO0wAE2Vudmlyb25tZW50UHJvdmlkZXJ0ACxMY29tL2dv"
+          + "b2dsZS9hdXRoL29hdXRoMi9FbnZpcm9ubWVudFByb3ZpZGVyO0wAF2ltcGVyc29uYXRlZENyZWRlbnRpYWxzdAAwTGNvbS9n"
+          + "b29nbGUvYXV0aC9vYXV0aDIvSW1wZXJzb25hdGVkQ3JlZGVudGlhbHM7TAAObWV0cmljc0hhbmRsZXJ0ADZMY29tL2dvb2ds"
+          + "ZS9hdXRoL29hdXRoMi9FeHRlcm5hbEFjY291bnRNZXRyaWNzSGFuZGxlcjtMABBwcm9wZXJ0eVByb3ZpZGVydAApTGNvbS9n"
+          + "b29nbGUvYXV0aC9vYXV0aDIvUHJvcGVydHlQcm92aWRlcjtMAAZzY29wZXN0ABZMamF2YS91dGlsL0NvbGxlY3Rpb247TAAi"
+          + "c2VydmljZUFjY291bnRJbXBlcnNvbmF0aW9uT3B0aW9uc3QAVkxjb20vZ29vZ2xlL2F1dGgvb2F1dGgyL0V4dGVybmFsQWNj"
+          + "b3VudENyZWRlbnRpYWxzJFNlcnZpY2VBY2NvdW50SW1wZXJzb25hdGlvbk9wdGlvbnM7TAAec2VydmljZUFjY291bnRJbXBl"
+          + "cnNvbmF0aW9uVXJscQB+AAFMABBzdWJqZWN0VG9rZW5UeXBlcQB+AAFMAAx0b2tlbkluZm9VcmxxAH4AAUwACHRva2VuVXJs"
+          + "cQB+AAFMABl0cmFuc3BvcnRGYWN0b3J5Q2xhc3NOYW1lcQB+AAFMABh3b3JrZm9yY2VQb29sVXNlclByb2plY3RxAH4AAXhy"
+          + "AChjb20uZ29vZ2xlLmF1dGgub2F1dGgyLkdvb2dsZUNyZWRlbnRpYWxz6t29xaLhXyUCAAVaABhpc0V4cGxpY2l0VW5pdmVy"
+          + "c2VEb21haW5MAARuYW1lcQB+AAFMAA5xdW90YVByb2plY3RJZHEAfgABTAAGc291cmNlcQB+AAFMAA51bml2ZXJzZURvbWFp"
+          + "bnEAfgABeHIAKGNvbS5nb29nbGUuYXV0aC5vYXV0aDIuT0F1dGgyQ3JlZGVudGlhbHM/PX166aVRVwIABEwAEGV4cGlyYXRp"
+          + "b25NYXJnaW50ABRMamF2YS90aW1lL0R1cmF0aW9uO0wABGxvY2t0ABJMamF2YS9sYW5nL09iamVjdDtMAA1yZWZyZXNoTWFy"
+          + "Z2lucQB+AA5MAAV2YWx1ZXQANUxjb20vZ29vZ2xlL2F1dGgvb2F1dGgyL09BdXRoMkNyZWRlbnRpYWxzJE9BdXRoVmFsdWU7"
+          + "eHIAG2NvbS5nb29nbGUuYXV0aC5DcmVkZW50aWFscws4oteMPZCBAgAAeHBzcgANamF2YS50aW1lLlNlcpVdhLobIkiyDAAA"
+          + "eHB3DQEAAAAAAAAAtAAAAAB4dXIAAltCrPMX+AYIVOACAAB4cAAAAABzcQB+ABN3DQEAAAAAAAAA4QAAAAB4cAB0ABxFeHRl"
+          + "cm5hbCBBY2NvdW50IENyZWRlbnRpYWxzdAAOcXVvdGFQcm9qZWN0SWRwdAAOZ29vZ2xlYXBpcy5jb210AGAvL2lhbS5nb29n"
+          + "bGVhcGlzLmNvbS9wcm9qZWN0cy8xMjMvbG9jYXRpb25zL2dsb2JhbC93b3JrbG9hZElkZW50aXR5UG9vbHMvcG9vbC9wcm92"
+          + "aWRlcnMvcHJvdmlkZXJ0AAhjbGllbnRJZHQADGNsaWVudFNlY3JldHNyADNjb20uZ29vZ2xlLmF1dGgub2F1dGgyLklkZW50"
+          + "aXR5UG9vbENyZWRlbnRpYWxTb3VyY2X1pjCawbfqwgIAB0wAE2FjdG9yVG9rZW5GaWVsZE5hbWVxAH4AAUwAEWNlcnRpZmlj"
+          + "YXRlQ29uZmlndABHTGNvbS9nb29nbGUvYXV0aC9vYXV0aDIvSWRlbnRpdHlQb29sQ3JlZGVudGlhbFNvdXJjZSRDZXJ0aWZp"
+          + "Y2F0ZUNvbmZpZztMABRjcmVkZW50aWFsRm9ybWF0VHlwZXQASkxjb20vZ29vZ2xlL2F1dGgvb2F1dGgyL0lkZW50aXR5UG9v"
+          + "bENyZWRlbnRpYWxTb3VyY2UkQ3JlZGVudGlhbEZvcm1hdFR5cGU7TAASY3JlZGVudGlhbExvY2F0aW9ucQB+AAFMABRjcmVk"
+          + "ZW50aWFsU291cmNlVHlwZXQAVkxjb20vZ29vZ2xlL2F1dGgvb2F1dGgyL0lkZW50aXR5UG9vbENyZWRlbnRpYWxTb3VyY2Uk"
+          + "SWRlbnRpdHlQb29sQ3JlZGVudGlhbFNvdXJjZVR5cGU7TAAHaGVhZGVyc3QAD0xqYXZhL3V0aWwvTWFwO0wAFXN1YmplY3RU"
+          + "b2tlbkZpZWxkTmFtZXEAfgABeHIAQmNvbS5nb29nbGUuYXV0aC5vYXV0aDIuRXh0ZXJuYWxBY2NvdW50Q3JlZGVudGlhbHMk"
+          + "Q3JlZGVudGlhbFNvdXJjZXHczM85z4jIAgAAeHBwcH5yAEhjb20uZ29vZ2xlLmF1dGgub2F1dGgyLklkZW50aXR5UG9vbENy"
+          + "ZWRlbnRpYWxTb3VyY2UkQ3JlZGVudGlhbEZvcm1hdFR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAA"
+          + "EgAAeHB0AARURVhUdAAEZmlsZX5yAFRjb20uZ29vZ2xlLmF1dGgub2F1dGgyLklkZW50aXR5UG9vbENyZWRlbnRpYWxTb3Vy"
+          + "Y2UkSWRlbnRpdHlQb29sQ3JlZGVudGlhbFNvdXJjZVR5cGUAAAAAAAAAABIAAHhxAH4AJnQABEZJTEVwcHNyADBjb20uZ29v"
+          + "Z2xlLmF1dGgub2F1dGgyLlN5c3RlbUVudmlyb25tZW50UHJvdmlkZXK+zMPWWDs8NAIAAHhwcHNyADRjb20uZ29vZ2xlLmF1"
+          + "dGgub2F1dGgyLkV4dGVybmFsQWNjb3VudE1ldHJpY3NIYW5kbGVyC4Qcubsxch4CAANaAA5jb25maWdMaWZldGltZVoAD3Nh"
+          + "SW1wZXJzb25hdGlvbkwAC2NyZWRlbnRpYWxzdAAzTGNvbS9nb29nbGUvYXV0aC9vYXV0aDIvRXh0ZXJuYWxBY2NvdW50Q3Jl"
+          + "ZGVudGlhbHM7eHAAAXEAfgASc3IALWNvbS5nb29nbGUuYXV0aC5vYXV0aDIuU3lzdGVtUHJvcGVydHlQcm92aWRlcgAAAAAA"
+          + "AAABAgAAeHBzcgAjamF2YS51dGlsLkNvbGxlY3Rpb25zJFNpbmdsZXRvbkxpc3Qq7ykQPKeblwIAAUwAB2VsZW1lbnRxAH4A"
+          + "D3hwdAAuaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybXNyAFRjb20uZ29vZ2xlLmF1dGgu"
+          + "b2F1dGgyLkV4dGVybmFsQWNjb3VudENyZWRlbnRpYWxzJFNlcnZpY2VBY2NvdW50SW1wZXJzb25hdGlvbk9wdGlvbnM6/caK"
+          + "mTx8+QIAAloAHGN1c3RvbVRva2VuTGlmZXRpbWVSZXF1ZXN0ZWRJAAhsaWZldGltZXhwAAAADhB0AHpodHRwczovL2lhbWNy"
+          + "ZWRlbnRpYWxzLmdvb2dsZWFwaXMuY29tL3YxL3Byb2plY3RzLy0vc2VydmljZUFjY291bnRzL3Rlc3RuQHRlc3QuaWFtLmdz"
+          + "ZXJ2aWNlYWNjb3VudC5jb206Z2VuZXJhdGVBY2Nlc3NUb2tlbnQAEHN1YmplY3RUb2tlblR5cGV0AAx0b2tlbkluZm9Vcmx0"
+          + "ACNodHRwczovL3N0cy5nb29nbGVhcGlzLmNvbS92MS90b2tlbnQAPmNvbS5nb29nbGUuYXV0aC5vYXV0aDIuT0F1dGgyVXRp"
+          + "bHMkRGVmYXVsdEh0dHBUcmFuc3BvcnRGYWN0b3J5cHEAfgApc3IAO2NvbS5nb29nbGUuYXV0aC5vYXV0aDIuRmlsZUlkZW50"
+          + "aXR5UG9vbFN1YmplY3RUb2tlblN1cHBsaWVyY0G/6P4+lLYCAAFMABBjcmVkZW50aWFsU291cmNldAA1TGNvbS9nb29nbGUv"
+          + "YXV0aC9vYXV0aDIvSWRlbnRpdHlQb29sQ3JlZGVudGlhbFNvdXJjZTt4cHEAfgAkc3IANWNvbS5nb29nbGUuYXV0aC5vYXV0"
+          + "aDIuRXh0ZXJuYWxBY2NvdW50U3VwcGxpZXJDb250ZXh0kwegl1C5weoCAAJMAAhhdWRpZW5jZXEAfgABTAAQc3ViamVjdFRv"
+          + "a2VuVHlwZXEAfgABeHBxAH4AG3EAfgA6";
 
   @Test
   void serialize_deserialize_backwardCompatible() throws Exception {
-    // Verify that credentials serialized BEFORE this PR (hardcoded byte fixture using synthetic
-    // SUID
-    // 7152208690659890358L for FileIdentityPoolSubjectTokenSupplier) deserialize successfully.
     byte[] fixtureBytes = Base64.getDecoder().decode(PRE_PR_SERIALIZED_BYTES_BASE64);
     IdentityPoolCredentials deserialized;
-    try (ObjectInputStream input = new ObjectInputStream(new ByteArrayInputStream(fixtureBytes))) {
+    try (ObjectInputStream input =
+        new ObjectInputStream(new ByteArrayInputStream(fixtureBytes)) {
+          @Override
+          protected ObjectStreamClass readClassDescriptor()
+              throws IOException, ClassNotFoundException {
+            ObjectStreamClass desc = super.readClassDescriptor();
+            if ("com.google.auth.oauth2.ExternalAccountMetricsHandler".equals(desc.getName())) {
+              return ObjectStreamClass.lookup(ExternalAccountMetricsHandler.class);
+            }
+            return desc;
+          }
+        }) {
       deserialized = (IdentityPoolCredentials) input.readObject();
     }
 
@@ -2506,6 +2503,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals("clientSecret", deserialized.getClientSecret());
     assertEquals(
         SERVICE_ACCOUNT_IMPERSONATION_URL, deserialized.getServiceAccountImpersonationUrl());
+    assertEquals(null, deserialized.getIdentityPoolActorTokenSupplier());
     assertEquals(null, deserialized.getActorTokenType());
   }
 
@@ -2627,7 +2625,173 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     assertEquals("deserializedCertToken", token.getTokenValue());
     assertNotNull(capturedFactory.get());
     assertTrue(capturedFactory.get() instanceof MtlsHttpTransportFactory);
-    assertTrue(((MtlsHttpTransportFactory) capturedFactory.get()).hasKeyStore());
+  }
+
+  @Test
+  void serialize_deserialize_programmaticFlow_andRefresh_succeeds() throws Exception {
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .build();
+
+    IdentityPoolCredentials deserialized = serializeAndDeserialize(credentials);
+    assertNotNull(deserialized);
+    assertNotNull(deserialized.getTransportFactory());
+    assertNull(deserialized.getX509Provider());
+    assertNotNull(deserialized.getIdentityPoolSubjectTokenSupplier());
+    assertNull(deserialized.getIdentityPoolActorTokenSupplier());
+    assertNull(deserialized.getActorTokenType());
+
+    AtomicReference<StsTokenExchangeRequest> capturedRequest = new AtomicReference<>();
+    IdentityPoolCredentials testable =
+        new IdentityPoolCredentials(deserialized.toBuilder()) {
+          @Override
+          protected AccessToken exchangeExternalCredentialForAccessToken(
+              StsTokenExchangeRequest stsTokenExchangeRequest,
+              HttpTransportFactory cycleTransportFactory) {
+            capturedRequest.set(stsTokenExchangeRequest);
+            return new AccessToken("programmaticAccessToken", null);
+          }
+        };
+
+    AccessToken token = testable.refreshAccessToken();
+    assertEquals("programmaticAccessToken", token.getTokenValue());
+    assertNotNull(capturedRequest.get());
+    assertEquals("testSubjectToken", capturedRequest.get().getSubjectToken());
+    assertEquals(
+        "urn:ietf:params:oauth:token-type:jwt", capturedRequest.get().getSubjectTokenType());
+    assertNull(capturedRequest.get().getActingParty());
+  }
+
+  @Test
+  void serialize_deserialize_programmaticFlow_withMtlsTransport_restoresFactoryWithoutKeyStore()
+      throws Exception {
+    KeyStore keyStore = createPopulatedKeyStore();
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(context -> "testSubjectToken")
+            .setActorTokenSupplier(context -> "testActorToken")
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl(MockExternalAccountCredentialsTransport.STS_MTLS_URL)
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    IdentityPoolCredentials deserialized = serializeAndDeserialize(credentials);
+    assertNotNull(deserialized);
+    // Programmatic flows restore default-constructed transportFactory from class name
+    assertNotNull(deserialized.getTransportFactory());
+    assertTrue(deserialized.getTransportFactory() instanceof MtlsHttpTransportFactory);
+    assertFalse(((MtlsHttpTransportFactory) deserialized.getTransportFactory()).hasKeyStore());
+    assertNull(deserialized.getX509Provider());
+    assertNotNull(deserialized.getIdentityPoolSubjectTokenSupplier());
+    assertNotNull(deserialized.getIdentityPoolActorTokenSupplier());
+  }
+
+  @Test
+  void builder_actorTokenWithNonMtlsTokenUrl_throwsIllegalArgumentException() throws Exception {
+    KeyStore keyStore = createPopulatedKeyStore();
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setSubjectTokenSupplier(context -> "testSubjectToken")
+                    .setActorTokenSupplier(context -> "testActorToken")
+                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setAudience(
+                        "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                    .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setTokenUrl("https://sts.googleapis.com/v1/token")
+                    .setHttpTransportFactory(transportFactory)
+                    .build());
+    assertTrue(e.getMessage().contains("tokenUrl"));
+    assertTrue(e.getMessage().contains(".mtls."));
+  }
+
+  @Test
+  void builder_actorTokenWithNonMtlsImpersonationUrl_throwsIllegalArgumentException()
+      throws Exception {
+    KeyStore keyStore = createPopulatedKeyStore();
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setSubjectTokenSupplier(context -> "testSubjectToken")
+                    .setActorTokenSupplier(context -> "testActorToken")
+                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setAudience(
+                        "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                    .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setTokenUrl(MockExternalAccountCredentialsTransport.STS_MTLS_URL)
+                    .setServiceAccountImpersonationUrl(
+                        "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")
+                    .setHttpTransportFactory(transportFactory)
+                    .build());
+    assertTrue(e.getMessage().contains("serviceAccountImpersonationUrl"));
+    assertTrue(e.getMessage().contains(".mtls."));
+  }
+
+  @Test
+  void builder_actorTokenWithCustomDomainMtlsUrl_succeeds() throws Exception {
+    KeyStore keyStore = createPopulatedKeyStore();
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+
+    IdentityPoolCredentials cred =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(context -> "testSubjectToken")
+            .setActorTokenSupplier(context -> "testActorToken")
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience("//custom.domain.com/pool")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl("https://auth.custom-domain.com/v1/token")
+            .setServiceAccountImpersonationUrl("https://iam.custom-domain.com/v1/generate")
+            .setHttpTransportFactory(transportFactory)
+            .build();
+    assertNotNull(cred);
+  }
+
+  @Test
+  void fromBuilder_withCustomTransportFactoryAndCertificateConfig_preservesCustomTransportFactory(
+      @TempDir Path tempDir) throws Exception {
+    Path tokenFile = tempDir.resolve("credential.txt");
+    Files.write(tokenFile, "token_from_file".getBytes(StandardCharsets.UTF_8));
+
+    Map<String, Object> certMap = new HashMap<>();
+    certMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+
+    Map<String, Object> sourceMap = new HashMap<>();
+    sourceMap.put("file", tokenFile.toString());
+    sourceMap.put("certificate", certMap);
+
+    IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(sourceMap);
+    HttpTransportFactory customTransportFactory =
+        () -> new MockExternalAccountCredentialsTransport();
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl("https://sts.googleapis.com/v1/token")
+            .setCredentialSource(source)
+            .setHttpTransportFactory(customTransportFactory)
+            .build();
+
+    assertSame(customTransportFactory, credentials.getTransportFactory());
   }
 
   // ==================================================================================
@@ -2653,7 +2817,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             + " \"//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider\",\n"
             + "  \"subject_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",\n"
             + "  \"actor_token_type\": \"urn:ietf:params:oauth:token-type:jwt\",\n"
-            + "  \"token_url\": \"https://sts.googleapis.com/v1/token\",\n"
+            + "  \"token_url\": \"https://sts.mtls.googleapis.com/v1/token\",\n"
             + "  \"credential_source\": {\n"
             + "    \"file\": \""
             + tokenFile.toString()

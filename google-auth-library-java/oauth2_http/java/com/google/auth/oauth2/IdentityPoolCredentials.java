@@ -40,6 +40,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.net.URI;
 import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -108,7 +109,11 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
           X509Provider x509Provider = getX509Provider(builder, credentialSource);
           this.x509Provider = x509Provider;
           KeyStore mtlsKeyStore = x509Provider.getKeyStore();
-          this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+          if (builder.transportFactory == null
+              || builder.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
+              || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory) {
+            this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+          }
         } catch (Exception e) {
           throw new RuntimeException(
               "Failed to initialize mTLS transport for file credential source due to certificate"
@@ -168,6 +173,44 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
       throw new IllegalArgumentException(
           "Actor tokens are only supported for mTLS token exchanges. Please configure a certificate"
               + " source or MtlsHttpTransportFactory.");
+    }
+
+    if (this.actorTokenSupplier != null) {
+      validateMtlsEndpoint(getTokenUrl(), "tokenUrl");
+      if (getServiceAccountImpersonationUrl() != null) {
+        validateMtlsEndpoint(getServiceAccountImpersonationUrl(), "serviceAccountImpersonationUrl");
+      }
+    }
+  }
+
+  private static void validateMtlsEndpoint(@Nullable String url, String fieldName) {
+    if (url == null) {
+      return;
+    }
+    try {
+      URI uri = URI.create(url);
+      String host = uri.getHost();
+      if (host != null && host.endsWith("googleapis.com") && !host.contains(".mtls.")) {
+        throw new IllegalArgumentException(
+            "The "
+                + fieldName
+                + " endpoint ("
+                + url
+                + ") must be an mTLS endpoint (e.g. contain '.mtls.') when an actor token is"
+                + " configured.");
+      }
+    } catch (IllegalArgumentException e) {
+      throw e;
+    } catch (Exception e) {
+      if (url.contains("googleapis.com") && !url.contains(".mtls.")) {
+        throw new IllegalArgumentException(
+            "The "
+                + fieldName
+                + " endpoint ("
+                + url
+                + ") must be an mTLS endpoint (e.g. contain '.mtls.') when an actor token is"
+                + " configured.");
+      }
     }
   }
 
@@ -298,11 +341,15 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
 
   private IdentityPoolSubjectTokenSupplier createCertificateSubjectTokenSupplier(
       Builder builder, IdentityPoolCredentialSource credentialSource) throws IOException {
-    // Configure the mTLS transport with the x509 keystore.
+    // Configure the mTLS transport with the x509 keystore if custom transport was not provided.
     X509Provider x509Provider = getX509Provider(builder, credentialSource);
     this.x509Provider = x509Provider;
     KeyStore mtlsKeyStore = x509Provider.getKeyStore();
-    this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+    if (builder.transportFactory == null
+        || builder.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
+        || builder.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory) {
+      this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
+    }
 
     // Initialize the subject token supplier with the certificate path.
     String explicitCertConfigPath = getExplicitCertConfigPath(credentialSource);
@@ -312,6 +359,16 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     return new CertificateIdentityPoolSubjectTokenSupplier(credentialSource);
   }
 
+  /**
+   * Reconstitutes the {@link IdentityPoolCredentials} instance from a stream.
+   *
+   * <p>For credential-source based credentials (file or certificate), this method reconstructs the
+   * transient {@link X509Provider} and mTLS {@link HttpTransportFactory} if a certificate
+   * configuration is present. For programmatic suppliers (where {@code subjectTokenSupplier !=
+   * null} and {@code credentialSource == null}), the suppliers and standard transport are restored
+   * directly from the serialized stream, while in-memory {@link X509Provider} instances are
+   * non-persistent.
+   */
   @SuppressWarnings("unused")
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();

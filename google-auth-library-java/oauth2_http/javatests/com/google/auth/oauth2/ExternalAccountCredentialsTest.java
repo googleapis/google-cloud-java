@@ -45,6 +45,7 @@ import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonParser;
 import com.google.api.client.util.Clock;
+import com.google.api.client.util.SecurityUtils;
 import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.ExternalAccountCredentials.SubjectTokenTypes;
@@ -53,11 +54,11 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.SequenceInputStream;
 import java.math.BigDecimal;
 import java.net.URI;
 import java.security.KeyStore;
-import java.security.cert.Certificate;
-import java.security.cert.CertificateFactory;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -71,19 +72,15 @@ import org.junit.jupiter.api.Test;
 class ExternalAccountCredentialsTest extends BaseSerializationTest {
 
   private static final String STS_URL = "https://sts.googleapis.com/v1/token";
+  private static final String STS_MTLS_URL = "https://sts.mtls.googleapis.com/v1/token";
   private static final String GOOGLE_DEFAULT_UNIVERSE = "googleapis.com";
 
   private static KeyStore createPopulatedKeyStore() {
-    try {
-      KeyStore ks = KeyStore.getInstance(KeyStore.getDefaultType());
-      ks.load(null, null);
-      CertificateFactory cf = CertificateFactory.getInstance("X.509");
-      try (FileInputStream fis =
-          new FileInputStream(new File("testresources/mtls/test_cert.pem"))) {
-        Certificate cert = cf.generateCertificate(fis);
-        ks.setCertificateEntry("test-alias", cert);
-      }
-      return ks;
+    try (InputStream certStream =
+            new FileInputStream(new File("testresources/mtls/test_cert.pem"));
+        InputStream keyStream = new FileInputStream(new File("testresources/mtls/test_key.pem"));
+        InputStream combined = new SequenceInputStream(certStream, keyStream)) {
+      return SecurityUtils.createMtlsKeyStore(combined);
     } catch (Exception e) {
       throw new RuntimeException("Failed to create test KeyStore", e);
     }
@@ -224,6 +221,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   @Test
   void fromJson_identityPoolCredentials_withActorTokenType() throws Exception {
     GenericJson json = buildJsonIdentityPoolCredential();
+    json.put("token_url", STS_MTLS_URL);
     json.put("actor_token_type", "actorTokenType");
 
     Map<String, Object> credentialSource = (Map<String, Object>) json.get("credential_source");

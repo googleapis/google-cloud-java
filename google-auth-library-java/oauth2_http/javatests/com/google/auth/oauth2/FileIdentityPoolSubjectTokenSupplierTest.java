@@ -204,9 +204,10 @@ class FileIdentityPoolSubjectTokenSupplierTest {
   }
 
   @Test
-  void parseToken_jsonFormat_nonStringField_convertsToString(@TempDir Path tempDir)
+  void parseToken_jsonFormat_nonStringField_throwsIOException(@TempDir Path tempDir)
       throws IOException {
-    Path credentialFile = tempDir.resolve("credential.json");
+    // Numeric value
+    Path credentialFile = tempDir.resolve("credential_numeric.json");
     Files.write(credentialFile, "{\"sub_token\": 12345}".getBytes(StandardCharsets.UTF_8));
 
     Map<String, Object> credentialSourceMap = new HashMap<>();
@@ -220,7 +221,68 @@ class FileIdentityPoolSubjectTokenSupplierTest {
     FileIdentityPoolSubjectTokenSupplier supplier =
         new FileIdentityPoolSubjectTokenSupplier(source);
 
-    assertEquals("12345", supplier.getSubjectToken(null));
+    IOException numException =
+        assertThrows(IOException.class, () -> supplier.getSubjectToken(null));
+    assertTrue(
+        numException
+            .getMessage()
+            .contains("Token field value for sub_token must be a String but was:"));
+
+    // Nested object value
+    Path objCredentialFile = tempDir.resolve("credential_object.json");
+    Files.write(
+        objCredentialFile,
+        "{\"sub_token\": {\"nested\": \"val\"}}".getBytes(StandardCharsets.UTF_8));
+    credentialSourceMap.put("file", objCredentialFile.toString());
+    IdentityPoolCredentialSource objSource = new IdentityPoolCredentialSource(credentialSourceMap);
+    FileIdentityPoolSubjectTokenSupplier objSupplier =
+        new FileIdentityPoolSubjectTokenSupplier(objSource);
+
+    IOException objException =
+        assertThrows(IOException.class, () -> objSupplier.getSubjectToken(null));
+    assertTrue(
+        objException
+            .getMessage()
+            .contains("Token field value for sub_token must be a String but was:"));
+
+    // Boolean value
+    Path boolCredentialFile = tempDir.resolve("credential_bool.json");
+    Files.write(boolCredentialFile, "{\"sub_token\": true}".getBytes(StandardCharsets.UTF_8));
+    credentialSourceMap.put("file", boolCredentialFile.toString());
+    IdentityPoolCredentialSource boolSource = new IdentityPoolCredentialSource(credentialSourceMap);
+    FileIdentityPoolSubjectTokenSupplier boolSupplier =
+        new FileIdentityPoolSubjectTokenSupplier(boolSource);
+
+    IOException boolException =
+        assertThrows(IOException.class, () -> boolSupplier.getSubjectToken(null));
+    assertTrue(
+        boolException
+            .getMessage()
+            .contains("Token field value for sub_token must be a String but was:"));
+
+    // Static parseToken with numeric and object inputs
+    ByteArrayInputStream numStream =
+        new ByteArrayInputStream("{\"sub_token\": 12345}".getBytes(StandardCharsets.UTF_8));
+    IOException parseNumException =
+        assertThrows(
+            IOException.class,
+            () -> FileIdentityPoolSubjectTokenSupplier.parseToken(numStream, source, "sub_token"));
+    assertTrue(
+        parseNumException
+            .getMessage()
+            .contains("Token field value for sub_token must be a String but was:"));
+
+    ByteArrayInputStream objStream =
+        new ByteArrayInputStream(
+            "{\"sub_token\": {\"nested\": 42}}".getBytes(StandardCharsets.UTF_8));
+    IOException parseObjException =
+        assertThrows(
+            IOException.class,
+            () -> FileIdentityPoolSubjectTokenSupplier.parseToken(objStream, source, "sub_token"));
+    assertTrue(
+        parseObjException
+            .getMessage()
+            .contains("Token field value for sub_token must be a String but was:"));
   }
 
   @Test

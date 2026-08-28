@@ -162,7 +162,14 @@ class FileIdentityPoolSubjectTokenSupplier
     if (value == null || Data.isNull(value)) {
       throw new IOException("Invalid token field name. No token was found for field: " + fieldName);
     }
-    return value.toString();
+    if (!(value instanceof String)) {
+      throw new IOException(
+          "Token field value for "
+              + fieldName
+              + " must be a String but was: "
+              + value.getClass().getName());
+    }
+    return (String) value;
   }
 
   /** Used primarily for UrlIdentityPoolSubjectTokenSupplier */
@@ -190,7 +197,14 @@ class FileIdentityPoolSubjectTokenSupplier
         throw new IOException(
             "Invalid token field name. No token was found for field: " + targetFieldName);
       }
-      return value.toString();
+      if (!(value instanceof String)) {
+        throw new IOException(
+            "Token field value for "
+                + targetFieldName
+                + " must be a String but was: "
+                + value.getClass().getName());
+      }
+      return (String) value;
     }
   }
 
