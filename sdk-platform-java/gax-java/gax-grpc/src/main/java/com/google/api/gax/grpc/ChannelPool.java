@@ -35,7 +35,7 @@ import com.google.api.gax.rpc.mtls.WorkloadCertificateUtils;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.errorprone.annotations.concurrent.GuardedBy;
+import javax.annotation.concurrent.GuardedBy;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
