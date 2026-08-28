@@ -416,7 +416,7 @@ function install_modules() {
     printf "Installing submodules:\n%s\n" "$all_submodules"
 
     always_install_deps_list=(
-      # Required upstream dependency for java-spanner, java-spanner-jdbc, and java-bigtable
+      # Required upstream dependency for java-spanner and java-spanner-jdbc
       'grpc-gcp-java'
       'java-monitoring/google-cloud-monitoring'
       'java-monitoring/google-cloud-monitoring-bom'
