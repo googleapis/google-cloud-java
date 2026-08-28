@@ -566,6 +566,41 @@ class ChannelPoolTest {
   }
 
   @Test
+  void refresh_onShutdownPool_noOpsAndCreatesNoChannels() throws IOException {
+    ManagedChannel channel1 = mock(ManagedChannel.class);
+    ManagedChannel channel2 = mock(ManagedChannel.class);
+    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+    Mockito.when(channelFactory.createSingleChannel()).thenReturn(channel1, channel2);
+
+    pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null, null);
+    Mockito.verify(channelFactory, Mockito.times(1)).createSingleChannel();
+
+    pool.shutdown();
+    assertThat(pool.isShutdown()).isTrue();
+
+    // Invoking refresh or refreshAll on shut down pool must no-op and never create new subchannels
+    pool.refresh();
+    boolean refreshed = pool.refreshAll();
+    assertThat(refreshed).isFalse();
+    Mockito.verify(channelFactory, Mockito.times(1)).createSingleChannel();
+    assertThat(pool.isShutdown()).isTrue();
+  }
+
+  @Test
+  void generationCounterIncrementsOnRefresh() throws IOException {
+    ManagedChannel channel1 = mock(ManagedChannel.class);
+    ManagedChannel channel2 = mock(ManagedChannel.class);
+    ChannelFactory channelFactory = Mockito.mock(ChannelFactory.class);
+    Mockito.when(channelFactory.createSingleChannel()).thenReturn(channel1, channel2);
+
+    pool = ChannelPool.create(ChannelPoolSettings.staticallySized(1), channelFactory, null, null);
+    assertThat(pool.getGeneration()).isEqualTo(0);
+
+    pool.refreshAll();
+    assertThat(pool.getGeneration()).isEqualTo(1);
+  }
+
+  @Test
   void channelRefreshShouldSwapChannels() throws IOException {
     ManagedChannel underlyingChannel1 = mock(ManagedChannel.class);
     ManagedChannel underlyingChannel2 = mock(ManagedChannel.class);

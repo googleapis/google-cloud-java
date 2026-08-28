@@ -75,10 +75,13 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
   private final java.util.concurrent.ConcurrentLinkedQueue<ChannelEntry> allEntries =
       new java.util.concurrent.ConcurrentLinkedQueue<>();
   private final Object refreshLock = new Object();
+  private final java.util.concurrent.atomic.AtomicLong generation =
+      new java.util.concurrent.atomic.AtomicLong(0);
   private volatile String activeCertFingerprint = "";
 
   public RefreshingHttpJsonChannel(
       Supplier<ManagedHttpJsonChannel> channelFactory, String workloadCertPath) {
+    super(true);
     this.channelFactory = channelFactory;
     this.workloadCertPath = workloadCertPath;
     ChannelEntry initial = new ChannelEntry(channelFactory.get());
@@ -167,11 +170,17 @@ public class RefreshingHttpJsonChannel extends ManagedHttpJsonChannel {
       allEntries.add(newEntry);
       ChannelEntry oldEntry = activeEntry.getAndSet(newEntry);
       this.activeCertFingerprint = currentDiskFingerprint;
+      generation.incrementAndGet();
 
       if (oldEntry != null) {
         oldEntry.requestShutdown();
       }
     }
+  }
+
+  @Override
+  public long getGeneration() {
+    return generation.get();
   }
 
   private ChannelEntry getRetainedEntry() {

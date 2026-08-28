@@ -29,6 +29,8 @@
  */
 package com.google.api.gax.rpc;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
 
@@ -42,6 +44,7 @@ import org.jspecify.annotations.Nullable;
  */
 @NullMarked
 public abstract class BidiStreamingCallable<RequestT, ResponseT> {
+  private static final Logger LOG = Logger.getLogger(BidiStreamingCallable.class.getName());
 
   protected BidiStreamingCallable() {}
 
@@ -262,20 +265,14 @@ public abstract class BidiStreamingCallable<RequestT, ResponseT> {
                 if (t instanceof UnauthenticatedException) {
                   TransportChannel transportChannel = mergedContext.getTransportChannel();
                   if (transportChannel != null && transportChannel.shouldRefresh()) {
-                    transportChannel.refresh();
-                    UnauthenticatedException causeEx = (UnauthenticatedException) t;
-                    UnauthenticatedException newEx =
-                        new UnauthenticatedException(
-                            causeEx.getMessage(),
-                            causeEx.getCause(),
-                            causeEx.getStatusCode(),
-                            true, // isRetryable = true
-                            causeEx.getErrorDetails());
-                    newEx.setStackTrace(causeEx.getStackTrace());
-                    for (Throwable suppressed : causeEx.getSuppressed()) {
-                      newEx.addSuppressed(suppressed);
+                    try {
+                      transportChannel.refresh();
+                    } catch (Exception e) {
+                      LOG.log(
+                          Level.WARNING,
+                          "Failed to refresh transport channel after authentication error",
+                          e);
                     }
-                    t = newEx;
                   }
                 }
                 responseObserver.onError(t);

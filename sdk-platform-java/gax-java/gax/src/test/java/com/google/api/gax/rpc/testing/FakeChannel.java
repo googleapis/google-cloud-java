@@ -52,4 +52,15 @@ public class FakeChannel {
   public int getRefreshCount() {
     return refreshCount;
   }
+
+  private volatile long generation = 0;
+
+  public FakeChannel setGeneration(long generation) {
+    this.generation = generation;
+    return this;
+  }
+
+  public long getGeneration() {
+    return generation;
+  }
 }

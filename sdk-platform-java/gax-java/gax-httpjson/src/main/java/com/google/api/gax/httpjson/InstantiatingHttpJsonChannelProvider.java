@@ -200,8 +200,8 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
       KeyStore mtlsKeyStore = mtlsProvider.getKeyStore();
       if (mtlsKeyStore != null) {
         NetHttpTransport.Builder builder = new NetHttpTransport.Builder();
-        builder.trustCertificates(null, mtlsKeyStore, "");
         HttpJsonConscryptUtils.configureConscryptSecurityProvider(builder);
+        builder.trustCertificates(null, mtlsKeyStore, "");
         return builder.build();
       }
     }
@@ -228,8 +228,11 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
           }
         };
 
+    String workloadCertPath = certificateBasedAccess.getWorkloadCertPath();
     ManagedHttpJsonChannel channel =
-        new RefreshingHttpJsonChannel(channelFactory, certificateBasedAccess.getWorkloadCertPath());
+        workloadCertPath != null
+            ? new RefreshingHttpJsonChannel(channelFactory, workloadCertPath)
+            : channelFactory.get();
 
     HttpJsonClientInterceptor headerInterceptor =
         new HttpJsonHeaderInterceptor(headerProvider.getHeaders());

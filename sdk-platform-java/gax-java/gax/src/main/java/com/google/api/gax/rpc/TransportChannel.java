@@ -63,4 +63,12 @@ public interface TransportChannel extends BackgroundResource {
   default boolean shouldRefresh() {
     return false;
   }
+
+  /**
+   * Returns a monotonic generation counter tracking the number of successful refreshes or channel
+   * rotations performed by this transport channel.
+   */
+  default long getGeneration() {
+    return 0;
+  }
 }

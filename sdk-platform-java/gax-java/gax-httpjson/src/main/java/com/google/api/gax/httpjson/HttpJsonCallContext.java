@@ -226,7 +226,8 @@ public final class HttpJsonCallContext implements ApiCallContext {
     }
 
     TransportChannel newTransportChannel = httpJsonCallContext.transportChannel;
-    if (newTransportChannel == null) {
+    if (newTransportChannel == null
+        && (httpJsonCallContext.channel == null || httpJsonCallContext.channel.equals(channel))) {
       newTransportChannel = this.transportChannel;
     }
 
@@ -600,7 +601,7 @@ public final class HttpJsonCallContext implements ApiCallContext {
         this.retrySettings,
         this.retryableCodes,
         this.endpointContext,
-        this.transportChannel);
+        (newChannel == null || newChannel.equals(this.channel)) ? this.transportChannel : null);
   }
 
   public HttpJsonCallContext withCallOptions(HttpJsonCallOptions newCallOptions) {

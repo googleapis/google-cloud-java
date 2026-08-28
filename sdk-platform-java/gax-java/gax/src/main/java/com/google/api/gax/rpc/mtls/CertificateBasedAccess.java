@@ -34,7 +34,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.internal.EnvironmentProvider;
 import com.google.auth.mtls.MtlsUtils;
 import com.google.auth.oauth2.PropertyProvider;
-import java.io.IOException;
 
 /**
  * Utility class for handling certificate-based access configurations.
@@ -47,30 +46,7 @@ public class CertificateBasedAccess {
 
   private final EnvironmentProvider envProvider;
 
-  @InternalApi
-  public interface FileExistenceProvider {
-    boolean exists(String path);
-  }
-
-  @InternalApi
-  public interface FileContentReader {
-    String read(String path) throws IOException;
-  }
-
   public CertificateBasedAccess(EnvironmentProvider envProvider) {
-    this(
-        envProvider,
-        path -> new java.io.File(path).isFile(),
-        path ->
-            new String(
-                java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(path)),
-                java.nio.charset.StandardCharsets.UTF_8));
-  }
-
-  CertificateBasedAccess(
-      EnvironmentProvider envProvider,
-      FileExistenceProvider fileExistenceProvider,
-      FileContentReader fileContentReader) {
     this.envProvider = envProvider;
   }
 

@@ -35,6 +35,8 @@ import com.google.api.gax.retrying.NonCancellableFuture;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.common.base.Preconditions;
 import java.util.concurrent.Callable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -48,6 +50,7 @@ import org.jspecify.annotations.NullMarked;
  */
 @NullMarked
 class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
+  private static final Logger LOG = Logger.getLogger(AttemptCallable.class.getName());
   private final UnaryCallable<RequestT, ResponseT> callable;
   private final RequestT request;
   private final ApiCallContext originalCallContext;
@@ -85,6 +88,10 @@ class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
           .getTracer()
           .attemptStarted(request, externalFuture.getAttemptSettings().getOverallAttemptCount());
 
+      TransportChannel transportChannel = callContext.getTransportChannel();
+      final long attemptGeneration =
+          transportChannel != null ? transportChannel.getGeneration() : 0;
+
       ApiFuture<ResponseT> internalFuture = callable.futureCall(request, callContext);
       final ApiCallContext finalContext = callContext;
       ApiFuture<ResponseT> mappedFuture =
@@ -92,21 +99,38 @@ class AttemptCallable<RequestT, ResponseT> implements Callable<ResponseT> {
               internalFuture,
               UnauthenticatedException.class,
               unauthenticatedException -> {
-                TransportChannel transportChannel = finalContext.getTransportChannel();
-                if (transportChannel != null && transportChannel.shouldRefresh()) {
-                  transportChannel.refresh();
-                  UnauthenticatedException newEx =
-                      new UnauthenticatedException(
-                          unauthenticatedException.getMessage(),
-                          unauthenticatedException.getCause(),
-                          unauthenticatedException.getStatusCode(),
-                          true, // isRetryable = true
-                          unauthenticatedException.getErrorDetails());
-                  newEx.setStackTrace(unauthenticatedException.getStackTrace());
-                  for (Throwable suppressed : unauthenticatedException.getSuppressed()) {
-                    newEx.addSuppressed(suppressed);
+                TransportChannel channel = finalContext.getTransportChannel();
+                if (channel != null) {
+                  boolean shouldRetry = false;
+                  if (channel.shouldRefresh()) {
+                    try {
+                      channel.refresh();
+                    } catch (Exception e) {
+                      LOG.log(
+                          Level.WARNING,
+                          "Failed to refresh transport channel after authentication error",
+                          e);
+                    }
+                    shouldRetry = true;
+                  } else if (channel.getGeneration() > attemptGeneration) {
+                    // Channel was rotated by a concurrent request while this call was in flight
+                    shouldRetry = true;
                   }
-                  throw newEx;
+
+                  if (shouldRetry) {
+                    UnauthenticatedException newEx =
+                        new UnauthenticatedException(
+                            unauthenticatedException.getMessage(),
+                            unauthenticatedException.getCause(),
+                            unauthenticatedException.getStatusCode(),
+                            true, // isRetryable = true
+                            unauthenticatedException.getErrorDetails());
+                    newEx.setStackTrace(unauthenticatedException.getStackTrace());
+                    for (Throwable suppressed : unauthenticatedException.getSuppressed()) {
+                      newEx.addSuppressed(suppressed);
+                    }
+                    throw newEx;
+                  }
                 }
                 throw unauthenticatedException;
               },

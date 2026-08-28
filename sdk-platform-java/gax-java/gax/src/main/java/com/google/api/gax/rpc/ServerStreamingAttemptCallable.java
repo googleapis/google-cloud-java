@@ -37,6 +37,8 @@ import com.google.common.base.Preconditions;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jspecify.annotations.NullMarked;
 
 /**
@@ -96,6 +98,8 @@ import org.jspecify.annotations.NullMarked;
  */
 @NullMarked
 final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Callable<Void> {
+  private static final Logger LOG =
+      Logger.getLogger(ServerStreamingAttemptCallable.class.getName());
   private final Object lock = new Object();
 
   private final ServerStreamingCallable<RequestT, ResponseT> innerCallable;
@@ -244,22 +248,14 @@ final class ServerStreamingAttemptCallable<RequestT, ResponseT> implements Calla
             if (cause instanceof UnauthenticatedException) {
               TransportChannel transportChannel = finalContext.getTransportChannel();
               if (transportChannel != null && transportChannel.shouldRefresh()) {
-                transportChannel.refresh();
-                UnauthenticatedException causeEx = (UnauthenticatedException) cause;
-                UnauthenticatedException newEx =
-                    new UnauthenticatedException(
-                        causeEx.getMessage(),
-                        causeEx.getCause(),
-                        causeEx.getStatusCode(),
-                        true, // isRetryable = true
-                        causeEx.getErrorDetails());
-                newEx.setStackTrace(causeEx.getStackTrace());
-                for (Throwable suppressed : causeEx.getSuppressed()) {
-                  newEx.addSuppressed(suppressed);
+                try {
+                  transportChannel.refresh();
+                } catch (Exception e) {
+                  LOG.log(
+                      Level.WARNING,
+                      "Failed to refresh transport channel after authentication error",
+                      e);
                 }
-                cause = newEx;
-
-                t = cause;
               }
             }
             onAttemptError(t);

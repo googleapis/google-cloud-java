@@ -43,9 +43,14 @@ class ManagedHttpJsonInterceptorChannel extends ManagedHttpJsonChannel {
 
   ManagedHttpJsonInterceptorChannel(
       ManagedHttpJsonChannel channel, HttpJsonClientInterceptor interceptor) {
-    super();
+    super(true);
     this.channel = channel;
     this.interceptor = interceptor;
+  }
+
+  @Override
+  public long getGeneration() {
+    return channel.getGeneration();
   }
 
   @VisibleForTesting

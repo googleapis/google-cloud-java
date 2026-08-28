@@ -69,6 +69,21 @@ public class FakeTransportChannel implements TransportChannel {
     return channel != null ? channel.getRefreshCount() : refreshCount;
   }
 
+  private volatile long generation = 0;
+
+  public FakeTransportChannel setGeneration(long generation) {
+    if (channel != null) {
+      channel.setGeneration(generation);
+    }
+    this.generation = generation;
+    return this;
+  }
+
+  @Override
+  public long getGeneration() {
+    return channel != null ? channel.getGeneration() : generation;
+  }
+
   private FakeTransportChannel(FakeChannel channel) {
     this.channel = channel;
   }

@@ -75,6 +75,11 @@ public abstract class HttpJsonTransportChannel implements TransportChannel {
   }
 
   @Override
+  public long getGeneration() {
+    return getManagedChannel().getGeneration();
+  }
+
+  @Override
   public void shutdown() {
     getManagedChannel().shutdown();
   }

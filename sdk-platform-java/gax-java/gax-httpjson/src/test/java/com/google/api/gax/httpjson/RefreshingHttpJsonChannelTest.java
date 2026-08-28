@@ -389,4 +389,25 @@ class RefreshingHttpJsonChannelTest {
 
     assertEquals(threadCount, successCount.get());
   }
+
+  @Test
+  void testGenerationIncrementAndLifecycleOnDelegatingWrapper() throws Exception {
+    RefreshingHttpJsonChannel channel = createTestChannel();
+    assertEquals(0, channel.getGeneration());
+
+    channel.invalidateDiskFingerprintCache();
+    testFingerprint = "fingerprint2";
+    channel.refresh();
+
+    assertEquals(1, channel.getGeneration());
+
+    // Verify lifecycle methods on delegating wrapper do not throw NullPointerException
+    assertFalse(channel.isShutdown());
+    assertFalse(channel.isTerminated());
+    channel.shutdown();
+    assertTrue(channel.isShutdown());
+    channel.shutdownNow();
+    assertTrue(channel.isTerminated());
+    assertTrue(channel.awaitTermination(1, TimeUnit.SECONDS));
+  }
 }

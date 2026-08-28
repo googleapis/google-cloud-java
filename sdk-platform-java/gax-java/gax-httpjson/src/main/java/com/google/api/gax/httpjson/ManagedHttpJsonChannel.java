@@ -60,6 +60,19 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     this(null, true, null, null, true);
   }
 
+  protected ManagedHttpJsonChannel(boolean isDelegatingWrapper) {
+    this.executor = null;
+    this.usingDefaultExecutor = false;
+    this.endpoint = null;
+    this.httpTransport = null;
+    this.usingDefaultTransport = false;
+    this.deadlineScheduledExecutorService = null;
+  }
+
+  public long getGeneration() {
+    return 0;
+  }
+
   String getEndpoint() {
     return endpoint;
   }

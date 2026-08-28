@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.mtls.WorkloadCertificateUtils;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.errorprone.annotations.concurrent.GuardedBy;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
@@ -54,6 +55,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -102,6 +104,11 @@ class ChannelPool extends ManagedChannel {
   private final java.util.concurrent.locks.ReentrantLock diskCheckLock =
       new java.util.concurrent.locks.ReentrantLock();
   private final Object entryWriteLock = new Object();
+
+  @GuardedBy("entryWriteLock")
+  private boolean isShutdown = false;
+
+  private final AtomicLong generation = new AtomicLong(0);
   private volatile String activeCertFingerprint = "";
   @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
   private final AtomicInteger indexTicker = new AtomicInteger();
@@ -212,19 +219,22 @@ class ChannelPool extends ManagedChannel {
   public ManagedChannel shutdown() {
     LOG.fine("Initiating graceful shutdown due to explicit request");
 
-    // Resize and refresh tasks can block on channel priming. We don't need
-    // to wait for the channels to be ready since we're shutting down the
-    // pool. Allowing interrupt to speed it up.
-    if (resizeFuture != null) {
-      resizeFuture.cancel(true);
-    }
-    if (refreshFuture != null) {
-      refreshFuture.cancel(true);
-    }
+    synchronized (entryWriteLock) {
+      isShutdown = true;
+      // Resize and refresh tasks can block on channel priming. We don't need
+      // to wait for the channels to be ready since we're shutting down the
+      // pool. Allowing interrupt to speed it up.
+      if (resizeFuture != null) {
+        resizeFuture.cancel(true);
+      }
+      if (refreshFuture != null) {
+        refreshFuture.cancel(true);
+      }
 
-    List<Entry> localEntries = entries.get();
-    for (Entry entry : localEntries) {
-      entry.channel.shutdown();
+      List<Entry> localEntries = entries.get();
+      for (Entry entry : localEntries) {
+        entry.channel.shutdown();
+      }
     }
 
     if (backgroundExecutorProvider.shouldAutoClose()) {
@@ -237,6 +247,11 @@ class ChannelPool extends ManagedChannel {
   /** {@inheritDoc} */
   @Override
   public boolean isShutdown() {
+    synchronized (entryWriteLock) {
+      if (isShutdown) {
+        return true;
+      }
+    }
     List<Entry> localEntries = entries.get();
     for (Entry entry : localEntries) {
       if (!entry.channel.isShutdown()) {
@@ -263,16 +278,19 @@ class ChannelPool extends ManagedChannel {
   public ManagedChannel shutdownNow() {
     LOG.fine("Initiating immediate shutdown due to explicit request");
 
-    if (resizeFuture != null) {
-      resizeFuture.cancel(true);
-    }
-    if (refreshFuture != null) {
-      refreshFuture.cancel(true);
-    }
+    synchronized (entryWriteLock) {
+      isShutdown = true;
+      if (resizeFuture != null) {
+        resizeFuture.cancel(true);
+      }
+      if (refreshFuture != null) {
+        refreshFuture.cancel(true);
+      }
 
-    List<Entry> localEntries = entries.get();
-    for (Entry entry : localEntries) {
-      entry.channel.shutdownNow();
+      List<Entry> localEntries = entries.get();
+      for (Entry entry : localEntries) {
+        entry.channel.shutdownNow();
+      }
     }
 
     if (backgroundExecutorProvider.shouldAutoClose()) {
@@ -516,6 +534,9 @@ class ChannelPool extends ManagedChannel {
     // - then thread2 will shut down channel that thread1 will put back into circulation (after it
     //   replaces the list)
     synchronized (entryWriteLock) {
+      if (isShutdown) {
+        return;
+      }
       if (workloadCertPath == null) {
         refreshAll();
         return;
@@ -542,6 +563,9 @@ class ChannelPool extends ManagedChannel {
   @InternalApi("Visible for testing")
   boolean refreshAll() {
     synchronized (entryWriteLock) {
+      if (isShutdown) {
+        return false;
+      }
       LOG.fine(
           "Refreshing all channels"
               + (activeCertFingerprint == null
@@ -571,8 +595,13 @@ class ChannelPool extends ManagedChannel {
           e.requestShutdown();
         }
       }
+      generation.incrementAndGet();
       return true;
     }
+  }
+
+  public long getGeneration() {
+    return generation.get();
   }
 
   /**
