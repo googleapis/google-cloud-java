@@ -410,9 +410,9 @@ jobs:
     - run: java -version
     - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
   ban-duplicate-classes:
-    needs: bulk-filter
+    needs: generated-libraries-filter
     if: |
-      needs.bulk-filter.outputs.runnable == 'true' &&
+      needs.generated-libraries-filter.outputs.runnable == 'true' &&
       github.head_ref == 'release-please--branches--main' &&
       !endsWith(github.event.pull_request.title, 'SNAPSHOT')
     runs-on: ubuntu-latest
