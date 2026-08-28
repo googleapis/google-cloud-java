@@ -436,4 +436,50 @@ public class ITConnectionTest {
     assertTrue(connection.isValid(0)); // 0 seconds timeout
     connection.close();
   }
+
+  @Test
+  public void testDefaultDatasetColonDelimiter() throws SQLException {
+    String urlWithColon =
+        ITBase.connectionUrl + ";DefaultDataset=" + DEFAULT_CATALOG + ":" + DATASET + ";";
+    try (Connection connection = DriverManager.getConnection(urlWithColon)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+      try (Statement stmt = connection.createStatement();
+          ResultSet rs = stmt.executeQuery("SELECT 1 AS test_val")) {
+        assertTrue(rs.next());
+        assertEquals(1, rs.getInt(1));
+      }
+    }
+  }
+
+  @Test
+  public void testDefaultDatasetDotDelimiter() throws SQLException {
+    String urlWithDot =
+        ITBase.connectionUrl + ";DefaultDataset=" + DEFAULT_CATALOG + "." + DATASET + ";";
+    try (Connection connection = DriverManager.getConnection(urlWithDot)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+      try (Statement stmt = connection.createStatement();
+          ResultSet rs = stmt.executeQuery("SELECT 1 AS test_val")) {
+        assertTrue(rs.next());
+        assertEquals(1, rs.getInt(1));
+      }
+    }
+  }
+
+  @Test
+  public void testPcntDefaultDataset3TierNamespace() throws SQLException {
+    String pcntSchema = "bq-drivers-test-warehouse.jdbc_pcnt_test_namespace";
+    String pcntTable = "PCNT_TEST_TABLE";
+    String urlWithPcnt =
+        ITBase.connectionUrl + ";DefaultDataset=" + DEFAULT_CATALOG + ":" + pcntSchema + ";";
+    try (Connection connection = DriverManager.getConnection(urlWithPcnt)) {
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+      try (Statement stmt = connection.createStatement();
+          ResultSet rs = stmt.executeQuery("SELECT * FROM " + pcntTable + " LIMIT 5")) {
+        assertNotNull(rs);
+      }
+    }
+  }
 }
