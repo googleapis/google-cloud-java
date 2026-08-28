@@ -1863,20 +1863,21 @@ public class ITDatabaseMetadataTest extends ITBase {
           assertEquals(PCNT_SCHEMA, rs.getString("TABLE_SCHEM"));
           assertEquals(PCNT_TABLE_NAME, rs.getString("TABLE_NAME"));
           String colName = rs.getString("COLUMN_NAME");
+          String typeName = rs.getString("TYPE_NAME");
           if ("id".equals(colName)) {
             foundId = true;
             assertEquals(1, rs.getInt("ORDINAL_POSITION"));
             assertTrue(
-                rs.getString("TYPE_NAME").equalsIgnoreCase("INT64")
-                    || rs.getString("TYPE_NAME").equalsIgnoreCase("INTEGER")
-                    || rs.getString("TYPE_NAME").equalsIgnoreCase("BIGINT"));
+                typeName.equalsIgnoreCase("INT64")
+                    || typeName.equalsIgnoreCase("INTEGER")
+                    || typeName.equalsIgnoreCase("BIGINT"));
           } else if ("name".equals(colName)) {
             foundName = true;
             assertEquals(2, rs.getInt("ORDINAL_POSITION"));
             assertTrue(
-                rs.getString("TYPE_NAME").equalsIgnoreCase("STRING")
-                    || rs.getString("TYPE_NAME").equalsIgnoreCase("NVARCHAR")
-                    || rs.getString("TYPE_NAME").equalsIgnoreCase("VARCHAR"));
+                typeName.equalsIgnoreCase("STRING")
+                    || typeName.equalsIgnoreCase("NVARCHAR")
+                    || typeName.equalsIgnoreCase("VARCHAR"));
           }
         }
         assertEquals(2, columnCount, "Expected 2 columns in PCNT table " + PCNT_TABLE_NAME);

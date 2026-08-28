@@ -478,7 +478,7 @@ public class ITConnectionTest {
       assertFalse(connection.isClosed());
       try (Statement stmt = connection.createStatement();
           ResultSet rs = stmt.executeQuery("SELECT * FROM " + pcntTable + " LIMIT 5")) {
-        assertNotNull(rs);
+        assertTrue(rs.getMetaData().getColumnCount() > 0);
       }
     }
   }
