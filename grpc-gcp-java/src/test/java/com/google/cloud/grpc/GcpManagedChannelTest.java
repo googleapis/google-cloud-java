@@ -19,6 +19,7 @@ package com.google.cloud.grpc;
 import static com.google.cloud.grpc.GcpManagedChannel.getKeysFromMessage;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -427,6 +428,52 @@ public final class GcpManagedChannelTest {
   }
 
   @Test
+  public void readyRemovedChannelIsReusedWhenNewerRemovedChannelIsNotReady() {
+    resetGcpChannel();
+    ExecutorService executorService = MoreExecutors.newDirectExecutorService();
+    try {
+      gcpChannel =
+          new GcpManagedChannel(
+              new FakeManagedChannelBuilder(() -> new FakeManagedChannel(executorService)),
+              ApiConfig.getDefaultInstance(),
+              GcpManagedChannelOptions.newBuilder().build());
+      ChannelRef olderReady =
+          gcpChannel.new ChannelRef(new FakeManagedChannel(executorService)) {
+            @Override
+            protected long getConnectedSinceNanos() {
+              return 1;
+            }
+
+            @Override
+            protected ConnectivityState getState() {
+              return ConnectivityState.READY;
+            }
+          };
+      ChannelRef newerNotReady =
+          gcpChannel.new ChannelRef(new FakeManagedChannel(executorService)) {
+            @Override
+            protected long getConnectedSinceNanos() {
+              return 2;
+            }
+
+            @Override
+            protected ConnectivityState getState() {
+              return ConnectivityState.IDLE;
+            }
+          };
+      olderReady.deactivateForTest();
+      newerNotReady.deactivateForTest();
+      gcpChannel.removedChannelRefs.add(olderReady);
+      gcpChannel.removedChannelRefs.add(newerNotReady);
+
+      assertThat(gcpChannel.createNewChannel()).isSameInstanceAs(olderReady);
+    } finally {
+      gcpChannel.shutdownNow();
+      executorService.shutdownNow();
+    }
+  }
+
+  @Test
   public void testChannelAffinityRefRemovedChannelPicksAvailableChannel() throws Exception {
     resetGcpChannel();
     ExecutorService executorService = Executors.newSingleThreadExecutor();
@@ -649,11 +696,12 @@ public final class GcpManagedChannelTest {
 
     // One more call triggers scale-up.
     pool.getChannelRef(null).activeStreamsCountIncr();
-    assertThat(pool.getNumberOfChannels()).isEqualTo(minSize + 1);
+    await().atMost(Duration.ofSeconds(5)).until(() -> pool.getNumberOfChannels() == minSize + 2);
 
-    // Mark the new channel as READY.
-    ((FakeManagedChannel) pool.channelRefs.get(minSize).getChannel())
-        .setState(ConnectivityState.READY);
+    // Mark the new channels as READY.
+    for (int i = minSize; i < pool.getNumberOfChannels(); i++) {
+      ((FakeManagedChannel) pool.channelRefs.get(i).getChannel()).setState(ConnectivityState.READY);
+    }
 
     // Now pick many times without incrementing. The new (less busy) channel should be favored,
     // but picks should still be distributed across channels.
@@ -834,6 +882,9 @@ public final class GcpManagedChannelTest {
                             GcpMetricsOptions.newBuilder().withMetricRegistry(fakeRegistry).build())
                         .build())
                 .build();
+    AtomicInteger fallbackSample = new AtomicInteger();
+    pool.setCandidateIndexPickerForTest(
+        bound -> Math.floorMod(fallbackSample.getAndIncrement(), bound));
 
     final int currentIndex = GcpManagedChannel.channelPoolIndex.get();
     final String poolIndex = String.format("pool-%d", currentIndex);

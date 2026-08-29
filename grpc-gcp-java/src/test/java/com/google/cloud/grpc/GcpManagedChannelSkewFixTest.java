@@ -22,6 +22,8 @@ import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.grpc.GcpManagedChannel.ChannelRef;
 import com.google.cloud.grpc.GcpManagedChannelOptions.ChannelPickStrategy;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpResiliencyOptions;
+import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.time.Duration;
 import java.util.concurrent.ExecutorService;
@@ -110,6 +112,87 @@ public final class GcpManagedChannelSkewFixTest {
   }
 
   @Test
+  public void roundRobin_skipsInactiveChannels() {
+    pool = newPool(2, 2);
+    ChannelRef active = pool.channelRefs.get(0);
+    pool.channelRefs.get(1).deactivateForTest();
+
+    assertThat(pool.getChannelRefRoundRobin()).isSameInstanceAs(active);
+  }
+
+  @Test
+  public void roundRobin_dynamicEmptyPool_createsFirstChannel() {
+    GcpChannelPoolOptions options =
+        GcpChannelPoolOptions.newBuilder()
+            .setInitSize(0)
+            .setMinSize(0)
+            .setMaxSize(2)
+            .setDynamicScaling(10, 20, Duration.ofMinutes(1))
+            .build();
+    pool =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(
+                    new GcpManagedChannelTest.FakeManagedChannelBuilder(
+                        () -> new GcpManagedChannelTest.FakeManagedChannel(executor)))
+                .withOptions(
+                    GcpManagedChannelOptions.newBuilder().withChannelPoolOptions(options).build())
+                .build();
+
+    assertThat(pool.channelRefs).isEmpty();
+    assertThat(pool.getChannelRefRoundRobin()).isNotNull();
+    assertThat(pool.channelRefs).hasSize(1);
+  }
+
+  @Test
+  public void fallbackPicker_skipsInactiveChannels() {
+    pool = newPoolWithFallback();
+    ChannelRef inactive = pool.channelRefs.get(0);
+    ChannelRef active = pool.channelRefs.get(1);
+    inactive.deactivateForTest();
+    pool.fallbackMapForTest().put(active.getId(), new java.util.concurrent.ConcurrentHashMap<>());
+
+    assertThat(pool.getChannelRef(null)).isSameInstanceAs(active);
+  }
+
+  @Test
+  public void activeStreamExtrema_skipInactiveChannels() {
+    pool = newPool(2, 2);
+    ChannelRef inactive = pool.channelRefs.get(0);
+    ChannelRef active = pool.channelRefs.get(1);
+    inactive.setActiveStreamsForTest(99);
+    active.setActiveStreamsForTest(3);
+    inactive.deactivateForTest();
+
+    assertThat(pool.getMinActiveStreams()).isEqualTo(3);
+    assertThat(pool.getMaxActiveStreams()).isEqualTo(3);
+  }
+
+  @Test
+  public void dynamicPowerOfTwoPickDoesNotReadLegacyWatermarkLoad() {
+    GcpChannelPoolOptions options =
+        GcpChannelPoolOptions.newBuilder()
+            .setInitSize(2)
+            .setMinSize(2)
+            .setMaxSize(4)
+            .setDynamicScaling(10, 20, Duration.ofMinutes(1))
+            .setChannelPickStrategy(ChannelPickStrategy.POWER_OF_TWO)
+            .build();
+    pool =
+        new GcpManagedChannel(
+            new GcpManagedChannelTest.FakeManagedChannelBuilder(
+                () -> new GcpManagedChannelTest.FakeManagedChannel(executor)),
+            ApiConfig.getDefaultInstance(),
+            GcpManagedChannelOptions.newBuilder().withChannelPoolOptions(options).build()) {
+          @Override
+          public int getMaxActiveStreams() {
+            throw new AssertionError("legacy watermark load must be lazy");
+          }
+        };
+
+    assertThat(pool.getChannelRef(null)).isNotNull();
+  }
+
+  @Test
   public void affinityReferenceStaysStickyUntilDelegateShutdown() {
     pool = newPool(4, 2);
     reserveOneStreamPerChannel();
@@ -148,6 +231,22 @@ public final class GcpManagedChannelSkewFixTest {
                     () -> new GcpManagedChannelTest.FakeManagedChannel(executor)))
             .withOptions(
                 GcpManagedChannelOptions.newBuilder().withChannelPoolOptions(options).build())
+            .build();
+  }
+
+  private GcpManagedChannel newPoolWithFallback() {
+    GcpChannelPoolOptions options =
+        GcpChannelPoolOptions.newBuilder().setInitSize(2).setMinSize(2).setMaxSize(2).build();
+    return (GcpManagedChannel)
+        GcpManagedChannelBuilder.forDelegateBuilder(
+                new GcpManagedChannelTest.FakeManagedChannelBuilder(
+                    () -> new GcpManagedChannelTest.FakeManagedChannel(executor)))
+            .withOptions(
+                GcpManagedChannelOptions.newBuilder()
+                    .withChannelPoolOptions(options)
+                    .withResiliencyOptions(
+                        GcpResiliencyOptions.newBuilder().setNotReadyFallback(true).build())
+                    .build())
             .build();
   }
 
