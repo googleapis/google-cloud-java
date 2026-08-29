@@ -2697,6 +2697,116 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void builder_actorTokenWithPlainPublicTokenUrl_throwsIllegalArgumentException() throws Exception {
+    KeyStore keyStore = createPopulatedKeyStore();
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setSubjectTokenSupplier(context -> "testSubjectToken")
+                    .setActorTokenSupplier(context -> "testActorToken")
+                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setAudience(
+                        "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                    .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setTokenUrl("https://sts.googleapis.com/v1/token")
+                    .setHttpTransportFactory(transportFactory)
+                    .build());
+    assertTrue(e.getMessage().contains("tokenUrl"));
+    assertTrue(e.getMessage().contains("plain public Google API endpoint"));
+  }
+
+  @Test
+  void builder_actorTokenWithPlainPublicImpersonationUrl_throwsIllegalArgumentException()
+      throws Exception {
+    KeyStore keyStore = createPopulatedKeyStore();
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () ->
+                IdentityPoolCredentials.newBuilder()
+                    .setSubjectTokenSupplier(context -> "testSubjectToken")
+                    .setActorTokenSupplier(context -> "testActorToken")
+                    .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setAudience(
+                        "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                    .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+                    .setTokenUrl(MockExternalAccountCredentialsTransport.STS_MTLS_URL)
+                    .setServiceAccountImpersonationUrl(
+                        "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")
+                    .setHttpTransportFactory(transportFactory)
+                    .build());
+    assertTrue(e.getMessage().contains("serviceAccountImpersonationUrl"));
+    assertTrue(e.getMessage().contains("plain public Google API endpoint"));
+  }
+
+  @Test
+  void builder_actorTokenWithMtlsTokenUrl_succeeds() throws Exception {
+    KeyStore keyStore = createPopulatedKeyStore();
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+
+    IdentityPoolCredentials cred =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(context -> "testSubjectToken")
+            .setActorTokenSupplier(context -> "testActorToken")
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl(MockExternalAccountCredentialsTransport.STS_MTLS_URL)
+            .setServiceAccountImpersonationUrl(
+                "https://iamcredentials.mtls.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")
+            .setHttpTransportFactory(transportFactory)
+            .build();
+    assertNotNull(cred);
+  }
+
+  @Test
+  void builder_actorTokenWithPscUrls_succeeds() throws Exception {
+    KeyStore keyStore = createPopulatedKeyStore();
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+
+    IdentityPoolCredentials cred =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(context -> "testSubjectToken")
+            .setActorTokenSupplier(context -> "testActorToken")
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience(
+                "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl("https://sts.p.googleapis.com/v1/token")
+            .setServiceAccountImpersonationUrl(
+                "https://iamcredentials.p.googleapis.com/v1/projects/-/serviceAccounts/test@project.iam.gserviceaccount.com:generateAccessToken")
+            .setHttpTransportFactory(transportFactory)
+            .build();
+    assertNotNull(cred);
+  }
+
+  @Test
+  void builder_actorTokenWithCustomDomainUrls_succeeds() throws Exception {
+    KeyStore keyStore = createPopulatedKeyStore();
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+
+    IdentityPoolCredentials cred =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(context -> "testSubjectToken")
+            .setActorTokenSupplier(context -> "testActorToken")
+            .setActorTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setAudience("//custom.domain.com/pool")
+            .setSubjectTokenType("urn:ietf:params:oauth:token-type:jwt")
+            .setTokenUrl("https://auth.custom-domain.com/v1/token")
+            .setServiceAccountImpersonationUrl("https://iam.custom-domain.com/v1/generate")
+            .setHttpTransportFactory(transportFactory)
+            .build();
+    assertNotNull(cred);
+  }
+
+  @Test
   void fromBuilder_withCustomTransportFactoryAndCertificateConfig_preservesCustomTransportFactory(
       @TempDir Path tempDir) throws Exception {
     Path tokenFile = tempDir.resolve("credential.txt");
