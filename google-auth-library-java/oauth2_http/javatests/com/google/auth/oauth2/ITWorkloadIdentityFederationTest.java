@@ -31,6 +31,7 @@
 
 package com.google.auth.oauth2;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -45,13 +46,19 @@ import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.util.GenericData;
+import com.google.api.client.util.SecurityUtils;
 import com.google.auth.http.HttpCredentialsAdapter;
+import com.google.auth.http.HttpTransportFactory;
+import com.google.auth.mtls.MtlsHttpTransportFactory;
 import com.google.auth.oauth2.ExternalAccountCredentials.SubjectTokenTypes;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.SequenceInputStream;
 import java.nio.charset.StandardCharsets;
+import java.security.KeyStore;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
@@ -279,6 +286,227 @@ final class ITWorkloadIdentityFederationTest {
             .build();
 
     callGcs(identityPoolCredentials);
+  }
+
+  /**
+   * IdentityPoolCredentials (OIDC provider with certificate-bound workload and actor token): Uses
+   * the service account to generate Google ID tokens for subject and actor tokens. Writes both
+   * tokens to a temporary JSON file with subject_token and actor_token field names. Configures
+   * certificate_config_location pointing to the certificate config. Exchanges the tokens over the
+   * mTLS STS endpoint (https://sts.mtls.googleapis.com/v1/token) and calls GCS.
+   */
+  @Test
+  void identityPoolCredentials_withCertificateBoundWorkloadAndActorToken() throws IOException {
+    String subjectToken = generateGoogleIdToken(OIDC_AUDIENCE);
+    String actorToken = generateGoogleIdToken(OIDC_AUDIENCE);
+
+    File tokenFile =
+        File.createTempFile(
+            "ITWorkloadIdentityFederation_cert_actor", /* suffix= */ null, /* directory= */ null);
+    tokenFile.deleteOnExit();
+
+    GenericJson tokenJson = new GenericJson();
+    tokenJson.setFactory(OAuth2Utils.JSON_FACTORY);
+    tokenJson.put("subject_token", subjectToken);
+    tokenJson.put("actor_token", actorToken);
+
+    OAuth2Utils.writeInputStreamToFile(
+        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+        tokenFile.getAbsolutePath());
+
+    GenericJson config = new GenericJson();
+    config.put("type", "external_account");
+    config.put("audience", OIDC_AUDIENCE);
+    config.put("subject_token_type", "urn:ietf:params:oauth:token-type:jwt");
+    config.put("actor_token_type", "urn:ietf:params:oauth:token-type:jwt");
+    config.put("token_url", "https://sts.mtls.googleapis.com/v1/token");
+    config.put(
+        "service_account_impersonation_url",
+        String.format(
+            "https://iamcredentials.mtls.googleapis.com/v1/projects/-/serviceAccounts/%s:generateAccessToken",
+            clientEmail));
+
+    GenericJson credentialSource = new GenericJson();
+    credentialSource.put("file", tokenFile.getAbsolutePath());
+
+    GenericJson format = new GenericJson();
+    format.put("type", "json");
+    format.put("subject_token_field_name", "subject_token");
+    format.put("actor_token_field_name", "actor_token");
+    credentialSource.put("format", format);
+
+    GenericJson certificate = new GenericJson();
+    certificate.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+    credentialSource.put("certificate", certificate);
+
+    config.put("credential_source", credentialSource);
+
+    IdentityPoolCredentials identityPoolCredentials =
+        (IdentityPoolCredentials)
+            ExternalAccountCredentials.fromJson(config, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
+
+    callGcs(identityPoolCredentials);
+  }
+
+  /**
+   * IdentityPoolCredentials (OIDC provider with programmatic mTLS and actor token): Uses the
+   * service account to generate Google ID tokens for subject and actor tokens via suppliers.
+   * Configures mTLS transport using MtlsHttpTransportFactory with KeyStore loaded from test
+   * certificate resources. Exchanges the tokens over mTLS STS endpoint and calls GCS.
+   */
+  @Test
+  void identityPoolCredentials_withProgrammaticMtlsAndActorToken() throws Exception {
+    IdentityPoolSubjectTokenSupplier tokenSupplier =
+        (ExternalAccountSupplierContext context) -> {
+          try {
+            return generateGoogleIdToken(OIDC_AUDIENCE);
+          } catch (IOException e) {
+            throw new RuntimeException(e);
+          }
+        };
+
+    IdentityPoolActorTokenSupplier actorSupplier =
+        (ExternalAccountSupplierContext context) -> {
+          try {
+            return generateGoogleIdToken(OIDC_AUDIENCE);
+          } catch (IOException e) {
+            throw new RuntimeException(e);
+          }
+        };
+
+    KeyStore keyStore;
+    try (InputStream certStream =
+            new FileInputStream(new File("testresources/mtls/test_cert.pem"));
+        InputStream keyStream = new FileInputStream(new File("testresources/mtls/test_key.pem"));
+        InputStream combined = new SequenceInputStream(certStream, keyStream)) {
+      keyStore = SecurityUtils.createMtlsKeyStore(combined);
+    }
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(tokenSupplier)
+            .setActorTokenSupplier(actorSupplier)
+            .setActorTokenType(SubjectTokenTypes.JWT.value)
+            .setAudience(OIDC_AUDIENCE)
+            .setSubjectTokenType(SubjectTokenTypes.JWT)
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .setServiceAccountImpersonationUrl(
+                String.format(
+                    "https://iamcredentials.mtls.googleapis.com/v1/projects/-/serviceAccounts/%s:generateAccessToken",
+                    clientEmail))
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    callGcs(credentials);
+  }
+
+  /**
+   * IdentityPoolCredentials (OIDC provider with certificate-bound workload and actor token, direct
+   * STS): Exchanges tokens directly over the mTLS STS endpoint
+   * (https://sts.mtls.googleapis.com/v1/token) without service account impersonation.
+   */
+  @Test
+  void identityPoolCredentials_directSts_withCertificateBoundWorkloadAndActorToken()
+      throws IOException {
+    String subjectToken = generateGoogleIdToken(OIDC_AUDIENCE);
+    String actorToken = generateGoogleIdToken(OIDC_AUDIENCE);
+
+    File tokenFile =
+        File.createTempFile(
+            "ITWorkloadIdentityFederation_direct_cert_actor",
+            /* suffix= */ null,
+            /* directory= */ null);
+    tokenFile.deleteOnExit();
+
+    GenericJson tokenJson = new GenericJson();
+    tokenJson.setFactory(OAuth2Utils.JSON_FACTORY);
+    tokenJson.put("subject_token", subjectToken);
+    tokenJson.put("actor_token", actorToken);
+
+    OAuth2Utils.writeInputStreamToFile(
+        new ByteArrayInputStream(tokenJson.toPrettyString().getBytes(StandardCharsets.UTF_8)),
+        tokenFile.getAbsolutePath());
+
+    GenericJson config = new GenericJson();
+    config.put("type", "external_account");
+    config.put("audience", OIDC_AUDIENCE);
+    config.put("subject_token_type", "urn:ietf:params:oauth:token-type:jwt");
+    config.put("actor_token_type", "urn:ietf:params:oauth:token-type:jwt");
+    config.put("token_url", "https://sts.mtls.googleapis.com/v1/token");
+
+    GenericJson credentialSource = new GenericJson();
+    credentialSource.put("file", tokenFile.getAbsolutePath());
+
+    GenericJson format = new GenericJson();
+    format.put("type", "json");
+    format.put("subject_token_field_name", "subject_token");
+    format.put("actor_token_field_name", "actor_token");
+    credentialSource.put("format", format);
+
+    GenericJson certificate = new GenericJson();
+    certificate.put("certificate_config_location", "testresources/mtls/certificate_config.json");
+    credentialSource.put("certificate", certificate);
+
+    config.put("credential_source", credentialSource);
+
+    IdentityPoolCredentials identityPoolCredentials =
+        (IdentityPoolCredentials)
+            ExternalAccountCredentials.fromJson(config, OAuth2Utils.HTTP_TRANSPORT_FACTORY);
+
+    AccessToken accessToken = identityPoolCredentials.refreshAccessToken();
+    assertNotNull(accessToken);
+    assertNotNull(accessToken.getTokenValue());
+  }
+
+  /**
+   * IdentityPoolCredentials (OIDC provider with programmatic mTLS and actor token, direct STS):
+   * Uses suppliers for subject and actor tokens, configuring MtlsHttpTransportFactory. Exchanges
+   * directly over mTLS STS endpoint without service account impersonation.
+   */
+  @Test
+  void identityPoolCredentials_directSts_withProgrammaticMtlsAndActorToken() throws Exception {
+    IdentityPoolSubjectTokenSupplier tokenSupplier =
+        (ExternalAccountSupplierContext context) -> {
+          try {
+            return generateGoogleIdToken(OIDC_AUDIENCE);
+          } catch (IOException e) {
+            throw new RuntimeException(e);
+          }
+        };
+
+    IdentityPoolActorTokenSupplier actorSupplier =
+        (ExternalAccountSupplierContext context) -> {
+          try {
+            return generateGoogleIdToken(OIDC_AUDIENCE);
+          } catch (IOException e) {
+            throw new RuntimeException(e);
+          }
+        };
+
+    KeyStore keyStore;
+    try (InputStream certStream =
+            new FileInputStream(new File("testresources/mtls/test_cert.pem"));
+        InputStream keyStream = new FileInputStream(new File("testresources/mtls/test_key.pem"));
+        InputStream combined = new SequenceInputStream(certStream, keyStream)) {
+      keyStore = SecurityUtils.createMtlsKeyStore(combined);
+    }
+    HttpTransportFactory transportFactory = new MtlsHttpTransportFactory(keyStore);
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(tokenSupplier)
+            .setActorTokenSupplier(actorSupplier)
+            .setActorTokenType(SubjectTokenTypes.JWT.value)
+            .setAudience(OIDC_AUDIENCE)
+            .setSubjectTokenType(SubjectTokenTypes.JWT)
+            .setTokenUrl("https://sts.mtls.googleapis.com/v1/token")
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    AccessToken accessToken = credentials.refreshAccessToken();
+    assertNotNull(accessToken);
+    assertNotNull(accessToken.getTokenValue());
   }
 
   private GenericJson buildIdentityPoolCredentialConfig() throws IOException {
