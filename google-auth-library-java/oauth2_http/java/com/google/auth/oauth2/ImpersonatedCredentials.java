@@ -46,6 +46,7 @@ import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
 import com.google.api.core.ObsoleteApi;
 import com.google.auth.CredentialTypeForMetrics;
+import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.http.HttpTransportFactory;
@@ -580,31 +581,47 @@ public class ImpersonatedCredentials extends GoogleCredentials
 
   @Override
   public AccessToken refreshAccessToken() throws IOException {
-    if (this.sourceCredentials.getAccessToken() == null) {
-      // Apply the `CLOUD_PLATFORM_SCOPE` to access the iamcredentials endpoint
-      this.sourceCredentials =
-          this.sourceCredentials.createScoped(
-              Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
-    }
+    return refreshAccessToken(this.transportFactory);
+  }
 
-    // skip for SA with SSJ flow because it uses self-signed JWT
-    // and will get refreshed at initialize request step
-    // run for other source credential types or SA with GDU assert flow
-    if (!(this.sourceCredentials instanceof ServiceAccountCredentials)
-        || (isDefaultUniverseDomain()
-            && ((ServiceAccountCredentials) this.sourceCredentials)
-                .shouldUseAssertionFlowForGdu())) {
-      try {
-        this.sourceCredentials.refreshIfExpired();
-      } catch (IOException e) {
-        throw new IOException("Unable to refresh sourceCredentials", e);
+  AccessToken refreshAccessToken(HttpTransportFactory transportFactory) throws IOException {
+    HttpCredentialsAdapter adapter;
+    if (this.sourceCredentials instanceof ExternalAccountCredentials) {
+      AccessToken intermediateAccessToken =
+          ((ExternalAccountCredentials) this.sourceCredentials)
+              .refreshAccessToken(transportFactory);
+      Credentials authCredentials =
+          intermediateAccessToken != null
+              ? OAuth2Credentials.create(intermediateAccessToken)
+              : this.sourceCredentials;
+      adapter = new HttpCredentialsAdapter(authCredentials);
+    } else {
+      if (this.sourceCredentials.getAccessToken() == null) {
+        // Apply the `CLOUD_PLATFORM_SCOPE` to access the iamcredentials endpoint
+        this.sourceCredentials =
+            this.sourceCredentials.createScoped(
+                Collections.singletonList(OAuth2Utils.CLOUD_PLATFORM_SCOPE));
       }
+
+      // skip for SA with SSJ flow because it uses self-signed JWT
+      // and will get refreshed at initialize request step
+      // run for other source credential types or SA with GDU assert flow
+      if (!(this.sourceCredentials instanceof ServiceAccountCredentials)
+          || (isDefaultUniverseDomain()
+              && ((ServiceAccountCredentials) this.sourceCredentials)
+                  .shouldUseAssertionFlowForGdu())) {
+        try {
+          this.sourceCredentials.refreshIfExpired();
+        } catch (IOException e) {
+          throw new IOException("Unable to refresh sourceCredentials", e);
+        }
+      }
+      adapter = new HttpCredentialsAdapter(sourceCredentials);
     }
 
-    HttpTransport httpTransport = this.transportFactory.create();
+    HttpTransport httpTransport = transportFactory.create();
     JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
 
-    HttpCredentialsAdapter adapter = new HttpCredentialsAdapter(sourceCredentials);
     HttpRequestFactory requestFactory = httpTransport.createRequestFactory();
 
     String endpointUrl =
@@ -627,6 +644,9 @@ public class ImpersonatedCredentials extends GoogleCredentials
     // Client Library Debug Logging via LoggingUtils is used instead.
     request.setLoggingEnabled(false);
     adapter.initialize(request);
+    if (this.sourceCredentials instanceof ExternalAccountCredentials) {
+      request.setUnsuccessfulResponseHandler(null);
+    }
     request.setParser(parser);
     MetricsUtils.setMetricsHeader(
         request,

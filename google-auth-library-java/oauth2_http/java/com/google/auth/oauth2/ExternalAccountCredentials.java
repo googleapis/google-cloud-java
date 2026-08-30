@@ -526,6 +526,19 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   }
 
   /**
+   * Refreshes the access token using the specified transport factory. Default implementation
+   * delegates to {@link #refreshAccessToken()}. Subclasses should override this method if they
+   * support transport pinning per refresh cycle.
+   *
+   * @param transportFactory the HTTP transport factory to use for this refresh cycle
+   * @return the refreshed access token
+   * @throws IOException if the token refresh fails
+   */
+  public AccessToken refreshAccessToken(HttpTransportFactory transportFactory) throws IOException {
+    return refreshAccessToken();
+  }
+
+  /**
    * Exchanges the external credential for a Google Cloud access token.
    *
    * @param stsTokenExchangeRequest the Security Token Service token exchange request
@@ -555,7 +568,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       this.impersonatedCredentials = this.buildImpersonatedCredentials();
     }
     if (this.impersonatedCredentials != null) {
-      return this.impersonatedCredentials.refreshAccessToken();
+      return this.impersonatedCredentials.refreshAccessToken(cycleTransportFactory);
     }
 
     StsRequestHandler.Builder requestHandler =

@@ -228,9 +228,24 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     HttpTransportFactory cycleTransportFactory = this.transportFactory;
     if (this.x509Provider != null) {
       KeyStore pinnedKeyStore = this.x509Provider.getKeyStore();
-      cycleTransportFactory = new MtlsHttpTransportFactory(pinnedKeyStore);
+      if (this.transportFactory == null
+          || this.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
+          || this.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
+          || this.transportFactory instanceof MtlsHttpTransportFactory) {
+        cycleTransportFactory = new MtlsHttpTransportFactory(pinnedKeyStore);
+      }
     }
+    return refreshWithRetry(cycleTransportFactory, true);
+  }
 
+  @Override
+  public AccessToken refreshAccessToken(HttpTransportFactory cycleTransportFactory)
+      throws IOException {
+    return refreshWithRetry(cycleTransportFactory, false);
+  }
+
+  private AccessToken refreshWithRetry(
+      HttpTransportFactory cycleTransportFactory, boolean allowRetry) throws IOException {
     // Read subject and actor tokens, atomically if from the same file supplier.
     String subjectToken;
     String actorToken = null;
@@ -264,20 +279,36 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     try {
       return exchangeExternalCredentialForAccessToken(
           stsTokenExchangeRequest.build(), cycleTransportFactory);
-    } catch (OAuthException e) {
-      if (e.getHttpStatusCode() == 401 && this.x509Provider != null) {
+    } catch (Exception e) {
+      if (allowRetry && OAuth2Utils.isUnauthorizedException(e) && this.x509Provider != null) {
         try {
           // On 401, re-read from X509Provider for fresh certs and retry once.
           KeyStore freshKeyStore = this.x509Provider.getKeyStore();
-          HttpTransportFactory retryTransportFactory = new MtlsHttpTransportFactory(freshKeyStore);
-          return exchangeExternalCredentialForAccessToken(
-              stsTokenExchangeRequest.build(), retryTransportFactory);
+          HttpTransportFactory retryTransportFactory = cycleTransportFactory;
+          if (this.transportFactory == null
+              || this.transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
+              || this.transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory
+              || this.transportFactory instanceof MtlsHttpTransportFactory) {
+            retryTransportFactory = new MtlsHttpTransportFactory(freshKeyStore);
+          }
+          return refreshWithRetry(retryTransportFactory, false);
         } catch (IOException retryException) {
           retryException.addSuppressed(e);
           throw retryException;
+        } catch (Exception retryException) {
+          IOException ioException =
+              new IOException("Failed to reload certificate on retry", retryException);
+          ioException.addSuppressed(e);
+          throw ioException;
         }
       }
-      throw e;
+      if (e instanceof IOException) {
+        throw (IOException) e;
+      }
+      if (e instanceof RuntimeException) {
+        throw (RuntimeException) e;
+      }
+      throw new IOException(e);
     }
   }
 

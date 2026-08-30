@@ -98,4 +98,60 @@ class OAuth2UtilsTest {
           generateBasicAuthHeader(username, password);
         });
   }
+
+  @Test
+  void isUnauthorizedException_null_returnsFalse() {
+    org.junit.jupiter.api.Assertions.assertFalse(OAuth2Utils.isUnauthorizedException(null));
+  }
+
+  @Test
+  void isUnauthorizedException_genericIOException_returnsFalse() {
+    org.junit.jupiter.api.Assertions.assertFalse(
+        OAuth2Utils.isUnauthorizedException(new java.io.IOException("Network error")));
+  }
+
+  @Test
+  void isUnauthorizedException_oauthException401_returnsTrue() {
+    OAuthException ex = new OAuthException("invalid_client", "Unauthorized", null, 401);
+    org.junit.jupiter.api.Assertions.assertTrue(OAuth2Utils.isUnauthorizedException(ex));
+  }
+
+  @Test
+  void isUnauthorizedException_oauthExceptionNon401_returnsFalse() {
+    OAuthException ex = new OAuthException("bad_request", "Bad Request", null, 400);
+    org.junit.jupiter.api.Assertions.assertFalse(OAuth2Utils.isUnauthorizedException(ex));
+  }
+
+  @Test
+  void isUnauthorizedException_httpResponseException401_returnsTrue() {
+    com.google.api.client.http.HttpResponseException ex =
+        new com.google.api.client.http.HttpResponseException.Builder(
+                401, "Unauthorized", new com.google.api.client.http.HttpHeaders())
+            .build();
+    org.junit.jupiter.api.Assertions.assertTrue(OAuth2Utils.isUnauthorizedException(ex));
+  }
+
+  @Test
+  void isUnauthorizedException_httpResponseExceptionNon401_returnsFalse() {
+    com.google.api.client.http.HttpResponseException ex =
+        new com.google.api.client.http.HttpResponseException.Builder(
+                403, "Forbidden", new com.google.api.client.http.HttpHeaders())
+            .build();
+    org.junit.jupiter.api.Assertions.assertFalse(OAuth2Utils.isUnauthorizedException(ex));
+  }
+
+  @Test
+  void isUnauthorizedException_wrappedInExceptionChain_returnsTrue() {
+    OAuthException oauthEx = new OAuthException("invalid_client", "Unauthorized", null, 401);
+    java.io.IOException wrapped = new java.io.IOException("Wrapped failure", oauthEx);
+    org.junit.jupiter.api.Assertions.assertTrue(OAuth2Utils.isUnauthorizedException(wrapped));
+
+    com.google.api.client.http.HttpResponseException httpEx =
+        new com.google.api.client.http.HttpResponseException.Builder(
+                401, "Unauthorized", new com.google.api.client.http.HttpHeaders())
+            .build();
+    java.io.IOException wrappedHttp =
+        new java.io.IOException("Outer", new java.io.IOException("Inner", httpEx));
+    org.junit.jupiter.api.Assertions.assertTrue(OAuth2Utils.isUnauthorizedException(wrappedHttp));
+  }
 }
