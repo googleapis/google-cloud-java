@@ -92,10 +92,8 @@
     <module>java-contentwarehouse</module>
     <module>java-data-fusion</module>
     <module>java-databasecenter</module>
-    <module>java-datacatalog</module>
     <module>java-dataflow</module>
     <module>java-dataform</module>
-    <module>java-datalabeling</module>
     <module>java-datalineage</module>
     <module>java-datamanager</module>
     <module>java-dataplex</module>

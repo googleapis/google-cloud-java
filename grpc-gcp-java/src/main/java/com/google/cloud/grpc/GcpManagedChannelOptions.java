@@ -49,13 +49,12 @@ public class GcpManagedChannelOptions {
     LINEAR_SCAN,
 
     /**
-     * Picks two channels at random and returns the one with fewer active streams. Ties are broken
-     * by preferring the more recently active channel (warmth-preserving).
+     * Samples two channels at random with replacement and returns the one with fewer active
+     * streams. The first sample wins ties. Inactive samples are retried.
      *
-     * <p>This is the default strategy. It avoids the thundering herd problem while keeping warm
-     * channels preferred under low traffic. The trade-off is that it may not always find the global
-     * minimum, but in practice the difference is negligible because stream counts are inherently
-     * racy.
+     * <p>This is the default strategy. It avoids the thundering herd problem without preferring
+     * channel warmth. The trade-off is that it may not always find the global minimum, but in
+     * practice the difference is negligible because stream counts are inherently racy.
      */
     POWER_OF_TWO,
   }
@@ -212,6 +211,14 @@ public class GcpManagedChannelOptions {
     private final int maxRpcPerChannel;
     // How often to check for a possibility to scale down.
     private final Duration scaleDownInterval;
+    // Minimum interval between successful scale-up actions.
+    private final Duration scaleUpCooldown;
+    // Consecutive low-load checks required before scaling down.
+    private final int scaleDownConsecutiveLowLoadChecks;
+    // Maximum percentage growth in one scale-up action.
+    private final int maxScaleUpPercent;
+    // Maximum channels removed in one scale-down check.
+    private final int maxScaleDownChannels;
 
     // Use round-robin channel selection for affinity binding calls.
     private final boolean useRoundRobinOnBind;
@@ -229,6 +236,10 @@ public class GcpManagedChannelOptions {
       minRpcPerChannel = builder.minRpcPerChannel;
       maxRpcPerChannel = builder.maxRpcPerChannel;
       scaleDownInterval = builder.scaleDownInterval;
+      scaleUpCooldown = builder.scaleUpCooldown;
+      scaleDownConsecutiveLowLoadChecks = builder.scaleDownConsecutiveLowLoadChecks;
+      maxScaleUpPercent = builder.maxScaleUpPercent;
+      maxScaleDownChannels = builder.maxScaleDownChannels;
       concurrentStreamsLowWatermark = builder.concurrentStreamsLowWatermark;
       useRoundRobinOnBind = builder.useRoundRobinOnBind;
       affinityKeyLifetime = builder.affinityKeyLifetime;
@@ -258,6 +269,22 @@ public class GcpManagedChannelOptions {
 
     public Duration getScaleDownInterval() {
       return scaleDownInterval;
+    }
+
+    public Duration getScaleUpCooldown() {
+      return scaleUpCooldown;
+    }
+
+    public int getScaleDownConsecutiveLowLoadChecks() {
+      return scaleDownConsecutiveLowLoadChecks;
+    }
+
+    public int getMaxScaleUpPercent() {
+      return maxScaleUpPercent;
+    }
+
+    public int getMaxScaleDownChannels() {
+      return maxScaleDownChannels;
     }
 
     public int getConcurrentStreamsLowWatermark() {
@@ -293,8 +320,27 @@ public class GcpManagedChannelOptions {
     @Override
     public String toString() {
       return String.format(
-          "{maxSize: %d, minSize: %d, concurrentStreamsLowWatermark: %d, useRoundRobinOnBind: %s}",
-          getMaxSize(), getMinSize(), getConcurrentStreamsLowWatermark(), isUseRoundRobinOnBind());
+          "{maxSize: %d, minSize: %d, initSize: %d, minRpcPerChannel: %d, "
+              + "maxRpcPerChannel: %d, scaleDownInterval: %s, scaleUpCooldown: %s, "
+              + "scaleDownConsecutiveLowLoadChecks: %d, maxScaleUpPercent: %d, "
+              + "maxScaleDownChannels: %d, "
+              + "concurrentStreamsLowWatermark: %d, useRoundRobinOnBind: %s, "
+              + "affinityKeyLifetime: %s, cleanupInterval: %s, channelPickStrategy: %s}",
+          getMaxSize(),
+          getMinSize(),
+          getInitSize(),
+          getMinRpcPerChannel(),
+          getMaxRpcPerChannel(),
+          getScaleDownInterval(),
+          getScaleUpCooldown(),
+          getScaleDownConsecutiveLowLoadChecks(),
+          getMaxScaleUpPercent(),
+          getMaxScaleDownChannels(),
+          getConcurrentStreamsLowWatermark(),
+          isUseRoundRobinOnBind(),
+          getAffinityKeyLifetime(),
+          getCleanupInterval(),
+          getChannelPickStrategy());
     }
 
     public static class Builder {
@@ -304,6 +350,10 @@ public class GcpManagedChannelOptions {
       private int minRpcPerChannel = 0;
       private int maxRpcPerChannel = 0;
       private Duration scaleDownInterval = Duration.ZERO;
+      private Duration scaleUpCooldown = Duration.ofSeconds(10);
+      private int scaleDownConsecutiveLowLoadChecks = 3;
+      private int maxScaleUpPercent = 30;
+      private int maxScaleDownChannels = 2;
       private int concurrentStreamsLowWatermark = GcpManagedChannel.DEFAULT_MAX_STREAM;
       private boolean useRoundRobinOnBind = false;
       private Duration affinityKeyLifetime = Duration.ZERO;
@@ -323,6 +373,10 @@ public class GcpManagedChannelOptions {
         this.minRpcPerChannel = options.getMinRpcPerChannel();
         this.maxRpcPerChannel = options.getMaxRpcPerChannel();
         this.scaleDownInterval = options.getScaleDownInterval();
+        this.scaleUpCooldown = options.getScaleUpCooldown();
+        this.scaleDownConsecutiveLowLoadChecks = options.getScaleDownConsecutiveLowLoadChecks();
+        this.maxScaleUpPercent = options.getMaxScaleUpPercent();
+        this.maxScaleDownChannels = options.getMaxScaleDownChannels();
         this.concurrentStreamsLowWatermark = options.getConcurrentStreamsLowWatermark();
         this.useRoundRobinOnBind = options.isUseRoundRobinOnBind();
         this.affinityKeyLifetime = options.getAffinityKeyLifetime();
@@ -375,23 +429,14 @@ public class GcpManagedChannelOptions {
       /**
        * Enables dynamic scaling functionality.
        *
-       * <p>When the average number of concurrent calls per channel reaches <code>maxRpcPerChannel
-       * </code> the pool will create and add a new channel unless already at max size.
+       * <p>After a call is counted, load above <code>maxRpcPerChannel</code> on its selected
+       * channel or across the pool average signals a background scale-up worker.
        *
-       * <p>Every <code>scaleDownInterval</code> a check for downscaling is performed. Based on the
-       * maximum total concurrent calls observed since the last check, the desired number of
-       * channels is calculated as:
-       *
-       * <p><code>(max_total_concurrent_calls / minRpcPerChannel)</code> rounded up.
-       *
-       * <p>If the calculated desired number of channels is lower than the current number of
-       * channels, the pool will be downscaled to the desired number or min size (whichever is
-       * greater).
-       *
-       * <p>When downscaling, channels with the oldest connections are selected. Then the selected
-       * channels are removed from the pool but are not instructed to shutdown until all calls are
-       * completed. In a case when the pool is scaling up and there is a ready channel awaiting
-       * calls completion, the channel will be re-used instead of creating a new channel.
+       * <p>Every <code>scaleDownInterval</code>, after consecutive low-load checks, the
+       * longest-connected channels (by connectedSinceNanos) are removed from selection, bounded by
+       * maxScaleDownChannels. A removed channel is shut down on a later check once its in-flight
+       * calls reach zero. A READY removed channel can be reused by a later scale-up before it
+       * closes.
        *
        * @param minRpcPerChannel minimum desired average concurrent calls per channel.
        * @param maxRpcPerChannel maximum desired average concurrent calls per channel.
@@ -403,6 +448,9 @@ public class GcpManagedChannelOptions {
             minRpcPerChannel > 0, "Minimum RPCs per channel must be positive.");
         Preconditions.checkArgument(
             maxRpcPerChannel > 0, "Maximum RPCs per channel must be positive.");
+        Preconditions.checkArgument(
+            minRpcPerChannel <= maxRpcPerChannel,
+            "Minimum RPCs per channel must not exceed maximum RPCs per channel.");
         Preconditions.checkArgument(
             !scaleDownInterval.isNegative() && !scaleDownInterval.isZero(),
             "Scale down interval must be positive.");
@@ -421,6 +469,41 @@ public class GcpManagedChannelOptions {
         this.minRpcPerChannel = 0;
         this.maxRpcPerChannel = 0;
         this.scaleDownInterval = Duration.ZERO;
+        return this;
+      }
+
+      /**
+       * Sets the minimum interval between successful scale-up operations. Zero uses the 10-second
+       * default.
+       */
+      public Builder setScaleUpCooldown(Duration scaleUpCooldown) {
+        Preconditions.checkNotNull(scaleUpCooldown, "Scale up cooldown must not be null.");
+        Preconditions.checkArgument(
+            !scaleUpCooldown.isNegative(), "Scale up cooldown must not be negative.");
+        this.scaleUpCooldown = scaleUpCooldown.isZero() ? Duration.ofSeconds(10) : scaleUpCooldown;
+        return this;
+      }
+
+      public Builder setScaleDownConsecutiveLowLoadChecks(int checks) {
+        Preconditions.checkArgument(checks > 0, "Scale down checks must be positive.");
+        this.scaleDownConsecutiveLowLoadChecks = checks;
+        return this;
+      }
+
+      /**
+       * Sets the maximum percentage of active channels added by one scale-up operation. The
+       * percentage cap has a two-channel floor before desired-size and maximum-size clamps.
+       */
+      public Builder setMaxScaleUpPercent(int percent) {
+        Preconditions.checkArgument(
+            percent > 0 && percent <= 100, "Scale up percent must be in (0, 100].");
+        this.maxScaleUpPercent = percent;
+        return this;
+      }
+
+      public Builder setMaxScaleDownChannels(int channels) {
+        Preconditions.checkArgument(channels > 0, "Scale down channel limit must be positive.");
+        this.maxScaleDownChannels = channels;
         return this;
       }
 
@@ -482,8 +565,8 @@ public class GcpManagedChannelOptions {
        * Sets the strategy for picking the least busy channel from the pool.
        *
        * <p>Defaults to {@link ChannelPickStrategy#POWER_OF_TWO} which avoids the thundering herd
-       * problem by randomly sampling two channels and picking the less busy one, with ties broken
-       * by channel warmth (most recently active).
+       * problem by sampling two channels with replacement and picking the less busy one. The first
+       * sample wins ties, with no channel-warmth preference. Inactive samples are retried.
        *
        * <p>Use {@link ChannelPickStrategy#LINEAR_SCAN} to restore the legacy behavior of scanning
        * all channels and always picking the one with the fewest active streams.

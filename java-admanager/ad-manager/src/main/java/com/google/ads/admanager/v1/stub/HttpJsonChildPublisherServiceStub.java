@@ -20,8 +20,16 @@ import static com.google.ads.admanager.v1.ChildPublisherServiceClient.ListChildP
 
 import com.google.ads.admanager.v1.BatchCreateChildPublishersRequest;
 import com.google.ads.admanager.v1.BatchCreateChildPublishersResponse;
+import com.google.ads.admanager.v1.BatchRejectChildPublishersRequest;
+import com.google.ads.admanager.v1.BatchRejectChildPublishersResponse;
+import com.google.ads.admanager.v1.BatchRenegotiateChildPublisherAgreementsRequest;
+import com.google.ads.admanager.v1.BatchRenegotiateChildPublisherAgreementsResponse;
+import com.google.ads.admanager.v1.BatchResendChildPublisherInvitationEmailsRequest;
+import com.google.ads.admanager.v1.BatchResendChildPublisherInvitationEmailsResponse;
 import com.google.ads.admanager.v1.BatchUpdateChildPublishersRequest;
 import com.google.ads.admanager.v1.BatchUpdateChildPublishersResponse;
+import com.google.ads.admanager.v1.BatchWithdrawChildPublishersRequest;
+import com.google.ads.admanager.v1.BatchWithdrawChildPublishersResponse;
 import com.google.ads.admanager.v1.ChildPublisher;
 import com.google.ads.admanager.v1.CreateChildPublisherRequest;
 import com.google.ads.admanager.v1.GetChildPublisherRequest;
@@ -295,6 +303,179 @@ public class HttpJsonChildPublisherServiceStub extends ChildPublisherServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          BatchResendChildPublisherInvitationEmailsRequest,
+          BatchResendChildPublisherInvitationEmailsResponse>
+      batchResendChildPublisherInvitationEmailsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchResendChildPublisherInvitationEmailsRequest,
+                  BatchResendChildPublisherInvitationEmailsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.ChildPublisherService/BatchResendChildPublisherInvitationEmails")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<BatchResendChildPublisherInvitationEmailsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/childPublishers:batchResendInvitationEmails",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchResendChildPublisherInvitationEmailsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchResendChildPublisherInvitationEmailsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<BatchResendChildPublisherInvitationEmailsResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchResendChildPublisherInvitationEmailsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchRenegotiateChildPublisherAgreementsRequest,
+          BatchRenegotiateChildPublisherAgreementsResponse>
+      batchRenegotiateChildPublisherAgreementsMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchRenegotiateChildPublisherAgreementsRequest,
+                  BatchRenegotiateChildPublisherAgreementsResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.ChildPublisherService/BatchRenegotiateChildPublisherAgreements")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<BatchRenegotiateChildPublisherAgreementsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/childPublishers:batchRenegotiateAgreements",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchRenegotiateChildPublisherAgreementsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchRenegotiateChildPublisherAgreementsRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser
+                      .<BatchRenegotiateChildPublisherAgreementsResponse>newBuilder()
+                      .setDefaultInstance(
+                          BatchRenegotiateChildPublisherAgreementsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>
+      batchRejectChildPublishersMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.ChildPublisherService/BatchRejectChildPublishers")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchRejectChildPublishersRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/childPublishers:batchReject",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchRejectChildPublishersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchRejectChildPublishersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchRejectChildPublishersResponse>newBuilder()
+                      .setDefaultInstance(BatchRejectChildPublishersResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+      batchWithdrawChildPublishersMethodDescriptor =
+          ApiMethodDescriptor
+              .<BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+                  newBuilder()
+              .setFullMethodName(
+                  "google.ads.admanager.v1.ChildPublisherService/BatchWithdrawChildPublishers")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchWithdrawChildPublishersRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=networks/*}/childPublishers:batchWithdraw",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchWithdrawChildPublishersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchWithdrawChildPublishersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchWithdrawChildPublishersResponse>newBuilder()
+                      .setDefaultInstance(BatchWithdrawChildPublishersResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetChildPublisherRequest, ChildPublisher> getChildPublisherCallable;
   private final UnaryCallable<ListChildPublishersRequest, ListChildPublishersResponse>
       listChildPublishersCallable;
@@ -308,6 +489,19 @@ public class HttpJsonChildPublisherServiceStub extends ChildPublisherServiceStub
       updateChildPublisherCallable;
   private final UnaryCallable<BatchUpdateChildPublishersRequest, BatchUpdateChildPublishersResponse>
       batchUpdateChildPublishersCallable;
+  private final UnaryCallable<
+          BatchResendChildPublisherInvitationEmailsRequest,
+          BatchResendChildPublisherInvitationEmailsResponse>
+      batchResendChildPublisherInvitationEmailsCallable;
+  private final UnaryCallable<
+          BatchRenegotiateChildPublisherAgreementsRequest,
+          BatchRenegotiateChildPublisherAgreementsResponse>
+      batchRenegotiateChildPublisherAgreementsCallable;
+  private final UnaryCallable<BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>
+      batchRejectChildPublishersCallable;
+  private final UnaryCallable<
+          BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+      batchWithdrawChildPublishersCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -433,6 +627,71 @@ public class HttpJsonChildPublisherServiceStub extends ChildPublisherServiceStub
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<
+            BatchResendChildPublisherInvitationEmailsRequest,
+            BatchResendChildPublisherInvitationEmailsResponse>
+        batchResendChildPublisherInvitationEmailsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchResendChildPublisherInvitationEmailsRequest,
+                    BatchResendChildPublisherInvitationEmailsResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchResendChildPublisherInvitationEmailsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<
+            BatchRenegotiateChildPublisherAgreementsRequest,
+            BatchRenegotiateChildPublisherAgreementsResponse>
+        batchRenegotiateChildPublisherAgreementsTransportSettings =
+            HttpJsonCallSettings
+                .<BatchRenegotiateChildPublisherAgreementsRequest,
+                    BatchRenegotiateChildPublisherAgreementsResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchRenegotiateChildPublisherAgreementsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>
+        batchRejectChildPublishersTransportSettings =
+            HttpJsonCallSettings
+                .<BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>newBuilder()
+                .setMethodDescriptor(batchRejectChildPublishersMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+        batchWithdrawChildPublishersTransportSettings =
+            HttpJsonCallSettings
+                .<BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+                    newBuilder()
+                .setMethodDescriptor(batchWithdrawChildPublishersMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
 
     this.getChildPublisherCallable =
         callableFactory.createUnaryCallable(
@@ -469,6 +728,26 @@ public class HttpJsonChildPublisherServiceStub extends ChildPublisherServiceStub
             batchUpdateChildPublishersTransportSettings,
             settings.batchUpdateChildPublishersSettings(),
             clientContext);
+    this.batchResendChildPublisherInvitationEmailsCallable =
+        callableFactory.createUnaryCallable(
+            batchResendChildPublisherInvitationEmailsTransportSettings,
+            settings.batchResendChildPublisherInvitationEmailsSettings(),
+            clientContext);
+    this.batchRenegotiateChildPublisherAgreementsCallable =
+        callableFactory.createUnaryCallable(
+            batchRenegotiateChildPublisherAgreementsTransportSettings,
+            settings.batchRenegotiateChildPublisherAgreementsSettings(),
+            clientContext);
+    this.batchRejectChildPublishersCallable =
+        callableFactory.createUnaryCallable(
+            batchRejectChildPublishersTransportSettings,
+            settings.batchRejectChildPublishersSettings(),
+            clientContext);
+    this.batchWithdrawChildPublishersCallable =
+        callableFactory.createUnaryCallable(
+            batchWithdrawChildPublishersTransportSettings,
+            settings.batchWithdrawChildPublishersSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -483,6 +762,10 @@ public class HttpJsonChildPublisherServiceStub extends ChildPublisherServiceStub
     methodDescriptors.add(batchCreateChildPublishersMethodDescriptor);
     methodDescriptors.add(updateChildPublisherMethodDescriptor);
     methodDescriptors.add(batchUpdateChildPublishersMethodDescriptor);
+    methodDescriptors.add(batchResendChildPublisherInvitationEmailsMethodDescriptor);
+    methodDescriptors.add(batchRenegotiateChildPublisherAgreementsMethodDescriptor);
+    methodDescriptors.add(batchRejectChildPublishersMethodDescriptor);
+    methodDescriptors.add(batchWithdrawChildPublishersMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -523,6 +806,34 @@ public class HttpJsonChildPublisherServiceStub extends ChildPublisherServiceStub
   public UnaryCallable<BatchUpdateChildPublishersRequest, BatchUpdateChildPublishersResponse>
       batchUpdateChildPublishersCallable() {
     return batchUpdateChildPublishersCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchResendChildPublisherInvitationEmailsRequest,
+          BatchResendChildPublisherInvitationEmailsResponse>
+      batchResendChildPublisherInvitationEmailsCallable() {
+    return batchResendChildPublisherInvitationEmailsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          BatchRenegotiateChildPublisherAgreementsRequest,
+          BatchRenegotiateChildPublisherAgreementsResponse>
+      batchRenegotiateChildPublisherAgreementsCallable() {
+    return batchRenegotiateChildPublisherAgreementsCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>
+      batchRejectChildPublishersCallable() {
+    return batchRejectChildPublishersCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+      batchWithdrawChildPublishersCallable() {
+    return batchWithdrawChildPublishersCallable;
   }
 
   @Override

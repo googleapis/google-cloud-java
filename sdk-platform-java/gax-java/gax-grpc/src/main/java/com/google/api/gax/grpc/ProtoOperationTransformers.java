@@ -63,7 +63,8 @@ public class ProtoOperationTransformers {
                 + operationSnapshot.getErrorMessage(),
             null,
             operationSnapshot.getErrorCode(),
-            false);
+            false,
+            operationSnapshot.getErrorDetails());
       }
 
       if (!(operationSnapshot.getResponse() instanceof Any)) {

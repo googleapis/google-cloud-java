@@ -25,13 +25,13 @@ import com.google.cloud.bigquery.FieldList;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.Schema;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 /** An implementation of {@link BigQueryBaseArray} used to represent Array values from Json data. */
 @InternalApi
 class BigQueryJsonArray extends BigQueryBaseArray {
-  private static final BigQueryTypeCoercer BIGQUERY_TYPE_COERCER =
-      BigQueryTypeCoercionUtility.INSTANCE;
+
   private List<FieldValue> values;
 
   BigQueryJsonArray(Field schema, FieldValue values) {
@@ -44,7 +44,7 @@ class BigQueryJsonArray extends BigQueryBaseArray {
   }
 
   @Override
-  public Object getArray() {
+  public Object getArray() throws SQLException {
     ensureValid();
     LOG.finestTrace("getArray");
     if (this.values == null) {
@@ -54,7 +54,7 @@ class BigQueryJsonArray extends BigQueryBaseArray {
   }
 
   @Override
-  public Object getArray(long index, int count) {
+  public Object getArray(long index, int count) throws SQLException {
     ensureValid();
     LOG.finestTrace("getArray");
     if (this.values == null) {
@@ -98,11 +98,11 @@ class BigQueryJsonArray extends BigQueryBaseArray {
   }
 
   @Override
-  Object getCoercedValue(int index) {
+  Object getCoercedValue(int index) throws SQLException {
     FieldValue fieldValue = this.values.get(index);
     return this.arrayOfStruct
         ? new BigQueryJsonStruct(
             this.schema.getSubFields(), fieldValue, this.LOG.getJsonStructLogger())
-        : BIGQUERY_TYPE_COERCER.coerceTo(getTargetClass(), fieldValue, this.LOG);
+        : BigQueryTypeRegistry.convert(fieldValue, getTargetClass());
   }
 }

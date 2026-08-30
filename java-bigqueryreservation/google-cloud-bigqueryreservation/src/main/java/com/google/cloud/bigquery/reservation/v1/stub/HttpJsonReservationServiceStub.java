@@ -72,6 +72,7 @@ import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse;
 import com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -1211,6 +1212,48 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateReservationGroupRequest, ReservationGroup>
+      updateReservationGroupMethodDescriptor =
+          ApiMethodDescriptor.<UpdateReservationGroupRequest, ReservationGroup>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.bigquery.reservation.v1.ReservationService/UpdateReservationGroup")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateReservationGroupRequest>newBuilder()
+                      .setPath(
+                          "/v1/{reservationGroup.name=projects/*/locations/*/reservationGroups/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateReservationGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "reservationGroup.name",
+                                request.getReservationGroup().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateReservationGroupRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("reservationGroup", request.getReservationGroup(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ReservationGroup>newBuilder()
+                      .setDefaultInstance(ReservationGroup.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateReservationRequest, Reservation> createReservationCallable;
   private final UnaryCallable<ListReservationsRequest, ListReservationsResponse>
       listReservationsCallable;
@@ -1268,6 +1311,8 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
       listReservationGroupsCallable;
   private final UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsPagedResponse>
       listReservationGroupsPagedCallable;
+  private final UnaryCallable<UpdateReservationGroupRequest, ReservationGroup>
+      updateReservationGroupCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -1684,6 +1729,20 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<UpdateReservationGroupRequest, ReservationGroup>
+        updateReservationGroupTransportSettings =
+            HttpJsonCallSettings.<UpdateReservationGroupRequest, ReservationGroup>newBuilder()
+                .setMethodDescriptor(updateReservationGroupMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "reservation_group.name",
+                          String.valueOf(request.getReservationGroup().getName()));
+                      return builder.build();
+                    })
+                .build();
 
     this.createReservationCallable =
         callableFactory.createUnaryCallable(
@@ -1836,6 +1895,11 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
             listReservationGroupsTransportSettings,
             settings.listReservationGroupsSettings(),
             clientContext);
+    this.updateReservationGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateReservationGroupTransportSettings,
+            settings.updateReservationGroupSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1873,6 +1937,7 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
     methodDescriptors.add(getReservationGroupMethodDescriptor);
     methodDescriptors.add(deleteReservationGroupMethodDescriptor);
     methodDescriptors.add(listReservationGroupsMethodDescriptor);
+    methodDescriptors.add(updateReservationGroupMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -2067,6 +2132,12 @@ public class HttpJsonReservationServiceStub extends ReservationServiceStub {
   public UnaryCallable<ListReservationGroupsRequest, ListReservationGroupsPagedResponse>
       listReservationGroupsPagedCallable() {
     return listReservationGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateReservationGroupRequest, ReservationGroup>
+      updateReservationGroupCallable() {
+    return updateReservationGroupCallable;
   }
 
   @Override

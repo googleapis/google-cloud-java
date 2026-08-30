@@ -48,7 +48,7 @@ import com.google.cloud.bigquery.TableConstraints;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.cloud.bigquery.jdbc.BigQueryJdbcTypeMappings.ColumnTypeInfo;
+import com.google.cloud.bigquery.jdbc.BigQueryTypeRegistry.ColumnTypeInfo;
 import com.google.cloud.bigquery.jdbc.utils.BigQueryJdbcVersionUtility;
 import io.opentelemetry.context.Context;
 import java.io.ByteArrayOutputStream;
@@ -3976,7 +3976,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       LOG.warning("Null BigQuery type encountered. Mapping to STRING.");
       return new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null);
     }
-    ColumnTypeInfo info = BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(bqType);
+    ColumnTypeInfo info = BigQueryTypeRegistry.getColumnTypeInfo(bqType);
     if (info == null) {
       LOG.warning("Unknown BigQuery type encountered: " + bqType.name() + ". Mapping to STRING.");
       return new ColumnTypeInfo(Types.NVARCHAR, "STRING", null, null, null);

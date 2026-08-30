@@ -426,7 +426,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    * @param quotaProjectId a quotaProjectId, a project id to be used for billing purposes
    */
   @Deprecated
-  protected GoogleCredentials(AccessToken accessToken, @Nullable String quotaProjectId) {
+  protected GoogleCredentials(@Nullable AccessToken accessToken, @Nullable String quotaProjectId) {
     this(
         GoogleCredentials.newBuilder()
             .setAccessToken(accessToken)
