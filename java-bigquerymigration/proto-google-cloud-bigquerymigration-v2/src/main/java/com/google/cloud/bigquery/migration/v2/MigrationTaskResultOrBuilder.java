@@ -67,5 +67,75 @@ public interface MigrationTaskResultOrBuilder
   com.google.cloud.bigquery.migration.v2.TranslationTaskResultOrBuilder
       getTranslationTaskResultOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The map of task output types to the task outputs, e.g. "LINEAGE".
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+   * </code>
+   */
+  int getTaskOutputsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * The map of task output types to the task outputs, e.g. "LINEAGE".
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+   * </code>
+   */
+  boolean containsTaskOutputs(java.lang.String key);
+
+  /** Use {@link #getTaskOutputsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+      getTaskOutputs();
+
+  /**
+   *
+   *
+   * <pre>
+   * The map of task output types to the task outputs, e.g. "LINEAGE".
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.bigquery.migration.v2.TaskOutput>
+      getTaskOutputsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * The map of task output types to the task outputs, e.g. "LINEAGE".
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.bigquery.migration.v2.TaskOutput getTaskOutputsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.bigquery.migration.v2.TaskOutput defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * The map of task output types to the task outputs, e.g. "LINEAGE".
+   * </pre>
+   *
+   * <code>map&lt;string, .google.cloud.bigquery.migration.v2.TaskOutput&gt; task_outputs = 3;
+   * </code>
+   */
+  com.google.cloud.bigquery.migration.v2.TaskOutput getTaskOutputsOrThrow(java.lang.String key);
+
   com.google.cloud.bigquery.migration.v2.MigrationTaskResult.DetailsCase getDetailsCase();
 }

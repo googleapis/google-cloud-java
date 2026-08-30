@@ -445,7 +445,7 @@ public enum TransformationType implements com.google.protobuf.ProtocolMessageEnu
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(3);
   }
 
   private static final TransformationType[] VALUES = values();
