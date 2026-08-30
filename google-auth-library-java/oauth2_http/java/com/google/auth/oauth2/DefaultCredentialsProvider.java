@@ -56,7 +56,9 @@ import org.jspecify.annotations.Nullable;
  */
 @NullMarked
 class DefaultCredentialsProvider {
+  static final Logger LOGGER = Logger.getLogger(DefaultCredentialsProvider.class.getName());
   static final DefaultCredentialsProvider DEFAULT = new DefaultCredentialsProvider();
+
   static final String CREDENTIAL_ENV_VAR = "GOOGLE_APPLICATION_CREDENTIALS";
   static final String QUOTA_PROJECT_ENV_VAR = "GOOGLE_CLOUD_QUOTA_PROJECT";
 
@@ -66,14 +68,11 @@ class DefaultCredentialsProvider {
   static final String CLOUD_SHELL_ENV_VAR = "DEVSHELL_CLIENT_PORT";
   static final String SKIP_APP_ENGINE_ENV_VAR = "GOOGLE_APPLICATION_CREDENTIALS_SKIP_APP_ENGINE";
   static final String SPECIFICATION_VERSION = System.getProperty("java.specification.version");
-  static final String GAE_RUNTIME_VERSION =
+  static final @Nullable String GAE_RUNTIME_VERSION =
       System.getProperty("com.google.appengine.runtime.version");
-  static final String RUNTIME_JETTY_LOGGER = System.getProperty("org.eclipse.jetty.util.log.class");
-  static final Logger LOGGER = Logger.getLogger(DefaultCredentialsProvider.class.getName());
+  static final @Nullable String RUNTIME_JETTY_LOGGER = System.getProperty("org.eclipse.jetty.util.log.class");
   static final String NO_GCE_CHECK_ENV_VAR = "NO_GCE_CHECK";
   static final String GCE_METADATA_HOST_ENV_VAR = "GCE_METADATA_HOST";
-  static final String CLOUDSDK_CLIENT_ID =
-      "764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com";
   static final String CLOUDSDK_CREDENTIALS_WARNING =
       "You are authenticating using user credentials. "
           + "For production, we recommend using service account credentials.\n\n"
@@ -136,7 +135,7 @@ class DefaultCredentialsProvider {
     // First try the environment variable
     GoogleCredentials credentials = null;
     String credentialsPath = getEnv(CREDENTIAL_ENV_VAR);
-    if (credentialsPath != null && credentialsPath.length() > 0) {
+    if (credentialsPath != null && !credentialsPath.isEmpty()) {
       LOGGER.log(
           Level.FINE,
           String.format("Attempting to load credentials from file: %s", credentialsPath));
@@ -234,7 +233,7 @@ class DefaultCredentialsProvider {
     if (credentials != null) {
       String quotaFromEnv = getEnv(QUOTA_PROJECT_ENV_VAR);
 
-      if (quotaFromEnv != null && quotaFromEnv.trim().length() > 0) {
+      if (quotaFromEnv != null && !quotaFromEnv.trim().isEmpty()) {
         credentials = credentials.createWithQuotaProject(quotaFromEnv);
       }
     }
@@ -357,8 +356,8 @@ class DefaultCredentialsProvider {
     return System.getenv(name);
   }
 
-  @Nullable String getProperty(String property, @Nullable String def) {
-    return System.getProperty(property, def);
+  String getProperty(String property, String defaultValue) {
+    return System.getProperty(property, defaultValue);
   }
 
   boolean isFile(File file) {

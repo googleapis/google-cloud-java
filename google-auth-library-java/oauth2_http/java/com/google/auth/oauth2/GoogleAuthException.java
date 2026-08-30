@@ -57,7 +57,7 @@ class GoogleAuthException extends IOException implements Retryable {
    * @param cause The cause (which is saved for later retrieval by the {@link #getCause()} method).
    *     (A null value is permitted, and indicates that the cause is nonexistent or unknown.)
    */
-  GoogleAuthException(boolean isRetryable, int retryCount, String message, Throwable cause) {
+  GoogleAuthException(boolean isRetryable, int retryCount, String message, @Nullable Throwable cause) {
     super(message, cause);
     this.isRetryable = isRetryable;
     this.retryCount = retryCount;
