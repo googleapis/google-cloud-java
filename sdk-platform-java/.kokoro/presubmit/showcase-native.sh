@@ -38,12 +38,23 @@ mvn install --projects '!gapic-generator-java' \
 SHARED_DEPS_VERSION=$(parse_pom_version java-shared-dependencies)
 
 # Run showcase integration tests in GraalVM
-pushd java-showcase/gapic-showcase
-SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)
-popd
+SHOWCASE_POM="java-showcase/gapic-showcase/pom.xml"
+if [[ ! -f "${SHOWCASE_POM}" && -f "../java-showcase/gapic-showcase/pom.xml" ]]; then
+  SHOWCASE_POM="../java-showcase/gapic-showcase/pom.xml"
+fi
+SHOWCASE_VERSION=$(sed -n 's:.*<gapic-showcase\.version>[[:space:]]*\([^<[:space:]]*\).*:\1:p; /<gapic-showcase\.version>/q' "${SHOWCASE_POM}")
+if [[ -z "${SHOWCASE_VERSION}" ]]; then
+  echo "Error: Failed to parse gapic-showcase.version from ${SHOWCASE_POM}" >&2
+  exit 1
+fi
+
 # Start showcase server
 mkdir -p /usr/src/showcase
+# Use '--fail' so curl exits with an error status on HTTP failures (e.g., 404/500).
+# Without '--fail', curl writes the error response body (HTML) to the tar.gz file
+# and returns exit code 0, which results in cryptic tar decompression failures.
 curl \
+  --fail \
   --location https://github.com/googleapis/gapic-showcase/releases/download/v"${SHOWCASE_VERSION}"/gapic-showcase-"${SHOWCASE_VERSION}"-linux-amd64.tar.gz \
   --output /usr/src/showcase/showcase-"${SHOWCASE_VERSION}"-linux-amd64.tar.gz
 pushd /usr/src/showcase/
