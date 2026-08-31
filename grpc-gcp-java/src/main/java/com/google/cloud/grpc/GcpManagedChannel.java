@@ -87,6 +87,11 @@ public class GcpManagedChannel extends ManagedChannel {
   private static final Logger logger = Logger.getLogger(GcpManagedChannel.class.getName());
   static final AtomicInteger channelPoolIndex = new AtomicInteger();
 
+  @FunctionalInterface
+  interface NanoClock {
+    long get();
+  }
+
   // Counter for tracking channel ids.
   final AtomicInteger nextChannelId = new AtomicInteger();
   static final int DEFAULT_MAX_CHANNEL = 10;
@@ -173,6 +178,9 @@ public class GcpManagedChannel extends ManagedChannel {
   private int maxScaleUpPercent = 30;
   private int maxScaleDownChannels = 2;
   private Duration drainIdleGrace = Duration.ofMinutes(1);
+  private int errorPenaltyStep = 5;
+  private Duration errorPenaltyDuration = Duration.ofSeconds(5);
+  private long errorPenaltyDurationNanos = Duration.ofSeconds(5).toNanos();
   private boolean isDynamicScalingEnabled = false;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
   private GcpManagedChannelOptions.ChannelPickStrategy channelPickStrategy =
@@ -202,6 +210,7 @@ public class GcpManagedChannel extends ManagedChannel {
   // One-slot scale-up signal. At most one worker mutates pool size at a time.
   private final AtomicBoolean scaleUpSignalPending = new AtomicBoolean();
   private final AtomicBoolean scaleUpWorkerRunning = new AtomicBoolean();
+  private final AtomicLong totalErrorPenaltyLoad = new AtomicLong();
 
   private volatile long lastScaleUpNanos = Long.MIN_VALUE;
   private int consecutiveLowLoadChecks;
@@ -295,14 +304,14 @@ public class GcpManagedChannel extends ManagedChannel {
   private AtomicLong scaleDownCount = new AtomicLong();
 
   // Clock supplier for nanoTime, injectable for testing.
-  private Supplier<Long> nanoClock = System::nanoTime;
+  private NanoClock nanoClock = System::nanoTime;
   private IntUnaryOperator candidateIndexPicker =
       bound -> ThreadLocalRandom.current().nextInt(bound);
   @Nullable private volatile Consumer<ChannelRef> pickerValidationHookForTest;
   @Nullable private volatile Runnable inactiveMappingRemovalHookForTest;
 
   @VisibleForTesting
-  void setNanoClock(Supplier<Long> nanoClock) {
+  void setNanoClock(NanoClock nanoClock) {
     this.nanoClock = nanoClock;
   }
 
@@ -466,6 +475,9 @@ public class GcpManagedChannel extends ManagedChannel {
       int desiredSize = Math.max(minSize, ceilDiv(activeLoad, targetRpcPerChannel()));
       int removeCount = Math.min(maxScaleDownChannels, Math.max(0, channelCount - desiredSize));
       removedChannels = removeChannels(removeCount);
+    }
+    for (ChannelRef channelRef : removedChannels) {
+      channelRef.clearErrorPenalty();
     }
     List<String> keysToUnbind =
         affinityKeyToChannelRef.entrySet().stream()
@@ -632,6 +644,43 @@ public class GcpManagedChannel extends ManagedChannel {
     return (int) Math.min(Integer.MAX_VALUE, 1 + ((numerator - 1) / denominator));
   }
 
+  private static int ceilMultiplyDivide(int factor, long numerator, long denominator) {
+    if (factor <= 0 || numerator <= 0 || denominator <= 0) {
+      return 0;
+    }
+    if (numerator >= denominator) {
+      return factor;
+    }
+    if (numerator <= Long.MAX_VALUE / factor) {
+      long product = factor * numerator;
+      return (int) (product / denominator + (product % denominator == 0 ? 0 : 1));
+    }
+
+    // Overflow-safe binary long division for unusually large configured durations or penalties.
+    long quotient = 0;
+    long remainder = 0;
+    for (int bit = Integer.highestOneBit(factor); bit != 0; bit >>>= 1) {
+      quotient <<= 1;
+      long denominatorMinusRemainder = denominator - remainder;
+      if (remainder >= denominatorMinusRemainder) {
+        remainder -= denominatorMinusRemainder;
+        quotient++;
+      } else {
+        remainder += remainder;
+      }
+      if ((factor & bit) != 0) {
+        long denominatorMinusNumerator = denominator - numerator;
+        if (remainder >= denominatorMinusNumerator) {
+          remainder -= denominatorMinusNumerator;
+          quotient++;
+        } else {
+          remainder += numerator;
+        }
+      }
+    }
+    return (int) (quotient + (remainder == 0 ? 0 : 1));
+  }
+
   private int targetRpcPerChannel() {
     return Math.max(1, (minRpcPerChannel + maxRpcPerChannel) / 2);
   }
@@ -646,11 +695,12 @@ public class GcpManagedChannel extends ManagedChannel {
     return load;
   }
 
-  private long pickerLoad(List<ChannelRef> refs) {
+  private long pickerLoad(List<ChannelRef> refs, long now) {
+    // Expiry accounting is swept before dynamicUpscale acquires the pool monitor.
     long load = 0;
     for (ChannelRef channelRef : refs) {
       if (channelRef.isActive()) {
-        load += channelRef.getPickerLoad();
+        load += channelRef.getPickerLoad(now);
       }
     }
     return load;
@@ -689,6 +739,9 @@ public class GcpManagedChannel extends ManagedChannel {
       maxScaleUpPercent = poolOptions.getMaxScaleUpPercent();
       maxScaleDownChannels = poolOptions.getMaxScaleDownChannels();
       drainIdleGrace = poolOptions.getDrainIdleGrace();
+      errorPenaltyStep = poolOptions.getErrorPenaltyStep();
+      errorPenaltyDuration = poolOptions.getErrorPenaltyDuration();
+      errorPenaltyDurationNanos = errorPenaltyDuration.toNanos();
       isDynamicScalingEnabled =
           minRpcPerChannel > 0 && maxRpcPerChannel > 0 && !scaleDownInterval.isZero();
       channelPickStrategy = poolOptions.getChannelPickStrategy();
@@ -1933,12 +1986,12 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Pick a {@link ChannelRef} (and create a new one if necessary). If notReadyFallbackEnabled is
    * true in the {@link GcpResiliencyOptions} then instead of a channel in a non-READY state another
-   * channel in the READY state and having fewer than maximum allowed number of active streams will
-   * be provided if available. Subsequent calls with the same affinity key will provide the same
+   * channel in the READY state and having picker load below the maximum allowed threshold will be
+   * provided if available. Subsequent calls with the same affinity key will provide the same
    * fallback channel as long as the fallback channel is in the READY state.
    *
    * @param key affinity key. If it is specified, pick the ChannelRef bound with the affinity key.
-   *     Otherwise pick the one with the smallest number of streams.
+   *     Otherwise pick using the lowest picker load: active streams plus active error penalty.
    */
   protected ChannelRef getChannelRef(@Nullable String key) {
     if (key == null || key.isEmpty()) {
@@ -2058,11 +2111,12 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     ChannelRef leastBusyChannelRef = null;
     int leastBusyStreams = Integer.MAX_VALUE;
+    long now = nanoClock.get();
     for (ChannelRef candidate : channelRefs) {
       if (candidate == excludedChannelRef || !candidate.isActive()) {
         continue;
       }
-      int streams = candidate.getPickerLoad();
+      int streams = candidate.getPickerLoad(now);
       if (leastBusyChannelRef == null || streams < leastBusyStreams) {
         leastBusyChannelRef = candidate;
         leastBusyStreams = streams;
@@ -2131,8 +2185,11 @@ public class GcpManagedChannel extends ManagedChannel {
         || activeChannels >= maxSize) {
       return;
     }
-    if (selectedChannel.getActiveStreamsCount() <= maxRpcPerChannel
-        && ((double) totalActiveStreams.get() / activeChannels) <= maxRpcPerChannel) {
+    long now = nanoClock.get();
+    int selectedLoad = selectedChannel.getPickerLoad(now);
+    long totalLoad = (long) totalActiveStreams.get() + totalErrorPenaltyLoad.get();
+    // A pool at the average cap has no spare capacity, including when penalty represents loss.
+    if (selectedLoad <= maxRpcPerChannel && totalLoad < (long) activeChannels * maxRpcPerChannel) {
       return;
     }
     signalScaleUp();
@@ -2171,12 +2228,15 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private void dynamicUpscale() {
+    long now = nanoClock.get();
+    for (ChannelRef channelRef : channelRefs) {
+      channelRef.currentErrorPenalty(now);
+    }
     final int channelsToBuild;
     synchronized (this) {
       if (!isDynamicScalingEnabled || shuttingDown || channelRefs.size() >= maxSize) {
         return;
       }
-      long now = nanoClock.get();
       if (lastScaleUpNanos != Long.MIN_VALUE
           && now - lastScaleUpNanos < scaleUpCooldown.toNanos()) {
         return;
@@ -2187,7 +2247,7 @@ public class GcpManagedChannel extends ManagedChannel {
       if (active == 0) {
         return;
       }
-      int desired = ceilDiv(pickerLoad(activeChannels), targetRpcPerChannel());
+      int desired = ceilDiv(pickerLoad(activeChannels, now), targetRpcPerChannel());
       int add = desired - active;
       // Small pools may add two channels per event before percentage growth dominates.
       int percentCap = Math.max(2, ceilDiv((long) active * maxScaleUpPercent, 100));
@@ -2248,8 +2308,8 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Pick a {@link ChannelRef} (and create a new one if necessary). If notReadyFallbackEnabled is
    * true in the {@link GcpResiliencyOptions} then instead of a channel in a non-READY state another
-   * channel in the READY state and having fewer than maximum allowed number of active streams will
-   * be provided if available.
+   * channel in the READY state and having picker load below the maximum allowed threshold will be
+   * provided if available.
    */
   private ChannelRef pickLeastBusyChannel(boolean forFallback) {
     // Retries cover post-snapshot deactivation, not draining density.
@@ -2272,7 +2332,8 @@ public class GcpManagedChannel extends ManagedChannel {
    * GcpManagedChannelOptions.ChannelPickStrategy}.
    */
   private ChannelRef pickLeastBusyNoFallback() {
-    ChannelRef channelCandidate = pickFromCandidates(channelRefs);
+    long now = nanoClock.get();
+    ChannelRef channelCandidate = pickFromCandidates(channelRefs, now);
     if (!isDynamicScalingEnabled && channelRefs.size() < maxSize) {
       // With power-of-two, streams distribute approximately (not exactly) evenly.
       // Use max streams for scale-up: if ANY channel hits the watermark, it's overloaded now
@@ -2282,7 +2343,7 @@ public class GcpManagedChannel extends ManagedChannel {
       int streams =
           channelPickStrategy == GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO
               ? getMaxActiveStreams()
-              : channelCandidate.getPickerLoad();
+              : channelCandidate.getPickerLoad(now);
       if (streams >= maxConcurrentStreamsLowWatermark) {
         ChannelRef newChannel = tryCreateNewChannel();
         if (newChannel != null) {
@@ -2304,12 +2365,13 @@ public class GcpManagedChannel extends ManagedChannel {
     ChannelRef overallCandidate = null;
     int overallMinStreams = Integer.MAX_VALUE;
     int readyMaxStreams = 0;
+    long now = nanoClock.get();
 
     for (ChannelRef channelRef : channelRefs) {
       if (!channelRef.isActive()) {
         continue;
       }
-      int cnt = channelRef.getPickerLoad();
+      int cnt = channelRef.getPickerLoad(now);
       if (overallCandidate == null || cnt < overallMinStreams) {
         overallMinStreams = cnt;
         overallCandidate = channelRef;
@@ -2323,7 +2385,7 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     if (overallCandidate == null) {
-      return leastLoadedActiveChannel(channelRefs);
+      return leastLoadedActiveChannel(channelRefs, now);
     }
 
     // For scale-up, use maxStreams among ready channels (consistent with non-fallback path).
@@ -2344,7 +2406,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
     if (!readyCandidates.isEmpty()) {
       // Apply power-of-two among eligible channels to avoid thundering herd.
-      ChannelRef readyCandidate = pickFromCandidates(readyCandidates);
+      ChannelRef readyCandidate = pickFromCandidates(readyCandidates, now);
       if (!forFallback && readyCandidate.getId() != overallCandidate.getId()) {
         if (logger.isLoggable(Level.FINEST)) {
           logger.finest(
@@ -2377,6 +2439,10 @@ public class GcpManagedChannel extends ManagedChannel {
    */
   @VisibleForTesting
   ChannelRef pickFromCandidates(List<ChannelRef> candidates) {
+    return pickFromCandidates(candidates, nanoClock.get());
+  }
+
+  private ChannelRef pickFromCandidates(List<ChannelRef> candidates, long now) {
     Object[] snapshot = candidates.toArray();
     int size = snapshot.length;
     if (channelPickStrategy == GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO) {
@@ -2386,21 +2452,30 @@ public class GcpManagedChannel extends ManagedChannel {
         if (!first.isActive() || !second.isActive()) {
           continue;
         }
-        ChannelRef picked = pickLessBusy(first, second);
+        ChannelRef picked = pickLessBusy(first, second, now);
         if (picked.isActive()) {
           return picked;
         }
       }
     }
-    return leastLoadedActiveChannel(candidates);
+    return leastLoadedActiveChannel(candidates, now);
   }
 
   private ChannelRef leastLoadedActiveChannel(List<ChannelRef> candidates) {
+    return leastLoadedActiveChannel(candidates, nanoClock.get());
+  }
+
+  private ChannelRef leastLoadedActiveChannel(List<ChannelRef> candidates, long now) {
     ChannelRef best = null;
+    int bestLoad = Integer.MAX_VALUE;
     for (ChannelRef candidate : candidates) {
-      if (candidate.isActive()
-          && (best == null || candidate.getPickerLoad() < best.getPickerLoad())) {
+      if (!candidate.isActive()) {
+        continue;
+      }
+      int candidateLoad = candidate.getPickerLoad(now);
+      if (best == null || candidateLoad < bestLoad) {
         best = candidate;
+        bestLoad = candidateLoad;
       }
     }
     if (best != null) {
@@ -2410,8 +2485,8 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @VisibleForTesting
-  ChannelRef pickLessBusy(ChannelRef first, ChannelRef second) {
-    return first.getPickerLoad() <= second.getPickerLoad() ? first : second;
+  ChannelRef pickLessBusy(ChannelRef first, ChannelRef second, long now) {
+    return first.getPickerLoad(now) <= second.getPickerLoad(now) ? first : second;
   }
 
   @Override
@@ -2822,6 +2897,10 @@ public class GcpManagedChannel extends ManagedChannel {
     private final long createdNanos = nanoClock.get();
     private volatile long lastActivityNanos = createdNanos;
     private long lastResponseNanos = createdNanos;
+
+    private volatile int errorPenaltyLoad;
+    private volatile long errorPenaltyExpiresAtNanos;
+
     private final AtomicInteger deadlineExceededCount = new AtomicInteger();
     private final AtomicLong okCalls = new AtomicLong();
     private final AtomicLong errCalls = new AtomicLong();
@@ -2938,6 +3017,7 @@ public class GcpManagedChannel extends ManagedChannel {
       if (unresponsiveDetectionEnabled) {
         detectUnresponsiveConnection(startNanos, status, fromClientSide);
       }
+      applyErrorPenalty(status);
       if (actStreams == 0 && !isActive()) {
         scheduleDrain(this);
       }
@@ -2957,7 +3037,116 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     protected int getPickerLoad() {
-      return getActiveStreamsCount();
+      return (int)
+          Math.min(Integer.MAX_VALUE, (long) getActiveStreamsCount() + currentErrorPenalty());
+    }
+
+    @VisibleForTesting
+    int currentErrorPenalty() {
+      int penalty = errorPenaltyLoad;
+      if (penalty == 0) {
+        return 0;
+      }
+      return currentErrorPenalty(nanoClock.get());
+    }
+
+    private int currentErrorPenalty(long now) {
+      int penalty = errorPenaltyLoad;
+      long expiresAtNanos = errorPenaltyExpiresAtNanos;
+      if (penalty == 0 || expiresAtNanos == 0) {
+        return 0;
+      }
+      if (now - expiresAtNanos < 0) {
+        return decayedErrorPenalty(penalty, now, expiresAtNanos);
+      }
+      int expiredPenalty;
+      synchronized (this) {
+        penalty = errorPenaltyLoad;
+        expiresAtNanos = errorPenaltyExpiresAtNanos;
+        if (penalty == 0 || expiresAtNanos == 0) {
+          return 0;
+        }
+        if (now - expiresAtNanos < 0) {
+          return decayedErrorPenalty(penalty, now, expiresAtNanos);
+        }
+        errorPenaltyLoad = 0;
+        errorPenaltyExpiresAtNanos = 0;
+        expiredPenalty = penalty;
+      }
+      totalErrorPenaltyLoad.addAndGet(-expiredPenalty);
+      return 0;
+    }
+
+    private int getPickerLoad(long now) {
+      int penalty = errorPenaltyLoad;
+      long expiresAtNanos = errorPenaltyExpiresAtNanos;
+      if (penalty != 0) {
+        penalty = decayedErrorPenalty(penalty, now, expiresAtNanos);
+      }
+      return (int) Math.min(Integer.MAX_VALUE, (long) getActiveStreamsCount() + penalty);
+    }
+
+    private int decayedErrorPenalty(int penalty, long now, long expiresAtNanos) {
+      if (expiresAtNanos == 0) {
+        return 0;
+      }
+      long remainingNanos = expiresAtNanos - now;
+      if (remainingNanos <= 0) {
+        return 0;
+      }
+      // Picker steering decays smoothly. Aggregate accounting deliberately retains the full
+      // contribution until expiry or clear, making scale-up load a conservative upper bound while
+      // preserving one atomic net delta per aggregate transition.
+      return ceilMultiplyDivide(
+          penalty, Math.min(remainingNanos, errorPenaltyDurationNanos), errorPenaltyDurationNanos);
+    }
+
+    private void applyErrorPenalty(Status status) {
+      if (!isDynamicScalingEnabled
+          || !active
+          || errorPenaltyStep == 0
+          || (status.getCode() != Code.UNAVAILABLE
+              && status.getCode() != Code.RESOURCE_EXHAUSTED)) {
+        return;
+      }
+      long now = nanoClock.get();
+      long addedPenalty;
+      synchronized (this) {
+        if (!active) {
+          return;
+        }
+        int previousContribution = errorPenaltyLoad;
+        long previousExpiry = errorPenaltyExpiresAtNanos;
+        int current =
+            previousContribution != 0 && previousExpiry != 0 && now - previousExpiry < 0
+                ? previousContribution
+                : 0;
+        int next = (int) Math.min(maxRpcPerChannel, (long) current + errorPenaltyStep);
+        long nextExpiry = now + errorPenaltyDurationNanos;
+        // Zero is reserved as the cleared expiry sentinel.
+        errorPenaltyExpiresAtNanos = nextExpiry == 0 ? 1 : nextExpiry;
+        errorPenaltyLoad = next;
+        addedPenalty = (long) next - previousContribution;
+      }
+      if (addedPenalty != 0) {
+        totalErrorPenaltyLoad.addAndGet(addedPenalty);
+      }
+      if (addedPenalty > 0) {
+        maybeSignalScaleUp(this);
+      }
+    }
+
+    private void clearErrorPenalty() {
+      int clearedPenalty;
+      synchronized (this) {
+        clearedPenalty = errorPenaltyLoad;
+        if (clearedPenalty == 0) {
+          return;
+        }
+        errorPenaltyLoad = 0;
+        errorPenaltyExpiresAtNanos = 0;
+      }
+      totalErrorPenaltyLoad.addAndGet(-clearedPenalty);
     }
 
     protected long getAndResetOkCalls() {
