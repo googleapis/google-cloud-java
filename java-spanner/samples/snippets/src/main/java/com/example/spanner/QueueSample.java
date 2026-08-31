@@ -37,24 +37,21 @@ import java.util.concurrent.ExecutionException;
 
 public class QueueSample {
 
-  static void createQueueDatabase(DatabaseAdminClient dbAdminClient, String instanceId, String databaseId) {
-    try {
-      System.out.println("Creating database with a queue...");
-      Database database =
-          dbAdminClient
-              .createDatabase(
-                  instanceId,
-                  databaseId,
-                  Collections.singletonList(
-                      "CREATE Queue MyQueue ("
-                          + "  Id INT64 NOT NULL,"
-                          + "  Payload BYTES(MAX) NOT NULL,"
-                          + ") PRIMARY KEY (Id), OPTIONS (receive_mode = 'PULL')"))
-              .get();
-      System.out.println("Created database [" + database.getId() + "]");
-    } catch (ExecutionException | InterruptedException e) {
-      System.err.println("Database creation failed: " + e.getMessage());
-    }
+  static void createQueueDatabase(DatabaseAdminClient dbAdminClient, String instanceId, String databaseId)
+      throws ExecutionException, InterruptedException {
+    System.out.println("Creating database with a queue...");
+    Database database =
+        dbAdminClient
+            .createDatabase(
+                instanceId,
+                databaseId,
+                Collections.singletonList(
+                    "CREATE Queue MyQueue ("
+                        + "  Id INT64 NOT NULL,"
+                        + "  Payload BYTES(MAX) NOT NULL,"
+                        + ") PRIMARY KEY (Id), OPTIONS (receive_mode = 'PULL')"))
+            .get();
+    System.out.println("Created database [" + database.getId() + "]");
   }
 
   static void sendToQueueWithMutation(DatabaseClient dbClient) {
