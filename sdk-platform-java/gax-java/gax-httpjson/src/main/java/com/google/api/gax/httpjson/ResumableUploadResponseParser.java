@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -27,68 +27,57 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.google.api.gax.grpc;
+package com.google.api.gax.httpjson;
 
-import com.google.api.gax.longrunning.OperationSnapshot;
-import com.google.api.gax.rpc.ErrorDetails;
-import com.google.api.gax.rpc.StatusCode;
-import com.google.longrunning.Operation;
-import io.grpc.Status;
+import com.google.common.io.CharStreams;
+import com.google.protobuf.TypeRegistry;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 import org.jspecify.annotations.NullMarked;
 
 /**
- * Implementation of OperationSnapshot based on gRPC.
- *
- * <p>Package-private for internal usage.
+ * An {@link HttpResponseParser} that reads the HTTP response body as a UTF-8 String for resumable
+ * upload operations.
  */
 @NullMarked
-class GrpcOperationSnapshot implements OperationSnapshot {
+class ResumableUploadResponseParser implements HttpResponseParser<String> {
 
-  private final Operation operation;
+  private static final ResumableUploadResponseParser INSTANCE = new ResumableUploadResponseParser();
 
-  public GrpcOperationSnapshot(Operation operation) {
-    this.operation = operation;
+  static ResumableUploadResponseParser create() {
+    return INSTANCE;
+  }
+
+  private ResumableUploadResponseParser() {}
+
+  @Override
+  public String parse(InputStream httpContent) {
+    try (Reader reader = new InputStreamReader(httpContent, StandardCharsets.UTF_8)) {
+      return CharStreams.toString(reader);
+    } catch (IOException e) {
+      throw new RestSerializationException("Failed to read response body as string", e);
+    }
   }
 
   @Override
-  public String getName() {
-    return operation.getName();
+  public String parse(InputStream httpContent, TypeRegistry registry) {
+    return parse(httpContent);
   }
 
   @Override
-  public Object getMetadata() {
-    return operation.getMetadata();
+  public String parse(Reader httpContent, TypeRegistry registry) {
+    try {
+      return CharStreams.toString(httpContent);
+    } catch (IOException e) {
+      throw new RestSerializationException("Failed to read response body as string", e);
+    }
   }
 
   @Override
-  public boolean isDone() {
-    return operation.getDone();
-  }
-
-  @Override
-  public Object getResponse() {
-    return operation.getResponse();
-  }
-
-  @Override
-  public StatusCode getErrorCode() {
-    return GrpcStatusCode.of(Status.fromCodeValue(operation.getError().getCode()).getCode());
-  }
-
-  @Override
-  public String getErrorMessage() {
-    return operation.getError().getMessage();
-  }
-
-  /** {@inheritDoc} */
-  @Override
-  public ErrorDetails getErrorDetails() {
-    return ErrorDetails.builder()
-        .setRawErrorMessages(operation.getError().getDetailsList())
-        .build();
-  }
-
-  public static GrpcOperationSnapshot create(Operation operation) {
-    return new GrpcOperationSnapshot(operation);
+  public String serialize(String response) {
+    return response;
   }
 }

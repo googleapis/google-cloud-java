@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -27,68 +27,48 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.google.api.gax.grpc;
+package com.google.api.gax.resumable;
 
-import com.google.api.gax.longrunning.OperationSnapshot;
-import com.google.api.gax.rpc.ErrorDetails;
-import com.google.api.gax.rpc.StatusCode;
-import com.google.longrunning.Operation;
-import io.grpc.Status;
+import com.google.api.core.InternalApi;
+import com.google.auto.value.AutoValue;
 import org.jspecify.annotations.NullMarked;
 
-/**
- * Implementation of OperationSnapshot based on gRPC.
- *
- * <p>Package-private for internal usage.
- */
+/** Represents the session metadata returned after starting a resumable upload. */
 @NullMarked
-class GrpcOperationSnapshot implements OperationSnapshot {
+@InternalApi
+@AutoValue
+public abstract class ResumableUploadSession {
 
-  private final Operation operation;
+  private static final long DEFAULT_CHUNK_GRANULARITY = 1L;
 
-  public GrpcOperationSnapshot(Operation operation) {
-    this.operation = operation;
+  /** Returns the server-provided URL to which data uploads are directed. */
+  public abstract String getUploadUrl();
+
+  /**
+   * Returns the server-mandated chunk granularity in bytes.
+   *
+   * <p>When specified by the server (via {@code X-Goog-Upload-Chunk-Granularity}), intermediate
+   * upload chunks must have a size and offset that are an exact multiple of this value (the final
+   * chunk may be smaller). If not specified by the server, this defaults to 1 byte, indicating no
+   * alignment or granularity requirements apply.
+   *
+   * @return the chunk granularity in bytes
+   */
+  public abstract long getChunkGranularity();
+
+  public abstract Builder toBuilder();
+
+  public static Builder newBuilder() {
+    return new AutoValue_ResumableUploadSession.Builder()
+        .setChunkGranularity(DEFAULT_CHUNK_GRANULARITY);
   }
 
-  @Override
-  public String getName() {
-    return operation.getName();
-  }
+  @AutoValue.Builder
+  public abstract static class Builder {
+    public abstract Builder setUploadUrl(String uploadUrl);
 
-  @Override
-  public Object getMetadata() {
-    return operation.getMetadata();
-  }
+    public abstract Builder setChunkGranularity(long chunkGranularity);
 
-  @Override
-  public boolean isDone() {
-    return operation.getDone();
-  }
-
-  @Override
-  public Object getResponse() {
-    return operation.getResponse();
-  }
-
-  @Override
-  public StatusCode getErrorCode() {
-    return GrpcStatusCode.of(Status.fromCodeValue(operation.getError().getCode()).getCode());
-  }
-
-  @Override
-  public String getErrorMessage() {
-    return operation.getError().getMessage();
-  }
-
-  /** {@inheritDoc} */
-  @Override
-  public ErrorDetails getErrorDetails() {
-    return ErrorDetails.builder()
-        .setRawErrorMessages(operation.getError().getDetailsList())
-        .build();
-  }
-
-  public static GrpcOperationSnapshot create(Operation operation) {
-    return new GrpcOperationSnapshot(operation);
+    public abstract ResumableUploadSession build();
   }
 }
