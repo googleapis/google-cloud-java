@@ -119,10 +119,11 @@ case ${JOB_TYPE} in
     fi
     ;;
   integration-single)
-    generate_modified_modules_list false
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
       echo "Not running integration checks -- this is Release Please SNAPSHOT pull request."
-    elif [[ ! " ${modified_module_list[*]} " =~ " ${BUILD_SUBDIR} " ]]; then
+    # Run tests if either global overrides require testing all modules (e.g. parent POM or
+    # shared dependencies) OR if this specific module was modified. Otherwise skip.
+    elif ! should_test_all_modules && ! is_module_modified "${BUILD_SUBDIR}"; then
       echo "${BUILD_SUBDIR} not modified, skipping split integration test"
     else
       echo "${BUILD_SUBDIR} modified, running split integration test"
@@ -188,10 +189,11 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm-single)
-    generate_modified_modules_list false
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
       echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
-    elif [[ ! " ${modified_module_list[*]} " =~ " ${BUILD_SUBDIR} " ]]; then
+    # Run tests if either global overrides require testing all modules (e.g. parent POM or
+    # shared dependencies) OR if this specific module was modified. Otherwise skip.
+    elif ! should_test_all_modules && ! is_module_modified "${BUILD_SUBDIR}"; then
       echo "${BUILD_SUBDIR} not modified, skipping split GraalVM test"
     else
       echo "${BUILD_SUBDIR} modified, running split GraalVM test"
