@@ -227,6 +227,18 @@ public final class GcpManagedChannelScaleUpWorkerTest {
   }
 
   @Test
+  public void scaleUpCountsOnlyActiveChannels() {
+    pool = newPool(2, 5);
+    ChannelRef hot = pool.channelRefs.get(0);
+    pool.channelRefs.get(1).deactivateForTest();
+    hot.setActiveStreamsForTest(6);
+
+    hot.activeStreamsCountIncr();
+
+    await().atMost(Duration.ofSeconds(1)).until(() -> pool.getNumberOfChannels() == 4);
+  }
+
+  @Test
   public void shutdownDuringScaleUpClosesUnpublishedChannel() throws Exception {
     AtomicInteger builds = new AtomicInteger();
     CountDownLatch buildStarted = new CountDownLatch(1);

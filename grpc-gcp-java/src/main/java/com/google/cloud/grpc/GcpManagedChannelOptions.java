@@ -219,6 +219,7 @@ public class GcpManagedChannelOptions {
     private final int maxScaleUpPercent;
     // Maximum channels removed in one scale-down check.
     private final int maxScaleDownChannels;
+    private final Duration drainIdleGrace;
 
     // Use round-robin channel selection for affinity binding calls.
     private final boolean useRoundRobinOnBind;
@@ -240,6 +241,7 @@ public class GcpManagedChannelOptions {
       scaleDownConsecutiveLowLoadChecks = builder.scaleDownConsecutiveLowLoadChecks;
       maxScaleUpPercent = builder.maxScaleUpPercent;
       maxScaleDownChannels = builder.maxScaleDownChannels;
+      drainIdleGrace = builder.drainIdleGrace;
       concurrentStreamsLowWatermark = builder.concurrentStreamsLowWatermark;
       useRoundRobinOnBind = builder.useRoundRobinOnBind;
       affinityKeyLifetime = builder.affinityKeyLifetime;
@@ -287,6 +289,10 @@ public class GcpManagedChannelOptions {
       return maxScaleDownChannels;
     }
 
+    public Duration getDrainIdleGrace() {
+      return drainIdleGrace;
+    }
+
     public int getConcurrentStreamsLowWatermark() {
       return concurrentStreamsLowWatermark;
     }
@@ -323,7 +329,7 @@ public class GcpManagedChannelOptions {
           "{maxSize: %d, minSize: %d, initSize: %d, minRpcPerChannel: %d, "
               + "maxRpcPerChannel: %d, scaleDownInterval: %s, scaleUpCooldown: %s, "
               + "scaleDownConsecutiveLowLoadChecks: %d, maxScaleUpPercent: %d, "
-              + "maxScaleDownChannels: %d, "
+              + "maxScaleDownChannels: %d, drainIdleGrace: %s, "
               + "concurrentStreamsLowWatermark: %d, useRoundRobinOnBind: %s, "
               + "affinityKeyLifetime: %s, cleanupInterval: %s, channelPickStrategy: %s}",
           getMaxSize(),
@@ -336,6 +342,7 @@ public class GcpManagedChannelOptions {
           getScaleDownConsecutiveLowLoadChecks(),
           getMaxScaleUpPercent(),
           getMaxScaleDownChannels(),
+          getDrainIdleGrace(),
           getConcurrentStreamsLowWatermark(),
           isUseRoundRobinOnBind(),
           getAffinityKeyLifetime(),
@@ -354,6 +361,7 @@ public class GcpManagedChannelOptions {
       private int scaleDownConsecutiveLowLoadChecks = 3;
       private int maxScaleUpPercent = 30;
       private int maxScaleDownChannels = 2;
+      private Duration drainIdleGrace = Duration.ofMinutes(1);
       private int concurrentStreamsLowWatermark = GcpManagedChannel.DEFAULT_MAX_STREAM;
       private boolean useRoundRobinOnBind = false;
       private Duration affinityKeyLifetime = Duration.ZERO;
@@ -377,6 +385,7 @@ public class GcpManagedChannelOptions {
         this.scaleDownConsecutiveLowLoadChecks = options.getScaleDownConsecutiveLowLoadChecks();
         this.maxScaleUpPercent = options.getMaxScaleUpPercent();
         this.maxScaleDownChannels = options.getMaxScaleDownChannels();
+        this.drainIdleGrace = options.getDrainIdleGrace();
         this.concurrentStreamsLowWatermark = options.getConcurrentStreamsLowWatermark();
         this.useRoundRobinOnBind = options.isUseRoundRobinOnBind();
         this.affinityKeyLifetime = options.getAffinityKeyLifetime();
@@ -433,10 +442,10 @@ public class GcpManagedChannelOptions {
        * channel or across the pool average signals a background scale-up worker.
        *
        * <p>Every <code>scaleDownInterval</code>, after consecutive low-load checks, the
-       * longest-connected channels (by connectedSinceNanos) are removed from selection, bounded by
-       * maxScaleDownChannels. A removed channel is shut down on a later check once its in-flight
-       * calls reach zero. A READY removed channel can be reused by a later scale-up before it
-       * closes.
+       * least-loaded channels are marked draining and removed from selection, bounded by
+       * maxScaleDownChannels; fewer affinity bindings and then older allocations break load ties.
+       * Draining channels receive no new picks or affinity binds and close after their in-flight
+       * calls reach zero and drainIdleGrace elapses. Scale-up always creates new channels.
        *
        * @param minRpcPerChannel minimum desired average concurrent calls per channel.
        * @param maxRpcPerChannel maximum desired average concurrent calls per channel.
@@ -504,6 +513,18 @@ public class GcpManagedChannelOptions {
       public Builder setMaxScaleDownChannels(int channels) {
         Preconditions.checkArgument(channels > 0, "Scale down channel limit must be positive.");
         this.maxScaleDownChannels = channels;
+        return this;
+      }
+
+      /**
+       * Sets how long an idle draining channel remains open for sticky affinity references and
+       * in-flight calls before its delegate closes. Defaults to one minute.
+       */
+      public Builder setDrainIdleGrace(Duration drainIdleGrace) {
+        Preconditions.checkNotNull(drainIdleGrace, "Drain idle grace must not be null.");
+        Preconditions.checkArgument(
+            !drainIdleGrace.isNegative(), "Drain idle grace must not be negative.");
+        this.drainIdleGrace = drainIdleGrace;
         return this;
       }
 
