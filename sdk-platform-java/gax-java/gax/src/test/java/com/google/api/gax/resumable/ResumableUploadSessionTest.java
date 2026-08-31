@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -27,68 +27,36 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.google.api.gax.grpc;
+package com.google.api.gax.resumable;
 
-import com.google.api.gax.longrunning.OperationSnapshot;
-import com.google.api.gax.rpc.ErrorDetails;
-import com.google.api.gax.rpc.StatusCode;
-import com.google.longrunning.Operation;
-import io.grpc.Status;
-import org.jspecify.annotations.NullMarked;
+import static com.google.common.truth.Truth.assertThat;
 
-/**
- * Implementation of OperationSnapshot based on gRPC.
- *
- * <p>Package-private for internal usage.
- */
-@NullMarked
-class GrpcOperationSnapshot implements OperationSnapshot {
+import org.junit.jupiter.api.Test;
 
-  private final Operation operation;
+class ResumableUploadSessionTest {
 
-  public GrpcOperationSnapshot(Operation operation) {
-    this.operation = operation;
+  private static final String UPLOAD_URL = "https://storage.googleapis.com/upload/session/12345";
+
+  @Test
+  void build_withUploadUrl_setsDefaultChunkGranularity() {
+    ResumableUploadSession session =
+        ResumableUploadSession.newBuilder().setUploadUrl(UPLOAD_URL).build();
+
+    assertThat(session.getUploadUrl()).isEqualTo(UPLOAD_URL);
+    assertThat(session.getChunkGranularity()).isEqualTo(1L);
   }
 
-  @Override
-  public String getName() {
-    return operation.getName();
-  }
+  @Test
+  void build_withExplicitChunkGranularity_preservesGranularity() {
+    long customChunkGranularity = 256 * 1024L;
 
-  @Override
-  public Object getMetadata() {
-    return operation.getMetadata();
-  }
+    ResumableUploadSession session =
+        ResumableUploadSession.newBuilder()
+            .setUploadUrl(UPLOAD_URL)
+            .setChunkGranularity(customChunkGranularity)
+            .build();
 
-  @Override
-  public boolean isDone() {
-    return operation.getDone();
-  }
-
-  @Override
-  public Object getResponse() {
-    return operation.getResponse();
-  }
-
-  @Override
-  public StatusCode getErrorCode() {
-    return GrpcStatusCode.of(Status.fromCodeValue(operation.getError().getCode()).getCode());
-  }
-
-  @Override
-  public String getErrorMessage() {
-    return operation.getError().getMessage();
-  }
-
-  /** {@inheritDoc} */
-  @Override
-  public ErrorDetails getErrorDetails() {
-    return ErrorDetails.builder()
-        .setRawErrorMessages(operation.getError().getDetailsList())
-        .build();
-  }
-
-  public static GrpcOperationSnapshot create(Operation operation) {
-    return new GrpcOperationSnapshot(operation);
+    assertThat(session.getUploadUrl()).isEqualTo(UPLOAD_URL);
+    assertThat(session.getChunkGranularity()).isEqualTo(customChunkGranularity);
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -27,68 +27,22 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.google.api.gax.grpc;
+package com.google.api.gax.resumable;
 
-import com.google.api.gax.longrunning.OperationSnapshot;
-import com.google.api.gax.rpc.ErrorDetails;
-import com.google.api.gax.rpc.StatusCode;
-import com.google.longrunning.Operation;
-import io.grpc.Status;
+import com.google.api.core.InternalApi;
+import com.google.api.gax.rpc.UnaryCallable;
 import org.jspecify.annotations.NullMarked;
 
 /**
- * Implementation of OperationSnapshot based on gRPC.
+ * Client interface for executing low-level resumable upload operations.
  *
- * <p>Package-private for internal usage.
+ * @param <RequestT> request type for starting an upload
+ * @param <ResponseT> response type of the upload operation
  */
 @NullMarked
-class GrpcOperationSnapshot implements OperationSnapshot {
+@InternalApi
+public interface ResumableUploadClient<RequestT, ResponseT> {
 
-  private final Operation operation;
-
-  public GrpcOperationSnapshot(Operation operation) {
-    this.operation = operation;
-  }
-
-  @Override
-  public String getName() {
-    return operation.getName();
-  }
-
-  @Override
-  public Object getMetadata() {
-    return operation.getMetadata();
-  }
-
-  @Override
-  public boolean isDone() {
-    return operation.getDone();
-  }
-
-  @Override
-  public Object getResponse() {
-    return operation.getResponse();
-  }
-
-  @Override
-  public StatusCode getErrorCode() {
-    return GrpcStatusCode.of(Status.fromCodeValue(operation.getError().getCode()).getCode());
-  }
-
-  @Override
-  public String getErrorMessage() {
-    return operation.getError().getMessage();
-  }
-
-  /** {@inheritDoc} */
-  @Override
-  public ErrorDetails getErrorDetails() {
-    return ErrorDetails.builder()
-        .setRawErrorMessages(operation.getError().getDetailsList())
-        .build();
-  }
-
-  public static GrpcOperationSnapshot create(Operation operation) {
-    return new GrpcOperationSnapshot(operation);
-  }
+  /** Returns a {@link UnaryCallable} to initiate a resumable upload session. */
+  UnaryCallable<RequestT, ResumableUploadSession> startUploadCallable();
 }
