@@ -29,13 +29,18 @@
  */
 package com.google.api.gax.rpc;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.longrunning.OperationResponsePollAlgorithm;
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.resumable.ResumableUploadClient;
+import com.google.api.gax.resumable.ResumableUploadResultRetryAlgorithm;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.retrying.RetryingExecutorWithContext;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.retrying.StreamingRetryAlgorithm;
 import java.util.Collection;
@@ -268,6 +273,57 @@ public class Callables {
 
     return new OperationCallableImpl<>(
         initialCallable, scheduler, longRunningClient, operationCallSettings);
+  }
+
+  /**
+   * Creates a {@link ResumableUploadCallable} to execute resumable uploads. Designed for use by
+   * generated code.
+   *
+   * @param uploadClient client executing the wire-level upload protocol
+   * @param callSettings settings configuring chunk size and retry behavior
+   * @param clientContext client context providing executor, clock, and default call context
+   * @return {@link ResumableUploadCallable} callable object
+   */
+  public static <RequestT, ResponseT> ResumableUploadCallable<RequestT, ResponseT> resumableUpload(
+      ResumableUploadClient<RequestT, ResponseT> uploadClient,
+      ResumableUploadCallSettings callSettings,
+      ClientContext clientContext) {
+    return resumableUploadImpl(uploadClient, callSettings, clientContext);
+  }
+
+  static <RequestT, ResponseT> ResumableUploadCallable<RequestT, ResponseT> resumableUploadImpl(
+      ResumableUploadClient<RequestT, ResponseT> uploadClient,
+      ResumableUploadCallSettings callSettings,
+      ClientContext clientContext) {
+    checkNotNull(uploadClient, "uploadClient must not be null");
+    checkNotNull(callSettings, "callSettings must not be null");
+    checkNotNull(clientContext, "clientContext must not be null");
+
+    RetrySettings retrySettings = callSettings.getRetrySettings();
+    if (retrySettings == null && clientContext.getDefaultCallContext() != null) {
+      retrySettings = clientContext.getDefaultCallContext().getRetrySettings();
+    }
+    if (retrySettings == null) {
+      retrySettings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(java.time.Duration.ofMillis(100))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelayDuration(java.time.Duration.ofMinutes(1))
+              .setTotalTimeoutDuration(java.time.Duration.ofMinutes(5))
+              .build();
+    }
+
+    RetryAlgorithm<ResponseT> retryAlgorithm =
+        new RetryAlgorithm<>(
+            ResumableUploadResultRetryAlgorithm.create(),
+            new ExponentialRetryAlgorithm(retrySettings, clientContext.getClock()));
+    RetryingExecutorWithContext<ResponseT> retryingExecutor =
+        new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor());
+
+    ApiCallContext defaultCallContext = clientContext.getDefaultCallContext();
+
+    return new ResumableUploadCallableImpl<>(
+        uploadClient, retryingExecutor, callSettings, defaultCallContext);
   }
 
   private static boolean areRetriesDisabled(
