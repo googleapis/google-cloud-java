@@ -26,8 +26,8 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * DeidentifyTemplates contains instructions on how to de-identify content.
  * See
- * https://cloud.google.com/sensitive-data-protection/docs/concepts-templates to
- * learn more.
+ * https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-templates
+ * to learn more.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.DeidentifyTemplate}
@@ -626,8 +626,8 @@ public final class DeidentifyTemplate extends com.google.protobuf.GeneratedMessa
    * <pre>
    * DeidentifyTemplates contains instructions on how to de-identify content.
    * See
-   * https://cloud.google.com/sensitive-data-protection/docs/concepts-templates to
-   * learn more.
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-templates
+   * to learn more.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.DeidentifyTemplate}
