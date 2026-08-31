@@ -70,7 +70,8 @@ public class ResumableUploadFutureImpl<RequestT, ResponseT>
     implements ResumableUploadFuture<ResponseT> {
 
   private final ResumableUploadClient<RequestT, ResponseT> client;
-  private final RequestT initialRequest;
+  private final @Nullable RequestT initialRequest;
+  private final boolean isResumedSession;
   private final RewindableStreamBuffer streamBuffer;
   private final int chunkSize;
   private final ApiCallContext callContext;
@@ -86,22 +87,28 @@ public class ResumableUploadFutureImpl<RequestT, ResponseT>
 
   public ResumableUploadFutureImpl(
       ResumableUploadClient<RequestT, ResponseT> client,
-      RequestT initialRequest,
+      @Nullable String sessionUrl,
+      @Nullable RequestT initialRequest,
       InputStream payload,
       int chunkSize,
       RetryingExecutorWithContext<ResponseT> retryingExecutor,
       ApiCallContext callContext) {
     this.client = checkNotNull(client, "client must not be null");
-    this.initialRequest = checkNotNull(initialRequest, "initialRequest must not be null");
+    this.initialRequest = initialRequest;
+    this.sessionUrl = sessionUrl;
+    this.isResumedSession = sessionUrl != null;
     this.streamBuffer = new RewindableStreamBuffer(payload, chunkSize);
     this.chunkSize = chunkSize;
     this.callContext = checkNotNull(callContext, "callContext must not be null");
 
     this.currentStatus =
         ResumableUploadStatus.newBuilder()
-            .setUploadUrl(null)
+            .setUploadUrl(sessionUrl)
             .setBytesUploaded(0L)
-            .setState(ResumableUploadStatus.State.STARTING)
+            .setState(
+                isResumedSession
+                    ? ResumableUploadStatus.State.UPLOADING
+                    : ResumableUploadStatus.State.STARTING)
             .build();
 
     UploadAttemptCallable attemptCallable = new UploadAttemptCallable();
@@ -252,8 +259,11 @@ public class ResumableUploadFutureImpl<RequestT, ResponseT>
     }
 
     if (sessionUrl == null) {
+      RequestT request =
+          checkNotNull(
+              initialRequest, "initialRequest must not be null when starting a new session");
       return ApiFutures.transformAsync(
-          client.startUploadCallable().futureCall(initialRequest, attemptContext),
+          client.startUploadCallable().futureCall(request, attemptContext),
           session -> {
             this.sessionUrl = session.getUploadUrl();
             updateStatus(
@@ -267,6 +277,52 @@ public class ResumableUploadFutureImpl<RequestT, ResponseT>
           },
           MoreExecutors.directExecutor());
     }
+
+    // Offset reconciliation needed if retrying an attempt or resuming a saved session URL
+    if (attemptCount > 1 || (isResumedSession && committedOffset == 0L)) {
+      QueryStatusRequest queryRequest = QueryStatusRequest.create(checkNotNull(sessionUrl));
+      return ApiFutures.transformAsync(
+          client.queryStatusCallable().futureCall(queryRequest, attemptContext),
+          (QueryStatusResponse<ResponseT> queryResponse) -> {
+            if (queryResponse.isComplete()) {
+              isUploadFinal = true;
+              finalResponse = queryResponse.getResponse();
+              Long serverCommitted = queryResponse.getCommittedOffset();
+              long finalBytes = serverCommitted != null ? serverCommitted : this.committedOffset;
+              updateStatus(
+                  currentStatus.toBuilder()
+                      .setState(ResumableUploadStatus.State.FINALIZED)
+                      .setBytesUploaded(finalBytes)
+                      .setException(null)
+                      .build());
+              return ApiFutures.immediateFuture(finalResponse);
+            }
+
+            long serverCommitted = checkNotNull(queryResponse.getCommittedOffset());
+            this.committedOffset = serverCommitted;
+            try {
+              streamBuffer.seekTo(serverCommitted);
+            } catch (IOException e) {
+              return ApiFutures.immediateFailedFuture(e);
+            }
+            updateStatus(
+                currentStatus.toBuilder()
+                    .setState(ResumableUploadStatus.State.OFFSET_RECEIVED)
+                    .setBytesUploaded(serverCommitted)
+                    .setException(null)
+                    .build());
+            return transmitChunks(attemptContext);
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    updateStatus(
+        currentStatus.toBuilder()
+            .setUploadUrl(sessionUrl)
+            .setState(ResumableUploadStatus.State.UPLOADING)
+            .setBytesUploaded(committedOffset)
+            .setException(null)
+            .build());
 
     return transmitChunks(attemptContext);
   }

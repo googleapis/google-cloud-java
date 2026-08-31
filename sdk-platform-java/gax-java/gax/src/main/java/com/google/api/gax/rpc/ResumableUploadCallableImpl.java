@@ -78,13 +78,30 @@ public class ResumableUploadCallableImpl<RequestT, ResponseT>
     ApiCallContext callContext = callContextPrototype.nullToSelf(null);
 
     return new ResumableUploadFutureImpl<>(
-        client, request, payload, effectiveSettings.getChunkSize(), retryingExecutor, callContext);
+        client,
+        /* sessionUrl= */ null,
+        request,
+        payload,
+        effectiveSettings.getChunkSize(),
+        retryingExecutor,
+        callContext);
   }
 
   @Override
   public ResumableUploadFuture<ResponseT> resumeCall(
       String sessionUrl, InputStream payload, @Nullable ResumableUploadCallSettings settings) {
-    throw new UnsupportedOperationException(
-        "Session resumption is supported in subsequent release");
+    checkNotNull(sessionUrl, "sessionUrl must not be null");
+    checkNotNull(payload, "payload must not be null");
+    ResumableUploadCallSettings effectiveSettings = defaultCallSettings.merge(settings);
+    ApiCallContext callContext = callContextPrototype.nullToSelf(null);
+
+    return new ResumableUploadFutureImpl<>(
+        client,
+        sessionUrl,
+        /* initialRequest= */ null,
+        payload,
+        effectiveSettings.getChunkSize(),
+        retryingExecutor,
+        callContext);
   }
 }
