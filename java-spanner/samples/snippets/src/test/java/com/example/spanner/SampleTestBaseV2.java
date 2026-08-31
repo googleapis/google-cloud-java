@@ -23,6 +23,7 @@ import com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient;
 import com.google.cloud.spanner.admin.database.v1.DatabaseAdminSettings;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminClient;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminSettings;
+import com.google.spanner.admin.database.v1.BackupSchedule;
 import com.google.spanner.admin.database.v1.DatabaseDialect;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -178,6 +179,28 @@ public class SampleTestBaseV2 {
       return "CREATE DATABASE `" + databaseName + "`";
     } else {
       return "CREATE DATABASE \"" + databaseName + "\"";
+    }
+  }
+
+  protected static void cleanUpPreExistingBackupSchedules(
+      final String targetInstanceId, final String targetDatabaseId) {
+    try {
+      if (targetInstanceId == null || targetDatabaseId == null || databaseAdminClient == null) {
+        return;
+      }
+      DatabaseAdminClient dbAdminClient = databaseAdminClient;
+      for (BackupSchedule schedule :
+          dbAdminClient
+              .listBackupSchedules(getDatabaseName(projectId, targetInstanceId, targetDatabaseId))
+              .iterateAll()) {
+        try {
+          dbAdminClient.deleteBackupSchedule(schedule.getName());
+        } catch (Exception ignored) {
+          // Ignore errors if schedule was already deleted or is in use
+        }
+      }
+    } catch (Exception e) {
+      System.err.println("Warning: failed pre-test schedule cleanup: " + e.getMessage());
     }
   }
 }

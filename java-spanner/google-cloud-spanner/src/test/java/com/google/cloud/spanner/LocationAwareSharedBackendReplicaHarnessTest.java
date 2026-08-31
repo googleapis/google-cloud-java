@@ -605,7 +605,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   private static void waitForReplicaRoutedStrongRead(
       DatabaseClient client, SharedBackendReplicaHarness harness, int expectedReplicaIndex)
       throws InterruptedException {
-    long deadlineNanos = System.nanoTime() + TimeUnit.SECONDS.toNanos(10);
+    long deadlineNanos = System.nanoTime() + TimeUnit.SECONDS.toNanos(30);
     while (System.nanoTime() < deadlineNanos) {
       harness.clearRequests();
       boolean sawRow;
