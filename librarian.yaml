@@ -310,6 +310,13 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: App Optimize API
       product_documentation_override: https://docs.cloud.google.com/app-optimize/overview
+  - name: apptopology
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/cloud/apptopology/v1
+        java:
+          additional_protos:
+            - path: google/cloud/location/locations.proto
   - name: area120-tables
     version: 0.101.0-SNAPSHOT
     apis:
