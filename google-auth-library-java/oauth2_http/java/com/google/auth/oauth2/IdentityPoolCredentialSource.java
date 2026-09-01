@@ -51,6 +51,7 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
   CredentialFormatType credentialFormatType;
   private String credentialLocation;
   @Nullable String subjectTokenFieldName;
+  @Nullable String actorTokenFieldName;
   @Nullable Map<String, String> headers;
   @Nullable private CertificateConfig certificateConfig;
 
@@ -208,11 +209,13 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
 
       checkArgument(
           (useDefault || locationIsPresent),
-          "Invalid 'certificate' configuration in credential source: Must specify either 'certificate_config_location' or set 'use_default_certificate_config' to true.");
+          "Invalid 'certificate' configuration in credential source: Must specify either"
+              + " 'certificate_config_location' or set 'use_default_certificate_config' to true.");
 
       checkArgument(
           !(useDefault && locationIsPresent),
-          "Invalid 'certificate' configuration in credential source: Cannot specify both 'certificate_config_location' and set 'use_default_certificate_config' to true.");
+          "Invalid 'certificate' configuration in credential source: Cannot specify both"
+              + " 'certificate_config_location' and set 'use_default_certificate_config' to true.");
 
       this.useDefaultCertificateConfig = useDefault;
       this.certificateConfigLocation = certificateConfigLocation;
@@ -261,16 +264,17 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
     boolean urlPresent = credentialSourceMap.containsKey("url");
     boolean certificatePresent = credentialSourceMap.containsKey("certificate");
 
-    if ((filePresent && urlPresent)
-        || (filePresent && certificatePresent)
-        || (urlPresent && certificatePresent)) {
+    if ((filePresent && urlPresent) || (urlPresent && certificatePresent)) {
       throw new IllegalArgumentException(
-          "Only one credential source type can be set: 'file', 'url', or 'certificate'.");
+          "A credential source type of URL can not be used with other credential source types.");
     }
 
     if (filePresent) {
       credentialLocation = (String) credentialSourceMap.get("file");
       credentialSourceType = IdentityPoolCredentialSourceType.FILE;
+      if (certificatePresent) {
+        this.certificateConfig = certificateConfigFromSourceMap(credentialSourceMap);
+      }
     } else if (urlPresent) {
       credentialLocation = (String) credentialSourceMap.get("url");
       credentialSourceType = IdentityPoolCredentialSourceType.URL;
@@ -279,7 +283,8 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
       this.certificateConfig = certificateConfigFromSourceMap(credentialSourceMap);
     } else {
       throw new IllegalArgumentException(
-          "Missing credential source file location, URL, or certificate. At least one must be specified.");
+          "Missing credential source file location, URL, or certificate. At least one must be"
+              + " specified.");
     }
 
     Map<String, String> headersMap = (Map<String, String>) credentialSourceMap.get("headers");
@@ -303,8 +308,23 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
         }
         credentialFormatType = CredentialFormatType.JSON;
         subjectTokenFieldName = formatMap.get("subject_token_field_name");
+        actorTokenFieldName = formatMap.get("actor_token_field_name");
+        if (actorTokenFieldName != null) {
+          if (actorTokenFieldName.trim().isEmpty()) {
+            throw new IllegalArgumentException("The actor_token_field_name must not be empty.");
+          }
+          if (actorTokenFieldName.equals(subjectTokenFieldName)) {
+            throw new IllegalArgumentException(
+                "The actor_token_field_name must differ from the subject_token_field_name.");
+          }
+        }
       } else if (type != null && "text".equals(type.toLowerCase(Locale.US))) {
         credentialFormatType = CredentialFormatType.TEXT;
+        if (formatMap.containsKey("actor_token_field_name")
+            && formatMap.get("actor_token_field_name") != null) {
+          throw new IllegalArgumentException(
+              "Actor tokens are only supported for JSON-formatted credential sources.");
+        }
       } else {
         throw new IllegalArgumentException(
             String.format("Invalid credential source format type: %s.", type));

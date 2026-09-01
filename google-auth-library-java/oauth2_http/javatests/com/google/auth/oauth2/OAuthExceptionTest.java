@@ -34,6 +34,8 @@ package com.google.auth.oauth2;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.http.HttpResponseException;
 import com.google.auth.TestUtils;
 import java.io.IOException;
 import org.junit.jupiter.api.Test;
@@ -128,5 +130,69 @@ final class OAuthExceptionTest {
 
     String expectedMessage = String.format(BASE_MESSAGE_FORMAT, "errorCode");
     assertEquals(expectedMessage, e.getMessage());
+  }
+
+  @Test
+  void createFromHttpResponseException_nullContent() throws IOException {
+    HttpResponseException httpException =
+        new HttpResponseException.Builder(
+                /* statusCode= */ 401, /* statusMessage= */ "Unauthorized", new HttpHeaders())
+            .setContent(null)
+            .build();
+
+    OAuthException e = OAuthException.createFromHttpResponseException(httpException);
+
+    assertEquals("http_error_401", e.getErrorCode());
+    assertEquals("Unauthorized", e.getErrorDescription());
+    assertNull(e.getErrorUri());
+    assertEquals(401, e.getHttpStatusCode());
+  }
+
+  @Test
+  void createFromHttpResponseException_emptyContent() throws IOException {
+    HttpResponseException httpException =
+        new HttpResponseException.Builder(
+                /* statusCode= */ 401, /* statusMessage= */ "Unauthorized", new HttpHeaders())
+            .setContent("   ")
+            .build();
+
+    OAuthException e = OAuthException.createFromHttpResponseException(httpException);
+
+    assertEquals("http_error_401", e.getErrorCode());
+    assertEquals("Unauthorized", e.getErrorDescription());
+    assertNull(e.getErrorUri());
+    assertEquals(401, e.getHttpStatusCode());
+  }
+
+  @Test
+  void createFromHttpResponseException_nonJsonContent() throws IOException {
+    HttpResponseException httpException =
+        new HttpResponseException.Builder(
+                /* statusCode= */ 502, /* statusMessage= */ "Bad Gateway", new HttpHeaders())
+            .setContent("<html><body>Bad Gateway</body></html>")
+            .build();
+
+    OAuthException e = OAuthException.createFromHttpResponseException(httpException);
+
+    assertEquals("http_error_502", e.getErrorCode());
+    assertEquals("Bad Gateway", e.getErrorDescription());
+    assertNull(e.getErrorUri());
+    assertEquals(502, e.getHttpStatusCode());
+  }
+
+  @Test
+  void createFromHttpResponseException_missingErrorField() throws IOException {
+    HttpResponseException httpException =
+        new HttpResponseException.Builder(
+                /* statusCode= */ 400, /* statusMessage= */ "Bad Request", new HttpHeaders())
+            .setContent("{\"error_description\": \"some description\"}")
+            .build();
+
+    OAuthException e = OAuthException.createFromHttpResponseException(httpException);
+
+    assertEquals("http_error_400", e.getErrorCode());
+    assertEquals("some description", e.getErrorDescription());
+    assertNull(e.getErrorUri());
+    assertEquals(400, e.getHttpStatusCode());
   }
 }
