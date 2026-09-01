@@ -152,11 +152,13 @@ function parse_submodules() {
     exit 1
   fi
 
-  # Convert from array to comma-delimited string
-  submodules=$(
-    IFS=,
-    echo "${submodules_array[*]}"
-  )
+  # Convert array to a comma-delimited string:
+  # Declaring 'local IFS=,' restricts delimiter changes to this function's scope,
+  # preventing global IFS pollution (which breaks word splitting in subsequent code).
+  # Expanding "${submodules_array[*]}" joins elements using IFS entirely in-memory
+  # without spawning a subshell process.
+  local IFS=,
+  submodules="${submodules_array[*]}"
   export submodules
 }
 
@@ -175,11 +177,9 @@ function parse_all_submodules() {
     all_submodules_array+=("$submodules")
   done
 
-  # Convert from array to comma-delimited string
-  all_submodules=$(
-    IFS=,
-    echo "${all_submodules_array[*]}"
-  )
+  # 'local IFS=,' safely joins array elements within function scope without subshells:
+  local IFS=,
+  all_submodules="${all_submodules_array[*]}"
   export all_submodules
 }
 
@@ -484,10 +484,9 @@ function generate_graalvm_presubmit_modules_list() {
   generate_modified_modules_list
   if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 5 ]]; then
     # If only a few modules have been modified, focus presubmit testing only on them.
-    module_list=$(
-      IFS=,
-      echo "${modified_module_list[*]}"
-    )
+    # Join array into comma-delimited string without subshell:
+    local IFS=,
+    module_list="${modified_module_list[*]}"
   else
     # If no modules have been modified or if too many have been modified, just test the modules
     # specified in the MAVEN_MODULES env var.
@@ -528,10 +527,9 @@ function generate_graalvm_modules_list() {
       fi
     done
   fi
-  module_list=$(
-    IFS=,
-    echo "${modules_assigned_list[*]}"
-  )
+  # Join array into comma-delimited string without subshell:
+  local IFS=,
+  module_list="${modules_assigned_list[*]}"
 }
 
 function install_modules() {
@@ -592,10 +590,9 @@ function install_modules() {
       'sdk-platform-java/gax-java/gax-grpc'
       'sdk-platform-java/gax-java/gax-httpjson'
     )
-    always_install_deps=$(
-      IFS=,
-      echo "${always_install_deps_list[*]}"
-    )
+    # Join dependencies into comma-delimited string without subshell:
+    local IFS=,
+    always_install_deps="${always_install_deps_list[*]}"
     printf "with always_install_deps:\n%s\n" "$all_submodules,$always_install_deps"
 
     # When working with a maven multi-module project containing other multi-module projects,
