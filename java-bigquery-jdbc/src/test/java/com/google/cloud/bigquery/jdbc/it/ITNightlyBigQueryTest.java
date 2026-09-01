@@ -1041,7 +1041,6 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   @Tag("disable_tpc")
   public void testValidAllDataTypesSerializationFromSelectQuery() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
@@ -1100,7 +1099,6 @@ public class ITNightlyBigQueryTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   @Tag("disable_tpc")
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";

@@ -103,7 +103,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   @Tag("disable_tpc")
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
@@ -2509,7 +2508,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   public void validateGetString() throws Exception {
     final ImmutableMap<String, Object> stringResults =
         new ImmutableMap.Builder<String, Object>()
@@ -2682,7 +2680,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   public void validateGetTime() throws Exception {
     final ImmutableMap<String, Object> result =
         new ImmutableMap.Builder<String, Object>()
@@ -2721,7 +2718,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   public void validateGetTimestamp() throws Exception {
     final ImmutableMap<String, Object> result =
         new ImmutableMap.Builder<String, Object>()
