@@ -39,9 +39,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.util.SecurityUtils;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.SequenceInputStream;
 import java.security.KeyStore;
 import java.security.cert.Certificate;
@@ -119,5 +123,32 @@ class MtlsHttpTransportFactoryTest {
     MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(keyStore);
     NetHttpTransport transport = factory.create();
     assertNotNull(transport);
+  }
+
+  @Test
+  void serialization_roundTrip_hasKeyStoreReturnsFalse() throws Exception {
+    KeyStore keyStore;
+    try (InputStream certStream = new FileInputStream(new File(TEST_CERT_PATH));
+        InputStream keyStream = new FileInputStream(new File(TEST_KEY_PATH));
+        InputStream combined = new SequenceInputStream(certStream, keyStream)) {
+      keyStore = SecurityUtils.createMtlsKeyStore(combined);
+    }
+
+    MtlsHttpTransportFactory factory = new MtlsHttpTransportFactory(keyStore);
+    assertTrue(factory.hasKeyStore());
+
+    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+    try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+      oos.writeObject(factory);
+    }
+
+    MtlsHttpTransportFactory deserialized;
+    try (ObjectInputStream ois =
+        new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()))) {
+      deserialized = (MtlsHttpTransportFactory) ois.readObject();
+    }
+
+    assertNotNull(deserialized);
+    assertFalse(deserialized.hasKeyStore());
   }
 }

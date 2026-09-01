@@ -53,8 +53,9 @@ import org.jspecify.annotations.Nullable;
  */
 @NullMarked
 @InternalApi
-public class MtlsHttpTransportFactory implements HttpTransportFactory {
-  @Nullable private final KeyStore mtlsKeyStore;
+public class MtlsHttpTransportFactory implements HttpTransportFactory, java.io.Serializable {
+  private static final long serialVersionUID = 1L;
+  @Nullable private final transient KeyStore mtlsKeyStore;
 
   /**
    * No-arg constructor required for Java serialization. {@link IdentityPoolCredentials} stores this
