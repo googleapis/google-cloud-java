@@ -434,7 +434,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     return Boolean.parseBoolean(directPathXdsEnv);
   }
 
-  private boolean isAttemptDirectPathXdsOverInterconnect() {
+  @InternalApi
+  public boolean isAttemptDirectPathXdsOverInterconnect() {
     return Boolean.TRUE.equals(attemptDirectPathXdsOverInterconnect);
   }
 
@@ -447,7 +448,9 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
    */
   @InternalApi
   public boolean isDirectPathXdsEnabled() {
-    return isDirectPathXdsEnabledViaEnv() || isDirectPathXdsEnabledViaBuilderOption();
+    return isDirectPathXdsEnabledViaEnv()
+        || isDirectPathXdsEnabledViaBuilderOption()
+        || isAttemptDirectPathXdsOverInterconnect();
   }
 
   // This method should be called once per client initialization, hence can not be called in the
@@ -503,13 +506,13 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
 
   @VisibleForTesting
   boolean isCredentialDirectPathCompatible() {
-    // DirectPath requires a call credential during gRPC channel construction.
-    if (needsCredentials()) {
-      return false;
-    }
     // xDS over Interconnect is designed to work on-premise using arbitrary service credentials.
     if (isAttemptDirectPathXdsOverInterconnect()) {
       return true;
+    }
+    // DirectPath requires a call credential during gRPC channel construction.
+    if (needsCredentials()) {
+      return false;
     }
     if (allowNonDefaultServiceAccount != null && allowNonDefaultServiceAccount) {
       return true;

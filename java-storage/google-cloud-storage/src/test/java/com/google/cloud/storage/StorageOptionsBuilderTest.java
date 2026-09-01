@@ -91,13 +91,7 @@ public final class StorageOptionsBuilderTest {
     com.google.api.gax.grpc.InstantiatingGrpcChannelProvider provider =
         (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider) tcp;
 
-    // Verify attemptDirectPathXdsOverInterconnect is set to true on the provider using reflection
-    java.lang.reflect.Field field =
-        com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.class.getDeclaredField(
-            "attemptDirectPathXdsOverInterconnect");
-    field.setAccessible(true);
-    Boolean value = (Boolean) field.get(provider);
-    assertThat(value).isTrue();
+    assertThat(provider.isAttemptDirectPathXdsOverInterconnect()).isTrue();
   }
 
   @Test

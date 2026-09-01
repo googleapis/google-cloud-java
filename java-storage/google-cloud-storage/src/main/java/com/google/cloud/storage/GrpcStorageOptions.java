@@ -253,7 +253,7 @@ public final class GrpcStorageOptions extends StorageOptions
   private Tuple<StorageSettings, Opts<UserProject>> resolveSettingsAndOpts() throws IOException {
     String endpoint = getHost();
     if (attemptDirectPathXdsOverInterconnect) {
-      endpoint = rewriteHost(endpoint, "storage.googleapis.com", "storage-direct.googleapis.com");
+      endpoint = rewriteHost(endpoint, DEFAULT_HOST_NO_SCHEME, DEFAULT_HOST_DIRECT_PATH_NO_SCHEME);
     }
     URI uri = URI.create(endpoint);
     String scheme = uri.getScheme();
@@ -371,7 +371,7 @@ public final class GrpcStorageOptions extends StorageOptions
             if (existingConfigurator != null) {
               channelBuilder = existingConfigurator.apply(channelBuilder);
             }
-            return channelBuilder.overrideAuthority("storage.googleapis.com");
+            return channelBuilder.overrideAuthority(DEFAULT_HOST_NO_SCHEME);
           });
     }
 
@@ -602,7 +602,7 @@ public final class GrpcStorageOptions extends StorageOptions
      * Option for whether this client should attempt to use DirectPath over Interconnect (on-premise
      * xDS name resolution).
      *
-     * @since 2.45.0
+     * @since 2.72.0
      */
     public GrpcStorageOptions.Builder setAttemptDirectPathXdsOverInterconnect(
         boolean attemptDirectPathXdsOverInterconnect) {
