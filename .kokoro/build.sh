@@ -121,12 +121,14 @@ case ${JOB_TYPE} in
   integration-single)
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
       echo "Not running integration checks -- this is Release Please SNAPSHOT pull request."
-    # Run tests if either global overrides require testing all modules (e.g. parent POM or
-    # shared dependencies) OR if this specific module was modified. Otherwise skip.
-    elif ! should_test_all_modules && ! is_module_modified "${BUILD_SUBDIR}"; then
-      echo "${BUILD_SUBDIR} not modified, skipping split integration test"
+    # Run tests if:
+    # 1. Global overrides require testing all modules (e.g. parent POM, sdk-platform-java, auth)
+    # 2. This specific module was modified
+    # 3. An upstream dependency of this module was modified (e.g. java-spanner or grpc-gcp-java for java-spanner-jdbc)
+    elif ! should_test_all_modules && ! is_module_modified "${BUILD_SUBDIR}" && ! is_upstream_module_modified "${BUILD_SUBDIR}"; then
+      echo "${BUILD_SUBDIR} not modified and no upstream dependencies modified, skipping split integration test"
     else
-      echo "${BUILD_SUBDIR} modified, running split integration test"
+      echo "${BUILD_SUBDIR} (or an upstream dependency) modified, running split integration test"
       echo "Compiling and building all modules for ${BUILD_SUBDIR}"
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"
@@ -191,12 +193,14 @@ case ${JOB_TYPE} in
   graalvm-single)
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
       echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
-    # Run tests if either global overrides require testing all modules (e.g. parent POM or
-    # shared dependencies) OR if this specific module was modified. Otherwise skip.
-    elif ! should_test_all_modules && ! is_module_modified "${BUILD_SUBDIR}"; then
-      echo "${BUILD_SUBDIR} not modified, skipping split GraalVM test"
+    # Run tests if:
+    # 1. Global overrides require testing all modules (e.g. parent POM, sdk-platform-java, auth)
+    # 2. This specific module was modified
+    # 3. An upstream dependency of this module was modified (e.g. java-spanner or grpc-gcp-java for java-spanner-jdbc)
+    elif ! should_test_all_modules && ! is_module_modified "${BUILD_SUBDIR}" && ! is_upstream_module_modified "${BUILD_SUBDIR}"; then
+      echo "${BUILD_SUBDIR} not modified and no upstream dependencies modified, skipping split GraalVM test"
     else
-      echo "${BUILD_SUBDIR} modified, running split GraalVM test"
+      echo "${BUILD_SUBDIR} (or an upstream dependency) modified, running split GraalVM test"
       echo "Compiling and building all modules for ${BUILD_SUBDIR}"
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"

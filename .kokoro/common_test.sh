@@ -155,17 +155,31 @@ function test_should_test_all_modules {
     exit 1
   fi
 
-  # Core shared dependencies
-  TEST_MODIFIED_FILES="sdk-platform-java/java-shared-dependencies/pom.xml"
+  # Core SDK platform
+  TEST_MODIFIED_FILES="sdk-platform-java/gapic-generator/src/main/Foo.java"
   if ! should_test_all_modules; then
-    echo "should_test_all_modules should return true for java-shared-dependencies change"
+    echo "should_test_all_modules should return true for sdk-platform-java change"
     exit 1
   fi
 
-  # Prefix collision check: sibling paths starting with java-shared-dependencies must not match
-  TEST_MODIFIED_FILES="sdk-platform-java/java-shared-dependencies-bom/pom.xml"
+  # Prefix collision check: sibling paths starting with sdk-platform-java must not match
+  TEST_MODIFIED_FILES="sdk-platform-java-extra/pom.xml"
   if should_test_all_modules; then
-    echo "should_test_all_modules should return false for java-shared-dependencies prefix match"
+    echo "should_test_all_modules should return false for sdk-platform-java prefix match"
+    exit 1
+  fi
+
+  # Core auth library
+  TEST_MODIFIED_FILES="google-auth-library-java/oauth2_http/src/main/Foo.java"
+  if ! should_test_all_modules; then
+    echo "should_test_all_modules should return true for google-auth-library-java change"
+    exit 1
+  fi
+
+  # Prefix collision check: sibling paths starting with google-auth-library-java must not match
+  TEST_MODIFIED_FILES="google-auth-library-java-extra/pom.xml"
+  if should_test_all_modules; then
+    echo "should_test_all_modules should return false for google-auth-library-java prefix match"
     exit 1
   fi
 
@@ -173,6 +187,109 @@ function test_should_test_all_modules {
   TEST_MODIFIED_FILES=""
   if ! TEST_ALL_MODULES="true" should_test_all_modules; then
     echo "should_test_all_modules should return true when TEST_ALL_MODULES is true"
+    exit 1
+  fi
+
+  unset TEST_MODIFIED_FILES
+}
+
+# Test is_upstream_module_modified triggers correctly for downstream components.
+function test_is_upstream_module_modified {
+  # Empty input should return false (1)
+  if is_upstream_module_modified ""; then
+    echo "is_upstream_module_modified should return false for empty input"
+    exit 1
+  fi
+
+  # 1. java-bigquerystorage modified:
+  #    - java-bigquery should trigger
+  #    - java-bigquery-jdbc should trigger
+  #    - java-bigquerystorage itself should NOT have upstream trigger
+  TEST_MODIFIED_FILES="java-bigquerystorage/src/main/Foo.java"
+  if ! is_upstream_module_modified "java-bigquery"; then
+    echo "is_upstream_module_modified should return true for java-bigquery when java-bigquerystorage is modified"
+    exit 1
+  fi
+  if ! is_upstream_module_modified "java-bigquery-jdbc"; then
+    echo "is_upstream_module_modified should return true for java-bigquery-jdbc when java-bigquerystorage is modified"
+    exit 1
+  fi
+  if is_upstream_module_modified "java-bigquerystorage"; then
+    echo "is_upstream_module_modified should return false for java-bigquerystorage when java-bigquerystorage is modified"
+    exit 1
+  fi
+
+  # 2. java-bigquery modified:
+  #    - java-bigquery-jdbc should trigger
+  #    - java-bigquerystorage should NOT trigger
+  TEST_MODIFIED_FILES="java-bigquery/src/main/Foo.java"
+  if ! is_upstream_module_modified "java-bigquery-jdbc"; then
+    echo "is_upstream_module_modified should return true for java-bigquery-jdbc when java-bigquery is modified"
+    exit 1
+  fi
+  if is_upstream_module_modified "java-bigquerystorage"; then
+    echo "is_upstream_module_modified should return false for java-bigquerystorage when java-bigquery is modified"
+    exit 1
+  fi
+
+  # 3. grpc-gcp-java modified:
+  #    - java-spanner should trigger
+  #    - java-spanner-jdbc should trigger
+  TEST_MODIFIED_FILES="grpc-gcp-java/src/main/Foo.java"
+  if ! is_upstream_module_modified "java-spanner"; then
+    echo "is_upstream_module_modified should return true for java-spanner when grpc-gcp-java is modified"
+    exit 1
+  fi
+  if ! is_upstream_module_modified "java-spanner-jdbc"; then
+    echo "is_upstream_module_modified should return true for java-spanner-jdbc when grpc-gcp-java is modified"
+    exit 1
+  fi
+
+  # 4. java-spanner modified:
+  #    - java-spanner-jdbc should trigger
+  #    - java-spanner itself should NOT have upstream trigger
+  TEST_MODIFIED_FILES="java-spanner/src/main/Foo.java"
+  if ! is_upstream_module_modified "java-spanner-jdbc"; then
+    echo "is_upstream_module_modified should return true for java-spanner-jdbc when java-spanner is modified"
+    exit 1
+  fi
+  if is_upstream_module_modified "java-spanner"; then
+    echo "is_upstream_module_modified should return false for java-spanner when java-spanner is modified"
+    exit 1
+  fi
+
+  # 5. java-storage modified:
+  #    - java-storage-nio should trigger
+  #    - java-storage itself should NOT have upstream trigger
+  TEST_MODIFIED_FILES="java-storage/src/main/Foo.java"
+  if ! is_upstream_module_modified "java-storage-nio"; then
+    echo "is_upstream_module_modified should return true for java-storage-nio when java-storage is modified"
+    exit 1
+  fi
+  if is_upstream_module_modified "java-storage"; then
+    echo "is_upstream_module_modified should return false for java-storage when java-storage is modified"
+    exit 1
+  fi
+
+  # 6. java-logging modified:
+  #    - java-logging-logback should trigger
+  #    - java-logging itself should NOT have upstream trigger
+  TEST_MODIFIED_FILES="java-logging/src/main/Foo.java"
+  if ! is_upstream_module_modified "java-logging-logback"; then
+    echo "is_upstream_module_modified should return true for java-logging-logback when java-logging is modified"
+    exit 1
+  fi
+  if is_upstream_module_modified "java-logging"; then
+    echo "is_upstream_module_modified should return false for java-logging when java-logging is modified"
+    exit 1
+  fi
+
+  # 7. Unrelated module modified:
+  TEST_MODIFIED_FILES="java-asset/src/main/Foo.java"
+  if is_upstream_module_modified "java-asset" || \
+     is_upstream_module_modified "java-spanner" || \
+     is_upstream_module_modified "java-bigquery"; then
+    echo "is_upstream_module_modified should return false when only an unrelated module is modified"
     exit 1
   fi
 
@@ -197,4 +314,4 @@ test_parse_pom_version
 test_mock_get_modified_files
 test_should_test_all_modules
 test_is_module_modified
-
+test_is_upstream_module_modified

@@ -250,12 +250,14 @@ function get_modified_files() {
 
 # Determines if the entire monorepo must be tested.
 #
-# Monorepo-wide testing is triggered under three conditions:
+# Monorepo-wide testing is triggered under four conditions:
 # 1. TEST_ALL_MODULES is set to "true" (used by nightly and scheduled CI builds).
 # 2. Root parent POMs (google-cloud-jar-parent or google-cloud-pom-parent) are modified,
 #    as changes to parent POMs affect shared dependency versions and compiler/build plugins.
-# 3. Core shared dependencies (sdk-platform-java/java-shared-dependencies) are modified,
-#    as gax, auth, and transport changes can break downstream client library integration tests.
+# 3. Core SDK platform libraries (sdk-platform-java) are modified, as gax, generators,
+#    and core transport changes can break downstream client library integration tests.
+# 4. Core authentication libraries (google-auth-library-java) are modified, as auth/credential
+#    changes affect all client libraries.
 function should_test_all_modules() {
   local files
   files=$(get_modified_files)
@@ -264,7 +266,8 @@ function should_test_all_modules() {
   # stdin of grep, avoiding an external subshell pipeline (like 'echo "$var" | grep').
   if [[ "${TEST_ALL_MODULES}" == "true" ]] || \
      grep -q -E '^google-cloud-(pom|jar)-parent/pom.xml$' <<< "${files}" || \
-     grep -q -E '^sdk-platform-java/java-shared-dependencies/' <<< "${files}"; then
+     grep -q -E '^sdk-platform-java/' <<< "${files}" || \
+     grep -q -E '^google-auth-library-java/' <<< "${files}"; then
     return 0
   fi
   return 1
@@ -317,6 +320,16 @@ function generate_modified_modules_list() {
     else
       echo "Found no changes in the java modules"
     fi
+
+    # Also include downstream modules if any of their upstream dependencies were modified,
+    # ensuring batch integration tests cover dependent client libraries.
+    for module in "${maven_modules[@]}"; do
+      if is_upstream_module_modified "${module}"; then
+        if [[ ! " ${modified_module_list[*]} " =~ " ${module} " ]]; then
+          modified_module_list+=("${module}")
+        fi
+      fi
+    done
   fi
 }
 
@@ -335,6 +348,61 @@ function is_module_modified() {
   files=$(get_modified_files)
   # '<<< "${files}"' feeds the diff string directly to grep via stdin.
   grep -q -E "^${module}/" <<< "${files}"
+}
+
+# Maps a module to its intra-monorepo upstream dependencies.
+#
+# Certain libraries in this repository directly depend on sibling modules (for example,
+# java-bigquery depends on java-bigquerystorage, JDBC drivers wrap client SDKs, and
+# java-spanner depends on grpc-gcp-java). Without this mapping, changes to an upstream
+# dependency would not trigger integration tests for downstream consumers in PR CI.
+#
+# Returns space-separated module names that the given module depends on, or empty if none.
+function get_upstream_modules() {
+  local module="$1"
+  case "${module}" in
+    java-bigquery)
+      echo "java-bigquerystorage"
+      ;;
+    java-bigquery-jdbc)
+      echo "java-bigquery java-bigquerystorage"
+      ;;
+    java-spanner)
+      echo "grpc-gcp-java"
+      ;;
+    java-spanner-jdbc)
+      echo "java-spanner grpc-gcp-java"
+      ;;
+    java-storage-nio)
+      echo "java-storage"
+      ;;
+    java-logging-logback)
+      echo "java-logging"
+      ;;
+    *)
+      ;;
+  esac
+}
+
+# Checks if any upstream dependency of the given module was modified in the PR diff.
+#
+# Takes a module name (e.g. BUILD_SUBDIR), retrieves its upstream dependencies using
+# get_upstream_modules, and checks if any of those upstream directories were touched.
+# Returns 0 (true) if an upstream module was modified, triggering downstream tests;
+# otherwise returns 1 (false).
+function is_upstream_module_modified() {
+  local module="$1"
+  if [[ -z "${module}" ]]; then
+    return 1
+  fi
+
+  local upstream
+  for upstream in $(get_upstream_modules "${module}"); do
+    if is_module_modified "${upstream}"; then
+      return 0
+    fi
+  done
+  return 1
 }
 
 # Filters the modified_module_list to only include modules that contain
