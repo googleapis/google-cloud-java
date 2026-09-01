@@ -498,15 +498,14 @@ function generate_graalvm_modules_list() {
       num=$((num + 1))
     done
   elif [[ ${#modified_module_list[@]} -gt 0 ]]; then
-    # MAVEN_MODULES ENV_VAR is expecting comma delimited string (similar to mvn -pl)
-    # This will get all the modules and put all the elements into an array
-    maven_modules_list=($(echo "${MAVEN_MODULES}" | tr ',' ' '))
+    # Parse comma-delimited MAVEN_MODULES into array using pure Bash:
+    IFS=',' read -ra maven_modules_list <<< "${MAVEN_MODULES}"
     for maven_module in "${maven_modules_list[@]}"; do
       # Check that the modified_module_list contains a module from MAVEN_MODULES
       # Spaces are intentionally added -- Query is regex and array elements are space separated
       # It tries to match the *exact* `maven_module` text
       if [[ " ${modified_module_list[*]} " =~ " ${maven_module} " ]]; then
-        modules_assigned_list+=("${module}")
+        modules_assigned_list+=("${maven_module}")
       fi
     done
   fi
@@ -624,16 +623,36 @@ EOF
   popd || exit 1
 }
 
-# Find all pom.xml files that declare a specific version for the given artifact ($1)
+# Find all pom.xml files that declare a specific version for the given artifact ($1).
+# Pre-filters candidate files with grep -rl to avoid executing xmllint across hundreds
+# of unrelated POM files in the repository.
 function find_all_poms_with_versioned_dependency {
-  poms=($(find . -name pom.xml))
-  for pom in "${poms[@]}"; do
+  POMS=()
+  local found=()
+  local pom
+
+  # Stream matching pom.xml paths line-by-line via process substitution '< <(...)',
+  # which executes the while loop in the current shell process so 'found' array mutations persist:
+  while IFS= read -r pom; do
+    [[ -z "${pom}" ]] && continue
+    # Verify the POM declares an explicit <version> tag following the target <artifactId>:
     if xmllint --xpath "//*[local-name()='artifactId' and text()='$1']/following-sibling::*[local-name()='version']" "$pom" &>/dev/null; then
       found+=("$pom")
     fi
-  done
-  POMS=(${found[@]})
-  unset found
+  done < <(
+    # Fast pre-filter using 'grep' to avoid parsing hundreds of unrelated POMs:
+    # - '-r': recursively scans directories.
+    # - '-l': prints each matching file path once (stops scanning a file on first match,
+    #         preventing duplicate paths in the stream and saving I/O on large POMs).
+    # - '--include="pom.xml"': scopes search exclusively to POMs, ignoring non-POM files.
+    # - '<artifactId>...${1}...</artifactId>': matches tags around $1 with optional whitespace.
+    # - '2>/dev/null || true': silences errors and prevents 'set -e' failure when 0 files match.
+    grep -rlE "<artifactId>[[:space:]]*${1}[[:space:]]*</artifactId>" \
+      --include="pom.xml" \
+      . 2>/dev/null || true
+  )
+
+  POMS=("${found[@]}")
   export POMS
 }
 
@@ -643,8 +662,10 @@ function find_all_poms_with_versioned_dependency {
 function update_all_poms_dependency {
   pushd "$1" || exit 1
   find_all_poms_with_versioned_dependency "$2"
-  for pom in $POMS; do
-    update_pom_dependency "$(dirname "$pom")" "$2" "$3"
+  # Quote "${POMS[@]}" so the loop iterates over each array element safely:
+  for pom in "${POMS[@]}"; do
+    # Use '${pom%/*}' to extract the parent directory in pure Bash without a 'dirname' subshell:
+    update_pom_dependency "${pom%/*}" "$2" "$3"
   done
   git diff
   popd || exit 1
