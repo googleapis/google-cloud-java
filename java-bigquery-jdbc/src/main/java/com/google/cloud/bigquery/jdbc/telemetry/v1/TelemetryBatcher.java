@@ -306,6 +306,9 @@ final class TelemetryBatcher implements AutoCloseable {
   }
 
   private void reschedule(long delayMs) {
+    if (isClosed.get()) {
+      return;
+    }
     long current = currentScheduleDelayMs.get();
     if (current == delayMs && scheduledTask != null && !scheduledTask.isDone()) {
       return;
