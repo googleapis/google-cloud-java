@@ -81,6 +81,35 @@ function test_parse_pom_version {
   popd
 }
 
+# Test that extract_pom_modules correctly extracts modules from root pom.xml
+# in pure Bash without launching Maven, and handles non-existent files safely.
+function test_extract_pom_modules {
+  local -a modules
+  read -r -a modules <<< "$(extract_pom_modules "${scriptDir}/../pom.xml")"
+  if (( ${#modules[@]} < 200 )); then
+    echo "extract_pom_modules failed: expected at least 200 modules, got ${#modules[@]}"
+    exit 1
+  fi
+  if [[ ! " ${modules[*]} " =~ " java-bigquery " ]]; then
+    echo "extract_pom_modules missing java-bigquery"
+    exit 1
+  fi
+  if [[ ! " ${modules[*]} " =~ " java-bigquerystorage " ]]; then
+    echo "extract_pom_modules missing java-bigquerystorage"
+    exit 1
+  fi
+  if [[ ! " ${modules[*]} " =~ " sdk-platform-java " ]]; then
+    echo "extract_pom_modules missing sdk-platform-java"
+    exit 1
+  fi
+
+  # Verify non-existent file returns 1 and empty output
+  if extract_pom_modules "non_existent_pom.xml" &>/dev/null; then
+    echo "extract_pom_modules should return non-zero for non-existent pom"
+    exit 1
+  fi
+}
+
 # Tests that is_module_modified strictly matches the module directory prefix,
 # preventing prefix collisions (e.g. java-bigquery vs java-bigquerystorage).
 function test_is_module_modified {
@@ -308,10 +337,87 @@ function test_mock_get_modified_files {
   unset TEST_MODIFIED_FILES
 }
 
+# Test that parse_submodules expands multi-module directories to child modules
+# and preserves single-module/flat components.
+function test_parse_submodules {
+  pushd "${scriptDir}/.." >/dev/null
+
+  parse_submodules "java-bigquery"
+  if [[ "${submodules}" != "java-bigquery/google-cloud-bigquery,java-bigquery/google-cloud-bigquery-bom" ]]; then
+    echo "parse_submodules failed for java-bigquery: got ${submodules}"
+    exit 1
+  fi
+
+  parse_submodules "google-cloud-jar-parent"
+  if [[ "${submodules}" != "google-cloud-jar-parent" ]]; then
+    echo "parse_submodules failed for google-cloud-jar-parent: got ${submodules}"
+    exit 1
+  fi
+
+  popd >/dev/null
+}
+
+# Test that generate_modified_modules_list correctly maps modified files to
+# their top-level module names without requiring mvn help:evaluate, and verifies
+# both exclusion list enabled (default) and disabled modes.
+function test_generate_modified_modules_list {
+  pushd "${scriptDir}/.." >/dev/null
+  TEST_MODIFIED_FILES="java-bigquery/google-cloud-bigquery/src/main/java/Foo.java
+java-asset/google-cloud-asset/pom.xml"
+  generate_modified_modules_list false >/dev/null
+
+  local has_bigquery="false"
+  local has_asset="false"
+  local has_bigquerystorage="false"
+
+  if [[ " ${modified_module_list[*]} " =~ " java-bigquery " ]]; then
+    has_bigquery="true"
+  fi
+  if [[ " ${modified_module_list[*]} " =~ " java-asset " ]]; then
+    has_asset="true"
+  fi
+  if [[ " ${modified_module_list[*]} " =~ " java-bigquerystorage " ]]; then
+    has_bigquerystorage="true"
+  fi
+
+  if [[ "${has_bigquery}" != "true" ]]; then
+    echo "generate_modified_modules_list missing java-bigquery"
+    exit 1
+  fi
+  if [[ "${has_asset}" != "true" ]]; then
+    echo "generate_modified_modules_list missing java-asset"
+    exit 1
+  fi
+  if [[ "${has_bigquerystorage}" == "true" ]]; then
+    echo "generate_modified_modules_list incorrectly included java-bigquerystorage"
+    exit 1
+  fi
+
+  # Test default exclusion list behavior: java-bigquery is excluded, while java-asset is included
+  TEST_MODIFIED_FILES="java-asset/google-cloud-asset/Foo.java
+java-bigquery/google-cloud-bigquery/Bar.java"
+  generate_modified_modules_list true >/dev/null
+
+  if [[ " ${modified_module_list[*]} " =~ " java-bigquery " ]]; then
+    echo "generate_modified_modules_list should exclude java-bigquery when exclusion list is true"
+    exit 1
+  fi
+  if [[ ! " ${modified_module_list[*]} " =~ " java-asset " ]]; then
+    echo "generate_modified_modules_list missing java-asset when exclusion list is true"
+    exit 1
+  fi
+
+  popd >/dev/null
+  unset TEST_MODIFIED_FILES
+}
+
 test_find_all_poms_with_versioned_dependency
 test_update_pom_dependency
 test_parse_pom_version
 test_mock_get_modified_files
+test_extract_pom_modules
+test_parse_submodules
 test_should_test_all_modules
 test_is_module_modified
 test_is_upstream_module_modified
+test_generate_modified_modules_list
