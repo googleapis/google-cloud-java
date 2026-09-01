@@ -110,6 +110,7 @@ public class BuiltInOpenTelemetryMetricsProviderTest {
 
   private SpannerOptions newTestOptions() {
     return SpannerOptions.newBuilder()
+        .setEmulatorHost(null)
         .setProjectId("host-project")
         .setCredentials(
             OAuth2Credentials.create(new AccessToken("test-token", new Date(Long.MAX_VALUE))))
