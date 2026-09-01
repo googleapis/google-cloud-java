@@ -69,8 +69,7 @@ class BigQueryParameterMetaData implements ParameterMetaData {
     if (sqlType == null) {
       return 0;
     }
-    BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
-        BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(sqlType);
+    BigQueryTypeRegistry.ColumnTypeInfo typeInfo = BigQueryTypeRegistry.getColumnTypeInfo(sqlType);
     if (typeInfo != null && typeInfo.columnSize != null) {
       return typeInfo.columnSize;
     }
@@ -84,8 +83,7 @@ class BigQueryParameterMetaData implements ParameterMetaData {
     if (sqlType == null) {
       return 0;
     }
-    BigQueryJdbcTypeMappings.ColumnTypeInfo typeInfo =
-        BigQueryJdbcTypeMappings.STANDARD_TYPE_INFO.get(sqlType);
+    BigQueryTypeRegistry.ColumnTypeInfo typeInfo = BigQueryTypeRegistry.getColumnTypeInfo(sqlType);
     if (typeInfo != null && typeInfo.decimalDigits != null) {
       return typeInfo.decimalDigits;
     }
@@ -99,11 +97,7 @@ class BigQueryParameterMetaData implements ParameterMetaData {
     if (sqlType == null) {
       return Types.OTHER;
     }
-    Integer jdbcType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(sqlType);
-    if (jdbcType != null) {
-      return jdbcType;
-    }
-    return Types.OTHER;
+    return BigQueryTypeRegistry.toJdbcType(sqlType);
   }
 
   @Override
@@ -118,10 +112,8 @@ class BigQueryParameterMetaData implements ParameterMetaData {
     checkValidIndex(param);
     StandardSQLTypeName sqlType = getStandardSQLTypeName(param);
     if (sqlType != null) {
-      Class<?> clazz = BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(sqlType);
-      if (clazz != null) {
-        return clazz.getName();
-      }
+      Class<?> clazz = BigQueryTypeRegistry.toJavaClass(sqlType);
+      return clazz.getName();
     }
     if (this.parameterHandler == null) {
       return Object.class.getName();
@@ -162,12 +154,7 @@ class BigQueryParameterMetaData implements ParameterMetaData {
     if (javaType == null) {
       return null;
     }
-    try {
-      return BigQueryJdbcTypeMappings.classToType(javaType);
-    } catch (SQLException ignored) {
-      // fall back to default
-      return null;
-    }
+    return BigQueryTypeRegistry.toBigQueryType(javaType);
   }
 
   @Override

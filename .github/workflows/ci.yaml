@@ -23,8 +23,8 @@ on:
   pull_request:
 name: ci
 jobs:
-  # detect whether or note we should run "bulk" (non-handwritten) unit tests
-  bulk-filter:
+  # detect whether or not we should run generated (non-handwritten) unit tests
+  generated-libraries-filter:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
@@ -35,14 +35,14 @@ jobs:
       # runnable is true if there are changes outside the .github/workflows directory OR if ci.yaml itself (or kokoro scripts) is modified.
       runnable: ${{ fromJSON(steps.filter.outputs.all_count) > fromJSON(steps.filter.outputs.workflows_count) || fromJSON(steps.filter.outputs.ci_count) > 0 }}
     steps:
-    - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
       with:
         persist-credentials: false
       # Use this action, rather than a file filter so that we can make this
       # mandatory.
       # See https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#example-including-branches
       # for more details.
-    - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
+    - uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4.0.3
       id: filter
       with:
         filters: |
@@ -57,78 +57,73 @@ jobs:
           ci:
             - '.github/workflows/ci.yaml'
             - '.kokoro/**'
-  # these unit tests are "bulk" (non-handwritten) libraries
+  # compile all modules across supported Java versions as a fast smoke test
   units:
     runs-on: ubuntu-latest
-    needs: bulk-filter
+    needs: generated-libraries-filter
+    if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
     strategy:
       fail-fast: false
       matrix:
         java: [11, 17, 21, 25, 26]
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
         cache: maven
     - run: java -version
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
     - run: .kokoro/build.sh
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' && (needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true') }}
+      if: ${{ needs.generated-libraries-filter.outputs.src == 'true' || needs.generated-libraries-filter.outputs.ci == 'true' }}
       env:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
   units-8-runtime:
     runs-on: ubuntu-latest
-    needs: bulk-filter
+    needs: generated-libraries-filter
+    if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
     name: "units (8)"
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
       with:
         java-version: 8
         distribution: temurin
     - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
       # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
       # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
       run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java" >> $GITHUB_ENV
       shell: bash    
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
       with:
         java-version: 11
         distribution: temurin
         cache: maven
     - run: .kokoro/build.sh
-      if: ${{ needs.bulk-filter.outputs.runnable == 'true' && (needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true') }}
+      if: ${{ needs.generated-libraries-filter.outputs.src == 'true' || needs.generated-libraries-filter.outputs.ci == 'true' }}
       shell: bash      
       env:
         JOB_TYPE: test
         JOB_NAME: units-8-runtime-${{matrix.java}}
   # detect which libraries have changed
   changes:
-    needs: bulk-filter
-    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    needs: generated-libraries-filter
+    if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       pull-requests: read
     outputs:
       packages: ${{ steps.filter.outputs.changes }}
     steps:
-    - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+    - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
       with:
         persist-credentials: false
-    - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
+    - uses: dorny/paths-filter@ceb8a2b8f2d89434be7ff52d3de7ec3738c5cc9d # v4.0.3
       id: filter
       with:
         # For each library, run CI in split repos where there are changes in:
@@ -252,10 +247,10 @@ jobs:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
         java: [11, 17, 21, 25, 26]
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
@@ -275,10 +270,10 @@ jobs:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
         java: [8]
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
       with:
         java-version: 11
         distribution: temurin
@@ -290,7 +285,7 @@ jobs:
       env:
         BUILD_SUBDIR: ${{matrix.package}}
         JOB_TYPE: install
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
       with:
         java-version: ${{matrix.java}}
         distribution: temurin
@@ -317,10 +312,10 @@ jobs:
       matrix:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
       with:
         distribution: temurin
         java-version: 11
@@ -337,10 +332,10 @@ jobs:
       matrix:
         package: ${{ fromJSON(needs.changes.outputs.packages) }}
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
       with:
         distribution: temurin
         java-version: 17
@@ -349,7 +344,7 @@ jobs:
       env:
         BUILD_SUBDIR: ${{matrix.package}}
   required:
-    needs: [ bulk-filter, changes, split-units, split-clirr, split-dependencies ]
+    needs: [ generated-libraries-filter, changes, split-units, split-clirr, split-dependencies ]
     name: conditional-required-check
     if: ${{ always() }} # Always run even if any "needs" jobs fail
     runs-on: ubuntu-22.04
@@ -360,16 +355,16 @@ jobs:
       - name: Success otherwise
         run: echo "Success!"
   windows:
-    needs: bulk-filter
-    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    needs: generated-libraries-filter
+    if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
     runs-on: windows-latest
     steps:
     - name: Support longpaths
       run: git config --system core.longpaths true
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
       with:
         distribution: temurin
         java-version: 11
@@ -380,15 +375,15 @@ jobs:
         JOB_TYPE: test
         JOB_NAME: windows-units
   lint:
-    needs: bulk-filter
-    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    needs: generated-libraries-filter
+    if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         fetch-depth: 0
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
       with:
         distribution: temurin
         java-version: 17
@@ -400,14 +395,32 @@ jobs:
         HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
   enforcer:
-    needs: bulk-filter
-    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    needs: generated-libraries-filter
+    if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
+      with:
+        distribution: temurin
+        java-version: 11
+        cache: maven
+    - run: java -version
+    - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
+  ban-duplicate-classes:
+    needs: generated-libraries-filter
+    if: |
+      needs.generated-libraries-filter.outputs.runnable == 'true' &&
+      github.head_ref == 'release-please--branches--main' &&
+      !endsWith(github.event.pull_request.title, 'SNAPSHOT')
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
       with:
         distribution: temurin
         java-version: 11
@@ -418,16 +431,16 @@ jobs:
       env:
         JOB_TYPE: install
     - run: java -version
-    - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
+    - run: mvn -B -ntp enforcer:enforce@enforce-banned-duplicate-classes -T 1C
   gapic-libraries-bom:
-    needs: bulk-filter
-    if: ${{ needs.bulk-filter.outputs.runnable == 'true' }}
+    needs: generated-libraries-filter
+    if: ${{ needs.generated-libraries-filter.outputs.runnable == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       with:
         persist-credentials: false
-    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
+    - uses: actions/setup-java@cf277c60eb25467037889841efdb72551f06f6c3 # v4.9.1
       with:
         java-version: 11
         distribution: temurin
@@ -437,7 +450,7 @@ jobs:
       env:
         JOB_TYPE: install
     - name: Validate gapic-libraries-bom
-      uses: googleapis/java-cloud-bom/tests/validate-bom@377c8d1fac6b1521dc52a10f4d02e5d371a0de67 # v26.79.0
+      uses: googleapis/java-cloud-bom/tests/validate-bom@a634dd9327474415b45a6c1c0e42c3375800a249 # v26.84.0
       with:
         bom-path: gapic-libraries-bom/pom.xml
 

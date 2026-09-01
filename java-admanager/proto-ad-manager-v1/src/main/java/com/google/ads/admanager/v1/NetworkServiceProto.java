@@ -41,6 +41,10 @@ public final class NetworkServiceProto extends com.google.protobuf.GeneratedFile
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_UpdateNetworkRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_UpdateNetworkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_ads_admanager_v1_GetNetworkRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_GetNetworkRequest_fieldAccessorTable;
@@ -52,6 +56,14 @@ public final class NetworkServiceProto extends com.google.protobuf.GeneratedFile
       internal_static_google_ads_admanager_v1_ListNetworksResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_ads_admanager_v1_ListNetworksResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_ProvisionTestNetworkRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_ProvisionTestNetworkRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_ads_admanager_v1_GetDefaultThirdPartyDataDeclarationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_ads_admanager_v1_GetDefaultThirdPartyDataDeclarationRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -66,7 +78,11 @@ public final class NetworkServiceProto extends com.google.protobuf.GeneratedFile
           + "e.proto\022\027google.ads.admanager.v1\032.google"
           + "/ads/admanager/v1/network_messages.proto"
           + "\032\034google/api/annotations.proto\032\027google/a"
-          + "pi/client.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"K\n"
+          + "pi/client.proto\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\032"
+          + " google/protobuf/field_mask.proto\"\204\001\n"
+          + "\024UpdateNetworkRequest\0226\n"
+          + "\007network\030\001 \001(\0132 .google.ads.admanager.v1.NetworkB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"K\n"
           + "\021GetNetworkRequest\0226\n"
           + "\004name\030\001 \001(\tB(\340A\002\372A\"\n"
           + " admanager.googleapis.com/Network\"Y\n"
@@ -77,20 +93,35 @@ public final class NetworkServiceProto extends com.google.protobuf.GeneratedFile
           + "\024ListNetworksResponse\0222\n"
           + "\010networks\030\001 \003(\0132 .google.ads.admanager.v1.Network\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\022\n\n"
-          + "total_size\030\003 \001(\0052\223\003\n"
+          + "total_size\030\003 \001(\005\"\035\n"
+          + "\033ProvisionTestNetworkRequest\"}\n"
+          + "*GetDefaultThirdPartyDataDeclarationRequest\022O\n"
+          + "\004name\030\001 \001(\tBA\340A\002\372A;\n"
+          + "9admanager.googleapis.com/DefaultThirdPartyDataDeclaration2\312\007\n"
           + "\016NetworkService\022\200\001\n\n"
           + "GetNetwork\022*.google.ads.admanager.v1.GetNetworkRequest\032"
-          + " .google.ads.admanager.v1.Network\"$\332A\004name\202\323\344\223\002\027\022\025/v1/{name=networks/*}\022\201\001\n"
-          + "\014ListNetworks\022,.google.ads.admanager.v1.Li"
-          + "stNetworksRequest\032-.google.ads.admanager"
-          + ".v1.ListNetworksResponse\"\024\202\323\344\223\002\016\022\014/v1/ne"
-          + "tworks\032z\312A\030admanager.googleapis.com\322A\\ht"
-          + "tps://www.googleapis.com/auth/admanager,"
-          + "https://www.googleapis.com/auth/admanager.readonlyB\307\001\n"
-          + "\033com.google.ads.admanager.v1B\023NetworkServiceProtoP\001Z@google.golang"
-          + ".org/genproto/googleapis/ads/admanager/v"
-          + "1;admanager\252\002\027Google.Ads.AdManager.V1\312\002\027"
-          + "Google\\Ads\\AdManager\\V1\352\002\032Google::Ads::AdManager::V1b\006proto3"
+          + " .google.ads.admanager.v1.Netw"
+          + "ork\"$\332A\004name\202\323\344\223\002\027\022\025/v1/{name=networks/*}\022\201\001\n"
+          + "\014ListNetworks\022,.google.ads.admanager.v1.ListNetworksRequest\032-.google.ads.ad"
+          + "manager.v1.ListNetworksResponse\"\024\202\323\344\223\002\016\022\014/v1/networks\022\246\001\n\r"
+          + "UpdateNetwork\022-.google.ads.admanager.v1.UpdateNetworkRequest\032 "
+          + ".google.ads.admanager.v1.Network\"D\332A\023net"
+          + "work,update_mask\202\323\344\223\002(2\035/v1/{network.name=networks/*}:\007network\022\234\001\n"
+          + "\024ProvisionTestNetwork\0224.google.ads.admanager.v1.ProvisionTestNetworkRequest\032"
+          + " .google.ads.adman"
+          + "ager.v1.Network\",\202\323\344\223\002&\"!/v1/networks:provisionTestNetwork:\001*\022\354\001\n"
+          + "#GetDefaultThirdPartyDataDeclaration\022C.google.ads.adman"
+          + "ager.v1.GetDefaultThirdPartyDataDeclarationRequest\0329.google.ads.admanager.v1.Def"
+          + "aultThirdPartyDataDeclaration\"E\332A\004name\202\323"
+          + "\344\223\0028\0226/v1/{name=networks/*/defaultThirdP"
+          + "artyDataDeclaration}\032z\312A\030admanager.googl"
+          + "eapis.com\322A\\https://www.googleapis.com/a"
+          + "uth/admanager,https://www.googleapis.com/auth/admanager.readonlyB\307\001\n"
+          + "\033com.google.ads.admanager.v1B\023NetworkServiceProtoP\001Z"
+          + "@google.golang.org/genproto/googleapis/a"
+          + "ds/admanager/v1;admanager\252\002\027Google.Ads.A"
+          + "dManager.V1\312\002\027Google\\Ads\\AdManager\\V1\352\002\032"
+          + "Google::Ads::AdManager::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -101,9 +132,18 @@ public final class NetworkServiceProto extends com.google.protobuf.GeneratedFile
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+            });
+    internal_static_google_ads_admanager_v1_UpdateNetworkRequest_descriptor =
+        getDescriptor().getMessageType(0);
+    internal_static_google_ads_admanager_v1_UpdateNetworkRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_UpdateNetworkRequest_descriptor,
+            new java.lang.String[] {
+              "Network", "UpdateMask",
             });
     internal_static_google_ads_admanager_v1_GetNetworkRequest_descriptor =
-        getDescriptor().getMessageType(0);
+        getDescriptor().getMessageType(1);
     internal_static_google_ads_admanager_v1_GetNetworkRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_GetNetworkRequest_descriptor,
@@ -111,7 +151,7 @@ public final class NetworkServiceProto extends com.google.protobuf.GeneratedFile
               "Name",
             });
     internal_static_google_ads_admanager_v1_ListNetworksRequest_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(2);
     internal_static_google_ads_admanager_v1_ListNetworksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_ListNetworksRequest_descriptor,
@@ -119,12 +159,26 @@ public final class NetworkServiceProto extends com.google.protobuf.GeneratedFile
               "PageSize", "PageToken", "Skip",
             });
     internal_static_google_ads_admanager_v1_ListNetworksResponse_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(3);
     internal_static_google_ads_admanager_v1_ListNetworksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_ads_admanager_v1_ListNetworksResponse_descriptor,
             new java.lang.String[] {
               "Networks", "NextPageToken", "TotalSize",
+            });
+    internal_static_google_ads_admanager_v1_ProvisionTestNetworkRequest_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_ads_admanager_v1_ProvisionTestNetworkRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_ProvisionTestNetworkRequest_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_ads_admanager_v1_GetDefaultThirdPartyDataDeclarationRequest_descriptor =
+        getDescriptor().getMessageType(5);
+    internal_static_google_ads_admanager_v1_GetDefaultThirdPartyDataDeclarationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_ads_admanager_v1_GetDefaultThirdPartyDataDeclarationRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.ads.admanager.v1.NetworkMessagesProto.getDescriptor();
@@ -132,6 +186,7 @@ public final class NetworkServiceProto extends com.google.protobuf.GeneratedFile
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

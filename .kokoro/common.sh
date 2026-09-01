@@ -231,21 +231,56 @@ function release_please_snapshot_pull_request() {
   fi
 }
 
-# Sets bash variables for maven_modules and modified_module_list
-# maven_modules is the list of all maven submodules of the root pom
-# modified_module_list is the subset of maven_modules that have been touched
-# in the current pull request
+# Returns the list of modified files in the current PR diff via git diff.
+function get_modified_files() {
+  # In Kokoro Docker containers, the build runs as root (UID 0) while repository files
+  # belong to the host user (UID 1000). Git 2.35.2+ flags this UID mismatch as 'dubious ownership'
+  # and aborts git commands; safe.directory allows Git to operate in this directory.
+  git config --global --add safe.directory "$(realpath .)" 2>/dev/null || true
+
+  # '${VAR:-DEFAULT}' uses $VAR if set and non-empty, otherwise falls back to DEFAULT.
+  # This allows developers to run these scripts locally outside the Kokoro CI environment.
+  local target_branch="${KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH:-origin/main}"
+  local target_commit="${KOKORO_GITHUB_PULL_REQUEST_COMMIT:-HEAD}"
+
+  # 'git diff A...B' (triple-dot) diffs between the merge-base (common ancestor) of
+  # target_branch and target_commit, listing only files changed in this branch.
+  git diff --name-only "${target_branch}...${target_commit}"
+}
+
+# Determines if the entire monorepo must be tested.
 #
-# The first positional argument is a value true/false. If true (default), then
-# exclude modules from the global exclusion list.
+# Monorepo-wide testing is triggered under three conditions:
+# 1. TEST_ALL_MODULES is set to "true" (used by nightly and scheduled CI builds).
+# 2. Root parent POMs (google-cloud-jar-parent or google-cloud-pom-parent) are modified,
+#    as changes to parent POMs affect shared dependency versions and compiler/build plugins.
+# 3. Core shared dependencies (sdk-platform-java/java-shared-dependencies) are modified,
+#    as gax, auth, and transport changes can break downstream client library integration tests.
+function should_test_all_modules() {
+  local files
+  files=$(get_modified_files)
+
+  # '<<< STRING' is a Bash "here-string" that feeds the string variable directly to
+  # stdin of grep, avoiding an external subshell pipeline (like 'echo "$var" | grep').
+  if [[ "${TEST_ALL_MODULES}" == "true" ]] || \
+     grep -q -E '^google-cloud-(pom|jar)-parent/pom.xml$' <<< "${files}" || \
+     grep -q -E '^sdk-platform-java/java-shared-dependencies/' <<< "${files}"; then
+    return 0
+  fi
+  return 1
+}
+
+# Generates the list of modified Maven modules for batch integration/GraalVM test jobs.
+# Sets global variables:
+# - maven_modules: list of all Maven modules defined in the root POM.
+# - modified_module_list: modules that need to be tested for the current PR.
+#
+# Positional parameter $1 (default "true") specifies whether to filter out modules
+# defined in the 'excluded_modules' array.
 function generate_modified_modules_list() {
-  # Find the files changed from when the PR branched to the last commit
-  # Filter for java modules and get all the unique elements
-  # grep returns 1 (error code) and exits the pipeline if there is no match
-  # If there is no match, it will return true so the rest of the commands can run
-  git config --global --add safe.directory $(realpath .)
-  modified_files=$(git diff --name-only "${KOKORO_GITHUB_PULL_REQUEST_TARGET_BRANCH}...${KOKORO_GITHUB_PULL_REQUEST_COMMIT}")
-  printf "Modified files:\n%s\n" "${modified_files}"
+  local files
+  files=$(get_modified_files)
+  printf "Modified files:\n%s\n" "${files}"
 
   # Generate the list of valid maven modules
   maven_modules_list=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
@@ -265,14 +300,12 @@ function generate_modified_modules_list() {
   fi
 
   modified_module_list=()
-  # If either parent pom.xml is touched, run ITs on all the modules
-  parent_pom_modified=$(echo "${modified_files}" | grep -E '^google-cloud-(pom|jar)-parent/pom.xml$' || true)
-  shared_dependencies_modified=$(echo "${modified_files}" | grep -E '^java-shared-dependencies' || true)
-  if [[ (-n $parent_pom_modified) || (-n $shared_dependencies_modified) || ("${TEST_ALL_MODULES}" == "true") ]]; then
+  # If either parent pom.xml or core shared dependency is touched, run ITs on all the modules
+  if should_test_all_modules; then
     modified_module_list=(${maven_modules[*]})
     echo "Testing the entire monorepo"
   else
-    modules=$(echo "${modified_files}" | grep -E '(google-auth|java)-.*' || true)
+    modules=$(echo "${files}" | grep -E '(google-auth|java)-.*' || true)
     printf "Files in java modules:\n%s\n" "${modules}"
     if [[ -n $modules ]]; then
       modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
@@ -285,6 +318,23 @@ function generate_modified_modules_list() {
       echo "Found no changes in the java modules"
     fi
   fi
+}
+
+# Checks if files within a specific module directory were modified in the PR diff.
+#
+# Uses exact directory prefix matching ('^${module}/') to prevent substring collisions
+# where modifying one module triggers tests for another module that shares its prefix
+# (e.g. java-bigquery vs java-bigquerystorage).
+function is_module_modified() {
+  local module="$1"
+  if [[ -z "${module}" ]]; then
+    return 1
+  fi
+
+  local files
+  files=$(get_modified_files)
+  # '<<< "${files}"' feeds the diff string directly to grep via stdin.
+  grep -q -E "^${module}/" <<< "${files}"
 }
 
 # Filters the modified_module_list to only include modules that contain
@@ -416,6 +466,8 @@ function install_modules() {
     printf "Installing submodules:\n%s\n" "$all_submodules"
 
     always_install_deps_list=(
+      # Required upstream dependency for java-spanner and java-spanner-jdbc
+      'grpc-gcp-java'
       'java-monitoring/google-cloud-monitoring'
       'java-monitoring/google-cloud-monitoring-bom'
       'java-kms/google-cloud-kms'
@@ -439,6 +491,8 @@ function install_modules() {
       'java-iam/proto-google-iam-v3'
       'java-iam/proto-google-iam-v3beta'
       'gapic-libraries-bom'
+      # Required upstream dependency for gax-java, google-cloud-core, and all client libraries
+      'sdk-platform-java/api-common-java'
       'sdk-platform-java/java-shared-dependencies'
       'sdk-platform-java/java-shared-dependencies/first-party-dependencies'
       'sdk-platform-java/java-shared-dependencies/third-party-dependencies'

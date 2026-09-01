@@ -27,8 +27,6 @@ import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryConversionException;
-import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionException;
-import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionNotFoundException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
@@ -70,7 +68,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   private Job job;
   private SQLWarning warnings;
   private boolean warningsLoaded = false;
-  protected final BigQueryTypeCoercer bigQueryTypeCoercer = BigQueryTypeCoercionUtility.INSTANCE;
+
   protected final SpanContext originalSpanContext;
 
   protected BigQueryBaseResultSet(
@@ -297,7 +295,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
       if (value == null) {
         return null;
       }
-      return this.bigQueryTypeCoercer.coerceTo(type, value, this.LOG);
+      return BigQueryTypeRegistry.convert(value, type);
     } catch (RuntimeException e) {
       throw createCoercionException(columnIndex, type, e);
     }
@@ -323,8 +321,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getString");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(String.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException e) {
+      return BigQueryTypeRegistry.convert(value, String.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, String.class, e);
     }
   }
@@ -342,8 +340,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Boolean.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException e) {
+      return BigQueryTypeRegistry.convert(value, Boolean.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Boolean.class, e);
     }
   }
@@ -353,8 +351,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getByte");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Byte.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
+      return BigQueryTypeRegistry.convert(value, Byte.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Byte.class, e);
     }
   }
@@ -364,8 +362,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getShort");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Short.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
+      return BigQueryTypeRegistry.convert(value, Short.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Short.class, e);
     }
   }
@@ -375,8 +373,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getInt");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Integer.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
+      return BigQueryTypeRegistry.convert(value, Integer.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Integer.class, e);
     }
   }
@@ -386,8 +384,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getLong");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Long.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
+      return BigQueryTypeRegistry.convert(value, Long.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Long.class, e);
     }
   }
@@ -397,8 +395,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getFloat");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Float.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
+      return BigQueryTypeRegistry.convert(value, Float.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Float.class, e);
     }
   }
@@ -408,8 +406,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getDouble");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(Double.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
+      return BigQueryTypeRegistry.convert(value, Double.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, Double.class, e);
     }
   }
@@ -421,8 +419,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getBigDecimal");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(BigDecimal.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
+      return BigQueryTypeRegistry.convert(value, BigDecimal.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, BigDecimal.class, e);
     }
   }
@@ -432,8 +430,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getBytes");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(byte[].class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException e) {
+      return BigQueryTypeRegistry.convert(value, byte[].class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, byte[].class, e);
     }
   }
@@ -443,8 +441,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getDate");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(java.sql.Date.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException e) {
+      return BigQueryTypeRegistry.convert(value, java.sql.Date.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, java.sql.Date.class, e);
     }
   }
@@ -458,8 +456,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     }
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(java.sql.Time.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException e) {
+      return BigQueryTypeRegistry.convert(value, java.sql.Time.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, java.sql.Time.class, e);
     }
   }
@@ -473,8 +471,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     }
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(java.sql.Timestamp.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException e) {
+      return BigQueryTypeRegistry.convert(value, java.sql.Timestamp.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, java.sql.Timestamp.class, e);
     }
   }
@@ -484,8 +482,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finestTrace("getBigDecimal");
     try {
       Object value = getObject(columnIndex);
-      return this.bigQueryTypeCoercer.coerceTo(BigDecimal.class, value, this.LOG);
-    } catch (BigQueryJdbcCoercionNotFoundException | BigQueryJdbcCoercionException e) {
+      return BigQueryTypeRegistry.convert(value, BigDecimal.class);
+    } catch (BigQueryJdbcException e) {
       throw createCoercionException(columnIndex, BigDecimal.class, e);
     }
   }

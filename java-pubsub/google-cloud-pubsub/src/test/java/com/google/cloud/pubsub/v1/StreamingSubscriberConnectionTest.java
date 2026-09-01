@@ -164,6 +164,7 @@ public class StreamingSubscriberConnectionTest {
     streamingSubscriberConnection.awaitTerminated(1, TimeUnit.SECONDS);
   }
 
+  @Ignore("https://github.com/googleapis/google-cloud-java/issues/13706")
   @Test
   public void testRunShutdown_TimeoutExceeded() throws Exception {
     final SettableApiFuture<com.google.protobuf.Empty> ackFuture = SettableApiFuture.create();
@@ -548,7 +549,6 @@ public class StreamingSubscriberConnectionTest {
     }
   }
 
-  @Ignore("https://github.com/googleapis/google-cloud-java/issues/13706")
   @Test
   public void testSendAckOperationsExactlyOnceEnabledErrorWithEmptyMetadataMap() {
     // Setup

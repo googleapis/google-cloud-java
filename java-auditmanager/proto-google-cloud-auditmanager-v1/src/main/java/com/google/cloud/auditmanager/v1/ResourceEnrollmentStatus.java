@@ -410,7 +410,7 @@ public final class ResourceEnrollmentStatus extends com.google.protobuf.Generate
    * <code>bool enrolled = 3 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @deprecated google.cloud.auditmanager.v1.ResourceEnrollmentStatus.enrolled is deprecated. See
-   *     google/cloud/auditmanager/v1/auditmanager.proto;l=682
+   *     google/cloud/auditmanager/v1/auditmanager.proto;l=693
    * @return The enrolled.
    */
   @java.lang.Override
@@ -1319,7 +1319,7 @@ public final class ResourceEnrollmentStatus extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.ResourceEnrollmentStatus.enrolled is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=682
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=693
      * @return The enrolled.
      */
     @java.lang.Override
@@ -1340,7 +1340,7 @@ public final class ResourceEnrollmentStatus extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.ResourceEnrollmentStatus.enrolled is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=682
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=693
      * @param value The enrolled to set.
      * @return This builder for chaining.
      */
@@ -1365,7 +1365,7 @@ public final class ResourceEnrollmentStatus extends com.google.protobuf.Generate
      * </code>
      *
      * @deprecated google.cloud.auditmanager.v1.ResourceEnrollmentStatus.enrolled is deprecated. See
-     *     google/cloud/auditmanager/v1/auditmanager.proto;l=682
+     *     google/cloud/auditmanager/v1/auditmanager.proto;l=693
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

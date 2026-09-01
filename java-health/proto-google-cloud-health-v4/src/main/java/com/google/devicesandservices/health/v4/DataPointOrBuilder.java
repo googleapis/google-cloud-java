@@ -1767,6 +1767,187 @@ public interface DataPointOrBuilder
    *
    *
    * <pre>
+   * Optional. Data for points in the `menstrual-period` interval data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.MenstrualPeriod menstrual_period = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the menstrualPeriod field is set.
+   */
+  boolean hasMenstrualPeriod();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `menstrual-period` interval data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.MenstrualPeriod menstrual_period = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The menstrualPeriod.
+   */
+  com.google.devicesandservices.health.v4.MenstrualPeriod getMenstrualPeriod();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `menstrual-period` interval data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.MenstrualPeriod menstrual_period = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.MenstrualPeriodOrBuilder getMenstrualPeriodOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `ovulation-test` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.OvulationTest ovulation_test = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the ovulationTest field is set.
+   */
+  boolean hasOvulationTest();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `ovulation-test` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.OvulationTest ovulation_test = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The ovulationTest.
+   */
+  com.google.devicesandservices.health.v4.OvulationTest getOvulationTest();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `ovulation-test` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.OvulationTest ovulation_test = 50 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.OvulationTestOrBuilder getOvulationTestOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `symptoms` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Symptoms symptoms = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the symptoms field is set.
+   */
+  boolean hasSymptoms();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `symptoms` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Symptoms symptoms = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The symptoms.
+   */
+  com.google.devicesandservices.health.v4.Symptoms getSymptoms();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `symptoms` sample data type
+   * collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Symptoms symptoms = 52 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.SymptomsOrBuilder getSymptomsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `moods` sample data type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Moods moods = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the moods field is set.
+   */
+  boolean hasMoods();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `moods` sample data type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Moods moods = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The moods.
+   */
+  com.google.devicesandservices.health.v4.Moods getMoods();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data for points in the `moods` sample data type collection.
+   * </pre>
+   *
+   * <code>
+   * .google.devicesandservices.health.v4.Moods moods = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.devicesandservices.health.v4.MoodsOrBuilder getMoodsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Identifier. Data point name, only supported for the subset of identifiable
    * data types. For the majority of the data types, individual data points do
    * not need to be identified and this field would be empty.
@@ -1782,7 +1963,7 @@ public interface DataPointOrBuilder
    * The `{data_type}` ID corresponds to the kebab-case version of the field
    * names in the [DataPoint
    * data][google.devicesandservices.health.v4.DataPoint] union
-   * field, e.g. `total-calories` for the `total_calories` field.
+   * field, e.g. `heart-rate` for the `heart_rate` field.
    *
    * The `{data_point}` ID can be client-provided or system-generated.
    * If client-provided, it must be a string of 4-63 characters,
@@ -1814,7 +1995,7 @@ public interface DataPointOrBuilder
    * The `{data_type}` ID corresponds to the kebab-case version of the field
    * names in the [DataPoint
    * data][google.devicesandservices.health.v4.DataPoint] union
-   * field, e.g. `total-calories` for the `total_calories` field.
+   * field, e.g. `heart-rate` for the `heart_rate` field.
    *
    * The `{data_point}` ID can be client-provided or system-generated.
    * If client-provided, it must be a string of 4-63 characters,

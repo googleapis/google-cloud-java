@@ -128,6 +128,45 @@ public class ChildPublisherServiceSettings extends ClientSettings<ChildPublisher
         .batchUpdateChildPublishersSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * batchResendChildPublisherInvitationEmails.
+   */
+  public UnaryCallSettings<
+          BatchResendChildPublisherInvitationEmailsRequest,
+          BatchResendChildPublisherInvitationEmailsResponse>
+      batchResendChildPublisherInvitationEmailsSettings() {
+    return ((ChildPublisherServiceStubSettings) getStubSettings())
+        .batchResendChildPublisherInvitationEmailsSettings();
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * batchRenegotiateChildPublisherAgreements.
+   */
+  public UnaryCallSettings<
+          BatchRenegotiateChildPublisherAgreementsRequest,
+          BatchRenegotiateChildPublisherAgreementsResponse>
+      batchRenegotiateChildPublisherAgreementsSettings() {
+    return ((ChildPublisherServiceStubSettings) getStubSettings())
+        .batchRenegotiateChildPublisherAgreementsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchRejectChildPublishers. */
+  public UnaryCallSettings<BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>
+      batchRejectChildPublishersSettings() {
+    return ((ChildPublisherServiceStubSettings) getStubSettings())
+        .batchRejectChildPublishersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchWithdrawChildPublishers. */
+  public UnaryCallSettings<
+          BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+      batchWithdrawChildPublishersSettings() {
+    return ((ChildPublisherServiceStubSettings) getStubSettings())
+        .batchWithdrawChildPublishersSettings();
+  }
+
   public static final ChildPublisherServiceSettings create(ChildPublisherServiceStubSettings stub)
       throws IOException {
     return new ChildPublisherServiceSettings.Builder(stub.toBuilder()).build();
@@ -265,6 +304,42 @@ public class ChildPublisherServiceSettings extends ClientSettings<ChildPublisher
             BatchUpdateChildPublishersRequest, BatchUpdateChildPublishersResponse>
         batchUpdateChildPublishersSettings() {
       return getStubSettingsBuilder().batchUpdateChildPublishersSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchResendChildPublisherInvitationEmails.
+     */
+    public UnaryCallSettings.Builder<
+            BatchResendChildPublisherInvitationEmailsRequest,
+            BatchResendChildPublisherInvitationEmailsResponse>
+        batchResendChildPublisherInvitationEmailsSettings() {
+      return getStubSettingsBuilder().batchResendChildPublisherInvitationEmailsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchRenegotiateChildPublisherAgreements.
+     */
+    public UnaryCallSettings.Builder<
+            BatchRenegotiateChildPublisherAgreementsRequest,
+            BatchRenegotiateChildPublisherAgreementsResponse>
+        batchRenegotiateChildPublisherAgreementsSettings() {
+      return getStubSettingsBuilder().batchRenegotiateChildPublisherAgreementsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchRejectChildPublishers. */
+    public UnaryCallSettings.Builder<
+            BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>
+        batchRejectChildPublishersSettings() {
+      return getStubSettingsBuilder().batchRejectChildPublishersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchWithdrawChildPublishers. */
+    public UnaryCallSettings.Builder<
+            BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+        batchWithdrawChildPublishersSettings() {
+      return getStubSettingsBuilder().batchWithdrawChildPublishersSettings();
     }
 
     @Override

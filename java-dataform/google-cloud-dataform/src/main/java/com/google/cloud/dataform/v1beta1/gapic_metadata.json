@@ -13,6 +13,9 @@
             "CancelWorkflowInvocation": {
               "methods": ["cancelWorkflowInvocation", "cancelWorkflowInvocationCallable"]
             },
+            "CheckoutWorkspaceBranch": {
+              "methods": ["checkoutWorkspaceBranch", "checkoutWorkspaceBranchCallable"]
+            },
             "CommitRepositoryChanges": {
               "methods": ["commitRepositoryChanges", "commitRepositoryChangesCallable"]
             },
@@ -46,6 +49,9 @@
             "CreateWorkspace": {
               "methods": ["createWorkspace", "createWorkspace", "createWorkspace", "createWorkspaceCallable"]
             },
+            "DeleteBranch": {
+              "methods": ["deleteBranch", "deleteBranchCallable"]
+            },
             "DeleteFolder": {
               "methods": ["deleteFolder", "deleteFolder", "deleteFolder", "deleteFolderCallable"]
             },
@@ -76,6 +82,9 @@
             "DeleteWorkspace": {
               "methods": ["deleteWorkspace", "deleteWorkspace", "deleteWorkspace", "deleteWorkspaceCallable"]
             },
+            "FetchCurrentWorkspaceBranch": {
+              "methods": ["fetchCurrentWorkspaceBranch", "fetchCurrentWorkspaceBranchCallable"]
+            },
             "FetchFileDiff": {
               "methods": ["fetchFileDiff", "fetchFileDiffCallable"]
             },
@@ -90,6 +99,9 @@
             },
             "FetchRepositoryHistory": {
               "methods": ["fetchRepositoryHistory", "fetchRepositoryHistoryPagedCallable", "fetchRepositoryHistoryCallable"]
+            },
+            "FetchWorkspaceBranches": {
+              "methods": ["fetchWorkspaceBranches", "fetchWorkspaceBranchesPagedCallable", "fetchWorkspaceBranchesCallable"]
             },
             "GetCompilationResult": {
               "methods": ["getCompilationResult", "getCompilationResult", "getCompilationResult", "getCompilationResultCallable"]
@@ -213,6 +225,9 @@
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SyncWorkspaceRefs": {
+              "methods": ["syncWorkspaceRefs", "syncWorkspaceRefsCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]
