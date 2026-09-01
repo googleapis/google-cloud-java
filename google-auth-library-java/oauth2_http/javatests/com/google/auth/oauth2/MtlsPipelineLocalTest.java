@@ -347,7 +347,7 @@ class MtlsPipelineLocalTest {
             + "/v1/token\",\n"
             + "  \"credential_source\": {\n"
             + "    \"file\": \""
-            + tokenFile.toString()
+            + tokenFile.toString().replace("\\", "\\\\")
             + "\",\n"
             + "    \"format\": {\n"
             + "      \"type\": \"json\",\n"
@@ -355,7 +355,8 @@ class MtlsPipelineLocalTest {
             + "      \"actor_token_field_name\": \"actor_token\"\n"
             + "    },\n"
             + "    \"certificate\": {\n"
-            + "      \"certificate_config_location\": \"testresources/mtls/certificate_config.json\"\n"
+            + "      \"certificate_config_location\":"
+            + " \"testresources/mtls/certificate_config.json\"\n"
             + "    }\n"
             + "  }\n"
             + "}";
@@ -468,7 +469,7 @@ class MtlsPipelineLocalTest {
             + "/v1/token\",\n"
             + "  \"credential_source\": {\n"
             + "    \"file\": \""
-            + tokenFile.toString()
+            + tokenFile.toString().replace("\\", "\\\\")
             + "\",\n"
             + "    \"format\": {\n"
             + "      \"type\": \"json\",\n"
@@ -476,7 +477,8 @@ class MtlsPipelineLocalTest {
             + "      \"actor_token_field_name\": \"actor_token\"\n"
             + "    },\n"
             + "    \"certificate\": {\n"
-            + "      \"certificate_config_location\": \"testresources/mtls/certificate_config.json\"\n"
+            + "      \"certificate_config_location\":"
+            + " \"testresources/mtls/certificate_config.json\"\n"
             + "    }\n"
             + "  }\n"
             + "}";
@@ -566,7 +568,7 @@ class MtlsPipelineLocalTest {
             + "/v1/token\",\n"
             + "  \"credential_source\": {\n"
             + "    \"file\": \""
-            + tokenFile.toString()
+            + tokenFile.toString().replace("\\", "\\\\")
             + "\",\n"
             + "    \"format\": {\n"
             + "      \"type\": \"json\",\n"
@@ -574,7 +576,8 @@ class MtlsPipelineLocalTest {
             + "      \"actor_token_field_name\": \"actor_token\"\n"
             + "    },\n"
             + "    \"certificate\": {\n"
-            + "      \"certificate_config_location\": \"testresources/mtls/certificate_config.json\"\n"
+            + "      \"certificate_config_location\":"
+            + " \"testresources/mtls/certificate_config.json\"\n"
             + "    }\n"
             + "  }\n"
             + "}";
@@ -807,7 +810,7 @@ class MtlsPipelineLocalTest {
             + "\",\n"
             + "  \"credential_source\": {\n"
             + "    \"file\": \""
-            + tokenFile.toString()
+            + tokenFile.toString().replace("\\", "\\\\")
             + "\",\n"
             + "    \"format\": {\n"
             + "      \"type\": \"json\",\n"
@@ -815,7 +818,8 @@ class MtlsPipelineLocalTest {
             + "      \"actor_token_field_name\": \"actor_token\"\n"
             + "    },\n"
             + "    \"certificate\": {\n"
-            + "      \"certificate_config_location\": \"testresources/mtls/certificate_config.json\"\n"
+            + "      \"certificate_config_location\":"
+            + " \"testresources/mtls/certificate_config.json\"\n"
             + "    }\n"
             + "  }\n"
             + "}";
@@ -881,10 +885,10 @@ class MtlsPipelineLocalTest {
             + "  \"cert_configs\": {\n"
             + "    \"workload\": {\n"
             + "      \"cert_path\": \""
-            + dynamicCertFile.toString()
+            + dynamicCertFile.toString().replace("\\", "\\\\")
             + "\",\n"
             + "      \"key_path\": \""
-            + dynamicKeyFile.toString()
+            + dynamicKeyFile.toString().replace("\\", "\\\\")
             + "\"\n"
             + "    }\n"
             + "  }\n"
@@ -994,7 +998,7 @@ class MtlsPipelineLocalTest {
             + "\",\n"
             + "  \"credential_source\": {\n"
             + "    \"file\": \""
-            + tokenFile.toString()
+            + tokenFile.toString().replace("\\", "\\\\")
             + "\",\n"
             + "    \"format\": {\n"
             + "      \"type\": \"json\",\n"
@@ -1003,7 +1007,7 @@ class MtlsPipelineLocalTest {
             + "    },\n"
             + "    \"certificate\": {\n"
             + "      \"certificate_config_location\": \""
-            + certConfigFile.toString()
+            + certConfigFile.toString().replace("\\", "\\\\")
             + "\"\n"
             + "    }\n"
             + "  }\n"
