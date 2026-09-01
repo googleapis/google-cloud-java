@@ -90,53 +90,56 @@ function retry_with_backoff {
 # and naturally survives single-module components without throwing exit signals.
 function extract_pom_modules() {
   local pom_file="$1"
-  local modules_list=""
+  if [[ ! -f "${pom_file}" ]]; then
+    return 1
+  fi
+  local line module
   local in_profiles=false
   local in_modules=false
-  
-  while IFS= read -r line || [ -n "$line" ]; do
-    if [[ "$line" == *"<profiles>"* ]]; then
+  local -a modules=()
+
+  while IFS= read -r line || [[ -n "${line}" ]]; do
+    if [[ "${line}" == *"<profiles>"* ]]; then
       in_profiles=true
-    elif [[ "$line" == *"</profiles>"* ]]; then
+    elif [[ "${line}" == *"</profiles>"* ]]; then
       in_profiles=false
-    elif [[ "$line" == *"<modules>"* ]] && [ "$in_profiles" = false ]; then
+    elif [[ "${line}" == *"<modules>"* && "${in_profiles}" == "false" ]]; then
       in_modules=true
-    elif [[ "$line" == *"</modules>"* ]] && [ "$in_profiles" = false ]; then
+    elif [[ "${line}" == *"</modules>"* && "${in_profiles}" == "false" ]]; then
       in_modules=false
       break
-    elif [ "$in_modules" = true ] && [[ "$line" == *"<module>"* ]]; then
+    elif [[ "${in_modules}" == "true" && "${line}" == *"<module>"* ]]; then
       # Extract text between tags
-      local module="${line#*<module>}"
+      module="${line#*<module>}"
       module="${module%</module>*}"
-      
-      # Trim whitespace natively
+
+      # Trim leading/trailing whitespace without spawning external processes
       module="${module#"${module%%[![:space:]]*}"}"
       module="${module%"${module##*[![:space:]]}"}"
-      
-      if [ -z "$modules_list" ]; then
-        modules_list="$module"
-      else
-        modules_list="${modules_list} ${module}"
+
+      if [[ -n "${module}" ]]; then
+        modules+=("${module}")
       fi
     fi
-  done < "$pom_file"
-  
-  echo "$modules_list"
+  done < "${pom_file}"
+
+  echo "${modules[*]}"
 }
 
 # Given a folder containing a maven multi-module, assign the variable 'submodules' to a
 # comma-delimited list of <folder>/<submodule>.
 function parse_submodules() {
   submodules_array=()
-  if [ -f "$1/pom.xml" ]; then
+  if [[ -f "$1/pom.xml" ]]; then
     local modules
+    local submodule
 
     # Use pure Bash extraction to find the modules in the aggregator pom file.
     # Faster than invoking mvn help:evaluate to list all the project modules,
     # cleanly ignores optional <profiles>, and gracefully skips flat POMs.
     modules=$(extract_pom_modules "$1/pom.xml")
-    if [ -n "$modules" ]; then
-      for submodule in $modules; do
+    if [[ -n "${modules}" ]]; then
+      for submodule in ${modules}; do
         # Each entry = <folder>/<submodule>
         submodules_array+=("$1/${submodule}")
       done
@@ -285,39 +288,54 @@ function generate_modified_modules_list() {
   files=$(get_modified_files)
   printf "Modified files:\n%s\n" "${files}"
 
-  # Generate the list of valid maven modules
-  maven_modules_list=$(mvn help:evaluate -Dexpression=project.modules | grep '<.*>.*</.*>' | sed -e 's/<.*>\(.*\)<\/.*>/\1/g')
+  # Extract valid maven modules directly from pom.xml in pure Bash (~0.02s).
+  # This replaces 'mvn help:evaluate -Dexpression=project.modules' which previously
+  # spent 20-30+ seconds booting a JVM and evaluating the monorepo POMs on every run.
+  local root_pom="${commonScriptDir}/../pom.xml"
+  if [[ ! -f "${root_pom}" ]]; then
+    root_pom="pom.xml"
+  fi
+  local maven_modules_list
+  maven_modules_list=$(extract_pom_modules "${root_pom}")
   maven_modules=()
 
-  # If the first argument is "true" (default), then use the module exclusion list
-  use_exclusion_list=${1:-true}
+  # Positional parameter $1 specifies whether to apply the exclusion list (defaults to true).
+  local use_exclusion_list="${1:-true}"
+  local -a all_modules=()
+  read -r -a all_modules <<< "${maven_modules_list}"
+
+  local module
   if [[ "${use_exclusion_list}" == "true" ]]; then
     echo "Excluding modules from the global exclusion list"
-    for module in $maven_modules_list; do
-      if [[ ! " ${excluded_modules[*]} " =~ " ${module} " ]]; then
+    for module in "${all_modules[@]}"; do
+      if [[ ! " ${excluded_modules[*]} " == *" ${module} "* ]]; then
         maven_modules+=("${module}")
       fi
     done
   else
-    maven_modules=(${maven_modules_list[*]})
+    maven_modules=("${all_modules[@]}")
   fi
 
   modified_module_list=()
   # If either parent pom.xml or core shared dependency is touched, run ITs on all the modules
   if should_test_all_modules; then
-    modified_module_list=(${maven_modules[*]})
+    # '("${maven_modules[@]}")' copies the array elements safely.
+    modified_module_list=("${maven_modules[@]}")
     echo "Testing the entire monorepo"
   else
-    modules=$(echo "${files}" | grep -E '(google-auth|java)-.*' || true)
+    # Extract the top-level directory from each modified file path:
+    # 'cut -d '/' -f1' takes the first path segment (e.g. 'java-bigquery/src/...' -> 'java-bigquery').
+    # 'sort -u' sorts and deduplicates the candidate directory names.
+    local modules
+    modules=$(cut -d '/' -f1 <<< "${files}" | sort -u)
     printf "Files in java modules:\n%s\n" "${modules}"
-    if [[ -n $modules ]]; then
-      modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
-      for module in $modules; do
-        if [[ " ${maven_modules[*]} " =~ " ${module} " ]]; then
-          modified_module_list+=("${module}")
-        fi
-      done
-    else
+    for module in ${modules}; do
+      # If this top-level directory is a recognized Maven module, add it to our list.
+      if [[ " ${maven_modules[*]} " == *" ${module} "* ]]; then
+        modified_module_list+=("${module}")
+      fi
+    done
+    if [[ ${#modified_module_list[@]} -eq 0 ]]; then
       echo "Found no changes in the java modules"
     fi
 
