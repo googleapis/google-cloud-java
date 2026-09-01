@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc.telemetry.v1;
 
 import java.util.Objects;
+import java.util.Properties;
 
 /** Configuration settings for the BigQuery JDBC driver telemetry client. */
 final class TelemetryConfiguration {
@@ -156,7 +157,8 @@ final class TelemetryConfiguration {
       return this;
     }
 
-    Builder resolveEnabledFlag(java.util.Properties connectionProperties) {
+    Builder resolveProperties(Properties connectionProperties) {
+      // 1. Connection Properties (lowest precedence)
       if (connectionProperties != null) {
         String propValue = connectionProperties.getProperty("EnableDiagnosticTelemetry");
         if (propValue == null) {
@@ -165,21 +167,80 @@ final class TelemetryConfiguration {
         if (propValue != null) {
           if ("0".equals(propValue) || "false".equalsIgnoreCase(propValue)) {
             this.enabled = false;
-            return this;
-          }
-          if ("1".equals(propValue) || "true".equalsIgnoreCase(propValue)) {
+          } else if ("1".equals(propValue) || "true".equalsIgnoreCase(propValue)) {
             this.enabled = true;
-            return this;
+          }
+        }
+
+        String uploadIntervalStr = connectionProperties.getProperty("TelemetryUploadInterval");
+        if (uploadIntervalStr != null) {
+          try {
+            this.uploadIntervalMs = Long.parseLong(uploadIntervalStr);
+          } catch (NumberFormatException ignored) {
+          }
+        }
+
+        String batchSizeStr = connectionProperties.getProperty("TelemetryBatchSize");
+        if (batchSizeStr != null) {
+          try {
+            this.batchSizeThreshold = Integer.parseInt(batchSizeStr);
+          } catch (NumberFormatException ignored) {
           }
         }
       }
-      String envValue = System.getenv("GOOGLE_CLOUD_TELEMETRY_ENABLED");
-      if (envValue != null) {
-        if ("0".equals(envValue) || "false".equalsIgnoreCase(envValue)) {
+
+      // 2. Environment Variables (overrides connection properties)
+      String envEnabled = System.getenv("GOOGLE_CLOUD_TELEMETRY_ENABLED");
+      if (envEnabled != null) {
+        if ("0".equals(envEnabled) || "false".equalsIgnoreCase(envEnabled)) {
           this.enabled = false;
-          return this;
+        } else if ("1".equals(envEnabled) || "true".equalsIgnoreCase(envEnabled)) {
+          this.enabled = true;
         }
       }
+
+      String envInterval = System.getenv("GOOGLE_CLOUD_TELEMETRY_UPLOAD_INTERVAL");
+      if (envInterval != null) {
+        try {
+          this.uploadIntervalMs = Long.parseLong(envInterval);
+        } catch (NumberFormatException ignored) {
+        }
+      }
+
+      String envBatch = System.getenv("GOOGLE_CLOUD_TELEMETRY_BATCH_SIZE");
+      if (envBatch != null) {
+        try {
+          this.batchSizeThreshold = Integer.parseInt(envBatch);
+        } catch (NumberFormatException ignored) {
+        }
+      }
+
+      // 3. JVM System Properties (highest precedence)
+      String sysEnabled = System.getProperty("GOOGLE_CLOUD_TELEMETRY_ENABLED");
+      if (sysEnabled != null) {
+        if ("0".equals(sysEnabled) || "false".equalsIgnoreCase(sysEnabled)) {
+          this.enabled = false;
+        } else if ("1".equals(sysEnabled) || "true".equalsIgnoreCase(sysEnabled)) {
+          this.enabled = true;
+        }
+      }
+
+      String sysInterval = System.getProperty("GOOGLE_CLOUD_TELEMETRY_UPLOAD_INTERVAL");
+      if (sysInterval != null) {
+        try {
+          this.uploadIntervalMs = Long.parseLong(sysInterval);
+        } catch (NumberFormatException ignored) {
+        }
+      }
+
+      String sysBatch = System.getProperty("GOOGLE_CLOUD_TELEMETRY_BATCH_SIZE");
+      if (sysBatch != null) {
+        try {
+          this.batchSizeThreshold = Integer.parseInt(sysBatch);
+        } catch (NumberFormatException ignored) {
+        }
+      }
+
       return this;
     }
 
