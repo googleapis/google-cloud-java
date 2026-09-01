@@ -30,7 +30,6 @@ import io.grpc.ForwardingClientCall.SimpleForwardingClientCall;
 import io.grpc.MethodDescriptor;
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Nullable;
 
 /**
  * Rounds client generated cell timestamps down to millisecond granularity.
@@ -65,89 +64,53 @@ public class MillisTimestampInterceptor implements ClientInterceptor {
   private static Object truncateRequest(Object message) {
     if (message instanceof MutateRowRequest) {
       MutateRowRequest request = (MutateRowRequest) message;
-      List<Mutation> truncated = truncateAll(request.getMutationsList());
-      if (truncated != null) {
-        return request.toBuilder().clearMutations().addAllMutations(truncated).build();
-      }
+      return request.toBuilder()
+          .clearMutations()
+          .addAllMutations(truncateAll(request.getMutationsList()))
+          .build();
     } else if (message instanceof MutateRowsRequest) {
       MutateRowsRequest request = (MutateRowsRequest) message;
-      List<MutateRowsRequest.Entry> entries = request.getEntriesList();
-      List<MutateRowsRequest.Entry> truncatedEntries = null;
-
-      for (int i = 0; i < entries.size(); i++) {
-        MutateRowsRequest.Entry entry = entries.get(i);
-        List<Mutation> truncated = truncateAll(entry.getMutationsList());
-        if (truncated == null) {
-          if (truncatedEntries != null) {
-            truncatedEntries.add(entry);
-          }
-          continue;
-        }
-        if (truncatedEntries == null) {
-          truncatedEntries = new ArrayList<>(entries.subList(0, i));
-        }
-        truncatedEntries.add(entry.toBuilder().clearMutations().addAllMutations(truncated).build());
+      MutateRowsRequest.Builder builder = request.toBuilder().clearEntries();
+      for (MutateRowsRequest.Entry entry : request.getEntriesList()) {
+        builder.addEntries(
+            entry.toBuilder()
+                .clearMutations()
+                .addAllMutations(truncateAll(entry.getMutationsList())));
       }
-
-      if (truncatedEntries != null) {
-        return request.toBuilder().clearEntries().addAllEntries(truncatedEntries).build();
-      }
+      return builder.build();
     } else if (message instanceof CheckAndMutateRowRequest) {
       CheckAndMutateRowRequest request = (CheckAndMutateRowRequest) message;
-      List<Mutation> trueMutations = truncateAll(request.getTrueMutationsList());
-      List<Mutation> falseMutations = truncateAll(request.getFalseMutationsList());
-
-      if (trueMutations != null || falseMutations != null) {
-        CheckAndMutateRowRequest.Builder builder = request.toBuilder();
-        if (trueMutations != null) {
-          builder.clearTrueMutations().addAllTrueMutations(trueMutations);
-        }
-        if (falseMutations != null) {
-          builder.clearFalseMutations().addAllFalseMutations(falseMutations);
-        }
-        return builder.build();
-      }
+      return request.toBuilder()
+          .clearTrueMutations()
+          .addAllTrueMutations(truncateAll(request.getTrueMutationsList()))
+          .clearFalseMutations()
+          .addAllFalseMutations(truncateAll(request.getFalseMutationsList()))
+          .build();
     }
 
     return message;
   }
 
-  /** Returns the truncated mutations, or null when none of them needed to be truncated. */
-  @Nullable
   private static List<Mutation> truncateAll(List<Mutation> mutations) {
-    List<Mutation> truncated = null;
-
-    for (int i = 0; i < mutations.size(); i++) {
-      Mutation mutation = mutations.get(i);
-      Mutation replacement = truncate(mutation);
-      if (replacement == null) {
-        if (truncated != null) {
-          truncated.add(mutation);
-        }
-        continue;
-      }
-      if (truncated == null) {
-        truncated = new ArrayList<>(mutations.subList(0, i));
-      }
-      truncated.add(replacement);
+    List<Mutation> truncated = new ArrayList<>(mutations.size());
+    for (Mutation mutation : mutations) {
+      truncated.add(truncate(mutation));
     }
-
     return truncated;
   }
 
-  /** Returns the truncated mutation, or null when it didn't need to be truncated. */
-  @Nullable
+  /** Returns the mutation with its timestamp truncated, or as is if it didn't need truncating. */
   private static Mutation truncate(Mutation mutation) {
     if (mutation.getTimestampOrigin() != TimestampOrigin.CLIENT_AUTO_GENERATED
         || !mutation.hasSetCell()) {
-      return null;
+      return mutation;
     }
 
     SetCell setCell = mutation.getSetCell();
     long micros = setCell.getTimestampMicros();
     long millisAligned = micros - Math.floorMod(micros, MICROS_PER_MILLI);
     if (millisAligned == micros) {
-      return null;
+      return mutation;
     }
 
     return mutation.toBuilder()
