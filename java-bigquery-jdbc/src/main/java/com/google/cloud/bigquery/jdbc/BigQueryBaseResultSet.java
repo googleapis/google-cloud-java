@@ -48,6 +48,7 @@ import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.List;
 
@@ -551,22 +552,40 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   @Override
   public Date getDate(int columnIndex, Calendar cal) throws SQLException {
     LOG.finestTrace("getDate");
-    Date date = getDate(columnIndex);
-    return BigQueryTemporalUtility.convertDateWithCalendar(date, cal);
+    try {
+      Object value = getObject(columnIndex);
+      StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+      ZoneId zone = (cal == null) ? null : cal.getTimeZone().toZoneId();
+      return BigQueryTypeRegistry.convert(value, bqType, Date.class, zone);
+    } catch (BigQueryJdbcException e) {
+      throw createCoercionException(columnIndex, Date.class, e);
+    }
   }
 
   @Override
   public Time getTime(int columnIndex, Calendar cal) throws SQLException {
     LOG.finestTrace("getTime");
-    Time time = getTime(columnIndex);
-    return BigQueryTemporalUtility.convertTimeWithCalendar(time, cal);
+    try {
+      Object value = getObject(columnIndex);
+      StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+      ZoneId zone = (cal == null) ? null : cal.getTimeZone().toZoneId();
+      return BigQueryTypeRegistry.convert(value, bqType, Time.class, zone);
+    } catch (BigQueryJdbcException e) {
+      throw createCoercionException(columnIndex, Time.class, e);
+    }
   }
 
   @Override
   public Timestamp getTimestamp(int columnIndex, Calendar cal) throws SQLException {
     LOG.finestTrace("getTimestamp");
-    Timestamp timestamp = getTimestamp(columnIndex);
-    return BigQueryTemporalUtility.convertTimestampWithCalendar(timestamp, cal);
+    try {
+      Object value = getObject(columnIndex);
+      StandardSQLTypeName bqType = getStandardSQLTypeName(columnIndex);
+      ZoneId zone = (cal == null) ? null : cal.getTimeZone().toZoneId();
+      return BigQueryTypeRegistry.convert(value, bqType, Timestamp.class, zone);
+    } catch (BigQueryJdbcException e) {
+      throw createCoercionException(columnIndex, Timestamp.class, e);
+    }
   }
 
   @Override

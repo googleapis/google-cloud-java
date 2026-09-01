@@ -231,6 +231,9 @@ final class BigQueryTemporalUtility {
     defaultCal.setTime(time);
 
     Calendar targetCal = getSafeCalendar(cal);
+    targetCal.set(Calendar.YEAR, 1970);
+    targetCal.set(Calendar.MONTH, Calendar.JANUARY);
+    targetCal.set(Calendar.DAY_OF_MONTH, 1);
     targetCal.set(Calendar.HOUR_OF_DAY, defaultCal.get(Calendar.HOUR_OF_DAY));
     targetCal.set(Calendar.MINUTE, defaultCal.get(Calendar.MINUTE));
     targetCal.set(Calendar.SECOND, defaultCal.get(Calendar.SECOND));
