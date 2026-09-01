@@ -97,6 +97,26 @@ final class TelemetryBatcher implements AutoCloseable {
     return config != null && config.isEnabled() && transport != null;
   }
 
+<<<<<<< HEAD
+=======
+  private void reschedule(long delayMs) {
+    if (isClosed.get()) {
+      return;
+    }
+    long current = currentScheduleDelayMs.get();
+    if (current == delayMs && scheduledTask != null && !scheduledTask.isDone()) {
+      return;
+    }
+    if (scheduledTask != null) {
+      scheduledTask.cancel(false);
+    }
+    if (executorService != null && !executorService.isShutdown()) {
+      currentScheduleDelayMs.set(delayMs);
+      scheduledTask = executorService.schedule(this::flush, delayMs, TimeUnit.MILLISECONDS);
+    }
+  }
+
+>>>>>>> 2dcb587f6ba (isclosed check)
   @Override
   public void close() {
     if (isClosed.compareAndSet(false, true)) {
