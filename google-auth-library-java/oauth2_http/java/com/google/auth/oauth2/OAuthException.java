@@ -50,11 +50,21 @@ class OAuthException extends GoogleAuthException {
   private final String errorCode;
   @Nullable private final String errorDescription;
   @Nullable private final String errorUri;
+  private final int httpStatusCode;
 
   OAuthException(String errorCode, @Nullable String errorDescription, @Nullable String errorUri) {
+    this(errorCode, errorDescription, errorUri, 0);
+  }
+
+  OAuthException(
+      String errorCode,
+      @Nullable String errorDescription,
+      @Nullable String errorUri,
+      int httpStatusCode) {
     this.errorCode = checkNotNull(errorCode);
     this.errorDescription = errorDescription;
     this.errorUri = errorUri;
+    this.httpStatusCode = httpStatusCode;
   }
 
   @Override
@@ -82,6 +92,10 @@ class OAuthException extends GoogleAuthException {
     return errorUri;
   }
 
+  int getHttpStatusCode() {
+    return httpStatusCode;
+  }
+
   static OAuthException createFromHttpResponseException(HttpResponseException e)
       throws IOException {
     JsonParser parser = OAuth2Utils.JSON_FACTORY.createJsonParser((e).getContent());
@@ -96,6 +110,6 @@ class OAuthException extends GoogleAuthException {
     if (errorResponse.containsKey("error_uri")) {
       errorUri = (String) errorResponse.get("error_uri");
     }
-    return new OAuthException(errorCode, errorDescription, errorUri);
+    return new OAuthException(errorCode, errorDescription, errorUri, e.getStatusCode());
   }
 }

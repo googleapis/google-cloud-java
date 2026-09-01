@@ -36,8 +36,12 @@ import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.cert.Certificate;
+import java.util.Enumeration;
 import java.util.Objects;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * An HttpTransportFactory that creates {@link NetHttpTransport} instances configured for mTLS
@@ -49,8 +53,19 @@ import org.jspecify.annotations.NullMarked;
  */
 @NullMarked
 @InternalApi
-public class MtlsHttpTransportFactory implements HttpTransportFactory {
-  private final KeyStore mtlsKeyStore;
+public class MtlsHttpTransportFactory implements HttpTransportFactory, java.io.Serializable {
+  private static final long serialVersionUID = 1L;
+  @Nullable private final transient KeyStore mtlsKeyStore;
+
+  /**
+   * No-arg constructor required for Java serialization. {@link IdentityPoolCredentials} stores this
+   * factory in its serializable {@code transportFactory} field, and {@link
+   * java.io.ObjectInputStream} needs a no-arg constructor to reconstruct it during deserialization.
+   * Not intended for direct use; callers should use {@link #MtlsHttpTransportFactory(KeyStore)}.
+   */
+  public MtlsHttpTransportFactory() {
+    this.mtlsKeyStore = null;
+  }
 
   /**
    * Constructs a factory for mTLS transports.
@@ -61,6 +76,36 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory {
    */
   public MtlsHttpTransportFactory(KeyStore mtlsKeyStore) {
     this.mtlsKeyStore = Objects.requireNonNull(mtlsKeyStore, "mtlsKeyStore cannot be null");
+  }
+
+  /**
+   * Returns whether this factory was constructed with a non-null {@link KeyStore} containing client
+   * certificates for mTLS. A factory created via the no-arg constructor (e.g. during
+   * deserialization), with an empty KeyStore, or with a KeyStore containing only trusted CA
+   * certificates (without a private key entry and certificate chain) will return {@code false}.
+   */
+  public boolean hasKeyStore() {
+    if (this.mtlsKeyStore == null) {
+      return false;
+    }
+    try {
+      Enumeration<String> aliases = this.mtlsKeyStore.aliases();
+      if (aliases == null) {
+        return false;
+      }
+      while (aliases.hasMoreElements()) {
+        String alias = aliases.nextElement();
+        if (this.mtlsKeyStore.isKeyEntry(alias)) {
+          Certificate[] chain = this.mtlsKeyStore.getCertificateChain(alias);
+          if (chain != null && chain.length > 0) {
+            return true;
+          }
+        }
+      }
+      return false;
+    } catch (KeyStoreException e) {
+      return false;
+    }
   }
 
   @Override
