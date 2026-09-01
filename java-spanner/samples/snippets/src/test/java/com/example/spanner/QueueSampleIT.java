@@ -17,10 +17,19 @@
 package com.example.spanner;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assume.assumeTrue;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class QueueSampleIT extends SampleTestBase {
+
+  @BeforeClass
+  public static void setUpTestSuite() {
+    assumeTrue(
+        "Queue is not supported by the Spanner Emulator",
+        System.getenv("SPANNER_EMULATOR_HOST") == null);
+  }
 
   @Test
   public void testQueueSample() throws Exception {
