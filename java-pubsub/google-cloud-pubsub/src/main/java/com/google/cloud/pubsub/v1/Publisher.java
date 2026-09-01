@@ -265,7 +265,7 @@ public class Publisher implements PublisherInterface {
     if (this.hedgingSettings != null) {
       this.scaledMaxHedgeTokens = this.hedgingSettings.getMaxTokens() * HEDGE_TOKEN_SCALE;
       this.scaledHedgeRefillAmount =
-          (int) (this.hedgingSettings.getRefillRatio() * HEDGE_TOKEN_SCALE);
+          (int) Math.round(this.hedgingSettings.getRefillRatio() * HEDGE_TOKEN_SCALE);
       this.hedgeTokenBucket.set(0);
     }
     this.clock = builder.clock != null ? builder.clock : CurrentMillisClock.getDefaultClock();
