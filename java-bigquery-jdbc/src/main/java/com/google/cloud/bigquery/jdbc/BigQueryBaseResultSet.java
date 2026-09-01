@@ -552,21 +552,21 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   public Date getDate(int columnIndex, Calendar cal) throws SQLException {
     LOG.finestTrace("getDate");
     Date date = getDate(columnIndex);
-    return BigQueryTypeCoercionUtility.convertDateWithCalendar(date, cal);
+    return BigQueryTemporalUtility.convertDateWithCalendar(date, cal);
   }
 
   @Override
   public Time getTime(int columnIndex, Calendar cal) throws SQLException {
     LOG.finestTrace("getTime");
     Time time = getTime(columnIndex);
-    return BigQueryTypeCoercionUtility.convertTimeWithCalendar(time, cal);
+    return BigQueryTemporalUtility.convertTimeWithCalendar(time, cal);
   }
 
   @Override
   public Timestamp getTimestamp(int columnIndex, Calendar cal) throws SQLException {
     LOG.finestTrace("getTimestamp");
     Timestamp timestamp = getTimestamp(columnIndex);
-    return BigQueryTypeCoercionUtility.convertTimestampWithCalendar(timestamp, cal);
+    return BigQueryTemporalUtility.convertTimestampWithCalendar(timestamp, cal);
   }
 
   @Override
