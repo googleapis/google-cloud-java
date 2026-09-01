@@ -20,8 +20,16 @@ import static com.google.ads.admanager.v1.ChildPublisherServiceClient.ListChildP
 
 import com.google.ads.admanager.v1.BatchCreateChildPublishersRequest;
 import com.google.ads.admanager.v1.BatchCreateChildPublishersResponse;
+import com.google.ads.admanager.v1.BatchRejectChildPublishersRequest;
+import com.google.ads.admanager.v1.BatchRejectChildPublishersResponse;
+import com.google.ads.admanager.v1.BatchRenegotiateChildPublisherAgreementsRequest;
+import com.google.ads.admanager.v1.BatchRenegotiateChildPublisherAgreementsResponse;
+import com.google.ads.admanager.v1.BatchResendChildPublisherInvitationEmailsRequest;
+import com.google.ads.admanager.v1.BatchResendChildPublisherInvitationEmailsResponse;
 import com.google.ads.admanager.v1.BatchUpdateChildPublishersRequest;
 import com.google.ads.admanager.v1.BatchUpdateChildPublishersResponse;
+import com.google.ads.admanager.v1.BatchWithdrawChildPublishersRequest;
+import com.google.ads.admanager.v1.BatchWithdrawChildPublishersResponse;
 import com.google.ads.admanager.v1.ChildPublisher;
 import com.google.ads.admanager.v1.CreateChildPublisherRequest;
 import com.google.ads.admanager.v1.GetChildPublisherRequest;
@@ -139,6 +147,20 @@ public class ChildPublisherServiceStubSettings
   private final UnaryCallSettings<
           BatchUpdateChildPublishersRequest, BatchUpdateChildPublishersResponse>
       batchUpdateChildPublishersSettings;
+  private final UnaryCallSettings<
+          BatchResendChildPublisherInvitationEmailsRequest,
+          BatchResendChildPublisherInvitationEmailsResponse>
+      batchResendChildPublisherInvitationEmailsSettings;
+  private final UnaryCallSettings<
+          BatchRenegotiateChildPublisherAgreementsRequest,
+          BatchRenegotiateChildPublisherAgreementsResponse>
+      batchRenegotiateChildPublisherAgreementsSettings;
+  private final UnaryCallSettings<
+          BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>
+      batchRejectChildPublishersSettings;
+  private final UnaryCallSettings<
+          BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+      batchWithdrawChildPublishersSettings;
 
   private static final PagedListDescriptor<
           ListChildPublishersRequest, ListChildPublishersResponse, ChildPublisher>
@@ -235,6 +257,41 @@ public class ChildPublisherServiceStubSettings
     return batchUpdateChildPublishersSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * batchResendChildPublisherInvitationEmails.
+   */
+  public UnaryCallSettings<
+          BatchResendChildPublisherInvitationEmailsRequest,
+          BatchResendChildPublisherInvitationEmailsResponse>
+      batchResendChildPublisherInvitationEmailsSettings() {
+    return batchResendChildPublisherInvitationEmailsSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to
+   * batchRenegotiateChildPublisherAgreements.
+   */
+  public UnaryCallSettings<
+          BatchRenegotiateChildPublisherAgreementsRequest,
+          BatchRenegotiateChildPublisherAgreementsResponse>
+      batchRenegotiateChildPublisherAgreementsSettings() {
+    return batchRenegotiateChildPublisherAgreementsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchRejectChildPublishers. */
+  public UnaryCallSettings<BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>
+      batchRejectChildPublishersSettings() {
+    return batchRejectChildPublishersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchWithdrawChildPublishers. */
+  public UnaryCallSettings<
+          BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+      batchWithdrawChildPublishersSettings() {
+    return batchWithdrawChildPublishersSettings;
+  }
+
   public ChildPublisherServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -325,6 +382,14 @@ public class ChildPublisherServiceStubSettings
     updateChildPublisherSettings = settingsBuilder.updateChildPublisherSettings().build();
     batchUpdateChildPublishersSettings =
         settingsBuilder.batchUpdateChildPublishersSettings().build();
+    batchResendChildPublisherInvitationEmailsSettings =
+        settingsBuilder.batchResendChildPublisherInvitationEmailsSettings().build();
+    batchRenegotiateChildPublisherAgreementsSettings =
+        settingsBuilder.batchRenegotiateChildPublisherAgreementsSettings().build();
+    batchRejectChildPublishersSettings =
+        settingsBuilder.batchRejectChildPublishersSettings().build();
+    batchWithdrawChildPublishersSettings =
+        settingsBuilder.batchWithdrawChildPublishersSettings().build();
   }
 
   @Override
@@ -357,6 +422,20 @@ public class ChildPublisherServiceStubSettings
     private final UnaryCallSettings.Builder<
             BatchUpdateChildPublishersRequest, BatchUpdateChildPublishersResponse>
         batchUpdateChildPublishersSettings;
+    private final UnaryCallSettings.Builder<
+            BatchResendChildPublisherInvitationEmailsRequest,
+            BatchResendChildPublisherInvitationEmailsResponse>
+        batchResendChildPublisherInvitationEmailsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchRenegotiateChildPublisherAgreementsRequest,
+            BatchRenegotiateChildPublisherAgreementsResponse>
+        batchRenegotiateChildPublisherAgreementsSettings;
+    private final UnaryCallSettings.Builder<
+            BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>
+        batchRejectChildPublishersSettings;
+    private final UnaryCallSettings.Builder<
+            BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+        batchWithdrawChildPublishersSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -391,6 +470,12 @@ public class ChildPublisherServiceStubSettings
       batchCreateChildPublishersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateChildPublisherSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchUpdateChildPublishersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchResendChildPublisherInvitationEmailsSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchRenegotiateChildPublisherAgreementsSettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchRejectChildPublishersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchWithdrawChildPublishersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -399,7 +484,11 @@ public class ChildPublisherServiceStubSettings
               createChildPublisherSettings,
               batchCreateChildPublishersSettings,
               updateChildPublisherSettings,
-              batchUpdateChildPublishersSettings);
+              batchUpdateChildPublishersSettings,
+              batchResendChildPublisherInvitationEmailsSettings,
+              batchRenegotiateChildPublisherAgreementsSettings,
+              batchRejectChildPublishersSettings,
+              batchWithdrawChildPublishersSettings);
       initDefaults(this);
     }
 
@@ -412,6 +501,13 @@ public class ChildPublisherServiceStubSettings
       batchCreateChildPublishersSettings = settings.batchCreateChildPublishersSettings.toBuilder();
       updateChildPublisherSettings = settings.updateChildPublisherSettings.toBuilder();
       batchUpdateChildPublishersSettings = settings.batchUpdateChildPublishersSettings.toBuilder();
+      batchResendChildPublisherInvitationEmailsSettings =
+          settings.batchResendChildPublisherInvitationEmailsSettings.toBuilder();
+      batchRenegotiateChildPublisherAgreementsSettings =
+          settings.batchRenegotiateChildPublisherAgreementsSettings.toBuilder();
+      batchRejectChildPublishersSettings = settings.batchRejectChildPublishersSettings.toBuilder();
+      batchWithdrawChildPublishersSettings =
+          settings.batchWithdrawChildPublishersSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -420,7 +516,11 @@ public class ChildPublisherServiceStubSettings
               createChildPublisherSettings,
               batchCreateChildPublishersSettings,
               updateChildPublisherSettings,
-              batchUpdateChildPublishersSettings);
+              batchUpdateChildPublishersSettings,
+              batchResendChildPublisherInvitationEmailsSettings,
+              batchRenegotiateChildPublisherAgreementsSettings,
+              batchRejectChildPublishersSettings,
+              batchWithdrawChildPublishersSettings);
     }
 
     private static Builder createDefault() {
@@ -463,6 +563,26 @@ public class ChildPublisherServiceStubSettings
 
       builder
           .batchUpdateChildPublishersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchResendChildPublisherInvitationEmailsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchRenegotiateChildPublisherAgreementsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchRejectChildPublishersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchWithdrawChildPublishersSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -523,6 +643,42 @@ public class ChildPublisherServiceStubSettings
             BatchUpdateChildPublishersRequest, BatchUpdateChildPublishersResponse>
         batchUpdateChildPublishersSettings() {
       return batchUpdateChildPublishersSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchResendChildPublisherInvitationEmails.
+     */
+    public UnaryCallSettings.Builder<
+            BatchResendChildPublisherInvitationEmailsRequest,
+            BatchResendChildPublisherInvitationEmailsResponse>
+        batchResendChildPublisherInvitationEmailsSettings() {
+      return batchResendChildPublisherInvitationEmailsSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * batchRenegotiateChildPublisherAgreements.
+     */
+    public UnaryCallSettings.Builder<
+            BatchRenegotiateChildPublisherAgreementsRequest,
+            BatchRenegotiateChildPublisherAgreementsResponse>
+        batchRenegotiateChildPublisherAgreementsSettings() {
+      return batchRenegotiateChildPublisherAgreementsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchRejectChildPublishers. */
+    public UnaryCallSettings.Builder<
+            BatchRejectChildPublishersRequest, BatchRejectChildPublishersResponse>
+        batchRejectChildPublishersSettings() {
+      return batchRejectChildPublishersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchWithdrawChildPublishers. */
+    public UnaryCallSettings.Builder<
+            BatchWithdrawChildPublishersRequest, BatchWithdrawChildPublishersResponse>
+        batchWithdrawChildPublishersSettings() {
+      return batchWithdrawChildPublishersSettings;
     }
 
     @Override

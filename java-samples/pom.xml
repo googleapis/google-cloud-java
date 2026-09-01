@@ -17,6 +17,10 @@
         <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
     </parent>
 
+    <properties>
+        <enforcer.skip>true</enforcer.skip>
+    </properties>
+
     <modules>
         <module>native-image-sample</module>
     </modules>

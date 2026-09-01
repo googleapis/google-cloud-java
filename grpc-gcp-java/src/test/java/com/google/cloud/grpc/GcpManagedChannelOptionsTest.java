@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
@@ -206,6 +207,59 @@ public final class GcpManagedChannelOptionsTest {
     final GcpChannelPoolOptions channelPoolOptions = opts.getChannelPoolOptions();
     assertThat(channelPoolOptions.getAffinityKeyLifetime()).isEqualTo(Duration.ZERO);
     assertThat(channelPoolOptions.getCleanupInterval()).isEqualTo(Duration.ZERO);
+  }
+
+  @Test
+  public void testDynamicScalingKnobsHaveDefaultsAndSurviveCopy() {
+    GcpChannelPoolOptions defaults = GcpChannelPoolOptions.newBuilder().build();
+
+    assertThat(defaults.getScaleUpCooldown()).isEqualTo(Duration.ofSeconds(10));
+    assertThat(defaults.getMaxScaleUpPercent()).isEqualTo(30);
+
+    GcpChannelPoolOptions configured =
+        GcpChannelPoolOptions.newBuilder(defaults)
+            .setScaleUpCooldown(Duration.ofSeconds(1))
+            .setMaxScaleUpPercent(40)
+            .build();
+    GcpChannelPoolOptions copied = GcpChannelPoolOptions.newBuilder(configured).build();
+
+    assertThat(copied.getScaleUpCooldown()).isEqualTo(Duration.ofSeconds(1));
+    assertThat(copied.getMaxScaleUpPercent()).isEqualTo(40);
+  }
+
+  @Test
+  public void dynamicScalingDefaultKnobsRejectNegativeAndDefaultZeroCooldown() {
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> GcpChannelPoolOptions.newBuilder().setScaleUpCooldown(Duration.ofNanos(-1)));
+    assertThat(
+            GcpChannelPoolOptions.newBuilder()
+                .setScaleUpCooldown(Duration.ZERO)
+                .build()
+                .getScaleUpCooldown())
+        .isEqualTo(Duration.ofSeconds(10));
+  }
+
+  @Test
+  public void channelPoolOptionsToStringIncludesEveryKnob() {
+    String options = GcpChannelPoolOptions.newBuilder().build().toString();
+
+    assertThat(options).contains("maxSize:");
+    assertThat(options).contains("minSize:");
+    assertThat(options).contains("initSize:");
+    assertThat(options).contains("minRpcPerChannel:");
+    assertThat(options).contains("maxRpcPerChannel:");
+    assertThat(options).contains("scaleDownInterval:");
+    assertThat(options).contains("scaleUpCooldown:");
+    assertThat(options).contains("scaleDownConsecutiveLowLoadChecks:");
+    assertThat(options).contains("maxScaleUpPercent:");
+    assertThat(options).contains("maxScaleDownChannels:");
+    assertThat(options).contains("drainIdleGrace:");
+    assertThat(options).contains("concurrentStreamsLowWatermark:");
+    assertThat(options).contains("useRoundRobinOnBind:");
+    assertThat(options).contains("affinityKeyLifetime:");
+    assertThat(options).contains("cleanupInterval:");
+    assertThat(options).contains("channelPickStrategy:");
   }
 
   @Test

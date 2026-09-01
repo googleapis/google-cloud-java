@@ -21,6 +21,7 @@ import static com.google.common.truth.Truth.assertWithMessage;
 
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.httpjson.HttpJsonConscryptUtils;
 import com.google.api.gax.httpjson.HttpJsonMetadata;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
@@ -29,6 +30,16 @@ import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.HttpJsonCapturingClientInterceptor;
+import io.grpc.CallOptions;
+import io.grpc.Channel;
+import io.grpc.ClientCall;
+import io.grpc.ClientInterceptor;
+import io.grpc.ForwardingClientCall;
+import io.grpc.ForwardingClientCallListener;
+import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
+import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
+import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -265,5 +276,107 @@ class ITPostQuantumCryptography {
       trustStore.setCertificateEntry("showcase-ca", cert);
     }
     return trustStore;
+  }
+
+  /**
+   * Integration test to verify Post-Quantum Cryptography (PQC) TLS negotiation for gRPC clients.
+   *
+   * <p>In gRPC-Java 1.83.0+, the default Netty transport (`grpc-netty-shaded`) bundles BoringSSL
+   * (`netty-tcnative-boringssl-static`) with built-in PQC hybrid key exchange support (e.g.,
+   * X25519MLKEM768). No custom socket configurator or security provider swapping is needed.
+   *
+   * <p>Because the local Showcase test server uses a self-signed CA certificate (written to {@link
+   * #DEFAULT_CA_CERT_PATH}), we configure the gRPC transport channel builder directly to trust this
+   * certificate via {@link GrpcSslContexts#forClient()}. This avoids mutating global JVM system
+   * properties in {@code setUp()} and ensures HTTP/JSON tests remain completely isolated.
+   */
+  @Test
+  void testGrpcPqc_withTls() throws Exception {
+    GrpcTlsCapturingClientInterceptor interceptor = new GrpcTlsCapturingClientInterceptor();
+
+    InstantiatingGrpcChannelProvider transportChannelProvider =
+        EchoSettings.defaultGrpcTransportProviderBuilder()
+            .setEndpoint(SECURE_ENDPOINT)
+            .setInterceptorProvider(() -> Collections.singletonList(interceptor))
+            .setChannelConfigurator(
+                managedChannelBuilder -> {
+                  if (managedChannelBuilder instanceof NettyChannelBuilder) {
+                    try {
+                      // Explicitly trust the self-signed CA certificate created by the local
+                      // Showcase TLS connection without altering JVM-wide SSL trust stores.
+                      ((NettyChannelBuilder) managedChannelBuilder)
+                          .sslContext(
+                              GrpcSslContexts.forClient()
+                                  .trustManager(new File(DEFAULT_CA_CERT_PATH))
+                                  .build());
+                    } catch (Exception e) {
+                      throw new RuntimeException("Failed to configure gRPC SSL context", e);
+                    }
+                  }
+                  return managedChannelBuilder;
+                })
+            .build();
+
+    EchoSettings settings =
+        EchoSettings.newBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(transportChannelProvider)
+            .build();
+
+    try (EchoClient client = EchoClient.create(settings)) {
+      EchoResponse response =
+          client.echo(EchoRequest.newBuilder().setContent("pqc-grpc-tls-test").build());
+      assertThat(response.getContent()).isEqualTo("pqc-grpc-tls-test");
+
+      Metadata capturedHeaders = interceptor.capturedMetadata;
+      assertThat(capturedHeaders).isNotNull();
+
+      // Verify that TLS 1.3 key exchange negotiated the expected PQC hybrid group (X25519MLKEM768).
+      String negotiatedGroup = getGrpcSingleHeaderString(capturedHeaders, TLS_GROUP_HEADER);
+      assertThat(negotiatedGroup).isEqualTo(EXPECTED_PQC_GROUP);
+    }
+  }
+
+  /**
+   * Private gRPC client interceptor to capture the response headers from the Showcase server to
+   * verify the PQC algorithm.
+   */
+  private static class GrpcTlsCapturingClientInterceptor implements ClientInterceptor {
+    volatile Metadata capturedMetadata;
+
+    @Override
+    public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+        MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+      return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(
+          next.newCall(method, callOptions)) {
+        @Override
+        public void start(Listener<RespT> responseListener, Metadata headers) {
+          super.start(
+              new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(
+                  responseListener) {
+                @Override
+                public void onHeaders(Metadata headers) {
+                  Metadata copy = new Metadata();
+                  copy.merge(headers);
+                  capturedMetadata = copy;
+                  super.onHeaders(headers);
+                }
+              },
+              headers);
+        }
+      };
+    }
+  }
+
+  /**
+   * Private helper method required to extract a single string header from gRPC {@link Metadata}.
+   *
+   * @param metadata the captured gRPC response metadata
+   * @param name the case-insensitive HTTP/2 header name
+   * @return the string header value, or {@code null} if not present
+   */
+  private static String getGrpcSingleHeaderString(Metadata metadata, String name) {
+    Metadata.Key<String> key = Metadata.Key.of(name, Metadata.ASCII_STRING_MARSHALLER);
+    return metadata.get(key);
   }
 }
