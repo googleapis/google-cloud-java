@@ -1315,7 +1315,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * If supported, the location where the dataset's data is stored.
-   * See https://cloud.google.com/bigquery/docs/locations for supported
+   * See https://docs.cloud.google.com/bigquery/docs/locations for supported
    * BigQuery locations.
    * </pre>
    *
@@ -1341,7 +1341,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * If supported, the location where the dataset's data is stored.
-   * See https://cloud.google.com/bigquery/docs/locations for supported
+   * See https://docs.cloud.google.com/bigquery/docs/locations for supported
    * BigQuery locations.
    * </pre>
    *
@@ -3774,7 +3774,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If supported, the location where the dataset's data is stored.
-     * See https://cloud.google.com/bigquery/docs/locations for supported
+     * See https://docs.cloud.google.com/bigquery/docs/locations for supported
      * BigQuery locations.
      * </pre>
      *
@@ -3799,7 +3799,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If supported, the location where the dataset's data is stored.
-     * See https://cloud.google.com/bigquery/docs/locations for supported
+     * See https://docs.cloud.google.com/bigquery/docs/locations for supported
      * BigQuery locations.
      * </pre>
      *
@@ -3824,7 +3824,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If supported, the location where the dataset's data is stored.
-     * See https://cloud.google.com/bigquery/docs/locations for supported
+     * See https://docs.cloud.google.com/bigquery/docs/locations for supported
      * BigQuery locations.
      * </pre>
      *
@@ -3848,7 +3848,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If supported, the location where the dataset's data is stored.
-     * See https://cloud.google.com/bigquery/docs/locations for supported
+     * See https://docs.cloud.google.com/bigquery/docs/locations for supported
      * BigQuery locations.
      * </pre>
      *
@@ -3868,7 +3868,7 @@ public final class ColumnDataProfile extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * If supported, the location where the dataset's data is stored.
-     * See https://cloud.google.com/bigquery/docs/locations for supported
+     * See https://docs.cloud.google.com/bigquery/docs/locations for supported
      * BigQuery locations.
      * </pre>
      *
