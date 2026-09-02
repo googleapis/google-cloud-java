@@ -1,4 +1,4 @@
-# Post-Quantum Cryptography (PQC) User Guide for HTTP/JSON (REST) Java Client Libraries
+# Post-Quantum Cryptography (PQC) User Guide for Google Cloud Java Client Libraries
 
 ## 1. Executive Summary & Core Concepts
 
@@ -27,14 +27,14 @@ Rather than completely replacing proven classical algorithms with brand-new post
 > - If a quantum computer breaks the classical algorithm, the post-quantum algorithm still maintains security.
 
 ### 1.4 What Changes vs. What Stays the Same?
-Adopting PQC in Google Cloud Java client libraries requires no changes to business logic:
+Adopting PQC in Google Cloud Java client libraries requires no changes to application business logic across both **gRPC** and **HTTP/JSON** transports:
 - **What stays exactly the same**:
   - Your application source code and business logic.
   - How you construct and call API clients (e.g., `SecretManagerServiceClient`, `StorageClient`).
   - Authentication tokens, Service Account keys, and OAuth2 credentials.
-  - Request and response JSON payloads.
+  - Request and response message payloads (Protobuf or JSON).
 - **What changes**:
-  - Only the initial **TLS 1.3 cryptographic handshake** (Layer 4/6) performed when the client opens an HTTPS connection to Google Cloud service endpoints. By default, this under-the-hood improvement is completely seamless and requires **zero application code changes**.
+  - Only the initial **TLS 1.3 cryptographic handshake** (Layer 4/6) performed when the client establishes a secure connection to Google Cloud service endpoints. By default, this under-the-hood improvement is completely seamless and requires **zero application code changes**.
 
 ---
 
@@ -64,7 +64,7 @@ The Google Cloud Java SDK scopes Conscrypt strictly to Google Cloud Java SDK req
 - `gax-httpjson` configures the Conscrypt `Provider` instance directly on the client's internal `NetHttpTransport.Builder` rather than installing it into the global JVM security registry (`java.security.Security.addProvider(...)`).
 - As a result, enabling Conscrypt for Google Cloud calls **does not alter the TLS behavior, cipher suites, or security providers of any other HTTP clients or libraries** in your application (e.g., Apache HttpClient, Spring WebClient, OkHttp, or direct `HttpsURLConnection` calls). Your existing JVM-wide cryptographic configurations remain completely undisturbed.
 
-### 2.4 How Client and Google Cloud Endpoints Negotiate PQC
+### 2.4 How HTTP/JSON Clients Negotiate PQC
 When a Google Cloud HTTP/JSON client initiates a connection, it advertises supported key exchange groups to the server in preference order. During the TLS 1.3 handshake, the first mutually supported algorithm that both the client and server agree upon is selected and used for the session:
 
 1. `X25519MLKEM768` *(Hybrid Post-Quantum Key Exchange)*
@@ -75,7 +75,7 @@ When a Google Cloud HTTP/JSON client initiates a connection, it advertises suppo
 
 > [!NOTE]
 > **Algorithm Selection**:
-> These named groups are selected because they are supported by Conscrypt (see [Conscrypt CAPABILITIES.md](https://github.com/google/conscrypt/blob/2.6.2/CAPABILITIES.md) and `HttpJsonConscryptUtils.DEFAULT_CONSCRYPT_NAMED_GROUPS`). If your application requires a cryptographic algorithm or named group not in this list, you can configure an alternative `SecurityProvider` (e.g., Bouncy Castle; see **Section 6, Option 3**).
+> These named groups are selected because they are supported by Conscrypt (see [Conscrypt CAPABILITIES.md](https://github.com/google/conscrypt/blob/2.6.2/CAPABILITIES.md) and `HttpJsonConscryptUtils.DEFAULT_CONSCRYPT_NAMED_GROUPS`). If your application requires a cryptographic algorithm or named group not in this list, you can configure an alternative `SecurityProvider` (e.g., Bouncy Castle; see **Section 8.1, Option 3**).
 
 #### Handshake Negotiation Flow:
 - **PQC-Enabled Google Cloud Endpoints**: Google Cloud frontends recognize `X25519MLKEM768` as their preferred group. The client and server agree on this hybrid algorithm, establishing a quantum-resistant TLS 1.3 session.
@@ -101,70 +101,141 @@ When a Google Cloud HTTP/JSON client initiates a connection, it advertises suppo
      - Non-PQC endpoints fall back to X25519         via standard JDK SunJSSE
 ```
 
-### 2.5 Performance & Network Considerations
-Note the following performance and network considerations:
-- **TLS Handshake Size Overhead**:
-  - Classical `X25519` public keys are very compact: **32 bytes**.
-  - `ML-KEM-768` public keys are **1,184 bytes**, and ciphertexts are **1,088 bytes**.
-  - Consequently, the TLS `ClientHello` and `ServerHello` messages increase by approximately **1 to 2 kilobytes**.
-- **Persistent HTTP Connections (`Keep-Alive`) & API Latency**:
-  - The underlying HTTP transport (`NetHttpTransport` backed by Java's `HttpURLConnection`) supports standard HTTP persistent connections (`Keep-Alive`).
-  - When connections are reused from Java's connection cache, the TLS handshake occurs **only once** when establishing the connection.
-  - Subsequent API requests routed through that active connection reuse the existing TLS session without repeating the handshake. The latency impact of the larger handshake therefore primarily applies to new connection establishment rather than every individual API call. (Note that applications experiencing high connection churn or making infrequent calls outside the keep-alive window will perform new handshakes more often.)
+---
+
+## 3. gRPC Transport Architecture & Defaults
+
+### 3.1 Minimum Required Versions
+PQC enablement for gRPC transport requires compatible versions of `grpc-netty-shaded` and `gax-grpc`:
+
+| Library | Minimum Version | Role |
+| :--- | :--- | :--- |
+| **`libraries-bom`** | `26.86.0+` | **Recommended**. Central BOM managing compatible versions across all Google Cloud client libraries. |
+| **`gax-grpc`** | `2.83.0+` | Provides gRPC transport channel providers for Google Cloud client libraries. |
+| **`grpc-netty-shaded`** | `1.83.0+` | Default gRPC transport engine. Bundles Netty and `netty-tcnative-boringssl-static` with built-in PQC hybrid key exchange support. |
+
+### 3.2 Why `grpc-netty-shaded`?
+By default, Google Cloud Java client libraries use `grpc-netty-shaded` for gRPC transport:
+1. **Bundled BoringSSL Engine**: `grpc-netty-shaded` packages a shaded version of Netty and its native OpenSSL/BoringSSL binding (`netty-tcnative-boringssl-static`). This bundles Google's BoringSSL C library directly inside the JAR.
+2. **Native PQC Support Out-of-the-Box**: In `grpc-netty-shaded` version **1.83.0+**, the bundled BoringSSL engine natively supports TLS 1.3 post-quantum hybrid key exchange (`X25519MLKEM768`).
+3. **Zero Configuration**: Unlike HTTP/JSON which uses Conscrypt as a pluggable `SecurityProvider`, gRPC client channels using `grpc-netty-shaded` automatically negotiate PQC hybrid key exchange without requiring any custom socket configurators, system properties, or security provider setup.
+
+### 3.3 How gRPC Clients Negotiate PQC
+When a Google Cloud gRPC client connects to an endpoint (typically port 443 with TLS):
+- **PQC-Enabled Google Cloud Endpoints (GFE)**: The client's BoringSSL engine advertises hybrid PQC algorithms in its TLS 1.3 `ClientHello`. Google Cloud frontends recognize and select `X25519MLKEM768`, establishing a quantum-resistant HTTP/2 TLS session.
+- **Non-PQC Endpoints / Middleboxes**: If the endpoint or an intermediary proxy does not support PQC, it selects the first mutually supported classical algorithm (such as `X25519`).
+- **Graceful Fallback**: If the bundled native BoringSSL library cannot load on the platform, gRPC safely falls back to standard Java JSSE TLS (or throws an explicit linkage error if shaded Netty native transport is strictly required). When classical TLS is negotiated, your application continues operating normally.
+  - **Impact of Fallback**: Fallback does not disrupt service availability. Calls continue over standard classical TLS 1.3 encryption.
+
+```
++-------------------------------------------------------------------------------+
+|                         GAPIC gRPC Client Request                             |
++-------------------------------------------------------------------------------+
+                                        |
+                 Is grpc-netty-shaded Native BoringSSL Available?
+                                        |
+                    +-------------------+-------------------+
+                    |                                       |
+                 [ YES ]                                 [ NO ]
+                    |                                       |
+                    v                                       v
+     grpc-netty-shaded uses BoringSSL              Falls back to standard
+     Offers Hybrid PQC (X25519MLKEM768)            classical TLS (JDK JSSE)
+     - GFE negotiates X25519MLKEM768               - Negotiates classical X25519
+     - Non-PQC endpoints fall back to X25519         via standard JDK TLS
+```
+
+### 3.4 gRPC Connection Architecture & Multiplexing
+gRPC utilizes HTTP/2 as its underlying framing protocol:
+- **Long-Lived Multiplexed Channels**: A single `ManagedChannel` maintains persistent TCP/TLS connections to Google Cloud endpoints.
+- **Concurrent Stream Multiplexing**: Multiple RPCs execute concurrently over the same underlying connection without creating new TCP or TLS handshakes.
+- **Handshake Frequency**: The TLS handshake happens only once when establishing the channel connection. Subsequent RPC calls share the established quantum-resistant session, resulting in zero cryptographic overhead for ongoing API traffic.
 
 ---
 
-## 3. Deployment Environments & Platform Compatibility
+## 4. Performance & Network Considerations
 
-Because Conscrypt relies on C native shared libraries (`.so`, `.dylib`, or `.dll`) loaded via JNI, platform compatibility depends on the host operating system and container environment.
+Note the following performance and network considerations across both transports:
 
-### 3.1 Compatibility Matrix
+### 4.1 TLS Handshake Size Overhead
+- **Public Key & Ciphertext Sizes**:
+  - Classical `X25519` public keys are very compact: **32 bytes**.
+  - `ML-KEM-768` public keys are **1,184 bytes**, and ciphertexts are **1,088 bytes**.
+- **Handshake Size**:
+  - Consequently, the TLS `ClientHello` and `ServerHello` messages increase by approximately **1 to 2 kilobytes**.
+- **Fragmentation & Middleboxes**:
+  - While modern networks handle handshakes of this size smoothly, rare legacy network middleboxes or firewalls with strict MTU limits or packet inspection might drop larger `ClientHello` frames.
+
+### 4.2 Transport Connection Characteristics & API Latency
+Because both transports maintain persistent connections, the latency impact of the larger PQC handshake is limited to initial connection establishment:
+- **HTTP/JSON (`Keep-Alive`)**:
+  - The underlying HTTP transport (`NetHttpTransport` backed by Java's `HttpURLConnection`) supports standard HTTP persistent connections (`Keep-Alive`).
+  - When connections are reused from Java's connection cache, the TLS handshake occurs **only once** when establishing the connection.
+  - Subsequent API requests routed through that active connection reuse the existing TLS session without repeating the handshake. (Note that applications with high connection churn or infrequent calls outside the keep-alive window will perform new handshakes more often.)
+- **gRPC (HTTP/2 Multiplexing)**:
+  - gRPC channels maintain persistent, long-lived HTTP/2 connections. Multiple concurrent RPC requests and streaming calls are multiplexed over a single connection.
+  - Handshakes occur only when the `ManagedChannel` connects (or reconnects). For warm channels, the amortized latency impact of PQC on individual RPC calls is practically zero.
+
+---
+
+## 5. Deployment Environments & Platform Compatibility
+
+Both HTTP/JSON (via Conscrypt) and gRPC (via `grpc-netty-shaded` / `netty-tcnative`) rely on C native shared libraries (`.so`, `.dylib`, or `.dll`) loaded via JNI. Consequently, both transports share similar platform compatibility considerations.
+
+### 5.1 Compatibility Matrix
 
 | Environment / OS | Status | Notes |
 | :--- | :--- | :--- |
-| **Standard Linux (e.g., Ubuntu, Debian, RHEL, CentOS — non-exhaustive)** | **Fully Supported** | Requires `glibc` 2.17+ (Conscrypt 2.6.2+) or `glibc` 2.35+ (Conscrypt 2.6.0). |
+| **Standard Linux (e.g., Ubuntu, Debian, RHEL, CentOS — non-exhaustive)** | **Fully Supported** | Requires `glibc` 2.17+ (Conscrypt 2.6.2+ and Netty tcnative). |
 | **Google Cloud Managed (Cloud Run, GKE, App Engine)** | **Fully Supported** | Default base container environments use compatible `glibc` runtimes. |
-| **macOS (Apple Silicon M-series & Intel)** | **Fully Supported** | Native `osx-aarch_64` and `osx-x86_64` binaries bundled in `conscrypt-openjdk-uber`. |
-| **Windows (x86_64)** | **Fully Supported** | Native `windows-x86_64` binary bundled in `conscrypt-openjdk-uber`. |
-| **GraalVM Native Image** | **Supported** | Supported when including appropriate reachability metadata and configuration for Conscrypt JNI libraries. |
-| **Alpine Linux / Musl libc Containers** | **Fallback to Classical** | Conscrypt native binaries are compiled for `glibc`. On Alpine (`musl`), native loading fails with `UnsatisfiedLinkError` and gracefully falls back to the configured security provider (default JDK TLS). |
+| **macOS (Apple Silicon M-series & Intel)** | **Fully Supported** | Native `osx-aarch_64` and `osx-x86_64` binaries bundled in `conscrypt-openjdk-uber` and `grpc-netty-shaded`. |
+| **Windows (x86_64)** | **Fully Supported** | Native `windows-x86_64` binaries bundled in `conscrypt-openjdk-uber` and `grpc-netty-shaded`. |
+| **GraalVM Native Image** | **Supported** | Supported when including appropriate reachability metadata and configuration for Conscrypt or Netty JNI libraries. |
+| **Alpine Linux / Musl libc Containers** | **Fallback to Classical** | Native binaries are compiled for `glibc`. On Alpine (`musl`), native library loading fails with `UnsatisfiedLinkError` and safely falls back to standard classical TLS. |
 
-### 3.2 Handling Alpine Linux (`musl` libc)
-If your container images are based on Alpine Linux (e.g., `eclipse-temurin:17-alpine` or `openjdk:11-alpine`), Conscrypt cannot load its native C library because Alpine uses `musl` libc instead of `glibc`.
+### 5.2 Handling Alpine Linux (`musl` libc)
+If your container images are based on Alpine Linux (e.g., `eclipse-temurin:17-alpine` or `openjdk:11-alpine`), native C libraries cannot load because Alpine uses `musl` libc instead of `glibc`.
 
 **Some Possible Options on Alpine**:
-1. **Accept Classical TLS Fallback**: The client library will safely fall back to the configured security provider (by default standard JDK JSSE) and negotiate classical TLS 1.3 (`X25519`). Your application will function normally without errors.
-2. **Use a Glibc-Based Container Image**: If quantum resistance via Conscrypt is desired, use a base container image that provides `glibc`.
-3. **Configure an Alternative Security Provider**: Use an alternative security provider that supports your environment (such as Bouncy Castle; see **Section 6, Option 3**).
+1. **Accept Classical TLS Fallback**: The client library will safely fall back to classical TLS 1.3 (`X25519`). Your application will function normally without errors.
+2. **Use a Glibc-Based Container Image**: If quantum resistance via native BoringSSL is desired, use a base container image that provides `glibc` (such as Debian-, Ubuntu-, or Wolfi-based container images).
+3. **Configure an Alternative Security Provider (HTTP/JSON)**: Use an alternative pure-Java security provider that supports your environment (such as Bouncy Castle; see **Section 8.1, Option 3**).
 
-### 3.3 Handling Hardened Filesystems & `noexec /tmp`
+### 5.3 Handling Hardened Filesystems & `noexec /tmp`
 In hardened Kubernetes pods or security-conscious Docker containers, `/tmp` may be mounted with the `noexec` flag or the entire root filesystem may be marked read-only.
 
-When Conscrypt starts, the JVM extracts its bundled native `.so` file to a temporary directory. If that directory does not allow execution:
+When native engines start, the JVM extracts bundled native `.so` files to a temporary directory. If that directory does not allow execution:
 ```text
-java.lang.UnsatisfiedLinkError: /tmp/libconscrypt_openjdk_jni...: failed to map segment from shared object: Operation not permitted
-```
-**Possible Solution**: Depending on your container configuration and security constraints, one possible solution is to provide an alternative directory that has write and execute permissions using the JVM system property:
-```bash
-java -Dorg.conscrypt.native.workdir=/var/run/app/tmp -jar my-application.jar
+java.lang.UnsatisfiedLinkError: ... failed to map segment from shared object: Operation not permitted
 ```
 
-### 3.4 Classpath Isolation & Version Skew Warning
-If your project uses multiple dependencies that transitively pull in different versions of Conscrypt (e.g., older versions like `2.5.2` alongside `2.6.2`), a JNI ABI mismatch can occur during JVM classloading. Always ensure your build tool (Maven/Gradle) resolves `conscrypt-openjdk-uber` to version `2.6.0+` (or `2.6.2+`) consistently.
+**Possible Solution**: Depending on your container configuration and security constraints, one possible solution is to provide an alternative directory that has write and execute permissions using JVM system properties:
+- For Conscrypt (HTTP/JSON):
+  ```bash
+  java -Dorg.conscrypt.native.workdir=/var/run/app/tmp -jar my-application.jar
+  ```
+- For Netty / gRPC:
+  ```bash
+  java -Dio.netty.native.workdir=/var/run/app/tmp -jar my-application.jar
+  ```
 
-One possible solution for this is to use Google Cloud's `libraries-bom` (version `26.86.0+`) to manage dependency versions, ensuring a consistent and compatible Conscrypt runtime across all Google Cloud client libraries.
+### 5.4 Classpath Isolation & Version Skew Warning
+If your project uses multiple dependencies that transitively pull in different versions of Conscrypt or gRPC Netty components, JNI ABI mismatches can occur during JVM classloading. Always ensure your build tool resolves compatible versions consistently.
+
+One possible solution for this is to use Google Cloud's `libraries-bom` (version `26.86.0+`), which centrally manages dependency versions and ensures consistent, compatible runtime dependencies across all Google Cloud client libraries.
 
 ---
 
-## 4. Important Warning: Availability vs. Strict Compliance
+## 6. Important Warning: Availability vs. Strict Compliance
 
 Google Cloud Java client libraries follow a deliberate architectural principle: **prefer service availability over hard failures**.
 
-### 4.1 The Silent Fallback Behavior
-If Conscrypt native libraries fail to initialize—due to an unsupported operating system, missing `glibc`, permission issues, or file extraction limits—`gax-httpjson` catches the exception and logs a message at **`Level.FINE` (debug level)**:
-```text
-FINE: Conscrypt native libraries not available. Falling back to JDK TLS.
-```
+### 6.1 The Silent Fallback Behavior
+If native libraries fail to initialize—due to an unsupported operating system, missing `glibc`, permission issues, or file extraction limits—the client libraries catch the exception and log debug messages:
+- For HTTP/JSON: Logs at `Level.FINE`:
+  ```text
+  FINE: Conscrypt native libraries not available. Falling back to JDK TLS.
+  ```
 The client then proceeds to establish standard classical TLS using the host JVM's configured security provider (by default `SunJSSE`). 
 
 **Why does it behave this way?**
@@ -175,22 +246,24 @@ To protect production workloads. A customer updating dependencies or migrating c
 - **Security Baseline**: Traffic remains fully encrypted with classical TLS 1.3 (e.g., ECDHE with AES-GCM), maintaining the standard security posture that Java applications use today.
 - **What is absent**: The connection will not be protected against future post-quantum decryption (SNDL).
 
-### 4.2 The Compliance Warning
+### 6.2 The Compliance Warning
 > [!WARNING]
 > **Active Verification is Required for Regulatory Mandates**:
 > If your organization operates under strict compliance, governmental, or corporate security mandates requiring Post-Quantum Cryptography today, **you cannot rely solely on the default configuration without verification**.
 >
 > Because fallback to classical TLS is silent and non-breaking by design, an unexpected environment change (such as switching to an Alpine-based Docker container or changing filesystem mount permissions) could downgrade your connections from hybrid PQC to classical TLS **without throwing exceptions or failing requests**.
 >
-> If PQC is a mandatory requirement for your workload, you must implement automated verification in your CI/CD pipelines or startup health checks (see **Section 5**).
+> If PQC is a mandatory requirement for your workload, you must implement automated verification in your CI/CD pipelines or startup health checks (see **Section 7**).
 
 ---
 
-## 5. How to Verify PQC Negotiation
+## 7. How to Verify PQC Negotiation
 
-To confirm whether your application is actively negotiating post-quantum hybrid key exchange, use one or more of the following verification methods.
+To confirm whether your application is actively negotiating post-quantum hybrid key exchange, use the verification methods below depending on your chosen transport.
 
-### 5.1 Method 1: GAX Internal Initialization Logging
+### 7.1 Verifying HTTP/JSON Transport
+
+#### Method 1: GAX Internal Initialization Logging
 Inspect whether `gax-httpjson` successfully loaded Conscrypt or fell back to the default security provider by enabling debug logging on `HttpJsonConscryptUtils`.
 
 In your `logging.properties` file:
@@ -214,7 +287,7 @@ Logger.getLogger("com.google.api.gax.httpjson.HttpJsonConscryptUtils").setLevel(
   FINE: Conscrypt initialization failed with exception: java.lang.UnsatisfiedLinkError: ...
   ```
 
-### 5.2 Method 2: JVM TLS Handshake Tracing (`-Djavax.net.debug`)
+#### Method 2: JVM TLS Handshake Tracing (`-Djavax.net.debug`)
 To inspect the actual cryptographic parameters negotiated during the TLS 1.3 handshake with Google Cloud servers, start your Java application with the standard JSSE debug flag:
 
 ```bash
@@ -246,14 +319,85 @@ Look for the following entries in standard error during the initial HTTPS connec
    ```
 If the negotiated group displays `X25519MLKEM768` (or `0x11ec`), your connection is fully protected with hybrid Post-Quantum Cryptography.
 
+### 7.2 Verifying gRPC Transport
+
+> [!NOTE]
+> **Why `-Djavax.net.debug` does not capture gRPC handshakes**:
+> By default, gRPC uses `grpc-netty-shaded`, which uses its bundled native BoringSSL engine (`netty-tcnative`) via JNI, bypassing the JVM's built-in Java Secure Socket Extension (`SunJSSE`). Standard JVM `-Djavax.net.debug` flags will not output gRPC handshake details.
+
+#### Method 1: Netty SSL Debug Logging
+You can enable debug logging for Netty's shaded SSL handler to observe TLS handshake details:
+
+```bash
+java -Dio.grpc.netty.shaded.io.netty.handler.ssl=DEBUG -jar my-application.jar
+```
+
+#### Method 2: gRPC Client Interceptor Verification
+In integration tests or test environments, you can verify the negotiated TLS parameters by attaching a `ClientInterceptor` to inspect response metadata returned by endpoints or test servers:
+
+```java
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
+import com.google.cloud.secretmanager.v1.SecretManagerServiceSettings;
+import io.grpc.CallOptions;
+import io.grpc.Channel;
+import io.grpc.ClientCall;
+import io.grpc.ClientInterceptor;
+import io.grpc.ForwardingClientCall;
+import io.grpc.ForwardingClientCallListener;
+import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
+import java.util.Collections;
+
+public class TlsVerificationInterceptor implements ClientInterceptor {
+  @Override
+  public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+      MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+    return new ForwardingClientCall.SimpleForwardingClientCall<ReqT, RespT>(
+        next.newCall(method, callOptions)) {
+      @Override
+      public void start(Listener<RespT> responseListener, Metadata headers) {
+        super.start(
+            new ForwardingClientCallListener.SimpleForwardingClientCallListener<RespT>(
+                responseListener) {
+              @Override
+              public void onHeaders(Metadata headers) {
+                // Inspect response headers or TLS metadata if published by server/proxy
+                super.onHeaders(headers);
+              }
+            },
+            headers);
+      }
+    };
+  }
+}
+
+// Attach the interceptor to the client's gRPC transport provider:
+InstantiatingGrpcChannelProvider transportChannelProvider =
+    SecretManagerServiceSettings.defaultGrpcTransportProviderBuilder()
+        .setInterceptorProvider(() -> Collections.singletonList(new TlsVerificationInterceptor()))
+        .build();
+
+SecretManagerServiceSettings settings =
+    SecretManagerServiceSettings.newBuilder()
+        .setTransportChannelProvider(transportChannelProvider)
+        .build();
+
+try (SecretManagerServiceClient client = SecretManagerServiceClient.create(settings)) {
+  // Execute calls; interceptor captures response metadata
+}
+```
+
 ---
 
-## 6. Custom & Alternative Configurations
+## 8. Custom & Alternative Configurations
 
-By default, client libraries automatically use Conscrypt when available on compatible platforms without requiring custom code. If you need to customize transport behavior or security providers, you can configure the transport directly:
+By default, Google Cloud client libraries automatically negotiate PQC when supported on the environment without requiring custom code. If you need to customize transport behavior or security providers, you can configure the transports directly:
 
-### Option 1: Forcing Classical-Only Key Exchange (Disabling PQC)
-If you need to use Conscrypt for high-performance TLS but want to explicitly disable post-quantum hybrid groups (for example, to isolate a network middlebox issue or benchmark legacy performance):
+### 8.1 HTTP/JSON Custom Configurations
+
+#### Option 1: Forcing Classical-Only Key Exchange (Disabling PQC)
+If you need to use Conscrypt for high-performance TLS but want to explicitly disable post-quantum hybrid groups:
 
 ```java
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -296,9 +440,7 @@ try (SecretManagerServiceClient client = SecretManagerServiceClient.create(setti
 }
 ```
 
----
-
-### Option 2: Bypassing Conscrypt to Use Standard JDK JSSE
+#### Option 2: Bypassing Conscrypt to Use Standard JDK JSSE
 If your deployment environment prohibits native JNI libraries or you prefer using the JVM's built-in cryptographic engine (`SunJSSE`):
 
 ```java
@@ -327,9 +469,7 @@ try (SecretManagerServiceClient client = SecretManagerServiceClient.create(setti
 }
 ```
 
----
-
-### Option 3: Configuring a Third-Party Security Provider (e.g., Bouncy Castle)
+#### Option 3: Configuring a Third-Party Security Provider (e.g., Bouncy Castle)
 If your enterprise utilizes an alternative cryptographic provider (such as Bouncy Castle), configure it directly on the `NetHttpTransport.Builder`:
 
 ```java
@@ -371,9 +511,55 @@ try (SecretManagerServiceClient client = SecretManagerServiceClient.create(setti
 
 ---
 
-## 7. Future Outlook: Native OpenJDK PQC Support (JDK 27+)
+### 8.2 gRPC Custom Configurations
+
+#### Option 1: Configuring Custom Netty SSL Context
+For gRPC clients, you can configure `InstantiatingGrpcChannelProvider` with a channel configurator to customize Netty's SSL context (such as setting custom trust certificates, cipher suites, or SSL providers):
+
+```java
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.cloud.secretmanager.v1.SecretManagerServiceClient;
+import com.google.cloud.secretmanager.v1.SecretManagerServiceSettings;
+import io.grpc.netty.shaded.io.grpc.netty.GrpcSslContexts;
+import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
+import java.io.File;
+
+// 1. Configure the gRPC channel provider with a custom Netty SSLContext
+InstantiatingGrpcChannelProvider transportChannelProvider =
+    SecretManagerServiceSettings.defaultGrpcTransportProviderBuilder()
+        .setChannelConfigurator(
+            managedChannelBuilder -> {
+              if (managedChannelBuilder instanceof NettyChannelBuilder) {
+                try {
+                  ((NettyChannelBuilder) managedChannelBuilder)
+                      .sslContext(
+                          GrpcSslContexts.forClient()
+                              // Custom SSL options (e.g., custom trust managers or ciphers)
+                              .build());
+                } catch (Exception e) {
+                  throw new RuntimeException("Failed to configure gRPC SSL context", e);
+                }
+              }
+              return managedChannelBuilder;
+            })
+        .build();
+
+// 2. Build client settings using the custom gRPC channel provider
+SecretManagerServiceSettings settings =
+    SecretManagerServiceSettings.newBuilder()
+        .setTransportChannelProvider(transportChannelProvider)
+        .build();
+
+try (SecretManagerServiceClient client = SecretManagerServiceClient.create(settings)) {
+  // Client communicates using customized gRPC channel
+}
+```
+
+---
+
+## 9. Future Outlook: Native OpenJDK PQC Support (JDK 27+)
 
 The cryptographic landscape is continually advancing. The OpenJDK community is integrating standardized post-quantum algorithms directly into the Java platform:
 - **[JEP 496](https://openjdk.org/jeps/496) (ML-KEM)**: Introduces native implementations of NIST FIPS 203 (Module-Lattice-Based Key-Encapsulation Mechanism) into OpenJDK's standard security providers (`SunJSSE` and `SunJCE`), targeted for **JDK 27+**.
-- **What this means for Google Cloud Java**: Once JDK 27 becomes standard in production environments, Java applications will be capable of negotiating hybrid and pure post-quantum TLS natively without requiring JNI shared libraries or third-party dependencies like Conscrypt.
-- **Future-Proofing**: As native JDK capabilities mature, Google Cloud Java client libraries will adapt to take advantage of built-in JVM providers, preserving a seamless, zero-maintenance security upgrade path for all users.
+- **What this means for Google Cloud Java**: Once JDK 27 becomes standard in production environments, Java applications will be capable of negotiating hybrid and pure post-quantum TLS natively without requiring JNI shared libraries or third-party dependencies like Conscrypt or `netty-tcnative`.
+- **Future-Proofing**: As native JDK capabilities mature, Google Cloud Java client libraries will adapt to take advantage of built-in JVM providers, preserving a seamless, zero-maintenance security upgrade path for all users across both HTTP/JSON and gRPC transports.
