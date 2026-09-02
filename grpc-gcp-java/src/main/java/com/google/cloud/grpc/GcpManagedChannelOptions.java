@@ -39,8 +39,9 @@ public class GcpManagedChannelOptions {
    */
   public enum ChannelPickStrategy {
     /**
-     * Scans all channels and picks the one with the fewest active streams. Ties are broken by
-     * iteration order (lowest index wins). This is the legacy behavior.
+     * Scans all channels and picks the one with the lowest picker load: active streams plus active
+     * error penalty. Ties are broken by iteration order (lowest index wins). This is the legacy
+     * behavior.
      *
      * <p>This strategy finds the global minimum but is susceptible to the thundering herd problem:
      * under burst traffic, all concurrent callers observe the same minimum and pile onto the same
@@ -49,12 +50,13 @@ public class GcpManagedChannelOptions {
     LINEAR_SCAN,
 
     /**
-     * Samples two channels at random with replacement and returns the one with fewer active
-     * streams. The first sample wins ties. Inactive samples are retried.
+     * Samples two channels at random with replacement and returns the one with lower picker load.
+     * The first sample wins ties, with no channel-warmth preference. Inactive or draining samples
+     * are retried.
      *
-     * <p>This is the default strategy. It avoids the thundering herd problem without preferring
-     * channel warmth. The trade-off is that it may not always find the global minimum, but in
-     * practice the difference is negligible because stream counts are inherently racy.
+     * <p>This is the default strategy. It avoids the thundering herd problem. The trade-off is that
+     * it may not always find the global minimum, but in practice the difference is negligible
+     * because picker load is inherently racy.
      */
     POWER_OF_TWO,
   }
@@ -219,6 +221,9 @@ public class GcpManagedChannelOptions {
     private final int maxScaleUpPercent;
     // Maximum channels removed in one scale-down check.
     private final int maxScaleDownChannels;
+    private final Duration drainIdleGrace;
+    private final int errorPenaltyStep;
+    private final Duration errorPenaltyDuration;
 
     // Use round-robin channel selection for affinity binding calls.
     private final boolean useRoundRobinOnBind;
@@ -240,6 +245,9 @@ public class GcpManagedChannelOptions {
       scaleDownConsecutiveLowLoadChecks = builder.scaleDownConsecutiveLowLoadChecks;
       maxScaleUpPercent = builder.maxScaleUpPercent;
       maxScaleDownChannels = builder.maxScaleDownChannels;
+      drainIdleGrace = builder.drainIdleGrace;
+      errorPenaltyStep = builder.errorPenaltyStep;
+      errorPenaltyDuration = builder.errorPenaltyDuration;
       concurrentStreamsLowWatermark = builder.concurrentStreamsLowWatermark;
       useRoundRobinOnBind = builder.useRoundRobinOnBind;
       affinityKeyLifetime = builder.affinityKeyLifetime;
@@ -287,6 +295,18 @@ public class GcpManagedChannelOptions {
       return maxScaleDownChannels;
     }
 
+    public Duration getDrainIdleGrace() {
+      return drainIdleGrace;
+    }
+
+    public int getErrorPenaltyStep() {
+      return errorPenaltyStep;
+    }
+
+    public Duration getErrorPenaltyDuration() {
+      return errorPenaltyDuration;
+    }
+
     public int getConcurrentStreamsLowWatermark() {
       return concurrentStreamsLowWatermark;
     }
@@ -323,7 +343,8 @@ public class GcpManagedChannelOptions {
           "{maxSize: %d, minSize: %d, initSize: %d, minRpcPerChannel: %d, "
               + "maxRpcPerChannel: %d, scaleDownInterval: %s, scaleUpCooldown: %s, "
               + "scaleDownConsecutiveLowLoadChecks: %d, maxScaleUpPercent: %d, "
-              + "maxScaleDownChannels: %d, "
+              + "maxScaleDownChannels: %d, drainIdleGrace: %s, errorPenaltyStep: %d, "
+              + "errorPenaltyDuration: %s, "
               + "concurrentStreamsLowWatermark: %d, useRoundRobinOnBind: %s, "
               + "affinityKeyLifetime: %s, cleanupInterval: %s, channelPickStrategy: %s}",
           getMaxSize(),
@@ -336,6 +357,9 @@ public class GcpManagedChannelOptions {
           getScaleDownConsecutiveLowLoadChecks(),
           getMaxScaleUpPercent(),
           getMaxScaleDownChannels(),
+          getDrainIdleGrace(),
+          getErrorPenaltyStep(),
+          getErrorPenaltyDuration(),
           getConcurrentStreamsLowWatermark(),
           isUseRoundRobinOnBind(),
           getAffinityKeyLifetime(),
@@ -354,6 +378,9 @@ public class GcpManagedChannelOptions {
       private int scaleDownConsecutiveLowLoadChecks = 3;
       private int maxScaleUpPercent = 30;
       private int maxScaleDownChannels = 2;
+      private Duration drainIdleGrace = Duration.ofMinutes(1);
+      private int errorPenaltyStep = 5;
+      private Duration errorPenaltyDuration = Duration.ofSeconds(5);
       private int concurrentStreamsLowWatermark = GcpManagedChannel.DEFAULT_MAX_STREAM;
       private boolean useRoundRobinOnBind = false;
       private Duration affinityKeyLifetime = Duration.ZERO;
@@ -377,6 +404,9 @@ public class GcpManagedChannelOptions {
         this.scaleDownConsecutiveLowLoadChecks = options.getScaleDownConsecutiveLowLoadChecks();
         this.maxScaleUpPercent = options.getMaxScaleUpPercent();
         this.maxScaleDownChannels = options.getMaxScaleDownChannels();
+        this.drainIdleGrace = options.getDrainIdleGrace();
+        this.errorPenaltyStep = options.getErrorPenaltyStep();
+        this.errorPenaltyDuration = options.getErrorPenaltyDuration();
         this.concurrentStreamsLowWatermark = options.getConcurrentStreamsLowWatermark();
         this.useRoundRobinOnBind = options.isUseRoundRobinOnBind();
         this.affinityKeyLifetime = options.getAffinityKeyLifetime();
@@ -433,10 +463,10 @@ public class GcpManagedChannelOptions {
        * channel or across the pool average signals a background scale-up worker.
        *
        * <p>Every <code>scaleDownInterval</code>, after consecutive low-load checks, the
-       * longest-connected channels (by connectedSinceNanos) are removed from selection, bounded by
-       * maxScaleDownChannels. A removed channel is shut down on a later check once its in-flight
-       * calls reach zero. A READY removed channel can be reused by a later scale-up before it
-       * closes.
+       * least-loaded channels are marked draining and removed from selection, bounded by
+       * maxScaleDownChannels; fewer affinity bindings and then older allocations break load ties.
+       * Draining channels receive no new picks or affinity binds and close after their in-flight
+       * calls reach zero and drainIdleGrace elapses. Scale-up always creates new channels.
        *
        * @param minRpcPerChannel minimum desired average concurrent calls per channel.
        * @param maxRpcPerChannel maximum desired average concurrent calls per channel.
@@ -508,6 +538,50 @@ public class GcpManagedChannelOptions {
       }
 
       /**
+       * Sets how long an idle draining channel remains open for sticky affinity references and
+       * in-flight calls before its delegate closes. Defaults to one minute.
+       */
+      public Builder setDrainIdleGrace(Duration drainIdleGrace) {
+        Preconditions.checkNotNull(drainIdleGrace, "Drain idle grace must not be null.");
+        Preconditions.checkArgument(
+            !drainIdleGrace.isNegative(), "Drain idle grace must not be negative.");
+        this.drainIdleGrace = drainIdleGrace;
+        return this;
+      }
+
+      /**
+       * Sets the load penalty added after each retryable channel error. A value of 0 disables error
+       * penalties. Each step accumulates on the stored undecayed penalty, capped at {@code
+       * maxRpcPerChannel}. Must not be negative. Defaults to 5.
+       */
+      public Builder setErrorPenaltyStep(int errorPenaltyStep) {
+        Preconditions.checkArgument(
+            errorPenaltyStep >= 0, "Error penalty step must not be negative.");
+        this.errorPenaltyStep = errorPenaltyStep;
+        return this;
+      }
+
+      /**
+       * Sets how long an applied penalty takes to decay linearly to zero. Each new retryable error
+       * resets the decay timer to a full window. Must be positive. Defaults to 5 seconds.
+       */
+      public Builder setErrorPenaltyDuration(Duration errorPenaltyDuration) {
+        Preconditions.checkNotNull(
+            errorPenaltyDuration, "Error penalty duration must not be null.");
+        Preconditions.checkArgument(
+            !errorPenaltyDuration.isNegative() && !errorPenaltyDuration.isZero(),
+            "Error penalty duration must be positive.");
+        try {
+          errorPenaltyDuration.toNanos();
+        } catch (ArithmeticException failure) {
+          throw new IllegalArgumentException(
+              "Error penalty duration must fit in nanoseconds.", failure);
+        }
+        this.errorPenaltyDuration = errorPenaltyDuration;
+        return this;
+      }
+
+      /**
        * Sets the concurrent streams low watermark. If every channel in the pool has at least this
        * amount of concurrent streams then a new channel will be created in the pool unless the pool
        * reached its maximum size.
@@ -569,7 +643,7 @@ public class GcpManagedChannelOptions {
        * sample wins ties, with no channel-warmth preference. Inactive samples are retried.
        *
        * <p>Use {@link ChannelPickStrategy#LINEAR_SCAN} to restore the legacy behavior of scanning
-       * all channels and always picking the one with the fewest active streams.
+       * all channels and always picking the one with the lowest picker load.
        *
        * @param strategy the channel pick strategy to use.
        */

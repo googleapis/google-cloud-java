@@ -201,9 +201,6 @@ public final class GcpManagedChannelHotChannelReproducerTest {
         affinityRefs.add(affinityRef);
         originalIds.add(channelId);
       }
-      for (ChannelRef channelRef : pool.channelRefs) {
-        channelRef.activeStreamsCountIncr();
-      }
 
       invokeScaleDownCheck(pool, 3);
       assertThat(pool.channelRefs).hasSize(2);
@@ -277,6 +274,10 @@ public final class GcpManagedChannelHotChannelReproducerTest {
         handle.setChannelIdForTest(channelRef.getId());
         handles.add(handle);
       }
+      for (ChannelRef channelRef : pool.channelRefs) {
+        channelRef.activeStreamsCountDecr(System.nanoTime(), Status.OK, false);
+      }
+
       invokeScaleDownCheck(pool, 2);
       assertThat(pool.channelRefs).hasSize(48);
       invokeScaleDownCheck(pool, 1);
@@ -381,8 +382,8 @@ public final class GcpManagedChannelHotChannelReproducerTest {
         runConstantLoad(pool, callersExecutor, variant, sessionNames, seed, callers);
       }
 
-      // Final ramp restores a full active pool. Reset delegate counters so removed/reused channel
-      // history does not manufacture skew in the measured hold period.
+      // Final ramp restores a full active pool. Reset delegate counters so prior channel history
+      // does not manufacture skew in the measured hold period.
       runWave(pool, callersExecutor, variant, sessionNames, seed + 10_000, callers, 5, 10_000);
       delegateBuilder.resetMeasurements();
 

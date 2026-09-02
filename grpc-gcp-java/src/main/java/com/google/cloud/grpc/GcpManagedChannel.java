@@ -60,13 +60,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.LongSummaryStatistics;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadLocalRandom;
@@ -74,6 +74,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Consumer;
 import java.util.function.IntUnaryOperator;
 import java.util.function.Supplier;
 import java.util.logging.Level;
@@ -85,6 +86,11 @@ import javax.annotation.Nullable;
 public class GcpManagedChannel extends ManagedChannel {
   private static final Logger logger = Logger.getLogger(GcpManagedChannel.class.getName());
   static final AtomicInteger channelPoolIndex = new AtomicInteger();
+
+  @FunctionalInterface
+  interface NanoClock {
+    long get();
+  }
 
   // Counter for tracking channel ids.
   final AtomicInteger nextChannelId = new AtomicInteger();
@@ -112,7 +118,12 @@ public class GcpManagedChannel extends ManagedChannel {
   public static final CallOptions.Key<ChannelAffinityRef> CHANNEL_AFFINITY_REF_KEY =
       CallOptions.Key.create("GcpChannelAffinityRef");
 
-  /** Opaque sticky channel reference for callers that should not depend on {@link ChannelRef}. */
+  /**
+   * Opaque caller-owned channel reference for transaction-lifetime stickiness.
+   *
+   * <p>The reference remains on a draining channel until its delegate shuts down. Call {@link
+   * #useDifferentChannelOnNextCall()} to move the next RPC to another active channel.
+   */
   public static final class ChannelAffinityRef {
     private static final int USE_DIFFERENT_CHANNEL_ON_NEXT_CALL_MASK = 1 << 31;
     private static final int CHANNEL_ID_MASK = ~USE_DIFFERENT_CHANNEL_ON_NEXT_CALL_MASK;
@@ -166,6 +177,10 @@ public class GcpManagedChannel extends ManagedChannel {
   private int scaleDownConsecutiveLowLoadChecks = 3;
   private int maxScaleUpPercent = 30;
   private int maxScaleDownChannels = 2;
+  private Duration drainIdleGrace = Duration.ofMinutes(1);
+  private int errorPenaltyStep = 5;
+  private Duration errorPenaltyDuration = Duration.ofSeconds(5);
+  private long errorPenaltyDurationNanos = Duration.ofSeconds(5).toNanos();
   private boolean isDynamicScalingEnabled = false;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
   private GcpManagedChannelOptions.ChannelPickStrategy channelPickStrategy =
@@ -189,9 +204,13 @@ public class GcpManagedChannel extends ManagedChannel {
   // we can shut them down.
   final Set<ChannelRef> removedChannelRefs = ConcurrentHashMap.newKeySet();
 
+  @GuardedBy("this")
+  private final Map<ChannelRef, ScheduledFuture<?>> drainTasks = new HashMap<>();
+
   // One-slot scale-up signal. At most one worker mutates pool size at a time.
   private final AtomicBoolean scaleUpSignalPending = new AtomicBoolean();
   private final AtomicBoolean scaleUpWorkerRunning = new AtomicBoolean();
+  private final AtomicLong totalErrorPenaltyLoad = new AtomicLong();
 
   private volatile long lastScaleUpNanos = Long.MIN_VALUE;
   private int consecutiveLowLoadChecks;
@@ -242,6 +261,7 @@ public class GcpManagedChannel extends ManagedChannel {
   private ScheduledFuture<?> cleanupTask;
   private ScheduledFuture<?> scaleDownTask;
   private ScheduledFuture<?> logMetricsTask;
+  private ScheduledExecutorService drainScheduler = SHARED_BACKGROUND_SERVICE;
 
   // Metrics counters.
   private final AtomicInteger readyChannels = new AtomicInteger();
@@ -284,18 +304,44 @@ public class GcpManagedChannel extends ManagedChannel {
   private AtomicLong scaleDownCount = new AtomicLong();
 
   // Clock supplier for nanoTime, injectable for testing.
-  private Supplier<Long> nanoClock = System::nanoTime;
+  private NanoClock nanoClock = System::nanoTime;
   private IntUnaryOperator candidateIndexPicker =
       bound -> ThreadLocalRandom.current().nextInt(bound);
+  @Nullable private volatile Consumer<ChannelRef> pickerValidationHookForTest;
+  @Nullable private volatile Runnable inactiveMappingRemovalHookForTest;
 
   @VisibleForTesting
-  void setNanoClock(Supplier<Long> nanoClock) {
+  void setNanoClock(NanoClock nanoClock) {
     this.nanoClock = nanoClock;
+  }
+
+  @VisibleForTesting
+  void setPickerValidationHookForTest(Consumer<ChannelRef> hook) {
+    pickerValidationHookForTest = hook;
   }
 
   @VisibleForTesting
   void setCandidateIndexPickerForTest(IntUnaryOperator candidateIndexPicker) {
     this.candidateIndexPicker = candidateIndexPicker;
+  }
+
+  @VisibleForTesting
+  void setInactiveMappingRemovalHookForTest(Runnable hook) {
+    inactiveMappingRemovalHookForTest = hook;
+  }
+
+  @VisibleForTesting
+  void setDrainSchedulerForTest(ScheduledExecutorService drainScheduler) {
+    this.drainScheduler = drainScheduler;
+  }
+
+  private boolean validatePickedChannel(ChannelRef channelRef) {
+    Consumer<ChannelRef> hook = pickerValidationHookForTest;
+    if (hook != null) {
+      pickerValidationHookForTest = null;
+      hook.accept(channelRef);
+    }
+    return channelRef.isActive();
   }
 
   @VisibleForTesting
@@ -306,6 +352,11 @@ public class GcpManagedChannel extends ManagedChannel {
   @VisibleForTesting
   int readyChannelCountForTest() {
     return readyChannels.get();
+  }
+
+  @VisibleForTesting
+  synchronized int drainTaskCountForTest() {
+    return drainTasks.size();
   }
 
   private static ScheduledThreadPoolExecutor createSharedBackgroundService() {
@@ -383,8 +434,9 @@ public class GcpManagedChannel extends ManagedChannel {
     }
   }
 
-  private void cleanupAffinityKeys() {
-    final long cutoff = System.nanoTime() - affinityKeyLifetime.toNanos();
+  @VisibleForTesting
+  void cleanupAffinityKeys() {
+    final long cutoff = nanoClock.get() - affinityKeyLifetime.toNanos();
     affinityKeyLastUsed.forEach(
         (String key, Long time) -> {
           if (time < cutoff) {
@@ -393,81 +445,265 @@ public class GcpManagedChannel extends ManagedChannel {
         });
   }
 
+  /**
+   * Evaluates instantaneous active load; consecutive checks provide the low-load history rather
+   * than retaining a maximum observed between checks.
+   */
   @VisibleForTesting
-  synchronized void checkScaleDown() {
-    if (!isDynamicScalingEnabled) {
-      return;
-    }
+  void checkScaleDown() {
+    List<ChannelRef> removedChannels;
+    synchronized (this) {
+      if (!isDynamicScalingEnabled || shuttingDown) {
+        return;
+      }
 
-    int channelCount = channelRefs.size();
-    if (channelCount <= minSize) {
-      consecutiveLowLoadChecks = 0;
-    } else {
-      long activeLoad = totalActiveStreams.get();
+      int channelCount = channelRefs.size();
+      if (channelCount <= minSize) {
+        consecutiveLowLoadChecks = 0;
+        return;
+      }
+      long activeLoad = activeLoad(channelRefs);
       if (activeLoad > (long) minRpcPerChannel * channelCount) {
         consecutiveLowLoadChecks = 0;
-      } else if (++consecutiveLowLoadChecks >= scaleDownConsecutiveLowLoadChecks) {
-        consecutiveLowLoadChecks = 0;
-        int targetRpcPerChannel = Math.max(1, (minRpcPerChannel + maxRpcPerChannel) / 2);
-        int desiredSize =
-            activeLoad == 0
-                ? minSize
-                : (int) Math.min(Integer.MAX_VALUE, 1 + ((activeLoad - 1) / targetRpcPerChannel));
-        int removeCount =
-            Math.min(
-                maxScaleDownChannels, Math.max(0, channelCount - Math.max(minSize, desiredSize)));
-        removeOldestChannels(removeCount);
+        return;
+      }
+      if (++consecutiveLowLoadChecks < scaleDownConsecutiveLowLoadChecks) {
+        return;
+      }
+      consecutiveLowLoadChecks = 0;
+
+      int desiredSize = Math.max(minSize, ceilDiv(activeLoad, targetRpcPerChannel()));
+      int removeCount = Math.min(maxScaleDownChannels, Math.max(0, channelCount - desiredSize));
+      removedChannels = removeChannels(removeCount);
+    }
+    for (ChannelRef channelRef : removedChannels) {
+      channelRef.clearErrorPenalty();
+    }
+    List<String> keysToUnbind =
+        affinityKeyToChannelRef.entrySet().stream()
+            .filter(entry -> removedChannels.contains(entry.getValue()))
+            .map(Map.Entry::getKey)
+            .collect(Collectors.toList());
+    for (String key : keysToUnbind) {
+      ChannelRef mappedChannel = affinityKeyToChannelRef.get(key);
+      if (removedChannels.contains(mappedChannel)) {
+        unbindInactiveMapping(key, mappedChannel);
       }
     }
-
-    // Shutdown removed channels where all RPCs are completed.
-    List<ChannelRef> completedChRefs =
-        removedChannelRefs.stream()
-            .filter(chRef -> (chRef.getActiveStreamsCount() == 0))
-            .collect(Collectors.toList());
-    removedChannelRefs.removeAll(completedChRefs);
-    for (ChannelRef channelRef : completedChRefs) {
-      channelRef.getChannel().shutdown();
-      // Remove channel from broken channels map.
-      fallbackMap.remove(channelRef.getId());
-      channelIdToChannelRef.remove(channelRef.getId());
+    for (ChannelRef channelRef : removedChannels) {
+      scheduleDrain(channelRef);
     }
   }
 
-  private void removeOldestChannels(int num) {
+  @GuardedBy("this")
+  private List<ChannelRef> removeChannels(int num) {
     if (num <= 0) {
-      return;
+      return Collections.emptyList();
     }
 
-    // Select longest connected channels (or disconnected channels).
+    // Drain least-loaded channels first, preferring fewer affinity bindings, then older channels.
     final List<ChannelRef> channelsToRemove =
         channelRefs.stream()
-            .sorted(Comparator.comparing(ChannelRef::getConnectedSinceNanos))
+            .sorted(
+                Comparator.comparingInt(ChannelRef::getActiveStreamsCount)
+                    .thenComparingInt(ChannelRef::getAffinityCount)
+                    .thenComparingLong(ChannelRef::getCreatedNanos))
             .limit(num)
             .collect(Collectors.toList());
 
-    // Remove from active channels.
+    for (ChannelRef channelRef : channelsToRemove) {
+      // Stop new picks before publishing the shorter active list.
+      channelRef.deactivateAndAccountReadiness();
+    }
     channelRefs.removeAll(channelsToRemove);
 
     for (ChannelRef channelRef : channelsToRemove) {
-      channelRef.resetAffinityCount();
-      channelRef.deactivateAndAccountReadiness();
+      removedChannelRefs.add(channelRef);
     }
-
-    // Remove affinity keys mapping for the channels.
-    affinityKeyToChannelRef
-        .keySet()
-        .removeIf(key -> channelsToRemove.contains(affinityKeyToChannelRef.get(key)));
-
-    // Keep them aside to wait for all RPCs to complete.
-    removedChannelRefs.addAll(channelsToRemove);
-
-    // Track minimum number of channels for metrics.
     minChannels.accumulateAndGet(getNumberOfChannels(), Math::min);
     scaleDownCount.addAndGet(channelsToRemove.size());
-
-    // Removing a channel may change channel pool state.
     executeStateChangeCallbacks();
+    return channelsToRemove;
+  }
+
+  /** Drain task bookkeeping is guarded by the pool monitor. */
+  @VisibleForTesting
+  void scheduleDrain(ChannelRef channelRef) {
+    boolean closeChannel = false;
+    @Nullable DrainTask inlineTask = null;
+    synchronized (this) {
+      if (channelRef.isActive() || channelRef.getActiveStreamsCount() != 0 || shuttingDown) {
+        return;
+      }
+      long elapsed = Math.max(0, nanoClock.get() - channelRef.getLastActivityNanos());
+      long delay = Math.max(0, drainIdleGrace.toNanos() - elapsed);
+      DrainTask drainTask = new DrainTask(channelRef);
+      ScheduledFuture<?> task;
+      try {
+        task = drainScheduler.schedule(drainTask, delay, NANOSECONDS);
+        drainTask.future = task;
+      } catch (RejectedExecutionException e) {
+        logger.fine(log("Drain task rejected: %s", e.getMessage()));
+        closeChannel = removeDrainedChannel(channelRef);
+        task = null;
+      }
+      if (task != null) {
+        ScheduledFuture<?> previous = drainTasks.put(channelRef, task);
+        if (previous != null) {
+          previous.cancel(false);
+        }
+        if (drainTask.ranBeforeFutureAssignment) {
+          inlineTask = drainTask;
+        }
+      }
+    }
+    if (inlineTask != null) {
+      finishDrain(channelRef, inlineTask);
+    } else if (closeChannel) {
+      channelRef.getChannel().shutdown();
+    }
+  }
+
+  @VisibleForTesting
+  void finishDrain(ChannelRef channelRef) {
+    finishDrain(channelRef, null);
+  }
+
+  private void finishDrain(ChannelRef channelRef, @Nullable DrainTask runningTask) {
+    boolean closeChannel = false;
+    boolean reschedule = false;
+    synchronized (this) {
+      ScheduledFuture<?> drainTask = drainTasks.get(channelRef);
+      if (runningTask != null && drainTask != runningTask.future) {
+        return;
+      }
+      drainTasks.remove(channelRef);
+      if (drainTask != null) {
+        drainTask.cancel(false);
+      }
+      if (channelRef.isActive()
+          || channelRef.getActiveStreamsCount() != 0
+          || !removedChannelRefs.contains(channelRef)
+          || shuttingDown) {
+        return;
+      }
+      long elapsed = Math.max(0, nanoClock.get() - channelRef.getLastActivityNanos());
+      if (elapsed < drainIdleGrace.toNanos()) {
+        reschedule = true;
+      } else {
+        closeChannel = removeDrainedChannel(channelRef);
+      }
+    }
+    if (reschedule) {
+      scheduleDrain(channelRef);
+    } else if (closeChannel) {
+      channelRef.getChannel().shutdown();
+    }
+  }
+
+  private final class DrainTask implements Runnable {
+    private final ChannelRef channelRef;
+
+    @GuardedBy("GcpManagedChannel.this")
+    private boolean ranBeforeFutureAssignment;
+
+    @GuardedBy("GcpManagedChannel.this")
+    @Nullable
+    private ScheduledFuture<?> future;
+
+    private DrainTask(ChannelRef channelRef) {
+      this.channelRef = channelRef;
+    }
+
+    @Override
+    public void run() {
+      synchronized (GcpManagedChannel.this) {
+        if (future == null) {
+          ranBeforeFutureAssignment = true;
+          return;
+        }
+      }
+      finishDrain(channelRef, this);
+    }
+  }
+
+  @GuardedBy("this")
+  private boolean removeDrainedChannel(ChannelRef channelRef) {
+    if (!removedChannelRefs.remove(channelRef)) {
+      return false;
+    }
+    fallbackMap.remove(channelRef.getId());
+    channelIdToChannelRef.remove(channelRef.getId(), channelRef);
+    return true;
+  }
+
+  private static int ceilDiv(long numerator, int denominator) {
+    if (numerator <= 0) {
+      return 0;
+    }
+    return (int) Math.min(Integer.MAX_VALUE, 1 + ((numerator - 1) / denominator));
+  }
+
+  private static int ceilMultiplyDivide(int factor, long numerator, long denominator) {
+    if (factor <= 0 || numerator <= 0 || denominator <= 0) {
+      return 0;
+    }
+    if (numerator >= denominator) {
+      return factor;
+    }
+    if (numerator <= Long.MAX_VALUE / factor) {
+      long product = factor * numerator;
+      return (int) (product / denominator + (product % denominator == 0 ? 0 : 1));
+    }
+
+    // Overflow-safe binary long division for unusually large configured durations or penalties.
+    long quotient = 0;
+    long remainder = 0;
+    for (int bit = Integer.highestOneBit(factor); bit != 0; bit >>>= 1) {
+      quotient <<= 1;
+      long denominatorMinusRemainder = denominator - remainder;
+      if (remainder >= denominatorMinusRemainder) {
+        remainder -= denominatorMinusRemainder;
+        quotient++;
+      } else {
+        remainder += remainder;
+      }
+      if ((factor & bit) != 0) {
+        long denominatorMinusNumerator = denominator - numerator;
+        if (remainder >= denominatorMinusNumerator) {
+          remainder -= denominatorMinusNumerator;
+          quotient++;
+        } else {
+          remainder += numerator;
+        }
+      }
+    }
+    return (int) (quotient + (remainder == 0 ? 0 : 1));
+  }
+
+  private int targetRpcPerChannel() {
+    return Math.max(1, (minRpcPerChannel + maxRpcPerChannel) / 2);
+  }
+
+  private long activeLoad(List<ChannelRef> refs) {
+    long load = 0;
+    for (ChannelRef channelRef : refs) {
+      if (channelRef.isActive()) {
+        load += channelRef.getActiveStreamsCount();
+      }
+    }
+    return load;
+  }
+
+  private long pickerLoad(List<ChannelRef> refs, long now) {
+    // Expiry accounting is swept before dynamicUpscale acquires the pool monitor.
+    long load = 0;
+    for (ChannelRef channelRef : refs) {
+      if (channelRef.isActive()) {
+        load += channelRef.getPickerLoad(now);
+      }
+    }
+    return load;
   }
 
   private Supplier<String> log(Supplier<String> messageSupplier) {
@@ -502,6 +738,10 @@ public class GcpManagedChannel extends ManagedChannel {
       scaleDownConsecutiveLowLoadChecks = poolOptions.getScaleDownConsecutiveLowLoadChecks();
       maxScaleUpPercent = poolOptions.getMaxScaleUpPercent();
       maxScaleDownChannels = poolOptions.getMaxScaleDownChannels();
+      drainIdleGrace = poolOptions.getDrainIdleGrace();
+      errorPenaltyStep = poolOptions.getErrorPenaltyStep();
+      errorPenaltyDuration = poolOptions.getErrorPenaltyDuration();
+      errorPenaltyDurationNanos = errorPenaltyDuration.toNanos();
       isDynamicScalingEnabled =
           minRpcPerChannel > 0 && maxRpcPerChannel > 0 && !scaleDownInterval.isZero();
       channelPickStrategy = poolOptions.getChannelPickStrategy();
@@ -1528,9 +1768,8 @@ public class GcpManagedChannel extends ManagedChannel {
   private class ChannelStateMonitor implements Runnable {
     private final ChannelRef channelRef;
     private final ManagedChannel channel;
-    private ConnectivityState currentState;
+    private volatile ConnectivityState currentState;
     private long connectingStartNanos;
-    private long connectedSinceNanos;
 
     @GuardedBy("channelRef")
     private boolean readyAccounted;
@@ -1541,26 +1780,24 @@ public class GcpManagedChannel extends ManagedChannel {
       run();
     }
 
-    public long getConnectedSinceNanos() {
-      return connectedSinceNanos;
-    }
-
     public ConnectivityState getCurrentState() {
       return currentState;
     }
 
-    private void accountReadyIfNeeded() {
+    private boolean accountReadyIfNeeded() {
       if (currentState == ConnectivityState.READY && !readyAccounted) {
         readyAccounted = true;
-        incReadyChannels(false);
+        return true;
       }
+      return false;
     }
 
-    private void unaccountReadyIfNeeded() {
+    private boolean unaccountReadyIfNeeded() {
       if (readyAccounted) {
         readyAccounted = false;
-        decReadyChannels(false);
+        return true;
       }
+      return false;
     }
 
     @Override
@@ -1580,6 +1817,9 @@ public class GcpManagedChannel extends ManagedChannel {
 
       ConnectivityState newState = channel.getState(requestConnection);
       boolean isActive;
+      boolean incrementReady = false;
+      boolean decrementReady = false;
+      long readinessNanos = 0;
       synchronized (channelRef) {
         isActive = channelRef.isActive() && channelRefs.contains(channelRef);
         if (logger.isLoggable(Level.FINER)) {
@@ -1589,28 +1829,33 @@ public class GcpManagedChannel extends ManagedChannel {
                   channelRef.getId(), currentState, newState));
         }
         if (newState == ConnectivityState.READY && currentState != ConnectivityState.READY) {
-          connectedSinceNanos = System.nanoTime();
           if (isActive && !readyAccounted) {
             readyAccounted = true;
-            incReadyChannels(true);
+            incrementReady = true;
             if (connectingStartNanos > 0) {
-              saveReadinessTime(System.nanoTime() - connectingStartNanos);
+              readinessNanos = nanoClock.get() - connectingStartNanos;
             }
           }
           connectingStartNanos = 0;
         }
         if (newState != ConnectivityState.READY && readyAccounted) {
           readyAccounted = false;
-          decReadyChannels(true);
+          decrementReady = true;
         }
         if (newState == ConnectivityState.CONNECTING
             && currentState != ConnectivityState.CONNECTING) {
-          connectingStartNanos = System.nanoTime();
-        }
-        if (newState != ConnectivityState.READY) {
-          connectedSinceNanos = 0;
+          connectingStartNanos = nanoClock.get();
         }
         currentState = newState;
+      }
+
+      if (incrementReady) {
+        incReadyChannels(true);
+        if (readinessNanos > 0) {
+          saveReadinessTime(readinessNanos);
+        }
+      } else if (decrementReady) {
+        decReadyChannels(true);
       }
 
       processChannelStateChange(channelRef.getId(), newState);
@@ -1639,6 +1884,11 @@ public class GcpManagedChannel extends ManagedChannel {
   @VisibleForTesting
   void processChannelStateChange(int channelId, ConnectivityState state) {
     if (!fallbackEnabled) {
+      return;
+    }
+    ChannelRef channelRef = channelIdToChannelRef.get(channelId);
+    if (channelRef == null || !channelRef.isActive()) {
+      fallbackMap.remove(channelId);
       return;
     }
     if (state == ConnectivityState.READY || state == ConnectivityState.IDLE) {
@@ -1736,22 +1986,37 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Pick a {@link ChannelRef} (and create a new one if necessary). If notReadyFallbackEnabled is
    * true in the {@link GcpResiliencyOptions} then instead of a channel in a non-READY state another
-   * channel in the READY state and having fewer than maximum allowed number of active streams will
-   * be provided if available. Subsequent calls with the same affinity key will provide the same
+   * channel in the READY state and having picker load below the maximum allowed threshold will be
+   * provided if available. Subsequent calls with the same affinity key will provide the same
    * fallback channel as long as the fallback channel is in the READY state.
    *
    * @param key affinity key. If it is specified, pick the ChannelRef bound with the affinity key.
-   *     Otherwise pick the one with the smallest number of streams.
+   *     Otherwise pick using the lowest picker load: active streams plus active error penalty.
    */
   protected ChannelRef getChannelRef(@Nullable String key) {
     if (key == null || key.isEmpty()) {
       return pickLeastBusyChannel(/* forFallback= */ false);
     }
-    ChannelRef mappedChannel = affinityKeyToChannelRef.get(key);
-    affinityKeyLastUsed.put(key, System.nanoTime());
+    ChannelRef mappedChannel;
+    while (true) {
+      mappedChannel = affinityKeyToChannelRef.get(key);
+      if (mappedChannel == null) {
+        break;
+      }
+      long lastUsed = nanoClock.get();
+      affinityKeyLastUsed.merge(key, lastUsed, Long::max);
+      if (affinityKeyToChannelRef.get(key) == mappedChannel) {
+        break;
+      }
+      affinityKeyLastUsed.remove(key, lastUsed);
+    }
+    while (mappedChannel != null && !mappedChannel.isActive()) {
+      mappedChannel =
+          unbindInactiveMapping(key, mappedChannel) ? null : affinityKeyToChannelRef.get(key);
+    }
     if (mappedChannel == null) {
       ChannelRef channelRef = pickLeastBusyChannel(/* forFallback= */ false);
-      bind(channelRef, Collections.singletonList(key));
+      channelRef = bind(channelRef, Collections.singletonList(key));
       return channelRef;
     }
     if (!fallbackEnabled) {
@@ -1766,12 +2031,11 @@ public class GcpManagedChannel extends ManagedChannel {
     // Channel is not ready. Look up if the affinity key mapped to another channel.
     Integer channelId = tempMap.get(key);
     if (channelId != null && !fallbackMap.containsKey(channelId)) {
-      // Fallback channel is ready.
-      if (logger.isLoggable(Level.FINEST)) {
-        logger.finest(log("Using fallback channel: %d -> %d", mappedChannel.getId(), channelId));
-      }
       ChannelRef fallbackChannel = channelIdToChannelRef.get(channelId);
       if (fallbackChannel != null && fallbackChannel.isActive()) {
+        if (logger.isLoggable(Level.FINEST)) {
+          logger.finest(log("Using fallback channel: %d -> %d", mappedChannel.getId(), channelId));
+        }
         fallbacksSucceeded.incrementAndGet();
         return fallbackChannel;
       }
@@ -1780,7 +2044,7 @@ public class GcpManagedChannel extends ManagedChannel {
     // No temp mapping for this key or fallback channel is also broken.
     ChannelRef channelRef = pickLeastBusyChannel(/* forFallback= */ true);
     if (!fallbackMap.containsKey(channelRef.getId())
-        && channelRef.getActiveStreamsCount() < DEFAULT_MAX_STREAM) {
+        && channelRef.getActiveStreamsCount() < maxConcurrentStreamsLowWatermark) {
       // Got a ready and not an overloaded channel.
       if (channelRef.getId() != mappedChannel.getId()) {
         if (logger.isLoggable(Level.FINEST)) {
@@ -1807,7 +2071,9 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /**
-   * Pick a {@link ChannelRef} using a caller-owned reference instead of grpc-gcp's affinity map.
+   * Picks a {@link ChannelRef} using a caller-owned reference instead of grpc-gcp's affinity map. A
+   * reference remains sticky while its delegate is open, including while the channel drains, and
+   * re-resolves after delegate shutdown or an explicit request to use a different channel.
    */
   protected ChannelRef getChannelRefByAffinityRef(ChannelAffinityRef affinityRef) {
     // Retry if another thread updates the caller-owned affinity ref while we are picking a channel.
@@ -1837,7 +2103,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
   private ChannelRef pickLeastBusyChannelDifferentFrom(@Nullable ChannelRef excludedChannelRef) {
     ChannelRef channelRef = pickLeastBusyChannel(/* forFallback= */ false);
-    if (excludedChannelRef == null || channelRefs.size() <= 1) {
+    if (excludedChannelRef == null) {
       return channelRef;
     }
     if (channelRef != excludedChannelRef && channelRef.isActive()) {
@@ -1845,11 +2111,12 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     ChannelRef leastBusyChannelRef = null;
     int leastBusyStreams = Integer.MAX_VALUE;
+    long now = nanoClock.get();
     for (ChannelRef candidate : channelRefs) {
       if (candidate == excludedChannelRef || !candidate.isActive()) {
         continue;
       }
-      int streams = candidate.getActiveStreamsCount();
+      int streams = candidate.getPickerLoad(now);
       if (leastBusyChannelRef == null || streams < leastBusyStreams) {
         leastBusyChannelRef = candidate;
         leastBusyStreams = streams;
@@ -1859,22 +2126,8 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   // Create a new channel and add it to channelRefs.
-  // If we have a ready channel not in the pool that we wait for completing its RPCs,
-  // then re-use that channel instead.
   @VisibleForTesting
-  ChannelRef createNewChannel() {
-    Optional<ChannelRef> reusedChannelRef = pickChannelForReuse();
-    if (reusedChannelRef.isPresent()) {
-      ChannelRef chRef = reusedChannelRef.get();
-      channelRefs.add(chRef);
-      removedChannelRefs.remove(chRef);
-      channelIdToChannelRef.put(chRef.getId(), chRef);
-      chRef.activateAndAccountReadiness();
-      logger.finer(log("Channel %d reused.", chRef.getId()));
-      maxChannels.accumulateAndGet(getNumberOfChannels(), Math::max);
-      return chRef;
-    }
-
+  synchronized ChannelRef createNewChannel() {
     ChannelRef channelRef = new ChannelRef(delegateChannelBuilder.build());
     channelRefs.add(channelRef);
     channelIdToChannelRef.put(channelRef.getId(), channelRef);
@@ -1882,13 +2135,6 @@ public class GcpManagedChannel extends ManagedChannel {
     logger.finer(log("Channel %d created.", channelRef.getId()));
     maxChannels.accumulateAndGet(getNumberOfChannels(), Math::max);
     return channelRef;
-  }
-
-  private Optional<ChannelRef> pickChannelForReuse() {
-    // Pick the most recently connected ready channel, if any.
-    return removedChannelRefs.stream()
-        .filter(channelRef -> channelRef.getState() == ConnectivityState.READY)
-        .max(Comparator.comparing(ChannelRef::getConnectedSinceNanos));
   }
 
   @GuardedBy("this")
@@ -1908,7 +2154,7 @@ public class GcpManagedChannel extends ManagedChannel {
       return null;
     }
     synchronized (this) {
-      if (channelRefs.isEmpty()) {
+      if (channelRefs.isEmpty() && !shuttingDown) {
         return createNewChannel();
       }
     }
@@ -1939,8 +2185,11 @@ public class GcpManagedChannel extends ManagedChannel {
         || activeChannels >= maxSize) {
       return;
     }
-    if (selectedChannel.getActiveStreamsCount() <= maxRpcPerChannel
-        && ((double) totalActiveStreams.get() / activeChannels) <= maxRpcPerChannel) {
+    long now = nanoClock.get();
+    int selectedLoad = selectedChannel.getPickerLoad(now);
+    long totalLoad = (long) totalActiveStreams.get() + totalErrorPenaltyLoad.get();
+    // A pool at the average cap has no spare capacity, including when penalty represents loss.
+    if (selectedLoad <= maxRpcPerChannel && totalLoad < (long) activeChannels * maxRpcPerChannel) {
       return;
     }
     signalScaleUp();
@@ -1979,54 +2228,39 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private void dynamicUpscale() {
+    long now = nanoClock.get();
+    for (ChannelRef channelRef : channelRefs) {
+      channelRef.currentErrorPenalty(now);
+    }
     final int channelsToBuild;
-    int reused = 0;
     synchronized (this) {
       if (!isDynamicScalingEnabled || shuttingDown || channelRefs.size() >= maxSize) {
         return;
       }
-      long now = nanoClock.get();
       if (lastScaleUpNanos != Long.MIN_VALUE
           && now - lastScaleUpNanos < scaleUpCooldown.toNanos()) {
         return;
       }
-      int active = channelRefs.size();
+      List<ChannelRef> activeChannels =
+          channelRefs.stream().filter(ChannelRef::isActive).collect(Collectors.toList());
+      int active = activeChannels.size();
       if (active == 0) {
         return;
       }
-      int targetRpcPerChannel = Math.max(1, (minRpcPerChannel + maxRpcPerChannel) / 2);
-      long load = totalActiveStreams.get();
-      int desired =
-          load == 0
-              ? active
-              : (int) Math.min(Integer.MAX_VALUE, 1 + ((load - 1) / targetRpcPerChannel));
+      int desired = ceilDiv(pickerLoad(activeChannels, now), targetRpcPerChannel());
       int add = desired - active;
       // Small pools may add two channels per event before percentage growth dominates.
-      int percentCap = Math.max(2, (int) (1 + (((long) active * maxScaleUpPercent - 1) / 100)));
+      int percentCap = Math.max(2, ceilDiv((long) active * maxScaleUpPercent, 100));
       add = Math.min(add, percentCap);
       add = Math.min(add, maxSize - active);
       if (add <= 0) {
         return;
       }
-      while (reused < add) {
-        Optional<ChannelRef> reusable = pickChannelForReuse();
-        if (!reusable.isPresent()) {
-          break;
-        }
-        ChannelRef channelRef = reusable.get();
-        removedChannelRefs.remove(channelRef);
-        channelRefs.add(channelRef);
-        channelIdToChannelRef.put(channelRef.getId(), channelRef);
-        channelRef.activateAndAccountReadiness();
-        maxChannels.accumulateAndGet(getNumberOfChannels(), Math::max);
-        reused++;
-      }
-      channelsToBuild = add - reused;
+      channelsToBuild = add;
       // Claim cooldown before delegate construction begins.
       lastScaleUpNanos = now;
     }
 
-    scaleUpCount.addAndGet(reused);
     List<ManagedChannel> builtChannels = new ArrayList<>(channelsToBuild);
     try {
       for (int i = 0; i < channelsToBuild; i++) {
@@ -2074,20 +2308,23 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Pick a {@link ChannelRef} (and create a new one if necessary). If notReadyFallbackEnabled is
    * true in the {@link GcpResiliencyOptions} then instead of a channel in a non-READY state another
-   * channel in the READY state and having fewer than maximum allowed number of active streams will
-   * be provided if available.
+   * channel in the READY state and having picker load below the maximum allowed threshold will be
+   * provided if available.
    */
   private ChannelRef pickLeastBusyChannel(boolean forFallback) {
-    ChannelRef first = createFirstChannel();
-    if (first != null) {
-      return first;
+    // Retries cover post-snapshot deactivation, not draining density.
+    for (int attempt = 0; attempt < 3; attempt++) {
+      ChannelRef first = createFirstChannel();
+      if (first != null) {
+        return first;
+      }
+      ChannelRef picked =
+          fallbackEnabled ? pickLeastBusyWithFallback(forFallback) : pickLeastBusyNoFallback();
+      if (validatePickedChannel(picked)) {
+        return picked;
+      }
     }
-
-    if (!fallbackEnabled) {
-      return pickLeastBusyNoFallback();
-    }
-
-    return pickLeastBusyWithFallback(forFallback);
+    return leastLoadedActiveChannel(channelRefs);
   }
 
   /**
@@ -2095,7 +2332,8 @@ public class GcpManagedChannel extends ManagedChannel {
    * GcpManagedChannelOptions.ChannelPickStrategy}.
    */
   private ChannelRef pickLeastBusyNoFallback() {
-    ChannelRef channelCandidate = pickFromCandidates(channelRefs);
+    long now = nanoClock.get();
+    ChannelRef channelCandidate = pickFromCandidates(channelRefs, now);
     if (!isDynamicScalingEnabled && channelRefs.size() < maxSize) {
       // With power-of-two, streams distribute approximately (not exactly) evenly.
       // Use max streams for scale-up: if ANY channel hits the watermark, it's overloaded now
@@ -2105,7 +2343,7 @@ public class GcpManagedChannel extends ManagedChannel {
       int streams =
           channelPickStrategy == GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO
               ? getMaxActiveStreams()
-              : channelCandidate.getActiveStreamsCount();
+              : channelCandidate.getPickerLoad(now);
       if (streams >= maxConcurrentStreamsLowWatermark) {
         ChannelRef newChannel = tryCreateNewChannel();
         if (newChannel != null) {
@@ -2127,17 +2365,18 @@ public class GcpManagedChannel extends ManagedChannel {
     ChannelRef overallCandidate = null;
     int overallMinStreams = Integer.MAX_VALUE;
     int readyMaxStreams = 0;
+    long now = nanoClock.get();
 
     for (ChannelRef channelRef : channelRefs) {
       if (!channelRef.isActive()) {
         continue;
       }
-      int cnt = channelRef.getActiveStreamsCount();
+      int cnt = channelRef.getPickerLoad(now);
       if (overallCandidate == null || cnt < overallMinStreams) {
         overallMinStreams = cnt;
         overallCandidate = channelRef;
       }
-      if (!fallbackMap.containsKey(channelRef.getId()) && cnt < DEFAULT_MAX_STREAM) {
+      if (!fallbackMap.containsKey(channelRef.getId()) && cnt < maxConcurrentStreamsLowWatermark) {
         readyCandidates.add(channelRef);
         if (cnt > readyMaxStreams) {
           readyMaxStreams = cnt;
@@ -2146,7 +2385,7 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     if (overallCandidate == null) {
-      return pickFromCandidates(channelRefs);
+      return leastLoadedActiveChannel(channelRefs, now);
     }
 
     // For scale-up, use maxStreams among ready channels (consistent with non-fallback path).
@@ -2167,7 +2406,7 @@ public class GcpManagedChannel extends ManagedChannel {
 
     if (!readyCandidates.isEmpty()) {
       // Apply power-of-two among eligible channels to avoid thundering herd.
-      ChannelRef readyCandidate = pickFromCandidates(readyCandidates);
+      ChannelRef readyCandidate = pickFromCandidates(readyCandidates, now);
       if (!forFallback && readyCandidate.getId() != overallCandidate.getId()) {
         if (logger.isLoggable(Level.FINEST)) {
           logger.finest(
@@ -2192,13 +2431,18 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Picks a channel from the given candidate list using the configured strategy.
    *
-   * <p>For {@code POWER_OF_TWO}: samples twice with replacement and picks the less busy candidate.
-   * The first sample wins ties. Inactive candidates are retried before falling back to a full scan.
+   * <p>For {@code POWER_OF_TWO}: samples twice with replacement and picks the less busy sample. The
+   * first sample wins ties. Draining or inactive samples are retried up to twice the candidate
+   * count before a full active-channel scan.
    *
    * <p>For {@code LINEAR_SCAN}: deterministic scan picking the first least-busy active channel.
    */
   @VisibleForTesting
   ChannelRef pickFromCandidates(List<ChannelRef> candidates) {
+    return pickFromCandidates(candidates, nanoClock.get());
+  }
+
+  private ChannelRef pickFromCandidates(List<ChannelRef> candidates, long now) {
     Object[] snapshot = candidates.toArray();
     int size = snapshot.length;
     if (channelPickStrategy == GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO) {
@@ -2208,26 +2452,41 @@ public class GcpManagedChannel extends ManagedChannel {
         if (!first.isActive() || !second.isActive()) {
           continue;
         }
-        return first.getActiveStreamsCount() <= second.getActiveStreamsCount() ? first : second;
+        ChannelRef picked = pickLessBusy(first, second, now);
+        if (picked.isActive()) {
+          return picked;
+        }
       }
     }
+    return leastLoadedActiveChannel(candidates, now);
+  }
+
+  private ChannelRef leastLoadedActiveChannel(List<ChannelRef> candidates) {
+    return leastLoadedActiveChannel(candidates, nanoClock.get());
+  }
+
+  private ChannelRef leastLoadedActiveChannel(List<ChannelRef> candidates, long now) {
     ChannelRef best = null;
-    int bestStreams = Integer.MAX_VALUE;
-    for (Object element : snapshot) {
-      ChannelRef candidate = (ChannelRef) element;
+    int bestLoad = Integer.MAX_VALUE;
+    for (ChannelRef candidate : candidates) {
       if (!candidate.isActive()) {
         continue;
       }
-      int cnt = candidate.getActiveStreamsCount();
-      if (best == null || cnt < bestStreams) {
-        bestStreams = cnt;
+      int candidateLoad = candidate.getPickerLoad(now);
+      if (best == null || candidateLoad < bestLoad) {
         best = candidate;
+        bestLoad = candidateLoad;
       }
     }
-    if (best == null) {
-      throw new IllegalStateException("No active channel available");
+    if (best != null) {
+      return best;
     }
-    return best;
+    throw Status.UNAVAILABLE.withDescription("No available channels").asRuntimeException();
+  }
+
+  @VisibleForTesting
+  ChannelRef pickLessBusy(ChannelRef first, ChannelRef second, long now) {
+    return first.getPickerLoad(now) <= second.getPickerLoad(now) ? first : second;
   }
 
   @Override
@@ -2247,6 +2506,9 @@ public class GcpManagedChannel extends ManagedChannel {
    * <p>If method-affinity is specified, we will use the GcpClientCall to fetch the affinitykey and
    * bind/unbind the channel, otherwise we just need the SimpleGcpClientCall to keep track of the
    * number of streams in each channel.
+   *
+   * <p>A returned simple call reserves one unit of pool load immediately. If never started, callers
+   * must invoke {@link ClientCall#cancel(String, Throwable)} to release that reservation.
    */
   @Override
   public <ReqT, RespT> ClientCall<ReqT, RespT> newCall(
@@ -2308,6 +2570,8 @@ public class GcpManagedChannel extends ManagedChannel {
       logMetricsTask.cancel(false);
       logMetricsTask = null;
     }
+    drainTasks.values().forEach(task -> task.cancel(false));
+    drainTasks.clear();
   }
 
   @Override
@@ -2455,9 +2719,13 @@ public class GcpManagedChannel extends ManagedChannel {
    * <p>One channel can be mapped to more than one keys. But one key can only be mapped to one
    * channel.
    */
-  protected void bind(ChannelRef channelRef, List<String> affinityKeys) {
+  protected synchronized ChannelRef bind(ChannelRef channelRef, List<String> affinityKeys) {
     if (channelRef == null || affinityKeys == null) {
-      return;
+      return channelRef;
+    }
+    if (!channelRef.isActive()) {
+      channelRef = pickLeastBusyChannel(/* forFallback= */ false);
+      // Deactivation also holds the pool monitor, so this pick stays active through binding.
     }
     if (logger.isLoggable(Level.FINEST)) {
       logger.finest(
@@ -2469,13 +2737,28 @@ public class GcpManagedChannel extends ManagedChannel {
       while (affinityKeyToChannelRef.putIfAbsent(affinityKey, channelRef) != null) {
         unbind(Collections.singletonList(affinityKey));
       }
-      affinityKeyLastUsed.put(affinityKey, System.nanoTime());
+      affinityKeyLastUsed.merge(affinityKey, nanoClock.get(), Long::max);
       channelRef.affinityCountIncr();
     }
+    return channelRef;
+  }
+
+  private synchronized boolean unbindInactiveMapping(String affinityKey, ChannelRef mappedChannel) {
+    Runnable hook = inactiveMappingRemovalHookForTest;
+    if (hook != null) {
+      inactiveMappingRemovalHookForTest = null;
+      hook.run();
+    }
+    if (affinityKeyToChannelRef.remove(affinityKey, mappedChannel)) {
+      affinityKeyLastUsed.remove(affinityKey);
+      mappedChannel.affinityCountDecr();
+      return true;
+    }
+    return false;
   }
 
   /** Unbind channel with affinity key. */
-  protected void unbind(List<String> affinityKeys) {
+  protected synchronized void unbind(List<String> affinityKeys) {
     if (affinityKeys == null) {
       return;
     }
@@ -2611,7 +2894,13 @@ public class GcpManagedChannel extends ManagedChannel {
     // activeStreamsCount are mutated from the GcpClientCall concurrently using the
     // `activeStreamsCountIncr()` and `activeStreamsCountDecr()` methods.
     private final AtomicInteger activeStreamsCount;
-    private long lastResponseNanos = nanoClock.get();
+    private final long createdNanos = nanoClock.get();
+    private volatile long lastActivityNanos = createdNanos;
+    private long lastResponseNanos = createdNanos;
+
+    private volatile int errorPenaltyLoad;
+    private volatile long errorPenaltyExpiresAtNanos;
+
     private final AtomicInteger deadlineExceededCount = new AtomicInteger();
     private final AtomicLong okCalls = new AtomicLong();
     private final AtomicLong errCalls = new AtomicLong();
@@ -2630,8 +2919,12 @@ public class GcpManagedChannel extends ManagedChannel {
       channelStateMonitor = new ChannelStateMonitor(channel, this);
     }
 
-    protected long getConnectedSinceNanos() {
-      return channelStateMonitor.getConnectedSinceNanos();
+    protected long getCreatedNanos() {
+      return createdNanos;
+    }
+
+    protected long getLastActivityNanos() {
+      return lastActivityNanos;
     }
 
     protected ConnectivityState getState() {
@@ -2651,26 +2944,36 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     private void activateAndAccountReadiness() {
+      boolean incrementReady;
       synchronized (this) {
         active = true;
-        channelStateMonitor.accountReadyIfNeeded();
+        incrementReady = channelStateMonitor.accountReadyIfNeeded();
+      }
+      if (incrementReady) {
+        incReadyChannels(false);
       }
     }
 
     private void deactivateAndAccountReadiness() {
+      boolean decrementReady;
       synchronized (this) {
-        channelStateMonitor.unaccountReadyIfNeeded();
+        decrementReady = channelStateMonitor.unaccountReadyIfNeeded();
         active = false;
       }
-    }
-
-    private void deactivate() {
-      deactivateAndAccountReadiness();
+      if (decrementReady) {
+        decReadyChannels(false);
+      }
     }
 
     @VisibleForTesting
     void deactivateForTest() {
       deactivateAndAccountReadiness();
+    }
+
+    @VisibleForTesting
+    void setActiveStreamsForTest(int streams) {
+      int previous = activeStreamsCount.getAndSet(streams);
+      totalActiveStreams.addAndGet(streams - previous);
     }
 
     protected void affinityCountIncr() {
@@ -2690,6 +2993,7 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     protected void activeStreamsCountIncr() {
+      lastActivityNanos = nanoClock.get();
       int actStreams = activeStreamsCount.incrementAndGet();
       maxActiveStreams.accumulateAndGet(actStreams, Math::max);
       int totalActStreams = totalActiveStreams.incrementAndGet();
@@ -2698,6 +3002,7 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     protected void activeStreamsCountDecr(long startNanos, Status status, boolean fromClientSide) {
+      lastActivityNanos = nanoClock.get();
       int actStreams = activeStreamsCount.decrementAndGet();
       minActiveStreams.accumulateAndGet(actStreams, Math::min);
       int totalActStreams = totalActiveStreams.decrementAndGet();
@@ -2711,6 +3016,10 @@ public class GcpManagedChannel extends ManagedChannel {
       }
       if (unresponsiveDetectionEnabled) {
         detectUnresponsiveConnection(startNanos, status, fromClientSide);
+      }
+      applyErrorPenalty(status);
+      if (actStreams == 0 && !isActive()) {
+        scheduleDrain(this);
       }
     }
 
@@ -2727,10 +3036,117 @@ public class GcpManagedChannel extends ManagedChannel {
       return activeStreamsCount.get();
     }
 
+    protected int getPickerLoad() {
+      return (int)
+          Math.min(Integer.MAX_VALUE, (long) getActiveStreamsCount() + currentErrorPenalty());
+    }
+
     @VisibleForTesting
-    void setActiveStreamsForTest(int streams) {
-      int previous = activeStreamsCount.getAndSet(streams);
-      totalActiveStreams.addAndGet(streams - previous);
+    int currentErrorPenalty() {
+      int penalty = errorPenaltyLoad;
+      if (penalty == 0) {
+        return 0;
+      }
+      return currentErrorPenalty(nanoClock.get());
+    }
+
+    private int currentErrorPenalty(long now) {
+      int penalty = errorPenaltyLoad;
+      long expiresAtNanos = errorPenaltyExpiresAtNanos;
+      if (penalty == 0 || expiresAtNanos == 0) {
+        return 0;
+      }
+      if (now - expiresAtNanos < 0) {
+        return decayedErrorPenalty(penalty, now, expiresAtNanos);
+      }
+      int expiredPenalty;
+      synchronized (this) {
+        penalty = errorPenaltyLoad;
+        expiresAtNanos = errorPenaltyExpiresAtNanos;
+        if (penalty == 0 || expiresAtNanos == 0) {
+          return 0;
+        }
+        if (now - expiresAtNanos < 0) {
+          return decayedErrorPenalty(penalty, now, expiresAtNanos);
+        }
+        errorPenaltyLoad = 0;
+        errorPenaltyExpiresAtNanos = 0;
+        expiredPenalty = penalty;
+      }
+      totalErrorPenaltyLoad.addAndGet(-expiredPenalty);
+      return 0;
+    }
+
+    private int getPickerLoad(long now) {
+      int penalty = errorPenaltyLoad;
+      long expiresAtNanos = errorPenaltyExpiresAtNanos;
+      if (penalty != 0) {
+        penalty = decayedErrorPenalty(penalty, now, expiresAtNanos);
+      }
+      return (int) Math.min(Integer.MAX_VALUE, (long) getActiveStreamsCount() + penalty);
+    }
+
+    private int decayedErrorPenalty(int penalty, long now, long expiresAtNanos) {
+      if (expiresAtNanos == 0) {
+        return 0;
+      }
+      long remainingNanos = expiresAtNanos - now;
+      if (remainingNanos <= 0) {
+        return 0;
+      }
+      // Picker steering decays smoothly. Aggregate accounting deliberately retains the full
+      // contribution until expiry or clear, making scale-up load a conservative upper bound while
+      // preserving one atomic net delta per aggregate transition.
+      return ceilMultiplyDivide(
+          penalty, Math.min(remainingNanos, errorPenaltyDurationNanos), errorPenaltyDurationNanos);
+    }
+
+    private void applyErrorPenalty(Status status) {
+      if (!isDynamicScalingEnabled
+          || !active
+          || errorPenaltyStep == 0
+          || (status.getCode() != Code.UNAVAILABLE
+              && status.getCode() != Code.RESOURCE_EXHAUSTED)) {
+        return;
+      }
+      long now = nanoClock.get();
+      long addedPenalty;
+      synchronized (this) {
+        if (!active) {
+          return;
+        }
+        int previousContribution = errorPenaltyLoad;
+        long previousExpiry = errorPenaltyExpiresAtNanos;
+        int current =
+            previousContribution != 0 && previousExpiry != 0 && now - previousExpiry < 0
+                ? previousContribution
+                : 0;
+        int next = (int) Math.min(maxRpcPerChannel, (long) current + errorPenaltyStep);
+        long nextExpiry = now + errorPenaltyDurationNanos;
+        // Zero is reserved as the cleared expiry sentinel.
+        errorPenaltyExpiresAtNanos = nextExpiry == 0 ? 1 : nextExpiry;
+        errorPenaltyLoad = next;
+        addedPenalty = (long) next - previousContribution;
+      }
+      if (addedPenalty != 0) {
+        totalErrorPenaltyLoad.addAndGet(addedPenalty);
+      }
+      if (addedPenalty > 0) {
+        maybeSignalScaleUp(this);
+      }
+    }
+
+    private void clearErrorPenalty() {
+      int clearedPenalty;
+      synchronized (this) {
+        clearedPenalty = errorPenaltyLoad;
+        if (clearedPenalty == 0) {
+          return;
+        }
+        errorPenaltyLoad = 0;
+        errorPenaltyExpiresAtNanos = 0;
+      }
+      totalErrorPenaltyLoad.addAndGet(-clearedPenalty);
     }
 
     protected long getAndResetOkCalls() {

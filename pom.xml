@@ -36,6 +36,7 @@
     <module>java-appengine-admin</module>
     <module>java-apphub</module>
     <module>java-appoptimize</module>
+    <module>java-apptopology</module>
     <module>java-area120-tables</module>
     <module>java-artifact-registry</module>
     <module>java-asset</module>

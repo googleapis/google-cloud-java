@@ -1109,3 +1109,8 @@ grpc-google-cloud-biglake-hive-v1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-biglake-hive:0.1.0:0.2.0-SNAPSHOT
 proto-google-maps-mapmanagement-v2:0.5.0:0.6.0-SNAPSHOT
 grpc-google-maps-mapmanagement-v2:0.5.0:0.6.0-SNAPSHOT
+google-cloud-apptopology-parent:0.0.0:0.1.0-SNAPSHOT
+google-cloud-apptopology-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-cloud-apptopology-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-apptopology-v1:0.0.0:0.1.0-SNAPSHOT
+google-cloud-apptopology:0.0.0:0.1.0-SNAPSHOT

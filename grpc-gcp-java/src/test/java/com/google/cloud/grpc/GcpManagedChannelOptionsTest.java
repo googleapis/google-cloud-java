@@ -215,16 +215,31 @@ public final class GcpManagedChannelOptionsTest {
 
     assertThat(defaults.getScaleUpCooldown()).isEqualTo(Duration.ofSeconds(10));
     assertThat(defaults.getMaxScaleUpPercent()).isEqualTo(30);
+    assertThat(defaults.getErrorPenaltyStep()).isEqualTo(5);
+    assertThat(defaults.getErrorPenaltyDuration()).isEqualTo(Duration.ofSeconds(5));
+
+    GcpChannelPoolOptions copiedDefaults = GcpChannelPoolOptions.newBuilder(defaults).build();
+    assertThat(copiedDefaults.getErrorPenaltyStep()).isEqualTo(5);
+    assertThat(copiedDefaults.getErrorPenaltyDuration()).isEqualTo(Duration.ofSeconds(5));
+    assertThat(copiedDefaults.toString()).contains("errorPenaltyStep: 5");
 
     GcpChannelPoolOptions configured =
         GcpChannelPoolOptions.newBuilder(defaults)
             .setScaleUpCooldown(Duration.ofSeconds(1))
             .setMaxScaleUpPercent(40)
+            .setErrorPenaltyStep(2)
+            .setErrorPenaltyDuration(Duration.ofSeconds(3))
             .build();
     GcpChannelPoolOptions copied = GcpChannelPoolOptions.newBuilder(configured).build();
 
     assertThat(copied.getScaleUpCooldown()).isEqualTo(Duration.ofSeconds(1));
     assertThat(copied.getMaxScaleUpPercent()).isEqualTo(40);
+    assertThat(copied.getErrorPenaltyStep()).isEqualTo(2);
+    assertThat(copied.getErrorPenaltyDuration()).isEqualTo(Duration.ofSeconds(3));
+
+    GcpChannelPoolOptions disabled =
+        GcpChannelPoolOptions.newBuilder().setErrorPenaltyStep(0).build();
+    assertThat(disabled.getErrorPenaltyStep()).isEqualTo(0);
   }
 
   @Test
@@ -238,6 +253,14 @@ public final class GcpManagedChannelOptionsTest {
                 .build()
                 .getScaleUpCooldown())
         .isEqualTo(Duration.ofSeconds(10));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> GcpChannelPoolOptions.newBuilder().setErrorPenaltyStep(-1));
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            GcpChannelPoolOptions.newBuilder()
+                .setErrorPenaltyDuration(Duration.ofSeconds(Long.MAX_VALUE)));
   }
 
   @Test
@@ -254,6 +277,9 @@ public final class GcpManagedChannelOptionsTest {
     assertThat(options).contains("scaleDownConsecutiveLowLoadChecks:");
     assertThat(options).contains("maxScaleUpPercent:");
     assertThat(options).contains("maxScaleDownChannels:");
+    assertThat(options).contains("drainIdleGrace:");
+    assertThat(options).contains("errorPenaltyStep:");
+    assertThat(options).contains("errorPenaltyDuration:");
     assertThat(options).contains("concurrentStreamsLowWatermark:");
     assertThat(options).contains("useRoundRobinOnBind:");
     assertThat(options).contains("affinityKeyLifetime:");
