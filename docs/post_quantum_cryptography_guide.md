@@ -54,7 +54,7 @@ PQC enablement for HTTP/JSON transport requires compatible versions of `conscryp
 Built-in Java Development Kits (Java 8 through Java 26) do not support Post-Quantum Cryptography in their default Java Secure Socket Extension provider (`SunJSSE`). While native ML-KEM support is in development for future Java releases (**JDK 27+** via [JEP 496](https://openjdk.org/jeps/496)), requiring all production enterprise workloads to immediately upgrade to bleeding-edge JDK versions is impractical.
 
 To bridge this gap, Google Cloud Java client libraries use **Conscrypt** (`conscrypt-openjdk-uber`) as the default security provider for HTTP/JSON transport:
-1. **Immediate PQC Availability Across Java 8+**: Conscrypt embeds Google's open-source BoringSSL cryptographic engine via Java Native Interface (JNI). This enables quantum-resistant TLS 1.3 handshakes on existing production runtimes (Java 8, 11, 17, and 21).
+1. **Immediate PQC Availability Across Java 8+**: Conscrypt embeds Google's open-source BoringSSL cryptographic engine via Java Native Interface (JNI). This enables quantum-resistant TLS 1.3 handshakes on existing production runtimes (Java 8, 11, 17, 21, and 25).
 2. **Zero Code Changes**: When `gax-httpjson` detects compatible Conscrypt libraries on the classpath, it automatically configures the HTTPS transport without requiring manual SSLContext setup.
 3. **High Performance**: BoringSSL contains hardware-accelerated assembly optimizations for modern CPU architectures (x86_64 and ARM64).
 
@@ -102,7 +102,7 @@ When a Google Cloud HTTP/JSON client initiates a connection, it advertises suppo
 ```
 
 ### 2.5 Performance & Network Considerations
-Understanding the real-world performance implications helps teams make informed deployment decisions:
+Note the following performance and network considerations:
 - **TLS Handshake Size Overhead**:
   - Classical `X25519` public keys are very compact: **32 bytes**.
   - `ML-KEM-768` public keys are **1,184 bytes**, and ciphertexts are **1,088 bytes**.
@@ -151,6 +151,8 @@ java -Dorg.conscrypt.native.workdir=/var/run/app/tmp -jar my-application.jar
 
 ### 3.4 Classpath Isolation & Version Skew Warning
 If your project uses multiple dependencies that transitively pull in different versions of Conscrypt (e.g., older versions like `2.5.2` alongside `2.6.2`), a JNI ABI mismatch can occur during JVM classloading. Always ensure your build tool (Maven/Gradle) resolves `conscrypt-openjdk-uber` to version `2.6.0+` (or `2.6.2+`) consistently.
+
+One possible solution for this is to use Google Cloud's `libraries-bom` (version `26.86.0+`) to manage dependency versions, ensuring a consistent and compatible Conscrypt runtime across all Google Cloud client libraries.
 
 ---
 
