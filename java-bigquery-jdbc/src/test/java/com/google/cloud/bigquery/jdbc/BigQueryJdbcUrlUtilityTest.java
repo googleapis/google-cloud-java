@@ -325,6 +325,25 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
+  public void testParseDefaultDataset_domainScopedProject() {
+    DatasetId datasetId =
+        BigQueryJdbcUrlUtility.parseDefaultDataset("example.com:my-project:my_dataset");
+    assertNotNull(datasetId);
+    assertEquals("my_dataset", datasetId.getDataset());
+    assertEquals("example.com:my-project", datasetId.getProject());
+  }
+
+  @Test
+  public void testParseDefaultDataset_domainScopedProject_threeTierPcntNamespace() {
+    DatasetId datasetId =
+        BigQueryJdbcUrlUtility.parseDefaultDataset(
+            "example.com:my-project:my-warehouse.my_namespace");
+    assertNotNull(datasetId);
+    assertEquals("my-warehouse.my_namespace", datasetId.getDataset());
+    assertEquals("example.com:my-project", datasetId.getProject());
+  }
+
+  @Test
   public void testParseDefaultDataset_invalidFormats() {
     assertThrows(
         IllegalArgumentException.class,
@@ -333,7 +352,8 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
         IllegalArgumentException.class,
         () -> BigQueryJdbcUrlUtility.parseDefaultDataset(":my_dataset"));
     assertThrows(
-        IllegalArgumentException.class, () -> BigQueryJdbcUrlUtility.parseDefaultDataset("a:b:c"));
+        IllegalArgumentException.class,
+        () -> BigQueryJdbcUrlUtility.parseDefaultDataset("example.com:my-project:"));
     assertThrows(
         IllegalArgumentException.class,
         () -> BigQueryJdbcUrlUtility.parseDefaultDataset("my-project."));

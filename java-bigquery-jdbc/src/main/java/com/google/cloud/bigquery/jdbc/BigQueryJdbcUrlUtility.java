@@ -932,7 +932,7 @@ final class BigQueryJdbcUrlUtility {
     }
 
     String trimmed = defaultDataset.trim();
-    int colonIdx = trimmed.indexOf(':');
+    int colonIdx = trimmed.lastIndexOf(':');
     if (colonIdx >= 0) {
       return splitQualifiedDataset(trimmed, colonIdx, ':');
     }
