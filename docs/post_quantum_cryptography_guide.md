@@ -13,7 +13,7 @@ The primary threat addressed by PQC today is **Store-Now, Decrypt-Later (SNDL)**
 - **The Consequence**: Even if attackers cannot read ciphertext now, they can store the encrypted traffic indefinitely and decrypt it in the future once quantum computers become available.
 - **The Impact**: Any data with a long secrecy lifecycle—such as customer records, credentials, intellectual property, health information, and financial transactions—is vulnerable to retroactive exposure unless protected before transmission.
 
-### 1.3 The Solution: Hybrid Key Exchange
+### 1.3 Addressing the Threat: Hybrid Key Exchange
 Rather than completely replacing proven classical algorithms with brand-new post-quantum mechanisms, client libraries can utilize **Hybrid Key Exchange** (e.g., combining classical ECDH with post-quantum algorithms such as `X25519MLKEM768`):
 
 > [!TIP]
@@ -59,13 +59,13 @@ To bridge this gap, Google Cloud Java client libraries use **Conscrypt** (`consc
 3. **High Performance**: BoringSSL contains hardware-accelerated assembly optimizations for modern CPU architectures (x86_64 and ARM64).
 
 ### 2.3 Scoped Security Provider (No Global JVM Impact)
-A deliberate architectural decision in Google Cloud Java client libraries is that **Conscrypt is scoped strictly to Google Cloud Java SDK requests**:
+The Google Cloud Java SDK scopes Conscrypt strictly to Google Cloud Java SDK requests:
 
 - `gax-httpjson` configures the Conscrypt `Provider` instance directly on the client's internal `NetHttpTransport.Builder` rather than installing it into the global JVM security registry (`java.security.Security.addProvider(...)`).
 - As a result, enabling Conscrypt for Google Cloud calls **does not alter the TLS behavior, cipher suites, or security providers of any other HTTP clients or libraries** in your application (e.g., Apache HttpClient, Spring WebClient, OkHttp, or direct `HttpsURLConnection` calls). Your existing JVM-wide cryptographic configurations remain completely undisturbed.
 
 ### 2.4 How Client and Google Cloud Endpoints Negotiate PQC
-When a Google Cloud HTTP/JSON client initiates a connection, it advertises supported key exchange groups to the server in strict preference order:
+When a Google Cloud HTTP/JSON client initiates a connection, it advertises supported key exchange groups to the server in preference order. During the TLS 1.3 handshake, the first mutually supported algorithm that both the client and server agree upon is selected and used for the session:
 
 1. `X25519MLKEM768` *(Hybrid Post-Quantum Key Exchange)*
 2. `MLKEM1024` *(Pure Post-Quantum Key Exchange)*
@@ -81,6 +81,7 @@ When a Google Cloud HTTP/JSON client initiates a connection, it advertises suppo
 - **PQC-Enabled Google Cloud Endpoints**: Google Cloud frontends recognize `X25519MLKEM768` as their preferred group. The client and server agree on this hybrid algorithm, establishing a quantum-resistant TLS 1.3 session.
 - **Non-PQC Endpoints / Middleboxes**: If a server or intermediate network proxy does not support post-quantum cryptography, it ignores the unrecognized post-quantum identifiers and selects the first mutually supported classical group (e.g., `X25519`).
 - **Graceful Client Fallback**: If Conscrypt native libraries cannot load on the client host, the client seamlessly falls back to the environment's configured security provider (which defaults to standard JDK JSSE / `SunJSSE`), negotiating classical TLS 1.3.
+  - **Impact of Fallback**: Fallback is completely safe and non-breaking for application availability. Your API calls will continue to execute successfully without throwing errors or dropping traffic. The connection remains fully encrypted using industry-standard classical cryptography (such as `X25519` via standard JDK TLS); it simply does not include quantum-resistant hybrid key exchange for that session.
 
 ```
 +-------------------------------------------------------------------------------+
@@ -106,10 +107,10 @@ Understanding the real-world performance implications helps teams make informed 
   - Classical `X25519` public keys are very compact: **32 bytes**.
   - `ML-KEM-768` public keys are **1,184 bytes**, and ciphertexts are **1,088 bytes**.
   - Consequently, the TLS `ClientHello` and `ServerHello` messages increase by approximately **1 to 2 kilobytes**.
-- **Connection Pooling & API Latency**:
-  - Google Cloud Java client libraries maintain persistent HTTP connection pools (`Keep-Alive`).
-  - The TLS handshake occurs **only once** when a pooled connection is established.
-  - Subsequent API requests reuse existing open connections without repeating the TLS handshake. While the runtime latency impact should feel negligible in most environments, you should benchmark and evaluate whether this holds true for your specific application's latency and connection churn profile.
+- **Persistent HTTP Connections (`Keep-Alive`) & API Latency**:
+  - The underlying HTTP transport (`NetHttpTransport` backed by Java's `HttpURLConnection`) supports standard HTTP persistent connections (`Keep-Alive`).
+  - When connections are reused from Java's connection cache, the TLS handshake occurs **only once** when establishing the connection.
+  - Subsequent API requests routed through that active connection reuse the existing TLS session without repeating the handshake. The latency impact of the larger handshake therefore primarily applies to new connection establishment rather than every individual API call. (Note that applications experiencing high connection churn or making infrequent calls outside the keep-alive window will perform new handshakes more often.)
 
 ---
 
@@ -127,7 +128,6 @@ Because Conscrypt relies on C native shared libraries (`.so`, `.dylib`, or `.dll
 | **Windows (x86_64)** | **Fully Supported** | Native `windows-x86_64` binary bundled in `conscrypt-openjdk-uber`. |
 | **GraalVM Native Image** | **Supported** | Supported when including appropriate reachability metadata and configuration for Conscrypt JNI libraries. |
 | **Alpine Linux / Musl libc Containers** | **Fallback to Classical** | Conscrypt native binaries are compiled for `glibc`. On Alpine (`musl`), native loading fails with `UnsatisfiedLinkError` and gracefully falls back to the configured security provider (default JDK TLS). |
-| **Containers with `noexec /tmp`** | **Requires Configuration** | By default, JNI extracts libraries to `/tmp`. If `/tmp` is mounted `noexec`, specify `-Dorg.conscrypt.native.workdir`. |
 
 ### 3.2 Handling Alpine Linux (`musl` libc)
 If your container images are based on Alpine Linux (e.g., `eclipse-temurin:17-alpine` or `openjdk:11-alpine`), Conscrypt cannot load its native C library because Alpine uses `musl` libc instead of `glibc`.
@@ -144,7 +144,7 @@ When Conscrypt starts, the JVM extracts its bundled native `.so` file to a tempo
 ```text
 java.lang.UnsatisfiedLinkError: /tmp/libconscrypt_openjdk_jni...: failed to map segment from shared object: Operation not permitted
 ```
-**Solution**: Provide an alternative directory that has write and execute permissions using the JVM system property:
+**Possible Solution**: Depending on your container configuration and security constraints, one possible solution is to provide an alternative directory that has write and execute permissions using the JVM system property:
 ```bash
 java -Dorg.conscrypt.native.workdir=/var/run/app/tmp -jar my-application.jar
 ```
@@ -167,6 +167,11 @@ The client then proceeds to establish standard classical TLS using the host JVM'
 
 **Why does it behave this way?**
 To protect production workloads. A customer updating dependencies or migrating container images should not experience broken API calls or catastrophic application outages simply because a native optimization library could not load on their environment.
+
+**What fallback means for your application**:
+- **Application Availability**: Requests continue to succeed normally. No exceptions or errors are raised to application code.
+- **Security Baseline**: Traffic remains fully encrypted with classical TLS 1.3 (e.g., ECDHE with AES-GCM), maintaining the standard security posture that Java applications use today.
+- **What is absent**: The connection will not be protected against future post-quantum decryption (SNDL).
 
 ### 4.2 The Compliance Warning
 > [!WARNING]
