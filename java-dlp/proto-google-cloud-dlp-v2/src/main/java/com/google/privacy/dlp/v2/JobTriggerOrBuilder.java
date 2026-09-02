@@ -30,12 +30,12 @@ public interface JobTriggerOrBuilder
    *
    *
    * <pre>
-   * Unique resource name for the triggeredJob, assigned by the service when the
-   * triggeredJob is created, for example
+   * Output only. Unique resource name for the triggeredJob, assigned by the
+   * service when the triggeredJob is created, for example
    * `projects/dlp-test-project/jobTriggers/53234423`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -45,12 +45,12 @@ public interface JobTriggerOrBuilder
    *
    *
    * <pre>
-   * Unique resource name for the triggeredJob, assigned by the service when the
-   * triggeredJob is created, for example
+   * Output only. Unique resource name for the triggeredJob, assigned by the
+   * service when the triggeredJob is created, for example
    * `projects/dlp-test-project/jobTriggers/53234423`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */

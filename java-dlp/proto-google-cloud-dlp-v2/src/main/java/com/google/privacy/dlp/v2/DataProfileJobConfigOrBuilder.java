@@ -156,7 +156,7 @@ public interface DataProfileJobConfigOrBuilder
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 7;</code>
@@ -184,7 +184,7 @@ public interface DataProfileJobConfigOrBuilder
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 7;</code>
@@ -212,7 +212,7 @@ public interface DataProfileJobConfigOrBuilder
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 7;</code>
@@ -241,7 +241,7 @@ public interface DataProfileJobConfigOrBuilder
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
+   * https://docs.cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 7;</code>
