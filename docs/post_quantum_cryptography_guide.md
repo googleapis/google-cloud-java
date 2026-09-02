@@ -110,15 +110,17 @@ PQC enablement for gRPC transport requires compatible versions of `grpc-netty-sh
 
 | Library | Minimum Version | Role |
 | :--- | :--- | :--- |
-| **`libraries-bom`** | `26.86.0+` | **Recommended**. Central BOM managing compatible versions across all Google Cloud client libraries. |
-| **`gax-grpc`** | `2.83.0+` | Provides gRPC transport channel providers for Google Cloud client libraries. |
-| **`grpc-netty-shaded`** | `1.83.0+` | Default gRPC transport engine. Bundles Netty and `netty-tcnative-boringssl-static` with built-in PQC hybrid key exchange support. |
+| **`libraries-bom`** | `26.88.0+` | **Recommended**. Central BOM managing compatible versions across all Google Cloud client libraries. |
+| **`gax-grpc`** | `2.85.0+` | Provides gRPC transport channel providers for Google Cloud client libraries. |
+| **`grpc-netty-shaded`** | `1.83.0+` | Bundled by `grpc-java`. Includes Netty and `netty-tcnative-boringssl-static` with built-in PQC hybrid key exchange support. |
 
-### 3.2 Why `grpc-netty-shaded`?
-By default, Google Cloud Java client libraries use `grpc-netty-shaded` for gRPC transport:
-1. **Bundled BoringSSL Engine**: `grpc-netty-shaded` packages a shaded version of Netty and its native OpenSSL/BoringSSL binding (`netty-tcnative-boringssl-static`). This bundles Google's BoringSSL C library directly inside the JAR.
-2. **Native PQC Support Out-of-the-Box**: In `grpc-netty-shaded` version **1.83.0+**, the bundled BoringSSL engine natively supports TLS 1.3 post-quantum hybrid key exchange (`X25519MLKEM768`).
-3. **Zero Configuration**: Unlike HTTP/JSON which uses Conscrypt as a pluggable `SecurityProvider`, gRPC client channels using `grpc-netty-shaded` automatically negotiate PQC hybrid key exchange without requiring any custom socket configurators, system properties, or security provider setup.
+### 3.2 Bundled BoringSSL Engine in `grpc-java` (Bypassing JDK Security Provider)
+Google Cloud Java client libraries rely on **`grpc-java`** for gRPC transport, which chooses by default to bundle **`grpc-netty-shaded`**:
+
+1. **Bundled BoringSSL Native Engine**: The upstream `grpc-java` project bundles a shaded version of Netty along with its native BoringSSL binding (`netty-tcnative-boringssl-static`). This packages Google's BoringSSL C library directly inside the JAR.
+2. **Complete Bypass of Host JDK Security Provider**: Netty's OpenSSL engine interfaces directly with the native BoringSSL binary via JNI. It completely bypasses the host JVM's built-in Java Secure Socket Extension provider (`SunJSSE`) and the JVM security provider registry (`java.security.Security`).
+3. **Independent of JDK Version**: Because the host JDK's TLS provider is bypassed, `grpc-netty-shaded` delivers post-quantum hybrid key exchange across **all supported JDK versions** (Java 8, 11, 17, 21, and 25). The host JVM's built-in TLS capabilities (or lack of native PQC in `SunJSSE` prior to JDK 27) do not affect gRPC TLS handshakes.
+4. **Zero Configuration**: In `grpc-java` version **1.83.0+**, the bundled BoringSSL engine natively enables and prefers TLS 1.3 post-quantum hybrid key exchange (`X25519MLKEM768`) out-of-the-box. Applications using standard client construction negotiate PQC automatically without requiring custom socket configurators or security provider registration.
 
 ### 3.3 How gRPC Clients Negotiate PQC
 When a Google Cloud gRPC client connects to an endpoint (typically port 443 with TLS):
