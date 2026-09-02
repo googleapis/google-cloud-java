@@ -76,6 +76,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Consumer;
 import java.util.function.IntUnaryOperator;
+import java.util.function.LongUnaryOperator;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -84,6 +85,7 @@ import javax.annotation.Nullable;
 
 /** A channel management factory that implements grpc.Channel APIs. */
 public class GcpManagedChannel extends ManagedChannel {
+
   private static final Logger logger = Logger.getLogger(GcpManagedChannel.class.getName());
   static final AtomicInteger channelPoolIndex = new AtomicInteger();
 
@@ -181,6 +183,7 @@ public class GcpManagedChannel extends ManagedChannel {
   private int errorPenaltyStep = 5;
   private Duration errorPenaltyDuration = Duration.ofSeconds(5);
   private long errorPenaltyDurationNanos = Duration.ofSeconds(5).toNanos();
+  @Nullable private GcpChannelPrimeController channelPrimeController;
   private boolean isDynamicScalingEnabled = false;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
   private GcpManagedChannelOptions.ChannelPickStrategy channelPickStrategy =
@@ -302,6 +305,7 @@ public class GcpManagedChannel extends ManagedChannel {
   private AtomicLong maxUnresponsiveDrops = new AtomicLong();
   private AtomicLong scaleUpCount = new AtomicLong();
   private AtomicLong scaleDownCount = new AtomicLong();
+  private final AtomicLong scaleUpPrimeFailures = new AtomicLong();
 
   // Clock supplier for nanoTime, injectable for testing.
   private NanoClock nanoClock = System::nanoTime;
@@ -352,6 +356,41 @@ public class GcpManagedChannel extends ManagedChannel {
   @VisibleForTesting
   int readyChannelCountForTest() {
     return readyChannels.get();
+  }
+
+  @VisibleForTesting
+  long scaleUpPrimeFailuresForTest() {
+    return scaleUpPrimeFailures.get();
+  }
+
+  @VisibleForTesting
+  boolean scaleUpWorkerRunningForTest() {
+    return scaleUpWorkerRunning.get();
+  }
+
+  @VisibleForTesting
+  synchronized int inFlightPrimeCountForTest() {
+    return channelPrimeController == null ? 0 : channelPrimeController.inFlightCount();
+  }
+
+  @VisibleForTesting
+  synchronized int abandonedPrimeCountForTest() {
+    return channelPrimeController == null ? 0 : channelPrimeController.abandonedCount();
+  }
+
+  @VisibleForTesting
+  static long primeBackoffMillisForTest(int attempt) {
+    return GcpChannelPrimeController.backoffMillis(attempt);
+  }
+
+  @VisibleForTesting
+  static long primeBackoffMillisForTest(int attempt, LongUnaryOperator random) {
+    return GcpChannelPrimeController.backoffMillis(attempt, random);
+  }
+
+  @VisibleForTesting
+  static long primeBaseBackoffMillisForTest(int attempt) {
+    return GcpChannelPrimeController.baseBackoffMillis(attempt);
   }
 
   @VisibleForTesting
@@ -742,11 +781,62 @@ public class GcpManagedChannel extends ManagedChannel {
       errorPenaltyStep = poolOptions.getErrorPenaltyStep();
       errorPenaltyDuration = poolOptions.getErrorPenaltyDuration();
       errorPenaltyDurationNanos = errorPenaltyDuration.toNanos();
+      channelPrimeController = createChannelPrimeController(poolOptions);
       isDynamicScalingEnabled =
           minRpcPerChannel > 0 && maxRpcPerChannel > 0 && !scaleDownInterval.isZero();
       channelPickStrategy = poolOptions.getChannelPickStrategy();
     }
     initMetrics();
+  }
+
+  @Nullable
+  private GcpChannelPrimeController createChannelPrimeController(
+      GcpManagedChannelOptions.GcpChannelPoolOptions poolOptions) {
+    GcpChannelPrimer primer = poolOptions.getChannelPrimer();
+    if (primer == null) {
+      return null;
+    }
+    GcpChannelPrimeController.Pool pool =
+        new GcpChannelPrimeController.Pool() {
+          @Override
+          public boolean isShuttingDown() {
+            return shuttingDown;
+          }
+
+          @Override
+          public boolean isFull() {
+            return channelRefs.size() >= maxSize;
+          }
+
+          @Override
+          public void addPrimedChannel(ManagedChannel channel) {
+            addBuiltChannel(channel);
+            scaleUpCount.incrementAndGet();
+          }
+
+          @Override
+          public void reportPrimeFailure(Throwable failure) {
+            scaleUpPrimeFailures.incrementAndGet();
+            logger.log(Level.WARNING, log("Scaled-up channel priming failed"), failure);
+          }
+
+          @Override
+          public void reportPrimeAbandoned() {
+            logger.warning(
+                log(
+                    "Channel priming abandoned without retry: prime() was still blocked at the"
+                        + " timeout and nothing can stop it. The channel is closed and the blocked"
+                        + " call keeps occupying a primer thread and a scale-up slot until it"
+                        + " returns."));
+          }
+        };
+    return new GcpChannelPrimeController(
+        this,
+        pool,
+        primer,
+        poolOptions.getChannelPrimeTimeout().toNanos(),
+        poolOptions.getChannelPrimeMaxAttempts(),
+        SHARED_BACKGROUND_SERVICE);
   }
 
   private synchronized void initCleanupTask(Duration cleanupInterval) {
@@ -1060,6 +1150,13 @@ public class GcpManagedChannel extends ManagedChannel {
         this,
         GcpManagedChannel::reportScaleUp,
         GcpManagedChannel::reportScaleDown);
+
+    createDerivedLongCumulativeTimeSeries(
+        GcpMetricsConstants.METRIC_SCALE_UP_PRIME_FAILURES,
+        "The number of scaled-up channels rejected because priming failed or timed out.",
+        GcpMetricsConstants.COUNT,
+        this,
+        GcpManagedChannel::reportScaleUpPrimeFailures);
   }
 
   private void setupOtelCommonAttributes(GcpMetricsOptions metricsOptions) {
@@ -1315,6 +1412,14 @@ public class GcpManagedChannel extends ManagedChannel {
               m.record(reportScaleUp(), withDirection(GcpMetricsConstants.DIRECTION_UP));
               m.record(reportScaleDown(), withDirection(GcpMetricsConstants.DIRECTION_DOWN));
             });
+
+    meter
+        .gaugeBuilder(metricPrefix + GcpMetricsConstants.METRIC_SCALE_UP_PRIME_FAILURES)
+        .ofLongs()
+        .setDescription(
+            "The number of scaled-up channels rejected because priming failed or timed out.")
+        .setUnit(GcpMetricsConstants.COUNT)
+        .buildWithCallback(m -> m.record(reportScaleUpPrimeFailures(), otelCommonAttributes));
   }
 
   private void logGauge(String key, long value) {
@@ -1343,6 +1448,7 @@ public class GcpManagedChannel extends ManagedChannel {
     reportMaxAllowedChannels();
     reportScaleUp();
     reportScaleDown();
+    reportScaleUpPrimeFailures();
     reportNumChannelDisconnect();
     reportNumChannelConnect();
     reportMinReadinessTime();
@@ -1704,6 +1810,12 @@ public class GcpManagedChannel extends ManagedChannel {
   private long reportScaleDown() {
     long value = scaleDownCount.get();
     logCumulative(GcpMetricsConstants.METRIC_CHANNEL_POOL_SCALING + "_down", value);
+    return value;
+  }
+
+  private long reportScaleUpPrimeFailures() {
+    long value = scaleUpPrimeFailures.get();
+    logCumulative(GcpMetricsConstants.METRIC_SCALE_UP_PRIME_FAILURES, value);
     return value;
   }
 
@@ -2234,7 +2346,11 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     final int channelsToBuild;
     synchronized (this) {
-      if (!isDynamicScalingEnabled || shuttingDown || channelRefs.size() >= maxSize) {
+      // Channels still priming are capacity already on its way: they count toward the size cap
+      // and the desired size, so overlapping scale-ups cannot build the same shortfall twice.
+      // Abandoned primes keep their slot until their blocked prime() call returns.
+      int priming = channelPrimeController == null ? 0 : channelPrimeController.primingCount();
+      if (!isDynamicScalingEnabled || shuttingDown || channelRefs.size() + priming >= maxSize) {
         return;
       }
       if (lastScaleUpNanos != Long.MIN_VALUE
@@ -2248,11 +2364,11 @@ public class GcpManagedChannel extends ManagedChannel {
         return;
       }
       int desired = ceilDiv(pickerLoad(activeChannels, now), targetRpcPerChannel());
-      int add = desired - active;
+      int add = desired - active - priming;
       // Small pools may add two channels per event before percentage growth dominates.
       int percentCap = Math.max(2, ceilDiv((long) active * maxScaleUpPercent, 100));
       add = Math.min(add, percentCap);
-      add = Math.min(add, maxSize - active);
+      add = Math.min(add, maxSize - channelRefs.size() - priming);
       if (add <= 0) {
         return;
       }
@@ -2275,6 +2391,11 @@ public class GcpManagedChannel extends ManagedChannel {
         }
       }
       throw failure;
+    }
+
+    if (channelPrimeController != null) {
+      builtChannels.forEach(channelPrimeController::startPrime);
+      return;
     }
 
     int added = 0;
@@ -2555,7 +2676,7 @@ public class GcpManagedChannel extends ManagedChannel {
     return key;
   }
 
-  private synchronized void cancelBackgroundTasks() {
+  private synchronized List<GcpChannelPrimeController.PendingPrime> cancelBackgroundTasks() {
     shuttingDown = true;
     scaleUpSignalPending.set(false);
     if (cleanupTask != null) {
@@ -2572,12 +2693,18 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     drainTasks.values().forEach(task -> task.cancel(false));
     drainTasks.clear();
+    return channelPrimeController == null
+        ? Collections.emptyList()
+        : channelPrimeController.detachAll();
   }
 
   @Override
   public ManagedChannel shutdownNow() {
     logger.finer(log("Shutdown now started."));
-    cancelBackgroundTasks();
+    List<GcpChannelPrimeController.PendingPrime> primesToCancel = cancelBackgroundTasks();
+    if (channelPrimeController != null) {
+      channelPrimeController.cancel(primesToCancel, true);
+    }
     List<ChannelRef> activeSnapshot = new ArrayList<>(channelRefs);
     List<ChannelRef> removedSnapshot = new ArrayList<>(removedChannelRefs);
     for (ChannelRef channelRef : activeSnapshot) {
@@ -2599,7 +2726,10 @@ public class GcpManagedChannel extends ManagedChannel {
   @Override
   public ManagedChannel shutdown() {
     logger.finer(log("Shutdown started."));
-    cancelBackgroundTasks();
+    List<GcpChannelPrimeController.PendingPrime> primesToCancel = cancelBackgroundTasks();
+    if (channelPrimeController != null) {
+      channelPrimeController.cancel(primesToCancel, false);
+    }
     List<ChannelRef> activeSnapshot = new ArrayList<>(channelRefs);
     List<ChannelRef> removedSnapshot = new ArrayList<>(removedChannelRefs);
     for (ChannelRef channelRef : activeSnapshot) {

@@ -224,6 +224,12 @@ public class GcpManagedChannelOptions {
     private final Duration drainIdleGrace;
     private final int errorPenaltyStep;
     private final Duration errorPenaltyDuration;
+    // Optional hook that warms a scaled-up channel before publication.
+    @Nullable private final GcpChannelPrimer channelPrimer;
+    // Maximum time to wait for one channel-primer future.
+    private final Duration channelPrimeTimeout;
+    // Maximum number of channel-primer attempts before rejecting a channel.
+    private final int channelPrimeMaxAttempts;
 
     // Use round-robin channel selection for affinity binding calls.
     private final boolean useRoundRobinOnBind;
@@ -248,6 +254,9 @@ public class GcpManagedChannelOptions {
       drainIdleGrace = builder.drainIdleGrace;
       errorPenaltyStep = builder.errorPenaltyStep;
       errorPenaltyDuration = builder.errorPenaltyDuration;
+      channelPrimer = builder.channelPrimer;
+      channelPrimeTimeout = builder.channelPrimeTimeout;
+      channelPrimeMaxAttempts = builder.channelPrimeMaxAttempts;
       concurrentStreamsLowWatermark = builder.concurrentStreamsLowWatermark;
       useRoundRobinOnBind = builder.useRoundRobinOnBind;
       affinityKeyLifetime = builder.affinityKeyLifetime;
@@ -307,6 +316,19 @@ public class GcpManagedChannelOptions {
       return errorPenaltyDuration;
     }
 
+    @Nullable
+    public GcpChannelPrimer getChannelPrimer() {
+      return channelPrimer;
+    }
+
+    public Duration getChannelPrimeTimeout() {
+      return channelPrimeTimeout;
+    }
+
+    public int getChannelPrimeMaxAttempts() {
+      return channelPrimeMaxAttempts;
+    }
+
     public int getConcurrentStreamsLowWatermark() {
       return concurrentStreamsLowWatermark;
     }
@@ -344,9 +366,10 @@ public class GcpManagedChannelOptions {
               + "maxRpcPerChannel: %d, scaleDownInterval: %s, scaleUpCooldown: %s, "
               + "scaleDownConsecutiveLowLoadChecks: %d, maxScaleUpPercent: %d, "
               + "maxScaleDownChannels: %d, drainIdleGrace: %s, errorPenaltyStep: %d, "
-              + "errorPenaltyDuration: %s, "
-              + "concurrentStreamsLowWatermark: %d, useRoundRobinOnBind: %s, "
-              + "affinityKeyLifetime: %s, cleanupInterval: %s, channelPickStrategy: %s}",
+              + "errorPenaltyDuration: %s, concurrentStreamsLowWatermark: %d, "
+              + "useRoundRobinOnBind: %s, affinityKeyLifetime: %s, cleanupInterval: %s, "
+              + "channelPickStrategy: %s, channelPrimer: %s, channelPrimeTimeout: %s, "
+              + "channelPrimeMaxAttempts: %d}",
           getMaxSize(),
           getMinSize(),
           getInitSize(),
@@ -364,7 +387,10 @@ public class GcpManagedChannelOptions {
           isUseRoundRobinOnBind(),
           getAffinityKeyLifetime(),
           getCleanupInterval(),
-          getChannelPickStrategy());
+          getChannelPickStrategy(),
+          getChannelPrimer(),
+          getChannelPrimeTimeout(),
+          getChannelPrimeMaxAttempts());
     }
 
     public static class Builder {
@@ -381,6 +407,9 @@ public class GcpManagedChannelOptions {
       private Duration drainIdleGrace = Duration.ofMinutes(1);
       private int errorPenaltyStep = 5;
       private Duration errorPenaltyDuration = Duration.ofSeconds(5);
+      @Nullable private GcpChannelPrimer channelPrimer;
+      private Duration channelPrimeTimeout = Duration.ofSeconds(10);
+      private int channelPrimeMaxAttempts = 3;
       private int concurrentStreamsLowWatermark = GcpManagedChannel.DEFAULT_MAX_STREAM;
       private boolean useRoundRobinOnBind = false;
       private Duration affinityKeyLifetime = Duration.ZERO;
@@ -407,6 +436,9 @@ public class GcpManagedChannelOptions {
         this.drainIdleGrace = options.getDrainIdleGrace();
         this.errorPenaltyStep = options.getErrorPenaltyStep();
         this.errorPenaltyDuration = options.getErrorPenaltyDuration();
+        this.channelPrimer = options.getChannelPrimer();
+        this.channelPrimeTimeout = options.getChannelPrimeTimeout();
+        this.channelPrimeMaxAttempts = options.getChannelPrimeMaxAttempts();
         this.concurrentStreamsLowWatermark = options.getConcurrentStreamsLowWatermark();
         this.useRoundRobinOnBind = options.isUseRoundRobinOnBind();
         this.affinityKeyLifetime = options.getAffinityKeyLifetime();
@@ -578,6 +610,49 @@ public class GcpManagedChannelOptions {
               "Error penalty duration must fit in nanoseconds.", failure);
         }
         this.errorPenaltyDuration = errorPenaltyDuration;
+        return this;
+      }
+
+      /**
+       * Sets the optional hook that primes newly built scale-up channels concurrently. Only
+       * channels added by dynamic scale-up are primed; the initial pool and non-dynamic growth are
+       * published as soon as they are built. Each scale-up channel is published individually when
+       * its own primer future succeeds. A {@code null} primer disables priming and preserves the
+       * existing scale-up path.
+       */
+      public Builder setChannelPrimer(@Nullable GcpChannelPrimer channelPrimer) {
+        this.channelPrimer = channelPrimer;
+        return this;
+      }
+
+      /**
+       * Sets the maximum time allowed for each channel-primer attempt, including the synchronous
+       * call to the primer. Zero uses the 10-second default.
+       */
+      public Builder setChannelPrimeTimeout(Duration channelPrimeTimeout) {
+        Preconditions.checkNotNull(channelPrimeTimeout, "Channel prime timeout must not be null.");
+        Preconditions.checkArgument(
+            !channelPrimeTimeout.isNegative(), "Channel prime timeout must not be negative.");
+        Duration timeout =
+            channelPrimeTimeout.isZero() ? Duration.ofSeconds(10) : channelPrimeTimeout;
+        try {
+          timeout.toNanos();
+        } catch (ArithmeticException failure) {
+          throw new IllegalArgumentException(
+              "Channel prime timeout must fit in nanoseconds.", failure);
+        }
+        this.channelPrimeTimeout = timeout;
+        return this;
+      }
+
+      /**
+       * Sets the maximum number of attempts to prime one scaled-up channel. Zero uses the default
+       * of 3. Retry backoff is exponential from 100 ms and capped at 5 s.
+       */
+      public Builder setChannelPrimeMaxAttempts(int channelPrimeMaxAttempts) {
+        Preconditions.checkArgument(
+            channelPrimeMaxAttempts >= 0, "Channel prime max attempts must not be negative.");
+        this.channelPrimeMaxAttempts = channelPrimeMaxAttempts == 0 ? 3 : channelPrimeMaxAttempts;
         return this;
       }
 
