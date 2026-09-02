@@ -1484,7 +1484,9 @@ public final class GcpManagedChannelTest {
       }
 
       MetricsRecord record = fakeRegistry.pollRecord();
-      assertThat(record.getMetrics().size()).isEqualTo(28);
+      assertThat(record.getMetrics().size()).isEqualTo(29);
+      assertThat(record.getMetrics())
+          .containsKey(prefix + GcpMetricsConstants.METRIC_SCALE_UP_PRIME_FAILURES);
 
       // Initial log messages count.
       int logCount = logRecords.size();
@@ -1770,8 +1772,9 @@ public final class GcpManagedChannelTest {
       assertThat(messages).contains(poolIndex + ": stat: max_unresponsive_dropped_calls = 3");
       assertThat(messages).contains(poolIndex + ": stat: channel_pool_scaling_up = 0");
       assertThat(messages).contains(poolIndex + ": stat: channel_pool_scaling_down = 0");
+      assertThat(messages).contains(poolIndex + ": stat: scale_up_prime_failures = 0");
 
-      assertThat(logRecords.size()).isEqualTo(39);
+      assertThat(logRecords.size()).isEqualTo(40);
       logRecords.forEach(
           logRecord ->
               assertWithMessage(logRecord.getMessage())
@@ -1825,8 +1828,9 @@ public final class GcpManagedChannelTest {
       assertThat(messages).contains(poolIndex + ": stat: max_unresponsive_dropped_calls = 0");
       assertThat(messages).contains(poolIndex + ": stat: channel_pool_scaling_up = 0");
       assertThat(messages).contains(poolIndex + ": stat: channel_pool_scaling_down = 0");
+      assertThat(messages).contains(poolIndex + ": stat: scale_up_prime_failures = 0");
 
-      assertThat(logRecords.size()).isEqualTo(39);
+      assertThat(logRecords.size()).isEqualTo(40);
 
     } finally {
       pool.shutdownNow();
