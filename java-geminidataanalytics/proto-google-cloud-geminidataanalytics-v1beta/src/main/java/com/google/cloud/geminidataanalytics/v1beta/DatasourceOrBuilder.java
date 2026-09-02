@@ -274,6 +274,47 @@ public interface DatasourceOrBuilder
    *
    *
    * <pre>
+   * A reference to a Bigtable instance.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+   * </code>
+   *
+   * @return Whether the bigtableReference field is set.
+   */
+  boolean hasBigtableReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Bigtable instance.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+   * </code>
+   *
+   * @return The bigtableReference.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.BigtableReference getBigtableReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Bigtable instance.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.BigtableReference bigtable_reference = 15;
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.BigtableReferenceOrBuilder
+      getBigtableReferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * A reference to a BigQuery property graph.
    * </pre>
    *
@@ -314,6 +355,47 @@ public interface DatasourceOrBuilder
    */
   com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder
       getBigqueryPropertyGraphReferenceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Firestore database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+   * </code>
+   *
+   * @return Whether the firestoreReference field is set.
+   */
+  boolean hasFirestoreReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Firestore database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+   * </code>
+   *
+   * @return The firestoreReference.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.FirestoreReference getFirestoreReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * A reference to a Firestore database.
+   * </pre>
+   *
+   * <code>.google.cloud.geminidataanalytics.v1beta.FirestoreReference firestore_reference = 17;
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.FirestoreReferenceOrBuilder
+      getFirestoreReferenceOrBuilder();
 
   /**
    *
