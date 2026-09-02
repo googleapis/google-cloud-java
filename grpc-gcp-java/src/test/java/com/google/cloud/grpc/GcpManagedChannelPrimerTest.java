@@ -25,8 +25,11 @@ import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.SettableFuture;
 import io.grpc.ConnectivityState;
 import java.time.Duration;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -36,6 +39,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -324,6 +331,7 @@ public final class GcpManagedChannelPrimerTest {
     AtomicInteger primeCalls = new AtomicInteger();
     AtomicReference<String> primerThread = new AtomicReference<>();
     AtomicReference<GcpManagedChannelTest.FakeManagedChannel> rejected = new AtomicReference<>();
+    AbandonWarnings warnings = new AbandonWarnings();
     GcpChannelPrimer primer =
         channel -> {
           if (primeCalls.incrementAndGet() > 1) {
@@ -332,30 +340,19 @@ public final class GcpManagedChannelPrimerTest {
           primerThread.set(Thread.currentThread().getName());
           rejected.set((GcpManagedChannelTest.FakeManagedChannel) channel);
           primerEntered.countDown();
-          boolean interrupted = false;
-          while (true) {
-            try {
-              releasePrimer.await();
-              break;
-            } catch (InterruptedException failure) {
-              interrupted = true;
-            }
-          }
-          if (interrupted) {
-            Thread.currentThread().interrupt();
-          }
+          awaitUninterruptibly(releasePrimer);
           return lateFuture;
         };
-    pool = newPrimedPool(primer, Duration.ofMillis(20), 3, builder());
-    AtomicLong clock = new AtomicLong(1);
-    pool.setNanoClock(clock::get);
-    ChannelRef hot = pool.channelRefs.get(0);
-    hot.setActiveStreamsForTest(6);
-
-    hot.activeStreamsCountIncr();
-
-    assertThat(primerEntered.await(5, TimeUnit.SECONDS)).isTrue();
     try {
+      pool = newPrimedPool(primer, Duration.ofMillis(20), 3, builder());
+      AtomicLong clock = new AtomicLong(1);
+      pool.setNanoClock(clock::get);
+      ChannelRef hot = pool.channelRefs.get(0);
+      hot.setActiveStreamsForTest(6);
+
+      hot.activeStreamsCountIncr();
+
+      assertThat(primerEntered.await(5, TimeUnit.SECONDS)).isTrue();
       // A primer blocked inside prime() fails at the timeout and is not retried: nothing can stop
       // the running call and a fresh attempt would overlap it on the same channel.
       awaitCondition(() -> pool.scaleUpPrimeFailuresForTest() == 1);
@@ -369,26 +366,103 @@ public final class GcpManagedChannelPrimerTest {
       // While the call is still blocked it keeps its scale-up slot, so the pool (2 of 3) does not
       // build another delegate and hand it to the same stuck primer.
       assertThat(pool.abandonedPrimeCountForTest()).isEqualTo(1);
+      // Abandoning is invisible to the application, so it is also logged as a warning, attributed
+      // to the pool like every other prime warning.
+      assertThat(warnings.messages()).hasSize(1);
+      assertThat(warnings.messages().get(0)).startsWith("pool-");
+      assertThat(warnings.messages().get(0)).contains("still blocked at the timeout");
       clock.incrementAndGet();
       hot.activeStreamsCountIncr();
       awaitCondition(() -> !pool.scaleUpWorkerRunningForTest());
       assertThat(primeCalls.get()).isEqualTo(1);
       assertThat(pool.inFlightPrimeCountForTest()).isEqualTo(0);
+      releasePrimer.countDown();
+
+      // Once the blocked call returns, its late future is cancelled without publishing, the slot
+      // is released, and the next scale-up primes a fresh delegate.
+      awaitCondition(lateFuture::isCancelled);
+      awaitCondition(() -> pool.abandonedPrimeCountForTest() == 0);
+      assertThat(pool.getNumberOfChannels()).isEqualTo(2);
+      assertThat(pool.inFlightPrimeCountForTest()).isEqualTo(0);
+      clock.incrementAndGet();
+      hot.activeStreamsCountIncr();
+      awaitCondition(() -> pool.getNumberOfChannels() == 3);
+      assertThat(primeCalls.get()).isEqualTo(2);
+      assertThat(pool.scaleUpPrimeFailuresForTest()).isEqualTo(1);
+      assertThat(warnings.messages()).hasSize(1);
     } finally {
       releasePrimer.countDown();
+      warnings.close();
     }
+  }
 
-    // Once the blocked call returns, its late future is cancelled without publishing, the slot is
-    // released, and the next scale-up primes a fresh delegate.
-    awaitCondition(lateFuture::isCancelled);
-    awaitCondition(() -> pool.abandonedPrimeCountForTest() == 0);
-    assertThat(pool.getNumberOfChannels()).isEqualTo(2);
-    assertThat(pool.inFlightPrimeCountForTest()).isEqualTo(0);
-    clock.incrementAndGet();
+  @Test
+  public void shutdownDuringBlockedPrimeDoesNotWarnAboutAbandoning() throws Exception {
+    CountDownLatch primerEntered = new CountDownLatch(1);
+    CountDownLatch releasePrimer = new CountDownLatch(1);
+    AtomicReference<GcpManagedChannelTest.FakeManagedChannel> primingChannel =
+        new AtomicReference<>();
+    AbandonWarnings warnings = new AbandonWarnings();
+    GcpChannelPrimer primer =
+        channel -> {
+          primingChannel.set((GcpManagedChannelTest.FakeManagedChannel) channel);
+          primerEntered.countDown();
+          awaitUninterruptibly(releasePrimer);
+          return Futures.immediateVoidFuture();
+        };
+    try {
+      pool = newPrimedPool(primer, Duration.ofSeconds(5), 3, builder());
+      ChannelRef hot = pool.channelRefs.get(0);
+      hot.setActiveStreamsForTest(6);
+      hot.activeStreamsCountIncr();
+      assertThat(primerEntered.await(5, TimeUnit.SECONDS)).isTrue();
+
+      pool.shutdownNow();
+
+      awaitCondition(() -> pool.inFlightPrimeCountForTest() == 0);
+      assertThat(primingChannel.get().isShutdown()).isTrue();
+      releasePrimer.countDown();
+      awaitCondition(() -> !pool.scaleUpWorkerRunningForTest());
+      // Shutdown closes the priming channel without abandoning it: no slot stays occupied and
+      // nothing is logged about a blocked call.
+      assertThat(pool.abandonedPrimeCountForTest()).isEqualTo(0);
+      assertThat(pool.scaleUpPrimeFailuresForTest()).isEqualTo(0);
+      assertThat(warnings.messages()).isEmpty();
+      assertThat(pool.getNumberOfChannels()).isEqualTo(2);
+    } finally {
+      releasePrimer.countDown();
+      warnings.close();
+    }
+  }
+
+  @Test
+  public void primedChannelIsPublishedUnderPoolMonitor() throws Exception {
+    SettableFuture<Void> primeFuture = SettableFuture.create();
+    AtomicReference<GcpManagedChannelTest.FakeManagedChannel> primingChannel =
+        new AtomicReference<>();
+    GcpChannelPrimer primer =
+        channel -> {
+          primingChannel.set((GcpManagedChannelTest.FakeManagedChannel) channel);
+          return primeFuture;
+        };
+    pool = newPrimedPool(primer, Duration.ofSeconds(5), builder());
+    ChannelRef hot = pool.channelRefs.get(0);
+    hot.setActiveStreamsForTest(6);
+
     hot.activeStreamsCountIncr();
+    awaitCondition(() -> primingChannel.get() != null);
+    awaitCondition(() -> !pool.scaleUpWorkerRunningForTest());
+
+    // The controller guards its state with the pool's own monitor, so while this thread holds
+    // it a completed prime cannot be published or even leave the in-flight set.
+    synchronized (pool) {
+      primeFuture.set(null);
+      Thread.sleep(200);
+      assertThat(pool.inFlightPrimeCountForTest()).isEqualTo(1);
+      assertThat(pool.getNumberOfChannels()).isEqualTo(2);
+    }
     awaitCondition(() -> pool.getNumberOfChannels() == 3);
-    assertThat(primeCalls.get()).isEqualTo(2);
-    assertThat(pool.scaleUpPrimeFailuresForTest()).isEqualTo(1);
+    assertThat(pool.inFlightPrimeCountForTest()).isEqualTo(0);
   }
 
   @Test
@@ -467,35 +541,78 @@ public final class GcpManagedChannelPrimerTest {
   public void primerRetriesExhaustedRejectsChannel() throws Exception {
     AtomicInteger primeCalls = new AtomicInteger();
     AtomicReference<GcpManagedChannelTest.FakeManagedChannel> rejected = new AtomicReference<>();
+    AbandonWarnings warnings = new AbandonWarnings();
     GcpChannelPrimer primer =
         channel -> {
           rejected.set((GcpManagedChannelTest.FakeManagedChannel) channel);
           primeCalls.incrementAndGet();
           return Futures.immediateFailedFuture(new IllegalStateException("prime failed"));
         };
-    pool = newPrimedPool(primer, Duration.ofSeconds(5), 3, builder());
-    ChannelRef hot = pool.channelRefs.get(0);
-    hot.setActiveStreamsForTest(6);
+    try {
+      pool = newPrimedPool(primer, Duration.ofSeconds(5), 3, builder());
+      ChannelRef hot = pool.channelRefs.get(0);
+      hot.setActiveStreamsForTest(6);
 
-    hot.activeStreamsCountIncr();
+      hot.activeStreamsCountIncr();
 
-    awaitCondition(() -> pool.scaleUpPrimeFailuresForTest() == 1);
-    assertThat(primeCalls.get()).isEqualTo(3);
-    assertThat(pool.getNumberOfChannels()).isEqualTo(2);
-    awaitCondition(() -> rejected.get() != null && rejected.get().isShutdown());
+      awaitCondition(() -> pool.scaleUpPrimeFailuresForTest() == 1);
+      assertThat(primeCalls.get()).isEqualTo(3);
+      assertThat(pool.getNumberOfChannels()).isEqualTo(2);
+      awaitCondition(() -> rejected.get() != null && rejected.get().isShutdown());
+      // Exhausting the attempts is an ordinary failure: the slot is released and nothing warns
+      // about a blocked call.
+      assertThat(pool.abandonedPrimeCountForTest()).isEqualTo(0);
+      assertThat(warnings.messages()).isEmpty();
+    } finally {
+      warnings.close();
+    }
   }
 
   @Test
   public void primerBackoffIsCappedForManyAttempts() {
-    List<Long> backoffs = new CopyOnWriteArrayList<>();
+    List<Long> bases = new CopyOnWriteArrayList<>();
+    List<Long> minDelays = new CopyOnWriteArrayList<>();
+    List<Long> maxDelays = new CopyOnWriteArrayList<>();
 
     for (int attempt = 0; attempt < 49; attempt++) {
-      backoffs.add(GcpManagedChannel.primeBackoffMillisForTest(attempt));
+      bases.add(GcpManagedChannel.primeBaseBackoffMillisForTest(attempt));
+      minDelays.add(GcpManagedChannel.primeBackoffMillisForTest(attempt, bound -> 0L));
+      maxDelays.add(GcpManagedChannel.primeBackoffMillisForTest(attempt, bound -> bound - 1));
     }
 
-    assertThat(backoffs).hasSize(49);
-    assertThat(backoffs.stream().mapToLong(Long::longValue).max().orElse(0)).isAtMost(5_000L);
-    assertThat(backoffs.stream().mapToLong(Long::longValue).sum()).isEqualTo(221_300L);
+    assertThat(bases).hasSize(49);
+    assertThat(bases.subList(0, 6))
+        .containsExactly(100L, 200L, 400L, 800L, 1_600L, 3_200L)
+        .inOrder();
+    assertThat(bases.subList(6, 49)).containsExactlyElementsIn(Collections.nCopies(43, 5_000L));
+    assertThat(bases.stream().mapToLong(Long::longValue).sum()).isEqualTo(221_300L);
+    assertThat(minDelays.subList(6, 49)).containsExactlyElementsIn(Collections.nCopies(43, 2_500L));
+    assertThat(maxDelays.subList(6, 49)).containsExactlyElementsIn(Collections.nCopies(43, 4_999L));
+    assertThat(maxDelays.stream().mapToLong(Long::longValue).max().orElse(0)).isAtMost(5_000L);
+  }
+
+  @Test
+  public void primerBackoffAppliesEqualJitter() {
+    for (int attempt = 0; attempt < 20; attempt++) {
+      long base = GcpManagedChannel.primeBaseBackoffMillisForTest(attempt);
+      long half = base / 2;
+      assertThat(GcpManagedChannel.primeBackoffMillisForTest(attempt, bound -> 0L)).isEqualTo(half);
+      assertThat(GcpManagedChannel.primeBackoffMillisForTest(attempt, bound -> 7L))
+          .isEqualTo(half + 7L);
+      assertThat(GcpManagedChannel.primeBackoffMillisForTest(attempt, bound -> bound - 1))
+          .isEqualTo(base - 1);
+      for (int sample = 0; sample < 50; sample++) {
+        long delay = GcpManagedChannel.primeBackoffMillisForTest(attempt);
+        assertThat(delay).isAtLeast(half);
+        assertThat(delay).isLessThan(base);
+      }
+    }
+
+    Set<Long> distinct = new HashSet<>();
+    for (int sample = 0; sample < 200; sample++) {
+      distinct.add(GcpManagedChannel.primeBackoffMillisForTest(10));
+    }
+    assertThat(distinct.size()).isGreaterThan(1);
   }
 
   @Test
@@ -594,5 +711,50 @@ public final class GcpManagedChannelPrimerTest {
 
   private static void awaitCondition(java.util.concurrent.Callable<Boolean> condition) {
     await().atMost(Duration.ofSeconds(5)).until(condition);
+  }
+
+  private static void awaitUninterruptibly(CountDownLatch latch) {
+    boolean interrupted = false;
+    while (true) {
+      try {
+        latch.await();
+        break;
+      } catch (InterruptedException failure) {
+        interrupted = true;
+      }
+    }
+    if (interrupted) {
+      Thread.currentThread().interrupt();
+    }
+  }
+
+  /** Captures the pool's abandoned-prime warnings for as long as it is open. */
+  private static final class AbandonWarnings extends Handler {
+    private static final Logger poolLogger = Logger.getLogger(GcpManagedChannel.class.getName());
+    private final List<String> messages = new CopyOnWriteArrayList<>();
+
+    AbandonWarnings() {
+      poolLogger.addHandler(this);
+    }
+
+    List<String> messages() {
+      return messages;
+    }
+
+    @Override
+    public void publish(LogRecord record) {
+      if (record.getLevel().intValue() >= Level.WARNING.intValue()
+          && record.getMessage().contains("priming abandoned")) {
+        messages.add(record.getMessage());
+      }
+    }
+
+    @Override
+    public void flush() {}
+
+    @Override
+    public void close() {
+      poolLogger.removeHandler(this);
+    }
   }
 }

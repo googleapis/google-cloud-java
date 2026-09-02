@@ -28,9 +28,6 @@ import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.cloud.grpc.proto.MethodConfig;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Joiner;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.MessageOrBuilder;
@@ -59,7 +56,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.LongSummaryStatistics;
@@ -75,12 +71,12 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Consumer;
 import java.util.function.IntUnaryOperator;
+import java.util.function.LongUnaryOperator;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -89,20 +85,6 @@ import javax.annotation.Nullable;
 
 /** A channel management factory that implements grpc.Channel APIs. */
 public class GcpManagedChannel extends ManagedChannel {
-
-  private static final class PendingPrime {
-    private final ManagedChannel channel;
-    private int attempt = -1;
-    private boolean invoking;
-    private boolean finished;
-    @Nullable private ListenableFuture<Void> future;
-    @Nullable private ScheduledFuture<?> timeoutTask;
-    @Nullable private ScheduledFuture<?> retryTask;
-
-    private PendingPrime(ManagedChannel channel) {
-      this.channel = channel;
-    }
-  }
 
   private static final Logger logger = Logger.getLogger(GcpManagedChannel.class.getName());
   static final AtomicInteger channelPoolIndex = new AtomicInteger();
@@ -201,9 +183,7 @@ public class GcpManagedChannel extends ManagedChannel {
   private int errorPenaltyStep = 5;
   private Duration errorPenaltyDuration = Duration.ofSeconds(5);
   private long errorPenaltyDurationNanos = Duration.ofSeconds(5).toNanos();
-  @Nullable private GcpChannelPrimer channelPrimer;
-  private long channelPrimeTimeoutNanos = Duration.ofSeconds(10).toNanos();
-  private int channelPrimeMaxAttempts = 3;
+  @Nullable private GcpChannelPrimeController channelPrimeController;
   private boolean isDynamicScalingEnabled = false;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
   private GcpManagedChannelOptions.ChannelPickStrategy channelPickStrategy =
@@ -234,16 +214,6 @@ public class GcpManagedChannel extends ManagedChannel {
   private final AtomicBoolean scaleUpSignalPending = new AtomicBoolean();
   private final AtomicBoolean scaleUpWorkerRunning = new AtomicBoolean();
   private final AtomicLong totalErrorPenaltyLoad = new AtomicLong();
-  private final AtomicInteger inFlightPrimeCount = new AtomicInteger();
-
-  @GuardedBy("this")
-  private final Set<PendingPrime> pendingPrimes = new HashSet<>();
-
-  // Primes whose prime() call was still blocked at its timeout. Each one still holds a primer
-  // thread and its closed delegate until the call returns, so it keeps occupying a scale-up slot:
-  // a primer that never returns can pin at most maxSize slots, never one thread per event.
-  @GuardedBy("this")
-  private final Set<PendingPrime> abandonedPrimes = new HashSet<>();
 
   private volatile long lastScaleUpNanos = Long.MIN_VALUE;
   private int consecutiveLowLoadChecks;
@@ -290,10 +260,6 @@ public class GcpManagedChannel extends ManagedChannel {
   private final Map<String, Long> cumulativeMetricValues = new ConcurrentHashMap<>();
   private static final ScheduledThreadPoolExecutor SHARED_BACKGROUND_SERVICE =
       createSharedBackgroundService();
-  // Primer invocations run here so a primer that blocks inside prime() occupies a thread of its
-  // own instead of starving the shared scheduler that drives scale-up, draining, and timeouts.
-  private static final ExecutorService SHARED_PRIME_SERVICE =
-      Executors.newCachedThreadPool(GcpThreadFactory.newThreadFactory("gcp-mc-prime-%d"));
 
   private ScheduledFuture<?> cleanupTask;
   private ScheduledFuture<?> scaleDownTask;
@@ -403,18 +369,28 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   @VisibleForTesting
-  int inFlightPrimeCountForTest() {
-    return inFlightPrimeCount.get();
+  synchronized int inFlightPrimeCountForTest() {
+    return channelPrimeController == null ? 0 : channelPrimeController.inFlightCount();
   }
 
   @VisibleForTesting
   synchronized int abandonedPrimeCountForTest() {
-    return abandonedPrimes.size();
+    return channelPrimeController == null ? 0 : channelPrimeController.abandonedCount();
   }
 
   @VisibleForTesting
   static long primeBackoffMillisForTest(int attempt) {
-    return primeBackoffMillis(attempt);
+    return GcpChannelPrimeController.backoffMillis(attempt);
+  }
+
+  @VisibleForTesting
+  static long primeBackoffMillisForTest(int attempt, LongUnaryOperator random) {
+    return GcpChannelPrimeController.backoffMillis(attempt, random);
+  }
+
+  @VisibleForTesting
+  static long primeBaseBackoffMillisForTest(int attempt) {
+    return GcpChannelPrimeController.baseBackoffMillis(attempt);
   }
 
   @VisibleForTesting
@@ -805,14 +781,62 @@ public class GcpManagedChannel extends ManagedChannel {
       errorPenaltyStep = poolOptions.getErrorPenaltyStep();
       errorPenaltyDuration = poolOptions.getErrorPenaltyDuration();
       errorPenaltyDurationNanos = errorPenaltyDuration.toNanos();
-      channelPrimer = poolOptions.getChannelPrimer();
-      channelPrimeTimeoutNanos = poolOptions.getChannelPrimeTimeout().toNanos();
-      channelPrimeMaxAttempts = poolOptions.getChannelPrimeMaxAttempts();
+      channelPrimeController = createChannelPrimeController(poolOptions);
       isDynamicScalingEnabled =
           minRpcPerChannel > 0 && maxRpcPerChannel > 0 && !scaleDownInterval.isZero();
       channelPickStrategy = poolOptions.getChannelPickStrategy();
     }
     initMetrics();
+  }
+
+  @Nullable
+  private GcpChannelPrimeController createChannelPrimeController(
+      GcpManagedChannelOptions.GcpChannelPoolOptions poolOptions) {
+    GcpChannelPrimer primer = poolOptions.getChannelPrimer();
+    if (primer == null) {
+      return null;
+    }
+    GcpChannelPrimeController.Pool pool =
+        new GcpChannelPrimeController.Pool() {
+          @Override
+          public boolean isShuttingDown() {
+            return shuttingDown;
+          }
+
+          @Override
+          public boolean isFull() {
+            return channelRefs.size() >= maxSize;
+          }
+
+          @Override
+          public void addPrimedChannel(ManagedChannel channel) {
+            addBuiltChannel(channel);
+            scaleUpCount.incrementAndGet();
+          }
+
+          @Override
+          public void reportPrimeFailure(Throwable failure) {
+            scaleUpPrimeFailures.incrementAndGet();
+            logger.log(Level.WARNING, log("Scaled-up channel priming failed"), failure);
+          }
+
+          @Override
+          public void reportPrimeAbandoned() {
+            logger.warning(
+                log(
+                    "Channel priming abandoned without retry: prime() was still blocked at the"
+                        + " timeout and nothing can stop it. The channel is closed and the blocked"
+                        + " call keeps occupying a primer thread and a scale-up slot until it"
+                        + " returns."));
+          }
+        };
+    return new GcpChannelPrimeController(
+        this,
+        pool,
+        primer,
+        poolOptions.getChannelPrimeTimeout().toNanos(),
+        poolOptions.getChannelPrimeMaxAttempts(),
+        SHARED_BACKGROUND_SERVICE);
   }
 
   private synchronized void initCleanupTask(Duration cleanupInterval) {
@@ -2325,7 +2349,7 @@ public class GcpManagedChannel extends ManagedChannel {
       // Channels still priming are capacity already on its way: they count toward the size cap
       // and the desired size, so overlapping scale-ups cannot build the same shortfall twice.
       // Abandoned primes keep their slot until their blocked prime() call returns.
-      int priming = pendingPrimes.size() + abandonedPrimes.size();
+      int priming = channelPrimeController == null ? 0 : channelPrimeController.primingCount();
       if (!isDynamicScalingEnabled || shuttingDown || channelRefs.size() + priming >= maxSize) {
         return;
       }
@@ -2369,8 +2393,8 @@ public class GcpManagedChannel extends ManagedChannel {
       throw failure;
     }
 
-    if (channelPrimer != null) {
-      builtChannels.forEach(this::startPrime);
+    if (channelPrimeController != null) {
+      builtChannels.forEach(channelPrimeController::startPrime);
       return;
     }
 
@@ -2388,249 +2412,6 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     surplus.forEach(ManagedChannel::shutdownNow);
     scaleUpCount.addAndGet(added);
-  }
-
-  /** Starts bounded asynchronous priming without holding the scale-up worker. */
-  private void startPrime(ManagedChannel channel) {
-    PendingPrime pendingPrime = new PendingPrime(channel);
-    synchronized (this) {
-      if (shuttingDown) {
-        channel.shutdownNow();
-        return;
-      }
-      pendingPrimes.add(pendingPrime);
-      inFlightPrimeCount.incrementAndGet();
-    }
-    submitPrimeAttempt(pendingPrime, 0);
-  }
-
-  private void submitPrimeAttempt(PendingPrime pendingPrime, int attempt) {
-    try {
-      SHARED_PRIME_SERVICE.execute(() -> startPrimeAttempt(pendingPrime, attempt));
-    } catch (RejectedExecutionException failure) {
-      rejectPendingPrime(pendingPrime, failure);
-    }
-  }
-
-  private void startPrimeAttempt(PendingPrime pendingPrime, int attempt) {
-    Throwable schedulingFailure = null;
-    synchronized (this) {
-      if (pendingPrime.finished) {
-        return;
-      }
-      if (shuttingDown) {
-        finishPendingPrime(pendingPrime);
-        pendingPrime.channel.shutdownNow();
-        return;
-      }
-      pendingPrime.attempt = attempt;
-      pendingPrime.invoking = true;
-      pendingPrime.future = null;
-      pendingPrime.retryTask = null;
-      // The timeout is armed before prime() runs so it bounds the whole attempt, including a
-      // primer that blocks instead of returning a future.
-      try {
-        pendingPrime.timeoutTask =
-            SHARED_BACKGROUND_SERVICE.schedule(
-                () ->
-                    finishPrimeFailure(
-                        pendingPrime,
-                        attempt,
-                        null,
-                        new TimeoutException("Channel priming timed out"),
-                        true),
-                channelPrimeTimeoutNanos,
-                NANOSECONDS);
-      } catch (RejectedExecutionException failure) {
-        schedulingFailure = failure;
-      }
-    }
-    if (schedulingFailure != null) {
-      finishPrimeFailure(pendingPrime, attempt, null, schedulingFailure, false);
-      return;
-    }
-
-    ListenableFuture<Void> future;
-    try {
-      future = channelPrimer.prime(pendingPrime.channel);
-      if (future == null) {
-        throw new NullPointerException("Channel primer returned null");
-      }
-    } catch (Throwable failure) {
-      synchronized (this) {
-        abandonedPrimes.remove(pendingPrime);
-      }
-      finishPrimeFailure(pendingPrime, attempt, null, failure, false);
-      return;
-    }
-
-    boolean cancelFuture = false;
-    boolean closeChannel = false;
-    synchronized (this) {
-      abandonedPrimes.remove(pendingPrime);
-      if (pendingPrime.finished
-          || pendingPrime.attempt != attempt
-          || !pendingPrime.invoking
-          || shuttingDown) {
-        // The attempt timed out or the pool shut down while prime() was still running.
-        cancelFuture = true;
-        closeChannel = pendingPrime.finished || shuttingDown;
-      } else {
-        pendingPrime.invoking = false;
-        pendingPrime.future = future;
-      }
-    }
-    if (cancelFuture) {
-      future.cancel(true);
-      if (closeChannel) {
-        pendingPrime.channel.shutdownNow();
-      }
-      return;
-    }
-
-    Futures.addCallback(
-        future,
-        new FutureCallback<Void>() {
-          @Override
-          public void onSuccess(@Nullable Void unused) {
-            finishPrimeSuccess(pendingPrime, attempt, future);
-          }
-
-          @Override
-          public void onFailure(Throwable failure) {
-            finishPrimeFailure(pendingPrime, attempt, future, failure, false);
-          }
-        },
-        SHARED_BACKGROUND_SERVICE);
-  }
-
-  private void finishPrimeSuccess(
-      PendingPrime pendingPrime, int attempt, ListenableFuture<Void> future) {
-    boolean surplus;
-    synchronized (this) {
-      if (!isCurrentPrimeAttempt(pendingPrime, attempt, future)) {
-        return;
-      }
-      cancelPrimeTimeout(pendingPrime);
-      pendingPrime.future = null;
-      finishPendingPrime(pendingPrime);
-      surplus = shuttingDown || channelRefs.size() >= maxSize;
-      if (!surplus) {
-        addBuiltChannel(pendingPrime.channel);
-        scaleUpCount.incrementAndGet();
-      }
-    }
-    if (surplus) {
-      pendingPrime.channel.shutdownNow();
-    }
-  }
-
-  /**
-   * Records a failed attempt. {@code future} identifies the attempt when the failure came from the
-   * primer's future; {@code null} matches whichever phase the attempt is in, which is what the
-   * timeout, a thrown {@code prime()}, and a scheduling rejection need. {@code timedOut} cancels a
-   * still-running future and, when the primer is still blocked inside {@code prime()}, ends the
-   * prime without a retry: nothing can stop that call and a fresh attempt would overlap it.
-   */
-  private void finishPrimeFailure(
-      PendingPrime pendingPrime,
-      int attempt,
-      @Nullable ListenableFuture<Void> future,
-      Throwable failure,
-      boolean timedOut) {
-    boolean finalFailure = false;
-    boolean publishFailure = false;
-    ListenableFuture<Void> futureToCancel = null;
-    synchronized (this) {
-      if (!isCurrentPrimeAttempt(pendingPrime, attempt, future)) {
-        return;
-      }
-      boolean blockedInPrimer = timedOut && pendingPrime.invoking;
-      futureToCancel = timedOut ? pendingPrime.future : null;
-      pendingPrime.invoking = false;
-      pendingPrime.future = null;
-      cancelPrimeTimeout(pendingPrime);
-      if (blockedInPrimer || shuttingDown || attempt + 1 >= channelPrimeMaxAttempts) {
-        finishPendingPrime(pendingPrime);
-        if (blockedInPrimer && !shuttingDown) {
-          abandonedPrimes.add(pendingPrime);
-        }
-        finalFailure = true;
-        publishFailure = !shuttingDown;
-      } else {
-        long delayMillis = primeBackoffMillis(attempt);
-        try {
-          pendingPrime.retryTask =
-              SHARED_BACKGROUND_SERVICE.schedule(
-                  () -> submitPrimeAttempt(pendingPrime, attempt + 1), delayMillis, MILLISECONDS);
-        } catch (RejectedExecutionException rejected) {
-          failure.addSuppressed(rejected);
-          finishPendingPrime(pendingPrime);
-          finalFailure = true;
-          publishFailure = true;
-        }
-      }
-    }
-    if (futureToCancel != null) {
-      futureToCancel.cancel(true);
-    }
-    if (finalFailure) {
-      pendingPrime.channel.shutdownNow();
-      if (publishFailure) {
-        scaleUpPrimeFailures.incrementAndGet();
-        logger.log(Level.WARNING, log("Scaled-up channel priming failed"), failure);
-      }
-    }
-  }
-
-  private void rejectPendingPrime(PendingPrime pendingPrime, Throwable failure) {
-    boolean publishFailure;
-    synchronized (this) {
-      if (pendingPrime.finished) {
-        return;
-      }
-      finishPendingPrime(pendingPrime);
-      publishFailure = !shuttingDown;
-    }
-    pendingPrime.channel.shutdownNow();
-    if (publishFailure) {
-      scaleUpPrimeFailures.incrementAndGet();
-      logger.log(Level.WARNING, log("Scaled-up channel priming failed"), failure);
-    }
-  }
-
-  @GuardedBy("this")
-  private boolean isCurrentPrimeAttempt(
-      PendingPrime pendingPrime, int attempt, @Nullable ListenableFuture<Void> future) {
-    if (pendingPrime.finished || pendingPrime.attempt != attempt) {
-      return false;
-    }
-    if (future == null) {
-      // Any live phase of this attempt: still inside prime(), or waiting on its future.
-      return pendingPrime.invoking || pendingPrime.future != null;
-    }
-    return pendingPrime.future == future;
-  }
-
-  @GuardedBy("this")
-  private void cancelPrimeTimeout(PendingPrime pendingPrime) {
-    if (pendingPrime.timeoutTask != null) {
-      pendingPrime.timeoutTask.cancel(false);
-      pendingPrime.timeoutTask = null;
-    }
-  }
-
-  @GuardedBy("this")
-  private void finishPendingPrime(PendingPrime pendingPrime) {
-    if (!pendingPrime.finished) {
-      pendingPrime.finished = true;
-      pendingPrimes.remove(pendingPrime);
-      inFlightPrimeCount.decrementAndGet();
-    }
-  }
-
-  private static long primeBackoffMillis(int attempt) {
-    return Math.min(100L << Math.min(attempt, 12), 5000L);
   }
 
   // This is pre-dynamic scaling functionality where we only scale up when the minimum number of
@@ -2895,7 +2676,7 @@ public class GcpManagedChannel extends ManagedChannel {
     return key;
   }
 
-  private synchronized List<PendingPrime> cancelBackgroundTasks() {
+  private synchronized List<GcpChannelPrimeController.PendingPrime> cancelBackgroundTasks() {
     shuttingDown = true;
     scaleUpSignalPending.set(false);
     if (cleanupTask != null) {
@@ -2912,37 +2693,18 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     drainTasks.values().forEach(task -> task.cancel(false));
     drainTasks.clear();
-    List<PendingPrime> primesToCancel = new ArrayList<>(pendingPrimes);
-    primesToCancel.forEach(this::finishPendingPrime);
-    // Abandoned delegates are already closed; no further scale-up can consult their slots.
-    abandonedPrimes.clear();
-    return primesToCancel;
-  }
-
-  private void cancelPendingPrimes(List<PendingPrime> pendingPrimes, boolean force) {
-    for (PendingPrime pendingPrime : pendingPrimes) {
-      if (pendingPrime.future != null) {
-        pendingPrime.future.cancel(true);
-      }
-      if (pendingPrime.timeoutTask != null) {
-        pendingPrime.timeoutTask.cancel(false);
-      }
-      if (pendingPrime.retryTask != null) {
-        pendingPrime.retryTask.cancel(false);
-      }
-      if (force) {
-        pendingPrime.channel.shutdownNow();
-      } else {
-        pendingPrime.channel.shutdown();
-      }
-    }
+    return channelPrimeController == null
+        ? Collections.emptyList()
+        : channelPrimeController.detachAll();
   }
 
   @Override
   public ManagedChannel shutdownNow() {
     logger.finer(log("Shutdown now started."));
-    List<PendingPrime> primesToCancel = cancelBackgroundTasks();
-    cancelPendingPrimes(primesToCancel, true);
+    List<GcpChannelPrimeController.PendingPrime> primesToCancel = cancelBackgroundTasks();
+    if (channelPrimeController != null) {
+      channelPrimeController.cancel(primesToCancel, true);
+    }
     List<ChannelRef> activeSnapshot = new ArrayList<>(channelRefs);
     List<ChannelRef> removedSnapshot = new ArrayList<>(removedChannelRefs);
     for (ChannelRef channelRef : activeSnapshot) {
@@ -2964,8 +2726,10 @@ public class GcpManagedChannel extends ManagedChannel {
   @Override
   public ManagedChannel shutdown() {
     logger.finer(log("Shutdown started."));
-    List<PendingPrime> primesToCancel = cancelBackgroundTasks();
-    cancelPendingPrimes(primesToCancel, false);
+    List<GcpChannelPrimeController.PendingPrime> primesToCancel = cancelBackgroundTasks();
+    if (channelPrimeController != null) {
+      channelPrimeController.cancel(primesToCancel, false);
+    }
     List<ChannelRef> activeSnapshot = new ArrayList<>(channelRefs);
     List<ChannelRef> removedSnapshot = new ArrayList<>(removedChannelRefs);
     for (ChannelRef channelRef : activeSnapshot) {
