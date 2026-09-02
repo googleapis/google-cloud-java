@@ -334,24 +334,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               this.reqGoogleDriveScope,
               httpTransportFactory,
               this.connectionClassName);
-      String defaultDatasetString = ds.getDefaultDataset();
-      if (defaultDatasetString == null || defaultDatasetString.trim().isEmpty()) {
-        this.defaultDataset = null;
-      } else {
-        String[] parts = defaultDatasetString.split("\\.");
-        if (parts.length == 2) {
-          this.defaultDataset = DatasetId.of(parts[0], parts[1]);
-        } else if (parts.length == 1) {
-          this.defaultDataset = DatasetId.of(parts[0]);
-        } else {
-          IllegalArgumentException ex =
-              new IllegalArgumentException(
-                  "DefaultDataset format is invalid. Supported options are datasetId or"
-                      + " projectId.datasetId");
-          LOG.severe(ex.getMessage(), ex);
-          throw ex;
-        }
-      }
+      this.defaultDataset = BigQueryJdbcUrlUtility.parseDefaultDataset(ds.getDefaultDataset());
       this.location = ds.getLocation();
       this.enableHighThroughputAPI = ds.getEnableHighThroughputAPI();
       this.highThroughputMinTableSize = ds.getHighThroughputMinTableSize();

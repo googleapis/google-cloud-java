@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import com.google.api.client.util.escape.CharEscapers;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
@@ -923,5 +924,45 @@ final class BigQueryJdbcUrlUtility {
       }
     }
     return propertiesMap;
+  }
+
+  static DatasetId parseDefaultDataset(String defaultDataset) {
+    if (defaultDataset == null || defaultDataset.trim().isEmpty()) {
+      return null;
+    }
+
+    String trimmed = defaultDataset.trim();
+    int colonIdx = trimmed.indexOf(':');
+    if (colonIdx >= 0) {
+      return splitQualifiedDataset(trimmed, colonIdx, ':');
+    }
+
+    int dotIdx = trimmed.indexOf('.');
+    if (dotIdx >= 0) {
+      return splitQualifiedDataset(trimmed, dotIdx, '.');
+    }
+
+    return DatasetId.of(trimmed);
+  }
+
+  private static DatasetId splitQualifiedDataset(String trimmed, int delimiterIdx, char delimiter) {
+    if (trimmed.indexOf(delimiter, delimiterIdx + 1) >= 0) {
+      throw invalidDefaultDatasetException();
+    }
+    String project = trimmed.substring(0, delimiterIdx).trim();
+    String dataset = trimmed.substring(delimiterIdx + 1).trim();
+    if (project.isEmpty() || dataset.isEmpty()) {
+      throw invalidDefaultDatasetException();
+    }
+    return DatasetId.of(project, dataset);
+  }
+
+  private static IllegalArgumentException invalidDefaultDatasetException() {
+    IllegalArgumentException ex =
+        new IllegalArgumentException(
+            "DefaultDataset format is invalid. Supported options are datasetId,"
+                + " projectId:datasetId, or projectId.datasetId");
+    LOG.severe(ex.getMessage(), ex);
+    return ex;
   }
 }

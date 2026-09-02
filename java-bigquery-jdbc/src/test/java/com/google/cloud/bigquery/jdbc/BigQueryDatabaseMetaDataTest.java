@@ -30,6 +30,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
 import com.google.api.gax.paging.Page;
+import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.jdbc.BigQueryTypeRegistry.ColumnTypeInfo;
@@ -3696,5 +3697,47 @@ public class BigQueryDatabaseMetaDataTest {
             "test-project", "dataset_p", "pk_table", "test-project", "dataset_p", "fk_table")) {
       assertFalse(rs.next());
     }
+  }
+
+  @Test
+  public void testDetermineEffectiveCatalogAndSchema_withDefaultDatasetProject() {
+    when(bigQueryConnection.isFilterTablesOnDefaultDataset()).thenReturn(true);
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.getDefaultDataset())
+        .thenReturn(DatasetId.of("custom-project", "warehouse.namespace"));
+
+    dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
+    Tuple<String, String> result = dbMetadata.determineEffectiveCatalogAndSchema(null, null);
+
+    assertEquals("custom-project", result.x());
+    assertEquals("warehouse.namespace", result.y());
+  }
+
+  @Test
+  public void testDetermineEffectiveCatalogAndSchema_withDefaultDatasetNoProject() {
+    when(bigQueryConnection.isFilterTablesOnDefaultDataset()).thenReturn(true);
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.getDefaultDataset()).thenReturn(DatasetId.of("my_dataset"));
+
+    dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
+    Tuple<String, String> result = dbMetadata.determineEffectiveCatalogAndSchema(null, null);
+
+    assertEquals("primary-project", result.x());
+    assertEquals("my_dataset", result.y());
+  }
+
+  @Test
+  public void testGetAccessibleCatalogNames_includesDefaultDatasetProject() throws SQLException {
+    when(bigQueryConnection.getCatalog()).thenReturn("primary-project");
+    when(bigQueryConnection.getDefaultDataset())
+        .thenReturn(DatasetId.of("pcnt-warehouse", "pcnt_ns"));
+    when(bigQueryConnection.getAdditionalProjects()).thenReturn("extra-proj1,extra-proj2");
+    when(bigQueryConnection.isEnableProjectDiscovery()).thenReturn(false);
+
+    dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
+    List<String> catalogs = dbMetadata.getAccessibleCatalogNames();
+
+    assertEquals(
+        Arrays.asList("extra-proj1", "extra-proj2", "pcnt-warehouse", "primary-project"), catalogs);
   }
 }
