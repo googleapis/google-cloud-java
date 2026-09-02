@@ -40,8 +40,12 @@ import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.resumable.ChunkUploadRequest;
+import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.ResumableUploadSession;
+import com.google.api.gax.rpc.AbortedException;
 import com.google.api.gax.rpc.ApiCallContext;
+import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.InternalException;
 import com.google.api.gax.rpc.NotFoundException;
@@ -49,6 +53,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Strings;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -231,6 +236,192 @@ class HttpJsonResumableUploadClientTest {
     client.startUploadCallable().call(request, callContext);
 
     assertThat(transport.capturedHeaders.get("x-custom-header")).containsExactly("CustomValue");
+  }
+
+  @Test
+  void uploadChunk_intermediateChunk_sendsUploadCommandAndReturnsActiveStatus() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(200);
+    httpResponse.addHeader("X-Goog-Upload-Status", "active");
+
+    CapturingHttpTransport transport = new CapturingHttpTransport(httpResponse);
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(transport);
+
+    byte[] payload = new byte[262144];
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(TEST_UPLOAD_URL)
+            .setPayload(payload)
+            .setOffset(0L)
+            .setFinal(false)
+            .build();
+
+    ChunkUploadResponse<String> response = client.uploadChunkCallable().call(request);
+
+    assertThat(response.isComplete()).isFalse();
+    assertThat(response.getResponse()).isNull();
+
+    assertThat(transport.capturedUrl).isEqualTo(TEST_UPLOAD_URL);
+    assertThat(transport.capturedHeaders.get("x-goog-upload-command")).containsExactly("upload");
+    assertThat(transport.capturedHeaders.get("x-goog-upload-offset")).containsExactly("0");
+  }
+
+  @Test
+  void uploadChunk_finalChunk_sendsUploadFinalizeAndReturnsResponseBody() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(200);
+    httpResponse.addHeader("X-Goog-Upload-Status", "final");
+    httpResponse.setContent("{\"name\":\"uploaded-file.txt\",\"size\":524288}");
+
+    CapturingHttpTransport transport = new CapturingHttpTransport(httpResponse);
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(transport);
+
+    byte[] payload = new byte[262144];
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(TEST_UPLOAD_URL)
+            .setPayload(payload)
+            .setOffset(262144L)
+            .setFinal(true)
+            .build();
+
+    ChunkUploadResponse<String> response = client.uploadChunkCallable().call(request);
+
+    assertThat(response.isComplete()).isTrue();
+    assertThat(response.getResponse())
+        .isEqualTo("{\"name\":\"uploaded-file.txt\",\"size\":524288}");
+
+    assertThat(transport.capturedHeaders.get("x-goog-upload-command"))
+        .containsExactly("upload, finalize");
+    assertThat(transport.capturedHeaders.get("x-goog-upload-offset")).containsExactly("262144");
+  }
+
+  @Test
+  void uploadChunk_emptyPayloadFinal_sendsFinalizeCommandAndReturnsResponseBody() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(200);
+    httpResponse.addHeader("X-Goog-Upload-Status", "final");
+    httpResponse.setContent("{\"name\":\"uploaded-file.txt\",\"size\":1048576}");
+
+    CapturingHttpTransport transport = new CapturingHttpTransport(httpResponse);
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(transport);
+
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(TEST_UPLOAD_URL)
+            .setPayload(new byte[0])
+            .setOffset(1048576L)
+            .setFinal(true)
+            .build();
+
+    ChunkUploadResponse<String> response = client.uploadChunkCallable().call(request);
+
+    assertThat(response.isComplete()).isTrue();
+    assertThat(response.getResponse())
+        .isEqualTo("{\"name\":\"uploaded-file.txt\",\"size\":1048576}");
+
+    assertThat(transport.capturedHeaders.get("x-goog-upload-command")).containsExactly("finalize");
+    assertThat(transport.capturedHeaders).doesNotContainKey("x-goog-upload-offset");
+  }
+
+  @Test
+  void uploadChunk_withCustomExtraHeaders_preservesHeaders() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(200);
+    httpResponse.addHeader("X-Goog-Upload-Status", "active");
+
+    CapturingHttpTransport transport = new CapturingHttpTransport(httpResponse);
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(transport);
+
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(TEST_UPLOAD_URL)
+            .setPayload("data".getBytes(StandardCharsets.UTF_8))
+            .setOffset(0L)
+            .build();
+
+    Map<String, List<String>> customHeaders =
+        Collections.singletonMap(
+            "X-Custom-Chunk-Header", Collections.singletonList("CustomChunkValue"));
+
+    ApiCallContext callContext =
+        HttpJsonCallContext.createDefault().withExtraHeaders(customHeaders);
+
+    client.uploadChunkCallable().call(request, callContext);
+
+    assertThat(transport.capturedHeaders.get("x-custom-chunk-header"))
+        .containsExactly("CustomChunkValue");
+  }
+
+  @Test
+  void uploadChunk_serverReturnsConflictOrError_throwsException() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(409);
+    httpResponse.setContent("{\"error\":{\"message\":\"Invalid offset\"}}");
+
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(httpResponse);
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(TEST_UPLOAD_URL)
+            .setPayload("data".getBytes(StandardCharsets.UTF_8))
+            .setOffset(100L)
+            .build();
+
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class, () -> client.uploadChunkCallable().futureCall(request).get());
+
+    assertThat(exception.getCause()).isInstanceOf(AbortedException.class);
+    AbortedException abortedException = (AbortedException) exception.getCause();
+    assertThat(abortedException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.ABORTED);
+  }
+
+  @Test
+  void uploadChunk_missingUploadStatusHeader_throwsInternalException() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(200);
+
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(httpResponse);
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(TEST_UPLOAD_URL)
+            .setPayload("data".getBytes(StandardCharsets.UTF_8))
+            .setOffset(0L)
+            .build();
+
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class, () -> client.uploadChunkCallable().futureCall(request).get());
+
+    assertThat(exception.getCause()).isInstanceOf(InternalException.class);
+    assertThat(exception.getCause())
+        .hasMessageThat()
+        .contains("Upload chunk response did not contain valid X-Goog-Upload-Status header");
+  }
+
+  @Test
+  void uploadChunk_serverReturnsFinalStatusOnNon200_marksExceptionNonRetryable() {
+    MockLowLevelHttpResponse httpResponse = new MockLowLevelHttpResponse();
+    httpResponse.setStatusCode(503);
+    httpResponse.addHeader("X-Goog-Upload-Status", "final");
+    httpResponse.setContent("{\"error\":{\"message\":\"Upload rejected by backend\"}}");
+
+    HttpJsonResumableUploadClient<TestRequest, String> client = createClient(httpResponse);
+    ChunkUploadRequest request =
+        ChunkUploadRequest.newBuilder()
+            .setUploadUrl(TEST_UPLOAD_URL)
+            .setPayload("data".getBytes(StandardCharsets.UTF_8))
+            .setOffset(0L)
+            .build();
+
+    ExecutionException exception =
+        assertThrows(
+            ExecutionException.class, () -> client.uploadChunkCallable().futureCall(request).get());
+
+    assertThat(exception.getCause()).isInstanceOf(ApiException.class);
+    ApiException apiException = (ApiException) exception.getCause();
+    assertThat(apiException.isRetryable()).isFalse();
+    assertThat(apiException.getStatusCode().getCode()).isEqualTo(StatusCode.Code.UNAVAILABLE);
   }
 
   private static HttpJsonResumableUploadClient<TestRequest, String> createClient(

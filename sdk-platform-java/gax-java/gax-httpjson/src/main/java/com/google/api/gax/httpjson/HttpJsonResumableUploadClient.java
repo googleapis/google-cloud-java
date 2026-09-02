@@ -32,6 +32,8 @@ package com.google.api.gax.httpjson;
 import com.google.api.client.http.HttpMethods;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.resumable.ChunkUploadRequest;
+import com.google.api.gax.resumable.ChunkUploadResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.rpc.ClientContext;
@@ -54,6 +56,8 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
     implements ResumableUploadClient<RequestT, ResponseT> {
 
   private final UnaryCallable<RequestT, ResumableUploadSession> startUploadCallable;
+  private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
+      uploadChunkCallable;
 
   public static <RequestT, ResponseT> HttpJsonResumableUploadClient<RequestT, ResponseT> create(
       ClientContext clientContext, ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor) {
@@ -64,6 +68,8 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
       ClientContext clientContext, ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor) {
     Preconditions.checkNotNull(clientContext);
     Preconditions.checkNotNull(methodDescriptor);
+    HttpResponseParser<ResponseT> responseParser =
+        Preconditions.checkNotNull(methodDescriptor.getResponseParser());
 
     ApiMethodDescriptor<RequestT, String> startUploadDescriptor =
         ApiMethodDescriptor.<RequestT, String>newBuilder()
@@ -75,10 +81,16 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
             .build();
     this.startUploadCallable =
         ResumableUploadStartCallable.create(clientContext, startUploadDescriptor);
+    this.uploadChunkCallable = ResumableUploadChunkCallable.create(clientContext, responseParser);
   }
 
   @Override
   public UnaryCallable<RequestT, ResumableUploadSession> startUploadCallable() {
     return startUploadCallable;
+  }
+
+  @Override
+  public UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable() {
+    return uploadChunkCallable;
   }
 }
