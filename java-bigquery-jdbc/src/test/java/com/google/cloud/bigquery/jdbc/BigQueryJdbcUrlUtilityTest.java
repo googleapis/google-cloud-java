@@ -325,22 +325,20 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testParseDefaultDataset_domainScopedProject() {
-    DatasetId datasetId =
-        BigQueryJdbcUrlUtility.parseDefaultDataset("example.com:my-project:my_dataset");
+  public void testParseDefaultDataset_tpcProject() {
+    DatasetId datasetId = BigQueryJdbcUrlUtility.parseDefaultDataset("tpc:my-project:my_dataset");
     assertNotNull(datasetId);
     assertEquals("my_dataset", datasetId.getDataset());
-    assertEquals("example.com:my-project", datasetId.getProject());
+    assertEquals("tpc:my-project", datasetId.getProject());
   }
 
   @Test
-  public void testParseDefaultDataset_domainScopedProject_threeTierPcntNamespace() {
+  public void testParseDefaultDataset_tpcProject_threeTierPcntNamespace() {
     DatasetId datasetId =
-        BigQueryJdbcUrlUtility.parseDefaultDataset(
-            "example.com:my-project:my-warehouse.my_namespace");
+        BigQueryJdbcUrlUtility.parseDefaultDataset("tpc:my-project:my-warehouse.my_namespace");
     assertNotNull(datasetId);
     assertEquals("my-warehouse.my_namespace", datasetId.getDataset());
-    assertEquals("example.com:my-project", datasetId.getProject());
+    assertEquals("tpc:my-project", datasetId.getProject());
   }
 
   @Test
@@ -353,7 +351,7 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
         () -> BigQueryJdbcUrlUtility.parseDefaultDataset(":my_dataset"));
     assertThrows(
         IllegalArgumentException.class,
-        () -> BigQueryJdbcUrlUtility.parseDefaultDataset("example.com:my-project:"));
+        () -> BigQueryJdbcUrlUtility.parseDefaultDataset("tpc:my-project:"));
     assertThrows(
         IllegalArgumentException.class,
         () -> BigQueryJdbcUrlUtility.parseDefaultDataset("my-project."));
