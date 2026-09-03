@@ -101,6 +101,28 @@ public class BigQueryTypeRegistryTest {
   }
 
   @Test
+  public void testTimestampToTimePreservesLocalWallClock() throws Exception {
+    Timestamp ts = Timestamp.valueOf("2023-07-28 12:30:00");
+    Time time = BigQueryTypeRegistry.convert(ts, StandardSQLTypeName.TIME, Time.class, null);
+    assertThat(time).isEqualTo(Time.valueOf("12:30:00"));
+
+    LocalTime localTime =
+        BigQueryTypeRegistry.convert(ts, StandardSQLTypeName.TIME, LocalTime.class, null);
+    assertThat(localTime).isEqualTo(LocalTime.of(12, 30, 0));
+  }
+
+  @Test
+  public void testTimestampToDatePreservesLocalWallClock() throws Exception {
+    Timestamp ts = Timestamp.valueOf("2023-07-28 12:30:00");
+    Date date = BigQueryTypeRegistry.convert(ts, StandardSQLTypeName.DATE, Date.class, null);
+    assertThat(date).isEqualTo(Date.valueOf("2023-07-28"));
+
+    LocalDate localDate =
+        BigQueryTypeRegistry.convert(ts, StandardSQLTypeName.DATE, LocalDate.class, null);
+    assertThat(localDate).isEqualTo(LocalDate.of(2023, 7, 28));
+  }
+
+  @Test
   public void testCoercionException() throws Exception {
     assertThrows(
         BigQueryJdbcException.class,
