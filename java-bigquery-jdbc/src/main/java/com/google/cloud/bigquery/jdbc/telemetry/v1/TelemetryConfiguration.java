@@ -22,8 +22,7 @@ import java.util.Properties;
 /** Configuration settings for the BigQuery JDBC driver telemetry client. */
 final class TelemetryConfiguration {
   static final boolean DEFAULT_ENABLED = true;
-  // TODO: change DEFAULT_LOG_SOURCE value once the value is assigned.
-  static final int DEFAULT_LOG_SOURCE = -1;
+  static final int DEFAULT_LOG_SOURCE = 3071;
   static final String DEFAULT_ENDPOINT_URL = "https://play.googleapis.com/log";
   static final long DEFAULT_UPLOAD_INTERVAL_MS = 300_000L;
   static final int DEFAULT_BATCH_SIZE_THRESHOLD = 5000;
