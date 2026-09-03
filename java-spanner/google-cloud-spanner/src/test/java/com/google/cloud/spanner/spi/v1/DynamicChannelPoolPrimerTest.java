@@ -416,6 +416,22 @@ public class DynamicChannelPoolPrimerTest {
   }
 
   @Test
+  public void primeReturnsFailedFutureWhenCallCredentialsProviderThrows() throws Exception {
+    RuntimeException expected = new RuntimeException("credentials unavailable");
+    DynamicChannelPoolPrimer primer =
+        newPrimer(
+            () -> {
+              throw expected;
+            },
+            Duration.ofSeconds(5));
+    registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
+
+    ListenableFuture<Void> future = primer.prime(newChannel());
+
+    assertThat(failureOf(future)).isSameInstanceAs(expected);
+  }
+
+  @Test
   public void primeFailsWhenRpcFails() throws Exception {
     service.failWith = Status.UNAVAILABLE.withDescription("backend unavailable");
     DynamicChannelPoolPrimer primer = newPrimer();

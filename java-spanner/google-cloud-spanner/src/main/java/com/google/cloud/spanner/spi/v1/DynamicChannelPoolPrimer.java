@@ -236,19 +236,27 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
     return null;
   }
 
+  /**
+   * Always returns a future and never throws, so every failure reaches the pool as a failed future.
+   */
   @Override
   public ListenableFuture<Void> prime(ManagedChannel channel) {
-    String sessionName = getPrimeSessionName();
-    if (sessionName == null) {
-      // The primer cannot gate the pool's scale-up decision, so the attempt fails fast. The pool's
-      // retry with backoff and its close-on-failure behaviour handle the unavailable session.
-      return Futures.immediateFailedFuture(
-          SpannerExceptionFactory.newSpannerException(
-              ErrorCode.FAILED_PRECONDITION,
-              "Cannot prime a dynamic channel pool channel before a multiplexed session is"
-                  + " available"));
+    try {
+      String sessionName = getPrimeSessionName();
+      if (sessionName == null) {
+        // The primer cannot gate the pool's scale-up decision, so the attempt fails fast. The
+        // pool's retry with backoff and its close-on-failure behaviour handle the unavailable
+        // session.
+        return Futures.immediateFailedFuture(
+            SpannerExceptionFactory.newSpannerException(
+                ErrorCode.FAILED_PRECONDITION,
+                "Cannot prime a dynamic channel pool channel before a multiplexed session is"
+                    + " available"));
+      }
+      return executePrimeStatement(channel, sessionName);
+    } catch (Throwable t) {
+      return Futures.immediateFailedFuture(t);
     }
-    return executePrimeStatement(channel, sessionName);
   }
 
   private ListenableFuture<Void> executePrimeStatement(ManagedChannel channel, String sessionName) {
