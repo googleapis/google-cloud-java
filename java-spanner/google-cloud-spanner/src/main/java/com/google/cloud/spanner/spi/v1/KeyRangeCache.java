@@ -936,22 +936,6 @@ public final class KeyRangeCache {
         List<SkippedTabletDetail> skippedTabletDetails,
         Map<String, ChannelEndpoint> resolvedEndpoints,
         SelectionState selectionStats) {
-      if (!preferLeader || hintBuilder.getOperationUid() > 0L) {
-        TabletSnapshot preferredLeader =
-            preferLeader ? localLeaderForScoreBias(snapshot, hasDirectedReadOptions) : null;
-        return selectScoreAwareTablet(
-            snapshot,
-            preferLeader,
-            directedReadOptions,
-            hintBuilder,
-            excludedEndpoints,
-            skippedTabletUids,
-            skippedTabletDetails,
-            resolvedEndpoints,
-            selectionStats,
-            preferredLeader);
-      }
-
       boolean checkedLeader = false;
       if (preferLeader
           && !hasDirectedReadOptions
@@ -970,6 +954,22 @@ public final class KeyRangeCache {
             selectionStats)) {
           return snapshot.leader();
         }
+      }
+
+      if (!preferLeader || hintBuilder.getOperationUid() > 0L) {
+        TabletSnapshot preferredLeader =
+            preferLeader ? localLeaderForScoreBias(snapshot, hasDirectedReadOptions) : null;
+        return selectScoreAwareTablet(
+            snapshot,
+            preferLeader,
+            directedReadOptions,
+            hintBuilder,
+            excludedEndpoints,
+            skippedTabletUids,
+            skippedTabletDetails,
+            resolvedEndpoints,
+            selectionStats,
+            preferredLeader);
       }
       for (int index = 0; index < snapshot.tablets.size(); index++) {
         if (checkedLeader && index == snapshot.leaderIndex) {
