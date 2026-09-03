@@ -21,6 +21,11 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -39,12 +44,14 @@ import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryOptions;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -124,6 +131,77 @@ public class SpannerImplTest {
 
     assertThat(databaseClient1).isSameInstanceAs(databaseClient);
     verify(spannerOptions).initializeBuiltInMetrics(db);
+  }
+
+  @Test
+  public void invalidatedDatabaseClientUnregistersItsChannelPrimeOwnerTicket() {
+    DatabaseId db = DatabaseId.of("projects/p1/instances/i1/databases/d1");
+    Mockito.when(spannerOptions.getTransportOptions())
+        .thenReturn(GrpcTransportOptions.newBuilder().build());
+    Mockito.when(spannerOptions.getSessionPoolOptions())
+        .thenReturn(SessionPoolOptions.newBuilder().setMinSessions(0).build());
+    AtomicBoolean valid = new AtomicBoolean(true);
+    SpannerImpl spanner =
+        new SpannerImpl(rpc, spannerOptions) {
+          @Override
+          DatabaseClientImpl createDatabaseClient(
+              String clientId,
+              MultiplexedSessionDatabaseClient multiplexedSessionClient,
+              Attributes databaseAttributes) {
+            return new DatabaseClientImpl(
+                clientId, multiplexedSessionClient, tracer, databaseAttributes) {
+              @Override
+              boolean isValid() {
+                return valid.get();
+              }
+            };
+          }
+        };
+    try {
+      DatabaseClient first = spanner.getDatabaseClient(db);
+      ArgumentCaptor<Long> tickets = ArgumentCaptor.forClass(Long.class);
+      verify(rpc).registerChannelPrimeOwner(eq(db.getName()), tickets.capture());
+      long firstTicket = tickets.getValue();
+      verify(rpc, never()).unregisterChannelPrimeOwner(anyString(), anyLong());
+
+      // The invalidated client is replaced. Closing it unregisters its ticket, and the
+      // replacement registers a new ticket of its own.
+      valid.set(false);
+      DatabaseClient second = spanner.getDatabaseClient(db);
+
+      assertThat(second).isNotSameInstanceAs(first);
+      verify(rpc).unregisterChannelPrimeOwner(db.getName(), firstTicket);
+      verify(rpc, times(2)).registerChannelPrimeOwner(eq(db.getName()), tickets.capture());
+      long secondTicket = tickets.getValue();
+      assertThat(secondTicket).isNotEqualTo(firstTicket);
+      verify(rpc, never()).unregisterChannelPrimeOwner(db.getName(), secondTicket);
+    } finally {
+      spanner.close();
+    }
+  }
+
+  @Test
+  public void closeUnregistersChannelPrimeOwnerTicketOfEveryDatabaseClient() {
+    DatabaseId db1 = DatabaseId.of("projects/p1/instances/i1/databases/d1");
+    DatabaseId db2 = DatabaseId.of("projects/p1/instances/i1/databases/d2");
+    Mockito.when(spannerOptions.getTransportOptions())
+        .thenReturn(GrpcTransportOptions.newBuilder().build());
+    Mockito.when(spannerOptions.getSessionPoolOptions())
+        .thenReturn(SessionPoolOptions.newBuilder().setMinSessions(0).build());
+    SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
+    spanner.getDatabaseClient(db1);
+    spanner.getDatabaseClient(db2);
+    ArgumentCaptor<Long> ticket1 = ArgumentCaptor.forClass(Long.class);
+    ArgumentCaptor<Long> ticket2 = ArgumentCaptor.forClass(Long.class);
+    verify(rpc).registerChannelPrimeOwner(eq(db1.getName()), ticket1.capture());
+    verify(rpc).registerChannelPrimeOwner(eq(db2.getName()), ticket2.capture());
+    verify(rpc, never()).unregisterChannelPrimeOwner(anyString(), anyLong());
+
+    spanner.close();
+
+    verify(rpc).unregisterChannelPrimeOwner(db1.getName(), ticket1.getValue());
+    verify(rpc).unregisterChannelPrimeOwner(db2.getName(), ticket2.getValue());
+    verify(rpc, times(2)).unregisterChannelPrimeOwner(anyString(), anyLong());
   }
 
   @Test

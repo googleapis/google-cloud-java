@@ -61,6 +61,7 @@ import com.google.api.pathtemplate.PathTemplate;
 import com.google.auth.Credentials;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.grpc.GcpChannelPrimer;
 import com.google.cloud.grpc.GcpManagedChannel;
 import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.grpc.GcpManagedChannelBuilder;
@@ -309,6 +310,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   private final boolean isDynamicChannelPoolEnabled;
   @Nullable private final KeyAwareChannel keyAwareChannel;
   @Nullable private final GcpManagedChannel grpcGcpChannel;
+  @Nullable private final DynamicChannelPoolPrimer channelPrimer;
 
   private final GrpcCallContext baseGrpcCallContext;
 
@@ -373,6 +375,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     if (initializeStubs) {
       CredentialsProvider credentialsProvider =
           GrpcTransportOptions.setUpCredentialsProvider(options);
+      this.channelPrimer = createChannelPrimer(options, credentialsProvider);
 
       InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder =
           createBaseChannelProviderBuilder(
@@ -388,9 +391,10 @@ public class GapicSpannerRpc implements SpannerRpc {
             defaultChannelProviderBuilder,
             options,
             headerProviderWithUserAgent,
-            credentialsProvider);
+            credentialsProvider,
+            channelPrimer);
       } else {
-        maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options);
+        maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options, channelPrimer);
       }
 
       boolean enableLocationApi = options.isEnableLocationApi();
@@ -571,6 +575,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     } else {
       this.keyAwareChannel = null;
       this.grpcGcpChannel = null;
+      this.channelPrimer = null;
       this.databaseAdminStub = null;
       this.instanceAdminStub = null;
       this.spannerStub = null;
@@ -646,7 +651,8 @@ public class GapicSpannerRpc implements SpannerRpc {
       InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder,
       final SpannerOptions options,
       final HeaderProvider headerProviderWithUserAgent,
-      final CredentialsProvider credentialsProvider) {
+      final CredentialsProvider credentialsProvider,
+      @Nullable final DynamicChannelPoolPrimer channelPrimer) {
     InstantiatingGrpcChannelProvider.Builder cloudPathProviderBuilder =
         createBaseChannelProviderBuilder(
             options, headerProviderWithUserAgent, /* isEnableDirectAccess= */ false);
@@ -698,7 +704,8 @@ public class GapicSpannerRpc implements SpannerRpc {
           ManagedChannelBuilder<?> fallbackBuilder = cloudPathBuilder;
           if (options.isGrpcGcpExtensionEnabled()) {
             String jsonApiConfig = parseGrpcGcpApiConfig();
-            GcpManagedChannelOptions gcpOptions = grpcGcpOptionsWithMetricsAndDcp(options);
+            GcpManagedChannelOptions gcpOptions =
+                grpcGcpOptionsWithMetricsAndDcp(options, channelPrimer);
             if (gcpOptions == null) {
               gcpOptions = GcpManagedChannelOptions.newBuilder().build();
             }
@@ -731,7 +738,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder =
         createBaseChannelProviderBuilder(
             options, headerProviderWithUserAgent, isEnableDirectAccess);
-    maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options);
+    maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options, channelPrimer);
     return defaultChannelProviderBuilder;
   }
 
@@ -790,8 +797,65 @@ public class GapicSpannerRpc implements SpannerRpc {
     return defaultChannelProviderBuilder;
   }
 
+  /**
+   * Creates the primer for channels that the dynamic channel pool adds during scale-up, or {@code
+   * null} if the pool is not dynamic. The primer carries the same credentials and per-call headers
+   * as a normal Spanner call: the user-supplied {@link CallCredentialsProvider} takes precedence,
+   * otherwise the scoped credentials that GAX attaches to every call are used, and the request ids
+   * of priming RPCs come from the request id creator of this rpc. The deadline of the priming RPC
+   * is derived from the pool's prime timeout and normally stays below it; see {@link
+   * DynamicChannelPoolPrimer#rpcDeadlineFor(Duration)} for the minimum deadline that a prime
+   * timeout of two milliseconds or less yields. The sessions that the primer uses are registered by
+   * {@link #createSession(String, String, Map, Map, boolean)} whenever a multiplexed session is
+   * created successfully for the current owner of its database, which the database clients register
+   * through {@link #registerChannelPrimeOwner(String, long)} and remove through {@link
+   * #unregisterChannelPrimeOwner(String, long)}, so a session whose creation was still in flight
+   * when its database client was retired is never registered.
+   */
+  @Nullable
+  private DynamicChannelPoolPrimer createChannelPrimer(
+      SpannerOptions options, CredentialsProvider credentialsProvider) {
+    if (!options.isGrpcGcpExtensionEnabled() || !options.isDynamicChannelPoolEnabled()) {
+      return null;
+    }
+    CallCredentials defaultCallCredentials = null;
+    try {
+      Credentials credentials = credentialsProvider.getCredentials();
+      if (credentials != null) {
+        defaultCallCredentials = MoreCallCredentials.from(credentials);
+      }
+    } catch (IOException e) {
+      throw newSpannerException(e);
+    }
+    return new DynamicChannelPoolPrimer(
+        metadataProvider,
+        projectName,
+        requestIdCreator,
+        defaultCallCredentials,
+        callCredentialsProvider,
+        leaderAwareRoutingEnabled,
+        options.getSessionPoolOptions().getUseMultiplexedSession(),
+        // The options already contain the merged prime timeout, including a user-provided one.
+        DynamicChannelPoolPrimer.rpcDeadlineFor(
+            options.getGcpChannelPoolOptions().getChannelPrimeTimeout()));
+  }
+
+  /** Returns the primer of scaled-up dynamic channel pool channels, or {@code null} if none. */
+  @VisibleForTesting
+  @Nullable
+  DynamicChannelPoolPrimer getChannelPrimer() {
+    return channelPrimer;
+  }
+
   // Enhance gRPC-GCP options with metrics and dynamic channel pool configuration.
   private static GcpManagedChannelOptions grpcGcpOptionsWithMetricsAndDcp(SpannerOptions options) {
+    return grpcGcpOptionsWithMetricsAndDcp(options, /* channelPrimer= */ null);
+  }
+
+  // Enhance gRPC-GCP options with metrics and dynamic channel pool configuration, including the
+  // given primer for scaled-up channels.
+  private static GcpManagedChannelOptions grpcGcpOptionsWithMetricsAndDcp(
+      SpannerOptions options, @Nullable GcpChannelPrimer channelPrimer) {
     GcpManagedChannelOptions grpcGcpOptions =
         MoreObjects.firstNonNull(options.getGrpcGcpOptions(), new GcpManagedChannelOptions());
     GcpManagedChannelOptions.Builder optionsBuilder =
@@ -817,7 +881,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     // applied regardless of whether dynamic channel pool is enabled. In the non-DCP path, only
     // propagate the affinity cleanup configuration to avoid implicitly turning on dynamic scaling.
     if (options.isGrpcGcpExtensionEnabled()) {
-      optionsBuilder.withChannelPoolOptions(getGrpcGcpChannelPoolOptions(options));
+      optionsBuilder.withChannelPoolOptions(getGrpcGcpChannelPoolOptions(options, channelPrimer));
     }
 
     return optionsBuilder.build();
@@ -825,8 +889,26 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   @VisibleForTesting
   static GcpChannelPoolOptions getGrpcGcpChannelPoolOptions(SpannerOptions options) {
+    return getGrpcGcpChannelPoolOptions(options, /* channelPrimer= */ null);
+  }
+
+  /**
+   * Returns the grpc-gcp channel pool options. With dynamic channel pooling, the given primer is
+   * registered for scaled-up channels unless the user already supplied a primer through their own
+   * {@link GcpChannelPoolOptions}. A user-provided primer, prime timeout, and attempt count are
+   * never overridden. Without dynamic channel pooling, the pool never scales up and no primer is
+   * registered.
+   */
+  @VisibleForTesting
+  static GcpChannelPoolOptions getGrpcGcpChannelPoolOptions(
+      SpannerOptions options, @Nullable GcpChannelPrimer channelPrimer) {
     GcpChannelPoolOptions channelPoolOptions = options.getGcpChannelPoolOptions();
     if (options.isDynamicChannelPoolEnabled()) {
+      if (channelPrimer != null && channelPoolOptions.getChannelPrimer() == null) {
+        return GcpChannelPoolOptions.newBuilder(channelPoolOptions)
+            .setChannelPrimer(channelPrimer)
+            .build();
+      }
       return channelPoolOptions;
     }
 
@@ -875,13 +957,15 @@ public class GapicSpannerRpc implements SpannerRpc {
   @SuppressWarnings("rawtypes")
   private static void maybeEnableGrpcGcpExtension(
       InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder,
-      final SpannerOptions options) {
+      final SpannerOptions options,
+      @Nullable final DynamicChannelPoolPrimer channelPrimer) {
     if (!options.isGrpcGcpExtensionEnabled()) {
       return;
     }
 
     final String jsonApiConfig = parseGrpcGcpApiConfig();
-    final GcpManagedChannelOptions grpcGcpOptions = grpcGcpOptionsWithMetricsAndDcp(options);
+    final GcpManagedChannelOptions grpcGcpOptions =
+        grpcGcpOptionsWithMetricsAndDcp(options, channelPrimer);
 
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> baseConfigurator =
         defaultChannelProviderBuilder.getChannelConfigurator();
@@ -1969,7 +2053,39 @@ public class GapicSpannerRpc implements SpannerRpc {
     CreateSessionRequest request = requestBuilder.build();
     GrpcCallContext context =
         newCallContext(options, databaseName, request, SpannerGrpc.getCreateSessionMethod(), true);
-    return get(spannerStub.createSessionCallable().futureCall(request, context));
+    Session session = get(spannerStub.createSessionCallable().futureCall(request, context));
+    // Every multiplexed session, including the periodic refresh of an existing one, is created
+    // through this method, so the most recently created multiplexed session is normally a valid
+    // session for priming channels that the dynamic channel pool adds during scale-up. The
+    // registration is keyed on both the request flag and the response flag: a backend that does
+    // not echo the multiplexed flag, for example because it ignores the request flag and creates a
+    // regular session, must never turn that session into a prime session. Regular sessions are
+    // not safe for the concurrent use that priming implies. The owner ticket of the database
+    // client that issued the request is passed on, so the primer can drop the session if the
+    // client has been retired while the request was in flight; a request without an owner ticket
+    // never registers a prime session.
+    Long primeOwnerTicket = Option.CHANNEL_PRIME_OWNER.getLong(options);
+    if (channelPrimer != null
+        && isMultiplexed
+        && session.getMultiplexed()
+        && primeOwnerTicket != null) {
+      channelPrimer.registerPrimeSession(databaseName, session.getName(), primeOwnerTicket);
+    }
+    return session;
+  }
+
+  @Override
+  public void registerChannelPrimeOwner(String databaseName, long ownerTicket) {
+    if (channelPrimer != null) {
+      channelPrimer.registerPrimeOwner(databaseName, ownerTicket);
+    }
+  }
+
+  @Override
+  public void unregisterChannelPrimeOwner(String databaseName, long ownerTicket) {
+    if (channelPrimer != null) {
+      channelPrimer.unregisterPrimeOwner(databaseName, ownerTicket);
+    }
   }
 
   @Override

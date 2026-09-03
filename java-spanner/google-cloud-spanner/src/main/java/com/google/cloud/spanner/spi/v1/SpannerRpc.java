@@ -82,7 +82,14 @@ public interface SpannerRpc extends ServiceRpc {
   /** Options passed in {@link SpannerRpc} methods to control how an RPC is issued. */
   enum Option {
     CHANNEL_HINT("Channel Hint"),
-    CHANNEL_ID_AFFINITY("Channel ID Affinity");
+    CHANNEL_ID_AFFINITY("Channel ID Affinity"),
+    /**
+     * The owner ticket of the database client that issues a multiplexed {@code CreateSession}. The
+     * created session is used for priming channels that the dynamic channel pool adds during
+     * scale-up only while the ticket is the current one that was registered through {@link
+     * SpannerRpc#registerChannelPrimeOwner(String, long)} for the database. Internal.
+     */
+    CHANNEL_PRIME_OWNER("Channel Prime Owner");
 
     private final String value;
 
@@ -375,6 +382,24 @@ public interface SpannerRpc extends ServiceRpc {
   }
 
   void deleteSession(String sessionName, @Nullable Map<Option, ?> options) throws SpannerException;
+
+  /**
+   * Registers the database client with the given owner ticket as the current owner of the given
+   * database for priming channels that the dynamic channel pool adds during scale-up. A multiplexed
+   * session that is created with {@link Option#CHANNEL_PRIME_OWNER} set to the ticket is used for
+   * priming only while the ticket is the current owner ticket of its database. Called before the
+   * client issues its first multiplexed {@code CreateSession}. The default implementation does
+   * nothing.
+   */
+  default void registerChannelPrimeOwner(String databaseName, long ownerTicket) {}
+
+  /**
+   * Unregisters the database client with the given owner ticket as the owner of the given database
+   * and removes the multiplexed session that it created from the sessions that are used for priming
+   * channels that the dynamic channel pool adds during scale-up. Called when the client is
+   * invalidated or closed. The default implementation does nothing.
+   */
+  default void unregisterChannelPrimeOwner(String databaseName, long ownerTicket) {}
 
   ApiFuture<Empty> asyncDeleteSession(String sessionName, @Nullable Map<Option, ?> options)
       throws SpannerException;

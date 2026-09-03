@@ -19,39 +19,54 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.ApiFutures;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.SessionClient.SessionConsumer;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Field;
 import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.annotation.Nullable;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.ArgumentCaptor;
 import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
 public class MultiplexedSessionDatabaseClientTest {
+  private static final DatabaseId TEST_DATABASE_ID =
+      DatabaseId.of("test-project", "test-instance", "test-database");
+
   @After
   public void tearDown() throws Exception {
     clearChannelUsage();
@@ -70,6 +85,8 @@ public class MultiplexedSessionDatabaseClientTest {
     SpannerOptions spannerOptions = mock(SpannerOptions.class);
     SessionPoolOptions sessionPoolOptions = mock(SessionPoolOptions.class);
     when(sessionClient.getSpanner()).thenReturn(spanner);
+    when(sessionClient.getDatabaseId()).thenReturn(TEST_DATABASE_ID);
+    when(spanner.getRpc()).thenReturn(mock(SpannerRpc.class));
     when(spanner.getOptions()).thenReturn(spannerOptions);
     when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
     when(sessionPoolOptions.getMultiplexedSessionMaintenanceDuration())
@@ -102,7 +119,7 @@ public class MultiplexedSessionDatabaseClientTest {
                   return null;
                 })
         .when(sessionClient)
-        .asyncCreateMultiplexedSession(any(SessionConsumer.class));
+        .asyncCreateMultiplexedSession(any(SessionConsumer.class), any());
 
     // Create a client. This should get session1.
     MultiplexedSessionDatabaseClient client =
@@ -124,6 +141,110 @@ public class MultiplexedSessionDatabaseClientTest {
     when(clock.instant()).thenReturn(now.plus(Duration.ofDays(8)));
     client.getMaintainer().maintain();
     assertEquals(client.getCurrentSessionReference(), session2.getSessionReference());
+  }
+
+  @Test
+  public void testClosedClientIgnoresInitialSessionThatArrivesAfterClose() {
+    Clock clock = mock(Clock.class);
+    when(clock.instant()).thenReturn(Instant.now());
+    SessionClient sessionClient = mock(SessionClient.class);
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    SessionPoolOptions sessionPoolOptions = mock(SessionPoolOptions.class);
+    when(sessionClient.getSpanner()).thenReturn(spanner);
+    when(sessionClient.getDatabaseId()).thenReturn(TEST_DATABASE_ID);
+    when(spanner.getRpc()).thenReturn(mock(SpannerRpc.class));
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceDuration())
+        .thenReturn(Duration.ofDays(7));
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceLoopFrequency())
+        .thenReturn(Duration.ofMinutes(10));
+    when(sessionPoolOptions.getWaitForMinSessions()).thenReturn(Duration.ZERO);
+
+    SessionImpl session = mock(SessionImpl.class);
+    when(session.getSessionReference()).thenReturn(mock(SessionReference.class));
+    // Capture the consumer of the initial session without delivering a session yet.
+    AtomicReference<SessionConsumer> consumer = new AtomicReference<>();
+    doAnswer(
+            (Answer<?>)
+                invocationOnMock -> {
+                  consumer.set(invocationOnMock.getArgument(0));
+                  return null;
+                })
+        .when(sessionClient)
+        .asyncCreateMultiplexedSession(any(SessionConsumer.class), any());
+    MultiplexedSessionDatabaseClient client =
+        new MultiplexedSessionDatabaseClient(sessionClient, clock);
+    assertNotNull(consumer.get());
+
+    // The client is closed while its initial session is still being created.
+    client.close();
+    consumer.get().onSessionReady(session);
+
+    // The late session is not handed to waiters of the closed client, and the maintainer is not
+    // started for it.
+    SpannerException exception =
+        assertThrows(SpannerException.class, client::getCurrentSessionReference);
+    assertEquals(ErrorCode.FAILED_PRECONDITION, exception.getErrorCode());
+    verify(sessionPoolOptions, never()).getMultiplexedSessionMaintenanceLoopFrequency();
+  }
+
+  @Test
+  public void testClosedClientIgnoresRefreshedSessionThatArrivesAfterClose() {
+    Instant now = Instant.now();
+    Clock clock = mock(Clock.class);
+    when(clock.instant()).thenReturn(now);
+    SessionClient sessionClient = mock(SessionClient.class);
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    SessionPoolOptions sessionPoolOptions = mock(SessionPoolOptions.class);
+    when(sessionClient.getSpanner()).thenReturn(spanner);
+    when(sessionClient.getDatabaseId()).thenReturn(TEST_DATABASE_ID);
+    when(spanner.getRpc()).thenReturn(mock(SpannerRpc.class));
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceDuration())
+        .thenReturn(Duration.ofDays(7));
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceLoopFrequency())
+        .thenReturn(Duration.ofMinutes(10));
+
+    SessionImpl session1 = mock(SessionImpl.class);
+    SessionReference sessionReference1 = mock(SessionReference.class);
+    when(session1.getSessionReference()).thenReturn(sessionReference1);
+    SessionImpl session2 = mock(SessionImpl.class);
+    when(session2.getSessionReference()).thenReturn(mock(SessionReference.class));
+
+    // Deliver the initial session immediately, but capture the consumer of the refresh.
+    AtomicReference<SessionConsumer> refreshConsumer = new AtomicReference<>();
+    doAnswer(
+            (Answer<?>)
+                invocationOnMock -> {
+                  SessionConsumer consumer = invocationOnMock.getArgument(0);
+                  consumer.onSessionReady(session1);
+                  return null;
+                })
+        .doAnswer(
+            (Answer<?>)
+                invocationOnMock -> {
+                  refreshConsumer.set(invocationOnMock.getArgument(0));
+                  return null;
+                })
+        .when(sessionClient)
+        .asyncCreateMultiplexedSession(any(SessionConsumer.class), any());
+    MultiplexedSessionDatabaseClient client =
+        new MultiplexedSessionDatabaseClient(sessionClient, clock);
+    assertEquals(sessionReference1, client.getCurrentSessionReference());
+
+    // The session is due for a refresh, and the refresh is in flight when the client is closed.
+    when(clock.instant()).thenReturn(now.plus(Duration.ofDays(8)));
+    client.getMaintainer().maintain();
+    assertNotNull(refreshConsumer.get());
+    client.close();
+    refreshConsumer.get().onSessionReady(session2);
+
+    // The refreshed session of the closed client is ignored.
+    assertEquals(sessionReference1, client.getCurrentSessionReference());
   }
 
   @Test
@@ -270,6 +391,8 @@ public class MultiplexedSessionDatabaseClientTest {
     ISpan span = mock(ISpan.class);
 
     when(sessionClient.getSpanner()).thenReturn(spanner);
+    when(sessionClient.getDatabaseId()).thenReturn(TEST_DATABASE_ID);
+    when(spanner.getRpc()).thenReturn(mock(SpannerRpc.class));
     when(spanner.getOptions()).thenReturn(spannerOptions);
     when(spanner.getTracer()).thenReturn(tracer);
     when(tracer.getCurrentSpan()).thenReturn(span);
@@ -348,6 +471,80 @@ public class MultiplexedSessionDatabaseClientTest {
     }
   }
 
+  @Test
+  public void testChannelPrimeOwnerTicketIsRegisteredCarriedAndUnregistered() {
+    Clock clock = mock(Clock.class);
+    when(clock.instant()).thenReturn(Instant.now());
+    SessionClient sessionClient = mock(SessionClient.class);
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerRpc rpc = mock(SpannerRpc.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    SessionPoolOptions sessionPoolOptions = mock(SessionPoolOptions.class);
+    when(sessionClient.getSpanner()).thenReturn(spanner);
+    when(sessionClient.getDatabaseId()).thenReturn(TEST_DATABASE_ID);
+    when(spanner.getRpc()).thenReturn(rpc);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceDuration())
+        .thenReturn(Duration.ofDays(7));
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceLoopFrequency())
+        .thenReturn(Duration.ofMinutes(10));
+    SessionImpl session = mock(SessionImpl.class);
+    when(session.getSessionReference()).thenReturn(mock(SessionReference.class));
+    // Capture the options of every CreateSession without delivering a session yet.
+    List<Map<SpannerRpc.Option, ?>> createSessionOptions = new ArrayList<>();
+    AtomicReference<SessionConsumer> consumer = new AtomicReference<>();
+    doAnswer(
+            (Answer<?>)
+                invocationOnMock -> {
+                  consumer.set(invocationOnMock.getArgument(0));
+                  createSessionOptions.add(invocationOnMock.getArgument(1));
+                  return null;
+                })
+        .when(sessionClient)
+        .asyncCreateMultiplexedSession(any(SessionConsumer.class), any());
+
+    MultiplexedSessionDatabaseClient first =
+        new MultiplexedSessionDatabaseClient(sessionClient, clock);
+    MultiplexedSessionDatabaseClient second =
+        new MultiplexedSessionDatabaseClient(sessionClient, clock);
+
+    // Every client registers itself as an owner with its own ticket before its first
+    // CreateSession, and that CreateSession carries the ticket.
+    ArgumentCaptor<Long> tickets = ArgumentCaptor.forClass(Long.class);
+    verify(rpc, times(2))
+        .registerChannelPrimeOwner(eq(TEST_DATABASE_ID.getName()), tickets.capture());
+    long firstTicket = tickets.getAllValues().get(0);
+    long secondTicket = tickets.getAllValues().get(1);
+    assertNotEquals(firstTicket, secondTicket);
+    assertEquals(2, createSessionOptions.size());
+    assertEquals(
+        Long.valueOf(firstTicket),
+        SpannerRpc.Option.CHANNEL_PRIME_OWNER.getLong(createSessionOptions.get(0)));
+    assertEquals(
+        Long.valueOf(secondTicket),
+        SpannerRpc.Option.CHANNEL_PRIME_OWNER.getLong(createSessionOptions.get(1)));
+    verify(rpc, never()).unregisterChannelPrimeOwner(any(), anyLong());
+
+    // A refresh of the session carries the same ticket as the initial CreateSession.
+    consumer.get().onSessionReady(session);
+    when(clock.instant()).thenReturn(Instant.now().plus(Duration.ofDays(8)));
+    second.getMaintainer().maintain();
+    assertEquals(3, createSessionOptions.size());
+    assertEquals(
+        Long.valueOf(secondTicket),
+        SpannerRpc.Option.CHANNEL_PRIME_OWNER.getLong(createSessionOptions.get(2)));
+
+    // Closing a client unregisters exactly its own ticket, once.
+    first.close();
+    verify(rpc).unregisterChannelPrimeOwner(TEST_DATABASE_ID.getName(), firstTicket);
+    verify(rpc, never()).unregisterChannelPrimeOwner(TEST_DATABASE_ID.getName(), secondTicket);
+    first.close();
+    verify(rpc, times(1)).unregisterChannelPrimeOwner(any(), anyLong());
+    second.close();
+    verify(rpc).unregisterChannelPrimeOwner(TEST_DATABASE_ID.getName(), secondTicket);
+  }
+
   private SessionClient createSessionClient(SpannerImpl spanner) {
     return new FailingMultiplexedSessionClient(spanner);
   }
@@ -406,15 +603,13 @@ public class MultiplexedSessionDatabaseClientTest {
   }
 
   private static final class FailingMultiplexedSessionClient extends SessionClient {
-    private static final DatabaseId TEST_DATABASE_ID =
-        DatabaseId.of("test-project", "test-instance", "test-database");
-
     private FailingMultiplexedSessionClient(SpannerImpl spanner) {
       super(spanner, TEST_DATABASE_ID, new TestExecutorFactory());
     }
 
     @Override
-    void asyncCreateMultiplexedSession(SessionConsumer consumer) {
+    void asyncCreateMultiplexedSession(
+        SessionConsumer consumer, @Nullable Map<SpannerRpc.Option, ?> options) {
       consumer.onSessionCreateFailure(
           SpannerExceptionFactory.newSpannerException(ErrorCode.UNAUTHENTICATED, "test"), 1);
     }

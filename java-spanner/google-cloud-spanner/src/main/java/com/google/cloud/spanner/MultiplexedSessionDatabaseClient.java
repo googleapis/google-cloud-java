@@ -27,7 +27,9 @@ import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
 import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.cloud.spanner.SessionClient.SessionConsumer;
+import com.google.cloud.spanner.SessionClient.SessionOption;
 import com.google.cloud.spanner.SpannerException.ResourceNotFoundException;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.spanner.v1.BatchWriteResponse;
@@ -220,6 +222,18 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
 
   private final AtomicLong numSessionsReleased = new AtomicLong();
 
+  /** Source of the {@link #channelPrimeOwnerTicket owner tickets} of all clients of the process. */
+  private static final AtomicLong CHANNEL_PRIME_OWNER_TICKETS = new AtomicLong();
+
+  /**
+   * The ticket under which this client owns its database for priming channels that the dynamic
+   * channel pool adds during scale-up. The ticket is registered with the rpc before the first
+   * multiplexed session is created, carried by every CreateSession of this client, and unregistered
+   * when this client is closed, so a session that arrives after the close is never used for
+   * priming.
+   */
+  private final long channelPrimeOwnerTicket = CHANNEL_PRIME_OWNER_TICKETS.incrementAndGet();
+
   MultiplexedSessionDatabaseClient(SessionClient sessionClient) {
     this(sessionClient, Clock.systemUTC());
   }
@@ -253,15 +267,36 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
     final SettableApiFuture<SessionReference> initialSessionReferenceFuture =
         SettableApiFuture.create();
     this.multiplexedSessionReference = new AtomicReference<>(initialSessionReferenceFuture);
+    // Register as the owner of the database before the first CreateSession, so that session and
+    // every refreshed session can be attributed to this client for channel priming.
+    spanner
+        .getRpc()
+        .registerChannelPrimeOwner(
+            sessionClient.getDatabaseId().getName(), channelPrimeOwnerTicket);
 
-    Duration waitDuration =
-        sessionClient.getSpanner().getOptions().getSessionPoolOptions().getWaitForMinSessions();
-    int initialAttempts =
-        waitDuration == null || waitDuration.isZero() ? MAX_INITIAL_CREATE_SESSION_ATTEMPTS : 1;
-    asyncCreateMultiplexedSession(initialSessionReferenceFuture, initialAttempts);
-    maybeWaitForSessionCreation(
-        sessionClient.getSpanner().getOptions().getSessionPoolOptions(),
-        initialSessionReferenceFuture);
+    try {
+      Duration waitDuration =
+          sessionClient.getSpanner().getOptions().getSessionPoolOptions().getWaitForMinSessions();
+      int initialAttempts =
+          waitDuration == null || waitDuration.isZero() ? MAX_INITIAL_CREATE_SESSION_ATTEMPTS : 1;
+      asyncCreateMultiplexedSession(initialSessionReferenceFuture, initialAttempts);
+      maybeWaitForSessionCreation(
+          sessionClient.getSpanner().getOptions().getSessionPoolOptions(),
+          initialSessionReferenceFuture);
+    } catch (Throwable t) {
+      // The constructor did not complete, so the caller never gets a reference to this client and
+      // will never close it. Undo everything that was registered above: mark the client closed so
+      // that a CreateSession that is still in flight neither starts the maintainer nor is handed
+      // to a waiter, stop the maintainer, drop the channel prime owner ticket so that a late
+      // session is not recorded for priming, and release the shared channel usage.
+      close();
+      throw t;
+    }
+  }
+
+  /** The options of every CreateSession of this client: they carry the owner ticket. */
+  private Map<SpannerRpc.Option, ?> createSessionOptions() {
+    return SessionClient.optionMap(SessionOption.channelPrimeOwner(channelPrimeOwnerTicket));
   }
 
   private void asyncCreateMultiplexedSession(
@@ -270,10 +305,19 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
         new SessionConsumer() {
           @Override
           public void onSessionReady(SessionImpl session) {
+            synchronized (MultiplexedSessionDatabaseClient.this) {
+              if (isClosed) {
+                // The client was closed while the session was being created. Ignore the session:
+                // it must neither be handed to waiters of a closed client nor keep a maintainer
+                // running for a client that no longer exists.
+                sessionReferenceFuture.setException(newClosedException());
+                return;
+              }
+              // only start the maintainer if we actually managed to create a session in the first
+              // place. Starting it under the lock guarantees that a concurrent close() stops it.
+              maintainer.start();
+            }
             sessionReferenceFuture.set(session.getSessionReference());
-            // only start the maintainer if we actually managed to create a session in the first
-            // place.
-            maintainer.start();
             if (sessionClient
                 .getSpanner()
                 .getOptions()
@@ -296,16 +340,19 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
                   (ResourceNotFoundException) spannerException);
             }
             // Set the exception to trigger an error for all waiters.
-            // Then retry the session creation if the error is (potentially) transient.
+            // Then retry the session creation if the error is (potentially) transient and the
+            // client has not been closed in the meantime.
             sessionReferenceFuture.setException(t);
             if (remainingAttempts > 1
+                && !isClientClosed()
                 && RETRYABLE_ERROR_CODES.contains(spannerException.getErrorCode())) {
               final SettableApiFuture<SessionReference> future = SettableApiFuture.create();
               MultiplexedSessionDatabaseClient.this.multiplexedSessionReference.set(future);
               asyncCreateMultiplexedSession(future, remainingAttempts - 1);
             }
           }
-        });
+        },
+        createSessionOptions());
   }
 
   private void maybeWaitForSessionCreation(
@@ -363,6 +410,15 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
     return resourceNotFoundException.get() == null;
   }
 
+  private synchronized boolean isClientClosed() {
+    return isClosed;
+  }
+
+  private static SpannerException newClosedException() {
+    return SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "This client has been closed");
+  }
+
   AtomicLong getNumSessionsAcquired() {
     return this.numSessionsAcquired;
   }
@@ -381,6 +437,13 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
       }
     }
     if (releaseChannelUsage) {
+      // The multiplexed session is no longer maintained, so it must no longer be used for priming
+      // dynamic channel pool channels, and a CreateSession of this client that is still in flight
+      // must not register its session either.
+      spanner
+          .getRpc()
+          .unregisterChannelPrimeOwner(
+              sessionClient.getDatabaseId().getName(), channelPrimeOwnerTicket);
       synchronized (CHANNEL_USAGE) {
         SharedChannelUsage sharedChannelUsage = CHANNEL_USAGE.get(this.spanner);
         if (sharedChannelUsage != null) {
@@ -659,6 +722,11 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
             new SessionConsumer() {
               @Override
               public void onSessionReady(SessionImpl session) {
+                if (isClientClosed()) {
+                  // The client was closed while the session was being refreshed. The refreshed
+                  // session belongs to a client that no longer exists and is ignored.
+                  return;
+                }
                 multiplexedSessionReference.set(
                     ApiFutures.immediateFuture(session.getSessionReference()));
                 expirationDate.set(
@@ -673,7 +741,8 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
                 // we continue to use the session that has passed its expiration date for now, and
                 // that a new attempt at creating a new session will be done in 10 minutes from now.
               }
-            });
+            },
+            createSessionOptions());
       }
     }
   }

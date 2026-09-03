@@ -34,6 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.atomic.AtomicInteger;
+import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
 /** Client for creating single sessions and batches of sessions. */
@@ -92,6 +93,10 @@ class SessionClient implements AutoCloseable {
 
     static SessionOption channelAffinityRef(ChannelAffinityRef channelAffinityRef) {
       return new SessionOption(SpannerRpc.Option.CHANNEL_ID_AFFINITY, channelAffinityRef);
+    }
+
+    static SessionOption channelPrimeOwner(long ownerTicket) {
+      return new SessionOption(SpannerRpc.Option.CHANNEL_PRIME_OWNER, ownerTicket);
     }
 
     SpannerRpc.Option rpcOption() {
@@ -264,8 +269,19 @@ class SessionClient implements AutoCloseable {
    * @param consumer The {@link SessionConsumer} to use for callbacks when sessions are available.
    */
   void createMultiplexedSession(SessionConsumer consumer) {
+    createMultiplexedSession(consumer, /* options= */ null);
+  }
+
+  /**
+   * Creates a multiplexed session with the given {@link SpannerRpc.Option options} for the {@code
+   * CreateSession} call and returns it to the given {@link SessionConsumer}.
+   *
+   * @see #createMultiplexedSession(SessionConsumer)
+   */
+  void createMultiplexedSession(
+      SessionConsumer consumer, @Nullable Map<SpannerRpc.Option, ?> options) {
     try {
-      SessionImpl sessionImpl = createMultiplexedSession();
+      SessionImpl sessionImpl = createMultiplexedSession(options);
       consumer.onSessionReady(sessionImpl);
     } catch (Throwable t) {
       consumer.onSessionCreateFailure(t, 1);
@@ -277,6 +293,16 @@ class SessionClient implements AutoCloseable {
    * GRPC channel. In case of an error during the gRPC calls, an exception will be thrown.
    */
   SessionImpl createMultiplexedSession() {
+    return createMultiplexedSession((Map<SpannerRpc.Option, ?>) null);
+  }
+
+  /**
+   * Creates a multiplexed session with the given {@link SpannerRpc.Option options} for the {@code
+   * CreateSession} call and returns it.
+   *
+   * @see #createMultiplexedSession()
+   */
+  SessionImpl createMultiplexedSession(@Nullable Map<SpannerRpc.Option, ?> options) {
     ISpan span =
         spanner
             .getTracer()
@@ -289,7 +315,7 @@ class SessionClient implements AutoCloseable {
                   db.getName(),
                   spanner.getOptions().getDatabaseRole(),
                   spanner.getOptions().getSessionLabels(),
-                  null,
+                  options,
                   true);
       SessionImpl sessionImpl =
           new SessionImpl(
@@ -319,10 +345,13 @@ class SessionClient implements AutoCloseable {
    * SessionConsumer#onSessionCreateFailure(Throwable, int)} call with the error.
    *
    * @param consumer The {@link SessionConsumer} to use for callbacks when sessions are available.
+   * @param options The {@link SpannerRpc.Option options} of the {@code CreateSession} call, or
+   *     {@code null} for none.
    */
-  void asyncCreateMultiplexedSession(SessionConsumer consumer) {
+  void asyncCreateMultiplexedSession(
+      SessionConsumer consumer, @Nullable Map<SpannerRpc.Option, ?> options) {
     try {
-      executor.submit(new CreateMultiplexedSessionsRunnable(consumer));
+      executor.submit(new CreateMultiplexedSessionsRunnable(consumer, options));
     } catch (Throwable t) {
       consumer.onSessionCreateFailure(t, 1);
     }
@@ -330,15 +359,18 @@ class SessionClient implements AutoCloseable {
 
   private final class CreateMultiplexedSessionsRunnable implements Runnable {
     private final SessionConsumer consumer;
+    @Nullable private final Map<SpannerRpc.Option, ?> options;
 
-    private CreateMultiplexedSessionsRunnable(SessionConsumer consumer) {
+    private CreateMultiplexedSessionsRunnable(
+        SessionConsumer consumer, @Nullable Map<SpannerRpc.Option, ?> options) {
       Preconditions.checkNotNull(consumer);
       this.consumer = consumer;
+      this.options = options;
     }
 
     @Override
     public void run() {
-      createMultiplexedSession(consumer);
+      createMultiplexedSession(consumer, options);
     }
   }
 

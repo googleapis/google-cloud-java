@@ -20,8 +20,10 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
@@ -41,6 +43,7 @@ import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.grpc.GcpChannelPrimer;
 import com.google.cloud.grpc.GcpManagedChannel;
 import com.google.cloud.grpc.GcpManagedChannel.ChannelAffinityRef;
 import com.google.cloud.grpc.GcpManagedChannelOptions;
@@ -64,11 +67,15 @@ import com.google.cloud.spanner.SpannerOptions.CallContextConfigurator;
 import com.google.cloud.spanner.SpannerOptionsHelper;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.TransactionRunner;
+import com.google.cloud.spanner.XGoogSpannerRequestId;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc.AdminRequestsLimitExceededRetryAlgorithm;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.Futures;
 import com.google.protobuf.ListValue;
 import com.google.rpc.ErrorInfo;
+import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ResultSetMetadata;
@@ -92,6 +99,7 @@ import io.grpc.auth.MoreCallCredentials;
 import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import io.grpc.protobuf.lite.ProtoLiteUtils;
+import io.grpc.stub.StreamObserver;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
 import io.opentelemetry.context.propagation.ContextPropagators;
@@ -105,16 +113,19 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.lang.reflect.Modifier;
 import java.net.InetSocketAddress;
+import java.net.URLEncoder;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
@@ -123,6 +134,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.BooleanSupplier;
+import javax.annotation.Nullable;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -204,6 +217,9 @@ public class GapicSpannerRpcTest {
   private static InetSocketAddress address;
   private static final Map<SpannerRpc.Option, Object> optionsMap = new HashMap<>();
   private static Metadata lastSeenHeaders;
+  // Headers of every unary ExecuteSql call, which is the RPC that channel priming uses.
+  private static final List<Map<String, List<String>>> executeSqlHeaders =
+      new CopyOnWriteArrayList<>();
   private static String defaultUserAgent;
   private static Spanner spanner;
   private static boolean isRouteToLeader;
@@ -248,6 +264,9 @@ public class GapicSpannerRpcTest {
                       Metadata headers,
                       ServerCallHandler<ReqT, RespT> next) {
                     lastSeenHeaders = headers;
+                    if (call.getMethodDescriptor().equals(SpannerGrpc.getExecuteSqlMethod())) {
+                      executeSqlHeaders.add(copyAsciiHeaders(headers));
+                    }
                     String auth =
                         headers.get(Key.of("authorization", Metadata.ASCII_STRING_MARSHALLER));
                     assertThat(auth).isEqualTo("Bearer " + VARIABLE_OAUTH_TOKEN);
@@ -302,6 +321,354 @@ public class GapicSpannerRpcTest {
     isRouteToLeader = false;
     isEndToEndTracing = false;
     isTraceContextPresent = false;
+    executeSqlHeaders.clear();
+  }
+
+  /** Copies all values of every ASCII header, so duplicated headers remain visible. */
+  private static Map<String, List<String>> copyAsciiHeaders(Metadata headers) {
+    Map<String, List<String>> copy = new HashMap<>();
+    for (String key : headers.keys()) {
+      if (!key.endsWith(Metadata.BINARY_HEADER_SUFFIX)) {
+        Iterable<String> values = headers.getAll(Key.of(key, Metadata.ASCII_STRING_MARSHALLER));
+        copy.put(key, values == null ? ImmutableList.of() : ImmutableList.copyOf(values));
+      }
+    }
+    return copy;
+  }
+
+  private static void awaitCondition(BooleanSupplier condition, Duration timeout)
+      throws InterruptedException {
+    long deadline = System.nanoTime() + timeout.toNanos();
+    while (!condition.getAsBoolean()) {
+      if (System.nanoTime() > deadline) {
+        throw new AssertionError("Condition not met within " + timeout);
+      }
+      Thread.sleep(10L);
+    }
+  }
+
+  private static GapicSpannerRpc getRpc(Spanner spanner) throws Exception {
+    java.lang.reflect.Method method = SpannerOptions.class.getDeclaredMethod("getSpannerRpcV1");
+    method.setAccessible(true);
+    return (GapicSpannerRpc) method.invoke(spanner.getOptions());
+  }
+
+  /** The CreateSession options of a database client with the given prime owner ticket. */
+  private static Map<Option, ?> primeOwner(long ownerTicket) {
+    return ImmutableMap.of(Option.CHANNEL_PRIME_OWNER, ownerTicket);
+  }
+
+  private static void registerPrimeStatementResult() {
+    mockSpanner.putStatementResult(
+        StatementResult.query(
+            Statement.of(DynamicChannelPoolPrimer.PRIME_SQL),
+            com.google.spanner.v1.ResultSet.newBuilder()
+                .addRows(
+                    ListValue.newBuilder()
+                        .addValues(
+                            com.google.protobuf.Value.newBuilder().setStringValue("1").build())
+                        .build())
+                .setMetadata(SELECT1AND2_METADATA)
+                .build()));
+  }
+
+  private static List<ExecuteSqlRequest> primeRequests() {
+    List<ExecuteSqlRequest> requests = new ArrayList<>();
+    for (ExecuteSqlRequest request : mockSpanner.getRequestsOfType(ExecuteSqlRequest.class)) {
+      if (request.getSql().equals(DynamicChannelPoolPrimer.PRIME_SQL)) {
+        requests.add(request);
+      }
+    }
+    return requests;
+  }
+
+  @Test
+  public void testChannelPoolOptionsRegisterPrimerOnlyWithDynamicChannelPool() {
+    GcpChannelPrimer primer = channel -> Futures.immediateFuture(null);
+
+    SpannerOptions dcpOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .build();
+    GcpChannelPoolOptions withPrimer =
+        GapicSpannerRpc.getGrpcGcpChannelPoolOptions(dcpOptions, primer);
+    assertSame(primer, withPrimer.getChannelPrimer());
+    assertEquals(
+        SpannerOptions.DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_TIMEOUT,
+        withPrimer.getChannelPrimeTimeout());
+    assertEquals(
+        SpannerOptions.DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS,
+        withPrimer.getChannelPrimeMaxAttempts());
+    // The other dynamic pool settings are retained.
+    assertEquals(
+        dcpOptions.getGcpChannelPoolOptions().getMaxRpcPerChannel(),
+        withPrimer.getMaxRpcPerChannel());
+    assertNull(GapicSpannerRpc.getGrpcGcpChannelPoolOptions(dcpOptions, null).getChannelPrimer());
+    assertNull(GapicSpannerRpc.getGrpcGcpChannelPoolOptions(dcpOptions).getChannelPrimer());
+
+    SpannerOptions staticOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .enableGrpcGcpExtension()
+            .disableDynamicChannelPool()
+            .setNumChannels(2)
+            .build();
+    assertNull(
+        GapicSpannerRpc.getGrpcGcpChannelPoolOptions(staticOptions, primer).getChannelPrimer());
+  }
+
+  @Test
+  public void testChannelPoolOptionsNeverOverrideUserProvidedPrimer() {
+    GcpChannelPrimer userPrimer = channel -> Futures.immediateFuture(null);
+    GcpChannelPrimer spannerPrimer = channel -> Futures.immediateFuture(null);
+    Duration userTimeout = Duration.ofSeconds(3);
+    int userAttempts = 7;
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .setGcpChannelPoolOptions(
+                GcpChannelPoolOptions.newBuilder()
+                    .setChannelPrimer(userPrimer)
+                    .setChannelPrimeTimeout(userTimeout)
+                    .setChannelPrimeMaxAttempts(userAttempts)
+                    .build())
+            .build();
+
+    GcpChannelPoolOptions poolOptions =
+        GapicSpannerRpc.getGrpcGcpChannelPoolOptions(options, spannerPrimer);
+
+    assertSame(userPrimer, poolOptions.getChannelPrimer());
+    assertEquals(userTimeout, poolOptions.getChannelPrimeTimeout());
+    assertEquals(userAttempts, poolOptions.getChannelPrimeMaxAttempts());
+  }
+
+  @Test
+  public void testUserProvidedPrimeSettingsSurviveWithoutUserPrimer() {
+    GcpChannelPrimer spannerPrimer = channel -> Futures.immediateFuture(null);
+    Duration userTimeout = Duration.ofSeconds(4);
+    int userAttempts = 2;
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .setGcpChannelPoolOptions(
+                GcpChannelPoolOptions.newBuilder()
+                    .setChannelPrimeTimeout(userTimeout)
+                    .setChannelPrimeMaxAttempts(userAttempts)
+                    .build())
+            .build();
+
+    GcpChannelPoolOptions poolOptions =
+        GapicSpannerRpc.getGrpcGcpChannelPoolOptions(options, spannerPrimer);
+
+    assertSame(spannerPrimer, poolOptions.getChannelPrimer());
+    assertEquals(userTimeout, poolOptions.getChannelPrimeTimeout());
+    assertEquals(userAttempts, poolOptions.getChannelPrimeMaxAttempts());
+  }
+
+  @Test
+  public void testRpcCreatesPrimerOnlyWithDynamicChannelPool() {
+    GapicSpannerRpc dcpRpc =
+        new GapicSpannerRpc(
+            createSpannerOptions().toBuilder()
+                .enableGrpcGcpExtension()
+                .enableDynamicChannelPool()
+                .build(),
+            true);
+    try {
+      assertNotNull(dcpRpc.getChannelPrimer());
+      assertNotNull(findGrpcGcpChannel(dcpRpc));
+    } finally {
+      dcpRpc.shutdown();
+    }
+
+    GapicSpannerRpc staticPoolRpc =
+        new GapicSpannerRpc(
+            createSpannerOptions().toBuilder()
+                .enableGrpcGcpExtension()
+                .disableDynamicChannelPool()
+                .setNumChannels(1)
+                .build(),
+            true);
+    try {
+      assertNull(staticPoolRpc.getChannelPrimer());
+    } finally {
+      staticPoolRpc.shutdown();
+    }
+
+    GapicSpannerRpc gaxPoolRpc =
+        new GapicSpannerRpc(
+            createSpannerOptions().toBuilder()
+                .disableGrpcGcpExtension()
+                .enableDynamicChannelPool()
+                .build(),
+            true);
+    try {
+      assertNull(gaxPoolRpc.getChannelPrimer());
+    } finally {
+      gaxPoolRpc.shutdown();
+    }
+  }
+
+  @Test
+  public void testPrimerRpcDeadlineFollowsPoolPrimeTimeout() {
+    SpannerOptions defaultTimeoutOptions =
+        createSpannerOptions().toBuilder()
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .build();
+    assertEquals(
+        SpannerOptions.DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_TIMEOUT,
+        defaultTimeoutOptions.getGcpChannelPoolOptions().getChannelPrimeTimeout());
+    GapicSpannerRpc defaultTimeoutRpc = new GapicSpannerRpc(defaultTimeoutOptions, true);
+    try {
+      assertEquals(
+          DynamicChannelPoolPrimer.MAX_RPC_DEADLINE,
+          defaultTimeoutRpc.getChannelPrimer().getRpcDeadline());
+    } finally {
+      defaultTimeoutRpc.shutdown();
+    }
+
+    // A user-provided prime timeout below the maximum RPC deadline pulls the RPC deadline down
+    // with it, so the RPC always fails before the pool times out the attempt.
+    Duration userTimeout = Duration.ofSeconds(3);
+    SpannerOptions shortTimeoutOptions =
+        createSpannerOptions().toBuilder()
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .setGcpChannelPoolOptions(
+                GcpChannelPoolOptions.newBuilder().setChannelPrimeTimeout(userTimeout).build())
+            .build();
+    assertEquals(
+        userTimeout, shortTimeoutOptions.getGcpChannelPoolOptions().getChannelPrimeTimeout());
+    GapicSpannerRpc shortTimeoutRpc = new GapicSpannerRpc(shortTimeoutOptions, true);
+    try {
+      GcpManagedChannel pool = findGrpcGcpChannel(shortTimeoutRpc);
+      assertNotNull(pool);
+      Duration rpcDeadline = shortTimeoutRpc.getChannelPrimer().getRpcDeadline();
+      assertEquals(userTimeout.minus(DynamicChannelPoolPrimer.RPC_DEADLINE_MARGIN), rpcDeadline);
+      assertTrue(rpcDeadline.compareTo(userTimeout) < 0);
+    } finally {
+      shortTimeoutRpc.shutdown();
+    }
+  }
+
+  @Test
+  public void testDynamicChannelPoolPrimesScaledUpChannelsWithSelectOne() throws Exception {
+    registerPrimeStatementResult();
+    // Keep the load queries open long enough to trigger a scale-up, and make the priming query
+    // slow enough to observe that the channel is not published before it succeeds.
+    mockSpanner.setExecuteStreamingSqlExecutionTime(
+        SimulatedExecutionTime.ofMinimumAndRandomTime(3000, 0));
+    mockSpanner.setExecuteSqlExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(1000, 0));
+    SpannerOptions options =
+        createSpannerOptions().toBuilder()
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .enableLeaderAwareRouting()
+            .setGcpChannelPoolOptions(
+                GcpChannelPoolOptions.newBuilder()
+                    .setInitSize(1)
+                    .setMinSize(1)
+                    .setMaxSize(4)
+                    .setDynamicScaling(1, 2, Duration.ofMinutes(3))
+                    .build())
+            .build();
+    ExecutorService executor = Executors.newFixedThreadPool(8);
+    try (Spanner spanner = options.getService()) {
+      GapicSpannerRpc rpc = getRpc(spanner);
+      assertNotNull(rpc.getChannelPrimer());
+      GcpManagedChannel pool = findGrpcGcpChannel(rpc);
+      assertNotNull(pool);
+      assertEquals(1, pool.getNumberOfChannels());
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+
+      // Six concurrent streams on one channel with maxRpcPerChannel=2 force a scale-up.
+      List<Future<Long>> loads = new ArrayList<>();
+      for (int i = 0; i < 6; i++) {
+        loads.add(
+            executor.submit(
+                () -> {
+                  long rows = 0;
+                  try (ResultSet resultSet = client.singleUse().executeQuery(SELECT1AND2)) {
+                    while (resultSet.next()) {
+                      rows++;
+                    }
+                  }
+                  return rows;
+                }));
+      }
+
+      awaitCondition(() -> !primeRequests().isEmpty(), Duration.ofSeconds(15));
+      // The priming query is still running (it takes at least one second), so the scaled-up
+      // channel has not been published yet.
+      assertEquals(1, pool.getNumberOfChannels());
+      awaitCondition(() -> pool.getNumberOfChannels() > 1, Duration.ofSeconds(15));
+      for (Future<Long> load : loads) {
+        assertEquals(2L, load.get().longValue());
+      }
+
+      // Every priming query used the multiplexed session, which is the session that the
+      // single-use load queries used as well.
+      String multiplexedSession = null;
+      for (ExecuteSqlRequest request : mockSpanner.getRequestsOfType(ExecuteSqlRequest.class)) {
+        if (request.getSql().equals(SELECT1AND2.getSql())) {
+          multiplexedSession = request.getSession();
+          break;
+        }
+      }
+      assertNotNull(multiplexedSession);
+      // The mock keeps multiplexed sessions apart from regular sessions.
+      assertFalse(mockSpanner.getSessions().containsKey(multiplexedSession));
+      boolean multiplexedSessionCreated = false;
+      for (CreateSessionRequest request :
+          mockSpanner.getRequestsOfType(CreateSessionRequest.class)) {
+        multiplexedSessionCreated |= request.getSession().getMultiplexed();
+      }
+      assertTrue(multiplexedSessionCreated);
+      List<ExecuteSqlRequest> primes = primeRequests();
+      assertThat(primes).isNotEmpty();
+      for (ExecuteSqlRequest prime : primes) {
+        assertEquals(multiplexedSession, prime.getSession());
+        assertFalse(prime.hasTransaction());
+      }
+      assertEquals(primes.size(), pool.getNumberOfChannels() - 1);
+
+      // The priming query carries the same credentials and headers as a normal call, and every
+      // header exactly once: the fixed headers come from the delegate channel and the per-call
+      // headers from the primer.
+      assertEquals(primes.size(), executeSqlHeaders.size());
+      Set<String> requestIds = new HashSet<>();
+      for (Map<String, List<String>> headers : executeSqlHeaders) {
+        assertThat(headers.get("authorization")).containsExactly("Bearer " + VARIABLE_OAUTH_TOKEN);
+        assertThat(headers.get("x-goog-api-client")).hasSize(1);
+        assertThat(headers.get("x-goog-api-client").get(0))
+            .contains(ServiceOptions.getGoogApiClientLibName() + "/");
+        assertThat(headers.get(ApiClientHeaderProvider.getDefaultResourceHeaderKey()))
+            .containsExactly("projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]");
+        assertThat(headers.get("x-goog-request-params"))
+            .containsExactly("session=" + URLEncoder.encode(multiplexedSession, "UTF-8"));
+        assertThat(headers.get("x-goog-spanner-route-to-leader")).containsExactly("true");
+        // The request id uses the client id of the rpc, the unknown channel 0 because the channel
+        // is not part of the pool yet, and attempt 1 because the pool invokes prime() per attempt.
+        assertThat(headers.get(XGoogSpannerRequestId.REQUEST_ID_HEADER_NAME)).hasSize(1);
+        String requestId = headers.get(XGoogSpannerRequestId.REQUEST_ID_HEADER_NAME).get(0);
+        assertTrue(requestId, requestIds.add(requestId));
+        String[] parts = requestId.split("\\.");
+        assertEquals(requestId, 6, parts.length);
+        assertEquals(requestId, String.valueOf(rpc.getRequestIdCreator().getClientId()), parts[2]);
+        assertEquals(requestId, "0", parts[3]);
+        assertEquals(requestId, "1", parts[5]);
+      }
+    } finally {
+      executor.shutdownNow();
+    }
   }
 
   @Test
@@ -1020,6 +1387,433 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
+  public void testMultiplexedCreateSessionRecordsLatestPrimeSession() {
+    SpannerOptions options =
+        createSpannerOptions().toBuilder()
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, true);
+    try {
+      DynamicChannelPoolPrimer primer = rpc.getChannelPrimer();
+      assertNotNull(primer);
+      assertNull(primer.getPrimeSessionName());
+      rpc.registerChannelPrimeOwner("DATABASE_NAME", 1L);
+
+      // A regular session never becomes the prime session.
+      Session regular = rpc.createSession("DATABASE_NAME", null, null, primeOwner(1L), false);
+      assertFalse(regular.getMultiplexed());
+      assertNull(primer.getPrimeSessionName());
+
+      // A multiplexed session that is created without an owner ticket, for example by a batch
+      // client, never becomes the prime session either.
+      Session unowned = rpc.createSession("DATABASE_NAME", null, null, null, true);
+      assertTrue(unowned.getMultiplexed());
+      assertNull(primer.getPrimeSessionName());
+
+      // The first successfully created multiplexed session of the owner becomes the prime session.
+      Session first = rpc.createSession("DATABASE_NAME", null, null, primeOwner(1L), true);
+      assertTrue(first.getMultiplexed());
+      assertEquals(first.getName(), primer.getPrimeSessionName());
+
+      // A failed multiplexed CreateSession leaves the prime session untouched.
+      mockSpanner.setCreateSessionExecutionTime(
+          SimulatedExecutionTime.ofException(
+              Status.PERMISSION_DENIED.withDescription("test").asRuntimeException()));
+      SpannerException exception =
+          assertThrows(
+              SpannerException.class,
+              () -> rpc.createSession("DATABASE_NAME", null, null, primeOwner(1L), true));
+      assertEquals(ErrorCode.PERMISSION_DENIED, exception.getErrorCode());
+      assertEquals(first.getName(), primer.getPrimeSessionName());
+
+      // The periodic refresh of the multiplexed session carries the same ticket and replaces the
+      // prime session of its database.
+      Session refreshed = rpc.createSession("DATABASE_NAME", null, null, primeOwner(1L), true);
+      assertTrue(refreshed.getMultiplexed());
+      assertNotEquals(first.getName(), refreshed.getName());
+      assertEquals(refreshed.getName(), primer.getPrimeSessionName());
+      assertThat(primer.getPrimeSessions()).hasSize(1);
+
+      // The multiplexed session of another database client replaces the prime session as well.
+      rpc.registerChannelPrimeOwner("OTHER_DATABASE_NAME", 2L);
+      Session second = rpc.createSession("OTHER_DATABASE_NAME", null, null, primeOwner(2L), true);
+      assertTrue(second.getMultiplexed());
+      assertNotEquals(refreshed.getName(), second.getName());
+      assertEquals(second.getName(), primer.getPrimeSessionName());
+      assertThat(primer.getPrimeSessions()).hasSize(2);
+    } finally {
+      rpc.shutdown();
+    }
+  }
+
+  @Test
+  public void testChurnOfDatabaseClientsLeavesNoPrimeOwnersOrSessionsBehind() {
+    SpannerOptions options =
+        createSpannerOptions().toBuilder()
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, true);
+    try {
+      DynamicChannelPoolPrimer primer = rpc.getChannelPrimer();
+      assertNotNull(primer);
+      for (int i = 0; i < 50; i++) {
+        String databaseName = "projects/p/instances/i/databases/d" + i;
+        long ticket = 100L + i;
+        rpc.registerChannelPrimeOwner(databaseName, ticket);
+        Session session = rpc.createSession(databaseName, null, null, primeOwner(ticket), true);
+        assertEquals(session.getName(), primer.getPrimeSessionName());
+        assertThat(primer.getPrimeOwners()).containsExactly(databaseName, ticket);
+        rpc.unregisterChannelPrimeOwner(databaseName, ticket);
+        assertThat(primer.getPrimeOwners()).isEmpty();
+        assertThat(primer.getPrimeSessions()).isEmpty();
+      }
+    } finally {
+      rpc.shutdown();
+    }
+  }
+
+  @Test
+  public void testDynamicChannelPoolPrimingFallsBackToOlderSessionWhenNewestIsInvalid()
+      throws Exception {
+    registerPrimeStatementResult();
+    // Keep the load queries open long enough to trigger a scale-up.
+    mockSpanner.setExecuteStreamingSqlExecutionTime(
+        SimulatedExecutionTime.ofMinimumAndRandomTime(3000, 0));
+    SpannerOptions options =
+        createSpannerOptions().toBuilder()
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .setGcpChannelPoolOptions(
+                GcpChannelPoolOptions.newBuilder()
+                    .setInitSize(1)
+                    .setMinSize(1)
+                    .setMaxSize(4)
+                    .setDynamicScaling(1, 2, Duration.ofMinutes(3))
+                    .build())
+            .build();
+    ExecutorService executor = Executors.newFixedThreadPool(8);
+    try (Spanner spanner = options.getService()) {
+      GapicSpannerRpc rpc = getRpc(spanner);
+      DynamicChannelPoolPrimer primer = rpc.getChannelPrimer();
+      assertNotNull(primer);
+      GcpManagedChannel pool = findGrpcGcpChannel(rpc);
+      assertNotNull(pool);
+
+      // The older database client registers its multiplexed session first.
+      DatabaseClient older =
+          spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+      awaitCondition(() -> primer.getPrimeSessionName() != null, Duration.ofSeconds(15));
+      String olderSession = primer.getPrimeSessionName();
+      assertThat(olderSession)
+          .startsWith("projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE]/");
+      // The newer database client registers the session that priming prefers.
+      spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE2]"));
+      awaitCondition(() -> primer.getPrimeSessions().size() == 2, Duration.ofSeconds(15));
+      String newestSession = primer.getPrimeSessionName();
+      assertThat(newestSession)
+          .startsWith("projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE2]/");
+      // The newest session becomes invalid on the backend: the mock returns NOT_FOUND for it.
+      rpc.deleteSession(newestSession, null);
+
+      // Six concurrent streams on one channel with maxRpcPerChannel=2 force a scale-up.
+      List<Future<Long>> loads = new ArrayList<>();
+      for (int i = 0; i < 6; i++) {
+        loads.add(
+            executor.submit(
+                () -> {
+                  long rows = 0;
+                  try (ResultSet resultSet = older.singleUse().executeQuery(SELECT1AND2)) {
+                    while (resultSet.next()) {
+                      rows++;
+                    }
+                  }
+                  return rows;
+                }));
+      }
+
+      // Priming recovers on the older session within the pool's own retries: the first attempt
+      // of every channel of the scale-up event uses the newest session, fails with NOT_FOUND and
+      // evicts it, and the retries after the pool's backoff all use the older session.
+      awaitCondition(() -> pool.getNumberOfChannels() > 1, Duration.ofSeconds(15));
+      for (Future<Long> load : loads) {
+        assertEquals(2L, load.get().longValue());
+      }
+      List<ExecuteSqlRequest> primes = primeRequests();
+      assertThat(primes.size()).isAtLeast(2);
+      assertEquals(newestSession, primes.get(0).getSession());
+      int newestSessionPrimes = 0;
+      int olderSessionPrimes = 0;
+      for (ExecuteSqlRequest prime : primes) {
+        if (prime.getSession().equals(newestSession)) {
+          // The pool may add more than one channel per scale-up event, and their first attempts
+          // all start before the first failure evicts the newest session. No attempt uses the
+          // newest session once a retry has started.
+          assertEquals(0, olderSessionPrimes);
+          newestSessionPrimes++;
+        } else {
+          assertEquals(olderSession, prime.getSession());
+          olderSessionPrimes++;
+        }
+      }
+      assertThat(newestSessionPrimes).isAtLeast(1);
+      // Every scaled-up channel was published after one successful retry on the older session.
+      assertEquals(pool.getNumberOfChannels() - 1, olderSessionPrimes);
+      assertEquals(olderSession, primer.getPrimeSessionName());
+      assertThat(primer.getPrimeSessions()).hasSize(1);
+    } finally {
+      executor.shutdownNow();
+    }
+  }
+
+  @Test
+  public void testLateMultiplexedCreateSessionAfterUnregisterNeverRecordsPrimeSession()
+      throws Exception {
+    SpannerOptions options =
+        createSpannerOptions().toBuilder()
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, true);
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try {
+      DynamicChannelPoolPrimer primer = rpc.getChannelPrimer();
+      assertNotNull(primer);
+      rpc.registerChannelPrimeOwner("DATABASE_NAME", 1L);
+      Session initial = rpc.createSession("DATABASE_NAME", null, null, primeOwner(1L), true);
+      assertEquals(initial.getName(), primer.getPrimeSessionName());
+
+      // A refresh of the multiplexed session is still in flight when the database client that
+      // owns it is retired, which unregisters it as the owner of its database.
+      mockSpanner.freeze();
+      Future<Session> refresh =
+          executor.submit(
+              () -> rpc.createSession("DATABASE_NAME", null, null, primeOwner(1L), true));
+      awaitCondition(
+          () -> mockSpanner.getRequestsOfType(CreateSessionRequest.class).size() == 2,
+          Duration.ofSeconds(15));
+      rpc.unregisterChannelPrimeOwner("DATABASE_NAME", 1L);
+      assertNull(primer.getPrimeSessionName());
+      assertThat(primer.getPrimeOwners()).isEmpty();
+
+      // The late response of the retired client is dropped.
+      mockSpanner.unfreeze();
+      Session late = refresh.get(15, TimeUnit.SECONDS);
+      assertTrue(late.getMultiplexed());
+      assertNull(primer.getPrimeSessionName());
+
+      // The replacement client registers its session normally, and it stays selected.
+      rpc.registerChannelPrimeOwner("DATABASE_NAME", 2L);
+      Session replacement = rpc.createSession("DATABASE_NAME", null, null, primeOwner(2L), true);
+      assertEquals(replacement.getName(), primer.getPrimeSessionName());
+      assertThat(primer.getPrimeSessions()).hasSize(1);
+      // An even later response of the retired client, for example a retried refresh, finds the
+      // replacement as the owner and is dropped as well.
+      Session evenLater = rpc.createSession("DATABASE_NAME", null, null, primeOwner(1L), true);
+      assertTrue(evenLater.getMultiplexed());
+      assertEquals(replacement.getName(), primer.getPrimeSessionName());
+      assertThat(primer.getPrimeSessions()).hasSize(1);
+    } finally {
+      mockSpanner.unfreeze();
+      executor.shutdownNow();
+      rpc.shutdown();
+    }
+  }
+
+  @Test
+  public void testDynamicChannelPoolPrimingRotatesToOlderSessionWhenNewestIsDenied()
+      throws Exception {
+    // The newest database rejects the priming query with PERMISSION_DENIED, for example because
+    // the caller lost access to it. The mock records the denied primes itself, because it does not
+    // pass them on to the regular handler.
+    String deniedDatabasePrefix = "projects/[PROJECT]/instances/[INSTANCE]/databases/[DATABASE2]/";
+    List<ExecuteSqlRequest> deniedPrimes = new CopyOnWriteArrayList<>();
+    MockSpannerServiceImpl denyingSpanner =
+        new MockSpannerServiceImpl() {
+          @Override
+          public void executeSql(
+              ExecuteSqlRequest request,
+              StreamObserver<com.google.spanner.v1.ResultSet> responseObserver) {
+            if (request.getSql().equals(DynamicChannelPoolPrimer.PRIME_SQL)
+                && request.getSession().startsWith(deniedDatabasePrefix)) {
+              deniedPrimes.add(request);
+              responseObserver.onError(
+                  Status.PERMISSION_DENIED
+                      .withDescription("Caller is missing IAM permission spanner.databases.select")
+                      .asRuntimeException());
+              return;
+            }
+            super.executeSql(request, responseObserver);
+          }
+        };
+    denyingSpanner.setAbortProbability(0.0D);
+    denyingSpanner.putStatementResult(StatementResult.query(SELECT1AND2, SELECT1_RESULTSET));
+    denyingSpanner.putStatementResult(
+        StatementResult.query(
+            Statement.of(DynamicChannelPoolPrimer.PRIME_SQL),
+            com.google.spanner.v1.ResultSet.newBuilder()
+                .addRows(
+                    ListValue.newBuilder()
+                        .addValues(
+                            com.google.protobuf.Value.newBuilder().setStringValue("1").build())
+                        .build())
+                .setMetadata(SELECT1AND2_METADATA)
+                .build()));
+    // Keep the load queries open long enough to trigger a scale-up.
+    denyingSpanner.setExecuteStreamingSqlExecutionTime(
+        SimulatedExecutionTime.ofMinimumAndRandomTime(3000, 0));
+    Server denyingServer =
+        NettyServerBuilder.forAddress(new InetSocketAddress("localhost", 0))
+            .addService(denyingSpanner)
+            .build()
+            .start();
+    ExecutorService executor = Executors.newFixedThreadPool(8);
+    try {
+      SpannerOptions options =
+          createSpannerOptions().toBuilder()
+              .setHost("http://localhost:" + denyingServer.getPort())
+              .enableGrpcGcpExtension()
+              .enableDynamicChannelPool()
+              .setGcpChannelPoolOptions(
+                  GcpChannelPoolOptions.newBuilder()
+                      .setInitSize(1)
+                      .setMinSize(1)
+                      .setMaxSize(4)
+                      .setDynamicScaling(1, 2, Duration.ofMinutes(3))
+                      .build())
+              .build();
+      try (Spanner spanner = options.getService()) {
+        GapicSpannerRpc rpc = getRpc(spanner);
+        DynamicChannelPoolPrimer primer = rpc.getChannelPrimer();
+        assertNotNull(primer);
+        GcpManagedChannel pool = findGrpcGcpChannel(rpc);
+        assertNotNull(pool);
+
+        DatabaseClient older =
+            spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+        awaitCondition(() -> primer.getPrimeSessionName() != null, Duration.ofSeconds(15));
+        String olderSession = primer.getPrimeSessionName();
+        spanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE2]"));
+        awaitCondition(() -> primer.getPrimeSessions().size() == 2, Duration.ofSeconds(15));
+        String newestSession = primer.getPrimeSessionName();
+        assertThat(newestSession).startsWith(deniedDatabasePrefix);
+
+        // Six concurrent streams on one channel with maxRpcPerChannel=2 force a scale-up.
+        List<Future<Long>> loads = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+          loads.add(
+              executor.submit(
+                  () -> {
+                    long rows = 0;
+                    try (ResultSet resultSet = older.singleUse().executeQuery(SELECT1AND2)) {
+                      while (resultSet.next()) {
+                        rows++;
+                      }
+                    }
+                    return rows;
+                  }));
+        }
+
+        // The first attempt uses the newest session, is denied and evicts exactly that entry;
+        // the pool's retry succeeds on the older candidate.
+        awaitCondition(() -> pool.getNumberOfChannels() > 1, Duration.ofSeconds(15));
+        for (Future<Long> load : loads) {
+          assertEquals(2L, load.get().longValue());
+        }
+        assertThat(deniedPrimes).isNotEmpty();
+        for (ExecuteSqlRequest denied : deniedPrimes) {
+          assertEquals(newestSession, denied.getSession());
+        }
+        List<ExecuteSqlRequest> succeededPrimes = new ArrayList<>();
+        for (ExecuteSqlRequest request :
+            denyingSpanner.getRequestsOfType(ExecuteSqlRequest.class)) {
+          if (request.getSql().equals(DynamicChannelPoolPrimer.PRIME_SQL)) {
+            succeededPrimes.add(request);
+          }
+        }
+        assertEquals(pool.getNumberOfChannels() - 1, succeededPrimes.size());
+        for (ExecuteSqlRequest prime : succeededPrimes) {
+          assertEquals(olderSession, prime.getSession());
+        }
+        assertEquals(olderSession, primer.getPrimeSessionName());
+        assertThat(primer.getPrimeSessions()).hasSize(1);
+      }
+    } finally {
+      executor.shutdownNow();
+      denyingServer.shutdownNow();
+      denyingServer.awaitTermination();
+    }
+  }
+
+  @Test
+  public void testMultiplexedCreateSessionWithoutEchoedFlagNeverRecordsPrimeSession()
+      throws Exception {
+    // A backend that ignores the multiplexed flag of the request creates a regular session, which
+    // is not safe for the concurrent use that priming implies and must never become the prime
+    // session.
+    MockSpannerServiceImpl nonEchoingSpanner =
+        new MockSpannerServiceImpl() {
+          @Override
+          public void createSession(
+              CreateSessionRequest request, StreamObserver<Session> responseObserver) {
+            super.createSession(
+                request,
+                new StreamObserver<Session>() {
+                  @Override
+                  public void onNext(Session session) {
+                    responseObserver.onNext(session.toBuilder().setMultiplexed(false).build());
+                  }
+
+                  @Override
+                  public void onError(Throwable t) {
+                    responseObserver.onError(t);
+                  }
+
+                  @Override
+                  public void onCompleted() {
+                    responseObserver.onCompleted();
+                  }
+                });
+          }
+        };
+    Server nonEchoingServer =
+        NettyServerBuilder.forAddress(new InetSocketAddress("localhost", 0))
+            .addService(nonEchoingSpanner)
+            .build()
+            .start();
+    try {
+      SpannerOptions options =
+          createSpannerOptions().toBuilder()
+              .setHost("http://localhost:" + nonEchoingServer.getPort())
+              .enableGrpcGcpExtension()
+              .enableDynamicChannelPool()
+              .build();
+      GapicSpannerRpc rpc = new GapicSpannerRpc(options, true);
+      try {
+        DynamicChannelPoolPrimer primer = rpc.getChannelPrimer();
+        assertNotNull(primer);
+        rpc.registerChannelPrimeOwner("DATABASE_NAME", 1L);
+
+        Session session = rpc.createSession("DATABASE_NAME", null, null, primeOwner(1L), true);
+        assertFalse(session.getMultiplexed());
+        assertTrue(
+            nonEchoingSpanner
+                .getRequestsOfType(CreateSessionRequest.class)
+                .get(0)
+                .getSession()
+                .getMultiplexed());
+        assertNull(primer.getPrimeSessionName());
+      } finally {
+        rpc.shutdown();
+      }
+    } finally {
+      nonEchoingServer.shutdownNow();
+      nonEchoingServer.awaitTermination();
+    }
+  }
+
+  @Test
   public void testChannelEndpointCacheFactoryUsedWhenLocationApiEnabled() {
     AtomicBoolean factoryCalled = new AtomicBoolean(false);
     ChannelEndpointCacheFactory factory =
@@ -1221,9 +2015,10 @@ public class GapicSpannerRpcTest {
         GapicSpannerRpc.class.getDeclaredMethod(
             "maybeEnableGrpcGcpExtension",
             InstantiatingGrpcChannelProvider.Builder.class,
-            SpannerOptions.class);
+            SpannerOptions.class,
+            DynamicChannelPoolPrimer.class);
     method.setAccessible(true);
-    method.invoke(null, channelProviderBuilder, options);
+    method.invoke(null, channelProviderBuilder, options, null);
 
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> chainedConfigurator =
         channelProviderBuilder.getChannelConfigurator();
@@ -1583,33 +2378,69 @@ public class GapicSpannerRpcTest {
 
   private static void countGrpcGcpObjects(
       Object object, Set<Object> visited, GrpcGcpObjectCounts counts) {
+    visitObjectGraph(
+        object,
+        visited,
+        visited1 -> {
+          if (visited1 instanceof GcpManagedChannel) {
+            counts.gcpManagedChannels++;
+          }
+          if (visited1.getClass().getName().equals(GRPC_GCP_CHANNEL_REF_CLASS_NAME)) {
+            counts.channelRefs++;
+          }
+        });
+  }
+
+  /**
+   * Returns the grpc-gcp channel pool that serves the Spanner stub of the given rpc. GAX wraps the
+   * pool in its own channel pool and interceptor channels, so it is located by walking the object
+   * graph of the rpc.
+   */
+  @Nullable
+  private static GcpManagedChannel findGrpcGcpChannel(GapicSpannerRpc rpc) {
+    java.util.concurrent.atomic.AtomicReference<GcpManagedChannel> found =
+        new java.util.concurrent.atomic.AtomicReference<>();
+    visitObjectGraph(
+        rpc,
+        Collections.newSetFromMap(new IdentityHashMap<>()),
+        object -> {
+          if (object instanceof GcpManagedChannel) {
+            found.compareAndSet(null, (GcpManagedChannel) object);
+          }
+        });
+    return found.get();
+  }
+
+  private static void visitObjectGraph(
+      Object object, Set<Object> visited, java.util.function.Consumer<Object> visitor) {
     if (object == null || !visited.add(object)) {
       return;
     }
-    if (object instanceof GcpManagedChannel) {
-      counts.gcpManagedChannels++;
-    }
+    visitor.accept(object);
     Class<?> clazz = object.getClass();
-    if (clazz.getName().equals(GRPC_GCP_CHANNEL_REF_CLASS_NAME)) {
-      counts.channelRefs++;
+    if (object instanceof java.util.concurrent.atomic.AtomicReference<?>) {
+      // JDK internals are not reflectively accessible; unwrap the value instead.
+      visitObjectGraph(
+          ((java.util.concurrent.atomic.AtomicReference<?>) object).get(), visited, visitor);
+      return;
     }
     if (object instanceof Collection<?>) {
       for (Object value : (Collection<?>) object) {
-        countGrpcGcpObjects(value, visited, counts);
+        visitObjectGraph(value, visited, visitor);
       }
       return;
     }
     if (object instanceof Map<?, ?>) {
       for (Map.Entry<?, ?> entry : ((Map<?, ?>) object).entrySet()) {
-        countGrpcGcpObjects(entry.getKey(), visited, counts);
-        countGrpcGcpObjects(entry.getValue(), visited, counts);
+        visitObjectGraph(entry.getKey(), visited, visitor);
+        visitObjectGraph(entry.getValue(), visited, visitor);
       }
       return;
     }
     if (clazz.isArray()) {
       int length = Array.getLength(object);
       for (int i = 0; i < length; i++) {
-        countGrpcGcpObjects(Array.get(object, i), visited, counts);
+        visitObjectGraph(Array.get(object, i), visited, visitor);
       }
       return;
     }
@@ -1623,7 +2454,7 @@ public class GapicSpannerRpcTest {
         }
         try {
           field.setAccessible(true);
-          countGrpcGcpObjects(field.get(object), visited, counts);
+          visitObjectGraph(field.get(object), visited, visitor);
         } catch (RuntimeException | IllegalAccessException ignored) {
           // Ignore fields that are not reflectively accessible in this runtime.
         }
