@@ -51,41 +51,17 @@ The Google Cloud Java SDK scopes Conscrypt strictly to Google Cloud Java SDK req
 - As a result, enabling Conscrypt for Google Cloud calls **does not alter the TLS behavior, cipher suites, or security providers of any other HTTP clients or libraries** in your application (e.g., Apache HttpClient, Spring WebClient, OkHttp, or direct `HttpsURLConnection` calls). Your existing JVM-wide cryptographic configurations remain completely undisturbed.
 
 ### 2.4 How Client and Google Cloud Endpoints Negotiate PQC
-When a Google Cloud HTTP/JSON client initiates a connection, it advertises supported key exchange groups to the server in preference order. During the TLS 1.3 handshake, the first mutually supported algorithm that both the client and server agree upon is selected and used for the session:
-
+When a Google Cloud HTTP/JSON client initiates a connection, it advertises supported key exchange groups in preference order:
 1. `X25519MLKEM768` *(Hybrid Post-Quantum Key Exchange)*
 2. `MLKEM1024` *(Pure Post-Quantum Key Exchange)*
 3. `X25519` *(Classical ECDH)*
 4. `secp256r1` *(Classical ECDH)*
 5. `secp384r1` *(Classical ECDH)*
 
-> [!NOTE]
-> **Algorithm Selection**:
-> These named groups are selected because they are supported by Conscrypt (see [Conscrypt CAPABILITIES.md](https://github.com/google/conscrypt/blob/2.6.2/CAPABILITIES.md) and `HttpJsonConscryptUtils.DEFAULT_CONSCRYPT_NAMED_GROUPS`). If your application requires a cryptographic algorithm or named group not in this list, you can configure an alternative `SecurityProvider` (e.g., Bouncy Castle; see **Section 6, Option 3**).
-
-#### Handshake Negotiation Flow:
-- **PQC-Enabled Google Cloud Endpoints**: Google Cloud frontends recognize `X25519MLKEM768` as their preferred group. The client and server agree on this hybrid algorithm, establishing a quantum-resistant TLS 1.3 session.
-- **Non-PQC Endpoints / Middleboxes**: If a server or intermediate network proxy does not support post-quantum cryptography, it ignores the unrecognized post-quantum identifiers and selects the first mutually supported classical group (e.g., `X25519`).
-- **Graceful Client Fallback**: If Conscrypt native libraries cannot load on the client host, the client seamlessly falls back to the environment's configured security provider (which defaults to standard JDK JSSE / `SunJSSE`), negotiating classical TLS 1.3.
-  - **Impact of Fallback**: Fallback is completely safe and non-breaking for application availability. Your API calls will continue to execute successfully without throwing errors or dropping traffic. The connection remains fully encrypted using industry-standard classical cryptography (such as `X25519` via standard JDK TLS); it simply does not include quantum-resistant hybrid key exchange for that session.
-
-```
-+-------------------------------------------------------------------------------+
-|                    Google Cloud HTTP/JSON Client Request                      |
-+-------------------------------------------------------------------------------+
-                                        |
-                    Is Conscrypt JNI Available on This Platform?
-                                        |
-                     +-------------------+-------------------+
-                     |                                       |
-                  [ YES ]                                 [ NO ]
-                     |                                       |
-                     v                                       v
-      google-http-client uses Conscrypt             Falls back to configured
-      Offers Hybrid PQC + Classical Groups          security provider (JDK JSSE)
-      - Google Cloud negotiates X25519MLKEM768      - Negotiates classical X25519
-      - Non-PQC endpoints fall back to X25519         via standard JDK SunJSSE
-```
+During the TLS 1.3 handshake:
+- **PQC-Enabled Google Cloud Endpoints**: Google Cloud frontends recognize and select `X25519MLKEM768`, establishing a quantum-resistant TLS 1.3 session.
+- **Non-PQC Endpoints / Middleboxes**: If a server or intermediate network proxy does not support post-quantum cryptography, it ignores unrecognized post-quantum identifiers and standard TLS 1.3 negotiation selects the first mutually supported classical group (`X25519`).
+- **Graceful Client Fallback**: If Conscrypt native libraries cannot load on the client host, `gax-httpjson` catches the linkage error and defaults to the environment's configured security provider (standard JDK `SunJSSE`), safely negotiating classical TLS 1.3 without failing application requests.
 
 ### 2.5 Performance & Network Considerations
 Note the following performance and network considerations:
