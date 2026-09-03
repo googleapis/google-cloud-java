@@ -31,18 +31,29 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.BetaApi;
 import com.google.auto.value.AutoValue;
+import com.google.common.base.Preconditions;
+import java.time.Duration;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A settings class to configure a {@link ResumableUploadCallable} for executing resumable uploads.
- * Encapsulates protocol options such as payload chunk size.
+ * Encapsulates protocol options such as payload chunk size and global upload timeout.
  */
 @BetaApi
 @AutoValue
+@NullMarked
 public abstract class ResumableUploadCallSettings {
   private static final int DEFAULT_CHUNK_SIZE = 8 * 1024 * 1024; // 8 MB
 
   /** Returns the configured chunk size in bytes (defaults to 8 MB / 8,388,608 bytes). */
   public abstract int getChunkSize();
+
+  /**
+   * Returns the global upload timeout governing the entire upload duration, or {@code null} if
+   * disabled.
+   */
+  public abstract @Nullable Duration getGlobalTimeout();
 
   /**
    * Merges another {@code ResumableUploadCallSettings} instance with this one. Fields set in {@code
@@ -51,11 +62,18 @@ public abstract class ResumableUploadCallSettings {
    * @param other settings to overlay; may be {@code null}
    * @return a new, resolved {@code ResumableUploadCallSettings} instance
    */
-  public ResumableUploadCallSettings merge(ResumableUploadCallSettings other) {
+  public ResumableUploadCallSettings merge(@Nullable ResumableUploadCallSettings other) {
     if (other == null) {
       return this;
     }
-    return toBuilder().setChunkSize(other.getChunkSize()).build();
+    Builder builder = toBuilder();
+    if (other.getChunkSize() > 0) {
+      builder.setChunkSize(other.getChunkSize());
+    }
+    if (other.getGlobalTimeout() != null) {
+      builder.setGlobalTimeout(other.getGlobalTimeout());
+    }
+    return builder.build();
   }
 
   public abstract Builder toBuilder();
@@ -71,6 +89,20 @@ public abstract class ResumableUploadCallSettings {
 
     public abstract int getChunkSize();
 
-    public abstract ResumableUploadCallSettings build();
+    public abstract Builder setGlobalTimeout(@Nullable Duration globalTimeout);
+
+    public abstract @Nullable Duration getGlobalTimeout();
+
+    abstract ResumableUploadCallSettings autoBuild();
+
+    public ResumableUploadCallSettings build() {
+      Preconditions.checkArgument(getChunkSize() > 0, "chunkSize must be > 0");
+      if (getGlobalTimeout() != null) {
+        Preconditions.checkArgument(
+            !getGlobalTimeout().isNegative() && !getGlobalTimeout().isZero(),
+            "globalTimeout must be positive");
+      }
+      return autoBuild();
+    }
   }
 }
