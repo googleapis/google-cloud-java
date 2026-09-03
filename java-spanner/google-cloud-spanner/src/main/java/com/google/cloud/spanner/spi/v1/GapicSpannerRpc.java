@@ -834,7 +834,6 @@ public class GapicSpannerRpc implements SpannerRpc {
         defaultCallCredentials,
         callCredentialsProvider,
         leaderAwareRoutingEnabled,
-        options.getSessionPoolOptions().getUseMultiplexedSession(),
         // The options already contain the merged prime timeout, including a user-provided one.
         DynamicChannelPoolPrimer.rpcDeadlineFor(
             options.getGcpChannelPoolOptions().getChannelPrimeTimeout()));

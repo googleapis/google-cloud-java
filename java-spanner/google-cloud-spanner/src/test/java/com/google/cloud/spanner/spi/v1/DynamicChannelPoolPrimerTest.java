@@ -217,7 +217,6 @@ public class DynamicChannelPoolPrimerTest {
   private DynamicChannelPoolPrimer newPrimer(
       @Nullable CallCredentialsProvider callCredentialsProvider,
       boolean routeToLeader,
-      boolean multiplexedSessionsEnabled,
       Duration rpcDeadline) {
     // The fixed headers of the client are configured on the channel and must not be sent by the
     // primer: it only sends the headers that a normal call adds per call.
@@ -232,16 +231,12 @@ public class DynamicChannelPoolPrimerTest {
         credentialsWithToken(DEFAULT_TOKEN),
         callCredentialsProvider,
         routeToLeader,
-        multiplexedSessionsEnabled,
         rpcDeadline);
   }
 
   private DynamicChannelPoolPrimer newPrimer() {
     return newPrimer(
-        /* callCredentialsProvider= */ null,
-        /* routeToLeader= */ true,
-        /* multiplexedSessionsEnabled= */ true,
-        Duration.ofSeconds(5));
+        /* callCredentialsProvider= */ null, /* routeToLeader= */ true, Duration.ofSeconds(5));
   }
 
   private static final AtomicLong OWNER_TICKETS = new AtomicLong();
@@ -366,10 +361,7 @@ public class DynamicChannelPoolPrimerTest {
   public void primeOmitsRouteToLeaderHeaderWhenDisabled() throws Exception {
     DynamicChannelPoolPrimer primer =
         newPrimer(
-            /* callCredentialsProvider= */ null,
-            /* routeToLeader= */ false,
-            /* multiplexedSessionsEnabled= */ true,
-            Duration.ofSeconds(5));
+            /* callCredentialsProvider= */ null, /* routeToLeader= */ false, Duration.ofSeconds(5));
     registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
 
     getWithin(primer.prime(newChannel()), Duration.ofSeconds(10));
@@ -383,7 +375,6 @@ public class DynamicChannelPoolPrimerTest {
         newPrimer(
             () -> credentialsWithToken(PROVIDER_TOKEN),
             /* routeToLeader= */ true,
-            /* multiplexedSessionsEnabled= */ true,
             Duration.ofSeconds(5));
     registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
 
@@ -396,11 +387,7 @@ public class DynamicChannelPoolPrimerTest {
   @Test
   public void primeFallsBackToDefaultCredentialsWhenProviderReturnsNull() throws Exception {
     DynamicChannelPoolPrimer primer =
-        newPrimer(
-            () -> null,
-            /* routeToLeader= */ true,
-            /* multiplexedSessionsEnabled= */ true,
-            Duration.ofSeconds(5));
+        newPrimer(() -> null, /* routeToLeader= */ true, Duration.ofSeconds(5));
     registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
 
     getWithin(primer.prime(newChannel()), Duration.ofSeconds(10));
@@ -724,10 +711,7 @@ public class DynamicChannelPoolPrimerTest {
     service.holdResponses = true;
     DynamicChannelPoolPrimer primer =
         newPrimer(
-            /* callCredentialsProvider= */ null,
-            /* routeToLeader= */ true,
-            /* multiplexedSessionsEnabled= */ true,
-            Duration.ofMillis(200));
+            /* callCredentialsProvider= */ null, /* routeToLeader= */ true, Duration.ofMillis(200));
     registerPrimeSession(primer, DATABASE_NAME, SESSION_NAME);
 
     Throwable failure = failureOf(primer.prime(newChannel()));
@@ -796,22 +780,6 @@ public class DynamicChannelPoolPrimerTest {
     assertThat(failure).isInstanceOf(SpannerException.class);
     assertThat(((SpannerException) failure).getErrorCode())
         .isEqualTo(ErrorCode.FAILED_PRECONDITION);
-    assertThat(service.requests).isEmpty();
-  }
-
-  @Test
-  public void primeSucceedsWithoutRpcWhenMultiplexedSessionsAreDisabled() throws Exception {
-    DynamicChannelPoolPrimer primer =
-        newPrimer(
-            /* callCredentialsProvider= */ null,
-            /* routeToLeader= */ true,
-            /* multiplexedSessionsEnabled= */ false,
-            Duration.ofSeconds(5));
-
-    ListenableFuture<Void> future = primer.prime(newChannel());
-
-    assertThat(future.isDone()).isTrue();
-    assertThat(getWithin(future, Duration.ofSeconds(1))).isNull();
     assertThat(service.requests).isEmpty();
   }
 
@@ -962,7 +930,6 @@ public class DynamicChannelPoolPrimerTest {
             newPrimer(
                     /* callCredentialsProvider= */ null,
                     /* routeToLeader= */ true,
-                    /* multiplexedSessionsEnabled= */ true,
                     DynamicChannelPoolPrimer.rpcDeadlineFor(Duration.ofNanos(1)))
                 .getRpcDeadline())
         .isEqualTo(DynamicChannelPoolPrimer.MIN_RPC_DEADLINE);

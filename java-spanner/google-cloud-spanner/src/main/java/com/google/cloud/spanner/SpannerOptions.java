@@ -180,8 +180,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   /**
    * Default maximum time for one attempt to prime a channel that the dynamic channel pool adds
-   * during scale-up. When multiplexed sessions are enabled, scaled-up channels are primed by
-   * executing {@code SELECT 1} with the multiplexed session before they are published to the pool.
+   * during scale-up. Scaled-up channels are primed by executing {@code SELECT 1} with a multiplexed
+   * session before they are published to the pool.
    */
   public static final Duration DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_TIMEOUT = Duration.ofSeconds(10);
 
@@ -210,13 +210,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
    *   <li>Channel prime max attempts: {@value #DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS}
    * </ul>
    *
-   * <p>When multiplexed sessions are enabled (the default), channels that the pool adds during
-   * scale-up are primed with {@code SELECT 1} on the multiplexed session before they are published.
-   * The primer is registered by the Spanner client when dynamic channel pooling is enabled, unless
-   * these options already contain a primer. Priming uses the most recently created multiplexed
-   * session of any database client of the {@link Spanner} instance; a session that turns out to be
-   * invalid is dropped and the next most recent one is used. When multiplexed sessions are
-   * disabled, scaled-up channels are published without priming.
+   * <p>Channels that the pool adds during scale-up are primed with {@code SELECT 1} on a
+   * multiplexed session before they are published. The primer is registered by the Spanner client
+   * when dynamic channel pooling is enabled, unless these options already contain a primer. Priming
+   * uses the most recently created multiplexed session of any database client of the {@link
+   * Spanner} instance; a session that turns out to be invalid is dropped and the next most recent
+   * one is used.
    *
    * @return a new {@link GcpChannelPoolOptions} instance with Spanner defaults
    */
@@ -2057,13 +2056,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * Enables dynamic channel pooling. When enabled, the client will automatically scale the number
      * of channels based on load. This requires the gRPC-GCP extension to be enabled.
      *
-     * <p>When multiplexed sessions are enabled (the default), channels that the pool adds during
-     * scale-up are primed before they serve traffic: the client executes {@code SELECT 1} with the
-     * multiplexed session on the new channel, and the pool only publishes the channel once that
-     * succeeds. When multiplexed sessions are disabled, scaled-up channels are published without
-     * priming. See {@link #createDefaultDynamicChannelPoolOptions()} for the prime timeout and
-     * attempt defaults, and {@link #setGcpChannelPoolOptions(GcpChannelPoolOptions)} to customize
-     * them.
+     * <p>Channels that the pool adds during scale-up are primed before they serve traffic: the
+     * client executes {@code SELECT 1} with a multiplexed session on the new channel, and the pool
+     * only publishes the channel once that succeeds. See {@link
+     * #createDefaultDynamicChannelPoolOptions()} for the prime timeout and attempt defaults, and
+     * {@link #setGcpChannelPoolOptions(GcpChannelPoolOptions)} to customize them.
      *
      * <p>Dynamic channel pooling is disabled by default. Use this method to explicitly enable it.
      * Note that calling {@link #setNumChannels(int)} will disable dynamic channel pooling even if
@@ -2105,13 +2102,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * #createDefaultDynamicChannelPoolOptions()}). Values that are left unset in the given options
      * are filled in from those defaults.
      *
-     * <p>When multiplexed sessions are enabled (the default), channels that the pool adds during
-     * scale-up are primed with {@code SELECT 1} on the multiplexed session before they are
-     * published; otherwise they are published without priming. A channel primer, prime timeout, or
-     * prime attempt count that is set in the given options takes precedence over the Spanner primer
-     * and its defaults. The deadline of the Spanner primer's RPC is derived from the prime timeout
-     * and normally stays below it; only a prime timeout of two milliseconds or less yields the
-     * primer's minimum deadline of one millisecond, and the prime timeout then bounds the attempt.
+     * <p>Channels that the pool adds during scale-up are primed with {@code SELECT 1} on a
+     * multiplexed session before they are published. A channel primer, prime timeout, or prime
+     * attempt count that is set in the given options takes precedence over the Spanner primer and
+     * its defaults. The deadline of the Spanner primer's RPC is derived from the prime timeout and
+     * normally stays below it; only a prime timeout of two milliseconds or less yields the primer's
+     * minimum deadline of one millisecond, and the prime timeout then bounds the attempt.
      *
      * <p>Example usage:
      *

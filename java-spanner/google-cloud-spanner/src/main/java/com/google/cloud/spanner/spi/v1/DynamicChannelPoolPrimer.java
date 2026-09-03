@@ -20,7 +20,6 @@ import com.google.cloud.grpc.GcpChannelPrimer;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerExceptionFactory;
-import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.SpannerOptions.CallCredentialsProvider;
 import com.google.cloud.spanner.XGoogSpannerRequestId;
 import com.google.cloud.spanner.XGoogSpannerRequestId.RequestIdCreator;
@@ -62,10 +61,7 @@ import javax.annotation.Nullable;
  * Primes channels that the grpc-gcp dynamic channel pool adds during scale-up by executing {@code
  * SELECT 1} on the new channel with a multiplexed session, so the transport, TLS session, and
  * server-side connection are established before the channel serves live traffic. Mirrors the
- * priming that the Go Spanner client performs for its dynamic channel pool. Priming requires
- * multiplexed sessions: when they are disabled on the {@link SpannerOptions} there is nothing to
- * prime with, and scaled-up channels are published unprimed, which is the behavior of the pool
- * without a primer.
+ * priming that the Go Spanner client performs for its dynamic channel pool.
  *
  * <p>The channel pool is shared by all database clients of a {@link Spanner} instance, while
  * multiplexed sessions are created per database. The primer therefore keeps a small registry of
@@ -143,7 +139,6 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
   @Nullable private final CallCredentials defaultCallCredentials;
   @Nullable private final CallCredentialsProvider callCredentialsProvider;
   private final boolean routeToLeader;
-  private final boolean multiplexedSessionsEnabled;
   private final Duration rpcDeadline;
 
   /** Source of the creation generations of {@link PrimeSession} entries. */
@@ -233,7 +228,6 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
    * @param callCredentialsProvider the optional user-supplied provider that takes precedence over
    *     {@code defaultCallCredentials} for each call, exactly like for normal Spanner calls
    * @param routeToLeader whether normal Spanner calls carry the route-to-leader header
-   * @param multiplexedSessionsEnabled whether the client creates multiplexed sessions at all
    * @param rpcDeadline the deadline of a single priming RPC
    */
   DynamicChannelPoolPrimer(
@@ -243,7 +237,6 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
       @Nullable CallCredentials defaultCallCredentials,
       @Nullable CallCredentialsProvider callCredentialsProvider,
       boolean routeToLeader,
-      boolean multiplexedSessionsEnabled,
       Duration rpcDeadline) {
     this.metadataProvider = Preconditions.checkNotNull(metadataProvider);
     this.projectName = Preconditions.checkNotNull(projectName);
@@ -251,7 +244,6 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
     this.defaultCallCredentials = defaultCallCredentials;
     this.callCredentialsProvider = callCredentialsProvider;
     this.routeToLeader = routeToLeader;
-    this.multiplexedSessionsEnabled = multiplexedSessionsEnabled;
     Preconditions.checkArgument(
         rpcDeadline != null && !rpcDeadline.isZero() && !rpcDeadline.isNegative(),
         "rpcDeadline must be positive");
@@ -443,13 +435,6 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
 
   @Override
   public ListenableFuture<Void> prime(ManagedChannel channel) {
-    if (!multiplexedSessionsEnabled) {
-      // Priming executes SELECT 1 with a multiplexed session, because that is the only session
-      // that lives at the level of the shared channel pool rather than inside a session pool.
-      // Without multiplexed sessions there is nothing to prime with, so the channel is published
-      // unprimed, which is the behavior of a pool without a primer.
-      return Futures.immediateFuture(null);
-    }
     PrimeSession entry = getPrimeSession();
     if (entry == null) {
       // The Go client refuses to scale up at all before a multiplexed session exists. The Java
