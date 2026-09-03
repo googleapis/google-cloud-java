@@ -31,26 +31,20 @@ package com.google.api.gax.resumable;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
-import com.google.api.gax.rpc.UnaryCallable;
+import com.google.auto.value.AutoValue;
 import org.jspecify.annotations.NullMarked;
 
-/**
- * Client interface for executing low-level resumable upload operations.
- *
- * @param <RequestT> request type for starting an upload
- * @param <ResponseT> response type of the upload operation
- */
+/** Request value object for querying the status of an active resumable upload session. */
 @NullMarked
 @BetaApi
 @InternalApi
-public interface ResumableUploadClient<RequestT, ResponseT> {
+@AutoValue
+public abstract class QueryStatusRequest {
 
-  /** Returns a {@link UnaryCallable} to initiate a resumable upload session. */
-  UnaryCallable<RequestT, ResumableUploadSession> startUploadCallable();
+  /** Returns the upload session URL to query. */
+  public abstract String getUploadUrl();
 
-  /** Returns a {@link UnaryCallable} to transmit an individual chunk. */
-  UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable();
-
-  /** Returns a {@link UnaryCallable} to query the status and offset of an active upload session. */
-  UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable();
+  public static QueryStatusRequest create(String uploadUrl) {
+    return new AutoValue_QueryStatusRequest(uploadUrl);
+  }
 }

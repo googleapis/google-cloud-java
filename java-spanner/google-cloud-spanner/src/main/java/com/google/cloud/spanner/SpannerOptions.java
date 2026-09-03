@@ -179,6 +179,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static final Duration DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL = Duration.ofMinutes(1);
 
   /**
+   * Default maximum time for one attempt to prime a channel that the dynamic channel pool adds
+   * during scale-up. Scaled-up channels are primed by executing {@code SELECT 1} with a multiplexed
+   * session before they are published to the pool.
+   */
+  public static final Duration DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_TIMEOUT = Duration.ofSeconds(10);
+
+  /**
+   * Default maximum number of attempts to prime a channel that the dynamic channel pool adds during
+   * scale-up before the channel is discarded.
+   */
+  public static final int DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS = 3;
+
+  /**
    * Creates a {@link GcpChannelPoolOptions} instance with Spanner-specific defaults for dynamic
    * channel pooling. These defaults are optimized for typical Spanner workloads.
    *
@@ -193,7 +206,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
    *   <li>Scale down interval: 3 minutes
    *   <li>Affinity key lifetime: 10 minutes
    *   <li>Cleanup interval: 1 minute
+   *   <li>Channel prime timeout: 10 seconds
+   *   <li>Channel prime max attempts: {@value #DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS}
    * </ul>
+   *
+   * <p>Channels that the pool adds during scale-up are primed with {@code SELECT 1} on a
+   * multiplexed session before they are published. The primer is registered by the Spanner client
+   * when dynamic channel pooling is enabled, unless these options already contain a primer. Priming
+   * rotates across available multiplexed sessions owned by live database clients of the {@link
+   * Spanner} instance. Closed or invalid database clients do not supply sessions for priming.
    *
    * @return a new {@link GcpChannelPoolOptions} instance with Spanner defaults
    */
@@ -208,13 +229,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
             DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL)
         .setAffinityKeyLifetime(DEFAULT_DYNAMIC_POOL_AFFINITY_KEY_LIFETIME)
         .setCleanupInterval(DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL)
+        .setChannelPrimeTimeout(DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_TIMEOUT)
+        .setChannelPrimeMaxAttempts(DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS)
         .build();
   }
 
   /**
    * Merges user-provided {@link GcpChannelPoolOptions} with Spanner-specific defaults. Any value
    * that the user has not explicitly set (i.e. left at the builder's default of 0 or null) will be
-   * filled in from {@link #createDefaultDynamicChannelPoolOptions()}.
+   * filled in from {@link #createDefaultDynamicChannelPoolOptions()}. A user-provided channel
+   * primer, prime timeout, and prime attempt count are always preserved.
    */
   static GcpChannelPoolOptions mergeWithDefaultChannelPoolOptions(
       GcpChannelPoolOptions userOptions) {
@@ -250,6 +274,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
     if (userOptions.getCleanupInterval() == null || userOptions.getCleanupInterval().isZero()) {
       merged.setCleanupInterval(defaults.getCleanupInterval());
+    }
+    if (userOptions.getChannelPrimeTimeout() == null
+        || userOptions.getChannelPrimeTimeout().isZero()) {
+      merged.setChannelPrimeTimeout(defaults.getChannelPrimeTimeout());
+    }
+    if (userOptions.getChannelPrimeMaxAttempts() <= 0) {
+      merged.setChannelPrimeMaxAttempts(defaults.getChannelPrimeMaxAttempts());
     }
     return merged.build();
   }
@@ -2114,6 +2145,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * Enables dynamic channel pooling. When enabled, the client will automatically scale the number
      * of channels based on load. This requires the gRPC-GCP extension to be enabled.
      *
+     * <p>Channels that the pool adds during scale-up are primed before they serve traffic: the
+     * client executes {@code SELECT 1} with a multiplexed session on the new channel, and the pool
+     * only publishes the channel once that succeeds. See {@link
+     * #createDefaultDynamicChannelPoolOptions()} for the prime timeout and attempt defaults, and
+     * {@link #setGcpChannelPoolOptions(GcpChannelPoolOptions)} to customize them.
+     *
      * <p>Dynamic channel pooling is disabled by default. Use this method to explicitly enable it.
      * Note that calling {@link #setNumChannels(int)} will disable dynamic channel pooling even if
      * this method was called.
@@ -2151,7 +2188,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * channel pool behavior when {@link #enableDynamicChannelPool()} is enabled.
      *
      * <p>If not set, Spanner-specific defaults will be used (see {@link
-     * #createDefaultDynamicChannelPoolOptions()}).
+     * #createDefaultDynamicChannelPoolOptions()}). Values that are left unset in the given options
+     * are filled in from those defaults.
+     *
+     * <p>Channels that the pool adds during scale-up are primed with {@code SELECT 1} on a
+     * multiplexed session before they are published. A channel primer, prime timeout, or prime
+     * attempt count that is set in the given options takes precedence over the Spanner primer and
+     * its defaults.
      *
      * <p>Example usage:
      *
