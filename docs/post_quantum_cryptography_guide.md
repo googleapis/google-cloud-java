@@ -46,13 +46,10 @@ To bridge until users can upgrade to JDK 27+, Google Cloud Java client libraries
 3. **High Performance**: BoringSSL contains hardware-accelerated assembly optimizations for modern CPU architectures (x86_64 and ARM64).
 
 ### 2.3 Scoped Security Provider (No Global JVM Impact)
-The Google Cloud Java SDK scopes Conscrypt strictly to Google Cloud Java SDK requests:
-
-- `gax-httpjson` configures the Conscrypt `Provider` instance directly on the client's internal `NetHttpTransport.Builder` rather than installing it into the global JVM security registry (`java.security.Security.addProvider(...)`).
-- As a result, enabling Conscrypt for Google Cloud calls **does not alter the TLS behavior, cipher suites, or security providers of any other HTTP clients or libraries** in your application (e.g., Apache HttpClient, Spring WebClient, OkHttp, or direct `HttpsURLConnection` calls). Your existing JVM-wide cryptographic configurations remain completely undisturbed.
+The Google Cloud Java SDK scopes Conscrypt strictly to Google Cloud client requests and avoids modifying global JVM security defaults. As a result, enabling Conscrypt for Google Cloud calls **does not alter the TLS behavior, cipher suites, or security providers of any other HTTP clients or libraries** in your application (e.g., Apache HttpClient, Spring WebClient, OkHttp, or direct `HttpsURLConnection` calls).
 
 ### 2.4 Supported Key Exchange Algorithms & Preference Order
-HTTP/JSON clients advertise supported key exchange groups in the following preference order:
+Based on [Conscrypt's supported named groups](https://github.com/google/conscrypt/blob/2.6.2/CAPABILITIES.md#supported-named-groups), HTTP/JSON clients advertise supported key exchange groups in the following preference order:
 1. `X25519MLKEM768` *(Hybrid Post-Quantum Key Exchange)*
 2. `MLKEM1024` *(Pure Post-Quantum Key Exchange)*
 3. `X25519` *(Classical ECDH)*
@@ -83,11 +80,11 @@ One possible solution for this is to use Google Cloud's `libraries-bom` (version
 > **Active Verification is Required for Regulatory Mandates**:
 > If your organization operates under strict compliance, governmental, or corporate security mandates requiring Post-Quantum Cryptography today, **you cannot rely solely on the default configuration without verification**.
 >
-> Because fallback to classical TLS is silent and non-breaking by design, an unexpected environment change (such as switching base container images to Alpine or changing filesystem mount permissions) could downgrade your connections from hybrid PQC to classical TLS **without throwing exceptions or failing requests**.
+> Because fallback to classical TLS is silent and non-breaking by design, an unexpected environment change could downgrade your connections from hybrid PQC to classical TLS **without throwing exceptions or failing requests**.
 >
 > If PQC is a mandatory requirement for your workload, you must implement automated verification in your CI/CD pipelines or startup health checks (see **Section 5**).
 
-### 4.1 Security & Operational Implications
+### 4.1 Fallback Implications
 When fallback occurs:
 - **Application Availability (Preserved)**: Requests continue to succeed normally. No exceptions or errors are raised to application code.
 - **Security Baseline (Preserved)**: Traffic remains fully encrypted with standard classical TLS 1.3 (e.g., ECDHE with AES-GCM), maintaining the standard security posture that Java applications use today.
