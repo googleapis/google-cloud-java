@@ -240,6 +240,9 @@ final class ArrowDeserializer {
    */
   static List<FieldValueList> deserializeRecordBatch(
       byte[] recordBatchBytes, Schema schema, Object arrowSchema) throws IOException {
+    if (recordBatchBytes == null || recordBatchBytes.length == 0) {
+      return ImmutableList.of();
+    }
     org.apache.arrow.vector.types.pojo.Schema schemaPojo =
         arrowSchema instanceof org.apache.arrow.vector.types.pojo.Schema
             ? (org.apache.arrow.vector.types.pojo.Schema) arrowSchema

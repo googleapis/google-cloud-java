@@ -2337,7 +2337,8 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     List<FieldValueList> firstPageRows;
     if (isArrow) {
-      if (results.getArrowRecordBatch() != null) {
+      if (results.getArrowRecordBatch() != null
+          && results.getArrowRecordBatch().getSerializedRecordBatch() != null) {
         try {
           firstPageRows =
               ArrowDeserializer.deserializeRecordBatch(
