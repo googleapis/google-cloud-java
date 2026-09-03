@@ -48,7 +48,7 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
   protected ResumableUploadCallable() {}
 
   /**
-   * Performs a new resumable upload asynchronously.
+   * Performs a new resumable upload asynchronously with default call context and default settings.
    *
    * <p>The provided {@code payload} stream is consumed asynchronously by the returned {@link
    * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
@@ -56,11 +56,67 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
    *
    * @param request the request message
    * @param payload the data payload input stream to upload and close
-   * @param settings call settings overrides; may be {@code null}
+   * @return future for tracking and controlling the upload
+   */
+  public ResumableUploadFuture<ResponseT> futureCall(RequestT request, InputStream payload) {
+    return futureCall(request, payload, null, null);
+  }
+
+  /**
+   * Performs a new resumable upload asynchronously with a call context override and default
+   * settings.
+   *
+   * <p>The provided {@code payload} stream is consumed asynchronously by the returned {@link
+   * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
+   * cancellation.
+   *
+   * @param request the request message
+   * @param payload the data payload input stream to upload and close
+   * @param context call context overrides (e.g. extra headers, credentials, timeout); may be {@code
+   *     null}
+   * @return future for tracking and controlling the upload
+   */
+  public ResumableUploadFuture<ResponseT> futureCall(
+      RequestT request, InputStream payload, @Nullable ApiCallContext context) {
+    return futureCall(request, payload, context, null);
+  }
+
+  /**
+   * Performs a new resumable upload asynchronously with settings overrides and default call
+   * context.
+   *
+   * <p>The provided {@code payload} stream is consumed asynchronously by the returned {@link
+   * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
+   * cancellation.
+   *
+   * @param request the request message
+   * @param payload the data payload input stream to upload and close
+   * @param settings request-level call settings overrides; may be {@code null}
+   * @return future for tracking and controlling the upload
+   */
+  public ResumableUploadFuture<ResponseT> futureCall(
+      RequestT request, InputStream payload, @Nullable ResumableUploadCallSettings settings) {
+    return futureCall(request, payload, null, settings);
+  }
+
+  /**
+   * Performs a new resumable upload asynchronously with call context and settings overrides.
+   *
+   * <p>The provided {@code payload} stream is consumed asynchronously by the returned {@link
+   * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
+   * cancellation.
+   *
+   * @param request the request message
+   * @param payload the data payload input stream to upload and close
+   * @param context call context overrides; may be {@code null}
+   * @param settings request-level call settings overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
   public abstract ResumableUploadFuture<ResponseT> futureCall(
-      RequestT request, InputStream payload, @Nullable ResumableUploadCallSettings settings);
+      RequestT request,
+      InputStream payload,
+      @Nullable ApiCallContext context,
+      @Nullable ResumableUploadCallSettings settings);
 
   /**
    * Resumes an existing resumable upload session asynchronously using a saved session URL.
