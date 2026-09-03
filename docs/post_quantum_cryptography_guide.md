@@ -7,8 +7,6 @@ Traditional Transport Layer Security (TLS) public-key cryptography—such as RSA
 
 However, sufficiently large, cryptographically relevant quantum computers (CRQCs) will be capable of breaking these mathematical foundations using [Shor's algorithm](https://en.wikipedia.org/wiki/Shor%27s_algorithm). **Post-Quantum Cryptography (PQC)** refers to a new class of cryptographic algorithms designed to run on classical hardware while remaining mathematically secure against attacks from both classical and quantum computers.
 
-For more background on PQC and Google Cloud's broader post-quantum security initiatives, see the [Google Cloud Post-quantum TLS documentation](https://cloud.google.com/load-balancing/docs/tls-versions#post-quantum-tls), [Google Cloud KMS PQC Overview](https://cloud.google.com/security/docs/asymmetric-pqc-insights), and [NIST FIPS 203 (ML-KEM)](https://csrc.nist.gov/pubs/fips/203/final).
-
 ### 1.2 The Threat: "Store-Now, Decrypt-Later" (SNDL)
 The primary threat addressed by PQC today is **Store-Now, Decrypt-Later (SNDL)**:
 - **The Attack**: Adversaries can intercept and archive encrypted network communications traversing the public internet today.
