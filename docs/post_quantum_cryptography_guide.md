@@ -83,46 +83,48 @@ Because PQC negotiation relies on native BoringSSL C binaries (via Conscrypt) lo
 ### 3.1 GraalVM Native Image
 GraalVM Native Image compilation is supported for applications that include the appropriate reachability metadata and JNI configuration for Conscrypt native libraries.
 
-### 3.2 Unsupported Scenarios & Graceful Fallback
-Certain deployment environments do not support native Conscrypt binaries out of the box. In these scenarios, the client libraries do not fail; they gracefully fall back to the host JVM's default security provider (standard classical TLS):
-
-- **Alpine Linux (`musl` libc)**:
-  Precompiled Conscrypt native binaries require `glibc` and cannot load on Alpine Linux or other `musl`-based container distributions (e.g., `eclipse-temurin:17-alpine`). On these platforms, Conscrypt native loading fails with an `UnsatisfiedLinkError`, and the client automatically falls back to classical TLS (`X25519`). Workloads requiring post-quantum hybrid key exchange should use a `glibc`-compatible base image (such as Debian, Ubuntu, or Wolfi).
-- **Hardened Filesystems (`noexec /tmp`)**:
-  In security-hardened container or Kubernetes environments where `/tmp` is mounted with the `noexec` flag or the filesystem is strictly read-only, the JVM cannot load native shared libraries extracted to `/tmp`, resulting in an `UnsatisfiedLinkError` (`failed to map segment from shared object: Operation not permitted`). The client safely falls back to classical TLS. If PQC is required in these environments, configure an executable working directory using JVM system properties (e.g., `-Dorg.conscrypt.native.workdir=/path/to/executable/dir`).
-
-### 3.3 Classpath Isolation & Version Skew Warning
+### 3.2 Classpath Isolation & Version Skew Warning
 If your project uses multiple dependencies that transitively pull in different versions of Conscrypt (e.g., older versions like `2.5.2` alongside `2.6.2`), a JNI ABI mismatch can occur during JVM classloading. Always ensure your build tool (Maven/Gradle) resolves `conscrypt-openjdk-uber` to version `2.6.0+` (or `2.6.2+`) consistently.
 
 One possible solution for this is to use Google Cloud's `libraries-bom` (version `26.86.0+`) to manage dependency versions, ensuring a consistent and compatible Conscrypt runtime across all Google Cloud client libraries.
 
 ---
 
-## 4. Important Warning: Availability vs. Strict Compliance
+## 4. Classical Fallback: Mechanics, Implications & Concerns
 
 Google Cloud Java client libraries follow a deliberate architectural principle: **prefer service availability over hard failures**.
 
-### 4.1 The Silent Fallback Behavior
-If Conscrypt native libraries fail to initialize—due to an unsupported operating system, missing `glibc`, permission issues, or file extraction limits—`gax-httpjson` catches the exception and logs a message at **`Level.FINE` (debug level)**:
+### 4.1 Fallback Mechanics: Availability Over Hard Failures
+If Conscrypt native libraries cannot load on the host platform—due to an unsupported operating system, missing `glibc`, permission constraints, or file extraction limits—`gax-httpjson` catches the exception and logs a debug message at `Level.FINE`:
 ```text
-FINE: Conscrypt native libraries not available. Falling back to JDK TLS.
+FINE: Conscrypt native library unavailable. Falling back to default JDK TLS.
 ```
 The client then proceeds to establish standard classical TLS using the host JVM's configured security provider (by default `SunJSSE`). 
 
 **Why does it behave this way?**
-To protect production workloads. A customer updating dependencies or migrating container images should not experience broken API calls or catastrophic application outages simply because a native optimization library could not load on their environment.
+To protect production workloads. Updating dependencies or migrating container images should not cause broken API calls or catastrophic application outages simply because a native optimization library could not load on a given runtime.
 
-**What fallback means for your application**:
-- **Application Availability**: Requests continue to succeed normally. No exceptions or errors are raised to application code.
-- **Security Baseline**: Traffic remains fully encrypted with classical TLS 1.3 (e.g., ECDHE with AES-GCM), maintaining the standard security posture that Java applications use today.
-- **What is absent**: The connection will not be protected against future post-quantum decryption (SNDL).
+### 4.2 Common Scenarios Triggering Fallback
+Several operational conditions can trigger a fallback to classical TLS:
+- **Alpine Linux (`musl` libc)**:
+  Precompiled Conscrypt native binaries require `glibc` and cannot load on Alpine Linux or other `musl`-based container distributions (e.g., `eclipse-temurin:17-alpine`). On these platforms, Conscrypt native loading fails with an `UnsatisfiedLinkError`, and the client automatically falls back to classical TLS (`X25519`). Workloads requiring post-quantum hybrid key exchange should use a `glibc`-compatible base image (such as Debian, Ubuntu, or Wolfi).
+- **Hardened Filesystems (`noexec /tmp`)**:
+  In security-hardened container or Kubernetes environments where `/tmp` is mounted with the `noexec` flag or the filesystem is strictly read-only, the JVM cannot load native shared libraries extracted to `/tmp`, resulting in an `UnsatisfiedLinkError` (`failed to map segment from shared object: Operation not permitted`). The client safely falls back to classical TLS. If PQC is required in these environments, configure an executable working directory using JVM system properties (e.g., `-Dorg.conscrypt.native.workdir=/path/to/executable/dir`).
+- **Non-PQC Endpoints & Middleboxes**:
+  If a server endpoint or an intermediate network proxy does not support post-quantum cryptography, standard TLS 1.3 negotiation naturally selects the first mutually supported classical algorithm (`X25519`).
 
-### 4.2 The Compliance Warning
+### 4.3 Security & Operational Implications
+When fallback occurs, understand what this means for your workload:
+- **Application Availability (Preserved)**: Requests continue to succeed normally. No exceptions or errors are raised to application code.
+- **Security Baseline (Preserved)**: Traffic remains fully encrypted with standard classical TLS 1.3 (e.g., ECDHE with AES-GCM), maintaining the standard security posture that Java applications use today.
+- **Post-Quantum Protection (Absent)**: The connection will **not** be protected against future quantum decryption. Encrypted traffic archived by adversaries remains susceptible to future Store-Now, Decrypt-Later (SNDL) attacks.
+
+### 4.4 Regulatory & Compliance Concerns (Silent Fallback Warning)
 > [!WARNING]
 > **Active Verification is Required for Regulatory Mandates**:
 > If your organization operates under strict compliance, governmental, or corporate security mandates requiring Post-Quantum Cryptography today, **you cannot rely solely on the default configuration without verification**.
 >
-> Because fallback to classical TLS is silent and non-breaking by design, an unexpected environment change (such as switching to an Alpine-based Docker container or changing filesystem mount permissions) could downgrade your connections from hybrid PQC to classical TLS **without throwing exceptions or failing requests**.
+> Because fallback to classical TLS is silent and non-breaking by design, an unexpected environment change (such as switching base container images to Alpine or changing filesystem mount permissions) could downgrade your connections from hybrid PQC to classical TLS **without throwing exceptions or failing requests**.
 >
 > If PQC is a mandatory requirement for your workload, you must implement automated verification in your CI/CD pipelines or startup health checks (see **Section 5**).
 
