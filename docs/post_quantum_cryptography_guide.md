@@ -2,41 +2,25 @@
 
 ## 1. Core Concepts
 
-### 1.1 What is Post-Quantum Cryptography (PQC)?
-Traditional Transport Layer Security (TLS) public-key cryptography—such as RSA and Elliptic Curve Diffie-Hellman (ECDH)—relies on mathematical problems (integer factorization and discrete logarithms) that are practically impossible for classical computers to solve in a reasonable timeframe. 
+**Post-Quantum Cryptography (PQC)** refers to cryptographic algorithms designed to protect encrypted communications against attacks from future quantum computers. The primary threat addressed today is **Store-Now, Decrypt-Later (SNDL)**—where encrypted network traffic is intercepted and stored today by an adversary with the goal of decrypting it once cryptographically relevant quantum computers emerge.
 
-However, sufficiently large, cryptographically relevant quantum computers (CRQCs) will be capable of breaking these mathematical foundations using [Shor's algorithm](https://en.wikipedia.org/wiki/Shor%27s_algorithm). **Post-Quantum Cryptography (PQC)** refers to a new class of cryptographic algorithms designed to run on classical hardware while remaining mathematically secure against attacks from both classical and quantum computers.
+To defend against this without sacrificing stability, Google Cloud Java client libraries adopt **Hybrid Key Exchange** (combining classical algorithms like `X25519` with standardized post-quantum algorithms like `ML-KEM-768`). This ensures connections remain secure even if an unforeseen mathematical weakness is discovered in either algorithm.
 
-For more information on Google Cloud's PQC roadmap and security resources, see [PQC in Plaintext: Google Cloud's Post-Quantum Cryptography Roadmap](https://cloud.google.com/blog/products/identity-security/pqc-in-plaintext-google-clouds-post-quantum-cryptography-roadmap) and [Google Cloud Post-Quantum Cryptography Resources](https://cloud.google.com/security/resources/post-quantum-cryptography).
+For in-depth background on PQC, NIST standards, and Google's quantum-safe roadmap, refer to the following resources:
+- [Google Cloud Post-Quantum Cryptography Resources](https://cloud.google.com/security/resources/post-quantum-cryptography)
+- [How Google is preparing for a post-quantum world](https://cloud.google.com/blog/products/identity-security/how-google-is-preparing-for-a-post-quantum-world/?e=48754805)
+- [PQC in Plaintext: Google Cloud's Post-Quantum Cryptography Roadmap](https://cloud.google.com/blog/products/identity-security/pqc-in-plaintext-google-clouds-post-quantum-cryptography-roadmap)
+- [Post-Quantum Cryptography Standards: What you need to know](https://security.googleblog.com/2024/08/post-quantum-cryptography-standards.html)
 
-### 1.2 The Threat: "Store-Now, Decrypt-Later" (SNDL)
-The primary threat addressed by PQC today is **Store-Now, Decrypt-Later (SNDL)**:
-- **The Attack**: Adversaries can intercept and archive encrypted network communications traversing the public internet today.
-- **The Consequence**: Even if attackers cannot read ciphertext now, they can store the encrypted traffic indefinitely and decrypt it in the future once quantum computers become available.
-- **The Impact**: Any data with a long secrecy lifecycle—such as customer records, credentials, intellectual property, health information, and financial transactions—is vulnerable to retroactive exposure unless protected before transmission.
-
-### 1.3 Addressing the Threat: Hybrid Key Exchange
-Rather than completely replacing proven classical algorithms with brand-new post-quantum mechanisms, client libraries can utilize **Hybrid Key Exchange** (e.g., combining classical ECDH with post-quantum algorithms such as `X25519MLKEM768`):
-
-> [!TIP]
-> **The Two-Lock Analogy**:
-> Think of hybrid key exchange like securing a door with **two distinct locks**:
-> 1. A battle-tested **classical lock** (`X25519` elliptic curve).
-> 2. A quantum-resistant **post-quantum lock** (`ML-KEM-768`, NIST FIPS 203).
-> 
-> To decrypt the session, an attacker must break **both** locks simultaneously:
-> - If an unforeseen mathematical weakness is ever discovered in the post-quantum algorithm, the classical algorithm still maintains security.
-> - If a quantum computer breaks the classical algorithm, the post-quantum algorithm still maintains security.
-
-### 1.4 What Changes vs. What Stays the Same?
-Adopting PQC in Google Cloud Java client libraries requires no changes to application business logic across both **gRPC** and **HTTP/JSON** transports:
+### 1.1 What Changes in Google Cloud Java Client Libraries?
+Enabling PQC in Google Cloud Java client libraries requires **zero changes to application business logic** across both **gRPC** and **HTTP/JSON** transports:
 - **What stays exactly the same**:
-  - Your application source code and business logic.
-  - How you construct and call API clients (e.g., `SecretManagerServiceClient`, `StorageClient`).
+  - Application source code and business logic.
+  - How you construct and invoke API clients (e.g., `SecretManagerServiceClient`, `StorageClient`).
   - Authentication tokens, Service Account keys, and OAuth2 credentials.
   - Request and response message payloads (Protobuf or JSON).
-- **What changes**:
-  - Only the initial **TLS 1.3 cryptographic handshake** (Layer 4/6) performed when the client establishes a secure connection to Google Cloud service endpoints. By default, this under-the-hood improvement is completely seamless and requires **zero application code changes**.
+- **What changes under the hood**:
+  - Only the initial **TLS 1.3 cryptographic handshake** (Layer 4/6) performed when establishing a secure connection to Google Cloud service endpoints. The client automatically negotiates hybrid post-quantum key exchange (`X25519MLKEM768`) instead of classical-only key exchange (`X25519`).
 
 ---
 
