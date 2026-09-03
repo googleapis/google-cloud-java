@@ -14,29 +14,29 @@
  * limitations under the License.
  */
 
-package com.google.cloud.compute.v1.stub.samples;
+package com.google.cloud.compute.v1.samples;
 
-// [START compute_v1_generated_ReservationSlotsStubSettings_GetVersion_sync]
+// [START compute_v1_generated_ReservationSlotsSettings_GetHealth_sync]
 import com.google.api.gax.longrunning.OperationalTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.TimedRetryAlgorithm;
-import com.google.cloud.compute.v1.stub.ReservationSlotsStubSettings;
+import com.google.cloud.compute.v1.ReservationSlotsSettings;
 import java.time.Duration;
 
-public class SyncGetVersion {
+public class SyncGetHealth {
 
   public static void main(String[] args) throws Exception {
-    syncGetVersion();
+    syncGetHealth();
   }
 
-  public static void syncGetVersion() throws Exception {
+  public static void syncGetHealth() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    ReservationSlotsStubSettings.Builder reservationSlotsSettingsBuilder =
-        ReservationSlotsStubSettings.newBuilder();
+    ReservationSlotsSettings.Builder reservationSlotsSettingsBuilder =
+        ReservationSlotsSettings.newBuilder();
     TimedRetryAlgorithm timedRetryAlgorithm =
         OperationalTimedPollAlgorithm.create(
             RetrySettings.newBuilder()
@@ -51,4 +51,4 @@ public class SyncGetVersion {
         .build();
   }
 }
-// [END compute_v1_generated_ReservationSlotsStubSettings_GetVersion_sync]
+// [END compute_v1_generated_ReservationSlotsSettings_GetHealth_sync]

@@ -232,6 +232,50 @@ public interface OperationOrBuilder
   com.google.cloud.compute.v1.ErrorOrBuilder getErrorOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata for GetHealth operations.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GetHealthOperationMetadata get_health_operation_metadata = 303911457;
+   * </code>
+   *
+   * @return Whether the getHealthOperationMetadata field is set.
+   */
+  boolean hasGetHealthOperationMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata for GetHealth operations.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GetHealthOperationMetadata get_health_operation_metadata = 303911457;
+   * </code>
+   *
+   * @return The getHealthOperationMetadata.
+   */
+  com.google.cloud.compute.v1.GetHealthOperationMetadata getGetHealthOperationMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata for GetHealth operations.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.GetHealthOperationMetadata get_health_operation_metadata = 303911457;
+   * </code>
+   */
+  com.google.cloud.compute.v1.GetHealthOperationMetadataOrBuilder
+      getGetHealthOperationMetadataOrBuilder();
+
+  /**
    * <code>
    * optional .google.cloud.compute.v1.GetVersionOperationMetadata get_version_operation_metadata = 173230167;
    * </code>

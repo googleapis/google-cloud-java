@@ -1708,6 +1708,45 @@ public interface InterconnectOrBuilder
    *
    *
    * <pre>
+   * Output only. Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return Whether the selfLinkWithId field is set.
+   */
+  boolean hasSelfLinkWithId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return The selfLinkWithId.
+   */
+  java.lang.String getSelfLinkWithId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Server-defined URL for this resource with the resource id.
+   * </pre>
+   *
+   * <code>optional string self_link_with_id = 44520962;</code>
+   *
+   * @return The bytes for selfLinkWithId.
+   */
+  com.google.protobuf.ByteString getSelfLinkWithIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] The current state of Interconnect functionality, which can
    * take one of the following values:
    *
