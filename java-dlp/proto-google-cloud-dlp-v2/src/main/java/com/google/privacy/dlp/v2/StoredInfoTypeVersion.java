@@ -133,11 +133,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Create timestamp of the version. Read-only, determined by the system
-   * when the version is created.
+   * Output only. Create timestamp of the version. Read-only, determined by the
+   * system when the version is created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -150,11 +151,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Create timestamp of the version. Read-only, determined by the system
-   * when the version is created.
+   * Output only. Create timestamp of the version. Read-only, determined by the
+   * system when the version is created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -167,11 +169,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Create timestamp of the version. Read-only, determined by the system
-   * when the version is created.
+   * Output only. Create timestamp of the version. Read-only, determined by the
+   * system when the version is created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 2;</code>
+   * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -185,11 +188,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Stored info type version state. Read-only, updated by the system
-   * during dictionary creation.
+   * Output only. Stored info type version state. Read-only, updated by the
+   * system during dictionary creation.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeState state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -202,11 +207,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Stored info type version state. Read-only, updated by the system
-   * during dictionary creation.
+   * Output only. Stored info type version state. Read-only, updated by the
+   * system during dictionary creation.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeState state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -226,10 +233,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Errors that occurred when creating this storedInfoType version, or
-   * anomalies detected in the storedInfoType data that render it unusable. Only
-   * the five most recent errors will be displayed, with the most recent error
-   * appearing first.
+   * Output only. Errors that occurred when creating this storedInfoType
+   * version, or anomalies detected in the storedInfoType data that render it
+   * unusable. Only the five most recent errors will be displayed, with the most
+   * recent error appearing first.
    *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
@@ -241,7 +248,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    * not the source of the error.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
@@ -252,10 +261,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Errors that occurred when creating this storedInfoType version, or
-   * anomalies detected in the storedInfoType data that render it unusable. Only
-   * the five most recent errors will be displayed, with the most recent error
-   * appearing first.
+   * Output only. Errors that occurred when creating this storedInfoType
+   * version, or anomalies detected in the storedInfoType data that render it
+   * unusable. Only the five most recent errors will be displayed, with the most
+   * recent error appearing first.
    *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
@@ -267,7 +276,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    * not the source of the error.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder>
@@ -279,10 +290,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Errors that occurred when creating this storedInfoType version, or
-   * anomalies detected in the storedInfoType data that render it unusable. Only
-   * the five most recent errors will be displayed, with the most recent error
-   * appearing first.
+   * Output only. Errors that occurred when creating this storedInfoType
+   * version, or anomalies detected in the storedInfoType data that render it
+   * unusable. Only the five most recent errors will be displayed, with the most
+   * recent error appearing first.
    *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
@@ -294,7 +305,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    * not the source of the error.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public int getErrorsCount() {
@@ -305,10 +318,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Errors that occurred when creating this storedInfoType version, or
-   * anomalies detected in the storedInfoType data that render it unusable. Only
-   * the five most recent errors will be displayed, with the most recent error
-   * appearing first.
+   * Output only. Errors that occurred when creating this storedInfoType
+   * version, or anomalies detected in the storedInfoType data that render it
+   * unusable. Only the five most recent errors will be displayed, with the most
+   * recent error appearing first.
    *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
@@ -320,7 +333,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    * not the source of the error.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.Error getErrors(int index) {
@@ -331,10 +346,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Errors that occurred when creating this storedInfoType version, or
-   * anomalies detected in the storedInfoType data that render it unusable. Only
-   * the five most recent errors will be displayed, with the most recent error
-   * appearing first.
+   * Output only. Errors that occurred when creating this storedInfoType
+   * version, or anomalies detected in the storedInfoType data that render it
+   * unusable. Only the five most recent errors will be displayed, with the most
+   * recent error appearing first.
    *
    * For example, some of the data for stored custom dictionaries is put in
    * the user's Cloud Storage bucket, and if this data is modified or
@@ -346,7 +361,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    * not the source of the error.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index) {
@@ -360,10 +377,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Statistics about this storedInfoType version.
+   * Output only. Statistics about this storedInfoType version.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the stats field is set.
    */
@@ -376,10 +395,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Statistics about this storedInfoType version.
+   * Output only. Statistics about this storedInfoType version.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The stats.
    */
@@ -394,10 +415,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Statistics about this storedInfoType version.
+   * Output only. Statistics about this storedInfoType version.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+   * <code>
+   * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeStatsOrBuilder getStatsOrBuilder() {
@@ -1107,11 +1130,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Create timestamp of the version. Read-only, determined by the system
-     * when the version is created.
+     * Output only. Create timestamp of the version. Read-only, determined by the
+     * system when the version is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the createTime field is set.
      */
@@ -1123,11 +1148,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Create timestamp of the version. Read-only, determined by the system
-     * when the version is created.
+     * Output only. Create timestamp of the version. Read-only, determined by the
+     * system when the version is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The createTime.
      */
@@ -1145,11 +1172,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Create timestamp of the version. Read-only, determined by the system
-     * when the version is created.
+     * Output only. Create timestamp of the version. Read-only, determined by the
+     * system when the version is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1169,11 +1198,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Create timestamp of the version. Read-only, determined by the system
-     * when the version is created.
+     * Output only. Create timestamp of the version. Read-only, determined by the
+     * system when the version is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
@@ -1190,11 +1221,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Create timestamp of the version. Read-only, determined by the system
-     * when the version is created.
+     * Output only. Create timestamp of the version. Read-only, determined by the
+     * system when the version is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -1219,11 +1252,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Create timestamp of the version. Read-only, determined by the system
-     * when the version is created.
+     * Output only. Create timestamp of the version. Read-only, determined by the
+     * system when the version is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearCreateTime() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1240,11 +1275,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Create timestamp of the version. Read-only, determined by the system
-     * when the version is created.
+     * Output only. Create timestamp of the version. Read-only, determined by the
+     * system when the version is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       bitField0_ |= 0x00000002;
@@ -1256,11 +1293,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Create timestamp of the version. Read-only, determined by the system
-     * when the version is created.
+     * Output only. Create timestamp of the version. Read-only, determined by the
+     * system when the version is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -1276,11 +1315,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Create timestamp of the version. Read-only, determined by the system
-     * when the version is created.
+     * Output only. Create timestamp of the version. Read-only, determined by the
+     * system when the version is created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 2;</code>
+     * <code>
+     * .google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -1305,11 +1346,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Stored info type version state. Read-only, updated by the system
-     * during dictionary creation.
+     * Output only. Stored info type version state. Read-only, updated by the
+     * system during dictionary creation.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeState state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for state.
      */
@@ -1322,11 +1365,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Stored info type version state. Read-only, updated by the system
-     * during dictionary creation.
+     * Output only. Stored info type version state. Read-only, updated by the
+     * system during dictionary creation.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeState state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
@@ -1342,11 +1387,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Stored info type version state. Read-only, updated by the system
-     * during dictionary creation.
+     * Output only. Stored info type version state. Read-only, updated by the
+     * system during dictionary creation.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeState state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The state.
      */
@@ -1361,11 +1408,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Stored info type version state. Read-only, updated by the system
-     * during dictionary creation.
+     * Output only. Stored info type version state. Read-only, updated by the
+     * system during dictionary creation.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeState state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The state to set.
      * @return This builder for chaining.
@@ -1384,11 +1433,13 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Stored info type version state. Read-only, updated by the system
-     * during dictionary creation.
+     * Output only. Stored info type version state. Read-only, updated by the
+     * system during dictionary creation.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeState state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1419,10 +1470,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1434,7 +1485,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList() {
       if (errorsBuilder_ == null) {
@@ -1448,10 +1501,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1463,7 +1516,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public int getErrorsCount() {
       if (errorsBuilder_ == null) {
@@ -1477,10 +1532,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1492,7 +1547,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.Error getErrors(int index) {
       if (errorsBuilder_ == null) {
@@ -1506,10 +1563,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1521,7 +1578,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setErrors(int index, com.google.privacy.dlp.v2.Error value) {
       if (errorsBuilder_ == null) {
@@ -1541,10 +1600,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1556,7 +1615,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setErrors(int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
       if (errorsBuilder_ == null) {
@@ -1573,10 +1634,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1588,7 +1649,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addErrors(com.google.privacy.dlp.v2.Error value) {
       if (errorsBuilder_ == null) {
@@ -1608,10 +1671,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1623,7 +1686,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addErrors(int index, com.google.privacy.dlp.v2.Error value) {
       if (errorsBuilder_ == null) {
@@ -1643,10 +1708,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1658,7 +1723,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addErrors(com.google.privacy.dlp.v2.Error.Builder builderForValue) {
       if (errorsBuilder_ == null) {
@@ -1675,10 +1742,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1690,7 +1757,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addErrors(int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
       if (errorsBuilder_ == null) {
@@ -1707,10 +1776,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1722,7 +1791,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder addAllErrors(
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.Error> values) {
@@ -1740,10 +1811,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1755,7 +1826,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearErrors() {
       if (errorsBuilder_ == null) {
@@ -1772,10 +1845,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1787,7 +1860,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder removeErrors(int index) {
       if (errorsBuilder_ == null) {
@@ -1804,10 +1879,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1819,7 +1894,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.Error.Builder getErrorsBuilder(int index) {
       return internalGetErrorsFieldBuilder().getBuilder(index);
@@ -1829,10 +1906,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1844,7 +1921,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index) {
       if (errorsBuilder_ == null) {
@@ -1858,10 +1937,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1873,7 +1952,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder>
         getErrorsOrBuilderList() {
@@ -1888,10 +1969,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1903,7 +1984,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.Error.Builder addErrorsBuilder() {
       return internalGetErrorsFieldBuilder()
@@ -1914,10 +1997,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1929,7 +2012,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.Error.Builder addErrorsBuilder(int index) {
       return internalGetErrorsFieldBuilder()
@@ -1940,10 +2025,10 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Errors that occurred when creating this storedInfoType version, or
-     * anomalies detected in the storedInfoType data that render it unusable. Only
-     * the five most recent errors will be displayed, with the most recent error
-     * appearing first.
+     * Output only. Errors that occurred when creating this storedInfoType
+     * version, or anomalies detected in the storedInfoType data that render it
+     * unusable. Only the five most recent errors will be displayed, with the most
+     * recent error appearing first.
      *
      * For example, some of the data for stored custom dictionaries is put in
      * the user's Cloud Storage bucket, and if this data is modified or
@@ -1955,7 +2040,9 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      * not the source of the error.
      * </pre>
      *
-     * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
+     * <code>
+     * repeated .google.privacy.dlp.v2.Error errors = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public java.util.List<com.google.privacy.dlp.v2.Error.Builder> getErrorsBuilderList() {
       return internalGetErrorsFieldBuilder().getBuilderList();
@@ -1989,10 +2076,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Statistics about this storedInfoType version.
+     * Output only. Statistics about this storedInfoType version.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the stats field is set.
      */
@@ -2004,10 +2093,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Statistics about this storedInfoType version.
+     * Output only. Statistics about this storedInfoType version.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The stats.
      */
@@ -2025,10 +2116,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Statistics about this storedInfoType version.
+     * Output only. Statistics about this storedInfoType version.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStats(com.google.privacy.dlp.v2.StoredInfoTypeStats value) {
       if (statsBuilder_ == null) {
@@ -2048,10 +2141,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Statistics about this storedInfoType version.
+     * Output only. Statistics about this storedInfoType version.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setStats(com.google.privacy.dlp.v2.StoredInfoTypeStats.Builder builderForValue) {
       if (statsBuilder_ == null) {
@@ -2068,10 +2163,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Statistics about this storedInfoType version.
+     * Output only. Statistics about this storedInfoType version.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeStats(com.google.privacy.dlp.v2.StoredInfoTypeStats value) {
       if (statsBuilder_ == null) {
@@ -2096,10 +2193,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Statistics about this storedInfoType version.
+     * Output only. Statistics about this storedInfoType version.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearStats() {
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -2116,10 +2215,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Statistics about this storedInfoType version.
+     * Output only. Statistics about this storedInfoType version.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeStats.Builder getStatsBuilder() {
       bitField0_ |= 0x00000010;
@@ -2131,10 +2232,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Statistics about this storedInfoType version.
+     * Output only. Statistics about this storedInfoType version.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeStatsOrBuilder getStatsOrBuilder() {
       if (statsBuilder_ != null) {
@@ -2150,10 +2253,12 @@ public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Statistics about this storedInfoType version.
+     * Output only. Statistics about this storedInfoType version.
      * </pre>
      *
-     * <code>.google.privacy.dlp.v2.StoredInfoTypeStats stats = 5;</code>
+     * <code>
+     * .google.privacy.dlp.v2.StoredInfoTypeStats stats = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilder<
             com.google.privacy.dlp.v2.StoredInfoTypeStats,

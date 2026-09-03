@@ -1,11 +1,13 @@
 # Post-Quantum Cryptography (PQC) User Guide for Google Cloud Java Client Libraries
 
-## 1. Executive Summary & Core Concepts
+## 1. Core Concepts
 
 ### 1.1 What is Post-Quantum Cryptography (PQC)?
 Traditional Transport Layer Security (TLS) public-key cryptography—such as RSA and Elliptic Curve Diffie-Hellman (ECDH)—relies on mathematical problems (integer factorization and discrete logarithms) that are practically impossible for classical computers to solve in a reasonable timeframe. 
 
 However, sufficiently large, cryptographically relevant quantum computers (CRQCs) will be capable of breaking these mathematical foundations using [Shor's algorithm](https://en.wikipedia.org/wiki/Shor%27s_algorithm). **Post-Quantum Cryptography (PQC)** refers to a new class of cryptographic algorithms designed to run on classical hardware while remaining mathematically secure against attacks from both classical and quantum computers.
+
+For more background on PQC and Google Cloud's broader post-quantum security initiatives, see the [Google Cloud Post-quantum TLS documentation](https://cloud.google.com/load-balancing/docs/tls-versions#post-quantum-tls), [Google Cloud KMS PQC Overview](https://cloud.google.com/security/docs/asymmetric-pqc-insights), and [NIST FIPS 203 (ML-KEM)](https://csrc.nist.gov/pubs/fips/203/final).
 
 ### 1.2 The Threat: "Store-Now, Decrypt-Later" (SNDL)
 The primary threat addressed by PQC today is **Store-Now, Decrypt-Later (SNDL)**:
@@ -200,35 +202,17 @@ Both gRPC (via `grpc-netty-shaded` / `netty-tcnative`) and HTTP/JSON (via Conscr
 | **macOS (Apple Silicon M-series & Intel)** | **Fully Supported** | Native `osx-aarch_64` and `osx-x86_64` binaries bundled in `grpc-netty-shaded` and `conscrypt-openjdk-uber`. |
 | **Windows (x86_64)** | **Fully Supported** | Native `windows-x86_64` binaries bundled in `grpc-netty-shaded` and `conscrypt-openjdk-uber`. |
 | **GraalVM Native Image** | **Supported** | Supported when including appropriate reachability metadata and configuration for Netty or Conscrypt JNI libraries. |
-| **Alpine Linux / Musl libc Containers** | **Fallback to Classical** | Native binaries are compiled for `glibc`. On Alpine (`musl`), native library loading fails with `UnsatisfiedLinkError` and safely falls back to standard classical TLS. |
+| **Alpine Linux / Musl libc Containers** | **Fallback to Classical** | Native binaries require `glibc`. On Alpine (`musl`), native loading is unsupported and safely falls back to standard classical TLS. |
 
-### 5.2 Handling Alpine Linux (`musl` libc)
-If your container images are based on Alpine Linux (e.g., `eclipse-temurin:17-alpine` or `openjdk:11-alpine`), native C libraries cannot load because Alpine uses `musl` libc instead of `glibc`.
+### 5.2 Unsupported Scenarios & Graceful Fallback
+Certain deployment environments do not support native BoringSSL binaries out of the box. In these scenarios, the client libraries do not fail; they gracefully fall back to standard classical TLS (e.g. `X25519` via JDK JSSE):
 
-**Some Possible Options on Alpine**:
-1. **Accept Classical TLS Fallback**: The client library will safely fall back to classical TLS 1.3 (`X25519`). Your application will function normally without errors.
-2. **Use a Glibc-Based Container Image**: If quantum resistance via native BoringSSL is desired, use a base container image that provides `glibc` (such as Debian-, Ubuntu-, or Wolfi-based container images).
-3. **Configure an Alternative Security Provider (HTTP/JSON)**: Use an alternative pure-Java security provider that supports your environment (such as Bouncy Castle; see **Section 8.2, Option 3**).
+- **Alpine Linux (`musl` libc)**:
+  Precompiled native binaries bundled in `grpc-netty-shaded` and `conscrypt-openjdk-uber` require `glibc` and cannot load on Alpine Linux or other `musl`-based container distributions (e.g., `eclipse-temurin:17-alpine`). On these platforms, native loading fails with an `UnsatisfiedLinkError`, and the client automatically falls back to classical TLS (`X25519`). Workloads requiring post-quantum hybrid key exchange should use a `glibc`-compatible base image (such as Debian, Ubuntu, or Wolfi).
+- **Hardened Filesystems (`noexec /tmp`)**:
+  In security-hardened container or Kubernetes environments where `/tmp` is mounted with the `noexec` flag or the filesystem is strictly read-only, the JVM cannot load native shared libraries extracted to `/tmp`, resulting in an `UnsatisfiedLinkError` (`failed to map segment from shared object: Operation not permitted`). The client safely falls back to classical TLS. If PQC is required in these environments, configure an executable working directory using JVM system properties (e.g., `-Dio.netty.native.workdir=/path/to/executable/dir` for gRPC or `-Dorg.conscrypt.native.workdir=/path/to/executable/dir` for HTTP/JSON).
 
-### 5.3 Handling Hardened Filesystems & `noexec /tmp`
-In hardened Kubernetes pods or security-conscious Docker containers, `/tmp` may be mounted with the `noexec` flag or the entire root filesystem may be marked read-only.
-
-When native engines start, the JVM extracts bundled native `.so` files to a temporary directory. If that directory does not allow execution:
-```text
-java.lang.UnsatisfiedLinkError: ... failed to map segment from shared object: Operation not permitted
-```
-
-**Possible Solution**: Depending on your container configuration and security constraints, one possible solution is to provide an alternative directory that has write and execute permissions using JVM system properties:
-- For Netty / gRPC:
-  ```bash
-  java -Dio.netty.native.workdir=/var/run/app/tmp -jar my-application.jar
-  ```
-- For Conscrypt (HTTP/JSON):
-  ```bash
-  java -Dorg.conscrypt.native.workdir=/var/run/app/tmp -jar my-application.jar
-  ```
-
-### 5.4 Classpath Isolation & Version Skew Warning
+### 5.3 Classpath Isolation & Version Skew Warning
 If your project uses multiple dependencies that transitively pull in different versions of gRPC Netty components or Conscrypt, JNI ABI mismatches can occur during JVM classloading. Always ensure your build tool resolves compatible versions consistently.
 
 One possible solution for this is to use Google Cloud's `libraries-bom` (version `26.88.0+`), which centrally manages dependency versions and ensures consistent, compatible runtime dependencies across all Google Cloud client libraries.
