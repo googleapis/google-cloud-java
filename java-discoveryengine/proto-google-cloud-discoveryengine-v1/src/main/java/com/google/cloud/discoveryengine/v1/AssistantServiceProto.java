@@ -49,6 +49,14 @@ public final class AssistantServiceProto extends com.google.protobuf.GeneratedFi
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_AgentsSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_AgentsSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_AgentsSpec_AgentSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_AgentsSpec_AgentSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_ToolsSpec_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_ToolsSpec_fieldAccessorTable;
@@ -99,7 +107,7 @@ public final class AssistantServiceProto extends com.google.protobuf.GeneratedFi
           + "/cloud/discoveryengine/v1/session.proto\"R\n"
           + "\022AssistUserMetadata\022\026\n"
           + "\ttime_zone\030\001 \001(\tB\003\340A\001\022$\n"
-          + "\027preferred_language_code\030\002 \001(\tB\003\340A\001\"\272\t\n"
+          + "\027preferred_language_code\030\002 \001(\tB\003\340A\001\"\255\013\n"
           + "\023StreamAssistRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
           + "(discoveryengine.googleapis.com/Assistant\022:\n"
@@ -108,23 +116,30 @@ public final class AssistantServiceProto extends com.google.protobuf.GeneratedFi
           + "\007session\030\003 \001(\tB.\340A\001\372A(\n"
           + "&discoveryengine.googleapis.com/Session\022O\n\r"
           + "user_metadata\030\006 \001(\0132"
-          + "3.google.cloud.discoveryengine.v1.AssistUserMetadataB\003\340A\001\022W\n\n"
-          + "tools_spec\030\022 \001(\0132>."
-          + "google.cloud.discoveryengine.v1.StreamAssistRequest.ToolsSpecB\003\340A\001\022a\n"
-          + "\017generation_spec\030\023 \001(\0132C.google.cloud.discoveryengi"
-          + "ne.v1.StreamAssistRequest.GenerationSpecB\003\340A\001\032\257\005\n"
+          + "3.google.cloud.discoveryengine.v1.AssistUserMetadataB\003\340A\001\022Y\n"
+          + "\013agents_spec\030\026 \001(\0132?"
+          + ".google.cloud.discoveryengine.v1.StreamAssistRequest.AgentsSpecB\003\340A\001\022W\n\n"
+          + "tools_spec\030\022"
+          + " \001(\0132>.google.cloud.discoveryengine.v1.StreamAssistRequest.ToolsSpecB\003\340A\001\022a\n"
+          + "\017generation_spec\030\023 \001(\0132C.google.cloud.di"
+          + "scoveryengine.v1.StreamAssistRequest.GenerationSpecB\003\340A\001\032\225\001\n\n"
+          + "AgentsSpec\022c\n"
+          + "\013agent_specs\030\001 \003(\0132I.google.cloud.discoveryeng"
+          + "ine.v1.StreamAssistRequest.AgentsSpec.AgentSpecB\003\340A\001\032\"\n"
+          + "\tAgentSpec\022\025\n"
+          + "\010agent_id\030\001 \001(\tB\003\340A\002\032\257\005\n"
           + "\tToolsSpec\022u\n"
-          + "\025vertex_ai_search_spec\030\001 \001(\0132Q.google.cloud.discoveryengin"
-          + "e.v1.StreamAssistRequest.ToolsSpec.VertexAiSearchSpecB\003\340A\001\022p\n"
-          + "\022web_grounding_spec\030\002 \001(\0132O.google.cloud.discoveryengine.v1"
-          + ".StreamAssistRequest.ToolsSpec.WebGroundingSpecB\003\340A\001\022v\n"
-          + "\025image_generation_spec\030\003 \001(\0132R.google.cloud.discoveryengine.v1.St"
-          + "reamAssistRequest.ToolsSpec.ImageGenerationSpecB\003\340A\001\022v\n"
-          + "\025video_generation_spec\030\004 \001(\0132R.google.cloud.discoveryengine.v1.St"
-          + "reamAssistRequest.ToolsSpec.VideoGenerationSpecB\003\340A\001\032\206\001\n"
+          + "\025vertex_ai_search_spec\030\001 \001(\0132Q.google.cloud.discoveryen"
+          + "gine.v1.StreamAssistRequest.ToolsSpec.VertexAiSearchSpecB\003\340A\001\022p\n"
+          + "\022web_grounding_spec\030\002 \001(\0132O.google.cloud.discoveryengine"
+          + ".v1.StreamAssistRequest.ToolsSpec.WebGroundingSpecB\003\340A\001\022v\n"
+          + "\025image_generation_spec\030\003 \001(\0132R.google.cloud.discoveryengine.v1"
+          + ".StreamAssistRequest.ToolsSpec.ImageGenerationSpecB\003\340A\001\022v\n"
+          + "\025video_generation_spec\030\004 \001(\0132R.google.cloud.discoveryengine.v1"
+          + ".StreamAssistRequest.ToolsSpec.VideoGenerationSpecB\003\340A\001\032\206\001\n"
           + "\022VertexAiSearchSpec\022[\n"
-          + "\020data_store_specs\030\002 \003(\0132<.google.cloud.dis"
-          + "coveryengine.v1.SearchRequest.DataStoreSpecB\003\340A\001\022\023\n"
+          + "\020data_store_specs\030\002 \003(\0132<.google.cloud."
+          + "discoveryengine.v1.SearchRequest.DataStoreSpecB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\032\022\n"
           + "\020WebGroundingSpec\032\025\n"
           + "\023ImageGenerationSpec\032\025\n"
@@ -140,17 +155,17 @@ public final class AssistantServiceProto extends com.google.protobuf.GeneratedFi
           + "\007session\030\001 \001(\tB+\372A(\n"
           + "&discoveryengine.googleapis.com/Session2\306\002\n"
           + "\020AssistantService\022\335\001\n"
-          + "\014StreamAssist\0224.google.cloud.discoveryengin"
-          + "e.v1.StreamAssistRequest\0325.google.cloud.discoveryengine.v1.StreamAssistResponse\""
-          + "^\202\323\344\223\002X\"S/v1/{name=projects/*/locations/"
-          + "*/collections/*/engines/*/assistants/*}:"
-          + "streamAssist:\001*0\001\032R\312A\036discoveryengine.go"
-          + "ogleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\210\002\n"
-          + "#com.google.cloud.discoveryengine.v1B\025AssistantServiceP"
-          + "rotoP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;discoveryeng"
-          + "inepb\242\002\017DISCOVERYENGINE\252\002\037Google.Cloud.D"
-          + "iscoveryEngine.V1\312\002\037Google\\Cloud\\Discove"
-          + "ryEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
+          + "\014StreamAssist\0224.google.cloud.discoveryen"
+          + "gine.v1.StreamAssistRequest\0325.google.cloud.discoveryengine.v1.StreamAssistRespon"
+          + "se\"^\202\323\344\223\002X\"S/v1/{name=projects/*/locatio"
+          + "ns/*/collections/*/engines/*/assistants/"
+          + "*}:streamAssist:\001*0\001\032R\312A\036discoveryengine"
+          + ".googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\210\002\n"
+          + "#com.google.cloud.discoveryengine.v1B\025AssistantServi"
+          + "ceProtoP\001ZMcloud.google.com/go/discoveryengine/apiv1/discoveryenginepb;discovery"
+          + "enginepb\242\002\017DISCOVERYENGINE\252\002\037Google.Clou"
+          + "d.DiscoveryEngine.V1\312\002\037Google\\Cloud\\Disc"
+          + "overyEngine\\V1\352\002\"Google::Cloud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -178,11 +193,35 @@ public final class AssistantServiceProto extends com.google.protobuf.GeneratedFi
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_descriptor,
             new java.lang.String[] {
-              "Name", "Query", "Session", "UserMetadata", "ToolsSpec", "GenerationSpec",
+              "Name",
+              "Query",
+              "Session",
+              "UserMetadata",
+              "AgentsSpec",
+              "ToolsSpec",
+              "GenerationSpec",
+            });
+    internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_AgentsSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_AgentsSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_AgentsSpec_descriptor,
+            new java.lang.String[] {
+              "AgentSpecs",
+            });
+    internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_AgentsSpec_AgentSpec_descriptor =
+        internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_AgentsSpec_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_AgentsSpec_AgentSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_AgentsSpec_AgentSpec_descriptor,
+            new java.lang.String[] {
+              "AgentId",
             });
     internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_ToolsSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_descriptor
-            .getNestedType(0);
+            .getNestedType(1);
     internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_ToolsSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_ToolsSpec_descriptor,
@@ -224,7 +263,7 @@ public final class AssistantServiceProto extends com.google.protobuf.GeneratedFi
             new java.lang.String[] {});
     internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_GenerationSpec_descriptor =
         internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_descriptor
-            .getNestedType(1);
+            .getNestedType(2);
     internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_GenerationSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_StreamAssistRequest_GenerationSpec_descriptor,

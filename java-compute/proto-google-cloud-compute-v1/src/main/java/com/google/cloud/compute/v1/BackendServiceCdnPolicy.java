@@ -78,14 +78,17 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    *
    * <pre>
    * Specifies the cache setting for all responses from this backend.
-   * The possible values are:USE_ORIGIN_HEADERS Requires the origin to set valid caching
+   * The possible values are:
+   * USE_ORIGIN_HEADERS Requires the origin to set valid caching
    * headers to cache content. Responses without these headers will not be
    * cached at Google's edge, and will require a full trip to the origin on
    * every request, potentially impacting performance and increasing load on
-   * the origin server.FORCE_CACHE_ALL Cache all content, ignoring any "private",
+   * the origin server.
+   * FORCE_CACHE_ALL Cache all content, ignoring any "private",
    * "no-store" or "no-cache" directives in Cache-Control response headers.
    * Warning: this may result in Cloud CDN caching private,
-   * per-user (user identifiable) content.CACHE_ALL_STATIC Automatically cache static content,
+   * per-user (user identifiable) content.
+   * CACHE_ALL_STATIC Automatically cache static content,
    * including common image formats, media (video and audio), and web assets
    * (JavaScript and CSS). Requests and responses that are marked as
    * uncacheable, as well as dynamic content (including HTML), will not be
@@ -478,14 +481,17 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    *
    * <pre>
    * Specifies the cache setting for all responses from this backend.
-   * The possible values are:USE_ORIGIN_HEADERS Requires the origin to set valid caching
+   * The possible values are:
+   * USE_ORIGIN_HEADERS Requires the origin to set valid caching
    * headers to cache content. Responses without these headers will not be
    * cached at Google's edge, and will require a full trip to the origin on
    * every request, potentially impacting performance and increasing load on
-   * the origin server.FORCE_CACHE_ALL Cache all content, ignoring any "private",
+   * the origin server.
+   * FORCE_CACHE_ALL Cache all content, ignoring any "private",
    * "no-store" or "no-cache" directives in Cache-Control response headers.
    * Warning: this may result in Cloud CDN caching private,
-   * per-user (user identifiable) content.CACHE_ALL_STATIC Automatically cache static content,
+   * per-user (user identifiable) content.
+   * CACHE_ALL_STATIC Automatically cache static content,
    * including common image formats, media (video and audio), and web assets
    * (JavaScript and CSS). Requests and responses that are marked as
    * uncacheable, as well as dynamic content (including HTML), will not be
@@ -510,14 +516,17 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    *
    * <pre>
    * Specifies the cache setting for all responses from this backend.
-   * The possible values are:USE_ORIGIN_HEADERS Requires the origin to set valid caching
+   * The possible values are:
+   * USE_ORIGIN_HEADERS Requires the origin to set valid caching
    * headers to cache content. Responses without these headers will not be
    * cached at Google's edge, and will require a full trip to the origin on
    * every request, potentially impacting performance and increasing load on
-   * the origin server.FORCE_CACHE_ALL Cache all content, ignoring any "private",
+   * the origin server.
+   * FORCE_CACHE_ALL Cache all content, ignoring any "private",
    * "no-store" or "no-cache" directives in Cache-Control response headers.
    * Warning: this may result in Cloud CDN caching private,
-   * per-user (user identifiable) content.CACHE_ALL_STATIC Automatically cache static content,
+   * per-user (user identifiable) content.
+   * CACHE_ALL_STATIC Automatically cache static content,
    * including common image formats, media (video and audio), and web assets
    * (JavaScript and CSS). Requests and responses that are marked as
    * uncacheable, as well as dynamic content (including HTML), will not be
@@ -550,14 +559,17 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    *
    * <pre>
    * Specifies the cache setting for all responses from this backend.
-   * The possible values are:USE_ORIGIN_HEADERS Requires the origin to set valid caching
+   * The possible values are:
+   * USE_ORIGIN_HEADERS Requires the origin to set valid caching
    * headers to cache content. Responses without these headers will not be
    * cached at Google's edge, and will require a full trip to the origin on
    * every request, potentially impacting performance and increasing load on
-   * the origin server.FORCE_CACHE_ALL Cache all content, ignoring any "private",
+   * the origin server.
+   * FORCE_CACHE_ALL Cache all content, ignoring any "private",
    * "no-store" or "no-cache" directives in Cache-Control response headers.
    * Warning: this may result in Cloud CDN caching private,
-   * per-user (user identifiable) content.CACHE_ALL_STATIC Automatically cache static content,
+   * per-user (user identifiable) content.
+   * CACHE_ALL_STATIC Automatically cache static content,
    * including common image formats, media (video and audio), and web assets
    * (JavaScript and CSS). Requests and responses that are marked as
    * uncacheable, as well as dynamic content (including HTML), will not be
@@ -2577,14 +2589,17 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies the cache setting for all responses from this backend.
-     * The possible values are:USE_ORIGIN_HEADERS Requires the origin to set valid caching
+     * The possible values are:
+     * USE_ORIGIN_HEADERS Requires the origin to set valid caching
      * headers to cache content. Responses without these headers will not be
      * cached at Google's edge, and will require a full trip to the origin on
      * every request, potentially impacting performance and increasing load on
-     * the origin server.FORCE_CACHE_ALL Cache all content, ignoring any "private",
+     * the origin server.
+     * FORCE_CACHE_ALL Cache all content, ignoring any "private",
      * "no-store" or "no-cache" directives in Cache-Control response headers.
      * Warning: this may result in Cloud CDN caching private,
-     * per-user (user identifiable) content.CACHE_ALL_STATIC Automatically cache static content,
+     * per-user (user identifiable) content.
+     * CACHE_ALL_STATIC Automatically cache static content,
      * including common image formats, media (video and audio), and web assets
      * (JavaScript and CSS). Requests and responses that are marked as
      * uncacheable, as well as dynamic content (including HTML), will not be
@@ -2608,14 +2623,17 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies the cache setting for all responses from this backend.
-     * The possible values are:USE_ORIGIN_HEADERS Requires the origin to set valid caching
+     * The possible values are:
+     * USE_ORIGIN_HEADERS Requires the origin to set valid caching
      * headers to cache content. Responses without these headers will not be
      * cached at Google's edge, and will require a full trip to the origin on
      * every request, potentially impacting performance and increasing load on
-     * the origin server.FORCE_CACHE_ALL Cache all content, ignoring any "private",
+     * the origin server.
+     * FORCE_CACHE_ALL Cache all content, ignoring any "private",
      * "no-store" or "no-cache" directives in Cache-Control response headers.
      * Warning: this may result in Cloud CDN caching private,
-     * per-user (user identifiable) content.CACHE_ALL_STATIC Automatically cache static content,
+     * per-user (user identifiable) content.
+     * CACHE_ALL_STATIC Automatically cache static content,
      * including common image formats, media (video and audio), and web assets
      * (JavaScript and CSS). Requests and responses that are marked as
      * uncacheable, as well as dynamic content (including HTML), will not be
@@ -2647,14 +2665,17 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies the cache setting for all responses from this backend.
-     * The possible values are:USE_ORIGIN_HEADERS Requires the origin to set valid caching
+     * The possible values are:
+     * USE_ORIGIN_HEADERS Requires the origin to set valid caching
      * headers to cache content. Responses without these headers will not be
      * cached at Google's edge, and will require a full trip to the origin on
      * every request, potentially impacting performance and increasing load on
-     * the origin server.FORCE_CACHE_ALL Cache all content, ignoring any "private",
+     * the origin server.
+     * FORCE_CACHE_ALL Cache all content, ignoring any "private",
      * "no-store" or "no-cache" directives in Cache-Control response headers.
      * Warning: this may result in Cloud CDN caching private,
-     * per-user (user identifiable) content.CACHE_ALL_STATIC Automatically cache static content,
+     * per-user (user identifiable) content.
+     * CACHE_ALL_STATIC Automatically cache static content,
      * including common image formats, media (video and audio), and web assets
      * (JavaScript and CSS). Requests and responses that are marked as
      * uncacheable, as well as dynamic content (including HTML), will not be
@@ -2686,14 +2707,17 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies the cache setting for all responses from this backend.
-     * The possible values are:USE_ORIGIN_HEADERS Requires the origin to set valid caching
+     * The possible values are:
+     * USE_ORIGIN_HEADERS Requires the origin to set valid caching
      * headers to cache content. Responses without these headers will not be
      * cached at Google's edge, and will require a full trip to the origin on
      * every request, potentially impacting performance and increasing load on
-     * the origin server.FORCE_CACHE_ALL Cache all content, ignoring any "private",
+     * the origin server.
+     * FORCE_CACHE_ALL Cache all content, ignoring any "private",
      * "no-store" or "no-cache" directives in Cache-Control response headers.
      * Warning: this may result in Cloud CDN caching private,
-     * per-user (user identifiable) content.CACHE_ALL_STATIC Automatically cache static content,
+     * per-user (user identifiable) content.
+     * CACHE_ALL_STATIC Automatically cache static content,
      * including common image formats, media (video and audio), and web assets
      * (JavaScript and CSS). Requests and responses that are marked as
      * uncacheable, as well as dynamic content (including HTML), will not be
@@ -2724,14 +2748,17 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies the cache setting for all responses from this backend.
-     * The possible values are:USE_ORIGIN_HEADERS Requires the origin to set valid caching
+     * The possible values are:
+     * USE_ORIGIN_HEADERS Requires the origin to set valid caching
      * headers to cache content. Responses without these headers will not be
      * cached at Google's edge, and will require a full trip to the origin on
      * every request, potentially impacting performance and increasing load on
-     * the origin server.FORCE_CACHE_ALL Cache all content, ignoring any "private",
+     * the origin server.
+     * FORCE_CACHE_ALL Cache all content, ignoring any "private",
      * "no-store" or "no-cache" directives in Cache-Control response headers.
      * Warning: this may result in Cloud CDN caching private,
-     * per-user (user identifiable) content.CACHE_ALL_STATIC Automatically cache static content,
+     * per-user (user identifiable) content.
+     * CACHE_ALL_STATIC Automatically cache static content,
      * including common image formats, media (video and audio), and web assets
      * (JavaScript and CSS). Requests and responses that are marked as
      * uncacheable, as well as dynamic content (including HTML), will not be
@@ -2758,14 +2785,17 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      *
      * <pre>
      * Specifies the cache setting for all responses from this backend.
-     * The possible values are:USE_ORIGIN_HEADERS Requires the origin to set valid caching
+     * The possible values are:
+     * USE_ORIGIN_HEADERS Requires the origin to set valid caching
      * headers to cache content. Responses without these headers will not be
      * cached at Google's edge, and will require a full trip to the origin on
      * every request, potentially impacting performance and increasing load on
-     * the origin server.FORCE_CACHE_ALL Cache all content, ignoring any "private",
+     * the origin server.
+     * FORCE_CACHE_ALL Cache all content, ignoring any "private",
      * "no-store" or "no-cache" directives in Cache-Control response headers.
      * Warning: this may result in Cloud CDN caching private,
-     * per-user (user identifiable) content.CACHE_ALL_STATIC Automatically cache static content,
+     * per-user (user identifiable) content.
+     * CACHE_ALL_STATIC Automatically cache static content,
      * including common image formats, media (video and audio), and web assets
      * (JavaScript and CSS). Requests and responses that are marked as
      * uncacheable, as well as dynamic content (including HTML), will not be

@@ -81,7 +81,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> SearchDocumentChunks</td>
- *      <td><p> Searches for developer knowledge across Google's developer documentation. Returns [DocumentChunk][google.developers.knowledge.v1.DocumentChunk]s based on the user's query. There may be many chunks from the same [Document][google.developers.knowledge.v1.Document].  To retrieve full documents, use [DeveloperKnowledge.GetDocument][google.developers.knowledge.v1.DeveloperKnowledge.GetDocument] or [DeveloperKnowledge.BatchGetDocuments][google.developers.knowledge.v1.DeveloperKnowledge.BatchGetDocuments] with the [DocumentChunk.parent][google.developers.knowledge.v1.DocumentChunk.parent] returned in the [SearchDocumentChunksResponse.results][google.developers.knowledge.v1.SearchDocumentChunksResponse.results].</td>
+ *      <td><p> Searches for developer knowledge across Google's developer documentation. Returns [DocumentChunk][google.developers.knowledge.v1.DocumentChunk]s based on the user's query. There may be many chunks from the same [Document][google.developers.knowledge.v1.Document]. To retrieve full documents, use [DeveloperKnowledge.GetDocument][google.developers.knowledge.v1.DeveloperKnowledge.GetDocument] or [DeveloperKnowledge.BatchGetDocuments][google.developers.knowledge.v1.DeveloperKnowledge.BatchGetDocuments] with the [DocumentChunk.parent][google.developers.knowledge.v1.DocumentChunk.parent] returned in the [SearchDocumentChunksResponse.results][google.developers.knowledge.v1.SearchDocumentChunksResponse.results].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -408,6 +408,8 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
    * @param name Required. Specifies the name of the document to retrieve. Format:
    *     `documents/{uri_without_scheme}` Example:
    *     `documents/docs.cloud.google.com/storage/docs/creating-buckets`
+   *     <p>The name must not exceed 500 characters; values longer than 500 characters will result
+   *     in an `INVALID_ARGUMENT` error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document getDocument(@Nullable DocumentName name) {
@@ -437,6 +439,8 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
    * @param name Required. Specifies the name of the document to retrieve. Format:
    *     `documents/{uri_without_scheme}` Example:
    *     `documents/docs.cloud.google.com/storage/docs/creating-buckets`
+   *     <p>The name must not exceed 500 characters; values longer than 500 characters will result
+   *     in an `INVALID_ARGUMENT` error.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Document getDocument(String name) {
@@ -575,7 +579,10 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeveloperKnowledgeClient developerKnowledgeClient = DeveloperKnowledgeClient.create()) {
    *   AnswerQueryRequest request =
-   *       AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+   *       AnswerQueryRequest.newBuilder()
+   *           .setQuery("query107944136")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   AnswerQueryResponse response = developerKnowledgeClient.answerQuery(request);
    * }
    * }</pre>
@@ -601,7 +608,10 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeveloperKnowledgeClient developerKnowledgeClient = DeveloperKnowledgeClient.create()) {
    *   AnswerQueryRequest request =
-   *       AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+   *       AnswerQueryRequest.newBuilder()
+   *           .setQuery("query107944136")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   ApiFuture<AnswerQueryResponse> future =
    *       developerKnowledgeClient.answerQueryCallable().futureCall(request);
    *   // Do something.

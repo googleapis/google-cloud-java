@@ -81,4 +81,70 @@ public interface ContentMetadataOrBuilder
    * <code>repeated .google.privacy.dlp.v2.KeyValueMetadataProperty properties = 2;</code>
    */
   com.google.privacy.dlp.v2.KeyValueMetadataPropertyOrBuilder getPropertiesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The file labels associated with the content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.FileLabel file_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.FileLabel> getFileLabelsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The file labels associated with the content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.FileLabel file_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.privacy.dlp.v2.FileLabel getFileLabels(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The file labels associated with the content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.FileLabel file_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getFileLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The file labels associated with the content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.FileLabel file_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.FileLabelOrBuilder>
+      getFileLabelsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The file labels associated with the content.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.privacy.dlp.v2.FileLabel file_labels = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.privacy.dlp.v2.FileLabelOrBuilder getFileLabelsOrBuilder(int index);
 }

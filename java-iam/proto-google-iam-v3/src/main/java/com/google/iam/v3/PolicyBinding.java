@@ -91,7 +91,7 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Different policy kinds supported in this binding.
+   * The different policy kinds supported in this binding.
    * </pre>
    *
    * Protobuf enum {@code google.iam.v3.PolicyBinding.PolicyKind}
@@ -117,6 +117,16 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      * <code>PRINCIPAL_ACCESS_BOUNDARY = 1;</code>
      */
     PRINCIPAL_ACCESS_BOUNDARY(1),
+    /**
+     *
+     *
+     * <pre>
+     * Access policy kind.
+     * </pre>
+     *
+     * <code>ACCESS = 2;</code>
+     */
+    ACCESS(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -152,6 +162,17 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      */
     public static final int PRINCIPAL_ACCESS_BOUNDARY_VALUE = 1;
 
+    /**
+     *
+     *
+     * <pre>
+     * Access policy kind.
+     * </pre>
+     *
+     * <code>ACCESS = 2;</code>
+     */
+    public static final int ACCESS_VALUE = 2;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -180,6 +201,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
           return POLICY_KIND_UNSPECIFIED;
         case 1:
           return PRINCIPAL_ACCESS_BOUNDARY;
+        case 2:
+          return ACCESS;
         default:
           return null;
       }
@@ -242,23 +265,24 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Full Resource Name used for principal access boundary policy
-     * bindings. The principal set must be directly parented by the policy
-     * binding's parent or same as the parent if the target is a
-     * project/folder/organization.
+     * Immutable. The full resource name that's used for principal access
+     * boundary policy bindings. The principal set must be directly parented
+     * by the policy binding's parent or same as the parent if the target is a
+     * project, folder, or organization.
      *
      * Examples:
-     * * For binding's parented by an organization:
+     *
+     * * For bindings parented by an organization:
      * * Organization:
      * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
      * * Workforce Identity:
      * `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID`
      * * Workspace Identity:
      * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID`
-     * * For binding's parented by a folder:
+     * * For bindings parented by a folder:
      * * Folder:
      * `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
-     * * For binding's parented by a project:
+     * * For bindings parented by a project:
      * * Project:
      * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
      * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
@@ -276,23 +300,24 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Full Resource Name used for principal access boundary policy
-     * bindings. The principal set must be directly parented by the policy
-     * binding's parent or same as the parent if the target is a
-     * project/folder/organization.
+     * Immutable. The full resource name that's used for principal access
+     * boundary policy bindings. The principal set must be directly parented
+     * by the policy binding's parent or same as the parent if the target is a
+     * project, folder, or organization.
      *
      * Examples:
-     * * For binding's parented by an organization:
+     *
+     * * For bindings parented by an organization:
      * * Organization:
      * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
      * * Workforce Identity:
      * `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID`
      * * Workspace Identity:
      * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID`
-     * * For binding's parented by a folder:
+     * * For bindings parented by a folder:
      * * Folder:
      * `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
-     * * For binding's parented by a project:
+     * * For bindings parented by a project:
      * * Project:
      * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
      * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
@@ -310,23 +335,24 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Full Resource Name used for principal access boundary policy
-     * bindings. The principal set must be directly parented by the policy
-     * binding's parent or same as the parent if the target is a
-     * project/folder/organization.
+     * Immutable. The full resource name that's used for principal access
+     * boundary policy bindings. The principal set must be directly parented
+     * by the policy binding's parent or same as the parent if the target is a
+     * project, folder, or organization.
      *
      * Examples:
-     * * For binding's parented by an organization:
+     *
+     * * For bindings parented by an organization:
      * * Organization:
      * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
      * * Workforce Identity:
      * `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID`
      * * Workspace Identity:
      * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID`
-     * * For binding's parented by a folder:
+     * * For bindings parented by a folder:
      * * Folder:
      * `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
-     * * For binding's parented by a project:
+     * * For bindings parented by a project:
      * * Project:
      * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
      * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
@@ -340,6 +366,75 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getPrincipalSetBytes();
 
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The full resource name that's used for access policy
+     * bindings.
+     *
+     * Examples:
+     *
+     * * Organization:
+     * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
+     * * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
+     * * Project:
+     * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
+     * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
+     * </pre>
+     *
+     * <code>string resource = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return Whether the resource field is set.
+     */
+    boolean hasResource();
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The full resource name that's used for access policy
+     * bindings.
+     *
+     * Examples:
+     *
+     * * Organization:
+     * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
+     * * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
+     * * Project:
+     * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
+     * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
+     * </pre>
+     *
+     * <code>string resource = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The resource.
+     */
+    java.lang.String getResource();
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The full resource name that's used for access policy
+     * bindings.
+     *
+     * Examples:
+     *
+     * * Organization:
+     * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
+     * * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
+     * * Project:
+     * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
+     * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
+     * </pre>
+     *
+     * <code>string resource = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for resource.
+     */
+    com.google.protobuf.ByteString getResourceBytes();
+
     com.google.iam.v3.PolicyBinding.Target.TargetCase getTargetCase();
   }
 
@@ -347,7 +442,7 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Target is the full resource name of the resource to which the policy will
+   * The full resource name of the resource to which the policy will
    * be bound. Immutable once set.
    * </pre>
    *
@@ -401,6 +496,7 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       PRINCIPAL_SET(1),
+      RESOURCE(2),
       TARGET_NOT_SET(0);
       private final int value;
 
@@ -422,6 +518,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
         switch (value) {
           case 1:
             return PRINCIPAL_SET;
+          case 2:
+            return RESOURCE;
           case 0:
             return TARGET_NOT_SET;
           default:
@@ -444,23 +542,24 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Full Resource Name used for principal access boundary policy
-     * bindings. The principal set must be directly parented by the policy
-     * binding's parent or same as the parent if the target is a
-     * project/folder/organization.
+     * Immutable. The full resource name that's used for principal access
+     * boundary policy bindings. The principal set must be directly parented
+     * by the policy binding's parent or same as the parent if the target is a
+     * project, folder, or organization.
      *
      * Examples:
-     * * For binding's parented by an organization:
+     *
+     * * For bindings parented by an organization:
      * * Organization:
      * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
      * * Workforce Identity:
      * `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID`
      * * Workspace Identity:
      * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID`
-     * * For binding's parented by a folder:
+     * * For bindings parented by a folder:
      * * Folder:
      * `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
-     * * For binding's parented by a project:
+     * * For bindings parented by a project:
      * * Project:
      * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
      * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
@@ -480,23 +579,24 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Full Resource Name used for principal access boundary policy
-     * bindings. The principal set must be directly parented by the policy
-     * binding's parent or same as the parent if the target is a
-     * project/folder/organization.
+     * Immutable. The full resource name that's used for principal access
+     * boundary policy bindings. The principal set must be directly parented
+     * by the policy binding's parent or same as the parent if the target is a
+     * project, folder, or organization.
      *
      * Examples:
-     * * For binding's parented by an organization:
+     *
+     * * For bindings parented by an organization:
      * * Organization:
      * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
      * * Workforce Identity:
      * `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID`
      * * Workspace Identity:
      * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID`
-     * * For binding's parented by a folder:
+     * * For bindings parented by a folder:
      * * Folder:
      * `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
-     * * For binding's parented by a project:
+     * * For bindings parented by a project:
      * * Project:
      * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
      * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
@@ -529,23 +629,24 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Immutable. Full Resource Name used for principal access boundary policy
-     * bindings. The principal set must be directly parented by the policy
-     * binding's parent or same as the parent if the target is a
-     * project/folder/organization.
+     * Immutable. The full resource name that's used for principal access
+     * boundary policy bindings. The principal set must be directly parented
+     * by the policy binding's parent or same as the parent if the target is a
+     * project, folder, or organization.
      *
      * Examples:
-     * * For binding's parented by an organization:
+     *
+     * * For bindings parented by an organization:
      * * Organization:
      * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
      * * Workforce Identity:
      * `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID`
      * * Workspace Identity:
      * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID`
-     * * For binding's parented by a folder:
+     * * For bindings parented by a folder:
      * * Folder:
      * `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
-     * * For binding's parented by a project:
+     * * For bindings parented by a project:
      * * Project:
      * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
      * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
@@ -574,6 +675,109 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int RESOURCE_FIELD_NUMBER = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The full resource name that's used for access policy
+     * bindings.
+     *
+     * Examples:
+     *
+     * * Organization:
+     * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
+     * * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
+     * * Project:
+     * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
+     * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
+     * </pre>
+     *
+     * <code>string resource = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return Whether the resource field is set.
+     */
+    public boolean hasResource() {
+      return targetCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The full resource name that's used for access policy
+     * bindings.
+     *
+     * Examples:
+     *
+     * * Organization:
+     * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
+     * * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
+     * * Project:
+     * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
+     * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
+     * </pre>
+     *
+     * <code>string resource = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The resource.
+     */
+    public java.lang.String getResource() {
+      java.lang.Object ref = "";
+      if (targetCase_ == 2) {
+        ref = target_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (targetCase_ == 2) {
+          target_ = s;
+        }
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The full resource name that's used for access policy
+     * bindings.
+     *
+     * Examples:
+     *
+     * * Organization:
+     * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
+     * * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
+     * * Project:
+     * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
+     * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
+     * </pre>
+     *
+     * <code>string resource = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for resource.
+     */
+    public com.google.protobuf.ByteString getResourceBytes() {
+      java.lang.Object ref = "";
+      if (targetCase_ == 2) {
+        ref = target_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (targetCase_ == 2) {
+          target_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -591,6 +795,9 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
       if (targetCase_ == 1) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, target_);
       }
+      if (targetCase_ == 2) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, target_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -602,6 +809,9 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
       size = 0;
       if (targetCase_ == 1) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, target_);
+      }
+      if (targetCase_ == 2) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, target_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -623,6 +833,9 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
         case 1:
           if (!getPrincipalSet().equals(other.getPrincipalSet())) return false;
           break;
+        case 2:
+          if (!getResource().equals(other.getResource())) return false;
+          break;
         case 0:
         default:
       }
@@ -641,6 +854,10 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
         case 1:
           hash = (37 * hash) + PRINCIPAL_SET_FIELD_NUMBER;
           hash = (53 * hash) + getPrincipalSet().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+          hash = (53 * hash) + getResource().hashCode();
           break;
         case 0:
         default:
@@ -750,7 +967,7 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Target is the full resource name of the resource to which the policy will
+     * The full resource name of the resource to which the policy will
      * be bound. Immutable once set.
      * </pre>
      *
@@ -852,6 +1069,13 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
               onChanged();
               break;
             }
+          case RESOURCE:
+            {
+              targetCase_ = 2;
+              target_ = other.target_;
+              onChanged();
+              break;
+            }
           case TARGET_NOT_SET:
             {
               break;
@@ -890,6 +1114,13 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
                   target_ = s;
                   break;
                 } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  targetCase_ = 2;
+                  target_ = s;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -927,23 +1158,24 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Immutable. Full Resource Name used for principal access boundary policy
-       * bindings. The principal set must be directly parented by the policy
-       * binding's parent or same as the parent if the target is a
-       * project/folder/organization.
+       * Immutable. The full resource name that's used for principal access
+       * boundary policy bindings. The principal set must be directly parented
+       * by the policy binding's parent or same as the parent if the target is a
+       * project, folder, or organization.
        *
        * Examples:
-       * * For binding's parented by an organization:
+       *
+       * * For bindings parented by an organization:
        * * Organization:
        * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
        * * Workforce Identity:
        * `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID`
        * * Workspace Identity:
        * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID`
-       * * For binding's parented by a folder:
+       * * For bindings parented by a folder:
        * * Folder:
        * `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
-       * * For binding's parented by a project:
+       * * For bindings parented by a project:
        * * Project:
        * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
        * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
@@ -964,23 +1196,24 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Immutable. Full Resource Name used for principal access boundary policy
-       * bindings. The principal set must be directly parented by the policy
-       * binding's parent or same as the parent if the target is a
-       * project/folder/organization.
+       * Immutable. The full resource name that's used for principal access
+       * boundary policy bindings. The principal set must be directly parented
+       * by the policy binding's parent or same as the parent if the target is a
+       * project, folder, or organization.
        *
        * Examples:
-       * * For binding's parented by an organization:
+       *
+       * * For bindings parented by an organization:
        * * Organization:
        * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
        * * Workforce Identity:
        * `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID`
        * * Workspace Identity:
        * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID`
-       * * For binding's parented by a folder:
+       * * For bindings parented by a folder:
        * * Folder:
        * `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
-       * * For binding's parented by a project:
+       * * For bindings parented by a project:
        * * Project:
        * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
        * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
@@ -1014,23 +1247,24 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Immutable. Full Resource Name used for principal access boundary policy
-       * bindings. The principal set must be directly parented by the policy
-       * binding's parent or same as the parent if the target is a
-       * project/folder/organization.
+       * Immutable. The full resource name that's used for principal access
+       * boundary policy bindings. The principal set must be directly parented
+       * by the policy binding's parent or same as the parent if the target is a
+       * project, folder, or organization.
        *
        * Examples:
-       * * For binding's parented by an organization:
+       *
+       * * For bindings parented by an organization:
        * * Organization:
        * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
        * * Workforce Identity:
        * `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID`
        * * Workspace Identity:
        * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID`
-       * * For binding's parented by a folder:
+       * * For bindings parented by a folder:
        * * Folder:
        * `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
-       * * For binding's parented by a project:
+       * * For bindings parented by a project:
        * * Project:
        * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
        * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
@@ -1064,23 +1298,24 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Immutable. Full Resource Name used for principal access boundary policy
-       * bindings. The principal set must be directly parented by the policy
-       * binding's parent or same as the parent if the target is a
-       * project/folder/organization.
+       * Immutable. The full resource name that's used for principal access
+       * boundary policy bindings. The principal set must be directly parented
+       * by the policy binding's parent or same as the parent if the target is a
+       * project, folder, or organization.
        *
        * Examples:
-       * * For binding's parented by an organization:
+       *
+       * * For bindings parented by an organization:
        * * Organization:
        * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
        * * Workforce Identity:
        * `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID`
        * * Workspace Identity:
        * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID`
-       * * For binding's parented by a folder:
+       * * For bindings parented by a folder:
        * * Folder:
        * `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
-       * * For binding's parented by a project:
+       * * For bindings parented by a project:
        * * Project:
        * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
        * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
@@ -1107,23 +1342,24 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Immutable. Full Resource Name used for principal access boundary policy
-       * bindings. The principal set must be directly parented by the policy
-       * binding's parent or same as the parent if the target is a
-       * project/folder/organization.
+       * Immutable. The full resource name that's used for principal access
+       * boundary policy bindings. The principal set must be directly parented
+       * by the policy binding's parent or same as the parent if the target is a
+       * project, folder, or organization.
        *
        * Examples:
-       * * For binding's parented by an organization:
+       *
+       * * For bindings parented by an organization:
        * * Organization:
        * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
        * * Workforce Identity:
        * `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID`
        * * Workspace Identity:
        * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID`
-       * * For binding's parented by a folder:
+       * * For bindings parented by a folder:
        * * Folder:
        * `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
-       * * For binding's parented by a project:
+       * * For bindings parented by a project:
        * * Project:
        * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
        * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
@@ -1148,23 +1384,24 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Immutable. Full Resource Name used for principal access boundary policy
-       * bindings. The principal set must be directly parented by the policy
-       * binding's parent or same as the parent if the target is a
-       * project/folder/organization.
+       * Immutable. The full resource name that's used for principal access
+       * boundary policy bindings. The principal set must be directly parented
+       * by the policy binding's parent or same as the parent if the target is a
+       * project, folder, or organization.
        *
        * Examples:
-       * * For binding's parented by an organization:
+       *
+       * * For bindings parented by an organization:
        * * Organization:
        * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
        * * Workforce Identity:
        * `//iam.googleapis.com/locations/global/workforcePools/WORKFORCE_POOL_ID`
        * * Workspace Identity:
        * `//iam.googleapis.com/locations/global/workspace/WORKSPACE_ID`
-       * * For binding's parented by a folder:
+       * * For bindings parented by a folder:
        * * Folder:
        * `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
-       * * For binding's parented by a project:
+       * * For bindings parented by a project:
        * * Project:
        * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
        * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
@@ -1183,6 +1420,205 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
         }
         checkByteStringIsUtf8(value);
         targetCase_ = 1;
+        target_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The full resource name that's used for access policy
+       * bindings.
+       *
+       * Examples:
+       *
+       * * Organization:
+       * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
+       * * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
+       * * Project:
+       * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
+       * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
+       * </pre>
+       *
+       * <code>string resource = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return Whether the resource field is set.
+       */
+      @java.lang.Override
+      public boolean hasResource() {
+        return targetCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The full resource name that's used for access policy
+       * bindings.
+       *
+       * Examples:
+       *
+       * * Organization:
+       * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
+       * * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
+       * * Project:
+       * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
+       * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
+       * </pre>
+       *
+       * <code>string resource = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The resource.
+       */
+      @java.lang.Override
+      public java.lang.String getResource() {
+        java.lang.Object ref = "";
+        if (targetCase_ == 2) {
+          ref = target_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (targetCase_ == 2) {
+            target_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The full resource name that's used for access policy
+       * bindings.
+       *
+       * Examples:
+       *
+       * * Organization:
+       * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
+       * * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
+       * * Project:
+       * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
+       * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
+       * </pre>
+       *
+       * <code>string resource = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The bytes for resource.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getResourceBytes() {
+        java.lang.Object ref = "";
+        if (targetCase_ == 2) {
+          ref = target_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (targetCase_ == 2) {
+            target_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The full resource name that's used for access policy
+       * bindings.
+       *
+       * Examples:
+       *
+       * * Organization:
+       * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
+       * * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
+       * * Project:
+       * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
+       * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
+       * </pre>
+       *
+       * <code>string resource = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The resource to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResource(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        targetCase_ = 2;
+        target_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The full resource name that's used for access policy
+       * bindings.
+       *
+       * Examples:
+       *
+       * * Organization:
+       * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
+       * * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
+       * * Project:
+       * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
+       * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
+       * </pre>
+       *
+       * <code>string resource = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearResource() {
+        if (targetCase_ == 2) {
+          targetCase_ = 0;
+          target_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The full resource name that's used for access policy
+       * bindings.
+       *
+       * Examples:
+       *
+       * * Organization:
+       * `//cloudresourcemanager.googleapis.com/organizations/ORGANIZATION_ID`
+       * * Folder: `//cloudresourcemanager.googleapis.com/folders/FOLDER_ID`
+       * * Project:
+       * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_NUMBER`
+       * * `//cloudresourcemanager.googleapis.com/projects/PROJECT_ID`
+       * </pre>
+       *
+       * <code>string resource = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The bytes for resource to set.
+       * @return This builder for chaining.
+       */
+      public Builder setResourceBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        targetCase_ = 2;
         target_ = value;
         onChanged();
         return this;
@@ -1610,8 +2046,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Immutable. Target is the full resource name of the resource to
-   * which the policy will be bound. Immutable once set.
+   * Required. Immutable. The full resource name of the resource to which the
+   * policy will be bound. Immutable once set.
    * </pre>
    *
    * <code>
@@ -1629,8 +2065,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Immutable. Target is the full resource name of the resource to
-   * which the policy will be bound. Immutable once set.
+   * Required. Immutable. The full resource name of the resource to which the
+   * policy will be bound. Immutable once set.
    * </pre>
    *
    * <code>
@@ -1648,8 +2084,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Immutable. Target is the full resource name of the resource to
-   * which the policy will be bound. Immutable once set.
+   * Required. Immutable. The full resource name of the resource to which the
+   * policy will be bound. Immutable once set.
    * </pre>
    *
    * <code>
@@ -1858,13 +2294,14 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
    * - `principal.type != &lt;principal type string&gt;`
    * - `principal.type in [&lt;list of principal types&gt;]`
    *
-   * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-   * Service Account. Allowed string must be one of:
+   * Supported principal types are workspace, workforce pool, workload pool,
+   * service account, and agent identity. Allowed string must be one of:
    *
-   * - iam.googleapis.com/WorkspaceIdentity
-   * - iam.googleapis.com/WorkforcePoolIdentity
-   * - iam.googleapis.com/WorkloadPoolIdentity
-   * - iam.googleapis.com/ServiceAccount
+   * - `iam.googleapis.com/WorkspaceIdentity`
+   * - `iam.googleapis.com/WorkforcePoolIdentity`
+   * - `iam.googleapis.com/WorkloadPoolIdentity`
+   * - `iam.googleapis.com/ServiceAccount`
+   * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
    * </pre>
    *
    * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1909,13 +2346,14 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
    * - `principal.type != &lt;principal type string&gt;`
    * - `principal.type in [&lt;list of principal types&gt;]`
    *
-   * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-   * Service Account. Allowed string must be one of:
+   * Supported principal types are workspace, workforce pool, workload pool,
+   * service account, and agent identity. Allowed string must be one of:
    *
-   * - iam.googleapis.com/WorkspaceIdentity
-   * - iam.googleapis.com/WorkforcePoolIdentity
-   * - iam.googleapis.com/WorkloadPoolIdentity
-   * - iam.googleapis.com/ServiceAccount
+   * - `iam.googleapis.com/WorkspaceIdentity`
+   * - `iam.googleapis.com/WorkforcePoolIdentity`
+   * - `iam.googleapis.com/WorkloadPoolIdentity`
+   * - `iam.googleapis.com/ServiceAccount`
+   * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
    * </pre>
    *
    * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1960,13 +2398,14 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
    * - `principal.type != &lt;principal type string&gt;`
    * - `principal.type in [&lt;list of principal types&gt;]`
    *
-   * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-   * Service Account. Allowed string must be one of:
+   * Supported principal types are workspace, workforce pool, workload pool,
+   * service account, and agent identity. Allowed string must be one of:
    *
-   * - iam.googleapis.com/WorkspaceIdentity
-   * - iam.googleapis.com/WorkforcePoolIdentity
-   * - iam.googleapis.com/WorkloadPoolIdentity
-   * - iam.googleapis.com/ServiceAccount
+   * - `iam.googleapis.com/WorkspaceIdentity`
+   * - `iam.googleapis.com/WorkforcePoolIdentity`
+   * - `iam.googleapis.com/WorkloadPoolIdentity`
+   * - `iam.googleapis.com/ServiceAccount`
+   * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
    * </pre>
    *
    * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3458,8 +3897,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. Target is the full resource name of the resource to
-     * which the policy will be bound. Immutable once set.
+     * Required. Immutable. The full resource name of the resource to which the
+     * policy will be bound. Immutable once set.
      * </pre>
      *
      * <code>
@@ -3476,8 +3915,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. Target is the full resource name of the resource to
-     * which the policy will be bound. Immutable once set.
+     * Required. Immutable. The full resource name of the resource to which the
+     * policy will be bound. Immutable once set.
      * </pre>
      *
      * <code>
@@ -3500,8 +3939,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. Target is the full resource name of the resource to
-     * which the policy will be bound. Immutable once set.
+     * Required. Immutable. The full resource name of the resource to which the
+     * policy will be bound. Immutable once set.
      * </pre>
      *
      * <code>
@@ -3526,8 +3965,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. Target is the full resource name of the resource to
-     * which the policy will be bound. Immutable once set.
+     * Required. Immutable. The full resource name of the resource to which the
+     * policy will be bound. Immutable once set.
      * </pre>
      *
      * <code>
@@ -3549,8 +3988,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. Target is the full resource name of the resource to
-     * which the policy will be bound. Immutable once set.
+     * Required. Immutable. The full resource name of the resource to which the
+     * policy will be bound. Immutable once set.
      * </pre>
      *
      * <code>
@@ -3580,8 +4019,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. Target is the full resource name of the resource to
-     * which the policy will be bound. Immutable once set.
+     * Required. Immutable. The full resource name of the resource to which the
+     * policy will be bound. Immutable once set.
      * </pre>
      *
      * <code>
@@ -3603,8 +4042,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. Target is the full resource name of the resource to
-     * which the policy will be bound. Immutable once set.
+     * Required. Immutable. The full resource name of the resource to which the
+     * policy will be bound. Immutable once set.
      * </pre>
      *
      * <code>
@@ -3621,8 +4060,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. Target is the full resource name of the resource to
-     * which the policy will be bound. Immutable once set.
+     * Required. Immutable. The full resource name of the resource to which the
+     * policy will be bound. Immutable once set.
      * </pre>
      *
      * <code>
@@ -3643,8 +4082,8 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Immutable. Target is the full resource name of the resource to
-     * which the policy will be bound. Immutable once set.
+     * Required. Immutable. The full resource name of the resource to which the
+     * policy will be bound. Immutable once set.
      * </pre>
      *
      * <code>
@@ -4068,13 +4507,14 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      * - `principal.type != &lt;principal type string&gt;`
      * - `principal.type in [&lt;list of principal types&gt;]`
      *
-     * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-     * Service Account. Allowed string must be one of:
+     * Supported principal types are workspace, workforce pool, workload pool,
+     * service account, and agent identity. Allowed string must be one of:
      *
-     * - iam.googleapis.com/WorkspaceIdentity
-     * - iam.googleapis.com/WorkforcePoolIdentity
-     * - iam.googleapis.com/WorkloadPoolIdentity
-     * - iam.googleapis.com/ServiceAccount
+     * - `iam.googleapis.com/WorkspaceIdentity`
+     * - `iam.googleapis.com/WorkforcePoolIdentity`
+     * - `iam.googleapis.com/WorkloadPoolIdentity`
+     * - `iam.googleapis.com/ServiceAccount`
+     * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
      * </pre>
      *
      * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4118,13 +4558,14 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      * - `principal.type != &lt;principal type string&gt;`
      * - `principal.type in [&lt;list of principal types&gt;]`
      *
-     * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-     * Service Account. Allowed string must be one of:
+     * Supported principal types are workspace, workforce pool, workload pool,
+     * service account, and agent identity. Allowed string must be one of:
      *
-     * - iam.googleapis.com/WorkspaceIdentity
-     * - iam.googleapis.com/WorkforcePoolIdentity
-     * - iam.googleapis.com/WorkloadPoolIdentity
-     * - iam.googleapis.com/ServiceAccount
+     * - `iam.googleapis.com/WorkspaceIdentity`
+     * - `iam.googleapis.com/WorkforcePoolIdentity`
+     * - `iam.googleapis.com/WorkloadPoolIdentity`
+     * - `iam.googleapis.com/ServiceAccount`
+     * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
      * </pre>
      *
      * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4172,13 +4613,14 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      * - `principal.type != &lt;principal type string&gt;`
      * - `principal.type in [&lt;list of principal types&gt;]`
      *
-     * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-     * Service Account. Allowed string must be one of:
+     * Supported principal types are workspace, workforce pool, workload pool,
+     * service account, and agent identity. Allowed string must be one of:
      *
-     * - iam.googleapis.com/WorkspaceIdentity
-     * - iam.googleapis.com/WorkforcePoolIdentity
-     * - iam.googleapis.com/WorkloadPoolIdentity
-     * - iam.googleapis.com/ServiceAccount
+     * - `iam.googleapis.com/WorkspaceIdentity`
+     * - `iam.googleapis.com/WorkforcePoolIdentity`
+     * - `iam.googleapis.com/WorkloadPoolIdentity`
+     * - `iam.googleapis.com/ServiceAccount`
+     * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
      * </pre>
      *
      * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4230,13 +4672,14 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      * - `principal.type != &lt;principal type string&gt;`
      * - `principal.type in [&lt;list of principal types&gt;]`
      *
-     * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-     * Service Account. Allowed string must be one of:
+     * Supported principal types are workspace, workforce pool, workload pool,
+     * service account, and agent identity. Allowed string must be one of:
      *
-     * - iam.googleapis.com/WorkspaceIdentity
-     * - iam.googleapis.com/WorkforcePoolIdentity
-     * - iam.googleapis.com/WorkloadPoolIdentity
-     * - iam.googleapis.com/ServiceAccount
+     * - `iam.googleapis.com/WorkspaceIdentity`
+     * - `iam.googleapis.com/WorkforcePoolIdentity`
+     * - `iam.googleapis.com/WorkloadPoolIdentity`
+     * - `iam.googleapis.com/ServiceAccount`
+     * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
      * </pre>
      *
      * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4285,13 +4728,14 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      * - `principal.type != &lt;principal type string&gt;`
      * - `principal.type in [&lt;list of principal types&gt;]`
      *
-     * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-     * Service Account. Allowed string must be one of:
+     * Supported principal types are workspace, workforce pool, workload pool,
+     * service account, and agent identity. Allowed string must be one of:
      *
-     * - iam.googleapis.com/WorkspaceIdentity
-     * - iam.googleapis.com/WorkforcePoolIdentity
-     * - iam.googleapis.com/WorkloadPoolIdentity
-     * - iam.googleapis.com/ServiceAccount
+     * - `iam.googleapis.com/WorkspaceIdentity`
+     * - `iam.googleapis.com/WorkforcePoolIdentity`
+     * - `iam.googleapis.com/WorkloadPoolIdentity`
+     * - `iam.googleapis.com/ServiceAccount`
+     * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
      * </pre>
      *
      * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4348,13 +4792,14 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      * - `principal.type != &lt;principal type string&gt;`
      * - `principal.type in [&lt;list of principal types&gt;]`
      *
-     * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-     * Service Account. Allowed string must be one of:
+     * Supported principal types are workspace, workforce pool, workload pool,
+     * service account, and agent identity. Allowed string must be one of:
      *
-     * - iam.googleapis.com/WorkspaceIdentity
-     * - iam.googleapis.com/WorkforcePoolIdentity
-     * - iam.googleapis.com/WorkloadPoolIdentity
-     * - iam.googleapis.com/ServiceAccount
+     * - `iam.googleapis.com/WorkspaceIdentity`
+     * - `iam.googleapis.com/WorkforcePoolIdentity`
+     * - `iam.googleapis.com/WorkloadPoolIdentity`
+     * - `iam.googleapis.com/ServiceAccount`
+     * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
      * </pre>
      *
      * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4403,13 +4848,14 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      * - `principal.type != &lt;principal type string&gt;`
      * - `principal.type in [&lt;list of principal types&gt;]`
      *
-     * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-     * Service Account. Allowed string must be one of:
+     * Supported principal types are workspace, workforce pool, workload pool,
+     * service account, and agent identity. Allowed string must be one of:
      *
-     * - iam.googleapis.com/WorkspaceIdentity
-     * - iam.googleapis.com/WorkforcePoolIdentity
-     * - iam.googleapis.com/WorkloadPoolIdentity
-     * - iam.googleapis.com/ServiceAccount
+     * - `iam.googleapis.com/WorkspaceIdentity`
+     * - `iam.googleapis.com/WorkforcePoolIdentity`
+     * - `iam.googleapis.com/WorkloadPoolIdentity`
+     * - `iam.googleapis.com/ServiceAccount`
+     * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
      * </pre>
      *
      * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4453,13 +4899,14 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      * - `principal.type != &lt;principal type string&gt;`
      * - `principal.type in [&lt;list of principal types&gt;]`
      *
-     * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-     * Service Account. Allowed string must be one of:
+     * Supported principal types are workspace, workforce pool, workload pool,
+     * service account, and agent identity. Allowed string must be one of:
      *
-     * - iam.googleapis.com/WorkspaceIdentity
-     * - iam.googleapis.com/WorkforcePoolIdentity
-     * - iam.googleapis.com/WorkloadPoolIdentity
-     * - iam.googleapis.com/ServiceAccount
+     * - `iam.googleapis.com/WorkspaceIdentity`
+     * - `iam.googleapis.com/WorkforcePoolIdentity`
+     * - `iam.googleapis.com/WorkloadPoolIdentity`
+     * - `iam.googleapis.com/ServiceAccount`
+     * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
      * </pre>
      *
      * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4505,13 +4952,14 @@ public final class PolicyBinding extends com.google.protobuf.GeneratedMessage
      * - `principal.type != &lt;principal type string&gt;`
      * - `principal.type in [&lt;list of principal types&gt;]`
      *
-     * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-     * Service Account. Allowed string must be one of:
+     * Supported principal types are workspace, workforce pool, workload pool,
+     * service account, and agent identity. Allowed string must be one of:
      *
-     * - iam.googleapis.com/WorkspaceIdentity
-     * - iam.googleapis.com/WorkforcePoolIdentity
-     * - iam.googleapis.com/WorkloadPoolIdentity
-     * - iam.googleapis.com/ServiceAccount
+     * - `iam.googleapis.com/WorkspaceIdentity`
+     * - `iam.googleapis.com/WorkforcePoolIdentity`
+     * - `iam.googleapis.com/WorkloadPoolIdentity`
+     * - `iam.googleapis.com/ServiceAccount`
+     * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
      * </pre>
      *
      * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

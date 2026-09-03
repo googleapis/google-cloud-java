@@ -298,7 +298,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       checkClosed();
       String clientId = null;
       if (dbClients.containsKey(db) && !dbClients.get(db).isValid()) {
-        // Close the invalidated client and remove it.
+        // Close the invalidated client and remove it. Closing it unregisters its multiplexed
+        // session source from the dynamic channel pool primer.
         dbClients.get(db).closeAsync(new ClosedException());
         clientId = dbClients.get(db).clientId;
         dbClients.remove(db);
@@ -360,8 +361,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
     }
     try {
       closureFutures = new ArrayList<>();
-      for (DatabaseClientImpl dbClient : dbClients.values()) {
-        closureFutures.add(dbClient.closeAsync(closedException));
+      for (Map.Entry<DatabaseId, DatabaseClientImpl> dbClient : dbClients.entrySet()) {
+        closureFutures.add(dbClient.getValue().closeAsync(closedException));
       }
       dbClients.clear();
       Futures.successfulAsList(closureFutures).get(timeout, unit);

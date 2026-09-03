@@ -75,7 +75,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> EnrollResource</td>
- *      <td><p> Enrolls the customer resource(folder/project/organization) to the audit manager service by creating the audit managers Service Agent in customers workload and granting required permissions to the Service Agent. Please note that if enrollment request is made on the already enrolled workload then enrollment is executed overriding the existing set of destinations.</td>
+ *      <td><p> Adds your project, folder, or organization to Audit Manager. This method creates the Audit Manager service agent in your workload and grants required permissions to the service agent. If you make this request on a workload that's already enrolled, then this method overrides the existing set of destinations.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -93,7 +93,12 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GenerateAuditScopeReport</td>
- *      <td><p> Generates a demo report highlighting different responsibilities (Google/Customer/ shared) required to be fulfilled for the customer's workload to be compliant with the given standard.</td>
+ *      <td><p> Generates an audit scope report for the given standard.
+ * <p>  The report includes the following:
+ * <ul>
+ * <li>  The technical attributes and constraints that Audit Manager uses to   verify your compliance with a framework.
+ * <li>  A list of Google Cloud services and resources that are within the   scope of the framework.
+ * </ul></td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -111,7 +116,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GenerateAuditReport</td>
- *      <td><p> Register the Audit Report generation requests and returns the OperationId using which the customer can track the report generation progress.</td>
+ *      <td><p> Registers audit report generation requests. This method returns the operation identifier that you can use to track the report generation progress.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -130,7 +135,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListAuditReports</td>
- *      <td><p> Lists audit reports in the selected parent scope</td>
+ *      <td><p> Lists the audit reports for the organization, folder, or project that you specify as the parent scope.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -151,7 +156,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetAuditReport</td>
- *      <td><p> Get the overall audit report</td>
+ *      <td><p> Gets the full metadata and findings for an audit report.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -170,7 +175,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> GetResourceEnrollmentStatus</td>
- *      <td><p> Get a resource along with its enrollment status.</td>
+ *      <td><p> Gets a resource and its enrollment status.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -189,7 +194,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListResourceEnrollmentStatuses</td>
- *      <td><p> Fetches all resources under the parent along with their enrollment.</td>
+ *      <td><p> Lists all the folders and projects in an organization or folder, along with their enrollments.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -209,7 +214,7 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListControls</td>
- *      <td><p> Gets controls needed to be implemented to be compliant to a standard.</td>
+ *      <td><p> Lists the controls that you must implement to become compliant to a regulatory standard.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -229,8 +234,9 @@ import org.jspecify.annotations.Nullable;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
- * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -388,10 +394,10 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enrolls the customer resource(folder/project/organization) to the audit manager service by
-   * creating the audit managers Service Agent in customers workload and granting required
-   * permissions to the Service Agent. Please note that if enrollment request is made on the already
-   * enrolled workload then enrollment is executed overriding the existing set of destinations.
+   * Adds your project, folder, or organization to Audit Manager. This method creates the Audit
+   * Manager service agent in your workload and grants required permissions to the service agent. If
+   * you make this request on a workload that's already enrolled, then this method overrides the
+   * existing set of destinations.
    *
    * <p>Sample code:
    *
@@ -408,15 +414,20 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param scope Required. The resource to be enrolled to the audit manager. Scope format should be
-   *     resource_type/resource_identifier Eg: projects/{project}/locations/{location},
-   *     folders/{folder}/locations/{location} organizations/{organization}/locations/{location}
-   * @param destinations Required. List of destination among which customer can choose to upload
-   *     their reports during the audit process. While enrolling at a organization/folder level,
-   *     customer can choose Cloud storage bucket in any project. If the audit is triggered at
-   *     project level using the service agent at organization/folder level, all the destination
-   *     options associated with respective organization/folder level service agent will be
-   *     available to auditing projects.
+   * @param scope Required. Organization, folder, or project to enroll in Audit Manager, in one of
+   *     the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
+   *     </ul>
+   *
+   * @param destinations Required. Cloud Storage buckets that you can upload your audit reports to
+   *     during the audit process.
+   *     <p>When you enroll an organization or folder, you can choose a Cloud Storage bucket from
+   *     any project in the organization or folder. If you run an audit at the project level using
+   *     the service agent at the organization or folder level, all the buckets that are associated
+   *     with the service agent are available.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Enrollment enrollResource(
@@ -428,10 +439,10 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enrolls the customer resource(folder/project/organization) to the audit manager service by
-   * creating the audit managers Service Agent in customers workload and granting required
-   * permissions to the Service Agent. Please note that if enrollment request is made on the already
-   * enrolled workload then enrollment is executed overriding the existing set of destinations.
+   * Adds your project, folder, or organization to Audit Manager. This method creates the Audit
+   * Manager service agent in your workload and grants required permissions to the service agent. If
+   * you make this request on a workload that's already enrolled, then this method overrides the
+   * existing set of destinations.
    *
    * <p>Sample code:
    *
@@ -460,10 +471,10 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Enrolls the customer resource(folder/project/organization) to the audit manager service by
-   * creating the audit managers Service Agent in customers workload and granting required
-   * permissions to the Service Agent. Please note that if enrollment request is made on the already
-   * enrolled workload then enrollment is executed overriding the existing set of destinations.
+   * Adds your project, folder, or organization to Audit Manager. This method creates the Audit
+   * Manager service agent in your workload and grants required permissions to the service agent. If
+   * you make this request on a workload that's already enrolled, then this method overrides the
+   * existing set of destinations.
    *
    * <p>Sample code:
    *
@@ -492,8 +503,15 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Generates a demo report highlighting different responsibilities (Google/Customer/ shared)
-   * required to be fulfilled for the customer's workload to be compliant with the given standard.
+   * Generates an audit scope report for the given standard.
+   *
+   * <p>The report includes the following:
+   *
+   * <ul>
+   *   <li>The technical attributes and constraints that Audit Manager uses to verify your
+   *       compliance with a framework.
+   *   <li>A list of Google Cloud services and resources that are within the scope of the framework.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -513,12 +531,18 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param scope Required. Scope for which the AuditScopeReport is required. Must be of format
-   *     resource_type/resource_identifier Eg: projects/{project}/locations/{location},
-   *     folders/{folder}/locations/{location}
-   * @param complianceStandard Required. Compliance Standard against which the Scope Report must be
-   *     generated. Eg: FEDRAMP_MODERATE
-   * @param reportFormat Required. The format in which the Scope report bytes should be returned.
+   * @param scope Required. Project or folder that the audit scope report is generated for, in one
+   *     of the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
+   *     </ul>
+   *
+   * @param complianceStandard Optional. Deprecated. The standard (industry or regulatory
+   *     requirements) that the audit scope report is run against.
+   *     <p>Use the `compliance_framework` field instead.
+   * @param reportFormat Required. Format for the audit scope report.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AuditScopeReport generateAuditScopeReport(
@@ -536,8 +560,15 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Generates a demo report highlighting different responsibilities (Google/Customer/ shared)
-   * required to be fulfilled for the customer's workload to be compliant with the given standard.
+   * Generates an audit scope report for the given standard.
+   *
+   * <p>The report includes the following:
+   *
+   * <ul>
+   *   <li>The technical attributes and constraints that Audit Manager uses to verify your
+   *       compliance with a framework.
+   *   <li>A list of Google Cloud services and resources that are within the scope of the framework.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -567,8 +598,15 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Generates a demo report highlighting different responsibilities (Google/Customer/ shared)
-   * required to be fulfilled for the customer's workload to be compliant with the given standard.
+   * Generates an audit scope report for the given standard.
+   *
+   * <p>The report includes the following:
+   *
+   * <ul>
+   *   <li>The technical attributes and constraints that Audit Manager uses to verify your
+   *       compliance with a framework.
+   *   <li>A list of Google Cloud services and resources that are within the scope of the framework.
+   * </ul>
    *
    * <p>Sample code:
    *
@@ -599,8 +637,8 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Register the Audit Report generation requests and returns the OperationId using which the
-   * customer can track the report generation progress.
+   * Registers audit report generation requests. This method returns the operation identifier that
+   * you can use to track the report generation progress.
    *
    * <p>Sample code:
    *
@@ -623,15 +661,19 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param scope Required. Scope for which the AuditScopeReport is required. Must be of format
-   *     resource_type/resource_identifier Eg: projects/{project}/locations/{location},
-   *     folders/{folder}/locations/{location}
-   * @param gcsUri Destination Cloud storage bucket where report and evidence must be uploaded. The
-   *     Cloud storage bucket provided here must be selected among the buckets entered during the
-   *     enrollment process.
-   * @param complianceStandard Required. Compliance Standard against which the Scope Report must be
-   *     generated. Eg: FEDRAMP_MODERATE
-   * @param reportFormat Required. The format in which the audit report should be created.
+   * @param scope Required. Organization, folder, or project that the audit applies to, in one of
+   *     the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
+   *     </ul>
+   *
+   * @param gcsUri URL for the Cloud Storage bucket where the report and evidence is uploaded. You
+   *     must select a bucket that was provided during the enrollment process.
+   * @param complianceStandard Optional. Deprecated. Compliance standard for the audit report.
+   *     <p>Use the `compliance_framework` field instead.
+   * @param reportFormat Required. Format for the audit report.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AuditReport, OperationMetadata> generateAuditReportAsync(
@@ -651,8 +693,8 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Register the Audit Report generation requests and returns the OperationId using which the
-   * customer can track the report generation progress.
+   * Registers audit report generation requests. This method returns the operation identifier that
+   * you can use to track the report generation progress.
    *
    * <p>Sample code:
    *
@@ -668,6 +710,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setScope("scope109264468")
    *           .setComplianceStandard("complianceStandard-1534269448")
    *           .setComplianceFramework("complianceFramework-1808314333")
+   *           .setValidateOnly(true)
    *           .build();
    *   AuditReport response = auditManagerClient.generateAuditReportAsync(request).get();
    * }
@@ -683,8 +726,8 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Register the Audit Report generation requests and returns the OperationId using which the
-   * customer can track the report generation progress.
+   * Registers audit report generation requests. This method returns the operation identifier that
+   * you can use to track the report generation progress.
    *
    * <p>Sample code:
    *
@@ -700,6 +743,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setScope("scope109264468")
    *           .setComplianceStandard("complianceStandard-1534269448")
    *           .setComplianceFramework("complianceFramework-1808314333")
+   *           .setValidateOnly(true)
    *           .build();
    *   OperationFuture<AuditReport, OperationMetadata> future =
    *       auditManagerClient.generateAuditReportOperationCallable().futureCall(request);
@@ -715,8 +759,8 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Register the Audit Report generation requests and returns the OperationId using which the
-   * customer can track the report generation progress.
+   * Registers audit report generation requests. This method returns the operation identifier that
+   * you can use to track the report generation progress.
    *
    * <p>Sample code:
    *
@@ -732,6 +776,7 @@ public class AuditManagerClient implements BackgroundResource {
    *           .setScope("scope109264468")
    *           .setComplianceStandard("complianceStandard-1534269448")
    *           .setComplianceFramework("complianceFramework-1808314333")
+   *           .setValidateOnly(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       auditManagerClient.generateAuditReportCallable().futureCall(request);
@@ -746,7 +791,8 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists audit reports in the selected parent scope
+   * Lists the audit reports for the organization, folder, or project that you specify as the parent
+   * scope.
    *
    * <p>Sample code:
    *
@@ -765,7 +811,14 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent scope for which to list the reports.
+   * @param parent Required. Parent organization, folder, or project to list reports for, in one of
+   *     the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAuditReportsPagedResponse listAuditReports(
@@ -779,7 +832,8 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists audit reports in the selected parent scope
+   * Lists the audit reports for the organization, folder, or project that you specify as the parent
+   * scope.
    *
    * <p>Sample code:
    *
@@ -797,7 +851,14 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent scope for which to list the reports.
+   * @param parent Required. Parent organization, folder, or project to list reports for, in one of
+   *     the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAuditReportsPagedResponse listAuditReports(@Nullable LocationName parent) {
@@ -810,7 +871,8 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists audit reports in the selected parent scope
+   * Lists the audit reports for the organization, folder, or project that you specify as the parent
+   * scope.
    *
    * <p>Sample code:
    *
@@ -828,7 +890,14 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent scope for which to list the reports.
+   * @param parent Required. Parent organization, folder, or project to list reports for, in one of
+   *     the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}`
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListAuditReportsPagedResponse listAuditReports(String parent) {
@@ -839,7 +908,8 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists audit reports in the selected parent scope
+   * Lists the audit reports for the organization, folder, or project that you specify as the parent
+   * scope.
    *
    * <p>Sample code:
    *
@@ -871,7 +941,8 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists audit reports in the selected parent scope
+   * Lists the audit reports for the organization, folder, or project that you specify as the parent
+   * scope.
    *
    * <p>Sample code:
    *
@@ -904,7 +975,8 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists audit reports in the selected parent scope
+   * Lists the audit reports for the organization, folder, or project that you specify as the parent
+   * scope.
    *
    * <p>Sample code:
    *
@@ -944,7 +1016,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the overall audit report
+   * Gets the full metadata and findings for an audit report.
    *
    * <p>Sample code:
    *
@@ -962,9 +1034,13 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Format
-   *     projects/{project}/locations/{location}/auditReports/{audit_report},
-   *     folders/{folder}/locations/{location}/auditReports/{audit_report}
+   * @param name Required. Name of the audit report, in one of the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}/auditReports/{audit_report}`
+   *       <li>`folders/{folder}/locations/{location}/auditReports/{audit_report}`
+   *       <li>`organizations/{organization}/locations/{location}/auditReports/{audit_report}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AuditReport getAuditReport(@Nullable AuditReportName name) {
@@ -975,7 +1051,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the overall audit report
+   * Gets the full metadata and findings for an audit report.
    *
    * <p>Sample code:
    *
@@ -994,9 +1070,13 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Format
-   *     projects/{project}/locations/{location}/auditReports/{audit_report},
-   *     folders/{folder}/locations/{location}/auditReports/{audit_report}
+   * @param name Required. Name of the audit report, in one of the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}/auditReports/{audit_report}`
+   *       <li>`folders/{folder}/locations/{location}/auditReports/{audit_report}`
+   *       <li>`organizations/{organization}/locations/{location}/auditReports/{audit_report}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AuditReport getAuditReport(String name) {
@@ -1006,7 +1086,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the overall audit report
+   * Gets the full metadata and findings for an audit report.
    *
    * <p>Sample code:
    *
@@ -1037,7 +1117,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get the overall audit report
+   * Gets the full metadata and findings for an audit report.
    *
    * <p>Sample code:
    *
@@ -1068,7 +1148,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a resource along with its enrollment status.
+   * Gets a resource and its enrollment status.
    *
    * <p>Sample code:
    *
@@ -1086,10 +1166,13 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Format
-   *     folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-   *     projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-   *     organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}
+   * @param name Required. Name of the resource enrollment status, in one of the following formats:
+   *     <ul>
+   *       <li>`folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   *       <li>`projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   *       <li>`organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ResourceEnrollmentStatus getResourceEnrollmentStatus(
@@ -1103,7 +1186,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a resource along with its enrollment status.
+   * Gets a resource and its enrollment status.
    *
    * <p>Sample code:
    *
@@ -1122,10 +1205,13 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Format
-   *     folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-   *     projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status},
-   *     organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}
+   * @param name Required. Name of the resource enrollment status, in one of the following formats:
+   *     <ul>
+   *       <li>`folders/{folder}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   *       <li>`projects/{project}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   *       <li>`organizations/{organization}/locations/{location}/resourceEnrollmentStatuses/{resource_enrollment_status}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ResourceEnrollmentStatus getResourceEnrollmentStatus(String name) {
@@ -1136,7 +1222,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a resource along with its enrollment status.
+   * Gets a resource and its enrollment status.
    *
    * <p>Sample code:
    *
@@ -1168,7 +1254,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a resource along with its enrollment status.
+   * Gets a resource and its enrollment status.
    *
    * <p>Sample code:
    *
@@ -1200,7 +1286,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches all resources under the parent along with their enrollment.
+   * Lists all the folders and projects in an organization or folder, along with their enrollments.
    *
    * <p>Sample code:
    *
@@ -1220,8 +1306,13 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent scope for which the list of resources with enrollments are
-   *     required.
+   * @param parent Required. Parent organization or folder to list enrollment statuses for, in one
+   *     of the following formats:
+   *     <ul>
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListResourceEnrollmentStatusesPagedResponse listResourceEnrollmentStatuses(
@@ -1235,7 +1326,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches all resources under the parent along with their enrollment.
+   * Lists all the folders and projects in an organization or folder, along with their enrollments.
    *
    * <p>Sample code:
    *
@@ -1255,8 +1346,13 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent scope for which the list of resources with enrollments are
-   *     required.
+   * @param parent Required. Parent organization or folder to list enrollment statuses for, in one
+   *     of the following formats:
+   *     <ul>
+   *       <li>`folders/{folder}/locations/{location}`
+   *       <li>`organizations/{organization}/locations/{location}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListResourceEnrollmentStatusesPagedResponse listResourceEnrollmentStatuses(
@@ -1268,7 +1364,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches all resources under the parent along with their enrollment.
+   * Lists all the folders and projects in an organization or folder, along with their enrollments.
    *
    * <p>Sample code:
    *
@@ -1305,7 +1401,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches all resources under the parent along with their enrollment.
+   * Lists all the folders and projects in an organization or folder, along with their enrollments.
    *
    * <p>Sample code:
    *
@@ -1342,7 +1438,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Fetches all resources under the parent along with their enrollment.
+   * Lists all the folders and projects in an organization or folder, along with their enrollments.
    *
    * <p>Sample code:
    *
@@ -1386,7 +1482,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets controls needed to be implemented to be compliant to a standard.
+   * Lists the controls that you must implement to become compliant to a regulatory standard.
    *
    * <p>Sample code:
    *
@@ -1406,8 +1502,13 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Format projects/{project}/locations/{location}/standards/{standard},
-   *     folders/{folder}/locations/{location}/standards/{standard}
+   * @param parent Required. Standard to list controls for, in one of the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}/standards/{standard}`
+   *       <li>`folders/{folder}/locations/{location}/standards/{standard}`
+   *       <li>`organizations/{organization}/locations/{location}/standards/{standard}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListControlsPagedResponse listControls(@Nullable StandardName parent) {
@@ -1420,7 +1521,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets controls needed to be implemented to be compliant to a standard.
+   * Lists the controls that you must implement to become compliant to a regulatory standard.
    *
    * <p>Sample code:
    *
@@ -1440,8 +1541,13 @@ public class AuditManagerClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Format projects/{project}/locations/{location}/standards/{standard},
-   *     folders/{folder}/locations/{location}/standards/{standard}
+   * @param parent Required. Standard to list controls for, in one of the following formats:
+   *     <ul>
+   *       <li>`projects/{project}/locations/{location}/standards/{standard}`
+   *       <li>`folders/{folder}/locations/{location}/standards/{standard}`
+   *       <li>`organizations/{organization}/locations/{location}/standards/{standard}`
+   *     </ul>
+   *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListControlsPagedResponse listControls(String parent) {
@@ -1451,7 +1557,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets controls needed to be implemented to be compliant to a standard.
+   * Lists the controls that you must implement to become compliant to a regulatory standard.
    *
    * <p>Sample code:
    *
@@ -1486,7 +1592,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets controls needed to be implemented to be compliant to a standard.
+   * Lists the controls that you must implement to become compliant to a regulatory standard.
    *
    * <p>Sample code:
    *
@@ -1522,7 +1628,7 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets controls needed to be implemented to be compliant to a standard.
+   * Lists the controls that you must implement to become compliant to a regulatory standard.
    *
    * <p>Sample code:
    *
@@ -1563,13 +1669,19 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1602,13 +1714,19 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1642,13 +1760,19 @@ public class AuditManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

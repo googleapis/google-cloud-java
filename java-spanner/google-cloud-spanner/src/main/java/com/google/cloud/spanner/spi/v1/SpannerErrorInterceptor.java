@@ -118,10 +118,13 @@ public final class SpannerErrorInterceptor implements ClientInterceptor {
                   if (trailers.containsKey(RETRY_INFO_KEY)) {
                     status = status.augmentDescription(trailers.get(RETRY_INFO_KEY).toString());
                   }
-                } catch (IllegalArgumentException e) {
+                } catch (Throwable throwable) {
                   // Messages could be invalid if, say, some invalid UTF8 is echoed back in some
-                  // error text.
-                  logger.log(Level.WARNING, "Invalid protocol message in metadata", e);
+                  // error text, or if an unexpected exception occurs during metadata inspection.
+                  logger.log(
+                      Level.WARNING,
+                      "Error processing error details in SpannerErrorInterceptor",
+                      throwable);
                 } finally {
                   super.onClose(status, trailers);
                 }

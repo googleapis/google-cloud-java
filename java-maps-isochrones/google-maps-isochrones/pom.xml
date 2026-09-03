@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps</groupId>
   <artifactId>google-maps-isochrones</artifactId>
-  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-maps-isochrones:current} -->
+  <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-maps-isochrones:current} -->
   <packaging>jar</packaging>
   <name>Google Isochrones</name>
   <description>Isochrones isochrones.googleapis.com API.</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-isochrones-parent</artifactId>
-    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-maps-isochrones:current} -->
+    <version>0.3.0-SNAPSHOT</version><!-- {x-version-update:google-maps-isochrones:current} -->
   </parent>
   <properties>
     <site.installationModule>google-maps-isochrones</site.installationModule>

@@ -87,6 +87,7 @@ import com.google.cloud.bigquery.reservation.v1.SplitCapacityCommitmentResponse;
 import com.google.cloud.bigquery.reservation.v1.UpdateAssignmentRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateBiReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateCapacityCommitmentRequest;
+import com.google.cloud.bigquery.reservation.v1.UpdateReservationGroupRequest;
 import com.google.cloud.bigquery.reservation.v1.UpdateReservationRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -227,6 +228,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
           ListReservationGroupsResponse,
           ListReservationGroupsPagedResponse>
       listReservationGroupsSettings;
+  private final UnaryCallSettings<UpdateReservationGroupRequest, ReservationGroup>
+      updateReservationGroupSettings;
 
   private static final PagedListDescriptor<
           ListReservationsRequest, ListReservationsResponse, Reservation>
@@ -770,6 +773,12 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     return listReservationGroupsSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateReservationGroup. */
+  public UnaryCallSettings<UpdateReservationGroupRequest, ReservationGroup>
+      updateReservationGroupSettings() {
+    return updateReservationGroupSettings;
+  }
+
   public ReservationServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -910,6 +919,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
     getReservationGroupSettings = settingsBuilder.getReservationGroupSettings().build();
     deleteReservationGroupSettings = settingsBuilder.deleteReservationGroupSettings().build();
     listReservationGroupsSettings = settingsBuilder.listReservationGroupsSettings().build();
+    updateReservationGroupSettings = settingsBuilder.updateReservationGroupSettings().build();
   }
 
   @Override
@@ -994,6 +1004,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
             ListReservationGroupsResponse,
             ListReservationGroupsPagedResponse>
         listReservationGroupsSettings;
+    private final UnaryCallSettings.Builder<UpdateReservationGroupRequest, ReservationGroup>
+        updateReservationGroupSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1079,6 +1091,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       deleteReservationGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listReservationGroupsSettings =
           PagedCallSettings.newBuilder(LIST_RESERVATION_GROUPS_PAGE_STR_FACT);
+      updateReservationGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1110,7 +1123,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               createReservationGroupSettings,
               getReservationGroupSettings,
               deleteReservationGroupSettings,
-              listReservationGroupsSettings);
+              listReservationGroupsSettings,
+              updateReservationGroupSettings);
       initDefaults(this);
     }
 
@@ -1146,6 +1160,7 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
       getReservationGroupSettings = settings.getReservationGroupSettings.toBuilder();
       deleteReservationGroupSettings = settings.deleteReservationGroupSettings.toBuilder();
       listReservationGroupsSettings = settings.listReservationGroupsSettings.toBuilder();
+      updateReservationGroupSettings = settings.updateReservationGroupSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1177,7 +1192,8 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
               createReservationGroupSettings,
               getReservationGroupSettings,
               deleteReservationGroupSettings,
-              listReservationGroupsSettings);
+              listReservationGroupsSettings,
+              updateReservationGroupSettings);
     }
 
     private static Builder createDefault() {
@@ -1347,6 +1363,11 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
 
       builder
           .listReservationGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateReservationGroupSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1552,6 +1573,12 @@ public class ReservationServiceStubSettings extends StubSettings<ReservationServ
             ListReservationGroupsPagedResponse>
         listReservationGroupsSettings() {
       return listReservationGroupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateReservationGroup. */
+    public UnaryCallSettings.Builder<UpdateReservationGroupRequest, ReservationGroup>
+        updateReservationGroupSettings() {
+      return updateReservationGroupSettings;
     }
 
     @Override

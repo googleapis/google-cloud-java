@@ -18,6 +18,7 @@ package com.google.cloud.spanner.jdbc;
 
 import com.google.cloud.spanner.JdbcDataTypeConverter;
 import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.Statement;
 import com.google.rpc.Code;
 import com.google.spanner.v1.StructType;
 import com.google.spanner.v1.StructType.Field;
@@ -44,7 +45,7 @@ class JdbcParameterMetaData extends AbstractJdbcWrapper implements ParameterMeta
 
   private Field getField(int param) throws SQLException {
     JdbcPreconditions.checkArgument(param > 0 && param <= parameters.getFieldsCount(), param);
-    String paramName = "p" + param;
+    String paramName = Statement.getParameterName(param);
     return parameters.getFieldsList().stream()
         .filter(field -> field.getName().equals(paramName))
         .findAny()

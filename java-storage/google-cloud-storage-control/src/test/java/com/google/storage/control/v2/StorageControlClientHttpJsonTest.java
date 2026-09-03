@@ -675,6 +675,7 @@ public class StorageControlClientHttpJsonTest {
             .setLocationType("locationType-58277745")
             .setCustomPlacementConfig(StorageLayout.CustomPlacementConfig.newBuilder().build())
             .setHierarchicalNamespace(StorageLayout.HierarchicalNamespace.newBuilder().build())
+            .setRapidCacheInfo(StorageLayout.RapidCacheInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -723,6 +724,7 @@ public class StorageControlClientHttpJsonTest {
             .setLocationType("locationType-58277745")
             .setCustomPlacementConfig(StorageLayout.CustomPlacementConfig.newBuilder().build())
             .setHierarchicalNamespace(StorageLayout.HierarchicalNamespace.newBuilder().build())
+            .setRapidCacheInfo(StorageLayout.RapidCacheInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -843,6 +845,12 @@ public class StorageControlClientHttpJsonTest {
   @Test
   public void updateRapidCacheUnsupportedMethodTest() throws Exception {
     // The updateRapidCache() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void disableRapidCacheUnsupportedMethodTest() throws Exception {
+    // The disableRapidCache() method is not supported in REST transport.
     // This empty test is generated for technical reasons.
   }
 
@@ -1864,6 +1872,210 @@ public class StorageControlClientHttpJsonTest {
       String parent =
           "projects/project-2922/locations/location-2922/intelligenceFindings/intelligenceFinding-2922";
       client.listIntelligenceFindingRevisions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void viewObjectFullContextTest() throws Exception {
+    ObjectFullContext expectedResponse =
+        ObjectFullContext.newBuilder()
+            .setKey("key106079")
+            .setValue("value111972721")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setExtendedData(Any.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ObjectName name = ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]");
+    String contextKey = "contextKey273767984";
+
+    ObjectFullContext actualResponse = client.viewObjectFullContext(name, contextKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void viewObjectFullContextExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ObjectName name = ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]");
+      String contextKey = "contextKey273767984";
+      client.viewObjectFullContext(name, contextKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void viewObjectFullContextTest2() throws Exception {
+    ObjectFullContext expectedResponse =
+        ObjectFullContext.newBuilder()
+            .setKey("key106079")
+            .setValue("value111972721")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setExtendedData(Any.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-5349/buckets/bucket-5349/objects/object-5349";
+    String contextKey = "contextKey273767984";
+
+    ObjectFullContext actualResponse = client.viewObjectFullContext(name, contextKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void viewObjectFullContextExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-5349/buckets/bucket-5349/objects/object-5349";
+      String contextKey = "contextKey273767984";
+      client.viewObjectFullContext(name, contextKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void viewObjectFullContextTest3() throws Exception {
+    ObjectFullContext expectedResponse =
+        ObjectFullContext.newBuilder()
+            .setKey("key106079")
+            .setValue("value111972721")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setExtendedData(Any.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ObjectName name = ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]");
+    long generation = 305703192;
+    String contextKey = "contextKey273767984";
+
+    ObjectFullContext actualResponse = client.viewObjectFullContext(name, generation, contextKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void viewObjectFullContextExceptionTest3() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ObjectName name = ObjectName.of("[PROJECT]", "[BUCKET]", "[OBJECT]");
+      long generation = 305703192;
+      String contextKey = "contextKey273767984";
+      client.viewObjectFullContext(name, generation, contextKey);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void viewObjectFullContextTest4() throws Exception {
+    ObjectFullContext expectedResponse =
+        ObjectFullContext.newBuilder()
+            .setKey("key106079")
+            .setValue("value111972721")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setExtendedData(Any.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-5349/buckets/bucket-5349/objects/object-5349";
+    long generation = 305703192;
+    String contextKey = "contextKey273767984";
+
+    ObjectFullContext actualResponse = client.viewObjectFullContext(name, generation, contextKey);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void viewObjectFullContextExceptionTest4() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-5349/buckets/bucket-5349/objects/object-5349";
+      long generation = 305703192;
+      String contextKey = "contextKey273767984";
+      client.viewObjectFullContext(name, generation, contextKey);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

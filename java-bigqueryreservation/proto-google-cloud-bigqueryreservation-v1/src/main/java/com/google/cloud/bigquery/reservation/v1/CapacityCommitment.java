@@ -109,13 +109,16 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: Flex commitments are deprecated. Please use Edition-based
+     * capacity commitments.
      * Flex commitments have committed period of 1 minute after becoming ACTIVE.
      * After that, they are not in a committed period anymore and can be removed
      * any time.
      * </pre>
      *
-     * <code>FLEX = 3;</code>
+     * <code>FLEX = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     FLEX(3),
     /**
      *
@@ -247,14 +250,16 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: Flex commitments are deprecated. Please use Edition-based
+     * capacity commitments.
      * Flex commitments have committed period of 1 minute after becoming ACTIVE.
      * After that, they are not in a committed period anymore and can be removed
      * any time.
      * </pre>
      *
-     * <code>FLEX = 3;</code>
+     * <code>FLEX = 3 [deprecated = true];</code>
      */
-    public static final int FLEX_VALUE = 3;
+    @java.lang.Deprecated public static final int FLEX_VALUE = 3;
 
     /**
      *
@@ -1089,7 +1094,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
    * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
-   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
+   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1014
    * @return The multiRegionAuxiliary.
    */
   @java.lang.Override
@@ -3001,7 +3006,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
-     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1014
      * @return The multiRegionAuxiliary.
      */
     @java.lang.Override
@@ -3028,7 +3033,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
-     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1014
      * @param value The multiRegionAuxiliary to set.
      * @return This builder for chaining.
      */
@@ -3059,7 +3064,7 @@ public final class CapacityCommitment extends com.google.protobuf.GeneratedMessa
      * <code>bool multi_region_auxiliary = 10 [deprecated = true];</code>
      *
      * @deprecated google.cloud.bigquery.reservation.v1.CapacityCommitment.multi_region_auxiliary is
-     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=971
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=1014
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

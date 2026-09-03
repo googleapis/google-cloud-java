@@ -72,6 +72,57 @@ public interface NotebookRuntimeOptionsOrBuilder
    *
    *
    * <pre>
+   * Optional. The Google Cloud Storage destination to upload the snapshot to.
+   * For empty URI it defaults to the provided gcs_output_bucket.
+   * Format: `gs://bucket-name/path/`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the gcsRepositorySnapshotDestination field is set.
+   */
+  boolean hasGcsRepositorySnapshotDestination();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Google Cloud Storage destination to upload the snapshot to.
+   * For empty URI it defaults to the provided gcs_output_bucket.
+   * Format: `gs://bucket-name/path/`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gcsRepositorySnapshotDestination.
+   */
+  com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotDestination
+      getGcsRepositorySnapshotDestination();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The Google Cloud Storage destination to upload the snapshot to.
+   * For empty URI it defaults to the provided gcs_output_bucket.
+   * Format: `gs://bucket-name/path/`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataform.v1beta1.GcsRepositorySnapshotDestination gcs_repository_snapshot_destination = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataform.v1beta1.GcsRepositorySnapshotDestinationOrBuilder
+      getGcsRepositorySnapshotDestinationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The resource name of the [Colab runtime template]
    * (https://cloud.google.com/colab/docs/runtimes), from which a runtime is
    * created for notebook executions. If not specified, a runtime is created
@@ -105,4 +156,7 @@ public interface NotebookRuntimeOptionsOrBuilder
   com.google.protobuf.ByteString getAiPlatformNotebookRuntimeTemplateBytes();
 
   com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.ExecutionSinkCase getExecutionSinkCase();
+
+  com.google.cloud.dataform.v1beta1.NotebookRuntimeOptions.RepositorySnapshotStorageCase
+      getRepositorySnapshotStorageCase();
 }

@@ -66,6 +66,7 @@ import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 import java.util.Map;
@@ -177,7 +178,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   // transactionStarted is false by default.
   // when autocommit is false transaction starts and session is initialized.
   boolean transactionStarted;
-  ConnectionProperty sessionInfoConnectionProperty;
+  volatile ConnectionProperty sessionInfoConnectionProperty;
   boolean isClosed;
   DatasetId defaultDataset;
   String location;
@@ -197,9 +198,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   long destinationDatasetExpirationTime;
   String kmsKeyName;
   String universeDomain;
-  List<ConnectionProperty> queryProperties;
+  private volatile List<ConnectionProperty> queryProperties;
   Map<String, String> authProperties;
   Map<String, String> overrideProperties;
+  Map<String, String> proxyProperties;
   Credentials credentials;
   boolean useStatelessQueryMode;
   int numBufferedRows;
@@ -299,7 +301,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
               String.valueOf(ds.getRequestGoogleDriveScope()),
               BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
 
-      Map<String, String> proxyProperties =
+      this.proxyProperties =
           BigQueryJdbcProxyUtility.parseProxyProperties(ds, this.connectionClassName);
 
       this.sslTrustStorePath = ds.getSSLTrustStorePath();
@@ -685,17 +687,44 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       Job job = this.bigQuery.create(JobInfo.of(transactionBeginJobConfig.build()));
       job = job.waitFor();
       Job transactionBeginJob = this.bigQuery.getJob(job.getJobId());
-      if (this.sessionInfoConnectionProperty == null) {
-        this.sessionInfoConnectionProperty =
-            ConnectionProperty.newBuilder()
-                .setKey("session_id")
-                .setValue(transactionBeginJob.getStatistics().getSessionInfo().getSessionId())
-                .build();
-        this.queryProperties.add(this.sessionInfoConnectionProperty);
+      if (this.sessionInfoConnectionProperty == null
+          && transactionBeginJob != null
+          && transactionBeginJob.getStatistics() != null
+          && transactionBeginJob.getStatistics().getSessionInfo() != null) {
+        updateSessionInfo(transactionBeginJob.getStatistics().getSessionInfo().getSessionId());
       }
       this.transactionStarted = true;
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcRuntimeException("Failed to begin transaction", ex);
+    }
+  }
+
+  synchronized void updateSessionInfo(String sessionId) {
+    LOG.fine("++enter++ ");
+    if (sessionId != null && !sessionId.isEmpty()) {
+      if (this.sessionInfoConnectionProperty == null
+          || !sessionId.equals(this.sessionInfoConnectionProperty.getValue())) {
+        ConnectionProperty sessionProperty =
+            ConnectionProperty.newBuilder().setKey("session_id").setValue(sessionId).build();
+        this.sessionInfoConnectionProperty = sessionProperty;
+        List<ConnectionProperty> updated =
+            this.queryProperties != null
+                ? new ArrayList<>(this.queryProperties)
+                : new ArrayList<>();
+        boolean found = false;
+        for (int i = 0; i < updated.size(); i++) {
+          if ("session_id".equalsIgnoreCase(updated.get(i).getKey())) {
+            updated.set(i, sessionProperty);
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          updated.add(sessionProperty);
+        }
+        LOG.info("Updated session info: " + sessionId);
+        this.queryProperties = Collections.unmodifiableList(updated);
+      }
     }
   }
 
@@ -711,7 +740,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return this.unsupportedHTAPIFallback;
   }
 
-  ConnectionProperty getSessionInfoConnectionProperty() {
+  public ConnectionProperty getSessionInfoConnectionProperty() {
     return this.sessionInfoConnectionProperty;
   }
 
@@ -1153,13 +1182,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   private ConnectionProperty getSessionPropertyFromQueryProperties(
       Map<String, String> queryPropertiesMap) {
     LOG.finer("++enter++");
-    if (queryPropertiesMap != null) {
-      if (queryPropertiesMap.containsKey("session_id")) {
-        return ConnectionProperty.newBuilder()
-            .setKey("session_id")
-            .setValue(queryPropertiesMap.get("session_id"))
-            .build();
-      }
+    if (queryPropertiesMap != null && queryPropertiesMap.containsKey("session_id")) {
+      return ConnectionProperty.newBuilder()
+          .setKey("session_id")
+          .setValue(queryPropertiesMap.get("session_id"))
+          .build();
     }
     return null;
   }
@@ -1177,7 +1204,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
                 .build());
       }
     }
-    return connectionProperties;
+    return Collections.unmodifiableList(connectionProperties);
   }
 
   void removeStatement(Statement statement) {
@@ -1204,14 +1231,20 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
             this.customOpenTelemetry,
             this.gcpTelemetryCredentials,
             effectiveProjectId,
-            this.credentials);
+            this.credentials,
+            this.proxyProperties);
 
     boolean hasExternalOtel = this.customOpenTelemetry != null || this.useGlobalOpenTelemetry;
     Logging localLoggingClient = null;
     if (this.enableGcpLogExporter && !hasExternalOtel) {
       localLoggingClient =
           BigQueryJdbcOpenTelemetry.createLoggingClient(
-              true, null, this.gcpTelemetryCredentials, effectiveProjectId, this.credentials);
+              true,
+              null,
+              this.gcpTelemetryCredentials,
+              effectiveProjectId,
+              this.credentials,
+              this.headerProvider);
     }
 
     if (this.enableGcpLogExporter || hasExternalOtel) {

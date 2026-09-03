@@ -1284,6 +1284,28 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INSIGHTS_MISSING_FOR_DIMENSION = 123;</code>
    */
   INSIGHTS_MISSING_FOR_DIMENSION(123),
+  /**
+   *
+   *
+   * <pre>
+   * A required prerequisite link (such as a Google Ads link) must exist for
+   * the Google Analytics property to perform this operation.
+   * </pre>
+   *
+   * <code>REQUIRED_PREREQUISITE_LINK_MISSING = 124;</code>
+   */
+  REQUIRED_PREREQUISITE_LINK_MISSING(124),
+  /**
+   *
+   *
+   * <pre>
+   * The remove as of time must be in the past or present. Future timestamps are
+   * not permitted for removing audience members.
+   * </pre>
+   *
+   * <code>INVALID_REMOVE_AS_OF_TIME = 125;</code>
+   */
+  INVALID_REMOVE_AS_OF_TIME(125),
   UNRECOGNIZED(-1),
   ;
 
@@ -2671,6 +2693,30 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int INSIGHTS_MISSING_FOR_DIMENSION_VALUE = 123;
 
+  /**
+   *
+   *
+   * <pre>
+   * A required prerequisite link (such as a Google Ads link) must exist for
+   * the Google Analytics property to perform this operation.
+   * </pre>
+   *
+   * <code>REQUIRED_PREREQUISITE_LINK_MISSING = 124;</code>
+   */
+  public static final int REQUIRED_PREREQUISITE_LINK_MISSING_VALUE = 124;
+
+  /**
+   *
+   *
+   * <pre>
+   * The remove as of time must be in the past or present. Future timestamps are
+   * not permitted for removing audience members.
+   * </pre>
+   *
+   * <code>INVALID_REMOVE_AS_OF_TIME = 125;</code>
+   */
+  public static final int INVALID_REMOVE_AS_OF_TIME_VALUE = 125;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -2941,6 +2987,10 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return BASELINE_LOCATION_AUTO_DETECTION_FAILED;
       case 123:
         return INSIGHTS_MISSING_FOR_DIMENSION;
+      case 124:
+        return REQUIRED_PREREQUISITE_LINK_MISSING;
+      case 125:
+        return INVALID_REMOVE_AS_OF_TIME;
       default:
         return null;
     }

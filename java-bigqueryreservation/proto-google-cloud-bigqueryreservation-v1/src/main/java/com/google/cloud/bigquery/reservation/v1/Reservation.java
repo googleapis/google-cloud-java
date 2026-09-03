@@ -59,6 +59,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
     originalPrimaryLocation_ = "";
     scalingMode_ = 0;
     reservationGroup_ = "";
+    reservationGroupPath_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -3254,7 +3255,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
    * <code>bool multi_region_auxiliary = 14 [deprecated = true];</code>
    *
    * @deprecated google.cloud.bigquery.reservation.v1.Reservation.multi_region_auxiliary is
-   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=677
+   *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=688
    * @return The multiRegionAuxiliary.
    */
   @java.lang.Override
@@ -3995,6 +3996,94 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
         : schedulingPolicy_;
   }
 
+  public static final int RESERVATION_GROUP_PATH_FIELD_NUMBER = 28;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList reservationGroupPath_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reservation group path of the reservation from root to
+   * leaf. The order of elements matters: the first element is the top level
+   * group and the last element is the direct parent reservation group. For
+   * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+   * reservation group path is ["group-1", "group-2", "group-3"].
+   * </pre>
+   *
+   * <code>repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the reservationGroupPath.
+   */
+  public com.google.protobuf.ProtocolStringList getReservationGroupPathList() {
+    return reservationGroupPath_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reservation group path of the reservation from root to
+   * leaf. The order of elements matters: the first element is the top level
+   * group and the last element is the direct parent reservation group. For
+   * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+   * reservation group path is ["group-1", "group-2", "group-3"].
+   * </pre>
+   *
+   * <code>repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of reservationGroupPath.
+   */
+  public int getReservationGroupPathCount() {
+    return reservationGroupPath_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reservation group path of the reservation from root to
+   * leaf. The order of elements matters: the first element is the top level
+   * group and the last element is the direct parent reservation group. For
+   * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+   * reservation group path is ["group-1", "group-2", "group-3"].
+   * </pre>
+   *
+   * <code>repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The reservationGroupPath at the given index.
+   */
+  public java.lang.String getReservationGroupPath(int index) {
+    return reservationGroupPath_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The reservation group path of the reservation from root to
+   * leaf. The order of elements matters: the first element is the top level
+   * group and the last element is the direct parent reservation group. For
+   * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+   * reservation group path is ["group-1", "group-2", "group-3"].
+   * </pre>
+   *
+   * <code>repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the reservationGroupPath at the given index.
+   */
+  public com.google.protobuf.ByteString getReservationGroupPathBytes(int index) {
+    return reservationGroupPath_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4064,6 +4153,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(27, getSchedulingPolicy());
+    }
+    for (int i = 0; i < reservationGroupPath_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 28, reservationGroupPath_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -4138,6 +4230,14 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, getSchedulingPolicy());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < reservationGroupPath_.size(); i++) {
+        dataSize += computeStringSizeNoTag(reservationGroupPath_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getReservationGroupPathList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4190,6 +4290,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
     if (hasSchedulingPolicy()) {
       if (!getSchedulingPolicy().equals(other.getSchedulingPolicy())) return false;
     }
+    if (!getReservationGroupPathList().equals(other.getReservationGroupPathList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4250,6 +4351,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
     if (hasSchedulingPolicy()) {
       hash = (37 * hash) + SCHEDULING_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getSchedulingPolicy().hashCode();
+    }
+    if (getReservationGroupPathCount() > 0) {
+      hash = (37 * hash) + RESERVATION_GROUP_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getReservationGroupPathList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -4464,6 +4569,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
         schedulingPolicyBuilder_.dispose();
         schedulingPolicyBuilder_ = null;
       }
+      reservationGroupPath_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -4567,6 +4673,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
             schedulingPolicyBuilder_ == null ? schedulingPolicy_ : schedulingPolicyBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        reservationGroupPath_.makeImmutable();
+        result.reservationGroupPath_ = reservationGroupPath_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -4645,6 +4755,16 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSchedulingPolicy()) {
         mergeSchedulingPolicy(other.getSchedulingPolicy());
+      }
+      if (!other.reservationGroupPath_.isEmpty()) {
+        if (reservationGroupPath_.isEmpty()) {
+          reservationGroupPath_ = other.reservationGroupPath_;
+          bitField0_ |= 0x00040000;
+        } else {
+          ensureReservationGroupPathIsMutable();
+          reservationGroupPath_.addAll(other.reservationGroupPath_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4791,6 +4911,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00020000;
                 break;
               } // case 218
+            case 226:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureReservationGroupPathIsMutable();
+                reservationGroupPath_.add(s);
+                break;
+              } // case 226
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5838,7 +5965,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
      * <code>bool multi_region_auxiliary = 14 [deprecated = true];</code>
      *
      * @deprecated google.cloud.bigquery.reservation.v1.Reservation.multi_region_auxiliary is
-     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=677
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=688
      * @return The multiRegionAuxiliary.
      */
     @java.lang.Override
@@ -5865,7 +5992,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
      * <code>bool multi_region_auxiliary = 14 [deprecated = true];</code>
      *
      * @deprecated google.cloud.bigquery.reservation.v1.Reservation.multi_region_auxiliary is
-     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=677
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=688
      * @param value The multiRegionAuxiliary to set.
      * @return This builder for chaining.
      */
@@ -5896,7 +6023,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
      * <code>bool multi_region_auxiliary = 14 [deprecated = true];</code>
      *
      * @deprecated google.cloud.bigquery.reservation.v1.Reservation.multi_region_auxiliary is
-     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=677
+     *     deprecated. See google/cloud/bigquery/reservation/v1/reservation.proto;l=688
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -7644,6 +7771,243 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
         schedulingPolicy_ = null;
       }
       return schedulingPolicyBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList reservationGroupPath_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureReservationGroupPathIsMutable() {
+      if (!reservationGroupPath_.isModifiable()) {
+        reservationGroupPath_ = new com.google.protobuf.LazyStringArrayList(reservationGroupPath_);
+      }
+      bitField0_ |= 0x00040000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reservation group path of the reservation from root to
+     * leaf. The order of elements matters: the first element is the top level
+     * group and the last element is the direct parent reservation group. For
+     * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+     * reservation group path is ["group-1", "group-2", "group-3"].
+     * </pre>
+     *
+     * <code>
+     * repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the reservationGroupPath.
+     */
+    public com.google.protobuf.ProtocolStringList getReservationGroupPathList() {
+      reservationGroupPath_.makeImmutable();
+      return reservationGroupPath_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reservation group path of the reservation from root to
+     * leaf. The order of elements matters: the first element is the top level
+     * group and the last element is the direct parent reservation group. For
+     * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+     * reservation group path is ["group-1", "group-2", "group-3"].
+     * </pre>
+     *
+     * <code>
+     * repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of reservationGroupPath.
+     */
+    public int getReservationGroupPathCount() {
+      return reservationGroupPath_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reservation group path of the reservation from root to
+     * leaf. The order of elements matters: the first element is the top level
+     * group and the last element is the direct parent reservation group. For
+     * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+     * reservation group path is ["group-1", "group-2", "group-3"].
+     * </pre>
+     *
+     * <code>
+     * repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The reservationGroupPath at the given index.
+     */
+    public java.lang.String getReservationGroupPath(int index) {
+      return reservationGroupPath_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reservation group path of the reservation from root to
+     * leaf. The order of elements matters: the first element is the top level
+     * group and the last element is the direct parent reservation group. For
+     * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+     * reservation group path is ["group-1", "group-2", "group-3"].
+     * </pre>
+     *
+     * <code>
+     * repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the reservationGroupPath at the given index.
+     */
+    public com.google.protobuf.ByteString getReservationGroupPathBytes(int index) {
+      return reservationGroupPath_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reservation group path of the reservation from root to
+     * leaf. The order of elements matters: the first element is the top level
+     * group and the last element is the direct parent reservation group. For
+     * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+     * reservation group path is ["group-1", "group-2", "group-3"].
+     * </pre>
+     *
+     * <code>
+     * repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The reservationGroupPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReservationGroupPath(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReservationGroupPathIsMutable();
+      reservationGroupPath_.set(index, value);
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reservation group path of the reservation from root to
+     * leaf. The order of elements matters: the first element is the top level
+     * group and the last element is the direct parent reservation group. For
+     * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+     * reservation group path is ["group-1", "group-2", "group-3"].
+     * </pre>
+     *
+     * <code>
+     * repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The reservationGroupPath to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReservationGroupPath(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReservationGroupPathIsMutable();
+      reservationGroupPath_.add(value);
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reservation group path of the reservation from root to
+     * leaf. The order of elements matters: the first element is the top level
+     * group and the last element is the direct parent reservation group. For
+     * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+     * reservation group path is ["group-1", "group-2", "group-3"].
+     * </pre>
+     *
+     * <code>
+     * repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The reservationGroupPath to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllReservationGroupPath(java.lang.Iterable<java.lang.String> values) {
+      ensureReservationGroupPathIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, reservationGroupPath_);
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reservation group path of the reservation from root to
+     * leaf. The order of elements matters: the first element is the top level
+     * group and the last element is the direct parent reservation group. For
+     * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+     * reservation group path is ["group-1", "group-2", "group-3"].
+     * </pre>
+     *
+     * <code>
+     * repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReservationGroupPath() {
+      reservationGroupPath_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The reservation group path of the reservation from root to
+     * leaf. The order of elements matters: the first element is the top level
+     * group and the last element is the direct parent reservation group. For
+     * example, if a reservation is under group-1 -&gt; group-2 -&gt; group-3, then the
+     * reservation group path is ["group-1", "group-2", "group-3"].
+     * </pre>
+     *
+     * <code>
+     * repeated string reservation_group_path = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the reservationGroupPath to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReservationGroupPathBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureReservationGroupPathIsMutable();
+      reservationGroupPath_.add(value);
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.reservation.v1.Reservation)

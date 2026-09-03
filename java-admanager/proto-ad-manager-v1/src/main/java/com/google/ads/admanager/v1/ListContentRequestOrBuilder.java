@@ -116,24 +116,23 @@ public interface ListContentRequestOrBuilder
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;cmsMetadataValues&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;cmsSources.contentSource&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;cmsSources.contentSourceDisplayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;contentBundles&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;contentStatusSource&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;dashIngestStatus&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;duration&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;hlsIngestStatus&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;importTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;lastDashIngestTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;lastHlsIngestTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `cmsMetadataValues`
+   * * `cmsSources.contentSource`
+   * * `cmsSources.contentSourceDisplayName`
+   * * `contentBundles`
+   * * `contentStatusSource`
+   * * `dashIngestStatus`
+   * * `displayName`
+   * * `duration`
+   * * `hlsIngestStatus`
+   * * `importTime`
+   * * `lastDashIngestTime`
+   * * `lastHlsIngestTime`
+   * * `name`
+   * * `status`
+   * * `updateTime`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -150,24 +149,23 @@ public interface ListContentRequestOrBuilder
    * See syntax details at
    * https://developers.google.com/ad-manager/api/beta/filters
    *
-   * &lt;b&gt;Filterable fields:&lt;/b&gt;
-   * &lt;ul style="list-style-type:none"&gt;
-   * &lt;li&gt;&lt;code&gt;cmsMetadataValues&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;cmsSources.contentSource&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;cmsSources.contentSourceDisplayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;contentBundles&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;contentStatusSource&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;dashIngestStatus&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;displayName&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;duration&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;hlsIngestStatus&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;importTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;lastDashIngestTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;lastHlsIngestTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;name&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;status&lt;/code&gt;&lt;/li&gt;
-   * &lt;li&gt;&lt;code&gt;updateTime&lt;/code&gt;&lt;/li&gt;
-   * &lt;/ul&gt;
+   * **Filterable fields:**
+   *
+   * * `cmsMetadataValues`
+   * * `cmsSources.contentSource`
+   * * `cmsSources.contentSourceDisplayName`
+   * * `contentBundles`
+   * * `contentStatusSource`
+   * * `dashIngestStatus`
+   * * `displayName`
+   * * `duration`
+   * * `hlsIngestStatus`
+   * * `importTime`
+   * * `lastDashIngestTime`
+   * * `lastHlsIngestTime`
+   * * `name`
+   * * `status`
+   * * `updateTime`
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
