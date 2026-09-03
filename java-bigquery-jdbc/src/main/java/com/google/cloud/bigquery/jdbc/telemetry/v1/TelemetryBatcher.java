@@ -21,9 +21,7 @@ import com.google.protobuf.Message;
 import com.google.protobuf.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
@@ -200,87 +198,16 @@ final class TelemetryBatcher implements AutoCloseable {
   }
 
   private void populatePayloadBuilder(TelemetryPayload.Builder builder, List<Message> events) {
-    Map<String, ConnectionAttempt.Builder> connections = new HashMap<>();
-    Map<String, StatementExecution.Builder> statements = new HashMap<>();
-    Map<String, ErrorMetric.Builder> errors = new HashMap<>();
-    Map<String, FeatureUsage.Builder> features = new HashMap<>();
-
     for (Message event : events) {
       if (event instanceof ConnectionAttempt) {
-        ConnectionAttempt attempt = (ConnectionAttempt) event;
-        String key =
-            attempt.getAuthType().name()
-                + "|"
-                + attempt.getStatus().name()
-                + "|"
-                + attempt.getErrorCode();
-        ConnectionAttempt.Builder b = connections.get(key);
-        if (b == null) {
-          connections.put(key, attempt.toBuilder());
-        } else {
-          b.setCount(b.getCount() + attempt.getCount());
-        }
+        builder.addConnectionAttempts((ConnectionAttempt) event);
       } else if (event instanceof StatementExecution) {
-        StatementExecution exec = (StatementExecution) event;
-        String key =
-            exec.getStatementType().name()
-                + "|"
-                + exec.getQueryApiType().name()
-                + "|"
-                + exec.getStatus().name()
-                + "|"
-                + exec.getErrorCode();
-        StatementExecution.Builder b = statements.get(key);
-        if (b == null) {
-          statements.put(key, exec.toBuilder());
-        } else {
-          b.setCount(b.getCount() + exec.getCount());
-          if (exec.hasDuration()) {
-            DurationHistogram.Builder durB = b.getDurationBuilder();
-            DurationHistogram dur = exec.getDuration();
-            durB.setCount(durB.getCount() + dur.getCount());
-            durB.setSum(durB.getSum() + dur.getSum());
-            for (int i = 0; i < dur.getBucketCountsCount(); i++) {
-              if (i < durB.getBucketCountsCount()) {
-                durB.setBucketCounts(i, durB.getBucketCounts(i) + dur.getBucketCounts(i));
-              } else {
-                durB.addBucketCounts(dur.getBucketCounts(i));
-              }
-            }
-          }
-        }
+        builder.addStatementExecutions((StatementExecution) event);
       } else if (event instanceof ErrorMetric) {
-        ErrorMetric err = (ErrorMetric) event;
-        String key = err.getErrorCode() + "|" + err.getErrorXdbcCode() + "|" + err.getMethodName();
-        ErrorMetric.Builder b = errors.get(key);
-        if (b == null) {
-          errors.put(key, err.toBuilder());
-        } else {
-          b.setCount(b.getCount() + err.getCount());
-        }
+        builder.addErrors((ErrorMetric) event);
       } else if (event instanceof FeatureUsage) {
-        FeatureUsage feat = (FeatureUsage) event;
-        String key = feat.getDriverFeature().name() + "|" + feat.getCustomFeatureName();
-        FeatureUsage.Builder b = features.get(key);
-        if (b == null) {
-          features.put(key, feat.toBuilder());
-        } else {
-          b.setCount(b.getCount() + feat.getCount());
-        }
+        builder.addFeatureUsages((FeatureUsage) event);
       }
-    }
-
-    for (ConnectionAttempt.Builder b : connections.values()) {
-      builder.addConnectionAttempts(b);
-    }
-    for (StatementExecution.Builder b : statements.values()) {
-      builder.addStatementExecutions(b);
-    }
-    for (ErrorMetric.Builder b : errors.values()) {
-      builder.addErrors(b);
-    }
-    for (FeatureUsage.Builder b : features.values()) {
-      builder.addFeatureUsages(b);
     }
   }
 
