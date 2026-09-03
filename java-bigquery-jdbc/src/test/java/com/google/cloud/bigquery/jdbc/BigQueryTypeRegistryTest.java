@@ -123,6 +123,14 @@ public class BigQueryTypeRegistryTest {
   }
 
   @Test
+  public void testDatetimeStringPreservesLocalWallClock() throws Exception {
+    String dtStr = "2023-01-01 01:00:00";
+    Timestamp ts =
+        (Timestamp) BigQueryTypeRegistry.convert(dtStr, StandardSQLTypeName.DATETIME, null);
+    assertThat(ts.toString()).isEqualTo("2023-01-01 01:00:00.0");
+  }
+
+  @Test
   public void testCoercionException() throws Exception {
     assertThrows(
         BigQueryJdbcException.class,
