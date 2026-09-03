@@ -304,7 +304,7 @@ public interface SystemMessageOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.SystemMessage.clarification is deprecated.
-   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=547
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=563
    * @return Whether the clarification field is set.
    */
   @java.lang.Deprecated
@@ -323,7 +323,7 @@ public interface SystemMessageOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.SystemMessage.clarification is deprecated.
-   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=547
+   *     See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=563
    * @return The clarification.
    */
   @java.lang.Deprecated

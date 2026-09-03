@@ -83,7 +83,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A list of image-supported infoTypes—excluding [document
-   * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+   * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
    * be used as context for the adjustment rule. Sensitive Data Protection
    * adjusts the likelihood of an image finding if its bounding box has the
    * specified spatial relationship (defined by `image_containment_type`) with a
@@ -112,7 +112,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A list of image-supported infoTypes—excluding [document
-   * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+   * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
    * be used as context for the adjustment rule. Sensitive Data Protection
    * adjusts the likelihood of an image finding if its bounding box has the
    * specified spatial relationship (defined by `image_containment_type`) with a
@@ -142,7 +142,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A list of image-supported infoTypes—excluding [document
-   * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+   * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
    * be used as context for the adjustment rule. Sensitive Data Protection
    * adjusts the likelihood of an image finding if its bounding box has the
    * specified spatial relationship (defined by `image_containment_type`) with a
@@ -171,7 +171,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A list of image-supported infoTypes—excluding [document
-   * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+   * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
    * be used as context for the adjustment rule. Sensitive Data Protection
    * adjusts the likelihood of an image finding if its bounding box has the
    * specified spatial relationship (defined by `image_containment_type`) with a
@@ -200,7 +200,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A list of image-supported infoTypes—excluding [document
-   * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+   * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
    * be used as context for the adjustment rule. Sensitive Data Protection
    * adjusts the likelihood of an image finding if its bounding box has the
    * specified spatial relationship (defined by `image_containment_type`) with a
@@ -775,7 +775,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -807,7 +807,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -839,7 +839,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -871,7 +871,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -909,7 +909,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -945,7 +945,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -983,7 +983,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -1021,7 +1021,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -1056,7 +1056,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -1092,7 +1092,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -1128,7 +1128,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -1163,7 +1163,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -1198,7 +1198,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -1226,7 +1226,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -1258,7 +1258,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -1291,7 +1291,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -1320,7 +1320,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a
@@ -1349,7 +1349,7 @@ public final class AdjustByImageFindings extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A list of image-supported infoTypes—excluding [document
-     * infoTypes](https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
+     * infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#documents)—to
      * be used as context for the adjustment rule. Sensitive Data Protection
      * adjusts the likelihood of an image finding if its bounding box has the
      * specified spatial relationship (defined by `image_containment_type`) with a

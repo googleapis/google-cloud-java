@@ -31,7 +31,7 @@ package com.google.privacy.dlp.v2;
  * dlp.kms.encrypt
  *
  * For more information, see [Creating a wrapped key]
- * (https://cloud.google.com/sensitive-data-protection/docs/create-wrapped-key).
+ * (https://docs.cloud.google.com/sensitive-data-protection/docs/create-wrapped-key).
  *
  * Note: When you use Cloud KMS for cryptographic operations,
  * [charges apply](https://cloud.google.com/kms/pricing).
@@ -333,7 +333,7 @@ public final class KmsWrappedCryptoKey extends com.google.protobuf.GeneratedMess
    * dlp.kms.encrypt
    *
    * For more information, see [Creating a wrapped key]
-   * (https://cloud.google.com/sensitive-data-protection/docs/create-wrapped-key).
+   * (https://docs.cloud.google.com/sensitive-data-protection/docs/create-wrapped-key).
    *
    * Note: When you use Cloud KMS for cryptographic operations,
    * [charges apply](https://cloud.google.com/kms/pricing).
