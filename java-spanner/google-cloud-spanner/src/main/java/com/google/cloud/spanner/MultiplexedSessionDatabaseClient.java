@@ -387,7 +387,7 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
     return resourceNotFoundException.get() == null;
   }
 
-  private synchronized boolean isClientClosed() {
+  private boolean isClientClosed() {
     return isClosed;
   }
 
