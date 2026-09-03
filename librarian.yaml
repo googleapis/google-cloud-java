@@ -5323,6 +5323,13 @@ libraries:
       library_type_override: GAPIC_AUTO
       name_pretty_override: Merchant LFP API
       product_documentation_override: https://developers.google.com/merchant/api
+  - name: shopping-merchant-loyaltycustomers
+    version: 0.1.0-SNAPSHOT
+    apis:
+      - path: google/shopping/merchant/loyaltycustomers/v1
+    java:
+      artifact_id: google-shopping-merchant-loyaltycustomers
+      group_id: com.google.shopping
   - name: shopping-merchant-notifications
     version: 1.25.0-SNAPSHOT
     apis:
