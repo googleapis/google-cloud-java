@@ -2111,9 +2111,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * <p>Channels that the pool adds during scale-up are primed with {@code SELECT 1} on a
      * multiplexed session before they are published. A channel primer, prime timeout, or prime
      * attempt count that is set in the given options takes precedence over the Spanner primer and
-     * its defaults. The deadline of the Spanner primer's RPC is derived from the prime timeout and
-     * normally stays below it; only a prime timeout of two milliseconds or less yields the primer's
-     * minimum deadline of one millisecond, and the prime timeout then bounds the attempt.
+     * its defaults.
      *
      * <p>Example usage:
      *

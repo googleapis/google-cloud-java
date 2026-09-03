@@ -804,10 +804,8 @@ public class GapicSpannerRpc implements SpannerRpc {
    * as a normal Spanner call: the user-supplied {@link CallCredentialsProvider} takes precedence,
    * otherwise the scoped credentials that GAX attaches to every call are used, and the request ids
    * of priming RPCs come from the request id creator of this rpc. The deadline of the priming RPC
-   * is derived from the pool's prime timeout and normally stays below it; see {@link
-   * DynamicChannelPoolPrimer#rpcDeadlineFor(Duration)} for the minimum deadline that a prime
-   * timeout of two milliseconds or less yields. Live multiplexed-session database clients register
-   * themselves as session sources and unregister themselves when closed.
+   * is derived from the pool's prime timeout and normally stays below it. Live multiplexed-session
+   * database clients register themselves as session sources and unregister themselves when closed.
    */
   @Nullable
   private DynamicChannelPoolPrimer createChannelPrimer(

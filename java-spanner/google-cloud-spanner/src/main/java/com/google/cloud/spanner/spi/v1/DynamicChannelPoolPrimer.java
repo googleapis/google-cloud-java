@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
  * connection for the whole channel, which benefits every database that later uses it. It does not
  * warm database-specific server-side state, so a request served by a freshly scaled-up channel for
  * a database other than the one used to prime it can still see slightly higher latency than on a
- * channel that database has already used. This trade-off is accepted.
+ * channel that database has already used.
  *
  * <p>A database client unregisters itself when invalidated or closed. The primer therefore never
  * retains a retired client's session name, and a {@code CreateSession} that completes after its
@@ -213,13 +213,8 @@ final class DynamicChannelPoolPrimer implements GcpChannelPrimer {
   @VisibleForTesting
   @Nullable
   String getPrimeSessionName() {
-    // The primer neither classifies failures nor evicts sessions. A dead session remains until its
-    // owner observes it and isValid() stops offering it. Client traffic normally reaches
-    // MultiplexedSessionTransaction.onError quickly; periodic refresh backs up an idle client.
-    // Attempts may thus use a dead session, and the shared cursor cannot ensure consecutive
-    // concurrent attempts on one channel use different sources. Deciding whether a session is still
-    // usable deliberately stays with the owning client, which already tracks it for its own
-    // traffic.
+    // The primer neither classifies failures nor evicts sessions; a source stops offering its
+    // session only when its owning client closes or becomes invalid.
     List<ChannelPrimeSessionSource> sources = ImmutableList.copyOf(primeSessionSources);
     int size = sources.size();
     if (size == 0) {

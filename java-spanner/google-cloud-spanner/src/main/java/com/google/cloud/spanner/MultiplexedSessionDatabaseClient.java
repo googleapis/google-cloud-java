@@ -258,13 +258,6 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
     final SettableApiFuture<SessionReference> initialSessionReferenceFuture =
         SettableApiFuture.create();
     this.multiplexedSessionReference = new AtomicReference<>(initialSessionReferenceFuture);
-    // This escape is safe: resourceNotFoundException is initialized at declaration,
-    // multiplexedSessionReference above, and isClosed is volatile: the fields
-    // getChannelPrimeSessionName() reads.
-    // Registration adds to a CopyOnWriteArrayList under a lock, whose volatile array write happens
-    // before a primer reads that array, so this is safe publication, not a racy final-field escape.
-    // Keep registration before the first CreateSession and inside this constructor: clients are
-    // constructed at multiple call sites, and a missed registration would silently disable priming.
     spanner.getRpc().registerChannelPrimeSessionSource(this);
 
     try {
@@ -277,11 +270,8 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
           sessionClient.getSpanner().getOptions().getSessionPoolOptions(),
           initialSessionReferenceFuture);
     } catch (Throwable t) {
-      // The constructor did not complete, so the caller never gets a reference to this client and
-      // will never close it. Undo everything that was registered above: mark the client closed so
-      // that a CreateSession that is still in flight neither starts the maintainer nor is handed
-      // to a waiter, stop the maintainer, unregister the prime-session source, and release the
-      // shared channel usage.
+      // The caller never receives this client, so it will never be closed; close() therefore undoes
+      // the registrations.
       close();
       throw t;
     }
@@ -417,9 +407,6 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
   @Override
   @Nullable
   public String getChannelPrimeSessionName() {
-    // This client already uses the returned session as multiplexed for all real traffic. If the
-    // backend failed to honor the multiplexed request flag, withholding it from the primer would
-    // not make the client safe.
     if (isClosed || !isValid()) {
       return null;
     }
