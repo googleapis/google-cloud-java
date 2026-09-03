@@ -114,6 +114,13 @@ public interface SpannerRpc extends ServiceRpc {
     }
   }
 
+  /** Source of a multiplexed session for priming dynamic channel pool channels. */
+  interface ChannelPrimeSessionSource {
+    /** Returns a session name without blocking, or {@code null} if none is currently available. */
+    @Nullable
+    String getChannelPrimeSessionName();
+  }
+
   /**
    * Represents results from paginated RPCs, i.e., those where up to a maximum number of items is
    * returned from each call and a followup call must be made to fetch more.
@@ -375,6 +382,12 @@ public interface SpannerRpc extends ServiceRpc {
   }
 
   void deleteSession(String sessionName, @Nullable Map<Option, ?> options) throws SpannerException;
+
+  /** Registers a source of a multiplexed session for priming dynamic channel pool channels. */
+  default void registerChannelPrimeSessionSource(ChannelPrimeSessionSource source) {}
+
+  /** Unregisters a source previously passed to {@link #registerChannelPrimeSessionSource}. */
+  default void unregisterChannelPrimeSessionSource(ChannelPrimeSessionSource source) {}
 
   ApiFuture<Empty> asyncDeleteSession(String sessionName, @Nullable Map<Option, ?> options)
       throws SpannerException;
