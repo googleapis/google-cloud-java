@@ -109,7 +109,7 @@ public class GcpFallbackState {
    * @param options the fallback channel configuration options.
    * @param externalExec optional executor service to use if not yet initialized.
    */
-  public void startPeriodicEvaluation(
+  public synchronized void startPeriodicEvaluation(
       GcpFallbackChannelOptions options, ScheduledExecutorService externalExec) {
     if (options == null
         || !options.isEnableFallback()
@@ -119,6 +119,9 @@ public class GcpFallbackState {
     }
     if (evaluationStarted.compareAndSet(false, true)) {
       ScheduledExecutorService executor = getOrCreateExecutorService(externalExec, options);
+      if (executor == null || executor.isShutdown()) {
+        return;
+      }
       GcpFallbackOpenTelemetry openTelemetry =
           options.getGcpOpenTelemetry() != null
               ? options.getGcpOpenTelemetry()

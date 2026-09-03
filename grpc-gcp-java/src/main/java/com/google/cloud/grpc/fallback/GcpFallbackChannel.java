@@ -57,6 +57,8 @@ public class GcpFallbackChannel extends ManagedChannel {
   private final AtomicBoolean localInFallbackMode = new AtomicBoolean(false);
   private final AtomicLong localProbeSuccesses = new AtomicLong(0);
   private final AtomicLong localFirstPrimaryProbeSuccessNanos = new AtomicLong(0);
+  private final java.util.concurrent.locks.ReentrantLock stateLock =
+      new java.util.concurrent.locks.ReentrantLock();
 
   private final ScheduledExecutorService execService;
   private volatile ScheduledFuture<?> primaryProbeFuture = null;
@@ -181,23 +183,41 @@ public class GcpFallbackChannel extends ManagedChannel {
     init();
   }
 
-  public boolean isInFallbackMode() {
-    if (fallbackState.getInFallbackMode().get()) {
-      if (localInFallbackMode.compareAndSet(false, true)) {
-        localProbeSuccesses.set(0);
-        localFirstPrimaryProbeSuccessNanos.set(0);
+  private void syncFallbackModeState(boolean globalFallback) {
+    if (globalFallback) {
+      if (!localInFallbackMode.get()) {
+        stateLock.lock();
+        try {
+          if (localInFallbackMode.compareAndSet(false, true)) {
+            localProbeSuccesses.set(0);
+            localFirstPrimaryProbeSuccessNanos.set(0);
+          }
+        } finally {
+          stateLock.unlock();
+        }
       }
     } else if (!options.isEnablePerChannelRecovery()) {
-      if (localInFallbackMode.compareAndSet(true, false)) {
-        localProbeSuccesses.set(0);
-        localFirstPrimaryProbeSuccessNanos.set(0);
+      if (localInFallbackMode.get()) {
+        stateLock.lock();
+        try {
+          if (localInFallbackMode.compareAndSet(true, false)) {
+            localProbeSuccesses.set(0);
+            localFirstPrimaryProbeSuccessNanos.set(0);
+          }
+        } finally {
+          stateLock.unlock();
+        }
       }
     }
+  }
+
+  public boolean isInFallbackMode() {
+    boolean globalFallback = fallbackState.getInFallbackMode().get();
+    syncFallbackModeState(globalFallback);
     if (options.isEnablePerChannelRecovery()) {
       return (localInFallbackMode.get() && fallbackChannel != null) || primaryChannel == null;
     }
-    return (fallbackState.getInFallbackMode().get() && fallbackChannel != null)
-        || primaryChannel == null;
+    return (globalFallback && fallbackChannel != null) || primaryChannel == null;
   }
 
   @VisibleForTesting
@@ -260,21 +280,12 @@ public class GcpFallbackChannel extends ManagedChannel {
   }
 
   private void probePrimary() {
-    if (fallbackState.getInFallbackMode().get()) {
-      if (localInFallbackMode.compareAndSet(false, true)) {
-        localProbeSuccesses.set(0);
-        localFirstPrimaryProbeSuccessNanos.set(0);
-      }
-    } else if (!options.isEnablePerChannelRecovery()) {
-      if (localInFallbackMode.compareAndSet(true, false)) {
-        localProbeSuccesses.set(0);
-        localFirstPrimaryProbeSuccessNanos.set(0);
-      }
-    }
+    boolean globalFallback = fallbackState.getInFallbackMode().get();
+    syncFallbackModeState(globalFallback);
     boolean inFallback =
         options.isEnablePerChannelRecovery()
             ? localInFallbackMode.get()
-            : fallbackState.getInFallbackMode().get();
+            : globalFallback;
     if (!inFallback && primaryChannel != null) {
       return;
     }
@@ -285,31 +296,44 @@ public class GcpFallbackChannel extends ManagedChannel {
       result = options.getPrimaryProbingFunction().apply(primaryDelegateChannel);
     }
     if ("OK".equals(result)) {
-      long nowNanos = System.nanoTime();
-      long firstSuccessNanos =
-          localFirstPrimaryProbeSuccessNanos.updateAndGet(prev -> prev == 0 ? nowNanos : prev);
-      long primaryProbeSuccessCount = localProbeSuccesses.incrementAndGet();
+      stateLock.lock();
+      try {
+        if (localInFallbackMode.get()) {
+          long nowNanos = System.nanoTime();
+          long firstSuccessNanos =
+              localFirstPrimaryProbeSuccessNanos.updateAndGet(prev -> prev == 0 ? nowNanos : prev);
+          long primaryProbeSuccessCount = localProbeSuccesses.incrementAndGet();
 
-      boolean durationSatisfied = true;
-      if (options.getMinPrimaryProbeSuccessDuration() != null
-          && !options.getMinPrimaryProbeSuccessDuration().isZero()
-          && !options.getMinPrimaryProbeSuccessDuration().isNegative()) {
-        long elapsedNanos = nowNanos - firstSuccessNanos;
-        durationSatisfied = elapsedNanos >= options.getMinPrimaryProbeSuccessDuration().toNanos();
-      }
+          boolean durationSatisfied = true;
+          if (options.getMinPrimaryProbeSuccessDuration() != null
+              && !options.getMinPrimaryProbeSuccessDuration().isZero()
+              && !options.getMinPrimaryProbeSuccessDuration().isNegative()) {
+            long elapsedNanos = nowNanos - firstSuccessNanos;
+            durationSatisfied =
+                elapsedNanos >= options.getMinPrimaryProbeSuccessDuration().toNanos();
+          }
 
-      if (options.isEnableRecovery()
-          && primaryProbeSuccessCount >= options.getMinPrimaryProbeSuccessCount()
-          && durationSatisfied) {
-        fallbackState.getInFallbackMode().set(false);
-        localInFallbackMode.set(false);
-        localProbeSuccesses.set(0);
-        localFirstPrimaryProbeSuccessNanos.set(0);
+          if (options.isEnableRecovery()
+              && primaryProbeSuccessCount >= options.getMinPrimaryProbeSuccessCount()
+              && durationSatisfied) {
+            fallbackState.getInFallbackMode().set(false);
+            localInFallbackMode.set(false);
+            localProbeSuccesses.set(0);
+            localFirstPrimaryProbeSuccessNanos.set(0);
+          }
+        }
+      } finally {
+        stateLock.unlock();
       }
     } else {
-      localInFallbackMode.set(true);
-      localProbeSuccesses.set(0);
-      localFirstPrimaryProbeSuccessNanos.set(0);
+      stateLock.lock();
+      try {
+        localInFallbackMode.set(true);
+        localProbeSuccesses.set(0);
+        localFirstPrimaryProbeSuccessNanos.set(0);
+      } finally {
+        stateLock.unlock();
+      }
     }
     // Report metric based on result.
     openTelemetry.getModule().reportProbeResult(options.getPrimaryChannelName(), result);

@@ -1855,4 +1855,102 @@ public class GcpFallbackChannelTest {
       sharedState.shutdown();
     }
   }
+
+  @Test
+  public void testConcurrentIsInFallbackModeDoesNotResetProbeSuccesses()
+      throws InterruptedException, java.util.concurrent.ExecutionException {
+    GcpFallbackState sharedState = new GcpFallbackState();
+    sharedState.getInFallbackMode().set(true);
+
+    GcpFallbackChannelOptions options =
+        getDefaultOptionsBuilder()
+            .setSharedState(sharedState)
+            .setEnableRecovery(true)
+            .setEnablePerChannelRecovery(true)
+            .setPrimaryProbingFunction(channel -> "OK")
+            .setMinPrimaryProbeSuccessCount(1000)
+            .setMinPrimaryProbeSuccessDuration(Duration.ofHours(1))
+            .build();
+
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
+
+    GcpFallbackChannel channel =
+        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder, mockExec);
+
+    try {
+      verify(mockExec)
+          .scheduleAtFixedRate(
+              taskCaptor.capture(),
+              eq(options.getPrimaryProbingInterval().toMillis()),
+              eq(options.getPrimaryProbingInterval().toMillis()),
+              eq(MILLISECONDS));
+      Runnable probeTask = taskCaptor.getValue();
+
+      assertTrue(channel.isInFallbackMode());
+      probeTask.run();
+      assertEquals(1, channel.getLocalProbeSuccesses().get());
+
+      int threadCount = 50;
+      int iterationsPerThread = 200;
+      java.util.concurrent.ExecutorService threadPool =
+          java.util.concurrent.Executors.newFixedThreadPool(threadCount);
+      java.util.concurrent.CountDownLatch startLatch =
+          new java.util.concurrent.CountDownLatch(1);
+      java.util.List<java.util.concurrent.Future<?>> futures = new java.util.ArrayList<>();
+
+      for (int i = 0; i < threadCount; i++) {
+        futures.add(
+            threadPool.submit(
+                () -> {
+                  try {
+                    startLatch.await();
+                    for (int j = 0; j < iterationsPerThread; j++) {
+                      assertTrue(channel.isInFallbackMode());
+                    }
+                  } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                  }
+                }));
+      }
+
+      startLatch.countDown();
+      // Run probe while concurrent threads call isInFallbackMode
+      for (int i = 0; i < 9; i++) {
+        probeTask.run();
+      }
+
+      for (java.util.concurrent.Future<?> future : futures) {
+        future.get();
+      }
+      threadPool.shutdown();
+
+      // Ensure that concurrent callers did not reset probe count back to 0
+      assertEquals(10, channel.getLocalProbeSuccesses().get());
+      assertTrue(channel.isInFallbackMode());
+    } finally {
+      channel.shutdownNow();
+      sharedState.shutdown();
+    }
+  }
+
+  @Test
+  public void testShutdown_whenSuppliedSharedExecutorService_leavesExecutorRunning() {
+    ScheduledExecutorService sharedExec = mock(ScheduledExecutorService.class);
+    GcpFallbackChannelOptions options =
+        getDefaultOptionsBuilder()
+            .setSharedExecutorService(sharedExec)
+            .build();
+
+    GcpFallbackChannel channel =
+        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder);
+
+    try {
+      channel.shutdown();
+      verify(sharedExec, never()).shutdown();
+    } finally {
+      channel.shutdownNow();
+      verify(sharedExec, never()).shutdownNow();
+    }
+  }
 }
