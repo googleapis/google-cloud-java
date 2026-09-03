@@ -30,10 +30,10 @@ public interface StoredInfoTypeOrBuilder
    *
    *
    * <pre>
-   * Resource name.
+   * Output only. Resource name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -43,10 +43,10 @@ public interface StoredInfoTypeOrBuilder
    *
    *
    * <pre>
-   * Resource name.
+   * Output only. Resource name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */

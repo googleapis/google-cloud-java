@@ -129,6 +129,10 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_ProtoSchema_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_AvroSchema_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_AvroSchema_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_admin_v2_SchemaBundle_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_SchemaBundle_fieldAccessorTable;
@@ -276,26 +280,28 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
           + "le\"W\n\021TieredStorageRule\022:\n\025include_if_ol"
           + "der_than\030\001 \001(\0132\031.google.protobuf.Duratio"
           + "nH\000B\006\n\004rule\"-\n\013ProtoSchema\022\036\n\021proto_desc"
-          + "riptors\030\002 \001(\014B\003\340A\002\"\240\002\n\014SchemaBundle\022\021\n\004n"
-          + "ame\030\001 \001(\tB\003\340A\010\022=\n\014proto_schema\030\002 \001(\0132%.g"
-          + "oogle.bigtable.admin.v2.ProtoSchemaH\000\022\021\n"
-          + "\004etag\030\003 \001(\tB\003\340A\001:\242\001\352A\236\001\n)bigtableadmin.g"
-          + "oogleapis.com/SchemaBundle\022Tprojects/{pr"
-          + "oject}/instances/{instance}/tables/{tabl"
-          + "e}/schemaBundles/{schema_bundle}*\rschema"
-          + "Bundles2\014schemaBundleB\006\n\004type*D\n\021Restore"
-          + "SourceType\022#\n\037RESTORE_SOURCE_TYPE_UNSPEC"
-          + "IFIED\020\000\022\n\n\006BACKUP\020\001B\367\002\n\034com.google.bigta"
-          + "ble.admin.v2B\nTableProtoP\001Z8cloud.google"
-          + ".com/go/bigtable/admin/apiv2/adminpb;adm"
-          + "inpb\252\002\036Google.Cloud.Bigtable.Admin.V2\312\002\036"
-          + "Google\\Cloud\\Bigtable\\Admin\\V2\352\002\"Google:"
-          + ":Cloud::Bigtable::Admin::V2\352A\246\001\n(cloudkm"
-          + "s.googleapis.com/CryptoKeyVersion\022zproje"
-          + "cts/{project}/locations/{location}/keyRi"
-          + "ngs/{key_ring}/cryptoKeys/{crypto_key}/c"
-          + "ryptoKeyVersions/{crypto_key_version}b\006p"
-          + "roto3"
+          + "riptors\030\002 \001(\014B\003\340A\002\"\'\n\nAvroSchema\022\031\n\014json"
+          + "_schemas\030\001 \003(\tB\003\340A\002\"\342\002\n\014SchemaBundle\022\021\n\004"
+          + "name\030\001 \001(\tB\003\340A\010\022=\n\014proto_schema\030\002 \001(\0132%."
+          + "google.bigtable.admin.v2.ProtoSchemaH\000\022@"
+          + "\n\013avro_schema\030\006 \001(\0132$.google.bigtable.ad"
+          + "min.v2.AvroSchemaB\003\340A\001H\000\022\021\n\004etag\030\003 \001(\tB\003"
+          + "\340A\001:\242\001\352A\236\001\n)bigtableadmin.googleapis.com"
+          + "/SchemaBundle\022Tprojects/{project}/instan"
+          + "ces/{instance}/tables/{table}/schemaBund"
+          + "les/{schema_bundle}*\rschemaBundles2\014sche"
+          + "maBundleB\006\n\004type*D\n\021RestoreSourceType\022#\n"
+          + "\037RESTORE_SOURCE_TYPE_UNSPECIFIED\020\000\022\n\n\006BA"
+          + "CKUP\020\001B\367\002\n\034com.google.bigtable.admin.v2B"
+          + "\nTableProtoP\001Z8cloud.google.com/go/bigta"
+          + "ble/admin/apiv2/adminpb;adminpb\252\002\036Google"
+          + ".Cloud.Bigtable.Admin.V2\312\002\036Google\\Cloud\\"
+          + "Bigtable\\Admin\\V2\352\002\"Google::Cloud::Bigta"
+          + "ble::Admin::V2\352A\246\001\n(cloudkms.googleapis."
+          + "com/CryptoKeyVersion\022zprojects/{project}"
+          + "/locations/{location}/keyRings/{key_ring"
+          + "}/cryptoKeys/{crypto_key}/cryptoKeyVersi"
+          + "ons/{crypto_key_version}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -508,13 +514,21 @@ public final class TableProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "ProtoDescriptors",
             });
-    internal_static_google_bigtable_admin_v2_SchemaBundle_descriptor =
+    internal_static_google_bigtable_admin_v2_AvroSchema_descriptor =
         getDescriptor().getMessageType(13);
+    internal_static_google_bigtable_admin_v2_AvroSchema_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_AvroSchema_descriptor,
+            new java.lang.String[] {
+              "JsonSchemas",
+            });
+    internal_static_google_bigtable_admin_v2_SchemaBundle_descriptor =
+        getDescriptor().getMessageType(14);
     internal_static_google_bigtable_admin_v2_SchemaBundle_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_bigtable_admin_v2_SchemaBundle_descriptor,
             new java.lang.String[] {
-              "Name", "ProtoSchema", "Etag", "Type",
+              "Name", "ProtoSchema", "AvroSchema", "Etag", "Type",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
