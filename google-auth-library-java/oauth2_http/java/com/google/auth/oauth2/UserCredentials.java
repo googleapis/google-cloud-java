@@ -196,7 +196,7 @@ public class UserCredentials extends GoogleCredentials implements IdTokenProvide
         OAuth2Utils.validateString(responseData, "access_token", PARSE_ERROR_PREFIX);
     int expiresInSeconds =
         OAuth2Utils.validateInt32(responseData, "expires_in", PARSE_ERROR_PREFIX);
-    long expiresAtMilliseconds = clock.currentTimeMillis() + expiresInSeconds * 1000;
+    long expiresAtMilliseconds = clock.currentTimeMillis() + expiresInSeconds * 1000L;
     String scopes =
         OAuth2Utils.validateOptionalString(
             responseData, OAuth2Utils.TOKEN_RESPONSE_SCOPE, PARSE_ERROR_PREFIX);
