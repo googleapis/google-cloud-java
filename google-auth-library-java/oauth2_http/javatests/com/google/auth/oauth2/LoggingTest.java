@@ -62,10 +62,14 @@ import com.google.auth.oauth2.ComputeEngineCredentialsTest.MockMetadataServerTra
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -78,11 +82,39 @@ import org.slf4j.event.KeyValuePair;
  */
 class LoggingTest {
 
+  @BeforeEach
+  void setUp() {
+    // Opt out of bound tokens by default to avoid polling delays
+    AgentIdentityUtils.setEnvReader(
+        name -> {
+          if (AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN.equals(name)) {
+            return "false";
+          }
+          return null;
+        });
+  }
+
+  private final List<ch.qos.logback.classic.Logger> modifiedLoggers = new ArrayList<>();
+  private final List<TestAppender> addedAppenders = new ArrayList<>();
+
+  @AfterEach
+  void tearDown() {
+    AgentIdentityUtils.setEnvReader(System::getenv);
+    for (int i = 0; i < modifiedLoggers.size(); i++) {
+      modifiedLoggers.get(i).detachAppender(addedAppenders.get(i));
+    }
+    modifiedLoggers.clear();
+    addedAppenders.clear();
+  }
+
   private TestAppender setupTestLogger(Class<?> clazz) {
     TestAppender testAppender = new TestAppender();
     testAppender.start();
-    Logger logger = LoggerFactory.getLogger(clazz);
-    ((ch.qos.logback.classic.Logger) logger).addAppender(testAppender);
+    ch.qos.logback.classic.Logger logger =
+        (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(clazz);
+    logger.addAppender(testAppender);
+    modifiedLoggers.add(logger);
+    addedAppenders.add(testAppender);
     return testAppender;
   }
 
@@ -92,6 +124,11 @@ class LoggingTest {
     TestEnvironmentProvider testEnvironmentProvider = new TestEnvironmentProvider();
     testEnvironmentProvider.setEnv(LoggingUtils.GOOGLE_SDK_JAVA_LOGGING, "true");
     LoggingUtils.setEnvironmentProvider(testEnvironmentProvider);
+  }
+
+  @AfterAll
+  static void tearDownAll() {
+    LoggingUtils.setEnvironmentProvider(LoggingUtils.SystemEnvironmentProvider.getInstance());
   }
 
   @Test
