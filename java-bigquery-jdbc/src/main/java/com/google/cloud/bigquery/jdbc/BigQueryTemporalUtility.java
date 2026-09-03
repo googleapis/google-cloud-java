@@ -156,15 +156,7 @@ final class BigQueryTemporalUtility {
     if (cal == null) {
       return Calendar.getInstance();
     }
-    Object cloned = cal.clone();
-    if (cloned instanceof Calendar) {
-      return (Calendar) cloned;
-    }
-    Calendar safeCal = Calendar.getInstance();
-    if (cal.getTimeZone() != null) {
-      safeCal.setTimeZone(cal.getTimeZone());
-    }
-    return safeCal;
+    return (Calendar) cal.clone();
   }
 
   /**
