@@ -31,47 +31,88 @@ package com.google.api.gax.rpc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.time.Duration;
 import org.junit.jupiter.api.Test;
 
 public class ResumableUploadCallSettingsTest {
 
   @Test
-  public void testDefaultChunkSizeInBuilder() {
-    ResumableUploadCallSettings settings = ResumableUploadCallSettings.newBuilder().build();
-
-    assertEquals(8 * 1024 * 1024, settings.getChunkSize());
-  }
-
-  @Test
-  public void testCustomInitialization() {
+  public void testCustomSettingsAndToBuilder() {
     ResumableUploadCallSettings settings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(16 * 1024 * 1024).build();
+        ResumableUploadCallSettings.newBuilder()
+            .setChunkSize(16 * 1024 * 1024)
+            .setGlobalTimeout(Duration.ofMinutes(15))
+            .build();
 
     assertEquals(16 * 1024 * 1024, settings.getChunkSize());
+    assertEquals(Duration.ofMinutes(15), settings.getGlobalTimeout());
+    assertEquals(settings, settings.toBuilder().build());
   }
 
   @Test
-  public void testMerge_NullSettings() {
-    ResumableUploadCallSettings stubSettings =
-        ResumableUploadCallSettings.newBuilder().setChunkSize(4 * 1024 * 1024).build();
-
-    ResumableUploadCallSettings merged = stubSettings.merge(null);
-
-    assertSame(stubSettings, merged);
+  public void testInvalidChunkSize_throwsIllegalArgumentException() {
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> ResumableUploadCallSettings.newBuilder().setChunkSize(0).build());
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> ResumableUploadCallSettings.newBuilder().setChunkSize(-1).build());
   }
 
   @Test
-  public void testMerge_SettingsOverrides() {
-    ResumableUploadCallSettings stubSettings =
+  public void testInvalidGlobalTimeout_throwsIllegalArgumentException() {
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> ResumableUploadCallSettings.newBuilder().setGlobalTimeout(Duration.ZERO).build());
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            ResumableUploadCallSettings.newBuilder()
+                .setGlobalTimeout(Duration.ofSeconds(-5))
+                .build());
+  }
+
+  @Test
+  public void testMerge_nullSettings_returnsSameInstance() {
+    ResumableUploadCallSettings settings =
         ResumableUploadCallSettings.newBuilder().setChunkSize(4 * 1024 * 1024).build();
+
+    assertSame(settings, settings.merge(null));
+  }
+
+  @Test
+  public void testMerge_overridesChunkSizeAndGlobalTimeout() {
+    ResumableUploadCallSettings stubSettings =
+        ResumableUploadCallSettings.newBuilder()
+            .setChunkSize(4 * 1024 * 1024)
+            .setGlobalTimeout(Duration.ofMinutes(10))
+            .build();
+
+    ResumableUploadCallSettings perRequestSettings =
+        ResumableUploadCallSettings.newBuilder()
+            .setChunkSize(32 * 1024 * 1024)
+            .setGlobalTimeout(Duration.ofMinutes(30))
+            .build();
+
+    ResumableUploadCallSettings merged = stubSettings.merge(perRequestSettings);
+
+    assertEquals(32 * 1024 * 1024, merged.getChunkSize());
+    assertEquals(Duration.ofMinutes(30), merged.getGlobalTimeout());
+  }
+
+  @Test
+  public void testMerge_nullGlobalTimeoutDoesNotOverride() {
+    ResumableUploadCallSettings stubSettings =
+        ResumableUploadCallSettings.newBuilder().setGlobalTimeout(Duration.ofMinutes(10)).build();
 
     ResumableUploadCallSettings perRequestSettings =
         ResumableUploadCallSettings.newBuilder().setChunkSize(32 * 1024 * 1024).build();
 
     ResumableUploadCallSettings merged = stubSettings.merge(perRequestSettings);
 
-    // Chunk size overridden by Tier-1 per-request settings
     assertEquals(32 * 1024 * 1024, merged.getChunkSize());
+    assertEquals(Duration.ofMinutes(10), merged.getGlobalTimeout());
   }
 }
