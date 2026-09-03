@@ -75,7 +75,7 @@ final class FTComputeEngineCredentialsTest {
     envProvider = new TestEnvironmentProvider();
     AgentIdentityUtils.setEnvReader(envProvider::getEnv);
     // Opt out by default to avoid polling delays or file reads
-    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false");
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "false");
   }
 
   @AfterEach

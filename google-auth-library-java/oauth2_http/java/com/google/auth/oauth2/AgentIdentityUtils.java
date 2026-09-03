@@ -40,6 +40,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
 import java.security.PrivateKey;
@@ -47,11 +48,11 @@ import java.security.Signature;
 import java.security.cert.CertificateFactory;
 import java.security.cert.CertificateParsingException;
 import java.security.cert.X509Certificate;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,33 +61,53 @@ import org.slf4j.LoggerFactory;
 @InternalApi
 public final class AgentIdentityUtils {
 
-  /** Javadoc. */
   private static final Logger LOGGER = LoggerFactory.getLogger(AgentIdentityUtils.class);
 
   // Environment variables
-  /** Javadoc. */
-  static final String GOOGLE_API_CERTIFICATE_CONFIG = "GOOGLE_API_CERTIFICATE_CONFIG";
+  /**
+   * Environment variable pointing to the client certificate configuration file.
+   *
+   * <p>If set, certificate and key paths are resolved from the configuration file specified by this
+   * variable.
+   */
+  public static final String GOOGLE_API_CERTIFICATE_CONFIG = "GOOGLE_API_CERTIFICATE_CONFIG";
 
-  /** Javadoc. */
-  static final String GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES =
-      "GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES";
+  /**
+   * Environment variable to explicitly enable or disable runtime token binding. Defaults to true if
+   * unset.
+   */
+  public static final String GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN =
+      "GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN";
 
-  /** Javadoc. */
-  static final String GOOGLE_API_USE_CLIENT_CERTIFICATE = "GOOGLE_API_USE_CLIENT_CERTIFICATE";
+  /**
+   * Legacy Cloud Run environment variable to prevent agent token sharing for GCP services. Used as
+   * a fallback if {@link #GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN} is unset.
+   */
+  public static final String GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES =
+      "GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES";
 
-  /** Javadoc. */
+  /**
+   * Environment variable to explicitly enable or disable client certificate authentication (mTLS).
+   *
+   * <p>When set to {@code "true"}, mTLS is enforced. When set to {@code "false"}, mTLS and token
+   * binding are disabled.
+   */
+  public static final String GOOGLE_API_USE_CLIENT_CERTIFICATE =
+      "GOOGLE_API_USE_CLIENT_CERTIFICATE";
+
+  // Allowed SPIFFE trust domain patterns for agentic identities.
   private static final List<Pattern> AGENT_IDENTITY_SPIFFE_PATTERNS =
       ImmutableList.of(
           Pattern.compile("^agents\\.global\\.org-\\d+\\.system\\.id\\.goog$"),
-          Pattern.compile("^agents\\.global\\.proj-\\d+\\.system\\.id\\.goog$"));
+          Pattern.compile("^agents\\.global\\.proj-\\d+\\.system\\.id\\.goog$"),
+          Pattern.compile("^agents-nonprod\\.global\\.org-\\d+\\.system\\.id\\.goog$"),
+          Pattern.compile("^agents-nonprod\\.global\\.proj-\\d+\\.system\\.id\\.goog$"));
 
-  /** Javadoc. */
+  // Subject Alternative Name (SAN) type for URI as defined in RFC 5280 Section 4.2.1.6.
   private static final int SAN_URI_TYPE = 6;
 
-  /** Javadoc. */
   private static final String SPIFFE_SCHEME_PREFIX = "spiffe://";
 
-  /** Javadoc. */
   private static String wellKnownDir = "/var/run/secrets/workload-spiffe-credentials/";
 
   @VisibleForTesting
@@ -94,57 +115,58 @@ public final class AgentIdentityUtils {
     wellKnownDir = dir;
   }
 
-  // Polling configuration
-  /** Javadoc. */
+  // Retries for verifying certificate and private key matching during atomic key rotation.
   private static final int CERT_KEY_MATCH_RETRIES = 3;
 
-  /** Javadoc. */
   private static final long CERT_KEY_MATCH_RETRY_INTERVAL_MS = 100;
 
-  /** Javadoc. */
+  // Polling configuration for initial container startup credential file readiness.
+  // Matches Python google-auth implementation (_agent_identity_utils.py) for Cloud Run
+  // asynchronous credential delivery (50 * 100ms + 50 * 500ms = 30 seconds total).
   private static final int FAST_POLL_CYCLES = 50;
 
-  /** Javadoc. */
   private static final long FAST_POLL_INTERVAL_MS = 100; // 0.1 seconds
 
-  /** Javadoc. */
   private static final long SLOW_POLL_INTERVAL_MS = 500; // 0.5 seconds
 
-  /** Javadoc. */
   private static final long TOTAL_TIMEOUT_MS = 30000; // 30 seconds
 
-  private static final List<Long> POLLING_INTERVALS;
+  private static final int TOTAL_POLL_CYCLES =
+      FAST_POLL_CYCLES
+          + (int)
+              ((TOTAL_TIMEOUT_MS - (FAST_POLL_CYCLES * FAST_POLL_INTERVAL_MS))
+                  / SLOW_POLL_INTERVAL_MS);
 
-  static {
-    List<Long> intervals = new ArrayList<>();
-    for (int i = 0; i < FAST_POLL_CYCLES; i++) {
-      intervals.add(FAST_POLL_INTERVAL_MS);
-    }
-    long remainingTime = TOTAL_TIMEOUT_MS - (FAST_POLL_CYCLES * FAST_POLL_INTERVAL_MS);
-    int slowPollCycles = (int) (remainingTime / SLOW_POLL_INTERVAL_MS);
-    for (int i = 0; i < slowPollCycles; i++) {
-      intervals.add(SLOW_POLL_INTERVAL_MS);
-    }
-    POLLING_INTERVALS = Collections.unmodifiableList(intervals);
+  private static long getSleepIntervalMs(final int cycle) {
+    return (cycle < FAST_POLL_CYCLES) ? FAST_POLL_INTERVAL_MS : SLOW_POLL_INTERVAL_MS;
   }
 
+  /** Functional interface for reading environment variables to facilitate testing. */
   public interface EnvReader {
-    /** Javadoc. */
+    /**
+     * Returns the value of the specified environment variable.
+     *
+     * @param name the environment variable name
+     * @return the value of the variable, or {@code null} if unset
+     */
     String getEnv(final String name);
   }
 
-  /** Javadoc. */
   private static EnvReader envReader = System::getenv;
 
   @VisibleForTesting
   interface TimeService {
     long currentTimeMillis();
 
-    /** Javadoc. */
+    /**
+     * Causes the currently executing thread to sleep for the specified number of milliseconds.
+     *
+     * @param millis the length of time to sleep in milliseconds
+     * @throws InterruptedException if interrupted while sleeping
+     */
     void sleep(final long millis) throws InterruptedException;
   }
 
-  /** Javadoc. */
   private static TimeService timeService =
       new TimeService() {
         @Override
@@ -160,11 +182,15 @@ public final class AgentIdentityUtils {
 
   private AgentIdentityUtils() {}
 
+  /**
+   * Holds the parsed {@link X509Certificate} and cached PEM certificate chain content for token
+   * binding.
+   *
+   * <p>This class intentionally stores in-memory certificate content rather than file paths to
+   * prevent redundant filesystem reads and race conditions when binding tokens to requests.
+   */
   static class CertInfo {
-    /** Javadoc. */
     private final X509Certificate certificate;
-
-    /** Javadoc. */
     private final String certContent;
 
     CertInfo(final X509Certificate certificate, final String certContent) {
@@ -172,42 +198,66 @@ public final class AgentIdentityUtils {
       this.certContent = certContent;
     }
 
-    /** Javadoc. */
+    /** Returns the parsed {@link X509Certificate}. */
     public X509Certificate getCertificate() {
       return certificate;
     }
 
-    /** Javadoc. */
+    /** Returns the raw PEM certificate chain content. */
     public String getCertContent() {
       return certContent;
     }
   }
 
+  /** Holds the resolved filesystem paths for the certificate and private key. */
   static class ResolvedCertAndKeyPaths {
-    /** Javadoc. */
     private final String certPath;
-
-    /** Javadoc. */
     private final String keyPath;
+    private final boolean hasWorkloadConfig;
 
     ResolvedCertAndKeyPaths(final String certPath, final String keyPath) {
-      this.certPath = certPath;
-      this.keyPath = keyPath;
+      this(certPath, keyPath, !Strings.isNullOrEmpty(certPath));
     }
 
-    /** Javadoc. */
+    ResolvedCertAndKeyPaths(
+        final String certPath, final String keyPath, final boolean hasWorkloadConfig) {
+      this.certPath = certPath;
+      this.keyPath = keyPath;
+      this.hasWorkloadConfig = hasWorkloadConfig;
+    }
+
+    /** Returns the path to the certificate or bundle file. */
     public String getCertPath() {
       return certPath;
     }
 
-    /** Javadoc. */
+    /** Returns the path to the private key file, or bundle path if combined. */
     public String getKeyPath() {
       return keyPath;
+    }
+
+    /** Returns whether a workload configuration was parsed from the certificate config file. */
+    public boolean hasWorkloadConfig() {
+      return hasWorkloadConfig;
+    }
+  }
+
+  /** Checks whether the given path resides within the well-known certificate directory. */
+  static boolean isPathInWellKnownDir(final String pathStr) {
+    if (Strings.isNullOrEmpty(pathStr) || Strings.isNullOrEmpty(wellKnownDir)) {
+      return false;
+    }
+    try {
+      Path path = Paths.get(pathStr).toAbsolutePath().normalize();
+      Path wellKnown = Paths.get(wellKnownDir).toAbsolutePath().normalize();
+      return path.startsWith(wellKnown);
+    } catch (Exception e) {
+      return false;
     }
   }
 
   /**
-   * Retrieves the certificate and path for the Agent Identity.
+   * Retrieves the certificate and raw PEM content for the Agent Identity.
    *
    * <p>This method attempts to load the certificate and private key for the agent identity. It
    * first checks the location specified by the {@code GOOGLE_API_CERTIFICATE_CONFIG} environment
@@ -216,9 +266,9 @@ public final class AgentIdentityUtils {
    * <p>To handle transient race conditions during certificate rotation on disk, this method employs
    * a retry mechanism with backoff when reading the configuration and certificate files.
    *
-   * @return A {@link CertInfo} object containing the loaded certificate and its path, or {@code
-   *     null} if the agent identity features are disabled, opted out, or if no valid credentials
-   *     could be loaded.
+   * @return A {@link CertInfo} object containing the parsed {@link X509Certificate} and its raw PEM
+   *     chain content, or {@code null} if the agent identity features are disabled, opted out, or
+   *     if no valid credentials could be loaded.
    * @throws IOException If an I/O error occurs while reading the files, or if the key-pair
    *     verification fails after retries.
    */
@@ -226,12 +276,23 @@ public final class AgentIdentityUtils {
     if (!isTokenBindingEnabled()) {
       return null;
     }
+    String useClientCert = envReader.getEnv(GOOGLE_API_USE_CLIENT_CERTIFICATE);
+    if ("false".equalsIgnoreCase(useClientCert)) {
+      Slf4jUtils.log(
+          LOGGER,
+          org.slf4j.event.Level.WARN,
+          Collections.emptyMap(),
+          "Token binding protection is disabled because mTLS was explicitly disabled"
+              + " via GOOGLE_API_USE_CLIENT_CERTIFICATE.");
+      return null;
+    }
     String certConfigPath = envReader.getEnv(GOOGLE_API_CERTIFICATE_CONFIG);
-    boolean configExists =
-        !Strings.isNullOrEmpty(certConfigPath) && Files.exists(Paths.get(certConfigPath));
-
     ResolvedCertAndKeyPaths paths = resolveCertAndKeyPaths(certConfigPath);
-    boolean certsPresent = !Strings.isNullOrEmpty(paths.getCertPath());
+    boolean configExists = paths != null && paths.hasWorkloadConfig();
+    boolean certsPresent =
+        paths != null
+            && !Strings.isNullOrEmpty(paths.getCertPath())
+            && Files.exists(Paths.get(paths.getCertPath()));
 
     if (!shouldEnableMtls(certsPresent, configExists)) {
       return null;
@@ -246,44 +307,55 @@ public final class AgentIdentityUtils {
    */
   static ResolvedCertAndKeyPaths resolveCertAndKeyPaths(final String certConfigPath)
       throws IOException {
-    String certPath = null;
-    String keyPath = null;
-
     if (!Strings.isNullOrEmpty(certConfigPath)) {
       java.nio.file.Path configPath = Paths.get(certConfigPath);
-      if (!Files.exists(configPath) && !Files.exists(Paths.get(wellKnownDir))) {
-        // Fail-fast if config doesn't exist and we are not in a workload environment
-        return new ResolvedCertAndKeyPaths(null, null);
+      try {
+        if (!checkExistsOrAccessDenied(configPath) && !isPathInWellKnownDir(certConfigPath)) {
+          // Fail-fast if config doesn't exist and is not in well-known directory
+          return new ResolvedCertAndKeyPaths(null, null, false);
+        }
+      } catch (java.nio.file.AccessDeniedException e) {
+        throw new IOException(
+            "Permission denied reading certificate config file: " + certConfigPath, e);
       }
       // Read cert and key paths from config file. We use retry with backoff to handle
-      // transient
-      // race conditions where the config file might be being updated by a rotation process.
+      // transient race conditions where the config file might be being updated by a rotation
+      // process.
       ResolvedCertAndKeyPaths paths = getPathsFromConfigWithRetry(certConfigPath);
       if (paths != null) {
-        certPath = paths.getCertPath();
-        keyPath = paths.getKeyPath();
+        return paths;
       }
+      return new ResolvedCertAndKeyPaths(null, null, false);
     } else {
       if (!Files.exists(Paths.get(wellKnownDir))) {
         // Fail-fast if well-known dir doesn't exist (e.g. workstation)
-        return new ResolvedCertAndKeyPaths(null, null);
+        return new ResolvedCertAndKeyPaths(null, null, false);
       }
       // Fallback to well-known locations. We use retry with backoff here as well to handle
       // race conditions during file replacement by a rotation process.
-      certPath = getWellKnownCertificatePathWithRetry();
+      String certPath = getWellKnownCertificatePathWithRetry();
+      String keyPath = null;
       if (certPath != null) {
         if (certPath.endsWith("credentialbundle.pem")) {
           keyPath = certPath; // Bundle contains both
         } else if (certPath.endsWith("certificates.pem")) {
           keyPath = Paths.get(wellKnownDir, "private_key.pem").toString();
         }
+        return new ResolvedCertAndKeyPaths(certPath, keyPath, false);
       }
+      return new ResolvedCertAndKeyPaths(null, null, false);
     }
-    return new ResolvedCertAndKeyPaths(certPath, keyPath);
   }
 
   /**
-   * Loads the certificate and private key, and verifies that they match if they are separate files.
+   * Loads the certificate and private key, and verifies that they form a valid cryptographic
+   * key-pair, supporting both separate files and combined bundle files.
+   *
+   * @param certPath The path to the certificate or bundle file.
+   * @param keyPath The path to the private key or bundle file.
+   * @return A {@link CertInfo} object containing the parsed {@link X509Certificate} and the raw PEM
+   *     certificate chain (with private keys stripped).
+   * @throws IOException If the files cannot be read or parsed, or if key-pair verification fails.
    */
   static CertInfo loadAndVerifyCredentials(final String certPath, final String keyPath)
       throws IOException {
@@ -293,9 +365,8 @@ public final class AgentIdentityUtils {
 
     if (!Strings.isNullOrEmpty(certPath)
         && !Strings.isNullOrEmpty(keyPath)
-        && !certPath.equals(keyPath)
         && Files.exists(Paths.get(keyPath))) {
-      // Separate files, verify match with retry
+      // Verify match with retry (handles both separate files and combined bundle files)
       int retries = 0;
       boolean matched = false;
       while (retries < CERT_KEY_MATCH_RETRIES) {
@@ -310,6 +381,10 @@ public final class AgentIdentityUtils {
           }
           LOGGER.warn("Cert and key mismatch, retrying...");
         } catch (java.nio.file.AccessDeniedException e) {
+          if (!Strings.isNullOrEmpty(envReader.getEnv(GOOGLE_API_CERTIFICATE_CONFIG))) {
+            throw new IOException(
+                "Permission denied reading certificate or key files for Agent Identity.", e);
+          }
           Slf4jUtils.log(
               LOGGER,
               org.slf4j.event.Level.WARN,
@@ -345,6 +420,10 @@ public final class AgentIdentityUtils {
         certContent = readCertificateChain(certPath);
         cert = parseCertificateContent(certContent);
       } catch (java.nio.file.AccessDeniedException e) {
+        if (!Strings.isNullOrEmpty(envReader.getEnv(GOOGLE_API_CERTIFICATE_CONFIG))) {
+          throw new IOException(
+              "Permission denied reading certificate files for Agent Identity.", e);
+        }
         Slf4jUtils.log(
             LOGGER,
             org.slf4j.event.Level.WARN,
@@ -370,10 +449,24 @@ public final class AgentIdentityUtils {
     }
   }
 
-  /** Checks if the user has disabled token binding by setting the environment variable to false. */
+  /**
+   * Checks if runtime token binding is enabled.
+   *
+   * <p>Checks {@link #GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN} first; if unset, falls back to the
+   * legacy {@link #GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES}. Defaults to {@code
+   * true} if neither is set.
+   */
   private static boolean isTokenBindingEnabled() {
-    String preventSharing = envReader.getEnv(GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES);
-    return !("false".equalsIgnoreCase(preventSharing));
+    String enableRuntimeBoundToken = envReader.getEnv(GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN);
+    if (!Strings.isNullOrEmpty(enableRuntimeBoundToken)) {
+      return !"false".equalsIgnoreCase(enableRuntimeBoundToken.trim());
+    }
+    String legacyPreventSharing =
+        envReader.getEnv(GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES);
+    if (!Strings.isNullOrEmpty(legacyPreventSharing)) {
+      return !"false".equalsIgnoreCase(legacyPreventSharing.trim());
+    }
+    return true;
   }
 
   /**
@@ -382,29 +475,42 @@ public final class AgentIdentityUtils {
    */
   private static ResolvedCertAndKeyPaths getPathsFromConfigWithRetry(final String certConfigPath)
       throws IOException {
+    boolean shouldPoll = isPathInWellKnownDir(certConfigPath);
+    int maxCycles = shouldPoll ? TOTAL_POLL_CYCLES : 1;
     boolean warned = false;
-    for (long sleepInterval : POLLING_INTERVALS) {
+
+    for (int cycle = 0; cycle < maxCycles; cycle++) {
       try {
         if (checkExistsOrAccessDenied(Paths.get(certConfigPath))) {
           ResolvedCertAndKeyPaths paths = extractPathsFromConfig(certConfigPath);
-          if (paths != null
-              && !Strings.isNullOrEmpty(paths.getCertPath())
-              && checkExistsOrAccessDenied(Paths.get(paths.getCertPath()))) {
-            return paths;
+          if (paths != null) {
+            if (!paths.hasWorkloadConfig()) {
+              // Valid non-workload config (e.g. enterprise certs) - exit early without polling!
+              return paths;
+            }
+            if (!Strings.isNullOrEmpty(paths.getCertPath())
+                && checkExistsOrAccessDenied(Paths.get(paths.getCertPath()))) {
+              return paths;
+            }
+            if (!shouldPoll) {
+              // Cert file not ready and not in well-known dir - exit early
+              return paths;
+            }
           }
+        } else if (!shouldPoll) {
+          // Config file doesn't exist and not in well-known dir - exit early
+          return new ResolvedCertAndKeyPaths(null, null, false);
         }
       } catch (java.nio.file.AccessDeniedException e) {
-        Slf4jUtils.log(
-            LOGGER,
-            org.slf4j.event.Level.WARN,
-            Collections.emptyMap(),
-            "Permission denied reading certificate config file. Falling back to unbound"
-                + " token.");
-        return null;
+        throw new IOException(
+            "Permission denied reading certificate config file: " + certConfigPath, e);
       } catch (IOException e) {
         if (e.getMessage() != null
             && e.getMessage().contains("Failed to parse Agent Identity config JSON")) {
           throw e; // Fail fast on malformed JSON syntax errors
+        }
+        if (!shouldPoll) {
+          return new ResolvedCertAndKeyPaths(null, null, false);
         }
         // Fall through to retry
       }
@@ -420,7 +526,7 @@ public final class AgentIdentityUtils {
         warned = true;
       }
       try {
-        timeService.sleep(sleepInterval);
+        timeService.sleep(getSleepIntervalMs(cycle));
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
         throw new IOException(
@@ -433,7 +539,7 @@ public final class AgentIdentityUtils {
         "Unable to find Agent Identity certificate config or file for bound token request"
             + " after multiple retries. Token binding protection is failing. You can turn"
             + " off this protection by setting "
-            + GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES
+            + GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN
             + " to false to fall back to unbound tokens.");
   }
 
@@ -478,7 +584,7 @@ public final class AgentIdentityUtils {
 
     // 3) Retry loop for rotation/transient absence when explicitly enabled:
     boolean warned = false;
-    for (long sleepInterval : POLLING_INTERVALS) {
+    for (int cycle = 0; cycle < TOTAL_POLL_CYCLES; cycle++) {
       try {
         if (checkExistsOrAccessDenied(Paths.get(bundlePath))) {
           return bundlePath;
@@ -508,7 +614,7 @@ public final class AgentIdentityUtils {
         warned = true;
       }
       try {
-        timeService.sleep(sleepInterval);
+        timeService.sleep(getSleepIntervalMs(cycle));
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
         throw new IOException("Interrupted while waiting for well-known certificate files.", e);
@@ -525,9 +631,25 @@ public final class AgentIdentityUtils {
     return null;
   }
 
-  /** Reads the full certificate chain from the specified path as a string. */
+  /**
+   * Reads the full certificate chain from the specified path as a PEM string.
+   *
+   * <p>Extracts only the {@code -----BEGIN CERTIFICATE-----} blocks using {@link
+   * CertificateIdentityPoolSubjectTokenSupplier#PEM_CERT_PATTERN}, stripping any private keys or
+   * non-certificate data that may be present in a combined bundle file.
+   */
   static String readCertificateChain(final String certPath) throws IOException {
-    return new String(Files.readAllBytes(Paths.get(certPath)), StandardCharsets.UTF_8);
+    byte[] certData = Files.readAllBytes(Paths.get(certPath));
+    String content = new String(certData, StandardCharsets.UTF_8);
+    Matcher matcher = CertificateIdentityPoolSubjectTokenSupplier.PEM_CERT_PATTERN.matcher(content);
+    StringBuilder certChain = new StringBuilder();
+    while (matcher.find()) {
+      certChain.append(matcher.group(0)).append("\n");
+    }
+    if (certChain.length() == 0) {
+      throw new IOException("No PEM certificates found in certificate file: " + certPath);
+    }
+    return certChain.toString();
   }
 
   /**
@@ -654,15 +776,17 @@ public final class AgentIdentityUtils {
           if (workload.get("key_path") instanceof String) {
             keyPath = (String) workload.get("key_path");
           }
-          return new ResolvedCertAndKeyPaths(certPath, keyPath);
+          return new ResolvedCertAndKeyPaths(certPath, keyPath, true);
         }
+        // Valid cert_configs object but not a workload config (e.g. enterprise certificates)
+        return new ResolvedCertAndKeyPaths(null, null, false);
       }
+      return new ResolvedCertAndKeyPaths(null, null, false);
     } catch (java.nio.file.AccessDeniedException e) {
       throw e;
     } catch (Exception e) {
       throw new IOException("Failed to parse Agent Identity config JSON", e);
     }
-    return null;
   }
 
   /** Parses the X509 certificate from the specified content string. */
@@ -720,16 +844,19 @@ public final class AgentIdentityUtils {
     return false;
   }
 
+  /** Sets the environment variable reader for testing. */
   @VisibleForTesting
   public static void setEnvReader(EnvReader reader) {
     envReader = reader;
   }
 
+  /** Sets the time and sleep service for testing. */
   @VisibleForTesting
   static void setTimeService(TimeService service) {
     timeService = service;
   }
 
+  /** Resets the time and sleep service back to default system implementation. */
   @VisibleForTesting
   static void resetTimeService() {
     timeService =

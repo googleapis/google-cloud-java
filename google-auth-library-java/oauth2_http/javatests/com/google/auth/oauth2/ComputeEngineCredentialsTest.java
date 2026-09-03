@@ -48,6 +48,7 @@ import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.http.LowLevelHttpResponse;
+import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.webtoken.JsonWebToken.Payload;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
@@ -113,7 +114,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
           }
         });
     // Opt out of bound tokens by default in tests to avoid polling delays
-    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false");
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "false");
   }
 
   @AfterEach
@@ -1281,7 +1282,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
   @Test
   void refreshAccessToken_agentConfigMissingFile_throws() throws IOException {
-    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true");
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
     envProvider.setEnv(
         AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG,
         tempDir.resolve("missing_config.json").toAbsolutePath().toString());
@@ -1358,7 +1359,7 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   void refreshAccessToken_withValidCertAndKey_requestsBoundToken() throws IOException {
     setupCertAndKeyConfig();
     envProvider.setEnv(
-        "GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true"); // Enable bound token
+        AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true"); // Enable bound token
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
     transportFactory.transport.setAccessToken("default", ACCESS_TOKEN);
@@ -1372,14 +1373,18 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         transportFactory.transport.getRequest();
     assertEquals("POST", transportFactory.transport.getRequestMethod());
     String body = request.getContentAsString();
-    assertTrue(body.contains("certificate_chain"));
+    GenericJson bodyJson = OAuth2Utils.JSON_FACTORY.fromString(body, GenericJson.class);
+    String expectedCert =
+        new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8)
+            .trim();
+    assertEquals(expectedCert, ((String) bodyJson.get("certificate_chain")).trim());
   }
 
   @Test
   void idTokenWithAudience_withValidCertAndKey_requestsBoundToken() throws IOException {
     setupCertAndKeyConfig();
     envProvider.setEnv(
-        "GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true"); // Enable bound token
+        AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true"); // Enable bound token
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
     transportFactory.transport.setIdToken(STANDARD_ID_TOKEN);
@@ -1393,7 +1398,11 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
         transportFactory.transport.getRequest();
     assertEquals("POST", transportFactory.transport.getRequestMethod());
     String body = request.getContentAsString();
-    assertTrue(body.contains("certificate_chain"));
+    GenericJson bodyJson = OAuth2Utils.JSON_FACTORY.fromString(body, GenericJson.class);
+    String expectedCert =
+        new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8)
+            .trim();
+    assertEquals(expectedCert, ((String) bodyJson.get("certificate_chain")).trim());
   }
 
   private static class TestEnvironmentProvider {

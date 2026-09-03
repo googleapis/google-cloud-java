@@ -79,7 +79,7 @@ class DefaultCredentialsProviderTest {
     // Isolate tests and opt out of bound tokens by default to avoid polling delays
     AgentIdentityUtils.setEnvReader(
         name -> {
-          if ("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES".equals(name)) {
+          if (AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN.equals(name)) {
             return "false"; // Triggers isTokenBindingEnabled() = false
           }
           return null;

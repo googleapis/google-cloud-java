@@ -60,6 +60,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 class AgentIdentityUtilsTest {
 
@@ -67,18 +68,21 @@ class AgentIdentityUtilsTest {
       "spiffe://agents.global.org-12345.system.id.goog/path/to/resource";
   private static final String VALID_SPIFFE_PROJ =
       "spiffe://agents.global.proj-98765.system.id.goog/another/path";
+  private static final String VALID_SPIFFE_NONPROD_ORG =
+      "spiffe://agents-nonprod.global.org-12345.system.id.goog/path/to/resource";
+  private static final String VALID_SPIFFE_NONPROD_PROJ =
+      "spiffe://agents-nonprod.global.proj-98765.system.id.goog/another/path";
   private static final String INVALID_SPIFFE_DOMAIN = "spiffe://example.com/workload";
   private static final String INVALID_SPIFFE_FORMAT =
       "spiffe://agents.global.org-INVALID.system.id.goog/path";
 
   private TestEnvironmentProvider envProvider;
-  private Path tempDir;
+  @TempDir private Path tempDir;
 
   @BeforeEach
   void setUp() throws IOException {
     envProvider = new TestEnvironmentProvider();
     AgentIdentityUtils.setEnvReader(envProvider::getEnv);
-    tempDir = Files.createTempDirectory("agent_identity_test");
   }
 
   @AfterEach
@@ -86,12 +90,6 @@ class AgentIdentityUtilsTest {
     AgentIdentityUtils.resetTimeService();
     AgentIdentityUtils.setWellKnownDir("/var/run/secrets/workload-spiffe-credentials/");
     AgentIdentityUtils.setEnvReader(System::getenv);
-    if (tempDir != null) {
-      Files.walk(tempDir)
-          .sorted(java.util.Comparator.reverseOrder())
-          .map(Path::toFile)
-          .forEach(File::delete);
-    }
   }
 
   @Test
@@ -102,6 +100,20 @@ class AgentIdentityUtilsTest {
   @Test
   public void shouldRequestBoundToken_validProjSpiffe_returnsTrue() throws CertificateException {
     assertTrue(AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(VALID_SPIFFE_PROJ)));
+  }
+
+  @Test
+  public void shouldRequestBoundToken_validNonprodOrgSpiffe_returnsTrue()
+      throws CertificateException {
+    assertTrue(
+        AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(VALID_SPIFFE_NONPROD_ORG)));
+  }
+
+  @Test
+  public void shouldRequestBoundToken_validNonprodProjSpiffe_returnsTrue()
+      throws CertificateException {
+    assertTrue(
+        AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(VALID_SPIFFE_NONPROD_PROJ)));
   }
 
   @Test
@@ -150,34 +162,109 @@ class AgentIdentityUtilsTest {
   }
 
   @Test
-  public void getAgentIdentityCertificate_optedOut_returnsNullImmediately() throws IOException {
-    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false");
-    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", "/non/existent/path");
+  public void getAgentIdentityCertificate_enableRuntimeBoundTokenFalse_returnsNullImmediately()
+      throws IOException {
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "false");
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, "/non/existent/path");
     assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
   }
 
   @Test
-  public void getAgentIdentityCertificate_preventTokenSharingTrue_doesNotOptOut() throws Exception {
-    envProvider.setEnv("GOOGLE_API_PREVENT_TOKEN_SHARING_FOR_GCP_SERVICES", "true");
+  public void getAgentIdentityCertificate_legacyPreventSharingFalse_returnsNullImmediately()
+      throws IOException {
+    envProvider.setEnv(
+        AgentIdentityUtils.GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES, "false");
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, "/non/existent/path");
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  @Test
+  public void getAgentIdentityCertificate_useClientCertFalse_returnsNullImmediatelyWithoutPolling()
+      throws Exception {
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_USE_CLIENT_CERTIFICATE, "false");
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, "/non/existent/path");
     AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
 
-    URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
-    assertNotNull(certUrl, "Test resource agent/agent_spiffe_cert.pem not found");
-    String certPath = Paths.get(certUrl.toURI()).toAbsolutePath().toString();
-    Files.copy(Paths.get(certPath), tempDir.resolve("certificates.pem"));
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    assertEquals(0, fakeTime.getSleepCount());
+  }
 
-    URL keyUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_key.pem");
-    assertNotNull(keyUrl, "Test resource agent/agent_spiffe_key.pem not found");
-    String keyPath = Paths.get(keyUrl.toURI()).toAbsolutePath().toString();
-    Files.copy(Paths.get(keyPath), tempDir.resolve("private_key.pem"));
+  @Test
+  public void getAgentIdentityCertificate_modernVarOverridesLegacyVar() throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    // Modern is true, Legacy is false -> should NOT opt out
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
+    envProvider.setEnv(
+        AgentIdentityUtils.GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES, "false");
+    assertNotNull(AgentIdentityUtils.getAgentIdentityCertInfo());
 
-    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
+    // Modern is false, Legacy is true -> should opt out
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "false");
+    envProvider.setEnv(
+        AgentIdentityUtils.GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES, "true");
+    assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+  }
+
+  @Test
+  public void getAgentIdentityCertificate_enableRuntimeBoundTokenTrue_doesNotOptOut()
+      throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_ENABLE_RUNTIME_BOUND_TOKEN, "true");
 
     AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
     assertNotNull(info);
     assertEquals(
         new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8),
         info.getCertContent());
+  }
+
+  @Test
+  public void getAgentIdentityCertificate_legacyPreventSharingTrue_doesNotOptOut()
+      throws Exception {
+    setupValidAgentCredentialsInTempDir();
+    envProvider.setEnv(
+        AgentIdentityUtils.GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES, "true");
+
+    AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info);
+    assertEquals(
+        new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8),
+        info.getCertContent());
+  }
+
+  @Test
+  public void getAgentIdentityCertificate_bothUnset_defaultsToEnabled() throws Exception {
+    setupValidAgentCredentialsInTempDir();
+
+    AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info);
+    assertEquals(
+        new String(Files.readAllBytes(tempDir.resolve("certificates.pem")), StandardCharsets.UTF_8),
+        info.getCertContent());
+  }
+
+  private void setupValidAgentCredentialsInTempDir() throws Exception {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+
+    URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
+    assertNotNull(certUrl, "Test resource agent/agent_spiffe_cert.pem not found");
+    String certPath = Paths.get(certUrl.toURI()).toAbsolutePath().toString();
+    Files.copy(
+        Paths.get(certPath),
+        tempDir.resolve("certificates.pem"),
+        java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+
+    URL keyUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_key.pem");
+    assertNotNull(keyUrl, "Test resource agent/agent_spiffe_key.pem not found");
+    String keyPath = Paths.get(keyUrl.toURI()).toAbsolutePath().toString();
+    Files.copy(
+        Paths.get(keyPath),
+        tempDir.resolve("private_key.pem"),
+        java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, null);
   }
 
   @Test
@@ -438,6 +525,266 @@ class AgentIdentityUtilsTest {
 
     assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
     assertTrue(fakeTime.getSleepCount() > 0);
+  }
+
+  @Test
+  public void readCertificateChain_combinedBundle_stripsPrivateKeyAndRetainsCertificates()
+      throws Exception {
+    URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
+    assertNotNull(certUrl);
+    String certPem =
+        new String(Files.readAllBytes(Paths.get(certUrl.toURI())), StandardCharsets.UTF_8);
+
+    URL keyUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_key.pem");
+    assertNotNull(keyUrl);
+    String keyPem =
+        new String(Files.readAllBytes(Paths.get(keyUrl.toURI())), StandardCharsets.UTF_8);
+
+    // Create a bundle file with cert then private key then cert again
+    String bundleContent = certPem + "\n" + keyPem + "\n" + certPem;
+    Path bundleFile = tempDir.resolve("bundle.pem");
+    Files.write(bundleFile, bundleContent.getBytes(StandardCharsets.UTF_8));
+
+    String extractedChain = AgentIdentityUtils.readCertificateChain(bundleFile.toString());
+
+    // Verify certificates are retained
+    assertTrue(extractedChain.contains("BEGIN CERTIFICATE"));
+    assertTrue(extractedChain.contains("END CERTIFICATE"));
+    // Verify private key is stripped
+    assertFalse(extractedChain.contains("PRIVATE KEY"));
+    assertFalse(extractedChain.contains("BEGIN PRIVATE KEY"));
+    assertFalse(extractedChain.contains("END PRIVATE KEY"));
+  }
+
+  @Test
+  public void readCertificateChain_noCertificates_throwsIOException() throws Exception {
+    URL keyUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_key.pem");
+    assertNotNull(keyUrl);
+    String keyPem =
+        new String(Files.readAllBytes(Paths.get(keyUrl.toURI())), StandardCharsets.UTF_8);
+
+    Path keyOnlyFile = tempDir.resolve("key_only.pem");
+    Files.write(keyOnlyFile, keyPem.getBytes(StandardCharsets.UTF_8));
+
+    IOException e =
+        assertThrows(
+            IOException.class,
+            () -> AgentIdentityUtils.readCertificateChain(keyOnlyFile.toString()));
+    assertTrue(e.getMessage().contains("No PEM certificates found in certificate file"));
+  }
+
+  @Test
+  public void loadAndVerifyCredentials_validCombinedBundle_verifiesKeyAndStripsPrivateKey()
+      throws Exception {
+    URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
+    assertNotNull(certUrl);
+    String certPem =
+        new String(Files.readAllBytes(Paths.get(certUrl.toURI())), StandardCharsets.UTF_8);
+
+    URL keyUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_key.pem");
+    assertNotNull(keyUrl);
+    String keyPem =
+        new String(Files.readAllBytes(Paths.get(keyUrl.toURI())), StandardCharsets.UTF_8);
+
+    String bundleContent = certPem + "\n" + keyPem;
+    Path bundleFile = tempDir.resolve("credentialbundle.pem");
+    Files.write(bundleFile, bundleContent.getBytes(StandardCharsets.UTF_8));
+
+    AgentIdentityUtils.CertInfo info =
+        AgentIdentityUtils.loadAndVerifyCredentials(bundleFile.toString(), bundleFile.toString());
+    assertNotNull(info);
+    assertNotNull(info.getCertificate());
+    assertTrue(AgentIdentityUtils.shouldRequestBoundToken(info.getCertificate()));
+    assertTrue(info.getCertContent().contains("BEGIN CERTIFICATE"));
+    assertFalse(info.getCertContent().contains("PRIVATE KEY"));
+  }
+
+  @Test
+  public void loadAndVerifyCredentials_bundleWithMismatchedKey_failsVerification()
+      throws Exception {
+    URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
+    assertNotNull(certUrl);
+    String certPem =
+        new String(Files.readAllBytes(Paths.get(certUrl.toURI())), StandardCharsets.UTF_8);
+
+    // Generate a random key that does not match the cert
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    kpg.initialize(2048);
+    KeyPair kp = kpg.generateKeyPair();
+    String mismatchedKeyPem =
+        "-----BEGIN PRIVATE KEY-----\n"
+            + java.util.Base64.getMimeEncoder().encodeToString(kp.getPrivate().getEncoded())
+            + "\n-----END PRIVATE KEY-----";
+
+    String bundleContent = certPem + "\n" + mismatchedKeyPem;
+    Path bundleFile = tempDir.resolve("credentialbundle.pem");
+    Files.write(bundleFile, bundleContent.getBytes(StandardCharsets.UTF_8));
+
+    AgentIdentityUtils.setTimeService(new FakeTimeService());
+
+    IOException e =
+        assertThrows(
+            IOException.class,
+            () ->
+                AgentIdentityUtils.loadAndVerifyCredentials(
+                    bundleFile.toString(), bundleFile.toString()));
+    assertTrue(
+        e.getMessage()
+            .contains(
+                "Agent Identity certificate and private key mismatch or read failure after 3"
+                    + " retries."));
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_wellKnownBundleFile_verifiesAndStripsPrivateKey()
+      throws Exception {
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+
+    URL certUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_cert.pem");
+    assertNotNull(certUrl);
+    String certPem =
+        new String(Files.readAllBytes(Paths.get(certUrl.toURI())), StandardCharsets.UTF_8);
+
+    URL keyUrl = getClass().getClassLoader().getResource("agent/agent_spiffe_key.pem");
+    assertNotNull(keyUrl);
+    String keyPem =
+        new String(Files.readAllBytes(Paths.get(keyUrl.toURI())), StandardCharsets.UTF_8);
+
+    String bundleContent = certPem + "\n" + keyPem;
+    Path bundleFile = tempDir.resolve("credentialbundle.pem");
+    Files.write(bundleFile, bundleContent.getBytes(StandardCharsets.UTF_8));
+
+    envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, null);
+
+    AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNotNull(info);
+    assertNotNull(info.getCertificate());
+    assertTrue(AgentIdentityUtils.shouldRequestBoundToken(info.getCertificate()));
+    assertTrue(info.getCertContent().contains("BEGIN CERTIFICATE"));
+    assertFalse(info.getCertContent().contains("PRIVATE KEY"));
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_explicitConfigDirectoryAccessDenied_throwsIOException()
+      throws Exception {
+    Path restrictedDir = tempDir.resolve("restricted_dir");
+    Files.createDirectory(restrictedDir);
+    Path configFile = restrictedDir.resolve("config.json");
+    Files.write(configFile, "{}".getBytes(StandardCharsets.UTF_8));
+
+    restrictedDir.toFile().setReadable(false, false);
+    restrictedDir.toFile().setExecutable(false, false);
+
+    try {
+      envProvider.setEnv(
+          AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toAbsolutePath().toString());
+      assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    } finally {
+      restrictedDir.toFile().setReadable(true, false);
+      restrictedDir.toFile().setExecutable(true, false);
+    }
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_explicitConfigFileNotReadable_throwsIOException()
+      throws Exception {
+    Path configFile = tempDir.resolve("unreadable_config.json");
+    Files.write(configFile, "{}".getBytes(StandardCharsets.UTF_8));
+    configFile.toFile().setReadable(false, false);
+
+    try {
+      envProvider.setEnv(
+          AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, configFile.toAbsolutePath().toString());
+      assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertInfo);
+    } finally {
+      configFile.toFile().setReadable(true, false);
+    }
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_implicitWellKnownAccessDenied_returnsNull()
+      throws Exception {
+    Path restrictedDir = tempDir.resolve("restricted_well_known");
+    Files.createDirectory(restrictedDir);
+    Path bundleFile = restrictedDir.resolve("credentialbundle.pem");
+    Files.write(bundleFile, "test".getBytes(StandardCharsets.UTF_8));
+
+    restrictedDir.toFile().setReadable(false, false);
+    restrictedDir.toFile().setExecutable(false, false);
+
+    try {
+      envProvider.setEnv(AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG, null);
+      AgentIdentityUtils.setWellKnownDir(restrictedDir.toAbsolutePath().toString() + "/");
+
+      assertNull(AgentIdentityUtils.getAgentIdentityCertInfo());
+    } finally {
+      restrictedDir.toFile().setReadable(true, false);
+      restrictedDir.toFile().setExecutable(true, false);
+    }
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_enterpriseConfig_returnsNullImmediatelyWithoutPolling()
+      throws Exception {
+    File configFile = tempDir.resolve("enterprise_config.json").toFile();
+    try (FileOutputStream fos = new FileOutputStream(configFile)) {
+      String json =
+          "{\n"
+              + "  \"cert_configs\": {\n"
+              + "    \"enterprise\": {\n"
+              + "      \"cert_provider_command\": [\"/bin/echo\", \"dummy\"]\n"
+              + "    }\n"
+              + "  }\n"
+              + "}";
+      fos.write(json.getBytes(StandardCharsets.UTF_8));
+    }
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configFile.getAbsolutePath());
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNull(info);
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void getAgentIdentityCertInfo_configWithoutWorkload_returnsNullImmediatelyWithoutPolling()
+      throws Exception {
+    File configFile = tempDir.resolve("empty_cert_configs.json").toFile();
+    try (FileOutputStream fos = new FileOutputStream(configFile)) {
+      String json = "{ \"cert_configs\": {} }";
+      fos.write(json.getBytes(StandardCharsets.UTF_8));
+    }
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configFile.getAbsolutePath());
+    AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+    FakeTimeService fakeTime = new FakeTimeService();
+    AgentIdentityUtils.setTimeService(fakeTime);
+
+    AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
+    assertNull(info);
+    assertEquals(0, fakeTime.getSleepCount());
+  }
+
+  @Test
+  public void
+      getAgentIdentityCertInfo_missingConfigOutsideWellKnownDir_returnsNullImmediatelyWithoutPolling()
+          throws Exception {
+    Path outsideDir = Files.createTempDirectory("outside_well_known");
+    Path missingConfigFile = outsideDir.resolve("missing_config.json");
+    try {
+      envProvider.setEnv(
+          "GOOGLE_API_CERTIFICATE_CONFIG", missingConfigFile.toAbsolutePath().toString());
+      AgentIdentityUtils.setWellKnownDir(tempDir.toAbsolutePath().toString() + "/");
+      FakeTimeService fakeTime = new FakeTimeService();
+      AgentIdentityUtils.setTimeService(fakeTime);
+
+      AgentIdentityUtils.CertInfo info = AgentIdentityUtils.getAgentIdentityCertInfo();
+      assertNull(info);
+      assertEquals(0, fakeTime.getSleepCount());
+    } finally {
+      Files.deleteIfExists(outsideDir);
+    }
   }
 
   private static class FakeTimeService implements AgentIdentityUtils.TimeService {
