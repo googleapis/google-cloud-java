@@ -415,7 +415,7 @@ public final class AgentIdentityUtils {
                 CERT_KEY_MATCH_RETRIES));
       }
     } else if (!Strings.isNullOrEmpty(certPath)) {
-      // Bundle or only cert available
+      // Only certificate available (no private key specified or found)
       try {
         certContent = readCertificateChain(certPath);
         cert = parseCertificateContent(certContent);
