@@ -694,6 +694,38 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
+  public void
+      testCallCredentialsProviderPreservedWhenConfiguratorReturnsDeltaContextWithCustomCallOptions() {
+    CallOptions.Key<String> customKey = CallOptions.Key.create("customKey");
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return GrpcCallContext.createDefault()
+                .withCallOptions(CallOptions.DEFAULT.withOption(customKey, "customVal"));
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCredentials(STATIC_CREDENTIALS)
+            .setCallCredentialsProvider(() -> MoreCallCredentials.from(VARIABLE_CREDENTIALS))
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    GrpcCallContext callContext =
+        rpc.newCallContext(
+            optionsMap,
+            "/some/resource",
+            GetSessionRequest.getDefaultInstance(),
+            SpannerGrpc.getGetSessionMethod());
+    assertNotNull(callContext.getCallOptions().getCredentials());
+    assertEquals("customVal", callContext.getCallOptions().getOption(customKey));
+    rpc.shutdown();
+  }
+
+  @Test
   public void testCallCredentialsProviderReturnsNull() {
     SpannerOptions options =
         SpannerOptions.newBuilder()
