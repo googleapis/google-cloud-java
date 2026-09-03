@@ -173,20 +173,12 @@ Because both transports maintain persistent connections, the latency impact of t
 
 ---
 
-## 5. Deployment Environments & Platform Compatibility
+## 5. Environment & Runtime Considerations
 
-Both gRPC (via `grpc-netty-shaded` / `netty-tcnative`) and HTTP/JSON (via Conscrypt) rely on C native shared libraries (`.so`, `.dylib`, or `.dll`) loaded via JNI. Consequently, both transports share similar platform compatibility considerations.
+Because PQC negotiation relies on native BoringSSL C binaries (bundled in `grpc-netty-shaded` and `conscrypt-openjdk-uber`) loaded over JNI, compatibility depends on the underlying runtime environment. Most standard Linux (`glibc`), macOS, and Windows environments support native execution out of the box.
 
-### 5.1 Compatibility Matrix
-
-| Environment / OS | Status | Notes |
-| :--- | :--- | :--- |
-| **Standard Linux (e.g., Ubuntu, Debian, RHEL, CentOS — non-exhaustive)** | **Fully Supported** | Requires `glibc` 2.17+ (`grpc-netty-shaded` and Conscrypt 2.6.2+). |
-| **Google Cloud Managed (Cloud Run, GKE, App Engine)** | **Fully Supported** | Default base container environments use compatible `glibc` runtimes. |
-| **macOS (Apple Silicon M-series & Intel)** | **Fully Supported** | Native `osx-aarch_64` and `osx-x86_64` binaries bundled in `grpc-netty-shaded` and `conscrypt-openjdk-uber`. |
-| **Windows (x86_64)** | **Fully Supported** | Native `windows-x86_64` binaries bundled in `grpc-netty-shaded` and `conscrypt-openjdk-uber`. |
-| **GraalVM Native Image** | **Supported** | Supported when including appropriate reachability metadata and configuration for Netty or Conscrypt JNI libraries. |
-| **Alpine Linux / Musl libc Containers** | **Fallback to Classical** | Native binaries require `glibc`. On Alpine (`musl`), native loading is unsupported and safely falls back to standard classical TLS. |
+### 5.1 GraalVM Native Image
+GraalVM Native Image compilation is supported for applications that include the appropriate reachability metadata and JNI configuration for Netty or Conscrypt native libraries.
 
 ### 5.2 Unsupported Scenarios & Graceful Fallback
 Certain deployment environments do not support native BoringSSL binaries out of the box. In these scenarios, the client libraries do not fail; they gracefully fall back to standard classical TLS (e.g. `X25519` via JDK JSSE):
