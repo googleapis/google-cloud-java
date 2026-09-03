@@ -91,6 +91,7 @@ import com.google.cloud.spanner.admin.instance.v1.stub.GrpcInstanceAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStub;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
 import com.google.cloud.spanner.encryption.EncryptionConfigProtoMapper;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.ChannelPrimeSessionSource;
 import com.google.cloud.spanner.v1.stub.SpannerStub;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.annotations.VisibleForTesting;
@@ -805,12 +806,8 @@ public class GapicSpannerRpc implements SpannerRpc {
    * of priming RPCs come from the request id creator of this rpc. The deadline of the priming RPC
    * is derived from the pool's prime timeout and normally stays below it; see {@link
    * DynamicChannelPoolPrimer#rpcDeadlineFor(Duration)} for the minimum deadline that a prime
-   * timeout of two milliseconds or less yields. The sessions that the primer uses are registered by
-   * {@link #createSession(String, String, Map, Map, boolean)} whenever a multiplexed session is
-   * created successfully for the current owner of its database, which the database clients register
-   * through {@link #registerChannelPrimeOwner(String, long)} and remove through {@link
-   * #unregisterChannelPrimeOwner(String, long)}, so a session whose creation was still in flight
-   * when its database client was retired is never registered.
+   * timeout of two milliseconds or less yields. Live multiplexed-session database clients register
+   * themselves as session sources and unregister themselves when closed.
    */
   @Nullable
   private DynamicChannelPoolPrimer createChannelPrimer(
@@ -818,25 +815,35 @@ public class GapicSpannerRpc implements SpannerRpc {
     if (!options.isGrpcGcpExtensionEnabled() || !options.isDynamicChannelPoolEnabled()) {
       return null;
     }
-    CallCredentials defaultCallCredentials = null;
-    try {
-      Credentials credentials = credentialsProvider.getCredentials();
-      if (credentials != null) {
-        defaultCallCredentials = MoreCallCredentials.from(credentials);
-      }
-    } catch (IOException e) {
-      throw newSpannerException(e);
-    }
     return new DynamicChannelPoolPrimer(
         metadataProvider,
         projectName,
         requestIdCreator,
-        defaultCallCredentials,
-        callCredentialsProvider,
-        leaderAwareRoutingEnabled,
+        createChannelPrimeCallCredentialsProvider(credentialsProvider, callCredentialsProvider),
         // The options already contain the merged prime timeout, including a user-provided one.
         DynamicChannelPoolPrimer.rpcDeadlineFor(
             options.getGcpChannelPoolOptions().getChannelPrimeTimeout()));
+  }
+
+  @VisibleForTesting
+  @Nullable
+  static CallCredentialsProvider createChannelPrimeCallCredentialsProvider(
+      CredentialsProvider credentialsProvider,
+      @Nullable CallCredentialsProvider callCredentialsProvider) {
+    final CallCredentials defaultCallCredentials;
+    try {
+      Credentials credentials = credentialsProvider.getCredentials();
+      defaultCallCredentials = credentials == null ? null : MoreCallCredentials.from(credentials);
+    } catch (IOException e) {
+      throw newSpannerException(e);
+    }
+    if (callCredentialsProvider == null) {
+      return defaultCallCredentials == null ? null : () -> defaultCallCredentials;
+    }
+    return () -> {
+      CallCredentials callCredentials = callCredentialsProvider.getCallCredentials();
+      return callCredentials != null ? callCredentials : defaultCallCredentials;
+    };
   }
 
   /** Returns the primer of scaled-up dynamic channel pool channels, or {@code null} if none. */
@@ -2052,38 +2059,20 @@ public class GapicSpannerRpc implements SpannerRpc {
     CreateSessionRequest request = requestBuilder.build();
     GrpcCallContext context =
         newCallContext(options, databaseName, request, SpannerGrpc.getCreateSessionMethod(), true);
-    Session session = get(spannerStub.createSessionCallable().futureCall(request, context));
-    // Every multiplexed session, including the periodic refresh of an existing one, is created
-    // through this method, so the most recently created multiplexed session is normally a valid
-    // session for priming channels that the dynamic channel pool adds during scale-up. The
-    // registration is keyed on both the request flag and the response flag: a backend that does
-    // not echo the multiplexed flag, for example because it ignores the request flag and creates a
-    // regular session, must never turn that session into a prime session. Regular sessions are
-    // not safe for the concurrent use that priming implies. The owner ticket of the database
-    // client that issued the request is passed on, so the primer can drop the session if the
-    // client has been retired while the request was in flight; a request without an owner ticket
-    // never registers a prime session.
-    Long primeOwnerTicket = Option.CHANNEL_PRIME_OWNER.getLong(options);
-    if (channelPrimer != null
-        && isMultiplexed
-        && session.getMultiplexed()
-        && primeOwnerTicket != null) {
-      channelPrimer.registerPrimeSession(databaseName, session.getName(), primeOwnerTicket);
-    }
-    return session;
+    return get(spannerStub.createSessionCallable().futureCall(request, context));
   }
 
   @Override
-  public void registerChannelPrimeOwner(String databaseName, long ownerTicket) {
+  public void registerChannelPrimeSessionSource(ChannelPrimeSessionSource source) {
     if (channelPrimer != null) {
-      channelPrimer.registerPrimeOwner(databaseName, ownerTicket);
+      channelPrimer.registerPrimeSessionSource(source);
     }
   }
 
   @Override
-  public void unregisterChannelPrimeOwner(String databaseName, long ownerTicket) {
+  public void unregisterChannelPrimeSessionSource(ChannelPrimeSessionSource source) {
     if (channelPrimer != null) {
-      channelPrimer.unregisterPrimeOwner(databaseName, ownerTicket);
+      channelPrimer.unregisterPrimeSessionSource(source);
     }
   }
 

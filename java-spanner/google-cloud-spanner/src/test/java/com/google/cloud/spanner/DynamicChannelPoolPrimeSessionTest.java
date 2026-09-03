@@ -231,6 +231,9 @@ public class DynamicChannelPoolPrimeSessionTest {
     DatabaseClientImpl retired = createClientWithPrimeSession();
     String retiredSession = multiplexedClient(retired).getCurrentSessionReference().getName();
     invalidate(retired);
+    // Invalid sources stay registered until replacement, but no longer expose their session.
+    assertThat(rpc.getPrimeSessionSourceCount()).isEqualTo(1);
+    assertThat(rpc.getPrimeSessionNames()).isEmpty();
     blockRefreshInFlight(retired);
 
     // Getting the client again retires the invalid client and creates its replacement. The
@@ -245,7 +248,7 @@ public class DynamicChannelPoolPrimeSessionTest {
     assertThat(replacementSession).isNotEqualTo(retiredSession);
     // The late refresh of the retired client is dropped, and the replacement stays selected.
     assertThat(rpc.getPrimeSessionNames()).containsExactly(replacementSession);
-    assertThat(rpc.getPrimeOwnerDatabases()).containsExactly(DATABASE_ID.getName());
+    assertThat(rpc.getPrimeSessionSourceCount()).isEqualTo(1);
     // The retired client ignored its refreshed session as well.
     assertEquals(retiredSession, multiplexedClient(retired).getCurrentSessionReference().getName());
     assertTrue(replacement.isValid());
@@ -270,7 +273,7 @@ public class DynamicChannelPoolPrimeSessionTest {
     spanner.close();
 
     assertThat(rpc.getPrimeSessionNames()).isEmpty();
-    assertThat(rpc.getPrimeOwnerDatabases()).isEmpty();
+    assertThat(rpc.getPrimeSessionSourceCount()).isEqualTo(0);
     assertEquals(session, multiplexedClient(client).getCurrentSessionReference().getName());
   }
 
@@ -293,7 +296,7 @@ public class DynamicChannelPoolPrimeSessionTest {
     spanner.close();
 
     assertThat(rpc.getPrimeSessionNames()).isEmpty();
-    assertThat(rpc.getPrimeOwnerDatabases()).isEmpty();
+    assertThat(rpc.getPrimeSessionSourceCount()).isEqualTo(0);
     // The closed client ignored the session that arrived after it was closed.
     SpannerException exception =
         assertThrows(
@@ -302,10 +305,10 @@ public class DynamicChannelPoolPrimeSessionTest {
   }
 
   @Test
-  public void churnOfDatabaseClientsLeavesNoPrimeOwnersBehind() throws Exception {
+  public void churnOfDatabaseClientsLeavesNoPrimeSessionSourcesBehind() throws Exception {
     // A long-lived Spanner instance that churns through many database names must not retain
-    // anything for the retired database clients: the registry holds exactly one owner and one
-    // session per live database client.
+    // anything for retired database clients: the registry holds exactly one source per live
+    // database client.
     List<String> liveDatabases = new ArrayList<>();
     for (int i = 0; i < 20; i++) {
       DatabaseId databaseId = DatabaseId.of("[PROJECT]", "[INSTANCE]", "churn-" + i);
@@ -322,20 +325,21 @@ public class DynamicChannelPoolPrimeSessionTest {
       awaitCondition(() -> rpc.getPrimeSessionNames().contains(replacementSession));
       assertThat(rpc.getPrimeSessionNames()).doesNotContain(session);
       assertThat(rpc.getPrimeSessionNames()).hasSize(liveDatabases.size());
-      assertThat(rpc.getPrimeOwnerDatabases()).containsExactlyElementsIn(liveDatabases);
+      assertThat(rpc.getPrimeSessionSourceCount()).isEqualTo(liveDatabases.size());
     }
 
     spanner.close();
 
     assertThat(rpc.getPrimeSessionNames()).isEmpty();
-    assertThat(rpc.getPrimeOwnerDatabases()).isEmpty();
+    assertThat(rpc.getPrimeSessionSourceCount()).isEqualTo(0);
   }
 
   @Test
-  public void failedClientConstructionLeavesNoPrimeOwnerBehind() throws Exception {
+  public void failedClientConstructionLeavesNoPrimeSessionSourceBehind() throws Exception {
     // A client that waits for its first multiplexed session throws from its constructor when the
     // CreateSession fails, and is never cached by the Spanner instance, so nothing will ever close
-    // it. It must still have released the owner ticket that it registered before the CreateSession.
+    // it. It must still have released the session source that it registered before the
+    // CreateSession.
     createWaitingSpanner(Duration.ofSeconds(5));
     mockSpanner.setCreateSessionExecutionTime(
         SimulatedExecutionTime.ofStickyException(
@@ -346,7 +350,7 @@ public class DynamicChannelPoolPrimeSessionTest {
       SpannerException exception =
           assertThrows(SpannerException.class, () -> waitingSpanner.getDatabaseClient(databaseId));
       assertEquals(ErrorCode.PERMISSION_DENIED, exception.getErrorCode());
-      assertThat(waitingRpc.getPrimeOwnerDatabases()).isEmpty();
+      assertThat(waitingRpc.getPrimeSessionSourceCount()).isEqualTo(0);
       assertThat(waitingRpc.getPrimeSessionNames()).isEmpty();
     }
 
@@ -371,15 +375,16 @@ public class DynamicChannelPoolPrimeSessionTest {
     SpannerException exception =
         assertThrows(SpannerException.class, () -> waitingSpanner.getDatabaseClient(databaseId));
     assertEquals(ErrorCode.DEADLINE_EXCEEDED, exception.getErrorCode());
-    // The owner ticket is released as soon as the constructor fails, before the session arrives.
-    assertThat(waitingRpc.getPrimeOwnerDatabases()).isEmpty();
+    // The session source is unregistered as soon as the constructor fails, before the session
+    // arrives.
+    assertThat(waitingRpc.getPrimeSessionSourceCount()).isEqualTo(0);
 
     int arrivedBeforeRelease = mockSpanner.arrivedCreateSessions.get();
     mockSpanner.releaseCreateSessions();
     awaitCondition(() -> waitingRpc.getCompletedMultiplexedCreateSessions() >= 1);
 
     assertThat(waitingRpc.getPrimeSessionNames()).isEmpty();
-    assertThat(waitingRpc.getPrimeOwnerDatabases()).isEmpty();
+    assertThat(waitingRpc.getPrimeSessionSourceCount()).isEqualTo(0);
     // No maintainer was started for the abandoned client, so no session is ever refreshed.
     Thread.sleep(200L);
     assertEquals(arrivedBeforeRelease, mockSpanner.arrivedCreateSessions.get());

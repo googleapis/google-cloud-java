@@ -19,15 +19,12 @@ package com.google.cloud.spanner;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -35,7 +32,9 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
+import com.google.api.core.SettableApiFuture;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.SessionClient.SessionConsumer;
@@ -54,7 +53,6 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import javax.annotation.Nullable;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -119,7 +117,7 @@ public class MultiplexedSessionDatabaseClientTest {
                   return null;
                 })
         .when(sessionClient)
-        .asyncCreateMultiplexedSession(any(SessionConsumer.class), any());
+        .asyncCreateMultiplexedSession(any(SessionConsumer.class));
 
     // Create a client. This should get session1.
     MultiplexedSessionDatabaseClient client =
@@ -174,7 +172,7 @@ public class MultiplexedSessionDatabaseClientTest {
                   return null;
                 })
         .when(sessionClient)
-        .asyncCreateMultiplexedSession(any(SessionConsumer.class), any());
+        .asyncCreateMultiplexedSession(any(SessionConsumer.class));
     MultiplexedSessionDatabaseClient client =
         new MultiplexedSessionDatabaseClient(sessionClient, clock);
     assertNotNull(consumer.get());
@@ -233,7 +231,7 @@ public class MultiplexedSessionDatabaseClientTest {
                   return null;
                 })
         .when(sessionClient)
-        .asyncCreateMultiplexedSession(any(SessionConsumer.class), any());
+        .asyncCreateMultiplexedSession(any(SessionConsumer.class));
     MultiplexedSessionDatabaseClient client =
         new MultiplexedSessionDatabaseClient(sessionClient, clock);
     assertEquals(sessionReference1, client.getCurrentSessionReference());
@@ -474,7 +472,7 @@ public class MultiplexedSessionDatabaseClientTest {
   }
 
   @Test
-  public void testChannelPrimeOwnerTicketIsRegisteredCarriedAndUnregistered() {
+  public void testChannelPrimeSessionSourceLifecycleAndNonBlockingAccessor() throws Exception {
     assumeTrue(isJava8());
     Clock clock = mock(Clock.class);
     when(clock.instant()).thenReturn(Instant.now());
@@ -484,7 +482,6 @@ public class MultiplexedSessionDatabaseClientTest {
     SpannerOptions spannerOptions = mock(SpannerOptions.class);
     SessionPoolOptions sessionPoolOptions = mock(SessionPoolOptions.class);
     when(sessionClient.getSpanner()).thenReturn(spanner);
-    when(sessionClient.getDatabaseId()).thenReturn(TEST_DATABASE_ID);
     when(spanner.getRpc()).thenReturn(rpc);
     when(spanner.getOptions()).thenReturn(spannerOptions);
     when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
@@ -492,60 +489,71 @@ public class MultiplexedSessionDatabaseClientTest {
         .thenReturn(Duration.ofDays(7));
     when(sessionPoolOptions.getMultiplexedSessionMaintenanceLoopFrequency())
         .thenReturn(Duration.ofMinutes(10));
-    SessionImpl session = mock(SessionImpl.class);
-    when(session.getSessionReference()).thenReturn(mock(SessionReference.class));
-    // Capture the options of every CreateSession without delivering a session yet.
-    List<Map<SpannerRpc.Option, ?>> createSessionOptions = new ArrayList<>();
-    AtomicReference<SessionConsumer> consumer = new AtomicReference<>();
+    List<SessionConsumer> consumers = new ArrayList<>();
     doAnswer(
             (Answer<?>)
                 invocationOnMock -> {
-                  consumer.set(invocationOnMock.getArgument(0));
-                  createSessionOptions.add(invocationOnMock.getArgument(1));
+                  consumers.add(invocationOnMock.getArgument(0));
                   return null;
                 })
         .when(sessionClient)
-        .asyncCreateMultiplexedSession(any(SessionConsumer.class), any());
+        .asyncCreateMultiplexedSession(any(SessionConsumer.class));
 
     MultiplexedSessionDatabaseClient first =
         new MultiplexedSessionDatabaseClient(sessionClient, clock);
     MultiplexedSessionDatabaseClient second =
         new MultiplexedSessionDatabaseClient(sessionClient, clock);
 
-    // Every client registers itself as an owner with its own ticket before its first
-    // CreateSession, and that CreateSession carries the ticket.
-    ArgumentCaptor<Long> tickets = ArgumentCaptor.forClass(Long.class);
-    verify(rpc, times(2))
-        .registerChannelPrimeOwner(eq(TEST_DATABASE_ID.getName()), tickets.capture());
-    long firstTicket = tickets.getAllValues().get(0);
-    long secondTicket = tickets.getAllValues().get(1);
-    assertNotEquals(firstTicket, secondTicket);
-    assertEquals(2, createSessionOptions.size());
-    assertEquals(
-        Long.valueOf(firstTicket),
-        SpannerRpc.Option.CHANNEL_PRIME_OWNER.getLong(createSessionOptions.get(0)));
-    assertEquals(
-        Long.valueOf(secondTicket),
-        SpannerRpc.Option.CHANNEL_PRIME_OWNER.getLong(createSessionOptions.get(1)));
-    verify(rpc, never()).unregisterChannelPrimeOwner(any(), anyLong());
+    ArgumentCaptor<SpannerRpc.ChannelPrimeSessionSource> sources =
+        ArgumentCaptor.forClass(SpannerRpc.ChannelPrimeSessionSource.class);
+    verify(rpc, times(2)).registerChannelPrimeSessionSource(sources.capture());
+    assertThat(sources.getAllValues()).containsExactly(first, second).inOrder();
+    // Pending futures yield no session immediately; the accessor never waits for completion.
+    assertThat(first.getChannelPrimeSessionName()).isNull();
+    assertThat(second.getChannelPrimeSessionName()).isNull();
 
-    // A refresh of the session carries the same ticket as the initial CreateSession.
-    consumer.get().onSessionReady(session);
+    consumers
+        .get(0)
+        .onSessionCreateFailure(
+            SpannerExceptionFactory.newSpannerException(ErrorCode.PERMISSION_DENIED, "denied"), 1);
+    assertThat(first.getChannelPrimeSessionName()).isNull();
+
+    Field referenceField =
+        MultiplexedSessionDatabaseClient.class.getDeclaredField("multiplexedSessionReference");
+    referenceField.setAccessible(true);
+    @SuppressWarnings("unchecked")
+    AtomicReference<ApiFuture<SessionReference>> reference =
+        (AtomicReference<ApiFuture<SessionReference>>) referenceField.get(first);
+    SettableApiFuture<SessionReference> cancelled = SettableApiFuture.create();
+    cancelled.cancel(false);
+    reference.set(cancelled);
+    assertThat(first.getChannelPrimeSessionName()).isNull();
+
+    SessionReference initialReference = mock(SessionReference.class);
+    when(initialReference.getName()).thenReturn("initial-session");
+    SessionImpl initialSession = mock(SessionImpl.class);
+    when(initialSession.getSessionReference()).thenReturn(initialReference);
+    consumers.get(1).onSessionReady(initialSession);
+    assertThat(second.getChannelPrimeSessionName()).isEqualTo("initial-session");
+    verify(rpc, times(2)).registerChannelPrimeSessionSource(any());
+
     when(clock.instant()).thenReturn(Instant.now().plus(Duration.ofDays(8)));
     second.getMaintainer().maintain();
-    assertEquals(3, createSessionOptions.size());
-    assertEquals(
-        Long.valueOf(secondTicket),
-        SpannerRpc.Option.CHANNEL_PRIME_OWNER.getLong(createSessionOptions.get(2)));
+    SessionReference refreshedReference = mock(SessionReference.class);
+    when(refreshedReference.getName()).thenReturn("refreshed-session");
+    SessionImpl refreshedSession = mock(SessionImpl.class);
+    when(refreshedSession.getSessionReference()).thenReturn(refreshedReference);
+    consumers.get(2).onSessionReady(refreshedSession);
+    assertThat(second.getChannelPrimeSessionName()).isEqualTo("refreshed-session");
+    verify(rpc, times(2)).registerChannelPrimeSessionSource(any());
 
-    // Closing a client unregisters exactly its own ticket, once.
     first.close();
-    verify(rpc).unregisterChannelPrimeOwner(TEST_DATABASE_ID.getName(), firstTicket);
-    verify(rpc, never()).unregisterChannelPrimeOwner(TEST_DATABASE_ID.getName(), secondTicket);
     first.close();
-    verify(rpc, times(1)).unregisterChannelPrimeOwner(any(), anyLong());
+    verify(rpc).unregisterChannelPrimeSessionSource(first);
+    verify(rpc, never()).unregisterChannelPrimeSessionSource(second);
     second.close();
-    verify(rpc).unregisterChannelPrimeOwner(TEST_DATABASE_ID.getName(), secondTicket);
+    verify(rpc).unregisterChannelPrimeSessionSource(second);
+    assertThat(second.getChannelPrimeSessionName()).isNull();
   }
 
   private SessionClient createSessionClient(SpannerImpl spanner) {
@@ -611,8 +619,7 @@ public class MultiplexedSessionDatabaseClientTest {
     }
 
     @Override
-    void asyncCreateMultiplexedSession(
-        SessionConsumer consumer, @Nullable Map<SpannerRpc.Option, ?> options) {
+    void asyncCreateMultiplexedSession(SessionConsumer consumer) {
       consumer.onSessionCreateFailure(
           SpannerExceptionFactory.newSpannerException(ErrorCode.UNAUTHENTICATED, "test"), 1);
     }

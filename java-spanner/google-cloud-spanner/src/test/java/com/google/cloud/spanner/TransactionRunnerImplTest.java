@@ -232,7 +232,7 @@ public class TransactionRunnerImplTest {
             Mockito.anyString(),
             Mockito.anyString(),
             Mockito.anyMap(),
-            Mockito.anyMap(),
+            Mockito.eq(null),
             Mockito.eq(true)))
         .thenAnswer(
             invocation ->

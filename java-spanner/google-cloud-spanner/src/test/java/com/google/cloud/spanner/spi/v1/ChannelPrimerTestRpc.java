@@ -17,20 +17,17 @@
 package com.google.cloud.spanner.spi.v1;
 
 import com.google.cloud.spanner.SpannerOptions;
-import com.google.cloud.spanner.spi.v1.DynamicChannelPoolPrimer.PrimeSession;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.ChannelPrimeSessionSource;
 import com.google.spanner.v1.Session;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 
 /**
- * A {@link GapicSpannerRpc} for tests outside this package that need to observe the prime sessions
- * and prime owners of the dynamic channel pool primer and to hook into the retirement of a database
- * client.
+ * A {@link GapicSpannerRpc} for tests outside this package that need to observe prime-session
+ * sources and hook into the retirement of a database client.
  */
 public class ChannelPrimerTestRpc extends GapicSpannerRpc {
   private final AtomicInteger completedMultiplexedCreateSessions = new AtomicInteger();
@@ -40,7 +37,7 @@ public class ChannelPrimerTestRpc extends GapicSpannerRpc {
     super(options);
   }
 
-  /** Sets a hook that runs right after a database client has been unregistered as prime owner. */
+  /** Sets a hook that runs right after a database client's session source is unregistered. */
   public void setAfterUnregisterHook(Runnable hook) {
     this.afterUnregisterHook = hook;
   }
@@ -57,13 +54,16 @@ public class ChannelPrimerTestRpc extends GapicSpannerRpc {
     return primer == null ? null : primer.getPrimeSessionName();
   }
 
-  /** Returns the names of all registered prime sessions, most recently created first. */
+  /** Returns currently available session names in source-preference order. */
   public List<String> getPrimeSessionNames() {
     List<String> names = new ArrayList<>();
     DynamicChannelPoolPrimer primer = getChannelPrimer();
     if (primer != null) {
-      for (PrimeSession entry : primer.getPrimeSessions()) {
-        names.add(entry.getSessionName());
+      for (ChannelPrimeSessionSource source : primer.getPrimeSessionSources()) {
+        String sessionName = source.getChannelPrimeSessionName();
+        if (sessionName != null) {
+          names.add(sessionName);
+        }
       }
     }
     return names;
@@ -85,15 +85,15 @@ public class ChannelPrimerTestRpc extends GapicSpannerRpc {
     }
   }
 
-  /** Returns the names of the databases that currently have a registered prime owner. */
-  public Set<String> getPrimeOwnerDatabases() {
+  /** Returns the number of registered prime-session sources. */
+  public int getPrimeSessionSourceCount() {
     DynamicChannelPoolPrimer primer = getChannelPrimer();
-    return primer == null ? Collections.emptySet() : primer.getPrimeOwners().keySet();
+    return primer == null ? 0 : primer.getPrimeSessionSources().size();
   }
 
   @Override
-  public void unregisterChannelPrimeOwner(String databaseName, long ownerTicket) {
-    super.unregisterChannelPrimeOwner(databaseName, ownerTicket);
+  public void unregisterChannelPrimeSessionSource(ChannelPrimeSessionSource source) {
+    super.unregisterChannelPrimeSessionSource(source);
     afterUnregisterHook.run();
   }
 }

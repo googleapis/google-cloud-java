@@ -241,7 +241,7 @@ public class TransactionManagerImplTest {
             Mockito.anyString(),
             Mockito.anyString(),
             Mockito.anyMap(),
-            Mockito.anyMap(),
+            Mockito.eq(null),
             Mockito.eq(true)))
         .thenAnswer(
             invocation ->
@@ -324,7 +324,7 @@ public class TransactionManagerImplTest {
             Mockito.anyString(),
             Mockito.anyString(),
             Mockito.anyMap(),
-            Mockito.anyMap(),
+            Mockito.eq(null),
             Mockito.eq(true)))
         .thenAnswer(
             invocation ->

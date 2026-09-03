@@ -27,11 +27,11 @@ import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
 import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.cloud.spanner.SessionClient.SessionConsumer;
-import com.google.cloud.spanner.SessionClient.SessionOption;
 import com.google.cloud.spanner.SpannerException.ResourceNotFoundException;
-import com.google.cloud.spanner.spi.v1.SpannerRpc;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.ChannelPrimeSessionSource;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.Futures;
 import com.google.spanner.v1.BatchWriteResponse;
 import java.time.Clock;
 import java.time.Duration;
@@ -40,6 +40,7 @@ import java.util.BitSet;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -50,12 +51,14 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.annotation.Nullable;
 
 /**
  * {@link DatabaseClient} implementation that uses a single multiplexed session to execute
  * transactions.
  */
-final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionDatabaseClient {
+final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionDatabaseClient
+    implements ChannelPrimeSessionSource {
   /**
    * The maximum number of attempts that the client will try to execute CreateSession for the
    * initial multiplexed session. This value is only used for the very first multiplexed session
@@ -188,7 +191,7 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
    */
   private final AtomicInteger numCurrentSingleUseTransactions = new AtomicInteger();
 
-  private boolean isClosed;
+  private volatile boolean isClosed;
 
   /** The duration before we try to replace the multiplexed session. The default is 7 days. */
   private final Duration sessionExpirationDuration;
@@ -221,18 +224,6 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
   private final AtomicLong numSessionsAcquired = new AtomicLong();
 
   private final AtomicLong numSessionsReleased = new AtomicLong();
-
-  /** Source of the {@link #channelPrimeOwnerTicket owner tickets} of all clients of the process. */
-  private static final AtomicLong CHANNEL_PRIME_OWNER_TICKETS = new AtomicLong();
-
-  /**
-   * The ticket under which this client owns its database for priming channels that the dynamic
-   * channel pool adds during scale-up. The ticket is registered with the rpc before the first
-   * multiplexed session is created, carried by every CreateSession of this client, and unregistered
-   * when this client is closed, so a session that arrives after the close is never used for
-   * priming.
-   */
-  private final long channelPrimeOwnerTicket = CHANNEL_PRIME_OWNER_TICKETS.incrementAndGet();
 
   MultiplexedSessionDatabaseClient(SessionClient sessionClient) {
     this(sessionClient, Clock.systemUTC());
@@ -267,12 +258,14 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
     final SettableApiFuture<SessionReference> initialSessionReferenceFuture =
         SettableApiFuture.create();
     this.multiplexedSessionReference = new AtomicReference<>(initialSessionReferenceFuture);
-    // Register as the owner of the database before the first CreateSession, so that session and
-    // every refreshed session can be attributed to this client for channel priming.
-    spanner
-        .getRpc()
-        .registerChannelPrimeOwner(
-            sessionClient.getDatabaseId().getName(), channelPrimeOwnerTicket);
+    // This escape is safe: resourceNotFoundException is initialized at declaration,
+    // multiplexedSessionReference above, and isClosed is volatile: the fields
+    // getChannelPrimeSessionName() reads.
+    // Registration adds to a CopyOnWriteArrayList under a lock, whose volatile array write happens
+    // before a primer reads that array, so this is safe publication, not a racy final-field escape.
+    // Keep registration before the first CreateSession and inside this constructor: clients are
+    // constructed at multiple call sites, and a missed registration would silently disable priming.
+    spanner.getRpc().registerChannelPrimeSessionSource(this);
 
     try {
       Duration waitDuration =
@@ -287,16 +280,11 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
       // The constructor did not complete, so the caller never gets a reference to this client and
       // will never close it. Undo everything that was registered above: mark the client closed so
       // that a CreateSession that is still in flight neither starts the maintainer nor is handed
-      // to a waiter, stop the maintainer, drop the channel prime owner ticket so that a late
-      // session is not recorded for priming, and release the shared channel usage.
+      // to a waiter, stop the maintainer, unregister the prime-session source, and release the
+      // shared channel usage.
       close();
       throw t;
     }
-  }
-
-  /** The options of every CreateSession of this client: they carry the owner ticket. */
-  private Map<SpannerRpc.Option, ?> createSessionOptions() {
-    return SessionClient.optionMap(SessionOption.channelPrimeOwner(channelPrimeOwnerTicket));
   }
 
   private void asyncCreateMultiplexedSession(
@@ -351,8 +339,7 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
               asyncCreateMultiplexedSession(future, remainingAttempts - 1);
             }
           }
-        },
-        createSessionOptions());
+        });
   }
 
   private void maybeWaitForSessionCreation(
@@ -427,6 +414,27 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
     return this.numSessionsReleased;
   }
 
+  @Override
+  @Nullable
+  public String getChannelPrimeSessionName() {
+    // This client already uses the returned session as multiplexed for all real traffic. If the
+    // backend failed to honor the multiplexed request flag, withholding it from the primer would
+    // not make the client safe.
+    if (isClosed || !isValid()) {
+      return null;
+    }
+    ApiFuture<SessionReference> future = multiplexedSessionReference.get();
+    if (!future.isDone() || future.isCancelled()) {
+      return null;
+    }
+    try {
+      SessionReference session = Futures.getDone(future);
+      return isClosed || !isValid() ? null : session.getName();
+    } catch (CancellationException | ExecutionException e) {
+      return null;
+    }
+  }
+
   void close() {
     boolean releaseChannelUsage = false;
     synchronized (this) {
@@ -437,13 +445,9 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
       }
     }
     if (releaseChannelUsage) {
-      // The multiplexed session is no longer maintained, so it must no longer be used for priming
-      // dynamic channel pool channels, and a CreateSession of this client that is still in flight
-      // must not register its session either.
-      spanner
-          .getRpc()
-          .unregisterChannelPrimeOwner(
-              sessionClient.getDatabaseId().getName(), channelPrimeOwnerTicket);
+      // The multiplexed session is no longer maintained, so this client must no longer be asked
+      // for a session when priming dynamic channel pool channels.
+      spanner.getRpc().unregisterChannelPrimeSessionSource(this);
       synchronized (CHANNEL_USAGE) {
         SharedChannelUsage sharedChannelUsage = CHANNEL_USAGE.get(this.spanner);
         if (sharedChannelUsage != null) {
@@ -722,17 +726,19 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
             new SessionConsumer() {
               @Override
               public void onSessionReady(SessionImpl session) {
-                if (isClientClosed()) {
-                  // The client was closed while the session was being refreshed. The refreshed
-                  // session belongs to a client that no longer exists and is ignored.
-                  return;
+                synchronized (MultiplexedSessionDatabaseClient.this) {
+                  if (isClosed) {
+                    // The client was closed while the session was being refreshed. The refreshed
+                    // session belongs to a client that no longer exists and is ignored.
+                    return;
+                  }
+                  multiplexedSessionReference.set(
+                      ApiFutures.immediateFuture(session.getSessionReference()));
+                  expirationDate.set(
+                      clock
+                          .instant()
+                          .plus(MultiplexedSessionDatabaseClient.this.sessionExpirationDuration));
                 }
-                multiplexedSessionReference.set(
-                    ApiFutures.immediateFuture(session.getSessionReference()));
-                expirationDate.set(
-                    clock
-                        .instant()
-                        .plus(MultiplexedSessionDatabaseClient.this.sessionExpirationDuration));
               }
 
               @Override
@@ -741,8 +747,7 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
                 // we continue to use the session that has passed its expiration date for now, and
                 // that a new attempt at creating a new session will be done in 10 minutes from now.
               }
-            },
-            createSessionOptions());
+            });
       }
     }
   }

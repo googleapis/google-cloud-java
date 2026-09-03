@@ -298,9 +298,8 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       checkClosed();
       String clientId = null;
       if (dbClients.containsKey(db) && !dbClients.get(db).isValid()) {
-        // Close the invalidated client and remove it. Closing it unregisters it as the owner of
-        // its database for priming dynamic channel pool channels, because its multiplexed session
-        // is no longer maintained.
+        // Close the invalidated client and remove it. Closing it unregisters its multiplexed
+        // session source from the dynamic channel pool primer.
         dbClients.get(db).closeAsync(new ClosedException());
         clientId = dbClients.get(db).clientId;
         dbClients.remove(db);

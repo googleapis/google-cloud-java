@@ -21,9 +21,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
-import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -134,7 +132,7 @@ public class SpannerImplTest {
   }
 
   @Test
-  public void invalidatedDatabaseClientUnregistersItsChannelPrimeOwnerTicket() {
+  public void invalidatedDatabaseClientUnregistersItsChannelPrimeSessionSource() {
     DatabaseId db = DatabaseId.of("projects/p1/instances/i1/databases/d1");
     Mockito.when(spannerOptions.getTransportOptions())
         .thenReturn(GrpcTransportOptions.newBuilder().build());
@@ -159,29 +157,28 @@ public class SpannerImplTest {
         };
     try {
       DatabaseClient first = spanner.getDatabaseClient(db);
-      ArgumentCaptor<Long> tickets = ArgumentCaptor.forClass(Long.class);
-      verify(rpc).registerChannelPrimeOwner(eq(db.getName()), tickets.capture());
-      long firstTicket = tickets.getValue();
-      verify(rpc, never()).unregisterChannelPrimeOwner(anyString(), anyLong());
+      ArgumentCaptor<SpannerRpc.ChannelPrimeSessionSource> sources =
+          ArgumentCaptor.forClass(SpannerRpc.ChannelPrimeSessionSource.class);
+      verify(rpc).registerChannelPrimeSessionSource(sources.capture());
+      SpannerRpc.ChannelPrimeSessionSource firstSource = sources.getValue();
+      verify(rpc, never()).unregisterChannelPrimeSessionSource(firstSource);
 
-      // The invalidated client is replaced. Closing it unregisters its ticket, and the
-      // replacement registers a new ticket of its own.
       valid.set(false);
       DatabaseClient second = spanner.getDatabaseClient(db);
 
       assertThat(second).isNotSameInstanceAs(first);
-      verify(rpc).unregisterChannelPrimeOwner(db.getName(), firstTicket);
-      verify(rpc, times(2)).registerChannelPrimeOwner(eq(db.getName()), tickets.capture());
-      long secondTicket = tickets.getValue();
-      assertThat(secondTicket).isNotEqualTo(firstTicket);
-      verify(rpc, never()).unregisterChannelPrimeOwner(db.getName(), secondTicket);
+      verify(rpc).unregisterChannelPrimeSessionSource(firstSource);
+      verify(rpc, times(2)).registerChannelPrimeSessionSource(sources.capture());
+      SpannerRpc.ChannelPrimeSessionSource secondSource = sources.getValue();
+      assertThat(secondSource).isNotSameInstanceAs(firstSource);
+      verify(rpc, never()).unregisterChannelPrimeSessionSource(secondSource);
     } finally {
       spanner.close();
     }
   }
 
   @Test
-  public void closeUnregistersChannelPrimeOwnerTicketOfEveryDatabaseClient() {
+  public void closeUnregistersChannelPrimeSessionSourceOfEveryDatabaseClient() {
     DatabaseId db1 = DatabaseId.of("projects/p1/instances/i1/databases/d1");
     DatabaseId db2 = DatabaseId.of("projects/p1/instances/i1/databases/d2");
     Mockito.when(spannerOptions.getTransportOptions())
@@ -191,17 +188,16 @@ public class SpannerImplTest {
     SpannerImpl spanner = new SpannerImpl(rpc, spannerOptions);
     spanner.getDatabaseClient(db1);
     spanner.getDatabaseClient(db2);
-    ArgumentCaptor<Long> ticket1 = ArgumentCaptor.forClass(Long.class);
-    ArgumentCaptor<Long> ticket2 = ArgumentCaptor.forClass(Long.class);
-    verify(rpc).registerChannelPrimeOwner(eq(db1.getName()), ticket1.capture());
-    verify(rpc).registerChannelPrimeOwner(eq(db2.getName()), ticket2.capture());
-    verify(rpc, never()).unregisterChannelPrimeOwner(anyString(), anyLong());
+    ArgumentCaptor<SpannerRpc.ChannelPrimeSessionSource> sources =
+        ArgumentCaptor.forClass(SpannerRpc.ChannelPrimeSessionSource.class);
+    verify(rpc, times(2)).registerChannelPrimeSessionSource(sources.capture());
+    verify(rpc, never()).unregisterChannelPrimeSessionSource(any());
 
     spanner.close();
 
-    verify(rpc).unregisterChannelPrimeOwner(db1.getName(), ticket1.getValue());
-    verify(rpc).unregisterChannelPrimeOwner(db2.getName(), ticket2.getValue());
-    verify(rpc, times(2)).unregisterChannelPrimeOwner(anyString(), anyLong());
+    verify(rpc).unregisterChannelPrimeSessionSource(sources.getAllValues().get(0));
+    verify(rpc).unregisterChannelPrimeSessionSource(sources.getAllValues().get(1));
+    verify(rpc, times(2)).unregisterChannelPrimeSessionSource(any());
   }
 
   @Test

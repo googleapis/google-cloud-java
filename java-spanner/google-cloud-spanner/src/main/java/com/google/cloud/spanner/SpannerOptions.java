@@ -213,9 +213,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
    * <p>Channels that the pool adds during scale-up are primed with {@code SELECT 1} on a
    * multiplexed session before they are published. The primer is registered by the Spanner client
    * when dynamic channel pooling is enabled, unless these options already contain a primer. Priming
-   * uses the most recently created multiplexed session of any database client of the {@link
-   * Spanner} instance; a session that turns out to be invalid is dropped and the next most recent
-   * one is used.
+   * rotates across available multiplexed sessions owned by live database clients of the {@link
+   * Spanner} instance. Closed or invalid database clients do not supply sessions for priming.
    *
    * @return a new {@link GcpChannelPoolOptions} instance with Spanner defaults
    */
@@ -275,6 +274,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
     if (userOptions.getCleanupInterval() == null || userOptions.getCleanupInterval().isZero()) {
       merged.setCleanupInterval(defaults.getCleanupInterval());
+    }
+    if (userOptions.getChannelPrimeTimeout() == null
+        || userOptions.getChannelPrimeTimeout().isZero()) {
+      merged.setChannelPrimeTimeout(defaults.getChannelPrimeTimeout());
+    }
+    if (userOptions.getChannelPrimeMaxAttempts() <= 0) {
+      merged.setChannelPrimeMaxAttempts(defaults.getChannelPrimeMaxAttempts());
     }
     return merged.build();
   }
