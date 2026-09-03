@@ -266,6 +266,9 @@ public class GapicSpannerRpc implements SpannerRpc {
 
   private static final String API_FILE = "grpc-gcp-apiconfig.json";
 
+  private static final CallOptions.Key<Boolean> BASE_CONTEXT_MARKER_KEY =
+      CallOptions.Key.create("BASE_CONTEXT_MARKER_KEY");
+
   private final RequestIdCreator requestIdCreator = new RequestIdCreatorImpl();
   private boolean rpcIsClosed;
   private final SpannerStub spannerStub;
@@ -284,6 +287,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   private final String projectName;
   private final SpannerMetadataProvider metadataProvider;
   private final CallCredentialsProvider callCredentialsProvider;
+  private final CallContextConfigurator callContextConfigurator;
   private final String compressorName;
   private final Duration waitTimeout =
       systemProperty(PROPERTY_TIMEOUT_SECONDS, DEFAULT_TIMEOUT_SECONDS);
@@ -360,6 +364,7 @@ public class GapicSpannerRpc implements SpannerRpc {
             headerProviderWithUserAgent.getHeaders(),
             internalHeaderProviderBuilder.getResourceHeaderKey());
     this.callCredentialsProvider = options.getCallCredentialsProvider();
+    this.callContextConfigurator = options.getCallContextConfigurator();
     this.compressorName = options.getCompressorName();
     this.leaderAwareRoutingEnabled = options.isLeaderAwareRoutingEnabled();
     this.endToEndTracingEnabled = options.isEndToEndTracingEnabled();
@@ -2009,7 +2014,7 @@ public class GapicSpannerRpc implements SpannerRpc {
             requestId,
             request.getSession(),
             request,
-            SpannerGrpc.getReadMethod(),
+            SpannerGrpc.getStreamingReadMethod(),
             routeToLeader);
     SpannerResponseObserver responseObserver = new SpannerResponseObserver(consumer);
     spannerStub.streamingReadCallable().call(request, responseObserver, context);
@@ -2346,6 +2351,24 @@ public class GapicSpannerRpc implements SpannerRpc {
       MethodDescriptor<ReqT, RespT> method,
       boolean routeToLeader) {
     GrpcCallContext context = this.baseGrpcCallContext;
+    if (callCredentialsProvider != null) {
+      CallCredentials callCredentials = callCredentialsProvider.getCallCredentials();
+      if (callCredentials != null) {
+        context =
+            context.withCallOptions(context.getCallOptions().withCallCredentials(callCredentials));
+      }
+    }
+
+    // 1. Sequentially evaluate client-level and thread-level configurators.
+    // The thread-level configurator receives the context after client-level modifications,
+    // allowing thread-scoped settings to override or extend client defaults.
+    context = applyConfigurators(context, request, method);
+
+    // 2. Attach Spanner-internal routing options and headers to the final context.
+    // Doing this AFTER configurator evaluation guarantees that internal options (request ID,
+    // channel affinity) cannot be wiped out by configurators returning
+    // GrpcCallContext.createDefault(),
+    // and internal headers (resource prefix, route-to-leader) cannot be duplicated.
     Long affinity = options == null ? null : Option.CHANNEL_HINT.getLong(options);
     ChannelAffinityRef channelAffinityRef =
         options == null ? null : Option.CHANNEL_ID_AFFINITY.getChannelAffinityRef(options);
@@ -2387,19 +2410,78 @@ public class GapicSpannerRpc implements SpannerRpc {
     if (routeToLeader && leaderAwareRoutingEnabled) {
       context = context.withExtraHeaders(metadataProvider.newRouteToLeaderHeader());
     }
-    if (callCredentialsProvider != null) {
-      CallCredentials callCredentials = callCredentialsProvider.getCallCredentials();
-      if (callCredentials != null) {
-        context =
-            context.withCallOptions(context.getCallOptions().withCallCredentials(callCredentials));
-      }
+    if (compressorName != null && context.getCallOptions().getCompressor() == null) {
+      context = context.withCallOptions(context.getCallOptions().withCompression(compressorName));
     }
-    CallContextConfigurator configurator = SpannerOptions.CALL_CONTEXT_CONFIGURATOR_KEY.get();
-    ApiCallContext apiCallContextFromContext = null;
-    if (configurator != null) {
-      apiCallContextFromContext = configurator.configure(context, request, method);
+    return context;
+  }
+
+  private <ReqT, RespT> GrpcCallContext applyConfigurators(
+      GrpcCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+    if (method == null) {
+      return context;
     }
-    return (GrpcCallContext) context.merge(apiCallContextFromContext);
+    CallContextConfigurator threadConfigurator = SpannerOptions.CALL_CONTEXT_CONFIGURATOR_KEY.get();
+    if (this.callContextConfigurator == null && threadConfigurator == null) {
+      return context;
+    }
+    GrpcCallContext callContext =
+        context.withCallOptions(
+            context.getCallOptions().withOption(BASE_CONTEXT_MARKER_KEY, Boolean.TRUE));
+    if (this.callContextConfigurator != null) {
+      callContext =
+          applySingleConfigurator(callContext, this.callContextConfigurator, request, method);
+    }
+    if (threadConfigurator != null) {
+      callContext = applySingleConfigurator(callContext, threadConfigurator, request, method);
+    }
+    return callContext;
+  }
+
+  private static <ReqT, RespT> GrpcCallContext applySingleConfigurator(
+      GrpcCallContext base,
+      CallContextConfigurator configurator,
+      ReqT request,
+      MethodDescriptor<ReqT, RespT> method) {
+    ApiCallContext configured;
+    try {
+      configured = configurator.configure(base, request, method);
+    } catch (Throwable t) {
+      throw SpannerExceptionFactory.asSpannerException(t);
+    }
+    if (configured == null || configured == base) {
+      return base;
+    }
+    if (!(configured instanceof GrpcCallContext)) {
+      throw new IllegalArgumentException(
+          "context must be an instance of GrpcCallContext, but found "
+              + configured.getClass().getName());
+    }
+    GrpcCallContext overlay = (GrpcCallContext) configured;
+
+    // Check whether overlay was derived from base (retaining BASE_CONTEXT_MARKER_KEY)
+    // or is a standalone delta context (such as one created via GrpcCallContext.createDefault()).
+    boolean isDerived =
+        Boolean.TRUE.equals(overlay.getCallOptions().getOption(BASE_CONTEXT_MARKER_KEY));
+    if (isDerived) {
+      return overlay;
+    }
+
+    // Overlay is a standalone delta context. Merge it onto base.
+    GrpcCallContext merged = (GrpcCallContext) base.merge(overlay);
+
+    // If the delta context did not set custom CallOptions, GAX's merge would replace base's
+    // CallOptions with CallOptions.DEFAULT. In that case, preserve base's CallOptions.
+    if (overlay.getCallOptions().equals(CallOptions.DEFAULT)
+        && !base.getCallOptions().equals(CallOptions.DEFAULT)) {
+      merged = merged.withCallOptions(base.getCallOptions());
+    } else if (!Boolean.TRUE.equals(merged.getCallOptions().getOption(BASE_CONTEXT_MARKER_KEY))) {
+      merged =
+          merged.withCallOptions(
+              merged.getCallOptions().withOption(BASE_CONTEXT_MARKER_KEY, Boolean.TRUE));
+    }
+
+    return merged;
   }
 
   @Override

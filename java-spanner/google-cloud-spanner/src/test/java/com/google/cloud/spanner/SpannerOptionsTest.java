@@ -41,6 +41,7 @@ import com.google.cloud.ServiceOptions;
 import com.google.cloud.TransportOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.spanner.SpannerOptions.Builder.DefaultReadWriteTransactionOptions;
+import com.google.cloud.spanner.SpannerOptions.CallContextConfigurator;
 import com.google.cloud.spanner.SpannerOptions.FixedCloseableExecutorProvider;
 import com.google.cloud.spanner.SpannerOptions.SpannerCallContextTimeoutConfigurator;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
@@ -67,6 +68,7 @@ import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.TransactionOptions.IsolationLevel;
+import io.grpc.MethodDescriptor;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -1597,5 +1599,38 @@ public class SpannerOptionsTest {
     assertThrows(
         IllegalArgumentException.class,
         () -> SpannerOptions.newBuilder().setGrpcKeepAliveTimeout(Duration.ofSeconds(-10)));
+  }
+
+  @Test
+  public void testCallContextConfigurator() {
+    SpannerOptions defaultOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertNull(defaultOptions.getCallContextConfigurator());
+
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return null;
+          }
+        };
+    SpannerOptions customOptions =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setCallContextConfigurator(configurator)
+            .build();
+    assertSame(configurator, customOptions.getCallContextConfigurator());
+
+    SpannerOptions optionsFromBuilder = customOptions.toBuilder().build();
+    assertSame(configurator, optionsFromBuilder.getCallContextConfigurator());
+
+    SpannerOptions clearedOptions =
+        customOptions.toBuilder().setCallContextConfigurator(null).build();
+    assertNull(clearedOptions.getCallContextConfigurator());
   }
 }
