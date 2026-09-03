@@ -17,6 +17,7 @@
 package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
+import com.google.api.core.BetaApi;
 import com.google.cloud.Timestamp;
 import com.google.firestore.v1.RunQueryRequest;
 import com.google.firestore.v1.StructuredQuery;
@@ -64,7 +65,19 @@ public final class VectorQuery extends StreamableQuery<VectorQuerySnapshot> {
   @Override
   @Nonnull
   public ApiFuture<VectorQuerySnapshot> get() {
-    return get(null, null);
+    return get(null, null, null, null);
+  }
+
+  /**
+   * Executes the query with execution options and returns the results as {@link QuerySnapshot}.
+   *
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the results of the VectorQuery.
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<VectorQuerySnapshot> get(@Nonnull FirestoreExecutionOptions executionOptions) {
+    return get(null, null, executionOptions.getExplainOptions(), executionOptions);
   }
 
   /**
@@ -78,7 +91,36 @@ public final class VectorQuery extends StreamableQuery<VectorQuerySnapshot> {
   @Override
   @Nonnull
   public ApiFuture<ExplainResults<VectorQuerySnapshot>> explain(ExplainOptions options) {
-    return super.explain(options);
+    return super.explain(options, null);
+  }
+
+  /**
+   * Plans and optionally executes this VectorQuery with execution options.
+   *
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the planner information, statistics from the
+   *     query execution (if any), and the query results (if any).
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<ExplainResults<VectorQuerySnapshot>> explain(
+      @Nonnull FirestoreExecutionOptions executionOptions) {
+    return super.explain(executionOptions);
+  }
+
+  /**
+   * Plans and optionally executes this VectorQuery with explain options and execution options.
+   *
+   * @param options The options for explain.
+   * @param executionOptions Options for executing the request.
+   * @return An ApiFuture that will be resolved with the planner information, statistics from the
+   *     query execution (if any), and the query results (if any).
+   */
+  @BetaApi
+  @Nonnull
+  public ApiFuture<ExplainResults<VectorQuerySnapshot>> explain(
+      @Nonnull ExplainOptions options, @Nonnull FirestoreExecutionOptions executionOptions) {
+    return super.explain(options, executionOptions);
   }
 
   /**
