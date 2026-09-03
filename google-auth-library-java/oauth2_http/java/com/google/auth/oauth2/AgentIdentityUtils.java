@@ -57,7 +57,7 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/** Utility class for Agent Identity token binding in Cloud Run. */
+/** Utility class for Agent Identity runtime certificate discovery and token binding. */
 @InternalApi
 public final class AgentIdentityUtils {
 
@@ -121,7 +121,7 @@ public final class AgentIdentityUtils {
   private static final long CERT_KEY_MATCH_RETRY_INTERVAL_MS = 100;
 
   // Polling configuration for initial container startup credential file readiness.
-  // Matches Python google-auth implementation (_agent_identity_utils.py) for Cloud Run
+  // Matches Python google-auth implementation (_agent_identity_utils.py) for initial
   // asynchronous credential delivery (50 * 100ms + 50 * 500ms = 30 seconds total).
   private static final int FAST_POLL_CYCLES = 50;
 
