@@ -313,6 +313,87 @@ class ResumableUploadCallableImplTest {
     assertThat(stream.closed).isTrue();
   }
 
+  @Test
+  void testUploadCallable_withApiCallContext_mergesAndPassesContext() throws Exception {
+    stubStartSession("https://upload.url/context");
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done-ctx")));
+
+    ApiCallContext customContext =
+        FakeCallContext.createDefault()
+            .withExtraHeaders(
+                java.util.Collections.singletonMap(
+                    "X-Custom", java.util.Collections.singletonList("val")));
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("data"), customContext, null);
+    assertThat(future.get()).isEqualTo("done-ctx");
+
+    ArgumentCaptor<ApiCallContext> startContextCaptor =
+        ArgumentCaptor.forClass(ApiCallContext.class);
+    verify(mockStartCallable).futureCall(any(), startContextCaptor.capture());
+    assertThat(startContextCaptor.getValue()).isNotNull();
+    assertThat(((FakeCallContext) startContextCaptor.getValue()).getExtraHeaders())
+        .containsKey("X-Custom");
+
+    ArgumentCaptor<ApiCallContext> chunkContextCaptor =
+        ArgumentCaptor.forClass(ApiCallContext.class);
+    verify(mockChunkCallable).futureCall(any(), chunkContextCaptor.capture());
+    assertThat(chunkContextCaptor.getValue()).isNotNull();
+    assertThat(((FakeCallContext) chunkContextCaptor.getValue()).getExtraHeaders())
+        .doesNotContainKey("X-Custom");
+  }
+
+  @Test
+  void testUploadCallable_withSettings_mergesAndAppliesSettings() throws Exception {
+    stubStartSession("https://upload.url/settings");
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done-settings")));
+
+    ResumableUploadCallSettings customSettings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(16).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("data"), null, customSettings);
+    assertThat(future.get()).isEqualTo("done-settings");
+  }
+
+  @Test
+  void testUploadCallable_withSettings_delegatesWithNullContext() throws Exception {
+    stubStartSession("https://upload.url/settings-convenience");
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(
+            ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done-settings-conv")));
+
+    ResumableUploadCallSettings customSettings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(16).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("data"), customSettings);
+    assertThat(future.get()).isEqualTo("done-settings-conv");
+  }
+
+  @Test
+  void testUploadCallable_withContextAndSettings_appliesBoth() throws Exception {
+    stubStartSession("https://upload.url/ctx-settings");
+    when(mockChunkCallable.futureCall(any(ChunkUploadRequest.class), any()))
+        .thenReturn(ApiFutures.immediateFuture(ChunkUploadResponse.create(true, "done-both")));
+
+    FakeCallContext customContext = FakeCallContext.createDefault();
+    ResumableUploadCallSettings customSettings =
+        ResumableUploadCallSettings.newBuilder().setChunkSize(16).build();
+
+    ResumableUploadFuture<String> future =
+        callable.futureCall("resource-path", streamOf("data"), customContext, customSettings);
+    assertThat(future.get()).isEqualTo("done-both");
+  }
+
+  @Test
+  void testResumeCall_throwsUnsupportedOperationException() {
+    assertThrows(
+        UnsupportedOperationException.class,
+        () -> callable.resumeCall("https://upload.url/session", streamOf("data"), null));
+  }
+
   private void stubStartSession(String uploadUrl) {
     when(mockStartCallable.futureCall(any(), any()))
         .thenReturn(
