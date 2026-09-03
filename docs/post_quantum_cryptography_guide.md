@@ -27,20 +27,21 @@ Enabling PQC in Google Cloud Java client libraries requires **zero changes to ap
 ## 2. HTTP/JSON Transport Architecture & Defaults
 
 ### 2.1 Minimum Required Versions
-PQC enablement for HTTP/JSON transport requires compatible versions of `conscrypt-openjdk-uber`, `gax-httpjson`, and `google-http-client`:
+We recommend using Google Cloud's **`libraries-bom` (version `26.86.0+`)** to guarantee that dependencies have compatible, required versions.
+
+If managing dependencies directly, ensure the following minimum versions are present:
 
 | Library | Minimum Version | Role |
 | :--- | :--- | :--- |
-| **`libraries-bom`** | `26.86.0+` | **Recommended**. Central BOM managing compatible versions across all Google Cloud client libraries. |
 | **`gax-httpjson`** | `2.83.0+` | Automatically configures Conscrypt as the TLS security provider and sets PQC named groups. |
 | **`google-http-client`** | `2.2.0+` | Provides transport-level security provider registration on `NetHttpTransport.Builder`. |
 | **`conscrypt-openjdk-uber`** | `2.6.0+` *(2.6.2+ recommended)* | Provides Google's BoringSSL native C engine and TLS 1.3 PQC hybrid named groups. |
 
 ### 2.2 Why Conscrypt?
-Built-in Java Development Kits (Java 8 through Java 26) do not support Post-Quantum Cryptography in their default Java Secure Socket Extension provider (`SunJSSE`). While native ML-KEM support is in development for future Java releases (**JDK 27+** via [JEP 496](https://openjdk.org/jeps/496)), requiring all production enterprise workloads to immediately upgrade to bleeding-edge JDK versions is impractical.
+Built-in Java Development Kits (Java 8 - 26) do not support Post-Quantum Cryptography in their default Java Secure Socket Extension provider (`SunJSSE`). While native ML-KEM support is in development for future Java releases (**JDK 27+** via [JEP 496](https://openjdk.org/jeps/496)), requiring all production enterprise workloads to immediately upgrade to bleeding-edge JDK versions is impractical.
 
-To bridge this gap, Google Cloud Java client libraries use **Conscrypt** (`conscrypt-openjdk-uber`) as the default security provider for HTTP/JSON transport:
-1. **Immediate PQC Availability Across Java 8+**: Conscrypt embeds Google's open-source BoringSSL cryptographic engine via Java Native Interface (JNI). This enables quantum-resistant TLS 1.3 handshakes on existing production runtimes (Java 8, 11, 17, 21, and 25).
+To bridge until users can upgrade to JDK 27+, Google Cloud Java client libraries use **Conscrypt** (`conscrypt-openjdk-uber`) as the default security provider for HTTP/JSON transport:
+1. **Immediate PQC Availability Across Java 8 - 26**: Conscrypt embeds Google's open-source BoringSSL cryptographic engine via Java Native Interface (JNI). This enables quantum-resistant TLS 1.3 handshakes on existing production runtimes.
 2. **Zero Code Changes**: When `gax-httpjson` detects compatible Conscrypt libraries on the classpath, it automatically configures the HTTPS transport without requiring manual SSLContext setup.
 3. **High Performance**: BoringSSL contains hardware-accelerated assembly optimizations for modern CPU architectures (x86_64 and ARM64).
 
@@ -50,19 +51,15 @@ The Google Cloud Java SDK scopes Conscrypt strictly to Google Cloud Java SDK req
 - `gax-httpjson` configures the Conscrypt `Provider` instance directly on the client's internal `NetHttpTransport.Builder` rather than installing it into the global JVM security registry (`java.security.Security.addProvider(...)`).
 - As a result, enabling Conscrypt for Google Cloud calls **does not alter the TLS behavior, cipher suites, or security providers of any other HTTP clients or libraries** in your application (e.g., Apache HttpClient, Spring WebClient, OkHttp, or direct `HttpsURLConnection` calls). Your existing JVM-wide cryptographic configurations remain completely undisturbed.
 
-### 2.4 How Client and Google Cloud Endpoints Negotiate PQC
-When a Google Cloud HTTP/JSON client initiates a connection, it advertises supported key exchange groups in preference order:
+### 2.4 Supported Key Exchange Algorithms & Preference Order
+HTTP/JSON clients advertise supported key exchange groups in the following preference order:
 1. `X25519MLKEM768` *(Hybrid Post-Quantum Key Exchange)*
 2. `MLKEM1024` *(Pure Post-Quantum Key Exchange)*
 3. `X25519` *(Classical ECDH)*
 4. `secp256r1` *(Classical ECDH)*
 5. `secp384r1` *(Classical ECDH)*
 
-During the TLS 1.3 handshake:
-- **PQC-Enabled Google Cloud Endpoints**: Google Cloud frontends recognize and select `X25519MLKEM768`, establishing a quantum-resistant TLS 1.3 session.
-- **Non-PQC Endpoints / Middleboxes**: If a server or intermediate network proxy does not support post-quantum cryptography, it ignores unrecognized post-quantum identifiers and standard TLS 1.3 negotiation selects the first mutually supported classical group (`X25519`).
-- **Graceful Client Fallback**: If Conscrypt native libraries cannot load on the client host, `gax-httpjson` catches the linkage error and defaults to the environment's configured security provider (standard JDK `SunJSSE`), safely negotiating classical TLS 1.3 without failing application requests.
-
+Because Google Cloud servers support PQC algorithms, `X25519MLKEM768` will typically be selected. If an intermediate proxy or non-PQC endpoint does not support post-quantum cryptography, standard TLS 1.3 negotiation selects the first mutually supported classical group (`X25519`).
 
 ---
 
@@ -80,36 +77,8 @@ One possible solution for this is to use Google Cloud's `libraries-bom` (version
 
 ---
 
-## 4. Classical Fallback: Mechanics, Implications & Concerns
+## 4. Classical Fallback
 
-Google Cloud Java client libraries follow a deliberate architectural principle: **prefer service availability over hard failures**.
-
-### 4.1 Fallback Mechanics: Availability Over Hard Failures
-If Conscrypt native libraries cannot load on the host platform—due to an unsupported operating system, missing `glibc`, permission constraints, or file extraction limits—`gax-httpjson` catches the exception and logs a debug message at `Level.FINE`:
-```text
-FINE: Conscrypt native library unavailable. Falling back to default JDK TLS.
-```
-The client then proceeds to establish standard classical TLS using the host JVM's configured security provider (by default `SunJSSE`). 
-
-**Why does it behave this way?**
-To protect production workloads. Updating dependencies or migrating container images should not cause broken API calls or catastrophic application outages simply because a native optimization library could not load on a given runtime.
-
-### 4.2 Common Scenarios Triggering Fallback
-Several operational conditions can trigger a fallback to classical TLS:
-- **Alpine Linux (`musl` libc)**:
-  Precompiled Conscrypt native binaries require `glibc` and cannot load on Alpine Linux or other `musl`-based container distributions (e.g., `eclipse-temurin:17-alpine`). On these platforms, Conscrypt native loading fails with an `UnsatisfiedLinkError`, and the client automatically falls back to classical TLS (`X25519`). Workloads requiring post-quantum hybrid key exchange should use a `glibc`-compatible base image (such as Debian, Ubuntu, or Wolfi).
-- **Hardened Filesystems (`noexec /tmp`)**:
-  In security-hardened container or Kubernetes environments where `/tmp` is mounted with the `noexec` flag or the filesystem is strictly read-only, the JVM cannot load native shared libraries extracted to `/tmp`, resulting in an `UnsatisfiedLinkError` (`failed to map segment from shared object: Operation not permitted`). The client safely falls back to classical TLS. If PQC is required in these environments, configure an executable working directory using JVM system properties (e.g., `-Dorg.conscrypt.native.workdir=/path/to/executable/dir`).
-- **Non-PQC Endpoints & Middleboxes**:
-  If a server endpoint or an intermediate network proxy does not support post-quantum cryptography, standard TLS 1.3 negotiation naturally selects the first mutually supported classical algorithm (`X25519`).
-
-### 4.3 Security & Operational Implications
-When fallback occurs, understand what this means for your workload:
-- **Application Availability (Preserved)**: Requests continue to succeed normally. No exceptions or errors are raised to application code.
-- **Security Baseline (Preserved)**: Traffic remains fully encrypted with standard classical TLS 1.3 (e.g., ECDHE with AES-GCM), maintaining the standard security posture that Java applications use today.
-- **Post-Quantum Protection (Absent)**: The connection will **not** be protected against future quantum decryption. Encrypted traffic archived by adversaries remains susceptible to future Store-Now, Decrypt-Later (SNDL) attacks.
-
-### 4.4 Regulatory & Compliance Concerns (Silent Fallback Warning)
 > [!WARNING]
 > **Active Verification is Required for Regulatory Mandates**:
 > If your organization operates under strict compliance, governmental, or corporate security mandates requiring Post-Quantum Cryptography today, **you cannot rely solely on the default configuration without verification**.
@@ -117,6 +86,24 @@ When fallback occurs, understand what this means for your workload:
 > Because fallback to classical TLS is silent and non-breaking by design, an unexpected environment change (such as switching base container images to Alpine or changing filesystem mount permissions) could downgrade your connections from hybrid PQC to classical TLS **without throwing exceptions or failing requests**.
 >
 > If PQC is a mandatory requirement for your workload, you must implement automated verification in your CI/CD pipelines or startup health checks (see **Section 5**).
+
+### 4.1 Security & Operational Implications
+When fallback occurs:
+- **Application Availability (Preserved)**: Requests continue to succeed normally. No exceptions or errors are raised to application code.
+- **Security Baseline (Preserved)**: Traffic remains fully encrypted with standard classical TLS 1.3 (e.g., ECDHE with AES-GCM), maintaining the standard security posture that Java applications use today.
+- **Post-Quantum Protection (Absent)**: The connection will **not** be protected against future quantum decryption. Encrypted traffic archived by adversaries remains susceptible to future Store-Now, Decrypt-Later (SNDL) attacks.
+
+### 4.2 How to Detect Fallback
+If Conscrypt native libraries fail to load (or are unavailable on the host platform), `gax-httpjson` catches the linkage error, logs a debug message at `Level.FINE`, and defaults to standard JDK TLS (`SunJSSE`):
+```text
+FINE: Conscrypt native library unavailable. Falling back to default JDK TLS.
+```
+See **Section 5** for instructions on enabling internal logging or tracing TLS handshakes to verify whether your application is using PQC.
+
+### 4.3 Common Triggers for Fallback
+- **Alpine Linux (`musl` libc)**: Precompiled Conscrypt binaries require `glibc`. On `musl`-based distributions (e.g., `alpine`), Conscrypt cannot load and falls back to classical TLS. Use a `glibc`-compatible base image (such as Debian, Ubuntu, or Wolfi) for PQC.
+- **Hardened Filesystems (`noexec /tmp`)**: If `/tmp` is mounted with `noexec` or is read-only, Conscrypt cannot load extracted native libraries. To enable PQC, specify an executable directory via `-Dorg.conscrypt.native.workdir=/path/to/executable/dir`.
+- **Non-PQC Endpoints or Middleboxes**: If a network proxy or endpoint does not support PQC, TLS 1.3 negotiation automatically selects classical `X25519`.
 
 ---
 
