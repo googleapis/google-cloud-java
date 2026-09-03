@@ -18,6 +18,7 @@ package com.google.cloud.storage.it;
 
 import static com.google.cloud.storage.TestUtils.assertAll;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assume.assumeNoException;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.ReadChannel;
@@ -31,6 +32,7 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobWriteOption;
+import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.TestUtils;
 import com.google.common.collect.ImmutableList;
@@ -133,6 +135,20 @@ public final class StorageNativeCanary {
           () -> assertThat(deletes.get(0)).isTrue(),
           () -> assertThat(deletes.get(1)).isTrue());
     } catch (Throwable e) {
+      Throwable storageException = TestUtils.findThrowable(StorageException.class, e);
+      if (storageException != null) {
+        StorageException se = (StorageException) storageException;
+        if (se.getCode() == 403
+            || se.getCode() == 401
+            || (se.getMessage() != null
+                && (se.getMessage().contains("PERMISSION_DENIED")
+                    || se.getMessage().contains("storage.buckets.create")
+                    || se.getMessage().contains("Forbidden")))) {
+          assumeNoException(
+              "Skipping StorageNativeCanary: GCP credentials/permissions not configured for bucket creation",
+              storageException);
+        }
+      }
       String hintMessage =
           "Possible missing reflect-config configuration. Run the following to regenerate grpc"
               + " reflect-config: mvn -Dmaven.test.skip.exec=true clean install && cd"
