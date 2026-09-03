@@ -110,6 +110,10 @@ public class BuiltInOpenTelemetryMetricsProviderTest {
 
   private SpannerOptions newTestOptions() {
     return SpannerOptions.newBuilder()
+        // The builder picks up SPANNER_EMULATOR_HOST from the environment, and building with an
+        // emulator host replaces the credentials below with NoCredentials. Built-in metrics are
+        // disabled for a client without credentials, so leave the emulator out of these tests.
+        .setEmulatorHost(null)
         .setProjectId("host-project")
         .setCredentials(
             OAuth2Credentials.create(new AccessToken("test-token", new Date(Long.MAX_VALUE))))

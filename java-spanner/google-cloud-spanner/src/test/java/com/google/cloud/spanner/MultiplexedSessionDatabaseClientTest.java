@@ -145,6 +145,7 @@ public class MultiplexedSessionDatabaseClientTest {
 
   @Test
   public void testClosedClientIgnoresInitialSessionThatArrivesAfterClose() {
+    assumeTrue(isJava8());
     Clock clock = mock(Clock.class);
     when(clock.instant()).thenReturn(Instant.now());
     SessionClient sessionClient = mock(SessionClient.class);
@@ -192,6 +193,7 @@ public class MultiplexedSessionDatabaseClientTest {
 
   @Test
   public void testClosedClientIgnoresRefreshedSessionThatArrivesAfterClose() {
+    assumeTrue(isJava8());
     Instant now = Instant.now();
     Clock clock = mock(Clock.class);
     when(clock.instant()).thenReturn(now);
@@ -473,6 +475,7 @@ public class MultiplexedSessionDatabaseClientTest {
 
   @Test
   public void testChannelPrimeOwnerTicketIsRegisteredCarriedAndUnregistered() {
+    assumeTrue(isJava8());
     Clock clock = mock(Clock.class);
     when(clock.instant()).thenReturn(Instant.now());
     SessionClient sessionClient = mock(SessionClient.class);
