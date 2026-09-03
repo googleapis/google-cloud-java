@@ -63,16 +63,6 @@ During the TLS 1.3 handshake:
 - **Non-PQC Endpoints / Middleboxes**: If a server or intermediate network proxy does not support post-quantum cryptography, it ignores unrecognized post-quantum identifiers and standard TLS 1.3 negotiation selects the first mutually supported classical group (`X25519`).
 - **Graceful Client Fallback**: If Conscrypt native libraries cannot load on the client host, `gax-httpjson` catches the linkage error and defaults to the environment's configured security provider (standard JDK `SunJSSE`), safely negotiating classical TLS 1.3 without failing application requests.
 
-### 2.5 Performance & Network Considerations
-Note the following performance and network considerations:
-- **TLS Handshake Size Overhead**:
-  - Classical `X25519` public keys are very compact: **32 bytes**.
-  - `ML-KEM-768` public keys are **1,184 bytes**, and ciphertexts are **1,088 bytes**.
-  - Consequently, the TLS `ClientHello` and `ServerHello` messages increase by approximately **1 to 2 kilobytes**.
-- **Persistent HTTP Connections (`Keep-Alive`) & API Latency**:
-  - The underlying HTTP transport (`NetHttpTransport` backed by Java's `HttpURLConnection`) supports standard HTTP persistent connections (`Keep-Alive`).
-  - When connections are reused from Java's connection cache, the TLS handshake occurs **only once** when establishing the connection.
-  - Subsequent API requests routed through that active connection reuse the existing TLS session without repeating the handshake. The latency impact of the larger handshake therefore primarily applies to new connection establishment rather than every individual API call. (Note that applications experiencing high connection churn or making infrequent calls outside the keep-alive window will perform new handshakes more often.)
 
 ---
 
