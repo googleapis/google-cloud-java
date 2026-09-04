@@ -22,6 +22,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.google.api.gax.grpc.GrpcCallContext;
 import com.google.api.gax.rpc.ApiCallContext;
@@ -1253,5 +1256,46 @@ public class GrpcResultSetTest {
             });
     assertEquals("DEADLINE_EXCEEDED: stream wait timeout", spannerException.getMessage());
     consumer.onCompleted();
+  }
+
+  @Test
+  public void testIsDataAvailable() {
+    assertFalse(resultSet.isDataAvailable());
+
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.string()))))
+            .addValues(Value.string("val1").toProto())
+            .addValues(Value.string("val2").toProto())
+            .build());
+
+    assertTrue(resultSet.isDataAvailable());
+    assertTrue(resultSet.next());
+    assertEquals("val1", resultSet.getString(0));
+
+    assertTrue(resultSet.isDataAvailable());
+    assertTrue(resultSet.next());
+    assertEquals("val2", resultSet.getString(0));
+
+    assertFalse(resultSet.isDataAvailable());
+    consumer.onCompleted();
+    assertTrue(resultSet.isDataAvailable());
+    assertFalse(resultSet.next());
+  }
+
+  @Test
+  public void testInitiateStreamingDelegation() {
+    @SuppressWarnings("unchecked")
+    AbstractResultSet.CloseableIterator<PartialResultSet> mockStream =
+        mock(AbstractResultSet.CloseableIterator.class);
+    AsyncResultSet.StreamMessageListener listener =
+        mock(AsyncResultSet.StreamMessageListener.class);
+    when(mockStream.initiateStreaming(listener)).thenReturn(true);
+
+    GrpcResultSet streamingResultSet = new GrpcResultSet(mockStream, new NoOpListener());
+    assertTrue(streamingResultSet.initiateStreaming(listener));
+    verify(mockStream).initiateStreaming(listener);
+
+    assertFalse(resultSet.initiateStreaming(listener));
   }
 }
