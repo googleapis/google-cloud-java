@@ -2772,7 +2772,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     // records each instrument once per GrpcOpenTelemetry instance, so wiring two instances onto one
     // channel does not double-count attempt/operation metrics (verified by
     // GrpcMetricsDualWireTest).
-    if (isEnableBuiltInMetrics()) {
+    if (isEnableBuiltInMetrics() && !usesNoCredentials()) {
       this.builtInMetricsProvider.enableGrpcMetrics(
           channelProviderBuilder,
           this.getProjectId(),
