@@ -92,6 +92,38 @@ public final class StorageOptionsBuilderTest {
         (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider) tcp;
 
     assertThat(provider.isAttemptDirectPathXdsOverInterconnect()).isTrue();
+    com.google.api.core.ApiFunction<io.grpc.ManagedChannelBuilder, io.grpc.ManagedChannelBuilder>
+        configurator = provider.toBuilder().getChannelConfigurator();
+    if (configurator != null) {
+      io.grpc.ManagedChannelBuilder<?> fakeBuilder =
+          io.grpc.ManagedChannelBuilder.forAddress("foo", 80);
+      io.grpc.ManagedChannelBuilder<?> appliedBuilder = configurator.apply(fakeBuilder);
+      String authority = extractAuthorityFromChannelBuilder(appliedBuilder);
+      assertThat(authority).isNull();
+    }
+  }
+
+  @Test
+  public void grpc_fallbackFromDirectPathXdsOverInterconnect_doesNotOverrideAuthority()
+      throws Exception {
+    GrpcStorageOptions options =
+        GrpcStorageOptions.grpc()
+            .setHost("https://storage.my-universe.com")
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setCredentials(com.google.cloud.NoCredentials.getInstance())
+            .build();
+    com.google.api.gax.grpc.InstantiatingGrpcChannelProvider provider =
+        (com.google.api.gax.grpc.InstantiatingGrpcChannelProvider)
+            options.getStorageSettings().getTransportChannelProvider();
+    com.google.api.core.ApiFunction<io.grpc.ManagedChannelBuilder, io.grpc.ManagedChannelBuilder>
+        configurator = provider.toBuilder().getChannelConfigurator();
+    if (configurator != null) {
+      io.grpc.ManagedChannelBuilder<?> fakeBuilder =
+          io.grpc.ManagedChannelBuilder.forAddress("foo", 80);
+      io.grpc.ManagedChannelBuilder<?> appliedBuilder = configurator.apply(fakeBuilder);
+      String authority = extractAuthorityFromChannelBuilder(appliedBuilder);
+      assertThat(authority).isNull();
+    }
   }
 
   @Test
@@ -113,6 +145,44 @@ public final class StorageOptionsBuilderTest {
     @Override
     public ResultRetryAlgorithm<?> getNonidempotentHandler() {
       return null;
+    }
+  }
+
+  private static String extractAuthorityFromChannelBuilder(
+      io.grpc.ManagedChannelBuilder<?> channelBuilder) {
+    try {
+      Object current = channelBuilder;
+      while (current != null) {
+        Class<?> clazz = current.getClass();
+        java.lang.reflect.Field field = null;
+        while (clazz != null) {
+          try {
+            field = clazz.getDeclaredField("authority");
+            break;
+          } catch (NoSuchFieldException e) {
+            try {
+              field = clazz.getDeclaredField("overrideAuthority");
+              break;
+            } catch (Exception ignored) {
+            }
+            clazz = clazz.getSuperclass();
+          }
+        }
+        if (field != null) {
+          field.setAccessible(true);
+          return (String) field.get(current);
+        }
+        try {
+          java.lang.reflect.Field delegate = current.getClass().getDeclaredField("delegate");
+          delegate.setAccessible(true);
+          current = delegate.get(current);
+        } catch (Exception e) {
+          break;
+        }
+      }
+      return null;
+    } catch (Exception e) {
+      throw new RuntimeException(e);
     }
   }
 }

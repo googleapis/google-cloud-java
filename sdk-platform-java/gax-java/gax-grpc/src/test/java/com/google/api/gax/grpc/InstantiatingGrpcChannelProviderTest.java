@@ -689,7 +689,9 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     createAndCloseTransportChannel(provider);
     assertThat(logHandler.getAllMessages())
         .contains(
-            "DirectPath is misconfigured. The DirectPath XDS option was set, but the attemptDirectPath option was not. Please set both the attemptDirectPath and attemptDirectPathXds options.");
+            "DirectPath is misconfigured. The DirectPath XDS option was set, but the"
+                + " attemptDirectPath option was not. Please set both the attemptDirectPath and"
+                + " attemptDirectPathXds options.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -707,8 +709,10 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     createAndCloseTransportChannel(provider);
     assertThat(logHandler.getAllMessages())
         .contains(
-            "Env var GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS was found and set to TRUE, but DirectPath was not enabled for this client. If this is intended for "
-                + "this client, please note that this is a misconfiguration and set the attemptDirectPath option as well.");
+            "Env var GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS was found and set to TRUE, but DirectPath"
+                + " was not enabled for this client. If this is intended for this client, please"
+                + " note that this is a misconfiguration and set the attemptDirectPath option as"
+                + " well.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -1501,7 +1505,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     assertThat(provider.createS2ASecuredChannelCredentials()).isNotNull();
     assertThat(logHandler.getAllMessages())
         .contains(
-            "Cannot establish an mTLS connection to S2A because autoconfig endpoint did not return a mtls address to reach S2A.");
+            "Cannot establish an mTLS connection to S2A because autoconfig endpoint did not return"
+                + " a mtls address to reach S2A.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -1547,7 +1552,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     assertThat(provider.createS2ASecuredChannelCredentials()).isNotNull();
     assertThat(logHandler.getAllMessages())
         .contains(
-            "Cannot establish an mTLS connection to S2A because MTLS to MDS credentials do not exist on filesystem, falling back to plaintext connection to S2A");
+            "Cannot establish an mTLS connection to S2A because MTLS to MDS credentials do not"
+                + " exist on filesystem, falling back to plaintext connection to S2A");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -1707,7 +1713,9 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
     assertThat(logHandler.getAllMessages())
         .contains(
-            "DirectPath is misconfigured. The DirectPath XDS option was set, but the attemptDirectPath option was not. Please set both the attemptDirectPath and attemptDirectPathXds options.");
+            "DirectPath is misconfigured. The DirectPath XDS option was set, but the"
+                + " attemptDirectPath option was not. Please set both the attemptDirectPath and"
+                + " attemptDirectPathXds options.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -1737,7 +1745,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
     assertThat(logHandler.getAllMessages())
         .contains(
-            "DirectPath is enabled, but DirectPath xDS is not. Please note that DirectPath will soon require xDS to be enabled. Please set the attemptDirectPathXds option.");
+            "DirectPath is enabled, but DirectPath xDS is not. Please note that DirectPath will"
+                + " soon require xDS to be enabled. Please set the attemptDirectPathXds option.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
   }
 
@@ -1786,6 +1795,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     assertThat(logHandler.getAllMessages())
         .contains("DirectPath was requested but is not available. Falling back to CloudPath.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
+    String authority = extractAuthorityFromChannelBuilder(provider.createChannelBuilder());
+    Truth.assertThat(authority).isNotEqualTo("storage.googleapis.com");
   }
 
   @Test
@@ -1818,6 +1829,8 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     assertThat(logHandler.getAllMessages())
         .contains("DirectPath was requested but is not available. Falling back to CloudPath.");
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
+    String authority = extractAuthorityFromChannelBuilder(provider.createChannelBuilder());
+    Truth.assertThat(authority).isNotEqualTo("storage.googleapis.com");
   }
 
   private static class FakeLogHandler extends Handler {
@@ -1837,6 +1850,44 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
 
     List<String> getAllMessages() {
       return records.stream().map(LogRecord::getMessage).collect(Collectors.toList());
+    }
+  }
+
+  private static String extractAuthorityFromChannelBuilder(
+      ManagedChannelBuilder<?> channelBuilder) {
+    try {
+      Object current = channelBuilder;
+      while (current != null) {
+        Class<?> clazz = current.getClass();
+        java.lang.reflect.Field field = null;
+        while (clazz != null) {
+          try {
+            field = clazz.getDeclaredField("authority");
+            break;
+          } catch (NoSuchFieldException e) {
+            try {
+              field = clazz.getDeclaredField("overrideAuthority");
+              break;
+            } catch (Exception ignored) {
+            }
+            clazz = clazz.getSuperclass();
+          }
+        }
+        if (field != null) {
+          field.setAccessible(true);
+          return (String) field.get(current);
+        }
+        try {
+          java.lang.reflect.Field delegate = current.getClass().getDeclaredField("delegate");
+          delegate.setAccessible(true);
+          current = delegate.get(current);
+        } catch (Exception e) {
+          break;
+        }
+      }
+      return null;
+    } catch (Exception e) {
+      throw new RuntimeException(e);
     }
   }
 }

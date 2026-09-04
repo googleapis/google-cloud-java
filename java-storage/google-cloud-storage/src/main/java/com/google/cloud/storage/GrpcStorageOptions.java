@@ -363,18 +363,6 @@ public final class GrpcStorageOptions extends StorageOptions
       channelProviderBuilder.setAttemptDirectPathXds();
     }
 
-    if (attemptDirectPathXdsOverInterconnect) {
-      com.google.api.core.ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>
-          existingConfigurator = channelProviderBuilder.getChannelConfigurator();
-      channelProviderBuilder.setChannelConfigurator(
-          channelBuilder -> {
-            if (existingConfigurator != null) {
-              channelBuilder = existingConfigurator.apply(channelBuilder);
-            }
-            return channelBuilder.overrideAuthority(DEFAULT_HOST_NO_SCHEME);
-          });
-    }
-
     if (scheme.equals("http")) {
       channelProviderBuilder.setChannelConfigurator(ManagedChannelBuilder::usePlaintext);
     }
@@ -604,6 +592,7 @@ public final class GrpcStorageOptions extends StorageOptions
      *
      * @since 2.72.0
      */
+    @BetaApi
     public GrpcStorageOptions.Builder setAttemptDirectPathXdsOverInterconnect(
         boolean attemptDirectPathXdsOverInterconnect) {
       this.attemptDirectPathXdsOverInterconnect = attemptDirectPathXdsOverInterconnect;
