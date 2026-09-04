@@ -1197,6 +1197,57 @@ public class ITNightlyBigQueryTest extends ITBase {
     }
   }
 
+  // Verifies batch inserts via BigQuery Storage Write API succeed when parameters are bound to
+  // null.
+  @Test
+  public void testBulkInsertOperationWithSetObjectNull() throws SQLException {
+    String TABLE_NAME = "JDBC_BULK_INSERT_NULL_TABLE_" + randomNumber;
+    String createQuery =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`StringField` STRING,\n"
+                + "    `IntegerField` INTEGER,"
+                + "    `FloatField` FLOAT64,"
+                + "    `NumericField` NUMERIC,"
+                + "    `BigNumericField` BIGNUMERIC,"
+                + "    `BooleanField` BOOLEAN"
+                + "    );",
+            DATASET, TABLE_NAME);
+    String insertQuery =
+        String.format("INSERT INTO %s.%s VALUES(?, ?, ?, ?, ?, ?);", DATASET, TABLE_NAME);
+    String dropQuery = String.format("DROP TABLE %s.%s", DATASET, TABLE_NAME);
+    String selectQuery = String.format("SELECT * FROM %s.%s", DATASET, TABLE_NAME);
+
+    String connection_uri =
+        ITNightlyBigQueryTest.connection_uri
+            + "EnableWriteAPI=1;"
+            + "SWA_ActivationRowCount=5;"
+            + "SWA_AppendRowCount=500";
+
+    try (Connection connection = DriverManager.getConnection(connection_uri)) {
+      bigQueryStatement.execute(createQuery);
+      PreparedStatement statement = connection.prepareStatement(insertQuery);
+      for (int i = 0; i < 20; ++i) {
+        statement.setObject(1, null);
+        statement.setInt(2, i);
+        statement.setFloat(3, (float) (i + .6));
+        statement.setInt(4, random.nextInt());
+        statement.setInt(5, random.nextInt());
+        statement.setBoolean(6, true);
+
+        statement.addBatch();
+      }
+      int[] result = statement.executeBatch();
+
+      ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
+      assertEquals(result.length, resultSetRowCount(resultSet));
+
+      bigQueryStatement.execute(dropQuery);
+
+    } catch (SQLException e) {
+      throw new BigQueryJdbcException(e);
+    }
+  }
+
   @Test
   public void testBulkInsertOperationStandard() throws SQLException {
     String TABLE_NAME = "JDBC_BULK_INSERT_STANDARD_TABLE_" + randomNumber;

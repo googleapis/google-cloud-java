@@ -34,6 +34,7 @@ import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.TableName;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import java.io.IOException;
@@ -389,15 +390,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         FieldList fieldLists = this.insertSchema.getFields();
         if (fieldLists.size() == parameterList.size()) {
 
-          JsonObject rowObject = new JsonObject();
-          for (int j = 0; j < parameterList.size(); j++) {
-            BigQueryJdbcParameter parameter = parameterList.get(j);
-            if (parameter.getSqlType() == StandardSQLTypeName.STRING) {
-              rowObject.addProperty(fieldLists.get(j).getName(), parameter.getValue().toString());
-            } else {
-              rowObject.addProperty(fieldLists.get(j).getName(), gson.toJson(parameter.getValue()));
-            }
-          }
+          JsonObject rowObject = createJsonRow(fieldLists, parameterList, gson);
           jsonArray.add(rowObject);
 
           if (jsonArray.size() == this.querySettings.getWriteAPIAppendRowCount()
@@ -429,6 +422,22 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     }
     LOG.finer("Commit called.");
     return rowCount;
+  }
+
+  static JsonObject createJsonRow(
+      FieldList fieldLists, ArrayList<BigQueryJdbcParameter> parameterList, Gson gson) {
+    JsonObject rowObject = new JsonObject();
+    for (int j = 0; j < parameterList.size(); j++) {
+      BigQueryJdbcParameter parameter = parameterList.get(j);
+      if (parameter.getValue() == null) {
+        rowObject.add(fieldLists.get(j).getName(), JsonNull.INSTANCE);
+      } else if (parameter.getSqlType() == StandardSQLTypeName.STRING) {
+        rowObject.addProperty(fieldLists.get(j).getName(), parameter.getValue().toString());
+      } else {
+        rowObject.addProperty(fieldLists.get(j).getName(), gson.toJson(parameter.getValue()));
+      }
+    }
+    return rowObject;
   }
 
   private void setInsertMetadata(QueryStatistics statistics) throws SQLException {
