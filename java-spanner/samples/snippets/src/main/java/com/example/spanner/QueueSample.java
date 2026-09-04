@@ -1,5 +1,5 @@
 /*
- * Copyright 2026 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,6 @@
  */
 
 package com.example.spanner;
-
-// [START spanner_queue_sample]
 
 import com.google.cloud.ByteArray;
 import com.google.cloud.Timestamp;
@@ -39,8 +37,8 @@ import java.util.concurrent.ExecutionException;
 
 public class QueueSample {
 
-  static void createQueueDatabase(DatabaseAdminClient dbAdminClient, String instanceId, String databaseId)
-      throws ExecutionException, InterruptedException {
+// [START spanner_create_database_with_queue]
+  static void createQueueDatabase(DatabaseAdminClient dbAdminClient, String instanceId, String databaseId) throws ExecutionException, InterruptedException {
     System.out.println("Creating database with a queue...");
     Database database =
         dbAdminClient
@@ -55,7 +53,9 @@ public class QueueSample {
             .get();
     System.out.println("Created database [" + database.getId() + "]");
   }
+// [END spanner_create_database_with_queue]
 
+// [START spanner_send_to_queue_with_mutation_api]
   static void sendToQueueWithMutation(DatabaseClient dbClient) {
     System.out.println("Sending a message to queue using Mutation API...");
     dbClient.write(
@@ -66,7 +66,9 @@ public class QueueSample {
                 .build()));
     System.out.println("Message sent.");
   }
+// [END spanner_send_to_queue_with_mutation_api]
 
+// [START spanner_send_to_queue_with_sql_api]
   static void sendToQueueWithSql(DatabaseClient dbClient) {
     System.out.println("Sending a message to queue using SQL API...");
     dbClient.readWriteTransaction().run(
@@ -77,7 +79,9 @@ public class QueueSample {
         });
     System.out.println("Message sent.");
   }
+// [END spanner_send_to_queue_with_sql_api]
 
+// [START spanner_send_to_queue_with_mutation_api_in_future]
   static void sendToQueueWithMutationInFuture(DatabaseClient dbClient) {
     System.out.println("Sending a message to queue using Mutation API in the future...");
     Instant futureTime = Instant.now().plus(Duration.ofMinutes(10));
@@ -90,21 +94,25 @@ public class QueueSample {
                 .build()));
     System.out.println("Message scheduled for future delivery.");
   }
+// [END spanner_send_to_queue_with_mutation_api_in_future]
 
+// [START spanner_send_to_queue_with_sql_api_in_future]
   static void sendToQueueWithSqlInFuture(DatabaseClient dbClient) {
     System.out.println("Sending a message to queue using SQL API in the future...");
     Instant futureTime = Instant.now().plus(Duration.ofMinutes(10));
     dbClient.readWriteTransaction().run(
         transaction -> {
           transaction.executeUpdate(
-              Statement.newBuilder("INSERT INTO MyQueue (Id, Payload, DeliverTime) VALUES (4, B'message4', @deliveryTime)")
+              Statement.newBuilder("INSERT INTO MyQueue (Id, Payload, enqueued_time) VALUES (4, B'message4', @deliveryTime)")
                   .bind("deliveryTime").to(Value.timestamp(Timestamp.ofTimeSecondsAndNanos(futureTime.getEpochSecond(), futureTime.getNano())))
                   .build());
           return null;
         });
     System.out.println("Message scheduled for future delivery.");
   }
+// [END spanner_send_to_queue_with_sql_api_in_future]
 
+// [START spanner_ack_queue_message_with_mutation_api]
   static void ackMessageWithMutation(DatabaseClient dbClient) {
     System.out.println("Acknowledging a message using Mutation API...");
     dbClient.write(
@@ -114,7 +122,9 @@ public class QueueSample {
                 .build()));
     System.out.println("Message acknowledged.");
   }
+// [END spanner_ack_queue_message_with_mutation_api]
 
+// [START spanner_ack_queue_message_with_sql_api]
   static void ackMessageWithSql(DatabaseClient dbClient) {
     System.out.println("Acknowledging a message using SQL API with ASSERT_ROWS_MODIFIED...");
     dbClient.readWriteTransaction().run(
@@ -125,7 +135,9 @@ public class QueueSample {
         });
     System.out.println("Message acknowledged.");
   }
+// [END spanner_ack_queue_message_with_sql_api]
 
+// [START spanner_delete_queue_message_with_sql_api]
   static void deleteMessageWithSql(DatabaseClient dbClient) {
     System.out.println("Deleting a message using SQL API...");
     dbClient.readWriteTransaction().run(
@@ -136,7 +148,9 @@ public class QueueSample {
         });
     System.out.println("Message deleted.");
   }
+// [END spanner_delete_queue_message_with_sql_api]
 
+// [START spanner_send_and_receive_queue_message_with_sql_api]
   static void sendAndReceiveWithSql(DatabaseClient dbClient) {
     System.out.println("Sending and receiving a message using SQL API...");
     dbClient.readWriteTransaction().run(
@@ -148,7 +162,7 @@ public class QueueSample {
     
     System.out.println("Receiving message from queue (max_duration 1min)...");
     try (ResultSet resultSet = dbClient.singleUse().executeQuery(
-        Statement.of("SELECT * FROM RECEIVE_MyQueue(max_duration => '1m')"))) {
+        Statement.of("SELECT * FROM READ_MyQueue(max_duration => '1m')"))) {
       if (resultSet.next()) {
         System.out.println("Received message ID: " + resultSet.getLong("Id"));
       } else {
@@ -156,6 +170,7 @@ public class QueueSample {
       }
     }
   }
+// [END spanner_send_and_receive_queue_message_with_sql_api]
 
   public static void main(String[] args) throws Exception {
     if (args.length != 3) {
@@ -185,4 +200,3 @@ public class QueueSample {
     }
   }
 }
-// [END spanner_queue_sample]
