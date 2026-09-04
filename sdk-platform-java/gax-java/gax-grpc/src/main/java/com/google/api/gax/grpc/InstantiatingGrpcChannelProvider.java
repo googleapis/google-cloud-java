@@ -1527,8 +1527,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
       return this;
     }
 
-    public @Nullable
-        ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> getChannelConfigurator() {
+    public @Nullable ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>
+        getChannelConfigurator() {
       return channelConfigurator;
     }
   }
