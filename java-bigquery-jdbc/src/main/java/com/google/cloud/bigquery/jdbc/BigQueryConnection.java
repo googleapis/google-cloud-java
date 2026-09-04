@@ -1483,10 +1483,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       abortJob.waitFor();
     } catch (InterruptedException ex) {
       Thread.currentThread().interrupt();
-      throw new BigQueryJdbcRuntimeException("Interrupted during close", ex);
+      throw new BigQueryJdbcRuntimeException("Interrupted during session abort", ex);
     } catch (BigQueryException ex) {
       LOG.warning(
-          "Failed to abort session during connection close (session may have already ended): "
+          "Failed to abort session during session abort (session may have already ended): "
               + ex.getMessage());
     } finally {
       this.sessionInfoConnectionProperty = null;
