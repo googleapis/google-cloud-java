@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import com.google.api.client.util.escape.CharEscapers;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
@@ -923,5 +924,26 @@ final class BigQueryJdbcUrlUtility {
       }
     }
     return propertiesMap;
+  }
+
+  static DatasetId parseDefaultDataset(String defaultDataset) {
+    if (defaultDataset == null || defaultDataset.trim().isEmpty()) {
+      return null;
+    }
+
+    String trimmed = defaultDataset.trim();
+    int colonIdx = trimmed.lastIndexOf(':');
+    if (colonIdx >= 0) {
+      String project = trimmed.substring(0, colonIdx).trim();
+      String dataset = trimmed.substring(colonIdx + 1).trim();
+      if (project.isEmpty() || dataset.isEmpty()) {
+        throw new BigQueryJdbcRuntimeException(
+            "DefaultDataset format is invalid. Supported options are datasetId, "
+                + "catalog.namespace, or projectId:datasetId");
+      }
+      return DatasetId.of(project, dataset);
+    }
+
+    return DatasetId.of(trimmed);
   }
 }
