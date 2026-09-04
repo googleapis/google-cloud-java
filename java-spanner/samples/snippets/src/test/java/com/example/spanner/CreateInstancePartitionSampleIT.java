@@ -36,8 +36,8 @@ public class CreateInstancePartitionSampleIT extends SampleTestBaseV2 {
         .createInstance(
             InstanceInfo.newBuilder(InstanceId.of(projectId, instanceId))
                 .setEdition(Edition.ENTERPRISE_PLUS)
-                .setDisplayName("Geo-partitioning test instance")
-                .setInstanceConfigId(InstanceConfigId.of(projectId, "regional-us-central1"))
+                .setDisplayName("Partition test instance")
+                .setInstanceConfigId(InstanceConfigId.of(projectId, "nam6"))
                 .setNodeCount(1)
                 .build())
         .get();
