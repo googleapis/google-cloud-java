@@ -72,6 +72,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 11
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -90,6 +91,7 @@ jobs:
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: .kokoro/dependencies.sh
       env:
         BUILD_SUBDIR: sdk-platform-java
@@ -114,6 +116,7 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
+          cache: maven
       - name: Install all modules using Java 17
         shell: bash
         run: .kokoro/build.sh
@@ -277,6 +280,7 @@ jobs:
         with:
           java-version: 8
           distribution: temurin
+          cache: maven
       - run: java -version
       - name: Run tests in Java 8 with the source compiled in Java 11 for gapic-generator-java
         shell: bash
@@ -379,6 +383,7 @@ jobs:
       with:
         java-version: 11
         distribution: temurin
+        cache: maven
     - run: mvn -version
     - name: Unit Tests
       run: |
@@ -408,6 +413,7 @@ jobs:
       with:
         java-version: 17
         distribution: temurin
+        cache: maven
     - run: mvn -version
     - name: Unit Tests
       run: |

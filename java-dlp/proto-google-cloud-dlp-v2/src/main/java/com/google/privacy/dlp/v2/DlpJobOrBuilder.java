@@ -30,10 +30,10 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * The server-assigned name.
+   * Output only. The server-assigned name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -43,10 +43,10 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * The server-assigned name.
+   * Output only. The server-assigned name.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
@@ -82,10 +82,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * State of a job.
+   * Output only. State of a job.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DlpJob.JobState state = 3;</code>
+   * <code>
+   * .google.privacy.dlp.v2.DlpJob.JobState state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -95,10 +97,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * State of a job.
+   * Output only. State of a job.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.DlpJob.JobState state = 3;</code>
+   * <code>
+   * .google.privacy.dlp.v2.DlpJob.JobState state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -182,10 +186,11 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Time when the job was created.
+   * Output only. Time when the job was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -195,10 +200,11 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Time when the job was created.
+   * Output only. Time when the job was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -208,10 +214,11 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Time when the job was created.
+   * Output only. Time when the job was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 6;</code>
+   * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -219,10 +226,11 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Time when the job started.
+   * Output only. Time when the job started.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the startTime field is set.
    */
@@ -232,10 +240,11 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Time when the job started.
+   * Output only. Time when the job started.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The startTime.
    */
@@ -245,10 +254,11 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Time when the job started.
+   * Output only. Time when the job started.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 7;</code>
+   * <code>.google.protobuf.Timestamp start_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
@@ -256,10 +266,11 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Time when the job finished.
+   * Output only. Time when the job finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the endTime field is set.
    */
@@ -269,10 +280,11 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Time when the job finished.
+   * Output only. Time when the job finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The endTime.
    */
@@ -282,10 +294,11 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Time when the job finished.
+   * Output only. Time when the job finished.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 8;</code>
+   * <code>.google.protobuf.Timestamp end_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
@@ -293,10 +306,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Time when the job was last modified by the system.
+   * Output only. Time when the job was last modified by the system.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_modified = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the lastModified field is set.
    */
@@ -306,10 +321,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Time when the job was last modified by the system.
+   * Output only. Time when the job was last modified by the system.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_modified = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The lastModified.
    */
@@ -319,10 +336,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Time when the job was last modified by the system.
+   * Output only. Time when the job was last modified by the system.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_modified = 15;</code>
+   * <code>
+   * .google.protobuf.Timestamp last_modified = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getLastModifiedOrBuilder();
 
@@ -330,11 +349,11 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * If created by a job trigger, the resource name of the trigger that
-   * instantiated the job.
+   * Output only. If created by a job trigger, the resource name of the trigger
+   * that instantiated the job.
    * </pre>
    *
-   * <code>string job_trigger_name = 10;</code>
+   * <code>string job_trigger_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The jobTriggerName.
    */
@@ -344,11 +363,11 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * If created by a job trigger, the resource name of the trigger that
-   * instantiated the job.
+   * Output only. If created by a job trigger, the resource name of the trigger
+   * that instantiated the job.
    * </pre>
    *
-   * <code>string job_trigger_name = 10;</code>
+   * <code>string job_trigger_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for jobTriggerName.
    */
@@ -358,10 +377,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * A stream of errors encountered running the job.
+   * Output only. A stream of errors encountered running the job.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList();
 
@@ -369,10 +390,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * A stream of errors encountered running the job.
+   * Output only. A stream of errors encountered running the job.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.privacy.dlp.v2.Error getErrors(int index);
 
@@ -380,10 +403,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * A stream of errors encountered running the job.
+   * Output only. A stream of errors encountered running the job.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getErrorsCount();
 
@@ -391,10 +416,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * A stream of errors encountered running the job.
+   * Output only. A stream of errors encountered running the job.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> getErrorsOrBuilderList();
 
@@ -402,10 +429,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * A stream of errors encountered running the job.
+   * Output only. A stream of errors encountered running the job.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.Error errors = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index);
 
@@ -413,10 +442,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Events that should occur after the job has completed.
+   * Output only. Events that should occur after the job has completed.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.ActionDetails action_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.ActionDetails> getActionDetailsList();
 
@@ -424,10 +455,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Events that should occur after the job has completed.
+   * Output only. Events that should occur after the job has completed.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.ActionDetails action_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.privacy.dlp.v2.ActionDetails getActionDetails(int index);
 
@@ -435,10 +468,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Events that should occur after the job has completed.
+   * Output only. Events that should occur after the job has completed.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.ActionDetails action_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   int getActionDetailsCount();
 
@@ -446,10 +481,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Events that should occur after the job has completed.
+   * Output only. Events that should occur after the job has completed.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.ActionDetails action_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ActionDetailsOrBuilder>
       getActionDetailsOrBuilderList();
@@ -458,10 +495,12 @@ public interface DlpJobOrBuilder
    *
    *
    * <pre>
-   * Events that should occur after the job has completed.
+   * Output only. Events that should occur after the job has completed.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.ActionDetails action_details = 12;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.ActionDetails action_details = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.privacy.dlp.v2.ActionDetailsOrBuilder getActionDetailsOrBuilder(int index);
 

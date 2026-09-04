@@ -180,13 +180,13 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Override
   public Date getDate(int parameterIndex, Calendar calendar) throws SQLException {
     Date date = getDate(parameterIndex);
-    return BigQueryTypeCoercionUtility.convertDateWithCalendar(date, calendar);
+    return BigQueryTemporalUtility.convertDateWithCalendar(date, calendar);
   }
 
   @Override
   public Date getDate(String parameterName, Calendar calendar) throws SQLException {
     Date date = getDate(parameterName);
-    return BigQueryTypeCoercionUtility.convertDateWithCalendar(date, calendar);
+    return BigQueryTemporalUtility.convertDateWithCalendar(date, calendar);
   }
 
   @Override
@@ -459,13 +459,13 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Override
   public Time getTime(int parameterIndex, Calendar calendar) throws SQLException {
     Time time = getTime(parameterIndex);
-    return BigQueryTypeCoercionUtility.convertTimeWithCalendar(time, calendar);
+    return BigQueryTemporalUtility.convertTimeWithCalendar(time, calendar);
   }
 
   @Override
   public Time getTime(String parameterName, Calendar calendar) throws SQLException {
     Time time = getTime(parameterName);
-    return BigQueryTypeCoercionUtility.convertTimeWithCalendar(time, calendar);
+    return BigQueryTemporalUtility.convertTimeWithCalendar(time, calendar);
   }
 
   @Override
@@ -481,13 +481,13 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Override
   public Timestamp getTimestamp(int parameterIndex, Calendar calendar) throws SQLException {
     Timestamp ts = getTimestamp(parameterIndex);
-    return BigQueryTypeCoercionUtility.convertTimestampWithCalendar(ts, calendar);
+    return BigQueryTemporalUtility.convertTimestampWithCalendar(ts, calendar);
   }
 
   @Override
   public Timestamp getTimestamp(String parameterName, Calendar calendar) throws SQLException {
     Timestamp ts = getTimestamp(parameterName);
-    return BigQueryTypeCoercionUtility.convertTimestampWithCalendar(ts, calendar);
+    return BigQueryTemporalUtility.convertTimestampWithCalendar(ts, calendar);
   }
 
   @Override
@@ -507,7 +507,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     this.parameterHandler.setParameter(
         parameterIndex,
         null,
-        BigQueryJdbcTypeMappings.getJavaType(sqlType),
+        BigQueryTypeRegistry.toJavaClass(sqlType),
         BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
         -1);
   }
@@ -519,7 +519,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     this.parameterHandler.setParameter(
         parameterName,
         null,
-        BigQueryJdbcTypeMappings.getJavaType(sqlType),
+        BigQueryTypeRegistry.toJavaClass(sqlType),
         BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
         -1);
   }
@@ -540,7 +540,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     this.parameterHandler.setParameter(
         parameterIndex,
         null,
-        BigQueryJdbcTypeMappings.getJavaType(sqlType),
+        BigQueryTypeRegistry.toJavaClass(sqlType),
         BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
         scale);
   }
@@ -572,7 +572,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     this.parameterHandler.setParameter(
         parameterName,
         null,
-        BigQueryJdbcTypeMappings.getJavaType(sqlType),
+        BigQueryTypeRegistry.toJavaClass(sqlType),
         BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
         scale);
   }
@@ -708,7 +708,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     checkClosed();
     this.parameterHandler.setParameter(
         parameterName,
-        BigQueryTypeCoercionUtility.convertDateToCalendar(value, calendar),
+        BigQueryTemporalUtility.convertDateToCalendar(value, calendar),
         Date.class,
         BigQueryStatementParameterType.IN,
         0);
@@ -778,10 +778,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
   @Override
   public void setNull(String parameterName, int sqlType) throws SQLException {
     checkClosed();
-    Class<?> javaType = BigQueryJdbcTypeMappings.getJavaType(sqlType);
-    if (javaType == null) {
-      javaType = String.class;
-    }
+    Class<?> javaType = BigQueryTypeRegistry.toJavaClass(sqlType);
     this.parameterHandler.setParameter(
         parameterName, null, javaType, BigQueryStatementParameterType.IN, 0);
   }
@@ -809,19 +806,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       setNull(parameterName, targetSqlType);
       return;
     }
+    Class<?> javaType = BigQueryTypeRegistry.toJavaClass(targetSqlType);
     this.parameterHandler.setParameter(
-        parameterName, value, value.getClass(), BigQueryStatementParameterType.IN, 0);
-    StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(parameterName);
-    if (BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.containsKey(sqlType)) {
-      int javaSqlType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(sqlType);
-      if (javaSqlType != targetSqlType) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException(
-            String.format("Unsupported  sql type:%s ", targetSqlType));
-      }
-    } else {
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          String.format("parameter sql type not supported: %s", sqlType));
-    }
+        parameterName, value, javaType, BigQueryStatementParameterType.IN, 0);
   }
 
   @Override
@@ -832,19 +819,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       setNull(parameterName, targetSqlType);
       return;
     }
+    Class<?> javaType = BigQueryTypeRegistry.toJavaClass(targetSqlType);
     this.parameterHandler.setParameter(
-        parameterName, value, value.getClass(), BigQueryStatementParameterType.IN, scaleOrLength);
-    StandardSQLTypeName sqlType = this.parameterHandler.getSqlType(parameterName);
-    if (BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.containsKey(sqlType)) {
-      int javaSqlType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(sqlType);
-      if (javaSqlType != targetSqlType) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException(
-            String.format("Unsupported  sql type:%s ", targetSqlType));
-      }
-    } else {
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          String.format("parameter sql type not supported: %s", sqlType));
-    }
+        parameterName, value, javaType, BigQueryStatementParameterType.IN, scaleOrLength);
   }
 
   @Override
@@ -883,7 +860,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     checkClosed();
     this.parameterHandler.setParameter(
         parameterName,
-        value == null ? null : BigQueryTypeCoercionUtility.convertTimeWithCalendar(value, calendar),
+        value == null ? null : BigQueryTemporalUtility.convertTimeWithCalendar(value, calendar),
         Time.class,
         BigQueryStatementParameterType.IN,
         0);
@@ -902,7 +879,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     checkClosed();
     this.parameterHandler.setParameter(
         parameterName,
-        BigQueryTypeCoercionUtility.convertTimestampWithCalendar(value, calendar),
+        BigQueryTemporalUtility.convertTimestampWithCalendar(value, calendar),
         Timestamp.class,
         BigQueryStatementParameterType.IN,
         0);

@@ -30,9 +30,11 @@ public interface ListControlsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format
-   * projects/{project}/locations/{location}/standards/{standard},
-   * folders/{folder}/locations/{location}/standards/{standard}
+   * Required. Standard to list controls for, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/standards/{standard}`
+   * * `folders/{folder}/locations/{location}/standards/{standard}`
+   * * `organizations/{organization}/locations/{location}/standards/{standard}`
    * </pre>
    *
    * <code>
@@ -47,9 +49,11 @@ public interface ListControlsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Format
-   * projects/{project}/locations/{location}/standards/{standard},
-   * folders/{folder}/locations/{location}/standards/{standard}
+   * Required. Standard to list controls for, in one of the following formats:
+   *
+   * * `projects/{project}/locations/{location}/standards/{standard}`
+   * * `folders/{folder}/locations/{location}/standards/{standard}`
+   * * `organizations/{organization}/locations/{location}/standards/{standard}`
    * </pre>
    *
    * <code>
@@ -64,7 +68,10 @@ public interface ListControlsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The maximum number of resources to return.
+   * Optional. Maximum number of items to return in a single page. The service
+   * might return fewer items than this value. If unspecified, the service picks
+   * an appropriate default. The maximum value is 100; values above 100 are
+   * reduced to 100.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -77,8 +84,8 @@ public interface ListControlsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The next_page_token value returned from a previous List request,
-   * if any.
+   * Optional. A page token, received from a previous call, to retrieve the next
+   * page of results.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -91,8 +98,8 @@ public interface ListControlsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The next_page_token value returned from a previous List request,
-   * if any.
+   * Optional. A page token, received from a previous call, to retrieve the next
+   * page of results.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

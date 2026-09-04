@@ -1434,6 +1434,23 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional. Instructs Vertex Grounding to use Parallel's Zero Data
+     * Retention Marketplace product. If this value is "false" or omitted, the
+     * Parallel Web Search for Grounding standard subscription will be used. If
+     * this value is "true", the Parallel Web Search for Grounding - ZDR
+     * subscription will be used.
+     * </pre>
+     *
+     * <code>bool enable_zero_data_retention = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableZeroDataRetention.
+     */
+    boolean getEnableZeroDataRetention();
+
+    /**
+     *
+     *
+     * <pre>
      * Optional. Custom configs for ParallelAiSearch.
      * This field can be used to pass any parameter from the Parallel.ai
      * Search API.
@@ -1631,6 +1648,29 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int ENABLE_ZERO_DATA_RETENTION_FIELD_NUMBER = 4;
+    private boolean enableZeroDataRetention_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instructs Vertex Grounding to use Parallel's Zero Data
+     * Retention Marketplace product. If this value is "false" or omitted, the
+     * Parallel Web Search for Grounding standard subscription will be used. If
+     * this value is "true", the Parallel Web Search for Grounding - ZDR
+     * subscription will be used.
+     * </pre>
+     *
+     * <code>bool enable_zero_data_retention = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableZeroDataRetention.
+     */
+    @java.lang.Override
+    public boolean getEnableZeroDataRetention() {
+      return enableZeroDataRetention_;
+    }
+
     public static final int CUSTOM_CONFIGS_FIELD_NUMBER = 3;
     private com.google.protobuf.Struct customConfigs_;
 
@@ -1755,6 +1795,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(3, getCustomConfigs());
       }
+      if (enableZeroDataRetention_ != false) {
+        output.writeBool(4, enableZeroDataRetention_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1769,6 +1812,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCustomConfigs());
+      }
+      if (enableZeroDataRetention_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, enableZeroDataRetention_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1787,6 +1833,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
           (com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch) obj;
 
       if (!getApiKey().equals(other.getApiKey())) return false;
+      if (getEnableZeroDataRetention() != other.getEnableZeroDataRetention()) return false;
       if (hasCustomConfigs() != other.hasCustomConfigs()) return false;
       if (hasCustomConfigs()) {
         if (!getCustomConfigs().equals(other.getCustomConfigs())) return false;
@@ -1804,6 +1851,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + API_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getApiKey().hashCode();
+      hash = (37 * hash) + ENABLE_ZERO_DATA_RETENTION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableZeroDataRetention());
       if (hasCustomConfigs()) {
         hash = (37 * hash) + CUSTOM_CONFIGS_FIELD_NUMBER;
         hash = (53 * hash) + getCustomConfigs().hashCode();
@@ -1960,6 +2009,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         super.clear();
         bitField0_ = 0;
         apiKey_ = "";
+        enableZeroDataRetention_ = false;
         customConfigs_ = null;
         if (customConfigsBuilder_ != null) {
           customConfigsBuilder_.dispose();
@@ -2004,8 +2054,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.apiKey_ = apiKey_;
         }
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.enableZeroDataRetention_ = enableZeroDataRetention_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.customConfigs_ =
               customConfigsBuilder_ == null ? customConfigs_ : customConfigsBuilder_.build();
           to_bitField0_ |= 0x00000001;
@@ -2030,6 +2083,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
           apiKey_ = other.apiKey_;
           bitField0_ |= 0x00000001;
           onChanged();
+        }
+        if (other.getEnableZeroDataRetention() != false) {
+          setEnableZeroDataRetention(other.getEnableZeroDataRetention());
         }
         if (other.hasCustomConfigs()) {
           mergeCustomConfigs(other.getCustomConfigs());
@@ -2070,9 +2126,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
                 {
                   input.readMessage(
                       internalGetCustomConfigsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000002;
+                  bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 32:
+                {
+                  enableZeroDataRetention_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2223,6 +2285,74 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private boolean enableZeroDataRetention_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Instructs Vertex Grounding to use Parallel's Zero Data
+       * Retention Marketplace product. If this value is "false" or omitted, the
+       * Parallel Web Search for Grounding standard subscription will be used. If
+       * this value is "true", the Parallel Web Search for Grounding - ZDR
+       * subscription will be used.
+       * </pre>
+       *
+       * <code>bool enable_zero_data_retention = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableZeroDataRetention.
+       */
+      @java.lang.Override
+      public boolean getEnableZeroDataRetention() {
+        return enableZeroDataRetention_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Instructs Vertex Grounding to use Parallel's Zero Data
+       * Retention Marketplace product. If this value is "false" or omitted, the
+       * Parallel Web Search for Grounding standard subscription will be used. If
+       * this value is "true", the Parallel Web Search for Grounding - ZDR
+       * subscription will be used.
+       * </pre>
+       *
+       * <code>bool enable_zero_data_retention = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableZeroDataRetention to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableZeroDataRetention(boolean value) {
+
+        enableZeroDataRetention_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Instructs Vertex Grounding to use Parallel's Zero Data
+       * Retention Marketplace product. If this value is "false" or omitted, the
+       * Parallel Web Search for Grounding standard subscription will be used. If
+       * this value is "true", the Parallel Web Search for Grounding - ZDR
+       * subscription will be used.
+       * </pre>
+       *
+       * <code>bool enable_zero_data_retention = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableZeroDataRetention() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        enableZeroDataRetention_ = false;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Struct customConfigs_;
       private com.google.protobuf.SingleFieldBuilder<
               com.google.protobuf.Struct,
@@ -2259,7 +2389,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
        * @return Whether the customConfigs field is set.
        */
       public boolean hasCustomConfigs() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
 
       /**
@@ -2335,7 +2465,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         } else {
           customConfigsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2372,7 +2502,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
         } else {
           customConfigsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2405,7 +2535,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
        */
       public Builder mergeCustomConfigs(com.google.protobuf.Struct value) {
         if (customConfigsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)
+          if (((bitField0_ & 0x00000004) != 0)
               && customConfigs_ != null
               && customConfigs_ != com.google.protobuf.Struct.getDefaultInstance()) {
             getCustomConfigsBuilder().mergeFrom(value);
@@ -2416,7 +2546,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
           customConfigsBuilder_.mergeFrom(value);
         }
         if (customConfigs_ != null) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         return this;
@@ -2449,7 +2579,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public Builder clearCustomConfigs() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         customConfigs_ = null;
         if (customConfigsBuilder_ != null) {
           customConfigsBuilder_.dispose();
@@ -2486,7 +2616,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessage
        * </code>
        */
       public com.google.protobuf.Struct.Builder getCustomConfigsBuilder() {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return internalGetCustomConfigsFieldBuilder().getBuilder();
       }

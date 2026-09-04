@@ -94,13 +94,13 @@ class HttpJsonClientCalls {
     return HttpJsonMetadata.newBuilder().build().withHeaders(finalHeaders);
   }
 
-  static <RequestT, ResponseT> ApiFuture<ResponseT> futureUnaryCall(
+  static <RequestT, ResponseT> void startUnaryCall(
       HttpJsonClientCall<RequestT, ResponseT> clientCall,
       RequestT request,
-      HttpJsonCallContext context) {
+      HttpJsonCallContext context,
+      HttpJsonClientCall.Listener<ResponseT> listener) {
     // Start the call
-    HttpJsonFuture<ResponseT> future = new HttpJsonFuture<>(clientCall);
-    clientCall.start(new FutureListener<>(future), getMetadataWithTraceContext(context));
+    clientCall.start(listener, getMetadataWithTraceContext(context));
 
     // Send the request
     try {
@@ -118,7 +118,15 @@ class HttpJsonClientCalls {
 
       throw sendError;
     }
+  }
 
+  static <RequestT, ResponseT> ApiFuture<ResponseT> futureUnaryCall(
+      HttpJsonClientCall<RequestT, ResponseT> clientCall,
+      RequestT request,
+      HttpJsonCallContext context) {
+    // Start the call
+    HttpJsonFuture<ResponseT> future = new HttpJsonFuture<>(clientCall);
+    startUnaryCall(clientCall, request, context, new FutureListener<>(future));
     return future;
   }
 

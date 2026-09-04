@@ -758,6 +758,45 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         : pipelineConfig_;
   }
 
+  public static final int LINEAGE_ENABLED_FIELD_NUMBER = 14;
+  private boolean lineageEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether OpenLineage events are emitted for actions in this
+   * workflow. Reflects the `lineage.enabled` setting from
+   * `workflow_settings.yaml`.
+   * </pre>
+   *
+   * <code>optional bool lineage_enabled = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the lineageEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasLineageEnabled() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether OpenLineage events are emitted for actions in this
+   * workflow. Reflects the `lineage.enabled` setting from
+   * `workflow_settings.yaml`.
+   * </pre>
+   *
+   * <code>optional bool lineage_enabled = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The lineageEnabled.
+   */
+  @java.lang.Override
+  public boolean getLineageEnabled() {
+    return lineageEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -803,6 +842,9 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(12, getPipelineConfig());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(14, lineageEnabled_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -856,6 +898,9 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getPipelineConfig());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, lineageEnabled_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -891,6 +936,10 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     if (hasPipelineConfig() != other.hasPipelineConfig()) return false;
     if (hasPipelineConfig()) {
       if (!getPipelineConfig().equals(other.getPipelineConfig())) return false;
+    }
+    if (hasLineageEnabled() != other.hasLineageEnabled()) return false;
+    if (hasLineageEnabled()) {
+      if (getLineageEnabled() != other.getLineageEnabled()) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -930,6 +979,10 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
     if (hasPipelineConfig()) {
       hash = (37 * hash) + PIPELINE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPipelineConfig().hashCode();
+    }
+    if (hasLineageEnabled()) {
+      hash = (37 * hash) + LINEAGE_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLineageEnabled());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1123,6 +1176,7 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         pipelineConfigBuilder_.dispose();
         pipelineConfigBuilder_ = null;
       }
+      lineageEnabled_ = false;
       return this;
     }
 
@@ -1200,6 +1254,10 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
             pipelineConfigBuilder_ == null ? pipelineConfig_ : pipelineConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.lineageEnabled_ = lineageEnabled_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1263,6 +1321,9 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
       }
       if (other.hasPipelineConfig()) {
         mergePipelineConfig(other.getPipelineConfig());
+      }
+      if (other.hasLineageEnabled()) {
+        setLineageEnabled(other.getLineageEnabled());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1362,6 +1423,12 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000400;
                 break;
               } // case 98
+            case 112:
+              {
+                lineageEnabled_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2913,6 +2980,86 @@ public final class CodeCompilationConfig extends com.google.protobuf.GeneratedMe
         pipelineConfig_ = null;
       }
       return pipelineConfigBuilder_;
+    }
+
+    private boolean lineageEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether OpenLineage events are emitted for actions in this
+     * workflow. Reflects the `lineage.enabled` setting from
+     * `workflow_settings.yaml`.
+     * </pre>
+     *
+     * <code>optional bool lineage_enabled = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the lineageEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasLineageEnabled() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether OpenLineage events are emitted for actions in this
+     * workflow. Reflects the `lineage.enabled` setting from
+     * `workflow_settings.yaml`.
+     * </pre>
+     *
+     * <code>optional bool lineage_enabled = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The lineageEnabled.
+     */
+    @java.lang.Override
+    public boolean getLineageEnabled() {
+      return lineageEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether OpenLineage events are emitted for actions in this
+     * workflow. Reflects the `lineage.enabled` setting from
+     * `workflow_settings.yaml`.
+     * </pre>
+     *
+     * <code>optional bool lineage_enabled = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The lineageEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLineageEnabled(boolean value) {
+
+      lineageEnabled_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether OpenLineage events are emitted for actions in this
+     * workflow. Reflects the `lineage.enabled` setting from
+     * `workflow_settings.yaml`.
+     * </pre>
+     *
+     * <code>optional bool lineage_enabled = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLineageEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      lineageEnabled_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataform.v1beta1.CodeCompilationConfig)

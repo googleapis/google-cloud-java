@@ -105,8 +105,8 @@ public interface ListGiVersionsRequestOrBuilder
    *
    * <pre>
    * Optional. An expression for filtering the results of the request. Only the
-   * shape, gcp_oracle_zone and gi_version fields are supported in this format:
-   * `shape="{shape}"`.
+   * `shape` and `gcp_oracle_zone_id` fields are supported in the following
+   * format: `shape="{shape}" AND gcp_oracle_zone_id="{gcp_oracle_zone_id}"`.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -120,8 +120,8 @@ public interface ListGiVersionsRequestOrBuilder
    *
    * <pre>
    * Optional. An expression for filtering the results of the request. Only the
-   * shape, gcp_oracle_zone and gi_version fields are supported in this format:
-   * `shape="{shape}"`.
+   * `shape` and `gcp_oracle_zone_id` fields are supported in the following
+   * format: `shape="{shape}" AND gcp_oracle_zone_id="{gcp_oracle_zone_id}"`.
    * </pre>
    *
    * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

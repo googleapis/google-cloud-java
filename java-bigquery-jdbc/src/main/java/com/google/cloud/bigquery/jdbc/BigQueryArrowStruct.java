@@ -20,7 +20,10 @@ import static com.google.cloud.bigquery.jdbc.BigQueryBaseArray.isArray;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import java.lang.reflect.Array;
+import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.arrow.vector.util.JsonStringArrayList;
@@ -30,8 +33,6 @@ import org.apache.arrow.vector.util.JsonStringHashMap;
  * An implementation of {@link BigQueryBaseStruct} used to represent Struct values from Arrow data.
  */
 class BigQueryArrowStruct extends BigQueryBaseStruct {
-  private static final BigQueryTypeCoercer BIGQUERY_TYPE_COERCER =
-      BigQueryTypeCoercionUtility.INSTANCE;
 
   private final FieldList schema;
 
@@ -54,7 +55,7 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
   }
 
   @Override
-  public Object[] getAttributes() {
+  public Object[] getAttributes() throws SQLException {
     LOG.finestTrace("getAttributes");
     int size = this.schema.size();
     Object[] attributes = (Object[]) Array.newInstance(Object.class, size);
@@ -73,7 +74,7 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
     return attributes;
   }
 
-  private Object getValue(Field currentSchema, Object currentValue) {
+  private Object getValue(Field currentSchema, Object currentValue) throws SQLException {
     LOG.finestTrace("getValue");
     if (isArray(currentSchema)) {
       return new BigQueryArrowArray(
@@ -84,10 +85,12 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
           (JsonStringHashMap<?, ?>) currentValue,
           this.LOG.getArrowStructLogger());
     } else {
-      Class<?> targetClass =
-          BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping.get(
-              currentSchema.getType().getStandardType());
-      return BIGQUERY_TYPE_COERCER.coerceTo(targetClass, currentValue, this.LOG);
+      if (currentValue instanceof Integer
+          && currentSchema.getType().getStandardType() == StandardSQLTypeName.DATE) {
+        currentValue = LocalDate.ofEpochDay(((Integer) currentValue).longValue());
+      }
+      return BigQueryTypeRegistry.convert(
+          currentValue, currentSchema.getType().getStandardType(), null);
     }
   }
 }

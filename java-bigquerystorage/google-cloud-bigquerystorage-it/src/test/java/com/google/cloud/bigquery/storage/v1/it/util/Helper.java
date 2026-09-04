@@ -16,10 +16,12 @@
 
 package com.google.cloud.bigquery.storage.v1.it.util;
 
+import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.core.ApiFutureCallback;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
@@ -38,8 +40,10 @@ import com.google.protobuf.util.Timestamps;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericRecordBuilder;
@@ -159,7 +163,19 @@ public class Helper {
               ReadSession.TableReadOptions.newBuilder().setRowRestriction(filter).build());
     }
 
-    ReadSession session = client.createReadSession(createSessionRequestBuilder.build());
+    CreateReadSessionRequest request = createSessionRequestBuilder.build();
+    AtomicReference<ReadSession> sessionRef = new AtomicReference<>();
+    await()
+        .atMost(Duration.ofMinutes(1))
+        .pollInterval(Duration.ofSeconds(1))
+        // retry if the newly-created table has not yet fully propagated
+        .ignoreException(NotFoundException.class)
+        .until(
+            () -> {
+              sessionRef.set(client.createReadSession(request));
+              return true;
+            });
+    ReadSession session = sessionRef.get();
     assertEquals(
         1,
         session.getStreamsCount(),
@@ -211,11 +227,63 @@ public class Helper {
    */
   public static BigQueryReadSettings.Builder createBigQueryReadSettingsBuilder() {
     BigQueryReadSettings.Builder builder = BigQueryReadSettings.newBuilder();
-    String endpoint = System.getenv("BIGQUERY_STORAGE_ENDPOINT");
+    String endpoint =
+        System.getProperty("bigquery.storage.endpoint", System.getenv("BIGQUERY_STORAGE_ENDPOINT"));
     if (endpoint != null) {
       builder.setEndpoint(endpoint);
     }
     return builder;
+  }
+
+  /** Extracts the region name from the BigQuery endpoint, or returns null if not regional. */
+  public static String getBigQueryRegion() {
+    String endpoint = System.getProperty("bigquery.endpoint", System.getenv("BIGQUERY_ENDPOINT"));
+    if (endpoint == null) {
+      return null;
+    }
+    if (endpoint.contains("-bigquery.googleapis.com")) {
+      int start = endpoint.indexOf("https://");
+      start = (start == -1) ? 0 : start + 8;
+      int end = endpoint.indexOf("-bigquery.googleapis.com");
+      return endpoint.substring(start, end);
+    }
+    if (endpoint.contains(".rep.googleapis.com") && endpoint.contains("bigquery.")) {
+      int start = endpoint.indexOf("bigquery.") + 9;
+      int end = endpoint.indexOf(".rep.googleapis.com");
+      return endpoint.substring(start, end);
+    }
+    return null;
+  }
+
+  /**
+   * Extracts the region name from the BigQuery Storage endpoint, or returns null if not regional.
+   */
+  public static String getBigQueryStorageRegion() {
+    String endpoint =
+        System.getProperty("bigquery.storage.endpoint", System.getenv("BIGQUERY_STORAGE_ENDPOINT"));
+    if (endpoint == null) {
+      return null;
+    }
+    if (endpoint.contains("-bigquerystorage.googleapis.com")) {
+      int end = endpoint.indexOf("-bigquerystorage.googleapis.com");
+      return endpoint.substring(0, end);
+    }
+    if (endpoint.contains(".rep.googleapis.com") && endpoint.contains("bigquerystorage.")) {
+      int start = endpoint.indexOf("bigquerystorage.") + 16;
+      int end = endpoint.indexOf(".rep.googleapis.com");
+      return endpoint.substring(start, end);
+    }
+    return null;
+  }
+
+  /** Helper to check if the BQ Storage client is configured to target a regional endpoint. */
+  public static boolean isRegionalEndpoint() {
+    return getBigQueryStorageRegion() != null;
+  }
+
+  /** Helper to check if the BigQuery API client is configured to target a regional endpoint. */
+  public static boolean isBigQueryRegionalEndpoint() {
+    return getBigQueryRegion() != null;
   }
 
   /**
@@ -231,7 +299,8 @@ public class Helper {
    */
   public static BigQueryWriteSettings.Builder createBigQueryWriteSettingsBuilder() {
     BigQueryWriteSettings.Builder builder = BigQueryWriteSettings.newBuilder();
-    String endpoint = System.getenv("BIGQUERY_STORAGE_ENDPOINT");
+    String endpoint =
+        System.getProperty("bigquery.storage.endpoint", System.getenv("BIGQUERY_STORAGE_ENDPOINT"));
     if (endpoint != null) {
       builder.setEndpoint(endpoint);
     }
