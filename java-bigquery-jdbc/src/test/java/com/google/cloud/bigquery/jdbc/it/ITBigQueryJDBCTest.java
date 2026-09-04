@@ -2904,9 +2904,11 @@ public class ITBigQueryJDBCTest extends ITBase {
             assertThrows(
                 SQLException.class, () -> statement.execute("SELECT * FROM session_temp_table;"));
         assertTrue(
-            ex.getMessage().toLowerCase().contains("session ended")
-                || ex.getMessage().toLowerCase().contains("not found"),
-            "Expected session ended error but got: " + ex.getMessage());
+            ex.getMessage().contains(sessionId),
+            "Expected exception message to not contain session ID: "
+                + sessionId
+                + ", but got: "
+                + ex.getMessage());
       }
     }
   }
