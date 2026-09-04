@@ -125,6 +125,7 @@ public class GcpFallbackState {
     if (evaluationStarted.compareAndSet(false, true)) {
       ScheduledExecutorService executor = getOrCreateExecutorService(options);
       if (executor == null || executor.isShutdown()) {
+        evaluationStarted.set(false);
         return;
       }
       GcpFallbackOpenTelemetry openTelemetry =
