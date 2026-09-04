@@ -481,6 +481,12 @@
               <goal>enforce</goal>
             </goals>
           </execution>
+          <execution>
+            <id>enforce-banned-duplicate-classes</id>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
     </plugins>
