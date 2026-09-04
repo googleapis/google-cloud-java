@@ -31,15 +31,18 @@ package com.google.api.gax.rpc;
 
 import com.google.api.core.BetaApi;
 import java.io.InputStream;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A ResumableUploadCallable is an API-transport-independent wrapper for the Resumable Upload
  * protocol. Operates directly on the request object and input stream payload.
  *
- * @param <RequestT> request type
- * @param <ResponseT> response type
+ * @param <RequestT> the type of the initial request message that initiates the upload session
+ * @param <ResponseT> the type of the final response message returned once the upload completes
  */
 @BetaApi
+@NullMarked
 public abstract class ResumableUploadCallable<RequestT, ResponseT> {
 
   protected ResumableUploadCallable() {}
@@ -47,22 +50,30 @@ public abstract class ResumableUploadCallable<RequestT, ResponseT> {
   /**
    * Performs a new resumable upload asynchronously.
    *
+   * <p>The provided {@code payload} stream is consumed asynchronously by the returned {@link
+   * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
+   * cancellation.
+   *
    * @param request the request message
-   * @param payload the data payload input stream
+   * @param payload the data payload input stream to upload and close
    * @param settings call settings overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
   public abstract ResumableUploadFuture<ResponseT> futureCall(
-      RequestT request, InputStream payload, ResumableUploadCallSettings settings);
+      RequestT request, InputStream payload, @Nullable ResumableUploadCallSettings settings);
 
   /**
    * Resumes an existing resumable upload session asynchronously using a saved session URL.
    *
+   * <p>The provided {@code payload} stream is consumed asynchronously by the returned {@link
+   * ResumableUploadFuture} and will be closed automatically upon completion, failure, or
+   * cancellation.
+   *
    * @param sessionUrl the upload session URL
-   * @param payload the data payload input stream
+   * @param payload the data payload input stream to upload and close
    * @param settings call settings overrides; may be {@code null}
    * @return future for tracking and controlling the upload
    */
   public abstract ResumableUploadFuture<ResponseT> resumeCall(
-      String sessionUrl, InputStream payload, ResumableUploadCallSettings settings);
+      String sessionUrl, InputStream payload, @Nullable ResumableUploadCallSettings settings);
 }
