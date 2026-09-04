@@ -1101,7 +1101,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
     byte[] derSignature = signer.sign();
 
     // Transcode the signature and check length.
-    byte[] jwsSignature = GdchCredentials.transcodeDerToConcat(derSignature, 64);
+    byte[] jwsSignature = GdchCredentials.transcodeDerToConcat(derSignature);
     assertEquals(64, jwsSignature.length);
   }
 
@@ -1110,7 +1110,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
     byte[] invalidDer = new byte[] {0x31, 0x00}; // Not a SEQUENCE
     GoogleAuthException e =
         assertThrows(
-            GoogleAuthException.class, () -> GdchCredentials.transcodeDerToConcat(invalidDer, 64));
+            GoogleAuthException.class, () -> GdchCredentials.transcodeDerToConcat(invalidDer));
     assertEquals("Invalid DER signature format.", e.getMessage());
   }
 
@@ -1120,7 +1120,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
     byte[] invalidDer = new byte[] {0x30, 0x05, 0x02, 0x01, 0x01, 0x02, 0x01, 0x02};
     GoogleAuthException e =
         assertThrows(
-            GoogleAuthException.class, () -> GdchCredentials.transcodeDerToConcat(invalidDer, 64));
+            GoogleAuthException.class, () -> GdchCredentials.transcodeDerToConcat(invalidDer));
     assertEquals("Invalid DER signature length.", e.getMessage());
   }
 
@@ -1130,7 +1130,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
     byte[] invalidDer = new byte[] {0x30, 0x06, 0x03, 0x01, 0x01, 0x02, 0x01, 0x02};
     GoogleAuthException e =
         assertThrows(
-            GoogleAuthException.class, () -> GdchCredentials.transcodeDerToConcat(invalidDer, 64));
+            GoogleAuthException.class, () -> GdchCredentials.transcodeDerToConcat(invalidDer));
     assertEquals("Expected INTEGER for R.", e.getMessage());
   }
 
@@ -1140,7 +1140,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
     byte[] invalidDer = new byte[] {0x30, 0x06, 0x02, 0x01, 0x01, 0x03, 0x01, 0x01};
     GoogleAuthException e =
         assertThrows(
-            GoogleAuthException.class, () -> GdchCredentials.transcodeDerToConcat(invalidDer, 64));
+            GoogleAuthException.class, () -> GdchCredentials.transcodeDerToConcat(invalidDer));
     assertEquals("Expected INTEGER for S.", e.getMessage());
   }
 

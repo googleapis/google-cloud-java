@@ -36,6 +36,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A refreshable alternative to {@link OAuth2Credentials}.
@@ -63,7 +64,7 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
   }
 
   protected OAuth2CredentialsWithRefresh(
-      AccessToken accessToken, OAuth2RefreshHandler refreshHandler) {
+      @Nullable AccessToken accessToken, OAuth2RefreshHandler refreshHandler) {
     super(accessToken);
 
     // If no expirationTime is provided, the token will never be refreshed.
@@ -93,7 +94,7 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
 
   public static class Builder extends OAuth2Credentials.Builder {
 
-    private OAuth2RefreshHandler refreshHandler;
+    private @Nullable OAuth2RefreshHandler refreshHandler;
 
     private Builder() {}
 
@@ -103,7 +104,7 @@ public class OAuth2CredentialsWithRefresh extends OAuth2Credentials {
      */
     @Override
     @CanIgnoreReturnValue
-    public Builder setAccessToken(AccessToken token) {
+    public Builder setAccessToken(@Nullable AccessToken token) {
       super.setAccessToken(token);
       return this;
     }

@@ -675,8 +675,8 @@ public class GdchCredentials extends GoogleCredentials {
     }
   }
 
-  private static String validateField(String field, String fieldName) throws IOException {
-    if (field == null || field.isEmpty()) {
+  private static String validateField(@Nullable String field, String fieldName) throws IOException {
+    if (Strings.isNullOrEmpty(field)) {
       throw new IOException(
           String.format(
               "Error reading GDCH service account credential from JSON, %s is misconfigured.",
@@ -712,8 +712,8 @@ public class GdchCredentials extends GoogleCredentials {
       return transport;
     }
 
-    private void setTransport(String caCertPath) throws IOException {
-      if (caCertPath == null || caCertPath.isEmpty()) {
+    private void setTransport(@Nullable String caCertPath) throws IOException {
+      if (Strings.isNullOrEmpty(caCertPath)) {
         this.transport = new NetHttpTransport();
         return;
       }
@@ -752,7 +752,6 @@ public class GdchCredentials extends GoogleCredentials {
    * @param payload The JWS payload containing claims like "iss", "sub", and "aud".
    * @return A complete, signed JWS string in the format {@code [header].[payload].[signature]}.
    * @throws GeneralSecurityException If signing fails due to cryptographic errors.
-   * @throws IOException If serialization or transcoding fails.
    */
   @VisibleForTesting
   static String signUsingEsSha256(
@@ -778,7 +777,7 @@ public class GdchCredentials extends GoogleCredentials {
           SecurityUtils.sign(SecurityUtils.getEs256SignatureAlgorithm(), privateKey, contentBytes);
 
       // 3. Transcode the signature from DER to Concatenated R|S.
-      byte[] jwsSignature = transcodeDerToConcat(signature, 64);
+      byte[] jwsSignature = transcodeDerToConcat(signature);
 
       // 4. Return final JWS: [Signing Input] + '.' + Base64URL(Signature)
       return content + "." + Base64.getUrlEncoder().withoutPadding().encodeToString(jwsSignature);
@@ -795,13 +794,11 @@ public class GdchCredentials extends GoogleCredentials {
    * <p>Concatenated format: {@code r | s} (where {@code |} is concatenation).
    *
    * @param derSignature The raw bytes of the DER-encoded signature.
-   * @param outputLength The total expected length of the concatenated signature (64 bytes for
-   *     ES256).
    * @return The signature in concatenated R|S format.
    * @throws IOException If the DER format is invalid.
    */
   @VisibleForTesting
-  static byte[] transcodeDerToConcat(byte[] derSignature, int outputLength)
+  static byte[] transcodeDerToConcat(byte[] derSignature)
       throws GoogleAuthException {
     // Validate basic ASN.1 DER structure (0x30 = SEQUENCE)
     if (derSignature.length < 8 || derSignature[0] != 0x30) {
@@ -847,7 +844,7 @@ public class GdchCredentials extends GoogleCredentials {
     System.arraycopy(derSignature, offset, s, 0, sLength);
 
     // Concatenate r and s into fixed-length segments (32 bytes each for ES256)
-    int keySizeBytes = outputLength / 2;
+    int keySizeBytes = 64 / 2;
     if (r.length > keySizeBytes || s.length > keySizeBytes) {
       throw new GoogleAuthException(
           false,
@@ -858,9 +855,9 @@ public class GdchCredentials extends GoogleCredentials {
           null);
     }
 
-    byte[] result = new byte[outputLength];
+    byte[] result = new byte[64];
     System.arraycopy(r, 0, result, keySizeBytes - r.length, r.length);
-    System.arraycopy(s, 0, result, outputLength - s.length, s.length);
+    System.arraycopy(s, 0, result, 64 - s.length, s.length);
 
     return result;
   }
