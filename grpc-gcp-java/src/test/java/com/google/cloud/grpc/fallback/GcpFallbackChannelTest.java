@@ -1846,7 +1846,7 @@ public class GcpFallbackChannelTest {
     }
   }
 
-    @Test
+  @Test
   public void testConcurrentIsInFallbackModeDoesNotResetProbeSuccesses()
       throws InterruptedException, java.util.concurrent.ExecutionException {
     ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
