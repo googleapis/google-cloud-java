@@ -34,17 +34,21 @@ public class AsyncListUsers {
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (IdentityClient identityClient = IdentityClient.create()) {
-      ListUsersRequest request =
-          ListUsersRequest.newBuilder()
-              .setPageSize(883849137)
-              .setPageToken("pageToken873572522")
-              .build();
-      ApiFuture<User> future = identityClient.listUsersPagedCallable().futureCall(request);
-      // Do something.
-      for (User element : future.get().iterateAll()) {
-        // doThingsWith(element);
-      }
+    // - The samples create a client that can be re-used for multiple requests
+    // and are expected to be long-lived.
+    // The clients should be resource managed properly and eventually closed.
+    // For more information on client lifecycle, see
+    // https://docs.cloud.google.com/java/docs/client-lifecycle
+    IdentityClient identityClient = IdentityClient.create();
+    ListUsersRequest request =
+        ListUsersRequest.newBuilder()
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+    ApiFuture<User> future = identityClient.listUsersPagedCallable().futureCall(request);
+    // Do something.
+    for (User element : future.get().iterateAll()) {
+      // doThingsWith(element);
     }
   }
 }
