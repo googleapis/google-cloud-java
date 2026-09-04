@@ -289,9 +289,8 @@ try (SecretManagerServiceClient client = SecretManagerServiceClient.create(setti
 
 ---
 
-## 7. Future Outlook: Native OpenJDK PQC Support (JDK 27+)
+## 7. Native OpenJDK PQC Support (JDK 27+)
 
-The cryptographic landscape is continually advancing. The OpenJDK community is integrating standardized post-quantum algorithms directly into the Java platform:
+The OpenJDK community is integrating standardized post-quantum algorithms directly into the Java platform:
 - **[JEP 496](https://openjdk.org/jeps/496) (ML-KEM)**: Introduces native implementations of NIST FIPS 203 (Module-Lattice-Based Key-Encapsulation Mechanism) into OpenJDK's standard security providers (`SunJSSE` and `SunJCE`), targeted for **JDK 27+**.
-- **What this means for Google Cloud Java**: Once JDK 27 becomes standard in production environments, Java applications will be capable of negotiating hybrid and pure post-quantum TLS natively without requiring JNI shared libraries or third-party dependencies like Conscrypt.
-- **Future-Proofing**: As native JDK capabilities mature, Google Cloud Java client libraries will adapt to take advantage of built-in JVM providers, preserving a seamless, zero-maintenance security upgrade path for all users.
+- **What this means for Google Cloud Java**: On JDK 27+, applications configuring the standard JDK security provider (see **Option 2** in Section 6) will negotiate post-quantum TLS natively using `SunJSSE`, without requiring Conscrypt or JNI native shared libraries.
