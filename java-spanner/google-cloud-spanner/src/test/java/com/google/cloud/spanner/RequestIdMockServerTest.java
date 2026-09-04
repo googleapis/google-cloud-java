@@ -706,7 +706,7 @@ public class RequestIdMockServerTest {
             // the requests that we see. Its request ID carries the channel that grpc-gcp selected
             // for the affinity-key path.
             XGoogSpannerRequestId.of(otherClientId, -1, 1, 1),
-            XGoogSpannerRequestId.of(otherClientId, -1, 2, 1),
+            XGoogSpannerRequestId.of(otherClientId, -1, 3, 1),
             XGoogSpannerRequestId.of(getClientId(), -1, 2, 1)),
         actual);
   }
