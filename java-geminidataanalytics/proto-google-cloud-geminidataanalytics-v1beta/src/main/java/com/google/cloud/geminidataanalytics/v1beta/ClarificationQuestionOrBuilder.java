@@ -38,7 +38,7 @@ public interface ClarificationQuestionOrBuilder
    * <code>string question = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.question is
-   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=892
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=908
    * @return The question.
    */
   @java.lang.Deprecated
@@ -55,7 +55,7 @@ public interface ClarificationQuestionOrBuilder
    * <code>string question = 1 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.question is
-   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=892
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=908
    * @return The bytes for question.
    */
   @java.lang.Deprecated
@@ -74,7 +74,7 @@ public interface ClarificationQuestionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.selection_mode is
-   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=897
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=913
    * @return The enum numeric value on the wire for selectionMode.
    */
   @java.lang.Deprecated
@@ -93,7 +93,7 @@ public interface ClarificationQuestionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.selection_mode is
-   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=897
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=913
    * @return The selectionMode.
    */
   @java.lang.Deprecated
@@ -113,7 +113,7 @@ public interface ClarificationQuestionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
-   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=919
    * @return A list containing the options.
    */
   @java.lang.Deprecated
@@ -132,7 +132,7 @@ public interface ClarificationQuestionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
-   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=919
    * @return The count of options.
    */
   @java.lang.Deprecated
@@ -151,7 +151,7 @@ public interface ClarificationQuestionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
-   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=919
    * @param index The index of the element to return.
    * @return The options at the given index.
    */
@@ -171,7 +171,7 @@ public interface ClarificationQuestionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.options is
-   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=903
+   *     deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=919
    * @param index The index of the value to return.
    * @return The bytes of the options at the given index.
    */
@@ -192,7 +192,7 @@ public interface ClarificationQuestionOrBuilder
    *
    * @deprecated
    *     google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.clarification_question_type
-   *     is deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=908
+   *     is deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=924
    * @return The enum numeric value on the wire for clarificationQuestionType.
    */
   @java.lang.Deprecated
@@ -212,7 +212,7 @@ public interface ClarificationQuestionOrBuilder
    *
    * @deprecated
    *     google.cloud.geminidataanalytics.v1beta.ClarificationQuestion.clarification_question_type
-   *     is deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=908
+   *     is deprecated. See google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=924
    * @return The clarificationQuestionType.
    */
   @java.lang.Deprecated

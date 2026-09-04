@@ -1,0 +1,21 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.loyaltycustomers.v1",
+  "libraryPackage": "com.google.shopping.merchant.loyaltycustomers.v1",
+  "services": {
+    "LoyaltyCustomerMatchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LoyaltyCustomerMatchServiceClient",
+          "rpcs": {
+            "ManageLoyaltyCustomerMatch": {
+              "methods": ["manageLoyaltyCustomerMatch", "manageLoyaltyCustomerMatchCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

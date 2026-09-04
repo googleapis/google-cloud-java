@@ -36,6 +36,7 @@
     <module>java-appengine-admin</module>
     <module>java-apphub</module>
     <module>java-appoptimize</module>
+    <module>java-apptopology</module>
     <module>java-area120-tables</module>
     <module>java-artifact-registry</module>
     <module>java-asset</module>
@@ -236,6 +237,7 @@
     <module>java-shopping-merchant-datasources</module>
     <module>java-shopping-merchant-inventories</module>
     <module>java-shopping-merchant-lfp</module>
+    <module>java-shopping-merchant-loyaltycustomers</module>
     <module>java-shopping-merchant-notifications</module>
     <module>java-shopping-merchant-product-studio</module>
     <module>java-shopping-merchant-products</module>

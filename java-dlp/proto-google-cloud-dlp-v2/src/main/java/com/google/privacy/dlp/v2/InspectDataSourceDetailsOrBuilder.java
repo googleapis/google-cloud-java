@@ -71,10 +71,12 @@ public interface InspectDataSourceDetailsOrBuilder
    *
    *
    * <pre>
-   * A summary of the outcome of this inspection job.
+   * Output only. A summary of the outcome of this inspection job.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+   * <code>
+   * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the result field is set.
    */
@@ -84,10 +86,12 @@ public interface InspectDataSourceDetailsOrBuilder
    *
    *
    * <pre>
-   * A summary of the outcome of this inspection job.
+   * Output only. A summary of the outcome of this inspection job.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+   * <code>
+   * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The result.
    */
@@ -97,10 +101,12 @@ public interface InspectDataSourceDetailsOrBuilder
    *
    *
    * <pre>
-   * A summary of the outcome of this inspection job.
+   * Output only. A summary of the outcome of this inspection job.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
+   * <code>
+   * .google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.privacy.dlp.v2.InspectDataSourceDetails.ResultOrBuilder getResultOrBuilder();
 }
