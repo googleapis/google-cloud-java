@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.spi.v1;
 
+import static com.google.cloud.spanner.XGoogSpannerRequestId.REQUEST_ID_CALL_OPTIONS_KEY;
 import static com.google.common.truth.Truth.assertThat;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -63,6 +64,7 @@ import com.google.cloud.spanner.SpannerException;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.SpannerOptions.CallContextConfigurator;
+import com.google.cloud.spanner.SpannerOptions.SpannerCallContextTimeoutConfigurator;
 import com.google.cloud.spanner.SpannerOptionsHelper;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.TransactionRunner;
@@ -73,15 +75,20 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.Futures;
 import com.google.protobuf.ListValue;
 import com.google.rpc.ErrorInfo;
+import com.google.spanner.admin.database.v1.DatabaseAdminGrpc;
+import com.google.spanner.admin.database.v1.ListDatabaseRolesRequest;
+import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
+import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.Session;
 import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.StructType;
 import com.google.spanner.v1.StructType.Field;
 import com.google.spanner.v1.TypeCode;
+import io.grpc.CallOptions;
 import io.grpc.Context;
 import io.grpc.Contexts;
 import io.grpc.ManagedChannelBuilder;
@@ -109,6 +116,7 @@ import io.opentelemetry.sdk.trace.samplers.Sampler;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.lang.reflect.Modifier;
+import java.lang.reflect.Proxy;
 import java.net.InetSocketAddress;
 import java.net.URLEncoder;
 import java.time.Duration;
@@ -686,6 +694,38 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
+  public void
+      testCallCredentialsProviderPreservedWhenConfiguratorReturnsDeltaContextWithCustomCallOptions() {
+    CallOptions.Key<String> customKey = CallOptions.Key.create("customKey");
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return GrpcCallContext.createDefault()
+                .withCallOptions(CallOptions.DEFAULT.withOption(customKey, "customVal"));
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCredentials(STATIC_CREDENTIALS)
+            .setCallCredentialsProvider(() -> MoreCallCredentials.from(VARIABLE_CREDENTIALS))
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    GrpcCallContext callContext =
+        rpc.newCallContext(
+            optionsMap,
+            "/some/resource",
+            GetSessionRequest.getDefaultInstance(),
+            SpannerGrpc.getGetSessionMethod());
+    assertNotNull(callContext.getCallOptions().getCredentials());
+    assertEquals("customVal", callContext.getCallOptions().getOption(customKey));
+    rpc.shutdown();
+  }
+
+  @Test
   public void testCallCredentialsProviderReturnsNull() {
     SpannerOptions options =
         SpannerOptions.newBuilder()
@@ -835,10 +875,694 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
+  public void testClientLevelCallContextConfiguratorEndToEnd() {
+    final TimeoutHolder timeoutHolder = new TimeoutHolder();
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            if (request instanceof ExecuteSqlRequest
+                && method.equals(SpannerGrpc.getExecuteSqlMethod())) {
+              ExecuteSqlRequest sqlRequest = (ExecuteSqlRequest) request;
+              if (sqlRequest.getSeqno() > 0L) {
+                return context.withTimeoutDuration(timeoutHolder.timeout);
+              }
+            }
+            return null;
+          }
+        };
+
+    mockSpanner.setExecuteSqlExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(10, 0));
+    SpannerOptions options =
+        createSpannerOptions().toBuilder().setCallContextConfigurator(configurator).build();
+    try (Spanner customSpanner = options.getService()) {
+      DatabaseClient client =
+          customSpanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+
+      // 1. A 1ns timeout causes a DEADLINE_EXCEEDED exception end-to-end.
+      timeoutHolder.timeout = Duration.ofNanos(1L);
+      SpannerException e =
+          assertThrows(
+              SpannerException.class,
+              () ->
+                  client
+                      .readWriteTransaction()
+                      .run(transaction -> transaction.executeUpdate(UPDATE_FOO_STATEMENT)));
+      assertEquals(ErrorCode.DEADLINE_EXCEEDED, e.getErrorCode());
+
+      // 2. A longer timeout succeeds.
+      timeoutHolder.timeout = Duration.ofMinutes(1L);
+      long updateCount =
+          client
+              .readWriteTransaction()
+              .run(transaction -> transaction.executeUpdate(UPDATE_FOO_STATEMENT));
+      assertEquals(1L, updateCount);
+    }
+  }
+
+  @Test
+  public void testThreadLevelOverridesClientLevelCallContextConfiguratorEndToEnd() {
+    // Client-level configurator sets a 1-minute timeout which normally succeeds.
+    CallContextConfigurator clientConfigurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            if (request instanceof ExecuteSqlRequest
+                && method.equals(SpannerGrpc.getExecuteSqlMethod())) {
+              ExecuteSqlRequest sqlRequest = (ExecuteSqlRequest) request;
+              if (sqlRequest.getSeqno() > 0L) {
+                return context.withTimeoutDuration(Duration.ofMinutes(1L));
+              }
+            }
+            return null;
+          }
+        };
+
+    // Thread-level configurator overrides the timeout to 1ns.
+    CallContextConfigurator threadConfigurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            if (request instanceof ExecuteSqlRequest
+                && method.equals(SpannerGrpc.getExecuteSqlMethod())) {
+              ExecuteSqlRequest sqlRequest = (ExecuteSqlRequest) request;
+              if (sqlRequest.getSeqno() > 0L) {
+                return context.withTimeoutDuration(Duration.ofNanos(1L));
+              }
+            }
+            return null;
+          }
+        };
+
+    mockSpanner.setExecuteSqlExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(10, 0));
+    SpannerOptions options =
+        createSpannerOptions().toBuilder().setCallContextConfigurator(clientConfigurator).build();
+    try (Spanner customSpanner = options.getService()) {
+      DatabaseClient client =
+          customSpanner.getDatabaseClient(DatabaseId.of("[PROJECT]", "[INSTANCE]", "[DATABASE]"));
+
+      // Without thread-level configurator, the client-level 1m timeout succeeds.
+      long updateCount =
+          client
+              .readWriteTransaction()
+              .run(transaction -> transaction.executeUpdate(UPDATE_FOO_STATEMENT));
+      assertEquals(1L, updateCount);
+
+      // With thread-level configurator, the 1ns timeout overrides client-level and causes
+      // DEADLINE_EXCEEDED.
+      Context context =
+          Context.current()
+              .withValue(SpannerOptions.CALL_CONTEXT_CONFIGURATOR_KEY, threadConfigurator);
+      context.run(
+          () -> {
+            SpannerException e =
+                assertThrows(
+                    SpannerException.class,
+                    () ->
+                        client
+                            .readWriteTransaction()
+                            .run(transaction -> transaction.executeUpdate(UPDATE_FOO_STATEMENT)));
+            assertEquals(ErrorCode.DEADLINE_EXCEEDED, e.getErrorCode());
+          });
+    }
+  }
+
+  @Test
   public void testNewCallContextWithNullRequestAndNullMethod() {
     SpannerOptions options = SpannerOptions.newBuilder().setProjectId("some-project").build();
     GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
     assertNotNull(rpc.newCallContext(optionsMap, "/some/resource", null, null));
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithClientLevelConfigurator() {
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            if (method.equals(SpannerGrpc.getExecuteStreamingSqlMethod())) {
+              return context
+                  .withTimeoutDuration(Duration.ofSeconds(60))
+                  .withStreamWaitTimeoutDuration(Duration.ofSeconds(30));
+            }
+            return null;
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    GrpcCallContext callContext =
+        rpc.newCallContext(
+            optionsMap,
+            "/some/resource",
+            ExecuteSqlRequest.getDefaultInstance(),
+            SpannerGrpc.getExecuteStreamingSqlMethod());
+    assertEquals(Duration.ofSeconds(60), callContext.getTimeoutDuration());
+    assertEquals(Duration.ofSeconds(30), callContext.getStreamWaitTimeoutDuration());
+    assertNotNull(callContext.getCallOptions().getOption(REQUEST_ID_CALL_OPTIONS_KEY));
+    assertEquals(
+        ImmutableList.of("projects/some-project"),
+        callContext.getExtraHeaders().get(ApiClientHeaderProvider.getDefaultResourceHeaderKey()));
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithThreadLevelOverridesClientLevelConfigurator() {
+    CallContextConfigurator clientConfigurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return context.withTimeoutDuration(Duration.ofSeconds(60));
+          }
+        };
+    CallContextConfigurator threadConfigurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return context.withTimeoutDuration(Duration.ofSeconds(10));
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(clientConfigurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    Context context =
+        Context.current()
+            .withValue(SpannerOptions.CALL_CONTEXT_CONFIGURATOR_KEY, threadConfigurator);
+    context.run(
+        () -> {
+          GrpcCallContext callContext =
+              rpc.newCallContext(
+                  optionsMap,
+                  "/some/resource",
+                  ExecuteSqlRequest.getDefaultInstance(),
+                  SpannerGrpc.getExecuteStreamingSqlMethod());
+          assertEquals(Duration.ofSeconds(10), callContext.getTimeoutDuration());
+          assertNotNull(callContext.getCallOptions().getOption(REQUEST_ID_CALL_OPTIONS_KEY));
+          assertEquals(
+              ImmutableList.of("projects/some-project"),
+              callContext
+                  .getExtraHeaders()
+                  .get(ApiClientHeaderProvider.getDefaultResourceHeaderKey()));
+        });
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithBothClientAndThreadLevelConfiguratorsMerged() {
+    CallContextConfigurator clientConfigurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return context.withStreamWaitTimeoutDuration(Duration.ofSeconds(30));
+          }
+        };
+    CallContextConfigurator threadConfigurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return context.withTimeoutDuration(Duration.ofSeconds(10));
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(clientConfigurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    Context context =
+        Context.current()
+            .withValue(SpannerOptions.CALL_CONTEXT_CONFIGURATOR_KEY, threadConfigurator);
+    context.run(
+        () -> {
+          GrpcCallContext callContext =
+              rpc.newCallContext(
+                  optionsMap,
+                  "/some/resource",
+                  ExecuteSqlRequest.getDefaultInstance(),
+                  SpannerGrpc.getExecuteStreamingSqlMethod());
+          assertEquals(Duration.ofSeconds(10), callContext.getTimeoutDuration());
+          assertEquals(Duration.ofSeconds(30), callContext.getStreamWaitTimeoutDuration());
+          assertNotNull(callContext.getCallOptions().getOption(REQUEST_ID_CALL_OPTIONS_KEY));
+          assertEquals(
+              ImmutableList.of("projects/some-project"),
+              callContext
+                  .getExtraHeaders()
+                  .get(ApiClientHeaderProvider.getDefaultResourceHeaderKey()));
+        });
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithSpannerCallContextTimeoutConfiguratorClientLevel() {
+    SpannerCallContextTimeoutConfigurator configurator =
+        SpannerCallContextTimeoutConfigurator.create()
+            .withExecuteQueryTimeoutDuration(Duration.ofSeconds(45));
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    GrpcCallContext callContext =
+        rpc.newCallContext(
+            optionsMap,
+            "/some/resource",
+            ExecuteSqlRequest.getDefaultInstance(),
+            SpannerGrpc.getExecuteStreamingSqlMethod());
+    assertEquals(Duration.ofSeconds(45), callContext.getTimeoutDuration());
+    assertEquals(Duration.ofSeconds(45), callContext.getStreamWaitTimeoutDuration());
+    assertNotNull(callContext.getCallOptions().getOption(REQUEST_ID_CALL_OPTIONS_KEY));
+    assertEquals(
+        ImmutableList.of("projects/some-project"),
+        callContext.getExtraHeaders().get(ApiClientHeaderProvider.getDefaultResourceHeaderKey()));
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithDerivedContextNoDuplicateHeaders() {
+    CallContextConfigurator clientConfigurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return context.withTimeoutDuration(Duration.ofSeconds(60));
+          }
+        };
+    CallContextConfigurator threadConfigurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return context.withTimeoutDuration(Duration.ofSeconds(10));
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .enableLeaderAwareRouting()
+            .setCallContextConfigurator(clientConfigurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    Context context =
+        Context.current()
+            .withValue(SpannerOptions.CALL_CONTEXT_CONFIGURATOR_KEY, threadConfigurator);
+    context.run(
+        () -> {
+          GrpcCallContext callContext =
+              rpc.newCallContext(
+                  optionsMap,
+                  /* requestId= */ null,
+                  "/some/resource",
+                  ExecuteSqlRequest.getDefaultInstance(),
+                  SpannerGrpc.getExecuteStreamingSqlMethod(),
+                  /* routeToLeader= */ true);
+          assertEquals(Duration.ofSeconds(10), callContext.getTimeoutDuration());
+          assertEquals(
+              ImmutableList.of("true"),
+              callContext.getExtraHeaders().get("x-goog-spanner-route-to-leader"));
+          assertEquals(
+              ImmutableList.of("projects/some-project"),
+              callContext
+                  .getExtraHeaders()
+                  .get(ApiClientHeaderProvider.getDefaultResourceHeaderKey()));
+          assertNotNull(callContext.getCallOptions().getOption(REQUEST_ID_CALL_OPTIONS_KEY));
+        });
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextPreservesCustomCallOptionsAndUserHeaders() {
+    CallOptions.Key<String> customOptionKey = CallOptions.Key.create("customOptionKey");
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return ((GrpcCallContext) context)
+                .withCallOptions(
+                    ((GrpcCallContext) context)
+                        .getCallOptions()
+                        .withOption(customOptionKey, "customValue"))
+                .withExtraHeaders(
+                    Collections.singletonMap("custom-header", ImmutableList.of("customValue")));
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    GrpcCallContext callContext =
+        rpc.newCallContext(
+            optionsMap,
+            "/some/resource",
+            ExecuteSqlRequest.getDefaultInstance(),
+            SpannerGrpc.getExecuteStreamingSqlMethod());
+    assertEquals("customValue", callContext.getCallOptions().getOption(customOptionKey));
+    assertNotNull(callContext.getCallOptions().getOption(REQUEST_ID_CALL_OPTIONS_KEY));
+    assertEquals(
+        ImmutableList.of("customValue"), callContext.getExtraHeaders().get("custom-header"));
+    assertEquals(
+        ImmutableList.of("projects/some-project"),
+        callContext.getExtraHeaders().get(ApiClientHeaderProvider.getDefaultResourceHeaderKey()));
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithInvalidContextThrowsIllegalArgumentException() {
+    ApiCallContext invalidContext =
+        (ApiCallContext)
+            Proxy.newProxyInstance(
+                ApiCallContext.class.getClassLoader(),
+                new Class<?>[] {ApiCallContext.class},
+                (proxy, method, args) -> null);
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return invalidContext;
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    assertThrows(
+        IllegalArgumentException.class,
+        () ->
+            rpc.newCallContext(
+                optionsMap,
+                "/some/resource",
+                ExecuteSqlRequest.getDefaultInstance(),
+                SpannerGrpc.getExecuteStreamingSqlMethod()));
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithConfiguratorReturningNullReturnsDefault() {
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return null;
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    GrpcCallContext callContext =
+        rpc.newCallContext(
+            optionsMap,
+            "/some/resource",
+            ExecuteSqlRequest.getDefaultInstance(),
+            SpannerGrpc.getExecuteStreamingSqlMethod());
+    assertNotNull(callContext);
+    assertNull(callContext.getTimeoutDuration());
+    assertEquals(Duration.ofMinutes(30), callContext.getStreamWaitTimeoutDuration());
+    assertNotNull(callContext.getCallOptions().getOption(REQUEST_ID_CALL_OPTIONS_KEY));
+    assertEquals(
+        ImmutableList.of("projects/some-project"),
+        callContext.getExtraHeaders().get(ApiClientHeaderProvider.getDefaultResourceHeaderKey()));
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithSpannerCallContextTimeoutConfiguratorForRead() {
+    SpannerCallContextTimeoutConfigurator configurator =
+        SpannerCallContextTimeoutConfigurator.create()
+            .withReadTimeoutDuration(Duration.ofSeconds(45));
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    GrpcCallContext callContext =
+        rpc.newCallContext(
+            optionsMap,
+            "/some/resource",
+            ReadRequest.getDefaultInstance(),
+            SpannerGrpc.getStreamingReadMethod());
+    assertEquals(Duration.ofSeconds(45), callContext.getTimeoutDuration());
+    assertEquals(Duration.ofSeconds(45), callContext.getStreamWaitTimeoutDuration());
+    assertNotNull(callContext.getCallOptions().getOption(REQUEST_ID_CALL_OPTIONS_KEY));
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithSpannerCallContextTimeoutConfiguratorForCommit() {
+    SpannerCallContextTimeoutConfigurator configurator =
+        SpannerCallContextTimeoutConfigurator.create()
+            .withCommitTimeoutDuration(Duration.ofSeconds(20));
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    GrpcCallContext callContext =
+        rpc.newCallContext(
+            optionsMap,
+            "/some/resource",
+            CommitRequest.getDefaultInstance(),
+            SpannerGrpc.getCommitMethod());
+    assertEquals(Duration.ofSeconds(20), callContext.getTimeoutDuration());
+    assertNotNull(callContext.getCallOptions().getOption(REQUEST_ID_CALL_OPTIONS_KEY));
+    rpc.shutdown();
+  }
+
+  @Test
+  public void
+      testNewCallContextPreservesCustomCallOptionsWhenThreadConfiguratorReturnsDeltaContext() {
+    CallOptions.Key<String> customOptionKey = CallOptions.Key.create("customOptionKey");
+    CallContextConfigurator clientConfigurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return ((GrpcCallContext) context)
+                .withCallOptions(
+                    ((GrpcCallContext) context)
+                        .getCallOptions()
+                        .withOption(customOptionKey, "customValue"));
+          }
+        };
+    // Thread configurator returns a standalone delta context with default CallOptions.
+    CallContextConfigurator threadConfigurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return GrpcCallContext.createDefault().withTimeoutDuration(Duration.ofSeconds(10));
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(clientConfigurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    Context context =
+        Context.current()
+            .withValue(SpannerOptions.CALL_CONTEXT_CONFIGURATOR_KEY, threadConfigurator);
+    context.run(
+        () -> {
+          GrpcCallContext callContext =
+              rpc.newCallContext(
+                  optionsMap,
+                  "/some/resource",
+                  ExecuteSqlRequest.getDefaultInstance(),
+                  SpannerGrpc.getExecuteStreamingSqlMethod());
+          assertEquals(Duration.ofSeconds(10), callContext.getTimeoutDuration());
+          assertEquals("customValue", callContext.getCallOptions().getOption(customOptionKey));
+          assertNotNull(callContext.getCallOptions().getOption(REQUEST_ID_CALL_OPTIONS_KEY));
+        });
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithDeltaContextCustomIdleTimeout() {
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return GrpcCallContext.createDefault()
+                .withStreamIdleTimeoutDuration(Duration.ofSeconds(15));
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    GrpcCallContext callContext =
+        rpc.newCallContext(
+            optionsMap,
+            "/some/resource",
+            ExecuteSqlRequest.getDefaultInstance(),
+            SpannerGrpc.getExecuteStreamingSqlMethod());
+    assertEquals(Duration.ofSeconds(15), callContext.getStreamIdleTimeoutDuration());
+    assertEquals(Duration.ofMinutes(30), callContext.getStreamWaitTimeoutDuration());
+    assertNotNull(callContext.getCallOptions().getOption(REQUEST_ID_CALL_OPTIONS_KEY));
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextClientDeltaWithCustomCallOptionsAndThreadDerivedContext() {
+    CallOptions.Key<String> clientKey = CallOptions.Key.create("clientKey");
+    CallContextConfigurator clientConfigurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return GrpcCallContext.createDefault()
+                .withCallOptions(CallOptions.DEFAULT.withOption(clientKey, "clientValue"))
+                .withExtraHeaders(
+                    Collections.singletonMap("custom-header", ImmutableList.of("headerValue")));
+          }
+        };
+    CallContextConfigurator threadConfigurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            return context.withTimeoutDuration(Duration.ofSeconds(15));
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(clientConfigurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    Context context =
+        Context.current()
+            .withValue(SpannerOptions.CALL_CONTEXT_CONFIGURATOR_KEY, threadConfigurator);
+    context.run(
+        () -> {
+          GrpcCallContext callContext =
+              rpc.newCallContext(
+                  optionsMap,
+                  "/some/resource",
+                  ExecuteSqlRequest.getDefaultInstance(),
+                  SpannerGrpc.getExecuteStreamingSqlMethod());
+          assertEquals(Duration.ofSeconds(15), callContext.getTimeoutDuration());
+          assertEquals("clientValue", callContext.getCallOptions().getOption(clientKey));
+          assertEquals(
+              ImmutableList.of("headerValue"), callContext.getExtraHeaders().get("custom-header"));
+          assertNotNull(callContext.getCallOptions().getOption(REQUEST_ID_CALL_OPTIONS_KEY));
+        });
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithNullMethodDoesNotThrowNpe() {
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            if (method.equals(SpannerGrpc.getExecuteStreamingSqlMethod())) {
+              return context.withTimeoutDuration(Duration.ofSeconds(10));
+            }
+            return null;
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    GrpcCallContext callContext = rpc.newCallContext(optionsMap, "/some/resource", null, null);
+    assertNotNull(callContext);
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextConfiguratorThrowsExceptionWrapsInSpannerException() {
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            throw new RuntimeException("custom configurator failure");
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    SpannerException e =
+        assertThrows(
+            SpannerException.class,
+            () ->
+                rpc.newCallContext(
+                    optionsMap,
+                    "/some/resource",
+                    ExecuteSqlRequest.getDefaultInstance(),
+                    SpannerGrpc.getExecuteStreamingSqlMethod()));
+    assertTrue(e.getMessage().contains("custom configurator failure"));
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithAdminMethodAppliesConfigurator() {
+    CallContextConfigurator configurator =
+        new CallContextConfigurator() {
+          @Override
+          public <ReqT, RespT> ApiCallContext configure(
+              ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+            if (method == DatabaseAdminGrpc.getListDatabaseRolesMethod()) {
+              return context.withTimeoutDuration(Duration.ofSeconds(42));
+            }
+            return null;
+          }
+        };
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .setCallContextConfigurator(configurator)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    ListDatabaseRolesRequest request =
+        ListDatabaseRolesRequest.newBuilder()
+            .setParent("projects/p/instances/i/databases/d")
+            .build();
+    GrpcCallContext callContext =
+        rpc.newCallContext(
+            /* options= */ null,
+            "projects/p/instances/i/databases/d",
+            request,
+            DatabaseAdminGrpc.getListDatabaseRolesMethod());
+    assertEquals(Duration.ofSeconds(42), callContext.getTimeoutDuration());
     rpc.shutdown();
   }
 
