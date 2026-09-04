@@ -27,7 +27,6 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assume.assumeTrue;
-import static org.mockito.Mockito.mock;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GaxProperties;
@@ -117,6 +116,7 @@ import io.opentelemetry.sdk.trace.samplers.Sampler;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.lang.reflect.Modifier;
+import java.lang.reflect.Proxy;
 import java.net.InetSocketAddress;
 import java.net.URLEncoder;
 import java.time.Duration;
@@ -1246,12 +1246,18 @@ public class GapicSpannerRpcTest {
 
   @Test
   public void testNewCallContextWithInvalidContextThrowsIllegalArgumentException() {
+    ApiCallContext invalidContext =
+        (ApiCallContext)
+            Proxy.newProxyInstance(
+                ApiCallContext.class.getClassLoader(),
+                new Class<?>[] {ApiCallContext.class},
+                (proxy, method, args) -> null);
     CallContextConfigurator configurator =
         new CallContextConfigurator() {
           @Override
           public <ReqT, RespT> ApiCallContext configure(
               ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
-            return mock(ApiCallContext.class);
+            return invalidContext;
           }
         };
     SpannerOptions options =
