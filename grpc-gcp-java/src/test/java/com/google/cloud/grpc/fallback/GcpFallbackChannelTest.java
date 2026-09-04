@@ -1943,4 +1943,37 @@ public class GcpFallbackChannelTest {
       verify(sharedExec, never()).shutdownNow();
     }
   }
+
+  @Test
+  public void testSharedState_channelLifecycleIndependentOfSharedExecutor()
+      throws InterruptedException {
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    GcpFallbackState sharedState = new GcpFallbackState(mockExec);
+    GcpFallbackChannelOptions options =
+        getDefaultOptionsBuilder().setSharedState(sharedState).build();
+
+    when(mockPrimaryDelegateChannel.awaitTermination(anyLong(), any(TimeUnit.class)))
+        .thenReturn(true);
+    when(mockFallbackDelegateChannel.awaitTermination(anyLong(), any(TimeUnit.class)))
+        .thenReturn(true);
+    when(mockPrimaryDelegateChannel.isShutdown()).thenReturn(true);
+    when(mockFallbackDelegateChannel.isShutdown()).thenReturn(true);
+    when(mockPrimaryDelegateChannel.isTerminated()).thenReturn(true);
+    when(mockFallbackDelegateChannel.isTerminated()).thenReturn(true);
+
+    GcpFallbackChannel channel =
+        new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder, mockExec);
+
+    try {
+      channel.shutdown();
+      assertTrue(channel.isShutdown());
+      assertTrue(channel.isTerminated());
+      assertTrue(channel.awaitTermination(1, TimeUnit.SECONDS));
+      // Sibling channels / shared state keep executor alive
+      verify(mockExec, never()).shutdown();
+      verify(mockExec, never()).awaitTermination(anyLong(), any(TimeUnit.class));
+    } finally {
+      sharedState.shutdown();
+    }
+  }
 }

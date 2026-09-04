@@ -453,7 +453,10 @@ public class GcpFallbackChannel extends ManagedChannel {
       return false;
     }
 
-    return execService.isShutdown();
+    if (ownsFallbackState && options.getSharedExecutorService() == null) {
+      return execService.isShutdown();
+    }
+    return true;
   }
 
   @Override
@@ -466,7 +469,10 @@ public class GcpFallbackChannel extends ManagedChannel {
       return false;
     }
 
-    return execService.isTerminated();
+    if (ownsFallbackState && options.getSharedExecutorService() == null) {
+      return execService.isTerminated();
+    }
+    return true;
   }
 
   @Override
@@ -488,6 +494,9 @@ public class GcpFallbackChannel extends ManagedChannel {
       awaitTimeNanos = endTimeNanos - System.nanoTime();
     }
 
-    return execService.awaitTermination(awaitTimeNanos, NANOSECONDS);
+    if (ownsFallbackState && options.getSharedExecutorService() == null) {
+      return execService.awaitTermination(awaitTimeNanos, NANOSECONDS);
+    }
+    return true;
   }
 }
