@@ -52,6 +52,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -69,6 +70,11 @@ class Slf4jUtilsLogbackTest {
   @BeforeEach
   void setup() {
     testEnvironmentProvider = new TestEnvironmentProvider();
+  }
+
+  @AfterEach
+  void tearDown() {
+    LoggingUtils.setEnvironmentProvider(SystemEnvironmentProvider.getInstance());
   }
 
   @Test

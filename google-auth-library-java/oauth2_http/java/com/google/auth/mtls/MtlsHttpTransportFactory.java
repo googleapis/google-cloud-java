@@ -58,10 +58,10 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory, java.io.S
   @Nullable private final transient KeyStore mtlsKeyStore;
 
   /**
-   * No-arg constructor required for Java serialization. {@link IdentityPoolCredentials} stores this
-   * factory in its serializable {@code transportFactory} field, and {@link
-   * java.io.ObjectInputStream} needs a no-arg constructor to reconstruct it during deserialization.
-   * Not intended for direct use; callers should use {@link #MtlsHttpTransportFactory(KeyStore)}.
+   * No-arg constructor required for reflective instantiation during credential deserialization.
+   * {@link OAuth2Credentials#newInstance(String)} uses reflection to reconstruct transient
+   * transport factories from their class name. Not intended for direct use; callers should use
+   * {@link #MtlsHttpTransportFactory(KeyStore)}.
    */
   public MtlsHttpTransportFactory() {
     this.mtlsKeyStore = null;
@@ -110,6 +110,11 @@ public class MtlsHttpTransportFactory implements HttpTransportFactory, java.io.S
 
   @Override
   public NetHttpTransport create() {
+    if (this.mtlsKeyStore == null) {
+      throw new IllegalStateException(
+          "Cannot create mTLS transport: no KeyStore configured. A non-null KeyStore with client"
+              + " certificates is required.");
+    }
     try {
       // Build the mTLS transport using the provided KeyStore.
       return new NetHttpTransport.Builder().trustCertificates(null, mtlsKeyStore, "").build();

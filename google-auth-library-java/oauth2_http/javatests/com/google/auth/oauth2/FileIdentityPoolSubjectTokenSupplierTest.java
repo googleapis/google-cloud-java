@@ -201,6 +201,58 @@ class FileIdentityPoolSubjectTokenSupplierTest {
 
     IOException exception = assertThrows(IOException.class, () -> supplier.getSubjectToken(null));
     assertTrue(exception.getMessage().contains("No token was found for field: sub_token"));
+
+    ByteArrayInputStream nullStream =
+        new ByteArrayInputStream("{\"sub_token\": null}".getBytes(StandardCharsets.UTF_8));
+    IOException parseException =
+        assertThrows(
+            IOException.class,
+            () -> FileIdentityPoolSubjectTokenSupplier.parseToken(nullStream, source, "sub_token"));
+    assertTrue(parseException.getMessage().contains("No token was found for field: sub_token"));
+  }
+
+  @Test
+  void parseToken_emptyStream_throwsIOException() {
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", "dummy.json");
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_token");
+    credentialSourceMap.put("format", formatMap);
+    IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
+
+    ByteArrayInputStream emptyStream = new ByteArrayInputStream(new byte[0]);
+    IOException exception =
+        assertThrows(
+            IOException.class,
+            () -> FileIdentityPoolSubjectTokenSupplier.parseToken(emptyStream, source, "sub_token"));
+    assertTrue(
+        exception.getMessage().contains("Response stream was empty")
+            || exception.getMessage().contains("Failed to parse JSON token"));
+  }
+
+  @Test
+  void getSubjectToken_emptyFile_throwsIOException(@TempDir Path tempDir) throws IOException {
+    Path credentialFile = tempDir.resolve("empty_credential.json");
+    Files.write(credentialFile, new byte[0]);
+
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("file", credentialFile.toString());
+    Map<String, String> formatMap = new HashMap<>();
+    formatMap.put("type", "json");
+    formatMap.put("subject_token_field_name", "sub_token");
+    credentialSourceMap.put("format", formatMap);
+
+    IdentityPoolCredentialSource source = new IdentityPoolCredentialSource(credentialSourceMap);
+    FileIdentityPoolSubjectTokenSupplier supplier =
+        new FileIdentityPoolSubjectTokenSupplier(source);
+
+    IOException exception = assertThrows(IOException.class, () -> supplier.getSubjectToken(null));
+    assertTrue(
+        exception.getMessage().contains("Credential file is empty")
+            || exception
+                .getMessage()
+                .contains("Error when attempting to read the token from the credential file"));
   }
 
   @Test

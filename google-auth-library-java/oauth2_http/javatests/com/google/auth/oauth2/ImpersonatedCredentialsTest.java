@@ -1419,4 +1419,53 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
         "Bearer intermediate-sts-token-xyz",
         customTransportFactory.getTransport().getRequest().getFirstHeaderValue("Authorization"));
   }
+
+  @Test
+  void refreshAccessToken_nullTransportFactory_fallsBackToCredentialsTransport()
+      throws IOException {
+    MockIAMCredentialsServiceTransportFactory credentialsTransportFactory =
+        new MockIAMCredentialsServiceTransportFactory();
+    credentialsTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
+    credentialsTransportFactory.getTransport().setAccessToken("final-iam-token-null-transport");
+    credentialsTransportFactory.getTransport().setExpireTime(getDefaultExpireTime());
+    credentialsTransportFactory
+        .getTransport()
+        .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+
+    java.util.concurrent.atomic.AtomicBoolean sourceRefreshed =
+        new java.util.concurrent.atomic.AtomicBoolean(false);
+    ExternalAccountCredentials mockExternalAccountCredentials =
+        new IdentityPoolCredentials(
+            IdentityPoolCredentials.newBuilder()
+                .setAudience(
+                    "//iam.googleapis.com/projects/123/locations/global/workloadIdentityPools/pool/providers/provider")
+                .setSubjectTokenType("urn:ietf:params:oauth:token-type:id_token")
+                .setSubjectTokenSupplier(context -> "token")
+                .setTokenUrl("https://sts.googleapis.com/v1/token")) {
+          @Override
+          public AccessToken refreshAccessToken() {
+            sourceRefreshed.set(true);
+            return new AccessToken("intermediate-sts-token-null", null);
+          }
+        };
+
+    ImpersonatedCredentials credentials =
+        ImpersonatedCredentials.newBuilder()
+            .setSourceCredentials(mockExternalAccountCredentials)
+            .setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL)
+            .setScopes(IMMUTABLE_SCOPES_LIST)
+            .setLifetime(VALID_LIFETIME)
+            .setHttpTransportFactory(credentialsTransportFactory)
+            .build();
+
+    AccessToken token = credentials.refreshAccessToken(null);
+    assertEquals("final-iam-token-null-transport", token.getTokenValue());
+    assertTrue(sourceRefreshed.get());
+    assertEquals(
+        "Bearer intermediate-sts-token-null",
+        credentialsTransportFactory
+            .getTransport()
+            .getRequest()
+            .getFirstHeaderValue("Authorization"));
+  }
 }

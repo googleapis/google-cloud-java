@@ -151,7 +151,14 @@ class FileIdentityPoolSubjectTokenSupplier
   private static GenericJson readAndParseJsonFile(String credentialFilePath) throws IOException {
     try (InputStream inputStream = Files.newInputStream(Paths.get(credentialFilePath))) {
       JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
-      return parser.parseAndClose(inputStream, StandardCharsets.UTF_8, GenericJson.class);
+      GenericJson parsedJson =
+          parser.parseAndClose(inputStream, StandardCharsets.UTF_8, GenericJson.class);
+      if (parsedJson == null) {
+        throw new IOException("Credential file is empty: " + credentialFilePath);
+      }
+      return parsedJson;
+    } catch (IOException e) {
+      throw e;
     } catch (Exception e) {
       throw new IOException("Error when attempting to read the token from the credential file.", e);
     }
@@ -189,8 +196,15 @@ class FileIdentityPoolSubjectTokenSupplier
       }
 
       JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
-      GenericJson fileContents =
-          parser.parseAndClose(in, StandardCharsets.UTF_8, GenericJson.class);
+      GenericJson fileContents;
+      try {
+        fileContents = parser.parseAndClose(in, StandardCharsets.UTF_8, GenericJson.class);
+      } catch (Exception e) {
+        throw new IOException("Failed to parse JSON token from response stream.", e);
+      }
+      if (fileContents == null) {
+        throw new IOException("Response stream was empty or contained no JSON object.");
+      }
 
       Object value = fileContents.get(targetFieldName);
       if (value == null || Data.isNull(value)) {

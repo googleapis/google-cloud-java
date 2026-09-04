@@ -584,12 +584,35 @@ public class ImpersonatedCredentials extends GoogleCredentials
     return refreshAccessToken(this.transportFactory);
   }
 
+  /**
+   * Refreshes the access token using the specified transport factory.
+   *
+   * <p>This package-private method is intended for internal transport pinning by {@link
+   * ExternalAccountCredentials} during service account impersonation. For mTLS Workload Identity
+   * Federation with impersonation, applications should configure {@code
+   * setServiceAccountImpersonationUrl} directly on {@code IdentityPoolCredentials}, which manages
+   * the certificate lifecycle and 401 recovery.
+   *
+   * @param transportFactory the HTTP transport factory to use
+   * @return the refreshed access token
+   * @throws IOException if token refresh fails
+   */
   AccessToken refreshAccessToken(HttpTransportFactory transportFactory) throws IOException {
+    HttpTransportFactory effectiveTransportFactory =
+        transportFactory != null
+            ? transportFactory
+            : (this.transportFactory != null
+                ? this.transportFactory
+                : OAuth2Utils.HTTP_TRANSPORT_FACTORY);
     HttpCredentialsAdapter adapter;
     if (this.sourceCredentials instanceof ExternalAccountCredentials) {
       AccessToken intermediateAccessToken =
-          ((ExternalAccountCredentials) this.sourceCredentials)
-              .refreshAccessToken(transportFactory);
+          (transportFactory == null
+                  || transportFactory == OAuth2Utils.HTTP_TRANSPORT_FACTORY
+                  || transportFactory instanceof OAuth2Utils.DefaultHttpTransportFactory)
+              ? ((ExternalAccountCredentials) this.sourceCredentials).refreshAccessToken()
+              : ((ExternalAccountCredentials) this.sourceCredentials)
+                  .refreshAccessToken(effectiveTransportFactory);
       Credentials authCredentials =
           intermediateAccessToken != null
               ? OAuth2Credentials.create(intermediateAccessToken)
@@ -619,7 +642,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       adapter = new HttpCredentialsAdapter(sourceCredentials);
     }
 
-    HttpTransport httpTransport = transportFactory.create();
+    HttpTransport httpTransport = effectiveTransportFactory.create();
     JsonObjectParser parser = new JsonObjectParser(OAuth2Utils.JSON_FACTORY);
 
     HttpRequestFactory requestFactory = httpTransport.createRequestFactory();
