@@ -25,6 +25,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <opencensus.version>0.31.1</opencensus.version>
+    <spanner.sample.database>mysample</spanner.sample.database>
   </properties>
 
 
@@ -137,7 +138,7 @@
                 <spanner.test.key.location>us-east1</spanner.test.key.location>
                 <spanner.test.key.ring>cmek-test-key-ring</spanner.test.key.ring>
                 <spanner.test.key.name>cmek-test-key</spanner.test.key.name>
-                <spanner.sample.database>mysample</spanner.sample.database>
+                <spanner.sample.database>${spanner.sample.database}</spanner.sample.database>
                 <spanner.quickstart.database>quick-db</spanner.quickstart.database>
               </systemPropertyVariables>
               <excludes>
@@ -166,7 +167,7 @@
                 <spanner.test.key.location>us-east1</spanner.test.key.location>
                 <spanner.test.key.ring>cmek-test-key-ring</spanner.test.key.ring>
                 <spanner.test.key.name>cmek-test-key</spanner.test.key.name>
-                <spanner.sample.database>mysample</spanner.sample.database>
+                <spanner.sample.database>${spanner.sample.database}</spanner.sample.database>
                 <spanner.quickstart.database>quick-db</spanner.quickstart.database>
               </systemPropertyVariables>
               <includes>

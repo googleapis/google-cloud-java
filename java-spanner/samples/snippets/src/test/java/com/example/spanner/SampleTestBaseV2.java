@@ -37,11 +37,44 @@ public class SampleTestBaseV2 {
   private static final String BASE_INSTANCE_ID =
       System.getProperty("spanner.sample.instance", "mysample-instance");
 
-  private static final String BASE_DATABASE_ID =
-      System.getProperty("spanner.sample.database", "sampledb");
+  private static final String BASE_DATABASE_ID = getSampleDatabase();
   private static final String BASE_BACKUP_ID = "samplebk";
   private static final String BASE_INSTANCE_CONFIG_ID = "sampleconfig";
   private static final int AWAIT_TERMINATION_SECONDS = 10;
+
+  static String resolveSampleDatabase(String sysProp, String envDb, String kokoroJob) {
+    if (sysProp != null && !sysProp.trim().isEmpty() && !sysProp.equals("mysample")) {
+      return sysProp.trim();
+    }
+    if (envDb != null && !envDb.trim().isEmpty()) {
+      return envDb.trim();
+    }
+    if (kokoroJob != null) {
+      if (kokoroJob.contains("java8-samples")) {
+        return "mysample_java8";
+      } else if (kokoroJob.contains("java11-samples")) {
+        return "mysample_java11";
+      }
+    }
+    if (sysProp != null && !sysProp.trim().isEmpty()) {
+      return sysProp.trim();
+    }
+    return "mysample";
+  }
+
+  public static String getSampleDatabase() {
+    String kokoroJob = System.getenv("KOKORO_JOB_NAME");
+    if (kokoroJob == null || kokoroJob.isEmpty()) {
+      kokoroJob = System.getenv("JOB_NAME");
+    }
+    if (kokoroJob == null || kokoroJob.isEmpty()) {
+      kokoroJob = System.getenv("JOB_TYPE");
+    }
+    return resolveSampleDatabase(
+        System.getProperty("spanner.sample.database"),
+        System.getenv("SPANNER_SAMPLE_DATABASE"),
+        kokoroJob);
+  }
 
   protected static String projectId;
   protected static final String instanceId = System.getProperty("spanner.test.instance");
