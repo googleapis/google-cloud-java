@@ -37,27 +37,39 @@ RETURN_CODE=0
 
 case ${JOB_TYPE} in
   test)
+    MAVEN_GOAL="test"
     if [[ -n "${BUILD_SUBDIR}" ]]
     then
+      # Targeted module build (invoked by split-units for handwritten/combo libraries).
+      # Compiles and runs all unit tests for the specific changed library submodule.
       echo "Compiling and building all modules for ${BUILD_SUBDIR}"
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
-      EXTRA_PROFILE_OPTS=()
+      EXCLUDE_PROJECTS_OPTS=()
     else
-      EXTRA_PROFILE_OPTS=("-PbulkTests")
+      # Full monorepo smoke pass across Java runtime matrix versions (units job).
+      # Pure GAPIC-generated modules skip unit tests by default via <skipUnitTests>true</skipUnitTests>
+      # in google-cloud-jar-parent; generator correctness and GAX runtime behaviors are covered by
+      # java-showcase (showcase.yaml). Running a parallel compile pass confirms compatibility
+      # across all supported JDKs in ~2 minutes instead of 40+ minutes.
+      MAVEN_GOAL="compile"
+      # gapic-generator-java is a code generation tool tested in its own dedicated workflow
+      # (sdk-platform-java-ci.yaml). Excluding it from bulk unit test runs saves 2-3 minutes per
+      # Java runtime matrix job and avoids reactor dependency resolution race conditions.
+      EXCLUDE_PROJECTS_OPTS=("--projects" "!sdk-platform-java/gapic-generator-java,!sdk-platform-java/gapic-generator-java-pom-parent")
       install_modules "sdk-platform-java"
     fi
-    echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
+    echo "MAVEN_GOAL: ${MAVEN_GOAL}"
     retry_with_backoff 3 10 \
-      mvn install \
+      mvn ${MAVEN_GOAL} \
         -B -ntp \
         -Pquick-build \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dmaven.wagon.http.retryHandler.count=5 \
-        --also-make \
-        ${SUREFIRE_JVM_OPT} "${EXTRA_PROFILE_OPTS[@]}"
+        "${EXCLUDE_PROJECTS_OPTS[@]}" \
+        -T 1C
     RETURN_CODE=$?
 
     if [[ -n "${BUILD_SUBDIR}" ]]
@@ -107,13 +119,16 @@ case ${JOB_TYPE} in
     fi
     ;;
   integration-single)
-    generate_modified_modules_list false
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
       echo "Not running integration checks -- this is Release Please SNAPSHOT pull request."
-    elif [[ ! " ${modified_module_list[*]} " =~ " ${BUILD_SUBDIR} " ]]; then
-      echo "${BUILD_SUBDIR} not modified, skipping split integration test"
+    # Run tests if:
+    # 1. Global overrides require testing all modules (e.g. parent POM, sdk-platform-java, auth)
+    # 2. This specific module was modified
+    # 3. An upstream dependency of this module was modified (e.g. java-spanner or grpc-gcp-java for java-spanner-jdbc)
+    elif ! should_test_all_modules && ! is_module_modified "${BUILD_SUBDIR}" && ! is_upstream_module_modified "${BUILD_SUBDIR}"; then
+      echo "${BUILD_SUBDIR} not modified and no upstream dependencies modified, skipping split integration test"
     else
-      echo "${BUILD_SUBDIR} modified, running split integration test"
+      echo "${BUILD_SUBDIR} (or an upstream dependency) modified, running split integration test"
       echo "Compiling and building all modules for ${BUILD_SUBDIR}"
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"
@@ -176,13 +191,16 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm-single)
-    generate_modified_modules_list false
     if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
       echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
-    elif [[ ! " ${modified_module_list[*]} " =~ " ${BUILD_SUBDIR} " ]]; then
-      echo "${BUILD_SUBDIR} not modified, skipping split GraalVM test"
+    # Run tests if:
+    # 1. Global overrides require testing all modules (e.g. parent POM, sdk-platform-java, auth)
+    # 2. This specific module was modified
+    # 3. An upstream dependency of this module was modified (e.g. java-spanner or grpc-gcp-java for java-spanner-jdbc)
+    elif ! should_test_all_modules && ! is_module_modified "${BUILD_SUBDIR}" && ! is_upstream_module_modified "${BUILD_SUBDIR}"; then
+      echo "${BUILD_SUBDIR} not modified and no upstream dependencies modified, skipping split GraalVM test"
     else
-      echo "${BUILD_SUBDIR} modified, running split GraalVM test"
+      echo "${BUILD_SUBDIR} (or an upstream dependency) modified, running split GraalVM test"
       echo "Compiling and building all modules for ${BUILD_SUBDIR}"
       install_modules "${BUILD_SUBDIR}"
       echo "Running in subdir: ${BUILD_SUBDIR}"

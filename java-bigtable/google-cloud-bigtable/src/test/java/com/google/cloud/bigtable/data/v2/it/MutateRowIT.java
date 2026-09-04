@@ -44,11 +44,6 @@ public class MutateRowIT {
 
   @Test
   public void test() throws Exception {
-    assume()
-        .withMessage("Emulator does not support microsecond timestamp granularity")
-        .that(testEnvRule.env())
-        .isNotInstanceOf(EmulatorEnv.class);
-
     String rowKey = UUID.randomUUID().toString();
     String familyId = testEnvRule.env().getFamilyId();
 

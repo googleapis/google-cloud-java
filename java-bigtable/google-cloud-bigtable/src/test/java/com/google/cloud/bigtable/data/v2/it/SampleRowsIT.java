@@ -50,11 +50,6 @@ public class SampleRowsIT {
 
   @Test
   public void test() throws InterruptedException, ExecutionException, TimeoutException {
-    assume()
-        .withMessage("Emulator does not support microsecond timestamp granularity")
-        .that(testEnvRule.env())
-        .isNotInstanceOf(EmulatorEnv.class);
-
     BigtableDataClient client = testEnvRule.env().getDataClient();
     String rowPrefix = UUID.randomUUID().toString();
 

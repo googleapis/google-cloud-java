@@ -171,9 +171,6 @@ grpc-google-cloud-data-fusion-v1beta1:1.96.0:1.97.0-SNAPSHOT
 grpc-google-cloud-data-fusion-v1:1.96.0:1.97.0-SNAPSHOT
 proto-google-cloud-data-fusion-v1beta1:1.96.0:1.97.0-SNAPSHOT
 proto-google-cloud-data-fusion-v1:1.96.0:1.97.0-SNAPSHOT
-google-cloud-datalabeling:0.216.0:0.217.0-SNAPSHOT
-grpc-google-cloud-datalabeling-v1beta1:0.216.0:0.217.0-SNAPSHOT
-proto-google-cloud-datalabeling-v1beta1:0.216.0:0.217.0-SNAPSHOT
 google-cloud-dataplex:1.94.0:1.95.0-SNAPSHOT
 proto-google-cloud-dataplex-v1:1.94.0:1.95.0-SNAPSHOT
 grpc-google-cloud-dataplex-v1:1.94.0:1.95.0-SNAPSHOT
@@ -1112,3 +1109,13 @@ grpc-google-cloud-biglake-hive-v1:0.1.0:0.2.0-SNAPSHOT
 google-cloud-biglake-hive:0.1.0:0.2.0-SNAPSHOT
 proto-google-maps-mapmanagement-v2:0.5.0:0.6.0-SNAPSHOT
 grpc-google-maps-mapmanagement-v2:0.5.0:0.6.0-SNAPSHOT
+google-cloud-apptopology-parent:0.0.0:0.1.0-SNAPSHOT
+google-cloud-apptopology-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-cloud-apptopology-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-cloud-apptopology-v1:0.0.0:0.1.0-SNAPSHOT
+google-cloud-apptopology:0.0.0:0.1.0-SNAPSHOT
+google-shopping-merchant-loyaltycustomers-parent:0.0.0:0.1.0-SNAPSHOT
+google-shopping-merchant-loyaltycustomers-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-shopping-merchant-loyaltycustomers-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-shopping-merchant-loyaltycustomers-v1:0.0.0:0.1.0-SNAPSHOT
+google-shopping-merchant-loyaltycustomers:0.0.0:0.1.0-SNAPSHOT

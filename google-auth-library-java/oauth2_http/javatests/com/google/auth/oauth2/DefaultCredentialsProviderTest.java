@@ -67,6 +67,7 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
+import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
 
 /** Test case for {@link DefaultCredentialsProvider}. */
@@ -901,21 +902,21 @@ class DefaultCredentialsProviderTest {
     }
 
     @Override
-    String getEnv(String name) {
+    @Nullable String getEnv(String name) {
       return variables.get(name);
     }
 
-    void setEnv(String name, String value) {
+    void setEnv(String name, @Nullable String value) {
       variables.put(name, value);
     }
 
     @Override
-    String getProperty(String property, String def) {
+    @Nullable String getProperty(String property, @Nullable String def) {
       String value = properties.get(property);
       return value == null ? def : value;
     }
 
-    void setProperty(String property, String value) {
+    void setProperty(String property, @Nullable String value) {
       properties.put(property, value);
     }
 

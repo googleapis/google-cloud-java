@@ -34,15 +34,17 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import com.google.api.gax.httpjson.ProtoOperationTransformers.MetadataTransformer;
 import com.google.api.gax.httpjson.ProtoOperationTransformers.ResponseTransformer;
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.rpc.UnknownException;
 import com.google.common.truth.Truth;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.rpc.Code;
+import com.google.rpc.ErrorInfo;
 import com.google.rpc.Status;
-import com.google.type.Color;
 import com.google.type.Money;
+import java.util.Collections;
 import org.junit.jupiter.api.Test;
 
 class ProtoOperationTransformersTest {
@@ -96,11 +98,13 @@ class ProtoOperationTransformersTest {
         HttpJsonOperationSnapshot.create(
             Operation.newBuilder().setResponse(Any.pack(inputMoney)).setError(status).build());
 
-    Exception exception =
+    UnavailableException exception =
         assertThrows(UnavailableException.class, () -> transformer.apply(operationSnapshot));
     Truth.assertThat(exception)
         .hasMessageThat()
         .contains("failed with status = HttpJsonStatusCode{statusCode=UNAVAILABLE}");
+    Truth.assertThat(exception.getErrorDetails())
+        .isEqualTo(ErrorDetails.builder().setRawErrorMessages(Collections.emptyList()).build());
   }
 
   @Test
@@ -110,7 +114,7 @@ class ProtoOperationTransformersTest {
     OperationSnapshot operationSnapshot =
         HttpJsonOperationSnapshot.create(
             Operation.newBuilder()
-                .setResponse(Any.pack(Color.getDefaultInstance()))
+                .setResponse(Any.pack(ErrorInfo.getDefaultInstance()))
                 .setError(status)
                 .build());
     Exception exception =
@@ -135,11 +139,32 @@ class ProtoOperationTransformersTest {
     OperationSnapshot operationSnapshot =
         HttpJsonOperationSnapshot.create(
             Operation.newBuilder()
-                .setMetadata(Any.pack(Color.getDefaultInstance()))
+                .setMetadata(Any.pack(ErrorInfo.getDefaultInstance()))
                 .setError(status)
                 .build());
     Exception exception =
         assertThrows(UnknownException.class, () -> transformer.apply(operationSnapshot));
     Truth.assertThat(exception).hasMessageThat().contains("encountered a problem unpacking it");
+  }
+
+  @Test
+  void testAnyResponseTransformer_exceptionWithErrorDetails() {
+    ResponseTransformer<Money> transformer = ResponseTransformer.create(Money.class);
+    Money inputMoney = Money.newBuilder().setCurrencyCode("USD").build();
+    ErrorInfo errorInfo =
+        ErrorInfo.newBuilder().setReason("TEST_REASON").setDomain("googleapis.com").build();
+    Status status =
+        Status.newBuilder()
+            .setCode(Code.UNAVAILABLE.getNumber())
+            .addDetails(Any.pack(errorInfo))
+            .build();
+    OperationSnapshot operationSnapshot =
+        HttpJsonOperationSnapshot.create(
+            Operation.newBuilder().setResponse(Any.pack(inputMoney)).setError(status).build());
+
+    UnavailableException exception =
+        assertThrows(UnavailableException.class, () -> transformer.apply(operationSnapshot));
+    Truth.assertThat(exception.getErrorDetails()).isNotNull();
+    Truth.assertThat(exception.getErrorDetails().getErrorInfo()).isEqualTo(errorInfo);
   }
 }

@@ -98,5 +98,11 @@ public class GcpManagedChannelOtelMetricsTest {
         names.stream()
             .anyMatch(
                 n -> n.equals("test/grpc-gcp/" + GcpMetricsConstants.METRIC_MAX_READY_CHANNELS)));
+    assertTrue(
+        names.stream()
+            .anyMatch(
+                n ->
+                    n.equals(
+                        "test/grpc-gcp/" + GcpMetricsConstants.METRIC_SCALE_UP_PRIME_FAILURES)));
   }
 }

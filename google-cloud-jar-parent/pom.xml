@@ -19,7 +19,20 @@
     <relativePath>../google-cloud-pom-parent/pom.xml</relativePath>
   </parent>
   <properties>
-    <skipUnitTests>false</skipUnitTests>
+    <!--
+      Defaults to true: most modules under this parent are pure GAPIC-generated clients whose
+      generated tests aren't worth the CI time. Libraries with handwritten tests worth
+      running (java-spanner, java-bigtable, java-storage, ...) override this back to false in
+      their own top-level pom.xml.
+
+      Wired exclusively into surefire's <skip> (below):
+      1. Compiles test sources and dependencies so reactor test-jar dependencies are built
+         and dependency:analyze accurately recognizes test-scoped usage.
+      2. Does not suppress failsafe integration tests (ITs).
+      3. The native profile overrides this back to false so GraalVM native-maven-plugin test
+         discovery generates required test metadata.
+    -->
+    <skipUnitTests>true</skipUnitTests>
     <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
   </properties>
 
@@ -196,6 +209,13 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <!-- This profile is used to enable GraalVM native image testing -->
+      <id>native</id>
+      <properties>
+        <skipUnitTests>false</skipUnitTests>
+      </properties>
     </profile>
   </profiles>
 

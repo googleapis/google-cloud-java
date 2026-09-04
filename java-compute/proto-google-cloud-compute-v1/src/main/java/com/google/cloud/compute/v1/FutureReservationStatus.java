@@ -854,6 +854,68 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
     return autoCreatedReservations_.getByteString(index);
   }
 
+  public static final int EXAPOOL_PROVISIONED_CAPACITY_GB_FIELD_NUMBER = 345174240;
+  private com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+      exapoolProvisionedCapacityGb_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Exapool provisioned capacities for each SKU type.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+   * </code>
+   *
+   * @return Whether the exapoolProvisionedCapacityGb field is set.
+   */
+  @java.lang.Override
+  public boolean hasExapoolProvisionedCapacityGb() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Exapool provisioned capacities for each SKU type.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+   * </code>
+   *
+   * @return The exapoolProvisionedCapacityGb.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+      getExapoolProvisionedCapacityGb() {
+    return exapoolProvisionedCapacityGb_ == null
+        ? com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.getDefaultInstance()
+        : exapoolProvisionedCapacityGb_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Exapool provisioned capacities for each SKU type.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGbOrBuilder
+      getExapoolProvisionedCapacityGbOrBuilder() {
+    return exapoolProvisionedCapacityGb_ == null
+        ? com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.getDefaultInstance()
+        : exapoolProvisionedCapacityGb_;
+  }
+
   public static final int EXISTING_MATCHING_USAGE_INFO_FIELD_NUMBER = 509920602;
   private com.google.cloud.compute.v1.FutureReservationStatusExistingMatchingUsageInfo
       existingMatchingUsageInfo_;
@@ -874,7 +936,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasExistingMatchingUsageInfo() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -939,7 +1001,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasFulfilledCount() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -982,7 +1044,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasLastKnownGoodState() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -1055,7 +1117,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasLockTime() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -1133,7 +1195,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasProcurementStatus() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -1199,7 +1261,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
    */
   @java.lang.Override
   public boolean hasSpecificSkuProperties() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -1232,6 +1294,70 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
         : specificSkuProperties_;
   }
 
+  public static final int STORAGE_POOL_PROVISIONED_CAPACITY_FIELD_NUMBER = 135892964;
+  private com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity
+      storagePoolProvisionedCapacity_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Storage pool provisioned capacities for each SKU type.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+   * </code>
+   *
+   * @return Whether the storagePoolProvisionedCapacity field is set.
+   */
+  @java.lang.Override
+  public boolean hasStoragePoolProvisionedCapacity() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Storage pool provisioned capacities for each SKU type.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+   * </code>
+   *
+   * @return The storagePoolProvisionedCapacity.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity
+      getStoragePoolProvisionedCapacity() {
+    return storagePoolProvisionedCapacity_ == null
+        ? com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity
+            .getDefaultInstance()
+        : storagePoolProvisionedCapacity_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Storage pool provisioned capacities for each SKU type.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacityOrBuilder
+      getStoragePoolProvisionedCapacityOrBuilder() {
+    return storagePoolProvisionedCapacity_ == null
+        ? com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity
+            .getDefaultInstance()
+        : storagePoolProvisionedCapacity_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1246,29 +1372,35 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(108887106, getSpecificSkuProperties());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(135892964, getStoragePoolProvisionedCapacity());
     }
     for (int i = 0; i < autoCreatedReservations_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(
           output, 140217006, autoCreatedReservations_.getRaw(i));
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 143772001, lockTime_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(192819092, getLastKnownGoodState());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 224718945, procurementStatus_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 250270052, amendmentStatus_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt64(319392239, fulfilledCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(345174240, getExapoolProvisionedCapacityGb());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(509920602, getExistingMatchingUsageInfo());
     }
     getUnknownFields().writeTo(output);
@@ -1280,10 +1412,15 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               108887106, getSpecificSkuProperties());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              135892964, getStoragePoolProvisionedCapacity());
     }
     {
       int dataSize = 0;
@@ -1293,24 +1430,29 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       size += dataSize;
       size += 5 * getAutoCreatedReservationsList().size();
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(143772001, lockTime_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               192819092, getLastKnownGoodState());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(224718945, procurementStatus_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(250270052, amendmentStatus_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(319392239, fulfilledCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              345174240, getExapoolProvisionedCapacityGb());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               509920602, getExistingMatchingUsageInfo());
@@ -1337,6 +1479,11 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
     }
     if (!getAutoCreatedReservationsList().equals(other.getAutoCreatedReservationsList()))
       return false;
+    if (hasExapoolProvisionedCapacityGb() != other.hasExapoolProvisionedCapacityGb()) return false;
+    if (hasExapoolProvisionedCapacityGb()) {
+      if (!getExapoolProvisionedCapacityGb().equals(other.getExapoolProvisionedCapacityGb()))
+        return false;
+    }
     if (hasExistingMatchingUsageInfo() != other.hasExistingMatchingUsageInfo()) return false;
     if (hasExistingMatchingUsageInfo()) {
       if (!getExistingMatchingUsageInfo().equals(other.getExistingMatchingUsageInfo()))
@@ -1362,6 +1509,12 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
     if (hasSpecificSkuProperties()) {
       if (!getSpecificSkuProperties().equals(other.getSpecificSkuProperties())) return false;
     }
+    if (hasStoragePoolProvisionedCapacity() != other.hasStoragePoolProvisionedCapacity())
+      return false;
+    if (hasStoragePoolProvisionedCapacity()) {
+      if (!getStoragePoolProvisionedCapacity().equals(other.getStoragePoolProvisionedCapacity()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1380,6 +1533,10 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
     if (getAutoCreatedReservationsCount() > 0) {
       hash = (37 * hash) + AUTO_CREATED_RESERVATIONS_FIELD_NUMBER;
       hash = (53 * hash) + getAutoCreatedReservationsList().hashCode();
+    }
+    if (hasExapoolProvisionedCapacityGb()) {
+      hash = (37 * hash) + EXAPOOL_PROVISIONED_CAPACITY_GB_FIELD_NUMBER;
+      hash = (53 * hash) + getExapoolProvisionedCapacityGb().hashCode();
     }
     if (hasExistingMatchingUsageInfo()) {
       hash = (37 * hash) + EXISTING_MATCHING_USAGE_INFO_FIELD_NUMBER;
@@ -1404,6 +1561,10 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
     if (hasSpecificSkuProperties()) {
       hash = (37 * hash) + SPECIFIC_SKU_PROPERTIES_FIELD_NUMBER;
       hash = (53 * hash) + getSpecificSkuProperties().hashCode();
+    }
+    if (hasStoragePoolProvisionedCapacity()) {
+      hash = (37 * hash) + STORAGE_POOL_PROVISIONED_CAPACITY_FIELD_NUMBER;
+      hash = (53 * hash) + getStoragePoolProvisionedCapacity().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1546,9 +1707,11 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetExapoolProvisionedCapacityGbFieldBuilder();
         internalGetExistingMatchingUsageInfoFieldBuilder();
         internalGetLastKnownGoodStateFieldBuilder();
         internalGetSpecificSkuPropertiesFieldBuilder();
+        internalGetStoragePoolProvisionedCapacityFieldBuilder();
       }
     }
 
@@ -1558,6 +1721,11 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       bitField0_ = 0;
       amendmentStatus_ = "";
       autoCreatedReservations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      exapoolProvisionedCapacityGb_ = null;
+      if (exapoolProvisionedCapacityGbBuilder_ != null) {
+        exapoolProvisionedCapacityGbBuilder_.dispose();
+        exapoolProvisionedCapacityGbBuilder_ = null;
+      }
       existingMatchingUsageInfo_ = null;
       if (existingMatchingUsageInfoBuilder_ != null) {
         existingMatchingUsageInfoBuilder_.dispose();
@@ -1575,6 +1743,11 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       if (specificSkuPropertiesBuilder_ != null) {
         specificSkuPropertiesBuilder_.dispose();
         specificSkuPropertiesBuilder_ = null;
+      }
+      storagePoolProvisionedCapacity_ = null;
+      if (storagePoolProvisionedCapacityBuilder_ != null) {
+        storagePoolProvisionedCapacityBuilder_.dispose();
+        storagePoolProvisionedCapacityBuilder_ = null;
       }
       return this;
     }
@@ -1622,37 +1795,51 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
         result.autoCreatedReservations_ = autoCreatedReservations_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.exapoolProvisionedCapacityGb_ =
+            exapoolProvisionedCapacityGbBuilder_ == null
+                ? exapoolProvisionedCapacityGb_
+                : exapoolProvisionedCapacityGbBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.existingMatchingUsageInfo_ =
             existingMatchingUsageInfoBuilder_ == null
                 ? existingMatchingUsageInfo_
                 : existingMatchingUsageInfoBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.fulfilledCount_ = fulfilledCount_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.fulfilledCount_ = fulfilledCount_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.lastKnownGoodState_ =
             lastKnownGoodStateBuilder_ == null
                 ? lastKnownGoodState_
                 : lastKnownGoodStateBuilder_.build();
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.lockTime_ = lockTime_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.procurementStatus_ = procurementStatus_;
+        result.lockTime_ = lockTime_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.procurementStatus_ = procurementStatus_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.specificSkuProperties_ =
             specificSkuPropertiesBuilder_ == null
                 ? specificSkuProperties_
                 : specificSkuPropertiesBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.storagePoolProvisionedCapacity_ =
+            storagePoolProvisionedCapacityBuilder_ == null
+                ? storagePoolProvisionedCapacity_
+                : storagePoolProvisionedCapacityBuilder_.build();
+        to_bitField0_ |= 0x00000100;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1685,6 +1872,9 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
         }
         onChanged();
       }
+      if (other.hasExapoolProvisionedCapacityGb()) {
+        mergeExapoolProvisionedCapacityGb(other.getExapoolProvisionedCapacityGb());
+      }
       if (other.hasExistingMatchingUsageInfo()) {
         mergeExistingMatchingUsageInfo(other.getExistingMatchingUsageInfo());
       }
@@ -1696,16 +1886,19 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       }
       if (other.hasLockTime()) {
         lockTime_ = other.lockTime_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasProcurementStatus()) {
         procurementStatus_ = other.procurementStatus_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasSpecificSkuProperties()) {
         mergeSpecificSkuProperties(other.getSpecificSkuProperties());
+      }
+      if (other.hasStoragePoolProvisionedCapacity()) {
+        mergeStoragePoolProvisionedCapacity(other.getStoragePoolProvisionedCapacity());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1737,9 +1930,17 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
               {
                 input.readMessage(
                     internalGetSpecificSkuPropertiesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 871096850
+            case 1087143714:
+              {
+                input.readMessage(
+                    internalGetStoragePoolProvisionedCapacityFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 1087143714
             case 1121736050:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -1750,20 +1951,20 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
             case 1150176010:
               {
                 lockTime_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1150176010
             case 1542552738:
               {
                 input.readMessage(
                     internalGetLastKnownGoodStateFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 1542552738
             case 1797751562:
               {
                 procurementStatus_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 1797751562
             case 2002160418:
@@ -1775,15 +1976,23 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
             case -1739829384:
               {
                 fulfilledCount_ = input.readInt64();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1739829384
+            case -1533573374:
+              {
+                input.readMessage(
+                    internalGetExapoolProvisionedCapacityGbFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case -1533573374
             case -215602478:
               {
                 input.readMessage(
                     internalGetExistingMatchingUsageInfoFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -215602478
             default:
@@ -2130,6 +2339,230 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       return this;
     }
 
+    private com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+        exapoolProvisionedCapacityGb_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb,
+            com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.Builder,
+            com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGbOrBuilder>
+        exapoolProvisionedCapacityGbBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Exapool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     *
+     * @return Whether the exapoolProvisionedCapacityGb field is set.
+     */
+    public boolean hasExapoolProvisionedCapacityGb() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Exapool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     *
+     * @return The exapoolProvisionedCapacityGb.
+     */
+    public com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+        getExapoolProvisionedCapacityGb() {
+      if (exapoolProvisionedCapacityGbBuilder_ == null) {
+        return exapoolProvisionedCapacityGb_ == null
+            ? com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+                .getDefaultInstance()
+            : exapoolProvisionedCapacityGb_;
+      } else {
+        return exapoolProvisionedCapacityGbBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Exapool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    public Builder setExapoolProvisionedCapacityGb(
+        com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb value) {
+      if (exapoolProvisionedCapacityGbBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        exapoolProvisionedCapacityGb_ = value;
+      } else {
+        exapoolProvisionedCapacityGbBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Exapool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    public Builder setExapoolProvisionedCapacityGb(
+        com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.Builder
+            builderForValue) {
+      if (exapoolProvisionedCapacityGbBuilder_ == null) {
+        exapoolProvisionedCapacityGb_ = builderForValue.build();
+      } else {
+        exapoolProvisionedCapacityGbBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Exapool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    public Builder mergeExapoolProvisionedCapacityGb(
+        com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb value) {
+      if (exapoolProvisionedCapacityGbBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && exapoolProvisionedCapacityGb_ != null
+            && exapoolProvisionedCapacityGb_
+                != com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+                    .getDefaultInstance()) {
+          getExapoolProvisionedCapacityGbBuilder().mergeFrom(value);
+        } else {
+          exapoolProvisionedCapacityGb_ = value;
+        }
+      } else {
+        exapoolProvisionedCapacityGbBuilder_.mergeFrom(value);
+      }
+      if (exapoolProvisionedCapacityGb_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Exapool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    public Builder clearExapoolProvisionedCapacityGb() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      exapoolProvisionedCapacityGb_ = null;
+      if (exapoolProvisionedCapacityGbBuilder_ != null) {
+        exapoolProvisionedCapacityGbBuilder_.dispose();
+        exapoolProvisionedCapacityGbBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Exapool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.Builder
+        getExapoolProvisionedCapacityGbBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetExapoolProvisionedCapacityGbFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Exapool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGbOrBuilder
+        getExapoolProvisionedCapacityGbOrBuilder() {
+      if (exapoolProvisionedCapacityGbBuilder_ != null) {
+        return exapoolProvisionedCapacityGbBuilder_.getMessageOrBuilder();
+      } else {
+        return exapoolProvisionedCapacityGb_ == null
+            ? com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb
+                .getDefaultInstance()
+            : exapoolProvisionedCapacityGb_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Exapool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb exapool_provisioned_capacity_gb = 345174240;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb,
+            com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.Builder,
+            com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGbOrBuilder>
+        internalGetExapoolProvisionedCapacityGbFieldBuilder() {
+      if (exapoolProvisionedCapacityGbBuilder_ == null) {
+        exapoolProvisionedCapacityGbBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb,
+                com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGb.Builder,
+                com.google.cloud.compute.v1.StoragePoolExapoolProvisionedCapacityGbOrBuilder>(
+                getExapoolProvisionedCapacityGb(), getParentForChildren(), isClean());
+        exapoolProvisionedCapacityGb_ = null;
+      }
+      return exapoolProvisionedCapacityGbBuilder_;
+    }
+
     private com.google.cloud.compute.v1.FutureReservationStatusExistingMatchingUsageInfo
         existingMatchingUsageInfo_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -2153,7 +2586,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      * @return Whether the existingMatchingUsageInfo field is set.
      */
     public boolean hasExistingMatchingUsageInfo() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -2204,7 +2637,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       } else {
         existingMatchingUsageInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2229,7 +2662,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       } else {
         existingMatchingUsageInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2249,7 +2682,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
     public Builder mergeExistingMatchingUsageInfo(
         com.google.cloud.compute.v1.FutureReservationStatusExistingMatchingUsageInfo value) {
       if (existingMatchingUsageInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && existingMatchingUsageInfo_ != null
             && existingMatchingUsageInfo_
                 != com.google.cloud.compute.v1.FutureReservationStatusExistingMatchingUsageInfo
@@ -2262,7 +2695,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
         existingMatchingUsageInfoBuilder_.mergeFrom(value);
       }
       if (existingMatchingUsageInfo_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -2281,7 +2714,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearExistingMatchingUsageInfo() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       existingMatchingUsageInfo_ = null;
       if (existingMatchingUsageInfoBuilder_ != null) {
         existingMatchingUsageInfoBuilder_.dispose();
@@ -2305,7 +2738,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      */
     public com.google.cloud.compute.v1.FutureReservationStatusExistingMatchingUsageInfo.Builder
         getExistingMatchingUsageInfoBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetExistingMatchingUsageInfoFieldBuilder().getBuilder();
     }
@@ -2382,7 +2815,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      */
     @java.lang.Override
     public boolean hasFulfilledCount() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -2420,7 +2853,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
     public Builder setFulfilledCount(long value) {
 
       fulfilledCount_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2439,7 +2872,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      * @return This builder for chaining.
      */
     public Builder clearFulfilledCount() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       fulfilledCount_ = 0L;
       onChanged();
       return this;
@@ -2471,7 +2904,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      * @return Whether the lastKnownGoodState field is set.
      */
     public boolean hasLastKnownGoodState() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2528,7 +2961,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       } else {
         lastKnownGoodStateBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2556,7 +2989,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       } else {
         lastKnownGoodStateBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2579,7 +3012,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
     public Builder mergeLastKnownGoodState(
         com.google.cloud.compute.v1.FutureReservationStatusLastKnownGoodState value) {
       if (lastKnownGoodStateBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && lastKnownGoodState_ != null
             && lastKnownGoodState_
                 != com.google.cloud.compute.v1.FutureReservationStatusLastKnownGoodState
@@ -2592,7 +3025,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
         lastKnownGoodStateBuilder_.mergeFrom(value);
       }
       if (lastKnownGoodState_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2614,7 +3047,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearLastKnownGoodState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       lastKnownGoodState_ = null;
       if (lastKnownGoodStateBuilder_ != null) {
         lastKnownGoodStateBuilder_.dispose();
@@ -2641,7 +3074,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      */
     public com.google.cloud.compute.v1.FutureReservationStatusLastKnownGoodState.Builder
         getLastKnownGoodStateBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetLastKnownGoodStateFieldBuilder().getBuilder();
     }
@@ -2723,7 +3156,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      * @return Whether the lockTime field is set.
      */
     public boolean hasLockTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2801,7 +3234,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       lockTime_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2823,7 +3256,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      */
     public Builder clearLockTime() {
       lockTime_ = getDefaultInstance().getLockTime();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2850,7 +3283,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       }
       checkByteStringIsUtf8(value);
       lockTime_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2870,7 +3303,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      * @return Whether the procurementStatus field is set.
      */
     public boolean hasProcurementStatus() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2939,7 +3372,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
         throw new NullPointerException();
       }
       procurementStatus_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2958,7 +3391,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      */
     public Builder clearProcurementStatus() {
       procurementStatus_ = getDefaultInstance().getProcurementStatus();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2982,7 +3415,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       }
       checkByteStringIsUtf8(value);
       procurementStatus_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3003,7 +3436,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      * @return Whether the specificSkuProperties field is set.
      */
     public boolean hasSpecificSkuProperties() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -3040,7 +3473,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       } else {
         specificSkuPropertiesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3058,7 +3491,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
       } else {
         specificSkuPropertiesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3071,7 +3504,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
     public Builder mergeSpecificSkuProperties(
         com.google.cloud.compute.v1.FutureReservationStatusSpecificSKUProperties value) {
       if (specificSkuPropertiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && specificSkuProperties_ != null
             && specificSkuProperties_
                 != com.google.cloud.compute.v1.FutureReservationStatusSpecificSKUProperties
@@ -3084,7 +3517,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
         specificSkuPropertiesBuilder_.mergeFrom(value);
       }
       if (specificSkuProperties_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -3096,7 +3529,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      * </code>
      */
     public Builder clearSpecificSkuProperties() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       specificSkuProperties_ = null;
       if (specificSkuPropertiesBuilder_ != null) {
         specificSkuPropertiesBuilder_.dispose();
@@ -3113,7 +3546,7 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
      */
     public com.google.cloud.compute.v1.FutureReservationStatusSpecificSKUProperties.Builder
         getSpecificSkuPropertiesBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetSpecificSkuPropertiesFieldBuilder().getBuilder();
     }
@@ -3155,6 +3588,231 @@ public final class FutureReservationStatus extends com.google.protobuf.Generated
         specificSkuProperties_ = null;
       }
       return specificSkuPropertiesBuilder_;
+    }
+
+    private com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity
+        storagePoolProvisionedCapacity_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity,
+            com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity.Builder,
+            com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacityOrBuilder>
+        storagePoolProvisionedCapacityBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage pool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+     * </code>
+     *
+     * @return Whether the storagePoolProvisionedCapacity field is set.
+     */
+    public boolean hasStoragePoolProvisionedCapacity() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage pool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+     * </code>
+     *
+     * @return The storagePoolProvisionedCapacity.
+     */
+    public com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity
+        getStoragePoolProvisionedCapacity() {
+      if (storagePoolProvisionedCapacityBuilder_ == null) {
+        return storagePoolProvisionedCapacity_ == null
+            ? com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity
+                .getDefaultInstance()
+            : storagePoolProvisionedCapacity_;
+      } else {
+        return storagePoolProvisionedCapacityBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage pool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+     * </code>
+     */
+    public Builder setStoragePoolProvisionedCapacity(
+        com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity value) {
+      if (storagePoolProvisionedCapacityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        storagePoolProvisionedCapacity_ = value;
+      } else {
+        storagePoolProvisionedCapacityBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage pool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+     * </code>
+     */
+    public Builder setStoragePoolProvisionedCapacity(
+        com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity.Builder
+            builderForValue) {
+      if (storagePoolProvisionedCapacityBuilder_ == null) {
+        storagePoolProvisionedCapacity_ = builderForValue.build();
+      } else {
+        storagePoolProvisionedCapacityBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage pool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+     * </code>
+     */
+    public Builder mergeStoragePoolProvisionedCapacity(
+        com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity value) {
+      if (storagePoolProvisionedCapacityBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && storagePoolProvisionedCapacity_ != null
+            && storagePoolProvisionedCapacity_
+                != com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity
+                    .getDefaultInstance()) {
+          getStoragePoolProvisionedCapacityBuilder().mergeFrom(value);
+        } else {
+          storagePoolProvisionedCapacity_ = value;
+        }
+      } else {
+        storagePoolProvisionedCapacityBuilder_.mergeFrom(value);
+      }
+      if (storagePoolProvisionedCapacity_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage pool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+     * </code>
+     */
+    public Builder clearStoragePoolProvisionedCapacity() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      storagePoolProvisionedCapacity_ = null;
+      if (storagePoolProvisionedCapacityBuilder_ != null) {
+        storagePoolProvisionedCapacityBuilder_.dispose();
+        storagePoolProvisionedCapacityBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage pool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity.Builder
+        getStoragePoolProvisionedCapacityBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return internalGetStoragePoolProvisionedCapacityFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage pool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacityOrBuilder
+        getStoragePoolProvisionedCapacityOrBuilder() {
+      if (storagePoolProvisionedCapacityBuilder_ != null) {
+        return storagePoolProvisionedCapacityBuilder_.getMessageOrBuilder();
+      } else {
+        return storagePoolProvisionedCapacity_ == null
+            ? com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity
+                .getDefaultInstance()
+            : storagePoolProvisionedCapacity_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage pool provisioned capacities for each SKU type.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity storage_pool_provisioned_capacity = 135892964;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity,
+            com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity.Builder,
+            com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacityOrBuilder>
+        internalGetStoragePoolProvisionedCapacityFieldBuilder() {
+      if (storagePoolProvisionedCapacityBuilder_ == null) {
+        storagePoolProvisionedCapacityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity,
+                com.google.cloud.compute.v1.FutureReservationStoragePoolProvisionedCapacity.Builder,
+                com.google.cloud.compute.v1
+                    .FutureReservationStoragePoolProvisionedCapacityOrBuilder>(
+                getStoragePoolProvisionedCapacity(), getParentForChildren(), isClean());
+        storagePoolProvisionedCapacity_ = null;
+      }
+      return storagePoolProvisionedCapacityBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.compute.v1.FutureReservationStatus)

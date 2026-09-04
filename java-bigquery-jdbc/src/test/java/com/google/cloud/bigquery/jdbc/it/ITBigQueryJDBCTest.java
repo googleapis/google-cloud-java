@@ -54,7 +54,10 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Instant;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Properties;
 import java.util.Random;
@@ -103,7 +106,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   @Tag("disable_tpc")
   public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
     String DATASET = "JDBC_INTEGRATION_DATASET";
@@ -131,8 +133,9 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertEquals(123.456789, resultSet.getDouble(5), 0.0);
     assertEquals("testString", resultSet.getString(6));
     assertEquals("Test String", new String(resultSet.getBytes(7), StandardCharsets.UTF_8));
-    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getObject(10));
-    assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getTimestamp(10));
+    Timestamp expectedTimestamp = Timestamp.from(Instant.parse("2020-04-27T18:07:25.356Z"));
+    assertEquals(expectedTimestamp, resultSet.getObject(10));
+    assertEquals(expectedTimestamp, resultSet.getTimestamp(10));
     assertEquals(Date.valueOf("2019-1-12"), resultSet.getObject(11));
     assertEquals(Date.valueOf("2019-1-12"), resultSet.getDate(11));
     assertEquals(Time.valueOf("14:00:00"), resultSet.getObject(12));
@@ -2509,8 +2512,17 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   public void validateGetString() throws Exception {
+    DateTimeFormatter timestampFormatter =
+        DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSS");
+    String expectedTimestampString =
+        timestampFormatter.format(
+            Instant.parse("2023-07-28T12:30:00Z").atZone(ZoneId.systemDefault()).toLocalDateTime());
+    String expectedArrayTimestamp =
+        String.format(
+            "[%s, %s]",
+            Timestamp.from(Instant.parse("2023-01-01T01:00:00Z")),
+            Timestamp.from(Instant.parse("2023-01-01T02:00:00Z")));
     final ImmutableMap<String, Object> stringResults =
         new ImmutableMap.Builder<String, Object>()
             .put("stringField", "StringValue")
@@ -2520,7 +2532,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             .put("numericField", "12345.67")
             .put("bigNumericField", "98765432109876543210.123456789")
             .put("booleanField", "true")
-            .put("timestampFiled", "2023-07-28 12:30:00.000000")
+            .put("timestampFiled", expectedTimestampString)
             .put("dateField", "2023-07-28")
             .put("timeField", "12:30:00.000")
             .put("dateTimeField", "2023-07-28 12:30:00.000000")
@@ -2537,7 +2549,7 @@ public class ITBigQueryJDBCTest extends ITBase {
             .put("arrayNumeric", "[10.5, 20.5]")
             .put("arrayBignumeric", "[100.1, 200.2]")
             .put("arrayBoolean", "[true, false]")
-            .put("arrayTimestamp", "[2023-01-01 01:00:00.0, 2023-01-01 02:00:00.0]")
+            .put("arrayTimestamp", expectedArrayTimestamp)
             .put("arrayDate", "[2023-01-01, 2023-01-02]")
             .put("arrayTime", "[01:00:00, 02:00:00]")
             .put("arrayDatetime", "[2023-01-01 01:00:00.0, 2023-01-01 02:00:00.0]")
@@ -2682,13 +2694,14 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   public void validateGetTime() throws Exception {
+    LocalTime expectedTimestampLocalTime =
+        Instant.parse("2023-07-28T12:30:00Z").atZone(ZoneId.systemDefault()).toLocalTime();
     final ImmutableMap<String, Object> result =
         new ImmutableMap.Builder<String, Object>()
             .put("timeField", Time.valueOf("12:30:00"))
             .put("dateTimeField", Time.valueOf("12:30:00"))
-            .put("timestampFiled", Time.valueOf("12:30:00"))
+            .put("timestampFiled", Time.valueOf(expectedTimestampLocalTime))
             .build();
     BiFunction<ResultSet, Integer, Object> getter =
         (s, i) -> {
@@ -2721,14 +2734,13 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  @Tag("known_issue") // b/539615199
   public void validateGetTimestamp() throws Exception {
     final ImmutableMap<String, Object> result =
         new ImmutableMap.Builder<String, Object>()
             .put("timeField", Timestamp.valueOf("1970-01-01 12:30:00"))
             .put("dateField", Timestamp.valueOf("2023-07-28 00:00:00"))
             .put("dateTimeField", Timestamp.valueOf("2023-07-28 12:30:00"))
-            .put("timestampFiled", Timestamp.valueOf("2023-07-28 12:30:00"))
+            .put("timestampFiled", Timestamp.from(Instant.parse("2023-07-28T12:30:00Z")))
             .build();
     BiFunction<ResultSet, Integer, Object> getter =
         (s, i) -> {
