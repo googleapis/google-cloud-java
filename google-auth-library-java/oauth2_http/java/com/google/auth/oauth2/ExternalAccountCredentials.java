@@ -265,7 +265,8 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     this.workforcePoolUserProject = builder.workforcePoolUserProject;
     if (workforcePoolUserProject != null && !isWorkforcePoolConfiguration()) {
       throw new IllegalArgumentException(
-          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool configuration.");
+          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool"
+              + " configuration.");
     }
 
     validateTokenUrl(tokenUrl);
@@ -431,6 +432,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       Map<String, Object> json, HttpTransportFactory transportFactory) {
     String audience = (String) json.get("audience");
     String subjectTokenType = (String) json.get("subject_token_type");
+    String actorTokenType = (String) json.get("actor_token_type");
     String tokenUrl = (String) json.get("token_url");
 
     Map<String, Object> credentialSourceMap = (Map<String, Object>) json.get("credential_source");
@@ -487,6 +489,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
         .setHttpTransportFactory(transportFactory)
         .setAudience(audience)
         .setSubjectTokenType(subjectTokenType)
+        .setActorTokenType(actorTokenType)
         .setTokenUrl(tokenUrl)
         .setTokenInfoUrl(tokenInfoUrl)
         .setCredentialSource(new IdentityPoolCredentialSource(credentialSourceMap))
@@ -523,6 +526,19 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   }
 
   /**
+   * Refreshes the access token using the specified transport factory. Default implementation
+   * delegates to {@link #refreshAccessToken()}. Subclasses should override this method if they
+   * support transport pinning per refresh cycle.
+   *
+   * @param transportFactory the HTTP transport factory to use for this refresh cycle
+   * @return the refreshed access token
+   * @throws IOException if the token refresh fails
+   */
+  public AccessToken refreshAccessToken(HttpTransportFactory transportFactory) throws IOException {
+    return refreshAccessToken();
+  }
+
+  /**
    * Exchanges the external credential for a Google Cloud access token.
    *
    * @param stsTokenExchangeRequest the Security Token Service token exchange request
@@ -531,17 +547,35 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
    */
   protected AccessToken exchangeExternalCredentialForAccessToken(
       StsTokenExchangeRequest stsTokenExchangeRequest) throws IOException {
+    return exchangeExternalCredentialForAccessToken(stsTokenExchangeRequest, this.transportFactory);
+  }
+
+  /**
+   * Exchanges the external credential for a Google Cloud access token using the specified transport
+   * factory. This overload allows callers to provide a per-cycle transport factory, for example one
+   * pinned to a specific mTLS certificate.
+   *
+   * @param stsTokenExchangeRequest the Security Token Service token exchange request
+   * @param cycleTransportFactory the HTTP transport factory to use for this exchange
+   * @return the access token returned by the Security Token Service
+   * @throws OAuthException if the call to the Security Token Service fails
+   */
+  protected AccessToken exchangeExternalCredentialForAccessToken(
+      StsTokenExchangeRequest stsTokenExchangeRequest, HttpTransportFactory cycleTransportFactory)
+      throws IOException {
     // Handle service account impersonation if necessary.
     if (this.shouldBuildImpersonatedCredential()) {
       this.impersonatedCredentials = this.buildImpersonatedCredentials();
     }
     if (this.impersonatedCredentials != null) {
-      return this.impersonatedCredentials.refreshAccessToken();
+      return this.impersonatedCredentials.refreshAccessToken(cycleTransportFactory);
     }
 
     StsRequestHandler.Builder requestHandler =
         StsRequestHandler.newBuilder(
-            tokenUrl, stsTokenExchangeRequest, transportFactory.create().createRequestFactory());
+            tokenUrl,
+            stsTokenExchangeRequest,
+            cycleTransportFactory.create().createRequestFactory());
 
     // If this credential was initialized with a Workforce configuration then the
     // workforcePoolUserProject must be passed to the Security Token Service via the internal

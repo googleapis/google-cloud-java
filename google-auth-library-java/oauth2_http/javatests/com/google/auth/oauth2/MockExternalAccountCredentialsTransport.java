@@ -68,6 +68,7 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
   private static final String AWS_IMDSV2_SESSION_TOKEN_URL = "https://169.254.169.254/imdsv2";
   private static final String METADATA_SERVER_URL = "https://www.metadata.google.com";
   private static final String STS_URL = "https://sts.googleapis.com/v1/token";
+  static final String STS_MTLS_URL = "https://sts.mtls.googleapis.com/v1/token";
 
   private static final String SUBJECT_TOKEN = "subjectToken";
   private static final String TOKEN_TYPE = "Bearer";
@@ -88,10 +89,15 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
   private final Queue<IOException> responseErrorSequence = new ArrayDeque<>();
   private final Queue<String> refreshTokenSequence = new ArrayDeque<>();
   private final Queue<List<String>> scopeSequence = new ArrayDeque<>();
+  private final Queue<Integer> stsStatusCodeSequence = new ArrayDeque<>();
   private final List<MockLowLevelHttpRequest> requests = new ArrayList<>();
   private String expireTime;
   private String metadataServerContentType;
   private String stsContent;
+
+  public void addStsStatusCodeSequence(Integer... statusCodes) {
+    Collections.addAll(stsStatusCodeSequence, statusCodes);
+  }
 
   public void addResponseErrorSequence(IOException... errors) {
     Collections.addAll(responseErrorSequence, errors);
@@ -167,11 +173,24 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
                   .setContentType("text/html")
                   .setContent(SUBJECT_TOKEN);
             }
-            if (STS_URL.equals(url)) {
+            if (STS_URL.equals(url) || STS_MTLS_URL.equals(url)) {
               Map<String, String> query = TestUtils.parseQuery(getContentAsString());
 
               // Store STS content as multiple calls are made using this transport.
               stsContent = getContentAsString();
+
+              int statusCode =
+                  !stsStatusCodeSequence.isEmpty() ? stsStatusCodeSequence.poll() : 200;
+              if (statusCode != 200) {
+                GenericJson errorResponse = new GenericJson();
+                errorResponse.setFactory(JSON_FACTORY);
+                errorResponse.put("error", "invalid_token");
+                errorResponse.put("error_description", "Invalid or expired client certificate.");
+                return new MockLowLevelHttpResponse()
+                    .setStatusCode(statusCode)
+                    .setContentType(Json.MEDIA_TYPE)
+                    .setContent(errorResponse.toPrettyString());
+              }
 
               assertEquals(EXPECTED_GRANT_TYPE, query.get("grant_type"));
               assertNotNull(query.get("subject_token_type"));
@@ -286,6 +305,10 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
 
   public String getStsUrl() {
     return STS_URL;
+  }
+
+  public String getStsMtlsUrl() {
+    return STS_MTLS_URL;
   }
 
   public String getServiceAccountImpersonationUrl() {
