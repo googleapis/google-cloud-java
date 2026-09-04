@@ -92,10 +92,13 @@ public class GcpFallbackChannel extends ManagedChannel {
       this.fallbackState = options.getSharedState();
       this.ownsFallbackState = false;
     } else {
-      this.fallbackState = new GcpFallbackState(); // Private state for backward compatibility
+      this.fallbackState =
+          execService != null
+              ? new GcpFallbackState(execService)
+              : new GcpFallbackState();
       this.ownsFallbackState = true;
     }
-    this.execService = fallbackState.getOrCreateExecutorService(execService, options);
+    this.execService = fallbackState.getOrCreateExecutorService(options);
     if (options.getGcpOpenTelemetry() != null) {
       this.openTelemetry = options.getGcpOpenTelemetry();
     } else {
@@ -161,10 +164,13 @@ public class GcpFallbackChannel extends ManagedChannel {
       this.fallbackState = options.getSharedState();
       this.ownsFallbackState = false;
     } else {
-      this.fallbackState = new GcpFallbackState(); // Private state for backward compatibility
+      this.fallbackState =
+          execService != null
+              ? new GcpFallbackState(execService)
+              : new GcpFallbackState();
       this.ownsFallbackState = true;
     }
-    this.execService = fallbackState.getOrCreateExecutorService(execService, options);
+    this.execService = fallbackState.getOrCreateExecutorService(options);
     if (options.getGcpOpenTelemetry() != null) {
       this.openTelemetry = options.getGcpOpenTelemetry();
     } else {
@@ -254,7 +260,7 @@ public class GcpFallbackChannel extends ManagedChannel {
               MILLISECONDS);
     }
 
-    fallbackState.startPeriodicEvaluation(options, execService);
+    fallbackState.startPeriodicEvaluation(options);
   }
 
   private void checkErrorRates() {

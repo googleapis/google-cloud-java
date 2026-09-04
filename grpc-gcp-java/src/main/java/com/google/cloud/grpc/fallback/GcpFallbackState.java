@@ -17,6 +17,7 @@
 package com.google.cloud.grpc.fallback;
 
 import com.google.cloud.grpc.GcpThreadFactory;
+import com.google.common.annotations.VisibleForTesting;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -43,6 +44,19 @@ public class GcpFallbackState {
   private boolean ownsExecutor = false;
   private volatile ScheduledFuture<?> scheduledEvaluationFuture = null;
 
+  public GcpFallbackState() {}
+
+  /**
+   * Constructs a fallback state with an explicit executor service for testing.
+   *
+   * @param execService the executor service to use.
+   */
+  @VisibleForTesting
+  public GcpFallbackState(ScheduledExecutorService execService) {
+    this.execService = execService;
+    this.ownsExecutor = true;
+  }
+
   public AtomicLong getPrimarySuccesses() {
     return primarySuccesses;
   }
@@ -64,24 +78,17 @@ public class GcpFallbackState {
   }
 
   /**
-   * Retrieves or lazily initializes the shared background executor service.
+   * Retrieves or lazily initializes the background executor service.
    *
-   * @param externalExec optional external executor service to use (e.g. from test or options).
    * @param options optional fallback channel configuration options.
    * @return the active ScheduledExecutorService.
    */
   public synchronized ScheduledExecutorService getOrCreateExecutorService(
-      ScheduledExecutorService externalExec, GcpFallbackChannelOptions options) {
+      GcpFallbackChannelOptions options) {
     if (this.execService != null) {
       return this.execService;
     }
-    if (externalExec != null) {
-      this.execService = externalExec;
-      this.ownsExecutor =
-          (options == null
-              || options.getSharedState() == null
-              || options.getSharedExecutorService() == null);
-    } else if (options != null && options.getSharedExecutorService() != null) {
+    if (options != null && options.getSharedExecutorService() != null) {
       this.execService = options.getSharedExecutorService();
       this.ownsExecutor = false;
     } else {
@@ -107,10 +114,8 @@ public class GcpFallbackState {
    * state.
    *
    * @param options the fallback channel configuration options.
-   * @param externalExec optional executor service to use if not yet initialized.
    */
-  public synchronized void startPeriodicEvaluation(
-      GcpFallbackChannelOptions options, ScheduledExecutorService externalExec) {
+  public synchronized void startPeriodicEvaluation(GcpFallbackChannelOptions options) {
     if (options == null
         || !options.isEnableFallback()
         || options.getPeriod() == null
@@ -118,7 +123,7 @@ public class GcpFallbackState {
       return;
     }
     if (evaluationStarted.compareAndSet(false, true)) {
-      ScheduledExecutorService executor = getOrCreateExecutorService(externalExec, options);
+      ScheduledExecutorService executor = getOrCreateExecutorService(options);
       if (executor == null || executor.isShutdown()) {
         return;
       }

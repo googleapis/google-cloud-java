@@ -1330,12 +1330,11 @@ public class GcpFallbackChannelTest {
 
   @Test
   public void testSharedState_singleEvaluationScheduled() {
-    GcpFallbackState sharedState = new GcpFallbackState();
-    GcpFallbackChannelOptions options =
-        getDefaultOptionsBuilder().setSharedState(sharedState).build();
-
     ScheduledExecutorService mockExec1 = mock(ScheduledExecutorService.class);
     ScheduledExecutorService mockExec2 = mock(ScheduledExecutorService.class);
+    GcpFallbackState sharedState = new GcpFallbackState(mockExec1);
+    GcpFallbackChannelOptions options =
+        getDefaultOptionsBuilder().setSharedState(sharedState).build();
 
     GcpFallbackChannel channel1 =
         new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder, mockExec1);
@@ -1366,16 +1365,15 @@ public class GcpFallbackChannelTest {
 
   @Test
   public void testSharedState_coordinatedFailover() {
-    GcpFallbackState sharedState = new GcpFallbackState();
+    ScheduledExecutorService mockExec1 = mock(ScheduledExecutorService.class);
+    ScheduledExecutorService mockExec2 = mock(ScheduledExecutorService.class);
+    GcpFallbackState sharedState = new GcpFallbackState(mockExec1);
     GcpFallbackChannelOptions options =
         getDefaultOptionsBuilder()
             .setSharedState(sharedState)
             .setMinFailedCalls(3)
             .setErrorRateThreshold(0.5f)
             .build();
-
-    ScheduledExecutorService mockExec1 = mock(ScheduledExecutorService.class);
-    ScheduledExecutorService mockExec2 = mock(ScheduledExecutorService.class);
 
     ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
 
@@ -1448,12 +1446,11 @@ public class GcpFallbackChannelTest {
 
   @Test
   public void testSharedState_channelShutdownLeavesSiblingChannelsFunctional() {
-    GcpFallbackState sharedState = new GcpFallbackState();
-    GcpFallbackChannelOptions options =
-        getDefaultOptionsBuilder().setSharedState(sharedState).build();
-
     ScheduledExecutorService mockExec1 = mock(ScheduledExecutorService.class);
     ScheduledExecutorService mockExec2 = mock(ScheduledExecutorService.class);
+    GcpFallbackState sharedState = new GcpFallbackState(mockExec1);
+    GcpFallbackChannelOptions options =
+        getDefaultOptionsBuilder().setSharedState(sharedState).build();
 
     GcpFallbackChannel channel1 =
         new GcpFallbackChannel(options, mockPrimaryBuilder, mockFallbackBuilder, mockExec1);
@@ -1479,7 +1476,8 @@ public class GcpFallbackChannelTest {
   @Test
   public void testSharedState_probingRequiresBothCountAndDurationToRecover()
       throws InterruptedException {
-    GcpFallbackState sharedState = new GcpFallbackState();
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    GcpFallbackState sharedState = new GcpFallbackState(mockExec);
     sharedState.getInFallbackMode().set(true);
 
     GcpFallbackChannelOptions options =
@@ -1490,8 +1488,6 @@ public class GcpFallbackChannelTest {
             .setMinPrimaryProbeSuccessCount(2)
             .setMinPrimaryProbeSuccessDuration(Duration.ofMillis(50))
             .build();
-
-    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
     ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
 
     GcpFallbackChannel channel =
@@ -1531,7 +1527,8 @@ public class GcpFallbackChannelTest {
 
   @Test
   public void testSharedState_probingFailureResetsDurationTimer() {
-    GcpFallbackState sharedState = new GcpFallbackState();
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    GcpFallbackState sharedState = new GcpFallbackState(mockExec);
     sharedState.getInFallbackMode().set(true);
 
     AtomicBoolean probeOk = new AtomicBoolean(true);
@@ -1543,8 +1540,6 @@ public class GcpFallbackChannelTest {
             .setMinPrimaryProbeSuccessCount(5)
             .setMinPrimaryProbeSuccessDuration(Duration.ofMinutes(10))
             .build();
-
-    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
     ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
 
     GcpFallbackChannel channel =
@@ -1576,8 +1571,9 @@ public class GcpFallbackChannelTest {
 
   @Test
   public void testProbePrimary_skippedWhenNotInFallbackMode() {
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
     AtomicLong probeCalls = new AtomicLong(0);
-    GcpFallbackState sharedState = new GcpFallbackState();
+    GcpFallbackState sharedState = new GcpFallbackState(mockExec);
     sharedState.getInFallbackMode().set(false);
 
     GcpFallbackChannelOptions options =
@@ -1589,8 +1585,6 @@ public class GcpFallbackChannelTest {
                   return "OK";
                 })
             .build();
-
-    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
     ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
 
     GcpFallbackChannel channel =
@@ -1618,7 +1612,9 @@ public class GcpFallbackChannelTest {
 
   @Test
   public void testPerChannelIndependentRecovery_oneChannelRecoversWhileOtherStaysInFallback() {
-    GcpFallbackState sharedState = new GcpFallbackState();
+    ScheduledExecutorService mockExec1 = mock(ScheduledExecutorService.class);
+    ScheduledExecutorService mockExec2 = mock(ScheduledExecutorService.class);
+    GcpFallbackState sharedState = new GcpFallbackState(mockExec1);
     sharedState.getInFallbackMode().set(true); // Pool-wide fallback active
 
     GcpFallbackChannelOptions options1 =
@@ -1640,9 +1636,6 @@ public class GcpFallbackChannelTest {
             .setMinPrimaryProbeSuccessCount(1)
             .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
             .build();
-
-    ScheduledExecutorService mockExec1 = mock(ScheduledExecutorService.class);
-    ScheduledExecutorService mockExec2 = mock(ScheduledExecutorService.class);
     ArgumentCaptor<Runnable> taskCaptor1 = ArgumentCaptor.forClass(Runnable.class);
 
     GcpFallbackChannel channel1 =
@@ -1677,7 +1670,9 @@ public class GcpFallbackChannelTest {
 
   @Test
   public void testPoolLevelRecovery_whenPerChannelRecoveryDisabled_allChannelsRecoverTogether() {
-    GcpFallbackState sharedState = new GcpFallbackState();
+    ScheduledExecutorService mockExec1 = mock(ScheduledExecutorService.class);
+    ScheduledExecutorService mockExec2 = mock(ScheduledExecutorService.class);
+    GcpFallbackState sharedState = new GcpFallbackState(mockExec1);
     sharedState.getInFallbackMode().set(true); // Pool-wide fallback active
 
     GcpFallbackChannelOptions options1 =
@@ -1699,9 +1694,6 @@ public class GcpFallbackChannelTest {
             .setMinPrimaryProbeSuccessCount(1)
             .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
             .build();
-
-    ScheduledExecutorService mockExec1 = mock(ScheduledExecutorService.class);
-    ScheduledExecutorService mockExec2 = mock(ScheduledExecutorService.class);
     ArgumentCaptor<Runnable> taskCaptor1 = ArgumentCaptor.forClass(Runnable.class);
 
     GcpFallbackChannel channel1 =
@@ -1739,7 +1731,8 @@ public class GcpFallbackChannelTest {
 
   @Test
   public void testRecoveryDisabled_probingSucceedsButChannelRemainsInFallback() {
-    GcpFallbackState sharedState = new GcpFallbackState();
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    GcpFallbackState sharedState = new GcpFallbackState(mockExec);
     sharedState.getInFallbackMode().set(true); // Pool-wide fallback active
 
     GcpFallbackChannelOptions options =
@@ -1750,8 +1743,6 @@ public class GcpFallbackChannelTest {
             .setMinPrimaryProbeSuccessCount(1)
             .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
             .build();
-
-    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
     ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
 
     GcpFallbackChannel channel =
@@ -1782,7 +1773,8 @@ public class GcpFallbackChannelTest {
 
   @Test
   public void testPoolLevelRecovery_multipleFailoverCyclesResetProbeStatistics() {
-    GcpFallbackState sharedState = new GcpFallbackState();
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    GcpFallbackState sharedState = new GcpFallbackState(mockExec);
     sharedState.getInFallbackMode().set(true); // Cycle 1: Fallback active
 
     GcpFallbackChannelOptions options1 =
@@ -1804,8 +1796,6 @@ public class GcpFallbackChannelTest {
             .setMinPrimaryProbeSuccessCount(2)
             .setMinPrimaryProbeSuccessDuration(Duration.ZERO)
             .build();
-
-    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
     ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
 
     GcpFallbackChannel channel1 =
@@ -1856,10 +1846,11 @@ public class GcpFallbackChannelTest {
     }
   }
 
-  @Test
+    @Test
   public void testConcurrentIsInFallbackModeDoesNotResetProbeSuccesses()
       throws InterruptedException, java.util.concurrent.ExecutionException {
-    GcpFallbackState sharedState = new GcpFallbackState();
+    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
+    GcpFallbackState sharedState = new GcpFallbackState(mockExec);
     sharedState.getInFallbackMode().set(true);
 
     GcpFallbackChannelOptions options =
@@ -1872,7 +1863,6 @@ public class GcpFallbackChannelTest {
             .setMinPrimaryProbeSuccessDuration(Duration.ofHours(1))
             .build();
 
-    ScheduledExecutorService mockExec = mock(ScheduledExecutorService.class);
     ArgumentCaptor<Runnable> taskCaptor = ArgumentCaptor.forClass(Runnable.class);
 
     GcpFallbackChannel channel =
