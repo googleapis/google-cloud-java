@@ -23,8 +23,10 @@ import com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient;
 import com.google.cloud.spanner.admin.database.v1.DatabaseAdminSettings;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminClient;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminSettings;
+import com.google.spanner.admin.database.v1.BackupSchedule;
 import com.google.spanner.admin.database.v1.DatabaseDialect;
 import java.io.IOException;
+import java.time.Instant;
 import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -146,6 +148,40 @@ public class SampleTestBaseV2 {
 
     databaseAdminClient.awaitTermination(AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
     instanceAdminClient.awaitTermination(AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+  }
+
+  protected static void cleanUpStaleBackupSchedules(
+      final String targetInstanceId, final String targetDatabaseId) {
+    try {
+      final long nowSeconds = Instant.now().getEpochSecond();
+      final long staleThresholdSeconds = TimeUnit.HOURS.toSeconds(3);
+
+      for (BackupSchedule schedule :
+          databaseAdminClient
+              .listBackupSchedules(getDatabaseName(projectId, targetInstanceId, targetDatabaseId))
+              .iterateAll()) {
+        if (schedule.hasUpdateTime()) {
+          long ageSeconds = nowSeconds - schedule.getUpdateTime().getSeconds();
+          if (ageSeconds > staleThresholdSeconds) {
+            try {
+              databaseAdminClient.deleteBackupSchedule(schedule.getName());
+            } catch (Exception e) {
+              System.out.println(
+                  "Failed to delete stale backup schedule "
+                      + schedule.getName()
+                      + " due to "
+                      + e.getMessage()
+                      + ", skipping...");
+            }
+          }
+        }
+      }
+    } catch (Exception e) {
+      System.out.println(
+          "Failed to list or clean up stale backup schedules due to "
+              + e.getMessage()
+              + ", skipping...");
+    }
   }
 
   static String getDatabaseName(final String projectId,
