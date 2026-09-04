@@ -1114,3 +1114,8 @@ google-cloud-apptopology-bom:0.0.0:0.1.0-SNAPSHOT
 proto-google-cloud-apptopology-v1:0.0.0:0.1.0-SNAPSHOT
 grpc-google-cloud-apptopology-v1:0.0.0:0.1.0-SNAPSHOT
 google-cloud-apptopology:0.0.0:0.1.0-SNAPSHOT
+google-shopping-merchant-loyaltycustomers-parent:0.0.0:0.1.0-SNAPSHOT
+google-shopping-merchant-loyaltycustomers-bom:0.0.0:0.1.0-SNAPSHOT
+proto-google-shopping-merchant-loyaltycustomers-v1:0.0.0:0.1.0-SNAPSHOT
+grpc-google-shopping-merchant-loyaltycustomers-v1:0.0.0:0.1.0-SNAPSHOT
+google-shopping-merchant-loyaltycustomers:0.0.0:0.1.0-SNAPSHOT
