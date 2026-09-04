@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-loyaltycustomers</artifactId>
-  <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-loyaltycustomers:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-shopping-merchant-loyaltycustomers:current} -->
   <packaging>jar</packaging>
   <name>Google Merchant</name>
   <description>Merchant Programmatically manage your Merchant Center Accounts.</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-loyaltycustomers-parent</artifactId>
-    <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-loyaltycustomers:current} -->
+    <version>0.1.0</version><!-- {x-version-update:google-shopping-merchant-loyaltycustomers:current} -->
   </parent>
   <properties>
     <site.installationModule>google-shopping-merchant-loyaltycustomers</site.installationModule>
