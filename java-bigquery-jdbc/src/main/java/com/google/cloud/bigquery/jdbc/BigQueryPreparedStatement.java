@@ -425,7 +425,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   }
 
   static JsonObject createJsonRow(
-      FieldList fieldLists, ArrayList<BigQueryJdbcParameter> parameterList, Gson gson) {
+      FieldList fieldLists, List<BigQueryJdbcParameter> parameterList, Gson gson) {
     JsonObject rowObject = new JsonObject();
     for (int j = 0; j < parameterList.size(); j++) {
       BigQueryJdbcParameter parameter = parameterList.get(j);
