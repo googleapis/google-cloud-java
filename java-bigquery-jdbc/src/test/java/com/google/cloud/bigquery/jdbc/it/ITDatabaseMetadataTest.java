@@ -62,6 +62,7 @@ public class ITDatabaseMetadataTest extends ITBase {
       Pattern.compile("^(\\d+)\\.(\\d+)(?:\\.\\d+)+\\s*.*");
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   private static final String TABLE_NAME = "JDBC_DBMETADATA_TEST_TABLE" + randomNumber;
+  private static final String PCNT_TABLE_NAME = "PCNT_METADATA_TEST_TABLE_" + randomNumber;
 
   @BeforeAll
   public static void beforeClass() throws InterruptedException, SQLException {
@@ -70,10 +71,15 @@ public class ITDatabaseMetadataTest extends ITBase {
     CONSTRAINTS_DATASET = ITBase.getSharedDataset();
     // Set up Dataset
     ITBase.setUpTable(DATASET, TABLE_NAME);
+    ITBase.setUpPcntTable(ITBase.PCNT_SCHEMA, PCNT_TABLE_NAME);
   }
 
   @AfterAll
-  public static void afterClass() throws SQLException {}
+  public static void afterClass() throws SQLException, InterruptedException {
+    // Shared dataset cleanup is handled by ITBase shutdown hook.
+    // Clean up dynamic table created in the shared PCNT namespace.
+    ITBase.cleanUpPcntTable(ITBase.PCNT_SCHEMA, PCNT_TABLE_NAME);
+  }
 
   @Disabled
   @Test
