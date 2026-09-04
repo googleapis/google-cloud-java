@@ -142,4 +142,17 @@ public interface DeploymentOperationMetadataOrBuilder
    * @return The bytes for logs.
    */
   com.google.protobuf.ByteString getLogsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicating if early apply results are available.
+   * </pre>
+   *
+   * <code>bool apply_results_available = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The applyResultsAvailable.
+   */
+  boolean getApplyResultsAvailable();
 }

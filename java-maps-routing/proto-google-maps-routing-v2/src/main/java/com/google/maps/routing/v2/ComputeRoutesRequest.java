@@ -280,6 +280,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Extra computations to perform while completing the request.
+   * Additional values may be added in the future.
    * </pre>
    *
    * Protobuf enum {@code google.maps.routing.v2.ComputeRoutesRequest.ExtraComputation}
@@ -329,7 +330,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [`NavigationInstructions`](google.maps.routing.v2.NavigationInstructions.instructions)
+     * [`NavigationInstruction`][google.maps.routing.v2.NavigationInstruction]
      * presented as a formatted HTML text string. This content
      * is meant to be read as-is. This content is for display only.
      * Do not programmatically parse it.
@@ -344,7 +345,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Flyover information for the route(s). The
      * `routes.polyline_details.flyover_info` fieldmask must be specified to
-     * return this information. This data will only currently be populated for
+     * return this information. This data will currently only be populated for
      * certain metros in India. This feature is experimental, and the
      * SKU/charge is subject to change.
      * </pre>
@@ -358,7 +359,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Narrow road information for the route(s). The
      * `routes.polyline_details.narrow_road_info` fieldmask must be specified
-     * to return this information. This data will only currently be populated
+     * to return this information. This data will currently only be populated
      * for certain metros in India. This feature is experimental, and the
      * SKU/charge is subject to change.
      * </pre>
@@ -366,6 +367,42 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <code>NARROW_ROAD_INFO_ON_POLYLINE = 8;</code>
      */
     NARROW_ROAD_INFO_ON_POLYLINE(8),
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel information for the route(s). The
+     * `routes.polyline_details.tunnel_info` fieldmask must be specified to
+     * return this information.
+     * </pre>
+     *
+     * <code>TUNNEL_INFO_ON_POLYLINE = 9;</code>
+     */
+    TUNNEL_INFO_ON_POLYLINE(9),
+    /**
+     *
+     *
+     * <pre>
+     * Bridge information for the route(s). The
+     * `routes.polyline_details.bridge_info` fieldmask must be specified to
+     * return this information.
+     * </pre>
+     *
+     * <code>BRIDGE_INFO_ON_POLYLINE = 10;</code>
+     */
+    BRIDGE_INFO_ON_POLYLINE(10),
+    /**
+     *
+     *
+     * <pre>
+     * Skyway information for the route(s). The
+     * `routes.polyline_details.skyway_info` fieldmask must be specified to
+     * return this information.
+     * </pre>
+     *
+     * <code>SKYWAY_INFO_ON_POLYLINE = 11;</code>
+     */
+    SKYWAY_INFO_ON_POLYLINE(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -427,7 +464,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [`NavigationInstructions`](google.maps.routing.v2.NavigationInstructions.instructions)
+     * [`NavigationInstruction`][google.maps.routing.v2.NavigationInstruction]
      * presented as a formatted HTML text string. This content
      * is meant to be read as-is. This content is for display only.
      * Do not programmatically parse it.
@@ -443,7 +480,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Flyover information for the route(s). The
      * `routes.polyline_details.flyover_info` fieldmask must be specified to
-     * return this information. This data will only currently be populated for
+     * return this information. This data will currently only be populated for
      * certain metros in India. This feature is experimental, and the
      * SKU/charge is subject to change.
      * </pre>
@@ -458,7 +495,7 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <pre>
      * Narrow road information for the route(s). The
      * `routes.polyline_details.narrow_road_info` fieldmask must be specified
-     * to return this information. This data will only currently be populated
+     * to return this information. This data will currently only be populated
      * for certain metros in India. This feature is experimental, and the
      * SKU/charge is subject to change.
      * </pre>
@@ -466,6 +503,45 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * <code>NARROW_ROAD_INFO_ON_POLYLINE = 8;</code>
      */
     public static final int NARROW_ROAD_INFO_ON_POLYLINE_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Tunnel information for the route(s). The
+     * `routes.polyline_details.tunnel_info` fieldmask must be specified to
+     * return this information.
+     * </pre>
+     *
+     * <code>TUNNEL_INFO_ON_POLYLINE = 9;</code>
+     */
+    public static final int TUNNEL_INFO_ON_POLYLINE_VALUE = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Bridge information for the route(s). The
+     * `routes.polyline_details.bridge_info` fieldmask must be specified to
+     * return this information.
+     * </pre>
+     *
+     * <code>BRIDGE_INFO_ON_POLYLINE = 10;</code>
+     */
+    public static final int BRIDGE_INFO_ON_POLYLINE_VALUE = 10;
+
+    /**
+     *
+     *
+     * <pre>
+     * Skyway information for the route(s). The
+     * `routes.polyline_details.skyway_info` fieldmask must be specified to
+     * return this information.
+     * </pre>
+     *
+     * <code>SKYWAY_INFO_ON_POLYLINE = 11;</code>
+     */
+    public static final int SKYWAY_INFO_ON_POLYLINE_VALUE = 11;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -505,6 +581,12 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
           return FLYOVER_INFO_ON_POLYLINE;
         case 8:
           return NARROW_ROAD_INFO_ON_POLYLINE;
+        case 9:
+          return TUNNEL_INFO_ON_POLYLINE;
+        case 10:
+          return BRIDGE_INFO_ON_POLYLINE;
+        case 11:
+          return SKYWAY_INFO_ON_POLYLINE;
         default:
           return null;
       }
@@ -1341,9 +1423,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
    * Optional. If set to true, the service attempts to minimize the overall cost
    * of the route by re-ordering the specified intermediate waypoints. The
    * request fails if any of the intermediate waypoints is a `via` waypoint. Use
-   * `ComputeRoutesResponse.Routes.optimized_intermediate_waypoint_index` to
+   * `ComputeRoutesResponse.routes.optimized_intermediate_waypoint_index` to
    * find the new ordering.
-   * If `ComputeRoutesResponseroutes.optimized_intermediate_waypoint_index` is
+   * If `ComputeRoutesResponse.routes.optimized_intermediate_waypoint_index` is
    * not requested in the `X-Goog-FieldMask` header, the request fails.
    * If `optimize_waypoint_order` is set to false,
    * `ComputeRoutesResponse.optimized_intermediate_waypoint_index` will be
@@ -5189,9 +5271,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. If set to true, the service attempts to minimize the overall cost
      * of the route by re-ordering the specified intermediate waypoints. The
      * request fails if any of the intermediate waypoints is a `via` waypoint. Use
-     * `ComputeRoutesResponse.Routes.optimized_intermediate_waypoint_index` to
+     * `ComputeRoutesResponse.routes.optimized_intermediate_waypoint_index` to
      * find the new ordering.
-     * If `ComputeRoutesResponseroutes.optimized_intermediate_waypoint_index` is
+     * If `ComputeRoutesResponse.routes.optimized_intermediate_waypoint_index` is
      * not requested in the `X-Goog-FieldMask` header, the request fails.
      * If `optimize_waypoint_order` is set to false,
      * `ComputeRoutesResponse.optimized_intermediate_waypoint_index` will be
@@ -5214,9 +5296,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. If set to true, the service attempts to minimize the overall cost
      * of the route by re-ordering the specified intermediate waypoints. The
      * request fails if any of the intermediate waypoints is a `via` waypoint. Use
-     * `ComputeRoutesResponse.Routes.optimized_intermediate_waypoint_index` to
+     * `ComputeRoutesResponse.routes.optimized_intermediate_waypoint_index` to
      * find the new ordering.
-     * If `ComputeRoutesResponseroutes.optimized_intermediate_waypoint_index` is
+     * If `ComputeRoutesResponse.routes.optimized_intermediate_waypoint_index` is
      * not requested in the `X-Goog-FieldMask` header, the request fails.
      * If `optimize_waypoint_order` is set to false,
      * `ComputeRoutesResponse.optimized_intermediate_waypoint_index` will be
@@ -5243,9 +5325,9 @@ public final class ComputeRoutesRequest extends com.google.protobuf.GeneratedMes
      * Optional. If set to true, the service attempts to minimize the overall cost
      * of the route by re-ordering the specified intermediate waypoints. The
      * request fails if any of the intermediate waypoints is a `via` waypoint. Use
-     * `ComputeRoutesResponse.Routes.optimized_intermediate_waypoint_index` to
+     * `ComputeRoutesResponse.routes.optimized_intermediate_waypoint_index` to
      * find the new ordering.
-     * If `ComputeRoutesResponseroutes.optimized_intermediate_waypoint_index` is
+     * If `ComputeRoutesResponse.routes.optimized_intermediate_waypoint_index` is
      * not requested in the `X-Goog-FieldMask` header, the request fails.
      * If `optimize_waypoint_order` is set to false,
      * `ComputeRoutesResponse.optimized_intermediate_waypoint_index` will be

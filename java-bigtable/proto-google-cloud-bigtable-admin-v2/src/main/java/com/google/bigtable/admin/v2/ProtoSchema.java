@@ -24,7 +24,7 @@ package com.google.bigtable.admin.v2;
  *
  *
  * <pre>
- * Represents a protobuf schema.
+ * Represents a collection of protobuf schemas.
  * </pre>
  *
  * Protobuf type {@code google.bigtable.admin.v2.ProtoSchema}
@@ -266,7 +266,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Represents a protobuf schema.
+   * Represents a collection of protobuf schemas.
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.ProtoSchema}

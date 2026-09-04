@@ -51,6 +51,7 @@
   </licenses>
 
   <properties>
+    <skipUnitTests>false</skipUnitTests>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.protobuf-java.version>3.25.4</project.protobuf-java.version>

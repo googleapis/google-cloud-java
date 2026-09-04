@@ -784,7 +784,7 @@ public class KeyRangeCacheTest {
   }
 
   @Test
-  public void preferLeaderTrueUsesLatencyScoresWhenOperationUidAvailable() {
+  public void preferLeaderTrueWithOperationUidSelectsLeaderEvenWhenFollowerHasLowerLatency() {
     FakeEndpointCache endpointCache = new FakeEndpointCache();
     KeyRangeCache cache = new KeyRangeCache(endpointCache);
     cache.useDeterministicRandom();
@@ -793,6 +793,38 @@ public class KeyRangeCacheTest {
     endpointCache.get("server1");
     endpointCache.get("server2");
     endpointCache.get("server3");
+
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, true, "server1", Duration.ofNanos(300_000L));
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, true, "server2", Duration.ofNanos(100_000L));
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, true, "server3", Duration.ofNanos(200_000L));
+
+    RoutingHint.Builder hint =
+        RoutingHint.newBuilder().setKey(bytes("a")).setOperationUid(TEST_OPERATION_UID);
+    ChannelEndpoint server =
+        cache.fillRoutingHint(
+            true,
+            KeyRangeCache.RangeMode.COVERING_SPLIT,
+            DirectedReadOptions.getDefaultInstance(),
+            hint);
+
+    assertNotNull(server);
+    assertEquals("server1", server.getAddress());
+  }
+
+  @Test
+  public void preferLeaderTrueWithOperationUidFallsBackToScoreAwareWhenLeaderUnhealthy() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    cache.useDeterministicRandom();
+    cache.addRanges(threeReplicaUpdate());
+
+    endpointCache.get("server1");
+    endpointCache.get("server2");
+    endpointCache.get("server3");
+    endpointCache.setState("server1", EndpointHealthState.TRANSIENT_FAILURE);
 
     EndpointLatencyRegistry.recordLatency(
         null, TEST_OPERATION_UID, true, "server1", Duration.ofNanos(300_000L));

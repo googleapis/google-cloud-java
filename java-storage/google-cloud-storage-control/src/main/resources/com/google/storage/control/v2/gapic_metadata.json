@@ -34,6 +34,9 @@
             "DisableAnywhereCache": {
               "methods": ["disableAnywhereCache", "disableAnywhereCache", "disableAnywhereCache", "disableAnywhereCacheCallable"]
             },
+            "DisableRapidCache": {
+              "methods": ["disableRapidCacheAsync", "disableRapidCacheAsync", "disableRapidCacheAsync", "disableRapidCacheOperationCallable", "disableRapidCacheCallable"]
+            },
             "GetAnywhereCache": {
               "methods": ["getAnywhereCache", "getAnywhereCache", "getAnywhereCache", "getAnywhereCacheCallable"]
             },

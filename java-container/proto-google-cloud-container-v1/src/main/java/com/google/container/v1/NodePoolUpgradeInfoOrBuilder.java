@@ -393,4 +393,50 @@ public interface NodePoolUpgradeInfoOrBuilder
    * @return The bytes for endOfExtendedSupportTimestamp.
    */
   com.google.protobuf.ByteString getEndOfExtendedSupportTimestampBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upgrade info for the node pool specific to the usage of custom
+   * images.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the customImageInfo field is set.
+   */
+  boolean hasCustomImageInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upgrade info for the node pool specific to the usage of custom
+   * images.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The customImageInfo.
+   */
+  com.google.container.v1.CustomImageInfo getCustomImageInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upgrade info for the node pool specific to the usage of custom
+   * images.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.CustomImageInfo custom_image_info = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1.CustomImageInfoOrBuilder getCustomImageInfoOrBuilder();
 }
