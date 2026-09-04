@@ -167,39 +167,71 @@ public class ExtendedTypesTest {
 
   @Test
   public void BsonBinaryDataValuesAndEquality() {
-    BsonBinaryData b1 = BsonBinaryData.fromBytes(127, new byte[] {1, 2, 3});
-    BsonBinaryData b2 = BsonBinaryData.fromBytes(127, new byte[] {1, 2, 3});
-    BsonBinaryData b3 = BsonBinaryData.fromBytes(1, new byte[] {1, 2, 3});
-    BsonBinaryData b4 = BsonBinaryData.fromBytes(127, new byte[] {1, 2, 4});
+    Blob b1 = Blob.createBsonBinary(127, new byte[] {1, 2, 3});
+    Blob b2 = Blob.createBsonBinary(127, new byte[] {1, 2, 3});
+    Blob b3 = Blob.createBsonBinary(1, new byte[] {1, 2, 3});
+    Blob b4 = Blob.createBsonBinary(127, new byte[] {1, 2, 4});
 
     assertThat(b1.subtype()).isEqualTo(127);
-    assertThat(b1.dataAsBytes()).isEqualTo(new byte[] {1, 2, 3});
+    assertThat(b1.toBytes()).isEqualTo(new byte[] {1, 2, 3});
     assertThat(b1).isEqualTo(b2);
     assertThat(b1).isNotEqualTo(b3);
     assertThat(b1).isNotEqualTo(b4);
   }
 
   @Test
+  public void BlobEqualityWithSubtypes() {
+    byte[] data = new byte[] {1, 2, 3};
+    Blob nativeBlob1 = Blob.fromBytes(data);
+    Blob nativeBlob2 = Blob.fromBytes(data);
+    Blob bsonBlobSubtype0 = Blob.createBsonBinary(data);
+    Blob bsonBlobSubtype1 = Blob.createBsonBinary(1, data);
+    Blob bsonBlobSubtype1_differentData = Blob.createBsonBinary(1, new byte[] {1, 2, 4});
+
+    // Native blobs are equal to each other
+    assertThat(nativeBlob1).isEqualTo(nativeBlob2);
+
+    // Native blob is equal to BSON blob with subtype 0
+    assertThat(nativeBlob1).isEqualTo(bsonBlobSubtype0);
+    assertThat(bsonBlobSubtype0).isEqualTo(nativeBlob1);
+
+    // Native blob is NOT equal to BSON blob with subtype 1
+    assertThat(nativeBlob1).isNotEqualTo(bsonBlobSubtype1);
+
+    // BSON blobs with different subtypes are not equal
+    assertThat(bsonBlobSubtype0).isNotEqualTo(bsonBlobSubtype1);
+
+    // BSON blobs with same subtype but different data are not equal
+    assertThat(bsonBlobSubtype1).isNotEqualTo(bsonBlobSubtype1_differentData);
+  }
+
+  @Test
   public void BsonBinaryDataConvertsByteToIntAndIntToByteCorrectly() {
     byte[] data = new byte[] {1, 2, 3};
-    BsonBinaryData b1 = BsonBinaryData.fromBytes(127, data); // 0x7F - MSB:0
-    BsonBinaryData b2 = BsonBinaryData.fromBytes(128, data); // 0x80 - MSB:1
-    BsonBinaryData b3 = BsonBinaryData.fromBytes(255, data); // 0xFF - MSB:1
+    Blob b1 = Blob.createBsonBinary(127, data); // 0x7F - MSB:0
+    Blob b2 = Blob.createBsonBinary(128, data); // 0x80 - MSB:1
+    Blob b3 = Blob.createBsonBinary(255, data); // 0xFF - MSB:1
 
-    BsonBinaryData b4 = UserDataConverter.decodeBsonBinary(b1.toProto());
-    BsonBinaryData b5 = UserDataConverter.decodeBsonBinary(b2.toProto());
-    BsonBinaryData b6 = UserDataConverter.decodeBsonBinary(b3.toProto());
+    Blob b4 =
+        UserDataConverter.decodeBsonBinary(
+            UserDataConverter.encodeBsonBinaryData(b1.subtype(), b1.toByteString()));
+    Blob b5 =
+        UserDataConverter.decodeBsonBinary(
+            UserDataConverter.encodeBsonBinaryData(b2.subtype(), b2.toByteString()));
+    Blob b6 =
+        UserDataConverter.decodeBsonBinary(
+            UserDataConverter.encodeBsonBinaryData(b3.subtype(), b3.toByteString()));
 
     assertThat(b4.subtype()).isEqualTo(127);
-    assertThat(b4.dataAsBytes()).isEqualTo(data);
+    assertThat(b4.toBytes()).isEqualTo(data);
     assertThat(b4).isEqualTo(b1);
 
     assertThat(b5.subtype()).isEqualTo(128);
-    assertThat(b5.dataAsBytes()).isEqualTo(data);
+    assertThat(b5.toBytes()).isEqualTo(data);
     assertThat(b5).isEqualTo(b2);
 
     assertThat(b6.subtype()).isEqualTo(255);
-    assertThat(b6.dataAsBytes()).isEqualTo(data);
+    assertThat(b6.toBytes()).isEqualTo(data);
     assertThat(b6).isEqualTo(b3);
   }
 
@@ -207,14 +239,16 @@ public class ExtendedTypesTest {
   public void BsonBinaryDataConstructorsEncodeToTheSameValue() {
     byte[] bytes = new byte[] {1, 2, 3};
     ByteString byteString = ByteString.copyFromUtf8("\01\02\03");
-    BsonBinaryData b1 = BsonBinaryData.fromByteString(127, byteString);
-    BsonBinaryData b2 = BsonBinaryData.fromBytes(127, bytes);
-    assertThat(b1.toProto()).isEqualTo(b2.toProto());
+    Blob b1 = Blob.createBsonBinary(127, byteString);
+    Blob b2 = Blob.createBsonBinary(127, bytes);
+    assertThat(UserDataConverter.encodeBsonBinaryData(b1.subtype(), b1.toByteString()))
+        .isEqualTo(UserDataConverter.encodeBsonBinaryData(b2.subtype(), b2.toByteString()));
     assertThat(b1).isEqualTo(b2);
 
-    BsonBinaryData b3 = BsonBinaryData.fromByteString(128, byteString);
-    BsonBinaryData b4 = BsonBinaryData.fromBytes(128, bytes);
-    assertThat(b3.toProto()).isEqualTo(b4.toProto());
+    Blob b3 = Blob.createBsonBinary(128, byteString);
+    Blob b4 = Blob.createBsonBinary(128, bytes);
+    assertThat(UserDataConverter.encodeBsonBinaryData(b3.subtype(), b3.toByteString()))
+        .isEqualTo(UserDataConverter.encodeBsonBinaryData(b4.subtype(), b4.toByteString()));
     assertThat(b3).isEqualTo(b4);
   }
 
@@ -496,7 +530,7 @@ public class ExtendedTypesTest {
 
   @Test
   public void canEncodeAndDecodeBsonBinaryData() {
-    BsonBinaryData bsonBinaryData = BsonBinaryData.fromBytes(127, new byte[] {1, 2, 3});
+    Blob bsonBinaryData = Blob.createBsonBinary(127, new byte[] {1, 2, 3});
     Value proto =
         Value.newBuilder()
             .setMapValue(
@@ -508,6 +542,15 @@ public class ExtendedTypesTest {
                             .build())
                     .build())
             .build();
+    assertEncodesAndDecodesCorrectly(proto, bsonBinaryData);
+  }
+
+  @Test
+  public void canEncodeAndDecodeBsonBinaryDataSubtype0() {
+    Blob bsonBinaryData = Blob.createBsonBinary(0, new byte[] {1, 2, 3});
+    Value proto =
+        Value.newBuilder().setBytesValue(ByteString.copyFrom(new byte[] {1, 2, 3})).build();
+    // BSON binary subtype 0 matches standard native Blob
     assertEncodesAndDecodesCorrectly(proto, bsonBinaryData);
   }
 }
