@@ -41,6 +41,7 @@ public class SyncCreateIcebergCatalog {
               .setParent(ProjectName.of("[PROJECT]").toString())
               .setIcebergCatalogId("icebergCatalogId504062865")
               .setIcebergCatalog(IcebergCatalog.newBuilder().build())
+              .setPrimaryLocation("primaryLocation-1140723753")
               .build();
       IcebergCatalog response = icebergCatalogServiceClient.createIcebergCatalog(request);
     }

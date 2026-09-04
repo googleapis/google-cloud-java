@@ -77,6 +77,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -84,6 +85,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub {
   private static final TypeRegistry typeRegistry =
@@ -360,6 +362,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInstanceGroupManagerRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasNoGracefulShutdown()) {
+                              serializer.putQueryParam(
+                                  fields, "noGracefulShutdown", request.getNoGracefulShutdown());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
@@ -413,6 +419,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInstancesInstanceGroupManagerRequest>
                                 serializer = ProtoRestSerializer.create();
+                            if (request.hasNoGracefulShutdown()) {
+                              serializer.putQueryParam(
+                                  fields, "noGracefulShutdown", request.getNoGracefulShutdown());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
@@ -990,6 +1000,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RecreateInstancesInstanceGroupManagerRequest>
                                 serializer = ProtoRestSerializer.create();
+                            if (request.hasNoGracefulShutdown()) {
+                              serializer.putQueryParam(
+                                  fields, "noGracefulShutdown", request.getNoGracefulShutdown());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
@@ -1346,6 +1360,10 @@ public class HttpJsonInstanceGroupManagersStub extends InstanceGroupManagersStub
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<StopInstancesInstanceGroupManagerRequest>
                                 serializer = ProtoRestSerializer.create();
+                            if (request.hasNoGracefulShutdown()) {
+                              serializer.putQueryParam(
+                                  fields, "noGracefulShutdown", request.getNoGracefulShutdown());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }

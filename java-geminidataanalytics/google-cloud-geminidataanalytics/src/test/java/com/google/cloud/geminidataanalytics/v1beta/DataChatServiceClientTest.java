@@ -38,6 +38,7 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -109,6 +110,7 @@ public class DataChatServiceClientTest {
             .setProject(ProjectName.of("[PROJECT]").toString())
             .setParent("parent-995424086")
             .addAllMessages(new ArrayList<Message>())
+            .setCredentials(Credentials.newBuilder().build())
             .build();
 
     MockStreamObserver<Message> responseObserver = new MockStreamObserver<>();
@@ -130,6 +132,7 @@ public class DataChatServiceClientTest {
             .setProject(ProjectName.of("[PROJECT]").toString())
             .setParent("parent-995424086")
             .addAllMessages(new ArrayList<Message>())
+            .setCredentials(Credentials.newBuilder().build())
             .build();
 
     MockStreamObserver<Message> responseObserver = new MockStreamObserver<>();
@@ -156,6 +159,8 @@ public class DataChatServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setMemoryPaused(true)
             .build();
     mockDataChatService.addResponse(expectedResponse);
 
@@ -204,6 +209,8 @@ public class DataChatServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setMemoryPaused(true)
             .build();
     mockDataChatService.addResponse(expectedResponse);
 
@@ -320,6 +327,8 @@ public class DataChatServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setMemoryPaused(true)
             .build();
     mockDataChatService.addResponse(expectedResponse);
 
@@ -362,6 +371,8 @@ public class DataChatServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setMemoryPaused(true)
             .build();
     mockDataChatService.addResponse(expectedResponse);
 
@@ -580,6 +591,7 @@ public class DataChatServiceClientTest {
             .setQueryResult(ExecutedQueryResult.newBuilder().build())
             .setNaturalLanguageAnswer("naturalLanguageAnswer425313727")
             .addAllDisambiguationQuestion(new ArrayList<String>())
+            .setPipelineDebugInfo(Struct.newBuilder().build())
             .build();
     mockDataChatService.addResponse(expectedResponse);
 

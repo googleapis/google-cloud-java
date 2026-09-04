@@ -197,6 +197,7 @@ public class ConfidentialComputingClientTest {
             .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
             .setTokenOptions(TokenOptions.newBuilder().build())
             .setAttester("attester542920370")
+            .setInstance(InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]").toString())
             .build();
 
     VerifyAttestationResponse actualResponse = client.verifyAttestation(request);
@@ -216,6 +217,7 @@ public class ConfidentialComputingClientTest {
         request.getConfidentialSpaceInfo(), actualRequest.getConfidentialSpaceInfo());
     Assert.assertEquals(request.getTokenOptions(), actualRequest.getTokenOptions());
     Assert.assertEquals(request.getAttester(), actualRequest.getAttester());
+    Assert.assertEquals(request.getInstance(), actualRequest.getInstance());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -236,6 +238,7 @@ public class ConfidentialComputingClientTest {
               .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
               .setTokenOptions(TokenOptions.newBuilder().build())
               .setAttester("attester542920370")
+              .setInstance(InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]").toString())
               .build();
       client.verifyAttestation(request);
       Assert.fail("No exception raised");
@@ -334,6 +337,7 @@ public class ConfidentialComputingClientTest {
     Assert.assertEquals(request.getTpmAttestation(), actualRequest.getTpmAttestation());
     Assert.assertEquals(request.getChallenge(), actualRequest.getChallenge());
     Assert.assertEquals(request.getOptions(), actualRequest.getOptions());
+    Assert.assertEquals(request.getPlatformType(), actualRequest.getPlatformType());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),

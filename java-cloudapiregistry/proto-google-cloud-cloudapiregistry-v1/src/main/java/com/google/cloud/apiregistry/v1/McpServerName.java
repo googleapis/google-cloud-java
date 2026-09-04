@@ -26,8 +26,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class McpServerName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_API_NAMESPACE_MCP_SERVER =
@@ -161,7 +164,7 @@ public class McpServerName implements ResourceName {
         .toString();
   }
 
-  public static McpServerName parse(String formattedString) {
+  public static @Nullable McpServerName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -189,7 +192,7 @@ public class McpServerName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<McpServerName> values) {
+  public static List<String> toStringList(List<@Nullable McpServerName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (McpServerName value : values) {
       if (value == null) {
@@ -241,7 +244,7 @@ public class McpServerName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

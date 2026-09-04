@@ -18,6 +18,7 @@ package com.google.chat.v1.samples;
 
 // [START chat_v1_generated_ChatService_CreateMessage_sync]
 import com.google.chat.v1.ChatServiceClient;
+import com.google.chat.v1.CreateMessageNotificationOptions;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.SpaceName;
@@ -42,6 +43,8 @@ public class SyncCreateMessage {
               .setThreadKey("threadKey-1562254347")
               .setRequestId("requestId693933066")
               .setMessageId("messageId-1440013438")
+              .setCreateMessageNotificationOptions(
+                  CreateMessageNotificationOptions.newBuilder().build())
               .build();
       Message response = chatServiceClient.createMessage(request);
     }

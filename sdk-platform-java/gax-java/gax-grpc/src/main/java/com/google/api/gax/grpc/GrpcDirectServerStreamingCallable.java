@@ -36,6 +36,7 @@ import com.google.api.gax.rpc.StreamController;
 import com.google.common.base.Preconditions;
 import io.grpc.ClientCall;
 import io.grpc.MethodDescriptor;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * {@code GrpcDirectServerStreamingCallable} creates server-streaming gRPC calls.
@@ -48,6 +49,7 @@ import io.grpc.MethodDescriptor;
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class GrpcDirectServerStreamingCallable<RequestT, ResponseT>
     extends ServerStreamingCallable<RequestT, ResponseT> {
   private final MethodDescriptor<RequestT, ResponseT> descriptor;

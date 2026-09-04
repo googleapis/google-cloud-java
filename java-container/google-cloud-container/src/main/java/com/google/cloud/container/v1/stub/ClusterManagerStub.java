@@ -25,6 +25,7 @@ import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.ClusterUpgradeInfo;
+import com.google.container.v1.CompleteControlPlaneUpgradeRequest;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
@@ -70,6 +71,7 @@ import com.google.container.v1.UpdateMasterRequest;
 import com.google.container.v1.UpdateNodePoolRequest;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -77,6 +79,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class ClusterManagerStub implements BackgroundResource {
 
@@ -235,6 +238,12 @@ public abstract class ClusterManagerStub implements BackgroundResource {
   public UnaryCallable<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
       fetchNodePoolUpgradeInfoCallable() {
     throw new UnsupportedOperationException("Not implemented: fetchNodePoolUpgradeInfoCallable()");
+  }
+
+  public UnaryCallable<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: completeControlPlaneUpgradeCallable()");
   }
 
   @Override

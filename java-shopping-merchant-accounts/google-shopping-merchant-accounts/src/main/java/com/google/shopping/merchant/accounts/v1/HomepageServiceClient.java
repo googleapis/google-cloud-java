@@ -24,6 +24,8 @@ import com.google.shopping.merchant.accounts.v1.stub.HomepageServiceStubSettings
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -185,9 +187,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HomepageServiceClient implements BackgroundResource {
-  private final HomepageServiceSettings settings;
+  private final @Nullable HomepageServiceSettings settings;
   private final HomepageServiceStub stub;
 
   /** Constructs an instance of HomepageServiceClient with default settings. */
@@ -227,7 +230,7 @@ public class HomepageServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final HomepageServiceSettings getSettings() {
+  public final @Nullable HomepageServiceSettings getSettings() {
     return settings;
   }
 
@@ -257,7 +260,7 @@ public class HomepageServiceClient implements BackgroundResource {
    *     `accounts/{account}/homepage`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Homepage getHomepage(HomepageName name) {
+  public final Homepage getHomepage(@Nullable HomepageName name) {
     GetHomepageRequest request =
         GetHomepageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getHomepage(request);

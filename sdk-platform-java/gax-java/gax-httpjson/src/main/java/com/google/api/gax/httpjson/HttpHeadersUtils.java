@@ -34,19 +34,51 @@ import com.google.api.client.util.ClassInfo;
 import com.google.api.client.util.FieldInfo;
 import com.google.api.core.InternalApi;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 import java.util.List;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** This class is for internal use only and is public for technical reasons. */
+@NullMarked
 @InternalApi
 public class HttpHeadersUtils {
-  public static String getUserAgentValue(Map<String, String> headersMap) {
+  public static @Nullable String getUserAgentValue(Map<String, String> headersMap) {
     for (Map.Entry<String, String> entry : headersMap.entrySet()) {
       if ("user-agent".equalsIgnoreCase(entry.getKey())) {
         return entry.getValue();
       }
     }
     return null;
+  }
+
+  /**
+   * Retrieves the single string value of a header by case-insensitive name from a headers map.
+   *
+   * @param headers the map of header names to header values
+   * @param name the case-insensitive header name to look up
+   * @return the single string value of the header, or {@code null} if not found
+   * @throws IllegalArgumentException if multiple values are present for the header
+   */
+  public static @Nullable String getSingleHeader(Map<String, Object> headers, String name) {
+    return headers.entrySet().stream()
+        .filter(entry -> name.equalsIgnoreCase(entry.getKey()))
+        .findFirst()
+        .map(entry -> extractSingleString(entry.getValue()))
+        .orElse(null);
+  }
+
+  private static @Nullable String extractSingleString(@Nullable Object headerValue) {
+    if (headerValue == null) {
+      return null;
+    }
+    // HttpHeaders stores single-value headers as single-element Lists
+    if (headerValue instanceof Iterable) {
+      Object onlyElement = Iterables.getOnlyElement((Iterable<?>) headerValue, null);
+      return onlyElement != null ? onlyElement.toString() : null;
+    }
+    return headerValue.toString();
   }
 
   public static HttpHeaders setHeaders(HttpHeaders headers, Map<String, String> headersMap) {

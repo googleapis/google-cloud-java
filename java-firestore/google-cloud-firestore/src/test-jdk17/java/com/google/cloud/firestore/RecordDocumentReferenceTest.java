@@ -38,6 +38,13 @@ import com.google.firestore.v1.BatchGetDocumentsRequest;
 import com.google.firestore.v1.CommitRequest;
 import com.google.firestore.v1.CommitResponse;
 import com.google.firestore.v1.Value;
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,15 +54,6 @@ import org.mockito.Captor;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 
 @RunWith(MockitoJUnitRunner.class)
 public class RecordDocumentReferenceTest {
@@ -84,7 +82,8 @@ public class RecordDocumentReferenceTest {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
-            commitCapture.capture(), ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
     documentReference.set(ALL_SUPPORTED_TYPES_OBJECT).get();
 
@@ -99,19 +98,22 @@ public class RecordDocumentReferenceTest {
     InvalidRecord record = new InvalidRecord(new BigInteger("0"), null, null);
     expectedErrorMessages.put(
         record,
-        "Could not serialize object. Numbers of type BigInteger are not supported, please use an int, long, float, double or BigDecimal (found in field 'bigIntegerValue')");
+        "Could not serialize object. Numbers of type BigInteger are not supported, please use an"
+            + " int, long, float, double or BigDecimal (found in field 'bigIntegerValue')");
 
     record = new InvalidRecord(null, (byte) 0, null);
     expectedErrorMessages.put(
         record,
-        "Could not serialize object. Numbers of type Byte are not supported, please use an int, long, float, double or BigDecimal (found in field 'byteValue')");
+        "Could not serialize object. Numbers of type Byte are not supported, please use an int,"
+            + " long, float, double or BigDecimal (found in field 'byteValue')");
 
     record = new InvalidRecord(null, null, (short) 0);
     expectedErrorMessages.put(
         record,
-        "Could not serialize object. Numbers of type Short are not supported, please use an int, long, float, double or BigDecimal (found in field 'shortValue')");
+        "Could not serialize object. Numbers of type Short are not supported, please use an int,"
+            + " long, float, double or BigDecimal (found in field 'shortValue')");
 
-    for (Map.Entry<InvalidRecord, String>  testCase : expectedErrorMessages.entrySet()) {
+    for (Map.Entry<InvalidRecord, String> testCase : expectedErrorMessages.entrySet()) {
       try {
         documentReference.set(testCase.getKey());
         fail();
@@ -138,14 +140,15 @@ public class RecordDocumentReferenceTest {
               streamObserverCapture.capture(),
               ArgumentMatchers.<ServerStreamingCallable>any());
 
-              DocumentSnapshot snapshot = documentReference.get().get();
+      DocumentSnapshot snapshot = documentReference.get().get();
       try {
         snapshot.toObject(InvalidRecord.class);
         fail();
       } catch (RuntimeException e) {
         assertEquals(
             String.format(
-                "Could not deserialize object. Deserializing values to %s is not supported (found in field '%s')",
+                "Could not deserialize object. Deserializing values to %s is not supported (found"
+                    + " in field '%s')",
                 typeName, fieldName),
             e.getMessage());
       }
@@ -157,7 +160,8 @@ public class RecordDocumentReferenceTest {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
-            commitCapture.capture(), ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
     documentReference.create(SINGLE_COMPONENT_OBJECT).get();
 
@@ -172,7 +176,8 @@ public class RecordDocumentReferenceTest {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
-            commitCapture.capture(), ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
     documentReference.create(SERVER_TIMESTAMP_OBJECT).get();
 
@@ -181,7 +186,7 @@ public class RecordDocumentReferenceTest {
             create(Collections.emptyMap()),
             transform("foo", serverTimestamp(), "inner.bar", serverTimestamp()));
 
-            List<CommitRequest> commitRequests = commitCapture.getAllValues();
+    List<CommitRequest> commitRequests = commitCapture.getAllValues();
     assertCommitEquals(create, commitRequests.get(0));
   }
 
@@ -190,7 +195,8 @@ public class RecordDocumentReferenceTest {
     doReturn(FIELD_TRANSFORM_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
-            commitCapture.capture(), ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
     documentReference.set(SERVER_TIMESTAMP_OBJECT).get();
 
@@ -199,7 +205,7 @@ public class RecordDocumentReferenceTest {
             set(SERVER_TIMESTAMP_PROTO),
             transform("foo", serverTimestamp(), "inner.bar", serverTimestamp()));
 
-            List<CommitRequest> commitRequests = commitCapture.getAllValues();
+    List<CommitRequest> commitRequests = commitCapture.getAllValues();
     assertCommitEquals(set, commitRequests.get(0));
   }
 
@@ -208,18 +214,17 @@ public class RecordDocumentReferenceTest {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
-            commitCapture.capture(), ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
-    documentReference
-        .set(SERVER_TIMESTAMP_OBJECT, SetOptions.mergeFields("inner.bar"))
-        .get();
+    documentReference.set(SERVER_TIMESTAMP_OBJECT, SetOptions.mergeFields("inner.bar")).get();
 
-        CommitRequest set =
+    CommitRequest set =
         commit(
             set(SERVER_TIMESTAMP_PROTO, new ArrayList<>()),
             transform("inner.bar", serverTimestamp()));
 
-            List<CommitRequest> commitRequests = commitCapture.getAllValues();
+    List<CommitRequest> commitRequests = commitCapture.getAllValues();
     assertCommitEquals(set, commitRequests.get(0));
   }
 
@@ -228,7 +233,8 @@ public class RecordDocumentReferenceTest {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
-            commitCapture.capture(), ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
     documentReference.set(SINGLE_COMPONENT_OBJECT, SetOptions.merge()).get();
     documentReference.set(ALL_SUPPORTED_TYPES_OBJECT, SetOptions.mergeFields("foo")).get();
@@ -241,7 +247,7 @@ public class RecordDocumentReferenceTest {
             SetOptions.mergeFieldPaths(Arrays.asList(FieldPath.of("foo"))))
         .get();
 
-        CommitRequest expectedCommit = commit(set(SINGLE_COMPONENT_PROTO, Arrays.asList("foo")));
+    CommitRequest expectedCommit = commit(set(SINGLE_COMPONENT_PROTO, Arrays.asList("foo")));
 
     for (int i = 0; i < 4; ++i) {
       assertCommitEquals(expectedCommit, commitCapture.getAllValues().get(i));
@@ -253,7 +259,8 @@ public class RecordDocumentReferenceTest {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
-            commitCapture.capture(), ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
     documentReference.set(NESTED_RECORD_OBJECT, SetOptions.mergeFields("first.foo")).get();
     documentReference
@@ -282,7 +289,8 @@ public class RecordDocumentReferenceTest {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
-            commitCapture.capture(), ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
     documentReference
         .set(
@@ -310,7 +318,8 @@ public class RecordDocumentReferenceTest {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
-            commitCapture.capture(), ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
     documentReference.set(NESTED_RECORD_OBJECT, SetOptions.mergeFields("first", "second")).get();
 
@@ -330,7 +339,8 @@ public class RecordDocumentReferenceTest {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
-            commitCapture.capture(), ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
     documentReference.set(NESTED_RECORD_OBJECT, SetOptions.merge()).get();
 
@@ -341,24 +351,25 @@ public class RecordDocumentReferenceTest {
     nestedProto.getMapValueBuilder().putAllFields(ALL_SUPPORTED_TYPES_PROTO);
     nestedUpdate.put("second", nestedProto.build());
 
-    List<String> updateMask = Arrays.asList(
-        "first.foo",
-        "second.arrayValue",
-        "second.bytesValue",
-        "second.dateValue",
-        "second.doubleValue",
-        "second.falseValue",
-        "second.foo",
-        "second.geoPointValue",
-        "second.infValue",
-        "second.longValue",
-        "second.nanValue",
-        "second.negInfValue",
-        "second.nullValue",
-        "second.objectValue.foo",
-        "second.timestampValue",
-        "second.trueValue",
-        "second.model.foo");
+    List<String> updateMask =
+        Arrays.asList(
+            "first.foo",
+            "second.arrayValue",
+            "second.bytesValue",
+            "second.dateValue",
+            "second.doubleValue",
+            "second.falseValue",
+            "second.foo",
+            "second.geoPointValue",
+            "second.infValue",
+            "second.longValue",
+            "second.nanValue",
+            "second.negInfValue",
+            "second.nullValue",
+            "second.objectValue.foo",
+            "second.timestampValue",
+            "second.trueValue",
+            "second.model.foo");
 
     CommitRequest expectedCommit = commit(set(nestedUpdate, updateMask));
     assertCommitEquals(expectedCommit, commitCapture.getValue());
@@ -369,9 +380,12 @@ public class RecordDocumentReferenceTest {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
         .sendRequest(
-            commitCapture.capture(), ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
+            commitCapture.capture(),
+            ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
-    documentReference.set(NESTED_RECORD_WITH_POJO_OBJECT, SetOptions.mergeFields("first", "second")).get();
+    documentReference
+        .set(NESTED_RECORD_WITH_POJO_OBJECT, SetOptions.mergeFields("first", "second"))
+        .get();
 
     Map<String, Value> nestedUpdate = new HashMap<>();
     Value.Builder nestedProto = Value.newBuilder();
@@ -384,7 +398,7 @@ public class RecordDocumentReferenceTest {
     assertCommitEquals(expectedCommit, commitCapture.getValue());
   }
 
-    @Test
+  @Test
   public void setNestedPojoWithRecordMapWithMerge() throws Exception {
     doReturn(SINGLE_WRITE_COMMIT_RESPONSE)
         .when(firestoreMock)
@@ -392,7 +406,9 @@ public class RecordDocumentReferenceTest {
             commitCapture.capture(),
             ArgumentMatchers.<UnaryCallable<CommitRequest, CommitResponse>>any());
 
-    documentReference.set(NESTED_POJO_WITH_RECORD_OBJECT, SetOptions.mergeFields("first", "second")).get();
+    documentReference
+        .set(NESTED_POJO_WITH_RECORD_OBJECT, SetOptions.mergeFields("first", "second"))
+        .get();
 
     Map<String, Value> nestedUpdate = new HashMap<>();
     Value.Builder nestedProto = Value.newBuilder();

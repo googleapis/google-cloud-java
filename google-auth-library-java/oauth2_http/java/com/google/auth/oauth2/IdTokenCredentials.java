@@ -31,12 +31,14 @@
 
 package com.google.auth.oauth2;
 
-import com.google.api.client.util.Preconditions;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * IdTokenCredentials provides a Google Issued OpenIdConnect token. <br>
@@ -101,13 +103,14 @@ import java.util.Objects;
  * System.out.println(tokenCredential.getIdToken().getJsonWebSignature().getPayload().getExpirationTimeSeconds());
  * </pre>
  */
+@NullMarked
 public class IdTokenCredentials extends OAuth2Credentials {
 
   private static final long serialVersionUID = -2133257318957588431L;
 
   private final IdTokenProvider idTokenProvider;
-  private final List<IdTokenProvider.Option> options;
-  private String targetAudience;
+  private final @Nullable List<IdTokenProvider.Option> options;
+  private @Nullable String targetAudience;
 
   private IdTokenCredentials(Builder builder) {
     this.idTokenProvider = Preconditions.checkNotNull(builder.getIdTokenProvider());
@@ -125,7 +128,7 @@ public class IdTokenCredentials extends OAuth2Credentials {
     return this.idTokenProvider.idTokenWithAudience(targetAudience, options);
   }
 
-  public IdToken getIdToken() {
+  public @Nullable IdToken getIdToken() {
     return (IdToken) getAccessToken();
   }
 
@@ -140,7 +143,7 @@ public class IdTokenCredentials extends OAuth2Credentials {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof IdTokenCredentials)) {
       return false;
     }
@@ -164,9 +167,9 @@ public class IdTokenCredentials extends OAuth2Credentials {
 
   public static class Builder extends OAuth2Credentials.Builder {
 
-    private IdTokenProvider idTokenProvider;
-    private String targetAudience;
-    private List<IdTokenProvider.Option> options;
+    private @Nullable IdTokenProvider idTokenProvider;
+    private @Nullable String targetAudience;
+    private @Nullable List<IdTokenProvider.Option> options;
 
     protected Builder() {}
 
@@ -182,7 +185,7 @@ public class IdTokenCredentials extends OAuth2Credentials {
       return this;
     }
 
-    public IdTokenProvider getIdTokenProvider() {
+    public @Nullable IdTokenProvider getIdTokenProvider() {
       return this.idTokenProvider;
     }
 
@@ -194,12 +197,12 @@ public class IdTokenCredentials extends OAuth2Credentials {
      * @return the builder object
      */
     @CanIgnoreReturnValue
-    public Builder setTargetAudience(String targetAudience) {
+    public Builder setTargetAudience(@Nullable String targetAudience) {
       this.targetAudience = targetAudience;
       return this;
     }
 
-    public String getTargetAudience() {
+    public @Nullable String getTargetAudience() {
       return this.targetAudience;
     }
 
@@ -210,12 +213,12 @@ public class IdTokenCredentials extends OAuth2Credentials {
      * @return the builder object
      */
     @CanIgnoreReturnValue
-    public Builder setOptions(List<IdTokenProvider.Option> options) {
+    public Builder setOptions(@Nullable List<IdTokenProvider.Option> options) {
       this.options = options;
       return this;
     }
 
-    public List<IdTokenProvider.Option> getOptions() {
+    public @Nullable List<IdTokenProvider.Option> getOptions() {
       return this.options;
     }
 

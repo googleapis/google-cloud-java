@@ -79,6 +79,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -86,6 +87,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryServiceStub {
   private static final TypeRegistry typeRegistry =
@@ -756,7 +758,6 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:setIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataScans/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:setIamPolicy",
@@ -771,7 +772,8 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                           "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/changeRequests/*}:setIamPolicy",
                           "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:setIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:setIamPolicy")
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -813,7 +815,6 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:getIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataScans/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:getIamPolicy",
@@ -828,7 +829,8 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                           "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/changeRequests/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataProducts/*}:getIamPolicy",
-                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:getIamPolicy")
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -867,7 +869,6 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:testIamPermissions",
-                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/dataScans/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:testIamPermissions",
@@ -882,7 +883,8 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                           "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/changeRequests/*}:testIamPermissions",
                           "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:testIamPermissions",
-                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:testIamPermissions")
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

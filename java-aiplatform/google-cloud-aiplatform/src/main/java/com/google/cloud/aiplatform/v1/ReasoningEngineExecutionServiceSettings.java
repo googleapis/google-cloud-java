@@ -45,6 +45,8 @@ import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -123,6 +125,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ReasoningEngineExecutionServiceSettings
     extends ClientSettings<ReasoningEngineExecutionServiceSettings> {
@@ -156,6 +159,14 @@ public class ReasoningEngineExecutionServiceSettings
       asyncQueryReasoningEngineOperationSettings() {
     return ((ReasoningEngineExecutionServiceStubSettings) getStubSettings())
         .asyncQueryReasoningEngineOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelAsyncQueryReasoningEngine. */
+  public UnaryCallSettings<
+          CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+      cancelAsyncQueryReasoningEngineSettings() {
+    return ((ReasoningEngineExecutionServiceStubSettings) getStubSettings())
+        .cancelAsyncQueryReasoningEngineSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -231,7 +242,7 @@ public class ReasoningEngineExecutionServiceSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -252,7 +263,7 @@ public class ReasoningEngineExecutionServiceSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(ReasoningEngineExecutionServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -309,6 +320,13 @@ public class ReasoningEngineExecutionServiceSettings
             AsyncQueryReasoningEngineOperationMetadata>
         asyncQueryReasoningEngineOperationSettings() {
       return getStubSettingsBuilder().asyncQueryReasoningEngineOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelAsyncQueryReasoningEngine. */
+    public UnaryCallSettings.Builder<
+            CancelAsyncQueryReasoningEngineRequest, CancelAsyncQueryReasoningEngineResponse>
+        cancelAsyncQueryReasoningEngineSettings() {
+      return getStubSettingsBuilder().cancelAsyncQueryReasoningEngineSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

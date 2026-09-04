@@ -81,6 +81,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -159,6 +161,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class DataPointsServiceStubSettings extends StubSettings<DataPointsServiceStubSettings> {
@@ -166,10 +169,21 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/googlehealth.activity_and_fitness.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.activity_and_fitness.writeonly")
           .add(
               "https://www.googleapis.com/auth/googlehealth.health_metrics_and_measurements.readonly")
+          .add(
+              "https://www.googleapis.com/auth/googlehealth.health_metrics_and_measurements.writeonly")
           .add("https://www.googleapis.com/auth/googlehealth.location.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.logged_symptoms.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.logged_symptoms.writeonly")
+          .add("https://www.googleapis.com/auth/googlehealth.mindfulness.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.mindfulness.writeonly")
+          .add("https://www.googleapis.com/auth/googlehealth.nutrition.writeonly")
+          .add("https://www.googleapis.com/auth/googlehealth.reproductive_health.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.reproductive_health.writeonly")
           .add("https://www.googleapis.com/auth/googlehealth.sleep.readonly")
+          .add("https://www.googleapis.com/auth/googlehealth.sleep.writeonly")
           .build();
 
   private final UnaryCallSettings<GetDataPointRequest, DataPoint> getDataPointSettings;
@@ -546,7 +560,7 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -625,7 +639,6 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
     static {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
@@ -639,8 +652,6 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelayDuration(Duration.ofMillis(1000L))
@@ -667,7 +678,7 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       getDataPointSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -755,8 +766,8 @@ public class DataPointsServiceStubSettings extends StubSettings<DataPointsServic
     private static Builder initDefaults(Builder builder) {
       builder
           .getDataPointSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listDataPointsSettings()

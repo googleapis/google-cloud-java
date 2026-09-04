@@ -53,6 +53,7 @@ import com.google.cloud.spanner.admin.database.v1.DatabaseAdminSettings;
 import com.google.cloud.spanner.admin.database.v1.stub.DatabaseAdminStubSettings;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminSettings;
 import com.google.cloud.spanner.admin.instance.v1.stub.InstanceAdminStubSettings;
+import com.google.cloud.spanner.omni.SpannerOmniCredentials;
 import com.google.cloud.spanner.spi.SpannerRpcFactory;
 import com.google.cloud.spanner.spi.v1.ChannelEndpointCacheFactory;
 import com.google.cloud.spanner.spi.v1.GapicSpannerRpc;
@@ -66,6 +67,7 @@ import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.google.crypto.tink.util.SecretBytes;
 import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.ExecuteSqlRequest.QueryOptions;
@@ -87,6 +89,7 @@ import io.opencensus.trace.Tracing;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -96,6 +99,7 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -107,13 +111,15 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.concurrent.GuardedBy;
 
 /** Options for the Cloud Spanner service. */
 public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final long serialVersionUID = 2789571558532701170L;
+  private static final Logger logger = Logger.getLogger(SpannerOptions.class.getName());
   private static SpannerEnvironment environment = SpannerEnvironmentImpl.INSTANCE;
   private static boolean enableOpenCensusMetrics = true;
   private static boolean enableOpenTelemetryMetrics = false;
@@ -126,7 +132,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private static final String API_SHORT_NAME = "Spanner";
   private static final String SPANNER_SERVICE_NAME = "spanner";
   private static final String GOOGLE_DEFAULT_UNIVERSE = "googleapis.com";
-  private static final String EXPERIMENTAL_HOST_PROJECT_ID = "default";
+  public static final String SPANNER_OMNI_PROJECT_ID = "default";
+  public static final String DEFAULT_SPANNER_OMNI_INSTANCE_ID = "default";
 
   static final ImmutableSet<String> SCOPES =
       ImmutableSet.of(
@@ -141,7 +148,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   // Dynamic Channel Pool (DCP) default values and bounds
   /** Default max concurrent RPCs per channel before triggering scale up. */
-  public static final int DEFAULT_DYNAMIC_POOL_MAX_RPC = 90;
+  public static final int DEFAULT_DYNAMIC_POOL_MAX_RPC = 25;
 
   /** Default min concurrent RPCs per channel for scale down check. */
   public static final int DEFAULT_DYNAMIC_POOL_MIN_RPC = 15;
@@ -150,13 +157,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static final Duration DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL = Duration.ofMinutes(3);
 
   /** Default initial number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_INITIAL_SIZE = 1;
+  public static final int DEFAULT_DYNAMIC_POOL_INITIAL_SIZE = 4;
 
   /** Default max number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_MAX_CHANNELS = 256;
+  public static final int DEFAULT_DYNAMIC_POOL_MAX_CHANNELS = 10;
 
   /** Default min number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_MIN_CHANNELS = 1;
+  public static final int DEFAULT_DYNAMIC_POOL_MIN_CHANNELS = 2;
 
   /**
    * Default affinity key lifetime for dynamic channel pool. This is how long to keep an affinity
@@ -170,6 +177,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
    * affinity key cleanup process runs. Default is 1 minute (1/10 of default affinity key lifetime).
    */
   public static final Duration DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL = Duration.ofMinutes(1);
+
+  /**
+   * Default maximum time for one attempt to prime a channel that the dynamic channel pool adds
+   * during scale-up. Scaled-up channels are primed by executing {@code SELECT 1} with a multiplexed
+   * session before they are published to the pool.
+   */
+  public static final Duration DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_TIMEOUT = Duration.ofSeconds(10);
+
+  /**
+   * Default maximum number of attempts to prime a channel that the dynamic channel pool adds during
+   * scale-up before the channel is discarded.
+   */
+  public static final int DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS = 3;
 
   /**
    * Creates a {@link GcpChannelPoolOptions} instance with Spanner-specific defaults for dynamic
@@ -186,7 +206,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
    *   <li>Scale down interval: 3 minutes
    *   <li>Affinity key lifetime: 10 minutes
    *   <li>Cleanup interval: 1 minute
+   *   <li>Channel prime timeout: 10 seconds
+   *   <li>Channel prime max attempts: {@value #DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS}
    * </ul>
+   *
+   * <p>Channels that the pool adds during scale-up are primed with {@code SELECT 1} on a
+   * multiplexed session before they are published. The primer is registered by the Spanner client
+   * when dynamic channel pooling is enabled, unless these options already contain a primer. Priming
+   * rotates across available multiplexed sessions owned by live database clients of the {@link
+   * Spanner} instance. Closed or invalid database clients do not supply sessions for priming.
    *
    * @return a new {@link GcpChannelPoolOptions} instance with Spanner defaults
    */
@@ -201,13 +229,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
             DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL)
         .setAffinityKeyLifetime(DEFAULT_DYNAMIC_POOL_AFFINITY_KEY_LIFETIME)
         .setCleanupInterval(DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL)
+        .setChannelPrimeTimeout(DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_TIMEOUT)
+        .setChannelPrimeMaxAttempts(DEFAULT_DYNAMIC_POOL_CHANNEL_PRIME_MAX_ATTEMPTS)
         .build();
   }
 
   /**
    * Merges user-provided {@link GcpChannelPoolOptions} with Spanner-specific defaults. Any value
    * that the user has not explicitly set (i.e. left at the builder's default of 0 or null) will be
-   * filled in from {@link #createDefaultDynamicChannelPoolOptions()}.
+   * filled in from {@link #createDefaultDynamicChannelPoolOptions()}. A user-provided channel
+   * primer, prime timeout, and prime attempt count are always preserved.
    */
   static GcpChannelPoolOptions mergeWithDefaultChannelPoolOptions(
       GcpChannelPoolOptions userOptions) {
@@ -244,6 +275,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     if (userOptions.getCleanupInterval() == null || userOptions.getCleanupInterval().isZero()) {
       merged.setCleanupInterval(defaults.getCleanupInterval());
     }
+    if (userOptions.getChannelPrimeTimeout() == null
+        || userOptions.getChannelPrimeTimeout().isZero()) {
+      merged.setChannelPrimeTimeout(defaults.getChannelPrimeTimeout());
+    }
+    if (userOptions.getChannelPrimeMaxAttempts() <= 0) {
+      merged.setChannelPrimeMaxAttempts(defaults.getChannelPrimeMaxAttempts());
+    }
     return merged.build();
   }
 
@@ -265,6 +303,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final InstanceAdminStubSettings instanceAdminStubSettings;
   private final DatabaseAdminStubSettings databaseAdminStubSettings;
   private final Duration partitionedDmlTimeout;
+  private final Duration grpcKeepAliveTime;
+  private final Duration grpcKeepAliveTimeout;
   private final boolean grpcGcpExtensionEnabled;
   private final GcpManagedChannelOptions grpcGcpOptions;
   private final boolean dynamicChannelPoolEnabled;
@@ -292,8 +332,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final Map<DatabaseId, QueryOptions> mergedQueryOptions;
 
   private final CallCredentialsProvider callCredentialsProvider;
+  private final CallContextConfigurator callContextConfigurator;
   private final CloseableExecutorProvider asyncExecutorProvider;
   private final String compressorName;
+  private final String emulatorHost;
   private final boolean leaderAwareRoutingEnabled;
   private final boolean enableDirectAccess;
   private final boolean enableGcpFallback;
@@ -301,23 +343,37 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   private final boolean useVirtualThreads;
   private final OpenTelemetry openTelemetry;
   private final boolean enableApiTracing;
+  private final boolean rawEnableBuiltInMetrics;
   private final boolean enableBuiltInMetrics;
+  private final MetricsProvider metricsProvider;
+  private final MetricsProvider resolvedMetricsProvider;
   private final boolean enableLocationApi;
   private final boolean enableExtendedTracing;
   private final boolean enableEndToEndTracing;
   private final String monitoringHost;
   private final TransactionOptions defaultTransactionOptions;
   private final RequestOptions.ClientContext clientContext;
+  private final boolean autoTaggingEnabled;
+  private final List<String> autoTaggingPackages;
+  private final int autoTaggingTracerLimit;
 
   enum TracingFramework {
     OPEN_CENSUS,
     OPEN_TELEMETRY
   }
 
+  /**
+   * Specifies the type of Spanner instance to connect to (CLOUD or OMNI). Setting it to OMNI is
+   * mandatory when connecting to a Spanner Omni instance.
+   */
+  public enum InstanceType {
+    CLOUD,
+    OMNI
+  }
+
   private static final Object lock = new Object();
 
-  @GuardedBy("lock")
-  private static TracingFramework activeTracingFramework;
+  private static volatile TracingFramework activeTracingFramework;
 
   /** Interface that can be used to provide {@link CallCredentials} to {@link SpannerOptions}. */
   public interface CallCredentialsProvider {
@@ -331,9 +387,11 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   /**
    * {@link CallContextConfigurator} can be used to modify the {@link ApiCallContext} for one or
-   * more specific RPCs. This can be used to set specific timeout value for RPCs or use specific
-   * {@link CallCredentials} for an RPC. The {@link CallContextConfigurator} must be set as a value
-   * on the {@link Context} using the {@link SpannerOptions#CALL_CONTEXT_CONFIGURATOR_KEY} key.
+   * more specific RPCs. This can be used to set specific timeout values for RPCs or use specific
+   * {@link CallCredentials} for an RPC. The {@link CallContextConfigurator} can be configured at
+   * the client level using {@link Builder#setCallContextConfigurator(CallContextConfigurator)}, or
+   * on a per-call basis as a value on the {@link Context} using the {@link
+   * SpannerOptions#CALL_CONTEXT_CONFIGURATOR_KEY} key.
    *
    * <p>This API is meant for advanced users. Most users should instead use the {@link
    * SpannerCallContextTimeoutConfigurator} for setting timeouts per RPC.
@@ -462,8 +520,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   /**
    * Helper class to configure timeouts for specific Spanner RPCs. The {@link
-   * SpannerCallContextTimeoutConfigurator} must be set as a value on the {@link Context} using the
-   * {@link SpannerOptions#CALL_CONTEXT_CONFIGURATOR_KEY} key.
+   * SpannerCallContextTimeoutConfigurator} can be set client-wide via {@link
+   * Builder#setCallContextConfigurator(CallContextConfigurator)} or on individual requests as a
+   * value on the {@link Context} using the {@link SpannerOptions#CALL_CONTEXT_CONFIGURATOR_KEY}
+   * key.
    *
    * <p>Example usage:
    *
@@ -519,43 +579,40 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       if (spannerMethod == null) {
         return null;
       }
-      switch (SpannerMethod.valueOf(request, method)) {
+      ApiCallContext callContext = context == null ? GrpcCallContext.createDefault() : context;
+      switch (spannerMethod) {
         case BATCH_UPDATE:
           return batchUpdateTimeout == null
               ? null
-              : GrpcCallContext.createDefault().withTimeoutDuration(batchUpdateTimeout);
+              : callContext.withTimeoutDuration(batchUpdateTimeout);
         case COMMIT:
-          return commitTimeout == null
-              ? null
-              : GrpcCallContext.createDefault().withTimeoutDuration(commitTimeout);
+          return commitTimeout == null ? null : callContext.withTimeoutDuration(commitTimeout);
         case EXECUTE_QUERY:
           return executeQueryTimeout == null
               ? null
-              : GrpcCallContext.createDefault()
+              : callContext
                   .withTimeoutDuration(executeQueryTimeout)
                   .withStreamWaitTimeoutDuration(executeQueryTimeout);
         case EXECUTE_UPDATE:
           return executeUpdateTimeout == null
               ? null
-              : GrpcCallContext.createDefault().withTimeoutDuration(executeUpdateTimeout);
+              : callContext.withTimeoutDuration(executeUpdateTimeout);
         case PARTITION_QUERY:
           return partitionQueryTimeout == null
               ? null
-              : GrpcCallContext.createDefault().withTimeoutDuration(partitionQueryTimeout);
+              : callContext.withTimeoutDuration(partitionQueryTimeout);
         case PARTITION_READ:
           return partitionReadTimeout == null
               ? null
-              : GrpcCallContext.createDefault().withTimeoutDuration(partitionReadTimeout);
+              : callContext.withTimeoutDuration(partitionReadTimeout);
         case READ:
           return readTimeout == null
               ? null
-              : GrpcCallContext.createDefault()
+              : callContext
                   .withTimeoutDuration(readTimeout)
                   .withStreamWaitTimeoutDuration(readTimeout);
         case ROLLBACK:
-          return rollbackTimeout == null
-              ? null
-              : GrpcCallContext.createDefault().withTimeoutDuration(rollbackTimeout);
+          return rollbackTimeout == null ? null : callContext.withTimeoutDuration(rollbackTimeout);
         default:
       }
       return null;
@@ -867,14 +924,20 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   protected SpannerOptions(Builder builder) {
-    super(SpannerFactory.class, SpannerRpcFactory.class, builder, new SpannerDefaults());
+    super(
+        SpannerFactory.class,
+        SpannerRpcFactory.class,
+        Builder.prepareBuilder(builder),
+        new SpannerDefaults());
     numChannels = builder.numChannels == null ? DEFAULT_CHANNELS : builder.numChannels;
     Preconditions.checkArgument(
         numChannels >= 1 && numChannels <= MAX_CHANNELS,
         "Number of channels must fall in the range [1, %s], found: %s",
         MAX_CHANNELS,
         numChannels);
-
+    Preconditions.checkArgument(
+        builder.instanceType != InstanceType.OMNI || !Strings.isNullOrEmpty(builder.host),
+        "Host must be set for connecting to Spanner Omni instances");
     transportChannelExecutorThreadNameFormat = builder.transportChannelExecutorThreadNameFormat;
     channelProvider = builder.channelProvider;
     channelEndpointCacheFactory = builder.channelEndpointCacheFactory;
@@ -919,21 +982,24 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       throw SpannerExceptionFactory.newSpannerException(e);
     }
     partitionedDmlTimeout = builder.partitionedDmlTimeout;
+    grpcKeepAliveTime = builder.grpcKeepAliveTime;
+    grpcKeepAliveTimeout = builder.grpcKeepAliveTimeout;
     grpcGcpExtensionEnabled = builder.grpcGcpExtensionEnabled;
     grpcGcpOptions = builder.grpcGcpOptions;
 
     // Dynamic channel pooling is disabled by default.
     // It is only enabled when:
-    // 1. enableDynamicChannelPool() was explicitly called (or experimentalHost is set and DCP was
+    // 1. enableDynamicChannelPool() was explicitly called (or instance is set to OMNI and DCP was
     //    not explicitly disabled), AND
     // 2. grpc-gcp extension is enabled, AND
     // 3. numChannels was not explicitly set
     boolean dcpRequested =
         builder.dynamicChannelPoolEnabled != null
             ? builder.dynamicChannelPoolEnabled
-            : builder.experimentalHost != null;
+            : builder.instanceType == InstanceType.OMNI;
     if (dcpRequested) {
-      // DCP was enabled (explicitly or via experimentalHost), but respect numChannels if set
+      // DCP was enabled (explicitly or via instance type being OMNI), but respect numChannels if
+      // set
       dynamicChannelPoolEnabled = grpcGcpExtensionEnabled && !builder.numChannelsExplicitlySet;
     } else {
       // DCP is disabled by default, or was explicitly disabled
@@ -966,8 +1032,10 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.mergedQueryOptions = ImmutableMap.copyOf(merged);
     }
     callCredentialsProvider = builder.callCredentialsProvider;
+    callContextConfigurator = builder.callContextConfigurator;
     asyncExecutorProvider = builder.asyncExecutorProvider;
     compressorName = builder.compressorName;
+    emulatorHost = builder.emulatorHost;
     leaderAwareRoutingEnabled = builder.leaderAwareRoutingEnabled;
     enableDirectAccess = builder.enableDirectAccess;
     enableGcpFallback = builder.enableGcpFallback;
@@ -976,14 +1044,29 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     openTelemetry = builder.openTelemetry;
     enableApiTracing = builder.enableApiTracing;
     enableExtendedTracing = builder.enableExtendedTracing;
-    if (builder.experimentalHost != null) {
+    // Resolve the client-metrics provider and the Cloud Monitoring (GCM) built-in metrics flag
+    // independently. The built-in metrics flag/env controls only the GCM sink; the client-metrics
+    // provider controls only the caller-owned OpenTelemetry sink.
+    // - Non-OMNI: GCM is gated by enableBuiltInMetrics/env. A custom provider records the same
+    //   client instruments to the caller-owned spanner/client namespace regardless of that flag.
+    // - OMNI: GCM is always off (the backend rejects reserved-namespace writes). The Default
+    //   provider is coerced to Noop, while a custom provider records client metrics regardless of
+    //   enableBuiltInMetrics/env.
+    rawEnableBuiltInMetrics = builder.enableBuiltInMetrics;
+    metricsProvider = builder.metricsProvider;
+    MetricsProvider resolved = builder.metricsProvider;
+    if (builder.instanceType == InstanceType.OMNI) {
+      if (resolved instanceof DefaultMetricsProvider) {
+        resolved = NoopMetricsProvider.INSTANCE;
+      }
       enableBuiltInMetrics = false;
     } else {
       enableBuiltInMetrics = builder.enableBuiltInMetrics;
     }
-    // Enable location API when experimental host is set, unless explicitly disabled
+    resolvedMetricsProvider = resolved;
+    // Enable location API when InstanceType is OMNI, unless explicitly disabled
     // via GOOGLE_SPANNER_EXPERIMENTAL_LOCATION_API=false.
-    if (builder.experimentalHost != null) {
+    if (builder.instanceType == InstanceType.OMNI) {
       String locationApiEnvValue = System.getenv(EXPERIMENTAL_LOCATION_API_ENV_VAR);
       enableLocationApi = locationApiEnvValue == null || Boolean.parseBoolean(locationApiEnvValue);
     } else {
@@ -993,6 +1076,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     monitoringHost = builder.monitoringHost;
     defaultTransactionOptions = builder.defaultTransactionOptions;
     clientContext = builder.clientContext;
+    if (environment.isAutoTaggingDisabled()) {
+      autoTaggingEnabled = false;
+    } else {
+      autoTaggingEnabled = builder.autoTaggingEnabled || environment.isAutoTaggingEnabled();
+    }
+    autoTaggingPackages = builder.autoTaggingPackages;
+    autoTaggingTracerLimit = builder.autoTaggingTracerLimit;
   }
 
   private String getResolvedUniverseDomain() {
@@ -1064,6 +1154,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return false;
     }
 
+    default boolean isAutoTaggingDisabled() {
+      return false;
+    }
+
+    default boolean isAutoTaggingEnabled() {
+      return false;
+    }
+
     @Deprecated
     @ObsoleteApi(
         "This will be removed in an upcoming version without a major version bump. You should use"
@@ -1072,13 +1170,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return null;
     }
 
-    default GoogleCredentials getDefaultExperimentalHostCredentials() {
+    default GoogleCredentials getDefaultSpannerOmniCredentials() {
       return null;
     }
   }
 
-  static final String DEFAULT_SPANNER_EXPERIMENTAL_HOST_CREDENTIALS =
-      "SPANNER_EXPERIMENTAL_HOST_AUTH_TOKEN";
+  static final String DEFAULT_SPANNER_OMNI_CREDENTIALS = "SPANNER_OMNI_AUTH_TOKEN";
 
   /**
    * Default implementation of {@link SpannerEnvironment}. Reads all configuration from environment
@@ -1169,19 +1266,64 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     @Override
+    public boolean isAutoTaggingDisabled() {
+      return Boolean.parseBoolean(System.getenv("SPANNER_DISABLE_AUTO_TAGGING"))
+          || Boolean.parseBoolean(System.getProperty("spanner.disable_auto_tagging"));
+    }
+
+    @Override
+    public boolean isAutoTaggingEnabled() {
+      return Boolean.parseBoolean(System.getenv("SPANNER_ENABLE_AUTO_TAGGING"))
+          || Boolean.getBoolean("spanner.enable_auto_tagging");
+    }
+
+    @Override
     public String getMonitoringHost() {
       return System.getenv(SPANNER_MONITORING_HOST);
     }
 
     @Override
-    public GoogleCredentials getDefaultExperimentalHostCredentials() {
-      return getOAuthTokenFromFile(System.getenv(DEFAULT_SPANNER_EXPERIMENTAL_HOST_CREDENTIALS));
+    public GoogleCredentials getDefaultSpannerOmniCredentials() {
+      return getOAuthTokenFromFile(System.getenv(DEFAULT_SPANNER_OMNI_CREDENTIALS));
     }
   }
 
   /** Builder for {@link SpannerOptions} instances. */
   public static class Builder
       extends ServiceOptions.Builder<Spanner, SpannerOptions, SpannerOptions.Builder> {
+    private static Builder prepareBuilder(Builder builder) {
+      if (builder.instanceType == InstanceType.OMNI) {
+        builder.enableBuiltInMetrics = false;
+        builder.setProjectId(SPANNER_OMNI_PROJECT_ID);
+        builder.configureOmniHost();
+        if (builder.sessionPoolOptions == null) {
+          builder.sessionPoolOptions =
+              SessionPoolOptions.newBuilder().setExperimentalHost().build();
+        } else {
+          builder.sessionPoolOptions =
+              builder.sessionPoolOptions.toBuilder().setExperimentalHost().build();
+        }
+        if (builder.username != null && builder.secretBytes != null) {
+          builder.setCredentials(
+              new SpannerOmniCredentials(builder.username, builder.secretBytes, builder.host));
+        } else if (builder.credentials == null) {
+          GoogleCredentials defaultCreds = environment.getDefaultSpannerOmniCredentials();
+          if (defaultCreds != null) {
+            builder.setCredentials(defaultCreds);
+          }
+        }
+        if (builder.credentials instanceof SpannerOmniCredentials) {
+          ((SpannerOmniCredentials) builder.credentials)
+              .initChannel(builder.usePlainText, builder.mTLSContext);
+        }
+      } else {
+        if (builder.username != null || builder.secretBytes != null) {
+          throw new IllegalStateException("login() can only be used with InstanceType.OMNI.");
+        }
+      }
+      return builder;
+    }
+
     static final int DEFAULT_PREFETCH_CHUNKS = 4;
     static final QueryOptions DEFAULT_QUERY_OPTIONS = QueryOptions.getDefaultInstance();
     static final DecodeMode DEFAULT_DECODE_MODE = DecodeMode.DIRECT;
@@ -1232,10 +1374,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         DEFAULT_ADMIN_REQUESTS_LIMIT_EXCEEDED_RETRY_SETTINGS;
     private boolean autoThrottleAdministrativeRequests = false;
     private boolean trackTransactionStarter = false;
+    private String username;
+    private SecretBytes secretBytes;
     private Map<DatabaseId, QueryOptions> defaultQueryOptions = new HashMap<>();
     private boolean enableGrpcGcpOtelMetrics =
         SpannerOptions.environment.isEnableGrpcGcpOtelMetrics();
+    private Duration grpcKeepAliveTime = Duration.ofSeconds(120);
+    private Duration grpcKeepAliveTimeout = Duration.ofSeconds(20);
     private CallCredentialsProvider callCredentialsProvider;
+    private CallContextConfigurator callContextConfigurator;
     private CloseableExecutorProvider asyncExecutorProvider;
     private String compressorName;
     private String emulatorHost = System.getenv("SPANNER_EMULATOR_HOST");
@@ -1249,13 +1396,18 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     private boolean enableExtendedTracing = SpannerOptions.environment.isEnableExtendedTracing();
     private boolean enableEndToEndTracing = SpannerOptions.environment.isEnableEndToEndTracing();
     private boolean enableBuiltInMetrics = SpannerOptions.environment.isEnableBuiltInMetrics();
+    private MetricsProvider metricsProvider = DefaultMetricsProvider.INSTANCE;
     private boolean enableLocationApi = SpannerOptions.environment.isEnableLocationApi();
     private String monitoringHost = SpannerOptions.environment.getMonitoringHost();
     private SslContext mTLSContext = null;
-    private String experimentalHost = null;
     private boolean usePlainText = false;
     private TransactionOptions defaultTransactionOptions = TransactionOptions.getDefaultInstance();
     private RequestOptions.ClientContext clientContext;
+    private InstanceType instanceType = InstanceType.CLOUD;
+    private String host = null;
+    private boolean autoTaggingEnabled = false;
+    private List<String> autoTaggingPackages = Collections.emptyList();
+    private int autoTaggingTracerLimit = 50;
 
     private static String createCustomClientLibToken(String token) {
       return token + " " + ServiceOptions.getGoogApiClientLibName();
@@ -1317,11 +1469,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     Builder(SpannerOptions options) {
       super(options);
-      if (options.getHost() != null
-          && this.emulatorHost != null
-          && !options.getHost().equals(this.emulatorHost)) {
-        this.emulatorHost = null;
-      }
+      this.emulatorHost = options.emulatorHost;
       this.numChannels = options.numChannels;
       this.transportChannelExecutorThreadNameFormat =
           options.transportChannelExecutorThreadNameFormat;
@@ -1344,6 +1492,9 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.enableGrpcGcpOtelMetrics = options.enableGrpcGcpOtelMetrics;
       this.defaultQueryOptions = options.defaultQueryOptions;
       this.callCredentialsProvider = options.callCredentialsProvider;
+      this.callContextConfigurator = options.callContextConfigurator;
+      this.grpcKeepAliveTime = options.grpcKeepAliveTime;
+      this.grpcKeepAliveTimeout = options.grpcKeepAliveTimeout;
       this.asyncExecutorProvider = options.asyncExecutorProvider;
       this.compressorName = options.compressorName;
       this.channelProvider = options.channelProvider;
@@ -1356,12 +1507,16 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       this.useVirtualThreads = options.useVirtualThreads;
       this.enableApiTracing = options.enableApiTracing;
       this.enableExtendedTracing = options.enableExtendedTracing;
-      this.enableBuiltInMetrics = options.enableBuiltInMetrics;
+      this.enableBuiltInMetrics = options.rawEnableBuiltInMetrics;
+      this.metricsProvider = options.metricsProvider;
       this.enableLocationApi = options.enableLocationApi;
       this.enableEndToEndTracing = options.enableEndToEndTracing;
       this.monitoringHost = options.monitoringHost;
       this.defaultTransactionOptions = options.defaultTransactionOptions;
       this.clientContext = options.clientContext;
+      this.autoTaggingEnabled = options.autoTaggingEnabled;
+      this.autoTaggingPackages = options.autoTaggingPackages;
+      this.autoTaggingTracerLimit = options.autoTaggingTracerLimit;
     }
 
     @Override
@@ -1604,6 +1759,32 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
+     * Sets the keep-alive time for gRPC connections. The default is 120 seconds. Note that the
+     * client-side keepalive time is clamped to a minimum of 10 seconds by gRPC.
+     */
+    public Builder setGrpcKeepAliveTime(Duration grpcKeepAliveTime) {
+      Preconditions.checkNotNull(grpcKeepAliveTime, "grpcKeepAliveTime cannot be null");
+      Preconditions.checkArgument(
+          !grpcKeepAliveTime.isNegative() && !grpcKeepAliveTime.isZero(),
+          "grpcKeepAliveTime must be positive");
+      this.grpcKeepAliveTime = grpcKeepAliveTime;
+      return this;
+    }
+
+    /**
+     * Sets the keep-alive timeout for gRPC connections. The default is 20 seconds. Note that the
+     * client-side keepalive timeout is clamped to a minimum of 20 milliseconds by gRPC.
+     */
+    public Builder setGrpcKeepAliveTimeout(Duration grpcKeepAliveTimeout) {
+      Preconditions.checkNotNull(grpcKeepAliveTimeout, "grpcKeepAliveTimeout cannot be null");
+      Preconditions.checkArgument(
+          !grpcKeepAliveTimeout.isNegative() && !grpcKeepAliveTimeout.isZero(),
+          "grpcKeepAliveTimeout must be positive");
+      this.grpcKeepAliveTimeout = grpcKeepAliveTimeout;
+      return this;
+    }
+
+    /**
      * Instructs the client library to automatically throttle the number of administrative requests
      * if the rate of administrative requests generated by this {@link Spanner} instance will exceed
      * the administrative limits Cloud Spanner. The default behavior is to not throttle any
@@ -1695,6 +1876,84 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      */
     public Builder setCallCredentialsProvider(CallCredentialsProvider callCredentialsProvider) {
       this.callCredentialsProvider = callCredentialsProvider;
+      return this;
+    }
+
+    /**
+     * Configures a client-level {@link CallContextConfigurator} to apply custom gRPC options,
+     * timeouts, or credentials to RPCs executed by this Spanner client.
+     *
+     * <p>By default, Spanner clients allow customizing call options on individual requests using
+     * gRPC's thread-local {@link io.grpc.Context} with {@link #CALL_CONTEXT_CONFIGURATOR_KEY}.
+     * While useful for fine-grained per-RPC overrides, managing thread-local context can be
+     * cumbersome or error-prone in asynchronous, reactive, or multi-threaded pipelines where
+     * operations jump across threads. Setting a {@link CallContextConfigurator} here applies
+     * client-wide across all requests executed by this client instance without requiring
+     * thread-local context propagation.
+     *
+     * <p>This configurator applies to all RPCs executed by {@link DatabaseClient}, {@link Spanner},
+     * {@link DatabaseAdminClient}, and {@link InstanceAdminClient} instances obtained from this
+     * client library. Note that raw GAPIC generated clients (such as {@link
+     * Spanner#createDatabaseAdminClient()} and {@link Spanner#createInstanceAdminClient()}) bypass
+     * this configurator and should be configured via {@link #setDatabaseAdminStubSettings} and
+     * {@link #setInstanceAdminStubSettings}.
+     *
+     * <p>Implementations of {@link CallContextConfigurator} configured at the client level must be
+     * thread-safe as they are shared across all concurrent operations executed by this client.
+     *
+     * <p>If both a client-level configurator and a thread-local configurator (via {@link
+     * #CALL_CONTEXT_CONFIGURATOR_KEY}) are present when an RPC is executed:
+     *
+     * <ol>
+     *   <li>The client-level configurator is evaluated first to establish the baseline call
+     *       context.
+     *   <li>The thread-local configurator is evaluated next using that baseline context.
+     *   <li>Any options returned by the thread-local configurator are merged on top of the
+     *       client-level options, allowing per-call configurations to override or extend
+     *       client-level defaults.
+     * </ol>
+     *
+     * <p>Example: Configure a client-level stream wait timeout of 30 seconds for streaming SQL
+     * queries to detect stalled streams faster:
+     *
+     * <pre>{@code
+     * SpannerOptions options =
+     *     SpannerOptions.newBuilder()
+     *         .setProjectId("my-project")
+     *         .setCallContextConfigurator(
+     *             new CallContextConfigurator() {
+     *               @Override
+     *               public <ReqT, RespT> ApiCallContext configure(
+     *                   ApiCallContext context, ReqT request, MethodDescriptor<ReqT, RespT> method) {
+     *                 if (method == SpannerGrpc.getExecuteStreamingSqlMethod()) {
+     *                   return context.withStreamWaitTimeoutDuration(Duration.ofSeconds(30));
+     *                 }
+     *                 return null;
+     *               }
+     *             })
+     *         .build();
+     * }</pre>
+     *
+     * <p>You can also use {@link SpannerCallContextTimeoutConfigurator} if you only need to adjust
+     * standard timeouts across RPC types:
+     *
+     * <pre>{@code
+     * SpannerOptions options =
+     *     SpannerOptions.newBuilder()
+     *         .setProjectId("my-project")
+     *         .setCallContextConfigurator(
+     *             SpannerCallContextTimeoutConfigurator.create()
+     *                 .withExecuteQueryTimeoutDuration(Duration.ofSeconds(30)))
+     *         .build();
+     * }</pre>
+     *
+     * @param callContextConfigurator the configurator to apply to all RPCs, or {@code null} to
+     *     clear
+     * @return this {@link Builder} instance
+     */
+    public Builder setCallContextConfigurator(
+        @Nullable CallContextConfigurator callContextConfigurator) {
+      this.callContextConfigurator = callContextConfigurator;
       return this;
     }
 
@@ -1792,29 +2051,72 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
+    private void configureOmniHost() {
+      if (this.instanceType == InstanceType.OMNI
+          && !Strings.isNullOrEmpty(this.host)
+          && this.usePlainText) {
+        Preconditions.checkArgument(
+            !this.host.startsWith("https:"),
+            "Please remove the 'https:' protocol prefix from the host string when using plain text"
+                + " communication");
+        if (!this.host.startsWith("http")) {
+          this.host = "http://" + this.host;
+        }
+      }
+    }
+
     @Override
     public Builder setHost(String host) {
-      super.setHost(host);
+      this.host = host;
+      configureOmniHost();
+      super.setHost(this.host);
       // Setting a host should override any SPANNER_EMULATOR_HOST setting.
       setEmulatorHost(null);
       return this;
     }
 
+    /**
+     * @deprecated Use {@link #setType(InstanceType)} instead.
+     */
+    @Deprecated
+    @ObsoleteApi("Use setHost(String).setType(InstanceType.OMNI) instead")
     @ExperimentalApi("https://github.com/googleapis/java-spanner/pull/3676")
     public Builder setExperimentalHost(String host) {
-      if (this.usePlainText) {
-        Preconditions.checkArgument(
-            !host.startsWith("https:"),
-            "Please remove the 'https:' protocol prefix from the host string when using plain text"
-                + " communication");
-        if (!host.startsWith("http")) {
-          host = "http://" + host;
-        }
+      if (!Strings.isNullOrEmpty(host)) {
+        setType(InstanceType.OMNI);
       }
-      super.setHost(host);
-      super.setProjectId(EXPERIMENTAL_HOST_PROJECT_ID);
-      setSessionPoolOption(SessionPoolOptions.newBuilder().setExperimentalHost().build());
-      this.experimentalHost = host;
+      setHost(host);
+      return this;
+    }
+
+    /**
+     * Specifies the type of Spanner instance to connect to (CLOUD or OMNI). Setting it to OMNI is
+     * mandatory when connecting to a Spanner Omni instance.
+     */
+    public Builder setType(InstanceType instanceType) {
+      this.instanceType = instanceType;
+      return this;
+    }
+
+    /**
+     * Authenticates to Spanner Omni using the provided username and password, and configures the
+     * resulting token for use in subsequent Spanner API calls.
+     *
+     * <p>Note: The provided {@code password} array will be cleared (zeroed out) by this method for
+     * security purposes.
+     *
+     * @param username The username for login.
+     * @param password The password for login.
+     * @return this builder
+     */
+    public Builder login(String username, char[] password) {
+      Preconditions.checkArgument(
+          username != null && !username.isEmpty(), "username cannot be null or empty");
+      Preconditions.checkArgument(
+          password != null && password.length > 0, "password cannot be null or empty");
+
+      this.username = username;
+      this.secretBytes = SpannerOmniCredentials.convertToSecretBytes(password);
       return this;
     }
 
@@ -1842,6 +2144,12 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     /**
      * Enables dynamic channel pooling. When enabled, the client will automatically scale the number
      * of channels based on load. This requires the gRPC-GCP extension to be enabled.
+     *
+     * <p>Channels that the pool adds during scale-up are primed before they serve traffic: the
+     * client executes {@code SELECT 1} with a multiplexed session on the new channel, and the pool
+     * only publishes the channel once that succeeds. See {@link
+     * #createDefaultDynamicChannelPoolOptions()} for the prime timeout and attempt defaults, and
+     * {@link #setGcpChannelPoolOptions(GcpChannelPoolOptions)} to customize them.
      *
      * <p>Dynamic channel pooling is disabled by default. Use this method to explicitly enable it.
      * Note that calling {@link #setNumChannels(int)} will disable dynamic channel pooling even if
@@ -1880,7 +2188,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * channel pool behavior when {@link #enableDynamicChannelPool()} is enabled.
      *
      * <p>If not set, Spanner-specific defaults will be used (see {@link
-     * #createDefaultDynamicChannelPoolOptions()}).
+     * #createDefaultDynamicChannelPoolOptions()}). Values that are left unset in the given options
+     * are filled in from those defaults.
+     *
+     * <p>Channels that the pool adds during scale-up are primed with {@code SELECT 1} on a
+     * multiplexed session before they are published. A channel primer, prime timeout, or prime
+     * attempt count that is set in the given options takes precedence over the Spanner primer and
+     * its defaults.
      *
      * <p>Example usage:
      *
@@ -1916,14 +2230,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
-     * Configures mTLS authentication using the provided client certificate and key files. mTLS is
-     * only supported for experimental spanner hosts.
+     * Configures mTLS authentication using the provided client certificate and key files. mTLS via
+     * useClientCert is only supported for Spanner Omni instances.
      *
      * @param clientCertificate Path to the client certificate file.
      * @param clientCertificateKey Path to the client private key file.
      * @throws SpannerException If an error occurs while configuring the mTLS context
      */
-    @ExperimentalApi("https://github.com/googleapis/java-spanner/pull/3574")
     public Builder useClientCert(String clientCertificate, String clientCertificateKey) {
       try {
         this.mTLSContext =
@@ -1941,14 +2254,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
      * credentials to {@link com.google.cloud.NoCredentials} to avoid sending authentication over an
      * unsecured channel.
      */
-    @ExperimentalApi("https://github.com/googleapis/java-spanner/pull/4264")
     public Builder usePlainText() {
       this.usePlainText = true;
       this.setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
           .setCredentials(NoCredentials.getInstance());
-      if (this.experimentalHost != null) {
+      if (this.instanceType == InstanceType.OMNI) {
         // Re-apply host settings to ensure http:// is prepended.
-        setExperimentalHost(this.experimentalHost);
+        configureOmniHost();
+        super.setHost(this.host);
       }
       return this;
     }
@@ -2015,11 +2328,43 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     /**
-     * Sets whether to enable or disable built in metrics for Data client operations. Built in
-     * metrics are enabled by default.
+     * Sets whether to enable or disable the Cloud Monitoring export destination for Spanner
+     * built-in client metrics. Built-in metrics are enabled by default.
+     *
+     * <p>This flag controls only the default Cloud Monitoring (GCM) export destination on non-Omni
+     * clients. It has no effect on a client-metrics provider configured with {@link
+     * #setClientMetricsProvider(MetricsProvider)}; that caller-owned OpenTelemetry destination is
+     * controlled separately by the configured provider.
+     *
+     * <p>On {@link InstanceType#OMNI} clients the GCM sink is unavailable, so this flag does not
+     * enable Cloud Monitoring export there.
      */
     public Builder setBuiltInMetricsEnabled(boolean enableBuiltInMetrics) {
       this.enableBuiltInMetrics = enableBuiltInMetrics;
+      return this;
+    }
+
+    /**
+     * Sets the {@link MetricsProvider} that controls client-metrics export to a caller-owned
+     * OpenTelemetry destination. Defaults to {@link DefaultMetricsProvider#INSTANCE}, which does
+     * not configure a caller-owned destination. Use {@link NoopMetricsProvider#INSTANCE} to disable
+     * caller-owned client metrics explicitly, or {@link CustomOpenTelemetryMetricsProvider} to
+     * record the same Spanner client instruments on a caller-provided {@link OpenTelemetry}
+     * instance.
+     *
+     * <p>Client metrics are independent of the built-in Cloud Monitoring (GCM) export controlled by
+     * {@link #setBuiltInMetricsEnabled(boolean)} and the {@code SPANNER_DISABLE_BUILTIN_METRICS}
+     * environment variable. A custom client-metrics provider keeps recording when the GCM sink is
+     * disabled. On non-Omni clients, the GCM and client-metrics destinations can both be active. On
+     * {@link InstanceType#OMNI} clients, the GCM sink is unavailable and a custom provider is the
+     * way to export client metrics.
+     *
+     * <p>Client metrics are not recorded when the client runs against the Spanner emulator,
+     * regardless of the configured {@link MetricsProvider}.
+     */
+    public Builder setClientMetricsProvider(MetricsProvider metricsProvider) {
+      this.metricsProvider =
+          Preconditions.checkNotNull(metricsProvider, "metricsProvider cannot be null");
       return this;
     }
 
@@ -2120,22 +2465,51 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
       return this;
     }
 
+    public Builder enableAutoTagging() {
+      this.autoTaggingEnabled = true;
+      return this;
+    }
+
+    public Builder disableAutoTagging() {
+      this.autoTaggingEnabled = false;
+      return this;
+    }
+
+    public Builder setAutoTaggingPackages(String... autoTaggingPackages) {
+      this.autoTaggingPackages =
+          Collections.unmodifiableList(
+              new ArrayList<>(
+                  java.util.Arrays.asList(Preconditions.checkNotNull(autoTaggingPackages))));
+      return this;
+    }
+
+    public Builder setAutoTaggingPackages(List<String> autoTaggingPackages) {
+      this.autoTaggingPackages =
+          Collections.unmodifiableList(
+              new ArrayList<>(Preconditions.checkNotNull(autoTaggingPackages)));
+      return this;
+    }
+
+    public Builder setAutoTaggingTracerLimit(int autoTaggingTracerLimit) {
+      this.autoTaggingTracerLimit = autoTaggingTracerLimit;
+      return this;
+    }
+
     @SuppressWarnings("rawtypes")
     @Override
     public SpannerOptions build() {
       // Set the host of emulator has been set.
-      if (emulatorHost != null && experimentalHost == null) {
+      if (emulatorHost != null && this.instanceType != InstanceType.OMNI) {
         if (!emulatorHost.startsWith("http")) {
           emulatorHost = "http://" + emulatorHost;
         }
-        this.setHost(emulatorHost);
+        this.host = emulatorHost;
+        super.setHost(this.host);
         // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
         // needing certificates.
         this.setChannelConfigurator(ManagedChannelBuilder::usePlaintext);
         // As we are using plain text, we should never send any credentials.
         this.setCredentials(NoCredentials.getInstance());
-      } else if (experimentalHost != null && credentials == null) {
-        credentials = environment.getDefaultExperimentalHostCredentials();
       }
       if (this.numChannels == null) {
         this.numChannels =
@@ -2177,8 +2551,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   @InternalApi
-  public static GoogleCredentials getDefaultExperimentalCredentialsFromSysEnv() {
-    return getOAuthTokenFromFile(System.getenv(DEFAULT_SPANNER_EXPERIMENTAL_HOST_CREDENTIALS));
+  public static GoogleCredentials getDefaultSpannerOmniCredentialsFromSysEnv() {
+    return getOAuthTokenFromFile(System.getenv(DEFAULT_SPANNER_OMNI_CREDENTIALS));
   }
 
   private static @Nullable GoogleCredentials getOAuthTokenFromFile(@Nullable String file) {
@@ -2239,12 +2613,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   public static TracingFramework getActiveTracingFramework() {
-    synchronized (lock) {
-      if (activeTracingFramework == null) {
-        return TracingFramework.OPEN_CENSUS;
-      }
-      return activeTracingFramework;
-    }
+    TracingFramework framework = activeTracingFramework;
+    return framework == null ? TracingFramework.OPEN_CENSUS : framework;
   }
 
   /** Disables OpenCensus metrics. Disable OpenCensus metrics before creating Spanner client. */
@@ -2338,6 +2708,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return partitionedDmlTimeout;
   }
 
+  public Duration getGrpcKeepAliveTime() {
+    return grpcKeepAliveTime;
+  }
+
+  public Duration getGrpcKeepAliveTimeout() {
+    return grpcKeepAliveTimeout;
+  }
+
   public boolean isGrpcGcpExtensionEnabled() {
     return grpcGcpExtensionEnabled;
   }
@@ -2384,6 +2762,15 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public CallCredentialsProvider getCallCredentialsProvider() {
     return callCredentialsProvider;
+  }
+
+  /**
+   * Returns the client-level {@link CallContextConfigurator} configured for this {@link
+   * SpannerOptions}, or {@code null} if none is set.
+   */
+  @Nullable
+  public CallContextConfigurator getCallContextConfigurator() {
+    return callContextConfigurator;
   }
 
   private boolean usesNoCredentials() {
@@ -2446,14 +2833,63 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         this.getProjectId(), getCredentials(), this.monitoringHost, getUniverseDomain());
   }
 
+  /**
+   * Wires gRPC-layer built-in metrics into the given channel provider builder using the
+   * pre-emulator-aware behavior.
+   *
+   * @deprecated for internal callers only. Use {@link #enablegRPCMetrics(
+   *     InstantiatingGrpcChannelProvider.Builder, boolean)}.
+   */
+  @Deprecated
+  @InternalApi
   public void enablegRPCMetrics(InstantiatingGrpcChannelProvider.Builder channelProviderBuilder) {
-    if (isEnableBuiltInMetrics() && SpannerOptions.environment.isEnableGRPCBuiltInMetrics()) {
+    enablegRPCMetrics(channelProviderBuilder, /* isEmulatorEnabled= */ false);
+  }
+
+  /**
+   * Wires gRPC-layer built-in metrics into the given channel provider builder for each active
+   * metrics sink: the Cloud Monitoring (GCM) sink when {@link #isEnableBuiltInMetrics()} is true,
+   * and the caller-owned OpenTelemetry sink when a {@link CustomOpenTelemetryMetricsProvider} is
+   * configured. Does nothing when {@code isEmulatorEnabled} is true or gRPC built-in metrics are
+   * disabled via the environment.
+   */
+  @InternalApi
+  public void enablegRPCMetrics(
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder, boolean isEmulatorEnabled) {
+    if (isEmulatorEnabled || !SpannerOptions.environment.isEnableGRPCBuiltInMetrics()) {
+      return;
+    }
+    // The GCM and client-metrics sinks are independent; wire each active sink onto the channel.
+    // grpc-java
+    // records each instrument once per GrpcOpenTelemetry instance, so wiring two instances onto one
+    // channel does not double-count attempt/operation metrics (verified by
+    // GrpcMetricsDualWireTest).
+    if (isEnableBuiltInMetrics()) {
       this.builtInMetricsProvider.enableGrpcMetrics(
           channelProviderBuilder,
           this.getProjectId(),
           getCredentials(),
           this.monitoringHost,
           getUniverseDomain());
+    }
+    if (usesCustomMetricsProvider()) {
+      OpenTelemetry customOpenTelemetry =
+          ((CustomOpenTelemetryMetricsProvider) resolvedMetricsProvider).getOpenTelemetry();
+      // GrpcOpenTelemetry can only record metrics on an SDK instance.
+      if (customOpenTelemetry instanceof OpenTelemetrySdk) {
+        this.builtInMetricsProvider.enableGrpcMetrics(channelProviderBuilder, customOpenTelemetry);
+      } else {
+        logger.log(
+            Level.FINE,
+            "Skipping gRPC-layer built-in metrics: the OpenTelemetry instance of the"
+                + " CustomOpenTelemetryMetricsProvider is not an OpenTelemetrySdk.");
+      }
+    }
+  }
+
+  void initializeBuiltInMetrics(DatabaseId databaseId) {
+    if (isEnableBuiltInMetrics() && !usesNoCredentials()) {
+      this.builtInMetricsProvider.setProjectIdIfAbsent(databaseId.getInstanceId().getProject());
     }
   }
 
@@ -2468,12 +2904,22 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     apiTracerFactories.add(
         MoreObjects.firstNonNull(super.getApiTracerFactory(), getDefaultApiTracerFactory()));
 
-    // Add Metrics Tracer factory if built in metrics are enabled and if the client is data client
-    // and if emulator is not enabled.
-    if (isEnableBuiltInMetrics() && !isAdminClient && !isEmulatorEnabled && !usesNoCredentials()) {
-      ApiTracerFactory metricsTracerFactory = createMetricsApiTracerFactory();
-      if (metricsTracerFactory != null) {
-        apiTracerFactories.add(metricsTracerFactory);
+    // Add built-in metrics tracer factories for a data client (never admin/emulator). The Cloud
+    // Monitoring (GCM) sink and a caller-provided client-metrics sink are independent and may both
+    // be
+    // active, so each active sink gets its own tracer factory recording into its own OpenTelemetry
+    // and namespace. The credentials guard only applies to the GCM sink: a client-metrics sink
+    // needs no
+    // Google credentials to export (e.g. Spanner Omni clients).
+    if (!isAdminClient && !isEmulatorEnabled) {
+      if (isEnableBuiltInMetrics() && !usesNoCredentials()) {
+        ApiTracerFactory cloudMonitoringTracerFactory = createCloudMonitoringMetricsTracerFactory();
+        if (cloudMonitoringTracerFactory != null) {
+          apiTracerFactories.add(cloudMonitoringTracerFactory);
+        }
+      }
+      if (usesCustomMetricsProvider()) {
+        apiTracerFactories.add(createCustomMetricsTracerFactory());
       }
     }
 
@@ -2496,7 +2942,31 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     return BaseApiTracerFactory.getInstance();
   }
 
-  private ApiTracerFactory createMetricsApiTracerFactory() {
+  /**
+   * Records client metrics on the caller-provided OpenTelemetry with the custom-export namespace.
+   * This deliberately does not touch the process-wide BuiltInMetricsProvider singleton, so a client
+   * with a client-metrics sink can coexist with clients that export to Cloud Monitoring in the same
+   * JVM.
+   */
+  private ApiTracerFactory createCustomMetricsTracerFactory() {
+    OpenTelemetry customOpenTelemetry =
+        ((CustomOpenTelemetryMetricsProvider) resolvedMetricsProvider).getOpenTelemetry();
+    // The Cloud Monitoring exporter adds client_name/client_uid at export time; on the custom
+    // path they must be recorded as metric attributes instead.
+    Map<String, String> clientAttributes = this.builtInMetricsProvider.createClientAttributes();
+    return new BuiltInMetricsTracerFactory(
+        new BuiltInMetricsRecorder(
+            customOpenTelemetry, BuiltInMetricsConstant.CUSTOM_EXPORT_METER_NAME),
+        clientAttributes,
+        createTraceWrapper());
+  }
+
+  /**
+   * Records built-in metrics on the process-wide Cloud Monitoring OpenTelemetry with the reserved
+   * {@code spanner.googleapis.com} namespace. Returns {@code null} when the Cloud Monitoring
+   * OpenTelemetry could not be created.
+   */
+  private ApiTracerFactory createCloudMonitoringMetricsTracerFactory() {
     OpenTelemetry openTelemetry =
         this.builtInMetricsProvider.getOrCreateOpenTelemetry(
             this.getProjectId(), getCredentials(), this.monitoringHost, getUniverseDomain());
@@ -2505,15 +2975,19 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         ? new BuiltInMetricsTracerFactory(
             new BuiltInMetricsRecorder(openTelemetry, BuiltInMetricsConstant.METER_NAME),
             new HashMap<>(),
-            new TraceWrapper(
-                Tracing.getTracer(),
-                // Using the OpenTelemetry object set in Spanner Options, will be NoOp if not set
-                this.getOpenTelemetry()
-                    .getTracer(
-                        MetricRegistryConstants.INSTRUMENTATION_SCOPE,
-                        GaxProperties.getLibraryVersion(getClass())),
-                true))
+            createTraceWrapper())
         : null;
+  }
+
+  private TraceWrapper createTraceWrapper() {
+    return new TraceWrapper(
+        Tracing.getTracer(),
+        // Using the OpenTelemetry object set in Spanner Options, will be NoOp if not set
+        this.getOpenTelemetry()
+            .getTracer(
+                MetricRegistryConstants.INSTRUMENTATION_SCOPE,
+                GaxProperties.getLibraryVersion(getClass())),
+        true);
   }
 
   /**
@@ -2526,11 +3000,33 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   }
 
   /**
-   * Returns true if an {@link com.google.api.gax.tracing.MetricsTracer} should be created and set
-   * on the Spanner client.
+   * Returns true if built-in metrics are exported to the default Cloud Monitoring (GCM)
+   * destination. Always false for {@link InstanceType#OMNI} clients, where the GCM sink is
+   * unavailable. This flag does not affect a caller-owned client-metrics destination configured
+   * with {@link Builder#setClientMetricsProvider(MetricsProvider)}.
    */
   public boolean isEnableBuiltInMetrics() {
     return enableBuiltInMetrics;
+  }
+
+  /**
+   * Returns the effective {@link MetricsProvider} used for client metrics. This is the provider set
+   * with {@link Builder#setClientMetricsProvider(MetricsProvider)} after applying instance type
+   * rules: {@link NoopMetricsProvider} is returned when the {@link DefaultMetricsProvider} is used
+   * with an {@link InstanceType#OMNI} client. A {@link CustomOpenTelemetryMetricsProvider} records
+   * the same client instruments to an independent caller-owned OpenTelemetry destination on all
+   * instance types, including Omni, and is not affected by {@link
+   * Builder#setBuiltInMetricsEnabled(boolean)} or the {@code SPANNER_DISABLE_BUILTIN_METRICS}
+   * environment variable. {@link #toBuilder()} preserves the provider as originally set, so
+   * rebuilding the options re-applies these rules against the new configuration.
+   */
+  public MetricsProvider getClientMetricsProvider() {
+    return resolvedMetricsProvider;
+  }
+
+  /** Returns true if client metrics are recorded on a caller-provided OpenTelemetry. */
+  private boolean usesCustomMetricsProvider() {
+    return resolvedMetricsProvider instanceof CustomOpenTelemetryMetricsProvider;
   }
 
   @InternalApi
@@ -2545,6 +3041,18 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   public TransactionOptions getDefaultTransactionOptions() {
     return defaultTransactionOptions;
+  }
+
+  public boolean isAutoTaggingEnabled() {
+    return autoTaggingEnabled;
+  }
+
+  public List<String> getAutoTaggingPackages() {
+    return autoTaggingPackages;
+  }
+
+  public int getAutoTaggingTracerLimit() {
+    return autoTaggingTracerLimit;
   }
 
   @BetaApi
@@ -2673,5 +3181,25 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
     return String.format(
         "%s:%s", url.getHost(), url.getPort() < 0 ? url.getDefaultPort() : url.getPort());
+  }
+
+  @InternalApi
+  public boolean isEmulatorEnabled() {
+    if (getChannelProvider() != null || emulatorHost == null || getHost() == null) {
+      return false;
+    }
+    // The builder prepends a scheme to the host when the emulator is configured, while the
+    // emulator host may have been set without one, so compare the two without their schemes.
+    return stripScheme(getHost()).equals(stripScheme(emulatorHost));
+  }
+
+  private static String stripScheme(String host) {
+    if (host.startsWith("http://")) {
+      return host.substring("http://".length());
+    }
+    if (host.startsWith("https://")) {
+      return host.substring("https://".length());
+    }
+    return host;
   }
 }

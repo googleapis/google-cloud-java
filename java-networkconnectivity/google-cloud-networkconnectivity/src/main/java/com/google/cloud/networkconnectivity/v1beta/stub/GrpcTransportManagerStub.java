@@ -44,6 +44,8 @@ import com.google.cloud.networkconnectivity.v1beta.ListRemoteTransportProfilesRe
 import com.google.cloud.networkconnectivity.v1beta.ListTransportsRequest;
 import com.google.cloud.networkconnectivity.v1beta.ListTransportsResponse;
 import com.google.cloud.networkconnectivity.v1beta.OperationMetadata;
+import com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyRequest;
+import com.google.cloud.networkconnectivity.v1beta.ParseFromActivationKeyResponse;
 import com.google.cloud.networkconnectivity.v1beta.RemoteTransportProfile;
 import com.google.cloud.networkconnectivity.v1beta.Transport;
 import com.google.cloud.networkconnectivity.v1beta.UpdateTransportRequest;
@@ -60,6 +62,7 @@ import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -67,6 +70,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcTransportManagerStub extends TransportManagerStub {
@@ -95,6 +99,21 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
                   ProtoUtils.marshaller(GetRemoteTransportProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RemoteTransportProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+      parseFromActivationKeyMethodDescriptor =
+          MethodDescriptor
+              .<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkconnectivity.v1beta.TransportManager/ParseFromActivationKey")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ParseFromActivationKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ParseFromActivationKeyResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -228,6 +247,8 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
       listRemoteTransportProfilesPagedCallable;
   private final UnaryCallable<GetRemoteTransportProfileRequest, RemoteTransportProfile>
       getRemoteTransportProfileCallable;
+  private final UnaryCallable<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+      parseFromActivationKeyCallable;
   private final UnaryCallable<ListTransportsRequest, ListTransportsResponse> listTransportsCallable;
   private final UnaryCallable<ListTransportsRequest, ListTransportsPagedResponse>
       listTransportsPagedCallable;
@@ -320,6 +341,19 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
                       return builder.build();
                     })
                 .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+        parseFromActivationKeyTransportSettings =
+            GrpcCallSettings
+                .<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>newBuilder()
+                .setMethodDescriptor(parseFromActivationKeyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListTransportsRequest, ListTransportsResponse>
         listTransportsTransportSettings =
@@ -457,6 +491,11 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
             getRemoteTransportProfileTransportSettings,
             settings.getRemoteTransportProfileSettings(),
             clientContext);
+    this.parseFromActivationKeyCallable =
+        callableFactory.createUnaryCallable(
+            parseFromActivationKeyTransportSettings,
+            settings.parseFromActivationKeySettings(),
+            clientContext);
     this.listTransportsCallable =
         callableFactory.createUnaryCallable(
             listTransportsTransportSettings, settings.listTransportsSettings(), clientContext);
@@ -541,6 +580,12 @@ public class GrpcTransportManagerStub extends TransportManagerStub {
   public UnaryCallable<GetRemoteTransportProfileRequest, RemoteTransportProfile>
       getRemoteTransportProfileCallable() {
     return getRemoteTransportProfileCallable;
+  }
+
+  @Override
+  public UnaryCallable<ParseFromActivationKeyRequest, ParseFromActivationKeyResponse>
+      parseFromActivationKeyCallable() {
+    return parseFromActivationKeyCallable;
   }
 
   @Override

@@ -105,6 +105,29 @@ public class MockIngestionServiceImpl extends IngestionServiceImplBase {
   }
 
   @Override
+  public void removeAllAudienceMembers(
+      RemoveAllAudienceMembersRequest request,
+      StreamObserver<RemoveAllAudienceMembersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RemoveAllAudienceMembersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RemoveAllAudienceMembersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveAllAudienceMembers, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RemoveAllAudienceMembersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void ingestEvents(
       IngestEventsRequest request, StreamObserver<IngestEventsResponse> responseObserver) {
     Object response = responses.poll();
@@ -121,6 +144,27 @@ public class MockIngestionServiceImpl extends IngestionServiceImplBase {
                   "Unrecognized response type %s for method IngestEvents, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   IngestEventsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void ingestAdEvents(
+      IngestAdEventsRequest request, StreamObserver<IngestAdEventsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof IngestAdEventsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((IngestAdEventsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method IngestAdEvents, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  IngestAdEventsResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

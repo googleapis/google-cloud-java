@@ -39,21 +39,24 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Represents a temporary OAuth2 access token and its expiration information. */
+@NullMarked
 public class AccessToken implements Serializable {
 
   private static final long serialVersionUID = -8514239465808977353L;
 
   private final String tokenValue;
-  private final Long expirationTimeMillis;
+  private final @Nullable Long expirationTimeMillis;
   private final List<String> scopes;
 
   /**
    * @param tokenValue String representation of the access token.
    * @param expirationTime Time when access token will expire.
    */
-  public AccessToken(String tokenValue, Date expirationTime) {
+  public AccessToken(String tokenValue, @Nullable Date expirationTime) {
     this.tokenValue = tokenValue;
     this.expirationTimeMillis = (expirationTime == null) ? null : expirationTime.getTime();
     this.scopes = new ArrayList<>();
@@ -98,14 +101,14 @@ public class AccessToken implements Serializable {
    *
    * @return The expiration time as a {@link Date}.
    */
-  public Date getExpirationTime() {
+  public @Nullable Date getExpirationTime() {
     if (expirationTimeMillis == null) {
       return null;
     }
     return new Date(expirationTimeMillis);
   }
 
-  Long getExpirationTimeMillis() {
+  @Nullable Long getExpirationTimeMillis() {
     return expirationTimeMillis;
   }
 
@@ -131,7 +134,7 @@ public class AccessToken implements Serializable {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof AccessToken)) {
       return false;
     }
@@ -142,8 +145,8 @@ public class AccessToken implements Serializable {
   }
 
   public static class Builder {
-    private String tokenValue;
-    private Date expirationTime;
+    private @Nullable String tokenValue;
+    private @Nullable Date expirationTime;
     private List<String> scopes = new ArrayList<>();
 
     protected Builder() {}
@@ -154,7 +157,7 @@ public class AccessToken implements Serializable {
       this.scopes = accessToken.getScopes();
     }
 
-    public String getTokenValue() {
+    public @Nullable String getTokenValue() {
       return this.tokenValue;
     }
 
@@ -162,18 +165,18 @@ public class AccessToken implements Serializable {
       return this.scopes;
     }
 
-    public Date getExpirationTime() {
+    public @Nullable Date getExpirationTime() {
       return this.expirationTime;
     }
 
     @CanIgnoreReturnValue
-    public Builder setTokenValue(String tokenValue) {
+    public Builder setTokenValue(@Nullable String tokenValue) {
       this.tokenValue = tokenValue;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setScopes(String scopes) {
+    public Builder setScopes(@Nullable String scopes) {
       if (scopes != null && scopes.trim().length() > 0) {
         this.scopes = Arrays.asList(scopes.split(" "));
       }
@@ -181,7 +184,7 @@ public class AccessToken implements Serializable {
     }
 
     @CanIgnoreReturnValue
-    public Builder setScopes(List<String> scopes) {
+    public Builder setScopes(@Nullable List<String> scopes) {
       if (scopes == null) {
         this.scopes = new ArrayList<>();
       } else {
@@ -192,7 +195,7 @@ public class AccessToken implements Serializable {
     }
 
     @CanIgnoreReturnValue
-    public Builder setExpirationTime(Date expirationTime) {
+    public Builder setExpirationTime(@Nullable Date expirationTime) {
       this.expirationTime = expirationTime;
       return this;
     }

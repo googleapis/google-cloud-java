@@ -371,6 +371,7 @@ public class EnhancedBigtableStubTest {
   }
 
   @Test
+  @SuppressWarnings("NullArgumentForNonNullParameter")
   public void testMutateRowRequestResponseConversion()
       throws ExecutionException, InterruptedException {
     RowMutation req = RowMutation.create(TableId.of("my-table"), "my-key").deleteRow();
@@ -385,10 +386,11 @@ public class EnhancedBigtableStubTest {
     MutateRowRequest protoReq = fakeDataService.mutateRowRequests.poll(1, TimeUnit.SECONDS);
     assertThat(protoReq)
         .isEqualTo(req.toProto(RequestContext.create(PROJECT_ID, INSTANCE_ID, APP_PROFILE_ID)));
-    assertThat(f.get()).isEqualTo(null);
+    assertThat(f.get()).isNull();
   }
 
   @Test
+  @SuppressWarnings("NullArgumentForNonNullParameter")
   public void testMutateRowRequestParams() throws ExecutionException, InterruptedException {
     RowMutation req = RowMutation.create(TABLE_ID, "my-key").deleteRow();
 
@@ -407,7 +409,7 @@ public class EnhancedBigtableStubTest {
     // StatsHeadersUnaryCallable
     assertThat(reqMetadata.keys()).contains("bigtable-client-attempt-epoch-usec");
 
-    assertThat(f.get()).isEqualTo(null);
+    assertThat(f.get()).isNull();
   }
 
   @Test

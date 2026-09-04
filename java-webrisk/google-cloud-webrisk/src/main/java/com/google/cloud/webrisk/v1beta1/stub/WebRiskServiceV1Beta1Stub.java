@@ -26,6 +26,7 @@ import com.google.webrisk.v1beta1.SearchHashesResponse;
 import com.google.webrisk.v1beta1.SearchUrisRequest;
 import com.google.webrisk.v1beta1.SearchUrisResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -33,6 +34,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class WebRiskServiceV1Beta1Stub implements BackgroundResource {

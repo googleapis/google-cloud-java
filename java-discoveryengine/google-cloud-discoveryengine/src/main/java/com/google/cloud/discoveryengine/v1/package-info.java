@@ -44,6 +44,7 @@
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
  *                   .toString())
  *           .setUserMetadata(AssistUserMetadata.newBuilder().build())
+ *           .setAgentsSpec(StreamAssistRequest.AgentsSpec.newBuilder().build())
  *           .setToolsSpec(StreamAssistRequest.ToolsSpec.newBuilder().build())
  *           .setGenerationSpec(StreamAssistRequest.GenerationSpec.newBuilder().build())
  *           .build();
@@ -413,6 +414,7 @@
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
  *                   .toString())
  *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+ *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
  *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {

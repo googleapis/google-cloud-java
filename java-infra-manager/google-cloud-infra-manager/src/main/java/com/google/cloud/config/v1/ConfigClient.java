@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -815,8 +817,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -941,9 +942,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ConfigClient implements BackgroundResource {
-  private final ConfigSettings settings;
+  private final @Nullable ConfigSettings settings;
   private final ConfigStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -989,7 +991,7 @@ public class ConfigClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ConfigSettings getSettings() {
+  public final @Nullable ConfigSettings getSettings() {
     return settings;
   }
 
@@ -1038,7 +1040,7 @@ public class ConfigClient implements BackgroundResource {
    *     value is in the format: 'projects/{project_id}/locations/{location}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeploymentsPagedResponse listDeployments(LocationName parent) {
+  public final ListDeploymentsPagedResponse listDeployments(@Nullable LocationName parent) {
     ListDeploymentsRequest request =
         ListDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1207,7 +1209,7 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/deployments/{deployment}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Deployment getDeployment(DeploymentName name) {
+  public final Deployment getDeployment(@Nullable DeploymentName name) {
     GetDeploymentRequest request =
         GetDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDeployment(request);
@@ -1324,7 +1326,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Deployment, OperationMetadata> createDeploymentAsync(
-      LocationName parent, Deployment deployment, String deploymentId) {
+      @Nullable LocationName parent, Deployment deployment, String deploymentId) {
     CreateDeploymentRequest request =
         CreateDeploymentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1620,7 +1622,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Deployment, OperationMetadata> deleteDeploymentAsync(
-      DeploymentName name) {
+      @Nullable DeploymentName name) {
     DeleteDeploymentRequest request =
         DeleteDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDeploymentAsync(request);
@@ -1768,7 +1770,7 @@ public class ConfigClient implements BackgroundResource {
    *     is in the format: 'projects/{project_id}/locations/{location}/deployments/{deployment}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRevisionsPagedResponse listRevisions(DeploymentName parent) {
+  public final ListRevisionsPagedResponse listRevisions(@Nullable DeploymentName parent) {
     ListRevisionsRequest request =
         ListRevisionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1935,7 +1937,7 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/deployments/{deployment}/revisions/{revision}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Revision getRevision(RevisionName name) {
+  public final Revision getRevision(@Nullable RevisionName name) {
     GetRevisionRequest request =
         GetRevisionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRevision(request);
@@ -2051,7 +2053,7 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/deployments/{deployment}/revisions/{revision}/resource/{resource}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Resource getResource(ResourceName name) {
+  public final Resource getResource(@Nullable ResourceName name) {
     GetResourceRequest request =
         GetResourceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getResource(request);
@@ -2173,7 +2175,7 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/deployments/{deployment}/revisions/{revision}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListResourcesPagedResponse listResources(RevisionName parent) {
+  public final ListResourcesPagedResponse listResources(@Nullable RevisionName parent) {
     ListResourcesRequest request =
         ListResourcesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2472,7 +2474,7 @@ public class ConfigClient implements BackgroundResource {
    *     state file previously locked the Deployment.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Statefile importStatefile(DeploymentName parent, long lockId) {
+  public final Statefile importStatefile(@Nullable DeploymentName parent, long lockId) {
     ImportStatefileRequest request =
         ImportStatefileRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2596,7 +2598,7 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/deployments/{deployment}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteStatefile(DeploymentName name) {
+  public final void deleteStatefile(@Nullable DeploymentName name) {
     DeleteStatefileRequest request =
         DeleteStatefileRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteStatefile(request);
@@ -2709,7 +2711,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Deployment, OperationMetadata> lockDeploymentAsync(
-      DeploymentName name) {
+      @Nullable DeploymentName name) {
     LockDeploymentRequest request =
         LockDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return lockDeploymentAsync(request);
@@ -2852,7 +2854,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Deployment, OperationMetadata> unlockDeploymentAsync(
-      DeploymentName name, long lockId) {
+      @Nullable DeploymentName name, long lockId) {
     UnlockDeploymentRequest request =
         UnlockDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3002,7 +3004,7 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/deployments/{deployment}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LockInfo exportLockInfo(DeploymentName name) {
+  public final LockInfo exportLockInfo(@Nullable DeploymentName name) {
     ExportLockInfoRequest request =
         ExportLockInfoRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return exportLockInfo(request);
@@ -3115,7 +3117,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Preview, OperationMetadata> createPreviewAsync(
-      LocationName parent, Preview preview) {
+      @Nullable LocationName parent, Preview preview) {
     CreatePreviewRequest request =
         CreatePreviewRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3271,7 +3273,7 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/previews/{preview}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Preview getPreview(PreviewName name) {
+  public final Preview getPreview(@Nullable PreviewName name) {
     GetPreviewRequest request =
         GetPreviewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPreview(request);
@@ -3383,7 +3385,7 @@ public class ConfigClient implements BackgroundResource {
    *     is in the format: 'projects/{project_id}/locations/{location}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPreviewsPagedResponse listPreviews(LocationName parent) {
+  public final ListPreviewsPagedResponse listPreviews(@Nullable LocationName parent) {
     ListPreviewsRequest request =
         ListPreviewsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3550,7 +3552,8 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/previews/{preview}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Preview, OperationMetadata> deletePreviewAsync(PreviewName name) {
+  public final OperationFuture<Preview, OperationMetadata> deletePreviewAsync(
+      @Nullable PreviewName name) {
     DeletePreviewRequest request =
         DeletePreviewRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deletePreviewAsync(request);
@@ -3753,7 +3756,8 @@ public class ConfigClient implements BackgroundResource {
    *     parent value is in the format: 'projects/{project_id}/locations/{location}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTerraformVersionsPagedResponse listTerraformVersions(LocationName parent) {
+  public final ListTerraformVersionsPagedResponse listTerraformVersions(
+      @Nullable LocationName parent) {
     ListTerraformVersionsRequest request =
         ListTerraformVersionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3930,7 +3934,7 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/terraformVersions/{terraform_version}'
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TerraformVersion getTerraformVersion(TerraformVersionName name) {
+  public final TerraformVersion getTerraformVersion(@Nullable TerraformVersionName name) {
     GetTerraformVersionRequest request =
         GetTerraformVersionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4052,7 +4056,7 @@ public class ConfigClient implements BackgroundResource {
    *     value is in the format: 'projects/{project_id}/locations/{location}/previews/{preview}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListResourceChangesPagedResponse listResourceChanges(PreviewName parent) {
+  public final ListResourceChangesPagedResponse listResourceChanges(@Nullable PreviewName parent) {
     ListResourceChangesRequest request =
         ListResourceChangesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4225,7 +4229,7 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/previews/{preview}/resourceChanges/{resource_change}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ResourceChange getResourceChange(ResourceChangeName name) {
+  public final ResourceChange getResourceChange(@Nullable ResourceChangeName name) {
     GetResourceChangeRequest request =
         GetResourceChangeRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4346,7 +4350,7 @@ public class ConfigClient implements BackgroundResource {
    *     value is in the format: 'projects/{project_id}/locations/{location}/previews/{preview}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListResourceDriftsPagedResponse listResourceDrifts(PreviewName parent) {
+  public final ListResourceDriftsPagedResponse listResourceDrifts(@Nullable PreviewName parent) {
     ListResourceDriftsRequest request =
         ListResourceDriftsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4519,7 +4523,7 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/previews/{preview}/resourceDrifts/{resource_drift}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ResourceDrift getResourceDrift(ResourceDriftName name) {
+  public final ResourceDrift getResourceDrift(@Nullable ResourceDriftName name) {
     GetResourceDriftRequest request =
         GetResourceDriftRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getResourceDrift(request);
@@ -4635,7 +4639,7 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/AutoMigrationConfig'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AutoMigrationConfig getAutoMigrationConfig(AutoMigrationConfigName name) {
+  public final AutoMigrationConfig getAutoMigrationConfig(@Nullable AutoMigrationConfigName name) {
     GetAutoMigrationConfigRequest request =
         GetAutoMigrationConfigRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4878,7 +4882,7 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}/deploymentGroups/{deployment_group}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DeploymentGroup getDeploymentGroup(DeploymentGroupName name) {
+  public final DeploymentGroup getDeploymentGroup(@Nullable DeploymentGroupName name) {
     GetDeploymentGroupRequest request =
         GetDeploymentGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5005,7 +5009,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeploymentGroup, OperationMetadata> createDeploymentGroupAsync(
-      LocationName parent, DeploymentGroup deploymentGroup, String deploymentGroupId) {
+      @Nullable LocationName parent, DeploymentGroup deploymentGroup, String deploymentGroupId) {
     CreateDeploymentGroupRequest request =
         CreateDeploymentGroupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5311,7 +5315,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeploymentGroup, OperationMetadata> deleteDeploymentGroupAsync(
-      DeploymentGroupName name) {
+      @Nullable DeploymentGroupName name) {
     DeleteDeploymentGroupRequest request =
         DeleteDeploymentGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5472,7 +5476,8 @@ public class ConfigClient implements BackgroundResource {
    *     'projects/{project_id}/locations/{location}'.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeploymentGroupsPagedResponse listDeploymentGroups(LocationName parent) {
+  public final ListDeploymentGroupsPagedResponse listDeploymentGroups(
+      @Nullable LocationName parent) {
     ListDeploymentGroupsRequest request =
         ListDeploymentGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5657,7 +5662,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeploymentGroup, OperationMetadata> provisionDeploymentGroupAsync(
-      DeploymentGroupName name) {
+      @Nullable DeploymentGroupName name) {
     ProvisionDeploymentGroupRequest request =
         ProvisionDeploymentGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5871,7 +5876,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DeploymentGroup, OperationMetadata> deprovisionDeploymentGroupAsync(
-      DeploymentGroupName name) {
+      @Nullable DeploymentGroupName name) {
     DeprovisionDeploymentGroupRequest request =
         DeprovisionDeploymentGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6075,7 +6080,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DeploymentGroupRevision getDeploymentGroupRevision(
-      DeploymentGroupRevisionName name) {
+      @Nullable DeploymentGroupRevisionName name) {
     GetDeploymentGroupRevisionRequest request =
         GetDeploymentGroupRevisionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6206,7 +6211,7 @@ public class ConfigClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDeploymentGroupRevisionsPagedResponse listDeploymentGroupRevisions(
-      DeploymentGroupName parent) {
+      @Nullable DeploymentGroupName parent) {
     ListDeploymentGroupRevisionsRequest request =
         ListDeploymentGroupRevisionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6371,9 +6376,8 @@ public class ConfigClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -6417,9 +6421,8 @@ public class ConfigClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -6463,9 +6466,8 @@ public class ConfigClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -6809,8 +6811,8 @@ public class ConfigClient implements BackgroundResource {
           ListDeploymentsRequest, ListDeploymentsResponse, Deployment, ListDeploymentsPage> {
 
     private ListDeploymentsPage(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
-        ListDeploymentsResponse response) {
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable ListDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -6820,14 +6822,14 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentsPage createPage(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
-        ListDeploymentsResponse response) {
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable ListDeploymentsResponse response) {
       return new ListDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeploymentsPage> createPageAsync(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
         ApiFuture<ListDeploymentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6842,7 +6844,7 @@ public class ConfigClient implements BackgroundResource {
           ListDeploymentsFixedSizeCollection> {
 
     private ListDeploymentsFixedSizeCollection(
-        List<ListDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6852,7 +6854,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentsFixedSizeCollection createCollection(
-        List<ListDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentsPage> pages, int collectionSize) {
       return new ListDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6886,8 +6888,8 @@ public class ConfigClient implements BackgroundResource {
           ListRevisionsRequest, ListRevisionsResponse, Revision, ListRevisionsPage> {
 
     private ListRevisionsPage(
-        PageContext<ListRevisionsRequest, ListRevisionsResponse, Revision> context,
-        ListRevisionsResponse response) {
+        @Nullable PageContext<ListRevisionsRequest, ListRevisionsResponse, Revision> context,
+        @Nullable ListRevisionsResponse response) {
       super(context, response);
     }
 
@@ -6897,14 +6899,14 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListRevisionsPage createPage(
-        PageContext<ListRevisionsRequest, ListRevisionsResponse, Revision> context,
-        ListRevisionsResponse response) {
+        @Nullable PageContext<ListRevisionsRequest, ListRevisionsResponse, Revision> context,
+        @Nullable ListRevisionsResponse response) {
       return new ListRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRevisionsPage> createPageAsync(
-        PageContext<ListRevisionsRequest, ListRevisionsResponse, Revision> context,
+        @Nullable PageContext<ListRevisionsRequest, ListRevisionsResponse, Revision> context,
         ApiFuture<ListRevisionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6918,7 +6920,8 @@ public class ConfigClient implements BackgroundResource {
           ListRevisionsPage,
           ListRevisionsFixedSizeCollection> {
 
-    private ListRevisionsFixedSizeCollection(List<ListRevisionsPage> pages, int collectionSize) {
+    private ListRevisionsFixedSizeCollection(
+        @Nullable List<ListRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6928,7 +6931,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListRevisionsFixedSizeCollection createCollection(
-        List<ListRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListRevisionsPage> pages, int collectionSize) {
       return new ListRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6962,8 +6965,8 @@ public class ConfigClient implements BackgroundResource {
           ListResourcesRequest, ListResourcesResponse, Resource, ListResourcesPage> {
 
     private ListResourcesPage(
-        PageContext<ListResourcesRequest, ListResourcesResponse, Resource> context,
-        ListResourcesResponse response) {
+        @Nullable PageContext<ListResourcesRequest, ListResourcesResponse, Resource> context,
+        @Nullable ListResourcesResponse response) {
       super(context, response);
     }
 
@@ -6973,14 +6976,14 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListResourcesPage createPage(
-        PageContext<ListResourcesRequest, ListResourcesResponse, Resource> context,
-        ListResourcesResponse response) {
+        @Nullable PageContext<ListResourcesRequest, ListResourcesResponse, Resource> context,
+        @Nullable ListResourcesResponse response) {
       return new ListResourcesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListResourcesPage> createPageAsync(
-        PageContext<ListResourcesRequest, ListResourcesResponse, Resource> context,
+        @Nullable PageContext<ListResourcesRequest, ListResourcesResponse, Resource> context,
         ApiFuture<ListResourcesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6994,7 +6997,8 @@ public class ConfigClient implements BackgroundResource {
           ListResourcesPage,
           ListResourcesFixedSizeCollection> {
 
-    private ListResourcesFixedSizeCollection(List<ListResourcesPage> pages, int collectionSize) {
+    private ListResourcesFixedSizeCollection(
+        @Nullable List<ListResourcesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7004,7 +7008,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListResourcesFixedSizeCollection createCollection(
-        List<ListResourcesPage> pages, int collectionSize) {
+        @Nullable List<ListResourcesPage> pages, int collectionSize) {
       return new ListResourcesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7037,8 +7041,8 @@ public class ConfigClient implements BackgroundResource {
       extends AbstractPage<ListPreviewsRequest, ListPreviewsResponse, Preview, ListPreviewsPage> {
 
     private ListPreviewsPage(
-        PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> context,
-        ListPreviewsResponse response) {
+        @Nullable PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> context,
+        @Nullable ListPreviewsResponse response) {
       super(context, response);
     }
 
@@ -7048,14 +7052,14 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListPreviewsPage createPage(
-        PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> context,
-        ListPreviewsResponse response) {
+        @Nullable PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> context,
+        @Nullable ListPreviewsResponse response) {
       return new ListPreviewsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPreviewsPage> createPageAsync(
-        PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> context,
+        @Nullable PageContext<ListPreviewsRequest, ListPreviewsResponse, Preview> context,
         ApiFuture<ListPreviewsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7069,7 +7073,8 @@ public class ConfigClient implements BackgroundResource {
           ListPreviewsPage,
           ListPreviewsFixedSizeCollection> {
 
-    private ListPreviewsFixedSizeCollection(List<ListPreviewsPage> pages, int collectionSize) {
+    private ListPreviewsFixedSizeCollection(
+        @Nullable List<ListPreviewsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7079,7 +7084,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListPreviewsFixedSizeCollection createCollection(
-        List<ListPreviewsPage> pages, int collectionSize) {
+        @Nullable List<ListPreviewsPage> pages, int collectionSize) {
       return new ListPreviewsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7117,9 +7122,11 @@ public class ConfigClient implements BackgroundResource {
           ListTerraformVersionsPage> {
 
     private ListTerraformVersionsPage(
-        PageContext<ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
+        @Nullable
+            PageContext<
+                ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
             context,
-        ListTerraformVersionsResponse response) {
+        @Nullable ListTerraformVersionsResponse response) {
       super(context, response);
     }
 
@@ -7129,15 +7136,19 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListTerraformVersionsPage createPage(
-        PageContext<ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
+        @Nullable
+            PageContext<
+                ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
             context,
-        ListTerraformVersionsResponse response) {
+        @Nullable ListTerraformVersionsResponse response) {
       return new ListTerraformVersionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTerraformVersionsPage> createPageAsync(
-        PageContext<ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
+        @Nullable
+            PageContext<
+                ListTerraformVersionsRequest, ListTerraformVersionsResponse, TerraformVersion>
             context,
         ApiFuture<ListTerraformVersionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7153,7 +7164,7 @@ public class ConfigClient implements BackgroundResource {
           ListTerraformVersionsFixedSizeCollection> {
 
     private ListTerraformVersionsFixedSizeCollection(
-        List<ListTerraformVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListTerraformVersionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7163,7 +7174,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListTerraformVersionsFixedSizeCollection createCollection(
-        List<ListTerraformVersionsPage> pages, int collectionSize) {
+        @Nullable List<ListTerraformVersionsPage> pages, int collectionSize) {
       return new ListTerraformVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7201,9 +7212,10 @@ public class ConfigClient implements BackgroundResource {
           ListResourceChangesPage> {
 
     private ListResourceChangesPage(
-        PageContext<ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>
+        @Nullable
+            PageContext<ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>
             context,
-        ListResourceChangesResponse response) {
+        @Nullable ListResourceChangesResponse response) {
       super(context, response);
     }
 
@@ -7213,15 +7225,17 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListResourceChangesPage createPage(
-        PageContext<ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>
+        @Nullable
+            PageContext<ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>
             context,
-        ListResourceChangesResponse response) {
+        @Nullable ListResourceChangesResponse response) {
       return new ListResourceChangesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListResourceChangesPage> createPageAsync(
-        PageContext<ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>
+        @Nullable
+            PageContext<ListResourceChangesRequest, ListResourceChangesResponse, ResourceChange>
             context,
         ApiFuture<ListResourceChangesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7237,7 +7251,7 @@ public class ConfigClient implements BackgroundResource {
           ListResourceChangesFixedSizeCollection> {
 
     private ListResourceChangesFixedSizeCollection(
-        List<ListResourceChangesPage> pages, int collectionSize) {
+        @Nullable List<ListResourceChangesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7247,7 +7261,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListResourceChangesFixedSizeCollection createCollection(
-        List<ListResourceChangesPage> pages, int collectionSize) {
+        @Nullable List<ListResourceChangesPage> pages, int collectionSize) {
       return new ListResourceChangesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7284,8 +7298,9 @@ public class ConfigClient implements BackgroundResource {
           ListResourceDriftsPage> {
 
     private ListResourceDriftsPage(
-        PageContext<ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift> context,
-        ListResourceDriftsResponse response) {
+        @Nullable PageContext<ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift>
+            context,
+        @Nullable ListResourceDriftsResponse response) {
       super(context, response);
     }
 
@@ -7295,14 +7310,16 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListResourceDriftsPage createPage(
-        PageContext<ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift> context,
-        ListResourceDriftsResponse response) {
+        @Nullable PageContext<ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift>
+            context,
+        @Nullable ListResourceDriftsResponse response) {
       return new ListResourceDriftsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListResourceDriftsPage> createPageAsync(
-        PageContext<ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift> context,
+        @Nullable PageContext<ListResourceDriftsRequest, ListResourceDriftsResponse, ResourceDrift>
+            context,
         ApiFuture<ListResourceDriftsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7317,7 +7334,7 @@ public class ConfigClient implements BackgroundResource {
           ListResourceDriftsFixedSizeCollection> {
 
     private ListResourceDriftsFixedSizeCollection(
-        List<ListResourceDriftsPage> pages, int collectionSize) {
+        @Nullable List<ListResourceDriftsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7327,7 +7344,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListResourceDriftsFixedSizeCollection createCollection(
-        List<ListResourceDriftsPage> pages, int collectionSize) {
+        @Nullable List<ListResourceDriftsPage> pages, int collectionSize) {
       return new ListResourceDriftsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7365,9 +7382,10 @@ public class ConfigClient implements BackgroundResource {
           ListDeploymentGroupsPage> {
 
     private ListDeploymentGroupsPage(
-        PageContext<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>
+        @Nullable
+            PageContext<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>
             context,
-        ListDeploymentGroupsResponse response) {
+        @Nullable ListDeploymentGroupsResponse response) {
       super(context, response);
     }
 
@@ -7377,15 +7395,17 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentGroupsPage createPage(
-        PageContext<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>
+        @Nullable
+            PageContext<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>
             context,
-        ListDeploymentGroupsResponse response) {
+        @Nullable ListDeploymentGroupsResponse response) {
       return new ListDeploymentGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeploymentGroupsPage> createPageAsync(
-        PageContext<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>
+        @Nullable
+            PageContext<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>
             context,
         ApiFuture<ListDeploymentGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7401,7 +7421,7 @@ public class ConfigClient implements BackgroundResource {
           ListDeploymentGroupsFixedSizeCollection> {
 
     private ListDeploymentGroupsFixedSizeCollection(
-        List<ListDeploymentGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7411,7 +7431,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentGroupsFixedSizeCollection createCollection(
-        List<ListDeploymentGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentGroupsPage> pages, int collectionSize) {
       return new ListDeploymentGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7453,12 +7473,13 @@ public class ConfigClient implements BackgroundResource {
           ListDeploymentGroupRevisionsPage> {
 
     private ListDeploymentGroupRevisionsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDeploymentGroupRevisionsRequest,
                 ListDeploymentGroupRevisionsResponse,
                 DeploymentGroupRevision>
             context,
-        ListDeploymentGroupRevisionsResponse response) {
+        @Nullable ListDeploymentGroupRevisionsResponse response) {
       super(context, response);
     }
 
@@ -7468,18 +7489,20 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentGroupRevisionsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDeploymentGroupRevisionsRequest,
                 ListDeploymentGroupRevisionsResponse,
                 DeploymentGroupRevision>
             context,
-        ListDeploymentGroupRevisionsResponse response) {
+        @Nullable ListDeploymentGroupRevisionsResponse response) {
       return new ListDeploymentGroupRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeploymentGroupRevisionsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListDeploymentGroupRevisionsRequest,
                 ListDeploymentGroupRevisionsResponse,
                 DeploymentGroupRevision>
@@ -7498,7 +7521,7 @@ public class ConfigClient implements BackgroundResource {
           ListDeploymentGroupRevisionsFixedSizeCollection> {
 
     private ListDeploymentGroupRevisionsFixedSizeCollection(
-        List<ListDeploymentGroupRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentGroupRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7508,7 +7531,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentGroupRevisionsFixedSizeCollection createCollection(
-        List<ListDeploymentGroupRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentGroupRevisionsPage> pages, int collectionSize) {
       return new ListDeploymentGroupRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7542,8 +7565,8 @@ public class ConfigClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -7553,14 +7576,14 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7574,7 +7597,8 @@ public class ConfigClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7584,7 +7608,7 @@ public class ConfigClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

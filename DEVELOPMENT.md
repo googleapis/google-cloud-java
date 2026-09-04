@@ -1,6 +1,6 @@
 # Monorepo Scoped Development Guide
 
-This document outlines development workflows and build strategies when working with specific client libraries or modules in the `google-cloud-java` monorepo.
+This document outlines development workflows, build strategies, and code generation processes when working with or managing client libraries in the `google-cloud-java` monorepo.
 
 ---
 
@@ -51,3 +51,39 @@ mvn compile
 ```
 
 Your IDE such as Intellij should also be able to import all the upstream dependencies at this moment. You can perform the same operations as you would in a normal project such as running unit tests, debugging and so on. 
+
+---
+
+## 3. Code Generation (Librarian)
+
+This repository uses **[Librarian](https://github.com/googleapis/librarian)** to generate code from API specifications.
+
+The configuration for Librarian in this repository is defined in the [librarian.yaml](librarian.yaml) file at the root.
+
+### Documentation & Guides
+
+For more information on how to use Librarian, configure generation, or troubleshoot issues, refer to the following guides:
+
+*   **[Librarian GitHub Repository](https://github.com/googleapis/librarian)**: The main repository for the Librarian tool.
+*   **[Librarian Command Reference](https://pkg.go.dev/github.com/googleapis/librarian/cmd/librarian)**: Detailed documentation of `librarian` CLI commands.
+*   **[Librarian Configuration Schema](https://github.com/googleapis/librarian/blob/main/doc/config-schema.md)**: Guide to the structure and options available in `librarian.yaml`.
+
+### Triggering Code Generation in CI
+
+The repository has automated workflows to manage and verify code generation.
+
+#### Automatically Commit Generated Changes on a PR (Manual Trigger)
+
+> [!NOTE]
+> As of June 30, 2026, running this workflow on GitHub Actions takes approximately 90 minutes to complete.
+> 
+If you raise a Pull Request that you expect to introduce changes to generated code (e.g., changes in `gapic-generator-java`), but do not want to run `librarian generate` locally, you can have GitHub Actions automatically regenerate all the client libraries and push the changes back to your branch:
+
+1. Go to the **Actions** tab on the GitHub repository page.
+2. Select **Librarian - Generate libraries check / update** from the workflow list on the left.
+3. Click the **Run workflow** dropdown menu on the right.
+4. Select your **PR branch** from the dropdown and click the **Run workflow** button.
+
+When run manually (via `workflow_dispatch`), the workflow will:
+* Run the generation check.
+* If any code changes are produced, it will automatically commit the changes (`chore: regenerate libraries`) and push them directly back to your PR branch.

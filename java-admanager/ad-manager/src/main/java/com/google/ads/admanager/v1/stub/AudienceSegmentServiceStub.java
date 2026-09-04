@@ -19,12 +19,23 @@ package com.google.ads.admanager.v1.stub;
 import static com.google.ads.admanager.v1.AudienceSegmentServiceClient.ListAudienceSegmentsPagedResponse;
 
 import com.google.ads.admanager.v1.AudienceSegment;
+import com.google.ads.admanager.v1.BatchActivateAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchActivateAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.BatchApproveAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchApproveAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.BatchDeactivateAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchDeactivateAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.BatchPopulateAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchPopulateAudienceSegmentsResponse;
+import com.google.ads.admanager.v1.BatchRejectAudienceSegmentsRequest;
+import com.google.ads.admanager.v1.BatchRejectAudienceSegmentsResponse;
 import com.google.ads.admanager.v1.GetAudienceSegmentRequest;
 import com.google.ads.admanager.v1.ListAudienceSegmentsRequest;
 import com.google.ads.admanager.v1.ListAudienceSegmentsResponse;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -32,6 +43,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class AudienceSegmentServiceStub implements BackgroundResource {
 
@@ -47,6 +59,37 @@ public abstract class AudienceSegmentServiceStub implements BackgroundResource {
   public UnaryCallable<ListAudienceSegmentsRequest, ListAudienceSegmentsResponse>
       listAudienceSegmentsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAudienceSegmentsCallable()");
+  }
+
+  public UnaryCallable<BatchActivateAudienceSegmentsRequest, BatchActivateAudienceSegmentsResponse>
+      batchActivateAudienceSegmentsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchActivateAudienceSegmentsCallable()");
+  }
+
+  public UnaryCallable<
+          BatchDeactivateAudienceSegmentsRequest, BatchDeactivateAudienceSegmentsResponse>
+      batchDeactivateAudienceSegmentsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeactivateAudienceSegmentsCallable()");
+  }
+
+  public UnaryCallable<BatchApproveAudienceSegmentsRequest, BatchApproveAudienceSegmentsResponse>
+      batchApproveAudienceSegmentsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchApproveAudienceSegmentsCallable()");
+  }
+
+  public UnaryCallable<BatchRejectAudienceSegmentsRequest, BatchRejectAudienceSegmentsResponse>
+      batchRejectAudienceSegmentsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchRejectAudienceSegmentsCallable()");
+  }
+
+  public UnaryCallable<BatchPopulateAudienceSegmentsRequest, BatchPopulateAudienceSegmentsResponse>
+      batchPopulateAudienceSegmentsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchPopulateAudienceSegmentsCallable()");
   }
 
   @Override

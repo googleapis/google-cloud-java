@@ -26,6 +26,7 @@ import static com.google.cloud.datastore.aggregation.Aggregation.count;
 import static com.google.cloud.datastore.aggregation.Aggregation.sum;
 import static com.google.common.collect.Iterables.getOnlyElement;
 import static com.google.common.truth.Truth.assertThat;
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -46,6 +47,7 @@ import com.google.cloud.datastore.Cursor;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.Datastore.TransactionCallable;
 import com.google.cloud.datastore.DatastoreException;
+import com.google.cloud.datastore.DatastoreExecutionOptions;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.DatastoreReaderWriter;
 import com.google.cloud.datastore.Entity;
@@ -79,6 +81,8 @@ import com.google.cloud.datastore.models.ExecutionStats;
 import com.google.cloud.datastore.models.ExplainMetrics;
 import com.google.cloud.datastore.models.ExplainOptions;
 import com.google.cloud.datastore.models.PlanSummary;
+import com.google.cloud.datastore.models.RequestOptions;
+import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Range;
@@ -97,8 +101,10 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import org.awaitility.core.ConditionTimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -150,6 +156,12 @@ public abstract class AbstractITDatastoreTest {
   private static Entity AGGREGATION_ENTITY_1;
   private static Entity AGGREGATION_ENTITY_2;
   private static Entity AGGREGATION_ENTITY_3;
+
+  private static final DatastoreExecutionOptions EXECUTION_OPTIONS_WITH_REQUEST_TAGS =
+      DatastoreExecutionOptions.newBuilder()
+          .setRequestOptions(
+              RequestOptions.newBuilder().setRequestTags(ImmutableList.of("request-tag")).build())
+          .build();
 
   @Rule public Timeout globalTimeout = Timeout.seconds(100);
 
@@ -282,21 +294,28 @@ public abstract class AbstractITDatastoreTest {
     QueryResults<T> scResults = datastore.run(scQuery);
     List<T> scResultsCopy = makeResultsCopy(scResults);
     Set<T> scResultsSet = new HashSet<>(scResultsCopy);
-    int maxAttempts = 20;
-
-    while (maxAttempts > 0) {
-      --maxAttempts;
-      QueryResults<T> results = datastore.run(query);
-      List<T> resultsCopy = makeResultsCopy(results);
-      Set<T> resultsSet = new HashSet<>(resultsCopy);
-      if (scResultsSet.size() == resultsSet.size() && scResultsSet.containsAll(resultsSet)) {
-        return resultsCopy.iterator();
-      }
-      Thread.sleep(500);
+    AtomicReference<List<T>> finalResults = new AtomicReference<>();
+    try {
+      await()
+          .atMost(Duration.ofSeconds(10))
+          .pollInterval(Duration.ofMillis(500))
+          .until(
+              () -> {
+                QueryResults<T> results = datastore.run(query);
+                List<T> resultsCopy = makeResultsCopy(results);
+                Set<T> resultsSet = new HashSet<>(resultsCopy);
+                if (scResultsSet.size() == resultsSet.size()
+                    && scResultsSet.containsAll(resultsSet)) {
+                  finalResults.set(resultsCopy);
+                  return true;
+                }
+                return false;
+              });
+    } catch (ConditionTimeoutException e) {
+      throw new RuntimeException(
+          "reached max number of attempts to get strongly consistent results.", e);
     }
-
-    throw new RuntimeException(
-        "reached max number of attempts to get strongly consistent results.");
+    return finalResults.get().iterator();
   }
 
   private <T> List<T> makeResultsCopy(QueryResults<T> scResults) {
@@ -1331,8 +1350,12 @@ public abstract class AbstractITDatastoreTest {
             .build();
 
     datastore.put(entity1, entity2);
+    // Sleep to ensure time passes so that the subsequent Timestamp.now() is strictly
+    // after the commit time of entity1 and entity2.
     Thread.sleep(1000);
     Timestamp now = Timestamp.now();
+    // Sleep to ensure time passes so that the subsequent write of entity3 is strictly
+    // after 'now'. This allows testing ReadOption.readTime(now) deterministically.
     Thread.sleep(1000);
     datastore.put(entity3);
 
@@ -1784,8 +1807,12 @@ public abstract class AbstractITDatastoreTest {
     try {
       datastore.put(Entity.newBuilder(key).set("str", "old_str_value").build());
 
+      // Sleep to ensure time passes so that the subsequent Timestamp.now() is strictly
+      // after the commit time of the old entity value.
       Thread.sleep(1000);
       Timestamp now = Timestamp.now();
+      // Sleep to ensure time passes so that the subsequent write of the new entity value
+      // is strictly after 'now'. This allows testing ReadOption.readTime(now) deterministically.
       Thread.sleep(1000);
 
       datastore.put(Entity.newBuilder(key).set("str", "new_str_value").build());
@@ -2102,8 +2129,12 @@ public abstract class AbstractITDatastoreTest {
             .build();
 
     datastore.put(entity1, entity2);
+    // Sleep to ensure time passes so that the subsequent Timestamp.now() is strictly
+    // after the commit time of entity1 and entity2.
     Thread.sleep(1000);
     Timestamp now = Timestamp.now();
+    // Sleep to ensure time passes so that the subsequent write of entity3 is strictly
+    // after 'now'. This allows testing ReadOption.readTime(now) deterministically.
     Thread.sleep(1000);
     datastore.put(entity3);
 
@@ -2127,6 +2158,162 @@ public abstract class AbstractITDatastoreTest {
       assertFalse(withReadTime.hasNext());
     } finally {
       datastore.delete(entity1.getKey(), entity2.getKey(), entity3.getKey());
+    }
+  }
+
+  @Test
+  public void testAddWithInstanceAndRequestTags() throws Exception {
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("add_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("prop", "val").build();
+    try {
+      Entity added = datastore.add(entity, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertEquals(entity, added);
+      assertEquals(entity, datastore.get(key));
+    } finally {
+      datastore.delete(key);
+    }
+  }
+
+  @Test
+  public void testPutWithInstanceAndRequestTags() throws Exception {
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("put_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("prop", "val").build();
+    try {
+      List<Entity> putEntities =
+          datastore.put(Collections.singletonList(entity), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertEquals(Collections.singletonList(entity), putEntities);
+      assertEquals(entity, datastore.get(key));
+    } finally {
+      datastore.delete(key);
+    }
+  }
+
+  @Test
+  public void testUpdateWithInstanceAndRequestTags() throws Exception {
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("update_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("prop", "val1").build();
+    datastore.put(entity);
+    try {
+      Entity updated = Entity.newBuilder(entity).set("prop", "val2").build();
+      datastore.update(Collections.singletonList(updated), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertEquals(updated, datastore.get(key));
+    } finally {
+      datastore.delete(key);
+    }
+  }
+
+  @Test
+  public void testGetAndFetchWithInstanceAndRequestTags() throws Exception {
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("get_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("prop", "val").build();
+    datastore.put(entity);
+    try {
+      Entity fetchedSingle = datastore.get(key, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertEquals(entity, fetchedSingle);
+
+      List<Entity> fetchedList =
+          datastore.fetch(Collections.singletonList(key), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertEquals(Collections.singletonList(entity), fetchedList);
+    } finally {
+      datastore.delete(key);
+    }
+  }
+
+  @Test
+  public void testDeleteWithInstanceAndRequestTags() throws Exception {
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("delete_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("prop", "val").build();
+    datastore.put(entity);
+    assertNotNull(datastore.get(key));
+
+    datastore.delete(Collections.singletonList(key), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+    assertNull(datastore.get(key));
+  }
+
+  @Test
+  public void testRunQueryWithInstanceAndRequestTags() throws Exception {
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("query_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("tag_prop", "tag_query_val").build();
+    datastore.put(entity);
+    try {
+      EntityQuery query =
+          Query.newEntityQueryBuilder()
+              .setKind(KIND1)
+              .setFilter(PropertyFilter.eq("tag_prop", "tag_query_val"))
+              .build();
+      QueryResults<Entity> results = datastore.run(query, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertTrue(results.hasNext());
+      assertEquals(entity, results.next());
+    } finally {
+      datastore.delete(key);
+    }
+  }
+
+  @Test
+  public void testRunAggregationQueryWithInstanceAndRequestTags() throws Exception {
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("agg_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("agg_prop", "agg_val").build();
+    datastore.put(entity);
+    try {
+      EntityQuery query =
+          Query.newEntityQueryBuilder()
+              .setKind(KIND1)
+              .setFilter(PropertyFilter.eq("agg_prop", "agg_val"))
+              .build();
+      AggregationQuery aggQuery =
+          Query.newAggregationQueryBuilder()
+              .over(query)
+              .addAggregation(count().as("total"))
+              .build();
+      AggregationResults results =
+          datastore.runAggregation(aggQuery, EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      assertThat(getOnlyElement(results).getLong("total")).isEqualTo(1L);
+    } finally {
+      datastore.delete(key);
+    }
+  }
+
+  @Test
+  public void testAllocateIdWithInstanceAndRequestTags() throws Exception {
+    IncompleteKey incompleteKey = datastore.newKeyFactory().setKind(KIND1).newKey();
+    List<Key> allocatedKeys =
+        datastore.allocateId(
+            Collections.singletonList(incompleteKey), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+    assertNotNull(allocatedKeys);
+    assertEquals(1, allocatedKeys.size());
+    assertEquals(KIND1, allocatedKeys.get(0).getKind());
+  }
+
+  @Test
+  public void testReserveIdsWithInstanceAndRequestTags() throws Exception {
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey(100000L);
+    List<Key> reservedKeys =
+        datastore.reserveIds(Collections.singletonList(key), EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+    assertNotNull(reservedKeys);
+  }
+
+  @Test
+  public void testTransactionWithInstanceAndRequestTags() throws Exception {
+    Key key = datastore.newKeyFactory().setKind(KIND1).newKey("tx_tagged_key");
+    Entity entity = Entity.newBuilder(key).set("prop", "tx_val").build();
+    datastore.put(entity);
+
+    try {
+      Transaction tx = datastore.newTransaction(EXECUTION_OPTIONS_WITH_REQUEST_TAGS);
+      try {
+        Entity fetched = tx.get(key);
+        assertEquals(entity, fetched);
+        Entity updated = Entity.newBuilder(entity).set("prop", "tx_val2").build();
+        tx.put(updated);
+        tx.commit();
+        assertEquals(updated, datastore.get(key));
+      } finally {
+        if (tx.isActive()) {
+          tx.rollback();
+        }
+      }
+    } finally {
+      datastore.delete(key);
     }
   }
 }

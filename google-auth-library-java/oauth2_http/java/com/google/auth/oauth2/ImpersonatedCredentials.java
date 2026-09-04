@@ -70,6 +70,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * ImpersonatedCredentials allowing credentials issued to a user or service account to impersonate
@@ -97,6 +99,7 @@ import java.util.Objects;
  *     System.out.println(b);
  * </pre>
  */
+@NullMarked
 public class ImpersonatedCredentials extends GoogleCredentials
     implements ServiceAccountSigner, IdTokenProvider {
 
@@ -108,14 +111,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
   private List<String> delegates;
   private final List<String> scopes;
   private final int lifetime;
-  private final String iamEndpointOverride;
+  private final @Nullable String iamEndpointOverride;
   private final String transportFactoryClassName;
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(ImpersonatedCredentials.class);
 
   private transient HttpTransportFactory transportFactory;
 
-  private transient Calendar calendar;
+  private transient @Nullable Calendar calendar;
 
   /**
    * @param sourceCredentials the source credential used to acquire the impersonated credentials. It
@@ -142,7 +145,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   public static ImpersonatedCredentials create(
       GoogleCredentials sourceCredentials,
       String targetPrincipal,
-      List<String> delegates,
+      @Nullable List<String> delegates,
       List<String> scopes,
       int lifetime,
       HttpTransportFactory transportFactory) {
@@ -184,11 +187,11 @@ public class ImpersonatedCredentials extends GoogleCredentials
   public static ImpersonatedCredentials create(
       GoogleCredentials sourceCredentials,
       String targetPrincipal,
-      List<String> delegates,
+      @Nullable List<String> delegates,
       List<String> scopes,
       int lifetime,
       HttpTransportFactory transportFactory,
-      String quotaProjectId) {
+      @Nullable String quotaProjectId) {
     return ImpersonatedCredentials.newBuilder()
         .setSourceCredentials(sourceCredentials)
         .setTargetPrincipal(targetPrincipal)
@@ -230,12 +233,12 @@ public class ImpersonatedCredentials extends GoogleCredentials
   public static ImpersonatedCredentials create(
       GoogleCredentials sourceCredentials,
       String targetPrincipal,
-      List<String> delegates,
+      @Nullable List<String> delegates,
       List<String> scopes,
       int lifetime,
       HttpTransportFactory transportFactory,
-      String quotaProjectId,
-      String iamEndpointOverride) {
+      @Nullable String quotaProjectId,
+      @Nullable String iamEndpointOverride) {
     return ImpersonatedCredentials.newBuilder()
         .setSourceCredentials(sourceCredentials)
         .setTargetPrincipal(targetPrincipal)
@@ -273,7 +276,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   public static ImpersonatedCredentials create(
       GoogleCredentials sourceCredentials,
       String targetPrincipal,
-      List<String> delegates,
+      @Nullable List<String> delegates,
       List<String> scopes,
       int lifetime) {
     return ImpersonatedCredentials.newBuilder()
@@ -682,8 +685,8 @@ public class ImpersonatedCredentials extends GoogleCredentials
    * @throws IOException if the attempt to get an ID token failed
    */
   @Override
-  public IdToken idTokenWithAudience(String targetAudience, List<IdTokenProvider.Option> options)
-      throws IOException {
+  public IdToken idTokenWithAudience(
+      String targetAudience, @Nullable List<IdTokenProvider.Option> options) throws IOException {
     boolean includeEmail =
         options != null && options.contains(IdTokenProvider.Option.INCLUDE_EMAIL);
     return IamUtils.getIdToken(
@@ -731,7 +734,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof ImpersonatedCredentials)) {
       return false;
     }
@@ -760,14 +763,14 @@ public class ImpersonatedCredentials extends GoogleCredentials
 
   public static class Builder extends GoogleCredentials.Builder {
 
-    private GoogleCredentials sourceCredentials;
-    private String targetPrincipal;
-    private List<String> delegates;
-    private List<String> scopes;
+    private @Nullable GoogleCredentials sourceCredentials;
+    private @Nullable String targetPrincipal;
+    private @Nullable List<String> delegates;
+    private @Nullable List<String> scopes;
     private int lifetime = DEFAULT_LIFETIME_IN_SECONDS;
-    private HttpTransportFactory transportFactory;
-    private String iamEndpointOverride;
-    private Calendar calendar = Calendar.getInstance();
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable String iamEndpointOverride;
+    private @Nullable Calendar calendar = Calendar.getInstance();
 
     protected Builder() {}
 
@@ -800,7 +803,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
-    public GoogleCredentials getSourceCredentials() {
+    public @Nullable GoogleCredentials getSourceCredentials() {
       return this.sourceCredentials;
     }
 
@@ -810,17 +813,17 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
-    public String getTargetPrincipal() {
+    public @Nullable String getTargetPrincipal() {
       return this.targetPrincipal;
     }
 
     @CanIgnoreReturnValue
-    public Builder setDelegates(List<String> delegates) {
+    public Builder setDelegates(@Nullable List<String> delegates) {
       this.delegates = delegates;
       return this;
     }
 
-    public List<String> getDelegates() {
+    public @Nullable List<String> getDelegates() {
       return this.delegates;
     }
 
@@ -840,7 +843,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
     /**
      * @return List of scopes to be applied to the impersonated token.
      */
-    public List<String> getScopes() {
+    public @Nullable List<String> getScopes() {
       return this.scopes;
     }
 
@@ -855,26 +858,30 @@ public class ImpersonatedCredentials extends GoogleCredentials
     }
 
     @CanIgnoreReturnValue
-    public Builder setHttpTransportFactory(HttpTransportFactory transportFactory) {
+    public Builder setHttpTransportFactory(@Nullable HttpTransportFactory transportFactory) {
       this.transportFactory = transportFactory;
       return this;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setIamEndpointOverride(String iamEndpointOverride) {
+    public Builder setIamEndpointOverride(@Nullable String iamEndpointOverride) {
       this.iamEndpointOverride = iamEndpointOverride;
       return this;
+    }
+
+    public @Nullable String getIamEndpointOverride() {
+      return this.iamEndpointOverride;
     }
 
     /**
@@ -888,7 +895,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
      */
     @CanIgnoreReturnValue
     @ObsoleteApi("This method is obsolete and will be removed in a future release.")
-    public Builder setCalendar(Calendar calendar) {
+    public Builder setCalendar(@Nullable Calendar calendar) {
       this.calendar = calendar;
       return this;
     }
@@ -902,7 +909,7 @@ public class ImpersonatedCredentials extends GoogleCredentials
      * @return the calendar
      */
     @ObsoleteApi("This method is obsolete and will be removed in a future release.")
-    public Calendar getCalendar() {
+    public @Nullable Calendar getCalendar() {
       return this.calendar;
     }
 

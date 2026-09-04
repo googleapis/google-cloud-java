@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class InstanceConfigName implements ResourceName {
   private static final PathTemplate PROJECT_INSTANCE_CONFIG =
@@ -70,7 +73,7 @@ public class InstanceConfigName implements ResourceName {
     return newBuilder().setProject(project).setInstanceConfig(instanceConfig).build().toString();
   }
 
-  public static InstanceConfigName parse(String formattedString) {
+  public static @Nullable InstanceConfigName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -88,7 +91,7 @@ public class InstanceConfigName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<InstanceConfigName> values) {
+  public static List<String> toStringList(List<@Nullable InstanceConfigName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (InstanceConfigName value : values) {
       if (value == null) {
@@ -134,7 +137,7 @@ public class InstanceConfigName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

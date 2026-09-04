@@ -18,13 +18,18 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.NetworkServiceClient.ListNetworksPagedResponse;
 
+import com.google.ads.admanager.v1.DefaultThirdPartyDataDeclaration;
+import com.google.ads.admanager.v1.GetDefaultThirdPartyDataDeclarationRequest;
 import com.google.ads.admanager.v1.GetNetworkRequest;
 import com.google.ads.admanager.v1.ListNetworksRequest;
 import com.google.ads.admanager.v1.ListNetworksResponse;
 import com.google.ads.admanager.v1.Network;
+import com.google.ads.admanager.v1.ProvisionTestNetworkRequest;
+import com.google.ads.admanager.v1.UpdateNetworkRequest;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -32,6 +37,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class NetworkServiceStub implements BackgroundResource {
 
@@ -45,6 +51,20 @@ public abstract class NetworkServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListNetworksRequest, ListNetworksResponse> listNetworksCallable() {
     throw new UnsupportedOperationException("Not implemented: listNetworksCallable()");
+  }
+
+  public UnaryCallable<UpdateNetworkRequest, Network> updateNetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateNetworkCallable()");
+  }
+
+  public UnaryCallable<ProvisionTestNetworkRequest, Network> provisionTestNetworkCallable() {
+    throw new UnsupportedOperationException("Not implemented: provisionTestNetworkCallable()");
+  }
+
+  public UnaryCallable<GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+      getDefaultThirdPartyDataDeclarationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getDefaultThirdPartyDataDeclarationCallable()");
   }
 
   @Override

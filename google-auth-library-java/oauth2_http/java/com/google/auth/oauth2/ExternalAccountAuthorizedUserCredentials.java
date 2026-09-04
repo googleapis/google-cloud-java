@@ -42,9 +42,9 @@ import com.google.api.client.http.UrlEncodedContent;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
-import com.google.api.client.util.Preconditions;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.common.io.BaseEncoding;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
@@ -54,7 +54,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.Map;
 import java.util.Objects;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * OAuth2 credentials sourced using external identities through Workforce Identity Federation.
@@ -74,6 +75,7 @@ import javax.annotation.Nullable;
  * }
  * </pre>
  */
+@NullMarked
 public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials {
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(ExternalAccountAuthorizedUserCredentials.class);
@@ -82,17 +84,17 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
 
   private static final long serialVersionUID = -2181779590486283287L;
 
-  private final String transportFactoryClassName;
-  private final String audience;
-  private final String tokenUrl;
-  private final String tokenInfoUrl;
-  private final String revokeUrl;
-  private final String clientId;
-  private final String clientSecret;
+  private final @Nullable String transportFactoryClassName;
+  private final @Nullable String audience;
+  private final @Nullable String tokenUrl;
+  private final @Nullable String tokenInfoUrl;
+  private final @Nullable String revokeUrl;
+  private final @Nullable String clientId;
+  private final @Nullable String clientSecret;
 
-  private String refreshToken;
+  private @Nullable String refreshToken;
 
-  private transient HttpTransportFactory transportFactory;
+  private transient @Nullable HttpTransportFactory transportFactory;
 
   /**
    * Internal constructor.
@@ -219,7 +221,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
     String refreshToken =
         OAuth2Utils.validateOptionalString(
             responseData, /* key= */ "refresh_token", PARSE_ERROR_PREFIX);
-    if (refreshToken != null && refreshToken.trim().length() > 0) {
+    if (refreshToken != null && !refreshToken.trim().isEmpty()) {
       this.refreshToken = refreshToken;
     }
 
@@ -229,38 +231,31 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
         .build();
   }
 
-  @Nullable
-  public String getAudience() {
+  public @Nullable String getAudience() {
     return audience;
   }
 
-  @Nullable
-  public String getClientId() {
+  public @Nullable String getClientId() {
     return clientId;
   }
 
-  @Nullable
-  public String getClientSecret() {
+  public @Nullable String getClientSecret() {
     return clientSecret;
   }
 
-  @Nullable
-  public String getRevokeUrl() {
+  public @Nullable String getRevokeUrl() {
     return revokeUrl;
   }
 
-  @Nullable
-  public String getTokenUrl() {
+  public @Nullable String getTokenUrl() {
     return tokenUrl;
   }
 
-  @Nullable
-  public String getTokenInfoUrl() {
+  public @Nullable String getTokenInfoUrl() {
     return tokenInfoUrl;
   }
 
-  @Nullable
-  public String getRefreshToken() {
+  public @Nullable String getRefreshToken() {
     return refreshToken;
   }
 
@@ -309,7 +304,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof ExternalAccountAuthorizedUserCredentials)) {
       return false;
     }
@@ -375,13 +370,13 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
 
   private boolean canRefresh() {
     return refreshToken != null
-        && refreshToken.trim().length() > 0
+        && !refreshToken.trim().isEmpty()
         && tokenUrl != null
-        && tokenUrl.trim().length() > 0
+        && !tokenUrl.trim().isEmpty()
         && clientId != null
-        && clientId.trim().length() > 0
+        && !clientId.trim().isEmpty()
         && clientSecret != null
-        && clientSecret.trim().length() > 0;
+        && !clientSecret.trim().isEmpty();
   }
 
   private HttpRequest buildRefreshRequest() throws IOException {
@@ -415,14 +410,14 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
   /** Builder for {@link ExternalAccountAuthorizedUserCredentials}. */
   public static class Builder extends GoogleCredentials.Builder {
 
-    private HttpTransportFactory transportFactory;
-    private String audience;
-    private String refreshToken;
-    private String tokenUrl;
-    private String tokenInfoUrl;
-    private String revokeUrl;
-    private String clientId;
-    private String clientSecret;
+    private @Nullable HttpTransportFactory transportFactory;
+    private @Nullable String audience;
+    private @Nullable String refreshToken;
+    private @Nullable String tokenUrl;
+    private @Nullable String tokenInfoUrl;
+    private @Nullable String revokeUrl;
+    private @Nullable String clientId;
+    private @Nullable String clientSecret;
 
     protected Builder() {}
 
@@ -543,7 +538,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      */
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
@@ -556,7 +551,7 @@ public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials 
      */
     @Override
     @CanIgnoreReturnValue
-    public Builder setAccessToken(AccessToken accessToken) {
+    public Builder setAccessToken(@Nullable AccessToken accessToken) {
       super.setAccessToken(accessToken);
       return this;
     }

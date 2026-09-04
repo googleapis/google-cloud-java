@@ -29,7 +29,6 @@ import com.google.cloud.bigtable.data.v2.internal.util.ClientConfigurationManage
 import io.grpc.CallOptions;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
 import java.time.Duration;
 import java.util.concurrent.ScheduledExecutorService;
@@ -117,13 +116,16 @@ public class SwitchingChannelPool implements ChannelPool {
       case DIRECT_ACCESS_ONLY:
         return newChannelPoolFromProvider(channelProvider);
       case DIRECT_ACCESS_WITH_FALLBACK:
-        ChannelPool primaryChannelPool =
-            newChannelPoolFromProvider(
-                channelProvider,
-                "primary",
-                new DirectpathEnforcer(
-                    "Non-directpath connections are not allowed in the directpath channel "
-                        + "pool when a fallback channel pool is available."));
+        // TODO: temporarily NOT installing the DirectpathEnforcer.
+        // The enforcer rejects any non-ALTS connection on the directpath pool by throwing out of
+        // onHeaders; grpc turns that into CANCELLED "Failed to read headers", killing every session
+        // in state STARTING. On a VM whose directpath structurally negotiates a non-ALTS (CFE/TLS)
+        // connection, recovery depends entirely on FallbackChannelPool switching to cloudpath, and
+        // that error-rate switch can fail to fire, wedging the VM indefinitely. Until that switch
+        // is hardened, drop the enforcer so such a connection is used (grpc's own directpath->CFE
+        // fallback) instead of hard-failing. Restore the enforcer once FallbackChannelPool is
+        // fixed.
+        ChannelPool primaryChannelPool = newChannelPoolFromProvider(channelProvider, "primary");
         ChannelPool fallbackChannelPool =
             newChannelPoolFromProvider(channelProvider.getFallback().get(), "fallback");
         FallbackConfiguration fallbackConfiguration =
@@ -162,14 +164,18 @@ public class SwitchingChannelPool implements ChannelPool {
   }
 
   @Override
-  public synchronized void close() {
-    if (isClosed) {
-      return;
-    }
-
+  public void close() {
     configListener.close();
-    delegate.close();
-    isClosed = true;
+    ChannelPool cp;
+    synchronized (this) {
+      if (isClosed) {
+        return;
+      }
+
+      cp = delegate;
+      isClosed = true;
+    }
+    cp.close();
   }
 
   @Override
@@ -186,13 +192,12 @@ public class SwitchingChannelPool implements ChannelPool {
   private ChannelPool newChannelPoolFromProvider(
       ChannelProvider channelProvider, String logName, ClientInterceptor... interceptors) {
     if (channelProvider.isSingleEndpoint()) {
-      return new SingleChannelPool(
-          channelBuilderToSupplier(channelProvider.newChannelBuilder(), interceptors));
+      return new SingleChannelPool(channelSupplier(channelProvider, interceptors));
     }
 
     if (logName != null) {
       return new ChannelPoolDpImpl(
-          channelBuilderToSupplier(channelProvider.newChannelBuilder(), interceptors),
+          channelSupplier(channelProvider, interceptors),
           currentConfiguration,
           logName,
           metrics.getDebugTagTracer(),
@@ -200,14 +205,17 @@ public class SwitchingChannelPool implements ChannelPool {
     }
 
     return new ChannelPoolDpImpl(
-        channelBuilderToSupplier(channelProvider.newChannelBuilder(), interceptors),
+        channelSupplier(channelProvider, interceptors),
         currentConfiguration,
         metrics.getDebugTagTracer(),
         backgroundExecutor);
   }
 
-  private Supplier<ManagedChannel> channelBuilderToSupplier(
-      ManagedChannelBuilder<?> channelBuilder, ClientInterceptor... interceptors) {
-    return () -> channelBuilder.intercept(interceptors).build();
+  // Each supplier invocation must produce a fresh ManagedChannelBuilder. Capturing one builder
+  // and calling .build() on it repeatedly lets anything that mutates the builder between builds
+  // accumulate — the Nth channel then ships with N copies of that interceptor.
+  private Supplier<ManagedChannel> channelSupplier(
+      ChannelProvider channelProvider, ClientInterceptor... interceptors) {
+    return () -> channelProvider.newChannelBuilder().intercept(interceptors).build();
   }
 }

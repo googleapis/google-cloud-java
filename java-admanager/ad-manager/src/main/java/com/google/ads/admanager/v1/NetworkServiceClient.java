@@ -27,10 +27,13 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -63,7 +66,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetNetwork</td>
- *      <td><p> API to retrieve a Network object.</td>
+ *      <td><p> Retrieves a `Network` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -82,7 +85,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListNetworks</td>
- *      <td><p> API to retrieve all the networks the current user has access to.</td>
+ *      <td><p> Retrieves all the networks the current user has access to.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -92,6 +95,60 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listNetworksPagedCallable()
  *           <li><p> listNetworksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateNetwork</td>
+ *      <td><p> Updates a `Network` object. Currently, only the network display name can be updated.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateNetwork(UpdateNetworkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateNetwork(Network network, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateNetworkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ProvisionTestNetwork</td>
+ *      <td><p> Provisions a test network associated with the current user. Only one test network can be provisioned per user.
+ * <p>  Before the test network can be used, you must complete setup in the Ad Manager UI. If the test network's owner is a service account, you must add a non-service account user by calling UserService.CreateUser.
+ * <p>  Test networks are limited in the following ways:
+ * <p>    &#42; Test networks have a maximum of 10,000 objects per entity type.   &#42; Test networks cannot serve ads.   &#42; Reports on serving data have zero rows.   &#42; Forecast service results contain mock data.   &#42; Test networks do not have Ad Manager 360 or premium features enabled.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> provisionTestNetwork(ProvisionTestNetworkRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> provisionTestNetworkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDefaultThirdPartyDataDeclaration</td>
+ *      <td><p> Returns the [DefaultThirdPartyDataDeclaration] for this network.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDefaultThirdPartyDataDeclaration(GetDefaultThirdPartyDataDeclarationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDefaultThirdPartyDataDeclaration(DefaultThirdPartyDataDeclarationName name)
+ *           <li><p> getDefaultThirdPartyDataDeclaration(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDefaultThirdPartyDataDeclarationCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -136,9 +193,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NetworkServiceClient implements BackgroundResource {
-  private final NetworkServiceSettings settings;
+  private final @Nullable NetworkServiceSettings settings;
   private final NetworkServiceStub stub;
 
   /** Constructs an instance of NetworkServiceClient with default settings. */
@@ -178,7 +236,7 @@ public class NetworkServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final NetworkServiceSettings getSettings() {
+  public final @Nullable NetworkServiceSettings getSettings() {
     return settings;
   }
 
@@ -188,7 +246,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Network object.
+   * Retrieves a `Network` object.
    *
    * <p>Sample code:
    *
@@ -207,7 +265,7 @@ public class NetworkServiceClient implements BackgroundResource {
    * @param name Required. Resource name of Network. Format: networks/{network_code}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Network getNetwork(NetworkName name) {
+  public final Network getNetwork(@Nullable NetworkName name) {
     GetNetworkRequest request =
         GetNetworkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getNetwork(request);
@@ -215,7 +273,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Network object.
+   * Retrieves a `Network` object.
    *
    * <p>Sample code:
    *
@@ -241,7 +299,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Network object.
+   * Retrieves a `Network` object.
    *
    * <p>Sample code:
    *
@@ -269,7 +327,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a Network object.
+   * Retrieves a `Network` object.
    *
    * <p>Sample code:
    *
@@ -296,7 +354,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve all the networks the current user has access to.
+   * Retrieves all the networks the current user has access to.
    *
    * <p>Sample code:
    *
@@ -328,7 +386,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve all the networks the current user has access to.
+   * Retrieves all the networks the current user has access to.
    *
    * <p>Sample code:
    *
@@ -361,7 +419,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve all the networks the current user has access to.
+   * Retrieves all the networks the current user has access to.
    *
    * <p>Sample code:
    *
@@ -395,6 +453,287 @@ public class NetworkServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListNetworksRequest, ListNetworksResponse> listNetworksCallable() {
     return stub.listNetworksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `Network` object. Currently, only the network display name can be updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
+   *   Network network = Network.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Network response = networkServiceClient.updateNetwork(network, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param network Required. The `Network` to update.
+   *     <p>The `Network`'s `name` is used to identify the `Network` to update.
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Network updateNetwork(Network network, FieldMask updateMask) {
+    UpdateNetworkRequest request =
+        UpdateNetworkRequest.newBuilder().setNetwork(network).setUpdateMask(updateMask).build();
+    return updateNetwork(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `Network` object. Currently, only the network display name can be updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
+   *   UpdateNetworkRequest request =
+   *       UpdateNetworkRequest.newBuilder()
+   *           .setNetwork(Network.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Network response = networkServiceClient.updateNetwork(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Network updateNetwork(UpdateNetworkRequest request) {
+    return updateNetworkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `Network` object. Currently, only the network display name can be updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
+   *   UpdateNetworkRequest request =
+   *       UpdateNetworkRequest.newBuilder()
+   *           .setNetwork(Network.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Network> future = networkServiceClient.updateNetworkCallable().futureCall(request);
+   *   // Do something.
+   *   Network response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateNetworkRequest, Network> updateNetworkCallable() {
+    return stub.updateNetworkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Provisions a test network associated with the current user. Only one test network can be
+   * provisioned per user.
+   *
+   * <p>Before the test network can be used, you must complete setup in the Ad Manager UI. If the
+   * test network's owner is a service account, you must add a non-service account user by calling
+   * UserService.CreateUser.
+   *
+   * <p>Test networks are limited in the following ways:
+   *
+   * <p>&#42; Test networks have a maximum of 10,000 objects per entity type. &#42; Test networks
+   * cannot serve ads. &#42; Reports on serving data have zero rows. &#42; Forecast service results
+   * contain mock data. &#42; Test networks do not have Ad Manager 360 or premium features enabled.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
+   *   ProvisionTestNetworkRequest request = ProvisionTestNetworkRequest.newBuilder().build();
+   *   Network response = networkServiceClient.provisionTestNetwork(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Network provisionTestNetwork(ProvisionTestNetworkRequest request) {
+    return provisionTestNetworkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Provisions a test network associated with the current user. Only one test network can be
+   * provisioned per user.
+   *
+   * <p>Before the test network can be used, you must complete setup in the Ad Manager UI. If the
+   * test network's owner is a service account, you must add a non-service account user by calling
+   * UserService.CreateUser.
+   *
+   * <p>Test networks are limited in the following ways:
+   *
+   * <p>&#42; Test networks have a maximum of 10,000 objects per entity type. &#42; Test networks
+   * cannot serve ads. &#42; Reports on serving data have zero rows. &#42; Forecast service results
+   * contain mock data. &#42; Test networks do not have Ad Manager 360 or premium features enabled.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
+   *   ProvisionTestNetworkRequest request = ProvisionTestNetworkRequest.newBuilder().build();
+   *   ApiFuture<Network> future =
+   *       networkServiceClient.provisionTestNetworkCallable().futureCall(request);
+   *   // Do something.
+   *   Network response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ProvisionTestNetworkRequest, Network> provisionTestNetworkCallable() {
+    return stub.provisionTestNetworkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the [DefaultThirdPartyDataDeclaration] for this network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
+   *   DefaultThirdPartyDataDeclarationName name =
+   *       DefaultThirdPartyDataDeclarationName.of("[NETWORK_CODE]");
+   *   DefaultThirdPartyDataDeclaration response =
+   *       networkServiceClient.getDefaultThirdPartyDataDeclaration(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of DefaultThirdPartyDataDeclaration. Format:
+   *     networks/{network_code}/defaultThirdPartyDataDeclaration
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DefaultThirdPartyDataDeclaration getDefaultThirdPartyDataDeclaration(
+      @Nullable DefaultThirdPartyDataDeclarationName name) {
+    GetDefaultThirdPartyDataDeclarationRequest request =
+        GetDefaultThirdPartyDataDeclarationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDefaultThirdPartyDataDeclaration(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the [DefaultThirdPartyDataDeclaration] for this network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
+   *   String name = DefaultThirdPartyDataDeclarationName.of("[NETWORK_CODE]").toString();
+   *   DefaultThirdPartyDataDeclaration response =
+   *       networkServiceClient.getDefaultThirdPartyDataDeclaration(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of DefaultThirdPartyDataDeclaration. Format:
+   *     networks/{network_code}/defaultThirdPartyDataDeclaration
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DefaultThirdPartyDataDeclaration getDefaultThirdPartyDataDeclaration(String name) {
+    GetDefaultThirdPartyDataDeclarationRequest request =
+        GetDefaultThirdPartyDataDeclarationRequest.newBuilder().setName(name).build();
+    return getDefaultThirdPartyDataDeclaration(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the [DefaultThirdPartyDataDeclaration] for this network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
+   *   GetDefaultThirdPartyDataDeclarationRequest request =
+   *       GetDefaultThirdPartyDataDeclarationRequest.newBuilder()
+   *           .setName(DefaultThirdPartyDataDeclarationName.of("[NETWORK_CODE]").toString())
+   *           .build();
+   *   DefaultThirdPartyDataDeclaration response =
+   *       networkServiceClient.getDefaultThirdPartyDataDeclaration(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DefaultThirdPartyDataDeclaration getDefaultThirdPartyDataDeclaration(
+      GetDefaultThirdPartyDataDeclarationRequest request) {
+    return getDefaultThirdPartyDataDeclarationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the [DefaultThirdPartyDataDeclaration] for this network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworkServiceClient networkServiceClient = NetworkServiceClient.create()) {
+   *   GetDefaultThirdPartyDataDeclarationRequest request =
+   *       GetDefaultThirdPartyDataDeclarationRequest.newBuilder()
+   *           .setName(DefaultThirdPartyDataDeclarationName.of("[NETWORK_CODE]").toString())
+   *           .build();
+   *   ApiFuture<DefaultThirdPartyDataDeclaration> future =
+   *       networkServiceClient.getDefaultThirdPartyDataDeclarationCallable().futureCall(request);
+   *   // Do something.
+   *   DefaultThirdPartyDataDeclaration response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+      getDefaultThirdPartyDataDeclarationCallable() {
+    return stub.getDefaultThirdPartyDataDeclarationCallable();
   }
 
   @Override
@@ -455,8 +794,8 @@ public class NetworkServiceClient implements BackgroundResource {
       extends AbstractPage<ListNetworksRequest, ListNetworksResponse, Network, ListNetworksPage> {
 
     private ListNetworksPage(
-        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
-        ListNetworksResponse response) {
+        @Nullable PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        @Nullable ListNetworksResponse response) {
       super(context, response);
     }
 
@@ -466,14 +805,14 @@ public class NetworkServiceClient implements BackgroundResource {
 
     @Override
     protected ListNetworksPage createPage(
-        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
-        ListNetworksResponse response) {
+        @Nullable PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        @Nullable ListNetworksResponse response) {
       return new ListNetworksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListNetworksPage> createPageAsync(
-        PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
+        @Nullable PageContext<ListNetworksRequest, ListNetworksResponse, Network> context,
         ApiFuture<ListNetworksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -487,7 +826,8 @@ public class NetworkServiceClient implements BackgroundResource {
           ListNetworksPage,
           ListNetworksFixedSizeCollection> {
 
-    private ListNetworksFixedSizeCollection(List<ListNetworksPage> pages, int collectionSize) {
+    private ListNetworksFixedSizeCollection(
+        @Nullable List<ListNetworksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -497,7 +837,7 @@ public class NetworkServiceClient implements BackgroundResource {
 
     @Override
     protected ListNetworksFixedSizeCollection createCollection(
-        List<ListNetworksPage> pages, int collectionSize) {
+        @Nullable List<ListNetworksPage> pages, int collectionSize) {
       return new ListNetworksFixedSizeCollection(pages, collectionSize);
     }
   }

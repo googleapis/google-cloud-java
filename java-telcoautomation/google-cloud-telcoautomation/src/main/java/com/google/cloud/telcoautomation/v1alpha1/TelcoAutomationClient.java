@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -859,10 +861,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class TelcoAutomationClient implements BackgroundResource {
-  private final TelcoAutomationSettings settings;
+  private final @Nullable TelcoAutomationSettings settings;
   private final TelcoAutomationStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -910,7 +913,7 @@ public class TelcoAutomationClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final TelcoAutomationSettings getSettings() {
+  public final @Nullable TelcoAutomationSettings getSettings() {
     return settings;
   }
 
@@ -960,7 +963,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListOrchestrationClustersPagedResponse listOrchestrationClusters(
-      LocationName parent) {
+      @Nullable LocationName parent) {
     ListOrchestrationClustersRequest request =
         ListOrchestrationClustersRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1134,7 +1137,8 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OrchestrationCluster getOrchestrationCluster(OrchestrationClusterName name) {
+  public final OrchestrationCluster getOrchestrationCluster(
+      @Nullable OrchestrationClusterName name) {
     GetOrchestrationClusterRequest request =
         GetOrchestrationClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1265,7 +1269,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    */
   public final OperationFuture<OrchestrationCluster, OperationMetadata>
       createOrchestrationClusterAsync(
-          LocationName parent,
+          @Nullable LocationName parent,
           OrchestrationCluster orchestrationCluster,
           String orchestrationClusterId) {
     CreateOrchestrationClusterRequest request =
@@ -1440,7 +1444,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteOrchestrationClusterAsync(
-      OrchestrationClusterName name) {
+      @Nullable OrchestrationClusterName name) {
     DeleteOrchestrationClusterRequest request =
         DeleteOrchestrationClusterRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1597,7 +1601,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param parent Required. Parent value for ListEdgeSlmsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEdgeSlmsPagedResponse listEdgeSlms(LocationName parent) {
+  public final ListEdgeSlmsPagedResponse listEdgeSlms(@Nullable LocationName parent) {
     ListEdgeSlmsRequest request =
         ListEdgeSlmsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1763,7 +1767,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EdgeSlm getEdgeSlm(EdgeSlmName name) {
+  public final EdgeSlm getEdgeSlm(@Nullable EdgeSlmName name) {
     GetEdgeSlmRequest request =
         GetEdgeSlmRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEdgeSlm(request);
@@ -1877,7 +1881,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<EdgeSlm, OperationMetadata> createEdgeSlmAsync(
-      LocationName parent, EdgeSlm edgeSlm, String edgeSlmId) {
+      @Nullable LocationName parent, EdgeSlm edgeSlm, String edgeSlmId) {
     CreateEdgeSlmRequest request =
         CreateEdgeSlmRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2040,7 +2044,8 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteEdgeSlmAsync(EdgeSlmName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteEdgeSlmAsync(
+      @Nullable EdgeSlmName name) {
     DeleteEdgeSlmRequest request =
         DeleteEdgeSlmRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEdgeSlmAsync(request);
@@ -2189,7 +2194,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Blueprint createBlueprint(
-      OrchestrationClusterName parent, Blueprint blueprint, String blueprintId) {
+      @Nullable OrchestrationClusterName parent, Blueprint blueprint, String blueprintId) {
     CreateBlueprintRequest request =
         CreateBlueprintRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2417,7 +2422,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    *     state of the blueprint is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blueprint getBlueprint(BlueprintName name) {
+  public final Blueprint getBlueprint(@Nullable BlueprintName name) {
     GetBlueprintRequest request =
         GetBlueprintRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBlueprint(request);
@@ -2542,7 +2547,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    *     invalid argument.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteBlueprint(BlueprintName name) {
+  public final void deleteBlueprint(@Nullable BlueprintName name) {
     DeleteBlueprintRequest request =
         DeleteBlueprintRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteBlueprint(request);
@@ -2664,7 +2669,8 @@ public class TelcoAutomationClient implements BackgroundResource {
    *     "projects/{project_id}/locations/{location_name}/orchestrationClusters/{orchestration_cluster}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBlueprintsPagedResponse listBlueprints(OrchestrationClusterName parent) {
+  public final ListBlueprintsPagedResponse listBlueprints(
+      @Nullable OrchestrationClusterName parent) {
     ListBlueprintsRequest request =
         ListBlueprintsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2840,7 +2846,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    *     state. A new revision is committed on approval.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blueprint approveBlueprint(BlueprintName name) {
+  public final Blueprint approveBlueprint(@Nullable BlueprintName name) {
     ApproveBlueprintRequest request =
         ApproveBlueprintRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return approveBlueprint(request);
@@ -2959,7 +2965,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. The name of the blueprint being proposed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blueprint proposeBlueprint(BlueprintName name) {
+  public final Blueprint proposeBlueprint(@Nullable BlueprintName name) {
     ProposeBlueprintRequest request =
         ProposeBlueprintRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return proposeBlueprint(request);
@@ -3077,7 +3083,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. The name of the blueprint being rejected.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Blueprint rejectBlueprint(BlueprintName name) {
+  public final Blueprint rejectBlueprint(@Nullable BlueprintName name) {
     RejectBlueprintRequest request =
         RejectBlueprintRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return rejectBlueprint(request);
@@ -3197,7 +3203,8 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. The name of the blueprint to list revisions for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBlueprintRevisionsPagedResponse listBlueprintRevisions(BlueprintName name) {
+  public final ListBlueprintRevisionsPagedResponse listBlueprintRevisions(
+      @Nullable BlueprintName name) {
     ListBlueprintRevisionsRequest request =
         ListBlueprintRevisionsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3383,7 +3390,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchBlueprintRevisionsPagedResponse searchBlueprintRevisions(
-      OrchestrationClusterName parent, String query) {
+      @Nullable OrchestrationClusterName parent, String query) {
     SearchBlueprintRevisionsRequest request =
         SearchBlueprintRevisionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3579,7 +3586,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchDeploymentRevisionsPagedResponse searchDeploymentRevisions(
-      OrchestrationClusterName parent, String query) {
+      @Nullable OrchestrationClusterName parent, String query) {
     SearchDeploymentRevisionsRequest request =
         SearchDeploymentRevisionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3768,7 +3775,8 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. The name of the blueprint of which changes are being discarded.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DiscardBlueprintChangesResponse discardBlueprintChanges(BlueprintName name) {
+  public final DiscardBlueprintChangesResponse discardBlueprintChanges(
+      @Nullable BlueprintName name) {
     DiscardBlueprintChangesRequest request =
         DiscardBlueprintChangesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3899,7 +3907,8 @@ public class TelcoAutomationClient implements BackgroundResource {
    *     "projects/{project_id}/locations/{location_name}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListPublicBlueprintsPagedResponse listPublicBlueprints(LocationName parent) {
+  public final ListPublicBlueprintsPagedResponse listPublicBlueprints(
+      @Nullable LocationName parent) {
     ListPublicBlueprintsRequest request =
         ListPublicBlueprintsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4067,7 +4076,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. The name of the public blueprint.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PublicBlueprint getPublicBlueprint(PublicBlueprintName name) {
+  public final PublicBlueprint getPublicBlueprint(@Nullable PublicBlueprintName name) {
     GetPublicBlueprintRequest request =
         GetPublicBlueprintRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4191,7 +4200,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Deployment createDeployment(
-      OrchestrationClusterName parent, Deployment deployment, String deploymentId) {
+      @Nullable OrchestrationClusterName parent, Deployment deployment, String deploymentId) {
     CreateDeploymentRequest request =
         CreateDeploymentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4421,7 +4430,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    *     state of the deployment is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Deployment getDeployment(DeploymentName name) {
+  public final Deployment getDeployment(@Nullable DeploymentName name) {
     GetDeploymentRequest request =
         GetDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDeployment(request);
@@ -4545,7 +4554,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. The name of deployment to initiate delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void removeDeployment(DeploymentName name) {
+  public final void removeDeployment(@Nullable DeploymentName name) {
     RemoveDeploymentRequest request =
         RemoveDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     removeDeployment(request);
@@ -4669,7 +4678,8 @@ public class TelcoAutomationClient implements BackgroundResource {
    *     "projects/{project_id}/locations/{location_name}/orchestrationClusters/{orchestration_cluster}".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeploymentsPagedResponse listDeployments(OrchestrationClusterName parent) {
+  public final ListDeploymentsPagedResponse listDeployments(
+      @Nullable OrchestrationClusterName parent) {
     ListDeploymentsRequest request =
         ListDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4846,7 +4856,8 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. The name of the deployment to list revisions for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDeploymentRevisionsPagedResponse listDeploymentRevisions(DeploymentName name) {
+  public final ListDeploymentRevisionsPagedResponse listDeploymentRevisions(
+      @Nullable DeploymentName name) {
     ListDeploymentRevisionsRequest request =
         ListDeploymentRevisionsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5025,7 +5036,8 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. The name of the deployment of which changes are being discarded.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DiscardDeploymentChangesResponse discardDeploymentChanges(DeploymentName name) {
+  public final DiscardDeploymentChangesResponse discardDeploymentChanges(
+      @Nullable DeploymentName name) {
     DiscardDeploymentChangesRequest request =
         DiscardDeploymentChangesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5153,7 +5165,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. The name of the deployment to apply to orchestration cluster.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Deployment applyDeployment(DeploymentName name) {
+  public final Deployment applyDeployment(@Nullable DeploymentName name) {
     ApplyDeploymentRequest request =
         ApplyDeploymentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return applyDeployment(request);
@@ -5272,7 +5284,8 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. The name of the deployment without revisionID.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ComputeDeploymentStatusResponse computeDeploymentStatus(DeploymentName name) {
+  public final ComputeDeploymentStatusResponse computeDeploymentStatus(
+      @Nullable DeploymentName name) {
     ComputeDeploymentStatusRequest request =
         ComputeDeploymentStatusRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5399,7 +5412,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param revisionId Required. The revision id of deployment to roll back to.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Deployment rollbackDeployment(DeploymentName name, String revisionId) {
+  public final Deployment rollbackDeployment(@Nullable DeploymentName name, String revisionId) {
     RollbackDeploymentRequest request =
         RollbackDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5530,7 +5543,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. Name of the hydrated deployment.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HydratedDeployment getHydratedDeployment(HydratedDeploymentName name) {
+  public final HydratedDeployment getHydratedDeployment(@Nullable HydratedDeploymentName name) {
     GetHydratedDeploymentRequest request =
         GetHydratedDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5668,7 +5681,8 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param parent Required. The deployment managing the hydrated deployments.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListHydratedDeploymentsPagedResponse listHydratedDeployments(DeploymentName parent) {
+  public final ListHydratedDeploymentsPagedResponse listHydratedDeployments(
+      @Nullable DeploymentName parent) {
     ListHydratedDeploymentsRequest request =
         ListHydratedDeploymentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5946,7 +5960,7 @@ public class TelcoAutomationClient implements BackgroundResource {
    * @param name Required. The name of the hydrated deployment to apply.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final HydratedDeployment applyHydratedDeployment(HydratedDeploymentName name) {
+  public final HydratedDeployment applyHydratedDeployment(@Nullable HydratedDeploymentName name) {
     ApplyHydratedDeploymentRequest request =
         ApplyHydratedDeploymentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6281,12 +6295,13 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListOrchestrationClustersPage> {
 
     private ListOrchestrationClustersPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrchestrationClustersRequest,
                 ListOrchestrationClustersResponse,
                 OrchestrationCluster>
             context,
-        ListOrchestrationClustersResponse response) {
+        @Nullable ListOrchestrationClustersResponse response) {
       super(context, response);
     }
 
@@ -6296,18 +6311,20 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListOrchestrationClustersPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrchestrationClustersRequest,
                 ListOrchestrationClustersResponse,
                 OrchestrationCluster>
             context,
-        ListOrchestrationClustersResponse response) {
+        @Nullable ListOrchestrationClustersResponse response) {
       return new ListOrchestrationClustersPage(context, response);
     }
 
     @Override
     public ApiFuture<ListOrchestrationClustersPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListOrchestrationClustersRequest,
                 ListOrchestrationClustersResponse,
                 OrchestrationCluster>
@@ -6326,7 +6343,7 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListOrchestrationClustersFixedSizeCollection> {
 
     private ListOrchestrationClustersFixedSizeCollection(
-        List<ListOrchestrationClustersPage> pages, int collectionSize) {
+        @Nullable List<ListOrchestrationClustersPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6336,7 +6353,7 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListOrchestrationClustersFixedSizeCollection createCollection(
-        List<ListOrchestrationClustersPage> pages, int collectionSize) {
+        @Nullable List<ListOrchestrationClustersPage> pages, int collectionSize) {
       return new ListOrchestrationClustersFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6369,8 +6386,8 @@ public class TelcoAutomationClient implements BackgroundResource {
       extends AbstractPage<ListEdgeSlmsRequest, ListEdgeSlmsResponse, EdgeSlm, ListEdgeSlmsPage> {
 
     private ListEdgeSlmsPage(
-        PageContext<ListEdgeSlmsRequest, ListEdgeSlmsResponse, EdgeSlm> context,
-        ListEdgeSlmsResponse response) {
+        @Nullable PageContext<ListEdgeSlmsRequest, ListEdgeSlmsResponse, EdgeSlm> context,
+        @Nullable ListEdgeSlmsResponse response) {
       super(context, response);
     }
 
@@ -6380,14 +6397,14 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListEdgeSlmsPage createPage(
-        PageContext<ListEdgeSlmsRequest, ListEdgeSlmsResponse, EdgeSlm> context,
-        ListEdgeSlmsResponse response) {
+        @Nullable PageContext<ListEdgeSlmsRequest, ListEdgeSlmsResponse, EdgeSlm> context,
+        @Nullable ListEdgeSlmsResponse response) {
       return new ListEdgeSlmsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEdgeSlmsPage> createPageAsync(
-        PageContext<ListEdgeSlmsRequest, ListEdgeSlmsResponse, EdgeSlm> context,
+        @Nullable PageContext<ListEdgeSlmsRequest, ListEdgeSlmsResponse, EdgeSlm> context,
         ApiFuture<ListEdgeSlmsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6401,7 +6418,8 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListEdgeSlmsPage,
           ListEdgeSlmsFixedSizeCollection> {
 
-    private ListEdgeSlmsFixedSizeCollection(List<ListEdgeSlmsPage> pages, int collectionSize) {
+    private ListEdgeSlmsFixedSizeCollection(
+        @Nullable List<ListEdgeSlmsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6411,7 +6429,7 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListEdgeSlmsFixedSizeCollection createCollection(
-        List<ListEdgeSlmsPage> pages, int collectionSize) {
+        @Nullable List<ListEdgeSlmsPage> pages, int collectionSize) {
       return new ListEdgeSlmsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6445,8 +6463,8 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListBlueprintsRequest, ListBlueprintsResponse, Blueprint, ListBlueprintsPage> {
 
     private ListBlueprintsPage(
-        PageContext<ListBlueprintsRequest, ListBlueprintsResponse, Blueprint> context,
-        ListBlueprintsResponse response) {
+        @Nullable PageContext<ListBlueprintsRequest, ListBlueprintsResponse, Blueprint> context,
+        @Nullable ListBlueprintsResponse response) {
       super(context, response);
     }
 
@@ -6456,14 +6474,14 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListBlueprintsPage createPage(
-        PageContext<ListBlueprintsRequest, ListBlueprintsResponse, Blueprint> context,
-        ListBlueprintsResponse response) {
+        @Nullable PageContext<ListBlueprintsRequest, ListBlueprintsResponse, Blueprint> context,
+        @Nullable ListBlueprintsResponse response) {
       return new ListBlueprintsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBlueprintsPage> createPageAsync(
-        PageContext<ListBlueprintsRequest, ListBlueprintsResponse, Blueprint> context,
+        @Nullable PageContext<ListBlueprintsRequest, ListBlueprintsResponse, Blueprint> context,
         ApiFuture<ListBlueprintsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6477,7 +6495,8 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListBlueprintsPage,
           ListBlueprintsFixedSizeCollection> {
 
-    private ListBlueprintsFixedSizeCollection(List<ListBlueprintsPage> pages, int collectionSize) {
+    private ListBlueprintsFixedSizeCollection(
+        @Nullable List<ListBlueprintsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6487,7 +6506,7 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListBlueprintsFixedSizeCollection createCollection(
-        List<ListBlueprintsPage> pages, int collectionSize) {
+        @Nullable List<ListBlueprintsPage> pages, int collectionSize) {
       return new ListBlueprintsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6525,9 +6544,10 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListBlueprintRevisionsPage> {
 
     private ListBlueprintRevisionsPage(
-        PageContext<ListBlueprintRevisionsRequest, ListBlueprintRevisionsResponse, Blueprint>
+        @Nullable
+            PageContext<ListBlueprintRevisionsRequest, ListBlueprintRevisionsResponse, Blueprint>
             context,
-        ListBlueprintRevisionsResponse response) {
+        @Nullable ListBlueprintRevisionsResponse response) {
       super(context, response);
     }
 
@@ -6537,15 +6557,17 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListBlueprintRevisionsPage createPage(
-        PageContext<ListBlueprintRevisionsRequest, ListBlueprintRevisionsResponse, Blueprint>
+        @Nullable
+            PageContext<ListBlueprintRevisionsRequest, ListBlueprintRevisionsResponse, Blueprint>
             context,
-        ListBlueprintRevisionsResponse response) {
+        @Nullable ListBlueprintRevisionsResponse response) {
       return new ListBlueprintRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBlueprintRevisionsPage> createPageAsync(
-        PageContext<ListBlueprintRevisionsRequest, ListBlueprintRevisionsResponse, Blueprint>
+        @Nullable
+            PageContext<ListBlueprintRevisionsRequest, ListBlueprintRevisionsResponse, Blueprint>
             context,
         ApiFuture<ListBlueprintRevisionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -6561,7 +6583,7 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListBlueprintRevisionsFixedSizeCollection> {
 
     private ListBlueprintRevisionsFixedSizeCollection(
-        List<ListBlueprintRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListBlueprintRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6571,7 +6593,7 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListBlueprintRevisionsFixedSizeCollection createCollection(
-        List<ListBlueprintRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListBlueprintRevisionsPage> pages, int collectionSize) {
       return new ListBlueprintRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6609,9 +6631,11 @@ public class TelcoAutomationClient implements BackgroundResource {
           SearchBlueprintRevisionsPage> {
 
     private SearchBlueprintRevisionsPage(
-        PageContext<SearchBlueprintRevisionsRequest, SearchBlueprintRevisionsResponse, Blueprint>
+        @Nullable
+            PageContext<
+                SearchBlueprintRevisionsRequest, SearchBlueprintRevisionsResponse, Blueprint>
             context,
-        SearchBlueprintRevisionsResponse response) {
+        @Nullable SearchBlueprintRevisionsResponse response) {
       super(context, response);
     }
 
@@ -6621,15 +6645,19 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected SearchBlueprintRevisionsPage createPage(
-        PageContext<SearchBlueprintRevisionsRequest, SearchBlueprintRevisionsResponse, Blueprint>
+        @Nullable
+            PageContext<
+                SearchBlueprintRevisionsRequest, SearchBlueprintRevisionsResponse, Blueprint>
             context,
-        SearchBlueprintRevisionsResponse response) {
+        @Nullable SearchBlueprintRevisionsResponse response) {
       return new SearchBlueprintRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchBlueprintRevisionsPage> createPageAsync(
-        PageContext<SearchBlueprintRevisionsRequest, SearchBlueprintRevisionsResponse, Blueprint>
+        @Nullable
+            PageContext<
+                SearchBlueprintRevisionsRequest, SearchBlueprintRevisionsResponse, Blueprint>
             context,
         ApiFuture<SearchBlueprintRevisionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -6645,7 +6673,7 @@ public class TelcoAutomationClient implements BackgroundResource {
           SearchBlueprintRevisionsFixedSizeCollection> {
 
     private SearchBlueprintRevisionsFixedSizeCollection(
-        List<SearchBlueprintRevisionsPage> pages, int collectionSize) {
+        @Nullable List<SearchBlueprintRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6655,7 +6683,7 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected SearchBlueprintRevisionsFixedSizeCollection createCollection(
-        List<SearchBlueprintRevisionsPage> pages, int collectionSize) {
+        @Nullable List<SearchBlueprintRevisionsPage> pages, int collectionSize) {
       return new SearchBlueprintRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6693,9 +6721,11 @@ public class TelcoAutomationClient implements BackgroundResource {
           SearchDeploymentRevisionsPage> {
 
     private SearchDeploymentRevisionsPage(
-        PageContext<SearchDeploymentRevisionsRequest, SearchDeploymentRevisionsResponse, Deployment>
+        @Nullable
+            PageContext<
+                SearchDeploymentRevisionsRequest, SearchDeploymentRevisionsResponse, Deployment>
             context,
-        SearchDeploymentRevisionsResponse response) {
+        @Nullable SearchDeploymentRevisionsResponse response) {
       super(context, response);
     }
 
@@ -6705,15 +6735,19 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected SearchDeploymentRevisionsPage createPage(
-        PageContext<SearchDeploymentRevisionsRequest, SearchDeploymentRevisionsResponse, Deployment>
+        @Nullable
+            PageContext<
+                SearchDeploymentRevisionsRequest, SearchDeploymentRevisionsResponse, Deployment>
             context,
-        SearchDeploymentRevisionsResponse response) {
+        @Nullable SearchDeploymentRevisionsResponse response) {
       return new SearchDeploymentRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchDeploymentRevisionsPage> createPageAsync(
-        PageContext<SearchDeploymentRevisionsRequest, SearchDeploymentRevisionsResponse, Deployment>
+        @Nullable
+            PageContext<
+                SearchDeploymentRevisionsRequest, SearchDeploymentRevisionsResponse, Deployment>
             context,
         ApiFuture<SearchDeploymentRevisionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -6729,7 +6763,7 @@ public class TelcoAutomationClient implements BackgroundResource {
           SearchDeploymentRevisionsFixedSizeCollection> {
 
     private SearchDeploymentRevisionsFixedSizeCollection(
-        List<SearchDeploymentRevisionsPage> pages, int collectionSize) {
+        @Nullable List<SearchDeploymentRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6739,7 +6773,7 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected SearchDeploymentRevisionsFixedSizeCollection createCollection(
-        List<SearchDeploymentRevisionsPage> pages, int collectionSize) {
+        @Nullable List<SearchDeploymentRevisionsPage> pages, int collectionSize) {
       return new SearchDeploymentRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6777,9 +6811,10 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListPublicBlueprintsPage> {
 
     private ListPublicBlueprintsPage(
-        PageContext<ListPublicBlueprintsRequest, ListPublicBlueprintsResponse, PublicBlueprint>
+        @Nullable
+            PageContext<ListPublicBlueprintsRequest, ListPublicBlueprintsResponse, PublicBlueprint>
             context,
-        ListPublicBlueprintsResponse response) {
+        @Nullable ListPublicBlueprintsResponse response) {
       super(context, response);
     }
 
@@ -6789,15 +6824,17 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListPublicBlueprintsPage createPage(
-        PageContext<ListPublicBlueprintsRequest, ListPublicBlueprintsResponse, PublicBlueprint>
+        @Nullable
+            PageContext<ListPublicBlueprintsRequest, ListPublicBlueprintsResponse, PublicBlueprint>
             context,
-        ListPublicBlueprintsResponse response) {
+        @Nullable ListPublicBlueprintsResponse response) {
       return new ListPublicBlueprintsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPublicBlueprintsPage> createPageAsync(
-        PageContext<ListPublicBlueprintsRequest, ListPublicBlueprintsResponse, PublicBlueprint>
+        @Nullable
+            PageContext<ListPublicBlueprintsRequest, ListPublicBlueprintsResponse, PublicBlueprint>
             context,
         ApiFuture<ListPublicBlueprintsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -6813,7 +6850,7 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListPublicBlueprintsFixedSizeCollection> {
 
     private ListPublicBlueprintsFixedSizeCollection(
-        List<ListPublicBlueprintsPage> pages, int collectionSize) {
+        @Nullable List<ListPublicBlueprintsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6823,7 +6860,7 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListPublicBlueprintsFixedSizeCollection createCollection(
-        List<ListPublicBlueprintsPage> pages, int collectionSize) {
+        @Nullable List<ListPublicBlueprintsPage> pages, int collectionSize) {
       return new ListPublicBlueprintsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6857,8 +6894,8 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListDeploymentsRequest, ListDeploymentsResponse, Deployment, ListDeploymentsPage> {
 
     private ListDeploymentsPage(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
-        ListDeploymentsResponse response) {
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable ListDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -6868,14 +6905,14 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentsPage createPage(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
-        ListDeploymentsResponse response) {
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable ListDeploymentsResponse response) {
       return new ListDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeploymentsPage> createPageAsync(
-        PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
+        @Nullable PageContext<ListDeploymentsRequest, ListDeploymentsResponse, Deployment> context,
         ApiFuture<ListDeploymentsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6890,7 +6927,7 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListDeploymentsFixedSizeCollection> {
 
     private ListDeploymentsFixedSizeCollection(
-        List<ListDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6900,7 +6937,7 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentsFixedSizeCollection createCollection(
-        List<ListDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentsPage> pages, int collectionSize) {
       return new ListDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6938,9 +6975,10 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListDeploymentRevisionsPage> {
 
     private ListDeploymentRevisionsPage(
-        PageContext<ListDeploymentRevisionsRequest, ListDeploymentRevisionsResponse, Deployment>
+        @Nullable
+            PageContext<ListDeploymentRevisionsRequest, ListDeploymentRevisionsResponse, Deployment>
             context,
-        ListDeploymentRevisionsResponse response) {
+        @Nullable ListDeploymentRevisionsResponse response) {
       super(context, response);
     }
 
@@ -6950,15 +6988,17 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentRevisionsPage createPage(
-        PageContext<ListDeploymentRevisionsRequest, ListDeploymentRevisionsResponse, Deployment>
+        @Nullable
+            PageContext<ListDeploymentRevisionsRequest, ListDeploymentRevisionsResponse, Deployment>
             context,
-        ListDeploymentRevisionsResponse response) {
+        @Nullable ListDeploymentRevisionsResponse response) {
       return new ListDeploymentRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDeploymentRevisionsPage> createPageAsync(
-        PageContext<ListDeploymentRevisionsRequest, ListDeploymentRevisionsResponse, Deployment>
+        @Nullable
+            PageContext<ListDeploymentRevisionsRequest, ListDeploymentRevisionsResponse, Deployment>
             context,
         ApiFuture<ListDeploymentRevisionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -6974,7 +7014,7 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListDeploymentRevisionsFixedSizeCollection> {
 
     private ListDeploymentRevisionsFixedSizeCollection(
-        List<ListDeploymentRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6984,7 +7024,7 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListDeploymentRevisionsFixedSizeCollection createCollection(
-        List<ListDeploymentRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListDeploymentRevisionsPage> pages, int collectionSize) {
       return new ListDeploymentRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7023,10 +7063,11 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListHydratedDeploymentsPage> {
 
     private ListHydratedDeploymentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListHydratedDeploymentsRequest, ListHydratedDeploymentsResponse, HydratedDeployment>
             context,
-        ListHydratedDeploymentsResponse response) {
+        @Nullable ListHydratedDeploymentsResponse response) {
       super(context, response);
     }
 
@@ -7036,16 +7077,18 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListHydratedDeploymentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListHydratedDeploymentsRequest, ListHydratedDeploymentsResponse, HydratedDeployment>
             context,
-        ListHydratedDeploymentsResponse response) {
+        @Nullable ListHydratedDeploymentsResponse response) {
       return new ListHydratedDeploymentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListHydratedDeploymentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListHydratedDeploymentsRequest, ListHydratedDeploymentsResponse, HydratedDeployment>
             context,
         ApiFuture<ListHydratedDeploymentsResponse> futureResponse) {
@@ -7062,7 +7105,7 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListHydratedDeploymentsFixedSizeCollection> {
 
     private ListHydratedDeploymentsFixedSizeCollection(
-        List<ListHydratedDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListHydratedDeploymentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7072,7 +7115,7 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListHydratedDeploymentsFixedSizeCollection createCollection(
-        List<ListHydratedDeploymentsPage> pages, int collectionSize) {
+        @Nullable List<ListHydratedDeploymentsPage> pages, int collectionSize) {
       return new ListHydratedDeploymentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7106,8 +7149,8 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -7117,14 +7160,14 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7138,7 +7181,8 @@ public class TelcoAutomationClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7148,7 +7192,7 @@ public class TelcoAutomationClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

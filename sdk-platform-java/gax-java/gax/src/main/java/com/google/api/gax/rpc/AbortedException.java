@@ -29,10 +29,13 @@
  */
 package com.google.api.gax.rpc;
 
+import org.jspecify.annotations.NullMarked;
+
 /**
  * Exception thrown when the operation was aborted, typically due to a concurrency issue like
  * sequencer check failures, transaction aborts, etc.
  */
+@NullMarked
 public class AbortedException extends ApiException {
   public AbortedException(Throwable cause, StatusCode statusCode, boolean retryable) {
     super(cause, statusCode, retryable);

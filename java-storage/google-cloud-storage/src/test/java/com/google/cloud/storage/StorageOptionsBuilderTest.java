@@ -69,6 +69,15 @@ public final class StorageOptionsBuilderTest {
         () -> assertThat(rebuilt.hashCode()).isEqualTo(base.hashCode()));
   }
 
+  @Test
+  public void useJwtAccessWithScope_defaultsToFalse() {
+    HttpStorageOptions httpOptions = HttpStorageOptions.http().build();
+    GrpcStorageOptions grpcOptions = GrpcStorageOptions.grpc().build();
+
+    assertThat(httpOptions.getUseJwtAccessWithScope()).isFalse();
+    assertThat(grpcOptions.getUseJwtAccessWithScope()).isFalse();
+  }
+
   private static class MyStorageRetryStrategy implements StorageRetryStrategy {
 
     @Override

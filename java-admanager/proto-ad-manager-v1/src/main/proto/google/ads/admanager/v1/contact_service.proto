@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -35,9 +35,10 @@ option ruby_package = "Google::Ads::AdManager::V1";
 service ContactService {
   option (google.api.default_host) = "admanager.googleapis.com";
   option (google.api.oauth_scopes) =
-      "https://www.googleapis.com/auth/admanager";
+      "https://www.googleapis.com/auth/admanager,"
+      "https://www.googleapis.com/auth/admanager.readonly";
 
-  // API to retrieve a `Contact` object.
+  // Retrieves a `Contact` object.
   rpc GetContact(GetContactRequest) returns (Contact) {
     option (google.api.http) = {
       get: "/v1/{name=networks/*/contacts/*}"
@@ -45,7 +46,7 @@ service ContactService {
     option (google.api.method_signature) = "name";
   }
 
-  // API to retrieve a list of `Contact` objects.
+  // Lists `Contact` objects.
   rpc ListContacts(ListContactsRequest) returns (ListContactsResponse) {
     option (google.api.http) = {
       get: "/v1/{parent=networks/*}/contacts"
@@ -53,7 +54,7 @@ service ContactService {
     option (google.api.method_signature) = "parent";
   }
 
-  // API to create a `Contact` object.
+  // Creates a `Contact` object.
   rpc CreateContact(CreateContactRequest) returns (Contact) {
     option (google.api.http) = {
       post: "/v1/{parent=networks/*}/contacts"
@@ -62,7 +63,7 @@ service ContactService {
     option (google.api.method_signature) = "parent,contact";
   }
 
-  // API to batch create `Contact` objects.
+  // Creates `Contact` objects.
   rpc BatchCreateContacts(BatchCreateContactsRequest)
       returns (BatchCreateContactsResponse) {
     option (google.api.http) = {
@@ -72,7 +73,7 @@ service ContactService {
     option (google.api.method_signature) = "parent,requests";
   }
 
-  // API to update a `Contact` object.
+  // Updates a `Contact` object.
   rpc UpdateContact(UpdateContactRequest) returns (Contact) {
     option (google.api.http) = {
       patch: "/v1/{contact.name=networks/*/contacts/*}"
@@ -81,7 +82,7 @@ service ContactService {
     option (google.api.method_signature) = "contact,update_mask";
   }
 
-  // API to batch update `Contact` objects.
+  // Batch updates `Contact` objects.
   rpc BatchUpdateContacts(BatchUpdateContactsRequest)
       returns (BatchUpdateContactsResponse) {
     option (google.api.http) = {
@@ -129,8 +130,22 @@ message ListContactsRequest {
   string page_token = 3 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Expression to filter the response.
-  // See syntax details at
-  // https://developers.google.com/ad-manager/api/beta/filters
+  //  See syntax details at
+  //  https://developers.google.com/ad-manager/api/beta/filters
+  //
+  // **Filterable fields:**
+  //
+  // * `address`
+  // * `cellPhone`
+  // * `comment`
+  // * `company`
+  // * `displayName`
+  // * `email`
+  // * `fax`
+  // * `name`
+  // * `status`
+  // * `title`
+  // * `workPhone`
   string filter = 4 [(google.api.field_behavior) = OPTIONAL];
 
   // Optional. Expression to specify sorting order.
@@ -213,9 +228,9 @@ message UpdateContactRequest {
   // The `Contact`'s `name` is used to identify the `Contact` to update.
   Contact contact = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. The list of fields to update.
+  // Optional. The list of fields to update.
   google.protobuf.FieldMask update_mask = 2
-      [(google.api.field_behavior) = REQUIRED];
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // Request object for `BatchUpdateContacts` method.

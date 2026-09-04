@@ -30,15 +30,18 @@
 package com.google.api.gax.grpc;
 
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.rpc.ErrorDetails;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
 import io.grpc.Status;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Implementation of OperationSnapshot based on gRPC.
  *
  * <p>Package-private for internal usage.
  */
+@NullMarked
 class GrpcOperationSnapshot implements OperationSnapshot {
 
   private final Operation operation;
@@ -75,6 +78,14 @@ class GrpcOperationSnapshot implements OperationSnapshot {
   @Override
   public String getErrorMessage() {
     return operation.getError().getMessage();
+  }
+
+  /** {@inheritDoc} */
+  @Override
+  public ErrorDetails getErrorDetails() {
+    return ErrorDetails.builder()
+        .setRawErrorMessages(operation.getError().getDetailsList())
+        .build();
   }
 
   public static GrpcOperationSnapshot create(Operation operation) {

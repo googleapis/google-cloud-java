@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -239,9 +241,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GlobalAddressesClient implements BackgroundResource {
-  private final GlobalAddressesSettings settings;
+  private final @Nullable GlobalAddressesSettings settings;
   private final GlobalAddressesStub stub;
 
   /** Constructs an instance of GlobalAddressesClient with default settings. */
@@ -281,7 +284,7 @@ public class GlobalAddressesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final GlobalAddressesSettings getSettings() {
+  public final @Nullable GlobalAddressesSettings getSettings() {
     return settings;
   }
 
@@ -1184,8 +1187,8 @@ public class GlobalAddressesClient implements BackgroundResource {
       extends AbstractPage<ListGlobalAddressesRequest, AddressList, Address, ListPage> {
 
     private ListPage(
-        PageContext<ListGlobalAddressesRequest, AddressList, Address> context,
-        AddressList response) {
+        @Nullable PageContext<ListGlobalAddressesRequest, AddressList, Address> context,
+        @Nullable AddressList response) {
       super(context, response);
     }
 
@@ -1195,14 +1198,14 @@ public class GlobalAddressesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListGlobalAddressesRequest, AddressList, Address> context,
-        AddressList response) {
+        @Nullable PageContext<ListGlobalAddressesRequest, AddressList, Address> context,
+        @Nullable AddressList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListGlobalAddressesRequest, AddressList, Address> context,
+        @Nullable PageContext<ListGlobalAddressesRequest, AddressList, Address> context,
         ApiFuture<AddressList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1212,7 +1215,7 @@ public class GlobalAddressesClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListGlobalAddressesRequest, AddressList, Address, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1221,7 +1224,8 @@ public class GlobalAddressesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

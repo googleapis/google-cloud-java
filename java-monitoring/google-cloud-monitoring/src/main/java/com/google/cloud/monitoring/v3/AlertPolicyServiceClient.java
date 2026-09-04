@@ -44,6 +44,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -226,9 +228,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AlertPolicyServiceClient implements BackgroundResource {
-  private final AlertPolicyServiceSettings settings;
+  private final @Nullable AlertPolicyServiceSettings settings;
   private final AlertPolicyServiceStub stub;
 
   /** Constructs an instance of AlertPolicyServiceClient with default settings. */
@@ -268,7 +271,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AlertPolicyServiceSettings getSettings() {
+  public final @Nullable AlertPolicyServiceSettings getSettings() {
     return settings;
   }
 
@@ -305,7 +308,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *     instead.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAlertPoliciesPagedResponse listAlertPolicies(ResourceName name) {
+  public final ListAlertPoliciesPagedResponse listAlertPolicies(@Nullable ResourceName name) {
     ListAlertPoliciesRequest request =
         ListAlertPoliciesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -342,7 +345,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *     instead.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAlertPoliciesPagedResponse listAlertPolicies(OrganizationName name) {
+  public final ListAlertPoliciesPagedResponse listAlertPolicies(@Nullable OrganizationName name) {
     ListAlertPoliciesRequest request =
         ListAlertPoliciesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -379,7 +382,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *     instead.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAlertPoliciesPagedResponse listAlertPolicies(ProjectName name) {
+  public final ListAlertPoliciesPagedResponse listAlertPolicies(@Nullable ProjectName name) {
     ListAlertPoliciesRequest request =
         ListAlertPoliciesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -555,7 +558,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AlertPolicy getAlertPolicy(AlertPolicyName name) {
+  public final AlertPolicy getAlertPolicy(@Nullable AlertPolicyName name) {
     GetAlertPolicyRequest request =
         GetAlertPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAlertPolicy(request);
@@ -686,7 +689,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *     `[ALERT_POLICY_ID]` value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AlertPolicy createAlertPolicy(ResourceName name, AlertPolicy alertPolicy) {
+  public final AlertPolicy createAlertPolicy(@Nullable ResourceName name, AlertPolicy alertPolicy) {
     CreateAlertPolicyRequest request =
         CreateAlertPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -732,7 +735,8 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *     `[ALERT_POLICY_ID]` value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AlertPolicy createAlertPolicy(OrganizationName name, AlertPolicy alertPolicy) {
+  public final AlertPolicy createAlertPolicy(
+      @Nullable OrganizationName name, AlertPolicy alertPolicy) {
     CreateAlertPolicyRequest request =
         CreateAlertPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -778,7 +782,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *     `[ALERT_POLICY_ID]` value.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AlertPolicy createAlertPolicy(ProjectName name, AlertPolicy alertPolicy) {
+  public final AlertPolicy createAlertPolicy(@Nullable ProjectName name, AlertPolicy alertPolicy) {
     CreateAlertPolicyRequest request =
         CreateAlertPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -924,7 +928,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
    *     <p>For more information, see [AlertPolicy][google.monitoring.v3.AlertPolicy].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteAlertPolicy(AlertPolicyName name) {
+  public final void deleteAlertPolicy(@Nullable AlertPolicyName name) {
     DeleteAlertPolicyRequest request =
         DeleteAlertPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1216,8 +1220,9 @@ public class AlertPolicyServiceClient implements BackgroundResource {
           ListAlertPoliciesRequest, ListAlertPoliciesResponse, AlertPolicy, ListAlertPoliciesPage> {
 
     private ListAlertPoliciesPage(
-        PageContext<ListAlertPoliciesRequest, ListAlertPoliciesResponse, AlertPolicy> context,
-        ListAlertPoliciesResponse response) {
+        @Nullable PageContext<ListAlertPoliciesRequest, ListAlertPoliciesResponse, AlertPolicy>
+            context,
+        @Nullable ListAlertPoliciesResponse response) {
       super(context, response);
     }
 
@@ -1227,14 +1232,16 @@ public class AlertPolicyServiceClient implements BackgroundResource {
 
     @Override
     protected ListAlertPoliciesPage createPage(
-        PageContext<ListAlertPoliciesRequest, ListAlertPoliciesResponse, AlertPolicy> context,
-        ListAlertPoliciesResponse response) {
+        @Nullable PageContext<ListAlertPoliciesRequest, ListAlertPoliciesResponse, AlertPolicy>
+            context,
+        @Nullable ListAlertPoliciesResponse response) {
       return new ListAlertPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAlertPoliciesPage> createPageAsync(
-        PageContext<ListAlertPoliciesRequest, ListAlertPoliciesResponse, AlertPolicy> context,
+        @Nullable PageContext<ListAlertPoliciesRequest, ListAlertPoliciesResponse, AlertPolicy>
+            context,
         ApiFuture<ListAlertPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1249,7 +1256,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
           ListAlertPoliciesFixedSizeCollection> {
 
     private ListAlertPoliciesFixedSizeCollection(
-        List<ListAlertPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListAlertPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1259,7 +1266,7 @@ public class AlertPolicyServiceClient implements BackgroundResource {
 
     @Override
     protected ListAlertPoliciesFixedSizeCollection createCollection(
-        List<ListAlertPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListAlertPoliciesPage> pages, int collectionSize) {
       return new ListAlertPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }

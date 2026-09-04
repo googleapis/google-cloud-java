@@ -18,6 +18,10 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.ContentBundleServiceClient.ListContentBundlesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchActivateContentBundlesRequest;
+import com.google.ads.admanager.v1.BatchActivateContentBundlesResponse;
+import com.google.ads.admanager.v1.BatchDeactivateContentBundlesRequest;
+import com.google.ads.admanager.v1.BatchDeactivateContentBundlesResponse;
 import com.google.ads.admanager.v1.ContentBundle;
 import com.google.ads.admanager.v1.GetContentBundleRequest;
 import com.google.ads.admanager.v1.ListContentBundlesRequest;
@@ -25,6 +29,7 @@ import com.google.ads.admanager.v1.ListContentBundlesResponse;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -32,6 +37,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class ContentBundleServiceStub implements BackgroundResource {
 
@@ -47,6 +53,18 @@ public abstract class ContentBundleServiceStub implements BackgroundResource {
   public UnaryCallable<ListContentBundlesRequest, ListContentBundlesResponse>
       listContentBundlesCallable() {
     throw new UnsupportedOperationException("Not implemented: listContentBundlesCallable()");
+  }
+
+  public UnaryCallable<BatchActivateContentBundlesRequest, BatchActivateContentBundlesResponse>
+      batchActivateContentBundlesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchActivateContentBundlesCallable()");
+  }
+
+  public UnaryCallable<BatchDeactivateContentBundlesRequest, BatchDeactivateContentBundlesResponse>
+      batchDeactivateContentBundlesCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeactivateContentBundlesCallable()");
   }
 
   @Override

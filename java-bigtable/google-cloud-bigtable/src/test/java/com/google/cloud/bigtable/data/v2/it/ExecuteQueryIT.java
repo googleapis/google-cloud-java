@@ -211,10 +211,10 @@ public class ExecuteQueryIT {
                     + " as mapCol, "
                     + " CAST(b'\022\005Lover' AS `"
                     + schemaBundleId
-                    + ".com.google.cloud.bigtable.data.v2.test.Album`) as protoCol, CAST('JAZZ' AS"
+                    + "`.com.google.cloud.bigtable.data.v2.test.Album) as protoCol, CAST('JAZZ' AS"
                     + " `"
                     + schemaBundleId
-                    + ".com.google.cloud.bigtable.data.v2.test.Genre`) as enumCol FROM `"
+                    + "`.com.google.cloud.bigtable.data.v2.test.Genre) as enumCol FROM `"
                     + tableId
                     + "` WHERE _key='"
                     + uniquePrefix

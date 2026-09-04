@@ -20,6 +20,7 @@ package com.google.chat.v1.samples;
 import com.google.chat.v1.ChatServiceClient;
 import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
+import com.google.chat.v1.MarkupSyntax;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.SpaceName;
 import com.google.common.base.Strings;
@@ -45,6 +46,7 @@ public class AsyncListMessagesPaged {
               .setFilter("filter-1274492040")
               .setOrderBy("orderBy-1207110587")
               .setShowDeleted(true)
+              .setMarkupSyntax(MarkupSyntax.forNumber(0))
               .build();
       while (true) {
         ListMessagesResponse response = chatServiceClient.listMessagesCallable().call(request);

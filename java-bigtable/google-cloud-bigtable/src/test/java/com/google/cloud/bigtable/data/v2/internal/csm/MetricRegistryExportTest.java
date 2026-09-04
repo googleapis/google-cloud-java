@@ -775,6 +775,38 @@ public class MetricRegistryExportTest {
                 .build());
   }
 
+  @Test
+  void testGrpcMetricExport() {
+    // 1. Record a gRPC metric using its internal name
+    // Note: gRPC metrics are usually recorded by gRPC-Java's OpenTelemetry integration,
+    // but we can simulate it by getting the instrument from the meter directly.
+    meterProvider
+        .get("grpc-java")
+        .histogramBuilder("grpc.client.attempt.duration")
+        .build()
+        .record(
+            123.0,
+            io.opentelemetry.api.common.Attributes.of(
+                io.opentelemetry.api.common.AttributeKey.stringKey("grpc.status"), "OK",
+                io.opentelemetry.api.common.AttributeKey.stringKey("grpc.method"),
+                    "Bigtable.ReadRows"));
+
+    // 2. Flush the metrics to the exporter
+    metricReader.forceFlush().join(1, TimeUnit.MINUTES);
+
+    // 3. Verify that the metric was exported under the Bigtable namespace
+    // The internal 'grpc.client.attempt.duration' should be renamed by GrpcMetric.java
+    TimeSeries timeSeries =
+        metricService.getSingleTimeSeriesByName(
+            "bigtable.googleapis.com/internal/client/grpc/client/attempt/duration");
+
+    // 4. Verify labels are correctly mapped (dots replaced with underscores)
+    assertThat(timeSeries.getMetric().getLabelsMap())
+        .containsAtLeast(
+            "grpc_status", "OK",
+            "grpc_method", "Bigtable.ReadRows");
+  }
+
   private static class FakeMetricService extends MetricServiceImplBase {
     final BlockingDeque<CreateTimeSeriesRequest> requests = new LinkedBlockingDeque<>();
 

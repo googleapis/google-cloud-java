@@ -443,6 +443,107 @@ public final class ModelArmorGrpc {
     return getSanitizeModelResponseMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest,
+          com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse>
+      getStreamSanitizeUserPromptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamSanitizeUserPrompt",
+      requestType = com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest.class,
+      responseType = com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest,
+          com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse>
+      getStreamSanitizeUserPromptMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest,
+            com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse>
+        getStreamSanitizeUserPromptMethod;
+    if ((getStreamSanitizeUserPromptMethod = ModelArmorGrpc.getStreamSanitizeUserPromptMethod)
+        == null) {
+      synchronized (ModelArmorGrpc.class) {
+        if ((getStreamSanitizeUserPromptMethod = ModelArmorGrpc.getStreamSanitizeUserPromptMethod)
+            == null) {
+          ModelArmorGrpc.getStreamSanitizeUserPromptMethod =
+              getStreamSanitizeUserPromptMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest,
+                          com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "StreamSanitizeUserPrompt"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelArmorMethodDescriptorSupplier("StreamSanitizeUserPrompt"))
+                      .build();
+        }
+      }
+    }
+    return getStreamSanitizeUserPromptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest,
+          com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse>
+      getStreamSanitizeModelResponseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StreamSanitizeModelResponse",
+      requestType = com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest.class,
+      responseType = com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest,
+          com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse>
+      getStreamSanitizeModelResponseMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest,
+            com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse>
+        getStreamSanitizeModelResponseMethod;
+    if ((getStreamSanitizeModelResponseMethod = ModelArmorGrpc.getStreamSanitizeModelResponseMethod)
+        == null) {
+      synchronized (ModelArmorGrpc.class) {
+        if ((getStreamSanitizeModelResponseMethod =
+                ModelArmorGrpc.getStreamSanitizeModelResponseMethod)
+            == null) {
+          ModelArmorGrpc.getStreamSanitizeModelResponseMethod =
+              getStreamSanitizeModelResponseMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest,
+                          com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "StreamSanitizeModelResponse"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ModelArmorMethodDescriptorSupplier("StreamSanitizeModelResponse"))
+                      .build();
+        }
+      }
+    }
+    return getStreamSanitizeModelResponseMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ModelArmorStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ModelArmorStub> factory =
@@ -633,6 +734,37 @@ public final class ModelArmorGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSanitizeModelResponseMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Streaming version of Sanitize User Prompt.
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest>
+        streamSanitizeUserPrompt(
+            io.grpc.stub.StreamObserver<com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse>
+                responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getStreamSanitizeUserPromptMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Streaming version of Sanitizes Model Response.
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest>
+        streamSanitizeModelResponse(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse>
+                responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getStreamSanitizeModelResponseMethod(), responseObserver);
+    }
   }
 
   /**
@@ -813,6 +945,39 @@ public final class ModelArmorGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Streaming version of Sanitize User Prompt.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest>
+        streamSanitizeUserPrompt(
+            io.grpc.stub.StreamObserver<com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse>
+                responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getStreamSanitizeUserPromptMethod(), getCallOptions()),
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Streaming version of Sanitizes Model Response.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest>
+        streamSanitizeModelResponse(
+            io.grpc.stub.StreamObserver<
+                    com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse>
+                responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getStreamSanitizeModelResponseMethod(), getCallOptions()),
+          responseObserver);
+    }
   }
 
   /**
@@ -957,6 +1122,38 @@ public final class ModelArmorGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getSanitizeModelResponseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Streaming version of Sanitize User Prompt.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest,
+            com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse>
+        streamSanitizeUserPrompt() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamSanitizeUserPromptMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Streaming version of Sanitizes Model Response.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest,
+            com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse>
+        streamSanitizeModelResponse() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamSanitizeModelResponseMethod(), getCallOptions());
     }
   }
 
@@ -1250,6 +1447,8 @@ public final class ModelArmorGrpc {
   private static final int METHODID_UPDATE_FLOOR_SETTING = 6;
   private static final int METHODID_SANITIZE_USER_PROMPT = 7;
   private static final int METHODID_SANITIZE_MODEL_RESPONSE = 8;
+  private static final int METHODID_STREAM_SANITIZE_USER_PROMPT = 9;
+  private static final int METHODID_STREAM_SANITIZE_MODEL_RESPONSE = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1333,6 +1532,18 @@ public final class ModelArmorGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_STREAM_SANITIZE_USER_PROMPT:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.streamSanitizeUserPrompt(
+                  (io.grpc.stub.StreamObserver<
+                          com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse>)
+                      responseObserver);
+        case METHODID_STREAM_SANITIZE_MODEL_RESPONSE:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.streamSanitizeModelResponse(
+                  (io.grpc.stub.StreamObserver<
+                          com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse>)
+                      responseObserver);
         default:
           throw new AssertionError();
       }
@@ -1400,6 +1611,20 @@ public final class ModelArmorGrpc {
                     com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest,
                     com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse>(
                     service, METHODID_SANITIZE_MODEL_RESPONSE)))
+        .addMethod(
+            getStreamSanitizeUserPromptMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.modelarmor.v1.SanitizeUserPromptRequest,
+                    com.google.cloud.modelarmor.v1.SanitizeUserPromptResponse>(
+                    service, METHODID_STREAM_SANITIZE_USER_PROMPT)))
+        .addMethod(
+            getStreamSanitizeModelResponseMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.cloud.modelarmor.v1.SanitizeModelResponseRequest,
+                    com.google.cloud.modelarmor.v1.SanitizeModelResponseResponse>(
+                    service, METHODID_STREAM_SANITIZE_MODEL_RESPONSE)))
         .build();
   }
 
@@ -1460,6 +1685,8 @@ public final class ModelArmorGrpc {
                       .addMethod(getUpdateFloorSettingMethod())
                       .addMethod(getSanitizeUserPromptMethod())
                       .addMethod(getSanitizeModelResponseMethod())
+                      .addMethod(getStreamSanitizeUserPromptMethod())
+                      .addMethod(getStreamSanitizeModelResponseMethod())
                       .build();
         }
       }

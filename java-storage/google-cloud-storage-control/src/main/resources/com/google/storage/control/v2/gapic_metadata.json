@@ -19,6 +19,9 @@
             "CreateManagedFolder": {
               "methods": ["createManagedFolder", "createManagedFolder", "createManagedFolder", "createManagedFolderCallable"]
             },
+            "CreateRapidCache": {
+              "methods": ["createRapidCacheAsync", "createRapidCacheAsync", "createRapidCacheAsync", "createRapidCacheOperationCallable", "createRapidCacheCallable"]
+            },
             "DeleteFolder": {
               "methods": ["deleteFolder", "deleteFolder", "deleteFolder", "deleteFolderCallable"]
             },
@@ -30,6 +33,9 @@
             },
             "DisableAnywhereCache": {
               "methods": ["disableAnywhereCache", "disableAnywhereCache", "disableAnywhereCache", "disableAnywhereCacheCallable"]
+            },
+            "DisableRapidCache": {
+              "methods": ["disableRapidCacheAsync", "disableRapidCacheAsync", "disableRapidCacheAsync", "disableRapidCacheOperationCallable", "disableRapidCacheCallable"]
             },
             "GetAnywhereCache": {
               "methods": ["getAnywhereCache", "getAnywhereCache", "getAnywhereCache", "getAnywhereCacheCallable"]
@@ -43,6 +49,12 @@
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
             },
+            "GetIntelligenceFinding": {
+              "methods": ["getIntelligenceFinding", "getIntelligenceFinding", "getIntelligenceFinding", "getIntelligenceFindingCallable"]
+            },
+            "GetIntelligenceFindingRevision": {
+              "methods": ["getIntelligenceFindingRevision", "getIntelligenceFindingRevision", "getIntelligenceFindingRevision", "getIntelligenceFindingRevisionCallable"]
+            },
             "GetManagedFolder": {
               "methods": ["getManagedFolder", "getManagedFolder", "getManagedFolder", "getManagedFolderCallable"]
             },
@@ -51,6 +63,9 @@
             },
             "GetProjectIntelligenceConfig": {
               "methods": ["getProjectIntelligenceConfig", "getProjectIntelligenceConfig", "getProjectIntelligenceConfig", "getProjectIntelligenceConfigCallable"]
+            },
+            "GetRapidCache": {
+              "methods": ["getRapidCache", "getRapidCache", "getRapidCache", "getRapidCacheCallable"]
             },
             "GetStorageLayout": {
               "methods": ["getStorageLayout", "getStorageLayout", "getStorageLayout", "getStorageLayoutCallable"]
@@ -61,8 +76,17 @@
             "ListFolders": {
               "methods": ["listFolders", "listFolders", "listFolders", "listFoldersPagedCallable", "listFoldersCallable"]
             },
+            "ListIntelligenceFindingRevisions": {
+              "methods": ["listIntelligenceFindingRevisions", "listIntelligenceFindingRevisions", "listIntelligenceFindingRevisions", "listIntelligenceFindingRevisionsPagedCallable", "listIntelligenceFindingRevisionsCallable"]
+            },
+            "ListIntelligenceFindings": {
+              "methods": ["listIntelligenceFindings", "listIntelligenceFindings", "listIntelligenceFindings", "listIntelligenceFindingsPagedCallable", "listIntelligenceFindingsCallable"]
+            },
             "ListManagedFolders": {
               "methods": ["listManagedFolders", "listManagedFolders", "listManagedFolders", "listManagedFoldersPagedCallable", "listManagedFoldersCallable"]
+            },
+            "ListRapidCaches": {
+              "methods": ["listRapidCaches", "listRapidCaches", "listRapidCaches", "listRapidCachesPagedCallable", "listRapidCachesCallable"]
             },
             "PauseAnywhereCache": {
               "methods": ["pauseAnywhereCache", "pauseAnywhereCache", "pauseAnywhereCache", "pauseAnywhereCacheCallable"]
@@ -76,6 +100,9 @@
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
             },
+            "SummarizeIntelligenceFindings": {
+              "methods": ["summarizeIntelligenceFindings", "summarizeIntelligenceFindings", "summarizeIntelligenceFindingsPagedCallable", "summarizeIntelligenceFindingsCallable"]
+            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             },
@@ -85,11 +112,20 @@
             "UpdateFolderIntelligenceConfig": {
               "methods": ["updateFolderIntelligenceConfig", "updateFolderIntelligenceConfig", "updateFolderIntelligenceConfigCallable"]
             },
+            "UpdateManagedFolder": {
+              "methods": ["updateManagedFolder", "updateManagedFolder", "updateManagedFolderCallable"]
+            },
             "UpdateOrganizationIntelligenceConfig": {
               "methods": ["updateOrganizationIntelligenceConfig", "updateOrganizationIntelligenceConfig", "updateOrganizationIntelligenceConfigCallable"]
             },
             "UpdateProjectIntelligenceConfig": {
               "methods": ["updateProjectIntelligenceConfig", "updateProjectIntelligenceConfig", "updateProjectIntelligenceConfigCallable"]
+            },
+            "UpdateRapidCache": {
+              "methods": ["updateRapidCacheAsync", "updateRapidCacheAsync", "updateRapidCacheOperationCallable", "updateRapidCacheCallable"]
+            },
+            "ViewObjectFullContext": {
+              "methods": ["viewObjectFullContext", "viewObjectFullContext", "viewObjectFullContext", "viewObjectFullContext", "viewObjectFullContext", "viewObjectFullContextCallable"]
             }
           }
         }

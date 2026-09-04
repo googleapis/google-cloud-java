@@ -23,6 +23,8 @@ import com.google.cloud.discoveryengine.v1.stub.AssistantServiceStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -50,6 +52,7 @@ import javax.annotation.Generated;
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
  *                   .toString())
  *           .setUserMetadata(AssistUserMetadata.newBuilder().build())
+ *           .setAgentsSpec(StreamAssistRequest.AgentsSpec.newBuilder().build())
  *           .setToolsSpec(StreamAssistRequest.ToolsSpec.newBuilder().build())
  *           .setGenerationSpec(StreamAssistRequest.GenerationSpec.newBuilder().build())
  *           .build();
@@ -140,9 +143,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AssistantServiceClient implements BackgroundResource {
-  private final AssistantServiceSettings settings;
+  private final @Nullable AssistantServiceSettings settings;
   private final AssistantServiceStub stub;
 
   /** Constructs an instance of AssistantServiceClient with default settings. */
@@ -182,7 +186,7 @@ public class AssistantServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AssistantServiceSettings getSettings() {
+  public final @Nullable AssistantServiceSettings getSettings() {
     return settings;
   }
 
@@ -215,6 +219,7 @@ public class AssistantServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setUserMetadata(AssistUserMetadata.newBuilder().build())
+   *           .setAgentsSpec(StreamAssistRequest.AgentsSpec.newBuilder().build())
    *           .setToolsSpec(StreamAssistRequest.ToolsSpec.newBuilder().build())
    *           .setGenerationSpec(StreamAssistRequest.GenerationSpec.newBuilder().build())
    *           .build();

@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -209,9 +211,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class UserListDirectLicenseServiceClient implements BackgroundResource {
-  private final UserListDirectLicenseServiceSettings settings;
+  private final @Nullable UserListDirectLicenseServiceSettings settings;
   private final UserListDirectLicenseServiceStub stub;
 
   /** Constructs an instance of UserListDirectLicenseServiceClient with default settings. */
@@ -255,7 +258,7 @@ public class UserListDirectLicenseServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final UserListDirectLicenseServiceSettings getSettings() {
+  public final @Nullable UserListDirectLicenseServiceSettings getSettings() {
     return settings;
   }
 
@@ -293,7 +296,7 @@ public class UserListDirectLicenseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UserListDirectLicense createUserListDirectLicense(
-      AccountName parent, UserListDirectLicense userListDirectLicense) {
+      @Nullable AccountName parent, UserListDirectLicense userListDirectLicense) {
     CreateUserListDirectLicenseRequest request =
         CreateUserListDirectLicenseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -436,7 +439,8 @@ public class UserListDirectLicenseServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the user list direct license.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final UserListDirectLicense getUserListDirectLicense(UserListDirectLicenseName name) {
+  public final UserListDirectLicense getUserListDirectLicense(
+      @Nullable UserListDirectLicenseName name) {
     GetUserListDirectLicenseRequest request =
         GetUserListDirectLicenseRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -686,7 +690,7 @@ public class UserListDirectLicenseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListUserListDirectLicensesPagedResponse listUserListDirectLicenses(
-      AccountName parent) {
+      @Nullable AccountName parent) {
     ListUserListDirectLicensesRequest request =
         ListUserListDirectLicensesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -916,12 +920,13 @@ public class UserListDirectLicenseServiceClient implements BackgroundResource {
           ListUserListDirectLicensesPage> {
 
     private ListUserListDirectLicensesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserListDirectLicensesRequest,
                 ListUserListDirectLicensesResponse,
                 UserListDirectLicense>
             context,
-        ListUserListDirectLicensesResponse response) {
+        @Nullable ListUserListDirectLicensesResponse response) {
       super(context, response);
     }
 
@@ -931,18 +936,20 @@ public class UserListDirectLicenseServiceClient implements BackgroundResource {
 
     @Override
     protected ListUserListDirectLicensesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserListDirectLicensesRequest,
                 ListUserListDirectLicensesResponse,
                 UserListDirectLicense>
             context,
-        ListUserListDirectLicensesResponse response) {
+        @Nullable ListUserListDirectLicensesResponse response) {
       return new ListUserListDirectLicensesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListUserListDirectLicensesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListUserListDirectLicensesRequest,
                 ListUserListDirectLicensesResponse,
                 UserListDirectLicense>
@@ -961,7 +968,7 @@ public class UserListDirectLicenseServiceClient implements BackgroundResource {
           ListUserListDirectLicensesFixedSizeCollection> {
 
     private ListUserListDirectLicensesFixedSizeCollection(
-        List<ListUserListDirectLicensesPage> pages, int collectionSize) {
+        @Nullable List<ListUserListDirectLicensesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -971,7 +978,7 @@ public class UserListDirectLicenseServiceClient implements BackgroundResource {
 
     @Override
     protected ListUserListDirectLicensesFixedSizeCollection createCollection(
-        List<ListUserListDirectLicensesPage> pages, int collectionSize) {
+        @Nullable List<ListUserListDirectLicensesPage> pages, int collectionSize) {
       return new ListUserListDirectLicensesFixedSizeCollection(pages, collectionSize);
     }
   }

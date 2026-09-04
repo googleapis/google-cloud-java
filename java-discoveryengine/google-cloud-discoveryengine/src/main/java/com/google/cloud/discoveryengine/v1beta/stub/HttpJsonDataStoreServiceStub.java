@@ -55,6 +55,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -62,6 +63,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
@@ -99,11 +101,15 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                             ProtoRestSerializer<CreateDataStoreRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
+                                fields, "cmekConfigName", request.getCmekConfigName());
+                            serializer.putQueryParam(
                                 fields,
                                 "createAdvancedSiteSearch",
                                 request.getCreateAdvancedSiteSearch());
                             serializer.putQueryParam(
                                 fields, "dataStoreId", request.getDataStoreId());
+                            serializer.putQueryParam(
+                                fields, "disableCmek", request.getDisableCmek());
                             serializer.putQueryParam(
                                 fields,
                                 "skipDefaultSchemaCreation",
@@ -394,6 +400,11 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
                                 .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/assistants/*/agents/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
                                     "/v1beta/{name=projects/*/locations/*/collections/*/engines/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
@@ -420,6 +431,11 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                             HttpRule.newBuilder()
                                 .setGet(
                                     "/v1beta/{name=projects/*/locations/*/evaluations/*/operations/*}")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/identityMappingStores/*/operations/*}")
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
@@ -497,6 +513,11 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                                 .build())
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
+                                .setGet(
+                                    "/v1beta/{name=projects/*/locations/*/identityMappingStores/*}/operations")
+                                .build())
+                        .addAdditionalBindings(
+                            HttpRule.newBuilder()
                                 .setGet("/v1beta/{name=projects/*/locations/*}/operations")
                                 .build())
                         .addAdditionalBindings(
@@ -516,7 +537,7 @@ public class HttpJsonDataStoreServiceStub extends DataStoreServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
-            .setResourceNameExtractor(request -> request.getParent())
+            .setResourceNameExtractor(request -> request.getCmekConfigName())
             .build();
     HttpJsonCallSettings<GetDataStoreRequest, DataStore> getDataStoreTransportSettings =
         HttpJsonCallSettings.<GetDataStoreRequest, DataStore>newBuilder()

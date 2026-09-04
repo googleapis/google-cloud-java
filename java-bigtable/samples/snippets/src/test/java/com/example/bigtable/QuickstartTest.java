@@ -18,8 +18,12 @@ package com.example.bigtable;
 
 import static org.junit.Assert.assertThat;
 
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
+import com.google.api.gax.rpc.NotFoundException;
+import com.google.bigtable.admin.v2.ColumnFamily;
+import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.Table;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
@@ -39,11 +43,30 @@ public class QuickstartTest extends BigtableBaseTest {
     initializeVariables();
 
     // set up required table and row data if not present
-    try (BigtableTableAdminClient tableAdminClient =
-        BigtableTableAdminClient.create(projectId, instanceId)) {
+    try (BigtableTableAdminClientV2 tableAdminClient = BigtableTableAdminClientV2.create()) {
       String columnFamily = "cf1";
-      if (!tableAdminClient.exists(TABLE_ID)) {
-        tableAdminClient.createTable(CreateTableRequest.of(TABLE_ID).addFamily(columnFamily));
+      boolean exists = true;
+      try {
+        tableAdminClient.getTable(
+            GetTableRequest.newBuilder()
+                .setName(
+                    "projects/" + projectId + "/instances/" + instanceId + "/tables/" + TABLE_ID)
+                .setView(Table.View.NAME_ONLY)
+                .build());
+      } catch (NotFoundException e) {
+        exists = false;
+      }
+      if (!exists) {
+        CreateTableRequest request =
+            CreateTableRequest.newBuilder()
+                .setParent("projects/" + projectId + "/instances/" + instanceId)
+                .setTableId(TABLE_ID)
+                .setTable(
+                    Table.newBuilder()
+                        .putColumnFamilies(columnFamily, ColumnFamily.getDefaultInstance())
+                        .build())
+                .build();
+        tableAdminClient.createTable(request);
       }
       try (BigtableDataClient dataClient = BigtableDataClient.create(projectId, instanceId)) {
         String rowKey = "r1";

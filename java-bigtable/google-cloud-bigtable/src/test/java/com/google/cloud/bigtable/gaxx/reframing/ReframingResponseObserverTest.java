@@ -185,7 +185,7 @@ public class ReframingResponseObserverTest {
     // First downstream request makes the upstream over produce
     outerObserver.getController().request(1);
     Truth.assertThat(outerObserver.popNextResponse()).isEqualTo("a");
-    Truth.assertThat(outerObserver.popNextResponse()).isEqualTo(null);
+    Truth.assertThat(outerObserver.popNextResponse()).isNull();
     Truth.assertThat(outerObserver.isDone()).isFalse();
 
     // Next downstream request should fetch from buffer
@@ -419,7 +419,8 @@ public class ReframingResponseObserverTest {
         new ReframingResponseObserver<>(outerObserver, brokenReframer);
 
     // Configure the mock inner controller to fail cancellation.
-    StreamController mockInnerController = Mockito.mock(StreamController.class);
+    StreamController mockInnerController =
+        Mockito.mock(StreamController.class, Mockito.withSettings().withoutAnnotations());
     RuntimeException fakeCancelError = new RuntimeException("fake cancel error");
     Mockito.doThrow(fakeCancelError).when(mockInnerController).cancel();
 

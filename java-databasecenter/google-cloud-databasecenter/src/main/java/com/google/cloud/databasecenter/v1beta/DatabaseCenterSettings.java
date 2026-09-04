@@ -17,6 +17,7 @@
 package com.google.cloud.databasecenter.v1beta;
 
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateFleetPagedResponse;
+import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.AggregateQueryStatsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryDatabaseResourceGroupsPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryIssuesPagedResponse;
 import static com.google.cloud.databasecenter.v1beta.DatabaseCenterClient.QueryProductsPagedResponse;
@@ -37,6 +38,8 @@ import com.google.cloud.databasecenter.v1beta.stub.DatabaseCenterStubSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -89,6 +92,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSettings> {
@@ -119,6 +123,13 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
   public UnaryCallSettings<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
       aggregateIssueStatsSettings() {
     return ((DatabaseCenterStubSettings) getStubSettings()).aggregateIssueStatsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to aggregateQueryStats. */
+  public PagedCallSettings<
+          AggregateQueryStatsRequest, AggregateQueryStatsResponse, AggregateQueryStatsPagedResponse>
+      aggregateQueryStatsSettings() {
+    return ((DatabaseCenterStubSettings) getStubSettings()).aggregateQueryStatsSettings();
   }
 
   /** Returns the object with the settings used for calls to queryIssues. */
@@ -183,7 +194,7 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -203,7 +214,7 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(DatabaseCenterStubSettings.newBuilder(clientContext));
     }
 
@@ -266,6 +277,15 @@ public class DatabaseCenterSettings extends ClientSettings<DatabaseCenterSetting
     public UnaryCallSettings.Builder<AggregateIssueStatsRequest, AggregateIssueStatsResponse>
         aggregateIssueStatsSettings() {
       return getStubSettingsBuilder().aggregateIssueStatsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to aggregateQueryStats. */
+    public PagedCallSettings.Builder<
+            AggregateQueryStatsRequest,
+            AggregateQueryStatsResponse,
+            AggregateQueryStatsPagedResponse>
+        aggregateQueryStatsSettings() {
+      return getStubSettingsBuilder().aggregateQueryStatsSettings();
     }
 
     /** Returns the builder for the settings used for calls to queryIssues. */

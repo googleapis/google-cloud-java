@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -422,9 +424,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MetastoreServiceClient implements BackgroundResource {
-  private final MetastoreServiceSettings settings;
+  private final @Nullable MetastoreServiceSettings settings;
   private final MetastoreServiceStub stub;
 
   /** Constructs an instance of MetastoreServiceClient with default settings. */
@@ -464,7 +467,7 @@ public class MetastoreServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MetastoreServiceSettings getSettings() {
+  public final @Nullable MetastoreServiceSettings getSettings() {
     return settings;
   }
 
@@ -499,7 +502,8 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     of the catalog's resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Catalog createCatalog(LocationName parent, Catalog catalog, String catalogId) {
+  public final Catalog createCatalog(
+      @Nullable LocationName parent, Catalog catalog, String catalogId) {
     CreateCatalogRequest request =
         CreateCatalogRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -628,7 +632,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Catalog deleteCatalog(CatalogName name) {
+  public final Catalog deleteCatalog(@Nullable CatalogName name) {
     DeleteCatalogRequest request =
         DeleteCatalogRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteCatalog(request);
@@ -739,7 +743,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Catalog getCatalog(CatalogName name) {
+  public final Catalog getCatalog(@Nullable CatalogName name) {
     GetCatalogRequest request =
         GetCatalogRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCatalog(request);
@@ -851,7 +855,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCatalogsPagedResponse listCatalogs(LocationName parent) {
+  public final ListCatalogsPagedResponse listCatalogs(@Nullable LocationName parent) {
     ListCatalogsRequest request =
         ListCatalogsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1019,7 +1023,8 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     component of the database's resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Database createDatabase(CatalogName parent, Database database, String databaseId) {
+  public final Database createDatabase(
+      @Nullable CatalogName parent, Database database, String databaseId) {
     CreateDatabaseRequest request =
         CreateDatabaseRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1149,7 +1154,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Database deleteDatabase(DatabaseName name) {
+  public final Database deleteDatabase(@Nullable DatabaseName name) {
     DeleteDatabaseRequest request =
         DeleteDatabaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteDatabase(request);
@@ -1355,7 +1360,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Database getDatabase(DatabaseName name) {
+  public final Database getDatabase(@Nullable DatabaseName name) {
     GetDatabaseRequest request =
         GetDatabaseRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDatabase(request);
@@ -1470,7 +1475,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDatabasesPagedResponse listDatabases(CatalogName parent) {
+  public final ListDatabasesPagedResponse listDatabases(@Nullable CatalogName parent) {
     ListDatabasesRequest request =
         ListDatabasesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1639,7 +1644,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     the table's resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Table createTable(DatabaseName parent, Table table, String tableId) {
+  public final Table createTable(@Nullable DatabaseName parent, Table table, String tableId) {
     CreateTableRequest request =
         CreateTableRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1772,7 +1777,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Table deleteTable(TableName name) {
+  public final Table deleteTable(@Nullable TableName name) {
     DeleteTableRequest request =
         DeleteTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteTable(request);
@@ -1984,7 +1989,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Table renameTable(TableName name, TableName newName) {
+  public final Table renameTable(@Nullable TableName name, @Nullable TableName newName) {
     RenameTableRequest request =
         RenameTableRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2021,7 +2026,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Table renameTable(TableName name, String newName) {
+  public final Table renameTable(@Nullable TableName name, String newName) {
     RenameTableRequest request =
         RenameTableRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2058,7 +2063,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Table renameTable(String name, TableName newName) {
+  public final Table renameTable(String name, @Nullable TableName newName) {
     RenameTableRequest request =
         RenameTableRequest.newBuilder()
             .setName(name)
@@ -2189,7 +2194,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Table getTable(TableName name) {
+  public final Table getTable(@Nullable TableName name) {
     GetTableRequest request =
         GetTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTable(request);
@@ -2306,7 +2311,7 @@ public class MetastoreServiceClient implements BackgroundResource {
    *     projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTablesPagedResponse listTables(DatabaseName parent) {
+  public final ListTablesPagedResponse listTables(@Nullable DatabaseName parent) {
     ListTablesRequest request =
         ListTablesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listTables(request);
@@ -2508,8 +2513,8 @@ public class MetastoreServiceClient implements BackgroundResource {
       extends AbstractPage<ListCatalogsRequest, ListCatalogsResponse, Catalog, ListCatalogsPage> {
 
     private ListCatalogsPage(
-        PageContext<ListCatalogsRequest, ListCatalogsResponse, Catalog> context,
-        ListCatalogsResponse response) {
+        @Nullable PageContext<ListCatalogsRequest, ListCatalogsResponse, Catalog> context,
+        @Nullable ListCatalogsResponse response) {
       super(context, response);
     }
 
@@ -2519,14 +2524,14 @@ public class MetastoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListCatalogsPage createPage(
-        PageContext<ListCatalogsRequest, ListCatalogsResponse, Catalog> context,
-        ListCatalogsResponse response) {
+        @Nullable PageContext<ListCatalogsRequest, ListCatalogsResponse, Catalog> context,
+        @Nullable ListCatalogsResponse response) {
       return new ListCatalogsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCatalogsPage> createPageAsync(
-        PageContext<ListCatalogsRequest, ListCatalogsResponse, Catalog> context,
+        @Nullable PageContext<ListCatalogsRequest, ListCatalogsResponse, Catalog> context,
         ApiFuture<ListCatalogsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2540,7 +2545,8 @@ public class MetastoreServiceClient implements BackgroundResource {
           ListCatalogsPage,
           ListCatalogsFixedSizeCollection> {
 
-    private ListCatalogsFixedSizeCollection(List<ListCatalogsPage> pages, int collectionSize) {
+    private ListCatalogsFixedSizeCollection(
+        @Nullable List<ListCatalogsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2550,7 +2556,7 @@ public class MetastoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListCatalogsFixedSizeCollection createCollection(
-        List<ListCatalogsPage> pages, int collectionSize) {
+        @Nullable List<ListCatalogsPage> pages, int collectionSize) {
       return new ListCatalogsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2584,8 +2590,8 @@ public class MetastoreServiceClient implements BackgroundResource {
           ListDatabasesRequest, ListDatabasesResponse, Database, ListDatabasesPage> {
 
     private ListDatabasesPage(
-        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
-        ListDatabasesResponse response) {
+        @Nullable PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        @Nullable ListDatabasesResponse response) {
       super(context, response);
     }
 
@@ -2595,14 +2601,14 @@ public class MetastoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListDatabasesPage createPage(
-        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
-        ListDatabasesResponse response) {
+        @Nullable PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        @Nullable ListDatabasesResponse response) {
       return new ListDatabasesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDatabasesPage> createPageAsync(
-        PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
+        @Nullable PageContext<ListDatabasesRequest, ListDatabasesResponse, Database> context,
         ApiFuture<ListDatabasesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2616,7 +2622,8 @@ public class MetastoreServiceClient implements BackgroundResource {
           ListDatabasesPage,
           ListDatabasesFixedSizeCollection> {
 
-    private ListDatabasesFixedSizeCollection(List<ListDatabasesPage> pages, int collectionSize) {
+    private ListDatabasesFixedSizeCollection(
+        @Nullable List<ListDatabasesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2626,7 +2633,7 @@ public class MetastoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListDatabasesFixedSizeCollection createCollection(
-        List<ListDatabasesPage> pages, int collectionSize) {
+        @Nullable List<ListDatabasesPage> pages, int collectionSize) {
       return new ListDatabasesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2657,8 +2664,8 @@ public class MetastoreServiceClient implements BackgroundResource {
       extends AbstractPage<ListTablesRequest, ListTablesResponse, Table, ListTablesPage> {
 
     private ListTablesPage(
-        PageContext<ListTablesRequest, ListTablesResponse, Table> context,
-        ListTablesResponse response) {
+        @Nullable PageContext<ListTablesRequest, ListTablesResponse, Table> context,
+        @Nullable ListTablesResponse response) {
       super(context, response);
     }
 
@@ -2668,14 +2675,14 @@ public class MetastoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListTablesPage createPage(
-        PageContext<ListTablesRequest, ListTablesResponse, Table> context,
-        ListTablesResponse response) {
+        @Nullable PageContext<ListTablesRequest, ListTablesResponse, Table> context,
+        @Nullable ListTablesResponse response) {
       return new ListTablesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTablesPage> createPageAsync(
-        PageContext<ListTablesRequest, ListTablesResponse, Table> context,
+        @Nullable PageContext<ListTablesRequest, ListTablesResponse, Table> context,
         ApiFuture<ListTablesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2689,7 +2696,8 @@ public class MetastoreServiceClient implements BackgroundResource {
           ListTablesPage,
           ListTablesFixedSizeCollection> {
 
-    private ListTablesFixedSizeCollection(List<ListTablesPage> pages, int collectionSize) {
+    private ListTablesFixedSizeCollection(
+        @Nullable List<ListTablesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2699,7 +2707,7 @@ public class MetastoreServiceClient implements BackgroundResource {
 
     @Override
     protected ListTablesFixedSizeCollection createCollection(
-        List<ListTablesPage> pages, int collectionSize) {
+        @Nullable List<ListTablesPage> pages, int collectionSize) {
       return new ListTablesFixedSizeCollection(pages, collectionSize);
     }
   }

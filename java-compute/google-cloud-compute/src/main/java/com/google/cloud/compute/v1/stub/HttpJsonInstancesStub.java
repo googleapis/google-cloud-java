@@ -108,6 +108,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -115,6 +116,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonInstancesStub extends InstancesStub {
   private static final TypeRegistry typeRegistry =
@@ -496,6 +498,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<DeleteInstanceRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasNoGracefulShutdown()) {
+                              serializer.putQueryParam(
+                                  fields, "noGracefulShutdown", request.getNoGracefulShutdown());
+                            }
                             if (request.hasRequestId()) {
                               serializer.putQueryParam(fields, "requestId", request.getRequestId());
                             }
@@ -2393,6 +2399,10 @@ public class HttpJsonInstancesStub extends InstancesStub {
                         if (request.hasDiscardLocalSsd()) {
                           serializer.putQueryParam(
                               fields, "discardLocalSsd", request.getDiscardLocalSsd());
+                        }
+                        if (request.hasNoGracefulShutdown()) {
+                          serializer.putQueryParam(
+                              fields, "noGracefulShutdown", request.getNoGracefulShutdown());
                         }
                         if (request.hasRequestId()) {
                           serializer.putQueryParam(fields, "requestId", request.getRequestId());

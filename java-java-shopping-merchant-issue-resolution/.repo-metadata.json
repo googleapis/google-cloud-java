@@ -5,12 +5,11 @@
   "api_description": "Programatically manage your Merchant Issues",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-shopping-merchant-issue-resolution/latest/overview",
   "release_level": "stable",
-  "transport": "both",
+  "transport": "grpc+rest",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-java-shopping-merchant-issue-resolution",
   "distribution_name": "com.google.shopping:google-shopping-merchant-issue-resolution",
   "api_id": "merchantapi.googleapis.com",
-  "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "library_type": "GAPIC_AUTO"
 }

@@ -86,6 +86,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -735,9 +737,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class IAMClient implements BackgroundResource {
-  private final IAMSettings settings;
+  private final @Nullable IAMSettings settings;
   private final IAMStub stub;
 
   /** Constructs an instance of IAMClient with default settings. */
@@ -775,7 +778,7 @@ public class IAMClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final IAMSettings getSettings() {
+  public final @Nullable IAMSettings getSettings() {
     return settings;
   }
 
@@ -808,7 +811,7 @@ public class IAMClient implements BackgroundResource {
    *     such as `projects/my-project-123`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListServiceAccountsPagedResponse listServiceAccounts(ProjectName name) {
+  public final ListServiceAccountsPagedResponse listServiceAccounts(@Nullable ProjectName name) {
     ListServiceAccountsRequest request =
         ListServiceAccountsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -980,7 +983,7 @@ public class IAMClient implements BackgroundResource {
    *     `email` address or the `unique_id` of the service account.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ServiceAccount getServiceAccount(ServiceAccountName name) {
+  public final ServiceAccount getServiceAccount(@Nullable ServiceAccountName name) {
     GetServiceAccountRequest request =
         GetServiceAccountRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1104,7 +1107,7 @@ public class IAMClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceAccount createServiceAccount(
-      ProjectName name, String accountId, ServiceAccount serviceAccount) {
+      @Nullable ProjectName name, String accountId, ServiceAccount serviceAccount) {
     CreateServiceAccountRequest request =
         CreateServiceAccountRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1395,7 +1398,7 @@ public class IAMClient implements BackgroundResource {
    *     `email` address or the `unique_id` of the service account.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteServiceAccount(ServiceAccountName name) {
+  public final void deleteServiceAccount(@Nullable ServiceAccountName name) {
     DeleteServiceAccountRequest request =
         DeleteServiceAccountRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1765,7 +1768,7 @@ public class IAMClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListServiceAccountKeysResponse listServiceAccountKeys(
-      ServiceAccountName name, List<ListServiceAccountKeysRequest.KeyType> keyTypes) {
+      @Nullable ServiceAccountName name, List<ListServiceAccountKeysRequest.KeyType> keyTypes) {
     ListServiceAccountKeysRequest request =
         ListServiceAccountKeysRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1896,7 +1899,7 @@ public class IAMClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceAccountKey getServiceAccountKey(
-      KeyName name, ServiceAccountPublicKeyType publicKeyType) {
+      @Nullable KeyName name, ServiceAccountPublicKeyType publicKeyType) {
     GetServiceAccountKeyRequest request =
         GetServiceAccountKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2033,7 +2036,7 @@ public class IAMClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ServiceAccountKey createServiceAccountKey(
-      ServiceAccountName name,
+      @Nullable ServiceAccountName name,
       ServiceAccountPrivateKeyType privateKeyType,
       ServiceAccountKeyAlgorithm keyAlgorithm) {
     CreateServiceAccountKeyRequest request =
@@ -2243,7 +2246,7 @@ public class IAMClient implements BackgroundResource {
    *     `email` address or the `unique_id` of the service account.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteServiceAccountKey(KeyName name) {
+  public final void deleteServiceAccountKey(@Nullable KeyName name) {
     DeleteServiceAccountKeyRequest request =
         DeleteServiceAccountKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2369,7 +2372,7 @@ public class IAMClient implements BackgroundResource {
    *     The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void disableServiceAccountKey(KeyName name) {
+  public final void disableServiceAccountKey(@Nullable KeyName name) {
     DisableServiceAccountKeyRequest request =
         DisableServiceAccountKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2493,7 +2496,7 @@ public class IAMClient implements BackgroundResource {
    *     The `ACCOUNT` value can be the `email` address or the `unique_id` of the service account.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void enableServiceAccountKey(KeyName name) {
+  public final void enableServiceAccountKey(@Nullable KeyName name) {
     EnableServiceAccountKeyRequest request =
         EnableServiceAccountKeyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2626,7 +2629,8 @@ public class IAMClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final SignBlobResponse signBlob(ServiceAccountName name, ByteString bytesToSign) {
+  public final SignBlobResponse signBlob(
+      @Nullable ServiceAccountName name, ByteString bytesToSign) {
     SignBlobRequest request =
         SignBlobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2800,7 +2804,7 @@ public class IAMClient implements BackgroundResource {
    * @deprecated This method is deprecated and will be removed in the next major version update.
    */
   @Deprecated
-  public final SignJwtResponse signJwt(ServiceAccountName name, String payload) {
+  public final SignJwtResponse signJwt(@Nullable ServiceAccountName name, String payload) {
     SignJwtRequest request =
         SignJwtRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2964,7 +2968,7 @@ public class IAMClient implements BackgroundResource {
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy getIamPolicy(ResourceName resource) {
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3121,7 +3125,7 @@ public class IAMClient implements BackgroundResource {
    *     Platform services (such as Projects) might reject them.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Policy setIamPolicy(ResourceName resource, Policy policy) {
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -3294,7 +3298,7 @@ public class IAMClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
-      ResourceName resource, List<String> permissions) {
+      @Nullable ResourceName resource, List<String> permissions) {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource == null ? null : resource.toString())
@@ -4272,9 +4276,10 @@ public class IAMClient implements BackgroundResource {
           ListServiceAccountsPage> {
 
     private ListServiceAccountsPage(
-        PageContext<ListServiceAccountsRequest, ListServiceAccountsResponse, ServiceAccount>
+        @Nullable
+            PageContext<ListServiceAccountsRequest, ListServiceAccountsResponse, ServiceAccount>
             context,
-        ListServiceAccountsResponse response) {
+        @Nullable ListServiceAccountsResponse response) {
       super(context, response);
     }
 
@@ -4284,15 +4289,17 @@ public class IAMClient implements BackgroundResource {
 
     @Override
     protected ListServiceAccountsPage createPage(
-        PageContext<ListServiceAccountsRequest, ListServiceAccountsResponse, ServiceAccount>
+        @Nullable
+            PageContext<ListServiceAccountsRequest, ListServiceAccountsResponse, ServiceAccount>
             context,
-        ListServiceAccountsResponse response) {
+        @Nullable ListServiceAccountsResponse response) {
       return new ListServiceAccountsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListServiceAccountsPage> createPageAsync(
-        PageContext<ListServiceAccountsRequest, ListServiceAccountsResponse, ServiceAccount>
+        @Nullable
+            PageContext<ListServiceAccountsRequest, ListServiceAccountsResponse, ServiceAccount>
             context,
         ApiFuture<ListServiceAccountsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4308,7 +4315,7 @@ public class IAMClient implements BackgroundResource {
           ListServiceAccountsFixedSizeCollection> {
 
     private ListServiceAccountsFixedSizeCollection(
-        List<ListServiceAccountsPage> pages, int collectionSize) {
+        @Nullable List<ListServiceAccountsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4318,7 +4325,7 @@ public class IAMClient implements BackgroundResource {
 
     @Override
     protected ListServiceAccountsFixedSizeCollection createCollection(
-        List<ListServiceAccountsPage> pages, int collectionSize) {
+        @Nullable List<ListServiceAccountsPage> pages, int collectionSize) {
       return new ListServiceAccountsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4352,8 +4359,9 @@ public class IAMClient implements BackgroundResource {
           QueryGrantableRolesRequest, QueryGrantableRolesResponse, Role, QueryGrantableRolesPage> {
 
     private QueryGrantableRolesPage(
-        PageContext<QueryGrantableRolesRequest, QueryGrantableRolesResponse, Role> context,
-        QueryGrantableRolesResponse response) {
+        @Nullable PageContext<QueryGrantableRolesRequest, QueryGrantableRolesResponse, Role>
+            context,
+        @Nullable QueryGrantableRolesResponse response) {
       super(context, response);
     }
 
@@ -4363,14 +4371,16 @@ public class IAMClient implements BackgroundResource {
 
     @Override
     protected QueryGrantableRolesPage createPage(
-        PageContext<QueryGrantableRolesRequest, QueryGrantableRolesResponse, Role> context,
-        QueryGrantableRolesResponse response) {
+        @Nullable PageContext<QueryGrantableRolesRequest, QueryGrantableRolesResponse, Role>
+            context,
+        @Nullable QueryGrantableRolesResponse response) {
       return new QueryGrantableRolesPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryGrantableRolesPage> createPageAsync(
-        PageContext<QueryGrantableRolesRequest, QueryGrantableRolesResponse, Role> context,
+        @Nullable PageContext<QueryGrantableRolesRequest, QueryGrantableRolesResponse, Role>
+            context,
         ApiFuture<QueryGrantableRolesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4385,7 +4395,7 @@ public class IAMClient implements BackgroundResource {
           QueryGrantableRolesFixedSizeCollection> {
 
     private QueryGrantableRolesFixedSizeCollection(
-        List<QueryGrantableRolesPage> pages, int collectionSize) {
+        @Nullable List<QueryGrantableRolesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4395,7 +4405,7 @@ public class IAMClient implements BackgroundResource {
 
     @Override
     protected QueryGrantableRolesFixedSizeCollection createCollection(
-        List<QueryGrantableRolesPage> pages, int collectionSize) {
+        @Nullable List<QueryGrantableRolesPage> pages, int collectionSize) {
       return new QueryGrantableRolesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4422,8 +4432,8 @@ public class IAMClient implements BackgroundResource {
       extends AbstractPage<ListRolesRequest, ListRolesResponse, Role, ListRolesPage> {
 
     private ListRolesPage(
-        PageContext<ListRolesRequest, ListRolesResponse, Role> context,
-        ListRolesResponse response) {
+        @Nullable PageContext<ListRolesRequest, ListRolesResponse, Role> context,
+        @Nullable ListRolesResponse response) {
       super(context, response);
     }
 
@@ -4433,14 +4443,14 @@ public class IAMClient implements BackgroundResource {
 
     @Override
     protected ListRolesPage createPage(
-        PageContext<ListRolesRequest, ListRolesResponse, Role> context,
-        ListRolesResponse response) {
+        @Nullable PageContext<ListRolesRequest, ListRolesResponse, Role> context,
+        @Nullable ListRolesResponse response) {
       return new ListRolesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRolesPage> createPageAsync(
-        PageContext<ListRolesRequest, ListRolesResponse, Role> context,
+        @Nullable PageContext<ListRolesRequest, ListRolesResponse, Role> context,
         ApiFuture<ListRolesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -4450,7 +4460,7 @@ public class IAMClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListRolesRequest, ListRolesResponse, Role, ListRolesPage, ListRolesFixedSizeCollection> {
 
-    private ListRolesFixedSizeCollection(List<ListRolesPage> pages, int collectionSize) {
+    private ListRolesFixedSizeCollection(@Nullable List<ListRolesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4460,7 +4470,7 @@ public class IAMClient implements BackgroundResource {
 
     @Override
     protected ListRolesFixedSizeCollection createCollection(
-        List<ListRolesPage> pages, int collectionSize) {
+        @Nullable List<ListRolesPage> pages, int collectionSize) {
       return new ListRolesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4498,9 +4508,11 @@ public class IAMClient implements BackgroundResource {
           QueryTestablePermissionsPage> {
 
     private QueryTestablePermissionsPage(
-        PageContext<QueryTestablePermissionsRequest, QueryTestablePermissionsResponse, Permission>
+        @Nullable
+            PageContext<
+                QueryTestablePermissionsRequest, QueryTestablePermissionsResponse, Permission>
             context,
-        QueryTestablePermissionsResponse response) {
+        @Nullable QueryTestablePermissionsResponse response) {
       super(context, response);
     }
 
@@ -4510,15 +4522,19 @@ public class IAMClient implements BackgroundResource {
 
     @Override
     protected QueryTestablePermissionsPage createPage(
-        PageContext<QueryTestablePermissionsRequest, QueryTestablePermissionsResponse, Permission>
+        @Nullable
+            PageContext<
+                QueryTestablePermissionsRequest, QueryTestablePermissionsResponse, Permission>
             context,
-        QueryTestablePermissionsResponse response) {
+        @Nullable QueryTestablePermissionsResponse response) {
       return new QueryTestablePermissionsPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryTestablePermissionsPage> createPageAsync(
-        PageContext<QueryTestablePermissionsRequest, QueryTestablePermissionsResponse, Permission>
+        @Nullable
+            PageContext<
+                QueryTestablePermissionsRequest, QueryTestablePermissionsResponse, Permission>
             context,
         ApiFuture<QueryTestablePermissionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -4534,7 +4550,7 @@ public class IAMClient implements BackgroundResource {
           QueryTestablePermissionsFixedSizeCollection> {
 
     private QueryTestablePermissionsFixedSizeCollection(
-        List<QueryTestablePermissionsPage> pages, int collectionSize) {
+        @Nullable List<QueryTestablePermissionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4544,7 +4560,7 @@ public class IAMClient implements BackgroundResource {
 
     @Override
     protected QueryTestablePermissionsFixedSizeCollection createCollection(
-        List<QueryTestablePermissionsPage> pages, int collectionSize) {
+        @Nullable List<QueryTestablePermissionsPage> pages, int collectionSize) {
       return new QueryTestablePermissionsFixedSizeCollection(pages, collectionSize);
     }
   }

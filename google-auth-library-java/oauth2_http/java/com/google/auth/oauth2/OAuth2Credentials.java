@@ -65,9 +65,11 @@ import java.util.ServiceLoader;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Base type for Credentials using OAuth2. */
+@NullMarked
 public class OAuth2Credentials extends Credentials {
 
   private static final long serialVersionUID = 4556936364828217687L;
@@ -80,11 +82,11 @@ public class OAuth2Credentials extends Credentials {
 
   // byte[] is serializable, so the lock variable can be final
   @VisibleForTesting final Object lock = new byte[0];
-  private volatile OAuthValue value = null;
-  @VisibleForTesting transient RefreshTask refreshTask;
+  private volatile @Nullable OAuthValue value = null;
+  @Nullable @VisibleForTesting transient RefreshTask refreshTask;
 
   // Change listeners are not serialized
-  private transient List<CredentialsChangedListener> changeListeners;
+  private transient @Nullable List<CredentialsChangedListener> changeListeners;
   // Until we expose this to the users it can remain transient and non-serializable
   transient Clock clock = Clock.SYSTEM;
 
@@ -108,12 +110,12 @@ public class OAuth2Credentials extends Credentials {
    *
    * @param accessToken initial or temporary access token
    */
-  protected OAuth2Credentials(AccessToken accessToken) {
+  protected OAuth2Credentials(@Nullable AccessToken accessToken) {
     this(accessToken, DEFAULT_REFRESH_MARGIN, DEFAULT_EXPIRATION_MARGIN);
   }
 
   protected OAuth2Credentials(
-      AccessToken accessToken, Duration refreshMargin, Duration expirationMargin) {
+      @Nullable AccessToken accessToken, Duration refreshMargin, Duration expirationMargin) {
     if (accessToken != null) {
       this.value = OAuthValue.create(accessToken, EMPTY_EXTRA_HEADERS);
     }
@@ -147,7 +149,7 @@ public class OAuth2Credentials extends Credentials {
    *
    * @return The cached access token.
    */
-  public final AccessToken getAccessToken() {
+  public final @Nullable AccessToken getAccessToken() {
     OAuthValue localState = value;
     if (localState != null) {
       return localState.temporaryAccess;
@@ -182,7 +184,7 @@ public class OAuth2Credentials extends Credentials {
    * authorization bearer token.
    */
   @Override
-  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+  public Map<String, List<String>> getRequestMetadata(@Nullable URI uri) throws IOException {
     return unwrapDirectFuture(asyncFetch(MoreExecutors.directExecutor())).requestMetadata;
   }
 
@@ -437,8 +439,7 @@ public class OAuth2Credentials extends Credentials {
     return Objects.hashCode(value);
   }
 
-  @Nullable
-  protected Map<String, List<String>> getRequestMetadataInternal() {
+  protected @Nullable Map<String, List<String>> getRequestMetadataInternal() {
     OAuthValue localValue = value;
     if (localValue != null) {
       return localValue.requestMetadata;
@@ -472,7 +473,7 @@ public class OAuth2Credentials extends Credentials {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof OAuth2Credentials)) {
       return false;
     }
@@ -588,7 +589,7 @@ public class OAuth2Credentials extends Credentials {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(@Nullable Object obj) {
       if (!(obj instanceof OAuthValue)) {
         return false;
       }
@@ -708,7 +709,7 @@ public class OAuth2Credentials extends Credentials {
 
   public static class Builder {
 
-    private AccessToken accessToken;
+    private @Nullable AccessToken accessToken;
     private Duration refreshMargin = DEFAULT_REFRESH_MARGIN;
     private Duration expirationMargin = DEFAULT_EXPIRATION_MARGIN;
 
@@ -721,7 +722,7 @@ public class OAuth2Credentials extends Credentials {
     }
 
     @CanIgnoreReturnValue
-    public Builder setAccessToken(AccessToken token) {
+    public Builder setAccessToken(@Nullable AccessToken token) {
       this.accessToken = token;
       return this;
     }
@@ -746,7 +747,7 @@ public class OAuth2Credentials extends Credentials {
       return expirationMargin;
     }
 
-    public AccessToken getAccessToken() {
+    public @Nullable AccessToken getAccessToken() {
       return accessToken;
     }
 

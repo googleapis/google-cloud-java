@@ -18,6 +18,7 @@ package com.google.cloud.dlp.v2.stub;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListContentPoliciesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
@@ -45,7 +46,9 @@ import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.ColumnDataProfile;
 import com.google.privacy.dlp.v2.Connection;
+import com.google.privacy.dlp.v2.ContentPolicy;
 import com.google.privacy.dlp.v2.CreateConnectionRequest;
+import com.google.privacy.dlp.v2.CreateContentPolicyRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -56,6 +59,7 @@ import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
 import com.google.privacy.dlp.v2.DeleteConnectionRequest;
+import com.google.privacy.dlp.v2.DeleteContentPolicyRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
@@ -70,6 +74,7 @@ import com.google.privacy.dlp.v2.FileStoreDataProfile;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
 import com.google.privacy.dlp.v2.GetConnectionRequest;
+import com.google.privacy.dlp.v2.GetContentPolicyRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
@@ -90,6 +95,8 @@ import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListConnectionsRequest;
 import com.google.privacy.dlp.v2.ListConnectionsResponse;
+import com.google.privacy.dlp.v2.ListContentPoliciesRequest;
+import com.google.privacy.dlp.v2.ListContentPoliciesResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
@@ -120,6 +127,7 @@ import com.google.privacy.dlp.v2.SearchConnectionsResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.TableDataProfile;
 import com.google.privacy.dlp.v2.UpdateConnectionRequest;
+import com.google.privacy.dlp.v2.UpdateContentPolicyRequest;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
@@ -134,6 +142,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -141,6 +150,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonDlpServiceStub extends DlpServiceStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
@@ -2269,6 +2279,184 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateContentPolicyRequest, ContentPolicy>
+      createContentPolicyMethodDescriptor =
+          ApiMethodDescriptor.<CreateContentPolicyRequest, ContentPolicy>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/CreateContentPolicy")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateContentPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*}/contentPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateContentPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateContentPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ContentPolicy>newBuilder()
+                      .setDefaultInstance(ContentPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateContentPolicyRequest, ContentPolicy>
+      updateContentPolicyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateContentPolicyRequest, ContentPolicy>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/UpdateContentPolicy")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateContentPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/contentPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateContentPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateContentPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ContentPolicy>newBuilder()
+                      .setDefaultInstance(ContentPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetContentPolicyRequest, ContentPolicy>
+      getContentPolicyMethodDescriptor =
+          ApiMethodDescriptor.<GetContentPolicyRequest, ContentPolicy>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetContentPolicy")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetContentPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/contentPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetContentPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetContentPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ContentPolicy>newBuilder()
+                      .setDefaultInstance(ContentPolicy.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListContentPoliciesRequest, ListContentPoliciesResponse>
+      listContentPoliciesMethodDescriptor =
+          ApiMethodDescriptor.<ListContentPoliciesRequest, ListContentPoliciesResponse>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListContentPolicies")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListContentPoliciesRequest>newBuilder()
+                      .setPath(
+                          "/v2/{parent=projects/*/locations/*}/contentPolicies",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListContentPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListContentPoliciesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListContentPoliciesResponse>newBuilder()
+                      .setDefaultInstance(ListContentPoliciesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteContentPolicyRequest, Empty>
+      deleteContentPolicyMethodDescriptor =
+          ApiMethodDescriptor.<DeleteContentPolicyRequest, Empty>newBuilder()
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteContentPolicy")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteContentPolicyRequest>newBuilder()
+                      .setPath(
+                          "/v2/{name=projects/*/locations/*/contentPolicies/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteContentPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteContentPolicyRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable;
   private final UnaryCallable<RedactImageRequest, RedactImageResponse> redactImageCallable;
   private final UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
@@ -2381,6 +2569,16 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
       searchConnectionsPagedCallable;
   private final UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable;
   private final UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable;
+  private final UnaryCallable<CreateContentPolicyRequest, ContentPolicy>
+      createContentPolicyCallable;
+  private final UnaryCallable<UpdateContentPolicyRequest, ContentPolicy>
+      updateContentPolicyCallable;
+  private final UnaryCallable<GetContentPolicyRequest, ContentPolicy> getContentPolicyCallable;
+  private final UnaryCallable<ListContentPoliciesRequest, ListContentPoliciesResponse>
+      listContentPoliciesCallable;
+  private final UnaryCallable<ListContentPoliciesRequest, ListContentPoliciesPagedResponse>
+      listContentPoliciesPagedCallable;
+  private final UnaryCallable<DeleteContentPolicyRequest, Empty> deleteContentPolicyCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -3129,6 +3327,70 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<CreateContentPolicyRequest, ContentPolicy>
+        createContentPolicyTransportSettings =
+            HttpJsonCallSettings.<CreateContentPolicyRequest, ContentPolicy>newBuilder()
+                .setMethodDescriptor(createContentPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<UpdateContentPolicyRequest, ContentPolicy>
+        updateContentPolicyTransportSettings =
+            HttpJsonCallSettings.<UpdateContentPolicyRequest, ContentPolicy>newBuilder()
+                .setMethodDescriptor(updateContentPolicyMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<GetContentPolicyRequest, ContentPolicy> getContentPolicyTransportSettings =
+        HttpJsonCallSettings.<GetContentPolicyRequest, ContentPolicy>newBuilder()
+            .setMethodDescriptor(getContentPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<ListContentPoliciesRequest, ListContentPoliciesResponse>
+        listContentPoliciesTransportSettings =
+            HttpJsonCallSettings
+                .<ListContentPoliciesRequest, ListContentPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listContentPoliciesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<DeleteContentPolicyRequest, Empty> deleteContentPolicyTransportSettings =
+        HttpJsonCallSettings.<DeleteContentPolicyRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteContentPolicyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
 
     this.inspectContentCallable =
         callableFactory.createUnaryCallable(
@@ -3421,6 +3683,34 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
     this.updateConnectionCallable =
         callableFactory.createUnaryCallable(
             updateConnectionTransportSettings, settings.updateConnectionSettings(), clientContext);
+    this.createContentPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createContentPolicyTransportSettings,
+            settings.createContentPolicySettings(),
+            clientContext);
+    this.updateContentPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateContentPolicyTransportSettings,
+            settings.updateContentPolicySettings(),
+            clientContext);
+    this.getContentPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getContentPolicyTransportSettings, settings.getContentPolicySettings(), clientContext);
+    this.listContentPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listContentPoliciesTransportSettings,
+            settings.listContentPoliciesSettings(),
+            clientContext);
+    this.listContentPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listContentPoliciesTransportSettings,
+            settings.listContentPoliciesSettings(),
+            clientContext);
+    this.deleteContentPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteContentPolicyTransportSettings,
+            settings.deleteContentPolicySettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -3484,6 +3774,11 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
     methodDescriptors.add(searchConnectionsMethodDescriptor);
     methodDescriptors.add(deleteConnectionMethodDescriptor);
     methodDescriptors.add(updateConnectionMethodDescriptor);
+    methodDescriptors.add(createContentPolicyMethodDescriptor);
+    methodDescriptors.add(updateContentPolicyMethodDescriptor);
+    methodDescriptors.add(getContentPolicyMethodDescriptor);
+    methodDescriptors.add(listContentPoliciesMethodDescriptor);
+    methodDescriptors.add(deleteContentPolicyMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -3855,6 +4150,38 @@ public class HttpJsonDlpServiceStub extends DlpServiceStub {
   @Override
   public UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable() {
     return updateConnectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateContentPolicyRequest, ContentPolicy> createContentPolicyCallable() {
+    return createContentPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateContentPolicyRequest, ContentPolicy> updateContentPolicyCallable() {
+    return updateContentPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetContentPolicyRequest, ContentPolicy> getContentPolicyCallable() {
+    return getContentPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListContentPoliciesRequest, ListContentPoliciesResponse>
+      listContentPoliciesCallable() {
+    return listContentPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListContentPoliciesRequest, ListContentPoliciesPagedResponse>
+      listContentPoliciesPagedCallable() {
+    return listContentPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteContentPolicyRequest, Empty> deleteContentPolicyCallable() {
+    return deleteContentPolicyCallable;
   }
 
   @Override

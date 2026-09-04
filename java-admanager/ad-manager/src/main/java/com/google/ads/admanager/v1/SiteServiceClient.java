@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -64,7 +66,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetSite</td>
- *      <td><p> API to retrieve a `Site` object.</td>
+ *      <td><p> Retrieves a `Site` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -83,7 +85,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListSites</td>
- *      <td><p> API to retrieve a list of `Site` objects.</td>
+ *      <td><p> Lists `Site` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -103,7 +105,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateSite</td>
- *      <td><p> API to create a `Site` object.</td>
+ *      <td><p> Creates a `Site` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -122,7 +124,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateSites</td>
- *      <td><p> API to batch create `Site` objects.</td>
+ *      <td><p> Creates `Site` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -138,7 +140,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateSite</td>
- *      <td><p> API to update a `Site` object.</td>
+ *      <td><p> Updates a `Site` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -156,7 +158,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateSites</td>
- *      <td><p> API to batch update `Site` objects.</td>
+ *      <td><p> Batch updates `Site` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -249,9 +251,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SiteServiceClient implements BackgroundResource {
-  private final SiteServiceSettings settings;
+  private final @Nullable SiteServiceSettings settings;
   private final SiteServiceStub stub;
 
   /** Constructs an instance of SiteServiceClient with default settings. */
@@ -290,7 +293,7 @@ public class SiteServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SiteServiceSettings getSettings() {
+  public final @Nullable SiteServiceSettings getSettings() {
     return settings;
   }
 
@@ -300,7 +303,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Site` object.
+   * Retrieves a `Site` object.
    *
    * <p>Sample code:
    *
@@ -320,7 +323,7 @@ public class SiteServiceClient implements BackgroundResource {
    *     `networks/{network_code}/sites/{site_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Site getSite(SiteName name) {
+  public final Site getSite(@Nullable SiteName name) {
     GetSiteRequest request =
         GetSiteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSite(request);
@@ -328,7 +331,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Site` object.
+   * Retrieves a `Site` object.
    *
    * <p>Sample code:
    *
@@ -355,7 +358,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Site` object.
+   * Retrieves a `Site` object.
    *
    * <p>Sample code:
    *
@@ -383,7 +386,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Site` object.
+   * Retrieves a `Site` object.
    *
    * <p>Sample code:
    *
@@ -410,7 +413,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Site` objects.
+   * Lists `Site` objects.
    *
    * <p>Sample code:
    *
@@ -432,7 +435,7 @@ public class SiteServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSitesPagedResponse listSites(NetworkName parent) {
+  public final ListSitesPagedResponse listSites(@Nullable NetworkName parent) {
     ListSitesRequest request =
         ListSitesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listSites(request);
@@ -440,7 +443,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Site` objects.
+   * Lists `Site` objects.
    *
    * <p>Sample code:
    *
@@ -469,7 +472,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Site` objects.
+   * Lists `Site` objects.
    *
    * <p>Sample code:
    *
@@ -504,7 +507,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Site` objects.
+   * Lists `Site` objects.
    *
    * <p>Sample code:
    *
@@ -538,7 +541,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Site` objects.
+   * Lists `Site` objects.
    *
    * <p>Sample code:
    *
@@ -579,7 +582,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Site` object.
+   * Creates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -601,7 +604,7 @@ public class SiteServiceClient implements BackgroundResource {
    * @param site Required. The `Site` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Site createSite(NetworkName parent, Site site) {
+  public final Site createSite(@Nullable NetworkName parent, Site site) {
     CreateSiteRequest request =
         CreateSiteRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -612,7 +615,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Site` object.
+   * Creates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -642,7 +645,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Site` object.
+   * Creates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -671,7 +674,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create a `Site` object.
+   * Creates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -699,7 +702,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Site` objects.
+   * Creates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -723,7 +726,7 @@ public class SiteServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateSitesResponse batchCreateSites(
-      NetworkName parent, List<CreateSiteRequest> requests) {
+      @Nullable NetworkName parent, List<CreateSiteRequest> requests) {
     BatchCreateSitesRequest request =
         BatchCreateSitesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -734,7 +737,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Site` objects.
+   * Creates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -766,7 +769,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Site` objects.
+   * Creates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -795,7 +798,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `Site` objects.
+   * Creates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -825,7 +828,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Site` object.
+   * Updates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -844,7 +847,7 @@ public class SiteServiceClient implements BackgroundResource {
    *
    * @param site Required. The `Site` to update.
    *     <p>The `Site`'s `name` is used to identify the `Site` to update.
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Site updateSite(Site site, FieldMask updateMask) {
@@ -855,7 +858,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Site` object.
+   * Updates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -884,7 +887,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update a `Site` object.
+   * Updates a `Site` object.
    *
    * <p>Sample code:
    *
@@ -912,7 +915,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Site` objects.
+   * Batch updates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -936,7 +939,7 @@ public class SiteServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateSitesResponse batchUpdateSites(
-      NetworkName parent, List<UpdateSiteRequest> requests) {
+      @Nullable NetworkName parent, List<UpdateSiteRequest> requests) {
     BatchUpdateSitesRequest request =
         BatchUpdateSitesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -947,7 +950,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Site` objects.
+   * Batch updates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -979,7 +982,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Site` objects.
+   * Batch updates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -1008,7 +1011,7 @@ public class SiteServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `Site` objects.
+   * Batch updates `Site` objects.
    *
    * <p>Sample code:
    *
@@ -1060,7 +1063,7 @@ public class SiteServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchDeactivateSitesResponse batchDeactivateSites(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchDeactivateSitesRequest request =
         BatchDeactivateSitesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1184,7 +1187,7 @@ public class SiteServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchSubmitSitesForApprovalResponse batchSubmitSitesForApproval(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchSubmitSitesForApprovalRequest request =
         BatchSubmitSitesForApprovalRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1341,8 +1344,8 @@ public class SiteServiceClient implements BackgroundResource {
       extends AbstractPage<ListSitesRequest, ListSitesResponse, Site, ListSitesPage> {
 
     private ListSitesPage(
-        PageContext<ListSitesRequest, ListSitesResponse, Site> context,
-        ListSitesResponse response) {
+        @Nullable PageContext<ListSitesRequest, ListSitesResponse, Site> context,
+        @Nullable ListSitesResponse response) {
       super(context, response);
     }
 
@@ -1352,14 +1355,14 @@ public class SiteServiceClient implements BackgroundResource {
 
     @Override
     protected ListSitesPage createPage(
-        PageContext<ListSitesRequest, ListSitesResponse, Site> context,
-        ListSitesResponse response) {
+        @Nullable PageContext<ListSitesRequest, ListSitesResponse, Site> context,
+        @Nullable ListSitesResponse response) {
       return new ListSitesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSitesPage> createPageAsync(
-        PageContext<ListSitesRequest, ListSitesResponse, Site> context,
+        @Nullable PageContext<ListSitesRequest, ListSitesResponse, Site> context,
         ApiFuture<ListSitesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1369,7 +1372,7 @@ public class SiteServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListSitesRequest, ListSitesResponse, Site, ListSitesPage, ListSitesFixedSizeCollection> {
 
-    private ListSitesFixedSizeCollection(List<ListSitesPage> pages, int collectionSize) {
+    private ListSitesFixedSizeCollection(@Nullable List<ListSitesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1379,7 +1382,7 @@ public class SiteServiceClient implements BackgroundResource {
 
     @Override
     protected ListSitesFixedSizeCollection createCollection(
-        List<ListSitesPage> pages, int collectionSize) {
+        @Nullable List<ListSitesPage> pages, int collectionSize) {
       return new ListSitesFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -36,8 +36,10 @@ import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
+import org.jspecify.annotations.NullMarked;
 
 /** Public for technical reasons; intended for use by generated code. */
+@NullMarked
 public class ProtoOperationTransformers {
   private ProtoOperationTransformers() {}
 
@@ -61,7 +63,8 @@ public class ProtoOperationTransformers {
                 + operationSnapshot.getErrorMessage(),
             null,
             operationSnapshot.getErrorCode(),
-            false);
+            false,
+            operationSnapshot.getErrorDetails());
       }
 
       if (!(operationSnapshot.getResponse() instanceof Any)) {

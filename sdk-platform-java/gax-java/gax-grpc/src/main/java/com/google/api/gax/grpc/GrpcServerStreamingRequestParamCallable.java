@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.RequestUrlParamsEncoder;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.common.base.Preconditions;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A {@code ServerStreamingCallable} that extracts values from the fields of the request and inserts
@@ -42,6 +43,7 @@ import com.google.common.base.Preconditions;
  *
  * <p>Package-private for internal usage.
  */
+@NullMarked
 class GrpcServerStreamingRequestParamCallable<RequestT, ResponseT>
     extends ServerStreamingCallable<RequestT, ResponseT> {
   private final ServerStreamingCallable<RequestT, ResponseT> callable;

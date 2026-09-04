@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ConversionEventName implements ResourceName {
   private static final PathTemplate PROPERTY_CONVERSION_EVENT =
@@ -75,7 +78,7 @@ public class ConversionEventName implements ResourceName {
         .toString();
   }
 
-  public static ConversionEventName parse(String formattedString) {
+  public static @Nullable ConversionEventName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -93,7 +96,7 @@ public class ConversionEventName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ConversionEventName> values) {
+  public static List<String> toStringList(List<@Nullable ConversionEventName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ConversionEventName value : values) {
       if (value == null) {
@@ -139,7 +142,7 @@ public class ConversionEventName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -21,6 +21,7 @@ import com.google.bigtable.v2.ClientConfiguration;
 import com.google.bigtable.v2.ClientConfiguration.PollingCase;
 import com.google.bigtable.v2.FeatureFlags;
 import com.google.bigtable.v2.GetClientConfigurationRequest;
+import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration.DirectAccessOnly;
 import com.google.bigtable.v2.TelemetryConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.api.ChannelProviders.ChannelProvider;
 import com.google.cloud.bigtable.data.v2.internal.api.Util;
@@ -48,12 +49,10 @@ import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Properties;
-import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -75,6 +74,10 @@ public class ClientConfigurationManager implements AutoCloseable {
   private static final Logger logger = Logger.getLogger(ClientConfigurationManager.class.getName());
 
   public static final String OVERRIDE_SYS_PROP_KEY = "bigtable.internal.client-config-override";
+  public static final String DISABLE_DIRECT_ACCESS_FALLBACK_ENV_VAR =
+      "CBT_DISABLE_DIRECT_ACCESS_FALLBACK";
+  public static final String DISABLE_DIRECT_ACCESS_FALLBACK_SYS_PROP_KEY =
+      "bigtable.internal.disable-direct-access-fallback";
 
   public interface ConfigListener<T> {
     void onChange(T newValue);
@@ -88,6 +91,7 @@ public class ClientConfigurationManager implements AutoCloseable {
   private class ListenerEntry<T> implements ListenerHandle {
     private final Function<ClientConfiguration, T> extractor;
     private final ConfigListener<T> listener;
+    private volatile boolean closed = false;
 
     private ListenerEntry(Function<ClientConfiguration, T> extractor, ConfigListener<T> listener) {
       this.extractor = extractor;
@@ -95,6 +99,9 @@ public class ClientConfigurationManager implements AutoCloseable {
     }
 
     private void maybeNotify(ClientConfiguration oldConfig, ClientConfiguration newConfig) {
+      if (closed) {
+        return;
+      }
       T oldValue = extractor.apply(oldConfig);
       T newValue = extractor.apply(newConfig);
       if (Objects.equals(oldValue, newValue)) {
@@ -105,12 +112,9 @@ public class ClientConfigurationManager implements AutoCloseable {
 
     @Override
     public void close() {
+      closed = true;
       synchronized (ClientConfigurationManager.this) {
-        if (notifying) {
-          pendingListenerRemovals.add(this);
-        } else {
-          listeners.remove(this);
-        }
+        listeners.remove(this);
       }
     }
   }
@@ -127,6 +131,7 @@ public class ClientConfigurationManager implements AutoCloseable {
 
   private final ClientConfiguration defaultConfig;
   private final Optional<ClientConfiguration> overrideConfig;
+  private final boolean disableDirectPathFallback;
 
   private final Duration defaultDeadline = Duration.ofSeconds(5);
 
@@ -140,12 +145,6 @@ public class ClientConfigurationManager implements AutoCloseable {
 
   @GuardedBy("this")
   private final List<ListenerEntry<?>> listeners = new ArrayList<>();
-
-  @GuardedBy("this")
-  private boolean notifying = false;
-
-  @GuardedBy("this")
-  private final Set<ListenerEntry<?>> pendingListenerRemovals = new HashSet<>();
 
   @GuardedBy("this")
   @Nullable
@@ -184,6 +183,11 @@ public class ClientConfigurationManager implements AutoCloseable {
                         "Failed to parse bigtable.internal.client-config-override", e);
                   }
                 });
+    this.disableDirectPathFallback =
+        Optional.ofNullable(System.getenv(DISABLE_DIRECT_ACCESS_FALLBACK_ENV_VAR))
+            .orElseGet(
+                () -> sysProps.getProperty(DISABLE_DIRECT_ACCESS_FALLBACK_SYS_PROP_KEY, "false"))
+            .equalsIgnoreCase("true");
 
     if (overrideConfig.isPresent()) {
       logger.log(
@@ -195,7 +199,7 @@ public class ClientConfigurationManager implements AutoCloseable {
                       .printToString(overrideConfig.get()));
     }
     featureFlags = channelProvider.updateFeatureFlags(featureFlags);
-    this.clientConfiguration = defaultConfig;
+    this.clientConfiguration = normalizeConfig(defaultConfig);
 
     this.metadata =
         Util.composeMetadata(
@@ -344,6 +348,17 @@ public class ClientConfigurationManager implements AutoCloseable {
           public void onClose(Status status, Metadata trailers) {
             if (!status.isOk()) {
               future.completeExceptionally(status.asRuntimeException());
+            } else if (!future.isDone()) {
+              // Defensive: guarantee this Listener always terminates the future. A caller blocks on
+              // this future via start().get() with no timeout, so a close that neither delivered a
+              // message nor reported an error would wedge it forever. For today's unary RPC gRPC
+              // already converts a missing response into a non-OK status, so this branch is not
+              // expected to be hit, but it keeps the bridge correct regardless of that invariant.
+              future.completeExceptionally(
+                  Status.INTERNAL
+                      .withDescription(
+                          "GetClientConfiguration stream closed without returning a configuration")
+                      .asRuntimeException());
             }
           }
         },
@@ -402,8 +417,22 @@ public class ClientConfigurationManager implements AutoCloseable {
     // Inject overrides
     overrideConfig.ifPresent(builder::mergeFrom);
 
-    // When sessions are disabled make sure to clear out the config
-    if (cfg.getSessionConfiguration().getSessionLoad() == 0) {
+    if (disableDirectPathFallback
+        && builder
+            .getSessionConfiguration()
+            .getChannelConfiguration()
+            .hasDirectAccessWithFallback()) {
+      builder
+          .getSessionConfigurationBuilder()
+          .getChannelConfigurationBuilder()
+          .clearDirectAccessWithFallback()
+          .setDirectAccessOnly(DirectAccessOnly.getDefaultInstance());
+    }
+
+    // When sessions are disabled make sure to clear out the config. Read from the builder, not
+    // cfg, so that a nonzero session_load supplied via the override sys-prop is honoured even when
+    // the server-returned config has session_load=0.
+    if (builder.getSessionConfiguration().getSessionLoad() == 0) {
       builder.clearSessionConfiguration();
       return builder.build();
     }
@@ -443,22 +472,24 @@ public class ClientConfigurationManager implements AutoCloseable {
             TimeUnit.MILLISECONDS);
   }
 
-  private synchronized void setClientConfiguration(ClientConfiguration result) {
-    ClientConfiguration old = this.clientConfiguration;
-
-    clientConfiguration = result;
-    if (clientConfiguration.hasPollingConfiguration()) {
-      this.validUntil =
-          Instant.now()
-              .plus(
-                  toJavaDuration(
-                      clientConfiguration.getPollingConfiguration().getValidityDuration()));
-    } else if (clientConfiguration.getStopPolling()) {
-      this.validUntil = Instant.MAX;
+  private void setClientConfiguration(ClientConfiguration result) {
+    ClientConfiguration old;
+    synchronized (this) {
+      old = this.clientConfiguration;
+      clientConfiguration = normalizeConfig(result);
+      if (clientConfiguration.hasPollingConfiguration()) {
+        this.validUntil =
+            Instant.now()
+                .plus(
+                    toJavaDuration(
+                        clientConfiguration.getPollingConfiguration().getValidityDuration()));
+      } else if (clientConfiguration.getStopPolling()) {
+        this.validUntil = Instant.MAX;
+      }
     }
 
     maybeLogConfigChange(old, result);
-    notifyListeners(old, clientConfiguration);
+    notifyListeners(old, result);
   }
 
   private void maybeLogConfigChange(ClientConfiguration oldCfg, ClientConfiguration newCfg) {
@@ -486,26 +517,24 @@ public class ClientConfigurationManager implements AutoCloseable {
     return oldCfg.equals(newCfg);
   }
 
-  @GuardedBy("this")
   private void notifyListeners(ClientConfiguration oldConfig, ClientConfiguration newConfig) {
-    notifying = true;
-    // Snapshot the listeners so that new listeners added this cycle dont get notified
-    List<ListenerEntry<?>> snapshot = new ArrayList<>(listeners);
-
+    List<ListenerEntry<?>> snapshot;
+    synchronized (this) {
+      snapshot = new ArrayList<>(listeners);
+    }
     for (ListenerEntry<?> e : snapshot) {
-      if (pendingListenerRemovals.contains(e)) {
-        continue;
-      }
       e.maybeNotify(oldConfig, newConfig);
     }
-
-    listeners.removeAll(pendingListenerRemovals);
-    pendingListenerRemovals.clear();
-    notifying = false;
   }
 
-  private synchronized boolean handleFailedFetch(Throwable throwable, int attempt) {
-    if (validUntil.isBefore(Instant.now())) {
+  private boolean handleFailedFetch(Throwable throwable, int attempt) {
+    boolean shouldReset = false;
+    synchronized (this) {
+      if (validUntil.isBefore(Instant.now())) {
+        shouldReset = true;
+      }
+    }
+    if (shouldReset) {
       setClientConfiguration(defaultConfig);
     }
 
@@ -524,10 +553,17 @@ public class ClientConfigurationManager implements AutoCloseable {
       case INVALID_ARGUMENT:
         return false;
       default:
-        if (closing) {
+        boolean isClosing;
+        int maxRpcRetryCount;
+        synchronized (this) {
+          isClosing = closing;
+          maxRpcRetryCount =
+              getClientConfiguration().getPollingConfiguration().getMaxRpcRetryCount();
+        }
+        if (isClosing) {
           return false;
         }
-        return attempt < getClientConfiguration().getPollingConfiguration().getMaxRpcRetryCount();
+        return attempt < maxRpcRetryCount;
     }
   }
 

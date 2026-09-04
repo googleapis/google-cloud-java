@@ -49,6 +49,7 @@ import com.google.recaptchaenterprise.v1.FirewallPolicy;
 import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
+import com.google.recaptchaenterprise.v1.GetPolicyRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
@@ -62,6 +63,7 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.Policy;
 import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
 import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
@@ -72,9 +74,12 @@ import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsReq
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
+import com.google.recaptchaenterprise.v1.UpdatePolicyRequest;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -128,6 +133,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RecaptchaEnterpriseServiceSettings
     extends ClientSettings<RecaptchaEnterpriseServiceSettings> {
@@ -203,6 +209,16 @@ public class RecaptchaEnterpriseServiceSettings
   /** Returns the object with the settings used for calls to getMetrics. */
   public UnaryCallSettings<GetMetricsRequest, Metrics> getMetricsSettings() {
     return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).getMetricsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPolicy. */
+  public UnaryCallSettings<GetPolicyRequest, Policy> getPolicySettings() {
+    return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).getPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePolicy. */
+  public UnaryCallSettings<UpdatePolicyRequest, Policy> updatePolicySettings() {
+    return ((RecaptchaEnterpriseServiceStubSettings) getStubSettings()).updatePolicySettings();
   }
 
   /** Returns the object with the settings used for calls to createFirewallPolicy. */
@@ -323,7 +339,7 @@ public class RecaptchaEnterpriseServiceSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -344,7 +360,7 @@ public class RecaptchaEnterpriseServiceSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(RecaptchaEnterpriseServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -448,6 +464,16 @@ public class RecaptchaEnterpriseServiceSettings
     /** Returns the builder for the settings used for calls to getMetrics. */
     public UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings() {
       return getStubSettingsBuilder().getMetricsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPolicy. */
+    public UnaryCallSettings.Builder<GetPolicyRequest, Policy> getPolicySettings() {
+      return getStubSettingsBuilder().getPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePolicy. */
+    public UnaryCallSettings.Builder<UpdatePolicyRequest, Policy> updatePolicySettings() {
+      return getStubSettingsBuilder().updatePolicySettings();
     }
 
     /** Returns the builder for the settings used for calls to createFirewallPolicy. */

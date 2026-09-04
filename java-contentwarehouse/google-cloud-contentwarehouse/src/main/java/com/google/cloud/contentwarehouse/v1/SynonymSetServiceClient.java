@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -218,9 +220,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SynonymSetServiceClient implements BackgroundResource {
-  private final SynonymSetServiceSettings settings;
+  private final @Nullable SynonymSetServiceSettings settings;
   private final SynonymSetServiceStub stub;
 
   /** Constructs an instance of SynonymSetServiceClient with default settings. */
@@ -260,7 +263,7 @@ public class SynonymSetServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SynonymSetServiceSettings getSettings() {
+  public final @Nullable SynonymSetServiceSettings getSettings() {
     return settings;
   }
 
@@ -293,7 +296,7 @@ public class SynonymSetServiceClient implements BackgroundResource {
    * @param synonymSet Required. The synonymSet to be created for a context
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SynonymSet createSynonymSet(LocationName parent, SynonymSet synonymSet) {
+  public final SynonymSet createSynonymSet(@Nullable LocationName parent, SynonymSet synonymSet) {
     CreateSynonymSetRequest request =
         CreateSynonymSetRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -416,7 +419,7 @@ public class SynonymSetServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}/synonymSets/{context}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SynonymSet getSynonymSet(SynonymSetName name) {
+  public final SynonymSet getSynonymSet(@Nullable SynonymSetName name) {
     GetSynonymSetRequest request =
         GetSynonymSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSynonymSet(request);
@@ -533,7 +536,7 @@ public class SynonymSetServiceClient implements BackgroundResource {
    * @param synonymSet Required. The synonymSet to be updated for the customer
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SynonymSet updateSynonymSet(SynonymSetName name, SynonymSet synonymSet) {
+  public final SynonymSet updateSynonymSet(@Nullable SynonymSetName name, SynonymSet synonymSet) {
     UpdateSynonymSetRequest request =
         UpdateSynonymSetRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -656,7 +659,7 @@ public class SynonymSetServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}/synonymSets/{context}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSynonymSet(SynonymSetName name) {
+  public final void deleteSynonymSet(@Nullable SynonymSetName name) {
     DeleteSynonymSetRequest request =
         DeleteSynonymSetRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSynonymSet(request);
@@ -772,7 +775,7 @@ public class SynonymSetServiceClient implements BackgroundResource {
    *     projects/{project_number}/locations/{location}.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSynonymSetsPagedResponse listSynonymSets(LocationName parent) {
+  public final ListSynonymSetsPagedResponse listSynonymSets(@Nullable LocationName parent) {
     ListSynonymSetsRequest request =
         ListSynonymSetsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -973,8 +976,8 @@ public class SynonymSetServiceClient implements BackgroundResource {
           ListSynonymSetsRequest, ListSynonymSetsResponse, SynonymSet, ListSynonymSetsPage> {
 
     private ListSynonymSetsPage(
-        PageContext<ListSynonymSetsRequest, ListSynonymSetsResponse, SynonymSet> context,
-        ListSynonymSetsResponse response) {
+        @Nullable PageContext<ListSynonymSetsRequest, ListSynonymSetsResponse, SynonymSet> context,
+        @Nullable ListSynonymSetsResponse response) {
       super(context, response);
     }
 
@@ -984,14 +987,14 @@ public class SynonymSetServiceClient implements BackgroundResource {
 
     @Override
     protected ListSynonymSetsPage createPage(
-        PageContext<ListSynonymSetsRequest, ListSynonymSetsResponse, SynonymSet> context,
-        ListSynonymSetsResponse response) {
+        @Nullable PageContext<ListSynonymSetsRequest, ListSynonymSetsResponse, SynonymSet> context,
+        @Nullable ListSynonymSetsResponse response) {
       return new ListSynonymSetsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSynonymSetsPage> createPageAsync(
-        PageContext<ListSynonymSetsRequest, ListSynonymSetsResponse, SynonymSet> context,
+        @Nullable PageContext<ListSynonymSetsRequest, ListSynonymSetsResponse, SynonymSet> context,
         ApiFuture<ListSynonymSetsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1006,7 +1009,7 @@ public class SynonymSetServiceClient implements BackgroundResource {
           ListSynonymSetsFixedSizeCollection> {
 
     private ListSynonymSetsFixedSizeCollection(
-        List<ListSynonymSetsPage> pages, int collectionSize) {
+        @Nullable List<ListSynonymSetsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1016,7 +1019,7 @@ public class SynonymSetServiceClient implements BackgroundResource {
 
     @Override
     protected ListSynonymSetsFixedSizeCollection createCollection(
-        List<ListSynonymSetsPage> pages, int collectionSize) {
+        @Nullable List<ListSynonymSetsPage> pages, int collectionSize) {
       return new ListSynonymSetsFixedSizeCollection(pages, collectionSize);
     }
   }

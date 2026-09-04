@@ -39,12 +39,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * An OAuth2 user authorization Client ID and associated information.
  *
  * <p>Corresponds to the information in the json file downloadable for a Client ID.
  */
+@NullMarked
 public class ClientId {
 
   private static final String FIELD_TYPE_INSTALLED = "installed";
@@ -94,7 +96,7 @@ public class ClientId {
     @SuppressWarnings("unchecked")
     Map<String, Object> detail = (Map<String, Object>) rawDetail;
     String clientId = OAuth2Utils.validateString(detail, FIELD_CLIENT_ID, JSON_PARSE_ERROR);
-    if (clientId == null || clientId.length() == 0) {
+    if (clientId.isEmpty()) {
       throw new IOException(
           "Unable to parse ClientId. Field '" + FIELD_CLIENT_ID + "' is required.");
     }

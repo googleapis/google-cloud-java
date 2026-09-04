@@ -95,6 +95,8 @@ public class ToolServiceClientTest {
         ExecuteToolResponse.newBuilder()
             .setResponse(Struct.newBuilder().build())
             .setVariables(Struct.newBuilder().build())
+            .setCitations(Citations.newBuilder().build())
+            .setGoogleSearchSuggestions(GoogleSearchSuggestions.newBuilder().build())
             .build();
     mockToolService.addResponse(expectedResponse);
 
@@ -201,6 +203,7 @@ public class ToolServiceClientTest {
         RetrieveToolsRequest.newBuilder()
             .setToolset(ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
             .addAllToolIds(new ArrayList<String>())
+            .setBypassPersistenceConfig(true)
             .build();
 
     RetrieveToolsResponse actualResponse = client.retrieveTools(request);
@@ -212,6 +215,8 @@ public class ToolServiceClientTest {
 
     Assert.assertEquals(request.getToolset(), actualRequest.getToolset());
     Assert.assertEquals(request.getToolIdsList(), actualRequest.getToolIdsList());
+    Assert.assertEquals(
+        request.getBypassPersistenceConfig(), actualRequest.getBypassPersistenceConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -229,6 +234,7 @@ public class ToolServiceClientTest {
               .setToolset(
                   ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
               .addAllToolIds(new ArrayList<String>())
+              .setBypassPersistenceConfig(true)
               .build();
       client.retrieveTools(request);
       Assert.fail("No exception raised");

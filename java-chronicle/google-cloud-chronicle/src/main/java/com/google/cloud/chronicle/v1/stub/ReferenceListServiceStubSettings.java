@@ -51,6 +51,8 @@ import com.google.cloud.chronicle.v1.ListReferenceListsRequest;
 import com.google.cloud.chronicle.v1.ListReferenceListsResponse;
 import com.google.cloud.chronicle.v1.ReferenceList;
 import com.google.cloud.chronicle.v1.UpdateReferenceListRequest;
+import com.google.cloud.chronicle.v1.VerifyReferenceListRequest;
+import com.google.cloud.chronicle.v1.VerifyReferenceListResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -59,6 +61,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -111,13 +115,18 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class ReferenceListServiceStubSettings
     extends StubSettings<ReferenceListServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/chronicle")
+          .add("https://www.googleapis.com/auth/chronicle.readonly")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
 
   private final UnaryCallSettings<GetReferenceListRequest, ReferenceList> getReferenceListSettings;
   private final PagedCallSettings<
@@ -127,6 +136,8 @@ public class ReferenceListServiceStubSettings
       createReferenceListSettings;
   private final UnaryCallSettings<UpdateReferenceListRequest, ReferenceList>
       updateReferenceListSettings;
+  private final UnaryCallSettings<VerifyReferenceListRequest, VerifyReferenceListResponse>
+      verifyReferenceListSettings;
 
   private static final PagedListDescriptor<
           ListReferenceListsRequest, ListReferenceListsResponse, ReferenceList>
@@ -209,6 +220,12 @@ public class ReferenceListServiceStubSettings
   public UnaryCallSettings<UpdateReferenceListRequest, ReferenceList>
       updateReferenceListSettings() {
     return updateReferenceListSettings;
+  }
+
+  /** Returns the object with the settings used for calls to verifyReferenceList. */
+  public UnaryCallSettings<VerifyReferenceListRequest, VerifyReferenceListResponse>
+      verifyReferenceListSettings() {
+    return verifyReferenceListSettings;
   }
 
   public ReferenceListServiceStub createStub() throws IOException {
@@ -310,7 +327,7 @@ public class ReferenceListServiceStubSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -326,6 +343,7 @@ public class ReferenceListServiceStubSettings
     listReferenceListsSettings = settingsBuilder.listReferenceListsSettings().build();
     createReferenceListSettings = settingsBuilder.createReferenceListSettings().build();
     updateReferenceListSettings = settingsBuilder.updateReferenceListSettings().build();
+    verifyReferenceListSettings = settingsBuilder.verifyReferenceListSettings().build();
   }
 
   @Override
@@ -350,6 +368,8 @@ public class ReferenceListServiceStubSettings
         createReferenceListSettings;
     private final UnaryCallSettings.Builder<UpdateReferenceListRequest, ReferenceList>
         updateReferenceListSettings;
+    private final UnaryCallSettings.Builder<VerifyReferenceListRequest, VerifyReferenceListResponse>
+        verifyReferenceListSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -395,20 +415,22 @@ public class ReferenceListServiceStubSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       getReferenceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listReferenceListsSettings = PagedCallSettings.newBuilder(LIST_REFERENCE_LISTS_PAGE_STR_FACT);
       createReferenceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateReferenceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      verifyReferenceListSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getReferenceListSettings,
               listReferenceListsSettings,
               createReferenceListSettings,
-              updateReferenceListSettings);
+              updateReferenceListSettings,
+              verifyReferenceListSettings);
       initDefaults(this);
     }
 
@@ -419,13 +441,15 @@ public class ReferenceListServiceStubSettings
       listReferenceListsSettings = settings.listReferenceListsSettings.toBuilder();
       createReferenceListSettings = settings.createReferenceListSettings.toBuilder();
       updateReferenceListSettings = settings.updateReferenceListSettings.toBuilder();
+      verifyReferenceListSettings = settings.verifyReferenceListSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getReferenceListSettings,
               listReferenceListsSettings,
               createReferenceListSettings,
-              updateReferenceListSettings);
+              updateReferenceListSettings,
+              verifyReferenceListSettings);
     }
 
     private static Builder createDefault() {
@@ -473,6 +497,11 @@ public class ReferenceListServiceStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
 
+      builder
+          .verifyReferenceListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       return builder;
     }
 
@@ -514,6 +543,12 @@ public class ReferenceListServiceStubSettings
     public UnaryCallSettings.Builder<UpdateReferenceListRequest, ReferenceList>
         updateReferenceListSettings() {
       return updateReferenceListSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to verifyReferenceList. */
+    public UnaryCallSettings.Builder<VerifyReferenceListRequest, VerifyReferenceListResponse>
+        verifyReferenceListSettings() {
+      return verifyReferenceListSettings;
     }
 
     @Override

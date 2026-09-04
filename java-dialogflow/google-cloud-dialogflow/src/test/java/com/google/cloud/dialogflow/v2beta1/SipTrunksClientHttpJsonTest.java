@@ -92,6 +92,7 @@ public class SipTrunksClientHttpJsonTest {
             .addAllExpectedHostname(new ArrayList<String>())
             .addAllConnections(new ArrayList<Connection>())
             .setDisplayName("displayName1714148973")
+            .addAllPeerHostnames(new ArrayList<SipHostname>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -141,6 +142,7 @@ public class SipTrunksClientHttpJsonTest {
             .addAllExpectedHostname(new ArrayList<String>())
             .addAllConnections(new ArrayList<Connection>())
             .setDisplayName("displayName1714148973")
+            .addAllPeerHostnames(new ArrayList<SipHostname>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -370,6 +372,7 @@ public class SipTrunksClientHttpJsonTest {
             .addAllExpectedHostname(new ArrayList<String>())
             .addAllConnections(new ArrayList<Connection>())
             .setDisplayName("displayName1714148973")
+            .addAllPeerHostnames(new ArrayList<SipHostname>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -417,6 +420,7 @@ public class SipTrunksClientHttpJsonTest {
             .addAllExpectedHostname(new ArrayList<String>())
             .addAllConnections(new ArrayList<Connection>())
             .setDisplayName("displayName1714148973")
+            .addAllPeerHostnames(new ArrayList<SipHostname>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -464,6 +468,7 @@ public class SipTrunksClientHttpJsonTest {
             .addAllExpectedHostname(new ArrayList<String>())
             .addAllConnections(new ArrayList<Connection>())
             .setDisplayName("displayName1714148973")
+            .addAllPeerHostnames(new ArrayList<SipHostname>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -473,6 +478,7 @@ public class SipTrunksClientHttpJsonTest {
             .addAllExpectedHostname(new ArrayList<String>())
             .addAllConnections(new ArrayList<Connection>())
             .setDisplayName("displayName1714148973")
+            .addAllPeerHostnames(new ArrayList<SipHostname>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -508,6 +514,7 @@ public class SipTrunksClientHttpJsonTest {
               .addAllExpectedHostname(new ArrayList<String>())
               .addAllConnections(new ArrayList<Connection>())
               .setDisplayName("displayName1714148973")
+              .addAllPeerHostnames(new ArrayList<SipHostname>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSipTrunk(sipTrunk, updateMask);

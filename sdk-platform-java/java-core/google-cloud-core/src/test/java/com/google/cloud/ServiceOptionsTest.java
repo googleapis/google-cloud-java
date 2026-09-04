@@ -630,6 +630,46 @@ class ServiceOptionsTest {
     assertThat(options.hasValidUniverseDomain()).isTrue();
   }
 
+  @Test
+  void testGetScopedCredentials_useJwtAccessWithScope_enablesByDefault() {
+    TestServiceOptions options =
+        TestServiceOptions.newBuilder()
+            .setProjectId("project-id")
+            .setCredentials(credentials)
+            .build();
+    com.google.auth.Credentials scoped = options.getScopedCredentials();
+    assertThat(scoped).isInstanceOf(ServiceAccountCredentials.class);
+    assertThat(((ServiceAccountCredentials) scoped).getUseJwtAccessWithScope()).isTrue();
+  }
+
+  @Test
+  void testGetScopedCredentials_useJwtAccessWithScope_canBeDisabled() {
+    TestServiceOptions options =
+        new TestServiceOptions.Builder()
+            .setProjectId("project-id")
+            .setCredentials(credentials)
+            .setUseJwtAccessWithScope(false)
+            .build();
+    com.google.auth.Credentials scoped = options.getScopedCredentials();
+    assertThat(scoped).isInstanceOf(ServiceAccountCredentials.class);
+    assertThat(((ServiceAccountCredentials) scoped).getUseJwtAccessWithScope()).isFalse();
+  }
+
+  @Test
+  void testGetScopedCredentials_useJwtAccessWithScope_overridesCredentials() {
+    ServiceAccountCredentials trueCredentials =
+        ((ServiceAccountCredentials) credentials).createWithUseJwtAccessWithScope(true);
+    TestServiceOptions options =
+        new TestServiceOptions.Builder()
+            .setProjectId("project-id")
+            .setCredentials(trueCredentials)
+            .setUseJwtAccessWithScope(false)
+            .build();
+    com.google.auth.Credentials scoped = options.getScopedCredentials();
+    assertThat(scoped).isInstanceOf(ServiceAccountCredentials.class);
+    assertThat(((ServiceAccountCredentials) scoped).getUseJwtAccessWithScope()).isFalse();
+  }
+
   private HttpResponse createHttpResponseWithHeader(final Multimap<String, String> headers)
       throws Exception {
     HttpTransport mockHttpTransport =

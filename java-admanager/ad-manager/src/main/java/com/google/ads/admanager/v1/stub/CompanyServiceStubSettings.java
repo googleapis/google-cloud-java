@@ -18,10 +18,16 @@ package com.google.ads.admanager.v1.stub;
 
 import static com.google.ads.admanager.v1.CompanyServiceClient.ListCompaniesPagedResponse;
 
+import com.google.ads.admanager.v1.BatchCreateCompaniesRequest;
+import com.google.ads.admanager.v1.BatchCreateCompaniesResponse;
+import com.google.ads.admanager.v1.BatchUpdateCompaniesRequest;
+import com.google.ads.admanager.v1.BatchUpdateCompaniesResponse;
 import com.google.ads.admanager.v1.Company;
+import com.google.ads.admanager.v1.CreateCompanyRequest;
 import com.google.ads.admanager.v1.GetCompanyRequest;
 import com.google.ads.admanager.v1.ListCompaniesRequest;
 import com.google.ads.admanager.v1.ListCompaniesResponse;
+import com.google.ads.admanager.v1.UpdateCompanyRequest;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ObsoleteApi;
@@ -52,6 +58,8 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -103,17 +111,27 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admanager").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/admanager")
+          .add("https://www.googleapis.com/auth/admanager.readonly")
+          .build();
 
   private final UnaryCallSettings<GetCompanyRequest, Company> getCompanySettings;
   private final PagedCallSettings<
           ListCompaniesRequest, ListCompaniesResponse, ListCompaniesPagedResponse>
       listCompaniesSettings;
+  private final UnaryCallSettings<CreateCompanyRequest, Company> createCompanySettings;
+  private final UnaryCallSettings<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+      batchCreateCompaniesSettings;
+  private final UnaryCallSettings<UpdateCompanyRequest, Company> updateCompanySettings;
+  private final UnaryCallSettings<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+      batchUpdateCompaniesSettings;
 
   private static final PagedListDescriptor<ListCompaniesRequest, ListCompaniesResponse, Company>
       LIST_COMPANIES_PAGE_STR_DESC =
@@ -175,6 +193,28 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
   public PagedCallSettings<ListCompaniesRequest, ListCompaniesResponse, ListCompaniesPagedResponse>
       listCompaniesSettings() {
     return listCompaniesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createCompany. */
+  public UnaryCallSettings<CreateCompanyRequest, Company> createCompanySettings() {
+    return createCompanySettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateCompanies. */
+  public UnaryCallSettings<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+      batchCreateCompaniesSettings() {
+    return batchCreateCompaniesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateCompany. */
+  public UnaryCallSettings<UpdateCompanyRequest, Company> updateCompanySettings() {
+    return updateCompanySettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateCompanies. */
+  public UnaryCallSettings<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+      batchUpdateCompaniesSettings() {
+    return batchUpdateCompaniesSettings;
   }
 
   public CompanyServiceStub createStub() throws IOException {
@@ -247,7 +287,7 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -261,6 +301,10 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
 
     getCompanySettings = settingsBuilder.getCompanySettings().build();
     listCompaniesSettings = settingsBuilder.listCompaniesSettings().build();
+    createCompanySettings = settingsBuilder.createCompanySettings().build();
+    batchCreateCompaniesSettings = settingsBuilder.batchCreateCompaniesSettings().build();
+    updateCompanySettings = settingsBuilder.updateCompanySettings().build();
+    batchUpdateCompaniesSettings = settingsBuilder.batchUpdateCompaniesSettings().build();
   }
 
   @Override
@@ -279,6 +323,14 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
     private final PagedCallSettings.Builder<
             ListCompaniesRequest, ListCompaniesResponse, ListCompaniesPagedResponse>
         listCompaniesSettings;
+    private final UnaryCallSettings.Builder<CreateCompanyRequest, Company> createCompanySettings;
+    private final UnaryCallSettings.Builder<
+            BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+        batchCreateCompaniesSettings;
+    private final UnaryCallSettings.Builder<UpdateCompanyRequest, Company> updateCompanySettings;
+    private final UnaryCallSettings.Builder<
+            BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+        batchUpdateCompaniesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -303,15 +355,24 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       getCompanySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listCompaniesSettings = PagedCallSettings.newBuilder(LIST_COMPANIES_PAGE_STR_FACT);
+      createCompanySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateCompaniesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateCompanySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateCompaniesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getCompanySettings, listCompaniesSettings);
+              getCompanySettings,
+              listCompaniesSettings,
+              createCompanySettings,
+              batchCreateCompaniesSettings,
+              updateCompanySettings,
+              batchUpdateCompaniesSettings);
       initDefaults(this);
     }
 
@@ -320,10 +381,19 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
 
       getCompanySettings = settings.getCompanySettings.toBuilder();
       listCompaniesSettings = settings.listCompaniesSettings.toBuilder();
+      createCompanySettings = settings.createCompanySettings.toBuilder();
+      batchCreateCompaniesSettings = settings.batchCreateCompaniesSettings.toBuilder();
+      updateCompanySettings = settings.updateCompanySettings.toBuilder();
+      batchUpdateCompaniesSettings = settings.batchUpdateCompaniesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getCompanySettings, listCompaniesSettings);
+              getCompanySettings,
+              listCompaniesSettings,
+              createCompanySettings,
+              batchCreateCompaniesSettings,
+              updateCompanySettings,
+              batchUpdateCompaniesSettings);
     }
 
     private static Builder createDefault() {
@@ -346,6 +416,26 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
 
       builder
           .listCompaniesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createCompanySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchCreateCompaniesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateCompanySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .batchUpdateCompaniesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -377,6 +467,28 @@ public class CompanyServiceStubSettings extends StubSettings<CompanyServiceStubS
             ListCompaniesRequest, ListCompaniesResponse, ListCompaniesPagedResponse>
         listCompaniesSettings() {
       return listCompaniesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createCompany. */
+    public UnaryCallSettings.Builder<CreateCompanyRequest, Company> createCompanySettings() {
+      return createCompanySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateCompanies. */
+    public UnaryCallSettings.Builder<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+        batchCreateCompaniesSettings() {
+      return batchCreateCompaniesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateCompany. */
+    public UnaryCallSettings.Builder<UpdateCompanyRequest, Company> updateCompanySettings() {
+      return updateCompanySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateCompanies. */
+    public UnaryCallSettings.Builder<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+        batchUpdateCompaniesSettings() {
+      return batchUpdateCompaniesSettings;
     }
 
     @Override

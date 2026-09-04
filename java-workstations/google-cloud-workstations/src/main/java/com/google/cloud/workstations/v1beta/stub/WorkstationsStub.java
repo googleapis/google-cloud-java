@@ -48,6 +48,8 @@ import com.google.cloud.workstations.v1beta.ListWorkstationConfigsResponse;
 import com.google.cloud.workstations.v1beta.ListWorkstationsRequest;
 import com.google.cloud.workstations.v1beta.ListWorkstationsResponse;
 import com.google.cloud.workstations.v1beta.OperationMetadata;
+import com.google.cloud.workstations.v1beta.PushCredentialsMetadata;
+import com.google.cloud.workstations.v1beta.PushCredentialsRequest;
 import com.google.cloud.workstations.v1beta.StartWorkstationRequest;
 import com.google.cloud.workstations.v1beta.StopWorkstationRequest;
 import com.google.cloud.workstations.v1beta.UpdateWorkstationClusterRequest;
@@ -64,6 +66,8 @@ import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -71,15 +75,17 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class WorkstationsStub implements BackgroundResource {
 
-  public OperationsStub getOperationsStub() {
+  public @Nullable OperationsStub getOperationsStub() {
     return null;
   }
 
-  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+  public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
+      getHttpJsonOperationsStub() {
     return null;
   }
 
@@ -270,6 +276,15 @@ public abstract class WorkstationsStub implements BackgroundResource {
   public UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable() {
     throw new UnsupportedOperationException("Not implemented: generateAccessTokenCallable()");
+  }
+
+  public OperationCallable<PushCredentialsRequest, Workstation, PushCredentialsMetadata>
+      pushCredentialsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: pushCredentialsOperationCallable()");
+  }
+
+  public UnaryCallable<PushCredentialsRequest, Operation> pushCredentialsCallable() {
+    throw new UnsupportedOperationException("Not implemented: pushCredentialsCallable()");
   }
 
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {

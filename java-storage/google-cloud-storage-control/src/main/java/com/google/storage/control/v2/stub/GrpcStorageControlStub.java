@@ -18,7 +18,11 @@ package com.google.storage.control.v2.stub;
 
 import static com.google.storage.control.v2.StorageControlClient.ListAnywhereCachesPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingRevisionsPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListManagedFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListRapidCachesPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.SummarizeIntelligenceFindingsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -43,43 +47,67 @@ import com.google.storage.control.v2.CreateAnywhereCacheMetadata;
 import com.google.storage.control.v2.CreateAnywhereCacheRequest;
 import com.google.storage.control.v2.CreateFolderRequest;
 import com.google.storage.control.v2.CreateManagedFolderRequest;
+import com.google.storage.control.v2.CreateRapidCacheMetadata;
+import com.google.storage.control.v2.CreateRapidCacheRequest;
 import com.google.storage.control.v2.DeleteFolderRecursiveMetadata;
 import com.google.storage.control.v2.DeleteFolderRecursiveRequest;
 import com.google.storage.control.v2.DeleteFolderRequest;
 import com.google.storage.control.v2.DeleteManagedFolderRequest;
 import com.google.storage.control.v2.DisableAnywhereCacheRequest;
+import com.google.storage.control.v2.DisableRapidCacheMetadata;
+import com.google.storage.control.v2.DisableRapidCacheRequest;
 import com.google.storage.control.v2.Folder;
 import com.google.storage.control.v2.GetAnywhereCacheRequest;
 import com.google.storage.control.v2.GetFolderIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetFolderRequest;
+import com.google.storage.control.v2.GetIntelligenceFindingRequest;
+import com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest;
 import com.google.storage.control.v2.GetManagedFolderRequest;
 import com.google.storage.control.v2.GetOrganizationIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetProjectIntelligenceConfigRequest;
+import com.google.storage.control.v2.GetRapidCacheRequest;
 import com.google.storage.control.v2.GetStorageLayoutRequest;
 import com.google.storage.control.v2.IntelligenceConfig;
+import com.google.storage.control.v2.IntelligenceFinding;
+import com.google.storage.control.v2.IntelligenceFindingRevision;
 import com.google.storage.control.v2.ListAnywhereCachesRequest;
 import com.google.storage.control.v2.ListAnywhereCachesResponse;
 import com.google.storage.control.v2.ListFoldersRequest;
 import com.google.storage.control.v2.ListFoldersResponse;
+import com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest;
+import com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse;
+import com.google.storage.control.v2.ListIntelligenceFindingsRequest;
+import com.google.storage.control.v2.ListIntelligenceFindingsResponse;
 import com.google.storage.control.v2.ListManagedFoldersRequest;
 import com.google.storage.control.v2.ListManagedFoldersResponse;
+import com.google.storage.control.v2.ListRapidCachesRequest;
+import com.google.storage.control.v2.ListRapidCachesResponse;
 import com.google.storage.control.v2.ManagedFolder;
+import com.google.storage.control.v2.ObjectFullContext;
 import com.google.storage.control.v2.PauseAnywhereCacheRequest;
+import com.google.storage.control.v2.RapidCache;
 import com.google.storage.control.v2.RenameFolderMetadata;
 import com.google.storage.control.v2.RenameFolderRequest;
 import com.google.storage.control.v2.ResumeAnywhereCacheRequest;
 import com.google.storage.control.v2.StorageLayout;
+import com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest;
+import com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse;
 import com.google.storage.control.v2.UpdateAnywhereCacheMetadata;
 import com.google.storage.control.v2.UpdateAnywhereCacheRequest;
 import com.google.storage.control.v2.UpdateFolderIntelligenceConfigRequest;
+import com.google.storage.control.v2.UpdateManagedFolderRequest;
 import com.google.storage.control.v2.UpdateOrganizationIntelligenceConfigRequest;
 import com.google.storage.control.v2.UpdateProjectIntelligenceConfigRequest;
+import com.google.storage.control.v2.UpdateRapidCacheMetadata;
+import com.google.storage.control.v2.UpdateRapidCacheRequest;
+import com.google.storage.control.v2.ViewObjectFullContextRequest;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -87,6 +115,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GrpcStorageControlStub extends StorageControlStub {
   private static final MethodDescriptor<CreateFolderRequest, Folder> createFolderMethodDescriptor =
@@ -204,6 +233,17 @@ public class GrpcStorageControlStub extends StorageControlStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<UpdateManagedFolderRequest, ManagedFolder>
+      updateManagedFolderMethodDescriptor =
+          MethodDescriptor.<UpdateManagedFolderRequest, ManagedFolder>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storage.control.v2.StorageControl/UpdateManagedFolder")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateManagedFolderRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ManagedFolder.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<CreateAnywhereCacheRequest, Operation>
       createAnywhereCacheMethodDescriptor =
           MethodDescriptor.<CreateAnywhereCacheRequest, Operation>newBuilder()
@@ -279,6 +319,62 @@ public class GrpcStorageControlStub extends StorageControlStub {
                   ProtoUtils.marshaller(ListAnywhereCachesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnywhereCachesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateRapidCacheRequest, Operation>
+      createRapidCacheMethodDescriptor =
+          MethodDescriptor.<CreateRapidCacheRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storage.control.v2.StorageControl/CreateRapidCache")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateRapidCacheRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateRapidCacheRequest, Operation>
+      updateRapidCacheMethodDescriptor =
+          MethodDescriptor.<UpdateRapidCacheRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storage.control.v2.StorageControl/UpdateRapidCache")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateRapidCacheRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DisableRapidCacheRequest, Operation>
+      disableRapidCacheMethodDescriptor =
+          MethodDescriptor.<DisableRapidCacheRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storage.control.v2.StorageControl/DisableRapidCache")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DisableRapidCacheRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetRapidCacheRequest, RapidCache>
+      getRapidCacheMethodDescriptor =
+          MethodDescriptor.<GetRapidCacheRequest, RapidCache>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storage.control.v2.StorageControl/GetRapidCache")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetRapidCacheRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RapidCache.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListRapidCachesRequest, ListRapidCachesResponse>
+      listRapidCachesMethodDescriptor =
+          MethodDescriptor.<ListRapidCachesRequest, ListRapidCachesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storage.control.v2.StorageControl/ListRapidCaches")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListRapidCachesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListRapidCachesResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -391,6 +487,93 @@ public class GrpcStorageControlStub extends StorageControlStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingMethodDescriptor =
+          MethodDescriptor.<GetIntelligenceFindingRequest, IntelligenceFinding>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storage.control.v2.StorageControl/GetIntelligenceFinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetIntelligenceFindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(IntelligenceFinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+      listIntelligenceFindingsMethodDescriptor =
+          MethodDescriptor
+              .<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.storage.control.v2.StorageControl/ListIntelligenceFindings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListIntelligenceFindingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListIntelligenceFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+      summarizeIntelligenceFindingsMethodDescriptor =
+          MethodDescriptor
+              .<SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.storage.control.v2.StorageControl/SummarizeIntelligenceFindings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SummarizeIntelligenceFindingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SummarizeIntelligenceFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionMethodDescriptor =
+          MethodDescriptor
+              .<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.storage.control.v2.StorageControl/GetIntelligenceFindingRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetIntelligenceFindingRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(IntelligenceFindingRevision.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+      listIntelligenceFindingRevisionsMethodDescriptor =
+          MethodDescriptor
+              .<ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.storage.control.v2.StorageControl/ListIntelligenceFindingRevisions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListIntelligenceFindingRevisionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListIntelligenceFindingRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextMethodDescriptor =
+          MethodDescriptor.<ViewObjectFullContextRequest, ObjectFullContext>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.storage.control.v2.StorageControl/ViewObjectFullContext")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ViewObjectFullContextRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ObjectFullContext.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<CreateFolderRequest, Folder> createFolderCallable;
   private final UnaryCallable<DeleteFolderRequest, Empty> deleteFolderCallable;
   private final UnaryCallable<GetFolderRequest, Folder> getFolderCallable;
@@ -414,6 +597,8 @@ public class GrpcStorageControlStub extends StorageControlStub {
       listManagedFoldersCallable;
   private final UnaryCallable<ListManagedFoldersRequest, ListManagedFoldersPagedResponse>
       listManagedFoldersPagedCallable;
+  private final UnaryCallable<UpdateManagedFolderRequest, ManagedFolder>
+      updateManagedFolderCallable;
   private final UnaryCallable<CreateAnywhereCacheRequest, Operation> createAnywhereCacheCallable;
   private final OperationCallable<
           CreateAnywhereCacheRequest, AnywhereCache, CreateAnywhereCacheMetadata>
@@ -432,6 +617,20 @@ public class GrpcStorageControlStub extends StorageControlStub {
       listAnywhereCachesCallable;
   private final UnaryCallable<ListAnywhereCachesRequest, ListAnywhereCachesPagedResponse>
       listAnywhereCachesPagedCallable;
+  private final UnaryCallable<CreateRapidCacheRequest, Operation> createRapidCacheCallable;
+  private final OperationCallable<CreateRapidCacheRequest, RapidCache, CreateRapidCacheMetadata>
+      createRapidCacheOperationCallable;
+  private final UnaryCallable<UpdateRapidCacheRequest, Operation> updateRapidCacheCallable;
+  private final OperationCallable<UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
+      updateRapidCacheOperationCallable;
+  private final UnaryCallable<DisableRapidCacheRequest, Operation> disableRapidCacheCallable;
+  private final OperationCallable<DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+      disableRapidCacheOperationCallable;
+  private final UnaryCallable<GetRapidCacheRequest, RapidCache> getRapidCacheCallable;
+  private final UnaryCallable<ListRapidCachesRequest, ListRapidCachesResponse>
+      listRapidCachesCallable;
+  private final UnaryCallable<ListRapidCachesRequest, ListRapidCachesPagedResponse>
+      listRapidCachesPagedCallable;
   private final UnaryCallable<GetProjectIntelligenceConfigRequest, IntelligenceConfig>
       getProjectIntelligenceConfigCallable;
   private final UnaryCallable<UpdateProjectIntelligenceConfigRequest, IntelligenceConfig>
@@ -448,6 +647,29 @@ public class GrpcStorageControlStub extends StorageControlStub {
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingCallable;
+  private final UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+      listIntelligenceFindingsCallable;
+  private final UnaryCallable<
+          ListIntelligenceFindingsRequest, ListIntelligenceFindingsPagedResponse>
+      listIntelligenceFindingsPagedCallable;
+  private final UnaryCallable<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+      summarizeIntelligenceFindingsCallable;
+  private final UnaryCallable<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsPagedResponse>
+      summarizeIntelligenceFindingsPagedCallable;
+  private final UnaryCallable<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionCallable;
+  private final UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+      listIntelligenceFindingRevisionsCallable;
+  private final UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsPagedResponse>
+      listIntelligenceFindingRevisionsPagedCallable;
+  private final UnaryCallable<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -475,6 +697,8 @@ public class GrpcStorageControlStub extends StorageControlStub {
       PathTemplate.create("{bucket=projects/*/buckets/*}/**");
   private static final PathTemplate LIST_MANAGED_FOLDERS_0_PATH_TEMPLATE =
       PathTemplate.create("{bucket=**}");
+  private static final PathTemplate UPDATE_MANAGED_FOLDER_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
   private static final PathTemplate CREATE_ANYWHERE_CACHE_0_PATH_TEMPLATE =
       PathTemplate.create("{bucket=**}");
   private static final PathTemplate UPDATE_ANYWHERE_CACHE_0_PATH_TEMPLATE =
@@ -488,6 +712,16 @@ public class GrpcStorageControlStub extends StorageControlStub {
   private static final PathTemplate GET_ANYWHERE_CACHE_0_PATH_TEMPLATE =
       PathTemplate.create("{bucket=projects/*/buckets/*}/**");
   private static final PathTemplate LIST_ANYWHERE_CACHES_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=**}");
+  private static final PathTemplate CREATE_RAPID_CACHE_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=**}");
+  private static final PathTemplate UPDATE_RAPID_CACHE_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
+  private static final PathTemplate DISABLE_RAPID_CACHE_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
+  private static final PathTemplate GET_RAPID_CACHE_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
+  private static final PathTemplate LIST_RAPID_CACHES_0_PATH_TEMPLATE =
       PathTemplate.create("{bucket=**}");
   private static final PathTemplate GET_IAM_POLICY_0_PATH_TEMPLATE =
       PathTemplate.create("{bucket=**}");
@@ -503,6 +737,8 @@ public class GrpcStorageControlStub extends StorageControlStub {
       PathTemplate.create("{bucket=projects/*/buckets/*}/objects/**");
   private static final PathTemplate TEST_IAM_PERMISSIONS_2_PATH_TEMPLATE =
       PathTemplate.create("{bucket=projects/*/buckets/*}/managedFolders/**");
+  private static final PathTemplate VIEW_OBJECT_FULL_CONTEXT_0_PATH_TEMPLATE =
+      PathTemplate.create("{bucket=projects/*/buckets/*}/**");
 
   public static final GrpcStorageControlStub create(StorageControlStubSettings settings)
       throws IOException {
@@ -751,6 +987,22 @@ public class GrpcStorageControlStub extends StorageControlStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<UpdateManagedFolderRequest, ManagedFolder>
+        updateManagedFolderTransportSettings =
+            GrpcCallSettings.<UpdateManagedFolderRequest, ManagedFolder>newBuilder()
+                .setMethodDescriptor(updateManagedFolderMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      if (request.getManagedFolder() != null) {
+                        builder.add(
+                            request.getManagedFolder().getName(),
+                            "bucket",
+                            UPDATE_MANAGED_FOLDER_0_PATH_TEMPLATE);
+                      }
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<CreateAnywhereCacheRequest, Operation> createAnywhereCacheTransportSettings =
         GrpcCallSettings.<CreateAnywhereCacheRequest, Operation>newBuilder()
             .setMethodDescriptor(createAnywhereCacheMethodDescriptor)
@@ -894,6 +1146,66 @@ public class GrpcStorageControlStub extends StorageControlStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    GrpcCallSettings<CreateRapidCacheRequest, Operation> createRapidCacheTransportSettings =
+        GrpcCallSettings.<CreateRapidCacheRequest, Operation>newBuilder()
+            .setMethodDescriptor(createRapidCacheMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getParent(), "bucket", CREATE_RAPID_CACHE_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    GrpcCallSettings<UpdateRapidCacheRequest, Operation> updateRapidCacheTransportSettings =
+        GrpcCallSettings.<UpdateRapidCacheRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateRapidCacheMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  if (request.getRapidCache() != null) {
+                    builder.add(
+                        request.getRapidCache().getName(),
+                        "bucket",
+                        UPDATE_RAPID_CACHE_0_PATH_TEMPLATE);
+                  }
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DisableRapidCacheRequest, Operation> disableRapidCacheTransportSettings =
+        GrpcCallSettings.<DisableRapidCacheRequest, Operation>newBuilder()
+            .setMethodDescriptor(disableRapidCacheMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "bucket", DISABLE_RAPID_CACHE_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<GetRapidCacheRequest, RapidCache> getRapidCacheTransportSettings =
+        GrpcCallSettings.<GetRapidCacheRequest, RapidCache>newBuilder()
+            .setMethodDescriptor(getRapidCacheMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(request.getName(), "bucket", GET_RAPID_CACHE_0_PATH_TEMPLATE);
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    GrpcCallSettings<ListRapidCachesRequest, ListRapidCachesResponse>
+        listRapidCachesTransportSettings =
+            GrpcCallSettings.<ListRapidCachesRequest, ListRapidCachesResponse>newBuilder()
+                .setMethodDescriptor(listRapidCachesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(request.getParent(), "bucket", LIST_RAPID_CACHES_0_PATH_TEMPLATE);
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<GetProjectIntelligenceConfigRequest, IntelligenceConfig>
         getProjectIntelligenceConfigTransportSettings =
             GrpcCallSettings.<GetProjectIntelligenceConfigRequest, IntelligenceConfig>newBuilder()
@@ -1013,6 +1325,85 @@ public class GrpcStorageControlStub extends StorageControlStub {
                     })
                 .setResourceNameExtractor(request -> request.getResource())
                 .build();
+    GrpcCallSettings<GetIntelligenceFindingRequest, IntelligenceFinding>
+        getIntelligenceFindingTransportSettings =
+            GrpcCallSettings.<GetIntelligenceFindingRequest, IntelligenceFinding>newBuilder()
+                .setMethodDescriptor(getIntelligenceFindingMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+        listIntelligenceFindingsTransportSettings =
+            GrpcCallSettings
+                .<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>newBuilder()
+                .setMethodDescriptor(listIntelligenceFindingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+        summarizeIntelligenceFindingsTransportSettings =
+            GrpcCallSettings
+                .<SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+                    newBuilder()
+                .setMethodDescriptor(summarizeIntelligenceFindingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+        getIntelligenceFindingRevisionTransportSettings =
+            GrpcCallSettings
+                .<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>newBuilder()
+                .setMethodDescriptor(getIntelligenceFindingRevisionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<
+            ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+        listIntelligenceFindingRevisionsTransportSettings =
+            GrpcCallSettings
+                .<ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listIntelligenceFindingRevisionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<ViewObjectFullContextRequest, ObjectFullContext>
+        viewObjectFullContextTransportSettings =
+            GrpcCallSettings.<ViewObjectFullContextRequest, ObjectFullContext>newBuilder()
+                .setMethodDescriptor(viewObjectFullContextMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          request.getName(), "bucket", VIEW_OBJECT_FULL_CONTEXT_0_PATH_TEMPLATE);
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
 
     this.createFolderCallable =
         callableFactory.createUnaryCallable(
@@ -1075,6 +1466,11 @@ public class GrpcStorageControlStub extends StorageControlStub {
             listManagedFoldersTransportSettings,
             settings.listManagedFoldersSettings(),
             clientContext);
+    this.updateManagedFolderCallable =
+        callableFactory.createUnaryCallable(
+            updateManagedFolderTransportSettings,
+            settings.updateManagedFolderSettings(),
+            clientContext);
     this.createAnywhereCacheCallable =
         callableFactory.createUnaryCallable(
             createAnywhereCacheTransportSettings,
@@ -1125,6 +1521,44 @@ public class GrpcStorageControlStub extends StorageControlStub {
             listAnywhereCachesTransportSettings,
             settings.listAnywhereCachesSettings(),
             clientContext);
+    this.createRapidCacheCallable =
+        callableFactory.createUnaryCallable(
+            createRapidCacheTransportSettings, settings.createRapidCacheSettings(), clientContext);
+    this.createRapidCacheOperationCallable =
+        callableFactory.createOperationCallable(
+            createRapidCacheTransportSettings,
+            settings.createRapidCacheOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateRapidCacheCallable =
+        callableFactory.createUnaryCallable(
+            updateRapidCacheTransportSettings, settings.updateRapidCacheSettings(), clientContext);
+    this.updateRapidCacheOperationCallable =
+        callableFactory.createOperationCallable(
+            updateRapidCacheTransportSettings,
+            settings.updateRapidCacheOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.disableRapidCacheCallable =
+        callableFactory.createUnaryCallable(
+            disableRapidCacheTransportSettings,
+            settings.disableRapidCacheSettings(),
+            clientContext);
+    this.disableRapidCacheOperationCallable =
+        callableFactory.createOperationCallable(
+            disableRapidCacheTransportSettings,
+            settings.disableRapidCacheOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getRapidCacheCallable =
+        callableFactory.createUnaryCallable(
+            getRapidCacheTransportSettings, settings.getRapidCacheSettings(), clientContext);
+    this.listRapidCachesCallable =
+        callableFactory.createUnaryCallable(
+            listRapidCachesTransportSettings, settings.listRapidCachesSettings(), clientContext);
+    this.listRapidCachesPagedCallable =
+        callableFactory.createPagedCallable(
+            listRapidCachesTransportSettings, settings.listRapidCachesSettings(), clientContext);
     this.getProjectIntelligenceConfigCallable =
         callableFactory.createUnaryCallable(
             getProjectIntelligenceConfigTransportSettings,
@@ -1165,6 +1599,51 @@ public class GrpcStorageControlStub extends StorageControlStub {
         callableFactory.createUnaryCallable(
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
+            clientContext);
+    this.getIntelligenceFindingCallable =
+        callableFactory.createUnaryCallable(
+            getIntelligenceFindingTransportSettings,
+            settings.getIntelligenceFindingSettings(),
+            clientContext);
+    this.listIntelligenceFindingsCallable =
+        callableFactory.createUnaryCallable(
+            listIntelligenceFindingsTransportSettings,
+            settings.listIntelligenceFindingsSettings(),
+            clientContext);
+    this.listIntelligenceFindingsPagedCallable =
+        callableFactory.createPagedCallable(
+            listIntelligenceFindingsTransportSettings,
+            settings.listIntelligenceFindingsSettings(),
+            clientContext);
+    this.summarizeIntelligenceFindingsCallable =
+        callableFactory.createUnaryCallable(
+            summarizeIntelligenceFindingsTransportSettings,
+            settings.summarizeIntelligenceFindingsSettings(),
+            clientContext);
+    this.summarizeIntelligenceFindingsPagedCallable =
+        callableFactory.createPagedCallable(
+            summarizeIntelligenceFindingsTransportSettings,
+            settings.summarizeIntelligenceFindingsSettings(),
+            clientContext);
+    this.getIntelligenceFindingRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getIntelligenceFindingRevisionTransportSettings,
+            settings.getIntelligenceFindingRevisionSettings(),
+            clientContext);
+    this.listIntelligenceFindingRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listIntelligenceFindingRevisionsTransportSettings,
+            settings.listIntelligenceFindingRevisionsSettings(),
+            clientContext);
+    this.listIntelligenceFindingRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listIntelligenceFindingRevisionsTransportSettings,
+            settings.listIntelligenceFindingRevisionsSettings(),
+            clientContext);
+    this.viewObjectFullContextCallable =
+        callableFactory.createUnaryCallable(
+            viewObjectFullContextTransportSettings,
+            settings.viewObjectFullContextSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -1255,6 +1734,11 @@ public class GrpcStorageControlStub extends StorageControlStub {
   }
 
   @Override
+  public UnaryCallable<UpdateManagedFolderRequest, ManagedFolder> updateManagedFolderCallable() {
+    return updateManagedFolderCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateAnywhereCacheRequest, Operation> createAnywhereCacheCallable() {
     return createAnywhereCacheCallable;
   }
@@ -1309,6 +1793,55 @@ public class GrpcStorageControlStub extends StorageControlStub {
   }
 
   @Override
+  public UnaryCallable<CreateRapidCacheRequest, Operation> createRapidCacheCallable() {
+    return createRapidCacheCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateRapidCacheRequest, RapidCache, CreateRapidCacheMetadata>
+      createRapidCacheOperationCallable() {
+    return createRapidCacheOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRapidCacheRequest, Operation> updateRapidCacheCallable() {
+    return updateRapidCacheCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
+      updateRapidCacheOperationCallable() {
+    return updateRapidCacheOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DisableRapidCacheRequest, Operation> disableRapidCacheCallable() {
+    return disableRapidCacheCallable;
+  }
+
+  @Override
+  public OperationCallable<DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+      disableRapidCacheOperationCallable() {
+    return disableRapidCacheOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRapidCacheRequest, RapidCache> getRapidCacheCallable() {
+    return getRapidCacheCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRapidCachesRequest, ListRapidCachesResponse> listRapidCachesCallable() {
+    return listRapidCachesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRapidCachesRequest, ListRapidCachesPagedResponse>
+      listRapidCachesPagedCallable() {
+    return listRapidCachesPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<GetProjectIntelligenceConfigRequest, IntelligenceConfig>
       getProjectIntelligenceConfigCallable() {
     return getProjectIntelligenceConfigCallable;
@@ -1358,6 +1891,63 @@ public class GrpcStorageControlStub extends StorageControlStub {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingCallable() {
+    return getIntelligenceFindingCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+      listIntelligenceFindingsCallable() {
+    return listIntelligenceFindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsPagedResponse>
+      listIntelligenceFindingsPagedCallable() {
+    return listIntelligenceFindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+      summarizeIntelligenceFindingsCallable() {
+    return summarizeIntelligenceFindingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsPagedResponse>
+      summarizeIntelligenceFindingsPagedCallable() {
+    return summarizeIntelligenceFindingsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionCallable() {
+    return getIntelligenceFindingRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+      listIntelligenceFindingRevisionsCallable() {
+    return listIntelligenceFindingRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsPagedResponse>
+      listIntelligenceFindingRevisionsPagedCallable() {
+    return listIntelligenceFindingRevisionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextCallable() {
+    return viewObjectFullContextCallable;
   }
 
   @Override

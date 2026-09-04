@@ -10,6 +10,8 @@ import com.google.selective.generate.v1beta1.stub.EchoServiceShouldGenerateParti
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -155,10 +157,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundResource {
-  private final EchoServiceShouldGeneratePartialUsualSettings settings;
+  private final @Nullable EchoServiceShouldGeneratePartialUsualSettings settings;
   private final EchoServiceShouldGeneratePartialUsualStub stub;
 
   /**
@@ -207,7 +210,7 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
     this.stub = stub;
   }
 
-  public final EchoServiceShouldGeneratePartialUsualSettings getSettings() {
+  public final @Nullable EchoServiceShouldGeneratePartialUsualSettings getSettings() {
     return settings;
   }
 
@@ -261,7 +264,7 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * @param name
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EchoResponse echoShouldGenerateAsUsual(FoobarName name) {
+  public final EchoResponse echoShouldGenerateAsUsual(@Nullable FoobarName name) {
     EchoRequest request =
         EchoRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return echoShouldGenerateAsUsual(request);
@@ -472,7 +475,7 @@ public class EchoServiceShouldGeneratePartialUsualClient implements BackgroundRe
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @InternalApi("This API is not intended for public consumption.")
-  public final EchoResponse chatShouldGenerateAsInternal(FoobarName name) {
+  public final EchoResponse chatShouldGenerateAsInternal(@Nullable FoobarName name) {
     EchoRequest request =
         EchoRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return chatShouldGenerateAsInternal(request);

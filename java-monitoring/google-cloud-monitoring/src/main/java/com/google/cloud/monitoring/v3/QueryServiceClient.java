@@ -34,6 +34,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -130,9 +132,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class QueryServiceClient implements BackgroundResource {
-  private final QueryServiceSettings settings;
+  private final @Nullable QueryServiceSettings settings;
   private final QueryServiceStub stub;
 
   /** Constructs an instance of QueryServiceClient with default settings. */
@@ -171,7 +174,7 @@ public class QueryServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final QueryServiceSettings getSettings() {
+  public final @Nullable QueryServiceSettings getSettings() {
     return settings;
   }
 
@@ -360,8 +363,9 @@ public class QueryServiceClient implements BackgroundResource {
           QueryTimeSeriesRequest, QueryTimeSeriesResponse, TimeSeriesData, QueryTimeSeriesPage> {
 
     private QueryTimeSeriesPage(
-        PageContext<QueryTimeSeriesRequest, QueryTimeSeriesResponse, TimeSeriesData> context,
-        QueryTimeSeriesResponse response) {
+        @Nullable PageContext<QueryTimeSeriesRequest, QueryTimeSeriesResponse, TimeSeriesData>
+            context,
+        @Nullable QueryTimeSeriesResponse response) {
       super(context, response);
     }
 
@@ -371,14 +375,16 @@ public class QueryServiceClient implements BackgroundResource {
 
     @Override
     protected QueryTimeSeriesPage createPage(
-        PageContext<QueryTimeSeriesRequest, QueryTimeSeriesResponse, TimeSeriesData> context,
-        QueryTimeSeriesResponse response) {
+        @Nullable PageContext<QueryTimeSeriesRequest, QueryTimeSeriesResponse, TimeSeriesData>
+            context,
+        @Nullable QueryTimeSeriesResponse response) {
       return new QueryTimeSeriesPage(context, response);
     }
 
     @Override
     public ApiFuture<QueryTimeSeriesPage> createPageAsync(
-        PageContext<QueryTimeSeriesRequest, QueryTimeSeriesResponse, TimeSeriesData> context,
+        @Nullable PageContext<QueryTimeSeriesRequest, QueryTimeSeriesResponse, TimeSeriesData>
+            context,
         ApiFuture<QueryTimeSeriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -393,7 +399,7 @@ public class QueryServiceClient implements BackgroundResource {
           QueryTimeSeriesFixedSizeCollection> {
 
     private QueryTimeSeriesFixedSizeCollection(
-        List<QueryTimeSeriesPage> pages, int collectionSize) {
+        @Nullable List<QueryTimeSeriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -403,7 +409,7 @@ public class QueryServiceClient implements BackgroundResource {
 
     @Override
     protected QueryTimeSeriesFixedSizeCollection createCollection(
-        List<QueryTimeSeriesPage> pages, int collectionSize) {
+        @Nullable List<QueryTimeSeriesPage> pages, int collectionSize) {
       return new QueryTimeSeriesFixedSizeCollection(pages, collectionSize);
     }
   }

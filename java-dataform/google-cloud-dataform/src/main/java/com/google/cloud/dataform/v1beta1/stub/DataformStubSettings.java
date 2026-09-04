@@ -17,6 +17,7 @@
 package com.google.cloud.dataform.v1beta1.stub;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -65,8 +66,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dataform.v1beta1.BranchMetadata;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CancelWorkflowInvocationResponse;
+import com.google.cloud.dataform.v1beta1.CheckoutWorkspaceBranchRequest;
 import com.google.cloud.dataform.v1beta1.CommitLogEntry;
 import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesRequest;
 import com.google.cloud.dataform.v1beta1.CommitRepositoryChangesResponse;
@@ -85,14 +88,24 @@ import com.google.cloud.dataform.v1beta1.CreateTeamFolderRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.CreateWorkspaceRequest;
+import com.google.cloud.dataform.v1beta1.DeleteBranchRequest;
+import com.google.cloud.dataform.v1beta1.DeleteBranchResponse;
 import com.google.cloud.dataform.v1beta1.DeleteFolderRequest;
+import com.google.cloud.dataform.v1beta1.DeleteFolderTreeMetadata;
+import com.google.cloud.dataform.v1beta1.DeleteFolderTreeRequest;
 import com.google.cloud.dataform.v1beta1.DeleteReleaseConfigRequest;
+import com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningMetadata;
+import com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningRequest;
+import com.google.cloud.dataform.v1beta1.DeleteRepositoryLongRunningResponse;
 import com.google.cloud.dataform.v1beta1.DeleteRepositoryRequest;
 import com.google.cloud.dataform.v1beta1.DeleteTeamFolderRequest;
+import com.google.cloud.dataform.v1beta1.DeleteTeamFolderTreeRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowConfigRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkflowInvocationRequest;
 import com.google.cloud.dataform.v1beta1.DeleteWorkspaceRequest;
 import com.google.cloud.dataform.v1beta1.DirectoryEntry;
+import com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchRequest;
+import com.google.cloud.dataform.v1beta1.FetchCurrentWorkspaceBranchResponse;
 import com.google.cloud.dataform.v1beta1.FetchFileDiffRequest;
 import com.google.cloud.dataform.v1beta1.FetchFileDiffResponse;
 import com.google.cloud.dataform.v1beta1.FetchFileGitStatusesRequest;
@@ -103,6 +116,8 @@ import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesRequest;
 import com.google.cloud.dataform.v1beta1.FetchRemoteBranchesResponse;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryRequest;
 import com.google.cloud.dataform.v1beta1.FetchRepositoryHistoryResponse;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesRequest;
+import com.google.cloud.dataform.v1beta1.FetchWorkspaceBranchesResponse;
 import com.google.cloud.dataform.v1beta1.Folder;
 import com.google.cloud.dataform.v1beta1.GetCompilationResultRequest;
 import com.google.cloud.dataform.v1beta1.GetConfigRequest;
@@ -172,6 +187,8 @@ import com.google.cloud.dataform.v1beta1.SearchFilesResponse;
 import com.google.cloud.dataform.v1beta1.SearchResult;
 import com.google.cloud.dataform.v1beta1.SearchTeamFoldersRequest;
 import com.google.cloud.dataform.v1beta1.SearchTeamFoldersResponse;
+import com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsRequest;
+import com.google.cloud.dataform.v1beta1.SyncWorkspaceRefsResponse;
 import com.google.cloud.dataform.v1beta1.TeamFolder;
 import com.google.cloud.dataform.v1beta1.UpdateConfigRequest;
 import com.google.cloud.dataform.v1beta1.UpdateFolderRequest;
@@ -204,6 +221,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -256,7 +275,7 @@ import javax.annotation.Generated;
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
- * configure the RetrySettings for moveFolder:
+ * configure the RetrySettings for deleteTeamFolderTree:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -279,6 +298,7 @@ import javax.annotation.Generated;
  *     .build();
  * }</pre>
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
@@ -294,6 +314,10 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   private final UnaryCallSettings<CreateTeamFolderRequest, TeamFolder> createTeamFolderSettings;
   private final UnaryCallSettings<UpdateTeamFolderRequest, TeamFolder> updateTeamFolderSettings;
   private final UnaryCallSettings<DeleteTeamFolderRequest, Empty> deleteTeamFolderSettings;
+  private final UnaryCallSettings<DeleteTeamFolderTreeRequest, Operation>
+      deleteTeamFolderTreeSettings;
+  private final OperationCallSettings<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationSettings;
   private final PagedCallSettings<
           QueryTeamFolderContentsRequest,
           QueryTeamFolderContentsResponse,
@@ -306,6 +330,9 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   private final UnaryCallSettings<CreateFolderRequest, Folder> createFolderSettings;
   private final UnaryCallSettings<UpdateFolderRequest, Folder> updateFolderSettings;
   private final UnaryCallSettings<DeleteFolderRequest, Empty> deleteFolderSettings;
+  private final UnaryCallSettings<DeleteFolderTreeRequest, Operation> deleteFolderTreeSettings;
+  private final OperationCallSettings<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationSettings;
   private final PagedCallSettings<
           QueryFolderContentsRequest, QueryFolderContentsResponse, QueryFolderContentsPagedResponse>
       queryFolderContentsSettings;
@@ -324,6 +351,13 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   private final UnaryCallSettings<CreateRepositoryRequest, Repository> createRepositorySettings;
   private final UnaryCallSettings<UpdateRepositoryRequest, Repository> updateRepositorySettings;
   private final UnaryCallSettings<DeleteRepositoryRequest, Empty> deleteRepositorySettings;
+  private final UnaryCallSettings<DeleteRepositoryLongRunningRequest, Operation>
+      deleteRepositoryLongRunningSettings;
+  private final OperationCallSettings<
+          DeleteRepositoryLongRunningRequest,
+          DeleteRepositoryLongRunningResponse,
+          DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningOperationSettings;
   private final UnaryCallSettings<MoveRepositoryRequest, Operation> moveRepositorySettings;
   private final OperationCallSettings<MoveRepositoryRequest, Empty, MoveRepositoryMetadata>
       moveRepositoryOperationSettings;
@@ -356,6 +390,19 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       installNpmPackagesSettings;
   private final UnaryCallSettings<PullGitCommitsRequest, PullGitCommitsResponse>
       pullGitCommitsSettings;
+  private final UnaryCallSettings<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+      syncWorkspaceRefsSettings;
+  private final PagedCallSettings<
+          FetchWorkspaceBranchesRequest,
+          FetchWorkspaceBranchesResponse,
+          FetchWorkspaceBranchesPagedResponse>
+      fetchWorkspaceBranchesSettings;
+  private final UnaryCallSettings<DeleteBranchRequest, DeleteBranchResponse> deleteBranchSettings;
+  private final UnaryCallSettings<CheckoutWorkspaceBranchRequest, Empty>
+      checkoutWorkspaceBranchSettings;
+  private final UnaryCallSettings<
+          FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+      fetchCurrentWorkspaceBranchSettings;
   private final UnaryCallSettings<PushGitCommitsRequest, PushGitCommitsResponse>
       pushGitCommitsSettings;
   private final UnaryCallSettings<FetchFileGitStatusesRequest, FetchFileGitStatusesResponse>
@@ -778,6 +825,47 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
             @Override
             public Iterable<Workspace> extractResources(ListWorkspacesResponse payload) {
               return payload.getWorkspacesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse, BranchMetadata>
+      FETCH_WORKSPACE_BRANCHES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse, BranchMetadata>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FetchWorkspaceBranchesRequest injectToken(
+                FetchWorkspaceBranchesRequest payload, String token) {
+              return FetchWorkspaceBranchesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public FetchWorkspaceBranchesRequest injectPageSize(
+                FetchWorkspaceBranchesRequest payload, int pageSize) {
+              return FetchWorkspaceBranchesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(FetchWorkspaceBranchesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(FetchWorkspaceBranchesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BranchMetadata> extractResources(
+                FetchWorkspaceBranchesResponse payload) {
+              return payload.getBranchesList();
             }
           };
 
@@ -1340,6 +1428,31 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           };
 
   private static final PagedListResponseFactory<
+          FetchWorkspaceBranchesRequest,
+          FetchWorkspaceBranchesResponse,
+          FetchWorkspaceBranchesPagedResponse>
+      FETCH_WORKSPACE_BRANCHES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FetchWorkspaceBranchesRequest,
+              FetchWorkspaceBranchesResponse,
+              FetchWorkspaceBranchesPagedResponse>() {
+            @Override
+            public ApiFuture<FetchWorkspaceBranchesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse>
+                    callable,
+                FetchWorkspaceBranchesRequest request,
+                ApiCallContext context,
+                ApiFuture<FetchWorkspaceBranchesResponse> futureResponse) {
+              PageContext<
+                      FetchWorkspaceBranchesRequest, FetchWorkspaceBranchesResponse, BranchMetadata>
+                  pageContext =
+                      PageContext.create(
+                          callable, FETCH_WORKSPACE_BRANCHES_PAGE_STR_DESC, request, context);
+              return FetchWorkspaceBranchesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           QueryDirectoryContentsRequest,
           QueryDirectoryContentsResponse,
           QueryDirectoryContentsPagedResponse>
@@ -1579,6 +1692,17 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     return deleteTeamFolderSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteTeamFolderTree. */
+  public UnaryCallSettings<DeleteTeamFolderTreeRequest, Operation> deleteTeamFolderTreeSettings() {
+    return deleteTeamFolderTreeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteTeamFolderTree. */
+  public OperationCallSettings<DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteTeamFolderTreeOperationSettings() {
+    return deleteTeamFolderTreeOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to queryTeamFolderContents. */
   public PagedCallSettings<
           QueryTeamFolderContentsRequest,
@@ -1613,6 +1737,17 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   /** Returns the object with the settings used for calls to deleteFolder. */
   public UnaryCallSettings<DeleteFolderRequest, Empty> deleteFolderSettings() {
     return deleteFolderSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFolderTree. */
+  public UnaryCallSettings<DeleteFolderTreeRequest, Operation> deleteFolderTreeSettings() {
+    return deleteFolderTreeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFolderTree. */
+  public OperationCallSettings<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+      deleteFolderTreeOperationSettings() {
+    return deleteFolderTreeOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to queryFolderContents. */
@@ -1667,6 +1802,21 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   /** Returns the object with the settings used for calls to deleteRepository. */
   public UnaryCallSettings<DeleteRepositoryRequest, Empty> deleteRepositorySettings() {
     return deleteRepositorySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRepositoryLongRunning. */
+  public UnaryCallSettings<DeleteRepositoryLongRunningRequest, Operation>
+      deleteRepositoryLongRunningSettings() {
+    return deleteRepositoryLongRunningSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteRepositoryLongRunning. */
+  public OperationCallSettings<
+          DeleteRepositoryLongRunningRequest,
+          DeleteRepositoryLongRunningResponse,
+          DeleteRepositoryLongRunningMetadata>
+      deleteRepositoryLongRunningOperationSettings() {
+    return deleteRepositoryLongRunningOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to moveRepository. */
@@ -1754,6 +1904,38 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   /** Returns the object with the settings used for calls to pullGitCommits. */
   public UnaryCallSettings<PullGitCommitsRequest, PullGitCommitsResponse> pullGitCommitsSettings() {
     return pullGitCommitsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to syncWorkspaceRefs. */
+  public UnaryCallSettings<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+      syncWorkspaceRefsSettings() {
+    return syncWorkspaceRefsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchWorkspaceBranches. */
+  public PagedCallSettings<
+          FetchWorkspaceBranchesRequest,
+          FetchWorkspaceBranchesResponse,
+          FetchWorkspaceBranchesPagedResponse>
+      fetchWorkspaceBranchesSettings() {
+    return fetchWorkspaceBranchesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteBranch. */
+  public UnaryCallSettings<DeleteBranchRequest, DeleteBranchResponse> deleteBranchSettings() {
+    return deleteBranchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to checkoutWorkspaceBranch. */
+  public UnaryCallSettings<CheckoutWorkspaceBranchRequest, Empty>
+      checkoutWorkspaceBranchSettings() {
+    return checkoutWorkspaceBranchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchCurrentWorkspaceBranch. */
+  public UnaryCallSettings<FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+      fetchCurrentWorkspaceBranchSettings() {
+    return fetchCurrentWorkspaceBranchSettings;
   }
 
   /** Returns the object with the settings used for calls to pushGitCommits. */
@@ -2105,7 +2287,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -2121,12 +2303,17 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     createTeamFolderSettings = settingsBuilder.createTeamFolderSettings().build();
     updateTeamFolderSettings = settingsBuilder.updateTeamFolderSettings().build();
     deleteTeamFolderSettings = settingsBuilder.deleteTeamFolderSettings().build();
+    deleteTeamFolderTreeSettings = settingsBuilder.deleteTeamFolderTreeSettings().build();
+    deleteTeamFolderTreeOperationSettings =
+        settingsBuilder.deleteTeamFolderTreeOperationSettings().build();
     queryTeamFolderContentsSettings = settingsBuilder.queryTeamFolderContentsSettings().build();
     searchTeamFoldersSettings = settingsBuilder.searchTeamFoldersSettings().build();
     getFolderSettings = settingsBuilder.getFolderSettings().build();
     createFolderSettings = settingsBuilder.createFolderSettings().build();
     updateFolderSettings = settingsBuilder.updateFolderSettings().build();
     deleteFolderSettings = settingsBuilder.deleteFolderSettings().build();
+    deleteFolderTreeSettings = settingsBuilder.deleteFolderTreeSettings().build();
+    deleteFolderTreeOperationSettings = settingsBuilder.deleteFolderTreeOperationSettings().build();
     queryFolderContentsSettings = settingsBuilder.queryFolderContentsSettings().build();
     queryUserRootContentsSettings = settingsBuilder.queryUserRootContentsSettings().build();
     moveFolderSettings = settingsBuilder.moveFolderSettings().build();
@@ -2136,6 +2323,10 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     createRepositorySettings = settingsBuilder.createRepositorySettings().build();
     updateRepositorySettings = settingsBuilder.updateRepositorySettings().build();
     deleteRepositorySettings = settingsBuilder.deleteRepositorySettings().build();
+    deleteRepositoryLongRunningSettings =
+        settingsBuilder.deleteRepositoryLongRunningSettings().build();
+    deleteRepositoryLongRunningOperationSettings =
+        settingsBuilder.deleteRepositoryLongRunningOperationSettings().build();
     moveRepositorySettings = settingsBuilder.moveRepositorySettings().build();
     moveRepositoryOperationSettings = settingsBuilder.moveRepositoryOperationSettings().build();
     commitRepositoryChangesSettings = settingsBuilder.commitRepositoryChangesSettings().build();
@@ -2152,6 +2343,12 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     deleteWorkspaceSettings = settingsBuilder.deleteWorkspaceSettings().build();
     installNpmPackagesSettings = settingsBuilder.installNpmPackagesSettings().build();
     pullGitCommitsSettings = settingsBuilder.pullGitCommitsSettings().build();
+    syncWorkspaceRefsSettings = settingsBuilder.syncWorkspaceRefsSettings().build();
+    fetchWorkspaceBranchesSettings = settingsBuilder.fetchWorkspaceBranchesSettings().build();
+    deleteBranchSettings = settingsBuilder.deleteBranchSettings().build();
+    checkoutWorkspaceBranchSettings = settingsBuilder.checkoutWorkspaceBranchSettings().build();
+    fetchCurrentWorkspaceBranchSettings =
+        settingsBuilder.fetchCurrentWorkspaceBranchSettings().build();
     pushGitCommitsSettings = settingsBuilder.pushGitCommitsSettings().build();
     fetchFileGitStatusesSettings = settingsBuilder.fetchFileGitStatusesSettings().build();
     fetchGitAheadBehindSettings = settingsBuilder.fetchGitAheadBehindSettings().build();
@@ -2217,6 +2414,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         updateTeamFolderSettings;
     private final UnaryCallSettings.Builder<DeleteTeamFolderRequest, Empty>
         deleteTeamFolderSettings;
+    private final UnaryCallSettings.Builder<DeleteTeamFolderTreeRequest, Operation>
+        deleteTeamFolderTreeSettings;
+    private final OperationCallSettings.Builder<
+            DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteTeamFolderTreeOperationSettings;
     private final PagedCallSettings.Builder<
             QueryTeamFolderContentsRequest,
             QueryTeamFolderContentsResponse,
@@ -2229,6 +2431,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     private final UnaryCallSettings.Builder<CreateFolderRequest, Folder> createFolderSettings;
     private final UnaryCallSettings.Builder<UpdateFolderRequest, Folder> updateFolderSettings;
     private final UnaryCallSettings.Builder<DeleteFolderRequest, Empty> deleteFolderSettings;
+    private final UnaryCallSettings.Builder<DeleteFolderTreeRequest, Operation>
+        deleteFolderTreeSettings;
+    private final OperationCallSettings.Builder<
+            DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteFolderTreeOperationSettings;
     private final PagedCallSettings.Builder<
             QueryFolderContentsRequest,
             QueryFolderContentsResponse,
@@ -2252,6 +2459,13 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         updateRepositorySettings;
     private final UnaryCallSettings.Builder<DeleteRepositoryRequest, Empty>
         deleteRepositorySettings;
+    private final UnaryCallSettings.Builder<DeleteRepositoryLongRunningRequest, Operation>
+        deleteRepositoryLongRunningSettings;
+    private final OperationCallSettings.Builder<
+            DeleteRepositoryLongRunningRequest,
+            DeleteRepositoryLongRunningResponse,
+            DeleteRepositoryLongRunningMetadata>
+        deleteRepositoryLongRunningOperationSettings;
     private final UnaryCallSettings.Builder<MoveRepositoryRequest, Operation>
         moveRepositorySettings;
     private final OperationCallSettings.Builder<
@@ -2288,6 +2502,20 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
         installNpmPackagesSettings;
     private final UnaryCallSettings.Builder<PullGitCommitsRequest, PullGitCommitsResponse>
         pullGitCommitsSettings;
+    private final UnaryCallSettings.Builder<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+        syncWorkspaceRefsSettings;
+    private final PagedCallSettings.Builder<
+            FetchWorkspaceBranchesRequest,
+            FetchWorkspaceBranchesResponse,
+            FetchWorkspaceBranchesPagedResponse>
+        fetchWorkspaceBranchesSettings;
+    private final UnaryCallSettings.Builder<DeleteBranchRequest, DeleteBranchResponse>
+        deleteBranchSettings;
+    private final UnaryCallSettings.Builder<CheckoutWorkspaceBranchRequest, Empty>
+        checkoutWorkspaceBranchSettings;
+    private final UnaryCallSettings.Builder<
+            FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+        fetchCurrentWorkspaceBranchSettings;
     private final UnaryCallSettings.Builder<PushGitCommitsRequest, PushGitCommitsResponse>
         pushGitCommitsSettings;
     private final UnaryCallSettings.Builder<
@@ -2413,13 +2641,15 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       getTeamFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createTeamFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateTeamFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteTeamFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTeamFolderTreeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteTeamFolderTreeOperationSettings = OperationCallSettings.newBuilder();
       queryTeamFolderContentsSettings =
           PagedCallSettings.newBuilder(QUERY_TEAM_FOLDER_CONTENTS_PAGE_STR_FACT);
       searchTeamFoldersSettings = PagedCallSettings.newBuilder(SEARCH_TEAM_FOLDERS_PAGE_STR_FACT);
@@ -2427,6 +2657,8 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       createFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteFolderSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFolderTreeSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFolderTreeOperationSettings = OperationCallSettings.newBuilder();
       queryFolderContentsSettings =
           PagedCallSettings.newBuilder(QUERY_FOLDER_CONTENTS_PAGE_STR_FACT);
       queryUserRootContentsSettings =
@@ -2438,6 +2670,8 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       createRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteRepositoryLongRunningSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteRepositoryLongRunningOperationSettings = OperationCallSettings.newBuilder();
       moveRepositorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       moveRepositoryOperationSettings = OperationCallSettings.newBuilder();
       commitRepositoryChangesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2454,6 +2688,12 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       deleteWorkspaceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       installNpmPackagesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       pullGitCommitsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      syncWorkspaceRefsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchWorkspaceBranchesSettings =
+          PagedCallSettings.newBuilder(FETCH_WORKSPACE_BRANCHES_PAGE_STR_FACT);
+      deleteBranchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      checkoutWorkspaceBranchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchCurrentWorkspaceBranchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       pushGitCommitsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchFileGitStatusesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchGitAheadBehindSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2509,12 +2749,14 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               createTeamFolderSettings,
               updateTeamFolderSettings,
               deleteTeamFolderSettings,
+              deleteTeamFolderTreeSettings,
               queryTeamFolderContentsSettings,
               searchTeamFoldersSettings,
               getFolderSettings,
               createFolderSettings,
               updateFolderSettings,
               deleteFolderSettings,
+              deleteFolderTreeSettings,
               queryFolderContentsSettings,
               queryUserRootContentsSettings,
               moveFolderSettings,
@@ -2523,6 +2765,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               createRepositorySettings,
               updateRepositorySettings,
               deleteRepositorySettings,
+              deleteRepositoryLongRunningSettings,
               moveRepositorySettings,
               commitRepositoryChangesSettings,
               readRepositoryFileSettings,
@@ -2536,6 +2779,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               deleteWorkspaceSettings,
               installNpmPackagesSettings,
               pullGitCommitsSettings,
+              syncWorkspaceRefsSettings,
+              fetchWorkspaceBranchesSettings,
+              deleteBranchSettings,
+              checkoutWorkspaceBranchSettings,
+              fetchCurrentWorkspaceBranchSettings,
               pushGitCommitsSettings,
               fetchFileGitStatusesSettings,
               fetchGitAheadBehindSettings,
@@ -2588,12 +2836,17 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       createTeamFolderSettings = settings.createTeamFolderSettings.toBuilder();
       updateTeamFolderSettings = settings.updateTeamFolderSettings.toBuilder();
       deleteTeamFolderSettings = settings.deleteTeamFolderSettings.toBuilder();
+      deleteTeamFolderTreeSettings = settings.deleteTeamFolderTreeSettings.toBuilder();
+      deleteTeamFolderTreeOperationSettings =
+          settings.deleteTeamFolderTreeOperationSettings.toBuilder();
       queryTeamFolderContentsSettings = settings.queryTeamFolderContentsSettings.toBuilder();
       searchTeamFoldersSettings = settings.searchTeamFoldersSettings.toBuilder();
       getFolderSettings = settings.getFolderSettings.toBuilder();
       createFolderSettings = settings.createFolderSettings.toBuilder();
       updateFolderSettings = settings.updateFolderSettings.toBuilder();
       deleteFolderSettings = settings.deleteFolderSettings.toBuilder();
+      deleteFolderTreeSettings = settings.deleteFolderTreeSettings.toBuilder();
+      deleteFolderTreeOperationSettings = settings.deleteFolderTreeOperationSettings.toBuilder();
       queryFolderContentsSettings = settings.queryFolderContentsSettings.toBuilder();
       queryUserRootContentsSettings = settings.queryUserRootContentsSettings.toBuilder();
       moveFolderSettings = settings.moveFolderSettings.toBuilder();
@@ -2603,6 +2856,10 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       createRepositorySettings = settings.createRepositorySettings.toBuilder();
       updateRepositorySettings = settings.updateRepositorySettings.toBuilder();
       deleteRepositorySettings = settings.deleteRepositorySettings.toBuilder();
+      deleteRepositoryLongRunningSettings =
+          settings.deleteRepositoryLongRunningSettings.toBuilder();
+      deleteRepositoryLongRunningOperationSettings =
+          settings.deleteRepositoryLongRunningOperationSettings.toBuilder();
       moveRepositorySettings = settings.moveRepositorySettings.toBuilder();
       moveRepositoryOperationSettings = settings.moveRepositoryOperationSettings.toBuilder();
       commitRepositoryChangesSettings = settings.commitRepositoryChangesSettings.toBuilder();
@@ -2619,6 +2876,12 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       deleteWorkspaceSettings = settings.deleteWorkspaceSettings.toBuilder();
       installNpmPackagesSettings = settings.installNpmPackagesSettings.toBuilder();
       pullGitCommitsSettings = settings.pullGitCommitsSettings.toBuilder();
+      syncWorkspaceRefsSettings = settings.syncWorkspaceRefsSettings.toBuilder();
+      fetchWorkspaceBranchesSettings = settings.fetchWorkspaceBranchesSettings.toBuilder();
+      deleteBranchSettings = settings.deleteBranchSettings.toBuilder();
+      checkoutWorkspaceBranchSettings = settings.checkoutWorkspaceBranchSettings.toBuilder();
+      fetchCurrentWorkspaceBranchSettings =
+          settings.fetchCurrentWorkspaceBranchSettings.toBuilder();
       pushGitCommitsSettings = settings.pushGitCommitsSettings.toBuilder();
       fetchFileGitStatusesSettings = settings.fetchFileGitStatusesSettings.toBuilder();
       fetchGitAheadBehindSettings = settings.fetchGitAheadBehindSettings.toBuilder();
@@ -2670,12 +2933,14 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               createTeamFolderSettings,
               updateTeamFolderSettings,
               deleteTeamFolderSettings,
+              deleteTeamFolderTreeSettings,
               queryTeamFolderContentsSettings,
               searchTeamFoldersSettings,
               getFolderSettings,
               createFolderSettings,
               updateFolderSettings,
               deleteFolderSettings,
+              deleteFolderTreeSettings,
               queryFolderContentsSettings,
               queryUserRootContentsSettings,
               moveFolderSettings,
@@ -2684,6 +2949,7 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               createRepositorySettings,
               updateRepositorySettings,
               deleteRepositorySettings,
+              deleteRepositoryLongRunningSettings,
               moveRepositorySettings,
               commitRepositoryChangesSettings,
               readRepositoryFileSettings,
@@ -2697,6 +2963,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               deleteWorkspaceSettings,
               installNpmPackagesSettings,
               pullGitCommitsSettings,
+              syncWorkspaceRefsSettings,
+              fetchWorkspaceBranchesSettings,
+              deleteBranchSettings,
+              checkoutWorkspaceBranchSettings,
+              fetchCurrentWorkspaceBranchSettings,
               pushGitCommitsSettings,
               fetchFileGitStatusesSettings,
               fetchGitAheadBehindSettings,
@@ -2787,6 +3058,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .deleteTeamFolderTreeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .queryTeamFolderContentsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
@@ -2813,6 +3089,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
       builder
           .deleteFolderSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteFolderTreeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -2853,6 +3134,11 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
       builder
           .deleteRepositorySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteRepositoryLongRunningSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -2918,6 +3204,31 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
 
       builder
           .pullGitCommitsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .syncWorkspaceRefsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchWorkspaceBranchesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteBranchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .checkoutWorkspaceBranchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchCurrentWorkspaceBranchSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -3132,6 +3443,54 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .deleteTeamFolderTreeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteTeamFolderTreeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteFolderTreeMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteFolderTreeOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteFolderTreeRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(DeleteFolderTreeMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .moveFolderOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings.<MoveFolderRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
@@ -3142,6 +3501,33 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(MoveFolderMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteRepositoryLongRunningOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteRepositoryLongRunningRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  DeleteRepositoryLongRunningResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  DeleteRepositoryLongRunningMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -3218,6 +3604,19 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
       return deleteTeamFolderSettings;
     }
 
+    /** Returns the builder for the settings used for calls to deleteTeamFolderTree. */
+    public UnaryCallSettings.Builder<DeleteTeamFolderTreeRequest, Operation>
+        deleteTeamFolderTreeSettings() {
+      return deleteTeamFolderTreeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteTeamFolderTree. */
+    public OperationCallSettings.Builder<
+            DeleteTeamFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteTeamFolderTreeOperationSettings() {
+      return deleteTeamFolderTreeOperationSettings;
+    }
+
     /** Returns the builder for the settings used for calls to queryTeamFolderContents. */
     public PagedCallSettings.Builder<
             QueryTeamFolderContentsRequest,
@@ -3252,6 +3651,18 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     /** Returns the builder for the settings used for calls to deleteFolder. */
     public UnaryCallSettings.Builder<DeleteFolderRequest, Empty> deleteFolderSettings() {
       return deleteFolderSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFolderTree. */
+    public UnaryCallSettings.Builder<DeleteFolderTreeRequest, Operation>
+        deleteFolderTreeSettings() {
+      return deleteFolderTreeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFolderTree. */
+    public OperationCallSettings.Builder<DeleteFolderTreeRequest, Empty, DeleteFolderTreeMetadata>
+        deleteFolderTreeOperationSettings() {
+      return deleteFolderTreeOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to queryFolderContents. */
@@ -3310,6 +3721,21 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     /** Returns the builder for the settings used for calls to deleteRepository. */
     public UnaryCallSettings.Builder<DeleteRepositoryRequest, Empty> deleteRepositorySettings() {
       return deleteRepositorySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRepositoryLongRunning. */
+    public UnaryCallSettings.Builder<DeleteRepositoryLongRunningRequest, Operation>
+        deleteRepositoryLongRunningSettings() {
+      return deleteRepositoryLongRunningSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteRepositoryLongRunning. */
+    public OperationCallSettings.Builder<
+            DeleteRepositoryLongRunningRequest,
+            DeleteRepositoryLongRunningResponse,
+            DeleteRepositoryLongRunningMetadata>
+        deleteRepositoryLongRunningOperationSettings() {
+      return deleteRepositoryLongRunningOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to moveRepository. */
@@ -3401,6 +3827,40 @@ public class DataformStubSettings extends StubSettings<DataformStubSettings> {
     public UnaryCallSettings.Builder<PullGitCommitsRequest, PullGitCommitsResponse>
         pullGitCommitsSettings() {
       return pullGitCommitsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to syncWorkspaceRefs. */
+    public UnaryCallSettings.Builder<SyncWorkspaceRefsRequest, SyncWorkspaceRefsResponse>
+        syncWorkspaceRefsSettings() {
+      return syncWorkspaceRefsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchWorkspaceBranches. */
+    public PagedCallSettings.Builder<
+            FetchWorkspaceBranchesRequest,
+            FetchWorkspaceBranchesResponse,
+            FetchWorkspaceBranchesPagedResponse>
+        fetchWorkspaceBranchesSettings() {
+      return fetchWorkspaceBranchesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBranch. */
+    public UnaryCallSettings.Builder<DeleteBranchRequest, DeleteBranchResponse>
+        deleteBranchSettings() {
+      return deleteBranchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to checkoutWorkspaceBranch. */
+    public UnaryCallSettings.Builder<CheckoutWorkspaceBranchRequest, Empty>
+        checkoutWorkspaceBranchSettings() {
+      return checkoutWorkspaceBranchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchCurrentWorkspaceBranch. */
+    public UnaryCallSettings.Builder<
+            FetchCurrentWorkspaceBranchRequest, FetchCurrentWorkspaceBranchResponse>
+        fetchCurrentWorkspaceBranchSettings() {
+      return fetchCurrentWorkspaceBranchSettings;
     }
 
     /** Returns the builder for the settings used for calls to pushGitCommits. */

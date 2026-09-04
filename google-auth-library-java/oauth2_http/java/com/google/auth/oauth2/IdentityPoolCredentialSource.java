@@ -36,12 +36,14 @@ import static com.google.common.base.Preconditions.checkArgument;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * The IdentityPool credential source. Dictates the retrieval method of the external credential,
  * which can either be through a metadata server or a local file.
  */
+@NullMarked
 public class IdentityPoolCredentialSource extends ExternalAccountCredentials.CredentialSource {
 
   private static final long serialVersionUID = -745855247050085694L;
@@ -78,8 +80,7 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
    * @return The {@link CertificateConfig} object, or {@code null} if not configured for
    *     certificate-based credentials.
    */
-  @Nullable
-  public CertificateConfig getCertificateConfig() {
+  public @Nullable CertificateConfig getCertificateConfig() {
     return certificateConfig;
   }
 
@@ -206,11 +207,13 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
 
       checkArgument(
           (useDefault || locationIsPresent),
-          "Invalid 'certificate' configuration in credential source: Must specify either 'certificate_config_location' or set 'use_default_certificate_config' to true.");
+          "Invalid 'certificate' configuration in credential source: Must specify either"
+              + " 'certificate_config_location' or set 'use_default_certificate_config' to true.");
 
       checkArgument(
           !(useDefault && locationIsPresent),
-          "Invalid 'certificate' configuration in credential source: Cannot specify both 'certificate_config_location' and set 'use_default_certificate_config' to true.");
+          "Invalid 'certificate' configuration in credential source: Cannot specify both"
+              + " 'certificate_config_location' and set 'use_default_certificate_config' to true.");
 
       this.useDefaultCertificateConfig = useDefault;
       this.certificateConfigLocation = certificateConfigLocation;
@@ -223,14 +226,12 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
     }
 
     /** Returns the path to the client certificate file, or null if not set. */
-    @Nullable
-    public String getCertificateConfigLocation() {
+    public @Nullable String getCertificateConfigLocation() {
       return certificateConfigLocation;
     }
 
     /** Returns the path to the trust chain file, or null if not set. */
-    @Nullable
-    public String getTrustChainPath() {
+    public @Nullable String getTrustChainPath() {
       return trustChainPath;
     }
   }
@@ -277,7 +278,8 @@ public class IdentityPoolCredentialSource extends ExternalAccountCredentials.Cre
       this.certificateConfig = certificateConfigFromSourceMap(credentialSourceMap);
     } else {
       throw new IllegalArgumentException(
-          "Missing credential source file location, URL, or certificate. At least one must be specified.");
+          "Missing credential source file location, URL, or certificate. At least one must be"
+              + " specified.");
     }
 
     Map<String, String> headersMap = (Map<String, String>) credentialSourceMap.get("headers");

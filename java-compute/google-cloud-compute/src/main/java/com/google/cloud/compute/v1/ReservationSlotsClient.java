@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -186,9 +188,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ReservationSlotsClient implements BackgroundResource {
-  private final ReservationSlotsSettings settings;
+  private final @Nullable ReservationSlotsSettings settings;
   private final ReservationSlotsStub stub;
 
   /** Constructs an instance of ReservationSlotsClient with default settings. */
@@ -228,7 +231,7 @@ public class ReservationSlotsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final ReservationSlotsSettings getSettings() {
+  public final @Nullable ReservationSlotsSettings getSettings() {
     return settings;
   }
 
@@ -864,9 +867,10 @@ public class ReservationSlotsClient implements BackgroundResource {
           ListReservationSlotsRequest, ReservationSlotsListResponse, ReservationSlot, ListPage> {
 
     private ListPage(
-        PageContext<ListReservationSlotsRequest, ReservationSlotsListResponse, ReservationSlot>
+        @Nullable
+            PageContext<ListReservationSlotsRequest, ReservationSlotsListResponse, ReservationSlot>
             context,
-        ReservationSlotsListResponse response) {
+        @Nullable ReservationSlotsListResponse response) {
       super(context, response);
     }
 
@@ -876,15 +880,17 @@ public class ReservationSlotsClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListReservationSlotsRequest, ReservationSlotsListResponse, ReservationSlot>
+        @Nullable
+            PageContext<ListReservationSlotsRequest, ReservationSlotsListResponse, ReservationSlot>
             context,
-        ReservationSlotsListResponse response) {
+        @Nullable ReservationSlotsListResponse response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListReservationSlotsRequest, ReservationSlotsListResponse, ReservationSlot>
+        @Nullable
+            PageContext<ListReservationSlotsRequest, ReservationSlotsListResponse, ReservationSlot>
             context,
         ApiFuture<ReservationSlotsListResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -899,7 +905,7 @@ public class ReservationSlotsClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -908,7 +914,8 @@ public class ReservationSlotsClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

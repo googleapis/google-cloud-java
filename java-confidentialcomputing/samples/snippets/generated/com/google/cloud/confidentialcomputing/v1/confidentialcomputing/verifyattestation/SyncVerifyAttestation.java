@@ -21,6 +21,7 @@ import com.google.cloud.confidentialcomputing.v1.ChallengeName;
 import com.google.cloud.confidentialcomputing.v1.ConfidentialComputingClient;
 import com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo;
 import com.google.cloud.confidentialcomputing.v1.GcpCredentials;
+import com.google.cloud.confidentialcomputing.v1.InstanceName;
 import com.google.cloud.confidentialcomputing.v1.TokenOptions;
 import com.google.cloud.confidentialcomputing.v1.TpmAttestation;
 import com.google.cloud.confidentialcomputing.v1.VerifyAttestationRequest;
@@ -48,6 +49,7 @@ public class SyncVerifyAttestation {
               .setConfidentialSpaceInfo(ConfidentialSpaceInfo.newBuilder().build())
               .setTokenOptions(TokenOptions.newBuilder().build())
               .setAttester("attester542920370")
+              .setInstance(InstanceName.of("[PROJECT]", "[ZONE]", "[INSTANCE]").toString())
               .build();
       VerifyAttestationResponse response = confidentialComputingClient.verifyAttestation(request);
     }

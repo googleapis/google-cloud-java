@@ -306,6 +306,24 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
   }
 
+  /** Class for specifying project list options. */
+  @BetaApi
+  class ProjectListOption extends Option {
+    private static final long serialVersionUID = -7256063598324265038L;
+
+    private ProjectListOption(BigQueryRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    public static ProjectListOption pageSize(long pageSize) {
+      return new ProjectListOption(BigQueryRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    public static ProjectListOption pageToken(String pageToken) {
+      return new ProjectListOption(BigQueryRpc.Option.PAGE_TOKEN, pageToken);
+    }
+  }
+
   /** Class for specifying dataset get, create and update options. */
   class DatasetOption extends Option {
 
@@ -952,6 +970,15 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Page<Dataset> listDatasets(DatasetListOption... options);
 
   /**
+   * Lists the projects accessible to the caller.
+   *
+   * @param options options for listing projects
+   * @return a page of projects
+   */
+  @BetaApi
+  Page<Project> listProjects(ProjectListOption... options);
+
+  /**
    * Lists the datasets in the provided project. This method returns partial information on each
    * dataset: ({@link Dataset#getDatasetId()}, {@link Dataset#getFriendlyName()} and {@link
    * Dataset#getGeneratedId()}). To get complete information use either {@link #getDataset}.
@@ -1327,7 +1354,10 @@ public interface BigQuery extends Service<BigQueryOptions> {
   /**
    * Sends an insert all request.
    *
-   * <p>Example of inserting rows into a table without running a load job.
+   * <p>Example of inserting rows into a table without running a load job. To prevent duplicate
+   * rows, this method does not perform automatic retries unless insert IDs are provided. Transient
+   * service errors (such as UNAVAILABLE) may be thrown and should be handled by the caller when
+   * insert IDs are not provided.
    *
    * <pre>{@code
    * String datasetName = "my_dataset_name";

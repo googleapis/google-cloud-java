@@ -32,8 +32,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * A simple Quick start application demonstrating how to connect to Firestore
- * and add and query documents.
+ * A simple Quick start application demonstrating how to connect to Firestore and add and query
+ * documents.
  */
 public class Quickstart {
 
@@ -55,9 +55,7 @@ public class Quickstart {
     this.db = db;
   }
 
-  /**
-   * Initialize Firestore using default project ID.
-   */
+  /** Initialize Firestore using default project ID. */
   public Quickstart() {
     // [START firestore_setup_client_create]
 
@@ -79,49 +77,52 @@ public class Quickstart {
    */
   void addDocument(String docName) throws Exception {
     switch (docName) {
-      case "alovelace": {
-        // [START firestore_setup_dataset_pt1]
-        DocumentReference docRef = db.collection("users").document("alovelace");
-        // Add document data  with id "alovelace" using a hashmap
-        Map<String, Object> data = new HashMap<>();
-        data.put("first", "Ada");
-        data.put("last", "Lovelace");
-        data.put("born", 1815);
-        //asynchronously write data
-        ApiFuture<WriteResult> result = docRef.set(data);
-        // ...
-        // result.get() blocks on response
-        System.out.println("Update time : " + result.get().getUpdateTime());
-        // [END firestore_setup_dataset_pt1]
-        break;
-      }
-      case "aturing": {
-        // [START firestore_setup_dataset_pt2]
-        DocumentReference docRef = db.collection("users").document("aturing");
-        // Add document data with an additional field ("middle")
-        Map<String, Object> data = new HashMap<>();
-        data.put("first", "Alan");
-        data.put("middle", "Mathison");
-        data.put("last", "Turing");
-        data.put("born", 1912);
+      case "alovelace":
+        {
+          // [START firestore_setup_dataset_pt1]
+          DocumentReference docRef = db.collection("users").document("alovelace");
+          // Add document data  with id "alovelace" using a hashmap
+          Map<String, Object> data = new HashMap<>();
+          data.put("first", "Ada");
+          data.put("last", "Lovelace");
+          data.put("born", 1815);
+          // asynchronously write data
+          ApiFuture<WriteResult> result = docRef.set(data);
+          // ...
+          // result.get() blocks on response
+          System.out.println("Update time : " + result.get().getUpdateTime());
+          // [END firestore_setup_dataset_pt1]
+          break;
+        }
+      case "aturing":
+        {
+          // [START firestore_setup_dataset_pt2]
+          DocumentReference docRef = db.collection("users").document("aturing");
+          // Add document data with an additional field ("middle")
+          Map<String, Object> data = new HashMap<>();
+          data.put("first", "Alan");
+          data.put("middle", "Mathison");
+          data.put("last", "Turing");
+          data.put("born", 1912);
 
-        ApiFuture<WriteResult> result = docRef.set(data);
-        System.out.println("Update time : " + result.get().getUpdateTime());
-        // [END firestore_setup_dataset_pt2]
-        break;
-      }
-      case "cbabbage": {
-        DocumentReference docRef = db.collection("users").document("cbabbage");
-        Map<String, Object> data =
-            new ImmutableMap.Builder<String, Object>()
-                .put("first", "Charles")
-                .put("last", "Babbage")
-                .put("born", 1791)
-                .build();
-        ApiFuture<WriteResult> result = docRef.set(data);
-        System.out.println("Update time : " + result.get().getUpdateTime());
-        break;
-      }
+          ApiFuture<WriteResult> result = docRef.set(data);
+          System.out.println("Update time : " + result.get().getUpdateTime());
+          // [END firestore_setup_dataset_pt2]
+          break;
+        }
+      case "cbabbage":
+        {
+          DocumentReference docRef = db.collection("users").document("cbabbage");
+          Map<String, Object> data =
+              new ImmutableMap.Builder<String, Object>()
+                  .put("first", "Charles")
+                  .put("last", "Babbage")
+                  .put("born", 1791)
+                  .build();
+          ApiFuture<WriteResult> result = docRef.set(data);
+          System.out.println("Update time : " + result.get().getUpdateTime());
+          break;
+        }
       default:
     }
   }
@@ -129,8 +130,7 @@ public class Quickstart {
   void runQuery() throws Exception {
     // [START firestore_setup_add_query]
     // asynchronously query for all users born before 1900
-    ApiFuture<QuerySnapshot> query =
-        db.collection("users").whereLessThan("born", 1900).get();
+    ApiFuture<QuerySnapshot> query = db.collection("users").whereLessThan("born", 1900).get();
     // ...
     // query.get() blocks on response
     QuerySnapshot querySnapshot = query.get();

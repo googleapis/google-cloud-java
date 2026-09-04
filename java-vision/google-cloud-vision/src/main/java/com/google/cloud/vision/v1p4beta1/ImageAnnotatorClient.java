@@ -29,6 +29,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -181,10 +183,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class ImageAnnotatorClient implements BackgroundResource {
-  private final ImageAnnotatorSettings settings;
+  private final @Nullable ImageAnnotatorSettings settings;
   private final ImageAnnotatorStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -232,7 +235,7 @@ public class ImageAnnotatorClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final ImageAnnotatorSettings getSettings() {
+  public final @Nullable ImageAnnotatorSettings getSettings() {
     return settings;
   }
 

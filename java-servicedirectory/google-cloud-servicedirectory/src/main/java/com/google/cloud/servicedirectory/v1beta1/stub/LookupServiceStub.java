@@ -28,6 +28,7 @@ import com.google.cloud.location.Location;
 import com.google.cloud.servicedirectory.v1beta1.ResolveServiceRequest;
 import com.google.cloud.servicedirectory.v1beta1.ResolveServiceResponse;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -35,6 +36,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class LookupServiceStub implements BackgroundResource {

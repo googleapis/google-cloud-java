@@ -32,6 +32,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -162,9 +164,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MachineTypesClient implements BackgroundResource {
-  private final MachineTypesSettings settings;
+  private final @Nullable MachineTypesSettings settings;
   private final MachineTypesStub stub;
 
   /** Constructs an instance of MachineTypesClient with default settings. */
@@ -203,7 +206,7 @@ public class MachineTypesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MachineTypesSettings getSettings() {
+  public final @Nullable MachineTypesSettings getSettings() {
     return settings;
   }
 
@@ -679,12 +682,13 @@ public class MachineTypesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListMachineTypesRequest,
                 MachineTypeAggregatedList,
                 Map.Entry<String, MachineTypesScopedList>>
             context,
-        MachineTypeAggregatedList response) {
+        @Nullable MachineTypeAggregatedList response) {
       super(context, response);
     }
 
@@ -694,18 +698,20 @@ public class MachineTypesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListMachineTypesRequest,
                 MachineTypeAggregatedList,
                 Map.Entry<String, MachineTypesScopedList>>
             context,
-        MachineTypeAggregatedList response) {
+        @Nullable MachineTypeAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListMachineTypesRequest,
                 MachineTypeAggregatedList,
                 Map.Entry<String, MachineTypesScopedList>>
@@ -723,7 +729,8 @@ public class MachineTypesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -733,7 +740,7 @@ public class MachineTypesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -764,8 +771,8 @@ public class MachineTypesClient implements BackgroundResource {
       extends AbstractPage<ListMachineTypesRequest, MachineTypeList, MachineType, ListPage> {
 
     private ListPage(
-        PageContext<ListMachineTypesRequest, MachineTypeList, MachineType> context,
-        MachineTypeList response) {
+        @Nullable PageContext<ListMachineTypesRequest, MachineTypeList, MachineType> context,
+        @Nullable MachineTypeList response) {
       super(context, response);
     }
 
@@ -775,14 +782,14 @@ public class MachineTypesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListMachineTypesRequest, MachineTypeList, MachineType> context,
-        MachineTypeList response) {
+        @Nullable PageContext<ListMachineTypesRequest, MachineTypeList, MachineType> context,
+        @Nullable MachineTypeList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListMachineTypesRequest, MachineTypeList, MachineType> context,
+        @Nullable PageContext<ListMachineTypesRequest, MachineTypeList, MachineType> context,
         ApiFuture<MachineTypeList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -796,7 +803,7 @@ public class MachineTypesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -805,7 +812,8 @@ public class MachineTypesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

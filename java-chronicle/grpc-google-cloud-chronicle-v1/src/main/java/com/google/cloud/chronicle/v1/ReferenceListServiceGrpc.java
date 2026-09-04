@@ -227,6 +227,56 @@ public final class ReferenceListServiceGrpc {
     return getUpdateReferenceListMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.chronicle.v1.VerifyReferenceListRequest,
+          com.google.cloud.chronicle.v1.VerifyReferenceListResponse>
+      getVerifyReferenceListMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "VerifyReferenceList",
+      requestType = com.google.cloud.chronicle.v1.VerifyReferenceListRequest.class,
+      responseType = com.google.cloud.chronicle.v1.VerifyReferenceListResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.chronicle.v1.VerifyReferenceListRequest,
+          com.google.cloud.chronicle.v1.VerifyReferenceListResponse>
+      getVerifyReferenceListMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.chronicle.v1.VerifyReferenceListRequest,
+            com.google.cloud.chronicle.v1.VerifyReferenceListResponse>
+        getVerifyReferenceListMethod;
+    if ((getVerifyReferenceListMethod = ReferenceListServiceGrpc.getVerifyReferenceListMethod)
+        == null) {
+      synchronized (ReferenceListServiceGrpc.class) {
+        if ((getVerifyReferenceListMethod = ReferenceListServiceGrpc.getVerifyReferenceListMethod)
+            == null) {
+          ReferenceListServiceGrpc.getVerifyReferenceListMethod =
+              getVerifyReferenceListMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.chronicle.v1.VerifyReferenceListRequest,
+                          com.google.cloud.chronicle.v1.VerifyReferenceListResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "VerifyReferenceList"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.chronicle.v1.VerifyReferenceListRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.chronicle.v1.VerifyReferenceListResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReferenceListServiceMethodDescriptorSupplier("VerifyReferenceList"))
+                      .build();
+        }
+      }
+    }
+    return getVerifyReferenceListMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ReferenceListServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ReferenceListServiceStub> factory =
@@ -346,6 +396,21 @@ public final class ReferenceListServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateReferenceListMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * VerifyReferenceList validates list content and returns line errors, if any.
+     * </pre>
+     */
+    default void verifyReferenceList(
+        com.google.cloud.chronicle.v1.VerifyReferenceListRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.chronicle.v1.VerifyReferenceListResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getVerifyReferenceListMethod(), responseObserver);
+    }
   }
 
   /**
@@ -447,6 +512,23 @@ public final class ReferenceListServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * VerifyReferenceList validates list content and returns line errors, if any.
+     * </pre>
+     */
+    public void verifyReferenceList(
+        com.google.cloud.chronicle.v1.VerifyReferenceListRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.chronicle.v1.VerifyReferenceListResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getVerifyReferenceListMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -524,6 +606,20 @@ public final class ReferenceListServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateReferenceListMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * VerifyReferenceList validates list content and returns line errors, if any.
+     * </pre>
+     */
+    public com.google.cloud.chronicle.v1.VerifyReferenceListResponse verifyReferenceList(
+        com.google.cloud.chronicle.v1.VerifyReferenceListRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getVerifyReferenceListMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -596,6 +692,19 @@ public final class ReferenceListServiceGrpc {
         com.google.cloud.chronicle.v1.UpdateReferenceListRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateReferenceListMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * VerifyReferenceList validates list content and returns line errors, if any.
+     * </pre>
+     */
+    public com.google.cloud.chronicle.v1.VerifyReferenceListResponse verifyReferenceList(
+        com.google.cloud.chronicle.v1.VerifyReferenceListRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getVerifyReferenceListMethod(), getCallOptions(), request);
     }
   }
 
@@ -674,12 +783,27 @@ public final class ReferenceListServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateReferenceListMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * VerifyReferenceList validates list content and returns line errors, if any.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.chronicle.v1.VerifyReferenceListResponse>
+        verifyReferenceList(com.google.cloud.chronicle.v1.VerifyReferenceListRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getVerifyReferenceListMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_REFERENCE_LIST = 0;
   private static final int METHODID_LIST_REFERENCE_LISTS = 1;
   private static final int METHODID_CREATE_REFERENCE_LIST = 2;
   private static final int METHODID_UPDATE_REFERENCE_LIST = 3;
+  private static final int METHODID_VERIFY_REFERENCE_LIST = 4;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -721,6 +845,13 @@ public final class ReferenceListServiceGrpc {
           serviceImpl.updateReferenceList(
               (com.google.cloud.chronicle.v1.UpdateReferenceListRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.chronicle.v1.ReferenceList>)
+                  responseObserver);
+          break;
+        case METHODID_VERIFY_REFERENCE_LIST:
+          serviceImpl.verifyReferenceList(
+              (com.google.cloud.chronicle.v1.VerifyReferenceListRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.chronicle.v1.VerifyReferenceListResponse>)
                   responseObserver);
           break;
         default:
@@ -769,6 +900,13 @@ public final class ReferenceListServiceGrpc {
                     com.google.cloud.chronicle.v1.UpdateReferenceListRequest,
                     com.google.cloud.chronicle.v1.ReferenceList>(
                     service, METHODID_UPDATE_REFERENCE_LIST)))
+        .addMethod(
+            getVerifyReferenceListMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.chronicle.v1.VerifyReferenceListRequest,
+                    com.google.cloud.chronicle.v1.VerifyReferenceListResponse>(
+                    service, METHODID_VERIFY_REFERENCE_LIST)))
         .build();
   }
 
@@ -824,6 +962,7 @@ public final class ReferenceListServiceGrpc {
                       .addMethod(getListReferenceListsMethod())
                       .addMethod(getCreateReferenceListMethod())
                       .addMethod(getUpdateReferenceListMethod())
+                      .addMethod(getVerifyReferenceListMethod())
                       .build();
         }
       }

@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to Google Compute Engine API
+ * A client to Compute Engine API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
@@ -416,6 +416,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= GlobalVmExtensionPoliciesClient =======================
+ *
+ * <p>Service Description: The GlobalVmExtensionPolicies API.
+ *
+ * <p>Sample for GlobalVmExtensionPoliciesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (GlobalVmExtensionPoliciesClient globalVmExtensionPoliciesClient =
+ *     GlobalVmExtensionPoliciesClient.create()) {
+ *   String project = "project-309310695";
+ *   String globalVmExtensionPolicy = "globalVmExtensionPolicy-869114569";
+ *   GlobalVmExtensionPolicy response =
+ *       globalVmExtensionPoliciesClient.get(project, globalVmExtensionPolicy);
+ * }
+ * }</pre>
+ *
  * <p>======================= HealthChecksClient =======================
  *
  * <p>Service Description: The HealthChecks API.
@@ -432,6 +453,27 @@
  *   String project = "project-309310695";
  *   String healthCheck = "healthCheck-1938093044";
  *   HealthCheck response = healthChecksClient.get(project, healthCheck);
+ * }
+ * }</pre>
+ *
+ * <p>======================= HostsClient =======================
+ *
+ * <p>Service Description: The Hosts API.
+ *
+ * <p>Sample for HostsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (HostsClient hostsClient = HostsClient.create()) {
+ *   String project = "project-309310695";
+ *   String zone = "zone3744684";
+ *   String association = "association-87499647";
+ *   String host = "host3208616";
+ *   Host response = hostsClient.get(project, zone, association, host);
  * }
  * }</pre>
  *
@@ -1841,6 +1883,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= ReliabilityRisksClient =======================
+ *
+ * <p>Service Description: The ReliabilityRisks API.
+ *
+ * <p>Sample for ReliabilityRisksClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ReliabilityRisksClient reliabilityRisksClient = ReliabilityRisksClient.create()) {
+ *   String project = "project-309310695";
+ *   String reliabilityRisk = "reliabilityRisk-127967703";
+ *   ReliabilityRisk response = reliabilityRisksClient.get(project, reliabilityRisk);
+ * }
+ * }</pre>
+ *
  * <p>======================= ReservationBlocksClient =======================
  *
  * <p>Service Description: The ReservationBlocks API.
@@ -1945,6 +2006,44 @@
  *   String region = "region-934795532";
  *   String resourcePolicy = "resourcePolicy-130903328";
  *   ResourcePolicy response = resourcePoliciesClient.get(project, region, resourcePolicy);
+ * }
+ * }</pre>
+ *
+ * <p>======================= RolloutPlansClient =======================
+ *
+ * <p>Service Description: The RolloutPlans API.
+ *
+ * <p>Sample for RolloutPlansClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RolloutPlansClient rolloutPlansClient = RolloutPlansClient.create()) {
+ *   String project = "project-309310695";
+ *   String rolloutPlan = "rolloutPlan1469104250";
+ *   RolloutPlan response = rolloutPlansClient.get(project, rolloutPlan);
+ * }
+ * }</pre>
+ *
+ * <p>======================= RolloutsClient =======================
+ *
+ * <p>Service Description: The Rollouts API.
+ *
+ * <p>Sample for RolloutsClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (RolloutsClient rolloutsClient = RolloutsClient.create()) {
+ *   String project = "project-309310695";
+ *   String rollout = "rollout1377108401";
+ *   Rollout response = rolloutsClient.get(project, rollout);
  * }
  * }</pre>
  *

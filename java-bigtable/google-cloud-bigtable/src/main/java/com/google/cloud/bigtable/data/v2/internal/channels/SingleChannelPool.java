@@ -45,6 +45,13 @@ public class SingleChannelPool implements ChannelPool {
   @Override
   public SessionStream newStream(
       MethodDescriptor<SessionRequest, SessionResponse> desc, CallOptions callOptions) {
+    // Do NOT override the call executor with directExecutor(): SessionStream.Listener callbacks
+    // acquire the SessionPool lock (onReady/onGoAway/onClose/onVRpcComplete). directExecutor()
+    // delivers those callbacks inline on the Netty event-loop (I/O) thread, so a contended pool
+    // lock blocks the event loop; the blocked event loop then can't deliver the very completions
+    // that would release sessions and drain the lock -> self-sustaining pod-wide wedge. Leaving
+    // the executor unset delivers callbacks on gRPC's off-loop channel executor, keeping
+    // pool-lock acquisition off the transport threads.
     return new SessionStreamImpl(channel.newCall(desc, callOptions));
   }
 

@@ -32,6 +32,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -83,6 +85,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NetworkServiceSettings extends ClientSettings<NetworkServiceSettings> {
 
@@ -95,6 +98,24 @@ public class NetworkServiceSettings extends ClientSettings<NetworkServiceSetting
   public PagedCallSettings<ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
       listNetworksSettings() {
     return ((NetworkServiceStubSettings) getStubSettings()).listNetworksSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateNetwork. */
+  public UnaryCallSettings<UpdateNetworkRequest, Network> updateNetworkSettings() {
+    return ((NetworkServiceStubSettings) getStubSettings()).updateNetworkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to provisionTestNetwork. */
+  public UnaryCallSettings<ProvisionTestNetworkRequest, Network> provisionTestNetworkSettings() {
+    return ((NetworkServiceStubSettings) getStubSettings()).provisionTestNetworkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDefaultThirdPartyDataDeclaration. */
+  public UnaryCallSettings<
+          GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+      getDefaultThirdPartyDataDeclarationSettings() {
+    return ((NetworkServiceStubSettings) getStubSettings())
+        .getDefaultThirdPartyDataDeclarationSettings();
   }
 
   public static final NetworkServiceSettings create(NetworkServiceStubSettings stub)
@@ -142,7 +163,7 @@ public class NetworkServiceSettings extends ClientSettings<NetworkServiceSetting
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -162,7 +183,7 @@ public class NetworkServiceSettings extends ClientSettings<NetworkServiceSetting
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(NetworkServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -204,6 +225,26 @@ public class NetworkServiceSettings extends ClientSettings<NetworkServiceSetting
             ListNetworksRequest, ListNetworksResponse, ListNetworksPagedResponse>
         listNetworksSettings() {
       return getStubSettingsBuilder().listNetworksSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateNetwork. */
+    public UnaryCallSettings.Builder<UpdateNetworkRequest, Network> updateNetworkSettings() {
+      return getStubSettingsBuilder().updateNetworkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to provisionTestNetwork. */
+    public UnaryCallSettings.Builder<ProvisionTestNetworkRequest, Network>
+        provisionTestNetworkSettings() {
+      return getStubSettingsBuilder().provisionTestNetworkSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getDefaultThirdPartyDataDeclaration.
+     */
+    public UnaryCallSettings.Builder<
+            GetDefaultThirdPartyDataDeclarationRequest, DefaultThirdPartyDataDeclaration>
+        getDefaultThirdPartyDataDeclarationSettings() {
+      return getStubSettingsBuilder().getDefaultThirdPartyDataDeclarationSettings();
     }
 
     @Override

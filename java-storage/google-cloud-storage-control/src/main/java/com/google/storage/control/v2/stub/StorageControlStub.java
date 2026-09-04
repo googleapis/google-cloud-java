@@ -18,7 +18,11 @@ package com.google.storage.control.v2.stub;
 
 import static com.google.storage.control.v2.StorageControlClient.ListAnywhereCachesPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingRevisionsPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListIntelligenceFindingsPagedResponse;
 import static com.google.storage.control.v2.StorageControlClient.ListManagedFoldersPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.ListRapidCachesPagedResponse;
+import static com.google.storage.control.v2.StorageControlClient.SummarizeIntelligenceFindingsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -36,38 +40,63 @@ import com.google.storage.control.v2.CreateAnywhereCacheMetadata;
 import com.google.storage.control.v2.CreateAnywhereCacheRequest;
 import com.google.storage.control.v2.CreateFolderRequest;
 import com.google.storage.control.v2.CreateManagedFolderRequest;
+import com.google.storage.control.v2.CreateRapidCacheMetadata;
+import com.google.storage.control.v2.CreateRapidCacheRequest;
 import com.google.storage.control.v2.DeleteFolderRecursiveMetadata;
 import com.google.storage.control.v2.DeleteFolderRecursiveRequest;
 import com.google.storage.control.v2.DeleteFolderRequest;
 import com.google.storage.control.v2.DeleteManagedFolderRequest;
 import com.google.storage.control.v2.DisableAnywhereCacheRequest;
+import com.google.storage.control.v2.DisableRapidCacheMetadata;
+import com.google.storage.control.v2.DisableRapidCacheRequest;
 import com.google.storage.control.v2.Folder;
 import com.google.storage.control.v2.GetAnywhereCacheRequest;
 import com.google.storage.control.v2.GetFolderIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetFolderRequest;
+import com.google.storage.control.v2.GetIntelligenceFindingRequest;
+import com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest;
 import com.google.storage.control.v2.GetManagedFolderRequest;
 import com.google.storage.control.v2.GetOrganizationIntelligenceConfigRequest;
 import com.google.storage.control.v2.GetProjectIntelligenceConfigRequest;
+import com.google.storage.control.v2.GetRapidCacheRequest;
 import com.google.storage.control.v2.GetStorageLayoutRequest;
 import com.google.storage.control.v2.IntelligenceConfig;
+import com.google.storage.control.v2.IntelligenceFinding;
+import com.google.storage.control.v2.IntelligenceFindingRevision;
 import com.google.storage.control.v2.ListAnywhereCachesRequest;
 import com.google.storage.control.v2.ListAnywhereCachesResponse;
 import com.google.storage.control.v2.ListFoldersRequest;
 import com.google.storage.control.v2.ListFoldersResponse;
+import com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest;
+import com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse;
+import com.google.storage.control.v2.ListIntelligenceFindingsRequest;
+import com.google.storage.control.v2.ListIntelligenceFindingsResponse;
 import com.google.storage.control.v2.ListManagedFoldersRequest;
 import com.google.storage.control.v2.ListManagedFoldersResponse;
+import com.google.storage.control.v2.ListRapidCachesRequest;
+import com.google.storage.control.v2.ListRapidCachesResponse;
 import com.google.storage.control.v2.ManagedFolder;
+import com.google.storage.control.v2.ObjectFullContext;
 import com.google.storage.control.v2.PauseAnywhereCacheRequest;
+import com.google.storage.control.v2.RapidCache;
 import com.google.storage.control.v2.RenameFolderMetadata;
 import com.google.storage.control.v2.RenameFolderRequest;
 import com.google.storage.control.v2.ResumeAnywhereCacheRequest;
 import com.google.storage.control.v2.StorageLayout;
+import com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest;
+import com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse;
 import com.google.storage.control.v2.UpdateAnywhereCacheMetadata;
 import com.google.storage.control.v2.UpdateAnywhereCacheRequest;
 import com.google.storage.control.v2.UpdateFolderIntelligenceConfigRequest;
+import com.google.storage.control.v2.UpdateManagedFolderRequest;
 import com.google.storage.control.v2.UpdateOrganizationIntelligenceConfigRequest;
 import com.google.storage.control.v2.UpdateProjectIntelligenceConfigRequest;
+import com.google.storage.control.v2.UpdateRapidCacheMetadata;
+import com.google.storage.control.v2.UpdateRapidCacheRequest;
+import com.google.storage.control.v2.ViewObjectFullContextRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -75,14 +104,16 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class StorageControlStub implements BackgroundResource {
 
-  public OperationsStub getOperationsStub() {
+  public @Nullable OperationsStub getOperationsStub() {
     return null;
   }
 
-  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+  public com.google.api.gax.httpjson.longrunning.stub.@Nullable OperationsStub
+      getHttpJsonOperationsStub() {
     return null;
   }
 
@@ -151,6 +182,10 @@ public abstract class StorageControlStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listManagedFoldersCallable()");
   }
 
+  public UnaryCallable<UpdateManagedFolderRequest, ManagedFolder> updateManagedFolderCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateManagedFolderCallable()");
+  }
+
   public OperationCallable<CreateAnywhereCacheRequest, AnywhereCache, CreateAnywhereCacheMetadata>
       createAnywhereCacheOperationCallable() {
     throw new UnsupportedOperationException(
@@ -195,6 +230,47 @@ public abstract class StorageControlStub implements BackgroundResource {
   public UnaryCallable<ListAnywhereCachesRequest, ListAnywhereCachesResponse>
       listAnywhereCachesCallable() {
     throw new UnsupportedOperationException("Not implemented: listAnywhereCachesCallable()");
+  }
+
+  public OperationCallable<CreateRapidCacheRequest, RapidCache, CreateRapidCacheMetadata>
+      createRapidCacheOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createRapidCacheOperationCallable()");
+  }
+
+  public UnaryCallable<CreateRapidCacheRequest, Operation> createRapidCacheCallable() {
+    throw new UnsupportedOperationException("Not implemented: createRapidCacheCallable()");
+  }
+
+  public OperationCallable<UpdateRapidCacheRequest, RapidCache, UpdateRapidCacheMetadata>
+      updateRapidCacheOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateRapidCacheOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateRapidCacheRequest, Operation> updateRapidCacheCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateRapidCacheCallable()");
+  }
+
+  public OperationCallable<DisableRapidCacheRequest, RapidCache, DisableRapidCacheMetadata>
+      disableRapidCacheOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: disableRapidCacheOperationCallable()");
+  }
+
+  public UnaryCallable<DisableRapidCacheRequest, Operation> disableRapidCacheCallable() {
+    throw new UnsupportedOperationException("Not implemented: disableRapidCacheCallable()");
+  }
+
+  public UnaryCallable<GetRapidCacheRequest, RapidCache> getRapidCacheCallable() {
+    throw new UnsupportedOperationException("Not implemented: getRapidCacheCallable()");
+  }
+
+  public UnaryCallable<ListRapidCachesRequest, ListRapidCachesPagedResponse>
+      listRapidCachesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRapidCachesPagedCallable()");
+  }
+
+  public UnaryCallable<ListRapidCachesRequest, ListRapidCachesResponse> listRapidCachesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listRapidCachesCallable()");
   }
 
   public UnaryCallable<GetProjectIntelligenceConfigRequest, IntelligenceConfig>
@@ -244,6 +320,60 @@ public abstract class StorageControlStub implements BackgroundResource {
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
+  }
+
+  public UnaryCallable<GetIntelligenceFindingRequest, IntelligenceFinding>
+      getIntelligenceFindingCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIntelligenceFindingCallable()");
+  }
+
+  public UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsPagedResponse>
+      listIntelligenceFindingsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listIntelligenceFindingsPagedCallable()");
+  }
+
+  public UnaryCallable<ListIntelligenceFindingsRequest, ListIntelligenceFindingsResponse>
+      listIntelligenceFindingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listIntelligenceFindingsCallable()");
+  }
+
+  public UnaryCallable<
+          SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsPagedResponse>
+      summarizeIntelligenceFindingsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: summarizeIntelligenceFindingsPagedCallable()");
+  }
+
+  public UnaryCallable<SummarizeIntelligenceFindingsRequest, SummarizeIntelligenceFindingsResponse>
+      summarizeIntelligenceFindingsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: summarizeIntelligenceFindingsCallable()");
+  }
+
+  public UnaryCallable<GetIntelligenceFindingRevisionRequest, IntelligenceFindingRevision>
+      getIntelligenceFindingRevisionCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getIntelligenceFindingRevisionCallable()");
+  }
+
+  public UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsPagedResponse>
+      listIntelligenceFindingRevisionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listIntelligenceFindingRevisionsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListIntelligenceFindingRevisionsRequest, ListIntelligenceFindingRevisionsResponse>
+      listIntelligenceFindingRevisionsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listIntelligenceFindingRevisionsCallable()");
+  }
+
+  public UnaryCallable<ViewObjectFullContextRequest, ObjectFullContext>
+      viewObjectFullContextCallable() {
+    throw new UnsupportedOperationException("Not implemented: viewObjectFullContextCallable()");
   }
 
   @Override

@@ -34,6 +34,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -260,9 +262,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionHealthSourcesClient implements BackgroundResource {
-  private final RegionHealthSourcesSettings settings;
+  private final @Nullable RegionHealthSourcesSettings settings;
   private final RegionHealthSourcesStub stub;
 
   /** Constructs an instance of RegionHealthSourcesClient with default settings. */
@@ -302,7 +305,7 @@ public class RegionHealthSourcesClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionHealthSourcesSettings getSettings() {
+  public final @Nullable RegionHealthSourcesSettings getSettings() {
     return settings;
   }
 
@@ -1400,12 +1403,13 @@ public class RegionHealthSourcesClient implements BackgroundResource {
           AggregatedListPage> {
 
     private AggregatedListPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionHealthSourcesRequest,
                 HealthSourceAggregatedList,
                 Map.Entry<String, HealthSourcesScopedList>>
             context,
-        HealthSourceAggregatedList response) {
+        @Nullable HealthSourceAggregatedList response) {
       super(context, response);
     }
 
@@ -1415,18 +1419,20 @@ public class RegionHealthSourcesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionHealthSourcesRequest,
                 HealthSourceAggregatedList,
                 Map.Entry<String, HealthSourcesScopedList>>
             context,
-        HealthSourceAggregatedList response) {
+        @Nullable HealthSourceAggregatedList response) {
       return new AggregatedListPage(context, response);
     }
 
     @Override
     public ApiFuture<AggregatedListPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 AggregatedListRegionHealthSourcesRequest,
                 HealthSourceAggregatedList,
                 Map.Entry<String, HealthSourcesScopedList>>
@@ -1444,7 +1450,8 @@ public class RegionHealthSourcesClient implements BackgroundResource {
           AggregatedListPage,
           AggregatedListFixedSizeCollection> {
 
-    private AggregatedListFixedSizeCollection(List<AggregatedListPage> pages, int collectionSize) {
+    private AggregatedListFixedSizeCollection(
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1454,7 +1461,7 @@ public class RegionHealthSourcesClient implements BackgroundResource {
 
     @Override
     protected AggregatedListFixedSizeCollection createCollection(
-        List<AggregatedListPage> pages, int collectionSize) {
+        @Nullable List<AggregatedListPage> pages, int collectionSize) {
       return new AggregatedListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1486,8 +1493,9 @@ public class RegionHealthSourcesClient implements BackgroundResource {
           ListRegionHealthSourcesRequest, HealthSourceList, HealthSource, ListPage> {
 
     private ListPage(
-        PageContext<ListRegionHealthSourcesRequest, HealthSourceList, HealthSource> context,
-        HealthSourceList response) {
+        @Nullable PageContext<ListRegionHealthSourcesRequest, HealthSourceList, HealthSource>
+            context,
+        @Nullable HealthSourceList response) {
       super(context, response);
     }
 
@@ -1497,14 +1505,16 @@ public class RegionHealthSourcesClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListRegionHealthSourcesRequest, HealthSourceList, HealthSource> context,
-        HealthSourceList response) {
+        @Nullable PageContext<ListRegionHealthSourcesRequest, HealthSourceList, HealthSource>
+            context,
+        @Nullable HealthSourceList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListRegionHealthSourcesRequest, HealthSourceList, HealthSource> context,
+        @Nullable PageContext<ListRegionHealthSourcesRequest, HealthSourceList, HealthSource>
+            context,
         ApiFuture<HealthSourceList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1518,7 +1528,7 @@ public class RegionHealthSourcesClient implements BackgroundResource {
           ListPage,
           ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1527,7 +1537,8 @@ public class RegionHealthSourcesClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }

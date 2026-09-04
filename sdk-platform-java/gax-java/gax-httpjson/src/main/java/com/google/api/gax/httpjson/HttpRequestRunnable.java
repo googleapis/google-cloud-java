@@ -29,6 +29,7 @@
  */
 package com.google.api.gax.httpjson;
 
+import com.google.api.client.http.ByteArrayContent;
 import com.google.api.client.http.EmptyContent;
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpContent;
@@ -56,9 +57,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** A runnable object that creates and executes an HTTP request. */
+@NullMarked
 class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
   private final RequestT request;
   private final ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor;
@@ -152,8 +155,6 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
   }
 
   HttpRequest createHttpRequest() throws IOException {
-    GenericData tokenRequest = new GenericData();
-
     HttpRequestFormatter<RequestT> requestFormatter = methodDescriptor.getRequestFormatter();
 
     HttpRequestFactory requestFactory;
@@ -164,24 +165,32 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
       requestFactory = httpTransport.createRequestFactory();
     }
 
-    JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
     // Create HTTP request body.
-    String requestBody = requestFormatter.getRequestBody(request);
-    HttpContent jsonHttpContent;
-    if (!Strings.isNullOrEmpty(requestBody)) {
-      jsonFactory.createJsonParser(requestBody).parse(tokenRequest);
-      jsonHttpContent =
-          new JsonHttpContent(jsonFactory, tokenRequest)
-              .setMediaType((new HttpMediaType("application/json; charset=utf-8")));
+    HttpContent httpContent;
+    if (requestFormatter instanceof ResumableUploadChunkRequestFormatter) {
+      // Resumable upload requests include chunked binary content not representable as JSON
+      byte[] binaryRequestBody =
+          ((ResumableUploadChunkRequestFormatter<RequestT>) requestFormatter)
+              .getBinaryRequestBody(request);
+      if (binaryRequestBody == null || binaryRequestBody.length == 0) {
+        httpContent = new EmptyContent();
+      } else {
+        httpContent = new ByteArrayContent("application/octet-stream", binaryRequestBody);
+      }
     } else {
-      // Force underlying HTTP lib to set Content-Length header to avoid 411s.
-      // See EmptyContent.java.
-      jsonHttpContent = new EmptyContent();
+      httpContent = createJsonHttpContent(requestFormatter);
     }
 
     // Populate URL path and query parameters.
-    String normalizedEndpoint = normalizeEndpoint(endpoint);
-    GenericUrl url = new GenericUrl(normalizedEndpoint + requestFormatter.getPath(request));
+    String path = requestFormatter.getPath(request);
+    GenericUrl url;
+    if (path.startsWith("http://") || path.startsWith("https://")) {
+      // Absolute URL was provided (e.g. from a resumable upload start response)
+      url = new GenericUrl(path);
+    } else {
+      String normalizedEndpoint = normalizeEndpoint(endpoint);
+      url = new GenericUrl(normalizedEndpoint + path);
+    }
     Map<String, List<String>> queryParams = requestFormatter.getQueryParamNames(request);
     for (Entry<String, List<String>> queryParam : queryParams.entrySet()) {
       if (queryParam.getValue() != null) {
@@ -194,20 +203,20 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
       tracer.requestUrlResolved(url.build());
     }
 
-    HttpRequest httpRequest = buildRequest(requestFactory, url, jsonHttpContent);
+    HttpRequest httpRequest = buildRequest(requestFactory, url, httpContent);
 
     for (Map.Entry<String, Object> entry : headers.getHeaders().entrySet()) {
       HttpHeadersUtils.setHeader(
           httpRequest.getHeaders(), entry.getKey(), (String) entry.getValue());
     }
 
-    httpRequest.setParser(new JsonObjectParser(jsonFactory));
+    httpRequest.setParser(new JsonObjectParser(GsonFactory.getDefaultInstance()));
 
     return httpRequest;
   }
 
   private HttpRequest buildRequest(
-      HttpRequestFactory requestFactory, GenericUrl url, HttpContent jsonHttpContent)
+      HttpRequestFactory requestFactory, GenericUrl url, HttpContent httpContent)
       throws IOException {
     // A workaround to support PATCH request. This assumes support of "X-HTTP-Method-Override"
     // header on the server side, which GCP services usually do.
@@ -233,7 +242,7 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
     if (HttpMethods.PATCH.equals(actualHttpMethod)) {
       actualHttpMethod = HttpMethods.POST;
     }
-    HttpRequest httpRequest = requestFactory.buildRequest(actualHttpMethod, url, jsonHttpContent);
+    HttpRequest httpRequest = requestFactory.buildRequest(actualHttpMethod, url, httpContent);
     if (originalHttpMethod != null && !originalHttpMethod.equals(actualHttpMethod)) {
       HttpHeadersUtils.setHeader(
           httpRequest.getHeaders(), "X-HTTP-Method-Override", originalHttpMethod);
@@ -282,6 +291,21 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
     return normalized;
   }
 
+  private HttpContent createJsonHttpContent(HttpRequestFormatter<RequestT> requestFormatter)
+      throws IOException {
+    String requestBody = requestFormatter.getRequestBody(request);
+    if (!Strings.isNullOrEmpty(requestBody)) {
+      GenericData tokenRequest = new GenericData();
+      JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
+      jsonFactory.createJsonParser(requestBody).parse(tokenRequest);
+      return new JsonHttpContent(jsonFactory, tokenRequest)
+          .setMediaType((new HttpMediaType("application/json; charset=utf-8")));
+    }
+    // Force underlying HTTP lib to set Content-Length header to avoid 411s.
+    // See EmptyContent.java.
+    return new EmptyContent();
+  }
+
   @FunctionalInterface
   interface ResultListener {
     void setResult(RunnableResult result);
@@ -289,13 +313,11 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
 
   @AutoValue
   abstract static class RunnableResult {
-    @Nullable
-    abstract HttpJsonMetadata getResponseHeaders();
+    abstract @Nullable HttpJsonMetadata getResponseHeaders();
 
     abstract int getStatusCode();
 
-    @Nullable
-    abstract InputStream getResponseContent();
+    abstract @Nullable InputStream getResponseContent();
 
     abstract HttpJsonMetadata getTrailers();
 
@@ -310,7 +332,7 @@ class HttpRequestRunnable<RequestT, ResponseT> implements Runnable {
 
       public abstract Builder setStatusCode(int newStatusCode);
 
-      public abstract Builder setResponseContent(InputStream newResponseContent);
+      public abstract Builder setResponseContent(@Nullable InputStream newResponseContent);
 
       public abstract Builder setTrailers(HttpJsonMetadata newTrailers);
 

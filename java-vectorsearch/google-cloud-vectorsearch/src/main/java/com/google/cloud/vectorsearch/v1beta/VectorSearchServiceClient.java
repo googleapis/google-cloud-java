@@ -42,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -305,8 +307,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -392,10 +393,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class VectorSearchServiceClient implements BackgroundResource {
-  private final VectorSearchServiceSettings settings;
+  private final @Nullable VectorSearchServiceSettings settings;
   private final VectorSearchServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -443,7 +445,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final VectorSearchServiceSettings getSettings() {
+  public final @Nullable VectorSearchServiceSettings getSettings() {
     return settings;
   }
 
@@ -491,7 +493,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for ListCollectionsRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCollectionsPagedResponse listCollections(LocationName parent) {
+  public final ListCollectionsPagedResponse listCollections(@Nullable LocationName parent) {
     ListCollectionsRequest request =
         ListCollectionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -659,7 +661,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Collection getCollection(CollectionName name) {
+  public final Collection getCollection(@Nullable CollectionName name) {
     GetCollectionRequest request =
         GetCollectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCollection(request);
@@ -777,7 +779,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Collection, OperationMetadata> createCollectionAsync(
-      LocationName parent, Collection collection, String collectionId) {
+      @Nullable LocationName parent, Collection collection, String collectionId) {
     CreateCollectionRequest request =
         CreateCollectionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1081,7 +1083,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteCollectionAsync(
-      CollectionName name) {
+      @Nullable CollectionName name) {
     DeleteCollectionRequest request =
         DeleteCollectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteCollectionAsync(request);
@@ -1130,6 +1132,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    *       DeleteCollectionRequest.newBuilder()
    *           .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   vectorSearchServiceClient.deleteCollectionAsync(request).get();
    * }
@@ -1160,6 +1163,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    *       DeleteCollectionRequest.newBuilder()
    *           .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       vectorSearchServiceClient.deleteCollectionOperationCallable().futureCall(request);
@@ -1190,6 +1194,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    *       DeleteCollectionRequest.newBuilder()
    *           .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       vectorSearchServiceClient.deleteCollectionCallable().futureCall(request);
@@ -1225,7 +1230,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for ListIndexesRequest
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIndexesPagedResponse listIndexes(CollectionName parent) {
+  public final ListIndexesPagedResponse listIndexes(@Nullable CollectionName parent) {
     ListIndexesRequest request =
         ListIndexesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1392,7 +1397,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * @param name Required. Name of the resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Index getIndex(IndexName name) {
+  public final Index getIndex(@Nullable IndexName name) {
     GetIndexRequest request =
         GetIndexRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIndex(request);
@@ -1510,7 +1515,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Index, OperationMetadata> createIndexAsync(
-      CollectionName parent, Index index, String indexId) {
+      @Nullable CollectionName parent, Index index, String indexId) {
     CreateIndexRequest request =
         CreateIndexRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1806,7 +1811,8 @@ public class VectorSearchServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection}/indexes/{index}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteIndexAsync(IndexName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteIndexAsync(
+      @Nullable IndexName name) {
     DeleteIndexRequest request =
         DeleteIndexRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteIndexAsync(request);
@@ -2035,6 +2041,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    *   ExportDataObjectsRequest request =
    *       ExportDataObjectsRequest.newBuilder()
    *           .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+   *           .setFieldFilter(ExportDataObjectsRequest.FieldFilter.newBuilder().build())
    *           .build();
    *   ExportDataObjectsResponse response =
    *       vectorSearchServiceClient.exportDataObjectsAsync(request).get();
@@ -2065,6 +2072,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    *   ExportDataObjectsRequest request =
    *       ExportDataObjectsRequest.newBuilder()
    *           .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+   *           .setFieldFilter(ExportDataObjectsRequest.FieldFilter.newBuilder().build())
    *           .build();
    *   OperationFuture<ExportDataObjectsResponse, ExportDataObjectsMetadata> future =
    *       vectorSearchServiceClient.exportDataObjectsOperationCallable().futureCall(request);
@@ -2095,6 +2103,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
    *   ExportDataObjectsRequest request =
    *       ExportDataObjectsRequest.newBuilder()
    *           .setName(CollectionName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]").toString())
+   *           .setFieldFilter(ExportDataObjectsRequest.FieldFilter.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       vectorSearchServiceClient.exportDataObjectsCallable().futureCall(request);
@@ -2112,9 +2121,8 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -2158,9 +2166,8 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -2205,9 +2212,8 @@ public class VectorSearchServiceClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -2362,8 +2368,8 @@ public class VectorSearchServiceClient implements BackgroundResource {
           ListCollectionsRequest, ListCollectionsResponse, Collection, ListCollectionsPage> {
 
     private ListCollectionsPage(
-        PageContext<ListCollectionsRequest, ListCollectionsResponse, Collection> context,
-        ListCollectionsResponse response) {
+        @Nullable PageContext<ListCollectionsRequest, ListCollectionsResponse, Collection> context,
+        @Nullable ListCollectionsResponse response) {
       super(context, response);
     }
 
@@ -2373,14 +2379,14 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
     @Override
     protected ListCollectionsPage createPage(
-        PageContext<ListCollectionsRequest, ListCollectionsResponse, Collection> context,
-        ListCollectionsResponse response) {
+        @Nullable PageContext<ListCollectionsRequest, ListCollectionsResponse, Collection> context,
+        @Nullable ListCollectionsResponse response) {
       return new ListCollectionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCollectionsPage> createPageAsync(
-        PageContext<ListCollectionsRequest, ListCollectionsResponse, Collection> context,
+        @Nullable PageContext<ListCollectionsRequest, ListCollectionsResponse, Collection> context,
         ApiFuture<ListCollectionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2395,7 +2401,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
           ListCollectionsFixedSizeCollection> {
 
     private ListCollectionsFixedSizeCollection(
-        List<ListCollectionsPage> pages, int collectionSize) {
+        @Nullable List<ListCollectionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2405,7 +2411,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
     @Override
     protected ListCollectionsFixedSizeCollection createCollection(
-        List<ListCollectionsPage> pages, int collectionSize) {
+        @Nullable List<ListCollectionsPage> pages, int collectionSize) {
       return new ListCollectionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2436,8 +2442,8 @@ public class VectorSearchServiceClient implements BackgroundResource {
       extends AbstractPage<ListIndexesRequest, ListIndexesResponse, Index, ListIndexesPage> {
 
     private ListIndexesPage(
-        PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
-        ListIndexesResponse response) {
+        @Nullable PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
+        @Nullable ListIndexesResponse response) {
       super(context, response);
     }
 
@@ -2447,14 +2453,14 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
     @Override
     protected ListIndexesPage createPage(
-        PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
-        ListIndexesResponse response) {
+        @Nullable PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
+        @Nullable ListIndexesResponse response) {
       return new ListIndexesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIndexesPage> createPageAsync(
-        PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
+        @Nullable PageContext<ListIndexesRequest, ListIndexesResponse, Index> context,
         ApiFuture<ListIndexesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2468,7 +2474,8 @@ public class VectorSearchServiceClient implements BackgroundResource {
           ListIndexesPage,
           ListIndexesFixedSizeCollection> {
 
-    private ListIndexesFixedSizeCollection(List<ListIndexesPage> pages, int collectionSize) {
+    private ListIndexesFixedSizeCollection(
+        @Nullable List<ListIndexesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2478,7 +2485,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
     @Override
     protected ListIndexesFixedSizeCollection createCollection(
-        List<ListIndexesPage> pages, int collectionSize) {
+        @Nullable List<ListIndexesPage> pages, int collectionSize) {
       return new ListIndexesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2512,8 +2519,8 @@ public class VectorSearchServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2523,14 +2530,14 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2544,7 +2551,8 @@ public class VectorSearchServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2554,7 +2562,7 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

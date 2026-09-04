@@ -57,6 +57,8 @@ import com.google.cloud.chronicle.v1.Rule;
 import com.google.cloud.chronicle.v1.RuleDeployment;
 import com.google.cloud.chronicle.v1.UpdateRuleDeploymentRequest;
 import com.google.cloud.chronicle.v1.UpdateRuleRequest;
+import com.google.cloud.chronicle.v1.VerifyRuleTextRequest;
+import com.google.cloud.chronicle.v1.VerifyRuleTextResponse;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -68,6 +70,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -75,6 +78,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonRuleServiceStub extends RuleServiceStub {
   private static final TypeRegistry typeRegistry =
@@ -259,6 +263,43 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
                   .setDefaultTypeRegistry(typeRegistry)
                   .build())
           .build();
+
+  private static final ApiMethodDescriptor<VerifyRuleTextRequest, VerifyRuleTextResponse>
+      verifyRuleTextMethodDescriptor =
+          ApiMethodDescriptor.<VerifyRuleTextRequest, VerifyRuleTextResponse>newBuilder()
+              .setFullMethodName("google.cloud.chronicle.v1.RuleService/VerifyRuleText")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<VerifyRuleTextRequest>newBuilder()
+                      .setPath(
+                          "/v1/{instance=projects/*/locations/*/instances/*}:verifyRuleText",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<VerifyRuleTextRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "instance", request.getInstance());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<VerifyRuleTextRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearInstance().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<VerifyRuleTextResponse>newBuilder()
+                      .setDefaultInstance(VerifyRuleTextResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
 
   private static final ApiMethodDescriptor<ListRuleRevisionsRequest, ListRuleRevisionsResponse>
       listRuleRevisionsMethodDescriptor =
@@ -526,6 +567,7 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
   private final UnaryCallable<ListRulesRequest, ListRulesPagedResponse> listRulesPagedCallable;
   private final UnaryCallable<UpdateRuleRequest, Rule> updateRuleCallable;
   private final UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable;
+  private final UnaryCallable<VerifyRuleTextRequest, VerifyRuleTextResponse> verifyRuleTextCallable;
   private final UnaryCallable<ListRuleRevisionsRequest, ListRuleRevisionsResponse>
       listRuleRevisionsCallable;
   private final UnaryCallable<ListRuleRevisionsRequest, ListRuleRevisionsPagedResponse>
@@ -675,6 +717,19 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<VerifyRuleTextRequest, VerifyRuleTextResponse>
+        verifyRuleTextTransportSettings =
+            HttpJsonCallSettings.<VerifyRuleTextRequest, VerifyRuleTextResponse>newBuilder()
+                .setMethodDescriptor(verifyRuleTextMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("instance", String.valueOf(request.getInstance()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getInstance())
+                .build();
     HttpJsonCallSettings<ListRuleRevisionsRequest, ListRuleRevisionsResponse>
         listRuleRevisionsTransportSettings =
             HttpJsonCallSettings.<ListRuleRevisionsRequest, ListRuleRevisionsResponse>newBuilder()
@@ -785,6 +840,9 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
     this.deleteRuleCallable =
         callableFactory.createUnaryCallable(
             deleteRuleTransportSettings, settings.deleteRuleSettings(), clientContext);
+    this.verifyRuleTextCallable =
+        callableFactory.createUnaryCallable(
+            verifyRuleTextTransportSettings, settings.verifyRuleTextSettings(), clientContext);
     this.listRuleRevisionsCallable =
         callableFactory.createUnaryCallable(
             listRuleRevisionsTransportSettings,
@@ -846,6 +904,7 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
     methodDescriptors.add(listRulesMethodDescriptor);
     methodDescriptors.add(updateRuleMethodDescriptor);
     methodDescriptors.add(deleteRuleMethodDescriptor);
+    methodDescriptors.add(verifyRuleTextMethodDescriptor);
     methodDescriptors.add(listRuleRevisionsMethodDescriptor);
     methodDescriptors.add(createRetrohuntMethodDescriptor);
     methodDescriptors.add(getRetrohuntMethodDescriptor);
@@ -888,6 +947,11 @@ public class HttpJsonRuleServiceStub extends RuleServiceStub {
   @Override
   public UnaryCallable<DeleteRuleRequest, Empty> deleteRuleCallable() {
     return deleteRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<VerifyRuleTextRequest, VerifyRuleTextResponse> verifyRuleTextCallable() {
+    return verifyRuleTextCallable;
   }
 
   @Override

@@ -36,6 +36,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.dataplex.v1.CancelDataScanJobRequest;
+import com.google.cloud.dataplex.v1.CancelDataScanJobResponse;
 import com.google.cloud.dataplex.v1.CreateDataScanRequest;
 import com.google.cloud.dataplex.v1.DataScan;
 import com.google.cloud.dataplex.v1.DataScanJob;
@@ -72,6 +74,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -79,6 +82,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
   private static final TypeRegistry typeRegistry =
@@ -395,6 +399,43 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobMethodDescriptor =
+          ApiMethodDescriptor.<CancelDataScanJobRequest, CancelDataScanJobResponse>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.DataScanService/CancelDataScanJob")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CancelDataScanJobRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/dataScans/*/jobs/*}:cancel",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelDataScanJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CancelDataScanJobRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CancelDataScanJobResponse>newBuilder()
+                      .setDefaultInstance(CancelDataScanJobResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<
           GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesMethodDescriptor =
@@ -526,7 +567,6 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:setIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataScans/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:setIamPolicy",
@@ -541,7 +581,8 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                           "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:setIamPolicy",
                           "/v1/{resource=projects/*/locations/*/changeRequests/*}:setIamPolicy",
                           "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:setIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:setIamPolicy")
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:setIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:setIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -583,7 +624,6 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:getIamPolicy",
-                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataScans/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:getIamPolicy",
@@ -598,7 +638,8 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                           "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/changeRequests/*}:getIamPolicy",
                           "/v1/{resource=projects/*/locations/*/dataProducts/*}:getIamPolicy",
-                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:getIamPolicy")
+                          "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:getIamPolicy",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:getIamPolicy")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -637,7 +678,6 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/lakes/*/zones/*/assets/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/lakes/*/tasks/*}:testIamPermissions",
-                          "/v1/{resource=projects/*/locations/*/lakes/*/environments/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/dataScans/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/dataTaxonomies/*/attributes/*}:testIamPermissions",
@@ -652,7 +692,8 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                           "/v1/{resource=projects/*/locations/*/glossaries/*/terms/*}:testIamPermissions",
                           "/v1/{resource=projects/*/locations/*/changeRequests/*}:testIamPermissions",
                           "/v1/{resource=organizations/*/locations/*/encryptionConfigs/*}:testIamPermissions",
-                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:testIamPermissions")
+                          "/v1/{resource=projects/*/locations/*/dataProducts/*}:testIamPermissions",
+                          "/v1/{resource=projects/*/locations/*/dataDomains/*}:testIamPermissions")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -692,6 +733,8 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
       listDataScanJobsCallable;
   private final UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsPagedResponse>
       listDataScanJobsPagedCallable;
+  private final UnaryCallable<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobCallable;
   private final UnaryCallable<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
       generateDataQualityRulesCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
@@ -887,6 +930,19 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getParent())
                 .build();
+    HttpJsonCallSettings<CancelDataScanJobRequest, CancelDataScanJobResponse>
+        cancelDataScanJobTransportSettings =
+            HttpJsonCallSettings.<CancelDataScanJobRequest, CancelDataScanJobResponse>newBuilder()
+                .setMethodDescriptor(cancelDataScanJobMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     HttpJsonCallSettings<GenerateDataQualityRulesRequest, GenerateDataQualityRulesResponse>
         generateDataQualityRulesTransportSettings =
             HttpJsonCallSettings
@@ -1009,6 +1065,11 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
     this.listDataScanJobsPagedCallable =
         callableFactory.createPagedCallable(
             listDataScanJobsTransportSettings, settings.listDataScanJobsSettings(), clientContext);
+    this.cancelDataScanJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelDataScanJobTransportSettings,
+            settings.cancelDataScanJobSettings(),
+            clientContext);
     this.generateDataQualityRulesCallable =
         callableFactory.createUnaryCallable(
             generateDataQualityRulesTransportSettings,
@@ -1050,6 +1111,7 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
     methodDescriptors.add(runDataScanMethodDescriptor);
     methodDescriptors.add(getDataScanJobMethodDescriptor);
     methodDescriptors.add(listDataScanJobsMethodDescriptor);
+    methodDescriptors.add(cancelDataScanJobMethodDescriptor);
     methodDescriptors.add(generateDataQualityRulesMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
@@ -1132,6 +1194,12 @@ public class HttpJsonDataScanServiceStub extends DataScanServiceStub {
   public UnaryCallable<ListDataScanJobsRequest, ListDataScanJobsPagedResponse>
       listDataScanJobsPagedCallable() {
     return listDataScanJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelDataScanJobRequest, CancelDataScanJobResponse>
+      cancelDataScanJobCallable() {
+    return cancelDataScanJobCallable;
   }
 
   @Override

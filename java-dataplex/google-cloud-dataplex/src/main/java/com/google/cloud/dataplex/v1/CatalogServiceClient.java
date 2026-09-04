@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -484,6 +486,20 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ModifyEntry</td>
+ *      <td><p> Modifies an entry using the permission on the source system.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> modifyEntry(ModifyEntryRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> modifyEntryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> SearchEntries</td>
  *      <td><p> Searches for Entries matching the given query and scope.</td>
  *      <td>
@@ -786,8 +802,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
- * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -913,9 +930,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CatalogServiceClient implements BackgroundResource {
-  private final CatalogServiceSettings settings;
+  private final @Nullable CatalogServiceSettings settings;
   private final CatalogServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -963,7 +981,7 @@ public class CatalogServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final CatalogServiceSettings getSettings() {
+  public final @Nullable CatalogServiceSettings getSettings() {
     return settings;
   }
 
@@ -1017,7 +1035,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<EntryType, OperationMetadata> createEntryTypeAsync(
-      LocationName parent, EntryType entryType, String entryTypeId) {
+      @Nullable LocationName parent, EntryType entryType, String entryTypeId) {
     CreateEntryTypeRequest request =
         CreateEntryTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1308,7 +1326,8 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/entryTypes/{entry_type_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteEntryTypeAsync(EntryTypeName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteEntryTypeAsync(
+      @Nullable EntryTypeName name) {
     DeleteEntryTypeRequest request =
         DeleteEntryTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEntryTypeAsync(request);
@@ -1455,7 +1474,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntryTypesPagedResponse listEntryTypes(LocationName parent) {
+  public final ListEntryTypesPagedResponse listEntryTypes(@Nullable LocationName parent) {
     ListEntryTypesRequest request =
         ListEntryTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1626,7 +1645,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/entryTypes/{entry_type_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EntryType getEntryType(EntryTypeName name) {
+  public final EntryType getEntryType(@Nullable EntryTypeName name) {
     GetEntryTypeRequest request =
         GetEntryTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntryType(request);
@@ -1743,7 +1762,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AspectType, OperationMetadata> createAspectTypeAsync(
-      LocationName parent, AspectType aspectType, String aspectTypeId) {
+      @Nullable LocationName parent, AspectType aspectType, String aspectTypeId) {
     CreateAspectTypeRequest request =
         CreateAspectTypeRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2036,7 +2055,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteAspectTypeAsync(
-      AspectTypeName name) {
+      @Nullable AspectTypeName name) {
     DeleteAspectTypeRequest request =
         DeleteAspectTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteAspectTypeAsync(request);
@@ -2183,7 +2202,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAspectTypesPagedResponse listAspectTypes(LocationName parent) {
+  public final ListAspectTypesPagedResponse listAspectTypes(@Nullable LocationName parent) {
     ListAspectTypesRequest request =
         ListAspectTypesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2354,7 +2373,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/aspectTypes/{aspect_type_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AspectType getAspectType(AspectTypeName name) {
+  public final AspectType getAspectType(@Nullable AspectTypeName name) {
     GetAspectTypeRequest request =
         GetAspectTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAspectType(request);
@@ -2472,7 +2491,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<EntryGroup, OperationMetadata> createEntryGroupAsync(
-      LocationName parent, EntryGroup entryGroup, String entryGroupId) {
+      @Nullable LocationName parent, EntryGroup entryGroup, String entryGroupId) {
     CreateEntryGroupRequest request =
         CreateEntryGroupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2765,7 +2784,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteEntryGroupAsync(
-      EntryGroupName name) {
+      @Nullable EntryGroupName name) {
     DeleteEntryGroupRequest request =
         DeleteEntryGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEntryGroupAsync(request);
@@ -2912,7 +2931,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntryGroupsPagedResponse listEntryGroups(LocationName parent) {
+  public final ListEntryGroupsPagedResponse listEntryGroups(@Nullable LocationName parent) {
     ListEntryGroupsRequest request =
         ListEntryGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3083,7 +3102,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EntryGroup getEntryGroup(EntryGroupName name) {
+  public final EntryGroup getEntryGroup(@Nullable EntryGroupName name) {
     GetEntryGroupRequest request =
         GetEntryGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntryGroup(request);
@@ -3209,7 +3228,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     <p>The maximum size of the field is 4000 characters.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Entry createEntry(EntryGroupName parent, Entry entry, String entryId) {
+  public final Entry createEntry(@Nullable EntryGroupName parent, Entry entry, String entryId) {
     CreateEntryRequest request =
         CreateEntryRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3442,7 +3461,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Entry deleteEntry(EntryName name) {
+  public final Entry deleteEntry(@Nullable EntryName name) {
     DeleteEntryRequest request =
         DeleteEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEntry(request);
@@ -3556,7 +3575,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/entryGroups/{entry_group}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEntriesPagedResponse listEntries(EntryGroupName parent) {
+  public final ListEntriesPagedResponse listEntries(@Nullable EntryGroupName parent) {
     ListEntriesRequest request =
         ListEntriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3720,7 +3739,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Entry getEntry(EntryName name) {
+  public final Entry getEntry(@Nullable EntryName name) {
     GetEntryRequest request =
         GetEntryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntry(request);
@@ -3883,6 +3902,69 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Modifies an entry using the permission on the source system.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ModifyEntryRequest request =
+   *       ModifyEntryRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setEntry(Entry.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDeleteMissingAspects(true)
+   *           .addAllAspectKeys(new ArrayList<String>())
+   *           .build();
+   *   Entry response = catalogServiceClient.modifyEntry(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Entry modifyEntry(ModifyEntryRequest request) {
+    return modifyEntryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Modifies an entry using the permission on the source system.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ModifyEntryRequest request =
+   *       ModifyEntryRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setEntry(Entry.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDeleteMissingAspects(true)
+   *           .addAllAspectKeys(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Entry> future = catalogServiceClient.modifyEntryCallable().futureCall(request);
+   *   // Do something.
+   *   Entry response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ModifyEntryRequest, Entry> modifyEntryCallable() {
+    return stub.modifyEntryCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Searches for Entries matching the given query and scope.
    *
    * <p>Sample code:
@@ -3910,7 +3992,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     Catalog](https://cloud.google.com/dataplex/docs/search-syntax).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final SearchEntriesPagedResponse searchEntries(LocationName name, String query) {
+  public final SearchEntriesPagedResponse searchEntries(@Nullable LocationName name, String query) {
     SearchEntriesRequest request =
         SearchEntriesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4099,7 +4181,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<MetadataJob, OperationMetadata> createMetadataJobAsync(
-      LocationName parent, MetadataJob metadataJob, String metadataJobId) {
+      @Nullable LocationName parent, MetadataJob metadataJob, String metadataJobId) {
     CreateMetadataJobRequest request =
         CreateMetadataJobRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4269,7 +4351,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_id_or_number}/locations/{location_id}/metadataJobs/{metadata_job_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MetadataJob getMetadataJob(MetadataJobName name) {
+  public final MetadataJob getMetadataJob(@Nullable MetadataJobName name) {
     GetMetadataJobRequest request =
         GetMetadataJobRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMetadataJob(request);
@@ -4382,7 +4464,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_id_or_number}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMetadataJobsPagedResponse listMetadataJobs(LocationName parent) {
+  public final ListMetadataJobsPagedResponse listMetadataJobs(@Nullable LocationName parent) {
     ListMetadataJobsRequest request =
         ListMetadataJobsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4557,7 +4639,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_id_or_number}/locations/{location_id}/metadataJobs/{metadata_job_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void cancelMetadataJob(MetadataJobName name) {
+  public final void cancelMetadataJob(@Nullable MetadataJobName name) {
     CancelMetadataJobRequest request =
         CancelMetadataJobRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4695,7 +4777,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntryLink createEntryLink(
-      EntryGroupName parent, EntryLink entryLink, String entryLinkId) {
+      @Nullable EntryGroupName parent, EntryLink entryLink, String entryLinkId) {
     CreateEntryLinkRequest request =
         CreateEntryLinkRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4919,7 +5001,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EntryLink deleteEntryLink(EntryLinkName name) {
+  public final EntryLink deleteEntryLink(@Nullable EntryLinkName name) {
     DeleteEntryLinkRequest request =
         DeleteEntryLinkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEntryLink(request);
@@ -5144,6 +5226,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *       LookupContextRequest.newBuilder()
    *           .setName("name3373707")
    *           .addAllResources(new ArrayList<String>())
+   *           .setContext("context951530927")
    *           .putAllOptions(new HashMap<String, String>())
    *           .build();
    *   LookupContextResponse response = catalogServiceClient.lookupContext(request);
@@ -5174,6 +5257,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *       LookupContextRequest.newBuilder()
    *           .setName("name3373707")
    *           .addAllResources(new ArrayList<String>())
+   *           .setContext("context951530927")
    *           .putAllOptions(new HashMap<String, String>())
    *           .build();
    *   ApiFuture<LookupContextResponse> future =
@@ -5210,7 +5294,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final EntryLink getEntryLink(EntryLinkName name) {
+  public final EntryLink getEntryLink(@Nullable EntryLinkName name) {
     GetEntryLinkRequest request =
         GetEntryLinkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntryLink(request);
@@ -5332,7 +5416,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<MetadataFeed, OperationMetadata> createMetadataFeedAsync(
-      LocationName parent, MetadataFeed metadataFeed, String metadataFeedId) {
+      @Nullable LocationName parent, MetadataFeed metadataFeed, String metadataFeedId) {
     CreateMetadataFeedRequest request =
         CreateMetadataFeedRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5498,7 +5582,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_id_or_number}/locations/{location_id}/MetadataFeeds/{metadata_feed_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MetadataFeed getMetadataFeed(MetadataFeedName name) {
+  public final MetadataFeed getMetadataFeed(@Nullable MetadataFeedName name) {
     GetMetadataFeedRequest request =
         GetMetadataFeedRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMetadataFeed(request);
@@ -5611,7 +5695,7 @@ public class CatalogServiceClient implements BackgroundResource {
    *     `projects/{project_id_or_number}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMetadataFeedsPagedResponse listMetadataFeeds(LocationName parent) {
+  public final ListMetadataFeedsPagedResponse listMetadataFeeds(@Nullable LocationName parent) {
     ListMetadataFeedsRequest request =
         ListMetadataFeedsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5783,7 +5867,7 @@ public class CatalogServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteMetadataFeedAsync(
-      MetadataFeedName name) {
+      @Nullable MetadataFeedName name) {
     DeleteMetadataFeedRequest request =
         DeleteMetadataFeedRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -6034,13 +6118,19 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -6073,13 +6163,19 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -6113,13 +6209,19 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -6455,8 +6557,8 @@ public class CatalogServiceClient implements BackgroundResource {
           ListEntryTypesRequest, ListEntryTypesResponse, EntryType, ListEntryTypesPage> {
 
     private ListEntryTypesPage(
-        PageContext<ListEntryTypesRequest, ListEntryTypesResponse, EntryType> context,
-        ListEntryTypesResponse response) {
+        @Nullable PageContext<ListEntryTypesRequest, ListEntryTypesResponse, EntryType> context,
+        @Nullable ListEntryTypesResponse response) {
       super(context, response);
     }
 
@@ -6466,14 +6568,14 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntryTypesPage createPage(
-        PageContext<ListEntryTypesRequest, ListEntryTypesResponse, EntryType> context,
-        ListEntryTypesResponse response) {
+        @Nullable PageContext<ListEntryTypesRequest, ListEntryTypesResponse, EntryType> context,
+        @Nullable ListEntryTypesResponse response) {
       return new ListEntryTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntryTypesPage> createPageAsync(
-        PageContext<ListEntryTypesRequest, ListEntryTypesResponse, EntryType> context,
+        @Nullable PageContext<ListEntryTypesRequest, ListEntryTypesResponse, EntryType> context,
         ApiFuture<ListEntryTypesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6487,7 +6589,8 @@ public class CatalogServiceClient implements BackgroundResource {
           ListEntryTypesPage,
           ListEntryTypesFixedSizeCollection> {
 
-    private ListEntryTypesFixedSizeCollection(List<ListEntryTypesPage> pages, int collectionSize) {
+    private ListEntryTypesFixedSizeCollection(
+        @Nullable List<ListEntryTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6497,7 +6600,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntryTypesFixedSizeCollection createCollection(
-        List<ListEntryTypesPage> pages, int collectionSize) {
+        @Nullable List<ListEntryTypesPage> pages, int collectionSize) {
       return new ListEntryTypesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6531,8 +6634,8 @@ public class CatalogServiceClient implements BackgroundResource {
           ListAspectTypesRequest, ListAspectTypesResponse, AspectType, ListAspectTypesPage> {
 
     private ListAspectTypesPage(
-        PageContext<ListAspectTypesRequest, ListAspectTypesResponse, AspectType> context,
-        ListAspectTypesResponse response) {
+        @Nullable PageContext<ListAspectTypesRequest, ListAspectTypesResponse, AspectType> context,
+        @Nullable ListAspectTypesResponse response) {
       super(context, response);
     }
 
@@ -6542,14 +6645,14 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListAspectTypesPage createPage(
-        PageContext<ListAspectTypesRequest, ListAspectTypesResponse, AspectType> context,
-        ListAspectTypesResponse response) {
+        @Nullable PageContext<ListAspectTypesRequest, ListAspectTypesResponse, AspectType> context,
+        @Nullable ListAspectTypesResponse response) {
       return new ListAspectTypesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAspectTypesPage> createPageAsync(
-        PageContext<ListAspectTypesRequest, ListAspectTypesResponse, AspectType> context,
+        @Nullable PageContext<ListAspectTypesRequest, ListAspectTypesResponse, AspectType> context,
         ApiFuture<ListAspectTypesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6564,7 +6667,7 @@ public class CatalogServiceClient implements BackgroundResource {
           ListAspectTypesFixedSizeCollection> {
 
     private ListAspectTypesFixedSizeCollection(
-        List<ListAspectTypesPage> pages, int collectionSize) {
+        @Nullable List<ListAspectTypesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6574,7 +6677,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListAspectTypesFixedSizeCollection createCollection(
-        List<ListAspectTypesPage> pages, int collectionSize) {
+        @Nullable List<ListAspectTypesPage> pages, int collectionSize) {
       return new ListAspectTypesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6608,8 +6711,8 @@ public class CatalogServiceClient implements BackgroundResource {
           ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup, ListEntryGroupsPage> {
 
     private ListEntryGroupsPage(
-        PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> context,
-        ListEntryGroupsResponse response) {
+        @Nullable PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> context,
+        @Nullable ListEntryGroupsResponse response) {
       super(context, response);
     }
 
@@ -6619,14 +6722,14 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntryGroupsPage createPage(
-        PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> context,
-        ListEntryGroupsResponse response) {
+        @Nullable PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> context,
+        @Nullable ListEntryGroupsResponse response) {
       return new ListEntryGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntryGroupsPage> createPageAsync(
-        PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> context,
+        @Nullable PageContext<ListEntryGroupsRequest, ListEntryGroupsResponse, EntryGroup> context,
         ApiFuture<ListEntryGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6641,7 +6744,7 @@ public class CatalogServiceClient implements BackgroundResource {
           ListEntryGroupsFixedSizeCollection> {
 
     private ListEntryGroupsFixedSizeCollection(
-        List<ListEntryGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListEntryGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6651,7 +6754,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntryGroupsFixedSizeCollection createCollection(
-        List<ListEntryGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListEntryGroupsPage> pages, int collectionSize) {
       return new ListEntryGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6682,8 +6785,8 @@ public class CatalogServiceClient implements BackgroundResource {
       extends AbstractPage<ListEntriesRequest, ListEntriesResponse, Entry, ListEntriesPage> {
 
     private ListEntriesPage(
-        PageContext<ListEntriesRequest, ListEntriesResponse, Entry> context,
-        ListEntriesResponse response) {
+        @Nullable PageContext<ListEntriesRequest, ListEntriesResponse, Entry> context,
+        @Nullable ListEntriesResponse response) {
       super(context, response);
     }
 
@@ -6693,14 +6796,14 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntriesPage createPage(
-        PageContext<ListEntriesRequest, ListEntriesResponse, Entry> context,
-        ListEntriesResponse response) {
+        @Nullable PageContext<ListEntriesRequest, ListEntriesResponse, Entry> context,
+        @Nullable ListEntriesResponse response) {
       return new ListEntriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEntriesPage> createPageAsync(
-        PageContext<ListEntriesRequest, ListEntriesResponse, Entry> context,
+        @Nullable PageContext<ListEntriesRequest, ListEntriesResponse, Entry> context,
         ApiFuture<ListEntriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6714,7 +6817,8 @@ public class CatalogServiceClient implements BackgroundResource {
           ListEntriesPage,
           ListEntriesFixedSizeCollection> {
 
-    private ListEntriesFixedSizeCollection(List<ListEntriesPage> pages, int collectionSize) {
+    private ListEntriesFixedSizeCollection(
+        @Nullable List<ListEntriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6724,7 +6828,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListEntriesFixedSizeCollection createCollection(
-        List<ListEntriesPage> pages, int collectionSize) {
+        @Nullable List<ListEntriesPage> pages, int collectionSize) {
       return new ListEntriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6758,8 +6862,9 @@ public class CatalogServiceClient implements BackgroundResource {
           SearchEntriesRequest, SearchEntriesResponse, SearchEntriesResult, SearchEntriesPage> {
 
     private SearchEntriesPage(
-        PageContext<SearchEntriesRequest, SearchEntriesResponse, SearchEntriesResult> context,
-        SearchEntriesResponse response) {
+        @Nullable PageContext<SearchEntriesRequest, SearchEntriesResponse, SearchEntriesResult>
+            context,
+        @Nullable SearchEntriesResponse response) {
       super(context, response);
     }
 
@@ -6769,14 +6874,16 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected SearchEntriesPage createPage(
-        PageContext<SearchEntriesRequest, SearchEntriesResponse, SearchEntriesResult> context,
-        SearchEntriesResponse response) {
+        @Nullable PageContext<SearchEntriesRequest, SearchEntriesResponse, SearchEntriesResult>
+            context,
+        @Nullable SearchEntriesResponse response) {
       return new SearchEntriesPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchEntriesPage> createPageAsync(
-        PageContext<SearchEntriesRequest, SearchEntriesResponse, SearchEntriesResult> context,
+        @Nullable PageContext<SearchEntriesRequest, SearchEntriesResponse, SearchEntriesResult>
+            context,
         ApiFuture<SearchEntriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6790,7 +6897,8 @@ public class CatalogServiceClient implements BackgroundResource {
           SearchEntriesPage,
           SearchEntriesFixedSizeCollection> {
 
-    private SearchEntriesFixedSizeCollection(List<SearchEntriesPage> pages, int collectionSize) {
+    private SearchEntriesFixedSizeCollection(
+        @Nullable List<SearchEntriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6800,7 +6908,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected SearchEntriesFixedSizeCollection createCollection(
-        List<SearchEntriesPage> pages, int collectionSize) {
+        @Nullable List<SearchEntriesPage> pages, int collectionSize) {
       return new SearchEntriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6834,8 +6942,9 @@ public class CatalogServiceClient implements BackgroundResource {
           ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob, ListMetadataJobsPage> {
 
     private ListMetadataJobsPage(
-        PageContext<ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob> context,
-        ListMetadataJobsResponse response) {
+        @Nullable PageContext<ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob>
+            context,
+        @Nullable ListMetadataJobsResponse response) {
       super(context, response);
     }
 
@@ -6845,14 +6954,16 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListMetadataJobsPage createPage(
-        PageContext<ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob> context,
-        ListMetadataJobsResponse response) {
+        @Nullable PageContext<ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob>
+            context,
+        @Nullable ListMetadataJobsResponse response) {
       return new ListMetadataJobsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMetadataJobsPage> createPageAsync(
-        PageContext<ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob> context,
+        @Nullable PageContext<ListMetadataJobsRequest, ListMetadataJobsResponse, MetadataJob>
+            context,
         ApiFuture<ListMetadataJobsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6867,7 +6978,7 @@ public class CatalogServiceClient implements BackgroundResource {
           ListMetadataJobsFixedSizeCollection> {
 
     private ListMetadataJobsFixedSizeCollection(
-        List<ListMetadataJobsPage> pages, int collectionSize) {
+        @Nullable List<ListMetadataJobsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6877,7 +6988,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListMetadataJobsFixedSizeCollection createCollection(
-        List<ListMetadataJobsPage> pages, int collectionSize) {
+        @Nullable List<ListMetadataJobsPage> pages, int collectionSize) {
       return new ListMetadataJobsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6911,8 +7022,8 @@ public class CatalogServiceClient implements BackgroundResource {
           LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink, LookupEntryLinksPage> {
 
     private LookupEntryLinksPage(
-        PageContext<LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink> context,
-        LookupEntryLinksResponse response) {
+        @Nullable PageContext<LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink> context,
+        @Nullable LookupEntryLinksResponse response) {
       super(context, response);
     }
 
@@ -6922,14 +7033,14 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected LookupEntryLinksPage createPage(
-        PageContext<LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink> context,
-        LookupEntryLinksResponse response) {
+        @Nullable PageContext<LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink> context,
+        @Nullable LookupEntryLinksResponse response) {
       return new LookupEntryLinksPage(context, response);
     }
 
     @Override
     public ApiFuture<LookupEntryLinksPage> createPageAsync(
-        PageContext<LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink> context,
+        @Nullable PageContext<LookupEntryLinksRequest, LookupEntryLinksResponse, EntryLink> context,
         ApiFuture<LookupEntryLinksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6944,7 +7055,7 @@ public class CatalogServiceClient implements BackgroundResource {
           LookupEntryLinksFixedSizeCollection> {
 
     private LookupEntryLinksFixedSizeCollection(
-        List<LookupEntryLinksPage> pages, int collectionSize) {
+        @Nullable List<LookupEntryLinksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6954,7 +7065,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected LookupEntryLinksFixedSizeCollection createCollection(
-        List<LookupEntryLinksPage> pages, int collectionSize) {
+        @Nullable List<LookupEntryLinksPage> pages, int collectionSize) {
       return new LookupEntryLinksFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6991,8 +7102,9 @@ public class CatalogServiceClient implements BackgroundResource {
           ListMetadataFeedsPage> {
 
     private ListMetadataFeedsPage(
-        PageContext<ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed> context,
-        ListMetadataFeedsResponse response) {
+        @Nullable PageContext<ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed>
+            context,
+        @Nullable ListMetadataFeedsResponse response) {
       super(context, response);
     }
 
@@ -7002,14 +7114,16 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListMetadataFeedsPage createPage(
-        PageContext<ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed> context,
-        ListMetadataFeedsResponse response) {
+        @Nullable PageContext<ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed>
+            context,
+        @Nullable ListMetadataFeedsResponse response) {
       return new ListMetadataFeedsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMetadataFeedsPage> createPageAsync(
-        PageContext<ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed> context,
+        @Nullable PageContext<ListMetadataFeedsRequest, ListMetadataFeedsResponse, MetadataFeed>
+            context,
         ApiFuture<ListMetadataFeedsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7024,7 +7138,7 @@ public class CatalogServiceClient implements BackgroundResource {
           ListMetadataFeedsFixedSizeCollection> {
 
     private ListMetadataFeedsFixedSizeCollection(
-        List<ListMetadataFeedsPage> pages, int collectionSize) {
+        @Nullable List<ListMetadataFeedsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7034,7 +7148,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListMetadataFeedsFixedSizeCollection createCollection(
-        List<ListMetadataFeedsPage> pages, int collectionSize) {
+        @Nullable List<ListMetadataFeedsPage> pages, int collectionSize) {
       return new ListMetadataFeedsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7068,8 +7182,8 @@ public class CatalogServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -7079,14 +7193,14 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7100,7 +7214,8 @@ public class CatalogServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7110,7 +7225,7 @@ public class CatalogServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

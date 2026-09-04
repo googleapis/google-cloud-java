@@ -311,8 +311,10 @@ public final class BatchControllerGrpc {
      *
      *
      * <pre>
-     * Deletes the batch workload resource. If the batch is not in terminal state,
-     * the delete fails and the response returns `FAILED_PRECONDITION`.
+     * Deletes the batch workload resource. If the batch is not in a
+     * `CANCELLED`, `SUCCEEDED` or `FAILED`
+     * [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails
+     * and the response returns `FAILED_PRECONDITION`.
      * </pre>
      */
     default void deleteBatch(
@@ -408,8 +410,10 @@ public final class BatchControllerGrpc {
      *
      *
      * <pre>
-     * Deletes the batch workload resource. If the batch is not in terminal state,
-     * the delete fails and the response returns `FAILED_PRECONDITION`.
+     * Deletes the batch workload resource. If the batch is not in a
+     * `CANCELLED`, `SUCCEEDED` or `FAILED`
+     * [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails
+     * and the response returns `FAILED_PRECONDITION`.
      * </pre>
      */
     public void deleteBatch(
@@ -485,8 +489,10 @@ public final class BatchControllerGrpc {
      *
      *
      * <pre>
-     * Deletes the batch workload resource. If the batch is not in terminal state,
-     * the delete fails and the response returns `FAILED_PRECONDITION`.
+     * Deletes the batch workload resource. If the batch is not in a
+     * `CANCELLED`, `SUCCEEDED` or `FAILED`
+     * [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails
+     * and the response returns `FAILED_PRECONDITION`.
      * </pre>
      */
     public com.google.protobuf.Empty deleteBatch(
@@ -558,8 +564,10 @@ public final class BatchControllerGrpc {
      *
      *
      * <pre>
-     * Deletes the batch workload resource. If the batch is not in terminal state,
-     * the delete fails and the response returns `FAILED_PRECONDITION`.
+     * Deletes the batch workload resource. If the batch is not in a
+     * `CANCELLED`, `SUCCEEDED` or `FAILED`
+     * [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails
+     * and the response returns `FAILED_PRECONDITION`.
      * </pre>
      */
     public com.google.protobuf.Empty deleteBatch(
@@ -632,8 +640,10 @@ public final class BatchControllerGrpc {
      *
      *
      * <pre>
-     * Deletes the batch workload resource. If the batch is not in terminal state,
-     * the delete fails and the response returns `FAILED_PRECONDITION`.
+     * Deletes the batch workload resource. If the batch is not in a
+     * `CANCELLED`, `SUCCEEDED` or `FAILED`
+     * [`State`][google.cloud.dataproc.v1.Batch.State], the delete operation fails
+     * and the response returns `FAILED_PRECONDITION`.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

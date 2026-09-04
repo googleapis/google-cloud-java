@@ -54,6 +54,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -372,9 +374,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class SchemaServiceClient implements BackgroundResource {
-  private final SchemaServiceSettings settings;
+  private final @Nullable SchemaServiceSettings settings;
   private final SchemaServiceStub stub;
 
   /** Constructs an instance of SchemaServiceClient with default settings. */
@@ -414,7 +417,7 @@ public class SchemaServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SchemaServiceSettings getSettings() {
+  public final @Nullable SchemaServiceSettings getSettings() {
     return settings;
   }
 
@@ -453,7 +456,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *     constraints.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schema createSchema(ProjectName parent, Schema schema, String schemaId) {
+  public final Schema createSchema(@Nullable ProjectName parent, Schema schema, String schemaId) {
     CreateSchemaRequest request =
         CreateSchemaRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -585,7 +588,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *     `projects/{project}/schemas/{schema}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schema getSchema(SchemaName name) {
+  public final Schema getSchema(@Nullable SchemaName name) {
     GetSchemaRequest request =
         GetSchemaRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSchema(request);
@@ -699,7 +702,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *     `projects/{project-id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSchemasPagedResponse listSchemas(ProjectName parent) {
+  public final ListSchemasPagedResponse listSchemas(@Nullable ProjectName parent) {
     ListSchemasRequest request =
         ListSchemasRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -864,7 +867,7 @@ public class SchemaServiceClient implements BackgroundResource {
    * @param name Required. The name of the schema to list revisions for.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSchemaRevisionsPagedResponse listSchemaRevisions(SchemaName name) {
+  public final ListSchemaRevisionsPagedResponse listSchemaRevisions(@Nullable SchemaName name) {
     ListSchemaRevisionsRequest request =
         ListSchemaRevisionsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1034,7 +1037,7 @@ public class SchemaServiceClient implements BackgroundResource {
    * @param schema Required. The schema revision to commit.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schema commitSchema(SchemaName name, Schema schema) {
+  public final Schema commitSchema(@Nullable SchemaName name, Schema schema) {
     CommitSchemaRequest request =
         CommitSchemaRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1155,7 +1158,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *     <p>Example: c7cfa2a8
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schema rollbackSchema(SchemaName name, String revisionId) {
+  public final Schema rollbackSchema(@Nullable SchemaName name, String revisionId) {
     RollbackSchemaRequest request =
         RollbackSchemaRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1278,7 +1281,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *     revision ID. The revision ID should be specified via the `name` parameter.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Schema deleteSchemaRevision(SchemaName name, String revisionId) {
+  public final Schema deleteSchemaRevision(@Nullable SchemaName name, String revisionId) {
     DeleteSchemaRevisionRequest request =
         DeleteSchemaRevisionRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1399,7 +1402,7 @@ public class SchemaServiceClient implements BackgroundResource {
    *     `projects/{project}/schemas/{schema}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteSchema(SchemaName name) {
+  public final void deleteSchema(@Nullable SchemaName name) {
     DeleteSchemaRequest request =
         DeleteSchemaRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteSchema(request);
@@ -1511,7 +1514,7 @@ public class SchemaServiceClient implements BackgroundResource {
    * @param schema Required. The schema object to validate.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ValidateSchemaResponse validateSchema(ProjectName parent, Schema schema) {
+  public final ValidateSchemaResponse validateSchema(@Nullable ProjectName parent, Schema schema) {
     ValidateSchemaRequest request =
         ValidateSchemaRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1917,8 +1920,8 @@ public class SchemaServiceClient implements BackgroundResource {
       extends AbstractPage<ListSchemasRequest, ListSchemasResponse, Schema, ListSchemasPage> {
 
     private ListSchemasPage(
-        PageContext<ListSchemasRequest, ListSchemasResponse, Schema> context,
-        ListSchemasResponse response) {
+        @Nullable PageContext<ListSchemasRequest, ListSchemasResponse, Schema> context,
+        @Nullable ListSchemasResponse response) {
       super(context, response);
     }
 
@@ -1928,14 +1931,14 @@ public class SchemaServiceClient implements BackgroundResource {
 
     @Override
     protected ListSchemasPage createPage(
-        PageContext<ListSchemasRequest, ListSchemasResponse, Schema> context,
-        ListSchemasResponse response) {
+        @Nullable PageContext<ListSchemasRequest, ListSchemasResponse, Schema> context,
+        @Nullable ListSchemasResponse response) {
       return new ListSchemasPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSchemasPage> createPageAsync(
-        PageContext<ListSchemasRequest, ListSchemasResponse, Schema> context,
+        @Nullable PageContext<ListSchemasRequest, ListSchemasResponse, Schema> context,
         ApiFuture<ListSchemasResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1949,7 +1952,8 @@ public class SchemaServiceClient implements BackgroundResource {
           ListSchemasPage,
           ListSchemasFixedSizeCollection> {
 
-    private ListSchemasFixedSizeCollection(List<ListSchemasPage> pages, int collectionSize) {
+    private ListSchemasFixedSizeCollection(
+        @Nullable List<ListSchemasPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1959,7 +1963,7 @@ public class SchemaServiceClient implements BackgroundResource {
 
     @Override
     protected ListSchemasFixedSizeCollection createCollection(
-        List<ListSchemasPage> pages, int collectionSize) {
+        @Nullable List<ListSchemasPage> pages, int collectionSize) {
       return new ListSchemasFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1996,8 +2000,9 @@ public class SchemaServiceClient implements BackgroundResource {
           ListSchemaRevisionsPage> {
 
     private ListSchemaRevisionsPage(
-        PageContext<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema> context,
-        ListSchemaRevisionsResponse response) {
+        @Nullable PageContext<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema>
+            context,
+        @Nullable ListSchemaRevisionsResponse response) {
       super(context, response);
     }
 
@@ -2007,14 +2012,16 @@ public class SchemaServiceClient implements BackgroundResource {
 
     @Override
     protected ListSchemaRevisionsPage createPage(
-        PageContext<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema> context,
-        ListSchemaRevisionsResponse response) {
+        @Nullable PageContext<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema>
+            context,
+        @Nullable ListSchemaRevisionsResponse response) {
       return new ListSchemaRevisionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSchemaRevisionsPage> createPageAsync(
-        PageContext<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema> context,
+        @Nullable PageContext<ListSchemaRevisionsRequest, ListSchemaRevisionsResponse, Schema>
+            context,
         ApiFuture<ListSchemaRevisionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2029,7 +2036,7 @@ public class SchemaServiceClient implements BackgroundResource {
           ListSchemaRevisionsFixedSizeCollection> {
 
     private ListSchemaRevisionsFixedSizeCollection(
-        List<ListSchemaRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListSchemaRevisionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2039,7 +2046,7 @@ public class SchemaServiceClient implements BackgroundResource {
 
     @Override
     protected ListSchemaRevisionsFixedSizeCollection createCollection(
-        List<ListSchemaRevisionsPage> pages, int collectionSize) {
+        @Nullable List<ListSchemaRevisionsPage> pages, int collectionSize) {
       return new ListSchemaRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }

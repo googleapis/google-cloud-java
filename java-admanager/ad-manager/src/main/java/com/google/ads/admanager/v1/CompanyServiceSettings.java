@@ -32,6 +32,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -83,6 +85,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CompanyServiceSettings extends ClientSettings<CompanyServiceSettings> {
 
@@ -95,6 +98,28 @@ public class CompanyServiceSettings extends ClientSettings<CompanyServiceSetting
   public PagedCallSettings<ListCompaniesRequest, ListCompaniesResponse, ListCompaniesPagedResponse>
       listCompaniesSettings() {
     return ((CompanyServiceStubSettings) getStubSettings()).listCompaniesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createCompany. */
+  public UnaryCallSettings<CreateCompanyRequest, Company> createCompanySettings() {
+    return ((CompanyServiceStubSettings) getStubSettings()).createCompanySettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchCreateCompanies. */
+  public UnaryCallSettings<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+      batchCreateCompaniesSettings() {
+    return ((CompanyServiceStubSettings) getStubSettings()).batchCreateCompaniesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateCompany. */
+  public UnaryCallSettings<UpdateCompanyRequest, Company> updateCompanySettings() {
+    return ((CompanyServiceStubSettings) getStubSettings()).updateCompanySettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchUpdateCompanies. */
+  public UnaryCallSettings<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+      batchUpdateCompaniesSettings() {
+    return ((CompanyServiceStubSettings) getStubSettings()).batchUpdateCompaniesSettings();
   }
 
   public static final CompanyServiceSettings create(CompanyServiceStubSettings stub)
@@ -142,7 +167,7 @@ public class CompanyServiceSettings extends ClientSettings<CompanyServiceSetting
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -162,7 +187,7 @@ public class CompanyServiceSettings extends ClientSettings<CompanyServiceSetting
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(CompanyServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -204,6 +229,28 @@ public class CompanyServiceSettings extends ClientSettings<CompanyServiceSetting
             ListCompaniesRequest, ListCompaniesResponse, ListCompaniesPagedResponse>
         listCompaniesSettings() {
       return getStubSettingsBuilder().listCompaniesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createCompany. */
+    public UnaryCallSettings.Builder<CreateCompanyRequest, Company> createCompanySettings() {
+      return getStubSettingsBuilder().createCompanySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchCreateCompanies. */
+    public UnaryCallSettings.Builder<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+        batchCreateCompaniesSettings() {
+      return getStubSettingsBuilder().batchCreateCompaniesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateCompany. */
+    public UnaryCallSettings.Builder<UpdateCompanyRequest, Company> updateCompanySettings() {
+      return getStubSettingsBuilder().updateCompanySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchUpdateCompanies. */
+    public UnaryCallSettings.Builder<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+        batchUpdateCompaniesSettings() {
+      return getStubSettingsBuilder().batchUpdateCompaniesSettings();
     }
 
     @Override

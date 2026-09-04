@@ -40,6 +40,7 @@ import com.google.recaptchaenterprise.v1.FirewallPolicy;
 import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
+import com.google.recaptchaenterprise.v1.GetPolicyRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
@@ -53,6 +54,7 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.Policy;
 import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
 import com.google.recaptchaenterprise.v1.RemoveIpOverrideResponse;
 import com.google.recaptchaenterprise.v1.ReorderFirewallPoliciesRequest;
@@ -63,7 +65,9 @@ import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsReq
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
+import com.google.recaptchaenterprise.v1.UpdatePolicyRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -71,6 +75,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class RecaptchaEnterpriseServiceStub implements BackgroundResource {
 
@@ -136,6 +141,14 @@ public abstract class RecaptchaEnterpriseServiceStub implements BackgroundResour
 
   public UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {
     throw new UnsupportedOperationException("Not implemented: getMetricsCallable()");
+  }
+
+  public UnaryCallable<GetPolicyRequest, Policy> getPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPolicyCallable()");
+  }
+
+  public UnaryCallable<UpdatePolicyRequest, Policy> updatePolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePolicyCallable()");
   }
 
   public UnaryCallable<CreateFirewallPolicyRequest, FirewallPolicy> createFirewallPolicyCallable() {

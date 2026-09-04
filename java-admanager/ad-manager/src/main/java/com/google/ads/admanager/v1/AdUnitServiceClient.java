@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -64,7 +66,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetAdUnit</td>
- *      <td><p> API to retrieve an AdUnit object.</td>
+ *      <td><p> Retrieves an `AdUnit` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -83,7 +85,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListAdUnits</td>
- *      <td><p> API to retrieve a list of AdUnit objects.</td>
+ *      <td><p> Lists `AdUnit` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -103,7 +105,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListAdUnitSizes</td>
- *      <td><p> API to retrieve a list of AdUnitSize objects.</td>
+ *      <td><p> Lists `AdUnitSize` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -123,7 +125,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateAdUnit</td>
- *      <td><p> API to create an `AdUnit` object.</td>
+ *      <td><p> Creates an `AdUnit` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -142,7 +144,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateAdUnit</td>
- *      <td><p> API to update an `AdUnit` object.</td>
+ *      <td><p> Updates an `AdUnit` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -160,7 +162,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreateAdUnits</td>
- *      <td><p> API to batch create `AdUnit` objects.</td>
+ *      <td><p> Creates `AdUnit` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -176,7 +178,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchUpdateAdUnits</td>
- *      <td><p> API to batch update `AdUnit` objects.</td>
+ *      <td><p> Batch updates `AdUnit` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -192,7 +194,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchActivateAdUnits</td>
- *      <td><p> API to batch activate `AdUnit` objects.</td>
+ *      <td><p> Batch activates `AdUnit` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -288,9 +290,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class AdUnitServiceClient implements BackgroundResource {
-  private final AdUnitServiceSettings settings;
+  private final @Nullable AdUnitServiceSettings settings;
   private final AdUnitServiceStub stub;
 
   /** Constructs an instance of AdUnitServiceClient with default settings. */
@@ -330,7 +333,7 @@ public class AdUnitServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final AdUnitServiceSettings getSettings() {
+  public final @Nullable AdUnitServiceSettings getSettings() {
     return settings;
   }
 
@@ -340,7 +343,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an AdUnit object.
+   * Retrieves an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -360,7 +363,7 @@ public class AdUnitServiceClient implements BackgroundResource {
    *     `networks/{network_code}/adUnits/{ad_unit_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AdUnit getAdUnit(AdUnitName name) {
+  public final AdUnit getAdUnit(@Nullable AdUnitName name) {
     GetAdUnitRequest request =
         GetAdUnitRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAdUnit(request);
@@ -368,7 +371,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an AdUnit object.
+   * Retrieves an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -395,7 +398,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an AdUnit object.
+   * Retrieves an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -423,7 +426,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve an AdUnit object.
+   * Retrieves an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -450,7 +453,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnit objects.
+   * Lists `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -472,7 +475,7 @@ public class AdUnitServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAdUnitsPagedResponse listAdUnits(NetworkName parent) {
+  public final ListAdUnitsPagedResponse listAdUnits(@Nullable NetworkName parent) {
     ListAdUnitsRequest request =
         ListAdUnitsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -482,7 +485,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnit objects.
+   * Lists `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -511,7 +514,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnit objects.
+   * Lists `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -546,7 +549,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnit objects.
+   * Lists `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -581,7 +584,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnit objects.
+   * Lists `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -622,7 +625,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnitSize objects.
+   * Lists `AdUnitSize` objects.
    *
    * <p>Sample code:
    *
@@ -644,7 +647,7 @@ public class AdUnitServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAdUnitSizesPagedResponse listAdUnitSizes(NetworkName parent) {
+  public final ListAdUnitSizesPagedResponse listAdUnitSizes(@Nullable NetworkName parent) {
     ListAdUnitSizesRequest request =
         ListAdUnitSizesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -654,7 +657,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnitSize objects.
+   * Lists `AdUnitSize` objects.
    *
    * <p>Sample code:
    *
@@ -683,7 +686,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnitSize objects.
+   * Lists `AdUnitSize` objects.
    *
    * <p>Sample code:
    *
@@ -718,7 +721,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnitSize objects.
+   * Lists `AdUnitSize` objects.
    *
    * <p>Sample code:
    *
@@ -754,7 +757,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of AdUnitSize objects.
+   * Lists `AdUnitSize` objects.
    *
    * <p>Sample code:
    *
@@ -797,7 +800,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `AdUnit` object.
+   * Creates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -819,7 +822,7 @@ public class AdUnitServiceClient implements BackgroundResource {
    * @param adUnit Required. The `AdUnit` to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AdUnit createAdUnit(NetworkName parent, AdUnit adUnit) {
+  public final AdUnit createAdUnit(@Nullable NetworkName parent, AdUnit adUnit) {
     CreateAdUnitRequest request =
         CreateAdUnitRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -830,7 +833,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `AdUnit` object.
+   * Creates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -860,7 +863,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `AdUnit` object.
+   * Creates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -889,7 +892,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to create an `AdUnit` object.
+   * Creates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -917,7 +920,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `AdUnit` object.
+   * Updates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -937,7 +940,7 @@ public class AdUnitServiceClient implements BackgroundResource {
    * @param adUnit Required. The `AdUnit` to update.
    *     <p>The `AdUnit`'s name is used to identify the `AdUnit` to update. Format:
    *     `networks/{network_code}/adUnits/{ad_unit_id}`
-   * @param updateMask Required. The list of fields to update.
+   * @param updateMask Optional. The list of fields to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AdUnit updateAdUnit(AdUnit adUnit, FieldMask updateMask) {
@@ -948,7 +951,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `AdUnit` object.
+   * Updates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -977,7 +980,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to update an `AdUnit` object.
+   * Updates an `AdUnit` object.
    *
    * <p>Sample code:
    *
@@ -1005,7 +1008,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `AdUnit` objects.
+   * Creates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1031,7 +1034,7 @@ public class AdUnitServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateAdUnitsResponse batchCreateAdUnits(
-      NetworkName parent, List<CreateAdUnitRequest> requests) {
+      @Nullable NetworkName parent, List<CreateAdUnitRequest> requests) {
     BatchCreateAdUnitsRequest request =
         BatchCreateAdUnitsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1042,7 +1045,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `AdUnit` objects.
+   * Creates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1076,7 +1079,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `AdUnit` objects.
+   * Creates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1105,7 +1108,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch create `AdUnit` objects.
+   * Creates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1135,7 +1138,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `AdUnit` objects.
+   * Batch updates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1161,7 +1164,7 @@ public class AdUnitServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchUpdateAdUnitsResponse batchUpdateAdUnits(
-      NetworkName parent, List<UpdateAdUnitRequest> requests) {
+      @Nullable NetworkName parent, List<UpdateAdUnitRequest> requests) {
     BatchUpdateAdUnitsRequest request =
         BatchUpdateAdUnitsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1172,7 +1175,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `AdUnit` objects.
+   * Batch updates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1206,7 +1209,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `AdUnit` objects.
+   * Batch updates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1235,7 +1238,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch update `AdUnit` objects.
+   * Batch updates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1265,7 +1268,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `AdUnit` objects.
+   * Batch activates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1289,7 +1292,7 @@ public class AdUnitServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchActivateAdUnitsResponse batchActivateAdUnits(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchActivateAdUnitsRequest request =
         BatchActivateAdUnitsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1300,7 +1303,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `AdUnit` objects.
+   * Batch activates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1332,7 +1335,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `AdUnit` objects.
+   * Batch activates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1362,7 +1365,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to batch activate `AdUnit` objects.
+   * Batch activates `AdUnit` objects.
    *
    * <p>Sample code:
    *
@@ -1416,7 +1419,7 @@ public class AdUnitServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchDeactivateAdUnitsResponse batchDeactivateAdUnits(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchDeactivateAdUnitsRequest request =
         BatchDeactivateAdUnitsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1542,7 +1545,7 @@ public class AdUnitServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchArchiveAdUnitsResponse batchArchiveAdUnits(
-      NetworkName parent, List<String> names) {
+      @Nullable NetworkName parent, List<String> names) {
     BatchArchiveAdUnitsRequest request =
         BatchArchiveAdUnitsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1696,8 +1699,8 @@ public class AdUnitServiceClient implements BackgroundResource {
       extends AbstractPage<ListAdUnitsRequest, ListAdUnitsResponse, AdUnit, ListAdUnitsPage> {
 
     private ListAdUnitsPage(
-        PageContext<ListAdUnitsRequest, ListAdUnitsResponse, AdUnit> context,
-        ListAdUnitsResponse response) {
+        @Nullable PageContext<ListAdUnitsRequest, ListAdUnitsResponse, AdUnit> context,
+        @Nullable ListAdUnitsResponse response) {
       super(context, response);
     }
 
@@ -1707,14 +1710,14 @@ public class AdUnitServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdUnitsPage createPage(
-        PageContext<ListAdUnitsRequest, ListAdUnitsResponse, AdUnit> context,
-        ListAdUnitsResponse response) {
+        @Nullable PageContext<ListAdUnitsRequest, ListAdUnitsResponse, AdUnit> context,
+        @Nullable ListAdUnitsResponse response) {
       return new ListAdUnitsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAdUnitsPage> createPageAsync(
-        PageContext<ListAdUnitsRequest, ListAdUnitsResponse, AdUnit> context,
+        @Nullable PageContext<ListAdUnitsRequest, ListAdUnitsResponse, AdUnit> context,
         ApiFuture<ListAdUnitsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1728,7 +1731,8 @@ public class AdUnitServiceClient implements BackgroundResource {
           ListAdUnitsPage,
           ListAdUnitsFixedSizeCollection> {
 
-    private ListAdUnitsFixedSizeCollection(List<ListAdUnitsPage> pages, int collectionSize) {
+    private ListAdUnitsFixedSizeCollection(
+        @Nullable List<ListAdUnitsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1738,7 +1742,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdUnitsFixedSizeCollection createCollection(
-        List<ListAdUnitsPage> pages, int collectionSize) {
+        @Nullable List<ListAdUnitsPage> pages, int collectionSize) {
       return new ListAdUnitsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1772,8 +1776,8 @@ public class AdUnitServiceClient implements BackgroundResource {
           ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize, ListAdUnitSizesPage> {
 
     private ListAdUnitSizesPage(
-        PageContext<ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize> context,
-        ListAdUnitSizesResponse response) {
+        @Nullable PageContext<ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize> context,
+        @Nullable ListAdUnitSizesResponse response) {
       super(context, response);
     }
 
@@ -1783,14 +1787,14 @@ public class AdUnitServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdUnitSizesPage createPage(
-        PageContext<ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize> context,
-        ListAdUnitSizesResponse response) {
+        @Nullable PageContext<ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize> context,
+        @Nullable ListAdUnitSizesResponse response) {
       return new ListAdUnitSizesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAdUnitSizesPage> createPageAsync(
-        PageContext<ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize> context,
+        @Nullable PageContext<ListAdUnitSizesRequest, ListAdUnitSizesResponse, AdUnitSize> context,
         ApiFuture<ListAdUnitSizesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1805,7 +1809,7 @@ public class AdUnitServiceClient implements BackgroundResource {
           ListAdUnitSizesFixedSizeCollection> {
 
     private ListAdUnitSizesFixedSizeCollection(
-        List<ListAdUnitSizesPage> pages, int collectionSize) {
+        @Nullable List<ListAdUnitSizesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1815,7 +1819,7 @@ public class AdUnitServiceClient implements BackgroundResource {
 
     @Override
     protected ListAdUnitSizesFixedSizeCollection createCollection(
-        List<ListAdUnitSizesPage> pages, int collectionSize) {
+        @Nullable List<ListAdUnitSizesPage> pages, int collectionSize) {
       return new ListAdUnitSizesFixedSizeCollection(pages, collectionSize);
     }
   }

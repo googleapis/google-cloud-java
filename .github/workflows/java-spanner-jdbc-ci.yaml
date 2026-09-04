@@ -13,6 +13,9 @@
 # limitations under the License.
 # Github action job to test core java library features on
 # downstream client libraries before they are released.
+permissions:
+  contents: read
+
 on:
   push:
     branches:
@@ -27,7 +30,9 @@ jobs:
     outputs:
       library: ${{ steps.filter.outputs.library }}
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      with:
+        persist-credentials: false
     - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
       id: filter
       with:
@@ -47,13 +52,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java: [11, 17, 21, 25]
+        java: [11, 17, 21, 25, 26]
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
       with:
         distribution: temurin
         java-version: ${{matrix.java}}
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -65,20 +73,24 @@ jobs:
     name: "units (8)"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           java-version: 8
           distribution: temurin
+          cache: maven
       - name: "Set jvm system property environment variable for surefire plugin (unit tests)"
         # Maven surefire plugin (unit tests) allows us to specify JVM to run the tests.
         # https://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#jvm
         run: echo "SUREFIRE_JVM_OPT=-Djvm=${JAVA_HOME}/bin/java -P !java17" >> $GITHUB_ENV
         shell: bash
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
         with:
           java-version: 17
           distribution: temurin
+          cache: maven
       - run: .kokoro/build.sh
         env:
           JOB_TYPE: test
@@ -91,11 +103,14 @@ jobs:
       run: git config --system core.longpaths true
     - name: Support longpaths
       run: git config --system core.longpaths true
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
       with:
         distribution: temurin
         java-version: 8
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -105,22 +120,28 @@ jobs:
     if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: .kokoro/dependencies.sh
   javadoc:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-java@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      with:
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:
@@ -130,13 +151,15 @@ jobs:
     if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
       with:
         fetch-depth: 0
-    - uses: actions/setup-java@v4
+        persist-credentials: false
+    - uses: actions/setup-java@c1e323688fd81a25caa38c78aa6df2d33d3e20d9 # v4.8.0
       with:
         distribution: temurin
         java-version: 17
+        cache: maven
     - run: java -version
     - run: .kokoro/build.sh
       env:

@@ -150,6 +150,28 @@ public class MockDataformImpl extends DataformImplBase {
   }
 
   @Override
+  public void deleteTeamFolderTree(
+      DeleteTeamFolderTreeRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTeamFolderTree, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void queryTeamFolderContents(
       QueryTeamFolderContentsRequest request,
       StreamObserver<QueryTeamFolderContentsResponse> responseObserver) {
@@ -270,6 +292,27 @@ public class MockDataformImpl extends DataformImplBase {
                   "Unrecognized response type %s for method DeleteFolder, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteFolderTree(
+      DeleteFolderTreeRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteFolderTree, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -440,6 +483,28 @@ public class MockDataformImpl extends DataformImplBase {
                   "Unrecognized response type %s for method DeleteRepository, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteRepositoryLongRunning(
+      DeleteRepositoryLongRunningRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteRepositoryLongRunning, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -724,6 +789,117 @@ public class MockDataformImpl extends DataformImplBase {
                   "Unrecognized response type %s for method PullGitCommits, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PullGitCommitsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void syncWorkspaceRefs(
+      SyncWorkspaceRefsRequest request,
+      StreamObserver<SyncWorkspaceRefsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SyncWorkspaceRefsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SyncWorkspaceRefsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SyncWorkspaceRefs, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SyncWorkspaceRefsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchWorkspaceBranches(
+      FetchWorkspaceBranchesRequest request,
+      StreamObserver<FetchWorkspaceBranchesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchWorkspaceBranchesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchWorkspaceBranchesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchWorkspaceBranches, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchWorkspaceBranchesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteBranch(
+      DeleteBranchRequest request, StreamObserver<DeleteBranchResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DeleteBranchResponse) {
+      requests.add(request);
+      responseObserver.onNext(((DeleteBranchResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteBranch, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DeleteBranchResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void checkoutWorkspaceBranch(
+      CheckoutWorkspaceBranchRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CheckoutWorkspaceBranch, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void fetchCurrentWorkspaceBranch(
+      FetchCurrentWorkspaceBranchRequest request,
+      StreamObserver<FetchCurrentWorkspaceBranchResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FetchCurrentWorkspaceBranchResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FetchCurrentWorkspaceBranchResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FetchCurrentWorkspaceBranch, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FetchCurrentWorkspaceBranchResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

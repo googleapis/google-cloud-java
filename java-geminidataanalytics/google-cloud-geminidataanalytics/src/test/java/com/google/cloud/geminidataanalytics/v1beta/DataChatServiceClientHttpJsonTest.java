@@ -37,6 +37,7 @@ import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -106,6 +107,8 @@ public class DataChatServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setMemoryPaused(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -158,6 +161,8 @@ public class DataChatServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setMemoryPaused(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -290,6 +295,8 @@ public class DataChatServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setMemoryPaused(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -338,6 +345,8 @@ public class DataChatServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setLastUsedTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
+            .setKmsKey("kmsKey-1127483058")
+            .setMemoryPaused(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -587,6 +596,7 @@ public class DataChatServiceClientHttpJsonTest {
             .setQueryResult(ExecutedQueryResult.newBuilder().build())
             .setNaturalLanguageAnswer("naturalLanguageAnswer425313727")
             .addAllDisambiguationQuestion(new ArrayList<String>())
+            .setPipelineDebugInfo(Struct.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

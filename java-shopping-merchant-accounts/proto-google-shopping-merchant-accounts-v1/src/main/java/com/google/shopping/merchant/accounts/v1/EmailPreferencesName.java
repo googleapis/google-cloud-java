@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class EmailPreferencesName implements ResourceName {
   private static final PathTemplate ACCOUNT_EMAIL =
@@ -70,7 +73,7 @@ public class EmailPreferencesName implements ResourceName {
     return newBuilder().setAccount(account).setEmail(email).build().toString();
   }
 
-  public static EmailPreferencesName parse(String formattedString) {
+  public static @Nullable EmailPreferencesName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -88,7 +91,7 @@ public class EmailPreferencesName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<EmailPreferencesName> values) {
+  public static List<String> toStringList(List<@Nullable EmailPreferencesName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (EmailPreferencesName value : values) {
       if (value == null) {
@@ -133,7 +136,7 @@ public class EmailPreferencesName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

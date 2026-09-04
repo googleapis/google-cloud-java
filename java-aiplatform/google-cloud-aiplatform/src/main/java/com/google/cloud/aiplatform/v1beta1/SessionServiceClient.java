@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -330,10 +332,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SessionServiceClient implements BackgroundResource {
-  private final SessionServiceSettings settings;
+  private final @Nullable SessionServiceSettings settings;
   private final SessionServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -376,7 +379,7 @@ public class SessionServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final SessionServiceSettings getSettings() {
+  public final @Nullable SessionServiceSettings getSettings() {
     return settings;
   }
 
@@ -418,7 +421,7 @@ public class SessionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Session, CreateSessionOperationMetadata> createSessionAsync(
-      ReasoningEngineName parent, Session session) {
+      @Nullable ReasoningEngineName parent, Session session) {
     CreateSessionRequest request =
         CreateSessionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -491,7 +494,7 @@ public class SessionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Session, CreateSessionOperationMetadata> createSessionAsync(
-      ReasoningEngineName parent, Session session, String sessionId) {
+      @Nullable ReasoningEngineName parent, Session session, String sessionId) {
     CreateSessionRequest request =
         CreateSessionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -664,7 +667,7 @@ public class SessionServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Session getSession(SessionName name) {
+  public final Session getSession(@Nullable SessionName name) {
     GetSessionRequest request =
         GetSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getSession(request);
@@ -782,7 +785,7 @@ public class SessionServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListSessionsPagedResponse listSessions(ReasoningEngineName parent) {
+  public final ListSessionsPagedResponse listSessions(@Nullable ReasoningEngineName parent) {
     ListSessionsRequest request =
         ListSessionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1047,7 +1050,7 @@ public class SessionServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteSessionAsync(
-      SessionName name) {
+      @Nullable SessionName name) {
     DeleteSessionRequest request =
         DeleteSessionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteSessionAsync(request);
@@ -1198,7 +1201,7 @@ public class SessionServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEventsPagedResponse listEvents(SessionName parent) {
+  public final ListEventsPagedResponse listEvents(@Nullable SessionName parent) {
     ListEventsRequest request =
         ListEventsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listEvents(request);
@@ -1373,7 +1376,7 @@ public class SessionServiceClient implements BackgroundResource {
    * @param event Required. The event to append to the session.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AppendEventResponse appendEvent(SessionName name, SessionEvent event) {
+  public final AppendEventResponse appendEvent(@Nullable SessionName name, SessionEvent event) {
     AppendEventRequest request =
         AppendEventRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1897,8 +1900,8 @@ public class SessionServiceClient implements BackgroundResource {
       extends AbstractPage<ListSessionsRequest, ListSessionsResponse, Session, ListSessionsPage> {
 
     private ListSessionsPage(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
-        ListSessionsResponse response) {
+        @Nullable PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        @Nullable ListSessionsResponse response) {
       super(context, response);
     }
 
@@ -1908,14 +1911,14 @@ public class SessionServiceClient implements BackgroundResource {
 
     @Override
     protected ListSessionsPage createPage(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
-        ListSessionsResponse response) {
+        @Nullable PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        @Nullable ListSessionsResponse response) {
       return new ListSessionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListSessionsPage> createPageAsync(
-        PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
+        @Nullable PageContext<ListSessionsRequest, ListSessionsResponse, Session> context,
         ApiFuture<ListSessionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1929,7 +1932,8 @@ public class SessionServiceClient implements BackgroundResource {
           ListSessionsPage,
           ListSessionsFixedSizeCollection> {
 
-    private ListSessionsFixedSizeCollection(List<ListSessionsPage> pages, int collectionSize) {
+    private ListSessionsFixedSizeCollection(
+        @Nullable List<ListSessionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1939,7 +1943,7 @@ public class SessionServiceClient implements BackgroundResource {
 
     @Override
     protected ListSessionsFixedSizeCollection createCollection(
-        List<ListSessionsPage> pages, int collectionSize) {
+        @Nullable List<ListSessionsPage> pages, int collectionSize) {
       return new ListSessionsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1970,8 +1974,8 @@ public class SessionServiceClient implements BackgroundResource {
       extends AbstractPage<ListEventsRequest, ListEventsResponse, SessionEvent, ListEventsPage> {
 
     private ListEventsPage(
-        PageContext<ListEventsRequest, ListEventsResponse, SessionEvent> context,
-        ListEventsResponse response) {
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, SessionEvent> context,
+        @Nullable ListEventsResponse response) {
       super(context, response);
     }
 
@@ -1981,14 +1985,14 @@ public class SessionServiceClient implements BackgroundResource {
 
     @Override
     protected ListEventsPage createPage(
-        PageContext<ListEventsRequest, ListEventsResponse, SessionEvent> context,
-        ListEventsResponse response) {
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, SessionEvent> context,
+        @Nullable ListEventsResponse response) {
       return new ListEventsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEventsPage> createPageAsync(
-        PageContext<ListEventsRequest, ListEventsResponse, SessionEvent> context,
+        @Nullable PageContext<ListEventsRequest, ListEventsResponse, SessionEvent> context,
         ApiFuture<ListEventsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2002,7 +2006,8 @@ public class SessionServiceClient implements BackgroundResource {
           ListEventsPage,
           ListEventsFixedSizeCollection> {
 
-    private ListEventsFixedSizeCollection(List<ListEventsPage> pages, int collectionSize) {
+    private ListEventsFixedSizeCollection(
+        @Nullable List<ListEventsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2012,7 +2017,7 @@ public class SessionServiceClient implements BackgroundResource {
 
     @Override
     protected ListEventsFixedSizeCollection createCollection(
-        List<ListEventsPage> pages, int collectionSize) {
+        @Nullable List<ListEventsPage> pages, int collectionSize) {
       return new ListEventsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2046,8 +2051,8 @@ public class SessionServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2057,14 +2062,14 @@ public class SessionServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2078,7 +2083,8 @@ public class SessionServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2088,7 +2094,7 @@ public class SessionServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

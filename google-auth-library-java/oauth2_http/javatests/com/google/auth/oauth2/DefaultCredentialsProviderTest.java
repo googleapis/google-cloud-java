@@ -67,6 +67,7 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
+import org.jspecify.annotations.Nullable;
 import org.junit.jupiter.api.Test;
 
 /** Test case for {@link DefaultCredentialsProvider}. */
@@ -113,6 +114,20 @@ class DefaultCredentialsProviderTest {
         assertThrows(IOException.class, () -> testProvider.getDefaultCredentials(transportFactory));
     String message = e.getMessage();
     assertEquals(DefaultCredentialsProvider.CLOUDSDK_MISSING_CREDENTIALS, message);
+  }
+
+  @Test
+  void getDefaultCredentials_windowsMissingAppData_throws() {
+    // When APPDATA is unset on Windows, the ADC resolution should fail gracefully
+    // with a structured missing credentials exception, rather than crashing with an NPE.
+    MockHttpTransportFactory transportFactory = new MockHttpTransportFactory();
+    TestDefaultCredentialsProvider testProvider = new TestDefaultCredentialsProvider();
+    testProvider.setProperty("os.name", "windows");
+    testProvider.setEnv("APPDATA", null);
+
+    IOException e =
+        assertThrows(IOException.class, () -> testProvider.getDefaultCredentials(transportFactory));
+    assertEquals(DefaultCredentialsProvider.CLOUDSDK_MISSING_CREDENTIALS, e.getMessage());
   }
 
   @Test
@@ -387,6 +402,7 @@ class DefaultCredentialsProviderTest {
     assertNotNull(((GdchCredentials) defaultCredentials).getApiAudience());
   }
 
+  @Test
   void getDefaultCredentials_quota_project() throws IOException {
     InputStream userStream =
         UserCredentialsTest.writeUserStream(
@@ -886,21 +902,21 @@ class DefaultCredentialsProviderTest {
     }
 
     @Override
-    String getEnv(String name) {
+    @Nullable String getEnv(String name) {
       return variables.get(name);
     }
 
-    void setEnv(String name, String value) {
+    void setEnv(String name, @Nullable String value) {
       variables.put(name, value);
     }
 
     @Override
-    String getProperty(String property, String def) {
+    @Nullable String getProperty(String property, @Nullable String def) {
       String value = properties.get(property);
       return value == null ? def : value;
     }
 
-    void setProperty(String property, String value) {
+    void setProperty(String property, @Nullable String value) {
       properties.put(property, value);
     }
 

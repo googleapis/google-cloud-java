@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -80,6 +82,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> addPeeringOperationCallable()
  *           <li><p> addPeeringCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CancelRequestRemovePeering</td>
+ *      <td><p> Cancel requests to remove a peering from the specified network. Applicable only for PeeringConnection with update_strategy=CONSENSUS.  Cancels a request to remove a peering from the specified network.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelRequestRemovePeeringAsync(CancelRequestRemovePeeringNetworkRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> cancelRequestRemovePeeringAsync(String project, String network, NetworksCancelRequestRemovePeeringRequest networksCancelRequestRemovePeeringRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelRequestRemovePeeringOperationCallable()
+ *           <li><p> cancelRequestRemovePeeringCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -325,9 +346,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class NetworksClient implements BackgroundResource {
-  private final NetworksSettings settings;
+  private final @Nullable NetworksSettings settings;
   private final NetworksStub stub;
 
   /** Constructs an instance of NetworksClient with default settings. */
@@ -365,7 +387,7 @@ public class NetworksClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final NetworksSettings getSettings() {
+  public final @Nullable NetworksSettings getSettings() {
     return settings;
   }
 
@@ -503,6 +525,157 @@ public class NetworksClient implements BackgroundResource {
    */
   public final UnaryCallable<AddPeeringNetworkRequest, Operation> addPeeringCallable() {
     return stub.addPeeringCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel requests to remove a peering from the specified network. Applicable only for
+   * PeeringConnection with update_strategy=CONSENSUS. Cancels a request to remove a peering from
+   * the specified network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   String project = "project-309310695";
+   *   String network = "network1843485230";
+   *   NetworksCancelRequestRemovePeeringRequest networksCancelRequestRemovePeeringRequestResource =
+   *       NetworksCancelRequestRemovePeeringRequest.newBuilder().build();
+   *   Operation response =
+   *       networksClient
+   *           .cancelRequestRemovePeeringAsync(
+   *               project, network, networksCancelRequestRemovePeeringRequestResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param network Name of the network resource to remove peering from.
+   * @param networksCancelRequestRemovePeeringRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> cancelRequestRemovePeeringAsync(
+      String project,
+      String network,
+      NetworksCancelRequestRemovePeeringRequest networksCancelRequestRemovePeeringRequestResource) {
+    CancelRequestRemovePeeringNetworkRequest request =
+        CancelRequestRemovePeeringNetworkRequest.newBuilder()
+            .setProject(project)
+            .setNetwork(network)
+            .setNetworksCancelRequestRemovePeeringRequestResource(
+                networksCancelRequestRemovePeeringRequestResource)
+            .build();
+    return cancelRequestRemovePeeringAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel requests to remove a peering from the specified network. Applicable only for
+   * PeeringConnection with update_strategy=CONSENSUS. Cancels a request to remove a peering from
+   * the specified network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   CancelRequestRemovePeeringNetworkRequest request =
+   *       CancelRequestRemovePeeringNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworksCancelRequestRemovePeeringRequestResource(
+   *               NetworksCancelRequestRemovePeeringRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Operation response = networksClient.cancelRequestRemovePeeringAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> cancelRequestRemovePeeringAsync(
+      CancelRequestRemovePeeringNetworkRequest request) {
+    return cancelRequestRemovePeeringOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel requests to remove a peering from the specified network. Applicable only for
+   * PeeringConnection with update_strategy=CONSENSUS. Cancels a request to remove a peering from
+   * the specified network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   CancelRequestRemovePeeringNetworkRequest request =
+   *       CancelRequestRemovePeeringNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworksCancelRequestRemovePeeringRequestResource(
+   *               NetworksCancelRequestRemovePeeringRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       networksClient.cancelRequestRemovePeeringOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CancelRequestRemovePeeringNetworkRequest, Operation, Operation>
+      cancelRequestRemovePeeringOperationCallable() {
+    return stub.cancelRequestRemovePeeringOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancel requests to remove a peering from the specified network. Applicable only for
+   * PeeringConnection with update_strategy=CONSENSUS. Cancels a request to remove a peering from
+   * the specified network.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   CancelRequestRemovePeeringNetworkRequest request =
+   *       CancelRequestRemovePeeringNetworkRequest.newBuilder()
+   *           .setNetwork("network1843485230")
+   *           .setNetworksCancelRequestRemovePeeringRequestResource(
+   *               NetworksCancelRequestRemovePeeringRequest.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       networksClient.cancelRequestRemovePeeringCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelRequestRemovePeeringNetworkRequest, Operation>
+      cancelRequestRemovePeeringCallable() {
+    return stub.cancelRequestRemovePeeringCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -1972,7 +2145,8 @@ public class NetworksClient implements BackgroundResource {
       extends AbstractPage<ListNetworksRequest, NetworkList, Network, ListPage> {
 
     private ListPage(
-        PageContext<ListNetworksRequest, NetworkList, Network> context, NetworkList response) {
+        @Nullable PageContext<ListNetworksRequest, NetworkList, Network> context,
+        @Nullable NetworkList response) {
       super(context, response);
     }
 
@@ -1982,13 +2156,14 @@ public class NetworksClient implements BackgroundResource {
 
     @Override
     protected ListPage createPage(
-        PageContext<ListNetworksRequest, NetworkList, Network> context, NetworkList response) {
+        @Nullable PageContext<ListNetworksRequest, NetworkList, Network> context,
+        @Nullable NetworkList response) {
       return new ListPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPage> createPageAsync(
-        PageContext<ListNetworksRequest, NetworkList, Network> context,
+        @Nullable PageContext<ListNetworksRequest, NetworkList, Network> context,
         ApiFuture<NetworkList> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1998,7 +2173,7 @@ public class NetworksClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListNetworksRequest, NetworkList, Network, ListPage, ListFixedSizeCollection> {
 
-    private ListFixedSizeCollection(List<ListPage> pages, int collectionSize) {
+    private ListFixedSizeCollection(@Nullable List<ListPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2007,7 +2182,8 @@ public class NetworksClient implements BackgroundResource {
     }
 
     @Override
-    protected ListFixedSizeCollection createCollection(List<ListPage> pages, int collectionSize) {
+    protected ListFixedSizeCollection createCollection(
+        @Nullable List<ListPage> pages, int collectionSize) {
       return new ListFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2046,10 +2222,11 @@ public class NetworksClient implements BackgroundResource {
           ListPeeringRoutesPage> {
 
     private ListPeeringRoutesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList, ExchangedPeeringRoute>
             context,
-        ExchangedPeeringRoutesList response) {
+        @Nullable ExchangedPeeringRoutesList response) {
       super(context, response);
     }
 
@@ -2059,16 +2236,18 @@ public class NetworksClient implements BackgroundResource {
 
     @Override
     protected ListPeeringRoutesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList, ExchangedPeeringRoute>
             context,
-        ExchangedPeeringRoutesList response) {
+        @Nullable ExchangedPeeringRoutesList response) {
       return new ListPeeringRoutesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListPeeringRoutesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList, ExchangedPeeringRoute>
             context,
         ApiFuture<ExchangedPeeringRoutesList> futureResponse) {
@@ -2085,7 +2264,7 @@ public class NetworksClient implements BackgroundResource {
           ListPeeringRoutesFixedSizeCollection> {
 
     private ListPeeringRoutesFixedSizeCollection(
-        List<ListPeeringRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListPeeringRoutesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2095,7 +2274,7 @@ public class NetworksClient implements BackgroundResource {
 
     @Override
     protected ListPeeringRoutesFixedSizeCollection createCollection(
-        List<ListPeeringRoutesPage> pages, int collectionSize) {
+        @Nullable List<ListPeeringRoutesPage> pages, int collectionSize) {
       return new ListPeeringRoutesFixedSizeCollection(pages, collectionSize);
     }
   }

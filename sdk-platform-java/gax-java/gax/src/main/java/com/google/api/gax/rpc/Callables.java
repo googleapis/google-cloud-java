@@ -39,6 +39,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.retrying.StreamingRetryAlgorithm;
 import java.util.Collection;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Class with utility methods to create callable objects using provided settings.
@@ -46,6 +47,7 @@ import java.util.Collection;
  * <p>The callable objects wrap a given direct callable with features like retry and exception
  * translation.
  */
+@NullMarked
 @BetaApi
 public class Callables {
 

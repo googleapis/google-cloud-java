@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -968,9 +970,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BackupForGKEClient implements BackgroundResource {
-  private final BackupForGKESettings settings;
+  private final @Nullable BackupForGKESettings settings;
   private final BackupForGKEStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -1017,7 +1020,7 @@ public class BackupForGKEClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final BackupForGKESettings getSettings() {
+  public final @Nullable BackupForGKESettings getSettings() {
     return settings;
   }
 
@@ -1074,7 +1077,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupPlan, OperationMetadata> createBackupPlanAsync(
-      LocationName parent, BackupPlan backupPlan, String backupPlanId) {
+      @Nullable LocationName parent, BackupPlan backupPlan, String backupPlanId) {
     CreateBackupPlanRequest request =
         CreateBackupPlanRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1242,7 +1245,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupPlansPagedResponse listBackupPlans(LocationName parent) {
+  public final ListBackupPlansPagedResponse listBackupPlans(@Nullable LocationName parent) {
     ListBackupPlansRequest request =
         ListBackupPlansRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1412,7 +1415,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupPlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupPlan getBackupPlan(BackupPlanName name) {
+  public final BackupPlan getBackupPlan(@Nullable BackupPlanName name) {
     GetBackupPlanRequest request =
         GetBackupPlanRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackupPlan(request);
@@ -1652,7 +1655,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupPlanAsync(
-      BackupPlanName name) {
+      @Nullable BackupPlanName name) {
     DeleteBackupPlanRequest request =
         DeleteBackupPlanRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBackupPlanAsync(request);
@@ -1807,7 +1810,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<BackupChannel, OperationMetadata> createBackupChannelAsync(
-      LocationName parent, BackupChannel backupChannel, String backupChannelId) {
+      @Nullable LocationName parent, BackupChannel backupChannel, String backupChannelId) {
     CreateBackupChannelRequest request =
         CreateBackupChannelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1976,7 +1979,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupChannelsPagedResponse listBackupChannels(LocationName parent) {
+  public final ListBackupChannelsPagedResponse listBackupChannels(@Nullable LocationName parent) {
     ListBackupChannelsRequest request =
         ListBackupChannelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2148,7 +2151,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupChannels/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupChannel getBackupChannel(BackupChannelName name) {
+  public final BackupChannel getBackupChannel(@Nullable BackupChannelName name) {
     GetBackupChannelRequest request =
         GetBackupChannelRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackupChannel(request);
@@ -2392,7 +2395,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteBackupChannelAsync(
-      BackupChannelName name) {
+      @Nullable BackupChannelName name) {
     DeleteBackupChannelRequest request =
         DeleteBackupChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2550,7 +2553,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListBackupPlanBindingsPagedResponse listBackupPlanBindings(
-      BackupChannelName parent) {
+      @Nullable BackupChannelName parent) {
     ListBackupPlanBindingsRequest request =
         ListBackupPlanBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2730,7 +2733,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupChannels/&#42;/backupPlanBindings/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BackupPlanBinding getBackupPlanBinding(BackupPlanBindingName name) {
+  public final BackupPlanBinding getBackupPlanBinding(@Nullable BackupPlanBindingName name) {
     GetBackupPlanBindingRequest request =
         GetBackupPlanBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2863,7 +2866,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Backup, OperationMetadata> createBackupAsync(
-      BackupPlanName parent, Backup backup, String backupId) {
+      @Nullable BackupPlanName parent, Backup backup, String backupId) {
     CreateBackupRequest request =
         CreateBackupRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3029,7 +3032,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupPlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBackupsPagedResponse listBackups(BackupPlanName parent) {
+  public final ListBackupsPagedResponse listBackups(@Nullable BackupPlanName parent) {
     ListBackupsRequest request =
         ListBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3199,7 +3202,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Backup getBackup(BackupName name) {
+  public final Backup getBackup(@Nullable BackupName name) {
     GetBackupRequest request =
         GetBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getBackup(request);
@@ -3436,7 +3439,8 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(BackupName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteBackupAsync(
+      @Nullable BackupName name) {
     DeleteBackupRequest request =
         DeleteBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteBackupAsync(request);
@@ -3588,7 +3592,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVolumeBackupsPagedResponse listVolumeBackups(BackupName parent) {
+  public final ListVolumeBackupsPagedResponse listVolumeBackups(@Nullable BackupName parent) {
     ListVolumeBackupsRequest request =
         ListVolumeBackupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3765,7 +3769,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/backupPlans/&#42;/backups/&#42;/volumeBackups/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VolumeBackup getVolumeBackup(VolumeBackupName name) {
+  public final VolumeBackup getVolumeBackup(@Nullable VolumeBackupName name) {
     GetVolumeBackupRequest request =
         GetVolumeBackupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getVolumeBackup(request);
@@ -3895,7 +3899,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RestorePlan, OperationMetadata> createRestorePlanAsync(
-      LocationName parent, RestorePlan restorePlan, String restorePlanId) {
+      @Nullable LocationName parent, RestorePlan restorePlan, String restorePlanId) {
     CreateRestorePlanRequest request =
         CreateRestorePlanRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4063,7 +4067,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRestorePlansPagedResponse listRestorePlans(LocationName parent) {
+  public final ListRestorePlansPagedResponse listRestorePlans(@Nullable LocationName parent) {
     ListRestorePlansRequest request =
         ListRestorePlansRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4234,7 +4238,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/restorePlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RestorePlan getRestorePlan(RestorePlanName name) {
+  public final RestorePlan getRestorePlan(@Nullable RestorePlanName name) {
     GetRestorePlanRequest request =
         GetRestorePlanRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRestorePlan(request);
@@ -4475,7 +4479,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRestorePlanAsync(
-      RestorePlanName name) {
+      @Nullable RestorePlanName name) {
     DeleteRestorePlanRequest request =
         DeleteRestorePlanRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4637,7 +4641,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<RestoreChannel, OperationMetadata> createRestoreChannelAsync(
-      LocationName parent, RestoreChannel restoreChannel, String restoreChannelId) {
+      @Nullable LocationName parent, RestoreChannel restoreChannel, String restoreChannelId) {
     CreateRestoreChannelRequest request =
         CreateRestoreChannelRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4809,7 +4813,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRestoreChannelsPagedResponse listRestoreChannels(LocationName parent) {
+  public final ListRestoreChannelsPagedResponse listRestoreChannels(@Nullable LocationName parent) {
     ListRestoreChannelsRequest request =
         ListRestoreChannelsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4982,7 +4986,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/restoreChannels/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RestoreChannel getRestoreChannel(RestoreChannelName name) {
+  public final RestoreChannel getRestoreChannel(@Nullable RestoreChannelName name) {
     GetRestoreChannelRequest request =
         GetRestoreChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5231,7 +5235,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteRestoreChannelAsync(
-      RestoreChannelName name) {
+      @Nullable RestoreChannelName name) {
     DeleteRestoreChannelRequest request =
         DeleteRestoreChannelRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5388,7 +5392,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRestorePlanBindingsPagedResponse listRestorePlanBindings(
-      RestoreChannelName parent) {
+      @Nullable RestoreChannelName parent) {
     ListRestorePlanBindingsRequest request =
         ListRestorePlanBindingsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5568,7 +5572,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/restoreChannels/&#42;/restorePlanBindings/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RestorePlanBinding getRestorePlanBinding(RestorePlanBindingName name) {
+  public final RestorePlanBinding getRestorePlanBinding(@Nullable RestorePlanBindingName name) {
     GetRestorePlanBindingRequest request =
         GetRestorePlanBindingRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -5701,7 +5705,7 @@ public class BackupForGKEClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Restore, OperationMetadata> createRestoreAsync(
-      RestorePlanName parent, Restore restore, String restoreId) {
+      @Nullable RestorePlanName parent, Restore restore, String restoreId) {
     CreateRestoreRequest request =
         CreateRestoreRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -5867,7 +5871,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/restorePlans/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRestoresPagedResponse listRestores(RestorePlanName parent) {
+  public final ListRestoresPagedResponse listRestores(@Nullable RestorePlanName parent) {
     ListRestoresRequest request =
         ListRestoresRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6035,7 +6039,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Restore getRestore(RestoreName name) {
+  public final Restore getRestore(@Nullable RestoreName name) {
     GetRestoreRequest request =
         GetRestoreRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRestore(request);
@@ -6274,7 +6278,8 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, OperationMetadata> deleteRestoreAsync(RestoreName name) {
+  public final OperationFuture<Empty, OperationMetadata> deleteRestoreAsync(
+      @Nullable RestoreName name) {
     DeleteRestoreRequest request =
         DeleteRestoreRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteRestoreAsync(request);
@@ -6429,7 +6434,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListVolumeRestoresPagedResponse listVolumeRestores(RestoreName parent) {
+  public final ListVolumeRestoresPagedResponse listVolumeRestores(@Nullable RestoreName parent) {
     ListVolumeRestoresRequest request =
         ListVolumeRestoresRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -6610,7 +6615,7 @@ public class BackupForGKEClient implements BackgroundResource {
    *     `projects/&#42;/locations/&#42;/restorePlans/&#42;/restores/&#42;/volumeRestores/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final VolumeRestore getVolumeRestore(VolumeRestoreName name) {
+  public final VolumeRestore getVolumeRestore(@Nullable VolumeRestoreName name) {
     GetVolumeRestoreRequest request =
         GetVolumeRestoreRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getVolumeRestore(request);
@@ -6739,7 +6744,8 @@ public class BackupForGKEClient implements BackgroundResource {
    *     projects/{project}/locations/{location}/backupPlans/{backup_plan}/backups/{backup}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GetBackupIndexDownloadUrlResponse getBackupIndexDownloadUrl(BackupName backup) {
+  public final GetBackupIndexDownloadUrlResponse getBackupIndexDownloadUrl(
+      @Nullable BackupName backup) {
     GetBackupIndexDownloadUrlRequest request =
         GetBackupIndexDownloadUrlRequest.newBuilder()
             .setBackup(backup == null ? null : backup.toString())
@@ -7249,8 +7255,8 @@ public class BackupForGKEClient implements BackgroundResource {
           ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan, ListBackupPlansPage> {
 
     private ListBackupPlansPage(
-        PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> context,
-        ListBackupPlansResponse response) {
+        @Nullable PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> context,
+        @Nullable ListBackupPlansResponse response) {
       super(context, response);
     }
 
@@ -7260,14 +7266,14 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListBackupPlansPage createPage(
-        PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> context,
-        ListBackupPlansResponse response) {
+        @Nullable PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> context,
+        @Nullable ListBackupPlansResponse response) {
       return new ListBackupPlansPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupPlansPage> createPageAsync(
-        PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> context,
+        @Nullable PageContext<ListBackupPlansRequest, ListBackupPlansResponse, BackupPlan> context,
         ApiFuture<ListBackupPlansResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7282,7 +7288,7 @@ public class BackupForGKEClient implements BackgroundResource {
           ListBackupPlansFixedSizeCollection> {
 
     private ListBackupPlansFixedSizeCollection(
-        List<ListBackupPlansPage> pages, int collectionSize) {
+        @Nullable List<ListBackupPlansPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7292,7 +7298,7 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListBackupPlansFixedSizeCollection createCollection(
-        List<ListBackupPlansPage> pages, int collectionSize) {
+        @Nullable List<ListBackupPlansPage> pages, int collectionSize) {
       return new ListBackupPlansFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7329,8 +7335,9 @@ public class BackupForGKEClient implements BackgroundResource {
           ListBackupChannelsPage> {
 
     private ListBackupChannelsPage(
-        PageContext<ListBackupChannelsRequest, ListBackupChannelsResponse, BackupChannel> context,
-        ListBackupChannelsResponse response) {
+        @Nullable PageContext<ListBackupChannelsRequest, ListBackupChannelsResponse, BackupChannel>
+            context,
+        @Nullable ListBackupChannelsResponse response) {
       super(context, response);
     }
 
@@ -7340,14 +7347,16 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListBackupChannelsPage createPage(
-        PageContext<ListBackupChannelsRequest, ListBackupChannelsResponse, BackupChannel> context,
-        ListBackupChannelsResponse response) {
+        @Nullable PageContext<ListBackupChannelsRequest, ListBackupChannelsResponse, BackupChannel>
+            context,
+        @Nullable ListBackupChannelsResponse response) {
       return new ListBackupChannelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupChannelsPage> createPageAsync(
-        PageContext<ListBackupChannelsRequest, ListBackupChannelsResponse, BackupChannel> context,
+        @Nullable PageContext<ListBackupChannelsRequest, ListBackupChannelsResponse, BackupChannel>
+            context,
         ApiFuture<ListBackupChannelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7362,7 +7371,7 @@ public class BackupForGKEClient implements BackgroundResource {
           ListBackupChannelsFixedSizeCollection> {
 
     private ListBackupChannelsFixedSizeCollection(
-        List<ListBackupChannelsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupChannelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7372,7 +7381,7 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListBackupChannelsFixedSizeCollection createCollection(
-        List<ListBackupChannelsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupChannelsPage> pages, int collectionSize) {
       return new ListBackupChannelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7411,10 +7420,11 @@ public class BackupForGKEClient implements BackgroundResource {
           ListBackupPlanBindingsPage> {
 
     private ListBackupPlanBindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse, BackupPlanBinding>
             context,
-        ListBackupPlanBindingsResponse response) {
+        @Nullable ListBackupPlanBindingsResponse response) {
       super(context, response);
     }
 
@@ -7424,16 +7434,18 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListBackupPlanBindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse, BackupPlanBinding>
             context,
-        ListBackupPlanBindingsResponse response) {
+        @Nullable ListBackupPlanBindingsResponse response) {
       return new ListBackupPlanBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupPlanBindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListBackupPlanBindingsRequest, ListBackupPlanBindingsResponse, BackupPlanBinding>
             context,
         ApiFuture<ListBackupPlanBindingsResponse> futureResponse) {
@@ -7450,7 +7462,7 @@ public class BackupForGKEClient implements BackgroundResource {
           ListBackupPlanBindingsFixedSizeCollection> {
 
     private ListBackupPlanBindingsFixedSizeCollection(
-        List<ListBackupPlanBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupPlanBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7460,7 +7472,7 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListBackupPlanBindingsFixedSizeCollection createCollection(
-        List<ListBackupPlanBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupPlanBindingsPage> pages, int collectionSize) {
       return new ListBackupPlanBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7491,8 +7503,8 @@ public class BackupForGKEClient implements BackgroundResource {
       extends AbstractPage<ListBackupsRequest, ListBackupsResponse, Backup, ListBackupsPage> {
 
     private ListBackupsPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       super(context, response);
     }
 
@@ -7502,14 +7514,14 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListBackupsPage createPage(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
-        ListBackupsResponse response) {
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable ListBackupsResponse response) {
       return new ListBackupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBackupsPage> createPageAsync(
-        PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
+        @Nullable PageContext<ListBackupsRequest, ListBackupsResponse, Backup> context,
         ApiFuture<ListBackupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7523,7 +7535,8 @@ public class BackupForGKEClient implements BackgroundResource {
           ListBackupsPage,
           ListBackupsFixedSizeCollection> {
 
-    private ListBackupsFixedSizeCollection(List<ListBackupsPage> pages, int collectionSize) {
+    private ListBackupsFixedSizeCollection(
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7533,7 +7546,7 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListBackupsFixedSizeCollection createCollection(
-        List<ListBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListBackupsPage> pages, int collectionSize) {
       return new ListBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7570,8 +7583,9 @@ public class BackupForGKEClient implements BackgroundResource {
           ListVolumeBackupsPage> {
 
     private ListVolumeBackupsPage(
-        PageContext<ListVolumeBackupsRequest, ListVolumeBackupsResponse, VolumeBackup> context,
-        ListVolumeBackupsResponse response) {
+        @Nullable PageContext<ListVolumeBackupsRequest, ListVolumeBackupsResponse, VolumeBackup>
+            context,
+        @Nullable ListVolumeBackupsResponse response) {
       super(context, response);
     }
 
@@ -7581,14 +7595,16 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListVolumeBackupsPage createPage(
-        PageContext<ListVolumeBackupsRequest, ListVolumeBackupsResponse, VolumeBackup> context,
-        ListVolumeBackupsResponse response) {
+        @Nullable PageContext<ListVolumeBackupsRequest, ListVolumeBackupsResponse, VolumeBackup>
+            context,
+        @Nullable ListVolumeBackupsResponse response) {
       return new ListVolumeBackupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVolumeBackupsPage> createPageAsync(
-        PageContext<ListVolumeBackupsRequest, ListVolumeBackupsResponse, VolumeBackup> context,
+        @Nullable PageContext<ListVolumeBackupsRequest, ListVolumeBackupsResponse, VolumeBackup>
+            context,
         ApiFuture<ListVolumeBackupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7603,7 +7619,7 @@ public class BackupForGKEClient implements BackgroundResource {
           ListVolumeBackupsFixedSizeCollection> {
 
     private ListVolumeBackupsFixedSizeCollection(
-        List<ListVolumeBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListVolumeBackupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7613,7 +7629,7 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListVolumeBackupsFixedSizeCollection createCollection(
-        List<ListVolumeBackupsPage> pages, int collectionSize) {
+        @Nullable List<ListVolumeBackupsPage> pages, int collectionSize) {
       return new ListVolumeBackupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7647,8 +7663,9 @@ public class BackupForGKEClient implements BackgroundResource {
           ListRestorePlansRequest, ListRestorePlansResponse, RestorePlan, ListRestorePlansPage> {
 
     private ListRestorePlansPage(
-        PageContext<ListRestorePlansRequest, ListRestorePlansResponse, RestorePlan> context,
-        ListRestorePlansResponse response) {
+        @Nullable PageContext<ListRestorePlansRequest, ListRestorePlansResponse, RestorePlan>
+            context,
+        @Nullable ListRestorePlansResponse response) {
       super(context, response);
     }
 
@@ -7658,14 +7675,16 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListRestorePlansPage createPage(
-        PageContext<ListRestorePlansRequest, ListRestorePlansResponse, RestorePlan> context,
-        ListRestorePlansResponse response) {
+        @Nullable PageContext<ListRestorePlansRequest, ListRestorePlansResponse, RestorePlan>
+            context,
+        @Nullable ListRestorePlansResponse response) {
       return new ListRestorePlansPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRestorePlansPage> createPageAsync(
-        PageContext<ListRestorePlansRequest, ListRestorePlansResponse, RestorePlan> context,
+        @Nullable PageContext<ListRestorePlansRequest, ListRestorePlansResponse, RestorePlan>
+            context,
         ApiFuture<ListRestorePlansResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7680,7 +7699,7 @@ public class BackupForGKEClient implements BackgroundResource {
           ListRestorePlansFixedSizeCollection> {
 
     private ListRestorePlansFixedSizeCollection(
-        List<ListRestorePlansPage> pages, int collectionSize) {
+        @Nullable List<ListRestorePlansPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7690,7 +7709,7 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListRestorePlansFixedSizeCollection createCollection(
-        List<ListRestorePlansPage> pages, int collectionSize) {
+        @Nullable List<ListRestorePlansPage> pages, int collectionSize) {
       return new ListRestorePlansFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7728,9 +7747,10 @@ public class BackupForGKEClient implements BackgroundResource {
           ListRestoreChannelsPage> {
 
     private ListRestoreChannelsPage(
-        PageContext<ListRestoreChannelsRequest, ListRestoreChannelsResponse, RestoreChannel>
+        @Nullable
+            PageContext<ListRestoreChannelsRequest, ListRestoreChannelsResponse, RestoreChannel>
             context,
-        ListRestoreChannelsResponse response) {
+        @Nullable ListRestoreChannelsResponse response) {
       super(context, response);
     }
 
@@ -7740,15 +7760,17 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListRestoreChannelsPage createPage(
-        PageContext<ListRestoreChannelsRequest, ListRestoreChannelsResponse, RestoreChannel>
+        @Nullable
+            PageContext<ListRestoreChannelsRequest, ListRestoreChannelsResponse, RestoreChannel>
             context,
-        ListRestoreChannelsResponse response) {
+        @Nullable ListRestoreChannelsResponse response) {
       return new ListRestoreChannelsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRestoreChannelsPage> createPageAsync(
-        PageContext<ListRestoreChannelsRequest, ListRestoreChannelsResponse, RestoreChannel>
+        @Nullable
+            PageContext<ListRestoreChannelsRequest, ListRestoreChannelsResponse, RestoreChannel>
             context,
         ApiFuture<ListRestoreChannelsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -7764,7 +7786,7 @@ public class BackupForGKEClient implements BackgroundResource {
           ListRestoreChannelsFixedSizeCollection> {
 
     private ListRestoreChannelsFixedSizeCollection(
-        List<ListRestoreChannelsPage> pages, int collectionSize) {
+        @Nullable List<ListRestoreChannelsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7774,7 +7796,7 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListRestoreChannelsFixedSizeCollection createCollection(
-        List<ListRestoreChannelsPage> pages, int collectionSize) {
+        @Nullable List<ListRestoreChannelsPage> pages, int collectionSize) {
       return new ListRestoreChannelsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7813,10 +7835,11 @@ public class BackupForGKEClient implements BackgroundResource {
           ListRestorePlanBindingsPage> {
 
     private ListRestorePlanBindingsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse, RestorePlanBinding>
             context,
-        ListRestorePlanBindingsResponse response) {
+        @Nullable ListRestorePlanBindingsResponse response) {
       super(context, response);
     }
 
@@ -7826,16 +7849,18 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListRestorePlanBindingsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse, RestorePlanBinding>
             context,
-        ListRestorePlanBindingsResponse response) {
+        @Nullable ListRestorePlanBindingsResponse response) {
       return new ListRestorePlanBindingsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRestorePlanBindingsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRestorePlanBindingsRequest, ListRestorePlanBindingsResponse, RestorePlanBinding>
             context,
         ApiFuture<ListRestorePlanBindingsResponse> futureResponse) {
@@ -7852,7 +7877,7 @@ public class BackupForGKEClient implements BackgroundResource {
           ListRestorePlanBindingsFixedSizeCollection> {
 
     private ListRestorePlanBindingsFixedSizeCollection(
-        List<ListRestorePlanBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListRestorePlanBindingsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7862,7 +7887,7 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListRestorePlanBindingsFixedSizeCollection createCollection(
-        List<ListRestorePlanBindingsPage> pages, int collectionSize) {
+        @Nullable List<ListRestorePlanBindingsPage> pages, int collectionSize) {
       return new ListRestorePlanBindingsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7895,8 +7920,8 @@ public class BackupForGKEClient implements BackgroundResource {
       extends AbstractPage<ListRestoresRequest, ListRestoresResponse, Restore, ListRestoresPage> {
 
     private ListRestoresPage(
-        PageContext<ListRestoresRequest, ListRestoresResponse, Restore> context,
-        ListRestoresResponse response) {
+        @Nullable PageContext<ListRestoresRequest, ListRestoresResponse, Restore> context,
+        @Nullable ListRestoresResponse response) {
       super(context, response);
     }
 
@@ -7906,14 +7931,14 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListRestoresPage createPage(
-        PageContext<ListRestoresRequest, ListRestoresResponse, Restore> context,
-        ListRestoresResponse response) {
+        @Nullable PageContext<ListRestoresRequest, ListRestoresResponse, Restore> context,
+        @Nullable ListRestoresResponse response) {
       return new ListRestoresPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRestoresPage> createPageAsync(
-        PageContext<ListRestoresRequest, ListRestoresResponse, Restore> context,
+        @Nullable PageContext<ListRestoresRequest, ListRestoresResponse, Restore> context,
         ApiFuture<ListRestoresResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -7927,7 +7952,8 @@ public class BackupForGKEClient implements BackgroundResource {
           ListRestoresPage,
           ListRestoresFixedSizeCollection> {
 
-    private ListRestoresFixedSizeCollection(List<ListRestoresPage> pages, int collectionSize) {
+    private ListRestoresFixedSizeCollection(
+        @Nullable List<ListRestoresPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -7937,7 +7963,7 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListRestoresFixedSizeCollection createCollection(
-        List<ListRestoresPage> pages, int collectionSize) {
+        @Nullable List<ListRestoresPage> pages, int collectionSize) {
       return new ListRestoresFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -7974,8 +8000,9 @@ public class BackupForGKEClient implements BackgroundResource {
           ListVolumeRestoresPage> {
 
     private ListVolumeRestoresPage(
-        PageContext<ListVolumeRestoresRequest, ListVolumeRestoresResponse, VolumeRestore> context,
-        ListVolumeRestoresResponse response) {
+        @Nullable PageContext<ListVolumeRestoresRequest, ListVolumeRestoresResponse, VolumeRestore>
+            context,
+        @Nullable ListVolumeRestoresResponse response) {
       super(context, response);
     }
 
@@ -7985,14 +8012,16 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListVolumeRestoresPage createPage(
-        PageContext<ListVolumeRestoresRequest, ListVolumeRestoresResponse, VolumeRestore> context,
-        ListVolumeRestoresResponse response) {
+        @Nullable PageContext<ListVolumeRestoresRequest, ListVolumeRestoresResponse, VolumeRestore>
+            context,
+        @Nullable ListVolumeRestoresResponse response) {
       return new ListVolumeRestoresPage(context, response);
     }
 
     @Override
     public ApiFuture<ListVolumeRestoresPage> createPageAsync(
-        PageContext<ListVolumeRestoresRequest, ListVolumeRestoresResponse, VolumeRestore> context,
+        @Nullable PageContext<ListVolumeRestoresRequest, ListVolumeRestoresResponse, VolumeRestore>
+            context,
         ApiFuture<ListVolumeRestoresResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8007,7 +8036,7 @@ public class BackupForGKEClient implements BackgroundResource {
           ListVolumeRestoresFixedSizeCollection> {
 
     private ListVolumeRestoresFixedSizeCollection(
-        List<ListVolumeRestoresPage> pages, int collectionSize) {
+        @Nullable List<ListVolumeRestoresPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8017,7 +8046,7 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListVolumeRestoresFixedSizeCollection createCollection(
-        List<ListVolumeRestoresPage> pages, int collectionSize) {
+        @Nullable List<ListVolumeRestoresPage> pages, int collectionSize) {
       return new ListVolumeRestoresFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -8051,8 +8080,8 @@ public class BackupForGKEClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -8062,14 +8091,14 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -8083,7 +8112,8 @@ public class BackupForGKEClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -8093,7 +8123,7 @@ public class BackupForGKEClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

@@ -45,6 +45,8 @@ import java.util.Collections;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Provides the Application Default Credential from the environment.
@@ -52,6 +54,7 @@ import java.util.logging.Logger;
  * <p>An instance represents the per-process state used to get and cache the credential and allows
  * overriding the state and environment for testing purposes.
  */
+@NullMarked
 class DefaultCredentialsProvider {
   static final DefaultCredentialsProvider DEFAULT = new DefaultCredentialsProvider();
   static final String CREDENTIAL_ENV_VAR = "GOOGLE_APPLICATION_CREDENTIALS";
@@ -85,7 +88,7 @@ class DefaultCredentialsProvider {
       "SUPPRESS_GCLOUD_CREDS_WARNING";
 
   // These variables should only be accessed inside a synchronized block
-  private GoogleCredentials cachedCredentials = null;
+  private @Nullable GoogleCredentials cachedCredentials = null;
   private boolean checkedAppEngine = false;
   private boolean checkedComputeEngine = false;
 
@@ -127,7 +130,7 @@ class DefaultCredentialsProvider {
     throw new IOException(CLOUDSDK_MISSING_CREDENTIALS);
   }
 
-  private final GoogleCredentials getDefaultCredentialsUnsynchronized(
+  private @Nullable GoogleCredentials getDefaultCredentialsUnsynchronized(
       HttpTransportFactory transportFactory) throws IOException {
 
     // First try the environment variable
@@ -239,7 +242,7 @@ class DefaultCredentialsProvider {
     return credentials;
   }
 
-  private final File getWellKnownCredentialsFile() {
+  private File getWellKnownCredentialsFile() throws IOException {
     return GoogleAuthUtils.getWellKnownCredentialsFile(this);
   }
 
@@ -283,7 +286,7 @@ class DefaultCredentialsProvider {
         cause);
   }
 
-  private GoogleCredentials tryGetCloudShellCredentials() {
+  private @Nullable GoogleCredentials tryGetCloudShellCredentials() {
     String port = getEnv(CLOUD_SHELL_ENV_VAR);
     if (port != null) {
       return CloudShellCredentials.create(Integer.parseInt(port));
@@ -292,7 +295,7 @@ class DefaultCredentialsProvider {
     }
   }
 
-  private GoogleCredentials tryGetAppEngineCredential() throws IOException {
+  private @Nullable GoogleCredentials tryGetAppEngineCredential() throws IOException {
     // Checking for App Engine requires a class load, so check only once
     if (checkedAppEngine) {
       return null;
@@ -306,7 +309,8 @@ class DefaultCredentialsProvider {
         Collections.<String>emptyList(), Collections.<String>emptyList());
   }
 
-  private final GoogleCredentials tryGetComputeCredentials(HttpTransportFactory transportFactory) {
+  private @Nullable GoogleCredentials tryGetComputeCredentials(
+      HttpTransportFactory transportFactory) {
     // Checking compute engine requires a round-trip, so check only once
     if (checkedComputeEngine) {
       return null;
@@ -349,11 +353,11 @@ class DefaultCredentialsProvider {
     return Class.forName(className);
   }
 
-  String getEnv(String name) {
+  @Nullable String getEnv(String name) {
     return System.getenv(name);
   }
 
-  String getProperty(String property, String def) {
+  @Nullable String getProperty(String property, @Nullable String def) {
     return System.getProperty(property, def);
   }
 

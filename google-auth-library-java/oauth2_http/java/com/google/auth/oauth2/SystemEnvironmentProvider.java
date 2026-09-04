@@ -32,12 +32,15 @@ package com.google.auth.oauth2;
 
 import com.google.api.core.InternalApi;
 import java.io.Serializable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Represents the default system environment provider.
  *
  * <p>For internal use only.
  */
+@NullMarked
 @InternalApi
 public class SystemEnvironmentProvider implements EnvironmentProvider, Serializable {
   static final SystemEnvironmentProvider INSTANCE = new SystemEnvironmentProvider();
@@ -46,7 +49,7 @@ public class SystemEnvironmentProvider implements EnvironmentProvider, Serializa
   private SystemEnvironmentProvider() {}
 
   @Override
-  public String getEnv(String name) {
+  public @Nullable String getEnv(String name) {
     return System.getenv(name);
   }
 

@@ -51,7 +51,6 @@ import com.google.api.client.json.webtoken.JsonWebToken;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.client.util.GenericData;
 import com.google.api.client.util.Joiner;
-import com.google.api.client.util.Preconditions;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
 import com.google.auth.RequestMetadataCallback;
@@ -61,6 +60,7 @@ import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.MetricsUtils.RequestType;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects.ToStringHelper;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -83,12 +83,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Executor;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * OAuth2 credentials representing a Service Account for calling Google APIs.
  *
  * <p>By default uses a JSON Web Token (JWT) to fetch access tokens.
  */
+@NullMarked
 public class ServiceAccountCredentials extends GoogleCredentials
     implements ServiceAccountSigner, IdTokenProvider, JwtProvider {
 
@@ -100,12 +103,12 @@ public class ServiceAccountCredentials extends GoogleCredentials
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(ServiceAccountCredentials.class);
 
-  private final String clientId;
+  private final @Nullable String clientId;
   private final String clientEmail;
   private final PrivateKey privateKey;
-  private final String privateKeyId;
-  private final String serviceAccountUser;
-  private final String projectId;
+  private final @Nullable String privateKeyId;
+  private final @Nullable String serviceAccountUser;
+  private final @Nullable String projectId;
   private final String transportFactoryClassName;
   private final URI tokenServerUri;
   private final Collection<String> scopes;
@@ -116,7 +119,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
 
   private transient HttpTransportFactory transportFactory;
 
-  private transient JwtCredentials selfSignedJwtCredentialsWithScope = null;
+  private transient @Nullable JwtCredentials selfSignedJwtCredentialsWithScope = null;
 
   /**
    * Internal constructor
@@ -748,7 +751,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
    */
   @Override
   public GoogleCredentials createScoped(
-      Collection<String> newScopes, Collection<String> newDefaultScopes) {
+      Collection<String> newScopes, @Nullable Collection<String> newDefaultScopes) {
     return this.toBuilder().setScopes(newScopes, newDefaultScopes).setAccessToken(null).build();
   }
 
@@ -781,7 +784,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     return this.toBuilder().setServiceAccountUser(user).build();
   }
 
-  public final String getClientId() {
+  public final @Nullable String getClientId() {
     return clientId;
   }
 
@@ -793,7 +796,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     return privateKey;
   }
 
-  public final String getPrivateKeyId() {
+  public final @Nullable String getPrivateKeyId() {
     return privateKeyId;
   }
 
@@ -805,7 +808,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     return defaultScopes;
   }
 
-  public final String getServiceAccountUser() {
+  public final @Nullable String getServiceAccountUser() {
     return serviceAccountUser;
   }
 
@@ -813,7 +816,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * @return the projectId set in the SA Key file or the user set projectId
    */
   @Override
-  public final String getProjectId() {
+  public final @Nullable String getProjectId() {
     return projectId;
   }
 
@@ -908,7 +911,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof ServiceAccountCredentials)) {
       return false;
     }
@@ -996,7 +999,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
    * function returns "https://compute.googleapis.com/".
    */
   @VisibleForTesting
-  static URI getUriForSelfSignedJWT(URI uri) {
+  static @Nullable URI getUriForSelfSignedJWT(@Nullable URI uri) {
     if (uri == null || uri.getScheme() == null || uri.getHost() == null) {
       return uri;
     }
@@ -1008,12 +1011,13 @@ public class ServiceAccountCredentials extends GoogleCredentials
   }
 
   @VisibleForTesting
-  JwtCredentials createSelfSignedJwtCredentials(final URI uri) {
+  JwtCredentials createSelfSignedJwtCredentials(final @Nullable URI uri) {
     return createSelfSignedJwtCredentials(uri, scopes.isEmpty() ? defaultScopes : scopes);
   }
 
   @VisibleForTesting
-  JwtCredentials createSelfSignedJwtCredentials(final URI uri, Collection<String> scopes) {
+  JwtCredentials createSelfSignedJwtCredentials(
+      final @Nullable URI uri, Collection<String> scopes) {
     // Create a JwtCredentials for self-signed JWT. See https://google.aip.dev/auth/4111.
     JwtClaims.Builder claimsBuilder =
         JwtClaims.newBuilder().setIssuer(clientEmail).setSubject(clientEmail);
@@ -1058,7 +1062,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
 
   /** Provide the request metadata by putting an access JWT directly in the metadata. */
   @Override
-  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+  public Map<String, List<String>> getRequestMetadata(@Nullable URI uri) throws IOException {
     if (createScopedRequired() && uri == null) {
       throw new IOException(
           "Scopes and uri are not configured for service account. Specify the scopes"
@@ -1146,16 +1150,16 @@ public class ServiceAccountCredentials extends GoogleCredentials
 
   public static class Builder extends GoogleCredentials.Builder {
 
-    private String clientId;
-    private String clientEmail;
-    private PrivateKey privateKey;
-    private String privateKeyId;
-    private String serviceAccountUser;
-    private String projectId;
-    private URI tokenServerUri;
-    private Collection<String> scopes;
-    private Collection<String> defaultScopes;
-    private HttpTransportFactory transportFactory;
+    private @Nullable String clientId;
+    private @Nullable String clientEmail;
+    private @Nullable PrivateKey privateKey;
+    private @Nullable String privateKeyId;
+    private @Nullable String serviceAccountUser;
+    private @Nullable String projectId;
+    private @Nullable URI tokenServerUri;
+    private @Nullable Collection<String> scopes;
+    private @Nullable Collection<String> defaultScopes;
+    private @Nullable HttpTransportFactory transportFactory;
     private int lifetime = DEFAULT_LIFETIME_IN_SECONDS;
     private boolean useJwtAccessWithScope = false;
     private boolean defaultRetriesEnabled = true;
@@ -1236,7 +1240,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
     }
 
     @CanIgnoreReturnValue
-    public Builder setTokenServerUri(URI tokenServerUri) {
+    public Builder setTokenServerUri(@Nullable URI tokenServerUri) {
       this.tokenServerUri = tokenServerUri;
       return this;
     }
@@ -1249,7 +1253,7 @@ public class ServiceAccountCredentials extends GoogleCredentials
 
     @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
       super.setQuotaProjectId(quotaProjectId);
       return this;
     }
@@ -1276,48 +1280,50 @@ public class ServiceAccountCredentials extends GoogleCredentials
       return this;
     }
 
+    @Override
+    @CanIgnoreReturnValue
     public Builder setUniverseDomain(String universeDomain) {
-      super.universeDomain = universeDomain;
+      super.setUniverseDomain(universeDomain);
       return this;
     }
 
-    public String getClientId() {
+    public @Nullable String getClientId() {
       return clientId;
     }
 
-    public String getClientEmail() {
+    public @Nullable String getClientEmail() {
       return clientEmail;
     }
 
-    public PrivateKey getPrivateKey() {
+    public @Nullable PrivateKey getPrivateKey() {
       return privateKey;
     }
 
-    public String getPrivateKeyId() {
+    public @Nullable String getPrivateKeyId() {
       return privateKeyId;
     }
 
-    public Collection<String> getScopes() {
+    public @Nullable Collection<String> getScopes() {
       return scopes;
     }
 
-    public Collection<String> getDefaultScopes() {
+    public @Nullable Collection<String> getDefaultScopes() {
       return defaultScopes;
     }
 
-    public String getServiceAccountUser() {
+    public @Nullable String getServiceAccountUser() {
       return serviceAccountUser;
     }
 
-    public String getProjectId() {
+    public @Nullable String getProjectId() {
       return projectId;
     }
 
-    public URI getTokenServerUri() {
+    public @Nullable URI getTokenServerUri() {
       return tokenServerUri;
     }
 
-    public HttpTransportFactory getHttpTransportFactory() {
+    public @Nullable HttpTransportFactory getHttpTransportFactory() {
       return transportFactory;
     }
 

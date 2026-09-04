@@ -27,14 +27,18 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Provides methods for handling `Company` objects.
+ * Service Description: Provides methods for handling [Company][google.ads.admanager.v1.Company]
+ * objects.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -63,7 +67,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetCompany</td>
- *      <td><p> API to retrieve a `Company` object.</td>
+ *      <td><p> Retrieves a [Company][google.ads.admanager.v1.Company] object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -82,7 +86,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListCompanies</td>
- *      <td><p> API to retrieve a list of `Company` objects.</td>
+ *      <td><p> Lists [Company][google.ads.admanager.v1.Company] objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -97,6 +101,75 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listCompaniesPagedCallable()
  *           <li><p> listCompaniesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateCompany</td>
+ *      <td><p> Creates a [Company][google.ads.admanager.v1.Company] object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createCompany(CreateCompanyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createCompany(NetworkName parent, Company company)
+ *           <li><p> createCompany(String parent, Company company)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createCompanyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchCreateCompanies</td>
+ *      <td><p> Creates [Company][google.ads.admanager.v1.Company] objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchCreateCompanies(NetworkName parent, List&lt;CreateCompanyRequest&gt; requests)
+ *           <li><p> batchCreateCompanies(String parent, List&lt;CreateCompanyRequest&gt; requests)
+ *           <li><p> batchCreateCompanies(BatchCreateCompaniesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchCreateCompaniesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateCompany</td>
+ *      <td><p> Updates a [Company][google.ads.admanager.v1.Company] object.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateCompany(UpdateCompanyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateCompany(Company company, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateCompanyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> BatchUpdateCompanies</td>
+ *      <td><p> Batch updates [Company][google.ads.admanager.v1.Company] objects.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> batchUpdateCompanies(NetworkName parent, List&lt;UpdateCompanyRequest&gt; requests)
+ *           <li><p> batchUpdateCompanies(String parent, List&lt;UpdateCompanyRequest&gt; requests)
+ *           <li><p> batchUpdateCompanies(BatchUpdateCompaniesRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> batchUpdateCompaniesCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -141,9 +214,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CompanyServiceClient implements BackgroundResource {
-  private final CompanyServiceSettings settings;
+  private final @Nullable CompanyServiceSettings settings;
   private final CompanyServiceStub stub;
 
   /** Constructs an instance of CompanyServiceClient with default settings. */
@@ -183,7 +257,7 @@ public class CompanyServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final CompanyServiceSettings getSettings() {
+  public final @Nullable CompanyServiceSettings getSettings() {
     return settings;
   }
 
@@ -193,7 +267,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Company` object.
+   * Retrieves a [Company][google.ads.admanager.v1.Company] object.
    *
    * <p>Sample code:
    *
@@ -213,7 +287,7 @@ public class CompanyServiceClient implements BackgroundResource {
    *     `networks/{network_code}/companies/{company_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Company getCompany(CompanyName name) {
+  public final Company getCompany(@Nullable CompanyName name) {
     GetCompanyRequest request =
         GetCompanyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getCompany(request);
@@ -221,7 +295,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Company` object.
+   * Retrieves a [Company][google.ads.admanager.v1.Company] object.
    *
    * <p>Sample code:
    *
@@ -248,7 +322,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Company` object.
+   * Retrieves a [Company][google.ads.admanager.v1.Company] object.
    *
    * <p>Sample code:
    *
@@ -276,7 +350,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `Company` object.
+   * Retrieves a [Company][google.ads.admanager.v1.Company] object.
    *
    * <p>Sample code:
    *
@@ -303,7 +377,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Company` objects.
+   * Lists [Company][google.ads.admanager.v1.Company] objects.
    *
    * <p>Sample code:
    *
@@ -321,11 +395,11 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of Companies. Format:
+   * @param parent Required. The parent, which owns this collection of [Companies][]. Format:
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListCompaniesPagedResponse listCompanies(NetworkName parent) {
+  public final ListCompaniesPagedResponse listCompanies(@Nullable NetworkName parent) {
     ListCompaniesRequest request =
         ListCompaniesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -335,7 +409,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Company` objects.
+   * Lists [Company][google.ads.admanager.v1.Company] objects.
    *
    * <p>Sample code:
    *
@@ -353,7 +427,7 @@ public class CompanyServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent, which owns this collection of Companies. Format:
+   * @param parent Required. The parent, which owns this collection of [Companies][]. Format:
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -364,7 +438,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Company` objects.
+   * Lists [Company][google.ads.admanager.v1.Company] objects.
    *
    * <p>Sample code:
    *
@@ -399,7 +473,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Company` objects.
+   * Lists [Company][google.ads.admanager.v1.Company] objects.
    *
    * <p>Sample code:
    *
@@ -435,7 +509,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `Company` objects.
+   * Lists [Company][google.ads.admanager.v1.Company] objects.
    *
    * <p>Sample code:
    *
@@ -472,6 +546,478 @@ public class CompanyServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<ListCompaniesRequest, ListCompaniesResponse> listCompaniesCallable() {
     return stub.listCompaniesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Company][google.ads.admanager.v1.Company] object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   Company company = Company.newBuilder().build();
+   *   Company response = companyServiceClient.createCompany(parent, company);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this
+   *     [Company][google.ads.admanager.v1.Company] will be created. Format:
+   *     `networks/{network_code}`
+   * @param company Required. The [Company][google.ads.admanager.v1.Company] to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Company createCompany(@Nullable NetworkName parent, Company company) {
+    CreateCompanyRequest request =
+        CreateCompanyRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCompany(company)
+            .build();
+    return createCompany(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Company][google.ads.admanager.v1.Company] object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   Company company = Company.newBuilder().build();
+   *   Company response = companyServiceClient.createCompany(parent, company);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this
+   *     [Company][google.ads.admanager.v1.Company] will be created. Format:
+   *     `networks/{network_code}`
+   * @param company Required. The [Company][google.ads.admanager.v1.Company] to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Company createCompany(String parent, Company company) {
+    CreateCompanyRequest request =
+        CreateCompanyRequest.newBuilder().setParent(parent).setCompany(company).build();
+    return createCompany(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Company][google.ads.admanager.v1.Company] object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   CreateCompanyRequest request =
+   *       CreateCompanyRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setCompany(Company.newBuilder().build())
+   *           .build();
+   *   Company response = companyServiceClient.createCompany(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Company createCompany(CreateCompanyRequest request) {
+    return createCompanyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Company][google.ads.admanager.v1.Company] object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   CreateCompanyRequest request =
+   *       CreateCompanyRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .setCompany(Company.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Company> future = companyServiceClient.createCompanyCallable().futureCall(request);
+   *   // Do something.
+   *   Company response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable() {
+    return stub.createCompanyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates [Company][google.ads.admanager.v1.Company] objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<CreateCompanyRequest> requests = new ArrayList<>();
+   *   BatchCreateCompaniesResponse response =
+   *       companyServiceClient.batchCreateCompanies(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where [Companies][] will be created. Format:
+   *     `networks/{network_code}` The parent field in the CreateCompanyRequest must match this
+   *     field.
+   * @param requests Required. The [Company][google.ads.admanager.v1.Company] objects to create. A
+   *     maximum of 100 objects can be created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateCompaniesResponse batchCreateCompanies(
+      @Nullable NetworkName parent, List<CreateCompanyRequest> requests) {
+    BatchCreateCompaniesRequest request =
+        BatchCreateCompaniesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchCreateCompanies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates [Company][google.ads.admanager.v1.Company] objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<CreateCompanyRequest> requests = new ArrayList<>();
+   *   BatchCreateCompaniesResponse response =
+   *       companyServiceClient.batchCreateCompanies(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where [Companies][] will be created. Format:
+   *     `networks/{network_code}` The parent field in the CreateCompanyRequest must match this
+   *     field.
+   * @param requests Required. The [Company][google.ads.admanager.v1.Company] objects to create. A
+   *     maximum of 100 objects can be created in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateCompaniesResponse batchCreateCompanies(
+      String parent, List<CreateCompanyRequest> requests) {
+    BatchCreateCompaniesRequest request =
+        BatchCreateCompaniesRequest.newBuilder().setParent(parent).addAllRequests(requests).build();
+    return batchCreateCompanies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates [Company][google.ads.admanager.v1.Company] objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   BatchCreateCompaniesRequest request =
+   *       BatchCreateCompaniesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<CreateCompanyRequest>())
+   *           .build();
+   *   BatchCreateCompaniesResponse response = companyServiceClient.batchCreateCompanies(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchCreateCompaniesResponse batchCreateCompanies(
+      BatchCreateCompaniesRequest request) {
+    return batchCreateCompaniesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates [Company][google.ads.admanager.v1.Company] objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   BatchCreateCompaniesRequest request =
+   *       BatchCreateCompaniesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<CreateCompanyRequest>())
+   *           .build();
+   *   ApiFuture<BatchCreateCompaniesResponse> future =
+   *       companyServiceClient.batchCreateCompaniesCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateCompaniesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchCreateCompaniesRequest, BatchCreateCompaniesResponse>
+      batchCreateCompaniesCallable() {
+    return stub.batchCreateCompaniesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a [Company][google.ads.admanager.v1.Company] object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   Company company = Company.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Company response = companyServiceClient.updateCompany(company, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param company Required. The [Company][google.ads.admanager.v1.Company] to update.
+   *     <p>The [Company][google.ads.admanager.v1.Company]'s `name` is used to identify the
+   *     [Company][google.ads.admanager.v1.Company] to update.
+   * @param updateMask Optional. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Company updateCompany(Company company, FieldMask updateMask) {
+    UpdateCompanyRequest request =
+        UpdateCompanyRequest.newBuilder().setCompany(company).setUpdateMask(updateMask).build();
+    return updateCompany(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a [Company][google.ads.admanager.v1.Company] object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   UpdateCompanyRequest request =
+   *       UpdateCompanyRequest.newBuilder()
+   *           .setCompany(Company.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Company response = companyServiceClient.updateCompany(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Company updateCompany(UpdateCompanyRequest request) {
+    return updateCompanyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a [Company][google.ads.admanager.v1.Company] object.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   UpdateCompanyRequest request =
+   *       UpdateCompanyRequest.newBuilder()
+   *           .setCompany(Company.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Company> future = companyServiceClient.updateCompanyCallable().futureCall(request);
+   *   // Do something.
+   *   Company response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateCompanyRequest, Company> updateCompanyCallable() {
+    return stub.updateCompanyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates [Company][google.ads.admanager.v1.Company] objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   NetworkName parent = NetworkName.of("[NETWORK_CODE]");
+   *   List<UpdateCompanyRequest> requests = new ArrayList<>();
+   *   BatchUpdateCompaniesResponse response =
+   *       companyServiceClient.batchUpdateCompanies(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where [Companies][] will be updated. Format:
+   *     `networks/{network_code}` The parent field in the UpdateCompanyRequest must match this
+   *     field.
+   * @param requests Required. The [Company][google.ads.admanager.v1.Company] objects to update. A
+   *     maximum of 100 objects can be updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateCompaniesResponse batchUpdateCompanies(
+      @Nullable NetworkName parent, List<UpdateCompanyRequest> requests) {
+    BatchUpdateCompaniesRequest request =
+        BatchUpdateCompaniesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .addAllRequests(requests)
+            .build();
+    return batchUpdateCompanies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates [Company][google.ads.admanager.v1.Company] objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   String parent = NetworkName.of("[NETWORK_CODE]").toString();
+   *   List<UpdateCompanyRequest> requests = new ArrayList<>();
+   *   BatchUpdateCompaniesResponse response =
+   *       companyServiceClient.batchUpdateCompanies(parent, requests);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where [Companies][] will be updated. Format:
+   *     `networks/{network_code}` The parent field in the UpdateCompanyRequest must match this
+   *     field.
+   * @param requests Required. The [Company][google.ads.admanager.v1.Company] objects to update. A
+   *     maximum of 100 objects can be updated in a batch.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateCompaniesResponse batchUpdateCompanies(
+      String parent, List<UpdateCompanyRequest> requests) {
+    BatchUpdateCompaniesRequest request =
+        BatchUpdateCompaniesRequest.newBuilder().setParent(parent).addAllRequests(requests).build();
+    return batchUpdateCompanies(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates [Company][google.ads.admanager.v1.Company] objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   BatchUpdateCompaniesRequest request =
+   *       BatchUpdateCompaniesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateCompanyRequest>())
+   *           .build();
+   *   BatchUpdateCompaniesResponse response = companyServiceClient.batchUpdateCompanies(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final BatchUpdateCompaniesResponse batchUpdateCompanies(
+      BatchUpdateCompaniesRequest request) {
+    return batchUpdateCompaniesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Batch updates [Company][google.ads.admanager.v1.Company] objects.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   BatchUpdateCompaniesRequest request =
+   *       BatchUpdateCompaniesRequest.newBuilder()
+   *           .setParent(NetworkName.of("[NETWORK_CODE]").toString())
+   *           .addAllRequests(new ArrayList<UpdateCompanyRequest>())
+   *           .build();
+   *   ApiFuture<BatchUpdateCompaniesResponse> future =
+   *       companyServiceClient.batchUpdateCompaniesCallable().futureCall(request);
+   *   // Do something.
+   *   BatchUpdateCompaniesResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchUpdateCompaniesRequest, BatchUpdateCompaniesResponse>
+      batchUpdateCompaniesCallable() {
+    return stub.batchUpdateCompaniesCallable();
   }
 
   @Override
@@ -533,8 +1079,8 @@ public class CompanyServiceClient implements BackgroundResource {
           ListCompaniesRequest, ListCompaniesResponse, Company, ListCompaniesPage> {
 
     private ListCompaniesPage(
-        PageContext<ListCompaniesRequest, ListCompaniesResponse, Company> context,
-        ListCompaniesResponse response) {
+        @Nullable PageContext<ListCompaniesRequest, ListCompaniesResponse, Company> context,
+        @Nullable ListCompaniesResponse response) {
       super(context, response);
     }
 
@@ -544,14 +1090,14 @@ public class CompanyServiceClient implements BackgroundResource {
 
     @Override
     protected ListCompaniesPage createPage(
-        PageContext<ListCompaniesRequest, ListCompaniesResponse, Company> context,
-        ListCompaniesResponse response) {
+        @Nullable PageContext<ListCompaniesRequest, ListCompaniesResponse, Company> context,
+        @Nullable ListCompaniesResponse response) {
       return new ListCompaniesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListCompaniesPage> createPageAsync(
-        PageContext<ListCompaniesRequest, ListCompaniesResponse, Company> context,
+        @Nullable PageContext<ListCompaniesRequest, ListCompaniesResponse, Company> context,
         ApiFuture<ListCompaniesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -565,7 +1111,8 @@ public class CompanyServiceClient implements BackgroundResource {
           ListCompaniesPage,
           ListCompaniesFixedSizeCollection> {
 
-    private ListCompaniesFixedSizeCollection(List<ListCompaniesPage> pages, int collectionSize) {
+    private ListCompaniesFixedSizeCollection(
+        @Nullable List<ListCompaniesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -575,7 +1122,7 @@ public class CompanyServiceClient implements BackgroundResource {
 
     @Override
     protected ListCompaniesFixedSizeCollection createCollection(
-        List<ListCompaniesPage> pages, int collectionSize) {
+        @Nullable List<ListCompaniesPage> pages, int collectionSize) {
       return new ListCompaniesFixedSizeCollection(pages, collectionSize);
     }
   }

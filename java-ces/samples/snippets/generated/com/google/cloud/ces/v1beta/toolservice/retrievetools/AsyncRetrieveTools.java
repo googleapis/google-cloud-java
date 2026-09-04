@@ -42,6 +42,7 @@ public class AsyncRetrieveTools {
               .setToolset(
                   ToolsetName.of("[PROJECT]", "[LOCATION]", "[APP]", "[TOOLSET]").toString())
               .addAllToolIds(new ArrayList<String>())
+              .setBypassPersistenceConfig(true)
               .build();
       ApiFuture<RetrieveToolsResponse> future =
           toolServiceClient.retrieveToolsCallable().futureCall(request);

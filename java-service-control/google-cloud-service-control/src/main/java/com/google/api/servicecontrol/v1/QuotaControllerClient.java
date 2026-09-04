@@ -23,10 +23,13 @@ import com.google.api.servicecontrol.v1.stub.QuotaControllerStubSettings;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: [Google Quota Control API](/service-control/overview)
+ * Service Description: [Google Quota Control
+ * API](https://cloud.google.com/service-control/overview)
  *
  * <p>Allows clients to allocate and release quota against a [managed
  * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
@@ -136,9 +139,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class QuotaControllerClient implements BackgroundResource {
-  private final QuotaControllerSettings settings;
+  private final @Nullable QuotaControllerSettings settings;
   private final QuotaControllerStub stub;
 
   /** Constructs an instance of QuotaControllerClient with default settings. */
@@ -178,7 +182,7 @@ public class QuotaControllerClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final QuotaControllerSettings getSettings() {
+  public final @Nullable QuotaControllerSettings getSettings() {
     return settings;
   }
 

@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * [Google Quota Control API](/service-control/overview)
+ * [Google Quota Control API](https://cloud.google.com/service-control/overview)
  * Allows clients to allocate and release quota against a [managed
  * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
  * </pre>
@@ -140,7 +140,7 @@ public final class QuotaControllerGrpc {
    *
    *
    * <pre>
-   * [Google Quota Control API](/service-control/overview)
+   * [Google Quota Control API](https://cloud.google.com/service-control/overview)
    * Allows clients to allocate and release quota against a [managed
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
@@ -175,7 +175,7 @@ public final class QuotaControllerGrpc {
    * Base class for the server implementation of the service QuotaController.
    *
    * <pre>
-   * [Google Quota Control API](/service-control/overview)
+   * [Google Quota Control API](https://cloud.google.com/service-control/overview)
    * Allows clients to allocate and release quota against a [managed
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
@@ -193,7 +193,7 @@ public final class QuotaControllerGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service QuotaController.
    *
    * <pre>
-   * [Google Quota Control API](/service-control/overview)
+   * [Google Quota Control API](https://cloud.google.com/service-control/overview)
    * Allows clients to allocate and release quota against a [managed
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
@@ -239,7 +239,7 @@ public final class QuotaControllerGrpc {
    * A stub to allow clients to do synchronous rpc calls to service QuotaController.
    *
    * <pre>
-   * [Google Quota Control API](/service-control/overview)
+   * [Google Quota Control API](https://cloud.google.com/service-control/overview)
    * Allows clients to allocate and release quota against a [managed
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
@@ -284,7 +284,7 @@ public final class QuotaControllerGrpc {
    * A stub to allow clients to do limited synchronous rpc calls to service QuotaController.
    *
    * <pre>
-   * [Google Quota Control API](/service-control/overview)
+   * [Google Quota Control API](https://cloud.google.com/service-control/overview)
    * Allows clients to allocate and release quota against a [managed
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>
@@ -327,7 +327,7 @@ public final class QuotaControllerGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service QuotaController.
    *
    * <pre>
-   * [Google Quota Control API](/service-control/overview)
+   * [Google Quota Control API](https://cloud.google.com/service-control/overview)
    * Allows clients to allocate and release quota against a [managed
    * service](https://cloud.google.com/service-management/reference/rpc/google.api/servicemanagement.v1#google.api.servicemanagement.v1.ManagedService).
    * </pre>

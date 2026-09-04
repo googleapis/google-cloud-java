@@ -42,6 +42,7 @@ public class AsyncCreateHttpRouteLRO {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setHttpRouteId("httpRouteId-2054835300")
               .setHttpRoute(HttpRoute.newBuilder().build())
+              .setRequestId("requestId693933066")
               .build();
       OperationFuture<HttpRoute, OperationMetadata> future =
           networkServicesClient.createHttpRouteOperationCallable().futureCall(request);

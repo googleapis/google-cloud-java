@@ -38,15 +38,14 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
+import com.google.common.hash.HashingInputStream;
 import com.google.common.io.BaseEncoding;
-import com.google.gson.Gson;
-import com.google.gson.stream.JsonReader;
+import com.google.common.primitives.Ints;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.io.StringReader;
 import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
@@ -61,6 +60,7 @@ import javax.annotation.concurrent.Immutable;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
+@SuppressWarnings("UnstableApiUsage")
 class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChannel {
 
   private final ApiaryReadRequest apiaryReadRequest;
@@ -68,25 +68,32 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
   private final SettableApiFuture<StorageObject> result;
   private final ResultRetryAlgorithm<?> resultRetryAlgorithm;
   private final Retrier retrier;
+  private final Hasher hasher;
 
   private long position;
   private ScatteringByteChannel sbc;
   private boolean open;
   private boolean returnEOF;
+  private long totalBytesReadFromNetwork;
 
   // returned X-Goog-Generation header value
   private Long xGoogGeneration;
+
+  private HashingInputStream hashingInputStream;
+  private String expectedCrc32cBase64;
 
   ApiaryUnbufferedReadableByteChannel(
       ApiaryReadRequest apiaryReadRequest,
       Storage storage,
       SettableApiFuture<StorageObject> result,
       Retrier retrier,
-      ResultRetryAlgorithm<?> resultRetryAlgorithm) {
+      ResultRetryAlgorithm<?> resultRetryAlgorithm,
+      Hasher hasher) {
     this.apiaryReadRequest = apiaryReadRequest;
     this.storage = storage;
     this.result = result;
     this.retrier = retrier;
+    this.hasher = hasher;
     this.resultRetryAlgorithm =
         new BasicResultRetryAlgorithm<Object>() {
           @Override
@@ -126,8 +133,19 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
         long read = sbc.read(dsts, offset, length);
         if (read == -1) {
           returnEOF = true;
+          if (hashingInputStream != null && expectedCrc32cBase64 != null) {
+            int calculatedCrc32c = hashingInputStream.hash().asInt();
+            byte[] decoded = BaseEncoding.base64().decode(expectedCrc32cBase64);
+            int expectedVal = Ints.fromByteArray(decoded);
+
+            Crc32cValue<?> expected = Crc32cValue.of(expectedVal, 0);
+            Crc32cValue.Crc32cLengthKnown actual = Crc32cValue.of(calculatedCrc32c, 0);
+
+            hasher.validate(expected, actual);
+          }
         } else {
           totalRead += read;
+          totalBytesReadFromNetwork += read;
         }
         return totalRead;
       } catch (Exception t) {
@@ -163,9 +181,25 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
 
   @Override
   public void close() throws IOException {
-    open = false;
-    if (sbc != null) {
-      sbc.close();
+    try {
+      long requestedLength = apiaryReadRequest.getByteRangeSpec().length();
+      if (requestedLength >= 0
+          && requestedLength < ByteRangeSpec.EFFECTIVE_INFINITY
+          && totalBytesReadFromNetwork > requestedLength) {
+        java.util.logging.Logger.getLogger(ApiaryUnbufferedReadableByteChannel.class.getName())
+            .warning(
+                String.format(
+                    "storage: received %d more bytes than requested from GCS for bucket '%s',"
+                        + " object '%s'",
+                    totalBytesReadFromNetwork - requestedLength,
+                    apiaryReadRequest.getObject().getBucket(),
+                    apiaryReadRequest.getObject().getName()));
+      }
+    } finally {
+      open = false;
+      if (sbc != null) {
+        sbc.close();
+      }
     }
   }
 
@@ -180,6 +214,10 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
 
       HttpResponse media = get.executeMedia();
       InputStream content = media.getContent();
+
+      Map<String, String> hashes = ChecksumResponseParser.extractHashesFromHeader(media);
+      this.expectedCrc32cBase64 = hashes.get("crc32c");
+
       if (xGoogGeneration == null) {
         HttpHeaders responseHeaders = media.getHeaders();
 
@@ -212,6 +250,14 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
             result.set(clone);
           }
         }
+      }
+
+      boolean isHasherEnabled = !(hasher instanceof Hasher.NoOpHasher);
+      boolean shouldValidate =
+          isHasherEnabled && HttpStorageRpcHasherHelper.INSTANCE.shouldValidate(media);
+      if (shouldValidate && expectedCrc32cBase64 != null) {
+        this.hashingInputStream = new HashingInputStream(Hashing.crc32c(), content);
+        content = this.hashingInputStream;
       }
 
       ReadableByteChannel rbc = Channels.newChannel(content);
@@ -332,7 +378,6 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
   @Immutable
   static final class ApiaryReadRequest implements Serializable {
     private static final long serialVersionUID = -4059435314115374448L;
-    private static final Gson gson = new Gson();
     @NonNull private transient StorageObject object;
     @NonNull private final Map<StorageRpc.Option, ?> options;
     @NonNull private final ByteRangeSpec byteRangeSpec;
@@ -401,7 +446,7 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
       if (objectJson == null) {
         synchronized (this) {
           if (objectJson == null) {
-            objectJson = gson.toJson(object);
+            objectJson = JsonUtils.objectToJson(object);
           }
         }
       }
@@ -415,8 +460,7 @@ class ApiaryUnbufferedReadableByteChannel implements UnbufferedReadableByteChann
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
       in.defaultReadObject();
-      JsonReader jsonReader = gson.newJsonReader(new StringReader(this.objectJson));
-      this.object = gson.fromJson(jsonReader, StorageObject.class);
+      this.object = JsonUtils.jsonToObject(this.objectJson, StorageObject.class);
     }
   }
 }

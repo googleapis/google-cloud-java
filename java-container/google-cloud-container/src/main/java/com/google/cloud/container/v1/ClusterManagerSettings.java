@@ -36,6 +36,7 @@ import com.google.container.v1.CheckAutopilotCompatibilityRequest;
 import com.google.container.v1.CheckAutopilotCompatibilityResponse;
 import com.google.container.v1.Cluster;
 import com.google.container.v1.ClusterUpgradeInfo;
+import com.google.container.v1.CompleteControlPlaneUpgradeRequest;
 import com.google.container.v1.CompleteIPRotationRequest;
 import com.google.container.v1.CompleteNodePoolUpgradeRequest;
 import com.google.container.v1.CreateClusterRequest;
@@ -83,6 +84,8 @@ import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -134,6 +137,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ClusterManagerSettings extends ClientSettings<ClusterManagerSettings> {
 
@@ -333,6 +337,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     return ((ClusterManagerStubSettings) getStubSettings()).fetchNodePoolUpgradeInfoSettings();
   }
 
+  /** Returns the object with the settings used for calls to completeControlPlaneUpgrade. */
+  public UnaryCallSettings<CompleteControlPlaneUpgradeRequest, Operation>
+      completeControlPlaneUpgradeSettings() {
+    return ((ClusterManagerStubSettings) getStubSettings()).completeControlPlaneUpgradeSettings();
+  }
+
   public static final ClusterManagerSettings create(ClusterManagerStubSettings stub)
       throws IOException {
     return new ClusterManagerSettings.Builder(stub.toBuilder()).build();
@@ -389,7 +399,7 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -409,7 +419,7 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(ClusterManagerStubSettings.newBuilder(clientContext));
     }
 
@@ -650,6 +660,12 @@ public class ClusterManagerSettings extends ClientSettings<ClusterManagerSetting
     public UnaryCallSettings.Builder<FetchNodePoolUpgradeInfoRequest, NodePoolUpgradeInfo>
         fetchNodePoolUpgradeInfoSettings() {
       return getStubSettingsBuilder().fetchNodePoolUpgradeInfoSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to completeControlPlaneUpgrade. */
+    public UnaryCallSettings.Builder<CompleteControlPlaneUpgradeRequest, Operation>
+        completeControlPlaneUpgradeSettings() {
+      return getStubSettingsBuilder().completeControlPlaneUpgradeSettings();
     }
 
     @Override

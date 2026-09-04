@@ -33,6 +33,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -259,9 +261,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RegionsServiceClient implements BackgroundResource {
-  private final RegionsServiceSettings settings;
+  private final @Nullable RegionsServiceSettings settings;
   private final RegionsServiceStub stub;
 
   /** Constructs an instance of RegionsServiceClient with default settings. */
@@ -301,7 +304,7 @@ public class RegionsServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RegionsServiceSettings getSettings() {
+  public final @Nullable RegionsServiceSettings getSettings() {
     return settings;
   }
 
@@ -331,7 +334,7 @@ public class RegionsServiceClient implements BackgroundResource {
    *     `accounts/{account}/regions/{region}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Region getRegion(RegionName name) {
+  public final Region getRegion(@Nullable RegionName name) {
     GetRegionRequest request =
         GetRegionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRegion(request);
@@ -446,7 +449,7 @@ public class RegionsServiceClient implements BackgroundResource {
    *     account.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Region createRegion(AccountName parent, Region region, String regionId) {
+  public final Region createRegion(@Nullable AccountName parent, Region region, String regionId) {
     CreateRegionRequest request =
         CreateRegionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -789,7 +792,7 @@ public class RegionsServiceClient implements BackgroundResource {
    *     `accounts/{account}/regions/{region}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRegion(RegionName name) {
+  public final void deleteRegion(@Nullable RegionName name) {
     DeleteRegionRequest request =
         DeleteRegionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteRegion(request);
@@ -963,7 +966,7 @@ public class RegionsServiceClient implements BackgroundResource {
    * @param parent Required. The account to list regions for. Format: `accounts/{account}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRegionsPagedResponse listRegions(AccountName parent) {
+  public final ListRegionsPagedResponse listRegions(@Nullable AccountName parent) {
     ListRegionsRequest request =
         ListRegionsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1158,8 +1161,8 @@ public class RegionsServiceClient implements BackgroundResource {
       extends AbstractPage<ListRegionsRequest, ListRegionsResponse, Region, ListRegionsPage> {
 
     private ListRegionsPage(
-        PageContext<ListRegionsRequest, ListRegionsResponse, Region> context,
-        ListRegionsResponse response) {
+        @Nullable PageContext<ListRegionsRequest, ListRegionsResponse, Region> context,
+        @Nullable ListRegionsResponse response) {
       super(context, response);
     }
 
@@ -1169,14 +1172,14 @@ public class RegionsServiceClient implements BackgroundResource {
 
     @Override
     protected ListRegionsPage createPage(
-        PageContext<ListRegionsRequest, ListRegionsResponse, Region> context,
-        ListRegionsResponse response) {
+        @Nullable PageContext<ListRegionsRequest, ListRegionsResponse, Region> context,
+        @Nullable ListRegionsResponse response) {
       return new ListRegionsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRegionsPage> createPageAsync(
-        PageContext<ListRegionsRequest, ListRegionsResponse, Region> context,
+        @Nullable PageContext<ListRegionsRequest, ListRegionsResponse, Region> context,
         ApiFuture<ListRegionsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1190,7 +1193,8 @@ public class RegionsServiceClient implements BackgroundResource {
           ListRegionsPage,
           ListRegionsFixedSizeCollection> {
 
-    private ListRegionsFixedSizeCollection(List<ListRegionsPage> pages, int collectionSize) {
+    private ListRegionsFixedSizeCollection(
+        @Nullable List<ListRegionsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1200,7 +1204,7 @@ public class RegionsServiceClient implements BackgroundResource {
 
     @Override
     protected ListRegionsFixedSizeCollection createCollection(
-        List<ListRegionsPage> pages, int collectionSize) {
+        @Nullable List<ListRegionsPage> pages, int collectionSize) {
       return new ListRegionsFixedSizeCollection(pages, collectionSize);
     }
   }

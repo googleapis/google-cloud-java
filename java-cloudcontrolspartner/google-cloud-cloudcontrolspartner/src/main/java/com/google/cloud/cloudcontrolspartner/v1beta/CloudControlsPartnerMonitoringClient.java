@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -163,10 +165,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class CloudControlsPartnerMonitoringClient implements BackgroundResource {
-  private final CloudControlsPartnerMonitoringSettings settings;
+  private final @Nullable CloudControlsPartnerMonitoringSettings settings;
   private final CloudControlsPartnerMonitoringStub stub;
 
   /** Constructs an instance of CloudControlsPartnerMonitoringClient with default settings. */
@@ -211,7 +214,7 @@ public class CloudControlsPartnerMonitoringClient implements BackgroundResource 
     this.stub = stub;
   }
 
-  public final CloudControlsPartnerMonitoringSettings getSettings() {
+  public final @Nullable CloudControlsPartnerMonitoringSettings getSettings() {
     return settings;
   }
 
@@ -249,7 +252,7 @@ public class CloudControlsPartnerMonitoringClient implements BackgroundResource 
    *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListViolationsPagedResponse listViolations(WorkloadName parent) {
+  public final ListViolationsPagedResponse listViolations(@Nullable WorkloadName parent) {
     ListViolationsRequest request =
         ListViolationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -450,7 +453,7 @@ public class CloudControlsPartnerMonitoringClient implements BackgroundResource 
    *     `organizations/{organization}/locations/{location}/customers/{customer}/workloads/{workload}/violations/{violation}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Violation getViolation(ViolationName name) {
+  public final Violation getViolation(@Nullable ViolationName name) {
     GetViolationRequest request =
         GetViolationRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getViolation(request);
@@ -610,8 +613,8 @@ public class CloudControlsPartnerMonitoringClient implements BackgroundResource 
           ListViolationsRequest, ListViolationsResponse, Violation, ListViolationsPage> {
 
     private ListViolationsPage(
-        PageContext<ListViolationsRequest, ListViolationsResponse, Violation> context,
-        ListViolationsResponse response) {
+        @Nullable PageContext<ListViolationsRequest, ListViolationsResponse, Violation> context,
+        @Nullable ListViolationsResponse response) {
       super(context, response);
     }
 
@@ -621,14 +624,14 @@ public class CloudControlsPartnerMonitoringClient implements BackgroundResource 
 
     @Override
     protected ListViolationsPage createPage(
-        PageContext<ListViolationsRequest, ListViolationsResponse, Violation> context,
-        ListViolationsResponse response) {
+        @Nullable PageContext<ListViolationsRequest, ListViolationsResponse, Violation> context,
+        @Nullable ListViolationsResponse response) {
       return new ListViolationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListViolationsPage> createPageAsync(
-        PageContext<ListViolationsRequest, ListViolationsResponse, Violation> context,
+        @Nullable PageContext<ListViolationsRequest, ListViolationsResponse, Violation> context,
         ApiFuture<ListViolationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -642,7 +645,8 @@ public class CloudControlsPartnerMonitoringClient implements BackgroundResource 
           ListViolationsPage,
           ListViolationsFixedSizeCollection> {
 
-    private ListViolationsFixedSizeCollection(List<ListViolationsPage> pages, int collectionSize) {
+    private ListViolationsFixedSizeCollection(
+        @Nullable List<ListViolationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -652,7 +656,7 @@ public class CloudControlsPartnerMonitoringClient implements BackgroundResource 
 
     @Override
     protected ListViolationsFixedSizeCollection createCollection(
-        List<ListViolationsPage> pages, int collectionSize) {
+        @Nullable List<ListViolationsPage> pages, int collectionSize) {
       return new ListViolationsFixedSizeCollection(pages, collectionSize);
     }
   }

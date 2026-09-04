@@ -283,6 +283,56 @@ public class ReasoningEngineExecutionServiceClientTest {
   }
 
   @Test
+  public void cancelAsyncQueryReasoningEngineTest() throws Exception {
+    CancelAsyncQueryReasoningEngineResponse expectedResponse =
+        CancelAsyncQueryReasoningEngineResponse.newBuilder().build();
+    mockReasoningEngineExecutionService.addResponse(expectedResponse);
+
+    CancelAsyncQueryReasoningEngineRequest request =
+        CancelAsyncQueryReasoningEngineRequest.newBuilder()
+            .setName(
+                ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]").toString())
+            .setOperationName("operationName91797650")
+            .build();
+
+    CancelAsyncQueryReasoningEngineResponse actualResponse =
+        client.cancelAsyncQueryReasoningEngine(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockReasoningEngineExecutionService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelAsyncQueryReasoningEngineRequest actualRequest =
+        ((CancelAsyncQueryReasoningEngineRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getOperationName(), actualRequest.getOperationName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelAsyncQueryReasoningEngineExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockReasoningEngineExecutionService.addException(exception);
+
+    try {
+      CancelAsyncQueryReasoningEngineRequest request =
+          CancelAsyncQueryReasoningEngineRequest.newBuilder()
+              .setName(
+                  ReasoningEngineName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]")
+                      .toString())
+              .setOperationName("operationName91797650")
+              .build();
+      client.cancelAsyncQueryReasoningEngine(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

@@ -13,6 +13,9 @@
             "CancelWorkflowInvocation": {
               "methods": ["cancelWorkflowInvocation", "cancelWorkflowInvocationCallable"]
             },
+            "CheckoutWorkspaceBranch": {
+              "methods": ["checkoutWorkspaceBranch", "checkoutWorkspaceBranchCallable"]
+            },
             "CommitRepositoryChanges": {
               "methods": ["commitRepositoryChanges", "commitRepositoryChangesCallable"]
             },
@@ -46,8 +49,14 @@
             "CreateWorkspace": {
               "methods": ["createWorkspace", "createWorkspace", "createWorkspace", "createWorkspaceCallable"]
             },
+            "DeleteBranch": {
+              "methods": ["deleteBranch", "deleteBranchCallable"]
+            },
             "DeleteFolder": {
               "methods": ["deleteFolder", "deleteFolder", "deleteFolder", "deleteFolderCallable"]
+            },
+            "DeleteFolderTree": {
+              "methods": ["deleteFolderTreeAsync", "deleteFolderTreeAsync", "deleteFolderTreeAsync", "deleteFolderTreeOperationCallable", "deleteFolderTreeCallable"]
             },
             "DeleteReleaseConfig": {
               "methods": ["deleteReleaseConfig", "deleteReleaseConfig", "deleteReleaseConfig", "deleteReleaseConfigCallable"]
@@ -55,8 +64,14 @@
             "DeleteRepository": {
               "methods": ["deleteRepository", "deleteRepository", "deleteRepository", "deleteRepositoryCallable"]
             },
+            "DeleteRepositoryLongRunning": {
+              "methods": ["deleteRepositoryLongRunningAsync", "deleteRepositoryLongRunningAsync", "deleteRepositoryLongRunningAsync", "deleteRepositoryLongRunningOperationCallable", "deleteRepositoryLongRunningCallable"]
+            },
             "DeleteTeamFolder": {
               "methods": ["deleteTeamFolder", "deleteTeamFolder", "deleteTeamFolder", "deleteTeamFolderCallable"]
+            },
+            "DeleteTeamFolderTree": {
+              "methods": ["deleteTeamFolderTreeAsync", "deleteTeamFolderTreeAsync", "deleteTeamFolderTreeAsync", "deleteTeamFolderTreeOperationCallable", "deleteTeamFolderTreeCallable"]
             },
             "DeleteWorkflowConfig": {
               "methods": ["deleteWorkflowConfig", "deleteWorkflowConfig", "deleteWorkflowConfig", "deleteWorkflowConfigCallable"]
@@ -66,6 +81,9 @@
             },
             "DeleteWorkspace": {
               "methods": ["deleteWorkspace", "deleteWorkspace", "deleteWorkspace", "deleteWorkspaceCallable"]
+            },
+            "FetchCurrentWorkspaceBranch": {
+              "methods": ["fetchCurrentWorkspaceBranch", "fetchCurrentWorkspaceBranchCallable"]
             },
             "FetchFileDiff": {
               "methods": ["fetchFileDiff", "fetchFileDiffCallable"]
@@ -81,6 +99,9 @@
             },
             "FetchRepositoryHistory": {
               "methods": ["fetchRepositoryHistory", "fetchRepositoryHistoryPagedCallable", "fetchRepositoryHistoryCallable"]
+            },
+            "FetchWorkspaceBranches": {
+              "methods": ["fetchWorkspaceBranches", "fetchWorkspaceBranchesPagedCallable", "fetchWorkspaceBranchesCallable"]
             },
             "GetCompilationResult": {
               "methods": ["getCompilationResult", "getCompilationResult", "getCompilationResult", "getCompilationResultCallable"]
@@ -204,6 +225,9 @@
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SyncWorkspaceRefs": {
+              "methods": ["syncWorkspaceRefs", "syncWorkspaceRefsCallable"]
             },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissionsCallable"]

@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class ResourceChangeName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_PREVIEW_RESOURCE_CHANGE =
@@ -98,7 +101,7 @@ public class ResourceChangeName implements ResourceName {
         .toString();
   }
 
-  public static ResourceChangeName parse(String formattedString) {
+  public static @Nullable ResourceChangeName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -120,7 +123,7 @@ public class ResourceChangeName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<ResourceChangeName> values) {
+  public static List<String> toStringList(List<@Nullable ResourceChangeName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (ResourceChangeName value : values) {
       if (value == null) {
@@ -179,7 +182,7 @@ public class ResourceChangeName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

@@ -34,8 +34,8 @@ import com.google.api.core.InternalApi;
 import com.google.api.core.ObsoleteApi;
 import java.time.Duration;
 import java.util.concurrent.ScheduledExecutorService;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A watchdog provider which always returns the same watchdog instance provided to the provider
@@ -44,9 +44,10 @@ import javax.annotation.Nullable;
  * <p>This is the internal class and is public only for technical reasons. It may change any time
  * without notice, please do not depend on it explicitly.
  */
+@NullMarked
 @InternalApi
 public final class FixedWatchdogProvider implements WatchdogProvider {
-  @Nullable private final Watchdog watchdog;
+  private final @Nullable Watchdog watchdog;
 
   public static WatchdogProvider create(Watchdog watchdog) {
     return new FixedWatchdogProvider(watchdog);
@@ -62,7 +63,7 @@ public final class FixedWatchdogProvider implements WatchdogProvider {
   }
 
   @Override
-  public WatchdogProvider withClock(@Nonnull ApiClock clock) {
+  public WatchdogProvider withClock(ApiClock clock) {
     throw new UnsupportedOperationException("FixedWatchdogProvider doesn't need a clock");
   }
 

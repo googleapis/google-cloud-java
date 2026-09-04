@@ -27,6 +27,7 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -40,6 +41,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
@@ -54,6 +56,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -1122,6 +1125,7 @@ public class CloudTasksClientTest {
             .setResponseCount(424727441)
             .setFirstAttempt(Attempt.newBuilder().build())
             .setLastAttempt(Attempt.newBuilder().build())
+            .setRetryConfig(RetryConfig.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -1167,6 +1171,7 @@ public class CloudTasksClientTest {
             .setResponseCount(424727441)
             .setFirstAttempt(Attempt.newBuilder().build())
             .setLastAttempt(Attempt.newBuilder().build())
+            .setRetryConfig(RetryConfig.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -1212,6 +1217,7 @@ public class CloudTasksClientTest {
             .setResponseCount(424727441)
             .setFirstAttempt(Attempt.newBuilder().build())
             .setLastAttempt(Attempt.newBuilder().build())
+            .setRetryConfig(RetryConfig.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -1260,6 +1266,7 @@ public class CloudTasksClientTest {
             .setResponseCount(424727441)
             .setFirstAttempt(Attempt.newBuilder().build())
             .setLastAttempt(Attempt.newBuilder().build())
+            .setRetryConfig(RetryConfig.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -1293,6 +1300,100 @@ public class CloudTasksClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchCreateTasksTest() throws Exception {
+    BatchCreateTasksResponse expectedResponse =
+        BatchCreateTasksResponse.newBuilder().addAllTasks(new ArrayList<Task>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCreateTasksTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudTasks.addResponse(resultOperation);
+
+    QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+    List<CreateTaskRequest> requests = new ArrayList<>();
+
+    BatchCreateTasksResponse actualResponse = client.batchCreateTasksAsync(parent, requests).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateTasksRequest actualRequest = ((BatchCreateTasksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateTasksExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudTasks.addException(exception);
+
+    try {
+      QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+      List<CreateTaskRequest> requests = new ArrayList<>();
+      client.batchCreateTasksAsync(parent, requests).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchCreateTasksTest2() throws Exception {
+    BatchCreateTasksResponse expectedResponse =
+        BatchCreateTasksResponse.newBuilder().addAllTasks(new ArrayList<Task>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchCreateTasksTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudTasks.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    List<CreateTaskRequest> requests = new ArrayList<>();
+
+    BatchCreateTasksResponse actualResponse = client.batchCreateTasksAsync(parent, requests).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateTasksRequest actualRequest = ((BatchCreateTasksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateTasksExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudTasks.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<CreateTaskRequest> requests = new ArrayList<>();
+      client.batchCreateTasksAsync(parent, requests).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
@@ -1365,6 +1466,96 @@ public class CloudTasksClientTest {
   }
 
   @Test
+  public void batchDeleteTasksTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteTasksTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudTasks.addResponse(resultOperation);
+
+    QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+    List<String> names = new ArrayList<>();
+
+    client.batchDeleteTasksAsync(parent, names).get();
+
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteTasksRequest actualRequest = ((BatchDeleteTasksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeleteTasksExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudTasks.addException(exception);
+
+    try {
+      QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+      List<String> names = new ArrayList<>();
+      client.batchDeleteTasksAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchDeleteTasksTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteTasksTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudTasks.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    List<String> names = new ArrayList<>();
+
+    client.batchDeleteTasksAsync(parent, names).get();
+
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteTasksRequest actualRequest = ((BatchDeleteTasksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeleteTasksExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudTasks.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<String> names = new ArrayList<>();
+      client.batchDeleteTasksAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void runTaskTest() throws Exception {
     Task expectedResponse =
         Task.newBuilder()
@@ -1376,6 +1567,7 @@ public class CloudTasksClientTest {
             .setResponseCount(424727441)
             .setFirstAttempt(Attempt.newBuilder().build())
             .setLastAttempt(Attempt.newBuilder().build())
+            .setRetryConfig(RetryConfig.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -1421,6 +1613,7 @@ public class CloudTasksClientTest {
             .setResponseCount(424727441)
             .setFirstAttempt(Attempt.newBuilder().build())
             .setLastAttempt(Attempt.newBuilder().build())
+            .setRetryConfig(RetryConfig.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -1448,6 +1641,126 @@ public class CloudTasksClientTest {
     try {
       String name = "name3373707";
       client.runTask(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateCmekConfigTest() throws Exception {
+    CmekConfig expectedResponse =
+        CmekConfig.newBuilder()
+            .setName(CmekConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+    mockCloudTasks.addResponse(expectedResponse);
+
+    CmekConfig cmekConfig = CmekConfig.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    CmekConfig actualResponse = client.updateCmekConfig(cmekConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateCmekConfigRequest actualRequest = ((UpdateCmekConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(cmekConfig, actualRequest.getCmekConfig());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateCmekConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudTasks.addException(exception);
+
+    try {
+      CmekConfig cmekConfig = CmekConfig.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateCmekConfig(cmekConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCmekConfigTest() throws Exception {
+    CmekConfig expectedResponse =
+        CmekConfig.newBuilder()
+            .setName(CmekConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+    mockCloudTasks.addResponse(expectedResponse);
+
+    CmekConfigName name = CmekConfigName.of("[PROJECT]", "[LOCATION]");
+
+    CmekConfig actualResponse = client.getCmekConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCmekConfigRequest actualRequest = ((GetCmekConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCmekConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudTasks.addException(exception);
+
+    try {
+      CmekConfigName name = CmekConfigName.of("[PROJECT]", "[LOCATION]");
+      client.getCmekConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getCmekConfigTest2() throws Exception {
+    CmekConfig expectedResponse =
+        CmekConfig.newBuilder()
+            .setName(CmekConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setKmsKey("kmsKey-1127483058")
+            .build();
+    mockCloudTasks.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    CmekConfig actualResponse = client.getCmekConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudTasks.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetCmekConfigRequest actualRequest = ((GetCmekConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getCmekConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudTasks.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getCmekConfig(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

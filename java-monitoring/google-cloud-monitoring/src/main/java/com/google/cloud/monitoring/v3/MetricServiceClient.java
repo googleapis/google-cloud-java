@@ -52,6 +52,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -309,9 +311,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MetricServiceClient implements BackgroundResource {
-  private final MetricServiceSettings settings;
+  private final @Nullable MetricServiceSettings settings;
   private final MetricServiceStub stub;
 
   /** Constructs an instance of MetricServiceClient with default settings. */
@@ -351,7 +354,7 @@ public class MetricServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final MetricServiceSettings getSettings() {
+  public final @Nullable MetricServiceSettings getSettings() {
     return settings;
   }
 
@@ -386,7 +389,7 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMonitoredResourceDescriptorsPagedResponse listMonitoredResourceDescriptors(
-      ResourceName name) {
+      @Nullable ResourceName name) {
     ListMonitoredResourceDescriptorsRequest request =
         ListMonitoredResourceDescriptorsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -421,7 +424,7 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMonitoredResourceDescriptorsPagedResponse listMonitoredResourceDescriptors(
-      OrganizationName name) {
+      @Nullable OrganizationName name) {
     ListMonitoredResourceDescriptorsRequest request =
         ListMonitoredResourceDescriptorsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -456,7 +459,7 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMonitoredResourceDescriptorsPagedResponse listMonitoredResourceDescriptors(
-      ProjectName name) {
+      @Nullable ProjectName name) {
     ListMonitoredResourceDescriptorsRequest request =
         ListMonitoredResourceDescriptorsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -636,7 +639,7 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MonitoredResourceDescriptor getMonitoredResourceDescriptor(
-      MonitoredResourceDescriptorName name) {
+      @Nullable MonitoredResourceDescriptorName name) {
     GetMonitoredResourceDescriptorRequest request =
         GetMonitoredResourceDescriptorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -768,7 +771,8 @@ public class MetricServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMetricDescriptorsPagedResponse listMetricDescriptors(ResourceName name) {
+  public final ListMetricDescriptorsPagedResponse listMetricDescriptors(
+      @Nullable ResourceName name) {
     ListMetricDescriptorsRequest request =
         ListMetricDescriptorsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -802,7 +806,8 @@ public class MetricServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMetricDescriptorsPagedResponse listMetricDescriptors(OrganizationName name) {
+  public final ListMetricDescriptorsPagedResponse listMetricDescriptors(
+      @Nullable OrganizationName name) {
     ListMetricDescriptorsRequest request =
         ListMetricDescriptorsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -836,7 +841,8 @@ public class MetricServiceClient implements BackgroundResource {
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListMetricDescriptorsPagedResponse listMetricDescriptors(ProjectName name) {
+  public final ListMetricDescriptorsPagedResponse listMetricDescriptors(
+      @Nullable ProjectName name) {
     ListMetricDescriptorsRequest request =
         ListMetricDescriptorsRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1014,7 +1020,7 @@ public class MetricServiceClient implements BackgroundResource {
    *     `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final MetricDescriptor getMetricDescriptor(MetricDescriptorName name) {
+  public final MetricDescriptor getMetricDescriptor(@Nullable MetricDescriptorName name) {
     GetMetricDescriptorRequest request =
         GetMetricDescriptorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1146,7 +1152,7 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor createMetricDescriptor(
-      ResourceName name, MetricDescriptor metricDescriptor) {
+      @Nullable ResourceName name, MetricDescriptor metricDescriptor) {
     CreateMetricDescriptorRequest request =
         CreateMetricDescriptorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1184,7 +1190,7 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor createMetricDescriptor(
-      OrganizationName name, MetricDescriptor metricDescriptor) {
+      @Nullable OrganizationName name, MetricDescriptor metricDescriptor) {
     CreateMetricDescriptorRequest request =
         CreateMetricDescriptorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1222,7 +1228,7 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MetricDescriptor createMetricDescriptor(
-      ProjectName name, MetricDescriptor metricDescriptor) {
+      @Nullable ProjectName name, MetricDescriptor metricDescriptor) {
     CreateMetricDescriptorRequest request =
         CreateMetricDescriptorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1357,7 +1363,7 @@ public class MetricServiceClient implements BackgroundResource {
    *     <p>An example of `[METRIC_ID]` is: `"custom.googleapis.com/my_test_metric"`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteMetricDescriptor(MetricDescriptorName name) {
+  public final void deleteMetricDescriptor(@Nullable MetricDescriptorName name) {
     DeleteMetricDescriptorRequest request =
         DeleteMetricDescriptorRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1501,7 +1507,7 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTimeSeriesPagedResponse listTimeSeries(
-      ResourceName name,
+      @Nullable ResourceName name,
       String filter,
       TimeInterval interval,
       ListTimeSeriesRequest.TimeSeriesView view) {
@@ -1554,7 +1560,7 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTimeSeriesPagedResponse listTimeSeries(
-      OrganizationName name,
+      @Nullable OrganizationName name,
       String filter,
       TimeInterval interval,
       ListTimeSeriesRequest.TimeSeriesView view) {
@@ -1607,7 +1613,7 @@ public class MetricServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTimeSeriesPagedResponse listTimeSeries(
-      ProjectName name,
+      @Nullable ProjectName name,
       String filter,
       TimeInterval interval,
       ListTimeSeriesRequest.TimeSeriesView view) {
@@ -1827,7 +1833,7 @@ public class MetricServiceClient implements BackgroundResource {
    *     <p>The maximum number of `TimeSeries` objects per `Create` request is 200.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void createTimeSeries(ProjectName name, List<TimeSeries> timeSeries) {
+  public final void createTimeSeries(@Nullable ProjectName name, List<TimeSeries> timeSeries) {
     CreateTimeSeriesRequest request =
         CreateTimeSeriesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1974,7 +1980,8 @@ public class MetricServiceClient implements BackgroundResource {
    *     <p>The maximum number of `TimeSeries` objects per `Create` request is 200.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void createServiceTimeSeries(ProjectName name, List<TimeSeries> timeSeries) {
+  public final void createServiceTimeSeries(
+      @Nullable ProjectName name, List<TimeSeries> timeSeries) {
     CreateTimeSeriesRequest request =
         CreateTimeSeriesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2159,12 +2166,13 @@ public class MetricServiceClient implements BackgroundResource {
           ListMonitoredResourceDescriptorsPage> {
 
     private ListMonitoredResourceDescriptorsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMonitoredResourceDescriptorsRequest,
                 ListMonitoredResourceDescriptorsResponse,
                 MonitoredResourceDescriptor>
             context,
-        ListMonitoredResourceDescriptorsResponse response) {
+        @Nullable ListMonitoredResourceDescriptorsResponse response) {
       super(context, response);
     }
 
@@ -2174,18 +2182,20 @@ public class MetricServiceClient implements BackgroundResource {
 
     @Override
     protected ListMonitoredResourceDescriptorsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMonitoredResourceDescriptorsRequest,
                 ListMonitoredResourceDescriptorsResponse,
                 MonitoredResourceDescriptor>
             context,
-        ListMonitoredResourceDescriptorsResponse response) {
+        @Nullable ListMonitoredResourceDescriptorsResponse response) {
       return new ListMonitoredResourceDescriptorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMonitoredResourceDescriptorsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListMonitoredResourceDescriptorsRequest,
                 ListMonitoredResourceDescriptorsResponse,
                 MonitoredResourceDescriptor>
@@ -2204,7 +2214,7 @@ public class MetricServiceClient implements BackgroundResource {
           ListMonitoredResourceDescriptorsFixedSizeCollection> {
 
     private ListMonitoredResourceDescriptorsFixedSizeCollection(
-        List<ListMonitoredResourceDescriptorsPage> pages, int collectionSize) {
+        @Nullable List<ListMonitoredResourceDescriptorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2214,7 +2224,7 @@ public class MetricServiceClient implements BackgroundResource {
 
     @Override
     protected ListMonitoredResourceDescriptorsFixedSizeCollection createCollection(
-        List<ListMonitoredResourceDescriptorsPage> pages, int collectionSize) {
+        @Nullable List<ListMonitoredResourceDescriptorsPage> pages, int collectionSize) {
       return new ListMonitoredResourceDescriptorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2252,9 +2262,11 @@ public class MetricServiceClient implements BackgroundResource {
           ListMetricDescriptorsPage> {
 
     private ListMetricDescriptorsPage(
-        PageContext<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+        @Nullable
+            PageContext<
+                ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
             context,
-        ListMetricDescriptorsResponse response) {
+        @Nullable ListMetricDescriptorsResponse response) {
       super(context, response);
     }
 
@@ -2264,15 +2276,19 @@ public class MetricServiceClient implements BackgroundResource {
 
     @Override
     protected ListMetricDescriptorsPage createPage(
-        PageContext<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+        @Nullable
+            PageContext<
+                ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
             context,
-        ListMetricDescriptorsResponse response) {
+        @Nullable ListMetricDescriptorsResponse response) {
       return new ListMetricDescriptorsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListMetricDescriptorsPage> createPageAsync(
-        PageContext<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+        @Nullable
+            PageContext<
+                ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
             context,
         ApiFuture<ListMetricDescriptorsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -2288,7 +2304,7 @@ public class MetricServiceClient implements BackgroundResource {
           ListMetricDescriptorsFixedSizeCollection> {
 
     private ListMetricDescriptorsFixedSizeCollection(
-        List<ListMetricDescriptorsPage> pages, int collectionSize) {
+        @Nullable List<ListMetricDescriptorsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2298,7 +2314,7 @@ public class MetricServiceClient implements BackgroundResource {
 
     @Override
     protected ListMetricDescriptorsFixedSizeCollection createCollection(
-        List<ListMetricDescriptorsPage> pages, int collectionSize) {
+        @Nullable List<ListMetricDescriptorsPage> pages, int collectionSize) {
       return new ListMetricDescriptorsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2332,8 +2348,8 @@ public class MetricServiceClient implements BackgroundResource {
           ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries, ListTimeSeriesPage> {
 
     private ListTimeSeriesPage(
-        PageContext<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> context,
-        ListTimeSeriesResponse response) {
+        @Nullable PageContext<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> context,
+        @Nullable ListTimeSeriesResponse response) {
       super(context, response);
     }
 
@@ -2343,14 +2359,14 @@ public class MetricServiceClient implements BackgroundResource {
 
     @Override
     protected ListTimeSeriesPage createPage(
-        PageContext<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> context,
-        ListTimeSeriesResponse response) {
+        @Nullable PageContext<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> context,
+        @Nullable ListTimeSeriesResponse response) {
       return new ListTimeSeriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTimeSeriesPage> createPageAsync(
-        PageContext<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> context,
+        @Nullable PageContext<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> context,
         ApiFuture<ListTimeSeriesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2364,7 +2380,8 @@ public class MetricServiceClient implements BackgroundResource {
           ListTimeSeriesPage,
           ListTimeSeriesFixedSizeCollection> {
 
-    private ListTimeSeriesFixedSizeCollection(List<ListTimeSeriesPage> pages, int collectionSize) {
+    private ListTimeSeriesFixedSizeCollection(
+        @Nullable List<ListTimeSeriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2374,7 +2391,7 @@ public class MetricServiceClient implements BackgroundResource {
 
     @Override
     protected ListTimeSeriesFixedSizeCollection createCollection(
-        List<ListTimeSeriesPage> pages, int collectionSize) {
+        @Nullable List<ListTimeSeriesPage> pages, int collectionSize) {
       return new ListTimeSeriesFixedSizeCollection(pages, collectionSize);
     }
   }

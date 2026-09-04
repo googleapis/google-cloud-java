@@ -51,6 +51,9 @@ public class AsyncAdvancedCompleteQuery {
               .setIncludeTailSuggestions(true)
               .setBoostSpec(AdvancedCompleteQueryRequest.BoostSpec.newBuilder().build())
               .addAllSuggestionTypes(new ArrayList<AdvancedCompleteQueryRequest.SuggestionType>())
+              .addAllSuggestionTypeSpecs(
+                  new ArrayList<AdvancedCompleteQueryRequest.SuggestionTypeSpec>())
+              .addAllExperimentIds(new ArrayList<String>())
               .build();
       ApiFuture<AdvancedCompleteQueryResponse> future =
           completionServiceClient.advancedCompleteQueryCallable().futureCall(request);

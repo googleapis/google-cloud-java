@@ -15,7 +15,9 @@
 package com.google.api.generator.engine.lexicon;
 
 import java.util.regex.Pattern;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public class InvalidSymbol {
   private static final Pattern INVALID_SYMBOL_PATTERN = Pattern.compile("[#`~'\"\\\\,$]");
 

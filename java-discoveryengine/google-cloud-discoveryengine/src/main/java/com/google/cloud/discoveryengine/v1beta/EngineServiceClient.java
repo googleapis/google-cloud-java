@@ -28,9 +28,13 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.discoveryengine.v1beta.stub.EngineServiceStub;
 import com.google.cloud.discoveryengine.v1beta.stub.EngineServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -38,6 +42,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -72,7 +78,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateEngine</td>
- *      <td><p> Creates a [Engine][google.cloud.discoveryengine.v1beta.Engine].</td>
+ *      <td><p> Creates an [Engine][google.cloud.discoveryengine.v1beta.Engine].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -92,7 +98,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteEngine</td>
- *      <td><p> Deletes a [Engine][google.cloud.discoveryengine.v1beta.Engine].</td>
+ *      <td><p> Deletes an [Engine][google.cloud.discoveryengine.v1beta.Engine].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -130,7 +136,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetEngine</td>
- *      <td><p> Gets a [Engine][google.cloud.discoveryengine.v1beta.Engine].</td>
+ *      <td><p> Gets an [Engine][google.cloud.discoveryengine.v1beta.Engine].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -169,7 +175,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> PauseEngine</td>
- *      <td><p> Pauses the training of an existing engine. Only applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
+ *      <td><p> Pauses the training of an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -188,7 +194,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ResumeEngine</td>
- *      <td><p> Resumes the training of an existing engine. Only applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
+ *      <td><p> Resumes the training of an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -207,7 +213,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> TuneEngine</td>
- *      <td><p> Tunes an existing engine. Only applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
+ *      <td><p> Tunes an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -222,6 +228,45 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> tuneEngineOperationCallable()
  *           <li><p> tuneEngineCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetIamPolicy</td>
+ *      <td><p> Gets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1beta.Engine]. A `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if the resource exists but does not have a policy set on it.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(GetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getIamPolicy(ResourceName resource)
+ *           <li><p> getIamPolicy(String resource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getIamPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SetIamPolicy</td>
+ *      <td><p> Sets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1beta.Engine]. A `NOT_FOUND` error is returned if the resource does not exist.
+ * <p>  &#42;&#42;Important:&#42;&#42; When setting a policy directly on an Engine resource, the only recommended roles in the bindings are: `roles/discoveryengine.admin`, `roles/discoveryengine.agentspaceAdmin`, `roles/discoveryengine.user`, `roles/discoveryengine.agentspaceUser`, `roles/discoveryengine.viewer`, `roles/discoveryengine.agentspaceViewer`. Attempting to grant any other role will result in a warning in logging.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(SetIamPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> setIamPolicy(ResourceName resource, Policy policy)
+ *           <li><p> setIamPolicy(String resource, Policy policy)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> setIamPolicyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -280,10 +325,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class EngineServiceClient implements BackgroundResource {
-  private final EngineServiceSettings settings;
+  private final @Nullable EngineServiceSettings settings;
   private final EngineServiceStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -331,7 +377,7 @@ public class EngineServiceClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final EngineServiceSettings getSettings() {
+  public final @Nullable EngineServiceSettings getSettings() {
     return settings;
   }
 
@@ -358,7 +404,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Creates an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -387,7 +433,7 @@ public class EngineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Engine, CreateEngineMetadata> createEngineAsync(
-      CollectionName parent, Engine engine, String engineId) {
+      @Nullable CollectionName parent, Engine engine, String engineId) {
     CreateEngineRequest request =
         CreateEngineRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -399,7 +445,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Creates an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -440,7 +486,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Creates an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -471,7 +517,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Creates an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -502,7 +548,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Creates an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -531,7 +577,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Deletes an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -557,7 +603,8 @@ public class EngineServiceClient implements BackgroundResource {
    *     NOT_FOUND error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Empty, DeleteEngineMetadata> deleteEngineAsync(EngineName name) {
+  public final OperationFuture<Empty, DeleteEngineMetadata> deleteEngineAsync(
+      @Nullable EngineName name) {
     DeleteEngineRequest request =
         DeleteEngineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return deleteEngineAsync(request);
@@ -565,7 +612,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Deletes an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -598,7 +645,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Deletes an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -628,7 +675,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Deletes an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -658,7 +705,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Deletes an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -779,7 +826,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Gets an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -800,7 +847,7 @@ public class EngineServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Engine getEngine(EngineName name) {
+  public final Engine getEngine(@Nullable EngineName name) {
     GetEngineRequest request =
         GetEngineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEngine(request);
@@ -808,7 +855,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Gets an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -836,7 +883,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Gets an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -865,7 +912,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets a [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * Gets an [Engine][google.cloud.discoveryengine.v1beta.Engine].
    *
    * <p>Sample code:
    *
@@ -916,7 +963,7 @@ public class EngineServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListEnginesPagedResponse listEngines(CollectionName parent) {
+  public final ListEnginesPagedResponse listEngines(@Nullable CollectionName parent) {
     ListEnginesRequest request =
         ListEnginesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1064,8 +1111,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Pauses the training of an existing engine. Only applicable if
-   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * Pauses the training of an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only
+   * applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1086,7 +1133,7 @@ public class EngineServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Engine pauseEngine(EngineName name) {
+  public final Engine pauseEngine(@Nullable EngineName name) {
     PauseEngineRequest request =
         PauseEngineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return pauseEngine(request);
@@ -1094,8 +1141,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Pauses the training of an existing engine. Only applicable if
-   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * Pauses the training of an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only
+   * applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1123,8 +1170,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Pauses the training of an existing engine. Only applicable if
-   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * Pauses the training of an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only
+   * applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1154,8 +1201,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Pauses the training of an existing engine. Only applicable if
-   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * Pauses the training of an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only
+   * applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1184,8 +1231,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resumes the training of an existing engine. Only applicable if
-   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * Resumes the training of an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only
+   * applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1206,7 +1253,7 @@ public class EngineServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Engine resumeEngine(EngineName name) {
+  public final Engine resumeEngine(@Nullable EngineName name) {
     ResumeEngineRequest request =
         ResumeEngineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return resumeEngine(request);
@@ -1214,8 +1261,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resumes the training of an existing engine. Only applicable if
-   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * Resumes the training of an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only
+   * applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1243,8 +1290,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resumes the training of an existing engine. Only applicable if
-   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * Resumes the training of an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only
+   * applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1274,8 +1321,8 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Resumes the training of an existing engine. Only applicable if
-   * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
+   * Resumes the training of an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only
+   * applicable if [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
    * <p>Sample code:
@@ -1304,7 +1351,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tunes an existing engine. Only applicable if
+   * Tunes an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
    * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
@@ -1327,7 +1374,7 @@ public class EngineServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<TuneEngineResponse, TuneEngineMetadata> tuneEngineAsync(
-      EngineName name) {
+      @Nullable EngineName name) {
     TuneEngineRequest request =
         TuneEngineRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return tuneEngineAsync(request);
@@ -1335,7 +1382,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tunes an existing engine. Only applicable if
+   * Tunes an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
    * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
@@ -1365,7 +1412,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tunes an existing engine. Only applicable if
+   * Tunes an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
    * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
@@ -1397,7 +1444,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tunes an existing engine. Only applicable if
+   * Tunes an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
    * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
@@ -1429,7 +1476,7 @@ public class EngineServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Tunes an existing engine. Only applicable if
+   * Tunes an existing [Engine][google.cloud.discoveryengine.v1beta.Engine]. Only applicable if
    * [SolutionType][google.cloud.discoveryengine.v1beta.SolutionType] is
    * [SOLUTION_TYPE_RECOMMENDATION][google.cloud.discoveryengine.v1beta.SolutionType.SOLUTION_TYPE_RECOMMENDATION].
    *
@@ -1455,6 +1502,290 @@ public class EngineServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<TuneEngineRequest, Operation> tuneEngineCallable() {
     return stub.tuneEngineCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * A `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if
+   * the resource exists but does not have a policy set on it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   ResourceName resource = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+   *   Policy response = engineServiceClient.getIamPolicy(resource);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(@Nullable ResourceName resource) {
+    GetIamPolicyRequest request =
+        GetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * A `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if
+   * the resource exists but does not have a policy set on it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   String resource = AclConfigName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Policy response = engineServiceClient.getIamPolicy(resource);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being requested. See the
+   *     operation documentation for the appropriate value for this field.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String resource) {
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * A `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if
+   * the resource exists but does not have a policy set on it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = engineServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * A `NOT_FOUND` error is returned if the resource does not exist. An empty policy is returned if
+   * the resource exists but does not have a policy set on it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = engineServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * A `NOT_FOUND` error is returned if the resource does not exist.
+   *
+   * <p>&#42;&#42;Important:&#42;&#42; When setting a policy directly on an Engine resource, the
+   * only recommended roles in the bindings are: `roles/discoveryengine.admin`,
+   * `roles/discoveryengine.agentspaceAdmin`, `roles/discoveryengine.user`,
+   * `roles/discoveryengine.agentspaceUser`, `roles/discoveryengine.viewer`,
+   * `roles/discoveryengine.agentspaceViewer`. Attempting to grant any other role will result in a
+   * warning in logging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   ResourceName resource = EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = engineServiceClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(@Nullable ResourceName resource, Policy policy) {
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setPolicy(policy)
+            .build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * A `NOT_FOUND` error is returned if the resource does not exist.
+   *
+   * <p>&#42;&#42;Important:&#42;&#42; When setting a policy directly on an Engine resource, the
+   * only recommended roles in the bindings are: `roles/discoveryengine.admin`,
+   * `roles/discoveryengine.agentspaceAdmin`, `roles/discoveryengine.user`,
+   * `roles/discoveryengine.agentspaceUser`, `roles/discoveryengine.viewer`,
+   * `roles/discoveryengine.agentspaceViewer`. Attempting to grant any other role will result in a
+   * warning in logging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   String resource = AclConfigName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = engineServiceClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
+   *
+   * @param resource REQUIRED: The resource for which the policy is being specified. See the
+   *     operation documentation for the appropriate value for this field.
+   * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is a valid policy but certain Cloud
+   *     Platform services (such as Projects) might reject them.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(String resource, Policy policy) {
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * A `NOT_FOUND` error is returned if the resource does not exist.
+   *
+   * <p>&#42;&#42;Important:&#42;&#42; When setting a policy directly on an Engine resource, the
+   * only recommended roles in the bindings are: `roles/discoveryengine.admin`,
+   * `roles/discoveryengine.agentspaceAdmin`, `roles/discoveryengine.user`,
+   * `roles/discoveryengine.agentspaceUser`, `roles/discoveryengine.viewer`,
+   * `roles/discoveryengine.agentspaceViewer`. Attempting to grant any other role will result in a
+   * warning in logging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = engineServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the IAM access control policy for an [Engine][google.cloud.discoveryengine.v1beta.Engine].
+   * A `NOT_FOUND` error is returned if the resource does not exist.
+   *
+   * <p>&#42;&#42;Important:&#42;&#42; When setting a policy directly on an Engine resource, the
+   * only recommended roles in the bindings are: `roles/discoveryengine.admin`,
+   * `roles/discoveryengine.agentspaceAdmin`, `roles/discoveryengine.user`,
+   * `roles/discoveryengine.agentspaceUser`, `roles/discoveryengine.viewer`,
+   * `roles/discoveryengine.agentspaceViewer`. Attempting to grant any other role will result in a
+   * warning in logging.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EngineServiceClient engineServiceClient = EngineServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(
+   *               EngineName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[ENGINE]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = engineServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
   }
 
   @Override
@@ -1513,8 +1844,8 @@ public class EngineServiceClient implements BackgroundResource {
       extends AbstractPage<ListEnginesRequest, ListEnginesResponse, Engine, ListEnginesPage> {
 
     private ListEnginesPage(
-        PageContext<ListEnginesRequest, ListEnginesResponse, Engine> context,
-        ListEnginesResponse response) {
+        @Nullable PageContext<ListEnginesRequest, ListEnginesResponse, Engine> context,
+        @Nullable ListEnginesResponse response) {
       super(context, response);
     }
 
@@ -1524,14 +1855,14 @@ public class EngineServiceClient implements BackgroundResource {
 
     @Override
     protected ListEnginesPage createPage(
-        PageContext<ListEnginesRequest, ListEnginesResponse, Engine> context,
-        ListEnginesResponse response) {
+        @Nullable PageContext<ListEnginesRequest, ListEnginesResponse, Engine> context,
+        @Nullable ListEnginesResponse response) {
       return new ListEnginesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListEnginesPage> createPageAsync(
-        PageContext<ListEnginesRequest, ListEnginesResponse, Engine> context,
+        @Nullable PageContext<ListEnginesRequest, ListEnginesResponse, Engine> context,
         ApiFuture<ListEnginesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1545,7 +1876,8 @@ public class EngineServiceClient implements BackgroundResource {
           ListEnginesPage,
           ListEnginesFixedSizeCollection> {
 
-    private ListEnginesFixedSizeCollection(List<ListEnginesPage> pages, int collectionSize) {
+    private ListEnginesFixedSizeCollection(
+        @Nullable List<ListEnginesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1555,7 +1887,7 @@ public class EngineServiceClient implements BackgroundResource {
 
     @Override
     protected ListEnginesFixedSizeCollection createCollection(
-        List<ListEnginesPage> pages, int collectionSize) {
+        @Nullable List<ListEnginesPage> pages, int collectionSize) {
       return new ListEnginesFixedSizeCollection(pages, collectionSize);
     }
   }

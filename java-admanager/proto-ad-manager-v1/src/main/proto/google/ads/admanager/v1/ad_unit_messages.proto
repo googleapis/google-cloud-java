@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -47,8 +47,9 @@ message AdUnit {
   // Format: `networks/{network_code}/adUnits/{ad_unit_id}`
   string name = 1 [(google.api.field_behavior) = IDENTIFIER];
 
-  // Output only. AdUnit ID.
-  int64 ad_unit_id = 15 [(google.api.field_behavior) = OUTPUT_ONLY];
+  // Output only. Deprecated: AdUnit ID.
+  int64 ad_unit_id = 15
+      [deprecated = true, (google.api.field_behavior) = OUTPUT_ONLY];
 
   // Required. Immutable. The AdUnit's parent. Every ad unit has a parent except
   // for the root ad unit, which is created by Google. Format:
@@ -186,6 +187,13 @@ message AdUnit {
   // unit has set appliedAdsenseEnabled, the attribute is defaulted to true.
   optional bool effective_adsense_enabled = 27
       [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Optional. Non-empty default. Defines the type of refresh rate control for
+  // this ad unit. This field defaults to `DISABLED`.
+  optional RefreshRateTypeEnum.RefreshRateType refresh_rate_type = 78 [
+    (google.api.field_behavior) = OPTIONAL,
+    (google.api.field_behavior) = NON_EMPTY_DEFAULT
+  ];
 }
 
 // Represents the size, environment, and companions of an ad in an ad unit.

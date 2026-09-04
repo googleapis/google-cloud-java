@@ -74,6 +74,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Handle verification of Google-signed JWT tokens.
@@ -81,6 +83,7 @@ import java.util.concurrent.TimeUnit;
  * @author Jeff Ching
  * @since 0.21.0
  */
+@NullMarked
 public class TokenVerifier {
   private static final String IAP_CERT_URL = "https://www.gstatic.com/iap/verify/public_key-jwk";
   private static final String FEDERATED_SIGNON_CERT_URL =
@@ -371,7 +374,7 @@ public class TokenVerifier {
       return keyCache;
     }
 
-    private PublicKey buildPublicKey(JsonWebKey key)
+    private @Nullable PublicKey buildPublicKey(JsonWebKey key)
         throws NoSuchAlgorithmException, InvalidParameterSpecException, InvalidKeySpecException {
       if ("ES256".equals(key.alg)) {
         return buildEs256PublicKey(key);

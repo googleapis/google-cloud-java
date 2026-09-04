@@ -24,6 +24,8 @@ import com.google.cloud.videointelligence.v1p3beta1.stub.StreamingVideoIntellige
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -114,10 +116,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class StreamingVideoIntelligenceServiceClient implements BackgroundResource {
-  private final StreamingVideoIntelligenceServiceSettings settings;
+  private final @Nullable StreamingVideoIntelligenceServiceSettings settings;
   private final StreamingVideoIntelligenceServiceStub stub;
 
   /** Constructs an instance of StreamingVideoIntelligenceServiceClient with default settings. */
@@ -162,7 +165,7 @@ public class StreamingVideoIntelligenceServiceClient implements BackgroundResour
     this.stub = stub;
   }
 
-  public final StreamingVideoIntelligenceServiceSettings getSettings() {
+  public final @Nullable StreamingVideoIntelligenceServiceSettings getSettings() {
     return settings;
   }
 

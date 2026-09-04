@@ -34,12 +34,14 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.rpc.ApiCallContext;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * {@code HttpJsonClientCalls} creates a new {@code HttpJsonClientCall} from the given call context.
  *
  * <p>Package-private for internal use.
  */
+@NullMarked
 class HttpJsonClientCalls {
   private static final Logger LOGGER = Logger.getLogger(HttpJsonClientCalls.class.getName());
 
@@ -92,13 +94,13 @@ class HttpJsonClientCalls {
     return HttpJsonMetadata.newBuilder().build().withHeaders(finalHeaders);
   }
 
-  static <RequestT, ResponseT> ApiFuture<ResponseT> futureUnaryCall(
+  static <RequestT, ResponseT> void startUnaryCall(
       HttpJsonClientCall<RequestT, ResponseT> clientCall,
       RequestT request,
-      HttpJsonCallContext context) {
+      HttpJsonCallContext context,
+      HttpJsonClientCall.Listener<ResponseT> listener) {
     // Start the call
-    HttpJsonFuture<ResponseT> future = new HttpJsonFuture<>(clientCall);
-    clientCall.start(new FutureListener<>(future), getMetadataWithTraceContext(context));
+    clientCall.start(listener, getMetadataWithTraceContext(context));
 
     // Send the request
     try {
@@ -116,7 +118,15 @@ class HttpJsonClientCalls {
 
       throw sendError;
     }
+  }
 
+  static <RequestT, ResponseT> ApiFuture<ResponseT> futureUnaryCall(
+      HttpJsonClientCall<RequestT, ResponseT> clientCall,
+      RequestT request,
+      HttpJsonCallContext context) {
+    // Start the call
+    HttpJsonFuture<ResponseT> future = new HttpJsonFuture<>(clientCall);
+    startUnaryCall(clientCall, request, context, new FutureListener<>(future));
     return future;
   }
 

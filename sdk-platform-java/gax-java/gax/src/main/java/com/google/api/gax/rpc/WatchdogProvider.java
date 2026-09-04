@@ -34,12 +34,13 @@ import static com.google.api.gax.util.TimeConversionUtils.toThreetenDuration;
 import com.google.api.core.ApiClock;
 import com.google.api.core.ObsoleteApi;
 import java.util.concurrent.ScheduledExecutorService;
-import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;
 
+@NullMarked
 public interface WatchdogProvider {
   boolean needsClock();
 
-  WatchdogProvider withClock(@Nonnull ApiClock clock);
+  WatchdogProvider withClock(ApiClock clock);
 
   boolean needsCheckInterval();
 

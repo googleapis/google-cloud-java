@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -38,9 +38,10 @@ option ruby_package = "Google::Ads::AdManager::V1";
 service ReportService {
   option (google.api.default_host) = "admanager.googleapis.com";
   option (google.api.oauth_scopes) =
-      "https://www.googleapis.com/auth/admanager";
+      "https://www.googleapis.com/auth/admanager,"
+      "https://www.googleapis.com/auth/admanager.readonly";
 
-  // API to retrieve a `Report` object.
+  // Retrieves a `Report` object.
   rpc GetReport(GetReportRequest) returns (Report) {
     option (google.api.http) = {
       get: "/v1/{name=networks/*/reports/*}"
@@ -48,7 +49,7 @@ service ReportService {
     option (google.api.method_signature) = "name";
   }
 
-  // API to retrieve a list of `Report` objects.
+  // Lists `Report` objects.
   rpc ListReports(ListReportsRequest) returns (ListReportsResponse) {
     option (google.api.http) = {
       get: "/v1/{parent=networks/*}/reports"
@@ -56,7 +57,7 @@ service ReportService {
     option (google.api.method_signature) = "parent";
   }
 
-  // API to create a `Report` object.
+  // Creates a `Report` object.
   rpc CreateReport(CreateReportRequest) returns (Report) {
     option (google.api.http) = {
       post: "/v1/{parent=networks/*}/reports"
@@ -65,7 +66,7 @@ service ReportService {
     option (google.api.method_signature) = "parent,report";
   }
 
-  // API to update a `Report` object.
+  // Updates a `Report` object.
   rpc UpdateReport(UpdateReportRequest) returns (Report) {
     option (google.api.http) = {
       patch: "/v1/{report.name=networks/*/reports/*}"
@@ -232,9 +233,9 @@ message UpdateReportRequest {
   // Required. The `Report` to update.
   Report report = 1 [(google.api.field_behavior) = REQUIRED];
 
-  // Required. The list of fields to update.
+  // Optional. The list of fields to update.
   google.protobuf.FieldMask update_mask = 2
-      [(google.api.field_behavior) = REQUIRED];
+      [(google.api.field_behavior) = OPTIONAL];
 }
 
 // The request message for the fetch report result rows endpoint.

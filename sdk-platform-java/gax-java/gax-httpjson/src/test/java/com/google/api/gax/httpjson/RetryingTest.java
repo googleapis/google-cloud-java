@@ -33,6 +33,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 import com.google.api.client.http.HttpHeaders;
@@ -70,14 +71,16 @@ import org.mockito.Mockito;
 class RetryingTest {
 
   @SuppressWarnings("unchecked")
-  private final UnaryCallable<Integer, Integer> callInt = Mockito.mock(UnaryCallable.class);
+  private final UnaryCallable<Integer, Integer> callInt =
+      Mockito.mock(UnaryCallable.class, Mockito.withSettings().withoutAnnotations());
 
   private final ApiMethodDescriptor<Integer, Integer> FAKE_METHOD_DESCRIPTOR_FOR_REQUEST_MUTATOR =
       ApiMethodDescriptor.newBuilder()
           .setFullMethodName("google.cloud.v1.Fake/FakeMethodForRequestMutator")
           .setHttpMethod(HttpMethods.POST)
           .setRequestFormatter(createMockRequestFormatter())
-          .setResponseParser(Mockito.mock(HttpResponseParser.class))
+          .setResponseParser(
+              mock(HttpResponseParser.class, Mockito.withSettings().withoutAnnotations()))
           .build();
 
   private final Integer initialRequest = 1;
@@ -115,7 +118,8 @@ class RetryingTest {
           .build();
 
   private HttpRequestFormatter createMockRequestFormatter() {
-    HttpRequestFormatter formatter = Mockito.mock(HttpRequestFormatter.class);
+    HttpRequestFormatter formatter =
+        mock(HttpRequestFormatter.class, Mockito.withSettings().withoutAnnotations());
     PathTemplate template = PathTemplate.create("/test/path/template");
     Mockito.when(formatter.getPathTemplate()).thenReturn(template);
     return formatter;

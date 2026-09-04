@@ -25,14 +25,25 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Ticker;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
+import com.google.common.collect.ImmutableSet;
+import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Descriptors.Descriptor;
+import com.google.protobuf.Descriptors.FieldDescriptor;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.Message;
+import com.google.protobuf.util.Durations;
+import com.google.rpc.RetryInfo;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.ResultSet;
+import com.google.spanner.v1.ResultSetMetadata;
 import com.google.spanner.v1.RollbackRequest;
 import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionSelector;
@@ -43,12 +54,16 @@ import io.grpc.ForwardingClientCallListener.SimpleForwardingClientCallListener;
 import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
+import io.grpc.protobuf.ProtoUtils;
+import io.grpc.protobuf.StatusProto;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
 import java.io.IOException;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
+import java.time.Duration;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -58,12 +73,15 @@ import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
 /**
- * ManagedChannel that routes eligible requests using location-aware routing hints.
+ * ManagedChannel that routes eligible Spanner requests using location-aware routing hints and
+ * transaction affinity.
  *
- * <p>Routing hints are applied to streaming read/query and unary ExecuteSql. Mutation-based
- * BeginTransaction and Commit requests also carry routing hints when recipes are available.
- * Commit/Rollback use transaction affinity when available. BeginTransaction is routed only when a
- * mutation key is provided.
+ * <p>Routing hints are applied to streaming read/query, unary Read, and unary ExecuteSql.
+ * Mutation-based BeginTransaction and Commit requests also carry routing hints when recipes are
+ * available. Other eligible methods use transaction affinity when their request contains a {@code
+ * TransactionSelector} or {@code transaction_id}. PartitionQuery, PartitionRead, BatchWrite,
+ * FetchCacheUpdate, CreateSession, BatchCreateSessions, GetSession, ListSessions, and DeleteSession
+ * always use the default channel.
  */
 @InternalApi
 final class KeyAwareChannel extends ManagedChannel {
@@ -72,16 +90,23 @@ final class KeyAwareChannel extends ManagedChannel {
 
   private static final long MAX_TRACKED_TRANSACTION_AFFINITIES = 100_000L;
   private static final long TRANSACTION_AFFINITY_TTL_MINUTES = 10L;
-  private static final long MAX_TRACKED_READ_ONLY_TRANSACTIONS = 100_000L;
   private static final int CHANNEL_FINDER_CLEANUP_INTERVAL = 1024;
-  private static final String STREAMING_READ_METHOD = "google.spanner.v1.Spanner/StreamingRead";
-  private static final String STREAMING_SQL_METHOD =
-      "google.spanner.v1.Spanner/ExecuteStreamingSql";
-  private static final String UNARY_SQL_METHOD = "google.spanner.v1.Spanner/ExecuteSql";
-  private static final String BEGIN_TRANSACTION_METHOD =
-      "google.spanner.v1.Spanner/BeginTransaction";
-  private static final String COMMIT_METHOD = "google.spanner.v1.Spanner/Commit";
-  private static final String ROLLBACK_METHOD = "google.spanner.v1.Spanner/Rollback";
+  private static final String SPANNER_METHOD_PREFIX = "google.spanner.v1.Spanner/";
+  private static final Set<String> DEFAULT_CHANNEL_METHODS =
+      ImmutableSet.of(
+          SPANNER_METHOD_PREFIX + "PartitionQuery",
+          SPANNER_METHOD_PREFIX + "PartitionRead",
+          SPANNER_METHOD_PREFIX + "BatchWrite",
+          SPANNER_METHOD_PREFIX + "FetchCacheUpdate",
+          SPANNER_METHOD_PREFIX + "CreateSession",
+          SPANNER_METHOD_PREFIX + "BatchCreateSessions",
+          SPANNER_METHOD_PREFIX + "GetSession",
+          SPANNER_METHOD_PREFIX + "ListSessions",
+          SPANNER_METHOD_PREFIX + "DeleteSession");
+  private static final Metadata.Key<RetryInfo> RETRY_INFO_KEY =
+      ProtoUtils.keyForProto(RetryInfo.getDefaultInstance());
+  private static final Map<Descriptor, ReflectionFields> REFLECTION_FIELDS =
+      new ConcurrentHashMap<>();
 
   private final ManagedChannel defaultChannel;
   private final ChannelEndpointCache endpointCache;
@@ -90,16 +115,12 @@ final class KeyAwareChannel extends ManagedChannel {
   private final String defaultEndpointAddress;
   private final ReferenceQueue<ChannelFinder> channelFinderReferenceQueue = new ReferenceQueue<>();
   private final Map<String, ChannelFinderReference> channelFinders = new ConcurrentHashMap<>();
+  private final Set<String> learnedDefaultChannelMethods = ConcurrentHashMap.newKeySet();
   private final AtomicInteger channelFinderCleanupCounter = new AtomicInteger();
   // Maps read-write transaction IDs to their last routed endpoint.
   // Bound and age out entries in case application code abandons a transaction
   // without sending Commit/Rollback or otherwise clearing affinity.
   private final Cache<ByteString, String> transactionAffinities;
-  // Maps read-only transaction IDs to their preferLeader value.
-  // Strong reads → true (prefer leader), Stale reads → false (any replica).
-  // Bounded to prevent unbounded growth if application code does not close read-only transactions.
-  private final Cache<ByteString, Boolean> readOnlyTxPreferLeader =
-      CacheBuilder.newBuilder().maximumSize(MAX_TRACKED_READ_ONLY_TRANSACTIONS).build();
   private final EndpointOverloadCooldownTracker endpointOverloadCooldowns;
 
   private KeyAwareChannel(
@@ -317,12 +338,25 @@ final class KeyAwareChannel extends ManagedChannel {
 
   private static boolean isKeyAware(MethodDescriptor<?, ?> methodDescriptor) {
     String method = methodDescriptor.getFullMethodName();
-    return STREAMING_READ_METHOD.equals(method)
-        || STREAMING_SQL_METHOD.equals(method)
-        || UNARY_SQL_METHOD.equals(method)
-        || BEGIN_TRANSACTION_METHOD.equals(method)
-        || COMMIT_METHOD.equals(method)
-        || ROLLBACK_METHOD.equals(method);
+    return method.startsWith(SPANNER_METHOD_PREFIX) && !DEFAULT_CHANNEL_METHODS.contains(method);
+  }
+
+  @VisibleForTesting
+  static Set<String> defaultChannelMethods() {
+    return DEFAULT_CHANNEL_METHODS;
+  }
+
+  private boolean isLearnedDefaultChannelMethod(String method) {
+    return learnedDefaultChannelMethods.contains(method);
+  }
+
+  private void learnDefaultChannelMethod(String method) {
+    if (learnedDefaultChannelMethods.add(method)) {
+      logger.log(
+          Level.INFO,
+          "Method {0} is not implemented on a location-aware endpoint; using the default channel",
+          method);
+    }
   }
 
   @Nullable
@@ -359,29 +393,12 @@ final class KeyAwareChannel extends ManagedChannel {
       return;
     }
     transactionAffinities.invalidate(transactionId);
-    readOnlyTxPreferLeader.invalidate(transactionId);
   }
 
-  void clearTransactionAffinity(ByteString transactionId) {
-    clearAffinity(transactionId);
-  }
-
-  void clearTransactionAndChannelAffinity(ByteString transactionId, @Nullable Long channelHint) {
-    String address = transactionAffinities.asMap().remove(transactionId);
-    readOnlyTxPreferLeader.invalidate(transactionId);
-    if (channelHint != null) {
-      ManagedChannel channel = defaultChannel;
-      if (address != null) {
-        ChannelEndpoint endpoint = endpointCache.getIfPresent(address);
-        if (endpoint != null) {
-          channel = endpoint.getChannel();
-        }
-      }
-      GrpcGcpAffinityUtil.clearChannelHintAffinity(channel, channelHint);
-    }
-  }
-
-  private void recordEndpointCooldown(@Nullable ChannelEndpoint endpoint) {
+  private void recordEndpointCooldown(
+      @Nullable ChannelEndpoint endpoint,
+      io.grpc.Status.Code statusCode,
+      @Nullable Metadata trailers) {
     if (endpoint == null) {
       return;
     }
@@ -389,7 +406,65 @@ final class KeyAwareChannel extends ManagedChannel {
     if (defaultEndpointAddress.equals(address)) {
       return;
     }
-    endpointOverloadCooldowns.recordFailure(address);
+    endpointOverloadCooldowns.recordFailure(address, statusCode, retryDelay(statusCode, trailers));
+  }
+
+  private void recordEndpointSuccess(@Nullable ChannelEndpoint endpoint) {
+    if (endpoint == null) {
+      return;
+    }
+    String address = endpoint.getAddress();
+    if (!defaultEndpointAddress.equals(address)) {
+      endpointOverloadCooldowns.recordSuccess(address);
+    }
+  }
+
+  @Nullable
+  @VisibleForTesting
+  static Duration retryDelay(io.grpc.Status.Code statusCode, @Nullable Metadata trailers) {
+    if (trailers == null) {
+      return null;
+    }
+    Duration retryDelay = null;
+    try {
+      retryDelay = retryDelay(trailers.get(RETRY_INFO_KEY));
+    } catch (IllegalArgumentException ignored) {
+      // Treat malformed direct details as absent.
+    }
+    try {
+      com.google.rpc.Status richStatus =
+          StatusProto.fromStatusAndTrailers(io.grpc.Status.fromCode(statusCode), trailers);
+      if (richStatus != null) {
+        for (Any detail : richStatus.getDetailsList()) {
+          if (!detail.is(RetryInfo.class)) {
+            continue;
+          }
+          try {
+            Duration candidate = retryDelay(detail.unpack(RetryInfo.class));
+            if (candidate != null && (retryDelay == null || candidate.compareTo(retryDelay) > 0)) {
+              retryDelay = candidate;
+            }
+          } catch (InvalidProtocolBufferException ignored) {
+            // Skip malformed details without hiding later valid RetryInfo details.
+          }
+        }
+      }
+    } catch (IllegalArgumentException ignored) {
+      // Malformed rich status metadata must not interfere with transport close handling.
+    }
+    return retryDelay;
+  }
+
+  @Nullable
+  private static Duration retryDelay(@Nullable RetryInfo retryInfo) {
+    if (retryInfo == null
+        || !retryInfo.hasRetryDelay()
+        || !Durations.isValid(retryInfo.getRetryDelay())
+        || Durations.isNegative(retryInfo.getRetryDelay())) {
+      return null;
+    }
+    return Duration.ofSeconds(
+        retryInfo.getRetryDelay().getSeconds(), retryInfo.getRetryDelay().getNanos());
   }
 
   private void maybeRecordErrorPenalty(
@@ -418,27 +493,6 @@ final class KeyAwareChannel extends ManagedChannel {
     return endpointOverloadCooldowns.isCoolingDown(address);
   }
 
-  private boolean isReadOnlyTransaction(ByteString transactionId) {
-    return transactionId != null
-        && !transactionId.isEmpty()
-        && readOnlyTxPreferLeader.getIfPresent(transactionId) != null;
-  }
-
-  @Nullable
-  private Boolean readOnlyPreferLeader(ByteString transactionId) {
-    if (transactionId == null || transactionId.isEmpty()) {
-      return null;
-    }
-    return readOnlyTxPreferLeader.getIfPresent(transactionId);
-  }
-
-  private void trackReadOnlyTransaction(ByteString transactionId, boolean preferLeader) {
-    if (transactionId == null || transactionId.isEmpty()) {
-      return;
-    }
-    readOnlyTxPreferLeader.put(transactionId, preferLeader);
-  }
-
   private void recordAffinity(
       ByteString transactionId, @Nullable ChannelEndpoint endpoint, boolean allowDefault) {
     if (transactionId == null || transactionId.isEmpty() || endpoint == null) {
@@ -456,6 +510,158 @@ final class KeyAwareChannel extends ManagedChannel {
       return selector.getId();
     }
     return ByteString.EMPTY;
+  }
+
+  /**
+   * Reflection helpers resolve and cache relevant fields once per protobuf descriptor. Typed RPC
+   * paths do not call these helpers; generic requests and responses reuse cached descriptors and
+   * never enumerate populated fields per message.
+   */
+  private static ReflectionFields reflectionFields(Message message) {
+    Descriptor descriptor = message.getDescriptorForType();
+    ReflectionFields fields = REFLECTION_FIELDS.get(descriptor);
+    if (fields != null) {
+      return fields;
+    }
+    ReflectionFields created = new ReflectionFields(descriptor);
+    ReflectionFields existing = REFLECTION_FIELDS.putIfAbsent(descriptor, created);
+    return existing == null ? created : existing;
+  }
+
+  @Nullable
+  private static TransactionSelector transactionSelectorFromGenericRequest(Object request) {
+    if (!(request instanceof Message)) {
+      return null;
+    }
+    Message message = (Message) request;
+    FieldDescriptor field = reflectionFields(message).transactionSelectorField;
+    if (field == null || !message.hasField(field)) {
+      return null;
+    }
+    Object value = message.getField(field);
+    if (value instanceof TransactionSelector) {
+      return (TransactionSelector) value;
+    }
+    if (value instanceof Message) {
+      Message selector = (Message) value;
+      try {
+        if (selector.getDescriptorForType() == TransactionSelector.getDescriptor()) {
+          return TransactionSelector.newBuilder().mergeFrom(selector).build();
+        }
+        return TransactionSelector.parseFrom(selector.toByteString());
+      } catch (InvalidProtocolBufferException e) {
+        return null;
+      }
+    }
+    return null;
+  }
+
+  private static ByteString transactionIdFieldFromGenericRequest(Object request) {
+    if (!(request instanceof Message)) {
+      return ByteString.EMPTY;
+    }
+    Message message = (Message) request;
+    FieldDescriptor field = reflectionFields(message).transactionIdField;
+    if (field == null) {
+      return ByteString.EMPTY;
+    }
+    Object value = message.getField(field);
+    return value instanceof ByteString ? (ByteString) value : ByteString.EMPTY;
+  }
+
+  @Nullable
+  private static ByteString transactionIdFromGenericResponse(Object response) {
+    if (!(response instanceof Message)) {
+      return null;
+    }
+    Message message = (Message) response;
+    ReflectionFields fields = reflectionFields(message);
+    ByteString transactionId =
+        transactionIdFromReflectedTransactionField(message, fields.transactionField);
+    if (transactionId != null) {
+      return transactionId;
+    }
+    FieldDescriptor metadataField = fields.metadataField;
+    if (metadataField == null || !message.hasField(metadataField)) {
+      return null;
+    }
+    Object metadata = message.getField(metadataField);
+    if (!(metadata instanceof Message)) {
+      return null;
+    }
+    Message metadataMessage = (Message) metadata;
+    return transactionIdFromReflectedTransactionField(
+        metadataMessage, reflectionFields(metadataMessage).transactionField);
+  }
+
+  @Nullable
+  private static ByteString transactionIdFromReflectedTransactionField(
+      Message message, @Nullable FieldDescriptor field) {
+    if (field == null || !message.hasField(field)) {
+      return null;
+    }
+    return transactionIdFromReflectedTransaction(message.getField(field));
+  }
+
+  @Nullable
+  private static ByteString transactionIdFromReflectedTransaction(Object value) {
+    if (value instanceof Transaction) {
+      return transactionIdFromTransaction((Transaction) value);
+    }
+    if (!(value instanceof Message)) {
+      return null;
+    }
+    Message transaction = (Message) value;
+    FieldDescriptor idField = reflectionFields(transaction).transactionMessageIdField;
+    if (idField == null) {
+      return null;
+    }
+    Object id = transaction.getField(idField);
+    return id instanceof ByteString && !((ByteString) id).isEmpty() ? (ByteString) id : null;
+  }
+
+  private static boolean isMessageFieldOfType(@Nullable FieldDescriptor field, String messageType) {
+    return field != null
+        && !field.isRepeated()
+        && field.getJavaType() == FieldDescriptor.JavaType.MESSAGE
+        && field.getMessageType().getFullName().equals(messageType);
+  }
+
+  private static final class ReflectionFields {
+    @Nullable private final FieldDescriptor transactionSelectorField;
+    @Nullable private final FieldDescriptor transactionIdField;
+    @Nullable private final FieldDescriptor transactionField;
+    @Nullable private final FieldDescriptor metadataField;
+    @Nullable private final FieldDescriptor transactionMessageIdField;
+
+    private ReflectionFields(Descriptor descriptor) {
+      FieldDescriptor transaction = descriptor.findFieldByName("transaction");
+      this.transactionSelectorField =
+          isMessageFieldOfType(transaction, TransactionSelector.getDescriptor().getFullName())
+              ? transaction
+              : null;
+      this.transactionField =
+          isMessageFieldOfType(transaction, Transaction.getDescriptor().getFullName())
+              ? transaction
+              : null;
+      FieldDescriptor transactionId = descriptor.findFieldByName("transaction_id");
+      this.transactionIdField =
+          transactionId != null
+                  && !transactionId.isRepeated()
+                  && transactionId.getJavaType() == FieldDescriptor.JavaType.BYTE_STRING
+              ? transactionId
+              : null;
+      FieldDescriptor metadata = descriptor.findFieldByName("metadata");
+      this.metadataField =
+          isMessageFieldOfType(metadata, ResultSetMetadata.getDescriptor().getFullName())
+              ? metadata
+              : null;
+      FieldDescriptor id = descriptor.findFieldByName("id");
+      this.transactionMessageIdField =
+          id != null && !id.isRepeated() && id.getJavaType() == FieldDescriptor.JavaType.BYTE_STRING
+              ? id
+              : null;
+    }
   }
 
   @Nullable
@@ -524,12 +730,17 @@ final class KeyAwareChannel extends ManagedChannel {
     @Nullable private ByteString transactionIdToClear;
     private boolean allowDefaultAffinity;
     private long pendingRequests;
+    private long outstandingRequests;
     private boolean pendingHalfClose;
-    @Nullable private Boolean pendingMessageCompression;
+    private boolean halfClosed;
+    @Nullable private Boolean messageCompression;
     @Nullable private io.grpc.Status cancelledStatus;
     @Nullable private Metadata cancelledTrailers;
-    private boolean isReadOnlyBegin;
-    private boolean readOnlyIsStrong;
+    private boolean shouldRecordTransactionAffinity;
+    private boolean genericRequest;
+    private boolean reroutedToDefault;
+    private boolean responseMessageReceived;
+    @Nullable private RequestT genericRequestMessage;
     private final Object lock = new Object();
 
     KeyAwareClientCall(
@@ -593,7 +804,7 @@ final class KeyAwareChannel extends ManagedChannel {
 
         if (message instanceof ReadRequest) {
           ReadRequest.Builder reqBuilder = ((ReadRequest) message).toBuilder();
-          maybeTrackReadOnlyBegin(reqBuilder.getTransaction());
+          maybeTrackReadWriteBegin(reqBuilder.getTransaction());
           RoutingDecision routing = routeFromRequest(reqBuilder);
           finder = routing.finder;
           endpoint = routing.endpoint;
@@ -603,7 +814,7 @@ final class KeyAwareChannel extends ManagedChannel {
           message = (RequestT) reqBuilder.build();
         } else if (message instanceof ExecuteSqlRequest) {
           ExecuteSqlRequest.Builder reqBuilder = ((ExecuteSqlRequest) message).toBuilder();
-          maybeTrackReadOnlyBegin(reqBuilder.getTransaction());
+          maybeTrackReadWriteBegin(reqBuilder.getTransaction());
           RoutingDecision routing = routeFromRequest(reqBuilder);
           finder = routing.finder;
           endpoint = routing.endpoint;
@@ -623,9 +834,9 @@ final class KeyAwareChannel extends ManagedChannel {
             endpoint = finder.findServer(reqBuilder, excludedEndpoints);
           }
           if (reqBuilder.hasOptions() && reqBuilder.getOptions().hasReadOnly()) {
-            isReadOnlyBegin = true;
-            readOnlyIsStrong = reqBuilder.getOptions().getReadOnly().getStrong();
+            shouldRecordTransactionAffinity = false;
           } else {
+            shouldRecordTransactionAffinity = true;
             allowDefaultAffinity = true;
           }
           message = (RequestT) reqBuilder.build();
@@ -660,10 +871,33 @@ final class KeyAwareChannel extends ManagedChannel {
                 parentChannel.affinityEndpoint(request.getTransactionId(), excludedEndpoints);
             transactionIdToClear = request.getTransactionId();
           }
+        } else if (message instanceof ExecuteBatchDmlRequest) {
+          ExecuteBatchDmlRequest request = (ExecuteBatchDmlRequest) message;
+          String databaseId = parentChannel.extractDatabaseIdFromSession(request.getSession());
+          if (databaseId != null) {
+            finder = parentChannel.getOrCreateChannelFinder(databaseId);
+            databaseScope = databaseId;
+          }
+          maybeTrackReadWriteBegin(request.getTransaction());
+          endpoint = routeFromRequest(request);
         } else {
-          throw new IllegalStateException(
-              "Only read, query, begin transaction, commit, and rollback requests are supported for"
-                  + " key-aware calls.");
+          genericRequest = true;
+          genericRequestMessage = message;
+          boolean useDefault =
+              parentChannel.isLearnedDefaultChannelMethod(methodDescriptor.getFullMethodName());
+          TransactionSelector selector = transactionSelectorFromGenericRequest(message);
+          if (selector != null) {
+            maybeTrackReadWriteBegin(selector);
+            if (!useDefault) {
+              endpoint =
+                  parentChannel.affinityEndpoint(
+                      transactionIdFromSelector(selector), excludedEndpoints);
+            }
+          } else if (!useDefault) {
+            endpoint =
+                parentChannel.affinityEndpoint(
+                    transactionIdFieldFromGenericRequest(message), excludedEndpoints);
+          }
         }
 
         if (endpoint == null) {
@@ -698,9 +932,8 @@ final class KeyAwareChannel extends ManagedChannel {
             parentChannel.defaultEndpointAddress.equals(endpoint.getAddress()),
             finder != null);
         delegate = endpoint.getChannel().newCall(methodDescriptor, callOptions);
-        if (pendingMessageCompression != null) {
-          delegate.setMessageCompression(pendingMessageCompression);
-          pendingMessageCompression = null;
+        if (messageCompression != null) {
+          delegate.setMessageCompression(messageCompression);
         }
         delegate.start(responseListener, headers);
         drainPendingRequests();
@@ -718,6 +951,7 @@ final class KeyAwareChannel extends ManagedChannel {
         if (this.cancelledStatus != null) {
           return;
         }
+        halfClosed = true;
         if (delegate == null) {
           pendingHalfClose = true;
           return;
@@ -761,6 +995,9 @@ final class KeyAwareChannel extends ManagedChannel {
         if (cancelledStatus != null) {
           return;
         }
+        if (numMessages > 0) {
+          outstandingRequests = saturatedAdd(outstandingRequests, numMessages);
+        }
         if (delegate != null) {
           currentDelegate = delegate;
         } else {
@@ -797,10 +1034,10 @@ final class KeyAwareChannel extends ManagedChannel {
         if (cancelledStatus != null) {
           return;
         }
+        messageCompression = enabled;
         if (delegate != null) {
           currentDelegate = delegate;
         } else {
-          pendingMessageCompression = enabled;
           return;
         }
       }
@@ -814,10 +1051,83 @@ final class KeyAwareChannel extends ManagedChannel {
       }
       long requests = pendingRequests;
       pendingRequests = 0L;
+      requestMessages(currentDelegate, requests);
+    }
+
+    private static void requestMessages(ClientCall<?, ?> currentDelegate, long requests) {
       while (requests > 0) {
         int batch = requests > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) requests;
         currentDelegate.request(batch);
         requests -= batch;
+      }
+    }
+
+    private static long saturatedAdd(long current, int increment) {
+      long updated = current + increment;
+      return updated < 0L ? Long.MAX_VALUE : updated;
+    }
+
+    void onResponseMessage() {
+      synchronized (lock) {
+        responseMessageReceived = true;
+        if (outstandingRequests > 0L) {
+          outstandingRequests--;
+        }
+      }
+    }
+
+    boolean maybeRerouteUnimplementedGenericCall(io.grpc.Status status) {
+      if (status.getCode() != io.grpc.Status.Code.UNIMPLEMENTED) {
+        return false;
+      }
+      synchronized (lock) {
+        if (!genericRequest
+            || reroutedToDefault
+            || responseMessageReceived
+            || selectedEndpoint == null
+            || parentChannel.defaultEndpointAddress.equals(selectedEndpoint.getAddress())
+            || genericRequestMessage == null
+            || cancelledStatus != null) {
+          return false;
+        }
+        ChannelEndpoint defaultEndpoint = parentChannel.endpointCache.defaultChannel();
+        if (defaultEndpoint == null) {
+          return false;
+        }
+
+        selectedEndpoint.decrementActiveRequests();
+        parentChannel.learnDefaultChannelMethod(methodDescriptor.getFullMethodName());
+        reroutedToDefault = true;
+        selectedEndpoint = defaultEndpoint;
+        selectedTargetEndpoint = defaultEndpoint.getAddress();
+        selectedDatabaseScope = null;
+        selectedOperationUid = 0L;
+        selectedPreferLeader = false;
+        channelFinder = null;
+        selectedEndpoint.incrementActiveRequests();
+        XGoogSpannerRequestId requestId = callOptions.getOption(REQUEST_ID_CALL_OPTIONS_KEY);
+        if (requestId != null) {
+          RequestIdTargetTracker.record(
+              requestId.getHeaderValue(), null, selectedTargetEndpoint, 0L, false);
+        }
+        parentChannel.onRequestRouted(defaultEndpoint);
+        recordRouteSelectionTrace(methodDescriptor, defaultEndpoint.getAddress(), true, false);
+
+        ClientCall<RequestT, ResponseT> fallback =
+            defaultEndpoint.getChannel().newCall(methodDescriptor, callOptions);
+        delegate = fallback;
+        if (messageCompression != null) {
+          fallback.setMessageCompression(messageCompression);
+        }
+        Metadata fallbackHeaders = new Metadata();
+        fallbackHeaders.merge(headers);
+        fallback.start(responseListener, fallbackHeaders);
+        requestMessages(fallback, outstandingRequests);
+        fallback.sendMessage(genericRequestMessage);
+        if (halfClosed) {
+          fallback.halfClose();
+        }
+        return true;
       }
     }
 
@@ -829,17 +1139,17 @@ final class KeyAwareChannel extends ManagedChannel {
       parentChannel.clearAffinity(transactionIdToClear);
     }
 
-    private void maybeTrackReadOnlyBegin(TransactionSelector selector) {
+    private void maybeTrackReadWriteBegin(TransactionSelector selector) {
       if (selector.getSelectorCase() == TransactionSelector.SelectorCase.BEGIN
-          && selector.getBegin().hasReadOnly()) {
-        isReadOnlyBegin = true;
-        readOnlyIsStrong = selector.getBegin().getReadOnly().getStrong();
+          && !selector.getBegin().hasReadOnly()) {
+        shouldRecordTransactionAffinity = true;
+        allowDefaultAffinity = true;
       }
     }
 
     private Predicate<String> excludedEndpoints() {
       if (excludedEndpoints == null) {
-        excludedEndpoints = parentChannel.endpointOverloadCooldowns::isCoolingDown;
+        excludedEndpoints = parentChannel.endpointOverloadCooldowns;
       }
       return excludedEndpoints;
     }
@@ -847,24 +1157,20 @@ final class KeyAwareChannel extends ManagedChannel {
     private RoutingDecision routeFromRequest(ReadRequest.Builder reqBuilder) {
       String databaseId = parentChannel.extractDatabaseIdFromSession(reqBuilder.getSession());
       ByteString transactionId = transactionIdFromSelector(reqBuilder.getTransaction());
-      // Skip affinity for read-only transactions so each read routes independently.
-      boolean isReadOnly = parentChannel.isReadOnlyTransaction(transactionId);
       Predicate<String> excludedEndpoints = excludedEndpoints();
-      ChannelEndpoint endpoint =
-          isReadOnly ? null : parentChannel.affinityEndpoint(transactionId, excludedEndpoints);
+      ChannelEndpoint endpoint = parentChannel.affinityEndpoint(transactionId, excludedEndpoints);
       ChannelFinder finder = null;
       if (databaseId != null) {
         finder = parentChannel.getOrCreateChannelFinder(databaseId);
       }
       boolean preferLeader = preferLeader(reqBuilder.getTransaction());
       if (databaseId != null && endpoint == null) {
-        Boolean preferLeaderOverride = parentChannel.readOnlyPreferLeader(transactionId);
-        preferLeader = preferLeaderOverride != null ? preferLeaderOverride : preferLeader;
-        ChannelEndpoint routed =
-            preferLeaderOverride != null
-                ? finder.findServer(reqBuilder, preferLeaderOverride, excludedEndpoints)
-                : finder.findServer(reqBuilder, excludedEndpoints);
-        endpoint = routed;
+        // Transaction IDs only pin routing when a read-write affinity entry exists. Otherwise route
+        // by this request's routing hint without leader bias, as read-only transaction IDs can run
+        // on any suitable replica.
+        boolean routePreferLeader = transactionId.isEmpty() && preferLeader;
+        endpoint = finder.findServer(reqBuilder, routePreferLeader, excludedEndpoints);
+        preferLeader = routePreferLeader;
       }
       return new RoutingDecision(
           finder, endpoint, databaseId, operationUid(reqBuilder.getRoutingHint()), preferLeader);
@@ -873,27 +1179,29 @@ final class KeyAwareChannel extends ManagedChannel {
     private RoutingDecision routeFromRequest(ExecuteSqlRequest.Builder reqBuilder) {
       String databaseId = parentChannel.extractDatabaseIdFromSession(reqBuilder.getSession());
       ByteString transactionId = transactionIdFromSelector(reqBuilder.getTransaction());
-      // Skip affinity for read-only transactions so each query routes independently.
-      boolean isReadOnly = parentChannel.isReadOnlyTransaction(transactionId);
       Predicate<String> excludedEndpoints = excludedEndpoints();
-      ChannelEndpoint endpoint =
-          isReadOnly ? null : parentChannel.affinityEndpoint(transactionId, excludedEndpoints);
+      ChannelEndpoint endpoint = parentChannel.affinityEndpoint(transactionId, excludedEndpoints);
       ChannelFinder finder = null;
       if (databaseId != null) {
         finder = parentChannel.getOrCreateChannelFinder(databaseId);
       }
       boolean preferLeader = preferLeader(reqBuilder.getTransaction());
       if (databaseId != null && endpoint == null) {
-        Boolean preferLeaderOverride = parentChannel.readOnlyPreferLeader(transactionId);
-        preferLeader = preferLeaderOverride != null ? preferLeaderOverride : preferLeader;
-        ChannelEndpoint routed =
-            preferLeaderOverride != null
-                ? finder.findServer(reqBuilder, preferLeaderOverride, excludedEndpoints)
-                : finder.findServer(reqBuilder, excludedEndpoints);
-        endpoint = routed;
+        // Transaction IDs only pin routing when a read-write affinity entry exists. Otherwise route
+        // by this request's routing hint without leader bias, as read-only transaction IDs can run
+        // on any suitable replica.
+        boolean routePreferLeader = transactionId.isEmpty() && preferLeader;
+        endpoint = finder.findServer(reqBuilder, routePreferLeader, excludedEndpoints);
+        preferLeader = routePreferLeader;
       }
       return new RoutingDecision(
           finder, endpoint, databaseId, operationUid(reqBuilder.getRoutingHint()), preferLeader);
+    }
+
+    @Nullable
+    private ChannelEndpoint routeFromRequest(ExecuteBatchDmlRequest request) {
+      return parentChannel.affinityEndpoint(
+          transactionIdFromSelector(request.getTransaction()), excludedEndpoints());
     }
   }
 
@@ -955,6 +1263,7 @@ final class KeyAwareChannel extends ManagedChannel {
 
     @Override
     public void onMessage(ResponseT message) {
+      call.onResponseMessage();
       ByteString transactionId = null;
       if (message instanceof PartialResultSet) {
         PartialResultSet response = (PartialResultSet) message;
@@ -979,29 +1288,40 @@ final class KeyAwareChannel extends ManagedChannel {
         if (response.hasCacheUpdate() && call.channelFinder != null) {
           call.channelFinder.updateAsync(response.getCacheUpdate());
         }
-      }
-      if (transactionId != null) {
-        if (call.isReadOnlyBegin) {
-          // Track the read-only transaction so subsequent reads skip affinity
-          // and route independently based on key-based routing.
-          call.parentChannel.trackReadOnlyTransaction(transactionId, call.readOnlyIsStrong);
-        } else if (!call.parentChannel.isReadOnlyTransaction(transactionId)) {
-          call.maybeRecordAffinity(transactionId);
+      } else if (message instanceof ExecuteBatchDmlResponse) {
+        ExecuteBatchDmlResponse response = (ExecuteBatchDmlResponse) message;
+        if (response.getResultSetsCount() > 0) {
+          ResultSet first = response.getResultSets(0);
+          if (first.hasCacheUpdate() && call.channelFinder != null) {
+            call.channelFinder.updateAsync(first.getCacheUpdate());
+          }
+          transactionId = transactionIdFromMetadata(first);
         }
+      } else {
+        transactionId = transactionIdFromGenericResponse(message);
+      }
+      if (transactionId != null && call.shouldRecordTransactionAffinity) {
+        call.maybeRecordAffinity(transactionId);
       }
       super.onMessage(message);
     }
 
     @Override
     public void onClose(io.grpc.Status status, Metadata trailers) {
-      if (shouldExcludeEndpointOnRetry(status.getCode())) {
+      if (call.maybeRerouteUnimplementedGenericCall(status)) {
+        return;
+      }
+      if (status.isOk()) {
+        call.parentChannel.recordEndpointSuccess(call.selectedEndpoint);
+      } else if (shouldExcludeEndpointOnRetry(status.getCode())) {
         call.parentChannel.maybeRecordErrorPenalty(
             call.selectedDatabaseScope,
             call.selectedEndpoint,
             status.getCode(),
             call.selectedOperationUid,
             call.selectedPreferLeader);
-        call.parentChannel.recordEndpointCooldown(call.selectedEndpoint);
+        call.parentChannel.recordEndpointCooldown(
+            call.selectedEndpoint, status.getCode(), trailers);
       }
       if (call.selectedEndpoint != null) {
         call.selectedEndpoint.decrementActiveRequests();

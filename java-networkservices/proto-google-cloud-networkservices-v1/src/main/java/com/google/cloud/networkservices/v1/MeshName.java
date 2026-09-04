@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class MeshName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_MESH =
@@ -78,7 +81,7 @@ public class MeshName implements ResourceName {
     return newBuilder().setProject(project).setLocation(location).setMesh(mesh).build().toString();
   }
 
-  public static MeshName parse(String formattedString) {
+  public static @Nullable MeshName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -96,7 +99,7 @@ public class MeshName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<MeshName> values) {
+  public static List<String> toStringList(List<@Nullable MeshName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (MeshName value : values) {
       if (value == null) {
@@ -145,7 +148,7 @@ public class MeshName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

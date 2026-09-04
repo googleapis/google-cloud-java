@@ -42,12 +42,15 @@ import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * OAuth2 credentials representing the built-in service account for Google App Engine.
  *
  * <p>Instances of this class use reflection to access AppIdentityService in AppEngine SDK.
  */
+@NullMarked
 class AppEngineCredentials extends GoogleCredentials implements ServiceAccountSigner {
 
   private static final long serialVersionUID = -493219027336622194L;
@@ -77,9 +80,10 @@ class AppEngineCredentials extends GoogleCredentials implements ServiceAccountSi
   private transient Method getExpirationTime;
   private transient Method signForApp;
   private transient Method getSignature;
-  private transient String account;
+  private transient @Nullable String account;
 
-  AppEngineCredentials(Collection<String> scopes, Collection<String> defaultScopes)
+  AppEngineCredentials(
+      @Nullable Collection<String> scopes, @Nullable Collection<String> defaultScopes)
       throws IOException {
     // Use defaultScopes only when scopes don't exist.
     if (scopes == null || scopes.isEmpty()) {
@@ -93,7 +97,9 @@ class AppEngineCredentials extends GoogleCredentials implements ServiceAccountSi
   }
 
   AppEngineCredentials(
-      Collection<String> scopes, Collection<String> defaultScopes, AppEngineCredentials unscoped) {
+      @Nullable Collection<String> scopes,
+      @Nullable Collection<String> defaultScopes,
+      AppEngineCredentials unscoped) {
     this.appIdentityService = unscoped.appIdentityService;
     this.getAccessToken = unscoped.getAccessToken;
     this.getAccessTokenResult = unscoped.getAccessTokenResult;
@@ -159,13 +165,13 @@ class AppEngineCredentials extends GoogleCredentials implements ServiceAccountSi
   }
 
   @Override
-  public GoogleCredentials createScoped(Collection<String> scopes) {
+  public GoogleCredentials createScoped(@Nullable Collection<String> scopes) {
     return new AppEngineCredentials(scopes, null, this);
   }
 
   @Override
   public GoogleCredentials createScoped(
-      Collection<String> scopes, Collection<String> defaultScopes) {
+      @Nullable Collection<String> scopes, @Nullable Collection<String> defaultScopes) {
     return new AppEngineCredentials(scopes, defaultScopes, this);
   }
 
@@ -198,7 +204,7 @@ class AppEngineCredentials extends GoogleCredentials implements ServiceAccountSi
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof AppEngineCredentials)) {
       return false;
     }

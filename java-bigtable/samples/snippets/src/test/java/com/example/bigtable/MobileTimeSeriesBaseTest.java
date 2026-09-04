@@ -16,9 +16,13 @@
 
 package com.example.bigtable;
 
-import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
-import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
-import com.google.cloud.bigtable.admin.v2.models.Type;
+import com.google.api.gax.rpc.NotFoundException;
+import com.google.bigtable.admin.v2.ColumnFamily;
+import com.google.bigtable.admin.v2.CreateTableRequest;
+import com.google.bigtable.admin.v2.GetTableRequest;
+import com.google.bigtable.admin.v2.Table;
+import com.google.bigtable.admin.v2.Type;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClientV2;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.models.BulkMutation;
 import com.google.cloud.bigtable.data.v2.models.Mutation;
@@ -40,14 +44,39 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
       CURRENT_TIME.minus(1, ChronoUnit.HOURS).toEpochMilli() * 1000;
 
   public static void createTable() throws IOException {
-    try (BigtableTableAdminClient adminClient =
-        BigtableTableAdminClient.create(projectId, instanceId)) {
-      CreateTableRequest createTableRequest =
-          CreateTableRequest.of(TABLE_ID)
-              .addFamily(COLUMN_FAMILY_NAME_STATS)
-              .addFamily(COLUMN_FAMILY_NAME_PLAN)
-              .addFamily(COLUMN_FAMILY_NAME_VIEW_COUNT, Type.int64Sum());
-      adminClient.createTable(createTableRequest);
+    try (BigtableTableAdminClientV2 adminClient = BigtableTableAdminClientV2.create()) {
+      Type int64Type =
+          Type.newBuilder()
+              .setInt64Type(
+                  Type.Int64.newBuilder()
+                      .setEncoding(
+                          Type.Int64.Encoding.newBuilder()
+                              .setBigEndianBytes(
+                                  Type.Int64.Encoding.BigEndianBytes.getDefaultInstance())))
+              .build();
+      Type int64SumType =
+          Type.newBuilder()
+              .setAggregateType(
+                  Type.Aggregate.newBuilder()
+                      .setInputType(int64Type)
+                      .setSum(Type.Aggregate.Sum.getDefaultInstance()))
+              .build();
+
+      CreateTableRequest request =
+          CreateTableRequest.newBuilder()
+              .setParent("projects/" + projectId + "/instances/" + instanceId)
+              .setTableId(TABLE_ID)
+              .setTable(
+                  Table.newBuilder()
+                      .putColumnFamilies(
+                          COLUMN_FAMILY_NAME_STATS, ColumnFamily.getDefaultInstance())
+                      .putColumnFamilies(COLUMN_FAMILY_NAME_PLAN, ColumnFamily.getDefaultInstance())
+                      .putColumnFamilies(
+                          COLUMN_FAMILY_NAME_VIEW_COUNT,
+                          ColumnFamily.newBuilder().setValueType(int64SumType).build())
+                      .build())
+              .build();
+      adminClient.createTable(request);
     } catch (IOException e) {
       System.out.println("Error during createTable: \n" + e.toString());
       throw (e);
@@ -172,10 +201,21 @@ public class MobileTimeSeriesBaseTest extends BigtableBaseTest {
   }
 
   public static void cleanupTable() throws IOException {
-    try (BigtableTableAdminClient adminClient =
-        BigtableTableAdminClient.create(projectId, instanceId)) {
-      if (adminClient.exists(TABLE_ID)) {
-        adminClient.deleteTable(TABLE_ID);
+    try (BigtableTableAdminClientV2 adminClient = BigtableTableAdminClientV2.create()) {
+      boolean exists = true;
+      try {
+        adminClient.getTable(
+            GetTableRequest.newBuilder()
+                .setName(
+                    "projects/" + projectId + "/instances/" + instanceId + "/tables/" + TABLE_ID)
+                .setView(Table.View.NAME_ONLY)
+                .build());
+      } catch (NotFoundException e) {
+        exists = false;
+      }
+      if (exists) {
+        adminClient.deleteTable(
+            "projects/" + projectId + "/instances/" + instanceId + "/tables/" + TABLE_ID);
       }
     } catch (Exception e) {
       System.out.println("Error during afterClass: \n" + e.toString());

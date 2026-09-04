@@ -295,6 +295,7 @@ public class DataAgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockDataAgentService.addResponse(expectedResponse);
 
@@ -340,6 +341,7 @@ public class DataAgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockDataAgentService.addResponse(expectedResponse);
 
@@ -385,6 +387,7 @@ public class DataAgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -444,6 +447,7 @@ public class DataAgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -503,6 +507,7 @@ public class DataAgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockDataAgentService.addResponse(expectedResponse);
 
@@ -554,6 +559,7 @@ public class DataAgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockDataAgentService.addResponse(expectedResponse);
 
@@ -605,6 +611,7 @@ public class DataAgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -661,6 +668,7 @@ public class DataAgentServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDeleteTime(Timestamp.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setKmsKey("kmsKey-1127483058")
             .build();
     mockDataAgentService.addResponse(expectedResponse);
 

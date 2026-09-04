@@ -662,6 +662,33 @@
         }
       }
     },
+    "GlobalVmExtensionPolicies": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "GlobalVmExtensionPoliciesClient",
+          "rpcs": {
+            "AggregatedList": {
+              "methods": ["aggregatedList", "aggregatedList", "aggregatedListPagedCallable", "aggregatedListCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Update": {
+              "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            }
+          }
+        }
+      }
+    },
     "HealthChecks": {
       "clients": {
         "grpc": {
@@ -690,6 +717,24 @@
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Hosts": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HostsClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "GetVersion": {
+              "methods": ["getVersionAsync", "getVersionAsync", "getVersionOperationCallable", "getVersionCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
             }
           }
         }
@@ -1345,6 +1390,12 @@
             "Get": {
               "methods": ["get", "get", "getCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicy", "getIamPolicyCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicy", "setIamPolicyCallable"]
+            },
             "TestIamPermissions": {
               "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
@@ -1626,6 +1677,9 @@
           "rpcs": {
             "AddPeering": {
               "methods": ["addPeeringAsync", "addPeeringAsync", "addPeeringOperationCallable", "addPeeringCallable"]
+            },
+            "CancelRequestRemovePeering": {
+              "methods": ["cancelRequestRemovePeeringAsync", "cancelRequestRemovePeeringAsync", "cancelRequestRemovePeeringOperationCallable", "cancelRequestRemovePeeringCallable"]
             },
             "Delete": {
               "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
@@ -2987,6 +3041,21 @@
         }
       }
     },
+    "ReliabilityRisks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReliabilityRisksClient",
+          "rpcs": {
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
     "ReservationBlocks": {
       "clients": {
         "grpc": {
@@ -3146,6 +3215,57 @@
         }
       }
     },
+    "RolloutPlans": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RolloutPlansClient",
+          "rpcs": {
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "Insert": {
+              "methods": ["insertAsync", "insertAsync", "insertOperationCallable", "insertCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            }
+          }
+        }
+      }
+    },
+    "Rollouts": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RolloutsClient",
+          "rpcs": {
+            "Advance": {
+              "methods": ["advanceAsync", "advanceAsync", "advanceOperationCallable", "advanceCallable"]
+            },
+            "Cancel": {
+              "methods": ["cancelAsync", "cancelAsync", "cancelOperationCallable", "cancelCallable"]
+            },
+            "Delete": {
+              "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
+            },
+            "Get": {
+              "methods": ["get", "get", "getCallable"]
+            },
+            "List": {
+              "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "Pause": {
+              "methods": ["pauseAsync", "pauseAsync", "pauseOperationCallable", "pauseCallable"]
+            },
+            "Resume": {
+              "methods": ["resumeAsync", "resumeAsync", "resumeOperationCallable", "resumeCallable"]
+            }
+          }
+        }
+      }
+    },
     "Routers": {
       "clients": {
         "grpc": {
@@ -3157,11 +3277,17 @@
             "Delete": {
               "methods": ["deleteAsync", "deleteAsync", "deleteOperationCallable", "deleteCallable"]
             },
+            "DeleteNamedSet": {
+              "methods": ["deleteNamedSetAsync", "deleteNamedSetAsync", "deleteNamedSetOperationCallable", "deleteNamedSetCallable"]
+            },
             "DeleteRoutePolicy": {
               "methods": ["deleteRoutePolicyAsync", "deleteRoutePolicyAsync", "deleteRoutePolicyOperationCallable", "deleteRoutePolicyCallable"]
             },
             "Get": {
               "methods": ["get", "get", "getCallable"]
+            },
+            "GetNamedSet": {
+              "methods": ["getNamedSet", "getNamedSet", "getNamedSetCallable"]
             },
             "GetNatIpInfo": {
               "methods": ["getNatIpInfo", "getNatIpInfo", "getNatIpInfoCallable"]
@@ -3184,11 +3310,17 @@
             "ListBgpRoutes": {
               "methods": ["listBgpRoutes", "listBgpRoutes", "listBgpRoutesPagedCallable", "listBgpRoutesCallable"]
             },
+            "ListNamedSets": {
+              "methods": ["listNamedSets", "listNamedSets", "listNamedSetsPagedCallable", "listNamedSetsCallable"]
+            },
             "ListRoutePolicies": {
               "methods": ["listRoutePolicies", "listRoutePolicies", "listRoutePoliciesPagedCallable", "listRoutePoliciesCallable"]
             },
             "Patch": {
               "methods": ["patchAsync", "patchAsync", "patchOperationCallable", "patchCallable"]
+            },
+            "PatchNamedSet": {
+              "methods": ["patchNamedSetAsync", "patchNamedSetAsync", "patchNamedSetOperationCallable", "patchNamedSetCallable"]
             },
             "PatchRoutePolicy": {
               "methods": ["patchRoutePolicyAsync", "patchRoutePolicyAsync", "patchRoutePolicyOperationCallable", "patchRoutePolicyCallable"]
@@ -3198,6 +3330,9 @@
             },
             "Update": {
               "methods": ["updateAsync", "updateAsync", "updateOperationCallable", "updateCallable"]
+            },
+            "UpdateNamedSet": {
+              "methods": ["updateNamedSetAsync", "updateNamedSetAsync", "updateNamedSetOperationCallable", "updateNamedSetCallable"]
             },
             "UpdateRoutePolicy": {
               "methods": ["updateRoutePolicyAsync", "updateRoutePolicyAsync", "updateRoutePolicyOperationCallable", "updateRoutePolicyCallable"]

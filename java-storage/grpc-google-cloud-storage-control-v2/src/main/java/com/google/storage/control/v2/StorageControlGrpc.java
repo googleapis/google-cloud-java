@@ -532,6 +532,54 @@ public final class StorageControlGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.UpdateManagedFolderRequest,
+          com.google.storage.control.v2.ManagedFolder>
+      getUpdateManagedFolderMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateManagedFolder",
+      requestType = com.google.storage.control.v2.UpdateManagedFolderRequest.class,
+      responseType = com.google.storage.control.v2.ManagedFolder.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.UpdateManagedFolderRequest,
+          com.google.storage.control.v2.ManagedFolder>
+      getUpdateManagedFolderMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.UpdateManagedFolderRequest,
+            com.google.storage.control.v2.ManagedFolder>
+        getUpdateManagedFolderMethod;
+    if ((getUpdateManagedFolderMethod = StorageControlGrpc.getUpdateManagedFolderMethod) == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getUpdateManagedFolderMethod = StorageControlGrpc.getUpdateManagedFolderMethod)
+            == null) {
+          StorageControlGrpc.getUpdateManagedFolderMethod =
+              getUpdateManagedFolderMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.UpdateManagedFolderRequest,
+                          com.google.storage.control.v2.ManagedFolder>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateManagedFolder"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.UpdateManagedFolderRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ManagedFolder.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("UpdateManagedFolder"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateManagedFolderMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.storage.control.v2.CreateAnywhereCacheRequest,
           com.google.longrunning.Operation>
       getCreateAnywhereCacheMethod;
@@ -863,6 +911,229 @@ public final class StorageControlGrpc {
       }
     }
     return getListAnywhereCachesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.CreateRapidCacheRequest, com.google.longrunning.Operation>
+      getCreateRapidCacheMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateRapidCache",
+      requestType = com.google.storage.control.v2.CreateRapidCacheRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.CreateRapidCacheRequest, com.google.longrunning.Operation>
+      getCreateRapidCacheMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.CreateRapidCacheRequest, com.google.longrunning.Operation>
+        getCreateRapidCacheMethod;
+    if ((getCreateRapidCacheMethod = StorageControlGrpc.getCreateRapidCacheMethod) == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getCreateRapidCacheMethod = StorageControlGrpc.getCreateRapidCacheMethod) == null) {
+          StorageControlGrpc.getCreateRapidCacheMethod =
+              getCreateRapidCacheMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.CreateRapidCacheRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateRapidCache"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.CreateRapidCacheRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("CreateRapidCache"))
+                      .build();
+        }
+      }
+    }
+    return getCreateRapidCacheMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.UpdateRapidCacheRequest, com.google.longrunning.Operation>
+      getUpdateRapidCacheMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateRapidCache",
+      requestType = com.google.storage.control.v2.UpdateRapidCacheRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.UpdateRapidCacheRequest, com.google.longrunning.Operation>
+      getUpdateRapidCacheMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.UpdateRapidCacheRequest, com.google.longrunning.Operation>
+        getUpdateRapidCacheMethod;
+    if ((getUpdateRapidCacheMethod = StorageControlGrpc.getUpdateRapidCacheMethod) == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getUpdateRapidCacheMethod = StorageControlGrpc.getUpdateRapidCacheMethod) == null) {
+          StorageControlGrpc.getUpdateRapidCacheMethod =
+              getUpdateRapidCacheMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.UpdateRapidCacheRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateRapidCache"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.UpdateRapidCacheRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("UpdateRapidCache"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateRapidCacheMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.DisableRapidCacheRequest, com.google.longrunning.Operation>
+      getDisableRapidCacheMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DisableRapidCache",
+      requestType = com.google.storage.control.v2.DisableRapidCacheRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.DisableRapidCacheRequest, com.google.longrunning.Operation>
+      getDisableRapidCacheMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.DisableRapidCacheRequest,
+            com.google.longrunning.Operation>
+        getDisableRapidCacheMethod;
+    if ((getDisableRapidCacheMethod = StorageControlGrpc.getDisableRapidCacheMethod) == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getDisableRapidCacheMethod = StorageControlGrpc.getDisableRapidCacheMethod) == null) {
+          StorageControlGrpc.getDisableRapidCacheMethod =
+              getDisableRapidCacheMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.DisableRapidCacheRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisableRapidCache"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.DisableRapidCacheRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("DisableRapidCache"))
+                      .build();
+        }
+      }
+    }
+    return getDisableRapidCacheMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.GetRapidCacheRequest,
+          com.google.storage.control.v2.RapidCache>
+      getGetRapidCacheMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetRapidCache",
+      requestType = com.google.storage.control.v2.GetRapidCacheRequest.class,
+      responseType = com.google.storage.control.v2.RapidCache.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.GetRapidCacheRequest,
+          com.google.storage.control.v2.RapidCache>
+      getGetRapidCacheMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.GetRapidCacheRequest,
+            com.google.storage.control.v2.RapidCache>
+        getGetRapidCacheMethod;
+    if ((getGetRapidCacheMethod = StorageControlGrpc.getGetRapidCacheMethod) == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getGetRapidCacheMethod = StorageControlGrpc.getGetRapidCacheMethod) == null) {
+          StorageControlGrpc.getGetRapidCacheMethod =
+              getGetRapidCacheMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.GetRapidCacheRequest,
+                          com.google.storage.control.v2.RapidCache>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetRapidCache"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.GetRapidCacheRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.RapidCache.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("GetRapidCache"))
+                      .build();
+        }
+      }
+    }
+    return getGetRapidCacheMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ListRapidCachesRequest,
+          com.google.storage.control.v2.ListRapidCachesResponse>
+      getListRapidCachesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListRapidCaches",
+      requestType = com.google.storage.control.v2.ListRapidCachesRequest.class,
+      responseType = com.google.storage.control.v2.ListRapidCachesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ListRapidCachesRequest,
+          com.google.storage.control.v2.ListRapidCachesResponse>
+      getListRapidCachesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.ListRapidCachesRequest,
+            com.google.storage.control.v2.ListRapidCachesResponse>
+        getListRapidCachesMethod;
+    if ((getListRapidCachesMethod = StorageControlGrpc.getListRapidCachesMethod) == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getListRapidCachesMethod = StorageControlGrpc.getListRapidCachesMethod) == null) {
+          StorageControlGrpc.getListRapidCachesMethod =
+              getListRapidCachesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.ListRapidCachesRequest,
+                          com.google.storage.control.v2.ListRapidCachesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListRapidCaches"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ListRapidCachesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ListRapidCachesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("ListRapidCaches"))
+                      .build();
+        }
+      }
+    }
+    return getListRapidCachesMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1306,6 +1577,315 @@ public final class StorageControlGrpc {
     return getTestIamPermissionsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.GetIntelligenceFindingRequest,
+          com.google.storage.control.v2.IntelligenceFinding>
+      getGetIntelligenceFindingMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIntelligenceFinding",
+      requestType = com.google.storage.control.v2.GetIntelligenceFindingRequest.class,
+      responseType = com.google.storage.control.v2.IntelligenceFinding.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.GetIntelligenceFindingRequest,
+          com.google.storage.control.v2.IntelligenceFinding>
+      getGetIntelligenceFindingMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.GetIntelligenceFindingRequest,
+            com.google.storage.control.v2.IntelligenceFinding>
+        getGetIntelligenceFindingMethod;
+    if ((getGetIntelligenceFindingMethod = StorageControlGrpc.getGetIntelligenceFindingMethod)
+        == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getGetIntelligenceFindingMethod = StorageControlGrpc.getGetIntelligenceFindingMethod)
+            == null) {
+          StorageControlGrpc.getGetIntelligenceFindingMethod =
+              getGetIntelligenceFindingMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.GetIntelligenceFindingRequest,
+                          com.google.storage.control.v2.IntelligenceFinding>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetIntelligenceFinding"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.GetIntelligenceFindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.IntelligenceFinding
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("GetIntelligenceFinding"))
+                      .build();
+        }
+      }
+    }
+    return getGetIntelligenceFindingMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ListIntelligenceFindingsRequest,
+          com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+      getListIntelligenceFindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListIntelligenceFindings",
+      requestType = com.google.storage.control.v2.ListIntelligenceFindingsRequest.class,
+      responseType = com.google.storage.control.v2.ListIntelligenceFindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ListIntelligenceFindingsRequest,
+          com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+      getListIntelligenceFindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.ListIntelligenceFindingsRequest,
+            com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+        getListIntelligenceFindingsMethod;
+    if ((getListIntelligenceFindingsMethod = StorageControlGrpc.getListIntelligenceFindingsMethod)
+        == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getListIntelligenceFindingsMethod =
+                StorageControlGrpc.getListIntelligenceFindingsMethod)
+            == null) {
+          StorageControlGrpc.getListIntelligenceFindingsMethod =
+              getListIntelligenceFindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.ListIntelligenceFindingsRequest,
+                          com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListIntelligenceFindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ListIntelligenceFindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ListIntelligenceFindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("ListIntelligenceFindings"))
+                      .build();
+        }
+      }
+    }
+    return getListIntelligenceFindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest,
+          com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+      getSummarizeIntelligenceFindingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SummarizeIntelligenceFindings",
+      requestType = com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest.class,
+      responseType = com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest,
+          com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+      getSummarizeIntelligenceFindingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest,
+            com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+        getSummarizeIntelligenceFindingsMethod;
+    if ((getSummarizeIntelligenceFindingsMethod =
+            StorageControlGrpc.getSummarizeIntelligenceFindingsMethod)
+        == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getSummarizeIntelligenceFindingsMethod =
+                StorageControlGrpc.getSummarizeIntelligenceFindingsMethod)
+            == null) {
+          StorageControlGrpc.getSummarizeIntelligenceFindingsMethod =
+              getSummarizeIntelligenceFindingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest,
+                          com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SummarizeIntelligenceFindings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier(
+                              "SummarizeIntelligenceFindings"))
+                      .build();
+        }
+      }
+    }
+    return getSummarizeIntelligenceFindingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest,
+          com.google.storage.control.v2.IntelligenceFindingRevision>
+      getGetIntelligenceFindingRevisionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetIntelligenceFindingRevision",
+      requestType = com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest.class,
+      responseType = com.google.storage.control.v2.IntelligenceFindingRevision.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest,
+          com.google.storage.control.v2.IntelligenceFindingRevision>
+      getGetIntelligenceFindingRevisionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest,
+            com.google.storage.control.v2.IntelligenceFindingRevision>
+        getGetIntelligenceFindingRevisionMethod;
+    if ((getGetIntelligenceFindingRevisionMethod =
+            StorageControlGrpc.getGetIntelligenceFindingRevisionMethod)
+        == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getGetIntelligenceFindingRevisionMethod =
+                StorageControlGrpc.getGetIntelligenceFindingRevisionMethod)
+            == null) {
+          StorageControlGrpc.getGetIntelligenceFindingRevisionMethod =
+              getGetIntelligenceFindingRevisionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest,
+                          com.google.storage.control.v2.IntelligenceFindingRevision>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetIntelligenceFindingRevision"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.IntelligenceFindingRevision
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier(
+                              "GetIntelligenceFindingRevision"))
+                      .build();
+        }
+      }
+    }
+    return getGetIntelligenceFindingRevisionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest,
+          com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+      getListIntelligenceFindingRevisionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListIntelligenceFindingRevisions",
+      requestType = com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest.class,
+      responseType = com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest,
+          com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+      getListIntelligenceFindingRevisionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest,
+            com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+        getListIntelligenceFindingRevisionsMethod;
+    if ((getListIntelligenceFindingRevisionsMethod =
+            StorageControlGrpc.getListIntelligenceFindingRevisionsMethod)
+        == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getListIntelligenceFindingRevisionsMethod =
+                StorageControlGrpc.getListIntelligenceFindingRevisionsMethod)
+            == null) {
+          StorageControlGrpc.getListIntelligenceFindingRevisionsMethod =
+              getListIntelligenceFindingRevisionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest,
+                          com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListIntelligenceFindingRevisions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier(
+                              "ListIntelligenceFindingRevisions"))
+                      .build();
+        }
+      }
+    }
+    return getListIntelligenceFindingRevisionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ViewObjectFullContextRequest,
+          com.google.storage.control.v2.ObjectFullContext>
+      getViewObjectFullContextMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ViewObjectFullContext",
+      requestType = com.google.storage.control.v2.ViewObjectFullContextRequest.class,
+      responseType = com.google.storage.control.v2.ObjectFullContext.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.storage.control.v2.ViewObjectFullContextRequest,
+          com.google.storage.control.v2.ObjectFullContext>
+      getViewObjectFullContextMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.storage.control.v2.ViewObjectFullContextRequest,
+            com.google.storage.control.v2.ObjectFullContext>
+        getViewObjectFullContextMethod;
+    if ((getViewObjectFullContextMethod = StorageControlGrpc.getViewObjectFullContextMethod)
+        == null) {
+      synchronized (StorageControlGrpc.class) {
+        if ((getViewObjectFullContextMethod = StorageControlGrpc.getViewObjectFullContextMethod)
+            == null) {
+          StorageControlGrpc.getViewObjectFullContextMethod =
+              getViewObjectFullContextMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.storage.control.v2.ViewObjectFullContextRequest,
+                          com.google.storage.control.v2.ObjectFullContext>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ViewObjectFullContext"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ViewObjectFullContextRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.storage.control.v2.ObjectFullContext.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new StorageControlMethodDescriptorSupplier("ViewObjectFullContext"))
+                      .build();
+        }
+      }
+    }
+    return getViewObjectFullContextMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static StorageControlStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<StorageControlStub> factory =
@@ -1536,6 +2116,21 @@ public final class StorageControlGrpc {
      *
      *
      * <pre>
+     * Updates a managed folder. Currently, this RPC only supports updating the
+     * `rapid_cache_config` field.
+     * </pre>
+     */
+    default void updateManagedFolder(
+        com.google.storage.control.v2.UpdateManagedFolderRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.ManagedFolder> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateManagedFolderMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an Anywhere Cache instance.
      * </pre>
      */
@@ -1633,6 +2228,77 @@ public final class StorageControlGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListAnywhereCachesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Rapid Cache instance.
+     * </pre>
+     */
+    default void createRapidCache(
+        com.google.storage.control.v2.CreateRapidCacheRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateRapidCacheMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Rapid Cache instance.
+     * </pre>
+     */
+    default void updateRapidCache(
+        com.google.storage.control.v2.UpdateRapidCacheRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateRapidCacheMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a Rapid Cache instance.
+     * </pre>
+     */
+    default void disableRapidCache(
+        com.google.storage.control.v2.DisableRapidCacheRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDisableRapidCacheMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Rapid Cache instance.
+     * </pre>
+     */
+    default void getRapidCache(
+        com.google.storage.control.v2.GetRapidCacheRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.RapidCache> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetRapidCacheMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Rapid Cache instances for a given bucket.
+     * </pre>
+     */
+    default void listRapidCaches(
+        com.google.storage.control.v2.ListRapidCachesRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.ListRapidCachesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListRapidCachesMethod(), responseObserver);
     }
 
     /**
@@ -1780,6 +2446,105 @@ public final class StorageControlGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestIamPermissionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFinding` for a project.
+     * </pre>
+     */
+    default void getIntelligenceFinding(
+        com.google.storage.control.v2.GetIntelligenceFindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.IntelligenceFinding>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIntelligenceFindingMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `IntelligenceFinding` resources for the specified the project.
+     * </pre>
+     */
+    default void listIntelligenceFindings(
+        com.google.storage.control.v2.ListIntelligenceFindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListIntelligenceFindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Summarizes the intelligence findings for the specified scope (organization,
+     * folder or project).
+     * </pre>
+     */
+    default void summarizeIntelligenceFindings(
+        com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSummarizeIntelligenceFindingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFindingRevision` resource.
+     * </pre>
+     */
+    default void getIntelligenceFindingRevision(
+        com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.IntelligenceFindingRevision>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetIntelligenceFindingRevisionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the revisions of an `IntelligenceFinding` resource.
+     * </pre>
+     */
+    default void listIntelligenceFindingRevisions(
+        com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListIntelligenceFindingRevisionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the full content of an object context, including its key, value,
+     * and any associated extended data for a given context key.
+     * Object contexts can optionally contain extended data. If an object context
+     * contains extended data, the metadata payload structure will contain only
+     * its type URL. To retrieve the full extended data, call this method.
+     * Returns the complete representation of the context as an
+     * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+     * </pre>
+     */
+    default void viewObjectFullContext(
+        com.google.storage.control.v2.ViewObjectFullContextRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.ObjectFullContext>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getViewObjectFullContextMethod(), responseObserver);
     }
   }
 
@@ -2005,6 +2770,23 @@ public final class StorageControlGrpc {
      *
      *
      * <pre>
+     * Updates a managed folder. Currently, this RPC only supports updating the
+     * `rapid_cache_config` field.
+     * </pre>
+     */
+    public void updateManagedFolder(
+        com.google.storage.control.v2.UpdateManagedFolderRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.ManagedFolder> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateManagedFolderMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an Anywhere Cache instance.
      * </pre>
      */
@@ -2114,6 +2896,87 @@ public final class StorageControlGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListAnywhereCachesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Rapid Cache instance.
+     * </pre>
+     */
+    public void createRapidCache(
+        com.google.storage.control.v2.CreateRapidCacheRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateRapidCacheMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Rapid Cache instance.
+     * </pre>
+     */
+    public void updateRapidCache(
+        com.google.storage.control.v2.UpdateRapidCacheRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateRapidCacheMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a Rapid Cache instance.
+     * </pre>
+     */
+    public void disableRapidCache(
+        com.google.storage.control.v2.DisableRapidCacheRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDisableRapidCacheMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Rapid Cache instance.
+     * </pre>
+     */
+    public void getRapidCache(
+        com.google.storage.control.v2.GetRapidCacheRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.RapidCache> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetRapidCacheMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Rapid Cache instances for a given bucket.
+     * </pre>
+     */
+    public void listRapidCaches(
+        com.google.storage.control.v2.ListRapidCachesRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.ListRapidCachesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListRapidCachesMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2279,6 +3142,117 @@ public final class StorageControlGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFinding` for a project.
+     * </pre>
+     */
+    public void getIntelligenceFinding(
+        com.google.storage.control.v2.GetIntelligenceFindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.IntelligenceFinding>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIntelligenceFindingMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `IntelligenceFinding` resources for the specified the project.
+     * </pre>
+     */
+    public void listIntelligenceFindings(
+        com.google.storage.control.v2.ListIntelligenceFindingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListIntelligenceFindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Summarizes the intelligence findings for the specified scope (organization,
+     * folder or project).
+     * </pre>
+     */
+    public void summarizeIntelligenceFindings(
+        com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSummarizeIntelligenceFindingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFindingRevision` resource.
+     * </pre>
+     */
+    public void getIntelligenceFindingRevision(
+        com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.IntelligenceFindingRevision>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetIntelligenceFindingRevisionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the revisions of an `IntelligenceFinding` resource.
+     * </pre>
+     */
+    public void listIntelligenceFindingRevisions(
+        com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListIntelligenceFindingRevisionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the full content of an object context, including its key, value,
+     * and any associated extended data for a given context key.
+     * Object contexts can optionally contain extended data. If an object context
+     * contains extended data, the metadata payload structure will contain only
+     * its type URL. To retrieve the full extended data, call this method.
+     * Returns the complete representation of the context as an
+     * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+     * </pre>
+     */
+    public void viewObjectFullContext(
+        com.google.storage.control.v2.ViewObjectFullContextRequest request,
+        io.grpc.stub.StreamObserver<com.google.storage.control.v2.ObjectFullContext>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getViewObjectFullContextMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -2464,6 +3438,21 @@ public final class StorageControlGrpc {
      *
      *
      * <pre>
+     * Updates a managed folder. Currently, this RPC only supports updating the
+     * `rapid_cache_config` field.
+     * </pre>
+     */
+    public com.google.storage.control.v2.ManagedFolder updateManagedFolder(
+        com.google.storage.control.v2.UpdateManagedFolderRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateManagedFolderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an Anywhere Cache instance.
      * </pre>
      */
@@ -2560,6 +3549,75 @@ public final class StorageControlGrpc {
         throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getListAnywhereCachesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRapidCache(
+        com.google.storage.control.v2.CreateRapidCacheRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateRapidCacheMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRapidCache(
+        com.google.storage.control.v2.UpdateRapidCacheRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateRapidCacheMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableRapidCache(
+        com.google.storage.control.v2.DisableRapidCacheRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDisableRapidCacheMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.storage.control.v2.RapidCache getRapidCache(
+        com.google.storage.control.v2.GetRapidCacheRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetRapidCacheMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Rapid Cache instances for a given bucket.
+     * </pre>
+     */
+    public com.google.storage.control.v2.ListRapidCachesResponse listRapidCaches(
+        com.google.storage.control.v2.ListRapidCachesRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListRapidCachesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2697,6 +3755,99 @@ public final class StorageControlGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFinding` for a project.
+     * </pre>
+     */
+    public com.google.storage.control.v2.IntelligenceFinding getIntelligenceFinding(
+        com.google.storage.control.v2.GetIntelligenceFindingRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIntelligenceFindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `IntelligenceFinding` resources for the specified the project.
+     * </pre>
+     */
+    public com.google.storage.control.v2.ListIntelligenceFindingsResponse listIntelligenceFindings(
+        com.google.storage.control.v2.ListIntelligenceFindingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListIntelligenceFindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Summarizes the intelligence findings for the specified scope (organization,
+     * folder or project).
+     * </pre>
+     */
+    public com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse
+        summarizeIntelligenceFindings(
+            com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getSummarizeIntelligenceFindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFindingRevision` resource.
+     * </pre>
+     */
+    public com.google.storage.control.v2.IntelligenceFindingRevision getIntelligenceFindingRevision(
+        com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetIntelligenceFindingRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the revisions of an `IntelligenceFinding` resource.
+     * </pre>
+     */
+    public com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse
+        listIntelligenceFindingRevisions(
+            com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListIntelligenceFindingRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the full content of an object context, including its key, value,
+     * and any associated extended data for a given context key.
+     * Object contexts can optionally contain extended data. If an object context
+     * contains extended data, the metadata payload structure will contain only
+     * its type URL. To retrieve the full extended data, call this method.
+     * Returns the complete representation of the context as an
+     * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+     * </pre>
+     */
+    public com.google.storage.control.v2.ObjectFullContext viewObjectFullContext(
+        com.google.storage.control.v2.ViewObjectFullContextRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getViewObjectFullContextMethod(), getCallOptions(), request);
     }
   }
 
@@ -2874,6 +4025,20 @@ public final class StorageControlGrpc {
      *
      *
      * <pre>
+     * Updates a managed folder. Currently, this RPC only supports updating the
+     * `rapid_cache_config` field.
+     * </pre>
+     */
+    public com.google.storage.control.v2.ManagedFolder updateManagedFolder(
+        com.google.storage.control.v2.UpdateManagedFolderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateManagedFolderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an Anywhere Cache instance.
      * </pre>
      */
@@ -2963,6 +4128,71 @@ public final class StorageControlGrpc {
         com.google.storage.control.v2.ListAnywhereCachesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListAnywhereCachesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRapidCache(
+        com.google.storage.control.v2.CreateRapidCacheRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRapidCacheMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRapidCache(
+        com.google.storage.control.v2.UpdateRapidCacheRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRapidCacheMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation disableRapidCache(
+        com.google.storage.control.v2.DisableRapidCacheRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableRapidCacheMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.storage.control.v2.RapidCache getRapidCache(
+        com.google.storage.control.v2.GetRapidCacheRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRapidCacheMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Rapid Cache instances for a given bucket.
+     * </pre>
+     */
+    public com.google.storage.control.v2.ListRapidCachesResponse listRapidCaches(
+        com.google.storage.control.v2.ListRapidCachesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRapidCachesMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3092,6 +4322,93 @@ public final class StorageControlGrpc {
         com.google.iam.v1.TestIamPermissionsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFinding` for a project.
+     * </pre>
+     */
+    public com.google.storage.control.v2.IntelligenceFinding getIntelligenceFinding(
+        com.google.storage.control.v2.GetIntelligenceFindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIntelligenceFindingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `IntelligenceFinding` resources for the specified the project.
+     * </pre>
+     */
+    public com.google.storage.control.v2.ListIntelligenceFindingsResponse listIntelligenceFindings(
+        com.google.storage.control.v2.ListIntelligenceFindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIntelligenceFindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Summarizes the intelligence findings for the specified scope (organization,
+     * folder or project).
+     * </pre>
+     */
+    public com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse
+        summarizeIntelligenceFindings(
+            com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSummarizeIntelligenceFindingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFindingRevision` resource.
+     * </pre>
+     */
+    public com.google.storage.control.v2.IntelligenceFindingRevision getIntelligenceFindingRevision(
+        com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIntelligenceFindingRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the revisions of an `IntelligenceFinding` resource.
+     * </pre>
+     */
+    public com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse
+        listIntelligenceFindingRevisions(
+            com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIntelligenceFindingRevisionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the full content of an object context, including its key, value,
+     * and any associated extended data for a given context key.
+     * Object contexts can optionally contain extended data. If an object context
+     * contains extended data, the metadata payload structure will contain only
+     * its type URL. To retrieve the full extended data, call this method.
+     * Returns the complete representation of the context as an
+     * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+     * </pre>
+     */
+    public com.google.storage.control.v2.ObjectFullContext viewObjectFullContext(
+        com.google.storage.control.v2.ViewObjectFullContextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getViewObjectFullContextMethod(), getCallOptions(), request);
     }
   }
 
@@ -3274,6 +4591,21 @@ public final class StorageControlGrpc {
      *
      *
      * <pre>
+     * Updates a managed folder. Currently, this RPC only supports updating the
+     * `rapid_cache_config` field.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.ManagedFolder>
+        updateManagedFolder(com.google.storage.control.v2.UpdateManagedFolderRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateManagedFolderMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates an Anywhere Cache instance.
      * </pre>
      */
@@ -3368,6 +4700,73 @@ public final class StorageControlGrpc {
         listAnywhereCaches(com.google.storage.control.v2.ListAnywhereCachesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListAnywhereCachesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createRapidCache(com.google.storage.control.v2.CreateRapidCacheRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateRapidCacheMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateRapidCache(com.google.storage.control.v2.UpdateRapidCacheRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateRapidCacheMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        disableRapidCache(com.google.storage.control.v2.DisableRapidCacheRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDisableRapidCacheMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Rapid Cache instance.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.RapidCache>
+        getRapidCache(com.google.storage.control.v2.GetRapidCacheRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetRapidCacheMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Rapid Cache instances for a given bucket.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.ListRapidCachesResponse>
+        listRapidCaches(com.google.storage.control.v2.ListRapidCachesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListRapidCachesMethod(), getCallOptions()), request);
     }
 
     /**
@@ -3517,6 +4916,105 @@ public final class StorageControlGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestIamPermissionsMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFinding` for a project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.IntelligenceFinding>
+        getIntelligenceFinding(
+            com.google.storage.control.v2.GetIntelligenceFindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIntelligenceFindingMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `IntelligenceFinding` resources for the specified the project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.ListIntelligenceFindingsResponse>
+        listIntelligenceFindings(
+            com.google.storage.control.v2.ListIntelligenceFindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListIntelligenceFindingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Summarizes the intelligence findings for the specified scope (organization,
+     * folder or project).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>
+        summarizeIntelligenceFindings(
+            com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSummarizeIntelligenceFindingsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the `IntelligenceFindingRevision` resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.IntelligenceFindingRevision>
+        getIntelligenceFindingRevision(
+            com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetIntelligenceFindingRevisionMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the revisions of an `IntelligenceFinding` resource.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>
+        listIntelligenceFindingRevisions(
+            com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListIntelligenceFindingRevisionsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the full content of an object context, including its key, value,
+     * and any associated extended data for a given context key.
+     * Object contexts can optionally contain extended data. If an object context
+     * contains extended data, the metadata payload structure will contain only
+     * its type URL. To retrieve the full extended data, call this method.
+     * Returns the complete representation of the context as an
+     * [`ObjectFullContext`][google.storage.control.v2.ObjectFullContext].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.storage.control.v2.ObjectFullContext>
+        viewObjectFullContext(com.google.storage.control.v2.ViewObjectFullContextRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getViewObjectFullContextMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_FOLDER = 0;
@@ -3530,22 +5028,34 @@ public final class StorageControlGrpc {
   private static final int METHODID_DELETE_MANAGED_FOLDER = 8;
   private static final int METHODID_GET_MANAGED_FOLDER = 9;
   private static final int METHODID_LIST_MANAGED_FOLDERS = 10;
-  private static final int METHODID_CREATE_ANYWHERE_CACHE = 11;
-  private static final int METHODID_UPDATE_ANYWHERE_CACHE = 12;
-  private static final int METHODID_DISABLE_ANYWHERE_CACHE = 13;
-  private static final int METHODID_PAUSE_ANYWHERE_CACHE = 14;
-  private static final int METHODID_RESUME_ANYWHERE_CACHE = 15;
-  private static final int METHODID_GET_ANYWHERE_CACHE = 16;
-  private static final int METHODID_LIST_ANYWHERE_CACHES = 17;
-  private static final int METHODID_GET_PROJECT_INTELLIGENCE_CONFIG = 18;
-  private static final int METHODID_UPDATE_PROJECT_INTELLIGENCE_CONFIG = 19;
-  private static final int METHODID_GET_FOLDER_INTELLIGENCE_CONFIG = 20;
-  private static final int METHODID_UPDATE_FOLDER_INTELLIGENCE_CONFIG = 21;
-  private static final int METHODID_GET_ORGANIZATION_INTELLIGENCE_CONFIG = 22;
-  private static final int METHODID_UPDATE_ORGANIZATION_INTELLIGENCE_CONFIG = 23;
-  private static final int METHODID_GET_IAM_POLICY = 24;
-  private static final int METHODID_SET_IAM_POLICY = 25;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 26;
+  private static final int METHODID_UPDATE_MANAGED_FOLDER = 11;
+  private static final int METHODID_CREATE_ANYWHERE_CACHE = 12;
+  private static final int METHODID_UPDATE_ANYWHERE_CACHE = 13;
+  private static final int METHODID_DISABLE_ANYWHERE_CACHE = 14;
+  private static final int METHODID_PAUSE_ANYWHERE_CACHE = 15;
+  private static final int METHODID_RESUME_ANYWHERE_CACHE = 16;
+  private static final int METHODID_GET_ANYWHERE_CACHE = 17;
+  private static final int METHODID_LIST_ANYWHERE_CACHES = 18;
+  private static final int METHODID_CREATE_RAPID_CACHE = 19;
+  private static final int METHODID_UPDATE_RAPID_CACHE = 20;
+  private static final int METHODID_DISABLE_RAPID_CACHE = 21;
+  private static final int METHODID_GET_RAPID_CACHE = 22;
+  private static final int METHODID_LIST_RAPID_CACHES = 23;
+  private static final int METHODID_GET_PROJECT_INTELLIGENCE_CONFIG = 24;
+  private static final int METHODID_UPDATE_PROJECT_INTELLIGENCE_CONFIG = 25;
+  private static final int METHODID_GET_FOLDER_INTELLIGENCE_CONFIG = 26;
+  private static final int METHODID_UPDATE_FOLDER_INTELLIGENCE_CONFIG = 27;
+  private static final int METHODID_GET_ORGANIZATION_INTELLIGENCE_CONFIG = 28;
+  private static final int METHODID_UPDATE_ORGANIZATION_INTELLIGENCE_CONFIG = 29;
+  private static final int METHODID_GET_IAM_POLICY = 30;
+  private static final int METHODID_SET_IAM_POLICY = 31;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 32;
+  private static final int METHODID_GET_INTELLIGENCE_FINDING = 33;
+  private static final int METHODID_LIST_INTELLIGENCE_FINDINGS = 34;
+  private static final int METHODID_SUMMARIZE_INTELLIGENCE_FINDINGS = 35;
+  private static final int METHODID_GET_INTELLIGENCE_FINDING_REVISION = 36;
+  private static final int METHODID_LIST_INTELLIGENCE_FINDING_REVISIONS = 37;
+  private static final int METHODID_VIEW_OBJECT_FULL_CONTEXT = 38;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3625,6 +5135,12 @@ public final class StorageControlGrpc {
                       com.google.storage.control.v2.ListManagedFoldersResponse>)
                   responseObserver);
           break;
+        case METHODID_UPDATE_MANAGED_FOLDER:
+          serviceImpl.updateManagedFolder(
+              (com.google.storage.control.v2.UpdateManagedFolderRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.storage.control.v2.ManagedFolder>)
+                  responseObserver);
+          break;
         case METHODID_CREATE_ANYWHERE_CACHE:
           serviceImpl.createAnywhereCache(
               (com.google.storage.control.v2.CreateAnywhereCacheRequest) request,
@@ -3664,6 +5180,33 @@ public final class StorageControlGrpc {
               (com.google.storage.control.v2.ListAnywhereCachesRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.storage.control.v2.ListAnywhereCachesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_RAPID_CACHE:
+          serviceImpl.createRapidCache(
+              (com.google.storage.control.v2.CreateRapidCacheRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_RAPID_CACHE:
+          serviceImpl.updateRapidCache(
+              (com.google.storage.control.v2.UpdateRapidCacheRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DISABLE_RAPID_CACHE:
+          serviceImpl.disableRapidCache(
+              (com.google.storage.control.v2.DisableRapidCacheRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_RAPID_CACHE:
+          serviceImpl.getRapidCache(
+              (com.google.storage.control.v2.GetRapidCacheRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.storage.control.v2.RapidCache>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_RAPID_CACHES:
+          serviceImpl.listRapidCaches(
+              (com.google.storage.control.v2.ListRapidCachesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.storage.control.v2.ListRapidCachesResponse>)
                   responseObserver);
           break;
         case METHODID_GET_PROJECT_INTELLIGENCE_CONFIG:
@@ -3716,6 +5259,46 @@ public final class StorageControlGrpc {
           serviceImpl.testIamPermissions(
               (com.google.iam.v1.TestIamPermissionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.iam.v1.TestIamPermissionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_INTELLIGENCE_FINDING:
+          serviceImpl.getIntelligenceFinding(
+              (com.google.storage.control.v2.GetIntelligenceFindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.storage.control.v2.IntelligenceFinding>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_INTELLIGENCE_FINDINGS:
+          serviceImpl.listIntelligenceFindings(
+              (com.google.storage.control.v2.ListIntelligenceFindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.storage.control.v2.ListIntelligenceFindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SUMMARIZE_INTELLIGENCE_FINDINGS:
+          serviceImpl.summarizeIntelligenceFindings(
+              (com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_INTELLIGENCE_FINDING_REVISION:
+          serviceImpl.getIntelligenceFindingRevision(
+              (com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.storage.control.v2.IntelligenceFindingRevision>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_INTELLIGENCE_FINDING_REVISIONS:
+          serviceImpl.listIntelligenceFindingRevisions(
+              (com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_VIEW_OBJECT_FULL_CONTEXT:
+          serviceImpl.viewObjectFullContext(
+              (com.google.storage.control.v2.ViewObjectFullContextRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.storage.control.v2.ObjectFullContext>)
                   responseObserver);
           break;
         default:
@@ -3808,6 +5391,13 @@ public final class StorageControlGrpc {
                     com.google.storage.control.v2.ListManagedFoldersResponse>(
                     service, METHODID_LIST_MANAGED_FOLDERS)))
         .addMethod(
+            getUpdateManagedFolderMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.UpdateManagedFolderRequest,
+                    com.google.storage.control.v2.ManagedFolder>(
+                    service, METHODID_UPDATE_MANAGED_FOLDER)))
+        .addMethod(
             getCreateAnywhereCacheMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3854,6 +5444,37 @@ public final class StorageControlGrpc {
                     com.google.storage.control.v2.ListAnywhereCachesRequest,
                     com.google.storage.control.v2.ListAnywhereCachesResponse>(
                     service, METHODID_LIST_ANYWHERE_CACHES)))
+        .addMethod(
+            getCreateRapidCacheMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.CreateRapidCacheRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_RAPID_CACHE)))
+        .addMethod(
+            getUpdateRapidCacheMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.UpdateRapidCacheRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_RAPID_CACHE)))
+        .addMethod(
+            getDisableRapidCacheMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.DisableRapidCacheRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DISABLE_RAPID_CACHE)))
+        .addMethod(
+            getGetRapidCacheMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.GetRapidCacheRequest,
+                    com.google.storage.control.v2.RapidCache>(service, METHODID_GET_RAPID_CACHE)))
+        .addMethod(
+            getListRapidCachesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.ListRapidCachesRequest,
+                    com.google.storage.control.v2.ListRapidCachesResponse>(
+                    service, METHODID_LIST_RAPID_CACHES)))
         .addMethod(
             getGetProjectIntelligenceConfigMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -3913,6 +5534,48 @@ public final class StorageControlGrpc {
                     com.google.iam.v1.TestIamPermissionsRequest,
                     com.google.iam.v1.TestIamPermissionsResponse>(
                     service, METHODID_TEST_IAM_PERMISSIONS)))
+        .addMethod(
+            getGetIntelligenceFindingMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.GetIntelligenceFindingRequest,
+                    com.google.storage.control.v2.IntelligenceFinding>(
+                    service, METHODID_GET_INTELLIGENCE_FINDING)))
+        .addMethod(
+            getListIntelligenceFindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.ListIntelligenceFindingsRequest,
+                    com.google.storage.control.v2.ListIntelligenceFindingsResponse>(
+                    service, METHODID_LIST_INTELLIGENCE_FINDINGS)))
+        .addMethod(
+            getSummarizeIntelligenceFindingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.SummarizeIntelligenceFindingsRequest,
+                    com.google.storage.control.v2.SummarizeIntelligenceFindingsResponse>(
+                    service, METHODID_SUMMARIZE_INTELLIGENCE_FINDINGS)))
+        .addMethod(
+            getGetIntelligenceFindingRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.GetIntelligenceFindingRevisionRequest,
+                    com.google.storage.control.v2.IntelligenceFindingRevision>(
+                    service, METHODID_GET_INTELLIGENCE_FINDING_REVISION)))
+        .addMethod(
+            getListIntelligenceFindingRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.ListIntelligenceFindingRevisionsRequest,
+                    com.google.storage.control.v2.ListIntelligenceFindingRevisionsResponse>(
+                    service, METHODID_LIST_INTELLIGENCE_FINDING_REVISIONS)))
+        .addMethod(
+            getViewObjectFullContextMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.storage.control.v2.ViewObjectFullContextRequest,
+                    com.google.storage.control.v2.ObjectFullContext>(
+                    service, METHODID_VIEW_OBJECT_FULL_CONTEXT)))
         .build();
   }
 
@@ -3975,6 +5638,7 @@ public final class StorageControlGrpc {
                       .addMethod(getDeleteManagedFolderMethod())
                       .addMethod(getGetManagedFolderMethod())
                       .addMethod(getListManagedFoldersMethod())
+                      .addMethod(getUpdateManagedFolderMethod())
                       .addMethod(getCreateAnywhereCacheMethod())
                       .addMethod(getUpdateAnywhereCacheMethod())
                       .addMethod(getDisableAnywhereCacheMethod())
@@ -3982,6 +5646,11 @@ public final class StorageControlGrpc {
                       .addMethod(getResumeAnywhereCacheMethod())
                       .addMethod(getGetAnywhereCacheMethod())
                       .addMethod(getListAnywhereCachesMethod())
+                      .addMethod(getCreateRapidCacheMethod())
+                      .addMethod(getUpdateRapidCacheMethod())
+                      .addMethod(getDisableRapidCacheMethod())
+                      .addMethod(getGetRapidCacheMethod())
+                      .addMethod(getListRapidCachesMethod())
                       .addMethod(getGetProjectIntelligenceConfigMethod())
                       .addMethod(getUpdateProjectIntelligenceConfigMethod())
                       .addMethod(getGetFolderIntelligenceConfigMethod())
@@ -3991,6 +5660,12 @@ public final class StorageControlGrpc {
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
+                      .addMethod(getGetIntelligenceFindingMethod())
+                      .addMethod(getListIntelligenceFindingsMethod())
+                      .addMethod(getSummarizeIntelligenceFindingsMethod())
+                      .addMethod(getGetIntelligenceFindingRevisionMethod())
+                      .addMethod(getListIntelligenceFindingRevisionsMethod())
+                      .addMethod(getViewObjectFullContextMethod())
                       .build();
         }
       }

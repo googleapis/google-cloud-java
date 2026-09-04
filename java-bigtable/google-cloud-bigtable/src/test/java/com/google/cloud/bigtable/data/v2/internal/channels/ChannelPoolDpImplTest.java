@@ -26,10 +26,12 @@ import static org.mockito.Mockito.when;
 
 import com.google.bigtable.v2.FakeSessionGrpc;
 import com.google.bigtable.v2.PeerInfo;
+import com.google.bigtable.v2.PeerInfo.TransportType;
 import com.google.bigtable.v2.SessionClientConfiguration.ChannelPoolConfiguration;
 import com.google.cloud.bigtable.data.v2.internal.channels.SessionStream.Listener;
 import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
+import com.google.common.base.Ticker;
 import io.grpc.Attributes;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
@@ -41,6 +43,8 @@ import java.time.Instant;
 import java.util.Base64;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Supplier;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -235,7 +239,6 @@ class ChannelPoolDpImplTest {
       listener.onClose(Status.OK, new Metadata());
     }
 
-    when(clock.instant()).thenReturn(Instant.now());
     pool.serviceChannels();
     verify(channel, times(numChannels - pool.minGroups)).shutdown();
 
@@ -281,24 +284,18 @@ class ChannelPoolDpImplTest {
       i++;
     }
 
-    // Now we have 25 sessions on 5 channel groups each of 1 channel.
-    // Let's close 6 sessions from different channels/AFEs.
-    i = 0;
-    for (ClientCall.Listener<Object> listener : listener.getAllValues()) {
-      if (i % 4 == 0 && i != 0) {
-        listener.onClose(Status.OK, new Metadata());
-      }
-      i++;
+    // Close all sessions from channel 0 (the first softMaxPerGroup/2 listeners) so ch0 has
+    // 0 outstanding. serviceChannels() picks the idle channel as drain candidate and removes it
+    // immediately (DRAINING channels with 0 outstanding are removed at drain time, not later).
+    for (int j = 0; j < pool.softMaxPerGroup / 2; j++) {
+      listener.getAllValues().get(j).onClose(Status.OK, new Metadata());
     }
 
-    // Now we should have 19 sessions on 5 channel groups each of 1 channel.
-    // I.e. dumpState
-    // FINE: ChannelPool channelGroups: 5, channels: 5, starting channels: 0, totalStreams: 19,
-    // AFEs: 5, distribution: [4, 4, 4, 4, 3]
-    when(clock.instant()).thenReturn(Instant.now());
+    // 20 sessions remain across 5 channels; ch0 has 0 outstanding, ch1-4 have 5 each.
+    // target = ceil(20 * 2.0 / 10) = 4; ch0 wins drain candidate sort (fewest outstanding).
     pool.serviceChannels();
 
-    // Should scale down to 4 channels. 19 / 5 round up = 4.
+    // ch0 has 0 outstanding → removed immediately → shutdown() called once.
     verify(channel, times(numChannels - 4)).shutdown();
 
     pool.close();
@@ -421,7 +418,6 @@ class ChannelPoolDpImplTest {
     when(channelSupplier.get()).thenReturn(channel);
     when(channel.newCall(any(), any())).thenReturn(clientCall);
     doNothing().when(clientCall).start(listener.capture(), any());
-    doReturn(Attributes.EMPTY).when(clientCall).getAttributes();
 
     ChannelPoolDpImpl pool =
         new ChannelPoolDpImpl(channelSupplier, defaultConfig, debugTagTracer, bgExecutor);
@@ -445,12 +441,14 @@ class ChannelPoolDpImplTest {
     // 3. Recycle channel1 via stream2
     listener2.onClose(Status.UNIMPLEMENTED, new Metadata());
     verify(channel, times(1)).shutdown();
-    // Now isShutdown for the channel1 returns true
-    when(channel.isShutdown()).thenReturn(true);
+    // channel1 is now removed from the pool's channel list by removeChannel().
 
     // 4. stream1 (on recycled channel1) receives headers with AFE ID
-    // This triggers rehomeChannel
-    PeerInfo peerInfo = PeerInfo.newBuilder().setApplicationFrontendId(555).build();
+    PeerInfo peerInfo =
+        PeerInfo.newBuilder()
+            .setApplicationFrontendId(555)
+            .setTransportType(TransportType.TRANSPORT_TYPE_SESSION_UNKNOWN)
+            .build();
     Metadata headers = new Metadata();
     headers.put(
         SessionStreamImpl.PEER_INFO_KEY,
@@ -466,6 +464,171 @@ class ChannelPoolDpImplTest {
     verify(channel, times(2)).newCall(any(), any());
     // Instead, it should be called on channel2
     verify(channel2, times(1)).newCall(any(), any());
+
+    pool.close();
+  }
+
+  @Test
+  void testRecycleChannelOnConsecutiveFailures() {
+    when(channelSupplier.get()).thenReturn(channel);
+    when(channel.newCall(any(), any())).thenReturn(clientCall);
+    doNothing().when(clientCall).start(listener.capture(), any());
+
+    ChannelPoolDpImpl pool =
+        new ChannelPoolDpImpl(channelSupplier, defaultConfig, debugTagTracer, bgExecutor);
+
+    for (int i = 0; i < 4; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onClose(Status.UNAVAILABLE, new Metadata());
+
+      // Should not be recycled yet
+      verify(channel, times(0)).shutdown();
+      verify(channelSupplier, times(1)).get();
+    }
+
+    // 5th failure
+    pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+        .start(mock(Listener.class), new Metadata());
+    listener.getValue().onClose(Status.UNAVAILABLE, new Metadata());
+
+    // Now it should be recycled
+    verify(channel, times(1)).shutdown();
+    verify(channelSupplier, times(2)).get();
+
+    pool.close();
+  }
+
+  @Test
+  void testResetConsecutiveFailuresOnSuccess() {
+    when(channelSupplier.get()).thenReturn(channel);
+    when(channel.newCall(any(), any())).thenReturn(clientCall);
+    doNothing().when(clientCall).start(listener.capture(), any());
+    doReturn(Attributes.EMPTY).when(clientCall).getAttributes();
+
+    ChannelPoolDpImpl pool =
+        new ChannelPoolDpImpl(channelSupplier, defaultConfig, debugTagTracer, bgExecutor);
+
+    // 4 failures
+    for (int i = 0; i < 4; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onClose(Status.UNAVAILABLE, new Metadata());
+    }
+    verify(channel, times(0)).shutdown();
+
+    // A success: onHeaders (which calls onBeforeSessionStart)
+    pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+        .start(mock(Listener.class), new Metadata());
+
+    PeerInfo peerInfo = PeerInfo.newBuilder().setApplicationFrontendId(555).build();
+    Metadata headers = new Metadata();
+    headers.put(
+        SessionStreamImpl.PEER_INFO_KEY,
+        Base64.getEncoder().encodeToString(peerInfo.toByteArray()));
+    listener.getValue().onHeaders(headers);
+    listener.getValue().onClose(Status.OK, new Metadata());
+
+    // Another 4 failures - should still not recycle because counter was reset
+    for (int i = 0; i < 4; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onClose(Status.UNAVAILABLE, new Metadata());
+    }
+    verify(channel, times(0)).shutdown();
+
+    pool.close();
+  }
+
+  @Test
+  void testCancelledDoesNotIncrementFailures() {
+    when(channelSupplier.get()).thenReturn(channel);
+    when(channel.newCall(any(), any())).thenReturn(clientCall);
+    doNothing().when(clientCall).start(listener.capture(), any());
+
+    ChannelPoolDpImpl pool =
+        new ChannelPoolDpImpl(channelSupplier, defaultConfig, debugTagTracer, bgExecutor);
+
+    for (int i = 0; i < 10; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onClose(Status.CANCELLED, new Metadata());
+    }
+
+    // Should never be recycled
+    verify(channel, times(0)).shutdown();
+    verify(channelSupplier, times(1)).get();
+
+    pool.close();
+  }
+
+  @Test
+  void testRecycleChannelBackoff() {
+    when(channelSupplier.get()).thenReturn(channel);
+    when(channel.newCall(any(), any())).thenReturn(clientCall);
+    doNothing().when(clientCall).start(listener.capture(), any());
+
+    Ticker ticker = mock(Ticker.class);
+    long startNanos = TimeUnit.SECONDS.toNanos(1);
+    final AtomicLong time = new AtomicLong(startNanos);
+    when(ticker.read()).thenAnswer(invocation -> time.get());
+
+    ChannelPoolDpImpl pool =
+        new ChannelPoolDpImpl(
+            channelSupplier,
+            defaultConfig,
+            "pool",
+            debugTagTracer,
+            bgExecutor,
+            Clock.systemUTC(),
+            ticker);
+
+    // --- First Recycle ---
+    for (int i = 0; i < 5; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onClose(Status.UNAVAILABLE, new Metadata());
+    }
+    // Should be recycled once
+    verify(channel, times(1)).shutdown();
+    verify(channelSupplier, times(2)).get(); // 1 initial + 1 recycle
+
+    // --- Second Recycle (Immediate, same time) ---
+    // Time has not advanced. Backoff is now 2ms.
+    for (int i = 0; i < 5; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onClose(Status.UNAVAILABLE, new Metadata());
+    }
+    // Should NOT be recycled again because of backoff
+    verify(channel, times(1)).shutdown();
+    verify(channelSupplier, times(2)).get();
+
+    // --- Third Recycle (After partial backoff, still blocked) ---
+    // Advance time by 1ms (backoff is 2ms, so still blocked)
+    time.addAndGet(TimeUnit.MILLISECONDS.toNanos(1));
+
+    for (int i = 0; i < 5; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onClose(Status.UNAVAILABLE, new Metadata());
+    }
+    // Should still NOT be recycled
+    verify(channel, times(1)).shutdown();
+    verify(channelSupplier, times(2)).get();
+
+    // --- Fourth Recycle (After full backoff) ---
+    // Advance time by another 2ms (total 3ms from last recycle, which is > 2ms backoff)
+    time.addAndGet(TimeUnit.MILLISECONDS.toNanos(2));
+
+    for (int i = 0; i < 5; i++) {
+      pool.newStream(FakeSessionGrpc.getOpenSessionMethod(), CallOptions.DEFAULT)
+          .start(mock(Listener.class), new Metadata());
+      listener.getValue().onClose(Status.UNAVAILABLE, new Metadata());
+    }
+    // Now it should be recycled again
+    verify(channel, times(2)).shutdown();
+    verify(channelSupplier, times(3)).get();
 
     pool.close();
   }

@@ -25,8 +25,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
+@NullMarked
 @Generated("by gapic-generator-java")
 public class PropertyName implements ResourceName {
   private static final PathTemplate PROPERTY =
@@ -63,7 +66,7 @@ public class PropertyName implements ResourceName {
     return newBuilder().setProperty(property).build().toString();
   }
 
-  public static PropertyName parse(String formattedString) {
+  public static @Nullable PropertyName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
@@ -81,7 +84,7 @@ public class PropertyName implements ResourceName {
     return list;
   }
 
-  public static List<String> toStringList(List<PropertyName> values) {
+  public static List<String> toStringList(List<@Nullable PropertyName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (PropertyName value : values) {
       if (value == null) {
@@ -123,7 +126,7 @@ public class PropertyName implements ResourceName {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(@Nullable Object o) {
     if (o == this) {
       return true;
     }

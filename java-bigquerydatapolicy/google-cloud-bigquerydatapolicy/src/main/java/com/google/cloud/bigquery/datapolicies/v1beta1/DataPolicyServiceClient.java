@@ -39,6 +39,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -266,10 +268,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class DataPolicyServiceClient implements BackgroundResource {
-  private final DataPolicyServiceSettings settings;
+  private final @Nullable DataPolicyServiceSettings settings;
   private final DataPolicyServiceStub stub;
 
   /** Constructs an instance of DataPolicyServiceClient with default settings. */
@@ -309,7 +312,7 @@ public class DataPolicyServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final DataPolicyServiceSettings getSettings() {
+  public final @Nullable DataPolicyServiceSettings getSettings() {
     return settings;
   }
 
@@ -343,7 +346,7 @@ public class DataPolicyServiceClient implements BackgroundResource {
    *     provided for the data policy creation.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataPolicy createDataPolicy(LocationName parent, DataPolicy dataPolicy) {
+  public final DataPolicy createDataPolicy(@Nullable LocationName parent, DataPolicy dataPolicy) {
     CreateDataPolicyRequest request =
         CreateDataPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -564,7 +567,7 @@ public class DataPolicyServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/dataPolicies/{data_policy_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteDataPolicy(DataPolicyName name) {
+  public final void deleteDataPolicy(@Nullable DataPolicyName name) {
     DeleteDataPolicyRequest request =
         DeleteDataPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteDataPolicy(request);
@@ -675,7 +678,7 @@ public class DataPolicyServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}/dataPolicies/{data_policy_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final DataPolicy getDataPolicy(DataPolicyName name) {
+  public final DataPolicy getDataPolicy(@Nullable DataPolicyName name) {
     GetDataPolicyRequest request =
         GetDataPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getDataPolicy(request);
@@ -788,7 +791,7 @@ public class DataPolicyServiceClient implements BackgroundResource {
    *     `projects/{project_number}/locations/{location_id}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListDataPoliciesPagedResponse listDataPolicies(LocationName parent) {
+  public final ListDataPoliciesPagedResponse listDataPolicies(@Nullable LocationName parent) {
     ListDataPoliciesRequest request =
         ListDataPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1165,8 +1168,9 @@ public class DataPolicyServiceClient implements BackgroundResource {
           ListDataPoliciesRequest, ListDataPoliciesResponse, DataPolicy, ListDataPoliciesPage> {
 
     private ListDataPoliciesPage(
-        PageContext<ListDataPoliciesRequest, ListDataPoliciesResponse, DataPolicy> context,
-        ListDataPoliciesResponse response) {
+        @Nullable PageContext<ListDataPoliciesRequest, ListDataPoliciesResponse, DataPolicy>
+            context,
+        @Nullable ListDataPoliciesResponse response) {
       super(context, response);
     }
 
@@ -1176,14 +1180,16 @@ public class DataPolicyServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataPoliciesPage createPage(
-        PageContext<ListDataPoliciesRequest, ListDataPoliciesResponse, DataPolicy> context,
-        ListDataPoliciesResponse response) {
+        @Nullable PageContext<ListDataPoliciesRequest, ListDataPoliciesResponse, DataPolicy>
+            context,
+        @Nullable ListDataPoliciesResponse response) {
       return new ListDataPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListDataPoliciesPage> createPageAsync(
-        PageContext<ListDataPoliciesRequest, ListDataPoliciesResponse, DataPolicy> context,
+        @Nullable PageContext<ListDataPoliciesRequest, ListDataPoliciesResponse, DataPolicy>
+            context,
         ApiFuture<ListDataPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1198,7 +1204,7 @@ public class DataPolicyServiceClient implements BackgroundResource {
           ListDataPoliciesFixedSizeCollection> {
 
     private ListDataPoliciesFixedSizeCollection(
-        List<ListDataPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListDataPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1208,7 +1214,7 @@ public class DataPolicyServiceClient implements BackgroundResource {
 
     @Override
     protected ListDataPoliciesFixedSizeCollection createCollection(
-        List<ListDataPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListDataPoliciesPage> pages, int collectionSize) {
       return new ListDataPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }

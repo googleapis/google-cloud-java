@@ -74,6 +74,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -81,6 +82,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class HttpJsonFirestoreStub extends FirestoreStub {
   private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
@@ -109,6 +111,8 @@ public class HttpJsonFirestoreStub extends FirestoreStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "mask", request.getMask());
                             serializer.putQueryParam(fields, "readTime", request.getReadTime());
+                            serializer.putQueryParam(
+                                fields, "requestOptions", request.getRequestOptions());
                             serializer.putQueryParam(
                                 fields, "transaction", request.getTransaction());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
@@ -155,6 +159,8 @@ public class HttpJsonFirestoreStub extends FirestoreStub {
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
                             serializer.putQueryParam(fields, "readTime", request.getReadTime());
                             serializer.putQueryParam(
+                                fields, "requestOptions", request.getRequestOptions());
+                            serializer.putQueryParam(
                                 fields, "showMissing", request.getShowMissing());
                             serializer.putQueryParam(
                                 fields, "transaction", request.getTransaction());
@@ -196,6 +202,8 @@ public class HttpJsonFirestoreStub extends FirestoreStub {
                             serializer.putQueryParam(
                                 fields, "currentDocument", request.getCurrentDocument());
                             serializer.putQueryParam(fields, "mask", request.getMask());
+                            serializer.putQueryParam(
+                                fields, "requestOptions", request.getRequestOptions());
                             serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
@@ -236,6 +244,8 @@ public class HttpJsonFirestoreStub extends FirestoreStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(
                                 fields, "currentDocument", request.getCurrentDocument());
+                            serializer.putQueryParam(
+                                fields, "requestOptions", request.getRequestOptions());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -650,6 +660,8 @@ public class HttpJsonFirestoreStub extends FirestoreStub {
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "documentId", request.getDocumentId());
                             serializer.putQueryParam(fields, "mask", request.getMask());
+                            serializer.putQueryParam(
+                                fields, "requestOptions", request.getRequestOptions());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

@@ -16,17 +16,26 @@
 
 package com.google.devicesandservices.health.v4.stub;
 
+import static com.google.devicesandservices.health.v4.HealthProfileServiceClient.ListPairedDevicesPagedResponse;
+
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.devicesandservices.health.v4.GetIdentityRequest;
+import com.google.devicesandservices.health.v4.GetIrnProfileRequest;
+import com.google.devicesandservices.health.v4.GetPairedDeviceRequest;
 import com.google.devicesandservices.health.v4.GetProfileRequest;
 import com.google.devicesandservices.health.v4.GetSettingsRequest;
 import com.google.devicesandservices.health.v4.Identity;
+import com.google.devicesandservices.health.v4.IrnProfile;
+import com.google.devicesandservices.health.v4.ListPairedDevicesRequest;
+import com.google.devicesandservices.health.v4.ListPairedDevicesResponse;
+import com.google.devicesandservices.health.v4.PairedDevice;
 import com.google.devicesandservices.health.v4.Profile;
 import com.google.devicesandservices.health.v4.Settings;
 import com.google.devicesandservices.health.v4.UpdateProfileRequest;
 import com.google.devicesandservices.health.v4.UpdateSettingsRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -34,6 +43,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class HealthProfileServiceStub implements BackgroundResource {
 
@@ -55,6 +65,24 @@ public abstract class HealthProfileServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetIdentityRequest, Identity> getIdentityCallable() {
     throw new UnsupportedOperationException("Not implemented: getIdentityCallable()");
+  }
+
+  public UnaryCallable<GetIrnProfileRequest, IrnProfile> getIrnProfileCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIrnProfileCallable()");
+  }
+
+  public UnaryCallable<GetPairedDeviceRequest, PairedDevice> getPairedDeviceCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPairedDeviceCallable()");
+  }
+
+  public UnaryCallable<ListPairedDevicesRequest, ListPairedDevicesPagedResponse>
+      listPairedDevicesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPairedDevicesPagedCallable()");
+  }
+
+  public UnaryCallable<ListPairedDevicesRequest, ListPairedDevicesResponse>
+      listPairedDevicesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listPairedDevicesCallable()");
   }
 
   @Override

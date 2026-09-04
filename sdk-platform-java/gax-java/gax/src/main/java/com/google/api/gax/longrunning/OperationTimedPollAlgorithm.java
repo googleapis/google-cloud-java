@@ -39,12 +39,14 @@ import com.google.common.annotations.VisibleForTesting;
 import java.util.concurrent.CancellationException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * Operation timed polling algorithm, which uses exponential backoff factor for determining when the
  * next polling operation should be executed. If the polling exceeds the total timeout this
  * algorithm cancels polling.
  */
+@NullMarked
 public class OperationTimedPollAlgorithm extends ExponentialRetryAlgorithm {
 
   @VisibleForTesting
@@ -52,7 +54,7 @@ public class OperationTimedPollAlgorithm extends ExponentialRetryAlgorithm {
 
   @VisibleForTesting
   static final String LRO_TROUBLESHOOTING_LINK =
-      "https://github.com/googleapis/google-cloud-java#lro-timeouts";
+      "https://docs.cloud.google.com/java/docs/long-running-operations";
 
   /**
    * Creates the polling algorithm, using the default {@code NanoClock} for time computations.

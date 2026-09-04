@@ -17,6 +17,7 @@
 package com.google.cloud.dataform.v1beta1;
 
 import static com.google.cloud.dataform.v1beta1.DataformClient.FetchRepositoryHistoryPagedResponse;
+import static com.google.cloud.dataform.v1beta1.DataformClient.FetchWorkspaceBranchesPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListCompilationResultsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListLocationsPagedResponse;
 import static com.google.cloud.dataform.v1beta1.DataformClient.ListReleaseConfigsPagedResponse;
@@ -455,6 +456,100 @@ public class DataformClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteTeamFolderTreeTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTeamFolderTreeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+    boolean force = true;
+
+    client.deleteTeamFolderTreeAsync(name, force).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTeamFolderTreeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      TeamFolderName name = TeamFolderName.of("[PROJECT]", "[LOCATION]", "[TEAM_FOLDER]");
+      boolean force = true;
+      client.deleteTeamFolderTreeAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteTeamFolderTreeTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteTeamFolderTreeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-1378/locations/location-1378/teamFolders/teamFolder-1378";
+    boolean force = true;
+
+    client.deleteTeamFolderTreeAsync(name, force).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteTeamFolderTreeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1378/locations/location-1378/teamFolders/teamFolder-1378";
+      boolean force = true;
+      client.deleteTeamFolderTreeAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 
@@ -989,6 +1084,100 @@ public class DataformClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFolderTreeTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFolderTreeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+    boolean force = true;
+
+    client.deleteFolderTreeAsync(name, force).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFolderTreeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FolderName name = FolderName.of("[PROJECT]", "[LOCATION]", "[FOLDER]");
+      boolean force = true;
+      client.deleteFolderTreeAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteFolderTreeTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteFolderTreeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-6987/locations/location-6987/folders/folder-6987";
+    boolean force = true;
+
+    client.deleteFolderTreeAsync(name, force).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteFolderTreeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-6987/locations/location-6987/folders/folder-6987";
+      boolean force = true;
+      client.deleteFolderTreeAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 
@@ -1816,6 +2005,106 @@ public class DataformClientHttpJsonTest {
   }
 
   @Test
+  public void deleteRepositoryLongRunningTest() throws Exception {
+    DeleteRepositoryLongRunningResponse expectedResponse =
+        DeleteRepositoryLongRunningResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRepositoryLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+    boolean force = true;
+
+    DeleteRepositoryLongRunningResponse actualResponse =
+        client.deleteRepositoryLongRunningAsync(name, force).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRepositoryLongRunningExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      RepositoryName name = RepositoryName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]");
+      boolean force = true;
+      client.deleteRepositoryLongRunningAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteRepositoryLongRunningTest2() throws Exception {
+    DeleteRepositoryLongRunningResponse expectedResponse =
+        DeleteRepositoryLongRunningResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteRepositoryLongRunningTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-4840/locations/location-4840/repositories/repositorie-4840";
+    boolean force = true;
+
+    DeleteRepositoryLongRunningResponse actualResponse =
+        client.deleteRepositoryLongRunningAsync(name, force).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteRepositoryLongRunningExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-4840/locations/location-4840/repositories/repositorie-4840";
+      boolean force = true;
+      client.deleteRepositoryLongRunningAsync(name, force).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void moveRepositoryTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -2350,7 +2639,11 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setDisableMoves(true)
+            .setOriginalBranch("originalBranch1098005203")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setEnableBranchManagement(true)
+            .setDepth(95472323)
+            .setShallow(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2402,7 +2695,11 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setDisableMoves(true)
+            .setOriginalBranch("originalBranch1098005203")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setEnableBranchManagement(true)
+            .setDepth(95472323)
+            .setShallow(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2455,7 +2752,11 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setDisableMoves(true)
+            .setOriginalBranch("originalBranch1098005203")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setEnableBranchManagement(true)
+            .setDepth(95472323)
+            .setShallow(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2510,7 +2811,11 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setDisableMoves(true)
+            .setOriginalBranch("originalBranch1098005203")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setEnableBranchManagement(true)
+            .setDepth(95472323)
+            .setShallow(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2647,6 +2952,7 @@ public class DataformClientHttpJsonTest {
             .setWorkspace(
                 WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                     .toString())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
 
     InstallNpmPackagesResponse actualResponse = client.installNpmPackages(request);
@@ -2680,6 +2986,7 @@ public class DataformClientHttpJsonTest {
               .setWorkspace(
                   WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
                       .toString())
+              .setPipelineConfig(PipelineConfig.newBuilder().build())
               .build();
       client.installNpmPackages(request);
       Assert.fail("No exception raised");
@@ -2737,6 +3044,291 @@ public class DataformClientHttpJsonTest {
               .setAuthor(CommitAuthor.newBuilder().build())
               .build();
       client.pullGitCommits(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void syncWorkspaceRefsTest() throws Exception {
+    SyncWorkspaceRefsResponse expectedResponse = SyncWorkspaceRefsResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SyncWorkspaceRefsRequest request =
+        SyncWorkspaceRefsRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setRemoteBranchName("remoteBranchName2129930291")
+            .setDeepen(-1335656811)
+            .build();
+
+    SyncWorkspaceRefsResponse actualResponse = client.syncWorkspaceRefs(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void syncWorkspaceRefsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SyncWorkspaceRefsRequest request =
+          SyncWorkspaceRefsRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setRemoteBranchName("remoteBranchName2129930291")
+              .setDeepen(-1335656811)
+              .build();
+      client.syncWorkspaceRefs(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchWorkspaceBranchesTest() throws Exception {
+    BranchMetadata responsesElement = BranchMetadata.newBuilder().build();
+    FetchWorkspaceBranchesResponse expectedResponse =
+        FetchWorkspaceBranchesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllBranches(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FetchWorkspaceBranchesRequest request =
+        FetchWorkspaceBranchesRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    FetchWorkspaceBranchesPagedResponse pagedListResponse = client.fetchWorkspaceBranches(request);
+
+    List<BranchMetadata> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getBranchesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchWorkspaceBranchesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FetchWorkspaceBranchesRequest request =
+          FetchWorkspaceBranchesRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.fetchWorkspaceBranches(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteBranchTest() throws Exception {
+    DeleteBranchResponse expectedResponse = DeleteBranchResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    DeleteBranchRequest request =
+        DeleteBranchRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setBranch("branch-1381030494")
+            .setForce(true)
+            .build();
+
+    DeleteBranchResponse actualResponse = client.deleteBranch(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteBranchExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DeleteBranchRequest request =
+          DeleteBranchRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setBranch("branch-1381030494")
+              .setForce(true)
+              .build();
+      client.deleteBranch(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void checkoutWorkspaceBranchTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    CheckoutWorkspaceBranchRequest request =
+        CheckoutWorkspaceBranchRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .setBranch("branch-1381030494")
+            .setCreateIfNotExists(true)
+            .setSourceBranch("sourceBranch838777245")
+            .build();
+
+    client.checkoutWorkspaceBranch(request);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void checkoutWorkspaceBranchExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CheckoutWorkspaceBranchRequest request =
+          CheckoutWorkspaceBranchRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .setBranch("branch-1381030494")
+              .setCreateIfNotExists(true)
+              .setSourceBranch("sourceBranch838777245")
+              .build();
+      client.checkoutWorkspaceBranch(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchCurrentWorkspaceBranchTest() throws Exception {
+    FetchCurrentWorkspaceBranchResponse expectedResponse =
+        FetchCurrentWorkspaceBranchResponse.newBuilder()
+            .setBranchName("branchName1352954701")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    FetchCurrentWorkspaceBranchRequest request =
+        FetchCurrentWorkspaceBranchRequest.newBuilder()
+            .setName(
+                WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                    .toString())
+            .build();
+
+    FetchCurrentWorkspaceBranchResponse actualResponse =
+        client.fetchCurrentWorkspaceBranch(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void fetchCurrentWorkspaceBranchExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      FetchCurrentWorkspaceBranchRequest request =
+          FetchCurrentWorkspaceBranchRequest.newBuilder()
+              .setName(
+                  WorkspaceName.of("[PROJECT]", "[LOCATION]", "[REPOSITORY]", "[WORKSPACE]")
+                      .toString())
+              .build();
+      client.fetchCurrentWorkspaceBranch(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -3094,6 +3686,7 @@ public class DataformClientHttpJsonTest {
             .setPath("path3433509")
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
+            .setView(DirectoryContentsView.forNumber(0))
             .build();
 
     QueryDirectoryContentsPagedResponse pagedListResponse = client.queryDirectoryContents(request);
@@ -3134,6 +3727,7 @@ public class DataformClientHttpJsonTest {
               .setPath("path3433509")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setView(DirectoryContentsView.forNumber(0))
               .build();
       client.queryDirectoryContents(request);
       Assert.fail("No exception raised");
@@ -4229,6 +4823,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4287,6 +4882,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4344,6 +4940,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4401,6 +4998,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setGcsRepositorySnapshotMetadata(GcsRepositorySnapshotMetadata.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4632,6 +5230,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4693,6 +5292,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4754,6 +5354,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4818,6 +5419,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4882,6 +5484,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -4903,6 +5506,7 @@ public class DataformClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
+            .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -4951,6 +5555,7 @@ public class DataformClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setInternalMetadata("internalMetadata6789388")
+              .setWorkflowTriggerConfig(WorkflowTriggerConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateWorkflowConfig(workflowConfig, updateMask);
@@ -5161,6 +5766,7 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5221,6 +5827,7 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5279,6 +5886,7 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5337,6 +5945,7 @@ public class DataformClientHttpJsonTest {
             .setDataEncryptionState(DataEncryptionState.newBuilder().build())
             .setInternalMetadata("internalMetadata6789388")
             .setPrivateResourceMetadata(PrivateResourceMetadata.newBuilder().build())
+            .setPipelineConfig(PipelineConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

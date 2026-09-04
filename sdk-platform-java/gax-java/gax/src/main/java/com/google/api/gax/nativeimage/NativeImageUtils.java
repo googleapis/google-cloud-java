@@ -36,9 +36,12 @@ import java.lang.reflect.Modifier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.graalvm.nativeimage.hosted.Feature.FeatureAccess;
+import org.graalvm.nativeimage.hosted.RuntimeJNIAccess;
 import org.graalvm.nativeimage.hosted.RuntimeReflection;
+import org.jspecify.annotations.NullMarked;
 
 /** Internal class offering helper methods for registering methods/classes for reflection. */
+@NullMarked
 @InternalApi
 public class NativeImageUtils {
 
@@ -84,15 +87,58 @@ public class NativeImageUtils {
   }
 
   /** Registers an entire class for reflection use. */
+  public static void registerClassForReflection(Class<?> clazz) {
+    RuntimeReflection.register(clazz);
+    RuntimeReflection.register(clazz.getDeclaredConstructors());
+    RuntimeReflection.register(clazz.getDeclaredFields());
+    RuntimeReflection.register(clazz.getDeclaredMethods());
+  }
+
+  /** Registers an entire class for reflection use. */
   public static void registerClassForReflection(FeatureAccess access, String name) {
     Class<?> clazz = access.findClassByName(name);
     if (clazz != null) {
-      RuntimeReflection.register(clazz);
-      RuntimeReflection.register(clazz.getDeclaredConstructors());
-      RuntimeReflection.register(clazz.getDeclaredFields());
-      RuntimeReflection.register(clazz.getDeclaredMethods());
+      registerClassForReflection(clazz);
     } else {
       LOGGER.log(Level.WARNING, CLASS_REFLECTION_ERROR_MESSAGE, name);
+    }
+  }
+
+  /** Registers an entire class for JNI use. */
+  public static void registerClassForJni(Class<?> clazz) {
+    RuntimeJNIAccess.register(clazz);
+    RuntimeJNIAccess.register(clazz.getDeclaredConstructors());
+    RuntimeJNIAccess.register(clazz.getDeclaredFields());
+    RuntimeJNIAccess.register(clazz.getDeclaredMethods());
+  }
+
+  /** Registers an entire class for JNI use. */
+  public static void registerClassForJni(FeatureAccess access, String name) {
+    Class<?> clazz = access.findClassByName(name);
+    if (clazz != null) {
+      registerClassForJni(clazz);
+    } else {
+      LOGGER.log(Level.WARNING, CLASS_REFLECTION_ERROR_MESSAGE, name);
+    }
+  }
+
+  /**
+   * Registers the transitive class hierarchy of the provided {@code className} for JNI use.
+   *
+   * <p>The transitive class hierarchy contains the class itself and its transitive set of
+   * *non-private* nested subclasses.
+   */
+  public static void registerClassHierarchyForJni(FeatureAccess access, String className) {
+    Class<?> clazz = access.findClassByName(className);
+    if (clazz != null) {
+      registerClassForJni(access, className);
+      for (Class<?> nestedClass : clazz.getDeclaredClasses()) {
+        if (!Modifier.isPrivate(nestedClass.getModifiers())) {
+          registerClassHierarchyForJni(access, nestedClass.getName());
+        }
+      }
+    } else {
+      LOGGER.log(Level.WARNING, CLASS_REFLECTION_ERROR_MESSAGE, className);
     }
   }
 

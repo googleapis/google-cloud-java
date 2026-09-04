@@ -41,6 +41,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -155,8 +157,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -242,9 +243,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class GeneratorEvaluationsClient implements BackgroundResource {
-  private final GeneratorEvaluationsSettings settings;
+  private final @Nullable GeneratorEvaluationsSettings settings;
   private final GeneratorEvaluationsStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -292,7 +294,7 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final GeneratorEvaluationsSettings getSettings() {
+  public final @Nullable GeneratorEvaluationsSettings getSettings() {
     return settings;
   }
 
@@ -347,7 +349,7 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
    */
   public final OperationFuture<GeneratorEvaluation, GeneratorEvaluationOperationMetadata>
       createGeneratorEvaluationAsync(
-          GeneratorName parent, GeneratorEvaluation generatorEvaluation) {
+          @Nullable GeneratorName parent, GeneratorEvaluation generatorEvaluation) {
     CreateGeneratorEvaluationRequest request =
         CreateGeneratorEvaluationRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -518,7 +520,7 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
    *     ID&gt;/evaluations/&lt;Evaluation ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final GeneratorEvaluation getGeneratorEvaluation(GeneratorEvaluationName name) {
+  public final GeneratorEvaluation getGeneratorEvaluation(@Nullable GeneratorEvaluationName name) {
     GetGeneratorEvaluationRequest request =
         GetGeneratorEvaluationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -651,7 +653,7 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListGeneratorEvaluationsPagedResponse listGeneratorEvaluations(
-      GeneratorName parent) {
+      @Nullable GeneratorName parent) {
     ListGeneratorEvaluationsRequest request =
         ListGeneratorEvaluationsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -827,7 +829,7 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
    *     evaluations/&lt;Evaluation ID&gt;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteGeneratorEvaluation(GeneratorEvaluationName name) {
+  public final void deleteGeneratorEvaluation(@Nullable GeneratorEvaluationName name) {
     DeleteGeneratorEvaluationRequest request =
         DeleteGeneratorEvaluationRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -937,9 +939,8 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -984,9 +985,8 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1032,9 +1032,8 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1199,12 +1198,13 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
           ListGeneratorEvaluationsPage> {
 
     private ListGeneratorEvaluationsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGeneratorEvaluationsRequest,
                 ListGeneratorEvaluationsResponse,
                 GeneratorEvaluation>
             context,
-        ListGeneratorEvaluationsResponse response) {
+        @Nullable ListGeneratorEvaluationsResponse response) {
       super(context, response);
     }
 
@@ -1214,18 +1214,20 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
 
     @Override
     protected ListGeneratorEvaluationsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGeneratorEvaluationsRequest,
                 ListGeneratorEvaluationsResponse,
                 GeneratorEvaluation>
             context,
-        ListGeneratorEvaluationsResponse response) {
+        @Nullable ListGeneratorEvaluationsResponse response) {
       return new ListGeneratorEvaluationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListGeneratorEvaluationsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListGeneratorEvaluationsRequest,
                 ListGeneratorEvaluationsResponse,
                 GeneratorEvaluation>
@@ -1244,7 +1246,7 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
           ListGeneratorEvaluationsFixedSizeCollection> {
 
     private ListGeneratorEvaluationsFixedSizeCollection(
-        List<ListGeneratorEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListGeneratorEvaluationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1254,7 +1256,7 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
 
     @Override
     protected ListGeneratorEvaluationsFixedSizeCollection createCollection(
-        List<ListGeneratorEvaluationsPage> pages, int collectionSize) {
+        @Nullable List<ListGeneratorEvaluationsPage> pages, int collectionSize) {
       return new ListGeneratorEvaluationsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1288,8 +1290,8 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -1299,14 +1301,14 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1320,7 +1322,8 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1330,7 +1333,7 @@ public class GeneratorEvaluationsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

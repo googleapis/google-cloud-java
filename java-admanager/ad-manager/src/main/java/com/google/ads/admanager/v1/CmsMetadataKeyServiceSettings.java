@@ -32,6 +32,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -84,6 +86,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class CmsMetadataKeyServiceSettings extends ClientSettings<CmsMetadataKeyServiceSettings> {
 
@@ -97,6 +100,22 @@ public class CmsMetadataKeyServiceSettings extends ClientSettings<CmsMetadataKey
           ListCmsMetadataKeysRequest, ListCmsMetadataKeysResponse, ListCmsMetadataKeysPagedResponse>
       listCmsMetadataKeysSettings() {
     return ((CmsMetadataKeyServiceStubSettings) getStubSettings()).listCmsMetadataKeysSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchActivateCmsMetadataKeys. */
+  public UnaryCallSettings<
+          BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+      batchActivateCmsMetadataKeysSettings() {
+    return ((CmsMetadataKeyServiceStubSettings) getStubSettings())
+        .batchActivateCmsMetadataKeysSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeactivateCmsMetadataKeys. */
+  public UnaryCallSettings<
+          BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+      batchDeactivateCmsMetadataKeysSettings() {
+    return ((CmsMetadataKeyServiceStubSettings) getStubSettings())
+        .batchDeactivateCmsMetadataKeysSettings();
   }
 
   public static final CmsMetadataKeyServiceSettings create(CmsMetadataKeyServiceStubSettings stub)
@@ -144,7 +163,7 @@ public class CmsMetadataKeyServiceSettings extends ClientSettings<CmsMetadataKey
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -165,7 +184,7 @@ public class CmsMetadataKeyServiceSettings extends ClientSettings<CmsMetadataKey
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(CmsMetadataKeyServiceStubSettings.newBuilder(clientContext));
     }
 
@@ -210,6 +229,20 @@ public class CmsMetadataKeyServiceSettings extends ClientSettings<CmsMetadataKey
             ListCmsMetadataKeysPagedResponse>
         listCmsMetadataKeysSettings() {
       return getStubSettingsBuilder().listCmsMetadataKeysSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchActivateCmsMetadataKeys. */
+    public UnaryCallSettings.Builder<
+            BatchActivateCmsMetadataKeysRequest, BatchActivateCmsMetadataKeysResponse>
+        batchActivateCmsMetadataKeysSettings() {
+      return getStubSettingsBuilder().batchActivateCmsMetadataKeysSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeactivateCmsMetadataKeys. */
+    public UnaryCallSettings.Builder<
+            BatchDeactivateCmsMetadataKeysRequest, BatchDeactivateCmsMetadataKeysResponse>
+        batchDeactivateCmsMetadataKeysSettings() {
+      return getStubSettingsBuilder().batchDeactivateCmsMetadataKeysSettings();
     }
 
     @Override

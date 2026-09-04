@@ -31,6 +31,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -65,7 +67,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetBandwidthGroup</td>
- *      <td><p> API to retrieve a `BandwidthGroup` object.</td>
+ *      <td><p> Retrieves a `BandwidthGroup` object.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -84,7 +86,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListBandwidthGroups</td>
- *      <td><p> API to retrieve a list of `BandwidthGroup` objects.</td>
+ *      <td><p> Lists `BandwidthGroup` objects.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -145,9 +147,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class BandwidthGroupServiceClient implements BackgroundResource {
-  private final BandwidthGroupServiceSettings settings;
+  private final @Nullable BandwidthGroupServiceSettings settings;
   private final BandwidthGroupServiceStub stub;
 
   /** Constructs an instance of BandwidthGroupServiceClient with default settings. */
@@ -187,7 +190,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final BandwidthGroupServiceSettings getSettings() {
+  public final @Nullable BandwidthGroupServiceSettings getSettings() {
     return settings;
   }
 
@@ -197,7 +200,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `BandwidthGroup` object.
+   * Retrieves a `BandwidthGroup` object.
    *
    * <p>Sample code:
    *
@@ -218,7 +221,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
    *     `networks/{network_code}/bandwidthGroups/{bandwidth_group_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final BandwidthGroup getBandwidthGroup(BandwidthGroupName name) {
+  public final BandwidthGroup getBandwidthGroup(@Nullable BandwidthGroupName name) {
     GetBandwidthGroupRequest request =
         GetBandwidthGroupRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -228,7 +231,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `BandwidthGroup` object.
+   * Retrieves a `BandwidthGroup` object.
    *
    * <p>Sample code:
    *
@@ -256,7 +259,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `BandwidthGroup` object.
+   * Retrieves a `BandwidthGroup` object.
    *
    * <p>Sample code:
    *
@@ -285,7 +288,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a `BandwidthGroup` object.
+   * Retrieves a `BandwidthGroup` object.
    *
    * <p>Sample code:
    *
@@ -314,7 +317,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `BandwidthGroup` objects.
+   * Lists `BandwidthGroup` objects.
    *
    * <p>Sample code:
    *
@@ -338,7 +341,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
    *     `networks/{network_code}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListBandwidthGroupsPagedResponse listBandwidthGroups(NetworkName parent) {
+  public final ListBandwidthGroupsPagedResponse listBandwidthGroups(@Nullable NetworkName parent) {
     ListBandwidthGroupsRequest request =
         ListBandwidthGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -348,7 +351,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `BandwidthGroup` objects.
+   * Lists `BandwidthGroup` objects.
    *
    * <p>Sample code:
    *
@@ -380,7 +383,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `BandwidthGroup` objects.
+   * Lists `BandwidthGroup` objects.
    *
    * <p>Sample code:
    *
@@ -418,7 +421,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `BandwidthGroup` objects.
+   * Lists `BandwidthGroup` objects.
    *
    * <p>Sample code:
    *
@@ -455,7 +458,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * API to retrieve a list of `BandwidthGroup` objects.
+   * Lists `BandwidthGroup` objects.
    *
    * <p>Sample code:
    *
@@ -560,9 +563,10 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
           ListBandwidthGroupsPage> {
 
     private ListBandwidthGroupsPage(
-        PageContext<ListBandwidthGroupsRequest, ListBandwidthGroupsResponse, BandwidthGroup>
+        @Nullable
+            PageContext<ListBandwidthGroupsRequest, ListBandwidthGroupsResponse, BandwidthGroup>
             context,
-        ListBandwidthGroupsResponse response) {
+        @Nullable ListBandwidthGroupsResponse response) {
       super(context, response);
     }
 
@@ -572,15 +576,17 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
 
     @Override
     protected ListBandwidthGroupsPage createPage(
-        PageContext<ListBandwidthGroupsRequest, ListBandwidthGroupsResponse, BandwidthGroup>
+        @Nullable
+            PageContext<ListBandwidthGroupsRequest, ListBandwidthGroupsResponse, BandwidthGroup>
             context,
-        ListBandwidthGroupsResponse response) {
+        @Nullable ListBandwidthGroupsResponse response) {
       return new ListBandwidthGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListBandwidthGroupsPage> createPageAsync(
-        PageContext<ListBandwidthGroupsRequest, ListBandwidthGroupsResponse, BandwidthGroup>
+        @Nullable
+            PageContext<ListBandwidthGroupsRequest, ListBandwidthGroupsResponse, BandwidthGroup>
             context,
         ApiFuture<ListBandwidthGroupsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -596,7 +602,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
           ListBandwidthGroupsFixedSizeCollection> {
 
     private ListBandwidthGroupsFixedSizeCollection(
-        List<ListBandwidthGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListBandwidthGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -606,7 +612,7 @@ public class BandwidthGroupServiceClient implements BackgroundResource {
 
     @Override
     protected ListBandwidthGroupsFixedSizeCollection createCollection(
-        List<ListBandwidthGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListBandwidthGroupsPage> pages, int collectionSize) {
       return new ListBandwidthGroupsFixedSizeCollection(pages, collectionSize);
     }
   }

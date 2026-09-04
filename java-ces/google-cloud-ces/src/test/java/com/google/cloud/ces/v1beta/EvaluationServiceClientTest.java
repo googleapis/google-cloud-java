@@ -307,6 +307,8 @@ public class EvaluationServiceClientTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 
@@ -363,6 +365,8 @@ public class EvaluationServiceClientTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 
@@ -419,6 +423,8 @@ public class EvaluationServiceClientTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 
@@ -478,6 +484,8 @@ public class EvaluationServiceClientTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 
@@ -537,6 +545,8 @@ public class EvaluationServiceClientTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -600,6 +610,8 @@ public class EvaluationServiceClientTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -981,6 +993,8 @@ public class EvaluationServiceClientTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 
@@ -1390,6 +1404,8 @@ public class EvaluationServiceClientTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 
@@ -1443,6 +1459,8 @@ public class EvaluationServiceClientTest {
             .setLastCompletedResult(EvaluationResult.newBuilder().build())
             .setInvalid(true)
             .addAllLastTenResults(new ArrayList<EvaluationResult>())
+            .setEvaluationMetricsThresholdOverride(EvaluationMetricsThresholds.newBuilder().build())
+            .setEvaluationMetricsConfigOverride(EvaluationMetricsConfig.newBuilder().build())
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 
@@ -1733,6 +1751,7 @@ public class EvaluationServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[APP]", "[SCHEDULED_EVALUATION_RUN]")
                     .toString())
             .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
+            .setOperation("operation1662702951")
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 
@@ -1803,6 +1822,7 @@ public class EvaluationServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[APP]", "[SCHEDULED_EVALUATION_RUN]")
                     .toString())
             .setGoldenRunMethod(GoldenRunMethod.forNumber(0))
+            .setOperation("operation1662702951")
             .build();
     mockEvaluationService.addResponse(expectedResponse);
 
@@ -3470,6 +3490,298 @@ public class EvaluationServiceClientTest {
     try {
       String parent = "parent-995424086";
       client.exportEvaluationsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportEvaluationRunsTest() throws Exception {
+    ExportEvaluationRunsResponse expectedResponse =
+        ExportEvaluationRunsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEvaluationRunsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEvaluationService.addResponse(resultOperation);
+
+    AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+    List<String> names = new ArrayList<>();
+
+    ExportEvaluationRunsResponse actualResponse =
+        client.exportEvaluationRunsAsync(parent, names).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportEvaluationRunsRequest actualRequest =
+        ((ExportEvaluationRunsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportEvaluationRunsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEvaluationService.addException(exception);
+
+    try {
+      AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+      List<String> names = new ArrayList<>();
+      client.exportEvaluationRunsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportEvaluationRunsTest2() throws Exception {
+    ExportEvaluationRunsResponse expectedResponse =
+        ExportEvaluationRunsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEvaluationRunsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEvaluationService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    List<String> names = new ArrayList<>();
+
+    ExportEvaluationRunsResponse actualResponse =
+        client.exportEvaluationRunsAsync(parent, names).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportEvaluationRunsRequest actualRequest =
+        ((ExportEvaluationRunsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportEvaluationRunsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEvaluationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<String> names = new ArrayList<>();
+      client.exportEvaluationRunsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportEvaluationResultsTest() throws Exception {
+    ExportEvaluationResultsResponse expectedResponse =
+        ExportEvaluationResultsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEvaluationResultsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEvaluationService.addResponse(resultOperation);
+
+    EvaluationName parent = EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]");
+    List<String> names = new ArrayList<>();
+
+    ExportEvaluationResultsResponse actualResponse =
+        client.exportEvaluationResultsAsync(parent, names).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportEvaluationResultsRequest actualRequest =
+        ((ExportEvaluationResultsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportEvaluationResultsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEvaluationService.addException(exception);
+
+    try {
+      EvaluationName parent = EvaluationName.of("[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]");
+      List<String> names = new ArrayList<>();
+      client.exportEvaluationResultsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportEvaluationResultsTest2() throws Exception {
+    ExportEvaluationResultsResponse expectedResponse =
+        ExportEvaluationResultsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEvaluationResultsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEvaluationService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    List<String> names = new ArrayList<>();
+
+    ExportEvaluationResultsResponse actualResponse =
+        client.exportEvaluationResultsAsync(parent, names).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportEvaluationResultsRequest actualRequest =
+        ((ExportEvaluationResultsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(names, actualRequest.getNamesList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportEvaluationResultsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEvaluationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<String> names = new ArrayList<>();
+      client.exportEvaluationResultsAsync(parent, names).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void runEvaluationResultMetricsTest() throws Exception {
+    RunEvaluationResultMetricsResponse expectedResponse =
+        RunEvaluationResultMetricsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runEvaluationResultMetricsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEvaluationService.addResponse(resultOperation);
+
+    EvaluationResultName evaluationResultId =
+        EvaluationResultName.of(
+            "[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]", "[EVALUATION_RESULT]");
+
+    RunEvaluationResultMetricsResponse actualResponse =
+        client.runEvaluationResultMetricsAsync(evaluationResultId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunEvaluationResultMetricsRequest actualRequest =
+        ((RunEvaluationResultMetricsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(evaluationResultId.toString(), actualRequest.getEvaluationResultId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runEvaluationResultMetricsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEvaluationService.addException(exception);
+
+    try {
+      EvaluationResultName evaluationResultId =
+          EvaluationResultName.of(
+              "[PROJECT]", "[LOCATION]", "[APP]", "[EVALUATION]", "[EVALUATION_RESULT]");
+      client.runEvaluationResultMetricsAsync(evaluationResultId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void runEvaluationResultMetricsTest2() throws Exception {
+    RunEvaluationResultMetricsResponse expectedResponse =
+        RunEvaluationResultMetricsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runEvaluationResultMetricsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEvaluationService.addResponse(resultOperation);
+
+    String evaluationResultId = "evaluationResultId-703222412";
+
+    RunEvaluationResultMetricsResponse actualResponse =
+        client.runEvaluationResultMetricsAsync(evaluationResultId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunEvaluationResultMetricsRequest actualRequest =
+        ((RunEvaluationResultMetricsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(evaluationResultId, actualRequest.getEvaluationResultId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runEvaluationResultMetricsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEvaluationService.addException(exception);
+
+    try {
+      String evaluationResultId = "evaluationResultId-703222412";
+      client.runEvaluationResultMetricsAsync(evaluationResultId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

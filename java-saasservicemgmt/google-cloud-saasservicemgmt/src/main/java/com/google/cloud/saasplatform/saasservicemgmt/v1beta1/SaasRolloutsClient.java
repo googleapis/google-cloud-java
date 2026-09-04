@@ -38,6 +38,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -261,8 +263,7 @@ import javax.annotation.Generated;
  *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
- * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
- * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
  * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -344,10 +345,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SaasRolloutsClient implements BackgroundResource {
-  private final SaasRolloutsSettings settings;
+  private final @Nullable SaasRolloutsSettings settings;
   private final SaasRolloutsStub stub;
 
   /** Constructs an instance of SaasRolloutsClient with default settings. */
@@ -386,7 +388,7 @@ public class SaasRolloutsClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SaasRolloutsSettings getSettings() {
+  public final @Nullable SaasRolloutsSettings getSettings() {
     return settings;
   }
 
@@ -417,7 +419,7 @@ public class SaasRolloutsClient implements BackgroundResource {
    * @param parent Required. The parent of the rollout.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRolloutsPagedResponse listRollouts(LocationName parent) {
+  public final ListRolloutsPagedResponse listRollouts(@Nullable LocationName parent) {
     ListRolloutsRequest request =
         ListRolloutsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -583,7 +585,7 @@ public class SaasRolloutsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Rollout getRollout(RolloutName name) {
+  public final Rollout getRollout(@Nullable RolloutName name) {
     GetRolloutRequest request =
         GetRolloutRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRollout(request);
@@ -695,7 +697,8 @@ public class SaasRolloutsClient implements BackgroundResource {
    * @param rolloutId Required. The ID value for the new rollout.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Rollout createRollout(LocationName parent, Rollout rollout, String rolloutId) {
+  public final Rollout createRollout(
+      @Nullable LocationName parent, Rollout rollout, String rolloutId) {
     CreateRolloutRequest request =
         CreateRolloutRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -918,7 +921,7 @@ public class SaasRolloutsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRollout(RolloutName name) {
+  public final void deleteRollout(@Nullable RolloutName name) {
     DeleteRolloutRequest request =
         DeleteRolloutRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteRollout(request);
@@ -1034,7 +1037,7 @@ public class SaasRolloutsClient implements BackgroundResource {
    * @param parent Required. The parent of the rollout kind.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRolloutKindsPagedResponse listRolloutKinds(LocationName parent) {
+  public final ListRolloutKindsPagedResponse listRolloutKinds(@Nullable LocationName parent) {
     ListRolloutKindsRequest request =
         ListRolloutKindsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1203,7 +1206,7 @@ public class SaasRolloutsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RolloutKind getRolloutKind(RolloutKindName name) {
+  public final RolloutKind getRolloutKind(@Nullable RolloutKindName name) {
     GetRolloutKindRequest request =
         GetRolloutKindRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getRolloutKind(request);
@@ -1320,7 +1323,7 @@ public class SaasRolloutsClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RolloutKind createRolloutKind(
-      LocationName parent, RolloutKind rolloutKind, String rolloutKindId) {
+      @Nullable LocationName parent, RolloutKind rolloutKind, String rolloutKindId) {
     CreateRolloutKindRequest request =
         CreateRolloutKindRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1551,7 +1554,7 @@ public class SaasRolloutsClient implements BackgroundResource {
    * @param name Required. The resource name of the resource within a service.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteRolloutKind(RolloutKindName name) {
+  public final void deleteRolloutKind(@Nullable RolloutKindName name) {
     DeleteRolloutKindRequest request =
         DeleteRolloutKindRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1653,9 +1656,8 @@ public class SaasRolloutsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1699,9 +1701,8 @@ public class SaasRolloutsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1746,9 +1747,8 @@ public class SaasRolloutsClient implements BackgroundResource {
    * Lists information about the supported locations for this service.
    *
    * <p>This method lists locations based on the resource scope provided inthe
-   * [ListLocationsRequest.name] field:
-   *
-   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
    * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
    * `name` follows the format`projects/{project}`, the method lists locations visible to
    * thatspecific project. This includes public, private, or otherproject-specific locations enabled
@@ -1900,8 +1900,8 @@ public class SaasRolloutsClient implements BackgroundResource {
       extends AbstractPage<ListRolloutsRequest, ListRolloutsResponse, Rollout, ListRolloutsPage> {
 
     private ListRolloutsPage(
-        PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> context,
-        ListRolloutsResponse response) {
+        @Nullable PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> context,
+        @Nullable ListRolloutsResponse response) {
       super(context, response);
     }
 
@@ -1911,14 +1911,14 @@ public class SaasRolloutsClient implements BackgroundResource {
 
     @Override
     protected ListRolloutsPage createPage(
-        PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> context,
-        ListRolloutsResponse response) {
+        @Nullable PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> context,
+        @Nullable ListRolloutsResponse response) {
       return new ListRolloutsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRolloutsPage> createPageAsync(
-        PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> context,
+        @Nullable PageContext<ListRolloutsRequest, ListRolloutsResponse, Rollout> context,
         ApiFuture<ListRolloutsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -1932,7 +1932,8 @@ public class SaasRolloutsClient implements BackgroundResource {
           ListRolloutsPage,
           ListRolloutsFixedSizeCollection> {
 
-    private ListRolloutsFixedSizeCollection(List<ListRolloutsPage> pages, int collectionSize) {
+    private ListRolloutsFixedSizeCollection(
+        @Nullable List<ListRolloutsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -1942,7 +1943,7 @@ public class SaasRolloutsClient implements BackgroundResource {
 
     @Override
     protected ListRolloutsFixedSizeCollection createCollection(
-        List<ListRolloutsPage> pages, int collectionSize) {
+        @Nullable List<ListRolloutsPage> pages, int collectionSize) {
       return new ListRolloutsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -1976,8 +1977,9 @@ public class SaasRolloutsClient implements BackgroundResource {
           ListRolloutKindsRequest, ListRolloutKindsResponse, RolloutKind, ListRolloutKindsPage> {
 
     private ListRolloutKindsPage(
-        PageContext<ListRolloutKindsRequest, ListRolloutKindsResponse, RolloutKind> context,
-        ListRolloutKindsResponse response) {
+        @Nullable PageContext<ListRolloutKindsRequest, ListRolloutKindsResponse, RolloutKind>
+            context,
+        @Nullable ListRolloutKindsResponse response) {
       super(context, response);
     }
 
@@ -1987,14 +1989,16 @@ public class SaasRolloutsClient implements BackgroundResource {
 
     @Override
     protected ListRolloutKindsPage createPage(
-        PageContext<ListRolloutKindsRequest, ListRolloutKindsResponse, RolloutKind> context,
-        ListRolloutKindsResponse response) {
+        @Nullable PageContext<ListRolloutKindsRequest, ListRolloutKindsResponse, RolloutKind>
+            context,
+        @Nullable ListRolloutKindsResponse response) {
       return new ListRolloutKindsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRolloutKindsPage> createPageAsync(
-        PageContext<ListRolloutKindsRequest, ListRolloutKindsResponse, RolloutKind> context,
+        @Nullable PageContext<ListRolloutKindsRequest, ListRolloutKindsResponse, RolloutKind>
+            context,
         ApiFuture<ListRolloutKindsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2009,7 +2013,7 @@ public class SaasRolloutsClient implements BackgroundResource {
           ListRolloutKindsFixedSizeCollection> {
 
     private ListRolloutKindsFixedSizeCollection(
-        List<ListRolloutKindsPage> pages, int collectionSize) {
+        @Nullable List<ListRolloutKindsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2019,7 +2023,7 @@ public class SaasRolloutsClient implements BackgroundResource {
 
     @Override
     protected ListRolloutKindsFixedSizeCollection createCollection(
-        List<ListRolloutKindsPage> pages, int collectionSize) {
+        @Nullable List<ListRolloutKindsPage> pages, int collectionSize) {
       return new ListRolloutKindsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -2053,8 +2057,8 @@ public class SaasRolloutsClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -2064,14 +2068,14 @@ public class SaasRolloutsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2085,7 +2089,8 @@ public class SaasRolloutsClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2095,7 +2100,7 @@ public class SaasRolloutsClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

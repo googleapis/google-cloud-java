@@ -18,6 +18,7 @@ package com.google.cloud.dlp.v2;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListContentPoliciesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
@@ -48,7 +49,10 @@ import com.google.privacy.dlp.v2.Connection;
 import com.google.privacy.dlp.v2.ConnectionName;
 import com.google.privacy.dlp.v2.ConnectionState;
 import com.google.privacy.dlp.v2.ContentItem;
+import com.google.privacy.dlp.v2.ContentPolicy;
+import com.google.privacy.dlp.v2.ContentPolicyName;
 import com.google.privacy.dlp.v2.CreateConnectionRequest;
+import com.google.privacy.dlp.v2.CreateContentPolicyRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
@@ -65,6 +69,7 @@ import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
 import com.google.privacy.dlp.v2.DeidentifyTemplateName;
 import com.google.privacy.dlp.v2.DeleteConnectionRequest;
+import com.google.privacy.dlp.v2.DeleteContentPolicyRequest;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
@@ -89,6 +94,7 @@ import com.google.privacy.dlp.v2.FileStoreInfoTypeSummary;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetColumnDataProfileRequest;
 import com.google.privacy.dlp.v2.GetConnectionRequest;
+import com.google.privacy.dlp.v2.GetContentPolicyRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
@@ -116,6 +122,8 @@ import com.google.privacy.dlp.v2.ListColumnDataProfilesRequest;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListConnectionsRequest;
 import com.google.privacy.dlp.v2.ListConnectionsResponse;
+import com.google.privacy.dlp.v2.ListContentPoliciesRequest;
+import com.google.privacy.dlp.v2.ListContentPoliciesResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
@@ -167,6 +175,7 @@ import com.google.privacy.dlp.v2.Tag;
 import com.google.privacy.dlp.v2.TransformationOverview;
 import com.google.privacy.dlp.v2.UniquenessScoreLevel;
 import com.google.privacy.dlp.v2.UpdateConnectionRequest;
+import com.google.privacy.dlp.v2.UpdateContentPolicyRequest;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
@@ -532,6 +541,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -582,6 +592,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -632,6 +643,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -682,6 +694,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -732,6 +745,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -782,6 +796,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -840,6 +855,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -894,6 +910,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -944,6 +961,7 @@ public class DlpServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockDlpService.addResponse(expectedResponse);
 
@@ -6494,6 +6512,474 @@ public class DlpServiceClientTest {
     try {
       String name = "name3373707";
       client.updateConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createContentPolicyTest() throws Exception {
+    ContentPolicy expectedResponse =
+        ContentPolicy.newBuilder()
+            .setName(ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setInspectConfig(InspectConfig.newBuilder().build())
+            .addAllRules(new ArrayList<ContentPolicy.PolicyRule>())
+            .setUnsupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setInputTooLarge(ContentPolicy.PolicyAction.newBuilder().build())
+            .setFailedToScanSupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setDefaultAction(ContentPolicy.PolicyAction.newBuilder().build())
+            .addAllLoggingConfigs(new ArrayList<ContentPolicy.LoggingConfig>())
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+
+    ContentPolicy actualResponse = client.createContentPolicy(parent, contentPolicy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateContentPolicyRequest actualRequest = ((CreateContentPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(contentPolicy, actualRequest.getContentPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createContentPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+      client.createContentPolicy(parent, contentPolicy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createContentPolicyTest2() throws Exception {
+    ContentPolicy expectedResponse =
+        ContentPolicy.newBuilder()
+            .setName(ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setInspectConfig(InspectConfig.newBuilder().build())
+            .addAllRules(new ArrayList<ContentPolicy.PolicyRule>())
+            .setUnsupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setInputTooLarge(ContentPolicy.PolicyAction.newBuilder().build())
+            .setFailedToScanSupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setDefaultAction(ContentPolicy.PolicyAction.newBuilder().build())
+            .addAllLoggingConfigs(new ArrayList<ContentPolicy.LoggingConfig>())
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+
+    ContentPolicy actualResponse = client.createContentPolicy(parent, contentPolicy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateContentPolicyRequest actualRequest = ((CreateContentPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(contentPolicy, actualRequest.getContentPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createContentPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+      client.createContentPolicy(parent, contentPolicy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateContentPolicyTest() throws Exception {
+    ContentPolicy expectedResponse =
+        ContentPolicy.newBuilder()
+            .setName(ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setInspectConfig(InspectConfig.newBuilder().build())
+            .addAllRules(new ArrayList<ContentPolicy.PolicyRule>())
+            .setUnsupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setInputTooLarge(ContentPolicy.PolicyAction.newBuilder().build())
+            .setFailedToScanSupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setDefaultAction(ContentPolicy.PolicyAction.newBuilder().build())
+            .addAllLoggingConfigs(new ArrayList<ContentPolicy.LoggingConfig>())
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    ContentPolicyName name = ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]");
+    ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ContentPolicy actualResponse = client.updateContentPolicy(name, contentPolicy, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateContentPolicyRequest actualRequest = ((UpdateContentPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(contentPolicy, actualRequest.getContentPolicy());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateContentPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      ContentPolicyName name = ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]");
+      ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateContentPolicy(name, contentPolicy, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateContentPolicyTest2() throws Exception {
+    ContentPolicy expectedResponse =
+        ContentPolicy.newBuilder()
+            .setName(ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setInspectConfig(InspectConfig.newBuilder().build())
+            .addAllRules(new ArrayList<ContentPolicy.PolicyRule>())
+            .setUnsupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setInputTooLarge(ContentPolicy.PolicyAction.newBuilder().build())
+            .setFailedToScanSupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setDefaultAction(ContentPolicy.PolicyAction.newBuilder().build())
+            .addAllLoggingConfigs(new ArrayList<ContentPolicy.LoggingConfig>())
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ContentPolicy actualResponse = client.updateContentPolicy(name, contentPolicy, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateContentPolicyRequest actualRequest = ((UpdateContentPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(contentPolicy, actualRequest.getContentPolicy());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateContentPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateContentPolicy(name, contentPolicy, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getContentPolicyTest() throws Exception {
+    ContentPolicy expectedResponse =
+        ContentPolicy.newBuilder()
+            .setName(ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setInspectConfig(InspectConfig.newBuilder().build())
+            .addAllRules(new ArrayList<ContentPolicy.PolicyRule>())
+            .setUnsupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setInputTooLarge(ContentPolicy.PolicyAction.newBuilder().build())
+            .setFailedToScanSupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setDefaultAction(ContentPolicy.PolicyAction.newBuilder().build())
+            .addAllLoggingConfigs(new ArrayList<ContentPolicy.LoggingConfig>())
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    ContentPolicyName name = ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]");
+
+    ContentPolicy actualResponse = client.getContentPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetContentPolicyRequest actualRequest = ((GetContentPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getContentPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      ContentPolicyName name = ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]");
+      client.getContentPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getContentPolicyTest2() throws Exception {
+    ContentPolicy expectedResponse =
+        ContentPolicy.newBuilder()
+            .setName(ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setInspectConfig(InspectConfig.newBuilder().build())
+            .addAllRules(new ArrayList<ContentPolicy.PolicyRule>())
+            .setUnsupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setInputTooLarge(ContentPolicy.PolicyAction.newBuilder().build())
+            .setFailedToScanSupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setDefaultAction(ContentPolicy.PolicyAction.newBuilder().build())
+            .addAllLoggingConfigs(new ArrayList<ContentPolicy.LoggingConfig>())
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ContentPolicy actualResponse = client.getContentPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetContentPolicyRequest actualRequest = ((GetContentPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getContentPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getContentPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listContentPoliciesTest() throws Exception {
+    ContentPolicy responsesElement = ContentPolicy.newBuilder().build();
+    ListContentPoliciesResponse expectedResponse =
+        ListContentPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllContentPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListContentPoliciesPagedResponse pagedListResponse = client.listContentPolicies(parent);
+
+    List<ContentPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getContentPoliciesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListContentPoliciesRequest actualRequest = ((ListContentPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listContentPoliciesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listContentPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listContentPoliciesTest2() throws Exception {
+    ContentPolicy responsesElement = ContentPolicy.newBuilder().build();
+    ListContentPoliciesResponse expectedResponse =
+        ListContentPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllContentPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListContentPoliciesPagedResponse pagedListResponse = client.listContentPolicies(parent);
+
+    List<ContentPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getContentPoliciesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListContentPoliciesRequest actualRequest = ((ListContentPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listContentPoliciesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listContentPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteContentPolicyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    ContentPolicyName name = ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]");
+
+    client.deleteContentPolicy(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteContentPolicyRequest actualRequest = ((DeleteContentPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteContentPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      ContentPolicyName name = ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]");
+      client.deleteContentPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteContentPolicyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockDlpService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteContentPolicy(name);
+
+    List<AbstractMessage> actualRequests = mockDlpService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteContentPolicyRequest actualRequest = ((DeleteContentPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteContentPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDlpService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteContentPolicy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

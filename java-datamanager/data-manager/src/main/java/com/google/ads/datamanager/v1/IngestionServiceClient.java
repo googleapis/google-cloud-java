@@ -23,6 +23,8 @@ import com.google.api.gax.rpc.UnaryCallable;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -93,6 +95,20 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> RemoveAllAudienceMembers</td>
+ *      <td><p> Removes all audience members from the provided destinations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> removeAllAudienceMembers(RemoveAllAudienceMembersRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> removeAllAudienceMembersCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> IngestEvents</td>
  *      <td><p> Uploads a list of [Event][google.ads.datamanager.v1.Event] resources from the provided [Destination][google.ads.datamanager.v1.Destination].</td>
  *      <td>
@@ -103,6 +119,21 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> ingestEventsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> IngestAdEvents</td>
+ *      <td><p> Uploads a list of [AdEvent][google.ads.datamanager.v1.AdEvent] resources to Google Analytics.
+ * <p>  This feature is only available to accounts on an allowlist.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> ingestAdEvents(IngestAdEventsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> ingestAdEventsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -178,9 +209,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class IngestionServiceClient implements BackgroundResource {
-  private final IngestionServiceSettings settings;
+  private final @Nullable IngestionServiceSettings settings;
   private final IngestionServiceStub stub;
 
   /** Constructs an instance of IngestionServiceClient with default settings. */
@@ -220,7 +252,7 @@ public class IngestionServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final IngestionServiceSettings getSettings() {
+  public final @Nullable IngestionServiceSettings getSettings() {
     return settings;
   }
 
@@ -372,6 +404,69 @@ public class IngestionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Removes all audience members from the provided destinations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IngestionServiceClient ingestionServiceClient = IngestionServiceClient.create()) {
+   *   RemoveAllAudienceMembersRequest request =
+   *       RemoveAllAudienceMembersRequest.newBuilder()
+   *           .addAllDestinations(new ArrayList<Destination>())
+   *           .setRemoveAsOfTime(Timestamp.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   RemoveAllAudienceMembersResponse response =
+   *       ingestionServiceClient.removeAllAudienceMembers(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RemoveAllAudienceMembersResponse removeAllAudienceMembers(
+      RemoveAllAudienceMembersRequest request) {
+    return removeAllAudienceMembersCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Removes all audience members from the provided destinations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IngestionServiceClient ingestionServiceClient = IngestionServiceClient.create()) {
+   *   RemoveAllAudienceMembersRequest request =
+   *       RemoveAllAudienceMembersRequest.newBuilder()
+   *           .addAllDestinations(new ArrayList<Destination>())
+   *           .setRemoveAsOfTime(Timestamp.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<RemoveAllAudienceMembersResponse> future =
+   *       ingestionServiceClient.removeAllAudienceMembersCallable().futureCall(request);
+   *   // Do something.
+   *   RemoveAllAudienceMembersResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RemoveAllAudienceMembersRequest, RemoveAllAudienceMembersResponse>
+      removeAllAudienceMembersCallable() {
+    return stub.removeAllAudienceMembersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Uploads a list of [Event][google.ads.datamanager.v1.Event] resources from the provided
    * [Destination][google.ads.datamanager.v1.Destination].
    *
@@ -436,6 +531,71 @@ public class IngestionServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<IngestEventsRequest, IngestEventsResponse> ingestEventsCallable() {
     return stub.ingestEventsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Uploads a list of [AdEvent][google.ads.datamanager.v1.AdEvent] resources to Google Analytics.
+   *
+   * <p>This feature is only available to accounts on an allowlist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IngestionServiceClient ingestionServiceClient = IngestionServiceClient.create()) {
+   *   IngestAdEventsRequest request =
+   *       IngestAdEventsRequest.newBuilder()
+   *           .addAllAdEvents(new ArrayList<AdEvent>())
+   *           .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   IngestAdEventsResponse response = ingestionServiceClient.ingestAdEvents(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final IngestAdEventsResponse ingestAdEvents(IngestAdEventsRequest request) {
+    return ingestAdEventsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Uploads a list of [AdEvent][google.ads.datamanager.v1.AdEvent] resources to Google Analytics.
+   *
+   * <p>This feature is only available to accounts on an allowlist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IngestionServiceClient ingestionServiceClient = IngestionServiceClient.create()) {
+   *   IngestAdEventsRequest request =
+   *       IngestAdEventsRequest.newBuilder()
+   *           .addAllAdEvents(new ArrayList<AdEvent>())
+   *           .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<IngestAdEventsResponse> future =
+   *       ingestionServiceClient.ingestAdEventsCallable().futureCall(request);
+   *   // Do something.
+   *   IngestAdEventsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<IngestAdEventsRequest, IngestAdEventsResponse>
+      ingestAdEventsCallable() {
+    return stub.ingestAdEventsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

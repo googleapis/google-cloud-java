@@ -23,12 +23,15 @@ import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.cloud.Timestamp;
+import com.google.cloud.spanner.Options.ReadOnlyTransactionOption;
 import com.google.cloud.spanner.Options.TransactionOption;
 import com.google.cloud.spanner.Options.UpdateOption;
 import com.google.cloud.spanner.SessionClient.SessionConsumer;
 import com.google.cloud.spanner.SpannerException.ResourceNotFoundException;
+import com.google.cloud.spanner.spi.v1.SpannerRpc.ChannelPrimeSessionSource;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import com.google.common.util.concurrent.Futures;
 import com.google.spanner.v1.BatchWriteResponse;
 import java.time.Clock;
 import java.time.Duration;
@@ -37,6 +40,7 @@ import java.util.BitSet;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -47,12 +51,14 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.annotation.Nullable;
 
 /**
  * {@link DatabaseClient} implementation that uses a single multiplexed session to execute
  * transactions.
  */
-final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionDatabaseClient {
+final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionDatabaseClient
+    implements ChannelPrimeSessionSource {
   /**
    * The maximum number of attempts that the client will try to execute CreateSession for the
    * initial multiplexed session. This value is only used for the very first multiplexed session
@@ -185,7 +191,7 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
    */
   private final AtomicInteger numCurrentSingleUseTransactions = new AtomicInteger();
 
-  private boolean isClosed;
+  private volatile boolean isClosed;
 
   /** The duration before we try to replace the multiplexed session. The default is 7 days. */
   private final Duration sessionExpirationDuration;
@@ -252,15 +258,23 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
     final SettableApiFuture<SessionReference> initialSessionReferenceFuture =
         SettableApiFuture.create();
     this.multiplexedSessionReference = new AtomicReference<>(initialSessionReferenceFuture);
+    spanner.getRpc().registerChannelPrimeSessionSource(this);
 
-    Duration waitDuration =
-        sessionClient.getSpanner().getOptions().getSessionPoolOptions().getWaitForMinSessions();
-    int initialAttempts =
-        waitDuration == null || waitDuration.isZero() ? MAX_INITIAL_CREATE_SESSION_ATTEMPTS : 1;
-    asyncCreateMultiplexedSession(initialSessionReferenceFuture, initialAttempts);
-    maybeWaitForSessionCreation(
-        sessionClient.getSpanner().getOptions().getSessionPoolOptions(),
-        initialSessionReferenceFuture);
+    try {
+      Duration waitDuration =
+          sessionClient.getSpanner().getOptions().getSessionPoolOptions().getWaitForMinSessions();
+      int initialAttempts =
+          waitDuration == null || waitDuration.isZero() ? MAX_INITIAL_CREATE_SESSION_ATTEMPTS : 1;
+      asyncCreateMultiplexedSession(initialSessionReferenceFuture, initialAttempts);
+      maybeWaitForSessionCreation(
+          sessionClient.getSpanner().getOptions().getSessionPoolOptions(),
+          initialSessionReferenceFuture);
+    } catch (Throwable t) {
+      // The caller never receives this client, so it will never be closed; close() therefore undoes
+      // the registrations.
+      close();
+      throw t;
+    }
   }
 
   private void asyncCreateMultiplexedSession(
@@ -269,10 +283,19 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
         new SessionConsumer() {
           @Override
           public void onSessionReady(SessionImpl session) {
+            synchronized (MultiplexedSessionDatabaseClient.this) {
+              if (isClosed) {
+                // The client was closed while the session was being created. Ignore the session:
+                // it must neither be handed to waiters of a closed client nor keep a maintainer
+                // running for a client that no longer exists.
+                sessionReferenceFuture.setException(newClosedException());
+                return;
+              }
+              // only start the maintainer if we actually managed to create a session in the first
+              // place. Starting it under the lock guarantees that a concurrent close() stops it.
+              maintainer.start();
+            }
             sessionReferenceFuture.set(session.getSessionReference());
-            // only start the maintainer if we actually managed to create a session in the first
-            // place.
-            maintainer.start();
             if (sessionClient
                 .getSpanner()
                 .getOptions()
@@ -295,9 +318,11 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
                   (ResourceNotFoundException) spannerException);
             }
             // Set the exception to trigger an error for all waiters.
-            // Then retry the session creation if the error is (potentially) transient.
+            // Then retry the session creation if the error is (potentially) transient and the
+            // client has not been closed in the meantime.
             sessionReferenceFuture.setException(t);
             if (remainingAttempts > 1
+                && !isClientClosed()
                 && RETRYABLE_ERROR_CODES.contains(spannerException.getErrorCode())) {
               final SettableApiFuture<SessionReference> future = SettableApiFuture.create();
               MultiplexedSessionDatabaseClient.this.multiplexedSessionReference.set(future);
@@ -362,12 +387,39 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
     return resourceNotFoundException.get() == null;
   }
 
+  private boolean isClientClosed() {
+    return isClosed;
+  }
+
+  private static SpannerException newClosedException() {
+    return SpannerExceptionFactory.newSpannerException(
+        ErrorCode.FAILED_PRECONDITION, "This client has been closed");
+  }
+
   AtomicLong getNumSessionsAcquired() {
     return this.numSessionsAcquired;
   }
 
   AtomicLong getNumSessionsReleased() {
     return this.numSessionsReleased;
+  }
+
+  @Override
+  @Nullable
+  public String getChannelPrimeSessionName() {
+    if (isClosed || !isValid()) {
+      return null;
+    }
+    ApiFuture<SessionReference> future = multiplexedSessionReference.get();
+    if (!future.isDone() || future.isCancelled()) {
+      return null;
+    }
+    try {
+      SessionReference session = Futures.getDone(future);
+      return isClosed || !isValid() ? null : session.getName();
+    } catch (CancellationException | ExecutionException e) {
+      return null;
+    }
   }
 
   void close() {
@@ -380,6 +432,9 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
       }
     }
     if (releaseChannelUsage) {
+      // The multiplexed session is no longer maintained, so this client must no longer be asked
+      // for a session when priming dynamic channel pool channels.
+      spanner.getRpc().unregisterChannelPrimeSessionSource(this);
       synchronized (CHANNEL_USAGE) {
         SharedChannelUsage sharedChannelUsage = CHANNEL_USAGE.get(this.spanner);
         if (sharedChannelUsage != null) {
@@ -560,12 +615,25 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction() {
-    return createMultiplexedSessionTransaction(/* singleUse= */ false).readOnlyTransaction();
+    return readOnlyTransaction(TimestampBound.strong());
+  }
+
+  @Override
+  public ReadOnlyTransaction readOnlyTransaction(ReadOnlyTransactionOption... options) {
+    return readOnlyTransaction(TimestampBound.strong(), options);
   }
 
   @Override
   public ReadOnlyTransaction readOnlyTransaction(TimestampBound bound) {
-    return createMultiplexedSessionTransaction(/* singleUse= */ false).readOnlyTransaction(bound);
+    return readOnlyTransaction(
+        bound, Options.beginTransactionOption(Options.BeginTransactionOption.EXPLICIT));
+  }
+
+  @Override
+  public ReadOnlyTransaction readOnlyTransaction(
+      TimestampBound bound, ReadOnlyTransactionOption... options) {
+    return createMultiplexedSessionTransaction(/* singleUse= */ false)
+        .readOnlyTransaction(bound, options);
   }
 
   @Override
@@ -645,12 +713,19 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
             new SessionConsumer() {
               @Override
               public void onSessionReady(SessionImpl session) {
-                multiplexedSessionReference.set(
-                    ApiFutures.immediateFuture(session.getSessionReference()));
-                expirationDate.set(
-                    clock
-                        .instant()
-                        .plus(MultiplexedSessionDatabaseClient.this.sessionExpirationDuration));
+                synchronized (MultiplexedSessionDatabaseClient.this) {
+                  if (isClosed) {
+                    // The client was closed while the session was being refreshed. The refreshed
+                    // session belongs to a client that no longer exists and is ignored.
+                    return;
+                  }
+                  multiplexedSessionReference.set(
+                      ApiFutures.immediateFuture(session.getSessionReference()));
+                  expirationDate.set(
+                      clock
+                          .instant()
+                          .plus(MultiplexedSessionDatabaseClient.this.sessionExpirationDuration));
+                }
               }
 
               @Override

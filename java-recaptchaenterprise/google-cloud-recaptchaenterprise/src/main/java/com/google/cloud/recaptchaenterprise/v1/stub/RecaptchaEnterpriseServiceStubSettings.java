@@ -65,6 +65,7 @@ import com.google.recaptchaenterprise.v1.FirewallPolicy;
 import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
+import com.google.recaptchaenterprise.v1.GetPolicyRequest;
 import com.google.recaptchaenterprise.v1.IpOverrideData;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
@@ -79,6 +80,7 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsRequest;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.Policy;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
 import com.google.recaptchaenterprise.v1.RemoveIpOverrideRequest;
@@ -91,10 +93,13 @@ import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsReq
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
+import com.google.recaptchaenterprise.v1.UpdatePolicyRequest;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -148,6 +153,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class RecaptchaEnterpriseServiceStubSettings
@@ -176,6 +182,8 @@ public class RecaptchaEnterpriseServiceStubSettings
           ListIpOverridesRequest, ListIpOverridesResponse, ListIpOverridesPagedResponse>
       listIpOverridesSettings;
   private final UnaryCallSettings<GetMetricsRequest, Metrics> getMetricsSettings;
+  private final UnaryCallSettings<GetPolicyRequest, Policy> getPolicySettings;
+  private final UnaryCallSettings<UpdatePolicyRequest, Policy> updatePolicySettings;
   private final UnaryCallSettings<CreateFirewallPolicyRequest, FirewallPolicy>
       createFirewallPolicySettings;
   private final PagedCallSettings<
@@ -679,6 +687,16 @@ public class RecaptchaEnterpriseServiceStubSettings
     return getMetricsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getPolicy. */
+  public UnaryCallSettings<GetPolicyRequest, Policy> getPolicySettings() {
+    return getPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updatePolicy. */
+  public UnaryCallSettings<UpdatePolicyRequest, Policy> updatePolicySettings() {
+    return updatePolicySettings;
+  }
+
   /** Returns the object with the settings used for calls to createFirewallPolicy. */
   public UnaryCallSettings<CreateFirewallPolicyRequest, FirewallPolicy>
       createFirewallPolicySettings() {
@@ -814,7 +832,7 @@ public class RecaptchaEnterpriseServiceStubSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -839,6 +857,8 @@ public class RecaptchaEnterpriseServiceStubSettings
     removeIpOverrideSettings = settingsBuilder.removeIpOverrideSettings().build();
     listIpOverridesSettings = settingsBuilder.listIpOverridesSettings().build();
     getMetricsSettings = settingsBuilder.getMetricsSettings().build();
+    getPolicySettings = settingsBuilder.getPolicySettings().build();
+    updatePolicySettings = settingsBuilder.updatePolicySettings().build();
     createFirewallPolicySettings = settingsBuilder.createFirewallPolicySettings().build();
     listFirewallPoliciesSettings = settingsBuilder.listFirewallPoliciesSettings().build();
     getFirewallPolicySettings = settingsBuilder.getFirewallPolicySettings().build();
@@ -888,6 +908,8 @@ public class RecaptchaEnterpriseServiceStubSettings
             ListIpOverridesRequest, ListIpOverridesResponse, ListIpOverridesPagedResponse>
         listIpOverridesSettings;
     private final UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings;
+    private final UnaryCallSettings.Builder<GetPolicyRequest, Policy> getPolicySettings;
+    private final UnaryCallSettings.Builder<UpdatePolicyRequest, Policy> updatePolicySettings;
     private final UnaryCallSettings.Builder<CreateFirewallPolicyRequest, FirewallPolicy>
         createFirewallPolicySettings;
     private final PagedCallSettings.Builder<
@@ -953,7 +975,7 @@ public class RecaptchaEnterpriseServiceStubSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       createAssessmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -969,6 +991,8 @@ public class RecaptchaEnterpriseServiceStubSettings
       removeIpOverrideSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listIpOverridesSettings = PagedCallSettings.newBuilder(LIST_IP_OVERRIDES_PAGE_STR_FACT);
       getMetricsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updatePolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listFirewallPoliciesSettings =
           PagedCallSettings.newBuilder(LIST_FIREWALL_POLICIES_PAGE_STR_FACT);
@@ -998,6 +1022,8 @@ public class RecaptchaEnterpriseServiceStubSettings
               removeIpOverrideSettings,
               listIpOverridesSettings,
               getMetricsSettings,
+              getPolicySettings,
+              updatePolicySettings,
               createFirewallPolicySettings,
               listFirewallPoliciesSettings,
               getFirewallPolicySettings,
@@ -1026,6 +1052,8 @@ public class RecaptchaEnterpriseServiceStubSettings
       removeIpOverrideSettings = settings.removeIpOverrideSettings.toBuilder();
       listIpOverridesSettings = settings.listIpOverridesSettings.toBuilder();
       getMetricsSettings = settings.getMetricsSettings.toBuilder();
+      getPolicySettings = settings.getPolicySettings.toBuilder();
+      updatePolicySettings = settings.updatePolicySettings.toBuilder();
       createFirewallPolicySettings = settings.createFirewallPolicySettings.toBuilder();
       listFirewallPoliciesSettings = settings.listFirewallPoliciesSettings.toBuilder();
       getFirewallPolicySettings = settings.getFirewallPolicySettings.toBuilder();
@@ -1053,6 +1081,8 @@ public class RecaptchaEnterpriseServiceStubSettings
               removeIpOverrideSettings,
               listIpOverridesSettings,
               getMetricsSettings,
+              getPolicySettings,
+              updatePolicySettings,
               createFirewallPolicySettings,
               listFirewallPoliciesSettings,
               getFirewallPolicySettings,
@@ -1139,6 +1169,16 @@ public class RecaptchaEnterpriseServiceStubSettings
 
       builder
           .getMetricsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updatePolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1277,6 +1317,16 @@ public class RecaptchaEnterpriseServiceStubSettings
     /** Returns the builder for the settings used for calls to getMetrics. */
     public UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings() {
       return getMetricsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPolicy. */
+    public UnaryCallSettings.Builder<GetPolicyRequest, Policy> getPolicySettings() {
+      return getPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updatePolicy. */
+    public UnaryCallSettings.Builder<UpdatePolicyRequest, Policy> updatePolicySettings() {
+      return updatePolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to createFirewallPolicy. */

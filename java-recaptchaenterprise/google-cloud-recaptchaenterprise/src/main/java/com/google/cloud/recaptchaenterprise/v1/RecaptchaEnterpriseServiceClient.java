@@ -46,6 +46,7 @@ import com.google.recaptchaenterprise.v1.FirewallPolicyName;
 import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
+import com.google.recaptchaenterprise.v1.GetPolicyRequest;
 import com.google.recaptchaenterprise.v1.IpOverrideData;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.KeyName;
@@ -62,6 +63,8 @@ import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupsResponse;
 import com.google.recaptchaenterprise.v1.Metrics;
 import com.google.recaptchaenterprise.v1.MetricsName;
 import com.google.recaptchaenterprise.v1.MigrateKeyRequest;
+import com.google.recaptchaenterprise.v1.Policy;
+import com.google.recaptchaenterprise.v1.PolicyName;
 import com.google.recaptchaenterprise.v1.ProjectName;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroup;
 import com.google.recaptchaenterprise.v1.RelatedAccountGroupMembership;
@@ -76,10 +79,13 @@ import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsReq
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
+import com.google.recaptchaenterprise.v1.UpdatePolicyRequest;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -365,6 +371,43 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetPolicy</td>
+ *      <td><p> Get the policy for a key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getPolicy(GetPolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getPolicy(PolicyName name)
+ *           <li><p> getPolicy(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getPolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdatePolicy</td>
+ *      <td><p> Updates the policy for a key.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updatePolicy(UpdatePolicyRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updatePolicy(Policy policy, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updatePolicyCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateFirewallPolicy</td>
  *      <td><p> Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA Enterprise actions can be executed. A project may have a maximum of 1000 policies.</td>
  *      <td>
@@ -581,9 +624,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
-  private final RecaptchaEnterpriseServiceSettings settings;
+  private final @Nullable RecaptchaEnterpriseServiceSettings settings;
   private final RecaptchaEnterpriseServiceStub stub;
 
   /** Constructs an instance of RecaptchaEnterpriseServiceClient with default settings. */
@@ -625,7 +669,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final RecaptchaEnterpriseServiceSettings getSettings() {
+  public final @Nullable RecaptchaEnterpriseServiceSettings getSettings() {
     return settings;
   }
 
@@ -658,7 +702,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * @param assessment Required. The assessment details.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Assessment createAssessment(ProjectName parent, Assessment assessment) {
+  public final Assessment createAssessment(@Nullable ProjectName parent, Assessment assessment) {
     CreateAssessmentRequest request =
         CreateAssessmentRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -789,7 +833,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AnnotateAssessmentResponse annotateAssessment(
-      AssessmentName name, AnnotateAssessmentRequest.Annotation annotation) {
+      @Nullable AssessmentName name, AnnotateAssessmentRequest.Annotation annotation) {
     AnnotateAssessmentRequest request =
         AnnotateAssessmentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -932,7 +976,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * @param key Required. Information to create a reCAPTCHA Enterprise key.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Key createKey(ProjectName parent, Key key) {
+  public final Key createKey(@Nullable ProjectName parent, Key key) {
     CreateKeyRequest request =
         CreateKeyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1056,7 +1100,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     format `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListKeysPagedResponse listKeys(ProjectName parent) {
+  public final ListKeysPagedResponse listKeys(@Nullable ProjectName parent) {
     ListKeysRequest request =
         ListKeysRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listKeys(request);
@@ -1223,7 +1267,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     `projects/{project}/keys/{key}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RetrieveLegacySecretKeyResponse retrieveLegacySecretKey(KeyName key) {
+  public final RetrieveLegacySecretKeyResponse retrieveLegacySecretKey(@Nullable KeyName key) {
     RetrieveLegacySecretKeyRequest request =
         RetrieveLegacySecretKeyRequest.newBuilder()
             .setKey(key == null ? null : key.toString())
@@ -1348,7 +1392,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     `projects/{project}/keys/{key}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Key getKey(KeyName name) {
+  public final Key getKey(@Nullable KeyName name) {
     GetKeyRequest request =
         GetKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getKey(request);
@@ -1549,7 +1593,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     `projects/{project}/keys/{key}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteKey(KeyName name) {
+  public final void deleteKey(@Nullable KeyName name) {
     DeleteKeyRequest request =
         DeleteKeyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteKey(request);
@@ -1739,7 +1783,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * @param ipOverrideData Required. IP override added to the key.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AddIpOverrideResponse addIpOverride(KeyName name, IpOverrideData ipOverrideData) {
+  public final AddIpOverrideResponse addIpOverride(
+      @Nullable KeyName name, IpOverrideData ipOverrideData) {
     AddIpOverrideRequest request =
         AddIpOverrideRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1891,7 +1936,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RemoveIpOverrideResponse removeIpOverride(
-      KeyName name, IpOverrideData ipOverrideData) {
+      @Nullable KeyName name, IpOverrideData ipOverrideData) {
     RemoveIpOverrideRequest request =
         RemoveIpOverrideRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2042,7 +2087,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     `projects/{project}/keys/{key}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListIpOverridesPagedResponse listIpOverrides(KeyName parent) {
+  public final ListIpOverridesPagedResponse listIpOverrides(@Nullable KeyName parent) {
     ListIpOverridesRequest request =
         ListIpOverridesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2213,7 +2258,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     `projects/{project}/keys/{key}/metrics`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Metrics getMetrics(MetricsName name) {
+  public final Metrics getMetrics(@Nullable MetricsName name) {
     GetMetricsRequest request =
         GetMetricsRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMetrics(request);
@@ -2307,6 +2352,213 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Get the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   PolicyName name = PolicyName.of("[PROJECT]", "[KEY]");
+   *   Policy response = recaptchaEnterpriseServiceClient.getPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to get, in the format
+   *     `projects/{project}/keys/{key}/policy`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getPolicy(@Nullable PolicyName name) {
+    GetPolicyRequest request =
+        GetPolicyRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   String name = PolicyName.of("[PROJECT]", "[KEY]").toString();
+   *   Policy response = recaptchaEnterpriseServiceClient.getPolicy(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the policy to get, in the format
+   *     `projects/{project}/keys/{key}/policy`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getPolicy(String name) {
+    GetPolicyRequest request = GetPolicyRequest.newBuilder().setName(name).build();
+    return getPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   GetPolicyRequest request =
+   *       GetPolicyRequest.newBuilder()
+   *           .setName(PolicyName.of("[PROJECT]", "[KEY]").toString())
+   *           .build();
+   *   Policy response = recaptchaEnterpriseServiceClient.getPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getPolicy(GetPolicyRequest request) {
+    return getPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   GetPolicyRequest request =
+   *       GetPolicyRequest.newBuilder()
+   *           .setName(PolicyName.of("[PROJECT]", "[KEY]").toString())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       recaptchaEnterpriseServiceClient.getPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetPolicyRequest, Policy> getPolicyCallable() {
+    return stub.getPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   Policy policy = Policy.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Policy response = recaptchaEnterpriseServiceClient.updatePolicy(policy, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param policy Required. The Policy's name is used to identify the policy to update, in the
+   *     format `projects/{project}/keys/{key}/policy`.
+   * @param updateMask Optional. The mask to control which fields of the policy get updated. If the
+   *     mask is not present, all fields are updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy updatePolicy(Policy policy, FieldMask updateMask) {
+    UpdatePolicyRequest request =
+        UpdatePolicyRequest.newBuilder().setPolicy(policy).setUpdateMask(updateMask).build();
+    return updatePolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   UpdatePolicyRequest request =
+   *       UpdatePolicyRequest.newBuilder()
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = recaptchaEnterpriseServiceClient.updatePolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy updatePolicy(UpdatePolicyRequest request) {
+    return updatePolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the policy for a key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient =
+   *     RecaptchaEnterpriseServiceClient.create()) {
+   *   UpdatePolicyRequest request =
+   *       UpdatePolicyRequest.newBuilder()
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       recaptchaEnterpriseServiceClient.updatePolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdatePolicyRequest, Policy> updatePolicyCallable() {
+    return stub.updatePolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Creates a new FirewallPolicy, specifying conditions at which reCAPTCHA Enterprise actions can
    * be executed. A project may have a maximum of 1000 policies.
    *
@@ -2333,7 +2585,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FirewallPolicy createFirewallPolicy(
-      ProjectName parent, FirewallPolicy firewallPolicy) {
+      @Nullable ProjectName parent, FirewallPolicy firewallPolicy) {
     CreateFirewallPolicyRequest request =
         CreateFirewallPolicyRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2467,7 +2719,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFirewallPoliciesPagedResponse listFirewallPolicies(ProjectName parent) {
+  public final ListFirewallPoliciesPagedResponse listFirewallPolicies(
+      @Nullable ProjectName parent) {
     ListFirewallPoliciesRequest request =
         ListFirewallPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2640,7 +2893,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     `projects/{project}/firewallpolicies/{firewallpolicy}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final FirewallPolicy getFirewallPolicy(FirewallPolicyName name) {
+  public final FirewallPolicy getFirewallPolicy(@Nullable FirewallPolicyName name) {
     GetFirewallPolicyRequest request =
         GetFirewallPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2854,7 +3107,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     `projects/{project}/firewallpolicies/{firewallpolicy}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final void deleteFirewallPolicy(FirewallPolicyName name) {
+  public final void deleteFirewallPolicy(@Nullable FirewallPolicyName name) {
     DeleteFirewallPolicyRequest request =
         DeleteFirewallPolicyRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2977,7 +3230,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReorderFirewallPoliciesResponse reorderFirewallPolicies(
-      ProjectName parent, List<String> names) {
+      @Nullable ProjectName parent, List<String> names) {
     ReorderFirewallPoliciesRequest request =
         ReorderFirewallPoliciesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3109,7 +3362,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    *     format `projects/{project}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListRelatedAccountGroupsPagedResponse listRelatedAccountGroups(ProjectName parent) {
+  public final ListRelatedAccountGroupsPagedResponse listRelatedAccountGroups(
+      @Nullable ProjectName parent) {
     ListRelatedAccountGroupsRequest request =
         ListRelatedAccountGroupsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3291,7 +3545,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRelatedAccountGroupMembershipsPagedResponse listRelatedAccountGroupMemberships(
-      RelatedAccountGroupName parent) {
+      @Nullable RelatedAccountGroupName parent) {
     ListRelatedAccountGroupMembershipsRequest request =
         ListRelatedAccountGroupMembershipsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3491,7 +3745,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SearchRelatedAccountGroupMembershipsPagedResponse
-      searchRelatedAccountGroupMemberships(ProjectName project, ByteString hashedAccountId) {
+      searchRelatedAccountGroupMemberships(
+          @Nullable ProjectName project, ByteString hashedAccountId) {
     SearchRelatedAccountGroupMembershipsRequest request =
         SearchRelatedAccountGroupMembershipsRequest.newBuilder()
             .setProject(project == null ? null : project.toString())
@@ -3721,7 +3976,8 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
       extends AbstractPage<ListKeysRequest, ListKeysResponse, Key, ListKeysPage> {
 
     private ListKeysPage(
-        PageContext<ListKeysRequest, ListKeysResponse, Key> context, ListKeysResponse response) {
+        @Nullable PageContext<ListKeysRequest, ListKeysResponse, Key> context,
+        @Nullable ListKeysResponse response) {
       super(context, response);
     }
 
@@ -3731,13 +3987,14 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
     @Override
     protected ListKeysPage createPage(
-        PageContext<ListKeysRequest, ListKeysResponse, Key> context, ListKeysResponse response) {
+        @Nullable PageContext<ListKeysRequest, ListKeysResponse, Key> context,
+        @Nullable ListKeysResponse response) {
       return new ListKeysPage(context, response);
     }
 
     @Override
     public ApiFuture<ListKeysPage> createPageAsync(
-        PageContext<ListKeysRequest, ListKeysResponse, Key> context,
+        @Nullable PageContext<ListKeysRequest, ListKeysResponse, Key> context,
         ApiFuture<ListKeysResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3747,7 +4004,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
       extends AbstractFixedSizeCollection<
           ListKeysRequest, ListKeysResponse, Key, ListKeysPage, ListKeysFixedSizeCollection> {
 
-    private ListKeysFixedSizeCollection(List<ListKeysPage> pages, int collectionSize) {
+    private ListKeysFixedSizeCollection(@Nullable List<ListKeysPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3757,7 +4014,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
     @Override
     protected ListKeysFixedSizeCollection createCollection(
-        List<ListKeysPage> pages, int collectionSize) {
+        @Nullable List<ListKeysPage> pages, int collectionSize) {
       return new ListKeysFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3791,8 +4048,9 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
           ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData, ListIpOverridesPage> {
 
     private ListIpOverridesPage(
-        PageContext<ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData> context,
-        ListIpOverridesResponse response) {
+        @Nullable PageContext<ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData>
+            context,
+        @Nullable ListIpOverridesResponse response) {
       super(context, response);
     }
 
@@ -3802,14 +4060,16 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
     @Override
     protected ListIpOverridesPage createPage(
-        PageContext<ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData> context,
-        ListIpOverridesResponse response) {
+        @Nullable PageContext<ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData>
+            context,
+        @Nullable ListIpOverridesResponse response) {
       return new ListIpOverridesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListIpOverridesPage> createPageAsync(
-        PageContext<ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData> context,
+        @Nullable PageContext<ListIpOverridesRequest, ListIpOverridesResponse, IpOverrideData>
+            context,
         ApiFuture<ListIpOverridesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3824,7 +4084,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
           ListIpOverridesFixedSizeCollection> {
 
     private ListIpOverridesFixedSizeCollection(
-        List<ListIpOverridesPage> pages, int collectionSize) {
+        @Nullable List<ListIpOverridesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3834,7 +4094,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
     @Override
     protected ListIpOverridesFixedSizeCollection createCollection(
-        List<ListIpOverridesPage> pages, int collectionSize) {
+        @Nullable List<ListIpOverridesPage> pages, int collectionSize) {
       return new ListIpOverridesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3872,9 +4132,10 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
           ListFirewallPoliciesPage> {
 
     private ListFirewallPoliciesPage(
-        PageContext<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>
+        @Nullable
+            PageContext<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>
             context,
-        ListFirewallPoliciesResponse response) {
+        @Nullable ListFirewallPoliciesResponse response) {
       super(context, response);
     }
 
@@ -3884,15 +4145,17 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
     @Override
     protected ListFirewallPoliciesPage createPage(
-        PageContext<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>
+        @Nullable
+            PageContext<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>
             context,
-        ListFirewallPoliciesResponse response) {
+        @Nullable ListFirewallPoliciesResponse response) {
       return new ListFirewallPoliciesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListFirewallPoliciesPage> createPageAsync(
-        PageContext<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>
+        @Nullable
+            PageContext<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>
             context,
         ApiFuture<ListFirewallPoliciesResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -3908,7 +4171,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
           ListFirewallPoliciesFixedSizeCollection> {
 
     private ListFirewallPoliciesFixedSizeCollection(
-        List<ListFirewallPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListFirewallPoliciesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3918,7 +4181,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
     @Override
     protected ListFirewallPoliciesFixedSizeCollection createCollection(
-        List<ListFirewallPoliciesPage> pages, int collectionSize) {
+        @Nullable List<ListFirewallPoliciesPage> pages, int collectionSize) {
       return new ListFirewallPoliciesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3959,12 +4222,13 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
           ListRelatedAccountGroupsPage> {
 
     private ListRelatedAccountGroupsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRelatedAccountGroupsRequest,
                 ListRelatedAccountGroupsResponse,
                 RelatedAccountGroup>
             context,
-        ListRelatedAccountGroupsResponse response) {
+        @Nullable ListRelatedAccountGroupsResponse response) {
       super(context, response);
     }
 
@@ -3974,18 +4238,20 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
     @Override
     protected ListRelatedAccountGroupsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRelatedAccountGroupsRequest,
                 ListRelatedAccountGroupsResponse,
                 RelatedAccountGroup>
             context,
-        ListRelatedAccountGroupsResponse response) {
+        @Nullable ListRelatedAccountGroupsResponse response) {
       return new ListRelatedAccountGroupsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRelatedAccountGroupsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRelatedAccountGroupsRequest,
                 ListRelatedAccountGroupsResponse,
                 RelatedAccountGroup>
@@ -4004,7 +4270,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
           ListRelatedAccountGroupsFixedSizeCollection> {
 
     private ListRelatedAccountGroupsFixedSizeCollection(
-        List<ListRelatedAccountGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListRelatedAccountGroupsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4014,7 +4280,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
     @Override
     protected ListRelatedAccountGroupsFixedSizeCollection createCollection(
-        List<ListRelatedAccountGroupsPage> pages, int collectionSize) {
+        @Nullable List<ListRelatedAccountGroupsPage> pages, int collectionSize) {
       return new ListRelatedAccountGroupsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4057,12 +4323,13 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
           ListRelatedAccountGroupMembershipsPage> {
 
     private ListRelatedAccountGroupMembershipsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRelatedAccountGroupMembershipsRequest,
                 ListRelatedAccountGroupMembershipsResponse,
                 RelatedAccountGroupMembership>
             context,
-        ListRelatedAccountGroupMembershipsResponse response) {
+        @Nullable ListRelatedAccountGroupMembershipsResponse response) {
       super(context, response);
     }
 
@@ -4072,18 +4339,20 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
     @Override
     protected ListRelatedAccountGroupMembershipsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRelatedAccountGroupMembershipsRequest,
                 ListRelatedAccountGroupMembershipsResponse,
                 RelatedAccountGroupMembership>
             context,
-        ListRelatedAccountGroupMembershipsResponse response) {
+        @Nullable ListRelatedAccountGroupMembershipsResponse response) {
       return new ListRelatedAccountGroupMembershipsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRelatedAccountGroupMembershipsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRelatedAccountGroupMembershipsRequest,
                 ListRelatedAccountGroupMembershipsResponse,
                 RelatedAccountGroupMembership>
@@ -4102,7 +4371,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
           ListRelatedAccountGroupMembershipsFixedSizeCollection> {
 
     private ListRelatedAccountGroupMembershipsFixedSizeCollection(
-        List<ListRelatedAccountGroupMembershipsPage> pages, int collectionSize) {
+        @Nullable List<ListRelatedAccountGroupMembershipsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4112,7 +4381,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
     @Override
     protected ListRelatedAccountGroupMembershipsFixedSizeCollection createCollection(
-        List<ListRelatedAccountGroupMembershipsPage> pages, int collectionSize) {
+        @Nullable List<ListRelatedAccountGroupMembershipsPage> pages, int collectionSize) {
       return new ListRelatedAccountGroupMembershipsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -4155,12 +4424,13 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
           SearchRelatedAccountGroupMembershipsPage> {
 
     private SearchRelatedAccountGroupMembershipsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchRelatedAccountGroupMembershipsRequest,
                 SearchRelatedAccountGroupMembershipsResponse,
                 RelatedAccountGroupMembership>
             context,
-        SearchRelatedAccountGroupMembershipsResponse response) {
+        @Nullable SearchRelatedAccountGroupMembershipsResponse response) {
       super(context, response);
     }
 
@@ -4170,18 +4440,20 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
     @Override
     protected SearchRelatedAccountGroupMembershipsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchRelatedAccountGroupMembershipsRequest,
                 SearchRelatedAccountGroupMembershipsResponse,
                 RelatedAccountGroupMembership>
             context,
-        SearchRelatedAccountGroupMembershipsResponse response) {
+        @Nullable SearchRelatedAccountGroupMembershipsResponse response) {
       return new SearchRelatedAccountGroupMembershipsPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchRelatedAccountGroupMembershipsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 SearchRelatedAccountGroupMembershipsRequest,
                 SearchRelatedAccountGroupMembershipsResponse,
                 RelatedAccountGroupMembership>
@@ -4200,7 +4472,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
           SearchRelatedAccountGroupMembershipsFixedSizeCollection> {
 
     private SearchRelatedAccountGroupMembershipsFixedSizeCollection(
-        List<SearchRelatedAccountGroupMembershipsPage> pages, int collectionSize) {
+        @Nullable List<SearchRelatedAccountGroupMembershipsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -4210,7 +4482,7 @@ public class RecaptchaEnterpriseServiceClient implements BackgroundResource {
 
     @Override
     protected SearchRelatedAccountGroupMembershipsFixedSizeCollection createCollection(
-        List<SearchRelatedAccountGroupMembershipsPage> pages, int collectionSize) {
+        @Nullable List<SearchRelatedAccountGroupMembershipsPage> pages, int collectionSize) {
       return new SearchRelatedAccountGroupMembershipsFixedSizeCollection(pages, collectionSize);
     }
   }

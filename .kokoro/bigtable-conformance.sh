@@ -37,6 +37,7 @@ retry_with_backoff 3 10 \
     -DskipTests=true \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
+    -Dcheckstyle.skip=true \
     -Dmaven.javadoc.skip=true \
     -Dgcloud.download.skip=true \
     -T 1C
@@ -48,7 +49,7 @@ set +e
 # Build the proxy
 pushd .
 cd java-bigtable/test-proxy
-mvn clean install -U -DskipTests
+mvn clean install -U -DskipTests -Dcheckstyle.skip=true
 popd
 
 declare -a configs=("default" "enable_all")

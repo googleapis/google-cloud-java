@@ -21,6 +21,7 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
 import com.google.cloud.datastore.DatastoreOptions;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
 import org.easymock.EasyMock;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -79,7 +80,7 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void defaultOptionsWithBuiltInMetricsEnabled_butNoCredentials_returnsOneRecorder() {
+  public void defaultOptionsWithBuiltInMetricsEnabled_butNoCredentials_returnsNoRecorders() {
     // Explicitly enable built-in metrics export
     DatastoreOptions options =
         baseOptions() // Uses NoCredentials by default
@@ -92,12 +93,12 @@ public class DatastoreMetricsRecorderTest {
         DatastoreMetricsRecorder.getInstance(options, OpenTelemetry.noop());
 
     // Since baseOptions() uses NoCredentials, the provider returns OpenTelemetry.noop().
-    // This NoOp instance is passed to getInstance, which adds it to the recorders list.
-    // So we have 1 recorder (the NoOp one).
+    // This NoOp instance is passed to getInstance, which should NOT add it to the recorders list.
+    // So we have 0 recorders.
     assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
     CompositeDatastoreMetricsRecorder compositeRecorder =
         (CompositeDatastoreMetricsRecorder) recorder;
-    assertThat(compositeRecorder.getMetricRecorders().size()).isEqualTo(1);
+    assertThat(compositeRecorder.getMetricRecorders().size()).isEqualTo(0);
   }
 
   @Test
@@ -142,7 +143,7 @@ public class DatastoreMetricsRecorderTest {
                     .setOpenTelemetry(OpenTelemetry.noop())
                     .build())
             .build();
-    OpenTelemetry builtInOtel = OpenTelemetry.noop();
+    OpenTelemetry builtInOtel = OpenTelemetrySdk.builder().build();
 
     DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
     assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);

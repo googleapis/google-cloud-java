@@ -36,6 +36,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -434,10 +436,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class AlphaAnalyticsDataClient implements BackgroundResource {
-  private final AlphaAnalyticsDataSettings settings;
+  private final @Nullable AlphaAnalyticsDataSettings settings;
   private final AlphaAnalyticsDataStub stub;
   private final OperationsClient httpJsonOperationsClient;
   private final com.google.longrunning.OperationsClient operationsClient;
@@ -485,7 +488,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
     this.httpJsonOperationsClient = OperationsClient.create(this.stub.getHttpJsonOperationsStub());
   }
 
-  public final AlphaAnalyticsDataSettings getSettings() {
+  public final @Nullable AlphaAnalyticsDataSettings getSettings() {
     return settings;
   }
 
@@ -654,7 +657,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<AudienceList, AudienceListMetadata> createAudienceListAsync(
-      PropertyName parent, AudienceList audienceList) {
+      @Nullable PropertyName parent, AudienceList audienceList) {
     CreateAudienceListRequest request =
         CreateAudienceListRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1039,7 +1042,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    *     `properties/{property}/audienceLists/{audience_list}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final AudienceList getAudienceList(AudienceListName name) {
+  public final AudienceList getAudienceList(@Nullable AudienceListName name) {
     GetAudienceListRequest request =
         GetAudienceListRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAudienceList(request);
@@ -1194,7 +1197,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    *     Format: `properties/{property}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListAudienceListsPagedResponse listAudienceLists(PropertyName parent) {
+  public final ListAudienceListsPagedResponse listAudienceLists(@Nullable PropertyName parent) {
     ListAudienceListsRequest request =
         ListAudienceListsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1424,7 +1427,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RecurringAudienceList createRecurringAudienceList(
-      PropertyName parent, RecurringAudienceList recurringAudienceList) {
+      @Nullable PropertyName parent, RecurringAudienceList recurringAudienceList) {
     CreateRecurringAudienceListRequest request =
         CreateRecurringAudienceListRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1595,7 +1598,8 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    *     `properties/{property}/recurringAudienceLists/{recurring_audience_list}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final RecurringAudienceList getRecurringAudienceList(RecurringAudienceListName name) {
+  public final RecurringAudienceList getRecurringAudienceList(
+      @Nullable RecurringAudienceListName name) {
     GetRecurringAudienceListRequest request =
         GetRecurringAudienceListRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1749,7 +1753,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListRecurringAudienceListsPagedResponse listRecurringAudienceLists(
-      PropertyName parent) {
+      @Nullable PropertyName parent) {
     ListRecurringAudienceListsRequest request =
         ListRecurringAudienceListsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1951,7 +1955,8 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    *     `properties/{property}/propertyQuotasSnapshot`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final PropertyQuotasSnapshot getPropertyQuotasSnapshot(PropertyQuotasSnapshotName name) {
+  public final PropertyQuotasSnapshot getPropertyQuotasSnapshot(
+      @Nullable PropertyQuotasSnapshotName name) {
     GetPropertyQuotasSnapshotRequest request =
         GetPropertyQuotasSnapshotRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2082,7 +2087,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<ReportTask, ReportTaskMetadata> createReportTaskAsync(
-      PropertyName parent, ReportTask reportTask) {
+      @Nullable PropertyName parent, ReportTask reportTask) {
     CreateReportTaskRequest request =
         CreateReportTaskRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2364,7 +2369,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    *     `properties/{property}/reportTasks/{report_task}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReportTask getReportTask(ReportTaskName name) {
+  public final ReportTask getReportTask(@Nullable ReportTaskName name) {
     GetReportTaskRequest request =
         GetReportTaskRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getReportTask(request);
@@ -2480,7 +2485,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    *     Format: `properties/{property}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListReportTasksPagedResponse listReportTasks(PropertyName parent) {
+  public final ListReportTasksPagedResponse listReportTasks(@Nullable PropertyName parent) {
     ListReportTasksRequest request =
         ListReportTasksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2750,7 +2755,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
    *     special mode, this method will not return custom dimensions and metrics.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Metadata getMetadata(MetadataName name) {
+  public final Metadata getMetadata(@Nullable MetadataName name) {
     GetMetadataRequest request =
         GetMetadataRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getMetadata(request);
@@ -2923,8 +2928,9 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
           ListAudienceListsPage> {
 
     private ListAudienceListsPage(
-        PageContext<ListAudienceListsRequest, ListAudienceListsResponse, AudienceList> context,
-        ListAudienceListsResponse response) {
+        @Nullable PageContext<ListAudienceListsRequest, ListAudienceListsResponse, AudienceList>
+            context,
+        @Nullable ListAudienceListsResponse response) {
       super(context, response);
     }
 
@@ -2934,14 +2940,16 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
 
     @Override
     protected ListAudienceListsPage createPage(
-        PageContext<ListAudienceListsRequest, ListAudienceListsResponse, AudienceList> context,
-        ListAudienceListsResponse response) {
+        @Nullable PageContext<ListAudienceListsRequest, ListAudienceListsResponse, AudienceList>
+            context,
+        @Nullable ListAudienceListsResponse response) {
       return new ListAudienceListsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListAudienceListsPage> createPageAsync(
-        PageContext<ListAudienceListsRequest, ListAudienceListsResponse, AudienceList> context,
+        @Nullable PageContext<ListAudienceListsRequest, ListAudienceListsResponse, AudienceList>
+            context,
         ApiFuture<ListAudienceListsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -2956,7 +2964,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
           ListAudienceListsFixedSizeCollection> {
 
     private ListAudienceListsFixedSizeCollection(
-        List<ListAudienceListsPage> pages, int collectionSize) {
+        @Nullable List<ListAudienceListsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -2966,7 +2974,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
 
     @Override
     protected ListAudienceListsFixedSizeCollection createCollection(
-        List<ListAudienceListsPage> pages, int collectionSize) {
+        @Nullable List<ListAudienceListsPage> pages, int collectionSize) {
       return new ListAudienceListsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3007,12 +3015,13 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
           ListRecurringAudienceListsPage> {
 
     private ListRecurringAudienceListsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRecurringAudienceListsRequest,
                 ListRecurringAudienceListsResponse,
                 RecurringAudienceList>
             context,
-        ListRecurringAudienceListsResponse response) {
+        @Nullable ListRecurringAudienceListsResponse response) {
       super(context, response);
     }
 
@@ -3022,18 +3031,20 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
 
     @Override
     protected ListRecurringAudienceListsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRecurringAudienceListsRequest,
                 ListRecurringAudienceListsResponse,
                 RecurringAudienceList>
             context,
-        ListRecurringAudienceListsResponse response) {
+        @Nullable ListRecurringAudienceListsResponse response) {
       return new ListRecurringAudienceListsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListRecurringAudienceListsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListRecurringAudienceListsRequest,
                 ListRecurringAudienceListsResponse,
                 RecurringAudienceList>
@@ -3052,7 +3063,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
           ListRecurringAudienceListsFixedSizeCollection> {
 
     private ListRecurringAudienceListsFixedSizeCollection(
-        List<ListRecurringAudienceListsPage> pages, int collectionSize) {
+        @Nullable List<ListRecurringAudienceListsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3062,7 +3073,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
 
     @Override
     protected ListRecurringAudienceListsFixedSizeCollection createCollection(
-        List<ListRecurringAudienceListsPage> pages, int collectionSize) {
+        @Nullable List<ListRecurringAudienceListsPage> pages, int collectionSize) {
       return new ListRecurringAudienceListsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -3096,8 +3107,8 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
           ListReportTasksRequest, ListReportTasksResponse, ReportTask, ListReportTasksPage> {
 
     private ListReportTasksPage(
-        PageContext<ListReportTasksRequest, ListReportTasksResponse, ReportTask> context,
-        ListReportTasksResponse response) {
+        @Nullable PageContext<ListReportTasksRequest, ListReportTasksResponse, ReportTask> context,
+        @Nullable ListReportTasksResponse response) {
       super(context, response);
     }
 
@@ -3107,14 +3118,14 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
 
     @Override
     protected ListReportTasksPage createPage(
-        PageContext<ListReportTasksRequest, ListReportTasksResponse, ReportTask> context,
-        ListReportTasksResponse response) {
+        @Nullable PageContext<ListReportTasksRequest, ListReportTasksResponse, ReportTask> context,
+        @Nullable ListReportTasksResponse response) {
       return new ListReportTasksPage(context, response);
     }
 
     @Override
     public ApiFuture<ListReportTasksPage> createPageAsync(
-        PageContext<ListReportTasksRequest, ListReportTasksResponse, ReportTask> context,
+        @Nullable PageContext<ListReportTasksRequest, ListReportTasksResponse, ReportTask> context,
         ApiFuture<ListReportTasksResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -3129,7 +3140,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
           ListReportTasksFixedSizeCollection> {
 
     private ListReportTasksFixedSizeCollection(
-        List<ListReportTasksPage> pages, int collectionSize) {
+        @Nullable List<ListReportTasksPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -3139,7 +3150,7 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
 
     @Override
     protected ListReportTasksFixedSizeCollection createCollection(
-        List<ListReportTasksPage> pages, int collectionSize) {
+        @Nullable List<ListReportTasksPage> pages, int collectionSize) {
       return new ListReportTasksFixedSizeCollection(pages, collectionSize);
     }
   }

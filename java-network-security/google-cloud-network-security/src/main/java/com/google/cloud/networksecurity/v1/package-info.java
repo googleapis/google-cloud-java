@@ -164,6 +164,29 @@
  * }
  * }</pre>
  *
+ * <p>======================= SecurityProfileGroupServiceClient =======================
+ *
+ * <p>Service Description: SecurityProfileGroup is a resource that defines an action for specific
+ * threat signatures or severity levels.
+ *
+ * <p>Sample for SecurityProfileGroupServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SecurityProfileGroupServiceClient securityProfileGroupServiceClient =
+ *     SecurityProfileGroupServiceClient.create()) {
+ *   SecurityProfileGroupName name =
+ *       SecurityProfileGroupName.ofProjectLocationSecurityProfileGroupName(
+ *           "[PROJECT]", "[LOCATION]", "[SECURITY_PROFILE_GROUP]");
+ *   SecurityProfileGroup response =
+ *       securityProfileGroupServiceClient.getSecurityProfileGroup(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= OrganizationSecurityProfileGroupServiceClient =======================
  *
  * <p>Service Description: Organization SecurityProfileGroup is created under organization.
@@ -184,6 +207,24 @@
  *           "[ORGANIZATION]", "[LOCATION]", "[SECURITY_PROFILE_GROUP]");
  *   SecurityProfileGroup response =
  *       organizationSecurityProfileGroupServiceClient.getSecurityProfileGroup(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= SSERealmServiceClient =======================
+ *
+ * <p>Service Description: Service describing handlers for resources
+ *
+ * <p>Sample for SSERealmServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (SSERealmServiceClient sSERealmServiceClient = SSERealmServiceClient.create()) {
+ *   SACRealmName name = SACRealmName.of("[PROJECT]", "[LOCATION]", "[SAC_REALM]");
+ *   SACRealm response = sSERealmServiceClient.getSACRealm(name);
  * }
  * }</pre>
  */

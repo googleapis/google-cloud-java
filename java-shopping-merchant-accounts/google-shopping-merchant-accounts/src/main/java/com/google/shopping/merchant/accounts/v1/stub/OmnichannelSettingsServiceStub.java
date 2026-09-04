@@ -29,6 +29,7 @@ import com.google.shopping.merchant.accounts.v1.RequestInventoryVerificationRequ
 import com.google.shopping.merchant.accounts.v1.RequestInventoryVerificationResponse;
 import com.google.shopping.merchant.accounts.v1.UpdateOmnichannelSettingRequest;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -36,6 +37,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public abstract class OmnichannelSettingsServiceStub implements BackgroundResource {
 

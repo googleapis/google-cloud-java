@@ -43,8 +43,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** OAuth2 credentials representing the built-in service account for Google Cloud Shell. */
+@NullMarked
 public class CloudShellCredentials extends GoogleCredentials {
 
   private static final long serialVersionUID = -2133257318957488451L;
@@ -109,7 +112,7 @@ public class CloudShellCredentials extends GoogleCredentials {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof CloudShellCredentials)) {
       return false;
     }
@@ -132,6 +135,7 @@ public class CloudShellCredentials extends GoogleCredentials {
     protected Builder() {}
 
     protected Builder(CloudShellCredentials credentials) {
+      super(credentials);
       this.authPort = credentials.authPort;
     }
 
@@ -141,9 +145,10 @@ public class CloudShellCredentials extends GoogleCredentials {
       return this;
     }
 
+    @Override
     @CanIgnoreReturnValue
-    public Builder setQuotaProjectId(String quotaProjectId) {
-      super.quotaProjectId = quotaProjectId;
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
+      super.setQuotaProjectId(quotaProjectId);
       return this;
     }
 

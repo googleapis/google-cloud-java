@@ -36,11 +36,13 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.util.Set;
+import org.jspecify.annotations.NullMarked;
 
 /**
  * A settings class to configure a {@link UnaryCallable} for calls to an API method that supports
  * batching. The settings are provided using an instance of {@link BatchingSettings}.
  */
+@NullMarked
 @InternalExtensionOnly
 public final class BatchingCallSettings<RequestT, ResponseT>
     extends UnaryCallSettings<RequestT, ResponseT> {

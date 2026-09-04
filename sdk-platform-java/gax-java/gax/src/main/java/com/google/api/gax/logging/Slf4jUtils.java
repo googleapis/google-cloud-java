@@ -33,6 +33,7 @@ package com.google.api.gax.logging;
 import com.google.api.core.InternalApi;
 import java.util.Map;
 import java.util.Map.Entry;
+import org.jspecify.annotations.NullMarked;
 import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,6 +44,7 @@ import org.slf4j.spi.LoggingEventBuilder;
  * Contains util methods to get SLF4J logger and log conditionally based SLF4J major version Actual
  * interaction with SLF4J happens only in this class.
  */
+@NullMarked
 @InternalApi
 class Slf4jUtils {
 

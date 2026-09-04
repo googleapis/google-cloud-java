@@ -18,14 +18,17 @@ package com.example.bigtable;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.rpc.NotFoundException;
-import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClient;
-import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminSettings;
-import com.google.cloud.bigtable.admin.v2.models.CreateInstanceRequest;
-import com.google.cloud.bigtable.admin.v2.models.Instance.Type;
-import com.google.cloud.bigtable.admin.v2.models.StorageType;
+import com.google.bigtable.admin.v2.Cluster;
+import com.google.bigtable.admin.v2.CreateInstanceRequest;
+import com.google.bigtable.admin.v2.GetInstanceRequest;
+import com.google.bigtable.admin.v2.Instance;
+import com.google.bigtable.admin.v2.ListInstancesRequest;
+import com.google.bigtable.admin.v2.StorageType;
+import com.google.cloud.bigtable.admin.v2.BigtableInstanceAdminClientV2;
 import java.io.IOException;
 import java.util.Random;
 import java.util.regex.Matcher;
@@ -41,16 +44,26 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
 
   private static final String ID_PREFIX = "instanceadmin";
   private static final String CLUSTER = "cluster";
-  private static BigtableInstanceAdminClient adminClient;
+  private static BigtableInstanceAdminClientV2 adminClient;
   private String clusterId;
   private InstanceAdminExample instanceAdmin;
 
   @BeforeClass
   public static void beforeClass() throws IOException {
     initializeVariables();
-    BigtableInstanceAdminSettings instanceAdminSettings =
-        BigtableInstanceAdminSettings.newBuilder().setProjectId(projectId).build();
-    adminClient = BigtableInstanceAdminClient.create(instanceAdminSettings);
+    adminClient = BigtableInstanceAdminClientV2.create();
+  }
+
+  private static boolean exists(String instanceId) {
+    try {
+      adminClient.getInstance(
+          GetInstanceRequest.newBuilder()
+              .setName("projects/" + projectId + "/instances/" + instanceId)
+              .build());
+      return true;
+    } catch (NotFoundException e) {
+      return false;
+    }
   }
 
   @AfterClass
@@ -60,21 +73,36 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
   }
 
   @Before
-  public void setup() throws IOException {
+  public void setup() throws Exception {
     instanceId = generateId();
     clusterId = generateId();
     instanceAdmin = new InstanceAdminExample(projectId, instanceId, clusterId);
-    adminClient.createInstance(
-        CreateInstanceRequest.of(instanceId)
-            .addCluster(clusterId, "us-central1-f", 3, StorageType.SSD)
-            .setType(Type.PRODUCTION)
-            .addLabel("example", "instance_admin"));
+    Instance instanceObj =
+        Instance.newBuilder()
+            .setDisplayName(instanceId)
+            .setType(Instance.Type.PRODUCTION)
+            .putLabels("example", "instance_admin")
+            .build();
+    Cluster clusterObj =
+        Cluster.newBuilder()
+            .setLocation("projects/" + projectId + "/locations/us-central1-f")
+            .setServeNodes(3)
+            .setDefaultStorageType(StorageType.SSD)
+            .build();
+    CreateInstanceRequest request =
+        CreateInstanceRequest.newBuilder()
+            .setParent("projects/" + projectId)
+            .setInstanceId(instanceId)
+            .setInstance(instanceObj)
+            .putClusters(clusterId, clusterObj)
+            .build();
+    adminClient.createInstanceAsync(request).get();
   }
 
   @After
   public void after() {
-    if (adminClient.exists(instanceId)) {
-      adminClient.deleteInstance(instanceId);
+    if (exists(instanceId)) {
+      adminClient.deleteInstance("projects/" + projectId + "/instances/" + instanceId);
     }
     if (instanceAdmin != null) {
       instanceAdmin.close();
@@ -89,31 +117,36 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
     InstanceAdminExample testInstanceAdmin =
         new InstanceAdminExample(projectId, testInstance, testCluster);
     testInstanceAdmin.createProdInstance(false);
-    assertTrue(adminClient.exists(testInstance));
+    assertTrue(exists(testInstance));
 
     // Deletes an instance.
     testInstanceAdmin.deleteInstance();
-    assertFalse(adminClient.exists(testInstance));
+    assertFalse(exists(testInstance));
   }
 
   @Test
   public void testGetInstance() {
     // Gets an instance.
-    com.google.bigtable.admin.v2.Instance instance = instanceAdmin.getInstance();
+    Instance instance = instanceAdmin.getInstance();
     assertNotNull(instance);
   }
 
-  @Test(expected = NotFoundException.class)
+  @Test
   public void testAddAndDeleteCluster() {
     // Adds a cluster.
     instanceAdmin.addCluster();
-    com.google.cloud.bigtable.admin.v2.models.Cluster cluster =
-        adminClient.getCluster(instanceId, CLUSTER);
+    Cluster cluster =
+        adminClient.getCluster(
+            "projects/" + projectId + "/instances/" + instanceId + "/clusters/" + CLUSTER);
     assertNotNull(cluster);
 
     // Deletes a cluster.
     instanceAdmin.deleteCluster();
-    adminClient.getCluster(instanceId, CLUSTER);
+    assertThrows(
+        NotFoundException.class,
+        () ->
+            adminClient.getCluster(
+                "projects/" + projectId + "/instances/" + instanceId + "/clusters/" + CLUSTER));
   }
 
   // TODO: add test for instanceAdmin.listInstances()
@@ -131,14 +164,16 @@ public class InstanceAdminExampleTest extends BigtableBaseTest {
   private static void garbageCollect() {
     Pattern timestampPattern = Pattern.compile(ID_PREFIX + "-([0-9a-f]+)");
     System.out.println();
-    for (com.google.cloud.bigtable.admin.v2.models.Instance instance :
-        adminClient.listInstances()) {
-      Matcher matcher = timestampPattern.matcher(instance.getId());
+    ListInstancesRequest request =
+        ListInstancesRequest.newBuilder().setParent("projects/" + projectId).build();
+    for (Instance instance : adminClient.listInstances(request).getInstancesList()) {
+      String id = instance.getName().substring(instance.getName().lastIndexOf("/") + 1);
+      Matcher matcher = timestampPattern.matcher(id);
       if (!matcher.matches()) {
         continue;
       }
-      System.out.println("Garbage collecting orphaned table: " + instance);
-      adminClient.deleteInstance(instance.getId());
+      System.out.println("Garbage collecting orphaned table: " + instance.getName());
+      adminClient.deleteInstance(instance.getName());
     }
   }
 }

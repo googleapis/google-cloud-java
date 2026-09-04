@@ -32,6 +32,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -58,12 +60,14 @@ import javax.annotation.Generated;
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
  *                   .toString())
  *           .setQuery("query107944136")
+ *           .addAllPageCategories(new ArrayList<String>())
  *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
  *           .setOneBoxPageSize(1988477988)
  *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+ *           .setNumResultsPerDataStore(397658288)
  *           .setFilter("filter-1274492040")
  *           .setCanonicalFilter("canonicalFilter-722283124")
  *           .setOrderBy("orderBy-1207110587")
@@ -84,12 +88,19 @@ import javax.annotation.Generated;
  *           .setNaturalLanguageQueryUnderstandingSpec(
  *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
  *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+ *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+ *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
  *           .setSession(
  *               SessionName.ofProjectLocationDataStoreSessionName(
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
  *                   .toString())
  *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+ *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
  *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+ *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+ *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+ *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+ *           .setEntity("entity-1298275357")
  *           .build();
  *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
  *     // doThingsWith(element);
@@ -194,10 +205,11 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 public class SearchServiceClient implements BackgroundResource {
-  private final SearchServiceSettings settings;
+  private final @Nullable SearchServiceSettings settings;
   private final SearchServiceStub stub;
 
   /** Constructs an instance of SearchServiceClient with default settings. */
@@ -237,7 +249,7 @@ public class SearchServiceClient implements BackgroundResource {
     this.stub = stub;
   }
 
-  public final SearchServiceSettings getSettings() {
+  public final @Nullable SearchServiceSettings getSettings() {
     return settings;
   }
 
@@ -269,12 +281,14 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .addAllPageCategories(new ArrayList<String>())
    *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
    *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setNumResultsPerDataStore(397658288)
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -295,12 +309,19 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setNaturalLanguageQueryUnderstandingSpec(
    *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+   *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+   *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+   *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -339,12 +360,14 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .addAllPageCategories(new ArrayList<String>())
    *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
    *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setNumResultsPerDataStore(397658288)
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -365,12 +388,19 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setNaturalLanguageQueryUnderstandingSpec(
    *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+   *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+   *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+   *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchPagedCallable().futureCall(request);
@@ -409,12 +439,14 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .addAllPageCategories(new ArrayList<String>())
    *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
    *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setNumResultsPerDataStore(397658288)
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -435,12 +467,19 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setNaturalLanguageQueryUnderstandingSpec(
    *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+   *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+   *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+   *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchCallable().call(request);
@@ -496,12 +535,14 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .addAllPageCategories(new ArrayList<String>())
    *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
    *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setNumResultsPerDataStore(397658288)
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -522,12 +563,19 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setNaturalLanguageQueryUnderstandingSpec(
    *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+   *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+   *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+   *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   for (SearchResponse.SearchResult element :
    *       searchServiceClient.searchLite(request).iterateAll()) {
@@ -578,12 +626,14 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .addAllPageCategories(new ArrayList<String>())
    *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
    *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setNumResultsPerDataStore(397658288)
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -604,12 +654,19 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setNaturalLanguageQueryUnderstandingSpec(
    *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+   *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+   *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+   *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   ApiFuture<SearchResponse.SearchResult> future =
    *       searchServiceClient.searchLitePagedCallable().futureCall(request);
@@ -659,12 +716,14 @@ public class SearchServiceClient implements BackgroundResource {
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
    *                   .toString())
    *           .setQuery("query107944136")
+   *           .addAllPageCategories(new ArrayList<String>())
    *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOffset(-1019779949)
    *           .setOneBoxPageSize(1988477988)
    *           .addAllDataStoreSpecs(new ArrayList<SearchRequest.DataStoreSpec>())
+   *           .setNumResultsPerDataStore(397658288)
    *           .setFilter("filter-1274492040")
    *           .setCanonicalFilter("canonicalFilter-722283124")
    *           .setOrderBy("orderBy-1207110587")
@@ -685,12 +744,19 @@ public class SearchServiceClient implements BackgroundResource {
    *           .setNaturalLanguageQueryUnderstandingSpec(
    *               SearchRequest.NaturalLanguageQueryUnderstandingSpec.newBuilder().build())
    *           .setSearchAsYouTypeSpec(SearchRequest.SearchAsYouTypeSpec.newBuilder().build())
+   *           .setDisplaySpec(SearchRequest.DisplaySpec.newBuilder().build())
+   *           .addAllCrowdingSpecs(new ArrayList<SearchRequest.CrowdingSpec>())
    *           .setSession(
    *               SessionName.ofProjectLocationDataStoreSessionName(
    *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SESSION]")
    *                   .toString())
    *           .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
+   *           .setRelevanceFilterSpec(SearchRequest.RelevanceFilterSpec.newBuilder().build())
    *           .setPersonalizationSpec(SearchRequest.PersonalizationSpec.newBuilder().build())
+   *           .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+   *           .setSearchAddonSpec(SearchRequest.SearchAddonSpec.newBuilder().build())
+   *           .setCustomRankingParams(SearchRequest.CustomRankingParams.newBuilder().build())
+   *           .setEntity("entity-1298275357")
    *           .build();
    *   while (true) {
    *     SearchResponse response = searchServiceClient.searchLiteCallable().call(request);
@@ -767,8 +833,8 @@ public class SearchServiceClient implements BackgroundResource {
       extends AbstractPage<SearchRequest, SearchResponse, SearchResponse.SearchResult, SearchPage> {
 
     private SearchPage(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
-        SearchResponse response) {
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable SearchResponse response) {
       super(context, response);
     }
 
@@ -778,14 +844,14 @@ public class SearchServiceClient implements BackgroundResource {
 
     @Override
     protected SearchPage createPage(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
-        SearchResponse response) {
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable SearchResponse response) {
       return new SearchPage(context, response);
     }
 
     @Override
     public ApiFuture<SearchPage> createPageAsync(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
         ApiFuture<SearchResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -799,7 +865,7 @@ public class SearchServiceClient implements BackgroundResource {
           SearchPage,
           SearchFixedSizeCollection> {
 
-    private SearchFixedSizeCollection(List<SearchPage> pages, int collectionSize) {
+    private SearchFixedSizeCollection(@Nullable List<SearchPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -809,7 +875,7 @@ public class SearchServiceClient implements BackgroundResource {
 
     @Override
     protected SearchFixedSizeCollection createCollection(
-        List<SearchPage> pages, int collectionSize) {
+        @Nullable List<SearchPage> pages, int collectionSize) {
       return new SearchFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -841,8 +907,8 @@ public class SearchServiceClient implements BackgroundResource {
           SearchRequest, SearchResponse, SearchResponse.SearchResult, SearchLitePage> {
 
     private SearchLitePage(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
-        SearchResponse response) {
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable SearchResponse response) {
       super(context, response);
     }
 
@@ -852,14 +918,14 @@ public class SearchServiceClient implements BackgroundResource {
 
     @Override
     protected SearchLitePage createPage(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
-        SearchResponse response) {
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable SearchResponse response) {
       return new SearchLitePage(context, response);
     }
 
     @Override
     public ApiFuture<SearchLitePage> createPageAsync(
-        PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
+        @Nullable PageContext<SearchRequest, SearchResponse, SearchResponse.SearchResult> context,
         ApiFuture<SearchResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -873,7 +939,8 @@ public class SearchServiceClient implements BackgroundResource {
           SearchLitePage,
           SearchLiteFixedSizeCollection> {
 
-    private SearchLiteFixedSizeCollection(List<SearchLitePage> pages, int collectionSize) {
+    private SearchLiteFixedSizeCollection(
+        @Nullable List<SearchLitePage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -883,7 +950,7 @@ public class SearchServiceClient implements BackgroundResource {
 
     @Override
     protected SearchLiteFixedSizeCollection createCollection(
-        List<SearchLitePage> pages, int collectionSize) {
+        @Nullable List<SearchLitePage> pages, int collectionSize) {
       return new SearchLiteFixedSizeCollection(pages, collectionSize);
     }
   }

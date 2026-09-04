@@ -25,6 +25,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.paging.Page;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.api.services.bigquery.model.GetQueryResultsResponse;
+import com.google.api.services.bigquery.model.ProjectList;
 import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest.Rows;
@@ -40,6 +41,8 @@ import com.google.cloud.RetryOption;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQueryRetryHelper.BigQueryRetryHelperException;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
+import com.google.cloud.bigquery.JobStatistics.QueryStatistics.StatementType;
+import com.google.cloud.bigquery.JobStatistics.SessionInfo;
 import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
 import com.google.common.annotations.VisibleForTesting;
@@ -64,6 +67,25 @@ import java.util.regex.Pattern;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuery {
+
+  private static class ProjectPageFetcher implements NextPageFetcher<Project> {
+
+    private static final long serialVersionUID = 1L;
+    private final Map<BigQueryRpc.Option, ?> requestOptions;
+    private final BigQueryOptions serviceOptions;
+
+    ProjectPageFetcher(
+        BigQueryOptions serviceOptions, String cursor, Map<BigQueryRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(BigQueryRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+    }
+
+    @Override
+    public Page<Project> getNextPage() {
+      return listProjects(serviceOptions, requestOptions);
+    }
+  }
 
   private static class DatasetPageFetcher implements NextPageFetcher<Dataset> {
 
@@ -308,6 +330,72 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
+  @BetaApi
+  public Page<Project> listProjects(ProjectListOption... options) {
+    Span projectsList = null;
+    if (getOptions().isOpenTelemetryTracingEnabled()
+        && getOptions().getOpenTelemetryTracer() != null) {
+      projectsList =
+          getOptions()
+              .getOpenTelemetryTracer()
+              .spanBuilder("com.google.cloud.bigquery.BigQuery.listProjects")
+              .setAllAttributes(otelAttributesFromOptions(options))
+              .startSpan();
+    }
+    try (Scope projectsListScope = projectsList != null ? projectsList.makeCurrent() : null) {
+      return listProjects(getOptions(), optionMap(options));
+    } finally {
+      if (projectsList != null) {
+        projectsList.end();
+      }
+    }
+  }
+
+  private static Page<Project> listProjects(
+      final BigQueryOptions serviceOptions, final Map<BigQueryRpc.Option, ?> optionsMap) {
+    try {
+      Tuple<String, Iterable<ProjectList.Projects>> result =
+          BigQueryRetryHelper.runWithRetries(
+              new Callable<Tuple<String, Iterable<ProjectList.Projects>>>() {
+                @Override
+                public Tuple<String, Iterable<ProjectList.Projects>> call() {
+                  return serviceOptions.getBigQueryRpcV2().listProjects(optionsMap);
+                }
+              },
+              serviceOptions.getRetrySettings(),
+              serviceOptions.getResultRetryAlgorithm(),
+              serviceOptions.getClock(),
+              EMPTY_RETRY_CONFIG,
+              serviceOptions.isOpenTelemetryTracingEnabled(),
+              serviceOptions.getOpenTelemetryTracer());
+      String nextPageToken = result.x();
+      Iterable<Project> projects =
+          Iterables.transform(
+              result.y() != null ? result.y() : ImmutableList.<ProjectList.Projects>of(),
+              new Function<ProjectList.Projects, Project>() {
+                @Override
+                public Project apply(ProjectList.Projects projectPb) {
+                  return new Project(
+                      projectPb.getId(),
+                      projectPb.getNumericId() != null
+                          ? String.valueOf(projectPb.getNumericId())
+                          : null,
+                      projectPb.getProjectReference() != null
+                          ? projectPb.getProjectReference().getProjectId()
+                          : null,
+                      projectPb.getFriendlyName());
+                }
+              });
+      return new PageImpl<>(
+          new ProjectPageFetcher(serviceOptions, nextPageToken, optionsMap),
+          nextPageToken,
+          projects);
+    } catch (BigQueryRetryHelperException e) {
+      throw BigQueryException.translateAndThrow(e);
+    }
+  }
+
+  @Override
   public Table create(TableInfo tableInfo, TableOption... options) {
     final com.google.api.services.bigquery.model.Table tablePb =
         tableInfo
@@ -396,7 +484,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getOptions().getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(getOptions().getResultRetryAlgorithm()),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -416,7 +504,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         new Supplier<JobId>() {
           @Override
           public JobId get() {
-            return JobId.of();
+            // Explicitly set the location for a new job when provided in options.
+            // Otherwise, the job may be created with an incorrect location
+            // (e.g. in transaction mode outside the US).
+            return JobId.of().setLocation(getOptions().getLocation());
           }
         };
     return create(jobInfo, idProvider, options);
@@ -449,7 +540,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions()
               .getOpenTelemetryTracer()
               .spanBuilder("com.google.cloud.bigquery.BigQuery.createJob")
-              .setAllAttributes(jobInfo.getJobId().getOtelAttributes())
+              .setAllAttributes(
+                  jobInfo.getJobId() != null
+                      ? jobInfo.getJobId().getOtelAttributes()
+                      : Attributes.empty())
               .setAllAttributes(otelAttributesFromOptions(options))
               .startSpan();
     }
@@ -586,7 +680,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getOptions().getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(getOptions().getResultRetryAlgorithm()),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -652,7 +746,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               serviceOptions.getRetrySettings(),
-              serviceOptions.getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(serviceOptions.getResultRetryAlgorithm()),
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
@@ -1125,7 +1219,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getOptions().getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(getOptions().getResultRetryAlgorithm()),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -1184,7 +1278,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getOptions().getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(getOptions().getResultRetryAlgorithm()),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -1243,7 +1337,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getOptions().getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(getOptions().getResultRetryAlgorithm()),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -1461,7 +1555,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               serviceOptions.getRetrySettings(),
-              serviceOptions.getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(serviceOptions.getResultRetryAlgorithm()),
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
@@ -1502,7 +1596,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               serviceOptions.getRetrySettings(),
-              serviceOptions.getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(serviceOptions.getResultRetryAlgorithm()),
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
@@ -1543,7 +1637,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               serviceOptions.getRetrySettings(),
-              serviceOptions.getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(serviceOptions.getResultRetryAlgorithm()),
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
@@ -1567,6 +1661,10 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
   @Override
   public InsertAllResponse insertAll(InsertAllRequest request) {
+    // This API inserts the specified rows into a table using the BigQuery insertAll API.
+    // Note: To prevent duplicate rows, this method does not perform automatic retries unless
+    // insert IDs are provided. Transient service errors (such as UNAVAILABLE) may be thrown and
+    // should be handled by the caller.
     final TableId tableId =
         request
             .getTable()
@@ -1685,6 +1783,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setSchema(schema)
           .setTotalRows(data.y())
           .setPageNoSchema(data.x())
+          .setRowsInPage((long) Iterables.size(data.x().getValues()))
           .build();
     } finally {
       if (tableDataList != null) {
@@ -1719,7 +1818,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               serviceOptions.getRetrySettings(),
-              serviceOptions.getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(serviceOptions.getResultRetryAlgorithm()),
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
@@ -1796,7 +1895,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getOptions().getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(getOptions().getResultRetryAlgorithm()),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -1853,7 +1952,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               serviceOptions.getRetrySettings(),
-              serviceOptions.getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(serviceOptions.getResultRetryAlgorithm()),
               serviceOptions.getClock(),
               EMPTY_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
@@ -1908,7 +2007,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             }
           },
           getOptions().getRetrySettings(),
-          getOptions().getResultRetryAlgorithm(),
+          BigQueryRetryHelper.maybeWrapForHttpRetry(getOptions().getResultRetryAlgorithm()),
           getOptions().getClock(),
           EMPTY_RETRY_CONFIG,
           getOptions().isOpenTelemetryTracingEnabled(),
@@ -1998,6 +2097,17 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
       return job;
     }
 
+    StatementType statementType =
+        results.getStatementType() != null
+            ? StatementType.valueOf(results.getStatementType())
+            : null;
+    Long totalBytesBilled = results.getTotalBytesBilled();
+    Long totalBytesProcessed = results.getTotalBytesProcessed();
+    Long totalSlotMs = results.getTotalSlotMs();
+    Long numDmlAffectedRows = results.getNumDmlAffectedRows();
+    SessionInfo sessionInfo =
+        results.getSessionInfo() != null ? SessionInfo.fromPb(results.getSessionInfo()) : null;
+
     if (results.getPageToken() != null) {
       JobId jobId = JobId.fromPb(results.getJobReference());
       String cursor = results.getPageToken();
@@ -2016,6 +2126,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           .setJobId(jobId)
           .setQueryId(results.getQueryId())
           .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
+          .setRowsInPage(results.getRows() != null ? (long) results.getRows().size() : 0L)
+          .setStatementType(statementType)
+          .setTotalBytesBilled(totalBytesBilled)
+          .setTotalBytesProcessed(totalBytesProcessed)
+          .setTotalSlotMs(totalSlotMs)
+          .setNumDmlAffectedRows(numDmlAffectedRows)
+          .setSessionInfo(sessionInfo)
           .build();
     }
     // only 1 page of result
@@ -2035,6 +2152,13 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             results.getJobReference() != null ? JobId.fromPb(results.getJobReference()) : null)
         .setQueryId(results.getQueryId())
         .setJobCreationReason(JobCreationReason.fromPb(results.getJobCreationReason()))
+        .setRowsInPage(results.getRows() != null ? (long) results.getRows().size() : 0L)
+        .setStatementType(statementType)
+        .setTotalBytesBilled(totalBytesBilled)
+        .setTotalBytesProcessed(totalBytesProcessed)
+        .setTotalSlotMs(totalSlotMs)
+        .setNumDmlAffectedRows(numDmlAffectedRows)
+        .setSessionInfo(sessionInfo)
         .build();
   }
 
@@ -2069,16 +2193,20 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions()
               .getOpenTelemetryTracer()
               .spanBuilder("com.google.cloud.bigquery.BigQuery.queryWithTimeout")
-              .setAllAttributes(jobId != null ? jobId.getOtelAttributes() : null)
+              .setAllAttributes(jobId != null ? jobId.getOtelAttributes() : Attributes.empty())
               .setAllAttributes(otelAttributesFromOptions(options))
               .startSpan();
     }
     try (Scope queryScope = querySpan != null ? querySpan.makeCurrent() : null) {
-      // If all parameters passed in configuration are supported by the query() method on the
-      // backend, put on fast path
+      // The fast query path (jobs.query API) is preferred to reduce latency by avoiding
+      // the slow fallback path (jobs.insert API). We will opt to use it if the configuration
+      // and JobId allow (i.e. if all parameters passed in configuration are supported).
       QueryRequestInfo requestInfo =
           new QueryRequestInfo(configuration, getOptions().getDataFormatOptions());
-      if (requestInfo.isFastQuerySupported(jobId)) {
+      // Fast query path is not possible if job is specified in the JobID object.
+      // Respect Job field value in JobId specified by user.
+      // Specifying it will force the query to take the slower path.
+      if (requestInfo.isFastQuerySupported() && (jobId == null || jobId.getJob() == null)) {
         // Be careful when setting the projectID in JobId, if a projectID is specified in the JobId,
         // the job created by the query method will use that project. This may cause the query to
         // fail with "Access denied" if the project do not have enough permissions to run the job.
@@ -2122,7 +2250,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
           getOptions()
               .getOpenTelemetryTracer()
               .spanBuilder("com.google.cloud.bigquery.BigQuery.getQueryResults")
-              .setAllAttributes(jobId.getOtelAttributes())
+              .setAllAttributes(jobId != null ? jobId.getOtelAttributes() : Attributes.empty())
               .setAllAttributes(otelAttributesFromOptions(options))
               .startSpan();
     }
@@ -2163,7 +2291,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               serviceOptions.getRetrySettings(),
-              serviceOptions.getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(serviceOptions.getResultRetryAlgorithm()),
               serviceOptions.getClock(),
               DEFAULT_RETRY_CONFIG,
               serviceOptions.isOpenTelemetryTracingEnabled(),
@@ -2234,7 +2362,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getOptions().getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(getOptions().getResultRetryAlgorithm()),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -2328,7 +2456,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 }
               },
               getOptions().getRetrySettings(),
-              getOptions().getResultRetryAlgorithm(),
+              BigQueryRetryHelper.maybeWrapForHttpRetry(getOptions().getResultRetryAlgorithm()),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),

@@ -25,6 +25,7 @@ import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse
 import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.SearchMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -55,6 +56,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chat.v1.Attachment;
+import com.google.chat.v1.Availability;
 import com.google.chat.v1.CompleteImportSpaceRequest;
 import com.google.chat.v1.CompleteImportSpaceResponse;
 import com.google.chat.v1.CreateCustomEmojiRequest;
@@ -74,6 +76,7 @@ import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.FindGroupChatsRequest;
 import com.google.chat.v1.FindGroupChatsResponse;
 import com.google.chat.v1.GetAttachmentRequest;
+import com.google.chat.v1.GetAvailabilityRequest;
 import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
 import com.google.chat.v1.GetMessageRequest;
@@ -98,6 +101,9 @@ import com.google.chat.v1.ListSpaceEventsRequest;
 import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
+import com.google.chat.v1.MarkAsActiveRequest;
+import com.google.chat.v1.MarkAsAwayRequest;
+import com.google.chat.v1.MarkAsDoNotDisturbRequest;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
 import com.google.chat.v1.MoveSectionItemRequest;
@@ -105,6 +111,9 @@ import com.google.chat.v1.MoveSectionItemResponse;
 import com.google.chat.v1.PositionSectionRequest;
 import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
+import com.google.chat.v1.SearchMessageResult;
+import com.google.chat.v1.SearchMessagesRequest;
+import com.google.chat.v1.SearchMessagesResponse;
 import com.google.chat.v1.SearchSpacesRequest;
 import com.google.chat.v1.SearchSpacesResponse;
 import com.google.chat.v1.Section;
@@ -115,6 +124,7 @@ import com.google.chat.v1.SpaceEvent;
 import com.google.chat.v1.SpaceNotificationSetting;
 import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
+import com.google.chat.v1.UpdateAvailabilityRequest;
 import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
 import com.google.chat.v1.UpdateSectionRequest;
@@ -132,6 +142,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -183,6 +195,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
 public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSettings> {
@@ -194,6 +207,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .add("https://www.googleapis.com/auth/chat.admin.memberships.readonly")
           .add("https://www.googleapis.com/auth/chat.admin.spaces")
           .add("https://www.googleapis.com/auth/chat.admin.spaces.readonly")
+          .add("https://www.googleapis.com/auth/chat.app.all.memberships.readonly")
+          .add("https://www.googleapis.com/auth/chat.app.all.messages.readonly")
+          .add("https://www.googleapis.com/auth/chat.app.all.spaces.readonly")
           .add("https://www.googleapis.com/auth/chat.app.delete")
           .add("https://www.googleapis.com/auth/chat.app.memberships")
           .add("https://www.googleapis.com/auth/chat.app.memberships.readonly")
@@ -218,6 +234,8 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .add("https://www.googleapis.com/auth/chat.spaces")
           .add("https://www.googleapis.com/auth/chat.spaces.create")
           .add("https://www.googleapis.com/auth/chat.spaces.readonly")
+          .add("https://www.googleapis.com/auth/chat.users.availability")
+          .add("https://www.googleapis.com/auth/chat.users.availability.readonly")
           .add("https://www.googleapis.com/auth/chat.users.readstate")
           .add("https://www.googleapis.com/auth/chat.users.readstate.readonly")
           .add("https://www.googleapis.com/auth/chat.users.sections")
@@ -236,6 +254,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   private final UnaryCallSettings<GetMessageRequest, Message> getMessageSettings;
   private final UnaryCallSettings<UpdateMessageRequest, Message> updateMessageSettings;
   private final UnaryCallSettings<DeleteMessageRequest, Empty> deleteMessageSettings;
+  private final PagedCallSettings<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+      searchMessagesSettings;
   private final UnaryCallSettings<GetAttachmentRequest, Attachment> getAttachmentSettings;
   private final UnaryCallSettings<UploadAttachmentRequest, UploadAttachmentResponse>
       uploadAttachmentSettings;
@@ -275,6 +296,13 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       updateSpaceReadStateSettings;
   private final UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateSettings;
+  private final UnaryCallSettings<GetAvailabilityRequest, Availability> getAvailabilitySettings;
+  private final UnaryCallSettings<MarkAsActiveRequest, Availability> markAsActiveSettings;
+  private final UnaryCallSettings<MarkAsAwayRequest, Availability> markAsAwaySettings;
+  private final UnaryCallSettings<MarkAsDoNotDisturbRequest, Availability>
+      markAsDoNotDisturbSettings;
+  private final UnaryCallSettings<UpdateAvailabilityRequest, Availability>
+      updateAvailabilitySettings;
   private final UnaryCallSettings<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings;
   private final PagedCallSettings<
           ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
@@ -365,6 +393,43 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
             @Override
             public Iterable<Membership> extractResources(ListMembershipsResponse payload) {
               return payload.getMembershipsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult>
+      SEARCH_MESSAGES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public SearchMessagesRequest injectToken(SearchMessagesRequest payload, String token) {
+              return SearchMessagesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public SearchMessagesRequest injectPageSize(
+                SearchMessagesRequest payload, int pageSize) {
+              return SearchMessagesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(SearchMessagesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(SearchMessagesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SearchMessageResult> extractResources(SearchMessagesResponse payload) {
+              return payload.getResultsList();
             }
           };
 
@@ -687,6 +752,24 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           };
 
   private static final PagedListResponseFactory<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+      SEARCH_MESSAGES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>() {
+            @Override
+            public ApiFuture<SearchMessagesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<SearchMessagesRequest, SearchMessagesResponse> callable,
+                SearchMessagesRequest request,
+                ApiCallContext context,
+                ApiFuture<SearchMessagesResponse> futureResponse) {
+              PageContext<SearchMessagesRequest, SearchMessagesResponse, SearchMessageResult>
+                  pageContext =
+                      PageContext.create(callable, SEARCH_MESSAGES_PAGE_STR_DESC, request, context);
+              return SearchMessagesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListSpacesRequest, ListSpacesResponse, ListSpacesPagedResponse>
       LIST_SPACES_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -864,6 +947,13 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     return deleteMessageSettings;
   }
 
+  /** Returns the object with the settings used for calls to searchMessages. */
+  public PagedCallSettings<
+          SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+      searchMessagesSettings() {
+    return searchMessagesSettings;
+  }
+
   /** Returns the object with the settings used for calls to getAttachment. */
   public UnaryCallSettings<GetAttachmentRequest, Attachment> getAttachmentSettings() {
     return getAttachmentSettings;
@@ -998,6 +1088,31 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   public UnaryCallSettings<GetThreadReadStateRequest, ThreadReadState>
       getThreadReadStateSettings() {
     return getThreadReadStateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAvailability. */
+  public UnaryCallSettings<GetAvailabilityRequest, Availability> getAvailabilitySettings() {
+    return getAvailabilitySettings;
+  }
+
+  /** Returns the object with the settings used for calls to markAsActive. */
+  public UnaryCallSettings<MarkAsActiveRequest, Availability> markAsActiveSettings() {
+    return markAsActiveSettings;
+  }
+
+  /** Returns the object with the settings used for calls to markAsAway. */
+  public UnaryCallSettings<MarkAsAwayRequest, Availability> markAsAwaySettings() {
+    return markAsAwaySettings;
+  }
+
+  /** Returns the object with the settings used for calls to markAsDoNotDisturb. */
+  public UnaryCallSettings<MarkAsDoNotDisturbRequest, Availability> markAsDoNotDisturbSettings() {
+    return markAsDoNotDisturbSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAvailability. */
+  public UnaryCallSettings<UpdateAvailabilityRequest, Availability> updateAvailabilitySettings() {
+    return updateAvailabilitySettings;
   }
 
   /** Returns the object with the settings used for calls to getSpaceEvent. */
@@ -1163,7 +1278,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -1182,6 +1297,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     getMessageSettings = settingsBuilder.getMessageSettings().build();
     updateMessageSettings = settingsBuilder.updateMessageSettings().build();
     deleteMessageSettings = settingsBuilder.deleteMessageSettings().build();
+    searchMessagesSettings = settingsBuilder.searchMessagesSettings().build();
     getAttachmentSettings = settingsBuilder.getAttachmentSettings().build();
     uploadAttachmentSettings = settingsBuilder.uploadAttachmentSettings().build();
     listSpacesSettings = settingsBuilder.listSpacesSettings().build();
@@ -1207,6 +1323,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     getSpaceReadStateSettings = settingsBuilder.getSpaceReadStateSettings().build();
     updateSpaceReadStateSettings = settingsBuilder.updateSpaceReadStateSettings().build();
     getThreadReadStateSettings = settingsBuilder.getThreadReadStateSettings().build();
+    getAvailabilitySettings = settingsBuilder.getAvailabilitySettings().build();
+    markAsActiveSettings = settingsBuilder.markAsActiveSettings().build();
+    markAsAwaySettings = settingsBuilder.markAsAwaySettings().build();
+    markAsDoNotDisturbSettings = settingsBuilder.markAsDoNotDisturbSettings().build();
+    updateAvailabilitySettings = settingsBuilder.updateAvailabilitySettings().build();
     getSpaceEventSettings = settingsBuilder.getSpaceEventSettings().build();
     listSpaceEventsSettings = settingsBuilder.listSpaceEventsSettings().build();
     getSpaceNotificationSettingSettings =
@@ -1245,6 +1366,9 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     private final UnaryCallSettings.Builder<GetMessageRequest, Message> getMessageSettings;
     private final UnaryCallSettings.Builder<UpdateMessageRequest, Message> updateMessageSettings;
     private final UnaryCallSettings.Builder<DeleteMessageRequest, Empty> deleteMessageSettings;
+    private final PagedCallSettings.Builder<
+            SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+        searchMessagesSettings;
     private final UnaryCallSettings.Builder<GetAttachmentRequest, Attachment> getAttachmentSettings;
     private final UnaryCallSettings.Builder<UploadAttachmentRequest, UploadAttachmentResponse>
         uploadAttachmentSettings;
@@ -1292,6 +1416,14 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
         updateSpaceReadStateSettings;
     private final UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
         getThreadReadStateSettings;
+    private final UnaryCallSettings.Builder<GetAvailabilityRequest, Availability>
+        getAvailabilitySettings;
+    private final UnaryCallSettings.Builder<MarkAsActiveRequest, Availability> markAsActiveSettings;
+    private final UnaryCallSettings.Builder<MarkAsAwayRequest, Availability> markAsAwaySettings;
+    private final UnaryCallSettings.Builder<MarkAsDoNotDisturbRequest, Availability>
+        markAsDoNotDisturbSettings;
+    private final UnaryCallSettings.Builder<UpdateAvailabilityRequest, Availability>
+        updateAvailabilitySettings;
     private final UnaryCallSettings.Builder<GetSpaceEventRequest, SpaceEvent> getSpaceEventSettings;
     private final PagedCallSettings.Builder<
             ListSpaceEventsRequest, ListSpaceEventsResponse, ListSpaceEventsPagedResponse>
@@ -1350,7 +1482,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       createMessageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1360,6 +1492,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getMessageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateMessageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteMessageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      searchMessagesSettings = PagedCallSettings.newBuilder(SEARCH_MESSAGES_PAGE_STR_FACT);
       getAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       uploadAttachmentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSpacesSettings = PagedCallSettings.newBuilder(LIST_SPACES_PAGE_STR_FACT);
@@ -1385,6 +1518,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSpaceReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getThreadReadStateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAvailabilitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      markAsActiveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      markAsAwaySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      markAsDoNotDisturbSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAvailabilitySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSpaceEventSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSpaceEventsSettings = PagedCallSettings.newBuilder(LIST_SPACE_EVENTS_PAGE_STR_FACT);
       getSpaceNotificationSettingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1406,6 +1544,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getMessageSettings,
               updateMessageSettings,
               deleteMessageSettings,
+              searchMessagesSettings,
               getAttachmentSettings,
               uploadAttachmentSettings,
               listSpacesSettings,
@@ -1431,6 +1570,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getSpaceReadStateSettings,
               updateSpaceReadStateSettings,
               getThreadReadStateSettings,
+              getAvailabilitySettings,
+              markAsActiveSettings,
+              markAsAwaySettings,
+              markAsDoNotDisturbSettings,
+              updateAvailabilitySettings,
               getSpaceEventSettings,
               listSpaceEventsSettings,
               getSpaceNotificationSettingSettings,
@@ -1455,6 +1599,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getMessageSettings = settings.getMessageSettings.toBuilder();
       updateMessageSettings = settings.updateMessageSettings.toBuilder();
       deleteMessageSettings = settings.deleteMessageSettings.toBuilder();
+      searchMessagesSettings = settings.searchMessagesSettings.toBuilder();
       getAttachmentSettings = settings.getAttachmentSettings.toBuilder();
       uploadAttachmentSettings = settings.uploadAttachmentSettings.toBuilder();
       listSpacesSettings = settings.listSpacesSettings.toBuilder();
@@ -1480,6 +1625,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
       getSpaceReadStateSettings = settings.getSpaceReadStateSettings.toBuilder();
       updateSpaceReadStateSettings = settings.updateSpaceReadStateSettings.toBuilder();
       getThreadReadStateSettings = settings.getThreadReadStateSettings.toBuilder();
+      getAvailabilitySettings = settings.getAvailabilitySettings.toBuilder();
+      markAsActiveSettings = settings.markAsActiveSettings.toBuilder();
+      markAsAwaySettings = settings.markAsAwaySettings.toBuilder();
+      markAsDoNotDisturbSettings = settings.markAsDoNotDisturbSettings.toBuilder();
+      updateAvailabilitySettings = settings.updateAvailabilitySettings.toBuilder();
       getSpaceEventSettings = settings.getSpaceEventSettings.toBuilder();
       listSpaceEventsSettings = settings.listSpaceEventsSettings.toBuilder();
       getSpaceNotificationSettingSettings =
@@ -1503,6 +1653,7 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getMessageSettings,
               updateMessageSettings,
               deleteMessageSettings,
+              searchMessagesSettings,
               getAttachmentSettings,
               uploadAttachmentSettings,
               listSpacesSettings,
@@ -1528,6 +1679,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
               getSpaceReadStateSettings,
               updateSpaceReadStateSettings,
               getThreadReadStateSettings,
+              getAvailabilitySettings,
+              markAsActiveSettings,
+              markAsAwaySettings,
+              markAsDoNotDisturbSettings,
+              updateAvailabilitySettings,
               getSpaceEventSettings,
               listSpaceEventsSettings,
               getSpaceNotificationSettingSettings,
@@ -1598,6 +1754,11 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
 
       builder
           .deleteMessageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .searchMessagesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1727,6 +1888,31 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getAvailabilitySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .markAsActiveSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .markAsAwaySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .markAsDoNotDisturbSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateAvailabilitySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .getSpaceEventSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -1836,6 +2022,13 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     /** Returns the builder for the settings used for calls to deleteMessage. */
     public UnaryCallSettings.Builder<DeleteMessageRequest, Empty> deleteMessageSettings() {
       return deleteMessageSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to searchMessages. */
+    public PagedCallSettings.Builder<
+            SearchMessagesRequest, SearchMessagesResponse, SearchMessagesPagedResponse>
+        searchMessagesSettings() {
+      return searchMessagesSettings;
     }
 
     /** Returns the builder for the settings used for calls to getAttachment. */
@@ -1979,6 +2172,34 @@ public class ChatServiceStubSettings extends StubSettings<ChatServiceStubSetting
     public UnaryCallSettings.Builder<GetThreadReadStateRequest, ThreadReadState>
         getThreadReadStateSettings() {
       return getThreadReadStateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAvailability. */
+    public UnaryCallSettings.Builder<GetAvailabilityRequest, Availability>
+        getAvailabilitySettings() {
+      return getAvailabilitySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to markAsActive. */
+    public UnaryCallSettings.Builder<MarkAsActiveRequest, Availability> markAsActiveSettings() {
+      return markAsActiveSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to markAsAway. */
+    public UnaryCallSettings.Builder<MarkAsAwayRequest, Availability> markAsAwaySettings() {
+      return markAsAwaySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to markAsDoNotDisturb. */
+    public UnaryCallSettings.Builder<MarkAsDoNotDisturbRequest, Availability>
+        markAsDoNotDisturbSettings() {
+      return markAsDoNotDisturbSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAvailability. */
+    public UnaryCallSettings.Builder<UpdateAvailabilityRequest, Availability>
+        updateAvailabilitySettings() {
+      return updateAvailabilitySettings;
     }
 
     /** Returns the builder for the settings used for calls to getSpaceEvent. */

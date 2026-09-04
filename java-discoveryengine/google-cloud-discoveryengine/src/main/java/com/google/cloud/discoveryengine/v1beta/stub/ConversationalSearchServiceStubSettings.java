@@ -41,6 +41,7 @@ import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
+import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -75,6 +76,8 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -128,6 +131,7 @@ import javax.annotation.Generated;
  * Guide](https://docs.cloud.google.com/java/docs/client-retries) for additional support in setting
  * retries.
  */
+@NullMarked
 @BetaApi
 @Generated("by gapic-generator-java")
 @SuppressWarnings("CanonicalDuration")
@@ -135,7 +139,11 @@ public class ConversationalSearchServiceStubSettings
     extends StubSettings<ConversationalSearchServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/discoveryengine.readwrite")
+          .add("https://www.googleapis.com/auth/discoveryengine.serving.readwrite")
+          .build();
 
   private final UnaryCallSettings<ConverseConversationRequest, ConverseConversationResponse>
       converseConversationSettings;
@@ -149,6 +157,8 @@ public class ConversationalSearchServiceStubSettings
           ListConversationsRequest, ListConversationsResponse, ListConversationsPagedResponse>
       listConversationsSettings;
   private final UnaryCallSettings<AnswerQueryRequest, AnswerQueryResponse> answerQuerySettings;
+  private final ServerStreamingCallSettings<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQuerySettings;
   private final UnaryCallSettings<GetAnswerRequest, Answer> getAnswerSettings;
   private final UnaryCallSettings<CreateSessionRequest, Session> createSessionSettings;
   private final UnaryCallSettings<DeleteSessionRequest, Empty> deleteSessionSettings;
@@ -306,6 +316,12 @@ public class ConversationalSearchServiceStubSettings
     return answerQuerySettings;
   }
 
+  /** Returns the object with the settings used for calls to streamAnswerQuery. */
+  public ServerStreamingCallSettings<AnswerQueryRequest, AnswerQueryResponse>
+      streamAnswerQuerySettings() {
+    return streamAnswerQuerySettings;
+  }
+
   /** Returns the object with the settings used for calls to getAnswer. */
   public UnaryCallSettings<GetAnswerRequest, Answer> getAnswerSettings() {
     return getAnswerSettings;
@@ -436,7 +452,7 @@ public class ConversationalSearchServiceStubSettings
   }
 
   /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
+  public static Builder newBuilder(@Nullable ClientContext clientContext) {
     return new Builder(clientContext);
   }
 
@@ -455,6 +471,7 @@ public class ConversationalSearchServiceStubSettings
     getConversationSettings = settingsBuilder.getConversationSettings().build();
     listConversationsSettings = settingsBuilder.listConversationsSettings().build();
     answerQuerySettings = settingsBuilder.answerQuerySettings().build();
+    streamAnswerQuerySettings = settingsBuilder.streamAnswerQuerySettings().build();
     getAnswerSettings = settingsBuilder.getAnswerSettings().build();
     createSessionSettings = settingsBuilder.createSessionSettings().build();
     deleteSessionSettings = settingsBuilder.deleteSessionSettings().build();
@@ -492,6 +509,8 @@ public class ConversationalSearchServiceStubSettings
         listConversationsSettings;
     private final UnaryCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
         answerQuerySettings;
+    private final ServerStreamingCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
+        streamAnswerQuerySettings;
     private final UnaryCallSettings.Builder<GetAnswerRequest, Answer> getAnswerSettings;
     private final UnaryCallSettings.Builder<CreateSessionRequest, Session> createSessionSettings;
     private final UnaryCallSettings.Builder<DeleteSessionRequest, Empty> deleteSessionSettings;
@@ -535,7 +554,7 @@ public class ConversationalSearchServiceStubSettings
       this(((ClientContext) null));
     }
 
-    protected Builder(ClientContext clientContext) {
+    protected Builder(@Nullable ClientContext clientContext) {
       super(clientContext);
 
       converseConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -545,6 +564,7 @@ public class ConversationalSearchServiceStubSettings
       getConversationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listConversationsSettings = PagedCallSettings.newBuilder(LIST_CONVERSATIONS_PAGE_STR_FACT);
       answerQuerySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamAnswerQuerySettings = ServerStreamingCallSettings.newBuilder();
       getAnswerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSessionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -580,6 +600,7 @@ public class ConversationalSearchServiceStubSettings
       getConversationSettings = settings.getConversationSettings.toBuilder();
       listConversationsSettings = settings.listConversationsSettings.toBuilder();
       answerQuerySettings = settings.answerQuerySettings.toBuilder();
+      streamAnswerQuerySettings = settings.streamAnswerQuerySettings.toBuilder();
       getAnswerSettings = settings.getAnswerSettings.toBuilder();
       createSessionSettings = settings.createSessionSettings.toBuilder();
       deleteSessionSettings = settings.deleteSessionSettings.toBuilder();
@@ -661,6 +682,11 @@ public class ConversationalSearchServiceStubSettings
 
       builder
           .answerQuerySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .streamAnswerQuerySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
@@ -753,6 +779,12 @@ public class ConversationalSearchServiceStubSettings
     public UnaryCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
         answerQuerySettings() {
       return answerQuerySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamAnswerQuery. */
+    public ServerStreamingCallSettings.Builder<AnswerQueryRequest, AnswerQueryResponse>
+        streamAnswerQuerySettings() {
+      return streamAnswerQuerySettings;
     }
 
     /** Returns the builder for the settings used for calls to getAnswer. */

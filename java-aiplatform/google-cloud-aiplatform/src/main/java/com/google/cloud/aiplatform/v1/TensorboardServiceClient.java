@@ -47,6 +47,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
@@ -756,9 +758,10 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@NullMarked
 @Generated("by gapic-generator-java")
 public class TensorboardServiceClient implements BackgroundResource {
-  private final TensorboardServiceSettings settings;
+  private final @Nullable TensorboardServiceSettings settings;
   private final TensorboardServiceStub stub;
   private final OperationsClient operationsClient;
 
@@ -801,7 +804,7 @@ public class TensorboardServiceClient implements BackgroundResource {
     this.operationsClient = OperationsClient.create(this.stub.getOperationsStub());
   }
 
-  public final TensorboardServiceSettings getSettings() {
+  public final @Nullable TensorboardServiceSettings getSettings() {
     return settings;
   }
 
@@ -843,7 +846,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Tensorboard, CreateTensorboardOperationMetadata>
-      createTensorboardAsync(TensorboardName parent, Tensorboard tensorboard) {
+      createTensorboardAsync(@Nullable TensorboardName parent, Tensorboard tensorboard) {
     CreateTensorboardRequest request =
         CreateTensorboardRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -996,7 +999,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final Tensorboard getTensorboard(TensorboardName name) {
+  public final Tensorboard getTensorboard(@Nullable TensorboardName name) {
     GetTensorboardRequest request =
         GetTensorboardRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getTensorboard(request);
@@ -1237,7 +1240,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListTensorboardsPagedResponse listTensorboards(LocationName parent) {
+  public final ListTensorboardsPagedResponse listTensorboards(@Nullable LocationName parent) {
     ListTensorboardsRequest request =
         ListTensorboardsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -1412,7 +1415,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTensorboardAsync(
-      TensorboardName name) {
+      @Nullable TensorboardName name) {
     DeleteTensorboardRequest request =
         DeleteTensorboardRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -1556,7 +1559,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReadTensorboardUsageResponse readTensorboardUsage(TensorboardName tensorboard) {
+  public final ReadTensorboardUsageResponse readTensorboardUsage(
+      @Nullable TensorboardName tensorboard) {
     ReadTensorboardUsageRequest request =
         ReadTensorboardUsageRequest.newBuilder()
             .setTensorboard(tensorboard == null ? null : tensorboard.toString())
@@ -1678,7 +1682,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ReadTensorboardSizeResponse readTensorboardSize(TensorboardName tensorboard) {
+  public final ReadTensorboardSizeResponse readTensorboardSize(
+      @Nullable TensorboardName tensorboard) {
     ReadTensorboardSizeRequest request =
         ReadTensorboardSizeRequest.newBuilder()
             .setTensorboard(tensorboard == null ? null : tensorboard.toString())
@@ -1808,7 +1813,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TensorboardExperiment createTensorboardExperiment(
-      TensorboardExperimentName parent,
+      @Nullable TensorboardExperimentName parent,
       TensorboardExperiment tensorboardExperiment,
       String tensorboardExperimentId) {
     CreateTensorboardExperimentRequest request =
@@ -1956,7 +1961,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TensorboardExperiment getTensorboardExperiment(TensorboardExperimentName name) {
+  public final TensorboardExperiment getTensorboardExperiment(
+      @Nullable TensorboardExperimentName name) {
     GetTensorboardExperimentRequest request =
         GetTensorboardExperimentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2185,7 +2191,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTensorboardExperimentsPagedResponse listTensorboardExperiments(
-      TensorboardName parent) {
+      @Nullable TensorboardName parent) {
     ListTensorboardExperimentsRequest request =
         ListTensorboardExperimentsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2365,7 +2371,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTensorboardExperimentAsync(
-      TensorboardExperimentName name) {
+      @Nullable TensorboardExperimentName name) {
     DeleteTensorboardExperimentRequest request =
         DeleteTensorboardExperimentRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -2535,7 +2541,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TensorboardRun createTensorboardRun(
-      TensorboardRunName parent, TensorboardRun tensorboardRun, String tensorboardRunId) {
+      @Nullable TensorboardRunName parent, TensorboardRun tensorboardRun, String tensorboardRunId) {
     CreateTensorboardRunRequest request =
         CreateTensorboardRunRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2685,7 +2691,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateTensorboardRunsResponse batchCreateTensorboardRuns(
-      TensorboardExperimentName parent, List<CreateTensorboardRunRequest> requests) {
+      @Nullable TensorboardExperimentName parent, List<CreateTensorboardRunRequest> requests) {
     BatchCreateTensorboardRunsRequest request =
         BatchCreateTensorboardRunsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2825,7 +2831,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TensorboardRun getTensorboardRun(TensorboardRunName name) {
+  public final TensorboardRun getTensorboardRun(@Nullable TensorboardRunName name) {
     GetTensorboardRunRequest request =
         GetTensorboardRunRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3050,7 +3056,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTensorboardRunsPagedResponse listTensorboardRuns(
-      TensorboardExperimentName parent) {
+      @Nullable TensorboardExperimentName parent) {
     ListTensorboardRunsRequest request =
         ListTensorboardRunsRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3242,7 +3248,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTensorboardRunAsync(
-      TensorboardRunName name) {
+      @Nullable TensorboardRunName name) {
     DeleteTensorboardRunRequest request =
         DeleteTensorboardRunRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3409,7 +3415,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchCreateTensorboardTimeSeriesResponse batchCreateTensorboardTimeSeries(
-      TensorboardExperimentName parent, List<CreateTensorboardTimeSeriesRequest> requests) {
+      @Nullable TensorboardExperimentName parent,
+      List<CreateTensorboardTimeSeriesRequest> requests) {
     BatchCreateTensorboardTimeSeriesRequest request =
         BatchCreateTensorboardTimeSeriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3557,7 +3564,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TensorboardTimeSeries createTensorboardTimeSeries(
-      TensorboardTimeSeriesName parent, TensorboardTimeSeries tensorboardTimeSeries) {
+      @Nullable TensorboardTimeSeriesName parent, TensorboardTimeSeries tensorboardTimeSeries) {
     CreateTensorboardTimeSeriesRequest request =
         CreateTensorboardTimeSeriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -3713,7 +3720,8 @@ public class TensorboardServiceClient implements BackgroundResource {
    *     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final TensorboardTimeSeries getTensorboardTimeSeries(TensorboardTimeSeriesName name) {
+  public final TensorboardTimeSeries getTensorboardTimeSeries(
+      @Nullable TensorboardTimeSeriesName name) {
     GetTensorboardTimeSeriesRequest request =
         GetTensorboardTimeSeriesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -3961,7 +3969,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListTensorboardTimeSeriesPagedResponse listTensorboardTimeSeries(
-      TensorboardRunName parent) {
+      @Nullable TensorboardRunName parent) {
     ListTensorboardTimeSeriesRequest request =
         ListTensorboardTimeSeriesRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -4154,7 +4162,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, DeleteOperationMetadata> deleteTensorboardTimeSeriesAsync(
-      TensorboardTimeSeriesName name) {
+      @Nullable TensorboardTimeSeriesName name) {
     DeleteTensorboardTimeSeriesRequest request =
         DeleteTensorboardTimeSeriesRequest.newBuilder()
             .setName(name == null ? null : name.toString())
@@ -4343,7 +4351,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BatchReadTensorboardTimeSeriesDataResponse batchReadTensorboardTimeSeriesData(
-      TensorboardName tensorboard) {
+      @Nullable TensorboardName tensorboard) {
     BatchReadTensorboardTimeSeriesDataRequest request =
         BatchReadTensorboardTimeSeriesDataRequest.newBuilder()
             .setTensorboard(tensorboard == null ? null : tensorboard.toString())
@@ -4489,7 +4497,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ReadTensorboardTimeSeriesDataResponse readTensorboardTimeSeriesData(
-      TensorboardTimeSeriesName tensorboardTimeSeries) {
+      @Nullable TensorboardTimeSeriesName tensorboardTimeSeries) {
     ReadTensorboardTimeSeriesDataRequest request =
         ReadTensorboardTimeSeriesDataRequest.newBuilder()
             .setTensorboardTimeSeries(
@@ -4700,7 +4708,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WriteTensorboardExperimentDataResponse writeTensorboardExperimentData(
-      TensorboardExperimentName tensorboardExperiment,
+      @Nullable TensorboardExperimentName tensorboardExperiment,
       List<WriteTensorboardRunDataRequest> writeRunDataRequests) {
     WriteTensorboardExperimentDataRequest request =
         WriteTensorboardExperimentDataRequest.newBuilder()
@@ -4854,7 +4862,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WriteTensorboardRunDataResponse writeTensorboardRunData(
-      TensorboardRunName tensorboardRun, List<TimeSeriesData> timeSeriesData) {
+      @Nullable TensorboardRunName tensorboardRun, List<TimeSeriesData> timeSeriesData) {
     WriteTensorboardRunDataRequest request =
         WriteTensorboardRunDataRequest.newBuilder()
             .setTensorboardRun(tensorboardRun == null ? null : tensorboardRun.toString())
@@ -5004,7 +5012,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ExportTensorboardTimeSeriesDataPagedResponse exportTensorboardTimeSeriesData(
-      TensorboardTimeSeriesName tensorboardTimeSeries) {
+      @Nullable TensorboardTimeSeriesName tensorboardTimeSeries) {
     ExportTensorboardTimeSeriesDataRequest request =
         ExportTensorboardTimeSeriesDataRequest.newBuilder()
             .setTensorboardTimeSeries(
@@ -5626,8 +5634,9 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListTensorboardsRequest, ListTensorboardsResponse, Tensorboard, ListTensorboardsPage> {
 
     private ListTensorboardsPage(
-        PageContext<ListTensorboardsRequest, ListTensorboardsResponse, Tensorboard> context,
-        ListTensorboardsResponse response) {
+        @Nullable PageContext<ListTensorboardsRequest, ListTensorboardsResponse, Tensorboard>
+            context,
+        @Nullable ListTensorboardsResponse response) {
       super(context, response);
     }
 
@@ -5637,14 +5646,16 @@ public class TensorboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListTensorboardsPage createPage(
-        PageContext<ListTensorboardsRequest, ListTensorboardsResponse, Tensorboard> context,
-        ListTensorboardsResponse response) {
+        @Nullable PageContext<ListTensorboardsRequest, ListTensorboardsResponse, Tensorboard>
+            context,
+        @Nullable ListTensorboardsResponse response) {
       return new ListTensorboardsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTensorboardsPage> createPageAsync(
-        PageContext<ListTensorboardsRequest, ListTensorboardsResponse, Tensorboard> context,
+        @Nullable PageContext<ListTensorboardsRequest, ListTensorboardsResponse, Tensorboard>
+            context,
         ApiFuture<ListTensorboardsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -5659,7 +5670,7 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListTensorboardsFixedSizeCollection> {
 
     private ListTensorboardsFixedSizeCollection(
-        List<ListTensorboardsPage> pages, int collectionSize) {
+        @Nullable List<ListTensorboardsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5669,7 +5680,7 @@ public class TensorboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListTensorboardsFixedSizeCollection createCollection(
-        List<ListTensorboardsPage> pages, int collectionSize) {
+        @Nullable List<ListTensorboardsPage> pages, int collectionSize) {
       return new ListTensorboardsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5710,12 +5721,13 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListTensorboardExperimentsPage> {
 
     private ListTensorboardExperimentsPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListTensorboardExperimentsRequest,
                 ListTensorboardExperimentsResponse,
                 TensorboardExperiment>
             context,
-        ListTensorboardExperimentsResponse response) {
+        @Nullable ListTensorboardExperimentsResponse response) {
       super(context, response);
     }
 
@@ -5725,18 +5737,20 @@ public class TensorboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListTensorboardExperimentsPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListTensorboardExperimentsRequest,
                 ListTensorboardExperimentsResponse,
                 TensorboardExperiment>
             context,
-        ListTensorboardExperimentsResponse response) {
+        @Nullable ListTensorboardExperimentsResponse response) {
       return new ListTensorboardExperimentsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTensorboardExperimentsPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListTensorboardExperimentsRequest,
                 ListTensorboardExperimentsResponse,
                 TensorboardExperiment>
@@ -5755,7 +5769,7 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListTensorboardExperimentsFixedSizeCollection> {
 
     private ListTensorboardExperimentsFixedSizeCollection(
-        List<ListTensorboardExperimentsPage> pages, int collectionSize) {
+        @Nullable List<ListTensorboardExperimentsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5765,7 +5779,7 @@ public class TensorboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListTensorboardExperimentsFixedSizeCollection createCollection(
-        List<ListTensorboardExperimentsPage> pages, int collectionSize) {
+        @Nullable List<ListTensorboardExperimentsPage> pages, int collectionSize) {
       return new ListTensorboardExperimentsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5803,9 +5817,10 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListTensorboardRunsPage> {
 
     private ListTensorboardRunsPage(
-        PageContext<ListTensorboardRunsRequest, ListTensorboardRunsResponse, TensorboardRun>
+        @Nullable
+            PageContext<ListTensorboardRunsRequest, ListTensorboardRunsResponse, TensorboardRun>
             context,
-        ListTensorboardRunsResponse response) {
+        @Nullable ListTensorboardRunsResponse response) {
       super(context, response);
     }
 
@@ -5815,15 +5830,17 @@ public class TensorboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListTensorboardRunsPage createPage(
-        PageContext<ListTensorboardRunsRequest, ListTensorboardRunsResponse, TensorboardRun>
+        @Nullable
+            PageContext<ListTensorboardRunsRequest, ListTensorboardRunsResponse, TensorboardRun>
             context,
-        ListTensorboardRunsResponse response) {
+        @Nullable ListTensorboardRunsResponse response) {
       return new ListTensorboardRunsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTensorboardRunsPage> createPageAsync(
-        PageContext<ListTensorboardRunsRequest, ListTensorboardRunsResponse, TensorboardRun>
+        @Nullable
+            PageContext<ListTensorboardRunsRequest, ListTensorboardRunsResponse, TensorboardRun>
             context,
         ApiFuture<ListTensorboardRunsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
@@ -5839,7 +5856,7 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListTensorboardRunsFixedSizeCollection> {
 
     private ListTensorboardRunsFixedSizeCollection(
-        List<ListTensorboardRunsPage> pages, int collectionSize) {
+        @Nullable List<ListTensorboardRunsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5849,7 +5866,7 @@ public class TensorboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListTensorboardRunsFixedSizeCollection createCollection(
-        List<ListTensorboardRunsPage> pages, int collectionSize) {
+        @Nullable List<ListTensorboardRunsPage> pages, int collectionSize) {
       return new ListTensorboardRunsFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5890,12 +5907,13 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListTensorboardTimeSeriesPage> {
 
     private ListTensorboardTimeSeriesPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListTensorboardTimeSeriesRequest,
                 ListTensorboardTimeSeriesResponse,
                 TensorboardTimeSeries>
             context,
-        ListTensorboardTimeSeriesResponse response) {
+        @Nullable ListTensorboardTimeSeriesResponse response) {
       super(context, response);
     }
 
@@ -5905,18 +5923,20 @@ public class TensorboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListTensorboardTimeSeriesPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListTensorboardTimeSeriesRequest,
                 ListTensorboardTimeSeriesResponse,
                 TensorboardTimeSeries>
             context,
-        ListTensorboardTimeSeriesResponse response) {
+        @Nullable ListTensorboardTimeSeriesResponse response) {
       return new ListTensorboardTimeSeriesPage(context, response);
     }
 
     @Override
     public ApiFuture<ListTensorboardTimeSeriesPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ListTensorboardTimeSeriesRequest,
                 ListTensorboardTimeSeriesResponse,
                 TensorboardTimeSeries>
@@ -5935,7 +5955,7 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListTensorboardTimeSeriesFixedSizeCollection> {
 
     private ListTensorboardTimeSeriesFixedSizeCollection(
-        List<ListTensorboardTimeSeriesPage> pages, int collectionSize) {
+        @Nullable List<ListTensorboardTimeSeriesPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -5945,7 +5965,7 @@ public class TensorboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListTensorboardTimeSeriesFixedSizeCollection createCollection(
-        List<ListTensorboardTimeSeriesPage> pages, int collectionSize) {
+        @Nullable List<ListTensorboardTimeSeriesPage> pages, int collectionSize) {
       return new ListTensorboardTimeSeriesFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -5987,12 +6007,13 @@ public class TensorboardServiceClient implements BackgroundResource {
           ExportTensorboardTimeSeriesDataPage> {
 
     private ExportTensorboardTimeSeriesDataPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ExportTensorboardTimeSeriesDataRequest,
                 ExportTensorboardTimeSeriesDataResponse,
                 TimeSeriesDataPoint>
             context,
-        ExportTensorboardTimeSeriesDataResponse response) {
+        @Nullable ExportTensorboardTimeSeriesDataResponse response) {
       super(context, response);
     }
 
@@ -6002,18 +6023,20 @@ public class TensorboardServiceClient implements BackgroundResource {
 
     @Override
     protected ExportTensorboardTimeSeriesDataPage createPage(
-        PageContext<
+        @Nullable
+            PageContext<
                 ExportTensorboardTimeSeriesDataRequest,
                 ExportTensorboardTimeSeriesDataResponse,
                 TimeSeriesDataPoint>
             context,
-        ExportTensorboardTimeSeriesDataResponse response) {
+        @Nullable ExportTensorboardTimeSeriesDataResponse response) {
       return new ExportTensorboardTimeSeriesDataPage(context, response);
     }
 
     @Override
     public ApiFuture<ExportTensorboardTimeSeriesDataPage> createPageAsync(
-        PageContext<
+        @Nullable
+            PageContext<
                 ExportTensorboardTimeSeriesDataRequest,
                 ExportTensorboardTimeSeriesDataResponse,
                 TimeSeriesDataPoint>
@@ -6032,7 +6055,7 @@ public class TensorboardServiceClient implements BackgroundResource {
           ExportTensorboardTimeSeriesDataFixedSizeCollection> {
 
     private ExportTensorboardTimeSeriesDataFixedSizeCollection(
-        List<ExportTensorboardTimeSeriesDataPage> pages, int collectionSize) {
+        @Nullable List<ExportTensorboardTimeSeriesDataPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6042,7 +6065,7 @@ public class TensorboardServiceClient implements BackgroundResource {
 
     @Override
     protected ExportTensorboardTimeSeriesDataFixedSizeCollection createCollection(
-        List<ExportTensorboardTimeSeriesDataPage> pages, int collectionSize) {
+        @Nullable List<ExportTensorboardTimeSeriesDataPage> pages, int collectionSize) {
       return new ExportTensorboardTimeSeriesDataFixedSizeCollection(pages, collectionSize);
     }
   }
@@ -6076,8 +6099,8 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
 
     private ListLocationsPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       super(context, response);
     }
 
@@ -6087,14 +6110,14 @@ public class TensorboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsPage createPage(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
-        ListLocationsResponse response) {
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable ListLocationsResponse response) {
       return new ListLocationsPage(context, response);
     }
 
     @Override
     public ApiFuture<ListLocationsPage> createPageAsync(
-        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        @Nullable PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
         ApiFuture<ListLocationsResponse> futureResponse) {
       return super.createPageAsync(context, futureResponse);
     }
@@ -6108,7 +6131,8 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListLocationsPage,
           ListLocationsFixedSizeCollection> {
 
-    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+    private ListLocationsFixedSizeCollection(
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       super(pages, collectionSize);
     }
 
@@ -6118,7 +6142,7 @@ public class TensorboardServiceClient implements BackgroundResource {
 
     @Override
     protected ListLocationsFixedSizeCollection createCollection(
-        List<ListLocationsPage> pages, int collectionSize) {
+        @Nullable List<ListLocationsPage> pages, int collectionSize) {
       return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }

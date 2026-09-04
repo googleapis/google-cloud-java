@@ -34,13 +34,16 @@ package com.google.auth.oauth2;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Represents an in-memory storage of tokens. */
+@NullMarked
 public class MemoryTokensStorage implements TokenStore {
   private final Map<String, String> tokensStorage = new HashMap<>();
 
   @Override
-  public String load(String id) throws IOException {
+  public @Nullable String load(String id) throws IOException {
     return tokensStorage.get(id);
   }
 

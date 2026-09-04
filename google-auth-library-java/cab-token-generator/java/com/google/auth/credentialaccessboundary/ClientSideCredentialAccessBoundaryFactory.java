@@ -78,6 +78,8 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A factory for generating downscoped access tokens using a client-side approach.
@@ -136,6 +138,7 @@ import java.util.concurrent.ExecutionException;
  * token, allowing for automatic token refreshes by providing a {@link
  * OAuth2CredentialsWithRefresh.OAuth2RefreshHandler}.
  */
+@NullMarked
 public class ClientSideCredentialAccessBoundaryFactory {
   static final Duration DEFAULT_REFRESH_MARGIN = Duration.ofMinutes(45);
   static final Duration DEFAULT_MINIMUM_TOKEN_LIFETIME = Duration.ofMinutes(30);
@@ -144,9 +147,9 @@ public class ClientSideCredentialAccessBoundaryFactory {
   private final String tokenExchangeEndpoint;
   private final Duration minimumTokenLifetime;
   private final Duration refreshMargin;
-  private RefreshTask refreshTask;
+  private @Nullable RefreshTask refreshTask;
   private final Object refreshLock = new byte[0];
-  private IntermediateCredentials intermediateCredentials = null;
+  private volatile @Nullable IntermediateCredentials intermediateCredentials = null;
   private final Clock clock;
   private final CelCompiler celCompiler;
 
@@ -234,8 +237,26 @@ public class ClientSideCredentialAccessBoundaryFactory {
       return;
     }
 
-    // If a refresh is required, create or retrieve the refresh task.
-    RefreshTask currentRefreshTask = getOrCreateRefreshTask();
+    RefreshTask currentRefreshTask;
+    // Synchronize both the decision to refresh and the task creation to prevent a race
+    // condition. Without this, multiple threads might concurrently determine a refresh is
+    // needed (e.g., in ASYNC mode) and return ASYNC. The first thread would start the refresh
+    // task. If that task completes quickly and clears the `refreshTask` reference, a subsequent
+    // thread that also determined a refresh was needed would then see `refreshTask` as null
+    // and incorrectly start a second, redundant refresh task.
+    synchronized (refreshLock) {
+      // Re-evaluate the refresh type under the lock, as another thread might have completed
+      // the refresh while this thread was waiting for the lock.
+      refreshType = determineRefreshType();
+
+      if (refreshType == RefreshType.NONE) {
+        // No refresh needed, token is still valid.
+        return;
+      }
+
+      // If a refresh is required, create or retrieve the refresh task.
+      currentRefreshTask = getOrCreateRefreshTask();
+    }
 
     // Handle the refresh based on the determined refresh type.
     switch (refreshType) {
@@ -283,16 +304,14 @@ public class ClientSideCredentialAccessBoundaryFactory {
     }
   }
 
+  // Assumes the caller holds refreshLock.
   private RefreshType determineRefreshType() {
-    AccessToken intermediateAccessToken;
-    synchronized (refreshLock) {
-      if (intermediateCredentials == null
-          || intermediateCredentials.intermediateAccessToken == null) {
-        // A blocking refresh is needed if the intermediate access token doesn't exist.
-        return RefreshType.BLOCKING;
-      }
-      intermediateAccessToken = intermediateCredentials.intermediateAccessToken;
+    if (intermediateCredentials == null
+        || intermediateCredentials.intermediateAccessToken == null) {
+      // A blocking refresh is needed if the intermediate access token doesn't exist.
+      return RefreshType.BLOCKING;
     }
+    AccessToken intermediateAccessToken = intermediateCredentials.intermediateAccessToken;
 
     Date expirationTime = intermediateAccessToken.getExpirationTime();
     if (expirationTime == null) {
@@ -322,23 +341,22 @@ public class ClientSideCredentialAccessBoundaryFactory {
    * responsibility of the caller to execute it. The task will clear the single flight slot upon
    * completion.
    */
+  // Assumes the caller holds refreshLock.
   private RefreshTask getOrCreateRefreshTask() {
-    synchronized (refreshLock) {
-      if (refreshTask != null) {
-        // An existing refresh task is already in progress. Return a NEW RefreshTask instance with
-        // the existing task, but set isNew to false. This indicates to the caller that a new
-        // refresh task was NOT created.
-        return new RefreshTask(refreshTask.task, false);
-      }
-
-      final ListenableFutureTask<IntermediateCredentials> task =
-          ListenableFutureTask.create(this::fetchIntermediateCredentials);
-
-      // Store the new refresh task in the refreshTask field before returning. This ensures that
-      // subsequent calls to this method will return the existing task while it's still in progress.
-      refreshTask = new RefreshTask(task, true);
-      return refreshTask;
+    if (refreshTask != null) {
+      // An existing refresh task is already in progress. Return a NEW RefreshTask instance with
+      // the existing task, but set isNew to false. This indicates to the caller that a new
+      // refresh task was NOT created.
+      return new RefreshTask(refreshTask.task, false);
     }
+
+    final ListenableFutureTask<IntermediateCredentials> task =
+        ListenableFutureTask.create(this::fetchIntermediateCredentials);
+
+    // Store the new refresh task in the refreshTask field before returning. This ensures that
+    // subsequent calls to this method will return the existing task while it's still in progress.
+    refreshTask = new RefreshTask(task, true);
+    return refreshTask;
   }
 
   /**

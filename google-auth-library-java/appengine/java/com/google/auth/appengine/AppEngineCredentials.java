@@ -48,6 +48,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Objects;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /**
  * OAuth2 credentials representing the built-in service account for Google App Engine. You should
@@ -55,6 +57,7 @@ import java.util.Objects;
  *
  * <p>Fetches access tokens from the App Identity service.
  */
+@NullMarked
 public class AppEngineCredentials extends GoogleCredentials implements ServiceAccountSigner {
 
   private static final long serialVersionUID = -2627708355455064660L;
@@ -65,7 +68,8 @@ public class AppEngineCredentials extends GoogleCredentials implements ServiceAc
 
   private transient AppIdentityService appIdentityService;
 
-  private AppEngineCredentials(Collection<String> scopes, AppIdentityService appIdentityService) {
+  private AppEngineCredentials(
+      @Nullable Collection<String> scopes, @Nullable AppIdentityService appIdentityService) {
     this.scopes = scopes == null ? ImmutableSet.<String>of() : ImmutableList.copyOf(scopes);
     this.appIdentityService =
         appIdentityService != null
@@ -93,7 +97,7 @@ public class AppEngineCredentials extends GoogleCredentials implements ServiceAc
   }
 
   @Override
-  public GoogleCredentials createScoped(Collection<String> scopes) {
+  public GoogleCredentials createScoped(@Nullable Collection<String> scopes) {
     return new AppEngineCredentials(scopes, appIdentityService);
   }
 
@@ -122,7 +126,7 @@ public class AppEngineCredentials extends GoogleCredentials implements ServiceAc
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(@Nullable Object obj) {
     if (!(obj instanceof AppEngineCredentials)) {
       return false;
     }
@@ -172,34 +176,42 @@ public class AppEngineCredentials extends GoogleCredentials implements ServiceAc
 
   public static class Builder extends GoogleCredentials.Builder {
 
-    private Collection<String> scopes;
-    private AppIdentityService appIdentityService;
+    private @Nullable Collection<String> scopes;
+    private @Nullable AppIdentityService appIdentityService;
 
     protected Builder() {}
 
     protected Builder(AppEngineCredentials credentials) {
+      super(credentials);
       this.scopes = credentials.scopes;
       this.appIdentityService = credentials.appIdentityService;
     }
 
     @CanIgnoreReturnValue
-    public Builder setScopes(Collection<String> scopes) {
+    public Builder setScopes(@Nullable Collection<String> scopes) {
       this.scopes = scopes;
       return this;
     }
 
     @CanIgnoreReturnValue
-    public Builder setAppIdentityService(AppIdentityService appIdentityService) {
+    public Builder setAppIdentityService(@Nullable AppIdentityService appIdentityService) {
       this.appIdentityService = appIdentityService;
       return this;
     }
 
-    public Collection<String> getScopes() {
+    public @Nullable Collection<String> getScopes() {
       return scopes;
     }
 
-    public AppIdentityService getAppIdentityService() {
+    public @Nullable AppIdentityService getAppIdentityService() {
       return appIdentityService;
+    }
+
+    @Override
+    @CanIgnoreReturnValue
+    public Builder setQuotaProjectId(@Nullable String quotaProjectId) {
+      super.setQuotaProjectId(quotaProjectId);
+      return this;
     }
 
     @Override

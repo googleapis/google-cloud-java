@@ -123,6 +123,7 @@ public class DataProductServiceClientTest {
             .addAllOwnerEmails(new ArrayList<String>())
             .setAssetCount(1582344960)
             .putAllAccessGroups(new HashMap<String, DataProduct.AccessGroup>())
+            .setAccessApprovalConfig(DataProduct.AccessApprovalConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -187,6 +188,7 @@ public class DataProductServiceClientTest {
             .addAllOwnerEmails(new ArrayList<String>())
             .setAssetCount(1582344960)
             .putAllAccessGroups(new HashMap<String, DataProduct.AccessGroup>())
+            .setAccessApprovalConfig(DataProduct.AccessApprovalConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -335,6 +337,7 @@ public class DataProductServiceClientTest {
             .addAllOwnerEmails(new ArrayList<String>())
             .setAssetCount(1582344960)
             .putAllAccessGroups(new HashMap<String, DataProduct.AccessGroup>())
+            .setAccessApprovalConfig(DataProduct.AccessApprovalConfig.newBuilder().build())
             .build();
     mockDataProductService.addResponse(expectedResponse);
 
@@ -384,6 +387,7 @@ public class DataProductServiceClientTest {
             .addAllOwnerEmails(new ArrayList<String>())
             .setAssetCount(1582344960)
             .putAllAccessGroups(new HashMap<String, DataProduct.AccessGroup>())
+            .setAccessApprovalConfig(DataProduct.AccessApprovalConfig.newBuilder().build())
             .build();
     mockDataProductService.addResponse(expectedResponse);
 
@@ -521,6 +525,7 @@ public class DataProductServiceClientTest {
             .addAllOwnerEmails(new ArrayList<String>())
             .setAssetCount(1582344960)
             .putAllAccessGroups(new HashMap<String, DataProduct.AccessGroup>())
+            .setAccessApprovalConfig(DataProduct.AccessApprovalConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -562,6 +567,92 @@ public class DataProductServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void requestDataProductAccessTest() throws Exception {
+    RequestDataProductAccessResponse expectedResponse =
+        RequestDataProductAccessResponse.newBuilder()
+            .setChangeRequestName("changeRequestName-1775998998")
+            .build();
+    mockDataProductService.addResponse(expectedResponse);
+
+    DataProductName parent = DataProductName.of("[PROJECT]", "[LOCATION]", "[DATA_PRODUCT]");
+    ChangeRequest changeRequest = ChangeRequest.newBuilder().build();
+
+    RequestDataProductAccessResponse actualResponse =
+        client.requestDataProductAccess(parent, changeRequest);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataProductService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RequestDataProductAccessRequest actualRequest =
+        ((RequestDataProductAccessRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(changeRequest, actualRequest.getChangeRequest());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void requestDataProductAccessExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataProductService.addException(exception);
+
+    try {
+      DataProductName parent = DataProductName.of("[PROJECT]", "[LOCATION]", "[DATA_PRODUCT]");
+      ChangeRequest changeRequest = ChangeRequest.newBuilder().build();
+      client.requestDataProductAccess(parent, changeRequest);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void requestDataProductAccessTest2() throws Exception {
+    RequestDataProductAccessResponse expectedResponse =
+        RequestDataProductAccessResponse.newBuilder()
+            .setChangeRequestName("changeRequestName-1775998998")
+            .build();
+    mockDataProductService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    ChangeRequest changeRequest = ChangeRequest.newBuilder().build();
+
+    RequestDataProductAccessResponse actualResponse =
+        client.requestDataProductAccess(parent, changeRequest);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDataProductService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RequestDataProductAccessRequest actualRequest =
+        ((RequestDataProductAccessRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(changeRequest, actualRequest.getChangeRequest());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void requestDataProductAccessExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDataProductService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ChangeRequest changeRequest = ChangeRequest.newBuilder().build();
+      client.requestDataProductAccess(parent, changeRequest);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
