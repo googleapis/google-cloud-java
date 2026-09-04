@@ -58,12 +58,11 @@ public class ITDatabaseMetadataTest extends ITBase {
   private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
   private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
   private static final String CONSTRAINTS_TABLE_NAME3 = "JDBC_CONSTRAINTS_TEST_TABLE3";
-  private static final String PCNT_SCHEMA = "bq-drivers-test-warehouse.jdbc_pcnt_test_namespace";
-  private static final String PCNT_TABLE_NAME = "PCNT_TEST_TABLE";
   private static final Pattern VERSION_PATTERN =
       Pattern.compile("^(\\d+)\\.(\\d+)(?:\\.\\d+)+\\s*.*");
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   private static final String TABLE_NAME = "JDBC_DBMETADATA_TEST_TABLE" + randomNumber;
+  private static final String PCNT_TABLE_NAME = "PCNT_METADATA_TEST_TABLE_" + randomNumber;
 
   @BeforeAll
   public static void beforeClass() throws InterruptedException, SQLException {
@@ -72,10 +71,15 @@ public class ITDatabaseMetadataTest extends ITBase {
     CONSTRAINTS_DATASET = ITBase.getSharedDataset();
     // Set up Dataset
     ITBase.setUpTable(DATASET, TABLE_NAME);
+    ITBase.setUpPcntTable(ITBase.PCNT_SCHEMA, PCNT_TABLE_NAME);
   }
 
   @AfterAll
-  public static void afterClass() throws SQLException {}
+  public static void afterClass() throws SQLException, InterruptedException {
+    // Shared dataset cleanup is handled by ITBase shutdown hook.
+    // Clean up dynamic table created in the shared PCNT namespace.
+    ITBase.cleanUpPcntTable(ITBase.PCNT_SCHEMA, PCNT_TABLE_NAME);
+  }
 
   @Disabled
   @Test
@@ -1816,5 +1820,74 @@ public class ITDatabaseMetadataTest extends ITBase {
     resultSet.close();
     assertTrue(count > 0);
     connection.createStatement().execute("drop table if exists " + dataset + "." + jdbctesttable);
+  }
+
+  @Test
+  public void testDatabaseMetadataGetSchemasPcnt() throws SQLException {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
+      DatabaseMetaData metaData = connection.getMetaData();
+      try (ResultSet rs = metaData.getSchemas(DEFAULT_CATALOG, PCNT_SCHEMA)) {
+        assertNotNull(rs, "ResultSet from getSchemas() should not be null");
+        assertTrue(
+            rs.next(), "Expected PCNT schema " + PCNT_SCHEMA + " in catalog " + DEFAULT_CATALOG);
+        assertEquals(PCNT_SCHEMA, rs.getString("TABLE_SCHEM"));
+        assertEquals(DEFAULT_CATALOG, rs.getString("TABLE_CATALOG"));
+      }
+    }
+  }
+
+  @Test
+  public void testDatabaseMetadataGetTablesPcnt() throws SQLException {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
+      DatabaseMetaData metaData = connection.getMetaData();
+      try (ResultSet rs = metaData.getTables(DEFAULT_CATALOG, PCNT_SCHEMA, PCNT_TABLE_NAME, null)) {
+        assertNotNull(rs, "ResultSet from getTables() should not be null");
+        assertTrue(
+            rs.next(), "Expected PCNT table " + PCNT_TABLE_NAME + " under schema " + PCNT_SCHEMA);
+        assertEquals(DEFAULT_CATALOG, rs.getString("TABLE_CAT"));
+        assertEquals(PCNT_SCHEMA, rs.getString("TABLE_SCHEM"));
+        assertEquals(PCNT_TABLE_NAME, rs.getString("TABLE_NAME"));
+        assertEquals("TABLE", rs.getString("TABLE_TYPE"));
+      }
+    }
+  }
+
+  @Test
+  public void testDatabaseMetadataGetColumnsPcnt() throws SQLException {
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl)) {
+      DatabaseMetaData metaData = connection.getMetaData();
+      try (ResultSet rs = metaData.getColumns(DEFAULT_CATALOG, PCNT_SCHEMA, PCNT_TABLE_NAME, "%")) {
+        assertNotNull(rs, "ResultSet from getColumns() should not be null");
+        int columnCount = 0;
+        boolean foundId = false;
+        boolean foundName = false;
+        while (rs.next()) {
+          columnCount++;
+          assertEquals(DEFAULT_CATALOG, rs.getString("TABLE_CAT"));
+          assertEquals(PCNT_SCHEMA, rs.getString("TABLE_SCHEM"));
+          assertEquals(PCNT_TABLE_NAME, rs.getString("TABLE_NAME"));
+          String colName = rs.getString("COLUMN_NAME");
+          String typeName = rs.getString("TYPE_NAME");
+          if ("id".equals(colName)) {
+            foundId = true;
+            assertEquals(1, rs.getInt("ORDINAL_POSITION"));
+            assertTrue(
+                typeName.equalsIgnoreCase("INT64")
+                    || typeName.equalsIgnoreCase("INTEGER")
+                    || typeName.equalsIgnoreCase("BIGINT"));
+          } else if ("name".equals(colName)) {
+            foundName = true;
+            assertEquals(2, rs.getInt("ORDINAL_POSITION"));
+            assertTrue(
+                typeName.equalsIgnoreCase("STRING")
+                    || typeName.equalsIgnoreCase("NVARCHAR")
+                    || typeName.equalsIgnoreCase("VARCHAR"));
+          }
+        }
+        assertEquals(2, columnCount, "Expected 2 columns in PCNT table " + PCNT_TABLE_NAME);
+        assertTrue(foundId, "Expected column 'id' in PCNT table");
+        assertTrue(foundName, "Expected column 'name' in PCNT table");
+      }
+    }
   }
 }
