@@ -16,6 +16,8 @@
 
 package com.example.spanner;
 
+// [START spanner_queue_sample]
+
 import com.google.cloud.ByteArray;
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.Database;
@@ -183,3 +185,4 @@ public class QueueSample {
     }
   }
 }
+// [END spanner_queue_sample]
