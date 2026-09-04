@@ -934,35 +934,16 @@ final class BigQueryJdbcUrlUtility {
     String trimmed = defaultDataset.trim();
     int colonIdx = trimmed.lastIndexOf(':');
     if (colonIdx >= 0) {
-      return splitQualifiedDataset(trimmed, colonIdx, ':');
-    }
-
-    int dotIdx = trimmed.indexOf('.');
-    if (dotIdx >= 0) {
-      return splitQualifiedDataset(trimmed, dotIdx, '.');
+      String project = trimmed.substring(0, colonIdx).trim();
+      String dataset = trimmed.substring(colonIdx + 1).trim();
+      if (project.isEmpty() || dataset.isEmpty()) {
+        throw new BigQueryJdbcRuntimeException(
+            "DefaultDataset format is invalid. Supported options are datasetId, "
+                + "catalog.namespace, or projectId:datasetId");
+      }
+      return DatasetId.of(project, dataset);
     }
 
     return DatasetId.of(trimmed);
-  }
-
-  private static DatasetId splitQualifiedDataset(String trimmed, int delimiterIdx, char delimiter) {
-    if (trimmed.indexOf(delimiter, delimiterIdx + 1) >= 0) {
-      throw invalidDefaultDatasetException();
-    }
-    String project = trimmed.substring(0, delimiterIdx).trim();
-    String dataset = trimmed.substring(delimiterIdx + 1).trim();
-    if (project.isEmpty() || dataset.isEmpty()) {
-      throw invalidDefaultDatasetException();
-    }
-    return DatasetId.of(project, dataset);
-  }
-
-  private static IllegalArgumentException invalidDefaultDatasetException() {
-    IllegalArgumentException ex =
-        new IllegalArgumentException(
-            "DefaultDataset format is invalid. Supported options are datasetId,"
-                + " projectId:datasetId, or projectId.datasetId");
-    LOG.severe(ex.getMessage(), ex);
-    return ex;
   }
 }

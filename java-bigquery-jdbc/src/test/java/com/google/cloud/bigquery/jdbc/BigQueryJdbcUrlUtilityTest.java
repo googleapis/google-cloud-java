@@ -292,16 +292,16 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
   }
 
   @Test
-  public void testParseDefaultDataset_colonDelimited() {
-    DatasetId datasetId = BigQueryJdbcUrlUtility.parseDefaultDataset("my-project:my_dataset");
+  public void testParseDefaultDataset_twoTierPcntNamespace() {
+    DatasetId datasetId = BigQueryJdbcUrlUtility.parseDefaultDataset("my-warehouse.my_namespace");
     assertNotNull(datasetId);
-    assertEquals("my_dataset", datasetId.getDataset());
-    assertEquals("my-project", datasetId.getProject());
+    assertEquals("my-warehouse.my_namespace", datasetId.getDataset());
+    assertNull(datasetId.getProject());
   }
 
   @Test
-  public void testParseDefaultDataset_dotDelimited() {
-    DatasetId datasetId = BigQueryJdbcUrlUtility.parseDefaultDataset("my-project.my_dataset");
+  public void testParseDefaultDataset_colonDelimited() {
+    DatasetId datasetId = BigQueryJdbcUrlUtility.parseDefaultDataset("my-project:my_dataset");
     assertNotNull(datasetId);
     assertEquals("my_dataset", datasetId.getDataset());
     assertEquals("my-project", datasetId.getProject());
@@ -314,14 +314,6 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
     assertNotNull(datasetId);
     assertEquals("my-warehouse.my_namespace", datasetId.getDataset());
     assertEquals("my-project", datasetId.getProject());
-  }
-
-  @Test
-  public void testParseDefaultDataset_twoTierPcntNamespace() {
-    DatasetId datasetId = BigQueryJdbcUrlUtility.parseDefaultDataset("my-warehouse.my_namespace");
-    assertNotNull(datasetId);
-    assertEquals("my_namespace", datasetId.getDataset());
-    assertEquals("my-warehouse", datasetId.getProject());
   }
 
   @Test
@@ -344,22 +336,16 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
   @Test
   public void testParseDefaultDataset_invalidFormats() {
     assertThrows(
-        IllegalArgumentException.class,
+        BigQueryJdbcRuntimeException.class,
         () -> BigQueryJdbcUrlUtility.parseDefaultDataset("my-project:"));
     assertThrows(
-        IllegalArgumentException.class,
+        BigQueryJdbcRuntimeException.class,
         () -> BigQueryJdbcUrlUtility.parseDefaultDataset(":my_dataset"));
     assertThrows(
-        IllegalArgumentException.class,
+        BigQueryJdbcRuntimeException.class,
         () -> BigQueryJdbcUrlUtility.parseDefaultDataset("tpc:my-project:"));
     assertThrows(
-        IllegalArgumentException.class,
-        () -> BigQueryJdbcUrlUtility.parseDefaultDataset("my-project."));
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> BigQueryJdbcUrlUtility.parseDefaultDataset(".my_dataset"));
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> BigQueryJdbcUrlUtility.parseDefaultDataset("part1.part2.part3"));
+        BigQueryJdbcRuntimeException.class,
+        () -> BigQueryJdbcUrlUtility.parseDefaultDataset("   :   "));
   }
 }
