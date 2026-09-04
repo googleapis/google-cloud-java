@@ -986,12 +986,12 @@ grpc-google-iam-v3:1.70.0:1.71.0-SNAPSHOT
 proto-google-iam-v3beta:1.70.0:1.71.0-SNAPSHOT
 grpc-google-iam-v3beta:1.70.0:1.71.0-SNAPSHOT
 proto-google-cloud-spanner-admin-instance-v1:6.121.0:6.122.0-SNAPSHOT
-proto-google-cloud-spanner-v1:6.121.0:6.122.0-SNAPSHOT
+proto-google-cloud-spanner-v1:6.121.1:6.121.1
 proto-google-cloud-spanner-admin-database-v1:6.121.0:6.122.0-SNAPSHOT
-grpc-google-cloud-spanner-v1:6.121.0:6.122.0-SNAPSHOT
+grpc-google-cloud-spanner-v1:6.121.1:6.121.1
 grpc-google-cloud-spanner-admin-instance-v1:6.121.0:6.122.0-SNAPSHOT
 grpc-google-cloud-spanner-admin-database-v1:6.121.0:6.122.0-SNAPSHOT
-google-cloud-spanner:6.121.0:6.122.0-SNAPSHOT
+google-cloud-spanner:6.121.1:6.121.1
 grpc-gcp:1.14.0:1.15.0-SNAPSHOT
 google-cloud-spanner-executor:6.121.0:6.122.0-SNAPSHOT
 proto-google-cloud-spanner-executor-v1:6.121.0:6.122.0-SNAPSHOT
