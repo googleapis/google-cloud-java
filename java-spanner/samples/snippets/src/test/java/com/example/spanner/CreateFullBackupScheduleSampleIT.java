@@ -28,7 +28,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class CreateFullBackupScheduleSampleIT extends SampleTestBaseV2 {
   // Default instance and given db should exist for tests to pass.
-  private static String databaseId = System.getProperty("spanner.sample.database", "mysample");
+  private static String databaseId = getSampleDatabase();
 
   @Before
   public void cleanUpPreExistingBackupSchedules() {
