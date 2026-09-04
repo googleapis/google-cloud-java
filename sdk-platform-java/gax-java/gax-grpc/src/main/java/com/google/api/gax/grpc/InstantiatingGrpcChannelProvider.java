@@ -843,7 +843,6 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
           } else {
             // Use default if we cannot initialize channel credentials via DCA or S2A.
             builder = ManagedChannelBuilder.forAddress(serviceAddress, port);
-            builder.overrideAuthority(serviceAddress);
             resolvedTarget = serviceAddress + ":" + port;
           }
         }
