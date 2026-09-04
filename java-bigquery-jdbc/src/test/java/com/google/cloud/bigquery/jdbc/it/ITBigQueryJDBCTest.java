@@ -2880,4 +2880,34 @@ public class ITBigQueryJDBCTest extends ITBase {
       }
     }
   }
+
+  @Test
+  public void testSessionAbortedOnConnectionClose() throws SQLException {
+    String sessionId;
+    try (Connection connection = DriverManager.getConnection(session_enabled_connection_uri)) {
+      try (Statement statement = connection.createStatement()) {
+        statement.execute("CREATE TEMP TABLE session_temp_table (id INT64);");
+      }
+      BigQueryConnection bqConn = connection.unwrap(BigQueryConnection.class);
+      assertNotNull(bqConn.getSessionInfoConnectionProperty());
+      sessionId = bqConn.getSessionInfoConnectionProperty().getValue();
+      assertNotNull(sessionId);
+    }
+
+    // After connection is closed, the session is aborted on the BigQuery server.
+    // Attaching to the same session_id in a new connection should fail when running a query.
+    String urlWithAbortedSession =
+        connection_uri + "EnableSession=1;QueryProperties=session_id=" + sessionId + ";";
+    try (Connection newConnection = DriverManager.getConnection(urlWithAbortedSession)) {
+      try (Statement statement = newConnection.createStatement()) {
+        SQLException ex =
+            assertThrows(
+                SQLException.class, () -> statement.execute("SELECT * FROM session_temp_table;"));
+        assertTrue(
+            ex.getMessage().toLowerCase().contains("session ended")
+                || ex.getMessage().toLowerCase().contains("not found"),
+            "Expected session ended error but got: " + ex.getMessage());
+      }
+    }
+  }
 }

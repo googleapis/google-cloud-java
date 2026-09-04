@@ -1073,6 +1073,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         }
       }
 
+      if (this.sessionInfoConnectionProperty != null) {
+        abortSession();
+      }
+
       boolean interrupted = Thread.currentThread().isInterrupted();
 
       try {
@@ -1464,6 +1468,38 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.transactionStarted = false;
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcRuntimeException("Interrupted during commitTransaction", ex);
+    }
+  }
+
+  private void abortSession() {
+    try {
+      LOG.fine(
+          "Aborting session on connection close: " + this.sessionInfoConnectionProperty.getValue());
+      QueryJobConfiguration abortSessionJobConfig =
+          QueryJobConfiguration.newBuilder("CALL BQ.ABORT_SESSION();")
+              .setConnectionProperties(this.queryProperties)
+              .build();
+      Job abortJob = this.bigQuery.create(JobInfo.of(abortSessionJobConfig));
+      abortJob.waitFor();
+    } catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+      throw new BigQueryJdbcRuntimeException("Interrupted during close", ex);
+    } catch (BigQueryException ex) {
+      LOG.warning(
+          "Failed to abort session during connection close (session may have already ended): "
+              + ex.getMessage());
+    } finally {
+      this.sessionInfoConnectionProperty = null;
+      if (this.queryProperties != null) {
+        List<ConnectionProperty> updated = new ArrayList<>();
+        for (ConnectionProperty cp : this.queryProperties) {
+          if (!"session_id".equalsIgnoreCase(cp.getKey())) {
+            updated.add(cp);
+          }
+        }
+        this.queryProperties = Collections.unmodifiableList(updated);
+      }
+      this.transactionStarted = false;
     }
   }
 
