@@ -1,5 +1,58 @@
 # Changelog
 
+## [1.91.0](https://github.com/googleapis/google-cloud-java/compare/v1.90.0...v1.91.0) (2026-09-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* **datalabeling:** remove java-datalabeling library ([#14189](https://github.com/googleapis/google-cloud-java/issues/14189))
+* **datacatalog:** remove java-datacatalog library ([#14178](https://github.com/googleapis/google-cloud-java/issues/14178))
+
+### Features
+
+* **apptopology:** onboard a new library ([#14204](https://github.com/googleapis/google-cloud-java/issues/14204)) ([f871a07](https://github.com/googleapis/google-cloud-java/commit/f871a072bcee3a5d2c9ae3efae7ac96024162770))
+* **bigtable:** Option to disable direct access fallback ([#14193](https://github.com/googleapis/google-cloud-java/issues/14193)) ([5b6a974](https://github.com/googleapis/google-cloud-java/commit/5b6a97473af68c0556f333836265fe977f4eda5b))
+* **datacatalog:** remove java-datacatalog library ([#14178](https://github.com/googleapis/google-cloud-java/issues/14178)) ([2910f63](https://github.com/googleapis/google-cloud-java/commit/2910f638cdaac419108926fcad009da1cea5ea87))
+* **datalabeling:** remove java-datalabeling library ([#14189](https://github.com/googleapis/google-cloud-java/issues/14189)) ([334d35a](https://github.com/googleapis/google-cloud-java/commit/334d35a1012e8b416d1bfc772738dc46786f87d0)), refs [#14176](https://github.com/googleapis/google-cloud-java/issues/14176)
+* **gax:** add getSingleHeader to HttpHeadersUtils ([#14137](https://github.com/googleapis/google-cloud-java/issues/14137)) ([f114422](https://github.com/googleapis/google-cloud-java/commit/f1144226d048b97875d26cde7989f25e3daf3166))
+* **gax:** add ResumableUploadClient.startUpload() and supporting types ([#14138](https://github.com/googleapis/google-cloud-java/issues/14138)) ([d7e2be2](https://github.com/googleapis/google-cloud-java/commit/d7e2be2af3be62bf23c5fb99380ffaff1f8bc618))
+* **gax:** add ResumableUploadResponseParser ([#14135](https://github.com/googleapis/google-cloud-java/issues/14135)) ([e1a0b17](https://github.com/googleapis/google-cloud-java/commit/e1a0b17a449b1d312c3c257910b73be9adcf37e0))
+* **gax:** allow non-JSON HttpContent and absolute request URLs in HttpRequestRunnable ([#14134](https://github.com/googleapis/google-cloud-java/issues/14134)) ([ac4a49a](https://github.com/googleapis/google-cloud-java/commit/ac4a49abd604a1b043f386bc49559e03c8850cb0))
+* **gax:** implement queryStatusCallable for resumable uploads ([#14155](https://github.com/googleapis/google-cloud-java/issues/14155)) ([67719c0](https://github.com/googleapis/google-cloud-java/commit/67719c072860e38de8c50dcb8979427e65eed6ef))
+* **gax:** implement startUploadCallable for resumable uploads ([#14139](https://github.com/googleapis/google-cloud-java/issues/14139)) ([4e65b6c](https://github.com/googleapis/google-cloud-java/commit/4e65b6c360f77b41eee26596e7f272114422a5dd))
+* **gax:** implement uploadChunkCallable for resumable uploads ([#14140](https://github.com/googleapis/google-cloud-java/issues/14140)) ([1c643de](https://github.com/googleapis/google-cloud-java/commit/1c643decbc82525e55e890e2849720bffc9945eb))
+* **google/shopping/merchant/loyaltycustomers/v1:** onboard new library ([#14257](https://github.com/googleapis/google-cloud-java/issues/14257)) ([590a51c](https://github.com/googleapis/google-cloud-java/commit/590a51cf658911c8a170ecc96695e0d4ef0b3e4d))
+* **grpc-gcp:** drain scaled-down channels ([#14216](https://github.com/googleapis/google-cloud-java/issues/14216)) ([bbbd18c](https://github.com/googleapis/google-cloud-java/commit/bbbd18ce7e13ef0a8726c52f1ab252b0ee499e06))
+* **grpc-gcp:** move scale-up to background worker ([#14206](https://github.com/googleapis/google-cloud-java/issues/14206)) ([41f0a2e](https://github.com/googleapis/google-cloud-java/commit/41f0a2e83651b76a0deca31bf9704af21d566ce9))
+* **grpc-gcp:** penalize retryable channel errors ([#14219](https://github.com/googleapis/google-cloud-java/issues/14219)) ([829872e](https://github.com/googleapis/google-cloud-java/commit/829872e642d690385f685f7766693c93ddb05cdc))
+* **grpc-gcp:** prime scaled channels before publish ([#14232](https://github.com/googleapis/google-cloud-java/issues/14232)) ([dd75645](https://github.com/googleapis/google-cloud-java/commit/dd75645240b7738b537d7cb01faf3cc55ceaeb66))
+* **spanner:** add client-level CallContextConfigurator to SpannerOptions ([#14256](https://github.com/googleapis/google-cloud-java/issues/14256)) ([eef74d2](https://github.com/googleapis/google-cloud-java/commit/eef74d291f0ca7e90115ca6bebca463363df4970))
+* **spanner:** prime scaled-up dynamic channel pool channels with SELECT 1 ([#14254](https://github.com/googleapis/google-cloud-java/issues/14254)) ([4d26645](https://github.com/googleapis/google-cloud-java/commit/4d26645014ce053ad6f0b48b9c4ecb87ece024c5))
+
+
+### Bug Fixes
+
+* **auth:** refine JSpecify nullability annotations for external account credentials ([#14164](https://github.com/googleapis/google-cloud-java/issues/14164)) ([385e1f2](https://github.com/googleapis/google-cloud-java/commit/385e1f2bbea67b35cbed78d1e1e7b3ed7c03313d))
+* **bigtable:** truncate client generated timestamps on the emulator c… ([#14234](https://github.com/googleapis/google-cloud-java/issues/14234)) ([94e680f](https://github.com/googleapis/google-cloud-java/commit/94e680fcb47db4fbd008f5b458563fdc733ead3b))
+* **gax:** propagate structured LRO error details to ApiException ([#14022](https://github.com/googleapis/google-cloud-java/issues/14022)) ([865a15b](https://github.com/googleapis/google-cloud-java/commit/865a15bb14d687f88c23bb3c32cbfbbe8e536c62))
+* **grpc-gcp:** correct channel lifecycle bookkeeping ([#14196](https://github.com/googleapis/google-cloud-java/issues/14196)) ([3df32ba](https://github.com/googleapis/google-cloud-java/commit/3df32bad3301e24e4138410c41b53a4a789ea75b))
+* **grpc-gcp:** prevent hot-channel skew ([#14198](https://github.com/googleapis/google-cloud-java/issues/14198)) ([07a7505](https://github.com/googleapis/google-cloud-java/commit/07a7505d59fb3faeaa90754e28d36c454acc2e05))
+* **java-sql:** temp fix for lint and skip generate ([#14005](https://github.com/googleapis/google-cloud-java/issues/14005)) ([b6f73db](https://github.com/googleapis/google-cloud-java/commit/b6f73db6937c5f4d9c7fba0cceeed7b107a4ec3f))
+* **spanner:** prioritize leader replica for read-write transactions in location-aware routing ([#14195](https://github.com/googleapis/google-cloud-java/issues/14195)) ([6383f81](https://github.com/googleapis/google-cloud-java/commit/6383f815968cda69d0186651cffc685bb754449a))
+* **spanner:** route ExecuteBatchDml through transaction affinity endpoint ([#14192](https://github.com/googleapis/google-cloud-java/issues/14192)) ([5e9e3cd](https://github.com/googleapis/google-cloud-java/commit/5e9e3cd03eadc280456b38ac127ba1f58b715616))
+* **storage:** resolve GraalVM Native Image test failure for java-storage ([#14226](https://github.com/googleapis/google-cloud-java/issues/14226)) ([93e0920](https://github.com/googleapis/google-cloud-java/commit/93e0920de08d98467752b6216407dfbe1a70b842))
+
+
+### Performance Improvements
+
+* **bigquery-jdbc:** eliminate sync getJob RPC call ([#14197](https://github.com/googleapis/google-cloud-java/issues/14197)) ([ccf12b0](https://github.com/googleapis/google-cloud-java/commit/ccf12b0607be2f3e3ce6edbd63bdfe5d2ec55e4e))
+* **ci:** replace mvn help:evaluate with native bash and sed extraction ([#14218](https://github.com/googleapis/google-cloud-java/issues/14218)) ([744a522](https://github.com/googleapis/google-cloud-java/commit/744a52216e6ab58e90ee0e7c92f273299125a282))
+
+
+### Dependencies
+
+* Upgrade grpc-java to 1.83.0 ([#13967](https://github.com/googleapis/google-cloud-java/issues/13967)) ([0cdc695](https://github.com/googleapis/google-cloud-java/commit/0cdc69579859c7ec1828a2684ad90b0e02807836))
+
 ## [1.90.0](https://github.com/googleapis/google-cloud-java/compare/v1.89.0...v1.90.0) (2026-08-24)
 
 
