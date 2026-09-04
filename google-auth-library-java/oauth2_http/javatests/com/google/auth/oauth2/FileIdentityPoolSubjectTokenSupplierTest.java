@@ -225,7 +225,8 @@ class FileIdentityPoolSubjectTokenSupplierTest {
     IOException exception =
         assertThrows(
             IOException.class,
-            () -> FileIdentityPoolSubjectTokenSupplier.parseToken(emptyStream, source, "sub_token"));
+            () ->
+                FileIdentityPoolSubjectTokenSupplier.parseToken(emptyStream, source, "sub_token"));
     assertTrue(
         exception.getMessage().contains("Response stream was empty")
             || exception.getMessage().contains("Failed to parse JSON token"));
