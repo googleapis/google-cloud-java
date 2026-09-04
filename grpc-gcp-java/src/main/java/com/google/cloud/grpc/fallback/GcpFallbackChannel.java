@@ -263,10 +263,6 @@ public class GcpFallbackChannel extends ManagedChannel {
     fallbackState.startPeriodicEvaluation(options);
   }
 
-  private void checkErrorRates() {
-    fallbackState.checkErrorRates(options, openTelemetry);
-  }
-
   private void processPrimaryStatusCode(Status.Code statusCode) {
     if (options.getErroneousStates().contains(statusCode)) {
       fallbackState.getPrimaryFailures().incrementAndGet();
