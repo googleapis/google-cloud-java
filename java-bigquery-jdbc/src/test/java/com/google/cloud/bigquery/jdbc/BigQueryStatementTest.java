@@ -1136,4 +1136,27 @@ public class BigQueryStatementTest {
     verify(bigquery, Mockito.never()).create(any(JobInfo.class));
     verify(bigquery, Mockito.never()).getJob(any(JobId.class));
   }
+
+  @Test
+  public void testNullStatementTypeInTableResultFallsBackToGetJobWithoutDryRun() throws Exception {
+    TableResult tableResultMock = mock(TableResult.class);
+    doReturn(this.jobId).when(tableResultMock).getJobId();
+    doReturn(null).when(tableResultMock).getStatementType();
+    doReturn(0L).when(tableResultMock).getTotalRows();
+    doReturn(Schema.of()).when(tableResultMock).getSchema();
+
+    doReturn(tableResultMock)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+
+    Job jobMock = getJobMock(null, null, StatementType.CREATE_TABLE);
+    doReturn(jobMock).when(bigquery).getJob(eq(this.jobId));
+
+    boolean result = bigQueryStatement.execute("CREATE TABLE dataset.my_table (x INT64)");
+
+    assertFalse(result);
+    assertNull(bigQueryStatement.getResultSet());
+    verify(bigquery, Mockito.times(1)).getJob(eq(this.jobId));
+    verify(bigquery, Mockito.never()).create(any(JobInfo.class));
+  }
 }
