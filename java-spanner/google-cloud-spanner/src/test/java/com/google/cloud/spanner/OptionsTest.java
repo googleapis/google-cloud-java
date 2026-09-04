@@ -152,7 +152,10 @@ public class OptionsTest {
     assertThat(options.equals(null)).isFalse();
     assertThat(options.equals(this)).isFalse();
     assertNull(options.isolationLevel());
-    assertThat(options.hashCode()).isEqualTo(31);
+    // Verify hashCode contract: equal objects must have equal hashCodes.
+    Options options2 = Options.fromReadOptions();
+    assertThat(options).isEqualTo(options2);
+    assertThat(options.hashCode()).isEqualTo(options2.hashCode());
   }
 
   @Test
@@ -175,7 +178,12 @@ public class OptionsTest {
     assertThat(options.pageSize()).isEqualTo(pageSize);
     assertThat(options.pageToken()).isEqualTo(pageToken);
     assertThat(options.filter()).isEqualTo(filter);
-    assertThat(options.hashCode()).isEqualTo(108027089);
+    // Verify hashCode contract: equal objects must have equal hashCodes.
+    Options options2 =
+        Options.fromListOptions(
+            Options.pageSize(pageSize), Options.pageToken(pageToken), Options.filter(filter));
+    assertThat(options).isEqualTo(options2);
+    assertThat(options.hashCode()).isEqualTo(options2.hashCode());
   }
 
   @Test
@@ -696,7 +704,10 @@ public class OptionsTest {
     assertEquals("tag: " + tag + " ", options.toString());
     assertTrue(options.hasTag());
     assertThat(options.tag()).isEqualTo(tag);
-    assertThat(options.hashCode()).isEqualTo(-2118248262);
+    // Verify hashCode contract: equal objects must have equal hashCodes.
+    Options options2 = Options.fromUpdateOptions(Options.tag(tag));
+    assertThat(options).isEqualTo(options2);
+    assertThat(options.hashCode()).isEqualTo(options2.hashCode());
   }
 
   @Test
@@ -728,7 +739,10 @@ public class OptionsTest {
     assertEquals("tag: " + tag + " ", options.toString());
     assertTrue(options.hasTag());
     assertThat(options.tag()).isEqualTo(tag);
-    assertThat(options.hashCode()).isEqualTo(-2118248262);
+    // Verify hashCode contract: equal objects must have equal hashCodes.
+    Options options2 = Options.fromTransactionOptions(Options.tag(tag));
+    assertThat(options).isEqualTo(options2);
+    assertThat(options.hashCode()).isEqualTo(options2.hashCode());
   }
 
   @Test
