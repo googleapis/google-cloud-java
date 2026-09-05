@@ -5,18 +5,19 @@ MAVEN_SITE=https://maven-central.storage-download.googleapis.com/maven2
 
 set -e
 
+scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+POM_UTILS="${scriptDir}/../.kokoro/pom_utils.py"
+
 function find_existing_version_pom() {  
   local pom_file=$1
   if [ -z "${pom_file}" ]; then
     echo "Empty pom file name"
     exit 1
   fi
-  local group_id=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="groupId"]/text()' \
-      "${pom_file}")
-  local artifact_id=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="artifactId"]/text()' \
-      "${pom_file}")
-  local version=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="version"]/text()' \
-      "${pom_file}")
+  local group_id
+  local artifact_id
+  local version
+  read -r group_id artifact_id version < <(python3 "${POM_UTILS}" get-coordinates "${pom_file}")
   echo -n "Checking ${group_id}:${artifact_id}:${version}:"
   if [ -z "${artifact_id}" ]; then
     echo "Couldn't parse artifact_id in the pom file: $pom_file"

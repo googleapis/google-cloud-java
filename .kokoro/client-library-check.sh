@@ -21,6 +21,10 @@ set -eo pipefail
 # Display commands being run.
 set -x
 
+## Get the directory of the build script
+scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+POM_UTILS="${scriptDir}/pom_utils.py"
+
 function get_current_version_from_versions_txt() {
   versions=$1
   key=$2
@@ -37,37 +41,17 @@ function get_released_version_from_versions_txt() {
 
 function replace_java_shared_config_version() {
   version=$1
-  # replace version
-  xmllint --shell <(cat pom.xml) << EOF
-  setns x=http://maven.apache.org/POM/4.0.0
-  cd .//x:artifactId[text()="google-cloud-shared-config"]
-  cd ../x:version
-  set ${version}
-  save pom.xml
-EOF
+  python3 "${POM_UTILS}" update-dep-version pom.xml google-cloud-shared-config "${version}"
 }
 
 function replace_java_shared_dependencies_version() {
   version=$1
-  # replace version
-  xmllint --shell <(cat pom.xml) << EOF
-  setns x=http://maven.apache.org/POM/4.0.0
-  cd .//x:properties/x:google-cloud-shared-dependencies.version
-  set ${version}
-  save pom.xml
-EOF
+  python3 "${POM_UTILS}" update-property pom.xml google-cloud-shared-dependencies.version "${version}"
 }
 
 function replace_sdk_platform_java_config_version() {
   version=$1
-  # replace version in the shared parent POM
-  xmllint --shell <(cat ../google-cloud-pom-parent/pom.xml) << EOF
-  setns x=http://maven.apache.org/POM/4.0.0
-  cd .//x:artifactId[text()="sdk-platform-java-config"]
-  cd ../x:version
-  set ${version}
-  save ../google-cloud-pom-parent/pom.xml
-EOF
+  python3 "${POM_UTILS}" update-dep-version ../google-cloud-pom-parent/pom.xml sdk-platform-java-config "${version}"
 }
 
 if [[ $# -ne 2 ]];
@@ -81,10 +65,8 @@ LIBRARY_NAME="google-cloud-${REPO#java-}"
 # build.sh uses this environment variable
 export JOB_TYPE=$2
 
-## Get the directory of the build script
-scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 ## cd to the parent directory, i.e. the root of the git repo
-cd ${scriptDir}/..
+cd "${scriptDir}/.."
 
 # Make artifacts available for 'mvn validate' at the bottom
 pushd java-shared-config
@@ -93,8 +75,7 @@ popd
 
 # Read the current version of this BOM in the POM. Example version: '0.116.1-alpha-SNAPSHOT'
 VERSION_POM=java-shared-config/java-shared-config/pom.xml
-# Namespace (xmlns) prevents xmllint from specifying tag names in XPath
-JAVA_SHARED_CONFIG_VERSION=`sed -e 's/xmlns=".*"//' ${VERSION_POM} | xmllint --xpath '/project/version/text()' -`
+JAVA_SHARED_CONFIG_VERSION=$(python3 "${POM_UTILS}" get-version "${VERSION_POM}")
 
 if [ -z "${JAVA_SHARED_CONFIG_VERSION}" ]; then
   echo "Version is not found in ${VERSION_POM}"
@@ -109,7 +90,7 @@ LATEST_TAG=$(git ls-remote --tags https://github.com/googleapis/google-cloud-jav
 echo "Cloning google-cloud-java at tag: ${LATEST_TAG}"
 git clone "https://github.com/googleapis/google-cloud-java.git" -b "${LATEST_TAG}" --depth=1
 pushd google-cloud-java/sdk-platform-java
-SDK_PLATFORM_JAVA_CONFIG_VERSION=$(sed -e 's/xmlns=".*"//' sdk-platform-java-config/pom.xml | xmllint --xpath '/project/version/text()' -)
+SDK_PLATFORM_JAVA_CONFIG_VERSION=$(python3 "${POM_UTILS}" get-version sdk-platform-java-config/pom.xml)
 
 pushd sdk-platform-java-config
 # Use released version of google-cloud-shared-dependencies to avoid verifying SNAPSHOT changes.
