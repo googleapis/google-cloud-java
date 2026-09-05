@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -44,7 +43,10 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.Project;
+import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.cloud.bigquery.storage.v1.BigQueryReadClient;
@@ -70,6 +72,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.mockito.ArgumentCaptor;
 import org.mockito.MockedStatic;
 
 public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
@@ -817,6 +820,41 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       assertEquals("session_id", connection.getSessionInfoConnectionProperty().getKey());
       assertEquals(
           "user_supplied_session_999", connection.getSessionInfoConnectionProperty().getValue());
+    }
+  }
+
+  @Test
+  public void testCloseWithActiveSessionAbortsSession() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      BigQuery mockBigQuery = mock(BigQuery.class);
+      Job mockJob = mock(Job.class);
+      when(mockBigQuery.create(any(JobInfo.class))).thenReturn(mockJob);
+      when(mockJob.waitFor()).thenReturn(mockJob);
+      connection.bigQuery = mockBigQuery;
+
+      connection.updateSessionInfo("test_session_id_to_abort");
+      connection.close();
+
+      ArgumentCaptor<JobInfo> jobCaptor = ArgumentCaptor.forClass(JobInfo.class);
+      verify(mockBigQuery).create(jobCaptor.capture());
+      QueryJobConfiguration config =
+          (QueryJobConfiguration) jobCaptor.getValue().getConfiguration();
+      assertEquals("CALL BQ.ABORT_SESSION();", config.getQuery());
+      assertNull(connection.getSessionInfoConnectionProperty());
+      assertTrue(connection.isClosed());
+    }
+  }
+
+  @Test
+  public void testCloseWithoutSessionDoesNotAbortSession() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      BigQuery mockBigQuery = mock(BigQuery.class);
+      connection.bigQuery = mockBigQuery;
+
+      connection.close();
+
+      verify(mockBigQuery, never()).create(any(JobInfo.class));
+      assertTrue(connection.isClosed());
     }
   }
 }
