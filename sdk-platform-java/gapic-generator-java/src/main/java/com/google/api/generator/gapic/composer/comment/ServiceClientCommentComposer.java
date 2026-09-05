@@ -93,6 +93,11 @@ public class ServiceClientCommentComposer {
           + " that it is easy to make a subclass, but otherwise, the static factory methods"
           + " should be preferred.";
 
+  private static final String RESUMABLE_UPLOAD_CALL_CONTEXT_WARNING =
+      "Call context overrides (such as withTimeout, withRetrySettings, or credentials) apply"
+          + " strictly to the start request (session initiation). Per-chunk PUT calls rely on"
+          + " the configured timeout and retry settings from ResumableUploadCallSettings.";
+
   // Comments.
   public static final CommentStatement GET_OPERATIONS_CLIENT_METHOD_COMMENT =
       toSimpleComment(
@@ -233,13 +238,17 @@ public class ServiceClientCommentComposer {
 
   private static String createTableOfMethods(List<MethodAndVariants> methodAndVariantsList) {
     String FLATTENED_METHODS =
-        "<p>\"Flattened\" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>\n";
+        "<p>\"Flattened\" method variants have converted the fields of the request object into"
+            + " function parameters to enable multiple ways to call the same method.</p>\n";
     String REQUEST_OBJECT_METHODS =
-        "<p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>\n";
+        "<p>Request object method variants only take one parameter, a request object, which must be"
+            + " constructed before the call.</p>\n";
     String CALLABLE_METHODS =
-        "<p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>\n";
+        "<p>Callable method variants take no parameters and return an immutable API callable"
+            + " object, which can be used to initiate calls to the service.</p>\n";
     String ASYNC_METHODS =
-        "<p>Methods that return long-running operations have \"Async\" method variants that return `OperationFuture`, which is used to track polling of the service.</p>\n";
+        "<p>Methods that return long-running operations have \"Async\" method variants that return"
+            + " `OperationFuture`, which is used to track polling of the service.</p>\n";
 
     StringBuilder tableBuilder = new StringBuilder();
     tableBuilder
@@ -348,8 +357,12 @@ public class ServiceClientCommentComposer {
       methodJavadocBuilder = methodJavadocBuilder.addUnescapedComment(descriptionComment);
     }
 
-    methodJavadocBuilder.addParagraph(METHOD_DESCRIPTION_SAMPLE_CODE_SUMMARY_STRING);
+    if (method.isResumableUpload()) {
+      methodJavadocBuilder.addParagraph(RESUMABLE_UPLOAD_CALL_CONTEXT_WARNING);
+    }
+
     if (sampleCodeOpt.isPresent()) {
+      methodJavadocBuilder.addParagraph(METHOD_DESCRIPTION_SAMPLE_CODE_SUMMARY_STRING);
       methodJavadocBuilder.addSampleCode(sampleCodeOpt.get());
     }
 
@@ -364,6 +377,40 @@ public class ServiceClientCommentComposer {
     return Arrays.asList(
         CommentComposer.AUTO_GENERATED_METHOD_COMMENT,
         CommentStatement.withComment(methodJavadocBuilder.build()));
+  }
+
+  public static List<CommentStatement> createResumableUploadRpcMethodHeaderComment(Method method) {
+    JavaDocComment.Builder methodJavadocBuilder = JavaDocComment.builder();
+
+    if (method.hasDescription()) {
+      String descriptionComment =
+          CommentFormatter.formatAsJavaDocComment(method.description(), null);
+      methodJavadocBuilder = methodJavadocBuilder.addUnescapedComment(descriptionComment);
+    }
+
+    methodJavadocBuilder.addParagraph(RESUMABLE_UPLOAD_CALL_CONTEXT_WARNING);
+
+    methodJavadocBuilder.addParam(
+        "request", "The request object containing all of the parameters for the API call.");
+    methodJavadocBuilder.addParam("payload", "The payload data stream to upload.");
+
+    methodJavadocBuilder.setThrows(API_EXCEPTION_TYPE_NAME, EXCEPTION_CONDITION);
+
+    if (method.isDeprecated()) {
+      methodJavadocBuilder.setDeprecated(CommentComposer.DEPRECATED_METHOD_STRING);
+    }
+
+    if (method.isInternalApi()) {
+      methodJavadocBuilder.setInternalOnly(CommentComposer.INTERNAL_ONLY_METHOD_STRING);
+    }
+
+    List<CommentStatement> comments = new ArrayList<>();
+    comments.add(CommentComposer.AUTO_GENERATED_METHOD_COMMENT);
+    if (!methodJavadocBuilder.emptyComments()) {
+      comments.add(CommentStatement.withComment(methodJavadocBuilder.build()));
+    }
+
+    return comments;
   }
 
   private static CommentStatement toSimpleComment(String comment) {
