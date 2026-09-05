@@ -237,6 +237,10 @@ public abstract class AbstractServiceClientTestClassComposer implements ClassCom
         javaMethods.add(createUnsupportedTestMethod(method));
         continue;
       }
+      if (method.isResumableUpload()) {
+        javaMethods.add(createResumableUploadTestMethod(method));
+        continue;
+      }
       Service matchingService = service;
       if (method.isMixin()) {
         int dotIndex = method.mixedInApiName().lastIndexOf(".");
@@ -781,6 +785,29 @@ public abstract class AbstractServiceClientTestClassComposer implements ClassCom
         .setScope(ScopeNode.PUBLIC)
         .setReturnType(TypeNode.VOID)
         .setName(exceptionTestMethodName)
+        .setThrowsExceptions(Arrays.asList(TypeNode.withExceptionClazz(Exception.class)))
+        .setBody(methodBody)
+        .build();
+  }
+
+  protected MethodDefinition createResumableUploadTestMethod(Method method) {
+    String javaMethodName = JavaStyle.toLowerCamelCase(method.name());
+    String testMethodName = String.format("%sTest", javaMethodName);
+
+    List<Statement> methodBody =
+        Collections.singletonList(
+            CommentStatement.withComment(
+                LineComment.withComment(
+                    "The "
+                        + javaMethodName
+                        + "() method requires a live HTTP/REST server supporting the resumable"
+                        + " upload protocol and is tested in integration tests.")));
+
+    return MethodDefinition.builder()
+        .setAnnotations(Arrays.asList(TEST_ANNOTATION))
+        .setScope(ScopeNode.PUBLIC)
+        .setReturnType(TypeNode.VOID)
+        .setName(testMethodName)
         .setThrowsExceptions(Arrays.asList(TypeNode.withExceptionClazz(Exception.class)))
         .setBody(methodBody)
         .build();
