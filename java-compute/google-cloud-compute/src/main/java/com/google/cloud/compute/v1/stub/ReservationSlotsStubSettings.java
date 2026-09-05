@@ -45,6 +45,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.compute.v1.GetHealthReservationSlotRequest;
 import com.google.cloud.compute.v1.GetReservationSlotRequest;
 import com.google.cloud.compute.v1.GetVersionReservationSlotRequest;
 import com.google.cloud.compute.v1.ListReservationSlotsRequest;
@@ -116,7 +117,7 @@ import org.jspecify.annotations.Nullable;
  *
  * <p>To configure the RetrySettings of a Long Running Operation method, create an
  * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
- * configure the RetrySettings for getVersion:
+ * configure the RetrySettings for getHealth:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -153,6 +154,9 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
 
   private final UnaryCallSettings<GetReservationSlotRequest, ReservationSlotsGetResponse>
       getSettings;
+  private final UnaryCallSettings<GetHealthReservationSlotRequest, Operation> getHealthSettings;
+  private final OperationCallSettings<GetHealthReservationSlotRequest, Operation, Operation>
+      getHealthOperationSettings;
   private final UnaryCallSettings<GetVersionReservationSlotRequest, Operation> getVersionSettings;
   private final OperationCallSettings<GetVersionReservationSlotRequest, Operation, Operation>
       getVersionOperationSettings;
@@ -225,6 +229,17 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
   /** Returns the object with the settings used for calls to get. */
   public UnaryCallSettings<GetReservationSlotRequest, ReservationSlotsGetResponse> getSettings() {
     return getSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getHealth. */
+  public UnaryCallSettings<GetHealthReservationSlotRequest, Operation> getHealthSettings() {
+    return getHealthSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getHealth. */
+  public OperationCallSettings<GetHealthReservationSlotRequest, Operation, Operation>
+      getHealthOperationSettings() {
+    return getHealthOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to getVersion. */
@@ -339,6 +354,8 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
     super(settingsBuilder);
 
     getSettings = settingsBuilder.getSettings().build();
+    getHealthSettings = settingsBuilder.getHealthSettings().build();
+    getHealthOperationSettings = settingsBuilder.getHealthOperationSettings().build();
     getVersionSettings = settingsBuilder.getVersionSettings().build();
     getVersionOperationSettings = settingsBuilder.getVersionOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
@@ -360,6 +377,11 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<GetReservationSlotRequest, ReservationSlotsGetResponse>
         getSettings;
+    private final UnaryCallSettings.Builder<GetHealthReservationSlotRequest, Operation>
+        getHealthSettings;
+    private final OperationCallSettings.Builder<
+            GetHealthReservationSlotRequest, Operation, Operation>
+        getHealthOperationSettings;
     private final UnaryCallSettings.Builder<GetVersionReservationSlotRequest, Operation>
         getVersionSettings;
     private final OperationCallSettings.Builder<
@@ -422,6 +444,8 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
       super(clientContext);
 
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getHealthSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getHealthOperationSettings = OperationCallSettings.newBuilder();
       getVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getVersionOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
@@ -430,7 +454,7 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, getVersionSettings, listSettings, updateSettings);
+              getSettings, getHealthSettings, getVersionSettings, listSettings, updateSettings);
       initDefaults(this);
     }
 
@@ -438,6 +462,8 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
       super(settings);
 
       getSettings = settings.getSettings.toBuilder();
+      getHealthSettings = settings.getHealthSettings.toBuilder();
+      getHealthOperationSettings = settings.getHealthOperationSettings.toBuilder();
       getVersionSettings = settings.getVersionSettings.toBuilder();
       getVersionOperationSettings = settings.getVersionOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
@@ -446,7 +472,7 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getSettings, getVersionSettings, listSettings, updateSettings);
+              getSettings, getHealthSettings, getVersionSettings, listSettings, updateSettings);
     }
 
     private static Builder createDefault() {
@@ -468,6 +494,11 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .getHealthSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
           .getVersionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
@@ -481,6 +512,30 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
           .updateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .getHealthOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<GetHealthReservationSlotRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
 
       builder
           .getVersionOperationSettings()
@@ -553,6 +608,18 @@ public class ReservationSlotsStubSettings extends StubSettings<ReservationSlotsS
     public UnaryCallSettings.Builder<GetReservationSlotRequest, ReservationSlotsGetResponse>
         getSettings() {
       return getSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getHealth. */
+    public UnaryCallSettings.Builder<GetHealthReservationSlotRequest, Operation>
+        getHealthSettings() {
+      return getHealthSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getHealth. */
+    public OperationCallSettings.Builder<GetHealthReservationSlotRequest, Operation, Operation>
+        getHealthOperationSettings() {
+      return getHealthOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to getVersion. */

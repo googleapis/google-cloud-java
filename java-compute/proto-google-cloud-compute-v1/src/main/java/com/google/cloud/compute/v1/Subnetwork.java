@@ -973,6 +973,31 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * VMs will receive an ARP response from a VM instance owning the target IP
+     * address within the subnetwork's primary CIDR range, if such a VM instance
+     * exists and is running.
+     * </pre>
+     *
+     * <code>ARP_BROADCAST_PRIMARY_RANGE = 123887458;</code>
+     */
+    ARP_BROADCAST_PRIMARY_RANGE(123887458),
+    /**
+     *
+     *
+     * <pre>
+     * Combines ARP_BROADCAST_PRIMARY_RANGE with MAC learning. Enables cache
+     * mapping between IP addresses and custom MAC addresses of instances and
+     * use of it to set the correct destination MAC address. If this option is
+     * chosen, the subnetwork must have /24 or a smaller CIDR range.
+     * </pre>
+     *
+     * <code>ARP_BROADCAST_PRIMARY_RANGE_WITH_LEARNING = 425592922;</code>
+     */
+    ARP_BROADCAST_PRIMARY_RANGE_WITH_LEARNING(425592922),
+    /**
+     *
+     *
+     * <pre>
      * Only the primary range of the VM NIC will respond to ARP.
      * </pre>
      *
@@ -1018,6 +1043,33 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * VMs will receive an ARP response from a VM instance owning the target IP
+     * address within the subnetwork's primary CIDR range, if such a VM instance
+     * exists and is running.
+     * </pre>
+     *
+     * <code>ARP_BROADCAST_PRIMARY_RANGE = 123887458;</code>
+     */
+    public static final int ARP_BROADCAST_PRIMARY_RANGE_VALUE = 123887458;
+
+    /**
+     *
+     *
+     * <pre>
+     * Combines ARP_BROADCAST_PRIMARY_RANGE with MAC learning. Enables cache
+     * mapping between IP addresses and custom MAC addresses of instances and
+     * use of it to set the correct destination MAC address. If this option is
+     * chosen, the subnetwork must have /24 or a smaller CIDR range.
+     * </pre>
+     *
+     * <code>ARP_BROADCAST_PRIMARY_RANGE_WITH_LEARNING = 425592922;</code>
+     */
+    public static final int ARP_BROADCAST_PRIMARY_RANGE_WITH_LEARNING_VALUE = 425592922;
+
+    /**
+     *
+     *
+     * <pre>
      * Only the primary range of the VM NIC will respond to ARP.
      * </pre>
      *
@@ -1053,6 +1105,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessage
           return UNDEFINED_RESOLVE_SUBNET_MASK;
         case 445655380:
           return ARP_ALL_RANGES;
+        case 123887458:
+          return ARP_BROADCAST_PRIMARY_RANGE;
+        case 425592922:
+          return ARP_BROADCAST_PRIMARY_RANGE_WITH_LEARNING;
         case 120210048:
           return ARP_PRIMARY_RANGE;
         default:

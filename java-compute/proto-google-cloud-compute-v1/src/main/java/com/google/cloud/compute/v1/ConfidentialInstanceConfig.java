@@ -95,6 +95,16 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      *
      *
      * <pre>
+     * Bare Metal Secure AI.
+     * </pre>
+     *
+     * <code>BMSAI = 63328144;</code>
+     */
+    BMSAI(63328144),
+    /**
+     *
+     *
+     * <pre>
      * Arm Confidential Compute Architecture.
      * </pre>
      *
@@ -164,6 +174,17 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
      * <code>UNDEFINED_CONFIDENTIAL_INSTANCE_TYPE = 0;</code>
      */
     public static final int UNDEFINED_CONFIDENTIAL_INSTANCE_TYPE_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Bare Metal Secure AI.
+     * </pre>
+     *
+     * <code>BMSAI = 63328144;</code>
+     */
+    public static final int BMSAI_VALUE = 63328144;
 
     /**
      *
@@ -246,6 +267,8 @@ public final class ConfidentialInstanceConfig extends com.google.protobuf.Genera
       switch (value) {
         case 0:
           return UNDEFINED_CONFIDENTIAL_INSTANCE_TYPE;
+        case 63328144:
+          return BMSAI;
         case 66529:
           return CCA;
         case 115021829:
