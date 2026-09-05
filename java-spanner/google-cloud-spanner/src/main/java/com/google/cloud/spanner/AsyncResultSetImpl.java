@@ -20,7 +20,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.core.ExecutorProvider;
-import com.google.cloud.spanner.AbstractReadContext.ListenableAsyncResultSet;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
@@ -35,17 +35,19 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.BlockingDeque;
-import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 /** Default implementation for {@link AsyncResultSet}. */
+@NullMarked
 class AsyncResultSetImpl extends ForwardingStructReader
-    implements ListenableAsyncResultSet, AsyncResultSet.StreamMessageListener {
+    implements AbstractReadContext.ListenableAsyncResultSet, AsyncResultSet.StreamMessageListener {
   private static final Logger log = Logger.getLogger(AsyncResultSetImpl.class.getName());
 
   /** State of an {@link AsyncResultSetImpl}. */
@@ -90,7 +92,7 @@ class AsyncResultSetImpl extends ForwardingStructReader
   private final ListeningScheduledExecutorService service;
 
   private final BlockingDeque<Struct> buffer;
-  private Struct currentRow;
+  @Nullable private Struct currentRow;
 
   /** Supplies the underlying synchronous {@link ResultSet} that will be producing the rows. */
   private final Supplier<ResultSet> delegateResultSet;
@@ -99,15 +101,15 @@ class AsyncResultSetImpl extends ForwardingStructReader
    * Any exception that occurs while executing the query and iterating over the result set will be
    * stored in this variable and propagated to the user through {@link #tryNext()}.
    */
-  private volatile SpannerException executionException;
+  @Nullable private volatile SpannerException executionException;
 
   /**
    * Executor for callbacks. Regardless of the type of executor that is provided, the {@link
    * AsyncResultSetImpl} will ensure that at most 1 callback call will be active at any one time.
    */
-  private Executor executor;
+  @Nullable private Executor executor;
 
-  private ReadyCallback callback;
+  @Nullable private ReadyCallback callback;
 
   /**
    * Listeners that will be called when the {@link AsyncResultSetImpl} has finished fetching all
@@ -117,15 +119,24 @@ class AsyncResultSetImpl extends ForwardingStructReader
 
   private volatile State state = State.INITIALIZED;
 
-  /** This variable indicates that produce rows thread is initiated */
-  private volatile boolean produceRowsInitiated;
+  /** Indicates whether a task is currently executing ProduceRowsRunnable. */
+  private boolean producerRunning;
+
+  /** Indicates whether a ProduceRowsRunnable task has been submitted and is waiting to run. */
+  private boolean producerScheduled;
+
+  /** Indicates whether produce rows has been initiated. */
+  private boolean produceRowsInitiated;
+
+  /** Indicates whether the result future and cleanup have been completed. */
+  private boolean completed;
 
   /**
    * This variable indicates whether all the results from the underlying result set have been read.
    */
   private volatile boolean finished;
 
-  private volatile SettableApiFuture<Void> result;
+  @Nullable private volatile SettableApiFuture<Void> result;
 
   /**
    * This variable indicates whether {@link #tryNext()} has returned {@link CursorState#DONE} or a
@@ -133,23 +144,8 @@ class AsyncResultSetImpl extends ForwardingStructReader
    */
   private volatile boolean cursorReturnedDoneOrException;
 
-  /**
-   * This variable is used to pause the producer when the {@link AsyncResultSet} is paused. The
-   * production of rows that are put into the buffer is only paused once the buffer is full.
-   */
-  private volatile CountDownLatch pausedLatch = new CountDownLatch(1);
-
-  /**
-   * This variable is used to pause the producer when the buffer is full and the consumer needs some
-   * time to catch up.
-   */
-  private volatile CountDownLatch bufferConsumptionLatch = new CountDownLatch(0);
-
-  /**
-   * This variable is used to pause the producer when all rows have been put into the buffer, but
-   * the consumer (the callback) has not yet received and processed all rows.
-   */
-  private volatile CountDownLatch consumingLatch = new CountDownLatch(0);
+  private boolean callbackRunning;
+  private boolean callbackScheduled;
 
   AsyncResultSetImpl(ExecutorProvider executorProvider, ResultSet delegate, int bufferSize) {
     this(executorProvider, Suppliers.ofInstance(Preconditions.checkNotNull(delegate)), bufferSize);
@@ -191,14 +187,25 @@ class AsyncResultSetImpl extends ForwardingStructReader
    */
   @Override
   public void close() {
+    boolean shouldCloseDelegate = false;
+    boolean shouldShutdownService = false;
     synchronized (monitor) {
       if (this.closed) {
         return;
       }
       if (state == State.INITIALIZED || state == State.SYNC) {
-        delegateResultSet.get().close();
+        shouldCloseDelegate = true;
+        if (executorProvider.shouldAutoClose()) {
+          shouldShutdownService = true;
+        }
       }
       this.closed = true;
+    }
+    if (shouldCloseDelegate) {
+      closeDelegateResultSet();
+    }
+    if (shouldShutdownService) {
+      service.shutdown();
     }
   }
 
@@ -235,8 +242,6 @@ class AsyncResultSetImpl extends ForwardingStructReader
         throw executionException;
       }
       Preconditions.checkState(
-          this.callback != null, "tryNext may only be called after a callback has been set.");
-      Preconditions.checkState(
           this.state == State.CONSUMING,
           "tryNext may only be called from a DataReady callback. Current state: "
               + this.state.name());
@@ -246,12 +251,11 @@ class AsyncResultSetImpl extends ForwardingStructReader
         return CursorState.DONE;
       }
     }
-    if (!buffer.isEmpty()) {
+    Struct nextRow = buffer.poll();
+    if (nextRow != null) {
       // Set the next row from the buffer as the current row of the StructReader.
-      replaceDelegate(currentRow = buffer.pop());
-      synchronized (monitor) {
-        bufferConsumptionLatch.countDown();
-      }
+      replaceDelegate(currentRow = nextRow);
+      scheduleProducerIfNecessary();
       return CursorState.OK;
     }
     return CursorState.NOT_READY;
@@ -272,8 +276,13 @@ class AsyncResultSetImpl extends ForwardingStructReader
   private class CallbackRunnable implements Runnable {
     @Override
     public void run() {
+      synchronized (monitor) {
+        callbackScheduled = false;
+        callbackRunning = true;
+      }
       try {
         while (true) {
+          ReadyCallback callback;
           synchronized (monitor) {
             if (cursorReturnedDoneOrException) {
               break;
@@ -285,23 +294,28 @@ class AsyncResultSetImpl extends ForwardingStructReader
               // also stop, even though the callback has not seen the CANCELLED state.
               cursorReturnedDoneOrException = true;
             }
+            callback = AsyncResultSetImpl.this.callback;
+          }
+          if (callback == null) {
+            return;
           }
           CallbackResponse response;
           try {
             response = callback.cursorReady(AsyncResultSetImpl.this);
-          } catch (Throwable e) {
+          } catch (Throwable throwable) {
             synchronized (monitor) {
               if (cursorReturnedDoneOrException
                   && state == State.CANCELLED
-                  && e instanceof SpannerException
-                  && ((SpannerException) e).getErrorCode() == ErrorCode.CANCELLED) {
+                  && throwable instanceof SpannerException
+                  && ((SpannerException) throwable).getErrorCode() == ErrorCode.CANCELLED) {
                 // The callback did not catch the cancelled exception (which it should have), but
                 // we'll keep the cancelled state.
                 return;
               }
-              executionException = SpannerExceptionFactory.asSpannerException(e);
+              executionException = SpannerExceptionFactory.asSpannerException(throwable);
               cursorReturnedDoneOrException = true;
             }
+            closeDelegateResultSet();
             return;
           }
           synchronized (monitor) {
@@ -317,16 +331,14 @@ class AsyncResultSetImpl extends ForwardingStructReader
                   return;
                 case PAUSE:
                   state = State.PAUSED;
-                  // Make sure no-one else is waiting on the current pause latch and create a new
-                  // one.
-                  pausedLatch.countDown();
-                  pausedLatch = new CountDownLatch(1);
                   return;
                 case CONTINUE:
                   if (buffer.isEmpty()) {
-                    // Call the callback once more if the entire result set has been processed but
-                    // the callback has not yet received a CursorState.DONE or a CANCELLED error.
-                    if (finished && !cursorReturnedDoneOrException) {
+                    // Call the callback once more if the entire result set has been processed or an
+                    // exception was encountered, but the callback has not yet received a
+                    // CursorState.DONE or error.
+                    if ((finished || executionException != null)
+                        && !cursorReturnedDoneOrException) {
                       break;
                     }
                     state = State.RUNNING;
@@ -341,17 +353,16 @@ class AsyncResultSetImpl extends ForwardingStructReader
         }
       } finally {
         synchronized (monitor) {
-          // Count down all latches that the producer might be waiting on.
-          consumingLatch.countDown();
-          while (bufferConsumptionLatch.getCount() > 0L) {
-            bufferConsumptionLatch.countDown();
-          }
+          callbackRunning = false;
         }
+        scheduleCallbackIfNecessary();
+        checkCompletion();
       }
     }
   }
 
   private final CallbackRunnable callbackRunnable = new CallbackRunnable();
+  private final ProduceRowsRunnable produceRowsRunnable = new ProduceRowsRunnable();
 
   /**
    * {@link ProduceRowsRunnable} reads data from the underlying {@link ResultSet}, places these in
@@ -360,123 +371,231 @@ class AsyncResultSetImpl extends ForwardingStructReader
   private class ProduceRowsRunnable implements Runnable {
     @Override
     public void run() {
-      boolean stop = false;
-      boolean hasNext = false;
       try {
-        hasNext = delegateResultSet.get().next();
-      } catch (Throwable e) {
+        boolean stopped;
         synchronized (monitor) {
-          executionException = SpannerExceptionFactory.asSpannerException(e);
-        }
-      }
-      try {
-        while (!stop && hasNext) {
-          try {
-            synchronized (monitor) {
-              stop = state.shouldStop;
+          producerScheduled = false;
+          stopped = shouldStopProducer();
+          if (!stopped) {
+            if (state == State.STREAMING_INITIALIZED) {
+              state = State.RUNNING;
             }
-            if (!stop) {
-              while (buffer.remainingCapacity() == 0 && !stop) {
-                waitIfPaused();
-                // The buffer is full and we should let the callback consume a number of rows before
-                // we proceed with producing any more rows to prevent us from potentially waiting on
-                // a full buffer repeatedly.
-                // Wait until at least half of the buffer is available, or if it's a bigger buffer,
-                // wait until at least 10 rows can be placed in it.
-                // TODO: Make this more dynamic / configurable?
-                startCallbackWithBufferLatchIfNecessary(
-                    Math.min(
-                        Math.min(buffer.size() / 2 + 1, buffer.size()),
-                        MAX_WAIT_FOR_BUFFER_CONSUMPTION));
-                bufferConsumptionLatch.await();
-                synchronized (monitor) {
-                  stop = state.shouldStop;
-                }
-              }
-            }
-            if (!stop) {
-              buffer.put(delegateResultSet.get().getCurrentRowAsStruct());
-              startCallbackIfNecessary();
-              hasNext = delegateResultSet.get().next();
-            }
-          } catch (Throwable e) {
-            synchronized (monitor) {
-              executionException = SpannerExceptionFactory.asSpannerException(e);
-              stop = true;
-            }
+            produceRowsInitiated = true;
+            producerRunning = true;
           }
         }
-        // We don't need any more data from the underlying result set, so we close it as soon as
-        // possible. Any error that might occur during this will be ignored.
-        closeDelegateResultSet();
-
-        // Ensure that the callback has been called at least once, even if the result set was
-        // cancelled.
-        synchronized (monitor) {
-          finished = true;
-          stop = cursorReturnedDoneOrException;
+        if (stopped) {
+          checkCompletion();
+          return;
         }
-        // Call the callback if there are still rows in the buffer that need to be processed.
-        while (!stop) {
-          try {
-            waitIfPaused();
-            startCallbackIfNecessary();
-            // Make sure we wait until the callback runner has actually finished.
-            consumingLatch.await();
-            synchronized (monitor) {
-              stop = cursorReturnedDoneOrException;
+        while (true) {
+          synchronized (monitor) {
+            if (shouldStopProducer() || buffer.remainingCapacity() == 0) {
+              return;
             }
-          } catch (Throwable e) {
-            result.setException(e);
+          }
+          if (!isDataAvailable()) {
             return;
           }
-        }
-      } finally {
-        if (executorProvider.shouldAutoClose()) {
-          service.shutdown();
-        }
-        for (Runnable listener : listeners) {
-          listener.run();
-        }
-        synchronized (monitor) {
-          if (executionException != null) {
-            result.setException(executionException);
-          } else if (state == State.CANCELLED) {
-            result.setException(CANCELLED_EXCEPTION);
+
+          boolean hasNext = delegateResultSet.get().next();
+          if (hasNext) {
+            buffer.put(delegateResultSet.get().getCurrentRowAsStruct());
+            scheduleCallbackIfNecessary();
           } else {
-            result.set(null);
+            synchronized (monitor) {
+              finished = true;
+            }
+            closeDelegateResultSet();
+            break;
           }
+        }
+        scheduleCallbackIfNecessary();
+      } catch (InterruptedException interruptedException) {
+        Thread.currentThread().interrupt();
+        setExecutionException(interruptedException);
+        scheduleCallbackIfNecessary();
+      } catch (Throwable throwable) {
+        setExecutionException(throwable);
+        scheduleCallbackIfNecessary();
+      } finally {
+        synchronized (monitor) {
+          producerRunning = false;
+        }
+        scheduleProducerIfNecessary();
+        checkCompletion();
+      }
+    }
+  }
+
+  private boolean isDataAvailable() {
+    try {
+      return StreamingUtil.isDataAvailable(delegateResultSet.get());
+    } catch (Throwable t) {
+      return true;
+    }
+  }
+
+  private void setExecutionException(Throwable throwable) {
+    synchronized (monitor) {
+      if (executionException == null && !state.shouldStop) {
+        executionException = SpannerExceptionFactory.asSpannerException(throwable);
+      }
+    }
+  }
+
+  private boolean shouldStopProducer() {
+    return finished
+        || state.shouldStop
+        || state == State.PAUSED
+        || executionException != null
+        || cursorReturnedDoneOrException;
+  }
+
+  private boolean canScheduleProducer() {
+    return !producerRunning
+        && !producerScheduled
+        && !shouldStopProducer()
+        && buffer.remainingCapacity() > 0;
+  }
+
+  private void scheduleProducerIfNecessary() {
+    synchronized (monitor) {
+      if (!canScheduleProducer()) {
+        return;
+      }
+    }
+    if (!isDataAvailable()) {
+      return;
+    }
+    boolean shouldSchedule = false;
+    synchronized (monitor) {
+      if (canScheduleProducer()) {
+        if (state == State.STREAMING_INITIALIZED) {
+          state = State.RUNNING;
+        }
+        produceRowsInitiated = true;
+        producerScheduled = true;
+        shouldSchedule = true;
+      }
+    }
+    if (shouldSchedule) {
+      try {
+        service.execute(produceRowsRunnable);
+      } catch (Throwable throwable) {
+        synchronized (monitor) {
+          producerScheduled = false;
+          if (executionException == null && !state.shouldStop) {
+            executionException = SpannerExceptionFactory.asSpannerException(throwable);
+          }
+        }
+        scheduleCallbackIfNecessary();
+        checkCompletion();
+      }
+    }
+  }
+
+  private boolean canScheduleCallback() {
+    return (state == State.RUNNING || state == State.CANCELLED)
+        && !cursorReturnedDoneOrException
+        && !callbackRunning
+        && !callbackScheduled
+        && (!buffer.isEmpty()
+            || finished
+            || executionException != null
+            || state == State.CANCELLED);
+  }
+
+  private void scheduleCallbackIfNecessary() {
+    boolean shouldExecute = false;
+    Executor executor = null;
+    synchronized (monitor) {
+      if (canScheduleCallback() && this.executor != null) {
+        if (state == State.RUNNING) {
+          state = State.CONSUMING;
+        }
+        callbackScheduled = true;
+        shouldExecute = true;
+        executor = this.executor;
+      }
+    }
+    if (shouldExecute && executor != null) {
+      try {
+        executor.execute(callbackRunnable);
+      } catch (Throwable throwable) {
+        synchronized (monitor) {
+          callbackScheduled = false;
+          cursorReturnedDoneOrException = true;
+          if (executionException == null && !state.shouldStop) {
+            executionException = SpannerExceptionFactory.asSpannerException(throwable);
+          }
+        }
+        checkCompletion();
+      }
+    }
+  }
+
+  private void checkCompletion() {
+    boolean shouldComplete = false;
+    synchronized (monitor) {
+      if (!completed
+          && !producerRunning
+          && !producerScheduled
+          && !callbackRunning
+          && !callbackScheduled) {
+        if (state == State.DONE) {
+          completed = true;
+          shouldComplete = true;
+        } else if (state == State.CANCELLED) {
+          if (cursorReturnedDoneOrException) {
+            completed = true;
+            shouldComplete = true;
+          }
+        } else if (cursorReturnedDoneOrException
+            && ((finished && buffer.isEmpty()) || executionException != null)) {
+          state = State.DONE;
+          completed = true;
+          shouldComplete = true;
         }
       }
     }
-
-    private void waitIfPaused() throws InterruptedException {
-      CountDownLatch pause;
-      synchronized (monitor) {
-        pause = pausedLatch;
-      }
-      pause.await();
+    if (shouldComplete) {
+      cleanupAndCompleteResult();
     }
+  }
 
-    private void startCallbackIfNecessary() {
-      startCallbackWithBufferLatchIfNecessary(0);
+  private void cleanupAndCompleteResult() {
+    closeDelegateResultSet();
+    buffer.clear();
+    currentRow = null;
+    if (executorProvider.shouldAutoClose()) {
+      service.shutdown();
     }
-
-    private void startCallbackWithBufferLatchIfNecessary(int bufferLatch) {
-      synchronized (monitor) {
-        if ((state == State.RUNNING || state == State.CANCELLED)
-            && !cursorReturnedDoneOrException) {
-          consumingLatch = new CountDownLatch(1);
-          if (bufferLatch > 0) {
-            bufferConsumptionLatch = new CountDownLatch(bufferLatch);
-          }
-          if (state == State.RUNNING) {
-            state = State.CONSUMING;
-          }
-          executor.execute(callbackRunnable);
-        }
+    callback = null;
+    executor = null;
+    for (Runnable listener : listeners) {
+      try {
+        listener.run();
+      } catch (Throwable t) {
+        log.log(Level.WARNING, "Listener threw exception", t);
       }
     }
+    listeners.clear();
+    SettableApiFuture<Void> resultFuture = this.result;
+    if (resultFuture != null) {
+      if (executionException != null) {
+        resultFuture.setException(executionException);
+      } else if (state == State.CANCELLED) {
+        resultFuture.setException(CANCELLED_EXCEPTION);
+      } else {
+        resultFuture.set(null);
+      }
+    }
+  }
+
+  @VisibleForTesting
+  int getBufferSize() {
+    return buffer.size();
   }
 
   private class InitiateStreamingRunnable implements Runnable {
@@ -491,68 +610,111 @@ class AsyncResultSetImpl extends ForwardingStructReader
         // need to eagerly start the ProduceRowsRunnable.
         if (!initiateStreaming(AsyncResultSetImpl.this)) {
           initiateProduceRows();
+        } else {
+          scheduleProducerIfNecessary();
         }
       } catch (Throwable exception) {
-        executionException = SpannerExceptionFactory.asSpannerException(exception);
-        initiateProduceRows();
+        synchronized (monitor) {
+          executionException = SpannerExceptionFactory.asSpannerException(exception);
+          produceRowsInitiated = true;
+          if (state == State.STREAMING_INITIALIZED) {
+            state = State.RUNNING;
+          }
+        }
+        scheduleCallbackIfNecessary();
+        checkCompletion();
       }
     }
   }
 
   /** Sets the callback for this {@link AsyncResultSet}. */
   @Override
-  public ApiFuture<Void> setCallback(Executor exec, ReadyCallback cb) {
+  public ApiFuture<Void> setCallback(Executor executor, ReadyCallback callback) {
+    SettableApiFuture<Void> resultFuture;
     synchronized (monitor) {
       Preconditions.checkState(!closed, "This AsyncResultSet has been closed");
       Preconditions.checkState(
           this.state == State.INITIALIZED, "callback may not be set multiple times");
 
       // Start to fetch data and buffer these.
-      this.result = SettableApiFuture.create();
+      this.result = resultFuture = SettableApiFuture.create();
       this.state = State.STREAMING_INITIALIZED;
-      this.service.execute(new InitiateStreamingRunnable());
-      this.executor = MoreExecutors.newSequentialExecutor(Preconditions.checkNotNull(exec));
-      this.callback = Preconditions.checkNotNull(cb);
-      pausedLatch.countDown();
-      return result;
+      this.executor = MoreExecutors.newSequentialExecutor(Preconditions.checkNotNull(executor));
+      this.callback = Preconditions.checkNotNull(callback);
     }
+    try {
+      this.service.execute(new InitiateStreamingRunnable());
+    } catch (Throwable throwable) {
+      synchronized (monitor) {
+        cursorReturnedDoneOrException = true;
+        if (executionException == null) {
+          executionException = SpannerExceptionFactory.asSpannerException(throwable);
+        }
+      }
+      checkCompletion();
+    }
+    return resultFuture;
   }
 
   private void initiateProduceRows() {
     synchronized (monitor) {
+      if (this.produceRowsInitiated) {
+        return;
+      }
+      this.produceRowsInitiated = true;
       if (this.state == State.STREAMING_INITIALIZED) {
         this.state = State.RUNNING;
       }
-      produceRowsInitiated = true;
     }
-    this.service.execute(new ProduceRowsRunnable());
+    scheduleProducerIfNecessary();
+    checkCompletion();
   }
 
-  Future<Void> getResult() {
+  @Nullable Future<Void> getResult() {
     return result;
   }
 
   @Override
   public void cancel() {
+    boolean shouldStartCallback = false;
     synchronized (monitor) {
       Preconditions.checkState(
           state != State.INITIALIZED && state != State.SYNC,
           "cannot cancel a result set without a callback");
       state = State.CANCELLED;
-      pausedLatch.countDown();
+      if (!callbackRunning && !callbackScheduled) {
+        shouldStartCallback = true;
+      }
     }
+    closeDelegateResultSet();
+    if (shouldStartCallback) {
+      scheduleCallbackIfNecessary();
+    }
+    checkCompletion();
   }
 
   @Override
   public void resume() {
+    boolean shouldStartCallback = false;
+    boolean shouldScheduleProducer = false;
     synchronized (monitor) {
       Preconditions.checkState(
           state != State.INITIALIZED && state != State.SYNC,
           "cannot resume a result set without a callback");
+      if (completed) {
+        return;
+      }
       if (state == State.PAUSED) {
         state = State.RUNNING;
-        pausedLatch.countDown();
+        shouldStartCallback = true;
+        shouldScheduleProducer = true;
       }
+    }
+    if (shouldStartCallback) {
+      scheduleCallbackIfNecessary();
+    }
+    if (shouldScheduleProducer) {
+      scheduleProducerIfNecessary();
     }
   }
 
@@ -596,10 +758,11 @@ class AsyncResultSetImpl extends ForwardingStructReader
       Preconditions.checkState(!closed, "This AsyncResultSet has been closed");
       Preconditions.checkState(
           this.state == State.INITIALIZED, "This AsyncResultSet has already been used.");
-      final SettableApiFuture<List<T>> res = SettableApiFuture.create();
-      CreateListCallback<T> callback = new CreateListCallback<>(res, transformer);
+      final SettableApiFuture<List<T>> resultFuture = SettableApiFuture.create();
+      CreateListCallback<T> callback = new CreateListCallback<>(resultFuture, transformer);
       ApiFuture<Void> finished = setCallback(executor, callback);
-      return ApiFutures.transformAsync(finished, ignored -> res, MoreExecutors.directExecutor());
+      return ApiFutures.transformAsync(
+          finished, ignored -> resultFuture, MoreExecutors.directExecutor());
     }
   }
 
@@ -608,10 +771,10 @@ class AsyncResultSetImpl extends ForwardingStructReader
     ApiFuture<List<T>> future = toListAsync(transformer, MoreExecutors.directExecutor());
     try {
       return future.get();
-    } catch (ExecutionException e) {
-      throw SpannerExceptionFactory.asSpannerException(e.getCause());
-    } catch (Throwable e) {
-      throw SpannerExceptionFactory.asSpannerException(e);
+    } catch (ExecutionException executionException) {
+      throw SpannerExceptionFactory.asSpannerException(executionException.getCause());
+    } catch (Throwable throwable) {
+      throw SpannerExceptionFactory.asSpannerException(throwable);
     }
   }
 
@@ -623,9 +786,9 @@ class AsyncResultSetImpl extends ForwardingStructReader
           "Cannot call next() on a result set with a callback.");
       this.state = State.SYNC;
     }
-    boolean res = delegateResultSet.get().next();
-    currentRow = res ? delegateResultSet.get().getCurrentRowAsStruct() : null;
-    return res;
+    boolean hasNext = delegateResultSet.get().next();
+    currentRow = hasNext ? delegateResultSet.get().getCurrentRowAsStruct() : null;
+    return hasNext;
   }
 
   @Override
@@ -660,19 +823,16 @@ class AsyncResultSetImpl extends ForwardingStructReader
 
   @Override
   public void onStreamMessage(PartialResultSet partialResultSet, boolean bufferIsFull) {
+    boolean shouldInitiate = false;
     synchronized (monitor) {
-      if (produceRowsInitiated) {
-        return;
+      if (!produceRowsInitiated) {
+        shouldInitiate = true;
       }
-      // if PartialResultSet contains a resume token or buffer size is full, or
-      // we have reached the end of the stream, we can start the thread.
-      boolean startJobThread =
-          !partialResultSet.getResumeToken().isEmpty()
-              || bufferIsFull
-              || partialResultSet == GrpcStreamIterator.END_OF_STREAM;
-      if (startJobThread || state != State.STREAMING_INITIALIZED) {
-        initiateProduceRows();
-      }
+    }
+    if (shouldInitiate) {
+      initiateProduceRows();
+    } else {
+      scheduleProducerIfNecessary();
     }
   }
 }

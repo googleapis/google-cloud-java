@@ -42,8 +42,8 @@ class GrpcValueIterator extends AbstractIterator<com.google.protobuf.Value> {
   private final CloseableIterator<PartialResultSet> stream;
   private ResultSetMetadata metadata;
   private Type type;
-  private PartialResultSet current;
-  private int pos;
+  private volatile PartialResultSet current;
+  private volatile int pos;
   private ResultSetStats statistics;
   private final Listener listener;
 
@@ -131,6 +131,11 @@ class GrpcValueIterator extends AbstractIterator<com.google.protobuf.Value> {
     return stream.initiateStreaming(streamMessageListener);
   }
 
+  boolean isDataAvailable() {
+    PartialResultSet currentCopy = this.current;
+    return (currentCopy != null && pos < currentCopy.getValuesCount()) || stream.isDataAvailable();
+  }
+
   Type type() {
     checkState(type != null, "metadata has not been received");
     return type;
@@ -141,8 +146,9 @@ class GrpcValueIterator extends AbstractIterator<com.google.protobuf.Value> {
       if (!stream.hasNext()) {
         return false;
       }
-      current = stream.next();
+      PartialResultSet nextCurrent = stream.next();
       pos = 0;
+      current = nextCurrent;
       if (type == null) {
         // This is the first message on the stream.
         if (!current.hasMetadata() || !current.getMetadata().hasRowType()) {

@@ -19,7 +19,10 @@ package com.google.cloud.spanner;
 import static com.google.cloud.spanner.MockSpannerTestUtil.*;
 import static com.google.cloud.spanner.SpannerApiFutures.get;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiFuture;
@@ -33,6 +36,9 @@ import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.common.collect.ContiguousSet;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
+import com.google.protobuf.ByteString;
+import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.ReadRequest;
 import io.grpc.Server;
 import io.grpc.Status;
 import io.grpc.inprocess.InProcessServerBuilder;
@@ -49,6 +55,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -114,6 +121,7 @@ public class ReadAsyncTest {
   public void after() {
     spanner.close();
     mockSpanner.removeAllExecutionTimes();
+    mockSpanner.clearRequests();
   }
 
   @Test
@@ -429,6 +437,115 @@ public class ReadAsyncTest {
     SpannerException e = assertThrows(SpannerException.class, () -> get(res));
     assertThat(e.getErrorCode()).isEqualTo(ErrorCode.CANCELLED);
     assertThat(values).containsExactly("v1");
+  }
+
+  @Test
+  public void readAsyncRetriesOnUnavailableHalfway() throws Exception {
+    int totalRowCount = 50;
+    int errorIndex = 20;
+    String retryTableName = "RetryTable";
+    mockSpanner.putStatementResult(
+        StatementResult.read(
+            retryTableName,
+            KeySet.all(),
+            READ_COLUMN_NAMES,
+            generateKeyValueResultSet(ContiguousSet.closed(1, totalRowCount))));
+    mockSpanner.setStreamingReadExecutionTime(
+        SimulatedExecutionTime.ofStreamException(
+            Status.UNAVAILABLE.asRuntimeException(), errorIndex));
+    mockSpanner.clearRequests();
+
+    List<String> receivedKeys = new ArrayList<>();
+    List<String> receivedValues = new ArrayList<>();
+    try (AsyncResultSet resultSet =
+        client.singleUse().readAsync(retryTableName, KeySet.all(), READ_COLUMN_NAMES)) {
+      ApiFuture<Void> future =
+          resultSet.setCallback(
+              executor,
+              ready -> {
+                while (true) {
+                  switch (ready.tryNext()) {
+                    case OK:
+                      receivedKeys.add(ready.getString("Key"));
+                      receivedValues.add(ready.getString("Value"));
+                      break;
+                    case NOT_READY:
+                      return CallbackResponse.CONTINUE;
+                    case DONE:
+                      return CallbackResponse.DONE;
+                  }
+                }
+              });
+      assertNull(future.get(10, TimeUnit.SECONDS));
+    }
+
+    assertEquals(totalRowCount, receivedKeys.size());
+    assertEquals(totalRowCount, receivedValues.size());
+    for (int i = 0; i < totalRowCount; i++) {
+      assertEquals("k" + (i + 1), receivedKeys.get(i));
+      assertEquals("v" + (i + 1), receivedValues.get(i));
+    }
+
+    assertEquals(2, mockSpanner.countRequestsOfType(ReadRequest.class));
+    ReadRequest initialRequest = mockSpanner.getRequestsOfType(ReadRequest.class).get(0);
+    assertTrue(initialRequest.getResumeToken().isEmpty());
+
+    ReadRequest resumeRequest = mockSpanner.getRequestsOfType(ReadRequest.class).get(1);
+    assertEquals(
+        ByteString.copyFromUtf8(String.format("%09d", errorIndex)), resumeRequest.getResumeToken());
+  }
+
+  @Test
+  public void executeQueryAsyncRetriesOnUnavailableHalfway() throws Exception {
+    int totalRowCount = 50;
+    int errorIndex = 20;
+    Statement statement = Statement.of("SELECT Key, Value FROM RetryTable");
+    mockSpanner.putStatementResult(
+        StatementResult.query(
+            statement, generateKeyValueResultSet(ContiguousSet.closed(1, totalRowCount))));
+    mockSpanner.setExecuteStreamingSqlExecutionTime(
+        SimulatedExecutionTime.ofStreamException(
+            Status.UNAVAILABLE.asRuntimeException(), errorIndex));
+    mockSpanner.clearRequests();
+
+    List<String> receivedKeys = new ArrayList<>();
+    List<String> receivedValues = new ArrayList<>();
+    try (AsyncResultSet resultSet = client.singleUse().executeQueryAsync(statement)) {
+      ApiFuture<Void> future =
+          resultSet.setCallback(
+              executor,
+              ready -> {
+                while (true) {
+                  switch (ready.tryNext()) {
+                    case OK:
+                      receivedKeys.add(ready.getString("Key"));
+                      receivedValues.add(ready.getString("Value"));
+                      break;
+                    case NOT_READY:
+                      return CallbackResponse.CONTINUE;
+                    case DONE:
+                      return CallbackResponse.DONE;
+                  }
+                }
+              });
+      assertNull(future.get(10, TimeUnit.SECONDS));
+    }
+
+    assertEquals(totalRowCount, receivedKeys.size());
+    assertEquals(totalRowCount, receivedValues.size());
+    for (int i = 0; i < totalRowCount; i++) {
+      assertEquals("k" + (i + 1), receivedKeys.get(i));
+      assertEquals("v" + (i + 1), receivedValues.get(i));
+    }
+
+    assertEquals(2, mockSpanner.countRequestsOfType(ExecuteSqlRequest.class));
+    ExecuteSqlRequest initialRequest =
+        mockSpanner.getRequestsOfType(ExecuteSqlRequest.class).get(0);
+    assertTrue(initialRequest.getResumeToken().isEmpty());
+
+    ExecuteSqlRequest resumeRequest = mockSpanner.getRequestsOfType(ExecuteSqlRequest.class).get(1);
+    assertEquals(
+        ByteString.copyFromUtf8(String.format("%09d", errorIndex)), resumeRequest.getResumeToken());
   }
 
   private boolean isMultiplexedSessionsEnabled() {

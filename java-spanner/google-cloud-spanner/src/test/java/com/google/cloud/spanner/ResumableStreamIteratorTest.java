@@ -18,7 +18,9 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -26,6 +28,7 @@ import static org.mockito.Mockito.when;
 import com.google.api.client.util.BackOff;
 import com.google.cloud.spanner.ErrorHandler.DefaultErrorHandler;
 import com.google.cloud.spanner.XGoogSpannerRequestId.NoopRequestIdCreator;
+import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.v1.stub.SpannerStubSettings;
 import com.google.common.collect.AbstractIterator;
 import com.google.common.collect.ImmutableList;
@@ -470,6 +473,86 @@ public class ResumableStreamIteratorTest {
     Mockito.when(s2.next()).thenReturn(resultSet(null, "d")).thenReturn(null);
 
     assertThat(consume(resumableStreamIterator)).containsExactly("a", "b", "c", "d").inOrder();
+  }
+
+  @Test
+  public void isDataAvailableWithGrpcStreamIterator() {
+    initWithLimit(512);
+    GrpcStreamIterator grpcStream = new GrpcStreamIterator(false, 4, false);
+    Mockito.when(starter.startStream(null, null)).thenReturn(grpcStream);
+    resumableStreamIterator.setStream(grpcStream);
+
+    // Empty stream -> false
+    assertFalse(resumableStreamIterator.isDataAvailable());
+
+    // Chunk without resume token arrives -> immediately available because GrpcStreamIterator has
+    // data
+    grpcStream.consumer().onPartialResultSet(resultSet(null, "a"));
+    assertTrue(resumableStreamIterator.isDataAvailable());
+  }
+
+  @Test
+  public void isDataAvailableWithoutResumeTokensWithProductionBufferSize() throws Exception {
+    initWithLimit(512);
+    GrpcStreamIterator grpcStream = new GrpcStreamIterator(false, 4, false);
+    SpannerRpc.StreamingCall call = Mockito.mock(SpannerRpc.StreamingCall.class);
+    grpcStream.setCall(call, false);
+    Mockito.when(starter.startStream(null, null)).thenReturn(grpcStream);
+    resumableStreamIterator.setStream(grpcStream);
+
+    assertFalse(resumableStreamIterator.isDataAvailable());
+
+    java.util.concurrent.ExecutorService feeder =
+        java.util.concurrent.Executors.newSingleThreadExecutor();
+    try {
+      feeder.submit(
+          () -> {
+            for (int i = 0; i < 10; i++) {
+              grpcStream.consumer().onPartialResultSet(resultSet(null, "val" + i));
+            }
+            grpcStream.consumer().onCompleted();
+          });
+
+      List<String> results = new ArrayList<>();
+      while (resumableStreamIterator.hasNext()) {
+        PartialResultSet prs = resumableStreamIterator.next();
+        results.add(prs.getValues(0).getStringValue());
+      }
+      assertEquals(10, results.size());
+      for (int i = 0; i < 10; i++) {
+        assertEquals("val" + i, results.get(i));
+      }
+    } finally {
+      feeder.shutdown();
+    }
+  }
+
+  @Test
+  public void isDataAvailableWithResumeTokenInGrpcStream() {
+    initWithLimit(10);
+    GrpcStreamIterator grpcStream = new GrpcStreamIterator(false, 4, false);
+    Mockito.when(starter.startStream(null, null)).thenReturn(grpcStream);
+    resumableStreamIterator.setStream(grpcStream);
+
+    assertFalse(resumableStreamIterator.isDataAvailable());
+
+    // Chunk with resume token arrives -> immediately ready to emit!
+    grpcStream.consumer().onPartialResultSet(resultSet(ByteString.copyFromUtf8("r1"), "a"));
+    assertTrue(resumableStreamIterator.isDataAvailable());
+  }
+
+  @Test
+  public void isDataAvailableWhenStreamIsNull() {
+    initWithLimit(10);
+    resumableStreamIterator.setStream(null);
+    assertFalse(resumableStreamIterator.isDataAvailable());
+  }
+
+  @Test
+  public void isDataAvailableWhenFinished() {
+    initWithLimit(10);
+    setInternalState(ResumableStreamIterator.class, resumableStreamIterator, "finished", true);
+    assertTrue(resumableStreamIterator.isDataAvailable());
   }
 
   static PartialResultSet resultSet(@Nullable ByteString resumeToken, String... data) {

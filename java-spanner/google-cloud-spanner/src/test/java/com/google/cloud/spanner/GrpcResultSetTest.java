@@ -1254,4 +1254,29 @@ public class GrpcResultSetTest {
     assertEquals("DEADLINE_EXCEEDED: stream wait timeout", spannerException.getMessage());
     consumer.onCompleted();
   }
+
+  @Test
+  public void testIsDataAvailable() {
+    assertFalse(resultSet.isDataAvailable());
+
+    consumer.onPartialResultSet(
+        PartialResultSet.newBuilder()
+            .setMetadata(makeMetadata(Type.struct(Type.StructField.of("f", Type.string()))))
+            .addValues(Value.string("val1").toProto())
+            .addValues(Value.string("val2").toProto())
+            .build());
+
+    assertTrue(resultSet.isDataAvailable());
+    assertTrue(resultSet.next());
+    assertEquals("val1", resultSet.getString(0));
+
+    assertTrue(resultSet.isDataAvailable());
+    assertTrue(resultSet.next());
+    assertEquals("val2", resultSet.getString(0));
+
+    assertFalse(resultSet.isDataAvailable());
+    consumer.onCompleted();
+    assertTrue(resultSet.isDataAvailable());
+    assertFalse(resultSet.next());
+  }
 }
