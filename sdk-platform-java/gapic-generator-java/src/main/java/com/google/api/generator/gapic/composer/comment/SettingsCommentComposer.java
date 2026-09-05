@@ -130,6 +130,16 @@ public class SettingsCommentComposer {
         isMethodInternal);
   }
 
+  private static final String RESUMABLE_UPLOAD_CALL_SETTINGS_DOC_NOTE =
+      "Note that custom retry settings and headers configured via ApiCallContext"
+          + " apply strictly to the initial session initiation request.";
+
+  public static CommentStatement createResumableUploadCallSettingsGetterComment(
+      String javaMethodName, boolean isMethodDeprecated, boolean isMethodInternal) {
+    return createResumableUploadCallSettingsComment(
+        CALL_SETTINGS_METHOD_DOC_PATTERN, javaMethodName, isMethodDeprecated, isMethodInternal);
+  }
+
   public static CommentStatement createBuilderClassComment(String outerClassName) {
     return toCommentStatement(String.format(BUILDER_CLASS_DOC_PATTERN, outerClassName));
   }
@@ -138,6 +148,30 @@ public class SettingsCommentComposer {
       String javaMethodName, boolean isMethodDeprecated, boolean isMethodInternal) {
     String methodComment = String.format(CALL_SETTINGS_BUILDER_METHOD_DOC_PATTERN, javaMethodName);
     return toCommentStatement(methodComment, isMethodDeprecated, isMethodInternal);
+  }
+
+  public static CommentStatement createResumableUploadCallSettingsBuilderGetterComment(
+      String javaMethodName, boolean isMethodDeprecated, boolean isMethodInternal) {
+    return createResumableUploadCallSettingsComment(
+        CALL_SETTINGS_BUILDER_METHOD_DOC_PATTERN,
+        javaMethodName,
+        isMethodDeprecated,
+        isMethodInternal);
+  }
+
+  private static CommentStatement createResumableUploadCallSettingsComment(
+      String pattern, String javaMethodName, boolean isMethodDeprecated, boolean isMethodInternal) {
+    JavaDocComment.Builder docBuilder =
+        JavaDocComment.builder()
+            .addComment(String.format(pattern, javaMethodName))
+            .addParagraph(RESUMABLE_UPLOAD_CALL_SETTINGS_DOC_NOTE);
+    if (isMethodDeprecated) {
+      docBuilder.setDeprecated(CommentComposer.DEPRECATED_METHOD_STRING);
+    }
+    if (isMethodInternal) {
+      docBuilder.setInternalOnly(CommentComposer.INTERNAL_ONLY_METHOD_STRING);
+    }
+    return CommentStatement.withComment(docBuilder.build());
   }
 
   public static List<CommentStatement> createClassHeaderComments(

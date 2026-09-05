@@ -45,7 +45,13 @@ class ServiceSettingsClassComposerTest {
             TestProtoLoader.instance().parseSelectiveGenerationTesting(),
             "localhost:7469",
             "v1beta1",
-            1));
+            1),
+        Arguments.of(
+            "ResumableUploadServiceSettings",
+            TestProtoLoader.instance().parseShowcaseResumableUpload(),
+            "localhost:7469",
+            "v1beta1",
+            0));
   }
 
   @ParameterizedTest
