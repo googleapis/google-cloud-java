@@ -136,11 +136,13 @@ import com.google.cloud.firestore.pipeline.stages.CollectionOptions;
 import com.google.cloud.firestore.pipeline.stages.ExplainOptions;
 import com.google.cloud.firestore.pipeline.stages.FindNearest;
 import com.google.cloud.firestore.pipeline.stages.FindNearestOptions;
+import com.google.cloud.firestore.pipeline.stages.Insert;
 import com.google.cloud.firestore.pipeline.stages.PipelineExecuteOptions;
 import com.google.cloud.firestore.pipeline.stages.RawOptions;
 import com.google.cloud.firestore.pipeline.stages.RawStage;
 import com.google.cloud.firestore.pipeline.stages.Sample;
 import com.google.cloud.firestore.pipeline.stages.UnnestOptions;
+import com.google.cloud.firestore.pipeline.stages.Upsert;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
@@ -4736,5 +4738,103 @@ public class ITPipelineTest extends ITBaseTest {
     assertThat(results).hasSize(1);
     assertThat(results.get(0).getData().get("base")).isEqualTo(10L);
     assertThat(results.get(0).getData().get("doubled")).isEqualTo(20L);
+  }
+
+  @Test
+  public void testInsertStage() throws Exception {
+    CollectionReference dmlCol = firestore.collection(LocalFirestoreHelper.autoId());
+    java.util.Map<String, Object> data = new java.util.HashMap<>();
+    data.put("title", "New Book");
+    data.put("author", "Author 1");
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .literals(data)
+            .insert(new Insert().withCollection(dmlCol.getPath()).withDocumentId(constant("newBook_insert_1")))
+            .execute()
+            .get()
+            .getResults();
+
+    assertThat(results).hasSize(1);
+    assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(1L);
+
+    DocumentSnapshot snap = dmlCol.document("newBook_insert_1").get().get();
+    assertThat(snap.exists()).isTrue();
+    assertThat(snap.get("title")).isEqualTo("New Book");
+  }
+
+  @Test
+  public void testUpsertStageWithTransforms() throws Exception {
+    CollectionReference dmlCol = firestore.collection(LocalFirestoreHelper.autoId());
+    java.util.Map<String, Object> data = new java.util.HashMap<>();
+    data.put("title", "Upserted Book");
+    data.put("count", 1);
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .literals(data)
+            .upsert(
+                new Upsert(add(field("count"), constant(1)).as("count"))
+                    .withCollection(dmlCol.getPath())
+                    .withDocumentId(constant("upsertBook_1")))
+            .execute(new PipelineExecuteOptions().withAtomic(true))
+            .get()
+            .getResults();
+
+    assertThat(results).hasSize(1);
+    assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(1L);
+
+    DocumentSnapshot snap = dmlCol.document("upsertBook_1").get().get();
+    assertThat(snap.exists()).isTrue();
+    assertThat(snap.get("title")).isEqualTo("Upserted Book");
+  }
+
+  @Test
+  public void testDMLWithAtomicOption() throws Exception {
+    CollectionReference dmlCol = firestore.collection(LocalFirestoreHelper.autoId());
+    java.util.Map<String, Object> data = new java.util.HashMap<>();
+    data.put("title", "Atomic Book");
+
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .literals(data)
+            .insert(new Insert().withCollection(dmlCol.getPath()).withDocumentId(constant("atomicBook_1")))
+            .execute(new PipelineExecuteOptions().withAtomic(true))
+            .get()
+            .getResults();
+
+    assertThat(results).hasSize(1);
+    assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(1L);
+
+    DocumentSnapshot snap = dmlCol.document("atomicBook_1").get().get();
+    assertThat(snap.exists()).isTrue();
+  }
+
+  @Test
+  public void testInsertUpsertStagesInsideTransaction() throws Exception {
+    CollectionReference dmlCol = firestore.collection(LocalFirestoreHelper.autoId());
+    firestore
+        .runTransaction(
+            transaction -> {
+              java.util.Map<String, Object> data = new java.util.HashMap<>();
+              data.put("title", "Tx Book");
+              Pipeline insertPpl =
+                  firestore
+                      .pipeline()
+                      .literals(data)
+                      .insert(new Insert().withCollection(dmlCol.getPath()).withDocumentId(constant("txBook_1")));
+              List<PipelineResult> res = transaction.execute(insertPpl).get().getResults();
+              assertThat(res).hasSize(1);
+              assertThat(res.get(0).getData().get("documents_modified")).isEqualTo(1L);
+              return null;
+            })
+        .get();
+
+    DocumentSnapshot snap = dmlCol.document("txBook_1").get().get();
+    assertThat(snap.exists()).isTrue();
+    assertThat(snap.get("title")).isEqualTo("Tx Book");
   }
 }
