@@ -29,6 +29,7 @@ import com.google.showcase.v1beta1.EchoOuterClass;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
+import java.util.Optional;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
@@ -403,6 +404,10 @@ class ServiceClientMethodSampleComposerTest {
             "  EchoResponse response = echoClient.echo(request);\n",
             "}");
     Assert.assertEquals(results, expected);
+  }
+
+  private String writeStatements(Optional<Sample> sampleOpt) {
+    return writeStatements(sampleOpt.get());
   }
 
   private String writeStatements(Sample sample) {
