@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-apptopology</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-apptopology:current} -->
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apptopology:current} -->
   <packaging>jar</packaging>
   <name>Google App Topology</name>
   <description>App Topology </description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-apptopology-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-apptopology:current} -->
+    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-apptopology:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-apptopology</site.installationModule>
