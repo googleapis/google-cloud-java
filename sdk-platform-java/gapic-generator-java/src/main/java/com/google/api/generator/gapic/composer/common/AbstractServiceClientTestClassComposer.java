@@ -81,6 +81,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 @NullMarked
@@ -235,6 +236,10 @@ public abstract class AbstractServiceClientTestClassComposer implements ClassCom
     for (Method method : service.methods()) {
       if (!method.isSupportedByTransport(getTransportContext().transport())) {
         javaMethods.add(createUnsupportedTestMethod(method));
+        continue;
+      }
+      if (method.isResumableUpload()) {
+        javaMethods.add(createResumableUploadTestMethod(method));
         continue;
       }
       Service matchingService = service;
@@ -786,6 +791,35 @@ public abstract class AbstractServiceClientTestClassComposer implements ClassCom
         .build();
   }
 
+  protected MethodDefinition createResumableUploadTestMethod(Method method) {
+    String javaMethodName = JavaStyle.toLowerCamelCase(method.name());
+    String testMethodName = String.format("%sTest", javaMethodName);
+
+    List<Statement> methodBody =
+        Collections.singletonList(
+            CommentStatement.withComment(
+                LineComment.withComment(
+                    "The "
+                        + javaMethodName
+                        + "() method requires a live HTTP/REST server supporting the resumable"
+                        + " upload protocol and is tested in integration tests.")));
+
+    return MethodDefinition.builder()
+        .setAnnotations(
+            Arrays.asList(
+                TEST_ANNOTATION,
+                AnnotationNode.withTypeAndDescription(
+                    FIXED_TYPESTORE.get("Ignore"),
+                    "Requires live HTTP/REST server supporting resumable upload protocol; tested in"
+                        + " integration tests.")))
+        .setScope(ScopeNode.PUBLIC)
+        .setReturnType(TypeNode.VOID)
+        .setName(testMethodName)
+        .setThrowsExceptions(Arrays.asList(TypeNode.withExceptionClazz(Exception.class)))
+        .setBody(methodBody)
+        .build();
+  }
+
   protected List<Statement> createRpcExceptionTestStatements(
       Method method,
       List<MethodArgument> methodSignature,
@@ -927,6 +961,7 @@ public abstract class AbstractServiceClientTestClassComposer implements ClassCom
             ServerStreamingCallable.class,
             StatusCode.class,
             Test.class,
+            Ignore.class,
             UUID.class);
     return new TypeStore(concreteClazzes);
   }

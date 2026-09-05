@@ -21,6 +21,7 @@ import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientStreamingCallable;
 import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.OperationCallable;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.generator.engine.ast.AnnotationNode;
@@ -52,6 +53,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import javax.annotation.Generated;
 import org.jspecify.annotations.NullMarked;
@@ -162,22 +164,7 @@ public abstract class AbstractServiceStubClassComposer implements ClassComposer 
 
   private MethodDefinition createCallableGetterHelper(
       Method method, TypeStore typeStore, boolean isLroCallable, boolean isPaged) {
-    TypeNode returnType;
-    switch (method.stream()) {
-      case CLIENT:
-        returnType = typeStore.get("ClientStreamingCallable");
-        break;
-      case SERVER:
-        returnType = typeStore.get("ServerStreamingCallable");
-        break;
-      case BIDI:
-        returnType = typeStore.get("BidiStreamingCallable");
-        break;
-      case NONE:
-      // Fall through.
-      default:
-        returnType = typeStore.get(isLroCallable ? "OperationCallable" : "UnaryCallable");
-    }
+    TypeNode returnType = getCallableType(method, typeStore, isLroCallable);
 
     String methodName =
         String.format(
@@ -270,6 +257,7 @@ public abstract class AbstractServiceStubClassComposer implements ClassComposer 
             Generated.class,
             Operation.class,
             OperationCallable.class,
+            ResumableUploadCallable.class,
             ServerStreamingCallable.class,
             UnaryCallable.class,
             UnsupportedOperationException.class,
@@ -327,5 +315,23 @@ public abstract class AbstractServiceStubClassComposer implements ClassComposer 
                         .setMessageExpr(String.format("Not implemented: %s()", methodName))
                         .build())))
         .build();
+  }
+
+  private static TypeNode getCallableType(
+      Method method, TypeStore typeStore, boolean isLroCallable) {
+    if (method.isResumableUpload()) {
+      return typeStore.get("ResumableUploadCallable");
+    }
+    switch (method.stream()) {
+      case CLIENT:
+        return typeStore.get("ClientStreamingCallable");
+      case SERVER:
+        return typeStore.get("ServerStreamingCallable");
+      case BIDI:
+        return typeStore.get("BidiStreamingCallable");
+      case NONE:
+      default:
+        return typeStore.get(isLroCallable ? "OperationCallable" : "UnaryCallable");
+    }
   }
 }

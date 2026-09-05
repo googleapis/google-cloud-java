@@ -33,6 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 @NullMarked
 public class ServiceClientCommentComposer {
@@ -40,6 +41,11 @@ public class ServiceClientCommentComposer {
   private static final String EMPTY_STRING = "";
   private static final String API_EXCEPTION_TYPE_NAME = "com.google.api.gax.rpc.ApiException";
   private static final String EXCEPTION_CONDITION = "if the remote call fails";
+  private static final String REQUEST_PARAM_NAME = "request";
+  private static final String REQUEST_PARAM_DESCRIPTION =
+      "The request object containing all of the parameters for the API call.";
+  private static final String PAYLOAD_PARAM_NAME = "payload";
+  private static final String PAYLOAD_PARAM_DESCRIPTION = "The payload data stream to upload.";
 
   // Constants.
   private static final String SERVICE_DESCRIPTION_INTRO_STRING =
@@ -93,6 +99,11 @@ public class ServiceClientCommentComposer {
           + " that it is easy to make a subclass, but otherwise, the static factory methods"
           + " should be preferred.";
 
+  private static final String RESUMABLE_UPLOAD_CALL_CONTEXT_WARNING =
+      "Call context overrides (such as withTimeout, withRetrySettings, or credentials) apply"
+          + " strictly to the start request (session initiation). Per-chunk PUT calls rely on"
+          + " the configured timeout and retry settings from ResumableUploadCallSettings.";
+
   // Comments.
   public static final CommentStatement GET_OPERATIONS_CLIENT_METHOD_COMMENT =
       toSimpleComment(
@@ -105,9 +116,9 @@ public class ServiceClientCommentComposer {
       String classMethodSampleCode,
       String credentialsSampleCode,
       String endpointSampleCode,
-      String transportSampleCode,
-      String primaryTransport,
-      String secondaryTransport) {
+      @Nullable String transportSampleCode,
+      @Nullable String primaryTransport,
+      @Nullable String secondaryTransport) {
     JavaDocComment.Builder classHeaderJavadocBuilder = JavaDocComment.builder();
     if (service.hasDescription()) {
       String descriptionComment =
@@ -187,14 +198,17 @@ public class ServiceClientCommentComposer {
       methodJavadocBuilder = methodJavadocBuilder.addUnescapedComment(descriptionComment);
     }
 
-    if (sampleCodeOpt.isPresent()) {
+    if (method.isResumableUpload()) {
+      methodJavadocBuilder.addParagraph(RESUMABLE_UPLOAD_CALL_CONTEXT_WARNING);
+    }
+
+    if (sampleCodeOpt.isPresent() && !method.isResumableUpload()) {
       methodJavadocBuilder.addParagraph(METHOD_DESCRIPTION_SAMPLE_CODE_SUMMARY_STRING);
       methodJavadocBuilder.addSampleCode(sampleCodeOpt.get());
     }
 
     if (methodArguments.isEmpty()) {
-      methodJavadocBuilder.addParam(
-          "request", "The request object containing all of the parameters for the API call.");
+      methodJavadocBuilder.addParam(REQUEST_PARAM_NAME, REQUEST_PARAM_DESCRIPTION);
     } else {
       for (MethodArgument argument : methodArguments) {
         // TODO(miraleung): Remove the newline replacement when we support CommonMark.
@@ -202,6 +216,10 @@ public class ServiceClientCommentComposer {
             argument.field().hasDescription() ? argument.field().description() : EMPTY_STRING;
         methodJavadocBuilder.addParam(JavaStyle.toLowerCamelCase(argument.name()), description);
       }
+    }
+
+    if (method.isResumableUpload()) {
+      methodJavadocBuilder.addParam(PAYLOAD_PARAM_NAME, PAYLOAD_PARAM_DESCRIPTION);
     }
 
     methodJavadocBuilder.setThrows(API_EXCEPTION_TYPE_NAME, EXCEPTION_CONDITION);
@@ -348,8 +366,12 @@ public class ServiceClientCommentComposer {
       methodJavadocBuilder = methodJavadocBuilder.addUnescapedComment(descriptionComment);
     }
 
-    methodJavadocBuilder.addParagraph(METHOD_DESCRIPTION_SAMPLE_CODE_SUMMARY_STRING);
-    if (sampleCodeOpt.isPresent()) {
+    if (method.isResumableUpload()) {
+      methodJavadocBuilder.addParagraph(RESUMABLE_UPLOAD_CALL_CONTEXT_WARNING);
+    }
+
+    if (sampleCodeOpt.isPresent() && !method.isResumableUpload()) {
+      methodJavadocBuilder.addParagraph(METHOD_DESCRIPTION_SAMPLE_CODE_SUMMARY_STRING);
       methodJavadocBuilder.addSampleCode(sampleCodeOpt.get());
     }
 
