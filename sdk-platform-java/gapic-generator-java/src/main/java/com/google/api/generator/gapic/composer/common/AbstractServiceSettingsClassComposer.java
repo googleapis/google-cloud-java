@@ -25,6 +25,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.ResumableUploadCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
@@ -311,12 +312,18 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
   // Add method header comment statements and annotations.
   private static MethodDefinition methodBuilderHelper(
       Method protoMethod, MethodDefinition.Builder methodBuilder, String javaMethodName) {
-    return methodBuilder
-        .setHeaderCommentStatements(
-            SettingsCommentComposer.createCallSettingsGetterComment(
+    CommentStatement commentStatement =
+        protoMethod.isResumableUpload()
+            ? SettingsCommentComposer.createResumableUploadCallSettingsGetterComment(
                 getMethodNameFromSettingsVarName(javaMethodName),
                 protoMethod.isDeprecated(),
-                protoMethod.isInternalApi()))
+                protoMethod.isInternalApi())
+            : SettingsCommentComposer.createCallSettingsGetterComment(
+                getMethodNameFromSettingsVarName(javaMethodName),
+                protoMethod.isDeprecated(),
+                protoMethod.isInternalApi());
+    return methodBuilder
+        .setHeaderCommentStatements(commentStatement)
         .setAnnotations(createMethodAnnotations(protoMethod))
         .build();
   }
@@ -794,13 +801,19 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
       String javaMethodName = String.format("%sSettings", javaStyleName);
       MethodDefinition.Builder methodBuilder =
           methodMakerFn.apply(getCallSettingsBuilderType(protoMethod, typeStore), javaMethodName);
+      CommentStatement commentStatement =
+          protoMethod.isResumableUpload()
+              ? SettingsCommentComposer.createResumableUploadCallSettingsBuilderGetterComment(
+                  getMethodNameFromSettingsVarName(javaMethodName),
+                  protoMethod.isDeprecated(),
+                  protoMethod.isInternalApi())
+              : SettingsCommentComposer.createCallSettingsBuilderGetterComment(
+                  getMethodNameFromSettingsVarName(javaMethodName),
+                  protoMethod.isDeprecated(),
+                  protoMethod.isInternalApi());
       javaMethods.add(
           methodBuilder
-              .setHeaderCommentStatements(
-                  SettingsCommentComposer.createCallSettingsBuilderGetterComment(
-                      getMethodNameFromSettingsVarName(javaMethodName),
-                      protoMethod.isDeprecated(),
-                      protoMethod.isInternalApi()))
+              .setHeaderCommentStatements(commentStatement)
               .setAnnotations(createMethodAnnotations(protoMethod))
               .build());
 
@@ -856,6 +869,7 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
             Operation.class,
             OperationCallSettings.class,
             PagedCallSettings.class,
+            ResumableUploadCallSettings.class,
             ServerStreamingCallSettings.class,
             StreamingCallSettings.class,
             StubSettings.class,
@@ -933,7 +947,13 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
       Method protoMethod, TypeStore typeStore, boolean isBuilder) {
     Class<?> callSettingsClazz =
         isBuilder ? UnaryCallSettings.Builder.class : UnaryCallSettings.class;
-    if (protoMethod.isPaged()) {
+    if (protoMethod.isResumableUpload()) {
+      return TypeNode.withReference(
+          ConcreteReference.withClazz(
+              isBuilder
+                  ? ResumableUploadCallSettings.Builder.class
+                  : ResumableUploadCallSettings.class));
+    } else if (protoMethod.isPaged()) {
       callSettingsClazz = isBuilder ? PagedCallSettings.Builder.class : PagedCallSettings.class;
     } else if (protoMethod.isBatching()) {
       callSettingsClazz =
