@@ -30,9 +30,11 @@
 package com.google.api.gax.rpc;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.longrunning.OperationResponsePollAlgorithm;
 import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
@@ -268,6 +270,28 @@ public class Callables {
 
     return new OperationCallableImpl<>(
         initialCallable, scheduler, longRunningClient, operationCallSettings);
+  }
+
+  /**
+   * Creates a {@link ResumableUploadCallable} to execute resumable uploads. Designed for use by
+   * generated code.
+   *
+   * @param uploadClient client executing the wire-level upload protocol
+   * @param callSettings settings configuring chunk size
+   * @param clientContext client context providing default call context and executor
+   * @return {@link ResumableUploadCallable} callable object
+   */
+  @BetaApi
+  @InternalApi
+  public static <RequestT, ResponseT> ResumableUploadCallable<RequestT, ResponseT> resumableUpload(
+      ResumableUploadClient<RequestT, ResponseT> uploadClient,
+      ResumableUploadCallSettings callSettings,
+      ClientContext clientContext) {
+    return new ResumableUploadCallableImpl<>(
+        uploadClient,
+        callSettings,
+        clientContext.getDefaultCallContext(),
+        clientContext.getExecutor());
   }
 
   private static boolean areRetriesDisabled(
