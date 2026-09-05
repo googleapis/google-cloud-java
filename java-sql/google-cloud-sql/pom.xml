@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-sql</artifactId>
-  <version>0.3.0</version><!-- {x-version-update:google-cloud-sql:current} -->
+  <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-sql:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud SQL Admin</name>
   <description>Cloud SQL Admin Cloud SQL Admin API</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-sql-parent</artifactId>
-    <version>0.3.0</version><!-- {x-version-update:google-cloud-sql:current} -->
+    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-sql:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-sql</site.installationModule>
