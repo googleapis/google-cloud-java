@@ -906,6 +906,33 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void idTokenWithAudience_quotaProjectIdOverridesSourceCredentials() throws IOException {
+    sourceCredentials = sourceCredentials.createWithQuotaProject("source-quota-project-id");
+    mockTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
+    mockTransportFactory.getTransport().setAccessToken(ACCESS_TOKEN);
+    mockTransportFactory.getTransport().setExpireTime(getDefaultExpireTime());
+    mockTransportFactory.getTransport().addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+
+    ImpersonatedCredentials targetCredentials =
+        ImpersonatedCredentials.create(
+            sourceCredentials,
+            IMPERSONATED_CLIENT_EMAIL,
+            null,
+            IMMUTABLE_SCOPES_LIST,
+            VALID_LIFETIME,
+            mockTransportFactory,
+            QUOTA_PROJECT_ID);
+
+    mockTransportFactory.getTransport().setIdToken(STANDARD_ID_TOKEN);
+    targetCredentials.idTokenWithAudience("https://foo.bar", null);
+
+    MockLowLevelHttpRequest request = mockTransportFactory.getTransport().getRequest();
+    assertEquals(
+        QUOTA_PROJECT_ID,
+        request.getFirstHeaderValue(GoogleCredentials.QUOTA_PROJECT_ID_HEADER_KEY));
+  }
+
+  @Test
   void idTokenWithAudience_withEmail() throws IOException {
     mockTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
     mockTransportFactory.getTransport().setAccessToken(ACCESS_TOKEN);
