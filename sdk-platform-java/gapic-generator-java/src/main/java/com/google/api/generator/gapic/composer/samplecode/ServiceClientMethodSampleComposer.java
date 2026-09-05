@@ -40,6 +40,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import org.jspecify.annotations.NullMarked;
 
@@ -72,12 +73,16 @@ public class ServiceClientMethodSampleComposer {
     return Sample.builder().setBody(body).setRegionTag(regionTag).setIsCanonical(true).build();
   }
 
-  public static Sample composeCanonicalSample(
+  public static Optional<Sample> composeCanonicalSample(
       Method method,
       TypeNode clientType,
       Map<String, ResourceName> resourceNames,
       Map<String, Message> messageTypes,
       Service service) {
+    if (method.isResumableUpload()) {
+      return Optional.empty();
+    }
+
     VariableExpr clientVarExpr =
         VariableExpr.withVariable(
             Variable.builder()
@@ -137,7 +142,8 @@ public class ServiceClientMethodSampleComposer {
                 .setTryBody(bodyStatements)
                 .setIsSampleCode(true)
                 .build());
-    return Sample.builder().setBody(body).setRegionTag(regionTag).setIsCanonical(true).build();
+    return Optional.of(
+        Sample.builder().setBody(body).setRegionTag(regionTag).setIsCanonical(true).build());
   }
 
   static Sample composeSample(
