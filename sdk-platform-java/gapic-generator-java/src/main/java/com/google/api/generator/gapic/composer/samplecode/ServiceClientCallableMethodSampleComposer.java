@@ -57,6 +57,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import org.jspecify.annotations.NullMarked;
 
@@ -545,12 +546,16 @@ public class ServiceClientCallableMethodSampleComposer {
   }
 
   // Compose sample code for the method where it is CallableMethodKind.REGULAR.
-  public static Sample composeRegularCallableMethod(
+  public static Optional<Sample> composeRegularCallableMethod(
       Method method,
       TypeNode clientType,
       Map<String, ResourceName> resourceNames,
       Map<String, Message> messageTypes,
       Service service) {
+    if (method.isResumableUpload()) {
+      return Optional.empty();
+    }
+
     VariableExpr clientVarExpr =
         VariableExpr.withVariable(
             Variable.builder()
@@ -601,7 +606,7 @@ public class ServiceClientCallableMethodSampleComposer {
                 .setTryBody(bodyStatements)
                 .setIsSampleCode(true)
                 .build());
-    return Sample.builder().setBody(body).setRegionTag(regionTag).build();
+    return Optional.of(Sample.builder().setBody(body).setRegionTag(regionTag).build());
   }
 
   public static Sample composeStreamCallableMethod(
