@@ -18,11 +18,13 @@ package com.google.cloud.pubsub.v1;
 
 import static com.google.common.util.concurrent.MoreExecutors.directExecutor;
 
+import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
+import com.google.api.core.CurrentMillisClock;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
@@ -45,7 +47,9 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.pubsub.v1.stub.GrpcPublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStub;
 import com.google.cloud.pubsub.v1.stub.PublisherStubSettings;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableSet;
 import com.google.protobuf.CodedOutputStream;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
@@ -59,18 +63,22 @@ import io.opentelemetry.api.trace.Tracer;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Level;
@@ -122,6 +130,7 @@ public class Publisher implements PublisherInterface {
 
   private final AtomicBoolean shutdown;
   private final BackgroundResource backgroundResources;
+  private final RetrySettings retrySettings;
   private final Waiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
   private final ApiFunction<PubsubMessage, PubsubMessage> messageTransform;
@@ -137,6 +146,26 @@ public class Publisher implements PublisherInterface {
   private final boolean enableOpenTelemetryTracing;
   private final OpenTelemetry openTelemetry;
   private OpenTelemetryPubsubTracer tracer = new OpenTelemetryPubsubTracer(null, false);
+
+  private final HedgingSettings hedgingSettings;
+  private final Set<StatusCode.Code> retryableCodes;
+
+  /**
+   * Scale factor to represent decimal token values (e.g. 0.1 refill ratio) as integers inside the
+   * AtomicInteger token bucket. A scale of 1000 allows representing decimal ratios down to 0.001.
+   * For example, 1.0 logical token is represented as 1000.
+   */
+  private static final int HEDGE_TOKEN_SCALE = 1000;
+
+  private final AtomicInteger hedgeTokenBucket = new AtomicInteger();
+  private int scaledMaxHedgeTokens;
+  private int scaledHedgeRefillAmount;
+  private final ApiClock clock;
+
+  private final ConcurrentLinkedQueue<HedgedRequest> hedgingQueue;
+  private final AtomicBoolean isQueueProcessingScheduled;
+  private ScheduledFuture<?> queueProcessingFuture;
+  private final Lock queueLock;
 
   /** The maximum number of messages in one request. Defined by the API. */
   public static long getApiMaxRequestElementCount() {
@@ -205,6 +234,7 @@ public class Publisher implements PublisherInterface {
           .setTotalTimeoutDuration(Duration.ofNanos(Long.MAX_VALUE));
     }
 
+    this.retrySettings = retrySettingsBuilder.build();
     PublisherStubSettings.Builder stubSettings =
         PublisherStubSettings.newBuilder()
             .setCredentialsProvider(builder.credentialsProvider)
@@ -223,17 +253,30 @@ public class Publisher implements PublisherInterface {
             StatusCode.Code.RESOURCE_EXHAUSTED,
             StatusCode.Code.UNKNOWN,
             StatusCode.Code.UNAVAILABLE)
-        .setRetrySettings(retrySettingsBuilder.build())
+        .setRetrySettings(this.retrySettings)
         .setBatchingSettings(BatchingSettings.newBuilder().setIsEnabled(false).build());
     this.publisherStub = GrpcPublisherStub.create(stubSettings.build());
+    this.retryableCodes = ImmutableSet.copyOf(stubSettings.publishSettings().getRetryableCodes());
     backgroundResourceList.add(publisherStub);
     backgroundResources = new BackgroundResourceAggregation(backgroundResourceList);
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new Waiter();
+    this.hedgingSettings = builder.hedgingSettings;
+    if (this.hedgingSettings != null) {
+      this.scaledMaxHedgeTokens = this.hedgingSettings.getMaxTokens() * HEDGE_TOKEN_SCALE;
+      this.scaledHedgeRefillAmount =
+          (int) Math.round(this.hedgingSettings.getRefillRatio() * HEDGE_TOKEN_SCALE);
+      this.hedgeTokenBucket.set(0);
+    }
+    this.clock = builder.clock != null ? builder.clock : CurrentMillisClock.getDefaultClock();
     this.publishContext = GrpcCallContext.createDefault();
     this.publishContextWithCompression =
         GrpcCallContext.createDefault()
             .withCallOptions(CallOptions.DEFAULT.withCompression(GZIP_COMPRESSION));
+    this.hedgingQueue = new ConcurrentLinkedQueue<>();
+    this.isQueueProcessingScheduled = new AtomicBoolean(false);
+    this.queueLock = new ReentrantLock();
+    this.queueProcessingFuture = null;
   }
 
   /** Topic which the publisher publishes to. */
@@ -244,6 +287,19 @@ public class Publisher implements PublisherInterface {
   /** Topic which the publisher publishes to. */
   public String getTopicNameString() {
     return topicName;
+  }
+
+  /** Returns the configured hedging settings, or null if hedging is disabled. */
+  public HedgingSettings getHedgingSettings() {
+    return hedgingSettings;
+  }
+
+  @VisibleForTesting
+  Float getHedgeTokenBalance() {
+    if (hedgingSettings == null) {
+      return null;
+    }
+    return (float) hedgeTokenBucket.get() / HEDGE_TOKEN_SCALE;
   }
 
   /**
@@ -403,6 +459,10 @@ public class Publisher implements PublisherInterface {
    * wait for the send operations to complete. To wait for messages to send, call {@code get} on the
    * futures returned from {@code publish}.
    */
+  Set<StatusCode.Code> getRetryableCodes() {
+    return retryableCodes;
+  }
+
   public void publishAllOutstanding() {
     OutstandingBatch unorderedOutstandingBatch = null;
     messagesBatchLock.lock();
@@ -481,20 +541,43 @@ public class Publisher implements PublisherInterface {
   }
 
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
+    return publishCall(outstandingBatch, 0, null);
+  }
+
+  private ApiFuture<PublishResponse> publishCall(
+      OutstandingBatch outstandingBatch, int attemptNumber, Duration timeout) {
     GrpcCallContext context = publishContext;
     if (enableCompression && outstandingBatch.batchSizeBytes >= compressionBytesThreshold) {
       context = publishContextWithCompression;
+    }
+    if (timeout != null) {
+      context = context.withTimeoutDuration(timeout);
+    }
+    if (attemptNumber > 0) {
+      loggingUtil.logPublisher(
+          LoggingUtil.SubSystem.PUBLISH_HEDGED,
+          Level.FINER,
+          String.format("Publishing hedged attempt %d", attemptNumber),
+          outstandingBatch.getMessageWrappers().get(0));
+      context = context.withRetryableCodes(Collections.<StatusCode.Code>emptySet());
     }
 
     int numMessagesInBatch = outstandingBatch.size();
     List<PubsubMessage> pubsubMessagesList = new ArrayList<PubsubMessage>(numMessagesInBatch);
     List<PubsubMessageWrapper> messageWrappers = outstandingBatch.getMessageWrappers();
     for (PubsubMessageWrapper messageWrapper : messageWrappers) {
-      tracer.endPublishBatchingSpan(messageWrapper);
+      if (attemptNumber == 0) {
+        tracer.endPublishBatchingSpan(messageWrapper);
+      } else {
+        tracer.addHedgedPublishStartEvent(messageWrapper);
+      }
       pubsubMessagesList.add(messageWrapper.getPubsubMessage());
     }
 
-    outstandingBatch.publishRpcSpan = tracer.startPublishRpcSpan(topicNameObject, messageWrappers);
+    if (attemptNumber == 0) {
+      outstandingBatch.publishRpcSpan =
+          tracer.startPublishRpcSpan(topicNameObject, messageWrappers);
+    }
 
     return publisherStub
         .publishCallable()
@@ -572,7 +655,11 @@ public class Publisher implements PublisherInterface {
     ApiFuture<PublishResponse> future;
     Executor callbackExecutor = directExecutor();
     if (outstandingBatch.orderingKey == null || outstandingBatch.orderingKey.isEmpty()) {
-      future = publishCall(outstandingBatch);
+      if (hedgingSettings != null) {
+        future = startHedgedCall(outstandingBatch);
+      } else {
+        future = publishCall(outstandingBatch);
+      }
     } else {
       // If ordering key is specified, publish the batch using the sequential executor.
       future =
@@ -588,8 +675,135 @@ public class Publisher implements PublisherInterface {
     ApiFutures.addCallback(future, futureCallback, callbackExecutor);
   }
 
-  private final class OutstandingBatch {
+  void refillTokenBucket() {
+    if (hedgingSettings != null) {
+      hedgeTokenBucket.accumulateAndGet(
+          scaledHedgeRefillAmount,
+          (current, refill) -> Math.min(scaledMaxHedgeTokens, current + refill));
+    }
+  }
+
+  boolean tryAcquireHedgeToken() {
+    if (hedgingSettings == null) {
+      return false;
+    }
+    int previous =
+        hedgeTokenBucket.getAndUpdate(
+            current -> {
+              if (current < HEDGE_TOKEN_SCALE) {
+                return current;
+              }
+              return current - HEDGE_TOKEN_SCALE;
+            });
+    return previous >= HEDGE_TOKEN_SCALE;
+  }
+
+  private ApiFuture<PublishResponse> startHedgedCall(final OutstandingBatch outstandingBatch) {
+    long deadlineMs = clock.millisTime() + retrySettings.getTotalTimeoutDuration().toMillis();
+    final CancellationSharer coordinator =
+        new CancellationSharer(outstandingBatch, this, deadlineMs);
+
+    // Register cancellation listeners on client futures to propagate cancel to coordinator
+    final AtomicInteger cancelledCount = new AtomicInteger(0);
+    final int batchSize = outstandingBatch.outstandingPublishes.size();
+    for (final OutstandingPublish outstanding : outstandingBatch.outstandingPublishes) {
+      outstanding.publishResult.addListener(
+          new Runnable() {
+            @Override
+            public void run() {
+              if (outstanding.publishResult.isCancelled()) {
+                if (cancelledCount.incrementAndGet() == batchSize) {
+                  coordinator.cancel(true);
+                }
+              }
+            }
+          },
+          directExecutor());
+    }
+
+    ApiFuture<PublishResponse> firstAttemptFuture = publishCall(outstandingBatch);
+    coordinator.addAttempt(0, firstAttemptFuture);
+    long delayMs = hedgingSettings.getHedgeDelay().toMillis();
+    HedgedRequest item = new HedgedRequest(coordinator, 1, clock.millisTime() + delayMs);
+    hedgingQueue.add(item);
+    scheduleQueueProcessing();
+
+    return coordinator;
+  }
+
+  private void scheduleQueueProcessing() {
+    if (isQueueProcessingScheduled.compareAndSet(false, true)) {
+      HedgedRequest nextItem = hedgingQueue.peek();
+      if (nextItem == null) {
+        isQueueProcessingScheduled.set(false);
+        return;
+      }
+
+      long delay = Math.max(0, nextItem.getSendAfterMs() - clock.millisTime());
+
+      queueProcessingFuture =
+          executor.schedule(
+              new Runnable() {
+                @Override
+                public void run() {
+                  processQueue();
+                }
+              },
+              delay,
+              TimeUnit.MILLISECONDS);
+    }
+  }
+
+  private void processQueue() {
+    queueLock.lock();
+    try {
+      long now = clock.millisTime();
+
+      HedgedRequest item;
+      while ((item = hedgingQueue.peek()) != null && item.getSendAfterMs() <= now) {
+        hedgingQueue.poll();
+
+        CancellationSharer coordinator = item.getCoordinator();
+        OutstandingBatch batch = coordinator.getBatchIfActive();
+        if (batch == null) {
+          continue;
+        }
+
+        long remainingTimeoutMs = coordinator.getAbsoluteDeadlineMs() - clock.millisTime();
+        if (remainingTimeoutMs <= 0) {
+          continue;
+        }
+        long attemptTimeoutMs = Math.min(10000, remainingTimeoutMs);
+
+        if (tryAcquireHedgeToken()) {
+          // Clone and schedule next attempt check (Attempt + 1)
+          long delayMs = hedgingSettings.getHedgeDelay().toMillis();
+          HedgedRequest nextItem =
+              new HedgedRequest(coordinator, item.getAttemptNumber() + 1, now + delayMs);
+          hedgingQueue.add(nextItem);
+
+          // Start Hedged Attempt
+          ApiFuture<PublishResponse> hedgedFuture =
+              publishCall(batch, item.getAttemptNumber(), Duration.ofMillis(attemptTimeoutMs));
+          coordinator.addAttempt(item.getAttemptNumber(), hedgedFuture);
+        } else {
+          loggingUtil.logPublisher(
+              LoggingUtil.SubSystem.PUBLISH_HEDGED,
+              Level.FINER,
+              "Hedging rate limited due to lack of tokens.",
+              batch.getMessageWrappers().get(0));
+        }
+      }
+      isQueueProcessingScheduled.set(false);
+      scheduleQueueProcessing();
+    } finally {
+      queueLock.unlock();
+    }
+  }
+
+  final class OutstandingBatch {
     final List<OutstandingPublish> outstandingPublishes;
+    int successfulAttempt = 0;
     final long creationTime;
     int attempt;
     int batchSizeBytes;
@@ -600,7 +814,7 @@ public class Publisher implements PublisherInterface {
         List<OutstandingPublish> outstandingPublishes, int batchSizeBytes, String orderingKey) {
       this.outstandingPublishes = outstandingPublishes;
       attempt = 1;
-      creationTime = System.currentTimeMillis();
+      creationTime = clock.millisTime();
       this.batchSizeBytes = batchSizeBytes;
       this.orderingKey = orderingKey;
     }
@@ -631,6 +845,7 @@ public class Publisher implements PublisherInterface {
 
     private void onSuccess(Iterable<String> results) {
       tracer.endPublishRpcSpan(publishRpcSpan);
+      boolean wasHedged = successfulAttempt > 0;
 
       Iterator<OutstandingPublish> messagesResultsIt = outstandingPublishes.iterator();
       for (String messageId : results) {
@@ -640,7 +855,7 @@ public class Publisher implements PublisherInterface {
         }
         nextPublish.publishResult.set(messageId);
         tracer.setPublisherMessageIdSpanAttribute(nextPublish.messageWrapper, messageId);
-        tracer.endPublisherSpan(nextPublish.messageWrapper);
+        tracer.endPublisherSpan(nextPublish.messageWrapper, wasHedged);
       }
     }
   }
@@ -676,6 +891,12 @@ public class Publisher implements PublisherInterface {
         !shutdown.getAndSet(true), "Cannot shut down a publisher already shut-down.");
     if (currentAlarmFuture != null && activeAlarm.getAndSet(false)) {
       currentAlarmFuture.cancel(false);
+    }
+    if (queueProcessingFuture != null) {
+      queueProcessingFuture.cancel(false);
+    }
+    if (hedgingQueue != null) {
+      hedgingQueue.clear();
     }
     publishAllOutstanding();
     messagesWaiter.waitComplete();
@@ -814,6 +1035,8 @@ public class Publisher implements PublisherInterface {
 
     private boolean enableOpenTelemetryTracing = false;
     private OpenTelemetry openTelemetry = null;
+    private HedgingSettings hedgingSettings = null;
+    ApiClock clock = null;
 
     private Builder(String topic) {
       this.topicName = Preconditions.checkNotNull(topic);
@@ -966,12 +1189,38 @@ public class Publisher implements PublisherInterface {
       return this;
     }
 
+    /** Configures the Publisher's hedging parameters. */
+    public Builder setHedgingSettings(HedgingSettings hedgingSettings) {
+      this.hedgingSettings = hedgingSettings;
+      return this;
+    }
+
+    Builder setClock(ApiClock clock) {
+      this.clock = clock;
+      return this;
+    }
+
     /** Returns the default BatchingSettings used by the client if settings are not provided. */
     public static BatchingSettings getDefaultBatchingSettings() {
       return DEFAULT_BATCHING_SETTINGS;
     }
 
     public Publisher build() throws IOException {
+      Preconditions.checkState(
+          !(enableMessageOrdering && hedgingSettings != null),
+          "Publish hedging and message ordering cannot be enabled at the same time.");
+      if (hedgingSettings != null) {
+        Duration hedgeDelay = hedgingSettings.getHedgeDelay();
+        Duration initialRpcTimeout = retrySettings.getInitialRpcTimeoutDuration();
+        if (hedgeDelay.compareTo(initialRpcTimeout) >= 0) {
+          throw new IllegalArgumentException(
+              "hedgeDelay ("
+                  + hedgeDelay.toMillis()
+                  + "ms) must be strictly less than the initial RPC timeout duration ("
+                  + initialRpcTimeout.toMillis()
+                  + "ms)");
+        }
+      }
       return new Publisher(this);
     }
   }
