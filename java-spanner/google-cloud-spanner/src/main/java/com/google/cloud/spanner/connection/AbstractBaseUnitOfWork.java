@@ -401,30 +401,31 @@ abstract class AbstractBaseUnitOfWork implements UnitOfWork {
         io.opentelemetry.context.Context.current()
             .with(OpenTelemetryContextKeys.THREAD_NAME_KEY, Thread.currentThread().getName())
             .makeCurrent()) {
-      ApiFuture<T> f = statementExecutor.submit(context.wrap(callable));
       final SpannerAsyncExecutionException caller =
           callType == CallType.ASYNC
               ? new SpannerAsyncExecutionException(statement.getStatement())
               : null;
-      final ApiFuture<T> future =
-          ApiFutures.catching(
-              f,
-              Throwable.class,
-              input -> {
-                if (caller != null) {
-                  input.addSuppressed(caller);
-                }
-                throw SpannerExceptionFactory.asSpannerException(input);
-              },
-              MoreExecutors.directExecutor());
+      final ApiFuture<T> future;
       synchronized (this) {
+        ApiFuture<T> f = statementExecutor.submit(context.wrap(callable));
+        future =
+            ApiFutures.catching(
+                f,
+                Throwable.class,
+                input -> {
+                  if (caller != null) {
+                    input.addSuppressed(caller);
+                  }
+                  throw SpannerExceptionFactory.asSpannerException(input);
+                },
+                MoreExecutors.directExecutor());
         this.currentlyRunningStatementFuture = future;
       }
       future.addListener(
           new Runnable() {
             @Override
             public void run() {
-              synchronized (this) {
+              synchronized (AbstractBaseUnitOfWork.this) {
                 if (currentlyRunningStatementFuture == future) {
                   currentlyRunningStatementFuture = null;
                 }
