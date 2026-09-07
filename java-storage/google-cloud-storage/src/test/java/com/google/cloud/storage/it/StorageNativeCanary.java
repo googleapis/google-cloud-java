@@ -145,7 +145,8 @@ public final class StorageNativeCanary {
                     || se.getMessage().contains("storage.buckets.create")
                     || se.getMessage().contains("Forbidden")))) {
           assumeNoException(
-              "Skipping StorageNativeCanary: GCP credentials/permissions not configured for bucket creation",
+              "Skipping StorageNativeCanary: GCP credentials/permissions not configured for bucket"
+                  + " creation",
               storageException);
         }
       }
