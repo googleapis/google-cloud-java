@@ -293,7 +293,6 @@ class AsyncResultSetImpl extends ForwardingStructReader
         callbackScheduled = false;
         callbackRunning = true;
       }
-      boolean shouldScheduleProducer = false;
       try {
         while (true) {
           ReadyCallback callback;
@@ -368,9 +367,6 @@ class AsyncResultSetImpl extends ForwardingStructReader
       } finally {
         synchronized (monitor) {
           callbackRunning = false;
-        }
-        if (shouldScheduleProducer) {
-          scheduleProducerIfNecessary();
         }
         scheduleCallbackIfNecessary();
         checkCompletion();
