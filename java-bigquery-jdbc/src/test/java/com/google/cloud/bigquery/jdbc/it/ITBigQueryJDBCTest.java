@@ -341,7 +341,7 @@ public class ITBigQueryJDBCTest extends ITBase {
   @Test
   public void testDefaultDatasetWithProject() throws SQLException {
     String connection_uri =
-        ITBigQueryJDBCTest.connection_uri + "DEFAULTDATASET=" + PROJECT_ID + ".testDataset";
+        ITBigQueryJDBCTest.connection_uri + "DEFAULTDATASET=" + PROJECT_ID + ":testDataset";
 
     Driver driver = BigQueryDriver.getRegisteredDriver();
     assertTrue(driver.acceptsURL(connection_uri));
