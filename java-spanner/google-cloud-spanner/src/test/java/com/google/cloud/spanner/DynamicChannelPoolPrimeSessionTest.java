@@ -379,6 +379,7 @@ public class DynamicChannelPoolPrimeSessionTest {
     // arrives.
     assertThat(waitingRpc.getPrimeSessionSourceCount()).isEqualTo(0);
 
+    awaitCondition(() -> mockSpanner.arrivedCreateSessions.get() >= 1);
     int arrivedBeforeRelease = mockSpanner.arrivedCreateSessions.get();
     mockSpanner.releaseCreateSessions();
     awaitCondition(() -> waitingRpc.getCompletedMultiplexedCreateSessions() >= 1);
