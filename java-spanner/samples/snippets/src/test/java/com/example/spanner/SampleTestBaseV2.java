@@ -23,7 +23,9 @@ import com.google.cloud.spanner.admin.database.v1.DatabaseAdminClient;
 import com.google.cloud.spanner.admin.database.v1.DatabaseAdminSettings;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminClient;
 import com.google.cloud.spanner.admin.instance.v1.InstanceAdminSettings;
+import com.google.spanner.admin.database.v1.CreateDatabaseRequest;
 import com.google.spanner.admin.database.v1.DatabaseDialect;
+import com.google.spanner.admin.database.v1.InstanceName;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
@@ -179,5 +181,21 @@ public class SampleTestBaseV2 {
     } else {
       return "CREATE DATABASE \"" + databaseName + "\"";
     }
+  }
+
+  protected static String createEphemeralDatabase() throws Exception {
+    return createEphemeralDatabase(instanceId);
+  }
+
+  protected static String createEphemeralDatabase(String targetInstanceId) throws Exception {
+    String databaseId = idGenerator.generateDatabaseId();
+    CreateDatabaseRequest request =
+        CreateDatabaseRequest.newBuilder()
+            .setParent(InstanceName.of(projectId, targetInstanceId).toString())
+            .setCreateStatement(
+                getCreateDatabaseStatement(databaseId, DatabaseDialect.GOOGLE_STANDARD_SQL))
+            .build();
+    databaseAdminClient.createDatabaseAsync(request).get(5, TimeUnit.MINUTES);
+    return databaseId;
   }
 }

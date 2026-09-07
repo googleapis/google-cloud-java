@@ -460,4 +460,34 @@ public class ITStatementTest extends ITBase {
       }
     }
   }
+
+  @Test
+  public void testNonIdempotentCreateTableAndDrop() throws SQLException {
+    String tempTableName = "NON_IDEMPOTENT_TABLE_" + Math.abs(random.nextInt(100000));
+    String createTableQuery =
+        String.format("CREATE TABLE %s.%s (`id` INT64, `name` STRING);", DATASET, tempTableName);
+    String dropTableQuery = String.format("DROP TABLE %s.%s;", DATASET, tempTableName);
+
+    try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
+        Statement statement = connection.createStatement()) {
+      boolean hasResultSet = statement.execute(createTableQuery);
+      assertFalse(hasResultSet);
+      assertEquals(0, statement.getUpdateCount());
+
+      try (ResultSet rs =
+          statement.executeQuery(
+              String.format("SELECT count(*) FROM %s.%s;", DATASET, tempTableName))) {
+        assertTrue(rs.next());
+        assertEquals(0L, rs.getLong(1));
+        assertFalse(rs.next());
+      }
+    } finally {
+      try (Connection connection = DriverManager.getConnection(ITBase.connectionUrl);
+          Statement statement = connection.createStatement()) {
+        statement.execute(dropTableQuery);
+      } catch (SQLException ignored) {
+        // Ignore cleanup exception if table was not created
+      }
+    }
+  }
 }
