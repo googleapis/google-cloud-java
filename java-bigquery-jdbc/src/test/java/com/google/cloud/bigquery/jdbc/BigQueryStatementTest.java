@@ -22,6 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
@@ -1158,5 +1159,24 @@ public class BigQueryStatementTest {
     assertNull(bigQueryStatement.getResultSet());
     verify(bigquery, Mockito.times(1)).getJob(eq(this.jobId));
     verify(bigquery, Mockito.never()).create(any(JobInfo.class));
+  }
+
+  @Test
+  public void testLegacySqlWithEnableTimestampPicosTranslatesBackendException() throws Exception {
+    doReturn(BigQueryStatement.QueryDialectType.BIG_QUERY.name())
+        .when(bigQueryConnection)
+        .getQueryDialect();
+    doReturn(true).when(bigQueryConnection).isEnableTimestampPicos();
+    BigQueryException backendException = new BigQueryException(400, "Backend error");
+    Mockito.doThrow(backendException)
+        .when(bigquery)
+        .queryWithTimeout(Mockito.any(QueryJobConfiguration.class), Mockito.any(), Mockito.any());
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+
+    BigQueryJdbcException ex =
+        assertThrows(BigQueryJdbcException.class, () -> statement.executeQuery("SELECT 1"));
+    assertThat(ex.getMessage()).contains("Picosecond data is incompatible with Legacy SQL");
+    assertThat(ex.getCause()).isSameInstanceAs(backendException);
   }
 }

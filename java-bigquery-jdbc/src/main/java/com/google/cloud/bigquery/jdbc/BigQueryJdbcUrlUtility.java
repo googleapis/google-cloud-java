@@ -123,6 +123,8 @@ final class BigQueryJdbcUrlUtility {
   static final String LOG_LEVEL_ENV_VAR = "BIGQUERY_JDBC_LOG_LEVEL";
   static final String LOG_PATH_ENV_VAR = "BIGQUERY_JDBC_LOG_PATH";
   static final String ENABLE_SESSION_PROPERTY_NAME = "EnableSession";
+  static final String ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME = "EnableTimestampPicos";
+  static final boolean DEFAULT_ENABLE_TIMESTAMP_PICOS_VALUE = false;
   static final String DEFAULT_LOG_PATH = "";
   static final String USE_QUERY_CACHE_PROPERTY_NAME = "UseQueryCache";
   static final boolean DEFAULT_USE_QUERY_CACHE = true;
@@ -445,6 +447,14 @@ final class BigQueryJdbcUrlUtility {
                           "Enable to capture your SQL activities or enable multi statement"
                               + " transactions. Disabled by default.")
                       .setDefaultValue(String.valueOf(DEFAULT_ENABLE_SESSION_VALUE))
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(ENABLE_TIMESTAMP_PICOS_PROPERTY_NAME)
+                      .setDescription(
+                          "Enables picosecond precision for TIMESTAMP data types. When enabled,"
+                              + " TIMESTAMP(12) columns are retrieved with 12-digit picosecond"
+                              + " precision formatted in UTC. Disabled by default.")
+                      .setDefaultValue(String.valueOf(DEFAULT_ENABLE_TIMESTAMP_PICOS_VALUE))
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
                       .setName(LOG_LEVEL_PROPERTY_NAME)
