@@ -43,6 +43,7 @@ import java.util.TimeZone;
 final class BigQueryTemporalUtility {
 
   private static final BigDecimal PICOS_PER_SECOND = new BigDecimal("1000000000000");
+  private static final BigDecimal NANOS_PER_SECOND = new BigDecimal("1000000000");
   private static final BigDecimal MICROS_PER_SECOND = new BigDecimal("1000000");
   private static final DateTimeFormatter BASE_FORMATTER =
       DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.");
@@ -158,11 +159,10 @@ final class BigQueryTemporalUtility {
       return null;
     }
 
-    BigDecimal bd = new BigDecimal(epochDecimal);
+    BigDecimal bd = new BigDecimal(epochDecimal).setScale(9, RoundingMode.DOWN);
     BigDecimal secondsBd = bd.setScale(0, RoundingMode.FLOOR);
     BigDecimal fractionBd = bd.subtract(secondsBd);
-    BigDecimal nanosBd = fractionBd.multiply(BigDecimal.valueOf(1_000_000_000L));
-    int nanos = nanosBd.setScale(0, RoundingMode.DOWN).intValue();
+    int nanos = fractionBd.multiply(NANOS_PER_SECOND).intValue();
     return Instant.ofEpochSecond(secondsBd.longValue(), nanos);
   }
 

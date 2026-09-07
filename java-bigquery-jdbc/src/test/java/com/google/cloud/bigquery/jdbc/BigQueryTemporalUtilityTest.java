@@ -257,6 +257,11 @@ public class BigQueryTemporalUtilityTest {
     assertThat(negInst.getEpochSecond()).isEqualTo(-1L);
     assertThat(negInst.getNano()).isEqualTo(876544000);
 
+    // Pre-1970 negative epoch decimal with 12 digits: sub-nanoseconds truncated towards zero
+    Instant negInst12 = BigQueryTemporalUtility.parseEpochDecimalToInstant("-0.123456789012");
+    assertThat(negInst12.getEpochSecond()).isEqualTo(-1L);
+    assertThat(negInst12.getNano()).isEqualTo(876543211);
+
     // Scientific notation
     Instant sciInst = BigQueryTemporalUtility.parseEpochDecimalToInstant("1.6905474E9");
     assertThat(sciInst.getEpochSecond()).isEqualTo(1690547400L);
