@@ -245,15 +245,18 @@ final class BigQueryTemporalUtility {
     if (sepIdx >= 0) {
       int plusIdx = remaining.indexOf('+', sepIdx);
       int minusIdx = remaining.indexOf('-', sepIdx);
-      int offsetIdx = plusIdx >= 0 ? plusIdx : minusIdx;
+      int offsetIdx =
+          plusIdx >= 0 && minusIdx >= 0
+              ? Math.min(plusIdx, minusIdx)
+              : (plusIdx >= 0 ? plusIdx : minusIdx);
       if (offsetIdx >= 0) {
-        offsetPart = remaining.substring(offsetIdx);
+        offsetPart = remaining.substring(offsetIdx).trim();
         remaining = remaining.substring(0, offsetIdx);
       }
     }
 
     // 4. Ensure standard ISO LocalDateTime format (YYYY-MM-DDTHH:mm:ss)
-    remaining = remaining.replace(' ', 'T');
+    remaining = remaining.trim().replace(' ', 'T');
     if (remaining.indexOf('T') < 0) {
       remaining = remaining + "T00:00:00";
     }

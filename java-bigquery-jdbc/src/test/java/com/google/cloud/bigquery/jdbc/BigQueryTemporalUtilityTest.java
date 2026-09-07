@@ -348,6 +348,17 @@ public class BigQueryTemporalUtilityTest {
         BigQueryTemporalUtility.formatTimestampStringFromIso(
             "2026-08-24T01:30:00.123456789012+05:00", true);
     assertThat(dayBoundary).isEqualTo("2026-08-23 20:30:00.123456789012");
+
+    // String with space before timezone offset (both positive and negative offsets)
+    String spaceBeforeOffset =
+        BigQueryTemporalUtility.formatTimestampStringFromIso(
+            "2026-08-24 15:30:45.123456789012 +02:00", true);
+    assertThat(spaceBeforeOffset).isEqualTo("2026-08-24 13:30:45.123456789012");
+
+    String negativeOffset =
+        BigQueryTemporalUtility.formatTimestampStringFromIso(
+            "2026-08-24 15:30:45.123456789012 -05:00", true);
+    assertThat(negativeOffset).isEqualTo("2026-08-24 20:30:45.123456789012");
   }
 
   @Test
