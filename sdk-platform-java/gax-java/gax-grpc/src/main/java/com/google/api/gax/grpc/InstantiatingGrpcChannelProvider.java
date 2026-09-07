@@ -111,6 +111,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
   @VisibleForTesting
   static final String DIRECT_PATH_ENV_ENABLE_XDS = "GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS";
 
+  private static final String DIRECT_PATH_INTERCONNECT_INFIX = "-direct.";
+
   // The public portion of the mTLS MDS root certificate is stored for performing
   // cert verification when establishing an mTLS connection with the MDS. See
   // {@link <a
@@ -778,8 +780,9 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
             target += "?force-xds";
           }
           builder = Grpc.newChannelBuilder(target, channelCreds);
-          if (isAttemptDirectPathXdsOverInterconnect() && serviceAddress.contains("-direct.")) {
-            builder.overrideAuthority(serviceAddress.replace("-direct.", "."));
+          if (isAttemptDirectPathXdsOverInterconnect()
+              && serviceAddress.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
+            builder.overrideAuthority(serviceAddress.replace(DIRECT_PATH_INTERCONNECT_INFIX, "."));
           }
           resolvedTarget = target;
         } else {
@@ -799,11 +802,13 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
         }
         String fallbackEndpoint = endpoint;
         String fallbackMtlsEndpoint = mtlsEndpoint;
-        if (serviceAddress.contains("-direct.")) {
-          serviceAddress = serviceAddress.replace("-direct.", ".");
+        if (serviceAddress.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
+          serviceAddress = serviceAddress.replace(DIRECT_PATH_INTERCONNECT_INFIX, ".");
           fallbackEndpoint = serviceAddress + ":" + port;
-          if (fallbackMtlsEndpoint != null && fallbackMtlsEndpoint.contains("-direct.")) {
-            fallbackMtlsEndpoint = fallbackMtlsEndpoint.replace("-direct.", ".");
+          if (fallbackMtlsEndpoint != null
+              && fallbackMtlsEndpoint.contains(DIRECT_PATH_INTERCONNECT_INFIX)) {
+            fallbackMtlsEndpoint =
+                fallbackMtlsEndpoint.replace(DIRECT_PATH_INTERCONNECT_INFIX, ".");
           }
         }
         ChannelCredentials channelCredentials;

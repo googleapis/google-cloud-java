@@ -1919,6 +1919,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
               field = clazz.getDeclaredField("overrideAuthority");
               break;
             } catch (Exception ignored) {
+              // Expected if neither field exists on this class; continue scanning superclasses.
             }
             clazz = clazz.getSuperclass();
           }
