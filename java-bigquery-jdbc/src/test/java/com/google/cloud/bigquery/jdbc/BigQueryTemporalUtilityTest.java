@@ -17,7 +17,9 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -182,6 +184,11 @@ public class BigQueryTemporalUtilityTest {
     long expectedDateMillis =
         LocalDate.of(2026, 8, 24).atStartOfDay(ZoneId.of("UTC")).toInstant().toEpochMilli();
     assertThat(date.getTime()).isEqualTo(expectedDateMillis);
+
+    // 12-digit picosecond DATETIME string safely truncated to nanoseconds
+    Timestamp picosDt =
+        BigQueryTemporalUtility.boxDateTime("2026-08-24 15:30:45.123456789012", ZoneId.of("UTC"));
+    assertThat(picosDt.getNanos()).isEqualTo(123456789);
   }
 
   @Test
@@ -203,6 +210,10 @@ public class BigQueryTemporalUtilityTest {
     assertThat(cal.get(Calendar.YEAR)).isEqualTo(1970);
     assertThat(cal.get(Calendar.HOUR_OF_DAY)).isEqualTo(15);
     assertThat(cal.get(Calendar.MILLISECOND)).isEqualTo(123);
+
+    // 12-digit picosecond TIME string safely truncated to nanoseconds
+    Time picosTime = BigQueryTemporalUtility.boxTime("15:30:45.123456789012", null);
+    assertThat(picosTime).isNotNull();
   }
 
   @Test
@@ -219,5 +230,142 @@ public class BigQueryTemporalUtilityTest {
     // ISO string with 'Z'
     Timestamp zTs = BigQueryTemporalUtility.boxTimestamp("2026-08-24T15:30:45.123456Z");
     assertThat(zTs).isEqualTo(Timestamp.from(Instant.parse("2026-08-24T15:30:45.123456Z")));
+
+    // 12-digit picosecond strings safely truncated to nanoseconds
+    Timestamp picosTs = BigQueryTemporalUtility.boxTimestamp("1680174859.820226912345");
+    assertThat(picosTs.getNanos()).isEqualTo(820226912);
+
+    Timestamp picosIsoTs =
+        BigQueryTemporalUtility.boxTimestamp("2026-08-24T15:30:45.123456789012Z");
+    assertThat(picosIsoTs.getNanos()).isEqualTo(123456789);
+  }
+
+  @Test
+  public void testParseEpochDecimalToInstant() {
+    // Standard positive epoch decimal
+    Instant inst6 = BigQueryTemporalUtility.parseEpochDecimalToInstant("1680174859.820226");
+    assertThat(inst6.getEpochSecond()).isEqualTo(1680174859L);
+    assertThat(inst6.getNano()).isEqualTo(820226000);
+
+    // 12-digit picosecond decimal: sub-nanoseconds truncated
+    Instant inst12 = BigQueryTemporalUtility.parseEpochDecimalToInstant("1680174859.820226123456");
+    assertThat(inst12.getEpochSecond()).isEqualTo(1680174859L);
+    assertThat(inst12.getNano()).isEqualTo(820226123);
+
+    // Pre-1970 negative epoch decimal (-0.123456)
+    Instant negInst = BigQueryTemporalUtility.parseEpochDecimalToInstant("-0.123456");
+    assertThat(negInst.getEpochSecond()).isEqualTo(-1L);
+    assertThat(negInst.getNano()).isEqualTo(876544000);
+
+    // Scientific notation
+    Instant sciInst = BigQueryTemporalUtility.parseEpochDecimalToInstant("1.6905474E9");
+    assertThat(sciInst.getEpochSecond()).isEqualTo(1690547400L);
+    assertThat(sciInst.getNano()).isEqualTo(0);
+
+    // Sub-second rollover prevention
+    Instant rolloverInst =
+        BigQueryTemporalUtility.parseEpochDecimalToInstant("1680174859.9999999999");
+    assertThat(rolloverInst.getEpochSecond()).isEqualTo(1680174859L);
+    assertThat(rolloverInst.getNano()).isEqualTo(999999999);
+  }
+
+  @Test
+  public void testParseEpochDecimalToInstantInvalid() {
+    assertThrows(
+        NumberFormatException.class,
+        () -> BigQueryTemporalUtility.parseEpochDecimalToInstant("invalid_epoch"));
+  }
+
+  @Test
+  public void testFormatTimestampStringWithPicosEnabled() throws BigQueryJdbcException {
+    // 12-digit picosecond decimal
+    String formatted12 =
+        BigQueryTemporalUtility.formatTimestampString("1680174859.820226123456", true);
+    assertThat(formatted12).isEqualTo("2023-03-30 11:14:19.820226123456");
+
+    // 6-digit microsecond decimal padded with 6 zeros to 12 digits
+    String formatted6 = BigQueryTemporalUtility.formatTimestampString("1680174859.820226", true);
+    assertThat(formatted6).isEqualTo("2023-03-30 11:14:19.820226000000");
+
+    // Pre-1970 negative epoch decimal with 12 digits
+    String negFormatted = BigQueryTemporalUtility.formatTimestampString("-0.123456789012", true);
+    assertThat(negFormatted).isEqualTo("1969-12-31 23:59:59.876543210988");
+  }
+
+  @Test
+  public void testFormatTimestampStringWithPicosDisabled() throws BigQueryJdbcException {
+    // 6-digit microsecond decimal
+    String formatted6 = BigQueryTemporalUtility.formatTimestampString("1680174859.820226", false);
+    assertThat(formatted6).isEqualTo("2023-03-30 11:14:19.820226");
+
+    // 12-digit picosecond decimal truncated to 6 digits
+    String formatted12 =
+        BigQueryTemporalUtility.formatTimestampString("1680174859.820226123456", false);
+    assertThat(formatted12).isEqualTo("2023-03-30 11:14:19.820226");
+
+    // Rollover prevention: .9999999 must truncate to .999999 and not roll over to next second
+    String rollover = BigQueryTemporalUtility.formatTimestampString("1680174859.9999999", false);
+    assertThat(rollover).isEqualTo("2023-03-30 11:14:19.999999");
+  }
+
+  @Test
+  public void testFormatTimestampStringFromIso() throws BigQueryJdbcException {
+    // ISO string with 'Z' and 12-digit picoseconds, picos enabled
+    String iso12 =
+        BigQueryTemporalUtility.formatTimestampStringFromIso(
+            "2050-12-25T15:30:55.123456789012Z", true);
+    assertThat(iso12).isEqualTo("2050-12-25 15:30:55.123456789012");
+
+    // ISO string with 'Z' and 12-digit picoseconds, picos disabled (truncated to 6 digits)
+    String iso6 =
+        BigQueryTemporalUtility.formatTimestampStringFromIso(
+            "2050-12-25T15:30:55.123456789012Z", false);
+    assertThat(iso6).isEqualTo("2050-12-25 15:30:55.123456");
+
+    // String with " UTC" suffix
+    String utcSuffix =
+        BigQueryTemporalUtility.formatTimestampStringFromIso(
+            "2026-08-24 15:30:45.123456 UTC", false);
+    assertThat(utcSuffix).isEqualTo("2026-08-24 15:30:45.123456");
+
+    String utcSuffixPicos =
+        BigQueryTemporalUtility.formatTimestampStringFromIso(
+            "2026-08-24 15:30:45.123456 UTC", true);
+    assertThat(utcSuffixPicos).isEqualTo("2026-08-24 15:30:45.123456000000");
+
+    // String without fraction
+    String noFraction =
+        BigQueryTemporalUtility.formatTimestampStringFromIso("2026-08-24 15:30:45", false);
+    assertThat(noFraction).isEqualTo("2026-08-24 15:30:45.000000");
+
+    // String with offset shifted across day boundary
+    String dayBoundary =
+        BigQueryTemporalUtility.formatTimestampStringFromIso(
+            "2026-08-24T01:30:00.123456789012+05:00", true);
+    assertThat(dayBoundary).isEqualTo("2026-08-23 20:30:00.123456789012");
+  }
+
+  @Test
+  public void testFormatTimestampStringFromIsoInvalid() {
+    assertThrows(
+        BigQueryJdbcException.class,
+        () -> BigQueryTemporalUtility.formatTimestampStringFromIso("invalid-date-time", true));
+  }
+
+  @Test
+  public void testFormatTimestampStringFromMicroseconds() {
+    // Standard positive microseconds (picos=false)
+    String formatted =
+        BigQueryTemporalUtility.formatTimestampStringFromMicroseconds(1680174859820226L, false);
+    assertThat(formatted).isEqualTo("2023-03-30 11:14:19.820226");
+
+    // Standard positive microseconds with picos=true (padded to 12 digits)
+    String formattedPicos =
+        BigQueryTemporalUtility.formatTimestampStringFromMicroseconds(1680174859820226L, true);
+    assertThat(formattedPicos).isEqualTo("2023-03-30 11:14:19.820226000000");
+
+    // Pre-1970 negative microsecond (-1 microsecond)
+    String negOne = BigQueryTemporalUtility.formatTimestampStringFromMicroseconds(-1L, false);
+    assertThat(negOne).isEqualTo("1969-12-31 23:59:59.999999");
   }
 }
