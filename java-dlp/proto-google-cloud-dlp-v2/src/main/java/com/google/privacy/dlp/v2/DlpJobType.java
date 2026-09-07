@@ -166,7 +166,7 @@ public enum DlpJobType implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(14);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(15);
   }
 
   private static final DlpJobType[] VALUES = values();

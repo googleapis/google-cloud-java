@@ -191,7 +191,7 @@ public enum TransformationContainerType implements com.google.protobuf.ProtocolM
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(1);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final TransformationContainerType[] VALUES = values();

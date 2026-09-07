@@ -18,6 +18,7 @@ package com.google.cloud.dlp.v2;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListColumnDataProfilesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListConnectionsPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListContentPoliciesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
@@ -51,6 +52,8 @@ import com.google.privacy.dlp.v2.Connection;
 import com.google.privacy.dlp.v2.ConnectionName;
 import com.google.privacy.dlp.v2.ConnectionState;
 import com.google.privacy.dlp.v2.ContentItem;
+import com.google.privacy.dlp.v2.ContentPolicy;
+import com.google.privacy.dlp.v2.ContentPolicyName;
 import com.google.privacy.dlp.v2.DataProfileAction;
 import com.google.privacy.dlp.v2.DataProfileConfigSnapshot;
 import com.google.privacy.dlp.v2.DataRiskLevel;
@@ -88,6 +91,7 @@ import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.JobTriggerName;
 import com.google.privacy.dlp.v2.ListColumnDataProfilesResponse;
 import com.google.privacy.dlp.v2.ListConnectionsResponse;
+import com.google.privacy.dlp.v2.ListContentPoliciesResponse;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
 import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
@@ -484,6 +488,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -538,6 +543,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -592,6 +598,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -646,6 +653,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -700,6 +708,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -754,6 +763,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -815,6 +825,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -874,6 +885,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -930,6 +942,7 @@ public class DlpServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setInspectConfig(InspectConfig.newBuilder().build())
+            .setAllowLimitedAvailabilityInfoTypes(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -7124,6 +7137,528 @@ public class DlpServiceClientHttpJsonTest {
     try {
       String name = "projects/project-7851/locations/location-7851/connections/connection-7851";
       client.updateConnection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createContentPolicyTest() throws Exception {
+    ContentPolicy expectedResponse =
+        ContentPolicy.newBuilder()
+            .setName(ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setInspectConfig(InspectConfig.newBuilder().build())
+            .addAllRules(new ArrayList<ContentPolicy.PolicyRule>())
+            .setUnsupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setInputTooLarge(ContentPolicy.PolicyAction.newBuilder().build())
+            .setFailedToScanSupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setDefaultAction(ContentPolicy.PolicyAction.newBuilder().build())
+            .addAllLoggingConfigs(new ArrayList<ContentPolicy.LoggingConfig>())
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+
+    ContentPolicy actualResponse = client.createContentPolicy(parent, contentPolicy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createContentPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+      client.createContentPolicy(parent, contentPolicy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createContentPolicyTest2() throws Exception {
+    ContentPolicy expectedResponse =
+        ContentPolicy.newBuilder()
+            .setName(ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setInspectConfig(InspectConfig.newBuilder().build())
+            .addAllRules(new ArrayList<ContentPolicy.PolicyRule>())
+            .setUnsupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setInputTooLarge(ContentPolicy.PolicyAction.newBuilder().build())
+            .setFailedToScanSupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setDefaultAction(ContentPolicy.PolicyAction.newBuilder().build())
+            .addAllLoggingConfigs(new ArrayList<ContentPolicy.LoggingConfig>())
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+    ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+
+    ContentPolicy actualResponse = client.createContentPolicy(parent, contentPolicy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createContentPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+      client.createContentPolicy(parent, contentPolicy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateContentPolicyTest() throws Exception {
+    ContentPolicy expectedResponse =
+        ContentPolicy.newBuilder()
+            .setName(ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setInspectConfig(InspectConfig.newBuilder().build())
+            .addAllRules(new ArrayList<ContentPolicy.PolicyRule>())
+            .setUnsupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setInputTooLarge(ContentPolicy.PolicyAction.newBuilder().build())
+            .setFailedToScanSupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setDefaultAction(ContentPolicy.PolicyAction.newBuilder().build())
+            .addAllLoggingConfigs(new ArrayList<ContentPolicy.LoggingConfig>())
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ContentPolicyName name = ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]");
+    ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ContentPolicy actualResponse = client.updateContentPolicy(name, contentPolicy, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateContentPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ContentPolicyName name = ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]");
+      ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateContentPolicy(name, contentPolicy, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateContentPolicyTest2() throws Exception {
+    ContentPolicy expectedResponse =
+        ContentPolicy.newBuilder()
+            .setName(ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setInspectConfig(InspectConfig.newBuilder().build())
+            .addAllRules(new ArrayList<ContentPolicy.PolicyRule>())
+            .setUnsupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setInputTooLarge(ContentPolicy.PolicyAction.newBuilder().build())
+            .setFailedToScanSupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setDefaultAction(ContentPolicy.PolicyAction.newBuilder().build())
+            .addAllLoggingConfigs(new ArrayList<ContentPolicy.LoggingConfig>())
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-95/locations/location-95/contentPolicies/contentPolicie-95";
+    ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ContentPolicy actualResponse = client.updateContentPolicy(name, contentPolicy, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateContentPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-95/locations/location-95/contentPolicies/contentPolicie-95";
+      ContentPolicy contentPolicy = ContentPolicy.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateContentPolicy(name, contentPolicy, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getContentPolicyTest() throws Exception {
+    ContentPolicy expectedResponse =
+        ContentPolicy.newBuilder()
+            .setName(ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setInspectConfig(InspectConfig.newBuilder().build())
+            .addAllRules(new ArrayList<ContentPolicy.PolicyRule>())
+            .setUnsupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setInputTooLarge(ContentPolicy.PolicyAction.newBuilder().build())
+            .setFailedToScanSupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setDefaultAction(ContentPolicy.PolicyAction.newBuilder().build())
+            .addAllLoggingConfigs(new ArrayList<ContentPolicy.LoggingConfig>())
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ContentPolicyName name = ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]");
+
+    ContentPolicy actualResponse = client.getContentPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getContentPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ContentPolicyName name = ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]");
+      client.getContentPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getContentPolicyTest2() throws Exception {
+    ContentPolicy expectedResponse =
+        ContentPolicy.newBuilder()
+            .setName(ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDisplayName("displayName1714148973")
+            .setInspectConfig(InspectConfig.newBuilder().build())
+            .addAllRules(new ArrayList<ContentPolicy.PolicyRule>())
+            .setUnsupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setInputTooLarge(ContentPolicy.PolicyAction.newBuilder().build())
+            .setFailedToScanSupportedFileType(ContentPolicy.PolicyAction.newBuilder().build())
+            .setDefaultAction(ContentPolicy.PolicyAction.newBuilder().build())
+            .addAllLoggingConfigs(new ArrayList<ContentPolicy.LoggingConfig>())
+            .addAllErrors(new ArrayList<Error>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-95/locations/location-95/contentPolicies/contentPolicie-95";
+
+    ContentPolicy actualResponse = client.getContentPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getContentPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-95/locations/location-95/contentPolicies/contentPolicie-95";
+      client.getContentPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listContentPoliciesTest() throws Exception {
+    ContentPolicy responsesElement = ContentPolicy.newBuilder().build();
+    ListContentPoliciesResponse expectedResponse =
+        ListContentPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllContentPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListContentPoliciesPagedResponse pagedListResponse = client.listContentPolicies(parent);
+
+    List<ContentPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getContentPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listContentPoliciesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listContentPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listContentPoliciesTest2() throws Exception {
+    ContentPolicy responsesElement = ContentPolicy.newBuilder().build();
+    ListContentPoliciesResponse expectedResponse =
+        ListContentPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllContentPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListContentPoliciesPagedResponse pagedListResponse = client.listContentPolicies(parent);
+
+    List<ContentPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getContentPoliciesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listContentPoliciesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listContentPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteContentPolicyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ContentPolicyName name = ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]");
+
+    client.deleteContentPolicy(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteContentPolicyExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ContentPolicyName name = ContentPolicyName.of("[PROJECT]", "[LOCATION]", "[CONTENT_POLICY]");
+      client.deleteContentPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteContentPolicyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-95/locations/location-95/contentPolicies/contentPolicie-95";
+
+    client.deleteContentPolicy(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteContentPolicyExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-95/locations/location-95/contentPolicies/contentPolicie-95";
+      client.deleteContentPolicy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

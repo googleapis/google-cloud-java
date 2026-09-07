@@ -50,4 +50,7 @@ public interface ResumableUploadClient<RequestT, ResponseT> {
 
   /** Returns a {@link UnaryCallable} to transmit an individual chunk. */
   UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable();
+
+  /** Returns a {@link UnaryCallable} to query the status and offset of an active upload session. */
+  UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable();
 }

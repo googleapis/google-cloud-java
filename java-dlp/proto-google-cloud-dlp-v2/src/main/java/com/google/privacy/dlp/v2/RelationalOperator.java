@@ -282,7 +282,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(9);
+    return com.google.privacy.dlp.v2.DlpProto.getDescriptor().getEnumTypes().get(10);
   }
 
   private static final RelationalOperator[] VALUES = values();

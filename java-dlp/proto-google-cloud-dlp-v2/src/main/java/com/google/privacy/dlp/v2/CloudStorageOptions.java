@@ -1349,7 +1349,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * This field can't be set if de-identification is requested. For certain file
    * types, setting this field has no effect. For more information, see [Limits
    * on bytes scanned per
-   * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
+   * file](https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
    * </pre>
    *
    * <code>int64 bytes_limit_per_file = 4;</code>
@@ -1375,7 +1375,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
    * This field can't be set if de-identification is requested. For certain file
    * types, setting this field has no effect. For more information, see [Limits
    * on bytes scanned per
-   * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
+   * file](https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
    * </pre>
    *
    * <code>int32 bytes_limit_per_file_percent = 8;</code>
@@ -2268,7 +2268,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * This field can't be set if de-identification is requested. For certain file
      * types, setting this field has no effect. For more information, see [Limits
      * on bytes scanned per
-     * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
+     * file](https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
@@ -2290,7 +2290,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * This field can't be set if de-identification is requested. For certain file
      * types, setting this field has no effect. For more information, see [Limits
      * on bytes scanned per
-     * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
+     * file](https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
@@ -2316,7 +2316,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * This field can't be set if de-identification is requested. For certain file
      * types, setting this field has no effect. For more information, see [Limits
      * on bytes scanned per
-     * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
+     * file](https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int64 bytes_limit_per_file = 4;</code>
@@ -2343,7 +2343,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * This field can't be set if de-identification is requested. For certain file
      * types, setting this field has no effect. For more information, see [Limits
      * on bytes scanned per
-     * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
+     * file](https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int32 bytes_limit_per_file_percent = 8;</code>
@@ -2366,7 +2366,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * This field can't be set if de-identification is requested. For certain file
      * types, setting this field has no effect. For more information, see [Limits
      * on bytes scanned per
-     * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
+     * file](https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int32 bytes_limit_per_file_percent = 8;</code>
@@ -2393,7 +2393,7 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      * This field can't be set if de-identification is requested. For certain file
      * types, setting this field has no effect. For more information, see [Limits
      * on bytes scanned per
-     * file](https://cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
+     * file](https://docs.cloud.google.com/sensitive-data-protection/docs/supported-file-types#max-byte-size-per-file).
      * </pre>
      *
      * <code>int32 bytes_limit_per_file_percent = 8;</code>

@@ -579,7 +579,10 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeveloperKnowledgeClient developerKnowledgeClient = DeveloperKnowledgeClient.create()) {
    *   AnswerQueryRequest request =
-   *       AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+   *       AnswerQueryRequest.newBuilder()
+   *           .setQuery("query107944136")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   AnswerQueryResponse response = developerKnowledgeClient.answerQuery(request);
    * }
    * }</pre>
@@ -605,7 +608,10 @@ public class DeveloperKnowledgeClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeveloperKnowledgeClient developerKnowledgeClient = DeveloperKnowledgeClient.create()) {
    *   AnswerQueryRequest request =
-   *       AnswerQueryRequest.newBuilder().setQuery("query107944136").build();
+   *       AnswerQueryRequest.newBuilder()
+   *           .setQuery("query107944136")
+   *           .setFilter("filter-1274492040")
+   *           .build();
    *   ApiFuture<AnswerQueryResponse> future =
    *       developerKnowledgeClient.answerQueryCallable().futureCall(request);
    *   // Do something.

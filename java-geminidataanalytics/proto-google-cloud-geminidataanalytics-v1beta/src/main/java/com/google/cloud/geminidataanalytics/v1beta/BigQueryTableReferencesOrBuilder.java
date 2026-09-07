@@ -180,4 +180,48 @@ public interface BigQueryTableReferencesOrBuilder
    */
   com.google.cloud.geminidataanalytics.v1beta.BigQueryPropertyGraphReferenceOrBuilder
       getPropertyGraphReferencesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for retrieving data from Agent Context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the agentContextReference field is set.
+   */
+  boolean hasAgentContextReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for retrieving data from Agent Context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The agentContextReference.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.AgentContextReference getAgentContextReference();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Parameters for retrieving data from Agent Context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.AgentContextReference agent_context_reference = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.AgentContextReferenceOrBuilder
+      getAgentContextReferenceOrBuilder();
 }

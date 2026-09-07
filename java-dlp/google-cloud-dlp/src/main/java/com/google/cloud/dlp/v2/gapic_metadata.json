@@ -19,6 +19,9 @@
             "CreateConnection": {
               "methods": ["createConnection", "createConnection", "createConnection", "createConnection", "createConnectionCallable"]
             },
+            "CreateContentPolicy": {
+              "methods": ["createContentPolicy", "createContentPolicy", "createContentPolicy", "createContentPolicyCallable"]
+            },
             "CreateDeidentifyTemplate": {
               "methods": ["createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplate", "createDeidentifyTemplateCallable"]
             },
@@ -42,6 +45,9 @@
             },
             "DeleteConnection": {
               "methods": ["deleteConnection", "deleteConnection", "deleteConnection", "deleteConnectionCallable"]
+            },
+            "DeleteContentPolicy": {
+              "methods": ["deleteContentPolicy", "deleteContentPolicy", "deleteContentPolicy", "deleteContentPolicyCallable"]
             },
             "DeleteDeidentifyTemplate": {
               "methods": ["deleteDeidentifyTemplate", "deleteDeidentifyTemplate", "deleteDeidentifyTemplate", "deleteDeidentifyTemplateCallable"]
@@ -75,6 +81,9 @@
             },
             "GetConnection": {
               "methods": ["getConnection", "getConnection", "getConnection", "getConnectionCallable"]
+            },
+            "GetContentPolicy": {
+              "methods": ["getContentPolicy", "getContentPolicy", "getContentPolicy", "getContentPolicyCallable"]
             },
             "GetDeidentifyTemplate": {
               "methods": ["getDeidentifyTemplate", "getDeidentifyTemplate", "getDeidentifyTemplate", "getDeidentifyTemplateCallable"]
@@ -118,6 +127,9 @@
             "ListConnections": {
               "methods": ["listConnections", "listConnections", "listConnections", "listConnections", "listConnectionsPagedCallable", "listConnectionsCallable"]
             },
+            "ListContentPolicies": {
+              "methods": ["listContentPolicies", "listContentPolicies", "listContentPolicies", "listContentPoliciesPagedCallable", "listContentPoliciesCallable"]
+            },
             "ListDeidentifyTemplates": {
               "methods": ["listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplates", "listDeidentifyTemplatesPagedCallable", "listDeidentifyTemplatesCallable"]
             },
@@ -159,6 +171,9 @@
             },
             "UpdateConnection": {
               "methods": ["updateConnection", "updateConnection", "updateConnection", "updateConnectionCallable"]
+            },
+            "UpdateContentPolicy": {
+              "methods": ["updateContentPolicy", "updateContentPolicy", "updateContentPolicy", "updateContentPolicyCallable"]
             },
             "UpdateDeidentifyTemplate": {
               "methods": ["updateDeidentifyTemplate", "updateDeidentifyTemplate", "updateDeidentifyTemplate", "updateDeidentifyTemplateCallable"]
