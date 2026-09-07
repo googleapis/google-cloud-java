@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -79,6 +80,7 @@ public class BuiltInMetricsCustomOpenTelemetryTest extends AbstractMockServerTes
     try (ResultSet resultSet = client.singleUse().executeQuery(SELECT1)) {
       assertTrue(resultSet.next());
       assertThat(resultSet.getLong(0)).isEqualTo(1L);
+      assertFalse(resultSet.next());
     }
   }
 
