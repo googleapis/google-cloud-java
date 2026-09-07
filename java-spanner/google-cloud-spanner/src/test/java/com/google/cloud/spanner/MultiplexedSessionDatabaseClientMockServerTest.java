@@ -125,11 +125,10 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     // Acquire the transaction while the initial CreateSession request is in progress.
     // This guarantees that this transaction binds to the initial (failing) attempt.
     try (ReadContext readContext = client.singleUse()) {
-      mockSpanner.unfreeze();
-
       // The first attempt should lead to a DEADLINE_EXCEEDED error being propagated from the
       // CreateSession attempt.
       try (ResultSet resultSet = readContext.executeQuery(STATEMENT)) {
+        mockSpanner.unfreeze();
         SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
         assertEquals(ErrorCode.DEADLINE_EXCEEDED, exception.getErrorCode());
       }
