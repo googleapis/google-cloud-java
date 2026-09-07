@@ -106,7 +106,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     // Simulate a problem with the CreateSession RPC making it slow.
     mockSpanner.setCreateSessionExecutionTime(
         SimulatedExecutionTime.ofException(Status.DEADLINE_EXCEEDED.asRuntimeException()));
-    mockSpanner.freezeAfter(1);
+    mockSpanner.freeze();
 
     Spanner testSpanner =
         SpannerOptions.newBuilder()
@@ -119,17 +119,23 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
     DatabaseClientImpl client =
         (DatabaseClientImpl) testSpanner.getDatabaseClient(DatabaseId.of("p", "i", "d"));
 
-    // The first attempt should lead to a DEADLINE_EXCEEDED error being propagated from the
-    // CreateSession attempt.
-    try (ResultSet resultSet = client.singleUse().executeQuery(STATEMENT)) {
-      SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
-      assertEquals(ErrorCode.DEADLINE_EXCEEDED, exception.getErrorCode());
+    // Wait until the initial CreateSession request has reached the mock server and is frozen.
+    mockSpanner.waitForRequestsToContain(CreateSessionRequest.class, 5000);
+
+    // Acquire the transaction while the initial CreateSession request is in progress.
+    // This guarantees that this transaction binds to the initial (failing) attempt.
+    try (ReadContext readContext = client.singleUse()) {
+      mockSpanner.unfreeze();
+
+      // The first attempt should lead to a DEADLINE_EXCEEDED error being propagated from the
+      // CreateSession attempt.
+      try (ResultSet resultSet = readContext.executeQuery(STATEMENT)) {
+        SpannerException exception = assertThrows(SpannerException.class, resultSet::next);
+        assertEquals(ErrorCode.DEADLINE_EXCEEDED, exception.getErrorCode());
+      }
     }
 
     // The next attempt should then succeed.
-    mockSpanner.unfreeze();
-    assertNotNull(client.multiplexedSessionDatabaseClient.getCurrentSessionReference());
-
     try (ResultSet resultSet = client.singleUse().executeQuery(STATEMENT)) {
       //noinspection StatementWithEmptyBody
       while (resultSet.next()) {}
