@@ -662,11 +662,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcRuntimeException("Interrupted during runQuery", ex);
     } catch (BigQueryException ex) {
-      if (isEnableTimestampPicos() && getUseLegacySql()) {
-        throw new BigQueryJdbcException(
-            "Picosecond data is incompatible with Legacy SQL. To query your Picosecond data, please set QueryDialect to SQL and restructure your query as a Standard SQL query.",
-            ex);
-      }
       if (ex.getMessage().contains("Syntax error")) {
         throw new BigQueryJdbcSqlSyntaxErrorException("BigQueryException during runQuery", ex);
       }
