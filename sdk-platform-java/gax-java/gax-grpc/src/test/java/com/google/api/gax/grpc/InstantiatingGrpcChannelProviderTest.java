@@ -1916,25 +1916,48 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
             break;
           } catch (NoSuchFieldException e) {
             try {
-              field = clazz.getDeclaredField("overrideAuthority");
+              field = clazz.getDeclaredField("authorityOverride");
               break;
-            } catch (Exception ignored) {
-              // Expected if neither field exists on this class; continue scanning superclasses.
+            } catch (NoSuchFieldException e2) {
+              try {
+                field = clazz.getDeclaredField("overrideAuthority");
+                break;
+              } catch (Exception ignored) {
+                // Expected if neither field exists on this class; continue scanning superclasses.
+              }
             }
             clazz = clazz.getSuperclass();
           }
         }
         if (field != null) {
           field.setAccessible(true);
-          return (String) field.get(current);
+          Object val = field.get(current);
+          if (val instanceof String && !((String) val).isEmpty()) {
+            return (String) val;
+          }
         }
-        try {
-          java.lang.reflect.Field delegate = current.getClass().getDeclaredField("delegate");
-          delegate.setAccessible(true);
-          current = delegate.get(current);
-        } catch (Exception e) {
-          break;
+        Class<?> unwrapClass = current.getClass();
+        java.lang.reflect.Field delegateField = null;
+        while (unwrapClass != null && delegateField == null) {
+          try {
+            delegateField = unwrapClass.getDeclaredField("delegate");
+          } catch (NoSuchFieldException e) {
+            try {
+              delegateField = unwrapClass.getDeclaredField("managedChannelImplBuilder");
+            } catch (NoSuchFieldException e2) {
+              unwrapClass = unwrapClass.getSuperclass();
+            }
+          }
         }
+        if (delegateField != null) {
+          delegateField.setAccessible(true);
+          Object next = delegateField.get(current);
+          if (next != null && next != current) {
+            current = next;
+            continue;
+          }
+        }
+        break;
       }
       return null;
     } catch (Exception e) {
