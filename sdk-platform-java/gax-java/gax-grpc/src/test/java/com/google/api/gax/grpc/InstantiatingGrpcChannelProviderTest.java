@@ -88,6 +88,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
@@ -138,34 +140,13 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     assertEquals("google-c2p:///storage.googleapis.com", builder.getEndpoint());
   }
 
-  @Test
-  void testEndpointCustomUriSchemeInvalid() {
+  @ParameterizedTest
+  @ValueSource(
+      strings = {"google-c2p://:invalid", "google-c2p:///foo bar", "localhost", "localhost:abcd"})
+  void testEndpointInvalid(String invalidEndpoint) {
     InstantiatingGrpcChannelProvider.Builder builder =
         InstantiatingGrpcChannelProvider.newBuilder();
-    assertThrows(
-        IllegalArgumentException.class, () -> builder.setEndpoint("google-c2p://:invalid"));
-  }
-
-  @Test
-  void testEndpointCustomUriSchemeMalformed() {
-    InstantiatingGrpcChannelProvider.Builder builder =
-        InstantiatingGrpcChannelProvider.newBuilder();
-    assertThrows(
-        IllegalArgumentException.class, () -> builder.setEndpoint("google-c2p:///foo bar"));
-  }
-
-  @Test
-  void testEndpointNoPort() {
-    InstantiatingGrpcChannelProvider.Builder builder =
-        InstantiatingGrpcChannelProvider.newBuilder();
-    assertThrows(IllegalArgumentException.class, () -> builder.setEndpoint("localhost"));
-  }
-
-  @Test
-  void testEndpointBadPort() {
-    InstantiatingGrpcChannelProvider.Builder builder =
-        InstantiatingGrpcChannelProvider.newBuilder();
-    assertThrows(IllegalArgumentException.class, () -> builder.setEndpoint("localhost:abcd"));
+    assertThrows(IllegalArgumentException.class, () -> builder.setEndpoint(invalidEndpoint));
   }
 
   @Test
