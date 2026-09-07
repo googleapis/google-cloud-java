@@ -134,7 +134,6 @@ public final class GrpcStorageOptions extends StorageOptions
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
   private static final String DEFAULT_HOST = "https://storage.googleapis.com";
-  private static final String DEFAULT_HOST_DIRECT_PATH = "https://storage-direct.googleapis.com";
   private static final String DEFAULT_HOST_NO_SCHEME = "storage.googleapis.com";
   private static final String DEFAULT_HOST_DIRECT_PATH_NO_SCHEME = "storage-direct.googleapis.com";
   // If true, disable the bound-token-by-default feature for DirectPath.

@@ -1681,7 +1681,7 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
         }
       }
     } catch (Exception e) {
-      e.printStackTrace();
+      throw new RuntimeException(e);
     }
     return channelBuilder.toString();
   }
@@ -1831,6 +1831,56 @@ class InstantiatingGrpcChannelProviderTest extends AbstractMtlsTransportChannelT
     InstantiatingGrpcChannelProvider.LOG.removeHandler(logHandler);
     String authority = extractAuthorityFromChannelBuilder(provider.createChannelBuilder());
     Truth.assertThat(authority).isNotEqualTo("storage.googleapis.com");
+  }
+
+  @Test
+  void createChannelBuilder_directPathOverInterconnect_nonGcsDirectEndpoint_overridesAuthority()
+      throws Exception {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPath(true)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint("bigtable-direct.googleapis.com:443")
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
+            .build();
+
+    ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
+    Truth.assertThat(extractAuthorityFromChannelBuilder(channelBuilder))
+        .isEqualTo("bigtable.googleapis.com");
+    Truth.assertThat(extractTargetFromChannelBuilder(channelBuilder))
+        .contains("google-c2p:///bigtable-direct.googleapis.com?force-xds");
+  }
+
+  @Test
+  void createChannelBuilder_directPathOverInterconnect_nonGcsDirectEndpoint_cloudPathFallback()
+      throws Exception {
+    EnvironmentProvider envProvider =
+        mock(EnvironmentProvider.class, withSettings().withoutAnnotations());
+    when(envProvider.getenv(InstantiatingGrpcChannelProvider.DIRECT_PATH_ENV_DISABLE_DIRECT_PATH))
+        .thenReturn("false");
+
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setAttemptDirectPath(false)
+            .setAttemptDirectPathXdsOverInterconnect(true)
+            .setHeaderProvider(mock(HeaderProvider.class, withSettings().withoutAnnotations()))
+            .setExecutor(mock(Executor.class))
+            .setEndpoint("bigtable-direct.googleapis.com:443")
+            .setCertificateBasedAccess(certificateBasedAccess)
+            .setEnvProvider(envProvider)
+            .build();
+
+    ManagedChannelBuilder<?> channelBuilder = provider.createChannelBuilder();
+    Truth.assertThat(extractTargetFromChannelBuilder(channelBuilder))
+        .isEqualTo("bigtable.googleapis.com:443");
   }
 
   private static class FakeLogHandler extends Handler {

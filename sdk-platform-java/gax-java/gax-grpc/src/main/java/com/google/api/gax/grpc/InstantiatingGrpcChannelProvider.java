@@ -778,9 +778,8 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
             target += "?force-xds";
           }
           builder = Grpc.newChannelBuilder(target, channelCreds);
-          if (isAttemptDirectPathXdsOverInterconnect()
-              && serviceAddress.equals("storage-direct.googleapis.com")) {
-            builder.overrideAuthority("storage.googleapis.com");
+          if (isAttemptDirectPathXdsOverInterconnect() && serviceAddress.contains("-direct.")) {
+            builder.overrideAuthority(serviceAddress.replace("-direct.", "."));
           }
           resolvedTarget = target;
         } else {
@@ -800,14 +799,11 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
         }
         String fallbackEndpoint = endpoint;
         String fallbackMtlsEndpoint = mtlsEndpoint;
-        if (serviceAddress.equals("storage-direct.googleapis.com")) {
-          serviceAddress = "storage.googleapis.com";
+        if (serviceAddress.contains("-direct.")) {
+          serviceAddress = serviceAddress.replace("-direct.", ".");
           fallbackEndpoint = serviceAddress + ":" + port;
-          if (fallbackMtlsEndpoint != null
-              && fallbackMtlsEndpoint.contains("storage-direct.googleapis.com")) {
-            fallbackMtlsEndpoint =
-                fallbackMtlsEndpoint.replace(
-                    "storage-direct.googleapis.com", "storage.googleapis.com");
+          if (fallbackMtlsEndpoint != null && fallbackMtlsEndpoint.contains("-direct.")) {
+            fallbackMtlsEndpoint = fallbackMtlsEndpoint.replace("-direct.", ".");
           }
         }
         ChannelCredentials channelCredentials;
