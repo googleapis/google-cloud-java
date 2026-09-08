@@ -1031,6 +1031,7 @@ public final class ITQueryWatchTest extends ITBaseTest {
 
   @Test
   public void crossTypeOrder() throws Exception {
+    assumeTrue(getFirestoreEdition() == FirestoreEdition.ENTERPRISE);
     Map<String, Map<String, Object>> data =
         map(
             "t", map("key", null),
