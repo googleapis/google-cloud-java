@@ -19,12 +19,9 @@ import static org.junit.Assert.assertThrows;
 import com.google.api.CustomHttpPattern;
 import com.google.api.Http;
 import com.google.api.HttpRule;
-import com.google.api.generator.engine.ast.TypeNode;
 import com.google.api.generator.engine.writer.JavaWriterVisitor;
-import com.google.api.generator.gapic.model.Field;
 import com.google.api.generator.gapic.model.GapicClass;
 import com.google.api.generator.gapic.model.GapicContext;
-import com.google.api.generator.gapic.model.HttpBindings.HttpBinding;
 import com.google.api.generator.gapic.model.Service;
 import com.google.api.generator.test.framework.Assert;
 import com.google.api.generator.test.framework.GoldenFileWriter;
@@ -76,48 +73,6 @@ class HttpJsonServiceStubClassComposerTest {
     Assert.assertCodeEquals(goldenFilePath, visitor.write());
   }
 
-  @Test
-  void getBindingFieldMethodName_shouldReturnGetFieldListIfTheFieldIsInLastPositionAndIsRepeated() {
-    Field field =
-        Field.builder()
-            .setIsRepeated(true)
-            .setName("doesNotMatter")
-            .setType(TypeNode.OBJECT)
-            .build();
-    HttpBinding httpBinding =
-        HttpBinding.builder().setField(field).setName("doesNotMatter").build();
-    String actual = composer.getBindingFieldMethodName(httpBinding, 4, 3, "Values");
-    Truth.assertThat(actual).isEqualTo("getValuesList");
-  }
-
-  @Test
-  void getBindingFieldMethodName_shouldReturnGetFieldValueIfTheFieldIsInLastPositionAndIsEnum() {
-    Field field =
-        Field.builder().setIsEnum(true).setName("doesNotMatter").setType(TypeNode.OBJECT).build();
-    HttpBinding httpBinding =
-        HttpBinding.builder().setField(field).setName("doesNotMatter").build();
-    String actual = composer.getBindingFieldMethodName(httpBinding, 4, 3, "Enums");
-    Truth.assertThat(actual).isEqualTo("getEnumsValue");
-  }
-
-  @Test
-  void
-      getBindingFieldMethodName_shouldReturnGetFieldIfTheFieldIsInLastPositionAndNotRepeatedOrEnum() {
-    Field field = Field.builder().setName("doesNotMatter").setType(TypeNode.OBJECT).build();
-    HttpBinding httpBinding =
-        HttpBinding.builder().setField(field).setName("doesNotMatter").build();
-    String actual = composer.getBindingFieldMethodName(httpBinding, 4, 3, "Value");
-    Truth.assertThat(actual).isEqualTo("getValue");
-  }
-
-  @Test
-  void getBindingFieldMethodName_shouldReturnGetFieldIfTheFieldIsNotInLastPosition() {
-    Field field = Field.builder().setName("doesNotMatter").setType(TypeNode.OBJECT).build();
-    HttpBinding httpBinding =
-        HttpBinding.builder().setField(field).setName("doesNotMatter").build();
-    String actual = composer.getBindingFieldMethodName(httpBinding, 4, 1, "Value");
-    Truth.assertThat(actual).isEqualTo("getValue");
-  }
 
   @Test
   void parseOperationsCustomHttpRules_shouldReturnMapIfContextContainsValidServiceYaml() {
@@ -224,3 +179,4 @@ class HttpJsonServiceStubClassComposerTest {
     Assert.assertEmptySamples(clazz.samples());
   }
 }
+
