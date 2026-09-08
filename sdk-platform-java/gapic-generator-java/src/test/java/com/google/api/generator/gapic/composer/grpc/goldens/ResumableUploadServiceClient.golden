@@ -1,0 +1,210 @@
+package com.google.showcase.v1beta1;
+
+import com.google.api.core.BetaApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.ApiExceptions;
+import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.showcase.v1beta1.stub.ResumableUploadServiceStub;
+import com.google.showcase.v1beta1.stub.ResumableUploadServiceStubSettings;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * This class provides the ability to make remote calls to the backing service through method calls
+ * that map to API methods. Sample code to get started:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ResumableUploadServiceClient resumableUploadServiceClient =
+ *     ResumableUploadServiceClient.create()) {
+ *   UploadMediaRequest request = UploadMediaRequest.newBuilder().setName("name3373707").build();
+ *   UploadMediaResponse response = resumableUploadServiceClient.uploadMedia(request);
+ * }
+ * }</pre>
+ *
+ * <p>Note: close() needs to be called on the ResumableUploadServiceClient object to clean up
+ * resources such as threads. In the example above, try-with-resources is used, which automatically
+ * calls close().
+ *
+ * <table>
+ *    <caption>Methods</caption>
+ *    <tr>
+ *      <th>Method</th>
+ *      <th>Description</th>
+ *      <th>Method Variants</th>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UploadMedia</td>
+ *      <td><p> </td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> uploadMedia(UploadMediaRequest request, InputStream payload)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> uploadMediaCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *  </table>
+ *
+ * <p>See the individual methods for example code.
+ *
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
+ *
+ * <p>This class can be customized by passing in a custom instance of ResumableUploadServiceSettings
+ * to create(). For example:
+ *
+ * <p>To customize credentials:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ResumableUploadServiceSettings resumableUploadServiceSettings =
+ *     ResumableUploadServiceSettings.newBuilder()
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * ResumableUploadServiceClient resumableUploadServiceClient =
+ *     ResumableUploadServiceClient.create(resumableUploadServiceSettings);
+ * }</pre>
+ *
+ * <p>To customize the endpoint:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ResumableUploadServiceSettings resumableUploadServiceSettings =
+ *     ResumableUploadServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
+ * ResumableUploadServiceClient resumableUploadServiceClient =
+ *     ResumableUploadServiceClient.create(resumableUploadServiceSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
+ */
+@NullMarked
+@BetaApi
+@Generated("by gapic-generator-java")
+public class ResumableUploadServiceClient implements BackgroundResource {
+  private final @Nullable ResumableUploadServiceSettings settings;
+  private final ResumableUploadServiceStub stub;
+
+  /** Constructs an instance of ResumableUploadServiceClient with default settings. */
+  public static final ResumableUploadServiceClient create() throws IOException {
+    return create(ResumableUploadServiceSettings.newBuilder().build());
+  }
+
+  /**
+   * Constructs an instance of ResumableUploadServiceClient, using the given settings. The channels
+   * are created based on the settings passed in, or defaults for any settings that are not set.
+   */
+  public static final ResumableUploadServiceClient create(ResumableUploadServiceSettings settings)
+      throws IOException {
+    return new ResumableUploadServiceClient(settings);
+  }
+
+  /**
+   * Constructs an instance of ResumableUploadServiceClient, using the given stub for making calls.
+   * This is for advanced usage - prefer using create(ResumableUploadServiceSettings).
+   */
+  public static final ResumableUploadServiceClient create(ResumableUploadServiceStub stub) {
+    return new ResumableUploadServiceClient(stub);
+  }
+
+  /**
+   * Constructs an instance of ResumableUploadServiceClient, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected ResumableUploadServiceClient(ResumableUploadServiceSettings settings)
+      throws IOException {
+    this.settings = settings;
+    this.stub = ((ResumableUploadServiceStubSettings) settings.getStubSettings()).createStub();
+  }
+
+  protected ResumableUploadServiceClient(ResumableUploadServiceStub stub) {
+    this.settings = null;
+    this.stub = stub;
+  }
+
+  public final @Nullable ResumableUploadServiceSettings getSettings() {
+    return settings;
+  }
+
+  public ResumableUploadServiceStub getStub() {
+    return stub;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Call context overrides (such as withTimeout, withRetrySettings, or credentials) apply strictly
+   * to the start request (session initiation). Per-chunk PUT calls rely on the configured timeout
+   * and retry settings from ResumableUploadCallSettings.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @param payload The payload data stream to upload.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UploadMediaResponse uploadMedia(UploadMediaRequest request, InputStream payload) {
+    return ApiExceptions.callAndTranslateApiException(
+        uploadMediaCallable().futureCall(request, payload));
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Call context overrides (such as withTimeout, withRetrySettings, or credentials) apply strictly
+   * to the start request (session initiation). Per-chunk PUT calls rely on the configured timeout
+   * and retry settings from ResumableUploadCallSettings.
+   */
+  public final ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse>
+      uploadMediaCallable() {
+    return stub.uploadMediaCallable();
+  }
+
+  @Override
+  public final void close() {
+    stub.close();
+  }
+
+  @Override
+  public void shutdown() {
+    stub.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return stub.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return stub.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    stub.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return stub.awaitTermination(duration, unit);
+  }
+}

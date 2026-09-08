@@ -227,6 +227,16 @@ class HttpJsonServiceStubClassComposerTest {
   }
 
   @Test
+  void generateHttpJsonServiceStubClass_resumableUpload() {
+    GapicContext context = RestTestProtoLoader.instance().parseShowcaseResumableUpload();
+    Service service = context.services().get(0);
+    GapicClass clazz = composer.generate(context, service);
+
+    Assert.assertGoldenClass(this.getClass(), clazz, "HttpJsonResumableUploadServiceStub.golden");
+    Assert.assertEmptySamples(clazz.samples());
+  }
+
+  @Test
   void getRequestFormatterExpr_withPathPrefix_prependsPrefix() {
     GapicContext context = RestTestProtoLoader.instance().parseShowcaseResumableUpload();
     Service service = context.services().get(0);
