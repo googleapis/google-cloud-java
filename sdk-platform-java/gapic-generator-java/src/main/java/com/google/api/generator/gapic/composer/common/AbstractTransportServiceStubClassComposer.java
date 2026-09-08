@@ -49,8 +49,6 @@ import com.google.api.generator.engine.ast.ScopeNode;
 import com.google.api.generator.engine.ast.Statement;
 import com.google.api.generator.engine.ast.StringObjectValue;
 import com.google.api.generator.engine.ast.ThisObjectValue;
-import com.google.api.generator.engine.ast.ThrowExpr;
-import com.google.api.generator.engine.ast.TryCatchStatement;
 import com.google.api.generator.engine.ast.TypeNode;
 import com.google.api.generator.engine.ast.ValueExpr;
 import com.google.api.generator.engine.ast.VaporReference;
@@ -1096,141 +1094,13 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
 
   private List<MethodDefinition> createStubOverrideMethods(
       VariableExpr backgroundResourcesVarExpr, Service service) {
-    Function<String, MethodDefinition.Builder> methodMakerStarterFn =
-        methodName ->
-            MethodDefinition.builder()
-                .setIsOverride(true)
-                .setScope(ScopeNode.PUBLIC)
-                .setName(methodName);
-
-    Function<String, MethodDefinition> voidMethodMakerFn =
-        methodName ->
-            methodMakerStarterFn
-                .apply(methodName)
-                .setReturnType(TypeNode.VOID)
-                .setBody(
-                    Arrays.asList(
-                        ExprStatement.withExpr(
-                            MethodInvocationExpr.builder()
-                                .setExprReferenceExpr(backgroundResourcesVarExpr)
-                                .setMethodName(methodName)
-                                .build())))
-                .build();
-
-    Function<String, MethodDefinition> booleanMethodMakerFn =
-        methodName ->
-            methodMakerStarterFn
-                .apply(methodName)
-                .setReturnType(TypeNode.BOOLEAN)
-                .setReturnExpr(
-                    MethodInvocationExpr.builder()
-                        .setExprReferenceExpr(backgroundResourcesVarExpr)
-                        .setMethodName(methodName)
-                        .setReturnType(TypeNode.BOOLEAN)
-                        .build())
-                .build();
-
-    // Generate the close() method:
-    //   @Override
-    //   public final void close() {
-    //     try {
-    //       backgroundResources.close();
-    //     } catch (RuntimeException e) {
-    //       throw e;
-    //     } catch (Exception e) {
-    //       throw new IllegalStateException("Failed to close resource", e);
-    //     }
-    //  }
-
-    VariableExpr catchRuntimeExceptionVarExpr =
-        VariableExpr.builder()
-            .setVariable(
-                Variable.builder()
-                    .setType(TypeNode.withExceptionClazz(RuntimeException.class))
-                    .setName("e")
-                    .build())
-            .build();
-    VariableExpr catchExceptionVarExpr =
-        VariableExpr.builder()
-            .setVariable(
-                Variable.builder()
-                    .setType(TypeNode.withExceptionClazz(Exception.class))
-                    .setName("e")
-                    .build())
-            .build();
     List<MethodDefinition> javaMethods = new ArrayList<>();
     if (service.operationPollingMethod() != null) {
       javaMethods.addAll(createLongRunningClientGetters());
     }
-    javaMethods.add(
-        methodMakerStarterFn
-            .apply("close")
-            .setIsFinal(true)
-            .setReturnType(TypeNode.VOID)
-            .setBody(
-                Arrays.asList(
-                    TryCatchStatement.builder()
-                        .setTryBody(
-                            Arrays.asList(
-                                ExprStatement.withExpr(
-                                    MethodInvocationExpr.builder()
-                                        .setExprReferenceExpr(backgroundResourcesVarExpr)
-                                        .setMethodName("close")
-                                        .build())))
-                        .addCatch(
-                            catchRuntimeExceptionVarExpr.toBuilder().setIsDecl(true).build(),
-                            Arrays.asList(
-                                ExprStatement.withExpr(
-                                    ThrowExpr.builder()
-                                        .setThrowExpr(catchRuntimeExceptionVarExpr)
-                                        .build())))
-                        .addCatch(
-                            catchExceptionVarExpr.toBuilder().setIsDecl(true).build(),
-                            Arrays.asList(
-                                ExprStatement.withExpr(
-                                    ThrowExpr.builder()
-                                        .setType(
-                                            TypeNode.withExceptionClazz(
-                                                IllegalStateException.class))
-                                        .setMessageExpr("Failed to close resource")
-                                        .setCauseExpr(catchExceptionVarExpr)
-                                        .build())))
-                        .build()))
-            .build());
-    javaMethods.add(voidMethodMakerFn.apply("shutdown"));
-    javaMethods.add(booleanMethodMakerFn.apply("isShutdown"));
-    javaMethods.add(booleanMethodMakerFn.apply("isTerminated"));
-    javaMethods.add(voidMethodMakerFn.apply("shutdownNow"));
-
-    List<VariableExpr> awaitTerminationArgs =
-        Arrays.asList(
-            VariableExpr.withVariable(
-                Variable.builder().setName("duration").setType(TypeNode.LONG).build()),
-            VariableExpr.withVariable(
-                Variable.builder()
-                    .setName("unit")
-                    .setType(FIXED_TYPESTORE.get("TimeUnit"))
-                    .build()));
-    javaMethods.add(
-        methodMakerStarterFn
-            .apply("awaitTermination")
-            .setReturnType(TypeNode.BOOLEAN)
-            .setArguments(
-                awaitTerminationArgs.stream()
-                    .map(v -> v.toBuilder().setIsDecl(true).build())
-                    .collect(Collectors.toList()))
-            .setThrowsExceptions(Arrays.asList(FIXED_TYPESTORE.get("InterruptedException")))
-            .setReturnExpr(
-                MethodInvocationExpr.builder()
-                    .setExprReferenceExpr(backgroundResourcesVarExpr)
-                    .setMethodName("awaitTermination")
-                    .setArguments(
-                        awaitTerminationArgs.stream()
-                            .map(v -> (Expr) v)
-                            .collect(Collectors.toList()))
-                    .setReturnType(TypeNode.BOOLEAN)
-                    .build())
-            .build());
+    javaMethods.addAll(
+        BackgroundResourceMethodComposer.createBackgroundResourceMethods(
+            backgroundResourcesVarExpr));
     return javaMethods;
   }
 
