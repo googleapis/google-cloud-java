@@ -150,6 +150,12 @@
 
   <profiles>
     <profile>
+      <id>native</id>
+      <properties>
+        <skipUnitTests>false</skipUnitTests>
+      </properties>
+    </profile>
+    <profile>
       <id>java9</id>
       <activation>
         <jdk>[9,)</jdk>
