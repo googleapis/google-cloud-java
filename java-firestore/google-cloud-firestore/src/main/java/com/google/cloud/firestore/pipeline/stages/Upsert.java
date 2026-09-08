@@ -21,6 +21,7 @@ import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.PipelineUtils;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
 import com.google.cloud.firestore.pipeline.expressions.Selectable;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.firestore.v1.Value;
 import java.util.ArrayList;
@@ -32,39 +33,73 @@ import javax.annotation.Nullable;
 @InternalApi
 public final class Upsert extends Stage {
 
-  @Nullable private final Selectable[] transformedFields;
+  @Nullable private final ImmutableList<Selectable> additionalFields;
   @Nullable private final String collectionPath;
   @Nullable private final Expression documentIdExpression;
 
   private Upsert(
-      @Nullable Selectable[] transformedFields,
+      @Nullable ImmutableList<Selectable> additionalFields,
       @Nullable String collectionPath,
       @Nullable Expression documentIdExpression,
       InternalOptions options) {
     super("upsert", buildOptions(collectionPath, documentIdExpression, options));
-    this.transformedFields = transformedFields;
+    this.additionalFields = additionalFields;
     this.collectionPath = collectionPath;
     this.documentIdExpression = documentIdExpression;
   }
 
   @BetaApi
   public Upsert() {
-    this(null, null, null, InternalOptions.EMPTY);
+    this((ImmutableList<Selectable>) null, null, null, InternalOptions.EMPTY);
   }
 
   @BetaApi
-  public Upsert(Selectable... transformedFields) {
-    this(transformedFields, null, null, InternalOptions.EMPTY);
+  public Upsert(Selectable... additionalFields) {
+    this(
+        additionalFields != null ? ImmutableList.copyOf(additionalFields) : null,
+        null,
+        null,
+        InternalOptions.EMPTY);
+  }
+
+  @BetaApi
+  public Upsert withAdditionalFields(Selectable... additionalFields) {
+    return new Upsert(
+        ImmutableList.copyOf(additionalFields),
+        this.collectionPath,
+        this.documentIdExpression,
+        this.options);
+  }
+
+  @BetaApi
+  public Upsert withAdditionalFields(List<Selectable> additionalFields) {
+    return new Upsert(
+        ImmutableList.copyOf(additionalFields),
+        this.collectionPath,
+        this.documentIdExpression,
+        this.options);
+  }
+
+  @BetaApi
+  public Upsert withTransformedFields(Selectable... transformedFields) {
+    return withAdditionalFields(transformedFields);
+  }
+
+  @BetaApi
+  public Upsert withTransformedFields(List<Selectable> transformedFields) {
+    return withAdditionalFields(transformedFields);
   }
 
   @BetaApi
   public Upsert withCollection(String collectionPath) {
-    return new Upsert(this.transformedFields, collectionPath, this.documentIdExpression, this.options);
+    return new Upsert(
+        this.additionalFields, collectionPath, this.documentIdExpression, this.options);
   }
 
   @BetaApi
   public Upsert withDocumentIdExpression(Expression documentIdExpression) {
-    return new Upsert(this.transformedFields, this.collectionPath, documentIdExpression, this.options);
+    return new Upsert(
+        this.additionalFields, this.collectionPath, documentIdExpression, this.options);
   }
 
   @BetaApi
@@ -90,8 +125,9 @@ public final class Upsert extends Stage {
   @Override
   Iterable<Value> toStageArgs() {
     List<Value> args = new ArrayList<>();
-    if (transformedFields != null && transformedFields.length > 0) {
-      Map<String, Expression> map = PipelineUtils.selectablesToMap(transformedFields);
+    if (additionalFields != null && !additionalFields.isEmpty()) {
+      Map<String, Expression> map =
+          PipelineUtils.selectablesToMap(additionalFields.toArray(new Selectable[0]));
       Map<String, Value> encodedMap = new HashMap<>();
       for (Map.Entry<String, Expression> entry : map.entrySet()) {
         encodedMap.put(entry.getKey(), PipelineUtils.encodeValue(entry.getValue()));

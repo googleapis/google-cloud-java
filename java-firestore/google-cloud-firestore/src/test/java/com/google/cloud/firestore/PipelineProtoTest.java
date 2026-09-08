@@ -170,7 +170,8 @@ public class PipelineProtoTest {
             .pipeline()
             .literals(data)
             .upsert(
-                new com.google.cloud.firestore.pipeline.stages.Upsert(
+                new com.google.cloud.firestore.pipeline.stages.Upsert()
+                    .withAdditionalFields(
                         com.google.cloud.firestore.pipeline.expressions.Expression.add(
                                 field("count"), constant(1))
                             .as("count"))
@@ -188,6 +189,40 @@ public class PipelineProtoTest {
     java.util.Map<String, Value> optionsMap = upsertStage.getOptionsMap();
     assertThat(optionsMap.get("collection").getReferenceValue()).isEqualTo("/books");
     assertThat(optionsMap.get("document_id").getStringValue()).isEqualTo("book1");
+
+    // Test withAdditionalFields with List
+    Pipeline pipelineWithList =
+        firestore
+            .pipeline()
+            .literals(data)
+            .upsert(
+                new com.google.cloud.firestore.pipeline.stages.Upsert()
+                    .withAdditionalFields(
+                        java.util.Collections.singletonList(
+                            com.google.cloud.firestore.pipeline.expressions.Expression.add(
+                                    field("count"), constant(1))
+                                .as("count")))
+                    .withCollection("books")
+                    .withDocumentIdExpression(constant("book1")));
+    Stage upsertStageWithList = pipelineWithList.toProto().getStages(1);
+    assertThat(upsertStageWithList.getArgs(0).getMapValue().getFieldsMap()).containsKey("count");
+
+    // Test backward compatibility with withTransformedFields
+    Pipeline pipelineWithTransformedFields =
+        firestore
+            .pipeline()
+            .literals(data)
+            .upsert(
+                new com.google.cloud.firestore.pipeline.stages.Upsert()
+                    .withTransformedFields(
+                        com.google.cloud.firestore.pipeline.expressions.Expression.add(
+                                field("count"), constant(1))
+                            .as("count"))
+                    .withCollection("books")
+                    .withDocumentIdExpression(constant("book1")));
+    Stage upsertStageWithTransformedFields = pipelineWithTransformedFields.toProto().getStages(1);
+    assertThat(upsertStageWithTransformedFields.getArgs(0).getMapValue().getFieldsMap())
+        .containsKey("count");
 
     // Test backward compatibility with withDocumentId
     Pipeline pipelineDeprecated =
