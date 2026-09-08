@@ -15,27 +15,40 @@
 package com.google.api.generator.gapic.composer.grpc;
 
 import com.google.api.gax.grpc.GrpcCallSettings;
+import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.httpjson.HttpJsonCallContext;
+import com.google.api.gax.httpjson.HttpJsonTransportChannel;
+import com.google.api.gax.httpjson.ManagedHttpJsonChannel;
+import com.google.api.gax.rpc.FailedPreconditionException;
 import com.google.api.generator.engine.ast.AssignmentExpr;
 import com.google.api.generator.engine.ast.ConcreteReference;
 import com.google.api.generator.engine.ast.EnumRefExpr;
 import com.google.api.generator.engine.ast.Expr;
 import com.google.api.generator.engine.ast.ExprStatement;
+import com.google.api.generator.engine.ast.IfStatement;
+import com.google.api.generator.engine.ast.MethodDefinition;
 import com.google.api.generator.engine.ast.MethodInvocationExpr;
+import com.google.api.generator.engine.ast.NewObjectExpr;
 import com.google.api.generator.engine.ast.PrimitiveValue;
+import com.google.api.generator.engine.ast.RelationalOperationExpr;
 import com.google.api.generator.engine.ast.ScopeNode;
 import com.google.api.generator.engine.ast.Statement;
 import com.google.api.generator.engine.ast.StringObjectValue;
+import com.google.api.generator.engine.ast.ThrowExpr;
 import com.google.api.generator.engine.ast.TypeNode;
 import com.google.api.generator.engine.ast.ValueExpr;
+import com.google.api.generator.engine.ast.Variable;
 import com.google.api.generator.engine.ast.VariableExpr;
 import com.google.api.generator.gapic.composer.common.AbstractTransportServiceStubClassComposer;
 import com.google.api.generator.gapic.composer.store.TypeStore;
 import com.google.api.generator.gapic.model.Message;
 import com.google.api.generator.gapic.model.Method;
 import com.google.api.generator.gapic.model.Service;
+import com.google.api.generator.gapic.utils.JavaStyle;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
+import io.grpc.Status;
 import io.grpc.protobuf.ProtoUtils;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -44,6 +57,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import org.jspecify.annotations.NullMarked;
 
 @NullMarked
@@ -58,6 +72,12 @@ public class GrpcServiceStubClassComposer extends AbstractTransportServiceStubCl
   private static final Set<String> REROUTE_TO_GRPC_INTERFACE_IAM_METHOD_ALLOWLIST =
       new HashSet<>(Arrays.asList("SetIamPolicy", "GetIamPolicy", "TestIamPermissions"));
 
+  private static final String BUILD_METHOD_NAME = "build";
+  private static final String NEW_BUILDER_METHOD_NAME = "newBuilder";
+  private static final String MANAGED_HTTP_JSON_CHANNEL_TYPE_NAME = "ManagedHttpJsonChannel";
+  private static final String HTTP_JSON_TRANSPORT_CHANNEL_TYPE_NAME = "HttpJsonTransportChannel";
+  private static final String CLIENT_CONTEXT_TYPE_NAME = "ClientContext";
+
   private static final TypeStore FIXED_GRPC_TYPE_STORE = createStaticTypes();
 
   protected GrpcServiceStubClassComposer() {
@@ -71,11 +91,18 @@ public class GrpcServiceStubClassComposer extends AbstractTransportServiceStubCl
   private static TypeStore createStaticTypes() {
     List<Class<?>> concreteClazzes =
         Arrays.asList(
+            Arrays.class,
+            FailedPreconditionException.class,
             GrpcCallSettings.class,
             GrpcOperationsStub.class,
+            GrpcStatusCode.class,
             GrpcStubCallableFactory.class,
+            HttpJsonCallContext.class,
+            HttpJsonTransportChannel.class,
+            ManagedHttpJsonChannel.class,
             MethodDescriptor.class,
-            ProtoUtils.class);
+            ProtoUtils.class,
+            Status.class);
     return new TypeStore(concreteClazzes);
   }
 
@@ -88,7 +115,7 @@ public class GrpcServiceStubClassComposer extends AbstractTransportServiceStubCl
       boolean restNumericEnumsEnabled) {
     MethodInvocationExpr methodDescriptorMaker =
         MethodInvocationExpr.builder()
-            .setMethodName("newBuilder")
+            .setMethodName(NEW_BUILDER_METHOD_NAME)
             .setStaticReferenceType(FIXED_GRPC_TYPE_STORE.get("MethodDescriptor"))
             .setGenerics(methodDescriptorVarExpr.variable().type().reference().generics())
             .build();
@@ -155,7 +182,7 @@ public class GrpcServiceStubClassComposer extends AbstractTransportServiceStubCl
 
     methodDescriptorMaker =
         MethodInvocationExpr.builder()
-            .setMethodName("build")
+            .setMethodName(BUILD_METHOD_NAME)
             .setExprReferenceExpr(methodDescriptorMaker)
             .setReturnType(methodDescriptorVarExpr.type())
             .build();
@@ -212,5 +239,360 @@ public class GrpcServiceStubClassComposer extends AbstractTransportServiceStubCl
     // This is meant to be a temporary workaround until the allow-listed services come up with a
     // long-term solution.
     return String.format("google.iam.v1.IAMPolicy/%s", protoMethod.name());
+  }
+
+  @Override
+  protected boolean isResumableUploadStubNullable() {
+    return true;
+  }
+
+  @Override
+  protected List<Statement> createResumableUploadStubInitStatements(
+      Service service,
+      TypeStore typeStore,
+      Expr thisExpr,
+      VariableExpr resumableUploadStubVarExpr,
+      VariableExpr clientContextVarExpr,
+      VariableExpr settingsVarExpr) {
+    MethodInvocationExpr getCredentialsExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(clientContextVarExpr)
+            .setMethodName("getCredentials")
+            .setReturnType(TypeNode.OBJECT)
+            .build();
+
+    MethodInvocationExpr getEndpointExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(settingsVarExpr)
+            .setMethodName("getEndpoint")
+            .build();
+
+    MethodInvocationExpr getExecutorExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(clientContextVarExpr)
+            .setMethodName("getExecutor")
+            .build();
+
+    Expr getHeadersExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(clientContextVarExpr)
+            .setMethodName("getHeaders")
+            .build();
+    Expr getInternalHeadersExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(clientContextVarExpr)
+            .setMethodName("getInternalHeaders")
+            .build();
+    Expr getClockExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(clientContextVarExpr)
+            .setMethodName("getClock")
+            .build();
+
+    VariableExpr httpJsonManagedChannelVarExpr =
+        VariableExpr.builder()
+            .setVariable(
+                Variable.builder()
+                    .setName("httpJsonManagedChannel")
+                    .setType(FIXED_GRPC_TYPE_STORE.get(MANAGED_HTTP_JSON_CHANNEL_TYPE_NAME))
+                    .build())
+            .setIsDecl(true)
+            .build();
+
+    MethodInvocationExpr channelNewBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setStaticReferenceType(FIXED_GRPC_TYPE_STORE.get(MANAGED_HTTP_JSON_CHANNEL_TYPE_NAME))
+            .setMethodName(NEW_BUILDER_METHOD_NAME)
+            .build();
+    channelNewBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(channelNewBuilderExpr)
+            .setMethodName("setEndpoint")
+            .setArguments(Arrays.asList(getEndpointExpr))
+            .build();
+    channelNewBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(channelNewBuilderExpr)
+            .setMethodName("setExecutor")
+            .setArguments(Arrays.asList(getExecutorExpr))
+            .build();
+    channelNewBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(channelNewBuilderExpr)
+            .setMethodName(BUILD_METHOD_NAME)
+            .setReturnType(FIXED_GRPC_TYPE_STORE.get(MANAGED_HTTP_JSON_CHANNEL_TYPE_NAME))
+            .build();
+
+    Statement httpJsonManagedChannelDeclStmt =
+        ExprStatement.withExpr(
+            AssignmentExpr.builder()
+                .setVariableExpr(httpJsonManagedChannelVarExpr)
+                .setValueExpr(channelNewBuilderExpr)
+                .build());
+
+    VariableExpr httpJsonTransportChannelVarExpr =
+        VariableExpr.builder()
+            .setVariable(
+                Variable.builder()
+                    .setName("httpJsonTransportChannel")
+                    .setType(FIXED_GRPC_TYPE_STORE.get(HTTP_JSON_TRANSPORT_CHANNEL_TYPE_NAME))
+                    .build())
+            .setIsDecl(true)
+            .build();
+
+    MethodInvocationExpr createTransportChannelExpr =
+        MethodInvocationExpr.builder()
+            .setStaticReferenceType(FIXED_GRPC_TYPE_STORE.get(HTTP_JSON_TRANSPORT_CHANNEL_TYPE_NAME))
+            .setMethodName("create")
+            .setArguments(
+                Arrays.asList(httpJsonManagedChannelVarExpr.toBuilder().setIsDecl(false).build()))
+            .setReturnType(FIXED_GRPC_TYPE_STORE.get(HTTP_JSON_TRANSPORT_CHANNEL_TYPE_NAME))
+            .build();
+
+    Statement httpJsonTransportChannelDeclStmt =
+        ExprStatement.withExpr(
+            AssignmentExpr.builder()
+                .setVariableExpr(httpJsonTransportChannelVarExpr)
+                .setValueExpr(createTransportChannelExpr)
+                .build());
+
+    VariableExpr transportChannelArgExpr =
+        httpJsonTransportChannelVarExpr.toBuilder().setIsDecl(false).build();
+
+    MethodInvocationExpr createDefaultCallContextExpr =
+        MethodInvocationExpr.builder()
+            .setStaticReferenceType(FIXED_GRPC_TYPE_STORE.get("HttpJsonCallContext"))
+            .setMethodName("createDefault")
+            .build();
+
+    MethodInvocationExpr withTransportChannelCallContextExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(createDefaultCallContextExpr)
+            .setMethodName("withTransportChannel")
+            .setArguments(Arrays.asList(transportChannelArgExpr))
+            .setReturnType(FIXED_GRPC_TYPE_STORE.get("HttpJsonCallContext"))
+            .build();
+
+    MethodInvocationExpr asListBackgroundResourceExpr =
+        MethodInvocationExpr.builder()
+            .setStaticReferenceType(FIXED_GRPC_TYPE_STORE.get("Arrays"))
+            .setMethodName("asList")
+            .setArguments(Arrays.asList(transportChannelArgExpr))
+            .build();
+
+    MethodInvocationExpr newBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setStaticReferenceType(FIXED_TYPESTORE.get(CLIENT_CONTEXT_TYPE_NAME))
+            .setMethodName(NEW_BUILDER_METHOD_NAME)
+            .build();
+    newBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(newBuilderExpr)
+            .setMethodName("setCredentials")
+            .setArguments(Arrays.asList(getCredentialsExpr))
+            .build();
+    newBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(newBuilderExpr)
+            .setMethodName("setEndpoint")
+            .setArguments(Arrays.asList(getEndpointExpr))
+            .build();
+    newBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(newBuilderExpr)
+            .setMethodName("setExecutor")
+            .setArguments(Arrays.asList(getExecutorExpr))
+            .build();
+    newBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(newBuilderExpr)
+            .setMethodName("setHeaders")
+            .setArguments(Arrays.asList(getHeadersExpr))
+            .build();
+    newBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(newBuilderExpr)
+            .setMethodName("setInternalHeaders")
+            .setArguments(Arrays.asList(getInternalHeadersExpr))
+            .build();
+    newBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(newBuilderExpr)
+            .setMethodName("setClock")
+            .setArguments(Arrays.asList(getClockExpr))
+            .build();
+    newBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(newBuilderExpr)
+            .setMethodName("setTransportChannel")
+            .setArguments(Arrays.asList(transportChannelArgExpr))
+            .build();
+    newBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(newBuilderExpr)
+            .setMethodName("setDefaultCallContext")
+            .setArguments(Arrays.asList(withTransportChannelCallContextExpr))
+            .build();
+    newBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(newBuilderExpr)
+            .setMethodName("setBackgroundResources")
+            .setArguments(Arrays.asList(asListBackgroundResourceExpr))
+            .build();
+    newBuilderExpr =
+        MethodInvocationExpr.builder()
+            .setExprReferenceExpr(newBuilderExpr)
+            .setMethodName(BUILD_METHOD_NAME)
+            .setReturnType(FIXED_TYPESTORE.get(CLIENT_CONTEXT_TYPE_NAME))
+            .build();
+
+    VariableExpr httpJsonClientContextVarExpr =
+        VariableExpr.builder()
+            .setVariable(
+                Variable.builder()
+                    .setName("httpJsonClientContext")
+                    .setType(FIXED_TYPESTORE.get(CLIENT_CONTEXT_TYPE_NAME))
+                    .build())
+            .setIsDecl(true)
+            .build();
+    Statement clientContextDeclStmt =
+        ExprStatement.withExpr(
+            AssignmentExpr.builder()
+                .setVariableExpr(httpJsonClientContextVarExpr)
+                .setValueExpr(newBuilderExpr)
+                .build());
+
+    TypeNode uploadStubType =
+        typeStore.get(String.format(RESUMABLE_UPLOAD_STUB_PATTERN, service.name()));
+    Expr createStubExpr =
+        MethodInvocationExpr.builder()
+            .setStaticReferenceType(uploadStubType)
+            .setMethodName("create")
+            .setArguments(
+                Arrays.asList(
+                    httpJsonClientContextVarExpr.toBuilder().setIsDecl(false).build(),
+                    settingsVarExpr))
+            .setReturnType(uploadStubType)
+            .build();
+    Statement assignResumableUploadStub =
+        ExprStatement.withExpr(
+            AssignmentExpr.builder()
+                .setVariableExpr(
+                    resumableUploadStubVarExpr.toBuilder().setExprReferenceExpr(thisExpr).build())
+                .setValueExpr(createStubExpr)
+                .build());
+
+    Statement assignNullStmt =
+        ExprStatement.withExpr(
+            AssignmentExpr.builder()
+                .setVariableExpr(
+                    resumableUploadStubVarExpr.toBuilder().setExprReferenceExpr(thisExpr).build())
+                .setValueExpr(ValueExpr.createNullExpr())
+                .build());
+
+    Expr condExpr =
+        RelationalOperationExpr.notEqualToWithExprs(getCredentialsExpr, ValueExpr.createNullExpr());
+    Statement ifStmt =
+        IfStatement.builder()
+            .setConditionExpr(condExpr)
+            .setBody(
+                Arrays.asList(
+                    httpJsonManagedChannelDeclStmt,
+                    httpJsonTransportChannelDeclStmt,
+                    clientContextDeclStmt,
+                    assignResumableUploadStub))
+            .setElseBody(Arrays.asList(assignNullStmt))
+            .build();
+    return Arrays.asList(ifStmt, EMPTY_LINE_STATEMENT);
+  }
+
+  @Override
+  protected List<MethodDefinition> createResumableUploadCallableGetterMethods(
+      Service service, Map<String, VariableExpr> classMemberVarExprs) {
+    VariableExpr resumableUploadStubVarExpr =
+        classMemberVarExprs.get(RESUMABLE_UPLOAD_STUB_MEMBER_NAME);
+    return service.methods().stream()
+        .filter(Method::isResumableUpload)
+        .map(
+            m -> {
+              String javaStyleMethodName = JavaStyle.toLowerCamelCase(m.name());
+              String callableMethodName =
+                  String.format(CALLABLE_CLASS_MEMBER_PATTERN, javaStyleMethodName);
+              TypeNode callableType = getCallableType(m);
+
+              Statement nullCheckIfStmt =
+                  IfStatement.builder()
+                      .setConditionExpr(
+                          RelationalOperationExpr.equalToWithExprs(
+                              resumableUploadStubVarExpr, ValueExpr.createNullExpr()))
+                      .setBody(
+                          Arrays.asList(
+                              ExprStatement.withExpr(
+                                  ThrowExpr.builder()
+                                      .setThrowExpr(
+                                          NewObjectExpr.builder()
+                                              .setType(
+                                                  FIXED_GRPC_TYPE_STORE.get(
+                                                      "FailedPreconditionException"))
+                                              .setArguments(
+                                                  Arrays.asList(
+                                                      ValueExpr.withValue(
+                                                          StringObjectValue.withValue(
+                                                              "Resumable uploads execute over"
+                                                                  + " HTTP/REST and require"
+                                                                  + " credentials. The client was"
+                                                                  + " initialized with a"
+                                                                  + " pre-constructed gRPC Channel,"
+                                                                  + " from which credentials cannot"
+                                                                  + " be extracted. Please"
+                                                                  + " configure a"
+                                                                  + " CredentialsProvider"
+                                                                  + " instead.")),
+                                                      ValueExpr.createNullExpr(),
+                                                      MethodInvocationExpr.builder()
+                                                          .setStaticReferenceType(
+                                                              FIXED_GRPC_TYPE_STORE.get(
+                                                                  "GrpcStatusCode"))
+                                                          .setMethodName("of")
+                                                          .setArguments(
+                                                              Arrays.asList(
+                                                                  EnumRefExpr.builder()
+                                                                      .setName(
+                                                                          "FAILED_PRECONDITION")
+                                                                      .setType(
+                                                                          TypeNode.withReference(
+                                                                              ConcreteReference
+                                                                                  .builder()
+                                                                                  .setClazz(
+                                                                                      Status.Code
+                                                                                          .class)
+                                                                                  .build()))
+                                                                      .build()))
+                                                          .build(),
+                                                      ValueExpr.withValue(
+                                                          PrimitiveValue.builder()
+                                                              .setType(TypeNode.BOOLEAN)
+                                                              .setValue("false")
+                                                              .build())))
+                                              .build())
+                                      .build())))
+                      .build();
+
+              Expr returnExpr =
+                  MethodInvocationExpr.builder()
+                      .setExprReferenceExpr(resumableUploadStubVarExpr)
+                      .setMethodName(callableMethodName)
+                      .setReturnType(callableType)
+                      .build();
+              return MethodDefinition.builder()
+                  .setIsOverride(true)
+                  .setScope(ScopeNode.PUBLIC)
+                  .setReturnType(callableType)
+                  .setName(callableMethodName)
+                  .setBody(Arrays.asList(nullCheckIfStmt))
+                  .setReturnExpr(returnExpr)
+                  .build();
+            })
+        .collect(Collectors.toList());
   }
 }
