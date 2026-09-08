@@ -17,12 +17,14 @@ package com.google.api.generator.gapic.composer.rest;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.generator.engine.writer.JavaWriterVisitor;
+import com.google.api.generator.gapic.composer.Composer;
 import com.google.api.generator.gapic.model.GapicClass;
 import com.google.api.generator.gapic.model.GapicClass.Kind;
 import com.google.api.generator.gapic.model.GapicContext;
 import com.google.api.generator.gapic.model.Service;
 import com.google.api.generator.test.framework.Assert;
 import com.google.api.generator.test.protoloader.RestTestProtoLoader;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 
 class HttpJsonServiceResumableUploadStubClassComposerTest {
@@ -153,6 +155,21 @@ class HttpJsonServiceResumableUploadStubClassComposerTest {
     GapicClass clazz =
         HttpJsonServiceResumableUploadStubClassComposer.instance().generate(context, echoService);
     assertThat(clazz.kind()).isEqualTo(GapicClass.Kind.NON_GENERATED);
+  }
+
+  @Test
+  void composer_generateStubClasses_registersUploadStubWhenResumableUploadPresent() {
+    GapicContext context = RestTestProtoLoader.instance().parseShowcaseResumableUpload();
+    List<GapicClass> stubClasses = Composer.generateStubClasses(context);
+    assertThat(
+            stubClasses.stream()
+                .anyMatch(
+                    c ->
+                        c.classDefinition()
+                            .classIdentifier()
+                            .name()
+                            .equals("HttpJsonResumableUploadServiceResumableUploadStub")))
+        .isTrue();
   }
 
   @Test
