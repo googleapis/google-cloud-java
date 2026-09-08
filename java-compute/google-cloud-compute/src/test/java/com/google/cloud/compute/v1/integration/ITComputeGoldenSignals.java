@@ -24,6 +24,7 @@ import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
 import com.google.api.gax.rpc.NotFoundException;
+import com.google.api.gax.rpc.ResourceExhaustedException;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.BaseApiTracerFactory;
 import com.google.api.gax.tracing.CompositeTracerFactory;
@@ -296,14 +297,15 @@ public class ITComputeGoldenSignals extends BaseTest {
             .atMost(Duration.ofMinutes(2))
             .pollDelay(Duration.ofSeconds(3))
             .pollInterval(Duration.ofSeconds(3))
-            .ignoreExceptionsInstanceOf(NotFoundException.class)
             .ignoreExceptionsMatching(
                 e ->
-                    e instanceof StatusRuntimeException
-                        && (((StatusRuntimeException) e).getStatus().getCode()
-                                == Status.Code.NOT_FOUND
-                            || ((StatusRuntimeException) e).getStatus().getCode()
-                                == Status.Code.RESOURCE_EXHAUSTED))
+                    e instanceof NotFoundException
+                        || e instanceof ResourceExhaustedException
+                        || (e instanceof StatusRuntimeException
+                            && (((StatusRuntimeException) e).getStatus().getCode()
+                                    == Status.Code.NOT_FOUND
+                                || ((StatusRuntimeException) e).getStatus().getCode()
+                                    == Status.Code.RESOURCE_EXHAUSTED)))
             .until(
                 () -> traceClient.getTrace(DEFAULT_PROJECT, traceId),
                 t -> t != null && t.getSpansCount() > 0);
