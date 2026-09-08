@@ -14,10 +14,11 @@ This guide provides comprehensive instructions for configuring, developing with,
 4. [Connection Properties Reference](#4-connection-properties-reference)
 5. [Data Type Mapping Reference](#5-data-type-mapping-reference)
 6. [JDBC Driver Architecture & Core Features](#6-jdbc-driver-architecture--core-features)
-   - [Transaction Management & Multi-Statement Sessions](#transaction-management--multi-statement-sessions)
+   - [Multi-Statement Sessions & Transaction Management](#multi-statement-sessions--transaction-management)
    - [High-Throughput Storage Read & Write APIs](#high-throughput-storage-read--write-apis)
 7. [Feature Examples & Code Snippets](#7-feature-examples--code-snippets)
    - [Transactions (Manual Commit & Rollback)](#transactions-manual-commit--rollback)
+   - [Connecting to a Pre-Existing Session](#connecting-to-a-pre-existing-session)
    - [Prepared Statements & Parameter Binding](#prepared-statements--parameter-binding)
    - [Callable Statements & Stored Procedures](#callable-statements--stored-procedures)
    - [Batch Ingestion with Storage Write API](#batch-ingestion-with-storage-write-api)
@@ -205,7 +206,8 @@ String url = "jdbc:bigquery://https://bigquery.googleapis.com:443"
 
 | Property Name | Default Value | Description |
 | :--- | :---: | :--- |
-| `EnableSession` | `false` | Enables multi-statement session creation and transaction support (`BEGIN`, `COMMIT`, `ROLLBACK`). |
+| `EnableSession` | `false` | Enables BigQuery multi-statement session creation and transaction support (`BEGIN`, `COMMIT`, `ROLLBACK`). |
+| `QueryProperties` | `null` | Comma- or semicolon-separated key-value pairs passed as connection-level job properties (e.g., `QueryProperties=session_id=<session_id>` to connect to a pre-existing session). |
 
 ### High-Throughput Storage & Write API Properties
 
@@ -291,58 +293,26 @@ When running queries through the JDBC driver for BigQuery, data types map as spe
 
 ## 6. JDBC Driver Architecture & Core Features
 
-### Transaction Management & Multi-Statement Sessions
+### Multi-Statement Sessions & Transaction Management
 
-BigQuery supports **Multi-Statement Transactions** across tables using standard SQL primitives (`BEGIN TRANSACTION`, `COMMIT TRANSACTION`, `ROLLBACK TRANSACTION`). The driver bridges standard JDBC methods (`setAutoCommit`, `commit`, `rollback`) directly to BigQuery's underlying session engine.
+BigQuery supports **Multi-Statement Sessions**, which preserve state across multiple SQL statements executed on the same connection.
 
-#### Session Lifecycle Flow:
+1. **Enabling Sessions (`EnableSession=true`)**:
+   - Add `;EnableSession=true` (or `EnableSession=1`) to the JDBC connection URL or DataSource properties.
+   - Under default auto-commit mode (`autoCommit=true`), statements execute and commit individually while sharing session state.
 
-```
-[DriverManager.getConnection()]
-             │
-   (EnableSession=true)
-             │
-  ┌──────────▼──────────┐
-  │ setAutoCommit(false)│ ──────► Begins transaction block in session
-  └──────────┬──────────┘
-             │
-  ┌──────────▼──────────┐
-  │ Execute DML & SQL   │ ──────► Runs queries within active session
-  │ Statements          │
-  └──────────┬──────────┘
-             │
-     ┌───────┴───────┐
-     │               │
-     ▼               ▼
-┌─────────┐     ┌──────────┐
-│commit() │     │rollback()│
-└────┬────┘     └────┬─────┘
-     │               │
-     ▼               ▼
-Executes:        Executes:
-COMMIT           ROLLBACK
-TRANSACTION;     TRANSACTION;
-     │               │
-     └───────┬───────┘
-             │
-             ▼
-(Auto-re-executes BEGIN TRANSACTION; if setAutoCommit remains false)
-```
+2. **Multi-Statement Transactions (`setAutoCommit(false)`)**:
+   - Multi-statement transactions require `;EnableSession=true` (calling `setAutoCommit(false)`, `commit()`, or `rollback()` with sessions disabled throws an exception).
+   - Calling `conn.setAutoCommit(false)` begins a multi-statement transaction in BigQuery. Statements executed within the transaction block remain uncommitted until `conn.commit()` is explicitly called (or discarded via `conn.rollback()`).
+   - If `autoCommit` remains `false`, the driver automatically starts the next transaction block for subsequent statements.
+   - Isolation level: `Connection.TRANSACTION_SERIALIZABLE` (BigQuery snapshot isolation).
 
-1. **Pre-requisite Check**: Calling `setAutoCommit(false)`, `commit()`, or `rollback()` requires `;EnableSession=true` in the connection URL. If disabled or invoked without an active transaction, an exception is thrown by the driver.
-2. **Session & Transaction Start**:
-   - `setAutoCommit(false)` initiates a multi-statement transaction session in BigQuery.
-3. **Statement Propagation**:
-   - All `Statement` or `PreparedStatement` instances created on the connection execute within the scope of the active session.
-4. **Commit & Rollback**:
-   - `commit()` executes `COMMIT TRANSACTION;` to commit changes.
-   - `rollback()` executes `ROLLBACK TRANSACTION;` to discard changes.
-   - If `autoCommit` remains `false`, the driver automatically starts the next transaction block.
-5. **Connection Close Safety**:
-   - If an uncommitted transaction is pending when `conn.close()` is invoked, the driver automatically rolls back the transaction to prevent uncommitted changes from persisting.
-6. **Isolation Level & Holdability**:
-   - Isolation level: `Connection.TRANSACTION_SERIALIZABLE` (BigQuery multi-statement snapshot isolation).
-   - Holdability: `ResultSet.CLOSE_CURSORS_AT_COMMIT`.
+3. **Using an Existing Session (`QueryProperties=session_id=...`)**:
+   - You can attach to a pre-existing BigQuery session by specifying `;QueryProperties=session_id=<existing_session_id>` in the connection URL.
+
+4. **Connection Closure & Lifecycle**:
+   - When `conn.close()` is called, sessions created by the driver are automatically terminated to release BigQuery server resources.
+   - If a pre-existing session ID was supplied by the user (`QueryProperties=session_id=...`), the session is preserved when the connection is closed.
 
 ---
 
@@ -360,7 +330,7 @@ For enterprise data ingestion and analytics extraction, the driver integrates wi
 ## 7. Feature Examples & Code Snippets
 
 ### Transactions (Manual Commit & Rollback)
-Transactions require `;EnableSession=true` in the connection URL to enable multi-statement sessions in BigQuery.
+Transactions require `;EnableSession=true` in the connection URL to enable multi-statement transactions in BigQuery:
 
 ```java
 String url = "jdbc:bigquery://https://bigquery.googleapis.com:443;ProjectId=my-project;EnableSession=true;OAuthType=3";
@@ -383,6 +353,28 @@ try (Connection conn = DriverManager.getConnection(url)) {
     } catch (SQLException e) {
         conn.rollback(); // Rollback on error
         throw e;
+    }
+}
+```
+
+---
+
+### Connecting to a Pre-Existing Session
+To attach to an existing BigQuery session created outside the driver:
+
+```java
+String existingSessionId = "your_existing_session_id_here";
+String url = "jdbc:bigquery://https://bigquery.googleapis.com:443;ProjectId=my-project;EnableSession=true;"
+           + "QueryProperties=session_id=" + existingSessionId + ";OAuthType=3";
+
+try (Connection conn = DriverManager.getConnection(url);
+     Statement stmt = conn.createStatement()) {
+
+    // Query tables or temporary objects in the pre-existing session
+    try (ResultSet rs = stmt.executeQuery("SELECT * FROM ExistingTempTable")) {
+        while (rs.next()) {
+            // Process rows...
+        }
     }
 }
 ```

@@ -1512,6 +1512,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       }
     } else if (isSessionEnabled) {
       queryConfigBuilder.setCreateSession(true);
+      this.connection.isSessionCreatedByDriver = true;
     }
 
     if (!props.isEmpty()) {

@@ -179,6 +179,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   // when autocommit is false transaction starts and session is initialized.
   boolean transactionStarted;
   volatile ConnectionProperty sessionInfoConnectionProperty;
+  // isSessionCreatedByDriver is false by default.
+  boolean isSessionCreatedByDriver = false;
   boolean isClosed;
   DatasetId defaultDataset;
   String location;
@@ -683,6 +685,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         transactionBeginJobConfig.setConnectionProperties(this.queryProperties);
       } else {
         transactionBeginJobConfig.setCreateSession(true);
+        this.isSessionCreatedByDriver = true;
       }
       Job job = this.bigQuery.create(JobInfo.of(transactionBeginJobConfig.build()));
       job = job.waitFor();
@@ -742,6 +745,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   public ConnectionProperty getSessionInfoConnectionProperty() {
     return this.sessionInfoConnectionProperty;
+  }
+
+  boolean isSessionCreatedByDriver() {
+    return this.isSessionCreatedByDriver;
   }
 
   boolean isEnableHighThroughputAPI() {
@@ -1073,7 +1080,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         }
       }
 
-      if (this.sessionInfoConnectionProperty != null) {
+      if (this.sessionInfoConnectionProperty != null && this.isSessionCreatedByDriver) {
         abortSession();
       }
 
@@ -1499,6 +1506,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         }
         this.queryProperties = Collections.unmodifiableList(updated);
       }
+      this.isSessionCreatedByDriver = false;
       this.transactionStarted = false;
     }
   }

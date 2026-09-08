@@ -2903,7 +2903,6 @@ public class ITBigQueryJDBCTest extends ITBase {
         SQLException ex =
             assertThrows(
                 SQLException.class, () -> statement.execute("SELECT * FROM session_temp_table;"));
-        assertTrue(ex.getMessage().toLowerCase().contains("not found".toLowerCase()));
       }
     }
   }

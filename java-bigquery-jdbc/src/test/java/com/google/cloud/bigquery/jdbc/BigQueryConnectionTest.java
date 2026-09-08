@@ -816,6 +816,7 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
         BASE_URL + ";EnableSession=1;QueryProperties=session_id=user_supplied_session_999";
     try (BigQueryConnection connection = new BigQueryConnection(urlWithSessionId)) {
       assertTrue(connection.isSessionEnabled());
+      assertFalse(connection.isSessionCreatedByDriver());
       assertNotNull(connection.getSessionInfoConnectionProperty());
       assertEquals("session_id", connection.getSessionInfoConnectionProperty().getKey());
       assertEquals(
@@ -833,6 +834,8 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
       connection.bigQuery = mockBigQuery;
 
       connection.updateSessionInfo("test_session_id_to_abort");
+      connection.isSessionCreatedByDriver = true;
+      assertTrue(connection.isSessionCreatedByDriver());
       connection.close();
 
       ArgumentCaptor<JobInfo> jobCaptor = ArgumentCaptor.forClass(JobInfo.class);
@@ -841,6 +844,26 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
           (QueryJobConfiguration) jobCaptor.getValue().getConfiguration();
       assertEquals("CALL BQ.ABORT_SESSION();", config.getQuery());
       assertNull(connection.getSessionInfoConnectionProperty());
+      assertFalse(connection.isSessionCreatedByDriver());
+      assertTrue(connection.isClosed());
+    }
+  }
+
+  @Test
+  public void testCloseWithUserSuppliedSessionDoesNotAbortSession() throws Exception {
+    String urlWithSessionId =
+        BASE_URL + ";EnableSession=1;QueryProperties=session_id=user_supplied_session_999";
+    try (BigQueryConnection connection = new BigQueryConnection(urlWithSessionId)) {
+      BigQuery mockBigQuery = mock(BigQuery.class);
+      connection.bigQuery = mockBigQuery;
+
+      assertFalse(connection.isSessionCreatedByDriver());
+      assertEquals(
+          "user_supplied_session_999", connection.getSessionInfoConnectionProperty().getValue());
+
+      connection.close();
+
+      verify(mockBigQuery, never()).create(any(JobInfo.class));
       assertTrue(connection.isClosed());
     }
   }
