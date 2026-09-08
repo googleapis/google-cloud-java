@@ -716,11 +716,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       this.currentJobIdIndex += 1;
       Job currentJob = this.parentJobId.getJobs().get(this.currentJobIdIndex);
       QueryStatistics queryStatistics = currentJob.getStatistics();
-      ScriptStatistics scriptStatistics = queryStatistics.getScriptStatistics();
+      ScriptStatistics scriptStatistics = queryStatistics != null ? queryStatistics.getScriptStatistics() : null;
       // EXPRESSION jobs are not relevant for customer query and can be
       // created by BQ depending on various conditions. We will just ignore
       // them when presenting results.
-      if (!"expression".equalsIgnoreCase(scriptStatistics.getEvaluationKind())) {
+      if (scriptStatistics == null || !"expression".equalsIgnoreCase(scriptStatistics.getEvaluationKind())) {
         return currentJob;
       }
     }
@@ -775,8 +775,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           if (currentJob == null) {
             return;
           }
-          StatementType statementType =
-              ((QueryStatistics) (currentJob.getStatistics())).getStatementType();
+          StatementType statementType = null;
+          if (currentJob.getStatistics() instanceof QueryStatistics) {
+            statementType = ((QueryStatistics) (currentJob.getStatistics())).getStatementType();
+          }
           SqlType sqlType = getQueryType(currentJob.getConfiguration(), statementType);
           handleQueryResult(query, currentJob.getQueryResults(), sqlType, currentJob);
         } catch (NullPointerException ex) {
