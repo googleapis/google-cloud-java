@@ -1,0 +1,149 @@
+package com.google.showcase.v1beta1.stub;
+
+import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.httpjson.ApiMethodDescriptor;
+import com.google.api.gax.httpjson.HttpJsonCallSettings;
+import com.google.api.gax.httpjson.HttpJsonCallableFactory;
+import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
+import com.google.api.gax.httpjson.ProtoMessageResponseParser;
+import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.protobuf.TypeRegistry;
+import com.google.showcase.v1beta1.UploadMediaRequest;
+import com.google.showcase.v1beta1.UploadMediaResponse;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * REST stub transport for the resumable upload methods of ResumableUploadService.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@Generated("by gapic-generator-java")
+@InternalApi
+@NullMarked
+@BetaApi
+public class HttpJsonResumableUploadServiceResumableUploadStub implements BackgroundResource {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private static final ApiMethodDescriptor<UploadMediaRequest, UploadMediaResponse>
+      uploadMediaMethodDescriptor =
+          ApiMethodDescriptor.<UploadMediaRequest, UploadMediaResponse>newBuilder()
+              .setFullMethodName("google.showcase.v1beta1.ResumableUploadService/UploadMedia")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UploadMediaRequest>newBuilder()
+                      .setPath(
+                          "/resumable/upload/v1beta1/files:upload",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UploadMediaRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UploadMediaRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().build(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<UploadMediaResponse>newBuilder()
+                      .setDefaultInstance(UploadMediaResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private final BackgroundResource backgroundResources;
+  private final ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse>
+      uploadMediaCallable;
+
+  public static HttpJsonResumableUploadServiceResumableUploadStub create(
+      ClientContext clientContext, ResumableUploadServiceStubSettings settings) {
+    return new HttpJsonResumableUploadServiceResumableUploadStub(clientContext, settings);
+  }
+
+  /**
+   * Constructs an instance of HttpJsonResumableUploadServiceResumableUploadStub, using the given
+   * settings. This is protected so that it is easy to make a subclass, but otherwise, the static
+   * factory methods should be preferred.
+   */
+  protected HttpJsonResumableUploadServiceResumableUploadStub(
+      ClientContext clientContext, ResumableUploadServiceStubSettings settings) {
+    HttpJsonCallSettings<UploadMediaRequest, UploadMediaResponse> uploadMediaTransportSettings =
+        HttpJsonCallSettings.<UploadMediaRequest, UploadMediaResponse>newBuilder()
+            .setMethodDescriptor(uploadMediaMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .build();
+    this.uploadMediaCallable =
+        HttpJsonCallableFactory.createResumableUploadCallable(
+            uploadMediaTransportSettings, settings.uploadMediaSettings(), clientContext);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    methodDescriptors.add(uploadMediaMethodDescriptor);
+    return methodDescriptors;
+  }
+
+  public ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
+    return uploadMediaCallable;
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}
