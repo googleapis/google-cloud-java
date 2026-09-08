@@ -688,7 +688,6 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                     if (!batchBuffer.isEmpty()) {
                       try {
                         TypedRows typedRows = TypedRows.parseFrom(batchBuffer);
-                        committedBatchBytes = committedBatchBytes.concat(batchBuffer);
                         batchBuffer = ByteString.EMPTY;
                         for (com.google.bigtable.v2.TypedRow row : typedRows.getRowsList()) {
                           collectedRows.add(row);
@@ -726,6 +725,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                     }
                     if (!flush.getResumeToken().isEmpty()) {
                       committedRowCount = collectedRows.size();
+                      committedBatchBytes = runningBatchBytes;
                     }
                   }
                 }

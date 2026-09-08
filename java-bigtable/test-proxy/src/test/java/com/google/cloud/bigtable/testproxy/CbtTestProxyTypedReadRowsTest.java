@@ -583,6 +583,104 @@ public class CbtTestProxyTypedReadRowsTest {
     assertThat(result.getRows(1).getRowKey().getStringValue()).isEqualTo("rk-2");
   }
 
+  @Test
+  public void testTypedReadRows_resetRollsBackToLastResumeToken() throws Exception {
+    // 1. Batch 1 committed with resume token "tok-1"
+    TypedRow row1 = createRow("rk-committed", "cf", "col", "val1");
+    TypedRows batch1 = TypedRows.newBuilder().addRows(row1).build();
+    ByteString batchBytes1 = batch1.toByteString();
+    int checksum1 = (int) Hashing.crc32c().hashBytes(batchBytes1.toByteArray()).padToLong();
+
+    // 2. Batch 2 uncommitted with no resume token
+    TypedRow row2 = createRow("rk-uncommitted", "cf", "col", "val2");
+    TypedRows batch2 = TypedRows.newBuilder().addRows(row2).build();
+    ByteString batchBytes2 = batch2.toByteString();
+    int checksum2 =
+        (int) Hashing.crc32c().hashBytes(batchBytes1.concat(batchBytes2).toByteArray()).padToLong();
+
+    // 3. Reset occurs, followed by Batch 3 with resume token "tok-3"
+    TypedRow row3 = createRow("rk-after-reset", "cf", "col", "val3");
+    TypedRows batch3 = TypedRows.newBuilder().addRows(row3).build();
+    ByteString batchBytes3 = batch3.toByteString();
+    int checksum3 =
+        (int) Hashing.crc32c().hashBytes(batchBytes1.concat(batchBytes3).toByteArray()).padToLong();
+
+    mockBigtableService.responses.add(
+        TypedReadRowsResponse.newBuilder()
+            .setResponse(
+                PartialRowResponse.newBuilder()
+                    .setTypedRowsBatch(TypedRowsBatch.newBuilder().setBatchData(batchBytes1).build())
+                    .setFlush(
+                        PartialRowResponse.Flush.newBuilder()
+                            .setChecksum(checksum1)
+                            .setResumeToken(ByteString.copyFromUtf8("tok-1"))
+                            .build())
+                    .build())
+            .build());
+
+    mockBigtableService.responses.add(
+        TypedReadRowsResponse.newBuilder()
+            .setResponse(
+                PartialRowResponse.newBuilder()
+                    .setTypedRowsBatch(TypedRowsBatch.newBuilder().setBatchData(batchBytes2).build())
+                    .setFlush(PartialRowResponse.Flush.newBuilder().setChecksum(checksum2).build())
+                    .build())
+            .build());
+
+    mockBigtableService.responses.add(
+        TypedReadRowsResponse.newBuilder()
+            .setResponse(
+                PartialRowResponse.newBuilder()
+                    .setReset(true)
+                    .setTypedRowsBatch(TypedRowsBatch.newBuilder().setBatchData(batchBytes3).build())
+                    .setFlush(
+                        PartialRowResponse.Flush.newBuilder()
+                            .setChecksum(checksum3)
+                            .setResumeToken(ByteString.copyFromUtf8("tok-3"))
+                            .build())
+                    .build())
+            .build());
+
+    TypedReadRowsRequest request =
+        TypedReadRowsRequest.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setRequest(
+                com.google.bigtable.v2.TypedReadRowsRequest.newBuilder()
+                    .setTableName(TABLE_NAME)
+                    .build())
+            .build();
+
+    CountDownLatch latch = new CountDownLatch(1);
+    List<TypedRowsResult> results = new ArrayList<>();
+    testProxy.typedReadRows(
+        request,
+        new StreamObserver<TypedRowsResult>() {
+          @Override
+          public void onNext(TypedRowsResult value) {
+            results.add(value);
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            latch.countDown();
+          }
+
+          @Override
+          public void onCompleted() {
+            latch.countDown();
+          }
+        });
+
+    assertThat(latch.await(5, TimeUnit.SECONDS)).isTrue();
+    assertThat(results).hasSize(1);
+    TypedRowsResult result = results.get(0);
+    assertThat(result.getStatus().getCode()).isEqualTo(Code.OK_VALUE);
+    // row2 must have been discarded on reset, leaving only row1 and row3
+    assertThat(result.getRowsCount()).isEqualTo(2);
+    assertThat(result.getRows(0).getRowKey().getStringValue()).isEqualTo("rk-committed");
+    assertThat(result.getRows(1).getRowKey().getStringValue()).isEqualTo("rk-after-reset");
+  }
+
   private static class MockBigtableService extends BigtableGrpc.BigtableImplBase {
     final List<TypedReadRowsResponse> responses = new ArrayList<>();
     RuntimeException errorToThrow = null;
