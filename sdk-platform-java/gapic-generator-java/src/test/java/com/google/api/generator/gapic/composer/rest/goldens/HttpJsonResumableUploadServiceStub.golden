@@ -1,0 +1,130 @@
+package com.google.showcase.v1beta1.stub;
+
+import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
+import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
+import com.google.api.gax.httpjson.ApiMethodDescriptor;
+import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
+import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.ResumableUploadCallable;
+import com.google.protobuf.TypeRegistry;
+import com.google.showcase.v1beta1.UploadMediaRequest;
+import com.google.showcase.v1beta1.UploadMediaResponse;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import javax.annotation.Generated;
+import org.jspecify.annotations.NullMarked;
+
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+/**
+ * REST stub implementation for the ResumableUploadService service API.
+ *
+ * <p>This class is for advanced usage and reflects the underlying API directly.
+ */
+@NullMarked
+@BetaApi
+@Generated("by gapic-generator-java")
+public class HttpJsonResumableUploadServiceStub extends ResumableUploadServiceStub {
+  private static final TypeRegistry typeRegistry = TypeRegistry.newBuilder().build();
+
+  private final BackgroundResource backgroundResources;
+  private final HttpJsonResumableUploadServiceResumableUploadStub resumableUploadStub;
+  private final HttpJsonStubCallableFactory callableFactory;
+
+  public static final HttpJsonResumableUploadServiceStub create(
+      ResumableUploadServiceStubSettings settings) throws IOException {
+    return new HttpJsonResumableUploadServiceStub(settings, ClientContext.create(settings));
+  }
+
+  public static final HttpJsonResumableUploadServiceStub create(ClientContext clientContext)
+      throws IOException {
+    return new HttpJsonResumableUploadServiceStub(
+        ResumableUploadServiceStubSettings.newBuilder().build(), clientContext);
+  }
+
+  public static final HttpJsonResumableUploadServiceStub create(
+      ClientContext clientContext, HttpJsonStubCallableFactory callableFactory) throws IOException {
+    return new HttpJsonResumableUploadServiceStub(
+        ResumableUploadServiceStubSettings.newBuilder().build(), clientContext, callableFactory);
+  }
+
+  /**
+   * Constructs an instance of HttpJsonResumableUploadServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected HttpJsonResumableUploadServiceStub(
+      ResumableUploadServiceStubSettings settings, ClientContext clientContext) throws IOException {
+    this(settings, clientContext, new HttpJsonResumableUploadServiceCallableFactory());
+  }
+
+  /**
+   * Constructs an instance of HttpJsonResumableUploadServiceStub, using the given settings. This is
+   * protected so that it is easy to make a subclass, but otherwise, the static factory methods
+   * should be preferred.
+   */
+  protected HttpJsonResumableUploadServiceStub(
+      ResumableUploadServiceStubSettings settings,
+      ClientContext clientContext,
+      HttpJsonStubCallableFactory callableFactory)
+      throws IOException {
+    this.callableFactory = callableFactory;
+
+    this.resumableUploadStub =
+        HttpJsonResumableUploadServiceResumableUploadStub.create(clientContext, settings);
+
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  @InternalApi
+  public static List<ApiMethodDescriptor> getMethodDescriptors() {
+    List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
+    return methodDescriptors;
+  }
+
+  @Override
+  public ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
+    return resumableUploadStub.uploadMediaCallable();
+  }
+
+  @Override
+  public final void close() {
+    try {
+      backgroundResources.close();
+      resumableUploadStub.close();
+    } catch (RuntimeException e) {
+      throw e;
+    } catch (Exception e) {
+      throw new IllegalStateException("Failed to close resource", e);
+    }
+  }
+
+  @Override
+  public void shutdown() {
+    backgroundResources.shutdown();
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return backgroundResources.isShutdown();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return backgroundResources.isTerminated();
+  }
+
+  @Override
+  public void shutdownNow() {
+    backgroundResources.shutdownNow();
+  }
+
+  @Override
+  public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
+    return backgroundResources.awaitTermination(duration, unit);
+  }
+}
