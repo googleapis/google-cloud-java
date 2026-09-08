@@ -746,7 +746,11 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                 boolean isRetryable =
                     grpcStatus.getCode() == io.grpc.Status.Code.UNAVAILABLE
                         || grpcStatus.getCode() == io.grpc.Status.Code.ABORTED;
-                if (isRetryable && !lastResumeToken.isEmpty() && retryCount < MAX_RETRIES) {
+                boolean canRetry =
+                    isRetryable
+                        && retryCount < MAX_RETRIES
+                        && (!lastResumeToken.isEmpty() || collectedRows.isEmpty());
+                if (canRetry) {
                   retryCount++;
                   batchBuffer = ByteString.EMPTY;
                   while (collectedRows.size() > committedRowCount) {
@@ -754,7 +758,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                   }
                   runningBatchBytes = committedBatchBytes;
                   com.google.bigtable.v2.TypedReadRowsRequest resumeRequest =
-                      baseRequest.toBuilder().setResumeToken(lastResumeToken).build();
+                      lastResumeToken.isEmpty()
+                          ? baseRequest
+                          : baseRequest.toBuilder().setResumeToken(lastResumeToken).build();
                   finalCallStub.typedReadRows(resumeRequest, this);
                   return;
                 }
