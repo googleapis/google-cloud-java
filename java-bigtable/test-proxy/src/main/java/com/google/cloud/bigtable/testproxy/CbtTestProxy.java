@@ -611,12 +611,14 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
           callStub.withDeadlineAfter(
               client.perOperationTimeout().toMillis(), TimeUnit.MILLISECONDS);
     }
+    final BigtableGrpc.BigtableStub finalCallStub = callStub;
 
     int cancelAfterRows = request.getCancelAfterRows();
     List<com.google.bigtable.v2.TypedRow> collectedRows = new ArrayList<>();
     CompletableFuture<TypedRowsResult> future = new CompletableFuture<>();
     AtomicBoolean isCancelled = new AtomicBoolean(false);
 
+    final com.google.bigtable.v2.TypedReadRowsRequest baseRequest = protoRequest;
     ClientResponseObserver<
             com.google.bigtable.v2.TypedReadRowsRequest,
             com.google.bigtable.v2.TypedReadRowsResponse>
@@ -631,6 +633,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
               private ByteString runningBatchBytes = ByteString.EMPTY;
               private ByteString committedBatchBytes = ByteString.EMPTY;
               private int committedRowCount = 0;
+              private ByteString lastResumeToken = ByteString.EMPTY;
+              private int retryCount = 0;
+              private static final int MAX_RETRIES = 3;
 
               @Override
               public void beforeStart(
@@ -726,6 +731,7 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                     if (!flush.getResumeToken().isEmpty()) {
                       committedRowCount = collectedRows.size();
                       committedBatchBytes = runningBatchBytes;
+                      lastResumeToken = flush.getResumeToken();
                     }
                   }
                 }
@@ -736,9 +742,24 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                 if (isCancelled.get() || future.isDone()) {
                   return;
                 }
+                io.grpc.Status grpcStatus = io.grpc.Status.fromThrowable(t);
+                boolean isRetryable =
+                    grpcStatus.getCode() == io.grpc.Status.Code.UNAVAILABLE
+                        || grpcStatus.getCode() == io.grpc.Status.Code.ABORTED;
+                if (isRetryable && !lastResumeToken.isEmpty() && retryCount < MAX_RETRIES) {
+                  retryCount++;
+                  batchBuffer = ByteString.EMPTY;
+                  while (collectedRows.size() > committedRowCount) {
+                    collectedRows.remove(collectedRows.size() - 1);
+                  }
+                  runningBatchBytes = committedBatchBytes;
+                  com.google.bigtable.v2.TypedReadRowsRequest resumeRequest =
+                      baseRequest.toBuilder().setResumeToken(lastResumeToken).build();
+                  finalCallStub.typedReadRows(resumeRequest, this);
+                  return;
+                }
                 com.google.rpc.Status status = StatusProto.fromThrowable(t);
                 if (status == null) {
-                  io.grpc.Status grpcStatus = io.grpc.Status.fromThrowable(t);
                   status =
                       com.google.rpc.Status.newBuilder()
                           .setCode(grpcStatus.getCode().value())
