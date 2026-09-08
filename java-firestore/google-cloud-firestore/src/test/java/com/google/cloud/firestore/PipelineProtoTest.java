@@ -125,7 +125,7 @@ public class PipelineProtoTest {
             .insert(
                 new com.google.cloud.firestore.pipeline.stages.Insert()
                     .withCollection("books")
-                    .withDocumentId(constant("book1")));
+                    .withDocumentIdExpression(constant("book1")));
 
     com.google.firestore.v1.Pipeline protoPipeline = pipeline.toProto();
     assertThat(protoPipeline.getStagesCount()).isEqualTo(2);
@@ -137,6 +137,19 @@ public class PipelineProtoTest {
     java.util.Map<String, Value> optionsMap = insertStage.getOptionsMap();
     assertThat(optionsMap.get("collection").getReferenceValue()).isEqualTo("/books");
     assertThat(optionsMap.get("document_id").getStringValue()).isEqualTo("book1");
+
+    // Test backward compatibility with withDocumentId
+    Pipeline pipelineDeprecated =
+        firestore
+            .pipeline()
+            .literals(data)
+            .insert(
+                new com.google.cloud.firestore.pipeline.stages.Insert()
+                    .withCollection("books")
+                    .withDocumentId(constant("book1")));
+    Stage insertStageDeprecated = pipelineDeprecated.toProto().getStages(1);
+    assertThat(insertStageDeprecated.getOptionsMap().get("document_id").getStringValue())
+        .isEqualTo("book1");
   }
 
   @Test
@@ -162,7 +175,7 @@ public class PipelineProtoTest {
                                 field("count"), constant(1))
                             .as("count"))
                     .withCollection("books")
-                    .withDocumentId(constant("book1")));
+                    .withDocumentIdExpression(constant("book1")));
 
     com.google.firestore.v1.Pipeline protoPipeline = pipeline.toProto();
     assertThat(protoPipeline.getStagesCount()).isEqualTo(2);
@@ -175,6 +188,22 @@ public class PipelineProtoTest {
     java.util.Map<String, Value> optionsMap = upsertStage.getOptionsMap();
     assertThat(optionsMap.get("collection").getReferenceValue()).isEqualTo("/books");
     assertThat(optionsMap.get("document_id").getStringValue()).isEqualTo("book1");
+
+    // Test backward compatibility with withDocumentId
+    Pipeline pipelineDeprecated =
+        firestore
+            .pipeline()
+            .literals(data)
+            .upsert(
+                new com.google.cloud.firestore.pipeline.stages.Upsert(
+                        com.google.cloud.firestore.pipeline.expressions.Expression.add(
+                                field("count"), constant(1))
+                            .as("count"))
+                    .withCollection("books")
+                    .withDocumentId(constant("book1")));
+    Stage upsertStageDeprecated = pipelineDeprecated.toProto().getStages(1);
+    assertThat(upsertStageDeprecated.getOptionsMap().get("document_id").getStringValue())
+        .isEqualTo("book1");
   }
 
   @Test
@@ -196,7 +225,7 @@ public class PipelineProtoTest {
             .insert(
                 new com.google.cloud.firestore.pipeline.stages.Insert()
                     .withCollection("books")
-                    .withDocumentId(constant("book1")));
+                    .withDocumentIdExpression(constant("book1")));
 
     PipelineExecuteOptions executeOptions = new PipelineExecuteOptions().withAtomic(true);
     ExecutePipelineRequest request =
@@ -226,7 +255,7 @@ public class PipelineProtoTest {
             .insert(
                 new com.google.cloud.firestore.pipeline.stages.Insert()
                     .withCollection("books")
-                    .withDocumentId(constant("book1")));
+                    .withDocumentIdExpression(constant("book1")));
 
     PipelineExecuteOptions executeOptionsDisabled = new PipelineExecuteOptions().withAtomic(false);
     ExecutePipelineRequest requestDisabled =
