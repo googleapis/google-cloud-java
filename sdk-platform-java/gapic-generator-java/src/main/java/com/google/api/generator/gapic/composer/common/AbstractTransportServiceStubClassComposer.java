@@ -25,6 +25,7 @@ import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.RequestParamsExtractor;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.generator.engine.ast.AnnotationNode;
@@ -106,7 +107,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
   private static final List<String> AIP_STANDARDS_METHODS =
       ImmutableList.of(
           "Get", "List", "Create", "Delete", "Update", "Patch", "Insert", "AggregatedList");
-  private static final Statement EMPTY_LINE_STATEMENT = EmptyLineStatement.create();
+  protected static final Statement EMPTY_LINE_STATEMENT = EmptyLineStatement.create();
 
   private static final String METHOD_DESCRIPTOR_NAME_PATTERN = "%sMethodDescriptor";
   private static final String PAGED_CALLABLE_CLASS_MEMBER_PATTERN = "%sPagedCallable";
@@ -115,6 +116,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
   private static final String CALLABLE_FACTORY_MEMBER_NAME = "callableFactory";
   protected static final String CALLABLE_CLASS_MEMBER_PATTERN = "%sCallable";
   private static final String OPERATION_CALLABLE_CLASS_MEMBER_PATTERN = "%sOperationCallable";
+  protected static final String RESUMABLE_UPLOAD_STUB_MEMBER_NAME = "resumableUploadStub";
 
   private static final ImmutableList<String> HEURISTIC_ENABLED_PACKAGES =
       ImmutableList.of("google.cloud.compute", "google.cloud.sql", "google.cloud.bigquery");
@@ -153,6 +155,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             TimeUnit.class,
             TypeRegistry.class,
             UnaryCallable.class,
+            ResumableUploadCallable.class,
             UnsupportedOperationException.class,
             NullMarked.class);
     return new TypeStore(concreteClazzes);
@@ -213,6 +216,22 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
       }
     }
 
+    if (service.methods().stream().anyMatch(Method::isResumableUpload)) {
+      TypeNode resumableUploadStubType =
+          typeStore.get(String.format("HttpJson%sResumableUploadStub", service.name()));
+      if (isResumableUploadStubNullable()) {
+        resumableUploadStubType =
+            TypeNode.withReference(resumableUploadStubType.reference().copyAndSetNullable(true));
+      }
+      classMemberVarExprs.put(
+          RESUMABLE_UPLOAD_STUB_MEMBER_NAME,
+          VariableExpr.withVariable(
+              Variable.builder()
+                  .setName(RESUMABLE_UPLOAD_STUB_MEMBER_NAME)
+                  .setType(resumableUploadStubType)
+                  .build()));
+    }
+
     classMemberVarExprs.put(
         CALLABLE_FACTORY_MEMBER_NAME,
         VariableExpr.withVariable(
@@ -242,7 +261,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             classStatements);
     methodDefinitions.addAll(
         createStubOverrideMethods(
-            classMemberVarExprs.get(BACKGROUND_RESOURCES_MEMBER_NAME), service));
+            classMemberVarExprs.get(BACKGROUND_RESOURCES_MEMBER_NAME), service, typeStore));
 
     StubCommentComposer commentComposer =
         new StubCommentComposer(getTransportContext().transportNames().get(0));
@@ -425,6 +444,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
       boolean restNumericEnumsEnabled) {
     return service.methods().stream()
         .filter(x -> x.isSupportedByTransport(getTransportContext().transport()))
+        .filter(x -> !x.isResumableUpload())
         .map(
             m ->
                 createMethodDescriptorVariableDecl(
@@ -454,6 +474,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
       Service service, Class<?> descriptorClass) {
     return service.methods().stream()
         .filter(x -> x.isSupportedByTransport(getTransportContext().transport()))
+        .filter(x -> !x.isResumableUpload())
         .collect(
             Collectors.toMap(
                 Method::name,
@@ -486,6 +507,9 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     // Using a for-loop because the output cardinality is not a 1:1 mapping to the input set.
     for (Method protoMethod : service.methods()) {
       if (!protoMethod.isSupportedByTransport(getTransportContext().transport())) {
+        continue;
+      }
+      if (protoMethod.isResumableUpload()) {
         continue;
       }
       String javaStyleProtoMethodName = JavaStyle.toLowerCamelCase(protoMethod.name());
@@ -592,6 +616,10 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             service,
             classMemberVarExprs.get(getTransportContext().transportOperationsStubNames().get(0))));
     javaMethods.addAll(createCallableGetterMethods(callableClassMemberVarExprs));
+    if (service.methods().stream().anyMatch(Method::isResumableUpload)) {
+      javaMethods.addAll(
+          createResumableUploadCallableGetterMethods(service, typeStore, classMemberVarExprs));
+    }
     return javaMethods;
   }
 
@@ -778,6 +806,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     Map<String, VariableExpr> javaStyleMethodNameToTransportSettingsVarExprs =
         service.methods().stream()
             .filter(x -> x.isSupportedByTransport(getTransportContext().transport()))
+            .filter(x -> !x.isResumableUpload())
             .collect(
                 Collectors.toMap(
                     m -> JavaStyle.toLowerCamelCase(m.name()),
@@ -803,6 +832,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     secondCtorExprs.addAll(
         service.methods().stream()
             .filter(x -> x.isSupportedByTransport(getTransportContext().transport()))
+            .filter(x -> !x.isResumableUpload())
             .map(
                 m ->
                     createTransportSettingsInitExpr(
@@ -835,6 +865,9 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
       if (!method.isSupportedByTransport(getTransportContext().transport())) {
         continue;
       }
+      if (method.isResumableUpload()) {
+        continue;
+      }
       secondCtorExprs.addAll(
           createCallableInitExprs(
               context,
@@ -852,6 +885,17 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
         secondCtorExprs.stream().map(ExprStatement::withExpr).collect(Collectors.toList()));
     secondCtorExprs.clear();
     secondCtorStatements.add(EMPTY_LINE_STATEMENT);
+
+    if (service.methods().stream().anyMatch(Method::isResumableUpload)) {
+      secondCtorStatements.addAll(
+          createResumableUploadStubInitStatements(
+              service,
+              typeStore,
+              thisExpr,
+              classMemberVarExprs.get(RESUMABLE_UPLOAD_STUB_MEMBER_NAME),
+              clientContextVarExpr,
+              settingsVarExpr));
+    }
 
     secondCtorStatements.addAll(createLongRunningClient(service, typeStore));
 
@@ -906,6 +950,36 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
                     .setReturnType(operationsStubClassVarExpr.type())
                     .build())
             .build());
+  }
+
+  protected List<Statement> createResumableUploadStubInitStatements(
+      Service service,
+      TypeStore typeStore,
+      Expr thisExpr,
+      VariableExpr resumableUploadStubVarExpr,
+      VariableExpr clientContextVarExpr,
+      VariableExpr settingsVarExpr) {
+    TypeNode stubType =
+        typeStore.get(String.format("HttpJson%sResumableUploadStub", service.name()));
+    Expr createStubExpr =
+        MethodInvocationExpr.builder()
+            .setStaticReferenceType(stubType)
+            .setMethodName("create")
+            .setArguments(Arrays.asList(clientContextVarExpr, settingsVarExpr))
+            .setReturnType(stubType)
+            .build();
+    return Arrays.asList(
+        ExprStatement.withExpr(
+            AssignmentExpr.builder()
+                .setVariableExpr(
+                    resumableUploadStubVarExpr.toBuilder().setExprReferenceExpr(thisExpr).build())
+                .setValueExpr(createStubExpr)
+                .build()),
+        EMPTY_LINE_STATEMENT);
+  }
+
+  protected boolean isResumableUploadStubNullable() {
+    return false;
   }
 
   protected List<Statement> createLongRunningClient(Service service, TypeStore typeStore) {
@@ -1094,8 +1168,37 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
         .collect(Collectors.toList());
   }
 
+  protected List<MethodDefinition> createResumableUploadCallableGetterMethods(
+      Service service, TypeStore typeStore, Map<String, VariableExpr> classMemberVarExprs) {
+    VariableExpr resumableUploadStubVarExpr =
+        classMemberVarExprs.get(RESUMABLE_UPLOAD_STUB_MEMBER_NAME);
+    return service.methods().stream()
+        .filter(Method::isResumableUpload)
+        .map(
+            m -> {
+              String javaStyleMethodName = JavaStyle.toLowerCamelCase(m.name());
+              String callableMethodName =
+                  String.format(CALLABLE_CLASS_MEMBER_PATTERN, javaStyleMethodName);
+              TypeNode callableType = getCallableType(m);
+              Expr returnExpr =
+                  MethodInvocationExpr.builder()
+                      .setExprReferenceExpr(resumableUploadStubVarExpr)
+                      .setMethodName(callableMethodName)
+                      .setReturnType(callableType)
+                      .build();
+              return MethodDefinition.builder()
+                  .setIsOverride(true)
+                  .setScope(ScopeNode.PUBLIC)
+                  .setReturnType(callableType)
+                  .setName(callableMethodName)
+                  .setReturnExpr(returnExpr)
+                  .build();
+            })
+        .collect(Collectors.toList());
+  }
+
   private List<MethodDefinition> createStubOverrideMethods(
-      VariableExpr backgroundResourcesVarExpr, Service service) {
+      VariableExpr backgroundResourcesVarExpr, Service service, TypeStore typeStore) {
     Function<String, MethodDefinition.Builder> methodMakerStarterFn =
         methodName ->
             MethodDefinition.builder()
@@ -1135,6 +1238,9 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     //   public final void close() {
     //     try {
     //       backgroundResources.close();
+    //       if (resumableUploadStub != null) {
+    //         resumableUploadStub.close();
+    //       }
     //     } catch (RuntimeException e) {
     //       throw e;
     //     } catch (Exception e) {
@@ -1162,6 +1268,41 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
     if (service.operationPollingMethod() != null) {
       javaMethods.addAll(createLongRunningClientGetters());
     }
+
+    List<Statement> tryBodyStatements = new ArrayList<>();
+    tryBodyStatements.add(
+        ExprStatement.withExpr(
+            MethodInvocationExpr.builder()
+                .setExprReferenceExpr(backgroundResourcesVarExpr)
+                .setMethodName("close")
+                .build()));
+    if (service.methods().stream().anyMatch(Method::isResumableUpload)) {
+      VariableExpr resumableUploadStubVarExpr =
+          VariableExpr.withVariable(
+              Variable.builder()
+                  .setName(RESUMABLE_UPLOAD_STUB_MEMBER_NAME)
+                  .setType(
+                      typeStore.get(String.format("HttpJson%sResumableUploadStub", service.name())))
+                  .build());
+      Statement closeResumableUploadStubStmt =
+          ExprStatement.withExpr(
+              MethodInvocationExpr.builder()
+                  .setExprReferenceExpr(resumableUploadStubVarExpr)
+                  .setMethodName("close")
+                  .build());
+      if (isResumableUploadStubNullable()) {
+        tryBodyStatements.add(
+            IfStatement.builder()
+                .setConditionExpr(
+                    RelationalOperationExpr.notEqualToWithExprs(
+                        resumableUploadStubVarExpr, ValueExpr.createNullExpr()))
+                .setBody(Arrays.asList(closeResumableUploadStubStmt))
+                .build());
+      } else {
+        tryBodyStatements.add(closeResumableUploadStubStmt);
+      }
+    }
+
     javaMethods.add(
         methodMakerStarterFn
             .apply("close")
@@ -1170,13 +1311,7 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             .setBody(
                 Arrays.asList(
                     TryCatchStatement.builder()
-                        .setTryBody(
-                            Arrays.asList(
-                                ExprStatement.withExpr(
-                                    MethodInvocationExpr.builder()
-                                        .setExprReferenceExpr(backgroundResourcesVarExpr)
-                                        .setMethodName("close")
-                                        .build())))
+                        .setTryBody(tryBodyStatements)
                         .addCatch(
                             catchRuntimeExceptionVarExpr.toBuilder().setIsDecl(true).build(),
                             Arrays.asList(
@@ -1281,10 +1416,22 @@ public abstract class AbstractTransportServiceStubClassComposer implements Class
             .collect(Collectors.toList()),
         true,
         getTransportContext().classNames().getServiceClientClassName(service));
+    if (service.methods().stream().anyMatch(Method::isResumableUpload)) {
+      typeStore.put(stubPakkage, String.format("HttpJson%sResumableUploadStub", service.name()));
+    }
     return typeStore;
   }
 
   protected static TypeNode getCallableType(Method protoMethod) {
+    if (protoMethod.isResumableUpload()) {
+      return TypeNode.withReference(
+          ConcreteReference.builder()
+              .setClazz(ResumableUploadCallable.class)
+              .setGenerics(
+                  Arrays.asList(
+                      protoMethod.inputType().reference(), protoMethod.outputType().reference()))
+              .build());
+    }
     TypeNode callableType = FIXED_TYPESTORE.get("UnaryCallable");
     switch (protoMethod.stream()) {
       case CLIENT:
