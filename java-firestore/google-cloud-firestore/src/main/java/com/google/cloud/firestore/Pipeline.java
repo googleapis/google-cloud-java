@@ -1320,8 +1320,8 @@ public final class Pipeline {
   }
 
   @BetaApi
-  public Pipeline upsert(Selectable... transformedFields) {
-    return append(new Upsert(transformedFields));
+  public Pipeline upsert(Selectable... additionalFields) {
+    return append(new Upsert(additionalFields));
   }
 
   /**
