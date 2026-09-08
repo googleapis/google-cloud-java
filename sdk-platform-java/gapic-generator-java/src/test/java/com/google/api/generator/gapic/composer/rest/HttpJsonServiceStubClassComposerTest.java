@@ -19,12 +19,14 @@ import static org.junit.Assert.assertThrows;
 import com.google.api.CustomHttpPattern;
 import com.google.api.Http;
 import com.google.api.HttpRule;
+import com.google.api.generator.engine.ast.Expr;
 import com.google.api.generator.engine.ast.TypeNode;
 import com.google.api.generator.engine.writer.JavaWriterVisitor;
 import com.google.api.generator.gapic.model.Field;
 import com.google.api.generator.gapic.model.GapicClass;
 import com.google.api.generator.gapic.model.GapicContext;
 import com.google.api.generator.gapic.model.HttpBindings.HttpBinding;
+import com.google.api.generator.gapic.model.Method;
 import com.google.api.generator.gapic.model.Service;
 import com.google.api.generator.test.framework.Assert;
 import com.google.api.generator.test.framework.GoldenFileWriter;
@@ -222,5 +224,24 @@ class HttpJsonServiceStubClassComposerTest {
 
     Assert.assertGoldenClass(this.getClass(), clazz, "HttpJsonResourceNameExtractorStub.golden");
     Assert.assertEmptySamples(clazz.samples());
+  }
+
+  @Test
+  void getRequestFormatterExpr_withPathPrefix_prependsPrefix() {
+    GapicContext context = RestTestProtoLoader.instance().parseShowcaseResumableUpload();
+    Service service = context.services().get(0);
+    Method uploadMethod =
+        service.methods().stream().filter(Method::isResumableUpload).findFirst().get();
+
+    List<Expr> exprs =
+        HttpJsonServiceStubClassComposer.getRequestFormatterExpr(
+            uploadMethod, context.restNumericEnumsEnabled(), "/resumable/upload");
+
+    JavaWriterVisitor visitor = new JavaWriterVisitor();
+    for (Expr expr : exprs) {
+      expr.accept(visitor);
+    }
+    String code = visitor.write();
+    Truth.assertThat(code).contains("/resumable/upload/v1beta1/files:upload");
   }
 }

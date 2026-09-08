@@ -79,14 +79,15 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 
 @NullMarked
 public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceStubClassComposer {
   private static final HttpJsonServiceStubClassComposer INSTANCE =
       new HttpJsonServiceStubClassComposer();
 
-  private static final TypeStore FIXED_REST_TYPESTORE = createStaticTypes();
-  private static final VariableExpr TYPE_REGISTRY_VAR_EXPR =
+  static final TypeStore FIXED_REST_TYPESTORE = createStaticTypes();
+  static final VariableExpr TYPE_REGISTRY_VAR_EXPR =
       VariableExpr.builder()
           .setVariable(
               Variable.builder()
@@ -266,7 +267,7 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
             .build());
   }
 
-  private BiFunction<String, List<Expr>, Function<MethodInvocationExpr, MethodInvocationExpr>>
+  static BiFunction<String, List<Expr>, Function<MethodInvocationExpr, MethodInvocationExpr>>
       getMethodMaker() {
     return (mName, argExpr) ->
         (m) ->
@@ -277,7 +278,12 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
                 .build();
   }
 
-  private List<Expr> getRequestFormatterExpr(Method protoMethod, boolean restNumericEnumsEnabled) {
+  static List<Expr> getRequestFormatterExpr(Method protoMethod, boolean restNumericEnumsEnabled) {
+    return getRequestFormatterExpr(protoMethod, restNumericEnumsEnabled, null);
+  }
+
+  static List<Expr> getRequestFormatterExpr(
+      Method protoMethod, boolean restNumericEnumsEnabled, @Nullable String pathPrefix) {
     BiFunction<String, List<Expr>, Function<MethodInvocationExpr, MethodInvocationExpr>>
         methodMaker = getMethodMaker();
 
@@ -296,14 +302,22 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
                 .setGenerics(TypeNode.STRING.reference(), TypeNode.STRING.reference())
                 .build());
 
+    String pathPattern = protoMethod.httpBindings().lowerCamelPattern();
+    if (pathPrefix != null) {
+      String normalizedPrefix = pathPrefix.startsWith("/") ? pathPrefix : "/" + pathPrefix;
+      if (normalizedPrefix.endsWith("/")) {
+        normalizedPrefix = normalizedPrefix.substring(0, normalizedPrefix.length() - 1);
+      }
+      pathPattern =
+          normalizedPrefix + (pathPattern.startsWith("/") ? pathPattern : "/" + pathPattern);
+    }
+
     expr =
         methodMaker
             .apply(
                 "setPath",
                 Arrays.asList(
-                    ValueExpr.withValue(
-                        StringObjectValue.withValue(
-                            protoMethod.httpBindings().lowerCamelPattern())),
+                    ValueExpr.withValue(StringObjectValue.withValue(pathPattern)),
                     createFieldsExtractorClassInstance(
                         protoMethod,
                         extractorVarType,
@@ -318,7 +332,24 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
               .apply(
                   "setAdditionalPaths",
                   protoMethod.httpBindings().lowerCamelAdditionalPatterns().stream()
-                      .map(a -> ValueExpr.withValue(StringObjectValue.withValue(a)))
+                      .map(
+                          a -> {
+                            String additionalPath = a;
+                            if (pathPrefix != null) {
+                              String normalizedPrefix =
+                                  pathPrefix.startsWith("/") ? pathPrefix : "/" + pathPrefix;
+                              if (normalizedPrefix.endsWith("/")) {
+                                normalizedPrefix =
+                                    normalizedPrefix.substring(0, normalizedPrefix.length() - 1);
+                              }
+                              additionalPath =
+                                  normalizedPrefix
+                                      + (additionalPath.startsWith("/")
+                                          ? additionalPath
+                                          : "/" + additionalPath);
+                            }
+                            return ValueExpr.withValue(StringObjectValue.withValue(additionalPath));
+                          })
                       .collect(Collectors.toList()))
               .apply(expr);
     }
@@ -371,7 +402,7 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
     return Collections.singletonList(expr);
   }
 
-  private List<Expr> setResponseParserExpr(Method protoMethod) {
+  static List<Expr> setResponseParserExpr(Method protoMethod) {
     BiFunction<String, List<Expr>, Function<MethodInvocationExpr, MethodInvocationExpr>>
         methodMaker = getMethodMaker();
 
@@ -726,7 +757,7 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
             .build());
   }
 
-  private Expr createBodyFieldsExtractorClassInstance(
+  private static Expr createBodyFieldsExtractorClassInstance(
       Method method,
       TypeNode extractorReturnType,
       Set<HttpBinding> httpBindingFieldNames,
@@ -839,7 +870,7 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
         .build();
   }
 
-  private Expr createFieldsExtractorClassInstance(
+  private static Expr createFieldsExtractorClassInstance(
       Method method,
       TypeNode extractorReturnType,
       Set<HttpBinding> httpBindingFieldNames,
@@ -993,7 +1024,7 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
   }
 
   @VisibleForTesting
-  String getBindingFieldMethodName(
+  static String getBindingFieldMethodName(
       HttpBinding httpBindingField, int descendantFieldsLengths, int index, String currFieldName) {
     if (index == descendantFieldsLengths - 1) {
       if (httpBindingField.isRepeated()) {
@@ -1006,13 +1037,13 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
     return String.format("get%s", currFieldName);
   }
 
-  private List<Expr> getHttpMethodTypeExpr(Method protoMethod) {
+  static List<Expr> getHttpMethodTypeExpr(Method protoMethod) {
     return Collections.singletonList(
         ValueExpr.withValue(
             StringObjectValue.withValue(protoMethod.httpBindings().httpVerb().toString())));
   }
 
-  private List<Expr> getMethodTypeExpr(Method protoMethod) {
+  static List<Expr> getMethodTypeExpr(Method protoMethod) {
     MethodType methodType;
     switch (protoMethod.stream()) {
       case NONE:
@@ -1040,6 +1071,10 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
                         .build()))
             .build();
     return Collections.singletonList(expr);
+  }
+
+  static String getProtoRpcName(Service protoService, Method protoMethod) {
+    return INSTANCE.getProtoRpcFullMethodName(protoService, protoMethod);
   }
 
   @Override
@@ -1365,7 +1400,8 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
                               .setType(FIXED_TYPESTORE.get("UnsupportedOperationException"))
                               .setMessageExpr(
                                   String.format(
-                                      "Not implemented: %s(). %s transport is not implemented for this method yet.",
+                                      "Not implemented: %s(). %s transport is not implemented for"
+                                          + " this method yet.",
                                       callableName, getTransportContext().transport()))
                               .build())))
               .build());
