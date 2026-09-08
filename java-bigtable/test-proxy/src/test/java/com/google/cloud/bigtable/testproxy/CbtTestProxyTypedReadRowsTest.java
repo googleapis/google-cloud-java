@@ -505,6 +505,84 @@ public class CbtTestProxyTypedReadRowsTest {
     assertThat(result.getStatus().getCode()).isEqualTo(Code.INVALID_ARGUMENT_VALUE);
   }
 
+  @Test
+  public void testTypedReadRows_multiBatchRunningCrc32c() throws Exception {
+    TypedRow row1 = createRow("rk-1", "cf", "col", "val1");
+    TypedRows batch1 = TypedRows.newBuilder().addRows(row1).build();
+    ByteString batchBytes1 = batch1.toByteString();
+    int checksum1 = (int) Hashing.crc32c().hashBytes(batchBytes1.toByteArray()).padToLong();
+
+    TypedRow row2 = createRow("rk-2", "cf", "col", "val2");
+    TypedRows batch2 = TypedRows.newBuilder().addRows(row2).build();
+    ByteString batchBytes2 = batch2.toByteString();
+    ByteString allBytes = batchBytes1.concat(batchBytes2);
+    int checksum2 = (int) Hashing.crc32c().hashBytes(allBytes.toByteArray()).padToLong();
+
+    mockBigtableService.responses.add(
+        TypedReadRowsResponse.newBuilder()
+            .setResponse(
+                PartialRowResponse.newBuilder()
+                    .setTypedRowsBatch(TypedRowsBatch.newBuilder().setBatchData(batchBytes1).build())
+                    .setFlush(
+                        PartialRowResponse.Flush.newBuilder()
+                            .setChecksum(checksum1)
+                            .setResumeToken(ByteString.copyFromUtf8("tok-1"))
+                            .build())
+                    .build())
+            .build());
+
+    mockBigtableService.responses.add(
+        TypedReadRowsResponse.newBuilder()
+            .setResponse(
+                PartialRowResponse.newBuilder()
+                    .setTypedRowsBatch(TypedRowsBatch.newBuilder().setBatchData(batchBytes2).build())
+                    .setFlush(
+                        PartialRowResponse.Flush.newBuilder()
+                            .setChecksum(checksum2)
+                            .setResumeToken(ByteString.copyFromUtf8("tok-2"))
+                            .build())
+                    .build())
+            .build());
+
+    TypedReadRowsRequest request =
+        TypedReadRowsRequest.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setRequest(
+                com.google.bigtable.v2.TypedReadRowsRequest.newBuilder()
+                    .setTableName(TABLE_NAME)
+                    .build())
+            .build();
+
+    CountDownLatch latch = new CountDownLatch(1);
+    List<TypedRowsResult> results = new ArrayList<>();
+    testProxy.typedReadRows(
+        request,
+        new StreamObserver<TypedRowsResult>() {
+          @Override
+          public void onNext(TypedRowsResult value) {
+            results.add(value);
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            latch.countDown();
+          }
+
+          @Override
+          public void onCompleted() {
+            latch.countDown();
+          }
+        });
+
+    assertThat(latch.await(5, TimeUnit.SECONDS)).isTrue();
+    assertThat(results).hasSize(1);
+    TypedRowsResult result = results.get(0);
+    assertThat(result.getStatus().getCode()).isEqualTo(Code.OK_VALUE);
+    assertThat(result.getRowsCount()).isEqualTo(2);
+    assertThat(result.getRows(0).getRowKey().getStringValue()).isEqualTo("rk-1");
+    assertThat(result.getRows(1).getRowKey().getStringValue()).isEqualTo("rk-2");
+  }
+
   private static class MockBigtableService extends BigtableGrpc.BigtableImplBase {
     final List<TypedReadRowsResponse> responses = new ArrayList<>();
     RuntimeException errorToThrow = null;

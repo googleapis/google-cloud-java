@@ -628,6 +628,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
               private ClientCallStreamObserver<com.google.bigtable.v2.TypedReadRowsRequest>
                   requestStream;
               private ByteString batchBuffer = ByteString.EMPTY;
+              private ByteString runningBatchBytes = ByteString.EMPTY;
+              private ByteString committedBatchBytes = ByteString.EMPTY;
+              private int committedRowCount = 0;
 
               @Override
               public void beforeStart(
@@ -645,17 +648,25 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                   PartialRowResponse partial = response.getResponse();
                   if (partial.getReset()) {
                     batchBuffer = ByteString.EMPTY;
+                    while (collectedRows.size() > committedRowCount) {
+                      collectedRows.remove(collectedRows.size() - 1);
+                    }
+                    runningBatchBytes = committedBatchBytes;
                   }
                   if (partial.hasTypedRowsBatch()) {
                     batchBuffer = batchBuffer.concat(partial.getTypedRowsBatch().getBatchData());
                   }
                   if (partial.hasFlush()) {
                     PartialRowResponse.Flush flush = partial.getFlush();
+                    ByteString currentRunning = runningBatchBytes.concat(batchBuffer);
                     if (flush.hasChecksum()) {
-                      int expectedChecksum = flush.getChecksum();
-                      int actualChecksum =
-                          Hashing.crc32c().hashBytes(batchBuffer.toByteArray()).asInt();
-                      if (expectedChecksum != actualChecksum) {
+                      long expectedChecksum = Integer.toUnsignedLong(flush.getChecksum());
+                      long actualRunningChecksum =
+                          Hashing.crc32c().hashBytes(currentRunning.toByteArray()).padToLong();
+                      long actualBatchChecksum =
+                          Hashing.crc32c().hashBytes(batchBuffer.toByteArray()).padToLong();
+                      if (expectedChecksum != actualRunningChecksum
+                          && expectedChecksum != actualBatchChecksum) {
                         isCancelled.set(true);
                         requestStream.cancel("Checksum mismatch", null);
                         future.complete(
@@ -666,16 +677,18 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                                         .setMessage(
                                             String.format(
                                                 "Checksum mismatch: expected %d, got %d",
-                                                expectedChecksum, actualChecksum))
+                                                expectedChecksum, actualRunningChecksum))
                                         .build())
                                 .addAllRows(collectedRows)
                                 .build());
                         return;
                       }
                     }
+                    runningBatchBytes = currentRunning;
                     if (!batchBuffer.isEmpty()) {
                       try {
                         TypedRows typedRows = TypedRows.parseFrom(batchBuffer);
+                        committedBatchBytes = committedBatchBytes.concat(batchBuffer);
                         batchBuffer = ByteString.EMPTY;
                         for (com.google.bigtable.v2.TypedRow row : typedRows.getRowsList()) {
                           collectedRows.add(row);
@@ -711,6 +724,9 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
                         return;
                       }
                     }
+                    if (!flush.getResumeToken().isEmpty()) {
+                      committedRowCount = collectedRows.size();
+                    }
                   }
                 }
               }
@@ -742,6 +758,31 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
               @Override
               public void onCompleted() {
                 if (!future.isDone()) {
+                  if (!batchBuffer.isEmpty()) {
+                    try {
+                      TypedRows typedRows = TypedRows.parseFrom(batchBuffer);
+                      batchBuffer = ByteString.EMPTY;
+                      for (com.google.bigtable.v2.TypedRow row : typedRows.getRowsList()) {
+                        collectedRows.add(row);
+                        if (cancelAfterRows > 0 && collectedRows.size() >= cancelAfterRows) {
+                          break;
+                        }
+                      }
+                    } catch (InvalidProtocolBufferException e) {
+                      future.complete(
+                          TypedRowsResult.newBuilder()
+                              .setStatus(
+                                  com.google.rpc.Status.newBuilder()
+                                      .setCode(Code.INTERNAL.getNumber())
+                                      .setMessage(
+                                          "Failed to parse TypedRows on completion: "
+                                              + e.getMessage())
+                                      .build())
+                              .addAllRows(collectedRows)
+                              .build());
+                      return;
+                    }
+                  }
                   future.complete(
                       TypedRowsResult.newBuilder()
                           .setStatus(com.google.rpc.Status.getDefaultInstance())
