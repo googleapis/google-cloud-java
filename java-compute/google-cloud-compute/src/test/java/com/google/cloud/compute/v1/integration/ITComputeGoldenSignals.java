@@ -17,14 +17,13 @@
 package com.google.cloud.compute.v1.integration;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.awaitility.Awaitility.await;
 import static org.junit.Assert.fail;
 
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
-import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.NotFoundException;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.BaseApiTracerFactory;
 import com.google.api.gax.tracing.CompositeTracerFactory;
@@ -179,21 +178,9 @@ public class ITComputeGoldenSignals extends BaseTest {
 
     tracer = openTelemetrySdk.getTracer("testing-compute");
 
-    // Configure TraceServiceClient with retry settings
+    // Configure TraceServiceClient with BaseApiTracerFactory so its calls are not traced
     TraceServiceSettings.Builder settingsBuilder = TraceServiceSettings.newBuilder();
-    settingsBuilder
-        .getTraceSettings()
-        .setRetrySettings(
-            RetrySettings.newBuilder()
-                .setTotalTimeoutDuration(Duration.ofMinutes(5))
-                .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
-                .setMaxRpcTimeoutDuration(Duration.ofSeconds(10))
-                .build())
-        .setRetryableCodes(
-            StatusCode.Code.NOT_FOUND, StatusCode.Code.INTERNAL, StatusCode.Code.DEADLINE_EXCEEDED);
-
     settingsBuilder.getStubSettingsBuilder().setTracerFactory(BaseApiTracerFactory.getInstance());
-
     traceClient = TraceServiceClient.create(settingsBuilder.build());
 
     // Combine tracers using CompositeTracerFactory
@@ -304,19 +291,22 @@ public class ITComputeGoldenSignals extends BaseTest {
   }
 
   private void fetchAndValidateTrace(String traceId, boolean expectError) throws Exception {
-    Trace trace = null;
-    try {
-      trace = traceClient.getTrace(DEFAULT_PROJECT, traceId);
-    } catch (Exception e) {
-      logger.error(
-          "Exception occurred while fetching trace for project: "
-              + DEFAULT_PROJECT
-              + ", traceId: "
-              + traceId,
-          e);
-      throw e;
-    }
-    assertThat(trace).isNotNull();
+    Trace trace =
+        await("Polling Cloud Trace for trace " + traceId)
+            .atMost(Duration.ofMinutes(2))
+            .pollDelay(Duration.ofSeconds(3))
+            .pollInterval(Duration.ofSeconds(3))
+            .ignoreExceptionsInstanceOf(NotFoundException.class)
+            .ignoreExceptionsMatching(
+                e ->
+                    e instanceof StatusRuntimeException
+                        && (((StatusRuntimeException) e).getStatus().getCode()
+                                == Status.Code.NOT_FOUND
+                            || ((StatusRuntimeException) e).getStatus().getCode()
+                                == Status.Code.RESOURCE_EXHAUSTED))
+            .until(
+                () -> traceClient.getTrace(DEFAULT_PROJECT, traceId),
+                t -> t != null && t.getSpansCount() > 0);
 
     for (TraceSpan span : trace.getSpansList()) {
       logger.info("Verifying attributes for span: " + span.getName());
