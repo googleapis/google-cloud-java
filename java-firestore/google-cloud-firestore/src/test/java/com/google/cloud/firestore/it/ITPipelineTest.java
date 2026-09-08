@@ -4779,7 +4779,7 @@ public class ITPipelineTest extends ITBaseTest {
         firestore
             .pipeline()
             .literals(data)
-            .insert(new Insert().withCollection(dmlCol.getPath()).withDocumentId(constant("newBook_insert_1")))
+            .insert(new Insert().withCollection(dmlCol.getPath()).withDocumentIdExpression(constant("newBook_insert_1")))
             .execute()
             .get()
             .getResults();
@@ -4806,7 +4806,7 @@ public class ITPipelineTest extends ITBaseTest {
             .upsert(
                 new Upsert(add(field("count"), constant(1)).as("count"))
                     .withCollection(dmlCol.getPath())
-                    .withDocumentId(constant("upsertBook_1")))
+                    .withDocumentIdExpression(constant("upsertBook_1")))
             .execute(new PipelineExecuteOptions().withAtomic(true))
             .get()
             .getResults();
@@ -4829,7 +4829,7 @@ public class ITPipelineTest extends ITBaseTest {
         firestore
             .pipeline()
             .literals(data)
-            .insert(new Insert().withCollection(dmlCol.getPath()).withDocumentId(constant("atomicBook_1")))
+            .insert(new Insert().withCollection(dmlCol.getPath()).withDocumentIdExpression(constant("atomicBook_1")))
             .execute(new PipelineExecuteOptions().withAtomic(true))
             .get()
             .getResults();
@@ -4853,7 +4853,7 @@ public class ITPipelineTest extends ITBaseTest {
                   firestore
                       .pipeline()
                       .literals(data)
-                      .insert(new Insert().withCollection(dmlCol.getPath()).withDocumentId(constant("txBook_1")));
+                      .insert(new Insert().withCollection(dmlCol.getPath()).withDocumentIdExpression(constant("txBook_1")));
               List<PipelineResult> res = transaction.execute(insertPpl).get().getResults();
               assertThat(res).hasSize(1);
               assertThat(res.get(0).getData().get("documents_modified")).isEqualTo(1L);

@@ -34,17 +34,17 @@ public final class Upsert extends Stage {
 
   @Nullable private final Selectable[] transformedFields;
   @Nullable private final String collectionPath;
-  @Nullable private final Expression documentIdExpr;
+  @Nullable private final Expression documentIdExpression;
 
   private Upsert(
       @Nullable Selectable[] transformedFields,
       @Nullable String collectionPath,
-      @Nullable Expression documentIdExpr,
+      @Nullable Expression documentIdExpression,
       InternalOptions options) {
-    super("upsert", buildOptions(collectionPath, documentIdExpr, options));
+    super("upsert", buildOptions(collectionPath, documentIdExpression, options));
     this.transformedFields = transformedFields;
     this.collectionPath = collectionPath;
-    this.documentIdExpr = documentIdExpr;
+    this.documentIdExpression = documentIdExpression;
   }
 
   @BetaApi
@@ -59,25 +59,30 @@ public final class Upsert extends Stage {
 
   @BetaApi
   public Upsert withCollection(String collectionPath) {
-    return new Upsert(this.transformedFields, collectionPath, this.documentIdExpr, this.options);
+    return new Upsert(this.transformedFields, collectionPath, this.documentIdExpression, this.options);
   }
 
   @BetaApi
-  public Upsert withDocumentId(Expression documentIdExpr) {
-    return new Upsert(this.transformedFields, this.collectionPath, documentIdExpr, this.options);
+  public Upsert withDocumentIdExpression(Expression documentIdExpression) {
+    return new Upsert(this.transformedFields, this.collectionPath, documentIdExpression, this.options);
+  }
+
+  @BetaApi
+  public Upsert withDocumentId(Expression documentIdExpression) {
+    return withDocumentIdExpression(documentIdExpression);
   }
 
   private static InternalOptions buildOptions(
       @Nullable String collectionPath,
-      @Nullable Expression documentIdExpr,
+      @Nullable Expression documentIdExpression,
       InternalOptions baseOptions) {
     Map<String, Value> optsMap = new HashMap<>(baseOptions.options);
     if (collectionPath != null) {
       String path = collectionPath.startsWith("/") ? collectionPath : "/" + collectionPath;
       optsMap.put("collection", Value.newBuilder().setReferenceValue(path).build());
     }
-    if (documentIdExpr != null) {
-      optsMap.put("document_id", PipelineUtils.encodeValue(documentIdExpr));
+    if (documentIdExpression != null) {
+      optsMap.put("document_id", PipelineUtils.encodeValue(documentIdExpression));
     }
     return new InternalOptions(ImmutableMap.copyOf(optsMap));
   }

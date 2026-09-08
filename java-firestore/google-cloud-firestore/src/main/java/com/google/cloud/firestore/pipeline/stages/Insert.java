@@ -31,15 +31,15 @@ import javax.annotation.Nullable;
 public final class Insert extends Stage {
 
   @Nullable private final String collectionPath;
-  @Nullable private final Expression documentIdExpr;
+  @Nullable private final Expression documentIdExpression;
 
   private Insert(
       @Nullable String collectionPath,
-      @Nullable Expression documentIdExpr,
+      @Nullable Expression documentIdExpression,
       InternalOptions options) {
-    super("insert", buildOptions(collectionPath, documentIdExpr, options));
+    super("insert", buildOptions(collectionPath, documentIdExpression, options));
     this.collectionPath = collectionPath;
-    this.documentIdExpr = documentIdExpr;
+    this.documentIdExpression = documentIdExpression;
   }
 
   @BetaApi
@@ -49,25 +49,30 @@ public final class Insert extends Stage {
 
   @BetaApi
   public Insert withCollection(String collectionPath) {
-    return new Insert(collectionPath, this.documentIdExpr, this.options);
+    return new Insert(collectionPath, this.documentIdExpression, this.options);
   }
 
   @BetaApi
-  public Insert withDocumentId(Expression documentIdExpr) {
-    return new Insert(this.collectionPath, documentIdExpr, this.options);
+  public Insert withDocumentIdExpression(Expression documentIdExpression) {
+    return new Insert(this.collectionPath, documentIdExpression, this.options);
+  }
+
+  @BetaApi
+  public Insert withDocumentId(Expression documentIdExpression) {
+    return withDocumentIdExpression(documentIdExpression);
   }
 
   private static InternalOptions buildOptions(
       @Nullable String collectionPath,
-      @Nullable Expression documentIdExpr,
+      @Nullable Expression documentIdExpression,
       InternalOptions baseOptions) {
     Map<String, Value> optsMap = new HashMap<>(baseOptions.options);
     if (collectionPath != null) {
       String path = collectionPath.startsWith("/") ? collectionPath : "/" + collectionPath;
       optsMap.put("collection", Value.newBuilder().setReferenceValue(path).build());
     }
-    if (documentIdExpr != null) {
-      optsMap.put("document_id", PipelineUtils.encodeValue(documentIdExpr));
+    if (documentIdExpression != null) {
+      optsMap.put("document_id", PipelineUtils.encodeValue(documentIdExpression));
     }
     return new InternalOptions(ImmutableMap.copyOf(optsMap));
   }
