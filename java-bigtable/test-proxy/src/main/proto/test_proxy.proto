@@ -1,4 +1,4 @@
-// Copyright 2024 Google LLC
+// Copyright 2025 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,8 +19,8 @@ package google.bigtable.testproxy;
 import "google/api/client.proto";
 import "google/bigtable/v2/bigtable.proto";
 import "google/bigtable/v2/data.proto";
-import "google/protobuf/duration.proto";
 import "google/protobuf/descriptor.proto";
+import "google/protobuf/duration.proto";
 import "google/rpc/status.proto";
 
 option go_package = "./testproxypb";
@@ -169,6 +169,28 @@ message RowsResult {
 
   // The contents of rows.
   repeated google.bigtable.v2.Row rows = 2;
+}
+
+// Request to test proxy service to read rows using the Typed API.
+message TypedReadRowsRequest {
+  // The ID of the target client object.
+  string client_id = 1;
+
+  // The raw Typed request to the Bigtable server.
+  google.bigtable.v2.TypedReadRowsRequest request = 2;
+
+  // The streaming read can be canceled before all items are seen.
+  // Has no effect if non-positive.
+  int32 cancel_after_rows = 3;
+}
+
+// Response from test proxy service for TypedReadRowsRequest.
+message TypedRowsResult {
+  // The RPC status from the client binding.
+  google.rpc.Status status = 1;
+
+  // The successfully parsed structured rows.
+  repeated google.bigtable.v2.TypedRow rows = 2;
 }
 
 // Request to test proxy service to mutate a row.
@@ -335,6 +357,9 @@ service CloudBigtableV2TestProxy {
 
   // Reads rows with the client instance.
   rpc ReadRows(ReadRowsRequest) returns (RowsResult) {}
+
+  // Reads rows with the client instance using the Typed API.
+  rpc TypedReadRows(TypedReadRowsRequest) returns (TypedRowsResult) {}
 
   // Writes a row with the client instance.
   rpc MutateRow(MutateRowRequest) returns (MutateRowResult) {}
