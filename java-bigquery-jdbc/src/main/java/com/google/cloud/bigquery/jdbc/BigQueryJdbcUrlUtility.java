@@ -939,7 +939,7 @@ final class BigQueryJdbcUrlUtility {
       if (project.isEmpty() || dataset.isEmpty()) {
         throw new BigQueryJdbcRuntimeException(
             "DefaultDataset format is invalid. Supported options are datasetId, "
-                + "catalog.namespace, or projectId:datasetId");
+                + "catalog.namespace, projectId:datasetId, or projectId:catalog.namespace");
       }
       return DatasetId.of(project, dataset);
     }
