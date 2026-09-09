@@ -348,4 +348,23 @@ public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
         BigQueryJdbcRuntimeException.class,
         () -> BigQueryJdbcUrlUtility.parseDefaultDataset("   :   "));
   }
+
+  @Test
+  public void testParseEnableTimestampPicos() {
+    String url =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "ProjectId=MyBigQueryProject;"
+            + "EnableTimestampPicos=1";
+
+    String result = BigQueryJdbcUrlUtility.parseUriProperty(url, "EnableTimestampPicos");
+    assertThat(result).isEqualTo("1");
+
+    String url2 =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "ProjectId=MyBigQueryProject;"
+            + "EnableTimestampPicos=0";
+
+    String result2 = BigQueryJdbcUrlUtility.parseUriProperty(url2, "EnableTimestampPicos");
+    assertThat(result2).isEqualTo("0");
+  }
 }

@@ -1159,4 +1159,11 @@ public class BigQueryStatementTest {
     verify(bigquery, Mockito.times(1)).getJob(eq(this.jobId));
     verify(bigquery, Mockito.never()).create(any(JobInfo.class));
   }
+
+  @Test
+  public void testEnableTimestampPicosPropagation() {
+    doReturn(true).when(bigQueryConnection).isEnableTimestampPicos();
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    assertTrue(statement.isEnableTimestampPicos());
+  }
 }

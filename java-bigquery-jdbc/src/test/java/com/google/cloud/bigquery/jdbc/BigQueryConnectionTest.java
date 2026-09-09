@@ -819,4 +819,19 @@ public class BigQueryConnectionTest extends BigQueryJdbcLoggingBaseTest {
           "user_supplied_session_999", connection.getSessionInfoConnectionProperty().getValue());
     }
   }
+
+  @Test
+  public void testEnableTimestampPicosDefault() throws Exception {
+    try (BigQueryConnection connection = new BigQueryConnection(BASE_URL)) {
+      assertFalse(connection.isEnableTimestampPicos());
+    }
+  }
+
+  @Test
+  public void testEnableTimestampPicosConfigured() throws Exception {
+    String url = BASE_URL + "EnableTimestampPicos=1;";
+    try (BigQueryConnection connection = new BigQueryConnection(url)) {
+      assertTrue(connection.isEnableTimestampPicos());
+    }
+  }
 }
