@@ -19,8 +19,8 @@ sources:
     commit: 02fc2b28bc702c8bb45735631ea0ad66893067fb
     sha256: a9d046e9177c69bc0fb4874926fdd96164210d7fb3c557a951924bf34614b658
   showcase:
-    commit: f97fd357084b9e85ef5dd02ba084551c3f85191c
-    sha256: b5d293831e6895ca139d9a0a92eec75a82e73398978b140af8f7c5e91c7c969a
+    commit: 4beffae31c54500a1042ec50bab391d1a9a6b379
+    sha256: da99ea492fac577897c29c15d29620f1a7eee300c344d711e9f75a0b75d342c8
 tools:
   maven:
     - name: google-java-format
