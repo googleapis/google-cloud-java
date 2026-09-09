@@ -193,6 +193,9 @@
             "BatchApproveAudienceSegments": {
               "methods": ["batchApproveAudienceSegments", "batchApproveAudienceSegments", "batchApproveAudienceSegments", "batchApproveAudienceSegmentsCallable"]
             },
+            "BatchCreateAudienceSegments": {
+              "methods": ["batchCreateAudienceSegments", "batchCreateAudienceSegments", "batchCreateAudienceSegments", "batchCreateAudienceSegmentsCallable"]
+            },
             "BatchDeactivateAudienceSegments": {
               "methods": ["batchDeactivateAudienceSegments", "batchDeactivateAudienceSegments", "batchDeactivateAudienceSegments", "batchDeactivateAudienceSegmentsCallable"]
             },
@@ -201,6 +204,9 @@
             },
             "BatchRejectAudienceSegments": {
               "methods": ["batchRejectAudienceSegments", "batchRejectAudienceSegments", "batchRejectAudienceSegments", "batchRejectAudienceSegmentsCallable"]
+            },
+            "CreateAudienceSegment": {
+              "methods": ["createAudienceSegment", "createAudienceSegment", "createAudienceSegment", "createAudienceSegmentCallable"]
             },
             "GetAudienceSegment": {
               "methods": ["getAudienceSegment", "getAudienceSegment", "getAudienceSegment", "getAudienceSegmentCallable"]
@@ -222,6 +228,33 @@
             },
             "ListBandwidthGroups": {
               "methods": ["listBandwidthGroups", "listBandwidthGroups", "listBandwidthGroups", "listBandwidthGroupsPagedCallable", "listBandwidthGroupsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "BreakTemplateService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BreakTemplateServiceClient",
+          "rpcs": {
+            "BatchCreateBreakTemplates": {
+              "methods": ["batchCreateBreakTemplates", "batchCreateBreakTemplates", "batchCreateBreakTemplates", "batchCreateBreakTemplatesCallable"]
+            },
+            "BatchUpdateBreakTemplates": {
+              "methods": ["batchUpdateBreakTemplates", "batchUpdateBreakTemplates", "batchUpdateBreakTemplates", "batchUpdateBreakTemplatesCallable"]
+            },
+            "CreateBreakTemplate": {
+              "methods": ["createBreakTemplate", "createBreakTemplate", "createBreakTemplate", "createBreakTemplateCallable"]
+            },
+            "GetBreakTemplate": {
+              "methods": ["getBreakTemplate", "getBreakTemplate", "getBreakTemplate", "getBreakTemplateCallable"]
+            },
+            "ListBreakTemplates": {
+              "methods": ["listBreakTemplates", "listBreakTemplates", "listBreakTemplates", "listBreakTemplatesPagedCallable", "listBreakTemplatesCallable"]
+            },
+            "UpdateBreakTemplate": {
+              "methods": ["updateBreakTemplate", "updateBreakTemplate", "updateBreakTemplateCallable"]
             }
           }
         }

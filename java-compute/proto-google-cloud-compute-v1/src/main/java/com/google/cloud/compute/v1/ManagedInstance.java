@@ -57,6 +57,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
     instanceHealth_ = java.util.Collections.emptyList();
     instanceStatus_ = "";
     name_ = "";
+    targetStatus_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -920,6 +921,206 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ManagedInstance.InstanceStatus)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The eventual status of the instance. The instance group
+   * manager will not be identified as stable till each managed instance reaches
+   * its targetStatus.
+   * Additional supported values which may be not listed in the enum directly due to technical reasons:
+   * RUNNING
+   * STOPPED
+   * SUSPENDED
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.ManagedInstance.TargetStatus}
+   */
+  public enum TargetStatus implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TARGET_STATUS = 0;</code>
+     */
+    UNDEFINED_TARGET_STATUS(0),
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance will eventually be ABANDONED, i.e. dissociated
+     * from the managed instance group.
+     * </pre>
+     *
+     * <code>ABANDONED = 81797556;</code>
+     */
+    ABANDONED(81797556),
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance will eventually be DELETED.
+     * </pre>
+     *
+     * <code>DELETED = 120962041;</code>
+     */
+    DELETED(120962041),
+    /**
+     *
+     *
+     * <pre>
+     * Only present to map the STATUS_INVALID value.
+     * </pre>
+     *
+     * <code>INVALID = 530283991;</code>
+     */
+    INVALID(530283991),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "TargetStatus");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_TARGET_STATUS = 0;</code>
+     */
+    public static final int UNDEFINED_TARGET_STATUS_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance will eventually be ABANDONED, i.e. dissociated
+     * from the managed instance group.
+     * </pre>
+     *
+     * <code>ABANDONED = 81797556;</code>
+     */
+    public static final int ABANDONED_VALUE = 81797556;
+
+    /**
+     *
+     *
+     * <pre>
+     * The managed instance will eventually be DELETED.
+     * </pre>
+     *
+     * <code>DELETED = 120962041;</code>
+     */
+    public static final int DELETED_VALUE = 120962041;
+
+    /**
+     *
+     *
+     * <pre>
+     * Only present to map the STATUS_INVALID value.
+     * </pre>
+     *
+     * <code>INVALID = 530283991;</code>
+     */
+    public static final int INVALID_VALUE = 530283991;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TargetStatus valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TargetStatus forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_TARGET_STATUS;
+        case 81797556:
+          return ABANDONED;
+        case 120962041:
+          return DELETED;
+        case 530283991:
+          return INVALID;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TargetStatus> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TargetStatus> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TargetStatus>() {
+          public TargetStatus findValueByNumber(int number) {
+            return TargetStatus.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.ManagedInstance.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final TargetStatus[] VALUES = values();
+
+    public static TargetStatus valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TargetStatus(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ManagedInstance.TargetStatus)
+  }
+
   private int bitField0_;
   public static final int CURRENT_ACTION_FIELD_NUMBER = 178475964;
 
@@ -1778,6 +1979,84 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
         : shutdownDetails_;
   }
 
+  public static final int TARGET_STATUS_FIELD_NUMBER = 307799648;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object targetStatus_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The eventual status of the instance. The instance group
+   * manager will not be identified as stable till each managed instance reaches
+   * its targetStatus.
+   * Check the TargetStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_status = 307799648;</code>
+   *
+   * @return Whether the targetStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasTargetStatus() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The eventual status of the instance. The instance group
+   * manager will not be identified as stable till each managed instance reaches
+   * its targetStatus.
+   * Check the TargetStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_status = 307799648;</code>
+   *
+   * @return The targetStatus.
+   */
+  @java.lang.Override
+  public java.lang.String getTargetStatus() {
+    java.lang.Object ref = targetStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      targetStatus_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The eventual status of the instance. The instance group
+   * manager will not be identified as stable till each managed instance reaches
+   * its targetStatus.
+   * Check the TargetStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string target_status = 307799648;</code>
+   *
+   * @return The bytes for targetStatus.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTargetStatusBytes() {
+    java.lang.Object ref = targetStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      targetStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int VERSION_FIELD_NUMBER = 351608024;
   private com.google.cloud.compute.v1.ManagedInstanceVersion version_;
 
@@ -1794,7 +2073,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasVersion() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00001000) != 0);
   }
 
   /**
@@ -1870,6 +2149,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessage.writeString(output, 178475964, currentAction_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 307799648, targetStatus_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeMessage(351608024, getVersion());
     }
     for (int i = 0; i < instanceHealth_.size(); i++) {
@@ -1923,6 +2205,9 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.GeneratedMessage.computeStringSize(178475964, currentAction_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(307799648, targetStatus_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(351608024, getVersion());
     }
     for (int i = 0; i < instanceHealth_.size(); i++) {
@@ -2004,6 +2289,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
     if (hasShutdownDetails()) {
       if (!getShutdownDetails().equals(other.getShutdownDetails())) return false;
     }
+    if (hasTargetStatus() != other.hasTargetStatus()) return false;
+    if (hasTargetStatus()) {
+      if (!getTargetStatus().equals(other.getTargetStatus())) return false;
+    }
     if (hasVersion() != other.hasVersion()) return false;
     if (hasVersion()) {
       if (!getVersion().equals(other.getVersion())) return false;
@@ -2066,6 +2355,10 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
     if (hasShutdownDetails()) {
       hash = (37 * hash) + SHUTDOWN_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getShutdownDetails().hashCode();
+    }
+    if (hasTargetStatus()) {
+      hash = (37 * hash) + TARGET_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getTargetStatus().hashCode();
     }
     if (hasVersion()) {
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -2269,6 +2562,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
         shutdownDetailsBuilder_.dispose();
         shutdownDetailsBuilder_ = null;
       }
+      targetStatus_ = "";
       version_ = null;
       if (versionBuilder_ != null) {
         versionBuilder_.dispose();
@@ -2380,8 +2674,12 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+        result.targetStatus_ = targetStatus_;
         to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.version_ = versionBuilder_ == null ? version_ : versionBuilder_.build();
+        to_bitField0_ |= 0x00001000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2466,6 +2764,11 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
       if (other.hasShutdownDetails()) {
         mergeShutdownDetails(other.getShutdownDetails());
       }
+      if (other.hasTargetStatus()) {
+        targetStatus_ = other.targetStatus_;
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
       if (other.hasVersion()) {
         mergeVersion(other.getVersion());
       }
@@ -2548,10 +2851,16 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 1427807714
+            case -1832570110:
+              {
+                targetStatus_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case -1832570110
             case -1482103102:
               {
                 input.readMessage(internalGetVersionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case -1482103102
             case -1233630670:
@@ -5122,6 +5431,150 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
       return shutdownDetailsBuilder_;
     }
 
+    private java.lang.Object targetStatus_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The eventual status of the instance. The instance group
+     * manager will not be identified as stable till each managed instance reaches
+     * its targetStatus.
+     * Check the TargetStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_status = 307799648;</code>
+     *
+     * @return Whether the targetStatus field is set.
+     */
+    public boolean hasTargetStatus() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The eventual status of the instance. The instance group
+     * manager will not be identified as stable till each managed instance reaches
+     * its targetStatus.
+     * Check the TargetStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_status = 307799648;</code>
+     *
+     * @return The targetStatus.
+     */
+    public java.lang.String getTargetStatus() {
+      java.lang.Object ref = targetStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The eventual status of the instance. The instance group
+     * manager will not be identified as stable till each managed instance reaches
+     * its targetStatus.
+     * Check the TargetStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_status = 307799648;</code>
+     *
+     * @return The bytes for targetStatus.
+     */
+    public com.google.protobuf.ByteString getTargetStatusBytes() {
+      java.lang.Object ref = targetStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        targetStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The eventual status of the instance. The instance group
+     * manager will not be identified as stable till each managed instance reaches
+     * its targetStatus.
+     * Check the TargetStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_status = 307799648;</code>
+     *
+     * @param value The targetStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetStatus(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      targetStatus_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The eventual status of the instance. The instance group
+     * manager will not be identified as stable till each managed instance reaches
+     * its targetStatus.
+     * Check the TargetStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_status = 307799648;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetStatus() {
+      targetStatus_ = getDefaultInstance().getTargetStatus();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The eventual status of the instance. The instance group
+     * manager will not be identified as stable till each managed instance reaches
+     * its targetStatus.
+     * Check the TargetStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_status = 307799648;</code>
+     *
+     * @param value The bytes for targetStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetStatusBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      targetStatus_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.compute.v1.ManagedInstanceVersion version_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.compute.v1.ManagedInstanceVersion,
@@ -5141,7 +5594,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
      * @return Whether the version field is set.
      */
     public boolean hasVersion() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -5183,7 +5636,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
       } else {
         versionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5204,7 +5657,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
       } else {
         versionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5220,7 +5673,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeVersion(com.google.cloud.compute.v1.ManagedInstanceVersion value) {
       if (versionBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && version_ != null
             && version_
                 != com.google.cloud.compute.v1.ManagedInstanceVersion.getDefaultInstance()) {
@@ -5232,7 +5685,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
         versionBuilder_.mergeFrom(value);
       }
       if (version_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -5248,7 +5701,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public Builder clearVersion() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       version_ = null;
       if (versionBuilder_ != null) {
         versionBuilder_.dispose();
@@ -5268,7 +5721,7 @@ public final class ManagedInstance extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
      */
     public com.google.cloud.compute.v1.ManagedInstanceVersion.Builder getVersionBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return internalGetVersionFieldBuilder().getBuilder();
     }
