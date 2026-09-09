@@ -43,6 +43,8 @@ import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.PubsubClientTelemetry;
+import java.util.Base64;
 import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
 import io.grpc.Server;
@@ -1736,5 +1738,80 @@ public class PublisherImplTest {
     publisher.shutdown();
     fakeExecutor.advanceTime(Duration.ofSeconds(10));
     assertTrue(publisher.awaitTermination(1, TimeUnit.MINUTES));
+  }
+
+  private PubsubClientTelemetry extractTelemetryHeader(Metadata headers) throws Exception {
+    Metadata.Key<String> key =
+        Metadata.Key.of(Publisher.TELEMETRY_HEADER_KEY, Metadata.ASCII_STRING_MARSHALLER);
+    String headerValue = headers.get(key);
+    assertThat(headerValue).isNotNull();
+    byte[] decodedBytes = Base64.getDecoder().decode(headerValue);
+    return PubsubClientTelemetry.parseFrom(decodedBytes);
+  }
+
+  @Test
+  public void testTelemetryHeaderOnNormalPublish() throws Exception {
+    testPublisherServiceImpl.setAutoPublishResponse(true);
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS.toBuilder()
+                    .setElementCountThreshold(1L)
+                    .build())
+            .build();
+
+    ApiFuture<String> future = sendTestMessage(publisher, "msg-normal");
+    assertEquals("1", future.get(5, TimeUnit.SECONDS));
+
+    List<Metadata> capturedHeaders = testPublisherServiceImpl.getCapturedHeaders();
+    assertThat(capturedHeaders).hasSize(1);
+
+    PubsubClientTelemetry telemetry = extractTelemetryHeader(capturedHeaders.get(0));
+    assertThat(telemetry.hasPublishOperation()).isTrue();
+    assertThat(telemetry.getPublishOperation().getHedgedAttemptCount()).isEqualTo(0);
+    assertThat(telemetry.getPublishOperation().getPublishStartTime().getSeconds())
+        .isGreaterThan(0);
+
+    shutdownTestPublisher(publisher);
+  }
+
+  @Test
+  public void testTelemetryHeaderOnHedgedPublish() throws Exception {
+    Publisher publisher = getPublisherWithHedge(Duration.ofMillis(100), 0.2f, 20);
+    fillTokenBucket(publisher, 5);
+
+    // Delay response so hedge fires
+    testPublisherServiceImpl.setAutoPublishResponse(false);
+    testPublisherServiceImpl.setPublishResponseDelay(Duration.ofMillis(200));
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("2"));
+
+    ApiFuture<String> future = sendTestMessage(publisher, "msg-hedged");
+    waitForRequests(testPublisherServiceImpl, 1);
+
+    // Advance past hedge delay to trigger hedge attempt
+    fakeExecutor.advanceTime(Duration.ofMillis(120));
+    waitForRequests(testPublisherServiceImpl, 2);
+
+    // Finish request
+    fakeExecutor.advanceTime(Duration.ofMillis(100));
+    assertEquals("1", future.get(5, TimeUnit.SECONDS));
+
+    List<Metadata> capturedHeaders = testPublisherServiceImpl.getCapturedHeaders();
+    assertThat(capturedHeaders).hasSize(2);
+
+    // Verify Attempt 0 (Original)
+    PubsubClientTelemetry initialTelemetry = extractTelemetryHeader(capturedHeaders.get(0));
+    assertThat(initialTelemetry.getPublishOperation().getHedgedAttemptCount()).isEqualTo(0);
+
+    // Verify Attempt 1 (Hedge)
+    PubsubClientTelemetry hedgedTelemetry = extractTelemetryHeader(capturedHeaders.get(1));
+    assertThat(hedgedTelemetry.getPublishOperation().getHedgedAttemptCount()).isEqualTo(1);
+
+    // Both must share the identical start time
+    assertThat(hedgedTelemetry.getPublishOperation().getPublishStartTime())
+        .isEqualTo(initialTelemetry.getPublishOperation().getPublishStartTime());
+
+    shutdownTestPublisher(publisher);
   }
 }
