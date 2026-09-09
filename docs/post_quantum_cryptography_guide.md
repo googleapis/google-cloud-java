@@ -1,16 +1,12 @@
-# Post-Quantum Cryptography (PQC) User Guide for Google Cloud Java Client Libraries
+# Post-quantum Cryptography (PQC) Support
 
-## Overview
+To protect against the "Store Now, Decrypt Later" attack, Google Cloud is implementing Post-Quantum Cryptography (PQC) across its services.
 
-**Post-Quantum Cryptography (PQC)** refers to cryptographic algorithms designed to protect encrypted communications against attacks from future quantum computers. The primary threat addressed today is **Store-Now, Decrypt-Later (SNDL)**—where encrypted network traffic is intercepted and stored today by an adversary with the goal of decrypting it once cryptographically relevant quantum computers emerge.
+For more information on Google Cloud's approach, see [Post-Quantum Cryptography on Google Cloud](https://cloud.google.com/security/resources/post-quantum-cryptography?hl=en) and [Additional Resources](#7-additional-resources).
 
-To defend against this without sacrificing stability, Google Cloud Java client libraries adopt **Hybrid Key Exchange** (combining classical algorithms like `X25519` with standardized post-quantum algorithms like `ML-KEM-768`). This ensures connections remain secure even if an unforeseen mathematical weakness is discovered in either algorithm.
+## Post-quantum key exchange
 
-For in-depth background on PQC, NIST standards, and Google's quantum-safe roadmap, refer to the following resources:
-- [Google Cloud Post-Quantum Cryptography Resources](https://cloud.google.com/security/resources/post-quantum-cryptography)
-- [How Google is preparing for a post-quantum world](https://cloud.google.com/blog/products/identity-security/how-google-is-preparing-for-a-post-quantum-world/?e=48754805)
-- [PQC in Plaintext: Google Cloud's Post-Quantum Cryptography Roadmap](https://cloud.google.com/blog/products/identity-security/pqc-in-plaintext-google-clouds-post-quantum-cryptography-roadmap)
-- [Post-Quantum Cryptography Standards: What you need to know](https://security.googleblog.com/2024/08/post-quantum-cryptography-standards.html)
+Google Cloud client libraries support post-quantum key exchange using the X25519MLKEM768 hybrid mechanism for TLS 1.3 connections.
 
 ### What Changes in Google Cloud Java Client Libraries?
 Enabling PQC in Google Cloud Java client libraries requires **zero changes to application business logic**:
@@ -413,3 +409,12 @@ We recommend using Google Cloud's `libraries-bom` (version `26.88.0+`), which ce
 The OpenJDK community is integrating standardized post-quantum algorithms directly into the Java platform:
 - **[JEP 496](https://openjdk.org/jeps/496) (ML-KEM)**: Introduces native implementations of NIST FIPS 203 (Module-Lattice-Based Key-Encapsulation Mechanism) into OpenJDK's standard security providers (`SunJSSE` and `SunJCE`), targeted for **JDK 27+**.
 - **What this means for Google Cloud Java**: On JDK 27+, applications configuring standard JDK security providers (see **Option 2** in Section 4.1 and Section 4.2) will negotiate post-quantum TLS natively using `SunJSSE`, without requiring Conscrypt or JNI native shared libraries.
+
+---
+
+## 7. Additional Resources
+
+For in-depth background on PQC, NIST standards, and Google's quantum-safe roadmap, refer to the following resources:
+- [How Google is preparing for a post-quantum world](https://cloud.google.com/blog/products/identity-security/how-google-is-preparing-for-a-post-quantum-world/?e=48754805)
+- [PQC in Plaintext: Google Cloud's Post-Quantum Cryptography Roadmap](https://cloud.google.com/blog/products/identity-security/pqc-in-plaintext-google-clouds-post-quantum-cryptography-roadmap)
+- [Post-Quantum Cryptography Standards: What you need to know](https://security.googleblog.com/2024/08/post-quantum-cryptography-standards.html)
