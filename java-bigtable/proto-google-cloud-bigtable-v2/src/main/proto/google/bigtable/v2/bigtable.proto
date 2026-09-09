@@ -102,41 +102,6 @@ service Bigtable {
     option (google.api.method_signature) = "table_name,app_profile_id";
   }
 
-  // Streams back the contents of all requested rows in key order using structured
-  // typed formats.
-  rpc TypedReadRows(TypedReadRowsRequest)
-      returns (stream TypedReadRowsResponse) {
-    option (google.api.http) = {
-      post: "/v2/{table_name=projects/*/instances/*/tables/*}:typedReadRows"
-      body: "*"
-      additional_bindings {
-        post: "/v2/{authorized_view_name=projects/*/instances/*/tables/*/authorizedViews/*}:typedReadRows"
-        body: "*"
-      }
-      additional_bindings {
-        post: "/v2/{materialized_view_name=projects/*/instances/*/materializedViews/*}:typedReadRows"
-        body: "*"
-      }
-    };
-    option (google.api.routing) = {
-      routing_parameters {
-        field: "table_name"
-        path_template: "{table_name=projects/*/instances/*/tables/*}"
-      }
-      routing_parameters { field: "app_profile_id" }
-      routing_parameters {
-        field: "authorized_view_name"
-        path_template: "{table_name=projects/*/instances/*/tables/*}/**"
-      }
-      routing_parameters {
-        field: "materialized_view_name"
-        path_template: "{name=projects/*/instances/*}/**"
-      }
-    };
-    option (google.api.method_signature) = "table_name";
-    option (google.api.method_signature) = "table_name,app_profile_id";
-  }
-
   // Returns a sample of row keys in the table. The returned row keys will
   // delimit contiguous sections of the table of approximately equal size,
   // which can be used to break up the data for distributed tasks like
@@ -567,91 +532,6 @@ message ReadRowsResponse {
   // message contains request_stats in the last message of the stream. Always
   // returned when requested, even when the read request returns an empty
   // response.
-  RequestStats request_stats = 3;
-}
-
-// Request message for Bigtable.TypedReadRows.
-message TypedReadRowsRequest {
-  // The target of the read.
-  oneof target {
-    // The unique name of the table from which to read.
-    //
-    // Values are of the form
-    // `projects/<project>/instances/<instance>/tables/<table>`.
-    string table_name = 1 [
-      (google.api.field_behavior) = OPTIONAL,
-      (google.api.resource_reference) = {
-        type: "bigtableadmin.googleapis.com/Table"
-      }
-    ];
-
-    // The unique name of the AuthorizedView from which to read.
-    //
-    // Values are of the form
-    // `projects/<project>/instances/<instance>/tables/<table>/authorizedViews/<authorized_view>`.
-    string authorized_view_name = 2 [
-      (google.api.field_behavior) = OPTIONAL,
-      (google.api.resource_reference) = {
-        type: "bigtableadmin.googleapis.com/AuthorizedView"
-      }
-    ];
-
-    // The unique name of the MaterializedView from which to read.
-    //
-    // Values are of the form
-    // `projects/<project>/instances/<instance>/materializedViews/<materialized_view>`.
-    string materialized_view_name = 3 [
-      (google.api.field_behavior) = OPTIONAL,
-      (google.api.resource_reference) = {
-        type: "bigtableadmin.googleapis.com/MaterializedView"
-      }
-    ];
-  }
-
-  // This value specifies routing for replication. If not specified, the
-  // "default" application profile will be used.
-  string app_profile_id = 4;
-
-  // The row keys and/or ranges to read. If not specified, reads from all rows.
-  TypedRowSet rows = 5;
-
-  // The filter to apply to the contents of the specified row(s). If unset,
-  // reads the entirety of each row.
-  RowFilter filter = 6;
-
-  // The maximum number of rows to read.
-  int64 rows_limit = 7;
-
-  // The view into RequestStats, as described in ReadRowsRequest.
-  ReadRowsRequest.RequestStatsView request_stats_view = 8
-      [(google.api.field_behavior) = OPTIONAL];
-
-  // Return rows in lexicographical descending order of the encoded row keys.
-  bool reversed = 9 [(google.api.field_behavior) = OPTIONAL];
-
-  // An opaque token sent by the server to allow query resumption.
-  bytes resume_token = 10 [(google.api.field_behavior) = OPTIONAL];
-
-  // The format in which row keys are returned in the response.
-  oneof row_key_format {
-    // If true, the row key will be returned in a structured format
-    // using the table key schema.
-    // If false, return the raw, unparsed bytes.
-    bool use_structured_key = 11 [(google.api.field_behavior) = OPTIONAL];
-  }
-}
-
-// Response message for Bigtable.TypedReadRows.
-message TypedReadRowsResponse {
-  // The schema of the table, specifying the types of the row keys and values.
-  // Present on the first response of a stream.
-  TableSchema table_schema = 1;
-
-  // The response containing the partial or complete row data.
-  PartialRowResponse response = 2;
-
-  // Statistics about the current request, returned on the final response of a
-  // stream.
   RequestStats request_stats = 3;
 }
 
