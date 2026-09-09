@@ -179,6 +179,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   // when autocommit is false transaction starts and session is initialized.
   boolean transactionStarted;
   volatile ConnectionProperty sessionInfoConnectionProperty;
+  // isSessionCreatedByDriver is false by default.
+  boolean isSessionCreatedByDriver = false;
   boolean isClosed;
   DatasetId defaultDataset;
   String location;
@@ -683,6 +685,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         transactionBeginJobConfig.setConnectionProperties(this.queryProperties);
       } else {
         transactionBeginJobConfig.setCreateSession(true);
+        this.isSessionCreatedByDriver = true;
       }
       Job job = this.bigQuery.create(JobInfo.of(transactionBeginJobConfig.build()));
       job = job.waitFor();
@@ -742,6 +745,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   public ConnectionProperty getSessionInfoConnectionProperty() {
     return this.sessionInfoConnectionProperty;
+  }
+
+  boolean isSessionCreatedByDriver() {
+    return this.isSessionCreatedByDriver;
   }
 
   boolean isEnableHighThroughputAPI() {
@@ -1071,6 +1078,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
             exceptionToThrow.addSuppressed(e);
           }
         }
+      }
+
+      if (this.sessionInfoConnectionProperty != null && this.isSessionCreatedByDriver) {
+        abortSession();
       }
 
       boolean interrupted = Thread.currentThread().isInterrupted();
@@ -1464,6 +1475,39 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.transactionStarted = false;
     } catch (InterruptedException ex) {
       throw new BigQueryJdbcRuntimeException("Interrupted during commitTransaction", ex);
+    }
+  }
+
+  private void abortSession() {
+    try {
+      LOG.fine(
+          "Aborting session on connection close: " + this.sessionInfoConnectionProperty.getValue());
+      QueryJobConfiguration abortSessionJobConfig =
+          QueryJobConfiguration.newBuilder("CALL BQ.ABORT_SESSION();")
+              .setConnectionProperties(this.queryProperties)
+              .build();
+      Job abortJob = this.bigQuery.create(JobInfo.of(abortSessionJobConfig));
+      abortJob.waitFor();
+    } catch (InterruptedException ex) {
+      Thread.currentThread().interrupt();
+      throw new BigQueryJdbcRuntimeException("Interrupted during session abort", ex);
+    } catch (BigQueryException ex) {
+      LOG.warning(
+          "Failed to abort session during session abort (session may have already ended): "
+              + ex.getMessage());
+    } finally {
+      this.sessionInfoConnectionProperty = null;
+      if (this.queryProperties != null) {
+        List<ConnectionProperty> updated = new ArrayList<>();
+        for (ConnectionProperty cp : this.queryProperties) {
+          if (!"session_id".equalsIgnoreCase(cp.getKey())) {
+            updated.add(cp);
+          }
+        }
+        this.queryProperties = Collections.unmodifiableList(updated);
+      }
+      this.isSessionCreatedByDriver = false;
+      this.transactionStarted = false;
     }
   }
 
