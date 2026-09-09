@@ -110,8 +110,7 @@ public class Publisher implements PublisherInterface {
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());
   private LoggingUtil loggingUtil = new LoggingUtil();
 
-  @VisibleForTesting
-  static final String TELEMETRY_HEADER_KEY = "x-goog-pubsub-client-telemetry";
+  @VisibleForTesting static final String TELEMETRY_HEADER_KEY = "x-goog-pubsub-client-telemetry";
 
   private static final String GZIP_COMPRESSION = "gzip";
 
@@ -557,7 +556,7 @@ public class Publisher implements PublisherInterface {
                     .setPublishStartTime(Timestamps.fromMillis(outstandingBatch.creationTime))
                     .build())
             .build();
-  return Base64.getEncoder().encodeToString(telemetry.toByteArray());
+    return Base64.getEncoder().encodeToString(telemetry.toByteArray());
   }
 
   private ApiFuture<PublishResponse> publishCall(OutstandingBatch outstandingBatch) {
