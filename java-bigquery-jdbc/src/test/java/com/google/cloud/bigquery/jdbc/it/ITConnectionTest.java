@@ -463,10 +463,13 @@ public class ITConnectionTest {
       assertNotNull(connection);
       assertFalse(connection.isClosed());
       try (Statement stmt = connection.createStatement();
-          ResultSet rs = stmt.executeQuery("SELECT * FROM " + PCNT_TABLE_NAME)) {
+          ResultSet rs = stmt.executeQuery("SELECT * FROM " + PCNT_TABLE_NAME + " ORDER BY id")) {
         assertTrue(rs.next());
         assertEquals(1, rs.getInt("id"));
         assertEquals("Alice", rs.getString("name"));
+        assertTrue(rs.next());
+        assertEquals(2, rs.getInt("id"));
+        assertEquals("Bob", rs.getString("name"));
       }
     }
   }
@@ -484,10 +487,13 @@ public class ITConnectionTest {
       assertNotNull(connection);
       assertFalse(connection.isClosed());
       try (Statement stmt = connection.createStatement();
-          ResultSet rs = stmt.executeQuery("SELECT * FROM " + PCNT_TABLE_NAME)) {
+          ResultSet rs = stmt.executeQuery("SELECT * FROM " + PCNT_TABLE_NAME + " ORDER BY id")) {
         assertTrue(rs.next());
         assertEquals(1, rs.getInt("id"));
         assertEquals("Alice", rs.getString("name"));
+        assertTrue(rs.next());
+        assertEquals(2, rs.getInt("id"));
+        assertEquals("Bob", rs.getString("name"));
       }
     }
   }
