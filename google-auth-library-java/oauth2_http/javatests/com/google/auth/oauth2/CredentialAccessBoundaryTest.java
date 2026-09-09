@@ -43,7 +43,7 @@ import java.util.Collections;
 import org.junit.jupiter.api.Test;
 
 /** Tests for {@link CredentialAccessBoundary} and encompassing classes. */
-class CredentialAccessBoundaryTest {
+class CredentialAccessBoundaryTest extends BaseSerializationTest {
 
   @Test
   void credentialAccessBoundary() {
@@ -287,5 +287,30 @@ class CredentialAccessBoundaryTest {
     IllegalArgumentException exception =
         assertThrows(IllegalArgumentException.class, builder::build);
     assertEquals("The provided expression is empty.", exception.getMessage());
+  }
+
+  @Test
+  void serializeAndDeserialize_success() throws Exception {
+    AvailabilityCondition availabilityCondition =
+        AvailabilityCondition.newBuilder()
+            .setExpression("expression")
+            .setTitle("title")
+            .setDescription("description")
+            .build();
+
+    AccessBoundaryRule rule =
+        AccessBoundaryRule.newBuilder()
+            .setAvailableResource("resource")
+            .addAvailablePermission("permission")
+            .setAvailabilityCondition(availabilityCondition)
+            .build();
+
+    CredentialAccessBoundary cab = CredentialAccessBoundary.newBuilder().addRule(rule).build();
+
+    // Verify CredentialAccessBoundary and nested rules/conditions can be serialized and
+    // deserialized
+    // so downscoped credentials containing them do not throw NotSerializableException.
+    CredentialAccessBoundary deserialized = serializeAndDeserialize(cab);
+    assertEquals(cab.toJson(), deserialized.toJson());
   }
 }
