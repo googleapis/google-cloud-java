@@ -23,6 +23,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
+import org.apache.arrow.vector.util.Text;
 
 /**
  * An implementation of {@link BigQueryBaseArray} used to represent Array values from Arrow data.
@@ -30,15 +31,20 @@ import org.apache.arrow.vector.util.JsonStringHashMap;
 class BigQueryArrowArray extends BigQueryBaseArray {
 
   private JsonStringArrayList<?> values;
+  private final boolean enableTimestampPicos;
 
-  public BigQueryArrowArray(Field schema, JsonStringArrayList<?> values) {
-    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowArray.class));
+  BigQueryArrowArray(Field schema, JsonStringArrayList<?> values) {
+    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowArray.class), false);
   }
 
-  public BigQueryArrowArray(
-      Field schema, JsonStringArrayList<?> values, BigQueryJdbcResultSetLogger log) {
+  BigQueryArrowArray(
+      Field schema,
+      JsonStringArrayList<?> values,
+      BigQueryJdbcResultSetLogger log,
+      boolean enableTimestampPicos) {
     super(schema, log);
     this.values = values;
+    this.enableTimestampPicos = enableTimestampPicos;
   }
 
   @Override
@@ -72,7 +78,11 @@ class BigQueryArrowArray extends BigQueryBaseArray {
     BigQueryArrowBatchWrapper arrowBatchWrapper =
         BigQueryArrowBatchWrapper.getNestedFieldValueListWrapper(values);
     return BigQueryArrowResultSet.getNestedResultSet(
-        Schema.of(singleElementSchema()), arrowBatchWrapper, 0, this.values.size());
+        Schema.of(singleElementSchema()),
+        arrowBatchWrapper,
+        0,
+        this.values.size(),
+        this.enableTimestampPicos);
   }
 
   @Override
@@ -86,7 +96,11 @@ class BigQueryArrowArray extends BigQueryBaseArray {
     BigQueryArrowBatchWrapper arrowBatchWrapper =
         BigQueryArrowBatchWrapper.getNestedFieldValueListWrapper(values);
     return BigQueryArrowResultSet.getNestedResultSet(
-        Schema.of(singleElementSchema()), arrowBatchWrapper, range.x(), range.y());
+        Schema.of(singleElementSchema()),
+        arrowBatchWrapper,
+        range.x(),
+        range.y(),
+        this.enableTimestampPicos);
   }
 
   @Override
@@ -97,12 +111,31 @@ class BigQueryArrowArray extends BigQueryBaseArray {
   }
 
   @Override
+  protected Class<?> getTargetClass() {
+    LOG.finestTrace("getTargetClass");
+    if (this.enableTimestampPicos && BigQueryArrowResultSet.isPicosecondTimestamp(this.schema)) {
+      return String.class;
+    }
+    return super.getTargetClass();
+  }
+
+  @Override
   Object getCoercedValue(int index) throws SQLException {
     LOG.finestTrace("getCoercedValue");
     Object value = this.values.get(index);
-    return this.arrayOfStruct
-        ? new BigQueryArrowStruct(
-            schema.getSubFields(), (JsonStringHashMap<?, ?>) value, this.LOG.getArrowStructLogger())
-        : BigQueryTypeRegistry.convert(value, this.schema.getType().getStandardType(), null);
+    if (value instanceof Text) {
+      value = value.toString();
+    }
+    if (this.arrayOfStruct) {
+      return new BigQueryArrowStruct(
+          schema.getSubFields(),
+          (JsonStringHashMap<?, ?>) value,
+          this.LOG.getArrowStructLogger(),
+          this.enableTimestampPicos);
+    }
+    if (this.enableTimestampPicos && BigQueryArrowResultSet.isPicosecondTimestamp(this.schema)) {
+      return BigQueryTemporalUtility.formatTimestampValue(value, true);
+    }
+    return BigQueryTypeRegistry.convert(value, this.schema.getType().getStandardType(), null);
   }
 }

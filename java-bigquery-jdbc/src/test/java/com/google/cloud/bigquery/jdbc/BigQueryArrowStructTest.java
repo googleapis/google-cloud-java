@@ -244,4 +244,38 @@ public class BigQueryArrowStructTest {
             () -> structWithPrimitiveValues.getAttributes(emptyMap()));
     assertThat(exception.getMessage()).isEqualTo(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
+
+  @Test
+  public void testArrowStructTimestampPicosEnabled() throws SQLException {
+    Field picosField = Field.newBuilder("picosTs", TIMESTAMP).setTimestampPrecision(12L).build();
+    FieldList schema = FieldList.of(picosField);
+    JsonStringHashMap<String, Object> values = new JsonStringHashMap<>();
+    values.put("picosTs", new Text("2026-04-08T10:00:00.123456789123Z"));
+
+    BigQueryArrowStruct struct =
+        new BigQueryArrowStruct(
+            schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class), true);
+
+    Object[] attributes = struct.getAttributes();
+    assertThat(attributes).isEqualTo(new Object[] {"2026-04-08 10:00:00.123456789123"});
+  }
+
+  @Test
+  public void testArrowStructTimestampPicosDisabled() throws SQLException {
+    Field picosField = Field.newBuilder("picosTs", TIMESTAMP).setTimestampPrecision(12L).build();
+    FieldList schema = FieldList.of(picosField);
+    JsonStringHashMap<String, Object> values = new JsonStringHashMap<>();
+    values.put("picosTs", new Text("2026-04-08T10:00:00.123456789123Z"));
+
+    BigQueryArrowStruct struct =
+        new BigQueryArrowStruct(
+            schema,
+            values,
+            BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class),
+            false);
+
+    Object[] attributes = struct.getAttributes();
+    Timestamp expectedTs = Timestamp.valueOf("2026-04-08 10:00:00.123456789");
+    assertThat(attributes).isEqualTo(new Object[] {expectedTs});
+  }
 }

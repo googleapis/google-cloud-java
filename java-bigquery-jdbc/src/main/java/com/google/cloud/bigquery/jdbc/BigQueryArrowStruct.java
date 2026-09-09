@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.arrow.vector.util.JsonStringArrayList;
 import org.apache.arrow.vector.util.JsonStringHashMap;
+import org.apache.arrow.vector.util.Text;
 
 /**
  * An implementation of {@link BigQueryBaseStruct} used to represent Struct values from Arrow data.
@@ -38,15 +39,21 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
 
   private final JsonStringHashMap<?, ?> values;
 
+  private final boolean enableTimestampPicos;
+
   BigQueryArrowStruct(FieldList schema, JsonStringHashMap<?, ?> values) {
-    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class));
+    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryArrowStruct.class), false);
   }
 
   BigQueryArrowStruct(
-      FieldList schema, JsonStringHashMap<?, ?> values, BigQueryJdbcResultSetLogger log) {
+      FieldList schema,
+      JsonStringHashMap<?, ?> values,
+      BigQueryJdbcResultSetLogger log,
+      boolean enableTimestampPicos) {
     super(log);
     this.schema = schema;
     this.values = values;
+    this.enableTimestampPicos = enableTimestampPicos;
   }
 
   @Override
@@ -76,21 +83,31 @@ class BigQueryArrowStruct extends BigQueryBaseStruct {
 
   private Object getValue(Field currentSchema, Object currentValue) throws SQLException {
     LOG.finestTrace("getValue");
+    if (currentValue instanceof Text) {
+      currentValue = currentValue.toString();
+    }
     if (isArray(currentSchema)) {
       return new BigQueryArrowArray(
-          currentSchema, (JsonStringArrayList<?>) currentValue, this.LOG.getArrowArrayLogger());
-    } else if (isStruct(currentSchema)) {
+          currentSchema,
+          (JsonStringArrayList<?>) currentValue,
+          this.LOG.getArrowArrayLogger(),
+          this.enableTimestampPicos);
+    }
+    if (isStruct(currentSchema)) {
       return new BigQueryArrowStruct(
           currentSchema.getSubFields(),
           (JsonStringHashMap<?, ?>) currentValue,
-          this.LOG.getArrowStructLogger());
-    } else {
-      if (currentValue instanceof Integer
-          && currentSchema.getType().getStandardType() == StandardSQLTypeName.DATE) {
-        currentValue = LocalDate.ofEpochDay(((Integer) currentValue).longValue());
-      }
-      return BigQueryTypeRegistry.convert(
-          currentValue, currentSchema.getType().getStandardType(), null);
+          this.LOG.getArrowStructLogger(),
+          this.enableTimestampPicos);
     }
+    if (currentValue instanceof Integer
+        && currentSchema.getType().getStandardType() == StandardSQLTypeName.DATE) {
+      currentValue = LocalDate.ofEpochDay(((Integer) currentValue).longValue());
+    }
+    if (this.enableTimestampPicos && BigQueryArrowResultSet.isPicosecondTimestamp(currentSchema)) {
+      return BigQueryTemporalUtility.formatTimestampValue(currentValue, true);
+    }
+    return BigQueryTypeRegistry.convert(
+        currentValue, currentSchema.getType().getStandardType(), null);
   }
 }

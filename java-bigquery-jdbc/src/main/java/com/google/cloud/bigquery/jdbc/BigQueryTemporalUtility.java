@@ -306,6 +306,26 @@ final class BigQueryTemporalUtility {
     return sb.toString();
   }
 
+  /**
+   * Formats a timestamp value (which may be a {@link Long} epoch microsecond, an ISO-8601 string, a
+   * {@link java.sql.Timestamp}, or an epoch decimal string) into a standard UTC JDBC timestamp
+   * string with 6 or 12 fractional digits according to {@code enableTimestampPicos}.
+   */
+  static String formatTimestampValue(Object value, boolean enableTimestampPicos)
+      throws BigQueryJdbcException {
+    if (value == null) {
+      return null;
+    }
+    if (value instanceof Long) {
+      return formatTimestampStringFromMicroseconds((Long) value, enableTimestampPicos);
+    }
+    String str = value.toString();
+    if (str.indexOf(':') >= 0) {
+      return formatTimestampStringFromIso(str, enableTimestampPicos);
+    }
+    return formatTimestampStringFromEpochDecimal(str, enableTimestampPicos);
+  }
+
   private static StringBuilder formatDateTimeBase(LocalDateTime dt, int scale) {
     StringBuilder sb = new StringBuilder(scale == 12 ? 32 : 26);
     BASE_FORMATTER.formatTo(dt, sb);
