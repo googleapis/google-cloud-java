@@ -16,17 +16,17 @@
 
 package com.google.showcase.v1beta1.samples;
 
-// [START localhost7469_v1beta1_generated_ResumableUploadServiceSettings_UploadMedia_sync]
+// [START localhost7469_v1beta1_generated_ResumableUploadServiceSettings_GetLocation_sync]
 import com.google.showcase.v1beta1.ResumableUploadServiceSettings;
 import java.time.Duration;
 
-public class SyncUploadMedia {
+public class SyncGetLocation {
 
   public static void main(String[] args) throws Exception {
-    syncUploadMedia();
+    syncGetLocation();
   }
 
-  public static void syncUploadMedia() throws Exception {
+  public static void syncGetLocation() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
@@ -35,10 +35,10 @@ public class SyncUploadMedia {
     ResumableUploadServiceSettings.Builder resumableUploadServiceSettingsBuilder =
         ResumableUploadServiceSettings.newBuilder();
     resumableUploadServiceSettingsBuilder
-        .uploadMediaSettings()
+        .getLocationSettings()
         .setRetrySettings(
             resumableUploadServiceSettingsBuilder
-                .uploadMediaSettings()
+                .getLocationSettings()
                 .getRetrySettings()
                 .toBuilder()
                 .setInitialRetryDelayDuration(Duration.ofSeconds(1))
@@ -54,4 +54,4 @@ public class SyncUploadMedia {
         resumableUploadServiceSettingsBuilder.build();
   }
 }
-// [END localhost7469_v1beta1_generated_ResumableUploadServiceSettings_UploadMedia_sync]
+// [END localhost7469_v1beta1_generated_ResumableUploadServiceSettings_GetLocation_sync]
