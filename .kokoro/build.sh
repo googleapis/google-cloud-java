@@ -241,67 +241,50 @@ case ${JOB_TYPE} in
         changed_file_list=$(git diff --name-only "${BASE_SHA}" "${HEAD_SHA}" --relative)
         echo "${changed_file_list}"
 
-        has_code_change="false"
-
-        while IFS= read -r changed_file; do
-            # Checks if the line is not empty AND if it matches a .java file
-            if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
-                echo "Matched: ${changed_file}"
-                has_code_change="true"
-                break
-            fi
-        done <<< "${changed_file_list}"
-
-        if [ "${has_code_change}" == "false" ]; then
-            echo "No java modules affected. Skipping linter check."
-            exit 0
-        fi
-
-        # Compute list of changed Maven modules from changed Java files.
-        # We walk each changed .java file up to its nearest pom.xml to find the correct module.
-        # e.g., if "java-asset/google-cloud-asset/src/main/java/Foo.java" is changed,
-        # it traverses upward until finding "java-asset/google-cloud-asset/pom.xml" and adds that module.
         changed_modules=()
         while IFS= read -r changed_file; do
-            if [ -n "${changed_file}" ] && [[ "${changed_file}" == *.java ]]; then
-                dir=$(dirname "${changed_file}")
-                while [ "${dir}" != "." ] && [ ! -f "${dir}/pom.xml" ]; do
-                    dir=$(dirname "${dir}")
-                done
-                if [ -f "${dir}/pom.xml" ] && [ "${dir}" != "." ]; then
-                    # Filter out directories not participating in the default formatting reactor:
-                    # - samples are handwritten by developers
-                    # - benchmarks are handwritten by developers
-                    # - proto-*/grpc-* are generated code and should use the compiler format
-                    # - *-bom/parents are POM-only and contain no Java source
-                    if [[ "${dir}" != *"samples"* ]] && \
-                       [[ "${dir}" != *"java-showcase"* ]] && \
-                       [[ "$(basename "${dir}")" != *"benchmark"* ]] && \
-                       [[ "$(basename "${dir}")" != "proto-google-"* ]] && \
-                       [[ "$(basename "${dir}")" != "grpc-google-"* ]] && \
-                       [[ "$(basename "${dir}")" != *"-bom" ]] && \
-                       [[ "$(basename "${dir}")" != "google-cloud-pom-parent" ]] && \
-                       [[ "$(basename "${dir}")" != "dependency-analyzer" ]] && \
-                       [[ "$(basename "${dir}")" != "dependency-convergence-check" ]] && \
-                       [[ "$(basename "${dir}")" != "unmanaged-dependency-check" ]] && \
-                       [[ "$(basename "${dir}")" != *"test-proxy"* ]] && \
-                       [[ "$(basename "${dir}")" != "google-cloud-jar-parent" ]]; then
+            [[ -z "${changed_file}" || "${changed_file}" != *.java ]] && continue
 
-                        changed_modules+=("${dir}")
-                    fi
-                fi
-            fi
+            # Skip samples and test utilities that have standalone builds:
+            case "${changed_file}" in
+                *samples* | *java-showcase* | *test-proxy*)
+                    continue
+                    ;;
+            esac
+
+            # Traverse upward to the nearest enclosing pom.xml:
+            dir=$(dirname "${changed_file}")
+            while [ "${dir}" != "." ] && [ ! -f "${dir}/pom.xml" ]; do
+                dir=$(dirname "${dir}")
+            done
+
+            [ -f "${dir}/pom.xml" ] && [ "${dir}" != "." ] || continue
+
+            # Skip modules not participating in the formatting reactor:
+            case "${dir##*/}" in
+                *benchmark* | proto-google-* | grpc-google-* | *-bom | \
+                google-cloud-pom-parent | google-cloud-jar-parent | \
+                dependency-analyzer | dependency-convergence-check | unmanaged-dependency-check)
+                    continue
+                    ;;
+                *)
+                    changed_modules+=("${dir}")
+                    ;;
+            esac
         done <<< "${changed_file_list}"
 
         echo "Changed Modules: ${changed_modules[*]}"
 
-        # Deduplicate the modules using sort -u to pass a concise list of unique modules
-        # via the Maven `-pl` argument.
-        if [ ${#changed_modules[@]} -gt 0 ]; then
-            unique_modules=$(printf '%s\n' "${changed_modules[@]}" | sort -u | paste -sd ',' -)
-            MODULE_FILTER="-pl ${unique_modules}"
-            echo "Formatting only changed modules: ${unique_modules}"
+        # If only non-reactor files or no Java files changed, skip cleanly without running full reactor:
+        if [ ${#changed_modules[@]} -eq 0 ]; then
+            echo "No relevant java modules affected after exclusions. Skipping linter check."
+            exit 0
         fi
+
+        # Pass a concise comma-separated list of unique modules via the Maven `-pl` argument.
+        unique_modules=$(printf '%s\n' "${changed_modules[@]}" | sort -u | paste -sd ',' -)
+        MODULE_FILTER="-pl ${unique_modules}"
+        echo "Formatting only changed modules: ${unique_modules}"
     else
         echo "BASE_SHA or HEAD_SHA is empty. Cannot continue linting."
         exit 1
