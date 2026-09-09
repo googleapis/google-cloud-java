@@ -2183,7 +2183,7 @@ libraries:
       name_pretty_override: GKE Recommender API
       product_documentation_override: https://cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference-quickstart
   - name: google-cloud-java
-    version: 1.92.0-SNAPSHOT
+    version: 1.91.1
     skip_generate: true
     java:
       released_version: 1.91.0
@@ -5209,7 +5209,7 @@ libraries:
       product_documentation_override: https://cloud.google.com/resource-manager
       billing_not_required: true
   - name: retail
-    version: 2.100.0-SNAPSHOT
+    version: 2.99.1
     apis:
       - path: google/cloud/retail/v2
         java:
