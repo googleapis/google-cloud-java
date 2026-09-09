@@ -294,29 +294,11 @@ public class TestProtoLoader {
     return GapicContext.builder()
         .setMessages(messageTypes)
         .setResourceNames(resourceNames)
-        .setServices(adaptShowcaseResumableUploadForTest(services))
+        .setServices(services)
         .setHelperResourceNames(outputResourceNames)
         .setTransport(transport)
         .setServiceConfig(GapicServiceConfig.create(Optional.empty()))
         .build();
-  }
-
-  // Temporary test scaffolding; removed in PR #14325 once allowlist patterns are activated.
-  private static List<Service> adaptShowcaseResumableUploadForTest(List<Service> services) {
-    return services.stream()
-        .map(
-            s ->
-                s.toBuilder()
-                    .setMethods(
-                        s.methods().stream()
-                            .map(
-                                m ->
-                                    m.name().equals("UploadMedia")
-                                        ? m.toBuilder().setIsResumableUpload(true).build()
-                                        : m)
-                            .collect(Collectors.toList()))
-                    .build())
-        .collect(Collectors.toList());
   }
 
   public GapicContext parseExplicitDynamicRoutingHeaderTesting() {
