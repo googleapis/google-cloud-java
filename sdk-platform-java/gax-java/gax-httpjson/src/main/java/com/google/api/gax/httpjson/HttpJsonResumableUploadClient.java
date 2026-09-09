@@ -34,6 +34,8 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.resumable.ChunkUploadRequest;
 import com.google.api.gax.resumable.ChunkUploadResponse;
+import com.google.api.gax.resumable.QueryStatusRequest;
+import com.google.api.gax.resumable.QueryStatusResponse;
 import com.google.api.gax.resumable.ResumableUploadClient;
 import com.google.api.gax.resumable.ResumableUploadSession;
 import com.google.api.gax.rpc.ClientContext;
@@ -58,6 +60,8 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
   private final UnaryCallable<RequestT, ResumableUploadSession> startUploadCallable;
   private final UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>>
       uploadChunkCallable;
+  private final UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>>
+      queryStatusCallable;
 
   public static <RequestT, ResponseT> HttpJsonResumableUploadClient<RequestT, ResponseT> create(
       ClientContext clientContext, ApiMethodDescriptor<RequestT, ResponseT> methodDescriptor) {
@@ -82,6 +86,8 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
     this.startUploadCallable =
         ResumableUploadStartCallable.create(clientContext, startUploadDescriptor);
     this.uploadChunkCallable = ResumableUploadChunkCallable.create(clientContext, responseParser);
+    this.queryStatusCallable =
+        ResumableUploadQueryStatusCallable.create(clientContext, responseParser);
   }
 
   @Override
@@ -92,5 +98,10 @@ public final class HttpJsonResumableUploadClient<RequestT, ResponseT>
   @Override
   public UnaryCallable<ChunkUploadRequest, ChunkUploadResponse<ResponseT>> uploadChunkCallable() {
     return uploadChunkCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryStatusRequest, QueryStatusResponse<ResponseT>> queryStatusCallable() {
+    return queryStatusCallable;
   }
 }

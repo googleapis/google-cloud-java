@@ -532,13 +532,13 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public void setDate(int parameterIndex, Date value, Calendar calendar) throws SQLException {
     checkClosed();
-    setDate(parameterIndex, BigQueryTypeCoercionUtility.convertDateToCalendar(value, calendar));
+    setDate(parameterIndex, BigQueryTemporalUtility.convertDateToCalendar(value, calendar));
   }
 
   @Override
   public void setTime(int parameterIndex, Time value, Calendar calendar) throws SQLException {
     checkClosed();
-    setTime(parameterIndex, BigQueryTypeCoercionUtility.convertTimeWithCalendar(value, calendar));
+    setTime(parameterIndex, BigQueryTemporalUtility.convertTimeWithCalendar(value, calendar));
   }
 
   @Override
@@ -546,7 +546,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       throws SQLException {
     checkClosed();
     setTimestamp(
-        parameterIndex, BigQueryTypeCoercionUtility.convertTimestampWithCalendar(value, calendar));
+        parameterIndex, BigQueryTemporalUtility.convertTimestampWithCalendar(value, calendar));
   }
 
   @Override
