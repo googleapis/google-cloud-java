@@ -16,23 +16,37 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.time.DateTimeException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 /**
  * A highly optimized utility for bridging BigQuery's civil time and absolute time semantics to
- * legacy JDBC Date/Time/Timestamp classes using JSR-310 timezone anchoring.
+ * legacy JDBC Date/Time/Timestamp classes using JSR-310 timezone anchoring and high-precision
+ * temporal formatting.
  */
 final class BigQueryTemporalUtility {
+
+  private static final BigDecimal PICOS_PER_SECOND = new BigDecimal("1000000000000");
+  private static final BigDecimal NANOS_PER_SECOND = new BigDecimal("1000000000");
+  private static final BigDecimal MICROS_PER_SECOND = new BigDecimal("1000000");
+  private static final DateTimeFormatter BASE_FORMATTER =
+      DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.");
 
   private BigQueryTemporalUtility() {}
 
@@ -42,7 +56,7 @@ final class BigQueryTemporalUtility {
    */
   public static Timestamp boxDateTime(String val, ZoneId zoneId) {
     ZoneId targetZone = zoneId != null ? zoneId : ZoneId.systemDefault();
-    String isoString = val.replace(' ', 'T');
+    String isoString = truncateIsoFractionToNanos(val.replace(' ', 'T'));
     return Timestamp.from(LocalDateTime.parse(isoString).atZone(targetZone).toInstant());
   }
 
@@ -63,7 +77,7 @@ final class BigQueryTemporalUtility {
    * perfectly accurate modern conversions.
    */
   public static Time boxTime(String val, ZoneId zoneId) {
-    LocalTime localTime = LocalTime.parse(val);
+    LocalTime localTime = LocalTime.parse(truncateIsoFractionToNanos(val));
 
     if (zoneId == null) {
       // JDBC 4.2 Modern API (no Calendar provided):
@@ -79,7 +93,7 @@ final class BigQueryTemporalUtility {
     // Legacy JDBC 3.0 API (Calendar provided):
     // Use legacy Calendar manipulation to intentionally replicate old JVM historical DST quirks
     // for January 1, 1970, ensuring strict backwards compatibility for legacy ORMs.
-    Calendar targetCal = Calendar.getInstance(java.util.TimeZone.getTimeZone(zoneId));
+    Calendar targetCal = Calendar.getInstance(TimeZone.getTimeZone(zoneId));
     targetCal.set(Calendar.YEAR, 1970);
     targetCal.set(Calendar.MONTH, Calendar.JANUARY);
     targetCal.set(Calendar.DAY_OF_MONTH, 1);
@@ -101,12 +115,7 @@ final class BigQueryTemporalUtility {
       if (val.indexOf('-') < 0
           || (val.startsWith("-")
               && val.indexOf('-', 1) < 0)) { // Quick check to ensure it's not a date string
-        BigDecimal bd = new BigDecimal(val);
-        long secondsLong = bd.longValue();
-        int nanos = bd.remainder(BigDecimal.ONE).multiply(new BigDecimal(1_000_000_000)).intValue();
-        Timestamp ts = new Timestamp(secondsLong * 1000L);
-        ts.setNanos(nanos);
-        return ts;
+        return Timestamp.from(parseEpochDecimalToInstant(val));
       }
     } catch (NumberFormatException ignored) {
     }
@@ -126,15 +135,220 @@ final class BigQueryTemporalUtility {
       iso = iso + "Z";
     }
 
+    // Truncate sub-nanosecond fraction (> 9 digits) to prevent Instant.parse failure
+    iso = truncateIsoFractionToNanos(iso);
+
     try {
       return Timestamp.from(Instant.parse(iso));
-    } catch (java.time.format.DateTimeParseException e) {
+    } catch (DateTimeParseException e) {
       // Fallback for non-standard formats
       String fallback = val;
       if (fallback.indexOf('T') > 0) {
         fallback = fallback.replace('T', ' ');
       }
       return Timestamp.valueOf(fallback);
+    }
+  }
+
+  /**
+   * Converts an epoch decimal string (seconds since 1970-01-01 00:00:00 UTC) into an {@link
+   * Instant}, truncating sub-nanosecond precision towards zero to prevent rollover or overflow.
+   */
+  static Instant parseEpochDecimalToInstant(String epochDecimal) {
+    if (epochDecimal == null) {
+      return null;
+    }
+
+    BigDecimal bd = new BigDecimal(epochDecimal).setScale(9, RoundingMode.DOWN);
+    BigDecimal secondsBd = bd.setScale(0, RoundingMode.FLOOR);
+    BigDecimal fractionBd = bd.subtract(secondsBd);
+    int nanos = fractionBd.multiply(NANOS_PER_SECOND).intValue();
+    return Instant.ofEpochSecond(secondsBd.longValue(), nanos);
+  }
+
+  /**
+   * Formats an epoch decimal string (seconds since epoch) into a standard UTC JDBC timestamp string
+   * formatted as {@code yyyy-MM-dd HH:mm:ss.ffffff} (if {@code enableTimestampPicos} is false) or
+   * {@code yyyy-MM-dd HH:mm:ss.ffffffffffff} (if {@code enableTimestampPicos} is true). Truncates
+   * deterministically towards zero to prevent sub-second rollover.
+   */
+  static String formatTimestampStringFromEpochDecimal(
+      String epochDecimal, boolean enableTimestampPicos) throws BigQueryJdbcException {
+    if (epochDecimal == null) {
+      return null;
+    }
+
+    if (epochDecimal.indexOf(':') >= 0) {
+      return formatTimestampStringFromIso(epochDecimal, enableTimestampPicos);
+    }
+
+    int scale = enableTimestampPicos ? 12 : 6;
+    BigDecimal bd;
+    try {
+      bd = new BigDecimal(epochDecimal).setScale(scale, RoundingMode.DOWN);
+    } catch (NumberFormatException e) {
+      try {
+        return formatTimestampStringFromIso(epochDecimal, enableTimestampPicos);
+      } catch (BigQueryJdbcException ignored) {
+        throw new BigQueryJdbcException("Invalid timestamp value: " + epochDecimal, e);
+      }
+    }
+
+    BigDecimal secondsBd = bd.setScale(0, RoundingMode.FLOOR);
+    long epochSeconds = secondsBd.longValue();
+    BigDecimal fractionBd = bd.subtract(secondsBd);
+    BigDecimal multiplier = scale == 12 ? PICOS_PER_SECOND : MICROS_PER_SECOND;
+    long fractionVal = fractionBd.multiply(multiplier).setScale(0, RoundingMode.DOWN).longValue();
+
+    LocalDateTime dt = LocalDateTime.ofEpochSecond(epochSeconds, 0, ZoneOffset.UTC);
+    StringBuilder sb = formatDateTimeBase(dt, scale);
+    appendPadded(sb, fractionVal, scale);
+    return sb.toString();
+  }
+
+  /**
+   * Normalizes an ISO-8601 or civil timestamp string into a standard UTC JDBC timestamp string
+   * formatted with 6 or 12 fractional digits according to {@code enableTimestampPicos}.
+   */
+  static String formatTimestampStringFromIso(String isoString, boolean enableTimestampPicos)
+      throws BigQueryJdbcException {
+    if (isoString == null) {
+      return null;
+    }
+
+    // 1. Separate fractional seconds (which may exceed 9 digits) from the base timestamp
+    int dotIdx = isoString.indexOf('.');
+    String fraction = "";
+    String remaining = isoString;
+    if (dotIdx >= 0) {
+      int endFraction = dotIdx + 1;
+      while (endFraction < isoString.length() && Character.isDigit(isoString.charAt(endFraction))) {
+        endFraction++;
+      }
+      fraction = isoString.substring(dotIdx + 1, endFraction);
+      remaining = isoString.substring(0, dotIdx) + isoString.substring(endFraction);
+    }
+
+    // 2. Normalize UTC suffixes
+    String offsetPart = null;
+    if (remaining.endsWith(" UTC")) {
+      remaining = remaining.substring(0, remaining.length() - 4);
+    } else if (remaining.endsWith("Z")) {
+      remaining = remaining.substring(0, remaining.length() - 1);
+    }
+
+    // 3. Extract timezone offset (+/-) if present in the time portion
+    int sepIdx = remaining.indexOf('T');
+    if (sepIdx < 0) {
+      sepIdx = remaining.indexOf(' ');
+    }
+    if (sepIdx >= 0) {
+      int plusIdx = remaining.indexOf('+', sepIdx);
+      int minusIdx = remaining.indexOf('-', sepIdx);
+      int offsetIdx =
+          plusIdx >= 0 && minusIdx >= 0
+              ? Math.min(plusIdx, minusIdx)
+              : (plusIdx >= 0 ? plusIdx : minusIdx);
+      if (offsetIdx >= 0) {
+        offsetPart = remaining.substring(offsetIdx).trim();
+        remaining = remaining.substring(0, offsetIdx);
+      }
+    }
+
+    // 4. Ensure standard ISO LocalDateTime format (YYYY-MM-DDTHH:mm:ss)
+    remaining = remaining.trim().replace(' ', 'T');
+    if (remaining.indexOf('T') < 0) {
+      remaining = remaining + "T00:00:00";
+    }
+
+    // 5. Parse base date-time and shift to UTC if timezone offset was present
+    LocalDateTime utcDt;
+    try {
+      LocalDateTime ldt = LocalDateTime.parse(remaining);
+      if (offsetPart != null) {
+        ZoneOffset offset = ZoneOffset.of(offsetPart);
+        utcDt = ldt.atOffset(offset).withOffsetSameInstant(ZoneOffset.UTC).toLocalDateTime();
+      } else {
+        utcDt = ldt;
+      }
+    } catch (DateTimeException e) {
+      throw new BigQueryJdbcException("Invalid timestamp format: " + isoString, e);
+    }
+
+    // 6. Build the normalized JDBC timestamp string with the requested scale
+    int scale = enableTimestampPicos ? 12 : 6;
+    StringBuilder sb = formatDateTimeBase(utcDt, scale);
+    if (fraction.length() >= scale) {
+      sb.append(fraction, 0, scale);
+    } else {
+      sb.append(fraction);
+      for (int i = fraction.length(); i < scale; i++) {
+        sb.append('0');
+      }
+    }
+    return sb.toString();
+  }
+
+  /**
+   * Formats a microsecond timestamp (microseconds since 1970-01-01 00:00:00 UTC) into standard UTC
+   * timestamp string with 6 or 12 fractional digits according to {@code enableTimestampPicos}.
+   */
+  static String formatTimestampStringFromMicroseconds(
+      long microseconds, boolean enableTimestampPicos) {
+    long epochSeconds = Math.floorDiv(microseconds, 1_000_000L);
+    long microsOfSecond = Math.floorMod(microseconds, 1_000_000L);
+
+    LocalDateTime dt = LocalDateTime.ofEpochSecond(epochSeconds, 0, ZoneOffset.UTC);
+    int scale = enableTimestampPicos ? 12 : 6;
+    StringBuilder sb = formatDateTimeBase(dt, scale);
+    long fractionVal = enableTimestampPicos ? microsOfSecond * 1_000_000L : microsOfSecond;
+    appendPadded(sb, fractionVal, scale);
+    return sb.toString();
+  }
+
+  private static StringBuilder formatDateTimeBase(LocalDateTime dt, int scale) {
+    StringBuilder sb = new StringBuilder(scale == 12 ? 32 : 26);
+    BASE_FORMATTER.formatTo(dt, sb);
+    return sb;
+  }
+
+  /**
+   * Truncates sub-second fractional digits to at most 9 digits (nanoseconds) so that standard JDK
+   * temporal parsers (which cap at nanosecond precision) can parse the string without throwing
+   * {@link java.time.format.DateTimeParseException}. Any trailing timezone offset or suffix is
+   * preserved intact.
+   */
+  private static String truncateIsoFractionToNanos(String iso) {
+    int dotIdx = iso.indexOf('.');
+    if (dotIdx < 0) {
+      return iso;
+    }
+
+    int fractionStart = dotIdx + 1;
+    int fractionEnd = fractionStart;
+    while (fractionEnd < iso.length() && Character.isDigit(iso.charAt(fractionEnd))) {
+      fractionEnd++;
+    }
+
+    int fractionDigits = fractionEnd - fractionStart;
+    if (fractionDigits <= 9) {
+      return iso;
+    }
+
+    // Retain the first 9 fractional digits and append any trailing suffix (e.g., 'Z' or offset)
+    return iso.substring(0, fractionStart + 9) + iso.substring(fractionEnd);
+  }
+
+  /**
+   * Appends a non-negative integer zero-padded to {@code width} digits directly into the {@link
+   * StringBuilder} without intermediate string allocations.
+   */
+  private static void appendPadded(StringBuilder sb, long val, int width) {
+    int end = sb.length() + width;
+    sb.setLength(end);
+    for (int i = end - 1; i >= end - width; i--) {
+      sb.setCharAt(i, (char) ('0' + (val % 10)));
+      val /= 10;
     }
   }
 
