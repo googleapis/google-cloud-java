@@ -282,34 +282,42 @@ public class BigQueryTemporalUtilityTest {
   }
 
   @Test
-  public void testFormatTimestampStringWithPicosEnabled() throws BigQueryJdbcException {
+  public void testFormatTimestampStringFromEpochDecimalWithPicosEnabled()
+      throws BigQueryJdbcException {
     // 12-digit picosecond decimal
     String formatted12 =
-        BigQueryTemporalUtility.formatTimestampString("1680174859.820226123456", true);
+        BigQueryTemporalUtility.formatTimestampStringFromEpochDecimal(
+            "1680174859.820226123456", true);
     assertThat(formatted12).isEqualTo("2023-03-30 11:14:19.820226123456");
 
     // 6-digit microsecond decimal padded with 6 zeros to 12 digits
-    String formatted6 = BigQueryTemporalUtility.formatTimestampString("1680174859.820226", true);
+    String formatted6 =
+        BigQueryTemporalUtility.formatTimestampStringFromEpochDecimal("1680174859.820226", true);
     assertThat(formatted6).isEqualTo("2023-03-30 11:14:19.820226000000");
 
     // Pre-1970 negative epoch decimal with 12 digits
-    String negFormatted = BigQueryTemporalUtility.formatTimestampString("-0.123456789012", true);
+    String negFormatted =
+        BigQueryTemporalUtility.formatTimestampStringFromEpochDecimal("-0.123456789012", true);
     assertThat(negFormatted).isEqualTo("1969-12-31 23:59:59.876543210988");
   }
 
   @Test
-  public void testFormatTimestampStringWithPicosDisabled() throws BigQueryJdbcException {
+  public void testFormatTimestampStringFromEpochDecimalWithPicosDisabled()
+      throws BigQueryJdbcException {
     // 6-digit microsecond decimal
-    String formatted6 = BigQueryTemporalUtility.formatTimestampString("1680174859.820226", false);
+    String formatted6 =
+        BigQueryTemporalUtility.formatTimestampStringFromEpochDecimal("1680174859.820226", false);
     assertThat(formatted6).isEqualTo("2023-03-30 11:14:19.820226");
 
     // 12-digit picosecond decimal truncated to 6 digits
     String formatted12 =
-        BigQueryTemporalUtility.formatTimestampString("1680174859.820226123456", false);
+        BigQueryTemporalUtility.formatTimestampStringFromEpochDecimal(
+            "1680174859.820226123456", false);
     assertThat(formatted12).isEqualTo("2023-03-30 11:14:19.820226");
 
     // Rollover prevention: .9999999 must truncate to .999999 and not roll over to next second
-    String rollover = BigQueryTemporalUtility.formatTimestampString("1680174859.9999999", false);
+    String rollover =
+        BigQueryTemporalUtility.formatTimestampStringFromEpochDecimal("1680174859.9999999", false);
     assertThat(rollover).isEqualTo("2023-03-30 11:14:19.999999");
   }
 

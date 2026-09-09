@@ -172,8 +172,8 @@ final class BigQueryTemporalUtility {
    * {@code yyyy-MM-dd HH:mm:ss.ffffffffffff} (if {@code enableTimestampPicos} is true). Truncates
    * deterministically towards zero to prevent sub-second rollover.
    */
-  static String formatTimestampString(String epochDecimal, boolean enableTimestampPicos)
-      throws BigQueryJdbcException {
+  static String formatTimestampStringFromEpochDecimal(
+      String epochDecimal, boolean enableTimestampPicos) throws BigQueryJdbcException {
     if (epochDecimal == null) {
       return null;
     }
