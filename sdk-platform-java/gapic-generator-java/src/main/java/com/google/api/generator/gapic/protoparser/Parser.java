@@ -88,6 +88,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.jspecify.annotations.NullMarked;
@@ -98,9 +99,10 @@ public class Parser {
   enum SelectiveGapicType {
     // Methods will be generated and exposed externally as usual.
     PUBLIC,
-    // Methods will not be generated.
+    // Method generation will be skipped.
     HIDDEN,
-    // Methods will be generated and tagged @InternalApi (internal use) during generation.
+    // Methods will be marked as BetaApi with InternalApi, this will prevent method from being
+    // exposed externally.
     INTERNAL
   }
 
@@ -133,6 +135,9 @@ public class Parser {
           "google.cloud.bigquery.v2.DatasetService.ListDatasets",
           "google.cloud.bigquery.v2.ModelService.ListModels",
           "google.cloud.bigquery.v2.TableService.ListTables");
+
+  private static final ImmutableList<Pattern> RESUMABLE_UPLOAD_ALLOWLIST_PATTERNS =
+      ImmutableList.of();
 
   // Allow other parsers to access this.
   protected static final SourceCodeInfoParser SOURCE_CODE_INFO_PARSER = new SourceCodeInfoParser();
@@ -872,6 +877,9 @@ public class Parser {
                   .getOptions()
                   .getExtension(ExtendedOperationsProto.operationPollingMethod)
               : false;
+      boolean isResumableUpload =
+          RESUMABLE_UPLOAD_ALLOWLIST_PATTERNS.stream()
+              .anyMatch(pattern -> pattern.matcher(protoMethod.getFullName()).matches());
       RoutingHeaderRule routingHeaderRule =
           RoutingRuleParser.parse(protoMethod, inputMessage, messageTypes);
       methods.add(
@@ -895,6 +903,7 @@ public class Parser {
               .setAutoPopulatedFields(autoPopulatedFields)
               .setRoutingHeaderRule(routingHeaderRule)
               .setIsBatching(isBatching)
+              .setIsResumableUpload(isResumableUpload)
               .setPageSizeFieldName(parsePageSizeFieldName(protoMethod, messageTypes, transport))
               .setIsDeprecated(isDeprecated)
               .setOperationPollingMethod(operationPollingMethod)

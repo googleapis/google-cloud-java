@@ -55,6 +55,7 @@ import com.google.protobuf.Descriptors.ServiceDescriptor;
 import com.google.protobuf.compiler.PluginProtos.CodeGeneratorRequest;
 import com.google.selective.generate.v1beta1.SelectiveApiGenerationOuterClass;
 import com.google.showcase.v1beta1.EchoOuterClass;
+import com.google.showcase.v1beta1.ResumableUpload;
 import com.google.showcase.v1beta1.TestingOuterClass;
 import com.google.testgapic.v1beta1.LockerProto;
 import java.nio.file.Path;
@@ -163,6 +164,7 @@ class ParserTest {
     assertEquals(echoMethod.name(), "Echo");
     assertEquals(echoMethod.stream(), Method.Stream.NONE);
     assertEquals(false, echoMethod.hasAutoPopulatedFields());
+    assertFalse(echoMethod.isResumableUpload());
 
     // Detailed method signature parsing tests are in a separate unit test.
     List<List<MethodArgument>> methodSignatures = echoMethod.methodSignatures();
@@ -201,6 +203,32 @@ class ParserTest {
     assertEquals("Chat", chatMethod.name());
     assertEquals(Method.Stream.BIDI, chatMethod.stream());
     assertEquals(false, chatMethod.hasAutoPopulatedFields());
+  }
+
+  @Test
+  void parseMethods_resumableUpload() {
+    FileDescriptor resumableUploadFileDescriptor = ResumableUpload.getDescriptor();
+    ServiceDescriptor resumableUploadService = resumableUploadFileDescriptor.getServices().get(0);
+    Map<String, Message> messageTypes = Parser.parseMessages(resumableUploadFileDescriptor);
+    Map<String, ResourceName> resourceNames =
+        Parser.parseResourceNames(resumableUploadFileDescriptor);
+    Set<ResourceName> outputResourceNames = new HashSet<>();
+    List<Method> methods =
+        Parser.parseMethods(
+            resumableUploadService,
+            ECHO_PACKAGE,
+            ECHO_PACKAGE,
+            messageTypes,
+            resourceNames,
+            Optional.empty(),
+            Optional.empty(),
+            outputResourceNames,
+            Transport.GRPC);
+
+    assertEquals(1, methods.size());
+    Method uploadMethod = methods.get(0);
+    assertEquals("UploadMedia", uploadMethod.name());
+    assertFalse(uploadMethod.isResumableUpload());
   }
 
   @Test
