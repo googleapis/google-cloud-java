@@ -137,8 +137,8 @@
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ResumableUploadServiceClient resumableUploadServiceClient =
  *     ResumableUploadServiceClient.create()) {
- *   UploadMediaRequest request = UploadMediaRequest.newBuilder().setName("name3373707").build();
- *   UploadMediaResponse response = resumableUploadServiceClient.uploadMedia(request);
+ *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+ *   Location response = resumableUploadServiceClient.getLocation(request);
  * }
  * }</pre>
  *

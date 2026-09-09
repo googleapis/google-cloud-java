@@ -20,6 +20,7 @@ import static com.google.showcase.v1beta1.ResumableUploadServiceClient.ListLocat
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.ResumableUploadCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -46,7 +47,7 @@ import org.jspecify.annotations.NullMarked;
 @Generated("by gapic-generator-java")
 public abstract class ResumableUploadServiceStub implements BackgroundResource {
 
-  public UnaryCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
+  public ResumableUploadCallable<UploadMediaRequest, UploadMediaResponse> uploadMediaCallable() {
     throw new UnsupportedOperationException("Not implemented: uploadMediaCallable()");
   }
 
