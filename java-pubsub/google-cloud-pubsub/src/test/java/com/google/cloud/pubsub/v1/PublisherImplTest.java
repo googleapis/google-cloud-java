@@ -42,9 +42,8 @@ import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
-import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PubsubClientTelemetry;
-import java.util.Base64;
+import com.google.pubsub.v1.PubsubMessage;
 import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
 import io.grpc.Server;
@@ -63,6 +62,7 @@ import io.opentelemetry.sdk.testing.assertj.SpanDataAssert;
 import io.opentelemetry.sdk.testing.junit4.OpenTelemetryRule;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import java.time.Duration;
+import java.util.Base64;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
@@ -1769,8 +1769,7 @@ public class PublisherImplTest {
     PubsubClientTelemetry telemetry = extractTelemetryHeader(capturedHeaders.get(0));
     assertThat(telemetry.hasPublishOperation()).isTrue();
     assertThat(telemetry.getPublishOperation().getHedgedAttemptCount()).isEqualTo(0);
-    assertThat(telemetry.getPublishOperation().getPublishStartTime().getSeconds())
-        .isGreaterThan(0);
+    assertThat(telemetry.getPublishOperation().getPublishStartTime().getSeconds()).isGreaterThan(0);
 
     shutdownTestPublisher(publisher);
   }
