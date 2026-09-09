@@ -49,11 +49,6 @@ public class CheckAndMutateIT {
 
   @Test
   public void test() throws Exception {
-    assume()
-        .withMessage("Emulator does not support microsecond timestamp granularity")
-        .that(testEnvRule.env())
-        .isNotInstanceOf(EmulatorEnv.class);
-
     TableId tableId = testEnvRule.env().getTableId();
     String familyId = testEnvRule.env().getFamilyId();
     String rowKey = UUID.randomUUID().toString();

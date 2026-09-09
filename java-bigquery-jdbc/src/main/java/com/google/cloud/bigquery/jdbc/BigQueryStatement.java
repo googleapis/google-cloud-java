@@ -216,6 +216,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     querySettings.setUseWriteAPI(this.connection.isEnableWriteAPI());
     querySettings.setWriteAPIActivationRowCount(this.connection.getWriteAPIActivationRowCount());
     querySettings.setWriteAPIAppendRowCount(this.connection.getWriteAPIAppendRowCount());
+    querySettings.setEnableTimestampPicos(this.connection.isEnableTimestampPicos());
 
     return querySettings.build();
   }
@@ -617,11 +618,22 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private StatementType getStatementType(ExecuteResult executeResult) {
+    // Fast path: Read statementType directly from TableResult
     if (executeResult.tableResult.getStatementType() != null) {
       return executeResult.tableResult.getStatementType();
     }
+    // Jobful path: Read statementType from Job statistics when executed via JobCreationMode=1 or
+    // jobs.insert
     if (executeResult.job != null && executeResult.job.getStatistics() instanceof QueryStatistics) {
       return ((QueryStatistics) executeResult.job.getStatistics()).getStatementType();
+    }
+    // Fallback path: Lazily fetch completed Job metadata to resolve statementType without dry
+    // runs if omitted in TableResult
+    if (executeResult.tableResult.getJobId() != null && this.bigQuery != null) {
+      Job job = this.bigQuery.getJob(executeResult.tableResult.getJobId());
+      if (job != null && job.getStatistics() instanceof QueryStatistics) {
+        return ((QueryStatistics) job.getStatistics()).getStatementType();
+      }
     }
     return null;
   }
@@ -1521,6 +1533,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private boolean getUseLegacySql() {
     return QueryDialectType.BIG_QUERY.equals(
         QueryDialectType.valueOf(this.querySettings.getQueryDialect()));
+  }
+
+  boolean isEnableTimestampPicos() {
+    return this.querySettings.isEnableTimestampPicos();
   }
 
   private void checkIfDatasetExistElseCreate(String datasetName) {
