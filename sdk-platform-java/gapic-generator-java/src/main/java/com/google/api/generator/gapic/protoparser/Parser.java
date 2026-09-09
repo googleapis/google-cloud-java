@@ -88,6 +88,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.jspecify.annotations.NullMarked;
@@ -133,6 +134,9 @@ public class Parser {
           "google.cloud.bigquery.v2.DatasetService.ListDatasets",
           "google.cloud.bigquery.v2.ModelService.ListModels",
           "google.cloud.bigquery.v2.TableService.ListTables");
+
+  private static final ImmutableList<Pattern> RESUMABLE_UPLOAD_ALLOWLIST_PATTERNS =
+      ImmutableList.of();
 
   // Allow other parsers to access this.
   protected static final SourceCodeInfoParser SOURCE_CODE_INFO_PARSER = new SourceCodeInfoParser();
@@ -817,6 +821,31 @@ public class Parser {
       Optional<com.google.api.Service> serviceYamlProtoOpt,
       Set<ResourceName> outputArgResourceNames,
       Transport transport) {
+    return parseMethods(
+        serviceDescriptor,
+        protoPackage,
+        servicePackage,
+        messageTypes,
+        resourceNames,
+        serviceConfigOpt,
+        serviceYamlProtoOpt,
+        outputArgResourceNames,
+        transport,
+        RESUMABLE_UPLOAD_ALLOWLIST_PATTERNS);
+  }
+
+  @VisibleForTesting
+  static List<Method> parseMethods(
+      ServiceDescriptor serviceDescriptor,
+      String protoPackage,
+      String servicePackage,
+      Map<String, Message> messageTypes,
+      Map<String, ResourceName> resourceNames,
+      Optional<GapicServiceConfig> serviceConfigOpt,
+      Optional<com.google.api.Service> serviceYamlProtoOpt,
+      Set<ResourceName> outputArgResourceNames,
+      Transport transport,
+      List<Pattern> resumableUploadAllowlistPatterns) {
     List<Method> methods = new ArrayList<>();
 
     // Parse the serviceYaml for autopopulated methods and fields once and put into a map
@@ -872,6 +901,9 @@ public class Parser {
                   .getOptions()
                   .getExtension(ExtendedOperationsProto.operationPollingMethod)
               : false;
+      boolean isResumableUpload =
+          resumableUploadAllowlistPatterns.stream()
+              .anyMatch(pattern -> pattern.matcher(protoMethod.getFullName()).matches());
       RoutingHeaderRule routingHeaderRule =
           RoutingRuleParser.parse(protoMethod, inputMessage, messageTypes);
       methods.add(
@@ -895,6 +927,7 @@ public class Parser {
               .setAutoPopulatedFields(autoPopulatedFields)
               .setRoutingHeaderRule(routingHeaderRule)
               .setIsBatching(isBatching)
+              .setIsResumableUpload(isResumableUpload)
               .setPageSizeFieldName(parsePageSizeFieldName(protoMethod, messageTypes, transport))
               .setIsDeprecated(isDeprecated)
               .setOperationPollingMethod(operationPollingMethod)
