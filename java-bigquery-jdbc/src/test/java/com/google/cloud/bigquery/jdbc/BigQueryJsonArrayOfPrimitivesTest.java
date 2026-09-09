@@ -41,6 +41,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.jdbc.rules.TimeZoneRule;
 import com.google.common.io.BaseEncoding;
@@ -59,8 +60,10 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.RegisterExtension;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -382,5 +385,77 @@ public class BigQueryJsonArrayOfPrimitivesTest {
   private void ensureArrayIsInvalid(Executable block) {
     Exception exception = assertThrows(IllegalStateException.class, block);
     assertThat(exception.getMessage()).isEqualTo(INVALID_ARRAY);
+  }
+
+  @Test
+  public void testJsonArrayTimestampPicosEnabled() throws SQLException {
+    Field field =
+        Field.newBuilder("picosArray", StandardSQLTypeName.TIMESTAMP)
+            .setMode(Field.Mode.REPEATED)
+            .setTimestampPrecision(12L)
+            .build();
+    FieldValue val1 = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "1680174859.123456789123");
+    FieldValue val2 =
+        FieldValue.of(FieldValue.Attribute.PRIMITIVE, "2026-04-08T11:00:00.987654321012Z");
+    FieldValue arrayValue =
+        FieldValue.of(FieldValue.Attribute.REPEATED, FieldValueList.of(Arrays.asList(val1, val2)));
+
+    BigQueryJsonArray array =
+        new BigQueryJsonArray(
+            field,
+            arrayValue,
+            BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class),
+            true);
+
+    assertThat(array.getBaseTypeName()).isEqualTo("TIMESTAMP");
+    assertThat(array.getBaseType()).isEqualTo(Types.TIMESTAMP);
+
+    Object result = array.getArray();
+    assertThat(result).isInstanceOf(String[].class);
+    assertThat((String[]) result)
+        .asList()
+        .containsExactly("2023-03-30 11:14:19.123456789123", "2026-04-08 11:00:00.987654321012")
+        .inOrder();
+
+    ResultSet rs = array.getResultSet();
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getInt(1)).isEqualTo(1);
+    assertThat(rs.getString(2)).isEqualTo("2023-03-30 11:14:19.123456789123");
+    assertThat(rs.getObject(2)).isEqualTo("2023-03-30 11:14:19.123456789123");
+
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getInt(1)).isEqualTo(2);
+    assertThat(rs.getString(2)).isEqualTo("2026-04-08 11:00:00.987654321012");
+    assertThat(rs.getObject(2)).isEqualTo("2026-04-08 11:00:00.987654321012");
+  }
+
+  @Test
+  public void testJsonArrayTimestampPicosDisabled() throws SQLException {
+    Field field =
+        Field.newBuilder("picosArray", StandardSQLTypeName.TIMESTAMP)
+            .setMode(Field.Mode.REPEATED)
+            .setTimestampPrecision(12L)
+            .build();
+    FieldValue val1 = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "1680174859.123456789123");
+    FieldValue arrayValue =
+        FieldValue.of(
+            FieldValue.Attribute.REPEATED, FieldValueList.of(Collections.singletonList(val1)));
+
+    BigQueryJsonArray array =
+        new BigQueryJsonArray(
+            field,
+            arrayValue,
+            BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class),
+            false);
+
+    Object result = array.getArray();
+    assertThat(result).isInstanceOf(Timestamp[].class);
+    Timestamp expectedTs = Timestamp.valueOf("2023-03-30 11:14:19.123456789");
+    assertThat((Timestamp[]) result).asList().containsExactly(expectedTs);
+
+    ResultSet rs = array.getResultSet();
+    assertThat(rs.next()).isTrue();
+    assertThat(rs.getString(2)).isEqualTo("2023-03-30 11:14:19.123456");
+    assertThat(rs.getObject(2)).isEqualTo(expectedTs);
   }
 }

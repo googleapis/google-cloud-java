@@ -33,14 +33,20 @@ import java.util.List;
 class BigQueryJsonArray extends BigQueryBaseArray {
 
   private List<FieldValue> values;
+  private final boolean enableTimestampPicos;
 
   BigQueryJsonArray(Field schema, FieldValue values) {
-    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class));
+    this(schema, values, BigQueryJdbcResultSetLogger.getLogger(BigQueryJsonArray.class), false);
   }
 
-  BigQueryJsonArray(Field schema, FieldValue values, BigQueryJdbcResultSetLogger log) {
+  BigQueryJsonArray(
+      Field schema,
+      FieldValue values,
+      BigQueryJdbcResultSetLogger log,
+      boolean enableTimestampPicos) {
     super(schema, log);
     this.values = (values == null || values.isNull()) ? null : values.getRepeatedValue();
+    this.enableTimestampPicos = enableTimestampPicos;
   }
 
   @Override
@@ -74,7 +80,11 @@ class BigQueryJsonArray extends BigQueryBaseArray {
     BigQueryFieldValueListWrapper bigQueryFieldValueListWrapper =
         getNestedFieldValueListWrapper(FieldList.of(singleElementSchema()), this.values);
     return BigQueryJsonResultSet.getNestedResultSet(
-        Schema.of(this.schema), bigQueryFieldValueListWrapper, 0, this.values.size());
+        Schema.of(this.schema),
+        bigQueryFieldValueListWrapper,
+        0,
+        this.values.size(),
+        this.enableTimestampPicos);
   }
 
   @Override
@@ -88,7 +98,11 @@ class BigQueryJsonArray extends BigQueryBaseArray {
     BigQueryFieldValueListWrapper bigQueryFieldValueListWrapper =
         getNestedFieldValueListWrapper(FieldList.of(singleElementSchema()), this.values);
     return BigQueryJsonResultSet.getNestedResultSet(
-        Schema.of(this.schema), bigQueryFieldValueListWrapper, range.x(), range.y());
+        Schema.of(this.schema),
+        bigQueryFieldValueListWrapper,
+        range.x(),
+        range.y(),
+        this.enableTimestampPicos);
   }
 
   @Override
@@ -98,11 +112,34 @@ class BigQueryJsonArray extends BigQueryBaseArray {
   }
 
   @Override
+  protected Class<?> getTargetClass() {
+    LOG.finestTrace("getTargetClass");
+    if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(this.schema)) {
+      return String.class;
+    }
+    return super.getTargetClass();
+  }
+
+  @Override
   Object getCoercedValue(int index) throws SQLException {
+    LOG.finestTrace("getCoercedValue");
     FieldValue fieldValue = this.values.get(index);
-    return this.arrayOfStruct
-        ? new BigQueryJsonStruct(
-            this.schema.getSubFields(), fieldValue, this.LOG.getJsonStructLogger())
-        : BigQueryTypeRegistry.convert(fieldValue, this.schema.getType().getStandardType(), null);
+    if (fieldValue == null || fieldValue.isNull()) {
+      return null;
+    }
+    if (this.arrayOfStruct) {
+      return new BigQueryJsonStruct(
+          this.schema.getSubFields(),
+          fieldValue,
+          this.LOG.getJsonStructLogger(),
+          this.enableTimestampPicos);
+    }
+    if (this.enableTimestampPicos && BigQueryTemporalUtility.isPicosecondTimestamp(this.schema)) {
+      return BigQueryTemporalUtility.formatTimestampValue(fieldValue.getStringValue(), true);
+    }
+    if (this.enableTimestampPicos && BigQueryJsonResultSet.isRangeTimestamp(this.schema)) {
+      return BigQueryJsonResultSet.formatRangeTimestamp(fieldValue);
+    }
+    return BigQueryTypeRegistry.convert(fieldValue, this.schema.getType().getStandardType(), null);
   }
 }
